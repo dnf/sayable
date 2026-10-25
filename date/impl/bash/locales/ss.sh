@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ss.json
 
-_locale_ss() {
+_sayabledate_locale_ss() {
     _months=('Bhimbidvwane' 'iNdlovana' 'iNdlovulenkhulu' 'Mabasa' 'iNkhwekhweti' 'iNhlaba' 'Kholwane' 'iNgci' 'iNyoni' 'iMphala' 'Lweti' 'iNgongoni')
     _weekdays=('LiSontfo' 'uMsombuluko' 'Lesibili' 'Lesitsatfu' 'Lesine' 'Lesihlanu' 'uMgcibelo')
     _day_format='{n}'

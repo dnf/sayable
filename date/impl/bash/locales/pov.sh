@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/pov.json
 
-_locale_pov() {
+_sayabledate_locale_pov() {
     _months=('Janeru' 'Febreru' 'Marsu' 'Abril' 'Maiu' 'Junhu' 'Julhu' 'Agostu' 'Setembru' 'Otubru' 'Novembru' 'Dizembru')
     _weekdays=('Dumingu' 'Sigunda' 'Tersa' 'Kuarta' 'Kinta' 'Sesta' 'Sabadu')
     _day_format='{n}'

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/suk.json
 
-_locale_suk() {
+_sayabletime_locale_suk() {
     _clock_hours=('kumi na mbili' 'moja' 'mbili' 'tatu' 'nne' 'tano' 'sita' 'saba' 'nane' 'tisa' 'kumi' 'kumi na moja')
     _clock_midnight='usiku gati'
     _clock_noon='adhuhuri'

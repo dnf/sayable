@@ -88,27 +88,30 @@ sub _format_digital {
   return $result;
 }
 
+# A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+# suffix, which is ignored), alone or after the T of an ISO datetime.
+my $CLOCK_TIME = qr/
+  \A (?: ([0-9]{4}) - ([0-9]{2}) - ([0-9]{2}) T )?
+  ([0-9]{1,2}) : ([0-9]{2}) (?: : ([0-9]{2}) (?: \.[0-9]+ )? )?
+  (?: Z | [+-][0-9]{2}:[0-9]{2} )? \z
+/x;
+
 sub _parse_time {
   my ($input_str) = @_;
-  return undef unless defined $input_str && $input_str ne '';
-  my $t = $input_str;
-  if (index($t, 'T') != -1) {
-    $t = (split(/T/, $t))[1];
-  }
-  if (index($t, '+') != -1) {
-    $t = (split(/\+/, $t))[0];
-  }
-  if (index($t, 'Z') != -1) {
-    $t = (split(/Z/, $t))[0];
-  }
-  my @parts = split(/:/, $t);
-  return undef unless scalar @parts >= 2;
-  my $hour_str = $parts[0];
-  my $min_str = (split(/\./, $parts[1]))[0];
-  my $hour = int($hour_str);
-  my $minute = int($min_str);
-  return undef if $hour < 0 || $hour > 23 || $minute < 0 || $minute > 59;
-  return [$hour, $minute];
+  return undef unless defined $input_str;
+  my ($year, $month, $day, $hour, $minute, $second) = $input_str =~ $CLOCK_TIME or return undef;
+  return undef if defined $year && !_is_real_date($year + 0, $month + 0, $day + 0);
+  return undef if $hour > 23 || $minute > 59 || (defined $second && $second > 59);
+  return [$hour + 0, $minute + 0];
+}
+
+sub _is_real_date {
+  my ($y, $m, $d) = @_;
+  return 0 if $m < 1 || $m > 12 || $d < 1;
+  my $last = ($m == 4 || $m == 6 || $m == 9 || $m == 11) ? 30
+    : $m != 2 ? 31
+    : ($y % 4 == 0 && ($y % 100 != 0 || $y % 400 == 0)) ? 29 : 28;
+  return $d <= $last;
 }
 
 sub _round_to_5 {

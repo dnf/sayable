@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/tig.json
 
-_locale_tig() {
+_sayabledate_locale_tig() {
     _months=('Yannaayer' 'Febbraayer' 'Maaris' 'Abriil' 'Maay' 'Yuunyo' 'Yulyo' 'Agoosṭo' 'Seṭṭembre' 'Oṭṭoobre' 'Noovembre' 'Diičembre')
     _weekdays=('Sənbət' 'Sənuy' 'Sələs' 'Rəbuʿ' 'Ḥamus' 'ʿArbi' 'Qədami')
     _day_format='{n}'

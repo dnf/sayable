@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ny.json
 
-_plural_ny() {
+_sayableduration_plural_ny() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ny() {
+_sayableduration_locale_ny() {
     _unit_second='{n} sekondi'
     _unit_minute='{n} mphindi'
     _unit_hour='{n} ola'
@@ -60,5 +60,5 @@ _locale_ny() {
     _compact_delimiter=''
     _compact_ago='{0} zapitazo'
     _compact_in_future='mu {0}'
-    _plural_func=_plural_ny
+    _plural_func=_sayableduration_plural_ny
 }

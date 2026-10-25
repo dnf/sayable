@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tr.json
 
-_plural_tr() {
+_sayableduration_plural_tr() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tr() {
+_sayableduration_locale_tr() {
     _unit_second='{n} saniye'
     _unit_minute='{n} dakika'
     _unit_hour='{n} saat'
@@ -53,5 +53,5 @@ _locale_tr() {
     _compact_delimiter=''
     _compact_ago='{0} önce'
     _compact_in_future='{0} sonra'
-    _plural_func=_plural_tr
+    _plural_func=_sayableduration_plural_tr
 }

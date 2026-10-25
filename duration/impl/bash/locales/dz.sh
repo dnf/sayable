@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/dz.json
 
-_plural_dz() {
+_sayableduration_plural_dz() {
     echo "other"
 }
 
-_locale_dz() {
+_sayableduration_locale_dz() {
     _unit_second='སྐར་ཆ་ {n}'
     _unit_minute='སྐར་མ་ {n}'
     _unit_hour='ཆུ་ཚོད་ {n}'
@@ -45,5 +45,5 @@ _locale_dz() {
     _compact_delimiter=''
     _compact_ago='{0} ཧེ་མ'
     _compact_in_future='{0} ཤུལ་ལས'
-    _plural_func=_plural_dz
+    _plural_func=_sayableduration_plural_dz
 }

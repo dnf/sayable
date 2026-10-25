@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/sl.json
 
-_locale_sl() {
+_sayabledate_locale_sl() {
     _months=('januar' 'februar' 'marec' 'april' 'maj' 'junij' 'julij' 'avgust' 'september' 'oktober' 'november' 'december')
     _weekdays=('nedelja' 'ponedeljek' 'torek' 'sreda' 'četrtek' 'petek' 'sobota')
     _day_format='{n}.'

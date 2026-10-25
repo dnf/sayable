@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mg.json
 
-_plural_mg() {
+_sayableduration_plural_mg() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_mg() {
+_sayableduration_locale_mg() {
     _unit_second='{n} segondra'
     _unit_minute='{n} minitra'
     _unit_hour='{n} ora'
@@ -48,5 +48,5 @@ _locale_mg() {
     _compact_delimiter=''
     _compact_ago='{0} lasa'
     _compact_in_future='ao anatin'\''ny {0}'
-    _plural_func=_plural_mg
+    _plural_func=_sayableduration_plural_mg
 }

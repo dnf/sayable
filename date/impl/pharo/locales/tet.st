@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/tet.json "
 
-"Locale: tet"
+"Locale: tet"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 tet

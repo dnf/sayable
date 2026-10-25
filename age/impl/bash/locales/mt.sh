@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mt.json
 
-_plural_mt() {
+_sayableage_plural_mt() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ]; then echo "two"; return; fi
@@ -19,7 +19,7 @@ _plural_mt() {
     echo "other"
 }
 
-_locale_mt() {
+_sayableage_locale_mt() {
     _unit_day_one='ġurnata'
     _unit_day_two='jumejn'
     _unit_day_few='{n} ijiem'
@@ -63,5 +63,5 @@ _locale_mt() {
     _compact_unit_year='{n} y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mt
+    _plural_func=_sayableage_plural_mt
 }

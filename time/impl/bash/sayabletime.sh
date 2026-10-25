@@ -7,33 +7,43 @@ _SAYABLETIME_REGISTRY_LOADED=0
 
 # --- Time parsing ---
 
-# Parse HH:MM or ISO datetime to hour and minute.
+# A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+# suffix, which is ignored), alone or after the T of an ISO datetime. The
+# digit class is spelled out because a [0-9] range can match other characters
+# in some locales.
+_SAYABLETIME_D='[0123456789]'
+_SAYABLETIME_CLOCK_PATTERN="^((${_SAYABLETIME_D}{4})-(${_SAYABLETIME_D}{2})-(${_SAYABLETIME_D}{2})T)?(${_SAYABLETIME_D}{1,2}):(${_SAYABLETIME_D}{2})(:(${_SAYABLETIME_D}{2})(\\.${_SAYABLETIME_D}+)?)?(Z|[+-]${_SAYABLETIME_D}{2}:${_SAYABLETIME_D}{2})?$"
+
+_sayabletime_is_real_date() {
+    local y=$1 m=$2 d=$3 last=31
+    if [ "${m}" -lt 1 ] || [ "${m}" -gt 12 ] || [ "${d}" -lt 1 ]; then return 1; fi
+    case "${m}" in
+        4|6|9|11) last=30 ;;
+        2)
+            last=28
+            if (( (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 )); then last=29; fi
+            ;;
+    esac
+    [ "${d}" -le "${last}" ]
+}
+
+# Parse a clock time or ISO datetime to hour and minute.
 # Sets _pt_hour and _pt_minute. Returns 1 on failure.
 _sayabletime_parse_time() {
     local input_str="$1"
-    if [ -z "${input_str}" ]; then return 1; fi
+    if ! [[ "${input_str}" =~ ${_SAYABLETIME_CLOCK_PATTERN} ]]; then return 1; fi
 
-    local t="${input_str}"
-    # Strip date part from ISO datetime
-    if [[ "${t}" == *"T"* ]]; then
-        t="${t#*T}"
+    # 10# reads leading zeros as decimal, not octal
+    if [ -n "${BASH_REMATCH[1]}" ]; then
+        if ! _sayabletime_is_real_date $(( 10#${BASH_REMATCH[2]} )) $(( 10#${BASH_REMATCH[3]} )) $(( 10#${BASH_REMATCH[4]} )); then
+            return 1
+        fi
     fi
-    # Strip timezone
-    t="${t%%+*}"
-    t="${t%%Z*}"
+    _pt_hour=$(( 10#${BASH_REMATCH[5]} ))
+    _pt_minute=$(( 10#${BASH_REMATCH[6]} ))
+    local second=$(( 10#${BASH_REMATCH[8]:-0} ))
 
-    local IFS=':'
-    # shellcheck disable=SC2086
-    set -- ${t}
-    if [ $# -lt 2 ]; then return 1; fi
-
-    _pt_hour=$(( 10#$1 )) 2>/dev/null || return 1
-    # Strip fractional seconds from minute part
-    local min_str="${2%%.*}"
-    _pt_minute=$(( 10#${min_str} )) 2>/dev/null || return 1
-
-    if [ ${_pt_hour} -lt 0 ] || [ ${_pt_hour} -gt 23 ]; then return 1; fi
-    if [ ${_pt_minute} -lt 0 ] || [ ${_pt_minute} -gt 59 ]; then return 1; fi
+    if [ ${_pt_hour} -gt 23 ] || [ ${_pt_minute} -gt 59 ] || [ ${second} -gt 59 ]; then return 1; fi
 
     return 0
 }

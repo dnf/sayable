@@ -254,6 +254,79 @@
 (assert-eq "12.2" ((pt-es :format-relative) "2025-03-17" "2025-03-15") "pasado mañana")
 
 # =============================================================================
+# Section 13: format_date_with_year
+# =============================================================================
+
+# 13.1
+(assert-eq "13.1" (((sd/make-formatter (sd/get-locale "en")) :format-date-with-year) "2018-02-04") "February 4th, 2018")
+
+# 13.2
+(assert-eq "13.2" (((sd/make-formatter (sd/get-locale "en") "short") :format-date-with-year) "2025-03-15") "Mar 15, 2025")
+
+# 13.3
+(assert-eq "13.3" (((sd/make-formatter (sd/get-locale "en") "compact") :format-date-with-year) "1997-01-21") "1/21/97")
+
+# 13.4
+(assert-eq "13.4" (((sd/make-formatter (sd/get-locale "tg") "compact") :format-date-with-year) "2007-05-20") "20/5/07")
+
+# 13.5
+(assert-eq "13.5" (((sd/make-formatter (sd/get-locale "fi") "short") :format-date-with-year) "1996-06-21") "21. kesäkuuta 1996")
+
+# =============================================================================
+# Section 14: Short month names (locales that keep the full genitive)
+# =============================================================================
+
+# 14.1
+(assert-eq "14.1" (((sd/make-formatter (sd/get-locale "sk") "short") :format-date) "2031-02-15") "15. februára")
+
+# 14.2
+(assert-eq "14.2" (((sd/make-formatter (sd/get-locale "cs") "short") :format-date) "2025-12-10") "10. prosince")
+
+# 14.3
+(assert-eq "14.3" (((sd/make-formatter (sd/get-locale "uk") "short") :format-date) "2025-11-05") "5 листопада")
+
+# 14.4
+(assert-eq "14.4" (((sd/make-formatter (sd/get-locale "fi") "short") :format-relative) "1998-08-08" "1998-08-15") "8. elokuuta")
+
+# =============================================================================
+# Section 15: format_relative — short phrases
+# =============================================================================
+
+# 15.1
+(assert-eq "15.1" (((sd/make-formatter (sd/get-locale "kw") "short") :format-relative) "2035-12-04" "2035-12-02") "an Mth ma")
+
+# 15.2
+(assert-eq "15.2" (((sd/make-formatter (sd/get-locale "mam") "short") :format-relative) "2000-01-23" "2000-01-25") "Dom nchi'j")
+
+# 15.3
+(assert-eq "15.3" (((sd/make-formatter (sd/get-locale "kek") "short") :format-relative) "2014-10-24" "2014-10-22") "a'in Vie")
+
+# =============================================================================
+# Section 16: Input validation
+# =============================================================================
+
+# 16.1
+(assert-nil "16.1" (((sd/make-formatter (sd/get-locale "en")) :format-date) "2025-02-30"))
+
+# 16.2
+(assert-nil "16.2" (((sd/make-formatter (sd/get-locale "en")) :format-date) "2025-13-01"))
+
+# 16.3
+(assert-nil "16.3" (((sd/make-formatter (sd/get-locale "en")) :format-date) "2025-6-1"))
+
+# 16.4
+(assert-nil "16.4" (((sd/make-formatter (sd/get-locale "en")) :format-date) " 2025-06-01"))
+
+# 16.5
+(assert-eq "16.5" (((sd/make-formatter (sd/get-locale "en")) :format-date) "2025-06-01T10:00:00") "June 1st")
+
+# 16.6
+(assert-nil "16.6" (((sd/make-formatter (sd/get-locale "en")) :format-date-with-year) "2023-02-29"))
+
+# 16.7
+(assert-nil "16.7" (((sd/make-formatter (sd/get-locale "en")) :format-relative) "2025-03-16" "2025-04-31"))
+
+# =============================================================================
 # Results
 # =============================================================================
 

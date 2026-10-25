@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/sar.json
 
-_plural_sar() {
+_sayableduration_plural_sar() {
     echo "other"
 }
 
-_locale_sar() {
+_sayableduration_locale_sar() {
     _unit_second='sɛɡɔn {n}'
     _unit_minute='minít {n}'
     _unit_hour='lɛɛr {n}'
@@ -46,5 +46,5 @@ _locale_sar() {
     _compact_delimiter=''
     _compact_ago='{0} ɓòo kɔ'
     _compact_in_future='ga {0}'
-    _plural_func=_plural_sar
+    _plural_func=_sayableduration_plural_sar
 }

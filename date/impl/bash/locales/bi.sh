@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/bi.json
 
-_locale_bi() {
+_sayabledate_locale_bi() {
     _months=('Janueri' 'Februari' 'Maj' 'Epril' 'Mei' 'Jun' 'Julae' 'Ogis' 'Septemba' 'Oktoba' 'Novemba' 'Disemba')
     _weekdays=('Sande' 'Mande' 'Tusde' 'Wenesde' 'Tosde' 'Fraede' 'Sarede')
     _day_format='{n}'

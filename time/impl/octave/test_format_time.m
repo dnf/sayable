@@ -171,6 +171,49 @@ check('8.1 fi dot separator', st_fi.format_time('14:15'), '14.15');
 check('8.2 fi midnight 24h dot', st_fi.format_time('00:00'), '0.00');
 
 % ================================================================
+% 9. Minutes in short and compact modes
+% ================================================================
+printf('Section 9: Minutes in short and compact modes\n');
+
+% 9.1
+check('9.1 short keeps the exact minute', st_short.format_time('18:01'), '6:01 PM');
+
+% 9.2
+check('9.2 compact keeps the exact minute', st_compact.format_time('19:05'), '7:05p');
+
+% ================================================================
+% 10. Input validation
+% ================================================================
+printf('Section 10: Input validation\n');
+
+% 10.1
+check('10.1 one-digit hour', st.format_time('9:30'), 'half past nine');
+
+% 10.2
+check('10.2 two-digit hour', st.format_time('09:30'), 'half past nine');
+
+% 10.3
+check('10.3 leading whitespace', st.format_time(' 9:30'), []);
+
+% 10.4
+check('10.4 trailing whitespace', st.format_time('9:30 '), []);
+
+% 10.5
+check('10.5 one-digit minutes', st.format_time('9:5'), []);
+
+% 10.6
+check('10.6 hour out of range', st.format_time('24:00'), []);
+
+% 10.7
+check('10.7 seconds ignored', st.format_time('14:15:30'), 'a quarter past two');
+
+% 10.8
+check('10.8 ISO datetime with zone', st.format_time('2025-01-15T14:15:00Z'), 'a quarter past two');
+
+% 10.9
+check('10.9 ISO datetime with an impossible date', st.format_time('2025-02-30T14:15:00'), []);
+
+% ================================================================
 % Summary
 % ================================================================
 printf('\n');

@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/pov.json "
 
-"Locale: pov"
+"Locale: pov"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 pov

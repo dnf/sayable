@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/yao.json
 
-_locale_yao() {
+_sayabledate_locale_yao() {
     _months=('Janyuwale' 'Febuwale' 'Malichi' 'Epireli' 'Meyi' 'Juni' 'Julayi' 'Ogasiti' 'Seputemba' 'Okutoba' 'Novemba' 'Disemba')
     _weekdays=('Lisiku lya Jumapili' 'Lisiku lya kwanda' 'Lisiku lya wili' 'Lisiku lya tatu' 'Lisiku lya ncece' 'Lisiku lya nsano' 'Lisiku lya Juma')
     _day_format='{n}'

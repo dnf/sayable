@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ca.json
 
-_plural_ca() {
+_sayableage_plural_ca() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ca() {
+_sayableage_locale_ca() {
     _unit_day_one='{n} dia'
     _unit_day_other='{n} dies'
     _unit_week_one='{n} setmana'
@@ -49,5 +49,5 @@ _locale_ca() {
     _compact_unit_year_other='{n} anys'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ca
+    _plural_func=_sayableage_plural_ca
 }

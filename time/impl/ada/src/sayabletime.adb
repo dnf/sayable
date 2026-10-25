@@ -14,126 +14,132 @@ package body Sayabletime is
       OK     : Boolean := False;
    end record;
 
-   function Parse_Time (S : String) return Time_Parse_Result is
-      R     : Time_Parse_Result;
-      T_Str : Unbounded_String;
-      Pos_T : Natural;
-      Pos_P : Natural;
-      Pos_Z : Natural;
+   function Is_Leap_Year (Year : Integer) return Boolean is
    begin
-      if S'Length = 0 then
-         return R;
+      return Year mod 4 = 0
+        and then (Year mod 100 /= 0 or else Year mod 400 = 0);
+   end Is_Leap_Year;
+
+   function Days_In_Month (Year : Integer; Month : Integer) return Integer is
+      Month_Days : constant array (1 .. 12) of Integer :=
+        (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+   begin
+      if Month = 2 and then Is_Leap_Year (Year) then
+         return 29;
+      else
+         return Month_Days (Month);
       end if;
+   end Days_In_Month;
 
-      T_Str := To_Unbounded_String (S);
+   function Digits_Value (S : String) return Integer is
+      V : Integer := 0;
+   begin
+      for C of S loop
+         V := V * 10 + Character'Pos (C) - Character'Pos ('0');
+      end loop;
+      return V;
+   end Digits_Value;
 
-      --  Strip date part if ISO datetime
-      Pos_T := Ada.Strings.Fixed.Index (S, "T");
-      if Pos_T > 0 then
-         T_Str := To_Unbounded_String
-           (S (Pos_T + 1 .. S'Last));
+   function All_Digits (S : String) return Boolean is
+   begin
+      for C of S loop
+         if not Is_Digit (C) then
+            return False;
+         end if;
+      end loop;
+      return True;
+   end All_Digits;
+
+   --  YYYY-MM-DD naming a real calendar day.
+   function Is_Real_Date (S : String) return Boolean is
+      F : constant Integer := S'First;
+   begin
+      if S'Length /= 10 or else S (F + 4) /= '-' or else S (F + 7) /= '-'
+        or else not All_Digits (S (F .. F + 3))
+        or else not All_Digits (S (F + 5 .. F + 6))
+        or else not All_Digits (S (F + 8 .. F + 9))
+      then
+         return False;
       end if;
-
-      --  Strip timezone
       declare
-         TS : constant String := To_String (T_Str);
+         Year  : constant Integer := Digits_Value (S (F .. F + 3));
+         Month : constant Integer := Digits_Value (S (F + 5 .. F + 6));
+         Day   : constant Integer := Digits_Value (S (F + 8 .. F + 9));
       begin
-         Pos_P := Ada.Strings.Fixed.Index (TS, "+");
-         if Pos_P > 0 then
-            T_Str := To_Unbounded_String
-              (TS (TS'First .. Pos_P - 1));
-         end if;
-
-         declare
-            TS2 : constant String := To_String (T_Str);
-         begin
-            Pos_Z := Ada.Strings.Fixed.Index (TS2, "Z");
-            if Pos_Z > 0 then
-               T_Str := To_Unbounded_String
-                 (TS2 (TS2'First .. Pos_Z - 1));
-            end if;
-         end;
+         return Month in 1 .. 12
+           and then Day in 1 .. Days_In_Month (Year, Month);
       end;
+   end Is_Real_Date;
 
-      --  Parse HH:MM
-      declare
-         TS    : constant String := To_String (T_Str);
-         Colon : Natural;
-      begin
-         Colon := Ada.Strings.Fixed.Index (TS, ":");
-         if Colon = 0 then
-            return R;
-         end if;
+   --  Z or +HH:MM / -HH:MM (validated, never applied).
+   function Is_Zone_Suffix (S : String) return Boolean is
+      F : constant Integer := S'First;
+   begin
+      return S = "Z"
+        or else (S'Length = 6
+                 and then (S (F) = '+' or else S (F) = '-')
+                 and then All_Digits (S (F + 1 .. F + 2))
+                 and then S (F + 3) = ':'
+                 and then All_Digits (S (F + 4 .. F + 5)));
+   end Is_Zone_Suffix;
 
-         --  Parse hour
-         declare
-            H_Str : constant String :=
-              TS (TS'First .. Colon - 1);
-            H_Val : Integer := 0;
-         begin
-            for I in H_Str'Range loop
-               if not Is_Digit (H_Str (I)) then
-                  return R;
-               end if;
-               H_Val := H_Val * 10
-                 + Character'Pos (H_Str (I))
-                 - Character'Pos ('0');
-            end loop;
-            R.Hour := H_Val;
-         end;
-
-         --  Parse minute (strip seconds/fractional)
-         declare
-            Rest  : constant String :=
-              TS (Colon + 1 .. TS'Last);
-            M_Str : Unbounded_String;
-            Dot   : Natural;
-         begin
-            --  Take only first 2 chars or until dot/colon
-            Dot := Ada.Strings.Fixed.Index (Rest, ".");
-            if Dot > 0 then
-               M_Str := To_Unbounded_String
-                 (Rest (Rest'First .. Dot - 1));
-            else
-               --  Check for second colon (seconds part)
-               declare
-                  C2 : constant Natural :=
-                    Ada.Strings.Fixed.Index (Rest, ":");
-               begin
-                  if C2 > 0 then
-                     M_Str := To_Unbounded_String
-                       (Rest (Rest'First .. C2 - 1));
-                  else
-                     M_Str := To_Unbounded_String (Rest);
-                  end if;
-               end;
-            end if;
-
-            declare
-               MS    : constant String := To_String (M_Str);
-               M_Val : Integer := 0;
-            begin
-               for I in MS'Range loop
-                  if not Is_Digit (MS (I)) then
-                     return R;
-                  end if;
-                  M_Val := M_Val * 10
-                    + Character'Pos (MS (I))
-                    - Character'Pos ('0');
-               end loop;
-               R.Minute := M_Val;
-            end;
-         end;
-      end;
-
-      if R.Hour < 0 or else R.Hour > 23
-        or else R.Minute < 0 or else R.Minute > 59
+   --  H:MM or HH:MM, then optional :SS with optional .fraction, then
+   --  an optional zone suffix.
+   function Parse_Clock (S : String) return Time_Parse_Result is
+      R      : Time_Parse_Result;
+      Pos    : Integer := S'First;
+      Second : Integer := 0;
+   begin
+      while Pos <= S'Last and then Pos - S'First < 2
+        and then Is_Digit (S (Pos))
+      loop
+         Pos := Pos + 1;
+      end loop;
+      if Pos = S'First or else S'Last < Pos + 2 or else S (Pos) /= ':'
+        or else not All_Digits (S (Pos + 1 .. Pos + 2))
       then
          return R;
       end if;
+      R.Hour := Digits_Value (S (S'First .. Pos - 1));
+      R.Minute := Digits_Value (S (Pos + 1 .. Pos + 2));
+      Pos := Pos + 3;
 
-      R.OK := True;
+      if Pos + 2 <= S'Last and then S (Pos) = ':'
+        and then All_Digits (S (Pos + 1 .. Pos + 2))
+      then
+         Second := Digits_Value (S (Pos + 1 .. Pos + 2));
+         Pos := Pos + 3;
+         if Pos + 1 <= S'Last and then S (Pos) = '.'
+           and then Is_Digit (S (Pos + 1))
+         then
+            Pos := Pos + 1;
+            while Pos <= S'Last and then Is_Digit (S (Pos)) loop
+               Pos := Pos + 1;
+            end loop;
+         end if;
+      end if;
+
+      if Pos <= S'Last and then not Is_Zone_Suffix (S (Pos .. S'Last)) then
+         return R;
+      end if;
+
+      R.OK := R.Hour <= 23 and then R.Minute <= 59 and then Second <= 59;
       return R;
+   end Parse_Clock;
+
+   --  A clock time alone, or after the T of an ISO datetime whose date
+   --  part is a real calendar day.
+   function Parse_Time (S : String) return Time_Parse_Result is
+      Pos_T : constant Natural := Ada.Strings.Fixed.Index (S, "T");
+      R     : Time_Parse_Result;
+   begin
+      if Pos_T = 0 then
+         return Parse_Clock (S);
+      end if;
+      if not Is_Real_Date (S (S'First .. Pos_T - 1)) then
+         return R;
+      end if;
+      return Parse_Clock (S (Pos_T + 1 .. S'Last));
    end Parse_Time;
 
    function Round_To_5 (M : Integer) return Integer is

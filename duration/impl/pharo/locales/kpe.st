@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/kpe.json "
 
-"Locale: kpe"
+"Locale: kpe"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 kpe

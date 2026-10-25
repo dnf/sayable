@@ -3,6 +3,9 @@ import { en, resolveUnit } from './locale.js';
 
 export const VERSION = '0.5.0';
 
+/** 500 years, the same ceiling as sayable-age. */
+const MAX_DURATION_MONTHS = 6000;
+
 type UnitKey = 'second' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year';
 
 function isLeapYear(year: number): boolean {
@@ -27,29 +30,23 @@ function daysSinceEpoch(year: number, month: number, day: number): number {
   return days;
 }
 
-/** Parse ISO datetime string to epoch-ish seconds for diffing. */
+/** YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored). */
+const TIMESTAMP_PATTERN =
+  /^(\d{4})-(\d{2})-(\d{2})T(\d{1,2}):(\d{2})(?::(\d{2})(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})?$/;
+
+/** Parse an ISO datetime to epoch-ish seconds for diffing; null if malformed. */
 function parseIsoToSeconds(iso: string): number | null {
-  if (!iso) return null;
-  try {
-    const [datePart, timePart] = iso.split('T');
-    if (!datePart || !timePart) return null;
-    const dp = datePart.split('-').map(Number);
-    const year = dp[0] ?? 0;
-    const month = dp[1] ?? 0;
-    const day = dp[2] ?? 0;
-    let timeStr = timePart;
-    if (timeStr.includes('+')) timeStr = timeStr.split('+')[0] ?? '';
-    if (timeStr.includes('Z')) timeStr = timeStr.split('Z')[0] ?? '';
-    const tp = timeStr.split(':').map(Number);
-    const hour = tp[0] ?? 0;
-    const minute = tp[1] ?? 0;
-    const rawSec = tp[2] ?? 0;
-    const second = Math.floor(rawSec);
-    const days = daysSinceEpoch(year, month, day);
-    return days * 86400 + hour * 3600 + minute * 60 + second;
-  } catch {
-    return null;
-  }
+  const match = TIMESTAMP_PATTERN.exec(iso);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const hour = Number(match[4]);
+  const minute = Number(match[5]);
+  const second = match[6] === undefined ? 0 : Number(match[6]);
+  if (month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month)) return null;
+  if (hour > 23 || minute > 59 || second > 59) return null;
+  return daysSinceEpoch(year, month, day) * 86400 + hour * 3600 + minute * 60 + second;
 }
 
 /** Resolved unit set for a given compactness level. */
@@ -123,7 +120,7 @@ export class SayableDuration {
     return this.formatDurationSeconds(totalSeconds);
   }
 
-  private formatDurationSeconds(total: number): string {
+  private formatDurationSeconds(total: number): string | null {
     const loc = this.locale;
 
     // 0 seconds
@@ -197,6 +194,7 @@ export class SayableDuration {
 
     // Approximate months (30.44 days average)
     let totalMonths = Math.round(totalDays / 30.44);
+    if (totalMonths > MAX_DURATION_MONTHS) return null;
 
     // 1-11 months
     if (totalMonths < 12) {
@@ -224,7 +222,7 @@ export class SayableDuration {
     if (diff < 0) return null;
     if (diff === 0) return this.justNow;
     const dur = this.formatDurationSeconds(diff);
-    return this.ago.replace('{0}', dur);
+    return dur === null ? null : this.ago.replace('{0}', dur);
   }
 
   /** Format time until a future event as 'in X'. */
@@ -237,7 +235,7 @@ export class SayableDuration {
     if (diff < 0) return null;
     if (diff === 0) return this.justNow;
     const dur = this.formatDurationSeconds(diff);
-    return this.inFuture.replace('{0}', dur);
+    return dur === null ? null : this.inFuture.replace('{0}', dur);
   }
 }
 

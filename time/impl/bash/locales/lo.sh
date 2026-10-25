@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/lo.json
 
-_locale_lo() {
+_sayabletime_locale_lo() {
     _clock_hours=('ສິບສອງ' 'ໜຶ່ງ' 'ສອງ' 'ສາມ' 'ສີ່' 'ຫ້າ' 'ຫົກ' 'ເຈັດ' 'ແປດ' 'ເກົ້າ' 'ສິບ' 'ສິບເອັດ')
     _clock_midnight='ທ່ຽງຄືນ'
     _clock_noon='ທ່ຽງ'

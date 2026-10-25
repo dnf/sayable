@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/fil.json
 
-_plural_fil() {
+_sayableduration_plural_fil() {
     echo "other"
 }
 
-_locale_fil() {
+_sayableduration_locale_fil() {
     _unit_second='{n} segundo'
     _unit_minute='{n} minuto'
     _unit_hour='{n} oras'
@@ -50,5 +50,5 @@ _locale_fil() {
     _compact_delimiter=''
     _compact_ago='{0} na ang nakalipas'
     _compact_in_future='sa loob ng {0}'
-    _plural_func=_plural_fil
+    _plural_func=_sayableduration_plural_fil
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/sv.json
 
-_locale_sv() {
+_sayabledate_locale_sv() {
     _months=('januari' 'februari' 'mars' 'april' 'maj' 'juni' 'juli' 'augusti' 'september' 'oktober' 'november' 'december')
     _weekdays=('söndag' 'måndag' 'tisdag' 'onsdag' 'torsdag' 'fredag' 'lördag')
     _day_format='{n}'

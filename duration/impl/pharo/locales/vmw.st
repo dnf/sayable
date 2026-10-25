@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/vmw.json "
 
-"Locale: vmw"
+"Locale: vmw"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 vmw

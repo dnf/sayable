@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/br.json
 
-_locale_br() {
+_sayabledate_locale_br() {
     _months=('Genver' 'C'\''hwevrer' 'Meurzh' 'Ebrel' 'Mae' 'Mezheven' 'Gouere' 'Eost' 'Gwengolo' 'Here' 'Du' 'Kerzu')
     _weekdays=('Sul' 'Lun' 'Meurzh' 'Merc'\''her' 'Yaou' 'Gwener' 'Sadorn')
     _day_format='{n}'

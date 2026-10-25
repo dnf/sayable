@@ -1,6 +1,9 @@
 /// Core formatting logic for sayable-age.
 
+import gleam/bit_array
 import gleam/int
+import gleam/list
+import gleam/result
 import gleam/string
 import sayableage/types.{
   type AgeLocale, type Compactness, type CompactnessOverride, type Gender,
@@ -279,29 +282,34 @@ fn try_parse(
   }
 }
 
+/// Parse exactly YYYY-MM-DD naming a real calendar day.
 fn parse_date(s: String) -> Result(#(Int, Int, Int), Nil) {
-  case string.length(s) >= 10 {
-    False -> Error(Nil)
-    True -> {
-      let year_str = string.slice(s, 0, 4)
-      let sep1 = string.slice(s, 4, 1)
-      let month_str = string.slice(s, 5, 2)
-      let sep2 = string.slice(s, 7, 1)
-      let day_str = string.slice(s, 8, 2)
-      case sep1 == "-" && sep2 == "-" {
+  case bit_array.from_string(s) {
+    <<y1, y2, y3, y4, 0x2D, m1, m2, 0x2D, d1, d2>> -> {
+      use y <- result.try(digits_value([y1, y2, y3, y4]))
+      use m <- result.try(digits_value([m1, m2]))
+      use d <- result.try(digits_value([d1, d2]))
+      case is_real_date(y, m, d) {
+        True -> Ok(#(y, m, d))
         False -> Error(Nil)
-        True ->
-          case int.parse(year_str), int.parse(month_str), int.parse(day_str) {
-            Ok(y), Ok(m), Ok(d) ->
-              case y == 0 && m == 0 && d == 0 {
-                True -> Error(Nil)
-                False -> Ok(#(y, m, d))
-              }
-            _, _, _ -> Error(Nil)
-          }
       }
     }
+    _ -> Error(Nil)
   }
+}
+
+/// The value of a run of ASCII digit bytes, or an error if any byte is not one.
+fn digits_value(bytes: List(Int)) -> Result(Int, Nil) {
+  list.try_fold(bytes, 0, fn(acc, byte) {
+    case byte >= 0x30 && byte <= 0x39 {
+      True -> Ok(acc * 10 + byte - 0x30)
+      False -> Error(Nil)
+    }
+  })
+}
+
+fn is_real_date(y: Int, m: Int, d: Int) -> Bool {
+  m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m)
 }
 
 fn is_leap_year(y: Int) -> Bool {

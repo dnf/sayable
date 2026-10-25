@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ay.json
 
-_plural_ay() {
+_sayableduration_plural_ay() {
     echo "other"
 }
 
-_locale_ay() {
+_sayableduration_locale_ay() {
     _unit_second='sikundu {n}'
     _unit_minute='minutu {n}'
     _unit_hour='ura {n}'
@@ -45,5 +45,5 @@ _locale_ay() {
     _compact_delimiter=''
     _compact_ago='{0} nayraqata'
     _compact_in_future='{0} jutirïn'
-    _plural_func=_plural_ay
+    _plural_func=_sayableduration_plural_ay
 }

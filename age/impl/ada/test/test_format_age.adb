@@ -1339,6 +1339,108 @@ procedure Test_Format_Age is
       Assert_True ("get(EN) null", Loc = null);
    end Test_Locale_Lookup;
 
+   ---------------------------------------------------------------------------
+   --  Weeks and days across month ends
+   ---------------------------------------------------------------------------
+   procedure Test_Weeks_Days_Across_Month_Ends is
+      Loc : constant Locale_Access := Sayableage_Locales.Get_Locale ("en");
+   begin
+      --  31.1
+      Assert_Eq ("88 days across February",
+         Sayableage.Format_Age (Loc.all, Normal, "2016-12-31", "2017-03-29"),
+         "12 weeks, 4 days");
+
+      --  31.2
+      Assert_Eq ("90 days into a leap year",
+         Sayableage.Format_Age (Loc.all, Normal, "1991-11-27", "1992-02-25"),
+         "12 weeks, 6 days");
+
+      --  31.3
+      Assert_Eq ("33 days across a year end",
+         Sayableage.Format_Age (Loc.all, Normal, "2020-11-30", "2021-01-02"),
+         "4 weeks, 5 days");
+
+      --  31.4
+      Assert_Eq ("compact 88 days",
+         Sayableage.Format_Age (Loc.all, Compact, "2016-12-31", "2017-03-29"),
+         "12w4d");
+   end Test_Weeks_Days_Across_Month_Ends;
+
+   ---------------------------------------------------------------------------
+   --  Half years take their plural form from whole years
+   ---------------------------------------------------------------------------
+   procedure Test_Half_Year_Plural is
+      Pl  : constant Locale_Access := Sayableage_Locales.Get_Locale ("pl");
+      Shi : constant Locale_Access := Sayableage_Locales.Get_Locale ("shi");
+      Pol : constant String := "p" & Character'Val (16#C3#)
+        & Character'Val (16#B3#) & Character'Val (16#C5#)
+        & Character'Val (16#82#);
+   begin
+      --  32.1
+      Assert_Eq ("pl 3.5 years few",
+         Sayableage.Format_Age (Pl.all, Normal, "2021-06-15", "2025-01-15"),
+         "3 i " & Pol & " lata");
+
+      --  32.2
+      Assert_Eq ("pl short 5.5 years many",
+         Sayableage.Format_Age (Pl.all, Short, "2020-06-15", "2025-12-15"),
+         "5 i " & Pol & " lat");
+
+      --  32.3
+      Assert_Eq ("shi 6 years few",
+         Sayableage.Format_Age (Shi.all, Normal, "2005-06-08", "2012-06-07"),
+         "6 iseggasen d uzgen");
+   end Test_Half_Year_Plural;
+
+   ---------------------------------------------------------------------------
+   --  Input validation
+   ---------------------------------------------------------------------------
+   procedure Test_Input_Validation is
+      Loc : constant Locale_Access := Sayableage_Locales.Get_Locale ("en");
+   begin
+      --  33.1
+      Assert_Null ("February 30",
+         Sayableage.Format_Age (Loc.all, Normal, "2025-02-30", "2032-06-25"));
+
+      --  33.2
+      Assert_Null ("month 13",
+         Sayableage.Format_Age (Loc.all, Normal, "2025-13-01", "2027-01-31"));
+
+      --  33.3
+      Assert_Null ("February 29 non-leap",
+         Sayableage.Format_Age (Loc.all, Normal, "2023-02-29", "2025-03-01"));
+
+      --  33.4
+      Assert_Null ("day 00",
+         Sayableage.Format_Age (Loc.all, Normal, "2025-06-00", "2027-02-25"));
+
+      --  33.5
+      Assert_Null ("unpadded",
+         Sayableage.Format_Age (Loc.all, Normal, "2025-6-1", "2027-02-25"));
+
+      --  33.6
+      Assert_Null ("surrounding whitespace",
+         Sayableage.Format_Age (Loc.all, Normal, " 2025-06-01", "2027-02-25"));
+
+      --  33.7
+      Assert_Null ("datetime is not a date",
+         Sayableage.Format_Age
+           (Loc.all, Normal, "2025-06-15T10:00:00", "2027-02-25"));
+
+      --  33.8
+      Assert_Null ("invalid asOf",
+         Sayableage.Format_Age (Loc.all, Normal, "2020-01-01", "2025-04-31"));
+
+      --  33.9
+      Assert_Null ("formatStage validates",
+         Sayableage.Format_Stage (Loc.all, "2025-02-30", "2027-09-05"));
+
+      --  33.10
+      Assert_Eq ("February 29 leap year",
+         Sayableage.Format_Age (Loc.all, Normal, "2024-02-29", "2026-03-01"),
+         "2 years");
+   end Test_Input_Validation;
+
 begin
    Test_Null_Edge_Cases;
    Test_Days_Tier;
@@ -1373,6 +1475,9 @@ begin
    Test_Locale_Indonesian;
    Test_Locale_Amharic;
    Test_Locale_Lookup;
+   Test_Weeks_Days_Across_Month_Ends;
+   Test_Half_Year_Plural;
+   Test_Input_Validation;
 
    New_Line;
    Put_Line ("=== Results ===");

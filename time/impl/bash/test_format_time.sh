@@ -139,6 +139,45 @@ assert_eq "$(sayabletime_format_time "fi" "14:15" "short")" "14.15" "8.1"
 assert_eq "$(sayabletime_format_time "fi" "00:00" "short")" "0.00" "8.2"
 
 # ================================================================
+# Sections 9-10: minutes in short/compact, input validation
+# ================================================================
+echo "Sections 9-10: minutes in short/compact, input validation"
+
+# 9.1 — digital modes keep the exact minute
+assert_eq "$(sayabletime_format_time "en" "18:01" "short")" "6:01 PM" "9.1"
+
+# 9.2 — digital modes keep the exact minute
+assert_eq "$(sayabletime_format_time "en" "19:05" "compact")" "7:05p" "9.2"
+
+# 10.1 — one-digit hour
+assert_eq "$(sayabletime_format_time "en" "9:30" "normal")" "half past nine" "10.1"
+
+# 10.2 — two-digit hour
+assert_eq "$(sayabletime_format_time "en" "09:30" "normal")" "half past nine" "10.2"
+
+# 10.3 — leading whitespace
+assert_eq "$(sayabletime_format_time "en" " 9:30" "normal")" "" "10.3"
+
+# 10.4 — trailing whitespace
+assert_eq "$(sayabletime_format_time "en" "9:30 " "normal")" "" "10.4"
+
+# 10.5 — minutes need two digits
+assert_eq "$(sayabletime_format_time "en" "9:5" "normal")" "" "10.5"
+
+# 10.6 — hour out of range
+assert_eq "$(sayabletime_format_time "en" "24:00" "normal")" "" "10.6"
+
+# 10.7 — seconds are allowed and ignored
+assert_eq "$(sayabletime_format_time "en" "14:15:30" "normal")" "a quarter past two" "10.7"
+
+# 10.8 — ISO datetime with zone suffix (ignored)
+assert_eq "$(sayabletime_format_time "en" "2025-01-15T14:15:00Z" "normal")" "a quarter past two" "10.8"
+
+# 10.9 — ISO datetime with an impossible date
+assert_eq "$(sayabletime_format_time "en" "2025-02-30T14:15:00" "normal")" "" "10.9"
+
+
+# ================================================================
 # Summary
 # ================================================================
 echo ""

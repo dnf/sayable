@@ -72,3 +72,29 @@
 (check-equal? (format-time (get-locale "fi") "14:15" 'short) "14.15")
 ;; 8.2
 (check-equal? (format-time (get-locale "fi") "00:00" 'short) "0.00")
+
+;; Section 9: Minutes in short and compact modes
+;; 9.1
+(check-equal? (format-time (get-locale "en") "18:01" 'short) "6:01 PM")
+;; 9.2
+(check-equal? (format-time (get-locale "en") "19:05" 'compact) "7:05p")
+
+;; Section 10: Input validation
+;; 10.1
+(check-equal? (format-time (get-locale "en") "9:30") "half past nine")
+;; 10.2
+(check-equal? (format-time (get-locale "en") "09:30") "half past nine")
+;; 10.3
+(check-false (format-time (get-locale "en") " 9:30"))
+;; 10.4
+(check-false (format-time (get-locale "en") "9:30 "))
+;; 10.5
+(check-false (format-time (get-locale "en") "9:5"))
+;; 10.6
+(check-false (format-time (get-locale "en") "24:00"))
+;; 10.7
+(check-equal? (format-time (get-locale "en") "14:15:30") "a quarter past two")
+;; 10.8
+(check-equal? (format-time (get-locale "en") "2025-01-15T14:15:00Z") "a quarter past two")
+;; 10.9
+(check-false (format-time (get-locale "en") "2025-02-30T14:15:00"))

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ceb.json
 
-_locale_ceb() {
+_sayabletime_locale_ceb() {
     _clock_hours=('dose' 'uno' 'dos' 'tres' 'kwatro' 'singko' 'sais' 'siyete' 'otso' 'nuwebe' 'diyes' 'onse')
     _clock_midnight='tungang gabii'
     _clock_noon='udtong tutok'

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/hmn.json
 
-_plural_hmn() {
+_sayableage_plural_hmn() {
     echo "other"
 }
 
-_locale_hmn() {
+_sayableage_locale_hmn() {
     _unit_day='{n} hnub'
     _unit_week='{n} lub lim tiam'
     _unit_month='{n} lub hlis'
@@ -36,5 +36,5 @@ _locale_hmn() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_hmn
+    _plural_func=_sayableage_plural_hmn
 }

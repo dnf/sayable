@@ -2,15 +2,23 @@
 
 from sayable_date import SayableDate, format_date, format_relative
 from sayable_date.locales.ar import AR
+from sayable_date.locales.cs import CS
 from sayable_date.locales.de import DE
 from sayable_date.locales.en import EN
 from sayable_date.locales.es import ES
+from sayable_date.locales.fi import FI
 from sayable_date.locales.fr import FR
 from sayable_date.locales.ja import JA
+from sayable_date.locales.kek import KEK
+from sayable_date.locales.kw import KW
+from sayable_date.locales.mam import MAM
 from sayable_date.locales.ru import RU
-
+from sayable_date.locales.sk import SK
+from sayable_date.locales.tg import TG
+from sayable_date.locales.uk import UK
 
 # ── Section 1: Null / edge cases ────────────────────────────────────
+
 
 # 1.1
 def test_format_date_null():
@@ -38,6 +46,7 @@ def test_format_relative_null_date():
 
 
 # ── Section 2: format_date — normal compactness (English) ───────────
+
 
 class TestFormatDateNormalEnglish:
     sd = SayableDate(EN)
@@ -73,6 +82,7 @@ class TestFormatDateNormalEnglish:
 
 # ── Section 3: format_date — short compactness (English) ────────────
 
+
 class TestFormatDateShortEnglish:
     sd = SayableDate(EN, "short")
 
@@ -91,6 +101,7 @@ class TestFormatDateShortEnglish:
 
 # ── Section 4: format_date — compact (English) ──────────────────────
 
+
 class TestFormatDateCompactEnglish:
     sd = SayableDate(EN, "compact")
 
@@ -104,6 +115,7 @@ class TestFormatDateCompactEnglish:
 
 
 # ── Section 5: format_relative — proximity tiers (English) ──────────
+
 
 class TestFormatRelativeEnglish:
     sd = SayableDate(EN)
@@ -167,6 +179,7 @@ class TestFormatRelativeEnglish:
 
 # ── Section 6: format_relative — compact skips weekday tiers ────────
 
+
 class TestFormatRelativeCompactEnglish:
     sd = SayableDate(EN, "compact")
 
@@ -188,6 +201,7 @@ class TestFormatRelativeCompactEnglish:
 
 
 # ── Section 7: Locale — German ──────────────────────────────────────
+
 
 class TestLocaleGerman:
     sd = SayableDate(DE)
@@ -211,6 +225,7 @@ class TestLocaleGerman:
 
 # ── Section 8: Locale — French ──────────────────────────────────────
 
+
 class TestLocaleFrench:
     sd = SayableDate(FR)
 
@@ -228,6 +243,7 @@ class TestLocaleFrench:
 
 
 # ── Section 9: Locale — Japanese ────────────────────────────────────
+
 
 class TestLocaleJapanese:
     sd = SayableDate(JA)
@@ -247,6 +263,7 @@ class TestLocaleJapanese:
 
 # ── Section 10: Locale — Russian (genitive months) ──────────────────
 
+
 class TestLocaleRussian:
     sd = SayableDate(RU)
 
@@ -260,6 +277,7 @@ class TestLocaleRussian:
 
 
 # ── Section 11: Locale — Arabic ─────────────────────────────────────
+
 
 class TestLocaleArabic:
     sd = SayableDate(AR)
@@ -275,6 +293,7 @@ class TestLocaleArabic:
 
 # ── Section 12: Locale — Spanish ────────────────────────────────────
 
+
 class TestLocaleSpanish:
     sd = SayableDate(ES)
 
@@ -285,3 +304,99 @@ class TestLocaleSpanish:
     # 12.2
     def test_day_after_tomorrow(self):
         assert self.sd.format_relative("2025-03-17", as_of="2025-03-15") == "pasado mañana"
+
+
+# ── Section 13: format_date_with_year ───────────────────────────────
+
+
+class TestFormatDateWithYear:
+    # 13.1
+    def test_normal(self):
+        assert SayableDate(EN).format_date_with_year("2018-02-04") == "February 4th, 2018"
+
+    # 13.2
+    def test_short(self):
+        assert SayableDate(EN, "short").format_date_with_year("2025-03-15") == "Mar 15, 2025"
+
+    # 13.3
+    def test_compact(self):
+        assert SayableDate(EN, "compact").format_date_with_year("1997-01-21") == "1/21/97"
+
+    # 13.4
+    def test_compact_two_digit_year_keeps_leading_zero(self):
+        assert SayableDate(TG, "compact").format_date_with_year("2007-05-20") == "20/5/07"
+
+    # 13.5
+    def test_short_finnish(self):
+        assert SayableDate(FI, "short").format_date_with_year("1996-06-21") == "21. kesäkuuta 1996"
+
+
+# ── Section 14: Short month names (locales that keep the full genitive) ─
+
+
+class TestShortMonthNames:
+    # 14.1
+    def test_slovak(self):
+        assert SayableDate(SK, "short").format_date("2031-02-15") == "15. februára"
+
+    # 14.2
+    def test_czech(self):
+        assert SayableDate(CS, "short").format_date("2025-12-10") == "10. prosince"
+
+    # 14.3
+    def test_ukrainian(self):
+        assert SayableDate(UK, "short").format_date("2025-11-05") == "5 листопада"
+
+    # 14.4
+    def test_finnish_relative(self):
+        assert SayableDate(FI, "short").format_relative("1998-08-08", as_of="1998-08-15") == "8. elokuuta"
+
+
+# ── Section 15: format_relative — short phrases ─────────────────────
+
+
+class TestFormatRelativeShortPhrases:
+    # 15.1
+    def test_cornish_day_after_tomorrow(self):
+        assert SayableDate(KW, "short").format_relative("2035-12-04", as_of="2035-12-02") == "an Mth ma"
+
+    # 15.2
+    def test_mam_day_before_yesterday(self):
+        assert SayableDate(MAM, "short").format_relative("2000-01-23", as_of="2000-01-25") == "Dom nchi'j"
+
+    # 15.3
+    def test_kekchi_day_after_tomorrow(self):
+        assert SayableDate(KEK, "short").format_relative("2014-10-24", as_of="2014-10-22") == "a'in Vie"
+
+
+# ── Section 16: Input validation ────────────────────────────────────
+
+
+class TestInputValidation:
+    # 16.1
+    def test_february_30(self):
+        assert format_date("2025-02-30") is None
+
+    # 16.2
+    def test_month_13(self):
+        assert format_date("2025-13-01") is None
+
+    # 16.3
+    def test_unpadded_month_and_day(self):
+        assert format_date("2025-6-1") is None
+
+    # 16.4
+    def test_surrounding_whitespace(self):
+        assert format_date(" 2025-06-01") is None
+
+    # 16.5
+    def test_iso_datetime_uses_date_part(self):
+        assert format_date("2025-06-01T10:00:00") == "June 1st"
+
+    # 16.6
+    def test_with_year_february_29_non_leap_year(self):
+        assert SayableDate(EN).format_date_with_year("2023-02-29") is None
+
+    # 16.7
+    def test_relative_invalid_as_of(self):
+        assert format_relative("2025-03-16", as_of="2025-04-31") is None

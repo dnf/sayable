@@ -16,6 +16,8 @@ program test_format_time
   call test_locale_french()
   call test_locale_japanese()
   call test_finnish_dot_separator()
+  call test_section_9()
+  call test_section_10()
 
   write(*, '(A)') ''
   write(*, '(A)') '=== Results ==='
@@ -231,5 +233,84 @@ contains
     res = st_format_time(fi, ST_SHORT, '00:00')
     call assert_eq('8.2 fi midnight dot', res, '0.00')
   end subroutine test_finnish_dot_separator
+
+  ! ================================================================
+  ! Minutes in short and compact modes
+  ! ================================================================
+  subroutine test_section_9()
+    type(st_locale), pointer :: loc
+    character(len=ST_MAX_STR_LEN) :: res
+
+    ! 9.1
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_SHORT, '18:01')
+    call assert_eq('9.1 format_time en short', res, &
+      '6:01 PM')
+
+    ! 9.2
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_COMPACT, '19:05')
+    call assert_eq('9.2 format_time en compact', res, &
+      '7:05p')
+
+  end subroutine test_section_9
+
+  ! ================================================================
+  ! Input validation
+  ! ================================================================
+  subroutine test_section_10()
+    type(st_locale), pointer :: loc
+    character(len=ST_MAX_STR_LEN) :: res
+
+    ! 10.1
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '9:30')
+    call assert_eq('10.1 format_time en normal', res, &
+      'half past nine')
+
+    ! 10.2
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '09:30')
+    call assert_eq('10.2 format_time en normal', res, &
+      'half past nine')
+
+    ! 10.3
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, ' 9:30')
+    call assert_null('10.3 format_time en normal', res)
+
+    ! 10.4
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '9:30 ')
+    call assert_null('10.4 format_time en normal', res)
+
+    ! 10.5
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '9:5')
+    call assert_null('10.5 format_time en normal', res)
+
+    ! 10.6
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '24:00')
+    call assert_null('10.6 format_time en normal', res)
+
+    ! 10.7
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '14:15:30')
+    call assert_eq('10.7 format_time en normal', res, &
+      'a quarter past two')
+
+    ! 10.8
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '2025-01-15T14:15:00Z')
+    call assert_eq('10.8 format_time en normal', res, &
+      'a quarter past two')
+
+    ! 10.9
+    loc => st_get_locale('en')
+    res = st_format_time(loc, ST_NORMAL, '2025-02-30T14:15:00')
+    call assert_null('10.9 format_time en normal', res)
+
+  end subroutine test_section_10
 
 end program test_format_time

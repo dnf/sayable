@@ -160,6 +160,45 @@ assert_eq [::sayabletime::format_time $fi_short "14:15"] "14.15" "8.1"
 assert_eq [::sayabletime::format_time $fi_short "00:00"] "0.00" "8.2"
 
 # ================================================================
+# Sections 9-10: minutes in short/compact, input validation
+# ================================================================
+puts "Sections 9-10: minutes in short/compact, input validation"
+
+# 9.1
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en] short] "18:01"] "6:01 PM" "9.1"
+
+# 9.2
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en] compact] "19:05"] "7:05p" "9.2"
+
+# 10.1
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "9:30"] "half past nine" "10.1"
+
+# 10.2
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "09:30"] "half past nine" "10.2"
+
+# 10.3
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] " 9:30"] "" "10.3"
+
+# 10.4
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "9:30 "] "" "10.4"
+
+# 10.5
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "9:5"] "" "10.5"
+
+# 10.6
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "24:00"] "" "10.6"
+
+# 10.7
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "14:15:30"] "a quarter past two" "10.7"
+
+# 10.8
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "2025-01-15T14:15:00Z"] "a quarter past two" "10.8"
+
+# 10.9
+assert_eq [::sayabletime::format_time [::sayabletime::new [::sayabletime::get_locale en]] "2025-02-30T14:15:00"] "" "10.9"
+
+
+# ================================================================
 # Summary
 # ================================================================
 puts ""

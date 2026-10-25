@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ku.json
 
-_locale_ku() {
+_sayabletime_locale_ku() {
     _clock_hours=('diwanzdeh' 'yek' 'du' 'sê' 'çar' 'pênc' 'şeş' 'heft' 'heşt' 'neh' 'deh' 'yanzdeh')
     _clock_midnight='nîvê şevê'
     _clock_noon='nîvro'

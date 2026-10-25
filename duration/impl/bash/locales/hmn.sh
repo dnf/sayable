@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/hmn.json
 
-_plural_hmn() {
+_sayableduration_plural_hmn() {
     echo "other"
 }
 
-_locale_hmn() {
+_sayableduration_locale_hmn() {
     _unit_second='{n} chib'
     _unit_minute='{n} feeb'
     _unit_hour='{n} teev'
@@ -45,5 +45,5 @@ _locale_hmn() {
     _compact_delimiter=''
     _compact_ago='{0} dhau los'
     _compact_in_future='hauv {0}'
-    _plural_func=_plural_hmn
+    _plural_func=_sayableduration_plural_hmn
 }

@@ -5,6 +5,7 @@ import sayableduration/locales/de as locale_de
 import sayableduration/locales/en as locale_en
 import sayableduration/locales/fr as locale_fr
 import sayableduration/locales/ja as locale_ja
+import sayableduration/locales/men as locale_men
 import sayableduration/types.{Compact, Normal, Short}
 
 pub fn main() {
@@ -370,4 +371,82 @@ pub fn compact_one_hour_test() {
 // 17.2
 pub fn compact_one_minute_thirty_seconds_test() {
   dur_compact(90) |> should.equal(Ok("1m30s"))
+}
+
+// 18. Short compactness -- relative time
+
+// 18.1
+pub fn mende_short_since_keeps_days_and_hours_test() {
+  sayableduration.format_since(
+    locale_men.locale(),
+    Short,
+    "2025-01-20T01:32:11",
+    "2025-01-22T15:39:16",
+  )
+  |> should.equal(Ok("lɔhɔnga 2, awa 14 taa gbɔyɔ"))
+}
+
+// 19. Range (500-year ceiling)
+
+// 19.1
+pub fn ceiling_500_years_test() {
+  dur(15_778_800_000) |> should.equal(Ok("500 years"))
+}
+
+// 19.2
+pub fn over_ceiling_test() {
+  dur(15_800_000_000) |> should.equal(Error(Nil))
+}
+
+// 19.3
+pub fn well_beyond_ceiling_test() {
+  dur(99_999_999_999) |> should.equal(Error(Nil))
+}
+
+// 19.4
+pub fn since_over_ceiling_test() {
+  since("1500-01-01T00:00:00", "2025-01-01T00:00:00")
+  |> should.equal(Error(Nil))
+}
+
+// 19.5
+pub fn until_over_ceiling_test() {
+  until("2600-01-01T00:00:00", "2025-01-01T00:00:00")
+  |> should.equal(Error(Nil))
+}
+
+// 20. Timestamp validation
+
+fn dur_between(start: String, end: String) -> Result(String, Nil) {
+  sayableduration.format_duration_timestamps(locale_en.locale(), Normal, start, end)
+}
+
+// 20.1
+pub fn timestamp_seconds_optional_test() {
+  dur_between("2025-01-15T10:00", "2025-01-15T11:30:00")
+  |> should.equal(Ok("1½ hours"))
+}
+
+// 20.2
+pub fn timestamp_minutes_required_test() {
+  dur_between("2025-01-15T10", "2025-01-15T11:30:00")
+  |> should.equal(Error(Nil))
+}
+
+// 20.3
+pub fn timestamp_unpadded_date_test() {
+  dur_between("2025-1-5T10:00:00", "2025-01-15T11:30:00")
+  |> should.equal(Error(Nil))
+}
+
+// 20.4
+pub fn timestamp_impossible_date_test() {
+  dur_between("2025-02-30T10:00:00", "2025-03-15T11:30:00")
+  |> should.equal(Error(Nil))
+}
+
+// 20.5
+pub fn timestamp_hour_out_of_range_test() {
+  since("2025-01-15T10:00:00", "2025-01-15T25:00:00")
+  |> should.equal(Error(Nil))
 }

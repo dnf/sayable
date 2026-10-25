@@ -4,6 +4,11 @@
 # "just now", "3 minutes, 42 seconds", "2 1/2 hours", "1 year, 3 months ago".
 # Zero runtime dependencies.
 
+MAX_DURATION_MONTHS <- 6000 # 500 years, the same ceiling as sayable-age
+
+# Doubles count seconds exactly up to 2^53, far past the 500-year ceiling.
+MAX_EXACT_SECONDS <- 2^53
+
 is_leap_year_dur <- function(y) {
   (y %% 4 == 0 && y %% 100 != 0) || (y %% 400 == 0)
 }
@@ -33,45 +38,24 @@ days_since_epoch <- function(year, month, day) {
   days + day - 1
 }
 
+# YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+TIMESTAMP_PATTERN <- paste0(
+  "^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})",
+  "(?::([0-9]{2})(?:\\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\\z"
+)
+
 parse_iso_to_seconds <- function(iso) {
-  if (is.null(iso) || !is.character(iso) || nchar(iso) == 0) return(NULL)
-
-  t_idx <- regexpr("T", iso, fixed = TRUE)
-  if (t_idx < 0) return(NULL)
-
-  date_part <- substring(iso, 1, t_idx - 1)
-  time_part <- substring(iso, t_idx + 1)
-
-  # Parse date: YYYY-MM-DD
-  dp <- strsplit(date_part, "-", fixed = TRUE)[[1]]
-  if (length(dp) < 3) return(NULL)
-  year <- suppressWarnings(as.integer(dp[1]))
-  month <- suppressWarnings(as.integer(dp[2]))
-  day <- suppressWarnings(as.integer(dp[3]))
-  if (is.na(year) || is.na(month) || is.na(day)) return(NULL)
-
-  # Strip timezone info
-  plus_idx <- regexpr("+", time_part, fixed = TRUE)
-  if (plus_idx > 0) time_part <- substring(time_part, 1, plus_idx - 1)
-  z_idx <- regexpr("Z", time_part, fixed = TRUE)
-  if (z_idx > 0) time_part <- substring(time_part, 1, z_idx - 1)
-
-  # Parse time: HH:MM:SS
-  tp <- strsplit(time_part, ":", fixed = TRUE)[[1]]
-  hour <- suppressWarnings(as.integer(tp[1]))
-  if (is.na(hour)) return(NULL)
-  minute <- 0L
-  if (length(tp) > 1) {
-    minute <- suppressWarnings(as.integer(tp[2]))
-    if (is.na(minute)) return(NULL)
-  }
-  second <- 0L
-  if (length(tp) > 2) {
-    # Strip fractional seconds
-    sec_str <- sub("\\..*$", "", tp[3])
-    second <- suppressWarnings(as.integer(sec_str))
-    if (is.na(second)) return(NULL)
-  }
+  if (!is.character(iso) || length(iso) != 1 || is.na(iso)) return(NULL)
+  m <- regmatches(iso, regexec(TIMESTAMP_PATTERN, iso, perl = TRUE))[[1]]
+  if (length(m) == 0) return(NULL)
+  year <- as.integer(m[2])
+  month <- as.integer(m[3])
+  day <- as.integer(m[4])
+  hour <- as.integer(m[5])
+  minute <- as.integer(m[6])
+  second <- if (m[7] == "") 0L else as.integer(m[7])
+  if (month < 1 || month > 12 || day < 1 || day > days_in_month_dur(year, month)) return(NULL)
+  if (hour > 23 || minute > 59 || second > 59) return(NULL)
 
   days <- days_since_epoch(year, month, day)
   days * 86400 + hour * 3600 + minute * 60 + second
@@ -236,6 +220,7 @@ sayable_duration_new <- function(locale, compactness = "normal") {
 
     # Approximate months (30.44 days average)
     total_months <- round(total_days / 30.44)
+    if (total_months > MAX_DURATION_MONTHS) return(NULL)
 
     # 1-11 months
     if (total_months < 12) {
@@ -257,6 +242,7 @@ sayable_duration_new <- function(locale, compactness = "normal") {
   format_duration_fn <- function(seconds) {
     if (is.null(seconds)) return(NULL)
     if (seconds < 0) return(NULL)
+    if (seconds > MAX_EXACT_SECONDS) return(NULL)
     format_duration_internal(seconds)
   }
 
@@ -280,6 +266,7 @@ sayable_duration_new <- function(locale, compactness = "normal") {
     if (diff < 0) return(NULL)
     if (diff == 0) return(just_now)
     dur <- format_duration_internal(diff)
+    if (is.null(dur)) return(NULL)
     gsub("{0}", dur, ago, fixed = TRUE)
   }
 
@@ -293,6 +280,7 @@ sayable_duration_new <- function(locale, compactness = "normal") {
     if (diff < 0) return(NULL)
     if (diff == 0) return(just_now)
     dur <- format_duration_internal(diff)
+    if (is.null(dur)) return(NULL)
     gsub("{0}", dur, in_future, fixed = TRUE)
   }
 

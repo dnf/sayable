@@ -189,6 +189,81 @@ fn test_finnish_short_midnight() raises:
 
 
 # ================================================================
+# Digital modes keep the exact minute
+# ================================================================
+
+
+# 9.1
+fn test_9_1_short_keeps_exact_minute() raises:
+    var st = SayableTime(get_locale("en"), "short")
+    assert_equal(st.format_time("18:01"), "6:01 PM")
+
+
+# 9.2
+fn test_9_2_compact_keeps_exact_minute() raises:
+    var st = SayableTime(get_locale("en"), "compact")
+    assert_equal(st.format_time("19:05"), "7:05p")
+
+
+# ================================================================
+# Input validation
+# ================================================================
+
+
+# 10.1
+fn test_10_1_one_digit_hour() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("9:30"), "half past nine")
+
+
+# 10.2
+fn test_10_2_two_digit_hour() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("09:30"), "half past nine")
+
+
+# 10.3
+fn test_10_3_leading_whitespace_is_invalid() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time(" 9:30"), "")
+
+
+# 10.4
+fn test_10_4_trailing_whitespace_is_invalid() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("9:30 "), "")
+
+
+# 10.5
+fn test_10_5_one_digit_minute_is_invalid() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("9:5"), "")
+
+
+# 10.6
+fn test_10_6_hour_24_is_invalid() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("24:00"), "")
+
+
+# 10.7
+fn test_10_7_seconds_are_ignored() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("14:15:30"), "a quarter past two")
+
+
+# 10.8
+fn test_10_8_iso_datetime_with_zone() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("2025-01-15T14:15:00Z"), "a quarter past two")
+
+
+# 10.9
+fn test_10_9_iso_datetime_with_impossible_date() raises:
+    var st = SayableTime(get_locale("en"))
+    assert_equal(st.format_time("2025-02-30T14:15:00"), "")
+
+# ================================================================
 # Registry
 # ================================================================
 
@@ -238,4 +313,15 @@ fn main() raises:
     test_finnish_short_midnight()
     test_registry_lookup()
     test_registry_fallback()
-    print("All 26 time tests passed.")
+    test_9_1_short_keeps_exact_minute()
+    test_9_2_compact_keeps_exact_minute()
+    test_10_1_one_digit_hour()
+    test_10_2_two_digit_hour()
+    test_10_3_leading_whitespace_is_invalid()
+    test_10_4_trailing_whitespace_is_invalid()
+    test_10_5_one_digit_minute_is_invalid()
+    test_10_6_hour_24_is_invalid()
+    test_10_7_seconds_are_ignored()
+    test_10_8_iso_datetime_with_zone()
+    test_10_9_iso_datetime_with_impossible_date()
+    print("All 38 time tests passed.")

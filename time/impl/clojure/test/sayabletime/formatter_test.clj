@@ -175,3 +175,66 @@
 (deftest version-matches-config
   (testing "version matches config"
     (is (= "0.5.0" sayabletime.formatter/version))))
+
+;; ================================================================
+;; Minutes in short and compact modes
+;; ================================================================
+
+;; 9.1
+(deftest case-9-1-digital-modes-keep-the-exact-minute-en-short-18-01
+  (testing "9.1 digital modes keep the exact minute en short 18-01"
+    (is (= "6:01 PM" (st/format-time (st/get-locale "en") :short "18:01")))))
+
+;; 9.2
+(deftest case-9-2-digital-modes-keep-the-exact-minute-en-compact-19-05
+  (testing "9.2 digital modes keep the exact minute en compact 19-05"
+    (is (= "7:05p" (st/format-time (st/get-locale "en") :compact "19:05")))))
+
+;; ================================================================
+;; Input validation
+;; ================================================================
+
+;; 10.1
+(deftest case-10-1-one-digit-hour
+  (testing "10.1 one digit hour"
+    (is (= "half past nine" (st/format-time (st/get-locale "en") :normal "9:30")))))
+
+;; 10.2
+(deftest case-10-2-two-digit-hour
+  (testing "10.2 two digit hour"
+    (is (= "half past nine" (st/format-time (st/get-locale "en") :normal "09:30")))))
+
+;; 10.3
+(deftest case-10-3-leading-whitespace
+  (testing "10.3 leading whitespace"
+    (is (nil? (st/format-time (st/get-locale "en") :normal " 9:30")))))
+
+;; 10.4
+(deftest case-10-4-trailing-whitespace
+  (testing "10.4 trailing whitespace"
+    (is (nil? (st/format-time (st/get-locale "en") :normal "9:30 ")))))
+
+;; 10.5
+(deftest case-10-5-minutes-need-two-digits
+  (testing "10.5 minutes need two digits"
+    (is (nil? (st/format-time (st/get-locale "en") :normal "9:5")))))
+
+;; 10.6
+(deftest case-10-6-hour-out-of-range
+  (testing "10.6 hour out of range"
+    (is (nil? (st/format-time (st/get-locale "en") :normal "24:00")))))
+
+;; 10.7
+(deftest case-10-7-seconds-are-allowed-and-ignored
+  (testing "10.7 seconds are allowed and ignored"
+    (is (= "a quarter past two" (st/format-time (st/get-locale "en") :normal "14:15:30")))))
+
+;; 10.8
+(deftest case-10-8-iso-datetime-with-zone-suffix-ignored
+  (testing "10.8 iso datetime with zone suffix ignored"
+    (is (= "a quarter past two" (st/format-time (st/get-locale "en") :normal "2025-01-15T14:15:00Z")))))
+
+;; 10.9
+(deftest case-10-9-iso-datetime-with-an-impossible-date
+  (testing "10.9 iso datetime with an impossible date"
+    (is (nil? (st/format-time (st/get-locale "en") :normal "2025-02-30T14:15:00")))))

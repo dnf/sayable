@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/dje.json
 
-_plural_dje() {
+_sayableage_plural_dje() {
     echo "other"
 }
 
-_locale_dje() {
+_sayableage_locale_dje() {
     _unit_day='zaari {n}'
     _unit_week='hebu {n}'
     _unit_month='handu {n}'
@@ -37,5 +37,5 @@ _locale_dje() {
     _compact_unit_year='jii {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_dje
+    _plural_func=_sayableage_plural_dje
 }

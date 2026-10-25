@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/eu.json
 
-_plural_eu() {
+_sayableduration_plural_eu() {
     echo "other"
 }
 
-_locale_eu() {
+_sayableduration_locale_eu() {
     _unit_second='{n} segundo'
     _unit_minute='{n} minutu'
     _unit_hour='{n} ordu'
@@ -46,5 +46,5 @@ _locale_eu() {
     _compact_delimiter=''
     _compact_ago='duela {0}'
     _compact_in_future='{0} barru'
-    _plural_func=_plural_eu
+    _plural_func=_sayableduration_plural_eu
 }

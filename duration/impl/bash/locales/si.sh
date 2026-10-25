@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/si.json
 
-_plural_si() {
+_sayableduration_plural_si() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_si() {
+_sayableduration_locale_si() {
     _unit_second='{n} තත්පරය'
     _unit_minute='{n} මිනිත්තුව'
     _unit_hour='{n} පැය'
@@ -52,5 +52,5 @@ _locale_si() {
     _compact_delimiter=''
     _compact_ago='{0}ට පෙර'
     _compact_in_future='{0}කින්'
-    _plural_func=_plural_si
+    _plural_func=_sayableduration_plural_si
 }

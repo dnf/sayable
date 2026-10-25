@@ -1,27 +1,23 @@
 namespace SayableDurationLib
 
 open System
+open System.Globalization
+open System.Text.RegularExpressions
 open SayableDurationLib.Types
 
 module Formatter =
 
     let [<Literal>] Version = "0.5.0"
 
-    let private safeAtoi (s: string) (fromIdx: int) (toIdx: int) : int =
-        let mutable n = 0
-        let mutable ok = true
-        let mutable i = fromIdx
+    /// 500 years, the same ceiling as sayable-age.
+    let private maxDurationMonths = 6000L
 
-        while ok && i < toIdx do
-            let c = s.[i]
-
-            if c < '0' || c > '9' then
-                ok <- false
-            else
-                n <- n * 10 + (int c - int '0')
-                i <- i + 1
-
-        if ok then n else -1
+    /// YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+    let private timestamp =
+        Regex(
+            @"\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z",
+            RegexOptions.CultureInvariant
+        )
 
     let private isLeapYear (year: int) : bool =
         (year % 4 = 0 && year % 100 <> 0) || (year % 400 = 0)
@@ -48,64 +44,23 @@ module Formatter =
 
         days + day - 1
 
-    let internal parseIsoToSeconds (iso: string) : int option =
-        if String.IsNullOrEmpty(iso) then
+    let internal parseIsoToSeconds (iso: string) : int64 option =
+        let m = timestamp.Match(if isNull iso then "" else iso)
+
+        if not m.Success then
             None
         else
-            let tIdx = iso.IndexOf('T')
+            let field (i: int) = Int32.Parse(m.Groups.[i].Value, CultureInfo.InvariantCulture)
+            let year, month, day, hour, minute = field 1, field 2, field 3, field 4, field 5
+            let second = if m.Groups.[6].Success then field 6 else 0
+            let validDate = month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth year month
+            let validClock = hour <= 23 && minute <= 59 && second <= 59
 
-            if tIdx < 0 then
-                None
+            if validDate && validClock then
+                let days = int64 (daysSinceEpoch year month day)
+                Some(days * 86400L + int64 (hour * 3600 + minute * 60 + second))
             else
-                let datePart = iso.Substring(0, tIdx)
-                let mutable timePart = iso.Substring(tIdx + 1)
-
-                let dp = datePart.Split('-')
-
-                if dp.Length < 3 then
-                    None
-                else
-                    let year = safeAtoi dp.[0] 0 dp.[0].Length
-                    let month = safeAtoi dp.[1] 0 dp.[1].Length
-                    let day = safeAtoi dp.[2] 0 dp.[2].Length
-
-                    if year < 0 || month < 0 || day < 0 then
-                        None
-                    else
-                        let plusIdx = timePart.IndexOf('+')
-
-                        if plusIdx >= 0 then
-                            timePart <- timePart.Substring(0, plusIdx)
-
-                        let zIdx = timePart.IndexOf('Z')
-
-                        if zIdx >= 0 then
-                            timePart <- timePart.Substring(0, zIdx)
-
-                        let tp = timePart.Split(':')
-                        let hour = safeAtoi tp.[0] 0 tp.[0].Length
-
-                        if hour < 0 then
-                            None
-                        else
-                            let minute =
-                                if tp.Length > 1 then safeAtoi tp.[1] 0 tp.[1].Length else 0
-
-                            if minute < 0 then
-                                None
-                            else
-                                let second =
-                                    if tp.Length > 2 then
-                                        let secStr = tp.[2].Split('.').[0]
-                                        safeAtoi secStr 0 secStr.Length
-                                    else
-                                        0
-
-                                if second < 0 then
-                                    None
-                                else
-                                    let days = daysSinceEpoch year month day
-                                    Some(days * 86400 + hour * 3600 + minute * 60 + second)
+                None
 
     let private resolveUnit (count: int) (uf: UnitForms) (locale: DurationLocale) (halfStr: string) : string =
         let baseN =
@@ -186,86 +141,95 @@ module Formatter =
 
             (s, min, h, d, w, mo, y, hf, del, jn, ag, inf)
 
-        let formatDurationSecondsInternal (total: int) : string =
-            if total = 0 then
+        /// Counts are bounded by the 500-year ceiling, so they always fit in an int.
+        let unit (count: int64) (uf: UnitForms) (halfStr: string) : string =
+            resolveUnit (Checked.int count) uf locale halfStr
+
+        let monthsIn (total: int64) : int64 =
+            int64 (System.Math.Round(float (total / 86400L) / 30.44))
+
+        let formatTiers (total: int64) : string =
+            if total = 0L then
                 justNow
-            elif total < 60 then
-                resolveUnit total second locale ""
+            elif total < 60L then
+                unit total second ""
             else
-                let totalMinutes = total / 60
-                let remainderSeconds = total % 60
+                let totalMinutes = total / 60L
+                let remainderSeconds = total % 60L
 
-                if totalMinutes < 5 then
-                    let mutable result = resolveUnit totalMinutes minute locale ""
+                if totalMinutes < 5L then
+                    let mutable result = unit totalMinutes minute ""
 
-                    if remainderSeconds > 0 then
-                        result <- result + delimiter + resolveUnit remainderSeconds second locale ""
+                    if remainderSeconds > 0L then
+                        result <- result + delimiter + unit remainderSeconds second ""
 
                     result
-                elif totalMinutes < 60 then
-                    resolveUnit totalMinutes minute locale ""
+                elif totalMinutes < 60L then
+                    unit totalMinutes minute ""
                 else
-                    let totalHours = total / 3600
-                    let remainderMinutes = (total % 3600) / 60
+                    let totalHours = total / 3600L
+                    let remainderMinutes = (total % 3600L) / 60L
 
-                    if totalHours <= 5 then
-                        if remainderMinutes = 30 then
-                            resolveUnit totalHours hour locale half
+                    if totalHours <= 5L then
+                        if remainderMinutes = 30L then
+                            unit totalHours hour half
                         else
-                            let mutable result = resolveUnit totalHours hour locale ""
+                            let mutable result = unit totalHours hour ""
 
-                            if remainderMinutes > 0 then
-                                result <- result + delimiter + resolveUnit remainderMinutes minute locale ""
+                            if remainderMinutes > 0L then
+                                result <- result + delimiter + unit remainderMinutes minute ""
 
                             result
-                    elif totalHours < 24 then
-                        resolveUnit totalHours hour locale ""
+                    elif totalHours < 24L then
+                        unit totalHours hour ""
                     else
-                        let totalDays = total / 86400
-                        let remainderHours = (total % 86400) / 3600
+                        let totalDays = total / 86400L
+                        let remainderHours = (total % 86400L) / 3600L
 
-                        if totalDays <= 2 then
-                            if remainderHours = 12 then
-                                resolveUnit totalDays day locale half
+                        if totalDays <= 2L then
+                            if remainderHours = 12L then
+                                unit totalDays day half
                             else
-                                let mutable result = resolveUnit totalDays day locale ""
+                                let mutable result = unit totalDays day ""
 
-                                if remainderHours > 0 then
-                                    result <- result + delimiter + resolveUnit remainderHours hour locale ""
+                                if remainderHours > 0L then
+                                    result <- result + delimiter + unit remainderHours hour ""
 
                                 result
-                        elif totalDays < 7 then
-                            resolveUnit totalDays day locale ""
-                        elif totalDays < 30 then
-                            let totalWeeks = totalDays / 7
-                            let remainderDays = totalDays % 7
-                            let mutable result = resolveUnit totalWeeks week locale ""
+                        elif totalDays < 7L then
+                            unit totalDays day ""
+                        elif totalDays < 30L then
+                            let totalWeeks = totalDays / 7L
+                            let remainderDays = totalDays % 7L
+                            let mutable result = unit totalWeeks week ""
 
-                            if remainderDays > 0 then
-                                result <- result + delimiter + resolveUnit remainderDays day locale ""
+                            if remainderDays > 0L then
+                                result <- result + delimiter + unit remainderDays day ""
 
                             result
                         else
-                            let mutable totalMonths =
-                                int (System.Math.Round(float totalDays / 30.44))
+                            let mutable totalMonths = monthsIn total
 
-                            if totalMonths < 12 then
-                                if totalMonths = 0 then totalMonths <- 1
+                            if totalMonths < 12L then
+                                if totalMonths = 0L then totalMonths <- 1L
 
-                                resolveUnit totalMonths month locale ""
+                                unit totalMonths month ""
                             else
-                                let totalYears = totalMonths / 12
-                                let remainderMonths = totalMonths % 12
-                                let mutable result = resolveUnit totalYears year locale ""
+                                let totalYears = totalMonths / 12L
+                                let remainderMonths = totalMonths % 12L
+                                let mutable result = unit totalYears year ""
 
-                                if remainderMonths > 0 then
-                                    result <- result + delimiter + resolveUnit remainderMonths month locale ""
+                                if remainderMonths > 0L then
+                                    result <- result + delimiter + unit remainderMonths month ""
 
                                 result
 
-        member _.FormatDurationSeconds(seconds: int) : string option =
-            if seconds < 0 then None
-            else Some(formatDurationSecondsInternal seconds)
+        let formatDurationSecondsInternal (total: int64) : string option =
+            if monthsIn total > maxDurationMonths then None else Some(formatTiers total)
+
+        member _.FormatDurationSeconds(seconds: int64) : string option =
+            if seconds < 0L then None
+            else formatDurationSecondsInternal seconds
 
         member _.FormatDurationIso(startIso: string, endIso: string) : string option =
             if String.IsNullOrEmpty(startIso) || String.IsNullOrEmpty(endIso) then
@@ -273,8 +237,7 @@ module Formatter =
             else
                 match parseIsoToSeconds startIso, parseIsoToSeconds endIso with
                 | Some s, Some e ->
-                    let total = abs (e - s)
-                    Some(formatDurationSecondsInternal total)
+                    formatDurationSecondsInternal (abs (e - s))
                 | _ -> None
 
         member _.FormatSince(start: string option, asOf: string option) : string option =
@@ -286,11 +249,9 @@ module Formatter =
                 | Some sv, Some av ->
                     let diff = av - sv
 
-                    if diff < 0 then None
-                    elif diff = 0 then Some justNow
-                    else
-                        let dur = formatDurationSecondsInternal diff
-                        Some(ago.Replace("{0}", dur))
+                    if diff < 0L then None
+                    elif diff = 0L then Some justNow
+                    else formatDurationSecondsInternal diff |> Option.map (fun dur -> ago.Replace("{0}", dur))
                 | _ -> None
 
         member _.FormatUntil(target: string option, asOf: string option) : string option =
@@ -302,16 +263,14 @@ module Formatter =
                 | Some tv, Some av ->
                     let diff = tv - av
 
-                    if diff < 0 then None
-                    elif diff = 0 then Some justNow
-                    else
-                        let dur = formatDurationSecondsInternal diff
-                        Some(inFuture.Replace("{0}", dur))
+                    if diff < 0L then None
+                    elif diff = 0L then Some justNow
+                    else formatDurationSecondsInternal diff |> Option.map (fun dur -> inFuture.Replace("{0}", dur))
                 | _ -> None
 
     let private defaultFormatter = SayableDurationFormatter(Locales.EN)
 
-    let formatDurationSecondsDefault (seconds: int) : string option =
+    let formatDurationSecondsDefault (seconds: int64) : string option =
         defaultFormatter.FormatDurationSeconds(seconds)
 
     let formatDurationIsoDefault (startIso: string) (endIso: string) : string option =

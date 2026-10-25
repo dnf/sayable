@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ne.json
 
-_plural_ne() {
+_sayableage_plural_ne() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ne() {
+_sayableage_locale_ne() {
     _unit_day_one='{n} दिन'
     _unit_day_other='{n} दिन'
     _unit_week_one='{n} हप्ता'
@@ -43,5 +43,5 @@ _locale_ne() {
     _compact_unit_year='{n} वर्ष'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ne
+    _plural_func=_sayableage_plural_ne
 }

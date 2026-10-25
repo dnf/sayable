@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/yao.json
 
-_plural_yao() {
+_sayableduration_plural_yao() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_yao() {
+_sayableduration_locale_yao() {
     _unit_second_one='sekunde {n}'
     _unit_second_other='masekunde {n}'
     _unit_minute_one='dakika {n}'
@@ -59,5 +59,5 @@ _locale_yao() {
     _compact_delimiter=''
     _compact_ago='{0} lyapite'
     _compact_in_future='mu {0}'
-    _plural_func=_plural_yao
+    _plural_func=_sayableduration_plural_yao
 }

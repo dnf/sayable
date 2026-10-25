@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/bg.json
 
-_plural_bg() {
+_sayableduration_plural_bg() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_bg() {
+_sayableduration_locale_bg() {
     _unit_second_one='{n} секунда'
     _unit_second_other='{n} секунди'
     _unit_minute_one='{n} минута'
@@ -55,5 +55,5 @@ _locale_bg() {
     _compact_delimiter=''
     _compact_ago='преди {0}'
     _compact_in_future='след {0}'
-    _plural_func=_plural_bg
+    _plural_func=_sayableduration_plural_bg
 }

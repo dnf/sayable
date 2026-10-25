@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/lv.json
 
-_plural_lv() {
+_sayableduration_plural_lv() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_lv() {
     echo "other"
 }
 
-_locale_lv() {
+_sayableduration_locale_lv() {
     _unit_second_zero='{n} sekunžu'
     _unit_second_one='{n} sekunde'
     _unit_second_other='{n} sekundes'
@@ -64,5 +64,5 @@ _locale_lv() {
     _compact_delimiter=''
     _compact_ago='pirms {0}'
     _compact_in_future='pēc {0}'
-    _plural_func=_plural_lv
+    _plural_func=_sayableduration_plural_lv
 }

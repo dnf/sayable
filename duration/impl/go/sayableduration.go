@@ -5,6 +5,9 @@ import "strings"
 // Version is the library version, matching duration/config/version.json.
 const Version = "0.5.0"
 
+// maxDurationMonths is the 500-year ceiling, the same as sayable-age.
+const maxDurationMonths = 6000
+
 // SayableDuration is a locale-aware duration and relative time formatter.
 type SayableDuration struct {
 	locale    *DurationLocale
@@ -94,17 +97,17 @@ func NewSayableDuration(locale DurationLocale, compactness ...Compactness) *Saya
 }
 
 // FormatDurationSeconds formats an integer number of seconds as a human-friendly
-// duration string. Returns nil for negative values.
-func (sd *SayableDuration) FormatDurationSeconds(seconds int) *string {
+// duration string. Returns nil for negative values and durations over 500 years.
+func (sd *SayableDuration) FormatDurationSeconds(seconds int64) *string {
 	if seconds < 0 {
 		return nil
 	}
-	s := sd.formatDurationSeconds(seconds)
-	return &s
+	return sd.formatDurationSeconds(seconds)
 }
 
 // FormatDurationISO formats the duration between two ISO datetime strings.
-// Returns nil if either string is empty or cannot be parsed.
+// Returns nil if either string is empty or cannot be parsed, or the duration
+// is over 500 years.
 func (sd *SayableDuration) FormatDurationISO(start, end string) *string {
 	if start == "" || end == "" {
 		return nil
@@ -118,8 +121,7 @@ func (sd *SayableDuration) FormatDurationISO(start, end string) *string {
 	if total < 0 {
 		total = -total
 	}
-	result := sd.formatDurationSeconds(total)
-	return &result
+	return sd.formatDurationSeconds(total)
 }
 
 // FormatSince formats elapsed time as "X ago".
@@ -141,7 +143,10 @@ func (sd *SayableDuration) FormatSince(start, asOf string) *string {
 		return &sd.justNow
 	}
 	dur := sd.formatDurationSeconds(diff)
-	result := strings.Replace(sd.ago, "{0}", dur, 1)
+	if dur == nil {
+		return nil
+	}
+	result := strings.Replace(sd.ago, "{0}", *dur, 1)
 	return &result
 }
 
@@ -164,22 +169,35 @@ func (sd *SayableDuration) FormatUntil(target, asOf string) *string {
 		return &sd.justNow
 	}
 	dur := sd.formatDurationSeconds(diff)
-	result := strings.Replace(sd.inFuture, "{0}", dur, 1)
+	if dur == nil {
+		return nil
+	}
+	result := strings.Replace(sd.inFuture, "{0}", *dur, 1)
 	return &result
 }
 
-// formatDurationSeconds applies duration tiers to total seconds.
-func (sd *SayableDuration) formatDurationSeconds(total int) string {
+// formatDurationSeconds applies duration tiers to total seconds; nil beyond
+// the 500-year ceiling.
+func (sd *SayableDuration) formatDurationSeconds(total int64) *string {
+	text, ok := sd.formatTiers(total)
+	if !ok {
+		return nil
+	}
+	return &text
+}
+
+// formatTiers applies the duration tiers; ok is false beyond the 500-year ceiling.
+func (sd *SayableDuration) formatTiers(total int64) (text string, ok bool) {
 	loc := sd.locale
 
 	// 0 seconds
 	if total == 0 {
-		return sd.justNow
+		return sd.justNow, true
 	}
 
 	// 1-59 seconds
 	if total < 60 {
-		return ResolveUnit(total, sd.second, loc, "")
+		return resolveCount(total, sd.second, loc, ""), true
 	}
 
 	totalMinutes := total / 60
@@ -187,16 +205,16 @@ func (sd *SayableDuration) formatDurationSeconds(total int) string {
 
 	// 1-4 minutes: minutes + seconds
 	if totalMinutes < 5 {
-		result := ResolveUnit(totalMinutes, sd.minute, loc, "")
+		result := resolveCount(totalMinutes, sd.minute, loc, "")
 		if remainderSeconds > 0 {
-			result += sd.delimiter + ResolveUnit(remainderSeconds, sd.second, loc, "")
+			result += sd.delimiter + resolveCount(remainderSeconds, sd.second, loc, "")
 		}
-		return result
+		return result, true
 	}
 
 	// 5-59 minutes
 	if totalMinutes < 60 {
-		return ResolveUnit(totalMinutes, sd.minute, loc, "")
+		return resolveCount(totalMinutes, sd.minute, loc, ""), true
 	}
 
 	totalHours := total / 3600
@@ -205,18 +223,18 @@ func (sd *SayableDuration) formatDurationSeconds(total int) string {
 	// 1-5 hours: hours + minutes (with half marker)
 	if totalHours <= 5 {
 		if remainderMinutes == 30 {
-			return ResolveUnit(totalHours, sd.hour, loc, sd.half)
+			return resolveCount(totalHours, sd.hour, loc, sd.half), true
 		}
-		result := ResolveUnit(totalHours, sd.hour, loc, "")
+		result := resolveCount(totalHours, sd.hour, loc, "")
 		if remainderMinutes > 0 {
-			result += sd.delimiter + ResolveUnit(remainderMinutes, sd.minute, loc, "")
+			result += sd.delimiter + resolveCount(remainderMinutes, sd.minute, loc, "")
 		}
-		return result
+		return result, true
 	}
 
 	// 6-23 hours
 	if totalHours < 24 {
-		return ResolveUnit(totalHours, sd.hour, loc, "")
+		return resolveCount(totalHours, sd.hour, loc, ""), true
 	}
 
 	totalDays := total / 86400
@@ -225,18 +243,18 @@ func (sd *SayableDuration) formatDurationSeconds(total int) string {
 	// 1-2 days: days + hours (with half marker)
 	if totalDays <= 2 {
 		if remainderHours == 12 {
-			return ResolveUnit(totalDays, sd.day, loc, sd.half)
+			return resolveCount(totalDays, sd.day, loc, sd.half), true
 		}
-		result := ResolveUnit(totalDays, sd.day, loc, "")
+		result := resolveCount(totalDays, sd.day, loc, "")
 		if remainderHours > 0 {
-			result += sd.delimiter + ResolveUnit(remainderHours, sd.hour, loc, "")
+			result += sd.delimiter + resolveCount(remainderHours, sd.hour, loc, "")
 		}
-		return result
+		return result, true
 	}
 
 	// 3-6 days
 	if totalDays < 7 {
-		return ResolveUnit(totalDays, sd.day, loc, "")
+		return resolveCount(totalDays, sd.day, loc, ""), true
 	}
 
 	totalWeeks := totalDays / 7
@@ -244,128 +262,131 @@ func (sd *SayableDuration) formatDurationSeconds(total int) string {
 
 	// 1-4 weeks: weeks + days (up to 29 days; 30+ transitions to months)
 	if totalDays < 30 {
-		result := ResolveUnit(totalWeeks, sd.week, loc, "")
+		result := resolveCount(totalWeeks, sd.week, loc, "")
 		if remainderDays > 0 {
-			result += sd.delimiter + ResolveUnit(remainderDays, sd.day, loc, "")
+			result += sd.delimiter + resolveCount(remainderDays, sd.day, loc, "")
 		}
-		return result
+		return result, true
 	}
 
 	// Approximate months (30.44 days average)
 	totalMonths := roundDiv(totalDays)
+	if totalMonths > maxDurationMonths {
+		return "", false
+	}
 
 	// 1-11 months
 	if totalMonths < 12 {
 		if totalMonths == 0 {
 			totalMonths = 1
 		}
-		return ResolveUnit(totalMonths, sd.month, loc, "")
+		return resolveCount(totalMonths, sd.month, loc, ""), true
 	}
 
 	// 12+ months: years + months
 	totalYears := totalMonths / 12
 	remainderMonths := totalMonths % 12
-	result := ResolveUnit(totalYears, sd.year, loc, "")
+	result := resolveCount(totalYears, sd.year, loc, "")
 	if remainderMonths > 0 {
-		result += sd.delimiter + ResolveUnit(remainderMonths, sd.month, loc, "")
+		result += sd.delimiter + resolveCount(remainderMonths, sd.month, loc, "")
 	}
-	return result
+	return result, true
+}
+
+// resolveCount resolves a unit for a count that the tiers keep small (at most
+// 6000 months).
+func resolveCount(count int64, forms UnitForms, loc *DurationLocale, half string) string {
+	return ResolveUnit(int(count), forms, loc, half)
 }
 
 // roundDiv approximates months from days using 30.44 average days per month,
 // matching Python's round(total_days / 30.44).
-func roundDiv(totalDays int) int {
+func roundDiv(totalDays int64) int64 {
 	// Multiply by 100, divide by 3044, with rounding
 	// This avoids floating point: round(totalDays / 30.44)
 	// = floor(totalDays * 10000 / 30440 + 0.5)
 	// Simpler: use float64 since Go has no banker's rounding concern for these values
-	return int(float64(totalDays)/30.44 + 0.5)
+	return int64(float64(totalDays)/30.44 + 0.5)
 }
 
-// parseISOToSeconds parses an ISO datetime string to epoch-relative seconds for diffing.
-func parseISOToSeconds(iso string) *int {
-	if iso == "" {
+// parseISOToSeconds parses a timestamp (docs/input-formats.md) to
+// epoch-relative seconds for diffing: "YYYY-MM-DDTHH:MM", optional ":SS",
+// optional "." plus digits after the seconds, and an optional zone suffix
+// "Z" or "±HH:MM", which is ignored. Returns nil for anything else.
+func parseISOToSeconds(iso string) *int64 {
+	if len(iso) < 11 || iso[4] != '-' || iso[7] != '-' || iso[10] != 'T' {
 		return nil
 	}
-
-	tIdx := -1
-	for i := 0; i < len(iso); i++ {
-		if iso[i] == 'T' {
-			tIdx = i
-			break
-		}
-	}
-	if tIdx < 0 {
+	year, month, day := atoiDuration(iso[0:4]), atoiDuration(iso[5:7]), atoiDuration(iso[8:10])
+	if year < 0 || month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month) {
 		return nil
 	}
-
-	datePart := iso[:tIdx]
-	timePart := iso[tIdx+1:]
-
-	// Parse date: YYYY-MM-DD
-	dp := splitByByte(datePart, '-')
-	if len(dp) < 3 {
+	hour, minute, second, ok := parseClock(iso[11:])
+	if !ok {
 		return nil
 	}
-	year := atoiDuration(dp[0])
-	month := atoiDuration(dp[1])
-	day := atoiDuration(dp[2])
-
-	// Strip timezone info
-	timeStr := timePart
-	for i := 0; i < len(timeStr); i++ {
-		if timeStr[i] == '+' || timeStr[i] == 'Z' {
-			timeStr = timeStr[:i]
-			break
-		}
-	}
-
-	// Parse time: HH:MM:SS
-	tp := splitByByte(timeStr, ':')
-	hour := atoiDuration(tp[0])
-	minute := 0
-	if len(tp) > 1 {
-		minute = atoiDuration(tp[1])
-	}
-	second := 0
-	if len(tp) > 2 {
-		// Strip fractional seconds
-		secStr := tp[2]
-		for i := 0; i < len(secStr); i++ {
-			if secStr[i] == '.' {
-				secStr = secStr[:i]
-				break
-			}
-		}
-		second = atoiDuration(secStr)
-	}
-
-	days := daysSinceEpoch(year, month, day)
-	result := days*86400 + hour*3600 + minute*60 + second
+	result := int64(daysSinceEpoch(year, month, day))*86400 + int64(hour*3600+minute*60+second)
 	return &result
 }
 
-// splitByByte splits a string by a single byte separator.
-func splitByByte(s string, sep byte) []string {
-	var parts []string
-	start := 0
-	for i := 0; i < len(s); i++ {
-		if s[i] == sep {
-			parts = append(parts, s[start:i])
-			start = i + 1
+// parseClock parses "H:MM" or "HH:MM", then optional ":SS", an optional "."
+// plus digits (only after seconds), and an optional zone suffix.
+func parseClock(clock string) (hour, minute, second int, ok bool) {
+	hourLen := digitRun(clock)
+	if hourLen < 1 || hourLen > 2 || len(clock) < hourLen+3 || clock[hourLen] != ':' {
+		return 0, 0, 0, false
+	}
+	hour = atoiDuration(clock[:hourLen])
+	minute = atoiDuration(clock[hourLen+1 : hourLen+3])
+	rest := clock[hourLen+3:]
+	if len(rest) > 0 && rest[0] == ':' {
+		if len(rest) < 3 {
+			return 0, 0, 0, false
+		}
+		second = atoiDuration(rest[1:3])
+		rest = rest[3:]
+		if len(rest) > 0 && rest[0] == '.' {
+			fractionLen := digitRun(rest[1:])
+			if fractionLen == 0 {
+				return 0, 0, 0, false
+			}
+			rest = rest[1+fractionLen:]
 		}
 	}
-	parts = append(parts, s[start:])
-	return parts
+	if minute < 0 || second < 0 || hour > 23 || minute > 59 || second > 59 || !isZoneSuffix(rest) {
+		return 0, 0, 0, false
+	}
+	return hour, minute, second, true
 }
 
-// atoiDuration parses a decimal string to int. Returns 0 on failure.
+// digitRun returns the number of leading ASCII digits in s.
+func digitRun(s string) int {
+	n := 0
+	for n < len(s) && s[n] >= '0' && s[n] <= '9' {
+		n++
+	}
+	return n
+}
+
+// isZoneSuffix reports whether s is empty, "Z", or "+HH:MM" / "-HH:MM".
+func isZoneSuffix(s string) bool {
+	if s == "" || s == "Z" {
+		return true
+	}
+	return len(s) == 6 && (s[0] == '+' || s[0] == '-') && s[3] == ':' &&
+		digitRun(s[1:3]) == 2 && digitRun(s[4:6]) == 2
+}
+
+// atoiDuration parses a run of ASCII digits to int. Returns -1 on failure.
 func atoiDuration(s string) int {
+	if s == "" {
+		return -1
+	}
 	n := 0
 	for i := 0; i < len(s); i++ {
 		c := s[i]
 		if c < '0' || c > '9' {
-			return 0
+			return -1
 		}
 		n = n*10 + int(c-'0')
 	}

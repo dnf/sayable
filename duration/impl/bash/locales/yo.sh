@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/yo.json
 
-_plural_yo() {
+_sayableduration_plural_yo() {
     echo "other"
 }
 
-_locale_yo() {
+_sayableduration_locale_yo() {
     _unit_second='ìṣẹ́jú-àáyá {n}'
     _unit_minute='ìṣẹ́jú {n}'
     _unit_hour='wákàtí {n}'
@@ -46,5 +46,5 @@ _locale_yo() {
     _compact_delimiter=''
     _compact_ago='{0} sẹ́yìn'
     _compact_in_future='ní {0}'
-    _plural_func=_plural_yo
+    _plural_func=_sayableduration_plural_yo
 }

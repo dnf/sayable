@@ -1,99 +1,147 @@
 module SayableDuration.Internal exposing (parseIsoToSeconds)
 
 
+{-| YYYY-MM-DDTHH:MM (one- or two-digit hour), then an optional :SS with an
+optional fraction, then an optional zone suffix (Z or ±HH:MM) that is
+validated but not applied.
+-}
 parseIsoToSeconds : String -> Maybe Int
 parseIsoToSeconds isoStr =
-    if String.isEmpty isoStr then
+    if String.slice 10 11 isoStr /= "T" then
         Nothing
 
     else
-        case indexOf "T" isoStr of
-            Nothing ->
+        case ( parseDatePart (String.left 10 isoStr), parseClock (String.dropLeft 11 isoStr) ) of
+            ( Just ( year, month, day ), Just ( hour, minute, second ) ) ->
+                Just (daysSinceEpoch year month day * 86400 + hour * 3600 + minute * 60 + second)
+
+            _ ->
                 Nothing
-
-            Just tIdx ->
-                let
-                    datePart =
-                        String.left tIdx isoStr
-
-                    timePart =
-                        String.dropLeft (tIdx + 1) isoStr
-                in
-                case parseDatePart datePart of
-                    Nothing ->
-                        Nothing
-
-                    Just ( year, month, day ) ->
-                        case parseTimePart timePart of
-                            Nothing ->
-                                Nothing
-
-                            Just ( hour, minute, second ) ->
-                                let
-                                    days =
-                                        daysSinceEpoch year month day
-                                in
-                                Just (days * 86400 + hour * 3600 + minute * 60 + second)
 
 
 parseDatePart : String -> Maybe ( Int, Int, Int )
 parseDatePart s =
     let
-        parts =
-            String.split "-" s
+        isDateShape =
+            String.length s == 10
+                && String.slice 4 5 s == "-"
+                && String.slice 7 8 s == "-"
+                && isDigits 4 (String.slice 0 4 s)
+                && isDigits 2 (String.slice 5 7 s)
+                && isDigits 2 (String.slice 8 10 s)
     in
-    case parts of
-        [ yStr, mStr, dStr ] ->
-            case ( String.toInt yStr, String.toInt mStr, String.toInt dStr ) of
-                ( Just y, Just m, Just d ) ->
-                    Just ( y, m, d )
+    case ( String.toInt (String.slice 0 4 s), String.toInt (String.slice 5 7 s), String.toInt (String.slice 8 10 s) ) of
+        ( Just y, Just m, Just d ) ->
+            if isDateShape && m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth y m then
+                Just ( y, m, d )
 
-                _ ->
-                    Nothing
+            else
+                Nothing
 
         _ ->
             Nothing
 
 
-parseTimePart : String -> Maybe ( Int, Int, Int )
-parseTimePart s =
+parseClock : String -> Maybe ( Int, Int, Int )
+parseClock clock =
     let
-        cleaned =
-            s
-                |> stripAfter "+"
-                |> stripAfter "Z"
+        hourLength =
+            leadingDigitCount clock
 
-        parts =
-            String.split ":" cleaned
+        afterHour =
+            String.dropLeft hourLength clock
+
+        minuteDigits =
+            String.slice 1 3 afterHour
+
+        hasHourAndMinute =
+            hourLength >= 1 && hourLength <= 2 && String.left 1 afterHour == ":" && isDigits 2 minuteDigits
     in
-    case parts of
-        hourStr :: rest ->
-            let
-                minStr =
-                    case rest of
-                        m :: _ ->
-                            m
+    if not hasHourAndMinute then
+        Nothing
 
-                        [] ->
-                            "0"
+    else
+        case optionalSeconds (String.dropLeft 3 afterHour) of
+            Just ( secondDigits, zone ) ->
+                case ( String.toInt (String.left hourLength clock), String.toInt minuteDigits, String.toInt secondDigits ) of
+                    ( Just h, Just m, Just sec ) ->
+                        if isZoneSuffix zone && h <= 23 && m <= 59 && sec <= 59 then
+                            Just ( h, m, sec )
 
-                secStr =
-                    case rest of
-                        _ :: s2 :: _ ->
-                            stripAfter "." s2
+                        else
+                            Nothing
 
-                        _ ->
-                            "0"
-            in
-            case ( String.toInt hourStr, String.toInt minStr, String.toInt secStr ) of
-                ( Just h, Just m, Just sec ) ->
-                    Just ( h, m, sec )
+                    _ ->
+                        Nothing
 
-                _ ->
-                    Nothing
+            Nothing ->
+                Nothing
 
-        [] ->
+
+{-| Splits an optional ":SS" (with an optional ".digits" fraction) off the
+front, returning the seconds digits ("0" when absent) and what follows.
+-}
+optionalSeconds : String -> Maybe ( String, String )
+optionalSeconds rest =
+    if String.left 1 rest /= ":" then
+        Just ( "0", rest )
+
+    else if not (isDigits 2 (String.slice 1 3 rest)) then
+        Nothing
+
+    else
+        let
+            afterSeconds =
+                String.dropLeft 3 rest
+
+            fractionLength =
+                leadingDigitCount (String.dropLeft 1 afterSeconds)
+        in
+        if String.left 1 afterSeconds /= "." then
+            Just ( String.slice 1 3 rest, afterSeconds )
+
+        else if fractionLength == 0 then
             Nothing
+
+        else
+            Just ( String.slice 1 3 rest, String.dropLeft (1 + fractionLength) afterSeconds )
+
+
+isZoneSuffix : String -> Bool
+isZoneSuffix zone =
+    let
+        isOffset =
+            String.length zone == 6
+                && List.member (String.left 1 zone) [ "+", "-" ]
+                && isDigits 2 (String.slice 1 3 zone)
+                && String.slice 3 4 zone == ":"
+                && isDigits 2 (String.slice 4 6 zone)
+    in
+    zone == "" || zone == "Z" || isOffset
+
+
+isDigits : Int -> String -> Bool
+isDigits count s =
+    String.length s == count && String.all Char.isDigit s
+
+
+leadingDigitCount : String -> Int
+leadingDigitCount s =
+    String.length s - String.length (dropLeadingDigits s)
+
+
+dropLeadingDigits : String -> String
+dropLeadingDigits s =
+    case String.uncons s of
+        Just ( c, rest ) ->
+            if Char.isDigit c then
+                dropLeadingDigits rest
+
+            else
+                s
+
+        Nothing ->
+            s
 
 
 isLeapYear : Int -> Bool
@@ -207,30 +255,3 @@ monthDaysAccum year current target acc =
 
     else
         monthDaysAccum year (current + 1) target (acc + daysInMonth year current)
-
-
-indexOf : String -> String -> Maybe Int
-indexOf needle haystack =
-    indexOfHelper needle haystack 0
-
-
-indexOfHelper : String -> String -> Int -> Maybe Int
-indexOfHelper needle haystack offset =
-    if offset > String.length haystack - String.length needle then
-        Nothing
-
-    else if String.slice offset (offset + String.length needle) haystack == needle then
-        Just offset
-
-    else
-        indexOfHelper needle haystack (offset + 1)
-
-
-stripAfter : String -> String -> String
-stripAfter sep s =
-    case indexOf sep s of
-        Just i ->
-            String.left i s
-
-        Nothing ->
-            s

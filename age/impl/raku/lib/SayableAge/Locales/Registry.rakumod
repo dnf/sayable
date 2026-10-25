@@ -354,3 +354,7 @@ my %locales = (
 our sub get-locale(Str $code) {
     %locales{$code} // Nil;
 }
+
+our sub codes() {
+    %locales.keys.sort;
+}

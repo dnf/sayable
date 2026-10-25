@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/nl.json
 
-_locale_nl() {
+_sayabledate_locale_nl() {
     _months=('januari' 'februari' 'maart' 'april' 'mei' 'juni' 'juli' 'augustus' 'september' 'oktober' 'november' 'december')
     _weekdays=('zondag' 'maandag' 'dinsdag' 'woensdag' 'donderdag' 'vrijdag' 'zaterdag')
     _day_format='{n}'

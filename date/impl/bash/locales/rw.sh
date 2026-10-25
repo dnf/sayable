@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/rw.json
 
-_locale_rw() {
+_sayabledate_locale_rw() {
     _months=('Mutarama' 'Gashyantare' 'Werurwe' 'Mata' 'Gicurasi' 'Kamena' 'Nyakanga' 'Kanama' 'Nzeli' 'Ukwakira' 'Ugushyingo' 'Ukuboza')
     _weekdays=('Ku cyumweru' 'Kuwa mbere' 'Kuwa kabiri' 'Kuwa gatatu' 'Kuwa kane' 'Kuwa gatanu' 'Kuwa gatandatu')
     _day_format='{n}'

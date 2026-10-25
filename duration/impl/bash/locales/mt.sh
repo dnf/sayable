@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mt.json
 
-_plural_mt() {
+_sayableduration_plural_mt() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ]; then echo "two"; return; fi
@@ -19,7 +19,7 @@ _plural_mt() {
     echo "other"
 }
 
-_locale_mt() {
+_sayableduration_locale_mt() {
     _unit_second_one='{n} sekonda'
     _unit_second_two='{n} sekondi'
     _unit_second_few='{n} sekondi'
@@ -80,5 +80,5 @@ _locale_mt() {
     _compact_delimiter=''
     _compact_ago='{0} ilu'
     _compact_in_future='fi {0}'
-    _plural_func=_plural_mt
+    _plural_func=_sayableduration_plural_mt
 }

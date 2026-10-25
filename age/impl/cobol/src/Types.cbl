@@ -199,7 +199,8 @@
  01 WS-REPLACE-MRK-LEN      PIC 9(4).
 
 *> Date parsing variables
- 01 WS-DATE-STR             PIC X(10).
+ 01 WS-DATE-STR             PIC X(256).
+ 01 WS-DATE-LEN             PIC 9(4).
  01 WS-PARSED-YEAR          PIC 9(4).
  01 WS-PARSED-MONTH         PIC 9(2).
  01 WS-PARSED-DAY           PIC 9(2).
@@ -259,8 +260,12 @@
 
 *> Format arguments
  01 WS-FMT-COMPACTNESS      PIC 9.
- 01 WS-FMT-DOB              PIC X(10).
- 01 WS-FMT-AS-OF            PIC X(10).
+*> An input's -LEN is its exact length, trailing blanks included, for
+*> callers that know it (the CLI); 0 means the length without them.
+ 01 WS-FMT-DOB              PIC X(256).
+ 01 WS-FMT-DOB-LEN          PIC 9(4) VALUE 0.
+ 01 WS-FMT-AS-OF            PIC X(256).
+ 01 WS-FMT-AS-OF-LEN        PIC 9(4) VALUE 0.
  01 WS-FMT-GENDER           PIC X(1).
 
 *> Loop index

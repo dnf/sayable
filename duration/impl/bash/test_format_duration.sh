@@ -265,6 +265,45 @@ assert_eq "$(sayableduration_format_duration "en" "3600" "" "compact")" "1h" "17
 assert_eq "$(sayableduration_format_duration "en" "90" "" "compact")" "1m30s" "17.2"
 
 # ================================================================
+# Sections 18-20: short since, 500-year ceiling, timestamp validation
+# ================================================================
+echo "Sections 18-20: short since, 500-year ceiling, timestamp validation"
+
+# 18.1 — days and hours both kept
+assert_eq "$(sayableduration_format_since "men" "2025-01-20T01:32:11" "2025-01-22T15:39:16" "short")" "lɔhɔnga 2, awa 14 taa gbɔyɔ" "18.1"
+
+# 19.1 — 500 Julian years: 6000 months, the ceiling
+assert_eq "$(sayableduration_format_duration "en" "15778800000" "" "normal")" "500 years" "19.1"
+
+# 19.2 — over 6000 months
+assert_eq "$(sayableduration_format_duration "en" "15800000000" "" "normal")" "" "19.2"
+
+# 19.3 — well beyond the ceiling (and 32-bit range)
+assert_eq "$(sayableduration_format_duration "en" "99999999999" "" "normal")" "" "19.3"
+
+# 19.4 — 525 years ago
+assert_eq "$(sayableduration_format_since "en" "1500-01-01T00:00:00" "2025-01-01T00:00:00" "normal")" "" "19.4"
+
+# 19.5 — 575 years from now
+assert_eq "$(sayableduration_format_until "en" "2600-01-01T00:00:00" "2025-01-01T00:00:00" "normal")" "" "19.5"
+
+# 20.1 — seconds are optional
+assert_eq "$(sayableduration_format_duration "en" "2025-01-15T10:00" "2025-01-15T11:30:00" "normal")" "1½ hours" "20.1"
+
+# 20.2 — minutes are required
+assert_eq "$(sayableduration_format_duration "en" "2025-01-15T10" "2025-01-15T11:30:00" "normal")" "" "20.2"
+
+# 20.3 — unpadded date
+assert_eq "$(sayableduration_format_duration "en" "2025-1-5T10:00:00" "2025-01-15T11:30:00" "normal")" "" "20.3"
+
+# 20.4 — impossible date
+assert_eq "$(sayableduration_format_duration "en" "2025-02-30T10:00:00" "2025-03-15T11:30:00" "normal")" "" "20.4"
+
+# 20.5 — hour out of range
+assert_eq "$(sayableduration_format_since "en" "2025-01-15T10:00:00" "2025-01-15T25:00:00" "normal")" "" "20.5"
+
+
+# ================================================================
 # Summary
 # ================================================================
 echo ""

@@ -218,31 +218,30 @@ duration_compactness :: proc(s: string) -> dur.Compactness {
     return .Normal
 }
 
+// Seconds mode, as the reference CLI decides it: digits after any leading minus signs.
 is_integer :: proc(s: string) -> bool {
-    if len(s) == 0 do return false
-    start := 0
-    if s[0] == '-' {
-        start = 1
-        if len(s) == 1 do return false
-    }
-    for i := start; i < len(s); i += 1 {
-        if s[i] < '0' || s[i] > '9' do return false
+    digits := strings.trim_left(s, "-")
+    if len(digits) == 0 do return false
+    for c in transmute([]u8)digits {
+        if c < '0' || c > '9' do return false
     }
     return true
 }
 
-parse_int :: proc(s: string) -> int {
-    negative := false
-    start := 0
-    if s[0] == '-' {
-        negative = true
-        start = 1
+// Seconds as a 64-bit integer; false when malformed ("--5") or out of range,
+// which is far beyond the 500-year ceiling either way.
+parse_seconds :: proc(s: string) -> (i64, bool) {
+    negative := len(s) > 0 && s[0] == '-'
+    digits := negative ? s[1:] : s
+    if len(digits) == 0 do return 0, false
+    n: i64 = 0
+    for c in transmute([]u8)digits {
+        if c < '0' || c > '9' do return 0, false
+        digit := i64(c - '0')
+        if n > (max(i64) - digit) / 10 do return 0, false
+        n = n * 10 + digit
     }
-    n := 0
-    for i := start; i < len(s); i += 1 {
-        n = n * 10 + int(s[i] - '0')
-    }
-    return negative ? -n : n
+    return negative ? -n : n, true
 }
 
 cmd_age :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
@@ -256,13 +255,9 @@ cmd_age :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Optio
         return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
-    as_of: string
-    if opts.has_as_of {
-        as_of_val, as_of_null := nullify(opts.as_of)
-        as_of = as_of_null ? "" : as_of_val
-    } else {
-        as_of = get_today()
-    }
+    // A missing, null or empty as-of means today, as in the reference CLI.
+    as_of_val, as_of_null := nullify(opts.as_of)
+    as_of := as_of_null || len(as_of_val) == 0 ? get_today() : as_of_val
 
     buf: [512]u8
     result: Maybe(string)
@@ -286,13 +281,9 @@ cmd_stage :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Opt
         return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
-    as_of: string
-    if opts.has_as_of {
-        as_of_val, as_of_null := nullify(opts.as_of)
-        as_of = as_of_null ? "" : as_of_val
-    } else {
-        as_of = get_today()
-    }
+    // A missing, null or empty as-of means today, as in the reference CLI.
+    as_of_val, as_of_null := nullify(opts.as_of)
+    as_of := as_of_null || len(as_of_val) == 0 ? get_today() : as_of_val
 
     result: Maybe(string)
     if is_null {
@@ -392,8 +383,9 @@ cmd_duration :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: 
     if is_null {
         result = dur.format_duration_int(buf[:], locale, compact, -1)
     } else if is_integer(value) {
-        seconds := parse_int(value)
-        result = dur.format_duration_int(buf[:], locale, compact, seconds)
+        seconds, seconds_ok := parse_seconds(value)
+        if !seconds_ok do return 1
+        result = dur.format_duration_int(buf[:], locale, compact, int(seconds))
     } else {
         // Timestamp mode: need an end argument
         if len(positionals) < 2 {

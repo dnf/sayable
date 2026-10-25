@@ -3,19 +3,45 @@ import 'locales/locales.dart';
 
 const String version = '0.5.0';
 
+/// A clock time: H:MM or HH:MM, optional :SS and fraction, optional zone
+/// suffix (validated but ignored).
+final _clockPattern = RegExp(
+    r'^([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$');
+final _datePattern = RegExp(r'^([0-9]{4})-([0-9]{2})-([0-9]{2})$');
+
+bool _isLeapYear(int year) =>
+    (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+
+int _daysInMonth(int year, int month) {
+  if (month == 2) return _isLeapYear(year) ? 29 : 28;
+  return const [4, 6, 9, 11].contains(month) ? 30 : 31;
+}
+
+bool _isRealDate(String datePart) {
+  final m = _datePattern.firstMatch(datePart);
+  if (m == null) return false;
+  final year = int.parse(m[1]!);
+  final month = int.parse(m[2]!);
+  final day = int.parse(m[3]!);
+  return month >= 1 && month <= 12 && day >= 1 && day <= _daysInMonth(year, month);
+}
+
+/// Parses a clock time, alone or after the T of an ISO datetime whose date
+/// is real, to (hour, minute); returns null otherwise.
 (int, int)? _parseTime(String input) {
   if (input.isEmpty) return null;
-  var t = input;
-  if (t.contains('T')) t = t.split('T')[1];
-  if (t.contains('+')) t = t.split('+')[0];
-  if (t.contains('Z')) t = t.split('Z')[0];
-  final parts = t.split(':');
-  if (parts.length < 2) return null;
-  final dotParts = parts[1].split('.');
-  final hour = int.tryParse(parts[0]);
-  final minute = int.tryParse(dotParts[0]);
-  if (hour == null || minute == null) return null;
-  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return null;
+  var clock = input;
+  final t = input.indexOf('T');
+  if (t >= 0) {
+    if (!_isRealDate(input.substring(0, t))) return null;
+    clock = input.substring(t + 1);
+  }
+  final m = _clockPattern.firstMatch(clock);
+  if (m == null) return null;
+  final hour = int.parse(m[1]!);
+  final minute = int.parse(m[2]!);
+  final second = m[3] == null ? 0 : int.parse(m[3]!);
+  if (hour > 23 || minute > 59 || second > 59) return null;
   return (hour, minute);
 }
 

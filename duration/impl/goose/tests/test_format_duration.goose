@@ -56,6 +56,12 @@ fn check_iso(id: const u8[:], code: const u8[:], compactness: sayableduration::C
     expect(id, got, ok, want);
 }
 
+fn check_no_iso(id: const u8[:], code: const u8[:], compactness: sayableduration::Compactness, start: u8[:], end: u8[:]) {
+    let locale = locale_for(code);
+    let got, ok = sayableduration::format_duration_iso(locale, compactness, start, end);
+    expect_none(id, got, ok);
+}
+
 fn check_since(id: const u8[:], code: const u8[:], compactness: sayableduration::Compactness, start: u8[:], as_of: u8[:], want: u8[:]) {
     let locale = locale_for(code);
     let got, ok = sayableduration::format_since(locale, compactness, start, as_of);
@@ -223,6 +229,34 @@ fn main() {
     check_seconds("17.1", "en", COMPACT, 3600, "1h");
     // 17.2
     check_seconds("17.2", "en", COMPACT, 90, "1m30s");
+
+    // ---- 18. Short compactness — relative time ----
+    // 18.1
+    check_since("18.1", "men", SHORT, "2025-01-20T01:32:11", "2025-01-22T15:39:16", "lɔhɔnga 2, awa 14 taa gbɔyɔ");
+
+    // ---- 19. Range (500-year ceiling) ----
+    // 19.1
+    check_seconds("19.1", "en", NORMAL, 15778800000, "500 years");
+    // 19.2
+    check_no_seconds("19.2", "en", NORMAL, 15800000000);
+    // 19.3
+    check_no_seconds("19.3", "en", NORMAL, 99999999999);
+    // 19.4
+    check_no_since("19.4", "en", NORMAL, "1500-01-01T00:00:00", "2025-01-01T00:00:00");
+    // 19.5
+    check_no_until("19.5", "en", NORMAL, "2600-01-01T00:00:00", "2025-01-01T00:00:00");
+
+    // ---- 20. Timestamp validation ----
+    // 20.1
+    check_iso("20.1", "en", NORMAL, "2025-01-15T10:00", "2025-01-15T11:30:00", "1½ hours");
+    // 20.2
+    check_no_iso("20.2", "en", NORMAL, "2025-01-15T10", "2025-01-15T11:30:00");
+    // 20.3
+    check_no_iso("20.3", "en", NORMAL, "2025-1-5T10:00:00", "2025-01-15T11:30:00");
+    // 20.4
+    check_no_iso("20.4", "en", NORMAL, "2025-02-30T10:00:00", "2025-03-15T11:30:00");
+    // 20.5
+    check_no_since("20.5", "en", NORMAL, "2025-01-15T10:00:00", "2025-01-15T25:00:00");
 
     print(passed, " passed, ", failed, " failed");
     if failed > 0 { exit(1); }

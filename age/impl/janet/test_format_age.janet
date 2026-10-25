@@ -823,6 +823,73 @@
 (assert-nil "30.5" (sa/get-locale "EN"))
 
 # =============================================================================
+# Section 31: Weeks and days across month ends
+# =============================================================================
+
+# 31.1
+(assert-eq "31.1" (sa/format-age "2016-12-31" "2017-03-29") "12 weeks, 4 days")
+
+# 31.2
+(assert-eq "31.2" (sa/format-age "1991-11-27" "1992-02-25") "12 weeks, 6 days")
+
+# 31.3
+(assert-eq "31.3" (sa/format-age "2020-11-30" "2021-01-02") "4 weeks, 5 days")
+
+# 31.4
+(def pt-compact-31 (sa/make-formatter (sa/get-locale "en") "compact"))
+(assert-eq "31.4" ((pt-compact-31 :format-age) "2016-12-31" "2017-03-29") "12w4d")
+
+# =============================================================================
+# Section 32: Half years take their plural form from whole years
+# =============================================================================
+
+# 32.1
+(def pt-pl-32 (sa/make-formatter (sa/get-locale "pl")))
+(assert-eq "32.1" ((pt-pl-32 :format-age) "2021-06-15" "2025-01-15") "3 i pół lata")
+
+# 32.2
+(def pt-pl-short-32 (sa/make-formatter (sa/get-locale "pl") "short"))
+(assert-eq "32.2" ((pt-pl-short-32 :format-age) "2020-06-15" "2025-12-15") "5 i pół lat")
+
+# 32.3
+(def pt-shi-32 (sa/make-formatter (sa/get-locale "shi")))
+(assert-eq "32.3" ((pt-shi-32 :format-age) "2005-06-08" "2012-06-07") "6 iseggasen d uzgen")
+
+# =============================================================================
+# Section 33: Input validation
+# =============================================================================
+
+# 33.1
+(assert-nil "33.1" (sa/format-age "2025-02-30" "2032-06-25"))
+
+# 33.2
+(assert-nil "33.2" (sa/format-age "2025-13-01" "2027-01-31"))
+
+# 33.3
+(assert-nil "33.3" (sa/format-age "2023-02-29" "2025-03-01"))
+
+# 33.4
+(assert-nil "33.4" (sa/format-age "2025-06-00" "2027-02-25"))
+
+# 33.5
+(assert-nil "33.5" (sa/format-age "2025-6-1" "2027-02-25"))
+
+# 33.6
+(assert-nil "33.6" (sa/format-age " 2025-06-01" "2027-02-25"))
+
+# 33.7
+(assert-nil "33.7" (sa/format-age "2025-06-15T10:00:00" "2027-02-25"))
+
+# 33.8
+(assert-nil "33.8" (sa/format-age "2020-01-01" "2025-04-31"))
+
+# 33.9
+(assert-nil "33.9" (sa/format-stage "2025-02-30" "2027-09-05"))
+
+# 33.10
+(assert-eq "33.10" (sa/format-age "2024-02-29" "2026-03-01") "2 years")
+
+# =============================================================================
 # Results
 # =============================================================================
 

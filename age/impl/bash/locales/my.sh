@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/my.json
 
-_plural_my() {
+_sayableage_plural_my() {
     echo "other"
 }
 
-_locale_my() {
+_sayableage_locale_my() {
     _unit_day='{n} ရက်'
     _unit_week='{n} ပတ်'
     _unit_month='{n} လ'
@@ -37,5 +37,5 @@ _locale_my() {
     _compact_unit_year='{n} နှစ်'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_my
+    _plural_func=_sayableage_plural_my
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/sq.json
 
-_locale_sq() {
+_sayabletime_locale_sq() {
     _clock_hours=('dymbëdhjetë' 'një' 'dy' 'tre' 'katër' 'pesë' 'gjashtë' 'shtatë' 'tetë' 'nëntë' 'dhjetë' 'njëmbëdhjetë')
     _clock_midnight='mesnata'
     _clock_noon='mesdita'

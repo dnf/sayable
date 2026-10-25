@@ -97,23 +97,76 @@ public struct SayableTimeFormatter: Sendable {
         return result
     }
 
+    /// A clock time alone, or after the T of an ISO datetime whose date part
+    /// is a real calendar day.
     private static func parseTime(_ inputStr: String) -> (Int, Int)? {
-        var t = inputStr
-        // Handle ISO datetime
-        if let tIdx = t.firstIndex(of: "T") {
-            t = String(t[t.index(after: tIdx)...])
+        let chars = Array(inputStr.utf8)
+        guard let tIdx = chars.firstIndex(of: 0x54) else { return parseClock(chars[...]) }
+        guard isRealDate(chars[..<tIdx]) else { return nil }
+        return parseClock(chars[(tIdx + 1)...])
+    }
+
+    private static func isDigit(_ c: UInt8) -> Bool {
+        return c >= 0x30 && c <= 0x39
+    }
+
+    /// The value of the digits in chars[from..<to], or nil if any isn't a digit.
+    private static func digitsValue(_ chars: ArraySlice<UInt8>, _ from: Int, _ to: Int) -> Int? {
+        guard from >= chars.startIndex, to <= chars.endIndex, from < to else { return nil }
+        var n = 0
+        for i in from..<to {
+            guard isDigit(chars[i]) else { return nil }
+            n = n * 10 + Int(chars[i] - 0x30)
         }
-        // Strip timezone
-        if let plusIdx = t.firstIndex(of: "+") {
-            t = String(t[..<plusIdx])
+        return n
+    }
+
+    /// YYYY-MM-DD naming a real calendar day.
+    private static func isRealDate(_ chars: ArraySlice<UInt8>) -> Bool {
+        let f = chars.startIndex
+        guard chars.count == 10, chars[f + 4] == 0x2D, chars[f + 7] == 0x2D,
+              let y = digitsValue(chars, f, f + 4), let m = digitsValue(chars, f + 5, f + 7),
+              let d = digitsValue(chars, f + 8, f + 10) else { return false }
+        return (1...12).contains(m) && d >= 1 && d <= daysInMonth(year: y, month: m)
+    }
+
+    private static func daysInMonth(year y: Int, month m: Int) -> Int {
+        switch m {
+        case 4, 6, 9, 11: return 30
+        case 2: return (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 ? 29 : 28
+        default: return 31
         }
-        if let zIdx = t.firstIndex(of: "Z") {
-            t = String(t[..<zIdx])
+    }
+
+    /// Z or +HH:MM / -HH:MM (validated, never applied).
+    private static func isZoneSuffix(_ chars: ArraySlice<UInt8>) -> Bool {
+        let f = chars.startIndex
+        if chars.count == 1 { return chars[f] == 0x5A }
+        return chars.count == 6 && (chars[f] == 0x2B || chars[f] == 0x2D)
+            && digitsValue(chars, f + 1, f + 3) != nil && chars[f + 3] == 0x3A
+            && digitsValue(chars, f + 4, f + 6) != nil
+    }
+
+    /// H:MM or HH:MM, then optional :SS with optional .fraction, then an
+    /// optional zone suffix.
+    private static func parseClock(_ chars: ArraySlice<UInt8>) -> (Int, Int)? {
+        var p = chars.startIndex
+        while p < chars.endIndex, p - chars.startIndex < 2, isDigit(chars[p]) { p += 1 }
+        guard p > chars.startIndex, p < chars.endIndex, chars[p] == 0x3A,
+              let hour = digitsValue(chars, chars.startIndex, p),
+              let minute = digitsValue(chars, p + 1, p + 3) else { return nil }
+        p += 3
+        var second = 0
+        if p < chars.endIndex, chars[p] == 0x3A, let s = digitsValue(chars, p + 1, p + 3) {
+            second = s
+            p += 3
+            if p + 1 < chars.endIndex, chars[p] == 0x2E, isDigit(chars[p + 1]) {
+                p += 1
+                while p < chars.endIndex, isDigit(chars[p]) { p += 1 }
+            }
         }
-        let parts = t.split(separator: ":", maxSplits: 3, omittingEmptySubsequences: false).map(String.init)
-        guard parts.count >= 2 else { return nil }
-        guard let hour = Int(parts[0]), let minute = Int(parts[1].split(separator: ".").first ?? "") else { return nil }
-        guard hour >= 0, hour <= 23, minute >= 0, minute <= 59 else { return nil }
+        guard p == chars.endIndex || isZoneSuffix(chars[p...]) else { return nil }
+        guard hour <= 23, minute <= 59, second <= 59 else { return nil }
         return (hour, minute)
     }
 

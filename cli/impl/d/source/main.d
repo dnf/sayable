@@ -54,33 +54,26 @@ private string nullify(string s) {
     return s;
 }
 
-/// Check if a string is all digits (possibly with leading minus).
+/// Seconds mode, as the reference CLI decides it: digits after any leading minus signs.
 private bool isInteger(string s) {
-    if (s.length == 0) return false;
-    size_t start = 0;
-    if (s[0] == '-') {
-        if (s.length == 1) return false;
-        start = 1;
-    }
-    foreach (i; start .. s.length) {
-        if (s[i] < '0' || s[i] > '9') return false;
+    import std.string : stripLeft;
+    immutable digits = s.stripLeft("-");
+    if (digits.length == 0) return false;
+    foreach (c; digits) {
+        if (c < '0' || c > '9') return false;
     }
     return true;
 }
 
-/// Parse int from string.
-private int parseInt(string s) {
-    bool neg = false;
-    size_t start = 0;
-    if (s[0] == '-') {
-        neg = true;
-        start = 1;
+/// Seconds as a 64-bit integer; null when malformed ("--5") or out of range,
+/// which is far beyond the 500-year ceiling either way.
+private Nullable!long parseSeconds(string s) {
+    import std.conv : ConvException, to;
+    try {
+        return Nullable!long(s.to!long);
+    } catch (ConvException) {
+        return Nullable!long.init;
     }
-    int n = 0;
-    foreach (i; start .. s.length) {
-        n = n * 10 + (s[i] - '0');
-    }
-    return neg ? -n : n;
 }
 
 /// Get today's date as YYYY-MM-DD.
@@ -362,13 +355,13 @@ Nullable!string cmdDuration(string[] positionals, Options opts) {
 
     auto formatter = SayableDuration(*loc, comp);
 
-    if (value.length == 0) {
-        // null input
+    // "" is an empty string, not null: it isn't an integer, so it takes timestamp mode.
+    if (positionals[0] == "null") {
         return Nullable!string.init;
     } else if (isInteger(value)) {
-        int secs = parseInt(value);
-        auto result = formatter.formatDuration(secs);
-        return result;
+        auto secs = parseSeconds(value);
+        if (secs.isNull) return Nullable!string.init;
+        return formatter.formatDuration(secs.get);
     } else {
         // Timestamp mode
         if (positionals.length < 2) error("duration with timestamps requires start and end arguments");

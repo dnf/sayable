@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ak.json
 
-_plural_ak() {
+_sayableduration_plural_ak() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ak() {
+_sayableduration_locale_ak() {
     _unit_second='sɛkɛnd {n}'
     _unit_minute='sema {n}'
     _unit_hour='dɔnhwere {n}'
@@ -58,5 +58,5 @@ _locale_ak() {
     _compact_delimiter=''
     _compact_ago='{0} a etwaam'
     _compact_in_future='{0} mu'
-    _plural_func=_plural_ak
+    _plural_func=_sayableduration_plural_ak
 }

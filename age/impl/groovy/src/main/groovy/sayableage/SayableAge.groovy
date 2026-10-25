@@ -235,16 +235,17 @@ class SayableAge {
     }
 
     /**
-     * Parses "YYYY-MM-DD" into [year, month, day]. Returns null on failure.
+     * Parses exactly "YYYY-MM-DD", naming a real calendar day, into [year, month, day].
+     * Returns null on failure.
      */
     private static int[] parseDateParts(String s) {
         char dash = '-' as char
-        if (s.length() < 10 || s.charAt(4) != dash || s.charAt(7) != dash) return null
+        if (s.length() != 10 || s.charAt(4) != dash || s.charAt(7) != dash) return null
         Integer y = safeAtoi(s.substring(0, 4))
         Integer m = safeAtoi(s.substring(5, 7))
         Integer d = safeAtoi(s.substring(8, 10))
         if (y == null || m == null || d == null) return null
-        if (y == 0 && m == 0 && d == 0) return null
+        if (m < 1 || m > 12 || d < 1 || d > YearMonth.of(y, m).lengthOfMonth()) return null
         return [y, m, d] as int[]
     }
 

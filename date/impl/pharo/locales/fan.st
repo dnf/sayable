@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/fan.json "
 
-"Locale: fan"
+"Locale: fan"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 fan

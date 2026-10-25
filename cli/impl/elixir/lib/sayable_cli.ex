@@ -347,22 +347,19 @@ defmodule SayableCli do
     )
   end
 
+  # Every generated SayableAge.Locales.<CODE> module, so the list can't drift
+  # from the locale JSON files.
   defp locale_codes do
-    ~w(af ak am ar az bci be bem bg bm bn br bs ca ceb cs cy da de din dje dyu
-       ee el en es et eu fa fan ff fi fil fon fr ga gd gl gn gu gv ha he hi
-       hr ht hu hy id ig is it ja jv ka kbp kk km kn ko kpe ktu ku kw ky lg
-       ln lo lt lv men mfe mg mi mk ml mn mnk mos mr ms mt my nb nd ne ng nl
-       nso nus ny om or pa pl pov ps pt qu ro ru rw sar sd sg shi si sk sl sn
-       snk so sq sr ss st su suk sv sw ta te tem tg th ti tig tk tn tr ts tzm
-       uk umb ur uz vi vmw wo xh yo yue zdj zh zu)
-    |> Enum.filter(fn code ->
-      case SayableAge.get_locale(code) do
-        {:ok, _} -> true
-        :error -> false
-      end
-    end)
+    Application.load(:sayable_age)
+    {:ok, modules} = :application.get_key(:sayable_age, :modules)
+
+    modules
+    |> Enum.filter(&age_locale_module?/1)
+    |> Enum.map(& &1.locale().code)
     |> Enum.sort()
   end
+
+  defp age_locale_module?(module), do: match?(["SayableAge", "Locales", _], Module.split(module))
 
   # Integer detection for duration argument
 

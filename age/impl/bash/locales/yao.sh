@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/yao.json
 
-_plural_yao() {
+_sayableage_plural_yao() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_yao() {
+_sayableage_locale_yao() {
     _unit_day_one='lisiku {n}'
     _unit_day_other='masiku {n}'
     _unit_week_one='juma {n}'
@@ -46,5 +46,5 @@ _locale_yao() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_yao
+    _plural_func=_sayableage_plural_yao
 }

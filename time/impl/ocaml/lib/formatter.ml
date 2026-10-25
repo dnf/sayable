@@ -52,42 +52,75 @@ let assoc_opt_int key lst =
   in
   aux lst
 
-let strip_tz s =
-  let s = if string_contains ~needle:"+" s then
-    let idx = String.index s '+' in
-    String.sub s 0 idx
-  else s in
-  if string_contains ~needle:"Z" s then
-    let idx = String.index s 'Z' in
-    String.sub s 0 idx
-  else s
+let is_digit c = c >= '0' && c <= '9'
 
+(* The value of the digits in s.[pos .. pos + len - 1], or None if any
+   position is out of range or not a digit. *)
+let digits_value s pos len =
+  if pos < 0 || len <= 0 || pos + len > String.length s then None
+  else begin
+    let value = ref 0 in
+    let ok = ref true in
+    for i = pos to pos + len - 1 do
+      if is_digit s.[i] then value := !value * 10 + (Char.code s.[i] - Char.code '0')
+      else ok := false
+    done;
+    if !ok then Some !value else None
+  end
+
+let days_in_month y m =
+  match m with
+  | 4 | 6 | 9 | 11 -> 30
+  | 2 -> if (y mod 4 = 0 && y mod 100 <> 0) || y mod 400 = 0 then 29 else 28
+  | _ -> 31
+
+(* YYYY-MM-DD naming a real calendar day. *)
+let is_real_date s =
+  String.length s = 10 && s.[4] = '-' && s.[7] = '-'
+  && (match digits_value s 0 4, digits_value s 5 2, digits_value s 8 2 with
+      | Some y, Some m, Some d -> m >= 1 && m <= 12 && d >= 1 && d <= days_in_month y m
+      | _ -> false)
+
+(* Z or +HH:MM / -HH:MM (validated, never applied). *)
+let is_zone_suffix s =
+  s = "Z"
+  || (String.length s = 6 && (s.[0] = '+' || s.[0] = '-')
+      && digits_value s 1 2 <> None && s.[3] = ':' && digits_value s 4 2 <> None)
+
+(* H:MM or HH:MM, then optional :SS with optional .fraction, then an
+   optional zone suffix. *)
+let parse_clock s =
+  let len = String.length s in
+  let hour_digits = if len > 1 && is_digit s.[0] && is_digit s.[1] then 2 else 1 in
+  match digits_value s 0 hour_digits, digits_value s (hour_digits + 1) 2 with
+  | Some hour, Some minute when s.[hour_digits] = ':' ->
+    let pos = ref (hour_digits + 3) in
+    let second = ref 0 in
+    (if !pos < len && s.[!pos] = ':' then
+       match digits_value s (!pos + 1) 2 with
+       | Some sec ->
+         second := sec;
+         pos := !pos + 3;
+         if !pos + 1 < len && s.[!pos] = '.' && is_digit s.[!pos + 1] then begin
+           incr pos;
+           while !pos < len && is_digit s.[!pos] do incr pos done
+         end
+       | None -> ());
+    let zone = String.sub s !pos (len - !pos) in
+    if (zone = "" || is_zone_suffix zone) && hour <= 23 && minute <= 59 && !second <= 59
+    then Some (hour, minute)
+    else None
+  | _ -> None
+
+(* A clock time alone, or after the T of an ISO datetime whose date part
+   is a real calendar day. *)
 let parse_time input =
-  if String.length input = 0 then None
-  else
-    let t =
-      if string_contains ~needle:"T" input then
-        let idx = String.index input 'T' in
-        String.sub input (idx + 1) (String.length input - idx - 1)
-      else input
-    in
-    let t = strip_tz t in
-    let parts = String.split_on_char ':' t in
-    match parts with
-    | h_str :: m_str :: _ ->
-      let m_str =
-        if string_contains ~needle:"." m_str then
-          let idx = String.index m_str '.' in
-          String.sub m_str 0 idx
-        else m_str
-      in
-      (try
-         let hour = int_of_string h_str in
-         let minute = int_of_string m_str in
-         if hour < 0 || hour > 23 || minute < 0 || minute > 59 then None
-         else Some (hour, minute)
-       with Failure _ -> None)
-    | _ -> None
+  match String.index_opt input 'T' with
+  | None -> parse_clock input
+  | Some idx ->
+    if is_real_date (String.sub input 0 idx)
+    then parse_clock (String.sub input (idx + 1) (String.length input - idx - 1))
+    else None
 
 let round_to_5 minute =
   ((minute + 2) / 5) * 5

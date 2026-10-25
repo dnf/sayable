@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/fi.json
 
-_locale_fi() {
+_sayabletime_locale_fi() {
     _clock_hours=('kaksitoista' 'yksi' 'kaksi' 'kolme' 'neljä' 'viisi' 'kuusi' 'seitsemän' 'kahdeksan' 'yhdeksän' 'kymmenen' 'yksitoista')
     _clock_midnight='keskiyö'
     _clock_noon='keskipäivä'

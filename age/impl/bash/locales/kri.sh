@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/kri.json
 
-_plural_kri() {
+_sayableage_plural_kri() {
     echo "other"
 }
 
-_locale_kri() {
+_sayableage_locale_kri() {
     _unit_day='{n} de'
     _unit_week='{n} wik'
     _unit_month='{n} mont'
@@ -36,5 +36,5 @@ _locale_kri() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_kri
+    _plural_func=_sayableage_plural_kri
 }

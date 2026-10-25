@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ktu.json
 
-_plural_ktu() {
+_sayableage_plural_ktu() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ktu() {
+_sayableage_locale_ktu() {
     _unit_day_one='lumbu {n}'
     _unit_day_other='malumbu {n}'
     _unit_week_one='poso {n}'
@@ -49,5 +49,5 @@ _locale_ktu() {
     _compact_unit_year_other='mimv {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ktu
+    _plural_func=_sayableage_plural_ktu
 }

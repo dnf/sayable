@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/st.json
 
-_plural_st() {
+_sayableage_plural_st() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_st() {
+_sayableage_locale_st() {
     _unit_day_one='letsatsi {n}'
     _unit_day_other='matsatsi {n}'
     _unit_week_one='beke {n}'
@@ -47,5 +47,5 @@ _locale_st() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_st
+    _plural_func=_sayableage_plural_st
 }

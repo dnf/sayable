@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ms.json
 
-_locale_ms() {
+_sayabledate_locale_ms() {
     _months=('Januari' 'Februari' 'Mac' 'April' 'Mei' 'Jun' 'Julai' 'Ogos' 'September' 'Oktober' 'November' 'Disember')
     _weekdays=('Ahad' 'Isnin' 'Selasa' 'Rabu' 'Khamis' 'Jumaat' 'Sabtu')
     _day_format='{n}'

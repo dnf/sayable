@@ -379,3 +379,129 @@ test "Spanish day after tomorrow" {
     var buf: [256]u8 = undefined;
     try expectStr("pasado ma\xc3\xb1ana", fmtRelWith(&buf, &sd.locales.es, .normal, "2025-03-17", "2025-03-15"));
 }
+
+// ================================================================
+// Section 13: format_date_with_year
+// ================================================================
+// 13.1
+test "13.1" {
+    var buf: [256]u8 = undefined;
+    try expectStr("February 4th, 2018", sd.formatDateWithYear(&buf, &sd.locales.en, .normal, "2018-02-04"));
+}
+
+// 13.2
+test "13.2" {
+    var buf: [256]u8 = undefined;
+    try expectStr("Mar 15, 2025", sd.formatDateWithYear(&buf, &sd.locales.en, .short_mode, "2025-03-15"));
+}
+
+// 13.3
+test "13.3" {
+    var buf: [256]u8 = undefined;
+    try expectStr("1/21/97", sd.formatDateWithYear(&buf, &sd.locales.en, .compact, "1997-01-21"));
+}
+
+// 13.4
+test "13.4 two-digit year keeps its leading zero" {
+    var buf: [256]u8 = undefined;
+    try expectStr("20/5/07", sd.formatDateWithYear(&buf, &sd.locales.tg, .compact, "2007-05-20"));
+}
+
+// 13.5
+test "13.5" {
+    var buf: [256]u8 = undefined;
+    try expectStr("21. kesäkuuta 1996", sd.formatDateWithYear(&buf, &sd.locales.fi, .short_mode, "1996-06-21"));
+}
+
+// ================================================================
+// Section 14: Short month names
+// ================================================================
+// 14.1
+test "14.1" {
+    var buf: [256]u8 = undefined;
+    try expectStr("15. februára", sd.formatDate(&buf, &sd.locales.sk, .short_mode, "2031-02-15"));
+}
+
+// 14.2
+test "14.2" {
+    var buf: [256]u8 = undefined;
+    try expectStr("10. prosince", sd.formatDate(&buf, &sd.locales.cs, .short_mode, "2025-12-10"));
+}
+
+// 14.3
+test "14.3" {
+    var buf: [256]u8 = undefined;
+    try expectStr("5 листопада", sd.formatDate(&buf, &sd.locales.uk, .short_mode, "2025-11-05"));
+}
+
+// 14.4
+test "14.4" {
+    var buf: [256]u8 = undefined;
+    try expectStr("8. elokuuta", sd.formatRelative(&buf, &sd.locales.fi, .short_mode, "1998-08-08", "1998-08-15"));
+}
+
+// ================================================================
+// Section 15: format_relative — short phrases
+// ================================================================
+// 15.1
+test "15.1 day after tomorrow" {
+    var buf: [256]u8 = undefined;
+    try expectStr("an Mth ma", sd.formatRelative(&buf, &sd.locales.kw, .short_mode, "2035-12-04", "2035-12-02"));
+}
+
+// 15.2
+test "15.2 day before yesterday" {
+    var buf: [256]u8 = undefined;
+    try expectStr("Dom nchi'j", sd.formatRelative(&buf, &sd.locales.mam, .short_mode, "2000-01-23", "2000-01-25"));
+}
+
+// 15.3
+test "15.3 day after tomorrow" {
+    var buf: [256]u8 = undefined;
+    try expectStr("a'in Vie", sd.formatRelative(&buf, &sd.locales.kek, .short_mode, "2014-10-24", "2014-10-22"));
+}
+
+// ================================================================
+// Section 16: Input validation
+// ================================================================
+// 16.1
+test "16.1 February 30 doesn't exist" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDate(&buf, &sd.locales.en, .normal, "2025-02-30"));
+}
+
+// 16.2
+test "16.2 Month 13" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDate(&buf, &sd.locales.en, .normal, "2025-13-01"));
+}
+
+// 16.3
+test "16.3 Unpadded month and day" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDate(&buf, &sd.locales.en, .normal, "2025-6-1"));
+}
+
+// 16.4
+test "16.4 Surrounding whitespace" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDate(&buf, &sd.locales.en, .normal, " 2025-06-01"));
+}
+
+// 16.5
+test "16.5 An ISO datetime: only the date part is used" {
+    var buf: [256]u8 = undefined;
+    try expectStr("June 1st", sd.formatDate(&buf, &sd.locales.en, .normal, "2025-06-01T10:00:00"));
+}
+
+// 16.6
+test "16.6 February 29 in a non-leap year" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDateWithYear(&buf, &sd.locales.en, .normal, "2023-02-29"));
+}
+
+// 16.7
+test "16.7 Invalid asOf" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatRelative(&buf, &sd.locales.en, .normal, "2025-03-16", "2025-04-31"));
+}

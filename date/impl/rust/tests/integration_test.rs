@@ -384,3 +384,148 @@ fn test_spanish_day_after_tomorrow() {
     let sd = SayableDate::new(&locales::ES, Compactness::Normal);
     assert_eq!(sd.format_relative("2025-03-17", "2025-03-15"), Some("pasado ma\u{00f1}ana".to_string()));
 }
+
+// ── Section 13: format_date_with_year ────────────────────────────────────
+
+// 13.1
+#[test]
+fn test_case_13_1() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_date_with_year("2018-02-04"), Some("February 4th, 2018".to_string()));
+}
+
+// 13.2
+#[test]
+fn test_case_13_2() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Short);
+    assert_eq!(sd.format_date_with_year("2025-03-15"), Some("Mar 15, 2025".to_string()));
+}
+
+// 13.3
+#[test]
+fn test_case_13_3() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Compact);
+    assert_eq!(sd.format_date_with_year("1997-01-21"), Some("1/21/97".to_string()));
+}
+
+// 13.4 — two-digit year keeps its leading zero
+#[test]
+fn test_case_13_4() {
+    let sd = SayableDate::new(&locales::TG, Compactness::Compact);
+    assert_eq!(sd.format_date_with_year("2007-05-20"), Some("20/5/07".to_string()));
+}
+
+// 13.5
+#[test]
+fn test_case_13_5() {
+    let sd = SayableDate::new(&locales::FI, Compactness::Short);
+    assert_eq!(sd.format_date_with_year("1996-06-21"), Some("21. kesäkuuta 1996".to_string()));
+}
+
+
+// ── Section 14: Short month names ────────────────────────────────────
+
+// 14.1
+#[test]
+fn test_case_14_1() {
+    let sd = SayableDate::new(&locales::SK, Compactness::Short);
+    assert_eq!(sd.format_date("2031-02-15"), Some("15. februára".to_string()));
+}
+
+// 14.2
+#[test]
+fn test_case_14_2() {
+    let sd = SayableDate::new(&locales::CS, Compactness::Short);
+    assert_eq!(sd.format_date("2025-12-10"), Some("10. prosince".to_string()));
+}
+
+// 14.3
+#[test]
+fn test_case_14_3() {
+    let sd = SayableDate::new(&locales::UK, Compactness::Short);
+    assert_eq!(sd.format_date("2025-11-05"), Some("5 листопада".to_string()));
+}
+
+// 14.4
+#[test]
+fn test_case_14_4() {
+    let sd = SayableDate::new(&locales::FI, Compactness::Short);
+    assert_eq!(sd.format_relative("1998-08-08", "1998-08-15"), Some("8. elokuuta".to_string()));
+}
+
+
+// ── Section 15: format_relative — short phrases ────────────────────────────────────
+
+// 15.1 — day after tomorrow
+#[test]
+fn test_case_15_1() {
+    let sd = SayableDate::new(&locales::KW, Compactness::Short);
+    assert_eq!(sd.format_relative("2035-12-04", "2035-12-02"), Some("an Mth ma".to_string()));
+}
+
+// 15.2 — day before yesterday
+#[test]
+fn test_case_15_2() {
+    let sd = SayableDate::new(&locales::MAM, Compactness::Short);
+    assert_eq!(sd.format_relative("2000-01-23", "2000-01-25"), Some("Dom nchi'j".to_string()));
+}
+
+// 15.3 — day after tomorrow
+#[test]
+fn test_case_15_3() {
+    let sd = SayableDate::new(&locales::KEK, Compactness::Short);
+    assert_eq!(sd.format_relative("2014-10-24", "2014-10-22"), Some("a'in Vie".to_string()));
+}
+
+
+// ── Section 16: Input validation ────────────────────────────────────
+
+// 16.1 — February 30 doesn't exist
+#[test]
+fn test_case_16_1() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_date("2025-02-30"), None);
+}
+
+// 16.2 — Month 13
+#[test]
+fn test_case_16_2() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_date("2025-13-01"), None);
+}
+
+// 16.3 — Unpadded month and day
+#[test]
+fn test_case_16_3() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_date("2025-6-1"), None);
+}
+
+// 16.4 — Surrounding whitespace
+#[test]
+fn test_case_16_4() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_date(" 2025-06-01"), None);
+}
+
+// 16.5 — An ISO datetime: only the date part is used
+#[test]
+fn test_case_16_5() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_date("2025-06-01T10:00:00"), Some("June 1st".to_string()));
+}
+
+// 16.6 — February 29 in a non-leap year
+#[test]
+fn test_case_16_6() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_date_with_year("2023-02-29"), None);
+}
+
+// 16.7 — Invalid asOf
+#[test]
+fn test_case_16_7() {
+    let sd = SayableDate::new(&locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_relative("2025-03-16", "2025-04-31"), None);
+}
+

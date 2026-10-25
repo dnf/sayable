@@ -284,3 +284,62 @@ suite "Compact compactness - duration":
   # 17.2
   test "compact 1m30s":
     check sd.formatDuration(90).get == "1m30s"
+
+# ================================================================
+# Section 18: Short compactness — relative time
+# ================================================================
+suite "Section 18: Short compactness — relative time":
+  # 18.1
+  test "18.1 days and hours both kept":
+    check newSayableDuration(getLocale("men").get).formatSince("2025-01-20T01:32:11", "2025-01-22T15:39:16") == some("lɔhɔnga 2, awa 14 taa gbɔyɔ")
+
+
+# ================================================================
+# Section 19: Range (500-year ceiling)
+# ================================================================
+suite "Section 19: Range (500-year ceiling)":
+  # 19.1
+  test "19.1 500 Julian years: 6000 months, the ceiling":
+    check newSayableDuration(getLocale("en").get).formatDuration(15778800000) == some("500 years")
+
+  # 19.2
+  test "19.2 over 6000 months":
+    check newSayableDuration(getLocale("en").get).formatDuration(15800000000).isNone
+
+  # 19.3
+  test "19.3 well beyond the ceiling (and 32-bit range)":
+    check newSayableDuration(getLocale("en").get).formatDuration(99999999999).isNone
+
+  # 19.4
+  test "19.4 525 years ago":
+    check newSayableDuration(getLocale("en").get).formatSince("1500-01-01T00:00:00", "2025-01-01T00:00:00").isNone
+
+  # 19.5
+  test "19.5 575 years from now":
+    check newSayableDuration(getLocale("en").get).formatUntil("2600-01-01T00:00:00", "2025-01-01T00:00:00").isNone
+
+
+# ================================================================
+# Section 20: Timestamp validation
+# ================================================================
+suite "Section 20: Timestamp validation":
+  # 20.1
+  test "20.1 seconds are optional":
+    check newSayableDuration(getLocale("en").get).formatDurationIso("2025-01-15T10:00", "2025-01-15T11:30:00") == some("1½ hours")
+
+  # 20.2
+  test "20.2 minutes are required":
+    check newSayableDuration(getLocale("en").get).formatDurationIso("2025-01-15T10", "2025-01-15T11:30:00").isNone
+
+  # 20.3
+  test "20.3 unpadded date":
+    check newSayableDuration(getLocale("en").get).formatDurationIso("2025-1-5T10:00:00", "2025-01-15T11:30:00").isNone
+
+  # 20.4
+  test "20.4 impossible date":
+    check newSayableDuration(getLocale("en").get).formatDurationIso("2025-02-30T10:00:00", "2025-03-15T11:30:00").isNone
+
+  # 20.5
+  test "20.5 hour out of range":
+    check newSayableDuration(getLocale("en").get).formatSince("2025-01-15T10:00:00", "2025-01-15T25:00:00").isNone
+

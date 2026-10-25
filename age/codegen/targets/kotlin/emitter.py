@@ -57,7 +57,12 @@ def emit_all(all_locales: list[dict]) -> str:
         lines.append(f"    // {uc} — {name}")
         lines.append("    // ================================================================")
 
-        lines.append(f"    public val {uc}: AgeLocale = AgeLocale(")
+        # One builder function per locale keeps Locales.<clinit> under the
+        # JVM's 64KB method size limit.
+        builder = f"build{code.capitalize()}"
+        lines.append(f"    public val {uc}: AgeLocale = {builder}()")
+        lines.append("")
+        lines.append(f"    private fun {builder}(): AgeLocale = AgeLocale(")
         lines.append(f"        code = {_quote(code)},")
 
         # Plural

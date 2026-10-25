@@ -463,4 +463,104 @@ public class FormatDurationTest
         var sd = new SayableDuration(Locales.EN, Compactness.Compact);
         Assert.Equal("1m30s", sd.FormatDuration(90));
     }
+
+    // ================================================================
+    // Short compactness — relative time
+    // ================================================================
+
+    // 18.1
+    [Fact]
+    public void Spec18_1_DaysAndHoursBothKept()
+    {
+        var f = new SayableDuration(Locales.MEN, Compactness.Short);
+        Assert.Equal("l\u0254h\u0254nga 2, awa 14 taa gb\u0254y\u0254", f.Since("2025-01-20T01:32:11", "2025-01-22T15:39:16"));
+    }
+
+    // ================================================================
+    // Range (500-year ceiling)
+    // ================================================================
+
+    // 19.1
+    [Fact]
+    public void Spec19_1_500JulianYears6000MonthsTheCeiling()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Equal("500 years", f.FormatDuration(15778800000L));
+    }
+
+    // 19.2
+    [Fact]
+    public void Spec19_2_Over6000Months()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.FormatDuration(15800000000L));
+    }
+
+    // 19.3
+    [Fact]
+    public void Spec19_3_WellBeyondTheCeilingAnd32Bit()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.FormatDuration(99999999999L));
+    }
+
+    // 19.4
+    [Fact]
+    public void Spec19_4_525YearsAgo()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.Since("1500-01-01T00:00:00", "2025-01-01T00:00:00"));
+    }
+
+    // 19.5
+    [Fact]
+    public void Spec19_5_575YearsFromNow()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.Until("2600-01-01T00:00:00", "2025-01-01T00:00:00"));
+    }
+
+    // ================================================================
+    // Timestamp validation
+    // ================================================================
+
+    // 20.1
+    [Fact]
+    public void Spec20_1_SecondsAreOptional()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Equal("1\u00BD hours", f.FormatIso("2025-01-15T10:00", "2025-01-15T11:30:00"));
+    }
+
+    // 20.2
+    [Fact]
+    public void Spec20_2_MinutesAreRequired()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.FormatIso("2025-01-15T10", "2025-01-15T11:30:00"));
+    }
+
+    // 20.3
+    [Fact]
+    public void Spec20_3_UnpaddedDate()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.FormatIso("2025-1-5T10:00:00", "2025-01-15T11:30:00"));
+    }
+
+    // 20.4
+    [Fact]
+    public void Spec20_4_ImpossibleDate()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.FormatIso("2025-02-30T10:00:00", "2025-03-15T11:30:00"));
+    }
+
+    // 20.5
+    [Fact]
+    public void Spec20_5_HourOutOfRange()
+    {
+        var f = new SayableDuration(Locales.EN);
+        Assert.Null(f.Since("2025-01-15T10:00:00", "2025-01-15T25:00:00"));
+    }
 }

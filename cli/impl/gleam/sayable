@@ -4,9 +4,20 @@ set -euo pipefail
 
 _dir="$(cd "$(dirname "$0")" && pwd)"
 
-# Ensure dependencies are resolved (first run only)
-if [[ ! -d "${_dir}/build" ]]; then
-    (cd "${_dir}" && gleam build >/dev/null 2>&1)
+_root="${_dir}/../../.."
+_stamp="${_dir}/build/.built"
+
+# Build on first run, and rebuild when the CLI or a library source is newer
+# than the last successful build, so a stale build is never served. (Gleam
+# recompiles only changed modules, so no single .beam is a reliable stamp.)
+_needs_build() {
+    [[ ! -f "${_stamp}" ]] && return 0
+    [[ -n "$(find "${_dir}/src" "${_root}"/{age,date,duration,time}/impl/gleam/src \
+        -newer "${_stamp}" \( -name '*.gleam' -o -name '*.erl' \) -print -quit)" ]]
+}
+
+if _needs_build; then
+    (cd "${_dir}" && gleam build >/dev/null 2>&1) && touch "${_stamp}"
 fi
 
 exec erl -noshell -pa "${_dir}"/build/dev/erlang/*/ebin \

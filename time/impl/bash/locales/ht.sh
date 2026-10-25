@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ht.json
 
-_locale_ht() {
+_sayabletime_locale_ht() {
     _clock_hours=('douz' 'en' 'de' 'twa' 'kat' 'senk' 'sis' 'sèt' 'uit' 'nèf' 'dis' 'onz')
     _clock_midnight='minui'
     _clock_noon='midi'

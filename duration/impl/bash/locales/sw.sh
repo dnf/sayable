@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/sw.json
 
-_plural_sw() {
+_sayableduration_plural_sw() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sw() {
+_sayableduration_locale_sw() {
     _unit_second='{n} sekunde'
     _unit_minute='{n} dakika'
     _unit_hour='{n} saa'
@@ -56,5 +56,5 @@ _locale_sw() {
     _compact_delimiter=''
     _compact_ago='{0} iliyopita'
     _compact_in_future='baada ya {0}'
-    _plural_func=_plural_sw
+    _plural_func=_sayableduration_plural_sw
 }

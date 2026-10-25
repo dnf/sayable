@@ -672,6 +672,55 @@ static void test_locale_lookup(void) {
     ASSERT_TRUE("get(EN) null", sa_locale_get("EN") == NULL);
 }
 
+/* ================================================================ */
+/* Section 31: Weeks and days across month ends */
+/* ================================================================ */
+static void test_section_31_weeks_and_days_across_month_ends(void) {
+    char buf[256];
+    int rc;
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2016-12-31", "2017-03-29");
+    ASSERT_EQ("31.1 88 days across a 28-day February", rc, buf, "12 weeks, 4 days"); // 31.1
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "1991-11-27", "1992-02-25");
+    ASSERT_EQ("31.2 90 days across a year end into a leap year", rc, buf, "12 weeks, 6 days"); // 31.2
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2020-11-30", "2021-01-02");
+    ASSERT_EQ("31.3 33 days across a year end", rc, buf, "4 weeks, 5 days"); // 31.3
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_COMPACT, "2016-12-31", "2017-03-29");
+    ASSERT_EQ("31.4 Compact form of 31.1", rc, buf, "12w4d"); // 31.4
+}
+
+/* ================================================================ */
+/* Section 32: Half years take their plural form from whole years */
+/* ================================================================ */
+static void test_section_32_half_years_take_their_plural_form_from_whole_years(void) {
+    char buf[256];
+    int rc;
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_pl, SA_NORMAL, "2021-06-15", "2025-01-15");
+    ASSERT_EQ("32.1 Polish 3 is 'few'", rc, buf, "3 i p\303\263\305\202 lata"); // 32.1
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_pl, SA_SHORT, "2020-06-15", "2025-12-15");
+    ASSERT_EQ("32.2 Polish 5 is 'many'", rc, buf, "5 i p\303\263\305\202 lat"); // 32.2
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_shi, SA_NORMAL, "2005-06-08", "2012-06-07");
+    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", rc, buf, "6 iseggasen d uzgen"); // 32.3
+}
+
+/* ================================================================ */
+/* Section 33: Input validation */
+/* ================================================================ */
+static void test_section_33_input_validation(void) {
+    char buf[256];
+    int rc;
+    ASSERT_NULL("33.1 February 30 doesn't exist", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2025-02-30", "2032-06-25")); // 33.1
+    ASSERT_NULL("33.2 Month 13", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2025-13-01", "2027-01-31")); // 33.2
+    ASSERT_NULL("33.3 February 29 in a non-leap year", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2023-02-29", "2025-03-01")); // 33.3
+    ASSERT_NULL("33.4 Day 00", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2025-06-00", "2027-02-25")); // 33.4
+    ASSERT_NULL("33.5 Unpadded month and day", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2025-6-1", "2027-02-25")); // 33.5
+    ASSERT_NULL("33.6 Surrounding whitespace", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, " 2025-06-01", "2027-02-25")); // 33.6
+    ASSERT_NULL("33.7 A datetime is not a date", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2025-06-15T10:00:00", "2027-02-25")); // 33.7
+    ASSERT_NULL("33.8 Invalid asOf", sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2020-01-01", "2025-04-31")); // 33.8
+    ASSERT_TRUE("33.9 formatStage validates too", sa_stage(&sa_locale_en, "2025-02-30", "2027-09-05", "") == NULL); // 33.9
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, "2024-02-29", "2026-03-01");
+    ASSERT_EQ("33.10 February 29 in a leap year is valid", rc, buf, "2 years"); // 33.10
+}
+
 int main(void) {
     test_null_edge_cases();
     test_days_tier();
@@ -709,6 +758,10 @@ int main(void) {
     test_locale_indonesian();
     test_locale_amharic();
     test_locale_lookup();
+
+    test_section_31_weeks_and_days_across_month_ends();
+    test_section_32_half_years_take_their_plural_form_from_whole_years();
+    test_section_33_input_validation();
 
     printf("\n=== Results ===\n");
     printf("Passed: %d\n", tests_passed);

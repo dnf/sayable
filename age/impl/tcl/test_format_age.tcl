@@ -855,6 +855,63 @@ assert_eq [::sayableage::get_locale ""] "" "30.4"
 assert_eq [::sayableage::get_locale "EN"] "" "30.5"
 
 # ================================================================
+# Sections 31-33: weeks+days across month ends, half-year plurals, input validation
+# ================================================================
+puts "Sections 31-33: weeks+days across month ends, half-year plurals, input validation"
+
+# 31.1
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2016-12-31" "2017-03-29"] "12 weeks, 4 days" "31.1"
+
+# 31.2
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "1991-11-27" "1992-02-25"] "12 weeks, 6 days" "31.2"
+
+# 31.3
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2020-11-30" "2021-01-02"] "4 weeks, 5 days" "31.3"
+
+# 31.4
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en] compact] "2016-12-31" "2017-03-29"] "12w4d" "31.4"
+
+# 32.1
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale pl]] "2021-06-15" "2025-01-15"] "3 i pół lata" "32.1"
+
+# 32.2
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale pl] short] "2020-06-15" "2025-12-15"] "5 i pół lat" "32.2"
+
+# 32.3
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale shi]] "2005-06-08" "2012-06-07"] "6 iseggasen d uzgen" "32.3"
+
+# 33.1
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2025-02-30" "2032-06-25"] "" "33.1"
+
+# 33.2
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2025-13-01" "2027-01-31"] "" "33.2"
+
+# 33.3
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2023-02-29" "2025-03-01"] "" "33.3"
+
+# 33.4
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2025-06-00" "2027-02-25"] "" "33.4"
+
+# 33.5
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2025-6-1" "2027-02-25"] "" "33.5"
+
+# 33.6
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] " 2025-06-01" "2027-02-25"] "" "33.6"
+
+# 33.7
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2025-06-15T10:00:00" "2027-02-25"] "" "33.7"
+
+# 33.8
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2020-01-01" "2025-04-31"] "" "33.8"
+
+# 33.9
+assert_eq [::sayableage::format_stage [::sayableage::new [::sayableage::get_locale en]] "2025-02-30" "2027-09-05"] "" "33.9"
+
+# 33.10
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2024-02-29" "2026-03-01"] "2 years" "33.10"
+
+
+# ================================================================
 # Summary
 # ================================================================
 puts ""

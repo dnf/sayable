@@ -257,3 +257,83 @@ test_that("12.1-12.2 - Spanish locale", {
   # 12.2
   expect_equal(sd_es$format_relative("2025-03-17", "2025-03-15"), "pasado ma\u00f1ana")
 })
+
+# ================================================================
+# Sections 13-16: with year, short months, short phrases, input validation
+# ================================================================
+
+test_that("13.1 - format_date_with_year", {
+  expect_equal(sayable_date_new(en)$format_date_with_year("2018-02-04"), "February 4th, 2018")
+})
+
+test_that("13.2 - format_date_with_year", {
+  expect_equal(sayable_date_new(en, "short")$format_date_with_year("2025-03-15"), "Mar 15, 2025")
+})
+
+test_that("13.3 - format_date_with_year", {
+  expect_equal(sayable_date_new(en, "compact")$format_date_with_year("1997-01-21"), "1/21/97")
+})
+
+test_that("13.4 - two-digit year keeps its leading zero", {
+  expect_equal(sayable_date_new(load_locale("tg"), "compact")$format_date_with_year("2007-05-20"), "20/5/07")
+})
+
+test_that("13.5 - format_date_with_year", {
+  expect_equal(sayable_date_new(load_locale("fi"), "short")$format_date_with_year("1996-06-21"), "21. kes\u00e4kuuta 1996")
+})
+
+test_that("14.1 - format_date", {
+  expect_equal(sayable_date_new(load_locale("sk"), "short")$format_date("2031-02-15"), "15. febru\u00e1ra")
+})
+
+test_that("14.2 - format_date", {
+  expect_equal(sayable_date_new(load_locale("cs"), "short")$format_date("2025-12-10"), "10. prosince")
+})
+
+test_that("14.3 - format_date", {
+  expect_equal(sayable_date_new(load_locale("uk"), "short")$format_date("2025-11-05"), "5 \u043b\u0438\u0441\u0442\u043e\u043f\u0430\u0434\u0430")
+})
+
+test_that("14.4 - format_relative", {
+  expect_equal(sayable_date_new(load_locale("fi"), "short")$format_relative("1998-08-08", "1998-08-15"), "8. elokuuta")
+})
+
+test_that("15.1 - day after tomorrow", {
+  expect_equal(sayable_date_new(load_locale("kw"), "short")$format_relative("2035-12-04", "2035-12-02"), "an Mth ma")
+})
+
+test_that("15.2 - day before yesterday", {
+  expect_equal(sayable_date_new(load_locale("mam"), "short")$format_relative("2000-01-23", "2000-01-25"), "Dom nchi'j")
+})
+
+test_that("15.3 - day after tomorrow", {
+  expect_equal(sayable_date_new(load_locale("kek"), "short")$format_relative("2014-10-24", "2014-10-22"), "a'in Vie")
+})
+
+test_that("16.1 - February 30 doesn't exist", {
+  expect_null(sayable_date_new(en)$format_date("2025-02-30"))
+})
+
+test_that("16.2 - Month 13", {
+  expect_null(sayable_date_new(en)$format_date("2025-13-01"))
+})
+
+test_that("16.3 - Unpadded month and day", {
+  expect_null(sayable_date_new(en)$format_date("2025-6-1"))
+})
+
+test_that("16.4 - Surrounding whitespace", {
+  expect_null(sayable_date_new(en)$format_date(" 2025-06-01"))
+})
+
+test_that("16.5 - An ISO datetime: only the date part is used", {
+  expect_equal(sayable_date_new(en)$format_date("2025-06-01T10:00:00"), "June 1st")
+})
+
+test_that("16.6 - February 29 in a non-leap year", {
+  expect_null(sayable_date_new(en)$format_date_with_year("2023-02-29"))
+})
+
+test_that("16.7 - Invalid asOf", {
+  expect_null(sayable_date_new(en)$format_relative("2025-03-16", "2025-04-31"))
+})

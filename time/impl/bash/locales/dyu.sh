@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/dyu.json
 
-_locale_dyu() {
+_sayabletime_locale_dyu() {
     _clock_hours=('tan ni fila' 'kelen' 'fila' 'saba' 'naani' 'duuru' 'wɔɔrɔ' 'wolonwula' 'segin' 'kɔnɔntɔn' 'tan' 'tan ni kelen')
     _clock_midnight='dugutilama'
     _clock_noon='tilgari'

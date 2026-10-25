@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ur.json
 
-_locale_ur() {
+_sayabletime_locale_ur() {
     _clock_hours=('بارہ' 'ایک' 'دو' 'تین' 'چار' 'پانچ' 'چھ' 'سات' 'آٹھ' 'نو' 'دس' 'گیارہ')
     _clock_midnight='آدھی رات'
     _clock_noon='دوپہر'

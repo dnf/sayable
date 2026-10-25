@@ -385,3 +385,73 @@ describe "Compact compactness — duration" do
     formatter.format_duration(90).should eq "1m30s"
   end
 end
+
+# ================================================================
+# Section 18: Short compactness — relative time
+# ================================================================
+describe "Short compactness — relative time" do
+  # 18.1
+  it "days and hours both kept" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("men").not_nil!, :normal).format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16").should eq "lɔhɔnga 2, awa 14 taa gbɔyɔ"
+  end
+end
+
+# ================================================================
+# Section 19: Range (500-year ceiling)
+# ================================================================
+describe "Range (500-year ceiling)" do
+  # 19.1
+  it "500 Julian years: 6000 months, the ceiling" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_duration(15778800000_i64).should eq "500 years"
+  end
+
+  # 19.2
+  it "over 6000 months" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_duration(15800000000_i64).should be_nil
+  end
+
+  # 19.3
+  it "well beyond the ceiling (and 32-bit range)" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_duration(99999999999_i64).should be_nil
+  end
+
+  # 19.4
+  it "525 years ago" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00").should be_nil
+  end
+
+  # 19.5
+  it "575 years from now" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00").should be_nil
+  end
+end
+
+# ================================================================
+# Section 20: Timestamp validation
+# ================================================================
+describe "Timestamp validation" do
+  # 20.1
+  it "seconds are optional" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_duration("2025-01-15T10:00", "2025-01-15T11:30:00").should eq "1½ hours"
+  end
+
+  # 20.2
+  it "minutes are required" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_duration("2025-01-15T10", "2025-01-15T11:30:00").should be_nil
+  end
+
+  # 20.3
+  it "unpadded date" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_duration("2025-1-5T10:00:00", "2025-01-15T11:30:00").should be_nil
+  end
+
+  # 20.4
+  it "impossible date" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_duration("2025-02-30T10:00:00", "2025-03-15T11:30:00").should be_nil
+  end
+
+  # 20.5
+  it "hour out of range" do
+    SayableDuration::Formatter.new(SayableDuration::Locales.get("en").not_nil!, :normal).format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00").should be_nil
+  end
+end

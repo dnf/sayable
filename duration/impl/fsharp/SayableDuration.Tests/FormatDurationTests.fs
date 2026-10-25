@@ -346,3 +346,81 @@ let ``compact 1 hour`` () =
 let ``compact 1m30s`` () =
     let sd = SayableDurationFormatter(EN, Compact)
     Assert.Equal(Some "1m30s", sd.FormatDurationSeconds(90))
+
+// ================================================================
+// Short compactness — relative time
+// ================================================================
+
+// 18.1
+[<Fact>]
+let ``days and hours both kept`` () =
+    let f = SayableDurationFormatter(MEN, Short)
+    Assert.Equal(Some "l\u0254h\u0254nga 2, awa 14 taa gb\u0254y\u0254", f.FormatSince(Some "2025-01-20T01:32:11", Some "2025-01-22T15:39:16"))
+
+// ================================================================
+// Range (500-year ceiling)
+// ================================================================
+
+// 19.1
+[<Fact>]
+let ``500 julian years 6000 months the ceiling`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(Some "500 years", f.FormatDurationSeconds(15778800000L))
+
+// 19.2
+[<Fact>]
+let ``over 6000 months`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatDurationSeconds(15800000000L))
+
+// 19.3
+[<Fact>]
+let ``well beyond the ceiling and 32 bit`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatDurationSeconds(99999999999L))
+
+// 19.4
+[<Fact>]
+let ``525 years ago`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatSince(Some "1500-01-01T00:00:00", Some "2025-01-01T00:00:00"))
+
+// 19.5
+[<Fact>]
+let ``575 years from now`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatUntil(Some "2600-01-01T00:00:00", Some "2025-01-01T00:00:00"))
+
+// ================================================================
+// Timestamp validation
+// ================================================================
+
+// 20.1
+[<Fact>]
+let ``seconds are optional`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(Some "1\u00BD hours", f.FormatDurationIso("2025-01-15T10:00", "2025-01-15T11:30:00"))
+
+// 20.2
+[<Fact>]
+let ``minutes are required`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatDurationIso("2025-01-15T10", "2025-01-15T11:30:00"))
+
+// 20.3
+[<Fact>]
+let ``unpadded date`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatDurationIso("2025-1-5T10:00:00", "2025-01-15T11:30:00"))
+
+// 20.4
+[<Fact>]
+let ``impossible date`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatDurationIso("2025-02-30T10:00:00", "2025-03-15T11:30:00"))
+
+// 20.5
+[<Fact>]
+let ``hour out of range`` () =
+    let f = SayableDurationFormatter(EN)
+    Assert.Equal(None, f.FormatSince(Some "2025-01-15T10:00:00", Some "2025-01-15T25:00:00"))

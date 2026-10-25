@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ko.json
 
-_plural_ko() {
+_sayableduration_plural_ko() {
     echo "other"
 }
 
-_locale_ko() {
+_sayableduration_locale_ko() {
     _unit_second='{n}초'
     _unit_minute='{n}분'
     _unit_hour='{n}시간'
@@ -45,5 +45,5 @@ _locale_ko() {
     _compact_delimiter=''
     _compact_ago='{0} 전'
     _compact_in_future='{0} 후'
-    _plural_func=_plural_ko
+    _plural_func=_sayableduration_plural_ko
 }

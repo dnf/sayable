@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sd.json
 
-_plural_sd() {
+_sayableage_plural_sd() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sd() {
+_sayableage_locale_sd() {
     _unit_day='{n} ڏينهن'
     _unit_week_one='{n} هفتو'
     _unit_week_other='{n} هفتا'
@@ -43,5 +43,5 @@ _locale_sd() {
     _compact_unit_year='{n} س'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_sd
+    _plural_func=_sayableage_plural_sd
 }

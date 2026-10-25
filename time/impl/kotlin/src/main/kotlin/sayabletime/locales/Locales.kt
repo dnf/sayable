@@ -21,7 +21,9 @@ public object Locales {
     // ================================================================
     // AF — Afrikaans
     // ================================================================
-    public val AF: TimeLocale = TimeLocale(
+    public val AF: TimeLocale = buildAf()
+
+    private fun buildAf(): TimeLocale = TimeLocale(
         code = "af",
         clock = ClockConfig(
             hours = listOf("twaalf", "een", "twee", "drie", "vier", "vyf", "ses", "sewe", "agt", "nege", "tien", "elf"),
@@ -41,7 +43,9 @@ public object Locales {
     // ================================================================
     // AK — Akan
     // ================================================================
-    public val AK: TimeLocale = TimeLocale(
+    public val AK: TimeLocale = buildAk()
+
+    private fun buildAk(): TimeLocale = TimeLocale(
         code = "ak",
         clock = ClockConfig(
             hours = listOf("dumien", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"),
@@ -61,7 +65,9 @@ public object Locales {
     // ================================================================
     // AM — Amharic
     // ================================================================
-    public val AM: TimeLocale = TimeLocale(
+    public val AM: TimeLocale = buildAm()
+
+    private fun buildAm(): TimeLocale = TimeLocale(
         code = "am",
         clock = ClockConfig(
             hours = listOf("አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት", "ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ"),
@@ -81,7 +87,9 @@ public object Locales {
     // ================================================================
     // AR — Arabic
     // ================================================================
-    public val AR: TimeLocale = TimeLocale(
+    public val AR: TimeLocale = buildAr()
+
+    private fun buildAr(): TimeLocale = TimeLocale(
         code = "ar",
         clock = ClockConfig(
             hours = listOf("الثانية عشرة", "الواحدة", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة", "الثامنة", "التاسعة", "العاشرة", "الحادية عشرة"),
@@ -101,7 +109,9 @@ public object Locales {
     // ================================================================
     // AY — Aymara
     // ================================================================
-    public val AY: TimeLocale = TimeLocale(
+    public val AY: TimeLocale = buildAy()
+
+    private fun buildAy(): TimeLocale = TimeLocale(
         code = "ay",
         clock = ClockConfig(
             hours = listOf("tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani"),
@@ -121,7 +131,9 @@ public object Locales {
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
-    public val AZ: TimeLocale = TimeLocale(
+    public val AZ: TimeLocale = buildAz()
+
+    private fun buildAz(): TimeLocale = TimeLocale(
         code = "az",
         clock = ClockConfig(
             hours = listOf("on iki", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz", "on", "on bir"),
@@ -141,7 +153,9 @@ public object Locales {
     // ================================================================
     // BCI — Baoulé
     // ================================================================
-    public val BCI: TimeLocale = TimeLocale(
+    public val BCI: TimeLocale = buildBci()
+
+    private fun buildBci(): TimeLocale = TimeLocale(
         code = "bci",
         clock = ClockConfig(
             hours = listOf("blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"),
@@ -161,7 +175,9 @@ public object Locales {
     // ================================================================
     // BE — Belarusian
     // ================================================================
-    public val BE: TimeLocale = TimeLocale(
+    public val BE: TimeLocale = buildBe()
+
+    private fun buildBe(): TimeLocale = TimeLocale(
         code = "be",
         clock = ClockConfig(
             hours = listOf("дванаццаць", "адзін", "два", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"),
@@ -181,7 +197,9 @@ public object Locales {
     // ================================================================
     // BEM — Bemba
     // ================================================================
-    public val BEM: TimeLocale = TimeLocale(
+    public val BEM: TimeLocale = buildBem()
+
+    private fun buildBem(): TimeLocale = TimeLocale(
         code = "bem",
         clock = ClockConfig(
             hours = listOf("ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo"),
@@ -201,7 +219,9 @@ public object Locales {
     // ================================================================
     // BG — Bulgarian
     // ================================================================
-    public val BG: TimeLocale = TimeLocale(
+    public val BG: TimeLocale = buildBg()
+
+    private fun buildBg(): TimeLocale = TimeLocale(
         code = "bg",
         clock = ClockConfig(
             hours = listOf("дванадесет", "един", "два", "три", "четири", "пет", "шест", "седем", "осем", "девет", "десет", "единадесет"),
@@ -221,7 +241,9 @@ public object Locales {
     // ================================================================
     // BI — Bislama
     // ================================================================
-    public val BI: TimeLocale = TimeLocale(
+    public val BI: TimeLocale = buildBi()
+
+    private fun buildBi(): TimeLocale = TimeLocale(
         code = "bi",
         clock = ClockConfig(
             hours = listOf("twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"),
@@ -241,7 +263,9 @@ public object Locales {
     // ================================================================
     // BM — Bambara
     // ================================================================
-    public val BM: TimeLocale = TimeLocale(
+    public val BM: TimeLocale = buildBm()
+
+    private fun buildBm(): TimeLocale = TimeLocale(
         code = "bm",
         clock = ClockConfig(
             hours = listOf("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
@@ -261,7 +285,9 @@ public object Locales {
     // ================================================================
     // BN — Bengali
     // ================================================================
-    public val BN: TimeLocale = TimeLocale(
+    public val BN: TimeLocale = buildBn()
+
+    private fun buildBn(): TimeLocale = TimeLocale(
         code = "bn",
         clock = ClockConfig(
             hours = listOf("বারো", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়", "দশ", "এগারো"),
@@ -281,7 +307,9 @@ public object Locales {
     // ================================================================
     // BR — Breton
     // ================================================================
-    public val BR: TimeLocale = TimeLocale(
+    public val BR: TimeLocale = buildBr()
+
+    private fun buildBr(): TimeLocale = TimeLocale(
         code = "br",
         clock = ClockConfig(
             hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
@@ -301,7 +329,9 @@ public object Locales {
     // ================================================================
     // BS — Bosnian
     // ================================================================
-    public val BS: TimeLocale = TimeLocale(
+    public val BS: TimeLocale = buildBs()
+
+    private fun buildBs(): TimeLocale = TimeLocale(
         code = "bs",
         clock = ClockConfig(
             hours = listOf("dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"),
@@ -321,7 +351,9 @@ public object Locales {
     // ================================================================
     // CA — Catalan
     // ================================================================
-    public val CA: TimeLocale = TimeLocale(
+    public val CA: TimeLocale = buildCa()
+
+    private fun buildCa(): TimeLocale = TimeLocale(
         code = "ca",
         clock = ClockConfig(
             hours = listOf("dotze", "una", "dues", "tres", "quatre", "cinc", "sis", "set", "vuit", "nou", "deu", "onze"),
@@ -341,7 +373,9 @@ public object Locales {
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
-    public val CAK: TimeLocale = TimeLocale(
+    public val CAK: TimeLocale = buildCak()
+
+    private fun buildCak(): TimeLocale = TimeLocale(
         code = "cak",
         clock = ClockConfig(
             hours = listOf("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"),
@@ -361,7 +395,9 @@ public object Locales {
     // ================================================================
     // CEB — Cebuano
     // ================================================================
-    public val CEB: TimeLocale = TimeLocale(
+    public val CEB: TimeLocale = buildCeb()
+
+    private fun buildCeb(): TimeLocale = TimeLocale(
         code = "ceb",
         clock = ClockConfig(
             hours = listOf("dose", "uno", "dos", "tres", "kwatro", "singko", "sais", "siyete", "otso", "nuwebe", "diyes", "onse"),
@@ -381,7 +417,9 @@ public object Locales {
     // ================================================================
     // CS — Czech
     // ================================================================
-    public val CS: TimeLocale = TimeLocale(
+    public val CS: TimeLocale = buildCs()
+
+    private fun buildCs(): TimeLocale = TimeLocale(
         code = "cs",
         clock = ClockConfig(
             hours = listOf("dvanáct", "jedna", "dvě", "tři", "čtyři", "pět", "šest", "sedm", "osm", "devět", "deset", "jedenáct"),
@@ -401,7 +439,9 @@ public object Locales {
     // ================================================================
     // CY — Welsh
     // ================================================================
-    public val CY: TimeLocale = TimeLocale(
+    public val CY: TimeLocale = buildCy()
+
+    private fun buildCy(): TimeLocale = TimeLocale(
         code = "cy",
         clock = ClockConfig(
             hours = listOf("deuddeg", "un", "dau", "tri", "pedwar", "pump", "chwech", "saith", "wyth", "naw", "deg", "un ar ddeg"),
@@ -421,7 +461,9 @@ public object Locales {
     // ================================================================
     // DA — Danish
     // ================================================================
-    public val DA: TimeLocale = TimeLocale(
+    public val DA: TimeLocale = buildDa()
+
+    private fun buildDa(): TimeLocale = TimeLocale(
         code = "da",
         clock = ClockConfig(
             hours = listOf("tolv", "et", "to", "tre", "fire", "fem", "seks", "syv", "otte", "ni", "ti", "elleve"),
@@ -441,7 +483,9 @@ public object Locales {
     // ================================================================
     // DE — German
     // ================================================================
-    public val DE: TimeLocale = TimeLocale(
+    public val DE: TimeLocale = buildDe()
+
+    private fun buildDe(): TimeLocale = TimeLocale(
         code = "de",
         clock = ClockConfig(
             hours = listOf("zwölf", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"),
@@ -461,7 +505,9 @@ public object Locales {
     // ================================================================
     // DIN — Dinka
     // ================================================================
-    public val DIN: TimeLocale = TimeLocale(
+    public val DIN: TimeLocale = buildDin()
+
+    private fun buildDin(): TimeLocale = TimeLocale(
         code = "din",
         clock = ClockConfig(
             hours = listOf("thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök"),
@@ -481,7 +527,9 @@ public object Locales {
     // ================================================================
     // DJE — Zarma
     // ================================================================
-    public val DJE: TimeLocale = TimeLocale(
+    public val DJE: TimeLocale = buildDje()
+
+    private fun buildDje(): TimeLocale = TimeLocale(
         code = "dje",
         clock = ClockConfig(
             hours = listOf("way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi"),
@@ -501,7 +549,9 @@ public object Locales {
     // ================================================================
     // DV — Dhivehi
     // ================================================================
-    public val DV: TimeLocale = TimeLocale(
+    public val DV: TimeLocale = buildDv()
+
+    private fun buildDv(): TimeLocale = TimeLocale(
         code = "dv",
         clock = ClockConfig(
             hours = listOf("ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"),
@@ -521,7 +571,9 @@ public object Locales {
     // ================================================================
     // DYU — Dyula
     // ================================================================
-    public val DYU: TimeLocale = TimeLocale(
+    public val DYU: TimeLocale = buildDyu()
+
+    private fun buildDyu(): TimeLocale = TimeLocale(
         code = "dyu",
         clock = ClockConfig(
             hours = listOf("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
@@ -541,7 +593,9 @@ public object Locales {
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
-    public val DZ: TimeLocale = TimeLocale(
+    public val DZ: TimeLocale = buildDz()
+
+    private fun buildDz(): TimeLocale = TimeLocale(
         code = "dz",
         clock = ClockConfig(
             hours = listOf("བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"),
@@ -561,7 +615,9 @@ public object Locales {
     // ================================================================
     // EE — Ewe
     // ================================================================
-    public val EE: TimeLocale = TimeLocale(
+    public val EE: TimeLocale = buildEe()
+
+    private fun buildEe(): TimeLocale = TimeLocale(
         code = "ee",
         clock = ClockConfig(
             hours = listOf("wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"),
@@ -581,7 +637,9 @@ public object Locales {
     // ================================================================
     // EL — Greek
     // ================================================================
-    public val EL: TimeLocale = TimeLocale(
+    public val EL: TimeLocale = buildEl()
+
+    private fun buildEl(): TimeLocale = TimeLocale(
         code = "el",
         clock = ClockConfig(
             hours = listOf("δώδεκα", "μία", "δύο", "τρεις", "τέσσερις", "πέντε", "έξι", "εφτά", "οκτώ", "εννιά", "δέκα", "έντεκα"),
@@ -601,7 +659,9 @@ public object Locales {
     // ================================================================
     // EN — English
     // ================================================================
-    public val EN: TimeLocale = TimeLocale(
+    public val EN: TimeLocale = buildEn()
+
+    private fun buildEn(): TimeLocale = TimeLocale(
         code = "en",
         clock = ClockConfig(
             hours = listOf("twelve", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"),
@@ -621,7 +681,9 @@ public object Locales {
     // ================================================================
     // ES — Spanish
     // ================================================================
-    public val ES: TimeLocale = TimeLocale(
+    public val ES: TimeLocale = buildEs()
+
+    private fun buildEs(): TimeLocale = TimeLocale(
         code = "es",
         clock = ClockConfig(
             hours = listOf("doce", "una", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once"),
@@ -641,7 +703,9 @@ public object Locales {
     // ================================================================
     // ET — Estonian
     // ================================================================
-    public val ET: TimeLocale = TimeLocale(
+    public val ET: TimeLocale = buildEt()
+
+    private fun buildEt(): TimeLocale = TimeLocale(
         code = "et",
         clock = ClockConfig(
             hours = listOf("kaksteist", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist"),
@@ -661,7 +725,9 @@ public object Locales {
     // ================================================================
     // EU — Basque
     // ================================================================
-    public val EU: TimeLocale = TimeLocale(
+    public val EU: TimeLocale = buildEu()
+
+    private fun buildEu(): TimeLocale = TimeLocale(
         code = "eu",
         clock = ClockConfig(
             hours = listOf("hamabi", "bat", "bi", "hiru", "lau", "bost", "sei", "zazpi", "zortzi", "bederatzi", "hamar", "hamaika"),
@@ -681,7 +747,9 @@ public object Locales {
     // ================================================================
     // FA — Persian
     // ================================================================
-    public val FA: TimeLocale = TimeLocale(
+    public val FA: TimeLocale = buildFa()
+
+    private fun buildFa(): TimeLocale = TimeLocale(
         code = "fa",
         clock = ClockConfig(
             hours = listOf("دوازده", "یک", "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه", "ده", "یازده"),
@@ -701,7 +769,9 @@ public object Locales {
     // ================================================================
     // FAN — Fang
     // ================================================================
-    public val FAN: TimeLocale = TimeLocale(
+    public val FAN: TimeLocale = buildFan()
+
+    private fun buildFan(): TimeLocale = TimeLocale(
         code = "fan",
         clock = ClockConfig(
             hours = listOf("awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"),
@@ -721,7 +791,9 @@ public object Locales {
     // ================================================================
     // FF — Fulah
     // ================================================================
-    public val FF: TimeLocale = TimeLocale(
+    public val FF: TimeLocale = buildFf()
+
+    private fun buildFf(): TimeLocale = TimeLocale(
         code = "ff",
         clock = ClockConfig(
             hours = listOf("sappo e ɗiɗi", "go'o", "ɗiɗi", "tati", "nay", "joy", "jeegom", "jeeɗiɗi", "jeetati", "jeenay", "sappo", "sappo e go'o"),
@@ -741,7 +813,9 @@ public object Locales {
     // ================================================================
     // FI — Finnish
     // ================================================================
-    public val FI: TimeLocale = TimeLocale(
+    public val FI: TimeLocale = buildFi()
+
+    private fun buildFi(): TimeLocale = TimeLocale(
         code = "fi",
         clock = ClockConfig(
             hours = listOf("kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista"),
@@ -761,7 +835,9 @@ public object Locales {
     // ================================================================
     // FIL — Filipino
     // ================================================================
-    public val FIL: TimeLocale = TimeLocale(
+    public val FIL: TimeLocale = buildFil()
+
+    private fun buildFil(): TimeLocale = TimeLocale(
         code = "fil",
         clock = ClockConfig(
             hours = listOf("dose", "una", "dos", "tres", "kwatro", "singko", "seis", "syete", "otso", "nuwebe", "diyes", "onse"),
@@ -781,7 +857,9 @@ public object Locales {
     // ================================================================
     // FJ — Fijian
     // ================================================================
-    public val FJ: TimeLocale = TimeLocale(
+    public val FJ: TimeLocale = buildFj()
+
+    private fun buildFj(): TimeLocale = TimeLocale(
         code = "fj",
         clock = ClockConfig(
             hours = listOf("tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"),
@@ -801,7 +879,9 @@ public object Locales {
     // ================================================================
     // FON — Fon
     // ================================================================
-    public val FON: TimeLocale = TimeLocale(
+    public val FON: TimeLocale = buildFon()
+
+    private fun buildFon(): TimeLocale = TimeLocale(
         code = "fon",
         clock = ClockConfig(
             hours = listOf("wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ"),
@@ -821,7 +901,9 @@ public object Locales {
     // ================================================================
     // FR — French
     // ================================================================
-    public val FR: TimeLocale = TimeLocale(
+    public val FR: TimeLocale = buildFr()
+
+    private fun buildFr(): TimeLocale = TimeLocale(
         code = "fr",
         clock = ClockConfig(
             hours = listOf("douze", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze"),
@@ -841,7 +923,9 @@ public object Locales {
     // ================================================================
     // GA — Irish
     // ================================================================
-    public val GA: TimeLocale = TimeLocale(
+    public val GA: TimeLocale = buildGa()
+
+    private fun buildGa(): TimeLocale = TimeLocale(
         code = "ga",
         clock = ClockConfig(
             hours = listOf("dó dhéag", "haon", "dó", "trí", "ceathair", "cúig", "sé", "seacht", "hocht", "naoi", "deich", "haon déag"),
@@ -861,7 +945,9 @@ public object Locales {
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
-    public val GD: TimeLocale = TimeLocale(
+    public val GD: TimeLocale = buildGd()
+
+    private fun buildGd(): TimeLocale = TimeLocale(
         code = "gd",
         clock = ClockConfig(
             hours = listOf("dà-dheug", "aon", "dà", "trì", "ceithir", "còig", "sia", "seachd", "ochd", "naoi", "deich", "aon-deug"),
@@ -881,7 +967,9 @@ public object Locales {
     // ================================================================
     // GL — Galician
     // ================================================================
-    public val GL: TimeLocale = TimeLocale(
+    public val GL: TimeLocale = buildGl()
+
+    private fun buildGl(): TimeLocale = TimeLocale(
         code = "gl",
         clock = ClockConfig(
             hours = listOf("doce", "unha", "dúas", "tres", "catro", "cinco", "seis", "sete", "oito", "nove", "dez", "once"),
@@ -901,7 +989,9 @@ public object Locales {
     // ================================================================
     // GN — Guarani
     // ================================================================
-    public val GN: TimeLocale = TimeLocale(
+    public val GN: TimeLocale = buildGn()
+
+    private fun buildGn(): TimeLocale = TimeLocale(
         code = "gn",
         clock = ClockConfig(
             hours = listOf("pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"),
@@ -921,7 +1011,9 @@ public object Locales {
     // ================================================================
     // GU — Gujarati
     // ================================================================
-    public val GU: TimeLocale = TimeLocale(
+    public val GU: TimeLocale = buildGu()
+
+    private fun buildGu(): TimeLocale = TimeLocale(
         code = "gu",
         clock = ClockConfig(
             hours = listOf("બાર", "એક", "બે", "ત્રણ", "ચાર", "પાંચ", "છ", "સાત", "આઠ", "નવ", "દસ", "અગિયાર"),
@@ -941,7 +1033,9 @@ public object Locales {
     // ================================================================
     // GV — Manx
     // ================================================================
-    public val GV: TimeLocale = TimeLocale(
+    public val GV: TimeLocale = buildGv()
+
+    private fun buildGv(): TimeLocale = TimeLocale(
         code = "gv",
         clock = ClockConfig(
             hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
@@ -961,7 +1055,9 @@ public object Locales {
     // ================================================================
     // HA — Hausa
     // ================================================================
-    public val HA: TimeLocale = TimeLocale(
+    public val HA: TimeLocale = buildHa()
+
+    private fun buildHa(): TimeLocale = TimeLocale(
         code = "ha",
         clock = ClockConfig(
             hours = listOf("sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "goma sha ɗaya"),
@@ -981,7 +1077,9 @@ public object Locales {
     // ================================================================
     // HE — Hebrew
     // ================================================================
-    public val HE: TimeLocale = TimeLocale(
+    public val HE: TimeLocale = buildHe()
+
+    private fun buildHe(): TimeLocale = TimeLocale(
         code = "he",
         clock = ClockConfig(
             hours = listOf("שתים עשרה", "אחת", "שתיים", "שלוש", "ארבע", "חמש", "שש", "שבע", "שמונה", "תשע", "עשר", "אחת עשרה"),
@@ -1001,7 +1099,9 @@ public object Locales {
     // ================================================================
     // HI — Hindi
     // ================================================================
-    public val HI: TimeLocale = TimeLocale(
+    public val HI: TimeLocale = buildHi()
+
+    private fun buildHi(): TimeLocale = TimeLocale(
         code = "hi",
         clock = ClockConfig(
             hours = listOf("बारह", "एक", "दो", "तीन", "चार", "पाँच", "छह", "सात", "आठ", "नौ", "दस", "ग्यारह"),
@@ -1021,7 +1121,9 @@ public object Locales {
     // ================================================================
     // HMN — Hmong
     // ================================================================
-    public val HMN: TimeLocale = TimeLocale(
+    public val HMN: TimeLocale = buildHmn()
+
+    private fun buildHmn(): TimeLocale = TimeLocale(
         code = "hmn",
         clock = ClockConfig(
             hours = listOf("kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"),
@@ -1041,7 +1143,9 @@ public object Locales {
     // ================================================================
     // HR — Croatian
     // ================================================================
-    public val HR: TimeLocale = TimeLocale(
+    public val HR: TimeLocale = buildHr()
+
+    private fun buildHr(): TimeLocale = TimeLocale(
         code = "hr",
         clock = ClockConfig(
             hours = listOf("dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"),
@@ -1061,7 +1165,9 @@ public object Locales {
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
-    public val HT: TimeLocale = TimeLocale(
+    public val HT: TimeLocale = buildHt()
+
+    private fun buildHt(): TimeLocale = TimeLocale(
         code = "ht",
         clock = ClockConfig(
             hours = listOf("douz", "en", "de", "twa", "kat", "senk", "sis", "sèt", "uit", "nèf", "dis", "onz"),
@@ -1081,7 +1187,9 @@ public object Locales {
     // ================================================================
     // HU — Hungarian
     // ================================================================
-    public val HU: TimeLocale = TimeLocale(
+    public val HU: TimeLocale = buildHu()
+
+    private fun buildHu(): TimeLocale = TimeLocale(
         code = "hu",
         clock = ClockConfig(
             hours = listOf("tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy"),
@@ -1101,7 +1209,9 @@ public object Locales {
     // ================================================================
     // HY — Armenian
     // ================================================================
-    public val HY: TimeLocale = TimeLocale(
+    public val HY: TimeLocale = buildHy()
+
+    private fun buildHy(): TimeLocale = TimeLocale(
         code = "hy",
         clock = ClockConfig(
             hours = listOf("տասներկու", "մեկ", "երկու", "երեք", "չորս", "հինգ", "վեց", "յոթ", "ութ", "ինը", "տաս", "տասնմեկ"),
@@ -1121,7 +1231,9 @@ public object Locales {
     // ================================================================
     // ID — Indonesian
     // ================================================================
-    public val ID: TimeLocale = TimeLocale(
+    public val ID: TimeLocale = buildId()
+
+    private fun buildId(): TimeLocale = TimeLocale(
         code = "id",
         clock = ClockConfig(
             hours = listOf("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"),
@@ -1141,7 +1253,9 @@ public object Locales {
     // ================================================================
     // IG — Igbo
     // ================================================================
-    public val IG: TimeLocale = TimeLocale(
+    public val IG: TimeLocale = buildIg()
+
+    private fun buildIg(): TimeLocale = TimeLocale(
         code = "ig",
         clock = ClockConfig(
             hours = listOf("iri na abụọ", "otu", "abụọ", "atọ", "anọ", "ise", "isii", "asaa", "asatọ", "itoolu", "iri", "iri na otu"),
@@ -1161,7 +1275,9 @@ public object Locales {
     // ================================================================
     // IS — Icelandic
     // ================================================================
-    public val IS: TimeLocale = TimeLocale(
+    public val IS: TimeLocale = buildIs()
+
+    private fun buildIs(): TimeLocale = TimeLocale(
         code = "is",
         clock = ClockConfig(
             hours = listOf("tólf", "eitt", "tvö", "þrjú", "fjögur", "fimm", "sex", "sjö", "átta", "níu", "tíu", "ellefu"),
@@ -1181,7 +1297,9 @@ public object Locales {
     // ================================================================
     // IT — Italian
     // ================================================================
-    public val IT: TimeLocale = TimeLocale(
+    public val IT: TimeLocale = buildIt()
+
+    private fun buildIt(): TimeLocale = TimeLocale(
         code = "it",
         clock = ClockConfig(
             hours = listOf("dodici", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici"),
@@ -1201,7 +1319,9 @@ public object Locales {
     // ================================================================
     // JA — Japanese
     // ================================================================
-    public val JA: TimeLocale = TimeLocale(
+    public val JA: TimeLocale = buildJa()
+
+    private fun buildJa(): TimeLocale = TimeLocale(
         code = "ja",
         clock = ClockConfig(
             hours = listOf("十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
@@ -1221,7 +1341,9 @@ public object Locales {
     // ================================================================
     // JV — Javanese
     // ================================================================
-    public val JV: TimeLocale = TimeLocale(
+    public val JV: TimeLocale = buildJv()
+
+    private fun buildJv(): TimeLocale = TimeLocale(
         code = "jv",
         clock = ClockConfig(
             hours = listOf("rolas", "siji", "loro", "telu", "papat", "lima", "enem", "pitu", "wolu", "sanga", "sepuluh", "sewelas"),
@@ -1241,7 +1363,9 @@ public object Locales {
     // ================================================================
     // KA — Georgian
     // ================================================================
-    public val KA: TimeLocale = TimeLocale(
+    public val KA: TimeLocale = buildKa()
+
+    private fun buildKa(): TimeLocale = TimeLocale(
         code = "ka",
         clock = ClockConfig(
             hours = listOf("თორმეტი", "ერთი", "ორი", "სამი", "ოთხი", "ხუთი", "ექვსი", "შვიდი", "რვა", "ცხრა", "ათი", "თერთმეტი"),
@@ -1261,7 +1385,9 @@ public object Locales {
     // ================================================================
     // KBP — Kabiye
     // ================================================================
-    public val KBP: TimeLocale = TimeLocale(
+    public val KBP: TimeLocale = buildKbp()
+
+    private fun buildKbp(): TimeLocale = TimeLocale(
         code = "kbp",
         clock = ClockConfig(
             hours = listOf("hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"),
@@ -1281,7 +1407,9 @@ public object Locales {
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
-    public val KEK: TimeLocale = TimeLocale(
+    public val KEK: TimeLocale = buildKek()
+
+    private fun buildKek(): TimeLocale = TimeLocale(
         code = "kek",
         clock = ClockConfig(
             hours = listOf("kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"),
@@ -1301,7 +1429,9 @@ public object Locales {
     // ================================================================
     // KI — Kikuyu
     // ================================================================
-    public val KI: TimeLocale = TimeLocale(
+    public val KI: TimeLocale = buildKi()
+
+    private fun buildKi(): TimeLocale = TimeLocale(
         code = "ki",
         clock = ClockConfig(
             hours = listOf("ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe"),
@@ -1321,7 +1451,9 @@ public object Locales {
     // ================================================================
     // KK — Kazakh
     // ================================================================
-    public val KK: TimeLocale = TimeLocale(
+    public val KK: TimeLocale = buildKk()
+
+    private fun buildKk(): TimeLocale = TimeLocale(
         code = "kk",
         clock = ClockConfig(
             hours = listOf("он екі", "бір", "екі", "үш", "төрт", "бес", "алты", "жеті", "сегіз", "тоғыз", "он", "он бір"),
@@ -1341,7 +1473,9 @@ public object Locales {
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
-    public val KL: TimeLocale = TimeLocale(
+    public val KL: TimeLocale = buildKl()
+
+    private fun buildKl(): TimeLocale = TimeLocale(
         code = "kl",
         clock = ClockConfig(
             hours = listOf("akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"),
@@ -1361,7 +1495,9 @@ public object Locales {
     // ================================================================
     // KM — Khmer
     // ================================================================
-    public val KM: TimeLocale = TimeLocale(
+    public val KM: TimeLocale = buildKm()
+
+    private fun buildKm(): TimeLocale = TimeLocale(
         code = "km",
         clock = ClockConfig(
             hours = listOf("ដប់ពីរ", "មួយ", "ពីរ", "បី", "បួន", "ប្រាំ", "ប្រាំមួយ", "ប្រាំពីរ", "ប្រាំបី", "ប្រាំបួន", "ដប់", "ដប់មួយ"),
@@ -1381,7 +1517,9 @@ public object Locales {
     // ================================================================
     // KN — Kannada
     // ================================================================
-    public val KN: TimeLocale = TimeLocale(
+    public val KN: TimeLocale = buildKn()
+
+    private fun buildKn(): TimeLocale = TimeLocale(
         code = "kn",
         clock = ClockConfig(
             hours = listOf("ಹನ್ನೆರಡು", "ಒಂದು", "ಎರಡು", "ಮೂರು", "ನಾಲ್ಕು", "ಐದು", "ಆರು", "ಏಳು", "ಎಂಟು", "ಒಂಬತ್ತು", "ಹತ್ತು", "ಹನ್ನೊಂದು"),
@@ -1401,7 +1539,9 @@ public object Locales {
     // ================================================================
     // KO — Korean
     // ================================================================
-    public val KO: TimeLocale = TimeLocale(
+    public val KO: TimeLocale = buildKo()
+
+    private fun buildKo(): TimeLocale = TimeLocale(
         code = "ko",
         clock = ClockConfig(
             hours = listOf("열두", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉", "열", "열한"),
@@ -1421,7 +1561,9 @@ public object Locales {
     // ================================================================
     // KPE — Kpelle
     // ================================================================
-    public val KPE: TimeLocale = TimeLocale(
+    public val KPE: TimeLocale = buildKpe()
+
+    private fun buildKpe(): TimeLocale = TimeLocale(
         code = "kpe",
         clock = ClockConfig(
             hours = listOf("puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"),
@@ -1441,7 +1583,9 @@ public object Locales {
     // ================================================================
     // KRI — Krio
     // ================================================================
-    public val KRI: TimeLocale = TimeLocale(
+    public val KRI: TimeLocale = buildKri()
+
+    private fun buildKri(): TimeLocale = TimeLocale(
         code = "kri",
         clock = ClockConfig(
             hours = listOf("twelv", "wan", "tu", "tri", "fo", "fayv", "siks", "sevin", "et", "nayn", "ten", "ilevin"),
@@ -1461,7 +1605,9 @@ public object Locales {
     // ================================================================
     // KTU — Kituba
     // ================================================================
-    public val KTU: TimeLocale = TimeLocale(
+    public val KTU: TimeLocale = buildKtu()
+
+    private fun buildKtu(): TimeLocale = TimeLocale(
         code = "ktu",
         clock = ClockConfig(
             hours = listOf("zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"),
@@ -1481,7 +1627,9 @@ public object Locales {
     // ================================================================
     // KU — Kurdish
     // ================================================================
-    public val KU: TimeLocale = TimeLocale(
+    public val KU: TimeLocale = buildKu()
+
+    private fun buildKu(): TimeLocale = TimeLocale(
         code = "ku",
         clock = ClockConfig(
             hours = listOf("diwanzdeh", "yek", "du", "sê", "çar", "pênc", "şeş", "heft", "heşt", "neh", "deh", "yanzdeh"),
@@ -1501,7 +1649,9 @@ public object Locales {
     // ================================================================
     // KW — Cornish
     // ================================================================
-    public val KW: TimeLocale = TimeLocale(
+    public val KW: TimeLocale = buildKw()
+
+    private fun buildKw(): TimeLocale = TimeLocale(
         code = "kw",
         clock = ClockConfig(
             hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
@@ -1521,7 +1671,9 @@ public object Locales {
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
-    public val KY: TimeLocale = TimeLocale(
+    public val KY: TimeLocale = buildKy()
+
+    private fun buildKy(): TimeLocale = TimeLocale(
         code = "ky",
         clock = ClockConfig(
             hours = listOf("он эки", "бир", "эки", "үч", "төрт", "беш", "алты", "жети", "сегиз", "тогуз", "он", "он бир"),
@@ -1541,7 +1693,9 @@ public object Locales {
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
-    public val LB: TimeLocale = TimeLocale(
+    public val LB: TimeLocale = buildLb()
+
+    private fun buildLb(): TimeLocale = TimeLocale(
         code = "lb",
         clock = ClockConfig(
             hours = listOf("zwielef", "eent", "zwee", "dräi", "véier", "fënnef", "sechs", "siwen", "aacht", "néng", "zéng", "eelef"),
@@ -1561,7 +1715,9 @@ public object Locales {
     // ================================================================
     // LG — Luganda
     // ================================================================
-    public val LG: TimeLocale = TimeLocale(
+    public val LG: TimeLocale = buildLg()
+
+    private fun buildLg(): TimeLocale = TimeLocale(
         code = "lg",
         clock = ClockConfig(
             hours = listOf("kkumi na bbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano", "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi na emu"),
@@ -1581,7 +1737,9 @@ public object Locales {
     // ================================================================
     // LN — Lingala
     // ================================================================
-    public val LN: TimeLocale = TimeLocale(
+    public val LN: TimeLocale = buildLn()
+
+    private fun buildLn(): TimeLocale = TimeLocale(
         code = "ln",
         clock = ClockConfig(
             hours = listOf("zómi na míbalé", "mɔ̌kɔ́", "míbalé", "mísáto", "mínéi", "mítáno", "motóba", "nsambo", "mwambe", "libwá", "zómi", "zómi na mɔ̌kɔ́"),
@@ -1601,7 +1759,9 @@ public object Locales {
     // ================================================================
     // LO — Lao
     // ================================================================
-    public val LO: TimeLocale = TimeLocale(
+    public val LO: TimeLocale = buildLo()
+
+    private fun buildLo(): TimeLocale = TimeLocale(
         code = "lo",
         clock = ClockConfig(
             hours = listOf("ສິບສອງ", "ໜຶ່ງ", "ສອງ", "ສາມ", "ສີ່", "ຫ້າ", "ຫົກ", "ເຈັດ", "ແປດ", "ເກົ້າ", "ສິບ", "ສິບເອັດ"),
@@ -1621,7 +1781,9 @@ public object Locales {
     // ================================================================
     // LT — Lithuanian
     // ================================================================
-    public val LT: TimeLocale = TimeLocale(
+    public val LT: TimeLocale = buildLt()
+
+    private fun buildLt(): TimeLocale = TimeLocale(
         code = "lt",
         clock = ClockConfig(
             hours = listOf("dvylika", "viena", "dvi", "trys", "keturios", "penkios", "šešios", "septynios", "aštuonios", "devynios", "dešimt", "vienuolika"),
@@ -1641,7 +1803,9 @@ public object Locales {
     // ================================================================
     // LUO — Dholuo
     // ================================================================
-    public val LUO: TimeLocale = TimeLocale(
+    public val LUO: TimeLocale = buildLuo()
+
+    private fun buildLuo(): TimeLocale = TimeLocale(
         code = "luo",
         clock = ClockConfig(
             hours = listOf("apar gi ariyo", "achiel", "ariyo", "adek", "ang'wen", "abich", "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gi achiel"),
@@ -1661,7 +1825,9 @@ public object Locales {
     // ================================================================
     // LV — Latvian
     // ================================================================
-    public val LV: TimeLocale = TimeLocale(
+    public val LV: TimeLocale = buildLv()
+
+    private fun buildLv(): TimeLocale = TimeLocale(
         code = "lv",
         clock = ClockConfig(
             hours = listOf("divpadsmit", "viens", "divi", "trīs", "četri", "pieci", "seši", "septiņi", "astoņi", "deviņi", "desmit", "vienpadsmit"),
@@ -1681,7 +1847,9 @@ public object Locales {
     // ================================================================
     // MAM — Mam
     // ================================================================
-    public val MAM: TimeLocale = TimeLocale(
+    public val MAM: TimeLocale = buildMam()
+
+    private fun buildMam(): TimeLocale = TimeLocale(
         code = "mam",
         clock = ClockConfig(
             hours = listOf("kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"),
@@ -1701,7 +1869,9 @@ public object Locales {
     // ================================================================
     // MEN — Mende
     // ================================================================
-    public val MEN: TimeLocale = TimeLocale(
+    public val MEN: TimeLocale = buildMen()
+
+    private fun buildMen(): TimeLocale = TimeLocale(
         code = "men",
         clock = ClockConfig(
             hours = listOf("pu wɛlɛ", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"),
@@ -1721,7 +1891,9 @@ public object Locales {
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
-    public val MFE: TimeLocale = TimeLocale(
+    public val MFE: TimeLocale = buildMfe()
+
+    private fun buildMfe(): TimeLocale = TimeLocale(
         code = "mfe",
         clock = ClockConfig(
             hours = listOf("douz", "enn", "de", "trwa", "kat", "senk", "sis", "set", "wit", "nef", "dis", "onz"),
@@ -1741,7 +1913,9 @@ public object Locales {
     // ================================================================
     // MG — Malagasy
     // ================================================================
-    public val MG: TimeLocale = TimeLocale(
+    public val MG: TimeLocale = buildMg()
+
+    private fun buildMg(): TimeLocale = TimeLocale(
         code = "mg",
         clock = ClockConfig(
             hours = listOf("roa ambin'ny folo", "iray", "roa", "telo", "efatra", "dimy", "enina", "fito", "valo", "sivy", "folo", "iraika ambin'ny folo"),
@@ -1761,7 +1935,9 @@ public object Locales {
     // ================================================================
     // MI — Māori
     // ================================================================
-    public val MI: TimeLocale = TimeLocale(
+    public val MI: TimeLocale = buildMi()
+
+    private fun buildMi(): TimeLocale = TimeLocale(
         code = "mi",
         clock = ClockConfig(
             hours = listOf("tekau mā rua", "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru", "iwa", "tekau", "tekau mā tahi"),
@@ -1781,7 +1957,9 @@ public object Locales {
     // ================================================================
     // MK — Macedonian
     // ================================================================
-    public val MK: TimeLocale = TimeLocale(
+    public val MK: TimeLocale = buildMk()
+
+    private fun buildMk(): TimeLocale = TimeLocale(
         code = "mk",
         clock = ClockConfig(
             hours = listOf("дванаесет", "еден", "два", "три", "четири", "пет", "шест", "седум", "осум", "девет", "десет", "единаесет"),
@@ -1801,7 +1979,9 @@ public object Locales {
     // ================================================================
     // ML — Malayalam
     // ================================================================
-    public val ML: TimeLocale = TimeLocale(
+    public val ML: TimeLocale = buildMl()
+
+    private fun buildMl(): TimeLocale = TimeLocale(
         code = "ml",
         clock = ClockConfig(
             hours = listOf("പന്ത്രണ്ട്", "ഒന്ന്", "രണ്ട്", "മൂന്ന്", "നാല്", "അഞ്ച്", "ആറ്", "ഏഴ്", "എട്ട്", "ഒമ്പത്", "പത്ത്", "പതിനൊന്ന്"),
@@ -1821,7 +2001,9 @@ public object Locales {
     // ================================================================
     // MN — Mongolian
     // ================================================================
-    public val MN: TimeLocale = TimeLocale(
+    public val MN: TimeLocale = buildMn()
+
+    private fun buildMn(): TimeLocale = TimeLocale(
         code = "mn",
         clock = ClockConfig(
             hours = listOf("арван хоёр", "нэг", "хоёр", "гурав", "дөрөв", "тав", "зургаа", "долоо", "найм", "ес", "арав", "арван нэг"),
@@ -1841,7 +2023,9 @@ public object Locales {
     // ================================================================
     // MNK — Mandinka
     // ================================================================
-    public val MNK: TimeLocale = TimeLocale(
+    public val MNK: TimeLocale = buildMnk()
+
+    private fun buildMnk(): TimeLocale = TimeLocale(
         code = "mnk",
         clock = ClockConfig(
             hours = listOf("tan ning fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ ning kiliŋ"),
@@ -1861,7 +2045,9 @@ public object Locales {
     // ================================================================
     // MOS — Moore
     // ================================================================
-    public val MOS: TimeLocale = TimeLocale(
+    public val MOS: TimeLocale = buildMos()
+
+    private fun buildMos(): TimeLocale = TimeLocale(
         code = "mos",
         clock = ClockConfig(
             hours = listOf("piig la a yiibu", "a yembre", "a yiibu", "a tãabo", "a naase", "a nu", "a yoobe", "a yopoe", "a niini", "a wae", "piiga", "piig la a yembre"),
@@ -1881,7 +2067,9 @@ public object Locales {
     // ================================================================
     // MR — Marathi
     // ================================================================
-    public val MR: TimeLocale = TimeLocale(
+    public val MR: TimeLocale = buildMr()
+
+    private fun buildMr(): TimeLocale = TimeLocale(
         code = "mr",
         clock = ClockConfig(
             hours = listOf("बारा", "एक", "दोन", "तीन", "चार", "पाच", "सहा", "सात", "आठ", "नऊ", "दहा", "अकरा"),
@@ -1901,7 +2089,9 @@ public object Locales {
     // ================================================================
     // MS — Malay
     // ================================================================
-    public val MS: TimeLocale = TimeLocale(
+    public val MS: TimeLocale = buildMs()
+
+    private fun buildMs(): TimeLocale = TimeLocale(
         code = "ms",
         clock = ClockConfig(
             hours = listOf("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "lapan", "sembilan", "sepuluh", "sebelas"),
@@ -1921,7 +2111,9 @@ public object Locales {
     // ================================================================
     // MT — Maltese
     // ================================================================
-    public val MT: TimeLocale = TimeLocale(
+    public val MT: TimeLocale = buildMt()
+
+    private fun buildMt(): TimeLocale = TimeLocale(
         code = "mt",
         clock = ClockConfig(
             hours = listOf("tnax", "waħda", "tnejn", "tlieta", "erbgħa", "ħamsa", "sitta", "sebgħa", "tmienja", "disgħa", "għaxra", "ħdax"),
@@ -1941,7 +2133,9 @@ public object Locales {
     // ================================================================
     // MY — Burmese
     // ================================================================
-    public val MY: TimeLocale = TimeLocale(
+    public val MY: TimeLocale = buildMy()
+
+    private fun buildMy(): TimeLocale = TimeLocale(
         code = "my",
         clock = ClockConfig(
             hours = listOf("ဆယ့်နှစ်", "တစ်", "နှစ်", "သုံး", "လေး", "ငါး", "ခြောက်", "ခုနစ်", "ရှစ်", "ကိုး", "ဆယ်", "ဆယ့်တစ်"),
@@ -1961,7 +2155,9 @@ public object Locales {
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
-    public val NB: TimeLocale = TimeLocale(
+    public val NB: TimeLocale = buildNb()
+
+    private fun buildNb(): TimeLocale = TimeLocale(
         code = "nb",
         clock = ClockConfig(
             hours = listOf("tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"),
@@ -1981,7 +2177,9 @@ public object Locales {
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
-    public val ND: TimeLocale = TimeLocale(
+    public val ND: TimeLocale = buildNd()
+
+    private fun buildNd(): TimeLocale = TimeLocale(
         code = "nd",
         clock = ClockConfig(
             hours = listOf("litshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyangalombili", "isitshiyangalolunye", "litshumi", "litshumi lanye"),
@@ -2001,7 +2199,9 @@ public object Locales {
     // ================================================================
     // NE — Nepali
     // ================================================================
-    public val NE: TimeLocale = TimeLocale(
+    public val NE: TimeLocale = buildNe()
+
+    private fun buildNe(): TimeLocale = TimeLocale(
         code = "ne",
         clock = ClockConfig(
             hours = listOf("बाह्र", "एक", "दुई", "तीन", "चार", "पाँच", "छ", "सात", "आठ", "नौ", "दश", "एघार"),
@@ -2021,7 +2221,9 @@ public object Locales {
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
-    public val NG: TimeLocale = TimeLocale(
+    public val NG: TimeLocale = buildNg()
+
+    private fun buildNg(): TimeLocale = TimeLocale(
         code = "ng",
         clock = ClockConfig(
             hours = listOf("omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe"),
@@ -2041,7 +2243,9 @@ public object Locales {
     // ================================================================
     // NL — Dutch
     // ================================================================
-    public val NL: TimeLocale = TimeLocale(
+    public val NL: TimeLocale = buildNl()
+
+    private fun buildNl(): TimeLocale = TimeLocale(
         code = "nl",
         clock = ClockConfig(
             hours = listOf("twaalf", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf"),
@@ -2061,7 +2265,9 @@ public object Locales {
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
-    public val NR: TimeLocale = TimeLocale(
+    public val NR: TimeLocale = buildNr()
+
+    private fun buildNr(): TimeLocale = TimeLocale(
         code = "nr",
         clock = ClockConfig(
             hours = listOf("itshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyagalombili", "isitshiyagalolunye", "itshumi", "itshumi lanye"),
@@ -2081,7 +2287,9 @@ public object Locales {
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
-    public val NSO: TimeLocale = TimeLocale(
+    public val NSO: TimeLocale = buildNso()
+
+    private fun buildNso(): TimeLocale = TimeLocale(
         code = "nso",
         clock = ClockConfig(
             hours = listOf("lesome pedi", "tee", "pedi", "tharo", "nne", "hlano", "tshela", "šupa", "seswai", "senyane", "lesome", "lesome tee"),
@@ -2101,7 +2309,9 @@ public object Locales {
     // ================================================================
     // NUS — Nuer
     // ================================================================
-    public val NUS: TimeLocale = TimeLocale(
+    public val NUS: TimeLocale = buildNus()
+
+    private fun buildNus(): TimeLocale = TimeLocale(
         code = "nus",
         clock = ClockConfig(
             hours = listOf("thiäär ke rou", "tök", "rou", "diäk", "ŋuan", "dhiëc", "bäkɛl", "dhorou", "bät", "kuɔn", "thiäär", "thiäär ku tök"),
@@ -2121,7 +2331,9 @@ public object Locales {
     // ================================================================
     // NY — Chichewa
     // ================================================================
-    public val NY: TimeLocale = TimeLocale(
+    public val NY: TimeLocale = buildNy()
+
+    private fun buildNy(): TimeLocale = TimeLocale(
         code = "ny",
         clock = ClockConfig(
             hours = listOf("khumi ndi ziwiri", "imodzi", "ziwiri", "zitatu", "zinayi", "zisanu", "zisanu ndi chimodzi", "zisanu ndi ziwiri", "zisanu ndi zitatu", "zisanu ndi zinayi", "khumi", "khumi ndi chimodzi"),
@@ -2141,7 +2353,9 @@ public object Locales {
     // ================================================================
     // OM — Oromo
     // ================================================================
-    public val OM: TimeLocale = TimeLocale(
+    public val OM: TimeLocale = buildOm()
+
+    private fun buildOm(): TimeLocale = TimeLocale(
         code = "om",
         clock = ClockConfig(
             hours = listOf("kudha lama", "tokko", "lama", "sadii", "afur", "shan", "jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko"),
@@ -2161,7 +2375,9 @@ public object Locales {
     // ================================================================
     // OR — Odia
     // ================================================================
-    public val OR: TimeLocale = TimeLocale(
+    public val OR: TimeLocale = buildOr()
+
+    private fun buildOr(): TimeLocale = TimeLocale(
         code = "or",
         clock = ClockConfig(
             hours = listOf("ବାରଟା", "ଗୋଟିଏ", "ଦୁଇଟା", "ତିନିଟା", "ଚାରିଟା", "ପାଞ୍ଚଟା", "ଛଅଟା", "ସାତଟା", "ଆଠଟା", "ନଅଟା", "ଦଶଟା", "ଏଗାରଟା"),
@@ -2181,7 +2397,9 @@ public object Locales {
     // ================================================================
     // PA — Punjabi
     // ================================================================
-    public val PA: TimeLocale = TimeLocale(
+    public val PA: TimeLocale = buildPa()
+
+    private fun buildPa(): TimeLocale = TimeLocale(
         code = "pa",
         clock = ClockConfig(
             hours = listOf("ਬਾਰਾਂ", "ਇੱਕ", "ਦੋ", "ਤਿੰਨ", "ਚਾਰ", "ਪੰਜ", "ਛੇ", "ਸੱਤ", "ਅੱਠ", "ਨੌਂ", "ਦਸ", "ਗਿਆਰਾਂ"),
@@ -2201,7 +2419,9 @@ public object Locales {
     // ================================================================
     // PIS — Pijin
     // ================================================================
-    public val PIS: TimeLocale = TimeLocale(
+    public val PIS: TimeLocale = buildPis()
+
+    private fun buildPis(): TimeLocale = TimeLocale(
         code = "pis",
         clock = ClockConfig(
             hours = listOf("twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"),
@@ -2221,7 +2441,9 @@ public object Locales {
     // ================================================================
     // PL — Polish
     // ================================================================
-    public val PL: TimeLocale = TimeLocale(
+    public val PL: TimeLocale = buildPl()
+
+    private fun buildPl(): TimeLocale = TimeLocale(
         code = "pl",
         clock = ClockConfig(
             hours = listOf("dwunasta", "pierwsza", "druga", "trzecia", "czwarta", "piąta", "szósta", "siódma", "ósma", "dziewiąta", "dziesiąta", "jedenasta"),
@@ -2241,7 +2463,9 @@ public object Locales {
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
-    public val POV: TimeLocale = TimeLocale(
+    public val POV: TimeLocale = buildPov()
+
+    private fun buildPov(): TimeLocale = TimeLocale(
         code = "pov",
         clock = ClockConfig(
             hours = listOf("dozi", "un", "dos", "tres", "kuatru", "sinku", "seis", "seti", "oitu", "novi", "des", "onzi"),
@@ -2261,7 +2485,9 @@ public object Locales {
     // ================================================================
     // PS — Pashto
     // ================================================================
-    public val PS: TimeLocale = TimeLocale(
+    public val PS: TimeLocale = buildPs()
+
+    private fun buildPs(): TimeLocale = TimeLocale(
         code = "ps",
         clock = ClockConfig(
             hours = listOf("دولس", "یو", "دوه", "درې", "څلور", "پنځه", "شپږ", "اووه", "اته", "نهه", "لس", "یوولس"),
@@ -2281,7 +2507,9 @@ public object Locales {
     // ================================================================
     // PT — Portuguese
     // ================================================================
-    public val PT: TimeLocale = TimeLocale(
+    public val PT: TimeLocale = buildPt()
+
+    private fun buildPt(): TimeLocale = TimeLocale(
         code = "pt",
         clock = ClockConfig(
             hours = listOf("doze", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze"),
@@ -2301,7 +2529,9 @@ public object Locales {
     // ================================================================
     // QU — Quechua
     // ================================================================
-    public val QU: TimeLocale = TimeLocale(
+    public val QU: TimeLocale = buildQu()
+
+    private fun buildQu(): TimeLocale = TimeLocale(
         code = "qu",
         clock = ClockConfig(
             hours = listOf("chunka iskayniyuq", "huk", "iskay", "kimsa", "tawa", "pichqa", "suqta", "qanchis", "pusaq", "isqun", "chunka", "chunka hukniyuq"),
@@ -2321,7 +2551,9 @@ public object Locales {
     // ================================================================
     // QUC — K'iche'
     // ================================================================
-    public val QUC: TimeLocale = TimeLocale(
+    public val QUC: TimeLocale = buildQuc()
+
+    private fun buildQuc(): TimeLocale = TimeLocale(
         code = "quc",
         clock = ClockConfig(
             hours = listOf("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"),
@@ -2341,7 +2573,9 @@ public object Locales {
     // ================================================================
     // RO — Romanian
     // ================================================================
-    public val RO: TimeLocale = TimeLocale(
+    public val RO: TimeLocale = buildRo()
+
+    private fun buildRo(): TimeLocale = TimeLocale(
         code = "ro",
         clock = ClockConfig(
             hours = listOf("douăsprezece", "unu", "două", "trei", "patru", "cinci", "șase", "șapte", "opt", "nouă", "zece", "unsprezece"),
@@ -2361,7 +2595,9 @@ public object Locales {
     // ================================================================
     // RU — Russian
     // ================================================================
-    public val RU: TimeLocale = TimeLocale(
+    public val RU: TimeLocale = buildRu()
+
+    private fun buildRu(): TimeLocale = TimeLocale(
         code = "ru",
         clock = ClockConfig(
             hours = listOf("двенадцать", "час", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать"),
@@ -2381,7 +2617,9 @@ public object Locales {
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
-    public val RW: TimeLocale = TimeLocale(
+    public val RW: TimeLocale = buildRw()
+
+    private fun buildRw(): TimeLocale = TimeLocale(
         code = "rw",
         clock = ClockConfig(
             hours = listOf("cumi n'ebyiri", "rimwe", "ebyiri", "eshatu", "enye", "eshanu", "esheshatu", "indwi", "umunani", "icyenda", "icumi", "cumi n'imwe"),
@@ -2401,7 +2639,9 @@ public object Locales {
     // ================================================================
     // SAR — Sara
     // ================================================================
-    public val SAR: TimeLocale = TimeLocale(
+    public val SAR: TimeLocale = buildSar()
+
+    private fun buildSar(): TimeLocale = TimeLocale(
         code = "sar",
         clock = ClockConfig(
             hours = listOf("mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "kɨ̀ndá", "ɗìi", "mùtá", "sɔ̀", "mɨ̀ndɨ̀", "mɨ̀ndɨ̀ kɨ̀ndá", "mɨ̀sá", "mɨ̀ndɨ̀ mùtá", "mɨ̀ndɨ̀ sɔ̀", "mɔ̀ɔ́", "mɔ̀ɔ́ kɨ̀ndá"),
@@ -2421,7 +2661,9 @@ public object Locales {
     // ================================================================
     // SD — Sindhi
     // ================================================================
-    public val SD: TimeLocale = TimeLocale(
+    public val SD: TimeLocale = buildSd()
+
+    private fun buildSd(): TimeLocale = TimeLocale(
         code = "sd",
         clock = ClockConfig(
             hours = listOf("ٻارھ", "ھڪ", "ٻه", "ٽي", "چار", "پنج", "ڇھ", "ست", "اٺ", "نائن", "ڏھ", "يارھ"),
@@ -2441,7 +2683,9 @@ public object Locales {
     // ================================================================
     // SG — Sango
     // ================================================================
-    public val SG: TimeLocale = TimeLocale(
+    public val SG: TimeLocale = buildSg()
+
+    private fun buildSg(): TimeLocale = TimeLocale(
         code = "sg",
         clock = ClockConfig(
             hours = listOf("bâlè-ûse", "ôko", "ûse", "otâ", "usïö", "okü", "ömënë", "mbïrïmbïrï", "mënâmbârâ", "gonambâlâ", "bâlè", "bâlè na ôko"),
@@ -2461,7 +2705,9 @@ public object Locales {
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
-    public val SHI: TimeLocale = TimeLocale(
+    public val SHI: TimeLocale = buildShi()
+
+    private fun buildShi(): TimeLocale = TimeLocale(
         code = "shi",
         clock = ClockConfig(
             hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
@@ -2481,7 +2727,9 @@ public object Locales {
     // ================================================================
     // SHN — Shan
     // ================================================================
-    public val SHN: TimeLocale = TimeLocale(
+    public val SHN: TimeLocale = buildShn()
+
+    private fun buildShn(): TimeLocale = TimeLocale(
         code = "shn",
         clock = ClockConfig(
             hours = listOf("သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း"),
@@ -2501,7 +2749,9 @@ public object Locales {
     // ================================================================
     // SI — Sinhala
     // ================================================================
-    public val SI: TimeLocale = TimeLocale(
+    public val SI: TimeLocale = buildSi()
+
+    private fun buildSi(): TimeLocale = TimeLocale(
         code = "si",
         clock = ClockConfig(
             hours = listOf("දොළහ", "එක", "දෙක", "තුන", "හතර", "පහ", "හය", "හත", "අට", "නවය", "දහය", "එකොළහ"),
@@ -2521,7 +2771,9 @@ public object Locales {
     // ================================================================
     // SK — Slovak
     // ================================================================
-    public val SK: TimeLocale = TimeLocale(
+    public val SK: TimeLocale = buildSk()
+
+    private fun buildSk(): TimeLocale = TimeLocale(
         code = "sk",
         clock = ClockConfig(
             hours = listOf("dvanásť", "jedna", "dve", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť", "desať", "jedenásť"),
@@ -2541,7 +2793,9 @@ public object Locales {
     // ================================================================
     // SL — Slovenian
     // ================================================================
-    public val SL: TimeLocale = TimeLocale(
+    public val SL: TimeLocale = buildSl()
+
+    private fun buildSl(): TimeLocale = TimeLocale(
         code = "sl",
         clock = ClockConfig(
             hours = listOf("dvanajst", "ena", "dve", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet", "deset", "enajst"),
@@ -2561,7 +2815,9 @@ public object Locales {
     // ================================================================
     // SN — Shona
     // ================================================================
-    public val SN: TimeLocale = TimeLocale(
+    public val SN: TimeLocale = buildSn()
+
+    private fun buildSn(): TimeLocale = TimeLocale(
         code = "sn",
         clock = ClockConfig(
             hours = listOf("gumi nembiri", "imwe", "mbiri", "nhatu", "ina", "shanu", "nhanhatu", "nomwe", "sere", "pfumbamwe", "gumi", "gumi neimwe"),
@@ -2581,7 +2837,9 @@ public object Locales {
     // ================================================================
     // SNK — Soninke
     // ================================================================
-    public val SNK: TimeLocale = TimeLocale(
+    public val SNK: TimeLocale = buildSnk()
+
+    private fun buildSnk(): TimeLocale = TimeLocale(
         code = "snk",
         clock = ClockConfig(
             hours = listOf("tanmu fillo", "baane", "fillo", "sikko", "naaxato", "karago", "tunmu", "ñerru", "segu", "kaburu", "tanmu", "tanmu baane"),
@@ -2601,7 +2859,9 @@ public object Locales {
     // ================================================================
     // SO — Somali
     // ================================================================
-    public val SO: TimeLocale = TimeLocale(
+    public val SO: TimeLocale = buildSo()
+
+    private fun buildSo(): TimeLocale = TimeLocale(
         code = "so",
         clock = ClockConfig(
             hours = listOf("laba iyo toban", "kow", "laba", "saddex", "afar", "shan", "lix", "toddoba", "siddeed", "sagaal", "toban", "kow iyo toban"),
@@ -2621,7 +2881,9 @@ public object Locales {
     // ================================================================
     // SQ — Albanian
     // ================================================================
-    public val SQ: TimeLocale = TimeLocale(
+    public val SQ: TimeLocale = buildSq()
+
+    private fun buildSq(): TimeLocale = TimeLocale(
         code = "sq",
         clock = ClockConfig(
             hours = listOf("dymbëdhjetë", "një", "dy", "tre", "katër", "pesë", "gjashtë", "shtatë", "tetë", "nëntë", "dhjetë", "njëmbëdhjetë"),
@@ -2641,7 +2903,9 @@ public object Locales {
     // ================================================================
     // SR — Serbian
     // ================================================================
-    public val SR: TimeLocale = TimeLocale(
+    public val SR: TimeLocale = buildSr()
+
+    private fun buildSr(): TimeLocale = TimeLocale(
         code = "sr",
         clock = ClockConfig(
             hours = listOf("дванаест", "један", "два", "три", "четири", "пет", "шест", "седам", "осам", "девет", "десет", "једанаест"),
@@ -2661,7 +2925,9 @@ public object Locales {
     // ================================================================
     // SS — siSwati
     // ================================================================
-    public val SS: TimeLocale = TimeLocale(
+    public val SS: TimeLocale = buildSs()
+
+    private fun buildSs(): TimeLocale = TimeLocale(
         code = "ss",
         clock = ClockConfig(
             hours = listOf("lishumi nambili", "kunye", "kubili", "kutsatfu", "kune", "kusihlanu", "sitfupha", "sikhombisa", "siphohlongo", "sifisagcina", "lishumi", "lishumi nakunye"),
@@ -2681,7 +2947,9 @@ public object Locales {
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
-    public val ST: TimeLocale = TimeLocale(
+    public val ST: TimeLocale = buildSt()
+
+    private fun buildSt(): TimeLocale = TimeLocale(
         code = "st",
         clock = ClockConfig(
             hours = listOf("leshome le metso e mmedi", "e nngwe", "tse pedi", "tse tharo", "tse nne", "tse hlano", "tse tshelela", "tse supileng", "tse robedi", "tse robong", "leshome", "leshome le motso o le mong"),
@@ -2701,7 +2969,9 @@ public object Locales {
     // ================================================================
     // SU — Sundanese
     // ================================================================
-    public val SU: TimeLocale = TimeLocale(
+    public val SU: TimeLocale = buildSu()
+
+    private fun buildSu(): TimeLocale = TimeLocale(
         code = "su",
         clock = ClockConfig(
             hours = listOf("dua welas", "hiji", "dua", "tilu", "opat", "lima", "genep", "tujuh", "dalapan", "salapan", "sapuluh", "sabelas"),
@@ -2721,7 +2991,9 @@ public object Locales {
     // ================================================================
     // SUK — Sukuma
     // ================================================================
-    public val SUK: TimeLocale = TimeLocale(
+    public val SUK: TimeLocale = buildSuk()
+
+    private fun buildSuk(): TimeLocale = TimeLocale(
         code = "suk",
         clock = ClockConfig(
             hours = listOf("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
@@ -2741,7 +3013,9 @@ public object Locales {
     // ================================================================
     // SV — Swedish
     // ================================================================
-    public val SV: TimeLocale = TimeLocale(
+    public val SV: TimeLocale = buildSv()
+
+    private fun buildSv(): TimeLocale = TimeLocale(
         code = "sv",
         clock = ClockConfig(
             hours = listOf("tolv", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio", "elva"),
@@ -2761,7 +3035,9 @@ public object Locales {
     // ================================================================
     // SW — Swahili
     // ================================================================
-    public val SW: TimeLocale = TimeLocale(
+    public val SW: TimeLocale = buildSw()
+
+    private fun buildSw(): TimeLocale = TimeLocale(
         code = "sw",
         clock = ClockConfig(
             hours = listOf("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
@@ -2781,7 +3057,9 @@ public object Locales {
     // ================================================================
     // TA — Tamil
     // ================================================================
-    public val TA: TimeLocale = TimeLocale(
+    public val TA: TimeLocale = buildTa()
+
+    private fun buildTa(): TimeLocale = TimeLocale(
         code = "ta",
         clock = ClockConfig(
             hours = listOf("பன்னிரண்டு", "ஒன்று", "இரண்டு", "மூன்று", "நான்கு", "ஐந்து", "ஆறு", "ஏழு", "எட்டு", "ஒன்பது", "பத்து", "பதினொன்று"),
@@ -2801,7 +3079,9 @@ public object Locales {
     // ================================================================
     // TE — Telugu
     // ================================================================
-    public val TE: TimeLocale = TimeLocale(
+    public val TE: TimeLocale = buildTe()
+
+    private fun buildTe(): TimeLocale = TimeLocale(
         code = "te",
         clock = ClockConfig(
             hours = listOf("పన్నెండు", "ఒకటి", "రెండు", "మూడు", "నాలుగు", "ఐదు", "ఆరు", "ఏడు", "ఎనిమిది", "తొమ్మిది", "పది", "పదకొండు"),
@@ -2821,7 +3101,9 @@ public object Locales {
     // ================================================================
     // TEM — Temne
     // ================================================================
-    public val TEM: TimeLocale = TimeLocale(
+    public val TEM: TimeLocale = buildTem()
+
+    private fun buildTem(): TimeLocale = TimeLocale(
         code = "tem",
         clock = ClockConfig(
             hours = listOf("pɛn pu", "kɩrɩŋ", "rɔŋ", "rasar", "rɔŋ-anat", "rɔman", "rɔmata", "rɔmbot", "rɔmɔntat", "rɔmɔntaŋka", "pɛn", "pɛn nɛ kɩrɩŋ"),
@@ -2841,7 +3123,9 @@ public object Locales {
     // ================================================================
     // TET — Tetum
     // ================================================================
-    public val TET: TimeLocale = TimeLocale(
+    public val TET: TimeLocale = buildTet()
+
+    private fun buildTet(): TimeLocale = TimeLocale(
         code = "tet",
         clock = ClockConfig(
             hours = listOf("sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"),
@@ -2861,7 +3145,9 @@ public object Locales {
     // ================================================================
     // TG — Tajik
     // ================================================================
-    public val TG: TimeLocale = TimeLocale(
+    public val TG: TimeLocale = buildTg()
+
+    private fun buildTg(): TimeLocale = TimeLocale(
         code = "tg",
         clock = ClockConfig(
             hours = listOf("дувоздаҳ", "як", "ду", "се", "чор", "панҷ", "шаш", "ҳафт", "ҳашт", "нӯҳ", "даҳ", "ёздаҳ"),
@@ -2881,7 +3167,9 @@ public object Locales {
     // ================================================================
     // TH — Thai
     // ================================================================
-    public val TH: TimeLocale = TimeLocale(
+    public val TH: TimeLocale = buildTh()
+
+    private fun buildTh(): TimeLocale = TimeLocale(
         code = "th",
         clock = ClockConfig(
             hours = listOf("สิบสอง", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า", "สิบ", "สิบเอ็ด"),
@@ -2901,7 +3189,9 @@ public object Locales {
     // ================================================================
     // TI — Tigrinya
     // ================================================================
-    public val TI: TimeLocale = TimeLocale(
+    public val TI: TimeLocale = buildTi()
+
+    private fun buildTi(): TimeLocale = TimeLocale(
         code = "ti",
         clock = ClockConfig(
             hours = listOf("ዓሰርተ ክልተ", "ሓደ", "ክልተ", "ሰለስተ", "ኣርባዕተ", "ሓሙሽተ", "ሽድሽተ", "ሸውዓተ", "ሸሞንተ", "ትሽዓተ", "ዓሰርተ", "ዓሰርተ ሓደ"),
@@ -2921,7 +3211,9 @@ public object Locales {
     // ================================================================
     // TIG — Tigre
     // ================================================================
-    public val TIG: TimeLocale = TimeLocale(
+    public val TIG: TimeLocale = buildTig()
+
+    private fun buildTig(): TimeLocale = TimeLocale(
         code = "tig",
         clock = ClockConfig(
             hours = listOf("ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante"),
@@ -2941,7 +3233,9 @@ public object Locales {
     // ================================================================
     // TK — Turkmen
     // ================================================================
-    public val TK: TimeLocale = TimeLocale(
+    public val TK: TimeLocale = buildTk()
+
+    private fun buildTk(): TimeLocale = TimeLocale(
         code = "tk",
         clock = ClockConfig(
             hours = listOf("on iki", "bir", "iki", "üç", "dört", "bäş", "alty", "ýedi", "sekiz", "dokuz", "on", "on bir"),
@@ -2961,7 +3255,9 @@ public object Locales {
     // ================================================================
     // TN — Tswana
     // ================================================================
-    public val TN: TimeLocale = TimeLocale(
+    public val TN: TimeLocale = buildTn()
+
+    private fun buildTn(): TimeLocale = TimeLocale(
         code = "tn",
         clock = ClockConfig(
             hours = listOf("lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"),
@@ -2981,7 +3277,9 @@ public object Locales {
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
-    public val TPI: TimeLocale = TimeLocale(
+    public val TPI: TimeLocale = buildTpi()
+
+    private fun buildTpi(): TimeLocale = TimeLocale(
         code = "tpi",
         clock = ClockConfig(
             hours = listOf("twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"),
@@ -3001,7 +3299,9 @@ public object Locales {
     // ================================================================
     // TR — Turkish
     // ================================================================
-    public val TR: TimeLocale = TimeLocale(
+    public val TR: TimeLocale = buildTr()
+
+    private fun buildTr(): TimeLocale = TimeLocale(
         code = "tr",
         clock = ClockConfig(
             hours = listOf("on iki", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on", "on bir"),
@@ -3021,7 +3321,9 @@ public object Locales {
     // ================================================================
     // TS — Tsonga
     // ================================================================
-    public val TS: TimeLocale = TimeLocale(
+    public val TS: TimeLocale = buildTs()
+
+    private fun buildTs(): TimeLocale = TimeLocale(
         code = "ts",
         clock = ClockConfig(
             hours = listOf("khume mbiri", "yin'we", "mbirhi", "nharhu", "mune", "ntlhanu", "tsevu", "nkombo", "nhungu", "kaye", "khume", "khume yin'we"),
@@ -3041,7 +3343,9 @@ public object Locales {
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
-    public val TUM: TimeLocale = TimeLocale(
+    public val TUM: TimeLocale = buildTum()
+
+    private fun buildTum(): TimeLocale = TimeLocale(
         code = "tum",
         clock = ClockConfig(
             hours = listOf("khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza"),
@@ -3061,7 +3365,9 @@ public object Locales {
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
-    public val TZM: TimeLocale = TimeLocale(
+    public val TZM: TimeLocale = buildTzm()
+
+    private fun buildTzm(): TimeLocale = TimeLocale(
         code = "tzm",
         clock = ClockConfig(
             hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
@@ -3081,7 +3387,9 @@ public object Locales {
     // ================================================================
     // UK — Ukrainian
     // ================================================================
-    public val UK: TimeLocale = TimeLocale(
+    public val UK: TimeLocale = buildUk()
+
+    private fun buildUk(): TimeLocale = TimeLocale(
         code = "uk",
         clock = ClockConfig(
             hours = listOf("дванадцята", "перша", "друга", "третя", "четверта", "п'ята", "шоста", "сьома", "восьма", "дев'ята", "десята", "одинадцята"),
@@ -3101,7 +3409,9 @@ public object Locales {
     // ================================================================
     // UMB — Umbundu
     // ================================================================
-    public val UMB: TimeLocale = TimeLocale(
+    public val UMB: TimeLocale = buildUmb()
+
+    private fun buildUmb(): TimeLocale = TimeLocale(
         code = "umb",
         clock = ClockConfig(
             hours = listOf("olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi"),
@@ -3121,7 +3431,9 @@ public object Locales {
     // ================================================================
     // UR — Urdu
     // ================================================================
-    public val UR: TimeLocale = TimeLocale(
+    public val UR: TimeLocale = buildUr()
+
+    private fun buildUr(): TimeLocale = TimeLocale(
         code = "ur",
         clock = ClockConfig(
             hours = listOf("بارہ", "ایک", "دو", "تین", "چار", "پانچ", "چھ", "سات", "آٹھ", "نو", "دس", "گیارہ"),
@@ -3141,7 +3453,9 @@ public object Locales {
     // ================================================================
     // UZ — Uzbek
     // ================================================================
-    public val UZ: TimeLocale = TimeLocale(
+    public val UZ: TimeLocale = buildUz()
+
+    private fun buildUz(): TimeLocale = TimeLocale(
         code = "uz",
         clock = ClockConfig(
             hours = listOf("o'n ikki", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz", "o'n", "o'n bir"),
@@ -3161,7 +3475,9 @@ public object Locales {
     // ================================================================
     // VE — Venda
     // ================================================================
-    public val VE: TimeLocale = TimeLocale(
+    public val VE: TimeLocale = buildVe()
+
+    private fun buildVe(): TimeLocale = TimeLocale(
         code = "ve",
         clock = ClockConfig(
             hours = listOf("fumimbili", "thihi", "mbili", "raru", "ina", "thanu", "rathi", "sumbe", "malo", "tahe", "fumi", "fuminthihi"),
@@ -3181,7 +3497,9 @@ public object Locales {
     // ================================================================
     // VI — Vietnamese
     // ================================================================
-    public val VI: TimeLocale = TimeLocale(
+    public val VI: TimeLocale = buildVi()
+
+    private fun buildVi(): TimeLocale = TimeLocale(
         code = "vi",
         clock = ClockConfig(
             hours = listOf("mười hai", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "mười một"),
@@ -3201,7 +3519,9 @@ public object Locales {
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
-    public val VMW: TimeLocale = TimeLocale(
+    public val VMW: TimeLocale = buildVmw()
+
+    private fun buildVmw(): TimeLocale = TimeLocale(
         code = "vmw",
         clock = ClockConfig(
             hours = listOf("khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa"),
@@ -3221,7 +3541,9 @@ public object Locales {
     // ================================================================
     // WO — Wolof
     // ================================================================
-    public val WO: TimeLocale = TimeLocale(
+    public val WO: TimeLocale = buildWo()
+
+    private fun buildWo(): TimeLocale = TimeLocale(
         code = "wo",
         clock = ClockConfig(
             hours = listOf("fukki ñaar", "benn", "ñaar", "ñett", "ñeent", "juróom", "juróom-benn", "juróom-ñaar", "juróom-ñett", "juróom-ñeent", "fukk", "fukki benn"),
@@ -3241,7 +3563,9 @@ public object Locales {
     // ================================================================
     // XH — Xhosa
     // ================================================================
-    public val XH: TimeLocale = TimeLocale(
+    public val XH: TimeLocale = buildXh()
+
+    private fun buildXh(): TimeLocale = TimeLocale(
         code = "xh",
         clock = ClockConfig(
             hours = listOf("ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye"),
@@ -3261,7 +3585,9 @@ public object Locales {
     // ================================================================
     // YAO — Yao
     // ================================================================
-    public val YAO: TimeLocale = TimeLocale(
+    public val YAO: TimeLocale = buildYao()
+
+    private fun buildYao(): TimeLocale = TimeLocale(
         code = "yao",
         clock = ClockConfig(
             hours = listOf("likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo"),
@@ -3281,7 +3607,9 @@ public object Locales {
     // ================================================================
     // YO — Yoruba
     // ================================================================
-    public val YO: TimeLocale = TimeLocale(
+    public val YO: TimeLocale = buildYo()
+
+    private fun buildYo(): TimeLocale = TimeLocale(
         code = "yo",
         clock = ClockConfig(
             hours = listOf("méjìlá", "kan", "méjì", "mẹ́ta", "mẹ́rin", "márùn-ún", "mẹ́fà", "méje", "mẹ́jọ", "mẹ́sàn-án", "mẹ́wàá", "mọ́kànlá"),
@@ -3301,7 +3629,9 @@ public object Locales {
     // ================================================================
     // YUE — Cantonese
     // ================================================================
-    public val YUE: TimeLocale = TimeLocale(
+    public val YUE: TimeLocale = buildYue()
+
+    private fun buildYue(): TimeLocale = TimeLocale(
         code = "yue",
         clock = ClockConfig(
             hours = listOf("十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
@@ -3321,7 +3651,9 @@ public object Locales {
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
-    public val ZDJ: TimeLocale = TimeLocale(
+    public val ZDJ: TimeLocale = buildZdj()
+
+    private fun buildZdj(): TimeLocale = TimeLocale(
         code = "zdj",
         clock = ClockConfig(
             hours = listOf("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
@@ -3341,7 +3673,9 @@ public object Locales {
     // ================================================================
     // ZH — Chinese
     // ================================================================
-    public val ZH: TimeLocale = TimeLocale(
+    public val ZH: TimeLocale = buildZh()
+
+    private fun buildZh(): TimeLocale = TimeLocale(
         code = "zh",
         clock = ClockConfig(
             hours = listOf("十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
@@ -3361,7 +3695,9 @@ public object Locales {
     // ================================================================
     // ZU — Zulu
     // ================================================================
-    public val ZU: TimeLocale = TimeLocale(
+    public val ZU: TimeLocale = buildZu()
+
+    private fun buildZu(): TimeLocale = TimeLocale(
         code = "zu",
         clock = ClockConfig(
             hours = listOf("ishumi nambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isishiyagalombili", "isishiyagalolunye", "ishumi", "ishumi nanye"),

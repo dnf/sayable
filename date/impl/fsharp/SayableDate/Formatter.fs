@@ -1,49 +1,36 @@
 namespace SayableDateLib
 
 open System
+open System.Globalization
+open System.Text.RegularExpressions
 open SayableDateLib.Types
 
 module Formatter =
 
     let [<Literal>] Version = "0.5.0"
 
-    let private safeAtoi (s: string) : int option =
-        if String.IsNullOrEmpty(s) then
-            None
-        else
-            let mutable n = 0
-            let mutable ok = true
-            let mutable i = 0
+    // DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+    let private daysInMonth (year: int) (month: int) : int =
+        match month with
+        | 2 -> if (year % 4 = 0 && year % 100 <> 0) || year % 400 = 0 then 29 else 28
+        | 4 | 6 | 9 | 11 -> 30
+        | _ -> 31
 
-            while ok && i < s.Length do
-                let c = s.[i]
-
-                if c < '0' || c > '9' then
-                    ok <- false
-                else
-                    n <- n * 10 + (int c - int '0')
-                    i <- i + 1
-
-            if ok then Some n else None
+    /// YYYY-MM-DD, alone or followed by T and anything (an ISO datetime).
+    let private datePrefix =
+        Regex(@"\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T.*)?\z", RegexOptions.Singleline ||| RegexOptions.CultureInvariant)
 
     let internal parseDate (s: string) : int[] option =
-        if String.IsNullOrEmpty(s) then
+        let m = datePrefix.Match(if isNull s then "" else s)
+        if not m.Success then
             None
         else
-            let datePart =
-                if s.Contains('T') then s.Substring(0, s.IndexOf('T'))
-                else s
-
-            let parts = datePart.Split('-')
-
-            if parts.Length <> 3 then
-                None
+            let field (i: int) = Int32.Parse(m.Groups.[i].Value, CultureInfo.InvariantCulture)
+            let year, month, day = field 1, field 2, field 3
+            if month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth year month then
+                Some [| year; month; day |]
             else
-                match safeAtoi parts.[0], safeAtoi parts.[1], safeAtoi parts.[2] with
-                | Some year, Some month, Some day when month >= 1 && month <= 12 && day >= 1 && day <= 31 ->
-                    [| year; month; day |]
-                    |> Some
-                | _ -> None
+                None
 
     let internal toJdn (year: int) (month: int) (day: int) : int =
         let a = (14 - month) / 12

@@ -7,7 +7,15 @@ import sayabledate/locales/en as locale_en
 import sayabledate/locales/es as locale_es
 import sayabledate/locales/fr as locale_fr
 import sayabledate/locales/ja as locale_ja
+import sayabledate/locales/cs as locale_cs
+import sayabledate/locales/fi as locale_fi
+import sayabledate/locales/kek as locale_kek
+import sayabledate/locales/kw as locale_kw
+import sayabledate/locales/mam as locale_mam
 import sayabledate/locales/ru as locale_ru
+import sayabledate/locales/sk as locale_sk
+import sayabledate/locales/tg as locale_tg
+import sayabledate/locales/uk as locale_uk
 import sayabledate/types.{Compact, Normal, Short}
 
 pub fn main() {
@@ -349,4 +357,120 @@ pub fn spanish_format_date_test() {
 pub fn spanish_relative_day_after_tomorrow_test() {
   sayabledate.format_relative(locale_es.locale(), Normal, "2025-03-17", "2025-03-15")
   |> should.equal(Ok("pasado mañana"))
+}
+
+// 13. format_date_with_year
+
+// 13.1
+pub fn with_year_normal_test() {
+  sayabledate.format_date_with_year(locale_en.locale(), Normal, "2018-02-04")
+  |> should.equal(Ok("February 4th, 2018"))
+}
+
+// 13.2
+pub fn with_year_short_test() {
+  sayabledate.format_date_with_year(locale_en.locale(), Short, "2025-03-15")
+  |> should.equal(Ok("Mar 15, 2025"))
+}
+
+// 13.3
+pub fn with_year_compact_test() {
+  sayabledate.format_date_with_year(locale_en.locale(), Compact, "1997-01-21")
+  |> should.equal(Ok("1/21/97"))
+}
+
+// 13.4
+pub fn with_year_compact_two_digit_year_padded_test() {
+  sayabledate.format_date_with_year(locale_tg.locale(), Compact, "2007-05-20")
+  |> should.equal(Ok("20/5/07"))
+}
+
+// 13.5
+pub fn with_year_finnish_short_test() {
+  sayabledate.format_date_with_year(locale_fi.locale(), Short, "1996-06-21")
+  |> should.equal(Ok("21. kesäkuuta 1996"))
+}
+
+// 14. Short month names (locales that keep the full genitive)
+
+// 14.1
+pub fn slovak_short_month_test() {
+  sayabledate.format_date(locale_sk.locale(), Short, "2031-02-15")
+  |> should.equal(Ok("15. februára"))
+}
+
+// 14.2
+pub fn czech_short_month_test() {
+  sayabledate.format_date(locale_cs.locale(), Short, "2025-12-10")
+  |> should.equal(Ok("10. prosince"))
+}
+
+// 14.3
+pub fn ukrainian_short_month_test() {
+  sayabledate.format_date(locale_uk.locale(), Short, "2025-11-05")
+  |> should.equal(Ok("5 листопада"))
+}
+
+// 14.4
+pub fn finnish_short_relative_month_test() {
+  sayabledate.format_relative(locale_fi.locale(), Short, "1998-08-08", "1998-08-15")
+  |> should.equal(Ok("8. elokuuta"))
+}
+
+// 15. format_relative -- short phrases
+
+// 15.1
+pub fn cornish_short_day_after_tomorrow_test() {
+  sayabledate.format_relative(locale_kw.locale(), Short, "2035-12-04", "2035-12-02")
+  |> should.equal(Ok("an Mth ma"))
+}
+
+// 15.2
+pub fn mam_short_day_before_yesterday_test() {
+  sayabledate.format_relative(locale_mam.locale(), Short, "2000-01-23", "2000-01-25")
+  |> should.equal(Ok("Dom nchi'j"))
+}
+
+// 15.3
+pub fn qeqchi_short_day_after_tomorrow_test() {
+  sayabledate.format_relative(locale_kek.locale(), Short, "2014-10-24", "2014-10-22")
+  |> should.equal(Ok("a'in Vie"))
+}
+
+// 16. Input validation
+
+// 16.1
+pub fn invalid_february_30_test() {
+  date("2025-02-30") |> should.equal(Error(Nil))
+}
+
+// 16.2
+pub fn invalid_month_13_test() {
+  date("2025-13-01") |> should.equal(Error(Nil))
+}
+
+// 16.3
+pub fn invalid_unpadded_test() {
+  date("2025-6-1") |> should.equal(Error(Nil))
+}
+
+// 16.4
+pub fn invalid_surrounding_whitespace_test() {
+  date(" 2025-06-01") |> should.equal(Error(Nil))
+}
+
+// 16.5
+pub fn iso_datetime_uses_date_part_test() {
+  date("2025-06-01T10:00:00") |> should.equal(Ok("June 1st"))
+}
+
+// 16.6
+pub fn invalid_february_29_non_leap_with_year_test() {
+  sayabledate.format_date_with_year(locale_en.locale(), Normal, "2023-02-29")
+  |> should.equal(Error(Nil))
+}
+
+// 16.7
+pub fn invalid_as_of_relative_test() {
+  relative("2025-03-16", "2025-04-31") |> should.equal(Error(Nil))
 }

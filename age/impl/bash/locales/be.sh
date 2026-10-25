@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/be.json
 
-_plural_be() {
+_sayableage_plural_be() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_be() {
     echo "many"
 }
 
-_locale_be() {
+_sayableage_locale_be() {
     _unit_day_one='{n} дзень'
     _unit_day_few='{n} дні'
     _unit_day_many='{n} дзён'
@@ -62,5 +62,5 @@ _locale_be() {
     _compact_unit_year_other='{n} г.'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_be
+    _plural_func=_sayableage_plural_be
 }

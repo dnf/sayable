@@ -105,6 +105,12 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines = [HEADER]
     lines.append("local M = {}")
     lines.append("")
+    lines.append("--- Every locale code, sorted.")
+    lines.append("M.CODES = {")
+    for loc in sorted_locs:
+        lines.append(f'    "{loc["code"]}",')
+    lines.append("}")
+    lines.append("")
     lines.append("local cache = {}")
     lines.append("")
     lines.append("function M.get_locale(code)")

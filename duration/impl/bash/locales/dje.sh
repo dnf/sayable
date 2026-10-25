@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/dje.json
 
-_plural_dje() {
+_sayableduration_plural_dje() {
     echo "other"
 }
 
-_locale_dje() {
+_sayableduration_locale_dje() {
     _unit_second='sɛkondi {n}'
     _unit_minute='miniti {n}'
     _unit_hour='guuru {n}'
@@ -46,5 +46,5 @@ _locale_dje() {
     _compact_delimiter=''
     _compact_ago='{0} ban'
     _compact_in_future='da {0}'
-    _plural_func=_plural_dje
+    _plural_func=_sayableduration_plural_dje
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ff.json
 
-_locale_ff() {
+_sayabletime_locale_ff() {
     _clock_hours=('sappo e ɗiɗi' 'go'\''o' 'ɗiɗi' 'tati' 'nay' 'joy' 'jeegom' 'jeeɗiɗi' 'jeetati' 'jeenay' 'sappo' 'sappo e go'\''o')
     _clock_midnight='jamma hejjere'
     _clock_noon='zuhr'

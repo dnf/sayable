@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/nr.json
 
-_locale_nr() {
+_sayabledate_locale_nr() {
     _months=('uTjhirhweni' 'uMhlolanja' 'iNtaka' 'iSihlabantangana' 'uMrhayili' 'uMgwengweni' 'uVelabahlinze' 'uRhoboyi' 'uKhukhulamungu' 'iSewula' 'uSikinyikhaba' 'uNobayeni')
     _weekdays=('uSonto' 'uMvulo' 'uLesibili' 'uLesithathu' 'uLesine' 'uLesihlanu' 'uMgqibelo')
     _day_format='{n}'

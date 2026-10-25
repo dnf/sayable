@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/vmw.json "
 
-"Locale: vmw"
+"Locale: vmw"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 vmw

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ur.json
 
-_plural_ur() {
+_sayableage_plural_ur() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ur() {
+_sayableage_locale_ur() {
     _unit_day_one='{n} دن'
     _unit_day_other='{n} دن'
     _unit_week_one='{n} ہفتہ'
@@ -49,5 +49,5 @@ _locale_ur() {
     _compact_unit_year='{n} سال'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ur
+    _plural_func=_sayableage_plural_ur
 }

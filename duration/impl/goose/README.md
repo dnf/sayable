@@ -28,7 +28,7 @@ import sayableduration from "path/to/duration/impl/goose/sayableduration";
 
 ## Usage
 
-Timestamps are ISO 8601 (`YYYY-MM-DDTHH:MM[:SS[.fff]]`, a `Z` or `+hh:mm` suffix is ignored). Every function reports "no value" with a trailing `bool` instead of a null:
+Timestamps are ISO 8601 (`YYYY-MM-DDTHH:MM[:SS[.fff]]` naming a real calendar day; a `Z` or `±hh:mm` suffix is accepted but not applied), as defined in [`docs/input-formats.md`](../../../docs/input-formats.md). Durations longer than 500 years (6000 months) have no value. Every function reports "no value" with a trailing `bool` instead of a null:
 
 ```goose
 let en, found = sayableduration::get_locale("en");
@@ -67,7 +67,7 @@ Each locale carries its CLDR plural rule as a `PluralRule` enum: Goose cannot st
 | Function | Returns |
 |----------|---------|
 | `get_locale(code: u8[:])` | `Locale, bool` — false for an unknown code |
-| `format_duration(locale: const Locale&, compactness: Compactness, seconds: i64)` | `u8[>..], bool` — false for a negative count |
+| `format_duration(locale: const Locale&, compactness: Compactness, seconds: i64)` | `u8[>..], bool` — false for a negative count or one over 500 years |
 | `format_duration_iso(locale: const Locale&, compactness: Compactness, start: u8[:], end: u8[:])` | `u8[>..], bool` — the duration between two timestamps in either order; false for an empty or malformed one |
 | `format_since(locale: const Locale&, compactness: Compactness, start: u8[:], as_of: u8[:])` | `u8[>..], bool` — "… ago"; false when `as_of` is before `start` |
 | `format_until(locale: const Locale&, compactness: Compactness, target: u8[:], as_of: u8[:])` | `u8[>..], bool` — "in …"; false when `target` is before `as_of` |

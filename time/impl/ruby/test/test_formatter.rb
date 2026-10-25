@@ -182,3 +182,63 @@ class TestFormatTime < Minitest::Test
     assert_equal '0.00', st.format_time('00:00')
   end
 end
+
+# ================================================================
+# Sections 9-10: minutes in short/compact, input validation
+# ================================================================
+class TestSpecSections9And10 < Minitest::Test
+  # 9.1
+  def test_9_1_digital_modes_keep_the_exact_minute
+    assert_equal '6:01 PM', SayableTime::Formatter.new(SayableTime::Locales::EN, :short).format_time('18:01')
+  end
+
+  # 9.2
+  def test_9_2_digital_modes_keep_the_exact_minute
+    assert_equal '7:05p', SayableTime::Formatter.new(SayableTime::Locales::EN, :compact).format_time('19:05')
+  end
+
+  # 10.1
+  def test_10_1_one_digit_hour
+    assert_equal 'half past nine', SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('9:30')
+  end
+
+  # 10.2
+  def test_10_2_two_digit_hour
+    assert_equal 'half past nine', SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('09:30')
+  end
+
+  # 10.3
+  def test_10_3_leading_whitespace
+    assert_nil SayableTime::Formatter.new(SayableTime::Locales::EN).format_time(' 9:30')
+  end
+
+  # 10.4
+  def test_10_4_trailing_whitespace
+    assert_nil SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('9:30 ')
+  end
+
+  # 10.5
+  def test_10_5_minutes_need_two_digits
+    assert_nil SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('9:5')
+  end
+
+  # 10.6
+  def test_10_6_hour_out_of_range
+    assert_nil SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('24:00')
+  end
+
+  # 10.7
+  def test_10_7_seconds_are_allowed_and_ignored
+    assert_equal 'a quarter past two', SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('14:15:30')
+  end
+
+  # 10.8
+  def test_10_8_iso_datetime_with_zone_suffix_ignored
+    assert_equal 'a quarter past two', SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('2025-01-15T14:15:00Z')
+  end
+
+  # 10.9
+  def test_10_9_iso_datetime_with_an_impossible_date
+    assert_nil SayableTime::Formatter.new(SayableTime::Locales::EN).format_time('2025-02-30T14:15:00')
+  end
+end

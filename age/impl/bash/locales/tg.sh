@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/tg.json
 
-_plural_tg() {
+_sayableage_plural_tg() {
     echo "other"
 }
 
-_locale_tg() {
+_sayableage_locale_tg() {
     _unit_day='{n} рӯз'
     _unit_week='{n} ҳафта'
     _unit_month='{n} моҳ'
@@ -37,5 +37,5 @@ _locale_tg() {
     _compact_unit_year='{n}с'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_tg
+    _plural_func=_sayableage_plural_tg
 }

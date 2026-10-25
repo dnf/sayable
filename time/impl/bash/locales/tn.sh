@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tn.json
 
-_locale_tn() {
+_sayabletime_locale_tn() {
     _clock_hours=('lesome le bobedi' 'nngwe' 'pedi' 'tharo' 'nne' 'tlhano' 'thataro' 'supa' 'robedi' 'robongwe' 'lesome' 'lesome le bongwe')
     _clock_midnight='bosigo jwa magareng'
     _clock_noon='motshegare'

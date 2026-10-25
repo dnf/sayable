@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/nr.json
 
-_plural_nr() {
+_sayableage_plural_nr() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_nr() {
+_sayableage_locale_nr() {
     _unit_day_one='ilanga {n}'
     _unit_day_other='amalanga {n}'
     _unit_week_one='iveke {n}'
@@ -46,5 +46,5 @@ _locale_nr() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_nr
+    _plural_func=_sayableage_plural_nr
 }

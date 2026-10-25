@@ -102,7 +102,8 @@ const ParseResult = enum {
 
 /// `argv` excludes the program name.
 fn parseArgs(sink: Sink, argv: []const []const u8, args: *Args) ParseResult {
-    if (argv.len < 1) return .usage_error;
+    // No command: run() prints the help text and exits 2, as the reference CLI does.
+    if (argv.len < 1) return .ok;
 
     const first = argv[0];
     // Global flags as first argument
@@ -257,11 +258,12 @@ fn cmdAge(sink: Sink, args: *const Args) u8 {
 
     var as_of: []const u8 = undefined;
     var today_buf: [10]u8 = undefined;
-    if (args.as_of) |ao| {
-        if (isNull(ao)) return 1;
-        as_of = ao;
-    } else {
+    // A null or empty as-of means today, as in the reference CLI.
+    const given_as_of = args.as_of orelse "";
+    if (isNull(given_as_of) or given_as_of.len == 0) {
         as_of = getToday(sink.io, &today_buf);
+    } else {
+        as_of = given_as_of;
     }
 
     const compactness: sayableage.Compactness = switch (args.compactness) {
@@ -293,11 +295,12 @@ fn cmdStage(sink: Sink, args: *const Args) u8 {
 
     var as_of: []const u8 = undefined;
     var today_buf: [10]u8 = undefined;
-    if (args.as_of) |ao| {
-        if (isNull(ao)) return 1;
-        as_of = ao;
-    } else {
+    // A null or empty as-of means today, as in the reference CLI.
+    const given_as_of = args.as_of orelse "";
+    if (isNull(given_as_of) or given_as_of.len == 0) {
         as_of = getToday(sink.io, &today_buf);
+    } else {
+        as_of = given_as_of;
     }
 
     const result = sayableage.formatStage(locale, dob_arg, as_of, args.gender) orelse return 1;
@@ -420,12 +423,8 @@ fn cmdDuration(sink: Sink, args: *const Args) u8 {
 
     var buf: [512]u8 = undefined;
 
-    if (isNonNegativeInteger(value_arg)) {
-        const seconds = parseInteger(value_arg);
-        const result = sayableduration.formatDurationSecs(&buf, locale, compactness, seconds) orelse return 1;
-        sink.printLine(result);
-    } else if (isNegativeInteger(value_arg)) {
-        const seconds = parseSignedInteger(value_arg);
+    if (isInteger(value_arg)) {
+        const seconds = parseSeconds(value_arg) orelse return 1;
         const result = sayableduration.formatDurationSecs(&buf, locale, compactness, seconds) orelse return 1;
         sink.printLine(result);
     } else {
@@ -519,43 +518,20 @@ fn cmdLocales(sink: Sink) u8 {
 
 // ---- Integer detection helpers ----
 
-fn isNonNegativeInteger(s: []const u8) bool {
-    if (s.len == 0) return false;
-    for (s) |c| {
+/// Seconds mode, as the reference CLI decides it: digits after any leading minus signs.
+fn isInteger(s: []const u8) bool {
+    const digits = std.mem.trimStart(u8, s, "-");
+    if (digits.len == 0) return false;
+    for (digits) |c| {
         if (c < '0' or c > '9') return false;
     }
     return true;
 }
 
-fn isNegativeInteger(s: []const u8) bool {
-    if (s.len < 2) return false;
-    if (s[0] != '-') return false;
-    for (s[1..]) |c| {
-        if (c < '0' or c > '9') return false;
-    }
-    return true;
-}
-
-fn parseInteger(s: []const u8) i32 {
-    var val: i32 = 0;
-    for (s) |c| {
-        val = val * 10 + @as(i32, c - '0');
-    }
-    return val;
-}
-
-fn parseSignedInteger(s: []const u8) i32 {
-    var val: i32 = 0;
-    var start: usize = 0;
-    var neg = false;
-    if (s.len > 0 and s[0] == '-') {
-        neg = true;
-        start = 1;
-    }
-    for (s[start..]) |c| {
-        val = val * 10 + @as(i32, c - '0');
-    }
-    return if (neg) -val else val;
+/// Seconds as a 64-bit integer; null when malformed ("--5") or out of range,
+/// which is far beyond the 500-year ceiling either way.
+fn parseSeconds(s: []const u8) ?i64 {
+    return std.fmt.parseInt(i64, s, 10) catch null;
 }
 
 // ---- Dispatch ----

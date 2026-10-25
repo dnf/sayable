@@ -1,5 +1,6 @@
 package sayabletime
 
+import java.time.YearMonth
 import sayabletime.locales.Locales
 
 public const val VERSION: String = "0.5.0"
@@ -98,20 +99,29 @@ public class SayableTime(
  * Returns null on failure.
  */
 internal fun parseTime(input: String): Pair<Int, Int>? {
-    if (input.isEmpty()) return null
-    var t = input
-    val tIdx = t.indexOf('T')
-    if (tIdx >= 0) t = t.substring(tIdx + 1)
-    val plusIdx = t.indexOf('+')
-    if (plusIdx >= 0) t = t.substring(0, plusIdx)
-    val zIdx = t.indexOf('Z')
-    if (zIdx >= 0) t = t.substring(0, zIdx)
-    val parts = t.split(":")
-    if (parts.size < 2) return null
-    val hour = parts[0].toIntOrNull() ?: return null
-    val minute = parts[1].toIntOrNull() ?: return null
-    if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return null
+    var clock = input
+    val tIdx = input.indexOf('T')
+    if (tIdx >= 0) {
+        if (!isRealDate(input.substring(0, tIdx))) return null
+        clock = input.substring(tIdx + 1)
+    }
+    val match = CLOCK.matchEntire(clock) ?: return null
+    val hour = match.groupValues[1].toInt()
+    val minute = match.groupValues[2].toInt()
+    val second = match.groupValues[3].ifEmpty { "0" }.toInt()
+    if (hour > 23 || minute > 59 || second > 59) return null
     return Pair(hour, minute)
+}
+
+/** H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored). */
+private val CLOCK = Regex("""([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?""")
+
+private val DATE = Regex("""([0-9]{4})-([0-9]{2})-([0-9]{2})""")
+
+private fun isRealDate(s: String): Boolean {
+    val (y, m, d) = DATE.matchEntire(s)?.destructured ?: return false
+    val month = m.toInt()
+    return month in 1..12 && d.toInt() in 1..YearMonth.of(y.toInt(), month).lengthOfMonth()
 }
 
 /**

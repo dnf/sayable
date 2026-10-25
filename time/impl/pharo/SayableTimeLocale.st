@@ -3,7 +3,7 @@
 Object subclass: #SayableTimeLocale
 	instanceVariableNames: 'code clock short compact'
 	classVariableNames: ''
-	package: 'SayableTime'.
+	package: 'SayableTime'!
 
 !SayableTimeLocale methodsFor: 'accessing'!
 code

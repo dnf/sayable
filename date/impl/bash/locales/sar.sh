@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/sar.json
 
-_locale_sar() {
+_sayabledate_locale_sar() {
     _months=('Zanviye' 'Fevriye' 'Maars' 'Avriil' 'Mee' 'Zuɛ̃' 'Zulɛ' 'Uut' 'Sɛtɛmbar' 'Ɔtɔbar' 'Nɔvambar' 'Desambar')
     _weekdays=('Paskaa' 'Nɔy' 'Talata' 'Alarba' 'Alkamisa' 'Juma' 'Sibiti')
     _day_format='{n}'

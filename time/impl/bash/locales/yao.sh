@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/yao.json
 
-_locale_yao() {
+_sayabletime_locale_yao() {
     _clock_hours=('likumi na iwili' 'cimo' 'iwili' 'itatu' 'ncece' 'nsano' 'nsano nacimo' 'nsano nawili' 'nsano naitatu' 'nsano nancece' 'likumi' 'likumi nacimo')
     _clock_midnight='pakati pa usiku'
     _clock_noon='pakati pa lisiku'

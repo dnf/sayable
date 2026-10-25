@@ -1215,3 +1215,110 @@ Describe 'Locale lookup by code string' {
         $loc | Should -BeNullOrEmpty
     }
 }
+
+# ================================================================
+# Sections 31-33: weeks+days across month ends, half-year plurals, input validation
+# ================================================================
+Describe 'Sections 31-33: weeks+days across month ends, half-year plurals, input validation' {
+    # 31.1
+    It '31.1 88 days across a 28-day February' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2016-12-31' -AsOf '2017-03-29' | Should -BeExactly '12 weeks, 4 days'
+    }
+
+    # 31.2
+    It '31.2 90 days across a year end into a leap year' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '1991-11-27' -AsOf '1992-02-25' | Should -BeExactly '12 weeks, 6 days'
+    }
+
+    # 31.3
+    It '31.3 33 days across a year end' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2020-11-30' -AsOf '2021-01-02' | Should -BeExactly '4 weeks, 5 days'
+    }
+
+    # 31.4
+    It '31.4 Compact form of 31.1' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en') -Compactness 'compact'
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2016-12-31' -AsOf '2017-03-29' | Should -BeExactly '12w4d'
+    }
+
+    # 32.1
+    It '32.1 Polish 3 is ''few''' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'pl')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2021-06-15' -AsOf '2025-01-15' | Should -BeExactly '3 i pół lata'
+    }
+
+    # 32.2
+    It '32.2 Polish 5 is ''many''' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'pl') -Compactness 'short'
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2020-06-15' -AsOf '2025-12-15' | Should -BeExactly '5 i pół lat'
+    }
+
+    # 32.3
+    It '32.3 Tachelhit 6 is ''few''' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'shi')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2005-06-08' -AsOf '2012-06-07' | Should -BeExactly '6 iseggasen d uzgen'
+    }
+
+    # 33.1
+    It '33.1 February 30 doesn''t exist' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2025-02-30' -AsOf '2032-06-25' | Should -BeNullOrEmpty
+    }
+
+    # 33.2
+    It '33.2 Month 13' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2025-13-01' -AsOf '2027-01-31' | Should -BeNullOrEmpty
+    }
+
+    # 33.3
+    It '33.3 February 29 in a non-leap year' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2023-02-29' -AsOf '2025-03-01' | Should -BeNullOrEmpty
+    }
+
+    # 33.4
+    It '33.4 Day 00' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2025-06-00' -AsOf '2027-02-25' | Should -BeNullOrEmpty
+    }
+
+    # 33.5
+    It '33.5 Unpadded month and day' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2025-6-1' -AsOf '2027-02-25' | Should -BeNullOrEmpty
+    }
+
+    # 33.6
+    It '33.6 Surrounding whitespace' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth ' 2025-06-01' -AsOf '2027-02-25' | Should -BeNullOrEmpty
+    }
+
+    # 33.7
+    It '33.7 A datetime is not a date' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2025-06-15T10:00:00' -AsOf '2027-02-25' | Should -BeNullOrEmpty
+    }
+
+    # 33.8
+    It '33.8 Invalid asOf' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2020-01-01' -AsOf '2025-04-31' | Should -BeNullOrEmpty
+    }
+
+    # 33.9
+    It '33.9 formatStage validates too' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAgeStage -Formatter $fmt -DateOfBirth '2025-02-30' -AsOf '2027-09-05' | Should -BeNullOrEmpty
+    }
+
+    # 33.10
+    It '33.10 February 29 in a leap year is valid' {
+        $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'en')
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2024-02-29' -AsOf '2026-03-01' | Should -BeExactly '2 years'
+    }
+}

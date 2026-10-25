@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ja.json
 
-_plural_ja() {
+_sayableduration_plural_ja() {
     echo "other"
 }
 
-_locale_ja() {
+_sayableduration_locale_ja() {
     _unit_second='{n}秒'
     _unit_minute='{n}分'
     _unit_hour='{n}時間'
@@ -45,5 +45,5 @@ _locale_ja() {
     _compact_delimiter=''
     _compact_ago='{0}前'
     _compact_in_future='{0}後'
-    _plural_func=_plural_ja
+    _plural_func=_sayableduration_plural_ja
 }

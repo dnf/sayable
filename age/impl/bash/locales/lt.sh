@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/lt.json
 
-_plural_lt() {
+_sayableage_plural_lt() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_lt() {
     echo "other"
 }
 
-_locale_lt() {
+_sayableage_locale_lt() {
     _unit_day_one='{n} diena'
     _unit_day_few='{n} dienos'
     _unit_day_other='{n} dienų'
@@ -54,5 +54,5 @@ _locale_lt() {
     _compact_unit_month='{n} mėn.'
     _compact_unit_year='{n} m.'
     _compact_delimiter=''
-    _plural_func=_plural_lt
+    _plural_func=_sayableage_plural_lt
 }

@@ -175,20 +175,22 @@ sub _format_absolute {
   return $result;
 }
 
+# YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+# time (which is not read).
 sub _parse_date {
   my ($s) = @_;
-  return undef unless defined $s && $s ne '';
-  my $date_part = $s;
-  if (index($s, 'T') != -1) {
-    $date_part = (split(/T/, $s))[0];
-  }
-  my @parts = split(/-/, $date_part);
-  return undef unless scalar @parts == 3;
-  my $year = int($parts[0]);
-  my $month = int($parts[1]);
-  my $day = int($parts[2]);
-  return undef if $month < 1 || $month > 12 || $day < 1 || $day > 31;
+  return undef unless defined $s;
+  my ($year, $month, $day) = $s =~ /\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T|\z)/ or return undef;
+  ($year, $month, $day) = ($year + 0, $month + 0, $day + 0);
+  return undef if $month < 1 || $month > 12 || $day < 1 || $day > _days_in_month($year, $month);
   return [$year, $month, $day];
+}
+
+sub _days_in_month {
+  my ($y, $m) = @_;
+  return 30 if $m == 4 || $m == 6 || $m == 9 || $m == 11;
+  return 31 unless $m == 2;
+  return ($y % 4 == 0 && ($y % 100 != 0 || $y % 400 == 0)) ? 29 : 28;
 }
 
 sub _to_jdn {

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/el.json
 
-_plural_el() {
+_sayableduration_plural_el() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_el() {
+_sayableduration_locale_el() {
     _unit_second_one='{n} δευτερόλεπτο'
     _unit_second_other='{n} δευτερόλεπτα'
     _unit_minute_one='{n} λεπτό'
@@ -56,5 +56,5 @@ _locale_el() {
     _compact_delimiter=''
     _compact_ago='πριν από {0}'
     _compact_in_future='σε {0}'
-    _plural_func=_plural_el
+    _plural_func=_sayableduration_plural_el
 }

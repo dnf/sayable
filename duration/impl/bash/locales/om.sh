@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/om.json
 
-_plural_om() {
+_sayableduration_plural_om() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_om() {
+_sayableduration_locale_om() {
     _unit_second_one='sekondii {n}'
     _unit_second_other='sekondoota {n}'
     _unit_minute_one='daqiiqaa {n}'
@@ -55,5 +55,5 @@ _locale_om() {
     _compact_delimiter=''
     _compact_ago='{0} dura'
     _compact_in_future='{0} keessatti'
-    _plural_func=_plural_om
+    _plural_func=_sayableduration_plural_om
 }

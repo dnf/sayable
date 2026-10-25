@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/is.json
 
-_locale_is() {
+_sayabletime_locale_is() {
     _clock_hours=('tólf' 'eitt' 'tvö' 'þrjú' 'fjögur' 'fimm' 'sex' 'sjö' 'átta' 'níu' 'tíu' 'ellefu')
     _clock_midnight='miðnætti'
     _clock_noon='hádegi'

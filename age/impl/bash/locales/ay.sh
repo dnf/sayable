@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ay.json
 
-_plural_ay() {
+_sayableage_plural_ay() {
     echo "other"
 }
 
-_locale_ay() {
+_sayableage_locale_ay() {
     _unit_day='uru {n}'
     _unit_week='simana {n}'
     _unit_month='phaxsi {n}'
@@ -36,5 +36,5 @@ _locale_ay() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_ay
+    _plural_func=_sayableage_plural_ay
 }

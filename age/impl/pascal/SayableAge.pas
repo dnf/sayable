@@ -34,21 +34,6 @@ begin
   Result := AResult = NullResult;
 end;
 
-function ParseDateParts(const ADate: string; out AYear, AMonth, ADay: Integer): Boolean;
-begin
-  Result := False;
-  if Length(ADate) < 10 then exit;
-  if (ADate[5] <> '-') or (ADate[8] <> '-') then exit;
-  try
-    AYear := StrToInt(Copy(ADate, 1, 4));
-    AMonth := StrToInt(Copy(ADate, 6, 2));
-    ADay := StrToInt(Copy(ADate, 9, 2));
-    Result := True;
-  except
-    Result := False;
-  end;
-end;
-
 function DaysInMonth(AYear, AMonth: Integer): Integer;
 begin
   case AMonth of
@@ -62,6 +47,39 @@ begin
   else
     Result := 31;
   end;
+end;
+
+function IsDigitsAt(const S: string; AFirst, ACount: Integer): Boolean;
+var
+  I: Integer;
+begin
+  Result := False;
+  for I := AFirst to AFirst + ACount - 1 do
+    if not (S[I] in ['0'..'9']) then exit;
+  Result := True;
+end;
+
+function DigitsValue(const S: string; AFirst, ACount: Integer): Integer;
+var
+  I: Integer;
+begin
+  Result := 0;
+  for I := AFirst to AFirst + ACount - 1 do
+    Result := Result * 10 + Ord(S[I]) - Ord('0');
+end;
+
+{ Exactly YYYY-MM-DD naming a real calendar day. }
+function ParseDateParts(const ADate: string; out AYear, AMonth, ADay: Integer): Boolean;
+begin
+  Result := False;
+  AYear := 0; AMonth := 0; ADay := 0;
+  if Length(ADate) <> 10 then exit;
+  if (ADate[5] <> '-') or (ADate[8] <> '-') then exit;
+  if not (IsDigitsAt(ADate, 1, 4) and IsDigitsAt(ADate, 6, 2) and IsDigitsAt(ADate, 9, 2)) then exit;
+  AYear := DigitsValue(ADate, 1, 4);
+  AMonth := DigitsValue(ADate, 6, 2);
+  ADay := DigitsValue(ADate, 9, 2);
+  Result := (AMonth >= 1) and (AMonth <= 12) and (ADay >= 1) and (ADay <= DaysInMonth(AYear, AMonth));
 end;
 
 function JulianDay(AYear, AMonth, ADay: Integer): Int64;

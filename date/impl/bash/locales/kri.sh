@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/kri.json
 
-_locale_kri() {
+_sayabledate_locale_kri() {
     _months=('Jenyuari' 'Febyuari' 'Mach' 'Epril' 'Me' 'Jun' 'Julay' 'Ogost' 'Septemba' 'Oktoba' 'Novemba' 'Disemba')
     _weekdays=('Sonde' 'Monde' 'Tyusde' 'Wensde' 'Tosde' 'Frayde' 'Satide')
     _day_format='{n}'

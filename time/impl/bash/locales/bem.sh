@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/bem.json
 
-_locale_bem() {
+_sayabletime_locale_bem() {
     _clock_hours=('ikumi na ibili' 'cimo' 'fibili' 'fitatu' 'fine' 'fisano' 'mutanda' 'cine lubali' 'cine konse konse' 'pabula' 'ikumi' 'ikumi na cimo')
     _clock_midnight='pakati ka bushiku'
     _clock_noon='akasuba'

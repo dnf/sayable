@@ -25,6 +25,7 @@ var
   PositionalCount: Integer;
   OptLocale: string;
   OptAsOf: string;
+  HasAsOf: Boolean;
   OptCompactness: string;
   OptGender: string;
   OptWithYear: Boolean;
@@ -109,6 +110,25 @@ begin
   Result := IsDigits(Copy(S, 2, Length(S) - 1));
 end;
 
+{ A (possibly negative) digit string as seconds. Longer digit strings
+  are far beyond the 500-year ceiling, so they saturate instead of
+  overflowing. }
+function ParseSeconds(const S: string): Int64;
+const
+  MaxExactDigits = 18;
+var
+  Digits: string;
+begin
+  Digits := S;
+  if Digits[1] = '-' then Delete(Digits, 1, 1);
+  while (Length(Digits) > 1) and (Digits[1] = '0') do Delete(Digits, 1, 1);
+  if Length(Digits) > MaxExactDigits then
+    Result := High(Int64)
+  else
+    Result := StrToInt64(Digits);
+  if S[1] = '-' then Result := -Result;
+end;
+
 procedure ParseArgs;
 var
   I: Integer;
@@ -120,6 +140,7 @@ begin
   PositionalCount := 0;
   OptLocale := 'en';
   OptAsOf := '';
+  HasAsOf := False;
   OptCompactness := 'normal';
   OptGender := '';
   OptWithYear := False;
@@ -159,6 +180,7 @@ begin
         if I >= High(Args) then WriteError('''' + Arg + ''' requires a value');
         Inc(I);
         OptAsOf := Args[I];
+        HasAsOf := True;
       end
       else if (Arg = '-g') or (Arg = '--gender') then begin
         if I >= High(Args) then WriteError('''' + Arg + ''' requires a value');
@@ -236,8 +258,9 @@ begin
   else
     Dob := Positionals[0];
 
-  if OptAsOf <> '' then
-    AsOf := Nullify(OptAsOf)
+  { A null or empty as-of means today, as in the reference. }
+  if Nullify(OptAsOf) <> '' then
+    AsOf := OptAsOf
   else
     AsOf := GetTodayStr;
 
@@ -265,8 +288,9 @@ begin
   else
     Dob := Positionals[0];
 
-  if OptAsOf <> '' then
-    AsOf := Nullify(OptAsOf)
+  { A null or empty as-of means today, as in the reference. }
+  if Nullify(OptAsOf) <> '' then
+    AsOf := OptAsOf
   else
     AsOf := GetTodayStr;
 
@@ -314,7 +338,7 @@ var
 begin
   if PositionalCount < 1 then WriteError('relative requires a date argument');
 
-  if OptAsOf = '' then
+  if not HasAsOf then
     WriteError('relative requires --as-of / -d option');
   AsOf := Nullify(OptAsOf);
 
@@ -381,12 +405,8 @@ begin
 
   Value := Positionals[0];
 
-  if IsDigits(Value) then begin
-    Seconds := StrToInt64(Value);
-    Res := FormatDuration(Loc, DurCompactness, Seconds);
-  end
-  else if IsNegativeInt(Value) then begin
-    Seconds := StrToInt64(Value);
+  if IsDigits(Value) or IsNegativeInt(Value) then begin
+    Seconds := ParseSeconds(Value);
     Res := FormatDuration(Loc, DurCompactness, Seconds);
   end
   else begin
@@ -411,7 +431,7 @@ var
 begin
   if PositionalCount < 1 then WriteError('since requires a start timestamp argument');
 
-  if OptAsOf = '' then
+  if not HasAsOf then
     WriteError('since requires --as-of / -d option');
   AsOf := Nullify(OptAsOf);
 
@@ -439,7 +459,7 @@ var
 begin
   if PositionalCount < 1 then WriteError('until requires a target timestamp argument');
 
-  if OptAsOf = '' then
+  if not HasAsOf then
     WriteError('until requires --as-of / -d option');
   AsOf := Nullify(OptAsOf);
 

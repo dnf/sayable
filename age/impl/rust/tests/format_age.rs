@@ -1721,3 +1721,55 @@ fn test_locale_lookup() {
     // 30.5 Case-sensitive
     assert!(locales::get("EN").is_none(), "get(\"EN\") should be None (case-sensitive)");
 }
+
+// ================================================================
+// Section 31: Weeks and days across month ends
+// ================================================================
+
+#[test]
+fn test_weeks_and_days_across_month_ends() {
+    // 31.1
+    assert_age("31.1", format_age("2016-12-31", Some("2017-03-29")), "12 weeks, 4 days");
+    // 31.2
+    assert_age("31.2", format_age("1991-11-27", Some("1992-02-25")), "12 weeks, 6 days");
+    // 31.3
+    assert_age("31.3", format_age("2020-11-30", Some("2021-01-02")), "4 weeks, 5 days");
+    // 31.4
+    let compact = SayableAge::new(&locales::EN, Compactness::Compact);
+    assert_age("31.4", compact.format_age("2016-12-31", Some("2017-03-29")), "12w4d");
+}
+
+// ================================================================
+// Section 32: Half years take their plural form from whole years
+// ================================================================
+
+#[test]
+fn test_half_year_plural_from_whole_years() {
+    // 32.1
+    let pl = SayableAge::new(&locales::PL, Compactness::Normal);
+    assert_age("32.1", pl.format_age("2021-06-15", Some("2025-01-15")), "3 i pół lata");
+    // 32.2
+    let pl_short = SayableAge::new(&locales::PL, Compactness::Short);
+    assert_age("32.2", pl_short.format_age("2020-06-15", Some("2025-12-15")), "5 i pół lat");
+    // 32.3
+    let shi = SayableAge::new(&locales::SHI, Compactness::Normal);
+    assert_age("32.3", shi.format_age("2005-06-08", Some("2012-06-07")), "6 iseggasen d uzgen");
+}
+
+// ================================================================
+// Section 33: Input validation
+// ================================================================
+
+#[test]
+fn test_input_validation() {
+    assert_nil("33.1", format_age("2025-02-30", Some("2032-06-25"))); // 33.1
+    assert_nil("33.2", format_age("2025-13-01", Some("2027-01-31"))); // 33.2
+    assert_nil("33.3", format_age("2023-02-29", Some("2025-03-01"))); // 33.3
+    assert_nil("33.4", format_age("2025-06-00", Some("2027-02-25"))); // 33.4
+    assert_nil("33.5", format_age("2025-6-1", Some("2027-02-25"))); // 33.5
+    assert_nil("33.6", format_age(" 2025-06-01", Some("2027-02-25"))); // 33.6
+    assert_nil("33.7", format_age("2025-06-15T10:00:00", Some("2027-02-25"))); // 33.7
+    assert_nil("33.8", format_age("2020-01-01", Some("2025-04-31"))); // 33.8
+    assert_nil("33.9", format_stage("2025-02-30", Some("2027-09-05"), None)); // 33.9
+    assert_age("33.10", format_age("2024-02-29", Some("2026-03-01")), "2 years"); // 33.10
+}

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ve.json
 
-_plural_ve() {
+_sayableduration_plural_ve() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ve() {
+_sayableduration_locale_ve() {
     _unit_second_one='sekondhe {n}'
     _unit_second_other='disekondhe {n}'
     _unit_minute_one='minidhi {n}'
@@ -59,5 +59,5 @@ _locale_ve() {
     _compact_delimiter=''
     _compact_ago='{0} yo fhiraho'
     _compact_in_future='nga {0}'
-    _plural_func=_plural_ve
+    _plural_func=_sayableduration_plural_ve
 }

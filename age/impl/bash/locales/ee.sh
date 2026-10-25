@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ee.json
 
-_plural_ee() {
+_sayableage_plural_ee() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ee() {
+_sayableage_locale_ee() {
     _unit_day_one='ŋkeke {n}'
     _unit_day_other='ŋkekewo {n}'
     _unit_week_one='kɔsiɖa {n}'
@@ -46,5 +46,5 @@ _locale_ee() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ee
+    _plural_func=_sayableage_plural_ee
 }

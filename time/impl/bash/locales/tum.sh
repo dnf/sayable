@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tum.json
 
-_locale_tum() {
+_sayabletime_locale_tum() {
     _clock_hours=('khumi na yibili' 'chimoza' 'vibili' 'vitatu' 'vinayi' 'vikhondi' 'vikhondi na kamoza' 'vikhondi na tubili' 'vikhondi na tutatu' 'vikhondi na tunayi' 'khumi' 'khumi na kamoza')
     _clock_midnight='pakati pa usiku'
     _clock_noon='muhanya'

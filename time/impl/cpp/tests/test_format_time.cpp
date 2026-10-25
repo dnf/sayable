@@ -136,6 +136,29 @@ void test_finnish_dot_separator() {
     ASSERT_EQ("8.2 fi short 00:00", st.format_time("00:00"), "0.00");
 }
 
+// ================================================================
+// Section 9: Minutes in short and compact modes
+// ================================================================
+void test_section_9_minutes_in_short_and_compact_modes() {
+    ASSERT_EQ("9.1 digital modes keep the exact minute", SayableTime(locales::EN(), Compactness::Short).format_time("18:01"), "6:01 PM"); // 9.1
+    ASSERT_EQ("9.2 digital modes keep the exact minute", SayableTime(locales::EN(), Compactness::Compact).format_time("19:05"), "7:05p"); // 9.2
+}
+
+// ================================================================
+// Section 10: Input validation
+// ================================================================
+void test_section_10_input_validation() {
+    ASSERT_EQ("10.1 one-digit hour", SayableTime(locales::EN(), Compactness::Normal).format_time("9:30"), "half past nine"); // 10.1
+    ASSERT_EQ("10.2 two-digit hour", SayableTime(locales::EN(), Compactness::Normal).format_time("09:30"), "half past nine"); // 10.2
+    ASSERT_NULL("10.3 leading whitespace", SayableTime(locales::EN(), Compactness::Normal).format_time(" 9:30")); // 10.3
+    ASSERT_NULL("10.4 trailing whitespace", SayableTime(locales::EN(), Compactness::Normal).format_time("9:30 ")); // 10.4
+    ASSERT_NULL("10.5 minutes need two digits", SayableTime(locales::EN(), Compactness::Normal).format_time("9:5")); // 10.5
+    ASSERT_NULL("10.6 hour out of range", SayableTime(locales::EN(), Compactness::Normal).format_time("24:00")); // 10.6
+    ASSERT_EQ("10.7 seconds are allowed and ignored", SayableTime(locales::EN(), Compactness::Normal).format_time("14:15:30"), "a quarter past two"); // 10.7
+    ASSERT_EQ("10.8 ISO datetime with zone suffix (ignored)", SayableTime(locales::EN(), Compactness::Normal).format_time("2025-01-15T14:15:00Z"), "a quarter past two"); // 10.8
+    ASSERT_NULL("10.9 ISO datetime with an impossible date", SayableTime(locales::EN(), Compactness::Normal).format_time("2025-02-30T14:15:00")); // 10.9
+}
+
 int main() {
     test_null_edge_cases();
     test_normal_clock_time();
@@ -145,6 +168,9 @@ int main() {
     test_french_locale();
     test_japanese_locale();
     test_finnish_dot_separator();
+
+    test_section_9_minutes_in_short_and_compact_modes();
+    test_section_10_input_validation();
 
     std::cout << tests_passed << " passed, " << tests_failed << " failed" << std::endl;
     return tests_failed == 0 ? 0 : 1;

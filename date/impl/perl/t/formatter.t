@@ -195,4 +195,46 @@ is(SayableDate->format_relative(undef, as_of => '2025-03-15'), undef, '1.5 null 
   is($fmt->format_relative('2025-03-17', as_of => '2025-03-15'), "pasado ma\x{F1}ana", '12.2 es day after tomorrow');
 }
 
+# ================================================================
+# Sections 13-16: with year, short months, short phrases, input validation
+# ================================================================
+# 13.1
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_date_with_year('2018-02-04'), 'February 4th, 2018', '13.1 format_date_with_year');
+# 13.2
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'), compactness => 'short')->format_date_with_year('2025-03-15'), 'Mar 15, 2025', '13.2 format_date_with_year');
+# 13.3
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'), compactness => 'compact')->format_date_with_year('1997-01-21'), '1/21/97', '13.3 format_date_with_year');
+# 13.4
+is(SayableDate::Formatter->new(SayableDate::Locales->get('tg'), compactness => 'compact')->format_date_with_year('2007-05-20'), '20/5/07', '13.4 two-digit year keeps its leading zero');
+# 13.5
+is(SayableDate::Formatter->new(SayableDate::Locales->get('fi'), compactness => 'short')->format_date_with_year('1996-06-21'), '21. kesäkuuta 1996', '13.5 format_date_with_year');
+# 14.1
+is(SayableDate::Formatter->new(SayableDate::Locales->get('sk'), compactness => 'short')->format_date('2031-02-15'), '15. februára', '14.1 format_date');
+# 14.2
+is(SayableDate::Formatter->new(SayableDate::Locales->get('cs'), compactness => 'short')->format_date('2025-12-10'), '10. prosince', '14.2 format_date');
+# 14.3
+is(SayableDate::Formatter->new(SayableDate::Locales->get('uk'), compactness => 'short')->format_date('2025-11-05'), '5 листопада', '14.3 format_date');
+# 14.4
+is(SayableDate::Formatter->new(SayableDate::Locales->get('fi'), compactness => 'short')->format_relative('1998-08-08', as_of => '1998-08-15'), '8. elokuuta', '14.4 format_relative');
+# 15.1
+is(SayableDate::Formatter->new(SayableDate::Locales->get('kw'), compactness => 'short')->format_relative('2035-12-04', as_of => '2035-12-02'), 'an Mth ma', '15.1 day after tomorrow');
+# 15.2
+is(SayableDate::Formatter->new(SayableDate::Locales->get('mam'), compactness => 'short')->format_relative('2000-01-23', as_of => '2000-01-25'), 'Dom nchi\'j', '15.2 day before yesterday');
+# 15.3
+is(SayableDate::Formatter->new(SayableDate::Locales->get('kek'), compactness => 'short')->format_relative('2014-10-24', as_of => '2014-10-22'), 'a\'in Vie', '15.3 day after tomorrow');
+# 16.1
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_date('2025-02-30'), undef, '16.1 February 30 doesn\'t exist');
+# 16.2
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_date('2025-13-01'), undef, '16.2 Month 13');
+# 16.3
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_date('2025-6-1'), undef, '16.3 Unpadded month and day');
+# 16.4
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_date(' 2025-06-01'), undef, '16.4 Surrounding whitespace');
+# 16.5
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_date('2025-06-01T10:00:00'), 'June 1st', '16.5 An ISO datetime: only the date part is used');
+# 16.6
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_date_with_year('2023-02-29'), undef, '16.6 February 29 in a non-leap year');
+# 16.7
+is(SayableDate::Formatter->new(SayableDate::Locales->get('en'))->format_relative('2025-03-16', as_of => '2025-04-31'), undef, '16.7 Invalid asOf');
+
 done_testing();

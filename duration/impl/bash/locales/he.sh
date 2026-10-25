@@ -9,14 +9,14 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/he.json
 
-_plural_he() {
+_sayableduration_plural_he() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ]; then echo "two"; return; fi
     echo "other"
 }
 
-_locale_he() {
+_sayableduration_locale_he() {
     _unit_second_one='שנייה {n}'
     _unit_second_two='שתי שניות'
     _unit_second_other='{n} שניות'
@@ -71,5 +71,5 @@ _locale_he() {
     _compact_delimiter=''
     _compact_ago='לפני {0}'
     _compact_in_future='בעוד {0}'
-    _plural_func=_plural_he
+    _plural_func=_sayableduration_plural_he
 }

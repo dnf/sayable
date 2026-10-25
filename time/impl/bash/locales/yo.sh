@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/yo.json
 
-_locale_yo() {
+_sayabletime_locale_yo() {
     _clock_hours=('méjìlá' 'kan' 'méjì' 'mẹ́ta' 'mẹ́rin' 'márùn-ún' 'mẹ́fà' 'méje' 'mẹ́jọ' 'mẹ́sàn-án' 'mẹ́wàá' 'mọ́kànlá')
     _clock_midnight='àárọ̀ òru'
     _clock_noon='ọ̀sán'

@@ -425,4 +425,85 @@ final class FormatDurationTest extends TestCase
         $sd = new SayableDuration(Locales::EN(), Compactness::Compact);
         $this->assertSame('1m30s', $sd->formatDuration(90));
     }
+
+    // ================================================================
+    // Sections 18-20: short since, 500-year ceiling, timestamp validation
+    // ================================================================
+
+    // 18.1
+    public function test_18_1_days_and_hours_both_kept(): void
+    {
+        $fmt = new SayableDuration(Locales::MEN(), Compactness::Short);
+        $this->assertSame('lɔhɔnga 2, awa 14 taa gbɔyɔ', $fmt->formatSince('2025-01-20T01:32:11', '2025-01-22T15:39:16'));
+    }
+
+    // 19.1
+    public function test_19_1_500_julian_years_6000_months_the_ceiling(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertSame('500 years', $fmt->formatDuration(15_778_800_000));
+    }
+
+    // 19.2
+    public function test_19_2_over_6000_months(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatDuration(15_800_000_000));
+    }
+
+    // 19.3
+    public function test_19_3_well_beyond_the_ceiling_and_32_bit_range(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatDuration(99_999_999_999));
+    }
+
+    // 19.4
+    public function test_19_4_525_years_ago(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatSince('1500-01-01T00:00:00', '2025-01-01T00:00:00'));
+    }
+
+    // 19.5
+    public function test_19_5_575_years_from_now(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatUntil('2600-01-01T00:00:00', '2025-01-01T00:00:00'));
+    }
+
+    // 20.1
+    public function test_20_1_seconds_are_optional(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertSame('1½ hours', $fmt->formatDurationIso('2025-01-15T10:00', '2025-01-15T11:30:00'));
+    }
+
+    // 20.2
+    public function test_20_2_minutes_are_required(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatDurationIso('2025-01-15T10', '2025-01-15T11:30:00'));
+    }
+
+    // 20.3
+    public function test_20_3_unpadded_date(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatDurationIso('2025-1-5T10:00:00', '2025-01-15T11:30:00'));
+    }
+
+    // 20.4
+    public function test_20_4_impossible_date(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatDurationIso('2025-02-30T10:00:00', '2025-03-15T11:30:00'));
+    }
+
+    // 20.5
+    public function test_20_5_hour_out_of_range(): void
+    {
+        $fmt = new SayableDuration(Locales::EN());
+        $this->assertNull($fmt->formatSince('2025-01-15T10:00:00', '2025-01-15T25:00:00'));
+    }
 }

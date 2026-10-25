@@ -208,4 +208,89 @@ class FormatTimeTest {
         val st = SayableTime(Locales.FI, Compactness.SHORT)
         assertEquals("0.00", st.formatTime("00:00"))
     }
+
+    // ================================================================
+    // Minutes in short and compact modes
+    // ================================================================
+
+    // 9.1
+    @Test
+    fun `digital modes keep the exact minute en short 18-01`() {
+        val f = SayableTime(Locales.EN, Compactness.SHORT)
+        assertEquals("6:01 PM", f.formatTime("18:01"))
+    }
+
+    // 9.2
+    @Test
+    fun `digital modes keep the exact minute en compact 19-05`() {
+        val f = SayableTime(Locales.EN, Compactness.COMPACT)
+        assertEquals("7:05p", f.formatTime("19:05"))
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 10.1
+    @Test
+    fun `one digit hour`() {
+        val f = SayableTime(Locales.EN)
+        assertEquals("half past nine", f.formatTime("9:30"))
+    }
+
+    // 10.2
+    @Test
+    fun `two digit hour`() {
+        val f = SayableTime(Locales.EN)
+        assertEquals("half past nine", f.formatTime("09:30"))
+    }
+
+    // 10.3
+    @Test
+    fun `leading whitespace`() {
+        val f = SayableTime(Locales.EN)
+        assertNull(f.formatTime(" 9:30"))
+    }
+
+    // 10.4
+    @Test
+    fun `trailing whitespace`() {
+        val f = SayableTime(Locales.EN)
+        assertNull(f.formatTime("9:30 "))
+    }
+
+    // 10.5
+    @Test
+    fun `minutes need two digits`() {
+        val f = SayableTime(Locales.EN)
+        assertNull(f.formatTime("9:5"))
+    }
+
+    // 10.6
+    @Test
+    fun `hour out of range`() {
+        val f = SayableTime(Locales.EN)
+        assertNull(f.formatTime("24:00"))
+    }
+
+    // 10.7
+    @Test
+    fun `seconds are allowed and ignored`() {
+        val f = SayableTime(Locales.EN)
+        assertEquals("a quarter past two", f.formatTime("14:15:30"))
+    }
+
+    // 10.8
+    @Test
+    fun `iso datetime with zone suffix ignored`() {
+        val f = SayableTime(Locales.EN)
+        assertEquals("a quarter past two", f.formatTime("2025-01-15T14:15:00Z"))
+    }
+
+    // 10.9
+    @Test
+    fun `iso datetime with an impossible date`() {
+        val f = SayableTime(Locales.EN)
+        assertNull(f.formatTime("2025-02-30T14:15:00"))
+    }
 }

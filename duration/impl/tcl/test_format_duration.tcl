@@ -283,6 +283,45 @@ assert_eq [::sayableduration::format_duration $en_compact 3600] "1h" "17.1"
 assert_eq [::sayableduration::format_duration $en_compact 90] "1m30s" "17.2"
 
 # ================================================================
+# Sections 18-20: short since, 500-year ceiling, timestamp validation
+# ================================================================
+puts "Sections 18-20: short since, 500-year ceiling, timestamp validation"
+
+# 18.1
+assert_eq [::sayableduration::format_since [::sayableduration::new [::sayableduration::get_locale men] short] "2025-01-20T01:32:11" "2025-01-22T15:39:16"] "lɔhɔnga 2, awa 14 taa gbɔyɔ" "18.1"
+
+# 19.1
+assert_eq [::sayableduration::format_duration [::sayableduration::new [::sayableduration::get_locale en]] 15778800000] "500 years" "19.1"
+
+# 19.2
+assert_eq [::sayableduration::format_duration [::sayableduration::new [::sayableduration::get_locale en]] 15800000000] "" "19.2"
+
+# 19.3
+assert_eq [::sayableduration::format_duration [::sayableduration::new [::sayableduration::get_locale en]] 99999999999] "" "19.3"
+
+# 19.4
+assert_eq [::sayableduration::format_since [::sayableduration::new [::sayableduration::get_locale en]] "1500-01-01T00:00:00" "2025-01-01T00:00:00"] "" "19.4"
+
+# 19.5
+assert_eq [::sayableduration::format_until [::sayableduration::new [::sayableduration::get_locale en]] "2600-01-01T00:00:00" "2025-01-01T00:00:00"] "" "19.5"
+
+# 20.1
+assert_eq [::sayableduration::format_duration [::sayableduration::new [::sayableduration::get_locale en]] "2025-01-15T10:00" "2025-01-15T11:30:00"] "1½ hours" "20.1"
+
+# 20.2
+assert_eq [::sayableduration::format_duration [::sayableduration::new [::sayableduration::get_locale en]] "2025-01-15T10" "2025-01-15T11:30:00"] "" "20.2"
+
+# 20.3
+assert_eq [::sayableduration::format_duration [::sayableduration::new [::sayableduration::get_locale en]] "2025-1-5T10:00:00" "2025-01-15T11:30:00"] "" "20.3"
+
+# 20.4
+assert_eq [::sayableduration::format_duration [::sayableduration::new [::sayableduration::get_locale en]] "2025-02-30T10:00:00" "2025-03-15T11:30:00"] "" "20.4"
+
+# 20.5
+assert_eq [::sayableduration::format_since [::sayableduration::new [::sayableduration::get_locale en]] "2025-01-15T10:00:00" "2025-01-15T25:00:00"] "" "20.5"
+
+
+# ================================================================
 # Summary
 # ================================================================
 puts ""

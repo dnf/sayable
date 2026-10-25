@@ -214,3 +214,55 @@ unittest {
 unittest {
     assert(VERSION == "0.5.0", "Version mismatch");
 }
+
+// ================================================================
+// Section 9: Minutes in short and compact modes
+// ================================================================
+// 9.1
+unittest {
+    assertEq("9.1 digital modes keep the exact minute", SayableTime(EN, Compactness.short_).formatTime("18:01"), "6:01 PM");
+}
+// 9.2
+unittest {
+    assertEq("9.2 digital modes keep the exact minute", SayableTime(EN, Compactness.compact).formatTime("19:05"), "7:05p");
+}
+
+// ================================================================
+// Section 10: Input validation
+// ================================================================
+// 10.1
+unittest {
+    assertEq("10.1 one-digit hour", SayableTime(EN).formatTime("9:30"), "half past nine");
+}
+// 10.2
+unittest {
+    assertEq("10.2 two-digit hour", SayableTime(EN).formatTime("09:30"), "half past nine");
+}
+// 10.3
+unittest {
+    assertNull("10.3 leading whitespace", SayableTime(EN).formatTime(" 9:30"));
+}
+// 10.4
+unittest {
+    assertNull("10.4 trailing whitespace", SayableTime(EN).formatTime("9:30 "));
+}
+// 10.5
+unittest {
+    assertNull("10.5 minutes need two digits", SayableTime(EN).formatTime("9:5"));
+}
+// 10.6
+unittest {
+    assertNull("10.6 hour out of range", SayableTime(EN).formatTime("24:00"));
+}
+// 10.7
+unittest {
+    assertEq("10.7 seconds are allowed and ignored", SayableTime(EN).formatTime("14:15:30"), "a quarter past two");
+}
+// 10.8
+unittest {
+    assertEq("10.8 ISO datetime with zone suffix (ignored)", SayableTime(EN).formatTime("2025-01-15T14:15:00Z"), "a quarter past two");
+}
+// 10.9
+unittest {
+    assertNull("10.9 ISO datetime with an impossible date", SayableTime(EN).formatTime("2025-02-30T14:15:00"));
+}

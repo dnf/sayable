@@ -83,8 +83,9 @@ Date :: struct {
     y, m, d: int,
 }
 
+// Exactly YYYY-MM-DD naming a real calendar day (docs/input-formats.md).
 parse_date :: proc(s: string) -> (Date, bool) {
-    if len(s) < 10 do return {}, false
+    if len(s) != 10 do return {}, false
     if s[4] != '-' || s[7] != '-' do return {}, false
     y, y_ok := parse_digits(s[0:4])
     if !y_ok do return {}, false
@@ -92,7 +93,7 @@ parse_date :: proc(s: string) -> (Date, bool) {
     if !m_ok do return {}, false
     d, d_ok := parse_digits(s[8:10])
     if !d_ok do return {}, false
-    if y == 0 && m == 0 && d == 0 do return {}, false
+    if m < 1 || m > 12 || d < 1 || d > days_in_month(y, m) do return {}, false
     return Date{y, m, d}, true
 }
 

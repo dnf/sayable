@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/gd.json
 
-_plural_gd() {
+_sayableduration_plural_gd() {
     local n=$1
     if [ "${n}" -eq 1 ] || [ "${n}" -eq 11 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ] || [ "${n}" -eq 12 ]; then echo "two"; return; fi
@@ -17,7 +17,7 @@ _plural_gd() {
     echo "other"
 }
 
-_locale_gd() {
+_sayableduration_locale_gd() {
     _unit_second_one='{n} diog'
     _unit_second_two='{n} dhiog'
     _unit_second_few='{n} diogan'
@@ -86,5 +86,5 @@ _locale_gd() {
     _compact_delimiter=''
     _compact_ago='o chionn {0}'
     _compact_in_future='an ceann {0}'
-    _plural_func=_plural_gd
+    _plural_func=_sayableduration_plural_gd
 }

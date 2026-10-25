@@ -15,8 +15,9 @@ get_today() ->
 halt(Code) ->
     erlang:halt(Code).
 
+%% Arguments arrive as lists of Unicode code points, not bytes.
 get_args() ->
-    [list_to_binary(A) || A <- init:get_plain_arguments()].
+    [unicode:characters_to_binary(A) || A <- init:get_plain_arguments()].
 
 %% One stdin line without its "\n" or "\r\n"; a read error ends input like EOF.
 read_line() ->

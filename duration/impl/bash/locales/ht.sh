@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ht.json
 
-_plural_ht() {
+_sayableduration_plural_ht() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ht() {
+_sayableduration_locale_ht() {
     _unit_second='{n} segonn'
     _unit_minute='{n} minit'
     _unit_hour='{n} èdtan'
@@ -48,5 +48,5 @@ _locale_ht() {
     _compact_delimiter=''
     _compact_ago='sa gen {0}'
     _compact_in_future='nan {0}'
-    _plural_func=_plural_ht
+    _plural_func=_sayableduration_plural_ht
 }

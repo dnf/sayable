@@ -409,4 +409,141 @@ final class FormatDateTest extends TestCase
         $sd = new SayableDate(Locales::ES());
         $this->assertSame("pasado ma\u{00F1}ana", $sd->formatRelative('2025-03-17', '2025-03-15'));
     }
+
+    // ================================================================
+    // Sections 13-16: with year, short months, short phrases, input validation
+    // ================================================================
+
+    // 13.1
+    public function test_13_1_format_date_with_year(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertSame('February 4th, 2018', $fmt->formatDateWithYear('2018-02-04'));
+    }
+
+    // 13.2
+    public function test_13_2_format_date_with_year(): void
+    {
+        $fmt = new SayableDate(Locales::EN(), Compactness::Short);
+        $this->assertSame('Mar 15, 2025', $fmt->formatDateWithYear('2025-03-15'));
+    }
+
+    // 13.3
+    public function test_13_3_format_date_with_year(): void
+    {
+        $fmt = new SayableDate(Locales::EN(), Compactness::Compact);
+        $this->assertSame('1/21/97', $fmt->formatDateWithYear('1997-01-21'));
+    }
+
+    // 13.4
+    public function test_13_4_two_digit_year_keeps_its_leading_zero(): void
+    {
+        $fmt = new SayableDate(Locales::TG(), Compactness::Compact);
+        $this->assertSame('20/5/07', $fmt->formatDateWithYear('2007-05-20'));
+    }
+
+    // 13.5
+    public function test_13_5_format_date_with_year(): void
+    {
+        $fmt = new SayableDate(Locales::FI(), Compactness::Short);
+        $this->assertSame('21. kesäkuuta 1996', $fmt->formatDateWithYear('1996-06-21'));
+    }
+
+    // 14.1
+    public function test_14_1_format_date(): void
+    {
+        $fmt = new SayableDate(Locales::SK(), Compactness::Short);
+        $this->assertSame('15. februára', $fmt->formatDate('2031-02-15'));
+    }
+
+    // 14.2
+    public function test_14_2_format_date(): void
+    {
+        $fmt = new SayableDate(Locales::CS(), Compactness::Short);
+        $this->assertSame('10. prosince', $fmt->formatDate('2025-12-10'));
+    }
+
+    // 14.3
+    public function test_14_3_format_date(): void
+    {
+        $fmt = new SayableDate(Locales::UK(), Compactness::Short);
+        $this->assertSame('5 листопада', $fmt->formatDate('2025-11-05'));
+    }
+
+    // 14.4
+    public function test_14_4_format_relative(): void
+    {
+        $fmt = new SayableDate(Locales::FI(), Compactness::Short);
+        $this->assertSame('8. elokuuta', $fmt->formatRelative('1998-08-08', '1998-08-15'));
+    }
+
+    // 15.1
+    public function test_15_1_day_after_tomorrow(): void
+    {
+        $fmt = new SayableDate(Locales::KW(), Compactness::Short);
+        $this->assertSame('an Mth ma', $fmt->formatRelative('2035-12-04', '2035-12-02'));
+    }
+
+    // 15.2
+    public function test_15_2_day_before_yesterday(): void
+    {
+        $fmt = new SayableDate(Locales::MAM(), Compactness::Short);
+        $this->assertSame('Dom nchi\'j', $fmt->formatRelative('2000-01-23', '2000-01-25'));
+    }
+
+    // 15.3
+    public function test_15_3_day_after_tomorrow(): void
+    {
+        $fmt = new SayableDate(Locales::KEK(), Compactness::Short);
+        $this->assertSame('a\'in Vie', $fmt->formatRelative('2014-10-24', '2014-10-22'));
+    }
+
+    // 16.1
+    public function test_16_1_february_30_doesn_t_exist(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertNull($fmt->formatDate('2025-02-30'));
+    }
+
+    // 16.2
+    public function test_16_2_month_13(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertNull($fmt->formatDate('2025-13-01'));
+    }
+
+    // 16.3
+    public function test_16_3_unpadded_month_and_day(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertNull($fmt->formatDate('2025-6-1'));
+    }
+
+    // 16.4
+    public function test_16_4_surrounding_whitespace(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertNull($fmt->formatDate(' 2025-06-01'));
+    }
+
+    // 16.5
+    public function test_16_5_an_iso_datetime_only_the_date_part_is_used(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertSame('June 1st', $fmt->formatDate('2025-06-01T10:00:00'));
+    }
+
+    // 16.6
+    public function test_16_6_february_29_in_a_non_leap_year(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertNull($fmt->formatDateWithYear('2023-02-29'));
+    }
+
+    // 16.7
+    public function test_16_7_invalid_asof(): void
+    {
+        $fmt = new SayableDate(Locales::EN());
+        $this->assertNull($fmt->formatRelative('2025-03-16', '2025-04-31'));
+    }
 }

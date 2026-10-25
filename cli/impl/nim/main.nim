@@ -51,32 +51,23 @@ Options:
 
 # All locale codes supported by the age component (canonical list).
 const LocaleCodes = [
-  "af", "ak", "am", "ar", "az",
-  "bci", "be", "bem", "bg", "bi", "bm", "bn", "br", "bs",
-  "ca", "ceb", "cs", "cy",
-  "da", "de", "din", "dje", "dv", "dyu", "dz",
-  "ee", "el", "en", "es", "et", "eu",
-  "fa", "fan", "ff", "fi", "fil", "fj", "fon", "fr",
-  "ga", "gd", "gl", "gn", "gu", "gv",
-  "ha", "he", "hi", "hmn", "hr", "ht", "hu", "hy",
-  "id", "ig", "is", "it",
-  "ja", "jv",
-  "ka", "kbp", "kk", "km", "kn", "ko", "kpe", "ktu", "ku", "kw", "ky",
-  "lg", "ln", "lo", "lt", "lv",
-  "men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk", "mos", "mr", "ms", "mt", "my",
-  "nb", "nd", "ne", "ng", "nl", "nso", "nus", "ny",
-  "om", "or",
-  "pa", "pis", "pl", "pov", "ps", "pt",
-  "qu",
-  "ro", "ru", "rw",
-  "sar", "sd", "sg", "shi", "shn", "si", "sk", "sl", "sn", "snk", "so", "sq", "sr", "ss", "st", "su", "suk", "sv", "sw",
-  "ta", "te", "tem", "tet", "tg", "th", "ti", "tig", "tk", "tn", "tpi", "tr", "ts", "tzm",
-  "uk", "umb", "ur", "uz",
-  "vi", "vmw",
-  "wo",
-  "xh",
-  "yo", "yue",
-  "zdj", "zh", "zu",
+  "af", "ak", "am", "ar", "ay", "az", "bci", "be", "bem", "bg",
+  "bi", "bm", "bn", "br", "bs", "ca", "cak", "ceb", "cs", "cy",
+  "da", "de", "din", "dje", "dv", "dyu", "dz", "ee", "el", "en",
+  "es", "et", "eu", "fa", "fan", "ff", "fi", "fil", "fj", "fon",
+  "fr", "ga", "gd", "gl", "gn", "gu", "gv", "ha", "he", "hi",
+  "hmn", "hr", "ht", "hu", "hy", "id", "ig", "is", "it", "ja",
+  "jv", "ka", "kbp", "kek", "ki", "kk", "kl", "km", "kn", "ko",
+  "kpe", "kri", "ktu", "ku", "kw", "ky", "lb", "lg", "ln", "lo",
+  "lt", "luo", "lv", "mam", "men", "mfe", "mg", "mi", "mk", "ml",
+  "mn", "mnk", "mos", "mr", "ms", "mt", "my", "nb", "nd", "ne",
+  "ng", "nl", "nr", "nso", "nus", "ny", "om", "or", "pa", "pis",
+  "pl", "pov", "ps", "pt", "qu", "quc", "ro", "ru", "rw", "sar",
+  "sd", "sg", "shi", "shn", "si", "sk", "sl", "sn", "snk", "so",
+  "sq", "sr", "ss", "st", "su", "suk", "sv", "sw", "ta", "te",
+  "tem", "tet", "tg", "th", "ti", "tig", "tk", "tn", "tpi", "tr",
+  "ts", "tum", "tzm", "uk", "umb", "ur", "uz", "ve", "vi", "vmw",
+  "wo", "xh", "yao", "yo", "yue", "zdj", "zh", "zu"
 ]
 
 
@@ -84,6 +75,7 @@ type
   Options = object
     locale: string
     asOf: string
+    hasAsOf: bool
     compactness: string
     gender: string
     withYear: bool
@@ -102,6 +94,21 @@ proc cliError(msg: string) {.noreturn.} =
 proc nullify(value: string): string =
   ## Convert CLI "null" sentinel to empty string (representing nil).
   if value == "null": "" else: value
+
+
+proc isInteger(value: string): bool =
+  ## Seconds mode, as the reference CLI decides it: digits after any leading minus signs.
+  let digits = value.strip(leading = true, trailing = false, chars = {'-'})
+  digits.len > 0 and digits.allCharsInSet({'0'..'9'})
+
+
+proc parseSeconds(value: string): Option[int] =
+  ## Seconds as a 64-bit integer; none when malformed ("--5") or out of range,
+  ## which is far beyond the 500-year ceiling either way.
+  try:
+    some(parseInt(value))
+  except ValueError:
+    none(int)
 
 
 proc getToday(): string =
@@ -152,6 +159,7 @@ proc parseArgs(argv: seq[string]): tuple[command: string, positionals: seq[
           cliError("'" & arg & "' requires a value")
         i += 1
         opts.asOf = argv[i]
+        opts.hasAsOf = true
       of "-g", "--gender":
         if i + 1 >= argv.len:
           cliError("'" & arg & "' requires a value")
@@ -262,7 +270,7 @@ proc cmdRelative(positionals: seq[string], opts: Options): Option[string] =
     cliError("relative requires a date argument")
   let dateVal = nullify(positionals[0])
 
-  if opts.asOf.len == 0:
+  if not opts.hasAsOf:
     cliError("relative requires --as-of / -d option")
   let asOf = nullify(opts.asOf)
 
@@ -317,35 +325,17 @@ proc cmdDuration(positionals: seq[string], opts: Options): Option[string] =
 
   let formatter = durFormatter.newSayableDuration(locale.get, compactness)
 
-  var res: Option[string]
-  if value.len == 0:
-    # null input
-    res = none(string)
-  else:
-    # Check if it's a number (possibly negative, handled via --)
-    var isNumber = true
-    var startIdx = 0
-    if value[0] == '-':
-      startIdx = 1
-    if startIdx >= value.len:
-      isNumber = false
-    else:
-      for j in startIdx ..< value.len:
-        if value[j] < '0' or value[j] > '9':
-          isNumber = false
-          break
-
-    if isNumber:
-      res = formatter.formatDuration(parseInt(value))
-    else:
-      # Timestamp mode: need an end argument
-      if positionals.len < 2:
-        cliError(
-            "duration with timestamps requires start and end arguments")
-      let endVal = nullify(positionals[1])
-      res = formatter.formatDurationIso(value, endVal)
-
-  res
+  # "" is an empty string, not null: it isn't an integer, so it takes timestamp mode.
+  if positionals[0] == "null":
+    return none(string)
+  if isInteger(value):
+    let seconds = parseSeconds(value)
+    if seconds.isNone:
+      return none(string)
+    return formatter.formatDuration(seconds.get)
+  if positionals.len < 2:
+    cliError("duration with timestamps requires start and end arguments")
+  formatter.formatDurationIso(value, nullify(positionals[1]))
 
 
 proc cmdSince(positionals: seq[string], opts: Options): Option[string] =
@@ -353,7 +343,7 @@ proc cmdSince(positionals: seq[string], opts: Options): Option[string] =
     cliError("since requires a start timestamp argument")
   let startVal = nullify(positionals[0])
 
-  if opts.asOf.len == 0:
+  if not opts.hasAsOf:
     cliError("since requires --as-of / -d option")
   let asOf = nullify(opts.asOf)
 
@@ -377,7 +367,7 @@ proc cmdUntil(positionals: seq[string], opts: Options): Option[string] =
     cliError("until requires a target timestamp argument")
   let target = nullify(positionals[0])
 
-  if opts.asOf.len == 0:
+  if not opts.hasAsOf:
     cliError("until requires --as-of / -d option")
   let asOf = nullify(opts.asOf)
 

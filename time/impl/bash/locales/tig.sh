@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tig.json
 
-_locale_tig() {
+_sayabletime_locale_tig() {
     _clock_hours=('ʿasərte wəkəlte' 'ḥante' 'kəlʾe' 'səleste' 'arbaʿte' 'ḥamməste' 'səste' 'sabʿate' 'səmmunte' 'təsʿate' 'ʿasərte' 'ʿasərte wəḥante')
     _clock_midnight='nəs-leyla'
     _clock_noon='qayḥ'

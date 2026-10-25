@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/km.json
 
-_plural_km() {
+_sayableduration_plural_km() {
     echo "other"
 }
 
-_locale_km() {
+_sayableduration_locale_km() {
     _unit_second='{n} វិនាទី'
     _unit_minute='{n} នាទី'
     _unit_hour='{n} ម៉ោង'
@@ -46,5 +46,5 @@ _locale_km() {
     _compact_delimiter=''
     _compact_ago='{0}មុន'
     _compact_in_future='ក្នុង{0}'
-    _plural_func=_plural_km
+    _plural_func=_sayableduration_plural_km
 }

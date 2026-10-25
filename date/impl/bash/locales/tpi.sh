@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/tpi.json
 
-_locale_tpi() {
+_sayabledate_locale_tpi() {
     _months=('Janueri' 'Februeri' 'Mas' 'Epril' 'Me' 'Jun' 'Julai' 'Ogas' 'Septemba' 'Oktoba' 'Novemba' 'Desemba')
     _weekdays=('Sande' 'Mande' 'Tunde' 'Trinde' 'Fonde' 'Fraide' 'Sarere')
     _day_format='{n}'

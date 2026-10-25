@@ -116,6 +116,52 @@ spanish_test_() ->
      ?_assertEqual({ok, "pasado mañana"}, rel_locale(Es, "2025-03-17", "2025-03-15")) %% 12.2
     ].
 
+%% 13. format_date_with_year
+format_date_with_year_test_() ->
+    En = sayabledate_locales_en:locale(),
+    [?_assertEqual({ok, "February 4th, 2018"}, sayabledate:format_date_with_year(En, normal, "2018-02-04")),  %% 13.1
+     ?_assertEqual({ok, "Mar 15, 2025"}, sayabledate:format_date_with_year(En, short, "2025-03-15")),         %% 13.2
+     ?_assertEqual({ok, "1/21/97"}, sayabledate:format_date_with_year(En, compact, "1997-01-21")),            %% 13.3
+     ?_assertEqual({ok, "20/5/07"},
+                   sayabledate:format_date_with_year(sayabledate_locales_tg:locale(), compact, "2007-05-20")),  %% 13.4
+     ?_assertEqual({ok, "21. kesäkuuta 1996"},
+                   sayabledate:format_date_with_year(sayabledate_locales_fi:locale(), short, "1996-06-21"))     %% 13.5
+    ].
+
+%% 14. Short month names (locales that keep the full genitive)
+short_month_names_test_() ->
+    [?_assertEqual({ok, "15. februára"},
+                   sayabledate:format_date(sayabledate_locales_sk:locale(), short, "2031-02-15")),       %% 14.1
+     ?_assertEqual({ok, "10. prosince"},
+                   sayabledate:format_date(sayabledate_locales_cs:locale(), short, "2025-12-10")),       %% 14.2
+     ?_assertEqual({ok, "5 листопада"},
+                   sayabledate:format_date(sayabledate_locales_uk:locale(), short, "2025-11-05")),       %% 14.3
+     ?_assertEqual({ok, "8. elokuuta"},
+                   sayabledate:format_relative(sayabledate_locales_fi:locale(), short, "1998-08-08", "1998-08-15"))  %% 14.4
+    ].
+
+%% 15. format_relative — short phrases
+format_relative_short_phrases_test_() ->
+    [?_assertEqual({ok, "an Mth ma"},
+                   sayabledate:format_relative(sayabledate_locales_kw:locale(), short, "2035-12-04", "2035-12-02")),   %% 15.1
+     ?_assertEqual({ok, "Dom nchi'j"},
+                   sayabledate:format_relative(sayabledate_locales_mam:locale(), short, "2000-01-23", "2000-01-25")),  %% 15.2
+     ?_assertEqual({ok, "a'in Vie"},
+                   sayabledate:format_relative(sayabledate_locales_kek:locale(), short, "2014-10-24", "2014-10-22"))   %% 15.3
+    ].
+
+%% 16. Input validation
+input_validation_test_() ->
+    En = sayabledate_locales_en:locale(),
+    [?_assertEqual(error, fmt("2025-02-30")),                                              %% 16.1
+     ?_assertEqual(error, fmt("2025-13-01")),                                              %% 16.2
+     ?_assertEqual(error, fmt("2025-6-1")),                                                %% 16.3
+     ?_assertEqual(error, fmt(" 2025-06-01")),                                             %% 16.4
+     ?_assertEqual({ok, "June 1st"}, fmt("2025-06-01T10:00:00")),                         %% 16.5
+     ?_assertEqual(error, sayabledate:format_date_with_year(En, normal, "2023-02-29")),    %% 16.6
+     ?_assertEqual(error, rel("2025-03-16", "2025-04-31"))                                 %% 16.7
+    ].
+
 %% Locale lookup
 locale_lookup_test_() ->
     [?_assertMatch({ok, #date_locale{code = "en"}}, sayabledate:get_locale("en")),

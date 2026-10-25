@@ -20,6 +20,10 @@ program test_format_date
   call test_locale_russian()
   call test_locale_arabic()
   call test_locale_spanish()
+  call test_section_13()
+  call test_section_14()
+  call test_section_15()
+  call test_section_16()
 
   write(*, '(A)') ''
   write(*, '(A)') '=== Results ==='
@@ -385,5 +389,152 @@ contains
     res = sd_format_relative(es, SD_NORMAL, '2025-03-17', '2025-03-15')
     call assert_eq('12.2 es pasado manana', res, 'pasado ma' // char(195) // char(177) // 'ana')
   end subroutine test_locale_spanish
+
+  ! ================================================================
+  ! format_date_with_year
+  ! ================================================================
+  subroutine test_section_13()
+    type(sd_locale), pointer :: loc
+    character(len=SD_MAX_STR_LEN) :: res
+
+    ! 13.1
+    loc => sd_get_locale('en')
+    res = sd_format_date_with_year(loc, SD_NORMAL, '2018-02-04')
+    call assert_eq('13.1 format_date_with_year en normal', res, &
+      'February 4th, 2018')
+
+    ! 13.2
+    loc => sd_get_locale('en')
+    res = sd_format_date_with_year(loc, SD_SHORT, '2025-03-15')
+    call assert_eq('13.2 format_date_with_year en short', res, &
+      'Mar 15, 2025')
+
+    ! 13.3
+    loc => sd_get_locale('en')
+    res = sd_format_date_with_year(loc, SD_COMPACT, '1997-01-21')
+    call assert_eq('13.3 format_date_with_year en compact', res, &
+      '1/21/97')
+
+    ! 13.4
+    loc => sd_get_locale('tg')
+    res = sd_format_date_with_year(loc, SD_COMPACT, '2007-05-20')
+    call assert_eq('13.4 format_date_with_year tg compact', res, &
+      '20/5/07')
+
+    ! 13.5
+    loc => sd_get_locale('fi')
+    res = sd_format_date_with_year(loc, SD_SHORT, '1996-06-21')
+    call assert_eq('13.5 format_date_with_year fi short', res, &
+      '21. kes' // char(195) // char(164) // 'kuuta 1996')
+
+  end subroutine test_section_13
+
+  ! ================================================================
+  ! Short month names (locales that keep the full genitive)
+  ! ================================================================
+  subroutine test_section_14()
+    type(sd_locale), pointer :: loc
+    character(len=SD_MAX_STR_LEN) :: res
+
+    ! 14.1
+    loc => sd_get_locale('sk')
+    res = sd_format_date(loc, SD_SHORT, '2031-02-15')
+    call assert_eq('14.1 format_date sk short', res, &
+      '15. febru' // char(195) // char(161) // 'ra')
+
+    ! 14.2
+    loc => sd_get_locale('cs')
+    res = sd_format_date(loc, SD_SHORT, '2025-12-10')
+    call assert_eq('14.2 format_date cs short', res, &
+      '10. prosince')
+
+    ! 14.3
+    loc => sd_get_locale('uk')
+    res = sd_format_date(loc, SD_SHORT, '2025-11-05')
+    call assert_eq('14.3 format_date uk short', res, &
+      '5 ' // char(208) // char(187) // char(208) // char(184) // char(209) // &
+      char(129) // char(209) // char(130) // char(208) // char(190) // &
+      char(208) // char(191) // char(208) // char(176) // char(208) // &
+      char(180) // char(208) // char(176))
+
+    ! 14.4
+    loc => sd_get_locale('fi')
+    res = sd_format_relative(loc, SD_SHORT, '1998-08-08', '1998-08-15')
+    call assert_eq('14.4 format_relative fi short', res, &
+      '8. elokuuta')
+
+  end subroutine test_section_14
+
+  ! ================================================================
+  ! format_relative — short phrases
+  ! ================================================================
+  subroutine test_section_15()
+    type(sd_locale), pointer :: loc
+    character(len=SD_MAX_STR_LEN) :: res
+
+    ! 15.1
+    loc => sd_get_locale('kw')
+    res = sd_format_relative(loc, SD_SHORT, '2035-12-04', '2035-12-02')
+    call assert_eq('15.1 format_relative kw short', res, &
+      'an Mth ma')
+
+    ! 15.2
+    loc => sd_get_locale('mam')
+    res = sd_format_relative(loc, SD_SHORT, '2000-01-23', '2000-01-25')
+    call assert_eq('15.2 format_relative mam short', res, &
+      'Dom nchi' // char(39) // 'j')
+
+    ! 15.3
+    loc => sd_get_locale('kek')
+    res = sd_format_relative(loc, SD_SHORT, '2014-10-24', '2014-10-22')
+    call assert_eq('15.3 format_relative kek short', res, &
+      'a' // char(39) // 'in Vie')
+
+  end subroutine test_section_15
+
+  ! ================================================================
+  ! Input validation
+  ! ================================================================
+  subroutine test_section_16()
+    type(sd_locale), pointer :: loc
+    character(len=SD_MAX_STR_LEN) :: res
+
+    ! 16.1
+    loc => sd_get_locale('en')
+    res = sd_format_date(loc, SD_NORMAL, '2025-02-30')
+    call assert_null('16.1 format_date en normal', res)
+
+    ! 16.2
+    loc => sd_get_locale('en')
+    res = sd_format_date(loc, SD_NORMAL, '2025-13-01')
+    call assert_null('16.2 format_date en normal', res)
+
+    ! 16.3
+    loc => sd_get_locale('en')
+    res = sd_format_date(loc, SD_NORMAL, '2025-6-1')
+    call assert_null('16.3 format_date en normal', res)
+
+    ! 16.4
+    loc => sd_get_locale('en')
+    res = sd_format_date(loc, SD_NORMAL, ' 2025-06-01')
+    call assert_null('16.4 format_date en normal', res)
+
+    ! 16.5
+    loc => sd_get_locale('en')
+    res = sd_format_date(loc, SD_NORMAL, '2025-06-01T10:00:00')
+    call assert_eq('16.5 format_date en normal', res, &
+      'June 1st')
+
+    ! 16.6
+    loc => sd_get_locale('en')
+    res = sd_format_date_with_year(loc, SD_NORMAL, '2023-02-29')
+    call assert_null('16.6 format_date_with_year en normal', res)
+
+    ! 16.7
+    loc => sd_get_locale('en')
+    res = sd_format_relative(loc, SD_NORMAL, '2025-03-16', '2025-04-31')
+    call assert_null('16.7 format_relative en normal', res)
+
+  end subroutine test_section_16
 
 end program test_format_date

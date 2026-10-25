@@ -368,8 +368,8 @@ Options:
         if (value == null) {
             result = formatter.formatDurationSeconds(-1)
         } else if (isInteger(value)) {
-            int seconds = Integer.parseInt(value)
-            result = formatter.formatDurationSeconds(seconds)
+            // A digit string too long for a long is far beyond the 500-year ceiling
+            result = value.isLong() ? formatter.formatDurationSeconds(value as long) : null
         } else {
             if (positionals.size() < 2) {
                 throw usage('duration with timestamps requires start and end arguments')

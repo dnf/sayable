@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/snk.json
 
-_locale_snk() {
+_sayabledate_locale_snk() {
     _months=('Janwiye' 'Feburiye' 'Marasi' 'Abirili' 'Meyi' 'Juwɛ' 'Juliye' 'Awutu' 'Sɛtanburu' 'Okutoburu' 'Nuwanburu' 'Desanburu')
     _weekdays=('Alhadi' 'Atinni' 'Ataalaata' 'Alarba' 'Alxamiisa' 'Arjuma' 'Asibiti')
     _day_format='{n}'

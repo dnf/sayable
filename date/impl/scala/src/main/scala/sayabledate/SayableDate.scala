@@ -1,5 +1,6 @@
 package sayabledate
 
+import java.time.YearMonth
 import sayabledate.locales.Locales
 
 val Version = "0.5.0"
@@ -136,33 +137,18 @@ object SayableDate:
     def formatRelative(date: String, asOf: String): Option[String] =
         defaultInstance.formatRelative(date, asOf)
 
-/** Parse "YYYY-MM-DD" or ISO datetime to (year, month, day). */
-private[sayabledate] def parseDate(s: String): Option[(Int, Int, Int)] =
-    if (s.isEmpty) None
-    else
-        // Strip time part from ISO datetime
-        val datePart = if (s.contains('T')) s.substring(0, s.indexOf('T')) else s
-        val parts = datePart.split('-')
-        if (parts.length != 3) None
-        else
-            for
-                year <- safeAtoi(parts(0))
-                month <- safeAtoi(parts(1))
-                day <- safeAtoi(parts(2))
-                if month >= 1 && month <= 12 && day >= 1 && day <= 31
-            yield (year, month, day)
+/** YYYY-MM-DD, alone or followed by T and anything (an ISO datetime). */
+private val DatePrefix = """([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T(?s:.*))?""".r
 
-private[sayabledate] def safeAtoi(s: String): Option[Int] =
-    if (s.isEmpty) None
-    else
-        var n = 0
-        var i = 0
-        while (i < s.length)
-            val c = s.charAt(i)
-            if (c < '0' || c > '9') return None
-            n = n * 10 + (c - '0')
-            i += 1
-        Some(n)
+/** Parse "YYYY-MM-DD" or ISO datetime naming a real calendar day to (year, month, day). */
+private[sayabledate] def parseDate(s: String): Option[(Int, Int, Int)] =
+    s match
+        case DatePrefix(y, m, d) =>
+            val (year, month, day) = (y.toInt, m.toInt, d.toInt)
+            if month >= 1 && month <= 12 && day >= 1 && day <= YearMonth.of(year, month).lengthOfMonth() then
+                Some((year, month, day))
+            else None
+        case _ => None
 
 /** Convert a date to Julian Day Number for day-difference arithmetic. */
 private[sayabledate] def toJdn(year: Int, month: Int, day: Int): Int =

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ig.json
 
-_locale_ig() {
+_sayabledate_locale_ig() {
     _months=('Jenụwarị' 'Febrụwarị' 'Maachị' 'Epreel' 'Mee' 'Juun' 'Julaị' 'Ọgọọst' 'Septemba' 'Ọktoba' 'Novemba' 'Disemba')
     _weekdays=('Ụbọchị Ụka' 'Mọnde' 'Tụụzdee' 'Wenezdee' 'Tọọzdee' 'Fraịdee' 'Satọdee')
     _day_format='{n}'

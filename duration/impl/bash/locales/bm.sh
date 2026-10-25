@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/bm.json
 
-_plural_bm() {
+_sayableduration_plural_bm() {
     echo "other"
 }
 
-_locale_bm() {
+_sayableduration_locale_bm() {
     _unit_second='sekondi {n}'
     _unit_minute='miniti {n}'
     _unit_hour='lɛrɛ {n}'
@@ -46,5 +46,5 @@ _locale_bm() {
     _compact_delimiter=''
     _compact_ago='{0} bɔlen'
     _compact_in_future='ka {0}'
-    _plural_func=_plural_bm
+    _plural_func=_sayableduration_plural_bm
 }

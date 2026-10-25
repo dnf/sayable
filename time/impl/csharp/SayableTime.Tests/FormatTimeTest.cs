@@ -240,4 +240,100 @@ public class FormatTimeTest
         var st = new SayableTime(Locales.FI, Compactness.Short);
         Assert.Equal("0.00", st.Format("00:00"));
     }
+
+    // ================================================================
+    // Minutes in short and compact modes
+    // ================================================================
+
+    // 9.1
+    [Fact]
+    public void Spec9_1_DigitalModesKeepTheExactMinute()
+    {
+        var f = new SayableTime(Locales.EN, Compactness.Short);
+        Assert.Equal("6:01 PM", f.Format("18:01"));
+    }
+
+    // 9.2
+    [Fact]
+    public void Spec9_2_DigitalModesKeepTheExactMinute()
+    {
+        var f = new SayableTime(Locales.EN, Compactness.Compact);
+        Assert.Equal("7:05p", f.Format("19:05"));
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 10.1
+    [Fact]
+    public void Spec10_1_OneDigitHour()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Equal("half past nine", f.Format("9:30"));
+    }
+
+    // 10.2
+    [Fact]
+    public void Spec10_2_TwoDigitHour()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Equal("half past nine", f.Format("09:30"));
+    }
+
+    // 10.3
+    [Fact]
+    public void Spec10_3_LeadingWhitespace()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Null(f.Format(" 9:30"));
+    }
+
+    // 10.4
+    [Fact]
+    public void Spec10_4_TrailingWhitespace()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Null(f.Format("9:30 "));
+    }
+
+    // 10.5
+    [Fact]
+    public void Spec10_5_MinutesNeedTwoDigits()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Null(f.Format("9:5"));
+    }
+
+    // 10.6
+    [Fact]
+    public void Spec10_6_HourOutOfRange()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Null(f.Format("24:00"));
+    }
+
+    // 10.7
+    [Fact]
+    public void Spec10_7_SecondsAreAllowedAndIgnored()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Equal("a quarter past two", f.Format("14:15:30"));
+    }
+
+    // 10.8
+    [Fact]
+    public void Spec10_8_ISODatetimeWithZoneSuffixIgnored()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Equal("a quarter past two", f.Format("2025-01-15T14:15:00Z"));
+    }
+
+    // 10.9
+    [Fact]
+    public void Spec10_9_ISODatetimeWithAnImpossibleDate()
+    {
+        var f = new SayableTime(Locales.EN);
+        Assert.Null(f.Format("2025-02-30T14:15:00"));
+    }
 }

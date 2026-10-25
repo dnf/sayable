@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ur.json
 
-_plural_ur() {
+_sayableduration_plural_ur() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ur() {
+_sayableduration_locale_ur() {
     _unit_second='{n} سیکنڈ'
     _unit_minute='{n} منٹ'
     _unit_hour='{n} گھنٹہ'
@@ -58,5 +58,5 @@ _locale_ur() {
     _compact_delimiter=''
     _compact_ago='{0} پہلے'
     _compact_in_future='{0} میں'
-    _plural_func=_plural_ur
+    _plural_func=_sayableduration_plural_ur
 }

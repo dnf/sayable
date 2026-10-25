@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/my.json
 
-_plural_my() {
+_sayableduration_plural_my() {
     echo "other"
 }
 
-_locale_my() {
+_sayableduration_locale_my() {
     _unit_second='{n} စက္ကန့်'
     _unit_minute='{n} မိနစ်'
     _unit_hour='{n} နာရီ'
@@ -46,5 +46,5 @@ _locale_my() {
     _compact_delimiter=''
     _compact_ago='လွန်ခဲ့သော {0}'
     _compact_in_future='{0} အတွင်း'
-    _plural_func=_plural_my
+    _plural_func=_sayableduration_plural_my
 }

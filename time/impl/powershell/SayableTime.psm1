@@ -6,43 +6,41 @@ $script:VERSION = '0.5.0'
 # Source locale registry
 . "$PSScriptRoot/locales/registry.ps1"
 
+function Get-DaysInMonthTime {
+    param([int]$Year, [int]$Month)
+    if ($Month -eq 2) {
+        $isLeap = ($Year % 4 -eq 0 -and $Year % 100 -ne 0) -or ($Year % 400 -eq 0)
+        return $(if ($isLeap) { 29 } else { 28 })
+    }
+    if ($Month -in @(4, 6, 9, 11)) { return 30 }
+    return 31
+}
+
+# A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+# suffix, which is ignored), alone or after the T of an ISO datetime.
+$script:CLOCK_TIME = '\A(?:([0-9]{4})-([0-9]{2})-([0-9]{2})T)?([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z'
+
 function Parse-SayableTime {
     param(
         [AllowNull()][AllowEmptyString()][string]$InputStr
     )
 
-    if ([string]::IsNullOrEmpty($InputStr)) {
+    $m = [regex]::Match($InputStr, $script:CLOCK_TIME)
+    if (-not $m.Success) {
         return $null
     }
-
-    $t = $InputStr
-    if ($t.Contains('T')) {
-        $t = $t.Split('T')[1]
-    }
-    if ($t.Contains('+')) {
-        $t = $t.Split('+')[0]
-    }
-    if ($t.Contains('Z')) {
-        $t = $t.Split('Z')[0]
-    }
-
-    $parts = $t.Split(':')
-    if ($parts.Count -lt 2) {
-        return $null
-    }
-
-    try {
-        $minutePart = $parts[1]
-        if ($minutePart.Contains('.')) {
-            $minutePart = $minutePart.Split('.')[0]
+    if ($m.Groups[1].Success) {
+        [int]$year = $m.Groups[1].Value
+        [int]$month = $m.Groups[2].Value
+        [int]$day = $m.Groups[3].Value
+        if ($month -lt 1 -or $month -gt 12 -or $day -lt 1 -or $day -gt (Get-DaysInMonthTime -Year $year -Month $month)) {
+            return $null
         }
-        [int]$hour = $parts[0]
-        [int]$minute = $minutePart
-    } catch {
-        return $null
     }
-
-    if ($hour -lt 0 -or $hour -gt 23 -or $minute -lt 0 -or $minute -gt 59) {
+    [int]$hour = $m.Groups[4].Value
+    [int]$minute = $m.Groups[5].Value
+    [int]$second = $(if ($m.Groups[6].Success) { $m.Groups[6].Value } else { 0 })
+    if ($hour -gt 23 -or $minute -gt 59 -or $second -gt 59) {
         return $null
     }
 

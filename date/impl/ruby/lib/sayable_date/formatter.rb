@@ -129,23 +129,27 @@ module SayableDate
       val.nil? ? default : val
     end
 
+    # YYYY-MM-DD, optionally followed by T and a time (which is not read).
+    ISO_DATE = /\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T|\z)/
+
     def parse_date(s)
-      return nil if s.nil? || s.empty?
+      return nil if s.nil?
 
-      # Strip time part from ISO datetime
-      date_part = s.include?('T') ? s.split('T')[0] : s
-      parts = date_part.split('-')
-      return nil if parts.length != 3
+      match = ISO_DATE.match(s)
+      return nil if match.nil?
 
-      year = parts[0].to_i
-      month = parts[1].to_i
-      day = parts[2].to_i
-
-      return nil if month < 1 || month > 12 || day < 1 || day > 31
-      # Reject non-numeric parts (to_i returns 0 for non-numeric strings)
-      return nil if parts.any? { |p| p.empty? || p != p.to_i.to_s.rjust(p.length, '0') }
+      year, month, day = match.captures.map(&:to_i)
+      return nil unless month.between?(1, 12) && day.between?(1, days_in_month(year, month))
 
       [year, month, day]
+    end
+
+    def days_in_month(year, month)
+      return 30 if [4, 6, 9, 11].include?(month)
+      return 31 unless month == 2
+
+      leap = (year % 4).zero? && (!(year % 100).zero? || (year % 400).zero?)
+      leap ? 29 : 28
     end
 
     def to_jdn(year, month, day)

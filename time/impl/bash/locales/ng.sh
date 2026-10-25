@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ng.json
 
-_locale_ng() {
+_sayabletime_locale_ng() {
     _clock_hours=('omulongo nambali' 'imwe' 'mbali' 'ndatu' 'ne' 'ntano' 'hamano' 'heyali' 'hetatu' 'omugoyi' 'omulongo' 'omulongo nimwe')
     _clock_midnight='onguloshi pakati'
     _clock_noon='omutenya'

@@ -85,12 +85,10 @@ public sealed class SayableAgeFormatter
             refD = now.Day;
         }
 
-        var dobDate = new DateTime(dobY, dobM, dobD);
-        var refDate = new DateTime(refY, refM, refD);
-        int diffDays = (int)(refDate - dobDate).TotalDays;
+        int diffDays = JulianDay(refY, refM, refD) - JulianDay(dobY, dobM, dobD);
         if (diffDays < 0) return null;
 
-        int lastDay = DateTime.DaysInMonth(refY, refM);
+        int lastDay = DaysInMonth(refY, refM);
         int clampedBirthday = Math.Min(dobD, lastDay);
         int months = (refY - dobY) * 12 + (refM - dobM);
         if (refD < clampedBirthday) months--;
@@ -99,15 +97,31 @@ public sealed class SayableAgeFormatter
         return new AgeComponents(months, diffDays);
     }
 
+    /// <summary>Parses exactly YYYY-MM-DD naming a real calendar day; null otherwise.</summary>
     private static int[]? ParseDateParts(string s)
     {
-        if (s.Length < 10 || s[4] != '-' || s[7] != '-') return null;
+        if (s.Length != 10 || s[4] != '-' || s[7] != '-') return null;
         int y = SafeAtoi(s, 0, 4);
         int m = SafeAtoi(s, 5, 7);
         int d = SafeAtoi(s, 8, 10);
-        if (y < 0 || m < 0 || d < 0) return null;
-        if (y == 0 && m == 0 && d == 0) return null;
+        if (y < 0 || m < 1 || m > 12 || d < 1 || d > DaysInMonth(y, m)) return null;
         return [y, m, d];
+    }
+
+    // DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+    private static int DaysInMonth(int year, int month) => month switch
+    {
+        2 => (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28,
+        4 or 6 or 9 or 11 => 30,
+        _ => 31,
+    };
+
+    private static int JulianDay(int year, int month, int day)
+    {
+        int a = (14 - month) / 12;
+        int y = year + 4800 - a;
+        int m = month + 12 * a - 3;
+        return day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045;
     }
 
     private static int SafeAtoi(string s, int from, int to)

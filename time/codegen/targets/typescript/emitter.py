@@ -96,7 +96,7 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append(f"const _ALL: Record<string, TimeLocale> = {{ {codes} }};")
     lines.append("")
     lines.append("export function getLocale(code: string): TimeLocale | undefined {")
-    lines.append("  return _ALL[code];")
+    lines.append("  return Object.hasOwn(_ALL, code) ? _ALL[code] : undefined;")
     lines.append("}")
     lines.append("")
 

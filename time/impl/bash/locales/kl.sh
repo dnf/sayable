@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/kl.json
 
-_locale_kl() {
+_sayabletime_locale_kl() {
     _clock_hours=('akunneq marluk' 'ataaseq' 'marluk' 'pingasut' 'sisamat' 'tallimat' 'arfinillit' 'arfineq-marluk' 'arfineq-pingasut' 'qulingiluat' 'qulit' 'akunneq ataaseq')
     _clock_midnight='unnuap qeqqa'
     _clock_noon='ulloqeqqap qeqqa'

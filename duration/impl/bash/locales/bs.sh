@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/bs.json
 
-_plural_bs() {
+_sayableduration_plural_bs() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_bs() {
     echo "other"
 }
 
-_locale_bs() {
+_sayableduration_locale_bs() {
     _unit_second_one='{n} sekunda'
     _unit_second_few='{n} sekunde'
     _unit_second_other='{n} sekundi'
@@ -71,5 +71,5 @@ _locale_bs() {
     _compact_delimiter=''
     _compact_ago='prije {0}'
     _compact_in_future='za {0}'
-    _plural_func=_plural_bs
+    _plural_func=_sayableduration_plural_bs
 }

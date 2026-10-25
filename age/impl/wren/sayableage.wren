@@ -152,30 +152,43 @@ class SayableAge {
     return (365.25 * (y + 4716)).floor + (30.6001 * (m + 1)).floor + d + b - 1524
   }
 
+  static isDigitAt_(bytes, i) { bytes[i] >= 48 && bytes[i] <= 57 }
+
+  static digitsValue_(bytes, from, to) {
+    var value = 0
+    for (i in from...to) value = value * 10 + bytes[i] - 48
+    return value
+  }
+
+  // Exactly YYYY-MM-DD naming a real calendar day, as [y, m, d]; else null.
+  static parseDate_(s) {
+    if (!(s is String)) return null
+    var bytes = s.bytes
+    if (bytes.count != 10 || bytes[4] != 45 || bytes[7] != 45) return null
+    for (i in [0, 1, 2, 3, 5, 6, 8, 9]) {
+      if (!isDigitAt_(bytes, i)) return null
+    }
+    var y = digitsValue_(bytes, 0, 4)
+    var m = digitsValue_(bytes, 5, 7)
+    var d = digitsValue_(bytes, 8, 10)
+    if (m < 1 || m > 12 || d < 1 || d > daysInMonth_(y, m)) return null
+    return [y, m, d]
+  }
+
   static parseAge_(dateOfBirth, asOf) {
     if (dateOfBirth == null || dateOfBirth == "") return null
+    // No date library in Wren, so asOf is required.
+    if (asOf == null || asOf == "") return null
 
-    var dobParts = dateOfBirth.split("-")
-    if (dobParts.count != 3) return null
-    var dobY = Num.fromString(dobParts[0])
-    var dobM = Num.fromString(dobParts[1])
-    var dobD = Num.fromString(dobParts[2])
-    if (dobY == null || dobM == null || dobD == null) return null
-
-    var refY
-    var refM
-    var refD
-    if (asOf != null && asOf != "") {
-      var refParts = asOf.split("-")
-      if (refParts.count != 3) return null
-      refY = Num.fromString(refParts[0])
-      refM = Num.fromString(refParts[1])
-      refD = Num.fromString(refParts[2])
-      if (refY == null || refM == null || refD == null) return null
-    } else {
-      // No date library in Wren — asOf is required for testing
-      return null
-    }
+    var dob = parseDate_(dateOfBirth)
+    var ref = parseDate_(asOf)
+    if (dob == null || ref == null) return null
+    var dobY = dob[0]
+    var dobM = dob[1]
+    var dobD = dob[2]
+    var refY = ref[0]
+    var refM = ref[1]
+    var refD = ref[2]
 
     var diffDays = toDayNumber_(refY, refM, refD) - toDayNumber_(dobY, dobM, dobD)
     if (diffDays < 0) return null

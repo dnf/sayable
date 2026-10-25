@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mos.json
 
-_plural_mos() {
+_sayableduration_plural_mos() {
     echo "other"
 }
 
-_locale_mos() {
+_sayableduration_locale_mos() {
     _unit_second='sẽk {n}'
     _unit_minute='minit {n}'
     _unit_hour='lɛɛre {n}'
@@ -46,5 +46,5 @@ _locale_mos() {
     _compact_delimiter=''
     _compact_ago='{0} loog'
     _compact_in_future='ka {0}'
-    _plural_func=_plural_mos
+    _plural_func=_sayableduration_plural_mos
 }

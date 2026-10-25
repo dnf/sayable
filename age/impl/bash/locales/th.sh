@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/th.json
 
-_plural_th() {
+_sayableage_plural_th() {
     echo "other"
 }
 
-_locale_th() {
+_sayableage_locale_th() {
     _unit_day='{n} วัน'
     _unit_week='{n} สัปดาห์'
     _unit_month='{n} เดือน'
@@ -37,5 +37,5 @@ _locale_th() {
     _compact_unit_year='{n}ปี'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_th
+    _plural_func=_sayableage_plural_th
 }

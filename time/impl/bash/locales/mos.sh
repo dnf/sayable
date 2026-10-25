@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mos.json
 
-_locale_mos() {
+_sayabletime_locale_mos() {
     _clock_hours=('piig la a yiibu' 'a yembre' 'a yiibu' 'a tãabo' 'a naase' 'a nu' 'a yoobe' 'a yopoe' 'a niini' 'a wae' 'piiga' 'piig la a yembre')
     _clock_midnight='yʋng-vɩɩse'
     _clock_noon='wĩntoog zabre'

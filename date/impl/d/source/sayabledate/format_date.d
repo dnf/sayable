@@ -7,42 +7,39 @@ import sayabledate.locale;
 /// Library version.
 enum VERSION = "0.5.0";
 
-/// Parse a YYYY-MM-DD or ISO datetime date string into (year, month, day).
+/// Parse YYYY-MM-DD naming a real calendar day, optionally followed by T and
+/// anything else, into (year, month, day) (docs/input-formats.md).
 /// Returns false if the string is invalid.
 private bool parseDateParts(string s, out int y, out int m, out int d) {
-    if (s.length == 0) {
+    immutable isDateAlone = s.length == 10;
+    immutable isDatetime = s.length > 10 && s[10] == 'T';
+    if (!(isDateAlone || isDatetime) || s[4] != '-' || s[7] != '-') {
         return false;
     }
-    // Strip time part if ISO datetime
-    string datePart = s;
-    foreach (i, c; s) {
-        if (c == 'T') {
-            datePart = s[0 .. i];
-            break;
+    if (!parseDigits(s[0 .. 4], y) || !parseDigits(s[5 .. 7], m) || !parseDigits(s[8 .. 10], d)) {
+        return false;
+    }
+    return m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth(y, m);
+}
+
+/// Convert a run of ASCII digits to int. Returns false if any isn't a digit.
+private bool parseDigits(string s, out int n) {
+    n = 0;
+    foreach (c; s) {
+        if (c < '0' || c > '9') {
+            return false;
         }
-    }
-    if (datePart.length < 10 || datePart[4] != '-' || datePart[7] != '-') {
-        return false;
-    }
-    y = atoiSlice(datePart[0 .. 4]);
-    m = atoiSlice(datePart[5 .. 7]);
-    d = atoiSlice(datePart[8 .. 10]);
-    if (m < 1 || m > 12 || d < 1 || d > 31) {
-        return false;
+        n = n * 10 + (c - '0');
     }
     return true;
 }
 
-/// Convert a numeric string slice to int.
-private int atoiSlice(string s) {
-    int n = 0;
-    foreach (c; s) {
-        if (c < '0' || c > '9') {
-            return 0;
-        }
-        n = n * 10 + (c - '0');
+/// Days in a Gregorian month (leap years by the 4/100/400 rule).
+private int daysInMonth(int y, int m) {
+    if (m == 2) {
+        return isLeapYear(y) ? 29 : 28;
     }
-    return n;
+    return (m == 4 || m == 6 || m == 9 || m == 11) ? 30 : 31;
 }
 
 /// Check if a year is a leap year.

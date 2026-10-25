@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ng.json
 
-_plural_ng() {
+_sayableage_plural_ng() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ng() {
+_sayableage_locale_ng() {
     _unit_day_one='esiku {n}'
     _unit_day_other='omasiku {n}'
     _unit_week_one='oshiwike {n}'
@@ -49,5 +49,5 @@ _locale_ng() {
     _compact_unit_year_other='omiv {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ng
+    _plural_func=_sayableage_plural_ng
 }

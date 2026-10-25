@@ -4,7 +4,7 @@ Uses SUnit framework. Each test annotated with canonical IDs."
 TestCase subclass: #SayableDateTest
 	instanceVariableNames: ''
 	classVariableNames: ''
-	package: 'SayableDate-Tests'.
+	package: 'SayableDate-Tests'!
 
 !SayableDateTest methodsFor: 'tests-null'!
 "1.1"
@@ -363,4 +363,138 @@ testSpanishDayAfterTomorrow
 	| sd |
 	sd := SayableDate withLocale: (SayableDateLocales get: 'es').
 	self assert: (sd formatRelative: '2025-03-17' asOf: '2025-03-15') equals: 'pasado mañana'
+! !
+
+!SayableDateTest methodsFor: 'tests-input-formats-and-regressions'!
+"13.1"
+test13_1FormatDateWithYear
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatDateWithYear: '2018-02-04') equals: 'February 4th, 2018'
+!
+
+"13.2"
+test13_2FormatDateWithYear
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en') compactness: #short.
+	self assert: (sd formatDateWithYear: '2025-03-15') equals: 'Mar 15, 2025'
+!
+
+"13.3"
+test13_3FormatDateWithYear
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en') compactness: #compact.
+	self assert: (sd formatDateWithYear: '1997-01-21') equals: '1/21/97'
+!
+
+"13.4"
+test13_4TwoDigitYearKeepsItsLeadingZero
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'tg') compactness: #compact.
+	self assert: (sd formatDateWithYear: '2007-05-20') equals: '20/5/07'
+!
+
+"13.5"
+test13_5FormatDateWithYear
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'fi') compactness: #short.
+	self assert: (sd formatDateWithYear: '1996-06-21') equals: '21. kesäkuuta 1996'
+!
+
+"14.1"
+test14_1ShortMonthNamesLocalesThatKeepTheFullGenitive
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'sk') compactness: #short.
+	self assert: (sd formatDate: '2031-02-15') equals: '15. februára'
+!
+
+"14.2"
+test14_2ShortMonthNamesLocalesThatKeepTheFullGenitive
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'cs') compactness: #short.
+	self assert: (sd formatDate: '2025-12-10') equals: '10. prosince'
+!
+
+"14.3"
+test14_3ShortMonthNamesLocalesThatKeepTheFullGenitive
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'uk') compactness: #short.
+	self assert: (sd formatDate: '2025-11-05') equals: '5 листопада'
+!
+
+"14.4"
+test14_4ShortMonthNamesLocalesThatKeepTheFullGenitive
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'fi') compactness: #short.
+	self assert: (sd formatRelative: '1998-08-08' asOf: '1998-08-15') equals: '8. elokuuta'
+!
+
+"15.1"
+test15_1DayAfterTomorrow
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'kw') compactness: #short.
+	self assert: (sd formatRelative: '2035-12-04' asOf: '2035-12-02') equals: 'an Mth ma'
+!
+
+"15.2"
+test15_2DayBeforeYesterday
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'mam') compactness: #short.
+	self assert: (sd formatRelative: '2000-01-23' asOf: '2000-01-25') equals: 'Dom nchi''j'
+!
+
+"15.3"
+test15_3DayAfterTomorrow
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'kek') compactness: #short.
+	self assert: (sd formatRelative: '2014-10-24' asOf: '2014-10-22') equals: 'a''in Vie'
+!
+
+"16.1"
+test16_1February30DoesnTExist
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatDate: '2025-02-30') isNil
+!
+
+"16.2"
+test16_2Month13
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatDate: '2025-13-01') isNil
+!
+
+"16.3"
+test16_3UnpaddedMonthAndDay
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatDate: '2025-6-1') isNil
+!
+
+"16.4"
+test16_4SurroundingWhitespace
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatDate: ' 2025-06-01') isNil
+!
+
+"16.5"
+test16_5AnISODatetimeOnlyTheDatePartIsUsed
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatDate: '2025-06-01T10:00:00') equals: 'June 1st'
+!
+
+"16.6"
+test16_6February29InANonLeapYear
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatDateWithYear: '2023-02-29') isNil
+!
+
+"16.7"
+test16_7InvalidAsOf
+	| sd |
+	sd := SayableDate withLocale: (SayableDateLocales get: 'en').
+	self assert: (sd formatRelative: '2025-03-16' asOf: '2025-04-31') isNil
 ! !

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/az.json
 
-_plural_az() {
+_sayableduration_plural_az() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_az() {
+_sayableduration_locale_az() {
     _unit_second='{n} saniyə'
     _unit_minute='{n} dəqiqə'
     _unit_hour='{n} saat'
@@ -52,5 +52,5 @@ _locale_az() {
     _compact_delimiter=''
     _compact_ago='{0} əvvəl'
     _compact_in_future='{0} sonra'
-    _plural_func=_plural_az
+    _plural_func=_sayableduration_plural_az
 }

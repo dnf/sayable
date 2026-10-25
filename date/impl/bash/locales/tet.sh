@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/tet.json
 
-_locale_tet() {
+_sayabledate_locale_tet() {
     _months=('Janeiru' 'Fevereiru' 'Marsu' 'Abríl' 'Maiu' 'Juñu' 'Jullu' 'Agostu' 'Setembru' 'Outubru' 'Novembru' 'Dezembru')
     _weekdays=('Domingu' 'Segunda' 'Tersa' 'Kuarta' 'Kinta' 'Sesta' 'Sábadu')
     _day_format='{n}'

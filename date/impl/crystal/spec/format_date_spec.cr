@@ -340,3 +340,118 @@ describe "Locale — Spanish" do
     formatter.format_relative("2025-03-17", "2025-03-15").should eq "pasado mañana"
   end
 end
+
+# ================================================================
+# Section 13: format_date_with_year
+# ================================================================
+describe "format_date_with_year" do
+  # 13.1
+  it "format_date_with_year en normal" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_date_with_year("2018-02-04").should eq "February 4th, 2018"
+  end
+
+  # 13.2
+  it "format_date_with_year en short" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :short).format_date_with_year("2025-03-15").should eq "Mar 15, 2025"
+  end
+
+  # 13.3
+  it "format_date_with_year en compact" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :compact).format_date_with_year("1997-01-21").should eq "1/21/97"
+  end
+
+  # 13.4
+  it "two-digit year keeps its leading zero" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("tg").not_nil!, :compact).format_date_with_year("2007-05-20").should eq "20/5/07"
+  end
+
+  # 13.5
+  it "format_date_with_year fi short" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("fi").not_nil!, :short).format_date_with_year("1996-06-21").should eq "21. kesäkuuta 1996"
+  end
+end
+
+# ================================================================
+# Section 14: Short month names (locales that keep the full genitive)
+# ================================================================
+describe "Short month names (locales that keep the full genitive)" do
+  # 14.1
+  it "format_date sk short" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("sk").not_nil!, :short).format_date("2031-02-15").should eq "15. februára"
+  end
+
+  # 14.2
+  it "format_date cs short" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("cs").not_nil!, :short).format_date("2025-12-10").should eq "10. prosince"
+  end
+
+  # 14.3
+  it "format_date uk short" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("uk").not_nil!, :short).format_date("2025-11-05").should eq "5 листопада"
+  end
+
+  # 14.4
+  it "format_relative fi short" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("fi").not_nil!, :short).format_relative("1998-08-08", "1998-08-15").should eq "8. elokuuta"
+  end
+end
+
+# ================================================================
+# Section 15: format_relative — short phrases
+# ================================================================
+describe "format_relative — short phrases" do
+  # 15.1
+  it "day after tomorrow" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("kw").not_nil!, :short).format_relative("2035-12-04", "2035-12-02").should eq "an Mth ma"
+  end
+
+  # 15.2
+  it "day before yesterday" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("mam").not_nil!, :short).format_relative("2000-01-23", "2000-01-25").should eq "Dom nchi'j"
+  end
+
+  # 15.3
+  it "day after tomorrow" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("kek").not_nil!, :short).format_relative("2014-10-24", "2014-10-22").should eq "a'in Vie"
+  end
+end
+
+# ================================================================
+# Section 16: Input validation
+# ================================================================
+describe "Input validation" do
+  # 16.1
+  it "February 30 doesn't exist" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_date("2025-02-30").should be_nil
+  end
+
+  # 16.2
+  it "Month 13" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_date("2025-13-01").should be_nil
+  end
+
+  # 16.3
+  it "Unpadded month and day" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_date("2025-6-1").should be_nil
+  end
+
+  # 16.4
+  it "Surrounding whitespace" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_date(" 2025-06-01").should be_nil
+  end
+
+  # 16.5
+  it "An ISO datetime: only the date part is used" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_date("2025-06-01T10:00:00").should eq "June 1st"
+  end
+
+  # 16.6
+  it "February 29 in a non-leap year" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_date_with_year("2023-02-29").should be_nil
+  end
+
+  # 16.7
+  it "Invalid asOf" do
+    SayableDate::Formatter.new(SayableDate::Locales.get("en").not_nil!, :normal).format_relative("2025-03-16", "2025-04-31").should be_nil
+  end
+end

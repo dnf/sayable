@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/bn.json
 
-_plural_bn() {
+_sayableage_plural_bn() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_bn() {
+_sayableage_locale_bn() {
     _unit_day_one='{n} দিন'
     _unit_day_other='{n} দিন'
     _unit_week_one='{n} সপ্তাহ'
@@ -44,5 +44,5 @@ _locale_bn() {
     _compact_unit_year='{n} বছর'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_bn
+    _plural_func=_sayableage_plural_bn
 }

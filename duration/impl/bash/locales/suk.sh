@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/suk.json
 
-_plural_suk() {
+_sayableduration_plural_suk() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_suk() {
+_sayableduration_locale_suk() {
     _unit_second_one='sekunde {n}'
     _unit_second_other='sekunde {n}'
     _unit_minute_one='dakika {n}'
@@ -62,5 +62,5 @@ _locale_suk() {
     _compact_delimiter=''
     _compact_ago='{0} zilizopita'
     _compact_in_future='kwa {0}'
-    _plural_func=_plural_suk
+    _plural_func=_sayableduration_plural_suk
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/br.json
 
-_plural_br() {
+_sayableage_plural_br() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -20,7 +20,7 @@ _plural_br() {
     echo "other"
 }
 
-_locale_br() {
+_sayableage_locale_br() {
     _unit_day_one='{n} devezh'
     _unit_day_two='{n} zevezh'
     _unit_day_few='{n} devezh'
@@ -60,5 +60,5 @@ _locale_br() {
     _compact_unit_year='{n}b'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_br
+    _plural_func=_sayableage_plural_br
 }

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tg.json
 
-_plural_tg() {
+_sayableduration_plural_tg() {
     echo "other"
 }
 
-_locale_tg() {
+_sayableduration_locale_tg() {
     _unit_second='{n} сония'
     _unit_minute='{n} дақиқа'
     _unit_hour='{n} соат'
@@ -46,5 +46,5 @@ _locale_tg() {
     _compact_delimiter=''
     _compact_ago='{0} пеш'
     _compact_in_future='баъди {0}'
-    _plural_func=_plural_tg
+    _plural_func=_sayableduration_plural_tg
 }

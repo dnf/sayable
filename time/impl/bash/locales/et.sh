@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/et.json
 
-_locale_et() {
+_sayabletime_locale_et() {
     _clock_hours=('kaksteist' 'üks' 'kaks' 'kolm' 'neli' 'viis' 'kuus' 'seitse' 'kaheksa' 'üheksa' 'kümme' 'üksteist')
     _clock_midnight='kesköö'
     _clock_noon='keskpäev'

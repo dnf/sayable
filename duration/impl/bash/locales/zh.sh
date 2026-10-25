@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/zh.json
 
-_plural_zh() {
+_sayableduration_plural_zh() {
     echo "other"
 }
 
-_locale_zh() {
+_sayableduration_locale_zh() {
     _unit_second='{n}秒'
     _unit_minute='{n}分钟'
     _unit_hour='{n}小时'
@@ -45,5 +45,5 @@ _locale_zh() {
     _compact_delimiter=''
     _compact_ago='{0}前'
     _compact_in_future='{0}后'
-    _plural_func=_plural_zh
+    _plural_func=_sayableduration_plural_zh
 }

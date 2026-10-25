@@ -43,11 +43,23 @@
  01 WS-FORMAT-RESULT         PIC X(256).
 
 *> Time parsing variables
- 01 WS-TIME-STR              PIC X(30).
+*> Lookahead past the input may read three characters beyond it,
+*> so the buffer has room after the longest input.
+ 01 WS-TIME-STR              PIC X(260).
+ 01 WS-TIME-LEN              PIC 9(4).
  01 WS-PARSED-HOUR           PIC 9(2).
  01 WS-PARSED-MINUTE         PIC 9(2).
+ 01 WS-PARSED-SECOND         PIC 9(2).
  01 WS-PARSE-OK              PIC 9.
- 01 WS-COLON-POS             PIC 9(4).
+ 01 WS-T-POS                 PIC 9(4).
+ 01 WS-CLOCK-START           PIC 9(4).
+ 01 WS-SCAN-POS              PIC 9(4).
+ 01 WS-HOUR-DIGITS           PIC 9.
+ 01 WS-ZONE-LEN              PIC S9(4).
+ 01 WS-DATE-YEAR             PIC 9(4).
+ 01 WS-DATE-MONTH            PIC 9(2).
+ 01 WS-DATE-DAY              PIC 9(2).
+ 01 WS-MONTH-DAY-COUNT       PIC 9(2).
 
 *> Formatter working variables
  01 WS-ROUNDED-MIN           PIC 9(2).
@@ -77,8 +89,7 @@
  01 WS-NUM-TO-STR-EDITED     PIC Z(7)9.
 
 *> Minute zero-padded
- 01 WS-MM-STR                PIC X(4).
- 01 WS-MM-EDITED             PIC Z9.
+ 01 WS-MM-DIGITS             PIC 99.
 
 *> Lookup variables
  01 WS-LOOKUP-CODE           PIC X(8).
@@ -86,4 +97,8 @@
 
 *> Format arguments
  01 WS-FMT-COMPACTNESS       PIC 9.
- 01 WS-FMT-TIME              PIC X(30).
+*> WS-FMT-TIME-LEN is the input's exact length, trailing blanks
+*> included, for callers that know it (the CLI); 0 means the length
+*> without them.
+ 01 WS-FMT-TIME              PIC X(256).
+ 01 WS-FMT-TIME-LEN          PIC 9(4) VALUE 0.

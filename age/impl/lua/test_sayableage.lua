@@ -1213,3 +1213,93 @@ describe("Locale lookup", function()
         assert.is_nil(get_locale("EN"))
     end)
 end)
+
+-- ================================================================
+-- Sections 31-33: weeks+days across month ends, half-year plurals, input validation
+-- ================================================================
+describe("Sections 31-33: weeks+days across month ends, half-year plurals, input validation", function()
+    -- 31.1
+    it("88 days across a 28-day February", function()
+        assert.are.equal("12 weeks, 4 days", sayableage.new(sayableage.get_locale("en")).format_age("2016-12-31", "2017-03-29"))
+    end)
+
+    -- 31.2
+    it("90 days across a year end into a leap year", function()
+        assert.are.equal("12 weeks, 6 days", sayableage.new(sayableage.get_locale("en")).format_age("1991-11-27", "1992-02-25"))
+    end)
+
+    -- 31.3
+    it("33 days across a year end", function()
+        assert.are.equal("4 weeks, 5 days", sayableage.new(sayableage.get_locale("en")).format_age("2020-11-30", "2021-01-02"))
+    end)
+
+    -- 31.4
+    it("Compact form of 31.1", function()
+        assert.are.equal("12w4d", sayableage.new(sayableage.get_locale("en"), "compact").format_age("2016-12-31", "2017-03-29"))
+    end)
+
+    -- 32.1
+    it("Polish 3 is 'few'", function()
+        assert.are.equal("3 i pół lata", sayableage.new(sayableage.get_locale("pl")).format_age("2021-06-15", "2025-01-15"))
+    end)
+
+    -- 32.2
+    it("Polish 5 is 'many'", function()
+        assert.are.equal("5 i pół lat", sayableage.new(sayableage.get_locale("pl"), "short").format_age("2020-06-15", "2025-12-15"))
+    end)
+
+    -- 32.3
+    it("Tachelhit 6 is 'few'", function()
+        assert.are.equal("6 iseggasen d uzgen", sayableage.new(sayableage.get_locale("shi")).format_age("2005-06-08", "2012-06-07"))
+    end)
+
+    -- 33.1
+    it("February 30 doesn't exist", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age("2025-02-30", "2032-06-25"))
+    end)
+
+    -- 33.2
+    it("Month 13", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age("2025-13-01", "2027-01-31"))
+    end)
+
+    -- 33.3
+    it("February 29 in a non-leap year", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age("2023-02-29", "2025-03-01"))
+    end)
+
+    -- 33.4
+    it("Day 00", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age("2025-06-00", "2027-02-25"))
+    end)
+
+    -- 33.5
+    it("Unpadded month and day", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age("2025-6-1", "2027-02-25"))
+    end)
+
+    -- 33.6
+    it("Surrounding whitespace", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age(" 2025-06-01", "2027-02-25"))
+    end)
+
+    -- 33.7
+    it("A datetime is not a date", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age("2025-06-15T10:00:00", "2027-02-25"))
+    end)
+
+    -- 33.8
+    it("Invalid asOf", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_age("2020-01-01", "2025-04-31"))
+    end)
+
+    -- 33.9
+    it("formatStage validates too", function()
+        assert.is_nil(sayableage.new(sayableage.get_locale("en")).format_stage("2025-02-30", "2027-09-05"))
+    end)
+
+    -- 33.10
+    it("February 29 in a leap year is valid", function()
+        assert.are.equal("2 years", sayableage.new(sayableage.get_locale("en")).format_age("2024-02-29", "2026-03-01"))
+    end)
+end)

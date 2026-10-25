@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/hmn.json "
 
-"Locale: hmn"
+"Locale: hmn"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 hmn

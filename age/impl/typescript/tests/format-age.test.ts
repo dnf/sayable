@@ -8,6 +8,8 @@ import { mk } from '../src/locales/mk';
 import { sw } from '../src/locales/sw';
 import { id } from '../src/locales/id';
 import { am } from '../src/locales/am';
+import { pl } from '../src/locales/pl';
+import { shi } from '../src/locales/shi';
 import { getLocale } from '../src/locales/index';
 
 // All tests use explicit (dob, asOf) pairs for determinism.
@@ -1289,5 +1291,105 @@ describe('SayableAge', () => {
     it('returns undefined for uppercase (case-sensitive)', () => {
       expect(getLocale('EN')).toBeUndefined();
     });
+  });
+});
+
+// ================================================================
+// Section 31: Weeks and days across month ends
+// ================================================================
+describe('weeks and days across month ends', () => {
+  // 31.1
+  it('88 days across a 28-day February', () => {
+    expect(formatAge('2016-12-31', '2017-03-29')).toBe('12 weeks, 4 days');
+  });
+
+  // 31.2
+  it('90 days across a year end into a leap year', () => {
+    expect(formatAge('1991-11-27', '1992-02-25')).toBe('12 weeks, 6 days');
+  });
+
+  // 31.3
+  it('33 days across a year end', () => {
+    expect(formatAge('2020-11-30', '2021-01-02')).toBe('4 weeks, 5 days');
+  });
+
+  // 31.4
+  it('compact form of 31.1', () => {
+    expect(new SayableAge(en, 'compact').formatAge('2016-12-31', '2017-03-29')).toBe('12w4d');
+  });
+});
+
+// ================================================================
+// Section 32: Half years take their plural form from whole years
+// ================================================================
+describe('half years take their plural form from whole years', () => {
+  // 32.1
+  it('Polish 3 is few', () => {
+    expect(new SayableAge(pl).formatAge('2021-06-15', '2025-01-15')).toBe('3 i pół lata');
+  });
+
+  // 32.2
+  it('Polish 5 is many (short)', () => {
+    expect(new SayableAge(pl, 'short').formatAge('2020-06-15', '2025-12-15')).toBe('5 i pół lat');
+  });
+
+  // 32.3
+  it('Tachelhit 6 is few', () => {
+    expect(new SayableAge(shi).formatAge('2005-06-08', '2012-06-07')).toBe('6 iseggasen d uzgen');
+  });
+});
+
+// ================================================================
+// Section 33: Input validation
+// ================================================================
+describe('input validation', () => {
+  // 33.1
+  it('rejects February 30', () => {
+    expect(formatAge('2025-02-30', '2032-06-25')).toBeNull();
+  });
+
+  // 33.2
+  it('rejects month 13', () => {
+    expect(formatAge('2025-13-01', '2027-01-31')).toBeNull();
+  });
+
+  // 33.3
+  it('rejects February 29 in a non-leap year', () => {
+    expect(formatAge('2023-02-29', '2025-03-01')).toBeNull();
+  });
+
+  // 33.4
+  it('rejects day 00', () => {
+    expect(formatAge('2025-06-00', '2027-02-25')).toBeNull();
+  });
+
+  // 33.5
+  it('rejects unpadded month and day', () => {
+    expect(formatAge('2025-6-1', '2027-02-25')).toBeNull();
+  });
+
+  // 33.6
+  it('rejects surrounding whitespace', () => {
+    expect(formatAge(' 2025-06-01', '2027-02-25')).toBeNull();
+  });
+
+  // 33.7
+  it('rejects a datetime', () => {
+    expect(formatAge('2025-06-15T10:00:00', '2027-02-25')).toBeNull();
+  });
+
+  // 33.8
+  it('rejects an invalid asOf', () => {
+    expect(formatAge('2020-01-01', '2025-04-31')).toBeNull();
+  });
+
+  // 33.9
+  it('formatStage validates too', () => {
+    expect(formatStage('2025-02-30', '2027-09-05')).toBeNull();
+  });
+
+  // 33.10
+  it('accepts February 29 in a leap year', () => {
+    expect(formatAge('2024-02-29', '2026-03-01')).toBe('2 years');
   });
 });

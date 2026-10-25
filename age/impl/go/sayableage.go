@@ -22,14 +22,17 @@ func parseAge(dateOfBirth string, asOf ...string) *ageComponents {
 		return nil
 	}
 
-	dobY, dobM, dobD := parseDateParts(dateOfBirth)
-	if dobY == 0 && dobM == 0 && dobD == 0 {
+	dobY, dobM, dobD, ok := parseDateParts(dateOfBirth)
+	if !ok {
 		return nil
 	}
 
 	var refY, refM, refD int
 	if len(asOf) > 0 && asOf[0] != "" {
-		refY, refM, refD = parseDateParts(asOf[0])
+		refY, refM, refD, ok = parseDateParts(asOf[0])
+		if !ok {
+			return nil
+		}
 	} else {
 		now := timeNow()
 		refY = now.Year()
@@ -46,7 +49,7 @@ func parseAge(dateOfBirth string, asOf ...string) *ageComponents {
 
 	// Calendar months: clamp birthday to last day of reference month so that
 	// e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
-	lastDay := time.Date(refY, time.Month(refM)+1, 0, 0, 0, 0, 0, time.UTC).Day()
+	lastDay := daysInMonth(refY, refM)
 	clampedBirthday := dobD
 	if clampedBirthday > lastDay {
 		clampedBirthday = lastDay
@@ -62,26 +65,36 @@ func parseAge(dateOfBirth string, asOf ...string) *ageComponents {
 	return &ageComponents{months: months, diffDays: diffDays}
 }
 
-// parseDateParts parses "YYYY-MM-DD" into integers. Returns (0,0,0) on failure.
-func parseDateParts(s string) (int, int, int) {
-	if len(s) < 10 || s[4] != '-' || s[7] != '-' {
-		return 0, 0, 0
+// parseDateParts parses exactly "YYYY-MM-DD" naming a real calendar day
+// (see docs/input-formats.md). ok is false for anything else.
+func parseDateParts(s string) (year, month, day int, ok bool) {
+	if len(s) != 10 || s[4] != '-' || s[7] != '-' {
+		return 0, 0, 0, false
 	}
-	y := atoi(s[0:4])
-	m := atoi(s[5:7])
-	d := atoi(s[8:10])
-	return y, m, d
+	y, yOK := atoi(s[0:4])
+	m, mOK := atoi(s[5:7])
+	d, dOK := atoi(s[8:10])
+	if !yOK || !mOK || !dOK || m < 1 || m > 12 || d < 1 || d > daysInMonth(y, m) {
+		return 0, 0, 0, false
+	}
+	return y, m, d, true
 }
 
-func atoi(s string) int {
+// atoi converts a run of ASCII digits; ok is false if any byte isn't a digit.
+func atoi(s string) (int, bool) {
 	n := 0
-	for _, c := range s {
-		if c < '0' || c > '9' {
-			return 0
+	for i := 0; i < len(s); i++ {
+		if s[i] < '0' || s[i] > '9' {
+			return 0, false
 		}
-		n = n*10 + int(c-'0')
+		n = n*10 + int(s[i]-'0')
 	}
-	return n
+	return n, true
+}
+
+// daysInMonth returns the days in a Gregorian month (leap years by the 4/100/400 rule).
+func daysInMonth(year, month int) int {
+	return time.Date(year, time.Month(month)+1, 0, 0, 0, 0, 0, time.UTC).Day()
 }
 
 // stageKey returns the developmental stage for the given calendar months.

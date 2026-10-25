@@ -65,6 +65,25 @@ end
     @test format_time(fi_short, "00:00") == "0.00"  # 8.2
 end
 
+# Section 9: Minutes in short and compact modes
+@testset "Minutes in short and compact modes" begin
+    @test format_time(SayableTimeFormatter(get_locale("en"), Short), "18:01") == "6:01 PM"  # 9.1
+    @test format_time(SayableTimeFormatter(get_locale("en"), Compact), "19:05") == "7:05p"  # 9.2
+end
+
+# Section 10: Input validation
+@testset "Input validation" begin
+    @test format_time(SayableTimeFormatter(get_locale("en")), "9:30") == "half past nine"  # 10.1
+    @test format_time(SayableTimeFormatter(get_locale("en")), "09:30") == "half past nine"  # 10.2
+    @test format_time(SayableTimeFormatter(get_locale("en")), " 9:30") === nothing  # 10.3
+    @test format_time(SayableTimeFormatter(get_locale("en")), "9:30 ") === nothing  # 10.4
+    @test format_time(SayableTimeFormatter(get_locale("en")), "9:5") === nothing  # 10.5
+    @test format_time(SayableTimeFormatter(get_locale("en")), "24:00") === nothing  # 10.6
+    @test format_time(SayableTimeFormatter(get_locale("en")), "14:15:30") == "a quarter past two"  # 10.7
+    @test format_time(SayableTimeFormatter(get_locale("en")), "2025-01-15T14:15:00Z") == "a quarter past two"  # 10.8
+    @test format_time(SayableTimeFormatter(get_locale("en")), "2025-02-30T14:15:00") === nothing  # 10.9
+end
+
 # Locale lookup
 @testset "Locale lookup" begin
     @test get_locale("en") !== nothing

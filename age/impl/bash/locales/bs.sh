@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/bs.json
 
-_plural_bs() {
+_sayableage_plural_bs() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_bs() {
     echo "other"
 }
 
-_locale_bs() {
+_sayableage_locale_bs() {
     _unit_day_one='{n} dan'
     _unit_day_few='{n} dana'
     _unit_day_many='{n} dana'
@@ -56,5 +56,5 @@ _locale_bs() {
     _compact_unit_year='{n} god.'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_bs
+    _plural_func=_sayableage_plural_bs
 }

@@ -4,7 +4,7 @@ Uses SUnit framework. Each test annotated with canonical IDs."
 TestCase subclass: #SayableDurationTest
 	instanceVariableNames: ''
 	classVariableNames: ''
-	package: 'SayableDuration-Tests'.
+	package: 'SayableDuration-Tests'!
 
 !SayableDurationTest methodsFor: 'tests-null'!
 "1.1"
@@ -330,4 +330,82 @@ testCompact1Min30Sec
 	| sd |
 	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en') compactness: #compact.
 	self assert: (sd formatDuration: 90) equals: '1m30s'
+! !
+
+!SayableDurationTest methodsFor: 'tests-input-formats-and-regressions'!
+"18.1"
+test18_1DaysAndHoursBothKept
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'men').
+	self assert: (sd formatSince: '2025-01-20T01:32:11' asOf: '2025-01-22T15:39:16') equals: 'lɔhɔnga 2, awa 14 taa gbɔyɔ'
+!
+
+"19.1"
+test19_1500JulianYears6000MonthsTheCeiling
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatDuration: 15778800000) equals: '500 years'
+!
+
+"19.2"
+test19_2Over6000Months
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatDuration: 15800000000) isNil
+!
+
+"19.3"
+test19_3WellBeyondTheCeilingAnd32BitRange
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatDuration: 99999999999) isNil
+!
+
+"19.4"
+test19_4525YearsAgo
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatSince: '1500-01-01T00:00:00' asOf: '2025-01-01T00:00:00') isNil
+!
+
+"19.5"
+test19_5575YearsFromNow
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatUntil: '2600-01-01T00:00:00' asOf: '2025-01-01T00:00:00') isNil
+!
+
+"20.1"
+test20_1SecondsAreOptional
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatDuration: '2025-01-15T10:00' end: '2025-01-15T11:30:00') equals: '1½ hours'
+!
+
+"20.2"
+test20_2MinutesAreRequired
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatDuration: '2025-01-15T10' end: '2025-01-15T11:30:00') isNil
+!
+
+"20.3"
+test20_3UnpaddedDate
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatDuration: '2025-1-5T10:00:00' end: '2025-01-15T11:30:00') isNil
+!
+
+"20.4"
+test20_4ImpossibleDate
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatDuration: '2025-02-30T10:00:00' end: '2025-03-15T11:30:00') isNil
+!
+
+"20.5"
+test20_5HourOutOfRange
+	| sd |
+	sd := SayableDuration withLocale: (SayableDurationLocales get: 'en').
+	self assert: (sd formatSince: '2025-01-15T10:00:00' asOf: '2025-01-15T25:00:00') isNil
 ! !

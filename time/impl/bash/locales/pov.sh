@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/pov.json
 
-_locale_pov() {
+_sayabletime_locale_pov() {
     _clock_hours=('dozi' 'un' 'dos' 'tres' 'kuatru' 'sinku' 'seis' 'seti' 'oitu' 'novi' 'des' 'onzi')
     _clock_midnight='meia noti'
     _clock_noon='meiu dia'

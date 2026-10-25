@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/th.json
 
-_plural_th() {
+_sayableduration_plural_th() {
     echo "other"
 }
 
-_locale_th() {
+_sayableduration_locale_th() {
     _unit_second='{n} วินาที'
     _unit_minute='{n} นาที'
     _unit_hour='{n} ชั่วโมง'
@@ -46,5 +46,5 @@ _locale_th() {
     _compact_delimiter=''
     _compact_ago='{0}ที่แล้ว'
     _compact_in_future='ใน{0}'
-    _plural_func=_plural_th
+    _plural_func=_sayableduration_plural_th
 }

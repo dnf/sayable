@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/wo.json
 
-_locale_wo() {
+_sayabletime_locale_wo() {
     _clock_hours=('fukki ñaar' 'benn' 'ñaar' 'ñett' 'ñeent' 'juróom' 'juróom-benn' 'juróom-ñaar' 'juróom-ñett' 'juróom-ñeent' 'fukk' 'fukki benn')
     _clock_midnight='bu guddi'
     _clock_noon='ci àttaya'

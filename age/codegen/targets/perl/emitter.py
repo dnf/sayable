@@ -129,6 +129,10 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("  return $_LOCALES{$code};")
     lines.append("}")
     lines.append("")
+    lines.append("sub codes {")
+    lines.append("  return sort keys %_LOCALES;")
+    lines.append("}")
+    lines.append("")
     lines.append("1;")
     lines.append("")
 

@@ -8,7 +8,7 @@
 " ║ Edit the generator or locale JSON instead.                   ║ "
 " ╚══════════════════════════════════════════════════════════════╝ "
 
-"Locale registry — maps code strings to locale objects."
+"Locale registry — maps code strings to locale objects."!
 
 !SayableDateLocales class methodsFor: 'registry'!
 buildRegistry

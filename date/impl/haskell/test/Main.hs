@@ -3,7 +3,7 @@ module Main (main) where
 import Data.Maybe (isNothing)
 import Test.Hspec
 
-import SayableDate.Formatter (formatDate, formatRelative)
+import SayableDate.Formatter (formatDate, formatDateWithYear, formatRelative)
 import SayableDate.Types
 import SayableDate.Locales (getLocale)
 
@@ -32,6 +32,10 @@ fmtRel = formatRelative en Normal
 
 fmtRelCompact :: Maybe String -> Maybe String -> Maybe String
 fmtRelCompact = formatRelative en Compact
+
+-- | Formats with the locale for a code (Nothing for an unknown code).
+withLocale :: String -> (DateLocale -> Maybe String) -> Maybe String
+withLocale code f = getLocale code >>= f
 
 main :: IO ()
 main = hspec $ do
@@ -231,3 +235,72 @@ main = hspec $ do
             fmap localeCode (getLocale "en") `shouldBe` Just "en"
         it "unknown code" $
             getLocale "xx" `shouldSatisfy` isNothing
+
+    -- Section 13: format_date_with_year
+    describe "13. format_date_with_year" $ do
+        -- 13.1
+        it "13.1 format_date_with_year en normal" $
+            withLocale "en" (\l -> formatDateWithYear l Normal (Just "2018-02-04")) `shouldBe` Just "February 4th, 2018"
+        -- 13.2
+        it "13.2 format_date_with_year en short" $
+            withLocale "en" (\l -> formatDateWithYear l Short (Just "2025-03-15")) `shouldBe` Just "Mar 15, 2025"
+        -- 13.3
+        it "13.3 format_date_with_year en compact" $
+            withLocale "en" (\l -> formatDateWithYear l Compact (Just "1997-01-21")) `shouldBe` Just "1/21/97"
+        -- 13.4
+        it "13.4 two-digit year keeps its leading zero" $
+            withLocale "tg" (\l -> formatDateWithYear l Compact (Just "2007-05-20")) `shouldBe` Just "20/5/07"
+        -- 13.5
+        it "13.5 format_date_with_year fi short" $
+            withLocale "fi" (\l -> formatDateWithYear l Short (Just "1996-06-21")) `shouldBe` Just "21. kes\228kuuta 1996"
+
+    -- Section 14: Short month names (locales that keep the full genitive)
+    describe "14. Short month names (locales that keep the full genitive)" $ do
+        -- 14.1
+        it "14.1 format_date sk short" $
+            withLocale "sk" (\l -> formatDate l Short (Just "2031-02-15")) `shouldBe` Just "15. febru\225ra"
+        -- 14.2
+        it "14.2 format_date cs short" $
+            withLocale "cs" (\l -> formatDate l Short (Just "2025-12-10")) `shouldBe` Just "10. prosince"
+        -- 14.3
+        it "14.3 format_date uk short" $
+            withLocale "uk" (\l -> formatDate l Short (Just "2025-11-05")) `shouldBe` Just "5 \1083\1080\1089\1090\1086\1087\1072\1076\1072"
+        -- 14.4
+        it "14.4 format_relative fi short" $
+            withLocale "fi" (\l -> formatRelative l Short (Just "1998-08-08") (Just "1998-08-15")) `shouldBe` Just "8. elokuuta"
+
+    -- Section 15: format_relative — short phrases
+    describe "15. format_relative \8212 short phrases" $ do
+        -- 15.1
+        it "15.1 day after tomorrow" $
+            withLocale "kw" (\l -> formatRelative l Short (Just "2035-12-04") (Just "2035-12-02")) `shouldBe` Just "an Mth ma"
+        -- 15.2
+        it "15.2 day before yesterday" $
+            withLocale "mam" (\l -> formatRelative l Short (Just "2000-01-23") (Just "2000-01-25")) `shouldBe` Just "Dom nchi'j"
+        -- 15.3
+        it "15.3 day after tomorrow" $
+            withLocale "kek" (\l -> formatRelative l Short (Just "2014-10-24") (Just "2014-10-22")) `shouldBe` Just "a'in Vie"
+
+    -- Section 16: Input validation
+    describe "16. Input validation" $ do
+        -- 16.1
+        it "16.1 February 30 doesn't exist" $
+            withLocale "en" (\l -> formatDate l Normal (Just "2025-02-30")) `shouldBe` Nothing
+        -- 16.2
+        it "16.2 Month 13" $
+            withLocale "en" (\l -> formatDate l Normal (Just "2025-13-01")) `shouldBe` Nothing
+        -- 16.3
+        it "16.3 Unpadded month and day" $
+            withLocale "en" (\l -> formatDate l Normal (Just "2025-6-1")) `shouldBe` Nothing
+        -- 16.4
+        it "16.4 Surrounding whitespace" $
+            withLocale "en" (\l -> formatDate l Normal (Just " 2025-06-01")) `shouldBe` Nothing
+        -- 16.5
+        it "16.5 An ISO datetime: only the date part is used" $
+            withLocale "en" (\l -> formatDate l Normal (Just "2025-06-01T10:00:00")) `shouldBe` Just "June 1st"
+        -- 16.6
+        it "16.6 February 29 in a non-leap year" $
+            withLocale "en" (\l -> formatDateWithYear l Normal (Just "2023-02-29")) `shouldBe` Nothing
+        -- 16.7
+        it "16.7 Invalid asOf" $
+            withLocale "en" (\l -> formatRelative l Normal (Just "2025-03-16") (Just "2025-04-31")) `shouldBe` Nothing

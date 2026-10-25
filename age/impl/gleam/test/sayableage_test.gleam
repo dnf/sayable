@@ -8,6 +8,8 @@ import sayableage/locales/es as locale_es
 import sayableage/locales/he as locale_he
 import sayableage/locales/id as locale_id
 import sayableage/locales/mk as locale_mk
+import sayableage/locales/pl as locale_pl
+import sayableage/locales/shi as locale_shi
 import sayableage/locales/sw as locale_sw
 import sayableage/types.{Compact, Female, Male, Normal, Short}
 
@@ -1296,4 +1298,98 @@ pub fn locale_lookup_empty_test() {
 // 30.5
 pub fn locale_lookup_uppercase_fails_test() {
   sayableage.get_locale("EN") |> should.equal(Error(Nil))
+}
+
+// 31. Weeks and days across month ends
+
+// 31.1
+pub fn weeks_days_across_short_february_test() {
+  age("2016-12-31", "2017-03-29") |> should.equal(Ok("12 weeks, 4 days"))
+}
+
+// 31.2
+pub fn weeks_days_across_year_end_into_leap_year_test() {
+  age("1991-11-27", "1992-02-25") |> should.equal(Ok("12 weeks, 6 days"))
+}
+
+// 31.3
+pub fn weeks_days_across_year_end_test() {
+  age("2020-11-30", "2021-01-02") |> should.equal(Ok("4 weeks, 5 days"))
+}
+
+// 31.4
+pub fn weeks_days_across_short_february_compact_test() {
+  age_compact("2016-12-31", "2017-03-29") |> should.equal(Ok("12w4d"))
+}
+
+// 32. Half years take their plural form from whole years
+
+// 32.1
+pub fn polish_half_year_few_test() {
+  age_locale(locale_pl.locale(), "2021-06-15", "2025-01-15")
+  |> should.equal(Ok("3 i pół lata"))
+}
+
+// 32.2
+pub fn polish_half_year_many_short_test() {
+  sayableage.format_age(locale_pl.locale(), Short, "2020-06-15", "2025-12-15")
+  |> should.equal(Ok("5 i pół lat"))
+}
+
+// 32.3
+pub fn tachelhit_half_year_few_test() {
+  age_locale(locale_shi.locale(), "2005-06-08", "2012-06-07")
+  |> should.equal(Ok("6 iseggasen d uzgen"))
+}
+
+// 33. Input validation
+
+// 33.1
+pub fn invalid_february_30_test() {
+  age("2025-02-30", "2032-06-25") |> should.equal(Error(Nil))
+}
+
+// 33.2
+pub fn invalid_month_13_test() {
+  age("2025-13-01", "2027-01-31") |> should.equal(Error(Nil))
+}
+
+// 33.3
+pub fn invalid_february_29_non_leap_test() {
+  age("2023-02-29", "2025-03-01") |> should.equal(Error(Nil))
+}
+
+// 33.4
+pub fn invalid_day_00_test() {
+  age("2025-06-00", "2027-02-25") |> should.equal(Error(Nil))
+}
+
+// 33.5
+pub fn invalid_unpadded_test() {
+  age("2025-6-1", "2027-02-25") |> should.equal(Error(Nil))
+}
+
+// 33.6
+pub fn invalid_surrounding_whitespace_test() {
+  age(" 2025-06-01", "2027-02-25") |> should.equal(Error(Nil))
+}
+
+// 33.7
+pub fn invalid_datetime_test() {
+  age("2025-06-15T10:00:00", "2027-02-25") |> should.equal(Error(Nil))
+}
+
+// 33.8
+pub fn invalid_as_of_test() {
+  age("2020-01-01", "2025-04-31") |> should.equal(Error(Nil))
+}
+
+// 33.9
+pub fn invalid_stage_test() {
+  stage("2025-02-30", "2027-09-05") |> should.equal(Error(Nil))
+}
+
+// 33.10
+pub fn valid_february_29_leap_year_test() {
+  age("2024-02-29", "2026-03-01") |> should.equal(Ok("2 years"))
 }

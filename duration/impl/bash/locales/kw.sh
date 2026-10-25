@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kw.json
 
-_plural_kw() {
+_sayableduration_plural_kw() {
     local n=$1
     if [ "${n}" -eq 0 ]; then echo "zero"; return; fi
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
@@ -20,7 +20,7 @@ _plural_kw() {
     echo "other"
 }
 
-_locale_kw() {
+_sayableduration_locale_kw() {
     _unit_second_zero='{n} sekond'
     _unit_second_one='{n} sekond'
     _unit_second_two='{n} sekond'
@@ -88,5 +88,5 @@ _locale_kw() {
     _compact_delimiter=''
     _compact_ago='{0} a-dhia'
     _compact_in_future='a-ji {0}'
-    _plural_func=_plural_kw
+    _plural_func=_sayableduration_plural_kw
 }

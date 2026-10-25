@@ -9,6 +9,7 @@ import { de } from '../src/locales/de.js';
 import { en } from '../src/locales/en.js';
 import { fr } from '../src/locales/fr.js';
 import { ja } from '../src/locales/ja.js';
+import { men } from '../src/locales/men.js';
 
 // ── Section 1: Null / edge cases ──────────────────────────────────────
 
@@ -222,4 +223,44 @@ describe('Compact compactness — duration', () => {
   it('1 hour', () => expect(sd.formatDuration(3600)).toBe('1h'));
   // 17.2
   it('1m30s', () => expect(sd.formatDuration(90)).toBe('1m30s'));
+});
+
+// ── Section 18: Short compactness — relative time ─────────────────────
+
+describe('Short compactness — relative time', () => {
+  // 18.1
+  it('days and hours both kept', () =>
+    expect(new SayableDuration(men, 'short').formatSince('2025-01-20T01:32:11', '2025-01-22T15:39:16'))
+      .toBe('lɔhɔnga 2, awa 14 taa gbɔyɔ'));
+});
+
+// ── Section 19: Range (500-year ceiling) ──────────────────────────────
+
+describe('Range (500-year ceiling)', () => {
+  // 19.1
+  it('500 Julian years is the ceiling', () => expect(formatDuration(15778800000)).toBe('500 years'));
+  // 19.2
+  it('over 6000 months', () => expect(formatDuration(15800000000)).toBeNull());
+  // 19.3
+  it('well beyond the ceiling', () => expect(formatDuration(99999999999)).toBeNull());
+  // 19.4
+  it('525 years ago', () => expect(formatSince('1500-01-01T00:00:00', '2025-01-01T00:00:00')).toBeNull());
+  // 19.5
+  it('575 years from now', () => expect(formatUntil('2600-01-01T00:00:00', '2025-01-01T00:00:00')).toBeNull());
+});
+
+// ── Section 20: Timestamp validation ──────────────────────────────────
+
+describe('Timestamp validation', () => {
+  // 20.1
+  it('seconds are optional', () =>
+    expect(formatDuration('2025-01-15T10:00', '2025-01-15T11:30:00')).toBe('1½ hours'));
+  // 20.2
+  it('minutes are required', () => expect(formatDuration('2025-01-15T10', '2025-01-15T11:30:00')).toBeNull());
+  // 20.3
+  it('unpadded date', () => expect(formatDuration('2025-1-5T10:00:00', '2025-01-15T11:30:00')).toBeNull());
+  // 20.4
+  it('impossible date', () => expect(formatDuration('2025-02-30T10:00:00', '2025-03-15T11:30:00')).toBeNull());
+  // 20.5
+  it('hour out of range', () => expect(formatSince('2025-01-15T10:00:00', '2025-01-15T25:00:00')).toBeNull());
 });

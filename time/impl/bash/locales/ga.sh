@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ga.json
 
-_locale_ga() {
+_sayabletime_locale_ga() {
     _clock_hours=('dó dhéag' 'haon' 'dó' 'trí' 'ceathair' 'cúig' 'sé' 'seacht' 'hocht' 'naoi' 'deich' 'haon déag')
     _clock_midnight='meán oíche'
     _clock_noon='meán lae'

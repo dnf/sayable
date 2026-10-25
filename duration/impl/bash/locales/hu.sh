@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/hu.json
 
-_plural_hu() {
+_sayableduration_plural_hu() {
     echo "other"
 }
 
-_locale_hu() {
+_sayableduration_locale_hu() {
     _unit_second='{n} másodperc'
     _unit_minute='{n} perc'
     _unit_hour='{n} óra'
@@ -46,5 +46,5 @@ _locale_hu() {
     _compact_delimiter=''
     _compact_ago='{0} ezelőtt'
     _compact_in_future='{0} múlva'
-    _plural_func=_plural_hu
+    _plural_func=_sayableduration_plural_hu
 }

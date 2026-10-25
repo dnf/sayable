@@ -361,3 +361,42 @@ func TestVersion(t *testing.T) {
 		t.Errorf("expected version %q, got %q", "0.5.0", sd.Version)
 	}
 }
+
+// ── Section 13: format_date_with_year ────────────────────────────────────
+
+func TestSection13FormatDateWithYear(t *testing.T) {
+	assertEqual(t, sd.NewSayableDate(locales.EN).FormatDateWithYear("2018-02-04"), "February 4th, 2018")           // 13.1
+	assertEqual(t, sd.NewSayableDate(locales.EN, sd.Short).FormatDateWithYear("2025-03-15"), "Mar 15, 2025")       // 13.2
+	assertEqual(t, sd.NewSayableDate(locales.EN, sd.Compact).FormatDateWithYear("1997-01-21"), "1/21/97")          // 13.3
+	assertEqual(t, sd.NewSayableDate(locales.TG, sd.Compact).FormatDateWithYear("2007-05-20"), "20/5/07")          // 13.4
+	assertEqual(t, sd.NewSayableDate(locales.FI, sd.Short).FormatDateWithYear("1996-06-21"), "21. kesäkuuta 1996") // 13.5
+}
+
+// ── Section 14: Short month names ────────────────────────────────────
+
+func TestSection14ShortMonthNames(t *testing.T) {
+	assertEqual(t, sd.NewSayableDate(locales.SK, sd.Short).FormatDate("2031-02-15"), "15. februára")                  // 14.1
+	assertEqual(t, sd.NewSayableDate(locales.CS, sd.Short).FormatDate("2025-12-10"), "10. prosince")                  // 14.2
+	assertEqual(t, sd.NewSayableDate(locales.UK, sd.Short).FormatDate("2025-11-05"), "5 листопада")                   // 14.3
+	assertEqual(t, sd.NewSayableDate(locales.FI, sd.Short).FormatRelative("1998-08-08", "1998-08-15"), "8. elokuuta") // 14.4
+}
+
+// ── Section 15: format_relative — short phrases ────────────────────────────────────
+
+func TestSection15FormatRelativeShortPhrases(t *testing.T) {
+	assertEqual(t, sd.NewSayableDate(locales.KW, sd.Short).FormatRelative("2035-12-04", "2035-12-02"), "an Mth ma")   // 15.1
+	assertEqual(t, sd.NewSayableDate(locales.MAM, sd.Short).FormatRelative("2000-01-23", "2000-01-25"), "Dom nchi'j") // 15.2
+	assertEqual(t, sd.NewSayableDate(locales.KEK, sd.Short).FormatRelative("2014-10-24", "2014-10-22"), "a'in Vie")   // 15.3
+}
+
+// ── Section 16: Input validation ────────────────────────────────────
+
+func TestSection16InputValidation(t *testing.T) {
+	assertNil(t, sd.NewSayableDate(locales.EN).FormatDate("2025-02-30"))                        // 16.1
+	assertNil(t, sd.NewSayableDate(locales.EN).FormatDate("2025-13-01"))                        // 16.2
+	assertNil(t, sd.NewSayableDate(locales.EN).FormatDate("2025-6-1"))                          // 16.3
+	assertNil(t, sd.NewSayableDate(locales.EN).FormatDate(" 2025-06-01"))                       // 16.4
+	assertEqual(t, sd.NewSayableDate(locales.EN).FormatDate("2025-06-01T10:00:00"), "June 1st") // 16.5
+	assertNil(t, sd.NewSayableDate(locales.EN).FormatDateWithYear("2023-02-29"))                // 16.6
+	assertNil(t, sd.NewSayableDate(locales.EN).FormatRelative("2025-03-16", "2025-04-31"))      // 16.7
+}

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ln.json
 
-_locale_ln() {
+_sayabletime_locale_ln() {
     _clock_hours=('zómi na míbalé' 'mɔ̌kɔ́' 'míbalé' 'mísáto' 'mínéi' 'mítáno' 'motóba' 'nsambo' 'mwambe' 'libwá' 'zómi' 'zómi na mɔ̌kɔ́')
     _clock_midnight='mpɔ́kwa'
     _clock_noon='ntɔ́ngɔ́'

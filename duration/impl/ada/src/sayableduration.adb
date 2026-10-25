@@ -89,207 +89,105 @@ package body Sayableduration is
    end Days_Since_Epoch;
 
    type ISO_Result is record
-      Epoch_Seconds : Integer := 0;
+      Epoch_Seconds : Long_Long_Integer := 0;
       OK            : Boolean := False;
    end record;
 
-   function Parse_ISO (S : String) return ISO_Result is
-      R     : ISO_Result;
-      Pos_T : Natural;
+   function Digits_Value (S : String) return Integer is
+      V : Integer := 0;
    begin
-      if S'Length = 0 then
+      for C of S loop
+         V := V * 10 + Character'Pos (C) - Character'Pos ('0');
+      end loop;
+      return V;
+   end Digits_Value;
+
+   function All_Digits (S : String) return Boolean is
+   begin
+      for C of S loop
+         if not Is_Digit (C) then
+            return False;
+         end if;
+      end loop;
+      return True;
+   end All_Digits;
+
+   --  Z or +HH:MM / -HH:MM (validated, never applied).
+   function Is_Zone_Suffix (S : String) return Boolean is
+      F : constant Integer := S'First;
+   begin
+      return S = "Z"
+        or else (S'Length = 6
+                 and then (S (F) = '+' or else S (F) = '-')
+                 and then All_Digits (S (F + 1 .. F + 2))
+                 and then S (F + 3) = ':'
+                 and then All_Digits (S (F + 4 .. F + 5)));
+   end Is_Zone_Suffix;
+
+   --  YYYY-MM-DDTHH:MM (one- or two-digit hour), then optional :SS with
+   --  optional .fraction, then an optional zone suffix that is ignored.
+   function Parse_ISO (S : String) return ISO_Result is
+      R      : ISO_Result;
+      F      : constant Integer := S'First;
+      Pos    : Integer := F + 11;
+      Second : Integer := 0;
+   begin
+      if S'Length < 15 or else S (F + 4) /= '-' or else S (F + 7) /= '-'
+        or else S (F + 10) /= 'T'
+        or else not All_Digits (S (F .. F + 3))
+        or else not All_Digits (S (F + 5 .. F + 6))
+        or else not All_Digits (S (F + 8 .. F + 9))
+      then
          return R;
       end if;
 
-      Pos_T := Ada.Strings.Fixed.Index (S, "T");
-      if Pos_T = 0 then
+      while Pos <= S'Last and then Pos - (F + 11) < 2
+        and then Is_Digit (S (Pos))
+      loop
+         Pos := Pos + 1;
+      end loop;
+      if Pos = F + 11 or else S'Last < Pos + 2 or else S (Pos) /= ':'
+        or else not All_Digits (S (Pos + 1 .. Pos + 2))
+      then
          return R;
       end if;
 
-      --  Parse date part
       declare
-         Date_Str : constant String :=
-           S (S'First .. Pos_T - 1);
-         Year     : Integer := 0;
-         Month    : Integer := 0;
-         Day      : Integer := 0;
+         Year   : constant Integer := Digits_Value (S (F .. F + 3));
+         Month  : constant Integer := Digits_Value (S (F + 5 .. F + 6));
+         Day    : constant Integer := Digits_Value (S (F + 8 .. F + 9));
+         Hour   : constant Integer := Digits_Value (S (F + 11 .. Pos - 1));
+         Minute : constant Integer := Digits_Value (S (Pos + 1 .. Pos + 2));
       begin
-         if Date_Str'Length < 10 then
-            return R;
+         Pos := Pos + 3;
+         if Pos + 2 <= S'Last and then S (Pos) = ':'
+           and then All_Digits (S (Pos + 1 .. Pos + 2))
+         then
+            Second := Digits_Value (S (Pos + 1 .. Pos + 2));
+            Pos := Pos + 3;
+            if Pos + 1 <= S'Last and then S (Pos) = '.'
+              and then Is_Digit (S (Pos + 1))
+            then
+               Pos := Pos + 1;
+               while Pos <= S'Last and then Is_Digit (S (Pos)) loop
+                  Pos := Pos + 1;
+               end loop;
+            end if;
          end if;
 
-         if Date_Str (Date_Str'First + 4) /= '-'
-           or else Date_Str (Date_Str'First + 7) /= '-'
+         if (Pos <= S'Last and then not Is_Zone_Suffix (S (Pos .. S'Last)))
+           or else Month not in 1 .. 12
+           or else Day not in 1 .. Days_In_Month (Year, Month)
+           or else Hour > 23 or else Minute > 59 or else Second > 59
          then
             return R;
          end if;
 
-         for I in 0 .. 3 loop
-            if not Is_Digit (Date_Str (Date_Str'First + I))
-            then
-               return R;
-            end if;
-            Year := Year * 10
-              + Character'Pos
-                  (Date_Str (Date_Str'First + I))
-              - Character'Pos ('0');
-         end loop;
-
-         for I in 5 .. 6 loop
-            if not Is_Digit (Date_Str (Date_Str'First + I))
-            then
-               return R;
-            end if;
-            Month := Month * 10
-              + Character'Pos
-                  (Date_Str (Date_Str'First + I))
-              - Character'Pos ('0');
-         end loop;
-
-         for I in 8 .. 9 loop
-            if not Is_Digit (Date_Str (Date_Str'First + I))
-            then
-               return R;
-            end if;
-            Day := Day * 10
-              + Character'Pos
-                  (Date_Str (Date_Str'First + I))
-              - Character'Pos ('0');
-         end loop;
-
-         --  Parse time part
-         declare
-            Time_Raw : constant String :=
-              S (Pos_T + 1 .. S'Last);
-            Time_Str : Unbounded_String :=
-              To_Unbounded_String (Time_Raw);
-            Pos_P    : Natural;
-            Pos_Z    : Natural;
-            Hour     : Integer := 0;
-            Minute   : Integer := 0;
-            Second   : Integer := 0;
-         begin
-            --  Strip timezone
-            declare
-               TS : constant String := To_String (Time_Str);
-            begin
-               Pos_P := Ada.Strings.Fixed.Index (TS, "+");
-               if Pos_P > 0 then
-                  Time_Str := To_Unbounded_String
-                    (TS (TS'First .. Pos_P - 1));
-               end if;
-            end;
-
-            declare
-               TS : constant String := To_String (Time_Str);
-            begin
-               Pos_Z := Ada.Strings.Fixed.Index (TS, "Z");
-               if Pos_Z > 0 then
-                  Time_Str := To_Unbounded_String
-                    (TS (TS'First .. Pos_Z - 1));
-               end if;
-            end;
-
-            --  Split by colons
-            declare
-               TS     : constant String :=
-                 To_String (Time_Str);
-               Colon1 : Natural;
-               Colon2 : Natural;
-            begin
-               Colon1 := Ada.Strings.Fixed.Index (TS, ":");
-               if Colon1 = 0 then
-                  return R;
-               end if;
-
-               --  Hour
-               declare
-                  H_Str : constant String :=
-                    TS (TS'First .. Colon1 - 1);
-               begin
-                  for I in H_Str'Range loop
-                     if not Is_Digit (H_Str (I)) then
-                        return R;
-                     end if;
-                     Hour := Hour * 10
-                       + Character'Pos (H_Str (I))
-                       - Character'Pos ('0');
-                  end loop;
-               end;
-
-               --  Minute and optional second
-               declare
-                  Rest : constant String :=
-                    TS (Colon1 + 1 .. TS'Last);
-               begin
-                  Colon2 := Ada.Strings.Fixed.Index
-                    (Rest, ":");
-                  if Colon2 > 0 then
-                     --  Has seconds
-                     declare
-                        M_Str : constant String :=
-                          Rest (Rest'First .. Colon2 - 1);
-                        S_Raw : constant String :=
-                          Rest (Colon2 + 1 .. Rest'Last);
-                        S_Str : Unbounded_String;
-                        Dot   : Natural;
-                     begin
-                        for I in M_Str'Range loop
-                           if not Is_Digit (M_Str (I)) then
-                              return R;
-                           end if;
-                           Minute := Minute * 10
-                             + Character'Pos (M_Str (I))
-                             - Character'Pos ('0');
-                        end loop;
-
-                        --  Strip fractional seconds
-                        Dot := Ada.Strings.Fixed.Index
-                          (S_Raw, ".");
-                        if Dot > 0 then
-                           S_Str := To_Unbounded_String
-                             (S_Raw
-                                (S_Raw'First .. Dot - 1));
-                        else
-                           S_Str := To_Unbounded_String
-                             (S_Raw);
-                        end if;
-
-                        declare
-                           SS : constant String :=
-                             To_String (S_Str);
-                        begin
-                           for I in SS'Range loop
-                              if not Is_Digit (SS (I)) then
-                                 return R;
-                              end if;
-                              Second := Second * 10
-                                + Character'Pos (SS (I))
-                                - Character'Pos ('0');
-                           end loop;
-                        end;
-                     end;
-                  else
-                     --  No seconds
-                     for I in Rest'Range loop
-                        if not Is_Digit (Rest (I)) then
-                           return R;
-                        end if;
-                        Minute := Minute * 10
-                          + Character'Pos (Rest (I))
-                          - Character'Pos ('0');
-                     end loop;
-                  end if;
-               end;
-            end;
-
-            R.Epoch_Seconds :=
-              Days_Since_Epoch (Year, Month, Day) * 86400
-              + Hour * 3600 + Minute * 60 + Second;
-            R.OK := True;
-         end;
+         R.Epoch_Seconds :=
+           Long_Long_Integer (Days_Since_Epoch (Year, Month, Day)) * 86400
+           + Long_Long_Integer (Hour * 3600 + Minute * 60 + Second);
+         R.OK := True;
       end;
-
       return R;
    end Parse_ISO;
 
@@ -470,10 +368,12 @@ package body Sayableduration is
    end Build_Effective;
 
    function Format_Duration_Secs
-     (Loc   : Duration_Locale;
-      Eff   : Effective;
-      Total : Integer) return String
+     (Loc     : Duration_Locale;
+      Eff     : Effective;
+      Total_L : Long_Long_Integer) return String
    is
+      Approx_Months : constant Long_Long_Integer :=
+        (Total_L / 86400 * 100 + 1522) / 3044;
       Total_Minutes     : Integer;
       Remainder_Seconds : Integer;
       Total_Hours       : Integer;
@@ -487,18 +387,22 @@ package body Sayableduration is
       Rem_Months        : Integer;
       Part1             : Unbounded_String;
    begin
+      if Approx_Months > Max_Duration_Months then
+         return "";
+      end if;
+
       --  0 seconds
-      if Total = 0 then
+      if Total_L = 0 then
          return To_String (Eff.Just_Now);
       end if;
 
       --  1-59 seconds
-      if Total < 60 then
-         return Resolve_Unit (Total, Eff.Second, Loc, "");
+      if Total_L < 60 then
+         return Resolve_Unit (Integer (Total_L), Eff.Second, Loc, "");
       end if;
 
-      Total_Minutes := Total / 60;
-      Remainder_Seconds := Total mod 60;
+      Total_Minutes := Integer (Total_L / 60);
+      Remainder_Seconds := Integer (Total_L mod 60);
 
       --  1-4 minutes: minutes + seconds
       if Total_Minutes < 5 then
@@ -520,8 +424,8 @@ package body Sayableduration is
            (Total_Minutes, Eff.Minute, Loc, "");
       end if;
 
-      Total_Hours := Total / 3600;
-      Remainder_Minutes := (Total mod 3600) / 60;
+      Total_Hours := Integer (Total_L / 3600);
+      Remainder_Minutes := Integer ((Total_L mod 3600) / 60);
 
       --  1-5 hours: hours + minutes (with half marker)
       if Total_Hours <= 5 then
@@ -548,8 +452,8 @@ package body Sayableduration is
            (Total_Hours, Eff.Hour, Loc, "");
       end if;
 
-      Total_Days := Total / 86400;
-      Remainder_Hours := (Total mod 86400) / 3600;
+      Total_Days := Integer (Total_L / 86400);
+      Remainder_Hours := Integer ((Total_L mod 86400) / 3600);
 
       --  1-2 days: days + hours (with half marker)
       if Total_Days <= 2 then
@@ -594,8 +498,7 @@ package body Sayableduration is
 
       --  Approximate months (30.44 days average)
       --  Use integer rounding: (total_days * 100 + 1522) / 3044
-      Total_Months :=
-        (Total_Days * 100 + 1522) / 3044;
+      Total_Months := Integer (Approx_Months);
 
       --  1-11 months
       if Total_Months < 12 then
@@ -622,7 +525,7 @@ package body Sayableduration is
    function Format_Duration
      (Loc     : Duration_Locale;
       Comp    : Compactness;
-      Seconds : Integer) return String
+      Seconds : Long_Long_Integer) return String
    is
       Eff : Effective;
    begin
@@ -634,6 +537,26 @@ package body Sayableduration is
       return Format_Duration_Secs (Loc, Eff, Seconds);
    end Format_Duration;
 
+   function Format_Duration
+     (Loc    : Duration_Locale;
+      Comp   : Compactness;
+      Start  : String;
+      Finish : String) return String
+   is
+      S : ISO_Result;
+      E : ISO_Result;
+   begin
+      S := Parse_ISO (Start);
+      E := Parse_ISO (Finish);
+      if not S.OK or else not E.OK then
+         return "";
+      end if;
+
+      return Format_Duration_Secs
+        (Loc, Build_Effective (Loc, Comp),
+         abs (E.Epoch_Seconds - S.Epoch_Seconds));
+   end Format_Duration;
+
    function Format_Since
      (Loc   : Duration_Locale;
       Comp  : Compactness;
@@ -642,7 +565,7 @@ package body Sayableduration is
    is
       S    : ISO_Result;
       A    : ISO_Result;
-      Diff : Integer;
+      Diff : Long_Long_Integer;
       Eff  : Effective;
       Dur  : Unbounded_String;
    begin
@@ -669,6 +592,9 @@ package body Sayableduration is
 
       Dur := To_Unbounded_String
         (Format_Duration_Secs (Loc, Eff, Diff));
+      if Length (Dur) = 0 then
+         return "";
+      end if;
       return Replace_First
         (To_String (Eff.Ago), "{0}", To_String (Dur));
    end Format_Since;
@@ -681,7 +607,7 @@ package body Sayableduration is
    is
       T    : ISO_Result;
       A    : ISO_Result;
-      Diff : Integer;
+      Diff : Long_Long_Integer;
       Eff  : Effective;
       Dur  : Unbounded_String;
    begin
@@ -708,6 +634,9 @@ package body Sayableduration is
 
       Dur := To_Unbounded_String
         (Format_Duration_Secs (Loc, Eff, Diff));
+      if Length (Dur) = 0 then
+         return "";
+      end if;
       return Replace_First
         (To_String (Eff.In_Future), "{0}", To_String (Dur));
    end Format_Until;

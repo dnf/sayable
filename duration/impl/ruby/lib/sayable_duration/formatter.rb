@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 module SayableDuration
+  MAX_DURATION_MONTHS = 6000 # 500 years, the same ceiling as sayable-age
+
   class Formatter
+    # YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+    TIMESTAMP = /\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})
+                 (?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/x
+
     def initialize(locale, compactness: :normal)
       @locale = locale
 
@@ -71,7 +77,7 @@ module SayableDuration
       return @just_now if diff.zero?
 
       dur = format_duration_seconds(diff)
-      @ago.sub('{0}', dur)
+      dur && @ago.sub('{0}', dur)
     end
 
     # Format time until a future event as 'in X'.
@@ -91,7 +97,7 @@ module SayableDuration
       return @just_now if diff.zero?
 
       dur = format_duration_seconds(diff)
-      @in_future.sub('{0}', dur)
+      dur && @in_future.sub('{0}', dur)
     end
 
     private
@@ -170,6 +176,7 @@ module SayableDuration
 
       # Approximate months (30.44 days average)
       total_months = (total_days / 30.44).round
+      return nil if total_months > MAX_DURATION_MONTHS
 
       # 1-11 months
       if total_months < 12
@@ -188,29 +195,15 @@ module SayableDuration
     end
 
     def parse_iso_to_seconds(iso_str)
-      return nil if iso_str.nil? || iso_str.empty?
+      match = TIMESTAMP.match(iso_str.to_s)
+      return nil if match.nil?
 
-      date_part, time_part = iso_str.split('T')
-      return nil if date_part.nil? || time_part.nil?
-
-      dp = date_part.split('-')
-      year = dp[0].to_i
-      month = dp[1].to_i
-      day = dp[2].to_i
-
-      time_str = time_part
-      time_str = time_str.split('+')[0] if time_str.include?('+')
-      time_str = time_str.split('Z')[0] if time_str.include?('Z')
-
-      tp = time_str.split(':')
-      hour = tp[0].to_i
-      minute = tp.length > 1 ? tp[1].to_i : 0
-      second = tp.length > 2 ? tp[2].split('.')[0].to_i : 0
+      year, month, day, hour, minute, second = match.captures.map(&:to_i)
+      return nil unless month.between?(1, 12) && day.between?(1, days_in_month(year, month))
+      return nil if hour > 23 || minute > 59 || second > 59
 
       days = days_since_epoch(year, month, day)
       (days * 86_400) + (hour * 3600) + (minute * 60) + second
-    rescue StandardError
-      nil
     end
 
     def days_since_epoch(year, month, day)

@@ -177,3 +177,77 @@ let ``Finnish 14:15 is 14.15 with dot separator`` () =
 let ``Finnish 00:00 is 0.00 midnight dot`` () =
     let st = SayableTimeFormatter(FI, Short)
     Assert.Equal(Some "0.00", st.FormatTime(Some "00:00"))
+
+// ================================================================
+// Minutes in short and compact modes
+// ================================================================
+
+// 9.1
+[<Fact>]
+let ``digital modes keep the exact minute en short 18-01`` () =
+    let f = SayableTimeFormatter(EN, Short)
+    Assert.Equal(Some "6:01 PM", f.FormatTime(Some "18:01"))
+
+// 9.2
+[<Fact>]
+let ``digital modes keep the exact minute en compact 19-05`` () =
+    let f = SayableTimeFormatter(EN, Compact)
+    Assert.Equal(Some "7:05p", f.FormatTime(Some "19:05"))
+
+// ================================================================
+// Input validation
+// ================================================================
+
+// 10.1
+[<Fact>]
+let ``one digit hour`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(Some "half past nine", f.FormatTime(Some "9:30"))
+
+// 10.2
+[<Fact>]
+let ``two digit hour`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(Some "half past nine", f.FormatTime(Some "09:30"))
+
+// 10.3
+[<Fact>]
+let ``leading whitespace`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(None, f.FormatTime(Some " 9:30"))
+
+// 10.4
+[<Fact>]
+let ``trailing whitespace`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(None, f.FormatTime(Some "9:30 "))
+
+// 10.5
+[<Fact>]
+let ``minutes need two digits`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(None, f.FormatTime(Some "9:5"))
+
+// 10.6
+[<Fact>]
+let ``hour out of range`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(None, f.FormatTime(Some "24:00"))
+
+// 10.7
+[<Fact>]
+let ``seconds are allowed and ignored`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(Some "a quarter past two", f.FormatTime(Some "14:15:30"))
+
+// 10.8
+[<Fact>]
+let ``iso datetime with zone suffix ignored`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(Some "a quarter past two", f.FormatTime(Some "2025-01-15T14:15:00Z"))
+
+// 10.9
+[<Fact>]
+let ``iso datetime with an impossible date`` () =
+    let f = SayableTimeFormatter(EN)
+    Assert.Equal(None, f.FormatTime(Some "2025-02-30T14:15:00"))

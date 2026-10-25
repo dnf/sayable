@@ -36,34 +36,71 @@ format_time(Code, Time, Compactness, Result) :-
      ;  format_natural(Code, Hour, Minute, Result)
     ).
 
-%% parse_time_input(+Input, -Hour, -Minute) — parse HH:MM or ISO datetime.
+%% parse_time_input(+Input, -Hour, -Minute) — parse a clock time (H:MM or
+%% HH:MM, optional :SS and fraction, optional zone suffix, which is ignored),
+%% alone or after the T of an ISO datetime whose date is real
+%% (docs/input-formats.md). Fails for anything else.
 parse_time_input(Atom, Hour, Minute) :-
-    atom_string(Atom, Str),
-    % Strip ISO datetime prefix
-    (sub_string(Str, _, _, _, "T")
-     -> split_string(Str, "T", "", [_, TimePart0])
-     ;  TimePart0 = Str
-    ),
-    % Strip timezone suffix
-    (sub_string(TimePart0, Pos, _, _, "+")
-     -> sub_string(TimePart0, 0, Pos, _, TimePart)
-     ;  (sub_string(TimePart0, Pos2, _, _, "Z")
-         -> sub_string(TimePart0, 0, Pos2, _, TimePart)
-         ;  TimePart = TimePart0
-        )
-    ),
-    split_string(TimePart, ":", "", Parts),
-    length(Parts, PLen),
-    PLen >= 2,
-    nth0(0, Parts, HStr),
-    nth0(1, Parts, MinStr0),
-    % Strip fractional seconds from minutes if needed
-    split_string(MinStr0, ".", "", MinParts),
-    nth0(0, MinParts, MinStr),
-    number_string(Hour, HStr),
-    number_string(Minute, MinStr),
-    Hour >= 0, Hour =< 23,
-    Minute >= 0, Minute =< 59.
+    atomic(Atom),
+    atom_codes(Atom, Codes),
+    phrase(time_input(Hour, Minute), Codes),
+    !.
+
+time_input(Hour, Minute) --> iso_date, "T", clock_time(Hour, Minute).
+time_input(Hour, Minute) --> clock_time(Hour, Minute).
+
+iso_date -->
+    fixed_digits(4, Y), "-", fixed_digits(2, M), "-", fixed_digits(2, D),
+    { real_calendar_day(Y, M, D) }.
+
+clock_time(Hour, Minute) -->
+    clock_hour(Hour), ":", fixed_digits(2, Minute), optional_seconds(Second),
+    optional_zone,
+    { Hour =< 23, Minute =< 59, Second =< 59 }.
+
+clock_hour(H) --> fixed_digits(2, H).
+clock_hour(H) --> fixed_digits(1, H).
+
+optional_seconds(Second) --> ":", fixed_digits(2, Second), optional_fraction.
+optional_seconds(0) --> [].
+
+optional_fraction --> ".", ascii_digits_1(_).
+optional_fraction --> [].
+
+optional_zone --> "Z".
+optional_zone --> [Sign], { memberchk(Sign, `+-`) },
+    fixed_digits(2, _), ":", fixed_digits(2, _).
+optional_zone --> [].
+
+%% fixed_digits(+Count, -Value)// — exactly Count ASCII digits.
+fixed_digits(Count, Value) -->
+    ascii_digits(Count, Codes),
+    { number_codes(Value, Codes) }.
+
+ascii_digits(0, []) --> !, [].
+ascii_digits(Count, [C|Cs]) -->
+    ascii_digit(C),
+    { Rest is Count - 1 },
+    ascii_digits(Rest, Cs).
+
+%% ascii_digits_1(-Codes)// — one or more ASCII digits.
+ascii_digits_1([C|Cs]) --> ascii_digit(C), ascii_digits_1(Cs).
+ascii_digits_1([C]) --> ascii_digit(C).
+
+ascii_digit(C) --> [C], { C >= 0'0, C =< 0'9 }.
+
+real_calendar_day(Y, M, D) :-
+    M >= 1, M =< 12,
+    days_in_month(Y, M, LastDay),
+    D >= 1, D =< LastDay.
+
+days_in_month(Y, 2, Days) :- !,
+    (is_leap_year(Y) -> Days = 29 ; Days = 28).
+days_in_month(_, M, 30) :- memberchk(M, [4, 6, 9, 11]), !.
+days_in_month(_, _, 31).
+
+is_leap_year(Y) :-
+    (Y mod 4 =:= 0, Y mod 100 =\= 0 ; Y mod 400 =:= 0), !.
 
 %% has_short_clock(+Code, +Compactness) — check if locale has digital clock config.
 has_short_clock(Code, short) :-

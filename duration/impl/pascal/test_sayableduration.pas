@@ -204,6 +204,34 @@ begin
   LPtr := GetLocale('xx');
   AssertLocaleNil('lookup.2', LPtr);
 
+  { Section 18: Short compactness — relative time }
+  { 18.1 }
+  AssertEqual('18.1', 'lɔhɔnga 2, awa 14 taa gbɔyɔ', FormatSince(GetLocale('men')^, csNormal, '2025-01-20T01:32:11', '2025-01-22T15:39:16'));
+
+  { Section 19: Range (500-year ceiling) }
+  { 19.1 }
+  AssertEqual('19.1', '500 years', FormatDuration(GetLocale('en')^, csNormal, 15778800000));
+  { 19.2 }
+  AssertNull('19.2', FormatDuration(GetLocale('en')^, csNormal, 15800000000));
+  { 19.3 }
+  AssertNull('19.3', FormatDuration(GetLocale('en')^, csNormal, 99999999999));
+  { 19.4 }
+  AssertNull('19.4', FormatSince(GetLocale('en')^, csNormal, '1500-01-01T00:00:00', '2025-01-01T00:00:00'));
+  { 19.5 }
+  AssertNull('19.5', FormatUntil(GetLocale('en')^, csNormal, '2600-01-01T00:00:00', '2025-01-01T00:00:00'));
+
+  { Section 20: Timestamp validation }
+  { 20.1 }
+  AssertEqual('20.1', '1½ hours', FormatDurationISO(GetLocale('en')^, csNormal, '2025-01-15T10:00', '2025-01-15T11:30:00'));
+  { 20.2 }
+  AssertNull('20.2', FormatDurationISO(GetLocale('en')^, csNormal, '2025-01-15T10', '2025-01-15T11:30:00'));
+  { 20.3 }
+  AssertNull('20.3', FormatDurationISO(GetLocale('en')^, csNormal, '2025-1-5T10:00:00', '2025-01-15T11:30:00'));
+  { 20.4 }
+  AssertNull('20.4', FormatDurationISO(GetLocale('en')^, csNormal, '2025-02-30T10:00:00', '2025-03-15T11:30:00'));
+  { 20.5 }
+  AssertNull('20.5', FormatSince(GetLocale('en')^, csNormal, '2025-01-15T10:00:00', '2025-01-15T25:00:00'));
+
   { Print results }
   WriteLn('');
   WriteLn(PassCount, ' passed, ', FailCount, ' failed');

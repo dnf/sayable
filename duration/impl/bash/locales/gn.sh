@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/gn.json
 
-_plural_gn() {
+_sayableduration_plural_gn() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_gn() {
+_sayableduration_locale_gn() {
     _unit_second='{n} aravo'\''i'
     _unit_minute='{n} aravo'
     _unit_hour='{n} aravo guasu'
@@ -48,5 +48,5 @@ _locale_gn() {
     _compact_delimiter=''
     _compact_ago='{0} ohasava'\''ekue'
     _compact_in_future='{0} rire'
-    _plural_func=_plural_gn
+    _plural_func=_sayableduration_plural_gn
 }

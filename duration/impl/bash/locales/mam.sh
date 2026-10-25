@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mam.json
 
-_plural_mam() {
+_sayableduration_plural_mam() {
     echo "other"
 }
 
-_locale_mam() {
+_sayableduration_locale_mam() {
     _unit_second='{n} segundo'
     _unit_minute='{n} minuto'
     _unit_hour='{n} hora'
@@ -45,5 +45,5 @@ _locale_mam() {
     _compact_delimiter=''
     _compact_ago='{0} chi'\''j'
     _compact_in_future='tu'\''n {0}'
-    _plural_func=_plural_mam
+    _plural_func=_sayableduration_plural_mam
 }

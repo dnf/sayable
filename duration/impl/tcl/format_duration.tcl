@@ -4,6 +4,8 @@ package provide sayableduration 0.5.0
 
 namespace eval ::sayableduration {
     variable VERSION "0.5.0"
+    # 500 years, the same ceiling as sayable-age
+    variable MAX_DURATION_MONTHS 6000
     variable _default_locale ""
     variable _registry_loaded 0
     variable _script_dir [file dirname [file normalize [info script]]]
@@ -50,57 +52,25 @@ namespace eval ::sayableduration {
         return $days
     }
 
+    # YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+    variable TIMESTAMP {^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$}
+
     proc _parse_iso_to_seconds {iso_str} {
-        # Parse ISO datetime to epoch-like seconds for diffing
-        if {$iso_str eq ""} {
+        # Parse ISO datetime to epoch-like seconds for diffing; empty if malformed
+        variable TIMESTAMP
+        if {![regexp $TIMESTAMP $iso_str -> ys mos ds hs mins secs]} {
             return ""
         }
-        if {[string first "T" $iso_str] < 0} {
+        if {$secs eq ""} {
+            set secs 0
+        }
+        # scan reads leading zeros as decimal (expr would read 08 as octal)
+        scan "$ys $mos $ds $hs $mins $secs" "%d %d %d %d %d %d" year month day hour minute second
+        if {$month < 1 || $month > 12 || $day < 1 || $day > [_days_in_month $year $month]} {
             return ""
         }
-        set parts [split $iso_str "T"]
-        set date_part [lindex $parts 0]
-        set time_part [lindex $parts 1]
-
-        set dp [split $date_part "-"]
-        if {[llength $dp] != 3} {
+        if {$hour > 23 || $minute > 59 || $second > 59} {
             return ""
-        }
-        set year [scan [lindex $dp 0] %d]
-        set month [scan [lindex $dp 1] %d]
-        set day [scan [lindex $dp 2] %d]
-        if {$year eq "" || $month eq "" || $day eq ""} {
-            return ""
-        }
-
-        # Strip timezone info
-        set ts $time_part
-        if {[string first "+" $ts] >= 0} {
-            set ts [lindex [split $ts "+"] 0]
-        }
-        if {[string first "Z" $ts] >= 0} {
-            set ts [lindex [split $ts "Z"] 0]
-        }
-
-        set tp [split $ts ":"]
-        set hour [scan [lindex $tp 0] %d]
-        if {$hour eq ""} {
-            return ""
-        }
-        set minute 0
-        if {[llength $tp] > 1} {
-            set minute [scan [lindex $tp 1] %d]
-            if {$minute eq ""} { set minute 0 }
-        }
-        set second 0
-        if {[llength $tp] > 2} {
-            set sec_str [lindex $tp 2]
-            # Handle fractional seconds
-            if {[string first "." $sec_str] >= 0} {
-                set sec_str [lindex [split $sec_str "."] 0]
-            }
-            set second [scan $sec_str %d]
-            if {$second eq ""} { set second 0 }
         }
 
         set days [_days_since_epoch $year $month $day]
@@ -280,6 +250,10 @@ namespace eval ::sayableduration {
 
         # Approximate months (30.44 days average)
         set total_months [expr {round($total_days / 30.44)}]
+        variable MAX_DURATION_MONTHS
+        if {$total_months > $MAX_DURATION_MONTHS} {
+            return ""
+        }
 
         # 1-11 months
         if {$total_months < 12} {
@@ -342,6 +316,9 @@ namespace eval ::sayableduration {
             return [dict get $formatter just_now]
         }
         set dur [_format_duration_seconds $formatter $diff]
+        if {$dur eq ""} {
+            return ""
+        }
         set ago [dict get $formatter ago]
         return [string map [list "\{0\}" $dur] $ago]
     }
@@ -363,6 +340,9 @@ namespace eval ::sayableduration {
             return [dict get $formatter just_now]
         }
         set dur [_format_duration_seconds $formatter $diff]
+        if {$dur eq ""} {
+            return ""
+        }
         set in_future [dict get $formatter in_future]
         return [string map [list "\{0\}" $dur] $in_future]
     }

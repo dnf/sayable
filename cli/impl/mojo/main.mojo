@@ -3,7 +3,8 @@
 See cli/SPEC.md for the full specification.
 """
 
-from sys import argv, exit
+from io.io import _fdopen
+from sys import argv, exit, stderr, stdin
 from sys.ffi import external_call
 
 from sayable_age.formatter import SayableAge
@@ -218,15 +219,12 @@ fn _all_locale_codes() -> List[String]:
     codes.append("zdj")
     codes.append("zh")
     codes.append("zu")
-    return codes
+    return codes^
 
 
 fn _write_stderr(s: String):
-    """Write a string followed by newline to stderr using POSIX write()."""
-    var line = s + "\n"
-    _ = external_call["write", Int, Int32, UnsafePointer[UInt8], Int](
-        Int32(2), line.unsafe_ptr(), len(line)
-    )
+    """Write a string followed by newline to stderr."""
+    print(s, file=stderr)
 
 
 alias USAGE_ERROR = "sayable: usage error"
@@ -295,12 +293,10 @@ fn _zfill2(n: Int) -> String:
 
 fn _get_today() -> String:
     """Get today's date as YYYY-MM-DD using C time() and epoch arithmetic."""
-    # C time() returns seconds since Unix epoch (1970-01-01 00:00:00 UTC)
-    var epoch_seconds = Int(
-        external_call["time", Int64, UnsafePointer[Int64]](
-            UnsafePointer[Int64]()
-        )
-    )
+    # C time() returns seconds since Unix epoch (1970-01-01 00:00:00 UTC).
+    # Its pointer argument is optional; passing 0 (NULL) avoids needing a
+    # typed null pointer, whose origin parameters vary between Mojo versions.
+    var epoch_seconds = Int(external_call["time", Int64, Int](0))
     var total_days = epoch_seconds // 86400
 
     # Convert days since Unix epoch (1970-01-01) to date
@@ -548,6 +544,9 @@ fn _cmd_time(args: ParsedArgs) raises -> String:
     return result
 
 
+comptime MAX_INT64_SAFE_DIGITS = 18
+
+
 fn _is_negative_int(s: String) -> Bool:
     """Check if string is a negative integer like '-1'."""
     if len(s) < 2:
@@ -562,7 +561,7 @@ fn _cmd_duration(args: ParsedArgs) raises -> String:
     if args.num_positionals < 1:
         raise _usage_error("duration requires a value argument")
 
-    var value = _nullify(args.pos0)
+    var value = args.pos0
     var locale_code = args.locale
 
     if not has_duration_locale(locale_code):
@@ -573,18 +572,17 @@ fn _cmd_duration(args: ParsedArgs) raises -> String:
 
     var result: String
 
-    if len(value) == 0:
-        # null input
+    if value == "null":
         result = formatter.format_duration_seconds(-1)
     elif _is_negative_int(value):
-        # Negative integer: pass as negative (returns empty = null)
-        var abs_str = String(value[1:])
-        var abs_val = _str_to_int(abs_str)
-        result = formatter.format_duration_seconds(-abs_val)
+        # Any negative duration has no value
+        result = formatter.format_duration_seconds(-1)
     elif _is_all_digits(value):
-        # Seconds mode
-        var seconds = _str_to_int(value)
-        result = formatter.format_duration_seconds(seconds)
+        if len(value) > MAX_INT64_SAFE_DIGITS:
+            # Far past the 500-year ceiling, and too long for 64 bits
+            result = ""
+        else:
+            result = formatter.format_duration_seconds(_str_to_int(value))
     else:
         # Timestamp mode: need an end argument
         if args.num_positionals < 2:
@@ -728,10 +726,14 @@ fn _strip_line_ending(line: String) -> String:
 
 fn _repl():
     """Answer one tab-separated request per stdin line (see cli/SPEC.md)."""
+    # input() opens a fresh buffered stream on every call and drops whatever
+    # it read past the first line, so piped requests would be lost. One
+    # stream kept open for the whole session reads every line.
+    var reader = _fdopen["r"](stdin)
     while True:
         var line: String
         try:
-            line = input()
+            line = reader.readline()
         except:
             return  # end of input
 

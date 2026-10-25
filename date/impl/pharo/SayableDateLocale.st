@@ -3,7 +3,7 @@
 Object subclass: #SayableDateLocale
 	instanceVariableNames: 'code months weekdays dayFormat dayFormatExceptions datePattern datePatternWithYear today tomorrow yesterday dayAfterTomorrow dayBeforeYesterday thisWeekday nextWeekday lastWeekday monthsInDate short compact'
 	classVariableNames: ''
-	package: 'SayableDate'.
+	package: 'SayableDate'!
 
 !SayableDateLocale methodsFor: 'accessing'!
 code

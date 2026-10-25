@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/quc.json
 
-_locale_quc() {
+_sayabletime_locale_quc() {
     _clock_hours=('kab'\''lajuj' 'jun' 'ka'\''i'\''' 'oxi'\''' 'kaji'\''' 'jo'\''' 'waqi'\''' 'wuqu'\''' 'wajxaqi'\''' 'b'\''eleji'\''' 'lajuj' 'julajuj')
     _clock_midnight='nik'\''aj aq'\''ab'\'''
     _clock_noon='nik'\''aj q'\''ij'

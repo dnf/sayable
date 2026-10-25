@@ -965,4 +965,100 @@ import Testing
     @Test func getLocaleIsCaseSensitive() {
         #expect(Locales.get("EN") == nil)
     }
+
+    // ================================================================
+    // Weeks and days across month ends
+    // ================================================================
+    // 31.1
+    @Test func canonical31_1() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2016-12-31", "2017-03-29") == "12 weeks, 4 days")
+    }
+
+    // 31.2
+    @Test func canonical31_2() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("1991-11-27", "1992-02-25") == "12 weeks, 6 days")
+    }
+
+    // 31.3
+    @Test func canonical31_3() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2020-11-30", "2021-01-02") == "4 weeks, 5 days")
+    }
+
+    // 31.4
+    @Test func canonical31_4() {
+        #expect(SayableAgeFormatter(Locales.get("en")!, compactness: .compact).formatAge("2016-12-31", "2017-03-29") == "12w4d")
+    }
+
+
+    // ================================================================
+    // Half years take their plural form from whole years
+    // ================================================================
+    // 32.1
+    @Test func canonical32_1() {
+        #expect(SayableAgeFormatter(Locales.get("pl")!).formatAge("2021-06-15", "2025-01-15") == "3 i pół lata")
+    }
+
+    // 32.2
+    @Test func canonical32_2() {
+        #expect(SayableAgeFormatter(Locales.get("pl")!, compactness: .short).formatAge("2020-06-15", "2025-12-15") == "5 i pół lat")
+    }
+
+    // 32.3
+    @Test func canonical32_3() {
+        #expect(SayableAgeFormatter(Locales.get("shi")!).formatAge("2005-06-08", "2012-06-07") == "6 iseggasen d uzgen")
+    }
+
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+    // 33.1
+    @Test func canonical33_1() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2025-02-30", "2032-06-25") == nil)
+    }
+
+    // 33.2
+    @Test func canonical33_2() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2025-13-01", "2027-01-31") == nil)
+    }
+
+    // 33.3
+    @Test func canonical33_3() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2023-02-29", "2025-03-01") == nil)
+    }
+
+    // 33.4
+    @Test func canonical33_4() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2025-06-00", "2027-02-25") == nil)
+    }
+
+    // 33.5
+    @Test func canonical33_5() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2025-6-1", "2027-02-25") == nil)
+    }
+
+    // 33.6
+    @Test func canonical33_6() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge(" 2025-06-01", "2027-02-25") == nil)
+    }
+
+    // 33.7
+    @Test func canonical33_7() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2025-06-15T10:00:00", "2027-02-25") == nil)
+    }
+
+    // 33.8
+    @Test func canonical33_8() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2020-01-01", "2025-04-31") == nil)
+    }
+
+    // 33.9
+    @Test func canonical33_9() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatStage("2025-02-30", "2027-09-05") == nil)
+    }
+
+    // 33.10
+    @Test func canonical33_10() {
+        #expect(SayableAgeFormatter(Locales.get("en")!).formatAge("2024-02-29", "2026-03-01") == "2 years")
+    }
 }

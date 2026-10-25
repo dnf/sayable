@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ro.json
 
-_plural_ro() {
+_sayableduration_plural_ro() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     local mod100=$(( n % 100 ))
@@ -17,7 +17,7 @@ _plural_ro() {
     echo "other"
 }
 
-_locale_ro() {
+_sayableduration_locale_ro() {
     _unit_second_one='{n} secundă'
     _unit_second_few='{n} secunde'
     _unit_second_other='{n} de secunde'
@@ -72,5 +72,5 @@ _locale_ro() {
     _compact_delimiter=''
     _compact_ago='acum {0}'
     _compact_in_future='peste {0}'
-    _plural_func=_plural_ro
+    _plural_func=_sayableduration_plural_ro
 }

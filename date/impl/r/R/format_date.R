@@ -4,22 +4,24 @@
 # "today", "next Thursday", "March 15th", "April 10, 2024".
 # Zero runtime dependencies.
 
+days_in_month_date <- function(year, month) {
+  if (month == 2) {
+    leap <- (year %% 4 == 0 && year %% 100 != 0) || year %% 400 == 0
+    return(if (leap) 29 else 28)
+  }
+  if (month %in% c(4, 6, 9, 11)) 30 else 31
+}
+
+# Parse YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+# time (which is not read); NULL otherwise.
 parse_date_str <- function(s) {
-  if (is.null(s) || !is.character(s) || nchar(s) == 0) return(NULL)
-
-  # Strip time part from ISO datetime
-  date_part <- s
-  t_idx <- regexpr("T", s, fixed = TRUE)
-  if (t_idx > 0) date_part <- substring(s, 1, t_idx - 1)
-
-  parts <- strsplit(date_part, "-", fixed = TRUE)[[1]]
-  if (length(parts) != 3) return(NULL)
-
-  year <- suppressWarnings(as.integer(parts[1]))
-  month <- suppressWarnings(as.integer(parts[2]))
-  day <- suppressWarnings(as.integer(parts[3]))
-  if (is.na(year) || is.na(month) || is.na(day)) return(NULL)
-  if (month < 1 || month > 12 || day < 1 || day > 31) return(NULL)
+  if (!is.character(s) || length(s) != 1 || is.na(s)) return(NULL)
+  m <- regmatches(s, regexec("^([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T|\\z)", s, perl = TRUE))[[1]]
+  if (length(m) == 0) return(NULL)
+  year <- as.integer(m[2])
+  month <- as.integer(m[3])
+  day <- as.integer(m[4])
+  if (month < 1 || month > 12 || day < 1 || day > days_in_month_date(year, month)) return(NULL)
 
   list(year = year, month = month, day = day)
 }

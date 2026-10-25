@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/fan.json
 
-_locale_fan() {
+_sayabletime_locale_fan() {
     _clock_hours=('awom mebú' 'fóg' 'abúi' 'aláa' 'anyin' 'atán' 'asaman' 'zamgbala' 'mwom' 'ebulú' 'awom' 'awom mefóg')
     _clock_midnight='akiri alúk'
     _clock_noon='ewaŋ'

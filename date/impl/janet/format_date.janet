@@ -2,20 +2,29 @@
 
 (def version "0.5.0")
 
+(defn- leap-year? [y]
+  (or (and (= (% y 4) 0) (not= (% y 100) 0))
+      (= (% y 400) 0)))
+
+(defn- days-in-month [y m]
+  (cond
+    (= m 2) (if (leap-year? y) 29 28)
+    (index-of m [4 6 9 11]) 30
+    31))
+
+(defn- real-date? [y m d]
+  (and (<= 1 m 12) (<= 1 d (days-in-month y m))))
+
+# YYYY-MM-DD, alone or followed by T and the rest of an ISO datetime.
+(def- date-grammar
+  (peg/compile
+    '(* (capture (4 :d)) "-" (capture (2 :d)) "-" (capture (2 :d))
+        (+ -1 "T"))))
+
 (defn- parse-date [s]
-  (when (and s (not= s ""))
-    (var date-part s)
-    (when (string/find "T" s)
-      (set date-part (first (string/split "T" s))))
-    (def parts (string/split "-" date-part))
-    (when (= (length parts) 3)
-      (def year (scan-number (in parts 0)))
-      (def month (scan-number (in parts 1)))
-      (def day (scan-number (in parts 2)))
-      (when (and year month day
-                 (>= month 1) (<= month 12)
-                 (>= day 1) (<= day 31))
-        [year month day]))))
+  (when-let [parts (and (string? s) (peg/match date-grammar s))
+             ymd (map scan-number parts)]
+    (when (real-date? ;ymd) ymd)))
 
 (defn- to-jdn [y m d]
   (def a (math/floor (/ (- 14 m) 12)))
@@ -48,11 +57,11 @@
     (set idx (string/find pattern result)))
   result)
 
-(defn- pick [override attr default]
+(defn- pick [override attr fallback]
   (if override
     (let [val (get override attr)]
-      (if (not= val nil) val default))
-    default))
+      (if (not= val nil) val fallback))
+    fallback))
 
 (defn- format-absolute [year month day include-year loc months weekdays
                         day-format day-format-exceptions date-pattern

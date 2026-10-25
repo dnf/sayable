@@ -21,2748 +21,3556 @@ class Locales {
     // ================================================================
     // AF — Afrikaans
     // ================================================================
-    static final TimeLocale AF = new TimeLocale(
-        'af',
-        new ClockConfig(
-            ['twaalf', 'een', 'twee', 'drie', 'vier', 'vyf', 'ses', 'sewe', 'agt', 'nege', 'tien', 'elf'],
-            'middernag',
-            'middag',
-            [(0): '{h}-uur', (5): 'vyf oor {h}', (10): 'tien oor {h}', (15): 'kwart oor {h}', (20): 'twintig oor {h}', (25): 'vyf voor half {next_h}', (30): 'half {next_h}', (35): 'vyf oor half {next_h}', (40): 'twintig voor {next_h}', (45): 'kwart voor {next_h}', (50): 'tien voor {next_h}', (55): 'vyf voor {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale AF = _af()
+
+    private static TimeLocale _af() {
+        new TimeLocale(
+            'af',
+            new ClockConfig(
+                ['twaalf', 'een', 'twee', 'drie', 'vier', 'vyf', 'ses', 'sewe', 'agt', 'nege', 'tien', 'elf'],
+                'middernag',
+                'middag',
+                [(0): '{h}-uur', (5): 'vyf oor {h}', (10): 'tien oor {h}', (15): 'kwart oor {h}', (20): 'twintig oor {h}', (25): 'vyf voor half {next_h}', (30): 'half {next_h}', (35): 'vyf oor half {next_h}', (40): 'twintig voor {next_h}', (45): 'kwart voor {next_h}', (50): 'tien voor {next_h}', (55): 'vyf voor {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ak.json
     // ================================================================
     // AK — Akan
     // ================================================================
-    static final TimeLocale AK = new TimeLocale(
-        'ak',
-        new ClockConfig(
-            ['dumien', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako'],
-            'anadwo',
-            'awia',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale AK = _ak()
+
+    private static TimeLocale _ak() {
+        new TimeLocale(
+            'ak',
+            new ClockConfig(
+                ['dumien', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako'],
+                'anadwo',
+                'awia',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
-    static final TimeLocale AM = new TimeLocale(
-        'am',
-        new ClockConfig(
-            ['አሥራ ሁለት', 'አንድ', 'ሁለት', 'ሦስት', 'አራት', 'አምስት', 'ስድስት', 'ሰባት', 'ስምንት', 'ዘጠኝ', 'አሥር', 'አሥራ አንድ'],
-            'እኩለ ሌሊት',
-            'እኩለ ቀን',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale AM = _am()
+
+    private static TimeLocale _am() {
+        new TimeLocale(
+            'am',
+            new ClockConfig(
+                ['አሥራ ሁለት', 'አንድ', 'ሁለት', 'ሦስት', 'አራት', 'አምስት', 'ስድስት', 'ሰባት', 'ስምንት', 'ዘጠኝ', 'አሥር', 'አሥራ አንድ'],
+                'እኩለ ሌሊት',
+                'እኩለ ቀን',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
-    static final TimeLocale AR = new TimeLocale(
-        'ar',
-        new ClockConfig(
-            ['الثانية عشرة', 'الواحدة', 'الثانية', 'الثالثة', 'الرابعة', 'الخامسة', 'السادسة', 'السابعة', 'الثامنة', 'التاسعة', 'العاشرة', 'الحادية عشرة'],
-            'منتصف الليل',
-            'الظهر',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale AR = _ar()
+
+    private static TimeLocale _ar() {
+        new TimeLocale(
+            'ar',
+            new ClockConfig(
+                ['الثانية عشرة', 'الواحدة', 'الثانية', 'الثالثة', 'الرابعة', 'الخامسة', 'السادسة', 'السابعة', 'الثامنة', 'التاسعة', 'العاشرة', 'الحادية عشرة'],
+                'منتصف الليل',
+                'الظهر',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ay.json
     // ================================================================
     // AY — Aymara
     // ================================================================
-    static final TimeLocale AY = new TimeLocale(
-        'ay',
-        new ClockConfig(
-            ['tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llantunka', 'tunka', 'tunka mayani'],
-            'aruma chika',
-            'chika uru',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale AY = _ay()
+
+    private static TimeLocale _ay() {
+        new TimeLocale(
+            'ay',
+            new ClockConfig(
+                ['tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llantunka', 'tunka', 'tunka mayani'],
+                'aruma chika',
+                'chika uru',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
-    static final TimeLocale AZ = new TimeLocale(
-        'az',
-        new ClockConfig(
-            ['on iki', 'bir', 'iki', 'üç', 'dörd', 'beş', 'altı', 'yeddi', 'səkkiz', 'doqquz', 'on', 'on bir'],
-            'gecə yarısı',
-            'günorta',
-            [(0): '{h} o\'clock', (5): 'beş keçir {h}', (10): 'on keçir {h}', (15): 'on beş keçir {h}', (20): 'iyirmi keçir {h}', (25): 'iyirmi beş keçir {h}', (30): 'otuz keçir {h}', (35): 'iyirmi beş qalmış {next_h}', (40): 'iyirmi qalmış {next_h}', (45): 'on beş qalmış {next_h}', (50): 'on qalmış {next_h}', (55): 'beş qalmış {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale AZ = _az()
+
+    private static TimeLocale _az() {
+        new TimeLocale(
+            'az',
+            new ClockConfig(
+                ['on iki', 'bir', 'iki', 'üç', 'dörd', 'beş', 'altı', 'yeddi', 'səkkiz', 'doqquz', 'on', 'on bir'],
+                'gecə yarısı',
+                'günorta',
+                [(0): '{h} o\'clock', (5): 'beş keçir {h}', (10): 'on keçir {h}', (15): 'on beş keçir {h}', (20): 'iyirmi keçir {h}', (25): 'iyirmi beş keçir {h}', (30): 'otuz keçir {h}', (35): 'iyirmi beş qalmış {next_h}', (40): 'iyirmi qalmış {next_h}', (45): 'on beş qalmış {next_h}', (50): 'on qalmış {next_h}', (55): 'beş qalmış {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/bci.json
     // ================================================================
     // BCI — Baoulé
     // ================================================================
-    static final TimeLocale BCI = new TimeLocale(
-        'bci',
-        new ClockConfig(
-            ['blu-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-kun'],
-            'kɔnguɛ afiɛn',
-            'nnɔsua',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale BCI = _bci()
+
+    private static TimeLocale _bci() {
+        new TimeLocale(
+            'bci',
+            new ClockConfig(
+                ['blu-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-kun'],
+                'kɔnguɛ afiɛn',
+                'nnɔsua',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/be.json
     // ================================================================
     // BE — Belarusian
     // ================================================================
-    static final TimeLocale BE = new TimeLocale(
-        'be',
-        new ClockConfig(
-            ['дванаццаць', 'адзін', 'два', 'тры', 'чатыры', 'пяць', 'шэсць', 'сем', 'восем', 'дзевяць', 'дзесяць', 'адзінаццаць'],
-            'поўнач',
-            'поўдзень',
-            [(0): '{h} гадзін', (5): 'пяць хвілін пасля {h}', (10): 'дзесяць хвілін пасля {h}', (15): 'чвэрць пасля {h}', (20): 'дваццаць хвілін пасля {h}', (25): 'дваццаць пяць хвілін пасля {h}', (30): 'палова да {next_h}', (35): 'без дваццаці пяці {next_h}', (40): 'без дваццаці {next_h}', (45): 'без чвэрці {next_h}', (50): 'без дзесяці {next_h}', (55): 'без пяці {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale BE = _be()
+
+    private static TimeLocale _be() {
+        new TimeLocale(
+            'be',
+            new ClockConfig(
+                ['дванаццаць', 'адзін', 'два', 'тры', 'чатыры', 'пяць', 'шэсць', 'сем', 'восем', 'дзевяць', 'дзесяць', 'адзінаццаць'],
+                'поўнач',
+                'поўдзень',
+                [(0): '{h} гадзін', (5): 'пяць хвілін пасля {h}', (10): 'дзесяць хвілін пасля {h}', (15): 'чвэрць пасля {h}', (20): 'дваццаць хвілін пасля {h}', (25): 'дваццаць пяць хвілін пасля {h}', (30): 'палова да {next_h}', (35): 'без дваццаці пяці {next_h}', (40): 'без дваццаці {next_h}', (45): 'без чвэрці {next_h}', (50): 'без дзесяці {next_h}', (55): 'без пяці {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/bem.json
     // ================================================================
     // BEM — Bemba
     // ================================================================
-    static final TimeLocale BEM = new TimeLocale(
-        'bem',
-        new ClockConfig(
-            ['ikumi na ibili', 'cimo', 'fibili', 'fitatu', 'fine', 'fisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na cimo'],
-            'pakati ka bushiku',
-            'akasuba',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale BEM = _bem()
+
+    private static TimeLocale _bem() {
+        new TimeLocale(
+            'bem',
+            new ClockConfig(
+                ['ikumi na ibili', 'cimo', 'fibili', 'fitatu', 'fine', 'fisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na cimo'],
+                'pakati ka bushiku',
+                'akasuba',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
-    static final TimeLocale BG = new TimeLocale(
-        'bg',
-        new ClockConfig(
-            ['дванадесет', 'един', 'два', 'три', 'четири', 'пет', 'шест', 'седем', 'осем', 'девет', 'десет', 'единадесет'],
-            'полунощ',
-            'обяд',
-            [(0): '{h} часа', (5): 'пет na {h}', (10): 'десет na {h}', (15): 'петнадесет na {h}', (20): 'двадесет na {h}', (25): 'двадесет и пет na {h}', (30): 'тридесет na {h}', (35): 'двадесет и пет do {next_h}', (40): 'двадесет do {next_h}', (45): 'петнадесет do {next_h}', (50): 'десет do {next_h}', (55): 'пет do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale BG = _bg()
+
+    private static TimeLocale _bg() {
+        new TimeLocale(
+            'bg',
+            new ClockConfig(
+                ['дванадесет', 'един', 'два', 'три', 'четири', 'пет', 'шест', 'седем', 'осем', 'девет', 'десет', 'единадесет'],
+                'полунощ',
+                'обяд',
+                [(0): '{h} часа', (5): 'пет na {h}', (10): 'десет na {h}', (15): 'петнадесет na {h}', (20): 'двадесет na {h}', (25): 'двадесет и пет na {h}', (30): 'тридесет na {h}', (35): 'двадесет и пет do {next_h}', (40): 'двадесет do {next_h}', (45): 'петнадесет do {next_h}', (50): 'десет do {next_h}', (55): 'пет do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/bi.json
     // ================================================================
     // BI — Bislama
     // ================================================================
-    static final TimeLocale BI = new TimeLocale(
-        'bi',
-        new ClockConfig(
-            ['twelf', 'wan', 'tu', 'tri', 'fo', 'faef', 'sikis', 'seven', 'eit', 'naen', 'ten', 'eleven'],
-            'mednaet',
-            'medeldei',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale BI = _bi()
+
+    private static TimeLocale _bi() {
+        new TimeLocale(
+            'bi',
+            new ClockConfig(
+                ['twelf', 'wan', 'tu', 'tri', 'fo', 'faef', 'sikis', 'seven', 'eit', 'naen', 'ten', 'eleven'],
+                'mednaet',
+                'medeldei',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/bm.json
     // ================================================================
     // BM — Bambara
     // ================================================================
-    static final TimeLocale BM = new TimeLocale(
-        'bm',
-        new ClockConfig(
-            ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔrɔ', 'wolonwula', 'segin', 'kɔnɔntɔn', 'tan', 'tan ni kelen'],
-            'dugutilama',
-            'tilgari',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale BM = _bm()
+
+    private static TimeLocale _bm() {
+        new TimeLocale(
+            'bm',
+            new ClockConfig(
+                ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔrɔ', 'wolonwula', 'segin', 'kɔnɔntɔn', 'tan', 'tan ni kelen'],
+                'dugutilama',
+                'tilgari',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
-    static final TimeLocale BN = new TimeLocale(
-        'bn',
-        new ClockConfig(
-            ['বারো', 'এক', 'দুই', 'তিন', 'চার', 'পাঁচ', 'ছয়', 'সাত', 'আট', 'নয়', 'দশ', 'এগারো'],
-            'মধ্যরাত',
-            'দুপুর',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale BN = _bn()
+
+    private static TimeLocale _bn() {
+        new TimeLocale(
+            'bn',
+            new ClockConfig(
+                ['বারো', 'এক', 'দুই', 'তিন', 'চার', 'পাঁচ', 'ছয়', 'সাত', 'আট', 'নয়', 'দশ', 'এগারো'],
+                'মধ্যরাত',
+                'দুপুর',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
-    static final TimeLocale BR = new TimeLocale(
-        'br',
-        new ClockConfig(
-            ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
-            'hanternoz',
-            'kreisteiz',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale BR = _br()
+
+    private static TimeLocale _br() {
+        new TimeLocale(
+            'br',
+            new ClockConfig(
+                ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
+                'hanternoz',
+                'kreisteiz',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
-    static final TimeLocale BS = new TimeLocale(
-        'bs',
-        new ClockConfig(
-            ['dvanaest', 'jedan', 'dva', 'tri', 'četiri', 'pet', 'šest', 'sedam', 'osam', 'devet', 'deset', 'jedanaest'],
-            'ponoć',
-            'podne',
-            [(0): '{h} sati', (5): 'pet po {h}', (10): 'deset po {h}', (15): 'petnaest po {h}', (20): 'dvadeset po {h}', (25): 'dvadeset pet po {h}', (30): 'trideset po {h}', (35): 'dvadeset pet do {next_h}', (40): 'dvadeset do {next_h}', (45): 'petnaest do {next_h}', (50): 'deset do {next_h}', (55): 'pet do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale BS = _bs()
+
+    private static TimeLocale _bs() {
+        new TimeLocale(
+            'bs',
+            new ClockConfig(
+                ['dvanaest', 'jedan', 'dva', 'tri', 'četiri', 'pet', 'šest', 'sedam', 'osam', 'devet', 'deset', 'jedanaest'],
+                'ponoć',
+                'podne',
+                [(0): '{h} sati', (5): 'pet po {h}', (10): 'deset po {h}', (15): 'petnaest po {h}', (20): 'dvadeset po {h}', (25): 'dvadeset pet po {h}', (30): 'trideset po {h}', (35): 'dvadeset pet do {next_h}', (40): 'dvadeset do {next_h}', (45): 'petnaest do {next_h}', (50): 'deset do {next_h}', (55): 'pet do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
-    static final TimeLocale CA = new TimeLocale(
-        'ca',
-        new ClockConfig(
-            ['dotze', 'una', 'dues', 'tres', 'quatre', 'cinc', 'sis', 'set', 'vuit', 'nou', 'deu', 'onze'],
-            'mitjanit',
-            'migdia',
-            [(0): '{h} o\'clock', (5): 'cinc past {h}', (10): 'deu past {h}', (15): 'un quart past {h}', (20): 'vint past {h}', (25): 'vint-i-cinc past {h}', (30): 'mitja past {h}', (35): 'vint-i-cinc to {next_h}', (40): 'vint to {next_h}', (45): 'un quart to {next_h}', (50): 'deu to {next_h}', (55): 'cinc to {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale CA = _ca()
+
+    private static TimeLocale _ca() {
+        new TimeLocale(
+            'ca',
+            new ClockConfig(
+                ['dotze', 'una', 'dues', 'tres', 'quatre', 'cinc', 'sis', 'set', 'vuit', 'nou', 'deu', 'onze'],
+                'mitjanit',
+                'migdia',
+                [(0): '{h} o\'clock', (5): 'cinc past {h}', (10): 'deu past {h}', (15): 'un quart past {h}', (20): 'vint past {h}', (25): 'vint-i-cinc past {h}', (30): 'mitja past {h}', (35): 'vint-i-cinc to {next_h}', (40): 'vint to {next_h}', (45): 'un quart to {next_h}', (50): 'deu to {next_h}', (55): 'cinc to {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/cak.json
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
-    static final TimeLocale CAK = new TimeLocale(
-        'cak',
-        new ClockConfig(
-            ['kab\'lajuj', 'jun', 'ka\'i\'', 'oxi\'', 'kaji\'', 'wo\'o\'', 'waqi\'', 'wuqu\'', 'waqxaqi\'', 'b\'eleje\'', 'lajuj', 'julajuj'],
-            'nik\'aj aq\'a\'',
-            'nik\'aj q\'ij',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale CAK = _cak()
+
+    private static TimeLocale _cak() {
+        new TimeLocale(
+            'cak',
+            new ClockConfig(
+                ['kab\'lajuj', 'jun', 'ka\'i\'', 'oxi\'', 'kaji\'', 'wo\'o\'', 'waqi\'', 'wuqu\'', 'waqxaqi\'', 'b\'eleje\'', 'lajuj', 'julajuj'],
+                'nik\'aj aq\'a\'',
+                'nik\'aj q\'ij',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ceb.json
     // ================================================================
     // CEB — Cebuano
     // ================================================================
-    static final TimeLocale CEB = new TimeLocale(
-        'ceb',
-        new ClockConfig(
-            ['dose', 'uno', 'dos', 'tres', 'kwatro', 'singko', 'sais', 'siyete', 'otso', 'nuwebe', 'diyes', 'onse'],
-            'tungang gabii',
-            'udtong tutok',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale CEB = _ceb()
+
+    private static TimeLocale _ceb() {
+        new TimeLocale(
+            'ceb',
+            new ClockConfig(
+                ['dose', 'uno', 'dos', 'tres', 'kwatro', 'singko', 'sais', 'siyete', 'otso', 'nuwebe', 'diyes', 'onse'],
+                'tungang gabii',
+                'udtong tutok',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
-    static final TimeLocale CS = new TimeLocale(
-        'cs',
-        new ClockConfig(
-            ['dvanáct', 'jedna', 'dvě', 'tři', 'čtyři', 'pět', 'šest', 'sedm', 'osm', 'devět', 'deset', 'jedenáct'],
-            'půlnoc',
-            'poledne',
-            [(0): '{h} hodin', (5): 'pět po {h}', (10): 'deset po {h}', (15): 'čtvrt po {h}', (20): 'dvacet po {h}', (25): 'dvacet pět po {h}', (30): 'půl po {h}', (35): 'dvacet pět do {next_h}', (40): 'dvacet do {next_h}', (45): 'čtvrt do {next_h}', (50): 'deset do {next_h}', (55): 'pět do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale CS = _cs()
+
+    private static TimeLocale _cs() {
+        new TimeLocale(
+            'cs',
+            new ClockConfig(
+                ['dvanáct', 'jedna', 'dvě', 'tři', 'čtyři', 'pět', 'šest', 'sedm', 'osm', 'devět', 'deset', 'jedenáct'],
+                'půlnoc',
+                'poledne',
+                [(0): '{h} hodin', (5): 'pět po {h}', (10): 'deset po {h}', (15): 'čtvrt po {h}', (20): 'dvacet po {h}', (25): 'dvacet pět po {h}', (30): 'půl po {h}', (35): 'dvacet pět do {next_h}', (40): 'dvacet do {next_h}', (45): 'čtvrt do {next_h}', (50): 'deset do {next_h}', (55): 'pět do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
-    static final TimeLocale CY = new TimeLocale(
-        'cy',
-        new ClockConfig(
-            ['deuddeg', 'un', 'dau', 'tri', 'pedwar', 'pump', 'chwech', 'saith', 'wyth', 'naw', 'deg', 'un ar ddeg'],
-            'hanner nos',
-            'hanner dydd',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale CY = _cy()
+
+    private static TimeLocale _cy() {
+        new TimeLocale(
+            'cy',
+            new ClockConfig(
+                ['deuddeg', 'un', 'dau', 'tri', 'pedwar', 'pump', 'chwech', 'saith', 'wyth', 'naw', 'deg', 'un ar ddeg'],
+                'hanner nos',
+                'hanner dydd',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
-    static final TimeLocale DA = new TimeLocale(
-        'da',
-        new ClockConfig(
-            ['tolv', 'et', 'to', 'tre', 'fire', 'fem', 'seks', 'syv', 'otte', 'ni', 'ti', 'elleve'],
-            'midnat',
-            'middag',
-            [(0): 'klokken {h}', (5): 'fem over {h}', (10): 'ti over {h}', (15): 'kvart over {h}', (20): 'tyve over {h}', (25): 'fem i halv {next_h}', (30): 'halv {next_h}', (35): 'fem over halv {next_h}', (40): 'tyve i {next_h}', (45): 'kvart i {next_h}', (50): 'ti i {next_h}', (55): 'fem i {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
-    )
+    static final TimeLocale DA = _da()
+
+    private static TimeLocale _da() {
+        new TimeLocale(
+            'da',
+            new ClockConfig(
+                ['tolv', 'et', 'to', 'tre', 'fire', 'fem', 'seks', 'syv', 'otte', 'ni', 'ti', 'elleve'],
+                'midnat',
+                'middag',
+                [(0): 'klokken {h}', (5): 'fem over {h}', (10): 'ti over {h}', (15): 'kvart over {h}', (20): 'tyve over {h}', (25): 'fem i halv {next_h}', (30): 'halv {next_h}', (35): 'fem over halv {next_h}', (40): 'tyve i {next_h}', (45): 'kvart i {next_h}', (50): 'ti i {next_h}', (55): 'fem i {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
+        )
+    }
 
     // Source: time/locales/src/de.json
     // ================================================================
     // DE — German
     // ================================================================
-    static final TimeLocale DE = new TimeLocale(
-        'de',
-        new ClockConfig(
-            ['zwölf', 'eins', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'elf'],
-            'Mitternacht',
-            'Mittag',
-            [(0): '{h} Uhr', (5): 'fünf nach {h}', (10): 'zehn nach {h}', (15): 'Viertel nach {h}', (20): 'zwanzig nach {h}', (25): 'fünf vor halb {next_h}', (30): 'halb {next_h}', (35): 'fünf nach halb {next_h}', (40): 'zwanzig vor {next_h}', (45): 'Viertel vor {next_h}', (50): 'zehn vor {next_h}', (55): 'fünf vor {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale DE = _de()
+
+    private static TimeLocale _de() {
+        new TimeLocale(
+            'de',
+            new ClockConfig(
+                ['zwölf', 'eins', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'elf'],
+                'Mitternacht',
+                'Mittag',
+                [(0): '{h} Uhr', (5): 'fünf nach {h}', (10): 'zehn nach {h}', (15): 'Viertel nach {h}', (20): 'zwanzig nach {h}', (25): 'fünf vor halb {next_h}', (30): 'halb {next_h}', (35): 'fünf nach halb {next_h}', (40): 'zwanzig vor {next_h}', (45): 'Viertel vor {next_h}', (50): 'zehn vor {next_h}', (55): 'fünf vor {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/din.json
     // ================================================================
     // DIN — Dinka
     // ================================================================
-    static final TimeLocale DIN = new TimeLocale(
-        'din',
-        new ClockConfig(
-            ['thiäär ku rou', 'tök', 'rou', 'diäk', 'ŋuän', 'dhiëc', 'dhetem', 'dhorou', 'bɛ̈t', 'dhoŋuan', 'thiäär', 'thiäär ku tök'],
-            'wakɔ̈u',
-            'akɔ̈l ciëŋ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale DIN = _din()
+
+    private static TimeLocale _din() {
+        new TimeLocale(
+            'din',
+            new ClockConfig(
+                ['thiäär ku rou', 'tök', 'rou', 'diäk', 'ŋuän', 'dhiëc', 'dhetem', 'dhorou', 'bɛ̈t', 'dhoŋuan', 'thiäär', 'thiäär ku tök'],
+                'wakɔ̈u',
+                'akɔ̈l ciëŋ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/dje.json
     // ================================================================
     // DJE — Zarma
     // ================================================================
-    static final TimeLocale DJE = new TimeLocale(
-        'dje',
-        new ClockConfig(
-            ['way cindi', 'afoo', 'ihinka', 'ihinza', 'itaaci', 'igu', 'iddu', 'iyye', 'isahkay', 'iyegga', 'iwoy', 'iwoy cindi'],
-            'cin beri',
-            'zaari gaaham',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale DJE = _dje()
+
+    private static TimeLocale _dje() {
+        new TimeLocale(
+            'dje',
+            new ClockConfig(
+                ['way cindi', 'afoo', 'ihinka', 'ihinza', 'itaaci', 'igu', 'iddu', 'iyye', 'isahkay', 'iyegga', 'iwoy', 'iwoy cindi'],
+                'cin beri',
+                'zaari gaaham',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/dv.json
     // ================================================================
     // DV — Dhivehi
     // ================================================================
-    static final TimeLocale DV = new TimeLocale(
-        'dv',
-        new ClockConfig(
-            ['ބާރަ', 'އެކެއް', 'ދޭއް', 'ތިނެއް', 'ހަތަރެއް', 'ފަހެއް', 'ހައެއް', 'ހަތެއް', 'އަށެއް', 'ނުވައެއް', 'ދިހައެއް', 'އެގާރަ'],
-            'މެންދަމު',
-            'މެންދުރު',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale DV = _dv()
+
+    private static TimeLocale _dv() {
+        new TimeLocale(
+            'dv',
+            new ClockConfig(
+                ['ބާރަ', 'އެކެއް', 'ދޭއް', 'ތިނެއް', 'ހަތަރެއް', 'ފަހެއް', 'ހައެއް', 'ހަތެއް', 'އަށެއް', 'ނުވައެއް', 'ދިހައެއް', 'އެގާރަ'],
+                'މެންދަމު',
+                'މެންދުރު',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
     // ================================================================
-    static final TimeLocale DYU = new TimeLocale(
-        'dyu',
-        new ClockConfig(
-            ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔrɔ', 'wolonwula', 'segin', 'kɔnɔntɔn', 'tan', 'tan ni kelen'],
-            'dugutilama',
-            'tilgari',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale DYU = _dyu()
+
+    private static TimeLocale _dyu() {
+        new TimeLocale(
+            'dyu',
+            new ClockConfig(
+                ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔrɔ', 'wolonwula', 'segin', 'kɔnɔntɔn', 'tan', 'tan ni kelen'],
+                'dugutilama',
+                'tilgari',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/dz.json
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
-    static final TimeLocale DZ = new TimeLocale(
-        'dz',
-        new ClockConfig(
-            ['བཅུ་གཉིས', 'གཅིག', 'གཉིས', 'གསུམ', 'བཞི', 'ལྔ', 'དྲུག', 'བདུན', 'བརྒྱད', 'དགུ', 'བཅུ', 'བཅུ་གཅིག'],
-            'ནམ་ཕྱེད',
-            'ཉིན་གུང',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale DZ = _dz()
+
+    private static TimeLocale _dz() {
+        new TimeLocale(
+            'dz',
+            new ClockConfig(
+                ['བཅུ་གཉིས', 'གཅིག', 'གཉིས', 'གསུམ', 'བཞི', 'ལྔ', 'དྲུག', 'བདུན', 'བརྒྱད', 'དགུ', 'བཅུ', 'བཅུ་གཅིག'],
+                'ནམ་ཕྱེད',
+                'ཉིན་གུང',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ee.json
     // ================================================================
     // EE — Ewe
     // ================================================================
-    static final TimeLocale EE = new TimeLocale(
-        'ee',
-        new ClockConfig(
-            ['wuieve', 'ɖeka', 'eve', 'etɔ̃', 'ene', 'atɔ̃', 'ade', 'adre', 'enyi', 'asieke', 'ewo', 'wuiɖeka'],
-            'zã titina',
-            'ŋdɔ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale EE = _ee()
+
+    private static TimeLocale _ee() {
+        new TimeLocale(
+            'ee',
+            new ClockConfig(
+                ['wuieve', 'ɖeka', 'eve', 'etɔ̃', 'ene', 'atɔ̃', 'ade', 'adre', 'enyi', 'asieke', 'ewo', 'wuiɖeka'],
+                'zã titina',
+                'ŋdɔ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
-    static final TimeLocale EL = new TimeLocale(
-        'el',
-        new ClockConfig(
-            ['δώδεκα', 'μία', 'δύο', 'τρεις', 'τέσσερις', 'πέντε', 'έξι', 'εφτά', 'οκτώ', 'εννιά', 'δέκα', 'έντεκα'],
-            'μεσάνυχτα',
-            'μεσημέρι',
-            [(0): '{h} η ώρα', (5): '{h} και πέντε', (10): '{h} και δέκα', (15): '{h} και τέταρτο', (20): '{h} και είκοσι', (25): '{h} και είκοσι πέντε', (30): '{h} και μισή', (35): '{next_h} παρά είκοσι πέντε', (40): '{next_h} παρά είκοσι', (45): '{next_h} παρά τέταρτο', (50): '{next_h} παρά δέκα', (55): '{next_h} παρά πέντε']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale EL = _el()
+
+    private static TimeLocale _el() {
+        new TimeLocale(
+            'el',
+            new ClockConfig(
+                ['δώδεκα', 'μία', 'δύο', 'τρεις', 'τέσσερις', 'πέντε', 'έξι', 'εφτά', 'οκτώ', 'εννιά', 'δέκα', 'έντεκα'],
+                'μεσάνυχτα',
+                'μεσημέρι',
+                [(0): '{h} η ώρα', (5): '{h} και πέντε', (10): '{h} και δέκα', (15): '{h} και τέταρτο', (20): '{h} και είκοσι', (25): '{h} και είκοσι πέντε', (30): '{h} και μισή', (35): '{next_h} παρά είκοσι πέντε', (40): '{next_h} παρά είκοσι', (45): '{next_h} παρά τέταρτο', (50): '{next_h} παρά δέκα', (55): '{next_h} παρά πέντε']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/en.json
     // ================================================================
     // EN — English
     // ================================================================
-    static final TimeLocale EN = new TimeLocale(
-        'en',
-        new ClockConfig(
-            ['twelve', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven'],
-            'midnight',
-            'noon',
-            [(0): '{h} o\'clock', (5): 'five past {h}', (10): 'ten past {h}', (15): 'a quarter past {h}', (20): 'twenty past {h}', (25): 'twenty-five past {h}', (30): 'half past {h}', (35): 'twenty-five to {next_h}', (40): 'twenty to {next_h}', (45): 'a quarter to {next_h}', (50): 'ten to {next_h}', (55): 'five to {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale EN = _en()
+
+    private static TimeLocale _en() {
+        new TimeLocale(
+            'en',
+            new ClockConfig(
+                ['twelve', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven'],
+                'midnight',
+                'noon',
+                [(0): '{h} o\'clock', (5): 'five past {h}', (10): 'ten past {h}', (15): 'a quarter past {h}', (20): 'twenty past {h}', (25): 'twenty-five past {h}', (30): 'half past {h}', (35): 'twenty-five to {next_h}', (40): 'twenty to {next_h}', (45): 'a quarter to {next_h}', (50): 'ten to {next_h}', (55): 'five to {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
-    static final TimeLocale ES = new TimeLocale(
-        'es',
-        new ClockConfig(
-            ['doce', 'una', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez', 'once'],
-            'medianoche',
-            'mediodía',
-            [(0): '{h} en punto', (5): '{h} y cinco', (10): '{h} y diez', (15): '{h} y cuarto', (20): '{h} y veinte', (25): '{h} y veinticinco', (30): '{h} y media', (35): '{next_h} menos veinticinco', (40): '{next_h} menos veinte', (45): '{next_h} menos cuarto', (50): '{next_h} menos diez', (55): '{next_h} menos cinco']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale ES = _es()
+
+    private static TimeLocale _es() {
+        new TimeLocale(
+            'es',
+            new ClockConfig(
+                ['doce', 'una', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez', 'once'],
+                'medianoche',
+                'mediodía',
+                [(0): '{h} en punto', (5): '{h} y cinco', (10): '{h} y diez', (15): '{h} y cuarto', (20): '{h} y veinte', (25): '{h} y veinticinco', (30): '{h} y media', (35): '{next_h} menos veinticinco', (40): '{next_h} menos veinte', (45): '{next_h} menos cuarto', (50): '{next_h} menos diez', (55): '{next_h} menos cinco']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
-    static final TimeLocale ET = new TimeLocale(
-        'et',
-        new ClockConfig(
-            ['kaksteist', 'üks', 'kaks', 'kolm', 'neli', 'viis', 'kuus', 'seitse', 'kaheksa', 'üheksa', 'kümme', 'üksteist'],
-            'kesköö',
-            'keskpäev',
-            [(0): '{h}', (5): 'viis efter {h}', (10): 'kümme efter {h}', (15): 'veerand efter {h}', (20): 'kakskümmend efter {h}', (25): 'kakskümmend viis efter {h}', (30): 'pool efter {h}', (35): 'kakskümmend viis enne {next_h}', (40): 'kakskümmend enne {next_h}', (45): 'veerand enne {next_h}', (50): 'kümme enne {next_h}', (55): 'viis enne {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale ET = _et()
+
+    private static TimeLocale _et() {
+        new TimeLocale(
+            'et',
+            new ClockConfig(
+                ['kaksteist', 'üks', 'kaks', 'kolm', 'neli', 'viis', 'kuus', 'seitse', 'kaheksa', 'üheksa', 'kümme', 'üksteist'],
+                'kesköö',
+                'keskpäev',
+                [(0): '{h}', (5): 'viis efter {h}', (10): 'kümme efter {h}', (15): 'veerand efter {h}', (20): 'kakskümmend efter {h}', (25): 'kakskümmend viis efter {h}', (30): 'pool efter {h}', (35): 'kakskümmend viis enne {next_h}', (40): 'kakskümmend enne {next_h}', (45): 'veerand enne {next_h}', (50): 'kümme enne {next_h}', (55): 'viis enne {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
-    static final TimeLocale EU = new TimeLocale(
-        'eu',
-        new ClockConfig(
-            ['hamabi', 'bat', 'bi', 'hiru', 'lau', 'bost', 'sei', 'zazpi', 'zortzi', 'bederatzi', 'hamar', 'hamaika'],
-            'gauerdia',
-            'eguerdia',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale EU = _eu()
+
+    private static TimeLocale _eu() {
+        new TimeLocale(
+            'eu',
+            new ClockConfig(
+                ['hamabi', 'bat', 'bi', 'hiru', 'lau', 'bost', 'sei', 'zazpi', 'zortzi', 'bederatzi', 'hamar', 'hamaika'],
+                'gauerdia',
+                'eguerdia',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
-    static final TimeLocale FA = new TimeLocale(
-        'fa',
-        new ClockConfig(
-            ['دوازده', 'یک', 'دو', 'سه', 'چهار', 'پنج', 'شش', 'هفت', 'هشت', 'نه', 'ده', 'یازده'],
-            'نیمه‌شب',
-            'ظهر',
-            [(0): 'ساعت {h}', (5): '{h} و پنج دقیقه', (10): '{h} و ده دقیقه', (15): '{h} و ربع', (20): '{h} و بیست دقیقه', (25): '{h} و بیست و پنج دقیقه', (30): '{h} و نیم', (35): 'بیست و پنج دقیقه به {next_h}', (40): 'بیست دقیقه به {next_h}', (45): 'ربع به {next_h}', (50): 'ده دقیقه به {next_h}', (55): 'پنج دقیقه به {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale FA = _fa()
+
+    private static TimeLocale _fa() {
+        new TimeLocale(
+            'fa',
+            new ClockConfig(
+                ['دوازده', 'یک', 'دو', 'سه', 'چهار', 'پنج', 'شش', 'هفت', 'هشت', 'نه', 'ده', 'یازده'],
+                'نیمه‌شب',
+                'ظهر',
+                [(0): 'ساعت {h}', (5): '{h} و پنج دقیقه', (10): '{h} و ده دقیقه', (15): '{h} و ربع', (20): '{h} و بیست دقیقه', (25): '{h} و بیست و پنج دقیقه', (30): '{h} و نیم', (35): 'بیست و پنج دقیقه به {next_h}', (40): 'بیست دقیقه به {next_h}', (45): 'ربع به {next_h}', (50): 'ده دقیقه به {next_h}', (55): 'پنج دقیقه به {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/fan.json
     // ================================================================
     // FAN — Fang
     // ================================================================
-    static final TimeLocale FAN = new TimeLocale(
-        'fan',
-        new ClockConfig(
-            ['awom mebú', 'fóg', 'abúi', 'aláa', 'anyin', 'atán', 'asaman', 'zamgbala', 'mwom', 'ebulú', 'awom', 'awom mefóg'],
-            'akiri alúk',
-            'ewaŋ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale FAN = _fan()
+
+    private static TimeLocale _fan() {
+        new TimeLocale(
+            'fan',
+            new ClockConfig(
+                ['awom mebú', 'fóg', 'abúi', 'aláa', 'anyin', 'atán', 'asaman', 'zamgbala', 'mwom', 'ebulú', 'awom', 'awom mefóg'],
+                'akiri alúk',
+                'ewaŋ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ff.json
     // ================================================================
     // FF — Fulah
     // ================================================================
-    static final TimeLocale FF = new TimeLocale(
-        'ff',
-        new ClockConfig(
-            ['sappo e ɗiɗi', 'go\'o', 'ɗiɗi', 'tati', 'nay', 'joy', 'jeegom', 'jeeɗiɗi', 'jeetati', 'jeenay', 'sappo', 'sappo e go\'o'],
-            'jamma hejjere',
-            'zuhr',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale FF = _ff()
+
+    private static TimeLocale _ff() {
+        new TimeLocale(
+            'ff',
+            new ClockConfig(
+                ['sappo e ɗiɗi', 'go\'o', 'ɗiɗi', 'tati', 'nay', 'joy', 'jeegom', 'jeeɗiɗi', 'jeetati', 'jeenay', 'sappo', 'sappo e go\'o'],
+                'jamma hejjere',
+                'zuhr',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
-    static final TimeLocale FI = new TimeLocale(
-        'fi',
-        new ClockConfig(
-            ['kaksitoista', 'yksi', 'kaksi', 'kolme', 'neljä', 'viisi', 'kuusi', 'seitsemän', 'kahdeksan', 'yhdeksän', 'kymmenen', 'yksitoista'],
-            'keskiyö',
-            'keskipäivä',
-            [(0): '{h}', (5): 'viisi yli {h}', (10): 'kymmenen yli {h}', (15): 'vartti yli {h}', (20): 'kaksikymmentä yli {h}', (25): 'kaksikymmentäviisi yli {h}', (30): 'puoli yli {h}', (35): 'kaksikymmentäviisi vaille {next_h}', (40): 'kaksikymmentä vaille {next_h}', (45): 'vartti vaille {next_h}', (50): 'kymmenen vaille {next_h}', (55): 'viisi vaille {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
-    )
+    static final TimeLocale FI = _fi()
+
+    private static TimeLocale _fi() {
+        new TimeLocale(
+            'fi',
+            new ClockConfig(
+                ['kaksitoista', 'yksi', 'kaksi', 'kolme', 'neljä', 'viisi', 'kuusi', 'seitsemän', 'kahdeksan', 'yhdeksän', 'kymmenen', 'yksitoista'],
+                'keskiyö',
+                'keskipäivä',
+                [(0): '{h}', (5): 'viisi yli {h}', (10): 'kymmenen yli {h}', (15): 'vartti yli {h}', (20): 'kaksikymmentä yli {h}', (25): 'kaksikymmentäviisi yli {h}', (30): 'puoli yli {h}', (35): 'kaksikymmentäviisi vaille {next_h}', (40): 'kaksikymmentä vaille {next_h}', (45): 'vartti vaille {next_h}', (50): 'kymmenen vaille {next_h}', (55): 'viisi vaille {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
+        )
+    }
 
     // Source: time/locales/src/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
-    static final TimeLocale FIL = new TimeLocale(
-        'fil',
-        new ClockConfig(
-            ['dose', 'una', 'dos', 'tres', 'kwatro', 'singko', 'seis', 'syete', 'otso', 'nuwebe', 'diyes', 'onse'],
-            'hatinggabi',
-            'tanghali',
-            [(0): '{h} o\'clock', (5): 'lima dan {h}', (10): 'sampu dan {h}', (15): 'labinlima dan {h}', (20): 'dalawampu dan {h}', (25): 'dalawampu\'t lima dan {h}', (30): 'tatlumpu dan {h}', (35): 'dalawampu\'t lima bago mag {next_h}', (40): 'dalawampu bago mag {next_h}', (45): 'labinlima bago mag {next_h}', (50): 'sampu bago mag {next_h}', (55): 'lima bago mag {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale FIL = _fil()
+
+    private static TimeLocale _fil() {
+        new TimeLocale(
+            'fil',
+            new ClockConfig(
+                ['dose', 'una', 'dos', 'tres', 'kwatro', 'singko', 'seis', 'syete', 'otso', 'nuwebe', 'diyes', 'onse'],
+                'hatinggabi',
+                'tanghali',
+                [(0): '{h} o\'clock', (5): 'lima dan {h}', (10): 'sampu dan {h}', (15): 'labinlima dan {h}', (20): 'dalawampu dan {h}', (25): 'dalawampu\'t lima dan {h}', (30): 'tatlumpu dan {h}', (35): 'dalawampu\'t lima bago mag {next_h}', (40): 'dalawampu bago mag {next_h}', (45): 'labinlima bago mag {next_h}', (50): 'sampu bago mag {next_h}', (55): 'lima bago mag {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/fj.json
     // ================================================================
     // FJ — Fijian
     // ================================================================
-    static final TimeLocale FJ = new TimeLocale(
-        'fj',
-        new ClockConfig(
-            ['tini ka rua', 'dua', 'rua', 'tolu', 'vā', 'lima', 'ono', 'vitu', 'walu', 'ciwa', 'tini', 'tini ka dua'],
-            'bogi levu',
-            'sigalevu',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale FJ = _fj()
+
+    private static TimeLocale _fj() {
+        new TimeLocale(
+            'fj',
+            new ClockConfig(
+                ['tini ka rua', 'dua', 'rua', 'tolu', 'vā', 'lima', 'ono', 'vitu', 'walu', 'ciwa', 'tini', 'tini ka dua'],
+                'bogi levu',
+                'sigalevu',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/fon.json
     // ================================================================
     // FON — Fon
     // ================================================================
-    static final TimeLocale FON = new TimeLocale(
-        'fon',
-        new ClockConfig(
-            ['wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'ɖokpo-wǒ'],
-            'zǎnmɛ',
-            'hwemɛnu',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale FON = _fon()
+
+    private static TimeLocale _fon() {
+        new TimeLocale(
+            'fon',
+            new ClockConfig(
+                ['wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'ɖokpo-wǒ'],
+                'zǎnmɛ',
+                'hwemɛnu',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/fr.json
     // ================================================================
     // FR — French
     // ================================================================
-    static final TimeLocale FR = new TimeLocale(
-        'fr',
-        new ClockConfig(
-            ['douze', 'une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze'],
-            'minuit',
-            'midi',
-            [(0): '{h} heures', (5): '{h} heures cinq', (10): '{h} heures dix', (15): '{h} heures et quart', (20): '{h} heures vingt', (25): '{h} heures vingt-cinq', (30): '{h} heures et demie', (35): '{h} heures trente-cinq', (40): '{h} heures quarante', (45): '{h} heures moins le quart', (50): '{h} heures cinquante', (55): '{h} heures cinquante-cinq']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}h{mm}'))
-    )
+    static final TimeLocale FR = _fr()
+
+    private static TimeLocale _fr() {
+        new TimeLocale(
+            'fr',
+            new ClockConfig(
+                ['douze', 'une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze'],
+                'minuit',
+                'midi',
+                [(0): '{h} heures', (5): '{h} heures cinq', (10): '{h} heures dix', (15): '{h} heures et quart', (20): '{h} heures vingt', (25): '{h} heures vingt-cinq', (30): '{h} heures et demie', (35): '{h} heures trente-cinq', (40): '{h} heures quarante', (45): '{h} heures moins le quart', (50): '{h} heures cinquante', (55): '{h} heures cinquante-cinq']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}h{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
-    static final TimeLocale GA = new TimeLocale(
-        'ga',
-        new ClockConfig(
-            ['dó dhéag', 'haon', 'dó', 'trí', 'ceathair', 'cúig', 'sé', 'seacht', 'hocht', 'naoi', 'deich', 'haon déag'],
-            'meán oíche',
-            'meán lae',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale GA = _ga()
+
+    private static TimeLocale _ga() {
+        new TimeLocale(
+            'ga',
+            new ClockConfig(
+                ['dó dhéag', 'haon', 'dó', 'trí', 'ceathair', 'cúig', 'sé', 'seacht', 'hocht', 'naoi', 'deich', 'haon déag'],
+                'meán oíche',
+                'meán lae',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
-    static final TimeLocale GD = new TimeLocale(
-        'gd',
-        new ClockConfig(
-            ['dà-dheug', 'aon', 'dà', 'trì', 'ceithir', 'còig', 'sia', 'seachd', 'ochd', 'naoi', 'deich', 'aon-deug'],
-            'meadhan-oidhche',
-            'meadhan-latha',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale GD = _gd()
+
+    private static TimeLocale _gd() {
+        new TimeLocale(
+            'gd',
+            new ClockConfig(
+                ['dà-dheug', 'aon', 'dà', 'trì', 'ceithir', 'còig', 'sia', 'seachd', 'ochd', 'naoi', 'deich', 'aon-deug'],
+                'meadhan-oidhche',
+                'meadhan-latha',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/gl.json
     // ================================================================
     // GL — Galician
     // ================================================================
-    static final TimeLocale GL = new TimeLocale(
-        'gl',
-        new ClockConfig(
-            ['doce', 'unha', 'dúas', 'tres', 'catro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'once'],
-            'medianoite',
-            'mediodía',
-            [(0): '{h} en punto', (5): '{h} e cinco', (10): '{h} e dez', (15): '{h} e cuarto', (20): '{h} e vinte', (25): '{h} e vinte e cinco', (30): '{h} e media', (35): '{next_h} menos vinte e cinco', (40): '{next_h} menos vinte', (45): '{next_h} menos cuarto', (50): '{next_h} menos dez', (55): '{next_h} menos cinco']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale GL = _gl()
+
+    private static TimeLocale _gl() {
+        new TimeLocale(
+            'gl',
+            new ClockConfig(
+                ['doce', 'unha', 'dúas', 'tres', 'catro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'once'],
+                'medianoite',
+                'mediodía',
+                [(0): '{h} en punto', (5): '{h} e cinco', (10): '{h} e dez', (15): '{h} e cuarto', (20): '{h} e vinte', (25): '{h} e vinte e cinco', (30): '{h} e media', (35): '{next_h} menos vinte e cinco', (40): '{next_h} menos vinte', (45): '{next_h} menos cuarto', (50): '{next_h} menos dez', (55): '{next_h} menos cinco']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/gn.json
     // ================================================================
     // GN — Guarani
     // ================================================================
-    static final TimeLocale GN = new TimeLocale(
-        'gn',
-        new ClockConfig(
-            ['pa mokõi', 'peteĩ', 'mokõi', 'mbohapy', 'irundy', 'po', 'poteĩ', 'pokõi', 'poapy', 'porundy', 'pa', 'pa peteĩ'],
-            'pyhareve',
-            'asaje',
-            [(0): '{h}', (5): '{h} ha po', (10): '{h} ha pa', (15): '{h} ha pa po', (20): '{h} ha mokõi pa', (25): '{h} ha mokõi pa po', (30): '{h} ha mbohapy pa', (35): '{next_h} mba\'e mokõi pa po', (40): '{next_h} mba\'e mokõi pa', (45): '{next_h} mba\'e pa po', (50): '{next_h} mba\'e pa', (55): '{next_h} mba\'e po']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale GN = _gn()
+
+    private static TimeLocale _gn() {
+        new TimeLocale(
+            'gn',
+            new ClockConfig(
+                ['pa mokõi', 'peteĩ', 'mokõi', 'mbohapy', 'irundy', 'po', 'poteĩ', 'pokõi', 'poapy', 'porundy', 'pa', 'pa peteĩ'],
+                'pyhareve',
+                'asaje',
+                [(0): '{h}', (5): '{h} ha po', (10): '{h} ha pa', (15): '{h} ha pa po', (20): '{h} ha mokõi pa', (25): '{h} ha mokõi pa po', (30): '{h} ha mbohapy pa', (35): '{next_h} mba\'e mokõi pa po', (40): '{next_h} mba\'e mokõi pa', (45): '{next_h} mba\'e pa po', (50): '{next_h} mba\'e pa', (55): '{next_h} mba\'e po']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
-    static final TimeLocale GU = new TimeLocale(
-        'gu',
-        new ClockConfig(
-            ['બાર', 'એક', 'બે', 'ત્રણ', 'ચાર', 'પાંચ', 'છ', 'સાત', 'આઠ', 'નવ', 'દસ', 'અગિયાર'],
-            'મધ્યરાત્રિ',
-            'બપોર',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale GU = _gu()
+
+    private static TimeLocale _gu() {
+        new TimeLocale(
+            'gu',
+            new ClockConfig(
+                ['બાર', 'એક', 'બે', 'ત્રણ', 'ચાર', 'પાંચ', 'છ', 'સાત', 'આઠ', 'નવ', 'દસ', 'અગિયાર'],
+                'મધ્યરાત્રિ',
+                'બપોર',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
-    static final TimeLocale GV = new TimeLocale(
-        'gv',
-        new ClockConfig(
-            ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
-            'mean oie',
-            'munlaa',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale GV = _gv()
+
+    private static TimeLocale _gv() {
+        new TimeLocale(
+            'gv',
+            new ClockConfig(
+                ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
+                'mean oie',
+                'munlaa',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ha.json
     // ================================================================
     // HA — Hausa
     // ================================================================
-    static final TimeLocale HA = new TimeLocale(
-        'ha',
-        new ClockConfig(
-            ['sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'goma sha ɗaya'],
-            'tsakar dare',
-            'tsakar rana',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale HA = _ha()
+
+    private static TimeLocale _ha() {
+        new TimeLocale(
+            'ha',
+            new ClockConfig(
+                ['sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'goma sha ɗaya'],
+                'tsakar dare',
+                'tsakar rana',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
-    static final TimeLocale HE = new TimeLocale(
-        'he',
-        new ClockConfig(
-            ['שתים עשרה', 'אחת', 'שתיים', 'שלוש', 'ארבע', 'חמש', 'שש', 'שבע', 'שמונה', 'תשע', 'עשר', 'אחת עשרה'],
-            'חצות',
-            'צהריים',
-            [(0): 'השעה {h}', (5): '{h} וחמש', (10): '{h} ועשר', (15): '{h} ורבע', (20): '{h} ועשרים', (25): '{h} ועשרים וחמש', (30): '{h} וחצי', (35): 'עשרים וחמש ל{next_h}', (40): 'עשרים ל{next_h}', (45): 'רבע ל{next_h}', (50): 'עשר ל{next_h}', (55): 'חמש ל{next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale HE = _he()
+
+    private static TimeLocale _he() {
+        new TimeLocale(
+            'he',
+            new ClockConfig(
+                ['שתים עשרה', 'אחת', 'שתיים', 'שלוש', 'ארבע', 'חמש', 'שש', 'שבע', 'שמונה', 'תשע', 'עשר', 'אחת עשרה'],
+                'חצות',
+                'צהריים',
+                [(0): 'השעה {h}', (5): '{h} וחמש', (10): '{h} ועשר', (15): '{h} ורבע', (20): '{h} ועשרים', (25): '{h} ועשרים וחמש', (30): '{h} וחצי', (35): 'עשרים וחמש ל{next_h}', (40): 'עשרים ל{next_h}', (45): 'רבע ל{next_h}', (50): 'עשר ל{next_h}', (55): 'חמש ל{next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
-    static final TimeLocale HI = new TimeLocale(
-        'hi',
-        new ClockConfig(
-            ['बारह', 'एक', 'दो', 'तीन', 'चार', 'पाँच', 'छह', 'सात', 'आठ', 'नौ', 'दस', 'ग्यारह'],
-            'आधी रात',
-            'दोपहर',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale HI = _hi()
+
+    private static TimeLocale _hi() {
+        new TimeLocale(
+            'hi',
+            new ClockConfig(
+                ['बारह', 'एक', 'दो', 'तीन', 'चार', 'पाँच', 'छह', 'सात', 'आठ', 'नौ', 'दस', 'ग्यारह'],
+                'आधी रात',
+                'दोपहर',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/hmn.json
     // ================================================================
     // HMN — Hmong
     // ================================================================
-    static final TimeLocale HMN = new TimeLocale(
-        'hmn',
-        new ClockConfig(
-            ['kaum ob', 'ib', 'ob', 'peb', 'plaub', 'tsib', 'rau', 'xya', 'yim', 'cuaj', 'kaum', 'kaum ib'],
-            'ib tag hmo',
-            'tav su',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale HMN = _hmn()
+
+    private static TimeLocale _hmn() {
+        new TimeLocale(
+            'hmn',
+            new ClockConfig(
+                ['kaum ob', 'ib', 'ob', 'peb', 'plaub', 'tsib', 'rau', 'xya', 'yim', 'cuaj', 'kaum', 'kaum ib'],
+                'ib tag hmo',
+                'tav su',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
-    static final TimeLocale HR = new TimeLocale(
-        'hr',
-        new ClockConfig(
-            ['dvanaest', 'jedan', 'dva', 'tri', 'četiri', 'pet', 'šest', 'sedam', 'osam', 'devet', 'deset', 'jedanaest'],
-            'ponoć',
-            'podne',
-            [(0): '{h} sati', (5): 'pet po {h}', (10): 'deset po {h}', (15): 'petnaest po {h}', (20): 'dvadeset po {h}', (25): 'dvadeset pet po {h}', (30): 'trideset po {h}', (35): 'dvadeset pet do {next_h}', (40): 'dvadeset do {next_h}', (45): 'petnaest do {next_h}', (50): 'deset do {next_h}', (55): 'pet do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale HR = _hr()
+
+    private static TimeLocale _hr() {
+        new TimeLocale(
+            'hr',
+            new ClockConfig(
+                ['dvanaest', 'jedan', 'dva', 'tri', 'četiri', 'pet', 'šest', 'sedam', 'osam', 'devet', 'deset', 'jedanaest'],
+                'ponoć',
+                'podne',
+                [(0): '{h} sati', (5): 'pet po {h}', (10): 'deset po {h}', (15): 'petnaest po {h}', (20): 'dvadeset po {h}', (25): 'dvadeset pet po {h}', (30): 'trideset po {h}', (35): 'dvadeset pet do {next_h}', (40): 'dvadeset do {next_h}', (45): 'petnaest do {next_h}', (50): 'deset do {next_h}', (55): 'pet do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ht.json
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
-    static final TimeLocale HT = new TimeLocale(
-        'ht',
-        new ClockConfig(
-            ['douz', 'en', 'de', 'twa', 'kat', 'senk', 'sis', 'sèt', 'uit', 'nèf', 'dis', 'onz'],
-            'minui',
-            'midi',
-            [(0): '{h} è', (5): '{h} è senk', (10): '{h} è dis', (15): '{h} è ka', (20): '{h} è ven', (25): '{h} è vennsenk', (30): '{h} è demi', (35): '{next_h} mwen vennsenk', (40): '{next_h} mwen ven', (45): '{next_h} mwen ka', (50): '{next_h} mwen dis', (55): '{next_h} mwen senk']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale HT = _ht()
+
+    private static TimeLocale _ht() {
+        new TimeLocale(
+            'ht',
+            new ClockConfig(
+                ['douz', 'en', 'de', 'twa', 'kat', 'senk', 'sis', 'sèt', 'uit', 'nèf', 'dis', 'onz'],
+                'minui',
+                'midi',
+                [(0): '{h} è', (5): '{h} è senk', (10): '{h} è dis', (15): '{h} è ka', (20): '{h} è ven', (25): '{h} è vennsenk', (30): '{h} è demi', (35): '{next_h} mwen vennsenk', (40): '{next_h} mwen ven', (45): '{next_h} mwen ka', (50): '{next_h} mwen dis', (55): '{next_h} mwen senk']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
-    static final TimeLocale HU = new TimeLocale(
-        'hu',
-        new ClockConfig(
-            ['tizenkettő', 'egy', 'kettő', 'három', 'négy', 'öt', 'hat', 'hét', 'nyolc', 'kilenc', 'tíz', 'tizenegy'],
-            'éjfél',
-            'dél',
-            [(0): '{h} óra', (5): 'öt múlt {h}', (10): 'tíz múlt {h}', (15): 'negyed múlt {h}', (20): 'húsz múlt {h}', (25): 'huszonöt múlt {h}', (30): 'fél múlt {h}', (35): 'huszonöt múlva {next_h}', (40): 'húsz múlva {next_h}', (45): 'negyed múlva {next_h}', (50): 'tíz múlva {next_h}', (55): 'öt múlva {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale HU = _hu()
+
+    private static TimeLocale _hu() {
+        new TimeLocale(
+            'hu',
+            new ClockConfig(
+                ['tizenkettő', 'egy', 'kettő', 'három', 'négy', 'öt', 'hat', 'hét', 'nyolc', 'kilenc', 'tíz', 'tizenegy'],
+                'éjfél',
+                'dél',
+                [(0): '{h} óra', (5): 'öt múlt {h}', (10): 'tíz múlt {h}', (15): 'negyed múlt {h}', (20): 'húsz múlt {h}', (25): 'huszonöt múlt {h}', (30): 'fél múlt {h}', (35): 'huszonöt múlva {next_h}', (40): 'húsz múlva {next_h}', (45): 'negyed múlva {next_h}', (50): 'tíz múlva {next_h}', (55): 'öt múlva {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/hy.json
     // ================================================================
     // HY — Armenian
     // ================================================================
-    static final TimeLocale HY = new TimeLocale(
-        'hy',
-        new ClockConfig(
-            ['տասներկու', 'մեկ', 'երկու', 'երեք', 'չորս', 'հինգ', 'վեց', 'յոթ', 'ութ', 'ինը', 'տաս', 'տասնմեկ'],
-            'կեսգիշեր',
-            'կեսօր',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale HY = _hy()
+
+    private static TimeLocale _hy() {
+        new TimeLocale(
+            'hy',
+            new ClockConfig(
+                ['տասներկու', 'մեկ', 'երկու', 'երեք', 'չորս', 'հինգ', 'վեց', 'յոթ', 'ութ', 'ինը', 'տաս', 'տասնմեկ'],
+                'կեսգիշեր',
+                'կեսօր',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
-    static final TimeLocale ID = new TimeLocale(
-        'id',
-        new ClockConfig(
-            ['dua belas', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas'],
-            'tengah malam',
-            'tengah hari',
-            [(0): 'pukul {h}', (5): 'lima lewat {h}', (10): 'sepuluh lewat {h}', (15): 'seperempat lewat {h}', (20): 'dua puluh lewat {h}', (25): 'dua puluh lima lewat {h}', (30): 'setengah lewat {h}', (35): 'dua puluh lima menjelang {next_h}', (40): 'dua puluh menjelang {next_h}', (45): 'seperempat menjelang {next_h}', (50): 'sepuluh menjelang {next_h}', (55): 'lima menjelang {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
-    )
+    static final TimeLocale ID = _id()
+
+    private static TimeLocale _id() {
+        new TimeLocale(
+            'id',
+            new ClockConfig(
+                ['dua belas', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas'],
+                'tengah malam',
+                'tengah hari',
+                [(0): 'pukul {h}', (5): 'lima lewat {h}', (10): 'sepuluh lewat {h}', (15): 'seperempat lewat {h}', (20): 'dua puluh lewat {h}', (25): 'dua puluh lima lewat {h}', (30): 'setengah lewat {h}', (35): 'dua puluh lima menjelang {next_h}', (40): 'dua puluh menjelang {next_h}', (45): 'seperempat menjelang {next_h}', (50): 'sepuluh menjelang {next_h}', (55): 'lima menjelang {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ig.json
     // ================================================================
     // IG — Igbo
     // ================================================================
-    static final TimeLocale IG = new TimeLocale(
-        'ig',
-        new ClockConfig(
-            ['iri na abụọ', 'otu', 'abụọ', 'atọ', 'anọ', 'ise', 'isii', 'asaa', 'asatọ', 'itoolu', 'iri', 'iri na otu'],
-            'etiti abalị',
-            'ehihie',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale IG = _ig()
+
+    private static TimeLocale _ig() {
+        new TimeLocale(
+            'ig',
+            new ClockConfig(
+                ['iri na abụọ', 'otu', 'abụọ', 'atọ', 'anọ', 'ise', 'isii', 'asaa', 'asatọ', 'itoolu', 'iri', 'iri na otu'],
+                'etiti abalị',
+                'ehihie',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/is.json
     // ================================================================
     // IS — Icelandic
     // ================================================================
-    static final TimeLocale IS = new TimeLocale(
-        'is',
-        new ClockConfig(
-            ['tólf', 'eitt', 'tvö', 'þrjú', 'fjögur', 'fimm', 'sex', 'sjö', 'átta', 'níu', 'tíu', 'ellefu'],
-            'miðnætti',
-            'hádegi',
-            [(0): 'klukkan {h}', (5): 'fimm yfir {h}', (10): 'tíu yfir {h}', (15): 'korter yfir {h}', (20): 'tuttugu yfir {h}', (25): 'tuttugu og fimm yfir {h}', (30): 'hálf {next_h}', (35): 'tuttugu og fimm í {next_h}', (40): 'tuttugu í {next_h}', (45): 'korter í {next_h}', (50): 'tíu í {next_h}', (55): 'fimm í {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale IS = _is()
+
+    private static TimeLocale _is() {
+        new TimeLocale(
+            'is',
+            new ClockConfig(
+                ['tólf', 'eitt', 'tvö', 'þrjú', 'fjögur', 'fimm', 'sex', 'sjö', 'átta', 'níu', 'tíu', 'ellefu'],
+                'miðnætti',
+                'hádegi',
+                [(0): 'klukkan {h}', (5): 'fimm yfir {h}', (10): 'tíu yfir {h}', (15): 'korter yfir {h}', (20): 'tuttugu yfir {h}', (25): 'tuttugu og fimm yfir {h}', (30): 'hálf {next_h}', (35): 'tuttugu og fimm í {next_h}', (40): 'tuttugu í {next_h}', (45): 'korter í {next_h}', (50): 'tíu í {next_h}', (55): 'fimm í {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
-    static final TimeLocale IT = new TimeLocale(
-        'it',
-        new ClockConfig(
-            ['dodici', 'una', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci', 'undici'],
-            'mezzanotte',
-            'mezzogiorno',
-            [(0): 'le {h}', (5): '{h} e cinque', (10): '{h} e dieci', (15): '{h} e un quarto', (20): '{h} e venti', (25): '{h} e venticinque', (30): '{h} e mezza', (35): '{next_h} meno venticinque', (40): '{next_h} meno venti', (45): '{next_h} meno un quarto', (50): '{next_h} meno dieci', (55): '{next_h} meno cinque']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale IT = _it()
+
+    private static TimeLocale _it() {
+        new TimeLocale(
+            'it',
+            new ClockConfig(
+                ['dodici', 'una', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci', 'undici'],
+                'mezzanotte',
+                'mezzogiorno',
+                [(0): 'le {h}', (5): '{h} e cinque', (10): '{h} e dieci', (15): '{h} e un quarto', (20): '{h} e venti', (25): '{h} e venticinque', (30): '{h} e mezza', (35): '{next_h} meno venticinque', (40): '{next_h} meno venti', (45): '{next_h} meno un quarto', (50): '{next_h} meno dieci', (55): '{next_h} meno cinque']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
-    static final TimeLocale JA = new TimeLocale(
-        'ja',
-        new ClockConfig(
-            ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'],
-            '午前零時',
-            '正午',
-            [(0): '{h}時', (5): '{h}時五分', (10): '{h}時十分', (15): '{h}時十五分', (20): '{h}時二十分', (25): '{h}時二十五分', (30): '{h}時半', (35): '{h}時三十五分', (40): '{h}時四十分', (45): '{h}時四十五分', (50): '{h}時五十分', (55): '{h}時五十五分']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale JA = _ja()
+
+    private static TimeLocale _ja() {
+        new TimeLocale(
+            'ja',
+            new ClockConfig(
+                ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'],
+                '午前零時',
+                '正午',
+                [(0): '{h}時', (5): '{h}時五分', (10): '{h}時十分', (15): '{h}時十五分', (20): '{h}時二十分', (25): '{h}時二十五分', (30): '{h}時半', (35): '{h}時三十五分', (40): '{h}時四十分', (45): '{h}時四十五分', (50): '{h}時五十分', (55): '{h}時五十五分']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
-    static final TimeLocale JV = new TimeLocale(
-        'jv',
-        new ClockConfig(
-            ['rolas', 'siji', 'loro', 'telu', 'papat', 'lima', 'enem', 'pitu', 'wolu', 'sanga', 'sepuluh', 'sewelas'],
-            'tengah wengi',
-            'awan',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale JV = _jv()
+
+    private static TimeLocale _jv() {
+        new TimeLocale(
+            'jv',
+            new ClockConfig(
+                ['rolas', 'siji', 'loro', 'telu', 'papat', 'lima', 'enem', 'pitu', 'wolu', 'sanga', 'sepuluh', 'sewelas'],
+                'tengah wengi',
+                'awan',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
-    static final TimeLocale KA = new TimeLocale(
-        'ka',
-        new ClockConfig(
-            ['თორმეტი', 'ერთი', 'ორი', 'სამი', 'ოთხი', 'ხუთი', 'ექვსი', 'შვიდი', 'რვა', 'ცხრა', 'ათი', 'თერთმეტი'],
-            'შუაღამე',
-            'შუადღე',
-            [(0): '{h} o\'clock', (5): 'ხუთი past {h}', (10): 'ათი past {h}', (15): 'თხუთმეტი past {h}', (20): 'ოცი past {h}', (25): 'ოცდახუთი past {h}', (30): 'ოცდაათი past {h}', (35): 'ოცდახუთი to {next_h}', (40): 'ოცი to {next_h}', (45): 'თხუთმეტი to {next_h}', (50): 'ათი to {next_h}', (55): 'ხუთი to {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KA = _ka()
+
+    private static TimeLocale _ka() {
+        new TimeLocale(
+            'ka',
+            new ClockConfig(
+                ['თორმეტი', 'ერთი', 'ორი', 'სამი', 'ოთხი', 'ხუთი', 'ექვსი', 'შვიდი', 'რვა', 'ცხრა', 'ათი', 'თერთმეტი'],
+                'შუაღამე',
+                'შუადღე',
+                [(0): '{h} o\'clock', (5): 'ხუთი past {h}', (10): 'ათი past {h}', (15): 'თხუთმეტი past {h}', (20): 'ოცი past {h}', (25): 'ოცდახუთი past {h}', (30): 'ოცდაათი past {h}', (35): 'ოცდახუთი to {next_h}', (40): 'ოცი to {next_h}', (45): 'თხუთმეტი to {next_h}', (50): 'ათი to {next_h}', (55): 'ხუთი to {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/kbp.json
     // ================================================================
     // KBP — Kabiye
     // ================================================================
-    static final TimeLocale KBP = new TimeLocale(
-        'kbp',
-        new ClockConfig(
-            ['hiu nɛ naalɛ', 'kʊɖʊm', 'naalɛ', 'naadozo', 'naanaza', 'kagbanzɩ', 'loɖo', 'lʊbɛ', 'lɛɛtɛ', 'nakʊ', 'hiu', 'hiu nɛ kʊɖʊm'],
-            'ɖoo hɛkʊ',
-            'wɩsɩ taa',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale KBP = _kbp()
+
+    private static TimeLocale _kbp() {
+        new TimeLocale(
+            'kbp',
+            new ClockConfig(
+                ['hiu nɛ naalɛ', 'kʊɖʊm', 'naalɛ', 'naadozo', 'naanaza', 'kagbanzɩ', 'loɖo', 'lʊbɛ', 'lɛɛtɛ', 'nakʊ', 'hiu', 'hiu nɛ kʊɖʊm'],
+                'ɖoo hɛkʊ',
+                'wɩsɩ taa',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/kek.json
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
-    static final TimeLocale KEK = new TimeLocale(
-        'kek',
-        new ClockConfig(
-            ['kab\'laju', 'jun', 'kab\'', 'oxib\'', 'kab\'ib\'', 'o\'ib\'', 'waqib\'', 'uqub\'', 'wajxaqib\'', 'b\'elejeb\'', 'lajeb\'', 'junlaju'],
-            'chaq\' xkab\'',
-            'chaq\' chaab\'il',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale KEK = _kek()
+
+    private static TimeLocale _kek() {
+        new TimeLocale(
+            'kek',
+            new ClockConfig(
+                ['kab\'laju', 'jun', 'kab\'', 'oxib\'', 'kab\'ib\'', 'o\'ib\'', 'waqib\'', 'uqub\'', 'wajxaqib\'', 'b\'elejeb\'', 'lajeb\'', 'junlaju'],
+                'chaq\' xkab\'',
+                'chaq\' chaab\'il',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ki.json
     // ================================================================
     // KI — Kikuyu
     // ================================================================
-    static final TimeLocale KI = new TimeLocale(
-        'ki',
-        new ClockConfig(
-            ['ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano', 'ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe'],
-            'ũtukũ gatagatĩ',
-            'mũthenya gatagatĩ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, ['Kiroko', 'Hwaĩ-inĩ'] as String[], '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KI = _ki()
+
+    private static TimeLocale _ki() {
+        new TimeLocale(
+            'ki',
+            new ClockConfig(
+                ['ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano', 'ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe'],
+                'ũtukũ gatagatĩ',
+                'mũthenya gatagatĩ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, ['Kiroko', 'Hwaĩ-inĩ'] as String[], '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
-    static final TimeLocale KK = new TimeLocale(
-        'kk',
-        new ClockConfig(
-            ['он екі', 'бір', 'екі', 'үш', 'төрт', 'бес', 'алты', 'жеті', 'сегіз', 'тоғыз', 'он', 'он бір'],
-            'түн ортасы',
-            'түс',
-            [(0): '{h} o\'clock', (5): 'бес past {h}', (10): 'он past {h}', (15): 'он бес past {h}', (20): 'жиырма past {h}', (25): 'жиырма бес past {h}', (30): 'отыз past {h}', (35): 'жиырма бес to {next_h}', (40): 'жиырма to {next_h}', (45): 'он бес to {next_h}', (50): 'он to {next_h}', (55): 'бес to {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KK = _kk()
+
+    private static TimeLocale _kk() {
+        new TimeLocale(
+            'kk',
+            new ClockConfig(
+                ['он екі', 'бір', 'екі', 'үш', 'төрт', 'бес', 'алты', 'жеті', 'сегіз', 'тоғыз', 'он', 'он бір'],
+                'түн ортасы',
+                'түс',
+                [(0): '{h} o\'clock', (5): 'бес past {h}', (10): 'он past {h}', (15): 'он бес past {h}', (20): 'жиырма past {h}', (25): 'жиырма бес past {h}', (30): 'отыз past {h}', (35): 'жиырма бес to {next_h}', (40): 'жиырма to {next_h}', (45): 'он бес to {next_h}', (50): 'он to {next_h}', (55): 'бес to {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/kl.json
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
-    static final TimeLocale KL = new TimeLocale(
-        'kl',
-        new ClockConfig(
-            ['akunneq marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'akunneq ataaseq'],
-            'unnuap qeqqa',
-            'ulloqeqqap qeqqa',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
-    )
+    static final TimeLocale KL = _kl()
+
+    private static TimeLocale _kl() {
+        new TimeLocale(
+            'kl',
+            new ClockConfig(
+                ['akunneq marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'akunneq ataaseq'],
+                'unnuap qeqqa',
+                'ulloqeqqap qeqqa',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}.{mm}'))
+        )
+    }
 
     // Source: time/locales/src/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
-    static final TimeLocale KM = new TimeLocale(
-        'km',
-        new ClockConfig(
-            ['ដប់ពីរ', 'មួយ', 'ពីរ', 'បី', 'បួន', 'ប្រាំ', 'ប្រាំមួយ', 'ប្រាំពីរ', 'ប្រាំបី', 'ប្រាំបួន', 'ដប់', 'ដប់មួយ'],
-            'កណ្ដាលអធ្រាត្រ',
-            'ថ្ងៃត្រង់',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KM = _km()
+
+    private static TimeLocale _km() {
+        new TimeLocale(
+            'km',
+            new ClockConfig(
+                ['ដប់ពីរ', 'មួយ', 'ពីរ', 'បី', 'បួន', 'ប្រាំ', 'ប្រាំមួយ', 'ប្រាំពីរ', 'ប្រាំបី', 'ប្រាំបួន', 'ដប់', 'ដប់មួយ'],
+                'កណ្ដាលអធ្រាត្រ',
+                'ថ្ងៃត្រង់',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/kn.json
     // ================================================================
     // KN — Kannada
     // ================================================================
-    static final TimeLocale KN = new TimeLocale(
-        'kn',
-        new ClockConfig(
-            ['ಹನ್ನೆರಡು', 'ಒಂದು', 'ಎರಡು', 'ಮೂರು', 'ನಾಲ್ಕು', 'ಐದು', 'ಆರು', 'ಏಳು', 'ಎಂಟು', 'ಒಂಬತ್ತು', 'ಹತ್ತು', 'ಹನ್ನೊಂದು'],
-            'ಮಧ್ಯರಾತ್ರಿ',
-            'ಮಧ್ಯಾಹ್ನ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale KN = _kn()
+
+    private static TimeLocale _kn() {
+        new TimeLocale(
+            'kn',
+            new ClockConfig(
+                ['ಹನ್ನೆರಡು', 'ಒಂದು', 'ಎರಡು', 'ಮೂರು', 'ನಾಲ್ಕು', 'ಐದು', 'ಆರು', 'ಏಳು', 'ಎಂಟು', 'ಒಂಬತ್ತು', 'ಹತ್ತು', 'ಹನ್ನೊಂದು'],
+                'ಮಧ್ಯರಾತ್ರಿ',
+                'ಮಧ್ಯಾಹ್ನ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
-    static final TimeLocale KO = new TimeLocale(
-        'ko',
-        new ClockConfig(
-            ['열두', '한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열', '열한'],
-            '자정',
-            '정오',
-            [(0): '{h} 시', (5): '{h} 시 오 분', (10): '{h} 시 십 분', (15): '{h} 시 십오 분', (20): '{h} 시 이십 분', (25): '{h} 시 이십오 분', (30): '{h} 시 반', (35): '{h} 시 삼십오 분', (40): '{h} 시 사십 분', (45): '{h} 시 사십오 분', (50): '{h} 시 오십 분', (55): '{h} 시 오십오 분']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KO = _ko()
+
+    private static TimeLocale _ko() {
+        new TimeLocale(
+            'ko',
+            new ClockConfig(
+                ['열두', '한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열', '열한'],
+                '자정',
+                '정오',
+                [(0): '{h} 시', (5): '{h} 시 오 분', (10): '{h} 시 십 분', (15): '{h} 시 십오 분', (20): '{h} 시 이십 분', (25): '{h} 시 이십오 분', (30): '{h} 시 반', (35): '{h} 시 삼십오 분', (40): '{h} 시 사십 분', (45): '{h} 시 사십오 분', (50): '{h} 시 오십 분', (55): '{h} 시 오십오 분']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/kpe.json
     // ================================================================
     // KPE — Kpelle
     // ================================================================
-    static final TimeLocale KPE = new TimeLocale(
-        'kpe',
-        new ClockConfig(
-            ['puu lɔŋ', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ'],
-            'kpindi kɔlɛ',
-            'tili-ma',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale KPE = _kpe()
+
+    private static TimeLocale _kpe() {
+        new TimeLocale(
+            'kpe',
+            new ClockConfig(
+                ['puu lɔŋ', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ'],
+                'kpindi kɔlɛ',
+                'tili-ma',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/kri.json
     // ================================================================
     // KRI — Krio
     // ================================================================
-    static final TimeLocale KRI = new TimeLocale(
-        'kri',
-        new ClockConfig(
-            ['twelv', 'wan', 'tu', 'tri', 'fo', 'fayv', 'siks', 'sevin', 'et', 'nayn', 'ten', 'ilevin'],
-            'midul net',
-            'midul de',
-            [(0): '{h} oklok', (5): 'fayv pas {h}', (10): 'ten pas {h}', (15): 'kwota pas {h}', (20): 'twenti pas {h}', (25): 'twenti fayv pas {h}', (30): 'af pas {h}', (35): 'twenti fayv tu {next_h}', (40): 'twenti tu {next_h}', (45): 'kwota tu {next_h}', (50): 'ten tu {next_h}', (55): 'fayv tu {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale KRI = _kri()
+
+    private static TimeLocale _kri() {
+        new TimeLocale(
+            'kri',
+            new ClockConfig(
+                ['twelv', 'wan', 'tu', 'tri', 'fo', 'fayv', 'siks', 'sevin', 'et', 'nayn', 'ten', 'ilevin'],
+                'midul net',
+                'midul de',
+                [(0): '{h} oklok', (5): 'fayv pas {h}', (10): 'ten pas {h}', (15): 'kwota pas {h}', (20): 'twenti pas {h}', (25): 'twenti fayv pas {h}', (30): 'af pas {h}', (35): 'twenti fayv tu {next_h}', (40): 'twenti tu {next_h}', (45): 'kwota tu {next_h}', (50): 'ten tu {next_h}', (55): 'fayv tu {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ktu.json
     // ================================================================
     // KTU — Kituba
     // ================================================================
-    static final TimeLocale KTU = new TimeLocale(
-        'ktu',
-        new ClockConfig(
-            ['zomi na zole', 'mosi', 'zole', 'tatu', 'ya', 'tanu', 'sambanu', 'nsambwadi', 'nana', 'vwa', 'zomi', 'zomi na mosi'],
-            'midi ya butu',
-            'midi',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale KTU = _ktu()
+
+    private static TimeLocale _ktu() {
+        new TimeLocale(
+            'ktu',
+            new ClockConfig(
+                ['zomi na zole', 'mosi', 'zole', 'tatu', 'ya', 'tanu', 'sambanu', 'nsambwadi', 'nana', 'vwa', 'zomi', 'zomi na mosi'],
+                'midi ya butu',
+                'midi',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ku.json
     // ================================================================
     // KU — Kurdish
     // ================================================================
-    static final TimeLocale KU = new TimeLocale(
-        'ku',
-        new ClockConfig(
-            ['diwanzdeh', 'yek', 'du', 'sê', 'çar', 'pênc', 'şeş', 'heft', 'heşt', 'neh', 'deh', 'yanzdeh'],
-            'nîvê şevê',
-            'nîvro',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KU = _ku()
+
+    private static TimeLocale _ku() {
+        new TimeLocale(
+            'ku',
+            new ClockConfig(
+                ['diwanzdeh', 'yek', 'du', 'sê', 'çar', 'pênc', 'şeş', 'heft', 'heşt', 'neh', 'deh', 'yanzdeh'],
+                'nîvê şevê',
+                'nîvro',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
-    static final TimeLocale KW = new TimeLocale(
-        'kw',
-        new ClockConfig(
-            ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
-            'hanter nos',
-            'hanter dydh',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KW = _kw()
+
+    private static TimeLocale _kw() {
+        new TimeLocale(
+            'kw',
+            new ClockConfig(
+                ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
+                'hanter nos',
+                'hanter dydh',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ky.json
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
-    static final TimeLocale KY = new TimeLocale(
-        'ky',
-        new ClockConfig(
-            ['он эки', 'бир', 'эки', 'үч', 'төрт', 'беш', 'алты', 'жети', 'сегиз', 'тогуз', 'он', 'он бир'],
-            'түн ортосу',
-            'түш',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale KY = _ky()
+
+    private static TimeLocale _ky() {
+        new TimeLocale(
+            'ky',
+            new ClockConfig(
+                ['он эки', 'бир', 'эки', 'үч', 'төрт', 'беш', 'алты', 'жети', 'сегиз', 'тогуз', 'он', 'он бир'],
+                'түн ортосу',
+                'түш',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/lb.json
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
-    static final TimeLocale LB = new TimeLocale(
-        'lb',
-        new ClockConfig(
-            ['zwielef', 'eent', 'zwee', 'dräi', 'véier', 'fënnef', 'sechs', 'siwen', 'aacht', 'néng', 'zéng', 'eelef'],
-            'Mëtternuecht',
-            'Mëtteg',
-            [(0): '{h} Auer', (5): 'fënnef op {h}', (10): 'zéng op {h}', (15): 'Véierel op {h}', (20): 'zwanzeg op {h}', (25): 'fënnef vir hallwer {next_h}', (30): 'hallwer {next_h}', (35): 'fënnef op hallwer {next_h}', (40): 'zwanzeg vir {next_h}', (45): 'Véierel vir {next_h}', (50): 'zéng vir {next_h}', (55): 'fënnef vir {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale LB = _lb()
+
+    private static TimeLocale _lb() {
+        new TimeLocale(
+            'lb',
+            new ClockConfig(
+                ['zwielef', 'eent', 'zwee', 'dräi', 'véier', 'fënnef', 'sechs', 'siwen', 'aacht', 'néng', 'zéng', 'eelef'],
+                'Mëtternuecht',
+                'Mëtteg',
+                [(0): '{h} Auer', (5): 'fënnef op {h}', (10): 'zéng op {h}', (15): 'Véierel op {h}', (20): 'zwanzeg op {h}', (25): 'fënnef vir hallwer {next_h}', (30): 'hallwer {next_h}', (35): 'fënnef op hallwer {next_h}', (40): 'zwanzeg vir {next_h}', (45): 'Véierel vir {next_h}', (50): 'zéng vir {next_h}', (55): 'fënnef vir {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/lg.json
     // ================================================================
     // LG — Luganda
     // ================================================================
-    static final TimeLocale LG = new TimeLocale(
-        'lg',
-        new ClockConfig(
-            ['kkumi na bbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano', 'mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi na emu'],
-            'ekiro eky\'omu ttumbi',
-            'ettuntu',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale LG = _lg()
+
+    private static TimeLocale _lg() {
+        new TimeLocale(
+            'lg',
+            new ClockConfig(
+                ['kkumi na bbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano', 'mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi na emu'],
+                'ekiro eky\'omu ttumbi',
+                'ettuntu',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ln.json
     // ================================================================
     // LN — Lingala
     // ================================================================
-    static final TimeLocale LN = new TimeLocale(
-        'ln',
-        new ClockConfig(
-            ['zómi na míbalé', 'mɔ̌kɔ́', 'míbalé', 'mísáto', 'mínéi', 'mítáno', 'motóba', 'nsambo', 'mwambe', 'libwá', 'zómi', 'zómi na mɔ̌kɔ́'],
-            'mpɔ́kwa',
-            'ntɔ́ngɔ́',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale LN = _ln()
+
+    private static TimeLocale _ln() {
+        new TimeLocale(
+            'ln',
+            new ClockConfig(
+                ['zómi na míbalé', 'mɔ̌kɔ́', 'míbalé', 'mísáto', 'mínéi', 'mítáno', 'motóba', 'nsambo', 'mwambe', 'libwá', 'zómi', 'zómi na mɔ̌kɔ́'],
+                'mpɔ́kwa',
+                'ntɔ́ngɔ́',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/lo.json
     // ================================================================
     // LO — Lao
     // ================================================================
-    static final TimeLocale LO = new TimeLocale(
-        'lo',
-        new ClockConfig(
-            ['ສິບສອງ', 'ໜຶ່ງ', 'ສອງ', 'ສາມ', 'ສີ່', 'ຫ້າ', 'ຫົກ', 'ເຈັດ', 'ແປດ', 'ເກົ້າ', 'ສິບ', 'ສິບເອັດ'],
-            'ທ່ຽງຄືນ',
-            'ທ່ຽງ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale LO = _lo()
+
+    private static TimeLocale _lo() {
+        new TimeLocale(
+            'lo',
+            new ClockConfig(
+                ['ສິບສອງ', 'ໜຶ່ງ', 'ສອງ', 'ສາມ', 'ສີ່', 'ຫ້າ', 'ຫົກ', 'ເຈັດ', 'ແປດ', 'ເກົ້າ', 'ສິບ', 'ສິບເອັດ'],
+                'ທ່ຽງຄືນ',
+                'ທ່ຽງ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
-    static final TimeLocale LT = new TimeLocale(
-        'lt',
-        new ClockConfig(
-            ['dvylika', 'viena', 'dvi', 'trys', 'keturios', 'penkios', 'šešios', 'septynios', 'aštuonios', 'devynios', 'dešimt', 'vienuolika'],
-            'vidurnaktis',
-            'vidurdienis',
-            [(0): '{h}', (5): 'penkios minuta {h}', (10): 'dešimt minuta {h}', (15): 'penkiolika minuta {h}', (20): 'dvidešimt minuta {h}', (25): 'dvidešimt penkios minuta {h}', (30): 'trisdešimt minuta {h}', (35): 'dvidešimt penkios iki {next_h}', (40): 'dvidešimt iki {next_h}', (45): 'penkiolika iki {next_h}', (50): 'dešimt iki {next_h}', (55): 'penkios iki {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale LT = _lt()
+
+    private static TimeLocale _lt() {
+        new TimeLocale(
+            'lt',
+            new ClockConfig(
+                ['dvylika', 'viena', 'dvi', 'trys', 'keturios', 'penkios', 'šešios', 'septynios', 'aštuonios', 'devynios', 'dešimt', 'vienuolika'],
+                'vidurnaktis',
+                'vidurdienis',
+                [(0): '{h}', (5): 'penkios minuta {h}', (10): 'dešimt minuta {h}', (15): 'penkiolika minuta {h}', (20): 'dvidešimt minuta {h}', (25): 'dvidešimt penkios minuta {h}', (30): 'trisdešimt minuta {h}', (35): 'dvidešimt penkios iki {next_h}', (40): 'dvidešimt iki {next_h}', (45): 'penkiolika iki {next_h}', (50): 'dešimt iki {next_h}', (55): 'penkios iki {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/luo.json
     // ================================================================
     // LUO — Dholuo
     // ================================================================
-    static final TimeLocale LUO = new TimeLocale(
-        'luo',
-        new ClockConfig(
-            ['apar gi ariyo', 'achiel', 'ariyo', 'adek', 'ang\'wen', 'abich', 'auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gi achiel'],
-            'dier otieno',
-            'odiechieng\' tir',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale LUO = _luo()
+
+    private static TimeLocale _luo() {
+        new TimeLocale(
+            'luo',
+            new ClockConfig(
+                ['apar gi ariyo', 'achiel', 'ariyo', 'adek', 'ang\'wen', 'abich', 'auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gi achiel'],
+                'dier otieno',
+                'odiechieng\' tir',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
-    static final TimeLocale LV = new TimeLocale(
-        'lv',
-        new ClockConfig(
-            ['divpadsmit', 'viens', 'divi', 'trīs', 'četri', 'pieci', 'seši', 'septiņi', 'astoņi', 'deviņi', 'desmit', 'vienpadsmit'],
-            'pusnakts',
-            'pusdiena',
-            [(0): '{h}', (5): 'pieci pēc {h}', (10): 'desmit pēc {h}', (15): 'piecpadsmit pēc {h}', (20): 'divdesmit pēc {h}', (25): 'divdesmit pieci pēc {h}', (30): 'trīsdesmit pēc {h}', (35): 'divdesmit pieci līdz {next_h}', (40): 'divdesmit līdz {next_h}', (45): 'piecpadsmit līdz {next_h}', (50): 'desmit līdz {next_h}', (55): 'pieci līdz {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale LV = _lv()
+
+    private static TimeLocale _lv() {
+        new TimeLocale(
+            'lv',
+            new ClockConfig(
+                ['divpadsmit', 'viens', 'divi', 'trīs', 'četri', 'pieci', 'seši', 'septiņi', 'astoņi', 'deviņi', 'desmit', 'vienpadsmit'],
+                'pusnakts',
+                'pusdiena',
+                [(0): '{h}', (5): 'pieci pēc {h}', (10): 'desmit pēc {h}', (15): 'piecpadsmit pēc {h}', (20): 'divdesmit pēc {h}', (25): 'divdesmit pieci pēc {h}', (30): 'trīsdesmit pēc {h}', (35): 'divdesmit pieci līdz {next_h}', (40): 'divdesmit līdz {next_h}', (45): 'piecpadsmit līdz {next_h}', (50): 'desmit līdz {next_h}', (55): 'pieci līdz {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/mam.json
     // ================================================================
     // MAM — Mam
     // ================================================================
-    static final TimeLocale MAM = new TimeLocale(
-        'mam',
-        new ClockConfig(
-            ['kab\'laj', 'jun', 'kab\'', 'oxe', 'kyaje', 'jwe\'', 'qaq', 'wuq', 'wajxaq', 'b\'alaj', 'laj', 'junlaj'],
-            'nik\' aq\'b\'il',
-            'nik\' q\'ij',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MAM = _mam()
+
+    private static TimeLocale _mam() {
+        new TimeLocale(
+            'mam',
+            new ClockConfig(
+                ['kab\'laj', 'jun', 'kab\'', 'oxe', 'kyaje', 'jwe\'', 'qaq', 'wuq', 'wajxaq', 'b\'alaj', 'laj', 'junlaj'],
+                'nik\' aq\'b\'il',
+                'nik\' q\'ij',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/men.json
     // ================================================================
     // MEN — Mende
     // ================================================================
-    static final TimeLocale MEN = new TimeLocale(
-        'men',
-        new ClockConfig(
-            ['pu wɛlɛ', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila'],
-            'kpindi gbɔyɔŋ',
-            'ndɔlei-ma',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MEN = _men()
+
+    private static TimeLocale _men() {
+        new TimeLocale(
+            'men',
+            new ClockConfig(
+                ['pu wɛlɛ', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila'],
+                'kpindi gbɔyɔŋ',
+                'ndɔlei-ma',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/mfe.json
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
-    static final TimeLocale MFE = new TimeLocale(
-        'mfe',
-        new ClockConfig(
-            ['douz', 'enn', 'de', 'trwa', 'kat', 'senk', 'sis', 'set', 'wit', 'nef', 'dis', 'onz'],
-            'minwi',
-            'midi',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MFE = _mfe()
+
+    private static TimeLocale _mfe() {
+        new TimeLocale(
+            'mfe',
+            new ClockConfig(
+                ['douz', 'enn', 'de', 'trwa', 'kat', 'senk', 'sis', 'set', 'wit', 'nef', 'dis', 'onz'],
+                'minwi',
+                'midi',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/mg.json
     // ================================================================
     // MG — Malagasy
     // ================================================================
-    static final TimeLocale MG = new TimeLocale(
-        'mg',
-        new ClockConfig(
-            ['roa ambin\'ny folo', 'iray', 'roa', 'telo', 'efatra', 'dimy', 'enina', 'fito', 'valo', 'sivy', 'folo', 'iraika ambin\'ny folo'],
-            'misasakalina',
-            'atoandro',
-            [(0): '{h} ora', (5): '{h} sy dimy minitra', (10): '{h} sy folo minitra', (15): '{h} sy fahefatra', (20): '{h} sy roapolo minitra', (25): '{h} sy dimy amby roapolo minitra', (30): '{h} sy sasany', (35): 'dimy amby roapolo minitra alohan\'ny {next_h}', (40): 'roapolo minitra alohan\'ny {next_h}', (45): 'fahefatra alohan\'ny {next_h}', (50): 'folo minitra alohan\'ny {next_h}', (55): 'dimy minitra alohan\'ny {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MG = _mg()
+
+    private static TimeLocale _mg() {
+        new TimeLocale(
+            'mg',
+            new ClockConfig(
+                ['roa ambin\'ny folo', 'iray', 'roa', 'telo', 'efatra', 'dimy', 'enina', 'fito', 'valo', 'sivy', 'folo', 'iraika ambin\'ny folo'],
+                'misasakalina',
+                'atoandro',
+                [(0): '{h} ora', (5): '{h} sy dimy minitra', (10): '{h} sy folo minitra', (15): '{h} sy fahefatra', (20): '{h} sy roapolo minitra', (25): '{h} sy dimy amby roapolo minitra', (30): '{h} sy sasany', (35): 'dimy amby roapolo minitra alohan\'ny {next_h}', (40): 'roapolo minitra alohan\'ny {next_h}', (45): 'fahefatra alohan\'ny {next_h}', (50): 'folo minitra alohan\'ny {next_h}', (55): 'dimy minitra alohan\'ny {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/mi.json
     // ================================================================
     // MI — Māori
     // ================================================================
-    static final TimeLocale MI = new TimeLocale(
-        'mi',
-        new ClockConfig(
-            ['tekau mā rua', 'tahi', 'rua', 'toru', 'whā', 'rima', 'ono', 'whitu', 'waru', 'iwa', 'tekau', 'tekau mā tahi'],
-            'waenganui pō',
-            'poupoutanga o te rā',
-            [(0): '{h} karaka', (5): 'rima meneti i muri i te {h}', (10): 'tekau meneti i muri i te {h}', (15): 'hauwhā i muri i te {h}', (20): 'rua tekau meneti i muri i te {h}', (25): 'rua tekau mā rima meneti i muri i te {h}', (30): 'hāwhe i muri i te {h}', (35): 'rua tekau mā rima meneti ki te {next_h}', (40): 'rua tekau meneti ki te {next_h}', (45): 'hauwhā ki te {next_h}', (50): 'tekau meneti ki te {next_h}', (55): 'rima meneti ki te {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MI = _mi()
+
+    private static TimeLocale _mi() {
+        new TimeLocale(
+            'mi',
+            new ClockConfig(
+                ['tekau mā rua', 'tahi', 'rua', 'toru', 'whā', 'rima', 'ono', 'whitu', 'waru', 'iwa', 'tekau', 'tekau mā tahi'],
+                'waenganui pō',
+                'poupoutanga o te rā',
+                [(0): '{h} karaka', (5): 'rima meneti i muri i te {h}', (10): 'tekau meneti i muri i te {h}', (15): 'hauwhā i muri i te {h}', (20): 'rua tekau meneti i muri i te {h}', (25): 'rua tekau mā rima meneti i muri i te {h}', (30): 'hāwhe i muri i te {h}', (35): 'rua tekau mā rima meneti ki te {next_h}', (40): 'rua tekau meneti ki te {next_h}', (45): 'hauwhā ki te {next_h}', (50): 'tekau meneti ki te {next_h}', (55): 'rima meneti ki te {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
-    static final TimeLocale MK = new TimeLocale(
-        'mk',
-        new ClockConfig(
-            ['дванаесет', 'еден', 'два', 'три', 'четири', 'пет', 'шест', 'седум', 'осум', 'девет', 'десет', 'единаесет'],
-            'полноќ',
-            'пладне',
-            [(0): '{h} часа', (5): 'пет po {h}', (10): 'десет po {h}', (15): 'петнаесет po {h}', (20): 'дваесет po {h}', (25): 'дваесет и пет po {h}', (30): 'триесет po {h}', (35): 'дваесет и пет do {next_h}', (40): 'дваесет do {next_h}', (45): 'петнаесет do {next_h}', (50): 'десет do {next_h}', (55): 'пет do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale MK = _mk()
+
+    private static TimeLocale _mk() {
+        new TimeLocale(
+            'mk',
+            new ClockConfig(
+                ['дванаесет', 'еден', 'два', 'три', 'четири', 'пет', 'шест', 'седум', 'осум', 'девет', 'десет', 'единаесет'],
+                'полноќ',
+                'пладне',
+                [(0): '{h} часа', (5): 'пет po {h}', (10): 'десет po {h}', (15): 'петнаесет po {h}', (20): 'дваесет po {h}', (25): 'дваесет и пет po {h}', (30): 'триесет po {h}', (35): 'дваесет и пет do {next_h}', (40): 'дваесет do {next_h}', (45): 'петнаесет do {next_h}', (50): 'десет do {next_h}', (55): 'пет do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ml.json
     // ================================================================
     // ML — Malayalam
     // ================================================================
-    static final TimeLocale ML = new TimeLocale(
-        'ml',
-        new ClockConfig(
-            ['പന്ത്രണ്ട്', 'ഒന്ന്', 'രണ്ട്', 'മൂന്ന്', 'നാല്', 'അഞ്ച്', 'ആറ്', 'ഏഴ്', 'എട്ട്', 'ഒമ്പത്', 'പത്ത്', 'പതിനൊന്ന്'],
-            'അർദ്ധരാത്രി',
-            'ഉച്ച',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale ML = _ml()
+
+    private static TimeLocale _ml() {
+        new TimeLocale(
+            'ml',
+            new ClockConfig(
+                ['പന്ത്രണ്ട്', 'ഒന്ന്', 'രണ്ട്', 'മൂന്ന്', 'നാല്', 'അഞ്ച്', 'ആറ്', 'ഏഴ്', 'എട്ട്', 'ഒമ്പത്', 'പത്ത്', 'പതിനൊന്ന്'],
+                'അർദ്ധരാത്രി',
+                'ഉച്ച',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/mn.json
     // ================================================================
     // MN — Mongolian
     // ================================================================
-    static final TimeLocale MN = new TimeLocale(
-        'mn',
-        new ClockConfig(
-            ['арван хоёр', 'нэг', 'хоёр', 'гурав', 'дөрөв', 'тав', 'зургаа', 'долоо', 'найм', 'ес', 'арав', 'арван нэг'],
-            'шөнө дунд',
-            'үд дунд',
-            [(0): '{h} цаг', (5): '{h} цаг {m} минут', (10): '{h} цаг {m} минут', (15): '{h} цаг {m} минут', (20): '{h} цаг {m} минут', (25): '{h} цаг {m} минут', (30): '{h} цаг {m} минут', (35): '{h} цаг {m} минут', (40): '{h} цаг {m} минут', (45): '{h} цаг {m} минут', (50): '{h} цаг {m} минут', (55): '{h} цаг {m} минут']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale MN = _mn()
+
+    private static TimeLocale _mn() {
+        new TimeLocale(
+            'mn',
+            new ClockConfig(
+                ['арван хоёр', 'нэг', 'хоёр', 'гурав', 'дөрөв', 'тав', 'зургаа', 'долоо', 'найм', 'ес', 'арав', 'арван нэг'],
+                'шөнө дунд',
+                'үд дунд',
+                [(0): '{h} цаг', (5): '{h} цаг {m} минут', (10): '{h} цаг {m} минут', (15): '{h} цаг {m} минут', (20): '{h} цаг {m} минут', (25): '{h} цаг {m} минут', (30): '{h} цаг {m} минут', (35): '{h} цаг {m} минут', (40): '{h} цаг {m} минут', (45): '{h} цаг {m} минут', (50): '{h} цаг {m} минут', (55): '{h} цаг {m} минут']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/mnk.json
     // ================================================================
     // MNK — Mandinka
     // ================================================================
-    static final TimeLocale MNK = new TimeLocale(
-        'mnk',
-        new ClockConfig(
-            ['tan ning fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ ning kiliŋ'],
-            'sutu-tili-laŋ',
-            'tili-konto',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MNK = _mnk()
+
+    private static TimeLocale _mnk() {
+        new TimeLocale(
+            'mnk',
+            new ClockConfig(
+                ['tan ning fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ ning kiliŋ'],
+                'sutu-tili-laŋ',
+                'tili-konto',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/mos.json
     // ================================================================
     // MOS — Moore
     // ================================================================
-    static final TimeLocale MOS = new TimeLocale(
-        'mos',
-        new ClockConfig(
-            ['piig la a yiibu', 'a yembre', 'a yiibu', 'a tãabo', 'a naase', 'a nu', 'a yoobe', 'a yopoe', 'a niini', 'a wae', 'piiga', 'piig la a yembre'],
-            'yʋng-vɩɩse',
-            'wĩntoog zabre',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MOS = _mos()
+
+    private static TimeLocale _mos() {
+        new TimeLocale(
+            'mos',
+            new ClockConfig(
+                ['piig la a yiibu', 'a yembre', 'a yiibu', 'a tãabo', 'a naase', 'a nu', 'a yoobe', 'a yopoe', 'a niini', 'a wae', 'piiga', 'piig la a yembre'],
+                'yʋng-vɩɩse',
+                'wĩntoog zabre',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
-    static final TimeLocale MR = new TimeLocale(
-        'mr',
-        new ClockConfig(
-            ['बारा', 'एक', 'दोन', 'तीन', 'चार', 'पाच', 'सहा', 'सात', 'आठ', 'नऊ', 'दहा', 'अकरा'],
-            'मध्यरात्र',
-            'दुपार',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale MR = _mr()
+
+    private static TimeLocale _mr() {
+        new TimeLocale(
+            'mr',
+            new ClockConfig(
+                ['बारा', 'एक', 'दोन', 'तीन', 'चार', 'पाच', 'सहा', 'सात', 'आठ', 'नऊ', 'दहा', 'अकरा'],
+                'मध्यरात्र',
+                'दुपार',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
-    static final TimeLocale MS = new TimeLocale(
-        'ms',
-        new ClockConfig(
-            ['dua belas', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'lapan', 'sembilan', 'sepuluh', 'sebelas'],
-            'tengah malam',
-            'tengah hari',
-            [(0): '{h} o\'clock', (5): 'lima lewat {h}', (10): 'sepuluh lewat {h}', (15): 'suku lewat {h}', (20): 'dua puluh lewat {h}', (25): 'dua puluh lima lewat {h}', (30): 'setengah lewat {h}', (35): 'dua puluh lima menjelang {next_h}', (40): 'dua puluh menjelang {next_h}', (45): 'suku menjelang {next_h}', (50): 'sepuluh menjelang {next_h}', (55): 'lima menjelang {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale MS = _ms()
+
+    private static TimeLocale _ms() {
+        new TimeLocale(
+            'ms',
+            new ClockConfig(
+                ['dua belas', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'lapan', 'sembilan', 'sepuluh', 'sebelas'],
+                'tengah malam',
+                'tengah hari',
+                [(0): '{h} o\'clock', (5): 'lima lewat {h}', (10): 'sepuluh lewat {h}', (15): 'suku lewat {h}', (20): 'dua puluh lewat {h}', (25): 'dua puluh lima lewat {h}', (30): 'setengah lewat {h}', (35): 'dua puluh lima menjelang {next_h}', (40): 'dua puluh menjelang {next_h}', (45): 'suku menjelang {next_h}', (50): 'sepuluh menjelang {next_h}', (55): 'lima menjelang {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
-    static final TimeLocale MT = new TimeLocale(
-        'mt',
-        new ClockConfig(
-            ['tnax', 'waħda', 'tnejn', 'tlieta', 'erbgħa', 'ħamsa', 'sitta', 'sebgħa', 'tmienja', 'disgħa', 'għaxra', 'ħdax'],
-            'nofsinhar',
-            'nofsinhar',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale MT = _mt()
+
+    private static TimeLocale _mt() {
+        new TimeLocale(
+            'mt',
+            new ClockConfig(
+                ['tnax', 'waħda', 'tnejn', 'tlieta', 'erbgħa', 'ħamsa', 'sitta', 'sebgħa', 'tmienja', 'disgħa', 'għaxra', 'ħdax'],
+                'nofsinhar',
+                'nofsinhar',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
-    static final TimeLocale MY = new TimeLocale(
-        'my',
-        new ClockConfig(
-            ['ဆယ့်နှစ်', 'တစ်', 'နှစ်', 'သုံး', 'လေး', 'ငါး', 'ခြောက်', 'ခုနစ်', 'ရှစ်', 'ကိုး', 'ဆယ်', 'ဆယ့်တစ်'],
-            'သန်းခေါင်',
-            'မွန်းတည့်',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale MY = _my()
+
+    private static TimeLocale _my() {
+        new TimeLocale(
+            'my',
+            new ClockConfig(
+                ['ဆယ့်နှစ်', 'တစ်', 'နှစ်', 'သုံး', 'လေး', 'ငါး', 'ခြောက်', 'ခုနစ်', 'ရှစ်', 'ကိုး', 'ဆယ်', 'ဆယ့်တစ်'],
+                'သန်းခေါင်',
+                'မွန်းတည့်',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
-    static final TimeLocale NB = new TimeLocale(
-        'nb',
-        new ClockConfig(
-            ['tolv', 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve'],
-            'midnatt',
-            'middag',
-            [(0): 'klokka {h}', (5): 'fem over {h}', (10): 'ti over {h}', (15): 'kvart over {h}', (20): 'tjue over {h}', (25): 'fem på halv {next_h}', (30): 'halv {next_h}', (35): 'fem over halv {next_h}', (40): 'tjue på {next_h}', (45): 'kvart på {next_h}', (50): 'ti på {next_h}', (55): 'fem på {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale NB = _nb()
+
+    private static TimeLocale _nb() {
+        new TimeLocale(
+            'nb',
+            new ClockConfig(
+                ['tolv', 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve'],
+                'midnatt',
+                'middag',
+                [(0): 'klokka {h}', (5): 'fem over {h}', (10): 'ti over {h}', (15): 'kvart over {h}', (20): 'tjue over {h}', (25): 'fem på halv {next_h}', (30): 'halv {next_h}', (35): 'fem over halv {next_h}', (40): 'tjue på {next_h}', (45): 'kvart på {next_h}', (50): 'ti på {next_h}', (55): 'fem på {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/nd.json
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
-    static final TimeLocale ND = new TimeLocale(
-        'nd',
-        new ClockConfig(
-            ['litshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyangalombili', 'isitshiyangalolunye', 'litshumi', 'litshumi lanye'],
-            'phakathi kobusuku',
-            'emini',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale ND = _nd()
+
+    private static TimeLocale _nd() {
+        new TimeLocale(
+            'nd',
+            new ClockConfig(
+                ['litshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyangalombili', 'isitshiyangalolunye', 'litshumi', 'litshumi lanye'],
+                'phakathi kobusuku',
+                'emini',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
-    static final TimeLocale NE = new TimeLocale(
-        'ne',
-        new ClockConfig(
-            ['बाह्र', 'एक', 'दुई', 'तीन', 'चार', 'पाँच', 'छ', 'सात', 'आठ', 'नौ', 'दश', 'एघार'],
-            'मध्यरात',
-            'मध्यान्ह',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale NE = _ne()
+
+    private static TimeLocale _ne() {
+        new TimeLocale(
+            'ne',
+            new ClockConfig(
+                ['बाह्र', 'एक', 'दुई', 'तीन', 'चार', 'पाँच', 'छ', 'सात', 'आठ', 'नौ', 'दश', 'एघार'],
+                'मध्यरात',
+                'मध्यान्ह',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ng.json
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
-    static final TimeLocale NG = new TimeLocale(
-        'ng',
-        new ClockConfig(
-            ['omulongo nambali', 'imwe', 'mbali', 'ndatu', 'ne', 'ntano', 'hamano', 'heyali', 'hetatu', 'omugoyi', 'omulongo', 'omulongo nimwe'],
-            'onguloshi pakati',
-            'omutenya',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale NG = _ng()
+
+    private static TimeLocale _ng() {
+        new TimeLocale(
+            'ng',
+            new ClockConfig(
+                ['omulongo nambali', 'imwe', 'mbali', 'ndatu', 'ne', 'ntano', 'hamano', 'heyali', 'hetatu', 'omugoyi', 'omulongo', 'omulongo nimwe'],
+                'onguloshi pakati',
+                'omutenya',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
-    static final TimeLocale NL = new TimeLocale(
-        'nl',
-        new ClockConfig(
-            ['twaalf', 'een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf'],
-            'middernacht',
-            'middag',
-            [(0): '{h} uur', (5): 'vijf over {h}', (10): 'tien over {h}', (15): 'kwart over {h}', (20): 'twintig over {h}', (25): 'vijf voor half {next_h}', (30): 'half {next_h}', (35): 'vijf over half {next_h}', (40): 'twintig voor {next_h}', (45): 'kwart voor {next_h}', (50): 'tien voor {next_h}', (55): 'vijf voor {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale NL = _nl()
+
+    private static TimeLocale _nl() {
+        new TimeLocale(
+            'nl',
+            new ClockConfig(
+                ['twaalf', 'een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf'],
+                'middernacht',
+                'middag',
+                [(0): '{h} uur', (5): 'vijf over {h}', (10): 'tien over {h}', (15): 'kwart over {h}', (20): 'twintig over {h}', (25): 'vijf voor half {next_h}', (30): 'half {next_h}', (35): 'vijf over half {next_h}', (40): 'twintig voor {next_h}', (45): 'kwart voor {next_h}', (50): 'tien voor {next_h}', (55): 'vijf voor {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/nr.json
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
-    static final TimeLocale NR = new TimeLocale(
-        'nr',
-        new ClockConfig(
-            ['itshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyagalombili', 'isitshiyagalolunye', 'itshumi', 'itshumi lanye'],
-            'phakathi kobusuku',
-            'emini',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale NR = _nr()
+
+    private static TimeLocale _nr() {
+        new TimeLocale(
+            'nr',
+            new ClockConfig(
+                ['itshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyagalombili', 'isitshiyagalolunye', 'itshumi', 'itshumi lanye'],
+                'phakathi kobusuku',
+                'emini',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/nso.json
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
-    static final TimeLocale NSO = new TimeLocale(
-        'nso',
-        new ClockConfig(
-            ['lesome pedi', 'tee', 'pedi', 'tharo', 'nne', 'hlano', 'tshela', 'šupa', 'seswai', 'senyane', 'lesome', 'lesome tee'],
-            'bošego gare',
-            'mosegare',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale NSO = _nso()
+
+    private static TimeLocale _nso() {
+        new TimeLocale(
+            'nso',
+            new ClockConfig(
+                ['lesome pedi', 'tee', 'pedi', 'tharo', 'nne', 'hlano', 'tshela', 'šupa', 'seswai', 'senyane', 'lesome', 'lesome tee'],
+                'bošego gare',
+                'mosegare',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/nus.json
     // ================================================================
     // NUS — Nuer
     // ================================================================
-    static final TimeLocale NUS = new TimeLocale(
-        'nus',
-        new ClockConfig(
-            ['thiäär ke rou', 'tök', 'rou', 'diäk', 'ŋuan', 'dhiëc', 'bäkɛl', 'dhorou', 'bät', 'kuɔn', 'thiäär', 'thiäär ku tök'],
-            'wakɔ̈u',
-            'cäŋ kɔ̈k',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale NUS = _nus()
+
+    private static TimeLocale _nus() {
+        new TimeLocale(
+            'nus',
+            new ClockConfig(
+                ['thiäär ke rou', 'tök', 'rou', 'diäk', 'ŋuan', 'dhiëc', 'bäkɛl', 'dhorou', 'bät', 'kuɔn', 'thiäär', 'thiäär ku tök'],
+                'wakɔ̈u',
+                'cäŋ kɔ̈k',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ny.json
     // ================================================================
     // NY — Chichewa
     // ================================================================
-    static final TimeLocale NY = new TimeLocale(
-        'ny',
-        new ClockConfig(
-            ['khumi ndi ziwiri', 'imodzi', 'ziwiri', 'zitatu', 'zinayi', 'zisanu', 'zisanu ndi chimodzi', 'zisanu ndi ziwiri', 'zisanu ndi zitatu', 'zisanu ndi zinayi', 'khumi', 'khumi ndi chimodzi'],
-            'pakati pausiku',
-            'usana',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale NY = _ny()
+
+    private static TimeLocale _ny() {
+        new TimeLocale(
+            'ny',
+            new ClockConfig(
+                ['khumi ndi ziwiri', 'imodzi', 'ziwiri', 'zitatu', 'zinayi', 'zisanu', 'zisanu ndi chimodzi', 'zisanu ndi ziwiri', 'zisanu ndi zitatu', 'zisanu ndi zinayi', 'khumi', 'khumi ndi chimodzi'],
+                'pakati pausiku',
+                'usana',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/om.json
     // ================================================================
     // OM — Oromo
     // ================================================================
-    static final TimeLocale OM = new TimeLocale(
-        'om',
-        new ClockConfig(
-            ['kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan', 'jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko'],
-            'walakkii halkan',
-            'guyyaa walakkaa',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale OM = _om()
+
+    private static TimeLocale _om() {
+        new TimeLocale(
+            'om',
+            new ClockConfig(
+                ['kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan', 'jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko'],
+                'walakkii halkan',
+                'guyyaa walakkaa',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/or.json
     // ================================================================
     // OR — Odia
     // ================================================================
-    static final TimeLocale OR = new TimeLocale(
-        'or',
-        new ClockConfig(
-            ['ବାରଟା', 'ଗୋଟିଏ', 'ଦୁଇଟା', 'ତିନିଟା', 'ଚାରିଟା', 'ପାଞ୍ଚଟା', 'ଛଅଟା', 'ସାତଟା', 'ଆଠଟା', 'ନଅଟା', 'ଦଶଟା', 'ଏଗାରଟା'],
-            'ମଧ୍ୟରାତ୍ରି',
-            'ମଧ୍ୟାହ୍ନ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale OR = _or()
+
+    private static TimeLocale _or() {
+        new TimeLocale(
+            'or',
+            new ClockConfig(
+                ['ବାରଟା', 'ଗୋଟିଏ', 'ଦୁଇଟା', 'ତିନିଟା', 'ଚାରିଟା', 'ପାଞ୍ଚଟା', 'ଛଅଟା', 'ସାତଟା', 'ଆଠଟା', 'ନଅଟା', 'ଦଶଟା', 'ଏଗାରଟା'],
+                'ମଧ୍ୟରାତ୍ରି',
+                'ମଧ୍ୟାହ୍ନ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
-    static final TimeLocale PA = new TimeLocale(
-        'pa',
-        new ClockConfig(
-            ['ਬਾਰਾਂ', 'ਇੱਕ', 'ਦੋ', 'ਤਿੰਨ', 'ਚਾਰ', 'ਪੰਜ', 'ਛੇ', 'ਸੱਤ', 'ਅੱਠ', 'ਨੌਂ', 'ਦਸ', 'ਗਿਆਰਾਂ'],
-            'ਅੱਧੀ ਰਾਤ',
-            'ਦੁਪਹਿਰ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale PA = _pa()
+
+    private static TimeLocale _pa() {
+        new TimeLocale(
+            'pa',
+            new ClockConfig(
+                ['ਬਾਰਾਂ', 'ਇੱਕ', 'ਦੋ', 'ਤਿੰਨ', 'ਚਾਰ', 'ਪੰਜ', 'ਛੇ', 'ਸੱਤ', 'ਅੱਠ', 'ਨੌਂ', 'ਦਸ', 'ਗਿਆਰਾਂ'],
+                'ਅੱਧੀ ਰਾਤ',
+                'ਦੁਪਹਿਰ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/pis.json
     // ================================================================
     // PIS — Pijin
     // ================================================================
-    static final TimeLocale PIS = new TimeLocale(
-        'pis',
-        new ClockConfig(
-            ['twelf', 'wan', 'tu', 'tri', 'foa', 'faev', 'sikis', 'seven', 'eit', 'naen', 'ten', 'eleven'],
-            'midonaet',
-            'midei',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale PIS = _pis()
+
+    private static TimeLocale _pis() {
+        new TimeLocale(
+            'pis',
+            new ClockConfig(
+                ['twelf', 'wan', 'tu', 'tri', 'foa', 'faev', 'sikis', 'seven', 'eit', 'naen', 'ten', 'eleven'],
+                'midonaet',
+                'midei',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
-    static final TimeLocale PL = new TimeLocale(
-        'pl',
-        new ClockConfig(
-            ['dwunasta', 'pierwsza', 'druga', 'trzecia', 'czwarta', 'piąta', 'szósta', 'siódma', 'ósma', 'dziewiąta', 'dziesiąta', 'jedenasta'],
-            'północ',
-            'południe',
-            [(0): '{h}', (5): 'pięć po {h}', (10): 'dziesięć po {h}', (15): 'piętnaście po {h}', (20): 'dwadzieścia po {h}', (25): 'dwadzieścia pięć po {h}', (30): 'trzydzieści po {h}', (35): 'dwadzieścia pięć do {next_h}', (40): 'dwadzieścia do {next_h}', (45): 'piętnaście do {next_h}', (50): 'dziesięć do {next_h}', (55): 'pięć do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale PL = _pl()
+
+    private static TimeLocale _pl() {
+        new TimeLocale(
+            'pl',
+            new ClockConfig(
+                ['dwunasta', 'pierwsza', 'druga', 'trzecia', 'czwarta', 'piąta', 'szósta', 'siódma', 'ósma', 'dziewiąta', 'dziesiąta', 'jedenasta'],
+                'północ',
+                'południe',
+                [(0): '{h}', (5): 'pięć po {h}', (10): 'dziesięć po {h}', (15): 'piętnaście po {h}', (20): 'dwadzieścia po {h}', (25): 'dwadzieścia pięć po {h}', (30): 'trzydzieści po {h}', (35): 'dwadzieścia pięć do {next_h}', (40): 'dwadzieścia do {next_h}', (45): 'piętnaście do {next_h}', (50): 'dziesięć do {next_h}', (55): 'pięć do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/pov.json
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
-    static final TimeLocale POV = new TimeLocale(
-        'pov',
-        new ClockConfig(
-            ['dozi', 'un', 'dos', 'tres', 'kuatru', 'sinku', 'seis', 'seti', 'oitu', 'novi', 'des', 'onzi'],
-            'meia noti',
-            'meiu dia',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale POV = _pov()
+
+    private static TimeLocale _pov() {
+        new TimeLocale(
+            'pov',
+            new ClockConfig(
+                ['dozi', 'un', 'dos', 'tres', 'kuatru', 'sinku', 'seis', 'seti', 'oitu', 'novi', 'des', 'onzi'],
+                'meia noti',
+                'meiu dia',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ps.json
     // ================================================================
     // PS — Pashto
     // ================================================================
-    static final TimeLocale PS = new TimeLocale(
-        'ps',
-        new ClockConfig(
-            ['دولس', 'یو', 'دوه', 'درې', 'څلور', 'پنځه', 'شپږ', 'اووه', 'اته', 'نهه', 'لس', 'یوولس'],
-            'نیمه شپه',
-            'غرمه',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale PS = _ps()
+
+    private static TimeLocale _ps() {
+        new TimeLocale(
+            'ps',
+            new ClockConfig(
+                ['دولس', 'یو', 'دوه', 'درې', 'څلور', 'پنځه', 'شپږ', 'اووه', 'اته', 'نهه', 'لس', 'یوولس'],
+                'نیمه شپه',
+                'غرمه',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================
-    static final TimeLocale PT = new TimeLocale(
-        'pt',
-        new ClockConfig(
-            ['doze', 'uma', 'duas', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze'],
-            'meia-noite',
-            'meio-dia',
-            [(0): '{h} horas', (5): '{h} e cinco', (10): '{h} e dez', (15): '{h} e um quarto', (20): '{h} e vinte', (25): '{h} e vinte e cinco', (30): '{h} e meia', (35): 'vinte e cinco para as {next_h}', (40): 'vinte para as {next_h}', (45): 'um quarto para as {next_h}', (50): 'dez para as {next_h}', (55): 'cinco para as {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale PT = _pt()
+
+    private static TimeLocale _pt() {
+        new TimeLocale(
+            'pt',
+            new ClockConfig(
+                ['doze', 'uma', 'duas', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze'],
+                'meia-noite',
+                'meio-dia',
+                [(0): '{h} horas', (5): '{h} e cinco', (10): '{h} e dez', (15): '{h} e um quarto', (20): '{h} e vinte', (25): '{h} e vinte e cinco', (30): '{h} e meia', (35): 'vinte e cinco para as {next_h}', (40): 'vinte para as {next_h}', (45): 'um quarto para as {next_h}', (50): 'dez para as {next_h}', (55): 'cinco para as {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/qu.json
     // ================================================================
     // QU — Quechua
     // ================================================================
-    static final TimeLocale QU = new TimeLocale(
-        'qu',
-        new ClockConfig(
-            ['chunka iskayniyuq', 'huk', 'iskay', 'kimsa', 'tawa', 'pichqa', 'suqta', 'qanchis', 'pusaq', 'isqun', 'chunka', 'chunka hukniyuq'],
-            'chawpi tuta',
-            'chawpi p\'unchaw',
-            [(0): '{h}', (5): '{h} pichqa', (10): '{h} chunka', (15): '{h} chunka pichqayuq', (20): '{h} iskay chunka', (25): '{h} iskay chunka pichqayuq', (30): '{h} kimsa chunka', (35): '{next_h} mana iskay chunka pichqayuq', (40): '{next_h} mana iskay chunka', (45): '{next_h} mana chunka pichqayuq', (50): '{next_h} mana chunka', (55): '{next_h} mana pichqa']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale QU = _qu()
+
+    private static TimeLocale _qu() {
+        new TimeLocale(
+            'qu',
+            new ClockConfig(
+                ['chunka iskayniyuq', 'huk', 'iskay', 'kimsa', 'tawa', 'pichqa', 'suqta', 'qanchis', 'pusaq', 'isqun', 'chunka', 'chunka hukniyuq'],
+                'chawpi tuta',
+                'chawpi p\'unchaw',
+                [(0): '{h}', (5): '{h} pichqa', (10): '{h} chunka', (15): '{h} chunka pichqayuq', (20): '{h} iskay chunka', (25): '{h} iskay chunka pichqayuq', (30): '{h} kimsa chunka', (35): '{next_h} mana iskay chunka pichqayuq', (40): '{next_h} mana iskay chunka', (45): '{next_h} mana chunka pichqayuq', (50): '{next_h} mana chunka', (55): '{next_h} mana pichqa']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/quc.json
     // ================================================================
     // QUC — K'iche'
     // ================================================================
-    static final TimeLocale QUC = new TimeLocale(
-        'quc',
-        new ClockConfig(
-            ['kab\'lajuj', 'jun', 'ka\'i\'', 'oxi\'', 'kaji\'', 'jo\'', 'waqi\'', 'wuqu\'', 'wajxaqi\'', 'b\'eleji\'', 'lajuj', 'julajuj'],
-            'nik\'aj aq\'ab\'',
-            'nik\'aj q\'ij',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale QUC = _quc()
+
+    private static TimeLocale _quc() {
+        new TimeLocale(
+            'quc',
+            new ClockConfig(
+                ['kab\'lajuj', 'jun', 'ka\'i\'', 'oxi\'', 'kaji\'', 'jo\'', 'waqi\'', 'wuqu\'', 'wajxaqi\'', 'b\'eleji\'', 'lajuj', 'julajuj'],
+                'nik\'aj aq\'ab\'',
+                'nik\'aj q\'ij',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
-    static final TimeLocale RO = new TimeLocale(
-        'ro',
-        new ClockConfig(
-            ['douăsprezece', 'unu', 'două', 'trei', 'patru', 'cinci', 'șase', 'șapte', 'opt', 'nouă', 'zece', 'unsprezece'],
-            'miezul nopții',
-            'amiază',
-            [(0): '{h} ore', (5): 'cinci peste {h}', (10): 'zece peste {h}', (15): 'un sfert peste {h}', (20): 'douăzeci peste {h}', (25): 'douăzeci și cinci peste {h}', (30): 'jumătate peste {h}', (35): 'douăzeci și cinci înainte de {next_h}', (40): 'douăzeci înainte de {next_h}', (45): 'un sfert înainte de {next_h}', (50): 'zece înainte de {next_h}', (55): 'cinci înainte de {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale RO = _ro()
+
+    private static TimeLocale _ro() {
+        new TimeLocale(
+            'ro',
+            new ClockConfig(
+                ['douăsprezece', 'unu', 'două', 'trei', 'patru', 'cinci', 'șase', 'șapte', 'opt', 'nouă', 'zece', 'unsprezece'],
+                'miezul nopții',
+                'amiază',
+                [(0): '{h} ore', (5): 'cinci peste {h}', (10): 'zece peste {h}', (15): 'un sfert peste {h}', (20): 'douăzeci peste {h}', (25): 'douăzeci și cinci peste {h}', (30): 'jumătate peste {h}', (35): 'douăzeci și cinci înainte de {next_h}', (40): 'douăzeci înainte de {next_h}', (45): 'un sfert înainte de {next_h}', (50): 'zece înainte de {next_h}', (55): 'cinci înainte de {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
-    static final TimeLocale RU = new TimeLocale(
-        'ru',
-        new ClockConfig(
-            ['двенадцать', 'час', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять', 'десять', 'одиннадцать'],
-            'полночь',
-            'полдень',
-            [(0): '{h} часа', (5): 'пять po {h}', (10): 'десять po {h}', (15): 'пятнадцать po {h}', (20): 'двадцать po {h}', (25): 'двадцать пять po {h}', (30): 'тридцать po {h}', (35): 'двадцать пять do {next_h}', (40): 'двадцать do {next_h}', (45): 'пятнадцать do {next_h}', (50): 'десять do {next_h}', (55): 'пять do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale RU = _ru()
+
+    private static TimeLocale _ru() {
+        new TimeLocale(
+            'ru',
+            new ClockConfig(
+                ['двенадцать', 'час', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять', 'десять', 'одиннадцать'],
+                'полночь',
+                'полдень',
+                [(0): '{h} часа', (5): 'пять po {h}', (10): 'десять po {h}', (15): 'пятнадцать po {h}', (20): 'двадцать po {h}', (25): 'двадцать пять po {h}', (30): 'тридцать po {h}', (35): 'двадцать пять do {next_h}', (40): 'двадцать do {next_h}', (45): 'пятнадцать do {next_h}', (50): 'десять do {next_h}', (55): 'пять do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/rw.json
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
-    static final TimeLocale RW = new TimeLocale(
-        'rw',
-        new ClockConfig(
-            ['cumi n\'ebyiri', 'rimwe', 'ebyiri', 'eshatu', 'enye', 'eshanu', 'esheshatu', 'indwi', 'umunani', 'icyenda', 'icumi', 'cumi n\'imwe'],
-            'igicuku',
-            'saa sita',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale RW = _rw()
+
+    private static TimeLocale _rw() {
+        new TimeLocale(
+            'rw',
+            new ClockConfig(
+                ['cumi n\'ebyiri', 'rimwe', 'ebyiri', 'eshatu', 'enye', 'eshanu', 'esheshatu', 'indwi', 'umunani', 'icyenda', 'icumi', 'cumi n\'imwe'],
+                'igicuku',
+                'saa sita',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/sar.json
     // ================================================================
     // SAR — Sara
     // ================================================================
-    static final TimeLocale SAR = new TimeLocale(
-        'sar',
-        new ClockConfig(
-            ['mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'kɨ̀ndá', 'ɗìi', 'mùtá', 'sɔ̀', 'mɨ̀ndɨ̀', 'mɨ̀ndɨ̀ kɨ̀ndá', 'mɨ̀sá', 'mɨ̀ndɨ̀ mùtá', 'mɨ̀ndɨ̀ sɔ̀', 'mɔ̀ɔ́', 'mɔ̀ɔ́ kɨ̀ndá'],
-            'badɔ',
-            'mbɔr ndɔ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SAR = _sar()
+
+    private static TimeLocale _sar() {
+        new TimeLocale(
+            'sar',
+            new ClockConfig(
+                ['mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'kɨ̀ndá', 'ɗìi', 'mùtá', 'sɔ̀', 'mɨ̀ndɨ̀', 'mɨ̀ndɨ̀ kɨ̀ndá', 'mɨ̀sá', 'mɨ̀ndɨ̀ mùtá', 'mɨ̀ndɨ̀ sɔ̀', 'mɔ̀ɔ́', 'mɔ̀ɔ́ kɨ̀ndá'],
+                'badɔ',
+                'mbɔr ndɔ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/sd.json
     // ================================================================
     // SD — Sindhi
     // ================================================================
-    static final TimeLocale SD = new TimeLocale(
-        'sd',
-        new ClockConfig(
-            ['ٻارھ', 'ھڪ', 'ٻه', 'ٽي', 'چار', 'پنج', 'ڇھ', 'ست', 'اٺ', 'نائن', 'ڏھ', 'يارھ'],
-            'اڌ رات',
-            'ٽپھر',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SD = _sd()
+
+    private static TimeLocale _sd() {
+        new TimeLocale(
+            'sd',
+            new ClockConfig(
+                ['ٻارھ', 'ھڪ', 'ٻه', 'ٽي', 'چار', 'پنج', 'ڇھ', 'ست', 'اٺ', 'نائن', 'ڏھ', 'يارھ'],
+                'اڌ رات',
+                'ٽپھر',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/sg.json
     // ================================================================
     // SG — Sango
     // ================================================================
-    static final TimeLocale SG = new TimeLocale(
-        'sg',
-        new ClockConfig(
-            ['bâlè-ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'ömënë', 'mbïrïmbïrï', 'mënâmbârâ', 'gonambâlâ', 'bâlè', 'bâlè na ôko'],
-            'gï na lögö',
-            'lâ nzönï',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SG = _sg()
+
+    private static TimeLocale _sg() {
+        new TimeLocale(
+            'sg',
+            new ClockConfig(
+                ['bâlè-ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'ömënë', 'mbïrïmbïrï', 'mënâmbârâ', 'gonambâlâ', 'bâlè', 'bâlè na ôko'],
+                'gï na lögö',
+                'lâ nzönï',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
-    static final TimeLocale SHI = new TimeLocale(
-        'shi',
-        new ClockConfig(
-            ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
-            'ⵏⵚ ⵏ ⵉⴹ',
-            'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SHI = _shi()
+
+    private static TimeLocale _shi() {
+        new TimeLocale(
+            'shi',
+            new ClockConfig(
+                ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
+                'ⵏⵚ ⵏ ⵉⴹ',
+                'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/shn.json
     // ================================================================
     // SHN — Shan
     // ================================================================
-    static final TimeLocale SHN = new TimeLocale(
-        'shn',
-        new ClockConfig(
-            ['သိပ်းသွင်', 'ၼိုင်ႈ', 'သွင်', 'သၢမ်', 'သီႇ', 'ႁႃႈ', 'ႁူၵ်း', 'ၸဵတ်း', 'ပႅတ်ႇ', 'ၵဝ်ႈ', 'သိပ်း', 'သိပ်းဢဵတ်း'],
-            'ၵၢင်ၶိုၼ်း',
-            'ၵၢင်ဝၼ်း',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SHN = _shn()
+
+    private static TimeLocale _shn() {
+        new TimeLocale(
+            'shn',
+            new ClockConfig(
+                ['သိပ်းသွင်', 'ၼိုင်ႈ', 'သွင်', 'သၢမ်', 'သီႇ', 'ႁႃႈ', 'ႁူၵ်း', 'ၸဵတ်း', 'ပႅတ်ႇ', 'ၵဝ်ႈ', 'သိပ်း', 'သိပ်းဢဵတ်း'],
+                'ၵၢင်ၶိုၼ်း',
+                'ၵၢင်ဝၼ်း',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
-    static final TimeLocale SI = new TimeLocale(
-        'si',
-        new ClockConfig(
-            ['දොළහ', 'එක', 'දෙක', 'තුන', 'හතර', 'පහ', 'හය', 'හත', 'අට', 'නවය', 'දහය', 'එකොළහ'],
-            'මධ්‍යම රාත්‍රිය',
-            'මධ්‍යාහ්නය',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SI = _si()
+
+    private static TimeLocale _si() {
+        new TimeLocale(
+            'si',
+            new ClockConfig(
+                ['දොළහ', 'එක', 'දෙක', 'තුන', 'හතර', 'පහ', 'හය', 'හත', 'අට', 'නවය', 'දහය', 'එකොළහ'],
+                'මධ්‍යම රාත්‍රිය',
+                'මධ්‍යාහ්නය',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
-    static final TimeLocale SK = new TimeLocale(
-        'sk',
-        new ClockConfig(
-            ['dvanásť', 'jedna', 'dve', 'tri', 'štyri', 'päť', 'šesť', 'sedem', 'osem', 'deväť', 'desať', 'jedenásť'],
-            'polnoc',
-            'poludnie',
-            [(0): '{h} hodín', (5): 'päť po {h}', (10): 'desať po {h}', (15): 'štvrť po {h}', (20): 'dvadsať po {h}', (25): 'dvadsať päť po {h}', (30): 'pol po {h}', (35): 'dvadsať päť do {next_h}', (40): 'dvadsať do {next_h}', (45): 'štvrť do {next_h}', (50): 'desať do {next_h}', (55): 'päť do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SK = _sk()
+
+    private static TimeLocale _sk() {
+        new TimeLocale(
+            'sk',
+            new ClockConfig(
+                ['dvanásť', 'jedna', 'dve', 'tri', 'štyri', 'päť', 'šesť', 'sedem', 'osem', 'deväť', 'desať', 'jedenásť'],
+                'polnoc',
+                'poludnie',
+                [(0): '{h} hodín', (5): 'päť po {h}', (10): 'desať po {h}', (15): 'štvrť po {h}', (20): 'dvadsať po {h}', (25): 'dvadsať päť po {h}', (30): 'pol po {h}', (35): 'dvadsať päť do {next_h}', (40): 'dvadsať do {next_h}', (45): 'štvrť do {next_h}', (50): 'desať do {next_h}', (55): 'päť do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
-    static final TimeLocale SL = new TimeLocale(
-        'sl',
-        new ClockConfig(
-            ['dvanajst', 'ena', 'dve', 'tri', 'štiri', 'pet', 'šest', 'sedem', 'osem', 'devet', 'deset', 'enajst'],
-            'polnoč',
-            'poldne',
-            [(0): '{h} ura', (5): 'pet po {h}', (10): 'deset po {h}', (15): 'petnajst po {h}', (20): 'dvajset po {h}', (25): 'dvajset pet po {h}', (30): 'trideset po {h}', (35): 'dvajset pet do {next_h}', (40): 'dvajset do {next_h}', (45): 'petnajst do {next_h}', (50): 'deset do {next_h}', (55): 'pet do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SL = _sl()
+
+    private static TimeLocale _sl() {
+        new TimeLocale(
+            'sl',
+            new ClockConfig(
+                ['dvanajst', 'ena', 'dve', 'tri', 'štiri', 'pet', 'šest', 'sedem', 'osem', 'devet', 'deset', 'enajst'],
+                'polnoč',
+                'poldne',
+                [(0): '{h} ura', (5): 'pet po {h}', (10): 'deset po {h}', (15): 'petnajst po {h}', (20): 'dvajset po {h}', (25): 'dvajset pet po {h}', (30): 'trideset po {h}', (35): 'dvajset pet do {next_h}', (40): 'dvajset do {next_h}', (45): 'petnajst do {next_h}', (50): 'deset do {next_h}', (55): 'pet do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/sn.json
     // ================================================================
     // SN — Shona
     // ================================================================
-    static final TimeLocale SN = new TimeLocale(
-        'sn',
-        new ClockConfig(
-            ['gumi nembiri', 'imwe', 'mbiri', 'nhatu', 'ina', 'shanu', 'nhanhatu', 'nomwe', 'sere', 'pfumbamwe', 'gumi', 'gumi neimwe'],
-            'usiku hwepakati',
-            'masikati',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SN = _sn()
+
+    private static TimeLocale _sn() {
+        new TimeLocale(
+            'sn',
+            new ClockConfig(
+                ['gumi nembiri', 'imwe', 'mbiri', 'nhatu', 'ina', 'shanu', 'nhanhatu', 'nomwe', 'sere', 'pfumbamwe', 'gumi', 'gumi neimwe'],
+                'usiku hwepakati',
+                'masikati',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/snk.json
     // ================================================================
     // SNK — Soninke
     // ================================================================
-    static final TimeLocale SNK = new TimeLocale(
-        'snk',
-        new ClockConfig(
-            ['tanmu fillo', 'baane', 'fillo', 'sikko', 'naaxato', 'karago', 'tunmu', 'ñerru', 'segu', 'kaburu', 'tanmu', 'tanmu baane'],
-            'sulen noxo',
-            'tili seren',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SNK = _snk()
+
+    private static TimeLocale _snk() {
+        new TimeLocale(
+            'snk',
+            new ClockConfig(
+                ['tanmu fillo', 'baane', 'fillo', 'sikko', 'naaxato', 'karago', 'tunmu', 'ñerru', 'segu', 'kaburu', 'tanmu', 'tanmu baane'],
+                'sulen noxo',
+                'tili seren',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/so.json
     // ================================================================
     // SO — Somali
     // ================================================================
-    static final TimeLocale SO = new TimeLocale(
-        'so',
-        new ClockConfig(
-            ['laba iyo toban', 'kow', 'laba', 'saddex', 'afar', 'shan', 'lix', 'toddoba', 'siddeed', 'sagaal', 'toban', 'kow iyo toban'],
-            'saqda dhexe',
-            'duhur',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SO = _so()
+
+    private static TimeLocale _so() {
+        new TimeLocale(
+            'so',
+            new ClockConfig(
+                ['laba iyo toban', 'kow', 'laba', 'saddex', 'afar', 'shan', 'lix', 'toddoba', 'siddeed', 'sagaal', 'toban', 'kow iyo toban'],
+                'saqda dhexe',
+                'duhur',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
-    static final TimeLocale SQ = new TimeLocale(
-        'sq',
-        new ClockConfig(
-            ['dymbëdhjetë', 'një', 'dy', 'tre', 'katër', 'pesë', 'gjashtë', 'shtatë', 'tetë', 'nëntë', 'dhjetë', 'njëmbëdhjetë'],
-            'mesnata',
-            'mesdita',
-            [(0): '{h} o\'clock', (5): 'pesë past {h}', (10): 'dhjetë past {h}', (15): 'një çerek past {h}', (20): 'njëzet past {h}', (25): 'njëzet e pesë past {h}', (30): 'gjysma past {h}', (35): 'njëzet e pesë to {next_h}', (40): 'njëzet to {next_h}', (45): 'një çerek to {next_h}', (50): 'dhjetë to {next_h}', (55): 'pesë to {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SQ = _sq()
+
+    private static TimeLocale _sq() {
+        new TimeLocale(
+            'sq',
+            new ClockConfig(
+                ['dymbëdhjetë', 'një', 'dy', 'tre', 'katër', 'pesë', 'gjashtë', 'shtatë', 'tetë', 'nëntë', 'dhjetë', 'njëmbëdhjetë'],
+                'mesnata',
+                'mesdita',
+                [(0): '{h} o\'clock', (5): 'pesë past {h}', (10): 'dhjetë past {h}', (15): 'një çerek past {h}', (20): 'njëzet past {h}', (25): 'njëzet e pesë past {h}', (30): 'gjysma past {h}', (35): 'njëzet e pesë to {next_h}', (40): 'njëzet to {next_h}', (45): 'një çerek to {next_h}', (50): 'dhjetë to {next_h}', (55): 'pesë to {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
-    static final TimeLocale SR = new TimeLocale(
-        'sr',
-        new ClockConfig(
-            ['дванаест', 'један', 'два', 'три', 'четири', 'пет', 'шест', 'седам', 'осам', 'девет', 'десет', 'једанаест'],
-            'поноћ',
-            'подне',
-            [(0): '{h} часа', (5): 'пет po {h}', (10): 'десет po {h}', (15): 'петнаест po {h}', (20): 'двадесет po {h}', (25): 'двадесет пет po {h}', (30): 'тридесет po {h}', (35): 'двадесет пет do {next_h}', (40): 'двадесет do {next_h}', (45): 'петнаест do {next_h}', (50): 'десет do {next_h}', (55): 'пет do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SR = _sr()
+
+    private static TimeLocale _sr() {
+        new TimeLocale(
+            'sr',
+            new ClockConfig(
+                ['дванаест', 'један', 'два', 'три', 'четири', 'пет', 'шест', 'седам', 'осам', 'девет', 'десет', 'једанаест'],
+                'поноћ',
+                'подне',
+                [(0): '{h} часа', (5): 'пет po {h}', (10): 'десет po {h}', (15): 'петнаест po {h}', (20): 'двадесет po {h}', (25): 'двадесет пет po {h}', (30): 'тридесет po {h}', (35): 'двадесет пет do {next_h}', (40): 'двадесет do {next_h}', (45): 'петнаест do {next_h}', (50): 'десет do {next_h}', (55): 'пет do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ss.json
     // ================================================================
     // SS — siSwati
     // ================================================================
-    static final TimeLocale SS = new TimeLocale(
-        'ss',
-        new ClockConfig(
-            ['lishumi nambili', 'kunye', 'kubili', 'kutsatfu', 'kune', 'kusihlanu', 'sitfupha', 'sikhombisa', 'siphohlongo', 'sifisagcina', 'lishumi', 'lishumi nakunye'],
-            'phakathi kwebusuku',
-            'emini',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SS = _ss()
+
+    private static TimeLocale _ss() {
+        new TimeLocale(
+            'ss',
+            new ClockConfig(
+                ['lishumi nambili', 'kunye', 'kubili', 'kutsatfu', 'kune', 'kusihlanu', 'sitfupha', 'sikhombisa', 'siphohlongo', 'sifisagcina', 'lishumi', 'lishumi nakunye'],
+                'phakathi kwebusuku',
+                'emini',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/st.json
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
-    static final TimeLocale ST = new TimeLocale(
-        'st',
-        new ClockConfig(
-            ['leshome le metso e mmedi', 'e nngwe', 'tse pedi', 'tse tharo', 'tse nne', 'tse hlano', 'tse tshelela', 'tse supileng', 'tse robedi', 'tse robong', 'leshome', 'leshome le motso o le mong'],
-            'hara bosiu',
-            'motsheare',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale ST = _st()
+
+    private static TimeLocale _st() {
+        new TimeLocale(
+            'st',
+            new ClockConfig(
+                ['leshome le metso e mmedi', 'e nngwe', 'tse pedi', 'tse tharo', 'tse nne', 'tse hlano', 'tse tshelela', 'tse supileng', 'tse robedi', 'tse robong', 'leshome', 'leshome le motso o le mong'],
+                'hara bosiu',
+                'motsheare',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/su.json
     // ================================================================
     // SU — Sundanese
     // ================================================================
-    static final TimeLocale SU = new TimeLocale(
-        'su',
-        new ClockConfig(
-            ['dua welas', 'hiji', 'dua', 'tilu', 'opat', 'lima', 'genep', 'tujuh', 'dalapan', 'salapan', 'sapuluh', 'sabelas'],
-            'tengah peuting',
-            'beurang',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SU = _su()
+
+    private static TimeLocale _su() {
+        new TimeLocale(
+            'su',
+            new ClockConfig(
+                ['dua welas', 'hiji', 'dua', 'tilu', 'opat', 'lima', 'genep', 'tujuh', 'dalapan', 'salapan', 'sapuluh', 'sabelas'],
+                'tengah peuting',
+                'beurang',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/suk.json
     // ================================================================
     // SUK — Sukuma
     // ================================================================
-    static final TimeLocale SUK = new TimeLocale(
-        'suk',
-        new ClockConfig(
-            ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
-            'usiku gati',
-            'adhuhuri',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale SUK = _suk()
+
+    private static TimeLocale _suk() {
+        new TimeLocale(
+            'suk',
+            new ClockConfig(
+                ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
+                'usiku gati',
+                'adhuhuri',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
-    static final TimeLocale SV = new TimeLocale(
-        'sv',
-        new ClockConfig(
-            ['tolv', 'ett', 'två', 'tre', 'fyra', 'fem', 'sex', 'sju', 'åtta', 'nio', 'tio', 'elva'],
-            'midnatt',
-            'middag',
-            [(0): 'klockan {h}', (5): 'fem över {h}', (10): 'tio över {h}', (15): 'kvart över {h}', (20): 'tjugo över {h}', (25): 'fem i halv {next_h}', (30): 'halv {next_h}', (35): 'fem över halv {next_h}', (40): 'tjugo i {next_h}', (45): 'kvart i {next_h}', (50): 'tio i {next_h}', (55): 'fem i {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SV = _sv()
+
+    private static TimeLocale _sv() {
+        new TimeLocale(
+            'sv',
+            new ClockConfig(
+                ['tolv', 'ett', 'två', 'tre', 'fyra', 'fem', 'sex', 'sju', 'åtta', 'nio', 'tio', 'elva'],
+                'midnatt',
+                'middag',
+                [(0): 'klockan {h}', (5): 'fem över {h}', (10): 'tio över {h}', (15): 'kvart över {h}', (20): 'tjugo över {h}', (25): 'fem i halv {next_h}', (30): 'halv {next_h}', (35): 'fem över halv {next_h}', (40): 'tjugo i {next_h}', (45): 'kvart i {next_h}', (50): 'tio i {next_h}', (55): 'fem i {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
-    static final TimeLocale SW = new TimeLocale(
-        'sw',
-        new ClockConfig(
-            ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
-            'usiku wa manane',
-            'adhuhuri',
-            [(0): '{h} o\'clock', (5): 'tano kupita {h}', (10): 'kumi kupita {h}', (15): 'robo kupita {h}', (20): 'ishirini kupita {h}', (25): 'ishirini na tano kupita {h}', (30): 'nusu kupita {h}', (35): 'ishirini na tano kabla ya {next_h}', (40): 'ishirini kabla ya {next_h}', (45): 'robo kabla ya {next_h}', (50): 'kumi kabla ya {next_h}', (55): 'tano kabla ya {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale SW = _sw()
+
+    private static TimeLocale _sw() {
+        new TimeLocale(
+            'sw',
+            new ClockConfig(
+                ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
+                'usiku wa manane',
+                'adhuhuri',
+                [(0): '{h} o\'clock', (5): 'tano kupita {h}', (10): 'kumi kupita {h}', (15): 'robo kupita {h}', (20): 'ishirini kupita {h}', (25): 'ishirini na tano kupita {h}', (30): 'nusu kupita {h}', (35): 'ishirini na tano kabla ya {next_h}', (40): 'ishirini kabla ya {next_h}', (45): 'robo kabla ya {next_h}', (50): 'kumi kabla ya {next_h}', (55): 'tano kabla ya {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
-    static final TimeLocale TA = new TimeLocale(
-        'ta',
-        new ClockConfig(
-            ['பன்னிரண்டு', 'ஒன்று', 'இரண்டு', 'மூன்று', 'நான்கு', 'ஐந்து', 'ஆறு', 'ஏழு', 'எட்டு', 'ஒன்பது', 'பத்து', 'பதினொன்று'],
-            'நள்ளிரவு',
-            'நண்பகல்',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TA = _ta()
+
+    private static TimeLocale _ta() {
+        new TimeLocale(
+            'ta',
+            new ClockConfig(
+                ['பன்னிரண்டு', 'ஒன்று', 'இரண்டு', 'மூன்று', 'நான்கு', 'ஐந்து', 'ஆறு', 'ஏழு', 'எட்டு', 'ஒன்பது', 'பத்து', 'பதினொன்று'],
+                'நள்ளிரவு',
+                'நண்பகல்',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
-    static final TimeLocale TE = new TimeLocale(
-        'te',
-        new ClockConfig(
-            ['పన్నెండు', 'ఒకటి', 'రెండు', 'మూడు', 'నాలుగు', 'ఐదు', 'ఆరు', 'ఏడు', 'ఎనిమిది', 'తొమ్మిది', 'పది', 'పదకొండు'],
-            'అర్ధరాత్రి',
-            'మధ్యాహ్నం',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TE = _te()
+
+    private static TimeLocale _te() {
+        new TimeLocale(
+            'te',
+            new ClockConfig(
+                ['పన్నెండు', 'ఒకటి', 'రెండు', 'మూడు', 'నాలుగు', 'ఐదు', 'ఆరు', 'ఏడు', 'ఎనిమిది', 'తొమ్మిది', 'పది', 'పదకొండు'],
+                'అర్ధరాత్రి',
+                'మధ్యాహ్నం',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tem.json
     // ================================================================
     // TEM — Temne
     // ================================================================
-    static final TimeLocale TEM = new TimeLocale(
-        'tem',
-        new ClockConfig(
-            ['pɛn pu', 'kɩrɩŋ', 'rɔŋ', 'rasar', 'rɔŋ-anat', 'rɔman', 'rɔmata', 'rɔmbot', 'rɔmɔntat', 'rɔmɔntaŋka', 'pɛn', 'pɛn nɛ kɩrɩŋ'],
-            'rofɛt anpa',
-            'lən',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TEM = _tem()
+
+    private static TimeLocale _tem() {
+        new TimeLocale(
+            'tem',
+            new ClockConfig(
+                ['pɛn pu', 'kɩrɩŋ', 'rɔŋ', 'rasar', 'rɔŋ-anat', 'rɔman', 'rɔmata', 'rɔmbot', 'rɔmɔntat', 'rɔmɔntaŋka', 'pɛn', 'pɛn nɛ kɩrɩŋ'],
+                'rofɛt anpa',
+                'lən',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tet.json
     // ================================================================
     // TET — Tetum
     // ================================================================
-    static final TimeLocale TET = new TimeLocale(
-        'tet',
-        new ClockConfig(
-            ['sanulu-resin-rua', 'ida', 'rua', 'tolu', 'haat', 'lima', 'neen', 'hitu', 'ualu', 'sia', 'sanulu', 'sanulu-resin-ida'],
-            'meiu-kalan',
-            'meiu-loron',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TET = _tet()
+
+    private static TimeLocale _tet() {
+        new TimeLocale(
+            'tet',
+            new ClockConfig(
+                ['sanulu-resin-rua', 'ida', 'rua', 'tolu', 'haat', 'lima', 'neen', 'hitu', 'ualu', 'sia', 'sanulu', 'sanulu-resin-ida'],
+                'meiu-kalan',
+                'meiu-loron',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tg.json
     // ================================================================
     // TG — Tajik
     // ================================================================
-    static final TimeLocale TG = new TimeLocale(
-        'tg',
-        new ClockConfig(
-            ['дувоздаҳ', 'як', 'ду', 'се', 'чор', 'панҷ', 'шаш', 'ҳафт', 'ҳашт', 'нӯҳ', 'даҳ', 'ёздаҳ'],
-            'нимишаб',
-            'нимирӯз',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale TG = _tg()
+
+    private static TimeLocale _tg() {
+        new TimeLocale(
+            'tg',
+            new ClockConfig(
+                ['дувоздаҳ', 'як', 'ду', 'се', 'чор', 'панҷ', 'шаш', 'ҳафт', 'ҳашт', 'нӯҳ', 'даҳ', 'ёздаҳ'],
+                'нимишаб',
+                'нимирӯз',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
-    static final TimeLocale TH = new TimeLocale(
-        'th',
-        new ClockConfig(
-            ['สิบสอง', 'หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า', 'สิบ', 'สิบเอ็ด'],
-            'เที่ยงคืน',
-            'เที่ยงวัน',
-            [(0): '{h} นาฬิกา', (5): '{h} นาฬิกา ห้านาที', (10): '{h} นาฬิกา สิบนาที', (15): '{h} นาฬิกา สิบห้านาที', (20): '{h} นาฬิกา ยี่สิบนาที', (25): '{h} นาฬิกา ยี่สิบห้านาที', (30): '{h} นาฬิกา ครึ่ง', (35): '{h} นาฬิกา สามสิบห้านาที', (40): '{h} นาฬิกา สี่สิบนาที', (45): '{h} นาฬิกา สี่สิบห้านาที', (50): '{h} นาฬิกา ห้าสิบนาที', (55): '{h} นาฬิกา ห้าสิบห้านาที']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale TH = _th()
+
+    private static TimeLocale _th() {
+        new TimeLocale(
+            'th',
+            new ClockConfig(
+                ['สิบสอง', 'หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า', 'สิบ', 'สิบเอ็ด'],
+                'เที่ยงคืน',
+                'เที่ยงวัน',
+                [(0): '{h} นาฬิกา', (5): '{h} นาฬิกา ห้านาที', (10): '{h} นาฬิกา สิบนาที', (15): '{h} นาฬิกา สิบห้านาที', (20): '{h} นาฬิกา ยี่สิบนาที', (25): '{h} นาฬิกา ยี่สิบห้านาที', (30): '{h} นาฬิกา ครึ่ง', (35): '{h} นาฬิกา สามสิบห้านาที', (40): '{h} นาฬิกา สี่สิบนาที', (45): '{h} นาฬิกา สี่สิบห้านาที', (50): '{h} นาฬิกา ห้าสิบนาที', (55): '{h} นาฬิกา ห้าสิบห้านาที']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ti.json
     // ================================================================
     // TI — Tigrinya
     // ================================================================
-    static final TimeLocale TI = new TimeLocale(
-        'ti',
-        new ClockConfig(
-            ['ዓሰርተ ክልተ', 'ሓደ', 'ክልተ', 'ሰለስተ', 'ኣርባዕተ', 'ሓሙሽተ', 'ሽድሽተ', 'ሸውዓተ', 'ሸሞንተ', 'ትሽዓተ', 'ዓሰርተ', 'ዓሰርተ ሓደ'],
-            'ፍርቂ ለይቲ',
-            'ቀትሪ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale TI = _ti()
+
+    private static TimeLocale _ti() {
+        new TimeLocale(
+            'ti',
+            new ClockConfig(
+                ['ዓሰርተ ክልተ', 'ሓደ', 'ክልተ', 'ሰለስተ', 'ኣርባዕተ', 'ሓሙሽተ', 'ሽድሽተ', 'ሸውዓተ', 'ሸሞንተ', 'ትሽዓተ', 'ዓሰርተ', 'ዓሰርተ ሓደ'],
+                'ፍርቂ ለይቲ',
+                'ቀትሪ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/tig.json
     // ================================================================
     // TIG — Tigre
     // ================================================================
-    static final TimeLocale TIG = new TimeLocale(
-        'tig',
-        new ClockConfig(
-            ['ʿasərte wəkəlte', 'ḥante', 'kəlʾe', 'səleste', 'arbaʿte', 'ḥamməste', 'səste', 'sabʿate', 'səmmunte', 'təsʿate', 'ʿasərte', 'ʿasərte wəḥante'],
-            'nəs-leyla',
-            'qayḥ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TIG = _tig()
+
+    private static TimeLocale _tig() {
+        new TimeLocale(
+            'tig',
+            new ClockConfig(
+                ['ʿasərte wəkəlte', 'ḥante', 'kəlʾe', 'səleste', 'arbaʿte', 'ḥamməste', 'səste', 'sabʿate', 'səmmunte', 'təsʿate', 'ʿasərte', 'ʿasərte wəḥante'],
+                'nəs-leyla',
+                'qayḥ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tk.json
     // ================================================================
     // TK — Turkmen
     // ================================================================
-    static final TimeLocale TK = new TimeLocale(
-        'tk',
-        new ClockConfig(
-            ['on iki', 'bir', 'iki', 'üç', 'dört', 'bäş', 'alty', 'ýedi', 'sekiz', 'dokuz', 'on', 'on bir'],
-            'ýary gije',
-            'günorta',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale TK = _tk()
+
+    private static TimeLocale _tk() {
+        new TimeLocale(
+            'tk',
+            new ClockConfig(
+                ['on iki', 'bir', 'iki', 'üç', 'dört', 'bäş', 'alty', 'ýedi', 'sekiz', 'dokuz', 'on', 'on bir'],
+                'ýary gije',
+                'günorta',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/tn.json
     // ================================================================
     // TN — Tswana
     // ================================================================
-    static final TimeLocale TN = new TimeLocale(
-        'tn',
-        new ClockConfig(
-            ['lesome le bobedi', 'nngwe', 'pedi', 'tharo', 'nne', 'tlhano', 'thataro', 'supa', 'robedi', 'robongwe', 'lesome', 'lesome le bongwe'],
-            'bosigo jwa magareng',
-            'motshegare',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TN = _tn()
+
+    private static TimeLocale _tn() {
+        new TimeLocale(
+            'tn',
+            new ClockConfig(
+                ['lesome le bobedi', 'nngwe', 'pedi', 'tharo', 'nne', 'tlhano', 'thataro', 'supa', 'robedi', 'robongwe', 'lesome', 'lesome le bongwe'],
+                'bosigo jwa magareng',
+                'motshegare',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tpi.json
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
-    static final TimeLocale TPI = new TimeLocale(
-        'tpi',
-        new ClockConfig(
-            ['twelp', 'wan', 'tu', 'tri', 'foa', 'faiv', 'sikis', 'seven', 'et', 'nain', 'ten', 'eleven'],
-            'biknait',
-            'belo',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TPI = _tpi()
+
+    private static TimeLocale _tpi() {
+        new TimeLocale(
+            'tpi',
+            new ClockConfig(
+                ['twelp', 'wan', 'tu', 'tri', 'foa', 'faiv', 'sikis', 'seven', 'et', 'nain', 'ten', 'eleven'],
+                'biknait',
+                'belo',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
-    static final TimeLocale TR = new TimeLocale(
-        'tr',
-        new ClockConfig(
-            ['on iki', 'bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz', 'dokuz', 'on', 'on bir'],
-            'gece yarısı',
-            'öğle',
-            [(0): 'saat {h}', (5): '{h}\'i beş geçiyor', (10): '{h}\'i on geçiyor', (15): '{h}\'i çeyrek geçiyor', (20): '{h}\'i yirmi geçiyor', (25): '{h}\'i yirmi beş geçiyor', (30): '{h} buçuk', (35): '{next_h}\'e yirmi beş var', (40): '{next_h}\'e yirmi var', (45): '{next_h}\'e çeyrek var', (50): '{next_h}\'e on var', (55): '{next_h}\'e beş var']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale TR = _tr()
+
+    private static TimeLocale _tr() {
+        new TimeLocale(
+            'tr',
+            new ClockConfig(
+                ['on iki', 'bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz', 'dokuz', 'on', 'on bir'],
+                'gece yarısı',
+                'öğle',
+                [(0): 'saat {h}', (5): '{h}\'i beş geçiyor', (10): '{h}\'i on geçiyor', (15): '{h}\'i çeyrek geçiyor', (20): '{h}\'i yirmi geçiyor', (25): '{h}\'i yirmi beş geçiyor', (30): '{h} buçuk', (35): '{next_h}\'e yirmi beş var', (40): '{next_h}\'e yirmi var', (45): '{next_h}\'e çeyrek var', (50): '{next_h}\'e on var', (55): '{next_h}\'e beş var']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ts.json
     // ================================================================
     // TS — Tsonga
     // ================================================================
-    static final TimeLocale TS = new TimeLocale(
-        'ts',
-        new ClockConfig(
-            ['khume mbiri', 'yin\'we', 'mbirhi', 'nharhu', 'mune', 'ntlhanu', 'tsevu', 'nkombo', 'nhungu', 'kaye', 'khume', 'khume yin\'we'],
-            'vusiku exikarhi',
-            'nhlekanhi',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TS = _ts()
+
+    private static TimeLocale _ts() {
+        new TimeLocale(
+            'ts',
+            new ClockConfig(
+                ['khume mbiri', 'yin\'we', 'mbirhi', 'nharhu', 'mune', 'ntlhanu', 'tsevu', 'nkombo', 'nhungu', 'kaye', 'khume', 'khume yin\'we'],
+                'vusiku exikarhi',
+                'nhlekanhi',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tum.json
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
-    static final TimeLocale TUM = new TimeLocale(
-        'tum',
-        new ClockConfig(
-            ['khumi na yibili', 'chimoza', 'vibili', 'vitatu', 'vinayi', 'vikhondi', 'vikhondi na kamoza', 'vikhondi na tubili', 'vikhondi na tutatu', 'vikhondi na tunayi', 'khumi', 'khumi na kamoza'],
-            'pakati pa usiku',
-            'muhanya',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale TUM = _tum()
+
+    private static TimeLocale _tum() {
+        new TimeLocale(
+            'tum',
+            new ClockConfig(
+                ['khumi na yibili', 'chimoza', 'vibili', 'vitatu', 'vinayi', 'vikhondi', 'vikhondi na kamoza', 'vikhondi na tubili', 'vikhondi na tutatu', 'vikhondi na tunayi', 'khumi', 'khumi na kamoza'],
+                'pakati pa usiku',
+                'muhanya',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
-    static final TimeLocale TZM = new TimeLocale(
-        'tzm',
-        new ClockConfig(
-            ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
-            'ⵏⵚ ⵏ ⵉⴹ',
-            'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale TZM = _tzm()
+
+    private static TimeLocale _tzm() {
+        new TimeLocale(
+            'tzm',
+            new ClockConfig(
+                ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
+                'ⵏⵚ ⵏ ⵉⴹ',
+                'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
-    static final TimeLocale UK = new TimeLocale(
-        'uk',
-        new ClockConfig(
-            ['дванадцята', 'перша', 'друга', 'третя', 'четверта', 'п\'ята', 'шоста', 'сьома', 'восьма', 'дев\'ята', 'десята', 'одинадцята'],
-            'опівніч',
-            'полудень',
-            [(0): '{h} часа', (5): 'п\'ять po {h}', (10): 'десять po {h}', (15): 'п\'ятнадцять po {h}', (20): 'двадцять po {h}', (25): 'двадцять п\'ять po {h}', (30): 'тридцять po {h}', (35): 'двадцять п\'ять do {next_h}', (40): 'двадцять do {next_h}', (45): 'п\'ятнадцять do {next_h}', (50): 'десять do {next_h}', (55): 'п\'ять do {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale UK = _uk()
+
+    private static TimeLocale _uk() {
+        new TimeLocale(
+            'uk',
+            new ClockConfig(
+                ['дванадцята', 'перша', 'друга', 'третя', 'четверта', 'п\'ята', 'шоста', 'сьома', 'восьма', 'дев\'ята', 'десята', 'одинадцята'],
+                'опівніч',
+                'полудень',
+                [(0): '{h} часа', (5): 'п\'ять po {h}', (10): 'десять po {h}', (15): 'п\'ятнадцять po {h}', (20): 'двадцять po {h}', (25): 'двадцять п\'ять po {h}', (30): 'тридцять po {h}', (35): 'двадцять п\'ять do {next_h}', (40): 'двадцять do {next_h}', (45): 'п\'ятнадцять do {next_h}', (50): 'десять do {next_h}', (55): 'п\'ять do {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/umb.json
     // ================================================================
     // UMB — Umbundu
     // ================================================================
-    static final TimeLocale UMB = new TimeLocale(
-        'umb',
-        new ClockConfig(
-            ['olohola likumi na yivali', 'yimosi', 'yivali', 'yitathu', 'yinyali', 'yitanu', 'yitathu-va-yivali', 'yisemba', 'yinyali-va-yivali', 'yitanu-va-yivali', 'likumi', 'likumi na yimosi'],
-            'ocitapi',
-            'ocivali',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale UMB = _umb()
+
+    private static TimeLocale _umb() {
+        new TimeLocale(
+            'umb',
+            new ClockConfig(
+                ['olohola likumi na yivali', 'yimosi', 'yivali', 'yitathu', 'yinyali', 'yitanu', 'yitathu-va-yivali', 'yisemba', 'yinyali-va-yivali', 'yitanu-va-yivali', 'likumi', 'likumi na yimosi'],
+                'ocitapi',
+                'ocivali',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
-    static final TimeLocale UR = new TimeLocale(
-        'ur',
-        new ClockConfig(
-            ['بارہ', 'ایک', 'دو', 'تین', 'چار', 'پانچ', 'چھ', 'سات', 'آٹھ', 'نو', 'دس', 'گیارہ'],
-            'آدھی رات',
-            'دوپہر',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale UR = _ur()
+
+    private static TimeLocale _ur() {
+        new TimeLocale(
+            'ur',
+            new ClockConfig(
+                ['بارہ', 'ایک', 'دو', 'تین', 'چار', 'پانچ', 'چھ', 'سات', 'آٹھ', 'نو', 'دس', 'گیارہ'],
+                'آدھی رات',
+                'دوپہر',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
-    static final TimeLocale UZ = new TimeLocale(
-        'uz',
-        new ClockConfig(
-            ['o\'n ikki', 'bir', 'ikki', 'uch', 'to\'rt', 'besh', 'olti', 'yetti', 'sakkiz', 'to\'qqiz', 'o\'n', 'o\'n bir'],
-            'yarim tun',
-            'tush',
-            [(0): '{h} o\'clock', (5): 'besh past {h}', (10): 'o\'n past {h}', (15): 'o\'n besh past {h}', (20): 'yigirma past {h}', (25): 'yigirma besh past {h}', (30): 'o\'ttiz past {h}', (35): 'yigirma besh to {next_h}', (40): 'yigirma to {next_h}', (45): 'o\'n besh to {next_h}', (50): 'o\'n to {next_h}', (55): 'besh to {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale UZ = _uz()
+
+    private static TimeLocale _uz() {
+        new TimeLocale(
+            'uz',
+            new ClockConfig(
+                ['o\'n ikki', 'bir', 'ikki', 'uch', 'to\'rt', 'besh', 'olti', 'yetti', 'sakkiz', 'to\'qqiz', 'o\'n', 'o\'n bir'],
+                'yarim tun',
+                'tush',
+                [(0): '{h} o\'clock', (5): 'besh past {h}', (10): 'o\'n past {h}', (15): 'o\'n besh past {h}', (20): 'yigirma past {h}', (25): 'yigirma besh past {h}', (30): 'o\'ttiz past {h}', (35): 'yigirma besh to {next_h}', (40): 'yigirma to {next_h}', (45): 'o\'n besh to {next_h}', (50): 'o\'n to {next_h}', (55): 'besh to {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/ve.json
     // ================================================================
     // VE — Venda
     // ================================================================
-    static final TimeLocale VE = new TimeLocale(
-        've',
-        new ClockConfig(
-            ['fumimbili', 'thihi', 'mbili', 'raru', 'ina', 'thanu', 'rathi', 'sumbe', 'malo', 'tahe', 'fumi', 'fuminthihi'],
-            'vhukati ha vhusiku',
-            'vhukati ha masiari',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale VE = _ve()
+
+    private static TimeLocale _ve() {
+        new TimeLocale(
+            've',
+            new ClockConfig(
+                ['fumimbili', 'thihi', 'mbili', 'raru', 'ina', 'thanu', 'rathi', 'sumbe', 'malo', 'tahe', 'fumi', 'fuminthihi'],
+                'vhukati ha vhusiku',
+                'vhukati ha masiari',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
-    static final TimeLocale VI = new TimeLocale(
-        'vi',
-        new ClockConfig(
-            ['mười hai', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười', 'mười một'],
-            'nửa đêm',
-            'trưa',
-            [(0): '{h} o\'clock', (5): 'năm qua {h}', (10): 'mười qua {h}', (15): 'mười lăm qua {h}', (20): 'hai mươi qua {h}', (25): 'hai mươi lăm qua {h}', (30): 'ba mươi qua {h}', (35): 'hai mươi lăm trước {next_h}', (40): 'hai mươi trước {next_h}', (45): 'mười lăm trước {next_h}', (50): 'mười trước {next_h}', (55): 'năm trước {next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale VI = _vi()
+
+    private static TimeLocale _vi() {
+        new TimeLocale(
+            'vi',
+            new ClockConfig(
+                ['mười hai', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười', 'mười một'],
+                'nửa đêm',
+                'trưa',
+                [(0): '{h} o\'clock', (5): 'năm qua {h}', (10): 'mười qua {h}', (15): 'mười lăm qua {h}', (20): 'hai mươi qua {h}', (25): 'hai mươi lăm qua {h}', (30): 'ba mươi qua {h}', (35): 'hai mươi lăm trước {next_h}', (40): 'hai mươi trước {next_h}', (45): 'mười lăm trước {next_h}', (50): 'mười trước {next_h}', (55): 'năm trước {next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/vmw.json
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
-    static final TimeLocale VMW = new TimeLocale(
-        'vmw',
-        new ClockConfig(
-            ['khumi na pili', 'mosa', 'pili', 'ttatthu', 'ncheche', 'thanu', 'thanu na mosa', 'thanu na pili', 'thanu na ttatthu', 'thanu na ncheche', 'khumi', 'khumi na mosa'],
-            'usiku wopakhala',
-            'muttana',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale VMW = _vmw()
+
+    private static TimeLocale _vmw() {
+        new TimeLocale(
+            'vmw',
+            new ClockConfig(
+                ['khumi na pili', 'mosa', 'pili', 'ttatthu', 'ncheche', 'thanu', 'thanu na mosa', 'thanu na pili', 'thanu na ttatthu', 'thanu na ncheche', 'khumi', 'khumi na mosa'],
+                'usiku wopakhala',
+                'muttana',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/wo.json
     // ================================================================
     // WO — Wolof
     // ================================================================
-    static final TimeLocale WO = new TimeLocale(
-        'wo',
-        new ClockConfig(
-            ['fukki ñaar', 'benn', 'ñaar', 'ñett', 'ñeent', 'juróom', 'juróom-benn', 'juróom-ñaar', 'juróom-ñett', 'juróom-ñeent', 'fukk', 'fukki benn'],
-            'bu guddi',
-            'ci àttaya',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale WO = _wo()
+
+    private static TimeLocale _wo() {
+        new TimeLocale(
+            'wo',
+            new ClockConfig(
+                ['fukki ñaar', 'benn', 'ñaar', 'ñett', 'ñeent', 'juróom', 'juróom-benn', 'juróom-ñaar', 'juróom-ñett', 'juróom-ñeent', 'fukk', 'fukki benn'],
+                'bu guddi',
+                'ci àttaya',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/xh.json
     // ================================================================
     // XH — Xhosa
     // ================================================================
-    static final TimeLocale XH = new TimeLocale(
-        'xh',
-        new ClockConfig(
-            ['ishumi elinambini', 'inye', 'ezimbini', 'ezintathu', 'ezine', 'ezintlanu', 'ezintandathu', 'ezisixhenxe', 'ezisibhozo', 'ethoba', 'ishumi', 'ishumi elinanye'],
-            'ezinzulwini zobusuku',
-            'emini',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale XH = _xh()
+
+    private static TimeLocale _xh() {
+        new TimeLocale(
+            'xh',
+            new ClockConfig(
+                ['ishumi elinambini', 'inye', 'ezimbini', 'ezintathu', 'ezine', 'ezintlanu', 'ezintandathu', 'ezisixhenxe', 'ezisibhozo', 'ethoba', 'ishumi', 'ishumi elinanye'],
+                'ezinzulwini zobusuku',
+                'emini',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/yao.json
     // ================================================================
     // YAO — Yao
     // ================================================================
-    static final TimeLocale YAO = new TimeLocale(
-        'yao',
-        new ClockConfig(
-            ['likumi na iwili', 'cimo', 'iwili', 'itatu', 'ncece', 'nsano', 'nsano nacimo', 'nsano nawili', 'nsano naitatu', 'nsano nancece', 'likumi', 'likumi nacimo'],
-            'pakati pa usiku',
-            'pakati pa lisiku',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale YAO = _yao()
+
+    private static TimeLocale _yao() {
+        new TimeLocale(
+            'yao',
+            new ClockConfig(
+                ['likumi na iwili', 'cimo', 'iwili', 'itatu', 'ncece', 'nsano', 'nsano nacimo', 'nsano nawili', 'nsano naitatu', 'nsano nancece', 'likumi', 'likumi nacimo'],
+                'pakati pa usiku',
+                'pakati pa lisiku',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/yo.json
     // ================================================================
     // YO — Yoruba
     // ================================================================
-    static final TimeLocale YO = new TimeLocale(
-        'yo',
-        new ClockConfig(
-            ['méjìlá', 'kan', 'méjì', 'mẹ́ta', 'mẹ́rin', 'márùn-ún', 'mẹ́fà', 'méje', 'mẹ́jọ', 'mẹ́sàn-án', 'mẹ́wàá', 'mọ́kànlá'],
-            'àárọ̀ òru',
-            'ọ̀sán',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale YO = _yo()
+
+    private static TimeLocale _yo() {
+        new TimeLocale(
+            'yo',
+            new ClockConfig(
+                ['méjìlá', 'kan', 'méjì', 'mẹ́ta', 'mẹ́rin', 'márùn-ún', 'mẹ́fà', 'méje', 'mẹ́jọ', 'mẹ́sàn-án', 'mẹ́wàá', 'mọ́kànlá'],
+                'àárọ̀ òru',
+                'ọ̀sán',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/yue.json
     // ================================================================
     // YUE — Cantonese
     // ================================================================
-    static final TimeLocale YUE = new TimeLocale(
-        'yue',
-        new ClockConfig(
-            ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'],
-            '午夜',
-            '正午',
-            [(0): '{h}點整', (5): '{h}點零五分', (10): '{h}點十分', (15): '{h}點十五分', (20): '{h}點二十分', (25): '{h}點二十五分', (30): '{h}點半', (35): '{h}點三十五分', (40): '{h}點四十分', (45): '{h}點四十五分', (50): '{h}點五十分', (55): '{h}點五十五分']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale YUE = _yue()
+
+    private static TimeLocale _yue() {
+        new TimeLocale(
+            'yue',
+            new ClockConfig(
+                ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'],
+                '午夜',
+                '正午',
+                [(0): '{h}點整', (5): '{h}點零五分', (10): '{h}點十分', (15): '{h}點十五分', (20): '{h}點二十分', (25): '{h}點二十五分', (30): '{h}點半', (35): '{h}點三十五分', (40): '{h}點四十分', (45): '{h}點四十五分', (50): '{h}點五十分', (55): '{h}點五十五分']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/zdj.json
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
-    static final TimeLocale ZDJ = new TimeLocale(
-        'zdj',
-        new ClockConfig(
-            ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
-            'usiku wa manane',
-            'adhuhuri',
-            [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale ZDJ = _zdj()
+
+    private static TimeLocale _zdj() {
+        new TimeLocale(
+            'zdj',
+            new ClockConfig(
+                ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
+                'usiku wa manane',
+                'adhuhuri',
+                [(0): '{h}:00', (5): '{h}:05', (10): '{h}:10', (15): '{h}:15', (20): '{h}:20', (25): '{h}:25', (30): '{h}:30', (35): '{h}:35', (40): '{h}:40', (45): '{h}:45', (50): '{h}:50', (55): '{h}:55']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
 
     // Source: time/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================
-    static final TimeLocale ZH = new TimeLocale(
-        'zh',
-        new ClockConfig(
-            ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'],
-            '午夜',
-            '正午',
-            [(0): '{h}点整', (5): '{h}点五分', (10): '{h}点十分', (15): '{h}点十五分', (20): '{h}点二十分', (25): '{h}点二十五分', (30): '{h}点半', (35): '{h}点三十五分', (40): '{h}点四十分', (45): '{h}点四十五分', (50): '{h}点五十分', (55): '{h}点五十五分']
-        ),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
-        new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
-    )
+    static final TimeLocale ZH = _zh()
+
+    private static TimeLocale _zh() {
+        new TimeLocale(
+            'zh',
+            new ClockConfig(
+                ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'],
+                '午夜',
+                '正午',
+                [(0): '{h}点整', (5): '{h}点五分', (10): '{h}点十分', (15): '{h}点十五分', (20): '{h}点二十分', (25): '{h}点二十五分', (30): '{h}点半', (35): '{h}点三十五分', (40): '{h}点四十分', (45): '{h}点四十五分', (50): '{h}点五十分', (55): '{h}点五十五分']
+            ),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}')),
+            new CompactnessOverride(new ShortClockConfig(true, null, '{h}:{mm}'))
+        )
+    }
 
     // Source: time/locales/src/zu.json
     // ================================================================
     // ZU — Zulu
     // ================================================================
-    static final TimeLocale ZU = new TimeLocale(
-        'zu',
-        new ClockConfig(
-            ['ishumi nambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isishiyagalombili', 'isishiyagalolunye', 'ishumi', 'ishumi nanye'],
-            'phakathi kwamabili',
-            'emini',
-            [(0): '{h} o\'clock', (5): 'emva kwemizuzu emihlanu ngo-{h}', (10): 'emva kwemizuzu eyishumi ngo-{h}', (15): 'ikota edlule ngo-{h}', (20): 'emva kwemizuzu engamashumi amabili ngo-{h}', (25): 'emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}', (30): 'uhhafu edlule ngo-{h}', (35): 'imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}', (40): 'imizuzu engamashumi amabili ngaphambi kuka-{next_h}', (45): 'ikota ngaphambi kuka-{next_h}', (50): 'imizuzu eyishumi ngaphambi kuka-{next_h}', (55): 'imizuzu emihlanu ngaphambi kuka-{next_h}']
-        ),
-        new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
-        new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
-    )
+    static final TimeLocale ZU = _zu()
 
-    static final Map<String, TimeLocale> ALL = Collections.unmodifiableMap([
-        ('af'): AF, ('ak'): AK, ('am'): AM,
-        ('ar'): AR, ('ay'): AY, ('az'): AZ,
-        ('bci'): BCI, ('be'): BE, ('bem'): BEM,
-        ('bg'): BG, ('bi'): BI, ('bm'): BM,
-        ('bn'): BN, ('br'): BR, ('bs'): BS,
-        ('ca'): CA, ('cak'): CAK, ('ceb'): CEB,
-        ('cs'): CS, ('cy'): CY, ('da'): DA,
-        ('de'): DE, ('din'): DIN, ('dje'): DJE,
-        ('dv'): DV, ('dyu'): DYU, ('dz'): DZ,
-        ('ee'): EE, ('el'): EL, ('en'): EN,
-        ('es'): ES, ('et'): ET, ('eu'): EU,
-        ('fa'): FA, ('fan'): FAN, ('ff'): FF,
-        ('fi'): FI, ('fil'): FIL, ('fj'): FJ,
-        ('fon'): FON, ('fr'): FR, ('ga'): GA,
-        ('gd'): GD, ('gl'): GL, ('gn'): GN,
-        ('gu'): GU, ('gv'): GV, ('ha'): HA,
-        ('he'): HE, ('hi'): HI, ('hmn'): HMN,
-        ('hr'): HR, ('ht'): HT, ('hu'): HU,
-        ('hy'): HY, ('id'): ID, ('ig'): IG,
-        ('is'): IS, ('it'): IT, ('ja'): JA,
-        ('jv'): JV, ('ka'): KA, ('kbp'): KBP,
-        ('kek'): KEK, ('ki'): KI, ('kk'): KK,
-        ('kl'): KL, ('km'): KM, ('kn'): KN,
-        ('ko'): KO, ('kpe'): KPE, ('kri'): KRI,
-        ('ktu'): KTU, ('ku'): KU, ('kw'): KW,
-        ('ky'): KY, ('lb'): LB, ('lg'): LG,
-        ('ln'): LN, ('lo'): LO, ('lt'): LT,
-        ('luo'): LUO, ('lv'): LV, ('mam'): MAM,
-        ('men'): MEN, ('mfe'): MFE, ('mg'): MG,
-        ('mi'): MI, ('mk'): MK, ('ml'): ML,
-        ('mn'): MN, ('mnk'): MNK, ('mos'): MOS,
-        ('mr'): MR, ('ms'): MS, ('mt'): MT,
-        ('my'): MY, ('nb'): NB, ('nd'): ND,
-        ('ne'): NE, ('ng'): NG, ('nl'): NL,
-        ('nr'): NR, ('nso'): NSO, ('nus'): NUS,
-        ('ny'): NY, ('om'): OM, ('or'): OR,
-        ('pa'): PA, ('pis'): PIS, ('pl'): PL,
-        ('pov'): POV, ('ps'): PS, ('pt'): PT,
-        ('qu'): QU, ('quc'): QUC, ('ro'): RO,
-        ('ru'): RU, ('rw'): RW, ('sar'): SAR,
-        ('sd'): SD, ('sg'): SG, ('shi'): SHI,
-        ('shn'): SHN, ('si'): SI, ('sk'): SK,
-        ('sl'): SL, ('sn'): SN, ('snk'): SNK,
-        ('so'): SO, ('sq'): SQ, ('sr'): SR,
-        ('ss'): SS, ('st'): ST, ('su'): SU,
-        ('suk'): SUK, ('sv'): SV, ('sw'): SW,
-        ('ta'): TA, ('te'): TE, ('tem'): TEM,
-        ('tet'): TET, ('tg'): TG, ('th'): TH,
-        ('ti'): TI, ('tig'): TIG, ('tk'): TK,
-        ('tn'): TN, ('tpi'): TPI, ('tr'): TR,
-        ('ts'): TS, ('tum'): TUM, ('tzm'): TZM,
-        ('uk'): UK, ('umb'): UMB, ('ur'): UR,
-        ('uz'): UZ, ('ve'): VE, ('vi'): VI,
-        ('vmw'): VMW, ('wo'): WO, ('xh'): XH,
-        ('yao'): YAO, ('yo'): YO, ('yue'): YUE,
-        ('zdj'): ZDJ, ('zh'): ZH, ('zu'): ZU
-    ])
+    private static TimeLocale _zu() {
+        new TimeLocale(
+            'zu',
+            new ClockConfig(
+                ['ishumi nambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isishiyagalombili', 'isishiyagalolunye', 'ishumi', 'ishumi nanye'],
+                'phakathi kwamabili',
+                'emini',
+                [(0): '{h} o\'clock', (5): 'emva kwemizuzu emihlanu ngo-{h}', (10): 'emva kwemizuzu eyishumi ngo-{h}', (15): 'ikota edlule ngo-{h}', (20): 'emva kwemizuzu engamashumi amabili ngo-{h}', (25): 'emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}', (30): 'uhhafu edlule ngo-{h}', (35): 'imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}', (40): 'imizuzu engamashumi amabili ngaphambi kuka-{next_h}', (45): 'ikota ngaphambi kuka-{next_h}', (50): 'imizuzu eyishumi ngaphambi kuka-{next_h}', (55): 'imizuzu emihlanu ngaphambi kuka-{next_h}']
+            ),
+            new CompactnessOverride(new ShortClockConfig(false, ['AM', 'PM'] as String[], '{h}:{mm} {ampm}')),
+            new CompactnessOverride(new ShortClockConfig(false, ['a', 'p'] as String[], '{h}:{mm}{ampm}'))
+        )
+    }
+
+    private static Map<String, TimeLocale> _localesA() {
+        [
+            ('af'): AF, ('ak'): AK, ('am'): AM,
+            ('ar'): AR, ('ay'): AY, ('az'): AZ
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesB() {
+        [
+            ('bci'): BCI, ('be'): BE, ('bem'): BEM,
+            ('bg'): BG, ('bi'): BI, ('bm'): BM,
+            ('bn'): BN, ('br'): BR, ('bs'): BS
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesC() {
+        [
+            ('ca'): CA, ('cak'): CAK, ('ceb'): CEB,
+            ('cs'): CS, ('cy'): CY
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesD() {
+        [
+            ('da'): DA, ('de'): DE, ('din'): DIN,
+            ('dje'): DJE, ('dv'): DV, ('dyu'): DYU,
+            ('dz'): DZ
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesE() {
+        [
+            ('ee'): EE, ('el'): EL, ('en'): EN,
+            ('es'): ES, ('et'): ET, ('eu'): EU
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesF() {
+        [
+            ('fa'): FA, ('fan'): FAN, ('ff'): FF,
+            ('fi'): FI, ('fil'): FIL, ('fj'): FJ,
+            ('fon'): FON, ('fr'): FR
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesG() {
+        [
+            ('ga'): GA, ('gd'): GD, ('gl'): GL,
+            ('gn'): GN, ('gu'): GU, ('gv'): GV
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesH() {
+        [
+            ('ha'): HA, ('he'): HE, ('hi'): HI,
+            ('hmn'): HMN, ('hr'): HR, ('ht'): HT,
+            ('hu'): HU, ('hy'): HY
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesI() {
+        [
+            ('id'): ID, ('ig'): IG, ('is'): IS,
+            ('it'): IT
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesJ() {
+        [
+            ('ja'): JA, ('jv'): JV
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesK() {
+        [
+            ('ka'): KA, ('kbp'): KBP, ('kek'): KEK,
+            ('ki'): KI, ('kk'): KK, ('kl'): KL,
+            ('km'): KM, ('kn'): KN, ('ko'): KO,
+            ('kpe'): KPE, ('kri'): KRI, ('ktu'): KTU,
+            ('ku'): KU, ('kw'): KW, ('ky'): KY
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesL() {
+        [
+            ('lb'): LB, ('lg'): LG, ('ln'): LN,
+            ('lo'): LO, ('lt'): LT, ('luo'): LUO,
+            ('lv'): LV
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesM() {
+        [
+            ('mam'): MAM, ('men'): MEN, ('mfe'): MFE,
+            ('mg'): MG, ('mi'): MI, ('mk'): MK,
+            ('ml'): ML, ('mn'): MN, ('mnk'): MNK,
+            ('mos'): MOS, ('mr'): MR, ('ms'): MS,
+            ('mt'): MT, ('my'): MY
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesN() {
+        [
+            ('nb'): NB, ('nd'): ND, ('ne'): NE,
+            ('ng'): NG, ('nl'): NL, ('nr'): NR,
+            ('nso'): NSO, ('nus'): NUS, ('ny'): NY
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesO() {
+        [
+            ('om'): OM, ('or'): OR
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesP() {
+        [
+            ('pa'): PA, ('pis'): PIS, ('pl'): PL,
+            ('pov'): POV, ('ps'): PS, ('pt'): PT
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesQ() {
+        [
+            ('qu'): QU, ('quc'): QUC
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesR() {
+        [
+            ('ro'): RO, ('ru'): RU, ('rw'): RW
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesS() {
+        [
+            ('sar'): SAR, ('sd'): SD, ('sg'): SG,
+            ('shi'): SHI, ('shn'): SHN, ('si'): SI,
+            ('sk'): SK, ('sl'): SL, ('sn'): SN,
+            ('snk'): SNK, ('so'): SO, ('sq'): SQ,
+            ('sr'): SR, ('ss'): SS, ('st'): ST,
+            ('su'): SU, ('suk'): SUK, ('sv'): SV,
+            ('sw'): SW
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesT() {
+        [
+            ('ta'): TA, ('te'): TE, ('tem'): TEM,
+            ('tet'): TET, ('tg'): TG, ('th'): TH,
+            ('ti'): TI, ('tig'): TIG, ('tk'): TK,
+            ('tn'): TN, ('tpi'): TPI, ('tr'): TR,
+            ('ts'): TS, ('tum'): TUM, ('tzm'): TZM
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesU() {
+        [
+            ('uk'): UK, ('umb'): UMB, ('ur'): UR,
+            ('uz'): UZ
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesV() {
+        [
+            ('ve'): VE, ('vi'): VI, ('vmw'): VMW
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesW() {
+        [
+            ('wo'): WO
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesX() {
+        [
+            ('xh'): XH
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesY() {
+        [
+            ('yao'): YAO, ('yo'): YO, ('yue'): YUE
+        ]
+    }
+
+    private static Map<String, TimeLocale> _localesZ() {
+        [
+            ('zdj'): ZDJ, ('zh'): ZH, ('zu'): ZU
+        ]
+    }
+
+    static final Map<String, TimeLocale> ALL = Collections.unmodifiableMap(_localesA() + _localesB() + _localesC() + _localesD() + _localesE() + _localesF() + _localesG() + _localesH() + _localesI() + _localesJ() + _localesK() + _localesL() + _localesM() + _localesN() + _localesO() + _localesP() + _localesQ() + _localesR() + _localesS() + _localesT() + _localesU() + _localesV() + _localesW() + _localesX() + _localesY() + _localesZ())
 
     static TimeLocale get(String code) { ALL[code] }
 }

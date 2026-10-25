@@ -1527,4 +1527,127 @@ final class FormatAgeTest extends TestCase
     {
         $this->assertNull(Locales::get('EN'));
     }
+
+    // ================================================================
+    // Sections 31-33: weeks+days across month ends, half-year plurals, input validation
+    // ================================================================
+
+    // 31.1
+    public function test_31_1_88_days_across_a_28_day_february(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertSame('12 weeks, 4 days', $fmt->formatAge('2016-12-31', '2017-03-29'));
+    }
+
+    // 31.2
+    public function test_31_2_90_days_across_a_year_end_into_a_leap_year(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertSame('12 weeks, 6 days', $fmt->formatAge('1991-11-27', '1992-02-25'));
+    }
+
+    // 31.3
+    public function test_31_3_33_days_across_a_year_end(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertSame('4 weeks, 5 days', $fmt->formatAge('2020-11-30', '2021-01-02'));
+    }
+
+    // 31.4
+    public function test_31_4_compact_form_of_31_1(): void
+    {
+        $fmt = new SayableAge(Locales::EN(), Compactness::Compact);
+        $this->assertSame('12w4d', $fmt->formatAge('2016-12-31', '2017-03-29'));
+    }
+
+    // 32.1
+    public function test_32_1_polish_3_is_few(): void
+    {
+        $fmt = new SayableAge(Locales::PL());
+        $this->assertSame('3 i pół lata', $fmt->formatAge('2021-06-15', '2025-01-15'));
+    }
+
+    // 32.2
+    public function test_32_2_polish_5_is_many(): void
+    {
+        $fmt = new SayableAge(Locales::PL(), Compactness::Short);
+        $this->assertSame('5 i pół lat', $fmt->formatAge('2020-06-15', '2025-12-15'));
+    }
+
+    // 32.3
+    public function test_32_3_tachelhit_6_is_few(): void
+    {
+        $fmt = new SayableAge(Locales::SHI());
+        $this->assertSame('6 iseggasen d uzgen', $fmt->formatAge('2005-06-08', '2012-06-07'));
+    }
+
+    // 33.1
+    public function test_33_1_february_30_doesn_t_exist(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge('2025-02-30', '2032-06-25'));
+    }
+
+    // 33.2
+    public function test_33_2_month_13(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge('2025-13-01', '2027-01-31'));
+    }
+
+    // 33.3
+    public function test_33_3_february_29_in_a_non_leap_year(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge('2023-02-29', '2025-03-01'));
+    }
+
+    // 33.4
+    public function test_33_4_day_00(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge('2025-06-00', '2027-02-25'));
+    }
+
+    // 33.5
+    public function test_33_5_unpadded_month_and_day(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge('2025-6-1', '2027-02-25'));
+    }
+
+    // 33.6
+    public function test_33_6_surrounding_whitespace(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge(' 2025-06-01', '2027-02-25'));
+    }
+
+    // 33.7
+    public function test_33_7_a_datetime_is_not_a_date(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge('2025-06-15T10:00:00', '2027-02-25'));
+    }
+
+    // 33.8
+    public function test_33_8_invalid_asof(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatAge('2020-01-01', '2025-04-31'));
+    }
+
+    // 33.9
+    public function test_33_9_formatstage_validates_too(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertNull($fmt->formatStage('2025-02-30', '2027-09-05'));
+    }
+
+    // 33.10
+    public function test_33_10_february_29_in_a_leap_year_is_valid(): void
+    {
+        $fmt = new SayableAge(Locales::EN());
+        $this->assertSame('2 years', $fmt->formatAge('2024-02-29', '2026-03-01'));
+    }
 }

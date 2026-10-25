@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/hy.json
 
-_plural_hy() {
+_sayableage_plural_hy() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_hy() {
+_sayableage_locale_hy() {
     _unit_day_one='{n} օր'
     _unit_day_other='{n} օր'
     _unit_week_one='{n} շաբաթ'
@@ -43,5 +43,5 @@ _locale_hy() {
     _compact_unit_year='{n} տ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_hy
+    _plural_func=_sayableage_plural_hy
 }

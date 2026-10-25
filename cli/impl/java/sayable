@@ -14,9 +14,17 @@ DURATION_SRC="${PROJECT_ROOT}/duration/impl/java/src/main/java"
 # Build directory
 BUILD_DIR="${SCRIPT_DIR}/build"
 
-# Compile if needed (check if Sayable.class exists and is newer than source)
-if [[ ! -f "${BUILD_DIR}/Sayable.class" ]] || \
-   [[ "${SCRIPT_DIR}/Sayable.java" -nt "${BUILD_DIR}/Sayable.class" ]]; then
+# Compile if Sayable.class is missing or older than any CLI or library source
+_needs_build=false
+if [[ ! -f "${BUILD_DIR}/Sayable.class" ]]; then
+    _needs_build=true
+elif [[ -n "$(find "${SCRIPT_DIR}/Sayable.java" "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DURATION_SRC}" \
+        -name '*.java' -newer "${BUILD_DIR}/Sayable.class" 2>/dev/null | head -1)" ]]; then
+    _needs_build=true
+fi
+
+if ${_needs_build}; then
+    rm -rf "${BUILD_DIR}"
     mkdir -p "${BUILD_DIR}"
     javac -encoding UTF-8 \
         -sourcepath "${AGE_SRC}:${DATE_SRC}:${TIME_SRC}:${DURATION_SRC}:${SCRIPT_DIR}" \

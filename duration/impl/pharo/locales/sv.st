@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/sv.json "
 
-"Locale: sv"
+"Locale: sv"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 sv

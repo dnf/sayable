@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/et.json
 
-_plural_et() {
+_sayableduration_plural_et() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_et() {
+_sayableduration_locale_et() {
     _unit_second_one='{n} sekund'
     _unit_second_other='{n} sekundit'
     _unit_minute_one='{n} minut'
@@ -56,5 +56,5 @@ _locale_et() {
     _compact_delimiter=''
     _compact_ago='{0} tagasi'
     _compact_in_future='{0} pärast'
-    _plural_func=_plural_et
+    _plural_func=_sayableduration_plural_et
 }

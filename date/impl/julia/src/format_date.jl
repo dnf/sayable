@@ -72,17 +72,29 @@ function _pick_dict(ovr, field::Symbol, default::Dict{String, String})
     return val
 end
 
+_is_ascii_digit(b::UInt8) = UInt8('0') <= b <= UInt8('9')
+
+_digits_value(cu, range) = foldl((acc, i) -> acc * 10 + Int(cu[i] - UInt8('0')), range; init=0)
+
+_is_leap_year(y::Int) = (y % 4 == 0 && y % 100 != 0) || y % 400 == 0
+
+function _days_in_month(y::Int, m::Int)
+    m == 2 && return _is_leap_year(y) ? 29 : 28
+    m in (4, 6, 9, 11) ? 30 : 31
+end
+
+# YYYY-MM-DD naming a real calendar day, optionally followed by T and a time
+# (which is not read).
 function _parse_date(s::String)
-    isempty(s) && return nothing
-    # Handle ISO datetime (strip time part)
-    date_part = occursin("T", s) ? split(s, "T")[1] : s
-    parts = split(date_part, "-")
-    length(parts) != 3 && return nothing
-    y = tryparse(Int, parts[1])
-    m = tryparse(Int, parts[2])
-    d = tryparse(Int, parts[3])
-    (y === nothing || m === nothing || d === nothing) && return nothing
-    (m < 1 || m > 12 || d < 1 || d > 31) && return nothing
+    cu = codeunits(s)
+    length(cu) < 10 && return nothing
+    (length(cu) > 10 && cu[11] != UInt8('T')) && return nothing
+    (cu[5] != UInt8('-') || cu[8] != UInt8('-')) && return nothing
+    all(i -> _is_ascii_digit(cu[i]), (1, 2, 3, 4, 6, 7, 9, 10)) || return nothing
+    y = _digits_value(cu, 1:4)
+    m = _digits_value(cu, 6:7)
+    d = _digits_value(cu, 9:10)
+    (1 <= m <= 12 && 1 <= d <= _days_in_month(y, m)) || return nothing
     (y, m, d)
 end
 

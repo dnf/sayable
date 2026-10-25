@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/mt.json
 
-_locale_mt() {
+_sayabledate_locale_mt() {
     _months=('Jannar' 'Frar' 'Marzu' 'April' 'Mejju' 'Ġunju' 'Lulju' 'Awwissu' 'Settembru' 'Ottubru' 'Novembru' 'Diċembru')
     _weekdays=('Il-Ħadd' 'It-Tnejn' 'It-Tlieta' 'L-Erbgħa' 'Il-Ħamis' 'Il-Ġimgħa' 'Is-Sibt')
     _day_format='{n}'

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/fil.json
 
-_plural_fil() {
+_sayableage_plural_fil() {
     echo "other"
 }
 
-_locale_fil() {
+_sayableage_locale_fil() {
     _unit_day='{n} araw'
     _unit_week='{n} linggo'
     _unit_month='{n} buwan'
@@ -40,5 +40,5 @@ _locale_fil() {
     _compact_unit_year='{n}taon'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_fil
+    _plural_func=_sayableage_plural_fil
 }

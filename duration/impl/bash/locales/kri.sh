@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kri.json
 
-_plural_kri() {
+_sayableduration_plural_kri() {
     echo "other"
 }
 
-_locale_kri() {
+_sayableduration_locale_kri() {
     _unit_second='{n} sekon'
     _unit_minute='{n} minit'
     _unit_hour='{n} awa'
@@ -45,5 +45,5 @@ _locale_kri() {
     _compact_delimiter=''
     _compact_ago='{0} bak'
     _compact_in_future='na {0}'
-    _plural_func=_plural_kri
+    _plural_func=_sayableduration_plural_kri
 }

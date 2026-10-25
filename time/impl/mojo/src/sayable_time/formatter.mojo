@@ -27,33 +27,62 @@ fn _char_to_digit(c: String) -> Int:
     return -1
 
 
-fn _parse_int(s: String) -> Int:
-    """Parse an integer from a string. Returns -1 on failure."""
-    if len(s) == 0:
+fn _char_at(s: String, i: Int) -> String:
+    """Return the one-character string at byte i, or empty past the end."""
+    if i < 0 or i >= len(s):
+        return ""
+    return String(s[i : i + 1])
+
+
+fn _number_at(s: String, start: Int, count: Int) -> Int:
+    """Parse count ASCII digits starting at start. Returns -1 on failure."""
+    if start + count > len(s):
         return -1
     var result = 0
-    for i in range(len(s)):
-        var d = _char_to_digit(s[i : i + 1])
+    for i in range(start, start + count):
+        var d = _char_to_digit(_char_at(s, i))
         if d < 0:
             return -1
         result = result * 10 + d
     return result
 
 
-fn _split_at(s: String, delim: String) -> String:
-    """Return substring before delimiter, or the whole string if not found."""
-    var idx = s.find(delim)
-    if idx == -1:
-        return s
-    return s[:idx]
+fn _days_in_month(year: Int, month: Int) -> Int:
+    if month == 2:
+        if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+            return 29
+        return 28
+    if month == 4 or month == 6 or month == 9 or month == 11:
+        return 30
+    return 31
 
 
-fn _split_after(s: String, delim: String) -> String:
-    """Return substring after delimiter, or empty if not found."""
-    var idx = s.find(delim)
-    if idx == -1:
-        return ""
-    return s[idx + len(delim) :]
+fn _is_real_date(s: String) -> Bool:
+    """Return True if s is exactly YYYY-MM-DD naming a real calendar day."""
+    if len(s) != 10 or _char_at(s, 4) != "-" or _char_at(s, 7) != "-":
+        return False
+    var year = _number_at(s, 0, 4)
+    var month = _number_at(s, 5, 2)
+    var day = _number_at(s, 8, 2)
+    if year < 0 or month < 1 or month > 12:
+        return False
+    return day >= 1 and day <= _days_in_month(year, month)
+
+
+fn _zone_end(s: String, start: Int) -> Int:
+    """Return the index after an optional Z or +HH:MM/-HH:MM zone at start, or -1."""
+    if start == len(s):
+        return start
+    var c = _char_at(s, start)
+    if c == "Z":
+        return start + 1
+    if c != "+" and c != "-":
+        return -1
+    if _number_at(s, start + 1, 2) < 0 or _char_at(s, start + 3) != ":":
+        return -1
+    if _number_at(s, start + 4, 2) < 0:
+        return -1
+    return start + 6
 
 
 struct ParsedTime(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
@@ -69,46 +98,53 @@ struct ParsedTime(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
         self.valid = False
 
 
-fn _parse_time(input_str: String) -> ParsedTime:
-    """Parse HH:MM or ISO datetime to (hour, minute)."""
+fn _parse_clock(clock: String) -> ParsedTime:
+    """Parse H:MM or HH:MM, optional :SS and fraction, optional zone (ignored)."""
     var result = ParsedTime()
-    if len(input_str) == 0:
+    if _char_to_digit(_char_at(clock, 0)) < 0:
         return result
-
-    var t = input_str
-    # Strip ISO date part
-    var t_pos = t.find("T")
-    if t_pos != -1:
-        t = t[t_pos + 1 :]
-
-    # Strip timezone info
-    t = _split_at(t, "+")
-    t = _split_at(t, "Z")
-
-    # Find colon separator
-    var colon_pos = t.find(":")
-    if colon_pos == -1:
+    var hour_len = 1
+    if _char_to_digit(_char_at(clock, 1)) >= 0:
+        hour_len = 2
+    var hour = _number_at(clock, 0, hour_len)
+    if _char_at(clock, hour_len) != ":":
         return result
-
-    var hour_str = t[:colon_pos]
-    var rest = t[colon_pos + 1 :]
-    # Strip fractional seconds
-    var min_str = _split_at(rest, ".")
-    # Also strip seconds part if present
-    var colon2 = min_str.find(":")
-    if colon2 != -1:
-        min_str = min_str[:colon2]
-
-    var hour = _parse_int(hour_str)
-    var minute = _parse_int(min_str)
-
-    if hour < 0 or hour > 23 or minute < 0 or minute > 59:
+    var minute = _number_at(clock, hour_len + 1, 2)
+    if minute < 0:
+        return result
+    var pos = hour_len + 3
+    var second = 0
+    if _char_at(clock, pos) == ":":
+        second = _number_at(clock, pos + 1, 2)
+        if second < 0:
+            return result
+        pos += 3
+        if _char_at(clock, pos) == ".":
+            pos += 1
+            var fraction_start = pos
+            while _char_to_digit(_char_at(clock, pos)) >= 0:
+                pos += 1
+            if pos == fraction_start:
+                return result
+    if _zone_end(clock, pos) != len(clock):
+        return result
+    if hour > 23 or minute > 59 or second > 59:
         return result
 
     result.hour = hour
     result.minute = minute
     result.valid = True
     return result
+
+
+fn _parse_time(input_str: String) -> ParsedTime:
+    """Parse a clock time or ISO datetime to (hour, minute)."""
+    var t_pos = input_str.find("T")
+    if t_pos == -1:
+        return _parse_clock(input_str)
+    if not _is_real_date(String(input_str[:t_pos])):
+        return ParsedTime()
+    return _parse_clock(String(input_str[t_pos + 1 :]))
 
 
 fn _round_to_5(minute: Int) -> Int:

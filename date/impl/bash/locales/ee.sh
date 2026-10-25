@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ee.json
 
-_locale_ee() {
+_sayabledate_locale_ee() {
     _months=('Dzove' 'Dzodze' 'Tedoxe' 'Afɔfĩe' 'Damɛ' 'Masa' 'Siamlɔm' 'Dasiamime' 'Anyɔnyɔ' 'Kele' 'Adeɛmekpɔxe' 'Dzome')
     _weekdays=('Kɔsiɖa' 'Dzoɖa' 'Braɖa' 'Kuɖa' 'Yawoɖa' 'Fiɖa' 'Memleɖa')
     _day_format='{n}'

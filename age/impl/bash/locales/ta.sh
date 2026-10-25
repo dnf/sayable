@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ta.json
 
-_plural_ta() {
+_sayableage_plural_ta() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ta() {
+_sayableage_locale_ta() {
     _unit_day_one='{n} நாள்'
     _unit_day_other='{n} நாட்கள்'
     _unit_week_one='{n} வாரம்'
@@ -46,5 +46,5 @@ _locale_ta() {
     _compact_unit_month='{n} மா'
     _compact_unit_year='{n} ஆ'
     _compact_delimiter=''
-    _plural_func=_plural_ta
+    _plural_func=_sayableage_plural_ta
 }

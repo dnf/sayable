@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/eu.json "
 
-"Locale: eu"
+"Locale: eu"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 eu

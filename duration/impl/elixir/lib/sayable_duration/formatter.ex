@@ -6,6 +6,12 @@ defmodule SayableDuration.Formatter do
   @version "0.5.0"
   def version, do: @version
 
+  # 500 years, the same ceiling as sayable-age
+  @max_duration_months 6000
+
+  # YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+  @timestamp ~r/\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/
+
   def format_duration(_locale, _compactness, nil, _the_end), do: nil
 
   def format_duration(locale, compactness, seconds, _the_end) when is_integer(seconds) do
@@ -13,7 +19,10 @@ defmodule SayableDuration.Formatter do
       nil
     else
       {units, half, delimiter, just_now, _ago, _in_future} = resolve_locale(locale, compactness)
-      {:ok, format_duration_seconds(locale, units, half, delimiter, just_now, seconds)}
+
+      locale
+      |> format_duration_seconds(units, half, delimiter, just_now, seconds)
+      |> ok_or_nil()
     end
   end
 
@@ -23,7 +32,10 @@ defmodule SayableDuration.Formatter do
          {:ok, e} <- parse_iso_to_seconds(the_end) do
       total = abs(e - s)
       {units, half, delimiter, just_now, _ago, _in_future} = resolve_locale(locale, compactness)
-      {:ok, format_duration_seconds(locale, units, half, delimiter, just_now, total)}
+
+      locale
+      |> format_duration_seconds(units, half, delimiter, just_now, total)
+      |> ok_or_nil()
     else
       :error -> nil
     end
@@ -50,8 +62,9 @@ defmodule SayableDuration.Formatter do
         if diff == 0 do
           {:ok, just_now}
         else
-          dur = format_duration_seconds(locale, units, half, delimiter, just_now, diff)
-          {:ok, String.replace(ago, "{0}", dur)}
+          locale
+          |> format_duration_seconds(units, half, delimiter, just_now, diff)
+          |> fill_phrase(ago)
         end
       end
     else
@@ -78,14 +91,21 @@ defmodule SayableDuration.Formatter do
         if diff == 0 do
           {:ok, just_now}
         else
-          dur = format_duration_seconds(locale, units, half, delimiter, just_now, diff)
-          {:ok, String.replace(in_future, "{0}", dur)}
+          locale
+          |> format_duration_seconds(units, half, delimiter, just_now, diff)
+          |> fill_phrase(in_future)
         end
       end
     else
       :error -> nil
     end
   end
+
+  defp ok_or_nil(nil), do: nil
+  defp ok_or_nil(text), do: {:ok, text}
+
+  defp fill_phrase(nil, _phrase), do: nil
+  defp fill_phrase(duration, phrase), do: {:ok, String.replace(phrase, "{0}", duration)}
 
   # Duration formatting tiers
 
@@ -140,7 +160,7 @@ defmodule SayableDuration.Formatter do
   end
 
   defp format_duration_seconds(locale, units, half, delimiter, _just_now, total)
-       when total < 172_800 do
+       when total < 259_200 do
     total_days = div(total, 86400)
     remainder_hours = div(rem(total, 86400), 3600)
 
@@ -181,19 +201,27 @@ defmodule SayableDuration.Formatter do
     total_days = div(total, 86400)
     total_months = round(total_days / 30.44)
 
-    if total_months < 12 do
-      months = if total_months == 0, do: 1, else: total_months
-      Locale.resolve_unit(months, units.month, locale, "")
-    else
-      total_years = div(total_months, 12)
-      remainder_months = rem(total_months, 12)
-      result = Locale.resolve_unit(total_years, units.year, locale, "")
+    cond do
+      total_months > @max_duration_months -> nil
+      total_months < 12 -> format_months(locale, units, total_months)
+      true -> format_years_and_months(locale, units, delimiter, total_months)
+    end
+  end
 
-      if remainder_months > 0 do
-        result <> delimiter <> Locale.resolve_unit(remainder_months, units.month, locale, "")
-      else
-        result
-      end
+  defp format_months(locale, units, total_months) do
+    months = if total_months == 0, do: 1, else: total_months
+    Locale.resolve_unit(months, units.month, locale, "")
+  end
+
+  defp format_years_and_months(locale, units, delimiter, total_months) do
+    total_years = div(total_months, 12)
+    remainder_months = rem(total_months, 12)
+    result = Locale.resolve_unit(total_years, units.year, locale, "")
+
+    if remainder_months > 0 do
+      result <> delimiter <> Locale.resolve_unit(remainder_months, units.month, locale, "")
+    else
+      result
     end
   end
 
@@ -250,66 +278,28 @@ defmodule SayableDuration.Formatter do
   # ISO datetime parsing
 
   defp parse_iso_to_seconds(s) when is_binary(s) do
-    case String.split(s, "T") do
-      [date_part, time_part] ->
-        with {:ok, days} <- parse_date_to_days(date_part),
-             {:ok, secs} <- parse_time_to_seconds(time_part) do
-          {:ok, days * 86400 + secs}
-        end
-
-      _ ->
-        :error
+    case Regex.run(@timestamp, s, capture: :all_but_first) do
+      [_, _, _, _, _ | _] = fields -> timestamp_seconds(fields)
+      nil -> :error
     end
   end
 
   defp parse_iso_to_seconds(_), do: :error
 
-  defp parse_date_to_days(date_str) do
-    parts = String.split(date_str, "-")
+  defp timestamp_seconds([y, mo, d, h, mi | rest]) do
+    [year, month, day, hour, minute] = Enum.map([y, mo, d, h, mi], &String.to_integer/1)
+    second = seconds_field(rest)
 
-    if length(parts) != 3 do
+    if month in 1..12 and day in 1..days_in_month(year, month) and hour <= 23 and minute <= 59 and
+         second <= 59 do
+      {:ok, days_since_epoch(year, month, day) * 86400 + hour * 3600 + minute * 60 + second}
+    else
       :error
-    else
-      with {year, ""} <- Integer.parse(Enum.at(parts, 0)),
-           {month, ""} <- Integer.parse(Enum.at(parts, 1)),
-           {day, ""} <- Integer.parse(Enum.at(parts, 2)) do
-        {:ok, days_since_epoch(year, month, day)}
-      else
-        _ -> :error
-      end
     end
   end
 
-  defp parse_time_to_seconds(time_str) do
-    t =
-      time_str
-      |> strip_after("+")
-      |> strip_after("Z")
-
-    parts = String.split(t, ":")
-
-    with {hour, ""} <- Integer.parse(Enum.at(parts, 0)),
-         minute_str <- if(length(parts) > 1, do: Enum.at(parts, 1), else: "0"),
-         {minute, ""} <- Integer.parse(minute_str),
-         second_str <-
-           if(length(parts) > 2,
-             do: Enum.at(parts, 2) |> String.split(".") |> List.first(),
-             else: "0"
-           ),
-         {second, ""} <- Integer.parse(second_str) do
-      {:ok, hour * 3600 + minute * 60 + second}
-    else
-      _ -> :error
-    end
-  end
-
-  defp strip_after(s, char) do
-    if String.contains?(s, char) do
-      s |> String.split(char) |> List.first()
-    else
-      s
-    end
-  end
+  defp seconds_field([s | _]) when s != "", do: String.to_integer(s)
+  defp seconds_field(_), do: 0
 
   defp days_since_epoch(year, month, day) do
     year_days =
@@ -333,8 +323,7 @@ defmodule SayableDuration.Formatter do
 
   defp is_leap_year(y), do: (rem(y, 4) == 0 and rem(y, 100) != 0) or rem(y, 400) == 0
 
-  defp days_in_month(_, m) when m in [1, 3, 5, 7, 8, 10, 12], do: 31
-  defp days_in_month(_, m) when m in [4, 6, 9, 11], do: 30
   defp days_in_month(y, 2), do: if(is_leap_year(y), do: 29, else: 28)
-  defp days_in_month(_, _), do: 30
+  defp days_in_month(_, m) when m in [4, 6, 9, 11], do: 30
+  defp days_in_month(_, _), do: 31
 end

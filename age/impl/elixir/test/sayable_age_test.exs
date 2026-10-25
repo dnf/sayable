@@ -964,4 +964,78 @@ defmodule SayableAgeTest do
   test "30.5 - locale lookup: uppercase fails" do
     assert SayableAge.get_locale("EN") == :error
   end
+
+  # 31. Weeks and days across month ends
+  test "31.1 - 88 days across a 28-day February" do
+    assert age("2016-12-31", "2017-03-29") == {:ok, "12 weeks, 4 days"}
+  end
+
+  test "31.2 - 90 days across a year end into a leap year" do
+    assert age("1991-11-27", "1992-02-25") == {:ok, "12 weeks, 6 days"}
+  end
+
+  test "31.3 - 33 days across a year end" do
+    assert age("2020-11-30", "2021-01-02") == {:ok, "4 weeks, 5 days"}
+  end
+
+  test "31.4 - compact weeks and days across February" do
+    assert age_compact("2016-12-31", "2017-03-29") == {:ok, "12w4d"}
+  end
+
+  # 32. Half years take their plural form from whole years
+  test "32.1 - Polish 3½ uses the few form" do
+    pl = SayableAge.Locales.PL.locale()
+    assert age_locale(pl, "2021-06-15", "2025-01-15") == {:ok, "3 i pół lata"}
+  end
+
+  test "32.2 - Polish short 5½ uses the many form" do
+    pl = SayableAge.Locales.PL.locale()
+    assert SayableAge.format_age(pl, :short, "2020-06-15", "2025-12-15") == {:ok, "5 i pół lat"}
+  end
+
+  test "32.3 - Tachelhit 6½ uses the few form" do
+    shi = SayableAge.Locales.SHI.locale()
+    assert age_locale(shi, "2005-06-08", "2012-06-07") == {:ok, "6 iseggasen d uzgen"}
+  end
+
+  # 33. Input validation
+  test "33.1 - February 30 is invalid" do
+    assert age("2025-02-30", "2032-06-25") == :error
+  end
+
+  test "33.2 - month 13 is invalid" do
+    assert age("2025-13-01", "2027-01-31") == :error
+  end
+
+  test "33.3 - February 29 in a non-leap year is invalid" do
+    assert age("2023-02-29", "2025-03-01") == :error
+  end
+
+  test "33.4 - day 00 is invalid" do
+    assert age("2025-06-00", "2027-02-25") == :error
+  end
+
+  test "33.5 - unpadded month and day are invalid" do
+    assert age("2025-6-1", "2027-02-25") == :error
+  end
+
+  test "33.6 - surrounding whitespace is invalid" do
+    assert age(" 2025-06-01", "2027-02-25") == :error
+  end
+
+  test "33.7 - a datetime is not a date" do
+    assert age("2025-06-15T10:00:00", "2027-02-25") == :error
+  end
+
+  test "33.8 - invalid asOf" do
+    assert age("2020-01-01", "2025-04-31") == :error
+  end
+
+  test "33.9 - formatStage validates too" do
+    assert stage("2025-02-30", "2027-09-05") == :error
+  end
+
+  test "33.10 - February 29 in a leap year is valid" do
+    assert age("2024-02-29", "2026-03-01") == {:ok, "2 years"}
+  end
 end

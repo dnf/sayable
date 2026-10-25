@@ -56,24 +56,30 @@ Date :: struct {
     y, m, d: int,
 }
 
+// YYYY-MM-DD naming a real calendar day, optionally followed by T and
+// anything else (docs/input-formats.md).
 parse_date :: proc(s: string) -> (Date, bool) {
-    if len(s) == 0 do return {}, false
-    // Handle ISO datetime by stripping time part
-    date_str := s
-    t_pos := index_of(s, "T")
-    if t_pos >= 0 {
-        date_str = s[0:t_pos]
-    }
-    if len(date_str) < 10 do return {}, false
-    if date_str[4] != '-' || date_str[7] != '-' do return {}, false
-    y, y_ok := parse_digits(date_str[0:4])
+    is_date_alone := len(s) == 10
+    is_datetime := len(s) > 10 && s[10] == 'T'
+    if !(is_date_alone || is_datetime) do return {}, false
+    if s[4] != '-' || s[7] != '-' do return {}, false
+    y, y_ok := parse_digits(s[0:4])
     if !y_ok do return {}, false
-    m, m_ok := parse_digits(date_str[5:7])
+    m, m_ok := parse_digits(s[5:7])
     if !m_ok do return {}, false
-    d, d_ok := parse_digits(date_str[8:10])
+    d, d_ok := parse_digits(s[8:10])
     if !d_ok do return {}, false
-    if m < 1 || m > 12 || d < 1 || d > 31 do return {}, false
+    if m < 1 || m > 12 || d < 1 || d > days_in_month(y, m) do return {}, false
     return Date{y, m, d}, true
+}
+
+days_in_month :: proc(year, month: int) -> int {
+    if month == 2 {
+        is_leap := year %% 4 == 0 && (year %% 100 != 0 || year %% 400 == 0)
+        return is_leap ? 29 : 28
+    }
+    if month == 4 || month == 6 || month == 9 || month == 11 do return 30
+    return 31
 }
 
 parse_digits :: proc(s: string) -> (int, bool) {

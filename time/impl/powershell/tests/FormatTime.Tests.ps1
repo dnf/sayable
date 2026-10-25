@@ -203,3 +203,74 @@ Describe 'Locale — Finnish (dot separator, short)' {
         Format-SayableTime -Formatter $script:fiFmt -InputStr '00:00' | Should -Be '0.00'
     }
 }
+
+# ================================================================
+# Sections 9-10: minutes in short/compact, input validation
+# ================================================================
+Describe 'Sections 9-10: minutes in short/compact, input validation' {
+    # 9.1
+    It '9.1 digital modes keep the exact minute' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en') -Compactness 'short'
+        Format-SayableTime -Formatter $fmt -InputStr '18:01' | Should -BeExactly '6:01 PM'
+    }
+
+    # 9.2
+    It '9.2 digital modes keep the exact minute' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en') -Compactness 'compact'
+        Format-SayableTime -Formatter $fmt -InputStr '19:05' | Should -BeExactly '7:05p'
+    }
+
+    # 10.1
+    It '10.1 one-digit hour' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '9:30' | Should -BeExactly 'half past nine'
+    }
+
+    # 10.2
+    It '10.2 two-digit hour' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '09:30' | Should -BeExactly 'half past nine'
+    }
+
+    # 10.3
+    It '10.3 leading whitespace' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr ' 9:30' | Should -BeNullOrEmpty
+    }
+
+    # 10.4
+    It '10.4 trailing whitespace' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '9:30 ' | Should -BeNullOrEmpty
+    }
+
+    # 10.5
+    It '10.5 minutes need two digits' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '9:5' | Should -BeNullOrEmpty
+    }
+
+    # 10.6
+    It '10.6 hour out of range' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '24:00' | Should -BeNullOrEmpty
+    }
+
+    # 10.7
+    It '10.7 seconds are allowed and ignored' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '14:15:30' | Should -BeExactly 'a quarter past two'
+    }
+
+    # 10.8
+    It '10.8 ISO datetime with zone suffix (ignored)' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '2025-01-15T14:15:00Z' | Should -BeExactly 'a quarter past two'
+    }
+
+    # 10.9
+    It '10.9 ISO datetime with an impossible date' {
+        $fmt = New-SayableTimeFormatter -Locale (Get-SayableTimeLocale -Code 'en')
+        Format-SayableTime -Formatter $fmt -InputStr '2025-02-30T14:15:00' | Should -BeNullOrEmpty
+    }
+}

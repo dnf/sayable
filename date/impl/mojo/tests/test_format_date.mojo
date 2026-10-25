@@ -375,6 +375,139 @@ fn test_spanish_day_after_tomorrow() raises:
 
 
 # ================================================================
+# format_date_with_year
+# ================================================================
+
+
+# 13.1
+fn test_13_1_format_date_with_year() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_date_with_year("2018-02-04"), "February 4th, 2018")
+
+
+# 13.2
+fn test_13_2_format_date_with_year() raises:
+    var sd = SayableDate(get_locale("en"), "short")
+    assert_equal(sd.format_date_with_year("2025-03-15"), "Mar 15, 2025")
+
+
+# 13.3
+fn test_13_3_format_date_with_year() raises:
+    var sd = SayableDate(get_locale("en"), "compact")
+    assert_equal(sd.format_date_with_year("1997-01-21"), "1/21/97")
+
+
+# 13.4
+fn test_13_4_format_date_with_year() raises:
+    var sd = SayableDate(get_locale("tg"), "compact")
+    assert_equal(sd.format_date_with_year("2007-05-20"), "20/5/07")
+
+
+# 13.5
+fn test_13_5_format_date_with_year() raises:
+    var sd = SayableDate(get_locale("fi"), "short")
+    assert_equal(sd.format_date_with_year("1996-06-21"), "21. kesäkuuta 1996")
+
+
+# ================================================================
+# Short month names (locales that keep the full genitive)
+# ================================================================
+
+
+# 14.1
+fn test_14_1_format_date() raises:
+    var sd = SayableDate(get_locale("sk"), "short")
+    assert_equal(sd.format_date("2031-02-15"), "15. februára")
+
+
+# 14.2
+fn test_14_2_format_date() raises:
+    var sd = SayableDate(get_locale("cs"), "short")
+    assert_equal(sd.format_date("2025-12-10"), "10. prosince")
+
+
+# 14.3
+fn test_14_3_format_date() raises:
+    var sd = SayableDate(get_locale("uk"), "short")
+    assert_equal(sd.format_date("2025-11-05"), "5 листопада")
+
+
+# 14.4
+fn test_14_4_format_relative() raises:
+    var sd = SayableDate(get_locale("fi"), "short")
+    assert_equal(sd.format_relative("1998-08-08", "1998-08-15"), "8. elokuuta")
+
+
+# ================================================================
+# format_relative — short phrases
+# ================================================================
+
+
+# 15.1
+fn test_15_1_format_relative() raises:
+    var sd = SayableDate(get_locale("kw"), "short")
+    assert_equal(sd.format_relative("2035-12-04", "2035-12-02"), "an Mth ma")
+
+
+# 15.2
+fn test_15_2_format_relative() raises:
+    var sd = SayableDate(get_locale("mam"), "short")
+    assert_equal(sd.format_relative("2000-01-23", "2000-01-25"), "Dom nchi'j")
+
+
+# 15.3
+fn test_15_3_format_relative() raises:
+    var sd = SayableDate(get_locale("kek"), "short")
+    assert_equal(sd.format_relative("2014-10-24", "2014-10-22"), "a'in Vie")
+
+
+# ================================================================
+# Input validation
+# ================================================================
+
+
+# 16.1
+fn test_16_1_format_date() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_date("2025-02-30"), "")
+
+
+# 16.2
+fn test_16_2_format_date() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_date("2025-13-01"), "")
+
+
+# 16.3
+fn test_16_3_format_date() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_date("2025-6-1"), "")
+
+
+# 16.4
+fn test_16_4_format_date() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_date(" 2025-06-01"), "")
+
+
+# 16.5
+fn test_16_5_format_date() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_date("2025-06-01T10:00:00"), "June 1st")
+
+
+# 16.6
+fn test_16_6_format_date_with_year() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_date_with_year("2023-02-29"), "")
+
+
+# 16.7
+fn test_16_7_format_relative() raises:
+    var sd = SayableDate(get_locale("en"))
+    assert_equal(sd.format_relative("2025-03-16", "2025-04-31"), "")
+
+# ================================================================
 # Registry
 # ================================================================
 
@@ -450,4 +583,23 @@ fn main() raises:
     test_spanish_day_after_tomorrow()
     test_registry_lookup()
     test_registry_fallback()
-    print("All 52 date tests passed.")
+    test_13_1_format_date_with_year()
+    test_13_2_format_date_with_year()
+    test_13_3_format_date_with_year()
+    test_13_4_format_date_with_year()
+    test_13_5_format_date_with_year()
+    test_14_1_format_date()
+    test_14_2_format_date()
+    test_14_3_format_date()
+    test_14_4_format_relative()
+    test_15_1_format_relative()
+    test_15_2_format_relative()
+    test_15_3_format_relative()
+    test_16_1_format_date()
+    test_16_2_format_date()
+    test_16_3_format_date()
+    test_16_4_format_date()
+    test_16_5_format_date()
+    test_16_6_format_date_with_year()
+    test_16_7_format_relative()
+    print("All 72 date tests passed.")

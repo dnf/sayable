@@ -25,3 +25,8 @@ pub fn format_stage(
 pub fn get_locale(code: String) -> Result(AgeLocale, Nil) {
   locales.get(code)
 }
+
+/// Every supported locale code, sorted.
+pub fn locale_codes() -> List(String) {
+  locales.codes
+}

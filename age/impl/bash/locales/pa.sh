@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/pa.json
 
-_plural_pa() {
+_sayableage_plural_pa() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_pa() {
+_sayableage_locale_pa() {
     _unit_day_one='{n} ਦਿਨ'
     _unit_day_other='{n} ਦਿਨ'
     _unit_week_one='{n} ਹਫ਼ਤਾ'
@@ -51,5 +51,5 @@ _locale_pa() {
     _compact_unit_year='{n} ਸਾਲ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_pa
+    _plural_func=_sayableage_plural_pa
 }

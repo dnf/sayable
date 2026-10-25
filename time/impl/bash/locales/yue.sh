@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/yue.json
 
-_locale_yue() {
+_sayabletime_locale_yue() {
     _clock_hours=('十二' '一' '二' '三' '四' '五' '六' '七' '八' '九' '十' '十一')
     _clock_midnight='午夜'
     _clock_noon='正午'

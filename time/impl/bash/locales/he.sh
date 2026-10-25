@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/he.json
 
-_locale_he() {
+_sayabletime_locale_he() {
     _clock_hours=('שתים עשרה' 'אחת' 'שתיים' 'שלוש' 'ארבע' 'חמש' 'שש' 'שבע' 'שמונה' 'תשע' 'עשר' 'אחת עשרה')
     _clock_midnight='חצות'
     _clock_noon='צהריים'

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/gu.json
 
-_plural_gu() {
+_sayableduration_plural_gu() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_gu() {
+_sayableduration_locale_gu() {
     _unit_second='{n} સેકન્ડ'
     _unit_minute='{n} મિનિટ'
     _unit_hour='{n} કલાક'
@@ -53,5 +53,5 @@ _locale_gu() {
     _compact_delimiter=''
     _compact_ago='{0} પહેલાં'
     _compact_in_future='{0} પછી'
-    _plural_func=_plural_gu
+    _plural_func=_sayableduration_plural_gu
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ga.json
 
-_locale_ga() {
+_sayabledate_locale_ga() {
     _months=('Eanáir' 'Feabhra' 'Márta' 'Aibreán' 'Bealtaine' 'Meitheamh' 'Iúil' 'Lúnasa' 'Meán Fómhair' 'Deireadh Fómhair' 'Samhain' 'Nollaig')
     _weekdays=('Dé Domhnaigh' 'Dé Luain' 'Dé Máirt' 'Dé Céadaoin' 'Déardaoin' 'Dé hAoine' 'Dé Sathairn')
     _day_format='{n}'

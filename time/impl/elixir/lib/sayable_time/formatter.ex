@@ -102,51 +102,51 @@ defmodule SayableTime.Formatter do
     end
   end
 
-  defp parse_time(nil), do: :error
-  defp parse_time(""), do: :error
+  # A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+  # suffix, which is ignored), alone or after the T of an ISO datetime.
+  @clock ~r/\A([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/
+  @date ~r/\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z/
 
   defp parse_time(s) when is_binary(s) do
-    t =
-      if String.contains?(s, "T") do
-        s |> String.split("T") |> List.last()
-      else
-        s
-      end
-
-    t =
-      if String.contains?(t, "+") do
-        t |> String.split("+") |> List.first()
-      else
-        t
-      end
-
-    t =
-      if String.contains?(t, "Z") do
-        t |> String.split("Z") |> List.first()
-      else
-        t
-      end
-
-    parts = String.split(t, ":")
-
-    if length(parts) < 2 do
-      :error
-    else
-      with {hour, ""} <- Integer.parse(Enum.at(parts, 0)),
-           min_str <- Enum.at(parts, 1) |> String.split(".") |> List.first(),
-           {minute, ""} <- Integer.parse(min_str) do
-        if hour < 0 or hour > 23 or minute < 0 or minute > 59 do
-          :error
-        else
-          {:ok, {hour, minute}}
-        end
-      else
-        _ -> :error
-      end
+    case String.split(s, "T", parts: 2) do
+      [clock] -> parse_clock(clock)
+      [date, clock] -> if real_date?(date), do: parse_clock(clock), else: :error
     end
   end
 
   defp parse_time(_), do: :error
+
+  defp parse_clock(clock) do
+    case Regex.run(@clock, clock, capture: :all_but_first) do
+      [h, m | rest] ->
+        {hour, minute, second} = {String.to_integer(h), String.to_integer(m), seconds(rest)}
+
+        if hour > 23 or minute > 59 or second > 59, do: :error, else: {:ok, {hour, minute}}
+
+      nil ->
+        :error
+    end
+  end
+
+  defp seconds([s | _]) when s != "", do: String.to_integer(s)
+  defp seconds(_), do: 0
+
+  defp real_date?(date) do
+    case Regex.run(@date, date, capture: :all_but_first) do
+      [y, m, d] ->
+        {year, month, day} = {String.to_integer(y), String.to_integer(m), String.to_integer(d)}
+        month in 1..12 and day in 1..days_in_month(year, month)
+
+      nil ->
+        false
+    end
+  end
+
+  defp leap_year?(y), do: (rem(y, 4) == 0 and rem(y, 100) != 0) or rem(y, 400) == 0
+
+  defp days_in_month(y, 2), do: if(leap_year?(y), do: 29, else: 28)
+  defp days_in_month(_, m) when m in [4, 6, 9, 11], do: 30
+  defp days_in_month(_, _), do: 31
 
   defp round_to_5(minute) do
     div(minute + 2, 5) * 5

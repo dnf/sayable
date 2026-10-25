@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ja.json
 
-_locale_ja() {
+_sayabletime_locale_ja() {
     _clock_hours=('十二' '一' '二' '三' '四' '五' '六' '七' '八' '九' '十' '十一')
     _clock_midnight='午前零時'
     _clock_noon='正午'

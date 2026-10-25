@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ny.json
 
-_locale_ny() {
+_sayabletime_locale_ny() {
     _clock_hours=('khumi ndi ziwiri' 'imodzi' 'ziwiri' 'zitatu' 'zinayi' 'zisanu' 'zisanu ndi chimodzi' 'zisanu ndi ziwiri' 'zisanu ndi zitatu' 'zisanu ndi zinayi' 'khumi' 'khumi ndi chimodzi')
     _clock_midnight='pakati pausiku'
     _clock_noon='usana'

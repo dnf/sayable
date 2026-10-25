@@ -380,3 +380,81 @@ class FormatDurationTest:
     def `compact 1 minute 30 seconds`(): Unit =
         val sd = SayableDuration(Locales.EN, Compactness.COMPACT)
         assertEquals(Some("1m30s"), sd.formatDurationSeconds(90))
+
+    // ================================================================
+    // Short compactness — relative time
+    // ================================================================
+
+    // 18.1
+    @Test
+    def `days and hours both kept`(): Unit =
+        val f = SayableDuration(Locales.MEN, Compactness.SHORT)
+        assertEquals(Some("l\u0254h\u0254nga 2, awa 14 taa gb\u0254y\u0254"), f.formatSince("2025-01-20T01:32:11", "2025-01-22T15:39:16"))
+
+    // ================================================================
+    // Range (500-year ceiling)
+    // ================================================================
+
+    // 19.1
+    @Test
+    def `500 julian years 6000 months the ceiling`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(Some("500 years"), f.formatDurationSeconds(15778800000L))
+
+    // 19.2
+    @Test
+    def `over 6000 months`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatDurationSeconds(15800000000L))
+
+    // 19.3
+    @Test
+    def `well beyond the ceiling and 32 bit`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatDurationSeconds(99999999999L))
+
+    // 19.4
+    @Test
+    def `525 years ago`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatSince("1500-01-01T00:00:00", "2025-01-01T00:00:00"))
+
+    // 19.5
+    @Test
+    def `575 years from now`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatUntil("2600-01-01T00:00:00", "2025-01-01T00:00:00"))
+
+    // ================================================================
+    // Timestamp validation
+    // ================================================================
+
+    // 20.1
+    @Test
+    def `seconds are optional`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(Some("1\u00BD hours"), f.formatDurationIso("2025-01-15T10:00", "2025-01-15T11:30:00"))
+
+    // 20.2
+    @Test
+    def `minutes are required`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatDurationIso("2025-01-15T10", "2025-01-15T11:30:00"))
+
+    // 20.3
+    @Test
+    def `unpadded date`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatDurationIso("2025-1-5T10:00:00", "2025-01-15T11:30:00"))
+
+    // 20.4
+    @Test
+    def `impossible date`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatDurationIso("2025-02-30T10:00:00", "2025-03-15T11:30:00"))
+
+    // 20.5
+    @Test
+    def `hour out of range`(): Unit =
+        val f = SayableDuration(Locales.EN)
+        assertEquals(None, f.formatSince("2025-01-15T10:00:00", "2025-01-15T25:00:00"))

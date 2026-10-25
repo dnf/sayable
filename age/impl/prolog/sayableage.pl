@@ -57,17 +57,32 @@ format_stage(Code, Dob, AsOf, Gender, Result) :-
     stage_key(Months, StageKey),
     sa_stage(Code, StageKey, Gender, Result).
 
-%% parse_date(+Atom, -Y, -M, -D) — parse YYYY-MM-DD atom.
+%% parse_date(+Atom, -Y, -M, -D) — parse exactly YYYY-MM-DD naming a real
+%% calendar day (docs/input-formats.md). Fails for anything else.
 parse_date(Atom, Y, M, D) :-
-    atom_string(Atom, Str),
-    string_length(Str, Len),
-    Len >= 10,
-    sub_string(Str, 0, 4, _, YStr),
-    sub_string(Str, 5, 2, _, MStr),
-    sub_string(Str, 8, 2, _, DStr),
-    number_string(Y, YStr),
-    number_string(M, MStr),
-    number_string(D, DStr).
+    atomic(Atom),
+    atom_codes(Atom, Codes),
+    phrase(iso_date(Y, M, D), Codes).
+
+iso_date(Y, M, D) -->
+    fixed_digits(4, Y), "-", fixed_digits(2, M), "-", fixed_digits(2, D),
+    { real_calendar_day(Y, M, D) }.
+
+%% fixed_digits(+Count, -Value)// — exactly Count ASCII digits.
+fixed_digits(Count, Value) -->
+    ascii_digits(Count, Codes),
+    { number_codes(Value, Codes) }.
+
+ascii_digits(0, []) --> !, [].
+ascii_digits(Count, [C|Cs]) -->
+    [C], { C >= 0'0, C =< 0'9 },
+    { Rest is Count - 1 },
+    ascii_digits(Rest, Cs).
+
+real_calendar_day(Y, M, D) :-
+    M >= 1, M =< 12,
+    last_day_of_month(Y, M, LastDay),
+    D >= 1, D =< LastDay.
 
 %% parse_age(+DobY, +DobM, +DobD, +RefY, +RefM, +RefD, -Months, -DiffDays)
 %% Computes calendar months and elapsed days. Fails if DOB is in the future

@@ -329,3 +329,37 @@ test_compact_1m30s :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "1m30s",
 @(test) test_get_locale_fr :: proc(t: ^testing.T) { loc := get_locale("fr"); testing.expect(t, loc != nil); if loc != nil do testing.expect_value(t, loc.code, "fr") }
 @(test) test_get_locale_unknown :: proc(t: ^testing.T) { testing.expect(t, get_locale("xx") == nil) }
 @(test) test_get_locale_empty :: proc(t: ^testing.T) { testing.expect(t, get_locale("") == nil) }
+
+// ================================================================
+// Section 18: Short compactness — relative time
+// ================================================================
+// 18.1
+@(test) test_18_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "lɔhɔnga 2, awa 14 taa gbɔyɔ", format_since(buf[:], &locale_men, .Normal, "2025-01-20T01:32:11", "2025-01-22T15:39:16")) }
+
+// ================================================================
+// Section 19: Range (500-year ceiling)
+// ================================================================
+// 19.1
+@(test) test_19_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "500 years", format_duration_int(buf[:], &locale_en, .Normal, 15778800000)) }
+// 19.2
+@(test) test_19_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_duration_int(buf[:], &locale_en, .Normal, 15800000000)) }
+// 19.3
+@(test) test_19_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_duration_int(buf[:], &locale_en, .Normal, 99999999999)) }
+// 19.4
+@(test) test_19_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_since(buf[:], &locale_en, .Normal, "1500-01-01T00:00:00", "2025-01-01T00:00:00")) }
+// 19.5
+@(test) test_19_5 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_until(buf[:], &locale_en, .Normal, "2600-01-01T00:00:00", "2025-01-01T00:00:00")) }
+
+// ================================================================
+// Section 20: Timestamp validation
+// ================================================================
+// 20.1
+@(test) test_20_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "1½ hours", format_duration_iso(buf[:], &locale_en, .Normal, "2025-01-15T10:00", "2025-01-15T11:30:00")) }
+// 20.2
+@(test) test_20_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_duration_iso(buf[:], &locale_en, .Normal, "2025-01-15T10", "2025-01-15T11:30:00")) }
+// 20.3
+@(test) test_20_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_duration_iso(buf[:], &locale_en, .Normal, "2025-1-5T10:00:00", "2025-01-15T11:30:00")) }
+// 20.4
+@(test) test_20_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_duration_iso(buf[:], &locale_en, .Normal, "2025-02-30T10:00:00", "2025-03-15T11:30:00")) }
+// 20.5
+@(test) test_20_5 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_since(buf[:], &locale_en, .Normal, "2025-01-15T10:00:00", "2025-01-15T25:00:00")) }

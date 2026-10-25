@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tzm.json
 
-_locale_tzm() {
+_sayabletime_locale_tzm() {
     _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
     _clock_midnight='ⵏⵚ ⵏ ⵉⴹ'
     _clock_noon='ⵜⵉⵣⵡⴰⵔⵏⵉⵏ'

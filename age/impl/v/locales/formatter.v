@@ -212,14 +212,16 @@ fn parse_age(date_of_birth string, as_of string) ?AgeComponents {
 	}
 }
 
+// parse_date_parts parses exactly YYYY-MM-DD naming a real calendar day
+// (docs/input-formats.md).
 fn parse_date_parts(s string) ?(int, int, int) {
-	if s.len < 10 || s[4] != `-` || s[7] != `-` {
+	if s.len != 10 || s[4] != `-` || s[7] != `-` {
 		return none
 	}
 	y := str_to_int(s[0..4]) or { return none }
 	m := str_to_int(s[5..7]) or { return none }
 	d := str_to_int(s[8..10]) or { return none }
-	if y == 0 && m == 0 && d == 0 {
+	if m < 1 || m > 12 || d < 1 || d > days_in_month(y, m) {
 		return none
 	}
 	return y, m, d
@@ -249,14 +251,13 @@ fn days_in_month(y int, m int) int {
 	}
 }
 
+// days_from_epoch is the Julian Day Number of a Gregorian date, for diffing.
+// Offsetting the year by 4800 keeps every division non-negative, so year 0000 works.
 fn days_from_epoch(y int, m int, d int) int {
-	mut yy := y
-	mut mm := m
-	if mm <= 2 {
-		yy--
-		mm += 12
-	}
-	return 365 * yy + yy / 4 - yy / 100 + yy / 400 + (153 * (mm - 3) + 2) / 5 + d - 307
+	a := (14 - m) / 12
+	yy := y + 4800 - a
+	mm := m + 12 * a - 3
+	return d + (153 * mm + 2) / 5 + 365 * yy + yy / 4 - yy / 100 + yy / 400 - 32045
 }
 
 fn days_between(y1 int, m1 int, d1 int, y2 int, m2 int, d2 int) int {

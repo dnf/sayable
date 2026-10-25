@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ts.json
 
-_locale_ts() {
+_sayabledate_locale_ts() {
     _months=('Sunguti' 'Nyenyenyani' 'Nyenyankulu' 'Dzivamisoko' 'Mudyaxihi' 'Khotavuxika' 'Mawuwani' 'Mhawuri' 'Ndzhati' 'Nhlangula' 'Hukuri' 'N'\''wendzamhala')
     _weekdays=('Sonto' 'Musumbhunuku' 'Ravumbirhi' 'Ravunharhu' 'Ravumune' 'Ravuntlhanu' 'Mugqivela')
     _day_format='{n}'

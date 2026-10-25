@@ -3,30 +3,29 @@ module SayableAge.Internal exposing (computeAge, daysBetween, daysInMonth, isLea
 
 parseDate : String -> Maybe ( Int, Int, Int )
 parseDate s =
-    if String.length s < 10 then
-        Nothing
+    let
+        digitsAt from to =
+            String.all Char.isDigit (String.slice from to s)
 
-    else if String.slice 4 5 s /= "-" || String.slice 7 8 s /= "-" then
+        isDateShape =
+            String.length s == 10
+                && String.slice 4 5 s == "-"
+                && String.slice 7 8 s == "-"
+                && digitsAt 0 4
+                && digitsAt 5 7
+                && digitsAt 8 10
+    in
+    if not isDateShape then
         Nothing
 
     else
-        let
-            yStr =
-                String.slice 0 4 s
-
-            mStr =
-                String.slice 5 7 s
-
-            dStr =
-                String.slice 8 10 s
-        in
-        case ( String.toInt yStr, String.toInt mStr, String.toInt dStr ) of
+        case ( String.toInt (String.slice 0 4 s), String.toInt (String.slice 5 7 s), String.toInt (String.slice 8 10 s) ) of
             ( Just y, Just m, Just d ) ->
-                if y == 0 && m == 0 && d == 0 then
-                    Nothing
+                if m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth y m then
+                    Just ( y, m, d )
 
                 else
-                    Just ( y, m, d )
+                    Nothing
 
             _ ->
                 Nothing

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/kbp.json
 
-_locale_kbp() {
+_sayabledate_locale_kbp() {
     _months=('Kɔlaɣ' 'Naaɣ Kɩŋ' 'Naataŋgʊ' 'Naalɩɩ' 'Lɛlɩɩ' 'Kʊɖʊmaa' 'Saŋayɩɩ' 'Kɩyɛɛna' 'Lɩtɩɩ' 'Kʊɖʊmaɣ' 'Tɩŋgɩzɩɩ' 'Abranɩɩ')
     _weekdays=('Pɩsɩ' 'Tɛɖɛɣa' 'Taata' 'Aranzɩɩ' 'Aramnza' 'Azɩma' 'Asɩbɩ')
     _day_format='{n}'

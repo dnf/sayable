@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/hi.json
 
-_plural_hi() {
+_sayableage_plural_hi() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_hi() {
+_sayableage_locale_hi() {
     _unit_day_one='{n} दिन'
     _unit_day_other='{n} दिन'
     _unit_week_one='{n} सप्ताह'
@@ -46,5 +46,5 @@ _locale_hi() {
     _compact_unit_year='{n} व'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_hi
+    _plural_func=_sayableage_plural_hi
 }

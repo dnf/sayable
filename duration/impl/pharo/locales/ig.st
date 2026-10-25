@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/ig.json "
 
-"Locale: ig"
+"Locale: ig"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 ig

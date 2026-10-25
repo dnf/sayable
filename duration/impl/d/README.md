@@ -69,7 +69,7 @@ SayableDuration(EN, Compactness.compact).formatDuration(3600).get;   // "1h"
 struct SayableDuration {
     this(ref const DurationLocale locale, Compactness compactness = Compactness.normal);
 
-    Nullable!string formatDuration(int totalSeconds);
+    Nullable!string formatDuration(long totalSeconds);
     Nullable!string formatDurationISO(string start, string end);
     Nullable!string formatSince(string start, string asOf);
     Nullable!string formatUntil(string target, string asOf);

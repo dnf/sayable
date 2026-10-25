@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/luo.json
 
-_locale_luo() {
+_sayabletime_locale_luo() {
     _clock_hours=('apar gi ariyo' 'achiel' 'ariyo' 'adek' 'ang'\''wen' 'abich' 'auchiel' 'abiriyo' 'aboro' 'ochiko' 'apar' 'apar gi achiel')
     _clock_midnight='dier otieno'
     _clock_noon='odiechieng'\'' tir'

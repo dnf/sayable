@@ -64,7 +64,7 @@ function result = do_format_date_year(date_str, months, months_in_date, day_form
     result = [];
     return;
   endif
-  result = format_absolute(parsed.year, parsed.month, parsed.day, true, [], [], day_format, day_format_exceptions, '', date_pattern_with_year);
+  result = format_absolute(parsed.year, parsed.month, parsed.day, true, months, months_in_date, day_format, day_format_exceptions, '', date_pattern_with_year);
 endfunction
 
 function result = do_format_relative(date_str, as_of, locale, compactness, months, months_in_date, weekdays, day_format, day_format_exceptions, date_pattern, date_pattern_with_year, today_str, tomorrow_str, yesterday_str)

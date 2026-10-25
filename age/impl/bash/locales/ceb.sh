@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ceb.json
 
-_plural_ceb() {
+_sayableage_plural_ceb() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ceb() {
+_sayableage_locale_ceb() {
     _unit_day='{n} ka adlaw'
     _unit_week='{n} ka semana'
     _unit_month='{n} ka bulan'
@@ -39,5 +39,5 @@ _locale_ceb() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ceb
+    _plural_func=_sayableage_plural_ceb
 }

@@ -6,6 +6,8 @@ module SayableDuration.Formatter
     , version
     ) where
 
+import Control.Monad (guard)
+import Data.Char (isDigit)
 import SayableDuration.Types
 
 version :: String
@@ -74,7 +76,7 @@ formatDuration loc compactness seconds
     | seconds < 0 = Nothing
     | otherwise =
         let (sec, mn, hr, dy, wk, mo, yr, hf, del', _ago, _inf) = resolveLocale loc compactness
-        in Just (formatInternal loc sec mn hr dy wk mo yr hf del' seconds)
+        in formatWithinCeiling loc sec mn hr dy wk mo yr hf del' seconds
 
 formatDurationIso :: DurationLocale -> Compactness -> String -> String -> Maybe String
 formatDurationIso loc compactness start end
@@ -84,7 +86,7 @@ formatDurationIso loc compactness start end
         e <- parseIsoToSeconds end
         let total = abs (e - s)
             (sec, mn, hr, dy, wk, mo, yr, hf, del', _ago, _inf) = resolveLocale loc compactness
-        Just (formatInternal loc sec mn hr dy wk mo yr hf del' total)
+        formatWithinCeiling loc sec mn hr dy wk mo yr hf del' total
 
 formatSince :: DurationLocale -> Compactness -> Maybe String -> Maybe String -> Maybe String
 formatSince loc compactness mStart mAsOf = do
@@ -98,8 +100,7 @@ formatSince loc compactness mStart mAsOf = do
             (sec, mn, hr, dy, wk, mo, yr, hf, del', ago', _inf) = resolveLocale loc compactness
         if diff < 0 then Nothing
         else if diff == 0 then Just (localeJustNow loc)
-        else let dur = formatInternal loc sec mn hr dy wk mo yr hf del' diff
-             in Just (replace "{0}" dur ago')
+        else (\dur -> replace "{0}" dur ago') <$> formatWithinCeiling loc sec mn hr dy wk mo yr hf del' diff
 
 formatUntil :: DurationLocale -> Compactness -> Maybe String -> Maybe String -> Maybe String
 formatUntil loc compactness mTarget mAsOf = do
@@ -113,8 +114,21 @@ formatUntil loc compactness mTarget mAsOf = do
             (sec, mn, hr, dy, wk, mo, yr, hf, del', _ago, inf') = resolveLocale loc compactness
         if diff < 0 then Nothing
         else if diff == 0 then Just (localeJustNow loc)
-        else let dur = formatInternal loc sec mn hr dy wk mo yr hf del' diff
-             in Just (replace "{0}" dur inf')
+        else (\dur -> replace "{0}" dur inf') <$> formatWithinCeiling loc sec mn hr dy wk mo yr hf del' diff
+
+-- | 500 years, the same ceiling as sayable-age.
+maxDurationMonths :: Int
+maxDurationMonths = 6000
+
+-- | Months of 30.44 days (the average month), rounded.
+approximateMonths :: Int -> Int
+approximateMonths days = roundToInt (fromIntegral days / 30.44 :: Double)
+
+-- | The formatted duration, or Nothing beyond the 500-year ceiling.
+formatWithinCeiling :: DurationLocale -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> String -> String -> Int -> Maybe String
+formatWithinCeiling loc sec mn hr dy wk mo yr hf del' total
+    | approximateMonths (total `div` 86400) > maxDurationMonths = Nothing
+    | otherwise = Just (formatInternal loc sec mn hr dy wk mo yr hf del' total)
 
 formatInternal :: DurationLocale -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> UnitForms -> String -> String -> Int -> String
 formatInternal loc sec mn hr dy wk mo yr hf del' total
@@ -177,76 +191,53 @@ formatInternal loc sec mn hr dy wk mo yr hf del' total
     remainderHours = (total `mod` 86400) `div` 3600
     totalWeeks = totalDays `div` 7
     remainderDays = totalDays `mod` 7
-    totalMonths = roundToInt (fromIntegral totalDays / 30.44 :: Double)
+    totalMonths = approximateMonths totalDays
 
 roundToInt :: Double -> Int
 roundToInt x = floor (x + 0.5)
 
+-- | YYYY-MM-DDTHH:MM (one- or two-digit hour), then optional :SS with
+-- optional .fraction, then an optional zone suffix that is ignored.
 parseIsoToSeconds :: String -> Maybe Int
-parseIsoToSeconds iso
-    | null iso  = Nothing
-    | otherwise =
-        let tIdx = indexOf 'T' iso
-        in if tIdx < 0 then Nothing
-           else do
-               let datePart = take tIdx iso
-                   timePart = stripTz (drop (tIdx + 1) iso)
-               (year, month, day) <- parseDatePart datePart
-               (hour, minute, second) <- parseTimePart timePart
-               let days = daysSinceEpoch year month day
-               Just (days * 86400 + hour * 3600 + minute * 60 + second)
+parseIsoToSeconds iso = case splitAt 10 iso of
+    ([y1, y2, y3, y4, '-', mo1, mo2, '-', d1, d2], 'T' : clock)
+        | all isDigit [y1, y2, y3, y4, mo1, mo2, d1, d2] -> do
+            let year = digitsValue [y1, y2, y3, y4]
+                month = digitsValue [mo1, mo2]
+                day = digitsValue [d1, d2]
+            guard (month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth year month)
+            (hour, minute, second) <- parseClock clock
+            Just (daysSinceEpoch year month day * 86400 + hour * 3600 + minute * 60 + second)
+    _ -> Nothing
 
-indexOf :: Char -> String -> Int
-indexOf _ [] = -1
-indexOf c (x:xs)
-    | c == x    = 0
-    | otherwise = let r = indexOf c xs
-                  in if r < 0 then -1 else 1 + r
-
-stripTz :: String -> String
-stripTz [] = []
-stripTz (c:rest)
-    | c == '+' || c == 'Z' = []
-    | otherwise = c : stripTz rest
-
-parseDatePart :: String -> Maybe (Int, Int, Int)
-parseDatePart s =
-    case splitOn '-' s of
-        [ys, ms, ds] -> do
-            y <- safeAtoi ys
-            m <- safeAtoi ms
-            d <- safeAtoi ds
-            Just (y, m, d)
-        _ -> Nothing
-
-parseTimePart :: String -> Maybe (Int, Int, Int)
-parseTimePart s =
-    case splitOn ':' s of
-        [hs]       -> do h <- safeAtoi hs; Just (h, 0, 0)
-        [hs, ms]   -> do h <- safeAtoi hs; m <- safeAtoi ms; Just (h, m, 0)
-        (hs:ms:ss:_) -> do
-            h <- safeAtoi hs
-            m <- safeAtoi ms
-            sec <- safeAtoi (takeWhile (\c -> c >= '0' && c <= '9') ss)
-            Just (h, m, sec)
-        _ -> Nothing
-
-splitOn :: Char -> String -> [String]
-splitOn _ [] = [""]
-splitOn sep (c:rest)
-    | c == sep  = "" : splitOn sep rest
-    | otherwise = case splitOn sep rest of
-        (x:xs) -> (c:x) : xs
-        []     -> [[c]]
-
-safeAtoi :: String -> Maybe Int
-safeAtoi [] = Nothing
-safeAtoi s  = go 0 s
+-- | H:MM or HH:MM, then optional :SS with optional .fraction, then an
+-- optional zone suffix (validated, never applied).
+parseClock :: String -> Maybe (Int, Int, Int)
+parseClock s = do
+    let (hs, afterHour) = span isDigit s
+    guard (length hs == 1 || length hs == 2)
+    ':' : m1 : m2 : afterMinute <- Just afterHour
+    guard (isDigit m1 && isDigit m2)
+    let (second, zone) = case afterMinute of
+            ':' : s1 : s2 : rest | isDigit s1 && isDigit s2 -> (digitsValue [s1, s2], dropFraction rest)
+            rest -> (0, rest)
+        hour = digitsValue hs
+        minute = digitsValue [m1, m2]
+    guard (null zone || isZoneSuffix zone)
+    guard (hour <= 23 && minute <= 59 && second <= 59)
+    Just (hour, minute, second)
   where
-    go n [] = Just n
-    go n (c:rest')
-        | c >= '0' && c <= '9' = go (n * 10 + fromEnum c - fromEnum '0') rest'
-        | otherwise = Nothing
+    dropFraction ('.' : d : rest) | isDigit d = dropWhile isDigit rest
+    dropFraction rest = rest
+
+isZoneSuffix :: String -> Bool
+isZoneSuffix "Z" = True
+isZoneSuffix [sign, h1, h2, ':', m1, m2] = sign `elem` "+-" && all isDigit [h1, h2, m1, m2]
+isZoneSuffix _ = False
+
+-- | The value of a string of ASCII digits.
+digitsValue :: String -> Int
+digitsValue = foldl (\n c -> n * 10 + fromEnum c - fromEnum '0') 0
 
 isLeapYear :: Int -> Bool
 isLeapYear y = (y `mod` 4 == 0 && y `mod` 100 /= 0) || y `mod` 400 == 0

@@ -312,4 +312,75 @@ defmodule SayableDurationTest do
   test "17.2 - compact: 1m30s" do
     assert dur_compact(90) == {:ok, "1m30s"}
   end
+
+  # 18. Short compactness — relative time
+  # 18.1
+  test "18.1 - days and hours both kept" do
+    assert SayableDuration.format_since(SayableDuration.Locales.MEN.locale(), :normal, "2025-01-20T01:32:11", "2025-01-22T15:39:16") ==
+             {:ok, "lɔhɔnga 2, awa 14 taa gbɔyɔ"}
+  end
+
+
+  # 19. Range (500-year ceiling)
+  # 19.1
+  test "19.1 - 500 Julian years: 6000 months, the ceiling" do
+    assert SayableDuration.format_duration(SayableDuration.Locales.EN.locale(), :normal, 15778800000) ==
+             {:ok, "500 years"}
+  end
+
+  # 19.2
+  test "19.2 - over 6000 months" do
+    assert SayableDuration.format_duration(SayableDuration.Locales.EN.locale(), :normal, 15800000000) ==
+             nil
+  end
+
+  # 19.3
+  test "19.3 - well beyond the ceiling (and 32-bit range)" do
+    assert SayableDuration.format_duration(SayableDuration.Locales.EN.locale(), :normal, 99999999999) ==
+             nil
+  end
+
+  # 19.4
+  test "19.4 - 525 years ago" do
+    assert SayableDuration.format_since(SayableDuration.Locales.EN.locale(), :normal, "1500-01-01T00:00:00", "2025-01-01T00:00:00") ==
+             nil
+  end
+
+  # 19.5
+  test "19.5 - 575 years from now" do
+    assert SayableDuration.format_until(SayableDuration.Locales.EN.locale(), :normal, "2600-01-01T00:00:00", "2025-01-01T00:00:00") ==
+             nil
+  end
+
+
+  # 20. Timestamp validation
+  # 20.1
+  test "20.1 - seconds are optional" do
+    assert SayableDuration.format_duration(SayableDuration.Locales.EN.locale(), :normal, "2025-01-15T10:00", "2025-01-15T11:30:00") ==
+             {:ok, "1½ hours"}
+  end
+
+  # 20.2
+  test "20.2 - minutes are required" do
+    assert SayableDuration.format_duration(SayableDuration.Locales.EN.locale(), :normal, "2025-01-15T10", "2025-01-15T11:30:00") ==
+             nil
+  end
+
+  # 20.3
+  test "20.3 - unpadded date" do
+    assert SayableDuration.format_duration(SayableDuration.Locales.EN.locale(), :normal, "2025-1-5T10:00:00", "2025-01-15T11:30:00") ==
+             nil
+  end
+
+  # 20.4
+  test "20.4 - impossible date" do
+    assert SayableDuration.format_duration(SayableDuration.Locales.EN.locale(), :normal, "2025-02-30T10:00:00", "2025-03-15T11:30:00") ==
+             nil
+  end
+
+  # 20.5
+  test "20.5 - hour out of range" do
+    assert SayableDuration.format_since(SayableDuration.Locales.EN.locale(), :normal, "2025-01-15T10:00:00", "2025-01-15T25:00:00") ==
+             nil
+  end
 end

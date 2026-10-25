@@ -378,3 +378,74 @@ Describe 'Compact compactness — duration' {
         Format-SayableDuration -Formatter $script:compactFmt -StartOrSeconds 90 | Should -Be '1m30s'
     }
 }
+
+# ================================================================
+# Sections 18-20: short since, 500-year ceiling, timestamp validation
+# ================================================================
+Describe 'Sections 18-20: short since, 500-year ceiling, timestamp validation' {
+    # 18.1
+    It '18.1 days and hours both kept' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'men') -Compactness 'short'
+        Format-SayableSince -Formatter $fmt -Start '2025-01-20T01:32:11' -AsOf '2025-01-22T15:39:16' | Should -BeExactly 'lɔhɔnga 2, awa 14 taa gbɔyɔ'
+    }
+
+    # 19.1
+    It '19.1 500 Julian years: 6000 months, the ceiling' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableDuration -Formatter $fmt -StartOrSeconds 15778800000 | Should -BeExactly '500 years'
+    }
+
+    # 19.2
+    It '19.2 over 6000 months' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableDuration -Formatter $fmt -StartOrSeconds 15800000000 | Should -BeNullOrEmpty
+    }
+
+    # 19.3
+    It '19.3 well beyond the ceiling (and 32-bit range)' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableDuration -Formatter $fmt -StartOrSeconds 99999999999 | Should -BeNullOrEmpty
+    }
+
+    # 19.4
+    It '19.4 525 years ago' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableSince -Formatter $fmt -Start '1500-01-01T00:00:00' -AsOf '2025-01-01T00:00:00' | Should -BeNullOrEmpty
+    }
+
+    # 19.5
+    It '19.5 575 years from now' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableUntil -Formatter $fmt -Target '2600-01-01T00:00:00' -AsOf '2025-01-01T00:00:00' | Should -BeNullOrEmpty
+    }
+
+    # 20.1
+    It '20.1 seconds are optional' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableDuration -Formatter $fmt -StartOrSeconds '2025-01-15T10:00' -End '2025-01-15T11:30:00' | Should -BeExactly '1½ hours'
+    }
+
+    # 20.2
+    It '20.2 minutes are required' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableDuration -Formatter $fmt -StartOrSeconds '2025-01-15T10' -End '2025-01-15T11:30:00' | Should -BeNullOrEmpty
+    }
+
+    # 20.3
+    It '20.3 unpadded date' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableDuration -Formatter $fmt -StartOrSeconds '2025-1-5T10:00:00' -End '2025-01-15T11:30:00' | Should -BeNullOrEmpty
+    }
+
+    # 20.4
+    It '20.4 impossible date' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableDuration -Formatter $fmt -StartOrSeconds '2025-02-30T10:00:00' -End '2025-03-15T11:30:00' | Should -BeNullOrEmpty
+    }
+
+    # 20.5
+    It '20.5 hour out of range' {
+        $fmt = New-SayableDurationFormatter -Locale (Get-SayableDurationLocale -Code 'en')
+        Format-SayableSince -Formatter $fmt -Start '2025-01-15T10:00:00' -AsOf '2025-01-15T25:00:00' | Should -BeNullOrEmpty
+    }
+}

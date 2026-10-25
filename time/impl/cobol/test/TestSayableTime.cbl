@@ -127,6 +127,28 @@ DISPATCH-TEST.
             PERFORM RUN-8-1
         WHEN "8.2"
             PERFORM RUN-8-2
+        WHEN "9.1"
+            PERFORM RUN-9-1
+        WHEN "9.2"
+            PERFORM RUN-9-2
+        WHEN "10.1"
+            PERFORM RUN-10-1
+        WHEN "10.2"
+            PERFORM RUN-10-2
+        WHEN "10.3"
+            PERFORM RUN-10-3
+        WHEN "10.4"
+            PERFORM RUN-10-4
+        WHEN "10.5"
+            PERFORM RUN-10-5
+        WHEN "10.6"
+            PERFORM RUN-10-6
+        WHEN "10.7"
+            PERFORM RUN-10-7
+        WHEN "10.8"
+            PERFORM RUN-10-8
+        WHEN "10.9"
+            PERFORM RUN-10-9
         WHEN OTHER
             DISPLAY "Unknown test: " FUNCTION TRIM(WS-RUN-ID)
             MOVE 1 TO WS-TESTS-FAILED
@@ -162,6 +184,17 @@ RUN-ALL-TESTS.
     PERFORM RUN-7-1
     PERFORM RUN-8-1
     PERFORM RUN-8-2
+    PERFORM RUN-9-1
+    PERFORM RUN-9-2
+    PERFORM RUN-10-1
+    PERFORM RUN-10-2
+    PERFORM RUN-10-3
+    PERFORM RUN-10-4
+    PERFORM RUN-10-5
+    PERFORM RUN-10-6
+    PERFORM RUN-10-7
+    PERFORM RUN-10-8
+    PERFORM RUN-10-9
     .
 *> ============================================================
 *> Individual test paragraphs
@@ -474,6 +507,142 @@ RUN-8-2.
     MOVE "0.00" TO WS-TEST-EXPECTED
     PERFORM ASSERT-EQ
     .
+
+*> Test 9.1: Minutes in short and compact modes
+RUN-9-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-SHORT TO WS-FMT-COMPACTNESS
+    MOVE "18:01" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "9.1" TO WS-TEST-NAME
+    MOVE "6:01 PM"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 9.2: Minutes in short and compact modes
+RUN-9-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-COMPACT TO WS-FMT-COMPACTNESS
+    MOVE "19:05" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "9.2" TO WS-TEST-NAME
+    MOVE "7:05p"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 10.1: Input validation
+RUN-10-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "9:30" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.1" TO WS-TEST-NAME
+    MOVE "half past nine"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 10.2: Input validation
+RUN-10-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "09:30" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.2" TO WS-TEST-NAME
+    MOVE "half past nine"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 10.3: Input validation
+RUN-10-3.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE " 9:30" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.3" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 10.4: Input validation
+RUN-10-4.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "9:30 " TO WS-FMT-TIME
+    MOVE 5 TO WS-FMT-TIME-LEN
+    PERFORM FORMAT-TIME
+    MOVE 0 TO WS-FMT-TIME-LEN
+    MOVE "10.4" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 10.5: Input validation
+RUN-10-5.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "9:5" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.5" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 10.6: Input validation
+RUN-10-6.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "24:00" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.6" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 10.7: Input validation
+RUN-10-7.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "14:15:30" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.7" TO WS-TEST-NAME
+    MOVE "a quarter past two"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 10.8: Input validation
+RUN-10-8.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-01-15T14:15:00Z" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.8" TO WS-TEST-NAME
+    MOVE "a quarter past two"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 10.9: Input validation
+RUN-10-9.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-02-30T14:15:00" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "10.9" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
 
 COPY "src/SayableTime.cbl".
 COPY "src/locales/Locales.cbl".

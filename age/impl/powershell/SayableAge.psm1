@@ -70,6 +70,42 @@ function Get-StageKey {
     return 'adult'
 }
 
+function Get-DaysInMonthAge {
+    param([int]$Year, [int]$Month)
+    if ($Month -eq 2) {
+        $isLeap = ($Year % 4 -eq 0 -and $Year % 100 -ne 0) -or ($Year % 400 -eq 0)
+        return $(if ($isLeap) { 29 } else { 28 })
+    }
+    if ($Month -in @(4, 6, 9, 11)) { return 30 }
+    return 31
+}
+
+# Parse exactly YYYY-MM-DD naming a real calendar day into @(year, month, day), else $null.
+function ConvertFrom-SayableAgeDate {
+    param([string]$DateStr)
+
+    $m = [regex]::Match($DateStr, '\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z')
+    if (-not $m.Success) {
+        return $null
+    }
+    [int]$year = $m.Groups[1].Value
+    [int]$month = $m.Groups[2].Value
+    [int]$day = $m.Groups[3].Value
+    if ($month -lt 1 -or $month -gt 12 -or $day -lt 1 -or $day -gt (Get-DaysInMonthAge -Year $year -Month $month)) {
+        return $null
+    }
+    return @($year, $month, $day)
+}
+
+# Proleptic Gregorian day number, so calendar reforms and year 0 don't matter.
+function Get-SayableAgeJulianDay {
+    param([int]$Year, [int]$Month, [int]$Day)
+    $a = [Math]::Floor((14 - $Month) / 12)
+    $y = $Year + 4800 - $a
+    $m = $Month + 12 * $a - 3
+    return $Day + [Math]::Floor((153 * $m + 2) / 5) + 365 * $y + [Math]::Floor($y / 4) - [Math]::Floor($y / 100) + [Math]::Floor($y / 400) - 32045
+}
+
 function Parse-SayableAge {
     param(
         [AllowNull()][AllowEmptyString()][string]$DateOfBirth,
@@ -80,16 +116,18 @@ function Parse-SayableAge {
         return $null
     }
 
-    $dobParts = $DateOfBirth.Split('-')
-    [int]$dobY = $dobParts[0]
-    [int]$dobM = $dobParts[1]
-    [int]$dobD = $dobParts[2]
+    $dob = ConvertFrom-SayableAgeDate -DateStr $DateOfBirth
+    if ($null -eq $dob) {
+        return $null
+    }
+    $dobY, $dobM, $dobD = $dob
 
     if (-not [string]::IsNullOrEmpty($AsOf)) {
-        $refParts = $AsOf.Split('-')
-        [int]$refY = $refParts[0]
-        [int]$refM = $refParts[1]
-        [int]$refD = $refParts[2]
+        $ref = ConvertFrom-SayableAgeDate -DateStr $AsOf
+        if ($null -eq $ref) {
+            return $null
+        }
+        $refY, $refM, $refD = $ref
     } else {
         $today = [DateTime]::Today
         [int]$refY = $today.Year
@@ -97,14 +135,12 @@ function Parse-SayableAge {
         [int]$refD = $today.Day
     }
 
-    $dobDate = [DateTime]::new($dobY, $dobM, $dobD)
-    $refDate = [DateTime]::new($refY, $refM, $refD)
-    $diffDays = ($refDate - $dobDate).Days
+    $diffDays = (Get-SayableAgeJulianDay -Year $refY -Month $refM -Day $refD) - (Get-SayableAgeJulianDay -Year $dobY -Month $dobM -Day $dobD)
     if ($diffDays -lt 0) {
         return $null
     }
 
-    $lastDay = [DateTime]::DaysInMonth($refY, $refM)
+    $lastDay = Get-DaysInMonthAge -Year $refY -Month $refM
     $clampedBirthday = [Math]::Min($dobD, $lastDay)
     $months = ($refY - $dobY) * 12 + ($refM - $dobM)
     if ($refD -lt $clampedBirthday) {

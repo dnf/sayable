@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/fi.json
 
-_plural_fi() {
+_sayableduration_plural_fi() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_fi() {
+_sayableduration_locale_fi() {
     _unit_second_one='{n} sekunti'
     _unit_second_other='{n} sekuntia'
     _unit_minute_one='{n} minuutti'
@@ -55,5 +55,5 @@ _locale_fi() {
     _compact_delimiter=''
     _compact_ago='{0} sitten'
     _compact_in_future='{0} kuluttua'
-    _plural_func=_plural_fi
+    _plural_func=_sayableduration_plural_fi
 }

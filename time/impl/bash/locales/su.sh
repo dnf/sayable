@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/su.json
 
-_locale_su() {
+_sayabletime_locale_su() {
     _clock_hours=('dua welas' 'hiji' 'dua' 'tilu' 'opat' 'lima' 'genep' 'tujuh' 'dalapan' 'salapan' 'sapuluh' 'sabelas')
     _clock_midnight='tengah peuting'
     _clock_noon='beurang'

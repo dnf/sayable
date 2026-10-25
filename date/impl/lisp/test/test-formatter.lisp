@@ -173,6 +173,60 @@
   (check-equal "12.2" (format-relative (make-formatter (get-locale "es") :normal) "2025-03-17" "2025-03-15") "pasado mañana")
 )
 
+;; Section 13: format_date_with_year
+(defun test-section-13 ()
+  ;; 13.1
+  (check-equal "13.1" (format-date-with-year (make-formatter (get-locale "en") :normal) "2018-02-04") "February 4th, 2018")
+  ;; 13.2
+  (check-equal "13.2" (format-date-with-year (make-formatter (get-locale "en") :short) "2025-03-15") "Mar 15, 2025")
+  ;; 13.3
+  (check-equal "13.3" (format-date-with-year (make-formatter (get-locale "en") :compact) "1997-01-21") "1/21/97")
+  ;; 13.4
+  (check-equal "13.4" (format-date-with-year (make-formatter (get-locale "tg") :compact) "2007-05-20") "20/5/07")
+  ;; 13.5
+  (check-equal "13.5" (format-date-with-year (make-formatter (get-locale "fi") :short) "1996-06-21") "21. kesäkuuta 1996")
+)
+
+;; Section 14: Short month names (locales that keep the full genitive)
+(defun test-section-14 ()
+  ;; 14.1
+  (check-equal "14.1" (format-date (make-formatter (get-locale "sk") :short) "2031-02-15") "15. februára")
+  ;; 14.2
+  (check-equal "14.2" (format-date (make-formatter (get-locale "cs") :short) "2025-12-10") "10. prosince")
+  ;; 14.3
+  (check-equal "14.3" (format-date (make-formatter (get-locale "uk") :short) "2025-11-05") "5 листопада")
+  ;; 14.4
+  (check-equal "14.4" (format-relative (make-formatter (get-locale "fi") :short) "1998-08-08" "1998-08-15") "8. elokuuta")
+)
+
+;; Section 15: format_relative — short phrases
+(defun test-section-15 ()
+  ;; 15.1
+  (check-equal "15.1" (format-relative (make-formatter (get-locale "kw") :short) "2035-12-04" "2035-12-02") "an Mth ma")
+  ;; 15.2
+  (check-equal "15.2" (format-relative (make-formatter (get-locale "mam") :short) "2000-01-23" "2000-01-25") "Dom nchi'j")
+  ;; 15.3
+  (check-equal "15.3" (format-relative (make-formatter (get-locale "kek") :short) "2014-10-24" "2014-10-22") "a'in Vie")
+)
+
+;; Section 16: Input validation
+(defun test-section-16 ()
+  ;; 16.1
+  (check-nil "16.1" (format-date (make-formatter (get-locale "en") :normal) "2025-02-30"))
+  ;; 16.2
+  (check-nil "16.2" (format-date (make-formatter (get-locale "en") :normal) "2025-13-01"))
+  ;; 16.3
+  (check-nil "16.3" (format-date (make-formatter (get-locale "en") :normal) "2025-6-1"))
+  ;; 16.4
+  (check-nil "16.4" (format-date (make-formatter (get-locale "en") :normal) " 2025-06-01"))
+  ;; 16.5
+  (check-equal "16.5" (format-date (make-formatter (get-locale "en") :normal) "2025-06-01T10:00:00") "June 1st")
+  ;; 16.6
+  (check-nil "16.6" (format-date-with-year (make-formatter (get-locale "en") :normal) "2023-02-29"))
+  ;; 16.7
+  (check-nil "16.7" (format-relative (make-formatter (get-locale "en") :normal) "2025-03-16" "2025-04-31"))
+)
+
 (defun run-tests ()
   (setf *pass-count* 0)
   (setf *fail-count* 0)
@@ -189,6 +243,10 @@
   (test-section-10)
   (test-section-11)
   (test-section-12)
+  (test-section-13)
+  (test-section-14)
+  (test-section-15)
+  (test-section-16)
 
   (format t "~%Results: ~a passed, ~a failed~%" *pass-count* *fail-count*)
   (when (> *fail-count* 0)

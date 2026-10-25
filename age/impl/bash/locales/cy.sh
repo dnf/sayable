@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/cy.json
 
-_plural_cy() {
+_sayableage_plural_cy() {
     local n=$1
     if [ "${n}" -eq 0 ]; then echo "zero"; return; fi
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
@@ -19,7 +19,7 @@ _plural_cy() {
     echo "other"
 }
 
-_locale_cy() {
+_sayableage_locale_cy() {
     _unit_day_zero='{n} diwrnod'
     _unit_day_one='{n} diwrnod'
     _unit_day_two='{n} ddiwrnod'
@@ -78,5 +78,5 @@ _locale_cy() {
     _compact_unit_year='{n}bl'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_cy
+    _plural_func=_sayableage_plural_cy
 }

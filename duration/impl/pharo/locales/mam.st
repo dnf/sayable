@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/mam.json "
 
-"Locale: mam"
+"Locale: mam"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 mam

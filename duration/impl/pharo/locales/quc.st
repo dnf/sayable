@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/quc.json "
 
-"Locale: quc"
+"Locale: quc"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 quc

@@ -305,3 +305,57 @@ test_es_day_after_tomorrow :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, 
 @(test) test_get_locale_fr :: proc(t: ^testing.T) { loc := get_locale("fr"); testing.expect(t, loc != nil); if loc != nil do testing.expect_value(t, loc.code, "fr") }
 @(test) test_get_locale_unknown :: proc(t: ^testing.T) { testing.expect(t, get_locale("xx") == nil) }
 @(test) test_get_locale_empty :: proc(t: ^testing.T) { testing.expect(t, get_locale("") == nil) }
+
+// ================================================================
+// Section 13: format_date_with_year
+// ================================================================
+// 13.1
+@(test) test_13_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "February 4th, 2018", format_date_with_year(buf[:], &locale_en, .Normal, "2018-02-04")) }
+// 13.2
+@(test) test_13_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "Mar 15, 2025", format_date_with_year(buf[:], &locale_en, .Short, "2025-03-15")) }
+// 13.3
+@(test) test_13_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "1/21/97", format_date_with_year(buf[:], &locale_en, .Compact, "1997-01-21")) }
+// 13.4
+@(test) test_13_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "20/5/07", format_date_with_year(buf[:], &locale_tg, .Compact, "2007-05-20")) }
+// 13.5
+@(test) test_13_5 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "21. kesäkuuta 1996", format_date_with_year(buf[:], &locale_fi, .Short, "1996-06-21")) }
+
+// ================================================================
+// Section 14: Short month names
+// ================================================================
+// 14.1
+@(test) test_14_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "15. februára", format_date(buf[:], &locale_sk, .Short, "2031-02-15")) }
+// 14.2
+@(test) test_14_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "10. prosince", format_date(buf[:], &locale_cs, .Short, "2025-12-10")) }
+// 14.3
+@(test) test_14_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "5 листопада", format_date(buf[:], &locale_uk, .Short, "2025-11-05")) }
+// 14.4
+@(test) test_14_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "8. elokuuta", format_relative(buf[:], &locale_fi, .Short, "1998-08-08", "1998-08-15")) }
+
+// ================================================================
+// Section 15: format_relative — short phrases
+// ================================================================
+// 15.1
+@(test) test_15_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "an Mth ma", format_relative(buf[:], &locale_kw, .Short, "2035-12-04", "2035-12-02")) }
+// 15.2
+@(test) test_15_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "Dom nchi'j", format_relative(buf[:], &locale_mam, .Short, "2000-01-23", "2000-01-25")) }
+// 15.3
+@(test) test_15_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "a'in Vie", format_relative(buf[:], &locale_kek, .Short, "2014-10-24", "2014-10-22")) }
+
+// ================================================================
+// Section 16: Input validation
+// ================================================================
+// 16.1
+@(test) test_16_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_date(buf[:], &locale_en, .Normal, "2025-02-30")) }
+// 16.2
+@(test) test_16_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_date(buf[:], &locale_en, .Normal, "2025-13-01")) }
+// 16.3
+@(test) test_16_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_date(buf[:], &locale_en, .Normal, "2025-6-1")) }
+// 16.4
+@(test) test_16_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_date(buf[:], &locale_en, .Normal, " 2025-06-01")) }
+// 16.5
+@(test) test_16_5 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "June 1st", format_date(buf[:], &locale_en, .Normal, "2025-06-01T10:00:00")) }
+// 16.6
+@(test) test_16_6 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_date_with_year(buf[:], &locale_en, .Normal, "2023-02-29")) }
+// 16.7
+@(test) test_16_7 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_relative(buf[:], &locale_en, .Normal, "2025-03-16", "2025-04-31")) }

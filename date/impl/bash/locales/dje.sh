@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/dje.json
 
-_locale_dje() {
+_sayabledate_locale_dje() {
     _months=('Žanwiye' 'Feewiriye' 'Marsi' 'Awiril' 'Me' 'Žuweŋ' 'Žuyye' 'Ut' 'Sektanbur' 'Oktoobur' 'Noowanbur' 'Deesanbur')
     _weekdays=('Alhadi' 'Atini' 'Atalaata' 'Alarba' 'Alhamisi' 'Alzuma' 'Asibiti')
     _day_format='{n}'

@@ -404,26 +404,9 @@ local function cmd_until(positionals, options)
 end
 
 local function cmd_locales()
-    -- Use age locales as the canonical list (all components share the same set).
-    -- Extract codes by probing the registry for all known codes.
-    local codes = {
-        "af", "ak", "am", "ar", "az", "bci", "be", "bem", "bg", "bm",
-        "bn", "br", "bs", "ca", "ceb", "cs", "cy", "da", "de", "din",
-        "dje", "dyu", "ee", "el", "en", "es", "et", "eu", "fa", "fan",
-        "ff", "fi", "fil", "fon", "fr", "ga", "gd", "gl", "gn", "gu",
-        "gv", "ha", "he", "hi", "hr", "ht", "hu", "hy", "id", "ig",
-        "is", "it", "ja", "jv", "ka", "kbp", "kk", "km", "kn", "ko",
-        "kpe", "ktu", "ku", "kw", "ky", "lg", "ln", "lo", "lt", "lv",
-        "men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk", "mos", "mr",
-        "ms", "mt", "my", "nb", "nd", "ne", "ng", "nl", "nso", "nus",
-        "ny", "om", "or", "pa", "pl", "pov", "ps", "pt", "qu", "ro",
-        "ru", "rw", "sar", "sd", "sg", "shi", "si", "sk", "sl", "sn",
-        "snk", "so", "sq", "sr", "ss", "st", "su", "suk", "sv", "sw",
-        "ta", "te", "tem", "tg", "th", "ti", "tig", "tk", "tn", "tr",
-        "ts", "tzm", "uk", "umb", "ur", "uz", "vi", "vmw", "wo", "xh",
-        "yo", "yue", "zdj", "zh", "zu",
-    }
-    return table.concat(codes, "\n")
+    -- All components share the same locale set, so age's registry is canonical.
+    local registry = dofile(age_dir .. "/locales/init.lua")
+    return table.concat(registry.CODES, "\n")
 end
 
 local COMMANDS = {

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tr.json
 
-_locale_tr() {
+_sayabletime_locale_tr() {
     _clock_hours=('on iki' 'bir' 'iki' 'üç' 'dört' 'beş' 'altı' 'yedi' 'sekiz' 'dokuz' 'on' 'on bir')
     _clock_midnight='gece yarısı'
     _clock_noon='öğle'

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/gd.json
 
-_plural_gd() {
+_sayableage_plural_gd() {
     local n=$1
     if [ "${n}" -eq 1 ] || [ "${n}" -eq 11 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ] || [ "${n}" -eq 12 ]; then echo "two"; return; fi
@@ -17,7 +17,7 @@ _plural_gd() {
     echo "other"
 }
 
-_locale_gd() {
+_sayableage_locale_gd() {
     _unit_day_one='{n} latha'
     _unit_day_two='{n} latha'
     _unit_day_few='{n} làithean'
@@ -62,5 +62,5 @@ _locale_gd() {
     _compact_unit_year='{n}bl'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_gd
+    _plural_func=_sayableage_plural_gd
 }

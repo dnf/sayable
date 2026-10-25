@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/yo.json
 
-_locale_yo() {
+_sayabledate_locale_yo() {
     _months=('Oṣù Ṣẹ́rẹ́' 'Oṣù Èrèlè' 'Oṣù Ẹrẹ̀nà' 'Oṣù Ìgbé' 'Oṣù Ẹ̀bibi' 'Oṣù Òkúdu' 'Oṣù Agẹmọ' 'Oṣù Ògún' 'Oṣù Owewe' 'Oṣù Ọ̀wàrà' 'Oṣù Bélú' 'Oṣù Ọ̀pẹ̀')
     _weekdays=('Ọjọ́ Àìkú' 'Ọjọ́ Ajé' 'Ọjọ́ Ìṣẹ́gun' 'Ọjọ́rú' 'Ọjọ́bọ̀' 'Ọjọ́ Ẹtì' 'Ọjọ́ Àbámẹ́ta')
     _day_format='{n}'

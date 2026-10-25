@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/vmw.json
 
-_plural_vmw() {
+_sayableage_plural_vmw() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_vmw() {
+_sayableage_locale_vmw() {
     _unit_day_one='eshuku {n}'
     _unit_day_other='mshuku {n}'
     _unit_week_one='esumana {n}'
@@ -47,5 +47,5 @@ _locale_vmw() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_vmw
+    _plural_func=_sayableage_plural_vmw
 }

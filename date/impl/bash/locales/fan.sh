@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/fan.json
 
-_locale_fan() {
+_sayabledate_locale_fan() {
     _months=('Nzas Ngon' 'Nzas Mekié' 'Nzas Okúa' 'Nzas Angón' 'Nzas Obuí' 'Nzas Okéna' 'Nzas Osúa' 'Nzas Mwom' 'Nzas Ebulú' 'Nzas Owono' 'Nzas Owono-abé' 'Nzas Nkéng')
     _weekdays=('Esig' 'Amvus' 'Amvus-abé' 'Amvus-alú' 'Amvus-anyin' 'Mba' 'Ngon')
     _day_format='{n}'

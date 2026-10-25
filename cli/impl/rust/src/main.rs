@@ -385,7 +385,7 @@ fn cmd_duration(positionals: &[&str], opts: &Options) -> CmdResult {
         Some(v) => {
             if is_integer(v) {
                 // Seconds mode
-                let seconds: i32 = v.parse().unwrap_or(-1);
+                let seconds: i64 = v.parse().unwrap_or(-1);
                 Ok(formatter.format_duration_seconds(seconds))
             } else {
                 // Timestamp mode: need an end argument
@@ -453,21 +453,23 @@ fn cmd_until(positionals: &[&str], opts: &Options) -> CmdResult {
 fn cmd_locales() -> String {
     // All components share the same locale set; use age as canonical source
     let codes = [
-        "af", "ak", "am", "ar", "az", "bci", "be", "bem", "bg", "bm",
-        "bn", "br", "bs", "ca", "ceb", "cs", "cy", "da", "de", "din",
-        "dje", "dyu", "ee", "el", "en", "es", "et", "eu", "fa", "fan",
-        "ff", "fi", "fil", "fon", "fr", "ga", "gd", "gl", "gn", "gu",
-        "gv", "ha", "he", "hi", "hr", "ht", "hu", "hy", "id", "ig",
-        "is", "it", "ja", "jv", "ka", "kbp", "kk", "km", "kn", "ko",
-        "kpe", "ktu", "ku", "kw", "ky", "lg", "ln", "lo", "lt", "lv",
-        "men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk", "mos", "mr",
-        "ms", "mt", "my", "nb", "nd", "ne", "ng", "nl", "nso", "nus",
-        "ny", "om", "or", "pa", "pl", "pov", "ps", "pt", "qu", "ro",
-        "ru", "rw", "sar", "sd", "sg", "shi", "si", "sk", "sl", "sn",
-        "snk", "so", "sq", "sr", "ss", "st", "su", "suk", "sv", "sw",
-        "ta", "te", "tem", "tg", "th", "ti", "tig", "tk", "tn", "tr",
-        "ts", "tzm", "uk", "umb", "ur", "uz", "vi", "vmw", "wo", "xh",
-        "yo", "yue", "zdj", "zh", "zu",
+        "af", "ak", "am", "ar", "ay", "az", "bci", "be", "bem", "bg",
+        "bi", "bm", "bn", "br", "bs", "ca", "cak", "ceb", "cs", "cy",
+        "da", "de", "din", "dje", "dv", "dyu", "dz", "ee", "el", "en",
+        "es", "et", "eu", "fa", "fan", "ff", "fi", "fil", "fj", "fon",
+        "fr", "ga", "gd", "gl", "gn", "gu", "gv", "ha", "he", "hi",
+        "hmn", "hr", "ht", "hu", "hy", "id", "ig", "is", "it", "ja",
+        "jv", "ka", "kbp", "kek", "ki", "kk", "kl", "km", "kn", "ko",
+        "kpe", "kri", "ktu", "ku", "kw", "ky", "lb", "lg", "ln", "lo",
+        "lt", "luo", "lv", "mam", "men", "mfe", "mg", "mi", "mk", "ml",
+        "mn", "mnk", "mos", "mr", "ms", "mt", "my", "nb", "nd", "ne",
+        "ng", "nl", "nr", "nso", "nus", "ny", "om", "or", "pa", "pis",
+        "pl", "pov", "ps", "pt", "qu", "quc", "ro", "ru", "rw", "sar",
+        "sd", "sg", "shi", "shn", "si", "sk", "sl", "sn", "snk", "so",
+        "sq", "sr", "ss", "st", "su", "suk", "sv", "sw", "ta", "te",
+        "tem", "tet", "tg", "th", "ti", "tig", "tk", "tn", "tpi", "tr",
+        "ts", "tum", "tzm", "uk", "umb", "ur", "uz", "ve", "vi", "vmw",
+        "wo", "xh", "yao", "yo", "yue", "zdj", "zh", "zu",
     ];
     codes.map(|code| format!("{code}\n")).concat()
 }

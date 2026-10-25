@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/lo.json
 
-_plural_lo() {
+_sayableduration_plural_lo() {
     echo "other"
 }
 
-_locale_lo() {
+_sayableduration_locale_lo() {
     _unit_second='{n} ວິນາທີ'
     _unit_minute='{n} ນາທີ'
     _unit_hour='{n} ຊົ່ວໂມງ'
@@ -46,5 +46,5 @@ _locale_lo() {
     _compact_delimiter=''
     _compact_ago='{0} ກ່ອນ'
     _compact_in_future='ໃນ {0}'
-    _plural_func=_plural_lo
+    _plural_func=_sayableduration_plural_lo
 }

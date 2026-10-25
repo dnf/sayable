@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/tem.json
 
-_plural_tem() {
+_sayableage_plural_tem() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tem() {
+_sayableage_locale_tem() {
     _unit_day_one='ləfɔr {n}'
     _unit_day_other='ɔfɔr {n}'
     _unit_week_one='wik {n}'
@@ -46,5 +46,5 @@ _locale_tem() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_tem
+    _plural_func=_sayableage_plural_tem
 }

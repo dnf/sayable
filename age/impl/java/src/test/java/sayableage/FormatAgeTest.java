@@ -1043,4 +1043,135 @@ class FormatAgeTest {
     @Test void getLocaleIsCaseSensitive() {
         assertNull(Locales.get("EN"));
     }
+
+    // ================================================================
+    // Weeks and days across month ends
+    // ================================================================
+
+    // 31.1
+    @Test
+    void s31_188DaysAcrossA28DayFebruary() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertEquals("12 weeks, 4 days", f.formatAge("2016-12-31", "2017-03-29"));
+    }
+
+    // 31.2
+    @Test
+    void s31_290DaysAcrossAYearEndInto() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertEquals("12 weeks, 6 days", f.formatAge("1991-11-27", "1992-02-25"));
+    }
+
+    // 31.3
+    @Test
+    void s31_333DaysAcrossAYearEnd() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertEquals("4 weeks, 5 days", f.formatAge("2020-11-30", "2021-01-02"));
+    }
+
+    // 31.4
+    @Test
+    void s31_4CompactFormOf311() {
+        SayableAge f = new SayableAge(Locales.EN, Compactness.COMPACT);
+        assertEquals("12w4d", f.formatAge("2016-12-31", "2017-03-29"));
+    }
+
+    // ================================================================
+    // Half years take their plural form from whole years
+    // ================================================================
+
+    // 32.1
+    @Test
+    void s32_1Polish3IsFew() {
+        SayableAge f = new SayableAge(Locales.PL);
+        assertEquals("3 i p\u00F3\u0142 lata", f.formatAge("2021-06-15", "2025-01-15"));
+    }
+
+    // 32.2
+    @Test
+    void s32_2Polish5IsMany() {
+        SayableAge f = new SayableAge(Locales.PL, Compactness.SHORT);
+        assertEquals("5 i p\u00F3\u0142 lat", f.formatAge("2020-06-15", "2025-12-15"));
+    }
+
+    // 32.3
+    @Test
+    void s32_3Tachelhit6IsFew() {
+        SayableAge f = new SayableAge(Locales.SHI);
+        assertEquals("6 iseggasen d uzgen", f.formatAge("2005-06-08", "2012-06-07"));
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 33.1
+    @Test
+    void s33_1February30DoesntExist() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge("2025-02-30", "2032-06-25"));
+    }
+
+    // 33.2
+    @Test
+    void s33_2Month13() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge("2025-13-01", "2027-01-31"));
+    }
+
+    // 33.3
+    @Test
+    void s33_3February29InANonLeapYear() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge("2023-02-29", "2025-03-01"));
+    }
+
+    // 33.4
+    @Test
+    void s33_4Day00() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge("2025-06-00", "2027-02-25"));
+    }
+
+    // 33.5
+    @Test
+    void s33_5UnpaddedMonthAndDay() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge("2025-6-1", "2027-02-25"));
+    }
+
+    // 33.6
+    @Test
+    void s33_6SurroundingWhitespace() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge(" 2025-06-01", "2027-02-25"));
+    }
+
+    // 33.7
+    @Test
+    void s33_7ADatetimeIsNotADate() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge("2025-06-15T10:00:00", "2027-02-25"));
+    }
+
+    // 33.8
+    @Test
+    void s33_8InvalidAsOf() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatAge("2020-01-01", "2025-04-31"));
+    }
+
+    // 33.9
+    @Test
+    void s33_9FormatStageValidatesToo() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertNull(f.formatStage("2025-02-30", "2027-09-05"));
+    }
+
+    // 33.10
+    @Test
+    void s33_10February29InALeapYearIs() {
+        SayableAge f = new SayableAge(Locales.EN);
+        assertEquals("2 years", f.formatAge("2024-02-29", "2026-03-01"));
+    }
 }

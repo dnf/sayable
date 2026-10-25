@@ -4,6 +4,7 @@
 
 SAYABLEDURATION_VERSION="0.5.0"
 _SAYABLEDURATION_REGISTRY_LOADED=0
+_SAYABLEDURATION_MAX_MONTHS=6000  # 500 years, the same ceiling as sayable-age
 
 # --- Date/time helpers ---
 
@@ -58,41 +59,45 @@ _sayableduration_days_since_epoch() {
     echo "${days}"
 }
 
+# YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored). The
+# digit class is spelled out because a [0-9] range can match other characters
+# in some locales.
+_SAYABLEDURATION_D='[0123456789]'
+_SAYABLEDURATION_TIMESTAMP_PATTERN="^(${_SAYABLEDURATION_D}{4})-(${_SAYABLEDURATION_D}{2})-(${_SAYABLEDURATION_D}{2})T(${_SAYABLEDURATION_D}{1,2}):(${_SAYABLEDURATION_D}{2})(:(${_SAYABLEDURATION_D}{2})(\\.${_SAYABLEDURATION_D}+)?)?(Z|[+-]${_SAYABLEDURATION_D}{2}:${_SAYABLEDURATION_D}{2})?$"
+_SAYABLEDURATION_INTEGER_PATTERN="^-?${_SAYABLEDURATION_D}+$"
+
 # Parse ISO datetime to epoch-ish seconds. Sets _pts_result. Returns 1 on failure.
 _sayableduration_parse_iso() {
     local iso_str="$1"
-    if [ -z "${iso_str}" ]; then return 1; fi
+    if ! [[ "${iso_str}" =~ ${_SAYABLEDURATION_TIMESTAMP_PATTERN} ]]; then return 1; fi
 
-    local date_part time_part
-    if [[ "${iso_str}" != *"T"* ]]; then return 1; fi
-    date_part="${iso_str%%T*}"
-    time_part="${iso_str#*T}"
-
-    # Strip timezone
-    time_part="${time_part%%+*}"
-    time_part="${time_part%%Z*}"
-
-    local IFS='-'
-    # shellcheck disable=SC2086
-    set -- ${date_part}
-    if [ $# -ne 3 ]; then return 1; fi
-    local year=$(( 10#$1 )) month=$(( 10#$2 )) day=$(( 10#$3 ))
-
-    IFS=':'
-    # shellcheck disable=SC2086
-    set -- ${time_part}
-    local hour=$(( 10#$1 ))
-    local minute=0 second=0
-    if [ $# -ge 2 ]; then minute=$(( 10#$2 )); fi
-    if [ $# -ge 3 ]; then
-        # Strip fractional seconds
-        local sec_str="${3%%.*}"
-        second=$(( 10#${sec_str} ))
-    fi
+    # 10# reads leading zeros as decimal, not octal
+    local year=$(( 10#${BASH_REMATCH[1]} )) month=$(( 10#${BASH_REMATCH[2]} )) day=$(( 10#${BASH_REMATCH[3]} ))
+    local hour=$(( 10#${BASH_REMATCH[4]} )) minute=$(( 10#${BASH_REMATCH[5]} ))
+    local second=$(( 10#${BASH_REMATCH[7]:-0} ))
+    if [ ${month} -lt 1 ] || [ ${month} -gt 12 ] || [ ${day} -lt 1 ]; then return 1; fi
+    if [ ${day} -gt "$(_sayableduration_days_in_month "${year}" "${month}")" ]; then return 1; fi
+    if [ ${hour} -gt 23 ] || [ ${minute} -gt 59 ] || [ ${second} -gt 59 ]; then return 1; fi
 
     local days
     days=$(_sayableduration_days_since_epoch "${year}" "${month}" "${day}")
     _pts_result=$(( days * 86400 + hour * 3600 + minute * 60 + second ))
+    return 0
+}
+
+# Parse a whole number of seconds into _ps_seconds. Returns 1 when it has no
+# value: negative, or more digits than any count under the 500-year ceiling
+# (bash arithmetic would overflow on them).
+_sayableduration_parse_seconds() {
+    local input="$1"
+    local magnitude="${input#-}"
+    magnitude="${magnitude#"${magnitude%%[!0]*}"}"
+    if [ -z "${magnitude}" ]; then
+        _ps_seconds=0
+        return 0
+    fi
+    if [ "${input:0:1}" = "-" ] || [ ${#magnitude} -gt 15 ]; then return 1; fi
+    _ps_seconds=$(( 10#${magnitude} ))
     return 0
 }
 
@@ -353,6 +358,10 @@ _sayableduration_format_seconds() {
     # Approximate months (30.44 days average)
     # Use integer rounding: (total_days * 100 + 1522) / 3044
     local total_months=$(( (total_days * 100 + 1522) / 3044 ))
+    if [ ${total_months} -gt ${_SAYABLEDURATION_MAX_MONTHS} ]; then
+        echo ""
+        return
+    fi
 
     # 1-11 months
     if [ ${total_months} -lt 12 ]; then
@@ -395,12 +404,12 @@ sayableduration_format_duration() {
     local total_seconds
 
     # Check if input is a number (seconds)
-    if [[ "${input}" =~ ^-?[0-9]+$ ]]; then
-        total_seconds=${input}
-        if [ ${total_seconds} -lt 0 ]; then
+    if [[ "${input}" =~ ${_SAYABLEDURATION_INTEGER_PATTERN} ]]; then
+        if ! _sayableduration_parse_seconds "${input}"; then
             echo ""
             return
         fi
+        total_seconds=${_ps_seconds}
     else
         # ISO datetime pair
         if [ -z "${end}" ]; then
@@ -467,6 +476,10 @@ sayableduration_format_since() {
 
     local dur
     dur=$(_sayableduration_format_seconds ${diff})
+    if [ -z "${dur}" ]; then
+        echo ""
+        return
+    fi
     echo "${_sa_ago//\{0\}/${dur}}"
 }
 
@@ -510,5 +523,9 @@ sayableduration_format_until() {
 
     local dur
     dur=$(_sayableduration_format_seconds ${diff})
+    if [ -z "${dur}" ]; then
+        echo ""
+        return
+    fi
     echo "${_sa_in_future//\{0\}/${dur}}"
 }

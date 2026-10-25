@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/vi.json "
 
-"Locale: vi"
+"Locale: vi"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 vi

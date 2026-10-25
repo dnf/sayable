@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mfe.json
 
-_plural_mfe() {
+_sayableage_plural_mfe() {
     echo "other"
 }
 
-_locale_mfe() {
+_sayableage_locale_mfe() {
     _unit_day='{n} zour'
     _unit_week='{n} semenn'
     _unit_month='{n} mwa'
@@ -37,5 +37,5 @@ _locale_mfe() {
     _compact_unit_year='{n} la'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mfe
+    _plural_func=_sayableage_plural_mfe
 }

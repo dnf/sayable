@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/men.json
 
-_locale_men() {
+_sayabledate_locale_men() {
     _months=('Januwali' 'Febluwali' 'Maachi' 'Epuli' 'Mei' 'Juun' 'Julai' 'Ɔgɔsi' 'Sɛtɛmba' 'Ɔtɔba' 'Nɔvɛmba' 'Disɛmba')
     _weekdays=('Lahadi' 'Tɛɛnɛɛ' 'Talata' 'Alaba' 'Aimisa' 'Juma' 'Satidei')
     _day_format='{n}'

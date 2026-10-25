@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tk.json
 
-_locale_tk() {
+_sayabletime_locale_tk() {
     _clock_hours=('on iki' 'bir' 'iki' 'üç' 'dört' 'bäş' 'alty' 'ýedi' 'sekiz' 'dokuz' 'on' 'on bir')
     _clock_midnight='ýary gije'
     _clock_noon='günorta'

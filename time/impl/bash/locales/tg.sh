@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tg.json
 
-_locale_tg() {
+_sayabletime_locale_tg() {
     _clock_hours=('дувоздаҳ' 'як' 'ду' 'се' 'чор' 'панҷ' 'шаш' 'ҳафт' 'ҳашт' 'нӯҳ' 'даҳ' 'ёздаҳ')
     _clock_midnight='нимишаб'
     _clock_noon='нимирӯз'

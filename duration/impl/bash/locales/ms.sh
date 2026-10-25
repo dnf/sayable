@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ms.json
 
-_plural_ms() {
+_sayableduration_plural_ms() {
     echo "other"
 }
 
-_locale_ms() {
+_sayableduration_locale_ms() {
     _unit_second='{n} saat'
     _unit_minute='{n} minit'
     _unit_hour='{n} jam'
@@ -46,5 +46,5 @@ _locale_ms() {
     _compact_delimiter=''
     _compact_ago='{0} lalu'
     _compact_in_future='dalam {0}'
-    _plural_func=_plural_ms
+    _plural_func=_sayableduration_plural_ms
 }

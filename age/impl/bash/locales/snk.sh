@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/snk.json
 
-_plural_snk() {
+_sayableage_plural_snk() {
     echo "other"
 }
 
-_locale_snk() {
+_sayableage_locale_snk() {
     _unit_day='xanne {n}'
     _unit_week='simanxe {n}'
     _unit_month='kare {n}'
@@ -37,5 +37,5 @@ _locale_snk() {
     _compact_unit_year='jara {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_snk
+    _plural_func=_sayableage_plural_snk
 }

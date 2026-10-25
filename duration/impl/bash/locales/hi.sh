@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/hi.json
 
-_plural_hi() {
+_sayableduration_plural_hi() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_hi() {
+_sayableduration_locale_hi() {
     _unit_second='{n} सेकंड'
     _unit_minute='{n} मिनट'
     _unit_hour='{n} घंटा'
@@ -52,5 +52,5 @@ _locale_hi() {
     _compact_delimiter=''
     _compact_ago='{0} पहले'
     _compact_in_future='{0} में'
-    _plural_func=_plural_hi
+    _plural_func=_sayableduration_plural_hi
 }

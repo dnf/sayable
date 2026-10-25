@@ -328,3 +328,29 @@ func TestCompactDuration(t *testing.T) {
 	// 17.2
 	assertEq(t, "17.2 compact one minute thirty seconds", dur.FormatDurationSeconds(90), "1m30s")
 }
+
+// ── Section 18: Short compactness — relative time ────────────────────────────────────
+
+func TestSection18ShortCompactnessRelativeTime(t *testing.T) {
+	assertEq(t, "18.1", sd.NewSayableDuration(locales.MEN).FormatSince("2025-01-20T01:32:11", "2025-01-22T15:39:16"), "lɔhɔnga 2, awa 14 taa gbɔyɔ") // 18.1
+}
+
+// ── Section 19: Range (500-year ceiling) ────────────────────────────────────
+
+func TestSection19Range500YearCeiling(t *testing.T) {
+	assertEq(t, "19.1", sd.NewSayableDuration(locales.EN).FormatDurationSeconds(15778800000), "500 years")            // 19.1
+	assertNil(t, "19.2", sd.NewSayableDuration(locales.EN).FormatDurationSeconds(15800000000))                        // 19.2
+	assertNil(t, "19.3", sd.NewSayableDuration(locales.EN).FormatDurationSeconds(99999999999))                        // 19.3
+	assertNil(t, "19.4", sd.NewSayableDuration(locales.EN).FormatSince("1500-01-01T00:00:00", "2025-01-01T00:00:00")) // 19.4
+	assertNil(t, "19.5", sd.NewSayableDuration(locales.EN).FormatUntil("2600-01-01T00:00:00", "2025-01-01T00:00:00")) // 19.5
+}
+
+// ── Section 20: Timestamp validation ────────────────────────────────────
+
+func TestSection20TimestampValidation(t *testing.T) {
+	assertEq(t, "20.1", sd.NewSayableDuration(locales.EN).FormatDurationISO("2025-01-15T10:00", "2025-01-15T11:30:00"), "1½ hours") // 20.1
+	assertNil(t, "20.2", sd.NewSayableDuration(locales.EN).FormatDurationISO("2025-01-15T10", "2025-01-15T11:30:00"))               // 20.2
+	assertNil(t, "20.3", sd.NewSayableDuration(locales.EN).FormatDurationISO("2025-1-5T10:00:00", "2025-01-15T11:30:00"))           // 20.3
+	assertNil(t, "20.4", sd.NewSayableDuration(locales.EN).FormatDurationISO("2025-02-30T10:00:00", "2025-03-15T11:30:00"))         // 20.4
+	assertNil(t, "20.5", sd.NewSayableDuration(locales.EN).FormatSince("2025-01-15T10:00:00", "2025-01-15T25:00:00"))               // 20.5
+}

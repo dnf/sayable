@@ -192,3 +192,63 @@ describe("Locale — Finnish (dot separator, short)", function()
         assert.are.equal("0.00", stf.format_time("00:00"))
     end)
 end)
+
+-- ================================================================
+-- Sections 9-10: minutes in short/compact, input validation
+-- ================================================================
+describe("Sections 9-10: minutes in short/compact, input validation", function()
+    -- 9.1
+    it("digital modes keep the exact minute", function()
+        assert.are.equal("6:01 PM", st.new(st.get_locale("en"), "short").format_time("18:01"))
+    end)
+
+    -- 9.2
+    it("digital modes keep the exact minute", function()
+        assert.are.equal("7:05p", st.new(st.get_locale("en"), "compact").format_time("19:05"))
+    end)
+
+    -- 10.1
+    it("one-digit hour", function()
+        assert.are.equal("half past nine", st.new(st.get_locale("en")).format_time("9:30"))
+    end)
+
+    -- 10.2
+    it("two-digit hour", function()
+        assert.are.equal("half past nine", st.new(st.get_locale("en")).format_time("09:30"))
+    end)
+
+    -- 10.3
+    it("leading whitespace", function()
+        assert.is_nil(st.new(st.get_locale("en")).format_time(" 9:30"))
+    end)
+
+    -- 10.4
+    it("trailing whitespace", function()
+        assert.is_nil(st.new(st.get_locale("en")).format_time("9:30 "))
+    end)
+
+    -- 10.5
+    it("minutes need two digits", function()
+        assert.is_nil(st.new(st.get_locale("en")).format_time("9:5"))
+    end)
+
+    -- 10.6
+    it("hour out of range", function()
+        assert.is_nil(st.new(st.get_locale("en")).format_time("24:00"))
+    end)
+
+    -- 10.7
+    it("seconds are allowed and ignored", function()
+        assert.are.equal("a quarter past two", st.new(st.get_locale("en")).format_time("14:15:30"))
+    end)
+
+    -- 10.8
+    it("ISO datetime with zone suffix (ignored)", function()
+        assert.are.equal("a quarter past two", st.new(st.get_locale("en")).format_time("2025-01-15T14:15:00Z"))
+    end)
+
+    -- 10.9
+    it("ISO datetime with an impossible date", function()
+        assert.is_nil(st.new(st.get_locale("en")).format_time("2025-02-30T14:15:00"))
+    end)
+end)

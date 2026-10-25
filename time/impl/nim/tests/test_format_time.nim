@@ -139,3 +139,57 @@ suite "Locale - Finnish (dot separator, short)":
   # 8.2
   test "0.00 midnight dot":
     check st.formatTime("00:00").get == "0.00"
+
+# ================================================================
+# Section 9: Minutes in short and compact modes
+# ================================================================
+suite "Section 9: Minutes in short and compact modes":
+  # 9.1
+  test "9.1 digital modes keep the exact minute":
+    check newSayableTime(getLocale("en").get, cShort).formatTime("18:01") == some("6:01 PM")
+
+  # 9.2
+  test "9.2 digital modes keep the exact minute":
+    check newSayableTime(getLocale("en").get, cCompact).formatTime("19:05") == some("7:05p")
+
+
+# ================================================================
+# Section 10: Input validation
+# ================================================================
+suite "Section 10: Input validation":
+  # 10.1
+  test "10.1 one-digit hour":
+    check newSayableTime(getLocale("en").get).formatTime("9:30") == some("half past nine")
+
+  # 10.2
+  test "10.2 two-digit hour":
+    check newSayableTime(getLocale("en").get).formatTime("09:30") == some("half past nine")
+
+  # 10.3
+  test "10.3 leading whitespace":
+    check newSayableTime(getLocale("en").get).formatTime(" 9:30").isNone
+
+  # 10.4
+  test "10.4 trailing whitespace":
+    check newSayableTime(getLocale("en").get).formatTime("9:30 ").isNone
+
+  # 10.5
+  test "10.5 minutes need two digits":
+    check newSayableTime(getLocale("en").get).formatTime("9:5").isNone
+
+  # 10.6
+  test "10.6 hour out of range":
+    check newSayableTime(getLocale("en").get).formatTime("24:00").isNone
+
+  # 10.7
+  test "10.7 seconds are allowed and ignored":
+    check newSayableTime(getLocale("en").get).formatTime("14:15:30") == some("a quarter past two")
+
+  # 10.8
+  test "10.8 ISO datetime with zone suffix (ignored)":
+    check newSayableTime(getLocale("en").get).formatTime("2025-01-15T14:15:00Z") == some("a quarter past two")
+
+  # 10.9
+  test "10.9 ISO datetime with an impossible date":
+    check newSayableTime(getLocale("en").get).formatTime("2025-02-30T14:15:00").isNone
+

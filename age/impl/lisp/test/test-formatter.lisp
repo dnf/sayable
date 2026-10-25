@@ -579,6 +579,52 @@
   (check-nil "30.5" (get-locale "EN"))
 )
 
+;; Section 31: Weeks and days across month ends
+(defun test-section-31 ()
+  ;; 31.1
+  (check-equal "31.1" (format-age (make-formatter (get-locale "en") :normal) "2016-12-31" "2017-03-29") "12 weeks, 4 days")
+  ;; 31.2
+  (check-equal "31.2" (format-age (make-formatter (get-locale "en") :normal) "1991-11-27" "1992-02-25") "12 weeks, 6 days")
+  ;; 31.3
+  (check-equal "31.3" (format-age (make-formatter (get-locale "en") :normal) "2020-11-30" "2021-01-02") "4 weeks, 5 days")
+  ;; 31.4
+  (check-equal "31.4" (format-age (make-formatter (get-locale "en") :compact) "2016-12-31" "2017-03-29") "12w4d")
+)
+
+;; Section 32: Half years take their plural form from whole years
+(defun test-section-32 ()
+  ;; 32.1
+  (check-equal "32.1" (format-age (make-formatter (get-locale "pl") :normal) "2021-06-15" "2025-01-15") "3 i pół lata")
+  ;; 32.2
+  (check-equal "32.2" (format-age (make-formatter (get-locale "pl") :short) "2020-06-15" "2025-12-15") "5 i pół lat")
+  ;; 32.3
+  (check-equal "32.3" (format-age (make-formatter (get-locale "shi") :normal) "2005-06-08" "2012-06-07") "6 iseggasen d uzgen")
+)
+
+;; Section 33: Input validation
+(defun test-section-33 ()
+  ;; 33.1
+  (check-nil "33.1" (format-age (make-formatter (get-locale "en") :normal) "2025-02-30" "2032-06-25"))
+  ;; 33.2
+  (check-nil "33.2" (format-age (make-formatter (get-locale "en") :normal) "2025-13-01" "2027-01-31"))
+  ;; 33.3
+  (check-nil "33.3" (format-age (make-formatter (get-locale "en") :normal) "2023-02-29" "2025-03-01"))
+  ;; 33.4
+  (check-nil "33.4" (format-age (make-formatter (get-locale "en") :normal) "2025-06-00" "2027-02-25"))
+  ;; 33.5
+  (check-nil "33.5" (format-age (make-formatter (get-locale "en") :normal) "2025-6-1" "2027-02-25"))
+  ;; 33.6
+  (check-nil "33.6" (format-age (make-formatter (get-locale "en") :normal) " 2025-06-01" "2027-02-25"))
+  ;; 33.7
+  (check-nil "33.7" (format-age (make-formatter (get-locale "en") :normal) "2025-06-15T10:00:00" "2027-02-25"))
+  ;; 33.8
+  (check-nil "33.8" (format-age (make-formatter (get-locale "en") :normal) "2020-01-01" "2025-04-31"))
+  ;; 33.9
+  (check-nil "33.9" (format-stage (make-formatter (get-locale "en") :normal) "2025-02-30" "2027-09-05"))
+  ;; 33.10
+  (check-equal "33.10" (format-age (make-formatter (get-locale "en") :normal) "2024-02-29" "2026-03-01") "2 years")
+)
+
 (defun run-tests ()
   (setf *pass-count* 0)
   (setf *fail-count* 0)
@@ -612,6 +658,9 @@
   (test-section-27)
   (test-section-29)
   (test-section-30)
+  (test-section-31)
+  (test-section-32)
+  (test-section-33)
 
   (format t "~%Results: ~a passed, ~a failed~%" *pass-count* *fail-count*)
   (when (> *fail-count* 0)

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/kw.json
 
-_plural_kw() {
+_sayableage_plural_kw() {
     local n=$1
     if [ "${n}" -eq 0 ]; then echo "zero"; return; fi
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
@@ -20,7 +20,7 @@ _plural_kw() {
     echo "other"
 }
 
-_locale_kw() {
+_sayableage_locale_kw() {
     _unit_day_zero='{n} dydh'
     _unit_day_one='dydh'
     _unit_day_two='{n} dhydh'
@@ -64,5 +64,5 @@ _locale_kw() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_kw
+    _plural_func=_sayableage_plural_kw
 }

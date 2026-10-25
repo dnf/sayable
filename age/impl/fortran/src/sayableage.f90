@@ -46,7 +46,8 @@ contains
     month = 0
     day = 0
 
-    if (len_trim(s) < 10) return
+    ! Exactly YYYY-MM-DD naming a real calendar day.
+    if (len(s) /= 10) return
     if (s(5:5) /= '-' .or. s(8:8) /= '-') return
 
     do i = 1, 4
@@ -62,7 +63,8 @@ contains
       day = day * 10 + ichar(s(i:i)) - ichar('0')
     end do
 
-    ok = (year /= 0 .or. month /= 0 .or. day /= 0)
+    if (month < 1 .or. month > 12) return
+    ok = (day >= 1 .and. day <= days_in_month(year, month))
   end subroutine parse_date
 
   function int_to_str(n) result(s)

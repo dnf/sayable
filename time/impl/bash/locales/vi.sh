@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/vi.json
 
-_locale_vi() {
+_sayabletime_locale_vi() {
     _clock_hours=('mười hai' 'một' 'hai' 'ba' 'bốn' 'năm' 'sáu' 'bảy' 'tám' 'chín' 'mười' 'mười một')
     _clock_midnight='nửa đêm'
     _clock_noon='trưa'

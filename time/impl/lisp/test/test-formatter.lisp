@@ -107,6 +107,36 @@
   (check-equal "8.2" (format-time (make-formatter (get-locale "fi") :short) "00:00") "0.00")
 )
 
+;; Section 9: Minutes in short and compact modes
+(defun test-section-9 ()
+  ;; 9.1
+  (check-equal "9.1" (format-time (make-formatter (get-locale "en") :short) "18:01") "6:01 PM")
+  ;; 9.2
+  (check-equal "9.2" (format-time (make-formatter (get-locale "en") :compact) "19:05") "7:05p")
+)
+
+;; Section 10: Input validation
+(defun test-section-10 ()
+  ;; 10.1
+  (check-equal "10.1" (format-time (make-formatter (get-locale "en") :normal) "9:30") "half past nine")
+  ;; 10.2
+  (check-equal "10.2" (format-time (make-formatter (get-locale "en") :normal) "09:30") "half past nine")
+  ;; 10.3
+  (check-nil "10.3" (format-time (make-formatter (get-locale "en") :normal) " 9:30"))
+  ;; 10.4
+  (check-nil "10.4" (format-time (make-formatter (get-locale "en") :normal) "9:30 "))
+  ;; 10.5
+  (check-nil "10.5" (format-time (make-formatter (get-locale "en") :normal) "9:5"))
+  ;; 10.6
+  (check-nil "10.6" (format-time (make-formatter (get-locale "en") :normal) "24:00"))
+  ;; 10.7
+  (check-equal "10.7" (format-time (make-formatter (get-locale "en") :normal) "14:15:30") "a quarter past two")
+  ;; 10.8
+  (check-equal "10.8" (format-time (make-formatter (get-locale "en") :normal) "2025-01-15T14:15:00Z") "a quarter past two")
+  ;; 10.9
+  (check-nil "10.9" (format-time (make-formatter (get-locale "en") :normal) "2025-02-30T14:15:00"))
+)
+
 (defun run-tests ()
   (setf *pass-count* 0)
   (setf *fail-count* 0)
@@ -119,6 +149,8 @@
   (test-section-6)
   (test-section-7)
   (test-section-8)
+  (test-section-9)
+  (test-section-10)
 
   (format t "~%Results: ~a passed, ~a failed~%" *pass-count* *fail-count*)
   (when (> *fail-count* 0)

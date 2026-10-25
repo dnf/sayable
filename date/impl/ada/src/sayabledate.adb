@@ -15,31 +15,41 @@ package body Sayabledate is
       return C >= '0' and then C <= '9';
    end Is_Digit;
 
-   function Parse_Date_Str (S : String) return Parse_Result is
-      R        : Parse_Result;
-      Date_Str : Unbounded_String;
-      Pos_T    : Natural;
+   function Is_Leap_Year (Year : Integer) return Boolean is
    begin
-      if S'Length = 0 then
+      return Year mod 4 = 0
+        and then (Year mod 100 /= 0 or else Year mod 400 = 0);
+   end Is_Leap_Year;
+
+   function Days_In_Month (Year : Integer; Month : Integer) return Integer is
+      Month_Days : constant array (1 .. 12) of Integer :=
+        (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+   begin
+      if Month = 2 and then Is_Leap_Year (Year) then
+         return 29;
+      else
+         return Month_Days (Month);
+      end if;
+   end Days_In_Month;
+
+   --  A date alone, or a date followed by T and a time (only the date
+   --  part is read).
+   function Is_Date_Or_Datetime (S : String) return Boolean is
+   begin
+      return S'Length = 10
+        or else (S'Length > 10 and then S (S'First + 10) = 'T');
+   end Is_Date_Or_Datetime;
+
+   function Parse_Date_Str (S : String) return Parse_Result is
+      R : Parse_Result;
+   begin
+      if not Is_Date_Or_Datetime (S) then
          return R;
       end if;
 
-      --  Strip time part if ISO datetime
-      Pos_T := Ada.Strings.Fixed.Index (S, "T");
-      if Pos_T > 0 then
-         Date_Str := To_Unbounded_String
-           (S (S'First .. Pos_T - 1));
-      else
-         Date_Str := To_Unbounded_String (S);
-      end if;
-
       declare
-         DS : constant String := To_String (Date_Str);
+         DS : constant String := S (S'First .. S'First + 9);
       begin
-         if DS'Length < 10 then
-            return R;
-         end if;
-
          if DS (DS'First + 4) /= '-'
            or else DS (DS'First + 7) /= '-'
          then
@@ -74,13 +84,8 @@ package body Sayabledate is
          end loop;
       end;
 
-      if R.Month < 1 or else R.Month > 12
-        or else R.Day < 1 or else R.Day > 31
-      then
-         return R;
-      end if;
-
-      R.OK := True;
+      R.OK := R.Month in 1 .. 12
+        and then R.Day in 1 .. Days_In_Month (R.Year, R.Month);
       return R;
    end Parse_Date_Str;
 
@@ -130,20 +135,6 @@ package body Sayabledate is
       return Tmpl (Tmpl'First .. Pos - 1) & Replacement
         & Tmpl (Pos + Marker'Length .. Tmpl'Last);
    end Replace_First;
-
-   function Find_Exception
-     (Loc     : Date_Locale;
-      Day_Str : String) return String
-   is
-   begin
-      for I in 1 .. Loc.Day_Format_Exception_Count loop
-         if To_String (Loc.Day_Format_Exception_Keys (I)) = Day_Str
-         then
-            return To_String (Loc.Day_Format_Exception_Vals (I));
-         end if;
-      end loop;
-      return "";
-   end Find_Exception;
 
    --  Pick effective values based on compactness override
    type Effective_Locale is record

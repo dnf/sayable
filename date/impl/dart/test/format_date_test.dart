@@ -239,4 +239,98 @@ void main() {
       expect(sd.formatRelative('2025-03-17', asOf: '2025-03-15'), 'pasado mañana'); // 12.2
     });
   });
+
+  // ================================================================
+  // format_date_with_year
+  // ================================================================
+  group('format_date_with_year', () {
+    test('en normal', () {
+      final sd = SayableDate(getLocale('en')!);
+      expect(sd.formatDateWithYear('2018-02-04'), 'February 4th, 2018'); // 13.1
+    });
+    test('en short', () {
+      final sd = SayableDate(getLocale('en')!, Compactness.short);
+      expect(sd.formatDateWithYear('2025-03-15'), 'Mar 15, 2025'); // 13.2
+    });
+    test('en compact', () {
+      final sd = SayableDate(getLocale('en')!, Compactness.compact);
+      expect(sd.formatDateWithYear('1997-01-21'), '1/21/97'); // 13.3
+    });
+    test('two-digit year keeps its leading zero', () {
+      final sd = SayableDate(getLocale('tg')!, Compactness.compact);
+      expect(sd.formatDateWithYear('2007-05-20'), '20/5/07'); // 13.4
+    });
+    test('fi short', () {
+      final sd = SayableDate(getLocale('fi')!, Compactness.short);
+      expect(sd.formatDateWithYear('1996-06-21'), '21. kesäkuuta 1996'); // 13.5
+    });
+  });
+
+  // ================================================================
+  // Short month names (locales that keep the full genitive)
+  // ================================================================
+  group('Short month names', () {
+    test('sk short', () {
+      final sd = SayableDate(getLocale('sk')!, Compactness.short);
+      expect(sd.formatDate('2031-02-15'), '15. februára'); // 14.1
+    });
+    test('cs short', () {
+      final sd = SayableDate(getLocale('cs')!, Compactness.short);
+      expect(sd.formatDate('2025-12-10'), '10. prosince'); // 14.2
+    });
+    test('uk short', () {
+      final sd = SayableDate(getLocale('uk')!, Compactness.short);
+      expect(sd.formatDate('2025-11-05'), '5 листопада'); // 14.3
+    });
+    test('fi short relative', () {
+      final sd = SayableDate(getLocale('fi')!, Compactness.short);
+      expect(sd.formatRelative('1998-08-08', asOf: '1998-08-15'), '8. elokuuta'); // 14.4
+    });
+  });
+
+  // ================================================================
+  // format_relative — short phrases
+  // ================================================================
+  group('format_relative — short phrases', () {
+    test('kw day after tomorrow', () {
+      final sd = SayableDate(getLocale('kw')!, Compactness.short);
+      expect(sd.formatRelative('2035-12-04', asOf: '2035-12-02'), 'an Mth ma'); // 15.1
+    });
+    test('mam day before yesterday', () {
+      final sd = SayableDate(getLocale('mam')!, Compactness.short);
+      expect(sd.formatRelative('2000-01-23', asOf: '2000-01-25'), "Dom nchi'j"); // 15.2
+    });
+    test('kek day after tomorrow', () {
+      final sd = SayableDate(getLocale('kek')!, Compactness.short);
+      expect(sd.formatRelative('2014-10-24', asOf: '2014-10-22'), "a'in Vie"); // 15.3
+    });
+  });
+
+  // ================================================================
+  // Input validation
+  // ================================================================
+  group('Input validation', () {
+    test('February 30 does not exist', () {
+      expect(formatDate('2025-02-30'), isNull); // 16.1
+    });
+    test('month 13', () {
+      expect(formatDate('2025-13-01'), isNull); // 16.2
+    });
+    test('unpadded month and day', () {
+      expect(formatDate('2025-6-1'), isNull); // 16.3
+    });
+    test('surrounding whitespace', () {
+      expect(formatDate(' 2025-06-01'), isNull); // 16.4
+    });
+    test('ISO datetime uses only the date part', () {
+      expect(formatDate('2025-06-01T10:00:00'), 'June 1st'); // 16.5
+    });
+    test('February 29 in a non-leap year', () {
+      final sd = SayableDate(getLocale('en')!);
+      expect(sd.formatDateWithYear('2023-02-29'), isNull); // 16.6
+    });
+    test('invalid asOf', () {
+      expect(formatRelative('2025-03-16', asOf: '2025-04-31'), isNull); // 16.7
+    });
+  });
 }

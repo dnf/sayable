@@ -6,7 +6,7 @@ dir := FileSystem workingDirectory.
 "Load classes in order"
 loader := [ :filename |
 	(dir / filename) readStreamDo: [ :stream |
-		stream contents fileIn ] ].
+		CodeImporter evaluateString: stream contents ] ].
 
 loader value: 'SayableTimeLocale.st'.
 loader value: 'SayableTimeLocales.st'.
@@ -16,11 +16,11 @@ loader value: 'SayableTimeLocales.st'.
 	select: [ :each | each extension = 'st' and: [ each basename ~= 'registry.st' ] ]
 	thenDo: [ :each |
 		each readStreamDo: [ :stream |
-			stream contents fileIn ] ].
+			CodeImporter evaluateString: stream contents ] ].
 
 "Load registry"
 (dir / 'locales' / 'registry.st') readStreamDo: [ :stream |
-	stream contents fileIn ].
+	CodeImporter evaluateString: stream contents ].
 
 "Load formatter"
 loader value: 'SayableTime.st'.

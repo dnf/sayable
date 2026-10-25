@@ -221,3 +221,24 @@ func TestLocaleFinnishDotSeparator(t *testing.T) {
 		assertEq(t, f.FormatTime("00:00"), "0.00")
 	})
 }
+
+// ── Section 9: Minutes in short and compact modes ────────────────────────────────────
+
+func TestSection9MinutesInShortAndCompactModes(t *testing.T) {
+	assertEq(t, st.NewSayableTime(locales.EN, st.Short).FormatTime("18:01"), "6:01 PM") // 9.1
+	assertEq(t, st.NewSayableTime(locales.EN, st.Compact).FormatTime("19:05"), "7:05p") // 9.2
+}
+
+// ── Section 10: Input validation ────────────────────────────────────
+
+func TestSection10InputValidation(t *testing.T) {
+	assertEq(t, st.NewSayableTime(locales.EN).FormatTime("9:30"), "half past nine")                     // 10.1
+	assertEq(t, st.NewSayableTime(locales.EN).FormatTime("09:30"), "half past nine")                    // 10.2
+	assertNil(t, st.NewSayableTime(locales.EN).FormatTime(" 9:30"))                                     // 10.3
+	assertNil(t, st.NewSayableTime(locales.EN).FormatTime("9:30 "))                                     // 10.4
+	assertNil(t, st.NewSayableTime(locales.EN).FormatTime("9:5"))                                       // 10.5
+	assertNil(t, st.NewSayableTime(locales.EN).FormatTime("24:00"))                                     // 10.6
+	assertEq(t, st.NewSayableTime(locales.EN).FormatTime("14:15:30"), "a quarter past two")             // 10.7
+	assertEq(t, st.NewSayableTime(locales.EN).FormatTime("2025-01-15T14:15:00Z"), "a quarter past two") // 10.8
+	assertNil(t, st.NewSayableTime(locales.EN).FormatTime("2025-02-30T14:15:00"))                       // 10.9
+}

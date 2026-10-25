@@ -42,6 +42,10 @@ shouldContainWeeks result = case result of
     Nothing -> expectationFailure "expected weeks pattern, got Nothing"
     Just s  -> s `shouldSatisfy` ("week" `isInfixOf`)
 
+-- | Formats with the locale for a code (Nothing for an unknown code).
+withLocale :: String -> (Locale -> Maybe String) -> Maybe String
+withLocale code f = getLocale code >>= f
+
 main :: IO ()
 main = hspec $ do
 
@@ -561,3 +565,63 @@ main = hspec $ do
             getLocale "" `shouldSatisfy` isNothing
         it "30.5 case-sensitive" $
             getLocale "EN" `shouldSatisfy` isNothing
+
+    -- Section 31: Weeks and days across month ends
+    describe "31. Weeks and days across month ends" $ do
+        -- 31.1
+        it "31.1 88 days across a 28-day February" $
+            withLocale "en" (\l -> formatAgePure l Normal "2016-12-31" "2017-03-29") `shouldBe` Just "12 weeks, 4 days"
+        -- 31.2
+        it "31.2 90 days across a year end into a leap year" $
+            withLocale "en" (\l -> formatAgePure l Normal "1991-11-27" "1992-02-25") `shouldBe` Just "12 weeks, 6 days"
+        -- 31.3
+        it "31.3 33 days across a year end" $
+            withLocale "en" (\l -> formatAgePure l Normal "2020-11-30" "2021-01-02") `shouldBe` Just "4 weeks, 5 days"
+        -- 31.4
+        it "31.4 Compact form of 31.1" $
+            withLocale "en" (\l -> formatAgePure l Compact "2016-12-31" "2017-03-29") `shouldBe` Just "12w4d"
+
+    -- Section 32: Half years take their plural form from whole years
+    describe "32. Half years take their plural form from whole years" $ do
+        -- 32.1
+        it "32.1 Polish 3 is 'few'" $
+            withLocale "pl" (\l -> formatAgePure l Normal "2021-06-15" "2025-01-15") `shouldBe` Just "3 i p\243\322 lata"
+        -- 32.2
+        it "32.2 Polish 5 is 'many'" $
+            withLocale "pl" (\l -> formatAgePure l Short "2020-06-15" "2025-12-15") `shouldBe` Just "5 i p\243\322 lat"
+        -- 32.3
+        it "32.3 Tachelhit 6 is 'few'" $
+            withLocale "shi" (\l -> formatAgePure l Normal "2005-06-08" "2012-06-07") `shouldBe` Just "6 iseggasen d uzgen"
+
+    -- Section 33: Input validation
+    describe "33. Input validation" $ do
+        -- 33.1
+        it "33.1 February 30 doesn't exist" $
+            withLocale "en" (\l -> formatAgePure l Normal "2025-02-30" "2032-06-25") `shouldBe` Nothing
+        -- 33.2
+        it "33.2 Month 13" $
+            withLocale "en" (\l -> formatAgePure l Normal "2025-13-01" "2027-01-31") `shouldBe` Nothing
+        -- 33.3
+        it "33.3 February 29 in a non-leap year" $
+            withLocale "en" (\l -> formatAgePure l Normal "2023-02-29" "2025-03-01") `shouldBe` Nothing
+        -- 33.4
+        it "33.4 Day 00" $
+            withLocale "en" (\l -> formatAgePure l Normal "2025-06-00" "2027-02-25") `shouldBe` Nothing
+        -- 33.5
+        it "33.5 Unpadded month and day" $
+            withLocale "en" (\l -> formatAgePure l Normal "2025-6-1" "2027-02-25") `shouldBe` Nothing
+        -- 33.6
+        it "33.6 Surrounding whitespace" $
+            withLocale "en" (\l -> formatAgePure l Normal " 2025-06-01" "2027-02-25") `shouldBe` Nothing
+        -- 33.7
+        it "33.7 A datetime is not a date" $
+            withLocale "en" (\l -> formatAgePure l Normal "2025-06-15T10:00:00" "2027-02-25") `shouldBe` Nothing
+        -- 33.8
+        it "33.8 Invalid asOf" $
+            withLocale "en" (\l -> formatAgePure l Normal "2020-01-01" "2025-04-31") `shouldBe` Nothing
+        -- 33.9
+        it "33.9 formatStage validates too" $
+            withLocale "en" (\l -> formatStagePure l "2025-02-30" "2027-09-05" Nothing) `shouldBe` Nothing
+        -- 33.10
+        it "33.10 February 29 in a leap year is valid" $
+            withLocale "en" (\l -> formatAgePure l Normal "2024-02-29" "2026-03-01") `shouldBe` Just "2 years"

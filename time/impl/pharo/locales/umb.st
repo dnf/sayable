@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/umb.json "
 
-"Locale: umb"
+"Locale: umb"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 umb

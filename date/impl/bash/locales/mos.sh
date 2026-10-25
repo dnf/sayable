@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/mos.json
 
-_locale_mos() {
+_sayabledate_locale_mos() {
     _months=('Zãn-naabu' 'Sig-noy-yaadre' 'Sig-noy-taabo' 'Kãn-saglem' 'Koabg-taabo' 'Koabg-yaadre' 'Baspɩɩre' 'Gɩ-sõongo' 'Tũubg-sõongo' 'Pẽemb-sõongo' 'Laafi-bãaga' 'Filiga-bãaga')
     _weekdays=('Alhadi' 'Atɩnni' 'Atalaata' 'Alarba' 'Alkamisa' 'Arjuma' 'Asibti')
     _day_format='{n}'

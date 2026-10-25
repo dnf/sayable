@@ -227,4 +227,89 @@ class FormatTimeTest {
     void 'version matches config'() {
         assertEquals('0.5.0', SayableTime.VERSION)
     }
+
+    // ================================================================
+    // Minutes in short and compact modes
+    // ================================================================
+
+    // 9.1
+    @Test
+    void 'digital modes keep the exact minute en short 18:01'() {
+        SayableTime f = new SayableTime(Locales.EN, Compactness.SHORT)
+        assertEquals('6:01 PM', f.formatTime('18:01'))
+    }
+
+    // 9.2
+    @Test
+    void 'digital modes keep the exact minute en compact 19:05'() {
+        SayableTime f = new SayableTime(Locales.EN, Compactness.COMPACT)
+        assertEquals('7:05p', f.formatTime('19:05'))
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 10.1
+    @Test
+    void 'one digit hour'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertEquals('half past nine', f.formatTime('9:30'))
+    }
+
+    // 10.2
+    @Test
+    void 'two digit hour'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertEquals('half past nine', f.formatTime('09:30'))
+    }
+
+    // 10.3
+    @Test
+    void 'leading whitespace'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertNull(f.formatTime(' 9:30'))
+    }
+
+    // 10.4
+    @Test
+    void 'trailing whitespace'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertNull(f.formatTime('9:30 '))
+    }
+
+    // 10.5
+    @Test
+    void 'minutes need two digits'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertNull(f.formatTime('9:5'))
+    }
+
+    // 10.6
+    @Test
+    void 'hour out of range'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertNull(f.formatTime('24:00'))
+    }
+
+    // 10.7
+    @Test
+    void 'seconds are allowed and ignored'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertEquals('a quarter past two', f.formatTime('14:15:30'))
+    }
+
+    // 10.8
+    @Test
+    void 'iso datetime with zone suffix ignored'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertEquals('a quarter past two', f.formatTime('2025-01-15T14:15:00Z'))
+    }
+
+    // 10.9
+    @Test
+    void 'iso datetime with an impossible date'() {
+        SayableTime f = new SayableTime(Locales.EN)
+        assertNull(f.formatTime('2025-02-30T14:15:00'))
+    }
 }

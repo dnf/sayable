@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/kbp.json "
 
-"Locale: kbp"
+"Locale: kbp"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 kbp

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/gl.json
 
-_locale_gl() {
+_sayabletime_locale_gl() {
     _clock_hours=('doce' 'unha' 'dúas' 'tres' 'catro' 'cinco' 'seis' 'sete' 'oito' 'nove' 'dez' 'once')
     _clock_midnight='medianoite'
     _clock_noon='mediodía'

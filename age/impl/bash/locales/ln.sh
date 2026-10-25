@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ln.json
 
-_plural_ln() {
+_sayableage_plural_ln() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ln() {
+_sayableage_locale_ln() {
     _unit_day_one='mokolo {n}'
     _unit_day_other='mikolo {n}'
     _unit_week_one='poso {n}'
@@ -51,5 +51,5 @@ _locale_ln() {
     _compact_unit_year_other='mib {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ln
+    _plural_func=_sayableage_plural_ln
 }

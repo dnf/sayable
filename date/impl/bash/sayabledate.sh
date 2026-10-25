@@ -22,23 +22,37 @@ _sayabledate_weekday() {
     echo $(( (jdn + 1) % 7 ))
 }
 
-# Parse YYYY-MM-DD (or ISO datetime), sets _pd_y _pd_m _pd_d. Returns 1 on failure.
+_sayabledate_days_in_month() {
+    local y=$1 m=$2
+    case "${m}" in
+        4|6|9|11) echo 30 ;;
+        2)
+            if (( (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 )); then
+                echo 29
+            else
+                echo 28
+            fi
+            ;;
+        *) echo 31 ;;
+    esac
+}
+
+# YYYY-MM-DD, optionally followed by T and a time (which is not read). The
+# digit class is spelled out because a [0-9] range can match other characters
+# in some locales.
+_SAYABLEDATE_DATE_PATTERN='^([0123456789]{4})-([0123456789]{2})-([0123456789]{2})(T.*)?$'
+
+# Parse a date naming a real calendar day, sets _pd_y _pd_m _pd_d.
+# Returns 1 on failure.
 _sayabledate_parse_date() {
     local datestr="$1"
-    if [ -z "${datestr}" ]; then return 1; fi
-    # Strip time part if ISO datetime
-    local date_part="${datestr%%T*}"
-    local IFS='-'
-    # shellcheck disable=SC2086
-    set -- ${date_part}
-    if [ $# -ne 3 ]; then return 1; fi
-    # Remove leading zeros for arithmetic
-    _pd_y=$(( 10#$1 )) 2>/dev/null || return 1
-    _pd_m=$(( 10#$2 )) 2>/dev/null || return 1
-    _pd_d=$(( 10#$3 )) 2>/dev/null || return 1
-    if [ ${_pd_m} -lt 1 ] || [ ${_pd_m} -gt 12 ] || [ ${_pd_d} -lt 1 ] || [ ${_pd_d} -gt 31 ]; then
-        return 1
-    fi
+    if ! [[ "${datestr}" =~ ${_SAYABLEDATE_DATE_PATTERN} ]]; then return 1; fi
+    # 10# reads leading zeros as decimal, not octal
+    _pd_y=$(( 10#${BASH_REMATCH[1]} ))
+    _pd_m=$(( 10#${BASH_REMATCH[2]} ))
+    _pd_d=$(( 10#${BASH_REMATCH[3]} ))
+    if [ ${_pd_m} -lt 1 ] || [ ${_pd_m} -gt 12 ] || [ ${_pd_d} -lt 1 ]; then return 1; fi
+    if [ ${_pd_d} -gt "$(_sayabledate_days_in_month "${_pd_y}" "${_pd_m}")" ]; then return 1; fi
     return 0
 }
 
@@ -147,6 +161,7 @@ _sayabledate_apply_compactness() {
     _sa_tomorrow="${_tomorrow}"
     _sa_yesterday="${_yesterday}"
     _sa_compactness="${compactness}"
+    _sa_clear_day_exceptions=0
 
     # Copy months_in_date if set
     if [ -n "${_months_in_date+x}" ]; then
@@ -195,12 +210,6 @@ sayabledate_format_date() {
     fi
 
     _sayabledate_apply_compactness "${compactness}"
-    _sa_clear_day_exceptions=0
-    if [ "${compactness}" = "short" ] && [ -n "${_short_day_format+x}" ]; then
-        _sa_clear_day_exceptions=1
-    elif [ "${compactness}" = "compact" ] && [ -n "${_compact_day_format+x}" ]; then
-        _sa_clear_day_exceptions=1
-    fi
 
     if ! _sayabledate_parse_date "${date_str}"; then
         echo ""
@@ -225,7 +234,6 @@ sayabledate_format_date_with_year() {
     fi
 
     _sayabledate_apply_compactness "${compactness}"
-    _sa_clear_day_exceptions=0
 
     if ! _sayabledate_parse_date "${date_str}"; then
         echo ""
@@ -250,12 +258,6 @@ sayabledate_format_relative() {
     fi
 
     _sayabledate_apply_compactness "${compactness}"
-    _sa_clear_day_exceptions=0
-    if [ "${compactness}" = "short" ] && [ -n "${_short_day_format+x}" ]; then
-        _sa_clear_day_exceptions=1
-    elif [ "${compactness}" = "compact" ] && [ -n "${_compact_day_format+x}" ]; then
-        _sa_clear_day_exceptions=1
-    fi
 
     if ! _sayabledate_parse_date "${date_str}"; then
         echo ""

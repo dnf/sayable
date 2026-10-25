@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/zu.json
 
-_plural_zu() {
+_sayableduration_plural_zu() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_zu() {
+_sayableduration_locale_zu() {
     _unit_second_one='isekhondi {n}'
     _unit_second_other='amasekhondi {n}'
     _unit_minute_one='umzuzu {n}'
@@ -62,5 +62,5 @@ _locale_zu() {
     _compact_delimiter=''
     _compact_ago='{0} edlule'
     _compact_in_future='ngo-{0}'
-    _plural_func=_plural_zu
+    _plural_func=_sayableduration_plural_zu
 }

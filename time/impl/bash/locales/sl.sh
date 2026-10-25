@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/sl.json
 
-_locale_sl() {
+_sayabletime_locale_sl() {
     _clock_hours=('dvanajst' 'ena' 'dve' 'tri' 'štiri' 'pet' 'šest' 'sedem' 'osem' 'devet' 'deset' 'enajst')
     _clock_midnight='polnoč'
     _clock_noon='poldne'

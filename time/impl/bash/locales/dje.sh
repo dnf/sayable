@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/dje.json
 
-_locale_dje() {
+_sayabletime_locale_dje() {
     _clock_hours=('way cindi' 'afoo' 'ihinka' 'ihinza' 'itaaci' 'igu' 'iddu' 'iyye' 'isahkay' 'iyegga' 'iwoy' 'iwoy cindi')
     _clock_midnight='cin beri'
     _clock_noon='zaari gaaham'

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/bem.json
 
-_plural_bem() {
+_sayableage_plural_bem() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_bem() {
+_sayableage_locale_bem() {
     _unit_day_one='ubushiku {n}'
     _unit_day_other='inshiku {n}'
     _unit_week_one='umulungu {n}'
@@ -47,5 +47,5 @@ _locale_bem() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_bem
+    _plural_func=_sayableage_plural_bem
 }

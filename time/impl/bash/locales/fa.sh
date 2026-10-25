@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/fa.json
 
-_locale_fa() {
+_sayabletime_locale_fa() {
     _clock_hours=('دوازده' 'یک' 'دو' 'سه' 'چهار' 'پنج' 'شش' 'هفت' 'هشت' 'نه' 'ده' 'یازده')
     _clock_midnight='نیمه‌شب'
     _clock_noon='ظهر'

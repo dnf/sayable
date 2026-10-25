@@ -173,4 +173,47 @@ t.assert("8.1", fiFmt.formatTime("14:15"), "14.15")
 t.assert("8.2", fiFmt.formatTime("00:00"), "0.00")
 
 // ================================================================
+// 9. Minutes in short and compact modes
+// ================================================================
+t.section("9. Minutes in short and compact modes")
+
+// 9.1
+t.assert("9.1", shortFmt.formatTime("18:01"), "6:01 PM")
+
+// 9.2
+t.assert("9.2", compactFmt.formatTime("19:05"), "7:05p")
+
+// ================================================================
+// 10. Input validation
+// ================================================================
+t.section("10. Input validation")
+
+// 10.1
+t.assert("10.1", fmt.formatTime("9:30"), "half past nine")
+
+// 10.2
+t.assert("10.2", fmt.formatTime("09:30"), "half past nine")
+
+// 10.3
+t.assertNull("10.3", fmt.formatTime(" 9:30"))
+
+// 10.4
+t.assertNull("10.4", fmt.formatTime("9:30 "))
+
+// 10.5
+t.assertNull("10.5", fmt.formatTime("9:5"))
+
+// 10.6
+t.assertNull("10.6", fmt.formatTime("24:00"))
+
+// 10.7
+t.assert("10.7", fmt.formatTime("14:15:30"), "a quarter past two")
+
+// 10.8
+t.assert("10.8", fmt.formatTime("2025-01-15T14:15:00Z"), "a quarter past two")
+
+// 10.9
+t.assertNull("10.9", fmt.formatTime("2025-02-30T14:15:00"))
+
+// ================================================================
 t.summary()

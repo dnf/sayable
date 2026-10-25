@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/tn.json
 
-_plural_tn() {
+_sayableage_plural_tn() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tn() {
+_sayableage_locale_tn() {
     _unit_day_one='letsatsi {n}'
     _unit_day_other='malatsi {n}'
     _unit_week_one='beke {n}'
@@ -47,5 +47,5 @@ _locale_tn() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_tn
+    _plural_func=_sayableage_plural_tn
 }

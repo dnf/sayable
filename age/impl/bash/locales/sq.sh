@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sq.json
 
-_plural_sq() {
+_sayableage_plural_sq() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sq() {
+_sayableage_locale_sq() {
     _unit_day_one='{n} ditë'
     _unit_day_other='{n} ditë'
     _unit_week_one='{n} javë'
@@ -49,5 +49,5 @@ _locale_sq() {
     _compact_unit_year_other='{n} vjet'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_sq
+    _plural_func=_sayableage_plural_sq
 }

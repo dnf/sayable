@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/lb.json
 
-_locale_lb() {
+_sayabledate_locale_lb() {
     _months=('Januar' 'Februar' 'Mäerz' 'Abrëll' 'Mee' 'Juni' 'Juli' 'August' 'September' 'Oktober' 'November' 'Dezember')
     _weekdays=('Sonndeg' 'Méindeg' 'Dënschdeg' 'Mëttwoch' 'Donneschdeg' 'Freideg' 'Samschdeg')
     _day_format='{n}.'

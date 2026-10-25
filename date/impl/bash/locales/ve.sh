@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ve.json
 
-_locale_ve() {
+_sayabledate_locale_ve() {
     _months=('Phando' 'Luhuhi' 'Thafamuhwe' 'Lambamai' 'Shundunthule' 'Fulwi' 'Fulwana' 'Thangule' 'Khubvumedzi' 'Tshimedzi' 'Lara' 'Nyendavhusiku')
     _weekdays=('Swondaha' 'Musumbuluwo' 'Lavhuvhili' 'Lavhuraru' 'Lavhuna' 'Lavhutanu' 'Mugivhela')
     _day_format='{n}'

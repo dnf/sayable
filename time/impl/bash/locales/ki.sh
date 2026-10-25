@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ki.json
 
-_locale_ki() {
+_sayabletime_locale_ki() {
     _clock_hours=('ikũmi na igĩrĩ' 'ĩmwe' 'igĩrĩ' 'ithatũ' 'inya' 'ithano' 'ithathatũ' 'mũgwanja' 'inyanya' 'kenda' 'ikũmi' 'ikũmi na ĩmwe')
     _clock_midnight='ũtukũ gatagatĩ'
     _clock_noon='mũthenya gatagatĩ'

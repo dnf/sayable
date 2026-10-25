@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/pis.json
 
-_locale_pis() {
+_sayabletime_locale_pis() {
     _clock_hours=('twelf' 'wan' 'tu' 'tri' 'foa' 'faev' 'sikis' 'seven' 'eit' 'naen' 'ten' 'eleven')
     _clock_midnight='midonaet'
     _clock_noon='midei'

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ny.json
 
-_plural_ny() {
+_sayableage_plural_ny() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ny() {
+_sayableage_locale_ny() {
     _unit_day_one='tsiku {n}'
     _unit_day_other='masiku {n}'
     _unit_week_one='sabata {n}'
@@ -51,5 +51,5 @@ _locale_ny() {
     _compact_unit_year_other='z {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ny
+    _plural_func=_sayableage_plural_ny
 }

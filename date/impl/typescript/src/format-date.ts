@@ -3,17 +3,25 @@ import { en } from './locale.js';
 
 export const VERSION = '0.5.0';
 
-/** Parse YYYY-MM-DD or ISO datetime to [year, month, day]. Returns null on failure. */
+/** YYYY-MM-DD, alone or followed by T and anything (an ISO datetime). */
+const DATE_PATTERN = /^(\d{4})-(\d{2})-(\d{2})(?:T|$)/;
+
+function daysInMonth(year: number, month: number): number {
+  if (month === 2) return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
+  return month === 4 || month === 6 || month === 9 || month === 11 ? 30 : 31;
+}
+
+/**
+ * Parse YYYY-MM-DD, optionally followed by T and a time, to [year, month, day].
+ * The date must name a real calendar day. Returns null on failure.
+ */
 function parseDate(input: string): [number, number, number] | null {
-  if (!input) return null;
-  const datePart = input.includes('T') ? input.split('T')[0] ?? '' : input;
-  const parts = datePart.split('-');
-  if (parts.length !== 3) return null;
-  const year = Number(parts[0]);
-  const month = Number(parts[1]);
-  const day = Number(parts[2]);
-  if (isNaN(year) || isNaN(month) || isNaN(day)) return null;
-  if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+  const match = DATE_PATTERN.exec(input);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  if (month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month)) return null;
   return [year, month, day];
 }
 

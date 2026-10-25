@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/it.json
 
-_locale_it() {
+_sayabledate_locale_it() {
     _months=('gennaio' 'febbraio' 'marzo' 'aprile' 'maggio' 'giugno' 'luglio' 'agosto' 'settembre' 'ottobre' 'novembre' 'dicembre')
     _weekdays=('domenica' 'lunedì' 'martedì' 'mercoledì' 'giovedì' 'venerdì' 'sabato')
     _day_format='{n}'

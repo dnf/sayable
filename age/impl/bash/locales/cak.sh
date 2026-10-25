@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/cak.json
 
-_plural_cak() {
+_sayableage_plural_cak() {
     echo "other"
 }
 
-_locale_cak() {
+_sayableage_locale_cak() {
     _unit_day='{n} q'\''ij'
     _unit_week='{n} wuqq'\''ij'
     _unit_month='{n} ik'\'''
@@ -36,5 +36,5 @@ _locale_cak() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_cak
+    _plural_func=_sayableage_plural_cak
 }

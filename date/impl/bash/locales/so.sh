@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/so.json
 
-_locale_so() {
+_sayabledate_locale_so() {
     _months=('Janaayo' 'Febraayo' 'Maarso' 'Abriil' 'Maajo' 'Juun' 'Luuliyo' 'Ogost' 'Sebtembar' 'Oktoobar' 'Nofembar' 'Disembar')
     _weekdays=('Axad' 'Isniin' 'Talaado' 'Arbaco' 'Khamiis' 'Jimco' 'Sabti')
     _day_format='{n}'

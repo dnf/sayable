@@ -19,7 +19,7 @@ def emit_locale(data: dict) -> str:
     lines = [HEADER + locale_source_comment(code, line_prefix="# ")]
 
     # Locale data function that sets variables in the caller's scope
-    lines.append(f"_locale_{code}() {{")
+    lines.append(f"_sayabletime_locale_{code}() {{")
 
     # Hours array (12 entries, 0-indexed)
     hours_str = " ".join(_quote(h) for h in clock["hours"])
@@ -78,7 +78,7 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("    local known")
     lines.append("    for known in ${_SAYABLETIME_LOCALES}; do")
     lines.append("        if [ \"${known}\" = \"${code}\" ]; then")
-    lines.append("            _locale_${code}")
+    lines.append("            _sayabletime_locale_${code}")
     lines.append("            return 0")
     lines.append("        fi")
     lines.append("    done")

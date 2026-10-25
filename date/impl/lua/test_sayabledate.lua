@@ -347,3 +347,103 @@ describe("Locale — Spanish", function()
         assert.are.equal("pasado mañana", sdf.format_relative("2025-03-17", "2025-03-15"))
     end)
 end)
+
+-- ================================================================
+-- Sections 13-16: with year, short months, short phrases, input validation
+-- ================================================================
+describe("Sections 13-16: with year, short months, short phrases, input validation", function()
+    -- 13.1
+    it("format_date_with_year", function()
+        assert.are.equal("February 4th, 2018", sd.new(sd.get_locale("en")).format_date_with_year("2018-02-04"))
+    end)
+
+    -- 13.2
+    it("format_date_with_year", function()
+        assert.are.equal("Mar 15, 2025", sd.new(sd.get_locale("en"), "short").format_date_with_year("2025-03-15"))
+    end)
+
+    -- 13.3
+    it("format_date_with_year", function()
+        assert.are.equal("1/21/97", sd.new(sd.get_locale("en"), "compact").format_date_with_year("1997-01-21"))
+    end)
+
+    -- 13.4
+    it("two-digit year keeps its leading zero", function()
+        assert.are.equal("20/5/07", sd.new(sd.get_locale("tg"), "compact").format_date_with_year("2007-05-20"))
+    end)
+
+    -- 13.5
+    it("format_date_with_year", function()
+        assert.are.equal("21. kesäkuuta 1996", sd.new(sd.get_locale("fi"), "short").format_date_with_year("1996-06-21"))
+    end)
+
+    -- 14.1
+    it("format_date", function()
+        assert.are.equal("15. februára", sd.new(sd.get_locale("sk"), "short").format_date("2031-02-15"))
+    end)
+
+    -- 14.2
+    it("format_date", function()
+        assert.are.equal("10. prosince", sd.new(sd.get_locale("cs"), "short").format_date("2025-12-10"))
+    end)
+
+    -- 14.3
+    it("format_date", function()
+        assert.are.equal("5 листопада", sd.new(sd.get_locale("uk"), "short").format_date("2025-11-05"))
+    end)
+
+    -- 14.4
+    it("format_relative", function()
+        assert.are.equal("8. elokuuta", sd.new(sd.get_locale("fi"), "short").format_relative("1998-08-08", "1998-08-15"))
+    end)
+
+    -- 15.1
+    it("day after tomorrow", function()
+        assert.are.equal("an Mth ma", sd.new(sd.get_locale("kw"), "short").format_relative("2035-12-04", "2035-12-02"))
+    end)
+
+    -- 15.2
+    it("day before yesterday", function()
+        assert.are.equal("Dom nchi'j", sd.new(sd.get_locale("mam"), "short").format_relative("2000-01-23", "2000-01-25"))
+    end)
+
+    -- 15.3
+    it("day after tomorrow", function()
+        assert.are.equal("a'in Vie", sd.new(sd.get_locale("kek"), "short").format_relative("2014-10-24", "2014-10-22"))
+    end)
+
+    -- 16.1
+    it("February 30 doesn't exist", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_date("2025-02-30"))
+    end)
+
+    -- 16.2
+    it("Month 13", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_date("2025-13-01"))
+    end)
+
+    -- 16.3
+    it("Unpadded month and day", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_date("2025-6-1"))
+    end)
+
+    -- 16.4
+    it("Surrounding whitespace", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_date(" 2025-06-01"))
+    end)
+
+    -- 16.5
+    it("An ISO datetime: only the date part is used", function()
+        assert.are.equal("June 1st", sd.new(sd.get_locale("en")).format_date("2025-06-01T10:00:00"))
+    end)
+
+    -- 16.6
+    it("February 29 in a non-leap year", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_date_with_year("2023-02-29"))
+    end)
+
+    -- 16.7
+    it("Invalid asOf", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_relative("2025-03-16", "2025-04-31"))
+    end)
+end)

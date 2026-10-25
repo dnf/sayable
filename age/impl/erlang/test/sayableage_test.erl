@@ -361,3 +361,34 @@ locale_lookup_test_() ->
      ?_assertEqual(error, sayableage:get_locale("")),                            %% 30.4
      ?_assertEqual(error, sayableage:get_locale("EN"))                           %% 30.5
     ].
+
+%% 31. Weeks and days across month ends
+weeks_days_across_month_ends_test_() ->
+    [?_assertEqual({ok, "12 weeks, 4 days"}, age("2016-12-31", "2017-03-29")),       %% 31.1
+     ?_assertEqual({ok, "12 weeks, 6 days"}, age("1991-11-27", "1992-02-25")),       %% 31.2
+     ?_assertEqual({ok, "4 weeks, 5 days"}, age("2020-11-30", "2021-01-02")),        %% 31.3
+     ?_assertEqual({ok, "12w4d"}, age_compact("2016-12-31", "2017-03-29"))           %% 31.4
+    ].
+
+%% 32. Half years take their plural form from whole years
+half_year_plural_test_() ->
+    Pl = sayableage_locales_pl:locale(),
+    Shi = sayableage_locales_shi:locale(),
+    [?_assertEqual({ok, "3 i pół lata"}, age_locale(Pl, "2021-06-15", "2025-01-15")),                          %% 32.1
+     ?_assertEqual({ok, "5 i pół lat"}, sayableage:format_age_pure(Pl, short, "2020-06-15", "2025-12-15")),   %% 32.2
+     ?_assertEqual({ok, "6 iseggasen d uzgen"}, age_locale(Shi, "2005-06-08", "2012-06-07"))                  %% 32.3
+    ].
+
+%% 33. Input validation
+input_validation_test_() ->
+    [?_assertEqual(error, age("2025-02-30", "2032-06-25")),            %% 33.1
+     ?_assertEqual(error, age("2025-13-01", "2027-01-31")),            %% 33.2
+     ?_assertEqual(error, age("2023-02-29", "2025-03-01")),            %% 33.3
+     ?_assertEqual(error, age("2025-06-00", "2027-02-25")),            %% 33.4
+     ?_assertEqual(error, age("2025-6-1", "2027-02-25")),              %% 33.5
+     ?_assertEqual(error, age(" 2025-06-01", "2027-02-25")),           %% 33.6
+     ?_assertEqual(error, age("2025-06-15T10:00:00", "2027-02-25")),   %% 33.7
+     ?_assertEqual(error, age("2020-01-01", "2025-04-31")),            %% 33.8
+     ?_assertEqual(error, stage("2025-02-30", "2027-09-05")),          %% 33.9
+     ?_assertEqual({ok, "2 years"}, age("2024-02-29", "2026-03-01"))  %% 33.10
+    ].

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kbp.json
 
-_plural_kbp() {
+_sayableduration_plural_kbp() {
     echo "other"
 }
 
-_locale_kbp() {
+_sayableduration_locale_kbp() {
     _unit_second='sɛɡɔŋ {n}'
     _unit_minute='miniti {n}'
     _unit_hour='ñɩɣyʊʊ {n}'
@@ -46,5 +46,5 @@ _locale_kbp() {
     _compact_delimiter=''
     _compact_ago='{0} yɔ'
     _compact_in_future='pɩ {0}'
-    _plural_func=_plural_kbp
+    _plural_func=_sayableduration_plural_kbp
 }

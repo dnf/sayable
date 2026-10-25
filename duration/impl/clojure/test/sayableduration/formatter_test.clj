@@ -352,3 +352,70 @@
 (deftest version-matches-config
   (testing "version matches config"
     (is (= "0.5.0" sayableduration.formatter/version))))
+
+;; ================================================================
+;; Short compactness — relative time
+;; ================================================================
+
+;; 18.1
+(deftest case-18-1-days-and-hours-both-kept
+  (testing "18.1 days and hours both kept"
+    (is (= "l\u0254h\u0254nga 2, awa 14 taa gb\u0254y\u0254" (sd/format-since (sd/get-locale "men") :short "2025-01-20T01:32:11" "2025-01-22T15:39:16")))))
+
+;; ================================================================
+;; Range (500-year ceiling)
+;; ================================================================
+
+;; 19.1
+(deftest case-19-1-500-julian-years-6000-months-the-ceiling
+  (testing "19.1 500 julian years 6000 months the ceiling"
+    (is (= "500 years" (sd/format-duration-seconds (sd/get-locale "en") :normal 15778800000)))))
+
+;; 19.2
+(deftest case-19-2-over-6000-months
+  (testing "19.2 over 6000 months"
+    (is (nil? (sd/format-duration-seconds (sd/get-locale "en") :normal 15800000000)))))
+
+;; 19.3
+(deftest case-19-3-well-beyond-the-ceiling-and-32-bit
+  (testing "19.3 well beyond the ceiling and 32 bit"
+    (is (nil? (sd/format-duration-seconds (sd/get-locale "en") :normal 99999999999)))))
+
+;; 19.4
+(deftest case-19-4-525-years-ago
+  (testing "19.4 525 years ago"
+    (is (nil? (sd/format-since (sd/get-locale "en") :normal "1500-01-01T00:00:00" "2025-01-01T00:00:00")))))
+
+;; 19.5
+(deftest case-19-5-575-years-from-now
+  (testing "19.5 575 years from now"
+    (is (nil? (sd/format-until (sd/get-locale "en") :normal "2600-01-01T00:00:00" "2025-01-01T00:00:00")))))
+
+;; ================================================================
+;; Timestamp validation
+;; ================================================================
+
+;; 20.1
+(deftest case-20-1-seconds-are-optional
+  (testing "20.1 seconds are optional"
+    (is (= "1\u00BD hours" (sd/format-duration-iso (sd/get-locale "en") :normal "2025-01-15T10:00" "2025-01-15T11:30:00")))))
+
+;; 20.2
+(deftest case-20-2-minutes-are-required
+  (testing "20.2 minutes are required"
+    (is (nil? (sd/format-duration-iso (sd/get-locale "en") :normal "2025-01-15T10" "2025-01-15T11:30:00")))))
+
+;; 20.3
+(deftest case-20-3-unpadded-date
+  (testing "20.3 unpadded date"
+    (is (nil? (sd/format-duration-iso (sd/get-locale "en") :normal "2025-1-5T10:00:00" "2025-01-15T11:30:00")))))
+
+;; 20.4
+(deftest case-20-4-impossible-date
+  (testing "20.4 impossible date"
+    (is (nil? (sd/format-duration-iso (sd/get-locale "en") :normal "2025-02-30T10:00:00" "2025-03-15T11:30:00")))))
+
+;; 20.5
+(deftest case-20-5-hour-out-of-range
+  (testing "20.5 hour out of range"
+    (is (nil? (sd/format-since (sd/get-locale "en") :normal "2025-01-15T10:00:00" "2025-01-15T25:00:00")))))

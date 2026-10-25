@@ -181,7 +181,7 @@ import { zu } from './zu.js';
 const _ALL: Record<string, DurationLocale> = { af, ak, am, ar, ay, az, bci, be, bem, bg, bi, bm, bn, br, bs, ca, cak, ceb, cs, cy, da, de, din, dje, dv, dyu, dz, ee, el, en, es, et, eu, fa, fan, ff, fi, fil, fj, fon, fr, ga, gd, gl, gn, gu, gv, ha, he, hi, hmn, hr, ht, hu, hy, id, ig, is, it, ja, jv, ka, kbp, kek, ki, kk, kl, km, kn, ko, kpe, kri, ktu, ku, kw, ky, lb, lg, ln, lo, lt, luo, lv, mam, men, mfe, mg, mi, mk, ml, mn, mnk, mos, mr, ms, mt, my, nb, nd, ne, ng, nl, nr, nso, nus, ny, om, or, pa, pis, pl, pov, ps, pt, qu, quc, ro, ru, rw, sar, sd, sg, shi, shn, si, sk, sl, sn, snk, so, sq, sr, ss, st, su, suk, sv, sw, ta, te, tem, tet, tg, th, ti, tig, tk, tn, tpi, tr, ts, tum, tzm, uk, umb, ur, uz, ve, vi, vmw, wo, xh, yao, yo, yue, zdj, zh, zu };
 
 export function getLocale(code: string): DurationLocale | undefined {
-  return _ALL[code];
+  return Object.hasOwn(_ALL, code) ? _ALL[code] : undefined;
 }
 
 export { af, ak, am, ar, ay, az, bci, be, bem, bg, bi, bm, bn, br, bs, ca, cak, ceb, cs, cy, da, de, din, dje, dv, dyu, dz, ee, el, en, es, et, eu, fa, fan, ff, fi, fil, fj, fon, fr, ga, gd, gl, gn, gu, gv, ha, he, hi, hmn, hr, ht, hu, hy, id, ig, is, it, ja, jv, ka, kbp, kek, ki, kk, kl, km, kn, ko, kpe, kri, ktu, ku, kw, ky, lb, lg, ln, lo, lt, luo, lv, mam, men, mfe, mg, mi, mk, ml, mn, mnk, mos, mr, ms, mt, my, nb, nd, ne, ng, nl, nr, nso, nus, ny, om, or, pa, pis, pl, pov, ps, pt, qu, quc, ro, ru, rw, sar, sd, sg, shi, shn, si, sk, sl, sn, snk, so, sq, sr, ss, st, su, suk, sv, sw, ta, te, tem, tet, tg, th, ti, tig, tk, tn, tpi, tr, ts, tum, tzm, uk, umb, ur, uz, ve, vi, vmw, wo, xh, yao, yo, yue, zdj, zh, zu };

@@ -217,13 +217,6 @@ fn resolveUnit(w: *Writer, count: i32, uf: UnitForms, locale: *const DurationLoc
 
 // ---- ISO datetime parsing ----
 
-fn indexOfByte(s: []const u8, needle: u8) ?usize {
-    for (s, 0..) |c, i| {
-        if (c == needle) return i;
-    }
-    return null;
-}
-
 fn parseDigits(s: []const u8) ?i32 {
     if (s.len == 0) return null;
     var v: i32 = 0;
@@ -265,52 +258,57 @@ fn daysSinceEpoch(year: i32, month: i32, day: i32) i64 {
     return days;
 }
 
-fn parseISOToSeconds(iso: []const u8) ?i64 {
-    if (iso.len == 0) return null;
+/// Number of leading ASCII digits in s.
+fn digitRun(s: []const u8) usize {
+    var n: usize = 0;
+    while (n < s.len and s[n] >= '0' and s[n] <= '9') n += 1;
+    return n;
+}
 
-    const t_idx = indexOfByte(iso, 'T') orelse return null;
-    const date_part = iso[0..t_idx];
-    var time_part = iso[t_idx + 1 ..];
+/// Nothing, "Z", or "+HH:MM" / "-HH:MM".
+fn isZoneSuffix(s: []const u8) bool {
+    if (s.len == 0) return true;
+    if (s.len == 1) return s[0] == 'Z';
+    return s.len == 6 and (s[0] == '+' or s[0] == '-') and digitRun(s[1..3]) == 2 and
+        s[3] == ':' and digitRun(s[4..6]) == 2;
+}
 
-    // Parse date
-    if (date_part.len < 10 or date_part[4] != '-' or date_part[7] != '-') return null;
-    const year = parseDigits(date_part[0..4]) orelse return null;
-    const month = parseDigits(date_part[5..7]) orelse return null;
-    const day = parseDigits(date_part[8..10]) orelse return null;
+const Clock = struct { hour: i32, minute: i32, second: i32 };
 
-    // Strip timezone
-    for (time_part, 0..) |c, i| {
-        if (c == '+' or c == 'Z') {
-            time_part = time_part[0..i];
-            break;
-        }
-    }
-
-    // Parse time HH:MM:SS
-    const c1 = indexOfByte(time_part, ':') orelse return null;
-    const hour = parseDigits(time_part[0..c1]) orelse return null;
-    const rest = time_part[c1 + 1 ..];
-
-    var minute: i32 = 0;
+/// H:MM or HH:MM, optional :SS, optional . plus digits after the seconds, and
+/// an optional zone suffix, which is validated but ignored.
+fn parseClock(clock: []const u8) ?Clock {
+    const hour_len = digitRun(clock);
+    if (hour_len < 1 or hour_len > 2 or clock.len < hour_len + 3 or clock[hour_len] != ':') return null;
+    const hour = parseDigits(clock[0..hour_len]) orelse return null;
+    const minute = parseDigits(clock[hour_len + 1 .. hour_len + 3]) orelse return null;
+    var rest = clock[hour_len + 3 ..];
     var second: i32 = 0;
-
-    if (indexOfByte(rest, ':')) |c2| {
-        minute = parseDigits(rest[0..c2]) orelse return null;
-        var sec_str = rest[c2 + 1 ..];
-        // Strip fractional seconds
-        for (sec_str, 0..) |c, i| {
-            if (c == '.') {
-                sec_str = sec_str[0..i];
-                break;
-            }
+    if (rest.len > 0 and rest[0] == ':') {
+        if (rest.len < 3) return null;
+        second = parseDigits(rest[1..3]) orelse return null;
+        rest = rest[3..];
+        if (rest.len > 0 and rest[0] == '.') {
+            const fraction_len = digitRun(rest[1..]);
+            if (fraction_len == 0) return null;
+            rest = rest[1 + fraction_len ..];
         }
-        second = parseDigits(sec_str) orelse return null;
-    } else {
-        minute = parseDigits(rest) orelse return null;
     }
+    if (!isZoneSuffix(rest) or hour > 23 or minute > 59 or second > 59) return null;
+    return .{ .hour = hour, .minute = minute, .second = second };
+}
 
+/// A timestamp YYYY-MM-DDTHH:MM[:SS[.fff]][zone] (docs/input-formats.md) as
+/// seconds since 2000-01-01 for diffing.
+fn parseISOToSeconds(iso: []const u8) ?i64 {
+    if (iso.len < 11 or iso[4] != '-' or iso[7] != '-' or iso[10] != 'T') return null;
+    const year = parseDigits(iso[0..4]) orelse return null;
+    const month = parseDigits(iso[5..7]) orelse return null;
+    const day = parseDigits(iso[8..10]) orelse return null;
+    if (month < 1 or month > 12 or day < 1 or day > daysInMonth(year, month)) return null;
+    const clock = parseClock(iso[11..]) orelse return null;
     const days = daysSinceEpoch(year, month, day);
-    return days * 86400 + @as(i64, hour) * 3600 + @as(i64, minute) * 60 + @as(i64, second);
+    return days * 86400 + @as(i64, clock.hour) * 3600 + @as(i64, clock.minute) * 60 + @as(i64, clock.second);
 }
 
 // ---- Resolved locale fields ----
@@ -371,16 +369,26 @@ fn resolveLocale(locale: *const DurationLocale, compactness: Compactness) Resolv
 
 // ---- Round division for month approximation ----
 
-fn roundDiv(total_days: i32) i32 {
+fn roundDiv(total_days: i64) i64 {
     // round(totalDays / 30.44) using integer arithmetic
     // = floor(totalDays * 100 / 3044 + 0.5)
-    const numerator: i64 = @as(i64, total_days) * 200 + 3044;
-    return @intCast(@divTrunc(numerator, 6088));
+    return @divTrunc(total_days * 200 + 3044, 6088);
+}
+
+/// Durations over 6000 months (500 years) have no value: the same ceiling as sayable-age.
+const max_duration_months = 6000;
+
+fn isOverCeiling(total_seconds: i64) bool {
+    const total_days = @divTrunc(total_seconds, 86400);
+    return total_days >= 30 and roundDiv(total_days) > max_duration_months;
 }
 
 // ---- Format duration from seconds ----
 
-fn formatDurationSeconds(buf: []u8, locale: *const DurationLocale, rl: *const ResolvedLocale, total: i32) ?[]const u8 {
+fn formatDurationSeconds(buf: []u8, locale: *const DurationLocale, rl: *const ResolvedLocale, total_seconds: i64) ?[]const u8 {
+    if (total_seconds < 0 or isOverCeiling(total_seconds)) return null;
+    // Within the 500-year ceiling (under 2^34 seconds), every count below fits an i32.
+    const total: i64 = total_seconds;
     var w = Writer.init(buf);
 
     // 0 seconds
@@ -391,12 +399,12 @@ fn formatDurationSeconds(buf: []u8, locale: *const DurationLocale, rl: *const Re
 
     // 1-59 seconds
     if (total < 60) {
-        resolveUnit(&w, total, rl.second, locale, "");
+        resolveUnit(&w, @intCast(total), rl.second, locale, "");
         return if (w.overflow) null else w.slice();
     }
 
-    const total_minutes = @divTrunc(total, 60);
-    const remainder_seconds = @mod(total, 60);
+    const total_minutes: i32 = @intCast(@divTrunc(total, 60));
+    const remainder_seconds: i32 = @intCast(@mod(total, 60));
 
     // 1-4 minutes: minutes + seconds
     if (total_minutes < 5) {
@@ -414,8 +422,8 @@ fn formatDurationSeconds(buf: []u8, locale: *const DurationLocale, rl: *const Re
         return if (w.overflow) null else w.slice();
     }
 
-    const total_hours = @divTrunc(total, 3600);
-    const remainder_minutes = @divTrunc(@mod(total, 3600), 60);
+    const total_hours: i32 = @intCast(@divTrunc(total, 3600));
+    const remainder_minutes: i32 = @intCast(@divTrunc(@mod(total, 3600), 60));
 
     // 1-5 hours: hours + minutes (with half marker)
     if (total_hours <= 5) {
@@ -437,8 +445,8 @@ fn formatDurationSeconds(buf: []u8, locale: *const DurationLocale, rl: *const Re
         return if (w.overflow) null else w.slice();
     }
 
-    const total_days = @divTrunc(total, 86400);
-    const remainder_hours = @divTrunc(@mod(total, 86400), 3600);
+    const total_days: i32 = @intCast(@divTrunc(total, 86400));
+    const remainder_hours: i32 = @intCast(@divTrunc(@mod(total, 86400), 3600));
 
     // 1-2 days: days + hours (with half marker)
     if (total_days <= 2) {
@@ -473,7 +481,7 @@ fn formatDurationSeconds(buf: []u8, locale: *const DurationLocale, rl: *const Re
     }
 
     // Approximate months
-    var total_months = roundDiv(total_days);
+    var total_months: i32 = @intCast(roundDiv(total_days));
     if (total_months < 12) {
         if (total_months == 0) total_months = 1;
         resolveUnit(&w, total_months, rl.month, locale, "");
@@ -493,7 +501,7 @@ fn formatDurationSeconds(buf: []u8, locale: *const DurationLocale, rl: *const Re
 
 // ---- Public API ----
 
-pub fn formatDurationSecs(buf: []u8, locale: *const DurationLocale, compactness: Compactness, seconds: i32) ?[]const u8 {
+pub fn formatDurationSecs(buf: []u8, locale: *const DurationLocale, compactness: Compactness, seconds: i64) ?[]const u8 {
     if (seconds < 0) return null;
     const rl = resolveLocale(locale, compactness);
     return formatDurationSeconds(buf, locale, &rl, seconds);
@@ -506,7 +514,7 @@ pub fn formatDurationISO(buf: []u8, locale: *const DurationLocale, compactness: 
     var total = e - s;
     if (total < 0) total = -total;
     const rl = resolveLocale(locale, compactness);
-    return formatDurationSeconds(buf, locale, &rl, @intCast(total));
+    return formatDurationSeconds(buf, locale, &rl, total);
 }
 
 pub fn formatSince(buf: []u8, locale: *const DurationLocale, compactness: Compactness, start: []const u8, as_of: []const u8) ?[]const u8 {
@@ -526,7 +534,7 @@ pub fn formatSince(buf: []u8, locale: *const DurationLocale, compactness: Compac
 
     // Format the duration part into a temp buffer
     var dur_buf: [256]u8 = undefined;
-    const dur = formatDurationSeconds(&dur_buf, locale, &rl, @intCast(diff)) orelse return null;
+    const dur = formatDurationSeconds(&dur_buf, locale, &rl, diff) orelse return null;
 
     // Wrap with ago template
     var w = Writer.init(buf);
@@ -550,7 +558,7 @@ pub fn formatUntil(buf: []u8, locale: *const DurationLocale, compactness: Compac
     }
 
     var dur_buf: [256]u8 = undefined;
-    const dur = formatDurationSeconds(&dur_buf, locale, &rl, @intCast(diff)) orelse return null;
+    const dur = formatDurationSeconds(&dur_buf, locale, &rl, diff) orelse return null;
 
     var w = Writer.init(buf);
     replaceFirst(&w, rl.in_future, "{0}", dur);

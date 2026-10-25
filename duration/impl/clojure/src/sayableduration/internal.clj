@@ -1,12 +1,8 @@
-(ns sayableduration.internal
-  (:require [clojure.string :as str]))
+(ns sayableduration.internal)
 
-(defn- all-digits? [^String s]
-  (every? #(Character/isDigit ^char %) s))
-
-(defn- safe-atoi [^String s]
-  (when (and (seq s) (all-digits? s))
-    (Integer/parseInt s)))
+(def ^:private timestamp-pattern
+  "YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored)."
+  #"([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?")
 
 (defn- leap-year? [y]
   (or (and (== (mod y 4) 0) (not= (mod y 100) 0))
@@ -30,29 +26,11 @@
       (swap! days + (days-in-month year m)))
     (+ @days day -1)))
 
-(defn parse-iso-to-seconds [^String iso]
-  (when (and (string? iso) (seq iso))
-    (let [t-idx (.indexOf iso (int \T))]
-      (when (>= t-idx 0)
-        (let [date-part (subs iso 0 t-idx)
-              time-part (subs iso (inc t-idx))
-              dp (str/split date-part #"-")]
-          (when (>= (count dp) 3)
-            (when-let [year (safe-atoi (nth dp 0))]
-              (when-let [month (safe-atoi (nth dp 1))]
-                (when-let [day (safe-atoi (nth dp 2))]
-                  (let [;; Strip timezone
-                        tp (-> time-part
-                                (str/split #"\+" 2)
-                                first
-                                (str/split #"Z" 2)
-                                first)
-                        parts (str/split tp #":")]
-                    (when-let [hour (safe-atoi (first parts))]
-                      (let [minute (if (> (count parts) 1) (safe-atoi (nth parts 1)) 0)
-                            second (if (> (count parts) 2)
-                                     (safe-atoi (first (str/split (nth parts 2) #"\.")))
-                                     0)]
-                        (when (and minute second)
-                          (let [days (days-since-epoch year month day)]
-                            (+ (* days 86400) (* hour 3600) (* minute 60) second)))))))))))))))
+(defn parse-iso-to-seconds
+  "Parses an ISO timestamp to epoch-relative seconds for diffing, else nil."
+  [iso]
+  (when-let [[_ & fields] (and (string? iso) (re-matches timestamp-pattern iso))]
+    (let [[year month day hour minute second] (map #(if % (Long/parseLong %) 0) fields)]
+      (when (and (<= 1 month 12) (<= 1 day (days-in-month year month))
+                 (<= hour 23) (<= minute 59) (<= second 59))
+        (+ (* (days-since-epoch year month day) 86400) (* hour 3600) (* minute 60) second)))))

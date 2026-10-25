@@ -4,27 +4,31 @@
 # "half past seven", "midnight".
 # Zero runtime dependencies.
 
+# A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+# suffix, which is ignored), alone or after the T of an ISO datetime.
+CLOCK_TIME_PATTERN <- paste0(
+  "^(?:([0-9]{4})-([0-9]{2})-([0-9]{2})T)?([0-9]{1,2}):([0-9]{2})",
+  "(?::([0-9]{2})(?:\\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\\z"
+)
+
+is_real_date_time <- function(year, month, day) {
+  if (month < 1 || month > 12 || day < 1) return(FALSE)
+  leap <- (year %% 4 == 0 && year %% 100 != 0) || year %% 400 == 0
+  last <- if (month == 2) (if (leap) 29 else 28) else if (month %in% c(4, 6, 9, 11)) 30 else 31
+  day <= last
+}
+
 parse_time_str <- function(input) {
-  if (is.null(input) || !is.character(input) || nchar(input) == 0) return(NULL)
-
-  t <- input
-  # Extract time from ISO datetime
-  t_idx <- regexpr("T", t, fixed = TRUE)
-  if (t_idx > 0) t <- substring(t, t_idx + 1)
-
-  # Strip timezone
-  plus_idx <- regexpr("+", t, fixed = TRUE)
-  if (plus_idx > 0) t <- substring(t, 1, plus_idx - 1)
-  z_idx <- regexpr("Z", t, fixed = TRUE)
-  if (z_idx > 0) t <- substring(t, 1, z_idx - 1)
-
-  parts <- strsplit(t, ":", fixed = TRUE)[[1]]
-  if (length(parts) < 2) return(NULL)
-
-  hour <- suppressWarnings(as.integer(parts[1]))
-  minute <- suppressWarnings(as.integer(parts[2]))
-  if (is.na(hour) || is.na(minute)) return(NULL)
-  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return(NULL)
+  if (!is.character(input) || length(input) != 1 || is.na(input)) return(NULL)
+  m <- regmatches(input, regexec(CLOCK_TIME_PATTERN, input, perl = TRUE))[[1]]
+  if (length(m) == 0) return(NULL)
+  if (m[2] != "" && !is_real_date_time(as.integer(m[2]), as.integer(m[3]), as.integer(m[4]))) {
+    return(NULL)
+  }
+  hour <- as.integer(m[5])
+  minute <- as.integer(m[6])
+  second <- if (m[7] == "") 0L else as.integer(m[7])
+  if (hour > 23 || minute > 59 || second > 59) return(NULL)
 
   list(hour = hour, minute = minute)
 }

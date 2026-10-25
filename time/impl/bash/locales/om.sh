@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/om.json
 
-_locale_om() {
+_sayabletime_locale_om() {
     _clock_hours=('kudha lama' 'tokko' 'lama' 'sadii' 'afur' 'shan' 'jaha' 'torba' 'saddeet' 'sagal' 'kudhan' 'kudha tokko')
     _clock_midnight='walakkii halkan'
     _clock_noon='guyyaa walakkaa'

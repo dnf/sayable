@@ -959,4 +959,152 @@ public class FormatAgeTest : IDisposable
 
     [Fact] public void GetLocaleIsCaseSensitive() =>
         Assert.Null(Locales.Get("EN"));
+
+    // ================================================================
+    // Weeks and days across month ends
+    // ================================================================
+
+    // 31.1
+    [Fact]
+    public void Spec31_1_88DaysAcrossA28DayFebruary()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Equal("12 weeks, 4 days", f.FormatAge("2016-12-31", "2017-03-29"));
+    }
+
+    // 31.2
+    [Fact]
+    public void Spec31_2_90DaysAcrossAYearEndInto()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Equal("12 weeks, 6 days", f.FormatAge("1991-11-27", "1992-02-25"));
+    }
+
+    // 31.3
+    [Fact]
+    public void Spec31_3_33DaysAcrossAYearEnd()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Equal("4 weeks, 5 days", f.FormatAge("2020-11-30", "2021-01-02"));
+    }
+
+    // 31.4
+    [Fact]
+    public void Spec31_4_CompactFormOf311()
+    {
+        var f = new SayableAgeFormatter(Locales.EN, Compactness.Compact);
+        Assert.Equal("12w4d", f.FormatAge("2016-12-31", "2017-03-29"));
+    }
+
+    // ================================================================
+    // Half years take their plural form from whole years
+    // ================================================================
+
+    // 32.1
+    [Fact]
+    public void Spec32_1_Polish3IsFew()
+    {
+        var f = new SayableAgeFormatter(Locales.PL);
+        Assert.Equal("3 i p\u00F3\u0142 lata", f.FormatAge("2021-06-15", "2025-01-15"));
+    }
+
+    // 32.2
+    [Fact]
+    public void Spec32_2_Polish5IsMany()
+    {
+        var f = new SayableAgeFormatter(Locales.PL, Compactness.Short);
+        Assert.Equal("5 i p\u00F3\u0142 lat", f.FormatAge("2020-06-15", "2025-12-15"));
+    }
+
+    // 32.3
+    [Fact]
+    public void Spec32_3_Tachelhit6IsFew()
+    {
+        var f = new SayableAgeFormatter(Locales.SHI);
+        Assert.Equal("6 iseggasen d uzgen", f.FormatAge("2005-06-08", "2012-06-07"));
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 33.1
+    [Fact]
+    public void Spec33_1_February30DoesntExist()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge("2025-02-30", "2032-06-25"));
+    }
+
+    // 33.2
+    [Fact]
+    public void Spec33_2_Month13()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge("2025-13-01", "2027-01-31"));
+    }
+
+    // 33.3
+    [Fact]
+    public void Spec33_3_February29InANonLeapYear()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge("2023-02-29", "2025-03-01"));
+    }
+
+    // 33.4
+    [Fact]
+    public void Spec33_4_Day00()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge("2025-06-00", "2027-02-25"));
+    }
+
+    // 33.5
+    [Fact]
+    public void Spec33_5_UnpaddedMonthAndDay()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge("2025-6-1", "2027-02-25"));
+    }
+
+    // 33.6
+    [Fact]
+    public void Spec33_6_SurroundingWhitespace()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge(" 2025-06-01", "2027-02-25"));
+    }
+
+    // 33.7
+    [Fact]
+    public void Spec33_7_ADatetimeIsNotADate()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge("2025-06-15T10:00:00", "2027-02-25"));
+    }
+
+    // 33.8
+    [Fact]
+    public void Spec33_8_InvalidAsOf()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatAge("2020-01-01", "2025-04-31"));
+    }
+
+    // 33.9
+    [Fact]
+    public void Spec33_9_FormatStageValidatesToo()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Null(f.FormatStage("2025-02-30", "2027-09-05"));
+    }
+
+    // 33.10
+    [Fact]
+    public void Spec33_10_February29InALeapYearIs()
+    {
+        var f = new SayableAgeFormatter(Locales.EN);
+        Assert.Equal("2 years", f.FormatAge("2024-02-29", "2026-03-01"));
+    }
 }

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/xh.json
 
-_plural_xh() {
+_sayableage_plural_xh() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_xh() {
+_sayableage_locale_xh() {
     _unit_day_one='usuku {n}'
     _unit_day_other='iintsuku {n}'
     _unit_week_one='iveki {n}'
@@ -47,5 +47,5 @@ _locale_xh() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_xh
+    _plural_func=_sayableage_plural_xh
 }

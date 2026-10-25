@@ -261,6 +261,69 @@ assert_eq [::sayabledate::format_date $es "2025-03-15"] "15 de marzo" "12.1"
 assert_eq [::sayabledate::format_relative $es "2025-03-17" "2025-03-15"] "pasado mañana" "12.2"
 
 # ================================================================
+# Sections 13-16: with year, short months, short phrases, input validation
+# ================================================================
+puts "Sections 13-16: with year, short months, short phrases, input validation"
+
+# 13.1
+assert_eq [::sayabledate::format_date_with_year [::sayabledate::new [::sayabledate::get_locale en]] "2018-02-04"] "February 4th, 2018" "13.1"
+
+# 13.2
+assert_eq [::sayabledate::format_date_with_year [::sayabledate::new [::sayabledate::get_locale en] short] "2025-03-15"] "Mar 15, 2025" "13.2"
+
+# 13.3
+assert_eq [::sayabledate::format_date_with_year [::sayabledate::new [::sayabledate::get_locale en] compact] "1997-01-21"] "1/21/97" "13.3"
+
+# 13.4
+assert_eq [::sayabledate::format_date_with_year [::sayabledate::new [::sayabledate::get_locale tg] compact] "2007-05-20"] "20/5/07" "13.4"
+
+# 13.5
+assert_eq [::sayabledate::format_date_with_year [::sayabledate::new [::sayabledate::get_locale fi] short] "1996-06-21"] "21. kesäkuuta 1996" "13.5"
+
+# 14.1
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale sk] short] "2031-02-15"] "15. februára" "14.1"
+
+# 14.2
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale cs] short] "2025-12-10"] "10. prosince" "14.2"
+
+# 14.3
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale uk] short] "2025-11-05"] "5 листопада" "14.3"
+
+# 14.4
+assert_eq [::sayabledate::format_relative [::sayabledate::new [::sayabledate::get_locale fi] short] "1998-08-08" "1998-08-15"] "8. elokuuta" "14.4"
+
+# 15.1
+assert_eq [::sayabledate::format_relative [::sayabledate::new [::sayabledate::get_locale kw] short] "2035-12-04" "2035-12-02"] "an Mth ma" "15.1"
+
+# 15.2
+assert_eq [::sayabledate::format_relative [::sayabledate::new [::sayabledate::get_locale mam] short] "2000-01-23" "2000-01-25"] "Dom nchi'j" "15.2"
+
+# 15.3
+assert_eq [::sayabledate::format_relative [::sayabledate::new [::sayabledate::get_locale kek] short] "2014-10-24" "2014-10-22"] "a'in Vie" "15.3"
+
+# 16.1
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale en]] "2025-02-30"] "" "16.1"
+
+# 16.2
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale en]] "2025-13-01"] "" "16.2"
+
+# 16.3
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale en]] "2025-6-1"] "" "16.3"
+
+# 16.4
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale en]] " 2025-06-01"] "" "16.4"
+
+# 16.5
+assert_eq [::sayabledate::format_date [::sayabledate::new [::sayabledate::get_locale en]] "2025-06-01T10:00:00"] "June 1st" "16.5"
+
+# 16.6
+assert_eq [::sayabledate::format_date_with_year [::sayabledate::new [::sayabledate::get_locale en]] "2023-02-29"] "" "16.6"
+
+# 16.7
+assert_eq [::sayabledate::format_relative [::sayabledate::new [::sayabledate::get_locale en]] "2025-03-16" "2025-04-31"] "" "16.7"
+
+
+# ================================================================
 # Summary
 # ================================================================
 puts ""

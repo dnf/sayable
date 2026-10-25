@@ -217,4 +217,89 @@ class FormatTimeTest {
         SayableTime st = new SayableTime(Locales.FI, Compactness.SHORT);
         assertEquals("0.00", st.formatTime("00:00"));
     }
+
+    // ================================================================
+    // Minutes in short and compact modes
+    // ================================================================
+
+    // 9.1
+    @Test
+    void s9_1DigitalModesKeepTheExactMinute() {
+        SayableTime f = new SayableTime(Locales.EN, Compactness.SHORT);
+        assertEquals("6:01 PM", f.formatTime("18:01"));
+    }
+
+    // 9.2
+    @Test
+    void s9_2DigitalModesKeepTheExactMinute() {
+        SayableTime f = new SayableTime(Locales.EN, Compactness.COMPACT);
+        assertEquals("7:05p", f.formatTime("19:05"));
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 10.1
+    @Test
+    void s10_1OneDigitHour() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertEquals("half past nine", f.formatTime("9:30"));
+    }
+
+    // 10.2
+    @Test
+    void s10_2TwoDigitHour() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertEquals("half past nine", f.formatTime("09:30"));
+    }
+
+    // 10.3
+    @Test
+    void s10_3LeadingWhitespace() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertNull(f.formatTime(" 9:30"));
+    }
+
+    // 10.4
+    @Test
+    void s10_4TrailingWhitespace() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertNull(f.formatTime("9:30 "));
+    }
+
+    // 10.5
+    @Test
+    void s10_5MinutesNeedTwoDigits() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertNull(f.formatTime("9:5"));
+    }
+
+    // 10.6
+    @Test
+    void s10_6HourOutOfRange() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertNull(f.formatTime("24:00"));
+    }
+
+    // 10.7
+    @Test
+    void s10_7SecondsAreAllowedAndIgnored() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertEquals("a quarter past two", f.formatTime("14:15:30"));
+    }
+
+    // 10.8
+    @Test
+    void s10_8ISODatetimeWithZoneSuffixIgnored() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertEquals("a quarter past two", f.formatTime("2025-01-15T14:15:00Z"));
+    }
+
+    // 10.9
+    @Test
+    void s10_9ISODatetimeWithAnImpossibleDate() {
+        SayableTime f = new SayableTime(Locales.EN);
+        assertNull(f.formatTime("2025-02-30T14:15:00"));
+    }
 }

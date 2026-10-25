@@ -246,28 +246,37 @@ func (sd *SayableDate) formatAbsolute(year, month, day int, includeYear bool) st
 	return result
 }
 
-// parseDate parses "YYYY-MM-DD" or ISO datetime to [year, month, day].
-// Returns nil on failure.
+// parseDate parses "YYYY-MM-DD", optionally followed by "T" and anything
+// else, to [year, month, day]. The date must name a real calendar day; returns
+// nil otherwise (see docs/input-formats.md).
 func parseDate(s string) *[3]int {
-	if s == "" {
+	isDateAlone := len(s) == 10
+	isDatetime := len(s) > 10 && s[10] == 'T'
+	if !isDateAlone && !isDatetime || s[4] != '-' || s[7] != '-' {
 		return nil
 	}
-	// Strip time part from ISO datetime
-	datePart := s
-	if idx := strings.IndexByte(s, 'T'); idx >= 0 {
-		datePart = s[:idx]
-	}
-	parts := strings.Split(datePart, "-")
-	if len(parts) != 3 {
-		return nil
-	}
-	year := atoiDate(parts[0])
-	month := atoiDate(parts[1])
-	day := atoiDate(parts[2])
-	if year < 0 || month < 1 || month > 12 || day < 1 || day > 31 {
+	year := atoiDate(s[0:4])
+	month := atoiDate(s[5:7])
+	day := atoiDate(s[8:10])
+	if year < 0 || month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month) {
 		return nil
 	}
 	return &[3]int{year, month, day}
+}
+
+// daysInMonth returns the days in a Gregorian month (leap years by the 4/100/400 rule).
+func daysInMonth(year, month int) int {
+	switch month {
+	case 2:
+		if (year%4 == 0 && year%100 != 0) || year%400 == 0 {
+			return 29
+		}
+		return 28
+	case 4, 6, 9, 11:
+		return 30
+	default:
+		return 31
+	}
 }
 
 // atoiDate converts a decimal string to int. Returns -1 on failure.

@@ -3,62 +3,58 @@ module SayableDate.Internal exposing (parseDate, toJDN, weekday)
 
 parseDate : String -> Maybe ( Int, Int, Int )
 parseDate s =
-    if String.isEmpty s then
+    let
+        datePart =
+            String.left 10 s
+
+        digitsAt from to =
+            String.all Char.isDigit (String.slice from to datePart)
+
+        isDateOrDatetime =
+            String.length s == 10 || (String.length s > 10 && String.slice 10 11 s == "T")
+
+        isDateShape =
+            String.slice 4 5 datePart == "-"
+                && String.slice 7 8 datePart == "-"
+                && digitsAt 0 4
+                && digitsAt 5 7
+                && digitsAt 8 10
+    in
+    if not (isDateOrDatetime && isDateShape) then
         Nothing
 
     else
-        let
-            datePart =
-                if String.contains "T" s then
-                    String.left (Maybe.withDefault (String.length s) (indexOf "T" s)) s
+        case ( String.toInt (String.slice 0 4 datePart), String.toInt (String.slice 5 7 datePart), String.toInt (String.slice 8 10 datePart) ) of
+            ( Just y, Just m, Just d ) ->
+                if m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth y m then
+                    Just ( y, m, d )
 
                 else
-                    s
-        in
-        if String.length datePart < 10 then
-            Nothing
-
-        else if String.slice 4 5 datePart /= "-" || String.slice 7 8 datePart /= "-" then
-            Nothing
-
-        else
-            let
-                yStr =
-                    String.slice 0 4 datePart
-
-                mStr =
-                    String.slice 5 7 datePart
-
-                dStr =
-                    String.slice 8 10 datePart
-            in
-            case ( String.toInt yStr, String.toInt mStr, String.toInt dStr ) of
-                ( Just y, Just m, Just d ) ->
-                    if m < 1 || m > 12 || d < 1 || d > 31 then
-                        Nothing
-
-                    else
-                        Just ( y, m, d )
-
-                _ ->
                     Nothing
 
-
-indexOf : String -> String -> Maybe Int
-indexOf needle haystack =
-    indexOfHelper needle haystack 0
+            _ ->
+                Nothing
 
 
-indexOfHelper : String -> String -> Int -> Maybe Int
-indexOfHelper needle haystack offset =
-    if offset > String.length haystack - String.length needle then
-        Nothing
+isLeapYear : Int -> Bool
+isLeapYear y =
+    (modBy 4 y == 0 && modBy 100 y /= 0) || modBy 400 y == 0
 
-    else if String.slice offset (offset + String.length needle) haystack == needle then
-        Just offset
+
+daysInMonth : Int -> Int -> Int
+daysInMonth y m =
+    if m == 2 then
+        if isLeapYear y then
+            29
+
+        else
+            28
+
+    else if List.member m [ 4, 6, 9, 11 ] then
+        30
 
     else
-        indexOfHelper needle haystack (offset + 1)
+        31
 
 
 toJDN : Int -> Int -> Int -> Int

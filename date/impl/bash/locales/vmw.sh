@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/vmw.json
 
-_locale_vmw() {
+_sayabledate_locale_vmw() {
     _months=('Januário' 'Fevereiro' 'Março' 'Abril' 'Maio' 'Junho' 'Julho' 'Agosto' 'Setembro' 'Outubro' 'Novembro' 'Dezembro')
     _weekdays=('Jumaaphi' 'Jumaataatu' 'Jumaanne' 'Jumaatano' 'Alaahamisi' 'Ijumaa' 'Jumaamo')
     _day_format='{n}'

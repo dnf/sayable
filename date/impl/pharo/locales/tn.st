@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/tn.json "
 
-"Locale: tn"
+"Locale: tn"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 tn

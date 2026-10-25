@@ -132,6 +132,34 @@ fn main() {
     // 8.2 — midnight in 24h dot format
     check_time("8.2", "fi", short, "00:00", "0.00");
 
+    // ---- Section 9: Minutes in short and compact modes ----
+
+    // 9.1
+    check_time("9.1", "en", sayabletime::Compactness.Short, "18:01", "6:01 PM");
+    // 9.2
+    check_time("9.2", "en", sayabletime::Compactness.Compact, "19:05", "7:05p");
+
+    // ---- Section 10: Input validation ----
+
+    // 10.1
+    check_time("10.1", "en", sayabletime::Compactness.Normal, "9:30", "half past nine");
+    // 10.2
+    check_time("10.2", "en", sayabletime::Compactness.Normal, "09:30", "half past nine");
+    // 10.3
+    check_no_time("10.3", " 9:30");
+    // 10.4
+    check_no_time("10.4", "9:30 ");
+    // 10.5
+    check_no_time("10.5", "9:5");
+    // 10.6
+    check_no_time("10.6", "24:00");
+    // 10.7
+    check_time("10.7", "en", sayabletime::Compactness.Normal, "14:15:30", "a quarter past two");
+    // 10.8
+    check_time("10.8", "en", sayabletime::Compactness.Normal, "2025-01-15T14:15:00Z", "a quarter past two");
+    // 10.9
+    check_no_time("10.9", "2025-02-30T14:15:00");
+
     print(passed, " passed, ", failed, " failed");
     if failed > 0 { exit(1); }
 }

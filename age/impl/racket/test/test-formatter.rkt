@@ -493,3 +493,40 @@
 ;; 30.5
 (check-false (get-locale "EN"))
 
+;; Section 31: Weeks and days across month ends
+;; 31.1
+(check-equal? (format-age (get-locale "en") "2016-12-31" "2017-03-29") "12 weeks, 4 days")
+;; 31.2
+(check-equal? (format-age (get-locale "en") "1991-11-27" "1992-02-25") "12 weeks, 6 days")
+;; 31.3
+(check-equal? (format-age (get-locale "en") "2020-11-30" "2021-01-02") "4 weeks, 5 days")
+;; 31.4
+(check-equal? (format-age (get-locale "en") "2016-12-31" "2017-03-29" #:compactness 'compact) "12w4d")
+;; Section 32: Half years take their plural form from whole years
+;; 32.1
+(check-equal? (format-age (get-locale "pl") "2021-06-15" "2025-01-15") "3 i pół lata")
+;; 32.2
+(check-equal? (format-age (get-locale "pl") "2020-06-15" "2025-12-15" #:compactness 'short) "5 i pół lat")
+;; 32.3
+(check-equal? (format-age (get-locale "shi") "2005-06-08" "2012-06-07") "6 iseggasen d uzgen")
+;; Section 33: Input validation
+;; 33.1
+(check-false (format-age (get-locale "en") "2025-02-30" "2032-06-25"))
+;; 33.2
+(check-false (format-age (get-locale "en") "2025-13-01" "2027-01-31"))
+;; 33.3
+(check-false (format-age (get-locale "en") "2023-02-29" "2025-03-01"))
+;; 33.4
+(check-false (format-age (get-locale "en") "2025-06-00" "2027-02-25"))
+;; 33.5
+(check-false (format-age (get-locale "en") "2025-6-1" "2027-02-25"))
+;; 33.6
+(check-false (format-age (get-locale "en") " 2025-06-01" "2027-02-25"))
+;; 33.7
+(check-false (format-age (get-locale "en") "2025-06-15T10:00:00" "2027-02-25"))
+;; 33.8
+(check-false (format-age (get-locale "en") "2020-01-01" "2025-04-31"))
+;; 33.9
+(check-false (format-stage (get-locale "en") "2025-02-30" "2027-09-05"))
+;; 33.10
+(check-equal? (format-age (get-locale "en") "2024-02-29" "2026-03-01") "2 years")

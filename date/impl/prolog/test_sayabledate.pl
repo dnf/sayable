@@ -267,6 +267,99 @@ test_case(test_12_2) :-
     format_relative('es', '2025-03-17', '2025-03-15', Result),
     Result == 'pasado mañana'.
 
+% Section 13: format_date_with_year
+% 13.1: 
+test_case(test_13_1) :-
+    format_date_with_year('en', '2018-02-04', normal, Result),
+    Result == 'February 4th, 2018'.
+
+% 13.2: 
+test_case(test_13_2) :-
+    format_date_with_year('en', '2025-03-15', short, Result),
+    Result == 'Mar 15, 2025'.
+
+% 13.3: 
+test_case(test_13_3) :-
+    format_date_with_year('en', '1997-01-21', compact, Result),
+    Result == '1/21/97'.
+
+% 13.4: two-digit year keeps its leading zero
+test_case(test_13_4) :-
+    format_date_with_year('tg', '2007-05-20', compact, Result),
+    Result == '20/5/07'.
+
+% 13.5: 
+test_case(test_13_5) :-
+    format_date_with_year('fi', '1996-06-21', short, Result),
+    Result == '21. kesäkuuta 1996'.
+
+% Section 14: Short month names (locales that keep the full genitive)
+% 14.1: 
+test_case(test_14_1) :-
+    format_date('sk', '2031-02-15', short, Result),
+    Result == '15. februára'.
+
+% 14.2: 
+test_case(test_14_2) :-
+    format_date('cs', '2025-12-10', short, Result),
+    Result == '10. prosince'.
+
+% 14.3: 
+test_case(test_14_3) :-
+    format_date('uk', '2025-11-05', short, Result),
+    Result == '5 листопада'.
+
+% 14.4: 
+test_case(test_14_4) :-
+    format_relative('fi', '1998-08-08', '1998-08-15', short, Result),
+    Result == '8. elokuuta'.
+
+% Section 15: format_relative — short phrases
+% 15.1: day after tomorrow
+test_case(test_15_1) :-
+    format_relative('kw', '2035-12-04', '2035-12-02', short, Result),
+    Result == 'an Mth ma'.
+
+% 15.2: day before yesterday
+test_case(test_15_2) :-
+    format_relative('mam', '2000-01-23', '2000-01-25', short, Result),
+    Result == 'Dom nchi\'j'.
+
+% 15.3: day after tomorrow
+test_case(test_15_3) :-
+    format_relative('kek', '2014-10-24', '2014-10-22', short, Result),
+    Result == 'a\'in Vie'.
+
+% Section 16: Input validation
+% 16.1: February 30 doesn't exist
+test_case(test_16_1) :-
+    \+ format_date('en', '2025-02-30', normal, _).
+
+% 16.2: Month 13
+test_case(test_16_2) :-
+    \+ format_date('en', '2025-13-01', normal, _).
+
+% 16.3: Unpadded month and day
+test_case(test_16_3) :-
+    \+ format_date('en', '2025-6-1', normal, _).
+
+% 16.4: Surrounding whitespace
+test_case(test_16_4) :-
+    \+ format_date('en', ' 2025-06-01', normal, _).
+
+% 16.5: An ISO datetime: only the date part is used
+test_case(test_16_5) :-
+    format_date('en', '2025-06-01T10:00:00', normal, Result),
+    Result == 'June 1st'.
+
+% 16.6: February 29 in a non-leap year
+test_case(test_16_6) :-
+    \+ format_date_with_year('en', '2023-02-29', normal, _).
+
+% 16.7: Invalid asOf
+test_case(test_16_7) :-
+    \+ format_relative('en', '2025-03-16', '2025-04-31', normal, _).
+
 % Test runner
 run_tests :-
     findall(Name, test_case_name(Name), Tests),
@@ -326,6 +419,25 @@ test_case_name(test_11_1).
 test_case_name(test_11_2).
 test_case_name(test_12_1).
 test_case_name(test_12_2).
+test_case_name(test_13_1).
+test_case_name(test_13_2).
+test_case_name(test_13_3).
+test_case_name(test_13_4).
+test_case_name(test_13_5).
+test_case_name(test_14_1).
+test_case_name(test_14_2).
+test_case_name(test_14_3).
+test_case_name(test_14_4).
+test_case_name(test_15_1).
+test_case_name(test_15_2).
+test_case_name(test_15_3).
+test_case_name(test_16_1).
+test_case_name(test_16_2).
+test_case_name(test_16_3).
+test_case_name(test_16_4).
+test_case_name(test_16_5).
+test_case_name(test_16_6).
+test_case_name(test_16_7).
 
 run_all([], Passed, Failed, Passed, Failed).
 run_all([Name|Rest], PassedIn, FailedIn, PassedOut, FailedOut) :-

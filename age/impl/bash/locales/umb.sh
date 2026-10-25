@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/umb.json
 
-_plural_umb() {
+_sayableage_plural_umb() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_umb() {
+_sayableage_locale_umb() {
     _unit_day_one='elityi {n}'
     _unit_day_other='omatyi {n}'
     _unit_week_one='osemana {n}'
@@ -47,5 +47,5 @@ _locale_umb() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_umb
+    _plural_func=_sayableage_plural_umb
 }

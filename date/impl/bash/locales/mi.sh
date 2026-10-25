@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/mi.json
 
-_locale_mi() {
+_sayabledate_locale_mi() {
     _months=('Kohi-tātea' 'Hui-tanguru' 'Poutū-te-rangi' 'Paenga-whāwhā' 'Haratua' 'Pipiri' 'Hōngongoi' 'Here-turi-kōkā' 'Mahuru' 'Whiringa-ā-nuku' 'Whiringa-ā-rangi' 'Hakihea')
     _weekdays=('Rātapu' 'Rāhina' 'Rātū' 'Rāapa' 'Rāpare' 'Rāmere' 'Rāhoroi')
     _day_format='{n}'

@@ -110,6 +110,41 @@ end
     @test format_relative(es, "2025-03-17", "2025-03-15") == "pasado mañana"  # 12.2
 end
 
+# Section 13: format_date_with_year
+@testset "format_date_with_year" begin
+    @test format_date_with_year(SayableDateFormatter(get_locale("en")), "2018-02-04") == "February 4th, 2018"  # 13.1
+    @test format_date_with_year(SayableDateFormatter(get_locale("en"), Short), "2025-03-15") == "Mar 15, 2025"  # 13.2
+    @test format_date_with_year(SayableDateFormatter(get_locale("en"), Compact), "1997-01-21") == "1/21/97"  # 13.3
+    @test format_date_with_year(SayableDateFormatter(get_locale("tg"), Compact), "2007-05-20") == "20/5/07"  # 13.4
+    @test format_date_with_year(SayableDateFormatter(get_locale("fi"), Short), "1996-06-21") == "21. kesäkuuta 1996"  # 13.5
+end
+
+# Section 14: Short month names (locales that keep the full genitive)
+@testset "Short month names (locales that keep the full genitive)" begin
+    @test format_date(SayableDateFormatter(get_locale("sk"), Short), "2031-02-15") == "15. februára"  # 14.1
+    @test format_date(SayableDateFormatter(get_locale("cs"), Short), "2025-12-10") == "10. prosince"  # 14.2
+    @test format_date(SayableDateFormatter(get_locale("uk"), Short), "2025-11-05") == "5 листопада"  # 14.3
+    @test format_relative(SayableDateFormatter(get_locale("fi"), Short), "1998-08-08", "1998-08-15") == "8. elokuuta"  # 14.4
+end
+
+# Section 15: format_relative — short phrases
+@testset "format_relative — short phrases" begin
+    @test format_relative(SayableDateFormatter(get_locale("kw"), Short), "2035-12-04", "2035-12-02") == "an Mth ma"  # 15.1
+    @test format_relative(SayableDateFormatter(get_locale("mam"), Short), "2000-01-23", "2000-01-25") == "Dom nchi'j"  # 15.2
+    @test format_relative(SayableDateFormatter(get_locale("kek"), Short), "2014-10-24", "2014-10-22") == "a'in Vie"  # 15.3
+end
+
+# Section 16: Input validation
+@testset "Input validation" begin
+    @test format_date(SayableDateFormatter(get_locale("en")), "2025-02-30") === nothing  # 16.1
+    @test format_date(SayableDateFormatter(get_locale("en")), "2025-13-01") === nothing  # 16.2
+    @test format_date(SayableDateFormatter(get_locale("en")), "2025-6-1") === nothing  # 16.3
+    @test format_date(SayableDateFormatter(get_locale("en")), " 2025-06-01") === nothing  # 16.4
+    @test format_date(SayableDateFormatter(get_locale("en")), "2025-06-01T10:00:00") == "June 1st"  # 16.5
+    @test format_date_with_year(SayableDateFormatter(get_locale("en")), "2023-02-29") === nothing  # 16.6
+    @test format_relative(SayableDateFormatter(get_locale("en")), "2025-03-16", "2025-04-31") === nothing  # 16.7
+end
+
 # Locale lookup
 @testset "Locale lookup" begin
     @test get_locale("en") !== nothing

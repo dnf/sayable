@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/gd.json
 
-_locale_gd() {
+_sayabletime_locale_gd() {
     _clock_hours=('dà-dheug' 'aon' 'dà' 'trì' 'ceithir' 'còig' 'sia' 'seachd' 'ochd' 'naoi' 'deich' 'aon-deug')
     _clock_midnight='meadhan-oidhche'
     _clock_noon='meadhan-latha'

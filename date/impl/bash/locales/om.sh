@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/om.json
 
-_locale_om() {
+_sayabledate_locale_om() {
     _months=('Amajjii' 'Guraandhala' 'Bitooteessa' 'Elba' 'Caamsa' 'Waxabajjii' 'Adooleessa' 'Hagayya' 'Fuulbana' 'Onkololeessa' 'Sadaasa' 'Muddee')
     _weekdays=('Dilbata' 'Wiixata' 'Qibxata' 'Roobii' 'Kamiisa' 'Jimaata' 'Sanbata')
     _day_format='{n}'

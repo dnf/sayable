@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/umb.json
 
-_locale_umb() {
+_sayabledate_locale_umb() {
     _months=('Janelu' 'Fevelelu' 'Malsu' 'Abili' 'Mayu' 'Junyu' 'Julyu' 'Agostu' 'Setembu' 'Otubu' 'Novembu' 'Desembu')
     _weekdays=('Lumingu' 'Cimosi' 'Civali' 'Citathu' 'Cinyali' 'Citanu' 'Cisabalu')
     _day_format='{n}'

@@ -5,6 +5,9 @@ import "./locales/registry" for LocaleRegistry
 class SayableDuration {
   static version { "0.5.0" }
 
+  // 500 years, the same ceiling as sayable-age
+  static maxDurationMonths { 6000 }
+
   construct new(locale) {
     _locale = locale
     _ovr = null
@@ -140,6 +143,7 @@ class SayableDuration {
 
     // Approximate months (30.44 days average)
     var totalMonths = (totalDays / 30.44 + 0.5).floor
+    if (totalMonths > SayableDuration.maxDurationMonths) return null
 
     // 1-11 months
     if (totalMonths < 12) {
@@ -166,6 +170,7 @@ class SayableDuration {
     if (diff < 0) return null
     if (diff == 0) return _justNow
     var dur = formatDurationSeconds_(diff)
+    if (dur == null) return null
     return _ago.replace("{0}", dur)
   }
 
@@ -178,6 +183,7 @@ class SayableDuration {
     if (diff < 0) return null
     if (diff == 0) return _justNow
     var dur = formatDurationSeconds_(diff)
+    if (dur == null) return null
     return _inFuture.replace("{0}", dur)
   }
 
@@ -210,65 +216,69 @@ class SayableDuration {
     return lengths[m]
   }
 
-  static daysSinceEpoch_(year, month, day) {
-    var days = 0
-    if (year >= 2000) {
-      var y = 2000
-      while (y < year) {
-        days = days + (isLeapYear_(y) ? 366 : 365)
-        y = y + 1
-      }
-    } else {
-      var y = year
-      while (y < 2000) {
-        days = days - (isLeapYear_(y) ? 366 : 365)
-        y = y + 1
-      }
-    }
-    var m = 1
-    while (m < month) {
-      days = days + daysInMonth_(year, m)
-      m = m + 1
-    }
-    days = days + day - 1
-    return days
+  static toJdn_(year, month, day) {
+    var a = ((14 - month) / 12).floor
+    var y = year + 4800 - a
+    var m = month + 12 * a - 3
+    return day + ((153 * m + 2) / 5).floor + 365 * y + (y / 4).floor - (y / 100).floor + (y / 400).floor - 32045
   }
 
+  static isDigitAt_(bytes, i) { i < bytes.count && bytes[i] >= 48 && bytes[i] <= 57 }
+
+  static digitsValue_(bytes, from, to) {
+    var value = 0
+    for (i in from...to) value = value * 10 + bytes[i] - 48
+    return value
+  }
+
+  // A zone suffix Z or +HH:MM / -HH:MM running exactly to the end.
+  static isZoneSuffix_(bytes, i) {
+    var n = bytes.count
+    if (i == n) return true
+    if (bytes[i] == 90) return i + 1 == n
+    if (bytes[i] != 43 && bytes[i] != 45) return false
+    return i + 6 == n && isDigitAt_(bytes, i + 1) && isDigitAt_(bytes, i + 2) &&
+      bytes[i + 3] == 58 && isDigitAt_(bytes, i + 4) && isDigitAt_(bytes, i + 5)
+  }
+
+  // YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored),
+  // as seconds since an arbitrary epoch for diffing; else null.
   static parseIsoToSeconds_(isoStr) {
-    if (isoStr == null || isoStr == "") return null
-    if (!isoStr.contains("T")) return null
-    var parts = isoStr.split("T")
-    var datePart = parts[0]
-    var timePart = parts[1]
-
-    var dp = datePart.split("-")
-    if (dp.count != 3) return null
-    var year = Num.fromString(dp[0])
-    var month = Num.fromString(dp[1])
-    var day = Num.fromString(dp[2])
-    if (year == null || month == null || day == null) return null
-
-    // Strip timezone
-    var timeStr = timePart
-    if (timeStr.contains("+")) {
-      timeStr = timeStr.split("+")[0]
+    if (!(isoStr is String)) return null
+    var bytes = isoStr.bytes
+    if (bytes.count < 11 || bytes[4] != 45 || bytes[7] != 45 || bytes[10] != 84) return null
+    for (i in [0, 1, 2, 3, 5, 6, 8, 9]) {
+      if (!isDigitAt_(bytes, i)) return null
     }
-    if (timeStr.contains("Z")) {
-      timeStr = timeStr.split("Z")[0]
+    var year = digitsValue_(bytes, 0, 4)
+    var month = digitsValue_(bytes, 5, 7)
+    var day = digitsValue_(bytes, 8, 10)
+    if (month < 1 || month > 12 || day < 1 || day > daysInMonth_(year, month)) return null
+
+    var i = 11
+    if (!isDigitAt_(bytes, i)) return null
+    i = i + 1
+    if (isDigitAt_(bytes, i)) i = i + 1
+    var hour = digitsValue_(bytes, 11, i)
+    if (i >= bytes.count || bytes[i] != 58) return null
+    if (!isDigitAt_(bytes, i + 1) || !isDigitAt_(bytes, i + 2)) return null
+    var minute = digitsValue_(bytes, i + 1, i + 3)
+    i = i + 3
+    var second = 0
+    if (i < bytes.count && bytes[i] == 58) {
+      if (!isDigitAt_(bytes, i + 1) || !isDigitAt_(bytes, i + 2)) return null
+      second = digitsValue_(bytes, i + 1, i + 3)
+      i = i + 3
+      if (i < bytes.count && bytes[i] == 46) {
+        i = i + 1
+        if (!isDigitAt_(bytes, i)) return null
+        while (isDigitAt_(bytes, i)) i = i + 1
+      }
     }
+    if (!isZoneSuffix_(bytes, i)) return null
+    if (hour > 23 || minute > 59 || second > 59) return null
 
-    var tp = timeStr.split(":")
-    var hour = Num.fromString(tp[0])
-    if (hour == null) return null
-    var minute = tp.count > 1 ? Num.fromString(tp[1]) : 0
-    if (minute == null) return null
-    var secStr = tp.count > 2 ? tp[2] : "0"
-    if (secStr.contains(".")) secStr = secStr.split(".")[0]
-    var second = Num.fromString(secStr)
-    if (second == null) return null
-
-    var days = daysSinceEpoch_(year, month, day)
-    return days * 86400 + hour * 3600 + minute * 60 + second
+    return toJdn_(year, month, day) * 86400 + hour * 3600 + minute * 60 + second
   }
 
   static getLocale(code) { LocaleRegistry.getLocale(code) }

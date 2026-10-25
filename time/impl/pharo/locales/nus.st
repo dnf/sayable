@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/nus.json "
 
-"Locale: nus"
+"Locale: nus"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 nus

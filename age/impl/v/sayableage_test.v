@@ -1257,3 +1257,128 @@ fn test_30_5() {
 	assert result == none, '30.5'
 }
 
+
+// Section 31: Weeks and days across month ends
+
+// 31.1
+fn test_31_1() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2016-12-31', '2017-03-29') or { panic('31.1 should not be none') }
+	assert result == '12 weeks, 4 days', '31.1'
+}
+
+// 31.2
+fn test_31_2() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('1991-11-27', '1992-02-25') or { panic('31.2 should not be none') }
+	assert result == '12 weeks, 6 days', '31.2'
+}
+
+// 31.3
+fn test_31_3() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2020-11-30', '2021-01-02') or { panic('31.3 should not be none') }
+	assert result == '4 weeks, 5 days', '31.3'
+}
+
+// 31.4
+fn test_31_4() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .compact)
+	result := f.format_age('2016-12-31', '2017-03-29') or { panic('31.4 should not be none') }
+	assert result == '12w4d', '31.4'
+}
+
+// Section 32: Half years take their plural form from whole years
+
+// 32.1
+fn test_32_1() {
+	f := locales.new_sayable_age(locales.get_locale('pl') or { panic('locale not found') }, .normal)
+	result := f.format_age('2021-06-15', '2025-01-15') or { panic('32.1 should not be none') }
+	assert result == '3 i pół lata', '32.1'
+}
+
+// 32.2
+fn test_32_2() {
+	f := locales.new_sayable_age(locales.get_locale('pl') or { panic('locale not found') }, .short)
+	result := f.format_age('2020-06-15', '2025-12-15') or { panic('32.2 should not be none') }
+	assert result == '5 i pół lat', '32.2'
+}
+
+// 32.3
+fn test_32_3() {
+	f := locales.new_sayable_age(locales.get_locale('shi') or { panic('locale not found') }, .normal)
+	result := f.format_age('2005-06-08', '2012-06-07') or { panic('32.3 should not be none') }
+	assert result == '6 iseggasen d uzgen', '32.3'
+}
+
+// Section 33: Input validation
+
+// 33.1
+fn test_33_1() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2025-02-30', '2032-06-25')
+	assert result == none, '33.1'
+}
+
+// 33.2
+fn test_33_2() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2025-13-01', '2027-01-31')
+	assert result == none, '33.2'
+}
+
+// 33.3
+fn test_33_3() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2023-02-29', '2025-03-01')
+	assert result == none, '33.3'
+}
+
+// 33.4
+fn test_33_4() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2025-06-00', '2027-02-25')
+	assert result == none, '33.4'
+}
+
+// 33.5
+fn test_33_5() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2025-6-1', '2027-02-25')
+	assert result == none, '33.5'
+}
+
+// 33.6
+fn test_33_6() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age(' 2025-06-01', '2027-02-25')
+	assert result == none, '33.6'
+}
+
+// 33.7
+fn test_33_7() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2025-06-15T10:00:00', '2027-02-25')
+	assert result == none, '33.7'
+}
+
+// 33.8
+fn test_33_8() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2020-01-01', '2025-04-31')
+	assert result == none, '33.8'
+}
+
+// 33.9
+fn test_33_9() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_stage('2025-02-30', '2027-09-05', '')
+	assert result == none, '33.9'
+}
+
+// 33.10
+fn test_33_10() {
+	f := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_age('2024-02-29', '2026-03-01') or { panic('33.10 should not be none') }
+	assert result == '2 years', '33.10'
+}

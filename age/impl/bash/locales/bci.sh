@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/bci.json
 
-_plural_bci() {
+_sayableage_plural_bci() {
     echo "other"
 }
 
-_locale_bci() {
+_sayableage_locale_bci() {
     _unit_day='cɛn {n}'
     _unit_week='lemɔcuɛ {n}'
     _unit_month='anglɛ {n}'
@@ -37,5 +37,5 @@ _locale_bci() {
     _compact_unit_year='af {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_bci
+    _plural_func=_sayableage_plural_bci
 }

@@ -123,69 +123,72 @@ private int atoiSlice(string s) {
     return n;
 }
 
-/// Parse ISO datetime string to epoch-ish seconds for diffing.
-private Nullable!long parseISOToSeconds(string s) {
-    if (s.length == 0) {
-        return Nullable!long.init;
+/// Number of leading ASCII digits in s.
+private size_t digitRun(string s) {
+    size_t n = 0;
+    while (n < s.length && s[n] >= '0' && s[n] <= '9') {
+        n++;
     }
-    // Find 'T' separator
-    int tPos = -1;
-    foreach (i, c; s) {
-        if (c == 'T') {
-            tPos = cast(int) i;
-            break;
-        }
-    }
-    if (tPos < 0) {
-        return Nullable!long.init;
-    }
-
-    string datePart = s[0 .. tPos];
-    string timePart = s[tPos + 1 .. $];
-
-    // Parse date
-    if (datePart.length < 10 || datePart[4] != '-' || datePart[7] != '-') {
-        return Nullable!long.init;
-    }
-    int year = atoiSlice(datePart[0 .. 4]);
-    int month = atoiSlice(datePart[5 .. 7]);
-    int day = atoiSlice(datePart[8 .. 10]);
-
-    // Strip timezone from time part
-    string timeStr = timePart;
-    foreach (i, c; timeStr) {
-        if (c == '+' || c == 'Z') {
-            timeStr = timeStr[0 .. i];
-            break;
-        }
-    }
-
-    // Parse time HH:MM:SS
-    if (timeStr.length < 5 || timeStr[2] != ':') {
-        return Nullable!long.init;
-    }
-    int hour = atoiSlice(timeStr[0 .. 2]);
-    int minute = atoiSlice(timeStr[3 .. 5]);
-    int second = 0;
-    if (timeStr.length >= 8 && timeStr[5] == ':') {
-        // Handle fractional seconds by only taking digits before '.'
-        string secStr = timeStr[6 .. 8];
-        foreach (i, c; secStr) {
-            if (c == '.') {
-                secStr = secStr[0 .. i];
-                break;
-            }
-        }
-        second = atoiSlice(secStr);
-    }
-
-    long days = daysSinceEpoch(year, month, day);
-    return Nullable!long(days * 86400 + hour * 3600 + minute * 60 + second);
+    return n;
 }
 
-/// Round to nearest integer (for positive values).
-private int roundToInt(double v) {
-    return cast(int)(v + 0.5);
+/// Nothing, "Z", or "+HH:MM" / "-HH:MM".
+private bool isZoneSuffix(string s) {
+    if (s.length == 0) return true;
+    if (s.length == 1) return s[0] == 'Z';
+    return s.length == 6 && (s[0] == '+' || s[0] == '-') && digitRun(s[1 .. 3]) == 2
+        && s[3] == ':' && digitRun(s[4 .. 6]) == 2;
+}
+
+/// Parse H:MM or HH:MM, optional :SS, optional . plus digits after the seconds,
+/// and an optional zone suffix, which is validated but ignored.
+private bool parseClock(string clock, out int hour, out int minute, out int second) {
+    immutable hourLen = digitRun(clock);
+    if (hourLen < 1 || hourLen > 2 || clock.length < hourLen + 3 || clock[hourLen] != ':'
+        || digitRun(clock[hourLen + 1 .. hourLen + 3]) != 2) {
+        return false;
+    }
+    hour = atoiSlice(clock[0 .. hourLen]);
+    minute = atoiSlice(clock[hourLen + 1 .. hourLen + 3]);
+    second = 0;
+    string rest = clock[hourLen + 3 .. $];
+    if (rest.length > 0 && rest[0] == ':') {
+        if (rest.length < 3 || digitRun(rest[1 .. 3]) != 2) return false;
+        second = atoiSlice(rest[1 .. 3]);
+        rest = rest[3 .. $];
+        if (rest.length > 0 && rest[0] == '.') {
+            immutable fractionLen = digitRun(rest[1 .. $]);
+            if (fractionLen == 0) return false;
+            rest = rest[1 + fractionLen .. $];
+        }
+    }
+    return isZoneSuffix(rest) && hour <= 23 && minute <= 59 && second <= 59;
+}
+
+/// Parse a timestamp YYYY-MM-DDTHH:MM[:SS[.fff]][zone] (docs/input-formats.md)
+/// to seconds since 2000-01-01 for diffing; null if malformed.
+private Nullable!long parseISOToSeconds(string s) {
+    if (s.length < 11 || s[4] != '-' || s[7] != '-' || s[10] != 'T'
+        || digitRun(s[0 .. 4]) != 4 || digitRun(s[5 .. 7]) != 2 || digitRun(s[8 .. 10]) != 2) {
+        return Nullable!long.init;
+    }
+    immutable year = atoiSlice(s[0 .. 4]);
+    immutable month = atoiSlice(s[5 .. 7]);
+    immutable day = atoiSlice(s[8 .. 10]);
+    int hour, minute, second;
+    if (month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month)
+        || !parseClock(s[11 .. $], hour, minute, second)) {
+        return Nullable!long.init;
+    }
+    return Nullable!long(daysSinceEpoch(year, month, day) * 86400 + hour * 3600 + minute * 60 + second);
+}
+
+/// Durations over 6000 months (500 years) have no value: the same ceiling as sayable-age.
+private enum MAX_DURATION_MONTHS = 6000;
+
+/// Months from whole days, 30.44 days to the month, rounded.
+private long approximateMonths(long totalDays) {
+    return cast(long)(cast(double) totalDays / 30.44 + 0.5);
 }
 
 /// Locale-aware duration and relative time formatter.
@@ -249,11 +252,11 @@ struct SayableDuration {
     }
 
     /// Format a duration in seconds as human-friendly text.
-    Nullable!string formatDuration(int totalSeconds) {
+    Nullable!string formatDuration(long totalSeconds) {
         if (totalSeconds < 0) {
             return Nullable!string.init;
         }
-        return Nullable!string(formatDurationSeconds(totalSeconds));
+        return formatDurationSeconds(totalSeconds);
     }
 
     /// Format a duration between two ISO timestamps.
@@ -268,7 +271,7 @@ struct SayableDuration {
         }
         long diff = e.get - s.get;
         if (diff < 0) diff = -diff;
-        return Nullable!string(formatDurationSeconds(cast(int) diff));
+        return formatDurationSeconds(diff);
     }
 
     /// Format elapsed time as "X ago".
@@ -284,8 +287,9 @@ struct SayableDuration {
         long diff = a.get - s.get;
         if (diff < 0) return Nullable!string.init;
         if (diff == 0) return Nullable!string(_justNow);
-        string dur = formatDurationSeconds(cast(int) diff);
-        return Nullable!string(strReplace(_ago, "{0}", dur));
+        auto dur = formatDurationSeconds(diff);
+        if (dur.isNull) return dur;
+        return Nullable!string(strReplace(_ago, "{0}", dur.get));
     }
 
     /// Format time until a future event as "in X".
@@ -301,22 +305,33 @@ struct SayableDuration {
         long diff = t.get - a.get;
         if (diff < 0) return Nullable!string.init;
         if (diff == 0) return Nullable!string(_justNow);
-        string dur = formatDurationSeconds(cast(int) diff);
-        return Nullable!string(strReplace(_inFuture, "{0}", dur));
+        auto dur = formatDurationSeconds(diff);
+        if (dur.isNull) return dur;
+        return Nullable!string(strReplace(_inFuture, "{0}", dur.get));
     }
 
-    /// Apply duration tiers to total seconds.
-    private string formatDurationSeconds(int total) {
+    /// Apply duration tiers to total seconds; null beyond the 500-year ceiling.
+    private Nullable!string formatDurationSeconds(long totalSeconds) {
+        immutable wholeDays = totalSeconds / 86400;
+        if (wholeDays >= 30 && approximateMonths(wholeDays) > MAX_DURATION_MONTHS) {
+            return Nullable!string.init;
+        }
+        // Within the ceiling (under 2^34 seconds) every count below fits an int.
+        return Nullable!string(formatTiers(totalSeconds));
+    }
+
+    /// Apply duration tiers to total seconds within the 500-year ceiling.
+    private string formatTiers(long total) {
         // 0 seconds
         if (total == 0) return _justNow;
 
         // 1-59 seconds
         if (total < 60) {
-            return resolveUnit(total, _second, _locale, "");
+            return resolveUnit(cast(int) total, _second, _locale, "");
         }
 
-        int totalMinutes = total / 60;
-        int remainderSeconds = total % 60;
+        int totalMinutes = cast(int)(total / 60);
+        int remainderSeconds = cast(int)(total % 60);
 
         // 1-4 minutes: minutes + seconds
         if (totalMinutes < 5) {
@@ -332,8 +347,8 @@ struct SayableDuration {
             return resolveUnit(totalMinutes, _minute, _locale, "");
         }
 
-        int totalHours = total / 3600;
-        int remainderMinutes = (total % 3600) / 60;
+        int totalHours = cast(int)(total / 3600);
+        int remainderMinutes = cast(int)((total % 3600) / 60);
 
         // 1-5 hours: hours + minutes (with half marker)
         if (totalHours <= 5) {
@@ -352,8 +367,8 @@ struct SayableDuration {
             return resolveUnit(totalHours, _hour, _locale, "");
         }
 
-        int totalDays = total / 86400;
-        int remainderHours = (total % 86400) / 3600;
+        int totalDays = cast(int)(total / 86400);
+        int remainderHours = cast(int)((total % 86400) / 3600);
 
         // 1-2 days: days + hours (with half marker)
         if (totalDays <= 2) {
@@ -385,7 +400,7 @@ struct SayableDuration {
         }
 
         // Approximate months (30.44 days average)
-        int totalMonths = roundToInt(cast(double) totalDays / 30.44);
+        int totalMonths = cast(int) approximateMonths(totalDays);
 
         // 1-11 months
         if (totalMonths < 12) {

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/wo.json
 
-_plural_wo() {
+_sayableduration_plural_wo() {
     echo "other"
 }
 
-_locale_wo() {
+_sayableduration_locale_wo() {
     _unit_second='saa-yépp {n}'
     _unit_minute='simili {n}'
     _unit_hour='waxtu {n}'
@@ -46,5 +46,5 @@ _locale_wo() {
     _compact_delimiter=''
     _compact_ago='{0} ci gin.'
     _compact_in_future='ci {0}'
-    _plural_func=_plural_wo
+    _plural_func=_sayableduration_plural_wo
 }

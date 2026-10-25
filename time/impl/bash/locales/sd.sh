@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/sd.json
 
-_locale_sd() {
+_sayabletime_locale_sd() {
     _clock_hours=('ٻارھ' 'ھڪ' 'ٻه' 'ٽي' 'چار' 'پنج' 'ڇھ' 'ست' 'اٺ' 'نائن' 'ڏھ' 'يارھ')
     _clock_midnight='اڌ رات'
     _clock_noon='ٽپھر'

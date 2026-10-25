@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ht.json
 
-_locale_ht() {
+_sayabledate_locale_ht() {
     _months=('Janvye' 'Fevriye' 'Mas' 'Avril' 'Me' 'Jen' 'Jiyè' 'Out' 'Septanm' 'Oktòb' 'Novanm' 'Desanm')
     _weekdays=('Dimanch' 'Lendi' 'Madi' 'Mèkredi' 'Jedi' 'Vandredi' 'Samdi')
     _day_format='{n}'

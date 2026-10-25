@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/yue.json
 
-_plural_yue() {
+_sayableage_plural_yue() {
     echo "other"
 }
 
-_locale_yue() {
+_sayableage_locale_yue() {
     _unit_day='{n}日'
     _unit_week='{n}個星期'
     _unit_month='{n}個月'
@@ -35,5 +35,5 @@ _locale_yue() {
     _compact_unit_week='{n}週'
     _compact_unit_month='{n}月'
     _compact_unit_year='{n}年'
-    _plural_func=_plural_yue
+    _plural_func=_sayableage_plural_yue
 }

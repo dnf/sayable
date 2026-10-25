@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ro.json
 
-_locale_ro() {
+_sayabledate_locale_ro() {
     _months=('ianuarie' 'februarie' 'martie' 'aprilie' 'mai' 'iunie' 'iulie' 'august' 'septembrie' 'octombrie' 'noiembrie' 'decembrie')
     _weekdays=('duminică' 'luni' 'marți' 'miercuri' 'joi' 'vineri' 'sâmbătă')
     _day_format='{n}'

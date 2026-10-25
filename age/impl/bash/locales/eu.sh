@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/eu.json
 
-_plural_eu() {
+_sayableage_plural_eu() {
     echo "other"
 }
 
-_locale_eu() {
+_sayableage_locale_eu() {
     _unit_day='{n} egun'
     _unit_week='{n} aste'
     _unit_month='{n} hilabete'
@@ -37,5 +37,5 @@ _locale_eu() {
     _compact_unit_year='{n} u.'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_eu
+    _plural_func=_sayableage_plural_eu
 }

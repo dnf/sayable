@@ -1,5 +1,8 @@
 use crate::types::{Compactness, DurationLocale, UnitForms, resolve_unit};
 
+/// Durations over 6000 months (500 years) have no value: the same ceiling as sayable-age.
+const MAX_DURATION_MONTHS: i64 = 6000;
+
 /// Library version, matching duration/config/version.json.
 pub const VERSION: &str = "0.5.0";
 
@@ -86,24 +89,24 @@ impl SayableDuration {
     }
 
     /// Formats a number of seconds as a human-friendly duration string.
-    /// Returns `None` for negative values.
-    pub fn format_duration_seconds(&self, seconds: i32) -> Option<String> {
+    /// Returns `None` for negative values and for durations over 500 years.
+    pub fn format_duration_seconds(&self, seconds: i64) -> Option<String> {
         if seconds < 0 {
             return None;
         }
-        Some(self.format_seconds_inner(seconds))
+        self.format_seconds_inner(seconds)
     }
 
     /// Formats the duration between two ISO datetime strings.
-    /// Returns `None` if either string is empty or cannot be parsed.
+    /// Returns `None` if either string is empty or cannot be parsed, or the
+    /// duration is over 500 years.
     pub fn format_duration_iso(&self, start: &str, end: &str) -> Option<String> {
         if start.is_empty() || end.is_empty() {
             return None;
         }
         let s = parse_iso_to_seconds(start)?;
         let e = parse_iso_to_seconds(end)?;
-        let total = (e - s).unsigned_abs() as i32;
-        Some(self.format_seconds_inner(total))
+        self.format_seconds_inner((e - s).abs())
     }
 
     /// Formats elapsed time as "X ago".
@@ -121,7 +124,7 @@ impl SayableDuration {
         if diff == 0 {
             return Some(self.just_now.clone());
         }
-        let dur = self.format_seconds_inner(diff);
+        let dur = self.format_seconds_inner(diff)?;
         Some(self.ago.replace("{0}", &dur))
     }
 
@@ -140,22 +143,22 @@ impl SayableDuration {
         if diff == 0 {
             return Some(self.just_now.clone());
         }
-        let dur = self.format_seconds_inner(diff);
+        let dur = self.format_seconds_inner(diff)?;
         Some(self.in_future.replace("{0}", &dur))
     }
 
-    /// Applies duration tiers to total seconds.
-    fn format_seconds_inner(&self, total: i32) -> String {
+    /// Applies duration tiers to total seconds; `None` beyond the 500-year ceiling.
+    fn format_seconds_inner(&self, total: i64) -> Option<String> {
         let loc = &self.locale;
 
         // 0 seconds
         if total == 0 {
-            return self.just_now.clone();
+            return Some(self.just_now.clone());
         }
 
         // 1-59 seconds
         if total < 60 {
-            return resolve_unit(total, &self.second, loc, "");
+            return Some(resolve_count(total, &self.second, loc, ""));
         }
 
         let total_minutes = total / 60;
@@ -163,17 +166,17 @@ impl SayableDuration {
 
         // 1-4 minutes: minutes + seconds
         if total_minutes < 5 {
-            let mut result = resolve_unit(total_minutes, &self.minute, loc, "");
+            let mut result = resolve_count(total_minutes, &self.minute, loc, "");
             if remainder_seconds > 0 {
                 result.push_str(&self.delimiter);
-                result.push_str(&resolve_unit(remainder_seconds, &self.second, loc, ""));
+                result.push_str(&resolve_count(remainder_seconds, &self.second, loc, ""));
             }
-            return result;
+            return Some(result);
         }
 
         // 5-59 minutes
         if total_minutes < 60 {
-            return resolve_unit(total_minutes, &self.minute, loc, "");
+            return Some(resolve_count(total_minutes, &self.minute, loc, ""));
         }
 
         let total_hours = total / 3600;
@@ -182,19 +185,19 @@ impl SayableDuration {
         // 1-5 hours: hours + minutes (with half marker)
         if total_hours <= 5 {
             if remainder_minutes == 30 {
-                return resolve_unit(total_hours, &self.hour, loc, &self.half);
+                return Some(resolve_count(total_hours, &self.hour, loc, &self.half));
             }
-            let mut result = resolve_unit(total_hours, &self.hour, loc, "");
+            let mut result = resolve_count(total_hours, &self.hour, loc, "");
             if remainder_minutes > 0 {
                 result.push_str(&self.delimiter);
-                result.push_str(&resolve_unit(remainder_minutes, &self.minute, loc, ""));
+                result.push_str(&resolve_count(remainder_minutes, &self.minute, loc, ""));
             }
-            return result;
+            return Some(result);
         }
 
         // 6-23 hours
         if total_hours < 24 {
-            return resolve_unit(total_hours, &self.hour, loc, "");
+            return Some(resolve_count(total_hours, &self.hour, loc, ""));
         }
 
         let total_days = total / 86400;
@@ -203,19 +206,19 @@ impl SayableDuration {
         // 1-2 days: days + hours (with half marker)
         if total_days <= 2 {
             if remainder_hours == 12 {
-                return resolve_unit(total_days, &self.day, loc, &self.half);
+                return Some(resolve_count(total_days, &self.day, loc, &self.half));
             }
-            let mut result = resolve_unit(total_days, &self.day, loc, "");
+            let mut result = resolve_count(total_days, &self.day, loc, "");
             if remainder_hours > 0 {
                 result.push_str(&self.delimiter);
-                result.push_str(&resolve_unit(remainder_hours, &self.hour, loc, ""));
+                result.push_str(&resolve_count(remainder_hours, &self.hour, loc, ""));
             }
-            return result;
+            return Some(result);
         }
 
         // 3-6 days
         if total_days < 7 {
-            return resolve_unit(total_days, &self.day, loc, "");
+            return Some(resolve_count(total_days, &self.day, loc, ""));
         }
 
         let total_weeks = total_days / 7;
@@ -223,101 +226,114 @@ impl SayableDuration {
 
         // 1-4 weeks: weeks + days (up to 29 days; 30+ transitions to months)
         if total_days < 30 {
-            let mut result = resolve_unit(total_weeks, &self.week, loc, "");
+            let mut result = resolve_count(total_weeks, &self.week, loc, "");
             if remainder_days > 0 {
                 result.push_str(&self.delimiter);
-                result.push_str(&resolve_unit(remainder_days, &self.day, loc, ""));
+                result.push_str(&resolve_count(remainder_days, &self.day, loc, ""));
             }
-            return result;
+            return Some(result);
         }
 
         // Approximate months (30.44 days average)
         let mut total_months = round_div(total_days);
+        if total_months > MAX_DURATION_MONTHS {
+            return None;
+        }
 
         // 1-11 months
         if total_months < 12 {
             if total_months == 0 {
                 total_months = 1;
             }
-            return resolve_unit(total_months, &self.month, loc, "");
+            return Some(resolve_count(total_months, &self.month, loc, ""));
         }
 
         // 12+ months: years + months
         let total_years = total_months / 12;
         let remainder_months = total_months % 12;
-        let mut result = resolve_unit(total_years, &self.year, loc, "");
+        let mut result = resolve_count(total_years, &self.year, loc, "");
         if remainder_months > 0 {
             result.push_str(&self.delimiter);
-            result.push_str(&resolve_unit(remainder_months, &self.month, loc, ""));
+            result.push_str(&resolve_count(remainder_months, &self.month, loc, ""));
         }
-        result
+        Some(result)
     }
 }
 
 /// Approximates months from days using 30.44 average days per month,
 /// matching Python's round(total_days / 30.44).
-fn round_div(total_days: i32) -> i32 {
-    (total_days as f64 / 30.44 + 0.5) as i32
+#[allow(clippy::cast_possible_truncation, clippy::cast_precision_loss)] // days < 2^53, months fit i64
+fn round_div(total_days: i64) -> i64 {
+    (total_days as f64 / 30.44 + 0.5) as i64
 }
 
-/// Parses an ISO datetime string to epoch-relative seconds for diffing.
-fn parse_iso_to_seconds(iso: &str) -> Option<i32> {
-    if iso.is_empty() {
-        return None;
-    }
-
-    let t_idx = iso.find('T')?;
-    let date_part = &iso[..t_idx];
-    let time_part = &iso[t_idx + 1..];
-
-    // Parse date: YYYY-MM-DD
-    let dp: Vec<&str> = date_part.split('-').collect();
-    if dp.len() < 3 {
-        return None;
-    }
-    let year = atoi(dp[0]);
-    let month = atoi(dp[1]);
-    let day = atoi(dp[2]);
-
-    // Strip timezone info
-    let time_str = if let Some(idx) = time_part.find('+') {
-        &time_part[..idx]
-    } else if let Some(idx) = time_part.find('Z') {
-        &time_part[..idx]
-    } else {
-        time_part
-    };
-
-    // Parse time: HH:MM:SS
-    let tp: Vec<&str> = time_str.split(':').collect();
-    let hour = atoi(tp[0]);
-    let minute = if tp.len() > 1 { atoi(tp[1]) } else { 0 };
-    let second = if tp.len() > 2 {
-        // Strip fractional seconds
-        let sec_str = if let Some(dot_idx) = tp[2].find('.') {
-            &tp[2][..dot_idx]
-        } else {
-            tp[2]
-        };
-        atoi(sec_str)
-    } else {
-        0
-    };
-
-    let days = days_since_epoch(year, month, day);
-    Some(days * 86400 + hour * 3600 + minute * 60 + second)
+/// Resolves a unit for a count that the tiers keep small (at most 6000 months).
+fn resolve_count(count: i64, uf: &UnitForms, loc: &DurationLocale, half: &str) -> String {
+    resolve_unit(i32::try_from(count).unwrap_or(i32::MAX), uf, loc, half)
 }
 
-/// Converts a string of digits to an i32. Returns 0 on failure.
-fn atoi(s: &str) -> i32 {
-    let mut n: i32 = 0;
-    for c in s.chars() {
-        if !c.is_ascii_digit() {
-            return 0;
+/// Parses a timestamp (docs/input-formats.md) to epoch-relative seconds for
+/// diffing: "YYYY-MM-DDTHH:MM", optional ":SS", optional "." plus digits after
+/// the seconds, and an optional zone suffix "Z" or "±HH:MM", which is ignored.
+fn parse_iso_to_seconds(iso: &str) -> Option<i64> {
+    let bytes = iso.as_bytes();
+    if bytes.len() < 11 || bytes[4] != b'-' || bytes[7] != b'-' || bytes[10] != b'T' {
+        return None;
+    }
+    let year = digits(&bytes[0..4])?;
+    let month = digits(&bytes[5..7])?;
+    let day = digits(&bytes[8..10])?;
+    if !(1..=12).contains(&month) || day < 1 || day > days_in_month(year, month) {
+        return None;
+    }
+    let (hour, minute, second) = parse_clock(&bytes[11..])?;
+    let days = i64::from(days_since_epoch(year, month, day));
+    Some(days * 86400 + i64::from(hour * 3600 + minute * 60 + second))
+}
+
+/// Parses "H:MM" or "HH:MM", optional ":SS" and fraction, and an optional
+/// zone suffix into (hour, minute, second).
+fn parse_clock(clock: &[u8]) -> Option<(i32, i32, i32)> {
+    let hour_len = clock.iter().take_while(|c| c.is_ascii_digit()).count();
+    if !(1..=2).contains(&hour_len) || clock.get(hour_len) != Some(&b':') {
+        return None;
+    }
+    let hour = digits(&clock[..hour_len])?;
+    let minute = digits(clock.get(hour_len + 1..hour_len + 3)?)?;
+    let mut rest = &clock[hour_len + 3..];
+    let mut second = 0;
+    if rest.first() == Some(&b':') {
+        second = digits(rest.get(1..3)?)?;
+        rest = &rest[3..];
+        if rest.first() == Some(&b'.') {
+            let fraction_len = rest[1..].iter().take_while(|c| c.is_ascii_digit()).count();
+            if fraction_len == 0 {
+                return None;
+            }
+            rest = &rest[1 + fraction_len..];
         }
-        n = n * 10 + (c as i32 - '0' as i32);
     }
-    n
+    if !is_zone_suffix(rest) || hour > 23 || minute > 59 || second > 59 {
+        return None;
+    }
+    Some((hour, minute, second))
+}
+
+/// True for nothing at all, "Z", or "+HH:MM" / "-HH:MM".
+fn is_zone_suffix(zone: &[u8]) -> bool {
+    match zone {
+        [] | [b'Z'] => true,
+        [b'+' | b'-', h1, h2, b':', m1, m2] => [h1, h2, m1, m2].iter().all(|c| c.is_ascii_digit()),
+        _ => false,
+    }
+}
+
+/// Converts a non-empty run of ASCII digits to an i32; `None` if any byte isn't a digit.
+fn digits(run: &[u8]) -> Option<i32> {
+    if run.is_empty() {
+        return None;
+    }
+    run.iter().try_fold(0, |n, &c| c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0')))
 }
 
 /// Returns true if the given year is a leap year.

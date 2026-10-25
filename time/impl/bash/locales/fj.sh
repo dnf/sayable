@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/fj.json
 
-_locale_fj() {
+_sayabletime_locale_fj() {
     _clock_hours=('tini ka rua' 'dua' 'rua' 'tolu' 'vā' 'lima' 'ono' 'vitu' 'walu' 'ciwa' 'tini' 'tini ka dua')
     _clock_midnight='bogi levu'
     _clock_noon='sigalevu'

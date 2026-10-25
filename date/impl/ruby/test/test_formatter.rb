@@ -443,3 +443,103 @@ class TestModuleLevelMethods < Minitest::Test
     assert_equal 'March 15th, 2025', SayableDate.format_date_with_year('2025-03-15')
   end
 end
+
+# ================================================================
+# Sections 13-16: with year, short months, short phrases, input validation
+# ================================================================
+class TestSpecInputFormats < Minitest::Test
+  # 13.1
+  def test_13_1_format_date_with_year
+    assert_equal 'February 4th, 2018', SayableDate::Formatter.new(SayableDate::Locales::EN).format_date_with_year('2018-02-04')
+  end
+
+  # 13.2
+  def test_13_2_format_date_with_year
+    assert_equal 'Mar 15, 2025', SayableDate::Formatter.new(SayableDate::Locales::EN, compactness: :short).format_date_with_year('2025-03-15')
+  end
+
+  # 13.3
+  def test_13_3_format_date_with_year
+    assert_equal '1/21/97', SayableDate::Formatter.new(SayableDate::Locales::EN, compactness: :compact).format_date_with_year('1997-01-21')
+  end
+
+  # 13.4
+  def test_13_4_two_digit_year_keeps_its_leading_zero
+    assert_equal '20/5/07', SayableDate::Formatter.new(SayableDate::Locales::TG, compactness: :compact).format_date_with_year('2007-05-20')
+  end
+
+  # 13.5
+  def test_13_5_format_date_with_year
+    assert_equal '21. kesäkuuta 1996', SayableDate::Formatter.new(SayableDate::Locales::FI, compactness: :short).format_date_with_year('1996-06-21')
+  end
+
+  # 14.1
+  def test_14_1_format_date
+    assert_equal '15. februára', SayableDate::Formatter.new(SayableDate::Locales::SK, compactness: :short).format_date('2031-02-15')
+  end
+
+  # 14.2
+  def test_14_2_format_date
+    assert_equal '10. prosince', SayableDate::Formatter.new(SayableDate::Locales::CS, compactness: :short).format_date('2025-12-10')
+  end
+
+  # 14.3
+  def test_14_3_format_date
+    assert_equal '5 листопада', SayableDate::Formatter.new(SayableDate::Locales::UK, compactness: :short).format_date('2025-11-05')
+  end
+
+  # 14.4
+  def test_14_4_format_relative
+    assert_equal '8. elokuuta', SayableDate::Formatter.new(SayableDate::Locales::FI, compactness: :short).format_relative('1998-08-08', '1998-08-15')
+  end
+
+  # 15.1
+  def test_15_1_day_after_tomorrow
+    assert_equal 'an Mth ma', SayableDate::Formatter.new(SayableDate::Locales::KW, compactness: :short).format_relative('2035-12-04', '2035-12-02')
+  end
+
+  # 15.2
+  def test_15_2_day_before_yesterday
+    assert_equal 'Dom nchi\'j', SayableDate::Formatter.new(SayableDate::Locales::MAM, compactness: :short).format_relative('2000-01-23', '2000-01-25')
+  end
+
+  # 15.3
+  def test_15_3_day_after_tomorrow
+    assert_equal 'a\'in Vie', SayableDate::Formatter.new(SayableDate::Locales::KEK, compactness: :short).format_relative('2014-10-24', '2014-10-22')
+  end
+
+  # 16.1
+  def test_16_1_february_30_doesn_t_exist
+    assert_nil SayableDate::Formatter.new(SayableDate::Locales::EN).format_date('2025-02-30')
+  end
+
+  # 16.2
+  def test_16_2_month_13
+    assert_nil SayableDate::Formatter.new(SayableDate::Locales::EN).format_date('2025-13-01')
+  end
+
+  # 16.3
+  def test_16_3_unpadded_month_and_day
+    assert_nil SayableDate::Formatter.new(SayableDate::Locales::EN).format_date('2025-6-1')
+  end
+
+  # 16.4
+  def test_16_4_surrounding_whitespace
+    assert_nil SayableDate::Formatter.new(SayableDate::Locales::EN).format_date(' 2025-06-01')
+  end
+
+  # 16.5
+  def test_16_5_an_iso_datetime_only_the_date_part_is_used
+    assert_equal 'June 1st', SayableDate::Formatter.new(SayableDate::Locales::EN).format_date('2025-06-01T10:00:00')
+  end
+
+  # 16.6
+  def test_16_6_february_29_in_a_non_leap_year
+    assert_nil SayableDate::Formatter.new(SayableDate::Locales::EN).format_date_with_year('2023-02-29')
+  end
+
+  # 16.7
+  def test_16_7_invalid_asof
+    assert_nil SayableDate::Formatter.new(SayableDate::Locales::EN).format_relative('2025-03-16', '2025-04-31')
+  end
+end

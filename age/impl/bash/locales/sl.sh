@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sl.json
 
-_plural_sl() {
+_sayableage_plural_sl() {
     local n=$1
     local mod100=$(( n % 100 ))
     if [ "${mod100}" -eq 1 ]; then echo "one"; return; fi
@@ -18,7 +18,7 @@ _plural_sl() {
     echo "other"
 }
 
-_locale_sl() {
+_sayableage_locale_sl() {
     _unit_day_one='{n} dan'
     _unit_day_two='{n} dneva'
     _unit_day_few='{n} dni'
@@ -59,5 +59,5 @@ _locale_sl() {
     _compact_unit_year='{n} l'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_sl
+    _plural_func=_sayableage_plural_sl
 }

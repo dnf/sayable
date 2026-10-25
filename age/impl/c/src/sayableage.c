@@ -100,10 +100,19 @@ static const char *sa_itoa(int n) {
 
 /* ---- date parsing ---- */
 
+static int sa_days_in_month(int year, int month) {
+    if (month == 2) {
+        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
+    }
+    if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
+    return 31;
+}
+
+/* Exactly YYYY-MM-DD naming a real calendar day (docs/input-formats.md). */
 static bool sa_parse_date(const char *s, int *y, int *m, int *d) {
     int i;
     if (!s) return false;
-    if (sa_strlen(s) < 10 || s[4] != '-' || s[7] != '-') return false;
+    if (sa_strlen(s) != 10 || s[4] != '-' || s[7] != '-') return false;
     *y = 0;
     for (i = 0; i < 4; i++) {
         char c = s[i];
@@ -122,15 +131,7 @@ static bool sa_parse_date(const char *s, int *y, int *m, int *d) {
         if (c < '0' || c > '9') return false;
         *d = *d * 10 + (c - '0');
     }
-    return (*y != 0 || *m != 0 || *d != 0);
-}
-
-static int sa_days_in_month(int year, int month) {
-    if (month == 2) {
-        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
-    }
-    if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
-    return 31;
+    return *m >= 1 && *m <= 12 && *d >= 1 && *d <= sa_days_in_month(*y, *m);
 }
 
 static int sa_julian_day(int year, int month, int day) {

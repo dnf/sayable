@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ee.json
 
-_locale_ee() {
+_sayabletime_locale_ee() {
     _clock_hours=('wuieve' 'ɖeka' 'eve' 'etɔ̃' 'ene' 'atɔ̃' 'ade' 'adre' 'enyi' 'asieke' 'ewo' 'wuiɖeka')
     _clock_midnight='zã titina'
     _clock_noon='ŋdɔ'

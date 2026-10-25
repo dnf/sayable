@@ -30,28 +30,28 @@ int _daysSinceEpoch(int year, int month, int day) {
   return d;
 }
 
+/// 500 years, the same ceiling as sayable-age.
+const _maxDurationMonths = 6000;
+
+/// YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+final _timestampPattern = RegExp(
+    r'^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})'
+    r'(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$');
+
+/// Parses an ISO timestamp to epoch-ish seconds for diffing; null if malformed.
 int? _parseIsoToSeconds(String isoStr) {
-  if (isoStr.isEmpty) return null;
-  final tIdx = isoStr.indexOf('T');
-  if (tIdx < 0) return null;
-  final datePart = isoStr.substring(0, tIdx);
-  var timePart = isoStr.substring(tIdx + 1);
-
-  final dp = datePart.split('-');
-  if (dp.length != 3) return null;
-  final year = int.tryParse(dp[0]);
-  final month = int.tryParse(dp[1]);
-  final day = int.tryParse(dp[2]);
-  if (year == null || month == null || day == null) return null;
-
-  if (timePart.contains('+')) timePart = timePart.split('+')[0];
-  if (timePart.contains('Z')) timePart = timePart.split('Z')[0];
-  final tp = timePart.split(':');
-  final hour = int.tryParse(tp[0]);
-  final minute = tp.length > 1 ? int.tryParse(tp[1]) : 0;
-  final secondStr = tp.length > 2 ? tp[2].split('.')[0] : '0';
-  final second = int.tryParse(secondStr);
-  if (hour == null || minute == null || second == null) return null;
+  final m = _timestampPattern.firstMatch(isoStr);
+  if (m == null) return null;
+  final year = int.parse(m[1]!);
+  final month = int.parse(m[2]!);
+  final day = int.parse(m[3]!);
+  final hour = int.parse(m[4]!);
+  final minute = int.parse(m[5]!);
+  final second = m[6] == null ? 0 : int.parse(m[6]!);
+  if (month < 1 || month > 12 || day < 1 || day > _daysInMonth(year, month)) {
+    return null;
+  }
+  if (hour > 23 || minute > 59 || second > 59) return null;
 
   final days = _daysSinceEpoch(year, month, day);
   return days * 86400 + hour * 3600 + minute * 60 + second;
@@ -127,7 +127,7 @@ class SayableDuration {
     return _formatDurationSeconds(totalSeconds);
   }
 
-  String _formatDurationSeconds(int total) {
+  String? _formatDurationSeconds(int total) {
     if (total == 0) return _justNow;
 
     // 1-59 seconds
@@ -206,6 +206,7 @@ class SayableDuration {
 
     // Approximate months
     var totalMonths = (totalDays / 30.44).round();
+    if (totalMonths > _maxDurationMonths) return null;
 
     // 1-11 months
     if (totalMonths < 12) {
@@ -232,7 +233,7 @@ class SayableDuration {
     if (diff < 0) return null;
     if (diff == 0) return _justNow;
     final dur = _formatDurationSeconds(diff);
-    return _ago.replaceFirst('{0}', dur);
+    return dur == null ? null : _ago.replaceFirst('{0}', dur);
   }
 
   String? formatUntil(String? target, String? asOf) {
@@ -244,7 +245,7 @@ class SayableDuration {
     if (diff < 0) return null;
     if (diff == 0) return _justNow;
     final dur = _formatDurationSeconds(diff);
-    return _inFuture.replaceFirst('{0}', dur);
+    return dur == null ? null : _inFuture.replaceFirst('{0}', dur);
   }
 }
 

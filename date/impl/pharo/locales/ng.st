@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/ng.json "
 
-"Locale: ng"
+"Locale: ng"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 ng

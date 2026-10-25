@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/bci.json
 
-_plural_bci() {
+_sayableduration_plural_bci() {
     echo "other"
 }
 
-_locale_bci() {
+_sayableduration_locale_bci() {
     _unit_second='sɛgɔn {n}'
     _unit_minute='miniti {n}'
     _unit_hour='dɔ {n}'
@@ -46,5 +46,5 @@ _locale_bci() {
     _compact_delimiter=''
     _compact_ago='{0} sín'
     _compact_in_future='ɔ {0}'
-    _plural_func=_plural_bci
+    _plural_func=_sayableduration_plural_bci
 }

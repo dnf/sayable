@@ -373,8 +373,7 @@ public final class Sayable {
         if (value == null) {
             result = formatter.formatDurationSeconds(-1);
         } else if (isInteger(value)) {
-            int seconds = Integer.parseInt(value);
-            result = formatter.formatDurationSeconds(seconds);
+            result = fitsInLong(value) ? formatter.formatDurationSeconds(Long.parseLong(value)) : null;
         } else {
             if (positionals.size() < 2) {
                 throw usage("duration with timestamps requires start and end arguments");
@@ -432,6 +431,16 @@ public final class Sayable {
 
     private static String cmdLocales() {
         return String.join("\n", new TreeSet<>(sayableage.locales.Locales.ALL.keySet()));
+    }
+
+    /** A digit string too long for a long is far beyond the 500-year ceiling. */
+    private static boolean fitsInLong(String digits) {
+        try {
+            Long.parseLong(digits);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     private static boolean isInteger(String s) {

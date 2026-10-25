@@ -441,3 +441,49 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 @(test) test_get_locale_unknown :: proc(t: ^testing.T) { testing.expect(t, get_locale("xx") == nil) }
 @(test) test_get_locale_empty :: proc(t: ^testing.T) { testing.expect(t, get_locale("") == nil) }
 @(test) test_get_locale_case :: proc(t: ^testing.T) { testing.expect(t, get_locale("EN") == nil) }
+
+// ================================================================
+// Section 31: Weeks and days across month ends
+// ================================================================
+// 31.1
+@(test) test_31_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 4 days", format_age(buf[:], &locale_en, .Normal, "2016-12-31", "2017-03-29")) }
+// 31.2
+@(test) test_31_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 6 days", format_age(buf[:], &locale_en, .Normal, "1991-11-27", "1992-02-25")) }
+// 31.3
+@(test) test_31_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "4 weeks, 5 days", format_age(buf[:], &locale_en, .Normal, "2020-11-30", "2021-01-02")) }
+// 31.4
+@(test) test_31_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12w4d", format_age(buf[:], &locale_en, .Compact, "2016-12-31", "2017-03-29")) }
+
+// ================================================================
+// Section 32: Half years take their plural form from whole years
+// ================================================================
+// 32.1
+@(test) test_32_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 i pół lata", format_age(buf[:], &locale_pl, .Normal, "2021-06-15", "2025-01-15")) }
+// 32.2
+@(test) test_32_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "5 i pół lat", format_age(buf[:], &locale_pl, .Short, "2020-06-15", "2025-12-15")) }
+// 32.3
+@(test) test_32_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6 iseggasen d uzgen", format_age(buf[:], &locale_shi, .Normal, "2005-06-08", "2012-06-07")) }
+
+// ================================================================
+// Section 33: Input validation
+// ================================================================
+// 33.1
+@(test) test_33_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, "2025-02-30", "2032-06-25")) }
+// 33.2
+@(test) test_33_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, "2025-13-01", "2027-01-31")) }
+// 33.3
+@(test) test_33_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, "2023-02-29", "2025-03-01")) }
+// 33.4
+@(test) test_33_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, "2025-06-00", "2027-02-25")) }
+// 33.5
+@(test) test_33_5 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, "2025-6-1", "2027-02-25")) }
+// 33.6
+@(test) test_33_6 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, " 2025-06-01", "2027-02-25")) }
+// 33.7
+@(test) test_33_7 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, "2025-06-15T10:00:00", "2027-02-25")) }
+// 33.8
+@(test) test_33_8 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_age(buf[:], &locale_en, .Normal, "2020-01-01", "2025-04-31")) }
+// 33.9
+@(test) test_33_9 :: proc(t: ^testing.T) { expect_nil(t, format_stage(&locale_en, "2025-02-30", "2027-09-05", "")) }
+// 33.10
+@(test) test_33_10 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "2 years", format_age(buf[:], &locale_en, .Normal, "2024-02-29", "2026-03-01")) }

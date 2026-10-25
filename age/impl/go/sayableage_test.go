@@ -717,3 +717,35 @@ func TestGetLocale(t *testing.T) {
 		t.Error("GetLocale(\"EN\") should be nil (case-sensitive)")
 	}
 }
+
+// ── Section 31: Weeks and days across month ends ────────────────────────────────────
+
+func TestSection31WeeksAndDaysAcrossMonthEnds(t *testing.T) {
+	assertAge(t, "31.1", sayableage.NewSayableAge(locales.EN).FormatAge("2016-12-31", "2017-03-29"), "12 weeks, 4 days")          // 31.1
+	assertAge(t, "31.2", sayableage.NewSayableAge(locales.EN).FormatAge("1991-11-27", "1992-02-25"), "12 weeks, 6 days")          // 31.2
+	assertAge(t, "31.3", sayableage.NewSayableAge(locales.EN).FormatAge("2020-11-30", "2021-01-02"), "4 weeks, 5 days")           // 31.3
+	assertAge(t, "31.4", sayableage.NewSayableAge(locales.EN, sayableage.Compact).FormatAge("2016-12-31", "2017-03-29"), "12w4d") // 31.4
+}
+
+// ── Section 32: Half years take their plural form from whole years ────────────────────────────────────
+
+func TestSection32HalfYearsTakeTheirPluralFormFromWholeYears(t *testing.T) {
+	assertAge(t, "32.1", sayableage.NewSayableAge(locales.PL).FormatAge("2021-06-15", "2025-01-15"), "3 i pół lata")                  // 32.1
+	assertAge(t, "32.2", sayableage.NewSayableAge(locales.PL, sayableage.Short).FormatAge("2020-06-15", "2025-12-15"), "5 i pół lat") // 32.2
+	assertAge(t, "32.3", sayableage.NewSayableAge(locales.SHI).FormatAge("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")          // 32.3
+}
+
+// ── Section 33: Input validation ────────────────────────────────────
+
+func TestSection33InputValidation(t *testing.T) {
+	assertNil(t, "33.1", sayableage.NewSayableAge(locales.EN).FormatAge("2025-02-30", "2032-06-25"))             // 33.1
+	assertNil(t, "33.2", sayableage.NewSayableAge(locales.EN).FormatAge("2025-13-01", "2027-01-31"))             // 33.2
+	assertNil(t, "33.3", sayableage.NewSayableAge(locales.EN).FormatAge("2023-02-29", "2025-03-01"))             // 33.3
+	assertNil(t, "33.4", sayableage.NewSayableAge(locales.EN).FormatAge("2025-06-00", "2027-02-25"))             // 33.4
+	assertNil(t, "33.5", sayableage.NewSayableAge(locales.EN).FormatAge("2025-6-1", "2027-02-25"))               // 33.5
+	assertNil(t, "33.6", sayableage.NewSayableAge(locales.EN).FormatAge(" 2025-06-01", "2027-02-25"))            // 33.6
+	assertNil(t, "33.7", sayableage.NewSayableAge(locales.EN).FormatAge("2025-06-15T10:00:00", "2027-02-25"))    // 33.7
+	assertNil(t, "33.8", sayableage.NewSayableAge(locales.EN).FormatAge("2020-01-01", "2025-04-31"))             // 33.8
+	assertNil(t, "33.9", sayableage.NewSayableAge(locales.EN).FormatStage("2025-02-30", "2027-09-05"))           // 33.9
+	assertAge(t, "33.10", sayableage.NewSayableAge(locales.EN).FormatAge("2024-02-29", "2026-03-01"), "2 years") // 33.10
+}

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/br.json
 
-_locale_br() {
+_sayabletime_locale_br() {
     _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
     _clock_midnight='hanternoz'
     _clock_noon='kreisteiz'

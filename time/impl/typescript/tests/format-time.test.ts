@@ -113,3 +113,45 @@ describe('Locale — Finnish (dot separator, short)', () => {
   // 8.2
   it('midnight dot', () => expect(st.formatTime('00:00')).toBe('0.00'));
 });
+
+// ── Section 9: Minutes in short and compact modes ─────────────────────
+
+describe('Minutes in short and compact modes', () => {
+  // 9.1
+  it('short keeps the exact minute', () => expect(new SayableTime(en, 'short').formatTime('18:01')).toBe('6:01 PM'));
+
+  // 9.2
+  it('compact keeps the exact minute', () => expect(new SayableTime(en, 'compact').formatTime('19:05')).toBe('7:05p'));
+});
+
+// ── Section 10: Input validation ──────────────────────────────────────
+
+describe('Input validation', () => {
+  // 10.1
+  it('one-digit hour', () => expect(formatTime('9:30')).toBe('half past nine'));
+
+  // 10.2
+  it('two-digit hour', () => expect(formatTime('09:30')).toBe('half past nine'));
+
+  // 10.3
+  it('leading whitespace', () => expect(formatTime(' 9:30')).toBeNull());
+
+  // 10.4
+  it('trailing whitespace', () => expect(formatTime('9:30 ')).toBeNull());
+
+  // 10.5
+  it('minutes need two digits', () => expect(formatTime('9:5')).toBeNull());
+
+  // 10.6
+  it('hour out of range', () => expect(formatTime('24:00')).toBeNull());
+
+  // 10.7
+  it('seconds are allowed and ignored', () => expect(formatTime('14:15:30')).toBe('a quarter past two'));
+
+  // 10.8
+  it('ISO datetime with zone suffix (ignored)', () =>
+    expect(formatTime('2025-01-15T14:15:00Z')).toBe('a quarter past two'));
+
+  // 10.9
+  it('ISO datetime with an impossible date', () => expect(formatTime('2025-02-30T14:15:00')).toBeNull());
+});

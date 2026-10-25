@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/lt.json
 
-_locale_lt() {
+_sayabledate_locale_lt() {
     _months=('sausis' 'vasaris' 'kovas' 'balandis' 'gegužė' 'birželis' 'liepa' 'rugpjūtis' 'rugsėjis' 'spalis' 'lapkritis' 'gruodis')
     _weekdays=('sekmadienis' 'pirmadienis' 'antradienis' 'trečiadienis' 'ketvirtadienis' 'penktadienis' 'šeštadienis')
     _day_format='{n}.'

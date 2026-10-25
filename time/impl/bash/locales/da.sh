@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/da.json
 
-_locale_da() {
+_sayabletime_locale_da() {
     _clock_hours=('tolv' 'et' 'to' 'tre' 'fire' 'fem' 'seks' 'syv' 'otte' 'ni' 'ti' 'elleve')
     _clock_midnight='midnat'
     _clock_noon='middag'

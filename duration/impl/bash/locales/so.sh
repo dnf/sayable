@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/so.json
 
-_plural_so() {
+_sayableduration_plural_so() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_so() {
+_sayableduration_locale_so() {
     _unit_second_one='ilbiriqsi {n}'
     _unit_second_other='ilbiriqsiyaal {n}'
     _unit_minute_one='daqiiqad {n}'
@@ -55,5 +55,5 @@ _locale_so() {
     _compact_delimiter=''
     _compact_ago='{0} ka hor'
     _compact_in_future='{0} gudahood'
-    _plural_func=_plural_so
+    _plural_func=_sayableduration_plural_so
 }

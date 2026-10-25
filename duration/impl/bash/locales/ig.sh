@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ig.json
 
-_plural_ig() {
+_sayableduration_plural_ig() {
     echo "other"
 }
 
-_locale_ig() {
+_sayableduration_locale_ig() {
     _unit_second='{n} sekọnd'
     _unit_minute='{n} nkeji'
     _unit_hour='{n} awa'
@@ -46,5 +46,5 @@ _locale_ig() {
     _compact_delimiter=''
     _compact_ago='{0} gara aga'
     _compact_in_future='na {0}'
-    _plural_func=_plural_ig
+    _plural_func=_sayableduration_plural_ig
 }

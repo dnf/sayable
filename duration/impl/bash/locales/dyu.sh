@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/dyu.json
 
-_plural_dyu() {
+_sayableduration_plural_dyu() {
     echo "other"
 }
 
-_locale_dyu() {
+_sayableduration_locale_dyu() {
     _unit_second='sɛkondi {n}'
     _unit_minute='miniti {n}'
     _unit_hour='lɛrɛ {n}'
@@ -46,5 +46,5 @@ _locale_dyu() {
     _compact_delimiter=''
     _compact_ago='{0} tɛmɛnen'
     _compact_in_future='ka {0}'
-    _plural_func=_plural_dyu
+    _plural_func=_sayableduration_plural_dyu
 }

@@ -182,4 +182,66 @@ import Testing
         let st = SayableTimeFormatter(Locales.FI, compactness: .short)
         #expect(st.formatTime("00:00") == "0.00")
     }
+
+    // ================================================================
+    // Minutes in short and compact modes
+    // ================================================================
+    // 9.1
+    @Test func canonical9_1() {
+        #expect(SayableTimeFormatter(Locales.get("en")!, compactness: .short).formatTime("18:01") == "6:01 PM")
+    }
+
+    // 9.2
+    @Test func canonical9_2() {
+        #expect(SayableTimeFormatter(Locales.get("en")!, compactness: .compact).formatTime("19:05") == "7:05p")
+    }
+
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+    // 10.1
+    @Test func canonical10_1() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("9:30") == "half past nine")
+    }
+
+    // 10.2
+    @Test func canonical10_2() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("09:30") == "half past nine")
+    }
+
+    // 10.3
+    @Test func canonical10_3() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime(" 9:30") == nil)
+    }
+
+    // 10.4
+    @Test func canonical10_4() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("9:30 ") == nil)
+    }
+
+    // 10.5
+    @Test func canonical10_5() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("9:5") == nil)
+    }
+
+    // 10.6
+    @Test func canonical10_6() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("24:00") == nil)
+    }
+
+    // 10.7
+    @Test func canonical10_7() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("14:15:30") == "a quarter past two")
+    }
+
+    // 10.8
+    @Test func canonical10_8() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("2025-01-15T14:15:00Z") == "a quarter past two")
+    }
+
+    // 10.9
+    @Test func canonical10_9() {
+        #expect(SayableTimeFormatter(Locales.get("en")!).formatTime("2025-02-30T14:15:00") == nil)
+    }
 }

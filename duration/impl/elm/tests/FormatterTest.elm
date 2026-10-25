@@ -2,6 +2,7 @@ module FormatterTest exposing (suite)
 
 import Expect
 import SayableDuration.Formatter exposing (formatDuration, formatDurationTimestamps, formatSince, formatUntil)
+import SayableDuration.Locales exposing (getLocale)
 import SayableDuration.Locales.De as De
 import SayableDuration.Locales.En as En
 import SayableDuration.Locales.Fr as Fr
@@ -188,5 +189,35 @@ suite =
                 \_ -> Expect.equal (Just "1h") (durCompact 3600)
             , test "17.2 compact 1m30s" <|
                 \_ -> Expect.equal (Just "1m30s") (durCompact 90)
+            ]
+        , describe "18. Short compactness - relative time"
+            [ test "18.1 Mende keeps days and hours" <|
+                \_ ->
+                    Expect.equal (Just "l\u{0254}h\u{0254}nga 2, awa 14 taa gb\u{0254}y\u{0254}")
+                        (getLocale "men" |> Maybe.andThen (\loc -> formatSince loc Short "2025-01-20T01:32:11" "2025-01-22T15:39:16"))
+            ]
+        , describe "19. Range (500-year ceiling)"
+            [ test "19.1 500 Julian years is the ceiling" <|
+                \_ -> Expect.equal (Just "500 years") (dur 15778800000)
+            , test "19.2 over 6000 months" <|
+                \_ -> Expect.equal Nothing (dur 15800000000)
+            , test "19.3 well beyond the ceiling" <|
+                \_ -> Expect.equal Nothing (dur 99999999999)
+            , test "19.4 525 years ago" <|
+                \_ -> Expect.equal Nothing (since "1500-01-01T00:00:00" "2025-01-01T00:00:00")
+            , test "19.5 575 years from now" <|
+                \_ -> Expect.equal Nothing (until "2600-01-01T00:00:00" "2025-01-01T00:00:00")
+            ]
+        , describe "20. Timestamp validation"
+            [ test "20.1 seconds are optional" <|
+                \_ -> Expect.equal (Just "1\u{00BD} hours") (formatDurationTimestamps en Normal "2025-01-15T10:00" "2025-01-15T11:30:00")
+            , test "20.2 minutes are required" <|
+                \_ -> Expect.equal Nothing (formatDurationTimestamps en Normal "2025-01-15T10" "2025-01-15T11:30:00")
+            , test "20.3 unpadded date" <|
+                \_ -> Expect.equal Nothing (formatDurationTimestamps en Normal "2025-1-5T10:00:00" "2025-01-15T11:30:00")
+            , test "20.4 impossible date" <|
+                \_ -> Expect.equal Nothing (formatDurationTimestamps en Normal "2025-02-30T10:00:00" "2025-03-15T11:30:00")
+            , test "20.5 hour out of range" <|
+                \_ -> Expect.equal Nothing (since "2025-01-15T10:00:00" "2025-01-15T25:00:00")
             ]
         ]

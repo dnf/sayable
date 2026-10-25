@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sar.json
 
-_plural_sar() {
+_sayableage_plural_sar() {
     echo "other"
 }
 
-_locale_sar() {
+_sayableage_locale_sar() {
     _unit_day='ndɔ {n}'
     _unit_week='lɔtɛ {n}'
     _unit_month='ndɔɔ {n}'
@@ -37,5 +37,5 @@ _locale_sar() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_sar
+    _plural_func=_sayableage_plural_sar
 }

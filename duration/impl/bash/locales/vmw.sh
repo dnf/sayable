@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/vmw.json
 
-_plural_vmw() {
+_sayableduration_plural_vmw() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_vmw() {
+_sayableduration_locale_vmw() {
     _unit_second_one='sekuundu {n}'
     _unit_second_other='sekuundu {n}'
     _unit_minute_one='minuto {n}'
@@ -59,5 +59,5 @@ _locale_vmw() {
     _compact_delimiter=''
     _compact_ago='{0} zapita'
     _compact_in_future='mu {0}'
-    _plural_func=_plural_vmw
+    _plural_func=_sayableduration_plural_vmw
 }

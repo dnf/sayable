@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/fan.json "
 
-"Locale: fan"
+"Locale: fan"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 fan

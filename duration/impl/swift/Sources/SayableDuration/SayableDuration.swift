@@ -33,6 +33,8 @@ private func stringReplace(_ s: String, _ target: String, _ replacement: String)
 public struct SayableDurationFormatter: Sendable {
 
     public static let version = "0.5.0"
+    /// 500 years, the same ceiling as sayable-age
+    private static let maxDurationMonths = 6000
 
     private let locale: DurationLocale
     private let second: UnitForms
@@ -98,7 +100,7 @@ public struct SayableDurationFormatter: Sendable {
         let diff = a - s
         if diff < 0 { return nil }
         if diff == 0 { return justNowLabel }
-        let dur = formatDurationSeconds(diff)
+        guard let dur = formatDurationSeconds(diff) else { return nil }
         return stringReplace(agoTemplate, "{0}", dur)
     }
 
@@ -109,13 +111,20 @@ public struct SayableDurationFormatter: Sendable {
         let diff = t - a
         if diff < 0 { return nil }
         if diff == 0 { return justNowLabel }
-        let dur = formatDurationSeconds(diff)
+        guard let dur = formatDurationSeconds(diff) else { return nil }
         return stringReplace(inFutureTemplate, "{0}", dur)
     }
 
     // MARK: - Private Helpers
 
-    private func formatDurationSeconds(_ total: Int) -> String {
+    /// Months of 30.44 days (the average month), rounded.
+    private static func approximateMonths(_ days: Int) -> Int {
+        return roundToNearest(Double(days) / 30.44)
+    }
+
+    private func formatDurationSeconds(_ total: Int) -> String? {
+        if Self.approximateMonths(total / 86400) > Self.maxDurationMonths { return nil }
+
         // 0 seconds
         if total == 0 { return justNowLabel }
 
@@ -193,8 +202,7 @@ public struct SayableDurationFormatter: Sendable {
             return result
         }
 
-        // Approximate months (30.44 days average)
-        var totalMonths = Self.roundToNearest(Double(totalDays) / 30.44)
+        var totalMonths = Self.approximateMonths(totalDays)
 
         // 1-11 months
         if totalMonths < 12 {
@@ -255,35 +263,55 @@ public struct SayableDurationFormatter: Sendable {
         return (value - Double(floor)) >= 0.5 ? floor + 1 : floor
     }
 
+    private static func isDigit(_ c: UInt8) -> Bool {
+        return c >= 0x30 && c <= 0x39
+    }
+
+    /// The value of the digits in chars[from..<to], or nil if any isn't a digit.
+    private static func digitsValue(_ chars: [UInt8], _ from: Int, _ to: Int) -> Int? {
+        guard from >= 0, to <= chars.count, from < to else { return nil }
+        var n = 0
+        for i in from..<to {
+            guard isDigit(chars[i]) else { return nil }
+            n = n * 10 + Int(chars[i] - 0x30)
+        }
+        return n
+    }
+
+    /// Z or +HH:MM / -HH:MM (validated, never applied).
+    private static func isZoneSuffix(_ chars: [UInt8], from f: Int) -> Bool {
+        let count = chars.count - f
+        if count == 1 { return chars[f] == 0x5A }
+        return count == 6 && (chars[f] == 0x2B || chars[f] == 0x2D)
+            && digitsValue(chars, f + 1, f + 3) != nil && chars[f + 3] == 0x3A
+            && digitsValue(chars, f + 4, f + 6) != nil
+    }
+
+    /// YYYY-MM-DDTHH:MM (one- or two-digit hour), then optional :SS with
+    /// optional .fraction, then an optional zone suffix that is ignored.
     private static func parseIsoToSeconds(_ isoStr: String) -> Int? {
-        guard !isoStr.isEmpty else { return nil }
-        let parts = isoStr.split(separator: "T", maxSplits: 1, omittingEmptySubsequences: false).map(String.init)
-        guard parts.count == 2 else { return nil }
-        let datePart = parts[0]
-        var timePart = parts[1]
-
-        let dp = datePart.split(separator: "-", maxSplits: 2, omittingEmptySubsequences: false).map(String.init)
-        guard dp.count == 3 else { return nil }
-        guard let year = Int(dp[0]), let month = Int(dp[1]), let day = Int(dp[2]) else { return nil }
-
-        // Strip timezone
-        if let plusIdx = timePart.firstIndex(of: "+") {
-            timePart = String(timePart[..<plusIdx])
+        let chars = Array(isoStr.utf8)
+        guard chars.count >= 15, chars[4] == 0x2D, chars[7] == 0x2D, chars[10] == 0x54,
+              let year = digitsValue(chars, 0, 4), let month = digitsValue(chars, 5, 7),
+              let day = digitsValue(chars, 8, 10) else { return nil }
+        var p = 11
+        while p < chars.count, p - 11 < 2, isDigit(chars[p]) { p += 1 }
+        guard p > 11, p < chars.count, chars[p] == 0x3A,
+              let hour = digitsValue(chars, 11, p),
+              let minute = digitsValue(chars, p + 1, p + 3) else { return nil }
+        p += 3
+        var second = 0
+        if p < chars.count, chars[p] == 0x3A, let s = digitsValue(chars, p + 1, p + 3) {
+            second = s
+            p += 3
+            if p + 1 < chars.count, chars[p] == 0x2E, isDigit(chars[p + 1]) {
+                p += 1
+                while p < chars.count, isDigit(chars[p]) { p += 1 }
+            }
         }
-        if let zIdx = timePart.firstIndex(of: "Z") {
-            timePart = String(timePart[..<zIdx])
-        }
-
-        let tp = timePart.split(separator: ":", maxSplits: 3, omittingEmptySubsequences: false).map(String.init)
-        guard let hour = Int(tp[0]) else { return nil }
-        let minute = tp.count > 1 ? (Int(tp[1]) ?? 0) : 0
-        let second: Int
-        if tp.count > 2 {
-            let secStr = tp[2].split(separator: ".").first.map(String.init) ?? tp[2]
-            second = Int(secStr) ?? 0
-        } else {
-            second = 0
-        }
+        guard p == chars.count || isZoneSuffix(chars, from: p) else { return nil }
+        guard (1...12).contains(month), day >= 1, day <= daysInMonth(year: year, month: month) else { return nil }
+        guard hour <= 23, minute <= 59, second <= 59 else { return nil }
 
         let days = daysSinceEpoch(year: year, month: month, day: day)
         return days * 86400 + hour * 3600 + minute * 60 + second

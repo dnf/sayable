@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/bg.json
 
-_plural_bg() {
+_sayableage_plural_bg() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_bg() {
+_sayableage_locale_bg() {
     _unit_day_one='{n} ден'
     _unit_day_other='{n} дни'
     _unit_week_one='{n} седмица'
@@ -44,5 +44,5 @@ _locale_bg() {
     _compact_unit_year='{n} г.'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_bg
+    _plural_func=_sayableage_plural_bg
 }

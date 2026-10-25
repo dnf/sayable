@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/nl.json
 
-_locale_nl() {
+_sayabletime_locale_nl() {
     _clock_hours=('twaalf' 'een' 'twee' 'drie' 'vier' 'vijf' 'zes' 'zeven' 'acht' 'negen' 'tien' 'elf')
     _clock_midnight='middernacht'
     _clock_noon='middag'

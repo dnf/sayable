@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/jv.json
 
-_plural_jv() {
+_sayableage_plural_jv() {
     echo "other"
 }
 
-_locale_jv() {
+_sayableage_locale_jv() {
     _unit_day='{n} dina'
     _unit_week='{n} minggu'
     _unit_month='{n} wulan'
@@ -37,5 +37,5 @@ _locale_jv() {
     _compact_unit_year='{n} taun'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_jv
+    _plural_func=_sayableage_plural_jv
 }

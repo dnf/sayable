@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/sk.json "
 
-"Locale: sk"
+"Locale: sk"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 sk

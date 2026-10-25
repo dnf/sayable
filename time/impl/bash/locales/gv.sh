@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/gv.json
 
-_locale_gv() {
+_sayabletime_locale_gv() {
     _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
     _clock_midnight='mean oie'
     _clock_noon='munlaa'

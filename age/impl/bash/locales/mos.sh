@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mos.json
 
-_plural_mos() {
+_sayableage_plural_mos() {
     echo "other"
 }
 
-_locale_mos() {
+_sayableage_locale_mos() {
     _unit_day='daare {n}'
     _unit_week='semaana {n}'
     _unit_month='kiuugu {n}'
@@ -37,5 +37,5 @@ _locale_mos() {
     _compact_unit_year='yʋʋm {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mos
+    _plural_func=_sayableage_plural_mos
 }

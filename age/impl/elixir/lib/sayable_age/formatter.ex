@@ -149,16 +149,11 @@ defmodule SayableAge.Formatter do
     end
   end
 
-  defp parse_date(s) when is_binary(s) and byte_size(s) >= 10 do
-    with <<y::binary-size(4), ?-, m::binary-size(2), ?-, d::binary-size(2), _rest::binary>> <- s,
-         {year, ""} <- Integer.parse(y),
-         {month, ""} <- Integer.parse(m),
-         {day, ""} <- Integer.parse(d) do
-      if year == 0 and month == 0 and day == 0 do
-        :error
-      else
-        {:ok, {year, month, day}}
-      end
+  defp parse_date(<<y::binary-size(4), ?-, m::binary-size(2), ?-, d::binary-size(2)>>) do
+    with true <- all_digits?(y <> m <> d),
+         {year, month, day} = {String.to_integer(y), String.to_integer(m), String.to_integer(d)},
+         true <- month in 1..12 and day in 1..days_in_month(year, month) do
+      {:ok, {year, month, day}}
     else
       _ -> :error
     end
@@ -166,12 +161,13 @@ defmodule SayableAge.Formatter do
 
   defp parse_date(_), do: :error
 
+  defp all_digits?(s), do: s |> String.to_charlist() |> Enum.all?(&(&1 in ?0..?9))
+
   defp is_leap_year(y), do: (rem(y, 4) == 0 and rem(y, 100) != 0) or rem(y, 400) == 0
 
   defp days_in_month(_, m) when m in [1, 3, 5, 7, 8, 10, 12], do: 31
   defp days_in_month(_, m) when m in [4, 6, 9, 11], do: 30
   defp days_in_month(y, 2), do: if(is_leap_year(y), do: 29, else: 28)
-  defp days_in_month(_, _), do: 30
 
   defp to_jdn(y, m, d) do
     a = div(14 - m, 12)

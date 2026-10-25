@@ -2,6 +2,7 @@
 # Zero runtime dependencies.
 
 $script:VERSION = '0.5.0'
+$script:MAX_DURATION_MONTHS = 6000  # 500 years, the same ceiling as sayable-age
 
 # Source locale registry
 . "$PSScriptRoot/locales/registry.ps1"
@@ -46,42 +47,33 @@ function Resolve-SayableDurationUnit {
     return $result
 }
 
+# YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+$script:TIMESTAMP = '\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z'
+
 function Parse-SayableDurationISO {
     param(
         [AllowNull()][AllowEmptyString()][string]$ISOStr
     )
 
-    if ([string]::IsNullOrEmpty($ISOStr)) {
+    $m = [regex]::Match($ISOStr, $script:TIMESTAMP)
+    if (-not $m.Success) {
+        return $null
+    }
+    [int]$year = $m.Groups[1].Value
+    [int]$month = $m.Groups[2].Value
+    [int]$day = $m.Groups[3].Value
+    [int]$hour = $m.Groups[4].Value
+    [int]$minute = $m.Groups[5].Value
+    [int]$second = $(if ($m.Groups[6].Success) { $m.Groups[6].Value } else { 0 })
+    if ($month -lt 1 -or $month -gt 12 -or $day -lt 1 -or $day -gt (Get-DaysInMonthDuration -Year $year -Month $month)) {
+        return $null
+    }
+    if ($hour -gt 23 -or $minute -gt 59 -or $second -gt 59) {
         return $null
     }
 
-    try {
-        $parts = $ISOStr.Split('T')
-        if ($parts.Count -ne 2) { return $null }
-
-        $dateParts = $parts[0].Split('-')
-        [int]$year = $dateParts[0]
-        [int]$month = $dateParts[1]
-        [int]$day = $dateParts[2]
-
-        $timeStr = $parts[1]
-        if ($timeStr.Contains('+')) {
-            $timeStr = $timeStr.Split('+')[0]
-        }
-        if ($timeStr.Contains('Z')) {
-            $timeStr = $timeStr.Split('Z')[0]
-        }
-
-        $timeParts = $timeStr.Split(':')
-        [int]$hour = $timeParts[0]
-        [int]$minute = if ($timeParts.Count -gt 1) { [int]$timeParts[1] } else { 0 }
-        [int]$second = if ($timeParts.Count -gt 2) { [int]($timeParts[2].Split('.')[0]) } else { 0 }
-
-        $days = Get-DaysSinceEpoch -Year $year -Month $month -Day $day
-        return $days * 86400 + $hour * 3600 + $minute * 60 + $second
-    } catch {
-        return $null
-    }
+    $days = Get-DaysSinceEpoch -Year $year -Month $month -Day $day
+    return [long]$days * 86400 + $hour * 3600 + $minute * 60 + $second
 }
 
 function Test-IsLeapYear {
@@ -161,7 +153,7 @@ function New-SayableDurationFormatter {
 function Format-SayableDurationSeconds {
     param(
         [hashtable]$Formatter,
-        [int]$Total
+        [long]$Total
     )
 
     $loc = $Formatter['locale']
@@ -251,6 +243,9 @@ function Format-SayableDurationSeconds {
 
     # Approximate months (30.44 days average)
     $totalMonths = [Math]::Round($totalDays / 30.44)
+    if ($totalMonths -gt $script:MAX_DURATION_MONTHS) {
+        return $null
+    }
 
     # 1-11 months
     if ($totalMonths -lt 12) {
@@ -283,7 +278,7 @@ function Format-SayableDuration {
     }
 
     if ($StartOrSeconds -is [int] -or $StartOrSeconds -is [long] -or $StartOrSeconds -is [double]) {
-        $totalSeconds = [int]$StartOrSeconds
+        $totalSeconds = [long]$StartOrSeconds
     } elseif ($StartOrSeconds -is [string]) {
         if ([string]::IsNullOrEmpty($End)) {
             return $null
@@ -331,6 +326,9 @@ function Format-SayableSince {
     }
 
     $dur = Format-SayableDurationSeconds -Formatter $Formatter -Total $diff
+    if ($null -eq $dur) {
+        return $null
+    }
     return $Formatter['ago'].Replace('{0}', $dur)
 }
 
@@ -360,6 +358,9 @@ function Format-SayableUntil {
     }
 
     $dur = Format-SayableDurationSeconds -Formatter $Formatter -Total $diff
+    if ($null -eq $dur) {
+        return $null
+    }
     return $Formatter['inFuture'].Replace('{0}', $dur)
 }
 

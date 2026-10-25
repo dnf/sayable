@@ -253,6 +253,12 @@ def cmd_time(positionals, options):
     print(result)
 
 
+def _is_ascii_integer(value):
+    """True for an optional leading '-' then ASCII digits (str.isdigit also accepts e.g. Arabic-Indic digits)."""
+    digits = value[1:] if value.startswith("-") else value
+    return digits != "" and all("0" <= c <= "9" for c in digits)
+
+
 def cmd_duration(positionals, options):
     if not positionals:
         error("duration requires a value argument")
@@ -267,7 +273,7 @@ def cmd_duration(positionals, options):
 
     if value is None:
         result = formatter.format_duration(None)
-    elif value.lstrip("-").isdigit():
+    elif _is_ascii_integer(value):
         result = formatter.format_duration(int(value))
     else:
         # Timestamp mode: need an end argument

@@ -86,39 +86,43 @@ final class SayableTime
         );
     }
 
+    /**
+     * A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+     * suffix, which is ignored), alone or after the T of an ISO datetime.
+     */
+    private const CLOCK_TIME = '/\A(?:([0-9]{4})-([0-9]{2})-([0-9]{2})T)?([0-9]{1,2}):([0-9]{2})'
+        . '(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/';
+
     /** @return array{int, int}|null */
     private static function parseTime(string $input): ?array
     {
-        $t = $input;
-        $tIdx = \strpos($t, 'T');
-        if ($tIdx !== false) {
-            $t = \substr($t, $tIdx + 1);
-        }
-        $plusIdx = \strpos($t, '+');
-        if ($plusIdx !== false) {
-            $t = \substr($t, 0, $plusIdx);
-        }
-        $zIdx = \strpos($t, 'Z');
-        if ($zIdx !== false) {
-            $t = \substr($t, 0, $zIdx);
-        }
-        $parts = \explode(':', $t);
-        if (\count($parts) < 2) {
+        if (\preg_match(self::CLOCK_TIME, $input, $m) !== 1) {
             return null;
         }
-        if (!\ctype_digit($parts[0])) {
+        if ($m[1] !== '' && !self::isRealDate((int) $m[1], (int) $m[2], (int) $m[3])) {
             return null;
         }
-        $minStr = \explode('.', $parts[1])[0];
-        if (!\ctype_digit($minStr)) {
-            return null;
-        }
-        $hour = (int) $parts[0];
-        $minute = (int) $minStr;
-        if ($hour < 0 || $hour > 23 || $minute < 0 || $minute > 59) {
+        $hour = (int) $m[4];
+        $minute = (int) $m[5];
+        $second = (int) ($m[6] ?? 0);
+        if ($hour > 23 || $minute > 59 || $second > 59) {
             return null;
         }
         return [$hour, $minute];
+    }
+
+    private static function isRealDate(int $year, int $month, int $day): bool
+    {
+        if ($month < 1 || $month > 12 || $day < 1) {
+            return false;
+        }
+        $leap = $year % 4 === 0 && ($year % 100 !== 0 || $year % 400 === 0);
+        $lastDay = match ($month) {
+            2 => $leap ? 29 : 28,
+            4, 6, 9, 11 => 30,
+            default => 31,
+        };
+        return $day <= $lastDay;
     }
 
     private static function roundTo5(int $minute): int

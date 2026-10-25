@@ -344,4 +344,114 @@ import Testing
         let sd = SayableDateFormatter(Locales.ES)
         #expect(sd.formatRelative("2025-03-17", asOf: "2025-03-15") == "pasado ma\u{00F1}ana")
     }
+
+    // ================================================================
+    // format_date_with_year
+    // ================================================================
+    // 13.1
+    @Test func canonical13_1() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatDateWithYear("2018-02-04") == "February 4th, 2018")
+    }
+
+    // 13.2
+    @Test func canonical13_2() {
+        #expect(SayableDateFormatter(Locales.get("en")!, compactness: .short).formatDateWithYear("2025-03-15") == "Mar 15, 2025")
+    }
+
+    // 13.3
+    @Test func canonical13_3() {
+        #expect(SayableDateFormatter(Locales.get("en")!, compactness: .compact).formatDateWithYear("1997-01-21") == "1/21/97")
+    }
+
+    // 13.4
+    @Test func canonical13_4() {
+        #expect(SayableDateFormatter(Locales.get("tg")!, compactness: .compact).formatDateWithYear("2007-05-20") == "20/5/07")
+    }
+
+    // 13.5
+    @Test func canonical13_5() {
+        #expect(SayableDateFormatter(Locales.get("fi")!, compactness: .short).formatDateWithYear("1996-06-21") == "21. kesäkuuta 1996")
+    }
+
+
+    // ================================================================
+    // Short month names (locales that keep the full genitive)
+    // ================================================================
+    // 14.1
+    @Test func canonical14_1() {
+        #expect(SayableDateFormatter(Locales.get("sk")!, compactness: .short).formatDate("2031-02-15") == "15. februára")
+    }
+
+    // 14.2
+    @Test func canonical14_2() {
+        #expect(SayableDateFormatter(Locales.get("cs")!, compactness: .short).formatDate("2025-12-10") == "10. prosince")
+    }
+
+    // 14.3
+    @Test func canonical14_3() {
+        #expect(SayableDateFormatter(Locales.get("uk")!, compactness: .short).formatDate("2025-11-05") == "5 листопада")
+    }
+
+    // 14.4
+    @Test func canonical14_4() {
+        #expect(SayableDateFormatter(Locales.get("fi")!, compactness: .short).formatRelative("1998-08-08", asOf: "1998-08-15") == "8. elokuuta")
+    }
+
+
+    // ================================================================
+    // format_relative — short phrases
+    // ================================================================
+    // 15.1
+    @Test func canonical15_1() {
+        #expect(SayableDateFormatter(Locales.get("kw")!, compactness: .short).formatRelative("2035-12-04", asOf: "2035-12-02") == "an Mth ma")
+    }
+
+    // 15.2
+    @Test func canonical15_2() {
+        #expect(SayableDateFormatter(Locales.get("mam")!, compactness: .short).formatRelative("2000-01-23", asOf: "2000-01-25") == "Dom nchi'j")
+    }
+
+    // 15.3
+    @Test func canonical15_3() {
+        #expect(SayableDateFormatter(Locales.get("kek")!, compactness: .short).formatRelative("2014-10-24", asOf: "2014-10-22") == "a'in Vie")
+    }
+
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+    // 16.1
+    @Test func canonical16_1() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatDate("2025-02-30") == nil)
+    }
+
+    // 16.2
+    @Test func canonical16_2() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatDate("2025-13-01") == nil)
+    }
+
+    // 16.3
+    @Test func canonical16_3() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatDate("2025-6-1") == nil)
+    }
+
+    // 16.4
+    @Test func canonical16_4() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatDate(" 2025-06-01") == nil)
+    }
+
+    // 16.5
+    @Test func canonical16_5() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatDate("2025-06-01T10:00:00") == "June 1st")
+    }
+
+    // 16.6
+    @Test func canonical16_6() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatDateWithYear("2023-02-29") == nil)
+    }
+
+    // 16.7
+    @Test func canonical16_7() {
+        #expect(SayableDateFormatter(Locales.get("en")!).formatRelative("2025-03-16", asOf: "2025-04-31") == nil)
+    }
 }

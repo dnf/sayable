@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/bem.json
 
-_locale_bem() {
+_sayabledate_locale_bem() {
     _months=('Januari' 'Februari' 'Machi' 'Epreli' 'Mei' 'Juni' 'Julai' 'Ogasti' 'Septemba' 'Oktoba' 'Novemba' 'Disemba')
     _weekdays=('Pa Mulungu' 'Pa Bwali' 'Pa Bibili' 'Pa Butatu' 'Pa Bune' 'Pa Busano' 'Pa Mulembe')
     _day_format='{n}'

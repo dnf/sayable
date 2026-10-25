@@ -6,6 +6,7 @@ import "./locales/en" for ENLocale
 import "./locales/de" for DELocale
 import "./locales/fr" for FRLocale
 import "./locales/ja" for JALocale
+import "./locales/men" for MENLocale
 
 class Test {
   construct new() {
@@ -295,6 +296,55 @@ t.assert("17.1", compactFmt.formatDuration(3600), "1h")
 
 // 17.2
 t.assert("17.2", compactFmt.formatDuration(90), "1m30s")
+
+// ================================================================
+// 18. Short compactness — relative time
+// ================================================================
+t.section("18. Short compactness relative time")
+var menShortFmt = SayableDuration.new(MENLocale, "short")
+
+// 18.1
+t.assert("18.1", menShortFmt.formatSince("2025-01-20T01:32:11", "2025-01-22T15:39:16"), "lɔhɔnga 2, awa 14 taa gbɔyɔ")
+
+// ================================================================
+// 19. Range (500-year ceiling)
+// ================================================================
+t.section("19. Range (500-year ceiling)")
+
+// 19.1
+t.assert("19.1", fmt.formatDuration(15778800000), "500 years")
+
+// 19.2
+t.assertNull("19.2", fmt.formatDuration(15800000000))
+
+// 19.3
+t.assertNull("19.3", fmt.formatDuration(99999999999))
+
+// 19.4
+t.assertNull("19.4", fmt.formatSince("1500-01-01T00:00:00", "2025-01-01T00:00:00"))
+
+// 19.5
+t.assertNull("19.5", fmt.formatUntil("2600-01-01T00:00:00", "2025-01-01T00:00:00"))
+
+// ================================================================
+// 20. Timestamp validation
+// ================================================================
+t.section("20. Timestamp validation")
+
+// 20.1
+t.assert("20.1", fmt.formatDuration("2025-01-15T10:00", "2025-01-15T11:30:00"), "1½ hours")
+
+// 20.2
+t.assertNull("20.2", fmt.formatDuration("2025-01-15T10", "2025-01-15T11:30:00"))
+
+// 20.3
+t.assertNull("20.3", fmt.formatDuration("2025-1-5T10:00:00", "2025-01-15T11:30:00"))
+
+// 20.4
+t.assertNull("20.4", fmt.formatDuration("2025-02-30T10:00:00", "2025-03-15T11:30:00"))
+
+// 20.5
+t.assertNull("20.5", fmt.formatSince("2025-01-15T10:00:00", "2025-01-15T25:00:00"))
 
 // ================================================================
 t.summary()

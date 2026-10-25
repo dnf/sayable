@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/sar.json
 
-_locale_sar() {
+_sayabletime_locale_sar() {
     _clock_hours=('mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi' 'kɨ̀ndá' 'ɗìi' 'mùtá' 'sɔ̀' 'mɨ̀ndɨ̀' 'mɨ̀ndɨ̀ kɨ̀ndá' 'mɨ̀sá' 'mɨ̀ndɨ̀ mùtá' 'mɨ̀ndɨ̀ sɔ̀' 'mɔ̀ɔ́' 'mɔ̀ɔ́ kɨ̀ndá')
     _clock_midnight='badɔ'
     _clock_noon='mbɔr ndɔ'

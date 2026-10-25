@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/qu.json
 
-_locale_qu() {
+_sayabletime_locale_qu() {
     _clock_hours=('chunka iskayniyuq' 'huk' 'iskay' 'kimsa' 'tawa' 'pichqa' 'suqta' 'qanchis' 'pusaq' 'isqun' 'chunka' 'chunka hukniyuq')
     _clock_midnight='chawpi tuta'
     _clock_noon='chawpi p'\''unchaw'

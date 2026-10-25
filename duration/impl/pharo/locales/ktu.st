@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/ktu.json "
 
-"Locale: ktu"
+"Locale: ktu"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 ktu

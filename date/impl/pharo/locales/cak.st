@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/cak.json "
 
-"Locale: cak"
+"Locale: cak"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 cak

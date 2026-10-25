@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/rw.json
 
-_plural_rw() {
+_sayableduration_plural_rw() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_rw() {
+_sayableduration_locale_rw() {
     _unit_second_one='isegonda {n}'
     _unit_second_other='amasegonda {n}'
     _unit_minute_one='umunota {n}'
@@ -55,5 +55,5 @@ _locale_rw() {
     _compact_delimiter=''
     _compact_ago='hashize {0}'
     _compact_in_future='mu {0}'
-    _plural_func=_plural_rw
+    _plural_func=_sayableduration_plural_rw
 }

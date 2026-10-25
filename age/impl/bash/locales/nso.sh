@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/nso.json
 
-_plural_nso() {
+_sayableage_plural_nso() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_nso() {
+_sayableage_locale_nso() {
     _unit_day_one='letšatši {n}'
     _unit_day_other='matšatši {n}'
     _unit_week_one='beke {n}'
@@ -47,5 +47,5 @@ _locale_nso() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_nso
+    _plural_func=_sayableage_plural_nso
 }

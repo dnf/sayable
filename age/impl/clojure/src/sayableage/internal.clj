@@ -1,22 +1,7 @@
 (ns sayableage.internal)
 
-(defn- all-digits? [^String s]
-  (every? #(Character/isDigit ^char %) s))
-
-(defn parse-date [^String s]
-  (when (and (string? s)
-             (>= (count s) 10)
-             (= \- (.charAt s 4))
-             (= \- (.charAt s 7)))
-    (let [y-str (subs s 0 4)
-          m-str (subs s 5 7)
-          d-str (subs s 8 10)]
-      (when (and (all-digits? y-str) (all-digits? m-str) (all-digits? d-str))
-        (let [y (Integer/parseInt y-str)
-              m (Integer/parseInt m-str)
-              d (Integer/parseInt d-str)]
-          (when-not (and (== y 0) (== m 0) (== d 0))
-            [y m d]))))))
+(defn- ascii-digits? [^String s]
+  (every? #(<= (int \0) (int %) (int \9)) s))
 
 (defn leap-year? [y]
   (or (and (== (mod y 4) 0) (not= (mod y 100) 0))
@@ -28,6 +13,23 @@
     (4 6 9 11) 30
     2 (if (leap-year? y) 29 28)
     30))
+
+(defn parse-date
+  "Parses exactly YYYY-MM-DD naming a real calendar day into [y m d], else nil."
+  [s]
+  (when (and (string? s)
+             (= (count s) 10)
+             (= \- (.charAt ^String s 4))
+             (= \- (.charAt ^String s 7)))
+    (let [y-str (subs s 0 4)
+          m-str (subs s 5 7)
+          d-str (subs s 8 10)]
+      (when (and (ascii-digits? y-str) (ascii-digits? m-str) (ascii-digits? d-str))
+        (let [y (Integer/parseInt y-str)
+              m (Integer/parseInt m-str)
+              d (Integer/parseInt d-str)]
+          (when (and (<= 1 m 12) (<= 1 d (days-in-month y m)))
+            [y m d]))))))
 
 (defn- to-jdn [y m d]
   (let [a (quot (- 14 m) 12)

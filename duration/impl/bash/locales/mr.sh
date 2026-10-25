@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mr.json
 
-_plural_mr() {
+_sayableduration_plural_mr() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_mr() {
+_sayableduration_locale_mr() {
     _unit_second='{n} सेकंद'
     _unit_minute='{n} मिनिट'
     _unit_hour='{n} तास'
@@ -54,5 +54,5 @@ _locale_mr() {
     _compact_delimiter=''
     _compact_ago='{0} पूर्वी'
     _compact_in_future='{0} मध्ये'
-    _plural_func=_plural_mr
+    _plural_func=_sayableduration_plural_mr
 }

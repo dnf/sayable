@@ -199,3 +199,84 @@ fn test_8_2() {
 	result := st.format_time('00:00') or { assert false, '8.2 should not be none'; return }
 	assert result == '0.00', '8.2: got ${result}'
 }
+
+// Section 9: Minutes in short and compact modes
+
+// 9.1
+fn test_9_1() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .short)
+	result := f.format_time('18:01') or { panic('9.1 should not be none') }
+	assert result == '6:01 PM', '9.1'
+}
+
+// 9.2
+fn test_9_2() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .compact)
+	result := f.format_time('19:05') or { panic('9.2 should not be none') }
+	assert result == '7:05p', '9.2'
+}
+
+// Section 10: Input validation
+
+// 10.1
+fn test_10_1() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('9:30') or { panic('10.1 should not be none') }
+	assert result == 'half past nine', '10.1'
+}
+
+// 10.2
+fn test_10_2() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('09:30') or { panic('10.2 should not be none') }
+	assert result == 'half past nine', '10.2'
+}
+
+// 10.3
+fn test_10_3() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time(' 9:30')
+	assert result == none, '10.3'
+}
+
+// 10.4
+fn test_10_4() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('9:30 ')
+	assert result == none, '10.4'
+}
+
+// 10.5
+fn test_10_5() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('9:5')
+	assert result == none, '10.5'
+}
+
+// 10.6
+fn test_10_6() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('24:00')
+	assert result == none, '10.6'
+}
+
+// 10.7
+fn test_10_7() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('14:15:30') or { panic('10.7 should not be none') }
+	assert result == 'a quarter past two', '10.7'
+}
+
+// 10.8
+fn test_10_8() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('2025-01-15T14:15:00Z') or { panic('10.8 should not be none') }
+	assert result == 'a quarter past two', '10.8'
+}
+
+// 10.9
+fn test_10_9() {
+	f := locales.new_sayable_time(locales.get_time_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_time('2025-02-30T14:15:00')
+	assert result == none, '10.9'
+}

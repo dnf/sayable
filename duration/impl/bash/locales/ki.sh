@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ki.json
 
-_plural_ki() {
+_sayableduration_plural_ki() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ki() {
+_sayableduration_locale_ki() {
     _unit_second_one='sekunde {n}'
     _unit_second_other='sekunde {n}'
     _unit_minute_one='ndagĩka {n}'
@@ -58,5 +58,5 @@ _locale_ki() {
     _compact_delimiter=''
     _compact_ago='{0} ĩhĩtũkĩte'
     _compact_in_future='{0} ĩyothe'
-    _plural_func=_plural_ki
+    _plural_func=_sayableduration_plural_ki
 }

@@ -163,12 +163,13 @@ fn itoa(n: i32) []const u8 {
 
 const Date = struct { y: i32, m: i32, d: i32 };
 
+/// Exactly YYYY-MM-DD naming a real calendar day (docs/input-formats.md).
 fn parseDate(s: []const u8) ?Date {
-    if (s.len < 10 or s[4] != '-' or s[7] != '-') return null;
+    if (s.len != 10 or s[4] != '-' or s[7] != '-') return null;
     const y = parseDigits(s[0..4]) orelse return null;
     const m = parseDigits(s[5..7]) orelse return null;
     const d = parseDigits(s[8..10]) orelse return null;
-    if (y == 0 and m == 0 and d == 0) return null;
+    if (m < 1 or m > 12 or d < 1 or d > daysInMonth(y, m)) return null;
     return .{ .y = y, .m = m, .d = d };
 }
 

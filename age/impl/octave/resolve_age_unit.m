@@ -1,6 +1,6 @@
 % Format a count with the appropriate unit form.
 
-function result = resolve_unit(count, unit_forms, locale, half)
+function result = resolve_age_unit(count, unit_forms, locale, half)
   if (nargin < 4)
     half = '';
   endif

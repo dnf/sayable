@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/or.json
 
-_plural_or() {
+_sayableduration_plural_or() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_or() {
+_sayableduration_locale_or() {
     _unit_second_one='{n} ସେକେଣ୍ଡ'
     _unit_second_other='{n} ସେକେଣ୍ଡ'
     _unit_minute_one='{n} ମିନିଟ୍'
@@ -55,5 +55,5 @@ _locale_or() {
     _compact_delimiter=''
     _compact_ago='{0} ପୂର୍ବେ'
     _compact_in_future='{0} ପରେ'
-    _plural_func=_plural_or
+    _plural_func=_sayableduration_plural_or
 }

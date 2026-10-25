@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/gd.json
 
-_locale_gd() {
+_sayabledate_locale_gd() {
     _months=('Am Faoilleach' 'An Gearran' 'Am Màrt' 'An Giblean' 'An Cèitean' 'An t-Ògmhios' 'An t-Iuchar' 'An Lùnastal' 'An t-Sultain' 'An Dàmhair' 'An t-Samhain' 'An Dùbhlachd')
     _weekdays=('DiDòmhnaich' 'DiLuain' 'DiMàirt' 'DiCiadain' 'DiarDaoin' 'DihAoine' 'DiSathairne')
     _day_format='{n}'

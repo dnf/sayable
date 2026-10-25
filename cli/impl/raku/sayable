@@ -271,7 +271,8 @@ sub cmd-until(@pos, %opts) {
 }
 
 sub cmd-locales() {
-    return 'en';
+    # All components share the same locale set, so age's registry is canonical.
+    return SayableAge::Locales::Registry::codes().join("\n");
 }
 
 # Run one request; returns its exit code and stdout text (a Str type object

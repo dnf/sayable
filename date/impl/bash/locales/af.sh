@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/af.json
 
-_locale_af() {
+_sayabledate_locale_af() {
     _months=('Januarie' 'Februarie' 'Maart' 'April' 'Mei' 'Junie' 'Julie' 'Augustus' 'September' 'Oktober' 'November' 'Desember')
     _weekdays=('Sondag' 'Maandag' 'Dinsdag' 'Woensdag' 'Donderdag' 'Vrydag' 'Saterdag')
     _day_format='{n}'

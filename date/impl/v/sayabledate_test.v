@@ -382,3 +382,144 @@ fn test_12_2() {
 	result := sd.format_relative('2025-03-17', '2025-03-15') or { assert false, '12.2 should not be none'; return }
 	assert result == 'pasado mañana', '12.2: got ${result}'
 }
+
+// Section 13: format_date_with_year
+
+// 13.1
+fn test_13_1() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_date_with_year('2018-02-04') or { panic('13.1 should not be none') }
+	assert result == 'February 4th, 2018', '13.1'
+}
+
+// 13.2
+fn test_13_2() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .short)
+	result := f.format_date_with_year('2025-03-15') or { panic('13.2 should not be none') }
+	assert result == 'Mar 15, 2025', '13.2'
+}
+
+// 13.3
+fn test_13_3() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .compact)
+	result := f.format_date_with_year('1997-01-21') or { panic('13.3 should not be none') }
+	assert result == '1/21/97', '13.3'
+}
+
+// 13.4
+fn test_13_4() {
+	f := locales.new_sayable_date(locales.get_date_locale('tg') or { panic('locale not found') }, .compact)
+	result := f.format_date_with_year('2007-05-20') or { panic('13.4 should not be none') }
+	assert result == '20/5/07', '13.4'
+}
+
+// 13.5
+fn test_13_5() {
+	f := locales.new_sayable_date(locales.get_date_locale('fi') or { panic('locale not found') }, .short)
+	result := f.format_date_with_year('1996-06-21') or { panic('13.5 should not be none') }
+	assert result == '21. kesäkuuta 1996', '13.5'
+}
+
+// Section 14: Short month names
+
+// 14.1
+fn test_14_1() {
+	f := locales.new_sayable_date(locales.get_date_locale('sk') or { panic('locale not found') }, .short)
+	result := f.format_date('2031-02-15') or { panic('14.1 should not be none') }
+	assert result == '15. februára', '14.1'
+}
+
+// 14.2
+fn test_14_2() {
+	f := locales.new_sayable_date(locales.get_date_locale('cs') or { panic('locale not found') }, .short)
+	result := f.format_date('2025-12-10') or { panic('14.2 should not be none') }
+	assert result == '10. prosince', '14.2'
+}
+
+// 14.3
+fn test_14_3() {
+	f := locales.new_sayable_date(locales.get_date_locale('uk') or { panic('locale not found') }, .short)
+	result := f.format_date('2025-11-05') or { panic('14.3 should not be none') }
+	assert result == '5 листопада', '14.3'
+}
+
+// 14.4
+fn test_14_4() {
+	f := locales.new_sayable_date(locales.get_date_locale('fi') or { panic('locale not found') }, .short)
+	result := f.format_relative('1998-08-08', '1998-08-15') or { panic('14.4 should not be none') }
+	assert result == '8. elokuuta', '14.4'
+}
+
+// Section 15: format_relative — short phrases
+
+// 15.1
+fn test_15_1() {
+	f := locales.new_sayable_date(locales.get_date_locale('kw') or { panic('locale not found') }, .short)
+	result := f.format_relative('2035-12-04', '2035-12-02') or { panic('15.1 should not be none') }
+	assert result == 'an Mth ma', '15.1'
+}
+
+// 15.2
+fn test_15_2() {
+	f := locales.new_sayable_date(locales.get_date_locale('mam') or { panic('locale not found') }, .short)
+	result := f.format_relative('2000-01-23', '2000-01-25') or { panic('15.2 should not be none') }
+	assert result == 'Dom nchi\'j', '15.2'
+}
+
+// 15.3
+fn test_15_3() {
+	f := locales.new_sayable_date(locales.get_date_locale('kek') or { panic('locale not found') }, .short)
+	result := f.format_relative('2014-10-24', '2014-10-22') or { panic('15.3 should not be none') }
+	assert result == 'a\'in Vie', '15.3'
+}
+
+// Section 16: Input validation
+
+// 16.1
+fn test_16_1() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_date('2025-02-30')
+	assert result == none, '16.1'
+}
+
+// 16.2
+fn test_16_2() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_date('2025-13-01')
+	assert result == none, '16.2'
+}
+
+// 16.3
+fn test_16_3() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_date('2025-6-1')
+	assert result == none, '16.3'
+}
+
+// 16.4
+fn test_16_4() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_date(' 2025-06-01')
+	assert result == none, '16.4'
+}
+
+// 16.5
+fn test_16_5() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_date('2025-06-01T10:00:00') or { panic('16.5 should not be none') }
+	assert result == 'June 1st', '16.5'
+}
+
+// 16.6
+fn test_16_6() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_date_with_year('2023-02-29')
+	assert result == none, '16.6'
+}
+
+// 16.7
+fn test_16_7() {
+	f := locales.new_sayable_date(locales.get_date_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_relative('2025-03-16', '2025-04-31')
+	assert result == none, '16.7'
+}

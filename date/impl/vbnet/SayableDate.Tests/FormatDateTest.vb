@@ -374,6 +374,155 @@ Namespace SayableDate.Tests
             Assert.Equal("pasado mañana", f.Relative("2025-03-17", "2025-03-15"))
         End Sub
 
+        ' ================================================================
+        ' format_date_with_year
+        ' ================================================================
+
+        ' 13.1
+        <Fact>
+        Public Sub Spec13_1_FormatDateWithYear()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Equal("February 4th, 2018", f.FormatWithYear("2018-02-04"))
+        End Sub
+
+        ' 13.2
+        <Fact>
+        Public Sub Spec13_2_FormatDateWithYear()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN, Compactness.Short)
+            Assert.Equal("Mar 15, 2025", f.FormatWithYear("2025-03-15"))
+        End Sub
+
+        ' 13.3
+        <Fact>
+        Public Sub Spec13_3_FormatDateWithYear()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN, Compactness.Compact)
+            Assert.Equal("1/21/97", f.FormatWithYear("1997-01-21"))
+        End Sub
+
+        ' 13.4
+        <Fact>
+        Public Sub Spec13_4_TwoDigitYearKeepsItsLeadingZero()
+            Dim f = New SayableDateLib.SayableDate(Locales.TG, Compactness.Compact)
+            Assert.Equal("20/5/07", f.FormatWithYear("2007-05-20"))
+        End Sub
+
+        ' 13.5
+        <Fact>
+        Public Sub Spec13_5_FormatDateWithYear()
+            Dim f = New SayableDateLib.SayableDate(Locales.FI, Compactness.Short)
+            Assert.Equal("21. kesäkuuta 1996", f.FormatWithYear("1996-06-21"))
+        End Sub
+
+        ' ================================================================
+        ' Short month names (locales that keep the full genitive)
+        ' ================================================================
+
+        ' 14.1
+        <Fact>
+        Public Sub Spec14_1_ShortMonthNamesLocalesThatKeepThe()
+            Dim f = New SayableDateLib.SayableDate(Locales.SK, Compactness.Short)
+            Assert.Equal("15. februára", f.Format("2031-02-15"))
+        End Sub
+
+        ' 14.2
+        <Fact>
+        Public Sub Spec14_2_ShortMonthNamesLocalesThatKeepThe()
+            Dim f = New SayableDateLib.SayableDate(Locales.CS, Compactness.Short)
+            Assert.Equal("10. prosince", f.Format("2025-12-10"))
+        End Sub
+
+        ' 14.3
+        <Fact>
+        Public Sub Spec14_3_ShortMonthNamesLocalesThatKeepThe()
+            Dim f = New SayableDateLib.SayableDate(Locales.UK, Compactness.Short)
+            Assert.Equal("5 листопада", f.Format("2025-11-05"))
+        End Sub
+
+        ' 14.4
+        <Fact>
+        Public Sub Spec14_4_ShortMonthNamesLocalesThatKeepThe()
+            Dim f = New SayableDateLib.SayableDate(Locales.FI, Compactness.Short)
+            Assert.Equal("8. elokuuta", f.Relative("1998-08-08", "1998-08-15"))
+        End Sub
+
+        ' ================================================================
+        ' format_relative — short phrases
+        ' ================================================================
+
+        ' 15.1
+        <Fact>
+        Public Sub Spec15_1_DayAfterTomorrow()
+            Dim f = New SayableDateLib.SayableDate(Locales.KW, Compactness.Short)
+            Assert.Equal("an Mth ma", f.Relative("2035-12-04", "2035-12-02"))
+        End Sub
+
+        ' 15.2
+        <Fact>
+        Public Sub Spec15_2_DayBeforeYesterday()
+            Dim f = New SayableDateLib.SayableDate(Locales.MAM, Compactness.Short)
+            Assert.Equal("Dom nchi'j", f.Relative("2000-01-23", "2000-01-25"))
+        End Sub
+
+        ' 15.3
+        <Fact>
+        Public Sub Spec15_3_DayAfterTomorrow()
+            Dim f = New SayableDateLib.SayableDate(Locales.KEK, Compactness.Short)
+            Assert.Equal("a'in Vie", f.Relative("2014-10-24", "2014-10-22"))
+        End Sub
+
+        ' ================================================================
+        ' Input validation
+        ' ================================================================
+
+        ' 16.1
+        <Fact>
+        Public Sub Spec16_1_February30DoesntExist()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Null(f.Format("2025-02-30"))
+        End Sub
+
+        ' 16.2
+        <Fact>
+        Public Sub Spec16_2_Month13()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Null(f.Format("2025-13-01"))
+        End Sub
+
+        ' 16.3
+        <Fact>
+        Public Sub Spec16_3_UnpaddedMonthAndDay()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Null(f.Format("2025-6-1"))
+        End Sub
+
+        ' 16.4
+        <Fact>
+        Public Sub Spec16_4_SurroundingWhitespace()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Null(f.Format(" 2025-06-01"))
+        End Sub
+
+        ' 16.5
+        <Fact>
+        Public Sub Spec16_5_AnISODatetimeOnlyTheDatePart()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Equal("June 1st", f.Format("2025-06-01T10:00:00"))
+        End Sub
+
+        ' 16.6
+        <Fact>
+        Public Sub Spec16_6_February29InANonLeapYear()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Null(f.FormatWithYear("2023-02-29"))
+        End Sub
+
+        ' 16.7
+        <Fact>
+        Public Sub Spec16_7_InvalidAsOf()
+            Dim f = New SayableDateLib.SayableDate(Locales.EN)
+            Assert.Null(f.Relative("2025-03-16", "2025-04-31"))
+        End Sub
+
     End Class
 
 End Namespace

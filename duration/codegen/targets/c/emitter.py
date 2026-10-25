@@ -173,7 +173,7 @@ def emit_header(all_locales: list[dict]) -> str:
     lines.append("} SduDurationLocale;")
     lines.append("")
     lines.append("int sdu_format_duration_secs(char *buf, size_t bufsz, const SduDurationLocale *locale,")
-    lines.append("                             SduCompactness compactness, int seconds);")
+    lines.append("                             SduCompactness compactness, long long seconds);")
     lines.append("")
     lines.append("int sdu_format_duration_iso(char *buf, size_t bufsz, const SduDurationLocale *locale,")
     lines.append("                            SduCompactness compactness, const char *start, const char *end);")
@@ -441,77 +441,72 @@ static sdu_i64 sdu_days_since_epoch(int year, int month, int day) {
     return days;
 }
 
+static int sdu_digit_run(const char *s) {
+    int n = 0;
+    while (s[n] >= '0' && s[n] <= '9') n++;
+    return n;
+}
+
+/* Nothing, "Z", or "+HH:MM" / "-HH:MM". */
+static bool sdu_is_zone_suffix(const char *s) {
+    if (s[0] == '\\0') return true;
+    if (s[0] == 'Z') return s[1] == '\\0';
+    return (s[0] == '+' || s[0] == '-') && sdu_digit_run(s + 1) == 2 && s[3] == ':' &&
+           sdu_digit_run(s + 4) == 2 && s[6] == '\\0';
+}
+
+/* H:MM or HH:MM, optional :SS, optional . plus digits after the seconds, and an
+ * optional zone suffix, which is validated but ignored. */
+static bool sdu_parse_clock(const char *clock, int *hour, int *minute, int *second) {
+    int hour_len = sdu_digit_run(clock);
+    const char *rest;
+    if (hour_len < 1 || hour_len > 2 || clock[hour_len] != ':' || sdu_digit_run(clock + hour_len + 1) < 2) {
+        return false;
+    }
+    *hour = sdu_parse_digits(clock, hour_len);
+    *minute = sdu_parse_digits(clock + hour_len + 1, 2);
+    *second = 0;
+    rest = clock + hour_len + 3;
+    if (*rest == ':') {
+        if (sdu_digit_run(rest + 1) < 2) return false;
+        *second = sdu_parse_digits(rest + 1, 2);
+        rest += 3;
+        if (*rest == '.') {
+            int fraction_len = sdu_digit_run(rest + 1);
+            if (fraction_len == 0) return false;
+            rest += 1 + fraction_len;
+        }
+    }
+    return sdu_is_zone_suffix(rest) && *hour <= 23 && *minute <= 59 && *second <= 59;
+}
+
+/* A timestamp YYYY-MM-DDTHH:MM[:SS[.fff]][zone] (docs/input-formats.md) as
+ * epoch-relative seconds for diffing. */
 static bool sdu_parse_iso(const char *iso, sdu_i64 *result) {
     int year, month, day, hour, minute, second;
-    const char *t_pos;
-    const char *time_part;
-    const char *p;
-    int colon1, rest_start, colon2;
-    sdu_i64 d;
-
-    if (!iso || !iso[0]) return false;
-
-    /* Find 'T' */
-    t_pos = iso;
-    while (*t_pos && *t_pos != 'T') t_pos++;
-    if (!*t_pos) return false;
-
-    /* Parse date */
-    if ((int)(t_pos - iso) < 10 || iso[4] != '-' || iso[7] != '-') return false;
+    if (!iso || sdu_strlen(iso) < 11 || iso[4] != '-' || iso[7] != '-' || iso[10] != 'T') return false;
     year = sdu_parse_digits(iso, 4);
     month = sdu_parse_digits(iso + 5, 2);
     day = sdu_parse_digits(iso + 8, 2);
-    if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31) return false;
-
-    /* Parse time - strip timezone */
-    time_part = t_pos + 1;
-
-    /* Find first colon */
-    p = time_part;
-    while (*p && *p != ':') p++;
-    if (!*p) return false;
-    colon1 = (int)(p - time_part);
-    hour = sdu_parse_digits(time_part, colon1);
-    if (hour < 0 || hour > 23) return false;
-
-    rest_start = colon1 + 1;
-    minute = 0;
-    second = 0;
-
-    /* Find second colon or end */
-    p = time_part + rest_start;
-    colon2 = -1;
-    {
-        int idx = 0;
-        while (p[idx] && p[idx] != ':' && p[idx] != '+' && p[idx] != 'Z') idx++;
-        if (p[idx] == ':') {
-            colon2 = idx;
-            minute = sdu_parse_digits(p, colon2);
-            if (minute < 0 || minute > 59) return false;
-            /* Parse seconds */
-            {
-                const char *sec_start = p + colon2 + 1;
-                int sec_len = 0;
-                while (sec_start[sec_len] && sec_start[sec_len] != '.' && sec_start[sec_len] != '+' && sec_start[sec_len] != 'Z') sec_len++;
-                second = sdu_parse_digits(sec_start, sec_len);
-                if (second < 0 || second > 59) return false;
-            }
-        } else {
-            minute = sdu_parse_digits(p, idx);
-            if (minute < 0 || minute > 59) return false;
-        }
-    }
-
-    d = sdu_days_since_epoch(year, month, day);
-    *result = d * 86400 + (sdu_i64)hour * 3600 + (sdu_i64)minute * 60 + (sdu_i64)second;
+    if (year < 0 || month < 1 || month > 12 || day < 1 || day > sdu_days_in_month(year, month)) return false;
+    if (!sdu_parse_clock(iso + 11, &hour, &minute, &second)) return false;
+    *result = sdu_days_since_epoch(year, month, day) * 86400 + (sdu_i64)hour * 3600 +
+              (sdu_i64)minute * 60 + (sdu_i64)second;
     return true;
 }
 
 /* ---- round division for month approximation ---- */
 
-static int sdu_round_div(int total_days) {
-    sdu_i64 numerator = (sdu_i64)total_days * 200 + 3044;
-    return (int)(numerator / 6088);
+static sdu_i64 sdu_round_div(sdu_i64 total_days) {
+    return (total_days * 200 + 3044) / 6088;
+}
+
+/* Durations over 6000 months (500 years) have no value: the same ceiling as sayable-age. */
+#define SDU_MAX_DURATION_MONTHS 6000
+
+static bool sdu_is_over_ceiling(sdu_i64 total_seconds) {
+    sdu_i64 total_days = total_seconds / 86400;
+    return total_days >= 30 && sdu_round_div(total_days) > SDU_MAX_DURATION_MONTHS;
 }
 
 /* ---- resolved locale fields ---- */
@@ -562,9 +557,11 @@ static void sdu_resolve(SduResolved *r, const SduDurationLocale *locale, SduComp
 /* ---- format duration from seconds (internal) ---- */
 
 static int sdu_format_secs(char *buf, size_t bufsz, const SduDurationLocale *locale,
-                           const SduResolved *rl, int total) {
+                           const SduResolved *rl, sdu_i64 total) {
     SduWriter w;
     sdu_wr_init(&w, buf, bufsz);
+
+    if (sdu_is_over_ceiling(total)) return -1;
 
     /* 0 seconds */
     if (total == 0) {
@@ -574,13 +571,14 @@ static int sdu_format_secs(char *buf, size_t bufsz, const SduDurationLocale *loc
 
     /* 1-59 seconds */
     if (total < 60) {
-        sdu_resolve_unit(&w, total, rl->second, locale, "");
+        sdu_resolve_unit(&w, (int)total, rl->second, locale, "");
         return w.overflow ? -1 : 0;
     }
 
+    /* Within the 500-year ceiling, every count below fits an int. */
     {
-        int total_minutes = total / 60;
-        int remainder_seconds = total % 60;
+        int total_minutes = (int)(total / 60);
+        int remainder_seconds = (int)(total % 60);
 
         /* 1-4 minutes: minutes + seconds */
         if (total_minutes < 5) {
@@ -600,8 +598,8 @@ static int sdu_format_secs(char *buf, size_t bufsz, const SduDurationLocale *loc
     }
 
     {
-        int total_hours = total / 3600;
-        int remainder_minutes = (total % 3600) / 60;
+        int total_hours = (int)(total / 3600);
+        int remainder_minutes = (int)((total % 3600) / 60);
 
         /* 1-5 hours: hours + minutes (with half marker) */
         if (total_hours <= 5) {
@@ -625,8 +623,8 @@ static int sdu_format_secs(char *buf, size_t bufsz, const SduDurationLocale *loc
     }
 
     {
-        int total_days = total / 86400;
-        int remainder_hours = (total % 86400) / 3600;
+        int total_days = (int)(total / 86400);
+        int remainder_hours = (int)((total % 86400) / 3600);
 
         /* 1-2 days: days + hours (with half marker) */
         if (total_days <= 2) {
@@ -662,7 +660,7 @@ static int sdu_format_secs(char *buf, size_t bufsz, const SduDurationLocale *loc
 
         /* Approximate months */
         {
-            int total_months = sdu_round_div(total_days);
+            int total_months = (int)sdu_round_div(total_days);
             if (total_months < 12) {
                 if (total_months == 0) total_months = 1;
                 sdu_resolve_unit(&w, total_months, rl->month, locale, "");
@@ -687,7 +685,7 @@ static int sdu_format_secs(char *buf, size_t bufsz, const SduDurationLocale *loc
 /* ---- public API ---- */
 
 int sdu_format_duration_secs(char *buf, size_t bufsz, const SduDurationLocale *locale,
-                             SduCompactness compactness, int seconds) {
+                             SduCompactness compactness, long long seconds) {
     SduResolved rl;
     if (!buf || bufsz == 0 || !locale || seconds < 0) return -1;
     buf[0] = '\\0';
@@ -710,7 +708,7 @@ int sdu_format_duration_iso(char *buf, size_t bufsz, const SduDurationLocale *lo
     if (diff < 0) diff = -diff;
 
     sdu_resolve(&rl, locale, compactness);
-    return sdu_format_secs(buf, bufsz, locale, &rl, (int)diff);
+    return sdu_format_secs(buf, bufsz, locale, &rl, diff);
 }
 
 int sdu_format_since(char *buf, size_t bufsz, const SduDurationLocale *locale,
@@ -737,7 +735,7 @@ int sdu_format_since(char *buf, size_t bufsz, const SduDurationLocale *locale,
         return w.overflow ? -1 : 0;
     }
 
-    if (sdu_format_secs(dur_buf, sizeof(dur_buf), locale, &rl, (int)diff) != 0) return -1;
+    if (sdu_format_secs(dur_buf, sizeof(dur_buf), locale, &rl, diff) != 0) return -1;
 
     sdu_wr_init(&w, buf, bufsz);
     sdu_replace_first(&w, rl.ago, "{0}", dur_buf);
@@ -768,7 +766,7 @@ int sdu_format_until(char *buf, size_t bufsz, const SduDurationLocale *locale,
         return w.overflow ? -1 : 0;
     }
 
-    if (sdu_format_secs(dur_buf, sizeof(dur_buf), locale, &rl, (int)diff) != 0) return -1;
+    if (sdu_format_secs(dur_buf, sizeof(dur_buf), locale, &rl, diff) != 0) return -1;
 
     sdu_wr_init(&w, buf, bufsz);
     sdu_replace_first(&w, rl.in_future, "{0}", dur_buf);

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/or.json
 
-_plural_or() {
+_sayableage_plural_or() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_or() {
+_sayableage_locale_or() {
     _unit_day_one='{n} ଦିନ'
     _unit_day_other='{n} ଦିନ'
     _unit_week_one='{n} ସପ୍ତାହ'
@@ -43,5 +43,5 @@ _locale_or() {
     _compact_unit_year='{n} ବ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_or
+    _plural_func=_sayableage_plural_or
 }

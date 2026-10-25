@@ -270,6 +270,12 @@ function cmd_time(positionals, options)
     result
 end
 
+# Seconds mode: ASCII digits, after any leading minus signs (cli/SPEC.md).
+function is_seconds_value(value::String)
+    digits = lstrip(==('-'), value)
+    !isempty(digits) && all(c -> '0' <= c <= '9', digits)
+end
+
 function cmd_duration(positionals, options)
     isempty(positionals) && cli_error("duration requires a value argument")
     value_raw = positionals[1]
@@ -282,10 +288,10 @@ function cmd_duration(positionals, options)
 
     value_raw == "null" && return nothing
 
-    # Check if it's an integer (possibly negative)
-    is_integer = all(c -> c == '-' || isdigit(c), value_raw) && !isempty(value_raw)
-    if is_integer
-        seconds = parse(Int, value_raw)
+    if is_seconds_value(value_raw)
+        seconds = tryparse(Int, value_raw)
+        # Not a single integer (e.g. "--5") or beyond Int64: no value, as in the reference.
+        seconds === nothing && return nothing
         result = SayableDuration.format_duration(formatter, seconds)
     else
         # Timestamp mode
@@ -339,28 +345,8 @@ function cmd_until(positionals, options)
 end
 
 function cmd_locales()
-    # Use age locales as the canonical list
-    codes = String[]
-    for code in ["af", "ak", "am", "ar", "ay", "az", "bci", "be", "bem", "bg", "bi", "bm",
-                 "bn", "br", "bs", "ca", "cak", "ceb", "chr", "co", "cs", "cy", "da", "de",
-                 "dyu", "dz", "ee", "el", "en", "eo", "es", "et", "eu", "fa", "ff", "fi",
-                 "fo", "fr", "fy", "ga", "gd", "gl", "gn", "gu", "gv", "ha", "haw", "he",
-                 "hi", "hr", "ht", "hu", "hy", "id", "ig", "is", "it", "iu", "ja", "jv",
-                 "ka", "kea", "ki", "kk", "kl", "km", "kn", "ko", "ku", "kw", "ky", "la",
-                 "lb", "lg", "ln", "lo", "lt", "lu", "lv", "mg", "mi", "mk", "ml", "mn",
-                 "mr", "ms", "mt", "my", "nb", "nd", "ne", "nl", "nn", "ny", "oc", "om",
-                 "or", "pa", "pap", "pcm", "pis", "pl", "ps", "pt", "qu", "rm", "rn", "ro",
-                 "ru", "rw", "sa", "sc", "sd", "se", "sg", "shi", "si", "sk", "sl", "sn",
-                 "so", "sq", "sr", "ss", "st", "su", "sv", "sw", "ta", "te", "tg", "th",
-                 "ti", "tk", "tl", "tn", "to", "tok", "tpi", "tr", "ts", "tt", "tw", "ty",
-                 "tzm", "ug", "uk", "ur", "uz", "ve", "vi", "wa", "wo", "xh", "yi", "yo",
-                 "za", "zh", "zu"]
-        loc = SayableAge.get_locale(code)
-        if loc !== nothing
-            push!(codes, code)
-        end
-    end
-    join(sort(codes), "\n")
+    # The generated age registry is the canonical list
+    join(sort(collect(keys(SayableAge._ALL))), "\n")
 end
 
 const COMMANDS = Dict(

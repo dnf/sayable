@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/uz.json
 
-_locale_uz() {
+_sayabledate_locale_uz() {
     _months=('yanvar' 'fevral' 'mart' 'aprel' 'may' 'iyun' 'iyul' 'avgust' 'sentabr' 'oktabr' 'noyabr' 'dekabr')
     _weekdays=('yakshanba' 'dushanba' 'seshanba' 'chorshanba' 'payshanba' 'juma' 'shanba')
     _day_format='{n}'

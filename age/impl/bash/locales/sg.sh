@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sg.json
 
-_plural_sg() {
+_sayableage_plural_sg() {
     echo "other"
 }
 
-_locale_sg() {
+_sayableage_locale_sg() {
     _unit_day='lâ {n}'
     _unit_week='bîkua-ûse {n}'
     _unit_month='nze {n}'
@@ -37,5 +37,5 @@ _locale_sg() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_sg
+    _plural_func=_sayableage_plural_sg
 }

@@ -187,7 +187,7 @@ _sayableduration_load_locale() {
     local known
     for known in ${_SAYABLEDURATION_LOCALES}; do
         if [ "${known}" = "${code}" ]; then
-            _locale_${code}
+            _sayableduration_locale_${code}
             return 0
         fi
     done

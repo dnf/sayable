@@ -5,31 +5,50 @@ local M = {}
 
 M.VERSION = "0.5.0"
 
-local function parse_time(input)
-    if not input or input == "" then return nil end
-
-    local t = input
-    -- Extract time from ISO datetime
-    local t_idx = t:find("T", 1, true)
-    if t_idx then t = t:sub(t_idx + 1) end
-
-    -- Strip timezone
-    local plus_idx = t:find("+", 1, true)
-    if plus_idx then t = t:sub(1, plus_idx - 1) end
-    local z_idx = t:find("Z", 1, true)
-    if z_idx then t = t:sub(1, z_idx - 1) end
-
-    local parts = {}
-    for seg in t:gmatch("[^:]+") do
-        parts[#parts + 1] = seg
+local function is_real_date(year, month, day)
+    if month < 1 or month > 12 or day < 1 then return false end
+    local last = 31
+    if month == 2 then
+        local leap = (year % 4 == 0 and year % 100 ~= 0) or year % 400 == 0
+        last = leap and 29 or 28
+    elseif month == 4 or month == 6 or month == 9 or month == 11 then
+        last = 30
     end
-    if #parts < 2 then return nil end
+    return day <= last
+end
 
-    local hour = tonumber(parts[1])
-    local minute = tonumber(parts[2])
-    if not hour or not minute then return nil end
-    if hour < 0 or hour > 23 or minute < 0 or minute > 59 then return nil end
+local function is_zone_suffix(s)
+    return s == "" or s == "Z" or s:match("^[+-]%d%d:%d%d$") ~= nil
+end
 
+--- Parse H:MM or HH:MM, optional :SS and fraction, optional zone suffix
+-- (which is ignored); returns hour, minute, second or nil.
+local function parse_clock(s)
+    local h, m, rest = s:match("^(%d%d?):(%d%d)(.*)$")
+    if not h then return nil end
+    local sec, after_sec = rest:match("^:(%d%d)(.*)$")
+    if sec then
+        rest = after_sec:match("^%.%d+(.*)$") or after_sec
+    end
+    if not is_zone_suffix(rest) then return nil end
+    local hour, minute, second = tonumber(h), tonumber(m), tonumber(sec or "0")
+    if hour > 23 or minute > 59 or second > 59 then return nil end
+    return hour, minute, second
+end
+
+--- Parse a clock time, alone or after the T of an ISO datetime whose date
+-- part names a real calendar day; returns hour, minute or nil.
+local function parse_time(input)
+    if not input then return nil end
+    local clock = input
+    local t_idx = input:find("T", 1, true)
+    if t_idx then
+        local y, m, d = input:sub(1, t_idx - 1):match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
+        if not y or not is_real_date(tonumber(y), tonumber(m), tonumber(d)) then return nil end
+        clock = input:sub(t_idx + 1)
+    end
+    local hour, minute = parse_clock(clock)
+    if not hour then return nil end
     return hour, minute
 end
 

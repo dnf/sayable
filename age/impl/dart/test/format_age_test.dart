@@ -1038,4 +1038,77 @@ void main() {
       expect(getLocale('EN'), isNull); // 30.5
     });
   });
+
+  // ================================================================
+  // Section 31: Weeks and days across month ends
+  // ================================================================
+  group('Weeks and days across month ends', () {
+    test('88 days across a 28-day February', () {
+      expect(formatAge('2016-12-31', '2017-03-29'), '12 weeks, 4 days'); // 31.1
+    });
+    test('90 days across a year end into a leap year', () {
+      expect(formatAge('1991-11-27', '1992-02-25'), '12 weeks, 6 days'); // 31.2
+    });
+    test('33 days across a year end', () {
+      expect(formatAge('2020-11-30', '2021-01-02'), '4 weeks, 5 days'); // 31.3
+    });
+    test('compact form of 31.1', () {
+      final pt = SayableAge(getLocale('en')!, Compactness.compact);
+      expect(pt.formatAge('2016-12-31', '2017-03-29'), '12w4d'); // 31.4
+    });
+  });
+
+  // ================================================================
+  // Section 32: Half years take their plural form from whole years
+  // ================================================================
+  group('Half years take their plural form from whole years', () {
+    test('Polish 3 is few', () {
+      final pt = SayableAge(getLocale('pl')!);
+      expect(pt.formatAge('2021-06-15', '2025-01-15'), '3 i pół lata'); // 32.1
+    });
+    test('Polish 5 is many (short)', () {
+      final pt = SayableAge(getLocale('pl')!, Compactness.short);
+      expect(pt.formatAge('2020-06-15', '2025-12-15'), '5 i pół lat'); // 32.2
+    });
+    test('Tachelhit 6 is few', () {
+      final pt = SayableAge(getLocale('shi')!);
+      expect(pt.formatAge('2005-06-08', '2012-06-07'), '6 iseggasen d uzgen'); // 32.3
+    });
+  });
+
+  // ================================================================
+  // Section 33: Input validation
+  // ================================================================
+  group('Input validation', () {
+    test('February 30 does not exist', () {
+      expect(formatAge('2025-02-30', '2032-06-25'), isNull); // 33.1
+    });
+    test('month 13', () {
+      expect(formatAge('2025-13-01', '2027-01-31'), isNull); // 33.2
+    });
+    test('February 29 in a non-leap year', () {
+      expect(formatAge('2023-02-29', '2025-03-01'), isNull); // 33.3
+    });
+    test('day 00', () {
+      expect(formatAge('2025-06-00', '2027-02-25'), isNull); // 33.4
+    });
+    test('unpadded month and day', () {
+      expect(formatAge('2025-6-1', '2027-02-25'), isNull); // 33.5
+    });
+    test('surrounding whitespace', () {
+      expect(formatAge(' 2025-06-01', '2027-02-25'), isNull); // 33.6
+    });
+    test('a datetime is not a date', () {
+      expect(formatAge('2025-06-15T10:00:00', '2027-02-25'), isNull); // 33.7
+    });
+    test('invalid asOf', () {
+      expect(formatAge('2020-01-01', '2025-04-31'), isNull); // 33.8
+    });
+    test('formatStage validates too', () {
+      expect(formatStage('2025-02-30', '2027-09-05'), isNull); // 33.9
+    });
+    test('February 29 in a leap year is valid', () {
+      expect(formatAge('2024-02-29', '2026-03-01'), '2 years'); // 33.10
+    });
+  });
 }

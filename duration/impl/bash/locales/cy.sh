@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/cy.json
 
-_plural_cy() {
+_sayableduration_plural_cy() {
     local n=$1
     if [ "${n}" -eq 0 ]; then echo "zero"; return; fi
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
@@ -19,7 +19,7 @@ _plural_cy() {
     echo "other"
 }
 
-_locale_cy() {
+_sayableduration_locale_cy() {
     _unit_second_zero='{n} eiliad'
     _unit_second_one='{n} eiliad'
     _unit_second_two='{n} eiliad'
@@ -102,5 +102,5 @@ _locale_cy() {
     _compact_delimiter=''
     _compact_ago='{0} yn ôl'
     _compact_in_future='mewn {0}'
-    _plural_func=_plural_cy
+    _plural_func=_sayableduration_plural_cy
 }

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/umb.json
 
-_plural_umb() {
+_sayableduration_plural_umb() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_umb() {
+_sayableduration_locale_umb() {
     _unit_second_one='osekunde {n}'
     _unit_second_other='olosekunde {n}'
     _unit_minute_one='ominute {n}'
@@ -62,5 +62,5 @@ _locale_umb() {
     _compact_delimiter=''
     _compact_ago='{0} pita'
     _compact_in_future='ko {0}'
-    _plural_func=_plural_umb
+    _plural_func=_sayableduration_plural_umb
 }

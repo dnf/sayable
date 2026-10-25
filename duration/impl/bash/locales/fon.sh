@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/fon.json
 
-_plural_fon() {
+_sayableduration_plural_fon() {
     echo "other"
 }
 
-_locale_fon() {
+_sayableduration_locale_fon() {
     _unit_second='segɔ́ndu {n}'
     _unit_minute='miniti {n}'
     _unit_hour='ganxixo {n}'
@@ -46,5 +46,5 @@ _locale_fon() {
     _compact_delimiter=''
     _compact_ago='{0} ɖo'
     _compact_in_future='ɖo {0} mɛ'
-    _plural_func=_plural_fon
+    _plural_func=_sayableduration_plural_fon
 }

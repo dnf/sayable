@@ -13,15 +13,17 @@ import Foreign.Ptr (Ptr, nullPtr)
 
 foreign import ccall unsafe "time" c_time :: Ptr CTime -> IO CTime
 
+-- | Exactly YYYY-MM-DD naming a real calendar day.
 parseDate :: String -> Maybe (Int, Int, Int)
 parseDate s
-    | length s < 10          = Nothing
+    | length s /= 10         = Nothing
     | s !! 4 /= '-'          = Nothing
     | s !! 7 /= '-'          = Nothing
     | not (all isDigit yStr) = Nothing
     | not (all isDigit mStr) = Nothing
     | not (all isDigit dStr) = Nothing
-    | y == 0 && m == 0 && d == 0 = Nothing
+    | m < 1 || m > 12        = Nothing
+    | d < 1 || d > daysInMonth y m = Nothing
     | otherwise              = Just (y, m, d)
   where
     yStr = take 4 s

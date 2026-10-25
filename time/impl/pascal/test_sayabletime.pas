@@ -133,6 +133,32 @@ begin
   LPtr := GetLocale('xx');
   AssertLocaleNil('lookup.2', LPtr);
 
+  { Section 9: Minutes in short and compact modes }
+  { 9.1 }
+  AssertEqual('9.1', '6:01 PM', FormatTime(GetLocale('en')^, csShort, '18:01'));
+  { 9.2 }
+  AssertEqual('9.2', '7:05p', FormatTime(GetLocale('en')^, csCompact, '19:05'));
+
+  { Section 10: Input validation }
+  { 10.1 }
+  AssertEqual('10.1', 'half past nine', FormatTime(GetLocale('en')^, csNormal, '9:30'));
+  { 10.2 }
+  AssertEqual('10.2', 'half past nine', FormatTime(GetLocale('en')^, csNormal, '09:30'));
+  { 10.3 }
+  AssertNull('10.3', FormatTime(GetLocale('en')^, csNormal, ' 9:30'));
+  { 10.4 }
+  AssertNull('10.4', FormatTime(GetLocale('en')^, csNormal, '9:30 '));
+  { 10.5 }
+  AssertNull('10.5', FormatTime(GetLocale('en')^, csNormal, '9:5'));
+  { 10.6 }
+  AssertNull('10.6', FormatTime(GetLocale('en')^, csNormal, '24:00'));
+  { 10.7 }
+  AssertEqual('10.7', 'a quarter past two', FormatTime(GetLocale('en')^, csNormal, '14:15:30'));
+  { 10.8 }
+  AssertEqual('10.8', 'a quarter past two', FormatTime(GetLocale('en')^, csNormal, '2025-01-15T14:15:00Z'));
+  { 10.9 }
+  AssertNull('10.9', FormatTime(GetLocale('en')^, csNormal, '2025-02-30T14:15:00'));
+
   { Print results }
   WriteLn('');
   WriteLn(PassCount, ' passed, ', FailCount, ' failed');

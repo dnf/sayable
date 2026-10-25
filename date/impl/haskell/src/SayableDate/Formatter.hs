@@ -110,43 +110,22 @@ formatRelativeInternal loc resolved dy dm dd ay diff isCompact
     -- Yesterday
     | diff == -1 = rlYesterday resolved
     -- Day after tomorrow (optional, skipped in compact mode)
-    | diff == 2 && not isCompact =
-        case localeDayAfterTomorrow loc of
-            Just s  -> s
-            Nothing -> formatAbsolute resolved dy dm dd (dy /= ay)
+    | diff == 2 && not isCompact, Just s <- localeDayAfterTomorrow loc = s
     -- Day before yesterday (optional, skipped in compact mode)
-    | diff == -2 && not isCompact =
-        case localeDayBeforeYesterday loc of
-            Just s  -> s
-            Nothing -> formatAbsolute resolved dy dm dd (dy /= ay)
+    | diff == -2 && not isCompact, Just s <- localeDayBeforeYesterday loc = s
     -- Compact mode: skip weekday references, go straight to calendar date
-    | isCompact = formatAbsolute resolved dy dm dd (dy /= ay)
+    | isCompact = calendarDate
     -- This weekday (+2 to +6)
-    | diff >= 2 && diff <= 6 =
-        case localeThisWeekday loc of
-            Just template ->
-                let dow = weekday dy dm dd
-                    wdName = rlWeekdays resolved !! dow
-                in replace "{weekday}" wdName template
-            Nothing -> formatAbsolute resolved dy dm dd (dy /= ay)
+    | diff >= 2 && diff <= 6, Just template <- localeThisWeekday loc = withWeekday template
     -- Last weekday (-6 to -2)
-    | diff >= -6 && diff <= -2 =
-        case localeLastWeekday loc of
-            Just template ->
-                let dow = weekday dy dm dd
-                    wdName = rlWeekdays resolved !! dow
-                in replace "{weekday}" wdName template
-            Nothing -> formatAbsolute resolved dy dm dd (dy /= ay)
+    | diff >= -6 && diff <= -2, Just template <- localeLastWeekday loc = withWeekday template
     -- Next weekday (+7 to +13)
-    | diff >= 7 && diff <= 13 =
-        case localeNextWeekday loc of
-            Just template ->
-                let dow = weekday dy dm dd
-                    wdName = rlWeekdays resolved !! dow
-                in replace "{weekday}" wdName template
-            Nothing -> formatAbsolute resolved dy dm dd (dy /= ay)
+    | diff >= 7 && diff <= 13, Just template <- localeNextWeekday loc = withWeekday template
     -- Calendar fallback
-    | otherwise = formatAbsolute resolved dy dm dd (dy /= ay)
+    | otherwise = calendarDate
+  where
+    calendarDate = formatAbsolute resolved dy dm dd (dy /= ay)
+    withWeekday = replace "{weekday}" (rlWeekdays resolved !! weekday dy dm dd)
 
 formatAbsolute :: ResolvedLocale -> Int -> Int -> Int -> Bool -> String
 formatAbsolute resolved _year month day includeYear =
@@ -174,22 +153,27 @@ formatAbsolute resolved _year month day includeYear =
 
 -- Date parsing and arithmetic (zero-dependency)
 
+-- | YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+-- time (only the date part is read).
 parseDate :: String -> Maybe (Int, Int, Int)
-parseDate s
-    | null s    = Nothing
-    | otherwise =
-        let datePart = case indexOf 'T' s of
-                i | i >= 0 -> take i s
-                _          -> s
-        in case splitOn '-' datePart of
-            [ys, ms, ds] -> do
-                y <- safeAtoi ys
-                m <- safeAtoi ms
-                d <- safeAtoi ds
-                if m < 1 || m > 12 || d < 1 || d > 31
-                    then Nothing
-                    else Just (y, m, d)
-            _ -> Nothing
+parseDate s = case splitAt 10 s of
+    ([y1, y2, y3, y4, '-', m1, m2, '-', d1, d2], rest)
+        | null rest || take 1 rest == "T" -> do
+            y <- safeAtoi [y1, y2, y3, y4]
+            m <- safeAtoi [m1, m2]
+            d <- safeAtoi [d1, d2]
+            if m < 1 || m > 12 || d < 1 || d > daysInMonth y m
+                then Nothing
+                else Just (y, m, d)
+    _ -> Nothing
+
+daysInMonth :: Int -> Int -> Int
+daysInMonth y m
+    | m == 2 = if isLeap then 29 else 28
+    | m `elem` [4, 6, 9, 11] = 30
+    | otherwise = 31
+  where
+    isLeap = (y `mod` 4 == 0 && y `mod` 100 /= 0) || y `mod` 400 == 0
 
 toJdn :: Int -> Int -> Int -> Int
 toJdn year month day =
@@ -210,21 +194,6 @@ replace needle replacement haystack@(c:rest)
     | otherwise = c : replace needle replacement rest
   where
     nLen = length needle
-
-indexOf :: Char -> String -> Int
-indexOf _ [] = -1
-indexOf c (x:xs)
-    | c == x    = 0
-    | otherwise = let r = indexOf c xs
-                  in if r < 0 then -1 else 1 + r
-
-splitOn :: Char -> String -> [String]
-splitOn _ [] = [""]
-splitOn sep (c:rest)
-    | c == sep  = "" : splitOn sep rest
-    | otherwise = case splitOn sep rest of
-        (x:xs) -> (c:x) : xs
-        []     -> [[c]]
 
 safeAtoi :: String -> Maybe Int
 safeAtoi [] = Nothing

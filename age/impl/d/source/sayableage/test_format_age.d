@@ -1055,3 +1055,83 @@ unittest {
     assert(resolveStage(gendered, "m") == "Adulto");
     assert(resolveStage(gendered, "f") == "Adulta");
 }
+
+// ================================================================
+// Section 31: Weeks and days across month ends
+// ================================================================
+// 31.1
+unittest {
+    assertAge("31.1 88 days across a 28-day February", SayableAge(EN).formatAge("2016-12-31", "2017-03-29"), "12 weeks, 4 days");
+}
+// 31.2
+unittest {
+    assertAge("31.2 90 days across a year end into a leap year", SayableAge(EN).formatAge("1991-11-27", "1992-02-25"), "12 weeks, 6 days");
+}
+// 31.3
+unittest {
+    assertAge("31.3 33 days across a year end", SayableAge(EN).formatAge("2020-11-30", "2021-01-02"), "4 weeks, 5 days");
+}
+// 31.4
+unittest {
+    assertAge("31.4 Compact form of 31.1", SayableAge(EN, Compactness.compact).formatAge("2016-12-31", "2017-03-29"), "12w4d");
+}
+
+// ================================================================
+// Section 32: Half years take their plural form from whole years
+// ================================================================
+// 32.1
+unittest {
+    assertAge("32.1 Polish 3 is 'few'", SayableAge(PL).formatAge("2021-06-15", "2025-01-15"), "3 i pół lata");
+}
+// 32.2
+unittest {
+    assertAge("32.2 Polish 5 is 'many'", SayableAge(PL, Compactness.short_).formatAge("2020-06-15", "2025-12-15"), "5 i pół lat");
+}
+// 32.3
+unittest {
+    assertAge("32.3 Tachelhit 6 is 'few'", SayableAge(SHI).formatAge("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen");
+}
+
+// ================================================================
+// Section 33: Input validation
+// ================================================================
+// 33.1
+unittest {
+    assertNull("33.1 February 30 doesn't exist", SayableAge(EN).formatAge("2025-02-30", "2032-06-25"));
+}
+// 33.2
+unittest {
+    assertNull("33.2 Month 13", SayableAge(EN).formatAge("2025-13-01", "2027-01-31"));
+}
+// 33.3
+unittest {
+    assertNull("33.3 February 29 in a non-leap year", SayableAge(EN).formatAge("2023-02-29", "2025-03-01"));
+}
+// 33.4
+unittest {
+    assertNull("33.4 Day 00", SayableAge(EN).formatAge("2025-06-00", "2027-02-25"));
+}
+// 33.5
+unittest {
+    assertNull("33.5 Unpadded month and day", SayableAge(EN).formatAge("2025-6-1", "2027-02-25"));
+}
+// 33.6
+unittest {
+    assertNull("33.6 Surrounding whitespace", SayableAge(EN).formatAge(" 2025-06-01", "2027-02-25"));
+}
+// 33.7
+unittest {
+    assertNull("33.7 A datetime is not a date", SayableAge(EN).formatAge("2025-06-15T10:00:00", "2027-02-25"));
+}
+// 33.8
+unittest {
+    assertNull("33.8 Invalid asOf", SayableAge(EN).formatAge("2020-01-01", "2025-04-31"));
+}
+// 33.9
+unittest {
+    assertNull("33.9 formatStage validates too", SayableAge(EN).formatStage("2025-02-30", "2027-09-05"));
+}
+// 33.10
+unittest {
+    assertAge("33.10 February 29 in a leap year is valid", SayableAge(EN).formatAge("2024-02-29", "2026-03-01"), "2 years");
+}

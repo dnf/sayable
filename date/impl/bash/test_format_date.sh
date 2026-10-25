@@ -234,6 +234,69 @@ assert_eq "$(sayabledate_format_date "es" "2025-03-15")" "15 de marzo" "12.1"
 assert_eq "$(sayabledate_format_relative "es" "2025-03-17" "2025-03-15")" "pasado mañana" "12.2"
 
 # ================================================================
+# Sections 13-16: with year, short months, short phrases, input validation
+# ================================================================
+echo "Sections 13-16: with year, short months, short phrases, input validation"
+
+# 13.1
+assert_eq "$(sayabledate_format_date_with_year "en" "2018-02-04" "normal")" "February 4th, 2018" "13.1"
+
+# 13.2
+assert_eq "$(sayabledate_format_date_with_year "en" "2025-03-15" "short")" "Mar 15, 2025" "13.2"
+
+# 13.3
+assert_eq "$(sayabledate_format_date_with_year "en" "1997-01-21" "compact")" "1/21/97" "13.3"
+
+# 13.4 — two-digit year keeps its leading zero
+assert_eq "$(sayabledate_format_date_with_year "tg" "2007-05-20" "compact")" "20/5/07" "13.4"
+
+# 13.5
+assert_eq "$(sayabledate_format_date_with_year "fi" "1996-06-21" "short")" "21. kesäkuuta 1996" "13.5"
+
+# 14.1
+assert_eq "$(sayabledate_format_date "sk" "2031-02-15" "short")" "15. februára" "14.1"
+
+# 14.2
+assert_eq "$(sayabledate_format_date "cs" "2025-12-10" "short")" "10. prosince" "14.2"
+
+# 14.3
+assert_eq "$(sayabledate_format_date "uk" "2025-11-05" "short")" "5 листопада" "14.3"
+
+# 14.4
+assert_eq "$(sayabledate_format_relative "fi" "1998-08-08" "1998-08-15" "short")" "8. elokuuta" "14.4"
+
+# 15.1 — day after tomorrow
+assert_eq "$(sayabledate_format_relative "kw" "2035-12-04" "2035-12-02" "short")" "an Mth ma" "15.1"
+
+# 15.2 — day before yesterday
+assert_eq "$(sayabledate_format_relative "mam" "2000-01-23" "2000-01-25" "short")" "Dom nchi'j" "15.2"
+
+# 15.3 — day after tomorrow
+assert_eq "$(sayabledate_format_relative "kek" "2014-10-24" "2014-10-22" "short")" "a'in Vie" "15.3"
+
+# 16.1 — February 30 doesn't exist
+assert_eq "$(sayabledate_format_date "en" "2025-02-30" "normal")" "" "16.1"
+
+# 16.2 — Month 13
+assert_eq "$(sayabledate_format_date "en" "2025-13-01" "normal")" "" "16.2"
+
+# 16.3 — Unpadded month and day
+assert_eq "$(sayabledate_format_date "en" "2025-6-1" "normal")" "" "16.3"
+
+# 16.4 — Surrounding whitespace
+assert_eq "$(sayabledate_format_date "en" " 2025-06-01" "normal")" "" "16.4"
+
+# 16.5 — An ISO datetime: only the date part is used
+assert_eq "$(sayabledate_format_date "en" "2025-06-01T10:00:00" "normal")" "June 1st" "16.5"
+
+# 16.6 — February 29 in a non-leap year
+assert_eq "$(sayabledate_format_date_with_year "en" "2023-02-29" "normal")" "" "16.6"
+
+# 16.7 — Invalid asOf
+assert_eq "$(sayabledate_format_relative "en" "2025-03-16" "2025-04-31" "normal")" "" "16.7"
+
+
+# ================================================================
 # Summary
 # ================================================================
 echo ""

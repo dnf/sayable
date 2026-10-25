@@ -228,6 +228,63 @@ procedure Test_Format_Time is
          "0.00");
    end Test_Finnish_Dot_Separator;
 
+   ---------------------------------------------------------------------------
+   --  9. Minutes in short and compact modes
+   ---------------------------------------------------------------------------
+   procedure Test_Digital_Minutes is
+      Loc : constant Locale_Access :=
+        Sayabletime_Locales.Get_Locale ("en");
+   begin
+      --  9.1
+      Assert_Eq ("9.1 digital modes keep the exact minute",
+         Sayabletime.Format_Time (Loc.all, Short, "18:01"),
+         "6:01 PM");
+      --  9.2
+      Assert_Eq ("9.2 digital modes keep the exact minute",
+         Sayabletime.Format_Time (Loc.all, Compact, "19:05"),
+         "7:05p");
+   end Test_Digital_Minutes;
+
+   ---------------------------------------------------------------------------
+   --  10. Input validation
+   ---------------------------------------------------------------------------
+   procedure Test_Input_Validation is
+      Loc : constant Locale_Access :=
+        Sayabletime_Locales.Get_Locale ("en");
+   begin
+      --  10.1
+      Assert_Eq ("10.1 one-digit hour",
+         Sayabletime.Format_Time (Loc.all, Normal, "9:30"),
+         "half past nine");
+      --  10.2
+      Assert_Eq ("10.2 two-digit hour",
+         Sayabletime.Format_Time (Loc.all, Normal, "09:30"),
+         "half past nine");
+      --  10.3
+      Assert_Null ("10.3 leading whitespace",
+         Sayabletime.Format_Time (Loc.all, Normal, " 9:30"));
+      --  10.4
+      Assert_Null ("10.4 trailing whitespace",
+         Sayabletime.Format_Time (Loc.all, Normal, "9:30 "));
+      --  10.5
+      Assert_Null ("10.5 minutes need two digits",
+         Sayabletime.Format_Time (Loc.all, Normal, "9:5"));
+      --  10.6
+      Assert_Null ("10.6 hour out of range",
+         Sayabletime.Format_Time (Loc.all, Normal, "24:00"));
+      --  10.7
+      Assert_Eq ("10.7 seconds are allowed and ignored",
+         Sayabletime.Format_Time (Loc.all, Normal, "14:15:30"),
+         "a quarter past two");
+      --  10.8
+      Assert_Eq ("10.8 ISO datetime with zone suffix (ignored)",
+         Sayabletime.Format_Time (Loc.all, Normal, "2025-01-15T14:15:00Z"),
+         "a quarter past two");
+      --  10.9
+      Assert_Null ("10.9 ISO datetime with an impossible date",
+         Sayabletime.Format_Time (Loc.all, Normal, "2025-02-30T14:15:00"));
+   end Test_Input_Validation;
+
 begin
    Test_Null_Edge_Cases;
    Test_Normal_Clock;
@@ -237,6 +294,8 @@ begin
    Test_Locale_French;
    Test_Locale_Japanese;
    Test_Finnish_Dot_Separator;
+   Test_Digital_Minutes;
+   Test_Input_Validation;
 
    Put_Line (Natural'Image (Tests_Passed) & " passed," &
              Natural'Image (Tests_Failed) & " failed");

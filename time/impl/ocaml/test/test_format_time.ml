@@ -57,6 +57,26 @@ let test_7_1 () = check_some "\xe4\xb8\x89\xe6\x99\x82\xe5\x8d\x8a" (ftime ja "1
 let test_8_1 () = check_some "14.15" (ftime_s fi Types.Short "14:15")             (* 8.1 *)
 let test_8_2 () = check_some "0.00" (ftime_s fi Types.Short "00:00")              (* 8.2 *)
 
+(* Formats with the locale for a code (None for an unknown code). *)
+let with_locale code f = Option.bind (Locales.get_locale code) f
+
+let expect_canonical expected actual =
+  Alcotest.(check (option string)) "canonical" expected actual
+
+(* 9. Minutes in short and compact modes *)
+let test_9_1 () = expect_canonical (Some "6:01 PM") (with_locale "en" (fun l -> Formatter.format_time l Types.Short "18:01"))  (* 9.1 *)
+let test_9_2 () = expect_canonical (Some "7:05p") (with_locale "en" (fun l -> Formatter.format_time l Types.Compact "19:05"))  (* 9.2 *)
+(* 10. Input validation *)
+let test_10_1 () = expect_canonical (Some "half past nine") (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "9:30"))  (* 10.1 *)
+let test_10_2 () = expect_canonical (Some "half past nine") (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "09:30"))  (* 10.2 *)
+let test_10_3 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_time l Types.Normal " 9:30"))  (* 10.3 *)
+let test_10_4 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "9:30 "))  (* 10.4 *)
+let test_10_5 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "9:5"))  (* 10.5 *)
+let test_10_6 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "24:00"))  (* 10.6 *)
+let test_10_7 () = expect_canonical (Some "a quarter past two") (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "14:15:30"))  (* 10.7 *)
+let test_10_8 () = expect_canonical (Some "a quarter past two") (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "2025-01-15T14:15:00Z"))  (* 10.8 *)
+let test_10_9 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_time l Types.Normal "2025-02-30T14:15:00"))  (* 10.9 *)
+
 let () =
   Alcotest.run "sayable-time"
     [ ( "1. Null / edge cases"
@@ -100,5 +120,20 @@ let () =
     ; ( "8. Locale Finnish (dot separator, short)"
       , [ Alcotest.test_case "8.1 dot separator" `Quick test_8_1
         ; Alcotest.test_case "8.2 midnight dot" `Quick test_8_2
+        ] )
+    ; ( "9. Minutes in short and compact modes"
+      , [ Alcotest.test_case "9.1 digital modes keep the exact minute" `Quick test_9_1
+        ; Alcotest.test_case "9.2 digital modes keep the exact minute" `Quick test_9_2
+        ] )
+    ; ( "10. Input validation"
+      , [ Alcotest.test_case "10.1 one-digit hour" `Quick test_10_1
+        ; Alcotest.test_case "10.2 two-digit hour" `Quick test_10_2
+        ; Alcotest.test_case "10.3 leading whitespace" `Quick test_10_3
+        ; Alcotest.test_case "10.4 trailing whitespace" `Quick test_10_4
+        ; Alcotest.test_case "10.5 minutes need two digits" `Quick test_10_5
+        ; Alcotest.test_case "10.6 hour out of range" `Quick test_10_6
+        ; Alcotest.test_case "10.7 seconds are allowed and ignored" `Quick test_10_7
+        ; Alcotest.test_case "10.8 ISO datetime with zone suffix (ignored)" `Quick test_10_8
+        ; Alcotest.test_case "10.9 ISO datetime with an impossible date" `Quick test_10_9
         ] )
     ]

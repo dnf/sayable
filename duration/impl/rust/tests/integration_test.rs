@@ -472,3 +472,89 @@ fn test_compact_one_minute_thirty_seconds() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Compact);
     assert_eq!(sd.format_duration_seconds(90), Some("1m30s".to_string()));
 }
+
+// ── Section 18: Short compactness — relative time ────────────────────────────────────
+
+// 18.1 — days and hours both kept
+#[test]
+fn test_case_18_1() {
+    let sd = SayableDuration::new(&sayable_duration::locales::MEN, Compactness::Normal);
+    assert_eq!(sd.format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16"), Some("lɔhɔnga 2, awa 14 taa gbɔyɔ".to_string()));
+}
+
+
+// ── Section 19: Range (500-year ceiling) ────────────────────────────────────
+
+// 19.1 — 500 Julian years: 6000 months, the ceiling
+#[test]
+fn test_case_19_1() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_duration_seconds(15778800000), Some("500 years".to_string()));
+}
+
+// 19.2 — over 6000 months
+#[test]
+fn test_case_19_2() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_duration_seconds(15800000000), None);
+}
+
+// 19.3 — well beyond the ceiling (and 32-bit range)
+#[test]
+fn test_case_19_3() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_duration_seconds(99999999999), None);
+}
+
+// 19.4 — 525 years ago
+#[test]
+fn test_case_19_4() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00"), None);
+}
+
+// 19.5 — 575 years from now
+#[test]
+fn test_case_19_5() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00"), None);
+}
+
+
+// ── Section 20: Timestamp validation ────────────────────────────────────
+
+// 20.1 — seconds are optional
+#[test]
+fn test_case_20_1() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_duration_iso("2025-01-15T10:00", "2025-01-15T11:30:00"), Some("1½ hours".to_string()));
+}
+
+// 20.2 — minutes are required
+#[test]
+fn test_case_20_2() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_duration_iso("2025-01-15T10", "2025-01-15T11:30:00"), None);
+}
+
+// 20.3 — unpadded date
+#[test]
+fn test_case_20_3() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_duration_iso("2025-1-5T10:00:00", "2025-01-15T11:30:00"), None);
+}
+
+// 20.4 — impossible date
+#[test]
+fn test_case_20_4() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_duration_iso("2025-02-30T10:00:00", "2025-03-15T11:30:00"), None);
+}
+
+// 20.5 — hour out of range
+#[test]
+fn test_case_20_5() {
+    let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
+    assert_eq!(sd.format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00"), None);
+}
+

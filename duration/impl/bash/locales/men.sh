@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/men.json
 
-_plural_men() {
+_sayableduration_plural_men() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_men() {
+_sayableduration_locale_men() {
     _unit_second_one='sɛkɔn {n}'
     _unit_second_other='sɛkɔn {n}'
     _unit_minute_one='miniti {n}'
@@ -58,5 +58,5 @@ _locale_men() {
     _compact_delimiter=''
     _compact_ago='{0} taa gbɔyɔ'
     _compact_in_future='yɛ {0}'
-    _plural_func=_plural_men
+    _plural_func=_sayableduration_plural_men
 }

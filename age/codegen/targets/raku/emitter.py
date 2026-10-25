@@ -121,6 +121,10 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append("    %locales{$code} // Nil;")
     lines.append("}")
     lines.append("")
+    lines.append("our sub codes() {")
+    lines.append("    %locales.keys.sort;")
+    lines.append("}")
+    lines.append("")
 
     return "\n".join(lines)
 

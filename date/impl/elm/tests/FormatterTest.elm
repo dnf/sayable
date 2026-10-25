@@ -2,6 +2,7 @@ module FormatterTest exposing (suite)
 
 import Expect
 import SayableDate.Formatter exposing (formatDate, formatDateWithYear, formatRelative)
+import SayableDate.Locales exposing (getLocale)
 import SayableDate.Locales.Ar as Ar
 import SayableDate.Locales.De as De
 import SayableDate.Locales.En as En
@@ -41,6 +42,11 @@ rel date asOf =
 relCompact : String -> String -> Maybe String
 relCompact date asOf =
     formatRelative en Compact date asOf
+
+
+withLocale : String -> (Locale -> Maybe String) -> Maybe String
+withLocale code format =
+    getLocale code |> Maybe.andThen format
 
 
 suite : Test
@@ -176,5 +182,51 @@ suite =
                 \_ -> Expect.equal (Just "15 de marzo") (formatDate Es.locale Normal "2025-03-15")
             , test "12.2 Spanish pasado ma\u{00F1}ana" <|
                 \_ -> Expect.equal (Just "pasado ma\u{00F1}ana") (formatRelative Es.locale Normal "2025-03-17" "2025-03-15")
+            ]
+        , describe "13. format_date_with_year"
+            [ test "13.1 normal" <|
+                \_ -> Expect.equal (Just "February 4th, 2018") (formatDateWithYear en Normal "2018-02-04")
+            , test "13.2 short" <|
+                \_ -> Expect.equal (Just "Mar 15, 2025") (formatDateWithYear en Short "2025-03-15")
+            , test "13.3 compact" <|
+                \_ -> Expect.equal (Just "1/21/97") (formatDateWithYear en Compact "1997-01-21")
+            , test "13.4 two-digit year keeps its leading zero" <|
+                \_ -> Expect.equal (Just "20/5/07") (withLocale "tg" (\loc -> formatDateWithYear loc Compact "2007-05-20"))
+            , test "13.5 Finnish short" <|
+                \_ -> Expect.equal (Just "21. kes\u{00E4}kuuta 1996") (withLocale "fi" (\loc -> formatDateWithYear loc Short "1996-06-21"))
+            ]
+        , describe "14. Short month names (locales that keep the full genitive)"
+            [ test "14.1 Slovak" <|
+                \_ -> Expect.equal (Just "15. febru\u{00E1}ra") (withLocale "sk" (\loc -> formatDate loc Short "2031-02-15"))
+            , test "14.2 Czech" <|
+                \_ -> Expect.equal (Just "10. prosince") (withLocale "cs" (\loc -> formatDate loc Short "2025-12-10"))
+            , test "14.3 Ukrainian" <|
+                \_ -> Expect.equal (Just "5 \u{043B}\u{0438}\u{0441}\u{0442}\u{043E}\u{043F}\u{0430}\u{0434}\u{0430}") (withLocale "uk" (\loc -> formatDate loc Short "2025-11-05"))
+            , test "14.4 Finnish relative" <|
+                \_ -> Expect.equal (Just "8. elokuuta") (withLocale "fi" (\loc -> formatRelative loc Short "1998-08-08" "1998-08-15"))
+            ]
+        , describe "15. format_relative - short phrases"
+            [ test "15.1 Cornish day after tomorrow" <|
+                \_ -> Expect.equal (Just "an Mth ma") (withLocale "kw" (\loc -> formatRelative loc Short "2035-12-04" "2035-12-02"))
+            , test "15.2 Mam day before yesterday" <|
+                \_ -> Expect.equal (Just "Dom nchi'j") (withLocale "mam" (\loc -> formatRelative loc Short "2000-01-23" "2000-01-25"))
+            , test "15.3 Q'eqchi' day after tomorrow" <|
+                \_ -> Expect.equal (Just "a'in Vie") (withLocale "kek" (\loc -> formatRelative loc Short "2014-10-24" "2014-10-22"))
+            ]
+        , describe "16. Input validation"
+            [ test "16.1 February 30" <|
+                \_ -> Expect.equal Nothing (fmt "2025-02-30")
+            , test "16.2 month 13" <|
+                \_ -> Expect.equal Nothing (fmt "2025-13-01")
+            , test "16.3 unpadded month and day" <|
+                \_ -> Expect.equal Nothing (fmt "2025-6-1")
+            , test "16.4 surrounding whitespace" <|
+                \_ -> Expect.equal Nothing (fmt " 2025-06-01")
+            , test "16.5 ISO datetime uses the date part" <|
+                \_ -> Expect.equal (Just "June 1st") (fmt "2025-06-01T10:00:00")
+            , test "16.6 February 29 in a non-leap year" <|
+                \_ -> Expect.equal Nothing (formatDateWithYear en Normal "2023-02-29")
+            , test "16.7 invalid asOf" <|
+                \_ -> Expect.equal Nothing (rel "2025-03-16" "2025-04-31")
             ]
         ]

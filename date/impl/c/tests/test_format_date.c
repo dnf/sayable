@@ -239,6 +239,70 @@ static void test_locale_lookup(void) {
     ASSERT_TRUE("get('') null", sd_locale_get("") == NULL);
 }
 
+/* ================================================================ */
+/* Section 13: format_date_with_year */
+/* ================================================================ */
+static void test_section_13_format_date_with_year(void) {
+    char buf[256];
+    int rc;
+    rc = sd_format_date_with_year(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, "2018-02-04");
+    ASSERT_EQ("13.1", rc, buf, "February 4th, 2018"); // 13.1
+    rc = sd_format_date_with_year(buf, sizeof(buf), &sd_locale_en, SD_SHORT, "2025-03-15");
+    ASSERT_EQ("13.2", rc, buf, "Mar 15, 2025"); // 13.2
+    rc = sd_format_date_with_year(buf, sizeof(buf), &sd_locale_en, SD_COMPACT, "1997-01-21");
+    ASSERT_EQ("13.3", rc, buf, "1/21/97"); // 13.3
+    rc = sd_format_date_with_year(buf, sizeof(buf), &sd_locale_tg, SD_COMPACT, "2007-05-20");
+    ASSERT_EQ("13.4 two-digit year keeps its leading zero", rc, buf, "20/5/07"); // 13.4
+    rc = sd_format_date_with_year(buf, sizeof(buf), &sd_locale_fi, SD_SHORT, "1996-06-21");
+    ASSERT_EQ("13.5", rc, buf, "21. kes\303\244kuuta 1996"); // 13.5
+}
+
+/* ================================================================ */
+/* Section 14: Short month names */
+/* ================================================================ */
+static void test_section_14_short_month_names(void) {
+    char buf[256];
+    int rc;
+    rc = sd_format_date(buf, sizeof(buf), &sd_locale_sk, SD_SHORT, "2031-02-15");
+    ASSERT_EQ("14.1", rc, buf, "15. febru\303\241ra"); // 14.1
+    rc = sd_format_date(buf, sizeof(buf), &sd_locale_cs, SD_SHORT, "2025-12-10");
+    ASSERT_EQ("14.2", rc, buf, "10. prosince"); // 14.2
+    rc = sd_format_date(buf, sizeof(buf), &sd_locale_uk, SD_SHORT, "2025-11-05");
+    ASSERT_EQ("14.3", rc, buf, "5 \320\273\320\270\321\201\321\202\320\276\320\277\320\260\320\264\320\260"); // 14.3
+    rc = sd_format_relative(buf, sizeof(buf), &sd_locale_fi, SD_SHORT, "1998-08-08", "1998-08-15");
+    ASSERT_EQ("14.4", rc, buf, "8. elokuuta"); // 14.4
+}
+
+/* ================================================================ */
+/* Section 15: format_relative — short phrases */
+/* ================================================================ */
+static void test_section_15_format_relative_short_phrases(void) {
+    char buf[256];
+    int rc;
+    rc = sd_format_relative(buf, sizeof(buf), &sd_locale_kw, SD_SHORT, "2035-12-04", "2035-12-02");
+    ASSERT_EQ("15.1 day after tomorrow", rc, buf, "an Mth ma"); // 15.1
+    rc = sd_format_relative(buf, sizeof(buf), &sd_locale_mam, SD_SHORT, "2000-01-23", "2000-01-25");
+    ASSERT_EQ("15.2 day before yesterday", rc, buf, "Dom nchi'j"); // 15.2
+    rc = sd_format_relative(buf, sizeof(buf), &sd_locale_kek, SD_SHORT, "2014-10-24", "2014-10-22");
+    ASSERT_EQ("15.3 day after tomorrow", rc, buf, "a'in Vie"); // 15.3
+}
+
+/* ================================================================ */
+/* Section 16: Input validation */
+/* ================================================================ */
+static void test_section_16_input_validation(void) {
+    char buf[256];
+    int rc;
+    ASSERT_NULL("16.1 February 30 doesn't exist", sd_format_date(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, "2025-02-30")); // 16.1
+    ASSERT_NULL("16.2 Month 13", sd_format_date(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, "2025-13-01")); // 16.2
+    ASSERT_NULL("16.3 Unpadded month and day", sd_format_date(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, "2025-6-1")); // 16.3
+    ASSERT_NULL("16.4 Surrounding whitespace", sd_format_date(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, " 2025-06-01")); // 16.4
+    rc = sd_format_date(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, "2025-06-01T10:00:00");
+    ASSERT_EQ("16.5 An ISO datetime: only the date part is used", rc, buf, "June 1st"); // 16.5
+    ASSERT_NULL("16.6 February 29 in a non-leap year", sd_format_date_with_year(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, "2023-02-29")); // 16.6
+    ASSERT_NULL("16.7 Invalid asOf", sd_format_relative(buf, sizeof(buf), &sd_locale_en, SD_NORMAL, "2025-03-16", "2025-04-31")); // 16.7
+}
+
 int main(void) {
     test_null_edge_cases();
     test_format_date_normal();
@@ -253,6 +317,11 @@ int main(void) {
     test_locale_arabic();
     test_locale_spanish();
     test_locale_lookup();
+
+    test_section_13_format_date_with_year();
+    test_section_14_short_month_names();
+    test_section_15_format_relative_short_phrases();
+    test_section_16_input_validation();
 
     printf("\n=== Results ===\n");
     printf("Passed: %d\n", tests_passed);

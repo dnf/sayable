@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/am.json
 
-_plural_am() {
+_sayableduration_plural_am() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_am() {
+_sayableduration_locale_am() {
     _unit_second_one='{n} ሰከንድ'
     _unit_second_other='{n} ሰከንዶች'
     _unit_minute_one='{n} ደቂቃ'
@@ -59,5 +59,5 @@ _locale_am() {
     _compact_delimiter=''
     _compact_ago='ከ{0} በፊት'
     _compact_in_future='በ{0} ውስጥ'
-    _plural_func=_plural_am
+    _plural_func=_sayableduration_plural_am
 }

@@ -79,12 +79,10 @@ Namespace SayableAgeLib
                 refD = now.Day
             End If
 
-            Dim dobDate = New DateTime(dobY, dobM, dobD)
-            Dim refDate = New DateTime(refY, refM, refD)
-            Dim diffDays = CInt((refDate - dobDate).TotalDays)
+            Dim diffDays = JulianDay(refY, refM, refD) - JulianDay(dobY, dobM, dobD)
             If diffDays < 0 Then Return Nothing
 
-            Dim lastDay = DateTime.DaysInMonth(refY, refM)
+            Dim lastDay = DaysInMonth(refY, refM)
             Dim clampedBirthday = Math.Min(dobD, lastDay)
             Dim months = (refY - dobY) * 12 + (refM - dobM)
             If refD < clampedBirthday Then months -= 1
@@ -93,14 +91,33 @@ Namespace SayableAgeLib
             Return New Integer() {months, diffDays}
         End Function
 
+        ''' <summary>Parses exactly YYYY-MM-DD naming a real calendar day; Nothing otherwise.</summary>
         Private Shared Function ParseDateParts(s As String) As Integer()
-            If s.Length < 10 OrElse s(4) <> "-"c OrElse s(7) <> "-"c Then Return Nothing
+            If s.Length <> 10 OrElse s(4) <> "-"c OrElse s(7) <> "-"c Then Return Nothing
             Dim y = SafeAtoi(s, 0, 4)
             Dim m = SafeAtoi(s, 5, 7)
             Dim d = SafeAtoi(s, 8, 10)
-            If y < 0 OrElse m < 0 OrElse d < 0 Then Return Nothing
-            If y = 0 AndAlso m = 0 AndAlso d = 0 Then Return Nothing
+            If y < 0 OrElse m < 1 OrElse m > 12 OrElse d < 1 OrElse d > DaysInMonth(y, m) Then Return Nothing
             Return New Integer() {y, m, d}
+        End Function
+
+        ' DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+        Private Shared Function DaysInMonth(year As Integer, month As Integer) As Integer
+            Select Case month
+                Case 2
+                    Return If((year Mod 4 = 0 AndAlso year Mod 100 <> 0) OrElse year Mod 400 = 0, 29, 28)
+                Case 4, 6, 9, 11
+                    Return 30
+                Case Else
+                    Return 31
+            End Select
+        End Function
+
+        Private Shared Function JulianDay(year As Integer, month As Integer, day As Integer) As Integer
+            Dim a = (14 - month) \ 12
+            Dim y = year + 4800 - a
+            Dim m = month + 12 * a - 3
+            Return day + (153 * m + 2) \ 5 + 365 * y + y \ 4 - y \ 100 + y \ 400 - 32045
         End Function
 
         Private Shared Function SafeAtoi(s As String, from2 As Integer, [to] As Integer) As Integer

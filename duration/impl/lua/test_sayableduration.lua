@@ -374,3 +374,63 @@ describe("Compact compactness — duration", function()
         assert.are.equal("1m30s", sdf.format_duration(90))
     end)
 end)
+
+-- ================================================================
+-- Sections 18-20: short since, 500-year ceiling, timestamp validation
+-- ================================================================
+describe("Sections 18-20: short since, 500-year ceiling, timestamp validation", function()
+    -- 18.1
+    it("days and hours both kept", function()
+        assert.are.equal("lɔhɔnga 2, awa 14 taa gbɔyɔ", sd.new(sd.get_locale("men"), "short").format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16"))
+    end)
+
+    -- 19.1
+    it("500 Julian years: 6000 months, the ceiling", function()
+        assert.are.equal("500 years", sd.new(sd.get_locale("en")).format_duration(15778800000))
+    end)
+
+    -- 19.2
+    it("over 6000 months", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_duration(15800000000))
+    end)
+
+    -- 19.3
+    it("well beyond the ceiling (and 32-bit range)", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_duration(99999999999))
+    end)
+
+    -- 19.4
+    it("525 years ago", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00"))
+    end)
+
+    -- 19.5
+    it("575 years from now", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00"))
+    end)
+
+    -- 20.1
+    it("seconds are optional", function()
+        assert.are.equal("1½ hours", sd.new(sd.get_locale("en")).format_duration_iso("2025-01-15T10:00", "2025-01-15T11:30:00"))
+    end)
+
+    -- 20.2
+    it("minutes are required", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_duration_iso("2025-01-15T10", "2025-01-15T11:30:00"))
+    end)
+
+    -- 20.3
+    it("unpadded date", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_duration_iso("2025-1-5T10:00:00", "2025-01-15T11:30:00"))
+    end)
+
+    -- 20.4
+    it("impossible date", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_duration_iso("2025-02-30T10:00:00", "2025-03-15T11:30:00"))
+    end)
+
+    -- 20.5
+    it("hour out of range", function()
+        assert.is_nil(sd.new(sd.get_locale("en")).format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00"))
+    end)
+end)

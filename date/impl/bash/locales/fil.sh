@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/fil.json
 
-_locale_fil() {
+_sayabledate_locale_fil() {
     _months=('Enero' 'Pebrero' 'Marso' 'Abril' 'Mayo' 'Hunyo' 'Hulyo' 'Agosto' 'Setyembre' 'Oktubre' 'Nobyembre' 'Disyembre')
     _weekdays=('Linggo' 'Lunes' 'Martes' 'Miyerkules' 'Huwebes' 'Biyernes' 'Sabado')
     _day_format='{n}'

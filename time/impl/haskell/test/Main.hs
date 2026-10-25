@@ -25,6 +25,10 @@ timeShort = formatTime en Short
 timeCompact :: Maybe String -> Maybe String
 timeCompact = formatTime en Compact
 
+-- | Formats with the locale for a code (Nothing for an unknown code).
+withLocale :: String -> (TimeLocale -> Maybe String) -> Maybe String
+withLocale code f = getLocale code >>= f
+
 main :: IO ()
 main = hspec $ do
 
@@ -136,3 +140,42 @@ main = hspec $ do
             fmap localeCode (getLocale "en") `shouldBe` Just "en"
         it "unknown code" $
             getLocale "xx" `shouldSatisfy` isNothing
+
+    -- Section 9: Minutes in short and compact modes
+    describe "9. Minutes in short and compact modes" $ do
+        -- 9.1
+        it "9.1 digital modes keep the exact minute" $
+            withLocale "en" (\l -> formatTime l Short (Just "18:01")) `shouldBe` Just "6:01 PM"
+        -- 9.2
+        it "9.2 digital modes keep the exact minute" $
+            withLocale "en" (\l -> formatTime l Compact (Just "19:05")) `shouldBe` Just "7:05p"
+
+    -- Section 10: Input validation
+    describe "10. Input validation" $ do
+        -- 10.1
+        it "10.1 one-digit hour" $
+            withLocale "en" (\l -> formatTime l Normal (Just "9:30")) `shouldBe` Just "half past nine"
+        -- 10.2
+        it "10.2 two-digit hour" $
+            withLocale "en" (\l -> formatTime l Normal (Just "09:30")) `shouldBe` Just "half past nine"
+        -- 10.3
+        it "10.3 leading whitespace" $
+            withLocale "en" (\l -> formatTime l Normal (Just " 9:30")) `shouldBe` Nothing
+        -- 10.4
+        it "10.4 trailing whitespace" $
+            withLocale "en" (\l -> formatTime l Normal (Just "9:30 ")) `shouldBe` Nothing
+        -- 10.5
+        it "10.5 minutes need two digits" $
+            withLocale "en" (\l -> formatTime l Normal (Just "9:5")) `shouldBe` Nothing
+        -- 10.6
+        it "10.6 hour out of range" $
+            withLocale "en" (\l -> formatTime l Normal (Just "24:00")) `shouldBe` Nothing
+        -- 10.7
+        it "10.7 seconds are allowed and ignored" $
+            withLocale "en" (\l -> formatTime l Normal (Just "14:15:30")) `shouldBe` Just "a quarter past two"
+        -- 10.8
+        it "10.8 ISO datetime with zone suffix (ignored)" $
+            withLocale "en" (\l -> formatTime l Normal (Just "2025-01-15T14:15:00Z")) `shouldBe` Just "a quarter past two"
+        -- 10.9
+        it "10.9 ISO datetime with an impossible date" $
+            withLocale "en" (\l -> formatTime l Normal (Just "2025-02-30T14:15:00")) `shouldBe` Nothing

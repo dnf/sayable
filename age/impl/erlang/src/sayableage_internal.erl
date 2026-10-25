@@ -3,27 +3,23 @@
          compute_age/2, today/0, format_date/1]).
 
 -spec parse_date(string()) -> {ok, {integer(), integer(), integer()}} | error.
-parse_date(S) ->
-    case length(S) >= 10 andalso
-         lists:nth(5, S) =:= $- andalso
-         lists:nth(8, S) =:= $- of
+parse_date([Y1, Y2, Y3, Y4, $-, M1, M2, $-, D1, D2] = S) ->
+    case all_digits([Y1, Y2, Y3, Y4, M1, M2, D1, D2]) of
         true ->
-            YStr = lists:sublist(S, 1, 4),
-            MStr = lists:sublist(S, 6, 2),
-            DStr = lists:sublist(S, 9, 2),
-            case all_digits(YStr) andalso all_digits(MStr) andalso all_digits(DStr) of
-                true ->
-                    Y = list_to_integer(YStr),
-                    M = list_to_integer(MStr),
-                    D = list_to_integer(DStr),
-                    case Y =:= 0 andalso M =:= 0 andalso D =:= 0 of
-                        true -> error;
-                        false -> {ok, {Y, M, D}}
-                    end;
+            Y = list_to_integer(lists:sublist(S, 1, 4)),
+            M = list_to_integer([M1, M2]),
+            D = list_to_integer([D1, D2]),
+            case is_real_date(Y, M, D) of
+                true -> {ok, {Y, M, D}};
                 false -> error
             end;
         false -> error
-    end.
+    end;
+parse_date(_) -> error.
+
+-spec is_real_date(integer(), integer(), integer()) -> boolean().
+is_real_date(Y, M, D) ->
+    M >= 1 andalso M =< 12 andalso D >= 1 andalso D =< days_in_month(Y, M).
 
 -spec is_leap_year(integer()) -> boolean().
 is_leap_year(Y) ->

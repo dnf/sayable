@@ -1168,6 +1168,110 @@ fn test_stage_gender_en_ignores_gender_m() raises:
 
 
 # ================================================================
+# Weeks and days across month ends
+# ================================================================
+
+
+# 31.1
+fn test_31_1_weeks_days_across_short_february() raises:
+    assert_equal(format_age("2016-12-31", "2017-03-29"), "12 weeks, 4 days")
+
+
+# 31.2
+fn test_31_2_weeks_days_across_year_end_into_leap_year() raises:
+    assert_equal(format_age("1991-11-27", "1992-02-25"), "12 weeks, 6 days")
+
+
+# 31.3
+fn test_31_3_weeks_days_across_year_end() raises:
+    assert_equal(format_age("2020-11-30", "2021-01-02"), "4 weeks, 5 days")
+
+
+# 31.4
+fn test_31_4_compact_weeks_days_across_short_february() raises:
+    var sa = SayableAge(build_en(), "compact")
+    assert_equal(sa.format_age("2016-12-31", "2017-03-29"), "12w4d")
+
+
+# ================================================================
+# Half years take their plural form from whole years
+# ================================================================
+
+
+# 32.1
+fn test_32_1_pl_half_year_few() raises:
+    var sa = SayableAge(get_locale("pl"))
+    assert_equal(sa.format_age("2021-06-15", "2025-01-15"), "3 i p\xc3\xb3\xc5\x82 lata")
+
+
+# 32.2
+fn test_32_2_pl_short_half_year_many() raises:
+    var sa = SayableAge(get_locale("pl"), "short")
+    assert_equal(sa.format_age("2020-06-15", "2025-12-15"), "5 i p\xc3\xb3\xc5\x82 lat")
+
+
+# 32.3
+fn test_32_3_shi_half_year_few() raises:
+    var sa = SayableAge(get_locale("shi"))
+    assert_equal(sa.format_age("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")
+
+
+# ================================================================
+# Input validation
+# ================================================================
+
+
+# 33.1
+fn test_33_1_february_30_is_invalid() raises:
+    assert_equal(format_age("2025-02-30", "2032-06-25"), "")
+
+
+# 33.2
+fn test_33_2_month_13_is_invalid() raises:
+    assert_equal(format_age("2025-13-01", "2027-01-31"), "")
+
+
+# 33.3
+fn test_33_3_february_29_in_non_leap_year_is_invalid() raises:
+    assert_equal(format_age("2023-02-29", "2025-03-01"), "")
+
+
+# 33.4
+fn test_33_4_day_00_is_invalid() raises:
+    assert_equal(format_age("2025-06-00", "2027-02-25"), "")
+
+
+# 33.5
+fn test_33_5_unpadded_month_and_day_is_invalid() raises:
+    assert_equal(format_age("2025-6-1", "2027-02-25"), "")
+
+
+# 33.6
+fn test_33_6_surrounding_whitespace_is_invalid() raises:
+    assert_equal(format_age(" 2025-06-01", "2027-02-25"), "")
+
+
+# 33.7
+fn test_33_7_datetime_is_not_a_date() raises:
+    assert_equal(format_age("2025-06-15T10:00:00", "2027-02-25"), "")
+
+
+# 33.8
+fn test_33_8_invalid_as_of() raises:
+    assert_equal(format_age("2020-01-01", "2025-04-31"), "")
+
+
+# 33.9
+fn test_33_9_format_stage_validates_too() raises:
+    assert_equal(format_stage("2025-02-30", "2027-09-05"), "")
+
+
+# 33.10
+fn test_33_10_february_29_in_leap_year_is_valid() raises:
+    assert_equal(format_age("2024-02-29", "2026-03-01"), "2 years")
+
+
+# ================================================================
 # Version constant
 # ================================================================
 
@@ -1404,6 +1508,29 @@ fn main() raises:
     test_stage_gender_ar_adult_feminine()
     test_stage_gender_en_ignores_gender_f()
     test_stage_gender_en_ignores_gender_m()
+
+    # Weeks and days across month ends
+    test_31_1_weeks_days_across_short_february()
+    test_31_2_weeks_days_across_year_end_into_leap_year()
+    test_31_3_weeks_days_across_year_end()
+    test_31_4_compact_weeks_days_across_short_february()
+
+    # Half-year plural from whole years
+    test_32_1_pl_half_year_few()
+    test_32_2_pl_short_half_year_many()
+    test_32_3_shi_half_year_few()
+
+    # Input validation
+    test_33_1_february_30_is_invalid()
+    test_33_2_month_13_is_invalid()
+    test_33_3_february_29_in_non_leap_year_is_invalid()
+    test_33_4_day_00_is_invalid()
+    test_33_5_unpadded_month_and_day_is_invalid()
+    test_33_6_surrounding_whitespace_is_invalid()
+    test_33_7_datetime_is_not_a_date()
+    test_33_8_invalid_as_of()
+    test_33_9_format_stage_validates_too()
+    test_33_10_february_29_in_leap_year_is_valid()
 
     # Version
     test_version()

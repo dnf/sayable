@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ln.json
 
-_locale_ln() {
+_sayabledate_locale_ln() {
     _months=('Yanwáli' 'Febwáli' 'Mársi' 'Apríli' 'Máyi' 'Yúni' 'Yúli' 'Augústu' 'Sɛtɛ́mbɛ' 'Ɔkɔtɔ́bɛ' 'Novɛ́mbɛ' 'Dɛsɛ́mbɛ')
     _weekdays=('Lomíngo' 'Mokɔlɔ ya libosó' 'Mokɔlɔ ya míbalé' 'Mokɔlɔ ya mísáto' 'Mokɔlɔ ya mínéi' 'Mokɔlɔ ya mítáno' 'Mpɔ́sɔ')
     _day_format='{n}'

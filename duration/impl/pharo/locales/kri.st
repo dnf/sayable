@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/kri.json "
 
-"Locale: kri"
+"Locale: kri"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 kri

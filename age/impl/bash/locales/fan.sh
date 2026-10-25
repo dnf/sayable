@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/fan.json
 
-_plural_fan() {
+_sayableage_plural_fan() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_fan() {
+_sayableage_locale_fan() {
     _unit_day_one='mos {n}'
     _unit_day_other='bimos {n}'
     _unit_week_one='sone {n}'
@@ -47,5 +47,5 @@ _locale_fan() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_fan
+    _plural_func=_sayableage_plural_fan
 }

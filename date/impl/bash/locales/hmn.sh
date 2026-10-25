@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/hmn.json
 
-_locale_hmn() {
+_sayabledate_locale_hmn() {
     _months=('Ib Hlis' 'Ob Hlis' 'Peb Hlis' 'Plaub Hlis' 'Tsib Hlis' 'Rau Hlis' 'Xya Hlis' 'Yim Hlis' 'Cuaj Hlis' 'Kaum Hlis' 'Kaum Ib Hlis' 'Kaum Ob Hlis')
     _weekdays=('Hnub Tim Ib' 'Hnub Tim Ob' 'Hnub Tim Peb' 'Hnub Tim Plaub' 'Hnub Tim Tsib' 'Hnub Tim Rau' 'Hnub Tim Xya')
     _day_format='{n}'

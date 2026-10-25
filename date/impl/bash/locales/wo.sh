@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/wo.json
 
-_locale_wo() {
+_sayabledate_locale_wo() {
     _months=('Samwiyee' 'Fewriyee' 'Maars' 'Awril' 'Mee' 'Suwe' 'Sullet' 'Ut' 'Septàmbar' 'Oktoobar' 'Nowàmbar' 'Desàmbar')
     _weekdays=('Dibéer' 'Altine' 'Talaata' 'Àllarba' 'Alxames' 'Àjjuma' 'Gaawu')
     _day_format='{n}'

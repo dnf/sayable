@@ -188,12 +188,23 @@ run_command(Cmd, _, _) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 
+%% require_locale(+Module, +Locale) — end with a usage error (exit 2) unless
+%% Module knows Locale.
+require_locale(Module, Locale) :-
+    (catch(Module:get_locale(Locale), _, fail)
+     -> true
+     ;  format(user_error, "error: unknown locale '~w'~n", [Locale]),
+        format(user_error, "Run 'sayable help' for usage.~n", []),
+        cli_exit(2)
+    ).
+
 %% cmd_age(+Positionals, +Options)
 cmd_age([], _) :-
     format(user_error, "error: age requires a date-of-birth argument~n", []),
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_age([DobRaw|_], options(Locale, AsOfRaw, Compactness, _, _)) :-
+    require_locale(sayableage, Locale),
     (AsOfRaw == none -> get_today(AsOf) ; (nullify(AsOfRaw, AsOf) -> true ; cli_exit(1))),
     (nullify(DobRaw, Dob)
      -> (sayableage:format_age(Locale, Dob, AsOf, Compactness, Result)
@@ -209,6 +220,7 @@ cmd_stage([], _) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_stage([DobRaw|_], options(Locale, AsOfRaw, _Compactness, GenderRaw, _)) :-
+    require_locale(sayableage, Locale),
     (AsOfRaw == none -> get_today(AsOf) ; (nullify(AsOfRaw, AsOf) -> true ; cli_exit(1))),
     (GenderRaw == none -> Gender = none ; Gender = GenderRaw),
     (nullify(DobRaw, Dob)
@@ -225,6 +237,7 @@ cmd_date([], _) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_date([DateRaw|_], options(Locale, _, Compactness, _, WithYear)) :-
+    require_locale(sayabledate, Locale),
     (nullify(DateRaw, DateVal)
      -> (WithYear == true
          -> (sayabledate:format_date_with_year(Locale, DateVal, Compactness, Result)
@@ -249,6 +262,7 @@ cmd_relative(_, options(_, none, _, _, _)) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_relative([DateRaw|_], options(Locale, AsOfRaw, Compactness, _, _)) :-
+    require_locale(sayabledate, Locale),
     (nullify(DateRaw, DateVal)
      -> (nullify(AsOfRaw, AsOf)
          -> (sayabledate:format_relative(Locale, DateVal, AsOf, Compactness, Result)
@@ -266,6 +280,7 @@ cmd_time([], _) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_time([TimeRaw|_], options(Locale, _, Compactness, _, _)) :-
+    require_locale(sayabletime, Locale),
     (nullify(TimeRaw, TimeVal)
      -> (sayabletime:format_time(Locale, TimeVal, Compactness, Result)
          -> format("~w~n", [Result]), cli_exit(0)
@@ -280,6 +295,7 @@ cmd_duration([], _) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_duration([ValueRaw|Rest], options(Locale, _, Compactness, _, _)) :-
+    require_locale(sayableduration, Locale),
     (nullify(ValueRaw, Value)
      -> atom_string(Value, ValueStr),
         (is_integer_string(ValueStr)
@@ -314,6 +330,7 @@ cmd_since(_, options(_, none, _, _, _)) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_since([StartRaw|_], options(Locale, AsOfRaw, Compactness, _, _)) :-
+    require_locale(sayableduration, Locale),
     (nullify(StartRaw, Start)
      -> (nullify(AsOfRaw, AsOf)
          -> (sayableduration:format_since(Locale, Start, AsOf, Compactness, Result)
@@ -335,6 +352,7 @@ cmd_until(_, options(_, none, _, _, _)) :-
     format(user_error, "Run 'sayable help' for usage.~n", []),
     cli_exit(2).
 cmd_until([TargetRaw|_], options(Locale, AsOfRaw, Compactness, _, _)) :-
+    require_locale(sayableduration, Locale),
     (nullify(TargetRaw, Target)
      -> (nullify(AsOfRaw, AsOf)
          -> (sayableduration:format_until(Locale, Target, AsOf, Compactness, Result)

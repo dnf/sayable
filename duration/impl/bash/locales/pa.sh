@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/pa.json
 
-_plural_pa() {
+_sayableduration_plural_pa() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_pa() {
+_sayableduration_locale_pa() {
     _unit_second='{n} ਸਕਿੰਟ'
     _unit_minute='{n} ਮਿੰਟ'
     _unit_hour='{n} ਘੰਟਾ'
@@ -58,5 +58,5 @@ _locale_pa() {
     _compact_delimiter=''
     _compact_ago='{0} ਪਹਿਲਾਂ'
     _compact_in_future='{0} ਵਿੱਚ'
-    _plural_func=_plural_pa
+    _plural_func=_sayableduration_plural_pa
 }

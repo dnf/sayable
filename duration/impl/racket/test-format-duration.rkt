@@ -144,3 +144,31 @@
 (check-equal? (format-duration (get-locale "en") 3600 #f #:compactness 'compact) "1h")
 ;; 17.2
 (check-equal? (format-duration (get-locale "en") 90 #f #:compactness 'compact) "1m30s")
+
+;; Section 18: Short compactness -- relative time
+;; 18.1
+(check-equal? (format-since (get-locale "men") "2025-01-20T01:32:11" "2025-01-22T15:39:16") "lɔhɔnga 2, awa 14 taa gbɔyɔ")
+
+;; Section 19: Range (500-year ceiling)
+;; 19.1
+(check-equal? (format-duration (get-locale "en") 15778800000) "500 years")
+;; 19.2
+(check-false (format-duration (get-locale "en") 15800000000))
+;; 19.3
+(check-false (format-duration (get-locale "en") 99999999999))
+;; 19.4
+(check-false (format-since (get-locale "en") "1500-01-01T00:00:00" "2025-01-01T00:00:00"))
+;; 19.5
+(check-false (format-until (get-locale "en") "2600-01-01T00:00:00" "2025-01-01T00:00:00"))
+
+;; Section 20: Timestamp validation
+;; 20.1
+(check-equal? (format-duration (get-locale "en") "2025-01-15T10:00" "2025-01-15T11:30:00") "1½ hours")
+;; 20.2
+(check-false (format-duration (get-locale "en") "2025-01-15T10" "2025-01-15T11:30:00"))
+;; 20.3
+(check-false (format-duration (get-locale "en") "2025-1-5T10:00:00" "2025-01-15T11:30:00"))
+;; 20.4
+(check-false (format-duration (get-locale "en") "2025-02-30T10:00:00" "2025-03-15T11:30:00"))
+;; 20.5
+(check-false (format-since (get-locale "en") "2025-01-15T10:00:00" "2025-01-15T25:00:00"))

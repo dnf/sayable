@@ -11,40 +11,58 @@ interface AgeComponents {
   diffDays: number;
 }
 
+const DATE_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/;
+
+function daysInMonth(year: number, month: number): number {
+  if (month === 2) return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
+  return month === 4 || month === 6 || month === 9 || month === 11 ? 30 : 31;
+}
+
+/** A calendar date as [year, month, day]. */
+type DateParts = [number, number, number];
+
+/** Parse exactly YYYY-MM-DD naming a real calendar day, else null. */
+function parseDate(s: string): DateParts | null {
+  const match = DATE_PATTERN.exec(s);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  if (month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month)) return null;
+  return [year, month, day];
+}
+
+/** Days since the start of the Julian period (proleptic Gregorian, any year). */
+function julianDay(year: number, month: number, day: number): number {
+  const a = Math.floor((14 - month) / 12);
+  const y = year + 4800 - a;
+  const m = month + 12 * a - 3;
+  return day + Math.floor((153 * m + 2) / 5) + 365 * y
+    + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+}
+
+function today(): DateParts {
+  const now = new Date();
+  return [now.getFullYear(), now.getMonth() + 1, now.getDate()];
+}
+
 /**
  * Parse two YYYY-MM-DD strings into calendar months and elapsed days.
- * Returns null if dateOfBirth is falsy or in the future relative to asOf.
+ * Returns null if either date is missing or invalid, or dateOfBirth is after asOf.
  */
 function parseAge(dateOfBirth: string | null | undefined, asOf?: string): AgeComponents | null {
   if (!dateOfBirth) return null;
+  const dob = parseDate(dateOfBirth);
+  const ref = asOf ? parseDate(asOf) : today();
+  if (!dob || !ref) return null;
+  const [dobY, dobM, dobD] = dob;
+  const [refY, refM, refD] = ref;
 
-  // Parse YYYY-MM-DD as integers to avoid timezone/DST issues
-  const dobParts = dateOfBirth.split('-').map(Number);
-  const dobY = dobParts[0] ?? 0;
-  const dobM = dobParts[1] ?? 0;
-  const dobD = dobParts[2] ?? 0;
-  let refY: number, refM: number, refD: number;
-  if (asOf) {
-    const refParts = asOf.split('-').map(Number);
-    refY = refParts[0] ?? 0;
-    refM = refParts[1] ?? 0;
-    refD = refParts[2] ?? 0;
-  } else {
-    const now = new Date();
-    refY = now.getFullYear();
-    refM = now.getMonth() + 1;
-    refD = now.getDate();
-  }
-
-  // Total elapsed days (UTC avoids DST shifts)
-  const diffDays = Math.round(
-    (Date.UTC(refY, refM - 1, refD) - Date.UTC(dobY, dobM - 1, dobD)) / 86_400_000,
-  );
+  const diffDays = julianDay(refY, refM, refD) - julianDay(dobY, dobM, dobD);
   if (diffDays < 0) return null;
 
   // Calendar months with clamping for short months
-  const lastDay = new Date(refY, refM, 0).getDate();
-  const clampedBirthday = Math.min(dobD, lastDay);
+  const clampedBirthday = Math.min(dobD, daysInMonth(refY, refM));
   let months = (refY - dobY) * 12 + (refM - dobM);
   if (refD < clampedBirthday) months--;
   if (months > MAX_AGE_MONTHS) return null;

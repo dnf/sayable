@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/bm.json
 
-_locale_bm() {
+_sayabledate_locale_bm() {
     _months=('Zanwuye' 'Fewuriye' 'Marisi' 'Awirili' 'Mɛ' 'Zuwɛn' 'Zuluye' 'Uti' 'Sɛtanburu' 'ɔkutɔburu' 'Nowanbudu' 'Desanburu')
     _weekdays=('Kari' 'Ntɛnɛn' 'Tarata' 'Araba' 'Alamisa' 'Juma' 'Sibiri')
     _day_format='{n}'

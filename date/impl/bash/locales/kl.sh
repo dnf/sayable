@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/kl.json
 
-_locale_kl() {
+_sayabledate_locale_kl() {
     _months=('januaarip' 'februaarip' 'marsip' 'apriilip' 'maajip' 'juunip' 'juulip' 'aggustip' 'septembarip' 'oktobarip' 'novembarip' 'decembarip')
     _weekdays=('sapaat' 'ataasinngorneq' 'marlunngorneq' 'pingasunngorneq' 'sisamanngorneq' 'tallimanngorneq' 'arfininngorneq')
     _day_format='{n}.'

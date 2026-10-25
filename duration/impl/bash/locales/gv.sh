@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/gv.json
 
-_plural_gv() {
+_sayableduration_plural_gv() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -19,7 +19,7 @@ _plural_gv() {
     echo "other"
 }
 
-_locale_gv() {
+_sayableduration_locale_gv() {
     _unit_second_one='{n} çhiaghtoo'
     _unit_second_two='{n} çhiaghtoo'
     _unit_second_few='{n} çhiaghtoo'
@@ -73,5 +73,5 @@ _locale_gv() {
     _compact_delimiter=''
     _compact_ago='{0} er dy henney'
     _compact_in_future='ayns {0}'
-    _plural_func=_plural_gv
+    _plural_func=_sayableduration_plural_gv
 }

@@ -264,7 +264,7 @@ function result = cmd_duration(positionals, options)
 
   formatter = sayable_duration_new(loc, options.compactness);
 
-  if (isempty(value))
+  if (strcmp(positionals{1}, 'null'))
     result = formatter.format_duration([], '');
   elseif (is_integer_string(value))
     result = formatter.format_duration(str2double(value), '');

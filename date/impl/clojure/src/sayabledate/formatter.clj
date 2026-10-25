@@ -3,23 +3,29 @@
 
 (def version "0.5.0")
 
-(defn- all-digits? [^String s]
-  (every? #(Character/isDigit ^char %) s))
+(defn- leap-year? [y]
+  (or (and (zero? (mod y 4)) (not (zero? (mod y 100))))
+      (zero? (mod y 400))))
 
-(defn- safe-atoi [^String s]
-  (when (and (seq s) (all-digits? s))
-    (Integer/parseInt s)))
+(defn- days-in-month [y m]
+  (case (int m)
+    2 (if (leap-year? y) 29 28)
+    (4 6 9 11) 30
+    31))
 
-(defn- parse-date [^String s]
-  (when (seq s)
-    (let [date-part (if (str/includes? s "T") (first (str/split s #"T")) s)
-          parts (str/split date-part #"-")]
-      (when (== (count parts) 3)
-        (when-let [year (safe-atoi (nth parts 0))]
-          (when-let [month (safe-atoi (nth parts 1))]
-            (when-let [day (safe-atoi (nth parts 2))]
-              (when (and (>= month 1) (<= month 12) (>= day 1) (<= day 31))
-                [year month day]))))))))
+(def ^:private date-prefix
+  "YYYY-MM-DD, alone or followed by T and anything (an ISO datetime)."
+  #"([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T(?s:.*))?")
+
+(defn- parse-date
+  "Parses a date naming a real calendar day into [year month day], else nil."
+  [s]
+  (when-let [[_ y m d] (and (string? s) (re-matches date-prefix s))]
+    (let [year (Integer/parseInt y)
+          month (Integer/parseInt m)
+          day (Integer/parseInt d)]
+      (when (and (<= 1 month 12) (<= 1 day (days-in-month year month)))
+        [year month day]))))
 
 (defn- to-jdn [year month day]
   (let [a (quot (- 14 month) 12)

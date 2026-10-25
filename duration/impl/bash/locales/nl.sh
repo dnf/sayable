@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/nl.json
 
-_plural_nl() {
+_sayableduration_plural_nl() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_nl() {
+_sayableduration_locale_nl() {
     _unit_second_one='{n} seconde'
     _unit_second_other='{n} seconden'
     _unit_minute_one='{n} minuut'
@@ -56,5 +56,5 @@ _locale_nl() {
     _compact_delimiter=''
     _compact_ago='{0} geleden'
     _compact_in_future='over {0}'
-    _plural_func=_plural_nl
+    _plural_func=_sayableduration_plural_nl
 }

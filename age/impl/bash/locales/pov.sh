@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/pov.json
 
-_plural_pov() {
+_sayableage_plural_pov() {
     echo "other"
 }
 
-_locale_pov() {
+_sayableage_locale_pov() {
     _unit_day='{n} dia'
     _unit_week='{n} simana'
     _unit_month='{n} mis'
@@ -37,5 +37,5 @@ _locale_pov() {
     _compact_unit_year='{n} anu'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_pov
+    _plural_func=_sayableage_plural_pov
 }

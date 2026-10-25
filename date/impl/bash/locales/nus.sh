@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/nus.json
 
-_locale_nus() {
+_sayabledate_locale_nus() {
     _months=('Tiɔp thar' 'Pɛt' 'Duɔɔŋ' 'Guak' 'Duät' 'Kornyot' 'Payi' 'Tio̱p in thii' 'Laath' 'Kur' 'Tio̱p in laat' 'Jiɔk')
     _weekdays=('Cäŋ nhial' 'Jiec la̱t' 'Rɛw la̱t' 'Diɔk la̱t' 'Ŋuaan la̱t' 'Dhieec la̱t' 'Bäkɛl')
     _day_format='{n}'

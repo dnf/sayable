@@ -9,14 +9,14 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/cs.json
 
-_plural_cs() {
+_sayableduration_plural_cs() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -ge 2 ] && [ "${n}" -le 4 ]; then echo "few"; return; fi
     echo "other"
 }
 
-_locale_cs() {
+_sayableduration_locale_cs() {
     _unit_second_one='{n} sekunda'
     _unit_second_few='{n} sekundy'
     _unit_second_other='{n} sekund'
@@ -71,5 +71,5 @@ _locale_cs() {
     _compact_delimiter=''
     _compact_ago='před {0}'
     _compact_in_future='za {0}'
-    _plural_func=_plural_cs
+    _plural_func=_sayableduration_plural_cs
 }

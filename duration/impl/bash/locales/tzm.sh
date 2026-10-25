@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tzm.json
 
-_plural_tzm() {
+_sayableduration_plural_tzm() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ] || { [ "${n}" -ge 11 ] && [ "${n}" -le 99 ]; }; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tzm() {
+_sayableduration_locale_tzm() {
     _unit_second_one='{n} tasint'
     _unit_second_other='{n} tisinin'
     _unit_minute_one='{n} tusdiqt'
@@ -55,5 +55,5 @@ _locale_tzm() {
     _compact_delimiter=''
     _compact_ago='ɣ {0} zzrin'
     _compact_in_future='ɣ {0}'
-    _plural_func=_plural_tzm
+    _plural_func=_sayableduration_plural_tzm
 }

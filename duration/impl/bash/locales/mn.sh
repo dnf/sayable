@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mn.json
 
-_plural_mn() {
+_sayableduration_plural_mn() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_mn() {
+_sayableduration_locale_mn() {
     _unit_second='{n} секунд'
     _unit_minute='{n} минут'
     _unit_hour='{n} цаг'
@@ -48,5 +48,5 @@ _locale_mn() {
     _compact_delimiter=''
     _compact_ago='{0}-н өмнө'
     _compact_in_future='{0}-н дараа'
-    _plural_func=_plural_mn
+    _plural_func=_sayableduration_plural_mn
 }

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kpe.json
 
-_plural_kpe() {
+_sayableduration_plural_kpe() {
     echo "other"
 }
 
-_locale_kpe() {
+_sayableduration_locale_kpe() {
     _unit_second='sɛkɔŋ {n}'
     _unit_minute='miniti {n}'
     _unit_hour='awa {n}'
@@ -46,5 +46,5 @@ _locale_kpe() {
     _compact_delimiter=''
     _compact_ago='{0} pɔlɔ'
     _compact_in_future='ya {0}'
-    _plural_func=_plural_kpe
+    _plural_func=_sayableduration_plural_kpe
 }

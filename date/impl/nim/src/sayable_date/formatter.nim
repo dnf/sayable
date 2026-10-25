@@ -6,23 +6,39 @@ import locale
 const Version* = "0.5.0"
 
 
+proc daysInMonth(year, month: int): int =
+  ## Days in a Gregorian month (leap years by the 4/100/400 rule).
+  case month
+  of 2:
+    if (year mod 4 == 0 and year mod 100 != 0) or year mod 400 == 0: 29 else: 28
+  of 4, 6, 9, 11: 30
+  else: 31
+
+
+proc parseDigits(s: string): Option[int] =
+  ## A run of ASCII digits as an int; none if any character isn't a digit.
+  var n = 0
+  for c in s:
+    if c notin {'0'..'9'}:
+      return none(int)
+    n = n * 10 + (ord(c) - ord('0'))
+  some(n)
+
+
 proc parseDate(s: string): Option[tuple[year, month, day: int]] =
-  ## Parse YYYY-MM-DD or ISO datetime to (year, month, day).
-  if s.len == 0:
+  ## Parse YYYY-MM-DD naming a real calendar day, optionally followed by T and
+  ## anything else (docs/input-formats.md), to (year, month, day).
+  let isDateAlone = s.len == 10
+  let isDatetime = s.len > 10 and s[10] == 'T'
+  if not (isDateAlone or isDatetime) or s[4] != '-' or s[7] != '-':
     return none(tuple[year, month, day: int])
-  let datePart = if "T" in s: s.split("T")[0] else: s
-  let parts = datePart.split("-")
-  if parts.len != 3:
+  let year = parseDigits(s[0 .. 3])
+  let month = parseDigits(s[5 .. 6])
+  let day = parseDigits(s[8 .. 9])
+  if year.isNone or month.isNone or day.isNone or month.get < 1 or month.get > 12 or
+      day.get < 1 or day.get > daysInMonth(year.get, month.get):
     return none(tuple[year, month, day: int])
-  try:
-    let year = parseInt(parts[0])
-    let month = parseInt(parts[1])
-    let day = parseInt(parts[2])
-    if month < 1 or month > 12 or day < 1 or day > 31:
-      return none(tuple[year, month, day: int])
-    some((year: year, month: month, day: day))
-  except ValueError:
-    none(tuple[year, month, day: int])
+  some((year: year.get, month: month.get, day: day.get))
 
 
 proc toJdn(year, month, day: int): int =

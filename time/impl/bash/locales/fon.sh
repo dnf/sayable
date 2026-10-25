@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/fon.json
 
-_locale_fon() {
+_sayabletime_locale_fon() {
     _clock_hours=('wěwè' 'ɖokpo' 'wè' 'atɔn' 'ɛnɛ' 'atɔ́ɔ́n' 'ayizɛ̀n' 'tɛnwè' 'tantɔn' 'tɛnɛnɛ' 'wǒ' 'ɖokpo-wǒ')
     _clock_midnight='zǎnmɛ'
     _clock_noon='hwemɛnu'

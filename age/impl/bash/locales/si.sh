@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/si.json
 
-_plural_si() {
+_sayableage_plural_si() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_si() {
+_sayableage_locale_si() {
     _unit_day_one='දින {n}'
     _unit_day_other='දින {n}'
     _unit_week_one='සති {n}'
@@ -43,5 +43,5 @@ _locale_si() {
     _compact_unit_year='ව {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_si
+    _plural_func=_sayableage_plural_si
 }

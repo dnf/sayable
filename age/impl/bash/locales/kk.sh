@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/kk.json
 
-_plural_kk() {
+_sayableage_plural_kk() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_kk() {
+_sayableage_locale_kk() {
     _unit_day_one='{n} күн'
     _unit_day_other='{n} күн'
     _unit_week_one='{n} апта'
@@ -43,5 +43,5 @@ _locale_kk() {
     _compact_unit_year='{n} ж.'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_kk
+    _plural_func=_sayableage_plural_kk
 }

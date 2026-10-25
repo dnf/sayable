@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/kri.json
 
-_locale_kri() {
+_sayabletime_locale_kri() {
     _clock_hours=('twelv' 'wan' 'tu' 'tri' 'fo' 'fayv' 'siks' 'sevin' 'et' 'nayn' 'ten' 'ilevin')
     _clock_midnight='midul net'
     _clock_noon='midul de'

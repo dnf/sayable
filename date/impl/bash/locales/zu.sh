@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/zu.json
 
-_locale_zu() {
+_sayabledate_locale_zu() {
     _months=('Januwari' 'Februwari' 'Mashi' 'Ephreli' 'Meyi' 'Juni' 'Julayi' 'Agasti' 'Septhemba' 'Okthoba' 'Novemba' 'Disemba')
     _weekdays=('ISonto' 'UMsombuluko' 'ULwesibili' 'ULwesithathu' 'ULwesine' 'ULwesihlanu' 'UMgqibelo')
     _day_format='{n}'

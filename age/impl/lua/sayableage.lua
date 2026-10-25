@@ -33,11 +33,14 @@ local function days_between(y1, m1, d1, y2, m2, d2)
     return to_days(y2, m2, d2) - to_days(y1, m1, d1)
 end
 
+--- Parse exactly YYYY-MM-DD naming a real calendar day; nil otherwise.
 local function parse_date(s)
-    if not s or s == "" then return nil end
-    local y, m, d = s:match("^(%d+)-(%d+)-(%d+)$")
+    if not s then return nil end
+    local y, m, d = s:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
     if not y then return nil end
-    return tonumber(y), tonumber(m), tonumber(d)
+    y, m, d = tonumber(y), tonumber(m), tonumber(d)
+    if m < 1 or m > 12 or d < 1 or d > days_in_month(y, m) then return nil end
+    return y, m, d
 end
 
 local function parse_age(date_of_birth, as_of)
@@ -47,7 +50,7 @@ local function parse_age(date_of_birth, as_of)
     if not dob_y then return nil end
 
     local ref_y, ref_m, ref_d
-    if as_of then
+    if as_of and as_of ~= "" then
         ref_y, ref_m, ref_d = parse_date(as_of)
         if not ref_y then return nil end
     else

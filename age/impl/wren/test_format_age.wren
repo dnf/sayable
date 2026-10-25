@@ -9,6 +9,8 @@ import "./locales/mk" for MKLocale
 import "./locales/sw" for SWLocale
 import "./locales/id" for IDLocale
 import "./locales/am" for AMLocale
+import "./locales/pl" for PLLocale
+import "./locales/shi" for SHILocale
 
 class Test {
   construct new() {
@@ -856,6 +858,76 @@ t.assertNull("30.4", SayableAge.getLocale(""))
 
 // 30.5
 t.assertNull("30.5", SayableAge.getLocale("EN"))
+
+// ================================================================
+// 31. Weeks and days across month ends
+// ================================================================
+t.section("31. Weeks and days across month ends")
+
+// 31.1
+t.assert("31.1", fmt.formatAge("2016-12-31", "2017-03-29"), "12 weeks, 4 days")
+
+// 31.2
+t.assert("31.2", fmt.formatAge("1991-11-27", "1992-02-25"), "12 weeks, 6 days")
+
+// 31.3
+t.assert("31.3", fmt.formatAge("2020-11-30", "2021-01-02"), "4 weeks, 5 days")
+
+// 31.4
+t.assert("31.4", compactFmt.formatAge("2016-12-31", "2017-03-29"), "12w4d")
+
+// ================================================================
+// 32. Half years take their plural form from whole years
+// ================================================================
+t.section("32. Half-year plurals")
+
+var plFmt = SayableAge.new(PLLocale)
+var plShortFmt = SayableAge.new(PLLocale, "short")
+var shiFmt = SayableAge.new(SHILocale)
+
+// 32.1
+t.assert("32.1", plFmt.formatAge("2021-06-15", "2025-01-15"), "3 i pół lata")
+
+// 32.2
+t.assert("32.2", plShortFmt.formatAge("2020-06-15", "2025-12-15"), "5 i pół lat")
+
+// 32.3
+t.assert("32.3", shiFmt.formatAge("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")
+
+// ================================================================
+// 33. Input validation
+// ================================================================
+t.section("33. Input validation")
+
+// 33.1
+t.assertNull("33.1", fmt.formatAge("2025-02-30", "2032-06-25"))
+
+// 33.2
+t.assertNull("33.2", fmt.formatAge("2025-13-01", "2027-01-31"))
+
+// 33.3
+t.assertNull("33.3", fmt.formatAge("2023-02-29", "2025-03-01"))
+
+// 33.4
+t.assertNull("33.4", fmt.formatAge("2025-06-00", "2027-02-25"))
+
+// 33.5
+t.assertNull("33.5", fmt.formatAge("2025-6-1", "2027-02-25"))
+
+// 33.6
+t.assertNull("33.6", fmt.formatAge(" 2025-06-01", "2027-02-25"))
+
+// 33.7
+t.assertNull("33.7", fmt.formatAge("2025-06-15T10:00:00", "2027-02-25"))
+
+// 33.8
+t.assertNull("33.8", fmt.formatAge("2020-01-01", "2025-04-31"))
+
+// 33.9
+t.assertNull("33.9", fmt.formatStage("2025-02-30", "2027-09-05"))
+
+// 33.10
+t.assert("33.10", fmt.formatAge("2024-02-29", "2026-03-01"), "2 years")
 
 // ================================================================
 t.summary()

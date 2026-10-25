@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/kri.json "
 
-"Locale: kri"
+"Locale: kri"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 kri

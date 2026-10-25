@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/mfe.json "
 
-"Locale: mfe"
+"Locale: mfe"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 mfe

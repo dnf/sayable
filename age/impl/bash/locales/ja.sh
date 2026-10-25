@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ja.json
 
-_plural_ja() {
+_sayableage_plural_ja() {
     echo "other"
 }
 
-_locale_ja() {
+_sayableage_locale_ja() {
     _unit_day='{n}日'
     _unit_week='{n}週'
     _unit_month='{n}ヶ月'
@@ -35,5 +35,5 @@ _locale_ja() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
-    _plural_func=_plural_ja
+    _plural_func=_sayableage_plural_ja
 }

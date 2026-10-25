@@ -130,3 +130,49 @@
 (check-equal? (format-date (get-locale "es") "2025-03-15") "15 de marzo")
 ;; 12.2
 (check-equal? (format-relative (get-locale "es") "2025-03-17" "2025-03-15") "pasado ma\u00f1ana")
+
+;; Section 13: format_date_with_year
+;; 13.1
+(check-equal? (format-date-with-year (get-locale "en") "2018-02-04") "February 4th, 2018")
+;; 13.2
+(check-equal? (format-date-with-year (get-locale "en") "2025-03-15" 'short) "Mar 15, 2025")
+;; 13.3
+(check-equal? (format-date-with-year (get-locale "en") "1997-01-21" 'compact) "1/21/97")
+;; 13.4
+(check-equal? (format-date-with-year (get-locale "tg") "2007-05-20" 'compact) "20/5/07")
+;; 13.5
+(check-equal? (format-date-with-year (get-locale "fi") "1996-06-21" 'short) "21. kesäkuuta 1996")
+
+;; Section 14: Short month names (locales that keep the full genitive)
+;; 14.1
+(check-equal? (format-date (get-locale "sk") "2031-02-15" 'short) "15. februára")
+;; 14.2
+(check-equal? (format-date (get-locale "cs") "2025-12-10" 'short) "10. prosince")
+;; 14.3
+(check-equal? (format-date (get-locale "uk") "2025-11-05" 'short) "5 листопада")
+;; 14.4
+(check-equal? (format-relative (get-locale "fi") "1998-08-08" "1998-08-15" 'short) "8. elokuuta")
+
+;; Section 15: format_relative -- short phrases
+;; 15.1
+(check-equal? (format-relative (get-locale "kw") "2035-12-04" "2035-12-02" 'short) "an Mth ma")
+;; 15.2
+(check-equal? (format-relative (get-locale "mam") "2000-01-23" "2000-01-25" 'short) "Dom nchi'j")
+;; 15.3
+(check-equal? (format-relative (get-locale "kek") "2014-10-24" "2014-10-22" 'short) "a'in Vie")
+
+;; Section 16: Input validation
+;; 16.1
+(check-false (format-date (get-locale "en") "2025-02-30"))
+;; 16.2
+(check-false (format-date (get-locale "en") "2025-13-01"))
+;; 16.3
+(check-false (format-date (get-locale "en") "2025-6-1"))
+;; 16.4
+(check-false (format-date (get-locale "en") " 2025-06-01"))
+;; 16.5
+(check-equal? (format-date (get-locale "en") "2025-06-01T10:00:00") "June 1st")
+;; 16.6
+(check-false (format-date-with-year (get-locale "en") "2023-02-29"))
+;; 16.7
+(check-false (format-relative (get-locale "en") "2025-03-16" "2025-04-31"))

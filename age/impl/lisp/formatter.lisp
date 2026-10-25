@@ -32,40 +32,29 @@
        (floor y 400)
        -32045)))
 
+(defun ascii-digit-p (ch)
+  "Return T if CH is one of the ASCII digits 0-9."
+  (char<= #\0 ch #\9))
+
+(defun digits-value (s start end)
+  "Return the integer spelled by the ASCII digits of S from START to END, or NIL."
+  (when (every #'ascii-digit-p (subseq s start end))
+    (parse-integer s :start start :end end)))
+
 (defun parse-date (date-str)
-  "Parse a YYYY-MM-DD string into (values year month day). Returns NIL on failure."
-  (when (and date-str
-             (stringp date-str)
-             (> (length date-str) 0)
-             (not (string= date-str "undefined")))
-    (let ((parts (split-date-string date-str)))
-      (when (= (length parts) 3)
-        (values (str-to-int (first parts))
-                (str-to-int (second parts))
-                (str-to-int (third parts)))))))
-
-(defun split-date-string (s)
-  "Split a date string by hyphens."
-  (let ((result nil)
-        (start 0))
-    (loop for i from 0 below (length s)
-          when (char= (char s i) #\-)
-            do (push (subseq s start i) result)
-               (setf start (1+ i)))
-    (push (subseq s start) result)
-    (nreverse result)))
-
-(defun str-to-int (s)
-  "Parse a string as a non-negative integer."
-  (str-to-int-impl s 0 0))
-
-(defun str-to-int-impl (s idx acc)
-  (if (>= idx (length s))
-      acc
-      (let ((ch (char s idx)))
-        (if (digit-char-p ch)
-            (str-to-int-impl s (1+ idx) (+ (* acc 10) (digit-char-p ch)))
-            acc))))
+  "Parse exactly YYYY-MM-DD naming a real calendar day into (values year month day).
+Returns NIL on failure."
+  (when (and (stringp date-str)
+             (= (length date-str) 10)
+             (char= (char date-str 4) #\-)
+             (char= (char date-str 7) #\-))
+    (let ((year (digits-value date-str 0 4))
+          (month (digits-value date-str 5 7))
+          (day (digits-value date-str 8 10)))
+      (when (and year month day
+                 (<= 1 month 12)
+                 (<= 1 day (days-in-month year month)))
+        (values year month day)))))
 
 ;;; --- Age computation ---
 
@@ -112,6 +101,20 @@
 
 ;;; --- Unit resolution ---
 
+(defun string-replace-all (string old new)
+  "Replace all occurrences of OLD in STRING with NEW."
+  (let ((old-len (length old)))
+    (when (zerop old-len)
+      (return-from string-replace-all string))
+    (with-output-to-string (out)
+      (loop with start = 0
+            for pos = (search old string :start2 start)
+            while pos
+            do (write-string (subseq string start pos) out)
+               (write-string new out)
+               (setf start (+ pos old-len))
+            finally (write-string (subseq string start) out)))))
+
 (defun resolve-unit (count unit-forms locale half)
   "Resolve a unit count to its display string using locale rules."
   (let* ((base-n (write-to-string count))
@@ -129,20 +132,6 @@
     (if (and half (> (length half) 0) (search "{0}" half))
         (string-replace-all half "{0}" result)
         result)))
-
-(defun string-replace-all (string old new)
-  "Replace all occurrences of OLD in STRING with NEW."
-  (let ((old-len (length old)))
-    (when (zerop old-len)
-      (return-from string-replace-all string))
-    (with-output-to-string (out)
-      (loop with start = 0
-            for pos = (search old string :start2 start)
-            while pos
-            do (write-string (subseq string start pos) out)
-               (write-string new out)
-               (setf start (+ pos old-len))
-            finally (write-string (subseq string start) out)))))
 
 ;;; --- Formatter ---
 
@@ -267,6 +256,8 @@
       (resolve-stage-label label gender))))
 
 ;;; --- Default English functions (set up after locales are loaded) ---
+
+(declaim (ftype function get-locale)) ; defined by the generated locale registry, loaded later
 
 (defvar *default-formatter* nil
   "Default English formatter, initialized when locales are loaded.")

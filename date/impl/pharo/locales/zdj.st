@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/zdj.json "
 
-"Locale: zdj"
+"Locale: zdj"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 zdj

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
 
 using AgeLib = SayableAgeLib;
@@ -399,8 +400,10 @@ Options:
         }
         else if (IsInteger(value))
         {
-            int seconds = int.Parse(value);
-            result = formatter.FormatDuration(seconds);
+            // A digit string too long for a long is far beyond the 500-year ceiling
+            result = long.TryParse(value, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out long seconds)
+                ? formatter.FormatDuration(seconds)
+                : null;
         }
         else
         {

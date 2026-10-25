@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/fa.json
 
-_plural_fa() {
+_sayableage_plural_fa() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_fa() {
+_sayableage_locale_fa() {
     _unit_day_one='{n} روز'
     _unit_day_other='{n} روز'
     _unit_week_one='{n} هفته'
@@ -43,5 +43,5 @@ _locale_fa() {
     _compact_unit_year='{n} سال'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_fa
+    _plural_func=_sayableage_plural_fa
 }

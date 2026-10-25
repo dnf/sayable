@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mfe.json
 
-_locale_mfe() {
+_sayabletime_locale_mfe() {
     _clock_hours=('douz' 'enn' 'de' 'trwa' 'kat' 'senk' 'sis' 'set' 'wit' 'nef' 'dis' 'onz')
     _clock_midnight='minwi'
     _clock_noon='midi'

@@ -21,7 +21,9 @@ public object Locales {
     // ================================================================
     // AF — Afrikaans
     // ================================================================
-    public val AF: AgeLocale = AgeLocale(
+    public val AF: AgeLocale = buildAf()
+
+    private fun buildAf(): AgeLocale = AgeLocale(
         code = "af",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -60,7 +62,9 @@ public object Locales {
     // ================================================================
     // AK — Akan
     // ================================================================
-    public val AK: AgeLocale = AgeLocale(
+    public val AK: AgeLocale = buildAk()
+
+    private fun buildAk(): AgeLocale = AgeLocale(
         code = "ak",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -100,7 +104,9 @@ public object Locales {
     // ================================================================
     // AM — Amharic
     // ================================================================
-    public val AM: AgeLocale = AgeLocale(
+    public val AM: AgeLocale = buildAm()
+
+    private fun buildAm(): AgeLocale = AgeLocale(
         code = "am",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -140,7 +146,9 @@ public object Locales {
     // ================================================================
     // AR — Arabic
     // ================================================================
-    public val AR: AgeLocale = AgeLocale(
+    public val AR: AgeLocale = buildAr()
+
+    private fun buildAr(): AgeLocale = AgeLocale(
         code = "ar",
         plural = { n ->
             when {
@@ -189,7 +197,9 @@ public object Locales {
     // ================================================================
     // AY — Aymara
     // ================================================================
-    public val AY: AgeLocale = AgeLocale(
+    public val AY: AgeLocale = buildAy()
+
+    private fun buildAy(): AgeLocale = AgeLocale(
         code = "ay",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -228,7 +238,9 @@ public object Locales {
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
-    public val AZ: AgeLocale = AgeLocale(
+    public val AZ: AgeLocale = buildAz()
+
+    private fun buildAz(): AgeLocale = AgeLocale(
         code = "az",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -268,7 +280,9 @@ public object Locales {
     // ================================================================
     // BCI — Baoulé
     // ================================================================
-    public val BCI: AgeLocale = AgeLocale(
+    public val BCI: AgeLocale = buildBci()
+
+    private fun buildBci(): AgeLocale = AgeLocale(
         code = "bci",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -308,7 +322,9 @@ public object Locales {
     // ================================================================
     // BE — Belarusian
     // ================================================================
-    public val BE: AgeLocale = AgeLocale(
+    public val BE: AgeLocale = buildBe()
+
+    private fun buildBe(): AgeLocale = AgeLocale(
         code = "be",
         plural = { n ->
             val mod10 = n % 10
@@ -356,7 +372,9 @@ public object Locales {
     // ================================================================
     // BEM — Bemba
     // ================================================================
-    public val BEM: AgeLocale = AgeLocale(
+    public val BEM: AgeLocale = buildBem()
+
+    private fun buildBem(): AgeLocale = AgeLocale(
         code = "bem",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -396,7 +414,9 @@ public object Locales {
     // ================================================================
     // BG — Bulgarian
     // ================================================================
-    public val BG: AgeLocale = AgeLocale(
+    public val BG: AgeLocale = buildBg()
+
+    private fun buildBg(): AgeLocale = AgeLocale(
         code = "bg",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -436,7 +456,9 @@ public object Locales {
     // ================================================================
     // BI — Bislama
     // ================================================================
-    public val BI: AgeLocale = AgeLocale(
+    public val BI: AgeLocale = buildBi()
+
+    private fun buildBi(): AgeLocale = AgeLocale(
         code = "bi",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -475,7 +497,9 @@ public object Locales {
     // ================================================================
     // BM — Bambara
     // ================================================================
-    public val BM: AgeLocale = AgeLocale(
+    public val BM: AgeLocale = buildBm()
+
+    private fun buildBm(): AgeLocale = AgeLocale(
         code = "bm",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -515,7 +539,9 @@ public object Locales {
     // ================================================================
     // BN — Bengali
     // ================================================================
-    public val BN: AgeLocale = AgeLocale(
+    public val BN: AgeLocale = buildBn()
+
+    private fun buildBn(): AgeLocale = AgeLocale(
         code = "bn",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -555,7 +581,9 @@ public object Locales {
     // ================================================================
     // BR — Breton
     // ================================================================
-    public val BR: AgeLocale = AgeLocale(
+    public val BR: AgeLocale = buildBr()
+
+    private fun buildBr(): AgeLocale = AgeLocale(
         code = "br",
         plural = { n ->
             val mod10 = n % 10
@@ -605,7 +633,9 @@ public object Locales {
     // ================================================================
     // BS — Bosnian
     // ================================================================
-    public val BS: AgeLocale = AgeLocale(
+    public val BS: AgeLocale = buildBs()
+
+    private fun buildBs(): AgeLocale = AgeLocale(
         code = "bs",
         plural = { n ->
             val mod10 = n % 10
@@ -653,7 +683,9 @@ public object Locales {
     // ================================================================
     // CA — Catalan
     // ================================================================
-    public val CA: AgeLocale = AgeLocale(
+    public val CA: AgeLocale = buildCa()
+
+    private fun buildCa(): AgeLocale = AgeLocale(
         code = "ca",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -693,7 +725,9 @@ public object Locales {
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
-    public val CAK: AgeLocale = AgeLocale(
+    public val CAK: AgeLocale = buildCak()
+
+    private fun buildCak(): AgeLocale = AgeLocale(
         code = "cak",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -732,7 +766,9 @@ public object Locales {
     // ================================================================
     // CEB — Cebuano
     // ================================================================
-    public val CEB: AgeLocale = AgeLocale(
+    public val CEB: AgeLocale = buildCeb()
+
+    private fun buildCeb(): AgeLocale = AgeLocale(
         code = "ceb",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -772,7 +808,9 @@ public object Locales {
     // ================================================================
     // CS — Czech
     // ================================================================
-    public val CS: AgeLocale = AgeLocale(
+    public val CS: AgeLocale = buildCs()
+
+    private fun buildCs(): AgeLocale = AgeLocale(
         code = "cs",
         plural = { n ->
             when {
@@ -817,7 +855,9 @@ public object Locales {
     // ================================================================
     // CY — Welsh
     // ================================================================
-    public val CY: AgeLocale = AgeLocale(
+    public val CY: AgeLocale = buildCy()
+
+    private fun buildCy(): AgeLocale = AgeLocale(
         code = "cy",
         plural = { n ->
             when (n) {
@@ -866,7 +906,9 @@ public object Locales {
     // ================================================================
     // DA — Danish
     // ================================================================
-    public val DA: AgeLocale = AgeLocale(
+    public val DA: AgeLocale = buildDa()
+
+    private fun buildDa(): AgeLocale = AgeLocale(
         code = "da",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -905,7 +947,9 @@ public object Locales {
     // ================================================================
     // DE — German
     // ================================================================
-    public val DE: AgeLocale = AgeLocale(
+    public val DE: AgeLocale = buildDe()
+
+    private fun buildDe(): AgeLocale = AgeLocale(
         code = "de",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -944,7 +988,9 @@ public object Locales {
     // ================================================================
     // DIN — Dinka
     // ================================================================
-    public val DIN: AgeLocale = AgeLocale(
+    public val DIN: AgeLocale = buildDin()
+
+    private fun buildDin(): AgeLocale = AgeLocale(
         code = "din",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -984,7 +1030,9 @@ public object Locales {
     // ================================================================
     // DJE — Zarma
     // ================================================================
-    public val DJE: AgeLocale = AgeLocale(
+    public val DJE: AgeLocale = buildDje()
+
+    private fun buildDje(): AgeLocale = AgeLocale(
         code = "dje",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1024,7 +1072,9 @@ public object Locales {
     // ================================================================
     // DV — Dhivehi
     // ================================================================
-    public val DV: AgeLocale = AgeLocale(
+    public val DV: AgeLocale = buildDv()
+
+    private fun buildDv(): AgeLocale = AgeLocale(
         code = "dv",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1063,7 +1113,9 @@ public object Locales {
     // ================================================================
     // DYU — Dyula
     // ================================================================
-    public val DYU: AgeLocale = AgeLocale(
+    public val DYU: AgeLocale = buildDyu()
+
+    private fun buildDyu(): AgeLocale = AgeLocale(
         code = "dyu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1103,7 +1155,9 @@ public object Locales {
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
-    public val DZ: AgeLocale = AgeLocale(
+    public val DZ: AgeLocale = buildDz()
+
+    private fun buildDz(): AgeLocale = AgeLocale(
         code = "dz",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1142,7 +1196,9 @@ public object Locales {
     // ================================================================
     // EE — Ewe
     // ================================================================
-    public val EE: AgeLocale = AgeLocale(
+    public val EE: AgeLocale = buildEe()
+
+    private fun buildEe(): AgeLocale = AgeLocale(
         code = "ee",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1182,7 +1238,9 @@ public object Locales {
     // ================================================================
     // EL — Greek
     // ================================================================
-    public val EL: AgeLocale = AgeLocale(
+    public val EL: AgeLocale = buildEl()
+
+    private fun buildEl(): AgeLocale = AgeLocale(
         code = "el",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1222,7 +1280,9 @@ public object Locales {
     // ================================================================
     // EN — English
     // ================================================================
-    public val EN: AgeLocale = AgeLocale(
+    public val EN: AgeLocale = buildEn()
+
+    private fun buildEn(): AgeLocale = AgeLocale(
         code = "en",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1261,7 +1321,9 @@ public object Locales {
     // ================================================================
     // ES — Spanish
     // ================================================================
-    public val ES: AgeLocale = AgeLocale(
+    public val ES: AgeLocale = buildEs()
+
+    private fun buildEs(): AgeLocale = AgeLocale(
         code = "es",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1301,7 +1363,9 @@ public object Locales {
     // ================================================================
     // ET — Estonian
     // ================================================================
-    public val ET: AgeLocale = AgeLocale(
+    public val ET: AgeLocale = buildEt()
+
+    private fun buildEt(): AgeLocale = AgeLocale(
         code = "et",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1340,7 +1404,9 @@ public object Locales {
     // ================================================================
     // EU — Basque
     // ================================================================
-    public val EU: AgeLocale = AgeLocale(
+    public val EU: AgeLocale = buildEu()
+
+    private fun buildEu(): AgeLocale = AgeLocale(
         code = "eu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1380,7 +1446,9 @@ public object Locales {
     // ================================================================
     // FA — Persian
     // ================================================================
-    public val FA: AgeLocale = AgeLocale(
+    public val FA: AgeLocale = buildFa()
+
+    private fun buildFa(): AgeLocale = AgeLocale(
         code = "fa",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1420,7 +1488,9 @@ public object Locales {
     // ================================================================
     // FAN — Fang
     // ================================================================
-    public val FAN: AgeLocale = AgeLocale(
+    public val FAN: AgeLocale = buildFan()
+
+    private fun buildFan(): AgeLocale = AgeLocale(
         code = "fan",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1460,7 +1530,9 @@ public object Locales {
     // ================================================================
     // FF — Fulah
     // ================================================================
-    public val FF: AgeLocale = AgeLocale(
+    public val FF: AgeLocale = buildFf()
+
+    private fun buildFf(): AgeLocale = AgeLocale(
         code = "ff",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1500,7 +1572,9 @@ public object Locales {
     // ================================================================
     // FI — Finnish
     // ================================================================
-    public val FI: AgeLocale = AgeLocale(
+    public val FI: AgeLocale = buildFi()
+
+    private fun buildFi(): AgeLocale = AgeLocale(
         code = "fi",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1540,7 +1614,9 @@ public object Locales {
     // ================================================================
     // FIL — Filipino
     // ================================================================
-    public val FIL: AgeLocale = AgeLocale(
+    public val FIL: AgeLocale = buildFil()
+
+    private fun buildFil(): AgeLocale = AgeLocale(
         code = "fil",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1580,7 +1656,9 @@ public object Locales {
     // ================================================================
     // FJ — Fijian
     // ================================================================
-    public val FJ: AgeLocale = AgeLocale(
+    public val FJ: AgeLocale = buildFj()
+
+    private fun buildFj(): AgeLocale = AgeLocale(
         code = "fj",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1619,7 +1697,9 @@ public object Locales {
     // ================================================================
     // FON — Fon
     // ================================================================
-    public val FON: AgeLocale = AgeLocale(
+    public val FON: AgeLocale = buildFon()
+
+    private fun buildFon(): AgeLocale = AgeLocale(
         code = "fon",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1659,7 +1739,9 @@ public object Locales {
     // ================================================================
     // FR — French
     // ================================================================
-    public val FR: AgeLocale = AgeLocale(
+    public val FR: AgeLocale = buildFr()
+
+    private fun buildFr(): AgeLocale = AgeLocale(
         code = "fr",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1699,7 +1781,9 @@ public object Locales {
     // ================================================================
     // GA — Irish
     // ================================================================
-    public val GA: AgeLocale = AgeLocale(
+    public val GA: AgeLocale = buildGa()
+
+    private fun buildGa(): AgeLocale = AgeLocale(
         code = "ga",
         plural = { n ->
             when {
@@ -1747,7 +1831,9 @@ public object Locales {
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
-    public val GD: AgeLocale = AgeLocale(
+    public val GD: AgeLocale = buildGd()
+
+    private fun buildGd(): AgeLocale = AgeLocale(
         code = "gd",
         plural = { n ->
             when {
@@ -1794,7 +1880,9 @@ public object Locales {
     // ================================================================
     // GL — Galician
     // ================================================================
-    public val GL: AgeLocale = AgeLocale(
+    public val GL: AgeLocale = buildGl()
+
+    private fun buildGl(): AgeLocale = AgeLocale(
         code = "gl",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1834,7 +1922,9 @@ public object Locales {
     // ================================================================
     // GN — Guarani
     // ================================================================
-    public val GN: AgeLocale = AgeLocale(
+    public val GN: AgeLocale = buildGn()
+
+    private fun buildGn(): AgeLocale = AgeLocale(
         code = "gn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1874,7 +1964,9 @@ public object Locales {
     // ================================================================
     // GU — Gujarati
     // ================================================================
-    public val GU: AgeLocale = AgeLocale(
+    public val GU: AgeLocale = buildGu()
+
+    private fun buildGu(): AgeLocale = AgeLocale(
         code = "gu",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1914,7 +2006,9 @@ public object Locales {
     // ================================================================
     // GV — Manx
     // ================================================================
-    public val GV: AgeLocale = AgeLocale(
+    public val GV: AgeLocale = buildGv()
+
+    private fun buildGv(): AgeLocale = AgeLocale(
         code = "gv",
         plural = { n ->
             val mod10 = n % 10
@@ -1963,7 +2057,9 @@ public object Locales {
     // ================================================================
     // HA — Hausa
     // ================================================================
-    public val HA: AgeLocale = AgeLocale(
+    public val HA: AgeLocale = buildHa()
+
+    private fun buildHa(): AgeLocale = AgeLocale(
         code = "ha",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2002,7 +2098,9 @@ public object Locales {
     // ================================================================
     // HE — Hebrew
     // ================================================================
-    public val HE: AgeLocale = AgeLocale(
+    public val HE: AgeLocale = buildHe()
+
+    private fun buildHe(): AgeLocale = AgeLocale(
         code = "he",
         plural = { n ->
             when (n) {
@@ -2048,7 +2146,9 @@ public object Locales {
     // ================================================================
     // HI — Hindi
     // ================================================================
-    public val HI: AgeLocale = AgeLocale(
+    public val HI: AgeLocale = buildHi()
+
+    private fun buildHi(): AgeLocale = AgeLocale(
         code = "hi",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2088,7 +2188,9 @@ public object Locales {
     // ================================================================
     // HMN — Hmong
     // ================================================================
-    public val HMN: AgeLocale = AgeLocale(
+    public val HMN: AgeLocale = buildHmn()
+
+    private fun buildHmn(): AgeLocale = AgeLocale(
         code = "hmn",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2127,7 +2229,9 @@ public object Locales {
     // ================================================================
     // HR — Croatian
     // ================================================================
-    public val HR: AgeLocale = AgeLocale(
+    public val HR: AgeLocale = buildHr()
+
+    private fun buildHr(): AgeLocale = AgeLocale(
         code = "hr",
         plural = { n ->
             val mod10 = n % 10
@@ -2175,7 +2279,9 @@ public object Locales {
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
-    public val HT: AgeLocale = AgeLocale(
+    public val HT: AgeLocale = buildHt()
+
+    private fun buildHt(): AgeLocale = AgeLocale(
         code = "ht",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2215,7 +2321,9 @@ public object Locales {
     // ================================================================
     // HU — Hungarian
     // ================================================================
-    public val HU: AgeLocale = AgeLocale(
+    public val HU: AgeLocale = buildHu()
+
+    private fun buildHu(): AgeLocale = AgeLocale(
         code = "hu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2255,7 +2363,9 @@ public object Locales {
     // ================================================================
     // HY — Armenian
     // ================================================================
-    public val HY: AgeLocale = AgeLocale(
+    public val HY: AgeLocale = buildHy()
+
+    private fun buildHy(): AgeLocale = AgeLocale(
         code = "hy",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2295,7 +2405,9 @@ public object Locales {
     // ================================================================
     // ID — Indonesian
     // ================================================================
-    public val ID: AgeLocale = AgeLocale(
+    public val ID: AgeLocale = buildId()
+
+    private fun buildId(): AgeLocale = AgeLocale(
         code = "id",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2335,7 +2447,9 @@ public object Locales {
     // ================================================================
     // IG — Igbo
     // ================================================================
-    public val IG: AgeLocale = AgeLocale(
+    public val IG: AgeLocale = buildIg()
+
+    private fun buildIg(): AgeLocale = AgeLocale(
         code = "ig",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2375,7 +2489,9 @@ public object Locales {
     // ================================================================
     // IS — Icelandic
     // ================================================================
-    public val IS: AgeLocale = AgeLocale(
+    public val IS: AgeLocale = buildIs()
+
+    private fun buildIs(): AgeLocale = AgeLocale(
         code = "is",
         plural = { n ->
             val mod10 = n % 10
@@ -2419,7 +2535,9 @@ public object Locales {
     // ================================================================
     // IT — Italian
     // ================================================================
-    public val IT: AgeLocale = AgeLocale(
+    public val IT: AgeLocale = buildIt()
+
+    private fun buildIt(): AgeLocale = AgeLocale(
         code = "it",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2459,7 +2577,9 @@ public object Locales {
     // ================================================================
     // JA — Japanese
     // ================================================================
-    public val JA: AgeLocale = AgeLocale(
+    public val JA: AgeLocale = buildJa()
+
+    private fun buildJa(): AgeLocale = AgeLocale(
         code = "ja",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2497,7 +2617,9 @@ public object Locales {
     // ================================================================
     // JV — Javanese
     // ================================================================
-    public val JV: AgeLocale = AgeLocale(
+    public val JV: AgeLocale = buildJv()
+
+    private fun buildJv(): AgeLocale = AgeLocale(
         code = "jv",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2537,7 +2659,9 @@ public object Locales {
     // ================================================================
     // KA — Georgian
     // ================================================================
-    public val KA: AgeLocale = AgeLocale(
+    public val KA: AgeLocale = buildKa()
+
+    private fun buildKa(): AgeLocale = AgeLocale(
         code = "ka",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2577,7 +2701,9 @@ public object Locales {
     // ================================================================
     // KBP — Kabiye
     // ================================================================
-    public val KBP: AgeLocale = AgeLocale(
+    public val KBP: AgeLocale = buildKbp()
+
+    private fun buildKbp(): AgeLocale = AgeLocale(
         code = "kbp",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2617,7 +2743,9 @@ public object Locales {
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
-    public val KEK: AgeLocale = AgeLocale(
+    public val KEK: AgeLocale = buildKek()
+
+    private fun buildKek(): AgeLocale = AgeLocale(
         code = "kek",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2656,7 +2784,9 @@ public object Locales {
     // ================================================================
     // KI — Kikuyu
     // ================================================================
-    public val KI: AgeLocale = AgeLocale(
+    public val KI: AgeLocale = buildKi()
+
+    private fun buildKi(): AgeLocale = AgeLocale(
         code = "ki",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2695,7 +2825,9 @@ public object Locales {
     // ================================================================
     // KK — Kazakh
     // ================================================================
-    public val KK: AgeLocale = AgeLocale(
+    public val KK: AgeLocale = buildKk()
+
+    private fun buildKk(): AgeLocale = AgeLocale(
         code = "kk",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2735,7 +2867,9 @@ public object Locales {
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
-    public val KL: AgeLocale = AgeLocale(
+    public val KL: AgeLocale = buildKl()
+
+    private fun buildKl(): AgeLocale = AgeLocale(
         code = "kl",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2774,7 +2908,9 @@ public object Locales {
     // ================================================================
     // KM — Khmer
     // ================================================================
-    public val KM: AgeLocale = AgeLocale(
+    public val KM: AgeLocale = buildKm()
+
+    private fun buildKm(): AgeLocale = AgeLocale(
         code = "km",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2814,7 +2950,9 @@ public object Locales {
     // ================================================================
     // KN — Kannada
     // ================================================================
-    public val KN: AgeLocale = AgeLocale(
+    public val KN: AgeLocale = buildKn()
+
+    private fun buildKn(): AgeLocale = AgeLocale(
         code = "kn",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2854,7 +2992,9 @@ public object Locales {
     // ================================================================
     // KO — Korean
     // ================================================================
-    public val KO: AgeLocale = AgeLocale(
+    public val KO: AgeLocale = buildKo()
+
+    private fun buildKo(): AgeLocale = AgeLocale(
         code = "ko",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2893,7 +3033,9 @@ public object Locales {
     // ================================================================
     // KPE — Kpelle
     // ================================================================
-    public val KPE: AgeLocale = AgeLocale(
+    public val KPE: AgeLocale = buildKpe()
+
+    private fun buildKpe(): AgeLocale = AgeLocale(
         code = "kpe",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2933,7 +3075,9 @@ public object Locales {
     // ================================================================
     // KRI — Krio
     // ================================================================
-    public val KRI: AgeLocale = AgeLocale(
+    public val KRI: AgeLocale = buildKri()
+
+    private fun buildKri(): AgeLocale = AgeLocale(
         code = "kri",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2972,7 +3116,9 @@ public object Locales {
     // ================================================================
     // KTU — Kituba
     // ================================================================
-    public val KTU: AgeLocale = AgeLocale(
+    public val KTU: AgeLocale = buildKtu()
+
+    private fun buildKtu(): AgeLocale = AgeLocale(
         code = "ktu",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3012,7 +3158,9 @@ public object Locales {
     // ================================================================
     // KU — Kurdish
     // ================================================================
-    public val KU: AgeLocale = AgeLocale(
+    public val KU: AgeLocale = buildKu()
+
+    private fun buildKu(): AgeLocale = AgeLocale(
         code = "ku",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3051,7 +3199,9 @@ public object Locales {
     // ================================================================
     // KW — Cornish
     // ================================================================
-    public val KW: AgeLocale = AgeLocale(
+    public val KW: AgeLocale = buildKw()
+
+    private fun buildKw(): AgeLocale = AgeLocale(
         code = "kw",
         plural = { n ->
             when {
@@ -3105,7 +3255,9 @@ public object Locales {
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
-    public val KY: AgeLocale = AgeLocale(
+    public val KY: AgeLocale = buildKy()
+
+    private fun buildKy(): AgeLocale = AgeLocale(
         code = "ky",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3145,7 +3297,9 @@ public object Locales {
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
-    public val LB: AgeLocale = AgeLocale(
+    public val LB: AgeLocale = buildLb()
+
+    private fun buildLb(): AgeLocale = AgeLocale(
         code = "lb",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3184,7 +3338,9 @@ public object Locales {
     // ================================================================
     // LG — Luganda
     // ================================================================
-    public val LG: AgeLocale = AgeLocale(
+    public val LG: AgeLocale = buildLg()
+
+    private fun buildLg(): AgeLocale = AgeLocale(
         code = "lg",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3224,7 +3380,9 @@ public object Locales {
     // ================================================================
     // LN — Lingala
     // ================================================================
-    public val LN: AgeLocale = AgeLocale(
+    public val LN: AgeLocale = buildLn()
+
+    private fun buildLn(): AgeLocale = AgeLocale(
         code = "ln",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3264,7 +3422,9 @@ public object Locales {
     // ================================================================
     // LO — Lao
     // ================================================================
-    public val LO: AgeLocale = AgeLocale(
+    public val LO: AgeLocale = buildLo()
+
+    private fun buildLo(): AgeLocale = AgeLocale(
         code = "lo",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3302,7 +3462,9 @@ public object Locales {
     // ================================================================
     // LT — Lithuanian
     // ================================================================
-    public val LT: AgeLocale = AgeLocale(
+    public val LT: AgeLocale = buildLt()
+
+    private fun buildLt(): AgeLocale = AgeLocale(
         code = "lt",
         plural = { n ->
             val mod10 = n % 10
@@ -3349,7 +3511,9 @@ public object Locales {
     // ================================================================
     // LUO — Dholuo
     // ================================================================
-    public val LUO: AgeLocale = AgeLocale(
+    public val LUO: AgeLocale = buildLuo()
+
+    private fun buildLuo(): AgeLocale = AgeLocale(
         code = "luo",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3388,7 +3552,9 @@ public object Locales {
     // ================================================================
     // LV — Latvian
     // ================================================================
-    public val LV: AgeLocale = AgeLocale(
+    public val LV: AgeLocale = buildLv()
+
+    private fun buildLv(): AgeLocale = AgeLocale(
         code = "lv",
         plural = { n ->
             val mod10 = n % 10
@@ -3435,7 +3601,9 @@ public object Locales {
     // ================================================================
     // MAM — Mam
     // ================================================================
-    public val MAM: AgeLocale = AgeLocale(
+    public val MAM: AgeLocale = buildMam()
+
+    private fun buildMam(): AgeLocale = AgeLocale(
         code = "mam",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3474,7 +3642,9 @@ public object Locales {
     // ================================================================
     // MEN — Mende
     // ================================================================
-    public val MEN: AgeLocale = AgeLocale(
+    public val MEN: AgeLocale = buildMen()
+
+    private fun buildMen(): AgeLocale = AgeLocale(
         code = "men",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3514,7 +3684,9 @@ public object Locales {
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
-    public val MFE: AgeLocale = AgeLocale(
+    public val MFE: AgeLocale = buildMfe()
+
+    private fun buildMfe(): AgeLocale = AgeLocale(
         code = "mfe",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3554,7 +3726,9 @@ public object Locales {
     // ================================================================
     // MG — Malagasy
     // ================================================================
-    public val MG: AgeLocale = AgeLocale(
+    public val MG: AgeLocale = buildMg()
+
+    private fun buildMg(): AgeLocale = AgeLocale(
         code = "mg",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3594,7 +3768,9 @@ public object Locales {
     // ================================================================
     // MI — Māori
     // ================================================================
-    public val MI: AgeLocale = AgeLocale(
+    public val MI: AgeLocale = buildMi()
+
+    private fun buildMi(): AgeLocale = AgeLocale(
         code = "mi",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3634,7 +3810,9 @@ public object Locales {
     // ================================================================
     // MK — Macedonian
     // ================================================================
-    public val MK: AgeLocale = AgeLocale(
+    public val MK: AgeLocale = buildMk()
+
+    private fun buildMk(): AgeLocale = AgeLocale(
         code = "mk",
         plural = { n ->
             val mod10 = n % 10
@@ -3678,7 +3856,9 @@ public object Locales {
     // ================================================================
     // ML — Malayalam
     // ================================================================
-    public val ML: AgeLocale = AgeLocale(
+    public val ML: AgeLocale = buildMl()
+
+    private fun buildMl(): AgeLocale = AgeLocale(
         code = "ml",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3718,7 +3898,9 @@ public object Locales {
     // ================================================================
     // MN — Mongolian
     // ================================================================
-    public val MN: AgeLocale = AgeLocale(
+    public val MN: AgeLocale = buildMn()
+
+    private fun buildMn(): AgeLocale = AgeLocale(
         code = "mn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3758,7 +3940,9 @@ public object Locales {
     // ================================================================
     // MNK — Mandinka
     // ================================================================
-    public val MNK: AgeLocale = AgeLocale(
+    public val MNK: AgeLocale = buildMnk()
+
+    private fun buildMnk(): AgeLocale = AgeLocale(
         code = "mnk",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3798,7 +3982,9 @@ public object Locales {
     // ================================================================
     // MOS — Moore
     // ================================================================
-    public val MOS: AgeLocale = AgeLocale(
+    public val MOS: AgeLocale = buildMos()
+
+    private fun buildMos(): AgeLocale = AgeLocale(
         code = "mos",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3838,7 +4024,9 @@ public object Locales {
     // ================================================================
     // MR — Marathi
     // ================================================================
-    public val MR: AgeLocale = AgeLocale(
+    public val MR: AgeLocale = buildMr()
+
+    private fun buildMr(): AgeLocale = AgeLocale(
         code = "mr",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3878,7 +4066,9 @@ public object Locales {
     // ================================================================
     // MS — Malay
     // ================================================================
-    public val MS: AgeLocale = AgeLocale(
+    public val MS: AgeLocale = buildMs()
+
+    private fun buildMs(): AgeLocale = AgeLocale(
         code = "ms",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3918,7 +4108,9 @@ public object Locales {
     // ================================================================
     // MT — Maltese
     // ================================================================
-    public val MT: AgeLocale = AgeLocale(
+    public val MT: AgeLocale = buildMt()
+
+    private fun buildMt(): AgeLocale = AgeLocale(
         code = "mt",
         plural = { n ->
             when {
@@ -3966,7 +4158,9 @@ public object Locales {
     // ================================================================
     // MY — Burmese
     // ================================================================
-    public val MY: AgeLocale = AgeLocale(
+    public val MY: AgeLocale = buildMy()
+
+    private fun buildMy(): AgeLocale = AgeLocale(
         code = "my",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4006,7 +4200,9 @@ public object Locales {
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
-    public val NB: AgeLocale = AgeLocale(
+    public val NB: AgeLocale = buildNb()
+
+    private fun buildNb(): AgeLocale = AgeLocale(
         code = "nb",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4045,7 +4241,9 @@ public object Locales {
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
-    public val ND: AgeLocale = AgeLocale(
+    public val ND: AgeLocale = buildNd()
+
+    private fun buildNd(): AgeLocale = AgeLocale(
         code = "nd",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4085,7 +4283,9 @@ public object Locales {
     // ================================================================
     // NE — Nepali
     // ================================================================
-    public val NE: AgeLocale = AgeLocale(
+    public val NE: AgeLocale = buildNe()
+
+    private fun buildNe(): AgeLocale = AgeLocale(
         code = "ne",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4125,7 +4325,9 @@ public object Locales {
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
-    public val NG: AgeLocale = AgeLocale(
+    public val NG: AgeLocale = buildNg()
+
+    private fun buildNg(): AgeLocale = AgeLocale(
         code = "ng",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4165,7 +4367,9 @@ public object Locales {
     // ================================================================
     // NL — Dutch
     // ================================================================
-    public val NL: AgeLocale = AgeLocale(
+    public val NL: AgeLocale = buildNl()
+
+    private fun buildNl(): AgeLocale = AgeLocale(
         code = "nl",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4204,7 +4408,9 @@ public object Locales {
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
-    public val NR: AgeLocale = AgeLocale(
+    public val NR: AgeLocale = buildNr()
+
+    private fun buildNr(): AgeLocale = AgeLocale(
         code = "nr",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4243,7 +4449,9 @@ public object Locales {
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
-    public val NSO: AgeLocale = AgeLocale(
+    public val NSO: AgeLocale = buildNso()
+
+    private fun buildNso(): AgeLocale = AgeLocale(
         code = "nso",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4283,7 +4491,9 @@ public object Locales {
     // ================================================================
     // NUS — Nuer
     // ================================================================
-    public val NUS: AgeLocale = AgeLocale(
+    public val NUS: AgeLocale = buildNus()
+
+    private fun buildNus(): AgeLocale = AgeLocale(
         code = "nus",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4323,7 +4533,9 @@ public object Locales {
     // ================================================================
     // NY — Chichewa
     // ================================================================
-    public val NY: AgeLocale = AgeLocale(
+    public val NY: AgeLocale = buildNy()
+
+    private fun buildNy(): AgeLocale = AgeLocale(
         code = "ny",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4363,7 +4575,9 @@ public object Locales {
     // ================================================================
     // OM — Oromo
     // ================================================================
-    public val OM: AgeLocale = AgeLocale(
+    public val OM: AgeLocale = buildOm()
+
+    private fun buildOm(): AgeLocale = AgeLocale(
         code = "om",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4403,7 +4617,9 @@ public object Locales {
     // ================================================================
     // OR — Odia
     // ================================================================
-    public val OR: AgeLocale = AgeLocale(
+    public val OR: AgeLocale = buildOr()
+
+    private fun buildOr(): AgeLocale = AgeLocale(
         code = "or",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4443,7 +4659,9 @@ public object Locales {
     // ================================================================
     // PA — Punjabi
     // ================================================================
-    public val PA: AgeLocale = AgeLocale(
+    public val PA: AgeLocale = buildPa()
+
+    private fun buildPa(): AgeLocale = AgeLocale(
         code = "pa",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4483,7 +4701,9 @@ public object Locales {
     // ================================================================
     // PIS — Pijin
     // ================================================================
-    public val PIS: AgeLocale = AgeLocale(
+    public val PIS: AgeLocale = buildPis()
+
+    private fun buildPis(): AgeLocale = AgeLocale(
         code = "pis",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4522,7 +4742,9 @@ public object Locales {
     // ================================================================
     // PL — Polish
     // ================================================================
-    public val PL: AgeLocale = AgeLocale(
+    public val PL: AgeLocale = buildPl()
+
+    private fun buildPl(): AgeLocale = AgeLocale(
         code = "pl",
         plural = { n ->
             if (n == 1) PluralCategory.ONE
@@ -4570,7 +4792,9 @@ public object Locales {
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
-    public val POV: AgeLocale = AgeLocale(
+    public val POV: AgeLocale = buildPov()
+
+    private fun buildPov(): AgeLocale = AgeLocale(
         code = "pov",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4610,7 +4834,9 @@ public object Locales {
     // ================================================================
     // PS — Pashto
     // ================================================================
-    public val PS: AgeLocale = AgeLocale(
+    public val PS: AgeLocale = buildPs()
+
+    private fun buildPs(): AgeLocale = AgeLocale(
         code = "ps",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4650,7 +4876,9 @@ public object Locales {
     // ================================================================
     // PT — Portuguese
     // ================================================================
-    public val PT: AgeLocale = AgeLocale(
+    public val PT: AgeLocale = buildPt()
+
+    private fun buildPt(): AgeLocale = AgeLocale(
         code = "pt",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4690,7 +4918,9 @@ public object Locales {
     // ================================================================
     // QU — Quechua
     // ================================================================
-    public val QU: AgeLocale = AgeLocale(
+    public val QU: AgeLocale = buildQu()
+
+    private fun buildQu(): AgeLocale = AgeLocale(
         code = "qu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4730,7 +4960,9 @@ public object Locales {
     // ================================================================
     // QUC — K'iche'
     // ================================================================
-    public val QUC: AgeLocale = AgeLocale(
+    public val QUC: AgeLocale = buildQuc()
+
+    private fun buildQuc(): AgeLocale = AgeLocale(
         code = "quc",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4769,7 +5001,9 @@ public object Locales {
     // ================================================================
     // RO — Romanian
     // ================================================================
-    public val RO: AgeLocale = AgeLocale(
+    public val RO: AgeLocale = buildRo()
+
+    private fun buildRo(): AgeLocale = AgeLocale(
         code = "ro",
         plural = { n ->
             when {
@@ -4815,7 +5049,9 @@ public object Locales {
     // ================================================================
     // RU — Russian
     // ================================================================
-    public val RU: AgeLocale = AgeLocale(
+    public val RU: AgeLocale = buildRu()
+
+    private fun buildRu(): AgeLocale = AgeLocale(
         code = "ru",
         plural = { n ->
             val mod10 = n % 10
@@ -4863,7 +5099,9 @@ public object Locales {
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
-    public val RW: AgeLocale = AgeLocale(
+    public val RW: AgeLocale = buildRw()
+
+    private fun buildRw(): AgeLocale = AgeLocale(
         code = "rw",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4903,7 +5141,9 @@ public object Locales {
     // ================================================================
     // SAR — Sara
     // ================================================================
-    public val SAR: AgeLocale = AgeLocale(
+    public val SAR: AgeLocale = buildSar()
+
+    private fun buildSar(): AgeLocale = AgeLocale(
         code = "sar",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4943,7 +5183,9 @@ public object Locales {
     // ================================================================
     // SD — Sindhi
     // ================================================================
-    public val SD: AgeLocale = AgeLocale(
+    public val SD: AgeLocale = buildSd()
+
+    private fun buildSd(): AgeLocale = AgeLocale(
         code = "sd",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4983,7 +5225,9 @@ public object Locales {
     // ================================================================
     // SG — Sango
     // ================================================================
-    public val SG: AgeLocale = AgeLocale(
+    public val SG: AgeLocale = buildSg()
+
+    private fun buildSg(): AgeLocale = AgeLocale(
         code = "sg",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5023,7 +5267,9 @@ public object Locales {
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
-    public val SHI: AgeLocale = AgeLocale(
+    public val SHI: AgeLocale = buildShi()
+
+    private fun buildShi(): AgeLocale = AgeLocale(
         code = "shi",
         plural = { n ->
             when {
@@ -5069,7 +5315,9 @@ public object Locales {
     // ================================================================
     // SHN — Shan
     // ================================================================
-    public val SHN: AgeLocale = AgeLocale(
+    public val SHN: AgeLocale = buildShn()
+
+    private fun buildShn(): AgeLocale = AgeLocale(
         code = "shn",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5108,7 +5356,9 @@ public object Locales {
     // ================================================================
     // SI — Sinhala
     // ================================================================
-    public val SI: AgeLocale = AgeLocale(
+    public val SI: AgeLocale = buildSi()
+
+    private fun buildSi(): AgeLocale = AgeLocale(
         code = "si",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5148,7 +5398,9 @@ public object Locales {
     // ================================================================
     // SK — Slovak
     // ================================================================
-    public val SK: AgeLocale = AgeLocale(
+    public val SK: AgeLocale = buildSk()
+
+    private fun buildSk(): AgeLocale = AgeLocale(
         code = "sk",
         plural = { n ->
             when {
@@ -5193,7 +5445,9 @@ public object Locales {
     // ================================================================
     // SL — Slovenian
     // ================================================================
-    public val SL: AgeLocale = AgeLocale(
+    public val SL: AgeLocale = buildSl()
+
+    private fun buildSl(): AgeLocale = AgeLocale(
         code = "sl",
         plural = { n ->
             val mod100 = n % 100
@@ -5241,7 +5495,9 @@ public object Locales {
     // ================================================================
     // SN — Shona
     // ================================================================
-    public val SN: AgeLocale = AgeLocale(
+    public val SN: AgeLocale = buildSn()
+
+    private fun buildSn(): AgeLocale = AgeLocale(
         code = "sn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5281,7 +5537,9 @@ public object Locales {
     // ================================================================
     // SNK — Soninke
     // ================================================================
-    public val SNK: AgeLocale = AgeLocale(
+    public val SNK: AgeLocale = buildSnk()
+
+    private fun buildSnk(): AgeLocale = AgeLocale(
         code = "snk",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5321,7 +5579,9 @@ public object Locales {
     // ================================================================
     // SO — Somali
     // ================================================================
-    public val SO: AgeLocale = AgeLocale(
+    public val SO: AgeLocale = buildSo()
+
+    private fun buildSo(): AgeLocale = AgeLocale(
         code = "so",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5361,7 +5621,9 @@ public object Locales {
     // ================================================================
     // SQ — Albanian
     // ================================================================
-    public val SQ: AgeLocale = AgeLocale(
+    public val SQ: AgeLocale = buildSq()
+
+    private fun buildSq(): AgeLocale = AgeLocale(
         code = "sq",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5401,7 +5663,9 @@ public object Locales {
     // ================================================================
     // SR — Serbian
     // ================================================================
-    public val SR: AgeLocale = AgeLocale(
+    public val SR: AgeLocale = buildSr()
+
+    private fun buildSr(): AgeLocale = AgeLocale(
         code = "sr",
         plural = { n ->
             val mod10 = n % 10
@@ -5449,7 +5713,9 @@ public object Locales {
     // ================================================================
     // SS — siSwati
     // ================================================================
-    public val SS: AgeLocale = AgeLocale(
+    public val SS: AgeLocale = buildSs()
+
+    private fun buildSs(): AgeLocale = AgeLocale(
         code = "ss",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5489,7 +5755,9 @@ public object Locales {
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
-    public val ST: AgeLocale = AgeLocale(
+    public val ST: AgeLocale = buildSt()
+
+    private fun buildSt(): AgeLocale = AgeLocale(
         code = "st",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5529,7 +5797,9 @@ public object Locales {
     // ================================================================
     // SU — Sundanese
     // ================================================================
-    public val SU: AgeLocale = AgeLocale(
+    public val SU: AgeLocale = buildSu()
+
+    private fun buildSu(): AgeLocale = AgeLocale(
         code = "su",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5569,7 +5839,9 @@ public object Locales {
     // ================================================================
     // SUK — Sukuma
     // ================================================================
-    public val SUK: AgeLocale = AgeLocale(
+    public val SUK: AgeLocale = buildSuk()
+
+    private fun buildSuk(): AgeLocale = AgeLocale(
         code = "suk",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5609,7 +5881,9 @@ public object Locales {
     // ================================================================
     // SV — Swedish
     // ================================================================
-    public val SV: AgeLocale = AgeLocale(
+    public val SV: AgeLocale = buildSv()
+
+    private fun buildSv(): AgeLocale = AgeLocale(
         code = "sv",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5648,7 +5922,9 @@ public object Locales {
     // ================================================================
     // SW — Swahili
     // ================================================================
-    public val SW: AgeLocale = AgeLocale(
+    public val SW: AgeLocale = buildSw()
+
+    private fun buildSw(): AgeLocale = AgeLocale(
         code = "sw",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5688,7 +5964,9 @@ public object Locales {
     // ================================================================
     // TA — Tamil
     // ================================================================
-    public val TA: AgeLocale = AgeLocale(
+    public val TA: AgeLocale = buildTa()
+
+    private fun buildTa(): AgeLocale = AgeLocale(
         code = "ta",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5727,7 +6005,9 @@ public object Locales {
     // ================================================================
     // TE — Telugu
     // ================================================================
-    public val TE: AgeLocale = AgeLocale(
+    public val TE: AgeLocale = buildTe()
+
+    private fun buildTe(): AgeLocale = AgeLocale(
         code = "te",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5767,7 +6047,9 @@ public object Locales {
     // ================================================================
     // TEM — Temne
     // ================================================================
-    public val TEM: AgeLocale = AgeLocale(
+    public val TEM: AgeLocale = buildTem()
+
+    private fun buildTem(): AgeLocale = AgeLocale(
         code = "tem",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5807,7 +6089,9 @@ public object Locales {
     // ================================================================
     // TET — Tetum
     // ================================================================
-    public val TET: AgeLocale = AgeLocale(
+    public val TET: AgeLocale = buildTet()
+
+    private fun buildTet(): AgeLocale = AgeLocale(
         code = "tet",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5846,7 +6130,9 @@ public object Locales {
     // ================================================================
     // TG — Tajik
     // ================================================================
-    public val TG: AgeLocale = AgeLocale(
+    public val TG: AgeLocale = buildTg()
+
+    private fun buildTg(): AgeLocale = AgeLocale(
         code = "tg",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5886,7 +6172,9 @@ public object Locales {
     // ================================================================
     // TH — Thai
     // ================================================================
-    public val TH: AgeLocale = AgeLocale(
+    public val TH: AgeLocale = buildTh()
+
+    private fun buildTh(): AgeLocale = AgeLocale(
         code = "th",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5926,7 +6214,9 @@ public object Locales {
     // ================================================================
     // TI — Tigrinya
     // ================================================================
-    public val TI: AgeLocale = AgeLocale(
+    public val TI: AgeLocale = buildTi()
+
+    private fun buildTi(): AgeLocale = AgeLocale(
         code = "ti",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5966,7 +6256,9 @@ public object Locales {
     // ================================================================
     // TIG — Tigre
     // ================================================================
-    public val TIG: AgeLocale = AgeLocale(
+    public val TIG: AgeLocale = buildTig()
+
+    private fun buildTig(): AgeLocale = AgeLocale(
         code = "tig",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6006,7 +6298,9 @@ public object Locales {
     // ================================================================
     // TK — Turkmen
     // ================================================================
-    public val TK: AgeLocale = AgeLocale(
+    public val TK: AgeLocale = buildTk()
+
+    private fun buildTk(): AgeLocale = AgeLocale(
         code = "tk",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6046,7 +6340,9 @@ public object Locales {
     // ================================================================
     // TN — Tswana
     // ================================================================
-    public val TN: AgeLocale = AgeLocale(
+    public val TN: AgeLocale = buildTn()
+
+    private fun buildTn(): AgeLocale = AgeLocale(
         code = "tn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6086,7 +6382,9 @@ public object Locales {
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
-    public val TPI: AgeLocale = AgeLocale(
+    public val TPI: AgeLocale = buildTpi()
+
+    private fun buildTpi(): AgeLocale = AgeLocale(
         code = "tpi",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6125,7 +6423,9 @@ public object Locales {
     // ================================================================
     // TR — Turkish
     // ================================================================
-    public val TR: AgeLocale = AgeLocale(
+    public val TR: AgeLocale = buildTr()
+
+    private fun buildTr(): AgeLocale = AgeLocale(
         code = "tr",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6165,7 +6465,9 @@ public object Locales {
     // ================================================================
     // TS — Tsonga
     // ================================================================
-    public val TS: AgeLocale = AgeLocale(
+    public val TS: AgeLocale = buildTs()
+
+    private fun buildTs(): AgeLocale = AgeLocale(
         code = "ts",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6205,7 +6507,9 @@ public object Locales {
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
-    public val TUM: AgeLocale = AgeLocale(
+    public val TUM: AgeLocale = buildTum()
+
+    private fun buildTum(): AgeLocale = AgeLocale(
         code = "tum",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6244,7 +6548,9 @@ public object Locales {
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
-    public val TZM: AgeLocale = AgeLocale(
+    public val TZM: AgeLocale = buildTzm()
+
+    private fun buildTzm(): AgeLocale = AgeLocale(
         code = "tzm",
         plural = { n ->
             when {
@@ -6289,7 +6595,9 @@ public object Locales {
     // ================================================================
     // UK — Ukrainian
     // ================================================================
-    public val UK: AgeLocale = AgeLocale(
+    public val UK: AgeLocale = buildUk()
+
+    private fun buildUk(): AgeLocale = AgeLocale(
         code = "uk",
         plural = { n ->
             val mod10 = n % 10
@@ -6337,7 +6645,9 @@ public object Locales {
     // ================================================================
     // UMB — Umbundu
     // ================================================================
-    public val UMB: AgeLocale = AgeLocale(
+    public val UMB: AgeLocale = buildUmb()
+
+    private fun buildUmb(): AgeLocale = AgeLocale(
         code = "umb",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6377,7 +6687,9 @@ public object Locales {
     // ================================================================
     // UR — Urdu
     // ================================================================
-    public val UR: AgeLocale = AgeLocale(
+    public val UR: AgeLocale = buildUr()
+
+    private fun buildUr(): AgeLocale = AgeLocale(
         code = "ur",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6417,7 +6729,9 @@ public object Locales {
     // ================================================================
     // UZ — Uzbek
     // ================================================================
-    public val UZ: AgeLocale = AgeLocale(
+    public val UZ: AgeLocale = buildUz()
+
+    private fun buildUz(): AgeLocale = AgeLocale(
         code = "uz",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6457,7 +6771,9 @@ public object Locales {
     // ================================================================
     // VE — Venda
     // ================================================================
-    public val VE: AgeLocale = AgeLocale(
+    public val VE: AgeLocale = buildVe()
+
+    private fun buildVe(): AgeLocale = AgeLocale(
         code = "ve",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6496,7 +6812,9 @@ public object Locales {
     // ================================================================
     // VI — Vietnamese
     // ================================================================
-    public val VI: AgeLocale = AgeLocale(
+    public val VI: AgeLocale = buildVi()
+
+    private fun buildVi(): AgeLocale = AgeLocale(
         code = "vi",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6536,7 +6854,9 @@ public object Locales {
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
-    public val VMW: AgeLocale = AgeLocale(
+    public val VMW: AgeLocale = buildVmw()
+
+    private fun buildVmw(): AgeLocale = AgeLocale(
         code = "vmw",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6576,7 +6896,9 @@ public object Locales {
     // ================================================================
     // WO — Wolof
     // ================================================================
-    public val WO: AgeLocale = AgeLocale(
+    public val WO: AgeLocale = buildWo()
+
+    private fun buildWo(): AgeLocale = AgeLocale(
         code = "wo",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6616,7 +6938,9 @@ public object Locales {
     // ================================================================
     // XH — Xhosa
     // ================================================================
-    public val XH: AgeLocale = AgeLocale(
+    public val XH: AgeLocale = buildXh()
+
+    private fun buildXh(): AgeLocale = AgeLocale(
         code = "xh",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6656,7 +6980,9 @@ public object Locales {
     // ================================================================
     // YAO — Yao
     // ================================================================
-    public val YAO: AgeLocale = AgeLocale(
+    public val YAO: AgeLocale = buildYao()
+
+    private fun buildYao(): AgeLocale = AgeLocale(
         code = "yao",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6695,7 +7021,9 @@ public object Locales {
     // ================================================================
     // YO — Yoruba
     // ================================================================
-    public val YO: AgeLocale = AgeLocale(
+    public val YO: AgeLocale = buildYo()
+
+    private fun buildYo(): AgeLocale = AgeLocale(
         code = "yo",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6735,7 +7063,9 @@ public object Locales {
     // ================================================================
     // YUE — Cantonese
     // ================================================================
-    public val YUE: AgeLocale = AgeLocale(
+    public val YUE: AgeLocale = buildYue()
+
+    private fun buildYue(): AgeLocale = AgeLocale(
         code = "yue",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6773,7 +7103,9 @@ public object Locales {
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
-    public val ZDJ: AgeLocale = AgeLocale(
+    public val ZDJ: AgeLocale = buildZdj()
+
+    private fun buildZdj(): AgeLocale = AgeLocale(
         code = "zdj",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6813,7 +7145,9 @@ public object Locales {
     // ================================================================
     // ZH — Chinese
     // ================================================================
-    public val ZH: AgeLocale = AgeLocale(
+    public val ZH: AgeLocale = buildZh()
+
+    private fun buildZh(): AgeLocale = AgeLocale(
         code = "zh",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6851,7 +7185,9 @@ public object Locales {
     // ================================================================
     // ZU — Zulu
     // ================================================================
-    public val ZU: AgeLocale = AgeLocale(
+    public val ZU: AgeLocale = buildZu()
+
+    private fun buildZu(): AgeLocale = AgeLocale(
         code = "zu",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/kbp.json
 
-_plural_kbp() {
+_sayableage_plural_kbp() {
     echo "other"
 }
 
-_locale_kbp() {
+_sayableage_locale_kbp() {
     _unit_day='kɩyakʊ {n}'
     _unit_week='kpɩtaʊ {n}'
     _unit_month='fenaɣ {n}'
@@ -37,5 +37,5 @@ _locale_kbp() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_kbp
+    _plural_func=_sayableage_plural_kbp
 }

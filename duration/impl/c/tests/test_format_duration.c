@@ -298,6 +298,44 @@ static void test_locale_lookup(void) {
     ASSERT_TRUE("get('') null", sdu_locale_get("") == NULL);
 }
 
+/* ================================================================ */
+/* Section 18: Short compactness — relative time */
+/* ================================================================ */
+static void test_section_18_short_compactness_relative_time(void) {
+    char buf[256];
+    int rc;
+    rc = sdu_format_since(buf, sizeof(buf), &sdu_locale_men, SDU_NORMAL, "2025-01-20T01:32:11", "2025-01-22T15:39:16");
+    ASSERT_EQ("18.1 days and hours both kept", rc, buf, "l\311\224h\311\224nga 2, awa 14 taa gb\311\224y\311\224"); // 18.1
+}
+
+/* ================================================================ */
+/* Section 19: Range (500-year ceiling) */
+/* ================================================================ */
+static void test_section_19_range_500_year_ceiling(void) {
+    char buf[256];
+    int rc;
+    rc = sdu_format_duration_secs(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, 15778800000LL);
+    ASSERT_EQ("19.1 500 Julian years: 6000 months, the ceiling", rc, buf, "500 years"); // 19.1
+    ASSERT_NULL("19.2 over 6000 months", sdu_format_duration_secs(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, 15800000000LL)); // 19.2
+    ASSERT_NULL("19.3 well beyond the ceiling (and 32-bit range)", sdu_format_duration_secs(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, 99999999999LL)); // 19.3
+    ASSERT_NULL("19.4 525 years ago", sdu_format_since(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, "1500-01-01T00:00:00", "2025-01-01T00:00:00")); // 19.4
+    ASSERT_NULL("19.5 575 years from now", sdu_format_until(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, "2600-01-01T00:00:00", "2025-01-01T00:00:00")); // 19.5
+}
+
+/* ================================================================ */
+/* Section 20: Timestamp validation */
+/* ================================================================ */
+static void test_section_20_timestamp_validation(void) {
+    char buf[256];
+    int rc;
+    rc = sdu_format_duration_iso(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, "2025-01-15T10:00", "2025-01-15T11:30:00");
+    ASSERT_EQ("20.1 seconds are optional", rc, buf, "1\302\275 hours"); // 20.1
+    ASSERT_NULL("20.2 minutes are required", sdu_format_duration_iso(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, "2025-01-15T10", "2025-01-15T11:30:00")); // 20.2
+    ASSERT_NULL("20.3 unpadded date", sdu_format_duration_iso(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, "2025-1-5T10:00:00", "2025-01-15T11:30:00")); // 20.3
+    ASSERT_NULL("20.4 impossible date", sdu_format_duration_iso(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, "2025-02-30T10:00:00", "2025-03-15T11:30:00")); // 20.4
+    ASSERT_NULL("20.5 hour out of range", sdu_format_since(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, "2025-01-15T10:00:00", "2025-01-15T25:00:00")); // 20.5
+}
+
 int main(void) {
     test_null_edge_cases();
     test_seconds_tier();
@@ -317,6 +355,10 @@ int main(void) {
     test_short_compactness();
     test_compact_compactness();
     test_locale_lookup();
+
+    test_section_18_short_compactness_relative_time();
+    test_section_19_range_500_year_ceiling();
+    test_section_20_timestamp_validation();
 
     printf("\n=== Results ===\n");
     printf("Passed: %d\n", tests_passed);

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/bci.json
 
-_locale_bci() {
+_sayabletime_locale_bci() {
     _clock_hours=('blu-nɲɔn' 'kun' 'nɲɔn' 'nsan' 'nan' 'nnun' 'nsiɛn' 'nso' 'mɔcuɛ' 'ngwlan' 'blu' 'blu-kun')
     _clock_midnight='kɔnguɛ afiɛn'
     _clock_noon='nnɔsua'

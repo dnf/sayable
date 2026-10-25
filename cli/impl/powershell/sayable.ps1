@@ -294,7 +294,13 @@ function Invoke-DurationCommand {
     if ($null -eq $value) {
         $result = Format-SayableDuration -Formatter $formatter -StartOrSeconds $null
     } elseif ($value -match '^-?\d+$') {
-        $result = Format-SayableDuration -Formatter $formatter -StartOrSeconds ([int]$value)
+        # A count too large for 64 bits is far past the 500-year ceiling, so it has no value.
+        $seconds = 0L
+        $result = if ([long]::TryParse($value, [ref]$seconds)) {
+            Format-SayableDuration -Formatter $formatter -StartOrSeconds $seconds
+        } else {
+            $null
+        }
     } else {
         # Timestamp mode: need an end argument
         if ($Positionals.Count -lt 2) {

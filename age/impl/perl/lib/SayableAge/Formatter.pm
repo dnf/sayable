@@ -4,7 +4,6 @@ use utf8;
 
 package SayableAge::Formatter;
 
-use Time::Local qw(timegm);
 use SayableAge::Locale;
 
 our $VERSION = '0.5.0';
@@ -111,24 +110,13 @@ sub _parse_age {
   my ($date_of_birth, $as_of) = @_;
   return undef unless defined $date_of_birth && $date_of_birth ne '';
 
-  my ($dob_y, $dob_m, $dob_d) = split(/-/, $date_of_birth);
-  $dob_y += 0; $dob_m += 0; $dob_d += 0;
+  my $dob = _parse_date($date_of_birth);
+  my $ref = (defined $as_of && $as_of ne '') ? _parse_date($as_of) : _today();
+  return undef unless defined $dob && defined $ref;
 
-  my ($ref_y, $ref_m, $ref_d);
-  if (defined $as_of && $as_of ne '') {
-    ($ref_y, $ref_m, $ref_d) = split(/-/, $as_of);
-    $ref_y += 0; $ref_m += 0; $ref_d += 0;
-  } else {
-    my @t = localtime();
-    $ref_y = $t[5] + 1900;
-    $ref_m = $t[4] + 1;
-    $ref_d = $t[3];
-  }
-
-  # Calculate diff_days using timegm
-  my $dob_epoch = timegm(0, 0, 0, $dob_d, $dob_m - 1, $dob_y);
-  my $ref_epoch = timegm(0, 0, 0, $ref_d, $ref_m - 1, $ref_y);
-  my $diff_days = int(($ref_epoch - $dob_epoch) / 86400);
+  my ($dob_y, $dob_m, $dob_d) = @$dob;
+  my ($ref_y, $ref_m, $ref_d) = @$ref;
+  my $diff_days = _julian_day($ref_y, $ref_m, $ref_d) - _julian_day($dob_y, $dob_m, $dob_d);
   return undef if $diff_days < 0;
 
   # Calendar months with day-of-month clamping
@@ -139,6 +127,29 @@ sub _parse_age {
   return undef if $months > $MAX_AGE_MONTHS;
 
   return [$months, $diff_days];
+}
+
+# Parse exactly YYYY-MM-DD naming a real calendar day into [y, m, d], else undef.
+sub _parse_date {
+  my ($s) = @_;
+  my ($y, $m, $d) = $s =~ /\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z/ or return undef;
+  ($y, $m, $d) = ($y + 0, $m + 0, $d + 0);
+  return undef if $m < 1 || $m > 12 || $d < 1 || $d > _days_in_month($y, $m);
+  return [$y, $m, $d];
+}
+
+sub _today {
+  my @t = localtime();
+  return [$t[5] + 1900, $t[4] + 1, $t[3]];
+}
+
+# Proleptic Gregorian day number (integer arithmetic only).
+sub _julian_day {
+  my ($year, $month, $day) = @_;
+  my $march_shift = int((14 - $month) / 12);
+  my $y = $year + 4800 - $march_shift;
+  my $m = $month + 12 * $march_shift - 3;
+  return $day + int((153 * $m + 2) / 5) + 365 * $y + int($y / 4) - int($y / 100) + int($y / 400) - 32045;
 }
 
 sub _stage_key {

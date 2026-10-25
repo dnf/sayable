@@ -70,23 +70,33 @@ method !format-digital(Int $hour, Int $minute --> Str) {
     return $fmt.subst('{h}', ~$h12).subst('{mm}', $minute.fmt('%02d')).subst('{ampm}', $ampm-str);
 }
 
+#| A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+#| suffix, which is ignored), alone or after the T of an ISO datetime.
+my regex clock-time {
+    ^ [ $<year>=[<[0..9]> ** 4] '-' $<month>=[<[0..9]> ** 2] '-' $<day>=[<[0..9]> ** 2] 'T' ]?
+    $<hour>=[<[0..9]> ** 1..2] ':' $<minute>=[<[0..9]> ** 2]
+    [ ':' $<second>=[<[0..9]> ** 2] [ '.' <[0..9]>+ ]? ]?
+    [ 'Z' | <[+-]> <[0..9]> ** 2 ':' <[0..9]> ** 2 ]? $
+}
+
 method !parse-time(Str $input) {
-    return Nil unless $input.defined && $input ne '';
-    my $t = $input;
-    $t = $t.split('T')[1] if $t.contains('T');
-    $t = $t.split('+')[0] if $t.contains('+');
-    $t = $t.split('Z')[0] if $t.contains('Z');
-    my @parts = $t.split(':');
-    return Nil unless @parts.elems >= 2;
-    my Int $hour;
-    my Int $minute;
-    try {
-        $hour = @parts[0].Int;
-        $minute = @parts[1].split('.')[0].Int;
-        CATCH { default { return Nil } }
+    return Nil unless $input.defined;
+    my $m = $input ~~ &clock-time;
+    return Nil unless $m;
+    if $m<year> {
+        my ($year, $month, $day) = $m<year>.Int, $m<month>.Int, $m<day>.Int;
+        return Nil unless 1 <= $month <= 12 && 1 <= $day <= days-in-month($year, $month);
     }
-    return Nil if $hour < 0 || $hour > 23 || $minute < 0 || $minute > 59;
+    my ($hour, $minute) = $m<hour>.Int, $m<minute>.Int;
+    my $second = $m<second> ?? $m<second>.Int !! 0;
+    return Nil if $hour > 23 || $minute > 59 || $second > 59;
     return [$hour, $minute];
+}
+
+sub days-in-month(Int $year, Int $month --> Int) {
+    return 30 if $month == 4 | 6 | 9 | 11;
+    return 31 unless $month == 2;
+    return ($year %% 4 && !($year %% 100)) || $year %% 400 ?? 29 !! 28;
 }
 
 sub round-to-five(Int $minute --> Int) {

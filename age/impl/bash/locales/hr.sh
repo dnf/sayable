@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/hr.json
 
-_plural_hr() {
+_sayableage_plural_hr() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_hr() {
     echo "other"
 }
 
-_locale_hr() {
+_sayableage_locale_hr() {
     _unit_day_one='{n} dan'
     _unit_day_few='{n} dana'
     _unit_day_many='{n} dana'
@@ -56,5 +56,5 @@ _locale_hr() {
     _compact_unit_year='{n} g.'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_hr
+    _plural_func=_sayableage_plural_hr
 }

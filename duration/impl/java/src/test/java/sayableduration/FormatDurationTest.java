@@ -435,4 +435,93 @@ class FormatDurationTest {
         SayableDuration sd = new SayableDuration(Locales.EN, Compactness.COMPACT);
         assertEquals("1m30s", sd.formatDurationSeconds(90));
     }
+
+    // ================================================================
+    // Short compactness — relative time
+    // ================================================================
+
+    // 18.1
+    @Test
+    void s18_1DaysAndHoursBothKept() {
+        SayableDuration f = new SayableDuration(Locales.MEN, Compactness.SHORT);
+        assertEquals("l\u0254h\u0254nga 2, awa 14 taa gb\u0254y\u0254", f.formatSince("2025-01-20T01:32:11", "2025-01-22T15:39:16"));
+    }
+
+    // ================================================================
+    // Range (500-year ceiling)
+    // ================================================================
+
+    // 19.1
+    @Test
+    void s19_1500JulianYears6000MonthsTheCeiling() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertEquals("500 years", f.formatDurationSeconds(15778800000L));
+    }
+
+    // 19.2
+    @Test
+    void s19_2Over6000Months() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatDurationSeconds(15800000000L));
+    }
+
+    // 19.3
+    @Test
+    void s19_3WellBeyondTheCeilingAnd32Bit() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatDurationSeconds(99999999999L));
+    }
+
+    // 19.4
+    @Test
+    void s19_4525YearsAgo() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatSince("1500-01-01T00:00:00", "2025-01-01T00:00:00"));
+    }
+
+    // 19.5
+    @Test
+    void s19_5575YearsFromNow() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatUntil("2600-01-01T00:00:00", "2025-01-01T00:00:00"));
+    }
+
+    // ================================================================
+    // Timestamp validation
+    // ================================================================
+
+    // 20.1
+    @Test
+    void s20_1SecondsAreOptional() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertEquals("1\u00BD hours", f.formatDurationIso("2025-01-15T10:00", "2025-01-15T11:30:00"));
+    }
+
+    // 20.2
+    @Test
+    void s20_2MinutesAreRequired() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatDurationIso("2025-01-15T10", "2025-01-15T11:30:00"));
+    }
+
+    // 20.3
+    @Test
+    void s20_3UnpaddedDate() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatDurationIso("2025-1-5T10:00:00", "2025-01-15T11:30:00"));
+    }
+
+    // 20.4
+    @Test
+    void s20_4ImpossibleDate() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatDurationIso("2025-02-30T10:00:00", "2025-03-15T11:30:00"));
+    }
+
+    // 20.5
+    @Test
+    void s20_5HourOutOfRange() {
+        SayableDuration f = new SayableDuration(Locales.EN);
+        assertNull(f.formatSince("2025-01-15T10:00:00", "2025-01-15T25:00:00"));
+    }
 }

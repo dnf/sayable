@@ -296,6 +296,54 @@ check('17.1 compact 1h', sd_compact.format_duration(3600, ''), '1h');
 check('17.2 compact 1m30s', sd_compact.format_duration(90, ''), '1m30s');
 
 % ================================================================
+% 18. Short compactness — relative time
+% ================================================================
+printf('Section 18: Short compactness — relative time\n');
+
+% 18.1
+check('18.1 men short since keeps days and hours', sayable_duration_new(locale_men(), 'short').format_since('2025-01-20T01:32:11', '2025-01-22T15:39:16'), 'lɔhɔnga 2, awa 14 taa gbɔyɔ');
+
+% ================================================================
+% 19. Range (500-year ceiling)
+% ================================================================
+printf('Section 19: Range (500-year ceiling)\n');
+
+% 19.1
+check('19.1 500 Julian years', sd.format_duration(15778800000, ''), '500 years');
+
+% 19.2
+check('19.2 over 6000 months', sd.format_duration(15800000000, ''), []);
+
+% 19.3
+check('19.3 well beyond the ceiling', sd.format_duration(99999999999, ''), []);
+
+% 19.4
+check('19.4 525 years ago', sd.format_since('1500-01-01T00:00:00', '2025-01-01T00:00:00'), []);
+
+% 19.5
+check('19.5 575 years from now', sd.format_until('2600-01-01T00:00:00', '2025-01-01T00:00:00'), []);
+
+% ================================================================
+% 20. Timestamp validation
+% ================================================================
+printf('Section 20: Timestamp validation\n');
+
+% 20.1
+check('20.1 seconds are optional', sd.format_duration('2025-01-15T10:00', '2025-01-15T11:30:00'), '1½ hours');
+
+% 20.2
+check('20.2 minutes are required', sd.format_duration('2025-01-15T10', '2025-01-15T11:30:00'), []);
+
+% 20.3
+check('20.3 unpadded date', sd.format_duration('2025-1-5T10:00:00', '2025-01-15T11:30:00'), []);
+
+% 20.4
+check('20.4 impossible date', sd.format_duration('2025-02-30T10:00:00', '2025-03-15T11:30:00'), []);
+
+% 20.5
+check('20.5 hour out of range', sd.format_since('2025-01-15T10:00:00', '2025-01-15T25:00:00'), []);
+
+% ================================================================
 % Summary
 % ================================================================
 printf('\n');

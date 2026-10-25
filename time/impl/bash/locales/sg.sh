@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/sg.json
 
-_locale_sg() {
+_sayabletime_locale_sg() {
     _clock_hours=('bâlè-ûse' 'ôko' 'ûse' 'otâ' 'usïö' 'okü' 'ömënë' 'mbïrïmbïrï' 'mënâmbârâ' 'gonambâlâ' 'bâlè' 'bâlè na ôko')
     _clock_midnight='gï na lögö'
     _clock_noon='lâ nzönï'

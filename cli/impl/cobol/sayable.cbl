@@ -69,6 +69,10 @@
                ELSE
                    DISPLAY WS-ARG-IDX UPON ARGUMENT-NUMBER
                    ACCEPT REQ-ARG(WS-ARG-IDX) FROM ARGUMENT-VALUE
+      *>           A command-line argument's trailing blanks can't be
+      *>           told from padding, so they don't count here.
+                   MOVE FUNCTION STORED-CHAR-LENGTH(REQ-ARG(WS-ARG-IDX))
+                       TO REQ-ARG-LEN(WS-ARG-IDX)
                    MOVE WS-ARG-IDX TO REQ-ARG-COUNT
                END-IF
            END-PERFORM
@@ -126,6 +130,7 @@
            END-IF
            ADD 1 TO REQ-ARG-COUNT
            COMPUTE WS-FIELD-LEN = WS-CHAR-IDX - WS-FIELD-START
+           MOVE WS-FIELD-LEN TO REQ-ARG-LEN(REQ-ARG-COUNT)
            IF WS-FIELD-LEN = 0
                MOVE SPACES TO REQ-ARG(REQ-ARG-COUNT)
            ELSE

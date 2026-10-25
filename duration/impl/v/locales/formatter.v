@@ -97,11 +97,11 @@ pub fn new_sayable_duration(locale &DurationLocale, compactness Compactness) Say
 }
 
 // format_duration formats a duration given in seconds.
-pub fn (sd &SayableDuration) format_duration(total_seconds int) ?string {
+pub fn (sd &SayableDuration) format_duration(total_seconds i64) ?string {
 	if total_seconds < 0 {
 		return none
 	}
-	return sd.format_duration_seconds(total_seconds)
+	return sd.format_within_ceiling(total_seconds)
 }
 
 // format_duration_iso formats a duration between two ISO timestamps.
@@ -115,7 +115,7 @@ pub fn (sd &SayableDuration) format_duration_iso(start string, end string) ?stri
 	if diff < 0 {
 		diff = -diff
 	}
-	return sd.format_duration_seconds(int(diff))
+	return sd.format_within_ceiling(diff)
 }
 
 // format_since formats elapsed time as 'X ago'.
@@ -132,7 +132,7 @@ pub fn (sd &SayableDuration) format_since(start string, as_of string) ?string {
 	if diff == 0 {
 		return sd.just_now
 	}
-	dur := sd.format_duration_seconds(int(diff))
+	dur := sd.format_within_ceiling(diff) or { return none }
 	return sd.ago.replace('{0}', dur)
 }
 
@@ -150,11 +150,30 @@ pub fn (sd &SayableDuration) format_until(target string, as_of string) ?string {
 	if diff == 0 {
 		return sd.just_now
 	}
-	dur := sd.format_duration_seconds(int(diff))
+	dur := sd.format_within_ceiling(diff) or { return none }
 	return sd.in_future.replace('{0}', dur)
 }
 
-fn (sd &SayableDuration) format_duration_seconds(total int) string {
+// max_duration_months is the 500-year ceiling, the same as sayable-age.
+const max_duration_months = 6000
+
+// approximate_months counts months from whole days, 30.44 days to the month, rounded.
+fn approximate_months(total_days i64) i64 {
+	return i64(math.round(f64(total_days) / 30.44))
+}
+
+// format_within_ceiling applies the duration tiers; none beyond the 500-year ceiling.
+fn (sd &SayableDuration) format_within_ceiling(total i64) ?string {
+	whole_days := total / 86400
+	if whole_days >= 30 && approximate_months(whole_days) > max_duration_months {
+		return none
+	}
+	return sd.format_duration_seconds(total)
+}
+
+// format_duration_seconds applies the duration tiers within the ceiling, where
+// every count fits an int.
+fn (sd &SayableDuration) format_duration_seconds(total i64) string {
 	// 0 seconds
 	if total == 0 {
 		return sd.just_now
@@ -162,11 +181,11 @@ fn (sd &SayableDuration) format_duration_seconds(total int) string {
 
 	// 1-59 seconds
 	if total < 60 {
-		return resolve_unit(total, sd.second, sd.locale, '')
+		return resolve_unit(int(total), sd.second, sd.locale, '')
 	}
 
-	total_minutes := total / 60
-	remainder_seconds := total % 60
+	total_minutes := int(total / 60)
+	remainder_seconds := int(total % 60)
 
 	// 1-4 minutes: minutes + seconds
 	if total_minutes < 5 {
@@ -182,8 +201,8 @@ fn (sd &SayableDuration) format_duration_seconds(total int) string {
 		return resolve_unit(total_minutes, sd.minute, sd.locale, '')
 	}
 
-	total_hours := total / 3600
-	remainder_minutes := (total % 3600) / 60
+	total_hours := int(total / 3600)
+	remainder_minutes := int((total % 3600) / 60)
 
 	// 1-5 hours: hours + minutes (with half marker)
 	if total_hours <= 5 {
@@ -202,8 +221,8 @@ fn (sd &SayableDuration) format_duration_seconds(total int) string {
 		return resolve_unit(total_hours, sd.hour, sd.locale, '')
 	}
 
-	total_days := total / 86400
-	remainder_hours := (total % 86400) / 3600
+	total_days := int(total / 86400)
+	remainder_hours := int((total % 86400) / 3600)
 
 	// 1-2 days: days + hours (with half marker)
 	if total_days <= 2 {
@@ -235,7 +254,7 @@ fn (sd &SayableDuration) format_duration_seconds(total int) string {
 	}
 
 	// Approximate months (30.44 days average)
-	mut total_months := int(math.round(f64(total_days) / 30.44))
+	mut total_months := int(approximate_months(total_days))
 
 	// 1-11 months
 	if total_months < 12 {
@@ -287,55 +306,90 @@ fn resolve_unit(count int, uf UnitForms, loc &DurationLocale, half string) strin
 	return result
 }
 
-fn parse_iso_to_seconds(iso_str string) ?i64 {
-	if iso_str.len == 0 {
+// digit_run returns the number of leading ASCII digits in s.
+fn digit_run(s string) int {
+	mut n := 0
+	for n < s.len && s[n] >= `0` && s[n] <= `9` {
+		n++
+	}
+	return n
+}
+
+// is_zone_suffix reports whether s is empty, "Z", or "+HH:MM" / "-HH:MM".
+fn is_zone_suffix(s string) bool {
+	if s.len == 0 {
+		return true
+	}
+	if s.len == 1 {
+		return s[0] == `Z`
+	}
+	return s.len == 6 && (s[0] == `+` || s[0] == `-`) && digit_run(s[1..3]) == 2 && s[3] == `:`
+		&& digit_run(s[4..6]) == 2
+}
+
+// parse_clock parses H:MM or HH:MM, optional :SS, optional . plus digits after
+// the seconds, and an optional zone suffix, which is validated but ignored,
+// into (hour, minute, second).
+fn parse_clock(clock string) ?(int, int, int) {
+	hour_len := digit_run(clock)
+	if hour_len < 1 || hour_len > 2 || clock.len < hour_len + 3 || clock[hour_len] != `:`
+		|| digit_run(clock[hour_len + 1..hour_len + 3]) != 2 {
 		return none
 	}
-
-	t_pos := iso_str.index('T') or { return none }
-	date_part := iso_str[..t_pos]
-	mut time_part := iso_str[t_pos + 1..]
-
-	// Strip timezone
-	plus_pos := time_part.index('+') or { -1 }
-	if plus_pos >= 0 {
-		time_part = time_part[..plus_pos]
-	}
-	z_pos := time_part.index('Z') or { -1 }
-	if z_pos >= 0 {
-		time_part = time_part[..z_pos]
-	}
-
-	// Parse date
-	dp := date_part.split('-')
-	if dp.len != 3 {
-		return none
-	}
-	year := dp[0].int()
-	month := dp[1].int()
-	day := dp[2].int()
-
-	// Parse time
-	tp := time_part.split(':')
-	hour := tp[0].int()
-	mut minute := 0
+	hour := str_to_int(clock[..hour_len]) or { return none }
+	minute := str_to_int(clock[hour_len + 1..hour_len + 3]) or { return none }
 	mut second := 0
-	if tp.len > 1 {
-		minute = tp[1].int()
-	}
-	if tp.len > 2 {
-		// Handle fractional seconds
-		sec_str := tp[2]
-		dot_pos := sec_str.index('.') or { -1 }
-		if dot_pos >= 0 {
-			second = sec_str[..dot_pos].int()
-		} else {
-			second = sec_str.int()
+	mut rest := clock[hour_len + 3..]
+	if rest.len > 0 && rest[0] == `:` {
+		if rest.len < 3 || digit_run(rest[1..3]) != 2 {
+			return none
+		}
+		second = str_to_int(rest[1..3]) or { return none }
+		rest = rest[3..]
+		if rest.len > 0 && rest[0] == `.` {
+			fraction_len := digit_run(rest[1..])
+			if fraction_len == 0 {
+				return none
+			}
+			rest = rest[1 + fraction_len..]
 		}
 	}
+	if !is_zone_suffix(rest) || hour > 23 || minute > 59 || second > 59 {
+		return none
+	}
+	return hour, minute, second
+}
 
-	days := days_since_epoch(year, month, day)
-	return days * 86400 + i64(hour) * 3600 + i64(minute) * 60 + i64(second)
+// str_to_int converts a non-empty run of ASCII digits; none if any isn't a digit.
+fn str_to_int(s string) ?int {
+	if s.len == 0 {
+		return none
+	}
+	mut n := 0
+	for c in s {
+		if c < `0` || c > `9` {
+			return none
+		}
+		n = n * 10 + int(c - `0`)
+	}
+	return n
+}
+
+// parse_iso_to_seconds parses a timestamp YYYY-MM-DDTHH:MM[:SS[.fff]][zone]
+// (docs/input-formats.md) to seconds since 2000-01-01 for diffing.
+fn parse_iso_to_seconds(iso_str string) ?i64 {
+	if iso_str.len < 11 || iso_str[4] != `-` || iso_str[7] != `-` || iso_str[10] != `T` {
+		return none
+	}
+	year := str_to_int(iso_str[0..4]) or { return none }
+	month := str_to_int(iso_str[5..7]) or { return none }
+	day := str_to_int(iso_str[8..10]) or { return none }
+	if month < 1 || month > 12 || day < 1 || day > days_in_month(year, month) {
+		return none
+	}
+	hour, minute, second := parse_clock(iso_str[11..]) or { return none }
+	return days_since_epoch(year, month, day) * 86400 + i64(hour) * 3600 + i64(minute) * 60 +
+		i64(second)
 }
 
 fn is_leap_year(y int) bool {

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ay.json
 
-_locale_ay() {
+_sayabletime_locale_ay() {
     _clock_hours=('tunka payani' 'maya' 'paya' 'kimsa' 'pusi' 'phisqa' 'suxta' 'paqallqu' 'kimsaqallqu' 'llantunka' 'tunka' 'tunka mayani')
     _clock_midnight='aruma chika'
     _clock_noon='chika uru'

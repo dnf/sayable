@@ -57,7 +57,7 @@ function result = do_format_age(date_of_birth, as_of, locale, units, half, delim
     return;
   endif
   if (diff_days < 7)
-    result = resolve_unit(diff_days, units.day, locale);
+    result = resolve_age_unit(diff_days, units.day, locale);
     return;
   endif
 
@@ -65,16 +65,16 @@ function result = do_format_age(date_of_birth, as_of, locale, units, half, delim
   if (months < 3)
     weeks = floor(diff_days / 7);
     days = mod(diff_days, 7);
-    result = resolve_unit(weeks, units.week, locale);
+    result = resolve_age_unit(weeks, units.week, locale);
     if (days > 0)
-      result = [result delimiter resolve_unit(days, units.day, locale)];
+      result = [result delimiter resolve_age_unit(days, units.day, locale)];
     endif
     return;
   endif
 
   % Tier 3: 3-23 months
   if (months < 24)
-    result = resolve_unit(months, units.month, locale);
+    result = resolve_age_unit(months, units.month, locale);
     return;
   endif
 
@@ -83,10 +83,10 @@ function result = do_format_age(date_of_birth, as_of, locale, units, half, delim
     years = floor(months / 12);
     rem = mod(months, 12);
     if (rem == 0)
-      result = resolve_unit(years, units.year, locale);
+      result = resolve_age_unit(years, units.year, locale);
       return;
     endif
-    result = [resolve_unit(years, units.year, locale) delimiter resolve_unit(rem, units.month, locale)];
+    result = [resolve_age_unit(years, units.year, locale) delimiter resolve_age_unit(rem, units.month, locale)];
     return;
   endif
 
@@ -95,15 +95,15 @@ function result = do_format_age(date_of_birth, as_of, locale, units, half, delim
     years = floor(months / 12);
     rem = mod(months, 12);
     if (rem >= 6)
-      result = resolve_unit(years, units.year, locale, half);
+      result = resolve_age_unit(years, units.year, locale, half);
       return;
     endif
-    result = resolve_unit(years, units.year, locale);
+    result = resolve_age_unit(years, units.year, locale);
     return;
   endif
 
   % Tier 6: 7+ years
-  result = resolve_unit(floor(months / 12), units.year, locale);
+  result = resolve_age_unit(floor(months / 12), units.year, locale);
 endfunction
 
 function result = do_format_stage(date_of_birth, as_of, gender, locale)

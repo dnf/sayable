@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/zdj.json
 
-_plural_zdj() {
+_sayableduration_plural_zdj() {
     echo "other"
 }
 
-_locale_zdj() {
+_sayableduration_locale_zdj() {
     _unit_second='sekunde {n}'
     _unit_minute='dakika {n}'
     _unit_hour='saa {n}'
@@ -46,5 +46,5 @@ _locale_zdj() {
     _compact_delimiter=''
     _compact_ago='{0} zilizopita'
     _compact_in_future='ha {0}'
-    _plural_func=_plural_zdj
+    _plural_func=_sayableduration_plural_zdj
 }

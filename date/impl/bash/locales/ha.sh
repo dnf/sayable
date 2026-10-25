@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ha.json
 
-_locale_ha() {
+_sayabledate_locale_ha() {
     _months=('Janairu' 'Fabrairu' 'Maris' 'Afrilu' 'Mayu' 'Yuni' 'Yuli' 'Agusta' 'Satumba' 'Oktoba' 'Nuwamba' 'Disamba')
     _weekdays=('Lahadi' 'Litinin' 'Talata' 'Laraba' 'Alhamis' 'Jummaʼa' 'Asabar')
     _day_format='{n}'

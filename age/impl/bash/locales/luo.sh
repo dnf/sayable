@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/luo.json
 
-_plural_luo() {
+_sayableage_plural_luo() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_luo() {
+_sayableage_locale_luo() {
     _unit_day_one='odiechieng'\'' {n}'
     _unit_day_other='ndalo {n}'
     _unit_week_one='juma {n}'
@@ -46,5 +46,5 @@ _locale_luo() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_luo
+    _plural_func=_sayableage_plural_luo
 }

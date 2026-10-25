@@ -1365,3 +1365,113 @@ test "get empty null" {
 test "get(EN) null" {
     try std.testing.expect(pt.locales.get("EN") == null);
 }
+
+// ================================================================
+// Section 31: Weeks and days across month ends
+// ================================================================
+// 31.1
+test "31.1 88 days across a 28-day February" {
+    var buf: [256]u8 = undefined;
+    try expectStr("12 weeks, 4 days", pt.formatAge(&buf, &pt.locales.en, .normal, "2016-12-31", "2017-03-29"));
+}
+
+// 31.2
+test "31.2 90 days across a year end into a leap year" {
+    var buf: [256]u8 = undefined;
+    try expectStr("12 weeks, 6 days", pt.formatAge(&buf, &pt.locales.en, .normal, "1991-11-27", "1992-02-25"));
+}
+
+// 31.3
+test "31.3 33 days across a year end" {
+    var buf: [256]u8 = undefined;
+    try expectStr("4 weeks, 5 days", pt.formatAge(&buf, &pt.locales.en, .normal, "2020-11-30", "2021-01-02"));
+}
+
+// 31.4
+test "31.4 Compact form of 31.1" {
+    var buf: [256]u8 = undefined;
+    try expectStr("12w4d", pt.formatAge(&buf, &pt.locales.en, .compact, "2016-12-31", "2017-03-29"));
+}
+
+// ================================================================
+// Section 32: Half years take their plural form from whole years
+// ================================================================
+// 32.1
+test "32.1 Polish 3 is 'few'" {
+    var buf: [256]u8 = undefined;
+    try expectStr("3 i pół lata", pt.formatAge(&buf, &pt.locales.pl, .normal, "2021-06-15", "2025-01-15"));
+}
+
+// 32.2
+test "32.2 Polish 5 is 'many'" {
+    var buf: [256]u8 = undefined;
+    try expectStr("5 i pół lat", pt.formatAge(&buf, &pt.locales.pl, .short_mode, "2020-06-15", "2025-12-15"));
+}
+
+// 32.3
+test "32.3 Tachelhit 6 is 'few'" {
+    var buf: [256]u8 = undefined;
+    try expectStr("6 iseggasen d uzgen", pt.formatAge(&buf, &pt.locales.shi, .normal, "2005-06-08", "2012-06-07"));
+}
+
+// ================================================================
+// Section 33: Input validation
+// ================================================================
+// 33.1
+test "33.1 February 30 doesn't exist" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, "2025-02-30", "2032-06-25"));
+}
+
+// 33.2
+test "33.2 Month 13" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, "2025-13-01", "2027-01-31"));
+}
+
+// 33.3
+test "33.3 February 29 in a non-leap year" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, "2023-02-29", "2025-03-01"));
+}
+
+// 33.4
+test "33.4 Day 00" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, "2025-06-00", "2027-02-25"));
+}
+
+// 33.5
+test "33.5 Unpadded month and day" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, "2025-6-1", "2027-02-25"));
+}
+
+// 33.6
+test "33.6 Surrounding whitespace" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, " 2025-06-01", "2027-02-25"));
+}
+
+// 33.7
+test "33.7 A datetime is not a date" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, "2025-06-15T10:00:00", "2027-02-25"));
+}
+
+// 33.8
+test "33.8 Invalid asOf" {
+    var buf: [256]u8 = undefined;
+    try expectNull(pt.formatAge(&buf, &pt.locales.en, .normal, "2020-01-01", "2025-04-31"));
+}
+
+// 33.9
+test "33.9 formatStage validates too" {
+    try expectNull(pt.formatStage(&pt.locales.en, "2025-02-30", "2027-09-05", ""));
+}
+
+// 33.10
+test "33.10 February 29 in a leap year is valid" {
+    var buf: [256]u8 = undefined;
+    try expectStr("2 years", pt.formatAge(&buf, &pt.locales.en, .normal, "2024-02-29", "2026-03-01"));
+}

@@ -21,7 +21,9 @@ public object Locales {
     // ================================================================
     // AF — Afrikaans
     // ================================================================
-    public val AF: DateLocale = DateLocale(
+    public val AF: DateLocale = buildAf()
+
+    private fun buildAf(): DateLocale = DateLocale(
         code = "af",
         months = listOf("Januarie", "Februarie", "Maart", "April", "Mei", "Junie", "Julie", "Augustus", "September", "Oktober", "November", "Desember"),
         weekdays = listOf("Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"),
@@ -54,7 +56,9 @@ public object Locales {
     // ================================================================
     // AK — Akan
     // ================================================================
-    public val AK: DateLocale = DateLocale(
+    public val AK: DateLocale = buildAk()
+
+    private fun buildAk(): DateLocale = DateLocale(
         code = "ak",
         months = listOf("Ɔpɛpɔn", "Ɔgyefuo", "Ɔbenem", "Oforisuo", "Kotonimma", "Ayɛwohomumu", "Kutawonkuku", "Ɔsannaa", "Ɛbɔ", "Ahinime", "Obubuo", "Ɔpenimba"),
         weekdays = listOf("Kwasiada", "Ɛdwoada", "Ɛbenada", "Wukuada", "Yawoada", "Efiada", "Memeneda"),
@@ -87,7 +91,9 @@ public object Locales {
     // ================================================================
     // AM — Amharic
     // ================================================================
-    public val AM: DateLocale = DateLocale(
+    public val AM: DateLocale = buildAm()
+
+    private fun buildAm(): DateLocale = DateLocale(
         code = "am",
         months = listOf("ጃንዋሪ", "ፌብሩወሪ", "ማርች", "ኤፕሪል", "ሜይ", "ጁን", "ጁላይ", "ኦገስት", "ሴፕቴምበር", "ኦክቶበር", "ኖቬምበር", "ዲሴምበር"),
         weekdays = listOf("እሑድ", "ሰኞ", "ማክሰኞ", "ረቡዕ", "ሐሙስ", "ዓርብ", "ቅዳሜ"),
@@ -120,7 +126,9 @@ public object Locales {
     // ================================================================
     // AR — Arabic
     // ================================================================
-    public val AR: DateLocale = DateLocale(
+    public val AR: DateLocale = buildAr()
+
+    private fun buildAr(): DateLocale = DateLocale(
         code = "ar",
         months = listOf("يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"),
         weekdays = listOf("الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"),
@@ -153,7 +161,9 @@ public object Locales {
     // ================================================================
     // AY — Aymara
     // ================================================================
-    public val AY: DateLocale = DateLocale(
+    public val AY: DateLocale = buildAy()
+
+    private fun buildAy(): DateLocale = DateLocale(
         code = "ay",
         months = listOf("Chinuqa", "Anata", "Achuqa", "Qasiwi", "Llamayu", "Marat'aqa", "Willkakuti", "Llumpaqa", "Sata", "Taypisata", "Lapaqa", "Jalluqallta"),
         weekdays = listOf("Samaya", "Maytita", "Paytita", "Iritita", "Yunkita", "Chipanata", "Takirita"),
@@ -184,7 +194,9 @@ public object Locales {
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
-    public val AZ: DateLocale = DateLocale(
+    public val AZ: DateLocale = buildAz()
+
+    private fun buildAz(): DateLocale = DateLocale(
         code = "az",
         months = listOf("yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avqust", "sentyabr", "oktyabr", "noyabr", "dekabr"),
         weekdays = listOf("bazar", "bazar ertəsi", "çərşənbə axşamı", "çərşənbə", "cümə axşamı", "cümə", "şənbə"),
@@ -217,7 +229,9 @@ public object Locales {
     // ================================================================
     // BCI — Baoulé
     // ================================================================
-    public val BCI: DateLocale = DateLocale(
+    public val BCI: DateLocale = buildBci()
+
+    private fun buildBci(): DateLocale = DateLocale(
         code = "bci",
         months = listOf("Zanvie", "Flevie", "Masi", "Avrili", "Mɛ", "Zuɛn", "Zulɛ", "Uti", "Sɛtanbu", "Ɔtɔbu", "Novanbu", "Desanbu"),
         weekdays = listOf("Mɔndi", "Lunji", "Madi", "Mliku", "Juedi", "Vaandredi", "Sanmdi"),
@@ -250,7 +264,9 @@ public object Locales {
     // ================================================================
     // BE — Belarusian
     // ================================================================
-    public val BE: DateLocale = DateLocale(
+    public val BE: DateLocale = buildBe()
+
+    private fun buildBe(): DateLocale = DateLocale(
         code = "be",
         months = listOf("студзень", "люты", "сакавік", "красавік", "май", "чэрвень", "ліпень", "жнівень", "верасень", "кастрычнік", "лістапад", "снежань"),
         weekdays = listOf("нядзеля", "панядзелак", "аўторак", "серада", "чацвер", "пятніца", "субота"),
@@ -284,7 +300,9 @@ public object Locales {
     // ================================================================
     // BEM — Bemba
     // ================================================================
-    public val BEM: DateLocale = DateLocale(
+    public val BEM: DateLocale = buildBem()
+
+    private fun buildBem(): DateLocale = DateLocale(
         code = "bem",
         months = listOf("Januari", "Februari", "Machi", "Epreli", "Mei", "Juni", "Julai", "Ogasti", "Septemba", "Oktoba", "Novemba", "Disemba"),
         weekdays = listOf("Pa Mulungu", "Pa Bwali", "Pa Bibili", "Pa Butatu", "Pa Bune", "Pa Busano", "Pa Mulembe"),
@@ -317,7 +335,9 @@ public object Locales {
     // ================================================================
     // BG — Bulgarian
     // ================================================================
-    public val BG: DateLocale = DateLocale(
+    public val BG: DateLocale = buildBg()
+
+    private fun buildBg(): DateLocale = DateLocale(
         code = "bg",
         months = listOf("януари", "февруари", "март", "април", "май", "юни", "юли", "август", "септември", "октомври", "ноември", "декември"),
         weekdays = listOf("неделя", "понеделник", "вторник", "сряда", "четвъртък", "петък", "събота"),
@@ -350,7 +370,9 @@ public object Locales {
     // ================================================================
     // BI — Bislama
     // ================================================================
-    public val BI: DateLocale = DateLocale(
+    public val BI: DateLocale = buildBi()
+
+    private fun buildBi(): DateLocale = DateLocale(
         code = "bi",
         months = listOf("Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba"),
         weekdays = listOf("Sande", "Mande", "Tusde", "Wenesde", "Tosde", "Fraede", "Sarede"),
@@ -383,7 +405,9 @@ public object Locales {
     // ================================================================
     // BM — Bambara
     // ================================================================
-    public val BM: DateLocale = DateLocale(
+    public val BM: DateLocale = buildBm()
+
+    private fun buildBm(): DateLocale = DateLocale(
         code = "bm",
         months = listOf("Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"),
         weekdays = listOf("Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"),
@@ -416,7 +440,9 @@ public object Locales {
     // ================================================================
     // BN — Bengali
     // ================================================================
-    public val BN: DateLocale = DateLocale(
+    public val BN: DateLocale = buildBn()
+
+    private fun buildBn(): DateLocale = DateLocale(
         code = "bn",
         months = listOf("জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"),
         weekdays = listOf("রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"),
@@ -449,7 +475,9 @@ public object Locales {
     // ================================================================
     // BR — Breton
     // ================================================================
-    public val BR: DateLocale = DateLocale(
+    public val BR: DateLocale = buildBr()
+
+    private fun buildBr(): DateLocale = DateLocale(
         code = "br",
         months = listOf("Genver", "C'hwevrer", "Meurzh", "Ebrel", "Mae", "Mezheven", "Gouere", "Eost", "Gwengolo", "Here", "Du", "Kerzu"),
         weekdays = listOf("Sul", "Lun", "Meurzh", "Merc'her", "Yaou", "Gwener", "Sadorn"),
@@ -480,7 +508,9 @@ public object Locales {
     // ================================================================
     // BS — Bosnian
     // ================================================================
-    public val BS: DateLocale = DateLocale(
+    public val BS: DateLocale = buildBs()
+
+    private fun buildBs(): DateLocale = DateLocale(
         code = "bs",
         months = listOf("januar", "februar", "mart", "april", "maj", "juni", "juli", "august", "septembar", "oktobar", "novembar", "decembar"),
         weekdays = listOf("nedjelja", "ponedjeljak", "utorak", "srijeda", "četvrtak", "petak", "subota"),
@@ -513,7 +543,9 @@ public object Locales {
     // ================================================================
     // CA — Catalan
     // ================================================================
-    public val CA: DateLocale = DateLocale(
+    public val CA: DateLocale = buildCa()
+
+    private fun buildCa(): DateLocale = DateLocale(
         code = "ca",
         months = listOf("gener", "febrer", "març", "abril", "maig", "juny", "juliol", "agost", "setembre", "octubre", "novembre", "desembre"),
         weekdays = listOf("diumenge", "dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte"),
@@ -546,7 +578,9 @@ public object Locales {
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
-    public val CAK: DateLocale = DateLocale(
+    public val CAK: DateLocale = buildCak()
+
+    private fun buildCak(): DateLocale = DateLocale(
         code = "cak",
         months = listOf("Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'"),
         weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
@@ -579,7 +613,9 @@ public object Locales {
     // ================================================================
     // CEB — Cebuano
     // ================================================================
-    public val CEB: DateLocale = DateLocale(
+    public val CEB: DateLocale = buildCeb()
+
+    private fun buildCeb(): DateLocale = DateLocale(
         code = "ceb",
         months = listOf("Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Septyembre", "Oktubre", "Nobyembre", "Disyembre"),
         weekdays = listOf("Dominggo", "Lunes", "Martes", "Miyerkules", "Huwebes", "Biyernes", "Sabado"),
@@ -612,7 +648,9 @@ public object Locales {
     // ================================================================
     // CS — Czech
     // ================================================================
-    public val CS: DateLocale = DateLocale(
+    public val CS: DateLocale = buildCs()
+
+    private fun buildCs(): DateLocale = DateLocale(
         code = "cs",
         months = listOf("leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"),
         weekdays = listOf("neděle", "pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota"),
@@ -646,7 +684,9 @@ public object Locales {
     // ================================================================
     // CY — Welsh
     // ================================================================
-    public val CY: DateLocale = DateLocale(
+    public val CY: DateLocale = buildCy()
+
+    private fun buildCy(): DateLocale = DateLocale(
         code = "cy",
         months = listOf("Ionawr", "Chwefror", "Mawrth", "Ebrill", "Mai", "Mehefin", "Gorffennaf", "Awst", "Medi", "Hydref", "Tachwedd", "Rhagfyr"),
         weekdays = listOf("Dydd Sul", "Dydd Llun", "Dydd Mawrth", "Dydd Mercher", "Dydd Iau", "Dydd Gwener", "Dydd Sadwrn"),
@@ -679,7 +719,9 @@ public object Locales {
     // ================================================================
     // DA — Danish
     // ================================================================
-    public val DA: DateLocale = DateLocale(
+    public val DA: DateLocale = buildDa()
+
+    private fun buildDa(): DateLocale = DateLocale(
         code = "da",
         months = listOf("januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"),
         weekdays = listOf("søndag", "mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag"),
@@ -712,7 +754,9 @@ public object Locales {
     // ================================================================
     // DE — German
     // ================================================================
-    public val DE: DateLocale = DateLocale(
+    public val DE: DateLocale = buildDe()
+
+    private fun buildDe(): DateLocale = DateLocale(
         code = "de",
         months = listOf("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"),
         weekdays = listOf("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"),
@@ -745,7 +789,9 @@ public object Locales {
     // ================================================================
     // DIN — Dinka
     // ================================================================
-    public val DIN: DateLocale = DateLocale(
+    public val DIN: DateLocale = buildDin()
+
+    private fun buildDin(): DateLocale = DateLocale(
         code = "din",
         months = listOf("Tiɔp in dit", "Pɛt", "Duɔ̈ɔ̈ŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk"),
         weekdays = listOf("Akɔl dhorou", "Kɔl jöŋ", "Kɔl rou", "Kɔl diäk", "Kɔl ŋuän", "Kɔl dhiëc", "Kɔl bäkäl"),
@@ -778,7 +824,9 @@ public object Locales {
     // ================================================================
     // DJE — Zarma
     // ================================================================
-    public val DJE: DateLocale = DateLocale(
+    public val DJE: DateLocale = buildDje()
+
+    private fun buildDje(): DateLocale = DateLocale(
         code = "dje",
         months = listOf("Žanwiye", "Feewiriye", "Marsi", "Awiril", "Me", "Žuweŋ", "Žuyye", "Ut", "Sektanbur", "Oktoobur", "Noowanbur", "Deesanbur"),
         weekdays = listOf("Alhadi", "Atini", "Atalaata", "Alarba", "Alhamisi", "Alzuma", "Asibiti"),
@@ -811,7 +859,9 @@ public object Locales {
     // ================================================================
     // DV — Dhivehi
     // ================================================================
-    public val DV: DateLocale = DateLocale(
+    public val DV: DateLocale = buildDv()
+
+    private fun buildDv(): DateLocale = DateLocale(
         code = "dv",
         months = listOf("ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު"),
         weekdays = listOf("އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"),
@@ -844,7 +894,9 @@ public object Locales {
     // ================================================================
     // DYU — Dyula
     // ================================================================
-    public val DYU: DateLocale = DateLocale(
+    public val DYU: DateLocale = buildDyu()
+
+    private fun buildDyu(): DateLocale = DateLocale(
         code = "dyu",
         months = listOf("Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburdukalo", "Desanburukalo"),
         weekdays = listOf("Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"),
@@ -877,7 +929,9 @@ public object Locales {
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
-    public val DZ: DateLocale = DateLocale(
+    public val DZ: DateLocale = buildDz()
+
+    private fun buildDz(): DateLocale = DateLocale(
         code = "dz",
         months = listOf("ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ"),
         weekdays = listOf("གཟའ་ཉི་མ", "གཟའ་ཟླ་བ", "གཟའ་མིག་དམར", "གཟའ་ལྷག་པ", "གཟའ་ཕུར་བུ", "གཟའ་པ་སངས", "གཟའ་སྤེན་པ"),
@@ -910,7 +964,9 @@ public object Locales {
     // ================================================================
     // EE — Ewe
     // ================================================================
-    public val EE: DateLocale = DateLocale(
+    public val EE: DateLocale = buildEe()
+
+    private fun buildEe(): DateLocale = DateLocale(
         code = "ee",
         months = listOf("Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Damɛ", "Masa", "Siamlɔm", "Dasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome"),
         weekdays = listOf("Kɔsiɖa", "Dzoɖa", "Braɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa"),
@@ -943,7 +999,9 @@ public object Locales {
     // ================================================================
     // EL — Greek
     // ================================================================
-    public val EL: DateLocale = DateLocale(
+    public val EL: DateLocale = buildEl()
+
+    private fun buildEl(): DateLocale = DateLocale(
         code = "el",
         months = listOf("Ιανουαρίου", "Φεβρουαρίου", "Μαρτίου", "Απριλίου", "Μαΐου", "Ιουνίου", "Ιουλίου", "Αυγούστου", "Σεπτεμβρίου", "Οκτωβρίου", "Νοεμβρίου", "Δεκεμβρίου"),
         weekdays = listOf("Κυριακή", "Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή", "Σάββατο"),
@@ -977,7 +1035,9 @@ public object Locales {
     // ================================================================
     // EN — English
     // ================================================================
-    public val EN: DateLocale = DateLocale(
+    public val EN: DateLocale = buildEn()
+
+    private fun buildEn(): DateLocale = DateLocale(
         code = "en",
         months = listOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
         weekdays = listOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"),
@@ -1010,7 +1070,9 @@ public object Locales {
     // ================================================================
     // ES — Spanish
     // ================================================================
-    public val ES: DateLocale = DateLocale(
+    public val ES: DateLocale = buildEs()
+
+    private fun buildEs(): DateLocale = DateLocale(
         code = "es",
         months = listOf("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"),
         weekdays = listOf("domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"),
@@ -1043,7 +1105,9 @@ public object Locales {
     // ================================================================
     // ET — Estonian
     // ================================================================
-    public val ET: DateLocale = DateLocale(
+    public val ET: DateLocale = buildEt()
+
+    private fun buildEt(): DateLocale = DateLocale(
         code = "et",
         months = listOf("jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"),
         weekdays = listOf("pühapäev", "esmaspäev", "teisipäev", "kolmapäev", "neljapäev", "reede", "laupäev"),
@@ -1076,7 +1140,9 @@ public object Locales {
     // ================================================================
     // EU — Basque
     // ================================================================
-    public val EU: DateLocale = DateLocale(
+    public val EU: DateLocale = buildEu()
+
+    private fun buildEu(): DateLocale = DateLocale(
         code = "eu",
         months = listOf("urtarril", "otsail", "martxo", "apiril", "maiatz", "ekain", "uztail", "abuztu", "irail", "urri", "azaro", "abendu"),
         weekdays = listOf("igandea", "astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata"),
@@ -1109,7 +1175,9 @@ public object Locales {
     // ================================================================
     // FA — Persian
     // ================================================================
-    public val FA: DateLocale = DateLocale(
+    public val FA: DateLocale = buildFa()
+
+    private fun buildFa(): DateLocale = DateLocale(
         code = "fa",
         months = listOf("ژانویه", "فوریه", "مارس", "آوریل", "مه", "ژوئن", "ژوئیه", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"),
         weekdays = listOf("یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"),
@@ -1142,7 +1210,9 @@ public object Locales {
     // ================================================================
     // FAN — Fang
     // ================================================================
-    public val FAN: DateLocale = DateLocale(
+    public val FAN: DateLocale = buildFan()
+
+    private fun buildFan(): DateLocale = DateLocale(
         code = "fan",
         months = listOf("Nzas Ngon", "Nzas Mekié", "Nzas Okúa", "Nzas Angón", "Nzas Obuí", "Nzas Okéna", "Nzas Osúa", "Nzas Mwom", "Nzas Ebulú", "Nzas Owono", "Nzas Owono-abé", "Nzas Nkéng"),
         weekdays = listOf("Esig", "Amvus", "Amvus-abé", "Amvus-alú", "Amvus-anyin", "Mba", "Ngon"),
@@ -1175,7 +1245,9 @@ public object Locales {
     // ================================================================
     // FF — Fulah
     // ================================================================
-    public val FF: DateLocale = DateLocale(
+    public val FF: DateLocale = buildFf()
+
+    private fun buildFf(): DateLocale = DateLocale(
         code = "ff",
         months = listOf("Siilo", "Colte", "Mbooy", "Seeɗto", "Duujal", "Korse", "Morso", "Juko", "Siilto", "Yarkomaa", "Jolal", "Bowte"),
         weekdays = listOf("Dewo", "Aaɓnde", "Mawbaare", "Njeslaare", "Naasaande", "Mawnde", "Hoore-biir"),
@@ -1208,7 +1280,9 @@ public object Locales {
     // ================================================================
     // FI — Finnish
     // ================================================================
-    public val FI: DateLocale = DateLocale(
+    public val FI: DateLocale = buildFi()
+
+    private fun buildFi(): DateLocale = DateLocale(
         code = "fi",
         months = listOf("tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinäkuu", "elokuu", "syyskuu", "lokakuu", "marraskuu", "joulukuu"),
         weekdays = listOf("sunnuntai", "maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai"),
@@ -1242,7 +1316,9 @@ public object Locales {
     // ================================================================
     // FIL — Filipino
     // ================================================================
-    public val FIL: DateLocale = DateLocale(
+    public val FIL: DateLocale = buildFil()
+
+    private fun buildFil(): DateLocale = DateLocale(
         code = "fil",
         months = listOf("Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Setyembre", "Oktubre", "Nobyembre", "Disyembre"),
         weekdays = listOf("Linggo", "Lunes", "Martes", "Miyerkules", "Huwebes", "Biyernes", "Sabado"),
@@ -1275,7 +1351,9 @@ public object Locales {
     // ================================================================
     // FJ — Fijian
     // ================================================================
-    public val FJ: DateLocale = DateLocale(
+    public val FJ: DateLocale = buildFj()
+
+    private fun buildFj(): DateLocale = DateLocale(
         code = "fj",
         months = listOf("Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba"),
         weekdays = listOf("Sigatapu", "Moniti", "Tusiti", "Vukelulu", "Lotulevu", "Vakaraubuka", "Vakarauwai"),
@@ -1308,7 +1386,9 @@ public object Locales {
     // ================================================================
     // FON — Fon
     // ================================================================
-    public val FON: DateLocale = DateLocale(
+    public val FON: DateLocale = buildFon()
+
+    private fun buildFon(): DateLocale = DateLocale(
         code = "fon",
         months = listOf("Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"),
         weekdays = listOf("Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"),
@@ -1341,7 +1421,9 @@ public object Locales {
     // ================================================================
     // FR — French
     // ================================================================
-    public val FR: DateLocale = DateLocale(
+    public val FR: DateLocale = buildFr()
+
+    private fun buildFr(): DateLocale = DateLocale(
         code = "fr",
         months = listOf("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"),
         weekdays = listOf("dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"),
@@ -1374,7 +1456,9 @@ public object Locales {
     // ================================================================
     // GA — Irish
     // ================================================================
-    public val GA: DateLocale = DateLocale(
+    public val GA: DateLocale = buildGa()
+
+    private fun buildGa(): DateLocale = DateLocale(
         code = "ga",
         months = listOf("Eanáir", "Feabhra", "Márta", "Aibreán", "Bealtaine", "Meitheamh", "Iúil", "Lúnasa", "Meán Fómhair", "Deireadh Fómhair", "Samhain", "Nollaig"),
         weekdays = listOf("Dé Domhnaigh", "Dé Luain", "Dé Máirt", "Dé Céadaoin", "Déardaoin", "Dé hAoine", "Dé Sathairn"),
@@ -1407,7 +1491,9 @@ public object Locales {
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
-    public val GD: DateLocale = DateLocale(
+    public val GD: DateLocale = buildGd()
+
+    private fun buildGd(): DateLocale = DateLocale(
         code = "gd",
         months = listOf("Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd"),
         weekdays = listOf("DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"),
@@ -1440,7 +1526,9 @@ public object Locales {
     // ================================================================
     // GL — Galician
     // ================================================================
-    public val GL: DateLocale = DateLocale(
+    public val GL: DateLocale = buildGl()
+
+    private fun buildGl(): DateLocale = DateLocale(
         code = "gl",
         months = listOf("xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"),
         weekdays = listOf("domingo", "luns", "martes", "mércores", "xoves", "venres", "sábado"),
@@ -1473,7 +1561,9 @@ public object Locales {
     // ================================================================
     // GN — Guarani
     // ================================================================
-    public val GN: DateLocale = DateLocale(
+    public val GN: DateLocale = buildGn()
+
+    private fun buildGn(): DateLocale = DateLocale(
         code = "gn",
         months = listOf("Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi"),
         weekdays = listOf("Arateĩ", "Arakõi", "Araapy", "Ararundy", "Arapo", "Arapoteĩ", "Arapokõi"),
@@ -1506,7 +1596,9 @@ public object Locales {
     // ================================================================
     // GU — Gujarati
     // ================================================================
-    public val GU: DateLocale = DateLocale(
+    public val GU: DateLocale = buildGu()
+
+    private fun buildGu(): DateLocale = DateLocale(
         code = "gu",
         months = listOf("જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર"),
         weekdays = listOf("રવિવાર", "સોમવાર", "મંગળવાર", "બુધવાર", "ગુરુવાર", "શુક્રવાર", "શનિવાર"),
@@ -1539,7 +1631,9 @@ public object Locales {
     // ================================================================
     // GV — Manx
     // ================================================================
-    public val GV: DateLocale = DateLocale(
+    public val GV: DateLocale = buildGv()
+
+    private fun buildGv(): DateLocale = DateLocale(
         code = "gv",
         months = listOf("Jerrey Geuree", "Toshiaght Arree", "Mayrnt", "Averil", "Boaldyn", "Mean Souree", "Jerrey Souree", "Luanistyn", "Mean Fouyir", "Jerrey Fouyir", "Mee Houney", "Mee ny Nollick"),
         weekdays = listOf("Jedoonee", "Jelhein", "Jemayrt", "Jercean", "Jerdein", "Jeheiney", "Jesarn"),
@@ -1570,7 +1664,9 @@ public object Locales {
     // ================================================================
     // HA — Hausa
     // ================================================================
-    public val HA: DateLocale = DateLocale(
+    public val HA: DateLocale = buildHa()
+
+    private fun buildHa(): DateLocale = DateLocale(
         code = "ha",
         months = listOf("Janairu", "Fabrairu", "Maris", "Afrilu", "Mayu", "Yuni", "Yuli", "Agusta", "Satumba", "Oktoba", "Nuwamba", "Disamba"),
         weekdays = listOf("Lahadi", "Litinin", "Talata", "Laraba", "Alhamis", "Jummaʼa", "Asabar"),
@@ -1603,7 +1699,9 @@ public object Locales {
     // ================================================================
     // HE — Hebrew
     // ================================================================
-    public val HE: DateLocale = DateLocale(
+    public val HE: DateLocale = buildHe()
+
+    private fun buildHe(): DateLocale = DateLocale(
         code = "he",
         months = listOf("ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"),
         weekdays = listOf("יום ראשון", "יום שני", "יום שלישי", "יום רביעי", "יום חמישי", "יום שישי", "שבת"),
@@ -1636,7 +1734,9 @@ public object Locales {
     // ================================================================
     // HI — Hindi
     // ================================================================
-    public val HI: DateLocale = DateLocale(
+    public val HI: DateLocale = buildHi()
+
+    private fun buildHi(): DateLocale = DateLocale(
         code = "hi",
         months = listOf("जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्तूबर", "नवंबर", "दिसंबर"),
         weekdays = listOf("रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"),
@@ -1669,7 +1769,9 @@ public object Locales {
     // ================================================================
     // HMN — Hmong
     // ================================================================
-    public val HMN: DateLocale = DateLocale(
+    public val HMN: DateLocale = buildHmn()
+
+    private fun buildHmn(): DateLocale = DateLocale(
         code = "hmn",
         months = listOf("Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis"),
         weekdays = listOf("Hnub Tim Ib", "Hnub Tim Ob", "Hnub Tim Peb", "Hnub Tim Plaub", "Hnub Tim Tsib", "Hnub Tim Rau", "Hnub Tim Xya"),
@@ -1702,7 +1804,9 @@ public object Locales {
     // ================================================================
     // HR — Croatian
     // ================================================================
-    public val HR: DateLocale = DateLocale(
+    public val HR: DateLocale = buildHr()
+
+    private fun buildHr(): DateLocale = DateLocale(
         code = "hr",
         months = listOf("siječanj", "veljača", "ožujak", "travanj", "svibanj", "lipanj", "srpanj", "kolovoz", "rujan", "listopad", "studeni", "prosinac"),
         weekdays = listOf("nedjelja", "ponedjeljak", "utorak", "srijeda", "četvrtak", "petak", "subota"),
@@ -1736,7 +1840,9 @@ public object Locales {
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
-    public val HT: DateLocale = DateLocale(
+    public val HT: DateLocale = buildHt()
+
+    private fun buildHt(): DateLocale = DateLocale(
         code = "ht",
         months = listOf("Janvye", "Fevriye", "Mas", "Avril", "Me", "Jen", "Jiyè", "Out", "Septanm", "Oktòb", "Novanm", "Desanm"),
         weekdays = listOf("Dimanch", "Lendi", "Madi", "Mèkredi", "Jedi", "Vandredi", "Samdi"),
@@ -1769,7 +1875,9 @@ public object Locales {
     // ================================================================
     // HU — Hungarian
     // ================================================================
-    public val HU: DateLocale = DateLocale(
+    public val HU: DateLocale = buildHu()
+
+    private fun buildHu(): DateLocale = DateLocale(
         code = "hu",
         months = listOf("január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"),
         weekdays = listOf("vasárnap", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat"),
@@ -1802,7 +1910,9 @@ public object Locales {
     // ================================================================
     // HY — Armenian
     // ================================================================
-    public val HY: DateLocale = DateLocale(
+    public val HY: DateLocale = buildHy()
+
+    private fun buildHy(): DateLocale = DateLocale(
         code = "hy",
         months = listOf("Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"),
         weekdays = listOf("Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"),
@@ -1835,7 +1945,9 @@ public object Locales {
     // ================================================================
     // ID — Indonesian
     // ================================================================
-    public val ID: DateLocale = DateLocale(
+    public val ID: DateLocale = buildId()
+
+    private fun buildId(): DateLocale = DateLocale(
         code = "id",
         months = listOf("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"),
         weekdays = listOf("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"),
@@ -1868,7 +1980,9 @@ public object Locales {
     // ================================================================
     // IG — Igbo
     // ================================================================
-    public val IG: DateLocale = DateLocale(
+    public val IG: DateLocale = buildIg()
+
+    private fun buildIg(): DateLocale = DateLocale(
         code = "ig",
         months = listOf("Jenụwarị", "Febrụwarị", "Maachị", "Epreel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba"),
         weekdays = listOf("Ụbọchị Ụka", "Mọnde", "Tụụzdee", "Wenezdee", "Tọọzdee", "Fraịdee", "Satọdee"),
@@ -1901,7 +2015,9 @@ public object Locales {
     // ================================================================
     // IS — Icelandic
     // ================================================================
-    public val IS: DateLocale = DateLocale(
+    public val IS: DateLocale = buildIs()
+
+    private fun buildIs(): DateLocale = DateLocale(
         code = "is",
         months = listOf("janúar", "febrúar", "mars", "apríl", "maí", "júní", "júlí", "ágúst", "september", "október", "nóvember", "desember"),
         weekdays = listOf("sunnudagur", "mánudagur", "þriðjudagur", "miðvikudagur", "fimmtudagur", "föstudagur", "laugardagur"),
@@ -1934,7 +2050,9 @@ public object Locales {
     // ================================================================
     // IT — Italian
     // ================================================================
-    public val IT: DateLocale = DateLocale(
+    public val IT: DateLocale = buildIt()
+
+    private fun buildIt(): DateLocale = DateLocale(
         code = "it",
         months = listOf("gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"),
         weekdays = listOf("domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"),
@@ -1967,7 +2085,9 @@ public object Locales {
     // ================================================================
     // JA — Japanese
     // ================================================================
-    public val JA: DateLocale = DateLocale(
+    public val JA: DateLocale = buildJa()
+
+    private fun buildJa(): DateLocale = DateLocale(
         code = "ja",
         months = listOf("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"),
         weekdays = listOf("日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"),
@@ -2000,7 +2120,9 @@ public object Locales {
     // ================================================================
     // JV — Javanese
     // ================================================================
-    public val JV: DateLocale = DateLocale(
+    public val JV: DateLocale = buildJv()
+
+    private fun buildJv(): DateLocale = DateLocale(
         code = "jv",
         months = listOf("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"),
         weekdays = listOf("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"),
@@ -2033,7 +2155,9 @@ public object Locales {
     // ================================================================
     // KA — Georgian
     // ================================================================
-    public val KA: DateLocale = DateLocale(
+    public val KA: DateLocale = buildKa()
+
+    private fun buildKa(): DateLocale = DateLocale(
         code = "ka",
         months = listOf("იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"),
         weekdays = listOf("კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"),
@@ -2066,7 +2190,9 @@ public object Locales {
     // ================================================================
     // KBP — Kabiye
     // ================================================================
-    public val KBP: DateLocale = DateLocale(
+    public val KBP: DateLocale = buildKbp()
+
+    private fun buildKbp(): DateLocale = DateLocale(
         code = "kbp",
         months = listOf("Kɔlaɣ", "Naaɣ Kɩŋ", "Naataŋgʊ", "Naalɩɩ", "Lɛlɩɩ", "Kʊɖʊmaa", "Saŋayɩɩ", "Kɩyɛɛna", "Lɩtɩɩ", "Kʊɖʊmaɣ", "Tɩŋgɩzɩɩ", "Abranɩɩ"),
         weekdays = listOf("Pɩsɩ", "Tɛɖɛɣa", "Taata", "Aranzɩɩ", "Aramnza", "Azɩma", "Asɩbɩ"),
@@ -2099,7 +2225,9 @@ public object Locales {
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
-    public val KEK: DateLocale = DateLocale(
+    public val KEK: DateLocale = buildKek()
+
+    private fun buildKek(): DateLocale = DateLocale(
         code = "kek",
         months = listOf("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"),
         weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
@@ -2130,7 +2258,9 @@ public object Locales {
     // ================================================================
     // KI — Kikuyu
     // ================================================================
-    public val KI: DateLocale = DateLocale(
+    public val KI: DateLocale = buildKi()
+
+    private fun buildKi(): DateLocale = DateLocale(
         code = "ki",
         months = listOf("Njenuarĩ", "Mwere wa kerĩ", "Mwere wa gatatũ", "Mwere wa kana", "Mwere wa gatano", "Mwere wa gatandatũ", "Mwere wa mũgwanja", "Mwere wa kanana", "Mwere wa kenda", "Mwere wa ikũmi", "Mwere wa ikũmi na ũmwe", "Ndithemba"),
         weekdays = listOf("Kiumia", "Njumatatũ", "Njumaine", "Njumatana", "Aramithi", "Njumaa", "Njumamothi"),
@@ -2161,7 +2291,9 @@ public object Locales {
     // ================================================================
     // KK — Kazakh
     // ================================================================
-    public val KK: DateLocale = DateLocale(
+    public val KK: DateLocale = buildKk()
+
+    private fun buildKk(): DateLocale = DateLocale(
         code = "kk",
         months = listOf("қаңтар", "ақпан", "наурыз", "сәуір", "мамыр", "маусым", "шілде", "тамыз", "қыркүйек", "қазан", "қараша", "желтоқсан"),
         weekdays = listOf("жексенбі", "дүйсенбі", "сейсенбі", "сәрсенбі", "бейсенбі", "жұма", "сенбі"),
@@ -2194,7 +2326,9 @@ public object Locales {
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
-    public val KL: DateLocale = DateLocale(
+    public val KL: DateLocale = buildKl()
+
+    private fun buildKl(): DateLocale = DateLocale(
         code = "kl",
         months = listOf("januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip"),
         weekdays = listOf("sapaat", "ataasinngorneq", "marlunngorneq", "pingasunngorneq", "sisamanngorneq", "tallimanngorneq", "arfininngorneq"),
@@ -2227,7 +2361,9 @@ public object Locales {
     // ================================================================
     // KM — Khmer
     // ================================================================
-    public val KM: DateLocale = DateLocale(
+    public val KM: DateLocale = buildKm()
+
+    private fun buildKm(): DateLocale = DateLocale(
         code = "km",
         months = listOf("មករា", "កុម្ភៈ", "មីនា", "មេសា", "ឧសភា", "មិថុនា", "កក្កដា", "សីហា", "កញ្ញា", "តុលា", "វិច្ឆិកា", "ធ្នូ"),
         weekdays = listOf("អាទិត្យ", "ចន្ទ", "អង្គារ", "ពុធ", "ព្រហស្បតិ៍", "សុក្រ", "សៅរ៍"),
@@ -2260,7 +2396,9 @@ public object Locales {
     // ================================================================
     // KN — Kannada
     // ================================================================
-    public val KN: DateLocale = DateLocale(
+    public val KN: DateLocale = buildKn()
+
+    private fun buildKn(): DateLocale = DateLocale(
         code = "kn",
         months = listOf("ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"),
         weekdays = listOf("ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"),
@@ -2293,7 +2431,9 @@ public object Locales {
     // ================================================================
     // KO — Korean
     // ================================================================
-    public val KO: DateLocale = DateLocale(
+    public val KO: DateLocale = buildKo()
+
+    private fun buildKo(): DateLocale = DateLocale(
         code = "ko",
         months = listOf("1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"),
         weekdays = listOf("일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"),
@@ -2326,7 +2466,9 @@ public object Locales {
     // ================================================================
     // KPE — Kpelle
     // ================================================================
-    public val KPE: DateLocale = DateLocale(
+    public val KPE: DateLocale = buildKpe()
+
+    private fun buildKpe(): DateLocale = DateLocale(
         code = "kpe",
         months = listOf("Yanuwali", "Fɛbɛli", "Maachi", "Eepɛli", "Mɛɛ", "Juŋ", "Julai", "Ɔɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba"),
         weekdays = listOf("Saadee", "Tɛnɛɛ", "Talata", "Alaba", "Aimisa", "Juma", "Satɛdee"),
@@ -2359,7 +2501,9 @@ public object Locales {
     // ================================================================
     // KRI — Krio
     // ================================================================
-    public val KRI: DateLocale = DateLocale(
+    public val KRI: DateLocale = buildKri()
+
+    private fun buildKri(): DateLocale = DateLocale(
         code = "kri",
         months = listOf("Jenyuari", "Febyuari", "Mach", "Epril", "Me", "Jun", "Julay", "Ogost", "Septemba", "Oktoba", "Novemba", "Disemba"),
         weekdays = listOf("Sonde", "Monde", "Tyusde", "Wensde", "Tosde", "Frayde", "Satide"),
@@ -2392,7 +2536,9 @@ public object Locales {
     // ================================================================
     // KTU — Kituba
     // ================================================================
-    public val KTU: DateLocale = DateLocale(
+    public val KTU: DateLocale = buildKtu()
+
+    private fun buildKtu(): DateLocale = DateLocale(
         code = "ktu",
         months = listOf("Yanvye", "Fevrye", "Marsi", "Avrili", "Mɛ", "Yuwɛ", "Yulɛ", "Uti", "Sɛtambre", "Ɔtɔbre", "Nɔvambre", "Desambre"),
         weekdays = listOf("Lumingu", "Kimosi", "Kizole", "Kizoluntatu", "Kinya", "Kisabala", "Kimpwanza"),
@@ -2425,7 +2571,9 @@ public object Locales {
     // ================================================================
     // KU — Kurdish
     // ================================================================
-    public val KU: DateLocale = DateLocale(
+    public val KU: DateLocale = buildKu()
+
+    private fun buildKu(): DateLocale = DateLocale(
         code = "ku",
         months = listOf("Rêbendan", "Reşemî", "Adar", "Avrêl", "Gulan", "Pûşper", "Tîrmeh", "Tebax", "Îlon", "Cotmeh", "Mijdar", "Berfanbar"),
         weekdays = listOf("Yekşem", "Duşem", "Sêşem", "Çarşem", "Pêncşem", "Înî", "Şemî"),
@@ -2458,7 +2606,9 @@ public object Locales {
     // ================================================================
     // KW — Cornish
     // ================================================================
-    public val KW: DateLocale = DateLocale(
+    public val KW: DateLocale = buildKw()
+
+    private fun buildKw(): DateLocale = DateLocale(
         code = "kw",
         months = listOf("Genver", "Hwevrer", "Meurth", "Ebrel", "Me", "Metheven", "Gortheren", "Est", "Gwynngala", "Hedra", "Du", "Kevardhu"),
         weekdays = listOf("De Sul", "De Lun", "De Merth", "De Merher", "De Yow", "De Gwener", "De Sadorn"),
@@ -2489,7 +2639,9 @@ public object Locales {
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
-    public val KY: DateLocale = DateLocale(
+    public val KY: DateLocale = buildKy()
+
+    private fun buildKy(): DateLocale = DateLocale(
         code = "ky",
         months = listOf("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"),
         weekdays = listOf("Жекшемби", "Дүйшөмбү", "Шейшемби", "Шаршемби", "Бейшемби", "Жума", "Ишемби"),
@@ -2522,7 +2674,9 @@ public object Locales {
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
-    public val LB: DateLocale = DateLocale(
+    public val LB: DateLocale = buildLb()
+
+    private fun buildLb(): DateLocale = DateLocale(
         code = "lb",
         months = listOf("Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"),
         weekdays = listOf("Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"),
@@ -2555,7 +2709,9 @@ public object Locales {
     // ================================================================
     // LG — Luganda
     // ================================================================
-    public val LG: DateLocale = DateLocale(
+    public val LG: DateLocale = buildLg()
+
+    private fun buildLg(): DateLocale = DateLocale(
         code = "lg",
         months = listOf("Janwali", "Febwali", "Marisi", "Apuli", "Mayi", "Yuni", "Yuli", "Agositi", "Seputemba", "Okitobba", "Novemba", "Desemba"),
         weekdays = listOf("Sabbiiti", "Balaza", "Lwakubiri", "Lwakusatu", "Lwakuna", "Lwakutaano", "Lwamukaaga"),
@@ -2588,7 +2744,9 @@ public object Locales {
     // ================================================================
     // LN — Lingala
     // ================================================================
-    public val LN: DateLocale = DateLocale(
+    public val LN: DateLocale = buildLn()
+
+    private fun buildLn(): DateLocale = DateLocale(
         code = "ln",
         months = listOf("Yanwáli", "Febwáli", "Mársi", "Apríli", "Máyi", "Yúni", "Yúli", "Augústu", "Sɛtɛ́mbɛ", "Ɔkɔtɔ́bɛ", "Novɛ́mbɛ", "Dɛsɛ́mbɛ"),
         weekdays = listOf("Lomíngo", "Mokɔlɔ ya libosó", "Mokɔlɔ ya míbalé", "Mokɔlɔ ya mísáto", "Mokɔlɔ ya mínéi", "Mokɔlɔ ya mítáno", "Mpɔ́sɔ"),
@@ -2621,7 +2779,9 @@ public object Locales {
     // ================================================================
     // LO — Lao
     // ================================================================
-    public val LO: DateLocale = DateLocale(
+    public val LO: DateLocale = buildLo()
+
+    private fun buildLo(): DateLocale = DateLocale(
         code = "lo",
         months = listOf("ມັງກອນ", "ກຸມພາ", "ມີນາ", "ເມສາ", "ພຶດສະພາ", "ມິຖຸນາ", "ກໍລະກົດ", "ສິງຫາ", "ກັນຍາ", "ຕຸລາ", "ພະຈິກ", "ທັນວາ"),
         weekdays = listOf("ວັນອາທິດ", "ວັນຈັນ", "ວັນອັງຄານ", "ວັນພຸດ", "ວັນພະຫັດ", "ວັນສຸກ", "ວັນເສົາ"),
@@ -2654,7 +2814,9 @@ public object Locales {
     // ================================================================
     // LT — Lithuanian
     // ================================================================
-    public val LT: DateLocale = DateLocale(
+    public val LT: DateLocale = buildLt()
+
+    private fun buildLt(): DateLocale = DateLocale(
         code = "lt",
         months = listOf("sausis", "vasaris", "kovas", "balandis", "gegužė", "birželis", "liepa", "rugpjūtis", "rugsėjis", "spalis", "lapkritis", "gruodis"),
         weekdays = listOf("sekmadienis", "pirmadienis", "antradienis", "trečiadienis", "ketvirtadienis", "penktadienis", "šeštadienis"),
@@ -2688,7 +2850,9 @@ public object Locales {
     // ================================================================
     // LUO — Dholuo
     // ================================================================
-    public val LUO: DateLocale = DateLocale(
+    public val LUO: DateLocale = buildLuo()
+
+    private fun buildLuo(): DateLocale = DateLocale(
         code = "luo",
         months = listOf("Dwe mar Achiel", "Dwe mar Ariyo", "Dwe mar Adek", "Dwe mar Ang'wen", "Dwe mar Abich", "Dwe mar Auchiel", "Dwe mar Abiriyo", "Dwe mar Aboro", "Dwe mar Ochiko", "Dwe mar Apar", "Dwe mar Apar gi Achiel", "Dwe mar Apar gi Ariyo"),
         weekdays = listOf("Jumapil", "Wuok Tich", "Tich Ariyo", "Tich Adek", "Tich Ang'wen", "Tich Abich", "Chieng' Ngeso"),
@@ -2720,7 +2884,9 @@ public object Locales {
     // ================================================================
     // LV — Latvian
     // ================================================================
-    public val LV: DateLocale = DateLocale(
+    public val LV: DateLocale = buildLv()
+
+    private fun buildLv(): DateLocale = DateLocale(
         code = "lv",
         months = listOf("janvāris", "februāris", "marts", "aprīlis", "maijs", "jūnijs", "jūlijs", "augusts", "septembris", "oktobris", "novembris", "decembris"),
         weekdays = listOf("svētdiena", "pirmdiena", "otrdiena", "trešdiena", "ceturtdiena", "piektdiena", "sestdiena"),
@@ -2753,7 +2919,9 @@ public object Locales {
     // ================================================================
     // MAM — Mam
     // ================================================================
-    public val MAM: DateLocale = DateLocale(
+    public val MAM: DateLocale = buildMam()
+
+    private fun buildMam(): DateLocale = DateLocale(
         code = "mam",
         months = listOf("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"),
         weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
@@ -2784,7 +2952,9 @@ public object Locales {
     // ================================================================
     // MEN — Mende
     // ================================================================
-    public val MEN: DateLocale = DateLocale(
+    public val MEN: DateLocale = buildMen()
+
+    private fun buildMen(): DateLocale = DateLocale(
         code = "men",
         months = listOf("Januwali", "Febluwali", "Maachi", "Epuli", "Mei", "Juun", "Julai", "Ɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba"),
         weekdays = listOf("Lahadi", "Tɛɛnɛɛ", "Talata", "Alaba", "Aimisa", "Juma", "Satidei"),
@@ -2817,7 +2987,9 @@ public object Locales {
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
-    public val MFE: DateLocale = DateLocale(
+    public val MFE: DateLocale = buildMfe()
+
+    private fun buildMfe(): DateLocale = DateLocale(
         code = "mfe",
         months = listOf("Zanvie", "Fevrie", "Mars", "Avril", "Me", "Zwin", "Zwiye", "Out", "Septam", "Oktob", "Novam", "Desam"),
         weekdays = listOf("Dimans", "Lindi", "Mardi", "Merkredi", "Zedi", "Vandredi", "Samdi"),
@@ -2850,7 +3022,9 @@ public object Locales {
     // ================================================================
     // MG — Malagasy
     // ================================================================
-    public val MG: DateLocale = DateLocale(
+    public val MG: DateLocale = buildMg()
+
+    private fun buildMg(): DateLocale = DateLocale(
         code = "mg",
         months = listOf("Janoary", "Febroary", "Martsa", "Aprily", "Mey", "Jona", "Jolay", "Aogositra", "Septambra", "Oktobra", "Novambra", "Desambra"),
         weekdays = listOf("Alahady", "Alatsinainy", "Talata", "Alarobia", "Alakamisy", "Zoma", "Asabotsy"),
@@ -2883,7 +3057,9 @@ public object Locales {
     // ================================================================
     // MI — Māori
     // ================================================================
-    public val MI: DateLocale = DateLocale(
+    public val MI: DateLocale = buildMi()
+
+    private fun buildMi(): DateLocale = DateLocale(
         code = "mi",
         months = listOf("Kohi-tātea", "Hui-tanguru", "Poutū-te-rangi", "Paenga-whāwhā", "Haratua", "Pipiri", "Hōngongoi", "Here-turi-kōkā", "Mahuru", "Whiringa-ā-nuku", "Whiringa-ā-rangi", "Hakihea"),
         weekdays = listOf("Rātapu", "Rāhina", "Rātū", "Rāapa", "Rāpare", "Rāmere", "Rāhoroi"),
@@ -2916,7 +3092,9 @@ public object Locales {
     // ================================================================
     // MK — Macedonian
     // ================================================================
-    public val MK: DateLocale = DateLocale(
+    public val MK: DateLocale = buildMk()
+
+    private fun buildMk(): DateLocale = DateLocale(
         code = "mk",
         months = listOf("јануари", "февруари", "март", "април", "мај", "јуни", "јули", "август", "септември", "октомври", "ноември", "декември"),
         weekdays = listOf("недела", "понеделник", "вторник", "среда", "четврток", "петок", "сабота"),
@@ -2949,7 +3127,9 @@ public object Locales {
     // ================================================================
     // ML — Malayalam
     // ================================================================
-    public val ML: DateLocale = DateLocale(
+    public val ML: DateLocale = buildMl()
+
+    private fun buildMl(): DateLocale = DateLocale(
         code = "ml",
         months = listOf("ജനുവരി", "ഫെബ്രുവരി", "മാർച്ച്", "ഏപ്രിൽ", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗസ്റ്റ്", "സെപ്റ്റംബർ", "ഒക്ടോബർ", "നവംബർ", "ഡിസംബർ"),
         weekdays = listOf("ഞായറാഴ്ച", "തിങ്കളാഴ്ച", "ചൊവ്വാഴ്ച", "ബുധനാഴ്ച", "വ്യാഴാഴ്ച", "വെള്ളിയാഴ്ച", "ശനിയാഴ്ച"),
@@ -2982,7 +3162,9 @@ public object Locales {
     // ================================================================
     // MN — Mongolian
     // ================================================================
-    public val MN: DateLocale = DateLocale(
+    public val MN: DateLocale = buildMn()
+
+    private fun buildMn(): DateLocale = DateLocale(
         code = "mn",
         months = listOf("Нэгдүгээр сар", "Хоёрдугаар сар", "Гуравдугаар сар", "Дөрөвдүгээр сар", "Тавдугаар сар", "Зургаадугаар сар", "Долоодугаар сар", "Наймдугаар сар", "Есдүгээр сар", "Аравдугаар сар", "Арван нэгдүгээр сар", "Арван хоёрдугаар сар"),
         weekdays = listOf("Ням", "Даваа", "Мягмар", "Лхагва", "Пүрэв", "Баасан", "Бямба"),
@@ -3015,7 +3197,9 @@ public object Locales {
     // ================================================================
     // MNK — Mandinka
     // ================================================================
-    public val MNK: DateLocale = DateLocale(
+    public val MNK: DateLocale = buildMnk()
+
+    private fun buildMnk(): DateLocale = DateLocale(
         code = "mnk",
         months = listOf("Samwiye", "Feburiye", "Marsi", "Afiril", "Meyi", "Juŋ", "Julaa", "Ooti", "Sɛtɛmba", "Ɔtɔba", "Nuwɛmba", "Disɛmba"),
         weekdays = listOf("Ari", "Teniŋ", "Talata", "Araba", "Alamisa", "Juma", "Sibiti"),
@@ -3048,7 +3232,9 @@ public object Locales {
     // ================================================================
     // MOS — Moore
     // ================================================================
-    public val MOS: DateLocale = DateLocale(
+    public val MOS: DateLocale = buildMos()
+
+    private fun buildMos(): DateLocale = DateLocale(
         code = "mos",
         months = listOf("Zãn-naabu", "Sig-noy-yaadre", "Sig-noy-taabo", "Kãn-saglem", "Koabg-taabo", "Koabg-yaadre", "Baspɩɩre", "Gɩ-sõongo", "Tũubg-sõongo", "Pẽemb-sõongo", "Laafi-bãaga", "Filiga-bãaga"),
         weekdays = listOf("Alhadi", "Atɩnni", "Atalaata", "Alarba", "Alkamisa", "Arjuma", "Asibti"),
@@ -3081,7 +3267,9 @@ public object Locales {
     // ================================================================
     // MR — Marathi
     // ================================================================
-    public val MR: DateLocale = DateLocale(
+    public val MR: DateLocale = buildMr()
+
+    private fun buildMr(): DateLocale = DateLocale(
         code = "mr",
         months = listOf("जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल", "मे", "जून", "जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर"),
         weekdays = listOf("रविवार", "सोमवार", "मंगळवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"),
@@ -3114,7 +3302,9 @@ public object Locales {
     // ================================================================
     // MS — Malay
     // ================================================================
-    public val MS: DateLocale = DateLocale(
+    public val MS: DateLocale = buildMs()
+
+    private fun buildMs(): DateLocale = DateLocale(
         code = "ms",
         months = listOf("Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"),
         weekdays = listOf("Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"),
@@ -3147,7 +3337,9 @@ public object Locales {
     // ================================================================
     // MT — Maltese
     // ================================================================
-    public val MT: DateLocale = DateLocale(
+    public val MT: DateLocale = buildMt()
+
+    private fun buildMt(): DateLocale = DateLocale(
         code = "mt",
         months = listOf("Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru"),
         weekdays = listOf("Il-Ħadd", "It-Tnejn", "It-Tlieta", "L-Erbgħa", "Il-Ħamis", "Il-Ġimgħa", "Is-Sibt"),
@@ -3180,7 +3372,9 @@ public object Locales {
     // ================================================================
     // MY — Burmese
     // ================================================================
-    public val MY: DateLocale = DateLocale(
+    public val MY: DateLocale = buildMy()
+
+    private fun buildMy(): DateLocale = DateLocale(
         code = "my",
         months = listOf("ဇန်နဝါရီ", "ဖေဖော်ဝါရီ", "မတ်", "ဧပြီ", "မေ", "ဇွန်", "ဇူလိုင်", "ဩဂုတ်", "စက်တင်ဘာ", "အောက်တိုဘာ", "နိုဝင်ဘာ", "ဒီဇင်ဘာ"),
         weekdays = listOf("တနင်္ဂနွေ", "တနင်္လာ", "အင်္ဂါ", "ဗုဒ္ဓဟူး", "ကြာသပတေး", "သောကြာ", "စနေ"),
@@ -3213,7 +3407,9 @@ public object Locales {
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
-    public val NB: DateLocale = DateLocale(
+    public val NB: DateLocale = buildNb()
+
+    private fun buildNb(): DateLocale = DateLocale(
         code = "nb",
         months = listOf("januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"),
         weekdays = listOf("søndag", "mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag"),
@@ -3246,7 +3442,9 @@ public object Locales {
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
-    public val ND: DateLocale = DateLocale(
+    public val ND: DateLocale = buildNd()
+
+    private fun buildNd(): DateLocale = DateLocale(
         code = "nd",
         months = listOf("Zibandlela", "Nhlolanja", "Mbimbitho", "Mabasa", "Nkwenkwezi", "Nhlangula", "Kholwane", "Ingci", "Inyoni", "Imphala", "Lwezi", "Mpalakazi"),
         weekdays = listOf("Sonto", "Mvulo", "Sibili", "Sithathu", "Sine", "Sihlanu", "Mgqibelo"),
@@ -3279,7 +3477,9 @@ public object Locales {
     // ================================================================
     // NE — Nepali
     // ================================================================
-    public val NE: DateLocale = DateLocale(
+    public val NE: DateLocale = buildNe()
+
+    private fun buildNe(): DateLocale = DateLocale(
         code = "ne",
         months = listOf("जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"),
         weekdays = listOf("आइतबार", "सोमबार", "मंगलबार", "बुधबार", "बिहिबार", "शुक्रबार", "शनिबार"),
@@ -3312,7 +3512,9 @@ public object Locales {
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
-    public val NG: DateLocale = DateLocale(
+    public val NG: DateLocale = buildNg()
+
+    private fun buildNg(): DateLocale = DateLocale(
         code = "ng",
         months = listOf("Januali", "Febluali", "Malitsi", "Aplili", "Mei", "Juni", "Juli", "Augustu", "Septemba", "Oktoba", "Novemba", "Desemba"),
         weekdays = listOf("Osoondaha", "Omaandaha", "Etitatu", "Etitano", "Etine", "Oshitimuine", "Eshabati"),
@@ -3345,7 +3547,9 @@ public object Locales {
     // ================================================================
     // NL — Dutch
     // ================================================================
-    public val NL: DateLocale = DateLocale(
+    public val NL: DateLocale = buildNl()
+
+    private fun buildNl(): DateLocale = DateLocale(
         code = "nl",
         months = listOf("januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"),
         weekdays = listOf("zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"),
@@ -3378,7 +3582,9 @@ public object Locales {
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
-    public val NR: DateLocale = DateLocale(
+    public val NR: DateLocale = buildNr()
+
+    private fun buildNr(): DateLocale = DateLocale(
         code = "nr",
         months = listOf("uTjhirhweni", "uMhlolanja", "iNtaka", "iSihlabantangana", "uMrhayili", "uMgwengweni", "uVelabahlinze", "uRhoboyi", "uKhukhulamungu", "iSewula", "uSikinyikhaba", "uNobayeni"),
         weekdays = listOf("uSonto", "uMvulo", "uLesibili", "uLesithathu", "uLesine", "uLesihlanu", "uMgqibelo"),
@@ -3409,7 +3615,9 @@ public object Locales {
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
-    public val NSO: DateLocale = DateLocale(
+    public val NSO: DateLocale = buildNso()
+
+    private fun buildNso(): DateLocale = DateLocale(
         code = "nso",
         months = listOf("Pherekgong", "Hlakola", "Mopitlo", "Moranang", "Mosegamanye", "Ngoatobošego", "Phukwi", "Phatwe", "Lewedi", "Diphalane", "Dibatsela", "Manthole"),
         weekdays = listOf("Lamorena", "Mošupologo", "Labobedi", "Laboraro", "Labone", "Labohlano", "Mokibelo"),
@@ -3442,7 +3650,9 @@ public object Locales {
     // ================================================================
     // NUS — Nuer
     // ================================================================
-    public val NUS: DateLocale = DateLocale(
+    public val NUS: DateLocale = buildNus()
+
+    private fun buildNus(): DateLocale = DateLocale(
         code = "nus",
         months = listOf("Tiɔp thar", "Pɛt", "Duɔɔŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk"),
         weekdays = listOf("Cäŋ nhial", "Jiec la̱t", "Rɛw la̱t", "Diɔk la̱t", "Ŋuaan la̱t", "Dhieec la̱t", "Bäkɛl"),
@@ -3475,7 +3685,9 @@ public object Locales {
     // ================================================================
     // NY — Chichewa
     // ================================================================
-    public val NY: DateLocale = DateLocale(
+    public val NY: DateLocale = buildNy()
+
+    private fun buildNy(): DateLocale = DateLocale(
         code = "ny",
         months = listOf("Januwale", "Febuluwale", "Matchi", "Epulo", "Meyi", "Juni", "Julaye", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba"),
         weekdays = listOf("Lamulungu", "Lolemba", "Lachiwiri", "Lachitatu", "Lachinayi", "Lachisanu", "Loweruka"),
@@ -3508,7 +3720,9 @@ public object Locales {
     // ================================================================
     // OM — Oromo
     // ================================================================
-    public val OM: DateLocale = DateLocale(
+    public val OM: DateLocale = buildOm()
+
+    private fun buildOm(): DateLocale = DateLocale(
         code = "om",
         months = listOf("Amajjii", "Guraandhala", "Bitooteessa", "Elba", "Caamsa", "Waxabajjii", "Adooleessa", "Hagayya", "Fuulbana", "Onkololeessa", "Sadaasa", "Muddee"),
         weekdays = listOf("Dilbata", "Wiixata", "Qibxata", "Roobii", "Kamiisa", "Jimaata", "Sanbata"),
@@ -3541,7 +3755,9 @@ public object Locales {
     // ================================================================
     // OR — Odia
     // ================================================================
-    public val OR: DateLocale = DateLocale(
+    public val OR: DateLocale = buildOr()
+
+    private fun buildOr(): DateLocale = DateLocale(
         code = "or",
         months = listOf("ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଏପ୍ରିଲ", "ମଇ", "ଜୁନ", "ଜୁಲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"),
         weekdays = listOf("ରବିବାର", "ସୋମବାର", "ମଙ୍ଗଳବାର", "ବୁଧବାର", "ଗୁରୁବାର", "ଶୁକ୍ରବାର", "ଶନିବାର"),
@@ -3574,7 +3790,9 @@ public object Locales {
     // ================================================================
     // PA — Punjabi
     // ================================================================
-    public val PA: DateLocale = DateLocale(
+    public val PA: DateLocale = buildPa()
+
+    private fun buildPa(): DateLocale = DateLocale(
         code = "pa",
         months = listOf("ਜਨਵਰੀ", "ਫ਼ਰਵਰੀ", "ਮਾਰਚ", "ਅਪ੍ਰੈਲ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾਈ", "ਅਗਸਤ", "ਸਤੰਬਰ", "ਅਕਤੂਬਰ", "ਨਵੰਬਰ", "ਦਸੰਬਰ"),
         weekdays = listOf("ਐਤਵਾਰ", "ਸੋਮਵਾਰ", "ਮੰਗਲਵਾਰ", "ਬੁੱਧਵਾਰ", "ਵੀਰਵਾਰ", "ਸ਼ੁੱਕਰਵਾਰ", "ਸ਼ਨਿੱਚਰਵਾਰ"),
@@ -3607,7 +3825,9 @@ public object Locales {
     // ================================================================
     // PIS — Pijin
     // ================================================================
-    public val PIS: DateLocale = DateLocale(
+    public val PIS: DateLocale = buildPis()
+
+    private fun buildPis(): DateLocale = DateLocale(
         code = "pis",
         months = listOf("Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba"),
         weekdays = listOf("Sande", "Mande", "Tiusde", "Wenesde", "Tosde", "Fraede", "Sarere"),
@@ -3640,7 +3860,9 @@ public object Locales {
     // ================================================================
     // PL — Polish
     // ================================================================
-    public val PL: DateLocale = DateLocale(
+    public val PL: DateLocale = buildPl()
+
+    private fun buildPl(): DateLocale = DateLocale(
         code = "pl",
         months = listOf("styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"),
         weekdays = listOf("niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"),
@@ -3674,7 +3896,9 @@ public object Locales {
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
-    public val POV: DateLocale = DateLocale(
+    public val POV: DateLocale = buildPov()
+
+    private fun buildPov(): DateLocale = DateLocale(
         code = "pov",
         months = listOf("Janeru", "Febreru", "Marsu", "Abril", "Maiu", "Junhu", "Julhu", "Agostu", "Setembru", "Otubru", "Novembru", "Dizembru"),
         weekdays = listOf("Dumingu", "Sigunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sabadu"),
@@ -3707,7 +3931,9 @@ public object Locales {
     // ================================================================
     // PS — Pashto
     // ================================================================
-    public val PS: DateLocale = DateLocale(
+    public val PS: DateLocale = buildPs()
+
+    private fun buildPs(): DateLocale = DateLocale(
         code = "ps",
         months = listOf("جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سپتمبر", "اکتوبر", "نومبر", "دسمبر"),
         weekdays = listOf("یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"),
@@ -3740,7 +3966,9 @@ public object Locales {
     // ================================================================
     // PT — Portuguese
     // ================================================================
-    public val PT: DateLocale = DateLocale(
+    public val PT: DateLocale = buildPt()
+
+    private fun buildPt(): DateLocale = DateLocale(
         code = "pt",
         months = listOf("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"),
         weekdays = listOf("domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"),
@@ -3773,7 +4001,9 @@ public object Locales {
     // ================================================================
     // QU — Quechua
     // ================================================================
-    public val QU: DateLocale = DateLocale(
+    public val QU: DateLocale = buildQu()
+
+    private fun buildQu(): DateLocale = DateLocale(
         code = "qu",
         months = listOf("Qhulla puquy", "Hatun puquy", "Pawqar waray", "Ayriwa", "Aymuray", "Inti raymi", "Anta sitwa", "Qhapaq sitwa", "Uma raymi", "Kantaray", "Ayamarq'a", "Qhapaq raymi"),
         weekdays = listOf("Intichaw", "Killachaw", "Atipachaw", "Quyllurchaw", "Illapachaw", "Ch'askachaw", "K'uychichaw"),
@@ -3806,7 +4036,9 @@ public object Locales {
     // ================================================================
     // QUC — K'iche'
     // ================================================================
-    public val QUC: DateLocale = DateLocale(
+    public val QUC: DateLocale = buildQuc()
+
+    private fun buildQuc(): DateLocale = DateLocale(
         code = "quc",
         months = listOf("Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'"),
         weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
@@ -3839,7 +4071,9 @@ public object Locales {
     // ================================================================
     // RO — Romanian
     // ================================================================
-    public val RO: DateLocale = DateLocale(
+    public val RO: DateLocale = buildRo()
+
+    private fun buildRo(): DateLocale = DateLocale(
         code = "ro",
         months = listOf("ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"),
         weekdays = listOf("duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"),
@@ -3873,7 +4107,9 @@ public object Locales {
     // ================================================================
     // RU — Russian
     // ================================================================
-    public val RU: DateLocale = DateLocale(
+    public val RU: DateLocale = buildRu()
+
+    private fun buildRu(): DateLocale = DateLocale(
         code = "ru",
         months = listOf("январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"),
         weekdays = listOf("воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"),
@@ -3907,7 +4143,9 @@ public object Locales {
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
-    public val RW: DateLocale = DateLocale(
+    public val RW: DateLocale = buildRw()
+
+    private fun buildRw(): DateLocale = DateLocale(
         code = "rw",
         months = listOf("Mutarama", "Gashyantare", "Werurwe", "Mata", "Gicurasi", "Kamena", "Nyakanga", "Kanama", "Nzeli", "Ukwakira", "Ugushyingo", "Ukuboza"),
         weekdays = listOf("Ku cyumweru", "Kuwa mbere", "Kuwa kabiri", "Kuwa gatatu", "Kuwa kane", "Kuwa gatanu", "Kuwa gatandatu"),
@@ -3940,7 +4178,9 @@ public object Locales {
     // ================================================================
     // SAR — Sara
     // ================================================================
-    public val SAR: DateLocale = DateLocale(
+    public val SAR: DateLocale = buildSar()
+
+    private fun buildSar(): DateLocale = DateLocale(
         code = "sar",
         months = listOf("Zanviye", "Fevriye", "Maars", "Avriil", "Mee", "Zuɛ̃", "Zulɛ", "Uut", "Sɛtɛmbar", "Ɔtɔbar", "Nɔvambar", "Desambar"),
         weekdays = listOf("Paskaa", "Nɔy", "Talata", "Alarba", "Alkamisa", "Juma", "Sibiti"),
@@ -3973,7 +4213,9 @@ public object Locales {
     // ================================================================
     // SD — Sindhi
     // ================================================================
-    public val SD: DateLocale = DateLocale(
+    public val SD: DateLocale = buildSd()
+
+    private fun buildSd(): DateLocale = DateLocale(
         code = "sd",
         months = listOf("جنوري", "فيبروري", "مارچ", "اپريل", "مئي", "جون", "جولاءِ", "آگسٽ", "سيپٽمبر", "آڪٽوبر", "نومبر", "ڊسمبر"),
         weekdays = listOf("آچر", "سومر", "اڱارو", "اربع", "خميس", "جمعو", "ڇنڇر"),
@@ -4006,7 +4248,9 @@ public object Locales {
     // ================================================================
     // SG — Sango
     // ================================================================
-    public val SG: DateLocale = DateLocale(
+    public val SG: DateLocale = buildSg()
+
+    private fun buildSg(): DateLocale = DateLocale(
         code = "sg",
         months = listOf("Nyenye", "Fulundïgi", "Mbängü", "Ngubùe", "Bêläwü", "Föndo", "Lengua", "Kükürü", "Mvuka", "Ngberere", "Nabändüru", "Kakauka"),
         weekdays = listOf("Bikua-ôko", "Bïkua-ûse", "Bïkua-ptâ", "Bïkua-usïö", "Bïkua-okü", "Lâpôsö", "Lâyenga"),
@@ -4039,7 +4283,9 @@ public object Locales {
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
-    public val SHI: DateLocale = DateLocale(
+    public val SHI: DateLocale = buildShi()
+
+    private fun buildShi(): DateLocale = DateLocale(
         code = "shi",
         months = listOf("ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"),
         weekdays = listOf("ⴰⵙⴰⵎⴰⵙ", "ⴰⵢⵏⴰⵙ", "ⴰⵙⵉⵏⴰⵙ", "ⴰⴽⵕⴰⵙ", "ⴰⴽⵡⴰⵙ", "ⴰⵙⵉⵎⵡⴰⵙ", "ⴰⵙⵉⴹⵢⴰⵙ"),
@@ -4070,7 +4316,9 @@ public object Locales {
     // ================================================================
     // SHN — Shan
     // ================================================================
-    public val SHN: DateLocale = DateLocale(
+    public val SHN: DateLocale = buildShn()
+
+    private fun buildShn(): DateLocale = DateLocale(
         code = "shn",
         months = listOf("ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ"),
         weekdays = listOf("ဝၼ်းဢႃးတိတ်ႉ", "ဝၼ်းၸၼ်", "ဝၼ်းဢၢင်းၵၢၼ်း", "ဝၼ်းပုတ်ႉ", "ဝၼ်းၽတ်း", "ဝၼ်းသုၵ်း", "ဝၼ်းသဝ်"),
@@ -4103,7 +4351,9 @@ public object Locales {
     // ================================================================
     // SI — Sinhala
     // ================================================================
-    public val SI: DateLocale = DateLocale(
+    public val SI: DateLocale = buildSi()
+
+    private fun buildSi(): DateLocale = DateLocale(
         code = "si",
         months = listOf("ජනවාරි", "පෙබරවාරි", "මාර්තු", "අප්‍රේල්", "මැයි", "ජූනි", "ජූලි", "අගෝස්තු", "සැප්තැම්බර්", "ඔක්තෝබර්", "නොවැම්බර්", "දෙසැම්බර්"),
         weekdays = listOf("ඉරිදා", "සඳුදා", "අඟහරුවාදා", "බදාදා", "බ්‍රහස්පතින්දා", "සිකුරාදා", "සෙනසුරාදා"),
@@ -4136,7 +4386,9 @@ public object Locales {
     // ================================================================
     // SK — Slovak
     // ================================================================
-    public val SK: DateLocale = DateLocale(
+    public val SK: DateLocale = buildSk()
+
+    private fun buildSk(): DateLocale = DateLocale(
         code = "sk",
         months = listOf("január", "február", "marec", "apríl", "máj", "jún", "júl", "august", "september", "október", "november", "december"),
         weekdays = listOf("nedeľa", "pondelok", "utorok", "streda", "štvrtok", "piatok", "sobota"),
@@ -4170,7 +4422,9 @@ public object Locales {
     // ================================================================
     // SL — Slovenian
     // ================================================================
-    public val SL: DateLocale = DateLocale(
+    public val SL: DateLocale = buildSl()
+
+    private fun buildSl(): DateLocale = DateLocale(
         code = "sl",
         months = listOf("januar", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september", "oktober", "november", "december"),
         weekdays = listOf("nedelja", "ponedeljek", "torek", "sreda", "četrtek", "petek", "sobota"),
@@ -4204,7 +4458,9 @@ public object Locales {
     // ================================================================
     // SN — Shona
     // ================================================================
-    public val SN: DateLocale = DateLocale(
+    public val SN: DateLocale = buildSn()
+
+    private fun buildSn(): DateLocale = DateLocale(
         code = "sn",
         months = listOf("Ndira", "Kukadzi", "Kurume", "Kubvumbi", "Chivabvu", "Chikumi", "Chikunguru", "Nyamavhuvhu", "Gunyana", "Gumiguru", "Mbudzi", "Zvita"),
         weekdays = listOf("Svondo", "Muvhuro", "Chipiri", "Chitatu", "China", "Chishanu", "Mugovera"),
@@ -4237,7 +4493,9 @@ public object Locales {
     // ================================================================
     // SNK — Soninke
     // ================================================================
-    public val SNK: DateLocale = DateLocale(
+    public val SNK: DateLocale = buildSnk()
+
+    private fun buildSnk(): DateLocale = DateLocale(
         code = "snk",
         months = listOf("Janwiye", "Feburiye", "Marasi", "Abirili", "Meyi", "Juwɛ", "Juliye", "Awutu", "Sɛtanburu", "Okutoburu", "Nuwanburu", "Desanburu"),
         weekdays = listOf("Alhadi", "Atinni", "Ataalaata", "Alarba", "Alxamiisa", "Arjuma", "Asibiti"),
@@ -4270,7 +4528,9 @@ public object Locales {
     // ================================================================
     // SO — Somali
     // ================================================================
-    public val SO: DateLocale = DateLocale(
+    public val SO: DateLocale = buildSo()
+
+    private fun buildSo(): DateLocale = DateLocale(
         code = "so",
         months = listOf("Janaayo", "Febraayo", "Maarso", "Abriil", "Maajo", "Juun", "Luuliyo", "Ogost", "Sebtembar", "Oktoobar", "Nofembar", "Disembar"),
         weekdays = listOf("Axad", "Isniin", "Talaado", "Arbaco", "Khamiis", "Jimco", "Sabti"),
@@ -4303,7 +4563,9 @@ public object Locales {
     // ================================================================
     // SQ — Albanian
     // ================================================================
-    public val SQ: DateLocale = DateLocale(
+    public val SQ: DateLocale = buildSq()
+
+    private fun buildSq(): DateLocale = DateLocale(
         code = "sq",
         months = listOf("janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"),
         weekdays = listOf("e diel", "e hënë", "e martë", "e mërkurë", "e enjte", "e premte", "e shtunë"),
@@ -4336,7 +4598,9 @@ public object Locales {
     // ================================================================
     // SR — Serbian
     // ================================================================
-    public val SR: DateLocale = DateLocale(
+    public val SR: DateLocale = buildSr()
+
+    private fun buildSr(): DateLocale = DateLocale(
         code = "sr",
         months = listOf("јануар", "фебруар", "март", "април", "мај", "јун", "јул", "август", "септембар", "октобар", "новембар", "децембар"),
         weekdays = listOf("недеља", "понедељак", "уторак", "среда", "четвртак", "петак", "субота"),
@@ -4369,7 +4633,9 @@ public object Locales {
     // ================================================================
     // SS — siSwati
     // ================================================================
-    public val SS: DateLocale = DateLocale(
+    public val SS: DateLocale = buildSs()
+
+    private fun buildSs(): DateLocale = DateLocale(
         code = "ss",
         months = listOf("Bhimbidvwane", "iNdlovana", "iNdlovulenkhulu", "Mabasa", "iNkhwekhweti", "iNhlaba", "Kholwane", "iNgci", "iNyoni", "iMphala", "Lweti", "iNgongoni"),
         weekdays = listOf("LiSontfo", "uMsombuluko", "Lesibili", "Lesitsatfu", "Lesine", "Lesihlanu", "uMgcibelo"),
@@ -4402,7 +4668,9 @@ public object Locales {
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
-    public val ST: DateLocale = DateLocale(
+    public val ST: DateLocale = buildSt()
+
+    private fun buildSt(): DateLocale = DateLocale(
         code = "st",
         months = listOf("Pherekgong", "Hlakola", "Hlakubele", "Mmese", "Motsheanong", "Phupjane", "Phupu", "Phato", "Leotshe", "Mphalane", "Pudungwana", "Tshitwe"),
         weekdays = listOf("Sontaha", "Mmantaha", "Labobedi", "Laboraro", "Labone", "Labohlano", "Moqebelo"),
@@ -4435,7 +4703,9 @@ public object Locales {
     // ================================================================
     // SU — Sundanese
     // ================================================================
-    public val SU: DateLocale = DateLocale(
+    public val SU: DateLocale = buildSu()
+
+    private fun buildSu(): DateLocale = DateLocale(
         code = "su",
         months = listOf("Januari", "Pébruari", "Maret", "April", "Méi", "Juni", "Juli", "Agustus", "Séptémber", "Oktober", "Nopémber", "Désémber"),
         weekdays = listOf("Minggu", "Senén", "Salasa", "Rebo", "Kemis", "Jumaah", "Saptu"),
@@ -4468,7 +4738,9 @@ public object Locales {
     // ================================================================
     // SUK — Sukuma
     // ================================================================
-    public val SUK: DateLocale = DateLocale(
+    public val SUK: DateLocale = buildSuk()
+
+    private fun buildSuk(): DateLocale = DateLocale(
         code = "suk",
         months = listOf("Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"),
         weekdays = listOf("Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"),
@@ -4501,7 +4773,9 @@ public object Locales {
     // ================================================================
     // SV — Swedish
     // ================================================================
-    public val SV: DateLocale = DateLocale(
+    public val SV: DateLocale = buildSv()
+
+    private fun buildSv(): DateLocale = DateLocale(
         code = "sv",
         months = listOf("januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"),
         weekdays = listOf("söndag", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag"),
@@ -4534,7 +4808,9 @@ public object Locales {
     // ================================================================
     // SW — Swahili
     // ================================================================
-    public val SW: DateLocale = DateLocale(
+    public val SW: DateLocale = buildSw()
+
+    private fun buildSw(): DateLocale = DateLocale(
         code = "sw",
         months = listOf("Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"),
         weekdays = listOf("Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"),
@@ -4567,7 +4843,9 @@ public object Locales {
     // ================================================================
     // TA — Tamil
     // ================================================================
-    public val TA: DateLocale = DateLocale(
+    public val TA: DateLocale = buildTa()
+
+    private fun buildTa(): DateLocale = DateLocale(
         code = "ta",
         months = listOf("ஜனவரி", "பிப்ரவரி", "மார்ச்", "ஏப்ரல்", "மே", "ஜூன்", "ஜூலை", "ஆகஸ்ட்", "செப்டம்பர்", "அக்டோபர்", "நவம்பர்", "டிசம்பர்"),
         weekdays = listOf("ஞாயிறு", "திங்கள்", "செவ்வாய்", "புதன்", "வியாழன்", "வெள்ளி", "சனி"),
@@ -4600,7 +4878,9 @@ public object Locales {
     // ================================================================
     // TE — Telugu
     // ================================================================
-    public val TE: DateLocale = DateLocale(
+    public val TE: DateLocale = buildTe()
+
+    private fun buildTe(): DateLocale = DateLocale(
         code = "te",
         months = listOf("జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్", "జులై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"),
         weekdays = listOf("ఆదివారం", "సోమవారం", "మంగళవారం", "బుధవారం", "గురువారం", "శుక్రవారం", "శనివారం"),
@@ -4633,7 +4913,9 @@ public object Locales {
     // ================================================================
     // TEM — Temne
     // ================================================================
-    public val TEM: DateLocale = DateLocale(
+    public val TEM: DateLocale = buildTem()
+
+    private fun buildTem(): DateLocale = DateLocale(
         code = "tem",
         months = listOf("Janɛri", "Fɛbrɛri", "Mach", "Epril", "Me", "Jun", "Julai", "Ɔgɔst", "Sɛtɛmba", "Ɔktoba", "Novɛmba", "Disɛmba"),
         weekdays = listOf("Ləpɛt", "Lətalɛ", "Ləsalɛ", "Lərarɛ", "Lənɛr", "Ləjuma", "Ləsɛbɛ"),
@@ -4666,7 +4948,9 @@ public object Locales {
     // ================================================================
     // TET — Tetum
     // ================================================================
-    public val TET: DateLocale = DateLocale(
+    public val TET: DateLocale = buildTet()
+
+    private fun buildTet(): DateLocale = DateLocale(
         code = "tet",
         months = listOf("Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru"),
         weekdays = listOf("Domingu", "Segunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sábadu"),
@@ -4699,7 +4983,9 @@ public object Locales {
     // ================================================================
     // TG — Tajik
     // ================================================================
-    public val TG: DateLocale = DateLocale(
+    public val TG: DateLocale = buildTg()
+
+    private fun buildTg(): DateLocale = DateLocale(
         code = "tg",
         months = listOf("Январ", "Феврал", "Март", "Апрел", "Май", "Июн", "Июл", "Август", "Сентябр", "Октябр", "Ноябр", "Декабр"),
         weekdays = listOf("Якшанбе", "Душанбе", "Сешанбе", "Чоршанбе", "Панҷшанбе", "Ҷумъа", "Шанбе"),
@@ -4732,7 +5018,9 @@ public object Locales {
     // ================================================================
     // TH — Thai
     // ================================================================
-    public val TH: DateLocale = DateLocale(
+    public val TH: DateLocale = buildTh()
+
+    private fun buildTh(): DateLocale = DateLocale(
         code = "th",
         months = listOf("มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"),
         weekdays = listOf("วันอาทิตย์", "วันจันทร์", "วันอังคาร", "วันพุธ", "วันพฤหัสบดี", "วันศุกร์", "วันเสาร์"),
@@ -4765,7 +5053,9 @@ public object Locales {
     // ================================================================
     // TI — Tigrinya
     // ================================================================
-    public val TI: DateLocale = DateLocale(
+    public val TI: DateLocale = buildTi()
+
+    private fun buildTi(): DateLocale = DateLocale(
         code = "ti",
         months = listOf("ጥሪ", "ለካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰነ", "ሓምለ", "ነሓሰ", "መስከረም", "ጥቅምቲ", "ሕዳር", "ታሕሳስ"),
         weekdays = listOf("ሰንበት", "ሰኑይ", "ሠሉስ", "ረቡዕ", "ሓሙስ", "ዓርቢ", "ቀዳም"),
@@ -4798,7 +5088,9 @@ public object Locales {
     // ================================================================
     // TIG — Tigre
     // ================================================================
-    public val TIG: DateLocale = DateLocale(
+    public val TIG: DateLocale = buildTig()
+
+    private fun buildTig(): DateLocale = DateLocale(
         code = "tig",
         months = listOf("Yannaayer", "Febbraayer", "Maaris", "Abriil", "Maay", "Yuunyo", "Yulyo", "Agoosṭo", "Seṭṭembre", "Oṭṭoobre", "Noovembre", "Diičembre"),
         weekdays = listOf("Sənbət", "Sənuy", "Sələs", "Rəbuʿ", "Ḥamus", "ʿArbi", "Qədami"),
@@ -4831,7 +5123,9 @@ public object Locales {
     // ================================================================
     // TK — Turkmen
     // ================================================================
-    public val TK: DateLocale = DateLocale(
+    public val TK: DateLocale = buildTk()
+
+    private fun buildTk(): DateLocale = DateLocale(
         code = "tk",
         months = listOf("Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"),
         weekdays = listOf("Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"),
@@ -4864,7 +5158,9 @@ public object Locales {
     // ================================================================
     // TN — Tswana
     // ================================================================
-    public val TN: DateLocale = DateLocale(
+    public val TN: DateLocale = buildTn()
+
+    private fun buildTn(): DateLocale = DateLocale(
         code = "tn",
         months = listOf("Ferikgong", "Tlhakole", "Mopitlo", "Moranang", "Motsheganong", "Seetebosigo", "Phukwi", "Phatwe", "Lwetse", "Diphalane", "Ngwanatsele", "Sedimothole"),
         weekdays = listOf("Tshipi", "Mosopulogo", "Labobedi", "Laboraro", "Labone", "Labotlhano", "Matlhatso"),
@@ -4897,7 +5193,9 @@ public object Locales {
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
-    public val TPI: DateLocale = DateLocale(
+    public val TPI: DateLocale = buildTpi()
+
+    private fun buildTpi(): DateLocale = DateLocale(
         code = "tpi",
         months = listOf("Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba"),
         weekdays = listOf("Sande", "Mande", "Tunde", "Trinde", "Fonde", "Fraide", "Sarere"),
@@ -4930,7 +5228,9 @@ public object Locales {
     // ================================================================
     // TR — Turkish
     // ================================================================
-    public val TR: DateLocale = DateLocale(
+    public val TR: DateLocale = buildTr()
+
+    private fun buildTr(): DateLocale = DateLocale(
         code = "tr",
         months = listOf("Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"),
         weekdays = listOf("Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"),
@@ -4963,7 +5263,9 @@ public object Locales {
     // ================================================================
     // TS — Tsonga
     // ================================================================
-    public val TS: DateLocale = DateLocale(
+    public val TS: DateLocale = buildTs()
+
+    private fun buildTs(): DateLocale = DateLocale(
         code = "ts",
         months = listOf("Sunguti", "Nyenyenyani", "Nyenyankulu", "Dzivamisoko", "Mudyaxihi", "Khotavuxika", "Mawuwani", "Mhawuri", "Ndzhati", "Nhlangula", "Hukuri", "N'wendzamhala"),
         weekdays = listOf("Sonto", "Musumbhunuku", "Ravumbirhi", "Ravunharhu", "Ravumune", "Ravuntlhanu", "Mugqivela"),
@@ -4996,7 +5298,9 @@ public object Locales {
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
-    public val TUM: DateLocale = DateLocale(
+    public val TUM: DateLocale = buildTum()
+
+    private fun buildTum(): DateLocale = DateLocale(
         code = "tum",
         months = listOf("Janyuwale", "Feburuware", "Marichi", "Epurelo", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputembala", "Okutobala", "Novembala", "Disembala"),
         weekdays = listOf("Sabata", "Mande", "Chibiri", "Chitatu", "Chinayi", "Chinkondi", "Chisulo"),
@@ -5027,7 +5331,9 @@ public object Locales {
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
-    public val TZM: DateLocale = DateLocale(
+    public val TZM: DateLocale = buildTzm()
+
+    private fun buildTzm(): DateLocale = DateLocale(
         code = "tzm",
         months = listOf("ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"),
         weekdays = listOf("ⴰⵙⴰⵎⴰⵙ", "ⴰⵢⵏⴰⵙ", "ⴰⵙⵉⵏⴰⵙ", "ⴰⴽⵕⴰⵙ", "ⴰⴽⵡⴰⵙ", "ⴰⵙⵉⵎⵡⴰⵙ", "ⴰⵙⵉⴹⵢⴰⵙ"),
@@ -5058,7 +5364,9 @@ public object Locales {
     // ================================================================
     // UK — Ukrainian
     // ================================================================
-    public val UK: DateLocale = DateLocale(
+    public val UK: DateLocale = buildUk()
+
+    private fun buildUk(): DateLocale = DateLocale(
         code = "uk",
         months = listOf("січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"),
         weekdays = listOf("неділя", "понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота"),
@@ -5092,7 +5400,9 @@ public object Locales {
     // ================================================================
     // UMB — Umbundu
     // ================================================================
-    public val UMB: DateLocale = DateLocale(
+    public val UMB: DateLocale = buildUmb()
+
+    private fun buildUmb(): DateLocale = DateLocale(
         code = "umb",
         months = listOf("Janelu", "Fevelelu", "Malsu", "Abili", "Mayu", "Junyu", "Julyu", "Agostu", "Setembu", "Otubu", "Novembu", "Desembu"),
         weekdays = listOf("Lumingu", "Cimosi", "Civali", "Citathu", "Cinyali", "Citanu", "Cisabalu"),
@@ -5125,7 +5435,9 @@ public object Locales {
     // ================================================================
     // UR — Urdu
     // ================================================================
-    public val UR: DateLocale = DateLocale(
+    public val UR: DateLocale = buildUr()
+
+    private fun buildUr(): DateLocale = DateLocale(
         code = "ur",
         months = listOf("جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر"),
         weekdays = listOf("اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"),
@@ -5158,7 +5470,9 @@ public object Locales {
     // ================================================================
     // UZ — Uzbek
     // ================================================================
-    public val UZ: DateLocale = DateLocale(
+    public val UZ: DateLocale = buildUz()
+
+    private fun buildUz(): DateLocale = DateLocale(
         code = "uz",
         months = listOf("yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"),
         weekdays = listOf("yakshanba", "dushanba", "seshanba", "chorshanba", "payshanba", "juma", "shanba"),
@@ -5191,7 +5505,9 @@ public object Locales {
     // ================================================================
     // VE — Venda
     // ================================================================
-    public val VE: DateLocale = DateLocale(
+    public val VE: DateLocale = buildVe()
+
+    private fun buildVe(): DateLocale = DateLocale(
         code = "ve",
         months = listOf("Phando", "Luhuhi", "Thafamuhwe", "Lambamai", "Shundunthule", "Fulwi", "Fulwana", "Thangule", "Khubvumedzi", "Tshimedzi", "Lara", "Nyendavhusiku"),
         weekdays = listOf("Swondaha", "Musumbuluwo", "Lavhuvhili", "Lavhuraru", "Lavhuna", "Lavhutanu", "Mugivhela"),
@@ -5223,7 +5539,9 @@ public object Locales {
     // ================================================================
     // VI — Vietnamese
     // ================================================================
-    public val VI: DateLocale = DateLocale(
+    public val VI: DateLocale = buildVi()
+
+    private fun buildVi(): DateLocale = DateLocale(
         code = "vi",
         months = listOf("tháng 1", "tháng 2", "tháng 3", "tháng 4", "tháng 5", "tháng 6", "tháng 7", "tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12"),
         weekdays = listOf("Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"),
@@ -5256,7 +5574,9 @@ public object Locales {
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
-    public val VMW: DateLocale = DateLocale(
+    public val VMW: DateLocale = buildVmw()
+
+    private fun buildVmw(): DateLocale = DateLocale(
         code = "vmw",
         months = listOf("Januário", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"),
         weekdays = listOf("Jumaaphi", "Jumaataatu", "Jumaanne", "Jumaatano", "Alaahamisi", "Ijumaa", "Jumaamo"),
@@ -5289,7 +5609,9 @@ public object Locales {
     // ================================================================
     // WO — Wolof
     // ================================================================
-    public val WO: DateLocale = DateLocale(
+    public val WO: DateLocale = buildWo()
+
+    private fun buildWo(): DateLocale = DateLocale(
         code = "wo",
         months = listOf("Samwiyee", "Fewriyee", "Maars", "Awril", "Mee", "Suwe", "Sullet", "Ut", "Septàmbar", "Oktoobar", "Nowàmbar", "Desàmbar"),
         weekdays = listOf("Dibéer", "Altine", "Talaata", "Àllarba", "Alxames", "Àjjuma", "Gaawu"),
@@ -5322,7 +5644,9 @@ public object Locales {
     // ================================================================
     // XH — Xhosa
     // ================================================================
-    public val XH: DateLocale = DateLocale(
+    public val XH: DateLocale = buildXh()
+
+    private fun buildXh(): DateLocale = DateLocale(
         code = "xh",
         months = listOf("Janyuwari", "Februwari", "Matshi", "Epreli", "Meyi", "Juni", "Julayi", "Agasti", "Septemba", "Okthobha", "Novemba", "Disemba"),
         weekdays = listOf("ICawa", "UMvulo", "ULwesibini", "ULwesithathu", "ULwesine", "ULwesihlanu", "UMgqibelo"),
@@ -5355,7 +5679,9 @@ public object Locales {
     // ================================================================
     // YAO — Yao
     // ================================================================
-    public val YAO: DateLocale = DateLocale(
+    public val YAO: DateLocale = buildYao()
+
+    private fun buildYao(): DateLocale = DateLocale(
         code = "yao",
         months = listOf("Janyuwale", "Febuwale", "Malichi", "Epireli", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba"),
         weekdays = listOf("Lisiku lya Jumapili", "Lisiku lya kwanda", "Lisiku lya wili", "Lisiku lya tatu", "Lisiku lya ncece", "Lisiku lya nsano", "Lisiku lya Juma"),
@@ -5386,7 +5712,9 @@ public object Locales {
     // ================================================================
     // YO — Yoruba
     // ================================================================
-    public val YO: DateLocale = DateLocale(
+    public val YO: DateLocale = buildYo()
+
+    private fun buildYo(): DateLocale = DateLocale(
         code = "yo",
         months = listOf("Oṣù Ṣẹ́rẹ́", "Oṣù Èrèlè", "Oṣù Ẹrẹ̀nà", "Oṣù Ìgbé", "Oṣù Ẹ̀bibi", "Oṣù Òkúdu", "Oṣù Agẹmọ", "Oṣù Ògún", "Oṣù Owewe", "Oṣù Ọ̀wàrà", "Oṣù Bélú", "Oṣù Ọ̀pẹ̀"),
         weekdays = listOf("Ọjọ́ Àìkú", "Ọjọ́ Ajé", "Ọjọ́ Ìṣẹ́gun", "Ọjọ́rú", "Ọjọ́bọ̀", "Ọjọ́ Ẹtì", "Ọjọ́ Àbámẹ́ta"),
@@ -5419,7 +5747,9 @@ public object Locales {
     // ================================================================
     // YUE — Cantonese
     // ================================================================
-    public val YUE: DateLocale = DateLocale(
+    public val YUE: DateLocale = buildYue()
+
+    private fun buildYue(): DateLocale = DateLocale(
         code = "yue",
         months = listOf("一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"),
         weekdays = listOf("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"),
@@ -5452,7 +5782,9 @@ public object Locales {
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
-    public val ZDJ: DateLocale = DateLocale(
+    public val ZDJ: DateLocale = buildZdj()
+
+    private fun buildZdj(): DateLocale = DateLocale(
         code = "zdj",
         months = listOf("Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"),
         weekdays = listOf("Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"),
@@ -5485,7 +5817,9 @@ public object Locales {
     // ================================================================
     // ZH — Chinese
     // ================================================================
-    public val ZH: DateLocale = DateLocale(
+    public val ZH: DateLocale = buildZh()
+
+    private fun buildZh(): DateLocale = DateLocale(
         code = "zh",
         months = listOf("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"),
         weekdays = listOf("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"),
@@ -5518,7 +5852,9 @@ public object Locales {
     // ================================================================
     // ZU — Zulu
     // ================================================================
-    public val ZU: DateLocale = DateLocale(
+    public val ZU: DateLocale = buildZu()
+
+    private fun buildZu(): DateLocale = DateLocale(
         code = "zu",
         months = listOf("Januwari", "Februwari", "Mashi", "Ephreli", "Meyi", "Juni", "Julayi", "Agasti", "Septhemba", "Okthoba", "Novemba", "Disemba"),
         weekdays = listOf("ISonto", "UMsombuluko", "ULwesibili", "ULwesithathu", "ULwesine", "ULwesihlanu", "UMgqibelo"),

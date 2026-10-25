@@ -1276,3 +1276,103 @@ describe "Locale lookup by code string" do
     SayableAge::Locales.get("EN").should be_nil
   end
 end
+
+# ================================================================
+# Section 31: Weeks and days across month ends
+# ================================================================
+describe "Weeks and days across month ends" do
+  # 31.1
+  it "88 days across a 28-day February" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2016-12-31", "2017-03-29").should eq "12 weeks, 4 days"
+  end
+
+  # 31.2
+  it "90 days across a year end into a leap year" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("1991-11-27", "1992-02-25").should eq "12 weeks, 6 days"
+  end
+
+  # 31.3
+  it "33 days across a year end" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2020-11-30", "2021-01-02").should eq "4 weeks, 5 days"
+  end
+
+  # 31.4
+  it "Compact form of 31.1" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :compact).format_age("2016-12-31", "2017-03-29").should eq "12w4d"
+  end
+end
+
+# ================================================================
+# Section 32: Half years take their plural form from whole years
+# ================================================================
+describe "Half years take their plural form from whole years" do
+  # 32.1
+  it "Polish 3 is 'few'" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("pl").not_nil!, :normal).format_age("2021-06-15", "2025-01-15").should eq "3 i pół lata"
+  end
+
+  # 32.2
+  it "Polish 5 is 'many'" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("pl").not_nil!, :short).format_age("2020-06-15", "2025-12-15").should eq "5 i pół lat"
+  end
+
+  # 32.3
+  it "Tachelhit 6 is 'few'" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("shi").not_nil!, :normal).format_age("2005-06-08", "2012-06-07").should eq "6 iseggasen d uzgen"
+  end
+end
+
+# ================================================================
+# Section 33: Input validation
+# ================================================================
+describe "Input validation" do
+  # 33.1
+  it "February 30 doesn't exist" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2025-02-30", "2032-06-25").should be_nil
+  end
+
+  # 33.2
+  it "Month 13" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2025-13-01", "2027-01-31").should be_nil
+  end
+
+  # 33.3
+  it "February 29 in a non-leap year" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2023-02-29", "2025-03-01").should be_nil
+  end
+
+  # 33.4
+  it "Day 00" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2025-06-00", "2027-02-25").should be_nil
+  end
+
+  # 33.5
+  it "Unpadded month and day" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2025-6-1", "2027-02-25").should be_nil
+  end
+
+  # 33.6
+  it "Surrounding whitespace" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age(" 2025-06-01", "2027-02-25").should be_nil
+  end
+
+  # 33.7
+  it "A datetime is not a date" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2025-06-15T10:00:00", "2027-02-25").should be_nil
+  end
+
+  # 33.8
+  it "Invalid asOf" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2020-01-01", "2025-04-31").should be_nil
+  end
+
+  # 33.9
+  it "formatStage validates too" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_stage("2025-02-30", "2027-09-05").should be_nil
+  end
+
+  # 33.10
+  it "February 29 in a leap year is valid" do
+    SayableAge::Formatter.new(SayableAge::Locales.get("en").not_nil!, :normal).format_age("2024-02-29", "2026-03-01").should eq "2 years"
+  end
+end

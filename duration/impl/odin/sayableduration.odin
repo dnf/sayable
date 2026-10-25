@@ -112,88 +112,59 @@ days_since_epoch :: proc(year, month, day: int) -> int {
     return days
 }
 
-parse_iso_to_seconds :: proc(s: string) -> (int, bool) {
-    if len(s) == 0 do return 0, false
-    t_pos := -1
-    for i := 0; i < len(s); i += 1 {
-        if s[i] == 'T' {
-            t_pos = i
-            break
-        }
-    }
-    if t_pos < 0 do return 0, false
+// Number of leading ASCII digits in s.
+digit_run :: proc(s: string) -> int {
+    n := 0
+    for n < len(s) && s[n] >= '0' && s[n] <= '9' do n += 1
+    return n
+}
 
-    date_part := s[0:t_pos]
-    if len(date_part) < 10 do return 0, false
-    if date_part[4] != '-' || date_part[7] != '-' do return 0, false
+// Nothing, "Z", or "+HH:MM" / "-HH:MM".
+is_zone_suffix :: proc(s: string) -> bool {
+    if len(s) == 0 do return true
+    if len(s) == 1 do return s[0] == 'Z'
+    return len(s) == 6 && (s[0] == '+' || s[0] == '-') && digit_run(s[1:3]) == 2 && s[3] == ':' && digit_run(s[4:6]) == 2
+}
 
-    y, y_ok := parse_digits(date_part[0:4])
-    if !y_ok do return 0, false
-    mo, mo_ok := parse_digits(date_part[5:7])
-    if !mo_ok do return 0, false
-    d, d_ok := parse_digits(date_part[8:10])
-    if !d_ok do return 0, false
+Clock :: struct {
+    hour, minute, second: int,
+}
 
-    time_part := s[t_pos + 1:]
-    // Strip timezone
-    for i := 0; i < len(time_part); i += 1 {
-        if time_part[i] == '+' || time_part[i] == 'Z' {
-            time_part = time_part[0:i]
-            break
-        }
-    }
-
-    // Parse HH:MM:SS (or partial)
-    hour := 0
-    minute := 0
+// H:MM or HH:MM, optional :SS, optional . plus digits after the seconds, and an
+// optional zone suffix, which is validated but ignored.
+parse_clock :: proc(clock: string) -> (Clock, bool) {
+    hour_len := digit_run(clock)
+    if hour_len < 1 || hour_len > 2 || len(clock) < hour_len + 3 || clock[hour_len] != ':' do return {}, false
+    if digit_run(clock[hour_len + 1:hour_len + 3]) != 2 do return {}, false
+    hour, _ := parse_digits(clock[0:hour_len])
+    minute, _ := parse_digits(clock[hour_len + 1:hour_len + 3])
     second := 0
-
-    colon1 := -1
-    for i := 0; i < len(time_part); i += 1 {
-        if time_part[i] == ':' {
-            colon1 = i
-            break
+    rest := clock[hour_len + 3:]
+    if len(rest) > 0 && rest[0] == ':' {
+        if len(rest) < 3 || digit_run(rest[1:3]) != 2 do return {}, false
+        second, _ = parse_digits(rest[1:3])
+        rest = rest[3:]
+        if len(rest) > 0 && rest[0] == '.' {
+            fraction_len := digit_run(rest[1:])
+            if fraction_len == 0 do return {}, false
+            rest = rest[1 + fraction_len:]
         }
     }
-    if colon1 < 0 do return 0, false
+    if !is_zone_suffix(rest) || hour > 23 || minute > 59 || second > 59 do return {}, false
+    return Clock{hour, minute, second}, true
+}
 
-    h_ok: bool
-    hour, h_ok = parse_digits(time_part[0:colon1])
-    if !h_ok do return 0, false
-
-    rest := time_part[colon1 + 1:]
-    colon2 := -1
-    for i := 0; i < len(rest); i += 1 {
-        if rest[i] == ':' {
-            colon2 = i
-            break
-        }
-    }
-    if colon2 >= 0 {
-        m_ok: bool
-        minute, m_ok = parse_digits(rest[0:colon2])
-        if !m_ok do return 0, false
-        sec_part := rest[colon2 + 1:]
-        // Strip fractional seconds
-        for i := 0; i < len(sec_part); i += 1 {
-            if sec_part[i] == '.' {
-                sec_part = sec_part[0:i]
-                break
-            }
-        }
-        if len(sec_part) > 0 {
-            s_ok: bool
-            second, s_ok = parse_digits(sec_part)
-            if !s_ok do return 0, false
-        }
-    } else {
-        m_ok: bool
-        minute, m_ok = parse_digits(rest)
-        if !m_ok do return 0, false
-    }
-
-    days := days_since_epoch(y, mo, d)
-    return days * 86400 + hour * 3600 + minute * 60 + second, true
+// A timestamp YYYY-MM-DDTHH:MM[:SS[.fff]][zone] (docs/input-formats.md) as
+// seconds since 2000-01-01 for diffing.
+parse_iso_to_seconds :: proc(s: string) -> (int, bool) {
+    if len(s) < 11 || s[4] != '-' || s[7] != '-' || s[10] != 'T' do return 0, false
+    y, y_ok := parse_digits(s[0:4])
+    mo, mo_ok := parse_digits(s[5:7])
+    d, d_ok := parse_digits(s[8:10])
+    if !y_ok || !mo_ok || !d_ok || mo < 1 || mo > 12 || d < 1 || d > days_in_month(y, mo) do return 0, false
+    c, ok := parse_clock(s[11:])
+    if !ok do return 0, false
+    return days_since_epoch(y, mo, d) * 86400 + c.hour * 3600 + c.minute * 60 + c.second, true
 }
 
 // Integer to string conversion (no allocations, uses caller buffer)
@@ -356,7 +327,17 @@ get_unit :: proc(units: ^Duration_Unit_Set, name: string) -> Duration_Unit_Forms
 
 // Formatting
 
-format_duration_seconds :: proc(buf: []u8, locale: ^Duration_Locale, compactness: Compactness, total: int) -> string {
+// Durations over 6000 months (500 years) have no value: the same ceiling as sayable-age.
+MAX_DURATION_MONTHS :: 6000
+
+// Months from whole days, 30.44 days to the month, rounded:
+// round(total_days / 30.44) = (total_days * 100 + 1522) / 3044
+approximate_months :: proc(total_days: int) -> int {
+    return (total_days * 100 + 1522) / 3044
+}
+
+format_duration_seconds :: proc(buf: []u8, locale: ^Duration_Locale, compactness: Compactness, total: int) -> Maybe(string) {
+    if total / 86400 >= 30 && approximate_months(total / 86400) > MAX_DURATION_MONTHS do return nil
     ovr: Maybe(Duration_Compactness_Override)
     switch compactness {
     case .Short:   ovr = locale.short_override
@@ -479,8 +460,7 @@ format_duration_seconds :: proc(buf: []u8, locale: ^Duration_Locale, compactness
     }
 
     // Approximate months (30.44 days average)
-    // Use integer arithmetic: round(total_days / 30.44) = (total_days * 100 + 1522) / 3044
-    total_months := (total_days * 100 + 1522) / 3044
+    total_months := approximate_months(total_days)
 
     // 1-11 months
     if total_months < 12 {
@@ -543,7 +523,8 @@ format_since :: proc(buf: []u8, locale: ^Duration_Locale, compactness: Compactne
     }
 
     dur_buf: [256]u8
-    dur := format_duration_seconds(dur_buf[:], locale, compactness, diff)
+    dur, dur_ok := format_duration_seconds(dur_buf[:], locale, compactness, diff).?
+    if !dur_ok do return nil
 
     w := writer_init(buf)
     replace_first(&w, ago, "{0}", dur)
@@ -577,7 +558,8 @@ format_until :: proc(buf: []u8, locale: ^Duration_Locale, compactness: Compactne
     }
 
     dur_buf: [256]u8
-    dur := format_duration_seconds(dur_buf[:], locale, compactness, diff)
+    dur, dur_ok := format_duration_seconds(dur_buf[:], locale, compactness, diff).?
+    if !dur_ok do return nil
 
     w := writer_init(buf)
     replace_first(&w, in_future, "{0}", dur)

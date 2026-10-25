@@ -12,6 +12,9 @@ from .locales.en import build_en
 
 alias VERSION = "0.5.0"
 
+# 500 years, the same ceiling as sayable-age
+alias MAX_DURATION_MONTHS = 6000
+
 
 fn _char_to_digit(c: String) -> Int:
     """Convert a single character to its digit value, or -1 if not a digit."""
@@ -28,13 +31,20 @@ fn _char_to_digit(c: String) -> Int:
     return -1
 
 
-fn _parse_int(s: String) -> Int:
-    """Parse an integer from a string. Returns -1 on failure."""
-    if len(s) == 0:
+fn _char_at(s: String, i: Int) -> String:
+    """Return the one-character string at byte i, or empty past the end."""
+    if i < 0 or i >= len(s):
+        return ""
+    return String(s[i : i + 1])
+
+
+fn _number_at(s: String, start: Int, count: Int) -> Int:
+    """Parse count ASCII digits starting at start. Returns -1 on failure."""
+    if start + count > len(s):
         return -1
     var result = 0
-    for i in range(len(s)):
-        var d = _char_to_digit(s[i : i + 1])
+    for i in range(start, start + count):
+        var d = _char_to_digit(_char_at(s, i))
         if d < 0:
             return -1
         result = result * 10 + d
@@ -93,71 +103,68 @@ struct ParsedISO(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
         self.valid = False
 
 
-fn _split_at(s: String, delim: String) -> String:
-    """Return substring before delimiter, or the whole string if not found."""
-    var idx = s.find(delim)
-    if idx == -1:
-        return s
-    return s[:idx]
-
-
-fn _split_after(s: String, delim: String) -> String:
-    """Return substring after delimiter, or empty if not found."""
-    var idx = s.find(delim)
-    if idx == -1:
-        return ""
-    return s[idx + len(delim) :]
+fn _zone_end(s: String, start: Int) -> Int:
+    """Return the index after an optional Z or +HH:MM/-HH:MM zone at start, or -1."""
+    if start == len(s):
+        return start
+    var c = _char_at(s, start)
+    if c == "Z":
+        return start + 1
+    if c != "+" and c != "-":
+        return -1
+    if _number_at(s, start + 1, 2) < 0 or _char_at(s, start + 3) != ":":
+        return -1
+    if _number_at(s, start + 4, 2) < 0:
+        return -1
+    return start + 6
 
 
 fn _parse_iso_to_seconds(iso_str: String) -> ParsedISO:
-    """Parse ISO datetime string to epoch-ish seconds for diffing."""
+    """Parse YYYY-MM-DDTHH:MM[:SS[.fff]][zone] to epoch-ish seconds for diffing.
+
+    The zone suffix is validated but not applied. Returns invalid if malformed.
+    """
     var result = ParsedISO()
-    if len(iso_str) == 0:
+    if len(iso_str) < 11 or _char_at(iso_str, 10) != "T":
+        return result
+    if _char_at(iso_str, 4) != "-" or _char_at(iso_str, 7) != "-":
+        return result
+    var year = _number_at(iso_str, 0, 4)
+    var month = _number_at(iso_str, 5, 2)
+    var day = _number_at(iso_str, 8, 2)
+    if year < 0 or month < 1 or month > 12 or day < 1 or day > _days_in_month(year, month):
         return result
 
-    var t_pos = iso_str.find("T")
-    if t_pos == -1:
+    var hour_start = 11
+    if _char_to_digit(_char_at(iso_str, hour_start)) < 0:
         return result
-
-    var date_part = iso_str[:t_pos]
-    var time_raw = iso_str[t_pos + 1 :]
-
-    # Strip timezone info
-    var time_str = _split_at(time_raw, "+")
-    time_str = _split_at(time_str, "Z")
-
-    # Parse date
-    if len(date_part) < 10:
+    var hour_len = 1
+    if _char_to_digit(_char_at(iso_str, hour_start + 1)) >= 0:
+        hour_len = 2
+    var hour = _number_at(iso_str, hour_start, hour_len)
+    var pos = hour_start + hour_len
+    if _char_at(iso_str, pos) != ":":
         return result
-    if date_part[4:5] != "-" or date_part[7:8] != "-":
+    var minute = _number_at(iso_str, pos + 1, 2)
+    if minute < 0:
         return result
-
-    var year = _parse_int(date_part[0:4])
-    var month = _parse_int(date_part[5:7])
-    var day = _parse_int(date_part[8:10])
-    if year < 0 or month < 0 or day < 0:
-        return result
-
-    # Parse time
-    var colon1 = time_str.find(":")
-    if colon1 == -1:
-        return result
-
-    var hour = _parse_int(time_str[:colon1])
-    var rest_after_hour = time_str[colon1 + 1 :]
-
-    var minute = 0
+    pos += 3
     var second = 0
-    var colon2 = rest_after_hour.find(":")
-    if colon2 == -1:
-        # HH:MM format
-        minute = _parse_int(_split_at(rest_after_hour, "."))
-    else:
-        minute = _parse_int(rest_after_hour[:colon2])
-        var sec_str = rest_after_hour[colon2 + 1 :]
-        second = _parse_int(_split_at(sec_str, "."))
-
-    if hour < 0 or minute < 0 or second < 0:
+    if _char_at(iso_str, pos) == ":":
+        second = _number_at(iso_str, pos + 1, 2)
+        if second < 0:
+            return result
+        pos += 3
+        if _char_at(iso_str, pos) == ".":
+            pos += 1
+            var fraction_start = pos
+            while _char_to_digit(_char_at(iso_str, pos)) >= 0:
+                pos += 1
+            if pos == fraction_start:
+                return result
+    if _zone_end(iso_str, pos) != len(iso_str):
+        return result
+    if hour > 23 or minute > 59 or second > 59:
         return result
 
     var days = _days_since_epoch(year, month, day)
@@ -282,6 +289,8 @@ struct SayableDuration(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestruct
             return self.just_now
 
         var dur = self._format_duration_seconds(diff)
+        if len(dur) == 0:
+            return ""
         return _str_replace(self.ago, "{0}", dur)
 
     fn format_until(self, target: String, as_of: String) -> String:
@@ -301,10 +310,15 @@ struct SayableDuration(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestruct
             return self.just_now
 
         var dur = self._format_duration_seconds(diff)
+        if len(dur) == 0:
+            return ""
         return _str_replace(self.in_future, "{0}", dur)
 
     fn _format_duration_seconds(self, total: Int) -> String:
-        """Apply duration tiers to total seconds."""
+        """Apply duration tiers to total seconds.
+
+        Returns empty string past the 500-year ceiling.
+        """
         # 0 seconds
         if total == 0:
             return self.just_now
@@ -372,6 +386,8 @@ struct SayableDuration(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestruct
         # Approximate months (30.44 days average)
         # Use integer rounding: (total_days * 100 + 1522) // 3044
         var total_months = (total_days * 100 + 1522) // 3044
+        if total_months > MAX_DURATION_MONTHS:
+            return ""
 
         # 1-11 months
         if total_months < 12:

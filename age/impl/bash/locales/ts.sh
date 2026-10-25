@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ts.json
 
-_plural_ts() {
+_sayableage_plural_ts() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ts() {
+_sayableage_locale_ts() {
     _unit_day_one='siku {n}'
     _unit_day_other='masiku {n}'
     _unit_week_one='vhiki {n}'
@@ -47,5 +47,5 @@ _locale_ts() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ts
+    _plural_func=_sayableage_plural_ts
 }

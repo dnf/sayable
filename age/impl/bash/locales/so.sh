@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/so.json
 
-_plural_so() {
+_sayableage_plural_so() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_so() {
+_sayableage_locale_so() {
     _unit_day_one='maalin {n}'
     _unit_day_other='maalmood {n}'
     _unit_week_one='toddobaad {n}'
@@ -43,5 +43,5 @@ _locale_so() {
     _compact_unit_year='{n}s'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_so
+    _plural_func=_sayableage_plural_so
 }

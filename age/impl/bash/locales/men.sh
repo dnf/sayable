@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/men.json
 
-_plural_men() {
+_sayableage_plural_men() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_men() {
+_sayableage_locale_men() {
     _unit_day_one='lɔhɔ {n}'
     _unit_day_other='lɔhɔnga {n}'
     _unit_week_one='wikii {n}'
@@ -46,5 +46,5 @@ _locale_men() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_men
+    _plural_func=_sayableage_plural_men
 }

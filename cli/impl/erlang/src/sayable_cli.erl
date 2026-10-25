@@ -264,26 +264,13 @@ cmd_until([RawTarget | _], #{locale := LocaleCode, as_of := RawAsOf, compactness
 
 %% ── Locales command ───────────────────────────────────────────────
 
+%% All four components share the same locale codes, so the generated age
+%% locale modules on the code path name them all.
 collect_locale_codes() ->
-    %% All four components share the same locale codes.
-    %% Enumerate by probing the age locales barrel module with all known codes.
-    AllCodes = all_locale_codes(),
-    lists:sort(AllCodes).
-
-all_locale_codes() ->
-    %% Complete list derived from the generated locales barrel modules.
-    ["af","ak","am","ar","az","bci","be","bem","bg","bm","bn","br","bs",
-     "ca","ceb","cs","cy","da","de","din","dje","dyu","ee","el","en","es",
-     "et","eu","fa","fan","ff","fi","fil","fon","fr","ga","gd","gl","gn",
-     "gu","gv","ha","he","hi","hr","ht","hu","hy","id","ig","is","it",
-     "ja","jv","ka","kbp","kk","km","kn","ko","kpe","ktu","ku","kw","ky",
-     "lg","ln","lo","lt","lv","men","mfe","mg","mi","mk","ml","mn","mnk",
-     "mos","mr","ms","mt","my","nb","nd","ne","ng","nl","nso","nus","ny",
-     "om","or","pa","pl","pov","ps","pt","qu","ro","ru","rw","sar","sd",
-     "sg","shi","si","sk","sl","sn","snk","so","sq","sr","ss","st","su",
-     "suk","sv","sw","ta","te","tem","tg","th","ti","tig","tk","tn","tr",
-     "ts","tzm","uk","umb","ur","uz","vi","vmw","wo","xh","yo","yue",
-     "zdj","zh","zu"].
+    Prefix = "sayableage_locales_",
+    lists:usort([lists:nthtail(length(Prefix), Module)
+                 || {Module, _File, _Loaded} <- code:all_available(),
+                    lists:prefix(Prefix, Module)]).
 
 %% ── Integer detection ─────────────────────────────────────────────
 

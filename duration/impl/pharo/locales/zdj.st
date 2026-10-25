@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/zdj.json "
 
-"Locale: zdj"
+"Locale: zdj"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 zdj

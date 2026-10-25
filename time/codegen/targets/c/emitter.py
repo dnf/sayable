@@ -286,45 +286,73 @@ static int st_parse_digits(const char *s, int len) {
     return v;
 }
 
-static bool st_parse_time(const char *input, int *hour, int *minute) {
-    const char *t;
-    const char *colon;
-    int h_len, m_len;
-    if (!input || !input[0]) return false;
+static int st_digit_run(const char *s) {
+    int n = 0;
+    while (s[n] >= '0' && s[n] <= '9') n++;
+    return n;
+}
 
-    /* Find 'T' for ISO datetime */
-    t = input;
-    {
-        const char *p = t;
-        while (*p) {
-            if (*p == 'T') { t = p + 1; break; }
-            p++;
+static int st_days_in_month(int year, int month) {
+    if (month == 2) {
+        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
+    }
+    if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
+    return 31;
+}
+
+/* Exactly YYYY-MM-DD (len characters) naming a real Gregorian calendar day. */
+static bool st_is_real_date(const char *s, size_t len) {
+    int year, month, day;
+    if (len != 10 || s[4] != '-' || s[7] != '-') return false;
+    year = st_parse_digits(s, 4);
+    month = st_parse_digits(s + 5, 2);
+    day = st_parse_digits(s + 8, 2);
+    return year >= 0 && month >= 1 && month <= 12 && day >= 1 && day <= st_days_in_month(year, month);
+}
+
+/* Nothing, "Z", or "+HH:MM" / "-HH:MM". */
+static bool st_is_zone_suffix(const char *s) {
+    if (s[0] == '\\0') return true;
+    if (s[0] == 'Z') return s[1] == '\\0';
+    return (s[0] == '+' || s[0] == '-') && st_digit_run(s + 1) == 2 && s[3] == ':' &&
+           st_digit_run(s + 4) == 2 && s[6] == '\\0';
+}
+
+/* H:MM or HH:MM, optional :SS, optional . plus digits after the seconds, and an
+ * optional zone suffix, which is validated but ignored (docs/input-formats.md). */
+static bool st_parse_clock(const char *clock, int *hour, int *minute) {
+    int hour_len = st_digit_run(clock);
+    int second = 0;
+    const char *rest;
+    if (hour_len < 1 || hour_len > 2 || clock[hour_len] != ':' || st_digit_run(clock + hour_len + 1) < 2) {
+        return false;
+    }
+    *hour = st_parse_digits(clock, hour_len);
+    *minute = st_parse_digits(clock + hour_len + 1, 2);
+    rest = clock + hour_len + 3;
+    if (*rest == ':') {
+        if (st_digit_run(rest + 1) < 2) return false;
+        second = st_parse_digits(rest + 1, 2);
+        rest += 3;
+        if (*rest == '.') {
+            int fraction_len = st_digit_run(rest + 1);
+            if (fraction_len == 0) return false;
+            rest += 1 + fraction_len;
         }
     }
+    return st_is_zone_suffix(rest) && *hour <= 23 && *minute <= 59 && second <= 59;
+}
 
-    /* Find colon */
-    colon = t;
-    while (*colon && *colon != ':') colon++;
-    if (!*colon) return false;
-
-    h_len = (int)(colon - t);
-    if (h_len < 1 || h_len > 2) return false;
-
-    *hour = st_parse_digits(t, h_len);
-    if (*hour < 0 || *hour > 23) return false;
-
-    /* Parse minutes (first 2 digits after colon) */
-    {
-        const char *m_start = colon + 1;
-        const char *m_end = m_start;
-        while (*m_end && *m_end != ':' && *m_end != '.' && *m_end != '+' && *m_end != 'Z') m_end++;
-        m_len = (int)(m_end - m_start);
-        if (m_len < 1 || m_len > 2) return false;
-        *minute = st_parse_digits(m_start, m_len);
-        if (*minute < 0 || *minute > 59) return false;
+/* A clock time, alone or after the T of an ISO datetime with a valid date. */
+static bool st_parse_time(const char *input, int *hour, int *minute) {
+    const char *t;
+    if (!input) return false;
+    for (t = input; *t && *t != 'T'; t++) {}
+    if (*t == 'T') {
+        if (!st_is_real_date(input, (size_t)(t - input))) return false;
+        return st_parse_clock(t + 1, hour, minute);
     }
-
-    return true;
+    return st_parse_clock(input, hour, minute);
 }
 
 /* ---- rounding ---- */

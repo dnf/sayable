@@ -18,29 +18,39 @@ function SayableTimeFormatter(locale::TimeLocale, compactness::Compactness=Norma
     SayableTimeFormatter(locale, compactness, short_clock)
 end
 
+# A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+# suffix, which is ignored), alone or after the T of an ISO datetime.
+const _CLOCK = r"\A([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z"
+const _DATE = r"\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z"
+
+_is_leap_year(y::Int) = (y % 4 == 0 && y % 100 != 0) || y % 400 == 0
+
+function _days_in_month(y::Int, m::Int)
+    m == 2 && return _is_leap_year(y) ? 29 : 28
+    m in (4, 6, 9, 11) ? 30 : 31
+end
+
+_is_real_date(y::Int, m::Int, d::Int) = 1 <= m <= 12 && 1 <= d <= _days_in_month(y, m)
+
+_capture_int(m::RegexMatch, i::Int) = m[i] === nothing ? 0 : parse(Int, m[i])
+
+function _has_real_date(date_part::AbstractString)
+    d = match(_DATE, date_part)
+    d !== nothing && _is_real_date(_capture_int(d, 1), _capture_int(d, 2), _capture_int(d, 3))
+end
+
 function _parse_time(input_str::String)
     isempty(input_str) && return nothing
-    t = input_str
-    if occursin("T", t)
-        t = string(split(t, "T")[2])
+    clock = input_str
+    t_index = findfirst('T', input_str)
+    if t_index !== nothing
+        _has_real_date(SubString(input_str, 1, prevind(input_str, t_index))) || return nothing
+        clock = SubString(input_str, nextind(input_str, t_index))
     end
-    if occursin("+", t)
-        t = string(split(t, "+")[1])
-    end
-    if occursin("Z", t)
-        t = string(split(t, "Z")[1])
-    end
-    parts = split(t, ":")
-    length(parts) < 2 && return nothing
-    hour = tryparse(Int, string(parts[1]))
-    # Handle fractional seconds in minute part
-    min_str = string(parts[2])
-    if occursin(".", min_str)
-        min_str = string(split(min_str, ".")[1])
-    end
-    minute = tryparse(Int, min_str)
-    (hour === nothing || minute === nothing) && return nothing
-    (hour < 0 || hour > 23 || minute < 0 || minute > 59) && return nothing
+    m = match(_CLOCK, clock)
+    m === nothing && return nothing
+    hour, minute, second = _capture_int(m, 1), _capture_int(m, 2), _capture_int(m, 3)
+    (hour > 23 || minute > 59 || second > 59) && return nothing
     (hour, minute)
 end
 

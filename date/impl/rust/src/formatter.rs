@@ -223,28 +223,40 @@ impl SayableDate {
     }
 }
 
-/// Parse "YYYY-MM-DD" or ISO datetime to (year, month, day). Returns None on failure.
+/// Parse "YYYY-MM-DD", optionally followed by "T" and anything else, into
+/// (year, month, day). The date must name a real calendar day; returns None
+/// otherwise (see docs/input-formats.md).
 fn parse_date(s: &str) -> Option<(i32, i32, i32)> {
-    if s.is_empty() {
+    let bytes = s.as_bytes();
+    let is_date_alone = bytes.len() == 10;
+    let is_datetime = bytes.len() > 10 && bytes[10] == b'T';
+    if !(is_date_alone || is_datetime) || bytes[4] != b'-' || bytes[7] != b'-' {
         return None;
     }
-    // Strip time part from ISO datetime
-    let date_part = if let Some(idx) = s.find('T') {
-        &s[..idx]
-    } else {
-        s
-    };
-    let parts: Vec<&str> = date_part.split('-').collect();
-    if parts.len() != 3 {
-        return None;
-    }
-    let year: i32 = parts[0].parse().ok()?;
-    let month: i32 = parts[1].parse().ok()?;
-    let day: i32 = parts[2].parse().ok()?;
-    if !(1..=12).contains(&month) || !(1..=31).contains(&day) {
+    let year = parse_digits(&bytes[0..4])?;
+    let month = parse_digits(&bytes[5..7])?;
+    let day = parse_digits(&bytes[8..10])?;
+    if !(1..=12).contains(&month) || day < 1 || day > days_in_month(year, month) {
         return None;
     }
     Some((year, month, day))
+}
+
+/// Convert a run of ASCII digits to an i32; None if any byte isn't a digit.
+fn parse_digits(digits: &[u8]) -> Option<i32> {
+    digits.iter().try_fold(0, |n, &c| {
+        c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0'))
+    })
+}
+
+/// Days in a month of the Gregorian calendar (leap years by the 4/100/400 rule).
+fn days_in_month(year: i32, month: i32) -> i32 {
+    match month {
+        2 if (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 => 29,
+        2 => 28,
+        4 | 6 | 9 | 11 => 30,
+        _ => 31,
+    }
 }
 
 /// Convert a date to Julian Day Number for day-difference arithmetic.

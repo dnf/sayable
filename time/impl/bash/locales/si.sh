@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/si.json
 
-_locale_si() {
+_sayabletime_locale_si() {
     _clock_hours=('දොළහ' 'එක' 'දෙක' 'තුන' 'හතර' 'පහ' 'හය' 'හත' 'අට' 'නවය' 'දහය' 'එකොළහ')
     _clock_midnight='මධ්‍යම රාත්‍රිය'
     _clock_noon='මධ්‍යාහ්නය'

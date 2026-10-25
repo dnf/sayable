@@ -1,4 +1,5 @@
 program test_format_duration
+  use, intrinsic :: iso_fortran_env, only: int64
   use sayableduration_types
   use sayableduration
   use sayableduration_locales
@@ -25,6 +26,9 @@ program test_format_duration
   call test_locale_japanese()
   call test_short_compactness()
   call test_compact_compactness()
+  call test_section_18()
+  call test_section_19()
+  call test_section_20()
 
   write(*, '(A)') ''
   write(*, '(A)') '=== Results ==='
@@ -438,5 +442,92 @@ contains
     res = dur_format_duration(en, DUR_COMPACT, 90)
     call assert_eq('17.2 compact 1m30s', res, '1m30s')
   end subroutine test_compact_compactness
+
+  ! ================================================================
+  ! Short compactness — relative time
+  ! ================================================================
+  subroutine test_section_18()
+    type(dur_locale), pointer :: loc
+    character(len=DUR_MAX_STR_LEN) :: res
+
+    ! 18.1
+    loc => dur_get_locale('men')
+    res = dur_format_since(loc, DUR_NORMAL, '2025-01-20T01:32:11', '2025-01-22T15:39:16')
+    call assert_eq('18.1 format_since men normal', res, &
+      'l' // char(201) // char(148) // 'h' // char(201) // char(148) // &
+      'nga 2, awa 14 taa gb' // char(201) // char(148) // 'y' // char(201) // &
+      char(148))
+
+  end subroutine test_section_18
+
+  ! ================================================================
+  ! Range (500-year ceiling)
+  ! ================================================================
+  subroutine test_section_19()
+    type(dur_locale), pointer :: loc
+    character(len=DUR_MAX_STR_LEN) :: res
+
+    ! 19.1
+    loc => dur_get_locale('en')
+    res = dur_format_duration(loc, DUR_NORMAL, 15778800000_int64)
+    call assert_eq('19.1 format_duration en normal', res, &
+      '500 years')
+
+    ! 19.2
+    loc => dur_get_locale('en')
+    res = dur_format_duration(loc, DUR_NORMAL, 15800000000_int64)
+    call assert_null('19.2 format_duration en normal', res)
+
+    ! 19.3
+    loc => dur_get_locale('en')
+    res = dur_format_duration(loc, DUR_NORMAL, 99999999999_int64)
+    call assert_null('19.3 format_duration en normal', res)
+
+    ! 19.4
+    loc => dur_get_locale('en')
+    res = dur_format_since(loc, DUR_NORMAL, '1500-01-01T00:00:00', '2025-01-01T00:00:00')
+    call assert_null('19.4 format_since en normal', res)
+
+    ! 19.5
+    loc => dur_get_locale('en')
+    res = dur_format_until(loc, DUR_NORMAL, '2600-01-01T00:00:00', '2025-01-01T00:00:00')
+    call assert_null('19.5 format_until en normal', res)
+
+  end subroutine test_section_19
+
+  ! ================================================================
+  ! Timestamp validation
+  ! ================================================================
+  subroutine test_section_20()
+    type(dur_locale), pointer :: loc
+    character(len=DUR_MAX_STR_LEN) :: res
+
+    ! 20.1
+    loc => dur_get_locale('en')
+    res = dur_format_duration_iso(loc, DUR_NORMAL, '2025-01-15T10:00', '2025-01-15T11:30:00')
+    call assert_eq('20.1 format_duration en normal', res, &
+      '1' // char(194) // char(189) // ' hours')
+
+    ! 20.2
+    loc => dur_get_locale('en')
+    res = dur_format_duration_iso(loc, DUR_NORMAL, '2025-01-15T10', '2025-01-15T11:30:00')
+    call assert_null('20.2 format_duration en normal', res)
+
+    ! 20.3
+    loc => dur_get_locale('en')
+    res = dur_format_duration_iso(loc, DUR_NORMAL, '2025-1-5T10:00:00', '2025-01-15T11:30:00')
+    call assert_null('20.3 format_duration en normal', res)
+
+    ! 20.4
+    loc => dur_get_locale('en')
+    res = dur_format_duration_iso(loc, DUR_NORMAL, '2025-02-30T10:00:00', '2025-03-15T11:30:00')
+    call assert_null('20.4 format_duration en normal', res)
+
+    ! 20.5
+    loc => dur_get_locale('en')
+    res = dur_format_since(loc, DUR_NORMAL, '2025-01-15T10:00:00', '2025-01-15T25:00:00')
+    call assert_null('20.5 format_since en normal', res)
+
+  end subroutine test_section_20
 
 end program test_format_duration

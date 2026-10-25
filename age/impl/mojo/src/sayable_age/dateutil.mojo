@@ -71,13 +71,13 @@ fn _char_to_digit(c: String) -> Int:
 
 
 fn parse_date(s: String) -> DateParts:
-    """Parse a YYYY-MM-DD date string into components.
+    """Parse exactly YYYY-MM-DD naming a real calendar day.
 
     Returns a DateParts with valid=False if the string is not a valid date.
     """
     var result = DateParts()
 
-    if len(s) < 10:
+    if len(s) != 10:
         return result
 
     # Check separator positions
@@ -108,7 +108,7 @@ fn parse_date(s: String) -> DateParts:
             return result
         day = day * 10 + d
 
-    if year == 0 and month == 0 and day == 0:
+    if month < 1 or month > 12 or day < 1 or day > days_in_month(year, month):
         return result
 
     result.year = year
