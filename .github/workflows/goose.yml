@@ -20,6 +20,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [ubuntu-latest, macos-latest]
+        component: [age, date, duration, time]
         include:
           - os: ubuntu-latest
             platform: linux-x64
@@ -29,7 +31,7 @@ jobs:
       GOOSE_VERSION: v2026.3
     defaults:
       run:
-        working-directory: age/impl/goose
+        working-directory: ${{ matrix.component }}/impl/goose
     steps:
       - uses: actions/checkout@v4
       - name: Install Goose
@@ -41,6 +43,6 @@ jobs:
       - name: Lint
         run: bash lint.sh
       - name: Test
-        run: goose tests/test_format_age.goose
+        run: goose tests/test_format_${{ matrix.component }}.goose
       - name: Build natively and run
-        run: bash build.sh && ./build/test_format_age
+        run: bash build.sh && ./build/test_format_${{ matrix.component }}

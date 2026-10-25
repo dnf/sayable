@@ -4,7 +4,7 @@
 
 ## Status
 
-The most mature component: v0.5.0, 50 languages, 168 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
+The most mature component: v0.5.0, 51 languages, 168 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
 
 ## Directory structure
 
@@ -45,9 +45,9 @@ age/
   Dockerfile               # Generated (never edit by hand)
 ```
 
-## Languages (50)
+## Languages (51)
 
-Ada, Bash, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Mojo, Nim, OCaml, Octave, Odin, Pascal, Perl, Pharo, PHP, PowerShell, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig
+Ada, Bash, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Goose, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Mojo, Nim, OCaml, Octave, Odin, Pascal, Perl, Pharo, PHP, PowerShell, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig
 
 ## Locale JSON schema
 

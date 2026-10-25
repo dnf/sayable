@@ -159,9 +159,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Goose</td>
   <td align="center"><a href="age/impl/goose/">✅</a></td>
-  <td align="center">❌</td>
-  <td align="center">❌</td>
-  <td align="center">❌</td>
+  <td align="center"><a href="date/impl/goose/">✅</a></td>
+  <td align="center"><a href="duration/impl/goose/">✅</a></td>
+  <td align="center"><a href="time/impl/goose/">✅</a></td>
   <td align="center">❌</td>
 </tr>
 <tr>

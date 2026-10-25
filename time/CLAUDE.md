@@ -32,7 +32,7 @@ time/
 
 ## Languages (33)
 
-Ada, C, C++, C#, Clojure, COBOL, Crystal, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, Nim, OCaml, Perl, PHP, Python, R, Ruby, Rust, Scala, Swift, TypeScript, VB.NET, Zig
+Ada, C, C++, C#, Clojure, COBOL, Crystal, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Goose, Groovy, Haskell, Java, Kotlin, Lua, Nim, OCaml, Perl, PHP, Python, R, Ruby, Rust, Scala, Swift, TypeScript, VB.NET, Zig
 
 ## Locale JSON schema
 
@@ -115,7 +115,7 @@ just clean             # remove build artifacts
 
 | Strategy | Languages |
 |----------|-----------|
-| Per-file (one locale per file + barrel/registry) | Clojure, Crystal, Dart, Elixir, Elm, Erlang, Gleam, Go, Groovy, Haskell, Lua, Nim, OCaml, Perl, Python, R, Ruby, Rust, Swift, TypeScript |
+| Per-file (one locale per file + barrel/registry) | Clojure, Crystal, Dart, Elixir, Elm, Erlang, Gleam, Go, Goose, Groovy, Haskell, Lua, Nim, OCaml, Perl, Python, R, Ruby, Rust, Swift, TypeScript |
 | Single-file (all locales in one file) | Ada, C, C#, COBOL, F#, Fortran, Java, Kotlin, PHP, Scala, VB.NET, Zig |
 | Range-split (locales split into alpha ranges) | C++ |
 

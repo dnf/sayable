@@ -54,6 +54,9 @@ gleam/manifest.toml
 # Go
 go/bin/
 
+# Goose
+goose/build/
+
 # Groovy
 groovy/.gradle/
 groovy/build/
