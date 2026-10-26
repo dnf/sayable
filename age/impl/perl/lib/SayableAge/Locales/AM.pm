@@ -11,7 +11,7 @@ use utf8;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/am.json
+# Source: locales/am.json
 package SayableAge::Locales::AM;
 
 sub locale {{

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/kri.json
+# Source: locales/kri.json
 
 function locale_kri {
     $months = @('Jenyuari', 'Febyuari', 'Mach', 'Epril', 'Me', 'Jun', 'Julay', 'Ogost', 'Septemba', 'Oktoba', 'Novemba', 'Disemba')

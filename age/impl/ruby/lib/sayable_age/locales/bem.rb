@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/bem.json
+# Source: locales/bem.json
 module SayableAge
   module Locales
     BEM = AgeLocale.new(

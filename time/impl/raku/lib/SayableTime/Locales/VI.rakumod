@@ -9,7 +9,7 @@ use v6.d;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/vi.json
+# Source: locales/vi.json
 unit module SayableTime::Locales::VI;
 
 our sub locale() {

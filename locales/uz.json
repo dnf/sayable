@@ -1,0 +1,240 @@
+{
+  "code": "uz",
+  "name": "Uzbek",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} kun",
+        "other": "{n} kun"
+      },
+      "week": {
+        "one": "{n} hafta",
+        "other": "{n} hafta"
+      },
+      "month": {
+        "one": "{n} oy",
+        "other": "{n} oy"
+      },
+      "year": {
+        "one": "{n} yosh",
+        "other": "{n} yosh"
+      }
+    },
+    "half": "{n} yarim",
+    "delimiter": ", ",
+    "justBorn": "Yangi tugʻilgan",
+    "stages": {
+      "newborn": "Yangi tugʻilgan",
+      "infant": "Chaqaloq",
+      "toddler": "Kichkintoy",
+      "child": "Bola",
+      "teenager": "Oʻsmir",
+      "adult": "Katta"
+    },
+    "short": {
+      "units": {
+        "day": "{n} kun",
+        "week": "{n} hafta",
+        "month": "{n} oy",
+        "year": "{n} yil"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} kun",
+        "week": "{n} hafta",
+        "month": "{n} oy",
+        "year": "{n} yil"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "yanvar",
+      "fevral",
+      "mart",
+      "aprel",
+      "may",
+      "iyun",
+      "iyul",
+      "avgust",
+      "sentabr",
+      "oktabr",
+      "noyabr",
+      "dekabr"
+    ],
+    "weekdays": [
+      "yakshanba",
+      "dushanba",
+      "seshanba",
+      "chorshanba",
+      "payshanba",
+      "juma",
+      "shanba"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "bugun",
+    "tomorrow": "ertaga",
+    "yesterday": "kecha",
+    "dayAfterTomorrow": "indinga",
+    "dayBeforeYesterday": "kechagina",
+    "thisWeekday": "bu {weekday}",
+    "nextWeekday": "keyingi {weekday}",
+    "lastWeekday": "o'tgan {weekday}",
+    "short": {
+      "months": [
+        "yan",
+        "fev",
+        "mar",
+        "apr",
+        "may",
+        "iyn",
+        "iyl",
+        "avg",
+        "sen",
+        "okt",
+        "noy",
+        "dek"
+      ],
+      "weekdays": [
+        "yak",
+        "dush",
+        "sesh",
+        "chor",
+        "pay",
+        "jum",
+        "shan"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} soniya",
+      "minute": "{n} daqiqa",
+      "hour": "{n} soat",
+      "day": {
+        "one": "{n} kun",
+        "other": "{n} kun"
+      },
+      "week": {
+        "one": "{n} hafta",
+        "other": "{n} hafta"
+      },
+      "month": {
+        "one": "{n} oy",
+        "other": "{n} oy"
+      },
+      "year": {
+        "one": "{n} yosh",
+        "other": "{n} yosh"
+      }
+    },
+    "half": "{n} yarim",
+    "delimiter": ", ",
+    "justNow": "hozir",
+    "ago": "{0} oldin",
+    "inFuture": "{0} ichida",
+    "short": {
+      "units": {
+        "second": "{n} son.",
+        "minute": "{n} daq.",
+        "hour": "{n} soat",
+        "day": "{n} kun",
+        "week": "{n} hafta",
+        "month": "{n} oy",
+        "year": "{n} yil"
+      },
+      "ago": "{0} oldin",
+      "inFuture": "{0} ichida",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} daq.",
+        "hour": "{n} soat",
+        "day": "{n} kun",
+        "week": "{n} hafta",
+        "month": "{n} oy",
+        "year": "{n} yil"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} oldin",
+      "inFuture": "{0} ichida",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "o'n ikki",
+        "bir",
+        "ikki",
+        "uch",
+        "to'rt",
+        "besh",
+        "olti",
+        "yetti",
+        "sakkiz",
+        "to'qqiz",
+        "o'n",
+        "o'n bir"
+      ],
+      "midnight": "yarim tun",
+      "noon": "tush",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "besh past {h}",
+        "10": "o'n past {h}",
+        "15": "o'n besh past {h}",
+        "20": "yigirma past {h}",
+        "25": "yigirma besh past {h}",
+        "30": "o'ttiz past {h}",
+        "35": "yigirma besh to {next_h}",
+        "40": "yigirma to {next_h}",
+        "45": "o'n besh to {next_h}",
+        "50": "o'n to {next_h}",
+        "55": "besh to {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/kpe.json
+# Source: locales/kpe.json
 
 function locale_kpe {
     $months = @('Yanuwali', 'Fɛbɛli', 'Maachi', 'Eepɛli', 'Mɛɛ', 'Juŋ', 'Julai', 'Ɔɔgɔsi', 'Sɛtɛmba', 'Ɔtɔba', 'Nɔvɛmba', 'Disɛmba')

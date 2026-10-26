@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/st.json
+# Source: locales/st.json
 
 _sayableage_plural_st() {
     local n=$1

@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/fa.json
+# Source: locales/fa.json
 module SayableDate
   module Locales
     FA = DateLocale.new(

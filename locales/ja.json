@@ -1,0 +1,237 @@
+{
+  "code": "ja",
+  "name": "Japanese",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n}日",
+      "week": "{n}週",
+      "month": "{n}ヶ月",
+      "year": "{n}歳"
+    },
+    "half": "{0}半",
+    "delimiter": "",
+    "justBorn": "新生児",
+    "stages": {
+      "newborn": "新生児",
+      "infant": "乳児",
+      "toddler": "幼児",
+      "child": "児童",
+      "teenager": "青少年",
+      "adult": "成人"
+    },
+    "short": {
+      "units": {
+        "day": "{n} 日",
+        "week": "{n} 週間",
+        "month": "{n} か月",
+        "year": "{n} 年"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      }
+    }
+  },
+  "date": {
+    "months": [
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月",
+      "6月",
+      "7月",
+      "8月",
+      "9月",
+      "10月",
+      "11月",
+      "12月"
+    ],
+    "weekdays": [
+      "日曜日",
+      "月曜日",
+      "火曜日",
+      "水曜日",
+      "木曜日",
+      "金曜日",
+      "土曜日"
+    ],
+    "dayFormat": "{n}日",
+    "datePattern": "{month}{day}",
+    "datePatternWithYear": "{year}年{month}{day}",
+    "today": "今日",
+    "tomorrow": "明日",
+    "yesterday": "昨日",
+    "dayAfterTomorrow": "明後日",
+    "dayBeforeYesterday": "一昨日",
+    "thisWeekday": "今度の{weekday}",
+    "nextWeekday": "来週の{weekday}",
+    "lastWeekday": "先週の{weekday}",
+    "short": {
+      "months": [
+        "1月",
+        "2月",
+        "3月",
+        "4月",
+        "5月",
+        "6月",
+        "7月",
+        "8月",
+        "9月",
+        "10月",
+        "11月",
+        "12月"
+      ],
+      "weekdays": [
+        "日",
+        "月",
+        "火",
+        "水",
+        "木",
+        "金",
+        "土"
+      ],
+      "dayFormat": "{n}日",
+      "datePattern": "{month}{day}",
+      "datePatternWithYear": "{year}年{month}{day}"
+    },
+    "compact": {
+      "datePattern": "{m}/{d}",
+      "datePatternWithYear": "{yy}/{m}/{d}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n}秒",
+      "minute": "{n}分",
+      "hour": "{n}時間",
+      "day": "{n}日",
+      "week": "{n}週",
+      "month": "{n}ヶ月",
+      "year": "{n}歳"
+    },
+    "half": "{0}半",
+    "delimiter": "",
+    "justNow": "たった今",
+    "ago": "{0}前",
+    "inFuture": "{0}後",
+    "clock": {
+      "hours": [
+        "十二",
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九",
+        "十",
+        "十一"
+      ],
+      "midnight": "午前零時",
+      "noon": "正午",
+      "patterns": {
+        "0": "{h}時",
+        "5": "{h}時五分",
+        "10": "{h}時十分",
+        "15": "{h}時十五分",
+        "20": "{h}時二十分",
+        "25": "{h}時二十五分",
+        "30": "{h}時半",
+        "35": "{h}時三十五分",
+        "40": "{h}時四十分",
+        "45": "{h}時四十五分",
+        "50": "{h}時五十分",
+        "55": "{h}時五十五分"
+      }
+    },
+    "short": {
+      "units": {
+        "second": "{n} 秒",
+        "minute": "{n} 分",
+        "hour": "{n} 時間",
+        "day": "{n} 日",
+        "week": "{n} 週間",
+        "month": "{n} か月",
+        "year": "{n} 年"
+      },
+      "ago": "{0}前",
+      "inFuture": "{0}後",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0}前",
+      "inFuture": "{0}後",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "十二",
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九",
+        "十",
+        "十一"
+      ],
+      "midnight": "午前零時",
+      "noon": "正午",
+      "patterns": {
+        "0": "{h}時",
+        "5": "{h}時五分",
+        "10": "{h}時十分",
+        "15": "{h}時十五分",
+        "20": "{h}時二十分",
+        "25": "{h}時二十五分",
+        "30": "{h}時半",
+        "35": "{h}時三十五分",
+        "40": "{h}時四十分",
+        "45": "{h}時四十五分",
+        "50": "{h}時五十分",
+        "55": "{h}時五十五分"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

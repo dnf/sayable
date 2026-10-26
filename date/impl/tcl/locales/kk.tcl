@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/kk.json
+# Source: locales/kk.json
 
 proc locale_date_kk {} {
     set code {kk}

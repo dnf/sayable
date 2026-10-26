@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: date/locales/src/tet.json */
+/* Source: locales/tet.json */
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_tet[12] = {

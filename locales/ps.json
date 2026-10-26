@@ -1,0 +1,278 @@
+{
+  "code": "ps",
+  "name": "Pashto",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ورځ",
+        "other": "{n} ورځې"
+      },
+      "week": "{n} اونۍ",
+      "month": {
+        "one": "{n} مياشت",
+        "other": "{n} مياشتې"
+      },
+      "year": {
+        "one": "{n} کال",
+        "other": "{n} کالونه"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": "، ",
+    "justBorn": "نوي زېږېدلی",
+    "stages": {
+      "newborn": "نوزېږی",
+      "infant": "ماشوم",
+      "toddler": "وړکوټی",
+      "child": "ماشوم",
+      "teenager": "ځوان",
+      "adult": "لوی"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} ورځ",
+          "other": "{n} ورځې"
+        },
+        "week": "{n} اونۍ",
+        "month": {
+          "one": "{n} مياشت",
+          "other": "{n} مياشتې"
+        },
+        "year": {
+          "one": "{n} کال",
+          "other": "{n} کالونه"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} و",
+        "week": "{n} او",
+        "month": "{n} م",
+        "year": "{n} ک"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "جنوري",
+      "فبروري",
+      "مارچ",
+      "اپریل",
+      "مۍ",
+      "جون",
+      "جولای",
+      "اګست",
+      "سپتمبر",
+      "اکتوبر",
+      "نومبر",
+      "دسمبر"
+    ],
+    "weekdays": [
+      "یکشنبه",
+      "دوشنبه",
+      "سه‌شنبه",
+      "چهارشنبه",
+      "پنجشنبه",
+      "جمعه",
+      "شنبه"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "نن",
+    "tomorrow": "سبا",
+    "yesterday": "پرون",
+    "dayAfterTomorrow": "بل سبا",
+    "dayBeforeYesterday": "بل پرون",
+    "thisWeekday": "دا {weekday}",
+    "nextWeekday": "راتلونکې {weekday}",
+    "lastWeekday": "تېره {weekday}",
+    "short": {
+      "months": [
+        "جنو",
+        "فبر",
+        "مار",
+        "اپر",
+        "مۍ",
+        "جون",
+        "جول",
+        "اګس",
+        "سپت",
+        "اکت",
+        "نوم",
+        "دسم"
+      ],
+      "weekdays": [
+        "یک",
+        "دو",
+        "سه",
+        "چه",
+        "پن",
+        "جم",
+        "شن"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} ثانیه",
+        "other": "{n} ثانیې"
+      },
+      "minute": {
+        "one": "{n} دقیقه",
+        "other": "{n} دقیقې"
+      },
+      "hour": {
+        "one": "{n} ساعت",
+        "other": "{n} ساعتونه"
+      },
+      "day": {
+        "one": "{n} ورځ",
+        "other": "{n} ورځې"
+      },
+      "week": "{n} اونۍ",
+      "month": {
+        "one": "{n} مياشت",
+        "other": "{n} مياشتې"
+      },
+      "year": {
+        "one": "{n} کال",
+        "other": "{n} کالونه"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": "، ",
+    "justNow": "همدا اوس",
+    "ago": "د {0} مخکې",
+    "inFuture": "په {0} کې",
+    "short": {
+      "units": {
+        "second": {
+          "one": "{n} ثانیه",
+          "other": "{n} ثانیې"
+        },
+        "minute": {
+          "one": "{n} دقیقه",
+          "other": "{n} دقیقې"
+        },
+        "hour": {
+          "one": "{n} ساعت",
+          "other": "{n} ساعتونه"
+        },
+        "day": {
+          "one": "{n} ورځ",
+          "other": "{n} ورځې"
+        },
+        "week": "{n} اونۍ",
+        "month": {
+          "one": "{n} مياشت",
+          "other": "{n} مياشتې"
+        },
+        "year": {
+          "one": "{n} کال",
+          "other": "{n} کالونه"
+        }
+      },
+      "ago": "د {0} مخکې",
+      "inFuture": "په {0} کې",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} ث",
+        "minute": "{n} د",
+        "hour": "{n} س",
+        "day": "{n} و",
+        "week": "{n} او",
+        "month": "{n} م",
+        "year": "{n} ک"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "د {0} مخکې",
+      "inFuture": "په {0} کې",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "دولس",
+        "یو",
+        "دوه",
+        "درې",
+        "څلور",
+        "پنځه",
+        "شپږ",
+        "اووه",
+        "اته",
+        "نهه",
+        "لس",
+        "یوولس"
+      ],
+      "midnight": "نیمه شپه",
+      "noon": "غرمه",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

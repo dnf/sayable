@@ -154,9 +154,11 @@ rather than kanji — a convention borrowed from international/technical context
 
 ## Adding or modifying locale data
 
-1. Edit `locales/src/{code}.json`
-2. Run `just generate locales` from the `duration/` directory
-3. Run `just test` to verify all implementations pass
+1. Edit the `duration` section of `locales/{code}.json` at the repository root (one file per language, shared by all four libraries)
+2. Run `just generate locales` from the repository root (it regenerates every library's locale code and `docs/locales/{code}.md`)
+3. Run `just check`, `just test cli` and the native suites to verify all implementations pass
+
+See [`docs/adding-a-locale.md`](../../docs/adding-a-locale.md) for every field of the `duration` section.
 
 When adding a new locale, verify plural rules against CLDR:
 - [CLDR Cardinal Plural Rules](https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html)

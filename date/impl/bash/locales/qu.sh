@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/qu.json
+# Source: locales/qu.json
 
 _sayabledate_locale_qu() {
     _months=('Qhulla puquy' 'Hatun puquy' 'Pawqar waray' 'Ayriwa' 'Aymuray' 'Inti raymi' 'Anta sitwa' 'Qhapaq sitwa' 'Uma raymi' 'Kantaray' 'Ayamarq'\''a' 'Qhapaq raymi')

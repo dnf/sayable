@@ -1,0 +1,240 @@
+{
+  "code": "tk",
+  "name": "Turkmen",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": "{n} gün",
+      "week": "{n} hepde",
+      "month": "{n} aý",
+      "year": "{n} ýaş"
+    },
+    "half": "{0}½",
+    "delimiter": ", ",
+    "justBorn": "Täze doglan",
+    "stages": {
+      "newborn": "Täze doglan",
+      "infant": "Bäbek",
+      "toddler": "Kiçijik",
+      "child": "Çaga",
+      "teenager": "Ýetginjek",
+      "adult": "Ulular"
+    },
+    "short": {
+      "units": {
+        "day": "{n} g",
+        "week": "{n} h",
+        "month": "{n} a",
+        "year": "{n} ý"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}g",
+        "week": "{n}h",
+        "month": "{n}a",
+        "year": "{n}ý"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Ýanwar",
+      "Fewral",
+      "Mart",
+      "Aprel",
+      "Maý",
+      "Iýun",
+      "Iýul",
+      "Awgust",
+      "Sentýabr",
+      "Oktýabr",
+      "Noýabr",
+      "Dekabr"
+    ],
+    "weekdays": [
+      "Ýekşenbe",
+      "Duşenbe",
+      "Sişenbe",
+      "Çarşenbe",
+      "Penşenbe",
+      "Anna",
+      "Şenbe"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "şu gün",
+    "tomorrow": "ertir",
+    "yesterday": "düýn",
+    "dayAfterTomorrow": "birigün",
+    "dayBeforeYesterday": "öňňin",
+    "thisWeekday": "şu {weekday}",
+    "nextWeekday": "indiki {weekday}",
+    "lastWeekday": "geçen {weekday}",
+    "short": {
+      "months": [
+        "Ýan",
+        "Few",
+        "Mar",
+        "Apr",
+        "Maý",
+        "Iýn",
+        "Iýl",
+        "Awg",
+        "Sen",
+        "Okt",
+        "Noý",
+        "Dek"
+      ],
+      "weekdays": [
+        "Ýek",
+        "Duş",
+        "Siş",
+        "Çar",
+        "Pen",
+        "Ann",
+        "Şen"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} sekunt",
+      "minute": "{n} minut",
+      "hour": "{n} sagat",
+      "day": "{n} gün",
+      "week": "{n} hepde",
+      "month": "{n} aý",
+      "year": "{n} ýyl"
+    },
+    "half": "{0}½",
+    "delimiter": ", ",
+    "justNow": "häzir",
+    "ago": "{0} öň",
+    "inFuture": "{0} soň",
+    "clock": {
+      "hours": [
+        "on iki",
+        "bir",
+        "iki",
+        "üç",
+        "dört",
+        "bäş",
+        "alty",
+        "ýedi",
+        "sekiz",
+        "dokuz",
+        "on",
+        "on bir"
+      ],
+      "midnight": "ýary gije",
+      "noon": "günorta",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "units": {
+        "second": "{n} sek",
+        "minute": "{n} min",
+        "hour": "{n} sag",
+        "day": "{n} g",
+        "week": "{n} h",
+        "month": "{n} a",
+        "year": "{n} ý"
+      },
+      "ago": "{0} öň",
+      "inFuture": "{0} soň",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}sek",
+        "minute": "{n}min",
+        "hour": "{n}sag",
+        "day": "{n}g",
+        "week": "{n}h",
+        "month": "{n}a",
+        "year": "{n}ý"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} öň",
+      "inFuture": "{0} soň",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "on iki",
+        "bir",
+        "iki",
+        "üç",
+        "dört",
+        "bäş",
+        "alty",
+        "ýedi",
+        "sekiz",
+        "dokuz",
+        "on",
+        "on bir"
+      ],
+      "midnight": "ýary gije",
+      "noon": "günorta",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/yo.json
+# Source: locales/yo.json
 
 function locale_yo {
     $hours = @('méjìlá', 'kan', 'méjì', 'mẹ́ta', 'mẹ́rin', 'márùn-ún', 'mẹ́fà', 'méje', 'mẹ́jọ', 'mẹ́sàn-án', 'mẹ́wàá', 'mọ́kànlá')

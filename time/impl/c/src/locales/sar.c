@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: time/locales/src/sar.json */
+/* Source: locales/sar.json */
 #include "sayabletime/sayabletime.h"
 
 const StTimeLocale st_locale_sar = {

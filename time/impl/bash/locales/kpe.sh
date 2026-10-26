@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kpe.json
+# Source: locales/kpe.json
 
 _sayabletime_locale_kpe() {
     _clock_hours=('puu lɔŋ' 'tɔŋ' 'feere' 'sawa' 'naŋ' 'lɔɔlu' 'mɛi da tɔŋ' 'mɛi da feere' 'mɛi da sawa' 'mɛi da naŋ' 'puu' 'puu da tɔŋ')

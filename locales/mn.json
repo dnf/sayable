@@ -1,0 +1,208 @@
+{
+  "code": "mn",
+  "name": "Mongolian",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": "{n} өдөр",
+      "week": "{n} долоо хоног",
+      "month": "{n} сар",
+      "year": "{n} нас"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Нярай",
+    "stages": {
+      "newborn": "Нярай",
+      "infant": "Нярай",
+      "toddler": "Бага нялх",
+      "child": "Хүүхэд",
+      "teenager": "Өсвөр насны",
+      "adult": "Насанд хүрсэн"
+    },
+    "short": {
+      "units": {
+        "day": "{n} өдөр",
+        "week": "{n} д/х",
+        "month": "{n} сар",
+        "year": "{n} нас"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ө",
+        "week": "{n} д",
+        "month": "{n} с",
+        "year": "{n} н"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Нэгдүгээр сар",
+      "Хоёрдугаар сар",
+      "Гуравдугаар сар",
+      "Дөрөвдүгээр сар",
+      "Тавдугаар сар",
+      "Зургаадугаар сар",
+      "Долоодугаар сар",
+      "Наймдугаар сар",
+      "Есдүгээр сар",
+      "Аравдугаар сар",
+      "Арван нэгдүгээр сар",
+      "Арван хоёрдугаар сар"
+    ],
+    "weekdays": [
+      "Ням",
+      "Даваа",
+      "Мягмар",
+      "Лхагва",
+      "Пүрэв",
+      "Баасан",
+      "Бямба"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{year} оны {month} {day}",
+    "today": "өнөөдөр",
+    "tomorrow": "маргааш",
+    "yesterday": "өчигдөр",
+    "dayAfterTomorrow": "нөгөөдөр",
+    "dayBeforeYesterday": "уржигдар",
+    "thisWeekday": "энэ {weekday}",
+    "nextWeekday": "ирэх {weekday}",
+    "lastWeekday": "өнгөрсөн {weekday}",
+    "short": {
+      "months": [
+        "1-р сар",
+        "2-р сар",
+        "3-р сар",
+        "4-р сар",
+        "5-р сар",
+        "6-р сар",
+        "7-р сар",
+        "8-р сар",
+        "9-р сар",
+        "10-р сар",
+        "11-р сар",
+        "12-р сар"
+      ],
+      "weekdays": [
+        "Ня",
+        "Да",
+        "Мя",
+        "Лх",
+        "Пү",
+        "Ба",
+        "Бя"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{year} оны {month} {day}"
+    },
+    "compact": {
+      "datePattern": "{yy}/{m}/{d}",
+      "datePatternWithYear": "{yy}/{m}/{d}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} секунд",
+      "minute": "{n} минут",
+      "hour": "{n} цаг",
+      "day": "{n} өдөр",
+      "week": "{n} долоо хоног",
+      "month": "{n} сар",
+      "year": "{n} жил"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "дөнгөж сая",
+    "ago": "{0}-н өмнө",
+    "inFuture": "{0}-н дараа",
+    "short": {
+      "units": {
+        "second": "{n} сек",
+        "minute": "{n} мин",
+        "hour": "{n} цаг",
+        "day": "{n} өдөр",
+        "week": "{n} д/х",
+        "month": "{n} сар",
+        "year": "{n} жил"
+      },
+      "ago": "{0}-н өмнө",
+      "inFuture": "{0}-н дараа",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} сек",
+        "minute": "{n} мин",
+        "hour": "{n} ц",
+        "day": "{n} ө",
+        "week": "{n} д",
+        "month": "{n} с",
+        "year": "{n} ж"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0}-н өмнө",
+      "inFuture": "{0}-н дараа",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "арван хоёр",
+        "нэг",
+        "хоёр",
+        "гурав",
+        "дөрөв",
+        "тав",
+        "зургаа",
+        "долоо",
+        "найм",
+        "ес",
+        "арав",
+        "арван нэг"
+      ],
+      "midnight": "шөнө дунд",
+      "noon": "үд дунд",
+      "patterns": {
+        "0": "{h} цаг",
+        "5": "{h} цаг {m} минут",
+        "10": "{h} цаг {m} минут",
+        "15": "{h} цаг {m} минут",
+        "20": "{h} цаг {m} минут",
+        "25": "{h} цаг {m} минут",
+        "30": "{h} цаг {m} минут",
+        "35": "{h} цаг {m} минут",
+        "40": "{h} цаг {m} минут",
+        "45": "{h} цаг {m} минут",
+        "50": "{h} цаг {m} минут",
+        "55": "{h} цаг {m} минут"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

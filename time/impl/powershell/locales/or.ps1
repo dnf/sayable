@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/or.json
+# Source: locales/or.json
 
 function locale_or {
     $hours = @('ବାରଟା', 'ଗୋଟିଏ', 'ଦୁଇଟା', 'ତିନିଟା', 'ଚାରିଟା', 'ପାଞ୍ଚଟା', 'ଛଅଟା', 'ସାତଟା', 'ଆଠଟା', 'ନଅଟା', 'ଦଶଟା', 'ଏଗାରଟା')

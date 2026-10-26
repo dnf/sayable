@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: duration/locales/src/sv.json
+-- Source: locales/sv.json
 
 module SayableDuration.Locales.Sv (locale) where
 

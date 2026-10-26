@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/te.json
+# Source: locales/te.json
 
 _sayabletime_locale_te() {
     _clock_hours=('పన్నెండు' 'ఒకటి' 'రెండు' 'మూడు' 'నాలుగు' 'ఐదు' 'ఆరు' 'ఏడు' 'ఎనిమిది' 'తొమ్మిది' 'పది' 'పదకొండు')

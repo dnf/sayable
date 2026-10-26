@@ -1,0 +1,296 @@
+{
+  "code": "ny",
+  "name": "Chichewa",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "tsiku {n}",
+        "other": "masiku {n}"
+      },
+      "week": {
+        "one": "sabata {n}",
+        "other": "masabata {n}"
+      },
+      "month": {
+        "one": "mwezi {n}",
+        "other": "miyezi {n}"
+      },
+      "year": {
+        "one": "chaka {n}",
+        "other": "zaka {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Wobadwa kumene",
+    "stages": {
+      "newborn": "Wobadwa kumene",
+      "infant": "Khanda",
+      "toddler": "Mwana wamng'ono",
+      "child": "Mwana",
+      "teenager": "Mnyamata",
+      "adult": "Munthu wamkulu"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "tsiku {n}",
+          "other": "mas {n}"
+        },
+        "week": {
+          "one": "sabata {n}",
+          "other": "masab {n}"
+        },
+        "month": {
+          "one": "mwezi {n}",
+          "other": "miyezi {n}"
+        },
+        "year": {
+          "one": "chaka {n}",
+          "other": "zaka {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": {
+          "one": "ts {n}",
+          "other": "mas {n}"
+        },
+        "week": {
+          "one": "sab {n}",
+          "other": "msb {n}"
+        },
+        "month": {
+          "one": "mw {n}",
+          "other": "miy {n}"
+        },
+        "year": {
+          "one": "ch {n}",
+          "other": "z {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Januwale",
+      "Febuluwale",
+      "Matchi",
+      "Epulo",
+      "Meyi",
+      "Juni",
+      "Julaye",
+      "Ogasiti",
+      "Seputemba",
+      "Okutoba",
+      "Novemba",
+      "Disemba"
+    ],
+    "weekdays": [
+      "Lamulungu",
+      "Lolemba",
+      "Lachiwiri",
+      "Lachitatu",
+      "Lachinayi",
+      "Lachisanu",
+      "Loweruka"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "lero",
+    "tomorrow": "mawa",
+    "yesterday": "dzulo",
+    "dayAfterTomorrow": "mkucha",
+    "dayBeforeYesterday": "dzana",
+    "thisWeekday": "{weekday} ino",
+    "nextWeekday": "{weekday} yotsatira",
+    "lastWeekday": "{weekday} yatha",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mat",
+        "Epu",
+        "Mey",
+        "Jun",
+        "Jul",
+        "Oga",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Dis"
+      ],
+      "weekdays": [
+        "Lam",
+        "Lol",
+        "Lch",
+        "Lct",
+        "Lcn",
+        "Lcs",
+        "Low"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} sekondi",
+      "minute": "{n} mphindi",
+      "hour": "{n} ola",
+      "day": {
+        "one": "tsiku {n}",
+        "other": "masiku {n}"
+      },
+      "week": {
+        "one": "sabata {n}",
+        "other": "masabata {n}"
+      },
+      "month": {
+        "one": "mwezi {n}",
+        "other": "miyezi {n}"
+      },
+      "year": {
+        "one": "chaka {n}",
+        "other": "zaka {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "tsopano",
+    "ago": "{0} zapitazo",
+    "inFuture": "mu {0}",
+    "short": {
+      "units": {
+        "second": "sek {n}",
+        "minute": "mph {n}",
+        "hour": "ola {n}",
+        "day": {
+          "one": "tsiku {n}",
+          "other": "mas {n}"
+        },
+        "week": {
+          "one": "sabata {n}",
+          "other": "masab {n}"
+        },
+        "month": {
+          "one": "mwezi {n}",
+          "other": "miyezi {n}"
+        },
+        "year": {
+          "one": "chaka {n}",
+          "other": "zaka {n}"
+        }
+      },
+      "ago": "{0} zapitazo",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "s {n}",
+        "minute": "m {n}",
+        "hour": "o {n}",
+        "day": {
+          "one": "ts {n}",
+          "other": "mas {n}"
+        },
+        "week": {
+          "one": "sab {n}",
+          "other": "msb {n}"
+        },
+        "month": {
+          "one": "mw {n}",
+          "other": "miy {n}"
+        },
+        "year": {
+          "one": "ch {n}",
+          "other": "z {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} zapitazo",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "khumi ndi ziwiri",
+        "imodzi",
+        "ziwiri",
+        "zitatu",
+        "zinayi",
+        "zisanu",
+        "zisanu ndi chimodzi",
+        "zisanu ndi ziwiri",
+        "zisanu ndi zitatu",
+        "zisanu ndi zinayi",
+        "khumi",
+        "khumi ndi chimodzi"
+      ],
+      "midnight": "pakati pausiku",
+      "noon": "usana",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

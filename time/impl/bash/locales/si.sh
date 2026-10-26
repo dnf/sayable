@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/si.json
+# Source: locales/si.json
 
 _sayabletime_locale_si() {
     _clock_hours=('දොළහ' 'එක' 'දෙක' 'තුන' 'හතර' 'පහ' 'හය' 'හත' 'අට' 'නවය' 'දහය' 'එකොළහ')

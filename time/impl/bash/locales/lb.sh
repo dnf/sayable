@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/lb.json
+# Source: locales/lb.json
 
 _sayabletime_locale_lb() {
     _clock_hours=('zwielef' 'eent' 'zwee' 'dräi' 'véier' 'fënnef' 'sechs' 'siwen' 'aacht' 'néng' 'zéng' 'eelef')

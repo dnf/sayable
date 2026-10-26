@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/tzm.json
+# Source: locales/tzm.json
 
 _sayabledate_locale_tzm() {
     _months=('ⵉⵏⵏⴰⵢⵔ' 'ⴱⵕⴰⵢⵕ' 'ⵎⴰⵕⵚ' 'ⵉⴱⵔⵉⵔ' 'ⵎⴰⵢⵢⵓ' 'ⵢⵓⵏⵢⵓ' 'ⵢⵓⵍⵢⵓⵣ' 'ⵖⵓⵛⵜ' 'ⵛⵓⵜⴰⵏⴱⵉⵔ' 'ⴽⵜⵓⴱⵔ' 'ⵏⵓⵡⴰⵏⴱⵉⵔ' 'ⴷⵓⵊⴰⵏⴱⵉⵔ')

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/el.json
+# Source: locales/el.json
 
 _sayabledate_locale_el() {
     _months=('Ιανουαρίου' 'Φεβρουαρίου' 'Μαρτίου' 'Απριλίου' 'Μαΐου' 'Ιουνίου' 'Ιουλίου' 'Αυγούστου' 'Σεπτεμβρίου' 'Οκτωβρίου' 'Νοεμβρίου' 'Δεκεμβρίου')

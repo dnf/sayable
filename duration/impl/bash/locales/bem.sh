@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/bem.json
+# Source: locales/bem.json
 
 _sayableduration_plural_bem() {
     local n=$1

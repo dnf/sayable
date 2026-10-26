@@ -1,0 +1,297 @@
+{
+  "code": "cs",
+  "name": "Czech",
+  "pluralRule": "cs_sk",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} den",
+        "few": "{n} dny",
+        "other": "{n} dní"
+      },
+      "week": {
+        "one": "{n} týden",
+        "few": "{n} týdny",
+        "other": "{n} týdnů"
+      },
+      "month": {
+        "one": "{n} měsíc",
+        "few": "{n} měsíce",
+        "other": "{n} měsíců"
+      },
+      "year": {
+        "one": "{n} rok",
+        "few": "{n} roky",
+        "other": "{n} let"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Novorozenec",
+    "stages": {
+      "newborn": "Novorozenec",
+      "infant": "Kojenec",
+      "toddler": "Batole",
+      "child": "Dítě",
+      "teenager": "Teenager",
+      "adult": {
+        "m": "Dospělý",
+        "f": "Dospělá"
+      }
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} den",
+          "few": "{n} dny",
+          "many": "{n} dne",
+          "other": "{n} dnů"
+        },
+        "week": "{n} týd.",
+        "month": "{n} měs.",
+        "year": {
+          "one": "{n} rok",
+          "few": "{n} roky",
+          "many": "{n} roku",
+          "other": "{n} let"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} t.",
+        "month": "{n} m.",
+        "year": {
+          "one": "{n} r.",
+          "few": "{n} r.",
+          "many": "{n} r.",
+          "other": "{n} l."
+        }
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "leden",
+      "únor",
+      "březen",
+      "duben",
+      "květen",
+      "červen",
+      "červenec",
+      "srpen",
+      "září",
+      "říjen",
+      "listopad",
+      "prosinec"
+    ],
+    "weekdays": [
+      "neděle",
+      "pondělí",
+      "úterý",
+      "středa",
+      "čtvrtek",
+      "pátek",
+      "sobota"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "dnes",
+    "tomorrow": "zítra",
+    "yesterday": "včera",
+    "dayAfterTomorrow": "pozítří",
+    "dayBeforeYesterday": "předevčírem",
+    "thisWeekday": "toto {weekday}",
+    "nextWeekday": "příští {weekday}",
+    "lastWeekday": "minulé {weekday}",
+    "monthsInDate": [
+      "ledna",
+      "února",
+      "března",
+      "dubna",
+      "května",
+      "června",
+      "července",
+      "srpna",
+      "září",
+      "října",
+      "listopadu",
+      "prosince"
+    ],
+    "short": {
+      "months": [
+        "led",
+        "úno",
+        "bře",
+        "dub",
+        "kvě",
+        "čvn",
+        "čvc",
+        "srp",
+        "zář",
+        "říj",
+        "lis",
+        "pro"
+      ],
+      "weekdays": [
+        "ne",
+        "po",
+        "út",
+        "st",
+        "čt",
+        "pá",
+        "so"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekunda",
+        "few": "{n} sekundy",
+        "other": "{n} sekund"
+      },
+      "minute": {
+        "one": "{n} minuta",
+        "few": "{n} minuty",
+        "other": "{n} minut"
+      },
+      "hour": {
+        "one": "{n} hodina",
+        "few": "{n} hodiny",
+        "other": "{n} hodin"
+      },
+      "day": {
+        "one": "{n} den",
+        "few": "{n} dny",
+        "other": "{n} dní"
+      },
+      "week": {
+        "one": "{n} týden",
+        "few": "{n} týdny",
+        "other": "{n} týdnů"
+      },
+      "month": {
+        "one": "{n} měsíc",
+        "few": "{n} měsíce",
+        "other": "{n} měsíců"
+      },
+      "year": {
+        "one": "{n} rok",
+        "few": "{n} roky",
+        "other": "{n} let"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "právě teď",
+    "ago": "před {0}",
+    "inFuture": "za {0}",
+    "short": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": {
+          "one": "{n} den",
+          "few": "{n} dny",
+          "many": "{n} dne",
+          "other": "{n} dnů"
+        },
+        "week": "{n} týd.",
+        "month": "{n} měs.",
+        "year": {
+          "one": "{n} rok",
+          "few": "{n} roky",
+          "many": "{n} roku",
+          "other": "{n} let"
+        }
+      },
+      "ago": "před {0}",
+      "inFuture": "za {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} m",
+        "hour": "{n} h",
+        "day": "{n} d.",
+        "week": "{n} t.",
+        "month": "{n} m.",
+        "year": {
+          "one": "{n} r.",
+          "few": "{n} r.",
+          "many": "{n} r.",
+          "other": "{n} l."
+        }
+      },
+      "delimiter": "",
+      "ago": "před {0}",
+      "inFuture": "za {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dvanáct",
+        "jedna",
+        "dvě",
+        "tři",
+        "čtyři",
+        "pět",
+        "šest",
+        "sedm",
+        "osm",
+        "devět",
+        "deset",
+        "jedenáct"
+      ],
+      "midnight": "půlnoc",
+      "noon": "poledne",
+      "patterns": {
+        "0": "{h} hodin",
+        "5": "pět po {h}",
+        "10": "deset po {h}",
+        "15": "čtvrt po {h}",
+        "20": "dvacet po {h}",
+        "25": "dvacet pět po {h}",
+        "30": "půl po {h}",
+        "35": "dvacet pět do {next_h}",
+        "40": "dvacet do {next_h}",
+        "45": "čtvrt do {next_h}",
+        "50": "deset do {next_h}",
+        "55": "pět do {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

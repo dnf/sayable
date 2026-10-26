@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ms.json
+# Source: locales/ms.json
 
 _sayabletime_locale_ms() {
     _clock_hours=('dua belas' 'satu' 'dua' 'tiga' 'empat' 'lima' 'enam' 'tujuh' 'lapan' 'sembilan' 'sepuluh' 'sebelas')

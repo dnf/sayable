@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/tzm.json
+# Source: locales/tzm.json
 
 function plural_tzm([int]$n) {
     if ($n -eq 0 -or $n -eq 1 -or ($n -ge 11 -and $n -le 99)) { return 'one' }

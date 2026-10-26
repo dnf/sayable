@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/sd.json
+# Source: locales/sd.json
 
 _sayabletime_locale_sd() {
     _clock_hours=('ٻارھ' 'ھڪ' 'ٻه' 'ٽي' 'چار' 'پنج' 'ڇھ' 'ست' 'اٺ' 'نائن' 'ڏھ' 'يارھ')

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/bci.json
+# Source: locales/bci.json
 
 _sayabledate_locale_bci() {
     _months=('Zanvie' 'Flevie' 'Masi' 'Avrili' 'Mɛ' 'Zuɛn' 'Zulɛ' 'Uti' 'Sɛtanbu' 'Ɔtɔbu' 'Novanbu' 'Desanbu')

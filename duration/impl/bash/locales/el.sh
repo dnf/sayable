@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/el.json
+# Source: locales/el.json
 
 _sayableduration_plural_el() {
     local n=$1

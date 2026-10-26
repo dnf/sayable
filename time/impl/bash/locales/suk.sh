@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/suk.json
+# Source: locales/suk.json
 
 _sayabletime_locale_suk() {
     _clock_hours=('kumi na mbili' 'moja' 'mbili' 'tatu' 'nne' 'tano' 'sita' 'saba' 'nane' 'tisa' 'kumi' 'kumi na moja')

@@ -11,7 +11,7 @@ use utf8;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/kpe.json
+# Source: locales/kpe.json
 package SayableDate::Locales::KPE;
 
 sub locale {{

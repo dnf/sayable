@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/sq.json
+# Source: locales/sq.json
 
 _sayabletime_locale_sq() {
     _clock_hours=('dymbëdhjetë' 'një' 'dy' 'tre' 'katër' 'pesë' 'gjashtë' 'shtatë' 'tetë' 'nëntë' 'dhjetë' 'njëmbëdhjetë')

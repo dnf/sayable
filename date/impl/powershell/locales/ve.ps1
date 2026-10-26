@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ve.json
+# Source: locales/ve.json
 
 function locale_ve {
     $months = @('Phando', 'Luhuhi', 'Thafamuhwe', 'Lambamai', 'Shundunthule', 'Fulwi', 'Fulwana', 'Thangule', 'Khubvumedzi', 'Tshimedzi', 'Lara', 'Nyendavhusiku')

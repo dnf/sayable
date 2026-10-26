@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ha.json
+# Source: locales/ha.json
 
 _sayabletime_locale_ha() {
     _clock_hours=('sha biyu' 'ɗaya' 'biyu' 'uku' 'huɗu' 'biyar' 'shida' 'bakwai' 'takwas' 'tara' 'goma' 'goma sha ɗaya')

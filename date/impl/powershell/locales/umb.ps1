@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/umb.json
+# Source: locales/umb.json
 
 function locale_umb {
     $months = @('Janelu', 'Fevelelu', 'Malsu', 'Abili', 'Mayu', 'Junyu', 'Julyu', 'Agostu', 'Setembu', 'Otubu', 'Novembu', 'Desembu')

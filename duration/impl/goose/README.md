@@ -44,7 +44,7 @@ let c, ok_c = sayableduration::format_since(en, normal, "2025-01-15T10:00:00", "
 
 ## Internationalization
 
-All 168 locales are generated from `duration/locales/src/*.json` into `sayableduration/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
+All 168 locales are generated from the shared `locales/*.json` files into `sayableduration/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
 
 ```goose
 let ja, found = sayableduration::get_locale("ja");

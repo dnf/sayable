@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/mos.json
+# Source: locales/mos.json
 
 _sayabledate_locale_mos() {
     _months=('Zãn-naabu' 'Sig-noy-yaadre' 'Sig-noy-taabo' 'Kãn-saglem' 'Koabg-taabo' 'Koabg-yaadre' 'Baspɩɩre' 'Gɩ-sõongo' 'Tũubg-sõongo' 'Pẽemb-sõongo' 'Laafi-bãaga' 'Filiga-bãaga')

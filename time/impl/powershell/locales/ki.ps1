@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ki.json
+# Source: locales/ki.json
 
 function locale_ki {
     $hours = @('ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano', 'ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe')

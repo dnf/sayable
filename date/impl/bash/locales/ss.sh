@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ss.json
+# Source: locales/ss.json
 
 _sayabledate_locale_ss() {
     _months=('Bhimbidvwane' 'iNdlovana' 'iNdlovulenkhulu' 'Mabasa' 'iNkhwekhweti' 'iNhlaba' 'Kholwane' 'iNgci' 'iNyoni' 'iMphala' 'Lweti' 'iNgongoni')

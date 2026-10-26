@@ -428,8 +428,8 @@ check:
     echo "==> Checking codegen is current"
     {{python}} -m codegen.generate --check
     echo ""
-    echo "==> Checking docgen is current"
-    uv run --project impl/python {{python}} -m codegen.docgen --check
+    echo "==> Checking locale docs are current"
+    (cd .. && {{python}} tools/generate_locale_docs.py --check)
 
 # Remove build artifacts
 [group('clean')]

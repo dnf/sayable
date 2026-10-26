@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/sl.json
+# Source: locales/sl.json
 
 (defn- plural [n]
   (let [mod100 (% n 100)]

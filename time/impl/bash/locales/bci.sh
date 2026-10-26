@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/bci.json
+# Source: locales/bci.json
 
 _sayabletime_locale_bci() {
     _clock_hours=('blu-nɲɔn' 'kun' 'nɲɔn' 'nsan' 'nan' 'nnun' 'nsiɛn' 'nso' 'mɔcuɛ' 'ngwlan' 'blu' 'blu-kun')

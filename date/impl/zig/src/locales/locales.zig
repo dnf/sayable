@@ -10,7 +10,7 @@
 
 const sayabledate = @import("../sayabledate.zig");
 
-// Source: date/locales/src/af.json
+// Source: locales/af.json
 pub const af: sayabledate.DateLocale = .{
     .code = "af",
     .months = .{ "Januarie", "Februarie", "Maart", "April", "Mei", "Junie", "Julie", "Augustus", "September", "Oktober", "November", "Desember" },
@@ -40,7 +40,7 @@ pub const af: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ak.json
+// Source: locales/ak.json
 pub const ak: sayabledate.DateLocale = .{
     .code = "ak",
     .months = .{ "Ɔpɛpɔn", "Ɔgyefuo", "Ɔbenem", "Oforisuo", "Kotonimma", "Ayɛwohomumu", "Kutawonkuku", "Ɔsannaa", "Ɛbɔ", "Ahinime", "Obubuo", "Ɔpenimba" },
@@ -70,7 +70,7 @@ pub const ak: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/am.json
+// Source: locales/am.json
 pub const am: sayabledate.DateLocale = .{
     .code = "am",
     .months = .{ "ጃንዋሪ", "ፌብሩወሪ", "ማርች", "ኤፕሪል", "ሜይ", "ጁን", "ጁላይ", "ኦገስት", "ሴፕቴምበር", "ኦክቶበር", "ኖቬምበር", "ዲሴምበር" },
@@ -100,7 +100,7 @@ pub const am: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ar.json
+// Source: locales/ar.json
 pub const ar: sayabledate.DateLocale = .{
     .code = "ar",
     .months = .{ "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر" },
@@ -130,7 +130,7 @@ pub const ar: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ay.json
+// Source: locales/ay.json
 pub const ay: sayabledate.DateLocale = .{
     .code = "ay",
     .months = .{ "Chinuqa", "Anata", "Achuqa", "Qasiwi", "Llamayu", "Marat'aqa", "Willkakuti", "Llumpaqa", "Sata", "Taypisata", "Lapaqa", "Jalluqallta" },
@@ -158,7 +158,7 @@ pub const ay: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/az.json
+// Source: locales/az.json
 pub const az: sayabledate.DateLocale = .{
     .code = "az",
     .months = .{ "yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avqust", "sentyabr", "oktyabr", "noyabr", "dekabr" },
@@ -188,7 +188,7 @@ pub const az: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/bci.json
+// Source: locales/bci.json
 pub const bci: sayabledate.DateLocale = .{
     .code = "bci",
     .months = .{ "Zanvie", "Flevie", "Masi", "Avrili", "Mɛ", "Zuɛn", "Zulɛ", "Uti", "Sɛtanbu", "Ɔtɔbu", "Novanbu", "Desanbu" },
@@ -218,7 +218,7 @@ pub const bci: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/be.json
+// Source: locales/be.json
 pub const be: sayabledate.DateLocale = .{
     .code = "be",
     .months = .{ "студзень", "люты", "сакавік", "красавік", "май", "чэрвень", "ліпень", "жнівень", "верасень", "кастрычнік", "лістапад", "снежань" },
@@ -249,7 +249,7 @@ pub const be: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/bem.json
+// Source: locales/bem.json
 pub const bem: sayabledate.DateLocale = .{
     .code = "bem",
     .months = .{ "Januari", "Februari", "Machi", "Epreli", "Mei", "Juni", "Julai", "Ogasti", "Septemba", "Oktoba", "Novemba", "Disemba" },
@@ -279,7 +279,7 @@ pub const bem: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/bg.json
+// Source: locales/bg.json
 pub const bg: sayabledate.DateLocale = .{
     .code = "bg",
     .months = .{ "януари", "февруари", "март", "април", "май", "юни", "юли", "август", "септември", "октомври", "ноември", "декември" },
@@ -309,7 +309,7 @@ pub const bg: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/bi.json
+// Source: locales/bi.json
 pub const bi: sayabledate.DateLocale = .{
     .code = "bi",
     .months = .{ "Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba" },
@@ -339,7 +339,7 @@ pub const bi: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/bm.json
+// Source: locales/bm.json
 pub const bm: sayabledate.DateLocale = .{
     .code = "bm",
     .months = .{ "Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu" },
@@ -369,7 +369,7 @@ pub const bm: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/bn.json
+// Source: locales/bn.json
 pub const bn: sayabledate.DateLocale = .{
     .code = "bn",
     .months = .{ "জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর" },
@@ -399,7 +399,7 @@ pub const bn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/br.json
+// Source: locales/br.json
 pub const br: sayabledate.DateLocale = .{
     .code = "br",
     .months = .{ "Genver", "C'hwevrer", "Meurzh", "Ebrel", "Mae", "Mezheven", "Gouere", "Eost", "Gwengolo", "Here", "Du", "Kerzu" },
@@ -427,7 +427,7 @@ pub const br: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/bs.json
+// Source: locales/bs.json
 pub const bs: sayabledate.DateLocale = .{
     .code = "bs",
     .months = .{ "januar", "februar", "mart", "april", "maj", "juni", "juli", "august", "septembar", "oktobar", "novembar", "decembar" },
@@ -457,7 +457,7 @@ pub const bs: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ca.json
+// Source: locales/ca.json
 pub const ca: sayabledate.DateLocale = .{
     .code = "ca",
     .months = .{ "gener", "febrer", "març", "abril", "maig", "juny", "juliol", "agost", "setembre", "octubre", "novembre", "desembre" },
@@ -487,7 +487,7 @@ pub const ca: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/cak.json
+// Source: locales/cak.json
 pub const cak: sayabledate.DateLocale = .{
     .code = "cak",
     .months = .{ "Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'" },
@@ -517,7 +517,7 @@ pub const cak: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ceb.json
+// Source: locales/ceb.json
 pub const ceb: sayabledate.DateLocale = .{
     .code = "ceb",
     .months = .{ "Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Septyembre", "Oktubre", "Nobyembre", "Disyembre" },
@@ -547,7 +547,7 @@ pub const ceb: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/cs.json
+// Source: locales/cs.json
 pub const cs: sayabledate.DateLocale = .{
     .code = "cs",
     .months = .{ "leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec" },
@@ -578,7 +578,7 @@ pub const cs: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/cy.json
+// Source: locales/cy.json
 pub const cy: sayabledate.DateLocale = .{
     .code = "cy",
     .months = .{ "Ionawr", "Chwefror", "Mawrth", "Ebrill", "Mai", "Mehefin", "Gorffennaf", "Awst", "Medi", "Hydref", "Tachwedd", "Rhagfyr" },
@@ -608,7 +608,7 @@ pub const cy: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/da.json
+// Source: locales/da.json
 pub const da: sayabledate.DateLocale = .{
     .code = "da",
     .months = .{ "januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december" },
@@ -638,7 +638,7 @@ pub const da: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/de.json
+// Source: locales/de.json
 pub const de: sayabledate.DateLocale = .{
     .code = "de",
     .months = .{ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" },
@@ -668,7 +668,7 @@ pub const de: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/din.json
+// Source: locales/din.json
 pub const din: sayabledate.DateLocale = .{
     .code = "din",
     .months = .{ "Tiɔp in dit", "Pɛt", "Duɔ̈ɔ̈ŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk" },
@@ -698,7 +698,7 @@ pub const din: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/dje.json
+// Source: locales/dje.json
 pub const dje: sayabledate.DateLocale = .{
     .code = "dje",
     .months = .{ "Žanwiye", "Feewiriye", "Marsi", "Awiril", "Me", "Žuweŋ", "Žuyye", "Ut", "Sektanbur", "Oktoobur", "Noowanbur", "Deesanbur" },
@@ -728,7 +728,7 @@ pub const dje: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/dv.json
+// Source: locales/dv.json
 pub const dv: sayabledate.DateLocale = .{
     .code = "dv",
     .months = .{ "ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު" },
@@ -758,7 +758,7 @@ pub const dv: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/dyu.json
+// Source: locales/dyu.json
 pub const dyu: sayabledate.DateLocale = .{
     .code = "dyu",
     .months = .{ "Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburdukalo", "Desanburukalo" },
@@ -788,7 +788,7 @@ pub const dyu: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/dz.json
+// Source: locales/dz.json
 pub const dz: sayabledate.DateLocale = .{
     .code = "dz",
     .months = .{ "ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ" },
@@ -818,7 +818,7 @@ pub const dz: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ee.json
+// Source: locales/ee.json
 pub const ee: sayabledate.DateLocale = .{
     .code = "ee",
     .months = .{ "Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Damɛ", "Masa", "Siamlɔm", "Dasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome" },
@@ -848,7 +848,7 @@ pub const ee: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/el.json
+// Source: locales/el.json
 pub const el: sayabledate.DateLocale = .{
     .code = "el",
     .months = .{ "Ιανουαρίου", "Φεβρουαρίου", "Μαρτίου", "Απριλίου", "Μαΐου", "Ιουνίου", "Ιουλίου", "Αυγούστου", "Σεπτεμβρίου", "Οκτωβρίου", "Νοεμβρίου", "Δεκεμβρίου" },
@@ -879,7 +879,7 @@ pub const el: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/en.json
+// Source: locales/en.json
 pub const en: sayabledate.DateLocale = .{
     .code = "en",
     .months = .{ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" },
@@ -910,7 +910,7 @@ pub const en: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/es.json
+// Source: locales/es.json
 pub const es: sayabledate.DateLocale = .{
     .code = "es",
     .months = .{ "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" },
@@ -940,7 +940,7 @@ pub const es: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/et.json
+// Source: locales/et.json
 pub const et: sayabledate.DateLocale = .{
     .code = "et",
     .months = .{ "jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember" },
@@ -970,7 +970,7 @@ pub const et: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/eu.json
+// Source: locales/eu.json
 pub const eu: sayabledate.DateLocale = .{
     .code = "eu",
     .months = .{ "urtarril", "otsail", "martxo", "apiril", "maiatz", "ekain", "uztail", "abuztu", "irail", "urri", "azaro", "abendu" },
@@ -1000,7 +1000,7 @@ pub const eu: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/fa.json
+// Source: locales/fa.json
 pub const fa: sayabledate.DateLocale = .{
     .code = "fa",
     .months = .{ "ژانویه", "فوریه", "مارس", "آوریل", "مه", "ژوئن", "ژوئیه", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر" },
@@ -1030,7 +1030,7 @@ pub const fa: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/fan.json
+// Source: locales/fan.json
 pub const fan: sayabledate.DateLocale = .{
     .code = "fan",
     .months = .{ "Nzas Ngon", "Nzas Mekié", "Nzas Okúa", "Nzas Angón", "Nzas Obuí", "Nzas Okéna", "Nzas Osúa", "Nzas Mwom", "Nzas Ebulú", "Nzas Owono", "Nzas Owono-abé", "Nzas Nkéng" },
@@ -1060,7 +1060,7 @@ pub const fan: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ff.json
+// Source: locales/ff.json
 pub const ff: sayabledate.DateLocale = .{
     .code = "ff",
     .months = .{ "Siilo", "Colte", "Mbooy", "Seeɗto", "Duujal", "Korse", "Morso", "Juko", "Siilto", "Yarkomaa", "Jolal", "Bowte" },
@@ -1090,7 +1090,7 @@ pub const ff: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/fi.json
+// Source: locales/fi.json
 pub const fi: sayabledate.DateLocale = .{
     .code = "fi",
     .months = .{ "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinäkuu", "elokuu", "syyskuu", "lokakuu", "marraskuu", "joulukuu" },
@@ -1121,7 +1121,7 @@ pub const fi: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/fil.json
+// Source: locales/fil.json
 pub const fil: sayabledate.DateLocale = .{
     .code = "fil",
     .months = .{ "Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Setyembre", "Oktubre", "Nobyembre", "Disyembre" },
@@ -1151,7 +1151,7 @@ pub const fil: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/fj.json
+// Source: locales/fj.json
 pub const fj: sayabledate.DateLocale = .{
     .code = "fj",
     .months = .{ "Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba" },
@@ -1181,7 +1181,7 @@ pub const fj: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/fon.json
+// Source: locales/fon.json
 pub const fon: sayabledate.DateLocale = .{
     .code = "fon",
     .months = .{ "Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún" },
@@ -1211,7 +1211,7 @@ pub const fon: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/fr.json
+// Source: locales/fr.json
 pub const fr: sayabledate.DateLocale = .{
     .code = "fr",
     .months = .{ "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre" },
@@ -1242,7 +1242,7 @@ pub const fr: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ga.json
+// Source: locales/ga.json
 pub const ga: sayabledate.DateLocale = .{
     .code = "ga",
     .months = .{ "Eanáir", "Feabhra", "Márta", "Aibreán", "Bealtaine", "Meitheamh", "Iúil", "Lúnasa", "Meán Fómhair", "Deireadh Fómhair", "Samhain", "Nollaig" },
@@ -1272,7 +1272,7 @@ pub const ga: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/gd.json
+// Source: locales/gd.json
 pub const gd: sayabledate.DateLocale = .{
     .code = "gd",
     .months = .{ "Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd" },
@@ -1302,7 +1302,7 @@ pub const gd: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/gl.json
+// Source: locales/gl.json
 pub const gl: sayabledate.DateLocale = .{
     .code = "gl",
     .months = .{ "xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro" },
@@ -1332,7 +1332,7 @@ pub const gl: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/gn.json
+// Source: locales/gn.json
 pub const gn: sayabledate.DateLocale = .{
     .code = "gn",
     .months = .{ "Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi" },
@@ -1362,7 +1362,7 @@ pub const gn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/gu.json
+// Source: locales/gu.json
 pub const gu: sayabledate.DateLocale = .{
     .code = "gu",
     .months = .{ "જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર" },
@@ -1392,7 +1392,7 @@ pub const gu: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/gv.json
+// Source: locales/gv.json
 pub const gv: sayabledate.DateLocale = .{
     .code = "gv",
     .months = .{ "Jerrey Geuree", "Toshiaght Arree", "Mayrnt", "Averil", "Boaldyn", "Mean Souree", "Jerrey Souree", "Luanistyn", "Mean Fouyir", "Jerrey Fouyir", "Mee Houney", "Mee ny Nollick" },
@@ -1420,7 +1420,7 @@ pub const gv: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ha.json
+// Source: locales/ha.json
 pub const ha: sayabledate.DateLocale = .{
     .code = "ha",
     .months = .{ "Janairu", "Fabrairu", "Maris", "Afrilu", "Mayu", "Yuni", "Yuli", "Agusta", "Satumba", "Oktoba", "Nuwamba", "Disamba" },
@@ -1450,7 +1450,7 @@ pub const ha: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/he.json
+// Source: locales/he.json
 pub const he: sayabledate.DateLocale = .{
     .code = "he",
     .months = .{ "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר" },
@@ -1480,7 +1480,7 @@ pub const he: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/hi.json
+// Source: locales/hi.json
 pub const hi: sayabledate.DateLocale = .{
     .code = "hi",
     .months = .{ "जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्तूबर", "नवंबर", "दिसंबर" },
@@ -1510,7 +1510,7 @@ pub const hi: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/hmn.json
+// Source: locales/hmn.json
 pub const hmn: sayabledate.DateLocale = .{
     .code = "hmn",
     .months = .{ "Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis" },
@@ -1540,7 +1540,7 @@ pub const hmn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/hr.json
+// Source: locales/hr.json
 pub const hr: sayabledate.DateLocale = .{
     .code = "hr",
     .months = .{ "siječanj", "veljača", "ožujak", "travanj", "svibanj", "lipanj", "srpanj", "kolovoz", "rujan", "listopad", "studeni", "prosinac" },
@@ -1571,7 +1571,7 @@ pub const hr: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ht.json
+// Source: locales/ht.json
 pub const ht: sayabledate.DateLocale = .{
     .code = "ht",
     .months = .{ "Janvye", "Fevriye", "Mas", "Avril", "Me", "Jen", "Jiyè", "Out", "Septanm", "Oktòb", "Novanm", "Desanm" },
@@ -1601,7 +1601,7 @@ pub const ht: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/hu.json
+// Source: locales/hu.json
 pub const hu: sayabledate.DateLocale = .{
     .code = "hu",
     .months = .{ "január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december" },
@@ -1631,7 +1631,7 @@ pub const hu: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/hy.json
+// Source: locales/hy.json
 pub const hy: sayabledate.DateLocale = .{
     .code = "hy",
     .months = .{ "Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր" },
@@ -1661,7 +1661,7 @@ pub const hy: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/id.json
+// Source: locales/id.json
 pub const id: sayabledate.DateLocale = .{
     .code = "id",
     .months = .{ "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" },
@@ -1691,7 +1691,7 @@ pub const id: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ig.json
+// Source: locales/ig.json
 pub const ig: sayabledate.DateLocale = .{
     .code = "ig",
     .months = .{ "Jenụwarị", "Febrụwarị", "Maachị", "Epreel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba" },
@@ -1721,7 +1721,7 @@ pub const ig: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/is.json
+// Source: locales/is.json
 pub const is: sayabledate.DateLocale = .{
     .code = "is",
     .months = .{ "janúar", "febrúar", "mars", "apríl", "maí", "júní", "júlí", "ágúst", "september", "október", "nóvember", "desember" },
@@ -1751,7 +1751,7 @@ pub const is: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/it.json
+// Source: locales/it.json
 pub const it: sayabledate.DateLocale = .{
     .code = "it",
     .months = .{ "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre" },
@@ -1781,7 +1781,7 @@ pub const it: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ja.json
+// Source: locales/ja.json
 pub const ja: sayabledate.DateLocale = .{
     .code = "ja",
     .months = .{ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" },
@@ -1811,7 +1811,7 @@ pub const ja: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/jv.json
+// Source: locales/jv.json
 pub const jv: sayabledate.DateLocale = .{
     .code = "jv",
     .months = .{ "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" },
@@ -1841,7 +1841,7 @@ pub const jv: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ka.json
+// Source: locales/ka.json
 pub const ka: sayabledate.DateLocale = .{
     .code = "ka",
     .months = .{ "იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი" },
@@ -1871,7 +1871,7 @@ pub const ka: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kbp.json
+// Source: locales/kbp.json
 pub const kbp: sayabledate.DateLocale = .{
     .code = "kbp",
     .months = .{ "Kɔlaɣ", "Naaɣ Kɩŋ", "Naataŋgʊ", "Naalɩɩ", "Lɛlɩɩ", "Kʊɖʊmaa", "Saŋayɩɩ", "Kɩyɛɛna", "Lɩtɩɩ", "Kʊɖʊmaɣ", "Tɩŋgɩzɩɩ", "Abranɩɩ" },
@@ -1901,7 +1901,7 @@ pub const kbp: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kek.json
+// Source: locales/kek.json
 pub const kek: sayabledate.DateLocale = .{
     .code = "kek",
     .months = .{ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
@@ -1929,7 +1929,7 @@ pub const kek: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ki.json
+// Source: locales/ki.json
 pub const ki: sayabledate.DateLocale = .{
     .code = "ki",
     .months = .{ "Njenuarĩ", "Mwere wa kerĩ", "Mwere wa gatatũ", "Mwere wa kana", "Mwere wa gatano", "Mwere wa gatandatũ", "Mwere wa mũgwanja", "Mwere wa kanana", "Mwere wa kenda", "Mwere wa ikũmi", "Mwere wa ikũmi na ũmwe", "Ndithemba" },
@@ -1957,7 +1957,7 @@ pub const ki: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kk.json
+// Source: locales/kk.json
 pub const kk: sayabledate.DateLocale = .{
     .code = "kk",
     .months = .{ "қаңтар", "ақпан", "наурыз", "сәуір", "мамыр", "маусым", "шілде", "тамыз", "қыркүйек", "қазан", "қараша", "желтоқсан" },
@@ -1987,7 +1987,7 @@ pub const kk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kl.json
+// Source: locales/kl.json
 pub const kl: sayabledate.DateLocale = .{
     .code = "kl",
     .months = .{ "januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip" },
@@ -2017,7 +2017,7 @@ pub const kl: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/km.json
+// Source: locales/km.json
 pub const km: sayabledate.DateLocale = .{
     .code = "km",
     .months = .{ "មករា", "កុម្ភៈ", "មីនា", "មេសា", "ឧសភា", "មិថុនា", "កក្កដា", "សីហា", "កញ្ញា", "តុលា", "វិច្ឆិកា", "ធ្នូ" },
@@ -2047,7 +2047,7 @@ pub const km: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kn.json
+// Source: locales/kn.json
 pub const kn: sayabledate.DateLocale = .{
     .code = "kn",
     .months = .{ "ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್" },
@@ -2077,7 +2077,7 @@ pub const kn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ko.json
+// Source: locales/ko.json
 pub const ko: sayabledate.DateLocale = .{
     .code = "ko",
     .months = .{ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" },
@@ -2107,7 +2107,7 @@ pub const ko: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kpe.json
+// Source: locales/kpe.json
 pub const kpe: sayabledate.DateLocale = .{
     .code = "kpe",
     .months = .{ "Yanuwali", "Fɛbɛli", "Maachi", "Eepɛli", "Mɛɛ", "Juŋ", "Julai", "Ɔɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba" },
@@ -2137,7 +2137,7 @@ pub const kpe: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kri.json
+// Source: locales/kri.json
 pub const kri: sayabledate.DateLocale = .{
     .code = "kri",
     .months = .{ "Jenyuari", "Febyuari", "Mach", "Epril", "Me", "Jun", "Julay", "Ogost", "Septemba", "Oktoba", "Novemba", "Disemba" },
@@ -2167,7 +2167,7 @@ pub const kri: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ktu.json
+// Source: locales/ktu.json
 pub const ktu: sayabledate.DateLocale = .{
     .code = "ktu",
     .months = .{ "Yanvye", "Fevrye", "Marsi", "Avrili", "Mɛ", "Yuwɛ", "Yulɛ", "Uti", "Sɛtambre", "Ɔtɔbre", "Nɔvambre", "Desambre" },
@@ -2197,7 +2197,7 @@ pub const ktu: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ku.json
+// Source: locales/ku.json
 pub const ku: sayabledate.DateLocale = .{
     .code = "ku",
     .months = .{ "Rêbendan", "Reşemî", "Adar", "Avrêl", "Gulan", "Pûşper", "Tîrmeh", "Tebax", "Îlon", "Cotmeh", "Mijdar", "Berfanbar" },
@@ -2227,7 +2227,7 @@ pub const ku: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/kw.json
+// Source: locales/kw.json
 pub const kw: sayabledate.DateLocale = .{
     .code = "kw",
     .months = .{ "Genver", "Hwevrer", "Meurth", "Ebrel", "Me", "Metheven", "Gortheren", "Est", "Gwynngala", "Hedra", "Du", "Kevardhu" },
@@ -2255,7 +2255,7 @@ pub const kw: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ky.json
+// Source: locales/ky.json
 pub const ky: sayabledate.DateLocale = .{
     .code = "ky",
     .months = .{ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" },
@@ -2285,7 +2285,7 @@ pub const ky: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/lb.json
+// Source: locales/lb.json
 pub const lb: sayabledate.DateLocale = .{
     .code = "lb",
     .months = .{ "Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" },
@@ -2315,7 +2315,7 @@ pub const lb: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/lg.json
+// Source: locales/lg.json
 pub const lg: sayabledate.DateLocale = .{
     .code = "lg",
     .months = .{ "Janwali", "Febwali", "Marisi", "Apuli", "Mayi", "Yuni", "Yuli", "Agositi", "Seputemba", "Okitobba", "Novemba", "Desemba" },
@@ -2345,7 +2345,7 @@ pub const lg: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ln.json
+// Source: locales/ln.json
 pub const ln: sayabledate.DateLocale = .{
     .code = "ln",
     .months = .{ "Yanwáli", "Febwáli", "Mársi", "Apríli", "Máyi", "Yúni", "Yúli", "Augústu", "Sɛtɛ́mbɛ", "Ɔkɔtɔ́bɛ", "Novɛ́mbɛ", "Dɛsɛ́mbɛ" },
@@ -2375,7 +2375,7 @@ pub const ln: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/lo.json
+// Source: locales/lo.json
 pub const lo: sayabledate.DateLocale = .{
     .code = "lo",
     .months = .{ "ມັງກອນ", "ກຸມພາ", "ມີນາ", "ເມສາ", "ພຶດສະພາ", "ມິຖຸນາ", "ກໍລະກົດ", "ສິງຫາ", "ກັນຍາ", "ຕຸລາ", "ພະຈິກ", "ທັນວາ" },
@@ -2405,7 +2405,7 @@ pub const lo: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/lt.json
+// Source: locales/lt.json
 pub const lt: sayabledate.DateLocale = .{
     .code = "lt",
     .months = .{ "sausis", "vasaris", "kovas", "balandis", "gegužė", "birželis", "liepa", "rugpjūtis", "rugsėjis", "spalis", "lapkritis", "gruodis" },
@@ -2436,7 +2436,7 @@ pub const lt: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/luo.json
+// Source: locales/luo.json
 pub const luo: sayabledate.DateLocale = .{
     .code = "luo",
     .months = .{ "Dwe mar Achiel", "Dwe mar Ariyo", "Dwe mar Adek", "Dwe mar Ang'wen", "Dwe mar Abich", "Dwe mar Auchiel", "Dwe mar Abiriyo", "Dwe mar Aboro", "Dwe mar Ochiko", "Dwe mar Apar", "Dwe mar Apar gi Achiel", "Dwe mar Apar gi Ariyo" },
@@ -2465,7 +2465,7 @@ pub const luo: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/lv.json
+// Source: locales/lv.json
 pub const lv: sayabledate.DateLocale = .{
     .code = "lv",
     .months = .{ "janvāris", "februāris", "marts", "aprīlis", "maijs", "jūnijs", "jūlijs", "augusts", "septembris", "oktobris", "novembris", "decembris" },
@@ -2495,7 +2495,7 @@ pub const lv: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mam.json
+// Source: locales/mam.json
 pub const mam: sayabledate.DateLocale = .{
     .code = "mam",
     .months = .{ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
@@ -2523,7 +2523,7 @@ pub const mam: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/men.json
+// Source: locales/men.json
 pub const men: sayabledate.DateLocale = .{
     .code = "men",
     .months = .{ "Januwali", "Febluwali", "Maachi", "Epuli", "Mei", "Juun", "Julai", "Ɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba" },
@@ -2553,7 +2553,7 @@ pub const men: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mfe.json
+// Source: locales/mfe.json
 pub const mfe: sayabledate.DateLocale = .{
     .code = "mfe",
     .months = .{ "Zanvie", "Fevrie", "Mars", "Avril", "Me", "Zwin", "Zwiye", "Out", "Septam", "Oktob", "Novam", "Desam" },
@@ -2583,7 +2583,7 @@ pub const mfe: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mg.json
+// Source: locales/mg.json
 pub const mg: sayabledate.DateLocale = .{
     .code = "mg",
     .months = .{ "Janoary", "Febroary", "Martsa", "Aprily", "Mey", "Jona", "Jolay", "Aogositra", "Septambra", "Oktobra", "Novambra", "Desambra" },
@@ -2613,7 +2613,7 @@ pub const mg: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mi.json
+// Source: locales/mi.json
 pub const mi: sayabledate.DateLocale = .{
     .code = "mi",
     .months = .{ "Kohi-tātea", "Hui-tanguru", "Poutū-te-rangi", "Paenga-whāwhā", "Haratua", "Pipiri", "Hōngongoi", "Here-turi-kōkā", "Mahuru", "Whiringa-ā-nuku", "Whiringa-ā-rangi", "Hakihea" },
@@ -2643,7 +2643,7 @@ pub const mi: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mk.json
+// Source: locales/mk.json
 pub const mk: sayabledate.DateLocale = .{
     .code = "mk",
     .months = .{ "јануари", "февруари", "март", "април", "мај", "јуни", "јули", "август", "септември", "октомври", "ноември", "декември" },
@@ -2673,7 +2673,7 @@ pub const mk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ml.json
+// Source: locales/ml.json
 pub const ml: sayabledate.DateLocale = .{
     .code = "ml",
     .months = .{ "ജനുവരി", "ഫെബ്രുവരി", "മാർച്ച്", "ഏപ്രിൽ", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗസ്റ്റ്", "സെപ്റ്റംബർ", "ഒക്ടോബർ", "നവംബർ", "ഡിസംബർ" },
@@ -2703,7 +2703,7 @@ pub const ml: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mn.json
+// Source: locales/mn.json
 pub const mn: sayabledate.DateLocale = .{
     .code = "mn",
     .months = .{ "Нэгдүгээр сар", "Хоёрдугаар сар", "Гуравдугаар сар", "Дөрөвдүгээр сар", "Тавдугаар сар", "Зургаадугаар сар", "Долоодугаар сар", "Наймдугаар сар", "Есдүгээр сар", "Аравдугаар сар", "Арван нэгдүгээр сар", "Арван хоёрдугаар сар" },
@@ -2733,7 +2733,7 @@ pub const mn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mnk.json
+// Source: locales/mnk.json
 pub const mnk: sayabledate.DateLocale = .{
     .code = "mnk",
     .months = .{ "Samwiye", "Feburiye", "Marsi", "Afiril", "Meyi", "Juŋ", "Julaa", "Ooti", "Sɛtɛmba", "Ɔtɔba", "Nuwɛmba", "Disɛmba" },
@@ -2763,7 +2763,7 @@ pub const mnk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mos.json
+// Source: locales/mos.json
 pub const mos: sayabledate.DateLocale = .{
     .code = "mos",
     .months = .{ "Zãn-naabu", "Sig-noy-yaadre", "Sig-noy-taabo", "Kãn-saglem", "Koabg-taabo", "Koabg-yaadre", "Baspɩɩre", "Gɩ-sõongo", "Tũubg-sõongo", "Pẽemb-sõongo", "Laafi-bãaga", "Filiga-bãaga" },
@@ -2793,7 +2793,7 @@ pub const mos: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mr.json
+// Source: locales/mr.json
 pub const mr: sayabledate.DateLocale = .{
     .code = "mr",
     .months = .{ "जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल", "मे", "जून", "जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर" },
@@ -2823,7 +2823,7 @@ pub const mr: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ms.json
+// Source: locales/ms.json
 pub const ms: sayabledate.DateLocale = .{
     .code = "ms",
     .months = .{ "Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember" },
@@ -2853,7 +2853,7 @@ pub const ms: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/mt.json
+// Source: locales/mt.json
 pub const mt: sayabledate.DateLocale = .{
     .code = "mt",
     .months = .{ "Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru" },
@@ -2883,7 +2883,7 @@ pub const mt: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/my.json
+// Source: locales/my.json
 pub const my: sayabledate.DateLocale = .{
     .code = "my",
     .months = .{ "ဇန်နဝါရီ", "ဖေဖော်ဝါရီ", "မတ်", "ဧပြီ", "မေ", "ဇွန်", "ဇူလိုင်", "ဩဂုတ်", "စက်တင်ဘာ", "အောက်တိုဘာ", "နိုဝင်ဘာ", "ဒီဇင်ဘာ" },
@@ -2913,7 +2913,7 @@ pub const my: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/nb.json
+// Source: locales/nb.json
 pub const nb: sayabledate.DateLocale = .{
     .code = "nb",
     .months = .{ "januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember" },
@@ -2943,7 +2943,7 @@ pub const nb: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/nd.json
+// Source: locales/nd.json
 pub const nd: sayabledate.DateLocale = .{
     .code = "nd",
     .months = .{ "Zibandlela", "Nhlolanja", "Mbimbitho", "Mabasa", "Nkwenkwezi", "Nhlangula", "Kholwane", "Ingci", "Inyoni", "Imphala", "Lwezi", "Mpalakazi" },
@@ -2973,7 +2973,7 @@ pub const nd: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ne.json
+// Source: locales/ne.json
 pub const ne: sayabledate.DateLocale = .{
     .code = "ne",
     .months = .{ "जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर" },
@@ -3003,7 +3003,7 @@ pub const ne: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ng.json
+// Source: locales/ng.json
 pub const ng: sayabledate.DateLocale = .{
     .code = "ng",
     .months = .{ "Januali", "Febluali", "Malitsi", "Aplili", "Mei", "Juni", "Juli", "Augustu", "Septemba", "Oktoba", "Novemba", "Desemba" },
@@ -3033,7 +3033,7 @@ pub const ng: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/nl.json
+// Source: locales/nl.json
 pub const nl: sayabledate.DateLocale = .{
     .code = "nl",
     .months = .{ "januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december" },
@@ -3063,7 +3063,7 @@ pub const nl: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/nr.json
+// Source: locales/nr.json
 pub const nr: sayabledate.DateLocale = .{
     .code = "nr",
     .months = .{ "uTjhirhweni", "uMhlolanja", "iNtaka", "iSihlabantangana", "uMrhayili", "uMgwengweni", "uVelabahlinze", "uRhoboyi", "uKhukhulamungu", "iSewula", "uSikinyikhaba", "uNobayeni" },
@@ -3091,7 +3091,7 @@ pub const nr: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/nso.json
+// Source: locales/nso.json
 pub const nso: sayabledate.DateLocale = .{
     .code = "nso",
     .months = .{ "Pherekgong", "Hlakola", "Mopitlo", "Moranang", "Mosegamanye", "Ngoatobošego", "Phukwi", "Phatwe", "Lewedi", "Diphalane", "Dibatsela", "Manthole" },
@@ -3121,7 +3121,7 @@ pub const nso: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/nus.json
+// Source: locales/nus.json
 pub const nus: sayabledate.DateLocale = .{
     .code = "nus",
     .months = .{ "Tiɔp thar", "Pɛt", "Duɔɔŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk" },
@@ -3151,7 +3151,7 @@ pub const nus: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ny.json
+// Source: locales/ny.json
 pub const ny: sayabledate.DateLocale = .{
     .code = "ny",
     .months = .{ "Januwale", "Febuluwale", "Matchi", "Epulo", "Meyi", "Juni", "Julaye", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba" },
@@ -3181,7 +3181,7 @@ pub const ny: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/om.json
+// Source: locales/om.json
 pub const om: sayabledate.DateLocale = .{
     .code = "om",
     .months = .{ "Amajjii", "Guraandhala", "Bitooteessa", "Elba", "Caamsa", "Waxabajjii", "Adooleessa", "Hagayya", "Fuulbana", "Onkololeessa", "Sadaasa", "Muddee" },
@@ -3211,7 +3211,7 @@ pub const om: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/or.json
+// Source: locales/or.json
 pub const @"or": sayabledate.DateLocale = .{
     .code = "or",
     .months = .{ "ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଏପ୍ରିଲ", "ମଇ", "ଜୁନ", "ଜୁಲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର" },
@@ -3241,7 +3241,7 @@ pub const @"or": sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/pa.json
+// Source: locales/pa.json
 pub const pa: sayabledate.DateLocale = .{
     .code = "pa",
     .months = .{ "ਜਨਵਰੀ", "ਫ਼ਰਵਰੀ", "ਮਾਰਚ", "ਅਪ੍ਰੈਲ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾਈ", "ਅਗਸਤ", "ਸਤੰਬਰ", "ਅਕਤੂਬਰ", "ਨਵੰਬਰ", "ਦਸੰਬਰ" },
@@ -3271,7 +3271,7 @@ pub const pa: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/pis.json
+// Source: locales/pis.json
 pub const pis: sayabledate.DateLocale = .{
     .code = "pis",
     .months = .{ "Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba" },
@@ -3301,7 +3301,7 @@ pub const pis: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/pl.json
+// Source: locales/pl.json
 pub const pl: sayabledate.DateLocale = .{
     .code = "pl",
     .months = .{ "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" },
@@ -3332,7 +3332,7 @@ pub const pl: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/pov.json
+// Source: locales/pov.json
 pub const pov: sayabledate.DateLocale = .{
     .code = "pov",
     .months = .{ "Janeru", "Febreru", "Marsu", "Abril", "Maiu", "Junhu", "Julhu", "Agostu", "Setembru", "Otubru", "Novembru", "Dizembru" },
@@ -3362,7 +3362,7 @@ pub const pov: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ps.json
+// Source: locales/ps.json
 pub const ps: sayabledate.DateLocale = .{
     .code = "ps",
     .months = .{ "جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سپتمبر", "اکتوبر", "نومبر", "دسمبر" },
@@ -3392,7 +3392,7 @@ pub const ps: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/pt.json
+// Source: locales/pt.json
 pub const pt: sayabledate.DateLocale = .{
     .code = "pt",
     .months = .{ "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" },
@@ -3422,7 +3422,7 @@ pub const pt: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/qu.json
+// Source: locales/qu.json
 pub const qu: sayabledate.DateLocale = .{
     .code = "qu",
     .months = .{ "Qhulla puquy", "Hatun puquy", "Pawqar waray", "Ayriwa", "Aymuray", "Inti raymi", "Anta sitwa", "Qhapaq sitwa", "Uma raymi", "Kantaray", "Ayamarq'a", "Qhapaq raymi" },
@@ -3452,7 +3452,7 @@ pub const qu: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/quc.json
+// Source: locales/quc.json
 pub const quc: sayabledate.DateLocale = .{
     .code = "quc",
     .months = .{ "Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'" },
@@ -3482,7 +3482,7 @@ pub const quc: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ro.json
+// Source: locales/ro.json
 pub const ro: sayabledate.DateLocale = .{
     .code = "ro",
     .months = .{ "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie" },
@@ -3513,7 +3513,7 @@ pub const ro: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ru.json
+// Source: locales/ru.json
 pub const ru: sayabledate.DateLocale = .{
     .code = "ru",
     .months = .{ "январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" },
@@ -3544,7 +3544,7 @@ pub const ru: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/rw.json
+// Source: locales/rw.json
 pub const rw: sayabledate.DateLocale = .{
     .code = "rw",
     .months = .{ "Mutarama", "Gashyantare", "Werurwe", "Mata", "Gicurasi", "Kamena", "Nyakanga", "Kanama", "Nzeli", "Ukwakira", "Ugushyingo", "Ukuboza" },
@@ -3574,7 +3574,7 @@ pub const rw: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sar.json
+// Source: locales/sar.json
 pub const sar: sayabledate.DateLocale = .{
     .code = "sar",
     .months = .{ "Zanviye", "Fevriye", "Maars", "Avriil", "Mee", "Zuɛ̃", "Zulɛ", "Uut", "Sɛtɛmbar", "Ɔtɔbar", "Nɔvambar", "Desambar" },
@@ -3604,7 +3604,7 @@ pub const sar: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sd.json
+// Source: locales/sd.json
 pub const sd: sayabledate.DateLocale = .{
     .code = "sd",
     .months = .{ "جنوري", "فيبروري", "مارچ", "اپريل", "مئي", "جون", "جولاءِ", "آگسٽ", "سيپٽمبر", "آڪٽوبر", "نومبر", "ڊسمبر" },
@@ -3634,7 +3634,7 @@ pub const sd: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sg.json
+// Source: locales/sg.json
 pub const sg: sayabledate.DateLocale = .{
     .code = "sg",
     .months = .{ "Nyenye", "Fulundïgi", "Mbängü", "Ngubùe", "Bêläwü", "Föndo", "Lengua", "Kükürü", "Mvuka", "Ngberere", "Nabändüru", "Kakauka" },
@@ -3664,7 +3664,7 @@ pub const sg: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/shi.json
+// Source: locales/shi.json
 pub const shi: sayabledate.DateLocale = .{
     .code = "shi",
     .months = .{ "ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ" },
@@ -3692,7 +3692,7 @@ pub const shi: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/shn.json
+// Source: locales/shn.json
 pub const shn: sayabledate.DateLocale = .{
     .code = "shn",
     .months = .{ "ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ" },
@@ -3722,7 +3722,7 @@ pub const shn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/si.json
+// Source: locales/si.json
 pub const si: sayabledate.DateLocale = .{
     .code = "si",
     .months = .{ "ජනවාරි", "පෙබරවාරි", "මාර්තු", "අප්‍රේල්", "මැයි", "ජූනි", "ජූලි", "අගෝස්තු", "සැප්තැම්බර්", "ඔක්තෝබර්", "නොවැම්බර්", "දෙසැම්බර්" },
@@ -3752,7 +3752,7 @@ pub const si: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sk.json
+// Source: locales/sk.json
 pub const sk: sayabledate.DateLocale = .{
     .code = "sk",
     .months = .{ "január", "február", "marec", "apríl", "máj", "jún", "júl", "august", "september", "október", "november", "december" },
@@ -3783,7 +3783,7 @@ pub const sk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sl.json
+// Source: locales/sl.json
 pub const sl: sayabledate.DateLocale = .{
     .code = "sl",
     .months = .{ "januar", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september", "oktober", "november", "december" },
@@ -3814,7 +3814,7 @@ pub const sl: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sn.json
+// Source: locales/sn.json
 pub const sn: sayabledate.DateLocale = .{
     .code = "sn",
     .months = .{ "Ndira", "Kukadzi", "Kurume", "Kubvumbi", "Chivabvu", "Chikumi", "Chikunguru", "Nyamavhuvhu", "Gunyana", "Gumiguru", "Mbudzi", "Zvita" },
@@ -3844,7 +3844,7 @@ pub const sn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/snk.json
+// Source: locales/snk.json
 pub const snk: sayabledate.DateLocale = .{
     .code = "snk",
     .months = .{ "Janwiye", "Feburiye", "Marasi", "Abirili", "Meyi", "Juwɛ", "Juliye", "Awutu", "Sɛtanburu", "Okutoburu", "Nuwanburu", "Desanburu" },
@@ -3874,7 +3874,7 @@ pub const snk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/so.json
+// Source: locales/so.json
 pub const so: sayabledate.DateLocale = .{
     .code = "so",
     .months = .{ "Janaayo", "Febraayo", "Maarso", "Abriil", "Maajo", "Juun", "Luuliyo", "Ogost", "Sebtembar", "Oktoobar", "Nofembar", "Disembar" },
@@ -3904,7 +3904,7 @@ pub const so: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sq.json
+// Source: locales/sq.json
 pub const sq: sayabledate.DateLocale = .{
     .code = "sq",
     .months = .{ "janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor" },
@@ -3934,7 +3934,7 @@ pub const sq: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sr.json
+// Source: locales/sr.json
 pub const sr: sayabledate.DateLocale = .{
     .code = "sr",
     .months = .{ "јануар", "фебруар", "март", "април", "мај", "јун", "јул", "август", "септембар", "октобар", "новембар", "децембар" },
@@ -3964,7 +3964,7 @@ pub const sr: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ss.json
+// Source: locales/ss.json
 pub const ss: sayabledate.DateLocale = .{
     .code = "ss",
     .months = .{ "Bhimbidvwane", "iNdlovana", "iNdlovulenkhulu", "Mabasa", "iNkhwekhweti", "iNhlaba", "Kholwane", "iNgci", "iNyoni", "iMphala", "Lweti", "iNgongoni" },
@@ -3994,7 +3994,7 @@ pub const ss: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/st.json
+// Source: locales/st.json
 pub const st: sayabledate.DateLocale = .{
     .code = "st",
     .months = .{ "Pherekgong", "Hlakola", "Hlakubele", "Mmese", "Motsheanong", "Phupjane", "Phupu", "Phato", "Leotshe", "Mphalane", "Pudungwana", "Tshitwe" },
@@ -4024,7 +4024,7 @@ pub const st: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/su.json
+// Source: locales/su.json
 pub const su: sayabledate.DateLocale = .{
     .code = "su",
     .months = .{ "Januari", "Pébruari", "Maret", "April", "Méi", "Juni", "Juli", "Agustus", "Séptémber", "Oktober", "Nopémber", "Désémber" },
@@ -4054,7 +4054,7 @@ pub const su: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/suk.json
+// Source: locales/suk.json
 pub const suk: sayabledate.DateLocale = .{
     .code = "suk",
     .months = .{ "Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba" },
@@ -4084,7 +4084,7 @@ pub const suk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sv.json
+// Source: locales/sv.json
 pub const sv: sayabledate.DateLocale = .{
     .code = "sv",
     .months = .{ "januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december" },
@@ -4114,7 +4114,7 @@ pub const sv: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/sw.json
+// Source: locales/sw.json
 pub const sw: sayabledate.DateLocale = .{
     .code = "sw",
     .months = .{ "Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba" },
@@ -4144,7 +4144,7 @@ pub const sw: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ta.json
+// Source: locales/ta.json
 pub const ta: sayabledate.DateLocale = .{
     .code = "ta",
     .months = .{ "ஜனவரி", "பிப்ரவரி", "மார்ச்", "ஏப்ரல்", "மே", "ஜூன்", "ஜூலை", "ஆகஸ்ட்", "செப்டம்பர்", "அக்டோபர்", "நவம்பர்", "டிசம்பர்" },
@@ -4174,7 +4174,7 @@ pub const ta: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/te.json
+// Source: locales/te.json
 pub const te: sayabledate.DateLocale = .{
     .code = "te",
     .months = .{ "జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్", "జులై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్" },
@@ -4204,7 +4204,7 @@ pub const te: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tem.json
+// Source: locales/tem.json
 pub const tem: sayabledate.DateLocale = .{
     .code = "tem",
     .months = .{ "Janɛri", "Fɛbrɛri", "Mach", "Epril", "Me", "Jun", "Julai", "Ɔgɔst", "Sɛtɛmba", "Ɔktoba", "Novɛmba", "Disɛmba" },
@@ -4234,7 +4234,7 @@ pub const tem: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tet.json
+// Source: locales/tet.json
 pub const tet: sayabledate.DateLocale = .{
     .code = "tet",
     .months = .{ "Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru" },
@@ -4264,7 +4264,7 @@ pub const tet: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tg.json
+// Source: locales/tg.json
 pub const tg: sayabledate.DateLocale = .{
     .code = "tg",
     .months = .{ "Январ", "Феврал", "Март", "Апрел", "Май", "Июн", "Июл", "Август", "Сентябр", "Октябр", "Ноябр", "Декабр" },
@@ -4294,7 +4294,7 @@ pub const tg: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/th.json
+// Source: locales/th.json
 pub const th: sayabledate.DateLocale = .{
     .code = "th",
     .months = .{ "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม" },
@@ -4324,7 +4324,7 @@ pub const th: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ti.json
+// Source: locales/ti.json
 pub const ti: sayabledate.DateLocale = .{
     .code = "ti",
     .months = .{ "ጥሪ", "ለካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰነ", "ሓምለ", "ነሓሰ", "መስከረም", "ጥቅምቲ", "ሕዳር", "ታሕሳስ" },
@@ -4354,7 +4354,7 @@ pub const ti: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tig.json
+// Source: locales/tig.json
 pub const tig: sayabledate.DateLocale = .{
     .code = "tig",
     .months = .{ "Yannaayer", "Febbraayer", "Maaris", "Abriil", "Maay", "Yuunyo", "Yulyo", "Agoosṭo", "Seṭṭembre", "Oṭṭoobre", "Noovembre", "Diičembre" },
@@ -4384,7 +4384,7 @@ pub const tig: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tk.json
+// Source: locales/tk.json
 pub const tk: sayabledate.DateLocale = .{
     .code = "tk",
     .months = .{ "Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr" },
@@ -4414,7 +4414,7 @@ pub const tk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tn.json
+// Source: locales/tn.json
 pub const tn: sayabledate.DateLocale = .{
     .code = "tn",
     .months = .{ "Ferikgong", "Tlhakole", "Mopitlo", "Moranang", "Motsheganong", "Seetebosigo", "Phukwi", "Phatwe", "Lwetse", "Diphalane", "Ngwanatsele", "Sedimothole" },
@@ -4444,7 +4444,7 @@ pub const tn: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tpi.json
+// Source: locales/tpi.json
 pub const tpi: sayabledate.DateLocale = .{
     .code = "tpi",
     .months = .{ "Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba" },
@@ -4474,7 +4474,7 @@ pub const tpi: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tr.json
+// Source: locales/tr.json
 pub const tr: sayabledate.DateLocale = .{
     .code = "tr",
     .months = .{ "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" },
@@ -4504,7 +4504,7 @@ pub const tr: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ts.json
+// Source: locales/ts.json
 pub const ts: sayabledate.DateLocale = .{
     .code = "ts",
     .months = .{ "Sunguti", "Nyenyenyani", "Nyenyankulu", "Dzivamisoko", "Mudyaxihi", "Khotavuxika", "Mawuwani", "Mhawuri", "Ndzhati", "Nhlangula", "Hukuri", "N'wendzamhala" },
@@ -4534,7 +4534,7 @@ pub const ts: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tum.json
+// Source: locales/tum.json
 pub const tum: sayabledate.DateLocale = .{
     .code = "tum",
     .months = .{ "Janyuwale", "Feburuware", "Marichi", "Epurelo", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputembala", "Okutobala", "Novembala", "Disembala" },
@@ -4562,7 +4562,7 @@ pub const tum: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/tzm.json
+// Source: locales/tzm.json
 pub const tzm: sayabledate.DateLocale = .{
     .code = "tzm",
     .months = .{ "ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ" },
@@ -4590,7 +4590,7 @@ pub const tzm: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/uk.json
+// Source: locales/uk.json
 pub const uk: sayabledate.DateLocale = .{
     .code = "uk",
     .months = .{ "січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень" },
@@ -4621,7 +4621,7 @@ pub const uk: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/umb.json
+// Source: locales/umb.json
 pub const umb: sayabledate.DateLocale = .{
     .code = "umb",
     .months = .{ "Janelu", "Fevelelu", "Malsu", "Abili", "Mayu", "Junyu", "Julyu", "Agostu", "Setembu", "Otubu", "Novembu", "Desembu" },
@@ -4651,7 +4651,7 @@ pub const umb: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ur.json
+// Source: locales/ur.json
 pub const ur: sayabledate.DateLocale = .{
     .code = "ur",
     .months = .{ "جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر" },
@@ -4681,7 +4681,7 @@ pub const ur: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/uz.json
+// Source: locales/uz.json
 pub const uz: sayabledate.DateLocale = .{
     .code = "uz",
     .months = .{ "yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr" },
@@ -4711,7 +4711,7 @@ pub const uz: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/ve.json
+// Source: locales/ve.json
 pub const ve: sayabledate.DateLocale = .{
     .code = "ve",
     .months = .{ "Phando", "Luhuhi", "Thafamuhwe", "Lambamai", "Shundunthule", "Fulwi", "Fulwana", "Thangule", "Khubvumedzi", "Tshimedzi", "Lara", "Nyendavhusiku" },
@@ -4740,7 +4740,7 @@ pub const ve: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/vi.json
+// Source: locales/vi.json
 pub const vi: sayabledate.DateLocale = .{
     .code = "vi",
     .months = .{ "tháng 1", "tháng 2", "tháng 3", "tháng 4", "tháng 5", "tháng 6", "tháng 7", "tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12" },
@@ -4770,7 +4770,7 @@ pub const vi: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/vmw.json
+// Source: locales/vmw.json
 pub const vmw: sayabledate.DateLocale = .{
     .code = "vmw",
     .months = .{ "Januário", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" },
@@ -4800,7 +4800,7 @@ pub const vmw: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/wo.json
+// Source: locales/wo.json
 pub const wo: sayabledate.DateLocale = .{
     .code = "wo",
     .months = .{ "Samwiyee", "Fewriyee", "Maars", "Awril", "Mee", "Suwe", "Sullet", "Ut", "Septàmbar", "Oktoobar", "Nowàmbar", "Desàmbar" },
@@ -4830,7 +4830,7 @@ pub const wo: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/xh.json
+// Source: locales/xh.json
 pub const xh: sayabledate.DateLocale = .{
     .code = "xh",
     .months = .{ "Janyuwari", "Februwari", "Matshi", "Epreli", "Meyi", "Juni", "Julayi", "Agasti", "Septemba", "Okthobha", "Novemba", "Disemba" },
@@ -4860,7 +4860,7 @@ pub const xh: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/yao.json
+// Source: locales/yao.json
 pub const yao: sayabledate.DateLocale = .{
     .code = "yao",
     .months = .{ "Janyuwale", "Febuwale", "Malichi", "Epireli", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba" },
@@ -4888,7 +4888,7 @@ pub const yao: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/yo.json
+// Source: locales/yo.json
 pub const yo: sayabledate.DateLocale = .{
     .code = "yo",
     .months = .{ "Oṣù Ṣẹ́rẹ́", "Oṣù Èrèlè", "Oṣù Ẹrẹ̀nà", "Oṣù Ìgbé", "Oṣù Ẹ̀bibi", "Oṣù Òkúdu", "Oṣù Agẹmọ", "Oṣù Ògún", "Oṣù Owewe", "Oṣù Ọ̀wàrà", "Oṣù Bélú", "Oṣù Ọ̀pẹ̀" },
@@ -4918,7 +4918,7 @@ pub const yo: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/yue.json
+// Source: locales/yue.json
 pub const yue: sayabledate.DateLocale = .{
     .code = "yue",
     .months = .{ "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" },
@@ -4948,7 +4948,7 @@ pub const yue: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/zdj.json
+// Source: locales/zdj.json
 pub const zdj: sayabledate.DateLocale = .{
     .code = "zdj",
     .months = .{ "Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba" },
@@ -4978,7 +4978,7 @@ pub const zdj: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/zh.json
+// Source: locales/zh.json
 pub const zh: sayabledate.DateLocale = .{
     .code = "zh",
     .months = .{ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" },
@@ -5008,7 +5008,7 @@ pub const zh: sayabledate.DateLocale = .{
     },
 };
 
-// Source: date/locales/src/zu.json
+// Source: locales/zu.json
 pub const zu: sayabledate.DateLocale = .{
     .code = "zu",
     .months = .{ "Januwari", "Februwari", "Mashi", "Ephreli", "Meyi", "Juni", "Julayi", "Agasti", "Septhemba", "Okthoba", "Novemba", "Disemba" },

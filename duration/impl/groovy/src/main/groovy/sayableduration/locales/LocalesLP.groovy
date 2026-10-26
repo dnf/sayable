@@ -17,7 +17,7 @@ import sayableduration.*
  */
 class LocalesLP {
 
-    // Source: duration/locales/src/lb.json
+    // Source: locales/lb.json
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
@@ -68,7 +68,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/lg.json
+    // Source: locales/lg.json
     // ================================================================
     // LG — Luganda
     // ================================================================
@@ -119,7 +119,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/ln.json
+    // Source: locales/ln.json
     // ================================================================
     // LN — Lingala
     // ================================================================
@@ -170,7 +170,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/lo.json
+    // Source: locales/lo.json
     // ================================================================
     // LO — Lao
     // ================================================================
@@ -221,7 +221,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/lt.json
+    // Source: locales/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
@@ -278,7 +278,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/luo.json
+    // Source: locales/luo.json
     // ================================================================
     // LUO — Dholuo
     // ================================================================
@@ -329,7 +329,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/lv.json
+    // Source: locales/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
@@ -386,7 +386,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mam.json
+    // Source: locales/mam.json
     // ================================================================
     // MAM — Mam
     // ================================================================
@@ -437,7 +437,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/men.json
+    // Source: locales/men.json
     // ================================================================
     // MEN — Mende
     // ================================================================
@@ -488,7 +488,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
@@ -539,7 +539,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mg.json
+    // Source: locales/mg.json
     // ================================================================
     // MG — Malagasy
     // ================================================================
@@ -590,7 +590,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mi.json
+    // Source: locales/mi.json
     // ================================================================
     // MI — Māori
     // ================================================================
@@ -641,7 +641,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mk.json
+    // Source: locales/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
@@ -692,7 +692,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/ml.json
+    // Source: locales/ml.json
     // ================================================================
     // ML — Malayalam
     // ================================================================
@@ -743,7 +743,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mn.json
+    // Source: locales/mn.json
     // ================================================================
     // MN — Mongolian
     // ================================================================
@@ -794,7 +794,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ================================================================
     // MNK — Mandinka
     // ================================================================
@@ -845,7 +845,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mos.json
+    // Source: locales/mos.json
     // ================================================================
     // MOS — Moore
     // ================================================================
@@ -896,7 +896,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mr.json
+    // Source: locales/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
@@ -947,7 +947,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/ms.json
+    // Source: locales/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
@@ -998,7 +998,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/mt.json
+    // Source: locales/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
@@ -1055,7 +1055,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/my.json
+    // Source: locales/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
@@ -1106,7 +1106,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/nb.json
+    // Source: locales/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
@@ -1157,7 +1157,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/nd.json
+    // Source: locales/nd.json
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
@@ -1208,7 +1208,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/ne.json
+    // Source: locales/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
@@ -1259,7 +1259,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/ng.json
+    // Source: locales/ng.json
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
@@ -1310,7 +1310,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/nl.json
+    // Source: locales/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
@@ -1361,7 +1361,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/nr.json
+    // Source: locales/nr.json
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
@@ -1412,7 +1412,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/nso.json
+    // Source: locales/nso.json
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
@@ -1463,7 +1463,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/nus.json
+    // Source: locales/nus.json
     // ================================================================
     // NUS — Nuer
     // ================================================================
@@ -1514,7 +1514,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/ny.json
+    // Source: locales/ny.json
     // ================================================================
     // NY — Chichewa
     // ================================================================
@@ -1565,7 +1565,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/om.json
+    // Source: locales/om.json
     // ================================================================
     // OM — Oromo
     // ================================================================
@@ -1616,7 +1616,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/or.json
+    // Source: locales/or.json
     // ================================================================
     // OR — Odia
     // ================================================================
@@ -1667,7 +1667,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/pa.json
+    // Source: locales/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
@@ -1718,7 +1718,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/pis.json
+    // Source: locales/pis.json
     // ================================================================
     // PIS — Pijin
     // ================================================================
@@ -1769,7 +1769,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/pl.json
+    // Source: locales/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
@@ -1826,7 +1826,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/pov.json
+    // Source: locales/pov.json
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
@@ -1877,7 +1877,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/ps.json
+    // Source: locales/ps.json
     // ================================================================
     // PS — Pashto
     // ================================================================
@@ -1928,7 +1928,7 @@ class LocalesLP {
         null
     )
 
-    // Source: duration/locales/src/pt.json
+    // Source: locales/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================

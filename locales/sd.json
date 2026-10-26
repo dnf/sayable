@@ -1,0 +1,248 @@
+{
+  "code": "sd",
+  "name": "Sindhi",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": "{n} ڏينهن",
+      "week": {
+        "one": "{n} هفتو",
+        "other": "{n} هفتا"
+      },
+      "month": {
+        "one": "{n} مهينو",
+        "other": "{n} مهينا"
+      },
+      "year": "{n} سال"
+    },
+    "half": "{n}½",
+    "delimiter": "، ",
+    "justBorn": "نئون ڄائو",
+    "stages": {
+      "newborn": "نئون ڄائو",
+      "infant": "ننڍو ٻار",
+      "toddler": "ننڍو ٻار",
+      "child": "ٻار",
+      "teenager": "نوجوان",
+      "adult": "وڏو"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ڏينهن",
+        "week": {
+          "one": "{n} هفتو",
+          "other": "{n} هفتا"
+        },
+        "month": {
+          "one": "{n} مهينو",
+          "other": "{n} مهينا"
+        },
+        "year": "{n} سال"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ڏ",
+        "week": "{n} ه",
+        "month": "{n} م",
+        "year": "{n} س"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "جنوري",
+      "فيبروري",
+      "مارچ",
+      "اپريل",
+      "مئي",
+      "جون",
+      "جولاءِ",
+      "آگسٽ",
+      "سيپٽمبر",
+      "آڪٽوبر",
+      "نومبر",
+      "ڊسمبر"
+    ],
+    "weekdays": [
+      "آچر",
+      "سومر",
+      "اڱارو",
+      "اربع",
+      "خميس",
+      "جمعو",
+      "ڇنڇر"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "اڄ",
+    "tomorrow": "سڀاڻي",
+    "yesterday": "ڪالهه",
+    "dayAfterTomorrow": "پرسوں",
+    "dayBeforeYesterday": "پرسوں",
+    "thisWeekday": "هن {weekday}",
+    "nextWeekday": "ايندڙ {weekday}",
+    "lastWeekday": "گذريل {weekday}",
+    "short": {
+      "months": [
+        "جن",
+        "فيب",
+        "مار",
+        "اپر",
+        "مئي",
+        "جون",
+        "جول",
+        "آگس",
+        "سيپ",
+        "آڪٽ",
+        "نوم",
+        "ڊسم"
+      ],
+      "weekdays": [
+        "آچ",
+        "سوم",
+        "اڱا",
+        "ارب",
+        "خم",
+        "جمع",
+        "ڇن"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} سيڪنڊ",
+      "minute": "{n} منٽ",
+      "hour": "{n} ڪلاڪ",
+      "day": "{n} ڏينهن",
+      "week": {
+        "one": "{n} هفتو",
+        "other": "{n} هفتا"
+      },
+      "month": {
+        "one": "{n} مهينو",
+        "other": "{n} مهينا"
+      },
+      "year": "{n} سال"
+    },
+    "half": "{n}½",
+    "delimiter": "، ",
+    "justNow": "هاڻي",
+    "ago": "{0} اڳ",
+    "inFuture": "{0} ۾",
+    "short": {
+      "units": {
+        "second": "{n} سيڪنڊ",
+        "minute": "{n} منٽ",
+        "hour": "{n} ڪلاڪ",
+        "day": "{n} ڏينهن",
+        "week": {
+          "one": "{n} هفتو",
+          "other": "{n} هفتا"
+        },
+        "month": {
+          "one": "{n} مهينو",
+          "other": "{n} مهينا"
+        },
+        "year": "{n} سال"
+      },
+      "ago": "{0} اڳ",
+      "inFuture": "{0} ۾",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} سي",
+        "minute": "{n} م",
+        "hour": "{n} ڪ",
+        "day": "{n} ڏ",
+        "week": "{n} ه",
+        "month": "{n} مه",
+        "year": "{n} س"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} اڳ",
+      "inFuture": "{0} ۾",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "ٻارھ",
+        "ھڪ",
+        "ٻه",
+        "ٽي",
+        "چار",
+        "پنج",
+        "ڇھ",
+        "ست",
+        "اٺ",
+        "نائن",
+        "ڏھ",
+        "يارھ"
+      ],
+      "midnight": "اڌ رات",
+      "noon": "ٽپھر",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

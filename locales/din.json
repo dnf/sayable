@@ -1,0 +1,263 @@
+{
+  "code": "din",
+  "name": "Dinka",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "akɔl {n}",
+        "other": "akɔl {n}"
+      },
+      "week": {
+        "one": "bɛ̈t {n}",
+        "other": "bɛ̈t {n}"
+      },
+      "month": {
+        "one": "pɛi {n}",
+        "other": "pɛi {n}"
+      },
+      "year": {
+        "one": "ruɔ̈n {n}",
+        "other": "ruɔ̈ɔ̈n {n}"
+      }
+    },
+    "half": "{0} ku abɛ̈c",
+    "delimiter": ", ",
+    "justBorn": "Meth yen dhiëth",
+    "stages": {
+      "newborn": "Meth yen dhiëth",
+      "infant": "Meth",
+      "toddler": "Meth thiiŋ",
+      "child": "Meth",
+      "teenager": "Dhɔ̈l",
+      "adult": "Raan dit"
+    },
+    "short": {
+      "units": {
+        "day": "akɔl {n}",
+        "week": "bɛ̈t {n}",
+        "month": "pɛi {n}",
+        "year": {
+          "one": "ruɔ̈n {n}",
+          "other": "ruɔ̈ɔ̈n {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Tiɔp in dit",
+      "Pɛt",
+      "Duɔ̈ɔ̈ŋ",
+      "Guak",
+      "Duät",
+      "Kornyot",
+      "Payi",
+      "Tio̱p in thii",
+      "Laath",
+      "Kur",
+      "Tio̱p in laat",
+      "Jiɔk"
+    ],
+    "weekdays": [
+      "Akɔl dhorou",
+      "Kɔl jöŋ",
+      "Kɔl rou",
+      "Kɔl diäk",
+      "Kɔl ŋuän",
+      "Kɔl dhiëc",
+      "Kɔl bäkäl"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "yïn",
+    "tomorrow": "riak",
+    "yesterday": "aköl",
+    "dayAfterTomorrow": "riak cök",
+    "dayBeforeYesterday": "aköl cök",
+    "thisWeekday": "{weekday} kënë",
+    "nextWeekday": "{weekday} bɛ̈n",
+    "lastWeekday": "{weekday} cï wëëŋ",
+    "short": {
+      "months": [
+        "Tiɔp",
+        "Pɛt",
+        "Duɔ̈ɔ̈ŋ",
+        "Guak",
+        "Duät",
+        "Kor",
+        "Pay",
+        "Tio̱p",
+        "Laa",
+        "Kur",
+        "Tio̱p",
+        "Jiɔk"
+      ],
+      "weekdays": [
+        "Dho",
+        "Jöŋ",
+        "Rou",
+        "Diäk",
+        "Ŋuän",
+        "Dhiëc",
+        "Bäk"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "thiɛ̈kɛn {n}",
+        "other": "thiɛ̈kɛn {n}"
+      },
+      "minute": {
+        "one": "minitö {n}",
+        "other": "minitö {n}"
+      },
+      "hour": {
+        "one": "thä {n}",
+        "other": "thä {n}"
+      },
+      "day": {
+        "one": "akɔl {n}",
+        "other": "akɔl {n}"
+      },
+      "week": {
+        "one": "bɛ̈t {n}",
+        "other": "bɛ̈t {n}"
+      },
+      "month": {
+        "one": "pɛi {n}",
+        "other": "pɛi {n}"
+      },
+      "year": {
+        "one": "ruɔ̈n {n}",
+        "other": "ruɔ̈ɔ̈n {n}"
+      }
+    },
+    "half": "{0} ku abɛ̈c",
+    "delimiter": ", ",
+    "justNow": "ëmën",
+    "ago": "{0} cï wëëŋ",
+    "inFuture": "ka {0}",
+    "short": {
+      "units": {
+        "second": "thiɛ̈kɛn {n}",
+        "minute": "minitö {n}",
+        "hour": "thä {n}",
+        "day": "akɔl {n}",
+        "week": "bɛ̈t {n}",
+        "month": "pɛi {n}",
+        "year": {
+          "one": "ruɔ̈n {n}",
+          "other": "ruɔ̈ɔ̈n {n}"
+        }
+      },
+      "ago": "{0} cï wëëŋ",
+      "inFuture": "ka {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} cï wëëŋ",
+      "inFuture": "ka {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "thiäär ku rou",
+        "tök",
+        "rou",
+        "diäk",
+        "ŋuän",
+        "dhiëc",
+        "dhetem",
+        "dhorou",
+        "bɛ̈t",
+        "dhoŋuan",
+        "thiäär",
+        "thiäär ku tök"
+      ],
+      "midnight": "wakɔ̈u",
+      "noon": "akɔ̈l ciëŋ",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

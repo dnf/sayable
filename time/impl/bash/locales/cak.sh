@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/cak.json
+# Source: locales/cak.json
 
 _sayabletime_locale_cak() {
     _clock_hours=('kab'\''lajuj' 'jun' 'ka'\''i'\''' 'oxi'\''' 'kaji'\''' 'wo'\''o'\''' 'waqi'\''' 'wuqu'\''' 'waqxaqi'\''' 'b'\''eleje'\''' 'lajuj' 'julajuj')

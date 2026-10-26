@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/gn.json
+# Source: locales/gn.json
 
 _sayabledate_locale_gn() {
     _months=('Jasyteĩ' 'Jasykõi' 'Jasyapy' 'Jasyrundy' 'Jasypo' 'Jasypoteĩ' 'Jasypokõi' 'Jasypoapy' 'Jasyporundy' 'Jasypa' 'Jasypateĩ' 'Jasypakõi')

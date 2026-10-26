@@ -17,7 +17,7 @@ import sayableduration.*
  */
 class LocalesEK {
 
-    // Source: duration/locales/src/ee.json
+    // Source: locales/ee.json
     // ================================================================
     // EE — Ewe
     // ================================================================
@@ -68,7 +68,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/el.json
+    // Source: locales/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
@@ -119,7 +119,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/en.json
+    // Source: locales/en.json
     // ================================================================
     // EN — English
     // ================================================================
@@ -170,7 +170,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/es.json
+    // Source: locales/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
@@ -221,7 +221,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/et.json
+    // Source: locales/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
@@ -272,7 +272,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/eu.json
+    // Source: locales/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
@@ -323,7 +323,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/fa.json
+    // Source: locales/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
@@ -374,7 +374,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/fan.json
+    // Source: locales/fan.json
     // ================================================================
     // FAN — Fang
     // ================================================================
@@ -425,7 +425,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ff.json
+    // Source: locales/ff.json
     // ================================================================
     // FF — Fulah
     // ================================================================
@@ -476,7 +476,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/fi.json
+    // Source: locales/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
@@ -527,7 +527,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/fil.json
+    // Source: locales/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
@@ -578,7 +578,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/fj.json
+    // Source: locales/fj.json
     // ================================================================
     // FJ — Fijian
     // ================================================================
@@ -629,7 +629,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/fon.json
+    // Source: locales/fon.json
     // ================================================================
     // FON — Fon
     // ================================================================
@@ -680,7 +680,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/fr.json
+    // Source: locales/fr.json
     // ================================================================
     // FR — French
     // ================================================================
@@ -731,7 +731,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ga.json
+    // Source: locales/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
@@ -788,7 +788,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/gd.json
+    // Source: locales/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
@@ -844,7 +844,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/gl.json
+    // Source: locales/gl.json
     // ================================================================
     // GL — Galician
     // ================================================================
@@ -895,7 +895,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/gn.json
+    // Source: locales/gn.json
     // ================================================================
     // GN — Guarani
     // ================================================================
@@ -946,7 +946,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/gu.json
+    // Source: locales/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
@@ -997,7 +997,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/gv.json
+    // Source: locales/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
@@ -1055,7 +1055,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ha.json
+    // Source: locales/ha.json
     // ================================================================
     // HA — Hausa
     // ================================================================
@@ -1106,7 +1106,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/he.json
+    // Source: locales/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
@@ -1157,7 +1157,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/hi.json
+    // Source: locales/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
@@ -1208,7 +1208,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ================================================================
     // HMN — Hmong
     // ================================================================
@@ -1259,7 +1259,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/hr.json
+    // Source: locales/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
@@ -1316,7 +1316,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ht.json
+    // Source: locales/ht.json
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
@@ -1367,7 +1367,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/hu.json
+    // Source: locales/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
@@ -1418,7 +1418,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/hy.json
+    // Source: locales/hy.json
     // ================================================================
     // HY — Armenian
     // ================================================================
@@ -1469,7 +1469,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/id.json
+    // Source: locales/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
@@ -1520,7 +1520,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ig.json
+    // Source: locales/ig.json
     // ================================================================
     // IG — Igbo
     // ================================================================
@@ -1571,7 +1571,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/is.json
+    // Source: locales/is.json
     // ================================================================
     // IS — Icelandic
     // ================================================================
@@ -1622,7 +1622,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/it.json
+    // Source: locales/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
@@ -1673,7 +1673,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ja.json
+    // Source: locales/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
@@ -1724,7 +1724,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/jv.json
+    // Source: locales/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
@@ -1775,7 +1775,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ka.json
+    // Source: locales/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
@@ -1826,7 +1826,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ================================================================
     // KBP — Kabiye
     // ================================================================
@@ -1877,7 +1877,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kek.json
+    // Source: locales/kek.json
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
@@ -1928,7 +1928,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ki.json
+    // Source: locales/ki.json
     // ================================================================
     // KI — Kikuyu
     // ================================================================
@@ -1979,7 +1979,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kk.json
+    // Source: locales/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
@@ -2030,7 +2030,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kl.json
+    // Source: locales/kl.json
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
@@ -2081,7 +2081,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/km.json
+    // Source: locales/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
@@ -2132,7 +2132,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kn.json
+    // Source: locales/kn.json
     // ================================================================
     // KN — Kannada
     // ================================================================
@@ -2183,7 +2183,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ko.json
+    // Source: locales/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
@@ -2234,7 +2234,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ================================================================
     // KPE — Kpelle
     // ================================================================
@@ -2285,7 +2285,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kri.json
+    // Source: locales/kri.json
     // ================================================================
     // KRI — Krio
     // ================================================================
@@ -2336,7 +2336,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ================================================================
     // KTU — Kituba
     // ================================================================
@@ -2387,7 +2387,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ku.json
+    // Source: locales/ku.json
     // ================================================================
     // KU — Kurdish
     // ================================================================
@@ -2438,7 +2438,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/kw.json
+    // Source: locales/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
@@ -2497,7 +2497,7 @@ class LocalesEK {
         null
     )
 
-    // Source: duration/locales/src/ky.json
+    // Source: locales/ky.json
     // ================================================================
     // KY — Kyrgyz
     // ================================================================

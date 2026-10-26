@@ -383,10 +383,10 @@ generate target *args:
             ;;
         locales)
             (cd age && {{python}} -m codegen.generate {{args}})
-            (cd age && uv run --project impl/python {{python}} -m codegen.docgen {{args}})
             (cd date && {{python}} -m codegen.generate {{args}})
             (cd duration && {{python}} -m codegen.generate {{args}})
             (cd time && {{python}} -m codegen.generate {{args}})
+            {{python}} tools/generate_locale_docs.py
             ;;
         *)
             echo "error: unknown generate target '{{target}}'" >&2
@@ -402,10 +402,17 @@ maintain target *args:
     set -euo pipefail
     case "{{target}}" in
         docs)
-            (cd age && {{python}} -m codegen.align_tables {{args}} \
-                ../README.md ../CLAUDE.md ../CONTRIBUTING.md \
-                README.md codegen/README.md config/README.md locales/README.md tests/README.md \
-                docs/*.md impl/*/README.md)
+            # Hand-written docs only: generated pages (docs/locales/, locales/README.md)
+            # are rewritten by `just generate locales`.
+            _docs=(README.md CLAUDE.md CONTRIBUTING.md docs/*.md)
+            for _lib in age date duration time; do
+                for _f in "${_lib}"/README.md "${_lib}"/CLAUDE.md "${_lib}"/codegen/README.md \
+                          "${_lib}"/config/README.md "${_lib}"/tests/README.md \
+                          "${_lib}"/docs/*.md "${_lib}"/impl/*/README.md; do
+                    [ -f "${_f}" ] && _docs+=("${_f}")
+                done
+            done
+            (cd age && {{python}} -m codegen.align_tables {{args}} "${_docs[@]/#/../}")
             ;;
         *)
             echo "error: unknown maintain target '{{target}}'" >&2
@@ -420,10 +427,10 @@ check:
     #!/usr/bin/env bash
     set -euo pipefail
     (cd age && {{python}} -m codegen.generate --check)
-    (cd age && uv run --project impl/python {{python}} -m codegen.docgen --check)
     (cd date && {{python}} -m codegen.generate --check)
     (cd duration && {{python}} -m codegen.generate --check)
     (cd time && {{python}} -m codegen.generate --check)
+    {{python}} tools/generate_locale_docs.py --check
     {{python}} .hecatron/tools/codegen/dockerfile.py --check
     {{python}} tools/generate_compatibility.py --check
     {{python}} tools/check_workflow_components.py
@@ -472,7 +479,7 @@ version *ver:
 
     # 3. Regenerate C header (uses updated emitter.py)
     (cd age && {{python}} -m codegen.generate)
-    (cd age && uv run --project impl/python {{python}} -m codegen.docgen)
+    {{python}} tools/generate_locale_docs.py
     echo "  regenerated locale files"
 
     # 4. Update age/docs/versioning.md

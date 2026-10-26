@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tet.json
+# Source: locales/tet.json
 
 _sayabletime_locale_tet() {
     _clock_hours=('sanulu-resin-rua' 'ida' 'rua' 'tolu' 'haat' 'lima' 'neen' 'hitu' 'ualu' 'sia' 'sanulu' 'sanulu-resin-ida')

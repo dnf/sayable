@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/bm.json
+# Source: locales/bm.json
 
 function locale_bm {
     $hours = @('tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔrɔ', 'wolonwula', 'segin', 'kɔnɔntɔn', 'tan', 'tan ni kelen')

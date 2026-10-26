@@ -964,7 +964,7 @@
                END-IF
            .
 
-*> Source: age/locales/src/af.json
+*> Source: locales/af.json
        INIT-LOCALE-AF.
            MOVE "af" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -1135,7 +1135,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ak.json
+*> Source: locales/ak.json
        INIT-LOCALE-AK.
            MOVE "ak" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -1355,7 +1355,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/am.json
+*> Source: locales/am.json
        INIT-LOCALE-AM.
            MOVE "am" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -1551,7 +1551,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ar.json
+*> Source: locales/ar.json
        INIT-LOCALE-AR.
            MOVE "ar" TO WS-ACT-CODE
            MOVE "ar" TO WS-ACT-PLURAL-RULE
@@ -1799,7 +1799,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ay.json
+*> Source: locales/ay.json
        INIT-LOCALE-AY.
            MOVE "ay" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -1938,7 +1938,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/az.json
+*> Source: locales/az.json
        INIT-LOCALE-AZ.
            MOVE "az" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -2110,7 +2110,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/bci.json
+*> Source: locales/bci.json
        INIT-LOCALE-BCI.
            MOVE "bci" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -2250,7 +2250,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/be.json
+*> Source: locales/be.json
        INIT-LOCALE-BE.
            MOVE "be" TO WS-ACT-CODE
            MOVE "ru_uk" TO WS-ACT-PLURAL-RULE
@@ -2450,7 +2450,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/bem.json
+*> Source: locales/bem.json
        INIT-LOCALE-BEM.
            MOVE "bem" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -2654,7 +2654,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/bg.json
+*> Source: locales/bg.json
        INIT-LOCALE-BG.
            MOVE "bg" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -2826,7 +2826,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/bi.json
+*> Source: locales/bi.json
        INIT-LOCALE-BI.
            MOVE "bi" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -2965,7 +2965,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/bm.json
+*> Source: locales/bm.json
        INIT-LOCALE-BM.
            MOVE "bm" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -3105,7 +3105,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/bn.json
+*> Source: locales/bn.json
        INIT-LOCALE-BN.
            MOVE "bn" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -3277,7 +3277,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/br.json
+*> Source: locales/br.json
        INIT-LOCALE-BR.
            MOVE "br" TO WS-ACT-CODE
            MOVE "br" TO WS-ACT-PLURAL-RULE
@@ -3461,7 +3461,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/bs.json
+*> Source: locales/bs.json
        INIT-LOCALE-BS.
            MOVE "bs" TO WS-ACT-CODE
            MOVE "slavic_bcs" TO WS-ACT-PLURAL-RULE
@@ -3650,7 +3650,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ca.json
+*> Source: locales/ca.json
        INIT-LOCALE-CA.
            MOVE "ca" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -3854,7 +3854,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/cak.json
+*> Source: locales/cak.json
        INIT-LOCALE-CAK.
            MOVE "cak" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -3993,7 +3993,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ceb.json
+*> Source: locales/ceb.json
        INIT-LOCALE-CEB.
            MOVE "ceb" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -4133,7 +4133,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/cs.json
+*> Source: locales/cs.json
        INIT-LOCALE-CS.
            MOVE "cs" TO WS-ACT-CODE
            MOVE "cs_sk" TO WS-ACT-PLURAL-RULE
@@ -4338,7 +4338,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/cy.json
+*> Source: locales/cy.json
        INIT-LOCALE-CY.
            MOVE "cy" TO WS-ACT-CODE
            MOVE "cy" TO WS-ACT-PLURAL-RULE
@@ -4562,7 +4562,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/da.json
+*> Source: locales/da.json
        INIT-LOCALE-DA.
            MOVE "da" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -4757,7 +4757,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/de.json
+*> Source: locales/de.json
        INIT-LOCALE-DE.
            MOVE "de" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -4928,7 +4928,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/din.json
+*> Source: locales/din.json
        INIT-LOCALE-DIN.
            MOVE "din" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -5108,7 +5108,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/dje.json
+*> Source: locales/dje.json
        INIT-LOCALE-DJE.
            MOVE "dje" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -5248,7 +5248,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/dv.json
+*> Source: locales/dv.json
        INIT-LOCALE-DV.
            MOVE "dv" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -5387,7 +5387,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/dyu.json
+*> Source: locales/dyu.json
        INIT-LOCALE-DYU.
            MOVE "dyu" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -5527,7 +5527,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/dz.json
+*> Source: locales/dz.json
        INIT-LOCALE-DZ.
            MOVE "dz" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -5666,7 +5666,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ee.json
+*> Source: locales/ee.json
        INIT-LOCALE-EE.
            MOVE "ee" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -5862,7 +5862,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/el.json
+*> Source: locales/el.json
        INIT-LOCALE-EL.
            MOVE "el" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -6042,7 +6042,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/en.json
+*> Source: locales/en.json
        INIT-LOCALE-EN.
            MOVE "en" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -6213,7 +6213,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/es.json
+*> Source: locales/es.json
        INIT-LOCALE-ES.
            MOVE "es" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -6385,7 +6385,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/et.json
+*> Source: locales/et.json
        INIT-LOCALE-ET.
            MOVE "et" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -6572,7 +6572,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/eu.json
+*> Source: locales/eu.json
        INIT-LOCALE-EU.
            MOVE "eu" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -6712,7 +6712,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/fa.json
+*> Source: locales/fa.json
        INIT-LOCALE-FA.
            MOVE "fa" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -6884,7 +6884,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/fan.json
+*> Source: locales/fan.json
        INIT-LOCALE-FAN.
            MOVE "fan" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -7088,7 +7088,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ff.json
+*> Source: locales/ff.json
        INIT-LOCALE-FF.
            MOVE "ff" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -7308,7 +7308,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/fi.json
+*> Source: locales/fi.json
        INIT-LOCALE-FI.
            MOVE "fi" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -7480,7 +7480,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/fil.json
+*> Source: locales/fil.json
        INIT-LOCALE-FIL.
            MOVE "fil" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -7644,7 +7644,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/fj.json
+*> Source: locales/fj.json
        INIT-LOCALE-FJ.
            MOVE "fj" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -7783,7 +7783,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/fon.json
+*> Source: locales/fon.json
        INIT-LOCALE-FON.
            MOVE "fon" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -7923,7 +7923,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/fr.json
+*> Source: locales/fr.json
        INIT-LOCALE-FR.
            MOVE "fr" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -8095,7 +8095,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ga.json
+*> Source: locales/ga.json
        INIT-LOCALE-GA.
            MOVE "ga" TO WS-ACT-CODE
            MOVE "ga" TO WS-ACT-PLURAL-RULE
@@ -8301,7 +8301,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/gd.json
+*> Source: locales/gd.json
        INIT-LOCALE-GD.
            MOVE "gd" TO WS-ACT-CODE
            MOVE "gd" TO WS-ACT-PLURAL-RULE
@@ -8511,7 +8511,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/gl.json
+*> Source: locales/gl.json
        INIT-LOCALE-GL.
            MOVE "gl" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -8683,7 +8683,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/gn.json
+*> Source: locales/gn.json
        INIT-LOCALE-GN.
            MOVE "gn" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -8823,7 +8823,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/gu.json
+*> Source: locales/gu.json
        INIT-LOCALE-GU.
            MOVE "gu" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -9003,7 +9003,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/gv.json
+*> Source: locales/gv.json
        INIT-LOCALE-GV.
            MOVE "gv" TO WS-ACT-CODE
            MOVE "gv" TO WS-ACT-PLURAL-RULE
@@ -9183,7 +9183,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ha.json
+*> Source: locales/ha.json
        INIT-LOCALE-HA.
            MOVE "ha" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -9354,7 +9354,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/he.json
+*> Source: locales/he.json
        INIT-LOCALE-HE.
            MOVE "he" TO WS-ACT-CODE
            MOVE "he" TO WS-ACT-PLURAL-RULE
@@ -9557,7 +9557,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/hi.json
+*> Source: locales/hi.json
        INIT-LOCALE-HI.
            MOVE "hi" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -9729,7 +9729,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/hmn.json
+*> Source: locales/hmn.json
        INIT-LOCALE-HMN.
            MOVE "hmn" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -9868,7 +9868,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/hr.json
+*> Source: locales/hr.json
        INIT-LOCALE-HR.
            MOVE "hr" TO WS-ACT-CODE
            MOVE "slavic_bcs" TO WS-ACT-PLURAL-RULE
@@ -10057,7 +10057,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ht.json
+*> Source: locales/ht.json
        INIT-LOCALE-HT.
            MOVE "ht" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -10197,7 +10197,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/hu.json
+*> Source: locales/hu.json
        INIT-LOCALE-HU.
            MOVE "hu" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -10337,7 +10337,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/hy.json
+*> Source: locales/hy.json
        INIT-LOCALE-HY.
            MOVE "hy" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -10509,7 +10509,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/id.json
+*> Source: locales/id.json
        INIT-LOCALE-ID.
            MOVE "id" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -10649,7 +10649,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ig.json
+*> Source: locales/ig.json
        INIT-LOCALE-IG.
            MOVE "ig" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -10789,7 +10789,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/is.json
+*> Source: locales/is.json
        INIT-LOCALE-IS.
            MOVE "is" TO WS-ACT-CODE
            MOVE "mk" TO WS-ACT-PLURAL-RULE
@@ -10961,7 +10961,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/it.json
+*> Source: locales/it.json
        INIT-LOCALE-IT.
            MOVE "it" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -11181,7 +11181,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ja.json
+*> Source: locales/ja.json
        INIT-LOCALE-JA.
            MOVE "ja" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -11318,7 +11318,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/jv.json
+*> Source: locales/jv.json
        INIT-LOCALE-JV.
            MOVE "jv" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -11458,7 +11458,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ka.json
+*> Source: locales/ka.json
        INIT-LOCALE-KA.
            MOVE "ka" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -11630,7 +11630,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kbp.json
+*> Source: locales/kbp.json
        INIT-LOCALE-KBP.
            MOVE "kbp" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -11770,7 +11770,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kek.json
+*> Source: locales/kek.json
        INIT-LOCALE-KEK.
            MOVE "kek" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -11909,7 +11909,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ki.json
+*> Source: locales/ki.json
        INIT-LOCALE-KI.
            MOVE "ki" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -12104,7 +12104,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kk.json
+*> Source: locales/kk.json
        INIT-LOCALE-KK.
            MOVE "kk" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -12276,7 +12276,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kl.json
+*> Source: locales/kl.json
        INIT-LOCALE-KL.
            MOVE "kl" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -12415,7 +12415,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/km.json
+*> Source: locales/km.json
        INIT-LOCALE-KM.
            MOVE "km" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -12555,7 +12555,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kn.json
+*> Source: locales/kn.json
        INIT-LOCALE-KN.
            MOVE "kn" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -12727,7 +12727,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ko.json
+*> Source: locales/ko.json
        INIT-LOCALE-KO.
            MOVE "ko" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -12866,7 +12866,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kpe.json
+*> Source: locales/kpe.json
        INIT-LOCALE-KPE.
            MOVE "kpe" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -13006,7 +13006,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kri.json
+*> Source: locales/kri.json
        INIT-LOCALE-KRI.
            MOVE "kri" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -13145,7 +13145,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ktu.json
+*> Source: locales/ktu.json
        INIT-LOCALE-KTU.
            MOVE "ktu" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -13365,7 +13365,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ku.json
+*> Source: locales/ku.json
        INIT-LOCALE-KU.
            MOVE "ku" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -13536,7 +13536,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/kw.json
+*> Source: locales/kw.json
        INIT-LOCALE-KW.
            MOVE "kw" TO WS-ACT-CODE
            MOVE "kw" TO WS-ACT-PLURAL-RULE
@@ -13724,7 +13724,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ky.json
+*> Source: locales/ky.json
        INIT-LOCALE-KY.
            MOVE "ky" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -13864,7 +13864,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/lb.json
+*> Source: locales/lb.json
        INIT-LOCALE-LB.
            MOVE "lb" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -14035,7 +14035,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/lg.json
+*> Source: locales/lg.json
        INIT-LOCALE-LG.
            MOVE "lg" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -14255,7 +14255,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ln.json
+*> Source: locales/ln.json
        INIT-LOCALE-LN.
            MOVE "ln" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -14491,7 +14491,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/lo.json
+*> Source: locales/lo.json
        INIT-LOCALE-LO.
            MOVE "lo" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -14628,7 +14628,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/lt.json
+*> Source: locales/lt.json
        INIT-LOCALE-LT.
            MOVE "lt" TO WS-ACT-CODE
            MOVE "lt" TO WS-ACT-PLURAL-RULE
@@ -14803,7 +14803,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/luo.json
+*> Source: locales/luo.json
        INIT-LOCALE-LUO.
            MOVE "luo" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -15006,7 +15006,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/lv.json
+*> Source: locales/lv.json
        INIT-LOCALE-LV.
            MOVE "lv" TO WS-ACT-CODE
            MOVE "lv" TO WS-ACT-PLURAL-RULE
@@ -15181,7 +15181,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mam.json
+*> Source: locales/mam.json
        INIT-LOCALE-MAM.
            MOVE "mam" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -15320,7 +15320,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/men.json
+*> Source: locales/men.json
        INIT-LOCALE-MEN.
            MOVE "men" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -15516,7 +15516,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mfe.json
+*> Source: locales/mfe.json
        INIT-LOCALE-MFE.
            MOVE "mfe" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -15656,7 +15656,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mg.json
+*> Source: locales/mg.json
        INIT-LOCALE-MG.
            MOVE "mg" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -15796,7 +15796,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mi.json
+*> Source: locales/mi.json
        INIT-LOCALE-MI.
            MOVE "mi" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -15936,7 +15936,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mk.json
+*> Source: locales/mk.json
        INIT-LOCALE-MK.
            MOVE "mk" TO WS-ACT-CODE
            MOVE "mk" TO WS-ACT-PLURAL-RULE
@@ -16116,7 +16116,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ml.json
+*> Source: locales/ml.json
        INIT-LOCALE-ML.
            MOVE "ml" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -16288,7 +16288,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mn.json
+*> Source: locales/mn.json
        INIT-LOCALE-MN.
            MOVE "mn" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -16428,7 +16428,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mnk.json
+*> Source: locales/mnk.json
        INIT-LOCALE-MNK.
            MOVE "mnk" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -16568,7 +16568,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mos.json
+*> Source: locales/mos.json
        INIT-LOCALE-MOS.
            MOVE "mos" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -16708,7 +16708,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mr.json
+*> Source: locales/mr.json
        INIT-LOCALE-MR.
            MOVE "mr" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -16896,7 +16896,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ms.json
+*> Source: locales/ms.json
        INIT-LOCALE-MS.
            MOVE "ms" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -17036,7 +17036,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/mt.json
+*> Source: locales/mt.json
        INIT-LOCALE-MT.
            MOVE "mt" TO WS-ACT-CODE
            MOVE "mt" TO WS-ACT-PLURAL-RULE
@@ -17220,7 +17220,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/my.json
+*> Source: locales/my.json
        INIT-LOCALE-MY.
            MOVE "my" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -17360,7 +17360,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/nb.json
+*> Source: locales/nb.json
        INIT-LOCALE-NB.
            MOVE "nb" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -17531,7 +17531,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/nd.json
+*> Source: locales/nd.json
        INIT-LOCALE-ND.
            MOVE "nd" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -17735,7 +17735,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ne.json
+*> Source: locales/ne.json
        INIT-LOCALE-NE.
            MOVE "ne" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -17907,7 +17907,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ng.json
+*> Source: locales/ng.json
        INIT-LOCALE-NG.
            MOVE "ng" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -18127,7 +18127,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/nl.json
+*> Source: locales/nl.json
        INIT-LOCALE-NL.
            MOVE "nl" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -18314,7 +18314,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/nr.json
+*> Source: locales/nr.json
        INIT-LOCALE-NR.
            MOVE "nr" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -18517,7 +18517,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/nso.json
+*> Source: locales/nso.json
        INIT-LOCALE-NSO.
            MOVE "nso" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -18721,7 +18721,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/nus.json
+*> Source: locales/nus.json
        INIT-LOCALE-NUS.
            MOVE "nus" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -18925,7 +18925,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ny.json
+*> Source: locales/ny.json
        INIT-LOCALE-NY.
            MOVE "ny" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -19161,7 +19161,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/om.json
+*> Source: locales/om.json
        INIT-LOCALE-OM.
            MOVE "om" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -19333,7 +19333,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/or.json
+*> Source: locales/or.json
        INIT-LOCALE-OR.
            MOVE "or" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -19505,7 +19505,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/pa.json
+*> Source: locales/pa.json
        INIT-LOCALE-PA.
            MOVE "pa" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -19709,7 +19709,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/pis.json
+*> Source: locales/pis.json
        INIT-LOCALE-PIS.
            MOVE "pis" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -19848,7 +19848,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/pl.json
+*> Source: locales/pl.json
        INIT-LOCALE-PL.
            MOVE "pl" TO WS-ACT-CODE
            MOVE "pl" TO WS-ACT-PLURAL-RULE
@@ -20078,7 +20078,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/pov.json
+*> Source: locales/pov.json
        INIT-LOCALE-POV.
            MOVE "pov" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -20218,7 +20218,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ps.json
+*> Source: locales/ps.json
        INIT-LOCALE-PS.
            MOVE "ps" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -20406,7 +20406,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/pt.json
+*> Source: locales/pt.json
        INIT-LOCALE-PT.
            MOVE "pt" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -20626,7 +20626,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/qu.json
+*> Source: locales/qu.json
        INIT-LOCALE-QU.
            MOVE "qu" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -20766,7 +20766,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/quc.json
+*> Source: locales/quc.json
        INIT-LOCALE-QUC.
            MOVE "quc" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -20905,7 +20905,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ro.json
+*> Source: locales/ro.json
        INIT-LOCALE-RO.
            MOVE "ro" TO WS-ACT-CODE
            MOVE "ro" TO WS-ACT-PLURAL-RULE
@@ -21108,7 +21108,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ru.json
+*> Source: locales/ru.json
        INIT-LOCALE-RU.
            MOVE "ru" TO WS-ACT-CODE
            MOVE "ru_uk" TO WS-ACT-PLURAL-RULE
@@ -21308,7 +21308,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/rw.json
+*> Source: locales/rw.json
        INIT-LOCALE-RW.
            MOVE "rw" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -21480,7 +21480,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sar.json
+*> Source: locales/sar.json
        INIT-LOCALE-SAR.
            MOVE "sar" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -21620,7 +21620,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sd.json
+*> Source: locales/sd.json
        INIT-LOCALE-SD.
            MOVE "sd" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -21792,7 +21792,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sg.json
+*> Source: locales/sg.json
        INIT-LOCALE-SG.
            MOVE "sg" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -21932,7 +21932,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/shi.json
+*> Source: locales/shi.json
        INIT-LOCALE-SHI.
            MOVE "shi" TO WS-ACT-CODE
            MOVE "shi" TO WS-ACT-PLURAL-RULE
@@ -22108,7 +22108,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/shn.json
+*> Source: locales/shn.json
        INIT-LOCALE-SHN.
            MOVE "shn" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -22247,7 +22247,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/si.json
+*> Source: locales/si.json
        INIT-LOCALE-SI.
            MOVE "si" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -22419,7 +22419,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sk.json
+*> Source: locales/sk.json
        INIT-LOCALE-SK.
            MOVE "sk" TO WS-ACT-CODE
            MOVE "cs_sk" TO WS-ACT-PLURAL-RULE
@@ -22604,7 +22604,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sl.json
+*> Source: locales/sl.json
        INIT-LOCALE-SL.
            MOVE "sl" TO WS-ACT-CODE
            MOVE "sl" TO WS-ACT-PLURAL-RULE
@@ -22784,7 +22784,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sn.json
+*> Source: locales/sn.json
        INIT-LOCALE-SN.
            MOVE "sn" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -23004,7 +23004,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/snk.json
+*> Source: locales/snk.json
        INIT-LOCALE-SNK.
            MOVE "snk" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -23144,7 +23144,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/so.json
+*> Source: locales/so.json
        INIT-LOCALE-SO.
            MOVE "so" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -23316,7 +23316,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sq.json
+*> Source: locales/sq.json
        INIT-LOCALE-SQ.
            MOVE "sq" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -23504,7 +23504,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sr.json
+*> Source: locales/sr.json
        INIT-LOCALE-SR.
            MOVE "sr" TO WS-ACT-CODE
            MOVE "slavic_bcs" TO WS-ACT-PLURAL-RULE
@@ -23702,7 +23702,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ss.json
+*> Source: locales/ss.json
        INIT-LOCALE-SS.
            MOVE "ss" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -23906,7 +23906,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/st.json
+*> Source: locales/st.json
        INIT-LOCALE-ST.
            MOVE "st" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -24110,7 +24110,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/su.json
+*> Source: locales/su.json
        INIT-LOCALE-SU.
            MOVE "su" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -24250,7 +24250,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/suk.json
+*> Source: locales/suk.json
        INIT-LOCALE-SUK.
            MOVE "suk" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -24454,7 +24454,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sv.json
+*> Source: locales/sv.json
        INIT-LOCALE-SV.
            MOVE "sv" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -24625,7 +24625,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/sw.json
+*> Source: locales/sw.json
        INIT-LOCALE-SW.
            MOVE "sw" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -24829,7 +24829,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ta.json
+*> Source: locales/ta.json
        INIT-LOCALE-TA.
            MOVE "ta" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -25032,7 +25032,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/te.json
+*> Source: locales/te.json
        INIT-LOCALE-TE.
            MOVE "te" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -25212,7 +25212,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tem.json
+*> Source: locales/tem.json
        INIT-LOCALE-TEM.
            MOVE "tem" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -25408,7 +25408,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tet.json
+*> Source: locales/tet.json
        INIT-LOCALE-TET.
            MOVE "tet" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -25547,7 +25547,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tg.json
+*> Source: locales/tg.json
        INIT-LOCALE-TG.
            MOVE "tg" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -25687,7 +25687,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/th.json
+*> Source: locales/th.json
        INIT-LOCALE-TH.
            MOVE "th" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -25827,7 +25827,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ti.json
+*> Source: locales/ti.json
        INIT-LOCALE-TI.
            MOVE "ti" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE
@@ -26023,7 +26023,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tig.json
+*> Source: locales/tig.json
        INIT-LOCALE-TIG.
            MOVE "tig" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -26227,7 +26227,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tk.json
+*> Source: locales/tk.json
        INIT-LOCALE-TK.
            MOVE "tk" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -26367,7 +26367,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tn.json
+*> Source: locales/tn.json
        INIT-LOCALE-TN.
            MOVE "tn" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -26571,7 +26571,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tpi.json
+*> Source: locales/tpi.json
        INIT-LOCALE-TPI.
            MOVE "tpi" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -26710,7 +26710,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tr.json
+*> Source: locales/tr.json
        INIT-LOCALE-TR.
            MOVE "tr" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -26882,7 +26882,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ts.json
+*> Source: locales/ts.json
        INIT-LOCALE-TS.
            MOVE "ts" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -27086,7 +27086,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tum.json
+*> Source: locales/tum.json
        INIT-LOCALE-TUM.
            MOVE "tum" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -27289,7 +27289,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/tzm.json
+*> Source: locales/tzm.json
        INIT-LOCALE-TZM.
            MOVE "tzm" TO WS-ACT-CODE
            MOVE "tzm" TO WS-ACT-PLURAL-RULE
@@ -27461,7 +27461,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/uk.json
+*> Source: locales/uk.json
        INIT-LOCALE-UK.
            MOVE "uk" TO WS-ACT-CODE
            MOVE "ru_uk" TO WS-ACT-PLURAL-RULE
@@ -27641,7 +27641,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/umb.json
+*> Source: locales/umb.json
        INIT-LOCALE-UMB.
            MOVE "umb" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -27845,7 +27845,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ur.json
+*> Source: locales/ur.json
        INIT-LOCALE-UR.
            MOVE "ur" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -28049,7 +28049,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/uz.json
+*> Source: locales/uz.json
        INIT-LOCALE-UZ.
            MOVE "uz" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -28221,7 +28221,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/ve.json
+*> Source: locales/ve.json
        INIT-LOCALE-VE.
            MOVE "ve" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -28424,7 +28424,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/vi.json
+*> Source: locales/vi.json
        INIT-LOCALE-VI.
            MOVE "vi" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -28564,7 +28564,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/vmw.json
+*> Source: locales/vmw.json
        INIT-LOCALE-VMW.
            MOVE "vmw" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -28768,7 +28768,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/wo.json
+*> Source: locales/wo.json
        INIT-LOCALE-WO.
            MOVE "wo" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -28908,7 +28908,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/xh.json
+*> Source: locales/xh.json
        INIT-LOCALE-XH.
            MOVE "xh" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -29112,7 +29112,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/yao.json
+*> Source: locales/yao.json
        INIT-LOCALE-YAO.
            MOVE "yao" TO WS-ACT-CODE
            MOVE "one_other" TO WS-ACT-PLURAL-RULE
@@ -29315,7 +29315,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/yo.json
+*> Source: locales/yo.json
        INIT-LOCALE-YO.
            MOVE "yo" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -29455,7 +29455,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/yue.json
+*> Source: locales/yue.json
        INIT-LOCALE-YUE.
            MOVE "yue" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -29592,7 +29592,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/zdj.json
+*> Source: locales/zdj.json
        INIT-LOCALE-ZDJ.
            MOVE "zdj" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -29732,7 +29732,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/zh.json
+*> Source: locales/zh.json
        INIT-LOCALE-ZH.
            MOVE "zh" TO WS-ACT-CODE
            MOVE "other_only" TO WS-ACT-PLURAL-RULE
@@ -29869,7 +29869,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
-*> Source: age/locales/src/zu.json
+*> Source: locales/zu.json
        INIT-LOCALE-ZU.
            MOVE "zu" TO WS-ACT-CODE
            MOVE "one_other_zero_one" TO WS-ACT-PLURAL-RULE

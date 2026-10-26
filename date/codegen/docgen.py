@@ -1,26 +1,24 @@
 #!/usr/bin/env python3
 """Generate per-locale documentation showing actual date formatter output.
 
-Usage:
-    python -m codegen.docgen                       # generate all
-    python -m codegen.docgen --check               # dry-run, exit 1 if files would change
-    python -m codegen.docgen --locale fr           # generate one locale only
+Usage (run by tools/generate_locale_docs.py, which writes docs/locales/<code>.md):
+    python -m codegen.docgen --sections     # print {code: markdown} for every locale as JSON
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "impl", "python", "src"))
 
-from codegen.generate import _write_or_check, load_locales
+from codegen.generate import load_locales
 from sayable_date.format_date import SayableDate
 import sayable_date.locales as locale_mod
 
-OUTPUT_DIR = os.path.join(ROOT, "locales", "examples")
 
 # format_date examples: (label, date)
 _DATE_EXAMPLES: list[tuple[str, str]] = [
@@ -67,19 +65,15 @@ def _aligned_table(headers: list[str], rows: list[list[str]]) -> list[str]:
     return lines
 
 
-def generate_locale_doc(locale_json: dict) -> str:
+def generate_locale_section(locale_json: dict) -> str:
+    """Markdown for one locale's date examples, a section of docs/locales/<code>.md."""
     code = locale_json["code"]
-    name = locale_json["name"]
     loc = _get_locale_object(code)
 
     lines: list[str] = []
-    lines.append(f"# {name} ({code})")
-    lines.append("")
-    lines.append(f"[Edit source](../src/{code}.json)")
-    lines.append("")
 
     # format_date across compactness levels
-    lines.append("## Date formatting")
+    lines.append("### Date formatting")
     lines.append("")
     sd_normal = SayableDate(loc, "normal")
     sd_short = SayableDate(loc, "short")
@@ -97,7 +91,7 @@ def generate_locale_doc(locale_json: dict) -> str:
     lines.append("")
 
     # format_relative
-    lines.append("## Relative dates")
+    lines.append("### Relative dates")
     lines.append("")
     lines.append("Relative to Saturday, March 15, 2025.")
     lines.append("")
@@ -113,41 +107,13 @@ def generate_locale_doc(locale_json: dict) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate locale documentation")
-    parser.add_argument("--check", action="store_true",
-                        help="Check files are up-to-date (exit 1 if not)")
-    parser.add_argument("--locale",
-                        help="Generate only this locale (e.g. 'fr')")
-    args = parser.parse_args()
-
-    all_locales = load_locales()
-
-    if args.locale:
-        all_locales = [loc for loc in all_locales if loc["code"] == args.locale]
-        if not all_locales:
-            print(f"Unknown locale: {args.locale}")
-            sys.exit(1)
-
-    print(f"{'Checking' if args.check else 'Generating'} docs for {len(all_locales)} locale(s)...")
-
-    diffs: list[str] = []
-    for locale_json in all_locales:
-        code = locale_json["code"]
-        content = generate_locale_doc(locale_json)
-        path = os.path.join(OUTPUT_DIR, f"{code}.md")
-        _write_or_check(path, content, args.check, diffs)
-
-    if args.check:
-        if diffs:
-            print(f"\n{len(diffs)} file(s) out of date:")
-            for d in diffs:
-                print(f"  {os.path.relpath(d, ROOT)}")
-            print("\nRun 'cd date && python -m codegen.docgen' to update.")
-            sys.exit(1)
-        else:
-            print("All files up to date.")
-    else:
-        print(f"Generated {len(all_locales)} file(s) in locales/examples/")
+    """Print every locale's section as JSON, for tools/generate_locale_docs.py."""
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--sections", action="store_true", required=True,
+                        help="print {code: markdown} for every locale as JSON")
+    parser.parse_args()
+    sections = {loc["code"]: generate_locale_section(loc) for loc in load_locales()}
+    json.dump(sections, sys.stdout, ensure_ascii=False)
 
 
 if __name__ == "__main__":

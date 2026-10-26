@@ -1,0 +1,281 @@
+{
+  "code": "vmw",
+  "name": "Makhuwa",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "eshuku {n}",
+        "other": "mshuku {n}"
+      },
+      "week": {
+        "one": "esumana {n}",
+        "other": "msumana {n}"
+      },
+      "month": {
+        "one": "mweri {n}",
+        "other": "miyeri {n}"
+      },
+      "year": {
+        "one": "mwaka {n}",
+        "other": "miyaka {n}"
+      }
+    },
+    "half": "{0} na mettenhe",
+    "delimiter": ", ",
+    "justBorn": "Mwana opakiwa",
+    "stages": {
+      "newborn": "Mwana opakiwa",
+      "infant": "Mwana",
+      "toddler": "Mwana",
+      "child": "Mwana",
+      "teenager": "Mutthu",
+      "adult": "Mutthu"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "eshuku {n}",
+          "other": "mshuku {n}"
+        },
+        "week": {
+          "one": "esumana {n}",
+          "other": "msumana {n}"
+        },
+        "month": {
+          "one": "mweri {n}",
+          "other": "miyeri {n}"
+        },
+        "year": {
+          "one": "mwaka {n}",
+          "other": "miyaka {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Januário",
+      "Fevereiro",
+      "Março",
+      "Abril",
+      "Maio",
+      "Junho",
+      "Julho",
+      "Agosto",
+      "Setembro",
+      "Outubro",
+      "Novembro",
+      "Dezembro"
+    ],
+    "weekdays": [
+      "Jumaaphi",
+      "Jumaataatu",
+      "Jumaanne",
+      "Jumaatano",
+      "Alaahamisi",
+      "Ijumaa",
+      "Jumaamo"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "lelo",
+    "tomorrow": "muttetthe",
+    "yesterday": "oova",
+    "dayAfterTomorrow": "muttetthe opela",
+    "dayBeforeYesterday": "oova opela",
+    "thisWeekday": "{weekday} yano",
+    "nextWeekday": "{weekday} ohima",
+    "lastWeekday": "{weekday} opita",
+    "short": {
+      "months": [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Out",
+        "Nov",
+        "Dez"
+      ],
+      "weekdays": [
+        "Jph",
+        "Jtt",
+        "Jan",
+        "Jtn",
+        "Alh",
+        "Iju",
+        "Jmo"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "sekuundu {n}",
+        "other": "sekuundu {n}"
+      },
+      "minute": {
+        "one": "minuto {n}",
+        "other": "minuto {n}"
+      },
+      "hour": {
+        "one": "hora {n}",
+        "other": "hora {n}"
+      },
+      "day": {
+        "one": "eshuku {n}",
+        "other": "mshuku {n}"
+      },
+      "week": {
+        "one": "esumana {n}",
+        "other": "msumana {n}"
+      },
+      "month": {
+        "one": "mweri {n}",
+        "other": "miyeri {n}"
+      },
+      "year": {
+        "one": "mwaka {n}",
+        "other": "miyaka {n}"
+      }
+    },
+    "half": "{0} na mettenhe",
+    "delimiter": ", ",
+    "justNow": "vano vivi",
+    "ago": "{0} zapita",
+    "inFuture": "mu {0}",
+    "short": {
+      "units": {
+        "second": "sek. {n}",
+        "minute": "min. {n}",
+        "hour": "hora {n}",
+        "day": {
+          "one": "eshuku {n}",
+          "other": "mshuku {n}"
+        },
+        "week": {
+          "one": "esumana {n}",
+          "other": "msumana {n}"
+        },
+        "month": {
+          "one": "mweri {n}",
+          "other": "miyeri {n}"
+        },
+        "year": {
+          "one": "mwaka {n}",
+          "other": "miyaka {n}"
+        }
+      },
+      "ago": "{0} zapita",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} zapita",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "khumi na pili",
+        "mosa",
+        "pili",
+        "ttatthu",
+        "ncheche",
+        "thanu",
+        "thanu na mosa",
+        "thanu na pili",
+        "thanu na ttatthu",
+        "thanu na ncheche",
+        "khumi",
+        "khumi na mosa"
+      ],
+      "midnight": "usiku wopakhala",
+      "noon": "muttana",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

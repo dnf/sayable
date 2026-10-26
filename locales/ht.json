@@ -1,0 +1,224 @@
+{
+  "code": "ht",
+  "name": "Haitian Creole",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": "{n} jou",
+      "week": "{n} semèn",
+      "month": "{n} mwa",
+      "year": "{n} an"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Tibebe fèk fèt",
+    "stages": {
+      "newborn": "Tibebe fèk fèt",
+      "infant": "Tibebe",
+      "toddler": "Ti moun",
+      "child": "Timoun",
+      "teenager": "Adolesan",
+      "adult": "Granmoun"
+    },
+    "short": {
+      "units": {
+        "day": "{n} j",
+        "week": "{n} sem",
+        "month": "{n} mwa",
+        "year": "{n} an"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}j",
+        "week": "{n}sem",
+        "month": "{n}mwa",
+        "year": "{n}an"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Janvye",
+      "Fevriye",
+      "Mas",
+      "Avril",
+      "Me",
+      "Jen",
+      "Jiyè",
+      "Out",
+      "Septanm",
+      "Oktòb",
+      "Novanm",
+      "Desanm"
+    ],
+    "weekdays": [
+      "Dimanch",
+      "Lendi",
+      "Madi",
+      "Mèkredi",
+      "Jedi",
+      "Vandredi",
+      "Samdi"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "jodi a",
+    "tomorrow": "demen",
+    "yesterday": "yè",
+    "dayAfterTomorrow": "aprè demen",
+    "dayBeforeYesterday": "avan yè",
+    "thisWeekday": "{weekday} sa a",
+    "nextWeekday": "{weekday} pwochen",
+    "lastWeekday": "{weekday} pase",
+    "short": {
+      "months": [
+        "Jan",
+        "Fev",
+        "Mas",
+        "Avr",
+        "Me",
+        "Jen",
+        "Jiy",
+        "Out",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Dim",
+        "Len",
+        "Mad",
+        "Mèk",
+        "Jed",
+        "Van",
+        "Sam"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} segonn",
+      "minute": "{n} minit",
+      "hour": "{n} èdtan",
+      "day": "{n} jou",
+      "week": "{n} semèn",
+      "month": "{n} mwa",
+      "year": "{n} an"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "kounye a",
+    "ago": "sa gen {0}",
+    "inFuture": "nan {0}",
+    "short": {
+      "units": {
+        "second": "{n} seg",
+        "minute": "{n} min",
+        "hour": "{n} èdt",
+        "day": "{n} jou",
+        "week": "{n} sem",
+        "month": "{n} mwa",
+        "year": "{n} an"
+      },
+      "ago": "sa gen {0}",
+      "inFuture": "nan {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}seg",
+        "minute": "{n}min",
+        "hour": "{n}èdt",
+        "day": "{n}j",
+        "week": "{n}sem",
+        "month": "{n}mwa",
+        "year": "{n}an"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "sa gen {0}",
+      "inFuture": "nan {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "douz",
+        "en",
+        "de",
+        "twa",
+        "kat",
+        "senk",
+        "sis",
+        "sèt",
+        "uit",
+        "nèf",
+        "dis",
+        "onz"
+      ],
+      "midnight": "minui",
+      "noon": "midi",
+      "patterns": {
+        "0": "{h} è",
+        "5": "{h} è senk",
+        "10": "{h} è dis",
+        "15": "{h} è ka",
+        "20": "{h} è ven",
+        "25": "{h} è vennsenk",
+        "30": "{h} è demi",
+        "35": "{next_h} mwen vennsenk",
+        "40": "{next_h} mwen ven",
+        "45": "{next_h} mwen ka",
+        "50": "{next_h} mwen dis",
+        "55": "{next_h} mwen senk"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

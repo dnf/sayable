@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/kbp.json
+# Source: locales/kbp.json
 
 _sayabledate_locale_kbp() {
     _months=('Kɔlaɣ' 'Naaɣ Kɩŋ' 'Naataŋgʊ' 'Naalɩɩ' 'Lɛlɩɩ' 'Kʊɖʊmaa' 'Saŋayɩɩ' 'Kɩyɛɛna' 'Lɩtɩɩ' 'Kʊɖʊmaɣ' 'Tɩŋgɩzɩɩ' 'Abranɩɩ')

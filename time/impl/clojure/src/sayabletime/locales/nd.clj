@@ -7,7 +7,7 @@
 ;; ║ Changes will be overwritten the next time codegen runs.      ║
 ;; ║ Edit the generator or locale JSON instead.                   ║
 ;; ╚══════════════════════════════════════════════════════════════╝
-;; Source: time/locales/src/nd.json
+;; Source: locales/nd.json
 
 (ns sayabletime.locales.nd)
 

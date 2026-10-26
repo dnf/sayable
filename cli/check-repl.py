@@ -36,9 +36,9 @@ CHECKS = [
 
 
 def canonical_locales() -> list[str]:
-    """Every locale code, sorted, from the age component's locale JSON files."""
+    """Every locale code, sorted, from the shared locales/*.json files."""
     root = Path(__file__).resolve().parent.parent
-    return sorted(p.stem for p in (root / "age" / "locales" / "src").glob("*.json"))
+    return sorted(p.stem for p in (root / "locales").glob("*.json"))
 
 
 def read_line(proc: subprocess.Popen, sel: selectors.BaseSelector) -> str | None:

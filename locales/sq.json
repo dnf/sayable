@@ -1,0 +1,273 @@
+{
+  "code": "sq",
+  "name": "Albanian",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ditë",
+        "other": "{n} ditë"
+      },
+      "week": {
+        "one": "{n} javë",
+        "other": "{n} javë"
+      },
+      "month": {
+        "one": "{n} muaj",
+        "other": "{n} muaj"
+      },
+      "year": {
+        "one": "{n} vit",
+        "other": "{n} vjet"
+      }
+    },
+    "half": "{0} e gjysmë",
+    "delimiter": ", ",
+    "justBorn": "Sapolindur",
+    "stages": {
+      "newborn": {
+        "m": "Sapolindur",
+        "f": "Sapolindure"
+      },
+      "infant": "Foshnjë",
+      "toddler": {
+        "m": "Fëmijë i vogël",
+        "f": "Fëmijë e vogël"
+      },
+      "child": "Fëmijë",
+      "teenager": {
+        "m": "Adoleshent",
+        "f": "Adoleshente"
+      },
+      "adult": {
+        "m": "I rritur",
+        "f": "E rritur"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} ditë",
+        "week": "{n} javë",
+        "month": "{n} muaj",
+        "year": {
+          "one": "{n} vit",
+          "other": "{n} vjet"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ditë",
+        "week": "{n} javë",
+        "month": "{n} muaj",
+        "year": {
+          "one": "{n} vit",
+          "other": "{n} vjet"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "janar",
+      "shkurt",
+      "mars",
+      "prill",
+      "maj",
+      "qershor",
+      "korrik",
+      "gusht",
+      "shtator",
+      "tetor",
+      "nëntor",
+      "dhjetor"
+    ],
+    "weekdays": [
+      "e diel",
+      "e hënë",
+      "e martë",
+      "e mërkurë",
+      "e enjte",
+      "e premte",
+      "e shtunë"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "sot",
+    "tomorrow": "nesër",
+    "yesterday": "dje",
+    "dayAfterTomorrow": "pasnesër",
+    "dayBeforeYesterday": "pardje",
+    "thisWeekday": "këtë {weekday}",
+    "nextWeekday": "{weekday} tjetër",
+    "lastWeekday": "{weekday} e kaluar",
+    "short": {
+      "months": [
+        "jan",
+        "shk",
+        "mar",
+        "pri",
+        "maj",
+        "qer",
+        "kor",
+        "gush",
+        "sht",
+        "tet",
+        "nën",
+        "dhj"
+      ],
+      "weekdays": [
+        "Die",
+        "Hën",
+        "Mar",
+        "Mër",
+        "Enj",
+        "Pre",
+        "Sht"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekondë",
+        "other": "{n} sekonda"
+      },
+      "minute": {
+        "one": "{n} minutë",
+        "other": "{n} minuta"
+      },
+      "hour": {
+        "one": "{n} orë",
+        "other": "{n} orë"
+      },
+      "day": {
+        "one": "{n} ditë",
+        "other": "{n} ditë"
+      },
+      "week": {
+        "one": "{n} javë",
+        "other": "{n} javë"
+      },
+      "month": {
+        "one": "{n} muaj",
+        "other": "{n} muaj"
+      },
+      "year": {
+        "one": "{n} vit",
+        "other": "{n} vjet"
+      }
+    },
+    "half": "{0} e gjysmë",
+    "delimiter": ", ",
+    "justNow": "pikërisht tani",
+    "ago": "{0} më parë",
+    "inFuture": "për {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min.",
+        "hour": "{n} orë",
+        "day": "{n} ditë",
+        "week": "{n} javë",
+        "month": "{n} muaj",
+        "year": {
+          "one": "{n} vit",
+          "other": "{n} vjet"
+        }
+      },
+      "ago": "{0} më parë",
+      "inFuture": "për {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min.",
+        "hour": "{n} orë",
+        "day": "{n} ditë",
+        "week": "{n} javë",
+        "month": "{n} muaj",
+        "year": {
+          "one": "{n} vit",
+          "other": "{n} vjet"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} më parë",
+      "inFuture": "për {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dymbëdhjetë",
+        "një",
+        "dy",
+        "tre",
+        "katër",
+        "pesë",
+        "gjashtë",
+        "shtatë",
+        "tetë",
+        "nëntë",
+        "dhjetë",
+        "njëmbëdhjetë"
+      ],
+      "midnight": "mesnata",
+      "noon": "mesdita",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "pesë past {h}",
+        "10": "dhjetë past {h}",
+        "15": "një çerek past {h}",
+        "20": "njëzet past {h}",
+        "25": "njëzet e pesë past {h}",
+        "30": "gjysma past {h}",
+        "35": "njëzet e pesë to {next_h}",
+        "40": "njëzet to {next_h}",
+        "45": "një çerek to {next_h}",
+        "50": "dhjetë to {next_h}",
+        "55": "pesë to {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

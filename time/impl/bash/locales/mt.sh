@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/mt.json
+# Source: locales/mt.json
 
 _sayabletime_locale_mt() {
     _clock_hours=('tnax' 'waħda' 'tnejn' 'tlieta' 'erbgħa' 'ħamsa' 'sitta' 'sebgħa' 'tmienja' 'disgħa' 'għaxra' 'ħdax')

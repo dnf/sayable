@@ -139,7 +139,7 @@ open SayableAgeLib.Types
         if n = 0 || n = 1 || (n >= 11 && n <= 99) then One
         else Other
 
-// Source: age/locales/src/af.json
+// Source: locales/af.json
 // ================================================================
 // AF — Afrikaans
 // ================================================================
@@ -188,7 +188,7 @@ let AF: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ak.json
+// Source: locales/ak.json
 // ================================================================
 // AK — Akan
 // ================================================================
@@ -237,7 +237,7 @@ let AK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/am.json
+// Source: locales/am.json
 // ================================================================
 // AM — Amharic
 // ================================================================
@@ -286,7 +286,7 @@ let AM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ar.json
+// Source: locales/ar.json
 // ================================================================
 // AR — Arabic
 // ================================================================
@@ -335,7 +335,7 @@ let AR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ay.json
+// Source: locales/ay.json
 // ================================================================
 // AY — Aymara
 // ================================================================
@@ -384,7 +384,7 @@ let AY: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/az.json
+// Source: locales/az.json
 // ================================================================
 // AZ — Azerbaijani
 // ================================================================
@@ -433,7 +433,7 @@ let AZ: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/bci.json
+// Source: locales/bci.json
 // ================================================================
 // BCI — Baoulé
 // ================================================================
@@ -482,7 +482,7 @@ let BCI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/be.json
+// Source: locales/be.json
 // ================================================================
 // BE — Belarusian
 // ================================================================
@@ -531,7 +531,7 @@ let BE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/bem.json
+// Source: locales/bem.json
 // ================================================================
 // BEM — Bemba
 // ================================================================
@@ -580,7 +580,7 @@ let BEM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/bg.json
+// Source: locales/bg.json
 // ================================================================
 // BG — Bulgarian
 // ================================================================
@@ -629,7 +629,7 @@ let BG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/bi.json
+// Source: locales/bi.json
 // ================================================================
 // BI — Bislama
 // ================================================================
@@ -678,7 +678,7 @@ let BI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/bm.json
+// Source: locales/bm.json
 // ================================================================
 // BM — Bambara
 // ================================================================
@@ -727,7 +727,7 @@ let BM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/bn.json
+// Source: locales/bn.json
 // ================================================================
 // BN — Bengali
 // ================================================================
@@ -776,7 +776,7 @@ let BN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/br.json
+// Source: locales/br.json
 // ================================================================
 // BR — Breton
 // ================================================================
@@ -825,7 +825,7 @@ let BR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/bs.json
+// Source: locales/bs.json
 // ================================================================
 // BS — Bosnian
 // ================================================================
@@ -874,7 +874,7 @@ let BS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ca.json
+// Source: locales/ca.json
 // ================================================================
 // CA — Catalan
 // ================================================================
@@ -923,7 +923,7 @@ let CA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/cak.json
+// Source: locales/cak.json
 // ================================================================
 // CAK — Kaqchikel
 // ================================================================
@@ -972,7 +972,7 @@ let CAK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ceb.json
+// Source: locales/ceb.json
 // ================================================================
 // CEB — Cebuano
 // ================================================================
@@ -1021,7 +1021,7 @@ let CEB: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/cs.json
+// Source: locales/cs.json
 // ================================================================
 // CS — Czech
 // ================================================================
@@ -1070,7 +1070,7 @@ let CS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/cy.json
+// Source: locales/cy.json
 // ================================================================
 // CY — Welsh
 // ================================================================
@@ -1119,7 +1119,7 @@ let CY: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/da.json
+// Source: locales/da.json
 // ================================================================
 // DA — Danish
 // ================================================================
@@ -1168,7 +1168,7 @@ let DA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/de.json
+// Source: locales/de.json
 // ================================================================
 // DE — German
 // ================================================================
@@ -1217,7 +1217,7 @@ let DE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/din.json
+// Source: locales/din.json
 // ================================================================
 // DIN — Dinka
 // ================================================================
@@ -1266,7 +1266,7 @@ let DIN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/dje.json
+// Source: locales/dje.json
 // ================================================================
 // DJE — Zarma
 // ================================================================
@@ -1315,7 +1315,7 @@ let DJE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/dv.json
+// Source: locales/dv.json
 // ================================================================
 // DV — Dhivehi
 // ================================================================
@@ -1364,7 +1364,7 @@ let DV: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/dyu.json
+// Source: locales/dyu.json
 // ================================================================
 // DYU — Dyula
 // ================================================================
@@ -1413,7 +1413,7 @@ let DYU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/dz.json
+// Source: locales/dz.json
 // ================================================================
 // DZ — Dzongkha
 // ================================================================
@@ -1462,7 +1462,7 @@ let DZ: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ee.json
+// Source: locales/ee.json
 // ================================================================
 // EE — Ewe
 // ================================================================
@@ -1511,7 +1511,7 @@ let EE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/el.json
+// Source: locales/el.json
 // ================================================================
 // EL — Greek
 // ================================================================
@@ -1560,7 +1560,7 @@ let EL: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/en.json
+// Source: locales/en.json
 // ================================================================
 // EN — English
 // ================================================================
@@ -1609,7 +1609,7 @@ let EN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/es.json
+// Source: locales/es.json
 // ================================================================
 // ES — Spanish
 // ================================================================
@@ -1658,7 +1658,7 @@ let ES: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/et.json
+// Source: locales/et.json
 // ================================================================
 // ET — Estonian
 // ================================================================
@@ -1707,7 +1707,7 @@ let ET: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/eu.json
+// Source: locales/eu.json
 // ================================================================
 // EU — Basque
 // ================================================================
@@ -1756,7 +1756,7 @@ let EU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/fa.json
+// Source: locales/fa.json
 // ================================================================
 // FA — Persian
 // ================================================================
@@ -1805,7 +1805,7 @@ let FA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/fan.json
+// Source: locales/fan.json
 // ================================================================
 // FAN — Fang
 // ================================================================
@@ -1854,7 +1854,7 @@ let FAN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ff.json
+// Source: locales/ff.json
 // ================================================================
 // FF — Fulah
 // ================================================================
@@ -1903,7 +1903,7 @@ let FF: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/fi.json
+// Source: locales/fi.json
 // ================================================================
 // FI — Finnish
 // ================================================================
@@ -1952,7 +1952,7 @@ let FI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/fil.json
+// Source: locales/fil.json
 // ================================================================
 // FIL — Filipino
 // ================================================================
@@ -2001,7 +2001,7 @@ let FIL: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/fj.json
+// Source: locales/fj.json
 // ================================================================
 // FJ — Fijian
 // ================================================================
@@ -2050,7 +2050,7 @@ let FJ: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/fon.json
+// Source: locales/fon.json
 // ================================================================
 // FON — Fon
 // ================================================================
@@ -2099,7 +2099,7 @@ let FON: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/fr.json
+// Source: locales/fr.json
 // ================================================================
 // FR — French
 // ================================================================
@@ -2148,7 +2148,7 @@ let FR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ga.json
+// Source: locales/ga.json
 // ================================================================
 // GA — Irish
 // ================================================================
@@ -2197,7 +2197,7 @@ let GA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/gd.json
+// Source: locales/gd.json
 // ================================================================
 // GD — Scottish Gaelic
 // ================================================================
@@ -2246,7 +2246,7 @@ let GD: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/gl.json
+// Source: locales/gl.json
 // ================================================================
 // GL — Galician
 // ================================================================
@@ -2295,7 +2295,7 @@ let GL: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/gn.json
+// Source: locales/gn.json
 // ================================================================
 // GN — Guarani
 // ================================================================
@@ -2344,7 +2344,7 @@ let GN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/gu.json
+// Source: locales/gu.json
 // ================================================================
 // GU — Gujarati
 // ================================================================
@@ -2393,7 +2393,7 @@ let GU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/gv.json
+// Source: locales/gv.json
 // ================================================================
 // GV — Manx
 // ================================================================
@@ -2442,7 +2442,7 @@ let GV: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ha.json
+// Source: locales/ha.json
 // ================================================================
 // HA — Hausa
 // ================================================================
@@ -2491,7 +2491,7 @@ let HA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/he.json
+// Source: locales/he.json
 // ================================================================
 // HE — Hebrew
 // ================================================================
@@ -2540,7 +2540,7 @@ let HE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/hi.json
+// Source: locales/hi.json
 // ================================================================
 // HI — Hindi
 // ================================================================
@@ -2589,7 +2589,7 @@ let HI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/hmn.json
+// Source: locales/hmn.json
 // ================================================================
 // HMN — Hmong
 // ================================================================
@@ -2638,7 +2638,7 @@ let HMN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/hr.json
+// Source: locales/hr.json
 // ================================================================
 // HR — Croatian
 // ================================================================
@@ -2687,7 +2687,7 @@ let HR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ht.json
+// Source: locales/ht.json
 // ================================================================
 // HT — Haitian Creole
 // ================================================================
@@ -2736,7 +2736,7 @@ let HT: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/hu.json
+// Source: locales/hu.json
 // ================================================================
 // HU — Hungarian
 // ================================================================
@@ -2785,7 +2785,7 @@ let HU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/hy.json
+// Source: locales/hy.json
 // ================================================================
 // HY — Armenian
 // ================================================================
@@ -2834,7 +2834,7 @@ let HY: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/id.json
+// Source: locales/id.json
 // ================================================================
 // ID — Indonesian
 // ================================================================
@@ -2883,7 +2883,7 @@ let ID: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ig.json
+// Source: locales/ig.json
 // ================================================================
 // IG — Igbo
 // ================================================================
@@ -2932,7 +2932,7 @@ let IG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/is.json
+// Source: locales/is.json
 // ================================================================
 // IS — Icelandic
 // ================================================================
@@ -2981,7 +2981,7 @@ let IS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/it.json
+// Source: locales/it.json
 // ================================================================
 // IT — Italian
 // ================================================================
@@ -3030,7 +3030,7 @@ let IT: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ja.json
+// Source: locales/ja.json
 // ================================================================
 // JA — Japanese
 // ================================================================
@@ -3079,7 +3079,7 @@ let JA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/jv.json
+// Source: locales/jv.json
 // ================================================================
 // JV — Javanese
 // ================================================================
@@ -3128,7 +3128,7 @@ let JV: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ka.json
+// Source: locales/ka.json
 // ================================================================
 // KA — Georgian
 // ================================================================
@@ -3177,7 +3177,7 @@ let KA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kbp.json
+// Source: locales/kbp.json
 // ================================================================
 // KBP — Kabiye
 // ================================================================
@@ -3226,7 +3226,7 @@ let KBP: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kek.json
+// Source: locales/kek.json
 // ================================================================
 // KEK — Q'eqchi'
 // ================================================================
@@ -3275,7 +3275,7 @@ let KEK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ki.json
+// Source: locales/ki.json
 // ================================================================
 // KI — Kikuyu
 // ================================================================
@@ -3324,7 +3324,7 @@ let KI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kk.json
+// Source: locales/kk.json
 // ================================================================
 // KK — Kazakh
 // ================================================================
@@ -3373,7 +3373,7 @@ let KK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kl.json
+// Source: locales/kl.json
 // ================================================================
 // KL — Kalaallisut
 // ================================================================
@@ -3422,7 +3422,7 @@ let KL: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/km.json
+// Source: locales/km.json
 // ================================================================
 // KM — Khmer
 // ================================================================
@@ -3471,7 +3471,7 @@ let KM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kn.json
+// Source: locales/kn.json
 // ================================================================
 // KN — Kannada
 // ================================================================
@@ -3520,7 +3520,7 @@ let KN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ko.json
+// Source: locales/ko.json
 // ================================================================
 // KO — Korean
 // ================================================================
@@ -3569,7 +3569,7 @@ let KO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kpe.json
+// Source: locales/kpe.json
 // ================================================================
 // KPE — Kpelle
 // ================================================================
@@ -3618,7 +3618,7 @@ let KPE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kri.json
+// Source: locales/kri.json
 // ================================================================
 // KRI — Krio
 // ================================================================
@@ -3667,7 +3667,7 @@ let KRI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ktu.json
+// Source: locales/ktu.json
 // ================================================================
 // KTU — Kituba
 // ================================================================
@@ -3716,7 +3716,7 @@ let KTU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ku.json
+// Source: locales/ku.json
 // ================================================================
 // KU — Kurdish
 // ================================================================
@@ -3765,7 +3765,7 @@ let KU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/kw.json
+// Source: locales/kw.json
 // ================================================================
 // KW — Cornish
 // ================================================================
@@ -3814,7 +3814,7 @@ let KW: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ky.json
+// Source: locales/ky.json
 // ================================================================
 // KY — Kyrgyz
 // ================================================================
@@ -3863,7 +3863,7 @@ let KY: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/lb.json
+// Source: locales/lb.json
 // ================================================================
 // LB — Luxembourgish
 // ================================================================
@@ -3912,7 +3912,7 @@ let LB: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/lg.json
+// Source: locales/lg.json
 // ================================================================
 // LG — Luganda
 // ================================================================
@@ -3961,7 +3961,7 @@ let LG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ln.json
+// Source: locales/ln.json
 // ================================================================
 // LN — Lingala
 // ================================================================
@@ -4010,7 +4010,7 @@ let LN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/lo.json
+// Source: locales/lo.json
 // ================================================================
 // LO — Lao
 // ================================================================
@@ -4059,7 +4059,7 @@ let LO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/lt.json
+// Source: locales/lt.json
 // ================================================================
 // LT — Lithuanian
 // ================================================================
@@ -4108,7 +4108,7 @@ let LT: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/luo.json
+// Source: locales/luo.json
 // ================================================================
 // LUO — Dholuo
 // ================================================================
@@ -4157,7 +4157,7 @@ let LUO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/lv.json
+// Source: locales/lv.json
 // ================================================================
 // LV — Latvian
 // ================================================================
@@ -4206,7 +4206,7 @@ let LV: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mam.json
+// Source: locales/mam.json
 // ================================================================
 // MAM — Mam
 // ================================================================
@@ -4255,7 +4255,7 @@ let MAM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/men.json
+// Source: locales/men.json
 // ================================================================
 // MEN — Mende
 // ================================================================
@@ -4304,7 +4304,7 @@ let MEN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mfe.json
+// Source: locales/mfe.json
 // ================================================================
 // MFE — Mauritian Creole
 // ================================================================
@@ -4353,7 +4353,7 @@ let MFE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mg.json
+// Source: locales/mg.json
 // ================================================================
 // MG — Malagasy
 // ================================================================
@@ -4402,7 +4402,7 @@ let MG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mi.json
+// Source: locales/mi.json
 // ================================================================
 // MI — Māori
 // ================================================================
@@ -4451,7 +4451,7 @@ let MI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mk.json
+// Source: locales/mk.json
 // ================================================================
 // MK — Macedonian
 // ================================================================
@@ -4500,7 +4500,7 @@ let MK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ml.json
+// Source: locales/ml.json
 // ================================================================
 // ML — Malayalam
 // ================================================================
@@ -4549,7 +4549,7 @@ let ML: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mn.json
+// Source: locales/mn.json
 // ================================================================
 // MN — Mongolian
 // ================================================================
@@ -4598,7 +4598,7 @@ let MN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mnk.json
+// Source: locales/mnk.json
 // ================================================================
 // MNK — Mandinka
 // ================================================================
@@ -4647,7 +4647,7 @@ let MNK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mos.json
+// Source: locales/mos.json
 // ================================================================
 // MOS — Moore
 // ================================================================
@@ -4696,7 +4696,7 @@ let MOS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mr.json
+// Source: locales/mr.json
 // ================================================================
 // MR — Marathi
 // ================================================================
@@ -4745,7 +4745,7 @@ let MR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ms.json
+// Source: locales/ms.json
 // ================================================================
 // MS — Malay
 // ================================================================
@@ -4794,7 +4794,7 @@ let MS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/mt.json
+// Source: locales/mt.json
 // ================================================================
 // MT — Maltese
 // ================================================================
@@ -4843,7 +4843,7 @@ let MT: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/my.json
+// Source: locales/my.json
 // ================================================================
 // MY — Burmese
 // ================================================================
@@ -4892,7 +4892,7 @@ let MY: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/nb.json
+// Source: locales/nb.json
 // ================================================================
 // NB — Norwegian Bokmål
 // ================================================================
@@ -4941,7 +4941,7 @@ let NB: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/nd.json
+// Source: locales/nd.json
 // ================================================================
 // ND — Northern Ndebele
 // ================================================================
@@ -4990,7 +4990,7 @@ let ND: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ne.json
+// Source: locales/ne.json
 // ================================================================
 // NE — Nepali
 // ================================================================
@@ -5039,7 +5039,7 @@ let NE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ng.json
+// Source: locales/ng.json
 // ================================================================
 // NG — Oshiwambo
 // ================================================================
@@ -5088,7 +5088,7 @@ let NG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/nl.json
+// Source: locales/nl.json
 // ================================================================
 // NL — Dutch
 // ================================================================
@@ -5137,7 +5137,7 @@ let NL: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/nr.json
+// Source: locales/nr.json
 // ================================================================
 // NR — Southern Ndebele
 // ================================================================
@@ -5186,7 +5186,7 @@ let NR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/nso.json
+// Source: locales/nso.json
 // ================================================================
 // NSO — Northern Sotho
 // ================================================================
@@ -5235,7 +5235,7 @@ let NSO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/nus.json
+// Source: locales/nus.json
 // ================================================================
 // NUS — Nuer
 // ================================================================
@@ -5284,7 +5284,7 @@ let NUS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ny.json
+// Source: locales/ny.json
 // ================================================================
 // NY — Chichewa
 // ================================================================
@@ -5333,7 +5333,7 @@ let NY: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/om.json
+// Source: locales/om.json
 // ================================================================
 // OM — Oromo
 // ================================================================
@@ -5382,7 +5382,7 @@ let OM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/or.json
+// Source: locales/or.json
 // ================================================================
 // OR — Odia
 // ================================================================
@@ -5431,7 +5431,7 @@ let OR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/pa.json
+// Source: locales/pa.json
 // ================================================================
 // PA — Punjabi
 // ================================================================
@@ -5480,7 +5480,7 @@ let PA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/pis.json
+// Source: locales/pis.json
 // ================================================================
 // PIS — Pijin
 // ================================================================
@@ -5529,7 +5529,7 @@ let PIS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/pl.json
+// Source: locales/pl.json
 // ================================================================
 // PL — Polish
 // ================================================================
@@ -5578,7 +5578,7 @@ let PL: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/pov.json
+// Source: locales/pov.json
 // ================================================================
 // POV — Guinea-Bissau Creole
 // ================================================================
@@ -5627,7 +5627,7 @@ let POV: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ps.json
+// Source: locales/ps.json
 // ================================================================
 // PS — Pashto
 // ================================================================
@@ -5676,7 +5676,7 @@ let PS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/pt.json
+// Source: locales/pt.json
 // ================================================================
 // PT — Portuguese
 // ================================================================
@@ -5725,7 +5725,7 @@ let PT: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/qu.json
+// Source: locales/qu.json
 // ================================================================
 // QU — Quechua
 // ================================================================
@@ -5774,7 +5774,7 @@ let QU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/quc.json
+// Source: locales/quc.json
 // ================================================================
 // QUC — K'iche'
 // ================================================================
@@ -5823,7 +5823,7 @@ let QUC: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ro.json
+// Source: locales/ro.json
 // ================================================================
 // RO — Romanian
 // ================================================================
@@ -5872,7 +5872,7 @@ let RO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ru.json
+// Source: locales/ru.json
 // ================================================================
 // RU — Russian
 // ================================================================
@@ -5921,7 +5921,7 @@ let RU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/rw.json
+// Source: locales/rw.json
 // ================================================================
 // RW — Kinyarwanda
 // ================================================================
@@ -5970,7 +5970,7 @@ let RW: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sar.json
+// Source: locales/sar.json
 // ================================================================
 // SAR — Sara
 // ================================================================
@@ -6019,7 +6019,7 @@ let SAR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sd.json
+// Source: locales/sd.json
 // ================================================================
 // SD — Sindhi
 // ================================================================
@@ -6068,7 +6068,7 @@ let SD: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sg.json
+// Source: locales/sg.json
 // ================================================================
 // SG — Sango
 // ================================================================
@@ -6117,7 +6117,7 @@ let SG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/shi.json
+// Source: locales/shi.json
 // ================================================================
 // SHI — Tachelhit
 // ================================================================
@@ -6166,7 +6166,7 @@ let SHI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/shn.json
+// Source: locales/shn.json
 // ================================================================
 // SHN — Shan
 // ================================================================
@@ -6215,7 +6215,7 @@ let SHN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/si.json
+// Source: locales/si.json
 // ================================================================
 // SI — Sinhala
 // ================================================================
@@ -6264,7 +6264,7 @@ let SI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sk.json
+// Source: locales/sk.json
 // ================================================================
 // SK — Slovak
 // ================================================================
@@ -6313,7 +6313,7 @@ let SK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sl.json
+// Source: locales/sl.json
 // ================================================================
 // SL — Slovenian
 // ================================================================
@@ -6362,7 +6362,7 @@ let SL: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sn.json
+// Source: locales/sn.json
 // ================================================================
 // SN — Shona
 // ================================================================
@@ -6411,7 +6411,7 @@ let SN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/snk.json
+// Source: locales/snk.json
 // ================================================================
 // SNK — Soninke
 // ================================================================
@@ -6460,7 +6460,7 @@ let SNK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/so.json
+// Source: locales/so.json
 // ================================================================
 // SO — Somali
 // ================================================================
@@ -6509,7 +6509,7 @@ let SO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sq.json
+// Source: locales/sq.json
 // ================================================================
 // SQ — Albanian
 // ================================================================
@@ -6558,7 +6558,7 @@ let SQ: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sr.json
+// Source: locales/sr.json
 // ================================================================
 // SR — Serbian
 // ================================================================
@@ -6607,7 +6607,7 @@ let SR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ss.json
+// Source: locales/ss.json
 // ================================================================
 // SS — siSwati
 // ================================================================
@@ -6656,7 +6656,7 @@ let SS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/st.json
+// Source: locales/st.json
 // ================================================================
 // ST — Southern Sotho
 // ================================================================
@@ -6705,7 +6705,7 @@ let ST: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/su.json
+// Source: locales/su.json
 // ================================================================
 // SU — Sundanese
 // ================================================================
@@ -6754,7 +6754,7 @@ let SU: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/suk.json
+// Source: locales/suk.json
 // ================================================================
 // SUK — Sukuma
 // ================================================================
@@ -6803,7 +6803,7 @@ let SUK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sv.json
+// Source: locales/sv.json
 // ================================================================
 // SV — Swedish
 // ================================================================
@@ -6852,7 +6852,7 @@ let SV: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/sw.json
+// Source: locales/sw.json
 // ================================================================
 // SW — Swahili
 // ================================================================
@@ -6901,7 +6901,7 @@ let SW: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ta.json
+// Source: locales/ta.json
 // ================================================================
 // TA — Tamil
 // ================================================================
@@ -6950,7 +6950,7 @@ let TA: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/te.json
+// Source: locales/te.json
 // ================================================================
 // TE — Telugu
 // ================================================================
@@ -6999,7 +6999,7 @@ let TE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tem.json
+// Source: locales/tem.json
 // ================================================================
 // TEM — Temne
 // ================================================================
@@ -7048,7 +7048,7 @@ let TEM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tet.json
+// Source: locales/tet.json
 // ================================================================
 // TET — Tetum
 // ================================================================
@@ -7097,7 +7097,7 @@ let TET: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tg.json
+// Source: locales/tg.json
 // ================================================================
 // TG — Tajik
 // ================================================================
@@ -7146,7 +7146,7 @@ let TG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/th.json
+// Source: locales/th.json
 // ================================================================
 // TH — Thai
 // ================================================================
@@ -7195,7 +7195,7 @@ let TH: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ti.json
+// Source: locales/ti.json
 // ================================================================
 // TI — Tigrinya
 // ================================================================
@@ -7244,7 +7244,7 @@ let TI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tig.json
+// Source: locales/tig.json
 // ================================================================
 // TIG — Tigre
 // ================================================================
@@ -7293,7 +7293,7 @@ let TIG: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tk.json
+// Source: locales/tk.json
 // ================================================================
 // TK — Turkmen
 // ================================================================
@@ -7342,7 +7342,7 @@ let TK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tn.json
+// Source: locales/tn.json
 // ================================================================
 // TN — Tswana
 // ================================================================
@@ -7391,7 +7391,7 @@ let TN: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tpi.json
+// Source: locales/tpi.json
 // ================================================================
 // TPI — Tok Pisin
 // ================================================================
@@ -7440,7 +7440,7 @@ let TPI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tr.json
+// Source: locales/tr.json
 // ================================================================
 // TR — Turkish
 // ================================================================
@@ -7489,7 +7489,7 @@ let TR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ts.json
+// Source: locales/ts.json
 // ================================================================
 // TS — Tsonga
 // ================================================================
@@ -7538,7 +7538,7 @@ let TS: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tum.json
+// Source: locales/tum.json
 // ================================================================
 // TUM — Tumbuka
 // ================================================================
@@ -7587,7 +7587,7 @@ let TUM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/tzm.json
+// Source: locales/tzm.json
 // ================================================================
 // TZM — Central Atlas Tamazight
 // ================================================================
@@ -7636,7 +7636,7 @@ let TZM: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/uk.json
+// Source: locales/uk.json
 // ================================================================
 // UK — Ukrainian
 // ================================================================
@@ -7685,7 +7685,7 @@ let UK: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/umb.json
+// Source: locales/umb.json
 // ================================================================
 // UMB — Umbundu
 // ================================================================
@@ -7734,7 +7734,7 @@ let UMB: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ur.json
+// Source: locales/ur.json
 // ================================================================
 // UR — Urdu
 // ================================================================
@@ -7783,7 +7783,7 @@ let UR: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/uz.json
+// Source: locales/uz.json
 // ================================================================
 // UZ — Uzbek
 // ================================================================
@@ -7832,7 +7832,7 @@ let UZ: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/ve.json
+// Source: locales/ve.json
 // ================================================================
 // VE — Venda
 // ================================================================
@@ -7881,7 +7881,7 @@ let VE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/vi.json
+// Source: locales/vi.json
 // ================================================================
 // VI — Vietnamese
 // ================================================================
@@ -7930,7 +7930,7 @@ let VI: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/vmw.json
+// Source: locales/vmw.json
 // ================================================================
 // VMW — Makhuwa
 // ================================================================
@@ -7979,7 +7979,7 @@ let VMW: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/wo.json
+// Source: locales/wo.json
 // ================================================================
 // WO — Wolof
 // ================================================================
@@ -8028,7 +8028,7 @@ let WO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/xh.json
+// Source: locales/xh.json
 // ================================================================
 // XH — Xhosa
 // ================================================================
@@ -8077,7 +8077,7 @@ let XH: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/yao.json
+// Source: locales/yao.json
 // ================================================================
 // YAO — Yao
 // ================================================================
@@ -8126,7 +8126,7 @@ let YAO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/yo.json
+// Source: locales/yo.json
 // ================================================================
 // YO — Yoruba
 // ================================================================
@@ -8175,7 +8175,7 @@ let YO: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/yue.json
+// Source: locales/yue.json
 // ================================================================
 // YUE — Cantonese
 // ================================================================
@@ -8224,7 +8224,7 @@ let YUE: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/zdj.json
+// Source: locales/zdj.json
 // ================================================================
 // ZDJ — Comorian
 // ================================================================
@@ -8273,7 +8273,7 @@ let ZDJ: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/zh.json
+// Source: locales/zh.json
 // ================================================================
 // ZH — Chinese
 // ================================================================
@@ -8322,7 +8322,7 @@ let ZH: AgeLocale =
         FormatUnit = None
     }
 
-// Source: age/locales/src/zu.json
+// Source: locales/zu.json
 // ================================================================
 // ZU — Zulu
 // ================================================================

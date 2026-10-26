@@ -14,7 +14,7 @@ module sayableduration.locales;
 
 import sayableduration.locale;
 
-// // Source: duration/locales/src/af.json
+// // Source: locales/af.json
 // Afrikaans locale.
 immutable DurationLocale AF = DurationLocale(
     code: "af",
@@ -60,7 +60,7 @@ immutable DurationLocale AF = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ak.json
+// // Source: locales/ak.json
 // Akan locale.
 immutable DurationLocale AK = DurationLocale(
     code: "ak",
@@ -106,7 +106,7 @@ immutable DurationLocale AK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/am.json
+// // Source: locales/am.json
 // Amharic locale.
 immutable DurationLocale AM = DurationLocale(
     code: "am",
@@ -152,7 +152,7 @@ immutable DurationLocale AM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ar.json
+// // Source: locales/ar.json
 // Arabic locale.
 immutable DurationLocale AR = DurationLocale(
     code: "ar",
@@ -203,7 +203,7 @@ immutable DurationLocale AR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ay.json
+// // Source: locales/ay.json
 // Aymara locale.
 immutable DurationLocale AY = DurationLocale(
     code: "ay",
@@ -247,7 +247,7 @@ immutable DurationLocale AY = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/az.json
+// // Source: locales/az.json
 // Azerbaijani locale.
 immutable DurationLocale AZ = DurationLocale(
     code: "az",
@@ -293,7 +293,7 @@ immutable DurationLocale AZ = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/bci.json
+// // Source: locales/bci.json
 // Baoulé locale.
 immutable DurationLocale BCI = DurationLocale(
     code: "bci",
@@ -338,7 +338,7 @@ immutable DurationLocale BCI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/be.json
+// // Source: locales/be.json
 // Belarusian locale.
 immutable DurationLocale BE = DurationLocale(
     code: "be",
@@ -387,7 +387,7 @@ immutable DurationLocale BE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/bem.json
+// // Source: locales/bem.json
 // Bemba locale.
 immutable DurationLocale BEM = DurationLocale(
     code: "bem",
@@ -433,7 +433,7 @@ immutable DurationLocale BEM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/bg.json
+// // Source: locales/bg.json
 // Bulgarian locale.
 immutable DurationLocale BG = DurationLocale(
     code: "bg",
@@ -479,7 +479,7 @@ immutable DurationLocale BG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/bi.json
+// // Source: locales/bi.json
 // Bislama locale.
 immutable DurationLocale BI = DurationLocale(
     code: "bi",
@@ -523,7 +523,7 @@ immutable DurationLocale BI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/bm.json
+// // Source: locales/bm.json
 // Bambara locale.
 immutable DurationLocale BM = DurationLocale(
     code: "bm",
@@ -568,7 +568,7 @@ immutable DurationLocale BM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/bn.json
+// // Source: locales/bn.json
 // Bengali locale.
 immutable DurationLocale BN = DurationLocale(
     code: "bn",
@@ -614,7 +614,7 @@ immutable DurationLocale BN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/br.json
+// // Source: locales/br.json
 // Breton locale.
 immutable DurationLocale BR = DurationLocale(
     code: "br",
@@ -665,7 +665,7 @@ immutable DurationLocale BR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/bs.json
+// // Source: locales/bs.json
 // Bosnian locale.
 immutable DurationLocale BS = DurationLocale(
     code: "bs",
@@ -714,7 +714,7 @@ immutable DurationLocale BS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ca.json
+// // Source: locales/ca.json
 // Catalan locale.
 immutable DurationLocale CA = DurationLocale(
     code: "ca",
@@ -760,7 +760,7 @@ immutable DurationLocale CA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/cak.json
+// // Source: locales/cak.json
 // Kaqchikel locale.
 immutable DurationLocale CAK = DurationLocale(
     code: "cak",
@@ -804,7 +804,7 @@ immutable DurationLocale CAK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ceb.json
+// // Source: locales/ceb.json
 // Cebuano locale.
 immutable DurationLocale CEB = DurationLocale(
     code: "ceb",
@@ -850,7 +850,7 @@ immutable DurationLocale CEB = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/cs.json
+// // Source: locales/cs.json
 // Czech locale.
 immutable DurationLocale CS = DurationLocale(
     code: "cs",
@@ -896,7 +896,7 @@ immutable DurationLocale CS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/cy.json
+// // Source: locales/cy.json
 // Welsh locale.
 immutable DurationLocale CY = DurationLocale(
     code: "cy",
@@ -946,7 +946,7 @@ immutable DurationLocale CY = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/da.json
+// // Source: locales/da.json
 // Danish locale.
 immutable DurationLocale DA = DurationLocale(
     code: "da",
@@ -991,7 +991,7 @@ immutable DurationLocale DA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/de.json
+// // Source: locales/de.json
 // German locale.
 immutable DurationLocale DE = DurationLocale(
     code: "de",
@@ -1036,7 +1036,7 @@ immutable DurationLocale DE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/din.json
+// // Source: locales/din.json
 // Dinka locale.
 immutable DurationLocale DIN = DurationLocale(
     code: "din",
@@ -1082,7 +1082,7 @@ immutable DurationLocale DIN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/dje.json
+// // Source: locales/dje.json
 // Zarma locale.
 immutable DurationLocale DJE = DurationLocale(
     code: "dje",
@@ -1127,7 +1127,7 @@ immutable DurationLocale DJE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/dv.json
+// // Source: locales/dv.json
 // Dhivehi locale.
 immutable DurationLocale DV = DurationLocale(
     code: "dv",
@@ -1171,7 +1171,7 @@ immutable DurationLocale DV = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/dyu.json
+// // Source: locales/dyu.json
 // Dyula locale.
 immutable DurationLocale DYU = DurationLocale(
     code: "dyu",
@@ -1216,7 +1216,7 @@ immutable DurationLocale DYU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/dz.json
+// // Source: locales/dz.json
 // Dzongkha locale.
 immutable DurationLocale DZ = DurationLocale(
     code: "dz",
@@ -1260,7 +1260,7 @@ immutable DurationLocale DZ = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ee.json
+// // Source: locales/ee.json
 // Ewe locale.
 immutable DurationLocale EE = DurationLocale(
     code: "ee",
@@ -1306,7 +1306,7 @@ immutable DurationLocale EE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/el.json
+// // Source: locales/el.json
 // Greek locale.
 immutable DurationLocale EL = DurationLocale(
     code: "el",
@@ -1352,7 +1352,7 @@ immutable DurationLocale EL = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/en.json
+// // Source: locales/en.json
 // English locale.
 immutable DurationLocale EN = DurationLocale(
     code: "en",
@@ -1397,7 +1397,7 @@ immutable DurationLocale EN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/es.json
+// // Source: locales/es.json
 // Spanish locale.
 immutable DurationLocale ES = DurationLocale(
     code: "es",
@@ -1443,7 +1443,7 @@ immutable DurationLocale ES = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/et.json
+// // Source: locales/et.json
 // Estonian locale.
 immutable DurationLocale ET = DurationLocale(
     code: "et",
@@ -1488,7 +1488,7 @@ immutable DurationLocale ET = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/eu.json
+// // Source: locales/eu.json
 // Basque locale.
 immutable DurationLocale EU = DurationLocale(
     code: "eu",
@@ -1533,7 +1533,7 @@ immutable DurationLocale EU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/fa.json
+// // Source: locales/fa.json
 // Persian locale.
 immutable DurationLocale FA = DurationLocale(
     code: "fa",
@@ -1579,7 +1579,7 @@ immutable DurationLocale FA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/fan.json
+// // Source: locales/fan.json
 // Fang locale.
 immutable DurationLocale FAN = DurationLocale(
     code: "fan",
@@ -1625,7 +1625,7 @@ immutable DurationLocale FAN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ff.json
+// // Source: locales/ff.json
 // Fulah locale.
 immutable DurationLocale FF = DurationLocale(
     code: "ff",
@@ -1671,7 +1671,7 @@ immutable DurationLocale FF = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/fi.json
+// // Source: locales/fi.json
 // Finnish locale.
 immutable DurationLocale FI = DurationLocale(
     code: "fi",
@@ -1717,7 +1717,7 @@ immutable DurationLocale FI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/fil.json
+// // Source: locales/fil.json
 // Filipino locale.
 immutable DurationLocale FIL = DurationLocale(
     code: "fil",
@@ -1762,7 +1762,7 @@ immutable DurationLocale FIL = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/fj.json
+// // Source: locales/fj.json
 // Fijian locale.
 immutable DurationLocale FJ = DurationLocale(
     code: "fj",
@@ -1806,7 +1806,7 @@ immutable DurationLocale FJ = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/fon.json
+// // Source: locales/fon.json
 // Fon locale.
 immutable DurationLocale FON = DurationLocale(
     code: "fon",
@@ -1851,7 +1851,7 @@ immutable DurationLocale FON = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/fr.json
+// // Source: locales/fr.json
 // French locale.
 immutable DurationLocale FR = DurationLocale(
     code: "fr",
@@ -1897,7 +1897,7 @@ immutable DurationLocale FR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ga.json
+// // Source: locales/ga.json
 // Irish locale.
 immutable DurationLocale GA = DurationLocale(
     code: "ga",
@@ -1946,7 +1946,7 @@ immutable DurationLocale GA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/gd.json
+// // Source: locales/gd.json
 // Scottish Gaelic locale.
 immutable DurationLocale GD = DurationLocale(
     code: "gd",
@@ -1994,7 +1994,7 @@ immutable DurationLocale GD = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/gl.json
+// // Source: locales/gl.json
 // Galician locale.
 immutable DurationLocale GL = DurationLocale(
     code: "gl",
@@ -2040,7 +2040,7 @@ immutable DurationLocale GL = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/gn.json
+// // Source: locales/gn.json
 // Guarani locale.
 immutable DurationLocale GN = DurationLocale(
     code: "gn",
@@ -2086,7 +2086,7 @@ immutable DurationLocale GN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/gu.json
+// // Source: locales/gu.json
 // Gujarati locale.
 immutable DurationLocale GU = DurationLocale(
     code: "gu",
@@ -2132,7 +2132,7 @@ immutable DurationLocale GU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/gv.json
+// // Source: locales/gv.json
 // Manx locale.
 immutable DurationLocale GV = DurationLocale(
     code: "gv",
@@ -2182,7 +2182,7 @@ immutable DurationLocale GV = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ha.json
+// // Source: locales/ha.json
 // Hausa locale.
 immutable DurationLocale HA = DurationLocale(
     code: "ha",
@@ -2228,7 +2228,7 @@ immutable DurationLocale HA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/he.json
+// // Source: locales/he.json
 // Hebrew locale.
 immutable DurationLocale HE = DurationLocale(
     code: "he",
@@ -2275,7 +2275,7 @@ immutable DurationLocale HE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/hi.json
+// // Source: locales/hi.json
 // Hindi locale.
 immutable DurationLocale HI = DurationLocale(
     code: "hi",
@@ -2321,7 +2321,7 @@ immutable DurationLocale HI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/hmn.json
+// // Source: locales/hmn.json
 // Hmong locale.
 immutable DurationLocale HMN = DurationLocale(
     code: "hmn",
@@ -2365,7 +2365,7 @@ immutable DurationLocale HMN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/hr.json
+// // Source: locales/hr.json
 // Croatian locale.
 immutable DurationLocale HR = DurationLocale(
     code: "hr",
@@ -2414,7 +2414,7 @@ immutable DurationLocale HR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ht.json
+// // Source: locales/ht.json
 // Haitian Creole locale.
 immutable DurationLocale HT = DurationLocale(
     code: "ht",
@@ -2460,7 +2460,7 @@ immutable DurationLocale HT = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/hu.json
+// // Source: locales/hu.json
 // Hungarian locale.
 immutable DurationLocale HU = DurationLocale(
     code: "hu",
@@ -2505,7 +2505,7 @@ immutable DurationLocale HU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/hy.json
+// // Source: locales/hy.json
 // Armenian locale.
 immutable DurationLocale HY = DurationLocale(
     code: "hy",
@@ -2551,7 +2551,7 @@ immutable DurationLocale HY = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/id.json
+// // Source: locales/id.json
 // Indonesian locale.
 immutable DurationLocale ID = DurationLocale(
     code: "id",
@@ -2596,7 +2596,7 @@ immutable DurationLocale ID = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ig.json
+// // Source: locales/ig.json
 // Igbo locale.
 immutable DurationLocale IG = DurationLocale(
     code: "ig",
@@ -2641,7 +2641,7 @@ immutable DurationLocale IG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/is.json
+// // Source: locales/is.json
 // Icelandic locale.
 immutable DurationLocale IS_ = DurationLocale(
     code: "is",
@@ -2689,7 +2689,7 @@ immutable DurationLocale IS_ = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/it.json
+// // Source: locales/it.json
 // Italian locale.
 immutable DurationLocale IT = DurationLocale(
     code: "it",
@@ -2735,7 +2735,7 @@ immutable DurationLocale IT = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ja.json
+// // Source: locales/ja.json
 // Japanese locale.
 immutable DurationLocale JA = DurationLocale(
     code: "ja",
@@ -2779,7 +2779,7 @@ immutable DurationLocale JA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/jv.json
+// // Source: locales/jv.json
 // Javanese locale.
 immutable DurationLocale JV = DurationLocale(
     code: "jv",
@@ -2824,7 +2824,7 @@ immutable DurationLocale JV = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ka.json
+// // Source: locales/ka.json
 // Georgian locale.
 immutable DurationLocale KA = DurationLocale(
     code: "ka",
@@ -2870,7 +2870,7 @@ immutable DurationLocale KA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kbp.json
+// // Source: locales/kbp.json
 // Kabiye locale.
 immutable DurationLocale KBP = DurationLocale(
     code: "kbp",
@@ -2915,7 +2915,7 @@ immutable DurationLocale KBP = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kek.json
+// // Source: locales/kek.json
 // Q'eqchi' locale.
 immutable DurationLocale KEK = DurationLocale(
     code: "kek",
@@ -2959,7 +2959,7 @@ immutable DurationLocale KEK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ki.json
+// // Source: locales/ki.json
 // Kikuyu locale.
 immutable DurationLocale KI = DurationLocale(
     code: "ki",
@@ -3004,7 +3004,7 @@ immutable DurationLocale KI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kk.json
+// // Source: locales/kk.json
 // Kazakh locale.
 immutable DurationLocale KK = DurationLocale(
     code: "kk",
@@ -3050,7 +3050,7 @@ immutable DurationLocale KK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kl.json
+// // Source: locales/kl.json
 // Kalaallisut locale.
 immutable DurationLocale KL = DurationLocale(
     code: "kl",
@@ -3094,7 +3094,7 @@ immutable DurationLocale KL = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/km.json
+// // Source: locales/km.json
 // Khmer locale.
 immutable DurationLocale KM = DurationLocale(
     code: "km",
@@ -3139,7 +3139,7 @@ immutable DurationLocale KM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kn.json
+// // Source: locales/kn.json
 // Kannada locale.
 immutable DurationLocale KN = DurationLocale(
     code: "kn",
@@ -3185,7 +3185,7 @@ immutable DurationLocale KN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ko.json
+// // Source: locales/ko.json
 // Korean locale.
 immutable DurationLocale KO = DurationLocale(
     code: "ko",
@@ -3229,7 +3229,7 @@ immutable DurationLocale KO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kpe.json
+// // Source: locales/kpe.json
 // Kpelle locale.
 immutable DurationLocale KPE = DurationLocale(
     code: "kpe",
@@ -3274,7 +3274,7 @@ immutable DurationLocale KPE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kri.json
+// // Source: locales/kri.json
 // Krio locale.
 immutable DurationLocale KRI = DurationLocale(
     code: "kri",
@@ -3318,7 +3318,7 @@ immutable DurationLocale KRI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ktu.json
+// // Source: locales/ktu.json
 // Kituba locale.
 immutable DurationLocale KTU = DurationLocale(
     code: "ktu",
@@ -3364,7 +3364,7 @@ immutable DurationLocale KTU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ku.json
+// // Source: locales/ku.json
 // Kurdish locale.
 immutable DurationLocale KU = DurationLocale(
     code: "ku",
@@ -3410,7 +3410,7 @@ immutable DurationLocale KU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/kw.json
+// // Source: locales/kw.json
 // Cornish locale.
 immutable DurationLocale KW = DurationLocale(
     code: "kw",
@@ -3461,7 +3461,7 @@ immutable DurationLocale KW = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ky.json
+// // Source: locales/ky.json
 // Kyrgyz locale.
 immutable DurationLocale KY = DurationLocale(
     code: "ky",
@@ -3507,7 +3507,7 @@ immutable DurationLocale KY = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/lb.json
+// // Source: locales/lb.json
 // Luxembourgish locale.
 immutable DurationLocale LB = DurationLocale(
     code: "lb",
@@ -3552,7 +3552,7 @@ immutable DurationLocale LB = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/lg.json
+// // Source: locales/lg.json
 // Luganda locale.
 immutable DurationLocale LG = DurationLocale(
     code: "lg",
@@ -3598,7 +3598,7 @@ immutable DurationLocale LG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ln.json
+// // Source: locales/ln.json
 // Lingala locale.
 immutable DurationLocale LN = DurationLocale(
     code: "ln",
@@ -3644,7 +3644,7 @@ immutable DurationLocale LN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/lo.json
+// // Source: locales/lo.json
 // Lao locale.
 immutable DurationLocale LO = DurationLocale(
     code: "lo",
@@ -3689,7 +3689,7 @@ immutable DurationLocale LO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/lt.json
+// // Source: locales/lt.json
 // Lithuanian locale.
 immutable DurationLocale LT = DurationLocale(
     code: "lt",
@@ -3737,7 +3737,7 @@ immutable DurationLocale LT = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/luo.json
+// // Source: locales/luo.json
 // Dholuo locale.
 immutable DurationLocale LUO = DurationLocale(
     code: "luo",
@@ -3782,7 +3782,7 @@ immutable DurationLocale LUO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/lv.json
+// // Source: locales/lv.json
 // Latvian locale.
 immutable DurationLocale LV = DurationLocale(
     code: "lv",
@@ -3830,7 +3830,7 @@ immutable DurationLocale LV = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mam.json
+// // Source: locales/mam.json
 // Mam locale.
 immutable DurationLocale MAM = DurationLocale(
     code: "mam",
@@ -3874,7 +3874,7 @@ immutable DurationLocale MAM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/men.json
+// // Source: locales/men.json
 // Mende locale.
 immutable DurationLocale MEN = DurationLocale(
     code: "men",
@@ -3920,7 +3920,7 @@ immutable DurationLocale MEN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mfe.json
+// // Source: locales/mfe.json
 // Mauritian Creole locale.
 immutable DurationLocale MFE = DurationLocale(
     code: "mfe",
@@ -3965,7 +3965,7 @@ immutable DurationLocale MFE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mg.json
+// // Source: locales/mg.json
 // Malagasy locale.
 immutable DurationLocale MG = DurationLocale(
     code: "mg",
@@ -4011,7 +4011,7 @@ immutable DurationLocale MG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mi.json
+// // Source: locales/mi.json
 // Māori locale.
 immutable DurationLocale MI = DurationLocale(
     code: "mi",
@@ -4057,7 +4057,7 @@ immutable DurationLocale MI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mk.json
+// // Source: locales/mk.json
 // Macedonian locale.
 immutable DurationLocale MK = DurationLocale(
     code: "mk",
@@ -4105,7 +4105,7 @@ immutable DurationLocale MK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ml.json
+// // Source: locales/ml.json
 // Malayalam locale.
 immutable DurationLocale ML = DurationLocale(
     code: "ml",
@@ -4151,7 +4151,7 @@ immutable DurationLocale ML = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mn.json
+// // Source: locales/mn.json
 // Mongolian locale.
 immutable DurationLocale MN = DurationLocale(
     code: "mn",
@@ -4197,7 +4197,7 @@ immutable DurationLocale MN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mnk.json
+// // Source: locales/mnk.json
 // Mandinka locale.
 immutable DurationLocale MNK = DurationLocale(
     code: "mnk",
@@ -4242,7 +4242,7 @@ immutable DurationLocale MNK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mos.json
+// // Source: locales/mos.json
 // Moore locale.
 immutable DurationLocale MOS = DurationLocale(
     code: "mos",
@@ -4287,7 +4287,7 @@ immutable DurationLocale MOS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mr.json
+// // Source: locales/mr.json
 // Marathi locale.
 immutable DurationLocale MR = DurationLocale(
     code: "mr",
@@ -4333,7 +4333,7 @@ immutable DurationLocale MR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ms.json
+// // Source: locales/ms.json
 // Malay locale.
 immutable DurationLocale MS = DurationLocale(
     code: "ms",
@@ -4378,7 +4378,7 @@ immutable DurationLocale MS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/mt.json
+// // Source: locales/mt.json
 // Maltese locale.
 immutable DurationLocale MT = DurationLocale(
     code: "mt",
@@ -4428,7 +4428,7 @@ immutable DurationLocale MT = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/my.json
+// // Source: locales/my.json
 // Burmese locale.
 immutable DurationLocale MY = DurationLocale(
     code: "my",
@@ -4473,7 +4473,7 @@ immutable DurationLocale MY = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/nb.json
+// // Source: locales/nb.json
 // Norwegian Bokmål locale.
 immutable DurationLocale NB = DurationLocale(
     code: "nb",
@@ -4518,7 +4518,7 @@ immutable DurationLocale NB = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/nd.json
+// // Source: locales/nd.json
 // Northern Ndebele locale.
 immutable DurationLocale ND = DurationLocale(
     code: "nd",
@@ -4564,7 +4564,7 @@ immutable DurationLocale ND = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ne.json
+// // Source: locales/ne.json
 // Nepali locale.
 immutable DurationLocale NE = DurationLocale(
     code: "ne",
@@ -4610,7 +4610,7 @@ immutable DurationLocale NE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ng.json
+// // Source: locales/ng.json
 // Oshiwambo locale.
 immutable DurationLocale NG = DurationLocale(
     code: "ng",
@@ -4656,7 +4656,7 @@ immutable DurationLocale NG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/nl.json
+// // Source: locales/nl.json
 // Dutch locale.
 immutable DurationLocale NL = DurationLocale(
     code: "nl",
@@ -4701,7 +4701,7 @@ immutable DurationLocale NL = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/nr.json
+// // Source: locales/nr.json
 // Southern Ndebele locale.
 immutable DurationLocale NR = DurationLocale(
     code: "nr",
@@ -4746,7 +4746,7 @@ immutable DurationLocale NR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/nso.json
+// // Source: locales/nso.json
 // Northern Sotho locale.
 immutable DurationLocale NSO = DurationLocale(
     code: "nso",
@@ -4792,7 +4792,7 @@ immutable DurationLocale NSO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/nus.json
+// // Source: locales/nus.json
 // Nuer locale.
 immutable DurationLocale NUS = DurationLocale(
     code: "nus",
@@ -4838,7 +4838,7 @@ immutable DurationLocale NUS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ny.json
+// // Source: locales/ny.json
 // Chichewa locale.
 immutable DurationLocale NY = DurationLocale(
     code: "ny",
@@ -4884,7 +4884,7 @@ immutable DurationLocale NY = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/om.json
+// // Source: locales/om.json
 // Oromo locale.
 immutable DurationLocale OM = DurationLocale(
     code: "om",
@@ -4930,7 +4930,7 @@ immutable DurationLocale OM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/or.json
+// // Source: locales/or.json
 // Odia locale.
 immutable DurationLocale OR = DurationLocale(
     code: "or",
@@ -4976,7 +4976,7 @@ immutable DurationLocale OR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/pa.json
+// // Source: locales/pa.json
 // Punjabi locale.
 immutable DurationLocale PA = DurationLocale(
     code: "pa",
@@ -5022,7 +5022,7 @@ immutable DurationLocale PA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/pis.json
+// // Source: locales/pis.json
 // Pijin locale.
 immutable DurationLocale PIS = DurationLocale(
     code: "pis",
@@ -5066,7 +5066,7 @@ immutable DurationLocale PIS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/pl.json
+// // Source: locales/pl.json
 // Polish locale.
 immutable DurationLocale PL = DurationLocale(
     code: "pl",
@@ -5115,7 +5115,7 @@ immutable DurationLocale PL = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/pov.json
+// // Source: locales/pov.json
 // Guinea-Bissau Creole locale.
 immutable DurationLocale POV = DurationLocale(
     code: "pov",
@@ -5160,7 +5160,7 @@ immutable DurationLocale POV = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ps.json
+// // Source: locales/ps.json
 // Pashto locale.
 immutable DurationLocale PS = DurationLocale(
     code: "ps",
@@ -5206,7 +5206,7 @@ immutable DurationLocale PS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/pt.json
+// // Source: locales/pt.json
 // Portuguese locale.
 immutable DurationLocale PT = DurationLocale(
     code: "pt",
@@ -5252,7 +5252,7 @@ immutable DurationLocale PT = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/qu.json
+// // Source: locales/qu.json
 // Quechua locale.
 immutable DurationLocale QU = DurationLocale(
     code: "qu",
@@ -5297,7 +5297,7 @@ immutable DurationLocale QU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/quc.json
+// // Source: locales/quc.json
 // K'iche' locale.
 immutable DurationLocale QUC = DurationLocale(
     code: "quc",
@@ -5341,7 +5341,7 @@ immutable DurationLocale QUC = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ro.json
+// // Source: locales/ro.json
 // Romanian locale.
 immutable DurationLocale RO = DurationLocale(
     code: "ro",
@@ -5388,7 +5388,7 @@ immutable DurationLocale RO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ru.json
+// // Source: locales/ru.json
 // Russian locale.
 immutable DurationLocale RU = DurationLocale(
     code: "ru",
@@ -5437,7 +5437,7 @@ immutable DurationLocale RU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/rw.json
+// // Source: locales/rw.json
 // Kinyarwanda locale.
 immutable DurationLocale RW = DurationLocale(
     code: "rw",
@@ -5483,7 +5483,7 @@ immutable DurationLocale RW = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sar.json
+// // Source: locales/sar.json
 // Sara locale.
 immutable DurationLocale SAR = DurationLocale(
     code: "sar",
@@ -5528,7 +5528,7 @@ immutable DurationLocale SAR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sd.json
+// // Source: locales/sd.json
 // Sindhi locale.
 immutable DurationLocale SD = DurationLocale(
     code: "sd",
@@ -5574,7 +5574,7 @@ immutable DurationLocale SD = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sg.json
+// // Source: locales/sg.json
 // Sango locale.
 immutable DurationLocale SG = DurationLocale(
     code: "sg",
@@ -5619,7 +5619,7 @@ immutable DurationLocale SG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/shi.json
+// // Source: locales/shi.json
 // Tachelhit locale.
 immutable DurationLocale SHI = DurationLocale(
     code: "shi",
@@ -5666,7 +5666,7 @@ immutable DurationLocale SHI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/shn.json
+// // Source: locales/shn.json
 // Shan locale.
 immutable DurationLocale SHN = DurationLocale(
     code: "shn",
@@ -5710,7 +5710,7 @@ immutable DurationLocale SHN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/si.json
+// // Source: locales/si.json
 // Sinhala locale.
 immutable DurationLocale SI = DurationLocale(
     code: "si",
@@ -5756,7 +5756,7 @@ immutable DurationLocale SI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sk.json
+// // Source: locales/sk.json
 // Slovak locale.
 immutable DurationLocale SK = DurationLocale(
     code: "sk",
@@ -5802,7 +5802,7 @@ immutable DurationLocale SK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sl.json
+// // Source: locales/sl.json
 // Slovenian locale.
 immutable DurationLocale SL = DurationLocale(
     code: "sl",
@@ -5851,7 +5851,7 @@ immutable DurationLocale SL = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sn.json
+// // Source: locales/sn.json
 // Shona locale.
 immutable DurationLocale SN = DurationLocale(
     code: "sn",
@@ -5897,7 +5897,7 @@ immutable DurationLocale SN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/snk.json
+// // Source: locales/snk.json
 // Soninke locale.
 immutable DurationLocale SNK = DurationLocale(
     code: "snk",
@@ -5942,7 +5942,7 @@ immutable DurationLocale SNK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/so.json
+// // Source: locales/so.json
 // Somali locale.
 immutable DurationLocale SO = DurationLocale(
     code: "so",
@@ -5988,7 +5988,7 @@ immutable DurationLocale SO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sq.json
+// // Source: locales/sq.json
 // Albanian locale.
 immutable DurationLocale SQ = DurationLocale(
     code: "sq",
@@ -6034,7 +6034,7 @@ immutable DurationLocale SQ = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sr.json
+// // Source: locales/sr.json
 // Serbian locale.
 immutable DurationLocale SR = DurationLocale(
     code: "sr",
@@ -6083,7 +6083,7 @@ immutable DurationLocale SR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ss.json
+// // Source: locales/ss.json
 // siSwati locale.
 immutable DurationLocale SS = DurationLocale(
     code: "ss",
@@ -6129,7 +6129,7 @@ immutable DurationLocale SS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/st.json
+// // Source: locales/st.json
 // Southern Sotho locale.
 immutable DurationLocale ST = DurationLocale(
     code: "st",
@@ -6175,7 +6175,7 @@ immutable DurationLocale ST = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/su.json
+// // Source: locales/su.json
 // Sundanese locale.
 immutable DurationLocale SU = DurationLocale(
     code: "su",
@@ -6220,7 +6220,7 @@ immutable DurationLocale SU = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/suk.json
+// // Source: locales/suk.json
 // Sukuma locale.
 immutable DurationLocale SUK = DurationLocale(
     code: "suk",
@@ -6266,7 +6266,7 @@ immutable DurationLocale SUK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sv.json
+// // Source: locales/sv.json
 // Swedish locale.
 immutable DurationLocale SV = DurationLocale(
     code: "sv",
@@ -6311,7 +6311,7 @@ immutable DurationLocale SV = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/sw.json
+// // Source: locales/sw.json
 // Swahili locale.
 immutable DurationLocale SW = DurationLocale(
     code: "sw",
@@ -6357,7 +6357,7 @@ immutable DurationLocale SW = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ta.json
+// // Source: locales/ta.json
 // Tamil locale.
 immutable DurationLocale TA = DurationLocale(
     code: "ta",
@@ -6402,7 +6402,7 @@ immutable DurationLocale TA = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/te.json
+// // Source: locales/te.json
 // Telugu locale.
 immutable DurationLocale TE = DurationLocale(
     code: "te",
@@ -6448,7 +6448,7 @@ immutable DurationLocale TE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tem.json
+// // Source: locales/tem.json
 // Temne locale.
 immutable DurationLocale TEM = DurationLocale(
     code: "tem",
@@ -6494,7 +6494,7 @@ immutable DurationLocale TEM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tet.json
+// // Source: locales/tet.json
 // Tetum locale.
 immutable DurationLocale TET = DurationLocale(
     code: "tet",
@@ -6538,7 +6538,7 @@ immutable DurationLocale TET = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tg.json
+// // Source: locales/tg.json
 // Tajik locale.
 immutable DurationLocale TG = DurationLocale(
     code: "tg",
@@ -6583,7 +6583,7 @@ immutable DurationLocale TG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/th.json
+// // Source: locales/th.json
 // Thai locale.
 immutable DurationLocale TH = DurationLocale(
     code: "th",
@@ -6628,7 +6628,7 @@ immutable DurationLocale TH = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ti.json
+// // Source: locales/ti.json
 // Tigrinya locale.
 immutable DurationLocale TI = DurationLocale(
     code: "ti",
@@ -6674,7 +6674,7 @@ immutable DurationLocale TI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tig.json
+// // Source: locales/tig.json
 // Tigre locale.
 immutable DurationLocale TIG = DurationLocale(
     code: "tig",
@@ -6720,7 +6720,7 @@ immutable DurationLocale TIG = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tk.json
+// // Source: locales/tk.json
 // Turkmen locale.
 immutable DurationLocale TK = DurationLocale(
     code: "tk",
@@ -6766,7 +6766,7 @@ immutable DurationLocale TK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tn.json
+// // Source: locales/tn.json
 // Tswana locale.
 immutable DurationLocale TN = DurationLocale(
     code: "tn",
@@ -6812,7 +6812,7 @@ immutable DurationLocale TN = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tpi.json
+// // Source: locales/tpi.json
 // Tok Pisin locale.
 immutable DurationLocale TPI = DurationLocale(
     code: "tpi",
@@ -6856,7 +6856,7 @@ immutable DurationLocale TPI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tr.json
+// // Source: locales/tr.json
 // Turkish locale.
 immutable DurationLocale TR = DurationLocale(
     code: "tr",
@@ -6902,7 +6902,7 @@ immutable DurationLocale TR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ts.json
+// // Source: locales/ts.json
 // Tsonga locale.
 immutable DurationLocale TS = DurationLocale(
     code: "ts",
@@ -6948,7 +6948,7 @@ immutable DurationLocale TS = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tum.json
+// // Source: locales/tum.json
 // Tumbuka locale.
 immutable DurationLocale TUM = DurationLocale(
     code: "tum",
@@ -6993,7 +6993,7 @@ immutable DurationLocale TUM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/tzm.json
+// // Source: locales/tzm.json
 // Central Atlas Tamazight locale.
 immutable DurationLocale TZM = DurationLocale(
     code: "tzm",
@@ -7039,7 +7039,7 @@ immutable DurationLocale TZM = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/uk.json
+// // Source: locales/uk.json
 // Ukrainian locale.
 immutable DurationLocale UK = DurationLocale(
     code: "uk",
@@ -7088,7 +7088,7 @@ immutable DurationLocale UK = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/umb.json
+// // Source: locales/umb.json
 // Umbundu locale.
 immutable DurationLocale UMB = DurationLocale(
     code: "umb",
@@ -7134,7 +7134,7 @@ immutable DurationLocale UMB = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ur.json
+// // Source: locales/ur.json
 // Urdu locale.
 immutable DurationLocale UR = DurationLocale(
     code: "ur",
@@ -7180,7 +7180,7 @@ immutable DurationLocale UR = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/uz.json
+// // Source: locales/uz.json
 // Uzbek locale.
 immutable DurationLocale UZ = DurationLocale(
     code: "uz",
@@ -7226,7 +7226,7 @@ immutable DurationLocale UZ = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/ve.json
+// // Source: locales/ve.json
 // Venda locale.
 immutable DurationLocale VE = DurationLocale(
     code: "ve",
@@ -7271,7 +7271,7 @@ immutable DurationLocale VE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/vi.json
+// // Source: locales/vi.json
 // Vietnamese locale.
 immutable DurationLocale VI = DurationLocale(
     code: "vi",
@@ -7316,7 +7316,7 @@ immutable DurationLocale VI = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/vmw.json
+// // Source: locales/vmw.json
 // Makhuwa locale.
 immutable DurationLocale VMW = DurationLocale(
     code: "vmw",
@@ -7362,7 +7362,7 @@ immutable DurationLocale VMW = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/wo.json
+// // Source: locales/wo.json
 // Wolof locale.
 immutable DurationLocale WO = DurationLocale(
     code: "wo",
@@ -7407,7 +7407,7 @@ immutable DurationLocale WO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/xh.json
+// // Source: locales/xh.json
 // Xhosa locale.
 immutable DurationLocale XH = DurationLocale(
     code: "xh",
@@ -7453,7 +7453,7 @@ immutable DurationLocale XH = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/yao.json
+// // Source: locales/yao.json
 // Yao locale.
 immutable DurationLocale YAO = DurationLocale(
     code: "yao",
@@ -7498,7 +7498,7 @@ immutable DurationLocale YAO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/yo.json
+// // Source: locales/yo.json
 // Yoruba locale.
 immutable DurationLocale YO = DurationLocale(
     code: "yo",
@@ -7543,7 +7543,7 @@ immutable DurationLocale YO = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/yue.json
+// // Source: locales/yue.json
 // Cantonese locale.
 immutable DurationLocale YUE = DurationLocale(
     code: "yue",
@@ -7588,7 +7588,7 @@ immutable DurationLocale YUE = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/zdj.json
+// // Source: locales/zdj.json
 // Comorian locale.
 immutable DurationLocale ZDJ = DurationLocale(
     code: "zdj",
@@ -7633,7 +7633,7 @@ immutable DurationLocale ZDJ = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/zh.json
+// // Source: locales/zh.json
 // Chinese locale.
 immutable DurationLocale ZH = DurationLocale(
     code: "zh",
@@ -7677,7 +7677,7 @@ immutable DurationLocale ZH = DurationLocale(
     ),
 );
 
-// // Source: duration/locales/src/zu.json
+// // Source: locales/zu.json
 // Zulu locale.
 immutable DurationLocale ZU = DurationLocale(
     code: "zu",

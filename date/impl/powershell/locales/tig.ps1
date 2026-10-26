@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/tig.json
+# Source: locales/tig.json
 
 function locale_tig {
     $months = @('Yannaayer', 'Febbraayer', 'Maaris', 'Abriil', 'Maay', 'Yuunyo', 'Yulyo', 'Agoosṭo', 'Seṭṭembre', 'Oṭṭoobre', 'Noovembre', 'Diičembre')

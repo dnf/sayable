@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/hr.json
+# Source: locales/hr.json
 
 _sayabledate_locale_hr() {
     _months=('siječanj' 'veljača' 'ožujak' 'travanj' 'svibanj' 'lipanj' 'srpanj' 'kolovoz' 'rujan' 'listopad' 'studeni' 'prosinac')

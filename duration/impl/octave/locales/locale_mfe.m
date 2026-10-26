@@ -7,7 +7,7 @@
 % ║ Changes will be overwritten the next time codegen runs.      ║
 % ║ Edit the generator or locale JSON instead.                   ║
 % ╚══════════════════════════════════════════════════════════════╝
-% Source: duration/locales/src/mfe.json
+% Source: locales/mfe.json
 
 function loc = locale_mfe()
   loc.code = 'mfe';

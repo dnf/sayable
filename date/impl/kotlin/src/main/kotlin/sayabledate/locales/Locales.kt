@@ -17,7 +17,7 @@ import sayabledate.*
  */
 public object Locales {
 
-    // Source: date/locales/src/af.json
+    // Source: locales/af.json
     // ================================================================
     // AF — Afrikaans
     // ================================================================
@@ -52,7 +52,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ak.json
+    // Source: locales/ak.json
     // ================================================================
     // AK — Akan
     // ================================================================
@@ -87,7 +87,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/am.json
+    // Source: locales/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
@@ -122,7 +122,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ar.json
+    // Source: locales/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
@@ -157,7 +157,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ay.json
+    // Source: locales/ay.json
     // ================================================================
     // AY — Aymara
     // ================================================================
@@ -190,7 +190,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/az.json
+    // Source: locales/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
@@ -225,7 +225,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/bci.json
+    // Source: locales/bci.json
     // ================================================================
     // BCI — Baoulé
     // ================================================================
@@ -260,7 +260,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/be.json
+    // Source: locales/be.json
     // ================================================================
     // BE — Belarusian
     // ================================================================
@@ -296,7 +296,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/bem.json
+    // Source: locales/bem.json
     // ================================================================
     // BEM — Bemba
     // ================================================================
@@ -331,7 +331,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/bg.json
+    // Source: locales/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
@@ -366,7 +366,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/bi.json
+    // Source: locales/bi.json
     // ================================================================
     // BI — Bislama
     // ================================================================
@@ -401,7 +401,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/bm.json
+    // Source: locales/bm.json
     // ================================================================
     // BM — Bambara
     // ================================================================
@@ -436,7 +436,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/bn.json
+    // Source: locales/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
@@ -471,7 +471,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/br.json
+    // Source: locales/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
@@ -504,7 +504,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/bs.json
+    // Source: locales/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
@@ -539,7 +539,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ca.json
+    // Source: locales/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
@@ -574,7 +574,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/cak.json
+    // Source: locales/cak.json
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
@@ -609,7 +609,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ================================================================
     // CEB — Cebuano
     // ================================================================
@@ -644,7 +644,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/cs.json
+    // Source: locales/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
@@ -680,7 +680,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/cy.json
+    // Source: locales/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
@@ -715,7 +715,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/da.json
+    // Source: locales/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
@@ -750,7 +750,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/de.json
+    // Source: locales/de.json
     // ================================================================
     // DE — German
     // ================================================================
@@ -785,7 +785,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/din.json
+    // Source: locales/din.json
     // ================================================================
     // DIN — Dinka
     // ================================================================
@@ -820,7 +820,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/dje.json
+    // Source: locales/dje.json
     // ================================================================
     // DJE — Zarma
     // ================================================================
@@ -855,7 +855,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/dv.json
+    // Source: locales/dv.json
     // ================================================================
     // DV — Dhivehi
     // ================================================================
@@ -890,7 +890,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ================================================================
     // DYU — Dyula
     // ================================================================
@@ -925,7 +925,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/dz.json
+    // Source: locales/dz.json
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
@@ -960,7 +960,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ee.json
+    // Source: locales/ee.json
     // ================================================================
     // EE — Ewe
     // ================================================================
@@ -995,7 +995,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/el.json
+    // Source: locales/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
@@ -1031,7 +1031,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/en.json
+    // Source: locales/en.json
     // ================================================================
     // EN — English
     // ================================================================
@@ -1066,7 +1066,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/es.json
+    // Source: locales/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
@@ -1101,7 +1101,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/et.json
+    // Source: locales/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
@@ -1136,7 +1136,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/eu.json
+    // Source: locales/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
@@ -1171,7 +1171,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/fa.json
+    // Source: locales/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
@@ -1206,7 +1206,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/fan.json
+    // Source: locales/fan.json
     // ================================================================
     // FAN — Fang
     // ================================================================
@@ -1241,7 +1241,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ff.json
+    // Source: locales/ff.json
     // ================================================================
     // FF — Fulah
     // ================================================================
@@ -1276,7 +1276,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/fi.json
+    // Source: locales/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
@@ -1312,7 +1312,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/fil.json
+    // Source: locales/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
@@ -1347,7 +1347,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/fj.json
+    // Source: locales/fj.json
     // ================================================================
     // FJ — Fijian
     // ================================================================
@@ -1382,7 +1382,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/fon.json
+    // Source: locales/fon.json
     // ================================================================
     // FON — Fon
     // ================================================================
@@ -1417,7 +1417,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/fr.json
+    // Source: locales/fr.json
     // ================================================================
     // FR — French
     // ================================================================
@@ -1452,7 +1452,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ga.json
+    // Source: locales/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
@@ -1487,7 +1487,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/gd.json
+    // Source: locales/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
@@ -1522,7 +1522,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/gl.json
+    // Source: locales/gl.json
     // ================================================================
     // GL — Galician
     // ================================================================
@@ -1557,7 +1557,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/gn.json
+    // Source: locales/gn.json
     // ================================================================
     // GN — Guarani
     // ================================================================
@@ -1592,7 +1592,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/gu.json
+    // Source: locales/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
@@ -1627,7 +1627,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/gv.json
+    // Source: locales/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
@@ -1660,7 +1660,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ha.json
+    // Source: locales/ha.json
     // ================================================================
     // HA — Hausa
     // ================================================================
@@ -1695,7 +1695,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/he.json
+    // Source: locales/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
@@ -1730,7 +1730,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/hi.json
+    // Source: locales/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
@@ -1765,7 +1765,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ================================================================
     // HMN — Hmong
     // ================================================================
@@ -1800,7 +1800,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/hr.json
+    // Source: locales/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
@@ -1836,7 +1836,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ht.json
+    // Source: locales/ht.json
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
@@ -1871,7 +1871,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/hu.json
+    // Source: locales/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
@@ -1906,7 +1906,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/hy.json
+    // Source: locales/hy.json
     // ================================================================
     // HY — Armenian
     // ================================================================
@@ -1941,7 +1941,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/id.json
+    // Source: locales/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
@@ -1976,7 +1976,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ig.json
+    // Source: locales/ig.json
     // ================================================================
     // IG — Igbo
     // ================================================================
@@ -2011,7 +2011,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/is.json
+    // Source: locales/is.json
     // ================================================================
     // IS — Icelandic
     // ================================================================
@@ -2046,7 +2046,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/it.json
+    // Source: locales/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
@@ -2081,7 +2081,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ja.json
+    // Source: locales/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
@@ -2116,7 +2116,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/jv.json
+    // Source: locales/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
@@ -2151,7 +2151,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ka.json
+    // Source: locales/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
@@ -2186,7 +2186,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ================================================================
     // KBP — Kabiye
     // ================================================================
@@ -2221,7 +2221,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kek.json
+    // Source: locales/kek.json
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
@@ -2254,7 +2254,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ki.json
+    // Source: locales/ki.json
     // ================================================================
     // KI — Kikuyu
     // ================================================================
@@ -2287,7 +2287,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kk.json
+    // Source: locales/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
@@ -2322,7 +2322,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kl.json
+    // Source: locales/kl.json
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
@@ -2357,7 +2357,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/km.json
+    // Source: locales/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
@@ -2392,7 +2392,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kn.json
+    // Source: locales/kn.json
     // ================================================================
     // KN — Kannada
     // ================================================================
@@ -2427,7 +2427,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ko.json
+    // Source: locales/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
@@ -2462,7 +2462,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ================================================================
     // KPE — Kpelle
     // ================================================================
@@ -2497,7 +2497,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kri.json
+    // Source: locales/kri.json
     // ================================================================
     // KRI — Krio
     // ================================================================
@@ -2532,7 +2532,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ================================================================
     // KTU — Kituba
     // ================================================================
@@ -2567,7 +2567,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ku.json
+    // Source: locales/ku.json
     // ================================================================
     // KU — Kurdish
     // ================================================================
@@ -2602,7 +2602,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/kw.json
+    // Source: locales/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
@@ -2635,7 +2635,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ky.json
+    // Source: locales/ky.json
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
@@ -2670,7 +2670,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/lb.json
+    // Source: locales/lb.json
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
@@ -2705,7 +2705,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/lg.json
+    // Source: locales/lg.json
     // ================================================================
     // LG — Luganda
     // ================================================================
@@ -2740,7 +2740,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ln.json
+    // Source: locales/ln.json
     // ================================================================
     // LN — Lingala
     // ================================================================
@@ -2775,7 +2775,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/lo.json
+    // Source: locales/lo.json
     // ================================================================
     // LO — Lao
     // ================================================================
@@ -2810,7 +2810,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/lt.json
+    // Source: locales/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
@@ -2846,7 +2846,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/luo.json
+    // Source: locales/luo.json
     // ================================================================
     // LUO — Dholuo
     // ================================================================
@@ -2880,7 +2880,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/lv.json
+    // Source: locales/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
@@ -2915,7 +2915,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mam.json
+    // Source: locales/mam.json
     // ================================================================
     // MAM — Mam
     // ================================================================
@@ -2948,7 +2948,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/men.json
+    // Source: locales/men.json
     // ================================================================
     // MEN — Mende
     // ================================================================
@@ -2983,7 +2983,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
@@ -3018,7 +3018,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mg.json
+    // Source: locales/mg.json
     // ================================================================
     // MG — Malagasy
     // ================================================================
@@ -3053,7 +3053,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mi.json
+    // Source: locales/mi.json
     // ================================================================
     // MI — Māori
     // ================================================================
@@ -3088,7 +3088,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mk.json
+    // Source: locales/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
@@ -3123,7 +3123,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ml.json
+    // Source: locales/ml.json
     // ================================================================
     // ML — Malayalam
     // ================================================================
@@ -3158,7 +3158,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mn.json
+    // Source: locales/mn.json
     // ================================================================
     // MN — Mongolian
     // ================================================================
@@ -3193,7 +3193,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ================================================================
     // MNK — Mandinka
     // ================================================================
@@ -3228,7 +3228,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mos.json
+    // Source: locales/mos.json
     // ================================================================
     // MOS — Moore
     // ================================================================
@@ -3263,7 +3263,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mr.json
+    // Source: locales/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
@@ -3298,7 +3298,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ms.json
+    // Source: locales/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
@@ -3333,7 +3333,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/mt.json
+    // Source: locales/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
@@ -3368,7 +3368,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/my.json
+    // Source: locales/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
@@ -3403,7 +3403,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/nb.json
+    // Source: locales/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
@@ -3438,7 +3438,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/nd.json
+    // Source: locales/nd.json
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
@@ -3473,7 +3473,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ne.json
+    // Source: locales/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
@@ -3508,7 +3508,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ng.json
+    // Source: locales/ng.json
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
@@ -3543,7 +3543,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/nl.json
+    // Source: locales/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
@@ -3578,7 +3578,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/nr.json
+    // Source: locales/nr.json
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
@@ -3611,7 +3611,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/nso.json
+    // Source: locales/nso.json
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
@@ -3646,7 +3646,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/nus.json
+    // Source: locales/nus.json
     // ================================================================
     // NUS — Nuer
     // ================================================================
@@ -3681,7 +3681,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ny.json
+    // Source: locales/ny.json
     // ================================================================
     // NY — Chichewa
     // ================================================================
@@ -3716,7 +3716,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/om.json
+    // Source: locales/om.json
     // ================================================================
     // OM — Oromo
     // ================================================================
@@ -3751,7 +3751,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/or.json
+    // Source: locales/or.json
     // ================================================================
     // OR — Odia
     // ================================================================
@@ -3786,7 +3786,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/pa.json
+    // Source: locales/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
@@ -3821,7 +3821,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/pis.json
+    // Source: locales/pis.json
     // ================================================================
     // PIS — Pijin
     // ================================================================
@@ -3856,7 +3856,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/pl.json
+    // Source: locales/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
@@ -3892,7 +3892,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/pov.json
+    // Source: locales/pov.json
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
@@ -3927,7 +3927,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ps.json
+    // Source: locales/ps.json
     // ================================================================
     // PS — Pashto
     // ================================================================
@@ -3962,7 +3962,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/pt.json
+    // Source: locales/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================
@@ -3997,7 +3997,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/qu.json
+    // Source: locales/qu.json
     // ================================================================
     // QU — Quechua
     // ================================================================
@@ -4032,7 +4032,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/quc.json
+    // Source: locales/quc.json
     // ================================================================
     // QUC — K'iche'
     // ================================================================
@@ -4067,7 +4067,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ro.json
+    // Source: locales/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
@@ -4103,7 +4103,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ru.json
+    // Source: locales/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
@@ -4139,7 +4139,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/rw.json
+    // Source: locales/rw.json
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
@@ -4174,7 +4174,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sar.json
+    // Source: locales/sar.json
     // ================================================================
     // SAR — Sara
     // ================================================================
@@ -4209,7 +4209,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sd.json
+    // Source: locales/sd.json
     // ================================================================
     // SD — Sindhi
     // ================================================================
@@ -4244,7 +4244,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sg.json
+    // Source: locales/sg.json
     // ================================================================
     // SG — Sango
     // ================================================================
@@ -4279,7 +4279,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/shi.json
+    // Source: locales/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
@@ -4312,7 +4312,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/shn.json
+    // Source: locales/shn.json
     // ================================================================
     // SHN — Shan
     // ================================================================
@@ -4347,7 +4347,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/si.json
+    // Source: locales/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
@@ -4382,7 +4382,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sk.json
+    // Source: locales/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
@@ -4418,7 +4418,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sl.json
+    // Source: locales/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
@@ -4454,7 +4454,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sn.json
+    // Source: locales/sn.json
     // ================================================================
     // SN — Shona
     // ================================================================
@@ -4489,7 +4489,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/snk.json
+    // Source: locales/snk.json
     // ================================================================
     // SNK — Soninke
     // ================================================================
@@ -4524,7 +4524,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/so.json
+    // Source: locales/so.json
     // ================================================================
     // SO — Somali
     // ================================================================
@@ -4559,7 +4559,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sq.json
+    // Source: locales/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
@@ -4594,7 +4594,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sr.json
+    // Source: locales/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
@@ -4629,7 +4629,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ss.json
+    // Source: locales/ss.json
     // ================================================================
     // SS — siSwati
     // ================================================================
@@ -4664,7 +4664,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/st.json
+    // Source: locales/st.json
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
@@ -4699,7 +4699,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/su.json
+    // Source: locales/su.json
     // ================================================================
     // SU — Sundanese
     // ================================================================
@@ -4734,7 +4734,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/suk.json
+    // Source: locales/suk.json
     // ================================================================
     // SUK — Sukuma
     // ================================================================
@@ -4769,7 +4769,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sv.json
+    // Source: locales/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
@@ -4804,7 +4804,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/sw.json
+    // Source: locales/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
@@ -4839,7 +4839,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ta.json
+    // Source: locales/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
@@ -4874,7 +4874,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/te.json
+    // Source: locales/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
@@ -4909,7 +4909,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tem.json
+    // Source: locales/tem.json
     // ================================================================
     // TEM — Temne
     // ================================================================
@@ -4944,7 +4944,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tet.json
+    // Source: locales/tet.json
     // ================================================================
     // TET — Tetum
     // ================================================================
@@ -4979,7 +4979,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tg.json
+    // Source: locales/tg.json
     // ================================================================
     // TG — Tajik
     // ================================================================
@@ -5014,7 +5014,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/th.json
+    // Source: locales/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
@@ -5049,7 +5049,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ti.json
+    // Source: locales/ti.json
     // ================================================================
     // TI — Tigrinya
     // ================================================================
@@ -5084,7 +5084,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tig.json
+    // Source: locales/tig.json
     // ================================================================
     // TIG — Tigre
     // ================================================================
@@ -5119,7 +5119,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tk.json
+    // Source: locales/tk.json
     // ================================================================
     // TK — Turkmen
     // ================================================================
@@ -5154,7 +5154,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tn.json
+    // Source: locales/tn.json
     // ================================================================
     // TN — Tswana
     // ================================================================
@@ -5189,7 +5189,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
@@ -5224,7 +5224,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tr.json
+    // Source: locales/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
@@ -5259,7 +5259,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ts.json
+    // Source: locales/ts.json
     // ================================================================
     // TS — Tsonga
     // ================================================================
@@ -5294,7 +5294,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tum.json
+    // Source: locales/tum.json
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
@@ -5327,7 +5327,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
@@ -5360,7 +5360,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/uk.json
+    // Source: locales/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
@@ -5396,7 +5396,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/umb.json
+    // Source: locales/umb.json
     // ================================================================
     // UMB — Umbundu
     // ================================================================
@@ -5431,7 +5431,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ur.json
+    // Source: locales/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
@@ -5466,7 +5466,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/uz.json
+    // Source: locales/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
@@ -5501,7 +5501,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/ve.json
+    // Source: locales/ve.json
     // ================================================================
     // VE — Venda
     // ================================================================
@@ -5535,7 +5535,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/vi.json
+    // Source: locales/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
@@ -5570,7 +5570,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
@@ -5605,7 +5605,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/wo.json
+    // Source: locales/wo.json
     // ================================================================
     // WO — Wolof
     // ================================================================
@@ -5640,7 +5640,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/xh.json
+    // Source: locales/xh.json
     // ================================================================
     // XH — Xhosa
     // ================================================================
@@ -5675,7 +5675,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/yao.json
+    // Source: locales/yao.json
     // ================================================================
     // YAO — Yao
     // ================================================================
@@ -5708,7 +5708,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/yo.json
+    // Source: locales/yo.json
     // ================================================================
     // YO — Yoruba
     // ================================================================
@@ -5743,7 +5743,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/yue.json
+    // Source: locales/yue.json
     // ================================================================
     // YUE — Cantonese
     // ================================================================
@@ -5778,7 +5778,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
@@ -5813,7 +5813,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/zh.json
+    // Source: locales/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================
@@ -5848,7 +5848,7 @@ public object Locales {
         ),
     )
 
-    // Source: date/locales/src/zu.json
+    // Source: locales/zu.json
     // ================================================================
     // ZU — Zulu
     // ================================================================

@@ -1,0 +1,257 @@
+{
+  "code": "da",
+  "name": "Danish",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} dag",
+        "other": "{n} dage"
+      },
+      "week": {
+        "one": "{n} uge",
+        "other": "{n} uger"
+      },
+      "month": {
+        "one": "{n} måned",
+        "other": "{n} måneder"
+      },
+      "year": {
+        "one": "{n} år",
+        "other": "{n} år"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Nyfødt",
+    "stages": {
+      "newborn": "Nyfødt",
+      "infant": "Spædbarn",
+      "toddler": "Småbarn",
+      "child": "Barn",
+      "teenager": "Teenager",
+      "adult": "Voksen"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} dag",
+          "other": "{n} dage"
+        },
+        "week": {
+          "one": "{n} uge",
+          "other": "{n} uger"
+        },
+        "month": {
+          "one": "{n} md.",
+          "other": "{n} mdr."
+        },
+        "year": "{n} år"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d",
+        "week": "{n} u",
+        "month": "{n} m",
+        "year": "{n} år"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "januar",
+      "februar",
+      "marts",
+      "april",
+      "maj",
+      "juni",
+      "juli",
+      "august",
+      "september",
+      "oktober",
+      "november",
+      "december"
+    ],
+    "weekdays": [
+      "søndag",
+      "mandag",
+      "tirsdag",
+      "onsdag",
+      "torsdag",
+      "fredag",
+      "lørdag"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "i dag",
+    "tomorrow": "i morgen",
+    "yesterday": "i går",
+    "dayAfterTomorrow": "i overmorgen",
+    "dayBeforeYesterday": "i forgårs",
+    "thisWeekday": "denne {weekday}",
+    "nextWeekday": "næste {weekday}",
+    "lastWeekday": "sidste {weekday}",
+    "short": {
+      "months": [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "maj",
+        "jun",
+        "jul",
+        "aug",
+        "sep",
+        "okt",
+        "nov",
+        "dec"
+      ],
+      "weekdays": [
+        "søn",
+        "man",
+        "tir",
+        "ons",
+        "tor",
+        "fre",
+        "lør"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekund",
+        "other": "{n} sekunder"
+      },
+      "minute": {
+        "one": "{n} minut",
+        "other": "{n} minutter"
+      },
+      "hour": {
+        "one": "{n} time",
+        "other": "{n} timer"
+      },
+      "day": {
+        "one": "{n} dag",
+        "other": "{n} dage"
+      },
+      "week": {
+        "one": "{n} uge",
+        "other": "{n} uger"
+      },
+      "month": {
+        "one": "{n} måned",
+        "other": "{n} måneder"
+      },
+      "year": {
+        "one": "{n} år",
+        "other": "{n} år"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "lige nu",
+    "ago": "{0} siden",
+    "inFuture": "om {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min.",
+        "hour": "{n} t.",
+        "day": {
+          "one": "{n} dag",
+          "other": "{n} dage"
+        },
+        "week": {
+          "one": "{n} uge",
+          "other": "{n} uger"
+        },
+        "month": {
+          "one": "{n} md.",
+          "other": "{n} mdr."
+        },
+        "year": "{n} år"
+      },
+      "ago": "{0} siden",
+      "inFuture": "om {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} m",
+        "hour": "{n} t",
+        "day": "{n} d",
+        "week": "{n} u",
+        "month": "{n} m",
+        "year": "{n} år"
+      },
+      "delimiter": "",
+      "ago": "{0} siden",
+      "inFuture": "om {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "tolv",
+        "et",
+        "to",
+        "tre",
+        "fire",
+        "fem",
+        "seks",
+        "syv",
+        "otte",
+        "ni",
+        "ti",
+        "elleve"
+      ],
+      "midnight": "midnat",
+      "noon": "middag",
+      "patterns": {
+        "0": "klokken {h}",
+        "5": "fem over {h}",
+        "10": "ti over {h}",
+        "15": "kvart over {h}",
+        "20": "tyve over {h}",
+        "25": "fem i halv {next_h}",
+        "30": "halv {next_h}",
+        "35": "fem over halv {next_h}",
+        "40": "tyve i {next_h}",
+        "45": "kvart i {next_h}",
+        "50": "ti i {next_h}",
+        "55": "fem i {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}.{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}.{mm}"
+      }
+    }
+  }
+}

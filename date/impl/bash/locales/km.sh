@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/km.json
+# Source: locales/km.json
 
 _sayabledate_locale_km() {
     _months=('មករា' 'កុម្ភៈ' 'មីនា' 'មេសា' 'ឧសភា' 'មិថុនា' 'កក្កដា' 'សីហា' 'កញ្ញា' 'តុលា' 'វិច្ឆិកា' 'ធ្នូ')

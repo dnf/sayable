@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/quc.json
+# Source: locales/quc.json
 
 _sayabledate_locale_quc() {
     _months=('Nab'\''e ik'\''' 'Ukab'\'' ik'\''' 'Urox ik'\''' 'Ukaj ik'\''' 'Uro'\'' ik'\''' 'Uwaq ik'\''' 'Uwuq ik'\''' 'Uwajxaq ik'\''' 'Ub'\''elej ik'\''' 'Ulaj ik'\''' 'Ujulaj ik'\''' 'Ukab'\''laj ik'\''')

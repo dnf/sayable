@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ga.json
+# Source: locales/ga.json
 
 function locale_ga {
     $hours = @('dó dhéag', 'haon', 'dó', 'trí', 'ceathair', 'cúig', 'sé', 'seacht', 'hocht', 'naoi', 'deich', 'haon déag')

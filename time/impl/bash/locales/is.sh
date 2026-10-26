@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/is.json
+# Source: locales/is.json
 
 _sayabletime_locale_is() {
     _clock_hours=('tólf' 'eitt' 'tvö' 'þrjú' 'fjögur' 'fimm' 'sex' 'sjö' 'átta' 'níu' 'tíu' 'ellefu')

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/tum.json
+# Source: locales/tum.json
 
 _sayabledate_locale_tum() {
     _months=('Janyuwale' 'Feburuware' 'Marichi' 'Epurelo' 'Meyi' 'Juni' 'Julayi' 'Ogasiti' 'Seputembala' 'Okutobala' 'Novembala' 'Disembala')

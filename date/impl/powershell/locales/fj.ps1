@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/fj.json
+# Source: locales/fj.json
 
 function locale_fj {
     $months = @('Janueri', 'Feperueri', 'Maji', 'Epereli', 'Me', 'June', 'Julai', 'Okosita', 'Sepiteba', 'Okotova', 'Noveba', 'Tiseba')

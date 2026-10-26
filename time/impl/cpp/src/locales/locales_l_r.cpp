@@ -13,7 +13,7 @@
 namespace sayabletime {
 namespace locales {
 
-// Source: time/locales/src/lb.json
+// Source: locales/lb.json
 const TimeLocale& LB() {
     static const TimeLocale loc{
         "lb",
@@ -29,7 +29,7 @@ const TimeLocale& LB() {
     return loc;
 }
 
-// Source: time/locales/src/lg.json
+// Source: locales/lg.json
 const TimeLocale& LG() {
     static const TimeLocale loc{
         "lg",
@@ -45,7 +45,7 @@ const TimeLocale& LG() {
     return loc;
 }
 
-// Source: time/locales/src/ln.json
+// Source: locales/ln.json
 const TimeLocale& LN() {
     static const TimeLocale loc{
         "ln",
@@ -61,7 +61,7 @@ const TimeLocale& LN() {
     return loc;
 }
 
-// Source: time/locales/src/lo.json
+// Source: locales/lo.json
 const TimeLocale& LO() {
     static const TimeLocale loc{
         "lo",
@@ -77,7 +77,7 @@ const TimeLocale& LO() {
     return loc;
 }
 
-// Source: time/locales/src/lt.json
+// Source: locales/lt.json
 const TimeLocale& LT() {
     static const TimeLocale loc{
         "lt",
@@ -93,7 +93,7 @@ const TimeLocale& LT() {
     return loc;
 }
 
-// Source: time/locales/src/luo.json
+// Source: locales/luo.json
 const TimeLocale& LUO() {
     static const TimeLocale loc{
         "luo",
@@ -109,7 +109,7 @@ const TimeLocale& LUO() {
     return loc;
 }
 
-// Source: time/locales/src/lv.json
+// Source: locales/lv.json
 const TimeLocale& LV() {
     static const TimeLocale loc{
         "lv",
@@ -125,7 +125,7 @@ const TimeLocale& LV() {
     return loc;
 }
 
-// Source: time/locales/src/mam.json
+// Source: locales/mam.json
 const TimeLocale& MAM() {
     static const TimeLocale loc{
         "mam",
@@ -141,7 +141,7 @@ const TimeLocale& MAM() {
     return loc;
 }
 
-// Source: time/locales/src/men.json
+// Source: locales/men.json
 const TimeLocale& MEN() {
     static const TimeLocale loc{
         "men",
@@ -157,7 +157,7 @@ const TimeLocale& MEN() {
     return loc;
 }
 
-// Source: time/locales/src/mfe.json
+// Source: locales/mfe.json
 const TimeLocale& MFE() {
     static const TimeLocale loc{
         "mfe",
@@ -173,7 +173,7 @@ const TimeLocale& MFE() {
     return loc;
 }
 
-// Source: time/locales/src/mg.json
+// Source: locales/mg.json
 const TimeLocale& MG() {
     static const TimeLocale loc{
         "mg",
@@ -189,7 +189,7 @@ const TimeLocale& MG() {
     return loc;
 }
 
-// Source: time/locales/src/mi.json
+// Source: locales/mi.json
 const TimeLocale& MI() {
     static const TimeLocale loc{
         "mi",
@@ -205,7 +205,7 @@ const TimeLocale& MI() {
     return loc;
 }
 
-// Source: time/locales/src/mk.json
+// Source: locales/mk.json
 const TimeLocale& MK() {
     static const TimeLocale loc{
         "mk",
@@ -221,7 +221,7 @@ const TimeLocale& MK() {
     return loc;
 }
 
-// Source: time/locales/src/ml.json
+// Source: locales/ml.json
 const TimeLocale& ML() {
     static const TimeLocale loc{
         "ml",
@@ -237,7 +237,7 @@ const TimeLocale& ML() {
     return loc;
 }
 
-// Source: time/locales/src/mn.json
+// Source: locales/mn.json
 const TimeLocale& MN() {
     static const TimeLocale loc{
         "mn",
@@ -253,7 +253,7 @@ const TimeLocale& MN() {
     return loc;
 }
 
-// Source: time/locales/src/mnk.json
+// Source: locales/mnk.json
 const TimeLocale& MNK() {
     static const TimeLocale loc{
         "mnk",
@@ -269,7 +269,7 @@ const TimeLocale& MNK() {
     return loc;
 }
 
-// Source: time/locales/src/mos.json
+// Source: locales/mos.json
 const TimeLocale& MOS() {
     static const TimeLocale loc{
         "mos",
@@ -285,7 +285,7 @@ const TimeLocale& MOS() {
     return loc;
 }
 
-// Source: time/locales/src/mr.json
+// Source: locales/mr.json
 const TimeLocale& MR() {
     static const TimeLocale loc{
         "mr",
@@ -301,7 +301,7 @@ const TimeLocale& MR() {
     return loc;
 }
 
-// Source: time/locales/src/ms.json
+// Source: locales/ms.json
 const TimeLocale& MS() {
     static const TimeLocale loc{
         "ms",
@@ -317,7 +317,7 @@ const TimeLocale& MS() {
     return loc;
 }
 
-// Source: time/locales/src/mt.json
+// Source: locales/mt.json
 const TimeLocale& MT() {
     static const TimeLocale loc{
         "mt",
@@ -333,7 +333,7 @@ const TimeLocale& MT() {
     return loc;
 }
 
-// Source: time/locales/src/my.json
+// Source: locales/my.json
 const TimeLocale& MY() {
     static const TimeLocale loc{
         "my",
@@ -349,7 +349,7 @@ const TimeLocale& MY() {
     return loc;
 }
 
-// Source: time/locales/src/nb.json
+// Source: locales/nb.json
 const TimeLocale& NB() {
     static const TimeLocale loc{
         "nb",
@@ -365,7 +365,7 @@ const TimeLocale& NB() {
     return loc;
 }
 
-// Source: time/locales/src/nd.json
+// Source: locales/nd.json
 const TimeLocale& ND() {
     static const TimeLocale loc{
         "nd",
@@ -381,7 +381,7 @@ const TimeLocale& ND() {
     return loc;
 }
 
-// Source: time/locales/src/ne.json
+// Source: locales/ne.json
 const TimeLocale& NE() {
     static const TimeLocale loc{
         "ne",
@@ -397,7 +397,7 @@ const TimeLocale& NE() {
     return loc;
 }
 
-// Source: time/locales/src/ng.json
+// Source: locales/ng.json
 const TimeLocale& NG() {
     static const TimeLocale loc{
         "ng",
@@ -413,7 +413,7 @@ const TimeLocale& NG() {
     return loc;
 }
 
-// Source: time/locales/src/nl.json
+// Source: locales/nl.json
 const TimeLocale& NL() {
     static const TimeLocale loc{
         "nl",
@@ -429,7 +429,7 @@ const TimeLocale& NL() {
     return loc;
 }
 
-// Source: time/locales/src/nr.json
+// Source: locales/nr.json
 const TimeLocale& NR() {
     static const TimeLocale loc{
         "nr",
@@ -445,7 +445,7 @@ const TimeLocale& NR() {
     return loc;
 }
 
-// Source: time/locales/src/nso.json
+// Source: locales/nso.json
 const TimeLocale& NSO() {
     static const TimeLocale loc{
         "nso",
@@ -461,7 +461,7 @@ const TimeLocale& NSO() {
     return loc;
 }
 
-// Source: time/locales/src/nus.json
+// Source: locales/nus.json
 const TimeLocale& NUS() {
     static const TimeLocale loc{
         "nus",
@@ -477,7 +477,7 @@ const TimeLocale& NUS() {
     return loc;
 }
 
-// Source: time/locales/src/ny.json
+// Source: locales/ny.json
 const TimeLocale& NY() {
     static const TimeLocale loc{
         "ny",
@@ -493,7 +493,7 @@ const TimeLocale& NY() {
     return loc;
 }
 
-// Source: time/locales/src/om.json
+// Source: locales/om.json
 const TimeLocale& OM() {
     static const TimeLocale loc{
         "om",
@@ -509,7 +509,7 @@ const TimeLocale& OM() {
     return loc;
 }
 
-// Source: time/locales/src/or.json
+// Source: locales/or.json
 const TimeLocale& OR() {
     static const TimeLocale loc{
         "or",
@@ -525,7 +525,7 @@ const TimeLocale& OR() {
     return loc;
 }
 
-// Source: time/locales/src/pa.json
+// Source: locales/pa.json
 const TimeLocale& PA() {
     static const TimeLocale loc{
         "pa",
@@ -541,7 +541,7 @@ const TimeLocale& PA() {
     return loc;
 }
 
-// Source: time/locales/src/pis.json
+// Source: locales/pis.json
 const TimeLocale& PIS() {
     static const TimeLocale loc{
         "pis",
@@ -557,7 +557,7 @@ const TimeLocale& PIS() {
     return loc;
 }
 
-// Source: time/locales/src/pl.json
+// Source: locales/pl.json
 const TimeLocale& PL() {
     static const TimeLocale loc{
         "pl",
@@ -573,7 +573,7 @@ const TimeLocale& PL() {
     return loc;
 }
 
-// Source: time/locales/src/pov.json
+// Source: locales/pov.json
 const TimeLocale& POV() {
     static const TimeLocale loc{
         "pov",
@@ -589,7 +589,7 @@ const TimeLocale& POV() {
     return loc;
 }
 
-// Source: time/locales/src/ps.json
+// Source: locales/ps.json
 const TimeLocale& PS() {
     static const TimeLocale loc{
         "ps",
@@ -605,7 +605,7 @@ const TimeLocale& PS() {
     return loc;
 }
 
-// Source: time/locales/src/pt.json
+// Source: locales/pt.json
 const TimeLocale& PT() {
     static const TimeLocale loc{
         "pt",
@@ -621,7 +621,7 @@ const TimeLocale& PT() {
     return loc;
 }
 
-// Source: time/locales/src/qu.json
+// Source: locales/qu.json
 const TimeLocale& QU() {
     static const TimeLocale loc{
         "qu",
@@ -637,7 +637,7 @@ const TimeLocale& QU() {
     return loc;
 }
 
-// Source: time/locales/src/quc.json
+// Source: locales/quc.json
 const TimeLocale& QUC() {
     static const TimeLocale loc{
         "quc",
@@ -653,7 +653,7 @@ const TimeLocale& QUC() {
     return loc;
 }
 
-// Source: time/locales/src/ro.json
+// Source: locales/ro.json
 const TimeLocale& RO() {
     static const TimeLocale loc{
         "ro",
@@ -669,7 +669,7 @@ const TimeLocale& RO() {
     return loc;
 }
 
-// Source: time/locales/src/ru.json
+// Source: locales/ru.json
 const TimeLocale& RU() {
     static const TimeLocale loc{
         "ru",
@@ -685,7 +685,7 @@ const TimeLocale& RU() {
     return loc;
 }
 
-// Source: time/locales/src/rw.json
+// Source: locales/rw.json
 const TimeLocale& RW() {
     static const TimeLocale loc{
         "rw",

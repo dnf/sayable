@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/bn.json
+# Source: locales/bn.json
 
 _sayabletime_locale_bn() {
     _clock_hours=('বারো' 'এক' 'দুই' 'তিন' 'চার' 'পাঁচ' 'ছয়' 'সাত' 'আট' 'নয়' 'দশ' 'এগারো')

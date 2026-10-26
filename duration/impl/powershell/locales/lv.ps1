@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/lv.json
+# Source: locales/lv.json
 
 function plural_lv([int]$n) {
     $mod10 = $n % 10

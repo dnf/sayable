@@ -17,7 +17,7 @@ import sayableduration.*
  */
 class LocalesQZ {
 
-    // Source: duration/locales/src/qu.json
+    // Source: locales/qu.json
     // ================================================================
     // QU — Quechua
     // ================================================================
@@ -68,7 +68,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/quc.json
+    // Source: locales/quc.json
     // ================================================================
     // QUC — K'iche'
     // ================================================================
@@ -119,7 +119,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ro.json
+    // Source: locales/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
@@ -174,7 +174,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ru.json
+    // Source: locales/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
@@ -231,7 +231,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/rw.json
+    // Source: locales/rw.json
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
@@ -282,7 +282,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sar.json
+    // Source: locales/sar.json
     // ================================================================
     // SAR — Sara
     // ================================================================
@@ -333,7 +333,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sd.json
+    // Source: locales/sd.json
     // ================================================================
     // SD — Sindhi
     // ================================================================
@@ -384,7 +384,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sg.json
+    // Source: locales/sg.json
     // ================================================================
     // SG — Sango
     // ================================================================
@@ -435,7 +435,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/shi.json
+    // Source: locales/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
@@ -490,7 +490,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/shn.json
+    // Source: locales/shn.json
     // ================================================================
     // SHN — Shan
     // ================================================================
@@ -541,7 +541,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/si.json
+    // Source: locales/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
@@ -592,7 +592,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sk.json
+    // Source: locales/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
@@ -647,7 +647,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sl.json
+    // Source: locales/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
@@ -704,7 +704,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sn.json
+    // Source: locales/sn.json
     // ================================================================
     // SN — Shona
     // ================================================================
@@ -755,7 +755,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/snk.json
+    // Source: locales/snk.json
     // ================================================================
     // SNK — Soninke
     // ================================================================
@@ -806,7 +806,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/so.json
+    // Source: locales/so.json
     // ================================================================
     // SO — Somali
     // ================================================================
@@ -857,7 +857,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sq.json
+    // Source: locales/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
@@ -908,7 +908,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sr.json
+    // Source: locales/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
@@ -965,7 +965,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ss.json
+    // Source: locales/ss.json
     // ================================================================
     // SS — siSwati
     // ================================================================
@@ -1016,7 +1016,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/st.json
+    // Source: locales/st.json
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
@@ -1067,7 +1067,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/su.json
+    // Source: locales/su.json
     // ================================================================
     // SU — Sundanese
     // ================================================================
@@ -1118,7 +1118,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/suk.json
+    // Source: locales/suk.json
     // ================================================================
     // SUK — Sukuma
     // ================================================================
@@ -1169,7 +1169,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sv.json
+    // Source: locales/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
@@ -1220,7 +1220,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/sw.json
+    // Source: locales/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
@@ -1271,7 +1271,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ta.json
+    // Source: locales/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
@@ -1322,7 +1322,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/te.json
+    // Source: locales/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
@@ -1373,7 +1373,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tem.json
+    // Source: locales/tem.json
     // ================================================================
     // TEM — Temne
     // ================================================================
@@ -1424,7 +1424,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tet.json
+    // Source: locales/tet.json
     // ================================================================
     // TET — Tetum
     // ================================================================
@@ -1475,7 +1475,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tg.json
+    // Source: locales/tg.json
     // ================================================================
     // TG — Tajik
     // ================================================================
@@ -1526,7 +1526,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/th.json
+    // Source: locales/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
@@ -1577,7 +1577,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ti.json
+    // Source: locales/ti.json
     // ================================================================
     // TI — Tigrinya
     // ================================================================
@@ -1628,7 +1628,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tig.json
+    // Source: locales/tig.json
     // ================================================================
     // TIG — Tigre
     // ================================================================
@@ -1679,7 +1679,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tk.json
+    // Source: locales/tk.json
     // ================================================================
     // TK — Turkmen
     // ================================================================
@@ -1730,7 +1730,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tn.json
+    // Source: locales/tn.json
     // ================================================================
     // TN — Tswana
     // ================================================================
@@ -1781,7 +1781,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
@@ -1832,7 +1832,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tr.json
+    // Source: locales/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
@@ -1883,7 +1883,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ts.json
+    // Source: locales/ts.json
     // ================================================================
     // TS — Tsonga
     // ================================================================
@@ -1934,7 +1934,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tum.json
+    // Source: locales/tum.json
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
@@ -1985,7 +1985,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
@@ -2039,7 +2039,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/uk.json
+    // Source: locales/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
@@ -2096,7 +2096,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/umb.json
+    // Source: locales/umb.json
     // ================================================================
     // UMB — Umbundu
     // ================================================================
@@ -2147,7 +2147,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ur.json
+    // Source: locales/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
@@ -2198,7 +2198,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/uz.json
+    // Source: locales/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
@@ -2249,7 +2249,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/ve.json
+    // Source: locales/ve.json
     // ================================================================
     // VE — Venda
     // ================================================================
@@ -2300,7 +2300,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/vi.json
+    // Source: locales/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
@@ -2351,7 +2351,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
@@ -2402,7 +2402,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/wo.json
+    // Source: locales/wo.json
     // ================================================================
     // WO — Wolof
     // ================================================================
@@ -2453,7 +2453,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/xh.json
+    // Source: locales/xh.json
     // ================================================================
     // XH — Xhosa
     // ================================================================
@@ -2504,7 +2504,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/yao.json
+    // Source: locales/yao.json
     // ================================================================
     // YAO — Yao
     // ================================================================
@@ -2555,7 +2555,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/yo.json
+    // Source: locales/yo.json
     // ================================================================
     // YO — Yoruba
     // ================================================================
@@ -2606,7 +2606,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/yue.json
+    // Source: locales/yue.json
     // ================================================================
     // YUE — Cantonese
     // ================================================================
@@ -2657,7 +2657,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
@@ -2708,7 +2708,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/zh.json
+    // Source: locales/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================
@@ -2759,7 +2759,7 @@ class LocalesQZ {
         null
     )
 
-    // Source: duration/locales/src/zu.json
+    // Source: locales/zu.json
     // ================================================================
     // ZU — Zulu
     // ================================================================

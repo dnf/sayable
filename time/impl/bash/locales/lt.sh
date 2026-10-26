@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/lt.json
+# Source: locales/lt.json
 
 _sayabletime_locale_lt() {
     _clock_hours=('dvylika' 'viena' 'dvi' 'trys' 'keturios' 'penkios' 'šešios' 'septynios' 'aštuonios' 'devynios' 'dešimt' 'vienuolika')

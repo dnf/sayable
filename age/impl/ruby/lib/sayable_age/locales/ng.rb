@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/ng.json
+# Source: locales/ng.json
 module SayableAge
   module Locales
     NG = AgeLocale.new(

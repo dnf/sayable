@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: age/locales/src/ga.json */
+/* Source: locales/ga.json */
 #include "sayableage/sayableage.h"
 
 static SaPluralCategory plural_ga(int n) {

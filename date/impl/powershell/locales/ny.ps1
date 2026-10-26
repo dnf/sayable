@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ny.json
+# Source: locales/ny.json
 
 function locale_ny {
     $months = @('Januwale', 'Febuluwale', 'Matchi', 'Epulo', 'Meyi', 'Juni', 'Julaye', 'Ogasiti', 'Seputemba', 'Okutoba', 'Novemba', 'Disemba')

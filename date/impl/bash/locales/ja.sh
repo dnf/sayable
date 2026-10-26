@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ja.json
+# Source: locales/ja.json
 
 _sayabledate_locale_ja() {
     _months=('1月' '2月' '3月' '4月' '5月' '6月' '7月' '8月' '9月' '10月' '11月' '12月')

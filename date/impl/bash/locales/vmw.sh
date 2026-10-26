@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/vmw.json
+# Source: locales/vmw.json
 
 _sayabledate_locale_vmw() {
     _months=('Januário' 'Fevereiro' 'Março' 'Abril' 'Maio' 'Junho' 'Julho' 'Agosto' 'Setembro' 'Outubro' 'Novembro' 'Dezembro')

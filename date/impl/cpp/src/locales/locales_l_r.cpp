@@ -13,7 +13,7 @@
 namespace sayabledate {
 namespace locales {
 
-// Source: date/locales/src/lb.json
+// Source: locales/lb.json
 const DateLocale& LB() {
     static const DateLocale loc{
         "lb",
@@ -60,7 +60,7 @@ const DateLocale& LB() {
     return loc;
 }
 
-// Source: date/locales/src/lg.json
+// Source: locales/lg.json
 const DateLocale& LG() {
     static const DateLocale loc{
         "lg",
@@ -107,7 +107,7 @@ const DateLocale& LG() {
     return loc;
 }
 
-// Source: date/locales/src/ln.json
+// Source: locales/ln.json
 const DateLocale& LN() {
     static const DateLocale loc{
         "ln",
@@ -154,7 +154,7 @@ const DateLocale& LN() {
     return loc;
 }
 
-// Source: date/locales/src/lo.json
+// Source: locales/lo.json
 const DateLocale& LO() {
     static const DateLocale loc{
         "lo",
@@ -201,7 +201,7 @@ const DateLocale& LO() {
     return loc;
 }
 
-// Source: date/locales/src/lt.json
+// Source: locales/lt.json
 const DateLocale& LT() {
     static const DateLocale loc{
         "lt",
@@ -248,7 +248,7 @@ const DateLocale& LT() {
     return loc;
 }
 
-// Source: date/locales/src/luo.json
+// Source: locales/luo.json
 const DateLocale& LUO() {
     static const DateLocale loc{
         "luo",
@@ -295,7 +295,7 @@ const DateLocale& LUO() {
     return loc;
 }
 
-// Source: date/locales/src/lv.json
+// Source: locales/lv.json
 const DateLocale& LV() {
     static const DateLocale loc{
         "lv",
@@ -342,7 +342,7 @@ const DateLocale& LV() {
     return loc;
 }
 
-// Source: date/locales/src/mam.json
+// Source: locales/mam.json
 const DateLocale& MAM() {
     static const DateLocale loc{
         "mam",
@@ -389,7 +389,7 @@ const DateLocale& MAM() {
     return loc;
 }
 
-// Source: date/locales/src/men.json
+// Source: locales/men.json
 const DateLocale& MEN() {
     static const DateLocale loc{
         "men",
@@ -436,7 +436,7 @@ const DateLocale& MEN() {
     return loc;
 }
 
-// Source: date/locales/src/mfe.json
+// Source: locales/mfe.json
 const DateLocale& MFE() {
     static const DateLocale loc{
         "mfe",
@@ -483,7 +483,7 @@ const DateLocale& MFE() {
     return loc;
 }
 
-// Source: date/locales/src/mg.json
+// Source: locales/mg.json
 const DateLocale& MG() {
     static const DateLocale loc{
         "mg",
@@ -530,7 +530,7 @@ const DateLocale& MG() {
     return loc;
 }
 
-// Source: date/locales/src/mi.json
+// Source: locales/mi.json
 const DateLocale& MI() {
     static const DateLocale loc{
         "mi",
@@ -577,7 +577,7 @@ const DateLocale& MI() {
     return loc;
 }
 
-// Source: date/locales/src/mk.json
+// Source: locales/mk.json
 const DateLocale& MK() {
     static const DateLocale loc{
         "mk",
@@ -624,7 +624,7 @@ const DateLocale& MK() {
     return loc;
 }
 
-// Source: date/locales/src/ml.json
+// Source: locales/ml.json
 const DateLocale& ML() {
     static const DateLocale loc{
         "ml",
@@ -671,7 +671,7 @@ const DateLocale& ML() {
     return loc;
 }
 
-// Source: date/locales/src/mn.json
+// Source: locales/mn.json
 const DateLocale& MN() {
     static const DateLocale loc{
         "mn",
@@ -718,7 +718,7 @@ const DateLocale& MN() {
     return loc;
 }
 
-// Source: date/locales/src/mnk.json
+// Source: locales/mnk.json
 const DateLocale& MNK() {
     static const DateLocale loc{
         "mnk",
@@ -765,7 +765,7 @@ const DateLocale& MNK() {
     return loc;
 }
 
-// Source: date/locales/src/mos.json
+// Source: locales/mos.json
 const DateLocale& MOS() {
     static const DateLocale loc{
         "mos",
@@ -812,7 +812,7 @@ const DateLocale& MOS() {
     return loc;
 }
 
-// Source: date/locales/src/mr.json
+// Source: locales/mr.json
 const DateLocale& MR() {
     static const DateLocale loc{
         "mr",
@@ -859,7 +859,7 @@ const DateLocale& MR() {
     return loc;
 }
 
-// Source: date/locales/src/ms.json
+// Source: locales/ms.json
 const DateLocale& MS() {
     static const DateLocale loc{
         "ms",
@@ -906,7 +906,7 @@ const DateLocale& MS() {
     return loc;
 }
 
-// Source: date/locales/src/mt.json
+// Source: locales/mt.json
 const DateLocale& MT() {
     static const DateLocale loc{
         "mt",
@@ -953,7 +953,7 @@ const DateLocale& MT() {
     return loc;
 }
 
-// Source: date/locales/src/my.json
+// Source: locales/my.json
 const DateLocale& MY() {
     static const DateLocale loc{
         "my",
@@ -1000,7 +1000,7 @@ const DateLocale& MY() {
     return loc;
 }
 
-// Source: date/locales/src/nb.json
+// Source: locales/nb.json
 const DateLocale& NB() {
     static const DateLocale loc{
         "nb",
@@ -1047,7 +1047,7 @@ const DateLocale& NB() {
     return loc;
 }
 
-// Source: date/locales/src/nd.json
+// Source: locales/nd.json
 const DateLocale& ND() {
     static const DateLocale loc{
         "nd",
@@ -1094,7 +1094,7 @@ const DateLocale& ND() {
     return loc;
 }
 
-// Source: date/locales/src/ne.json
+// Source: locales/ne.json
 const DateLocale& NE() {
     static const DateLocale loc{
         "ne",
@@ -1141,7 +1141,7 @@ const DateLocale& NE() {
     return loc;
 }
 
-// Source: date/locales/src/ng.json
+// Source: locales/ng.json
 const DateLocale& NG() {
     static const DateLocale loc{
         "ng",
@@ -1188,7 +1188,7 @@ const DateLocale& NG() {
     return loc;
 }
 
-// Source: date/locales/src/nl.json
+// Source: locales/nl.json
 const DateLocale& NL() {
     static const DateLocale loc{
         "nl",
@@ -1235,7 +1235,7 @@ const DateLocale& NL() {
     return loc;
 }
 
-// Source: date/locales/src/nr.json
+// Source: locales/nr.json
 const DateLocale& NR() {
     static const DateLocale loc{
         "nr",
@@ -1282,7 +1282,7 @@ const DateLocale& NR() {
     return loc;
 }
 
-// Source: date/locales/src/nso.json
+// Source: locales/nso.json
 const DateLocale& NSO() {
     static const DateLocale loc{
         "nso",
@@ -1329,7 +1329,7 @@ const DateLocale& NSO() {
     return loc;
 }
 
-// Source: date/locales/src/nus.json
+// Source: locales/nus.json
 const DateLocale& NUS() {
     static const DateLocale loc{
         "nus",
@@ -1376,7 +1376,7 @@ const DateLocale& NUS() {
     return loc;
 }
 
-// Source: date/locales/src/ny.json
+// Source: locales/ny.json
 const DateLocale& NY() {
     static const DateLocale loc{
         "ny",
@@ -1423,7 +1423,7 @@ const DateLocale& NY() {
     return loc;
 }
 
-// Source: date/locales/src/om.json
+// Source: locales/om.json
 const DateLocale& OM() {
     static const DateLocale loc{
         "om",
@@ -1470,7 +1470,7 @@ const DateLocale& OM() {
     return loc;
 }
 
-// Source: date/locales/src/or.json
+// Source: locales/or.json
 const DateLocale& OR() {
     static const DateLocale loc{
         "or",
@@ -1517,7 +1517,7 @@ const DateLocale& OR() {
     return loc;
 }
 
-// Source: date/locales/src/pa.json
+// Source: locales/pa.json
 const DateLocale& PA() {
     static const DateLocale loc{
         "pa",
@@ -1564,7 +1564,7 @@ const DateLocale& PA() {
     return loc;
 }
 
-// Source: date/locales/src/pis.json
+// Source: locales/pis.json
 const DateLocale& PIS() {
     static const DateLocale loc{
         "pis",
@@ -1611,7 +1611,7 @@ const DateLocale& PIS() {
     return loc;
 }
 
-// Source: date/locales/src/pl.json
+// Source: locales/pl.json
 const DateLocale& PL() {
     static const DateLocale loc{
         "pl",
@@ -1658,7 +1658,7 @@ const DateLocale& PL() {
     return loc;
 }
 
-// Source: date/locales/src/pov.json
+// Source: locales/pov.json
 const DateLocale& POV() {
     static const DateLocale loc{
         "pov",
@@ -1705,7 +1705,7 @@ const DateLocale& POV() {
     return loc;
 }
 
-// Source: date/locales/src/ps.json
+// Source: locales/ps.json
 const DateLocale& PS() {
     static const DateLocale loc{
         "ps",
@@ -1752,7 +1752,7 @@ const DateLocale& PS() {
     return loc;
 }
 
-// Source: date/locales/src/pt.json
+// Source: locales/pt.json
 const DateLocale& PT() {
     static const DateLocale loc{
         "pt",
@@ -1799,7 +1799,7 @@ const DateLocale& PT() {
     return loc;
 }
 
-// Source: date/locales/src/qu.json
+// Source: locales/qu.json
 const DateLocale& QU() {
     static const DateLocale loc{
         "qu",
@@ -1846,7 +1846,7 @@ const DateLocale& QU() {
     return loc;
 }
 
-// Source: date/locales/src/quc.json
+// Source: locales/quc.json
 const DateLocale& QUC() {
     static const DateLocale loc{
         "quc",
@@ -1893,7 +1893,7 @@ const DateLocale& QUC() {
     return loc;
 }
 
-// Source: date/locales/src/ro.json
+// Source: locales/ro.json
 const DateLocale& RO() {
     static const DateLocale loc{
         "ro",
@@ -1940,7 +1940,7 @@ const DateLocale& RO() {
     return loc;
 }
 
-// Source: date/locales/src/ru.json
+// Source: locales/ru.json
 const DateLocale& RU() {
     static const DateLocale loc{
         "ru",
@@ -1987,7 +1987,7 @@ const DateLocale& RU() {
     return loc;
 }
 
-// Source: date/locales/src/rw.json
+// Source: locales/rw.json
 const DateLocale& RW() {
     static const DateLocale loc{
         "rw",

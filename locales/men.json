@@ -1,0 +1,275 @@
+{
+  "code": "men",
+  "name": "Mende",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "lɔhɔ {n}",
+        "other": "lɔhɔnga {n}"
+      },
+      "week": {
+        "one": "wikii {n}",
+        "other": "wikii {n}"
+      },
+      "month": {
+        "one": "ndɔlɔ {n}",
+        "other": "ndɔlɔnga {n}"
+      },
+      "year": {
+        "one": "saŋ {n}",
+        "other": "saŋga {n}"
+      }
+    },
+    "half": "{0} ta fele",
+    "delimiter": ", ",
+    "justBorn": "Ndɔpɔi fele",
+    "stages": {
+      "newborn": "Ndɔpɔi fele",
+      "infant": "Ndɔpɔi",
+      "toddler": "Ndɔpɔi",
+      "child": "Ndopoi",
+      "teenager": "Ndakpayei",
+      "adult": "Numu-waa"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "lɔhɔ {n}",
+          "other": "lɔhɔnga {n}"
+        },
+        "week": "wikii {n}",
+        "month": {
+          "one": "ndɔlɔ {n}",
+          "other": "ndɔlɔnga {n}"
+        },
+        "year": {
+          "one": "saŋ {n}",
+          "other": "saŋga {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Januwali",
+      "Febluwali",
+      "Maachi",
+      "Epuli",
+      "Mei",
+      "Juun",
+      "Julai",
+      "Ɔgɔsi",
+      "Sɛtɛmba",
+      "Ɔtɔba",
+      "Nɔvɛmba",
+      "Disɛmba"
+    ],
+    "weekdays": [
+      "Lahadi",
+      "Tɛɛnɛɛ",
+      "Talata",
+      "Alaba",
+      "Aimisa",
+      "Juma",
+      "Satidei"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "wii",
+    "tomorrow": "sina",
+    "yesterday": "bii",
+    "dayAfterTomorrow": "sina gɔlɔ",
+    "dayBeforeYesterday": "bii gɔlɔ",
+    "thisWeekday": "{weekday} yɛ",
+    "nextWeekday": "{weekday} yɛ gbɔyɔ",
+    "lastWeekday": "{weekday} taa gbɔyɔ",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Maa",
+        "Epu",
+        "Mei",
+        "Juu",
+        "Jul",
+        "Ɔgɔ",
+        "Sɛt",
+        "Ɔtɔ",
+        "Nɔv",
+        "Dis"
+      ],
+      "weekdays": [
+        "Lah",
+        "Tɛɛ",
+        "Tal",
+        "Ala",
+        "Aim",
+        "Jum",
+        "Sat"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "sɛkɔn {n}",
+        "other": "sɛkɔn {n}"
+      },
+      "minute": {
+        "one": "miniti {n}",
+        "other": "miniti {n}"
+      },
+      "hour": {
+        "one": "awa {n}",
+        "other": "awa {n}"
+      },
+      "day": {
+        "one": "lɔhɔ {n}",
+        "other": "lɔhɔnga {n}"
+      },
+      "week": {
+        "one": "wikii {n}",
+        "other": "wikii {n}"
+      },
+      "month": {
+        "one": "ndɔlɔ {n}",
+        "other": "ndɔlɔnga {n}"
+      },
+      "year": {
+        "one": "saŋ {n}",
+        "other": "saŋga {n}"
+      }
+    },
+    "half": "{0} ta fele",
+    "delimiter": ", ",
+    "justNow": "kɛnɛi",
+    "ago": "{0} taa gbɔyɔ",
+    "inFuture": "yɛ {0}",
+    "short": {
+      "units": {
+        "second": "sɛk. {n}",
+        "minute": "min. {n}",
+        "hour": "awa {n}",
+        "day": {
+          "one": "lɔhɔ {n}",
+          "other": "lɔhɔnga {n}"
+        },
+        "week": "wikii {n}",
+        "month": {
+          "one": "ndɔlɔ {n}",
+          "other": "ndɔlɔnga {n}"
+        },
+        "year": {
+          "one": "saŋ {n}",
+          "other": "saŋga {n}"
+        }
+      },
+      "ago": "{0} taa gbɔyɔ",
+      "inFuture": "yɛ {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} taa gbɔyɔ",
+      "inFuture": "yɛ {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "pu wɛlɛ",
+        "yila",
+        "fele",
+        "sawa",
+        "nani",
+        "lɔlu",
+        "wɛita",
+        "wɔfela",
+        "wayakpa",
+        "taawu",
+        "pu",
+        "pu mahu yila"
+      ],
+      "midnight": "kpindi gbɔyɔŋ",
+      "noon": "ndɔlei-ma",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

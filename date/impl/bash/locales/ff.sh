@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ff.json
+# Source: locales/ff.json
 
 _sayabledate_locale_ff() {
     _months=('Siilo' 'Colte' 'Mbooy' 'Seeɗto' 'Duujal' 'Korse' 'Morso' 'Juko' 'Siilto' 'Yarkomaa' 'Jolal' 'Bowte')

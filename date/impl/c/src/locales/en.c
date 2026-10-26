@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: date/locales/src/en.json */
+/* Source: locales/en.json */
 #include "sayabledate/sayabledate.h"
 
 static const SdDayFormatException sd_exc_en[] = {

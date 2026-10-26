@@ -1,0 +1,268 @@
+{
+  "code": "bs",
+  "name": "Bosnian",
+  "pluralRule": "slavic_bcs",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} dan",
+        "few": "{n} dana",
+        "many": "{n} dana",
+        "other": "{n} dana"
+      },
+      "week": {
+        "one": "{n} sedmica",
+        "few": "{n} sedmice",
+        "many": "{n} sedmica",
+        "other": "{n} sedmica"
+      },
+      "month": {
+        "one": "{n} mjesec",
+        "few": "{n} mjeseca",
+        "many": "{n} mjeseci",
+        "other": "{n} mjeseci"
+      },
+      "year": {
+        "one": "{n} godina",
+        "few": "{n} godine",
+        "many": "{n} godina",
+        "other": "{n} godina"
+      }
+    },
+    "half": "{0} i po",
+    "delimiter": ", ",
+    "justBorn": "Novorođenče",
+    "stages": {
+      "newborn": "Novorođenče",
+      "infant": "Beba",
+      "toddler": "Malo dijete",
+      "child": "Dijete",
+      "teenager": "Tinejdžer",
+      "adult": "Odrasla osoba"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} dan",
+          "few": "{n} dana",
+          "other": "{n} dana"
+        },
+        "week": "{n} sedm.",
+        "month": "{n} mj.",
+        "year": "{n} god."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} sedm.",
+        "month": "{n} mj.",
+        "year": "{n} god."
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "januar",
+      "februar",
+      "mart",
+      "april",
+      "maj",
+      "juni",
+      "juli",
+      "august",
+      "septembar",
+      "oktobar",
+      "novembar",
+      "decembar"
+    ],
+    "weekdays": [
+      "nedjelja",
+      "ponedjeljak",
+      "utorak",
+      "srijeda",
+      "četvrtak",
+      "petak",
+      "subota"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "danas",
+    "tomorrow": "sutra",
+    "yesterday": "jučer",
+    "dayAfterTomorrow": "prekosutra",
+    "dayBeforeYesterday": "prekjučer",
+    "thisWeekday": "ovaj {weekday}",
+    "nextWeekday": "sljedeći {weekday}",
+    "lastWeekday": "prošli {weekday}",
+    "short": {
+      "months": [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "maj",
+        "jun",
+        "jul",
+        "aug",
+        "sep",
+        "okt",
+        "nov",
+        "dec"
+      ],
+      "weekdays": [
+        "ned",
+        "pon",
+        "uto",
+        "sri",
+        "čet",
+        "pet",
+        "sub"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekunda",
+        "few": "{n} sekunde",
+        "other": "{n} sekundi"
+      },
+      "minute": {
+        "one": "{n} minuta",
+        "few": "{n} minute",
+        "other": "{n} minuta"
+      },
+      "hour": {
+        "one": "{n} sat",
+        "few": "{n} sata",
+        "other": "{n} sati"
+      },
+      "day": {
+        "one": "{n} dan",
+        "few": "{n} dana",
+        "many": "{n} dana",
+        "other": "{n} dana"
+      },
+      "week": {
+        "one": "{n} sedmica",
+        "few": "{n} sedmice",
+        "many": "{n} sedmica",
+        "other": "{n} sedmica"
+      },
+      "month": {
+        "one": "{n} mjesec",
+        "few": "{n} mjeseca",
+        "many": "{n} mjeseci",
+        "other": "{n} mjeseci"
+      },
+      "year": {
+        "one": "{n} godina",
+        "few": "{n} godine",
+        "many": "{n} godina",
+        "other": "{n} godina"
+      }
+    },
+    "half": "{0} i po",
+    "delimiter": ", ",
+    "justNow": "upravo",
+    "ago": "prije {0}",
+    "inFuture": "za {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min.",
+        "hour": "{n} h",
+        "day": {
+          "one": "{n} dan",
+          "few": "{n} dana",
+          "other": "{n} dana"
+        },
+        "week": "{n} sedm.",
+        "month": "{n} mj.",
+        "year": "{n} god."
+      },
+      "ago": "prije {0}",
+      "inFuture": "za {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} m",
+        "hour": "{n} h",
+        "day": "{n} d.",
+        "week": "{n} sedm.",
+        "month": "{n} mj.",
+        "year": "{n} god."
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "prije {0}",
+      "inFuture": "za {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dvanaest",
+        "jedan",
+        "dva",
+        "tri",
+        "četiri",
+        "pet",
+        "šest",
+        "sedam",
+        "osam",
+        "devet",
+        "deset",
+        "jedanaest"
+      ],
+      "midnight": "ponoć",
+      "noon": "podne",
+      "patterns": {
+        "0": "{h} sati",
+        "5": "pet po {h}",
+        "10": "deset po {h}",
+        "15": "petnaest po {h}",
+        "20": "dvadeset po {h}",
+        "25": "dvadeset pet po {h}",
+        "30": "trideset po {h}",
+        "35": "dvadeset pet do {next_h}",
+        "40": "dvadeset do {next_h}",
+        "45": "petnaest do {next_h}",
+        "50": "deset do {next_h}",
+        "55": "pet do {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

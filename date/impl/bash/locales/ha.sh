@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ha.json
+# Source: locales/ha.json
 
 _sayabledate_locale_ha() {
     _months=('Janairu' 'Fabrairu' 'Maris' 'Afrilu' 'Mayu' 'Yuni' 'Yuli' 'Agusta' 'Satumba' 'Oktoba' 'Nuwamba' 'Disamba')

@@ -14,7 +14,7 @@ module sayableage.locales;
 
 import sayableage.locale;
 
-// // Source: age/locales/src/af.json
+// // Source: locales/af.json
 // Afrikaans locale.
 immutable AgeLocale AF = AgeLocale(
     code: "af",
@@ -50,7 +50,7 @@ immutable AgeLocale AF = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ak.json
+// // Source: locales/ak.json
 // Akan locale.
 immutable AgeLocale AK = AgeLocale(
     code: "ak",
@@ -87,7 +87,7 @@ immutable AgeLocale AK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/am.json
+// // Source: locales/am.json
 // Amharic locale.
 immutable AgeLocale AM = AgeLocale(
     code: "am",
@@ -124,7 +124,7 @@ immutable AgeLocale AM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ar.json
+// // Source: locales/ar.json
 // Arabic locale.
 immutable AgeLocale AR = AgeLocale(
     code: "ar",
@@ -166,7 +166,7 @@ immutable AgeLocale AR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ay.json
+// // Source: locales/ay.json
 // Aymara locale.
 immutable AgeLocale AY = AgeLocale(
     code: "ay",
@@ -201,7 +201,7 @@ immutable AgeLocale AY = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/az.json
+// // Source: locales/az.json
 // Azerbaijani locale.
 immutable AgeLocale AZ = AgeLocale(
     code: "az",
@@ -238,7 +238,7 @@ immutable AgeLocale AZ = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/bci.json
+// // Source: locales/bci.json
 // Baoulé locale.
 immutable AgeLocale BCI = AgeLocale(
     code: "bci",
@@ -274,7 +274,7 @@ immutable AgeLocale BCI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/be.json
+// // Source: locales/be.json
 // Belarusian locale.
 immutable AgeLocale BE = AgeLocale(
     code: "be",
@@ -314,7 +314,7 @@ immutable AgeLocale BE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/bem.json
+// // Source: locales/bem.json
 // Bemba locale.
 immutable AgeLocale BEM = AgeLocale(
     code: "bem",
@@ -351,7 +351,7 @@ immutable AgeLocale BEM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/bg.json
+// // Source: locales/bg.json
 // Bulgarian locale.
 immutable AgeLocale BG = AgeLocale(
     code: "bg",
@@ -388,7 +388,7 @@ immutable AgeLocale BG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/bi.json
+// // Source: locales/bi.json
 // Bislama locale.
 immutable AgeLocale BI = AgeLocale(
     code: "bi",
@@ -423,7 +423,7 @@ immutable AgeLocale BI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/bm.json
+// // Source: locales/bm.json
 // Bambara locale.
 immutable AgeLocale BM = AgeLocale(
     code: "bm",
@@ -459,7 +459,7 @@ immutable AgeLocale BM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/bn.json
+// // Source: locales/bn.json
 // Bengali locale.
 immutable AgeLocale BN = AgeLocale(
     code: "bn",
@@ -496,7 +496,7 @@ immutable AgeLocale BN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/br.json
+// // Source: locales/br.json
 // Breton locale.
 immutable AgeLocale BR = AgeLocale(
     code: "br",
@@ -538,7 +538,7 @@ immutable AgeLocale BR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/bs.json
+// // Source: locales/bs.json
 // Bosnian locale.
 immutable AgeLocale BS = AgeLocale(
     code: "bs",
@@ -578,7 +578,7 @@ immutable AgeLocale BS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ca.json
+// // Source: locales/ca.json
 // Catalan locale.
 immutable AgeLocale CA = AgeLocale(
     code: "ca",
@@ -615,7 +615,7 @@ immutable AgeLocale CA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/cak.json
+// // Source: locales/cak.json
 // Kaqchikel locale.
 immutable AgeLocale CAK = AgeLocale(
     code: "cak",
@@ -650,7 +650,7 @@ immutable AgeLocale CAK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ceb.json
+// // Source: locales/ceb.json
 // Cebuano locale.
 immutable AgeLocale CEB = AgeLocale(
     code: "ceb",
@@ -687,7 +687,7 @@ immutable AgeLocale CEB = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/cs.json
+// // Source: locales/cs.json
 // Czech locale.
 immutable AgeLocale CS = AgeLocale(
     code: "cs",
@@ -724,7 +724,7 @@ immutable AgeLocale CS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/cy.json
+// // Source: locales/cy.json
 // Welsh locale.
 immutable AgeLocale CY = AgeLocale(
     code: "cy",
@@ -765,7 +765,7 @@ immutable AgeLocale CY = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/da.json
+// // Source: locales/da.json
 // Danish locale.
 immutable AgeLocale DA = AgeLocale(
     code: "da",
@@ -801,7 +801,7 @@ immutable AgeLocale DA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/de.json
+// // Source: locales/de.json
 // German locale.
 immutable AgeLocale DE = AgeLocale(
     code: "de",
@@ -837,7 +837,7 @@ immutable AgeLocale DE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/din.json
+// // Source: locales/din.json
 // Dinka locale.
 immutable AgeLocale DIN = AgeLocale(
     code: "din",
@@ -874,7 +874,7 @@ immutable AgeLocale DIN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/dje.json
+// // Source: locales/dje.json
 // Zarma locale.
 immutable AgeLocale DJE = AgeLocale(
     code: "dje",
@@ -910,7 +910,7 @@ immutable AgeLocale DJE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/dv.json
+// // Source: locales/dv.json
 // Dhivehi locale.
 immutable AgeLocale DV = AgeLocale(
     code: "dv",
@@ -945,7 +945,7 @@ immutable AgeLocale DV = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/dyu.json
+// // Source: locales/dyu.json
 // Dyula locale.
 immutable AgeLocale DYU = AgeLocale(
     code: "dyu",
@@ -981,7 +981,7 @@ immutable AgeLocale DYU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/dz.json
+// // Source: locales/dz.json
 // Dzongkha locale.
 immutable AgeLocale DZ = AgeLocale(
     code: "dz",
@@ -1016,7 +1016,7 @@ immutable AgeLocale DZ = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ee.json
+// // Source: locales/ee.json
 // Ewe locale.
 immutable AgeLocale EE = AgeLocale(
     code: "ee",
@@ -1053,7 +1053,7 @@ immutable AgeLocale EE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/el.json
+// // Source: locales/el.json
 // Greek locale.
 immutable AgeLocale EL = AgeLocale(
     code: "el",
@@ -1090,7 +1090,7 @@ immutable AgeLocale EL = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/en.json
+// // Source: locales/en.json
 // English locale.
 immutable AgeLocale EN = AgeLocale(
     code: "en",
@@ -1126,7 +1126,7 @@ immutable AgeLocale EN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/es.json
+// // Source: locales/es.json
 // Spanish locale.
 immutable AgeLocale ES = AgeLocale(
     code: "es",
@@ -1163,7 +1163,7 @@ immutable AgeLocale ES = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/et.json
+// // Source: locales/et.json
 // Estonian locale.
 immutable AgeLocale ET = AgeLocale(
     code: "et",
@@ -1199,7 +1199,7 @@ immutable AgeLocale ET = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/eu.json
+// // Source: locales/eu.json
 // Basque locale.
 immutable AgeLocale EU = AgeLocale(
     code: "eu",
@@ -1235,7 +1235,7 @@ immutable AgeLocale EU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/fa.json
+// // Source: locales/fa.json
 // Persian locale.
 immutable AgeLocale FA = AgeLocale(
     code: "fa",
@@ -1272,7 +1272,7 @@ immutable AgeLocale FA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/fan.json
+// // Source: locales/fan.json
 // Fang locale.
 immutable AgeLocale FAN = AgeLocale(
     code: "fan",
@@ -1309,7 +1309,7 @@ immutable AgeLocale FAN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ff.json
+// // Source: locales/ff.json
 // Fulah locale.
 immutable AgeLocale FF = AgeLocale(
     code: "ff",
@@ -1346,7 +1346,7 @@ immutable AgeLocale FF = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/fi.json
+// // Source: locales/fi.json
 // Finnish locale.
 immutable AgeLocale FI = AgeLocale(
     code: "fi",
@@ -1383,7 +1383,7 @@ immutable AgeLocale FI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/fil.json
+// // Source: locales/fil.json
 // Filipino locale.
 immutable AgeLocale FIL = AgeLocale(
     code: "fil",
@@ -1419,7 +1419,7 @@ immutable AgeLocale FIL = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/fj.json
+// // Source: locales/fj.json
 // Fijian locale.
 immutable AgeLocale FJ = AgeLocale(
     code: "fj",
@@ -1454,7 +1454,7 @@ immutable AgeLocale FJ = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/fon.json
+// // Source: locales/fon.json
 // Fon locale.
 immutable AgeLocale FON = AgeLocale(
     code: "fon",
@@ -1490,7 +1490,7 @@ immutable AgeLocale FON = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/fr.json
+// // Source: locales/fr.json
 // French locale.
 immutable AgeLocale FR = AgeLocale(
     code: "fr",
@@ -1527,7 +1527,7 @@ immutable AgeLocale FR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ga.json
+// // Source: locales/ga.json
 // Irish locale.
 immutable AgeLocale GA = AgeLocale(
     code: "ga",
@@ -1567,7 +1567,7 @@ immutable AgeLocale GA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/gd.json
+// // Source: locales/gd.json
 // Scottish Gaelic locale.
 immutable AgeLocale GD = AgeLocale(
     code: "gd",
@@ -1606,7 +1606,7 @@ immutable AgeLocale GD = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/gl.json
+// // Source: locales/gl.json
 // Galician locale.
 immutable AgeLocale GL = AgeLocale(
     code: "gl",
@@ -1643,7 +1643,7 @@ immutable AgeLocale GL = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/gn.json
+// // Source: locales/gn.json
 // Guarani locale.
 immutable AgeLocale GN = AgeLocale(
     code: "gn",
@@ -1680,7 +1680,7 @@ immutable AgeLocale GN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/gu.json
+// // Source: locales/gu.json
 // Gujarati locale.
 immutable AgeLocale GU = AgeLocale(
     code: "gu",
@@ -1717,7 +1717,7 @@ immutable AgeLocale GU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/gv.json
+// // Source: locales/gv.json
 // Manx locale.
 immutable AgeLocale GV = AgeLocale(
     code: "gv",
@@ -1758,7 +1758,7 @@ immutable AgeLocale GV = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ha.json
+// // Source: locales/ha.json
 // Hausa locale.
 immutable AgeLocale HA = AgeLocale(
     code: "ha",
@@ -1794,7 +1794,7 @@ immutable AgeLocale HA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/he.json
+// // Source: locales/he.json
 // Hebrew locale.
 immutable AgeLocale HE = AgeLocale(
     code: "he",
@@ -1832,7 +1832,7 @@ immutable AgeLocale HE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/hi.json
+// // Source: locales/hi.json
 // Hindi locale.
 immutable AgeLocale HI = AgeLocale(
     code: "hi",
@@ -1869,7 +1869,7 @@ immutable AgeLocale HI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/hmn.json
+// // Source: locales/hmn.json
 // Hmong locale.
 immutable AgeLocale HMN = AgeLocale(
     code: "hmn",
@@ -1904,7 +1904,7 @@ immutable AgeLocale HMN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/hr.json
+// // Source: locales/hr.json
 // Croatian locale.
 immutable AgeLocale HR = AgeLocale(
     code: "hr",
@@ -1944,7 +1944,7 @@ immutable AgeLocale HR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ht.json
+// // Source: locales/ht.json
 // Haitian Creole locale.
 immutable AgeLocale HT = AgeLocale(
     code: "ht",
@@ -1981,7 +1981,7 @@ immutable AgeLocale HT = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/hu.json
+// // Source: locales/hu.json
 // Hungarian locale.
 immutable AgeLocale HU = AgeLocale(
     code: "hu",
@@ -2017,7 +2017,7 @@ immutable AgeLocale HU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/hy.json
+// // Source: locales/hy.json
 // Armenian locale.
 immutable AgeLocale HY = AgeLocale(
     code: "hy",
@@ -2054,7 +2054,7 @@ immutable AgeLocale HY = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/id.json
+// // Source: locales/id.json
 // Indonesian locale.
 immutable AgeLocale ID = AgeLocale(
     code: "id",
@@ -2090,7 +2090,7 @@ immutable AgeLocale ID = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ig.json
+// // Source: locales/ig.json
 // Igbo locale.
 immutable AgeLocale IG = AgeLocale(
     code: "ig",
@@ -2126,7 +2126,7 @@ immutable AgeLocale IG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/is.json
+// // Source: locales/is.json
 // Icelandic locale.
 immutable AgeLocale IS_ = AgeLocale(
     code: "is",
@@ -2165,7 +2165,7 @@ immutable AgeLocale IS_ = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/it.json
+// // Source: locales/it.json
 // Italian locale.
 immutable AgeLocale IT = AgeLocale(
     code: "it",
@@ -2202,7 +2202,7 @@ immutable AgeLocale IT = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ja.json
+// // Source: locales/ja.json
 // Japanese locale.
 immutable AgeLocale JA = AgeLocale(
     code: "ja",
@@ -2236,7 +2236,7 @@ immutable AgeLocale JA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/jv.json
+// // Source: locales/jv.json
 // Javanese locale.
 immutable AgeLocale JV = AgeLocale(
     code: "jv",
@@ -2272,7 +2272,7 @@ immutable AgeLocale JV = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ka.json
+// // Source: locales/ka.json
 // Georgian locale.
 immutable AgeLocale KA = AgeLocale(
     code: "ka",
@@ -2309,7 +2309,7 @@ immutable AgeLocale KA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kbp.json
+// // Source: locales/kbp.json
 // Kabiye locale.
 immutable AgeLocale KBP = AgeLocale(
     code: "kbp",
@@ -2345,7 +2345,7 @@ immutable AgeLocale KBP = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kek.json
+// // Source: locales/kek.json
 // Q'eqchi' locale.
 immutable AgeLocale KEK = AgeLocale(
     code: "kek",
@@ -2380,7 +2380,7 @@ immutable AgeLocale KEK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ki.json
+// // Source: locales/ki.json
 // Kikuyu locale.
 immutable AgeLocale KI = AgeLocale(
     code: "ki",
@@ -2416,7 +2416,7 @@ immutable AgeLocale KI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kk.json
+// // Source: locales/kk.json
 // Kazakh locale.
 immutable AgeLocale KK = AgeLocale(
     code: "kk",
@@ -2453,7 +2453,7 @@ immutable AgeLocale KK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kl.json
+// // Source: locales/kl.json
 // Kalaallisut locale.
 immutable AgeLocale KL = AgeLocale(
     code: "kl",
@@ -2488,7 +2488,7 @@ immutable AgeLocale KL = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/km.json
+// // Source: locales/km.json
 // Khmer locale.
 immutable AgeLocale KM = AgeLocale(
     code: "km",
@@ -2524,7 +2524,7 @@ immutable AgeLocale KM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kn.json
+// // Source: locales/kn.json
 // Kannada locale.
 immutable AgeLocale KN = AgeLocale(
     code: "kn",
@@ -2561,7 +2561,7 @@ immutable AgeLocale KN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ko.json
+// // Source: locales/ko.json
 // Korean locale.
 immutable AgeLocale KO = AgeLocale(
     code: "ko",
@@ -2596,7 +2596,7 @@ immutable AgeLocale KO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kpe.json
+// // Source: locales/kpe.json
 // Kpelle locale.
 immutable AgeLocale KPE = AgeLocale(
     code: "kpe",
@@ -2632,7 +2632,7 @@ immutable AgeLocale KPE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kri.json
+// // Source: locales/kri.json
 // Krio locale.
 immutable AgeLocale KRI = AgeLocale(
     code: "kri",
@@ -2667,7 +2667,7 @@ immutable AgeLocale KRI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ktu.json
+// // Source: locales/ktu.json
 // Kituba locale.
 immutable AgeLocale KTU = AgeLocale(
     code: "ktu",
@@ -2704,7 +2704,7 @@ immutable AgeLocale KTU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ku.json
+// // Source: locales/ku.json
 // Kurdish locale.
 immutable AgeLocale KU = AgeLocale(
     code: "ku",
@@ -2740,7 +2740,7 @@ immutable AgeLocale KU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/kw.json
+// // Source: locales/kw.json
 // Cornish locale.
 immutable AgeLocale KW = AgeLocale(
     code: "kw",
@@ -2782,7 +2782,7 @@ immutable AgeLocale KW = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ky.json
+// // Source: locales/ky.json
 // Kyrgyz locale.
 immutable AgeLocale KY = AgeLocale(
     code: "ky",
@@ -2819,7 +2819,7 @@ immutable AgeLocale KY = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/lb.json
+// // Source: locales/lb.json
 // Luxembourgish locale.
 immutable AgeLocale LB = AgeLocale(
     code: "lb",
@@ -2855,7 +2855,7 @@ immutable AgeLocale LB = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/lg.json
+// // Source: locales/lg.json
 // Luganda locale.
 immutable AgeLocale LG = AgeLocale(
     code: "lg",
@@ -2892,7 +2892,7 @@ immutable AgeLocale LG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ln.json
+// // Source: locales/ln.json
 // Lingala locale.
 immutable AgeLocale LN = AgeLocale(
     code: "ln",
@@ -2929,7 +2929,7 @@ immutable AgeLocale LN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/lo.json
+// // Source: locales/lo.json
 // Lao locale.
 immutable AgeLocale LO = AgeLocale(
     code: "lo",
@@ -2963,7 +2963,7 @@ immutable AgeLocale LO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/lt.json
+// // Source: locales/lt.json
 // Lithuanian locale.
 immutable AgeLocale LT = AgeLocale(
     code: "lt",
@@ -3002,7 +3002,7 @@ immutable AgeLocale LT = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/luo.json
+// // Source: locales/luo.json
 // Dholuo locale.
 immutable AgeLocale LUO = AgeLocale(
     code: "luo",
@@ -3038,7 +3038,7 @@ immutable AgeLocale LUO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/lv.json
+// // Source: locales/lv.json
 // Latvian locale.
 immutable AgeLocale LV = AgeLocale(
     code: "lv",
@@ -3077,7 +3077,7 @@ immutable AgeLocale LV = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mam.json
+// // Source: locales/mam.json
 // Mam locale.
 immutable AgeLocale MAM = AgeLocale(
     code: "mam",
@@ -3112,7 +3112,7 @@ immutable AgeLocale MAM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/men.json
+// // Source: locales/men.json
 // Mende locale.
 immutable AgeLocale MEN = AgeLocale(
     code: "men",
@@ -3149,7 +3149,7 @@ immutable AgeLocale MEN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mfe.json
+// // Source: locales/mfe.json
 // Mauritian Creole locale.
 immutable AgeLocale MFE = AgeLocale(
     code: "mfe",
@@ -3185,7 +3185,7 @@ immutable AgeLocale MFE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mg.json
+// // Source: locales/mg.json
 // Malagasy locale.
 immutable AgeLocale MG = AgeLocale(
     code: "mg",
@@ -3222,7 +3222,7 @@ immutable AgeLocale MG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mi.json
+// // Source: locales/mi.json
 // Māori locale.
 immutable AgeLocale MI = AgeLocale(
     code: "mi",
@@ -3259,7 +3259,7 @@ immutable AgeLocale MI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mk.json
+// // Source: locales/mk.json
 // Macedonian locale.
 immutable AgeLocale MK = AgeLocale(
     code: "mk",
@@ -3298,7 +3298,7 @@ immutable AgeLocale MK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ml.json
+// // Source: locales/ml.json
 // Malayalam locale.
 immutable AgeLocale ML = AgeLocale(
     code: "ml",
@@ -3335,7 +3335,7 @@ immutable AgeLocale ML = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mn.json
+// // Source: locales/mn.json
 // Mongolian locale.
 immutable AgeLocale MN = AgeLocale(
     code: "mn",
@@ -3372,7 +3372,7 @@ immutable AgeLocale MN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mnk.json
+// // Source: locales/mnk.json
 // Mandinka locale.
 immutable AgeLocale MNK = AgeLocale(
     code: "mnk",
@@ -3408,7 +3408,7 @@ immutable AgeLocale MNK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mos.json
+// // Source: locales/mos.json
 // Moore locale.
 immutable AgeLocale MOS = AgeLocale(
     code: "mos",
@@ -3444,7 +3444,7 @@ immutable AgeLocale MOS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mr.json
+// // Source: locales/mr.json
 // Marathi locale.
 immutable AgeLocale MR = AgeLocale(
     code: "mr",
@@ -3481,7 +3481,7 @@ immutable AgeLocale MR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ms.json
+// // Source: locales/ms.json
 // Malay locale.
 immutable AgeLocale MS = AgeLocale(
     code: "ms",
@@ -3517,7 +3517,7 @@ immutable AgeLocale MS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/mt.json
+// // Source: locales/mt.json
 // Maltese locale.
 immutable AgeLocale MT = AgeLocale(
     code: "mt",
@@ -3558,7 +3558,7 @@ immutable AgeLocale MT = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/my.json
+// // Source: locales/my.json
 // Burmese locale.
 immutable AgeLocale MY = AgeLocale(
     code: "my",
@@ -3594,7 +3594,7 @@ immutable AgeLocale MY = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/nb.json
+// // Source: locales/nb.json
 // Norwegian Bokmål locale.
 immutable AgeLocale NB = AgeLocale(
     code: "nb",
@@ -3630,7 +3630,7 @@ immutable AgeLocale NB = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/nd.json
+// // Source: locales/nd.json
 // Northern Ndebele locale.
 immutable AgeLocale ND = AgeLocale(
     code: "nd",
@@ -3667,7 +3667,7 @@ immutable AgeLocale ND = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ne.json
+// // Source: locales/ne.json
 // Nepali locale.
 immutable AgeLocale NE = AgeLocale(
     code: "ne",
@@ -3704,7 +3704,7 @@ immutable AgeLocale NE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ng.json
+// // Source: locales/ng.json
 // Oshiwambo locale.
 immutable AgeLocale NG = AgeLocale(
     code: "ng",
@@ -3741,7 +3741,7 @@ immutable AgeLocale NG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/nl.json
+// // Source: locales/nl.json
 // Dutch locale.
 immutable AgeLocale NL = AgeLocale(
     code: "nl",
@@ -3777,7 +3777,7 @@ immutable AgeLocale NL = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/nr.json
+// // Source: locales/nr.json
 // Southern Ndebele locale.
 immutable AgeLocale NR = AgeLocale(
     code: "nr",
@@ -3813,7 +3813,7 @@ immutable AgeLocale NR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/nso.json
+// // Source: locales/nso.json
 // Northern Sotho locale.
 immutable AgeLocale NSO = AgeLocale(
     code: "nso",
@@ -3850,7 +3850,7 @@ immutable AgeLocale NSO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/nus.json
+// // Source: locales/nus.json
 // Nuer locale.
 immutable AgeLocale NUS = AgeLocale(
     code: "nus",
@@ -3887,7 +3887,7 @@ immutable AgeLocale NUS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ny.json
+// // Source: locales/ny.json
 // Chichewa locale.
 immutable AgeLocale NY = AgeLocale(
     code: "ny",
@@ -3924,7 +3924,7 @@ immutable AgeLocale NY = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/om.json
+// // Source: locales/om.json
 // Oromo locale.
 immutable AgeLocale OM = AgeLocale(
     code: "om",
@@ -3961,7 +3961,7 @@ immutable AgeLocale OM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/or.json
+// // Source: locales/or.json
 // Odia locale.
 immutable AgeLocale OR = AgeLocale(
     code: "or",
@@ -3998,7 +3998,7 @@ immutable AgeLocale OR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/pa.json
+// // Source: locales/pa.json
 // Punjabi locale.
 immutable AgeLocale PA = AgeLocale(
     code: "pa",
@@ -4035,7 +4035,7 @@ immutable AgeLocale PA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/pis.json
+// // Source: locales/pis.json
 // Pijin locale.
 immutable AgeLocale PIS = AgeLocale(
     code: "pis",
@@ -4070,7 +4070,7 @@ immutable AgeLocale PIS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/pl.json
+// // Source: locales/pl.json
 // Polish locale.
 immutable AgeLocale PL = AgeLocale(
     code: "pl",
@@ -4110,7 +4110,7 @@ immutable AgeLocale PL = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/pov.json
+// // Source: locales/pov.json
 // Guinea-Bissau Creole locale.
 immutable AgeLocale POV = AgeLocale(
     code: "pov",
@@ -4146,7 +4146,7 @@ immutable AgeLocale POV = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ps.json
+// // Source: locales/ps.json
 // Pashto locale.
 immutable AgeLocale PS = AgeLocale(
     code: "ps",
@@ -4183,7 +4183,7 @@ immutable AgeLocale PS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/pt.json
+// // Source: locales/pt.json
 // Portuguese locale.
 immutable AgeLocale PT = AgeLocale(
     code: "pt",
@@ -4220,7 +4220,7 @@ immutable AgeLocale PT = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/qu.json
+// // Source: locales/qu.json
 // Quechua locale.
 immutable AgeLocale QU = AgeLocale(
     code: "qu",
@@ -4256,7 +4256,7 @@ immutable AgeLocale QU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/quc.json
+// // Source: locales/quc.json
 // K'iche' locale.
 immutable AgeLocale QUC = AgeLocale(
     code: "quc",
@@ -4291,7 +4291,7 @@ immutable AgeLocale QUC = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ro.json
+// // Source: locales/ro.json
 // Romanian locale.
 immutable AgeLocale RO = AgeLocale(
     code: "ro",
@@ -4329,7 +4329,7 @@ immutable AgeLocale RO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ru.json
+// // Source: locales/ru.json
 // Russian locale.
 immutable AgeLocale RU = AgeLocale(
     code: "ru",
@@ -4369,7 +4369,7 @@ immutable AgeLocale RU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/rw.json
+// // Source: locales/rw.json
 // Kinyarwanda locale.
 immutable AgeLocale RW = AgeLocale(
     code: "rw",
@@ -4406,7 +4406,7 @@ immutable AgeLocale RW = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sar.json
+// // Source: locales/sar.json
 // Sara locale.
 immutable AgeLocale SAR = AgeLocale(
     code: "sar",
@@ -4442,7 +4442,7 @@ immutable AgeLocale SAR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sd.json
+// // Source: locales/sd.json
 // Sindhi locale.
 immutable AgeLocale SD = AgeLocale(
     code: "sd",
@@ -4479,7 +4479,7 @@ immutable AgeLocale SD = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sg.json
+// // Source: locales/sg.json
 // Sango locale.
 immutable AgeLocale SG = AgeLocale(
     code: "sg",
@@ -4515,7 +4515,7 @@ immutable AgeLocale SG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/shi.json
+// // Source: locales/shi.json
 // Tachelhit locale.
 immutable AgeLocale SHI = AgeLocale(
     code: "shi",
@@ -4553,7 +4553,7 @@ immutable AgeLocale SHI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/shn.json
+// // Source: locales/shn.json
 // Shan locale.
 immutable AgeLocale SHN = AgeLocale(
     code: "shn",
@@ -4588,7 +4588,7 @@ immutable AgeLocale SHN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/si.json
+// // Source: locales/si.json
 // Sinhala locale.
 immutable AgeLocale SI = AgeLocale(
     code: "si",
@@ -4625,7 +4625,7 @@ immutable AgeLocale SI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sk.json
+// // Source: locales/sk.json
 // Slovak locale.
 immutable AgeLocale SK = AgeLocale(
     code: "sk",
@@ -4662,7 +4662,7 @@ immutable AgeLocale SK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sl.json
+// // Source: locales/sl.json
 // Slovenian locale.
 immutable AgeLocale SL = AgeLocale(
     code: "sl",
@@ -4702,7 +4702,7 @@ immutable AgeLocale SL = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sn.json
+// // Source: locales/sn.json
 // Shona locale.
 immutable AgeLocale SN = AgeLocale(
     code: "sn",
@@ -4739,7 +4739,7 @@ immutable AgeLocale SN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/snk.json
+// // Source: locales/snk.json
 // Soninke locale.
 immutable AgeLocale SNK = AgeLocale(
     code: "snk",
@@ -4775,7 +4775,7 @@ immutable AgeLocale SNK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/so.json
+// // Source: locales/so.json
 // Somali locale.
 immutable AgeLocale SO = AgeLocale(
     code: "so",
@@ -4812,7 +4812,7 @@ immutable AgeLocale SO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sq.json
+// // Source: locales/sq.json
 // Albanian locale.
 immutable AgeLocale SQ = AgeLocale(
     code: "sq",
@@ -4849,7 +4849,7 @@ immutable AgeLocale SQ = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sr.json
+// // Source: locales/sr.json
 // Serbian locale.
 immutable AgeLocale SR = AgeLocale(
     code: "sr",
@@ -4889,7 +4889,7 @@ immutable AgeLocale SR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ss.json
+// // Source: locales/ss.json
 // siSwati locale.
 immutable AgeLocale SS = AgeLocale(
     code: "ss",
@@ -4926,7 +4926,7 @@ immutable AgeLocale SS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/st.json
+// // Source: locales/st.json
 // Southern Sotho locale.
 immutable AgeLocale ST = AgeLocale(
     code: "st",
@@ -4963,7 +4963,7 @@ immutable AgeLocale ST = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/su.json
+// // Source: locales/su.json
 // Sundanese locale.
 immutable AgeLocale SU = AgeLocale(
     code: "su",
@@ -4999,7 +4999,7 @@ immutable AgeLocale SU = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/suk.json
+// // Source: locales/suk.json
 // Sukuma locale.
 immutable AgeLocale SUK = AgeLocale(
     code: "suk",
@@ -5036,7 +5036,7 @@ immutable AgeLocale SUK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sv.json
+// // Source: locales/sv.json
 // Swedish locale.
 immutable AgeLocale SV = AgeLocale(
     code: "sv",
@@ -5072,7 +5072,7 @@ immutable AgeLocale SV = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/sw.json
+// // Source: locales/sw.json
 // Swahili locale.
 immutable AgeLocale SW = AgeLocale(
     code: "sw",
@@ -5109,7 +5109,7 @@ immutable AgeLocale SW = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ta.json
+// // Source: locales/ta.json
 // Tamil locale.
 immutable AgeLocale TA = AgeLocale(
     code: "ta",
@@ -5145,7 +5145,7 @@ immutable AgeLocale TA = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/te.json
+// // Source: locales/te.json
 // Telugu locale.
 immutable AgeLocale TE = AgeLocale(
     code: "te",
@@ -5182,7 +5182,7 @@ immutable AgeLocale TE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tem.json
+// // Source: locales/tem.json
 // Temne locale.
 immutable AgeLocale TEM = AgeLocale(
     code: "tem",
@@ -5219,7 +5219,7 @@ immutable AgeLocale TEM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tet.json
+// // Source: locales/tet.json
 // Tetum locale.
 immutable AgeLocale TET = AgeLocale(
     code: "tet",
@@ -5254,7 +5254,7 @@ immutable AgeLocale TET = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tg.json
+// // Source: locales/tg.json
 // Tajik locale.
 immutable AgeLocale TG = AgeLocale(
     code: "tg",
@@ -5290,7 +5290,7 @@ immutable AgeLocale TG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/th.json
+// // Source: locales/th.json
 // Thai locale.
 immutable AgeLocale TH = AgeLocale(
     code: "th",
@@ -5326,7 +5326,7 @@ immutable AgeLocale TH = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ti.json
+// // Source: locales/ti.json
 // Tigrinya locale.
 immutable AgeLocale TI = AgeLocale(
     code: "ti",
@@ -5363,7 +5363,7 @@ immutable AgeLocale TI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tig.json
+// // Source: locales/tig.json
 // Tigre locale.
 immutable AgeLocale TIG = AgeLocale(
     code: "tig",
@@ -5400,7 +5400,7 @@ immutable AgeLocale TIG = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tk.json
+// // Source: locales/tk.json
 // Turkmen locale.
 immutable AgeLocale TK = AgeLocale(
     code: "tk",
@@ -5437,7 +5437,7 @@ immutable AgeLocale TK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tn.json
+// // Source: locales/tn.json
 // Tswana locale.
 immutable AgeLocale TN = AgeLocale(
     code: "tn",
@@ -5474,7 +5474,7 @@ immutable AgeLocale TN = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tpi.json
+// // Source: locales/tpi.json
 // Tok Pisin locale.
 immutable AgeLocale TPI = AgeLocale(
     code: "tpi",
@@ -5509,7 +5509,7 @@ immutable AgeLocale TPI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tr.json
+// // Source: locales/tr.json
 // Turkish locale.
 immutable AgeLocale TR = AgeLocale(
     code: "tr",
@@ -5546,7 +5546,7 @@ immutable AgeLocale TR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ts.json
+// // Source: locales/ts.json
 // Tsonga locale.
 immutable AgeLocale TS = AgeLocale(
     code: "ts",
@@ -5583,7 +5583,7 @@ immutable AgeLocale TS = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tum.json
+// // Source: locales/tum.json
 // Tumbuka locale.
 immutable AgeLocale TUM = AgeLocale(
     code: "tum",
@@ -5619,7 +5619,7 @@ immutable AgeLocale TUM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/tzm.json
+// // Source: locales/tzm.json
 // Central Atlas Tamazight locale.
 immutable AgeLocale TZM = AgeLocale(
     code: "tzm",
@@ -5656,7 +5656,7 @@ immutable AgeLocale TZM = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/uk.json
+// // Source: locales/uk.json
 // Ukrainian locale.
 immutable AgeLocale UK = AgeLocale(
     code: "uk",
@@ -5696,7 +5696,7 @@ immutable AgeLocale UK = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/umb.json
+// // Source: locales/umb.json
 // Umbundu locale.
 immutable AgeLocale UMB = AgeLocale(
     code: "umb",
@@ -5733,7 +5733,7 @@ immutable AgeLocale UMB = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ur.json
+// // Source: locales/ur.json
 // Urdu locale.
 immutable AgeLocale UR = AgeLocale(
     code: "ur",
@@ -5770,7 +5770,7 @@ immutable AgeLocale UR = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/uz.json
+// // Source: locales/uz.json
 // Uzbek locale.
 immutable AgeLocale UZ = AgeLocale(
     code: "uz",
@@ -5807,7 +5807,7 @@ immutable AgeLocale UZ = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/ve.json
+// // Source: locales/ve.json
 // Venda locale.
 immutable AgeLocale VE = AgeLocale(
     code: "ve",
@@ -5843,7 +5843,7 @@ immutable AgeLocale VE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/vi.json
+// // Source: locales/vi.json
 // Vietnamese locale.
 immutable AgeLocale VI = AgeLocale(
     code: "vi",
@@ -5879,7 +5879,7 @@ immutable AgeLocale VI = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/vmw.json
+// // Source: locales/vmw.json
 // Makhuwa locale.
 immutable AgeLocale VMW = AgeLocale(
     code: "vmw",
@@ -5916,7 +5916,7 @@ immutable AgeLocale VMW = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/wo.json
+// // Source: locales/wo.json
 // Wolof locale.
 immutable AgeLocale WO = AgeLocale(
     code: "wo",
@@ -5952,7 +5952,7 @@ immutable AgeLocale WO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/xh.json
+// // Source: locales/xh.json
 // Xhosa locale.
 immutable AgeLocale XH = AgeLocale(
     code: "xh",
@@ -5989,7 +5989,7 @@ immutable AgeLocale XH = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/yao.json
+// // Source: locales/yao.json
 // Yao locale.
 immutable AgeLocale YAO = AgeLocale(
     code: "yao",
@@ -6025,7 +6025,7 @@ immutable AgeLocale YAO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/yo.json
+// // Source: locales/yo.json
 // Yoruba locale.
 immutable AgeLocale YO = AgeLocale(
     code: "yo",
@@ -6061,7 +6061,7 @@ immutable AgeLocale YO = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/yue.json
+// // Source: locales/yue.json
 // Cantonese locale.
 immutable AgeLocale YUE = AgeLocale(
     code: "yue",
@@ -6095,7 +6095,7 @@ immutable AgeLocale YUE = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/zdj.json
+// // Source: locales/zdj.json
 // Comorian locale.
 immutable AgeLocale ZDJ = AgeLocale(
     code: "zdj",
@@ -6131,7 +6131,7 @@ immutable AgeLocale ZDJ = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/zh.json
+// // Source: locales/zh.json
 // Chinese locale.
 immutable AgeLocale ZH = AgeLocale(
     code: "zh",
@@ -6165,7 +6165,7 @@ immutable AgeLocale ZH = AgeLocale(
     ),
 );
 
-// // Source: age/locales/src/zu.json
+// // Source: locales/zu.json
 // Zulu locale.
 immutable AgeLocale ZU = AgeLocale(
     code: "zu",

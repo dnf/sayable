@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: duration/locales/src/is.json
+-- Source: locales/is.json
 
 local function plural(n)
     local mod10 = n % 10

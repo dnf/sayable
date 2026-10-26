@@ -180,7 +180,7 @@ plural_tzm :: proc(n: int) -> Plural_Category {
     return .Other
 }
 
-// Source: age/locales/src/af.json
+// Source: locales/af.json
 locale_af : Age_Locale = {
     code = "af",
     plural = plural_one_other,
@@ -205,7 +205,7 @@ locale_af : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}j", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ak.json
+// Source: locales/ak.json
 locale_ak : Age_Locale = {
     code = "ak",
     plural = plural_one_other_zero_one,
@@ -230,7 +230,7 @@ locale_ak : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "nna {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "dapɛn {n}", two = nil, few = nil, many = nil, other = "nnapɛn {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "bos {n}", two = nil, few = nil, many = nil, other = "abos {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "afe {n}", two = nil, few = nil, many = nil, other = "mfe {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/am.json
+// Source: locales/am.json
 locale_am : Age_Locale = {
     code = "am",
     plural = plural_one_other_zero_one,
@@ -255,7 +255,7 @@ locale_am : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ቀ", forms = nil}, week = Unit_Forms{simple = "{n} ሳምንት", forms = nil}, month = Unit_Forms{simple = "{n} ወር", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ዓመት", two = nil, few = nil, many = nil, other = "{n} ዓ"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ar.json
+// Source: locales/ar.json
 locale_ar : Age_Locale = {
     code = "ar",
     plural = plural_ar,
@@ -280,7 +280,7 @@ locale_ar : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ي", forms = nil}, week = Unit_Forms{simple = "{n} أ", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} شهر", one = "شهر", two = "شهران", few = "{n} أشهر", many = "{n} شهرًا", other = "{n} شهر"}}, year = Unit_Forms{simple = "{n} سنة", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ay.json
+// Source: locales/ay.json
 locale_ay : Age_Locale = {
     code = "ay",
     plural = plural_other_only,
@@ -305,7 +305,7 @@ locale_ay : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/az.json
+// Source: locales/az.json
 locale_az : Age_Locale = {
     code = "az",
     plural = plural_one_other,
@@ -330,7 +330,7 @@ locale_az : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} gün", forms = nil}, week = Unit_Forms{simple = "{n} hft", forms = nil}, month = Unit_Forms{simple = "{n} ay", forms = nil}, year = Unit_Forms{simple = "{n} il", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/bci.json
+// Source: locales/bci.json
 locale_bci : Age_Locale = {
     code = "bci",
     plural = plural_other_only,
@@ -355,7 +355,7 @@ locale_bci : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "cɛn {n}", forms = nil}, week = Unit_Forms{simple = "lem {n}", forms = nil}, month = Unit_Forms{simple = "ang {n}", forms = nil}, year = Unit_Forms{simple = "af {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/be.json
+// Source: locales/be.json
 locale_be : Age_Locale = {
     code = "be",
     plural = plural_ru_uk,
@@ -380,7 +380,7 @@ locale_be : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} д.", forms = nil}, week = Unit_Forms{simple = "{n} т.", forms = nil}, month = Unit_Forms{simple = "{n} м.", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} г.", two = nil, few = "{n} г.", many = "{n} г.", other = "{n} г."}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/bem.json
+// Source: locales/bem.json
 locale_bem : Age_Locale = {
     code = "bem",
     plural = plural_one_other,
@@ -405,7 +405,7 @@ locale_bem : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/bg.json
+// Source: locales/bg.json
 locale_bg : Age_Locale = {
     code = "bg",
     plural = plural_one_other,
@@ -430,7 +430,7 @@ locale_bg : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} д", forms = nil}, week = Unit_Forms{simple = "{n} седм.", forms = nil}, month = Unit_Forms{simple = "{n} мес.", forms = nil}, year = Unit_Forms{simple = "{n} г.", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/bi.json
+// Source: locales/bi.json
 locale_bi : Age_Locale = {
     code = "bi",
     plural = plural_other_only,
@@ -455,7 +455,7 @@ locale_bi : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/bm.json
+// Source: locales/bm.json
 locale_bm : Age_Locale = {
     code = "bm",
     plural = plural_other_only,
@@ -480,7 +480,7 @@ locale_bm : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "don {n}", forms = nil}, week = Unit_Forms{simple = "dɔgɔk {n}", forms = nil}, month = Unit_Forms{simple = "kalo {n}", forms = nil}, year = Unit_Forms{simple = "san {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/bn.json
+// Source: locales/bn.json
 locale_bn : Age_Locale = {
     code = "bn",
     plural = plural_one_other_zero_one,
@@ -505,7 +505,7 @@ locale_bn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} দিন", forms = nil}, week = Unit_Forms{simple = "{n} সপ্তাহ", forms = nil}, month = Unit_Forms{simple = "{n} মাস", forms = nil}, year = Unit_Forms{simple = "{n} বছর", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/br.json
+// Source: locales/br.json
 locale_br : Age_Locale = {
     code = "br",
     plural = plural_br,
@@ -530,7 +530,7 @@ locale_br : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}sizh.", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}b", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/bs.json
+// Source: locales/bs.json
 locale_bs : Age_Locale = {
     code = "bs",
     plural = plural_slavic_bcs,
@@ -555,7 +555,7 @@ locale_bs : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d.", forms = nil}, week = Unit_Forms{simple = "{n} sedm.", forms = nil}, month = Unit_Forms{simple = "{n} mj.", forms = nil}, year = Unit_Forms{simple = "{n} god.", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ca.json
+// Source: locales/ca.json
 locale_ca : Age_Locale = {
     code = "ca",
     plural = plural_one_other,
@@ -580,7 +580,7 @@ locale_ca : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} setm.", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} any", two = nil, few = nil, many = nil, other = "{n} anys"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/cak.json
+// Source: locales/cak.json
 locale_cak : Age_Locale = {
     code = "cak",
     plural = plural_other_only,
@@ -605,7 +605,7 @@ locale_cak : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ceb.json
+// Source: locales/ceb.json
 locale_ceb : Age_Locale = {
     code = "ceb",
     plural = plural_one_other_zero_one,
@@ -630,7 +630,7 @@ locale_ceb : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/cs.json
+// Source: locales/cs.json
 locale_cs : Age_Locale = {
     code = "cs",
     plural = plural_cs_sk,
@@ -655,7 +655,7 @@ locale_cs : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d.", forms = nil}, week = Unit_Forms{simple = "{n} t.", forms = nil}, month = Unit_Forms{simple = "{n} m.", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} r.", two = nil, few = "{n} r.", many = "{n} r.", other = "{n} l."}}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/cy.json
+// Source: locales/cy.json
 locale_cy : Age_Locale = {
     code = "cy",
     plural = plural_cy,
@@ -680,7 +680,7 @@ locale_cy : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} ws", one = "{n}w", two = "{n} ws", few = "{n} ws", many = "{n} ws", other = "{n}w"}}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}bl", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/da.json
+// Source: locales/da.json
 locale_da : Age_Locale = {
     code = "da",
     plural = plural_one_other,
@@ -705,7 +705,7 @@ locale_da : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} u", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = "{n} år", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/de.json
+// Source: locales/de.json
 locale_de : Age_Locale = {
     code = "de",
     plural = plural_one_other,
@@ -730,7 +730,7 @@ locale_de : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} T", forms = nil}, week = Unit_Forms{simple = "{n} W", forms = nil}, month = Unit_Forms{simple = "{n} M", forms = nil}, year = Unit_Forms{simple = "{n} J", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/din.json
+// Source: locales/din.json
 locale_din : Age_Locale = {
     code = "din",
     plural = plural_one_other,
@@ -755,7 +755,7 @@ locale_din : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/dje.json
+// Source: locales/dje.json
 locale_dje : Age_Locale = {
     code = "dje",
     plural = plural_other_only,
@@ -780,7 +780,7 @@ locale_dje : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "zaa {n}", forms = nil}, week = Unit_Forms{simple = "heb {n}", forms = nil}, month = Unit_Forms{simple = "han {n}", forms = nil}, year = Unit_Forms{simple = "jii {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/dv.json
+// Source: locales/dv.json
 locale_dv : Age_Locale = {
     code = "dv",
     plural = plural_other_only,
@@ -805,7 +805,7 @@ locale_dv : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/dyu.json
+// Source: locales/dyu.json
 locale_dyu : Age_Locale = {
     code = "dyu",
     plural = plural_other_only,
@@ -830,7 +830,7 @@ locale_dyu : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "don {n}", forms = nil}, week = Unit_Forms{simple = "dɔgɔk {n}", forms = nil}, month = Unit_Forms{simple = "kalo {n}", forms = nil}, year = Unit_Forms{simple = "san {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/dz.json
+// Source: locales/dz.json
 locale_dz : Age_Locale = {
     code = "dz",
     plural = plural_other_only,
@@ -855,7 +855,7 @@ locale_dz : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ee.json
+// Source: locales/ee.json
 locale_ee : Age_Locale = {
     code = "ee",
     plural = plural_one_other,
@@ -880,7 +880,7 @@ locale_ee : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/el.json
+// Source: locales/el.json
 locale_el : Age_Locale = {
     code = "el",
     plural = plural_one_other,
@@ -905,7 +905,7 @@ locale_el : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} η", forms = nil}, week = Unit_Forms{simple = "{n} ε", forms = nil}, month = Unit_Forms{simple = "{n} μ", forms = nil}, year = Unit_Forms{simple = "{n} έ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/en.json
+// Source: locales/en.json
 locale_en : Age_Locale = {
     code = "en",
     plural = plural_one_other,
@@ -930,7 +930,7 @@ locale_en : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/es.json
+// Source: locales/es.json
 locale_es : Age_Locale = {
     code = "es",
     plural = plural_one_other,
@@ -955,7 +955,7 @@ locale_es : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}sem", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}a", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/et.json
+// Source: locales/et.json
 locale_et : Age_Locale = {
     code = "et",
     plural = plural_one_other,
@@ -980,7 +980,7 @@ locale_et : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} p", forms = nil}, week = Unit_Forms{simple = "{n} n", forms = nil}, month = Unit_Forms{simple = "{n} k", forms = nil}, year = Unit_Forms{simple = "{n} a", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/eu.json
+// Source: locales/eu.json
 locale_eu : Age_Locale = {
     code = "eu",
     plural = plural_other_only,
@@ -1005,7 +1005,7 @@ locale_eu : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} e.", forms = nil}, week = Unit_Forms{simple = "{n} aste", forms = nil}, month = Unit_Forms{simple = "{n} hil", forms = nil}, year = Unit_Forms{simple = "{n} u.", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/fa.json
+// Source: locales/fa.json
 locale_fa : Age_Locale = {
     code = "fa",
     plural = plural_one_other_zero_one,
@@ -1030,7 +1030,7 @@ locale_fa : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} روز", forms = nil}, week = Unit_Forms{simple = "{n} هفته", forms = nil}, month = Unit_Forms{simple = "{n} ماه", forms = nil}, year = Unit_Forms{simple = "{n} سال", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/fan.json
+// Source: locales/fan.json
 locale_fan : Age_Locale = {
     code = "fan",
     plural = plural_one_other,
@@ -1055,7 +1055,7 @@ locale_fan : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ff.json
+// Source: locales/ff.json
 locale_ff : Age_Locale = {
     code = "ff",
     plural = plural_one_other_zero_one,
@@ -1080,7 +1080,7 @@ locale_ff : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "ñalɗe {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "yont {n}", two = nil, few = nil, many = nil, other = "yontji {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "lew {n}", two = nil, few = nil, many = nil, other = "leb {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "hit {n}", two = nil, few = nil, many = nil, other = "duuɓi {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/fi.json
+// Source: locales/fi.json
 locale_fi : Age_Locale = {
     code = "fi",
     plural = plural_one_other,
@@ -1105,7 +1105,7 @@ locale_fi : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}pv", forms = nil}, week = Unit_Forms{simple = "{n}vk", forms = nil}, month = Unit_Forms{simple = "{n}kk", forms = nil}, year = Unit_Forms{simple = "{n}v", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/fil.json
+// Source: locales/fil.json
 locale_fil : Age_Locale = {
     code = "fil",
     plural = plural_other_only,
@@ -1130,7 +1130,7 @@ locale_fil : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} araw", two = nil, few = nil, many = nil, other = "{n} na araw"}}, week = Unit_Forms{simple = "{n}linggo", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n}buwan", two = nil, few = nil, many = nil, other = "{n} buwan"}}, year = Unit_Forms{simple = "{n}taon", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/fj.json
+// Source: locales/fj.json
 locale_fj : Age_Locale = {
     code = "fj",
     plural = plural_other_only,
@@ -1155,7 +1155,7 @@ locale_fj : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/fon.json
+// Source: locales/fon.json
 locale_fon : Age_Locale = {
     code = "fon",
     plural = plural_other_only,
@@ -1180,7 +1180,7 @@ locale_fon : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/fr.json
+// Source: locales/fr.json
 locale_fr : Age_Locale = {
     code = "fr",
     plural = plural_one_other_zero_one,
@@ -1205,7 +1205,7 @@ locale_fr : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}j", forms = nil}, week = Unit_Forms{simple = "{n}sem.", forms = nil}, month = Unit_Forms{simple = "{n}m.", forms = nil}, year = Unit_Forms{simple = "{n}a", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ga.json
+// Source: locales/ga.json
 locale_ga : Age_Locale = {
     code = "ga",
     plural = plural_ga,
@@ -1230,7 +1230,7 @@ locale_ga : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} lá", forms = nil}, week = Unit_Forms{simple = "{n} scht", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n}m", two = "{n}m", few = "{n}m", many = "{n}m", other = "{n} m"}}, year = Unit_Forms{simple = "{n} bl", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/gd.json
+// Source: locales/gd.json
 locale_gd : Age_Locale = {
     code = "gd",
     plural = plural_gd,
@@ -1255,7 +1255,7 @@ locale_gd : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}là", forms = nil}, week = Unit_Forms{simple = "{n}s", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}bl", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/gl.json
+// Source: locales/gl.json
 locale_gl : Age_Locale = {
     code = "gl",
     plural = plural_one_other,
@@ -1280,7 +1280,7 @@ locale_gl : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} s", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = "{n} a", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/gn.json
+// Source: locales/gn.json
 locale_gn : Age_Locale = {
     code = "gn",
     plural = plural_one_other,
@@ -1305,7 +1305,7 @@ locale_gn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/gu.json
+// Source: locales/gu.json
 locale_gu : Age_Locale = {
     code = "gu",
     plural = plural_one_other_zero_one,
@@ -1330,7 +1330,7 @@ locale_gu : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} દિ", forms = nil}, week = Unit_Forms{simple = "{n} અઠ.", forms = nil}, month = Unit_Forms{simple = "{n} મ", forms = nil}, year = Unit_Forms{simple = "{n} વ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/gv.json
+// Source: locales/gv.json
 locale_gv : Age_Locale = {
     code = "gv",
     plural = plural_gv,
@@ -1355,7 +1355,7 @@ locale_gv : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ha.json
+// Source: locales/ha.json
 locale_ha : Age_Locale = {
     code = "ha",
     plural = plural_one_other,
@@ -1380,7 +1380,7 @@ locale_ha : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/he.json
+// Source: locales/he.json
 locale_he : Age_Locale = {
     code = "he",
     plural = plural_he,
@@ -1405,7 +1405,7 @@ locale_he : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} י׳", forms = nil}, week = Unit_Forms{simple = "{n} ש′", forms = nil}, month = Unit_Forms{simple = "{n} ח׳", forms = nil}, year = Unit_Forms{simple = "{n} ש′", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/hi.json
+// Source: locales/hi.json
 locale_hi : Age_Locale = {
     code = "hi",
     plural = plural_one_other_zero_one,
@@ -1430,7 +1430,7 @@ locale_hi : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} दि", forms = nil}, week = Unit_Forms{simple = "{n} सप्ताह", forms = nil}, month = Unit_Forms{simple = "{n} माह", forms = nil}, year = Unit_Forms{simple = "{n} व", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/hmn.json
+// Source: locales/hmn.json
 locale_hmn : Age_Locale = {
     code = "hmn",
     plural = plural_other_only,
@@ -1455,7 +1455,7 @@ locale_hmn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/hr.json
+// Source: locales/hr.json
 locale_hr : Age_Locale = {
     code = "hr",
     plural = plural_slavic_bcs,
@@ -1480,7 +1480,7 @@ locale_hr : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d.", forms = nil}, week = Unit_Forms{simple = "{n} tj.", forms = nil}, month = Unit_Forms{simple = "{n} mj.", forms = nil}, year = Unit_Forms{simple = "{n} g.", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ht.json
+// Source: locales/ht.json
 locale_ht : Age_Locale = {
     code = "ht",
     plural = plural_one_other_zero_one,
@@ -1505,7 +1505,7 @@ locale_ht : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}j", forms = nil}, week = Unit_Forms{simple = "{n}sem", forms = nil}, month = Unit_Forms{simple = "{n}mwa", forms = nil}, year = Unit_Forms{simple = "{n}an", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/hu.json
+// Source: locales/hu.json
 locale_hu : Age_Locale = {
     code = "hu",
     plural = plural_other_only,
@@ -1530,7 +1530,7 @@ locale_hu : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} nap", forms = nil}, week = Unit_Forms{simple = "{n} hét", forms = nil}, month = Unit_Forms{simple = "{n} h.", forms = nil}, year = Unit_Forms{simple = "{n} év", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/hy.json
+// Source: locales/hy.json
 locale_hy : Age_Locale = {
     code = "hy",
     plural = plural_one_other_zero_one,
@@ -1555,7 +1555,7 @@ locale_hy : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} օ", forms = nil}, week = Unit_Forms{simple = "{n} շ", forms = nil}, month = Unit_Forms{simple = "{n} ա", forms = nil}, year = Unit_Forms{simple = "{n} տ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/id.json
+// Source: locales/id.json
 locale_id : Age_Locale = {
     code = "id",
     plural = plural_other_only,
@@ -1580,7 +1580,7 @@ locale_id : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} hr", forms = nil}, week = Unit_Forms{simple = "{n} mgg", forms = nil}, month = Unit_Forms{simple = "{n} bln", forms = nil}, year = Unit_Forms{simple = "{n} thn", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ig.json
+// Source: locales/ig.json
 locale_ig : Age_Locale = {
     code = "ig",
     plural = plural_other_only,
@@ -1605,7 +1605,7 @@ locale_ig : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/is.json
+// Source: locales/is.json
 locale_is : Age_Locale = {
     code = "is",
     plural = plural_mk,
@@ -1630,7 +1630,7 @@ locale_is : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}v", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}á", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/it.json
+// Source: locales/it.json
 locale_it : Age_Locale = {
     code = "it",
     plural = plural_one_other,
@@ -1655,7 +1655,7 @@ locale_it : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n}g", two = nil, few = nil, many = nil, other = "{n}gg"}}, week = Unit_Forms{simple = "{n}sett.", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} mese", two = nil, few = nil, many = nil, other = "{n} mesi"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n}anno", two = nil, few = nil, many = nil, other = "{n}anni"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ja.json
+// Source: locales/ja.json
 locale_ja : Age_Locale = {
     code = "ja",
     plural = plural_other_only,
@@ -1680,7 +1680,7 @@ locale_ja : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = nil, just_born = nil},
 }
 
-// Source: age/locales/src/jv.json
+// Source: locales/jv.json
 locale_jv : Age_Locale = {
     code = "jv",
     plural = plural_other_only,
@@ -1705,7 +1705,7 @@ locale_jv : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n} peken", forms = nil}, month = Unit_Forms{simple = "{n} sasi", forms = nil}, year = Unit_Forms{simple = "{n} taun", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ka.json
+// Source: locales/ka.json
 locale_ka : Age_Locale = {
     code = "ka",
     plural = plural_one_other,
@@ -1730,7 +1730,7 @@ locale_ka : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} დღე", forms = nil}, week = Unit_Forms{simple = "{n} კვრ", forms = nil}, month = Unit_Forms{simple = "{n} თვე", forms = nil}, year = Unit_Forms{simple = "{n} წ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kbp.json
+// Source: locales/kbp.json
 locale_kbp : Age_Locale = {
     code = "kbp",
     plural = plural_other_only,
@@ -1755,7 +1755,7 @@ locale_kbp : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kek.json
+// Source: locales/kek.json
 locale_kek : Age_Locale = {
     code = "kek",
     plural = plural_other_only,
@@ -1780,7 +1780,7 @@ locale_kek : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ki.json
+// Source: locales/ki.json
 locale_ki : Age_Locale = {
     code = "ki",
     plural = plural_one_other,
@@ -1805,7 +1805,7 @@ locale_ki : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kk.json
+// Source: locales/kk.json
 locale_kk : Age_Locale = {
     code = "kk",
     plural = plural_one_other,
@@ -1830,7 +1830,7 @@ locale_kk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} к.", forms = nil}, week = Unit_Forms{simple = "{n} ап.", forms = nil}, month = Unit_Forms{simple = "{n} ай", forms = nil}, year = Unit_Forms{simple = "{n} ж.", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kl.json
+// Source: locales/kl.json
 locale_kl : Age_Locale = {
     code = "kl",
     plural = plural_other_only,
@@ -1855,7 +1855,7 @@ locale_kl : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/km.json
+// Source: locales/km.json
 locale_km : Age_Locale = {
     code = "km",
     plural = plural_other_only,
@@ -1880,7 +1880,7 @@ locale_km : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ថ្ងៃ", forms = nil}, week = Unit_Forms{simple = "{n} សប្ដាហ៍", forms = nil}, month = Unit_Forms{simple = "{n} ខែ", forms = nil}, year = Unit_Forms{simple = "{n} ឆ្នាំ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kn.json
+// Source: locales/kn.json
 locale_kn : Age_Locale = {
     code = "kn",
     plural = plural_one_other_zero_one,
@@ -1905,7 +1905,7 @@ locale_kn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ದಿ", forms = nil}, week = Unit_Forms{simple = "{n} ವಾ", forms = nil}, month = Unit_Forms{simple = "{n} ತಿಂ", forms = nil}, year = Unit_Forms{simple = "{n} ವ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ko.json
+// Source: locales/ko.json
 locale_ko : Age_Locale = {
     code = "ko",
     plural = plural_other_only,
@@ -1930,7 +1930,7 @@ locale_ko : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}일", forms = nil}, week = Unit_Forms{simple = "{n}주", forms = nil}, month = Unit_Forms{simple = "{n}개월", forms = nil}, year = Unit_Forms{simple = "{n}년", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kpe.json
+// Source: locales/kpe.json
 locale_kpe : Age_Locale = {
     code = "kpe",
     plural = plural_other_only,
@@ -1955,7 +1955,7 @@ locale_kpe : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "ɓɛl {n}", forms = nil}, week = Unit_Forms{simple = "wik {n}", forms = nil}, month = Unit_Forms{simple = "ŋuŋ {n}", forms = nil}, year = Unit_Forms{simple = "kɛ̃ɛ̃ {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kri.json
+// Source: locales/kri.json
 locale_kri : Age_Locale = {
     code = "kri",
     plural = plural_other_only,
@@ -1980,7 +1980,7 @@ locale_kri : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ktu.json
+// Source: locales/ktu.json
 locale_ktu : Age_Locale = {
     code = "ktu",
     plural = plural_one_other,
@@ -2005,7 +2005,7 @@ locale_ktu : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "malumbu {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "poso {n}", two = nil, few = nil, many = nil, other = "maposo {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ngon {n}", two = nil, few = nil, many = nil, other = "mingon {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mvula {n}", two = nil, few = nil, many = nil, other = "mimv {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ku.json
+// Source: locales/ku.json
 locale_ku : Age_Locale = {
     code = "ku",
     plural = plural_one_other,
@@ -2030,7 +2030,7 @@ locale_ku : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}r", forms = nil}, week = Unit_Forms{simple = "{n}h", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}s", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/kw.json
+// Source: locales/kw.json
 locale_kw : Age_Locale = {
     code = "kw",
     plural = plural_kw,
@@ -2055,7 +2055,7 @@ locale_kw : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ky.json
+// Source: locales/ky.json
 locale_ky : Age_Locale = {
     code = "ky",
     plural = plural_one_other,
@@ -2080,7 +2080,7 @@ locale_ky : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/lb.json
+// Source: locales/lb.json
 locale_lb : Age_Locale = {
     code = "lb",
     plural = plural_one_other,
@@ -2105,7 +2105,7 @@ locale_lb : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}D", forms = nil}, week = Unit_Forms{simple = "{n}W", forms = nil}, month = Unit_Forms{simple = "{n}M", forms = nil}, year = Unit_Forms{simple = "{n}J", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/lg.json
+// Source: locales/lg.json
 locale_lg : Age_Locale = {
     code = "lg",
     plural = plural_one_other,
@@ -2130,7 +2130,7 @@ locale_lg : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "ennaku {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "sab {n}", two = nil, few = nil, many = nil, other = "sab {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mwezi {n}", two = nil, few = nil, many = nil, other = "myezi {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mwaka {n}", two = nil, few = nil, many = nil, other = "myaka {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ln.json
+// Source: locales/ln.json
 locale_ln : Age_Locale = {
     code = "ln",
     plural = plural_one_other_zero_one,
@@ -2155,7 +2155,7 @@ locale_ln : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mok {n}", two = nil, few = nil, many = nil, other = "mik {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "pos {n}", two = nil, few = nil, many = nil, other = "bap {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "sza {n}", two = nil, few = nil, many = nil, other = "bsza {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mb {n}", two = nil, few = nil, many = nil, other = "mib {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/lo.json
+// Source: locales/lo.json
 locale_lo : Age_Locale = {
     code = "lo",
     plural = plural_other_only,
@@ -2180,7 +2180,7 @@ locale_lo : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = nil, just_born = nil},
 }
 
-// Source: age/locales/src/lt.json
+// Source: locales/lt.json
 locale_lt : Age_Locale = {
     code = "lt",
     plural = plural_lt,
@@ -2205,7 +2205,7 @@ locale_lt : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d.", forms = nil}, week = Unit_Forms{simple = "{n} sav.", forms = nil}, month = Unit_Forms{simple = "{n} mėn.", forms = nil}, year = Unit_Forms{simple = "{n} m.", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/luo.json
+// Source: locales/luo.json
 locale_luo : Age_Locale = {
     code = "luo",
     plural = plural_one_other,
@@ -2230,7 +2230,7 @@ locale_luo : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/lv.json
+// Source: locales/lv.json
 locale_lv : Age_Locale = {
     code = "lv",
     plural = plural_lv,
@@ -2255,7 +2255,7 @@ locale_lv : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d.", forms = nil}, week = Unit_Forms{simple = "{n} n.", forms = nil}, month = Unit_Forms{simple = "{n} m.", forms = nil}, year = Unit_Forms{simple = "{n} g.", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mam.json
+// Source: locales/mam.json
 locale_mam : Age_Locale = {
     code = "mam",
     plural = plural_other_only,
@@ -2280,7 +2280,7 @@ locale_mam : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/men.json
+// Source: locales/men.json
 locale_men : Age_Locale = {
     code = "men",
     plural = plural_one_other,
@@ -2305,7 +2305,7 @@ locale_men : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mfe.json
+// Source: locales/mfe.json
 locale_mfe : Age_Locale = {
     code = "mfe",
     plural = plural_other_only,
@@ -2330,7 +2330,7 @@ locale_mfe : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} zr", forms = nil}, week = Unit_Forms{simple = "{n} sem", forms = nil}, month = Unit_Forms{simple = "{n} mwa", forms = nil}, year = Unit_Forms{simple = "{n} la", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mg.json
+// Source: locales/mg.json
 locale_mg : Age_Locale = {
     code = "mg",
     plural = plural_one_other_zero_one,
@@ -2355,7 +2355,7 @@ locale_mg : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} a", forms = nil}, week = Unit_Forms{simple = "{n} h", forms = nil}, month = Unit_Forms{simple = "{n} v", forms = nil}, year = Unit_Forms{simple = "{n} t", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mi.json
+// Source: locales/mi.json
 locale_mi : Age_Locale = {
     code = "mi",
     plural = plural_one_other,
@@ -2380,7 +2380,7 @@ locale_mi : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}r", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}t", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mk.json
+// Source: locales/mk.json
 locale_mk : Age_Locale = {
     code = "mk",
     plural = plural_mk,
@@ -2405,7 +2405,7 @@ locale_mk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} д.", forms = nil}, week = Unit_Forms{simple = "{n} с.", forms = nil}, month = Unit_Forms{simple = "{n} м.", forms = nil}, year = Unit_Forms{simple = "{n} г.", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ml.json
+// Source: locales/ml.json
 locale_ml : Age_Locale = {
     code = "ml",
     plural = plural_one_other_zero_one,
@@ -2430,7 +2430,7 @@ locale_ml : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ദി", forms = nil}, week = Unit_Forms{simple = "{n} ആ", forms = nil}, month = Unit_Forms{simple = "{n} മാ", forms = nil}, year = Unit_Forms{simple = "{n} വ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mn.json
+// Source: locales/mn.json
 locale_mn : Age_Locale = {
     code = "mn",
     plural = plural_one_other,
@@ -2455,7 +2455,7 @@ locale_mn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ө", forms = nil}, week = Unit_Forms{simple = "{n} д", forms = nil}, month = Unit_Forms{simple = "{n} с", forms = nil}, year = Unit_Forms{simple = "{n} н", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mnk.json
+// Source: locales/mnk.json
 locale_mnk : Age_Locale = {
     code = "mnk",
     plural = plural_other_only,
@@ -2480,7 +2480,7 @@ locale_mnk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "tili {n}", forms = nil}, week = Unit_Forms{simple = "lɔkɔ {n}", forms = nil}, month = Unit_Forms{simple = "kalo {n}", forms = nil}, year = Unit_Forms{simple = "sanj {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mos.json
+// Source: locales/mos.json
 locale_mos : Age_Locale = {
     code = "mos",
     plural = plural_other_only,
@@ -2505,7 +2505,7 @@ locale_mos : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "daar {n}", forms = nil}, week = Unit_Forms{simple = "sem {n}", forms = nil}, month = Unit_Forms{simple = "kiu {n}", forms = nil}, year = Unit_Forms{simple = "yʋʋm {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mr.json
+// Source: locales/mr.json
 locale_mr : Age_Locale = {
     code = "mr",
     plural = plural_one_other,
@@ -2530,7 +2530,7 @@ locale_mr : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}दि", forms = nil}, week = Unit_Forms{simple = "{n}आ", forms = nil}, month = Unit_Forms{simple = "{n}म", forms = nil}, year = Unit_Forms{simple = "{n}व", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ms.json
+// Source: locales/ms.json
 locale_ms : Age_Locale = {
     code = "ms",
     plural = plural_other_only,
@@ -2555,7 +2555,7 @@ locale_ms : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} h", forms = nil}, week = Unit_Forms{simple = "{n} mgu", forms = nil}, month = Unit_Forms{simple = "{n} bln", forms = nil}, year = Unit_Forms{simple = "{n} thn", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/mt.json
+// Source: locales/mt.json
 locale_mt : Age_Locale = {
     code = "mt",
     plural = plural_mt,
@@ -2580,7 +2580,7 @@ locale_mt : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} w", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = "{n} y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/my.json
+// Source: locales/my.json
 locale_my : Age_Locale = {
     code = "my",
     plural = plural_other_only,
@@ -2605,7 +2605,7 @@ locale_my : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ရက်", forms = nil}, week = Unit_Forms{simple = "{n} ပတ်", forms = nil}, month = Unit_Forms{simple = "{n} လ", forms = nil}, year = Unit_Forms{simple = "{n} နှစ်", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/nb.json
+// Source: locales/nb.json
 locale_nb : Age_Locale = {
     code = "nb",
     plural = plural_one_other,
@@ -2630,7 +2630,7 @@ locale_nb : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}u", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = "{n}å", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/nd.json
+// Source: locales/nd.json
 locale_nd : Age_Locale = {
     code = "nd",
     plural = plural_one_other,
@@ -2655,7 +2655,7 @@ locale_nd : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ne.json
+// Source: locales/ne.json
 locale_ne : Age_Locale = {
     code = "ne",
     plural = plural_one_other,
@@ -2680,7 +2680,7 @@ locale_ne : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} दिन", forms = nil}, week = Unit_Forms{simple = "{n} हप्ता", forms = nil}, month = Unit_Forms{simple = "{n} महिना", forms = nil}, year = Unit_Forms{simple = "{n} वर्ष", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ng.json
+// Source: locales/ng.json
 locale_ng : Age_Locale = {
     code = "ng",
     plural = plural_one_other,
@@ -2705,7 +2705,7 @@ locale_ng : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "omasiku {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "oshiw {n}", two = nil, few = nil, many = nil, other = "iiw {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "omued {n}", two = nil, few = nil, many = nil, other = "omied {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "omv {n}", two = nil, few = nil, many = nil, other = "omiv {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/nl.json
+// Source: locales/nl.json
 locale_nl : Age_Locale = {
     code = "nl",
     plural = plural_one_other,
@@ -2730,7 +2730,7 @@ locale_nl : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} w", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = "{n} jr", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/nr.json
+// Source: locales/nr.json
 locale_nr : Age_Locale = {
     code = "nr",
     plural = plural_one_other,
@@ -2755,7 +2755,7 @@ locale_nr : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/nso.json
+// Source: locales/nso.json
 locale_nso : Age_Locale = {
     code = "nso",
     plural = plural_one_other,
@@ -2780,7 +2780,7 @@ locale_nso : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/nus.json
+// Source: locales/nus.json
 locale_nus : Age_Locale = {
     code = "nus",
     plural = plural_one_other,
@@ -2805,7 +2805,7 @@ locale_nus : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ny.json
+// Source: locales/ny.json
 locale_ny : Age_Locale = {
     code = "ny",
     plural = plural_one_other,
@@ -2830,7 +2830,7 @@ locale_ny : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ts {n}", two = nil, few = nil, many = nil, other = "mas {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "sab {n}", two = nil, few = nil, many = nil, other = "msb {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mw {n}", two = nil, few = nil, many = nil, other = "miy {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ch {n}", two = nil, few = nil, many = nil, other = "z {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/om.json
+// Source: locales/om.json
 locale_om : Age_Locale = {
     code = "om",
     plural = plural_one_other,
@@ -2855,7 +2855,7 @@ locale_om : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}g", forms = nil}, week = Unit_Forms{simple = "{n}t", forms = nil}, month = Unit_Forms{simple = "{n}j", forms = nil}, year = Unit_Forms{simple = "{n}w", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/or.json
+// Source: locales/or.json
 locale_or : Age_Locale = {
     code = "or",
     plural = plural_one_other,
@@ -2880,7 +2880,7 @@ locale_or : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ଦି", forms = nil}, week = Unit_Forms{simple = "{n} ସ", forms = nil}, month = Unit_Forms{simple = "{n} ମା", forms = nil}, year = Unit_Forms{simple = "{n} ବ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/pa.json
+// Source: locales/pa.json
 locale_pa : Age_Locale = {
     code = "pa",
     plural = plural_one_other_zero_one,
@@ -2905,7 +2905,7 @@ locale_pa : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ਦਿਨ", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ਹਫ਼ਤਾ", two = nil, few = nil, many = nil, other = "{n} ਹਫ਼ਤੇ"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ਮਹੀਨਾ", two = nil, few = nil, many = nil, other = "{n} ਮਹੀਨੇ"}}, year = Unit_Forms{simple = "{n} ਸਾਲ", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/pis.json
+// Source: locales/pis.json
 locale_pis : Age_Locale = {
     code = "pis",
     plural = plural_other_only,
@@ -2930,7 +2930,7 @@ locale_pis : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/pl.json
+// Source: locales/pl.json
 locale_pl : Age_Locale = {
     code = "pl",
     plural = plural_pl,
@@ -2955,7 +2955,7 @@ locale_pl : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d.", forms = nil}, week = Unit_Forms{simple = "{n} t.", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} m-c", two = nil, few = "{n} m-ce", many = "{n} m-cy", other = "{n} m-ca"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} r.", two = nil, few = "{n} l.", many = "{n} l.", other = "{n} r."}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/pov.json
+// Source: locales/pov.json
 locale_pov : Age_Locale = {
     code = "pov",
     plural = plural_other_only,
@@ -2980,7 +2980,7 @@ locale_pov : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} dia", forms = nil}, week = Unit_Forms{simple = "{n} sim", forms = nil}, month = Unit_Forms{simple = "{n} mis", forms = nil}, year = Unit_Forms{simple = "{n} anu", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ps.json
+// Source: locales/ps.json
 locale_ps : Age_Locale = {
     code = "ps",
     plural = plural_one_other,
@@ -3005,7 +3005,7 @@ locale_ps : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} و", forms = nil}, week = Unit_Forms{simple = "{n} او", forms = nil}, month = Unit_Forms{simple = "{n} م", forms = nil}, year = Unit_Forms{simple = "{n} ک", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/pt.json
+// Source: locales/pt.json
 locale_pt : Age_Locale = {
     code = "pt",
     plural = plural_one_other_zero_one,
@@ -3030,7 +3030,7 @@ locale_pt : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} dia", two = nil, few = nil, many = nil, other = "{n} dias"}}, week = Unit_Forms{simple = "{n} sem.", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} mês", two = nil, few = nil, many = nil, other = "{n} meses"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ano", two = nil, few = nil, many = nil, other = "{n} anos"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/qu.json
+// Source: locales/qu.json
 locale_qu : Age_Locale = {
     code = "qu",
     plural = plural_other_only,
@@ -3055,7 +3055,7 @@ locale_qu : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/quc.json
+// Source: locales/quc.json
 locale_quc : Age_Locale = {
     code = "quc",
     plural = plural_other_only,
@@ -3080,7 +3080,7 @@ locale_quc : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ro.json
+// Source: locales/ro.json
 locale_ro : Age_Locale = {
     code = "ro",
     plural = plural_ro,
@@ -3105,7 +3105,7 @@ locale_ro : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} z", forms = nil}, week = Unit_Forms{simple = "{n} săpt.", forms = nil}, month = Unit_Forms{simple = "{n} l", forms = nil}, year = Unit_Forms{simple = "{n} a", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ru.json
+// Source: locales/ru.json
 locale_ru : Age_Locale = {
     code = "ru",
     plural = plural_ru_uk,
@@ -3130,7 +3130,7 @@ locale_ru : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} д.", forms = nil}, week = Unit_Forms{simple = "{n} н.", forms = nil}, month = Unit_Forms{simple = "{n} м.", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} г.", two = nil, few = "{n} г.", many = "{n} л.", other = "{n} г."}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/rw.json
+// Source: locales/rw.json
 locale_rw : Age_Locale = {
     code = "rw",
     plural = plural_one_other,
@@ -3155,7 +3155,7 @@ locale_rw : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}m", forms = nil}, week = Unit_Forms{simple = "{n}c", forms = nil}, month = Unit_Forms{simple = "{n}k", forms = nil}, year = Unit_Forms{simple = "{n}u", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sar.json
+// Source: locales/sar.json
 locale_sar : Age_Locale = {
     code = "sar",
     plural = plural_other_only,
@@ -3180,7 +3180,7 @@ locale_sar : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sd.json
+// Source: locales/sd.json
 locale_sd : Age_Locale = {
     code = "sd",
     plural = plural_one_other,
@@ -3205,7 +3205,7 @@ locale_sd : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ڏ", forms = nil}, week = Unit_Forms{simple = "{n} ه", forms = nil}, month = Unit_Forms{simple = "{n} م", forms = nil}, year = Unit_Forms{simple = "{n} س", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sg.json
+// Source: locales/sg.json
 locale_sg : Age_Locale = {
     code = "sg",
     plural = plural_other_only,
@@ -3230,7 +3230,7 @@ locale_sg : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/shi.json
+// Source: locales/shi.json
 locale_shi : Age_Locale = {
     code = "shi",
     plural = plural_shi,
@@ -3255,7 +3255,7 @@ locale_shi : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/shn.json
+// Source: locales/shn.json
 locale_shn : Age_Locale = {
     code = "shn",
     plural = plural_other_only,
@@ -3280,7 +3280,7 @@ locale_shn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/si.json
+// Source: locales/si.json
 locale_si : Age_Locale = {
     code = "si",
     plural = plural_one_other_zero_one,
@@ -3305,7 +3305,7 @@ locale_si : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "දි {n}", forms = nil}, week = Unit_Forms{simple = "ස {n}", forms = nil}, month = Unit_Forms{simple = "මා {n}", forms = nil}, year = Unit_Forms{simple = "ව {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sk.json
+// Source: locales/sk.json
 locale_sk : Age_Locale = {
     code = "sk",
     plural = plural_cs_sk,
@@ -3330,7 +3330,7 @@ locale_sk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d.", forms = nil}, week = Unit_Forms{simple = "{n} t.", forms = nil}, month = Unit_Forms{simple = "{n} m.", forms = nil}, year = Unit_Forms{simple = "{n} r.", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sl.json
+// Source: locales/sl.json
 locale_sl : Age_Locale = {
     code = "sl",
     plural = plural_sl,
@@ -3355,7 +3355,7 @@ locale_sl : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} t", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = "{n} l", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sn.json
+// Source: locales/sn.json
 locale_sn : Age_Locale = {
     code = "sn",
     plural = plural_one_other,
@@ -3380,7 +3380,7 @@ locale_sn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "z {n}", two = nil, few = nil, many = nil, other = "maz {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "vh {n}", two = nil, few = nil, many = nil, other = "mvh {n}"}}, month = Unit_Forms{simple = "mw {n}", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "g {n}", two = nil, few = nil, many = nil, other = "mak {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/snk.json
+// Source: locales/snk.json
 locale_snk : Age_Locale = {
     code = "snk",
     plural = plural_other_only,
@@ -3405,7 +3405,7 @@ locale_snk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "xan {n}", forms = nil}, week = Unit_Forms{simple = "sim {n}", forms = nil}, month = Unit_Forms{simple = "kare {n}", forms = nil}, year = Unit_Forms{simple = "jara {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/so.json
+// Source: locales/so.json
 locale_so : Age_Locale = {
     code = "so",
     plural = plural_one_other,
@@ -3430,7 +3430,7 @@ locale_so : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}m", forms = nil}, week = Unit_Forms{simple = "{n}t", forms = nil}, month = Unit_Forms{simple = "{n}b", forms = nil}, year = Unit_Forms{simple = "{n}s", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sq.json
+// Source: locales/sq.json
 locale_sq : Age_Locale = {
     code = "sq",
     plural = plural_one_other,
@@ -3455,7 +3455,7 @@ locale_sq : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ditë", forms = nil}, week = Unit_Forms{simple = "{n} javë", forms = nil}, month = Unit_Forms{simple = "{n} muaj", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} vit", two = nil, few = nil, many = nil, other = "{n} vjet"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sr.json
+// Source: locales/sr.json
 locale_sr : Age_Locale = {
     code = "sr",
     plural = plural_slavic_bcs,
@@ -3480,7 +3480,7 @@ locale_sr : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} д", forms = nil}, week = Unit_Forms{simple = "{n} н", forms = nil}, month = Unit_Forms{simple = "{n} м", forms = nil}, year = Unit_Forms{simple = "{n} г", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ss.json
+// Source: locales/ss.json
 locale_ss : Age_Locale = {
     code = "ss",
     plural = plural_one_other,
@@ -3505,7 +3505,7 @@ locale_ss : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/st.json
+// Source: locales/st.json
 locale_st : Age_Locale = {
     code = "st",
     plural = plural_one_other,
@@ -3530,7 +3530,7 @@ locale_st : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/su.json
+// Source: locales/su.json
 locale_su : Age_Locale = {
     code = "su",
     plural = plural_other_only,
@@ -3555,7 +3555,7 @@ locale_su : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/suk.json
+// Source: locales/suk.json
 locale_suk : Age_Locale = {
     code = "suk",
     plural = plural_one_other,
@@ -3580,7 +3580,7 @@ locale_suk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sv.json
+// Source: locales/sv.json
 locale_sv : Age_Locale = {
     code = "sv",
     plural = plural_one_other,
@@ -3605,7 +3605,7 @@ locale_sv : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}v", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}å", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/sw.json
+// Source: locales/sw.json
 locale_sw : Age_Locale = {
     code = "sw",
     plural = plural_one_other,
@@ -3630,7 +3630,7 @@ locale_sw : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "siku {n}", forms = nil}, week = Unit_Forms{simple = "wiki {n}", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mwezi {n}", two = nil, few = nil, many = nil, other = "miezi {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mwaka {n}", two = nil, few = nil, many = nil, other = "miaka {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ta.json
+// Source: locales/ta.json
 locale_ta : Age_Locale = {
     code = "ta",
     plural = plural_one_other,
@@ -3655,7 +3655,7 @@ locale_ta : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} நா", forms = nil}, week = Unit_Forms{simple = "{n} வா", forms = nil}, month = Unit_Forms{simple = "{n} மா", forms = nil}, year = Unit_Forms{simple = "{n} ஆ", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/te.json
+// Source: locales/te.json
 locale_te : Age_Locale = {
     code = "te",
     plural = plural_one_other,
@@ -3680,7 +3680,7 @@ locale_te : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}రో", forms = nil}, week = Unit_Forms{simple = "{n}వా", forms = nil}, month = Unit_Forms{simple = "{n}నె", forms = nil}, year = Unit_Forms{simple = "{n}సం", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tem.json
+// Source: locales/tem.json
 locale_tem : Age_Locale = {
     code = "tem",
     plural = plural_one_other,
@@ -3705,7 +3705,7 @@ locale_tem : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tet.json
+// Source: locales/tet.json
 locale_tet : Age_Locale = {
     code = "tet",
     plural = plural_other_only,
@@ -3730,7 +3730,7 @@ locale_tet : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tg.json
+// Source: locales/tg.json
 locale_tg : Age_Locale = {
     code = "tg",
     plural = plural_other_only,
@@ -3755,7 +3755,7 @@ locale_tg : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}р", forms = nil}, week = Unit_Forms{simple = "{n}ҳ", forms = nil}, month = Unit_Forms{simple = "{n}м", forms = nil}, year = Unit_Forms{simple = "{n}с", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/th.json
+// Source: locales/th.json
 locale_th : Age_Locale = {
     code = "th",
     plural = plural_other_only,
@@ -3780,7 +3780,7 @@ locale_th : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}วัน", forms = nil}, week = Unit_Forms{simple = "{n}สัปดาห์", forms = nil}, month = Unit_Forms{simple = "{n}เดือน", forms = nil}, year = Unit_Forms{simple = "{n}ปี", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ti.json
+// Source: locales/ti.json
 locale_ti : Age_Locale = {
     code = "ti",
     plural = plural_one_other_zero_one,
@@ -3805,7 +3805,7 @@ locale_ti : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} መ", forms = nil}, week = Unit_Forms{simple = "{n} ሰሙን", forms = nil}, month = Unit_Forms{simple = "{n} ወር", forms = nil}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ዓመት", two = nil, few = nil, many = nil, other = "{n} ዓ"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tig.json
+// Source: locales/tig.json
 locale_tig : Age_Locale = {
     code = "tig",
     plural = plural_one_other,
@@ -3830,7 +3830,7 @@ locale_tig : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tk.json
+// Source: locales/tk.json
 locale_tk : Age_Locale = {
     code = "tk",
     plural = plural_one_other,
@@ -3855,7 +3855,7 @@ locale_tk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}g", forms = nil}, week = Unit_Forms{simple = "{n}h", forms = nil}, month = Unit_Forms{simple = "{n}a", forms = nil}, year = Unit_Forms{simple = "{n}ý", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tn.json
+// Source: locales/tn.json
 locale_tn : Age_Locale = {
     code = "tn",
     plural = plural_one_other,
@@ -3880,7 +3880,7 @@ locale_tn : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tpi.json
+// Source: locales/tpi.json
 locale_tpi : Age_Locale = {
     code = "tpi",
     plural = plural_other_only,
@@ -3905,7 +3905,7 @@ locale_tpi : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tr.json
+// Source: locales/tr.json
 locale_tr : Age_Locale = {
     code = "tr",
     plural = plural_one_other,
@@ -3930,7 +3930,7 @@ locale_tr : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}g", forms = nil}, week = Unit_Forms{simple = "{n}h", forms = nil}, month = Unit_Forms{simple = "{n}a", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ts.json
+// Source: locales/ts.json
 locale_ts : Age_Locale = {
     code = "ts",
     plural = plural_one_other,
@@ -3955,7 +3955,7 @@ locale_ts : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tum.json
+// Source: locales/tum.json
 locale_tum : Age_Locale = {
     code = "tum",
     plural = plural_one_other,
@@ -3980,7 +3980,7 @@ locale_tum : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/tzm.json
+// Source: locales/tzm.json
 locale_tzm : Age_Locale = {
     code = "tzm",
     plural = plural_tzm,
@@ -4005,7 +4005,7 @@ locale_tzm : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/uk.json
+// Source: locales/uk.json
 locale_uk : Age_Locale = {
     code = "uk",
     plural = plural_ru_uk,
@@ -4030,7 +4030,7 @@ locale_uk : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}д", forms = nil}, week = Unit_Forms{simple = "{n}т", forms = nil}, month = Unit_Forms{simple = "{n}м", forms = nil}, year = Unit_Forms{simple = "{n}р", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/umb.json
+// Source: locales/umb.json
 locale_umb : Age_Locale = {
     code = "umb",
     plural = plural_one_other,
@@ -4055,7 +4055,7 @@ locale_umb : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ur.json
+// Source: locales/ur.json
 locale_ur : Age_Locale = {
     code = "ur",
     plural = plural_one_other,
@@ -4080,7 +4080,7 @@ locale_ur : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} دن", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ہفتہ", two = nil, few = nil, many = nil, other = "{n} ہفتے"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} مہینہ", two = nil, few = nil, many = nil, other = "{n} مہینے"}}, year = Unit_Forms{simple = "{n} سال", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/uz.json
+// Source: locales/uz.json
 locale_uz : Age_Locale = {
     code = "uz",
     plural = plural_one_other,
@@ -4105,7 +4105,7 @@ locale_uz : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} kun", forms = nil}, week = Unit_Forms{simple = "{n} hafta", forms = nil}, month = Unit_Forms{simple = "{n} oy", forms = nil}, year = Unit_Forms{simple = "{n} yil", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/ve.json
+// Source: locales/ve.json
 locale_ve : Age_Locale = {
     code = "ve",
     plural = plural_one_other,
@@ -4130,7 +4130,7 @@ locale_ve : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/vi.json
+// Source: locales/vi.json
 locale_vi : Age_Locale = {
     code = "vi",
     plural = plural_other_only,
@@ -4155,7 +4155,7 @@ locale_vi : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ngày", forms = nil}, week = Unit_Forms{simple = "{n} tuần", forms = nil}, month = Unit_Forms{simple = "{n} tháng", forms = nil}, year = Unit_Forms{simple = "{n} năm", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/vmw.json
+// Source: locales/vmw.json
 locale_vmw : Age_Locale = {
     code = "vmw",
     plural = plural_one_other,
@@ -4180,7 +4180,7 @@ locale_vmw : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/wo.json
+// Source: locales/wo.json
 locale_wo : Age_Locale = {
     code = "wo",
     plural = plural_other_only,
@@ -4205,7 +4205,7 @@ locale_wo : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "bés {n}", forms = nil}, week = Unit_Forms{simple = "ayub {n}", forms = nil}, month = Unit_Forms{simple = "weer {n}", forms = nil}, year = Unit_Forms{simple = "at {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/xh.json
+// Source: locales/xh.json
 locale_xh : Age_Locale = {
     code = "xh",
     plural = plural_one_other,
@@ -4230,7 +4230,7 @@ locale_xh : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/yao.json
+// Source: locales/yao.json
 locale_yao : Age_Locale = {
     code = "yao",
     plural = plural_one_other,
@@ -4255,7 +4255,7 @@ locale_yao : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/yo.json
+// Source: locales/yo.json
 locale_yo : Age_Locale = {
     code = "yo",
     plural = plural_other_only,
@@ -4280,7 +4280,7 @@ locale_yo : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/yue.json
+// Source: locales/yue.json
 locale_yue : Age_Locale = {
     code = "yue",
     plural = plural_other_only,
@@ -4305,7 +4305,7 @@ locale_yue : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}日", forms = nil}, week = Unit_Forms{simple = "{n}週", forms = nil}, month = Unit_Forms{simple = "{n}月", forms = nil}, year = Unit_Forms{simple = "{n}年", forms = nil}, half = nil, delimiter = nil, just_born = nil},
 }
 
-// Source: age/locales/src/zdj.json
+// Source: locales/zdj.json
 locale_zdj : Age_Locale = {
     code = "zdj",
     plural = plural_other_only,
@@ -4330,7 +4330,7 @@ locale_zdj : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
-// Source: age/locales/src/zh.json
+// Source: locales/zh.json
 locale_zh : Age_Locale = {
     code = "zh",
     plural = plural_other_only,
@@ -4355,7 +4355,7 @@ locale_zh : Age_Locale = {
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}天", forms = nil}, week = Unit_Forms{simple = "{n}周", forms = nil}, month = Unit_Forms{simple = "{n}个月", forms = nil}, year = Unit_Forms{simple = "{n}年", forms = nil}, half = nil, delimiter = nil, just_born = nil},
 }
 
-// Source: age/locales/src/zu.json
+// Source: locales/zu.json
 locale_zu : Age_Locale = {
     code = "zu",
     plural = plural_one_other_zero_one,

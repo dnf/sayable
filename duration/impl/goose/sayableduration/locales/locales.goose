@@ -210,7 +210,7 @@ fn plural_category(rule: PluralRule, n: i64) -> PluralCategory {
     }
 }
 
-// Source: duration/locales/src/af.json
+// Source: locales/af.json
 fn locale_af(l: Locale&) {
     l = Locale {
         code: "af",
@@ -262,7 +262,7 @@ fn locale_af(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ak.json
+// Source: locales/ak.json
 fn locale_ak(l: Locale&) {
     l = Locale {
         code: "ak",
@@ -314,7 +314,7 @@ fn locale_ak(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/am.json
+// Source: locales/am.json
 fn locale_am(l: Locale&) {
     l = Locale {
         code: "am",
@@ -366,7 +366,7 @@ fn locale_am(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ar.json
+// Source: locales/ar.json
 fn locale_ar(l: Locale&) {
     l = Locale {
         code: "ar",
@@ -418,7 +418,7 @@ fn locale_ar(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ay.json
+// Source: locales/ay.json
 fn locale_ay(l: Locale&) {
     l = Locale {
         code: "ay",
@@ -469,7 +469,7 @@ fn locale_ay(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/az.json
+// Source: locales/az.json
 fn locale_az(l: Locale&) {
     l = Locale {
         code: "az",
@@ -521,7 +521,7 @@ fn locale_az(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/bci.json
+// Source: locales/bci.json
 fn locale_bci(l: Locale&) {
     l = Locale {
         code: "bci",
@@ -573,7 +573,7 @@ fn locale_bci(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/be.json
+// Source: locales/be.json
 fn locale_be(l: Locale&) {
     l = Locale {
         code: "be",
@@ -625,7 +625,7 @@ fn locale_be(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/bem.json
+// Source: locales/bem.json
 fn locale_bem(l: Locale&) {
     l = Locale {
         code: "bem",
@@ -677,7 +677,7 @@ fn locale_bem(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/bg.json
+// Source: locales/bg.json
 fn locale_bg(l: Locale&) {
     l = Locale {
         code: "bg",
@@ -729,7 +729,7 @@ fn locale_bg(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/bi.json
+// Source: locales/bi.json
 fn locale_bi(l: Locale&) {
     l = Locale {
         code: "bi",
@@ -780,7 +780,7 @@ fn locale_bi(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/bm.json
+// Source: locales/bm.json
 fn locale_bm(l: Locale&) {
     l = Locale {
         code: "bm",
@@ -832,7 +832,7 @@ fn locale_bm(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/bn.json
+// Source: locales/bn.json
 fn locale_bn(l: Locale&) {
     l = Locale {
         code: "bn",
@@ -884,7 +884,7 @@ fn locale_bn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/br.json
+// Source: locales/br.json
 fn locale_br(l: Locale&) {
     l = Locale {
         code: "br",
@@ -936,7 +936,7 @@ fn locale_br(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/bs.json
+// Source: locales/bs.json
 fn locale_bs(l: Locale&) {
     l = Locale {
         code: "bs",
@@ -988,7 +988,7 @@ fn locale_bs(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ca.json
+// Source: locales/ca.json
 fn locale_ca(l: Locale&) {
     l = Locale {
         code: "ca",
@@ -1040,7 +1040,7 @@ fn locale_ca(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/cak.json
+// Source: locales/cak.json
 fn locale_cak(l: Locale&) {
     l = Locale {
         code: "cak",
@@ -1091,7 +1091,7 @@ fn locale_cak(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ceb.json
+// Source: locales/ceb.json
 fn locale_ceb(l: Locale&) {
     l = Locale {
         code: "ceb",
@@ -1143,7 +1143,7 @@ fn locale_ceb(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/cs.json
+// Source: locales/cs.json
 fn locale_cs(l: Locale&) {
     l = Locale {
         code: "cs",
@@ -1194,7 +1194,7 @@ fn locale_cs(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/cy.json
+// Source: locales/cy.json
 fn locale_cy(l: Locale&) {
     l = Locale {
         code: "cy",
@@ -1246,7 +1246,7 @@ fn locale_cy(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/da.json
+// Source: locales/da.json
 fn locale_da(l: Locale&) {
     l = Locale {
         code: "da",
@@ -1297,7 +1297,7 @@ fn locale_da(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/de.json
+// Source: locales/de.json
 fn locale_de(l: Locale&) {
     l = Locale {
         code: "de",
@@ -1348,7 +1348,7 @@ fn locale_de(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/din.json
+// Source: locales/din.json
 fn locale_din(l: Locale&) {
     l = Locale {
         code: "din",
@@ -1400,7 +1400,7 @@ fn locale_din(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/dje.json
+// Source: locales/dje.json
 fn locale_dje(l: Locale&) {
     l = Locale {
         code: "dje",
@@ -1452,7 +1452,7 @@ fn locale_dje(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/dv.json
+// Source: locales/dv.json
 fn locale_dv(l: Locale&) {
     l = Locale {
         code: "dv",
@@ -1503,7 +1503,7 @@ fn locale_dv(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/dyu.json
+// Source: locales/dyu.json
 fn locale_dyu(l: Locale&) {
     l = Locale {
         code: "dyu",
@@ -1555,7 +1555,7 @@ fn locale_dyu(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/dz.json
+// Source: locales/dz.json
 fn locale_dz(l: Locale&) {
     l = Locale {
         code: "dz",
@@ -1606,7 +1606,7 @@ fn locale_dz(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ee.json
+// Source: locales/ee.json
 fn locale_ee(l: Locale&) {
     l = Locale {
         code: "ee",
@@ -1658,7 +1658,7 @@ fn locale_ee(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/el.json
+// Source: locales/el.json
 fn locale_el(l: Locale&) {
     l = Locale {
         code: "el",
@@ -1710,7 +1710,7 @@ fn locale_el(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/en.json
+// Source: locales/en.json
 fn locale_en(l: Locale&) {
     l = Locale {
         code: "en",
@@ -1761,7 +1761,7 @@ fn locale_en(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/es.json
+// Source: locales/es.json
 fn locale_es(l: Locale&) {
     l = Locale {
         code: "es",
@@ -1813,7 +1813,7 @@ fn locale_es(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/et.json
+// Source: locales/et.json
 fn locale_et(l: Locale&) {
     l = Locale {
         code: "et",
@@ -1864,7 +1864,7 @@ fn locale_et(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/eu.json
+// Source: locales/eu.json
 fn locale_eu(l: Locale&) {
     l = Locale {
         code: "eu",
@@ -1916,7 +1916,7 @@ fn locale_eu(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/fa.json
+// Source: locales/fa.json
 fn locale_fa(l: Locale&) {
     l = Locale {
         code: "fa",
@@ -1968,7 +1968,7 @@ fn locale_fa(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/fan.json
+// Source: locales/fan.json
 fn locale_fan(l: Locale&) {
     l = Locale {
         code: "fan",
@@ -2020,7 +2020,7 @@ fn locale_fan(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ff.json
+// Source: locales/ff.json
 fn locale_ff(l: Locale&) {
     l = Locale {
         code: "ff",
@@ -2072,7 +2072,7 @@ fn locale_ff(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/fi.json
+// Source: locales/fi.json
 fn locale_fi(l: Locale&) {
     l = Locale {
         code: "fi",
@@ -2124,7 +2124,7 @@ fn locale_fi(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/fil.json
+// Source: locales/fil.json
 fn locale_fil(l: Locale&) {
     l = Locale {
         code: "fil",
@@ -2176,7 +2176,7 @@ fn locale_fil(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/fj.json
+// Source: locales/fj.json
 fn locale_fj(l: Locale&) {
     l = Locale {
         code: "fj",
@@ -2227,7 +2227,7 @@ fn locale_fj(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/fon.json
+// Source: locales/fon.json
 fn locale_fon(l: Locale&) {
     l = Locale {
         code: "fon",
@@ -2279,7 +2279,7 @@ fn locale_fon(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/fr.json
+// Source: locales/fr.json
 fn locale_fr(l: Locale&) {
     l = Locale {
         code: "fr",
@@ -2331,7 +2331,7 @@ fn locale_fr(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ga.json
+// Source: locales/ga.json
 fn locale_ga(l: Locale&) {
     l = Locale {
         code: "ga",
@@ -2383,7 +2383,7 @@ fn locale_ga(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/gd.json
+// Source: locales/gd.json
 fn locale_gd(l: Locale&) {
     l = Locale {
         code: "gd",
@@ -2435,7 +2435,7 @@ fn locale_gd(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/gl.json
+// Source: locales/gl.json
 fn locale_gl(l: Locale&) {
     l = Locale {
         code: "gl",
@@ -2487,7 +2487,7 @@ fn locale_gl(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/gn.json
+// Source: locales/gn.json
 fn locale_gn(l: Locale&) {
     l = Locale {
         code: "gn",
@@ -2539,7 +2539,7 @@ fn locale_gn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/gu.json
+// Source: locales/gu.json
 fn locale_gu(l: Locale&) {
     l = Locale {
         code: "gu",
@@ -2591,7 +2591,7 @@ fn locale_gu(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/gv.json
+// Source: locales/gv.json
 fn locale_gv(l: Locale&) {
     l = Locale {
         code: "gv",
@@ -2643,7 +2643,7 @@ fn locale_gv(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ha.json
+// Source: locales/ha.json
 fn locale_ha(l: Locale&) {
     l = Locale {
         code: "ha",
@@ -2695,7 +2695,7 @@ fn locale_ha(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/he.json
+// Source: locales/he.json
 fn locale_he(l: Locale&) {
     l = Locale {
         code: "he",
@@ -2747,7 +2747,7 @@ fn locale_he(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/hi.json
+// Source: locales/hi.json
 fn locale_hi(l: Locale&) {
     l = Locale {
         code: "hi",
@@ -2799,7 +2799,7 @@ fn locale_hi(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/hmn.json
+// Source: locales/hmn.json
 fn locale_hmn(l: Locale&) {
     l = Locale {
         code: "hmn",
@@ -2850,7 +2850,7 @@ fn locale_hmn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/hr.json
+// Source: locales/hr.json
 fn locale_hr(l: Locale&) {
     l = Locale {
         code: "hr",
@@ -2902,7 +2902,7 @@ fn locale_hr(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ht.json
+// Source: locales/ht.json
 fn locale_ht(l: Locale&) {
     l = Locale {
         code: "ht",
@@ -2954,7 +2954,7 @@ fn locale_ht(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/hu.json
+// Source: locales/hu.json
 fn locale_hu(l: Locale&) {
     l = Locale {
         code: "hu",
@@ -3006,7 +3006,7 @@ fn locale_hu(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/hy.json
+// Source: locales/hy.json
 fn locale_hy(l: Locale&) {
     l = Locale {
         code: "hy",
@@ -3058,7 +3058,7 @@ fn locale_hy(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/id.json
+// Source: locales/id.json
 fn locale_id(l: Locale&) {
     l = Locale {
         code: "id",
@@ -3110,7 +3110,7 @@ fn locale_id(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ig.json
+// Source: locales/ig.json
 fn locale_ig(l: Locale&) {
     l = Locale {
         code: "ig",
@@ -3162,7 +3162,7 @@ fn locale_ig(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/is.json
+// Source: locales/is.json
 fn locale_is(l: Locale&) {
     l = Locale {
         code: "is",
@@ -3214,7 +3214,7 @@ fn locale_is(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/it.json
+// Source: locales/it.json
 fn locale_it(l: Locale&) {
     l = Locale {
         code: "it",
@@ -3266,7 +3266,7 @@ fn locale_it(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ja.json
+// Source: locales/ja.json
 fn locale_ja(l: Locale&) {
     l = Locale {
         code: "ja",
@@ -3317,7 +3317,7 @@ fn locale_ja(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/jv.json
+// Source: locales/jv.json
 fn locale_jv(l: Locale&) {
     l = Locale {
         code: "jv",
@@ -3369,7 +3369,7 @@ fn locale_jv(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ka.json
+// Source: locales/ka.json
 fn locale_ka(l: Locale&) {
     l = Locale {
         code: "ka",
@@ -3421,7 +3421,7 @@ fn locale_ka(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kbp.json
+// Source: locales/kbp.json
 fn locale_kbp(l: Locale&) {
     l = Locale {
         code: "kbp",
@@ -3473,7 +3473,7 @@ fn locale_kbp(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kek.json
+// Source: locales/kek.json
 fn locale_kek(l: Locale&) {
     l = Locale {
         code: "kek",
@@ -3524,7 +3524,7 @@ fn locale_kek(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ki.json
+// Source: locales/ki.json
 fn locale_ki(l: Locale&) {
     l = Locale {
         code: "ki",
@@ -3575,7 +3575,7 @@ fn locale_ki(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kk.json
+// Source: locales/kk.json
 fn locale_kk(l: Locale&) {
     l = Locale {
         code: "kk",
@@ -3627,7 +3627,7 @@ fn locale_kk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kl.json
+// Source: locales/kl.json
 fn locale_kl(l: Locale&) {
     l = Locale {
         code: "kl",
@@ -3678,7 +3678,7 @@ fn locale_kl(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/km.json
+// Source: locales/km.json
 fn locale_km(l: Locale&) {
     l = Locale {
         code: "km",
@@ -3730,7 +3730,7 @@ fn locale_km(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kn.json
+// Source: locales/kn.json
 fn locale_kn(l: Locale&) {
     l = Locale {
         code: "kn",
@@ -3782,7 +3782,7 @@ fn locale_kn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ko.json
+// Source: locales/ko.json
 fn locale_ko(l: Locale&) {
     l = Locale {
         code: "ko",
@@ -3833,7 +3833,7 @@ fn locale_ko(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kpe.json
+// Source: locales/kpe.json
 fn locale_kpe(l: Locale&) {
     l = Locale {
         code: "kpe",
@@ -3885,7 +3885,7 @@ fn locale_kpe(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kri.json
+// Source: locales/kri.json
 fn locale_kri(l: Locale&) {
     l = Locale {
         code: "kri",
@@ -3936,7 +3936,7 @@ fn locale_kri(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ktu.json
+// Source: locales/ktu.json
 fn locale_ktu(l: Locale&) {
     l = Locale {
         code: "ktu",
@@ -3988,7 +3988,7 @@ fn locale_ktu(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ku.json
+// Source: locales/ku.json
 fn locale_ku(l: Locale&) {
     l = Locale {
         code: "ku",
@@ -4040,7 +4040,7 @@ fn locale_ku(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/kw.json
+// Source: locales/kw.json
 fn locale_kw(l: Locale&) {
     l = Locale {
         code: "kw",
@@ -4092,7 +4092,7 @@ fn locale_kw(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ky.json
+// Source: locales/ky.json
 fn locale_ky(l: Locale&) {
     l = Locale {
         code: "ky",
@@ -4144,7 +4144,7 @@ fn locale_ky(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/lb.json
+// Source: locales/lb.json
 fn locale_lb(l: Locale&) {
     l = Locale {
         code: "lb",
@@ -4195,7 +4195,7 @@ fn locale_lb(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/lg.json
+// Source: locales/lg.json
 fn locale_lg(l: Locale&) {
     l = Locale {
         code: "lg",
@@ -4247,7 +4247,7 @@ fn locale_lg(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ln.json
+// Source: locales/ln.json
 fn locale_ln(l: Locale&) {
     l = Locale {
         code: "ln",
@@ -4299,7 +4299,7 @@ fn locale_ln(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/lo.json
+// Source: locales/lo.json
 fn locale_lo(l: Locale&) {
     l = Locale {
         code: "lo",
@@ -4351,7 +4351,7 @@ fn locale_lo(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/lt.json
+// Source: locales/lt.json
 fn locale_lt(l: Locale&) {
     l = Locale {
         code: "lt",
@@ -4402,7 +4402,7 @@ fn locale_lt(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/luo.json
+// Source: locales/luo.json
 fn locale_luo(l: Locale&) {
     l = Locale {
         code: "luo",
@@ -4453,7 +4453,7 @@ fn locale_luo(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/lv.json
+// Source: locales/lv.json
 fn locale_lv(l: Locale&) {
     l = Locale {
         code: "lv",
@@ -4504,7 +4504,7 @@ fn locale_lv(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mam.json
+// Source: locales/mam.json
 fn locale_mam(l: Locale&) {
     l = Locale {
         code: "mam",
@@ -4555,7 +4555,7 @@ fn locale_mam(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/men.json
+// Source: locales/men.json
 fn locale_men(l: Locale&) {
     l = Locale {
         code: "men",
@@ -4607,7 +4607,7 @@ fn locale_men(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mfe.json
+// Source: locales/mfe.json
 fn locale_mfe(l: Locale&) {
     l = Locale {
         code: "mfe",
@@ -4659,7 +4659,7 @@ fn locale_mfe(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mg.json
+// Source: locales/mg.json
 fn locale_mg(l: Locale&) {
     l = Locale {
         code: "mg",
@@ -4711,7 +4711,7 @@ fn locale_mg(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mi.json
+// Source: locales/mi.json
 fn locale_mi(l: Locale&) {
     l = Locale {
         code: "mi",
@@ -4763,7 +4763,7 @@ fn locale_mi(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mk.json
+// Source: locales/mk.json
 fn locale_mk(l: Locale&) {
     l = Locale {
         code: "mk",
@@ -4815,7 +4815,7 @@ fn locale_mk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ml.json
+// Source: locales/ml.json
 fn locale_ml(l: Locale&) {
     l = Locale {
         code: "ml",
@@ -4867,7 +4867,7 @@ fn locale_ml(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mn.json
+// Source: locales/mn.json
 fn locale_mn(l: Locale&) {
     l = Locale {
         code: "mn",
@@ -4919,7 +4919,7 @@ fn locale_mn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mnk.json
+// Source: locales/mnk.json
 fn locale_mnk(l: Locale&) {
     l = Locale {
         code: "mnk",
@@ -4971,7 +4971,7 @@ fn locale_mnk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mos.json
+// Source: locales/mos.json
 fn locale_mos(l: Locale&) {
     l = Locale {
         code: "mos",
@@ -5023,7 +5023,7 @@ fn locale_mos(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mr.json
+// Source: locales/mr.json
 fn locale_mr(l: Locale&) {
     l = Locale {
         code: "mr",
@@ -5075,7 +5075,7 @@ fn locale_mr(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ms.json
+// Source: locales/ms.json
 fn locale_ms(l: Locale&) {
     l = Locale {
         code: "ms",
@@ -5127,7 +5127,7 @@ fn locale_ms(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/mt.json
+// Source: locales/mt.json
 fn locale_mt(l: Locale&) {
     l = Locale {
         code: "mt",
@@ -5179,7 +5179,7 @@ fn locale_mt(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/my.json
+// Source: locales/my.json
 fn locale_my(l: Locale&) {
     l = Locale {
         code: "my",
@@ -5231,7 +5231,7 @@ fn locale_my(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/nb.json
+// Source: locales/nb.json
 fn locale_nb(l: Locale&) {
     l = Locale {
         code: "nb",
@@ -5282,7 +5282,7 @@ fn locale_nb(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/nd.json
+// Source: locales/nd.json
 fn locale_nd(l: Locale&) {
     l = Locale {
         code: "nd",
@@ -5334,7 +5334,7 @@ fn locale_nd(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ne.json
+// Source: locales/ne.json
 fn locale_ne(l: Locale&) {
     l = Locale {
         code: "ne",
@@ -5386,7 +5386,7 @@ fn locale_ne(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ng.json
+// Source: locales/ng.json
 fn locale_ng(l: Locale&) {
     l = Locale {
         code: "ng",
@@ -5438,7 +5438,7 @@ fn locale_ng(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/nl.json
+// Source: locales/nl.json
 fn locale_nl(l: Locale&) {
     l = Locale {
         code: "nl",
@@ -5489,7 +5489,7 @@ fn locale_nl(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/nr.json
+// Source: locales/nr.json
 fn locale_nr(l: Locale&) {
     l = Locale {
         code: "nr",
@@ -5540,7 +5540,7 @@ fn locale_nr(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/nso.json
+// Source: locales/nso.json
 fn locale_nso(l: Locale&) {
     l = Locale {
         code: "nso",
@@ -5592,7 +5592,7 @@ fn locale_nso(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/nus.json
+// Source: locales/nus.json
 fn locale_nus(l: Locale&) {
     l = Locale {
         code: "nus",
@@ -5644,7 +5644,7 @@ fn locale_nus(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ny.json
+// Source: locales/ny.json
 fn locale_ny(l: Locale&) {
     l = Locale {
         code: "ny",
@@ -5696,7 +5696,7 @@ fn locale_ny(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/om.json
+// Source: locales/om.json
 fn locale_om(l: Locale&) {
     l = Locale {
         code: "om",
@@ -5748,7 +5748,7 @@ fn locale_om(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/or.json
+// Source: locales/or.json
 fn locale_or(l: Locale&) {
     l = Locale {
         code: "or",
@@ -5800,7 +5800,7 @@ fn locale_or(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/pa.json
+// Source: locales/pa.json
 fn locale_pa(l: Locale&) {
     l = Locale {
         code: "pa",
@@ -5852,7 +5852,7 @@ fn locale_pa(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/pis.json
+// Source: locales/pis.json
 fn locale_pis(l: Locale&) {
     l = Locale {
         code: "pis",
@@ -5903,7 +5903,7 @@ fn locale_pis(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/pl.json
+// Source: locales/pl.json
 fn locale_pl(l: Locale&) {
     l = Locale {
         code: "pl",
@@ -5955,7 +5955,7 @@ fn locale_pl(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/pov.json
+// Source: locales/pov.json
 fn locale_pov(l: Locale&) {
     l = Locale {
         code: "pov",
@@ -6007,7 +6007,7 @@ fn locale_pov(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ps.json
+// Source: locales/ps.json
 fn locale_ps(l: Locale&) {
     l = Locale {
         code: "ps",
@@ -6059,7 +6059,7 @@ fn locale_ps(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/pt.json
+// Source: locales/pt.json
 fn locale_pt(l: Locale&) {
     l = Locale {
         code: "pt",
@@ -6111,7 +6111,7 @@ fn locale_pt(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/qu.json
+// Source: locales/qu.json
 fn locale_qu(l: Locale&) {
     l = Locale {
         code: "qu",
@@ -6163,7 +6163,7 @@ fn locale_qu(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/quc.json
+// Source: locales/quc.json
 fn locale_quc(l: Locale&) {
     l = Locale {
         code: "quc",
@@ -6214,7 +6214,7 @@ fn locale_quc(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ro.json
+// Source: locales/ro.json
 fn locale_ro(l: Locale&) {
     l = Locale {
         code: "ro",
@@ -6266,7 +6266,7 @@ fn locale_ro(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ru.json
+// Source: locales/ru.json
 fn locale_ru(l: Locale&) {
     l = Locale {
         code: "ru",
@@ -6318,7 +6318,7 @@ fn locale_ru(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/rw.json
+// Source: locales/rw.json
 fn locale_rw(l: Locale&) {
     l = Locale {
         code: "rw",
@@ -6370,7 +6370,7 @@ fn locale_rw(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sar.json
+// Source: locales/sar.json
 fn locale_sar(l: Locale&) {
     l = Locale {
         code: "sar",
@@ -6422,7 +6422,7 @@ fn locale_sar(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sd.json
+// Source: locales/sd.json
 fn locale_sd(l: Locale&) {
     l = Locale {
         code: "sd",
@@ -6474,7 +6474,7 @@ fn locale_sd(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sg.json
+// Source: locales/sg.json
 fn locale_sg(l: Locale&) {
     l = Locale {
         code: "sg",
@@ -6526,7 +6526,7 @@ fn locale_sg(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/shi.json
+// Source: locales/shi.json
 fn locale_shi(l: Locale&) {
     l = Locale {
         code: "shi",
@@ -6578,7 +6578,7 @@ fn locale_shi(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/shn.json
+// Source: locales/shn.json
 fn locale_shn(l: Locale&) {
     l = Locale {
         code: "shn",
@@ -6629,7 +6629,7 @@ fn locale_shn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/si.json
+// Source: locales/si.json
 fn locale_si(l: Locale&) {
     l = Locale {
         code: "si",
@@ -6681,7 +6681,7 @@ fn locale_si(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sk.json
+// Source: locales/sk.json
 fn locale_sk(l: Locale&) {
     l = Locale {
         code: "sk",
@@ -6732,7 +6732,7 @@ fn locale_sk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sl.json
+// Source: locales/sl.json
 fn locale_sl(l: Locale&) {
     l = Locale {
         code: "sl",
@@ -6784,7 +6784,7 @@ fn locale_sl(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sn.json
+// Source: locales/sn.json
 fn locale_sn(l: Locale&) {
     l = Locale {
         code: "sn",
@@ -6836,7 +6836,7 @@ fn locale_sn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/snk.json
+// Source: locales/snk.json
 fn locale_snk(l: Locale&) {
     l = Locale {
         code: "snk",
@@ -6888,7 +6888,7 @@ fn locale_snk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/so.json
+// Source: locales/so.json
 fn locale_so(l: Locale&) {
     l = Locale {
         code: "so",
@@ -6940,7 +6940,7 @@ fn locale_so(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sq.json
+// Source: locales/sq.json
 fn locale_sq(l: Locale&) {
     l = Locale {
         code: "sq",
@@ -6992,7 +6992,7 @@ fn locale_sq(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sr.json
+// Source: locales/sr.json
 fn locale_sr(l: Locale&) {
     l = Locale {
         code: "sr",
@@ -7044,7 +7044,7 @@ fn locale_sr(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ss.json
+// Source: locales/ss.json
 fn locale_ss(l: Locale&) {
     l = Locale {
         code: "ss",
@@ -7096,7 +7096,7 @@ fn locale_ss(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/st.json
+// Source: locales/st.json
 fn locale_st(l: Locale&) {
     l = Locale {
         code: "st",
@@ -7148,7 +7148,7 @@ fn locale_st(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/su.json
+// Source: locales/su.json
 fn locale_su(l: Locale&) {
     l = Locale {
         code: "su",
@@ -7200,7 +7200,7 @@ fn locale_su(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/suk.json
+// Source: locales/suk.json
 fn locale_suk(l: Locale&) {
     l = Locale {
         code: "suk",
@@ -7252,7 +7252,7 @@ fn locale_suk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sv.json
+// Source: locales/sv.json
 fn locale_sv(l: Locale&) {
     l = Locale {
         code: "sv",
@@ -7303,7 +7303,7 @@ fn locale_sv(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/sw.json
+// Source: locales/sw.json
 fn locale_sw(l: Locale&) {
     l = Locale {
         code: "sw",
@@ -7355,7 +7355,7 @@ fn locale_sw(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ta.json
+// Source: locales/ta.json
 fn locale_ta(l: Locale&) {
     l = Locale {
         code: "ta",
@@ -7406,7 +7406,7 @@ fn locale_ta(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/te.json
+// Source: locales/te.json
 fn locale_te(l: Locale&) {
     l = Locale {
         code: "te",
@@ -7458,7 +7458,7 @@ fn locale_te(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tem.json
+// Source: locales/tem.json
 fn locale_tem(l: Locale&) {
     l = Locale {
         code: "tem",
@@ -7510,7 +7510,7 @@ fn locale_tem(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tet.json
+// Source: locales/tet.json
 fn locale_tet(l: Locale&) {
     l = Locale {
         code: "tet",
@@ -7561,7 +7561,7 @@ fn locale_tet(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tg.json
+// Source: locales/tg.json
 fn locale_tg(l: Locale&) {
     l = Locale {
         code: "tg",
@@ -7613,7 +7613,7 @@ fn locale_tg(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/th.json
+// Source: locales/th.json
 fn locale_th(l: Locale&) {
     l = Locale {
         code: "th",
@@ -7665,7 +7665,7 @@ fn locale_th(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ti.json
+// Source: locales/ti.json
 fn locale_ti(l: Locale&) {
     l = Locale {
         code: "ti",
@@ -7717,7 +7717,7 @@ fn locale_ti(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tig.json
+// Source: locales/tig.json
 fn locale_tig(l: Locale&) {
     l = Locale {
         code: "tig",
@@ -7769,7 +7769,7 @@ fn locale_tig(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tk.json
+// Source: locales/tk.json
 fn locale_tk(l: Locale&) {
     l = Locale {
         code: "tk",
@@ -7821,7 +7821,7 @@ fn locale_tk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tn.json
+// Source: locales/tn.json
 fn locale_tn(l: Locale&) {
     l = Locale {
         code: "tn",
@@ -7873,7 +7873,7 @@ fn locale_tn(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tpi.json
+// Source: locales/tpi.json
 fn locale_tpi(l: Locale&) {
     l = Locale {
         code: "tpi",
@@ -7924,7 +7924,7 @@ fn locale_tpi(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tr.json
+// Source: locales/tr.json
 fn locale_tr(l: Locale&) {
     l = Locale {
         code: "tr",
@@ -7976,7 +7976,7 @@ fn locale_tr(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ts.json
+// Source: locales/ts.json
 fn locale_ts(l: Locale&) {
     l = Locale {
         code: "ts",
@@ -8028,7 +8028,7 @@ fn locale_ts(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tum.json
+// Source: locales/tum.json
 fn locale_tum(l: Locale&) {
     l = Locale {
         code: "tum",
@@ -8079,7 +8079,7 @@ fn locale_tum(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/tzm.json
+// Source: locales/tzm.json
 fn locale_tzm(l: Locale&) {
     l = Locale {
         code: "tzm",
@@ -8131,7 +8131,7 @@ fn locale_tzm(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/uk.json
+// Source: locales/uk.json
 fn locale_uk(l: Locale&) {
     l = Locale {
         code: "uk",
@@ -8183,7 +8183,7 @@ fn locale_uk(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/umb.json
+// Source: locales/umb.json
 fn locale_umb(l: Locale&) {
     l = Locale {
         code: "umb",
@@ -8235,7 +8235,7 @@ fn locale_umb(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ur.json
+// Source: locales/ur.json
 fn locale_ur(l: Locale&) {
     l = Locale {
         code: "ur",
@@ -8287,7 +8287,7 @@ fn locale_ur(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/uz.json
+// Source: locales/uz.json
 fn locale_uz(l: Locale&) {
     l = Locale {
         code: "uz",
@@ -8339,7 +8339,7 @@ fn locale_uz(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/ve.json
+// Source: locales/ve.json
 fn locale_ve(l: Locale&) {
     l = Locale {
         code: "ve",
@@ -8390,7 +8390,7 @@ fn locale_ve(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/vi.json
+// Source: locales/vi.json
 fn locale_vi(l: Locale&) {
     l = Locale {
         code: "vi",
@@ -8442,7 +8442,7 @@ fn locale_vi(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/vmw.json
+// Source: locales/vmw.json
 fn locale_vmw(l: Locale&) {
     l = Locale {
         code: "vmw",
@@ -8494,7 +8494,7 @@ fn locale_vmw(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/wo.json
+// Source: locales/wo.json
 fn locale_wo(l: Locale&) {
     l = Locale {
         code: "wo",
@@ -8546,7 +8546,7 @@ fn locale_wo(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/xh.json
+// Source: locales/xh.json
 fn locale_xh(l: Locale&) {
     l = Locale {
         code: "xh",
@@ -8598,7 +8598,7 @@ fn locale_xh(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/yao.json
+// Source: locales/yao.json
 fn locale_yao(l: Locale&) {
     l = Locale {
         code: "yao",
@@ -8649,7 +8649,7 @@ fn locale_yao(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/yo.json
+// Source: locales/yo.json
 fn locale_yo(l: Locale&) {
     l = Locale {
         code: "yo",
@@ -8701,7 +8701,7 @@ fn locale_yo(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/yue.json
+// Source: locales/yue.json
 fn locale_yue(l: Locale&) {
     l = Locale {
         code: "yue",
@@ -8753,7 +8753,7 @@ fn locale_yue(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/zdj.json
+// Source: locales/zdj.json
 fn locale_zdj(l: Locale&) {
     l = Locale {
         code: "zdj",
@@ -8805,7 +8805,7 @@ fn locale_zdj(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/zh.json
+// Source: locales/zh.json
 fn locale_zh(l: Locale&) {
     l = Locale {
         code: "zh",
@@ -8856,7 +8856,7 @@ fn locale_zh(l: Locale&) {
     };
 }
 
-// Source: duration/locales/src/zu.json
+// Source: locales/zu.json
 fn locale_zu(l: Locale&) {
     l = Locale {
         code: "zu",

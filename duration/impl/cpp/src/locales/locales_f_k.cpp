@@ -13,7 +13,7 @@
 namespace sayableduration {
 namespace locales {
 
-// Source: duration/locales/src/fa.json
+// Source: locales/fa.json
 const DurationLocale& FA() {
     static const DurationLocale loc{
         "fa",
@@ -64,7 +64,7 @@ const DurationLocale& FA() {
     return loc;
 }
 
-// Source: duration/locales/src/fan.json
+// Source: locales/fan.json
 const DurationLocale& FAN() {
     static const DurationLocale loc{
         "fan",
@@ -115,7 +115,7 @@ const DurationLocale& FAN() {
     return loc;
 }
 
-// Source: duration/locales/src/ff.json
+// Source: locales/ff.json
 const DurationLocale& FF() {
     static const DurationLocale loc{
         "ff",
@@ -166,7 +166,7 @@ const DurationLocale& FF() {
     return loc;
 }
 
-// Source: duration/locales/src/fi.json
+// Source: locales/fi.json
 const DurationLocale& FI() {
     static const DurationLocale loc{
         "fi",
@@ -217,7 +217,7 @@ const DurationLocale& FI() {
     return loc;
 }
 
-// Source: duration/locales/src/fil.json
+// Source: locales/fil.json
 const DurationLocale& FIL() {
     static const DurationLocale loc{
         "fil",
@@ -267,7 +267,7 @@ const DurationLocale& FIL() {
     return loc;
 }
 
-// Source: duration/locales/src/fj.json
+// Source: locales/fj.json
 const DurationLocale& FJ() {
     static const DurationLocale loc{
         "fj",
@@ -317,7 +317,7 @@ const DurationLocale& FJ() {
     return loc;
 }
 
-// Source: duration/locales/src/fon.json
+// Source: locales/fon.json
 const DurationLocale& FON() {
     static const DurationLocale loc{
         "fon",
@@ -367,7 +367,7 @@ const DurationLocale& FON() {
     return loc;
 }
 
-// Source: duration/locales/src/fr.json
+// Source: locales/fr.json
 const DurationLocale& FR() {
     static const DurationLocale loc{
         "fr",
@@ -418,7 +418,7 @@ const DurationLocale& FR() {
     return loc;
 }
 
-// Source: duration/locales/src/ga.json
+// Source: locales/ga.json
 const DurationLocale& GA() {
     static const DurationLocale loc{
         "ga",
@@ -472,7 +472,7 @@ const DurationLocale& GA() {
     return loc;
 }
 
-// Source: duration/locales/src/gd.json
+// Source: locales/gd.json
 const DurationLocale& GD() {
     static const DurationLocale loc{
         "gd",
@@ -525,7 +525,7 @@ const DurationLocale& GD() {
     return loc;
 }
 
-// Source: duration/locales/src/gl.json
+// Source: locales/gl.json
 const DurationLocale& GL() {
     static const DurationLocale loc{
         "gl",
@@ -576,7 +576,7 @@ const DurationLocale& GL() {
     return loc;
 }
 
-// Source: duration/locales/src/gn.json
+// Source: locales/gn.json
 const DurationLocale& GN() {
     static const DurationLocale loc{
         "gn",
@@ -627,7 +627,7 @@ const DurationLocale& GN() {
     return loc;
 }
 
-// Source: duration/locales/src/gu.json
+// Source: locales/gu.json
 const DurationLocale& GU() {
     static const DurationLocale loc{
         "gu",
@@ -678,7 +678,7 @@ const DurationLocale& GU() {
     return loc;
 }
 
-// Source: duration/locales/src/gv.json
+// Source: locales/gv.json
 const DurationLocale& GV() {
     static const DurationLocale loc{
         "gv",
@@ -733,7 +733,7 @@ const DurationLocale& GV() {
     return loc;
 }
 
-// Source: duration/locales/src/ha.json
+// Source: locales/ha.json
 const DurationLocale& HA() {
     static const DurationLocale loc{
         "ha",
@@ -784,7 +784,7 @@ const DurationLocale& HA() {
     return loc;
 }
 
-// Source: duration/locales/src/he.json
+// Source: locales/he.json
 const DurationLocale& HE() {
     static const DurationLocale loc{
         "he",
@@ -836,7 +836,7 @@ const DurationLocale& HE() {
     return loc;
 }
 
-// Source: duration/locales/src/hi.json
+// Source: locales/hi.json
 const DurationLocale& HI() {
     static const DurationLocale loc{
         "hi",
@@ -887,7 +887,7 @@ const DurationLocale& HI() {
     return loc;
 }
 
-// Source: duration/locales/src/hmn.json
+// Source: locales/hmn.json
 const DurationLocale& HMN() {
     static const DurationLocale loc{
         "hmn",
@@ -937,7 +937,7 @@ const DurationLocale& HMN() {
     return loc;
 }
 
-// Source: duration/locales/src/hr.json
+// Source: locales/hr.json
 const DurationLocale& HR() {
     static const DurationLocale loc{
         "hr",
@@ -991,7 +991,7 @@ const DurationLocale& HR() {
     return loc;
 }
 
-// Source: duration/locales/src/ht.json
+// Source: locales/ht.json
 const DurationLocale& HT() {
     static const DurationLocale loc{
         "ht",
@@ -1042,7 +1042,7 @@ const DurationLocale& HT() {
     return loc;
 }
 
-// Source: duration/locales/src/hu.json
+// Source: locales/hu.json
 const DurationLocale& HU() {
     static const DurationLocale loc{
         "hu",
@@ -1092,7 +1092,7 @@ const DurationLocale& HU() {
     return loc;
 }
 
-// Source: duration/locales/src/hy.json
+// Source: locales/hy.json
 const DurationLocale& HY() {
     static const DurationLocale loc{
         "hy",
@@ -1143,7 +1143,7 @@ const DurationLocale& HY() {
     return loc;
 }
 
-// Source: duration/locales/src/id.json
+// Source: locales/id.json
 const DurationLocale& ID() {
     static const DurationLocale loc{
         "id",
@@ -1193,7 +1193,7 @@ const DurationLocale& ID() {
     return loc;
 }
 
-// Source: duration/locales/src/ig.json
+// Source: locales/ig.json
 const DurationLocale& IG() {
     static const DurationLocale loc{
         "ig",
@@ -1243,7 +1243,7 @@ const DurationLocale& IG() {
     return loc;
 }
 
-// Source: duration/locales/src/is.json
+// Source: locales/is.json
 const DurationLocale& IS() {
     static const DurationLocale loc{
         "is",
@@ -1296,7 +1296,7 @@ const DurationLocale& IS() {
     return loc;
 }
 
-// Source: duration/locales/src/it.json
+// Source: locales/it.json
 const DurationLocale& IT() {
     static const DurationLocale loc{
         "it",
@@ -1347,7 +1347,7 @@ const DurationLocale& IT() {
     return loc;
 }
 
-// Source: duration/locales/src/ja.json
+// Source: locales/ja.json
 const DurationLocale& JA() {
     static const DurationLocale loc{
         "ja",
@@ -1397,7 +1397,7 @@ const DurationLocale& JA() {
     return loc;
 }
 
-// Source: duration/locales/src/jv.json
+// Source: locales/jv.json
 const DurationLocale& JV() {
     static const DurationLocale loc{
         "jv",
@@ -1447,7 +1447,7 @@ const DurationLocale& JV() {
     return loc;
 }
 
-// Source: duration/locales/src/ka.json
+// Source: locales/ka.json
 const DurationLocale& KA() {
     static const DurationLocale loc{
         "ka",
@@ -1498,7 +1498,7 @@ const DurationLocale& KA() {
     return loc;
 }
 
-// Source: duration/locales/src/kbp.json
+// Source: locales/kbp.json
 const DurationLocale& KBP() {
     static const DurationLocale loc{
         "kbp",
@@ -1548,7 +1548,7 @@ const DurationLocale& KBP() {
     return loc;
 }
 
-// Source: duration/locales/src/kek.json
+// Source: locales/kek.json
 const DurationLocale& KEK() {
     static const DurationLocale loc{
         "kek",
@@ -1598,7 +1598,7 @@ const DurationLocale& KEK() {
     return loc;
 }
 
-// Source: duration/locales/src/ki.json
+// Source: locales/ki.json
 const DurationLocale& KI() {
     static const DurationLocale loc{
         "ki",
@@ -1649,7 +1649,7 @@ const DurationLocale& KI() {
     return loc;
 }
 
-// Source: duration/locales/src/kk.json
+// Source: locales/kk.json
 const DurationLocale& KK() {
     static const DurationLocale loc{
         "kk",
@@ -1700,7 +1700,7 @@ const DurationLocale& KK() {
     return loc;
 }
 
-// Source: duration/locales/src/kl.json
+// Source: locales/kl.json
 const DurationLocale& KL() {
     static const DurationLocale loc{
         "kl",
@@ -1750,7 +1750,7 @@ const DurationLocale& KL() {
     return loc;
 }
 
-// Source: duration/locales/src/km.json
+// Source: locales/km.json
 const DurationLocale& KM() {
     static const DurationLocale loc{
         "km",
@@ -1800,7 +1800,7 @@ const DurationLocale& KM() {
     return loc;
 }
 
-// Source: duration/locales/src/kn.json
+// Source: locales/kn.json
 const DurationLocale& KN() {
     static const DurationLocale loc{
         "kn",
@@ -1851,7 +1851,7 @@ const DurationLocale& KN() {
     return loc;
 }
 
-// Source: duration/locales/src/ko.json
+// Source: locales/ko.json
 const DurationLocale& KO() {
     static const DurationLocale loc{
         "ko",
@@ -1901,7 +1901,7 @@ const DurationLocale& KO() {
     return loc;
 }
 
-// Source: duration/locales/src/kpe.json
+// Source: locales/kpe.json
 const DurationLocale& KPE() {
     static const DurationLocale loc{
         "kpe",
@@ -1951,7 +1951,7 @@ const DurationLocale& KPE() {
     return loc;
 }
 
-// Source: duration/locales/src/kri.json
+// Source: locales/kri.json
 const DurationLocale& KRI() {
     static const DurationLocale loc{
         "kri",
@@ -2001,7 +2001,7 @@ const DurationLocale& KRI() {
     return loc;
 }
 
-// Source: duration/locales/src/ktu.json
+// Source: locales/ktu.json
 const DurationLocale& KTU() {
     static const DurationLocale loc{
         "ktu",
@@ -2052,7 +2052,7 @@ const DurationLocale& KTU() {
     return loc;
 }
 
-// Source: duration/locales/src/ku.json
+// Source: locales/ku.json
 const DurationLocale& KU() {
     static const DurationLocale loc{
         "ku",
@@ -2103,7 +2103,7 @@ const DurationLocale& KU() {
     return loc;
 }
 
-// Source: duration/locales/src/kw.json
+// Source: locales/kw.json
 const DurationLocale& KW() {
     static const DurationLocale loc{
         "kw",
@@ -2159,7 +2159,7 @@ const DurationLocale& KW() {
     return loc;
 }
 
-// Source: duration/locales/src/ky.json
+// Source: locales/ky.json
 const DurationLocale& KY() {
     static const DurationLocale loc{
         "ky",

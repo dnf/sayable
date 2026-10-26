@@ -7,7 +7,7 @@
 % ║ Changes will be overwritten the next time codegen runs.      ║
 % ║ Edit the generator or locale JSON instead.                   ║
 % ╚══════════════════════════════════════════════════════════════╝
-% Source: date/locales/src/uk.json
+% Source: locales/uk.json
 
 function loc = locale_uk()
   loc.code = 'uk';

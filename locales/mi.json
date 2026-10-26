@@ -1,0 +1,224 @@
+{
+  "code": "mi",
+  "name": "Māori",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": "rā {n}",
+      "week": "wiki {n}",
+      "month": "marama {n}",
+      "year": "tau {n}"
+    },
+    "half": "{0}½",
+    "delimiter": ", ",
+    "justBorn": "Pēpi hou",
+    "stages": {
+      "newborn": "Pēpi hou",
+      "infant": "Pēpi",
+      "toddler": "Kōhungahunga",
+      "child": "Tamariki",
+      "teenager": "Rangatahi",
+      "adult": "Pakeke"
+    },
+    "short": {
+      "units": {
+        "day": "rā {n}",
+        "week": "w {n}",
+        "month": "m {n}",
+        "year": "t {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}r",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}t"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Kohi-tātea",
+      "Hui-tanguru",
+      "Poutū-te-rangi",
+      "Paenga-whāwhā",
+      "Haratua",
+      "Pipiri",
+      "Hōngongoi",
+      "Here-turi-kōkā",
+      "Mahuru",
+      "Whiringa-ā-nuku",
+      "Whiringa-ā-rangi",
+      "Hakihea"
+    ],
+    "weekdays": [
+      "Rātapu",
+      "Rāhina",
+      "Rātū",
+      "Rāapa",
+      "Rāpare",
+      "Rāmere",
+      "Rāhoroi"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "i tēnei rā",
+    "tomorrow": "āpōpō",
+    "yesterday": "inanahi",
+    "dayAfterTomorrow": "tērā āpōpō",
+    "dayBeforeYesterday": "tērā inanahi",
+    "thisWeekday": "tēnei {weekday}",
+    "nextWeekday": "{weekday} e heke mai nei",
+    "lastWeekday": "{weekday} kua hori",
+    "short": {
+      "months": [
+        "Koh",
+        "Hui",
+        "Pou",
+        "Pae",
+        "Har",
+        "Pip",
+        "Hōn",
+        "Her",
+        "Mah",
+        "Whi",
+        "Whr",
+        "Hak"
+      ],
+      "weekdays": [
+        "Tap",
+        "Hin",
+        "Tū",
+        "Apa",
+        "Par",
+        "Mer",
+        "Hor"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} hēkona",
+      "minute": "{n} meneti",
+      "hour": "{n} hāora",
+      "day": "rā {n}",
+      "week": "wiki {n}",
+      "month": "marama {n}",
+      "year": "tau {n}"
+    },
+    "half": "{0}½",
+    "delimiter": ", ",
+    "justNow": "ināianei",
+    "ago": "{0} i mua",
+    "inFuture": "ā te {0}",
+    "short": {
+      "units": {
+        "second": "{n} hēk",
+        "minute": "{n} men",
+        "hour": "{n} hāo",
+        "day": "rā {n}",
+        "week": "w {n}",
+        "month": "m {n}",
+        "year": "t {n}"
+      },
+      "ago": "{0} i mua",
+      "inFuture": "ā te {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}hēk",
+        "minute": "{n}men",
+        "hour": "{n}hāo",
+        "day": "{n}r",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}t"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} i mua",
+      "inFuture": "ā te {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "tekau mā rua",
+        "tahi",
+        "rua",
+        "toru",
+        "whā",
+        "rima",
+        "ono",
+        "whitu",
+        "waru",
+        "iwa",
+        "tekau",
+        "tekau mā tahi"
+      ],
+      "midnight": "waenganui pō",
+      "noon": "poupoutanga o te rā",
+      "patterns": {
+        "0": "{h} karaka",
+        "5": "rima meneti i muri i te {h}",
+        "10": "tekau meneti i muri i te {h}",
+        "15": "hauwhā i muri i te {h}",
+        "20": "rua tekau meneti i muri i te {h}",
+        "25": "rua tekau mā rima meneti i muri i te {h}",
+        "30": "hāwhe i muri i te {h}",
+        "35": "rua tekau mā rima meneti ki te {next_h}",
+        "40": "rua tekau meneti ki te {next_h}",
+        "45": "hauwhā ki te {next_h}",
+        "50": "tekau meneti ki te {next_h}",
+        "55": "rima meneti ki te {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

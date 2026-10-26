@@ -1,0 +1,296 @@
+{
+  "code": "ln",
+  "name": "Lingala",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "mokolo {n}",
+        "other": "mikolo {n}"
+      },
+      "week": {
+        "one": "poso {n}",
+        "other": "baposo {n}"
+      },
+      "month": {
+        "one": "sanza {n}",
+        "other": "basanza {n}"
+      },
+      "year": {
+        "one": "mobu {n}",
+        "other": "mibu {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Mwana ya sika",
+    "stages": {
+      "newborn": "Mwana ya sika",
+      "infant": "Mwana mokɛ́",
+      "toddler": "Mwana mokɛ́",
+      "child": "Mwana",
+      "teenager": "Elɛ́ngɛ",
+      "adult": "Mokóló"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "mokolo {n}",
+          "other": "mik {n}"
+        },
+        "week": {
+          "one": "poso {n}",
+          "other": "bap {n}"
+        },
+        "month": {
+          "one": "sanza {n}",
+          "other": "basanza {n}"
+        },
+        "year": {
+          "one": "mobu {n}",
+          "other": "mibu {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": {
+          "one": "mok {n}",
+          "other": "mik {n}"
+        },
+        "week": {
+          "one": "pos {n}",
+          "other": "bap {n}"
+        },
+        "month": {
+          "one": "sza {n}",
+          "other": "bsza {n}"
+        },
+        "year": {
+          "one": "mb {n}",
+          "other": "mib {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Yanwáli",
+      "Febwáli",
+      "Mársi",
+      "Apríli",
+      "Máyi",
+      "Yúni",
+      "Yúli",
+      "Augústu",
+      "Sɛtɛ́mbɛ",
+      "Ɔkɔtɔ́bɛ",
+      "Novɛ́mbɛ",
+      "Dɛsɛ́mbɛ"
+    ],
+    "weekdays": [
+      "Lomíngo",
+      "Mokɔlɔ ya libosó",
+      "Mokɔlɔ ya míbalé",
+      "Mokɔlɔ ya mísáto",
+      "Mokɔlɔ ya mínéi",
+      "Mokɔlɔ ya mítáno",
+      "Mpɔ́sɔ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "lɛlɔ́",
+    "tomorrow": "lóbi",
+    "yesterday": "lóbi elékí",
+    "dayAfterTomorrow": "lóbi na nsima",
+    "dayBeforeYesterday": "lóbi elékí mpenza",
+    "thisWeekday": "{weekday} oyo",
+    "nextWeekday": "{weekday} ezalí koya",
+    "lastWeekday": "{weekday} elékí",
+    "short": {
+      "months": [
+        "Yan",
+        "Feb",
+        "Már",
+        "Apr",
+        "Máy",
+        "Yún",
+        "Yúl",
+        "Aug",
+        "Sɛt",
+        "Ɔkɔ",
+        "Nov",
+        "Dɛs"
+      ],
+      "weekdays": [
+        "Lom",
+        "Lib",
+        "Míb",
+        "Mís",
+        "Mín",
+        "Mít",
+        "Mpɔ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} segɔnde",
+      "minute": "{n} moniti",
+      "hour": "{n} ngonga",
+      "day": {
+        "one": "mokolo {n}",
+        "other": "mikolo {n}"
+      },
+      "week": {
+        "one": "poso {n}",
+        "other": "baposo {n}"
+      },
+      "month": {
+        "one": "sanza {n}",
+        "other": "basanza {n}"
+      },
+      "year": {
+        "one": "mobu {n}",
+        "other": "mibu {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "sikoyo",
+    "ago": "{0} elékí",
+    "inFuture": "na {0}",
+    "short": {
+      "units": {
+        "second": "seg {n}",
+        "minute": "mon {n}",
+        "hour": "ng {n}",
+        "day": {
+          "one": "mokolo {n}",
+          "other": "mik {n}"
+        },
+        "week": {
+          "one": "poso {n}",
+          "other": "bap {n}"
+        },
+        "month": {
+          "one": "sanza {n}",
+          "other": "basanza {n}"
+        },
+        "year": {
+          "one": "mobu {n}",
+          "other": "mibu {n}"
+        }
+      },
+      "ago": "{0} elékí",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "s {n}",
+        "minute": "m {n}",
+        "hour": "ng {n}",
+        "day": {
+          "one": "mok {n}",
+          "other": "mik {n}"
+        },
+        "week": {
+          "one": "pos {n}",
+          "other": "bap {n}"
+        },
+        "month": {
+          "one": "sza {n}",
+          "other": "bsza {n}"
+        },
+        "year": {
+          "one": "mb {n}",
+          "other": "mib {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} elékí",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "zómi na míbalé",
+        "mɔ̌kɔ́",
+        "míbalé",
+        "mísáto",
+        "mínéi",
+        "mítáno",
+        "motóba",
+        "nsambo",
+        "mwambe",
+        "libwá",
+        "zómi",
+        "zómi na mɔ̌kɔ́"
+      ],
+      "midnight": "mpɔ́kwa",
+      "noon": "ntɔ́ngɔ́",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

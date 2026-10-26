@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kl.json
+# Source: locales/kl.json
 
 _sayabletime_locale_kl() {
     _clock_hours=('akunneq marluk' 'ataaseq' 'marluk' 'pingasut' 'sisamat' 'tallimat' 'arfinillit' 'arfineq-marluk' 'arfineq-pingasut' 'qulingiluat' 'qulit' 'akunneq ataaseq')

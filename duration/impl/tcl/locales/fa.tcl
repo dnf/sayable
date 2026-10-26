@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/fa.json
+# Source: locales/fa.json
 
 proc plural_fa {n} {
     if {$n == 0 || $n == 1} { return "one" }

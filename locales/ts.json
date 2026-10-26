@@ -1,0 +1,290 @@
+{
+  "code": "ts",
+  "name": "Tsonga",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "siku {n}",
+        "other": "masiku {n}"
+      },
+      "week": {
+        "one": "vhiki {n}",
+        "other": "mavhiki {n}"
+      },
+      "month": {
+        "one": "n'hweti {n}",
+        "other": "tin'hweti {n}"
+      },
+      "year": {
+        "one": "lembe {n}",
+        "other": "malembe {n}"
+      }
+    },
+    "half": "{0} ni hafu",
+    "delimiter": ", ",
+    "justBorn": "N'wana loyi a ha ku velekiwa",
+    "stages": {
+      "newborn": "N'wana wo velekiwa",
+      "infant": "Xihlangi",
+      "toddler": "N'wana lontsongo",
+      "child": "N'wana",
+      "teenager": "Jaha",
+      "adult": "Munhu lonkulu"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "siku {n}",
+          "other": "masiku {n}"
+        },
+        "week": {
+          "one": "vhiki {n}",
+          "other": "mavhiki {n}"
+        },
+        "month": {
+          "one": "n'hw. {n}",
+          "other": "tin'hw. {n}"
+        },
+        "year": {
+          "one": "lembe {n}",
+          "other": "mal. {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Sunguti",
+      "Nyenyenyani",
+      "Nyenyankulu",
+      "Dzivamisoko",
+      "Mudyaxihi",
+      "Khotavuxika",
+      "Mawuwani",
+      "Mhawuri",
+      "Ndzhati",
+      "Nhlangula",
+      "Hukuri",
+      "N'wendzamhala"
+    ],
+    "weekdays": [
+      "Sonto",
+      "Musumbhunuku",
+      "Ravumbirhi",
+      "Ravunharhu",
+      "Ravumune",
+      "Ravuntlhanu",
+      "Mugqivela"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "namuntlha",
+    "tomorrow": "mundzuku",
+    "yesterday": "tolo",
+    "dayAfterTomorrow": "mundzuku wa vumbirhi",
+    "dayBeforeYesterday": "tolo ra vumbirhi",
+    "thisWeekday": "{weekday} leyi",
+    "nextWeekday": "{weekday} leyi taka",
+    "lastWeekday": "{weekday} leyi nga hundza",
+    "short": {
+      "months": [
+        "Sun",
+        "Nye",
+        "Nyk",
+        "Dzi",
+        "Mud",
+        "Kho",
+        "Maw",
+        "Mha",
+        "Ndz",
+        "Nhl",
+        "Huk",
+        "N'w"
+      ],
+      "weekdays": [
+        "Son",
+        "Mus",
+        "Bir",
+        "Har",
+        "Mun",
+        "Tlh",
+        "Mug"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "xikontiri {n}",
+        "other": "swikontiri {n}"
+      },
+      "minute": {
+        "one": "minete {n}",
+        "other": "timinete {n}"
+      },
+      "hour": {
+        "one": "awara {n}",
+        "other": "tiawara {n}"
+      },
+      "day": {
+        "one": "siku {n}",
+        "other": "masiku {n}"
+      },
+      "week": {
+        "one": "vhiki {n}",
+        "other": "mavhiki {n}"
+      },
+      "month": {
+        "one": "n'hweti {n}",
+        "other": "tin'hweti {n}"
+      },
+      "year": {
+        "one": "lembe {n}",
+        "other": "malembe {n}"
+      }
+    },
+    "half": "{0} ni hafu",
+    "delimiter": ", ",
+    "justNow": "sweswi",
+    "ago": "{0} leri nga hundza",
+    "inFuture": "hi {0}",
+    "short": {
+      "units": {
+        "second": {
+          "one": "xikon. {n}",
+          "other": "swikon. {n}"
+        },
+        "minute": {
+          "one": "min. {n}",
+          "other": "timin. {n}"
+        },
+        "hour": {
+          "one": "awa. {n}",
+          "other": "tiawa. {n}"
+        },
+        "day": {
+          "one": "siku {n}",
+          "other": "masiku {n}"
+        },
+        "week": {
+          "one": "vhiki {n}",
+          "other": "mavhiki {n}"
+        },
+        "month": {
+          "one": "n'hw. {n}",
+          "other": "tin'hw. {n}"
+        },
+        "year": {
+          "one": "lembe {n}",
+          "other": "mal. {n}"
+        }
+      },
+      "ago": "{0} leri nga hundza",
+      "inFuture": "hi {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} hundza",
+      "inFuture": "hi {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "khume mbiri",
+        "yin'we",
+        "mbirhi",
+        "nharhu",
+        "mune",
+        "ntlhanu",
+        "tsevu",
+        "nkombo",
+        "nhungu",
+        "kaye",
+        "khume",
+        "khume yin'we"
+      ],
+      "midnight": "vusiku exikarhi",
+      "noon": "nhlekanhi",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

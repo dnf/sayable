@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/sd.json
+# Source: locales/sd.json
 
 defmodule SayableDuration.Locales.SD do
   @moduledoc false

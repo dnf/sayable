@@ -1,0 +1,277 @@
+{
+  "code": "sk",
+  "name": "Slovak",
+  "pluralRule": "cs_sk",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} deň",
+        "few": "{n} dni",
+        "other": "{n} dní"
+      },
+      "week": {
+        "one": "{n} týždeň",
+        "few": "{n} týždne",
+        "other": "{n} týždňov"
+      },
+      "month": {
+        "one": "{n} mesiac",
+        "few": "{n} mesiace",
+        "other": "{n} mesiacov"
+      },
+      "year": {
+        "one": "{n} rok",
+        "few": "{n} roky",
+        "other": "{n} rokov"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Novorodenec",
+    "stages": {
+      "newborn": "Novorodenec",
+      "infant": "Dojča",
+      "toddler": "Batoľa",
+      "child": "Dieťa",
+      "teenager": "Tínedžer",
+      "adult": {
+        "m": "Dospelý",
+        "f": "Dospelá"
+      }
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} deň",
+          "few": "{n} dni",
+          "many": "{n} dňa",
+          "other": "{n} dní"
+        },
+        "week": "{n} týž.",
+        "month": "{n} mes.",
+        "year": "{n} r."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} t.",
+        "month": "{n} m.",
+        "year": "{n} r."
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "január",
+      "február",
+      "marec",
+      "apríl",
+      "máj",
+      "jún",
+      "júl",
+      "august",
+      "september",
+      "október",
+      "november",
+      "december"
+    ],
+    "weekdays": [
+      "nedeľa",
+      "pondelok",
+      "utorok",
+      "streda",
+      "štvrtok",
+      "piatok",
+      "sobota"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "dnes",
+    "tomorrow": "zajtra",
+    "yesterday": "včera",
+    "dayAfterTomorrow": "pozajtra",
+    "dayBeforeYesterday": "predvčerom",
+    "thisWeekday": "tento {weekday}",
+    "nextWeekday": "budúci {weekday}",
+    "lastWeekday": "minulý {weekday}",
+    "monthsInDate": [
+      "januára",
+      "februára",
+      "marca",
+      "apríla",
+      "mája",
+      "júna",
+      "júla",
+      "augusta",
+      "septembra",
+      "októbra",
+      "novembra",
+      "decembra"
+    ],
+    "short": {
+      "months": [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "máj",
+        "jún",
+        "júl",
+        "aug",
+        "sep",
+        "okt",
+        "nov",
+        "dec"
+      ],
+      "weekdays": [
+        "ne",
+        "po",
+        "ut",
+        "st",
+        "št",
+        "pi",
+        "so"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekunda",
+        "few": "{n} sekundy",
+        "other": "{n} sekúnd"
+      },
+      "minute": {
+        "one": "{n} minúta",
+        "few": "{n} minúty",
+        "other": "{n} minút"
+      },
+      "hour": {
+        "one": "{n} hodina",
+        "few": "{n} hodiny",
+        "other": "{n} hodín"
+      },
+      "day": {
+        "one": "{n} deň",
+        "few": "{n} dni",
+        "other": "{n} dní"
+      },
+      "week": {
+        "one": "{n} týždeň",
+        "few": "{n} týždne",
+        "other": "{n} týždňov"
+      },
+      "month": {
+        "one": "{n} mesiac",
+        "few": "{n} mesiace",
+        "other": "{n} mesiacov"
+      },
+      "year": {
+        "one": "{n} rok",
+        "few": "{n} roky",
+        "other": "{n} rokov"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "práve teraz",
+    "ago": "pred {0}",
+    "inFuture": "o {0}",
+    "short": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": {
+          "one": "{n} deň",
+          "few": "{n} dni",
+          "many": "{n} dňa",
+          "other": "{n} dní"
+        },
+        "week": "{n} týž.",
+        "month": "{n} mes.",
+        "year": "{n} r."
+      },
+      "ago": "pred {0}",
+      "inFuture": "o {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} d.",
+        "week": "{n} t.",
+        "month": "{n} m.",
+        "year": "{n} r."
+      },
+      "delimiter": "",
+      "ago": "pred {0}",
+      "inFuture": "o {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dvanásť",
+        "jedna",
+        "dve",
+        "tri",
+        "štyri",
+        "päť",
+        "šesť",
+        "sedem",
+        "osem",
+        "deväť",
+        "desať",
+        "jedenásť"
+      ],
+      "midnight": "polnoc",
+      "noon": "poludnie",
+      "patterns": {
+        "0": "{h} hodín",
+        "5": "päť po {h}",
+        "10": "desať po {h}",
+        "15": "štvrť po {h}",
+        "20": "dvadsať po {h}",
+        "25": "dvadsať päť po {h}",
+        "30": "pol po {h}",
+        "35": "dvadsať päť do {next_h}",
+        "40": "dvadsať do {next_h}",
+        "45": "štvrť do {next_h}",
+        "50": "desať do {next_h}",
+        "55": "päť do {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

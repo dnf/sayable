@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/gu.json
+# Source: locales/gu.json
 
 proc plural_gu {n} {
     if {$n == 0 || $n == 1} { return "one" }

@@ -1,0 +1,273 @@
+{
+  "code": "is",
+  "name": "Icelandic",
+  "pluralRule": "mk",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} dagur",
+        "other": "{n} dagar"
+      },
+      "week": {
+        "one": "{n} vika",
+        "other": "{n} vikur"
+      },
+      "month": {
+        "one": "{n} mánuður",
+        "other": "{n} mánuðir"
+      },
+      "year": {
+        "one": "{n} ár",
+        "other": "{n} ár"
+      }
+    },
+    "half": "{0} og hálft",
+    "delimiter": ", ",
+    "justBorn": "Nýfætt",
+    "stages": {
+      "newborn": "Nýfæðingur",
+      "infant": "Ungbarn",
+      "toddler": "Smábarn",
+      "child": "Barn",
+      "teenager": "Unglingur",
+      "adult": "Fullorðinn"
+    },
+    "short": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} v.",
+        "month": "{n} mán.",
+        "year": "{n} ár"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}v",
+        "month": "{n}m",
+        "year": "{n}á"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "janúar",
+      "febrúar",
+      "mars",
+      "apríl",
+      "maí",
+      "júní",
+      "júlí",
+      "ágúst",
+      "september",
+      "október",
+      "nóvember",
+      "desember"
+    ],
+    "weekdays": [
+      "sunnudagur",
+      "mánudagur",
+      "þriðjudagur",
+      "miðvikudagur",
+      "fimmtudagur",
+      "föstudagur",
+      "laugardagur"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "í dag",
+    "tomorrow": "á morgun",
+    "yesterday": "í gær",
+    "dayAfterTomorrow": "á yfirmorgun",
+    "dayBeforeYesterday": "í fyrradag",
+    "thisWeekday": "{weekday}",
+    "nextWeekday": "næsta {weekday}",
+    "lastWeekday": "síðasta {weekday}",
+    "short": {
+      "months": [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "maí",
+        "jún",
+        "júl",
+        "ágú",
+        "sep",
+        "okt",
+        "nóv",
+        "des"
+      ],
+      "weekdays": [
+        "sun",
+        "mán",
+        "þri",
+        "mið",
+        "fim",
+        "fös",
+        "lau"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekúnda",
+        "other": "{n} sekúndur"
+      },
+      "minute": {
+        "one": "{n} mínúta",
+        "other": "{n} mínútur"
+      },
+      "hour": {
+        "one": "{n} klukkustund",
+        "other": "{n} klukkustundir"
+      },
+      "day": {
+        "one": "{n} dagur",
+        "other": "{n} dagar"
+      },
+      "week": {
+        "one": "{n} vika",
+        "other": "{n} vikur"
+      },
+      "month": {
+        "one": "{n} mánuður",
+        "other": "{n} mánuðir"
+      },
+      "year": {
+        "one": "{n} ár",
+        "other": "{n} ár"
+      }
+    },
+    "half": "{n} og hálf",
+    "delimiter": ", ",
+    "justNow": "rétt í þessu",
+    "ago": "fyrir {0} síðan",
+    "inFuture": "eftir {0}",
+    "clock": {
+      "hours": [
+        "tólf",
+        "eitt",
+        "tvö",
+        "þrjú",
+        "fjögur",
+        "fimm",
+        "sex",
+        "sjö",
+        "átta",
+        "níu",
+        "tíu",
+        "ellefu"
+      ],
+      "midnight": "miðnætti",
+      "noon": "hádegi",
+      "patterns": {
+        "0": "klukkan {h}",
+        "5": "fimm yfir {h}",
+        "10": "tíu yfir {h}",
+        "15": "korter yfir {h}",
+        "20": "tuttugu yfir {h}",
+        "25": "tuttugu og fimm yfir {h}",
+        "30": "hálf {next_h}",
+        "35": "tuttugu og fimm í {next_h}",
+        "40": "tuttugu í {next_h}",
+        "45": "korter í {next_h}",
+        "50": "tíu í {next_h}",
+        "55": "fimm í {next_h}"
+      }
+    },
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} mín.",
+        "hour": "{n} klst.",
+        "day": "{n} d.",
+        "week": "{n} v.",
+        "month": "{n} mán.",
+        "year": "{n} ár"
+      },
+      "ago": "fyrir {0}",
+      "inFuture": "eftir {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}k",
+        "day": "{n}d",
+        "week": "{n}v",
+        "month": "{n}m",
+        "year": "{n}á"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "fyrir {0}",
+      "inFuture": "eftir {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "tólf",
+        "eitt",
+        "tvö",
+        "þrjú",
+        "fjögur",
+        "fimm",
+        "sex",
+        "sjö",
+        "átta",
+        "níu",
+        "tíu",
+        "ellefu"
+      ],
+      "midnight": "miðnætti",
+      "noon": "hádegi",
+      "patterns": {
+        "0": "klukkan {h}",
+        "5": "fimm yfir {h}",
+        "10": "tíu yfir {h}",
+        "15": "korter yfir {h}",
+        "20": "tuttugu yfir {h}",
+        "25": "tuttugu og fimm yfir {h}",
+        "30": "hálf {next_h}",
+        "35": "tuttugu og fimm í {next_h}",
+        "40": "tuttugu í {next_h}",
+        "45": "korter í {next_h}",
+        "50": "tíu í {next_h}",
+        "55": "fimm í {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

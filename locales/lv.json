@@ -1,0 +1,265 @@
+{
+  "code": "lv",
+  "name": "Latvian",
+  "pluralRule": "lv",
+  "age": {
+    "units": {
+      "day": {
+        "zero": "{n} dienu",
+        "one": "{n} diena",
+        "other": "{n} dienas"
+      },
+      "week": {
+        "zero": "{n} nedēļu",
+        "one": "{n} nedēļa",
+        "other": "{n} nedēļas"
+      },
+      "month": {
+        "zero": "{n} mēnešu",
+        "one": "{n} mēnesis",
+        "other": "{n} mēneši"
+      },
+      "year": {
+        "zero": "{n} gadu",
+        "one": "{n} gads",
+        "other": "{n} gadi"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Jaundzimušais",
+    "stages": {
+      "newborn": {
+        "m": "Jaundzimušais",
+        "f": "Jaundzimušā"
+      },
+      "infant": {
+        "m": "Zīdainis",
+        "f": "Zīdaine"
+      },
+      "toddler": {
+        "m": "Mazulis",
+        "f": "Mazule"
+      },
+      "child": "Bērns",
+      "teenager": {
+        "m": "Pusaudzis",
+        "f": "Pusaudze"
+      },
+      "adult": {
+        "m": "Pieaugušais",
+        "f": "Pieaugusī"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} ned.",
+        "month": "{n} mēn.",
+        "year": "{n} g."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} n.",
+        "month": "{n} m.",
+        "year": "{n} g."
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "janvāris",
+      "februāris",
+      "marts",
+      "aprīlis",
+      "maijs",
+      "jūnijs",
+      "jūlijs",
+      "augusts",
+      "septembris",
+      "oktobris",
+      "novembris",
+      "decembris"
+    ],
+    "weekdays": [
+      "svētdiena",
+      "pirmdiena",
+      "otrdiena",
+      "trešdiena",
+      "ceturtdiena",
+      "piektdiena",
+      "sestdiena"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "šodien",
+    "tomorrow": "rīt",
+    "yesterday": "vakar",
+    "dayAfterTomorrow": "parīt",
+    "dayBeforeYesterday": "aizvakar",
+    "thisWeekday": "šī {weekday}",
+    "nextWeekday": "nākamā {weekday}",
+    "lastWeekday": "pagājusī {weekday}",
+    "short": {
+      "months": [
+        "janv",
+        "febr",
+        "marts",
+        "apr",
+        "maijs",
+        "jūn",
+        "jūl",
+        "aug",
+        "sept",
+        "okt",
+        "nov",
+        "dec"
+      ],
+      "weekdays": [
+        "sv",
+        "pr",
+        "ot",
+        "tr",
+        "ce",
+        "pk",
+        "se"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "zero": "{n} sekunžu",
+        "one": "{n} sekunde",
+        "other": "{n} sekundes"
+      },
+      "minute": {
+        "zero": "{n} minūšu",
+        "one": "{n} minūte",
+        "other": "{n} minūtes"
+      },
+      "hour": {
+        "zero": "{n} stundu",
+        "one": "{n} stunda",
+        "other": "{n} stundas"
+      },
+      "day": {
+        "zero": "{n} dienu",
+        "one": "{n} diena",
+        "other": "{n} dienas"
+      },
+      "week": {
+        "zero": "{n} nedēļu",
+        "one": "{n} nedēļa",
+        "other": "{n} nedēļas"
+      },
+      "month": {
+        "zero": "{n} mēnešu",
+        "one": "{n} mēnesis",
+        "other": "{n} mēneši"
+      },
+      "year": {
+        "zero": "{n} gadu",
+        "one": "{n} gads",
+        "other": "{n} gadi"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "tikko",
+    "ago": "pirms {0}",
+    "inFuture": "pēc {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min",
+        "hour": "{n} st.",
+        "day": "{n} d.",
+        "week": "{n} ned.",
+        "month": "{n} mēn.",
+        "year": "{n} g."
+      },
+      "ago": "pirms {0}",
+      "inFuture": "pēc {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} d.",
+        "week": "{n} n.",
+        "month": "{n} m.",
+        "year": "{n} g."
+      },
+      "delimiter": "",
+      "ago": "pirms {0}",
+      "inFuture": "pēc {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "divpadsmit",
+        "viens",
+        "divi",
+        "trīs",
+        "četri",
+        "pieci",
+        "seši",
+        "septiņi",
+        "astoņi",
+        "deviņi",
+        "desmit",
+        "vienpadsmit"
+      ],
+      "midnight": "pusnakts",
+      "noon": "pusdiena",
+      "patterns": {
+        "0": "{h}",
+        "5": "pieci pēc {h}",
+        "10": "desmit pēc {h}",
+        "15": "piecpadsmit pēc {h}",
+        "20": "divdesmit pēc {h}",
+        "25": "divdesmit pieci pēc {h}",
+        "30": "trīsdesmit pēc {h}",
+        "35": "divdesmit pieci līdz {next_h}",
+        "40": "divdesmit līdz {next_h}",
+        "45": "piecpadsmit līdz {next_h}",
+        "50": "desmit līdz {next_h}",
+        "55": "pieci līdz {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

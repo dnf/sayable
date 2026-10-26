@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/pov.json
+# Source: locales/pov.json
 
 _sayabletime_locale_pov() {
     _clock_hours=('dozi' 'un' 'dos' 'tres' 'kuatru' 'sinku' 'seis' 'seti' 'oitu' 'novi' 'des' 'onzi')

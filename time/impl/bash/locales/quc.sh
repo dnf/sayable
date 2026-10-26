@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/quc.json
+# Source: locales/quc.json
 
 _sayabletime_locale_quc() {
     _clock_hours=('kab'\''lajuj' 'jun' 'ka'\''i'\''' 'oxi'\''' 'kaji'\''' 'jo'\''' 'waqi'\''' 'wuqu'\''' 'wajxaqi'\''' 'b'\''eleji'\''' 'lajuj' 'julajuj')

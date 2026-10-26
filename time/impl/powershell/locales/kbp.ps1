@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kbp.json
+# Source: locales/kbp.json
 
 function locale_kbp {
     $hours = @('hiu nɛ naalɛ', 'kʊɖʊm', 'naalɛ', 'naadozo', 'naanaza', 'kagbanzɩ', 'loɖo', 'lʊbɛ', 'lɛɛtɛ', 'nakʊ', 'hiu', 'hiu nɛ kʊɖʊm')

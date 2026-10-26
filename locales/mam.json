@@ -1,0 +1,204 @@
+{
+  "code": "mam",
+  "name": "Mam",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} q'ij",
+      "week": "{n} xjaw",
+      "month": "{n} xjaw",
+      "year": "{n} ab'q'ii"
+    },
+    "half": "{0} nik'",
+    "delimiter": ", ",
+    "justBorn": "Yal xjal",
+    "stages": {
+      "newborn": "Yal xjal",
+      "infant": "Xkub'",
+      "toddler": "K'wal",
+      "child": "K'wal",
+      "teenager": "Q'a",
+      "adult": "Xjal"
+    },
+    "short": {
+      "units": {
+        "day": "{n} q'ij",
+        "week": "{n} xjaw",
+        "month": "{n} xjaw",
+        "year": "{n} ab'."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre"
+    ],
+    "weekdays": [
+      "Domingo",
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes",
+      "Sábado"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "iky'x",
+    "tomorrow": "q'ij oj",
+    "yesterday": "ewl",
+    "thisWeekday": "tu'n {weekday}",
+    "nextWeekday": "{weekday} tul",
+    "lastWeekday": "{weekday} nchi'j",
+    "short": {
+      "months": [
+        "Ene",
+        "Feb",
+        "Mar",
+        "Abr",
+        "May",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dic"
+      ],
+      "weekdays": [
+        "Dom",
+        "Lun",
+        "Mar",
+        "Mié",
+        "Jue",
+        "Vie",
+        "Sáb"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} segundo",
+      "minute": "{n} minuto",
+      "hour": "{n} hora",
+      "day": "{n} q'ij",
+      "week": "{n} xjaw",
+      "month": "{n} xjaw",
+      "year": "{n} ab'q'ii"
+    },
+    "half": "{0} nik'",
+    "delimiter": ", ",
+    "justNow": "iky'x",
+    "ago": "{0} chi'j",
+    "inFuture": "tu'n {0}",
+    "short": {
+      "units": {
+        "second": "{n} seg.",
+        "minute": "{n} min.",
+        "hour": "{n} hora",
+        "day": "{n} q'ij",
+        "week": "{n} xjaw",
+        "month": "{n} xjaw",
+        "year": "{n} ab'."
+      },
+      "ago": "{0} chi'j",
+      "inFuture": "tu'n {0}"
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} chi'j",
+      "inFuture": "tu'n {0}"
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "kab'laj",
+        "jun",
+        "kab'",
+        "oxe",
+        "kyaje",
+        "jwe'",
+        "qaq",
+        "wuq",
+        "wajxaq",
+        "b'alaj",
+        "laj",
+        "junlaj"
+      ],
+      "midnight": "nik' aq'b'il",
+      "noon": "nik' q'ij",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

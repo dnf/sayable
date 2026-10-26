@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tig.json
+# Source: locales/tig.json
 
 function locale_tig {
     $hours = @('ʿasərte wəkəlte', 'ḥante', 'kəlʾe', 'səleste', 'arbaʿte', 'ḥamməste', 'səste', 'sabʿate', 'səmmunte', 'təsʿate', 'ʿasərte', 'ʿasərte wəḥante')

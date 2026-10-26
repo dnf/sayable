@@ -1,0 +1,206 @@
+{
+  "code": "shn",
+  "name": "Shan",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} ဝၼ်း",
+      "week": "{n} ဝူင်ႈ",
+      "month": "{n} လိူၼ်",
+      "year": "{n} ပီ"
+    },
+    "half": "{0}ၶိုင်ႈ",
+    "delimiter": " ",
+    "justBorn": "ၶဝ်ႈမႃး",
+    "stages": {
+      "newborn": "ၶဝ်ႈမႃး",
+      "infant": "လုၵ်ႈဢွၼ်ႇ",
+      "toddler": "လုၵ်ႈဢွၼ်ႇ",
+      "child": "လုၵ်ႈဢွၼ်ႇ",
+      "teenager": "ၵူၼ်းၼုမ်ႇ",
+      "adult": "ၵူၼ်းလူင်"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ဝၼ်း",
+        "week": "{n} ဝူင်ႈ",
+        "month": "{n} လိူၼ်",
+        "year": "{n} ပီ"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "ၸၼ်ႇဝႃႇရီႇ",
+      "ၾႅပ်ႇဝႃႇရီႇ",
+      "မၢတ်ႉၶျ်",
+      "ဢေႇပရႄႇ",
+      "မေႇ",
+      "ၸုၼ်ႇ",
+      "ၸူႇလၢႆႇ",
+      "ဢေႃးၵၢတ်ႉ",
+      "သႅပ်ႇထႅမ်ႇပႃႇ",
+      "ဢွၵ်ႇထူဝ်ႇပႃႇ",
+      "ၼူဝ်ႇဝႅမ်ႇပႃႇ",
+      "တီႇသႅမ်ႇပႃႇ"
+    ],
+    "weekdays": [
+      "ဝၼ်းဢႃးတိတ်ႉ",
+      "ဝၼ်းၸၼ်",
+      "ဝၼ်းဢၢင်းၵၢၼ်း",
+      "ဝၼ်းပုတ်ႉ",
+      "ဝၼ်းၽတ်း",
+      "ဝၼ်းသုၵ်း",
+      "ဝၼ်းသဝ်"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ဝၼ်းမိူဝ်ႈၼႆႉ",
+    "tomorrow": "မိူဝ်ႈၽုၵ်ႈ",
+    "yesterday": "မိူဝ်ႈဝႃး",
+    "dayAfterTomorrow": "မိူဝ်ႈႁိုဝ်",
+    "dayBeforeYesterday": "မိူဝ်ႈသိုၼ်း",
+    "thisWeekday": "{weekday} ၼႆႉ",
+    "nextWeekday": "{weekday} ၼႃႈ",
+    "lastWeekday": "{weekday} ပူၼ်ႉ",
+    "short": {
+      "months": [
+        "ၸၼ်ႇ",
+        "ၾႅပ်ႇ",
+        "မၢတ်ႉ",
+        "ဢေႇပ",
+        "မေႇ",
+        "ၸုၼ်ႇ",
+        "ၸူႇလ",
+        "ဢေႃး",
+        "သႅပ်ႇ",
+        "ဢွၵ်ႇ",
+        "ၼူဝ်ႇ",
+        "တီႇသ"
+      ],
+      "weekdays": [
+        "ဢႃး",
+        "ၸၼ်",
+        "ဢၢင်း",
+        "ပုတ်ႉ",
+        "ၽတ်း",
+        "သုၵ်း",
+        "သဝ်"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} ဝိၼႃးတီႇ",
+      "minute": "{n} မိၼိတ်ႉ",
+      "hour": "{n} ၸူဝ်ႈမူင်း",
+      "day": "{n} ဝၼ်း",
+      "week": "{n} ဝူင်ႈ",
+      "month": "{n} လိူၼ်",
+      "year": "{n} ပီ"
+    },
+    "half": "{0}ၶိုင်ႈ",
+    "delimiter": " ",
+    "justNow": "ယၢမ်းလဵဝ်",
+    "ago": "{0} ပူၼ်ႉမႃး",
+    "inFuture": "ထႅင်ႈ {0}",
+    "short": {
+      "units": {
+        "second": "{n} ဝိၼႃး",
+        "minute": "{n} မိၼိတ်ႉ",
+        "hour": "{n} ၸူဝ်ႈ",
+        "day": "{n} ဝၼ်း",
+        "week": "{n} ဝူင်ႈ",
+        "month": "{n} လိူၼ်",
+        "year": "{n} ပီ"
+      },
+      "ago": "{0} ပူၼ်ႉမႃး",
+      "inFuture": "ထႅင်ႈ {0}"
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} ပူၼ်ႉမႃး",
+      "inFuture": "ထႅင်ႈ {0}"
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "သိပ်းသွင်",
+        "ၼိုင်ႈ",
+        "သွင်",
+        "သၢမ်",
+        "သီႇ",
+        "ႁႃႈ",
+        "ႁူၵ်း",
+        "ၸဵတ်း",
+        "ပႅတ်ႇ",
+        "ၵဝ်ႈ",
+        "သိပ်း",
+        "သိပ်းဢဵတ်း"
+      ],
+      "midnight": "ၵၢင်ၶိုၼ်း",
+      "noon": "ၵၢင်ဝၼ်း",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

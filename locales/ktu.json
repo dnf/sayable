@@ -1,0 +1,299 @@
+{
+  "code": "ktu",
+  "name": "Kituba",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "lumbu {n}",
+        "other": "malumbu {n}"
+      },
+      "week": {
+        "one": "poso {n}",
+        "other": "maposo {n}"
+      },
+      "month": {
+        "one": "ngonda {n}",
+        "other": "mingonda {n}"
+      },
+      "year": {
+        "one": "mvula {n}",
+        "other": "mimvula {n}"
+      }
+    },
+    "half": "{0} na ndambu",
+    "delimiter": ", ",
+    "justBorn": "Mwana ya buta",
+    "stages": {
+      "newborn": "Mwana ya buta",
+      "infant": "Mwana moke",
+      "toddler": "Mwana",
+      "child": "Mwana",
+      "teenager": "Elenge",
+      "adult": "Muntu ya nene"
+    },
+    "short": {
+      "units": {
+        "day": "malumbu {n}",
+        "week": {
+          "one": "poso {n}",
+          "other": "maposo {n}"
+        },
+        "month": {
+          "one": "ngonda {n}",
+          "other": "mingonda {n}"
+        },
+        "year": {
+          "one": "mvula {n}",
+          "other": "mimvula {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "malumbu {n}",
+        "week": {
+          "one": "poso {n}",
+          "other": "maposo {n}"
+        },
+        "month": {
+          "one": "ngon {n}",
+          "other": "mingon {n}"
+        },
+        "year": {
+          "one": "mvula {n}",
+          "other": "mimv {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Yanvye",
+      "Fevrye",
+      "Marsi",
+      "Avrili",
+      "Mɛ",
+      "Yuwɛ",
+      "Yulɛ",
+      "Uti",
+      "Sɛtambre",
+      "Ɔtɔbre",
+      "Nɔvambre",
+      "Desambre"
+    ],
+    "weekdays": [
+      "Lumingu",
+      "Kimosi",
+      "Kizole",
+      "Kizoluntatu",
+      "Kinya",
+      "Kisabala",
+      "Kimpwanza"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "bubu",
+    "tomorrow": "mbazi",
+    "yesterday": "zono",
+    "dayAfterTomorrow": "mbazi ya mbazi",
+    "dayBeforeYesterday": "zono ya zono",
+    "thisWeekday": "{weekday} yayi",
+    "nextWeekday": "{weekday} ya kwiza",
+    "lastWeekday": "{weekday} ya vioka",
+    "short": {
+      "months": [
+        "Yan",
+        "Fev",
+        "Mar",
+        "Avr",
+        "Mɛ",
+        "Yuw",
+        "Yul",
+        "Uti",
+        "Sɛt",
+        "Ɔtɔ",
+        "Nɔv",
+        "Des"
+      ],
+      "weekdays": [
+        "Lum",
+        "Kim",
+        "Kiz",
+        "Kzn",
+        "Kin",
+        "Kis",
+        "Kmp"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "sekonde {n}",
+        "other": "masekonde {n}"
+      },
+      "minute": {
+        "one": "miniti {n}",
+        "other": "maminiti {n}"
+      },
+      "hour": {
+        "one": "ngonga {n}",
+        "other": "mingonga {n}"
+      },
+      "day": {
+        "one": "lumbu {n}",
+        "other": "malumbu {n}"
+      },
+      "week": {
+        "one": "poso {n}",
+        "other": "maposo {n}"
+      },
+      "month": {
+        "one": "ngonda {n}",
+        "other": "mingonda {n}"
+      },
+      "year": {
+        "one": "mvula {n}",
+        "other": "mimvula {n}"
+      }
+    },
+    "half": "{0} na ndambu",
+    "delimiter": ", ",
+    "justNow": "sik'oyo",
+    "ago": "{0} ya vioka",
+    "inFuture": "na {0}",
+    "short": {
+      "units": {
+        "second": "masekonde {n}",
+        "minute": "maminiti {n}",
+        "hour": {
+          "one": "ngonga {n}",
+          "other": "mingonga {n}"
+        },
+        "day": "malumbu {n}",
+        "week": {
+          "one": "poso {n}",
+          "other": "maposo {n}"
+        },
+        "month": {
+          "one": "ngonda {n}",
+          "other": "mingonda {n}"
+        },
+        "year": {
+          "one": "mvula {n}",
+          "other": "mimvula {n}"
+        }
+      },
+      "ago": "{0} ya vioka",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "masek {n}",
+        "minute": "mamin {n}",
+        "hour": {
+          "one": "ngon {n}",
+          "other": "mingon {n}"
+        },
+        "day": "malum {n}",
+        "week": {
+          "one": "poso {n}",
+          "other": "maposo {n}"
+        },
+        "month": {
+          "one": "ngon {n}",
+          "other": "mingon {n}"
+        },
+        "year": {
+          "one": "mvula {n}",
+          "other": "mimv {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} vioka",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "zomi na zole",
+        "mosi",
+        "zole",
+        "tatu",
+        "ya",
+        "tanu",
+        "sambanu",
+        "nsambwadi",
+        "nana",
+        "vwa",
+        "zomi",
+        "zomi na mosi"
+      ],
+      "midnight": "midi ya butu",
+      "noon": "midi",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

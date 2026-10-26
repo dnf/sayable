@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/fan.json
+# Source: locales/fan.json
 
 function locale_fan {
     $months = @('Nzas Ngon', 'Nzas Mekié', 'Nzas Okúa', 'Nzas Angón', 'Nzas Obuí', 'Nzas Okéna', 'Nzas Osúa', 'Nzas Mwom', 'Nzas Ebulú', 'Nzas Owono', 'Nzas Owono-abé', 'Nzas Nkéng')

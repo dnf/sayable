@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/pt.json
+# Source: locales/pt.json
 
 _sayabletime_locale_pt() {
     _clock_hours=('doze' 'uma' 'duas' 'três' 'quatro' 'cinco' 'seis' 'sete' 'oito' 'nove' 'dez' 'onze')

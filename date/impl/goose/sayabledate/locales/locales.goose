@@ -10,7 +10,7 @@
 
 namespace sayabledate;
 
-// Source: date/locales/src/af.json
+// Source: locales/af.json
 fn locale_af() -> DateLocale {
     DateLocale {
         code: "af",
@@ -32,7 +32,7 @@ fn locale_af() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ak.json
+// Source: locales/ak.json
 fn locale_ak() -> DateLocale {
     DateLocale {
         code: "ak",
@@ -54,7 +54,7 @@ fn locale_ak() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/am.json
+// Source: locales/am.json
 fn locale_am() -> DateLocale {
     DateLocale {
         code: "am",
@@ -76,7 +76,7 @@ fn locale_am() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ar.json
+// Source: locales/ar.json
 fn locale_ar() -> DateLocale {
     DateLocale {
         code: "ar",
@@ -98,7 +98,7 @@ fn locale_ar() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ay.json
+// Source: locales/ay.json
 fn locale_ay() -> DateLocale {
     DateLocale {
         code: "ay",
@@ -118,7 +118,7 @@ fn locale_ay() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/az.json
+// Source: locales/az.json
 fn locale_az() -> DateLocale {
     DateLocale {
         code: "az",
@@ -140,7 +140,7 @@ fn locale_az() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/bci.json
+// Source: locales/bci.json
 fn locale_bci() -> DateLocale {
     DateLocale {
         code: "bci",
@@ -162,7 +162,7 @@ fn locale_bci() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/be.json
+// Source: locales/be.json
 fn locale_be() -> DateLocale {
     DateLocale {
         code: "be",
@@ -186,7 +186,7 @@ fn locale_be() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/bem.json
+// Source: locales/bem.json
 fn locale_bem() -> DateLocale {
     DateLocale {
         code: "bem",
@@ -208,7 +208,7 @@ fn locale_bem() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/bg.json
+// Source: locales/bg.json
 fn locale_bg() -> DateLocale {
     DateLocale {
         code: "bg",
@@ -230,7 +230,7 @@ fn locale_bg() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/bi.json
+// Source: locales/bi.json
 fn locale_bi() -> DateLocale {
     DateLocale {
         code: "bi",
@@ -252,7 +252,7 @@ fn locale_bi() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/bm.json
+// Source: locales/bm.json
 fn locale_bm() -> DateLocale {
     DateLocale {
         code: "bm",
@@ -274,7 +274,7 @@ fn locale_bm() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/bn.json
+// Source: locales/bn.json
 fn locale_bn() -> DateLocale {
     DateLocale {
         code: "bn",
@@ -296,7 +296,7 @@ fn locale_bn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/br.json
+// Source: locales/br.json
 fn locale_br() -> DateLocale {
     DateLocale {
         code: "br",
@@ -316,7 +316,7 @@ fn locale_br() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/bs.json
+// Source: locales/bs.json
 fn locale_bs() -> DateLocale {
     DateLocale {
         code: "bs",
@@ -338,7 +338,7 @@ fn locale_bs() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ca.json
+// Source: locales/ca.json
 fn locale_ca() -> DateLocale {
     DateLocale {
         code: "ca",
@@ -360,7 +360,7 @@ fn locale_ca() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/cak.json
+// Source: locales/cak.json
 fn locale_cak() -> DateLocale {
     DateLocale {
         code: "cak",
@@ -382,7 +382,7 @@ fn locale_cak() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ceb.json
+// Source: locales/ceb.json
 fn locale_ceb() -> DateLocale {
     DateLocale {
         code: "ceb",
@@ -404,7 +404,7 @@ fn locale_ceb() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/cs.json
+// Source: locales/cs.json
 fn locale_cs() -> DateLocale {
     DateLocale {
         code: "cs",
@@ -428,7 +428,7 @@ fn locale_cs() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/cy.json
+// Source: locales/cy.json
 fn locale_cy() -> DateLocale {
     DateLocale {
         code: "cy",
@@ -450,7 +450,7 @@ fn locale_cy() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/da.json
+// Source: locales/da.json
 fn locale_da() -> DateLocale {
     DateLocale {
         code: "da",
@@ -472,7 +472,7 @@ fn locale_da() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/de.json
+// Source: locales/de.json
 fn locale_de() -> DateLocale {
     DateLocale {
         code: "de",
@@ -494,7 +494,7 @@ fn locale_de() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/din.json
+// Source: locales/din.json
 fn locale_din() -> DateLocale {
     DateLocale {
         code: "din",
@@ -516,7 +516,7 @@ fn locale_din() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/dje.json
+// Source: locales/dje.json
 fn locale_dje() -> DateLocale {
     DateLocale {
         code: "dje",
@@ -538,7 +538,7 @@ fn locale_dje() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/dv.json
+// Source: locales/dv.json
 fn locale_dv() -> DateLocale {
     DateLocale {
         code: "dv",
@@ -560,7 +560,7 @@ fn locale_dv() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/dyu.json
+// Source: locales/dyu.json
 fn locale_dyu() -> DateLocale {
     DateLocale {
         code: "dyu",
@@ -582,7 +582,7 @@ fn locale_dyu() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/dz.json
+// Source: locales/dz.json
 fn locale_dz() -> DateLocale {
     DateLocale {
         code: "dz",
@@ -604,7 +604,7 @@ fn locale_dz() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ee.json
+// Source: locales/ee.json
 fn locale_ee() -> DateLocale {
     DateLocale {
         code: "ee",
@@ -626,7 +626,7 @@ fn locale_ee() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/el.json
+// Source: locales/el.json
 fn locale_el() -> DateLocale {
     DateLocale {
         code: "el",
@@ -650,7 +650,7 @@ fn locale_el() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/en.json
+// Source: locales/en.json
 let EN_DAY_FORMAT_EXCEPTIONS = [
     DayFormatException { day: 1, format: "{n}st" },
     DayFormatException { day: 2, format: "{n}nd" },
@@ -683,7 +683,7 @@ fn locale_en() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/es.json
+// Source: locales/es.json
 fn locale_es() -> DateLocale {
     DateLocale {
         code: "es",
@@ -705,7 +705,7 @@ fn locale_es() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/et.json
+// Source: locales/et.json
 fn locale_et() -> DateLocale {
     DateLocale {
         code: "et",
@@ -727,7 +727,7 @@ fn locale_et() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/eu.json
+// Source: locales/eu.json
 fn locale_eu() -> DateLocale {
     DateLocale {
         code: "eu",
@@ -749,7 +749,7 @@ fn locale_eu() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/fa.json
+// Source: locales/fa.json
 fn locale_fa() -> DateLocale {
     DateLocale {
         code: "fa",
@@ -771,7 +771,7 @@ fn locale_fa() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/fan.json
+// Source: locales/fan.json
 fn locale_fan() -> DateLocale {
     DateLocale {
         code: "fan",
@@ -793,7 +793,7 @@ fn locale_fan() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ff.json
+// Source: locales/ff.json
 fn locale_ff() -> DateLocale {
     DateLocale {
         code: "ff",
@@ -815,7 +815,7 @@ fn locale_ff() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/fi.json
+// Source: locales/fi.json
 fn locale_fi() -> DateLocale {
     DateLocale {
         code: "fi",
@@ -839,7 +839,7 @@ fn locale_fi() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/fil.json
+// Source: locales/fil.json
 fn locale_fil() -> DateLocale {
     DateLocale {
         code: "fil",
@@ -861,7 +861,7 @@ fn locale_fil() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/fj.json
+// Source: locales/fj.json
 fn locale_fj() -> DateLocale {
     DateLocale {
         code: "fj",
@@ -883,7 +883,7 @@ fn locale_fj() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/fon.json
+// Source: locales/fon.json
 fn locale_fon() -> DateLocale {
     DateLocale {
         code: "fon",
@@ -905,7 +905,7 @@ fn locale_fon() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/fr.json
+// Source: locales/fr.json
 let FR_DAY_FORMAT_EXCEPTIONS = [
     DayFormatException { day: 1, format: "{n}er" },
 ];
@@ -932,7 +932,7 @@ fn locale_fr() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ga.json
+// Source: locales/ga.json
 fn locale_ga() -> DateLocale {
     DateLocale {
         code: "ga",
@@ -954,7 +954,7 @@ fn locale_ga() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/gd.json
+// Source: locales/gd.json
 fn locale_gd() -> DateLocale {
     DateLocale {
         code: "gd",
@@ -976,7 +976,7 @@ fn locale_gd() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/gl.json
+// Source: locales/gl.json
 fn locale_gl() -> DateLocale {
     DateLocale {
         code: "gl",
@@ -998,7 +998,7 @@ fn locale_gl() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/gn.json
+// Source: locales/gn.json
 fn locale_gn() -> DateLocale {
     DateLocale {
         code: "gn",
@@ -1020,7 +1020,7 @@ fn locale_gn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/gu.json
+// Source: locales/gu.json
 fn locale_gu() -> DateLocale {
     DateLocale {
         code: "gu",
@@ -1042,7 +1042,7 @@ fn locale_gu() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/gv.json
+// Source: locales/gv.json
 fn locale_gv() -> DateLocale {
     DateLocale {
         code: "gv",
@@ -1062,7 +1062,7 @@ fn locale_gv() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ha.json
+// Source: locales/ha.json
 fn locale_ha() -> DateLocale {
     DateLocale {
         code: "ha",
@@ -1084,7 +1084,7 @@ fn locale_ha() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/he.json
+// Source: locales/he.json
 fn locale_he() -> DateLocale {
     DateLocale {
         code: "he",
@@ -1106,7 +1106,7 @@ fn locale_he() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/hi.json
+// Source: locales/hi.json
 fn locale_hi() -> DateLocale {
     DateLocale {
         code: "hi",
@@ -1128,7 +1128,7 @@ fn locale_hi() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/hmn.json
+// Source: locales/hmn.json
 fn locale_hmn() -> DateLocale {
     DateLocale {
         code: "hmn",
@@ -1150,7 +1150,7 @@ fn locale_hmn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/hr.json
+// Source: locales/hr.json
 fn locale_hr() -> DateLocale {
     DateLocale {
         code: "hr",
@@ -1174,7 +1174,7 @@ fn locale_hr() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ht.json
+// Source: locales/ht.json
 fn locale_ht() -> DateLocale {
     DateLocale {
         code: "ht",
@@ -1196,7 +1196,7 @@ fn locale_ht() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/hu.json
+// Source: locales/hu.json
 fn locale_hu() -> DateLocale {
     DateLocale {
         code: "hu",
@@ -1218,7 +1218,7 @@ fn locale_hu() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/hy.json
+// Source: locales/hy.json
 fn locale_hy() -> DateLocale {
     DateLocale {
         code: "hy",
@@ -1240,7 +1240,7 @@ fn locale_hy() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/id.json
+// Source: locales/id.json
 fn locale_id() -> DateLocale {
     DateLocale {
         code: "id",
@@ -1262,7 +1262,7 @@ fn locale_id() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ig.json
+// Source: locales/ig.json
 fn locale_ig() -> DateLocale {
     DateLocale {
         code: "ig",
@@ -1284,7 +1284,7 @@ fn locale_ig() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/is.json
+// Source: locales/is.json
 fn locale_is() -> DateLocale {
     DateLocale {
         code: "is",
@@ -1306,7 +1306,7 @@ fn locale_is() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/it.json
+// Source: locales/it.json
 fn locale_it() -> DateLocale {
     DateLocale {
         code: "it",
@@ -1328,7 +1328,7 @@ fn locale_it() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ja.json
+// Source: locales/ja.json
 fn locale_ja() -> DateLocale {
     DateLocale {
         code: "ja",
@@ -1350,7 +1350,7 @@ fn locale_ja() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/jv.json
+// Source: locales/jv.json
 fn locale_jv() -> DateLocale {
     DateLocale {
         code: "jv",
@@ -1372,7 +1372,7 @@ fn locale_jv() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ka.json
+// Source: locales/ka.json
 fn locale_ka() -> DateLocale {
     DateLocale {
         code: "ka",
@@ -1394,7 +1394,7 @@ fn locale_ka() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kbp.json
+// Source: locales/kbp.json
 fn locale_kbp() -> DateLocale {
     DateLocale {
         code: "kbp",
@@ -1416,7 +1416,7 @@ fn locale_kbp() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kek.json
+// Source: locales/kek.json
 fn locale_kek() -> DateLocale {
     DateLocale {
         code: "kek",
@@ -1436,7 +1436,7 @@ fn locale_kek() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ki.json
+// Source: locales/ki.json
 fn locale_ki() -> DateLocale {
     DateLocale {
         code: "ki",
@@ -1456,7 +1456,7 @@ fn locale_ki() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kk.json
+// Source: locales/kk.json
 fn locale_kk() -> DateLocale {
     DateLocale {
         code: "kk",
@@ -1478,7 +1478,7 @@ fn locale_kk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kl.json
+// Source: locales/kl.json
 fn locale_kl() -> DateLocale {
     DateLocale {
         code: "kl",
@@ -1500,7 +1500,7 @@ fn locale_kl() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/km.json
+// Source: locales/km.json
 fn locale_km() -> DateLocale {
     DateLocale {
         code: "km",
@@ -1522,7 +1522,7 @@ fn locale_km() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kn.json
+// Source: locales/kn.json
 fn locale_kn() -> DateLocale {
     DateLocale {
         code: "kn",
@@ -1544,7 +1544,7 @@ fn locale_kn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ko.json
+// Source: locales/ko.json
 fn locale_ko() -> DateLocale {
     DateLocale {
         code: "ko",
@@ -1566,7 +1566,7 @@ fn locale_ko() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kpe.json
+// Source: locales/kpe.json
 fn locale_kpe() -> DateLocale {
     DateLocale {
         code: "kpe",
@@ -1588,7 +1588,7 @@ fn locale_kpe() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kri.json
+// Source: locales/kri.json
 fn locale_kri() -> DateLocale {
     DateLocale {
         code: "kri",
@@ -1610,7 +1610,7 @@ fn locale_kri() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ktu.json
+// Source: locales/ktu.json
 fn locale_ktu() -> DateLocale {
     DateLocale {
         code: "ktu",
@@ -1632,7 +1632,7 @@ fn locale_ktu() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ku.json
+// Source: locales/ku.json
 fn locale_ku() -> DateLocale {
     DateLocale {
         code: "ku",
@@ -1654,7 +1654,7 @@ fn locale_ku() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/kw.json
+// Source: locales/kw.json
 fn locale_kw() -> DateLocale {
     DateLocale {
         code: "kw",
@@ -1674,7 +1674,7 @@ fn locale_kw() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ky.json
+// Source: locales/ky.json
 fn locale_ky() -> DateLocale {
     DateLocale {
         code: "ky",
@@ -1696,7 +1696,7 @@ fn locale_ky() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/lb.json
+// Source: locales/lb.json
 fn locale_lb() -> DateLocale {
     DateLocale {
         code: "lb",
@@ -1718,7 +1718,7 @@ fn locale_lb() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/lg.json
+// Source: locales/lg.json
 fn locale_lg() -> DateLocale {
     DateLocale {
         code: "lg",
@@ -1740,7 +1740,7 @@ fn locale_lg() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ln.json
+// Source: locales/ln.json
 fn locale_ln() -> DateLocale {
     DateLocale {
         code: "ln",
@@ -1762,7 +1762,7 @@ fn locale_ln() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/lo.json
+// Source: locales/lo.json
 fn locale_lo() -> DateLocale {
     DateLocale {
         code: "lo",
@@ -1784,7 +1784,7 @@ fn locale_lo() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/lt.json
+// Source: locales/lt.json
 fn locale_lt() -> DateLocale {
     DateLocale {
         code: "lt",
@@ -1808,7 +1808,7 @@ fn locale_lt() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/luo.json
+// Source: locales/luo.json
 fn locale_luo() -> DateLocale {
     DateLocale {
         code: "luo",
@@ -1829,7 +1829,7 @@ fn locale_luo() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/lv.json
+// Source: locales/lv.json
 fn locale_lv() -> DateLocale {
     DateLocale {
         code: "lv",
@@ -1851,7 +1851,7 @@ fn locale_lv() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mam.json
+// Source: locales/mam.json
 fn locale_mam() -> DateLocale {
     DateLocale {
         code: "mam",
@@ -1871,7 +1871,7 @@ fn locale_mam() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/men.json
+// Source: locales/men.json
 fn locale_men() -> DateLocale {
     DateLocale {
         code: "men",
@@ -1893,7 +1893,7 @@ fn locale_men() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mfe.json
+// Source: locales/mfe.json
 fn locale_mfe() -> DateLocale {
     DateLocale {
         code: "mfe",
@@ -1915,7 +1915,7 @@ fn locale_mfe() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mg.json
+// Source: locales/mg.json
 fn locale_mg() -> DateLocale {
     DateLocale {
         code: "mg",
@@ -1937,7 +1937,7 @@ fn locale_mg() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mi.json
+// Source: locales/mi.json
 fn locale_mi() -> DateLocale {
     DateLocale {
         code: "mi",
@@ -1959,7 +1959,7 @@ fn locale_mi() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mk.json
+// Source: locales/mk.json
 fn locale_mk() -> DateLocale {
     DateLocale {
         code: "mk",
@@ -1981,7 +1981,7 @@ fn locale_mk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ml.json
+// Source: locales/ml.json
 fn locale_ml() -> DateLocale {
     DateLocale {
         code: "ml",
@@ -2003,7 +2003,7 @@ fn locale_ml() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mn.json
+// Source: locales/mn.json
 fn locale_mn() -> DateLocale {
     DateLocale {
         code: "mn",
@@ -2025,7 +2025,7 @@ fn locale_mn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mnk.json
+// Source: locales/mnk.json
 fn locale_mnk() -> DateLocale {
     DateLocale {
         code: "mnk",
@@ -2047,7 +2047,7 @@ fn locale_mnk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mos.json
+// Source: locales/mos.json
 fn locale_mos() -> DateLocale {
     DateLocale {
         code: "mos",
@@ -2069,7 +2069,7 @@ fn locale_mos() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mr.json
+// Source: locales/mr.json
 fn locale_mr() -> DateLocale {
     DateLocale {
         code: "mr",
@@ -2091,7 +2091,7 @@ fn locale_mr() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ms.json
+// Source: locales/ms.json
 fn locale_ms() -> DateLocale {
     DateLocale {
         code: "ms",
@@ -2113,7 +2113,7 @@ fn locale_ms() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/mt.json
+// Source: locales/mt.json
 fn locale_mt() -> DateLocale {
     DateLocale {
         code: "mt",
@@ -2135,7 +2135,7 @@ fn locale_mt() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/my.json
+// Source: locales/my.json
 fn locale_my() -> DateLocale {
     DateLocale {
         code: "my",
@@ -2157,7 +2157,7 @@ fn locale_my() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/nb.json
+// Source: locales/nb.json
 fn locale_nb() -> DateLocale {
     DateLocale {
         code: "nb",
@@ -2179,7 +2179,7 @@ fn locale_nb() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/nd.json
+// Source: locales/nd.json
 fn locale_nd() -> DateLocale {
     DateLocale {
         code: "nd",
@@ -2201,7 +2201,7 @@ fn locale_nd() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ne.json
+// Source: locales/ne.json
 fn locale_ne() -> DateLocale {
     DateLocale {
         code: "ne",
@@ -2223,7 +2223,7 @@ fn locale_ne() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ng.json
+// Source: locales/ng.json
 fn locale_ng() -> DateLocale {
     DateLocale {
         code: "ng",
@@ -2245,7 +2245,7 @@ fn locale_ng() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/nl.json
+// Source: locales/nl.json
 fn locale_nl() -> DateLocale {
     DateLocale {
         code: "nl",
@@ -2267,7 +2267,7 @@ fn locale_nl() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/nr.json
+// Source: locales/nr.json
 fn locale_nr() -> DateLocale {
     DateLocale {
         code: "nr",
@@ -2287,7 +2287,7 @@ fn locale_nr() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/nso.json
+// Source: locales/nso.json
 fn locale_nso() -> DateLocale {
     DateLocale {
         code: "nso",
@@ -2309,7 +2309,7 @@ fn locale_nso() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/nus.json
+// Source: locales/nus.json
 fn locale_nus() -> DateLocale {
     DateLocale {
         code: "nus",
@@ -2331,7 +2331,7 @@ fn locale_nus() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ny.json
+// Source: locales/ny.json
 fn locale_ny() -> DateLocale {
     DateLocale {
         code: "ny",
@@ -2353,7 +2353,7 @@ fn locale_ny() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/om.json
+// Source: locales/om.json
 fn locale_om() -> DateLocale {
     DateLocale {
         code: "om",
@@ -2375,7 +2375,7 @@ fn locale_om() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/or.json
+// Source: locales/or.json
 fn locale_or() -> DateLocale {
     DateLocale {
         code: "or",
@@ -2397,7 +2397,7 @@ fn locale_or() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/pa.json
+// Source: locales/pa.json
 fn locale_pa() -> DateLocale {
     DateLocale {
         code: "pa",
@@ -2419,7 +2419,7 @@ fn locale_pa() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/pis.json
+// Source: locales/pis.json
 fn locale_pis() -> DateLocale {
     DateLocale {
         code: "pis",
@@ -2441,7 +2441,7 @@ fn locale_pis() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/pl.json
+// Source: locales/pl.json
 fn locale_pl() -> DateLocale {
     DateLocale {
         code: "pl",
@@ -2465,7 +2465,7 @@ fn locale_pl() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/pov.json
+// Source: locales/pov.json
 fn locale_pov() -> DateLocale {
     DateLocale {
         code: "pov",
@@ -2487,7 +2487,7 @@ fn locale_pov() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ps.json
+// Source: locales/ps.json
 fn locale_ps() -> DateLocale {
     DateLocale {
         code: "ps",
@@ -2509,7 +2509,7 @@ fn locale_ps() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/pt.json
+// Source: locales/pt.json
 fn locale_pt() -> DateLocale {
     DateLocale {
         code: "pt",
@@ -2531,7 +2531,7 @@ fn locale_pt() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/qu.json
+// Source: locales/qu.json
 fn locale_qu() -> DateLocale {
     DateLocale {
         code: "qu",
@@ -2553,7 +2553,7 @@ fn locale_qu() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/quc.json
+// Source: locales/quc.json
 fn locale_quc() -> DateLocale {
     DateLocale {
         code: "quc",
@@ -2575,7 +2575,7 @@ fn locale_quc() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ro.json
+// Source: locales/ro.json
 fn locale_ro() -> DateLocale {
     DateLocale {
         code: "ro",
@@ -2599,7 +2599,7 @@ fn locale_ro() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ru.json
+// Source: locales/ru.json
 fn locale_ru() -> DateLocale {
     DateLocale {
         code: "ru",
@@ -2623,7 +2623,7 @@ fn locale_ru() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/rw.json
+// Source: locales/rw.json
 fn locale_rw() -> DateLocale {
     DateLocale {
         code: "rw",
@@ -2645,7 +2645,7 @@ fn locale_rw() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sar.json
+// Source: locales/sar.json
 fn locale_sar() -> DateLocale {
     DateLocale {
         code: "sar",
@@ -2667,7 +2667,7 @@ fn locale_sar() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sd.json
+// Source: locales/sd.json
 fn locale_sd() -> DateLocale {
     DateLocale {
         code: "sd",
@@ -2689,7 +2689,7 @@ fn locale_sd() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sg.json
+// Source: locales/sg.json
 fn locale_sg() -> DateLocale {
     DateLocale {
         code: "sg",
@@ -2711,7 +2711,7 @@ fn locale_sg() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/shi.json
+// Source: locales/shi.json
 fn locale_shi() -> DateLocale {
     DateLocale {
         code: "shi",
@@ -2731,7 +2731,7 @@ fn locale_shi() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/shn.json
+// Source: locales/shn.json
 fn locale_shn() -> DateLocale {
     DateLocale {
         code: "shn",
@@ -2753,7 +2753,7 @@ fn locale_shn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/si.json
+// Source: locales/si.json
 fn locale_si() -> DateLocale {
     DateLocale {
         code: "si",
@@ -2775,7 +2775,7 @@ fn locale_si() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sk.json
+// Source: locales/sk.json
 fn locale_sk() -> DateLocale {
     DateLocale {
         code: "sk",
@@ -2799,7 +2799,7 @@ fn locale_sk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sl.json
+// Source: locales/sl.json
 fn locale_sl() -> DateLocale {
     DateLocale {
         code: "sl",
@@ -2823,7 +2823,7 @@ fn locale_sl() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sn.json
+// Source: locales/sn.json
 fn locale_sn() -> DateLocale {
     DateLocale {
         code: "sn",
@@ -2845,7 +2845,7 @@ fn locale_sn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/snk.json
+// Source: locales/snk.json
 fn locale_snk() -> DateLocale {
     DateLocale {
         code: "snk",
@@ -2867,7 +2867,7 @@ fn locale_snk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/so.json
+// Source: locales/so.json
 fn locale_so() -> DateLocale {
     DateLocale {
         code: "so",
@@ -2889,7 +2889,7 @@ fn locale_so() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sq.json
+// Source: locales/sq.json
 fn locale_sq() -> DateLocale {
     DateLocale {
         code: "sq",
@@ -2911,7 +2911,7 @@ fn locale_sq() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sr.json
+// Source: locales/sr.json
 fn locale_sr() -> DateLocale {
     DateLocale {
         code: "sr",
@@ -2933,7 +2933,7 @@ fn locale_sr() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ss.json
+// Source: locales/ss.json
 fn locale_ss() -> DateLocale {
     DateLocale {
         code: "ss",
@@ -2955,7 +2955,7 @@ fn locale_ss() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/st.json
+// Source: locales/st.json
 fn locale_st() -> DateLocale {
     DateLocale {
         code: "st",
@@ -2977,7 +2977,7 @@ fn locale_st() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/su.json
+// Source: locales/su.json
 fn locale_su() -> DateLocale {
     DateLocale {
         code: "su",
@@ -2999,7 +2999,7 @@ fn locale_su() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/suk.json
+// Source: locales/suk.json
 fn locale_suk() -> DateLocale {
     DateLocale {
         code: "suk",
@@ -3021,7 +3021,7 @@ fn locale_suk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sv.json
+// Source: locales/sv.json
 fn locale_sv() -> DateLocale {
     DateLocale {
         code: "sv",
@@ -3043,7 +3043,7 @@ fn locale_sv() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/sw.json
+// Source: locales/sw.json
 fn locale_sw() -> DateLocale {
     DateLocale {
         code: "sw",
@@ -3065,7 +3065,7 @@ fn locale_sw() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ta.json
+// Source: locales/ta.json
 fn locale_ta() -> DateLocale {
     DateLocale {
         code: "ta",
@@ -3087,7 +3087,7 @@ fn locale_ta() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/te.json
+// Source: locales/te.json
 fn locale_te() -> DateLocale {
     DateLocale {
         code: "te",
@@ -3109,7 +3109,7 @@ fn locale_te() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tem.json
+// Source: locales/tem.json
 fn locale_tem() -> DateLocale {
     DateLocale {
         code: "tem",
@@ -3131,7 +3131,7 @@ fn locale_tem() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tet.json
+// Source: locales/tet.json
 fn locale_tet() -> DateLocale {
     DateLocale {
         code: "tet",
@@ -3153,7 +3153,7 @@ fn locale_tet() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tg.json
+// Source: locales/tg.json
 fn locale_tg() -> DateLocale {
     DateLocale {
         code: "tg",
@@ -3175,7 +3175,7 @@ fn locale_tg() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/th.json
+// Source: locales/th.json
 fn locale_th() -> DateLocale {
     DateLocale {
         code: "th",
@@ -3197,7 +3197,7 @@ fn locale_th() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ti.json
+// Source: locales/ti.json
 fn locale_ti() -> DateLocale {
     DateLocale {
         code: "ti",
@@ -3219,7 +3219,7 @@ fn locale_ti() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tig.json
+// Source: locales/tig.json
 fn locale_tig() -> DateLocale {
     DateLocale {
         code: "tig",
@@ -3241,7 +3241,7 @@ fn locale_tig() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tk.json
+// Source: locales/tk.json
 fn locale_tk() -> DateLocale {
     DateLocale {
         code: "tk",
@@ -3263,7 +3263,7 @@ fn locale_tk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tn.json
+// Source: locales/tn.json
 fn locale_tn() -> DateLocale {
     DateLocale {
         code: "tn",
@@ -3285,7 +3285,7 @@ fn locale_tn() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tpi.json
+// Source: locales/tpi.json
 fn locale_tpi() -> DateLocale {
     DateLocale {
         code: "tpi",
@@ -3307,7 +3307,7 @@ fn locale_tpi() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tr.json
+// Source: locales/tr.json
 fn locale_tr() -> DateLocale {
     DateLocale {
         code: "tr",
@@ -3329,7 +3329,7 @@ fn locale_tr() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ts.json
+// Source: locales/ts.json
 fn locale_ts() -> DateLocale {
     DateLocale {
         code: "ts",
@@ -3351,7 +3351,7 @@ fn locale_ts() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tum.json
+// Source: locales/tum.json
 fn locale_tum() -> DateLocale {
     DateLocale {
         code: "tum",
@@ -3371,7 +3371,7 @@ fn locale_tum() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/tzm.json
+// Source: locales/tzm.json
 fn locale_tzm() -> DateLocale {
     DateLocale {
         code: "tzm",
@@ -3391,7 +3391,7 @@ fn locale_tzm() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/uk.json
+// Source: locales/uk.json
 fn locale_uk() -> DateLocale {
     DateLocale {
         code: "uk",
@@ -3415,7 +3415,7 @@ fn locale_uk() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/umb.json
+// Source: locales/umb.json
 fn locale_umb() -> DateLocale {
     DateLocale {
         code: "umb",
@@ -3437,7 +3437,7 @@ fn locale_umb() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ur.json
+// Source: locales/ur.json
 fn locale_ur() -> DateLocale {
     DateLocale {
         code: "ur",
@@ -3459,7 +3459,7 @@ fn locale_ur() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/uz.json
+// Source: locales/uz.json
 fn locale_uz() -> DateLocale {
     DateLocale {
         code: "uz",
@@ -3481,7 +3481,7 @@ fn locale_uz() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/ve.json
+// Source: locales/ve.json
 fn locale_ve() -> DateLocale {
     DateLocale {
         code: "ve",
@@ -3502,7 +3502,7 @@ fn locale_ve() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/vi.json
+// Source: locales/vi.json
 fn locale_vi() -> DateLocale {
     DateLocale {
         code: "vi",
@@ -3524,7 +3524,7 @@ fn locale_vi() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/vmw.json
+// Source: locales/vmw.json
 fn locale_vmw() -> DateLocale {
     DateLocale {
         code: "vmw",
@@ -3546,7 +3546,7 @@ fn locale_vmw() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/wo.json
+// Source: locales/wo.json
 fn locale_wo() -> DateLocale {
     DateLocale {
         code: "wo",
@@ -3568,7 +3568,7 @@ fn locale_wo() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/xh.json
+// Source: locales/xh.json
 fn locale_xh() -> DateLocale {
     DateLocale {
         code: "xh",
@@ -3590,7 +3590,7 @@ fn locale_xh() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/yao.json
+// Source: locales/yao.json
 fn locale_yao() -> DateLocale {
     DateLocale {
         code: "yao",
@@ -3610,7 +3610,7 @@ fn locale_yao() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/yo.json
+// Source: locales/yo.json
 fn locale_yo() -> DateLocale {
     DateLocale {
         code: "yo",
@@ -3632,7 +3632,7 @@ fn locale_yo() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/yue.json
+// Source: locales/yue.json
 fn locale_yue() -> DateLocale {
     DateLocale {
         code: "yue",
@@ -3654,7 +3654,7 @@ fn locale_yue() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/zdj.json
+// Source: locales/zdj.json
 fn locale_zdj() -> DateLocale {
     DateLocale {
         code: "zdj",
@@ -3676,7 +3676,7 @@ fn locale_zdj() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/zh.json
+// Source: locales/zh.json
 fn locale_zh() -> DateLocale {
     DateLocale {
         code: "zh",
@@ -3698,7 +3698,7 @@ fn locale_zh() -> DateLocale {
     }
 }
 
-// Source: date/locales/src/zu.json
+// Source: locales/zu.json
 fn locale_zu() -> DateLocale {
     DateLocale {
         code: "zu",

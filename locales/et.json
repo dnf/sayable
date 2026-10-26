@@ -1,0 +1,251 @@
+{
+  "code": "et",
+  "name": "Estonian",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} päev",
+        "other": "{n} päeva"
+      },
+      "week": {
+        "one": "{n} nädal",
+        "other": "{n} nädalat"
+      },
+      "month": {
+        "one": "{n} kuu",
+        "other": "{n} kuud"
+      },
+      "year": {
+        "one": "{n} aasta",
+        "other": "{n} aastat"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Vastsündinu",
+    "stages": {
+      "newborn": "Vastsündinu",
+      "infant": "Imik",
+      "toddler": "Väikelaps",
+      "child": "Laps",
+      "teenager": "Teismeline",
+      "adult": "Täiskasvanu"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} päev",
+          "other": "{n} päeva"
+        },
+        "week": "{n} näd",
+        "month": {
+          "one": "{n} kuu",
+          "other": "{n} kuud"
+        },
+        "year": "{n} a"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} p",
+        "week": "{n} n",
+        "month": "{n} k",
+        "year": "{n} a"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "jaanuar",
+      "veebruar",
+      "märts",
+      "aprill",
+      "mai",
+      "juuni",
+      "juuli",
+      "august",
+      "september",
+      "oktoober",
+      "november",
+      "detsember"
+    ],
+    "weekdays": [
+      "pühapäev",
+      "esmaspäev",
+      "teisipäev",
+      "kolmapäev",
+      "neljapäev",
+      "reede",
+      "laupäev"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "täna",
+    "tomorrow": "homme",
+    "yesterday": "eile",
+    "dayAfterTomorrow": "ülehomme",
+    "dayBeforeYesterday": "üleeile",
+    "thisWeekday": "see {weekday}",
+    "nextWeekday": "järgmine {weekday}",
+    "lastWeekday": "eelmine {weekday}",
+    "short": {
+      "months": [
+        "jaan",
+        "veebr",
+        "märts",
+        "apr",
+        "mai",
+        "juuni",
+        "juuli",
+        "aug",
+        "sept",
+        "okt",
+        "nov",
+        "dets"
+      ],
+      "weekdays": [
+        "P",
+        "E",
+        "T",
+        "K",
+        "N",
+        "R",
+        "L"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekund",
+        "other": "{n} sekundit"
+      },
+      "minute": {
+        "one": "{n} minut",
+        "other": "{n} minutit"
+      },
+      "hour": {
+        "one": "{n} tund",
+        "other": "{n} tundi"
+      },
+      "day": {
+        "one": "{n} päev",
+        "other": "{n} päeva"
+      },
+      "week": {
+        "one": "{n} nädal",
+        "other": "{n} nädalat"
+      },
+      "month": {
+        "one": "{n} kuu",
+        "other": "{n} kuud"
+      },
+      "year": {
+        "one": "{n} aasta",
+        "other": "{n} aastat"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "just praegu",
+    "ago": "{0} tagasi",
+    "inFuture": "{0} pärast",
+    "short": {
+      "units": {
+        "second": "{n} sek",
+        "minute": "{n} min",
+        "hour": "{n} t",
+        "day": {
+          "one": "{n} päev",
+          "other": "{n} päeva"
+        },
+        "week": "{n} näd",
+        "month": {
+          "one": "{n} kuu",
+          "other": "{n} kuud"
+        },
+        "year": "{n} a"
+      },
+      "ago": "{0} tagasi",
+      "inFuture": "{0} pärast",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} t",
+        "day": "{n} p",
+        "week": "{n} n",
+        "month": "{n} k",
+        "year": "{n} a"
+      },
+      "delimiter": "",
+      "ago": "{0} tagasi",
+      "inFuture": "{0} pärast",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "kaksteist",
+        "üks",
+        "kaks",
+        "kolm",
+        "neli",
+        "viis",
+        "kuus",
+        "seitse",
+        "kaheksa",
+        "üheksa",
+        "kümme",
+        "üksteist"
+      ],
+      "midnight": "kesköö",
+      "noon": "keskpäev",
+      "patterns": {
+        "0": "{h}",
+        "5": "viis efter {h}",
+        "10": "kümme efter {h}",
+        "15": "veerand efter {h}",
+        "20": "kakskümmend efter {h}",
+        "25": "kakskümmend viis efter {h}",
+        "30": "pool efter {h}",
+        "35": "kakskümmend viis enne {next_h}",
+        "40": "kakskümmend enne {next_h}",
+        "45": "veerand enne {next_h}",
+        "50": "kümme enne {next_h}",
+        "55": "viis enne {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

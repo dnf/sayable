@@ -1,0 +1,285 @@
+{
+  "code": "es",
+  "name": "Spanish",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} día",
+        "other": "{n} días"
+      },
+      "week": {
+        "one": "{n} semana",
+        "other": "{n} semanas"
+      },
+      "month": {
+        "one": "{n} mes",
+        "other": "{n} meses"
+      },
+      "year": {
+        "one": "{n} año",
+        "other": "{n} años"
+      }
+    },
+    "half": "{n} y medio",
+    "delimiter": ", ",
+    "justBorn": "Recién nacido",
+    "stages": {
+      "newborn": {
+        "m": "Recién nacido",
+        "f": "Recién nacida"
+      },
+      "infant": "Bebé",
+      "toddler": {
+        "m": "Niño pequeño",
+        "f": "Niña pequeña"
+      },
+      "child": {
+        "m": "Niño",
+        "f": "Niña"
+      },
+      "teenager": "Adolescente",
+      "adult": {
+        "m": "Adulto",
+        "f": "Adulta"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} d",
+        "week": "{n} sem.",
+        "month": "{n} m.",
+        "year": "{n} a"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}sem",
+        "month": "{n}m",
+        "year": "{n}a"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ],
+    "weekdays": [
+      "domingo",
+      "lunes",
+      "martes",
+      "miércoles",
+      "jueves",
+      "viernes",
+      "sábado"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} de {month}",
+    "datePatternWithYear": "{day} de {month} de {year}",
+    "today": "hoy",
+    "tomorrow": "mañana",
+    "yesterday": "ayer",
+    "dayAfterTomorrow": "pasado mañana",
+    "dayBeforeYesterday": "anteayer",
+    "thisWeekday": "este {weekday}",
+    "nextWeekday": "el próximo {weekday}",
+    "lastWeekday": "el pasado {weekday}",
+    "short": {
+      "months": [
+        "ene",
+        "feb",
+        "mar",
+        "abr",
+        "may",
+        "jun",
+        "jul",
+        "ago",
+        "sep",
+        "oct",
+        "nov",
+        "dic"
+      ],
+      "weekdays": [
+        "dom",
+        "lun",
+        "mar",
+        "mié",
+        "jue",
+        "vie",
+        "sáb"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} segundo",
+        "other": "{n} segundos"
+      },
+      "minute": {
+        "one": "{n} minuto",
+        "other": "{n} minutos"
+      },
+      "hour": {
+        "one": "{n} hora",
+        "other": "{n} horas"
+      },
+      "day": {
+        "one": "{n} día",
+        "other": "{n} días"
+      },
+      "week": {
+        "one": "{n} semana",
+        "other": "{n} semanas"
+      },
+      "month": {
+        "one": "{n} mes",
+        "other": "{n} meses"
+      },
+      "year": {
+        "one": "{n} año",
+        "other": "{n} años"
+      }
+    },
+    "half": "{n} y medio",
+    "delimiter": ", ",
+    "justNow": "ahora mismo",
+    "ago": "hace {0}",
+    "inFuture": "en {0}",
+    "clock": {
+      "hours": [
+        "doce",
+        "una",
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "diez",
+        "once"
+      ],
+      "midnight": "medianoche",
+      "noon": "mediodía",
+      "patterns": {
+        "0": "{h} en punto",
+        "5": "{h} y cinco",
+        "10": "{h} y diez",
+        "15": "{h} y cuarto",
+        "20": "{h} y veinte",
+        "25": "{h} y veinticinco",
+        "30": "{h} y media",
+        "35": "{next_h} menos veinticinco",
+        "40": "{next_h} menos veinte",
+        "45": "{next_h} menos cuarto",
+        "50": "{next_h} menos diez",
+        "55": "{next_h} menos cinco"
+      }
+    },
+    "short": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} d",
+        "week": "{n} sem.",
+        "month": "{n} m.",
+        "year": "{n} a"
+      },
+      "ago": "hace {0}",
+      "inFuture": "en {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}min",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}sem",
+        "month": "{n}m",
+        "year": "{n}a"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "hace {0}",
+      "inFuture": "en {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "doce",
+        "una",
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "diez",
+        "once"
+      ],
+      "midnight": "medianoche",
+      "noon": "mediodía",
+      "patterns": {
+        "0": "{h} en punto",
+        "5": "{h} y cinco",
+        "10": "{h} y diez",
+        "15": "{h} y cuarto",
+        "20": "{h} y veinte",
+        "25": "{h} y veinticinco",
+        "30": "{h} y media",
+        "35": "{next_h} menos veinticinco",
+        "40": "{next_h} menos veinte",
+        "45": "{next_h} menos cuarto",
+        "50": "{next_h} menos diez",
+        "55": "{next_h} menos cinco"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

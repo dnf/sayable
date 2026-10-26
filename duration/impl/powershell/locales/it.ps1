@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/it.json
+# Source: locales/it.json
 
 function plural_it([int]$n) {
     if ($n -eq 1) { return 'one' }

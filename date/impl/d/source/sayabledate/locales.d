@@ -14,7 +14,7 @@ module sayabledate.locales;
 
 import sayabledate.locale;
 
-// // Source: date/locales/src/af.json
+// // Source: locales/af.json
 // Afrikaans locale.
 immutable DateLocale AF = DateLocale(
     code: "af",
@@ -45,7 +45,7 @@ immutable DateLocale AF = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ak.json
+// // Source: locales/ak.json
 // Akan locale.
 immutable DateLocale AK = DateLocale(
     code: "ak",
@@ -76,7 +76,7 @@ immutable DateLocale AK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/am.json
+// // Source: locales/am.json
 // Amharic locale.
 immutable DateLocale AM = DateLocale(
     code: "am",
@@ -107,7 +107,7 @@ immutable DateLocale AM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ar.json
+// // Source: locales/ar.json
 // Arabic locale.
 immutable DateLocale AR = DateLocale(
     code: "ar",
@@ -138,7 +138,7 @@ immutable DateLocale AR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ay.json
+// // Source: locales/ay.json
 // Aymara locale.
 immutable DateLocale AY = DateLocale(
     code: "ay",
@@ -167,7 +167,7 @@ immutable DateLocale AY = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/az.json
+// // Source: locales/az.json
 // Azerbaijani locale.
 immutable DateLocale AZ = DateLocale(
     code: "az",
@@ -198,7 +198,7 @@ immutable DateLocale AZ = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/bci.json
+// // Source: locales/bci.json
 // Baoulé locale.
 immutable DateLocale BCI = DateLocale(
     code: "bci",
@@ -229,7 +229,7 @@ immutable DateLocale BCI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/be.json
+// // Source: locales/be.json
 // Belarusian locale.
 immutable DateLocale BE = DateLocale(
     code: "be",
@@ -261,7 +261,7 @@ immutable DateLocale BE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/bem.json
+// // Source: locales/bem.json
 // Bemba locale.
 immutable DateLocale BEM = DateLocale(
     code: "bem",
@@ -292,7 +292,7 @@ immutable DateLocale BEM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/bg.json
+// // Source: locales/bg.json
 // Bulgarian locale.
 immutable DateLocale BG = DateLocale(
     code: "bg",
@@ -323,7 +323,7 @@ immutable DateLocale BG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/bi.json
+// // Source: locales/bi.json
 // Bislama locale.
 immutable DateLocale BI = DateLocale(
     code: "bi",
@@ -354,7 +354,7 @@ immutable DateLocale BI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/bm.json
+// // Source: locales/bm.json
 // Bambara locale.
 immutable DateLocale BM = DateLocale(
     code: "bm",
@@ -385,7 +385,7 @@ immutable DateLocale BM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/bn.json
+// // Source: locales/bn.json
 // Bengali locale.
 immutable DateLocale BN = DateLocale(
     code: "bn",
@@ -416,7 +416,7 @@ immutable DateLocale BN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/br.json
+// // Source: locales/br.json
 // Breton locale.
 immutable DateLocale BR = DateLocale(
     code: "br",
@@ -445,7 +445,7 @@ immutable DateLocale BR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/bs.json
+// // Source: locales/bs.json
 // Bosnian locale.
 immutable DateLocale BS = DateLocale(
     code: "bs",
@@ -476,7 +476,7 @@ immutable DateLocale BS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ca.json
+// // Source: locales/ca.json
 // Catalan locale.
 immutable DateLocale CA = DateLocale(
     code: "ca",
@@ -507,7 +507,7 @@ immutable DateLocale CA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/cak.json
+// // Source: locales/cak.json
 // Kaqchikel locale.
 immutable DateLocale CAK = DateLocale(
     code: "cak",
@@ -538,7 +538,7 @@ immutable DateLocale CAK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ceb.json
+// // Source: locales/ceb.json
 // Cebuano locale.
 immutable DateLocale CEB = DateLocale(
     code: "ceb",
@@ -569,7 +569,7 @@ immutable DateLocale CEB = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/cs.json
+// // Source: locales/cs.json
 // Czech locale.
 immutable DateLocale CS = DateLocale(
     code: "cs",
@@ -601,7 +601,7 @@ immutable DateLocale CS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/cy.json
+// // Source: locales/cy.json
 // Welsh locale.
 immutable DateLocale CY = DateLocale(
     code: "cy",
@@ -632,7 +632,7 @@ immutable DateLocale CY = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/da.json
+// // Source: locales/da.json
 // Danish locale.
 immutable DateLocale DA = DateLocale(
     code: "da",
@@ -663,7 +663,7 @@ immutable DateLocale DA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/de.json
+// // Source: locales/de.json
 // German locale.
 immutable DateLocale DE = DateLocale(
     code: "de",
@@ -694,7 +694,7 @@ immutable DateLocale DE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/din.json
+// // Source: locales/din.json
 // Dinka locale.
 immutable DateLocale DIN = DateLocale(
     code: "din",
@@ -725,7 +725,7 @@ immutable DateLocale DIN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/dje.json
+// // Source: locales/dje.json
 // Zarma locale.
 immutable DateLocale DJE = DateLocale(
     code: "dje",
@@ -756,7 +756,7 @@ immutable DateLocale DJE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/dv.json
+// // Source: locales/dv.json
 // Dhivehi locale.
 immutable DateLocale DV = DateLocale(
     code: "dv",
@@ -787,7 +787,7 @@ immutable DateLocale DV = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/dyu.json
+// // Source: locales/dyu.json
 // Dyula locale.
 immutable DateLocale DYU = DateLocale(
     code: "dyu",
@@ -818,7 +818,7 @@ immutable DateLocale DYU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/dz.json
+// // Source: locales/dz.json
 // Dzongkha locale.
 immutable DateLocale DZ = DateLocale(
     code: "dz",
@@ -849,7 +849,7 @@ immutable DateLocale DZ = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ee.json
+// // Source: locales/ee.json
 // Ewe locale.
 immutable DateLocale EE = DateLocale(
     code: "ee",
@@ -880,7 +880,7 @@ immutable DateLocale EE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/el.json
+// // Source: locales/el.json
 // Greek locale.
 immutable DateLocale EL = DateLocale(
     code: "el",
@@ -912,7 +912,7 @@ immutable DateLocale EL = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/en.json
+// // Source: locales/en.json
 // English locale.
 immutable DateLocale EN = DateLocale(
     code: "en",
@@ -951,7 +951,7 @@ immutable DateLocale EN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/es.json
+// // Source: locales/es.json
 // Spanish locale.
 immutable DateLocale ES = DateLocale(
     code: "es",
@@ -982,7 +982,7 @@ immutable DateLocale ES = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/et.json
+// // Source: locales/et.json
 // Estonian locale.
 immutable DateLocale ET = DateLocale(
     code: "et",
@@ -1013,7 +1013,7 @@ immutable DateLocale ET = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/eu.json
+// // Source: locales/eu.json
 // Basque locale.
 immutable DateLocale EU = DateLocale(
     code: "eu",
@@ -1044,7 +1044,7 @@ immutable DateLocale EU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/fa.json
+// // Source: locales/fa.json
 // Persian locale.
 immutable DateLocale FA = DateLocale(
     code: "fa",
@@ -1075,7 +1075,7 @@ immutable DateLocale FA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/fan.json
+// // Source: locales/fan.json
 // Fang locale.
 immutable DateLocale FAN = DateLocale(
     code: "fan",
@@ -1106,7 +1106,7 @@ immutable DateLocale FAN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ff.json
+// // Source: locales/ff.json
 // Fulah locale.
 immutable DateLocale FF = DateLocale(
     code: "ff",
@@ -1137,7 +1137,7 @@ immutable DateLocale FF = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/fi.json
+// // Source: locales/fi.json
 // Finnish locale.
 immutable DateLocale FI = DateLocale(
     code: "fi",
@@ -1169,7 +1169,7 @@ immutable DateLocale FI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/fil.json
+// // Source: locales/fil.json
 // Filipino locale.
 immutable DateLocale FIL = DateLocale(
     code: "fil",
@@ -1200,7 +1200,7 @@ immutable DateLocale FIL = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/fj.json
+// // Source: locales/fj.json
 // Fijian locale.
 immutable DateLocale FJ = DateLocale(
     code: "fj",
@@ -1231,7 +1231,7 @@ immutable DateLocale FJ = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/fon.json
+// // Source: locales/fon.json
 // Fon locale.
 immutable DateLocale FON = DateLocale(
     code: "fon",
@@ -1262,7 +1262,7 @@ immutable DateLocale FON = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/fr.json
+// // Source: locales/fr.json
 // French locale.
 immutable DateLocale FR = DateLocale(
     code: "fr",
@@ -1295,7 +1295,7 @@ immutable DateLocale FR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ga.json
+// // Source: locales/ga.json
 // Irish locale.
 immutable DateLocale GA = DateLocale(
     code: "ga",
@@ -1326,7 +1326,7 @@ immutable DateLocale GA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/gd.json
+// // Source: locales/gd.json
 // Scottish Gaelic locale.
 immutable DateLocale GD = DateLocale(
     code: "gd",
@@ -1357,7 +1357,7 @@ immutable DateLocale GD = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/gl.json
+// // Source: locales/gl.json
 // Galician locale.
 immutable DateLocale GL = DateLocale(
     code: "gl",
@@ -1388,7 +1388,7 @@ immutable DateLocale GL = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/gn.json
+// // Source: locales/gn.json
 // Guarani locale.
 immutable DateLocale GN = DateLocale(
     code: "gn",
@@ -1419,7 +1419,7 @@ immutable DateLocale GN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/gu.json
+// // Source: locales/gu.json
 // Gujarati locale.
 immutable DateLocale GU = DateLocale(
     code: "gu",
@@ -1450,7 +1450,7 @@ immutable DateLocale GU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/gv.json
+// // Source: locales/gv.json
 // Manx locale.
 immutable DateLocale GV = DateLocale(
     code: "gv",
@@ -1479,7 +1479,7 @@ immutable DateLocale GV = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ha.json
+// // Source: locales/ha.json
 // Hausa locale.
 immutable DateLocale HA = DateLocale(
     code: "ha",
@@ -1510,7 +1510,7 @@ immutable DateLocale HA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/he.json
+// // Source: locales/he.json
 // Hebrew locale.
 immutable DateLocale HE = DateLocale(
     code: "he",
@@ -1541,7 +1541,7 @@ immutable DateLocale HE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/hi.json
+// // Source: locales/hi.json
 // Hindi locale.
 immutable DateLocale HI = DateLocale(
     code: "hi",
@@ -1572,7 +1572,7 @@ immutable DateLocale HI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/hmn.json
+// // Source: locales/hmn.json
 // Hmong locale.
 immutable DateLocale HMN = DateLocale(
     code: "hmn",
@@ -1603,7 +1603,7 @@ immutable DateLocale HMN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/hr.json
+// // Source: locales/hr.json
 // Croatian locale.
 immutable DateLocale HR = DateLocale(
     code: "hr",
@@ -1635,7 +1635,7 @@ immutable DateLocale HR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ht.json
+// // Source: locales/ht.json
 // Haitian Creole locale.
 immutable DateLocale HT = DateLocale(
     code: "ht",
@@ -1666,7 +1666,7 @@ immutable DateLocale HT = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/hu.json
+// // Source: locales/hu.json
 // Hungarian locale.
 immutable DateLocale HU = DateLocale(
     code: "hu",
@@ -1697,7 +1697,7 @@ immutable DateLocale HU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/hy.json
+// // Source: locales/hy.json
 // Armenian locale.
 immutable DateLocale HY = DateLocale(
     code: "hy",
@@ -1728,7 +1728,7 @@ immutable DateLocale HY = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/id.json
+// // Source: locales/id.json
 // Indonesian locale.
 immutable DateLocale ID = DateLocale(
     code: "id",
@@ -1759,7 +1759,7 @@ immutable DateLocale ID = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ig.json
+// // Source: locales/ig.json
 // Igbo locale.
 immutable DateLocale IG = DateLocale(
     code: "ig",
@@ -1790,7 +1790,7 @@ immutable DateLocale IG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/is.json
+// // Source: locales/is.json
 // Icelandic locale.
 immutable DateLocale IS_ = DateLocale(
     code: "is",
@@ -1821,7 +1821,7 @@ immutable DateLocale IS_ = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/it.json
+// // Source: locales/it.json
 // Italian locale.
 immutable DateLocale IT = DateLocale(
     code: "it",
@@ -1852,7 +1852,7 @@ immutable DateLocale IT = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ja.json
+// // Source: locales/ja.json
 // Japanese locale.
 immutable DateLocale JA = DateLocale(
     code: "ja",
@@ -1883,7 +1883,7 @@ immutable DateLocale JA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/jv.json
+// // Source: locales/jv.json
 // Javanese locale.
 immutable DateLocale JV = DateLocale(
     code: "jv",
@@ -1914,7 +1914,7 @@ immutable DateLocale JV = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ka.json
+// // Source: locales/ka.json
 // Georgian locale.
 immutable DateLocale KA = DateLocale(
     code: "ka",
@@ -1945,7 +1945,7 @@ immutable DateLocale KA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kbp.json
+// // Source: locales/kbp.json
 // Kabiye locale.
 immutable DateLocale KBP = DateLocale(
     code: "kbp",
@@ -1976,7 +1976,7 @@ immutable DateLocale KBP = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kek.json
+// // Source: locales/kek.json
 // Q'eqchi' locale.
 immutable DateLocale KEK = DateLocale(
     code: "kek",
@@ -2005,7 +2005,7 @@ immutable DateLocale KEK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ki.json
+// // Source: locales/ki.json
 // Kikuyu locale.
 immutable DateLocale KI = DateLocale(
     code: "ki",
@@ -2034,7 +2034,7 @@ immutable DateLocale KI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kk.json
+// // Source: locales/kk.json
 // Kazakh locale.
 immutable DateLocale KK = DateLocale(
     code: "kk",
@@ -2065,7 +2065,7 @@ immutable DateLocale KK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kl.json
+// // Source: locales/kl.json
 // Kalaallisut locale.
 immutable DateLocale KL = DateLocale(
     code: "kl",
@@ -2096,7 +2096,7 @@ immutable DateLocale KL = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/km.json
+// // Source: locales/km.json
 // Khmer locale.
 immutable DateLocale KM = DateLocale(
     code: "km",
@@ -2127,7 +2127,7 @@ immutable DateLocale KM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kn.json
+// // Source: locales/kn.json
 // Kannada locale.
 immutable DateLocale KN = DateLocale(
     code: "kn",
@@ -2158,7 +2158,7 @@ immutable DateLocale KN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ko.json
+// // Source: locales/ko.json
 // Korean locale.
 immutable DateLocale KO = DateLocale(
     code: "ko",
@@ -2189,7 +2189,7 @@ immutable DateLocale KO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kpe.json
+// // Source: locales/kpe.json
 // Kpelle locale.
 immutable DateLocale KPE = DateLocale(
     code: "kpe",
@@ -2220,7 +2220,7 @@ immutable DateLocale KPE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kri.json
+// // Source: locales/kri.json
 // Krio locale.
 immutable DateLocale KRI = DateLocale(
     code: "kri",
@@ -2251,7 +2251,7 @@ immutable DateLocale KRI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ktu.json
+// // Source: locales/ktu.json
 // Kituba locale.
 immutable DateLocale KTU = DateLocale(
     code: "ktu",
@@ -2282,7 +2282,7 @@ immutable DateLocale KTU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ku.json
+// // Source: locales/ku.json
 // Kurdish locale.
 immutable DateLocale KU = DateLocale(
     code: "ku",
@@ -2313,7 +2313,7 @@ immutable DateLocale KU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/kw.json
+// // Source: locales/kw.json
 // Cornish locale.
 immutable DateLocale KW = DateLocale(
     code: "kw",
@@ -2342,7 +2342,7 @@ immutable DateLocale KW = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ky.json
+// // Source: locales/ky.json
 // Kyrgyz locale.
 immutable DateLocale KY = DateLocale(
     code: "ky",
@@ -2373,7 +2373,7 @@ immutable DateLocale KY = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/lb.json
+// // Source: locales/lb.json
 // Luxembourgish locale.
 immutable DateLocale LB = DateLocale(
     code: "lb",
@@ -2404,7 +2404,7 @@ immutable DateLocale LB = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/lg.json
+// // Source: locales/lg.json
 // Luganda locale.
 immutable DateLocale LG = DateLocale(
     code: "lg",
@@ -2435,7 +2435,7 @@ immutable DateLocale LG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ln.json
+// // Source: locales/ln.json
 // Lingala locale.
 immutable DateLocale LN = DateLocale(
     code: "ln",
@@ -2466,7 +2466,7 @@ immutable DateLocale LN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/lo.json
+// // Source: locales/lo.json
 // Lao locale.
 immutable DateLocale LO = DateLocale(
     code: "lo",
@@ -2497,7 +2497,7 @@ immutable DateLocale LO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/lt.json
+// // Source: locales/lt.json
 // Lithuanian locale.
 immutable DateLocale LT = DateLocale(
     code: "lt",
@@ -2529,7 +2529,7 @@ immutable DateLocale LT = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/luo.json
+// // Source: locales/luo.json
 // Dholuo locale.
 immutable DateLocale LUO = DateLocale(
     code: "luo",
@@ -2559,7 +2559,7 @@ immutable DateLocale LUO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/lv.json
+// // Source: locales/lv.json
 // Latvian locale.
 immutable DateLocale LV = DateLocale(
     code: "lv",
@@ -2590,7 +2590,7 @@ immutable DateLocale LV = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mam.json
+// // Source: locales/mam.json
 // Mam locale.
 immutable DateLocale MAM = DateLocale(
     code: "mam",
@@ -2619,7 +2619,7 @@ immutable DateLocale MAM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/men.json
+// // Source: locales/men.json
 // Mende locale.
 immutable DateLocale MEN = DateLocale(
     code: "men",
@@ -2650,7 +2650,7 @@ immutable DateLocale MEN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mfe.json
+// // Source: locales/mfe.json
 // Mauritian Creole locale.
 immutable DateLocale MFE = DateLocale(
     code: "mfe",
@@ -2681,7 +2681,7 @@ immutable DateLocale MFE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mg.json
+// // Source: locales/mg.json
 // Malagasy locale.
 immutable DateLocale MG = DateLocale(
     code: "mg",
@@ -2712,7 +2712,7 @@ immutable DateLocale MG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mi.json
+// // Source: locales/mi.json
 // Māori locale.
 immutable DateLocale MI = DateLocale(
     code: "mi",
@@ -2743,7 +2743,7 @@ immutable DateLocale MI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mk.json
+// // Source: locales/mk.json
 // Macedonian locale.
 immutable DateLocale MK = DateLocale(
     code: "mk",
@@ -2774,7 +2774,7 @@ immutable DateLocale MK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ml.json
+// // Source: locales/ml.json
 // Malayalam locale.
 immutable DateLocale ML = DateLocale(
     code: "ml",
@@ -2805,7 +2805,7 @@ immutable DateLocale ML = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mn.json
+// // Source: locales/mn.json
 // Mongolian locale.
 immutable DateLocale MN = DateLocale(
     code: "mn",
@@ -2836,7 +2836,7 @@ immutable DateLocale MN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mnk.json
+// // Source: locales/mnk.json
 // Mandinka locale.
 immutable DateLocale MNK = DateLocale(
     code: "mnk",
@@ -2867,7 +2867,7 @@ immutable DateLocale MNK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mos.json
+// // Source: locales/mos.json
 // Moore locale.
 immutable DateLocale MOS = DateLocale(
     code: "mos",
@@ -2898,7 +2898,7 @@ immutable DateLocale MOS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mr.json
+// // Source: locales/mr.json
 // Marathi locale.
 immutable DateLocale MR = DateLocale(
     code: "mr",
@@ -2929,7 +2929,7 @@ immutable DateLocale MR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ms.json
+// // Source: locales/ms.json
 // Malay locale.
 immutable DateLocale MS = DateLocale(
     code: "ms",
@@ -2960,7 +2960,7 @@ immutable DateLocale MS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/mt.json
+// // Source: locales/mt.json
 // Maltese locale.
 immutable DateLocale MT = DateLocale(
     code: "mt",
@@ -2991,7 +2991,7 @@ immutable DateLocale MT = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/my.json
+// // Source: locales/my.json
 // Burmese locale.
 immutable DateLocale MY = DateLocale(
     code: "my",
@@ -3022,7 +3022,7 @@ immutable DateLocale MY = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/nb.json
+// // Source: locales/nb.json
 // Norwegian Bokmål locale.
 immutable DateLocale NB = DateLocale(
     code: "nb",
@@ -3053,7 +3053,7 @@ immutable DateLocale NB = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/nd.json
+// // Source: locales/nd.json
 // Northern Ndebele locale.
 immutable DateLocale ND = DateLocale(
     code: "nd",
@@ -3084,7 +3084,7 @@ immutable DateLocale ND = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ne.json
+// // Source: locales/ne.json
 // Nepali locale.
 immutable DateLocale NE = DateLocale(
     code: "ne",
@@ -3115,7 +3115,7 @@ immutable DateLocale NE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ng.json
+// // Source: locales/ng.json
 // Oshiwambo locale.
 immutable DateLocale NG = DateLocale(
     code: "ng",
@@ -3146,7 +3146,7 @@ immutable DateLocale NG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/nl.json
+// // Source: locales/nl.json
 // Dutch locale.
 immutable DateLocale NL = DateLocale(
     code: "nl",
@@ -3177,7 +3177,7 @@ immutable DateLocale NL = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/nr.json
+// // Source: locales/nr.json
 // Southern Ndebele locale.
 immutable DateLocale NR = DateLocale(
     code: "nr",
@@ -3206,7 +3206,7 @@ immutable DateLocale NR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/nso.json
+// // Source: locales/nso.json
 // Northern Sotho locale.
 immutable DateLocale NSO = DateLocale(
     code: "nso",
@@ -3237,7 +3237,7 @@ immutable DateLocale NSO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/nus.json
+// // Source: locales/nus.json
 // Nuer locale.
 immutable DateLocale NUS = DateLocale(
     code: "nus",
@@ -3268,7 +3268,7 @@ immutable DateLocale NUS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ny.json
+// // Source: locales/ny.json
 // Chichewa locale.
 immutable DateLocale NY = DateLocale(
     code: "ny",
@@ -3299,7 +3299,7 @@ immutable DateLocale NY = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/om.json
+// // Source: locales/om.json
 // Oromo locale.
 immutable DateLocale OM = DateLocale(
     code: "om",
@@ -3330,7 +3330,7 @@ immutable DateLocale OM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/or.json
+// // Source: locales/or.json
 // Odia locale.
 immutable DateLocale OR = DateLocale(
     code: "or",
@@ -3361,7 +3361,7 @@ immutable DateLocale OR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/pa.json
+// // Source: locales/pa.json
 // Punjabi locale.
 immutable DateLocale PA = DateLocale(
     code: "pa",
@@ -3392,7 +3392,7 @@ immutable DateLocale PA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/pis.json
+// // Source: locales/pis.json
 // Pijin locale.
 immutable DateLocale PIS = DateLocale(
     code: "pis",
@@ -3423,7 +3423,7 @@ immutable DateLocale PIS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/pl.json
+// // Source: locales/pl.json
 // Polish locale.
 immutable DateLocale PL = DateLocale(
     code: "pl",
@@ -3455,7 +3455,7 @@ immutable DateLocale PL = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/pov.json
+// // Source: locales/pov.json
 // Guinea-Bissau Creole locale.
 immutable DateLocale POV = DateLocale(
     code: "pov",
@@ -3486,7 +3486,7 @@ immutable DateLocale POV = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ps.json
+// // Source: locales/ps.json
 // Pashto locale.
 immutable DateLocale PS = DateLocale(
     code: "ps",
@@ -3517,7 +3517,7 @@ immutable DateLocale PS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/pt.json
+// // Source: locales/pt.json
 // Portuguese locale.
 immutable DateLocale PT = DateLocale(
     code: "pt",
@@ -3548,7 +3548,7 @@ immutable DateLocale PT = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/qu.json
+// // Source: locales/qu.json
 // Quechua locale.
 immutable DateLocale QU = DateLocale(
     code: "qu",
@@ -3579,7 +3579,7 @@ immutable DateLocale QU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/quc.json
+// // Source: locales/quc.json
 // K'iche' locale.
 immutable DateLocale QUC = DateLocale(
     code: "quc",
@@ -3610,7 +3610,7 @@ immutable DateLocale QUC = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ro.json
+// // Source: locales/ro.json
 // Romanian locale.
 immutable DateLocale RO = DateLocale(
     code: "ro",
@@ -3642,7 +3642,7 @@ immutable DateLocale RO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ru.json
+// // Source: locales/ru.json
 // Russian locale.
 immutable DateLocale RU = DateLocale(
     code: "ru",
@@ -3674,7 +3674,7 @@ immutable DateLocale RU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/rw.json
+// // Source: locales/rw.json
 // Kinyarwanda locale.
 immutable DateLocale RW = DateLocale(
     code: "rw",
@@ -3705,7 +3705,7 @@ immutable DateLocale RW = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sar.json
+// // Source: locales/sar.json
 // Sara locale.
 immutable DateLocale SAR = DateLocale(
     code: "sar",
@@ -3736,7 +3736,7 @@ immutable DateLocale SAR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sd.json
+// // Source: locales/sd.json
 // Sindhi locale.
 immutable DateLocale SD = DateLocale(
     code: "sd",
@@ -3767,7 +3767,7 @@ immutable DateLocale SD = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sg.json
+// // Source: locales/sg.json
 // Sango locale.
 immutable DateLocale SG = DateLocale(
     code: "sg",
@@ -3798,7 +3798,7 @@ immutable DateLocale SG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/shi.json
+// // Source: locales/shi.json
 // Tachelhit locale.
 immutable DateLocale SHI = DateLocale(
     code: "shi",
@@ -3827,7 +3827,7 @@ immutable DateLocale SHI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/shn.json
+// // Source: locales/shn.json
 // Shan locale.
 immutable DateLocale SHN = DateLocale(
     code: "shn",
@@ -3858,7 +3858,7 @@ immutable DateLocale SHN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/si.json
+// // Source: locales/si.json
 // Sinhala locale.
 immutable DateLocale SI = DateLocale(
     code: "si",
@@ -3889,7 +3889,7 @@ immutable DateLocale SI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sk.json
+// // Source: locales/sk.json
 // Slovak locale.
 immutable DateLocale SK = DateLocale(
     code: "sk",
@@ -3921,7 +3921,7 @@ immutable DateLocale SK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sl.json
+// // Source: locales/sl.json
 // Slovenian locale.
 immutable DateLocale SL = DateLocale(
     code: "sl",
@@ -3953,7 +3953,7 @@ immutable DateLocale SL = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sn.json
+// // Source: locales/sn.json
 // Shona locale.
 immutable DateLocale SN = DateLocale(
     code: "sn",
@@ -3984,7 +3984,7 @@ immutable DateLocale SN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/snk.json
+// // Source: locales/snk.json
 // Soninke locale.
 immutable DateLocale SNK = DateLocale(
     code: "snk",
@@ -4015,7 +4015,7 @@ immutable DateLocale SNK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/so.json
+// // Source: locales/so.json
 // Somali locale.
 immutable DateLocale SO = DateLocale(
     code: "so",
@@ -4046,7 +4046,7 @@ immutable DateLocale SO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sq.json
+// // Source: locales/sq.json
 // Albanian locale.
 immutable DateLocale SQ = DateLocale(
     code: "sq",
@@ -4077,7 +4077,7 @@ immutable DateLocale SQ = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sr.json
+// // Source: locales/sr.json
 // Serbian locale.
 immutable DateLocale SR = DateLocale(
     code: "sr",
@@ -4108,7 +4108,7 @@ immutable DateLocale SR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ss.json
+// // Source: locales/ss.json
 // siSwati locale.
 immutable DateLocale SS = DateLocale(
     code: "ss",
@@ -4139,7 +4139,7 @@ immutable DateLocale SS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/st.json
+// // Source: locales/st.json
 // Southern Sotho locale.
 immutable DateLocale ST = DateLocale(
     code: "st",
@@ -4170,7 +4170,7 @@ immutable DateLocale ST = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/su.json
+// // Source: locales/su.json
 // Sundanese locale.
 immutable DateLocale SU = DateLocale(
     code: "su",
@@ -4201,7 +4201,7 @@ immutable DateLocale SU = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/suk.json
+// // Source: locales/suk.json
 // Sukuma locale.
 immutable DateLocale SUK = DateLocale(
     code: "suk",
@@ -4232,7 +4232,7 @@ immutable DateLocale SUK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sv.json
+// // Source: locales/sv.json
 // Swedish locale.
 immutable DateLocale SV = DateLocale(
     code: "sv",
@@ -4263,7 +4263,7 @@ immutable DateLocale SV = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/sw.json
+// // Source: locales/sw.json
 // Swahili locale.
 immutable DateLocale SW = DateLocale(
     code: "sw",
@@ -4294,7 +4294,7 @@ immutable DateLocale SW = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ta.json
+// // Source: locales/ta.json
 // Tamil locale.
 immutable DateLocale TA = DateLocale(
     code: "ta",
@@ -4325,7 +4325,7 @@ immutable DateLocale TA = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/te.json
+// // Source: locales/te.json
 // Telugu locale.
 immutable DateLocale TE = DateLocale(
     code: "te",
@@ -4356,7 +4356,7 @@ immutable DateLocale TE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tem.json
+// // Source: locales/tem.json
 // Temne locale.
 immutable DateLocale TEM = DateLocale(
     code: "tem",
@@ -4387,7 +4387,7 @@ immutable DateLocale TEM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tet.json
+// // Source: locales/tet.json
 // Tetum locale.
 immutable DateLocale TET = DateLocale(
     code: "tet",
@@ -4418,7 +4418,7 @@ immutable DateLocale TET = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tg.json
+// // Source: locales/tg.json
 // Tajik locale.
 immutable DateLocale TG = DateLocale(
     code: "tg",
@@ -4449,7 +4449,7 @@ immutable DateLocale TG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/th.json
+// // Source: locales/th.json
 // Thai locale.
 immutable DateLocale TH = DateLocale(
     code: "th",
@@ -4480,7 +4480,7 @@ immutable DateLocale TH = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ti.json
+// // Source: locales/ti.json
 // Tigrinya locale.
 immutable DateLocale TI = DateLocale(
     code: "ti",
@@ -4511,7 +4511,7 @@ immutable DateLocale TI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tig.json
+// // Source: locales/tig.json
 // Tigre locale.
 immutable DateLocale TIG = DateLocale(
     code: "tig",
@@ -4542,7 +4542,7 @@ immutable DateLocale TIG = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tk.json
+// // Source: locales/tk.json
 // Turkmen locale.
 immutable DateLocale TK = DateLocale(
     code: "tk",
@@ -4573,7 +4573,7 @@ immutable DateLocale TK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tn.json
+// // Source: locales/tn.json
 // Tswana locale.
 immutable DateLocale TN = DateLocale(
     code: "tn",
@@ -4604,7 +4604,7 @@ immutable DateLocale TN = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tpi.json
+// // Source: locales/tpi.json
 // Tok Pisin locale.
 immutable DateLocale TPI = DateLocale(
     code: "tpi",
@@ -4635,7 +4635,7 @@ immutable DateLocale TPI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tr.json
+// // Source: locales/tr.json
 // Turkish locale.
 immutable DateLocale TR = DateLocale(
     code: "tr",
@@ -4666,7 +4666,7 @@ immutable DateLocale TR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ts.json
+// // Source: locales/ts.json
 // Tsonga locale.
 immutable DateLocale TS = DateLocale(
     code: "ts",
@@ -4697,7 +4697,7 @@ immutable DateLocale TS = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tum.json
+// // Source: locales/tum.json
 // Tumbuka locale.
 immutable DateLocale TUM = DateLocale(
     code: "tum",
@@ -4726,7 +4726,7 @@ immutable DateLocale TUM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/tzm.json
+// // Source: locales/tzm.json
 // Central Atlas Tamazight locale.
 immutable DateLocale TZM = DateLocale(
     code: "tzm",
@@ -4755,7 +4755,7 @@ immutable DateLocale TZM = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/uk.json
+// // Source: locales/uk.json
 // Ukrainian locale.
 immutable DateLocale UK = DateLocale(
     code: "uk",
@@ -4787,7 +4787,7 @@ immutable DateLocale UK = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/umb.json
+// // Source: locales/umb.json
 // Umbundu locale.
 immutable DateLocale UMB = DateLocale(
     code: "umb",
@@ -4818,7 +4818,7 @@ immutable DateLocale UMB = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ur.json
+// // Source: locales/ur.json
 // Urdu locale.
 immutable DateLocale UR = DateLocale(
     code: "ur",
@@ -4849,7 +4849,7 @@ immutable DateLocale UR = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/uz.json
+// // Source: locales/uz.json
 // Uzbek locale.
 immutable DateLocale UZ = DateLocale(
     code: "uz",
@@ -4880,7 +4880,7 @@ immutable DateLocale UZ = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/ve.json
+// // Source: locales/ve.json
 // Venda locale.
 immutable DateLocale VE = DateLocale(
     code: "ve",
@@ -4910,7 +4910,7 @@ immutable DateLocale VE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/vi.json
+// // Source: locales/vi.json
 // Vietnamese locale.
 immutable DateLocale VI = DateLocale(
     code: "vi",
@@ -4941,7 +4941,7 @@ immutable DateLocale VI = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/vmw.json
+// // Source: locales/vmw.json
 // Makhuwa locale.
 immutable DateLocale VMW = DateLocale(
     code: "vmw",
@@ -4972,7 +4972,7 @@ immutable DateLocale VMW = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/wo.json
+// // Source: locales/wo.json
 // Wolof locale.
 immutable DateLocale WO = DateLocale(
     code: "wo",
@@ -5003,7 +5003,7 @@ immutable DateLocale WO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/xh.json
+// // Source: locales/xh.json
 // Xhosa locale.
 immutable DateLocale XH = DateLocale(
     code: "xh",
@@ -5034,7 +5034,7 @@ immutable DateLocale XH = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/yao.json
+// // Source: locales/yao.json
 // Yao locale.
 immutable DateLocale YAO = DateLocale(
     code: "yao",
@@ -5063,7 +5063,7 @@ immutable DateLocale YAO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/yo.json
+// // Source: locales/yo.json
 // Yoruba locale.
 immutable DateLocale YO = DateLocale(
     code: "yo",
@@ -5094,7 +5094,7 @@ immutable DateLocale YO = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/yue.json
+// // Source: locales/yue.json
 // Cantonese locale.
 immutable DateLocale YUE = DateLocale(
     code: "yue",
@@ -5125,7 +5125,7 @@ immutable DateLocale YUE = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/zdj.json
+// // Source: locales/zdj.json
 // Comorian locale.
 immutable DateLocale ZDJ = DateLocale(
     code: "zdj",
@@ -5156,7 +5156,7 @@ immutable DateLocale ZDJ = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/zh.json
+// // Source: locales/zh.json
 // Chinese locale.
 immutable DateLocale ZH = DateLocale(
     code: "zh",
@@ -5187,7 +5187,7 @@ immutable DateLocale ZH = DateLocale(
     ),
 );
 
-// // Source: date/locales/src/zu.json
+// // Source: locales/zu.json
 // Zulu locale.
 immutable DateLocale ZU = DateLocale(
     code: "zu",

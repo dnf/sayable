@@ -1,0 +1,206 @@
+{
+  "code": "yue",
+  "name": "Cantonese",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n}日",
+      "week": "{n}個星期",
+      "month": "{n}個月",
+      "year": "{n}歲"
+    },
+    "half": "{0}半",
+    "delimiter": "",
+    "justBorn": "初生嬰兒",
+    "stages": {
+      "newborn": "初生嬰兒",
+      "infant": "嬰兒",
+      "toddler": "幼兒",
+      "child": "細路",
+      "teenager": "後生",
+      "adult": "成人"
+    },
+    "short": {
+      "units": {
+        "day": "{n} 日",
+        "week": "{n} 個星期",
+        "month": "{n} 個月",
+        "year": "{n} 年"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}日",
+        "week": "{n}週",
+        "month": "{n}月",
+        "year": "{n}年"
+      }
+    }
+  },
+  "date": {
+    "months": [
+      "一月",
+      "二月",
+      "三月",
+      "四月",
+      "五月",
+      "六月",
+      "七月",
+      "八月",
+      "九月",
+      "十月",
+      "十一月",
+      "十二月"
+    ],
+    "weekdays": [
+      "星期日",
+      "星期一",
+      "星期二",
+      "星期三",
+      "星期四",
+      "星期五",
+      "星期六"
+    ],
+    "dayFormat": "{n}日",
+    "datePattern": "{month}{day}",
+    "datePatternWithYear": "{year}年{month}{day}",
+    "today": "今日",
+    "tomorrow": "聽日",
+    "yesterday": "尋日",
+    "dayAfterTomorrow": "後日",
+    "dayBeforeYesterday": "前日",
+    "thisWeekday": "呢個{weekday}",
+    "nextWeekday": "下個{weekday}",
+    "lastWeekday": "上個{weekday}",
+    "short": {
+      "months": [
+        "一月",
+        "二月",
+        "三月",
+        "四月",
+        "五月",
+        "六月",
+        "七月",
+        "八月",
+        "九月",
+        "十月",
+        "十一月",
+        "十二月"
+      ],
+      "weekdays": [
+        "日",
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六"
+      ],
+      "dayFormat": "{n}日",
+      "datePattern": "{month}{day}",
+      "datePatternWithYear": "{year}年{month}{day}"
+    },
+    "compact": {
+      "datePattern": "{m}/{d}",
+      "datePatternWithYear": "{yy}/{m}/{d}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n}秒",
+      "minute": "{n}分鐘",
+      "hour": "{n}個鐘頭",
+      "day": "{n}日",
+      "week": "{n}個星期",
+      "month": "{n}個月",
+      "year": "{n}年"
+    },
+    "half": "{0}半",
+    "delimiter": "",
+    "justNow": "啱啱",
+    "ago": "{0}前",
+    "inFuture": "{0}之後",
+    "short": {
+      "units": {
+        "second": "{n}秒",
+        "minute": "{n}分鐘",
+        "hour": "{n}個鐘",
+        "day": "{n}日",
+        "week": "{n}個星期",
+        "month": "{n}個月",
+        "year": "{n}年"
+      },
+      "ago": "{0}前",
+      "inFuture": "{0}之後",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}秒",
+        "minute": "{n}分",
+        "hour": "{n}時",
+        "day": "{n}日",
+        "week": "{n}週",
+        "month": "{n}月",
+        "year": "{n}年"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0}前",
+      "inFuture": "{0}之後",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "十二",
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九",
+        "十",
+        "十一"
+      ],
+      "midnight": "午夜",
+      "noon": "正午",
+      "patterns": {
+        "0": "{h}點整",
+        "5": "{h}點零五分",
+        "10": "{h}點十分",
+        "15": "{h}點十五分",
+        "20": "{h}點二十分",
+        "25": "{h}點二十五分",
+        "30": "{h}點半",
+        "35": "{h}點三十五分",
+        "40": "{h}點四十分",
+        "45": "{h}點四十五分",
+        "50": "{h}點五十分",
+        "55": "{h}點五十五分"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

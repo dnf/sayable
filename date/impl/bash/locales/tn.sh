@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/tn.json
+# Source: locales/tn.json
 
 _sayabledate_locale_tn() {
     _months=('Ferikgong' 'Tlhakole' 'Mopitlo' 'Moranang' 'Motsheganong' 'Seetebosigo' 'Phukwi' 'Phatwe' 'Lwetse' 'Diphalane' 'Ngwanatsele' 'Sedimothole')

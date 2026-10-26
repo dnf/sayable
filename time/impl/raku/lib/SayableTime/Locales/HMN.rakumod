@@ -9,7 +9,7 @@ use v6.d;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/hmn.json
+# Source: locales/hmn.json
 unit module SayableTime::Locales::HMN;
 
 our sub locale() {

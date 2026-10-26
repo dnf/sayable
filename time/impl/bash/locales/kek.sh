@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kek.json
+# Source: locales/kek.json
 
 _sayabletime_locale_kek() {
     _clock_hours=('kab'\''laju' 'jun' 'kab'\''' 'oxib'\''' 'kab'\''ib'\''' 'o'\''ib'\''' 'waqib'\''' 'uqub'\''' 'wajxaqib'\''' 'b'\''elejeb'\''' 'lajeb'\''' 'junlaju')

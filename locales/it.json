@@ -1,0 +1,321 @@
+{
+  "code": "it",
+  "name": "Italian",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} giorno",
+        "other": "{n} giorni"
+      },
+      "week": {
+        "one": "{n} settimana",
+        "other": "{n} settimane"
+      },
+      "month": {
+        "one": "{n} mese",
+        "other": "{n} mesi"
+      },
+      "year": {
+        "one": "{n} anno",
+        "other": "{n} anni"
+      }
+    },
+    "half": "{0} e mezzo",
+    "delimiter": ", ",
+    "justBorn": "Neonato",
+    "stages": {
+      "newborn": {
+        "m": "Neonato",
+        "f": "Neonata"
+      },
+      "infant": "Lattante",
+      "toddler": {
+        "m": "Bimbo",
+        "f": "Bimba"
+      },
+      "child": {
+        "m": "Bambino",
+        "f": "Bambina"
+      },
+      "teenager": "Adolescente",
+      "adult": {
+        "m": "Adulto",
+        "f": "Adulta"
+      }
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} giorno",
+          "other": "{n} giorni"
+        },
+        "week": "{n} sett.",
+        "month": {
+          "one": "{n} mese",
+          "other": "{n} mesi"
+        },
+        "year": {
+          "one": "{n} anno",
+          "other": "{n} anni"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": {
+          "one": "{n}g",
+          "other": "{n}gg"
+        },
+        "week": "{n}sett.",
+        "month": {
+          "one": "{n} mese",
+          "other": "{n} mesi"
+        },
+        "year": {
+          "one": "{n}anno",
+          "other": "{n}anni"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "gennaio",
+      "febbraio",
+      "marzo",
+      "aprile",
+      "maggio",
+      "giugno",
+      "luglio",
+      "agosto",
+      "settembre",
+      "ottobre",
+      "novembre",
+      "dicembre"
+    ],
+    "weekdays": [
+      "domenica",
+      "lunedì",
+      "martedì",
+      "mercoledì",
+      "giovedì",
+      "venerdì",
+      "sabato"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "oggi",
+    "tomorrow": "domani",
+    "yesterday": "ieri",
+    "dayAfterTomorrow": "dopodomani",
+    "dayBeforeYesterday": "l'altro ieri",
+    "thisWeekday": "questo {weekday}",
+    "nextWeekday": "{weekday} prossimo",
+    "lastWeekday": "{weekday} scorso",
+    "short": {
+      "months": [
+        "gen",
+        "feb",
+        "mar",
+        "apr",
+        "mag",
+        "giu",
+        "lug",
+        "ago",
+        "set",
+        "ott",
+        "nov",
+        "dic"
+      ],
+      "weekdays": [
+        "dom",
+        "lun",
+        "mar",
+        "mer",
+        "gio",
+        "ven",
+        "sab"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} secondo",
+        "other": "{n} secondi"
+      },
+      "minute": {
+        "one": "{n} minuto",
+        "other": "{n} minuti"
+      },
+      "hour": {
+        "one": "{n} ora",
+        "other": "{n} ore"
+      },
+      "day": {
+        "one": "{n} giorno",
+        "other": "{n} giorni"
+      },
+      "week": {
+        "one": "{n} settimana",
+        "other": "{n} settimane"
+      },
+      "month": {
+        "one": "{n} mese",
+        "other": "{n} mesi"
+      },
+      "year": {
+        "one": "{n} anno",
+        "other": "{n} anni"
+      }
+    },
+    "half": "{0} e mezzo",
+    "delimiter": ", ",
+    "justNow": "proprio ora",
+    "ago": "{0} fa",
+    "inFuture": "tra {0}",
+    "clock": {
+      "hours": [
+        "dodici",
+        "una",
+        "due",
+        "tre",
+        "quattro",
+        "cinque",
+        "sei",
+        "sette",
+        "otto",
+        "nove",
+        "dieci",
+        "undici"
+      ],
+      "midnight": "mezzanotte",
+      "noon": "mezzogiorno",
+      "patterns": {
+        "0": "{h}",
+        "5": "{h} e cinque",
+        "10": "{h} e dieci",
+        "15": "{h} e un quarto",
+        "20": "{h} e venti",
+        "25": "{h} e venticinque",
+        "30": "{h} e mezza",
+        "35": "{next_h} meno venticinque",
+        "40": "{next_h} meno venti",
+        "45": "{next_h} meno un quarto",
+        "50": "{next_h} meno dieci",
+        "55": "{next_h} meno cinque"
+      }
+    },
+    "short": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": {
+          "one": "{n} giorno",
+          "other": "{n} giorni"
+        },
+        "week": "{n} sett.",
+        "month": {
+          "one": "{n} mese",
+          "other": "{n} mesi"
+        },
+        "year": {
+          "one": "{n} anno",
+          "other": "{n} anni"
+        }
+      },
+      "ago": "{0} fa",
+      "inFuture": "tra {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}min",
+        "hour": "{n}h",
+        "day": {
+          "one": "{n}g",
+          "other": "{n}gg"
+        },
+        "week": "{n}sett.",
+        "month": {
+          "one": "{n} mese",
+          "other": "{n} mesi"
+        },
+        "year": {
+          "one": "{n}anno",
+          "other": "{n}anni"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} fa",
+      "inFuture": "tra {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dodici",
+        "una",
+        "due",
+        "tre",
+        "quattro",
+        "cinque",
+        "sei",
+        "sette",
+        "otto",
+        "nove",
+        "dieci",
+        "undici"
+      ],
+      "midnight": "mezzanotte",
+      "noon": "mezzogiorno",
+      "patterns": {
+        "0": "le {h}",
+        "5": "{h} e cinque",
+        "10": "{h} e dieci",
+        "15": "{h} e un quarto",
+        "20": "{h} e venti",
+        "25": "{h} e venticinque",
+        "30": "{h} e mezza",
+        "35": "{next_h} meno venticinque",
+        "40": "{next_h} meno venti",
+        "45": "{next_h} meno un quarto",
+        "50": "{next_h} meno dieci",
+        "55": "{next_h} meno cinque"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

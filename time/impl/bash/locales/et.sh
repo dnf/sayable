@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/et.json
+# Source: locales/et.json
 
 _sayabletime_locale_et() {
     _clock_hours=('kaksteist' 'üks' 'kaks' 'kolm' 'neli' 'viis' 'kuus' 'seitse' 'kaheksa' 'üheksa' 'kümme' 'üksteist')

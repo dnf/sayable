@@ -1,0 +1,244 @@
+{
+  "code": "bg",
+  "name": "Bulgarian",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ден",
+        "other": "{n} дни"
+      },
+      "week": {
+        "one": "{n} седмица",
+        "other": "{n} седмици"
+      },
+      "month": {
+        "one": "{n} месец",
+        "other": "{n} месеца"
+      },
+      "year": {
+        "one": "{n} година",
+        "other": "{n} години"
+      }
+    },
+    "half": "{0} и половина",
+    "delimiter": ", ",
+    "justBorn": "Новородено",
+    "stages": {
+      "newborn": "Новородено",
+      "infant": "Бебе",
+      "toddler": "Малко дете",
+      "child": "Дете",
+      "teenager": "Тийнейджър",
+      "adult": {
+        "m": "Възрастен",
+        "f": "Възрастна"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} д",
+        "week": "{n} седм.",
+        "month": "{n} мес.",
+        "year": "{n} год."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} д",
+        "week": "{n} седм.",
+        "month": "{n} мес.",
+        "year": "{n} г."
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "януари",
+      "февруари",
+      "март",
+      "април",
+      "май",
+      "юни",
+      "юли",
+      "август",
+      "септември",
+      "октомври",
+      "ноември",
+      "декември"
+    ],
+    "weekdays": [
+      "неделя",
+      "понеделник",
+      "вторник",
+      "сряда",
+      "четвъртък",
+      "петък",
+      "събота"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "днес",
+    "tomorrow": "утре",
+    "yesterday": "вчера",
+    "dayAfterTomorrow": "вдругиден",
+    "dayBeforeYesterday": "онзи ден",
+    "thisWeekday": "този {weekday}",
+    "nextWeekday": "следващият {weekday}",
+    "lastWeekday": "миналият {weekday}",
+    "short": {
+      "months": [
+        "яну",
+        "фев",
+        "мар",
+        "апр",
+        "май",
+        "юни",
+        "юли",
+        "авг",
+        "сеп",
+        "окт",
+        "ное",
+        "дек"
+      ],
+      "weekdays": [
+        "нд",
+        "пн",
+        "вт",
+        "ср",
+        "чт",
+        "пт",
+        "сб"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} секунда",
+        "other": "{n} секунди"
+      },
+      "minute": {
+        "one": "{n} минута",
+        "other": "{n} минути"
+      },
+      "hour": {
+        "one": "{n} час",
+        "other": "{n} часа"
+      },
+      "day": {
+        "one": "{n} ден",
+        "other": "{n} дни"
+      },
+      "week": {
+        "one": "{n} седмица",
+        "other": "{n} седмици"
+      },
+      "month": {
+        "one": "{n} месец",
+        "other": "{n} месеца"
+      },
+      "year": {
+        "one": "{n} година",
+        "other": "{n} години"
+      }
+    },
+    "half": "{0} и половина",
+    "delimiter": ", ",
+    "justNow": "току-що",
+    "ago": "преди {0}",
+    "inFuture": "след {0}",
+    "short": {
+      "units": {
+        "second": "{n} сек",
+        "minute": "{n} мин",
+        "hour": "{n} ч",
+        "day": "{n} д",
+        "week": "{n} седм.",
+        "month": "{n} мес.",
+        "year": "{n} год."
+      },
+      "ago": "преди {0}",
+      "inFuture": "след {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} с",
+        "minute": "{n} мин",
+        "hour": "{n} ч",
+        "day": "{n} д",
+        "week": "{n} седм.",
+        "month": "{n} мес.",
+        "year": "{n} г."
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "преди {0}",
+      "inFuture": "след {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "дванадесет",
+        "един",
+        "два",
+        "три",
+        "четири",
+        "пет",
+        "шест",
+        "седем",
+        "осем",
+        "девет",
+        "десет",
+        "единадесет"
+      ],
+      "midnight": "полунощ",
+      "noon": "обяд",
+      "patterns": {
+        "0": "{h} часа",
+        "5": "пет na {h}",
+        "10": "десет na {h}",
+        "15": "петнадесет na {h}",
+        "20": "двадесет na {h}",
+        "25": "двадесет и пет na {h}",
+        "30": "тридесет na {h}",
+        "35": "двадесет и пет do {next_h}",
+        "40": "двадесет do {next_h}",
+        "45": "петнадесет do {next_h}",
+        "50": "десет do {next_h}",
+        "55": "пет do {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

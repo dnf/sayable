@@ -24,7 +24,7 @@ use SayableAge\Units;
 /** Built-in locale definitions. */
 final class Locales
 {
-    // Source: age/locales/src/af.json
+    // Source: locales/af.json
     // ── Afrikaans ───────────────────────────────────────────────────
 
     public static function AF(): AgeLocale
@@ -60,7 +60,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ak.json
+    // Source: locales/ak.json
     // ── Akan ────────────────────────────────────────────────────────
 
     public static function AK(): AgeLocale
@@ -97,7 +97,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/am.json
+    // Source: locales/am.json
     // ── Amharic ─────────────────────────────────────────────────────
 
     public static function AM(): AgeLocale
@@ -134,7 +134,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ar.json
+    // Source: locales/ar.json
     // ── Arabic ──────────────────────────────────────────────────────
 
     private static function pluralAR(int $n): PluralCategory
@@ -193,7 +193,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ay.json
+    // Source: locales/ay.json
     // ── Aymara ──────────────────────────────────────────────────────
 
     public static function AY(): AgeLocale
@@ -229,7 +229,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/az.json
+    // Source: locales/az.json
     // ── Azerbaijani ─────────────────────────────────────────────────
 
     public static function AZ(): AgeLocale
@@ -266,7 +266,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/bci.json
+    // Source: locales/bci.json
     // ── Baoulé ──────────────────────────────────────────────────────
 
     public static function BCI(): AgeLocale
@@ -303,7 +303,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/be.json
+    // Source: locales/be.json
     // ── Belarusian ──────────────────────────────────────────────────
 
     private static function pluralBE(int $n): PluralCategory
@@ -354,7 +354,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/bem.json
+    // Source: locales/bem.json
     // ── Bemba ───────────────────────────────────────────────────────
 
     public static function BEM(): AgeLocale
@@ -391,7 +391,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/bg.json
+    // Source: locales/bg.json
     // ── Bulgarian ───────────────────────────────────────────────────
 
     public static function BG(): AgeLocale
@@ -428,7 +428,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/bi.json
+    // Source: locales/bi.json
     // ── Bislama ─────────────────────────────────────────────────────
 
     public static function BI(): AgeLocale
@@ -464,7 +464,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/bm.json
+    // Source: locales/bm.json
     // ── Bambara ─────────────────────────────────────────────────────
 
     public static function BM(): AgeLocale
@@ -501,7 +501,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/bn.json
+    // Source: locales/bn.json
     // ── Bengali ─────────────────────────────────────────────────────
 
     public static function BN(): AgeLocale
@@ -538,7 +538,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/br.json
+    // Source: locales/br.json
     // ── Breton ──────────────────────────────────────────────────────
 
     private static function pluralBR(int $n): PluralCategory
@@ -595,7 +595,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/bs.json
+    // Source: locales/bs.json
     // ── Bosnian ─────────────────────────────────────────────────────
 
     private static function pluralBS(int $n): PluralCategory
@@ -646,7 +646,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ca.json
+    // Source: locales/ca.json
     // ── Catalan ─────────────────────────────────────────────────────
 
     public static function CA(): AgeLocale
@@ -683,7 +683,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/cak.json
+    // Source: locales/cak.json
     // ── Kaqchikel ───────────────────────────────────────────────────
 
     public static function CAK(): AgeLocale
@@ -719,7 +719,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ── Cebuano ─────────────────────────────────────────────────────
 
     public static function CEB(): AgeLocale
@@ -756,7 +756,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/cs.json
+    // Source: locales/cs.json
     // ── Czech ───────────────────────────────────────────────────────
 
     private static function pluralCS(int $n): PluralCategory
@@ -804,7 +804,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/cy.json
+    // Source: locales/cy.json
     // ── Welsh ───────────────────────────────────────────────────────
 
     private static function pluralCY(int $n): PluralCategory
@@ -862,7 +862,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/da.json
+    // Source: locales/da.json
     // ── Danish ──────────────────────────────────────────────────────
 
     public static function DA(): AgeLocale
@@ -898,7 +898,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/de.json
+    // Source: locales/de.json
     // ── German ──────────────────────────────────────────────────────
 
     public static function DE(): AgeLocale
@@ -934,7 +934,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/din.json
+    // Source: locales/din.json
     // ── Dinka ───────────────────────────────────────────────────────
 
     public static function DIN(): AgeLocale
@@ -971,7 +971,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/dje.json
+    // Source: locales/dje.json
     // ── Zarma ───────────────────────────────────────────────────────
 
     public static function DJE(): AgeLocale
@@ -1008,7 +1008,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/dv.json
+    // Source: locales/dv.json
     // ── Dhivehi ─────────────────────────────────────────────────────
 
     public static function DV(): AgeLocale
@@ -1044,7 +1044,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ── Dyula ───────────────────────────────────────────────────────
 
     public static function DYU(): AgeLocale
@@ -1081,7 +1081,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/dz.json
+    // Source: locales/dz.json
     // ── Dzongkha ────────────────────────────────────────────────────
 
     public static function DZ(): AgeLocale
@@ -1117,7 +1117,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ee.json
+    // Source: locales/ee.json
     // ── Ewe ─────────────────────────────────────────────────────────
 
     public static function EE(): AgeLocale
@@ -1154,7 +1154,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/el.json
+    // Source: locales/el.json
     // ── Greek ───────────────────────────────────────────────────────
 
     public static function EL(): AgeLocale
@@ -1191,7 +1191,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/en.json
+    // Source: locales/en.json
     // ── English ─────────────────────────────────────────────────────
 
     public static function EN(): AgeLocale
@@ -1227,7 +1227,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/es.json
+    // Source: locales/es.json
     // ── Spanish ─────────────────────────────────────────────────────
 
     public static function ES(): AgeLocale
@@ -1264,7 +1264,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/et.json
+    // Source: locales/et.json
     // ── Estonian ────────────────────────────────────────────────────
 
     public static function ET(): AgeLocale
@@ -1300,7 +1300,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/eu.json
+    // Source: locales/eu.json
     // ── Basque ──────────────────────────────────────────────────────
 
     public static function EU(): AgeLocale
@@ -1337,7 +1337,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/fa.json
+    // Source: locales/fa.json
     // ── Persian ─────────────────────────────────────────────────────
 
     public static function FA(): AgeLocale
@@ -1374,7 +1374,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/fan.json
+    // Source: locales/fan.json
     // ── Fang ────────────────────────────────────────────────────────
 
     public static function FAN(): AgeLocale
@@ -1411,7 +1411,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ff.json
+    // Source: locales/ff.json
     // ── Fulah ───────────────────────────────────────────────────────
 
     public static function FF(): AgeLocale
@@ -1448,7 +1448,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/fi.json
+    // Source: locales/fi.json
     // ── Finnish ─────────────────────────────────────────────────────
 
     public static function FI(): AgeLocale
@@ -1485,7 +1485,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/fil.json
+    // Source: locales/fil.json
     // ── Filipino ────────────────────────────────────────────────────
 
     public static function FIL(): AgeLocale
@@ -1522,7 +1522,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/fj.json
+    // Source: locales/fj.json
     // ── Fijian ──────────────────────────────────────────────────────
 
     public static function FJ(): AgeLocale
@@ -1558,7 +1558,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/fon.json
+    // Source: locales/fon.json
     // ── Fon ─────────────────────────────────────────────────────────
 
     public static function FON(): AgeLocale
@@ -1595,7 +1595,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/fr.json
+    // Source: locales/fr.json
     // ── French ──────────────────────────────────────────────────────
 
     public static function FR(): AgeLocale
@@ -1632,7 +1632,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ga.json
+    // Source: locales/ga.json
     // ── Irish ───────────────────────────────────────────────────────
 
     private static function pluralGA(int $n): PluralCategory
@@ -1687,7 +1687,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/gd.json
+    // Source: locales/gd.json
     // ── Scottish Gaelic ─────────────────────────────────────────────
 
     private static function pluralGD(int $n): PluralCategory
@@ -1739,7 +1739,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/gl.json
+    // Source: locales/gl.json
     // ── Galician ────────────────────────────────────────────────────
 
     public static function GL(): AgeLocale
@@ -1776,7 +1776,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/gn.json
+    // Source: locales/gn.json
     // ── Guarani ─────────────────────────────────────────────────────
 
     public static function GN(): AgeLocale
@@ -1813,7 +1813,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/gu.json
+    // Source: locales/gu.json
     // ── Gujarati ────────────────────────────────────────────────────
 
     public static function GU(): AgeLocale
@@ -1850,7 +1850,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/gv.json
+    // Source: locales/gv.json
     // ── Manx ────────────────────────────────────────────────────────
 
     private static function pluralGV(int $n): PluralCategory
@@ -1904,7 +1904,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ha.json
+    // Source: locales/ha.json
     // ── Hausa ───────────────────────────────────────────────────────
 
     public static function HA(): AgeLocale
@@ -1940,7 +1940,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/he.json
+    // Source: locales/he.json
     // ── Hebrew ──────────────────────────────────────────────────────
 
     private static function pluralHE(int $n): PluralCategory
@@ -1989,7 +1989,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/hi.json
+    // Source: locales/hi.json
     // ── Hindi ───────────────────────────────────────────────────────
 
     public static function HI(): AgeLocale
@@ -2026,7 +2026,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ── Hmong ───────────────────────────────────────────────────────
 
     public static function HMN(): AgeLocale
@@ -2062,7 +2062,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/hr.json
+    // Source: locales/hr.json
     // ── Croatian ────────────────────────────────────────────────────
 
     private static function pluralHR(int $n): PluralCategory
@@ -2113,7 +2113,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ht.json
+    // Source: locales/ht.json
     // ── Haitian Creole ──────────────────────────────────────────────
 
     public static function HT(): AgeLocale
@@ -2150,7 +2150,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/hu.json
+    // Source: locales/hu.json
     // ── Hungarian ───────────────────────────────────────────────────
 
     public static function HU(): AgeLocale
@@ -2187,7 +2187,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/hy.json
+    // Source: locales/hy.json
     // ── Armenian ────────────────────────────────────────────────────
 
     public static function HY(): AgeLocale
@@ -2224,7 +2224,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/id.json
+    // Source: locales/id.json
     // ── Indonesian ──────────────────────────────────────────────────
 
     public static function ID(): AgeLocale
@@ -2261,7 +2261,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ig.json
+    // Source: locales/ig.json
     // ── Igbo ────────────────────────────────────────────────────────
 
     public static function IG(): AgeLocale
@@ -2298,7 +2298,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/is.json
+    // Source: locales/is.json
     // ── Icelandic ───────────────────────────────────────────────────
 
     private static function pluralIS(int $n): PluralCategory
@@ -2346,7 +2346,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/it.json
+    // Source: locales/it.json
     // ── Italian ─────────────────────────────────────────────────────
 
     public static function IT(): AgeLocale
@@ -2383,7 +2383,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ja.json
+    // Source: locales/ja.json
     // ── Japanese ────────────────────────────────────────────────────
 
     public static function JA(): AgeLocale
@@ -2418,7 +2418,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/jv.json
+    // Source: locales/jv.json
     // ── Javanese ────────────────────────────────────────────────────
 
     public static function JV(): AgeLocale
@@ -2455,7 +2455,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ka.json
+    // Source: locales/ka.json
     // ── Georgian ────────────────────────────────────────────────────
 
     public static function KA(): AgeLocale
@@ -2492,7 +2492,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ── Kabiye ──────────────────────────────────────────────────────
 
     public static function KBP(): AgeLocale
@@ -2529,7 +2529,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kek.json
+    // Source: locales/kek.json
     // ── Q'eqchi' ────────────────────────────────────────────────────
 
     public static function KEK(): AgeLocale
@@ -2565,7 +2565,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ki.json
+    // Source: locales/ki.json
     // ── Kikuyu ──────────────────────────────────────────────────────
 
     public static function KI(): AgeLocale
@@ -2601,7 +2601,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kk.json
+    // Source: locales/kk.json
     // ── Kazakh ──────────────────────────────────────────────────────
 
     public static function KK(): AgeLocale
@@ -2638,7 +2638,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kl.json
+    // Source: locales/kl.json
     // ── Kalaallisut ─────────────────────────────────────────────────
 
     public static function KL(): AgeLocale
@@ -2674,7 +2674,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/km.json
+    // Source: locales/km.json
     // ── Khmer ───────────────────────────────────────────────────────
 
     public static function KM(): AgeLocale
@@ -2711,7 +2711,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kn.json
+    // Source: locales/kn.json
     // ── Kannada ─────────────────────────────────────────────────────
 
     public static function KN(): AgeLocale
@@ -2748,7 +2748,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ko.json
+    // Source: locales/ko.json
     // ── Korean ──────────────────────────────────────────────────────
 
     public static function KO(): AgeLocale
@@ -2784,7 +2784,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ── Kpelle ──────────────────────────────────────────────────────
 
     public static function KPE(): AgeLocale
@@ -2821,7 +2821,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kri.json
+    // Source: locales/kri.json
     // ── Krio ────────────────────────────────────────────────────────
 
     public static function KRI(): AgeLocale
@@ -2857,7 +2857,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ── Kituba ──────────────────────────────────────────────────────
 
     public static function KTU(): AgeLocale
@@ -2894,7 +2894,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ku.json
+    // Source: locales/ku.json
     // ── Kurdish ─────────────────────────────────────────────────────
 
     public static function KU(): AgeLocale
@@ -2930,7 +2930,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/kw.json
+    // Source: locales/kw.json
     // ── Cornish ─────────────────────────────────────────────────────
 
     private static function pluralKW(int $n): PluralCategory
@@ -2989,7 +2989,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ky.json
+    // Source: locales/ky.json
     // ── Kyrgyz ──────────────────────────────────────────────────────
 
     public static function KY(): AgeLocale
@@ -3026,7 +3026,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/lb.json
+    // Source: locales/lb.json
     // ── Luxembourgish ───────────────────────────────────────────────
 
     public static function LB(): AgeLocale
@@ -3062,7 +3062,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/lg.json
+    // Source: locales/lg.json
     // ── Luganda ─────────────────────────────────────────────────────
 
     public static function LG(): AgeLocale
@@ -3099,7 +3099,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ln.json
+    // Source: locales/ln.json
     // ── Lingala ─────────────────────────────────────────────────────
 
     public static function LN(): AgeLocale
@@ -3136,7 +3136,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/lo.json
+    // Source: locales/lo.json
     // ── Lao ─────────────────────────────────────────────────────────
 
     public static function LO(): AgeLocale
@@ -3171,7 +3171,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/lt.json
+    // Source: locales/lt.json
     // ── Lithuanian ──────────────────────────────────────────────────
 
     private static function pluralLT(int $n): PluralCategory
@@ -3221,7 +3221,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/luo.json
+    // Source: locales/luo.json
     // ── Dholuo ──────────────────────────────────────────────────────
 
     public static function LUO(): AgeLocale
@@ -3257,7 +3257,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/lv.json
+    // Source: locales/lv.json
     // ── Latvian ─────────────────────────────────────────────────────
 
     private static function pluralLV(int $n): PluralCategory
@@ -3307,7 +3307,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mam.json
+    // Source: locales/mam.json
     // ── Mam ─────────────────────────────────────────────────────────
 
     public static function MAM(): AgeLocale
@@ -3343,7 +3343,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/men.json
+    // Source: locales/men.json
     // ── Mende ───────────────────────────────────────────────────────
 
     public static function MEN(): AgeLocale
@@ -3380,7 +3380,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ── Mauritian Creole ────────────────────────────────────────────
 
     public static function MFE(): AgeLocale
@@ -3417,7 +3417,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mg.json
+    // Source: locales/mg.json
     // ── Malagasy ────────────────────────────────────────────────────
 
     public static function MG(): AgeLocale
@@ -3454,7 +3454,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mi.json
+    // Source: locales/mi.json
     // ── Māori ───────────────────────────────────────────────────────
 
     public static function MI(): AgeLocale
@@ -3491,7 +3491,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mk.json
+    // Source: locales/mk.json
     // ── Macedonian ──────────────────────────────────────────────────
 
     private static function pluralMK(int $n): PluralCategory
@@ -3539,7 +3539,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ml.json
+    // Source: locales/ml.json
     // ── Malayalam ───────────────────────────────────────────────────
 
     public static function ML(): AgeLocale
@@ -3576,7 +3576,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mn.json
+    // Source: locales/mn.json
     // ── Mongolian ───────────────────────────────────────────────────
 
     public static function MN(): AgeLocale
@@ -3613,7 +3613,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ── Mandinka ────────────────────────────────────────────────────
 
     public static function MNK(): AgeLocale
@@ -3650,7 +3650,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mos.json
+    // Source: locales/mos.json
     // ── Moore ───────────────────────────────────────────────────────
 
     public static function MOS(): AgeLocale
@@ -3687,7 +3687,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mr.json
+    // Source: locales/mr.json
     // ── Marathi ─────────────────────────────────────────────────────
 
     public static function MR(): AgeLocale
@@ -3724,7 +3724,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ms.json
+    // Source: locales/ms.json
     // ── Malay ───────────────────────────────────────────────────────
 
     public static function MS(): AgeLocale
@@ -3761,7 +3761,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/mt.json
+    // Source: locales/mt.json
     // ── Maltese ─────────────────────────────────────────────────────
 
     private static function pluralMT(int $n): PluralCategory
@@ -3817,7 +3817,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/my.json
+    // Source: locales/my.json
     // ── Burmese ─────────────────────────────────────────────────────
 
     public static function MY(): AgeLocale
@@ -3854,7 +3854,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/nb.json
+    // Source: locales/nb.json
     // ── Norwegian Bokmål ────────────────────────────────────────────
 
     public static function NB(): AgeLocale
@@ -3890,7 +3890,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/nd.json
+    // Source: locales/nd.json
     // ── Northern Ndebele ────────────────────────────────────────────
 
     public static function ND(): AgeLocale
@@ -3927,7 +3927,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ne.json
+    // Source: locales/ne.json
     // ── Nepali ──────────────────────────────────────────────────────
 
     public static function NE(): AgeLocale
@@ -3964,7 +3964,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ng.json
+    // Source: locales/ng.json
     // ── Oshiwambo ───────────────────────────────────────────────────
 
     public static function NG(): AgeLocale
@@ -4001,7 +4001,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/nl.json
+    // Source: locales/nl.json
     // ── Dutch ───────────────────────────────────────────────────────
 
     public static function NL(): AgeLocale
@@ -4037,7 +4037,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/nr.json
+    // Source: locales/nr.json
     // ── Southern Ndebele ────────────────────────────────────────────
 
     public static function NR(): AgeLocale
@@ -4073,7 +4073,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/nso.json
+    // Source: locales/nso.json
     // ── Northern Sotho ──────────────────────────────────────────────
 
     public static function NSO(): AgeLocale
@@ -4110,7 +4110,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/nus.json
+    // Source: locales/nus.json
     // ── Nuer ────────────────────────────────────────────────────────
 
     public static function NUS(): AgeLocale
@@ -4147,7 +4147,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ny.json
+    // Source: locales/ny.json
     // ── Chichewa ────────────────────────────────────────────────────
 
     public static function NY(): AgeLocale
@@ -4184,7 +4184,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/om.json
+    // Source: locales/om.json
     // ── Oromo ───────────────────────────────────────────────────────
 
     public static function OM(): AgeLocale
@@ -4221,7 +4221,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/or.json
+    // Source: locales/or.json
     // ── Odia ────────────────────────────────────────────────────────
 
     public static function OR(): AgeLocale
@@ -4258,7 +4258,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/pa.json
+    // Source: locales/pa.json
     // ── Punjabi ─────────────────────────────────────────────────────
 
     public static function PA(): AgeLocale
@@ -4295,7 +4295,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/pis.json
+    // Source: locales/pis.json
     // ── Pijin ───────────────────────────────────────────────────────
 
     public static function PIS(): AgeLocale
@@ -4331,7 +4331,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/pl.json
+    // Source: locales/pl.json
     // ── Polish ──────────────────────────────────────────────────────
 
     private static function pluralPL(int $n): PluralCategory
@@ -4382,7 +4382,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/pov.json
+    // Source: locales/pov.json
     // ── Guinea-Bissau Creole ────────────────────────────────────────
 
     public static function POV(): AgeLocale
@@ -4419,7 +4419,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ps.json
+    // Source: locales/ps.json
     // ── Pashto ──────────────────────────────────────────────────────
 
     public static function PS(): AgeLocale
@@ -4456,7 +4456,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/pt.json
+    // Source: locales/pt.json
     // ── Portuguese ──────────────────────────────────────────────────
 
     public static function PT(): AgeLocale
@@ -4493,7 +4493,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/qu.json
+    // Source: locales/qu.json
     // ── Quechua ─────────────────────────────────────────────────────
 
     public static function QU(): AgeLocale
@@ -4530,7 +4530,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/quc.json
+    // Source: locales/quc.json
     // ── K'iche' ─────────────────────────────────────────────────────
 
     public static function QUC(): AgeLocale
@@ -4566,7 +4566,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ro.json
+    // Source: locales/ro.json
     // ── Romanian ────────────────────────────────────────────────────
 
     private static function pluralRO(int $n): PluralCategory
@@ -4615,7 +4615,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ru.json
+    // Source: locales/ru.json
     // ── Russian ─────────────────────────────────────────────────────
 
     private static function pluralRU(int $n): PluralCategory
@@ -4666,7 +4666,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/rw.json
+    // Source: locales/rw.json
     // ── Kinyarwanda ─────────────────────────────────────────────────
 
     public static function RW(): AgeLocale
@@ -4703,7 +4703,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sar.json
+    // Source: locales/sar.json
     // ── Sara ────────────────────────────────────────────────────────
 
     public static function SAR(): AgeLocale
@@ -4740,7 +4740,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sd.json
+    // Source: locales/sd.json
     // ── Sindhi ──────────────────────────────────────────────────────
 
     public static function SD(): AgeLocale
@@ -4777,7 +4777,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sg.json
+    // Source: locales/sg.json
     // ── Sango ───────────────────────────────────────────────────────
 
     public static function SG(): AgeLocale
@@ -4814,7 +4814,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/shi.json
+    // Source: locales/shi.json
     // ── Tachelhit ───────────────────────────────────────────────────
 
     private static function pluralSHI(int $n): PluralCategory
@@ -4863,7 +4863,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/shn.json
+    // Source: locales/shn.json
     // ── Shan ────────────────────────────────────────────────────────
 
     public static function SHN(): AgeLocale
@@ -4899,7 +4899,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/si.json
+    // Source: locales/si.json
     // ── Sinhala ─────────────────────────────────────────────────────
 
     public static function SI(): AgeLocale
@@ -4936,7 +4936,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sk.json
+    // Source: locales/sk.json
     // ── Slovak ──────────────────────────────────────────────────────
 
     private static function pluralSK(int $n): PluralCategory
@@ -4984,7 +4984,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sl.json
+    // Source: locales/sl.json
     // ── Slovenian ───────────────────────────────────────────────────
 
     private static function pluralSL(int $n): PluralCategory
@@ -5037,7 +5037,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sn.json
+    // Source: locales/sn.json
     // ── Shona ───────────────────────────────────────────────────────
 
     public static function SN(): AgeLocale
@@ -5074,7 +5074,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/snk.json
+    // Source: locales/snk.json
     // ── Soninke ─────────────────────────────────────────────────────
 
     public static function SNK(): AgeLocale
@@ -5111,7 +5111,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/so.json
+    // Source: locales/so.json
     // ── Somali ──────────────────────────────────────────────────────
 
     public static function SO(): AgeLocale
@@ -5148,7 +5148,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sq.json
+    // Source: locales/sq.json
     // ── Albanian ────────────────────────────────────────────────────
 
     public static function SQ(): AgeLocale
@@ -5185,7 +5185,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sr.json
+    // Source: locales/sr.json
     // ── Serbian ─────────────────────────────────────────────────────
 
     private static function pluralSR(int $n): PluralCategory
@@ -5236,7 +5236,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ss.json
+    // Source: locales/ss.json
     // ── siSwati ─────────────────────────────────────────────────────
 
     public static function SS(): AgeLocale
@@ -5273,7 +5273,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/st.json
+    // Source: locales/st.json
     // ── Southern Sotho ──────────────────────────────────────────────
 
     public static function ST(): AgeLocale
@@ -5310,7 +5310,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/su.json
+    // Source: locales/su.json
     // ── Sundanese ───────────────────────────────────────────────────
 
     public static function SU(): AgeLocale
@@ -5347,7 +5347,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/suk.json
+    // Source: locales/suk.json
     // ── Sukuma ──────────────────────────────────────────────────────
 
     public static function SUK(): AgeLocale
@@ -5384,7 +5384,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sv.json
+    // Source: locales/sv.json
     // ── Swedish ─────────────────────────────────────────────────────
 
     public static function SV(): AgeLocale
@@ -5420,7 +5420,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/sw.json
+    // Source: locales/sw.json
     // ── Swahili ─────────────────────────────────────────────────────
 
     public static function SW(): AgeLocale
@@ -5457,7 +5457,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ta.json
+    // Source: locales/ta.json
     // ── Tamil ───────────────────────────────────────────────────────
 
     public static function TA(): AgeLocale
@@ -5493,7 +5493,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/te.json
+    // Source: locales/te.json
     // ── Telugu ──────────────────────────────────────────────────────
 
     public static function TE(): AgeLocale
@@ -5530,7 +5530,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tem.json
+    // Source: locales/tem.json
     // ── Temne ───────────────────────────────────────────────────────
 
     public static function TEM(): AgeLocale
@@ -5567,7 +5567,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tet.json
+    // Source: locales/tet.json
     // ── Tetum ───────────────────────────────────────────────────────
 
     public static function TET(): AgeLocale
@@ -5603,7 +5603,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tg.json
+    // Source: locales/tg.json
     // ── Tajik ───────────────────────────────────────────────────────
 
     public static function TG(): AgeLocale
@@ -5640,7 +5640,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/th.json
+    // Source: locales/th.json
     // ── Thai ────────────────────────────────────────────────────────
 
     public static function TH(): AgeLocale
@@ -5677,7 +5677,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ti.json
+    // Source: locales/ti.json
     // ── Tigrinya ────────────────────────────────────────────────────
 
     public static function TI(): AgeLocale
@@ -5714,7 +5714,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tig.json
+    // Source: locales/tig.json
     // ── Tigre ───────────────────────────────────────────────────────
 
     public static function TIG(): AgeLocale
@@ -5751,7 +5751,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tk.json
+    // Source: locales/tk.json
     // ── Turkmen ─────────────────────────────────────────────────────
 
     public static function TK(): AgeLocale
@@ -5788,7 +5788,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tn.json
+    // Source: locales/tn.json
     // ── Tswana ──────────────────────────────────────────────────────
 
     public static function TN(): AgeLocale
@@ -5825,7 +5825,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ── Tok Pisin ───────────────────────────────────────────────────
 
     public static function TPI(): AgeLocale
@@ -5861,7 +5861,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tr.json
+    // Source: locales/tr.json
     // ── Turkish ─────────────────────────────────────────────────────
 
     public static function TR(): AgeLocale
@@ -5898,7 +5898,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ts.json
+    // Source: locales/ts.json
     // ── Tsonga ──────────────────────────────────────────────────────
 
     public static function TS(): AgeLocale
@@ -5935,7 +5935,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tum.json
+    // Source: locales/tum.json
     // ── Tumbuka ─────────────────────────────────────────────────────
 
     public static function TUM(): AgeLocale
@@ -5971,7 +5971,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ── Central Atlas Tamazight ─────────────────────────────────────
 
     private static function pluralTZM(int $n): PluralCategory
@@ -6017,7 +6017,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/uk.json
+    // Source: locales/uk.json
     // ── Ukrainian ───────────────────────────────────────────────────
 
     private static function pluralUK(int $n): PluralCategory
@@ -6068,7 +6068,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/umb.json
+    // Source: locales/umb.json
     // ── Umbundu ─────────────────────────────────────────────────────
 
     public static function UMB(): AgeLocale
@@ -6105,7 +6105,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ur.json
+    // Source: locales/ur.json
     // ── Urdu ────────────────────────────────────────────────────────
 
     public static function UR(): AgeLocale
@@ -6142,7 +6142,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/uz.json
+    // Source: locales/uz.json
     // ── Uzbek ───────────────────────────────────────────────────────
 
     public static function UZ(): AgeLocale
@@ -6179,7 +6179,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/ve.json
+    // Source: locales/ve.json
     // ── Venda ───────────────────────────────────────────────────────
 
     public static function VE(): AgeLocale
@@ -6215,7 +6215,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/vi.json
+    // Source: locales/vi.json
     // ── Vietnamese ──────────────────────────────────────────────────
 
     public static function VI(): AgeLocale
@@ -6252,7 +6252,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ── Makhuwa ─────────────────────────────────────────────────────
 
     public static function VMW(): AgeLocale
@@ -6289,7 +6289,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/wo.json
+    // Source: locales/wo.json
     // ── Wolof ───────────────────────────────────────────────────────
 
     public static function WO(): AgeLocale
@@ -6326,7 +6326,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/xh.json
+    // Source: locales/xh.json
     // ── Xhosa ───────────────────────────────────────────────────────
 
     public static function XH(): AgeLocale
@@ -6363,7 +6363,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/yao.json
+    // Source: locales/yao.json
     // ── Yao ─────────────────────────────────────────────────────────
 
     public static function YAO(): AgeLocale
@@ -6399,7 +6399,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/yo.json
+    // Source: locales/yo.json
     // ── Yoruba ──────────────────────────────────────────────────────
 
     public static function YO(): AgeLocale
@@ -6436,7 +6436,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/yue.json
+    // Source: locales/yue.json
     // ── Cantonese ───────────────────────────────────────────────────
 
     public static function YUE(): AgeLocale
@@ -6471,7 +6471,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ── Comorian ────────────────────────────────────────────────────
 
     public static function ZDJ(): AgeLocale
@@ -6508,7 +6508,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/zh.json
+    // Source: locales/zh.json
     // ── Chinese ─────────────────────────────────────────────────────
 
     public static function ZH(): AgeLocale
@@ -6543,7 +6543,7 @@ final class Locales
         );
     }
 
-    // Source: age/locales/src/zu.json
+    // Source: locales/zu.json
     // ── Zulu ────────────────────────────────────────────────────────
 
     public static function ZU(): AgeLocale

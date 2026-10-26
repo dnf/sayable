@@ -41,7 +41,7 @@ let bad, ok_bad = sayableage::format_age(fr, sayableage::Compactness.Normal, "no
 
 ## Internationalization
 
-All 168 locales are generated from `age/locales/src/*.json` into `sayableage/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
+All 168 locales are generated from the shared `locales/*.json` files into `sayableage/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
 
 Each locale carries its CLDR plural rule as a `PluralRule` enum: Goose cannot store function values, so `plural_category(rule, n)` dispatches on it.
 

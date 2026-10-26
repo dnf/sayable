@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: date/locales/src/tn.json */
+/* Source: locales/tn.json */
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_tn[12] = {

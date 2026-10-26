@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/fj.json
+# Source: locales/fj.json
 
 function locale_fj {
     $hours = @('tini ka rua', 'dua', 'rua', 'tolu', 'vā', 'lima', 'ono', 'vitu', 'walu', 'ciwa', 'tini', 'tini ka dua')

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ak.json
+# Source: locales/ak.json
 
 _sayabletime_locale_ak() {
     _clock_hours=('dumien' 'baako' 'mmienu' 'mmiensa' 'anan' 'anum' 'nsia' 'nson' 'nwɔtwe' 'nkron' 'edu' 'dubaako')

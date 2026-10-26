@@ -1,0 +1,206 @@
+{
+  "code": "lo",
+  "name": "Lao",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} ມື້",
+      "week": "{n} ອາທິດ",
+      "month": "{n} ເດືອນ",
+      "year": "{n} ປີ"
+    },
+    "half": "{0}ເຄິ່ງ",
+    "delimiter": "",
+    "justBorn": "ເກີດໃໝ່",
+    "stages": {
+      "newborn": "ເດັກເກີດໃໝ່",
+      "infant": "ເດັກນ້ອຍ",
+      "toddler": "ເດັກນ້ອຍ",
+      "child": "ເດັກ",
+      "teenager": "ໄວລຸ້ນ",
+      "adult": "ຜູ້ໃຫຍ່"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ມ.",
+        "week": "{n} ອທ.",
+        "month": "{n} ດ.",
+        "year": "{n} ປ."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      }
+    }
+  },
+  "date": {
+    "months": [
+      "ມັງກອນ",
+      "ກຸມພາ",
+      "ມີນາ",
+      "ເມສາ",
+      "ພຶດສະພາ",
+      "ມິຖຸນາ",
+      "ກໍລະກົດ",
+      "ສິງຫາ",
+      "ກັນຍາ",
+      "ຕຸລາ",
+      "ພະຈິກ",
+      "ທັນວາ"
+    ],
+    "weekdays": [
+      "ວັນອາທິດ",
+      "ວັນຈັນ",
+      "ວັນອັງຄານ",
+      "ວັນພຸດ",
+      "ວັນພະຫັດ",
+      "ວັນສຸກ",
+      "ວັນເສົາ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ມື້ນີ້",
+    "tomorrow": "ມື້ອື່ນ",
+    "yesterday": "ມື້ວານ",
+    "dayAfterTomorrow": "ມື້ຮື",
+    "dayBeforeYesterday": "ມື້ກ່ອນ",
+    "thisWeekday": "{weekday}ນີ້",
+    "nextWeekday": "{weekday}ໜ້າ",
+    "lastWeekday": "{weekday}ແລ້ວ",
+    "short": {
+      "months": [
+        "ມ.ກ.",
+        "ກ.ພ.",
+        "ມ.ນ.",
+        "ມ.ສ.",
+        "ພ.ພ.",
+        "ມ.ຖ.",
+        "ກ.ລ.",
+        "ສ.ຫ.",
+        "ກ.ຍ.",
+        "ຕ.ລ.",
+        "ພ.ຈ.",
+        "ທ.ວ."
+      ],
+      "weekdays": [
+        "ອາທິດ",
+        "ຈັນ",
+        "ອັງຄານ",
+        "ພຸດ",
+        "ພະຫັດ",
+        "ສຸກ",
+        "ເສົາ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} ວິນາທີ",
+      "minute": "{n} ນາທີ",
+      "hour": "{n} ຊົ່ວໂມງ",
+      "day": "{n} ມື້",
+      "week": "{n} ອາທິດ",
+      "month": "{n} ເດືອນ",
+      "year": "{n} ປີ"
+    },
+    "half": "{0}ເຄິ່ງ",
+    "delimiter": "",
+    "justNow": "ຫາກໍ",
+    "ago": "{0} ກ່ອນ",
+    "inFuture": "ໃນ {0}",
+    "short": {
+      "units": {
+        "second": "{n} ວິ.",
+        "minute": "{n} ນທ.",
+        "hour": "{n} ຊມ.",
+        "day": "{n} ມ.",
+        "week": "{n} ອທ.",
+        "month": "{n} ດ.",
+        "year": "{n} ປ."
+      },
+      "ago": "{0} ກ່ອນ",
+      "inFuture": "ໃນ {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ກ່ອນ",
+      "inFuture": "ໃນ {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "ສິບສອງ",
+        "ໜຶ່ງ",
+        "ສອງ",
+        "ສາມ",
+        "ສີ່",
+        "ຫ້າ",
+        "ຫົກ",
+        "ເຈັດ",
+        "ແປດ",
+        "ເກົ້າ",
+        "ສິບ",
+        "ສິບເອັດ"
+      ],
+      "midnight": "ທ່ຽງຄືນ",
+      "noon": "ທ່ຽງ",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

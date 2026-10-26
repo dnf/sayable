@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/uz.json
+# Source: locales/uz.json
 
 defmodule SayableTime.Locales.UZ do
   @moduledoc false

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/dv.json
+# Source: locales/dv.json
 
 _sayabledate_locale_dv() {
     _months=('ޖެނުއަރީ' 'ފެބްރުއަރީ' 'މާރިޗު' 'އެޕްރީލު' 'މެއި' 'ޖޫން' 'ޖުލައި' 'އޮގަސްޓު' 'ސެޕްޓެމްބަރު' 'އޮކްޓޯބަރު' 'ނޮވެމްބަރު' 'ޑިސެމްބަރު')

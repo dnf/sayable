@@ -17,7 +17,7 @@ import sayableduration.*
  */
 class LocalesAD {
 
-    // Source: duration/locales/src/af.json
+    // Source: locales/af.json
     // ================================================================
     // AF — Afrikaans
     // ================================================================
@@ -68,7 +68,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/ak.json
+    // Source: locales/ak.json
     // ================================================================
     // AK — Akan
     // ================================================================
@@ -119,7 +119,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/am.json
+    // Source: locales/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
@@ -170,7 +170,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/ar.json
+    // Source: locales/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
@@ -228,7 +228,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/ay.json
+    // Source: locales/ay.json
     // ================================================================
     // AY — Aymara
     // ================================================================
@@ -279,7 +279,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/az.json
+    // Source: locales/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
@@ -330,7 +330,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/bci.json
+    // Source: locales/bci.json
     // ================================================================
     // BCI — Baoulé
     // ================================================================
@@ -381,7 +381,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/be.json
+    // Source: locales/be.json
     // ================================================================
     // BE — Belarusian
     // ================================================================
@@ -438,7 +438,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/bem.json
+    // Source: locales/bem.json
     // ================================================================
     // BEM — Bemba
     // ================================================================
@@ -489,7 +489,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/bg.json
+    // Source: locales/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
@@ -540,7 +540,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/bi.json
+    // Source: locales/bi.json
     // ================================================================
     // BI — Bislama
     // ================================================================
@@ -591,7 +591,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/bm.json
+    // Source: locales/bm.json
     // ================================================================
     // BM — Bambara
     // ================================================================
@@ -642,7 +642,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/bn.json
+    // Source: locales/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
@@ -693,7 +693,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/br.json
+    // Source: locales/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
@@ -752,7 +752,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/bs.json
+    // Source: locales/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
@@ -809,7 +809,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/ca.json
+    // Source: locales/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
@@ -860,7 +860,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/cak.json
+    // Source: locales/cak.json
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
@@ -911,7 +911,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ================================================================
     // CEB — Cebuano
     // ================================================================
@@ -962,7 +962,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/cs.json
+    // Source: locales/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
@@ -1017,7 +1017,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/cy.json
+    // Source: locales/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
@@ -1077,7 +1077,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/da.json
+    // Source: locales/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
@@ -1128,7 +1128,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/de.json
+    // Source: locales/de.json
     // ================================================================
     // DE — German
     // ================================================================
@@ -1179,7 +1179,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/din.json
+    // Source: locales/din.json
     // ================================================================
     // DIN — Dinka
     // ================================================================
@@ -1230,7 +1230,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/dje.json
+    // Source: locales/dje.json
     // ================================================================
     // DJE — Zarma
     // ================================================================
@@ -1281,7 +1281,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/dv.json
+    // Source: locales/dv.json
     // ================================================================
     // DV — Dhivehi
     // ================================================================
@@ -1332,7 +1332,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ================================================================
     // DYU — Dyula
     // ================================================================
@@ -1383,7 +1383,7 @@ class LocalesAD {
         null
     )
 
-    // Source: duration/locales/src/dz.json
+    // Source: locales/dz.json
     // ================================================================
     // DZ — Dzongkha
     // ================================================================

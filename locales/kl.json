@@ -1,0 +1,198 @@
+{
+  "code": "kl",
+  "name": "Kalaallisut",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "ullut {n}",
+      "week": "sapaatit {n}",
+      "month": "qaammatit {n}",
+      "year": "ukiut {n}"
+    },
+    "half": "{0} affaa",
+    "delimiter": ", ",
+    "justBorn": "Inuuneq nutaaq",
+    "stages": {
+      "newborn": "Inuuneq nutaaq",
+      "infant": "Naalunngiaatitaq",
+      "toddler": "Meeraq",
+      "child": "Meeraq",
+      "teenager": "Inuusuttuaq",
+      "adult": "Inuk"
+    },
+    "short": {
+      "units": {
+        "day": "ull. {n}",
+        "week": "sap. {n}",
+        "month": "qaam. {n}",
+        "year": "uk. {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "januaarip",
+      "februaarip",
+      "marsip",
+      "apriilip",
+      "maajip",
+      "juunip",
+      "juulip",
+      "aggustip",
+      "septembarip",
+      "oktobarip",
+      "novembarip",
+      "decembarip"
+    ],
+    "weekdays": [
+      "sapaat",
+      "ataasinngorneq",
+      "marlunngorneq",
+      "pingasunngorneq",
+      "sisamanngorneq",
+      "tallimanngorneq",
+      "arfininngorneq"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ullumi",
+    "tomorrow": "aqagu",
+    "yesterday": "ippassaq",
+    "dayAfterTomorrow": "aqaguagu",
+    "dayBeforeYesterday": "ippassaani",
+    "thisWeekday": "{weekday} manna",
+    "nextWeekday": "{weekday} tulleq",
+    "lastWeekday": "{weekday} kingulleq",
+    "short": {
+      "months": [
+        "jan",
+        "febr",
+        "mar",
+        "apr",
+        "maj",
+        "jun",
+        "jul",
+        "aug",
+        "sept",
+        "okt",
+        "nov",
+        "dec"
+      ],
+      "weekdays": [
+        "sap",
+        "ata",
+        "mar",
+        "pin",
+        "sis",
+        "tal",
+        "arf"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{m}-{d}",
+      "datePatternWithYear": "{year}-{m}-{d}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "sekundit {n}",
+      "minute": "minutsit {n}",
+      "hour": "nalunaaqutap akunnera {n}",
+      "day": "ullut {n}",
+      "week": "sapaatit {n}",
+      "month": "qaammatit {n}",
+      "year": "ukiut {n}"
+    },
+    "half": "{0} affaa",
+    "delimiter": ", ",
+    "justNow": "maanna",
+    "ago": "{0} matuma siorna",
+    "inFuture": "{0} siunissami",
+    "short": {
+      "units": {
+        "second": "sek. {n}",
+        "minute": "min. {n}",
+        "hour": "nal. {n}",
+        "day": "ull. {n}",
+        "week": "sap. {n}",
+        "month": "qaam. {n}",
+        "year": "uk. {n}"
+      },
+      "ago": "{0} matuma siorna",
+      "inFuture": "{0} siunissami"
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} matuma siorna",
+      "inFuture": "{0} siunissami"
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "akunneq marluk",
+        "ataaseq",
+        "marluk",
+        "pingasut",
+        "sisamat",
+        "tallimat",
+        "arfinillit",
+        "arfineq-marluk",
+        "arfineq-pingasut",
+        "qulingiluat",
+        "qulit",
+        "akunneq ataaseq"
+      ],
+      "midnight": "unnuap qeqqa",
+      "noon": "ulloqeqqap qeqqa",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}.{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}.{mm}"
+      }
+    }
+  }
+}

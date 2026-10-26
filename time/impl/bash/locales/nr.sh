@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/nr.json
+# Source: locales/nr.json
 
 _sayabletime_locale_nr() {
     _clock_hours=('itshumi lambili' 'kunye' 'kubili' 'kuthathu' 'kune' 'kuhlanu' 'isithupha' 'isikhombisa' 'isitshiyagalombili' 'isitshiyagalolunye' 'itshumi' 'itshumi lanye')

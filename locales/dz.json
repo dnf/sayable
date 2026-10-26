@@ -1,0 +1,206 @@
+{
+  "code": "dz",
+  "name": "Dzongkha",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "ཉིན་ {n}",
+      "week": "བདུན་ཕྲག་ {n}",
+      "month": "ཟླ་ {n}",
+      "year": "ལོ་ {n}"
+    },
+    "half": "{0} ཕྱེད",
+    "delimiter": " ",
+    "justBorn": "གསར་སྐྱེས",
+    "stages": {
+      "newborn": "གསར་སྐྱེས",
+      "infant": "ཕྲུ་གུ",
+      "toddler": "བྱིས་པ",
+      "child": "ཨ་ཅུང",
+      "teenager": "ན་གཞོན",
+      "adult": "མི་ལོན་ཚང"
+    },
+    "short": {
+      "units": {
+        "day": "ཉིན་ {n}",
+        "week": "བདུན་ཕྲག་ {n}",
+        "month": "ཟླ་ {n}",
+        "year": "ལོ་ {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "ཟླ་དངཔ",
+      "ཟླ་གཉིས་པ",
+      "ཟླ་གསུམ་པ",
+      "ཟླ་བཞི་པ",
+      "ཟླ་ལྔ་པ",
+      "ཟླ་དྲུག་པ",
+      "ཟླ་བདུན་པ",
+      "ཟླ་བརྒྱད་པ",
+      "ཟླ་དགུ་པ",
+      "ཟླ་བཅུ་པ",
+      "ཟླ་བཅུ་གཅིག་པ",
+      "ཟླ་བཅུ་གཉིས་པ"
+    ],
+    "weekdays": [
+      "གཟའ་ཉི་མ",
+      "གཟའ་ཟླ་བ",
+      "གཟའ་མིག་དམར",
+      "གཟའ་ལྷག་པ",
+      "གཟའ་ཕུར་བུ",
+      "གཟའ་པ་སངས",
+      "གཟའ་སྤེན་པ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{year} {month} {day}",
+    "today": "དི་རིང",
+    "tomorrow": "ནངས་པ",
+    "yesterday": "ཁ་ཙ",
+    "dayAfterTomorrow": "གནངས་ཚེ",
+    "dayBeforeYesterday": "ཁ་ཉིམ",
+    "thisWeekday": "འདི་ {weekday}",
+    "nextWeekday": "{weekday} ཤུལ་མ",
+    "lastWeekday": "{weekday} ཧེ་མ",
+    "short": {
+      "months": [
+        "ཟླ་༡",
+        "ཟླ་༢",
+        "ཟླ་༣",
+        "ཟླ་༤",
+        "ཟླ་༥",
+        "ཟླ་༦",
+        "ཟླ་༧",
+        "ཟླ་༨",
+        "ཟླ་༩",
+        "ཟླ་༡༠",
+        "ཟླ་༡༡",
+        "ཟླ་༡༢"
+      ],
+      "weekdays": [
+        "ཉི",
+        "ཟླ",
+        "མིག",
+        "ལྷག",
+        "ཕུར",
+        "སངས",
+        "སྤེན"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{year} {month} {day}"
+    },
+    "compact": {
+      "datePattern": "{yy}/{m}/{d}",
+      "datePatternWithYear": "{yy}/{m}/{d}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "སྐར་ཆ་ {n}",
+      "minute": "སྐར་མ་ {n}",
+      "hour": "ཆུ་ཚོད་ {n}",
+      "day": "ཉིན་ {n}",
+      "week": "བདུན་ཕྲག་ {n}",
+      "month": "ཟླ་ {n}",
+      "year": "ལོ་ {n}"
+    },
+    "half": "{0} ཕྱེད",
+    "delimiter": " ",
+    "justNow": "ད་ལྟ",
+    "ago": "{0} ཧེ་མ",
+    "inFuture": "{0} ཤུལ་ལས",
+    "short": {
+      "units": {
+        "second": "སྐར་ཆ་ {n}",
+        "minute": "སྐར་མ་ {n}",
+        "hour": "ཆུ་ཚོད་ {n}",
+        "day": "ཉིན་ {n}",
+        "week": "བདུན་ཕྲག་ {n}",
+        "month": "ཟླ་ {n}",
+        "year": "ལོ་ {n}"
+      },
+      "ago": "{0} ཧེ་མ",
+      "inFuture": "{0} ཤུལ་ལས"
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} ཧེ་མ",
+      "inFuture": "{0} ཤུལ་ལས"
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "བཅུ་གཉིས",
+        "གཅིག",
+        "གཉིས",
+        "གསུམ",
+        "བཞི",
+        "ལྔ",
+        "དྲུག",
+        "བདུན",
+        "བརྒྱད",
+        "དགུ",
+        "བཅུ",
+        "བཅུ་གཅིག"
+      ],
+      "midnight": "ནམ་ཕྱེད",
+      "noon": "ཉིན་གུང",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

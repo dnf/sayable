@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/nso.json
+# Source: locales/nso.json
 
 _sayabletime_locale_nso() {
     _clock_hours=('lesome pedi' 'tee' 'pedi' 'tharo' 'nne' 'hlano' 'tshela' 'šupa' 'seswai' 'senyane' 'lesome' 'lesome tee')

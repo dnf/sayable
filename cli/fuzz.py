@@ -57,7 +57,7 @@ INVALID_VALUES = ["null", "", "2025-13-01", "2025-02-30", "0000-00-00", "abcd", 
 
 
 def locale_codes() -> list[str]:
-    return sorted(p.stem for p in (ROOT / "age" / "locales" / "src").glob("*.json"))
+    return sorted(p.stem for p in (ROOT / "locales").glob("*.json"))
 
 
 def discover_clis() -> dict[str, Path]:

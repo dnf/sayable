@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/yao.json
+# Source: locales/yao.json
 
 function locale_yao {
     $months = @('Janyuwale', 'Febuwale', 'Malichi', 'Epireli', 'Meyi', 'Juni', 'Julayi', 'Ogasiti', 'Seputemba', 'Okutoba', 'Novemba', 'Disemba')

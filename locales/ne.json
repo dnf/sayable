@@ -1,0 +1,248 @@
+{
+  "code": "ne",
+  "name": "Nepali",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} दिन",
+        "other": "{n} दिन"
+      },
+      "week": {
+        "one": "{n} हप्ता",
+        "other": "{n} हप्ता"
+      },
+      "month": {
+        "one": "{n} महिना",
+        "other": "{n} महिना"
+      },
+      "year": {
+        "one": "{n} वर्ष",
+        "other": "{n} वर्ष"
+      }
+    },
+    "half": "साढे {n}",
+    "delimiter": ", ",
+    "justBorn": "नवजात शिशु",
+    "stages": {
+      "newborn": "नवजात शिशु",
+      "infant": "शिशु",
+      "toddler": "बाल्यकाल",
+      "child": "बालक",
+      "teenager": "किशोर",
+      "adult": "वयस्क"
+    },
+    "short": {
+      "units": {
+        "day": "{n} दिन",
+        "week": "{n} हप्ता",
+        "month": "{n} महिना",
+        "year": "{n} वर्ष"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} दिन",
+        "week": "{n} हप्ता",
+        "month": "{n} महिना",
+        "year": "{n} वर्ष"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "जनवरी",
+      "फेब्रुअरी",
+      "मार्च",
+      "अप्रिल",
+      "मे",
+      "जुन",
+      "जुलाई",
+      "अगस्ट",
+      "सेप्टेम्बर",
+      "अक्टोबर",
+      "नोभेम्बर",
+      "डिसेम्बर"
+    ],
+    "weekdays": [
+      "आइतबार",
+      "सोमबार",
+      "मंगलबार",
+      "बुधबार",
+      "बिहिबार",
+      "शुक्रबार",
+      "शनिबार"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "आज",
+    "tomorrow": "भोलि",
+    "yesterday": "हिजो",
+    "dayAfterTomorrow": "पर्सि",
+    "dayBeforeYesterday": "अस्ति",
+    "thisWeekday": "यो {weekday}",
+    "nextWeekday": "अर्को {weekday}",
+    "lastWeekday": "गत {weekday}",
+    "short": {
+      "months": [
+        "जन",
+        "फेब",
+        "मार्च",
+        "अप्रि",
+        "मे",
+        "जुन",
+        "जुलाई",
+        "अग",
+        "सेप्ट",
+        "अक्ट",
+        "नोभे",
+        "डिसे"
+      ],
+      "weekdays": [
+        "आइत",
+        "सोम",
+        "मंगल",
+        "बुध",
+        "बिहि",
+        "शुक्र",
+        "शनि"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} सेकेन्ड",
+      "minute": "{n} मिनेट",
+      "hour": "{n} घण्टा",
+      "day": {
+        "one": "{n} दिन",
+        "other": "{n} दिन"
+      },
+      "week": {
+        "one": "{n} हप्ता",
+        "other": "{n} हप्ता"
+      },
+      "month": {
+        "one": "{n} महिना",
+        "other": "{n} महिना"
+      },
+      "year": {
+        "one": "{n} वर्ष",
+        "other": "{n} वर्ष"
+      }
+    },
+    "half": "साढे {n}",
+    "delimiter": ", ",
+    "justNow": "भर्खरै",
+    "ago": "{0} अगाडि",
+    "inFuture": "{0} पछि",
+    "short": {
+      "units": {
+        "second": "{n} सेकेन्ड",
+        "minute": "{n} मिनेट",
+        "hour": "{n} घण्टा",
+        "day": "{n} दिन",
+        "week": "{n} हप्ता",
+        "month": "{n} महिना",
+        "year": "{n} वर्ष"
+      },
+      "ago": "{0} अगाडि",
+      "inFuture": "{0} पछि",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} सेकेन्ड",
+        "minute": "{n} मिनेट",
+        "hour": "{n} घण्टा",
+        "day": "{n} दिन",
+        "week": "{n} हप्ता",
+        "month": "{n} महिना",
+        "year": "{n} वर्ष"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} अगाडि",
+      "inFuture": "{0} पछि",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "बाह्र",
+        "एक",
+        "दुई",
+        "तीन",
+        "चार",
+        "पाँच",
+        "छ",
+        "सात",
+        "आठ",
+        "नौ",
+        "दश",
+        "एघार"
+      ],
+      "midnight": "मध्यरात",
+      "noon": "मध्यान्ह",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

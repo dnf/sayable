@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tum.json
+# Source: locales/tum.json
 
 function locale_tum {
     $hours = @('khumi na yibili', 'chimoza', 'vibili', 'vitatu', 'vinayi', 'vikhondi', 'vikhondi na kamoza', 'vikhondi na tubili', 'vikhondi na tutatu', 'vikhondi na tunayi', 'khumi', 'khumi na kamoza')

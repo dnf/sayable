@@ -16,7 +16,7 @@ import sayabledate._
  * All 168 locale definitions for sayable-date.
  */
 private object Batch0 {
-    // Source: date/locales/src/af.json
+    // Source: locales/af.json
     // ================================================================
     // AF — Afrikaans
     // ================================================================
@@ -49,7 +49,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/ak.json
+    // Source: locales/ak.json
     // ================================================================
     // AK — Akan
     // ================================================================
@@ -82,7 +82,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/am.json
+    // Source: locales/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
@@ -115,7 +115,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/ar.json
+    // Source: locales/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
@@ -148,7 +148,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/ay.json
+    // Source: locales/ay.json
     // ================================================================
     // AY — Aymara
     // ================================================================
@@ -179,7 +179,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/az.json
+    // Source: locales/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
@@ -212,7 +212,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/bci.json
+    // Source: locales/bci.json
     // ================================================================
     // BCI — Baoulé
     // ================================================================
@@ -245,7 +245,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/be.json
+    // Source: locales/be.json
     // ================================================================
     // BE — Belarusian
     // ================================================================
@@ -279,7 +279,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/bem.json
+    // Source: locales/bem.json
     // ================================================================
     // BEM — Bemba
     // ================================================================
@@ -312,7 +312,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/bg.json
+    // Source: locales/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
@@ -345,7 +345,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/bi.json
+    // Source: locales/bi.json
     // ================================================================
     // BI — Bislama
     // ================================================================
@@ -378,7 +378,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/bm.json
+    // Source: locales/bm.json
     // ================================================================
     // BM — Bambara
     // ================================================================
@@ -411,7 +411,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/bn.json
+    // Source: locales/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
@@ -444,7 +444,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/br.json
+    // Source: locales/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
@@ -475,7 +475,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/bs.json
+    // Source: locales/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
@@ -508,7 +508,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/ca.json
+    // Source: locales/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
@@ -541,7 +541,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/cak.json
+    // Source: locales/cak.json
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
@@ -574,7 +574,7 @@ private object Batch0 {
         )),
     )
 
-    // Source: date/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ================================================================
     // CEB — Cebuano
     // ================================================================
@@ -609,7 +609,7 @@ private object Batch0 {
 }
 
 private object Batch1 {
-    // Source: date/locales/src/cs.json
+    // Source: locales/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
@@ -643,7 +643,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/cy.json
+    // Source: locales/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
@@ -676,7 +676,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/da.json
+    // Source: locales/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
@@ -709,7 +709,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/de.json
+    // Source: locales/de.json
     // ================================================================
     // DE — German
     // ================================================================
@@ -742,7 +742,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/din.json
+    // Source: locales/din.json
     // ================================================================
     // DIN — Dinka
     // ================================================================
@@ -775,7 +775,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/dje.json
+    // Source: locales/dje.json
     // ================================================================
     // DJE — Zarma
     // ================================================================
@@ -808,7 +808,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/dv.json
+    // Source: locales/dv.json
     // ================================================================
     // DV — Dhivehi
     // ================================================================
@@ -841,7 +841,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ================================================================
     // DYU — Dyula
     // ================================================================
@@ -874,7 +874,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/dz.json
+    // Source: locales/dz.json
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
@@ -907,7 +907,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/ee.json
+    // Source: locales/ee.json
     // ================================================================
     // EE — Ewe
     // ================================================================
@@ -940,7 +940,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/el.json
+    // Source: locales/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
@@ -974,7 +974,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/en.json
+    // Source: locales/en.json
     // ================================================================
     // EN — English
     // ================================================================
@@ -1007,7 +1007,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/es.json
+    // Source: locales/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
@@ -1040,7 +1040,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/et.json
+    // Source: locales/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
@@ -1073,7 +1073,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/eu.json
+    // Source: locales/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
@@ -1106,7 +1106,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/fa.json
+    // Source: locales/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
@@ -1139,7 +1139,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/fan.json
+    // Source: locales/fan.json
     // ================================================================
     // FAN — Fang
     // ================================================================
@@ -1172,7 +1172,7 @@ private object Batch1 {
         )),
     )
 
-    // Source: date/locales/src/ff.json
+    // Source: locales/ff.json
     // ================================================================
     // FF — Fulah
     // ================================================================
@@ -1207,7 +1207,7 @@ private object Batch1 {
 }
 
 private object Batch2 {
-    // Source: date/locales/src/fi.json
+    // Source: locales/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
@@ -1241,7 +1241,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/fil.json
+    // Source: locales/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
@@ -1274,7 +1274,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/fj.json
+    // Source: locales/fj.json
     // ================================================================
     // FJ — Fijian
     // ================================================================
@@ -1307,7 +1307,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/fon.json
+    // Source: locales/fon.json
     // ================================================================
     // FON — Fon
     // ================================================================
@@ -1340,7 +1340,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/fr.json
+    // Source: locales/fr.json
     // ================================================================
     // FR — French
     // ================================================================
@@ -1373,7 +1373,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/ga.json
+    // Source: locales/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
@@ -1406,7 +1406,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/gd.json
+    // Source: locales/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
@@ -1439,7 +1439,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/gl.json
+    // Source: locales/gl.json
     // ================================================================
     // GL — Galician
     // ================================================================
@@ -1472,7 +1472,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/gn.json
+    // Source: locales/gn.json
     // ================================================================
     // GN — Guarani
     // ================================================================
@@ -1505,7 +1505,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/gu.json
+    // Source: locales/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
@@ -1538,7 +1538,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/gv.json
+    // Source: locales/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
@@ -1569,7 +1569,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/ha.json
+    // Source: locales/ha.json
     // ================================================================
     // HA — Hausa
     // ================================================================
@@ -1602,7 +1602,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/he.json
+    // Source: locales/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
@@ -1635,7 +1635,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/hi.json
+    // Source: locales/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
@@ -1668,7 +1668,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ================================================================
     // HMN — Hmong
     // ================================================================
@@ -1701,7 +1701,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/hr.json
+    // Source: locales/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
@@ -1735,7 +1735,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/ht.json
+    // Source: locales/ht.json
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
@@ -1768,7 +1768,7 @@ private object Batch2 {
         )),
     )
 
-    // Source: date/locales/src/hu.json
+    // Source: locales/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
@@ -1803,7 +1803,7 @@ private object Batch2 {
 }
 
 private object Batch3 {
-    // Source: date/locales/src/hy.json
+    // Source: locales/hy.json
     // ================================================================
     // HY — Armenian
     // ================================================================
@@ -1836,7 +1836,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/id.json
+    // Source: locales/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
@@ -1869,7 +1869,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/ig.json
+    // Source: locales/ig.json
     // ================================================================
     // IG — Igbo
     // ================================================================
@@ -1902,7 +1902,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/is.json
+    // Source: locales/is.json
     // ================================================================
     // IS — Icelandic
     // ================================================================
@@ -1935,7 +1935,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/it.json
+    // Source: locales/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
@@ -1968,7 +1968,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/ja.json
+    // Source: locales/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
@@ -2001,7 +2001,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/jv.json
+    // Source: locales/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
@@ -2034,7 +2034,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/ka.json
+    // Source: locales/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
@@ -2067,7 +2067,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ================================================================
     // KBP — Kabiye
     // ================================================================
@@ -2100,7 +2100,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/kek.json
+    // Source: locales/kek.json
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
@@ -2131,7 +2131,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/ki.json
+    // Source: locales/ki.json
     // ================================================================
     // KI — Kikuyu
     // ================================================================
@@ -2162,7 +2162,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/kk.json
+    // Source: locales/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
@@ -2195,7 +2195,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/kl.json
+    // Source: locales/kl.json
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
@@ -2228,7 +2228,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/km.json
+    // Source: locales/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
@@ -2261,7 +2261,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/kn.json
+    // Source: locales/kn.json
     // ================================================================
     // KN — Kannada
     // ================================================================
@@ -2294,7 +2294,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/ko.json
+    // Source: locales/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
@@ -2327,7 +2327,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ================================================================
     // KPE — Kpelle
     // ================================================================
@@ -2360,7 +2360,7 @@ private object Batch3 {
         )),
     )
 
-    // Source: date/locales/src/kri.json
+    // Source: locales/kri.json
     // ================================================================
     // KRI — Krio
     // ================================================================
@@ -2395,7 +2395,7 @@ private object Batch3 {
 }
 
 private object Batch4 {
-    // Source: date/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ================================================================
     // KTU — Kituba
     // ================================================================
@@ -2428,7 +2428,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/ku.json
+    // Source: locales/ku.json
     // ================================================================
     // KU — Kurdish
     // ================================================================
@@ -2461,7 +2461,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/kw.json
+    // Source: locales/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
@@ -2492,7 +2492,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/ky.json
+    // Source: locales/ky.json
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
@@ -2525,7 +2525,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/lb.json
+    // Source: locales/lb.json
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
@@ -2558,7 +2558,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/lg.json
+    // Source: locales/lg.json
     // ================================================================
     // LG — Luganda
     // ================================================================
@@ -2591,7 +2591,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/ln.json
+    // Source: locales/ln.json
     // ================================================================
     // LN — Lingala
     // ================================================================
@@ -2624,7 +2624,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/lo.json
+    // Source: locales/lo.json
     // ================================================================
     // LO — Lao
     // ================================================================
@@ -2657,7 +2657,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/lt.json
+    // Source: locales/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
@@ -2691,7 +2691,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/luo.json
+    // Source: locales/luo.json
     // ================================================================
     // LUO — Dholuo
     // ================================================================
@@ -2723,7 +2723,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/lv.json
+    // Source: locales/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
@@ -2756,7 +2756,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/mam.json
+    // Source: locales/mam.json
     // ================================================================
     // MAM — Mam
     // ================================================================
@@ -2787,7 +2787,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/men.json
+    // Source: locales/men.json
     // ================================================================
     // MEN — Mende
     // ================================================================
@@ -2820,7 +2820,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
@@ -2853,7 +2853,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/mg.json
+    // Source: locales/mg.json
     // ================================================================
     // MG — Malagasy
     // ================================================================
@@ -2886,7 +2886,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/mi.json
+    // Source: locales/mi.json
     // ================================================================
     // MI — Māori
     // ================================================================
@@ -2919,7 +2919,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/mk.json
+    // Source: locales/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
@@ -2952,7 +2952,7 @@ private object Batch4 {
         )),
     )
 
-    // Source: date/locales/src/ml.json
+    // Source: locales/ml.json
     // ================================================================
     // ML — Malayalam
     // ================================================================
@@ -2987,7 +2987,7 @@ private object Batch4 {
 }
 
 private object Batch5 {
-    // Source: date/locales/src/mn.json
+    // Source: locales/mn.json
     // ================================================================
     // MN — Mongolian
     // ================================================================
@@ -3020,7 +3020,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ================================================================
     // MNK — Mandinka
     // ================================================================
@@ -3053,7 +3053,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/mos.json
+    // Source: locales/mos.json
     // ================================================================
     // MOS — Moore
     // ================================================================
@@ -3086,7 +3086,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/mr.json
+    // Source: locales/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
@@ -3119,7 +3119,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/ms.json
+    // Source: locales/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
@@ -3152,7 +3152,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/mt.json
+    // Source: locales/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
@@ -3185,7 +3185,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/my.json
+    // Source: locales/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
@@ -3218,7 +3218,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/nb.json
+    // Source: locales/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
@@ -3251,7 +3251,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/nd.json
+    // Source: locales/nd.json
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
@@ -3284,7 +3284,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/ne.json
+    // Source: locales/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
@@ -3317,7 +3317,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/ng.json
+    // Source: locales/ng.json
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
@@ -3350,7 +3350,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/nl.json
+    // Source: locales/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
@@ -3383,7 +3383,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/nr.json
+    // Source: locales/nr.json
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
@@ -3414,7 +3414,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/nso.json
+    // Source: locales/nso.json
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
@@ -3447,7 +3447,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/nus.json
+    // Source: locales/nus.json
     // ================================================================
     // NUS — Nuer
     // ================================================================
@@ -3480,7 +3480,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/ny.json
+    // Source: locales/ny.json
     // ================================================================
     // NY — Chichewa
     // ================================================================
@@ -3513,7 +3513,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/om.json
+    // Source: locales/om.json
     // ================================================================
     // OM — Oromo
     // ================================================================
@@ -3546,7 +3546,7 @@ private object Batch5 {
         )),
     )
 
-    // Source: date/locales/src/or.json
+    // Source: locales/or.json
     // ================================================================
     // OR — Odia
     // ================================================================
@@ -3581,7 +3581,7 @@ private object Batch5 {
 }
 
 private object Batch6 {
-    // Source: date/locales/src/pa.json
+    // Source: locales/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
@@ -3614,7 +3614,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/pis.json
+    // Source: locales/pis.json
     // ================================================================
     // PIS — Pijin
     // ================================================================
@@ -3647,7 +3647,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/pl.json
+    // Source: locales/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
@@ -3681,7 +3681,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/pov.json
+    // Source: locales/pov.json
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
@@ -3714,7 +3714,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/ps.json
+    // Source: locales/ps.json
     // ================================================================
     // PS — Pashto
     // ================================================================
@@ -3747,7 +3747,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/pt.json
+    // Source: locales/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================
@@ -3780,7 +3780,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/qu.json
+    // Source: locales/qu.json
     // ================================================================
     // QU — Quechua
     // ================================================================
@@ -3813,7 +3813,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/quc.json
+    // Source: locales/quc.json
     // ================================================================
     // QUC — K'iche'
     // ================================================================
@@ -3846,7 +3846,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/ro.json
+    // Source: locales/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
@@ -3880,7 +3880,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/ru.json
+    // Source: locales/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
@@ -3914,7 +3914,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/rw.json
+    // Source: locales/rw.json
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
@@ -3947,7 +3947,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/sar.json
+    // Source: locales/sar.json
     // ================================================================
     // SAR — Sara
     // ================================================================
@@ -3980,7 +3980,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/sd.json
+    // Source: locales/sd.json
     // ================================================================
     // SD — Sindhi
     // ================================================================
@@ -4013,7 +4013,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/sg.json
+    // Source: locales/sg.json
     // ================================================================
     // SG — Sango
     // ================================================================
@@ -4046,7 +4046,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/shi.json
+    // Source: locales/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
@@ -4077,7 +4077,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/shn.json
+    // Source: locales/shn.json
     // ================================================================
     // SHN — Shan
     // ================================================================
@@ -4110,7 +4110,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/si.json
+    // Source: locales/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
@@ -4143,7 +4143,7 @@ private object Batch6 {
         )),
     )
 
-    // Source: date/locales/src/sk.json
+    // Source: locales/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
@@ -4179,7 +4179,7 @@ private object Batch6 {
 }
 
 private object Batch7 {
-    // Source: date/locales/src/sl.json
+    // Source: locales/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
@@ -4213,7 +4213,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/sn.json
+    // Source: locales/sn.json
     // ================================================================
     // SN — Shona
     // ================================================================
@@ -4246,7 +4246,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/snk.json
+    // Source: locales/snk.json
     // ================================================================
     // SNK — Soninke
     // ================================================================
@@ -4279,7 +4279,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/so.json
+    // Source: locales/so.json
     // ================================================================
     // SO — Somali
     // ================================================================
@@ -4312,7 +4312,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/sq.json
+    // Source: locales/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
@@ -4345,7 +4345,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/sr.json
+    // Source: locales/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
@@ -4378,7 +4378,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/ss.json
+    // Source: locales/ss.json
     // ================================================================
     // SS — siSwati
     // ================================================================
@@ -4411,7 +4411,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/st.json
+    // Source: locales/st.json
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
@@ -4444,7 +4444,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/su.json
+    // Source: locales/su.json
     // ================================================================
     // SU — Sundanese
     // ================================================================
@@ -4477,7 +4477,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/suk.json
+    // Source: locales/suk.json
     // ================================================================
     // SUK — Sukuma
     // ================================================================
@@ -4510,7 +4510,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/sv.json
+    // Source: locales/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
@@ -4543,7 +4543,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/sw.json
+    // Source: locales/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
@@ -4576,7 +4576,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/ta.json
+    // Source: locales/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
@@ -4609,7 +4609,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/te.json
+    // Source: locales/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
@@ -4642,7 +4642,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/tem.json
+    // Source: locales/tem.json
     // ================================================================
     // TEM — Temne
     // ================================================================
@@ -4675,7 +4675,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/tet.json
+    // Source: locales/tet.json
     // ================================================================
     // TET — Tetum
     // ================================================================
@@ -4708,7 +4708,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/tg.json
+    // Source: locales/tg.json
     // ================================================================
     // TG — Tajik
     // ================================================================
@@ -4741,7 +4741,7 @@ private object Batch7 {
         )),
     )
 
-    // Source: date/locales/src/th.json
+    // Source: locales/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
@@ -4776,7 +4776,7 @@ private object Batch7 {
 }
 
 private object Batch8 {
-    // Source: date/locales/src/ti.json
+    // Source: locales/ti.json
     // ================================================================
     // TI — Tigrinya
     // ================================================================
@@ -4809,7 +4809,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/tig.json
+    // Source: locales/tig.json
     // ================================================================
     // TIG — Tigre
     // ================================================================
@@ -4842,7 +4842,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/tk.json
+    // Source: locales/tk.json
     // ================================================================
     // TK — Turkmen
     // ================================================================
@@ -4875,7 +4875,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/tn.json
+    // Source: locales/tn.json
     // ================================================================
     // TN — Tswana
     // ================================================================
@@ -4908,7 +4908,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
@@ -4941,7 +4941,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/tr.json
+    // Source: locales/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
@@ -4974,7 +4974,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/ts.json
+    // Source: locales/ts.json
     // ================================================================
     // TS — Tsonga
     // ================================================================
@@ -5007,7 +5007,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/tum.json
+    // Source: locales/tum.json
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
@@ -5038,7 +5038,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
@@ -5069,7 +5069,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/uk.json
+    // Source: locales/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
@@ -5103,7 +5103,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/umb.json
+    // Source: locales/umb.json
     // ================================================================
     // UMB — Umbundu
     // ================================================================
@@ -5136,7 +5136,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/ur.json
+    // Source: locales/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
@@ -5169,7 +5169,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/uz.json
+    // Source: locales/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
@@ -5202,7 +5202,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/ve.json
+    // Source: locales/ve.json
     // ================================================================
     // VE — Venda
     // ================================================================
@@ -5234,7 +5234,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/vi.json
+    // Source: locales/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
@@ -5267,7 +5267,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
@@ -5300,7 +5300,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/wo.json
+    // Source: locales/wo.json
     // ================================================================
     // WO — Wolof
     // ================================================================
@@ -5333,7 +5333,7 @@ private object Batch8 {
         )),
     )
 
-    // Source: date/locales/src/xh.json
+    // Source: locales/xh.json
     // ================================================================
     // XH — Xhosa
     // ================================================================
@@ -5368,7 +5368,7 @@ private object Batch8 {
 }
 
 private object Batch9 {
-    // Source: date/locales/src/yao.json
+    // Source: locales/yao.json
     // ================================================================
     // YAO — Yao
     // ================================================================
@@ -5399,7 +5399,7 @@ private object Batch9 {
         )),
     )
 
-    // Source: date/locales/src/yo.json
+    // Source: locales/yo.json
     // ================================================================
     // YO — Yoruba
     // ================================================================
@@ -5432,7 +5432,7 @@ private object Batch9 {
         )),
     )
 
-    // Source: date/locales/src/yue.json
+    // Source: locales/yue.json
     // ================================================================
     // YUE — Cantonese
     // ================================================================
@@ -5465,7 +5465,7 @@ private object Batch9 {
         )),
     )
 
-    // Source: date/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
@@ -5498,7 +5498,7 @@ private object Batch9 {
         )),
     )
 
-    // Source: date/locales/src/zh.json
+    // Source: locales/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================
@@ -5531,7 +5531,7 @@ private object Batch9 {
         )),
     )
 
-    // Source: date/locales/src/zu.json
+    // Source: locales/zu.json
     // ================================================================
     // ZU — Zulu
     // ================================================================

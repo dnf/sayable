@@ -1,0 +1,300 @@
+{
+  "code": "he",
+  "name": "Hebrew",
+  "pluralRule": "he",
+  "age": {
+    "units": {
+      "day": {
+        "one": "יום {n}",
+        "two": "יומיים",
+        "other": "{n} ימים"
+      },
+      "week": {
+        "one": "שבוע {n}",
+        "two": "שבועיים",
+        "other": "{n} שבועות"
+      },
+      "month": {
+        "one": "חודש {n}",
+        "two": "חודשיים",
+        "other": "{n} חודשים"
+      },
+      "year": {
+        "one": "שנה",
+        "two": "שנתיים",
+        "other": "{n} שנים"
+      }
+    },
+    "half": "{0} וחצי",
+    "delimiter": ", ",
+    "justBorn": "רק נולד",
+    "stages": {
+      "newborn": {
+        "m": "רק נולד",
+        "f": "רק נולדה"
+      },
+      "infant": "תינוק",
+      "toddler": "פעוט",
+      "child": {
+        "m": "ילד",
+        "f": "ילדה"
+      },
+      "teenager": {
+        "m": "נער",
+        "f": "נערה"
+      },
+      "adult": {
+        "m": "מבוגר",
+        "f": "מבוגרת"
+      }
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} יום",
+          "two": "יומיים",
+          "other": "{n} ימ׳"
+        },
+        "week": {
+          "one": "{n} שבוע",
+          "two": "שבועיים",
+          "other": "{n} שבועות"
+        },
+        "month": "{n} ח׳",
+        "year": {
+          "one": "{n} שנה",
+          "two": "{n} שנים",
+          "other": "{n} שנים"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} י׳",
+        "week": "{n} ש′",
+        "month": "{n} ח׳",
+        "year": "{n} ש′"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ינואר",
+      "פברואר",
+      "מרץ",
+      "אפריל",
+      "מאי",
+      "יוני",
+      "יולי",
+      "אוגוסט",
+      "ספטמבר",
+      "אוקטובר",
+      "נובמבר",
+      "דצמבר"
+    ],
+    "weekdays": [
+      "יום ראשון",
+      "יום שני",
+      "יום שלישי",
+      "יום רביעי",
+      "יום חמישי",
+      "יום שישי",
+      "שבת"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "היום",
+    "tomorrow": "מחר",
+    "yesterday": "אתמול",
+    "dayAfterTomorrow": "מחרתיים",
+    "dayBeforeYesterday": "שלשום",
+    "thisWeekday": "{weekday} הזה",
+    "nextWeekday": "{weekday} הבא",
+    "lastWeekday": "{weekday} שעבר",
+    "short": {
+      "months": [
+        "ינו׳",
+        "פבר׳",
+        "מרץ",
+        "אפר׳",
+        "מאי",
+        "יוני",
+        "יולי",
+        "אוג׳",
+        "ספט׳",
+        "אוק׳",
+        "נוב׳",
+        "דצמ׳"
+      ],
+      "weekdays": [
+        "א׳",
+        "ב׳",
+        "ג׳",
+        "ד׳",
+        "ה׳",
+        "ו׳",
+        "ש׳"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "שנייה {n}",
+        "two": "שתי שניות",
+        "other": "{n} שניות"
+      },
+      "minute": {
+        "one": "דקה {n}",
+        "two": "שתי דקות",
+        "other": "{n} דקות"
+      },
+      "hour": {
+        "one": "שעה {n}",
+        "two": "שעתיים",
+        "other": "{n} שעות"
+      },
+      "day": {
+        "one": "יום {n}",
+        "two": "יומיים",
+        "other": "{n} ימים"
+      },
+      "week": {
+        "one": "שבוע {n}",
+        "two": "שבועיים",
+        "other": "{n} שבועות"
+      },
+      "month": {
+        "one": "חודש {n}",
+        "two": "חודשיים",
+        "other": "{n} חודשים"
+      },
+      "year": {
+        "one": "שנה",
+        "two": "שנתיים",
+        "other": "{n} שנים"
+      }
+    },
+    "half": "{0} וחצי",
+    "delimiter": ", ",
+    "justNow": "הרגע",
+    "ago": "לפני {0}",
+    "inFuture": "בעוד {0}",
+    "short": {
+      "units": {
+        "second": "{n} שנ׳",
+        "minute": "{n} דק׳",
+        "hour": {
+          "one": "{n} שעה",
+          "two": "שעתיים",
+          "other": "{n} שע׳"
+        },
+        "day": {
+          "one": "{n} יום",
+          "two": "יומיים",
+          "other": "{n} ימ׳"
+        },
+        "week": {
+          "one": "{n} שבוע",
+          "two": "שבועיים",
+          "other": "{n} שבועות"
+        },
+        "month": "{n} ח׳",
+        "year": {
+          "one": "{n} שנה",
+          "two": "{n} שנים",
+          "other": "{n} שנים"
+        }
+      },
+      "ago": "לפני {0}",
+      "inFuture": "בעוד {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} שנ׳",
+        "minute": "{n} דק׳",
+        "hour": "{n} שע׳",
+        "day": "{n} י׳",
+        "week": "{n} ש′",
+        "month": "{n} ח׳",
+        "year": "{n} ש′"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "לפני {0}",
+      "inFuture": "בעוד {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "שתים עשרה",
+        "אחת",
+        "שתיים",
+        "שלוש",
+        "ארבע",
+        "חמש",
+        "שש",
+        "שבע",
+        "שמונה",
+        "תשע",
+        "עשר",
+        "אחת עשרה"
+      ],
+      "midnight": "חצות",
+      "noon": "צהריים",
+      "patterns": {
+        "0": "השעה {h}",
+        "5": "{h} וחמש",
+        "10": "{h} ועשר",
+        "15": "{h} ורבע",
+        "20": "{h} ועשרים",
+        "25": "{h} ועשרים וחמש",
+        "30": "{h} וחצי",
+        "35": "עשרים וחמש ל{next_h}",
+        "40": "עשרים ל{next_h}",
+        "45": "רבע ל{next_h}",
+        "50": "עשר ל{next_h}",
+        "55": "חמש ל{next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

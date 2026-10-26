@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ig.json
+# Source: locales/ig.json
 
 _sayabledate_locale_ig() {
     _months=('Jenụwarị' 'Febrụwarị' 'Maachị' 'Epreel' 'Mee' 'Juun' 'Julaị' 'Ọgọọst' 'Septemba' 'Ọktoba' 'Novemba' 'Disemba')

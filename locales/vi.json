@@ -1,0 +1,208 @@
+{
+  "code": "vi",
+  "name": "Vietnamese",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} ngày",
+      "week": "{n} tuần",
+      "month": "{n} tháng",
+      "year": "{n} tuổi"
+    },
+    "half": "{0} rưỡi",
+    "delimiter": ", ",
+    "justBorn": "Sơ sinh",
+    "stages": {
+      "newborn": "Sơ sinh",
+      "infant": "Trẻ sơ sinh",
+      "toddler": "Trẻ mới biết đi",
+      "child": "Trẻ em",
+      "teenager": "Thiếu niên",
+      "adult": "Người lớn"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ngày",
+        "week": "{n} tuần",
+        "month": "{n} tháng",
+        "year": "{n} năm"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ngày",
+        "week": "{n} tuần",
+        "month": "{n} tháng",
+        "year": "{n} năm"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "tháng 1",
+      "tháng 2",
+      "tháng 3",
+      "tháng 4",
+      "tháng 5",
+      "tháng 6",
+      "tháng 7",
+      "tháng 8",
+      "tháng 9",
+      "tháng 10",
+      "tháng 11",
+      "tháng 12"
+    ],
+    "weekdays": [
+      "Chủ Nhật",
+      "Thứ Hai",
+      "Thứ Ba",
+      "Thứ Tư",
+      "Thứ Năm",
+      "Thứ Sáu",
+      "Thứ Bảy"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "hôm nay",
+    "tomorrow": "ngày mai",
+    "yesterday": "hôm qua",
+    "dayAfterTomorrow": "ngày kia",
+    "dayBeforeYesterday": "hôm kia",
+    "thisWeekday": "{weekday} này",
+    "nextWeekday": "{weekday} tới",
+    "lastWeekday": "{weekday} trước",
+    "short": {
+      "months": [
+        "Th1",
+        "Th2",
+        "Th3",
+        "Th4",
+        "Th5",
+        "Th6",
+        "Th7",
+        "Th8",
+        "Th9",
+        "Th10",
+        "Th11",
+        "Th12"
+      ],
+      "weekdays": [
+        "CN",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} giây",
+      "minute": "{n} phút",
+      "hour": "{n} giờ",
+      "day": "{n} ngày",
+      "week": "{n} tuần",
+      "month": "{n} tháng",
+      "year": "{n} tuổi"
+    },
+    "half": "{0} rưỡi",
+    "delimiter": ", ",
+    "justNow": "vừa xong",
+    "ago": "{0} trước",
+    "inFuture": "trong {0}",
+    "short": {
+      "units": {
+        "second": "{n} giây",
+        "minute": "{n} phút",
+        "hour": "{n} giờ",
+        "day": "{n} ngày",
+        "week": "{n} tuần",
+        "month": "{n} tháng",
+        "year": "{n} năm"
+      },
+      "ago": "{0} trước",
+      "inFuture": "trong {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} giây",
+        "minute": "{n} phút",
+        "hour": "{n} giờ",
+        "day": "{n} ngày",
+        "week": "{n} tuần",
+        "month": "{n} tháng",
+        "year": "{n} năm"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} trước",
+      "inFuture": "trong {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "mười hai",
+        "một",
+        "hai",
+        "ba",
+        "bốn",
+        "năm",
+        "sáu",
+        "bảy",
+        "tám",
+        "chín",
+        "mười",
+        "mười một"
+      ],
+      "midnight": "nửa đêm",
+      "noon": "trưa",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "năm qua {h}",
+        "10": "mười qua {h}",
+        "15": "mười lăm qua {h}",
+        "20": "hai mươi qua {h}",
+        "25": "hai mươi lăm qua {h}",
+        "30": "ba mươi qua {h}",
+        "35": "hai mươi lăm trước {next_h}",
+        "40": "hai mươi trước {next_h}",
+        "45": "mười lăm trước {next_h}",
+        "50": "mười trước {next_h}",
+        "55": "năm trước {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

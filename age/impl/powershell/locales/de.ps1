@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/de.json
+# Source: locales/de.json
 
 function plural_de([int]$n) {
     if ($n -eq 1) { return 'one' }

@@ -188,7 +188,7 @@ function GetLocaleByCode(const ACode: string): TAgeLocalePtr;
 
 implementation
 
-{ Source: age/locales/src/af.json }
+{ Source: locales/af.json }
 function Plural_af(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -197,7 +197,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ak.json }
+{ Source: locales/ak.json }
 function Plural_ak(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -206,7 +206,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/am.json }
+{ Source: locales/am.json }
 function Plural_am(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -215,7 +215,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ar.json }
+{ Source: locales/ar.json }
 function Plural_ar(n: Integer): TPluralCategory;
 var
   mod100: Integer;
@@ -237,13 +237,13 @@ begin
   end;
 end;
 
-{ Source: age/locales/src/ay.json }
+{ Source: locales/ay.json }
 function Plural_ay(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/az.json }
+{ Source: locales/az.json }
 function Plural_az(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -252,13 +252,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/bci.json }
+{ Source: locales/bci.json }
 function Plural_bci(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/be.json }
+{ Source: locales/be.json }
 function Plural_be(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -273,7 +273,7 @@ begin
     Result := pcMany;
 end;
 
-{ Source: age/locales/src/bem.json }
+{ Source: locales/bem.json }
 function Plural_bem(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -282,7 +282,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/bg.json }
+{ Source: locales/bg.json }
 function Plural_bg(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -291,19 +291,19 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/bi.json }
+{ Source: locales/bi.json }
 function Plural_bi(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/bm.json }
+{ Source: locales/bm.json }
 function Plural_bm(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/bn.json }
+{ Source: locales/bn.json }
 function Plural_bn(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -312,7 +312,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/br.json }
+{ Source: locales/br.json }
 function Plural_br(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -331,7 +331,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/bs.json }
+{ Source: locales/bs.json }
 function Plural_bs(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -346,7 +346,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ca.json }
+{ Source: locales/ca.json }
 function Plural_ca(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -355,13 +355,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/cak.json }
+{ Source: locales/cak.json }
 function Plural_cak(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ceb.json }
+{ Source: locales/ceb.json }
 function Plural_ceb(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -370,7 +370,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/cs.json }
+{ Source: locales/cs.json }
 function Plural_cs(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -381,7 +381,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/cy.json }
+{ Source: locales/cy.json }
 function Plural_cy(n: Integer): TPluralCategory;
 begin
   if n = 0 then
@@ -398,7 +398,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/da.json }
+{ Source: locales/da.json }
 function Plural_da(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -407,7 +407,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/de.json }
+{ Source: locales/de.json }
 function Plural_de(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -416,7 +416,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/din.json }
+{ Source: locales/din.json }
 function Plural_din(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -425,31 +425,31 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/dje.json }
+{ Source: locales/dje.json }
 function Plural_dje(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/dv.json }
+{ Source: locales/dv.json }
 function Plural_dv(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/dyu.json }
+{ Source: locales/dyu.json }
 function Plural_dyu(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/dz.json }
+{ Source: locales/dz.json }
 function Plural_dz(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ee.json }
+{ Source: locales/ee.json }
 function Plural_ee(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -458,7 +458,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/el.json }
+{ Source: locales/el.json }
 function Plural_el(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -467,7 +467,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/en.json }
+{ Source: locales/en.json }
 function Plural_en(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -476,7 +476,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/es.json }
+{ Source: locales/es.json }
 function Plural_es(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -485,7 +485,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/et.json }
+{ Source: locales/et.json }
 function Plural_et(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -494,13 +494,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/eu.json }
+{ Source: locales/eu.json }
 function Plural_eu(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/fa.json }
+{ Source: locales/fa.json }
 function Plural_fa(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -509,7 +509,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/fan.json }
+{ Source: locales/fan.json }
 function Plural_fan(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -518,7 +518,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ff.json }
+{ Source: locales/ff.json }
 function Plural_ff(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -527,7 +527,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/fi.json }
+{ Source: locales/fi.json }
 function Plural_fi(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -536,25 +536,25 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/fil.json }
+{ Source: locales/fil.json }
 function Plural_fil(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/fj.json }
+{ Source: locales/fj.json }
 function Plural_fj(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/fon.json }
+{ Source: locales/fon.json }
 function Plural_fon(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/fr.json }
+{ Source: locales/fr.json }
 function Plural_fr(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -563,7 +563,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ga.json }
+{ Source: locales/ga.json }
 function Plural_ga(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -578,7 +578,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/gd.json }
+{ Source: locales/gd.json }
 function Plural_gd(n: Integer): TPluralCategory;
 begin
   if (n = 1) or (n = 11) then
@@ -591,7 +591,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/gl.json }
+{ Source: locales/gl.json }
 function Plural_gl(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -600,7 +600,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/gn.json }
+{ Source: locales/gn.json }
 function Plural_gn(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -609,7 +609,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/gu.json }
+{ Source: locales/gu.json }
 function Plural_gu(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -618,7 +618,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/gv.json }
+{ Source: locales/gv.json }
 function Plural_gv(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -635,7 +635,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ha.json }
+{ Source: locales/ha.json }
 function Plural_ha(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -644,7 +644,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/he.json }
+{ Source: locales/he.json }
 function Plural_he(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -655,7 +655,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/hi.json }
+{ Source: locales/hi.json }
 function Plural_hi(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -664,13 +664,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/hmn.json }
+{ Source: locales/hmn.json }
 function Plural_hmn(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/hr.json }
+{ Source: locales/hr.json }
 function Plural_hr(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -685,7 +685,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ht.json }
+{ Source: locales/ht.json }
 function Plural_ht(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -694,13 +694,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/hu.json }
+{ Source: locales/hu.json }
 function Plural_hu(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/hy.json }
+{ Source: locales/hy.json }
 function Plural_hy(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -709,19 +709,19 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/id.json }
+{ Source: locales/id.json }
 function Plural_id(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ig.json }
+{ Source: locales/ig.json }
 function Plural_ig(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/is.json }
+{ Source: locales/is.json }
 function Plural_is(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -734,7 +734,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/it.json }
+{ Source: locales/it.json }
 function Plural_it(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -743,19 +743,19 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ja.json }
+{ Source: locales/ja.json }
 function Plural_ja(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/jv.json }
+{ Source: locales/jv.json }
 function Plural_jv(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ka.json }
+{ Source: locales/ka.json }
 function Plural_ka(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -764,19 +764,19 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/kbp.json }
+{ Source: locales/kbp.json }
 function Plural_kbp(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/kek.json }
+{ Source: locales/kek.json }
 function Plural_kek(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ki.json }
+{ Source: locales/ki.json }
 function Plural_ki(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -785,7 +785,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/kk.json }
+{ Source: locales/kk.json }
 function Plural_kk(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -794,19 +794,19 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/kl.json }
+{ Source: locales/kl.json }
 function Plural_kl(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/km.json }
+{ Source: locales/km.json }
 function Plural_km(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/kn.json }
+{ Source: locales/kn.json }
 function Plural_kn(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -815,25 +815,25 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ko.json }
+{ Source: locales/ko.json }
 function Plural_ko(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/kpe.json }
+{ Source: locales/kpe.json }
 function Plural_kpe(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/kri.json }
+{ Source: locales/kri.json }
 function Plural_kri(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ktu.json }
+{ Source: locales/ktu.json }
 function Plural_ktu(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -842,7 +842,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ku.json }
+{ Source: locales/ku.json }
 function Plural_ku(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -851,7 +851,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/kw.json }
+{ Source: locales/kw.json }
 function Plural_kw(n: Integer): TPluralCategory;
 var
   mod100: Integer;
@@ -873,7 +873,7 @@ begin
   end;
 end;
 
-{ Source: age/locales/src/ky.json }
+{ Source: locales/ky.json }
 function Plural_ky(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -882,7 +882,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/lb.json }
+{ Source: locales/lb.json }
 function Plural_lb(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -891,7 +891,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/lg.json }
+{ Source: locales/lg.json }
 function Plural_lg(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -900,7 +900,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ln.json }
+{ Source: locales/ln.json }
 function Plural_ln(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -909,13 +909,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/lo.json }
+{ Source: locales/lo.json }
 function Plural_lo(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/lt.json }
+{ Source: locales/lt.json }
 function Plural_lt(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -930,7 +930,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/luo.json }
+{ Source: locales/luo.json }
 function Plural_luo(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -939,7 +939,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/lv.json }
+{ Source: locales/lv.json }
 function Plural_lv(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -954,13 +954,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/mam.json }
+{ Source: locales/mam.json }
 function Plural_mam(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/men.json }
+{ Source: locales/men.json }
 function Plural_men(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -969,13 +969,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/mfe.json }
+{ Source: locales/mfe.json }
 function Plural_mfe(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/mg.json }
+{ Source: locales/mg.json }
 function Plural_mg(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -984,7 +984,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/mi.json }
+{ Source: locales/mi.json }
 function Plural_mi(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -993,7 +993,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/mk.json }
+{ Source: locales/mk.json }
 function Plural_mk(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -1006,7 +1006,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ml.json }
+{ Source: locales/ml.json }
 function Plural_ml(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -1015,7 +1015,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/mn.json }
+{ Source: locales/mn.json }
 function Plural_mn(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1024,19 +1024,19 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/mnk.json }
+{ Source: locales/mnk.json }
 function Plural_mnk(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/mos.json }
+{ Source: locales/mos.json }
 function Plural_mos(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/mr.json }
+{ Source: locales/mr.json }
 function Plural_mr(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1045,13 +1045,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ms.json }
+{ Source: locales/ms.json }
 function Plural_ms(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/mt.json }
+{ Source: locales/mt.json }
 function Plural_mt(n: Integer): TPluralCategory;
 var
   mod100: Integer;
@@ -1071,13 +1071,13 @@ begin
   end;
 end;
 
-{ Source: age/locales/src/my.json }
+{ Source: locales/my.json }
 function Plural_my(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/nb.json }
+{ Source: locales/nb.json }
 function Plural_nb(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1086,7 +1086,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/nd.json }
+{ Source: locales/nd.json }
 function Plural_nd(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1095,7 +1095,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ne.json }
+{ Source: locales/ne.json }
 function Plural_ne(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1104,7 +1104,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ng.json }
+{ Source: locales/ng.json }
 function Plural_ng(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1113,7 +1113,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/nl.json }
+{ Source: locales/nl.json }
 function Plural_nl(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1122,7 +1122,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/nr.json }
+{ Source: locales/nr.json }
 function Plural_nr(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1131,7 +1131,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/nso.json }
+{ Source: locales/nso.json }
 function Plural_nso(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1140,7 +1140,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/nus.json }
+{ Source: locales/nus.json }
 function Plural_nus(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1149,7 +1149,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ny.json }
+{ Source: locales/ny.json }
 function Plural_ny(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1158,7 +1158,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/om.json }
+{ Source: locales/om.json }
 function Plural_om(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1167,7 +1167,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/or.json }
+{ Source: locales/or.json }
 function Plural_or(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1176,7 +1176,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/pa.json }
+{ Source: locales/pa.json }
 function Plural_pa(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -1185,13 +1185,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/pis.json }
+{ Source: locales/pis.json }
 function Plural_pis(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/pl.json }
+{ Source: locales/pl.json }
 function Plural_pl(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -1208,13 +1208,13 @@ begin
   end;
 end;
 
-{ Source: age/locales/src/pov.json }
+{ Source: locales/pov.json }
 function Plural_pov(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ps.json }
+{ Source: locales/ps.json }
 function Plural_ps(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1223,7 +1223,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/pt.json }
+{ Source: locales/pt.json }
 function Plural_pt(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -1232,19 +1232,19 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/qu.json }
+{ Source: locales/qu.json }
 function Plural_qu(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/quc.json }
+{ Source: locales/quc.json }
 function Plural_quc(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ro.json }
+{ Source: locales/ro.json }
 function Plural_ro(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1255,7 +1255,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ru.json }
+{ Source: locales/ru.json }
 function Plural_ru(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -1270,7 +1270,7 @@ begin
     Result := pcMany;
 end;
 
-{ Source: age/locales/src/rw.json }
+{ Source: locales/rw.json }
 function Plural_rw(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1279,13 +1279,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sar.json }
+{ Source: locales/sar.json }
 function Plural_sar(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/sd.json }
+{ Source: locales/sd.json }
 function Plural_sd(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1294,13 +1294,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sg.json }
+{ Source: locales/sg.json }
 function Plural_sg(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/shi.json }
+{ Source: locales/shi.json }
 function Plural_shi(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -1311,13 +1311,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/shn.json }
+{ Source: locales/shn.json }
 function Plural_shn(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/si.json }
+{ Source: locales/si.json }
 function Plural_si(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -1326,7 +1326,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sk.json }
+{ Source: locales/sk.json }
 function Plural_sk(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1337,7 +1337,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sl.json }
+{ Source: locales/sl.json }
 function Plural_sl(n: Integer): TPluralCategory;
 var
   mod100: Integer;
@@ -1353,7 +1353,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sn.json }
+{ Source: locales/sn.json }
 function Plural_sn(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1362,13 +1362,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/snk.json }
+{ Source: locales/snk.json }
 function Plural_snk(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/so.json }
+{ Source: locales/so.json }
 function Plural_so(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1377,7 +1377,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sq.json }
+{ Source: locales/sq.json }
 function Plural_sq(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1386,7 +1386,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sr.json }
+{ Source: locales/sr.json }
 function Plural_sr(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -1401,7 +1401,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ss.json }
+{ Source: locales/ss.json }
 function Plural_ss(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1410,7 +1410,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/st.json }
+{ Source: locales/st.json }
 function Plural_st(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1419,13 +1419,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/su.json }
+{ Source: locales/su.json }
 function Plural_su(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/suk.json }
+{ Source: locales/suk.json }
 function Plural_suk(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1434,7 +1434,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sv.json }
+{ Source: locales/sv.json }
 function Plural_sv(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1443,7 +1443,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/sw.json }
+{ Source: locales/sw.json }
 function Plural_sw(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1452,7 +1452,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ta.json }
+{ Source: locales/ta.json }
 function Plural_ta(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1461,7 +1461,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/te.json }
+{ Source: locales/te.json }
 function Plural_te(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1470,7 +1470,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tem.json }
+{ Source: locales/tem.json }
 function Plural_tem(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1479,25 +1479,25 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tet.json }
+{ Source: locales/tet.json }
 function Plural_tet(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/tg.json }
+{ Source: locales/tg.json }
 function Plural_tg(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/th.json }
+{ Source: locales/th.json }
 function Plural_th(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/ti.json }
+{ Source: locales/ti.json }
 function Plural_ti(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -1506,7 +1506,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tig.json }
+{ Source: locales/tig.json }
 function Plural_tig(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1515,7 +1515,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tk.json }
+{ Source: locales/tk.json }
 function Plural_tk(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1524,7 +1524,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tn.json }
+{ Source: locales/tn.json }
 function Plural_tn(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1533,13 +1533,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tpi.json }
+{ Source: locales/tpi.json }
 function Plural_tpi(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/tr.json }
+{ Source: locales/tr.json }
 function Plural_tr(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1548,7 +1548,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ts.json }
+{ Source: locales/ts.json }
 function Plural_ts(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1557,7 +1557,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tum.json }
+{ Source: locales/tum.json }
 function Plural_tum(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1566,7 +1566,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/tzm.json }
+{ Source: locales/tzm.json }
 function Plural_tzm(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) or ((n >= 11) and (n <= 99)) then
@@ -1575,7 +1575,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/uk.json }
+{ Source: locales/uk.json }
 function Plural_uk(n: Integer): TPluralCategory;
 var
   mod10, mod100: Integer;
@@ -1590,7 +1590,7 @@ begin
     Result := pcMany;
 end;
 
-{ Source: age/locales/src/umb.json }
+{ Source: locales/umb.json }
 function Plural_umb(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1599,7 +1599,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ur.json }
+{ Source: locales/ur.json }
 function Plural_ur(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1608,7 +1608,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/uz.json }
+{ Source: locales/uz.json }
 function Plural_uz(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1617,7 +1617,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/ve.json }
+{ Source: locales/ve.json }
 function Plural_ve(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1626,13 +1626,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/vi.json }
+{ Source: locales/vi.json }
 function Plural_vi(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/vmw.json }
+{ Source: locales/vmw.json }
 function Plural_vmw(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1641,13 +1641,13 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/wo.json }
+{ Source: locales/wo.json }
 function Plural_wo(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/xh.json }
+{ Source: locales/xh.json }
 function Plural_xh(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1656,7 +1656,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/yao.json }
+{ Source: locales/yao.json }
 function Plural_yao(n: Integer): TPluralCategory;
 begin
   if n = 1 then
@@ -1665,31 +1665,31 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/yo.json }
+{ Source: locales/yo.json }
 function Plural_yo(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/yue.json }
+{ Source: locales/yue.json }
 function Plural_yue(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/zdj.json }
+{ Source: locales/zdj.json }
 function Plural_zdj(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/zh.json }
+{ Source: locales/zh.json }
 function Plural_zh(n: Integer): TPluralCategory;
 begin
   Result := pcOther;
 end;
 
-{ Source: age/locales/src/zu.json }
+{ Source: locales/zu.json }
 function Plural_zu(n: Integer): TPluralCategory;
 begin
   if (n = 0) or (n = 1) then
@@ -1698,7 +1698,7 @@ begin
     Result := pcOther;
 end;
 
-{ Source: age/locales/src/af.json }
+{ Source: locales/af.json }
 { Afrikaans locale. }
 procedure GetLocale_af(out ALoc: TAgeLocale);
 begin
@@ -1845,7 +1845,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ak.json }
+{ Source: locales/ak.json }
 { Akan locale. }
 procedure GetLocale_ak(out ALoc: TAgeLocale);
 begin
@@ -1992,7 +1992,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/am.json }
+{ Source: locales/am.json }
 { Amharic locale. }
 procedure GetLocale_am(out ALoc: TAgeLocale);
 begin
@@ -2139,7 +2139,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ar.json }
+{ Source: locales/ar.json }
 { Arabic locale. }
 procedure GetLocale_ar(out ALoc: TAgeLocale);
 begin
@@ -2286,7 +2286,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ay.json }
+{ Source: locales/ay.json }
 { Aymara locale. }
 procedure GetLocale_ay(out ALoc: TAgeLocale);
 begin
@@ -2433,7 +2433,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/az.json }
+{ Source: locales/az.json }
 { Azerbaijani locale. }
 procedure GetLocale_az(out ALoc: TAgeLocale);
 begin
@@ -2580,7 +2580,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/bci.json }
+{ Source: locales/bci.json }
 { Baoulé locale. }
 procedure GetLocale_bci(out ALoc: TAgeLocale);
 begin
@@ -2727,7 +2727,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/be.json }
+{ Source: locales/be.json }
 { Belarusian locale. }
 procedure GetLocale_be(out ALoc: TAgeLocale);
 begin
@@ -2874,7 +2874,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/bem.json }
+{ Source: locales/bem.json }
 { Bemba locale. }
 procedure GetLocale_bem(out ALoc: TAgeLocale);
 begin
@@ -3021,7 +3021,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/bg.json }
+{ Source: locales/bg.json }
 { Bulgarian locale. }
 procedure GetLocale_bg(out ALoc: TAgeLocale);
 begin
@@ -3168,7 +3168,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/bi.json }
+{ Source: locales/bi.json }
 { Bislama locale. }
 procedure GetLocale_bi(out ALoc: TAgeLocale);
 begin
@@ -3315,7 +3315,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/bm.json }
+{ Source: locales/bm.json }
 { Bambara locale. }
 procedure GetLocale_bm(out ALoc: TAgeLocale);
 begin
@@ -3462,7 +3462,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/bn.json }
+{ Source: locales/bn.json }
 { Bengali locale. }
 procedure GetLocale_bn(out ALoc: TAgeLocale);
 begin
@@ -3609,7 +3609,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/br.json }
+{ Source: locales/br.json }
 { Breton locale. }
 procedure GetLocale_br(out ALoc: TAgeLocale);
 begin
@@ -3756,7 +3756,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/bs.json }
+{ Source: locales/bs.json }
 { Bosnian locale. }
 procedure GetLocale_bs(out ALoc: TAgeLocale);
 begin
@@ -3903,7 +3903,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ca.json }
+{ Source: locales/ca.json }
 { Catalan locale. }
 procedure GetLocale_ca(out ALoc: TAgeLocale);
 begin
@@ -4050,7 +4050,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/cak.json }
+{ Source: locales/cak.json }
 { Kaqchikel locale. }
 procedure GetLocale_cak(out ALoc: TAgeLocale);
 begin
@@ -4197,7 +4197,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ceb.json }
+{ Source: locales/ceb.json }
 { Cebuano locale. }
 procedure GetLocale_ceb(out ALoc: TAgeLocale);
 begin
@@ -4344,7 +4344,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/cs.json }
+{ Source: locales/cs.json }
 { Czech locale. }
 procedure GetLocale_cs(out ALoc: TAgeLocale);
 begin
@@ -4491,7 +4491,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/cy.json }
+{ Source: locales/cy.json }
 { Welsh locale. }
 procedure GetLocale_cy(out ALoc: TAgeLocale);
 begin
@@ -4638,7 +4638,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/da.json }
+{ Source: locales/da.json }
 { Danish locale. }
 procedure GetLocale_da(out ALoc: TAgeLocale);
 begin
@@ -4785,7 +4785,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/de.json }
+{ Source: locales/de.json }
 { German locale. }
 procedure GetLocale_de(out ALoc: TAgeLocale);
 begin
@@ -4932,7 +4932,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/din.json }
+{ Source: locales/din.json }
 { Dinka locale. }
 procedure GetLocale_din(out ALoc: TAgeLocale);
 begin
@@ -5079,7 +5079,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/dje.json }
+{ Source: locales/dje.json }
 { Zarma locale. }
 procedure GetLocale_dje(out ALoc: TAgeLocale);
 begin
@@ -5226,7 +5226,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/dv.json }
+{ Source: locales/dv.json }
 { Dhivehi locale. }
 procedure GetLocale_dv(out ALoc: TAgeLocale);
 begin
@@ -5373,7 +5373,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/dyu.json }
+{ Source: locales/dyu.json }
 { Dyula locale. }
 procedure GetLocale_dyu(out ALoc: TAgeLocale);
 begin
@@ -5520,7 +5520,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/dz.json }
+{ Source: locales/dz.json }
 { Dzongkha locale. }
 procedure GetLocale_dz(out ALoc: TAgeLocale);
 begin
@@ -5667,7 +5667,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ee.json }
+{ Source: locales/ee.json }
 { Ewe locale. }
 procedure GetLocale_ee(out ALoc: TAgeLocale);
 begin
@@ -5814,7 +5814,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/el.json }
+{ Source: locales/el.json }
 { Greek locale. }
 procedure GetLocale_el(out ALoc: TAgeLocale);
 begin
@@ -5961,7 +5961,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/en.json }
+{ Source: locales/en.json }
 { English locale. }
 procedure GetLocale_en(out ALoc: TAgeLocale);
 begin
@@ -6108,7 +6108,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/es.json }
+{ Source: locales/es.json }
 { Spanish locale. }
 procedure GetLocale_es(out ALoc: TAgeLocale);
 begin
@@ -6255,7 +6255,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/et.json }
+{ Source: locales/et.json }
 { Estonian locale. }
 procedure GetLocale_et(out ALoc: TAgeLocale);
 begin
@@ -6402,7 +6402,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/eu.json }
+{ Source: locales/eu.json }
 { Basque locale. }
 procedure GetLocale_eu(out ALoc: TAgeLocale);
 begin
@@ -6549,7 +6549,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/fa.json }
+{ Source: locales/fa.json }
 { Persian locale. }
 procedure GetLocale_fa(out ALoc: TAgeLocale);
 begin
@@ -6696,7 +6696,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/fan.json }
+{ Source: locales/fan.json }
 { Fang locale. }
 procedure GetLocale_fan(out ALoc: TAgeLocale);
 begin
@@ -6843,7 +6843,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ff.json }
+{ Source: locales/ff.json }
 { Fulah locale. }
 procedure GetLocale_ff(out ALoc: TAgeLocale);
 begin
@@ -6990,7 +6990,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/fi.json }
+{ Source: locales/fi.json }
 { Finnish locale. }
 procedure GetLocale_fi(out ALoc: TAgeLocale);
 begin
@@ -7137,7 +7137,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/fil.json }
+{ Source: locales/fil.json }
 { Filipino locale. }
 procedure GetLocale_fil(out ALoc: TAgeLocale);
 begin
@@ -7284,7 +7284,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/fj.json }
+{ Source: locales/fj.json }
 { Fijian locale. }
 procedure GetLocale_fj(out ALoc: TAgeLocale);
 begin
@@ -7431,7 +7431,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/fon.json }
+{ Source: locales/fon.json }
 { Fon locale. }
 procedure GetLocale_fon(out ALoc: TAgeLocale);
 begin
@@ -7578,7 +7578,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/fr.json }
+{ Source: locales/fr.json }
 { French locale. }
 procedure GetLocale_fr(out ALoc: TAgeLocale);
 begin
@@ -7725,7 +7725,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ga.json }
+{ Source: locales/ga.json }
 { Irish locale. }
 procedure GetLocale_ga(out ALoc: TAgeLocale);
 begin
@@ -7872,7 +7872,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/gd.json }
+{ Source: locales/gd.json }
 { Scottish Gaelic locale. }
 procedure GetLocale_gd(out ALoc: TAgeLocale);
 begin
@@ -8019,7 +8019,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/gl.json }
+{ Source: locales/gl.json }
 { Galician locale. }
 procedure GetLocale_gl(out ALoc: TAgeLocale);
 begin
@@ -8166,7 +8166,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/gn.json }
+{ Source: locales/gn.json }
 { Guarani locale. }
 procedure GetLocale_gn(out ALoc: TAgeLocale);
 begin
@@ -8313,7 +8313,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/gu.json }
+{ Source: locales/gu.json }
 { Gujarati locale. }
 procedure GetLocale_gu(out ALoc: TAgeLocale);
 begin
@@ -8460,7 +8460,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/gv.json }
+{ Source: locales/gv.json }
 { Manx locale. }
 procedure GetLocale_gv(out ALoc: TAgeLocale);
 begin
@@ -8607,7 +8607,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ha.json }
+{ Source: locales/ha.json }
 { Hausa locale. }
 procedure GetLocale_ha(out ALoc: TAgeLocale);
 begin
@@ -8754,7 +8754,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/he.json }
+{ Source: locales/he.json }
 { Hebrew locale. }
 procedure GetLocale_he(out ALoc: TAgeLocale);
 begin
@@ -8901,7 +8901,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/hi.json }
+{ Source: locales/hi.json }
 { Hindi locale. }
 procedure GetLocale_hi(out ALoc: TAgeLocale);
 begin
@@ -9048,7 +9048,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/hmn.json }
+{ Source: locales/hmn.json }
 { Hmong locale. }
 procedure GetLocale_hmn(out ALoc: TAgeLocale);
 begin
@@ -9195,7 +9195,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/hr.json }
+{ Source: locales/hr.json }
 { Croatian locale. }
 procedure GetLocale_hr(out ALoc: TAgeLocale);
 begin
@@ -9342,7 +9342,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ht.json }
+{ Source: locales/ht.json }
 { Haitian Creole locale. }
 procedure GetLocale_ht(out ALoc: TAgeLocale);
 begin
@@ -9489,7 +9489,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/hu.json }
+{ Source: locales/hu.json }
 { Hungarian locale. }
 procedure GetLocale_hu(out ALoc: TAgeLocale);
 begin
@@ -9636,7 +9636,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/hy.json }
+{ Source: locales/hy.json }
 { Armenian locale. }
 procedure GetLocale_hy(out ALoc: TAgeLocale);
 begin
@@ -9783,7 +9783,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/id.json }
+{ Source: locales/id.json }
 { Indonesian locale. }
 procedure GetLocale_id(out ALoc: TAgeLocale);
 begin
@@ -9930,7 +9930,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ig.json }
+{ Source: locales/ig.json }
 { Igbo locale. }
 procedure GetLocale_ig(out ALoc: TAgeLocale);
 begin
@@ -10077,7 +10077,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/is.json }
+{ Source: locales/is.json }
 { Icelandic locale. }
 procedure GetLocale_is(out ALoc: TAgeLocale);
 begin
@@ -10224,7 +10224,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/it.json }
+{ Source: locales/it.json }
 { Italian locale. }
 procedure GetLocale_it(out ALoc: TAgeLocale);
 begin
@@ -10371,7 +10371,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ja.json }
+{ Source: locales/ja.json }
 { Japanese locale. }
 procedure GetLocale_ja(out ALoc: TAgeLocale);
 begin
@@ -10518,7 +10518,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/jv.json }
+{ Source: locales/jv.json }
 { Javanese locale. }
 procedure GetLocale_jv(out ALoc: TAgeLocale);
 begin
@@ -10665,7 +10665,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ka.json }
+{ Source: locales/ka.json }
 { Georgian locale. }
 procedure GetLocale_ka(out ALoc: TAgeLocale);
 begin
@@ -10812,7 +10812,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kbp.json }
+{ Source: locales/kbp.json }
 { Kabiye locale. }
 procedure GetLocale_kbp(out ALoc: TAgeLocale);
 begin
@@ -10959,7 +10959,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kek.json }
+{ Source: locales/kek.json }
 { Q'eqchi' locale. }
 procedure GetLocale_kek(out ALoc: TAgeLocale);
 begin
@@ -11106,7 +11106,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ki.json }
+{ Source: locales/ki.json }
 { Kikuyu locale. }
 procedure GetLocale_ki(out ALoc: TAgeLocale);
 begin
@@ -11253,7 +11253,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kk.json }
+{ Source: locales/kk.json }
 { Kazakh locale. }
 procedure GetLocale_kk(out ALoc: TAgeLocale);
 begin
@@ -11400,7 +11400,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kl.json }
+{ Source: locales/kl.json }
 { Kalaallisut locale. }
 procedure GetLocale_kl(out ALoc: TAgeLocale);
 begin
@@ -11547,7 +11547,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/km.json }
+{ Source: locales/km.json }
 { Khmer locale. }
 procedure GetLocale_km(out ALoc: TAgeLocale);
 begin
@@ -11694,7 +11694,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kn.json }
+{ Source: locales/kn.json }
 { Kannada locale. }
 procedure GetLocale_kn(out ALoc: TAgeLocale);
 begin
@@ -11841,7 +11841,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ko.json }
+{ Source: locales/ko.json }
 { Korean locale. }
 procedure GetLocale_ko(out ALoc: TAgeLocale);
 begin
@@ -11988,7 +11988,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kpe.json }
+{ Source: locales/kpe.json }
 { Kpelle locale. }
 procedure GetLocale_kpe(out ALoc: TAgeLocale);
 begin
@@ -12135,7 +12135,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kri.json }
+{ Source: locales/kri.json }
 { Krio locale. }
 procedure GetLocale_kri(out ALoc: TAgeLocale);
 begin
@@ -12282,7 +12282,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ktu.json }
+{ Source: locales/ktu.json }
 { Kituba locale. }
 procedure GetLocale_ktu(out ALoc: TAgeLocale);
 begin
@@ -12429,7 +12429,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ku.json }
+{ Source: locales/ku.json }
 { Kurdish locale. }
 procedure GetLocale_ku(out ALoc: TAgeLocale);
 begin
@@ -12576,7 +12576,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/kw.json }
+{ Source: locales/kw.json }
 { Cornish locale. }
 procedure GetLocale_kw(out ALoc: TAgeLocale);
 begin
@@ -12723,7 +12723,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ky.json }
+{ Source: locales/ky.json }
 { Kyrgyz locale. }
 procedure GetLocale_ky(out ALoc: TAgeLocale);
 begin
@@ -12870,7 +12870,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/lb.json }
+{ Source: locales/lb.json }
 { Luxembourgish locale. }
 procedure GetLocale_lb(out ALoc: TAgeLocale);
 begin
@@ -13017,7 +13017,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/lg.json }
+{ Source: locales/lg.json }
 { Luganda locale. }
 procedure GetLocale_lg(out ALoc: TAgeLocale);
 begin
@@ -13164,7 +13164,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ln.json }
+{ Source: locales/ln.json }
 { Lingala locale. }
 procedure GetLocale_ln(out ALoc: TAgeLocale);
 begin
@@ -13311,7 +13311,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/lo.json }
+{ Source: locales/lo.json }
 { Lao locale. }
 procedure GetLocale_lo(out ALoc: TAgeLocale);
 begin
@@ -13458,7 +13458,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/lt.json }
+{ Source: locales/lt.json }
 { Lithuanian locale. }
 procedure GetLocale_lt(out ALoc: TAgeLocale);
 begin
@@ -13605,7 +13605,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/luo.json }
+{ Source: locales/luo.json }
 { Dholuo locale. }
 procedure GetLocale_luo(out ALoc: TAgeLocale);
 begin
@@ -13752,7 +13752,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/lv.json }
+{ Source: locales/lv.json }
 { Latvian locale. }
 procedure GetLocale_lv(out ALoc: TAgeLocale);
 begin
@@ -13899,7 +13899,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mam.json }
+{ Source: locales/mam.json }
 { Mam locale. }
 procedure GetLocale_mam(out ALoc: TAgeLocale);
 begin
@@ -14046,7 +14046,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/men.json }
+{ Source: locales/men.json }
 { Mende locale. }
 procedure GetLocale_men(out ALoc: TAgeLocale);
 begin
@@ -14193,7 +14193,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mfe.json }
+{ Source: locales/mfe.json }
 { Mauritian Creole locale. }
 procedure GetLocale_mfe(out ALoc: TAgeLocale);
 begin
@@ -14340,7 +14340,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mg.json }
+{ Source: locales/mg.json }
 { Malagasy locale. }
 procedure GetLocale_mg(out ALoc: TAgeLocale);
 begin
@@ -14487,7 +14487,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mi.json }
+{ Source: locales/mi.json }
 { Māori locale. }
 procedure GetLocale_mi(out ALoc: TAgeLocale);
 begin
@@ -14634,7 +14634,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mk.json }
+{ Source: locales/mk.json }
 { Macedonian locale. }
 procedure GetLocale_mk(out ALoc: TAgeLocale);
 begin
@@ -14781,7 +14781,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ml.json }
+{ Source: locales/ml.json }
 { Malayalam locale. }
 procedure GetLocale_ml(out ALoc: TAgeLocale);
 begin
@@ -14928,7 +14928,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mn.json }
+{ Source: locales/mn.json }
 { Mongolian locale. }
 procedure GetLocale_mn(out ALoc: TAgeLocale);
 begin
@@ -15075,7 +15075,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mnk.json }
+{ Source: locales/mnk.json }
 { Mandinka locale. }
 procedure GetLocale_mnk(out ALoc: TAgeLocale);
 begin
@@ -15222,7 +15222,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mos.json }
+{ Source: locales/mos.json }
 { Moore locale. }
 procedure GetLocale_mos(out ALoc: TAgeLocale);
 begin
@@ -15369,7 +15369,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mr.json }
+{ Source: locales/mr.json }
 { Marathi locale. }
 procedure GetLocale_mr(out ALoc: TAgeLocale);
 begin
@@ -15516,7 +15516,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ms.json }
+{ Source: locales/ms.json }
 { Malay locale. }
 procedure GetLocale_ms(out ALoc: TAgeLocale);
 begin
@@ -15663,7 +15663,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/mt.json }
+{ Source: locales/mt.json }
 { Maltese locale. }
 procedure GetLocale_mt(out ALoc: TAgeLocale);
 begin
@@ -15810,7 +15810,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/my.json }
+{ Source: locales/my.json }
 { Burmese locale. }
 procedure GetLocale_my(out ALoc: TAgeLocale);
 begin
@@ -15957,7 +15957,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/nb.json }
+{ Source: locales/nb.json }
 { Norwegian Bokmål locale. }
 procedure GetLocale_nb(out ALoc: TAgeLocale);
 begin
@@ -16104,7 +16104,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/nd.json }
+{ Source: locales/nd.json }
 { Northern Ndebele locale. }
 procedure GetLocale_nd(out ALoc: TAgeLocale);
 begin
@@ -16251,7 +16251,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ne.json }
+{ Source: locales/ne.json }
 { Nepali locale. }
 procedure GetLocale_ne(out ALoc: TAgeLocale);
 begin
@@ -16398,7 +16398,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ng.json }
+{ Source: locales/ng.json }
 { Oshiwambo locale. }
 procedure GetLocale_ng(out ALoc: TAgeLocale);
 begin
@@ -16545,7 +16545,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/nl.json }
+{ Source: locales/nl.json }
 { Dutch locale. }
 procedure GetLocale_nl(out ALoc: TAgeLocale);
 begin
@@ -16692,7 +16692,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/nr.json }
+{ Source: locales/nr.json }
 { Southern Ndebele locale. }
 procedure GetLocale_nr(out ALoc: TAgeLocale);
 begin
@@ -16839,7 +16839,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/nso.json }
+{ Source: locales/nso.json }
 { Northern Sotho locale. }
 procedure GetLocale_nso(out ALoc: TAgeLocale);
 begin
@@ -16986,7 +16986,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/nus.json }
+{ Source: locales/nus.json }
 { Nuer locale. }
 procedure GetLocale_nus(out ALoc: TAgeLocale);
 begin
@@ -17133,7 +17133,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ny.json }
+{ Source: locales/ny.json }
 { Chichewa locale. }
 procedure GetLocale_ny(out ALoc: TAgeLocale);
 begin
@@ -17280,7 +17280,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/om.json }
+{ Source: locales/om.json }
 { Oromo locale. }
 procedure GetLocale_om(out ALoc: TAgeLocale);
 begin
@@ -17427,7 +17427,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/or.json }
+{ Source: locales/or.json }
 { Odia locale. }
 procedure GetLocale_or(out ALoc: TAgeLocale);
 begin
@@ -17574,7 +17574,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/pa.json }
+{ Source: locales/pa.json }
 { Punjabi locale. }
 procedure GetLocale_pa(out ALoc: TAgeLocale);
 begin
@@ -17721,7 +17721,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/pis.json }
+{ Source: locales/pis.json }
 { Pijin locale. }
 procedure GetLocale_pis(out ALoc: TAgeLocale);
 begin
@@ -17868,7 +17868,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/pl.json }
+{ Source: locales/pl.json }
 { Polish locale. }
 procedure GetLocale_pl(out ALoc: TAgeLocale);
 begin
@@ -18015,7 +18015,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/pov.json }
+{ Source: locales/pov.json }
 { Guinea-Bissau Creole locale. }
 procedure GetLocale_pov(out ALoc: TAgeLocale);
 begin
@@ -18162,7 +18162,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ps.json }
+{ Source: locales/ps.json }
 { Pashto locale. }
 procedure GetLocale_ps(out ALoc: TAgeLocale);
 begin
@@ -18309,7 +18309,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/pt.json }
+{ Source: locales/pt.json }
 { Portuguese locale. }
 procedure GetLocale_pt(out ALoc: TAgeLocale);
 begin
@@ -18456,7 +18456,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/qu.json }
+{ Source: locales/qu.json }
 { Quechua locale. }
 procedure GetLocale_qu(out ALoc: TAgeLocale);
 begin
@@ -18603,7 +18603,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/quc.json }
+{ Source: locales/quc.json }
 { K'iche' locale. }
 procedure GetLocale_quc(out ALoc: TAgeLocale);
 begin
@@ -18750,7 +18750,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ro.json }
+{ Source: locales/ro.json }
 { Romanian locale. }
 procedure GetLocale_ro(out ALoc: TAgeLocale);
 begin
@@ -18897,7 +18897,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ru.json }
+{ Source: locales/ru.json }
 { Russian locale. }
 procedure GetLocale_ru(out ALoc: TAgeLocale);
 begin
@@ -19044,7 +19044,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/rw.json }
+{ Source: locales/rw.json }
 { Kinyarwanda locale. }
 procedure GetLocale_rw(out ALoc: TAgeLocale);
 begin
@@ -19191,7 +19191,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sar.json }
+{ Source: locales/sar.json }
 { Sara locale. }
 procedure GetLocale_sar(out ALoc: TAgeLocale);
 begin
@@ -19338,7 +19338,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sd.json }
+{ Source: locales/sd.json }
 { Sindhi locale. }
 procedure GetLocale_sd(out ALoc: TAgeLocale);
 begin
@@ -19485,7 +19485,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sg.json }
+{ Source: locales/sg.json }
 { Sango locale. }
 procedure GetLocale_sg(out ALoc: TAgeLocale);
 begin
@@ -19632,7 +19632,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/shi.json }
+{ Source: locales/shi.json }
 { Tachelhit locale. }
 procedure GetLocale_shi(out ALoc: TAgeLocale);
 begin
@@ -19779,7 +19779,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/shn.json }
+{ Source: locales/shn.json }
 { Shan locale. }
 procedure GetLocale_shn(out ALoc: TAgeLocale);
 begin
@@ -19926,7 +19926,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/si.json }
+{ Source: locales/si.json }
 { Sinhala locale. }
 procedure GetLocale_si(out ALoc: TAgeLocale);
 begin
@@ -20073,7 +20073,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sk.json }
+{ Source: locales/sk.json }
 { Slovak locale. }
 procedure GetLocale_sk(out ALoc: TAgeLocale);
 begin
@@ -20220,7 +20220,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sl.json }
+{ Source: locales/sl.json }
 { Slovenian locale. }
 procedure GetLocale_sl(out ALoc: TAgeLocale);
 begin
@@ -20367,7 +20367,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sn.json }
+{ Source: locales/sn.json }
 { Shona locale. }
 procedure GetLocale_sn(out ALoc: TAgeLocale);
 begin
@@ -20514,7 +20514,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/snk.json }
+{ Source: locales/snk.json }
 { Soninke locale. }
 procedure GetLocale_snk(out ALoc: TAgeLocale);
 begin
@@ -20661,7 +20661,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/so.json }
+{ Source: locales/so.json }
 { Somali locale. }
 procedure GetLocale_so(out ALoc: TAgeLocale);
 begin
@@ -20808,7 +20808,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sq.json }
+{ Source: locales/sq.json }
 { Albanian locale. }
 procedure GetLocale_sq(out ALoc: TAgeLocale);
 begin
@@ -20955,7 +20955,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sr.json }
+{ Source: locales/sr.json }
 { Serbian locale. }
 procedure GetLocale_sr(out ALoc: TAgeLocale);
 begin
@@ -21102,7 +21102,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ss.json }
+{ Source: locales/ss.json }
 { siSwati locale. }
 procedure GetLocale_ss(out ALoc: TAgeLocale);
 begin
@@ -21249,7 +21249,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/st.json }
+{ Source: locales/st.json }
 { Southern Sotho locale. }
 procedure GetLocale_st(out ALoc: TAgeLocale);
 begin
@@ -21396,7 +21396,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/su.json }
+{ Source: locales/su.json }
 { Sundanese locale. }
 procedure GetLocale_su(out ALoc: TAgeLocale);
 begin
@@ -21543,7 +21543,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/suk.json }
+{ Source: locales/suk.json }
 { Sukuma locale. }
 procedure GetLocale_suk(out ALoc: TAgeLocale);
 begin
@@ -21690,7 +21690,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sv.json }
+{ Source: locales/sv.json }
 { Swedish locale. }
 procedure GetLocale_sv(out ALoc: TAgeLocale);
 begin
@@ -21837,7 +21837,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/sw.json }
+{ Source: locales/sw.json }
 { Swahili locale. }
 procedure GetLocale_sw(out ALoc: TAgeLocale);
 begin
@@ -21984,7 +21984,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ta.json }
+{ Source: locales/ta.json }
 { Tamil locale. }
 procedure GetLocale_ta(out ALoc: TAgeLocale);
 begin
@@ -22131,7 +22131,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/te.json }
+{ Source: locales/te.json }
 { Telugu locale. }
 procedure GetLocale_te(out ALoc: TAgeLocale);
 begin
@@ -22278,7 +22278,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tem.json }
+{ Source: locales/tem.json }
 { Temne locale. }
 procedure GetLocale_tem(out ALoc: TAgeLocale);
 begin
@@ -22425,7 +22425,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tet.json }
+{ Source: locales/tet.json }
 { Tetum locale. }
 procedure GetLocale_tet(out ALoc: TAgeLocale);
 begin
@@ -22572,7 +22572,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tg.json }
+{ Source: locales/tg.json }
 { Tajik locale. }
 procedure GetLocale_tg(out ALoc: TAgeLocale);
 begin
@@ -22719,7 +22719,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/th.json }
+{ Source: locales/th.json }
 { Thai locale. }
 procedure GetLocale_th(out ALoc: TAgeLocale);
 begin
@@ -22866,7 +22866,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ti.json }
+{ Source: locales/ti.json }
 { Tigrinya locale. }
 procedure GetLocale_ti(out ALoc: TAgeLocale);
 begin
@@ -23013,7 +23013,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tig.json }
+{ Source: locales/tig.json }
 { Tigre locale. }
 procedure GetLocale_tig(out ALoc: TAgeLocale);
 begin
@@ -23160,7 +23160,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tk.json }
+{ Source: locales/tk.json }
 { Turkmen locale. }
 procedure GetLocale_tk(out ALoc: TAgeLocale);
 begin
@@ -23307,7 +23307,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tn.json }
+{ Source: locales/tn.json }
 { Tswana locale. }
 procedure GetLocale_tn(out ALoc: TAgeLocale);
 begin
@@ -23454,7 +23454,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tpi.json }
+{ Source: locales/tpi.json }
 { Tok Pisin locale. }
 procedure GetLocale_tpi(out ALoc: TAgeLocale);
 begin
@@ -23601,7 +23601,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tr.json }
+{ Source: locales/tr.json }
 { Turkish locale. }
 procedure GetLocale_tr(out ALoc: TAgeLocale);
 begin
@@ -23748,7 +23748,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ts.json }
+{ Source: locales/ts.json }
 { Tsonga locale. }
 procedure GetLocale_ts(out ALoc: TAgeLocale);
 begin
@@ -23895,7 +23895,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tum.json }
+{ Source: locales/tum.json }
 { Tumbuka locale. }
 procedure GetLocale_tum(out ALoc: TAgeLocale);
 begin
@@ -24042,7 +24042,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/tzm.json }
+{ Source: locales/tzm.json }
 { Central Atlas Tamazight locale. }
 procedure GetLocale_tzm(out ALoc: TAgeLocale);
 begin
@@ -24189,7 +24189,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/uk.json }
+{ Source: locales/uk.json }
 { Ukrainian locale. }
 procedure GetLocale_uk(out ALoc: TAgeLocale);
 begin
@@ -24336,7 +24336,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/umb.json }
+{ Source: locales/umb.json }
 { Umbundu locale. }
 procedure GetLocale_umb(out ALoc: TAgeLocale);
 begin
@@ -24483,7 +24483,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ur.json }
+{ Source: locales/ur.json }
 { Urdu locale. }
 procedure GetLocale_ur(out ALoc: TAgeLocale);
 begin
@@ -24630,7 +24630,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/uz.json }
+{ Source: locales/uz.json }
 { Uzbek locale. }
 procedure GetLocale_uz(out ALoc: TAgeLocale);
 begin
@@ -24777,7 +24777,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/ve.json }
+{ Source: locales/ve.json }
 { Venda locale. }
 procedure GetLocale_ve(out ALoc: TAgeLocale);
 begin
@@ -24924,7 +24924,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/vi.json }
+{ Source: locales/vi.json }
 { Vietnamese locale. }
 procedure GetLocale_vi(out ALoc: TAgeLocale);
 begin
@@ -25071,7 +25071,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/vmw.json }
+{ Source: locales/vmw.json }
 { Makhuwa locale. }
 procedure GetLocale_vmw(out ALoc: TAgeLocale);
 begin
@@ -25218,7 +25218,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/wo.json }
+{ Source: locales/wo.json }
 { Wolof locale. }
 procedure GetLocale_wo(out ALoc: TAgeLocale);
 begin
@@ -25365,7 +25365,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/xh.json }
+{ Source: locales/xh.json }
 { Xhosa locale. }
 procedure GetLocale_xh(out ALoc: TAgeLocale);
 begin
@@ -25512,7 +25512,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/yao.json }
+{ Source: locales/yao.json }
 { Yao locale. }
 procedure GetLocale_yao(out ALoc: TAgeLocale);
 begin
@@ -25659,7 +25659,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/yo.json }
+{ Source: locales/yo.json }
 { Yoruba locale. }
 procedure GetLocale_yo(out ALoc: TAgeLocale);
 begin
@@ -25806,7 +25806,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/yue.json }
+{ Source: locales/yue.json }
 { Cantonese locale. }
 procedure GetLocale_yue(out ALoc: TAgeLocale);
 begin
@@ -25953,7 +25953,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/zdj.json }
+{ Source: locales/zdj.json }
 { Comorian locale. }
 procedure GetLocale_zdj(out ALoc: TAgeLocale);
 begin
@@ -26100,7 +26100,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/zh.json }
+{ Source: locales/zh.json }
 { Chinese locale. }
 procedure GetLocale_zh(out ALoc: TAgeLocale);
 begin
@@ -26247,7 +26247,7 @@ begin
   ALoc.CompactOverride.JustBorn := '';
 end;
 
-{ Source: age/locales/src/zu.json }
+{ Source: locales/zu.json }
 { Zulu locale. }
 procedure GetLocale_zu(out ALoc: TAgeLocale);
 begin

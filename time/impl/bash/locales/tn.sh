@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tn.json
+# Source: locales/tn.json
 
 _sayabletime_locale_tn() {
     _clock_hours=('lesome le bobedi' 'nngwe' 'pedi' 'tharo' 'nne' 'tlhano' 'thataro' 'supa' 'robedi' 'robongwe' 'lesome' 'lesome le bongwe')

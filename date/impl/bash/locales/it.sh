@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/it.json
+# Source: locales/it.json
 
 _sayabledate_locale_it() {
     _months=('gennaio' 'febbraio' 'marzo' 'aprile' 'maggio' 'giugno' 'luglio' 'agosto' 'settembre' 'ottobre' 'novembre' 'dicembre')

@@ -1,0 +1,270 @@
+{
+  "code": "ta",
+  "name": "Tamil",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} நாள்",
+        "other": "{n} நாட்கள்"
+      },
+      "week": {
+        "one": "{n} வாரம்",
+        "other": "{n} வாரங்கள்"
+      },
+      "month": {
+        "one": "{n} மாதம்",
+        "other": "{n} மாதங்கள்"
+      },
+      "year": {
+        "one": "{n} வயது",
+        "other": "{n} வயது"
+      }
+    },
+    "half": "{0}ரை",
+    "delimiter": ", ",
+    "justBorn": "பிறந்த குழந்தை",
+    "stages": {
+      "newborn": "பிறந்த குழந்தை",
+      "infant": "குழந்தை",
+      "toddler": "சிறு குழந்தை",
+      "child": "சிறார்",
+      "teenager": "இளம்பருவம்",
+      "adult": "பெரியவர்"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} நாள்",
+          "other": "{n} நாட்கள்"
+        },
+        "week": {
+          "one": "{n} வாரம்",
+          "other": "{n} வார."
+        },
+        "month": {
+          "one": "{n} மாதம்",
+          "other": "{n} மாத."
+        },
+        "year": {
+          "one": "{n} ஆண்டு",
+          "other": "{n} ஆண்டு."
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} நா",
+        "week": "{n} வா",
+        "month": "{n} மா",
+        "year": "{n} ஆ"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "ஜனவரி",
+      "பிப்ரவரி",
+      "மார்ச்",
+      "ஏப்ரல்",
+      "மே",
+      "ஜூன்",
+      "ஜூலை",
+      "ஆகஸ்ட்",
+      "செப்டம்பர்",
+      "அக்டோபர்",
+      "நவம்பர்",
+      "டிசம்பர்"
+    ],
+    "weekdays": [
+      "ஞாயிறு",
+      "திங்கள்",
+      "செவ்வாய்",
+      "புதன்",
+      "வியாழன்",
+      "வெள்ளி",
+      "சனி"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "இன்று",
+    "tomorrow": "நாளை",
+    "yesterday": "நேற்று",
+    "dayAfterTomorrow": "நாளை மறுநாள்",
+    "dayBeforeYesterday": "முந்தா நாள்",
+    "thisWeekday": "இந்த {weekday}",
+    "nextWeekday": "அடுத்த {weekday}",
+    "lastWeekday": "கடந்த {weekday}",
+    "short": {
+      "months": [
+        "ஜன",
+        "பிப்",
+        "மார்",
+        "ஏப்",
+        "மே",
+        "ஜூன்",
+        "ஜூலை",
+        "ஆக",
+        "செப்",
+        "அக்",
+        "நவ",
+        "டிச"
+      ],
+      "weekdays": [
+        "ஞாயி",
+        "திங்",
+        "செவ்",
+        "புத",
+        "வியா",
+        "வெள்",
+        "சனி"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} விநாடி",
+      "minute": "{n} நிமிடம்",
+      "hour": "{n} மணி நேரம்",
+      "day": {
+        "one": "{n} நாள்",
+        "other": "{n} நாட்கள்"
+      },
+      "week": {
+        "one": "{n} வாரம்",
+        "other": "{n} வாரங்கள்"
+      },
+      "month": {
+        "one": "{n} மாதம்",
+        "other": "{n} மாதங்கள்"
+      },
+      "year": {
+        "one": "{n} வயது",
+        "other": "{n} வயது"
+      }
+    },
+    "half": "{0}ரை",
+    "delimiter": ", ",
+    "justNow": "இப்போதுதான்",
+    "ago": "{0} முன்",
+    "inFuture": "{0} கழித்து",
+    "short": {
+      "units": {
+        "second": "{n} விநாடி",
+        "minute": "{n} நிமி.",
+        "hour": "{n} ம.",
+        "day": {
+          "one": "{n} நாள்",
+          "other": "{n} நாட்கள்"
+        },
+        "week": {
+          "one": "{n} வாரம்",
+          "other": "{n} வார."
+        },
+        "month": {
+          "one": "{n} மாதம்",
+          "other": "{n} மாத."
+        },
+        "year": {
+          "one": "{n} ஆண்டு",
+          "other": "{n} ஆண்டு."
+        }
+      },
+      "ago": "{0} முன்",
+      "inFuture": "{0} கழித்து",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} வி.",
+        "minute": "{n} நிமி.",
+        "hour": "{n} ம.நே.",
+        "day": "{n} நா",
+        "week": "{n} வா",
+        "month": "{n} மா",
+        "year": "{n} ஆ"
+      },
+      "delimiter": "",
+      "ago": "{0} முன்",
+      "inFuture": "{0} கழித்து",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "பன்னிரண்டு",
+        "ஒன்று",
+        "இரண்டு",
+        "மூன்று",
+        "நான்கு",
+        "ஐந்து",
+        "ஆறு",
+        "ஏழு",
+        "எட்டு",
+        "ஒன்பது",
+        "பத்து",
+        "பதினொன்று"
+      ],
+      "midnight": "நள்ளிரவு",
+      "noon": "நண்பகல்",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

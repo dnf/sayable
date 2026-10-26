@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ve.json
+# Source: locales/ve.json
 
 _sayabledate_locale_ve() {
     _months=('Phando' 'Luhuhi' 'Thafamuhwe' 'Lambamai' 'Shundunthule' 'Fulwi' 'Fulwana' 'Thangule' 'Khubvumedzi' 'Tshimedzi' 'Lara' 'Nyendavhusiku')

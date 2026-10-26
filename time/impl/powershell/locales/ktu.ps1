@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ktu.json
+# Source: locales/ktu.json
 
 function locale_ktu {
     $hours = @('zomi na zole', 'mosi', 'zole', 'tatu', 'ya', 'tanu', 'sambanu', 'nsambwadi', 'nana', 'vwa', 'zomi', 'zomi na mosi')

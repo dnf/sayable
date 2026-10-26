@@ -1,0 +1,257 @@
+{
+  "code": "so",
+  "name": "Somali",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "maalin {n}",
+        "other": "maalmood {n}"
+      },
+      "week": {
+        "one": "toddobaad {n}",
+        "other": "toddobaadyo {n}"
+      },
+      "month": {
+        "one": "bil {n}",
+        "other": "bilood {n}"
+      },
+      "year": {
+        "one": "sano {n}",
+        "other": "sanooyin {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Dhashay cusub",
+    "stages": {
+      "newborn": "Dhashay cusub",
+      "infant": "Naaso-nuug",
+      "toddler": "Cunug yar",
+      "child": "Cunug",
+      "teenager": "Dhallinyaro",
+      "adult": "Qaangaar"
+    },
+    "short": {
+      "units": {
+        "day": "mln {n}",
+        "week": "tdb {n}",
+        "month": "bil {n}",
+        "year": "sno {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}m",
+        "week": "{n}t",
+        "month": "{n}b",
+        "year": "{n}s"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Janaayo",
+      "Febraayo",
+      "Maarso",
+      "Abriil",
+      "Maajo",
+      "Juun",
+      "Luuliyo",
+      "Ogost",
+      "Sebtembar",
+      "Oktoobar",
+      "Nofembar",
+      "Disembar"
+    ],
+    "weekdays": [
+      "Axad",
+      "Isniin",
+      "Talaado",
+      "Arbaco",
+      "Khamiis",
+      "Jimco",
+      "Sabti"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "maanta",
+    "tomorrow": "berri",
+    "yesterday": "shalay",
+    "dayAfterTomorrow": "saadamin",
+    "dayBeforeYesterday": "doraato",
+    "thisWeekday": "{weekday}tan",
+    "nextWeekday": "{weekday}ta xigta",
+    "lastWeekday": "{weekday}tii hore",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Abr",
+        "Maj",
+        "Jun",
+        "Lul",
+        "Ogo",
+        "Seb",
+        "Okt",
+        "Nof",
+        "Dis"
+      ],
+      "weekdays": [
+        "Axd",
+        "Isn",
+        "Tal",
+        "Arb",
+        "Kha",
+        "Jim",
+        "Sab"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "ilbiriqsi {n}",
+        "other": "ilbiriqsiyaal {n}"
+      },
+      "minute": {
+        "one": "daqiiqad {n}",
+        "other": "daqiiqadood {n}"
+      },
+      "hour": {
+        "one": "saacad {n}",
+        "other": "saacadood {n}"
+      },
+      "day": {
+        "one": "maalin {n}",
+        "other": "maalmood {n}"
+      },
+      "week": {
+        "one": "toddobaad {n}",
+        "other": "toddobaadyo {n}"
+      },
+      "month": {
+        "one": "bil {n}",
+        "other": "bilood {n}"
+      },
+      "year": {
+        "one": "sano {n}",
+        "other": "sanooyin {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "hadda",
+    "ago": "{0} ka hor",
+    "inFuture": "{0} gudahood",
+    "short": {
+      "units": {
+        "second": "ilb {n}",
+        "minute": "daq {n}",
+        "hour": "scd {n}",
+        "day": "mln {n}",
+        "week": "tdb {n}",
+        "month": "bil {n}",
+        "year": "sno {n}"
+      },
+      "ago": "{0} ka hor",
+      "inFuture": "{0} gudahood",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "ilb {n}",
+        "minute": "daq {n}",
+        "hour": "scd {n}",
+        "day": "{n}m",
+        "week": "{n}t",
+        "month": "{n}b",
+        "year": "{n}s"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ka hor",
+      "inFuture": "{0} gudahood",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "laba iyo toban",
+        "kow",
+        "laba",
+        "saddex",
+        "afar",
+        "shan",
+        "lix",
+        "toddoba",
+        "siddeed",
+        "sagaal",
+        "toban",
+        "kow iyo toban"
+      ],
+      "midnight": "saqda dhexe",
+      "noon": "duhur",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 %% ║ Changes will be overwritten the next time codegen runs.      ║
 %% ║ Edit the generator or locale JSON instead.                   ║
 %% ╚══════════════════════════════════════════════════════════════╝
-%% Source: date/locales/src/ru.json
+%% Source: locales/ru.json
 
 -module(sayabledate_locales_ru).
 -include("sayabledate.hrl").

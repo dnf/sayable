@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ve.json
+# Source: locales/ve.json
 
 function locale_ve {
     $hours = @('fumimbili', 'thihi', 'mbili', 'raru', 'ina', 'thanu', 'rathi', 'sumbe', 'malo', 'tahe', 'fumi', 'fuminthihi')

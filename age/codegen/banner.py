@@ -17,3 +17,5 @@ _spec.loader.exec_module(_mod)
 make_banner = _mod.make_banner
 make_header = _mod.make_header
 locale_source_comment = _mod.locale_source_comment
+load_component_locales = _mod.load_component_locales
+LOCALES_DIR = _mod.LOCALES_DIR

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ti.json
+# Source: locales/ti.json
 
 function locale_ti {
     $hours = @('ዓሰርተ ክልተ', 'ሓደ', 'ክልተ', 'ሰለስተ', 'ኣርባዕተ', 'ሓሙሽተ', 'ሽድሽተ', 'ሸውዓተ', 'ሸሞንተ', 'ትሽዓተ', 'ዓሰርተ', 'ዓሰርተ ሓደ')

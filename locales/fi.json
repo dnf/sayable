@@ -1,0 +1,255 @@
+{
+  "code": "fi",
+  "name": "Finnish",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} päivä",
+        "other": "{n} päivää"
+      },
+      "week": {
+        "one": "{n} viikko",
+        "other": "{n} viikkoa"
+      },
+      "month": {
+        "one": "{n} kuukausi",
+        "other": "{n} kuukautta"
+      },
+      "year": {
+        "one": "{n} vuosi",
+        "other": "{n} vuotta"
+      }
+    },
+    "half": "{n} ja puoli",
+    "delimiter": ", ",
+    "justBorn": "Vastasyntynyt",
+    "stages": {
+      "newborn": "Vastasyntynyt",
+      "infant": "Vauva",
+      "toddler": "Taapero",
+      "child": "Lapsi",
+      "teenager": "Teini",
+      "adult": "Aikuinen"
+    },
+    "short": {
+      "units": {
+        "day": "{n} pv",
+        "week": "{n} vk",
+        "month": "{n} kk",
+        "year": "{n} v"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}pv",
+        "week": "{n}vk",
+        "month": "{n}kk",
+        "year": "{n}v"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "tammikuu",
+      "helmikuu",
+      "maaliskuu",
+      "huhtikuu",
+      "toukokuu",
+      "kesäkuu",
+      "heinäkuu",
+      "elokuu",
+      "syyskuu",
+      "lokakuu",
+      "marraskuu",
+      "joulukuu"
+    ],
+    "weekdays": [
+      "sunnuntai",
+      "maanantai",
+      "tiistai",
+      "keskiviikko",
+      "torstai",
+      "perjantai",
+      "lauantai"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "tänään",
+    "tomorrow": "huomenna",
+    "yesterday": "eilen",
+    "dayAfterTomorrow": "ylihuomenna",
+    "dayBeforeYesterday": "toissapäivänä",
+    "thisWeekday": "tämä {weekday}",
+    "nextWeekday": "ensi {weekday}",
+    "lastWeekday": "viime {weekday}",
+    "monthsInDate": [
+      "tammikuuta",
+      "helmikuuta",
+      "maaliskuuta",
+      "huhtikuuta",
+      "toukokuuta",
+      "kesäkuuta",
+      "heinäkuuta",
+      "elokuuta",
+      "syyskuuta",
+      "lokakuuta",
+      "marraskuuta",
+      "joulukuuta"
+    ],
+    "short": {
+      "months": [
+        "tammi",
+        "helmi",
+        "maalis",
+        "huhti",
+        "touko",
+        "kesä",
+        "heinä",
+        "elo",
+        "syys",
+        "loka",
+        "marras",
+        "joulu"
+      ],
+      "weekdays": [
+        "su",
+        "ma",
+        "ti",
+        "ke",
+        "to",
+        "pe",
+        "la"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekunti",
+        "other": "{n} sekuntia"
+      },
+      "minute": {
+        "one": "{n} minuutti",
+        "other": "{n} minuuttia"
+      },
+      "hour": {
+        "one": "{n} tunti",
+        "other": "{n} tuntia"
+      },
+      "day": {
+        "one": "{n} päivä",
+        "other": "{n} päivää"
+      },
+      "week": {
+        "one": "{n} viikko",
+        "other": "{n} viikkoa"
+      },
+      "month": {
+        "one": "{n} kuukausi",
+        "other": "{n} kuukautta"
+      },
+      "year": {
+        "one": "{n} vuosi",
+        "other": "{n} vuotta"
+      }
+    },
+    "half": "{n} ja puoli",
+    "delimiter": ", ",
+    "justNow": "juuri nyt",
+    "ago": "{0} sitten",
+    "inFuture": "{0} kuluttua",
+    "short": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} t",
+        "day": "{n} pv",
+        "week": "{n} vk",
+        "month": "{n} kk",
+        "year": "{n} v"
+      },
+      "ago": "{0} sitten",
+      "inFuture": "{0} kuluttua",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}min",
+        "hour": "{n}t",
+        "day": "{n}pv",
+        "week": "{n}vk",
+        "month": "{n}kk",
+        "year": "{n}v"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} sitten",
+      "inFuture": "{0} kuluttua",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "kaksitoista",
+        "yksi",
+        "kaksi",
+        "kolme",
+        "neljä",
+        "viisi",
+        "kuusi",
+        "seitsemän",
+        "kahdeksan",
+        "yhdeksän",
+        "kymmenen",
+        "yksitoista"
+      ],
+      "midnight": "keskiyö",
+      "noon": "keskipäivä",
+      "patterns": {
+        "0": "{h}",
+        "5": "viisi yli {h}",
+        "10": "kymmenen yli {h}",
+        "15": "vartti yli {h}",
+        "20": "kaksikymmentä yli {h}",
+        "25": "kaksikymmentäviisi yli {h}",
+        "30": "puoli yli {h}",
+        "35": "kaksikymmentäviisi vaille {next_h}",
+        "40": "kaksikymmentä vaille {next_h}",
+        "45": "vartti vaille {next_h}",
+        "50": "kymmenen vaille {next_h}",
+        "55": "viisi vaille {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}.{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}.{mm}"
+      }
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "code": "ca",
+  "name": "Catalan",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} dia",
+        "other": "{n} dies"
+      },
+      "week": {
+        "one": "{n} setmana",
+        "other": "{n} setmanes"
+      },
+      "month": {
+        "one": "{n} mes",
+        "other": "{n} mesos"
+      },
+      "year": {
+        "one": "{n} any",
+        "other": "{n} anys"
+      }
+    },
+    "half": "{n} i mig",
+    "delimiter": ", ",
+    "justBorn": "Nounat",
+    "stages": {
+      "newborn": {
+        "m": "Nounat",
+        "f": "Nounada"
+      },
+      "infant": "Nadó",
+      "toddler": "Infant",
+      "child": "Criatura",
+      "teenager": "Adolescent",
+      "adult": {
+        "m": "Adult",
+        "f": "Adulta"
+      }
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} dia",
+          "other": "{n} dies"
+        },
+        "week": "{n} setm.",
+        "month": {
+          "one": "{n} mes",
+          "other": "{n} m"
+        },
+        "year": {
+          "one": "{n} any",
+          "other": "{n} anys"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d",
+        "week": "{n} setm.",
+        "month": "{n} m",
+        "year": {
+          "one": "{n} any",
+          "other": "{n} anys"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "gener",
+      "febrer",
+      "març",
+      "abril",
+      "maig",
+      "juny",
+      "juliol",
+      "agost",
+      "setembre",
+      "octubre",
+      "novembre",
+      "desembre"
+    ],
+    "weekdays": [
+      "diumenge",
+      "dilluns",
+      "dimarts",
+      "dimecres",
+      "dijous",
+      "divendres",
+      "dissabte"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} de {month}",
+    "datePatternWithYear": "{day} de {month} de {year}",
+    "today": "avui",
+    "tomorrow": "demà",
+    "yesterday": "ahir",
+    "dayAfterTomorrow": "demà passat",
+    "dayBeforeYesterday": "abans-d'ahir",
+    "thisWeekday": "aquest {weekday}",
+    "nextWeekday": "{weekday} que ve",
+    "lastWeekday": "{weekday} passat",
+    "short": {
+      "months": [
+        "gen",
+        "feb",
+        "març",
+        "abr",
+        "maig",
+        "juny",
+        "jul",
+        "ag",
+        "set",
+        "oct",
+        "nov",
+        "des"
+      ],
+      "weekdays": [
+        "dg",
+        "dl",
+        "dt",
+        "dc",
+        "dj",
+        "dv",
+        "ds"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} segon",
+        "other": "{n} segons"
+      },
+      "minute": {
+        "one": "{n} minut",
+        "other": "{n} minuts"
+      },
+      "hour": {
+        "one": "{n} hora",
+        "other": "{n} hores"
+      },
+      "day": {
+        "one": "{n} dia",
+        "other": "{n} dies"
+      },
+      "week": {
+        "one": "{n} setmana",
+        "other": "{n} setmanes"
+      },
+      "month": {
+        "one": "{n} mes",
+        "other": "{n} mesos"
+      },
+      "year": {
+        "one": "{n} any",
+        "other": "{n} anys"
+      }
+    },
+    "half": "{n} i mig",
+    "delimiter": ", ",
+    "justNow": "ara mateix",
+    "ago": "fa {0}",
+    "inFuture": "d'aquí a {0}",
+    "short": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": {
+          "one": "{n} dia",
+          "other": "{n} dies"
+        },
+        "week": "{n} setm.",
+        "month": {
+          "one": "{n} mes",
+          "other": "{n} m"
+        },
+        "year": {
+          "one": "{n} any",
+          "other": "{n} anys"
+        }
+      },
+      "ago": "fa {0}",
+      "inFuture": "d'aquí a {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} d",
+        "week": "{n} setm.",
+        "month": "{n} m",
+        "year": {
+          "one": "{n} any",
+          "other": "{n} anys"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "fa {0}",
+      "inFuture": "d'aquí a {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dotze",
+        "una",
+        "dues",
+        "tres",
+        "quatre",
+        "cinc",
+        "sis",
+        "set",
+        "vuit",
+        "nou",
+        "deu",
+        "onze"
+      ],
+      "midnight": "mitjanit",
+      "noon": "migdia",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "cinc past {h}",
+        "10": "deu past {h}",
+        "15": "un quart past {h}",
+        "20": "vint past {h}",
+        "25": "vint-i-cinc past {h}",
+        "30": "mitja past {h}",
+        "35": "vint-i-cinc to {next_h}",
+        "40": "vint to {next_h}",
+        "45": "un quart to {next_h}",
+        "50": "deu to {next_h}",
+        "55": "cinc to {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

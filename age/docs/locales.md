@@ -6,13 +6,16 @@ relates to the authoritative CLDR (Unicode Common Locale Data Repository) data.
 
 ## Canonical source
 
-All locale data is maintained in `locales/*.json` — one JSON file per
-locale. These are the single source of truth. The locale files in each language
-implementation (e.g. `typescript/src/locales/fr.ts`) are generated from these
-JSON definitions by `codegen/generate.py`. See [`codegen/README.md`](../codegen/README.md)
-for details on the generator.
+All locale data is maintained in [`locales/*.json`](../../locales/) at the
+repository root — one JSON file per language, with sayable-age's data in its
+`age` section. These are the single source of truth. The locale files in each
+language implementation (e.g. `age/impl/typescript/src/locales/fr.ts`) are
+generated from these JSON definitions by `codegen/generate.py`. See
+[`codegen/README.md`](../codegen/README.md) for details on the generator and
+[`docs/adding-a-locale.md`](../../docs/adding-a-locale.md) for every field.
 
-To modify a locale, edit its JSON file and run `python -m codegen.generate`.
+To modify a locale, edit its JSON file and run `just generate locales` from the
+repository root.
 
 ## Sources
 

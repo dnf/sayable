@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/de.json
+# Source: locales/de.json
 
 _sayabletime_locale_de() {
     _clock_hours=('zwölf' 'eins' 'zwei' 'drei' 'vier' 'fünf' 'sechs' 'sieben' 'acht' 'neun' 'zehn' 'elf')

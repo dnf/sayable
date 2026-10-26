@@ -1,0 +1,224 @@
+{
+  "code": "mfe",
+  "name": "Mauritian Creole",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} zour",
+      "week": "{n} semenn",
+      "month": "{n} mwa",
+      "year": "{n} lane"
+    },
+    "half": "{0} edmi",
+    "delimiter": ", ",
+    "justBorn": "Zanfan fek ne",
+    "stages": {
+      "newborn": "Zanfan fek ne",
+      "infant": "Ti baba",
+      "toddler": "Ti zanfan",
+      "child": "Zanfan",
+      "teenager": "Adolesan",
+      "adult": "Gran dimoun"
+    },
+    "short": {
+      "units": {
+        "day": "{n} zr",
+        "week": "{n} sem",
+        "month": "{n} mwa",
+        "year": "{n} la"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} zr",
+        "week": "{n} sem",
+        "month": "{n} mwa",
+        "year": "{n} la"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Zanvie",
+      "Fevrie",
+      "Mars",
+      "Avril",
+      "Me",
+      "Zwin",
+      "Zwiye",
+      "Out",
+      "Septam",
+      "Oktob",
+      "Novam",
+      "Desam"
+    ],
+    "weekdays": [
+      "Dimans",
+      "Lindi",
+      "Mardi",
+      "Merkredi",
+      "Zedi",
+      "Vandredi",
+      "Samdi"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "zordi",
+    "tomorrow": "dimin",
+    "yesterday": "yer",
+    "dayAfterTomorrow": "apre dimin",
+    "dayBeforeYesterday": "avan yer",
+    "thisWeekday": "{weekday} la",
+    "nextWeekday": "{weekday} prosenn",
+    "lastWeekday": "{weekday} pase",
+    "short": {
+      "months": [
+        "Zan",
+        "Fev",
+        "Mar",
+        "Avr",
+        "Me",
+        "Zwn",
+        "Zwy",
+        "Out",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Dim",
+        "Lin",
+        "Mar",
+        "Mer",
+        "Zed",
+        "Van",
+        "Sam"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} segonn",
+      "minute": "{n} minit",
+      "hour": "{n} ler",
+      "day": "{n} zour",
+      "week": "{n} semenn",
+      "month": "{n} mwa",
+      "year": "{n} lane"
+    },
+    "half": "{0} edmi",
+    "delimiter": ", ",
+    "justNow": "aster la",
+    "ago": "sa fer {0}",
+    "inFuture": "dan {0}",
+    "short": {
+      "units": {
+        "second": "{n} seg",
+        "minute": "{n} min",
+        "hour": "{n} ler",
+        "day": "{n} zr",
+        "week": "{n} sem",
+        "month": "{n} mwa",
+        "year": "{n} la"
+      },
+      "ago": "sa fer {0}",
+      "inFuture": "dan {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} seg",
+        "minute": "{n} min",
+        "hour": "{n} ler",
+        "day": "{n} zr",
+        "week": "{n} sem",
+        "month": "{n} mwa",
+        "year": "{n} la"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "sa fer {0}",
+      "inFuture": "dan {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "douz",
+        "enn",
+        "de",
+        "trwa",
+        "kat",
+        "senk",
+        "sis",
+        "set",
+        "wit",
+        "nef",
+        "dis",
+        "onz"
+      ],
+      "midnight": "minwi",
+      "noon": "midi",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

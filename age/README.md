@@ -6,7 +6,7 @@ Human-friendly age formatting — how parents actually talk about little ones.
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `sayable-age` formats ages the way parents and pediatricians actually talk, with human-friendly output in 29 languages, 110 locales, and three compactness levels.
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `sayable-age` formats ages the way parents and pediatricians actually talk, with human-friendly output in 51 languages, 168 locales, and three compactness levels.
 
 Part of the [Sayable](../) family.
 
@@ -61,7 +61,7 @@ sayable-age age 2020-06-15 -l fr            # "5 ans et demi"
 sayable-age age 2020-06-15 --compact        # "5½y"
 sayable-age age 2020-06-15 -d 2021-01-01    # "6 months"
 sayable-age stage 2024-01-10 -l es -g f     # "Niña pequeña"
-sayable-age locales                         # list all 110 locale codes
+sayable-age locales                         # list all 168 locale codes
 ```
 
 | Flag              | Short | Default | Description                   |

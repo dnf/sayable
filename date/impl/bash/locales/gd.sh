@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/gd.json
+# Source: locales/gd.json
 
 _sayabledate_locale_gd() {
     _months=('Am Faoilleach' 'An Gearran' 'Am Màrt' 'An Giblean' 'An Cèitean' 'An t-Ògmhios' 'An t-Iuchar' 'An Lùnastal' 'An t-Sultain' 'An Dàmhair' 'An t-Samhain' 'An Dùbhlachd')

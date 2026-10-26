@@ -9,7 +9,7 @@ use v6.d;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/quc.json
+# Source: locales/quc.json
 unit module SayableDate::Locales::QUC;
 
 our sub locale() {
