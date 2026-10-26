@@ -369,9 +369,18 @@ check('14.5 Jan31 to Jul31', format_age('2025-01-31', '2025-07-31'), '6 months')
 % ================================================================
 printf('Section 15: Default asOf\n');
 
-% 15.1, 15.2
-check('15.1 explicit as_of proxy', format_age('2020-01-01', '2025-06-15'), '5 years');
-check('15.2 explicit as_of proxy', format_age('2025-06-10', '2025-06-15'), '5 days');
+% There is no way to inject "today", so these dates are derived from the real
+% current date (local time, like the library) to keep the canonical outputs.
+v = clock();
+today_iso = sprintf('%04d-%02d-%02d', v(1), v(2), v(3));
+five_years_ago = sprintf('%04d-%02d-%02d', v(1) - 5, v(2), min(v(3), 28));
+forty_five_years_ago = sprintf('%04d-%02d-%02d', v(1) - 45, v(2), min(v(3), 28));
+five_days_ago = datestr(datenum(v(1), v(2), v(3)) - 5, 'yyyy-mm-dd');
+
+% 15.1
+check('15.1 default as_of 5 years', format_age(five_years_ago), '5 years');
+% 15.2
+check('15.2 default as_of 5 days', format_age(five_days_ago), '5 days');
 
 % ================================================================
 % 16. formatStage null/edge cases
@@ -512,10 +521,13 @@ check('22.3 45 years', format_stage('1980-01-01', '2025-06-15'), 'Adult');
 % ================================================================
 printf('Section 23: formatStage — default asOf\n');
 
-% 23.1, 23.2, 23.3
-check('23.1 newborn', format_stage('2025-06-15', '2025-06-15'), 'Newborn');
-check('23.2 child', format_stage('2020-01-01', '2025-06-15'), 'Child');
-check('23.3 adult', format_stage('1980-01-01', '2025-06-15'), 'Adult');
+% Dates derived from the real current date, see section 15.
+% 23.1
+check('23.1 newborn', format_stage(today_iso), 'Newborn');
+% 23.2
+check('23.2 child', format_stage(five_years_ago), 'Child');
+% 23.3
+check('23.3 adult', format_stage(forty_five_years_ago), 'Adult');
 
 % ================================================================
 % 24. SayableAge class — English locale delegation
@@ -812,7 +824,7 @@ check('32.1 pl 3 is few', format_age('2021-06-15', '2025-01-15', locale_pl()), '
 check('32.2 pl short 5 is many', format_age('2020-06-15', '2025-12-15', locale_pl(), 'short'), '5 i pół lat');
 
 % 32.3
-check('32.3 shi 6 is few', format_age('2005-06-08', '2012-06-07', locale_shi()), '6 iseggasen d uzgen');
+check('32.3 shi 6 is few', format_age('2005-06-08', '2012-06-07', locale_shi()), '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ');
 
 % ================================================================
 % 33. Input validation

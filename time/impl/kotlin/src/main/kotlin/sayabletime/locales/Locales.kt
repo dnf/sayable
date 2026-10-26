@@ -2710,10 +2710,10 @@ public object Locales {
     private fun buildShi(): TimeLocale = TimeLocale(
         code = "shi",
         clock = ClockConfig(
-            hours = listOf("tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"),
-            midnight = "nṣ n iḍ",
-            noon = "tizwarnin",
-            patterns = mapOf(0 to "{h}", 5 to "{h} d smmus tusdiqin", 10 to "{h} d mraw tusdiqin", 15 to "{h} d rrbɛ", 20 to "{h} d ɛcrin n tusdiqt", 25 to "{h} d xmsa u ɛcrin n tusdiqt", 30 to "{h} d uzgen", 35 to "{h} d xmsa u tlatin n tusdiqt", 40 to "{h} d ṛbɛin n tusdiqt", 45 to "{h} d xmsa u ṛbɛin n tusdiqt", 50 to "{h} d xmsin n tusdiqt", 55 to "{h} d xmsa u xmsin n tusdiqt"),
+            hours = listOf("ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ", "ⵜⵉⵙ ⵙⵏⴰⵜ", "ⵜⵉⵙ ⴽⵕⴰⵟⵟ", "ⵜⵉⵙ ⴽⴽⵓⵥⵜ", "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ", "ⵜⵉⵙ ⵙⴹⵉⵙⵜ", "ⵜⵉⵙ ⵙⴰⵜ", "ⵜⵉⵙ ⵜⴰⵎⵜ", "ⵜⵉⵙ ⵜⵥⴰⵜ", "ⵜⵉⵙ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"),
+            midnight = "ⵏⵚ ⵏ ⵉⴹ",
+            noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
+            patterns = mapOf(0 to "{h}", 5 to "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ", 10 to "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ", 15 to "{h} ⴷ ⵔⵔⴱⵄ", 20 to "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 25 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 30 to "{h} ⴷ ⵓⵣⴳⵏ", 35 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 40 to "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 45 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 50 to "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 55 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),

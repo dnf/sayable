@@ -15,66 +15,66 @@ sd_plural('shi', N, one) :- (N =:= 0 ; N =:= 1), !.
 sd_plural('shi', N, few) :- N >= 2, N =< 10, !.
 sd_plural('shi', _, other).
 
-sd_unit('shi', second, one, '{n} tasint').
-sd_unit('shi', second, few, '{n} tisinin').
-sd_unit('shi', second, other, '{n} tisinin').
-sd_unit('shi', minute, one, '{n} tusdiqt').
-sd_unit('shi', minute, few, '{n} tusdiqin').
-sd_unit('shi', minute, other, '{n} tusdiqin').
-sd_unit('shi', hour, one, '{n} tasragt').
-sd_unit('shi', hour, few, '{n} tisragin').
-sd_unit('shi', hour, other, '{n} tisragin').
-sd_unit('shi', day, one, '{n} ass').
-sd_unit('shi', day, few, '{n} ussan').
-sd_unit('shi', day, other, '{n} ass').
-sd_unit('shi', week, one, '{n} imalass').
-sd_unit('shi', week, few, '{n} imalassn').
-sd_unit('shi', week, other, '{n} imalass').
-sd_unit('shi', month, one, '{n} ayyur').
-sd_unit('shi', month, few, '{n} ayyurn').
-sd_unit('shi', month, other, '{n} ayyur').
-sd_unit('shi', year, one, '{n} aseggas').
-sd_unit('shi', year, few, '{n} iseggasen').
-sd_unit('shi', year, other, '{n} aseggas').
+sd_unit('shi', second, one, '{n} ⵜⴰⵙⵉⵏⵜ').
+sd_unit('shi', second, few, '{n} ⵜⵉⵙⵉⵏⵉⵏ').
+sd_unit('shi', second, other, '{n} ⵜⵉⵙⵉⵏⵉⵏ').
+sd_unit('shi', minute, one, '{n} ⵜⵓⵙⴷⵉⵇⵜ').
+sd_unit('shi', minute, few, '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ').
+sd_unit('shi', minute, other, '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ').
+sd_unit('shi', hour, one, '{n} ⵜⴰⵙⵔⴰⴳⵜ').
+sd_unit('shi', hour, few, '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ').
+sd_unit('shi', hour, other, '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ').
+sd_unit('shi', day, one, '{n} ⴰⵙⵙ').
+sd_unit('shi', day, few, '{n} ⵓⵙⵙⴰⵏ').
+sd_unit('shi', day, other, '{n} ⴰⵙⵙ').
+sd_unit('shi', week, one, '{n} ⵉⵎⴰⵍⴰⵙⵙ').
+sd_unit('shi', week, few, '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ').
+sd_unit('shi', week, other, '{n} ⵉⵎⴰⵍⴰⵙⵙ').
+sd_unit('shi', month, one, '{n} ⴰⵢⵢⵓⵔ').
+sd_unit('shi', month, few, '{n} ⴰⵢⵢⵓⵔⵏ').
+sd_unit('shi', month, other, '{n} ⴰⵢⵢⵓⵔ').
+sd_unit('shi', year, one, '{n} ⴰⵙⴳⴳⵯⴰⵙ').
+sd_unit('shi', year, few, '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ').
+sd_unit('shi', year, other, '{n} ⴰⵙⴳⴳⵯⴰⵙ').
 
-sd_half('shi', '{0} d uzgen').
+sd_half('shi', '{0} ⴷ ⵓⵣⴳⵏ').
 sd_delimiter('shi', ', ').
-sd_just_now('shi', 'ɣilad').
-sd_ago('shi', 'ɣ {0} zzrin').
-sd_in_future('shi', 'ɣ {0}').
+sd_just_now('shi', 'ⵖⵉⵍⴰⴷ').
+sd_ago('shi', 'ⵖ {0} ⵣⵣⵔⵉⵏ').
+sd_in_future('shi', 'ⵖ {0}').
 
-short_sd_unit('shi', second, one, '{n} tasint').
-short_sd_unit('shi', second, few, '{n} tasinin').
-short_sd_unit('shi', second, other, '{n} tasinin').
-short_sd_unit('shi', minute, one, '{n} tusdiqt').
-short_sd_unit('shi', minute, few, '{n} tusdiqin').
-short_sd_unit('shi', minute, other, '{n} tusdiqin').
-short_sd_unit('shi', hour, one, '{n} tasragt').
-short_sd_unit('shi', hour, few, '{n} tisragin').
-short_sd_unit('shi', hour, other, '{n} tisragin').
-short_sd_unit('shi', day, one, '{n} ass').
-short_sd_unit('shi', day, few, '{n} ussan').
-short_sd_unit('shi', day, other, '{n} ass').
-short_sd_unit('shi', week, one, '{n} imalass').
-short_sd_unit('shi', week, few, '{n} imalassn').
-short_sd_unit('shi', week, other, '{n} imalass').
-short_sd_unit('shi', month, one, '{n} ayyur').
-short_sd_unit('shi', month, few, '{n} ayyurn').
-short_sd_unit('shi', month, other, '{n} ayyur').
-short_sd_unit('shi', year, one, '{n} aseggas').
-short_sd_unit('shi', year, few, '{n} iseggasen').
-short_sd_unit('shi', year, other, '{n} aseggas').
-short_sd_ago('shi', 'ɣ {0} zzrin').
-short_sd_in_future('shi', 'ɣ {0}').
+short_sd_unit('shi', second, one, '{n} ⵜⴰⵙⵉⵏⵜ').
+short_sd_unit('shi', second, few, '{n} ⵜⵉⵙⵉⵏⵉⵏ').
+short_sd_unit('shi', second, other, '{n} ⵜⵉⵙⵉⵏⵉⵏ').
+short_sd_unit('shi', minute, one, '{n} ⵜⵓⵙⴷⵉⵇⵜ').
+short_sd_unit('shi', minute, few, '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ').
+short_sd_unit('shi', minute, other, '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ').
+short_sd_unit('shi', hour, one, '{n} ⵜⴰⵙⵔⴰⴳⵜ').
+short_sd_unit('shi', hour, few, '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ').
+short_sd_unit('shi', hour, other, '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ').
+short_sd_unit('shi', day, one, '{n} ⴰⵙⵙ').
+short_sd_unit('shi', day, few, '{n} ⵓⵙⵙⴰⵏ').
+short_sd_unit('shi', day, other, '{n} ⴰⵙⵙ').
+short_sd_unit('shi', week, one, '{n} ⵉⵎⴰⵍⴰⵙⵙ').
+short_sd_unit('shi', week, few, '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ').
+short_sd_unit('shi', week, other, '{n} ⵉⵎⴰⵍⴰⵙⵙ').
+short_sd_unit('shi', month, one, '{n} ⴰⵢⵢⵓⵔ').
+short_sd_unit('shi', month, few, '{n} ⴰⵢⵢⵓⵔⵏ').
+short_sd_unit('shi', month, other, '{n} ⴰⵢⵢⵓⵔ').
+short_sd_unit('shi', year, one, '{n} ⴰⵙⴳⴳⵯⴰⵙ').
+short_sd_unit('shi', year, few, '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ').
+short_sd_unit('shi', year, other, '{n} ⴰⵙⴳⴳⵯⴰⵙ').
+short_sd_ago('shi', 'ⵖ {0} ⵣⵣⵔⵉⵏ').
+short_sd_in_future('shi', 'ⵖ {0}').
 
-compact_sd_unit('shi', second, _, '{n}s').
-compact_sd_unit('shi', minute, _, '{n}m').
-compact_sd_unit('shi', hour, _, '{n}h').
-compact_sd_unit('shi', day, _, '{n}d').
-compact_sd_unit('shi', week, _, '{n}w').
-compact_sd_unit('shi', month, _, '{n}mo').
-compact_sd_unit('shi', year, _, '{n}y').
+compact_sd_unit('shi', second, _, '{n} ⵜⵙⵏ').
+compact_sd_unit('shi', minute, _, '{n} ⵜⵙⴷ').
+compact_sd_unit('shi', hour, _, '{n} ⵜⵙⵔ').
+compact_sd_unit('shi', day, _, '{n} ⴰⵙⵙ').
+compact_sd_unit('shi', week, _, '{n} ⵉⵎⵍ').
+compact_sd_unit('shi', month, _, '{n} ⴰⵢⵔ').
+compact_sd_unit('shi', year, _, '{n} ⴰⵙⴳ').
 compact_sd_half('shi', '{n}½').
 compact_sd_delimiter('shi', '').
-compact_sd_ago('shi', 'ɣ {0} zzrin').
-compact_sd_in_future('shi', 'ɣ {0}').
+compact_sd_ago('shi', 'ⵖ {0} ⵣⵣⵔⵉⵏ').
+compact_sd_in_future('shi', 'ⵖ {0}').

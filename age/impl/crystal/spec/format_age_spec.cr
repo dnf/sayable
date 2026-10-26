@@ -515,10 +515,25 @@ end
 # ================================================================
 # Section 15: Default asOf (current date)
 # ================================================================
-# Skipping 15.1 and 15.2 — they require mocking the system clock.
-# Crystal's Time.local cannot be trivially stubbed in spec.
-# The formatter's parse_age uses as_of parameter when provided,
-# which is tested thoroughly by all other sections.
+# The formatter reads Time.local when as_of is omitted and has no clock
+# override, so each input is derived from today to keep the canonical output.
+def default_date_ago(years : Int32 = 0, days : Int32 = 0) : String
+  (Time.local - years.years - days.days).to_s("%F")
+end
+
+describe "Default asOf" do
+  formatter = SayableAge::Formatter.new(SayableAge::Locales::EN)
+
+  # 15.1
+  it "5 years" do
+    formatter.format_age(default_date_ago(years: 5)).should eq "5 years"
+  end
+
+  # 15.2
+  it "5 days" do
+    formatter.format_age(default_date_ago(days: 5)).should eq "5 days"
+  end
+end
 
 # ================================================================
 # Section 16: formatStage — null / edge cases
@@ -735,7 +750,25 @@ end
 # ================================================================
 # Section 23: formatStage — default asOf
 # ================================================================
-# Skipping 23.1-23.3 — they require mocking the system clock.
+# Inputs derived from today (see Section 15).
+describe "formatStage — default asOf" do
+  formatter = SayableAge::Formatter.new(SayableAge::Locales::EN)
+
+  # 23.1
+  it "born today is Newborn" do
+    formatter.format_stage(default_date_ago).should eq "Newborn"
+  end
+
+  # 23.2
+  it "5 years is Child" do
+    formatter.format_stage(default_date_ago(years: 5)).should eq "Child"
+  end
+
+  # 23.3
+  it "45 years is Adult" do
+    formatter.format_stage(default_date_ago(years: 45)).should eq "Adult"
+  end
+end
 
 # ================================================================
 # Section 24: SayableAge class — English locale delegation
@@ -1318,7 +1351,7 @@ describe "Half years take their plural form from whole years" do
 
   # 32.3
   it "Tachelhit 6 is 'few'" do
-    SayableAge::Formatter.new(SayableAge::Locales.get("shi").not_nil!, :normal).format_age("2005-06-08", "2012-06-07").should eq "6 iseggasen d uzgen"
+    SayableAge::Formatter.new(SayableAge::Locales.get("shi").not_nil!, :normal).format_age("2005-06-08", "2012-06-07").should eq "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"
   end
 end
 

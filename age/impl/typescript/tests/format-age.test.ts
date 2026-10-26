@@ -1335,7 +1335,7 @@ describe('half years take their plural form from whole years', () => {
 
   // 32.3
   it('Tachelhit 6 is few', () => {
-    expect(new SayableAge(shi).formatAge('2005-06-08', '2012-06-07')).toBe('6 iseggasen d uzgen');
+    expect(new SayableAge(shi).formatAge('2005-06-08', '2012-06-07')).toBe('6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ');
   });
 });
 

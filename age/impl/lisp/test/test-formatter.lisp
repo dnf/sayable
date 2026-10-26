@@ -237,6 +237,40 @@
   (check-equal "12.3" (format-age (make-formatter (get-locale "en") :normal) "1980-01-01" "2025-06-15") "45 years")
 )
 
+;; Default as-of (NIL or empty means today, local time): dateOfBirth is derived
+;; from the current date. The day is capped at 28 so a Feb 29 today still
+;; yields a real calendar date years earlier.
+(defun date-string (year month day)
+  (format nil "~4,'0D-~2,'0D-~2,'0D" year month day))
+
+(defun years-before-today (years)
+  (multiple-value-bind (sec min hour day month year) (get-decoded-time)
+    (declare (ignore sec min hour))
+    (date-string (- year years) month (min day 28))))
+
+(defun days-before-today (days)
+  (multiple-value-bind (sec min hour day month year)
+      (decode-universal-time (- (get-universal-time) (* days 86400)))
+    (declare (ignore sec min hour))
+    (date-string year month day)))
+
+(defun test-default-as-of-age ()
+  (let ((fmt (make-formatter (get-locale "en") :normal)))
+    ;; 15.1
+    (check-equal "15.1" (format-age fmt (years-before-today 5)) "5 years")
+    (check-equal "15.1 empty" (format-age fmt (years-before-today 5) "") "5 years")
+    ;; 15.2
+    (check-equal "15.2" (format-age fmt (days-before-today 5)) "5 days")))
+
+(defun test-default-as-of-stage ()
+  (let ((fmt (make-formatter (get-locale "en") :normal)))
+    ;; 23.1
+    (check-equal "23.1" (format-stage fmt (days-before-today 0)) "Newborn")
+    ;; 23.2
+    (check-equal "23.2" (format-stage fmt (years-before-today 5)) "Child")
+    ;; 23.3
+    (check-equal "23.3" (format-stage fmt (years-before-today 45) "") "Adult")))
+
 ;; Section 13: Cross-year transitions with February
 (defun test-section-13 ()
   ;; 13.1
@@ -598,7 +632,7 @@
   ;; 32.2
   (check-equal "32.2" (format-age (make-formatter (get-locale "pl") :short) "2020-06-15" "2025-12-15") "5 i pół lat")
   ;; 32.3
-  (check-equal "32.3" (format-age (make-formatter (get-locale "shi") :normal) "2005-06-08" "2012-06-07") "6 iseggasen d uzgen")
+  (check-equal "32.3" (format-age (make-formatter (get-locale "shi") :normal) "2005-06-08" "2012-06-07") "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")
 )
 
 ;; Section 33: Input validation
@@ -643,7 +677,7 @@
   (test-section-12)
   (test-section-13)
   (test-section-14)
-  ;; Section 15 skipped (system date mocking)
+  (test-default-as-of-age)
   (test-section-16)
   (test-section-17)
   (test-section-18)
@@ -651,7 +685,7 @@
   (test-section-20)
   (test-section-21)
   (test-section-22)
-  ;; Section 23 skipped (system date mocking)
+  (test-default-as-of-stage)
   (test-section-24)
   (test-section-25)
   (test-section-26)

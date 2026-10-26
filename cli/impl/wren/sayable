@@ -12,12 +12,21 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# wren_cli 0.4.0 has no clock, so the wrapper supplies today's date.
+today() { date +%Y-%m-%d; }
+
 # REPL mode (see cli/SPEC.md). wren_cli 0.4.0 cannot detect end of input
 # without crashing, so the requests are followed by an end marker (0x1C) that
 # main.wren stops at; lines it prefixes with __STDERR__ are moved to stderr.
+# Each request is prefixed with today's date, evaluated per request.
 if [[ "$#" -eq 1 && "$1" == "--repl" ]]; then
     _end_of_requests=$'\034'
-    { cat; printf '%s\n' "${_end_of_requests}"; } \
+    {
+        while IFS= read -r _request || [[ -n "${_request}" ]]; do
+            printf '%s\t%s\n' "$(today)" "${_request}"
+        done
+        printf '%s\t%s\n' "$(today)" "${_end_of_requests}"
+    } \
         | wren_cli "${SCRIPT_DIR}/main.wren" --repl \
         | while IFS= read -r _line; do
             if [[ "${_line}" == __STDERR__* ]]; then
@@ -30,7 +39,7 @@ if [[ "$#" -eq 1 && "$1" == "--repl" ]]; then
 fi
 
 # Capture all output (wren_cli writes everything to stdout)
-output=$(wren_cli "${SCRIPT_DIR}/main.wren" "$@" 2>/dev/null) || {
+output=$(wren_cli "${SCRIPT_DIR}/main.wren" --today "$(today)" "$@" 2>/dev/null) || {
     # Fiber.abort was called — check output for our exit protocol
     if [[ "${output}" == "__EXIT_1__" ]]; then
         exit 1
@@ -41,7 +50,7 @@ output=$(wren_cli "${SCRIPT_DIR}/main.wren" "$@" 2>/dev/null) || {
         exit 2
     elif [[ "${output}" == "__EXIT_2_HELP__" ]]; then
         # Print help to stderr when no args given
-        wren_cli "${SCRIPT_DIR}/main.wren" help 2>/dev/null >&2
+        wren_cli "${SCRIPT_DIR}/main.wren" --today "$(today)" help 2>/dev/null >&2
         exit 2
     else
         # Unknown error from wren

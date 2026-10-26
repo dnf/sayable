@@ -19,6 +19,8 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.1: not applicable — dateOfBirth is a non-nullable String in Kotlin, so a null input cannot be written
+
     // 1.3
     @Test
     fun `empty string returns null`() {
@@ -574,6 +576,8 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- null/edge cases
     // ================================================================
+    // 16.1: not applicable — dateOfBirth is a non-nullable String in Kotlin, so a null input cannot be written
+
     // 16.3
     @Test
     fun `stage empty string returns null`() {
@@ -1258,7 +1262,7 @@ class FormatAgeTest {
     @Test
     fun `tachelhit 6 is few`() {
         val f = SayableAge(Locales.SHI)
-        assertEquals("6 iseggasen d uzgen", f.formatAge("2005-06-08", "2012-06-07"))
+        assertEquals("6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ", f.formatAge("2005-06-08", "2012-06-07"))
     }
 
     // ================================================================

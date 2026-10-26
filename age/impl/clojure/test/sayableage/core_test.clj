@@ -1,6 +1,7 @@
 (ns sayableage.core-test
   (:require [clojure.test :refer [deftest is testing]]
             [sayableage.core :as pt]
+            [sayableage.internal :as internal]
             [sayableage.locales.en :as en]
             [sayableage.locales.es :as es]
             [sayableage.locales.he :as he]
@@ -224,7 +225,18 @@
   (testing "14.5 Jan 31 -> Jul 31"
     (is (= "6 months" (age "2025-01-31" "2025-07-31")))))
 
-;; 15. Default asOf — skipped (test only pure variants)
+;; 15. Default asOf (today pinned to 2025-06-15 by redefining internal/today)
+(defn- with-fixed-today [f]
+  (with-redefs [internal/today (constantly [2025 6 15])]
+    (f)))
+
+(deftest default-as-of
+  (testing "15.1 default asOf, 5 years"
+    (with-fixed-today
+      #(is (= "5 years" (pt/format-age en/locale :normal "2020-01-01" nil)))))
+  (testing "15.2 default asOf, 5 days"
+    (with-fixed-today
+      #(is (= "5 days" (pt/format-age en/locale :normal "2025-06-10" nil))))))
 
 ;; 16. formatStage - null / edge cases
 (deftest stage-null-edge
@@ -311,7 +323,17 @@
   (testing "22.3 45 years"
     (is (= "Adult" (stage "1980-01-01" "2025-06-15")))))
 
-;; 23. formatStage — default asOf — skipped (test only pure variants)
+;; 23. formatStage — default asOf (today pinned as in section 15)
+(deftest stage-default-as-of
+  (testing "23.1 default asOf, born today"
+    (with-fixed-today
+      #(is (= "Newborn" (pt/format-stage en/locale "2025-06-15" nil nil)))))
+  (testing "23.2 default asOf, child"
+    (with-fixed-today
+      #(is (= "Child" (pt/format-stage en/locale "2020-01-01" nil nil)))))
+  (testing "23.3 default asOf, adult"
+    (with-fixed-today
+      #(is (= "Adult" (pt/format-stage en/locale "1980-01-01" nil nil))))))
 
 ;; 24. Class delegation — English locale
 (deftest class-delegation
@@ -555,7 +577,7 @@
   (testing "32.2 polish 5 is many"
     (is (= "5 i p\u00F3\u0142 lat" (pt/format-age-pure (pt/get-locale "pl") :short "2020-06-15" "2025-12-15"))))
   (testing "32.3 tachelhit 6 is few"
-    (is (= "6 iseggasen d uzgen" (pt/format-age-pure (pt/get-locale "shi") :normal "2005-06-08" "2012-06-07")))))
+    (is (= "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ" (pt/format-age-pure (pt/get-locale "shi") :normal "2005-06-08" "2012-06-07")))))
 
 ;; 33. Input validation
 (deftest input-validation

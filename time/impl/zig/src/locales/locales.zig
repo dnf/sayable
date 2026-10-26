@@ -1600,10 +1600,10 @@ pub const sg: sayabletime.TimeLocale = .{
 pub const shi: sayabletime.TimeLocale = .{
     .code = "shi",
     .clock = .{
-        .hours = .{ "tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt" },
-        .midnight = "nṣ n iḍ",
-        .noon = "tizwarnin",
-        .patterns = .{ "{h}", "{h} d smmus tusdiqin", "{h} d mraw tusdiqin", "{h} d rrbɛ", "{h} d ɛcrin n tusdiqt", "{h} d xmsa u ɛcrin n tusdiqt", "{h} d uzgen", "{h} d xmsa u tlatin n tusdiqt", "{h} d ṛbɛin n tusdiqt", "{h} d xmsa u ṛbɛin n tusdiqt", "{h} d xmsin n tusdiqt", "{h} d xmsa u xmsin n tusdiqt" },
+        .hours = .{ "ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ", "ⵜⵉⵙ ⵙⵏⴰⵜ", "ⵜⵉⵙ ⴽⵕⴰⵟⵟ", "ⵜⵉⵙ ⴽⴽⵓⵥⵜ", "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ", "ⵜⵉⵙ ⵙⴹⵉⵙⵜ", "ⵜⵉⵙ ⵙⴰⵜ", "ⵜⵉⵙ ⵜⴰⵎⵜ", "ⵜⵉⵙ ⵜⵥⴰⵜ", "ⵜⵉⵙ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ" },
+        .midnight = "ⵏⵚ ⵏ ⵉⴹ",
+        .noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
+        .patterns = .{ "{h}", "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ", "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ", "{h} ⴷ ⵔⵔⴱⵄ", "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵓⵣⴳⵏ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" },
     },
     .short_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },

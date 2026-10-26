@@ -72,11 +72,11 @@ is SayableAge::format-age('2025-03-15', '2025-06-15'), '3 months', '3.12 on 3mo 
 # 4.1
 is SayableAge::format-age('2025-01-01', '2025-04-01'), '3 months', '4.1 jan1-apr1';
 # 4.2
-ok SayableAge::format-age('2025-01-01', '2025-03-31').contains('week'), '4.2 jan1-mar31 still weeks';
+like SayableAge::format-age('2025-01-01', '2025-03-31'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '4.2 jan1-mar31 still weeks';
 # 4.3
 is SayableAge::format-age('2025-06-15', '2025-09-15'), '3 months', '4.3 jun15-sep15';
 # 4.4
-ok SayableAge::format-age('2025-06-15', '2025-09-14').contains('week'), '4.4 jun15-sep14 still weeks';
+like SayableAge::format-age('2025-06-15', '2025-09-14'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '4.4 jun15-sep14 still weeks';
 # 4.5
 is SayableAge::format-age('2025-06-15', '2025-12-15'), '6 months', '4.5 jun15-dec15';
 
@@ -88,11 +88,11 @@ is SayableAge::format-age('2025-01-31', '2025-02-28'), '4 weeks', '5.1 jan31-feb
 # 5.2
 is SayableAge::format-age('2025-01-31', '2025-04-30'), '3 months', '5.2 jan31-apr30 clamped';
 # 5.3
-ok SayableAge::format-age('2025-01-31', '2025-04-29').contains('week'), '5.3 jan31-apr29 still weeks';
+like SayableAge::format-age('2025-01-31', '2025-04-29'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '5.3 jan31-apr29 still weeks';
 # 5.4
 is SayableAge::format-age('2025-02-01', '2025-05-01'), '3 months', '5.4 feb1-may1';
 # 5.5
-ok SayableAge::format-age('2025-02-01', '2025-04-30').contains('week'), '5.5 feb1-apr30 still weeks';
+like SayableAge::format-age('2025-02-01', '2025-04-30'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '5.5 feb1-apr30 still weeks';
 
 # ================================================================
 # Month boundaries: February leap year
@@ -104,9 +104,9 @@ is SayableAge::format-age('2024-01-31', '2024-02-28'), '4 weeks', '6.2 jan31-feb
 # 6.3
 is SayableAge::format-age('2024-01-31', '2024-04-30'), '3 months', '6.3 jan31-apr30 leap';
 # 6.4
-ok SayableAge::format-age('2024-01-30', '2024-02-29').contains('week'), '6.4 jan30-feb29 leap still weeks';
+like SayableAge::format-age('2024-01-30', '2024-02-29'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '6.4 jan30-feb29 leap still weeks';
 # 6.5
-ok SayableAge::format-age('2024-01-30', '2024-02-28').contains('week'), '6.5 jan30-feb28 leap still weeks';
+like SayableAge::format-age('2024-01-30', '2024-02-28'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '6.5 jan30-feb28 leap still weeks';
 
 # ================================================================
 # Month boundaries: 30-day months
@@ -114,11 +114,11 @@ ok SayableAge::format-age('2024-01-30', '2024-02-28').contains('week'), '6.5 jan
 # 7.1
 is SayableAge::format-age('2025-03-31', '2025-06-30'), '3 months', '7.1 mar31-jun30';
 # 7.2
-ok SayableAge::format-age('2025-03-31', '2025-06-29').contains('week'), '7.2 mar31-jun29 still weeks';
+like SayableAge::format-age('2025-03-31', '2025-06-29'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '7.2 mar31-jun29 still weeks';
 # 7.3
 is SayableAge::format-age('2025-08-31', '2025-11-30'), '3 months', '7.3 aug31-nov30';
 # 7.4
-ok SayableAge::format-age('2025-08-31', '2025-11-29').contains('week'), '7.4 aug31-nov29 still weeks';
+like SayableAge::format-age('2025-08-31', '2025-11-29'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '7.4 aug31-nov29 still weeks';
 
 # ================================================================
 # Month boundaries: leap year baby (born Feb 29)
@@ -126,7 +126,7 @@ ok SayableAge::format-age('2025-08-31', '2025-11-29').contains('week'), '7.4 aug
 # 8.1
 is SayableAge::format-age('2024-02-29', '2024-05-29'), '3 months', '8.1 feb29-may29';
 # 8.2
-ok SayableAge::format-age('2024-02-29', '2024-05-28').contains('week'), '8.2 feb29-may28 still weeks';
+like SayableAge::format-age('2024-02-29', '2024-05-28'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '8.2 feb29-may28 still weeks';
 # 8.3
 is SayableAge::format-age('2024-02-29', '2025-02-28'), '12 months', '8.3 feb29-feb28 next year';
 # 8.4
@@ -206,11 +206,11 @@ is SayableAge::format-age('1980-01-01', '2025-06-15'), '45 years', '12.3 45 year
 # 13.1
 is SayableAge::format-age('2024-12-31', '2025-03-31'), '3 months', '13.1 dec31-mar31';
 # 13.2
-ok SayableAge::format-age('2024-12-31', '2025-03-30').contains('week'), '13.2 dec31-mar30 still weeks';
+like SayableAge::format-age('2024-12-31', '2025-03-30'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '13.2 dec31-mar30 still weeks';
 # 13.3
 is SayableAge::format-age('2024-11-30', '2025-02-28'), '3 months', '13.3 nov30-feb28';
 # 13.4
-ok SayableAge::format-age('2024-11-30', '2025-02-27').contains('week'), '13.4 nov30-feb27 still weeks';
+like SayableAge::format-age('2024-11-30', '2025-02-27'), rx/^ \d+ ' weeks' [', ' \d+ ' day' 's'?]? $/, '13.4 nov30-feb27 still weeks';
 
 # ================================================================
 # Born-on-31st progression
@@ -228,8 +228,19 @@ is SayableAge::format-age('2025-01-31', '2025-07-31'), '6 months', '14.5 jan31-j
 
 # ================================================================
 # Default as_of (uses current date) — tests 15.1, 15.2
-# We skip these since they depend on overriding time, tested via explicit dates above
+# The library has no way to override today, so the inputs are derived from the real date.
 # ================================================================
+# 15.1
+is SayableAge::format-age(Date.today.earlier(years => 5).Str), '5 years', '15.1 five years before today';
+# 15.2
+is SayableAge::format-age(Date.today.earlier(days => 5).Str), '5 days', '15.2 five days before today';
+# 23.1 to 23.3 use the real date too, so the inputs are derived from it.
+# 23.1
+is SayableAge::format-stage(Date.today.Str), 'Newborn', '23.1 born today';
+# 23.2
+is SayableAge::format-stage(Date.today.earlier(years => 5).Str), 'Child', '23.2 five years before today';
+# 23.3
+is SayableAge::format-stage(Date.today.earlier(years => 45).Str), 'Adult', '23.3 45 years before today';
 
 # ================================================================
 # formatStage
@@ -672,7 +683,7 @@ is SayableAge::Formatter.new(SayableAge::Locales::Registry::get-locale('pl')).fo
 # 32.2
 is SayableAge::Formatter.new(SayableAge::Locales::Registry::get-locale('pl'), compactness => 'short').format-age('2020-06-15', '2025-12-15'), '5 i pół lat', '32.2 Polish 5 is \'many\'';
 # 32.3
-is SayableAge::Formatter.new(SayableAge::Locales::Registry::get-locale('shi')).format-age('2005-06-08', '2012-06-07'), '6 iseggasen d uzgen', '32.3 Tachelhit 6 is \'few\'';
+is SayableAge::Formatter.new(SayableAge::Locales::Registry::get-locale('shi')).format-age('2005-06-08', '2012-06-07'), '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', '32.3 Tachelhit 6 is \'few\'';
 # 33.1
 ok !defined(SayableAge::Formatter.new(SayableAge::Locales::Registry::get-locale('en')).format-age('2025-02-30', '2032-06-25')), '33.1 February 30 doesn\'t exist';
 # 33.2

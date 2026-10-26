@@ -253,8 +253,8 @@ sayable locales
 
 - Each CLI implementation lives in `cli/impl/<lang>/`.
 - The CLI links all four component libraries from the same language.
-- Languages that only implement the `age` component (not date/duration/time) support only `age`, `stage`, and `locales` commands. Other commands return exit 2 with a message like `error: 'date' command not supported`.
-- The test harness (`cli/test-harness.sh`) automatically detects which commands a CLI supports and skips unsupported tests.
+- Every CLI implements all four libraries; the test harness and the fuzzer run every request against every CLI, so a missing command shows up as failures, not skipped tests.
+- A language with no clock of its own (Wren: wren_cli has none) still defaults `age` and `stage` to today: its wrapper supplies the date.
 
 ## Canonical Test Coverage
 

@@ -19,100 +19,100 @@ locale = DurationLocale
     , localePlural = \n -> if n == 0 || n == 1 then One else if n >= 2 && n <= 10 then Few else Other
     , localeUnits = Units
         { unitSecond = Pluralized
-          [ (One, "{n} tasint")
-          , (Few, "{n} tisinin")
-          , (Other, "{n} tisinin")
+          [ (One, "{n} ⵜⴰⵙⵉⵏⵜ")
+          , (Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ")
+          , (Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ")
           ]
         , unitMinute = Pluralized
-          [ (One, "{n} tusdiqt")
-          , (Few, "{n} tusdiqin")
-          , (Other, "{n} tusdiqin")
+          [ (One, "{n} ⵜⵓⵙⴷⵉⵇⵜ")
+          , (Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")
+          , (Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")
           ]
         , unitHour = Pluralized
-          [ (One, "{n} tasragt")
-          , (Few, "{n} tisragin")
-          , (Other, "{n} tisragin")
+          [ (One, "{n} ⵜⴰⵙⵔⴰⴳⵜ")
+          , (Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")
+          , (Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")
           ]
         , unitDay = Pluralized
-          [ (One, "{n} ass")
-          , (Few, "{n} ussan")
-          , (Other, "{n} ass")
+          [ (One, "{n} ⴰⵙⵙ")
+          , (Few, "{n} ⵓⵙⵙⴰⵏ")
+          , (Other, "{n} ⴰⵙⵙ")
           ]
         , unitWeek = Pluralized
-          [ (One, "{n} imalass")
-          , (Few, "{n} imalassn")
-          , (Other, "{n} imalass")
+          [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
+          , (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ")
+          , (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
           ]
         , unitMonth = Pluralized
-          [ (One, "{n} ayyur")
-          , (Few, "{n} ayyurn")
-          , (Other, "{n} ayyur")
+          [ (One, "{n} ⴰⵢⵢⵓⵔ")
+          , (Few, "{n} ⴰⵢⵢⵓⵔⵏ")
+          , (Other, "{n} ⴰⵢⵢⵓⵔ")
           ]
         , unitYear = Pluralized
-          [ (One, "{n} aseggas")
-          , (Few, "{n} iseggasen")
-          , (Other, "{n} aseggas")
+          [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
+          , (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ")
+          , (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
           ]
         }
-    , localeHalf = "{0} d uzgen"
+    , localeHalf = "{0} ⴷ ⵓⵣⴳⵏ"
     , localeDelimiter = ", "
-    , localeJustNow = "ɣilad"
-    , localeAgo = "ɣ {0} zzrin"
-    , localeInFuture = "ɣ {0}"
+    , localeJustNow = "ⵖⵉⵍⴰⴷ"
+    , localeAgo = "ⵖ {0} ⵣⵣⵔⵉⵏ"
+    , localeInFuture = "ⵖ {0}"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Pluralized
-              [ (One, "{n} tasint")
-              , (Few, "{n} tasinin")
-              , (Other, "{n} tasinin")
+              [ (One, "{n} ⵜⴰⵙⵉⵏⵜ")
+              , (Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ")
+              , (Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ")
               ])
             , ovrMinute = Just (Pluralized
-              [ (One, "{n} tusdiqt")
-              , (Few, "{n} tusdiqin")
-              , (Other, "{n} tusdiqin")
+              [ (One, "{n} ⵜⵓⵙⴷⵉⵇⵜ")
+              , (Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")
+              , (Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")
               ])
             , ovrHour = Just (Pluralized
-              [ (One, "{n} tasragt")
-              , (Few, "{n} tisragin")
-              , (Other, "{n} tisragin")
+              [ (One, "{n} ⵜⴰⵙⵔⴰⴳⵜ")
+              , (Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")
+              , (Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")
               ])
             , ovrDay = Just (Pluralized
-              [ (One, "{n} ass")
-              , (Few, "{n} ussan")
-              , (Other, "{n} ass")
+              [ (One, "{n} ⴰⵙⵙ")
+              , (Few, "{n} ⵓⵙⵙⴰⵏ")
+              , (Other, "{n} ⴰⵙⵙ")
               ])
             , ovrWeek = Just (Pluralized
-              [ (One, "{n} imalass")
-              , (Few, "{n} imalassn")
-              , (Other, "{n} imalass")
+              [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
+              , (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ")
+              , (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
               ])
             , ovrMonth = Just (Pluralized
-              [ (One, "{n} ayyur")
-              , (Few, "{n} ayyurn")
-              , (Other, "{n} ayyur")
+              [ (One, "{n} ⴰⵢⵢⵓⵔ")
+              , (Few, "{n} ⴰⵢⵢⵓⵔⵏ")
+              , (Other, "{n} ⴰⵢⵢⵓⵔ")
               ])
             , ovrYear = Just (Pluralized
-              [ (One, "{n} aseggas")
-              , (Few, "{n} iseggasen")
-              , (Other, "{n} aseggas")
+              [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
+              , (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ")
+              , (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
               ])
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "ɣ {0} zzrin"
-            , ovrInFuture = Just "ɣ {0}"
+            , ovrAgo = Just "ⵖ {0} ⵣⵣⵔⵉⵏ"
+            , ovrInFuture = Just "ⵖ {0}"
             }
     , localeCompact = Just $
         CompactnessOverride
-            { ovrSecond = Just (Simple "{n}s")
-            , ovrMinute = Just (Simple "{n}m")
-            , ovrHour = Just (Simple "{n}h")
-            , ovrDay = Just (Simple "{n}d")
-            , ovrWeek = Just (Simple "{n}w")
-            , ovrMonth = Just (Simple "{n}mo")
-            , ovrYear = Just (Simple "{n}y")
+            { ovrSecond = Just (Simple "{n} ⵜⵙⵏ")
+            , ovrMinute = Just (Simple "{n} ⵜⵙⴷ")
+            , ovrHour = Just (Simple "{n} ⵜⵙⵔ")
+            , ovrDay = Just (Simple "{n} ⴰⵙⵙ")
+            , ovrWeek = Just (Simple "{n} ⵉⵎⵍ")
+            , ovrMonth = Just (Simple "{n} ⴰⵢⵔ")
+            , ovrYear = Just (Simple "{n} ⴰⵙⴳ")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
-            , ovrAgo = Just "ɣ {0} zzrin"
-            , ovrInFuture = Just "ɣ {0}"
+            , ovrAgo = Just "ⵖ {0} ⵣⵣⵔⵉⵏ"
+            , ovrInFuture = Just "ⵖ {0}"
             }
     }

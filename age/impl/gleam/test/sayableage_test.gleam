@@ -1,3 +1,4 @@
+import gleam/int
 import gleam/string
 import gleeunit
 import gleeunit/should
@@ -57,6 +58,41 @@ fn contains_week(r: Result(String, Nil)) -> Bool {
     Ok(s) -> string.contains(s, "week")
     Error(Nil) -> False
   }
+}
+
+// The default-asOf tests (15.x, 23.x) derive dateOfBirth from the real current
+// date and pass an empty asOf so the library falls back to today.
+@external(erlang, "calendar", "local_time")
+fn local_time() -> #(#(Int, Int, Int), #(Int, Int, Int))
+
+@external(erlang, "calendar", "date_to_gregorian_days")
+fn date_to_days(date: #(Int, Int, Int)) -> Int
+
+@external(erlang, "calendar", "gregorian_days_to_date")
+fn days_to_date(days: Int) -> #(Int, Int, Int)
+
+fn iso(date: #(Int, Int, Int)) -> String {
+  let #(year, month, day) = date
+  let pad = fn(n: Int, width: Int) { string.pad_start(int.to_string(n), width, "0") }
+  pad(year, 4) <> "-" <> pad(month, 2) <> "-" <> pad(day, 2)
+}
+
+fn today() -> #(Int, Int, Int) {
+  local_time().0
+}
+
+// Same calendar day n years before today; Feb 29 clamps to Feb 28.
+fn years_ago(n: Int) -> String {
+  let #(year, month, day) = today()
+  let day = case month, day {
+    2, 29 -> 28
+    _, _ -> day
+  }
+  iso(#(year - n, month, day))
+}
+
+fn days_ago(n: Int) -> String {
+  iso(days_to_date(date_to_days(today()) - n))
 }
 
 // 1. Null / edge cases
@@ -487,7 +523,17 @@ pub fn born_31st_jan31_to_jul31_test() {
   age("2025-01-31", "2025-07-31") |> should.equal(Ok("6 months"))
 }
 
-// 15. Default asOf -- skipped (test only pure variants)
+// 15. Default asOf (derived from the current date, see helpers)
+
+// 15.1
+pub fn default_as_of_5_years_test() {
+  age(years_ago(5), "") |> should.equal(Ok("5 years"))
+}
+
+// 15.2
+pub fn default_as_of_5_days_test() {
+  age(days_ago(5), "") |> should.equal(Ok("5 days"))
+}
 
 // 16. formatStage - null / edge cases
 
@@ -663,7 +709,22 @@ pub fn stage_adult_45_years_test() {
   stage("1980-01-01", "2025-06-15") |> should.equal(Ok("Adult"))
 }
 
-// 23. formatStage - default asOf -- skipped
+// 23. formatStage - default asOf (derived from the current date, see helpers)
+
+// 23.1
+pub fn default_as_of_stage_newborn_test() {
+  stage(iso(today()), "") |> should.equal(Ok("Newborn"))
+}
+
+// 23.2
+pub fn default_as_of_stage_child_test() {
+  stage(years_ago(5), "") |> should.equal(Ok("Child"))
+}
+
+// 23.3
+pub fn default_as_of_stage_adult_test() {
+  stage(years_ago(45), "") |> should.equal(Ok("Adult"))
+}
 
 // 24. SayableAge class - English locale delegation
 
@@ -1339,7 +1400,7 @@ pub fn polish_half_year_many_short_test() {
 // 32.3
 pub fn tachelhit_half_year_few_test() {
   age_locale(locale_shi.locale(), "2005-06-08", "2012-06-07")
-  |> should.equal(Ok("6 iseggasen d uzgen"))
+  |> should.equal(Ok("6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"))
 }
 
 // 33. Input validation

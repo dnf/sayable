@@ -362,8 +362,18 @@ assert_eq [::sayableage::format_age $en "2025-01-31" "2025-07-01"] "5 months" "1
 assert_eq [::sayableage::format_age $en "2025-01-31" "2025-07-31"] "6 months" "14.5"
 
 # ================================================================
-# Section 15: Skipped (requires system date mocking)
+# Section 15: formatAge — default date (system clock)
 # ================================================================
+# The library has no way to inject "today", so the inputs are derived from
+# the real current date to keep the canonical expected output.
+puts "Section 15: formatAge — default date"
+set _today [clock seconds]
+
+# 15.1 — five years before today
+assert_eq [::sayableage::format_age $en [clock format [clock add $_today -5 years] -format %Y-%m-%d]] "5 years" "15.1"
+
+# 15.2 — five days before today
+assert_eq [::sayableage::format_age $en [clock format [clock add $_today -5 days] -format %Y-%m-%d]] "5 days" "15.2"
 
 # ================================================================
 # Section 16: formatStage — null / edge cases
@@ -500,8 +510,19 @@ assert_eq [::sayableage::format_stage $en "2000-06-15" "2025-06-15"] "Adult" "22
 assert_eq [::sayableage::format_stage $en "1980-01-01" "2025-06-15"] "Adult" "22.3"
 
 # ================================================================
-# Section 23: Skipped (requires system date mocking)
+# Section 23: formatStage — default date (system clock)
 # ================================================================
+# Inputs are derived from the real current date (no way to inject "today").
+puts "Section 23: formatStage — default date"
+
+# 23.1 — born today
+assert_eq [::sayableage::format_stage $en [clock format $_today -format %Y-%m-%d]] "Newborn" "23.1"
+
+# 23.2 — five years before today
+assert_eq [::sayableage::format_stage $en [clock format [clock add $_today -5 years] -format %Y-%m-%d]] "Child" "23.2"
+
+# 23.3 — 45 years before today
+assert_eq [::sayableage::format_stage $en [clock format [clock add $_today -45 years] -format %Y-%m-%d]] "Adult" "23.3"
 
 # ================================================================
 # Section 24: SayableAge class — English locale delegation
@@ -878,7 +899,7 @@ assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale
 assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale pl] short] "2020-06-15" "2025-12-15"] "5 i pół lat" "32.2"
 
 # 32.3
-assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale shi]] "2005-06-08" "2012-06-07"] "6 iseggasen d uzgen" "32.3"
+assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale shi]] "2005-06-08" "2012-06-07"] "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ" "32.3"
 
 # 33.1
 assert_eq [::sayableage::format_age [::sayableage::new [::sayableage::get_locale en]] "2025-02-30" "2032-06-25"] "" "33.1"

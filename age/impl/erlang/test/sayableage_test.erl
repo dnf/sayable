@@ -16,6 +16,19 @@ contains_week(Result) ->
         error -> false
     end.
 
+%% Today and the same calendar day N years earlier (Feb 29 clamps to Feb 28), as ISO strings.
+%% The default-asOf tests derive their input from the real clock, since it cannot be injected.
+today_string() -> sayableage_internal:format_date(sayableage_internal:today()).
+
+years_ago_string(N) ->
+    {Y, M, D} = sayableage_internal:today(),
+    Day = case {M, D} of {2, 29} -> 28; _ -> D end,
+    sayableage_internal:format_date({Y - N, M, Day}).
+
+days_ago_string(N) ->
+    Days = calendar:date_to_gregorian_days(sayableage_internal:today()) - N,
+    sayableage_internal:format_date(calendar:gregorian_days_to_date(Days)).
+
 %% 1. Null / edge cases
 null_edge_test_() ->
     [?_assertEqual(error, age("", "2025-06-15")),                           %% 1.1/1.3
@@ -153,7 +166,12 @@ born_on_31st_test_() ->
      ?_assertEqual({ok, "6 months"}, age("2025-01-31", "2025-07-31"))       %% 14.5
     ].
 
-%% 15. Default asOf — skipped (test only pure variants, matching Haskell approach)
+%% 15. Default asOf (undefined asOf reads the real current date)
+default_as_of_test_() ->
+    En = sayableage_locales_en:locale(),
+    [?_assertEqual({ok, "5 years"}, sayableage:format_age(En, normal, years_ago_string(5), undefined)), %% 15.1
+     ?_assertEqual({ok, "5 days"}, sayableage:format_age(En, normal, days_ago_string(5), undefined))    %% 15.2
+    ].
 
 %% 16. formatStage - null / edge cases
 stage_null_edge_test_() ->
@@ -215,7 +233,13 @@ stage_adult_test_() ->
      ?_assertEqual({ok, "Adult"}, stage("1980-01-01", "2025-06-15"))        %% 22.3
     ].
 
-%% 23. formatStage — default asOf — skipped (test only pure variants)
+%% 23. formatStage — default asOf (undefined asOf reads the real current date)
+stage_default_as_of_test_() ->
+    En = sayableage_locales_en:locale(),
+    [?_assertEqual({ok, "Newborn"}, sayableage:format_stage(En, today_string(), undefined, undefined)),     %% 23.1
+     ?_assertEqual({ok, "Child"}, sayableage:format_stage(En, years_ago_string(5), undefined, undefined)),  %% 23.2
+     ?_assertEqual({ok, "Adult"}, sayableage:format_stage(En, years_ago_string(45), undefined, undefined))  %% 23.3
+    ].
 
 %% 24. SayableAge class — English locale delegation
 class_delegation_test_() ->
@@ -376,7 +400,7 @@ half_year_plural_test_() ->
     Shi = sayableage_locales_shi:locale(),
     [?_assertEqual({ok, "3 i pół lata"}, age_locale(Pl, "2021-06-15", "2025-01-15")),                          %% 32.1
      ?_assertEqual({ok, "5 i pół lat"}, sayableage:format_age_pure(Pl, short, "2020-06-15", "2025-12-15")),   %% 32.2
-     ?_assertEqual({ok, "6 iseggasen d uzgen"}, age_locale(Shi, "2005-06-08", "2012-06-07"))                  %% 32.3
+     ?_assertEqual({ok, "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"}, age_locale(Shi, "2005-06-08", "2012-06-07"))                  %% 32.3
     ].
 
 %% 33. Input validation

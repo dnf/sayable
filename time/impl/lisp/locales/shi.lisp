@@ -17,10 +17,10 @@
   (make-time-locale
    :code "shi"
    :clock (make-clock-config
-    :hours (list "tis snat d mrawt" "tis yat" "tis snat" "tis kṛaṭṭ" "tis kkuẕt" "tis smmust" "tis sḍist" "tis sat" "tis tamt" "tis tẕat" "tis mrawt" "tis yat d mrawt")
-    :midnight "nṣ n iḍ"
-    :noon "tizwarnin"
-    :patterns (list (cons 0 "{h}") (cons 5 "{h} d smmus tusdiqin") (cons 10 "{h} d mraw tusdiqin") (cons 15 "{h} d rrbɛ") (cons 20 "{h} d ɛcrin n tusdiqt") (cons 25 "{h} d xmsa u ɛcrin n tusdiqt") (cons 30 "{h} d uzgen") (cons 35 "{h} d xmsa u tlatin n tusdiqt") (cons 40 "{h} d ṛbɛin n tusdiqt") (cons 45 "{h} d xmsa u ṛbɛin n tusdiqt") (cons 50 "{h} d xmsin n tusdiqt") (cons 55 "{h} d xmsa u xmsin n tusdiqt")))
+    :hours (list "ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ" "ⵜⵉⵙ ⵢⴰⵜ" "ⵜⵉⵙ ⵙⵏⴰⵜ" "ⵜⵉⵙ ⴽⵕⴰⵟⵟ" "ⵜⵉⵙ ⴽⴽⵓⵥⵜ" "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ" "ⵜⵉⵙ ⵙⴹⵉⵙⵜ" "ⵜⵉⵙ ⵙⴰⵜ" "ⵜⵉⵙ ⵜⴰⵎⵜ" "ⵜⵉⵙ ⵜⵥⴰⵜ" "ⵜⵉⵙ ⵎⵔⴰⵡⵜ" "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ")
+    :midnight "ⵏⵚ ⵏ ⵉⴹ"
+    :noon "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ") (cons 10 "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ") (cons 15 "{h} ⴷ ⵔⵔⴱⵄ") (cons 20 "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 25 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 30 "{h} ⴷ ⵓⵣⴳⵏ") (cons 35 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 40 "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 45 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 50 "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 55 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

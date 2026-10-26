@@ -19,20 +19,70 @@ expect_nil :: proc(t: ^testing.T, actual: Maybe(string), loc := #caller_location
     }
 }
 
-expect_contains :: proc(t: ^testing.T, actual: Maybe(string), substr: string, loc := #caller_location) {
-    if v, ok := actual.?; ok {
-        if index_of(v, substr) < 0 {
-            fmt.printf("Expected %q to contain %q at %v\n", v, substr, loc)
-            testing.expect(t, false, loc = loc)
-        }
-    } else {
-        fmt.printf("Expected string containing %q but got nil at %v\n", substr, loc)
-        testing.expect(t, false, loc = loc)
-    }
-}
-
 fmt_age :: proc(buf: []u8, dob, as_of: string) -> Maybe(string) {
     return format_age(buf, &locale_en, .Normal, dob, as_of)
+}
+
+// ================================================================
+// Default asOf (uses the current local date)
+// ================================================================
+
+// dateOfBirth derived from today, so the canonical expected output holds.
+date_before_today :: proc(out: []u8, years, days: int) -> string {
+    today_buf: [10]u8
+    today := today_string(today_buf[:])
+    ty, _ := parse_date(today)
+    y, m, d := ty.y - years, ty.m, ty.d
+    if m == 2 && d == 29 && years > 0 do d = 28
+    jd := julian_day(y, m, d) - days
+    // Walk back day by day is avoided: convert the Julian day number to a date.
+    z := jd + 32044
+    g := z / 146097
+    dg := z % 146097
+    c := (dg / 36524 + 1) * 3 / 4
+    dc := dg - c * 36524
+    b := dc / 1461
+    db := dc % 1461
+    a := (db / 365 + 1) * 3 / 4
+    da := db - a * 365
+    yy := g * 400 + c * 100 + b * 4 + a
+    mm := (da * 5 + 308) / 153 - 2
+    dd := da - (mm + 4) * 153 / 5 + 122
+    yy = yy - 4800 + (mm + 2) / 12
+    mm = (mm + 2) % 12 + 1
+    dd = dd + 1
+    fmt.bprintf(out, "%04d-%02d-%02d", yy, mm, dd)
+    return string(out[:10])
+}
+
+// 15.1
+@(test) test_default_as_of_years :: proc(t: ^testing.T) {
+    buf: [256]u8; dob_buf: [10]u8
+    expect_str(t, "5 years", fmt_age(buf[:], date_before_today(dob_buf[:], 5, 0), ""))
+}
+
+// 15.2
+@(test) test_default_as_of_days :: proc(t: ^testing.T) {
+    buf: [256]u8; dob_buf: [10]u8
+    expect_str(t, "5 days", fmt_age(buf[:], date_before_today(dob_buf[:], 0, 5), ""))
+}
+
+// 23.1
+@(test) test_default_stage_newborn :: proc(t: ^testing.T) {
+    dob_buf: [10]u8
+    expect_str(t, "Newborn", format_stage(&locale_en, date_before_today(dob_buf[:], 0, 0), "", ""))
+}
+
+// 23.2
+@(test) test_default_stage_child :: proc(t: ^testing.T) {
+    dob_buf: [10]u8
+    expect_str(t, "Child", format_stage(&locale_en, date_before_today(dob_buf[:], 5, 0), "", ""))
+}
+
+// 23.3
+@(test) test_default_stage_adult :: proc(t: ^testing.T) {
+    dob_buf: [10]u8
+    expect_str(t, "Adult", format_stage(&locale_en, date_before_today(dob_buf[:], 45, 0), "", ""))
 }
 
 // ================================================================
@@ -135,9 +185,9 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 // formatAge -- month boundaries: standard months (4.1 - 4.5)
 // ================================================================
 @(test) test_jan1_apr1_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2025-01-01", "2025-04-01")) }
-@(test) test_jan1_mar31_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2025-01-01", "2025-03-31"), "weeks") }
+@(test) test_jan1_mar31_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 5 days", fmt_age(buf[:], "2025-01-01", "2025-03-31")) }
 @(test) test_jun15_sep15_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2025-06-15", "2025-09-15")) }
-@(test) test_jun15_sep14_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2025-06-15", "2025-09-14"), "weeks") }
+@(test) test_jun15_sep14_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "13 weeks", fmt_age(buf[:], "2025-06-15", "2025-09-14")) }
 @(test) test_jun15_dec15_6mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6 months", fmt_age(buf[:], "2025-06-15", "2025-12-15")) }
 
 // ================================================================
@@ -145,9 +195,9 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 // ================================================================
 @(test) test_jan31_feb28_nonleap :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "4 weeks", fmt_age(buf[:], "2025-01-31", "2025-02-28")) }
 @(test) test_jan31_apr30_3mo_clamp :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2025-01-31", "2025-04-30")) }
-@(test) test_jan31_apr29_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2025-01-31", "2025-04-29"), "weeks") }
+@(test) test_jan31_apr29_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 4 days", fmt_age(buf[:], "2025-01-31", "2025-04-29")) }
 @(test) test_feb1_may1_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2025-02-01", "2025-05-01")) }
-@(test) test_feb1_apr30_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2025-02-01", "2025-04-30"), "weeks") }
+@(test) test_feb1_apr30_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 4 days", fmt_age(buf[:], "2025-02-01", "2025-04-30")) }
 
 // ================================================================
 // formatAge -- month boundaries: February leap year (6.1 - 6.5)
@@ -155,22 +205,22 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 @(test) test_jan31_feb29_leap :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "4 weeks, 1 day", fmt_age(buf[:], "2024-01-31", "2024-02-29")) }
 @(test) test_jan31_feb28_leap :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "4 weeks", fmt_age(buf[:], "2024-01-31", "2024-02-28")) }
 @(test) test_jan31_apr30_leap_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2024-01-31", "2024-04-30")) }
-@(test) test_jan30_feb29_leap_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2024-01-30", "2024-02-29"), "weeks") }
-@(test) test_jan30_feb28_leap_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2024-01-30", "2024-02-28"), "weeks") }
+@(test) test_jan30_feb29_leap_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "4 weeks, 2 days", fmt_age(buf[:], "2024-01-30", "2024-02-29")) }
+@(test) test_jan30_feb28_leap_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "4 weeks, 1 day", fmt_age(buf[:], "2024-01-30", "2024-02-28")) }
 
 // ================================================================
 // formatAge -- month boundaries: 30-day months (7.1 - 7.4)
 // ================================================================
 @(test) test_mar31_jun30_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2025-03-31", "2025-06-30")) }
-@(test) test_mar31_jun29_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2025-03-31", "2025-06-29"), "weeks") }
+@(test) test_mar31_jun29_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 6 days", fmt_age(buf[:], "2025-03-31", "2025-06-29")) }
 @(test) test_aug31_nov30_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2025-08-31", "2025-11-30")) }
-@(test) test_aug31_nov29_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2025-08-31", "2025-11-29"), "weeks") }
+@(test) test_aug31_nov29_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 6 days", fmt_age(buf[:], "2025-08-31", "2025-11-29")) }
 
 // ================================================================
 // formatAge -- leap year baby (8.1 - 8.4)
 // ================================================================
 @(test) test_feb29_may29_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2024-02-29", "2024-05-29")) }
-@(test) test_feb29_may28_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2024-02-29", "2024-05-28"), "weeks") }
+@(test) test_feb29_may28_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 5 days", fmt_age(buf[:], "2024-02-29", "2024-05-28")) }
 @(test) test_feb29_2024_feb28_2025_12mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 months", fmt_age(buf[:], "2024-02-29", "2025-02-28")) }
 @(test) test_feb29_2024_mar1_2025_12mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 months", fmt_age(buf[:], "2024-02-29", "2025-03-01")) }
 
@@ -220,9 +270,9 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 // formatAge -- cross-year transitions (13.1 - 13.4)
 // ================================================================
 @(test) test_dec31_mar31_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2024-12-31", "2025-03-31")) }
-@(test) test_dec31_mar30_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2024-12-31", "2025-03-30"), "weeks") }
+@(test) test_dec31_mar30_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 5 days", fmt_age(buf[:], "2024-12-31", "2025-03-30")) }
 @(test) test_nov30_feb28_3mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 months", fmt_age(buf[:], "2024-11-30", "2025-02-28")) }
-@(test) test_nov30_feb27_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_contains(t, fmt_age(buf[:], "2024-11-30", "2025-02-27"), "weeks") }
+@(test) test_nov30_feb27_weeks :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "12 weeks, 5 days", fmt_age(buf[:], "2024-11-30", "2025-02-27")) }
 
 // ================================================================
 // formatAge -- born-on-31st (14.1 - 14.5)
@@ -462,7 +512,7 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 // 32.2
 @(test) test_32_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "5 i pół lat", format_age(buf[:], &locale_pl, .Short, "2020-06-15", "2025-12-15")) }
 // 32.3
-@(test) test_32_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6 iseggasen d uzgen", format_age(buf[:], &locale_shi, .Normal, "2005-06-08", "2012-06-07")) }
+@(test) test_32_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ", format_age(buf[:], &locale_shi, .Normal, "2005-06-08", "2012-06-07")) }
 
 // ================================================================
 // Section 33: Input validation

@@ -128,7 +128,7 @@ just clean             # remove build artifacts
 python3 -m codegen.generate [--lang <lang>] [--check]   # this library's locale code only
 ```
 
-For any other language, run the time step of its CI workflow (`.hecatron/languages/<lang>/workflow.yml`), which tests every library.
+For any language, `just test <lang>` from the project root runs its time suite along with the other three libraries' (via `.hecatron/languages/<lang>/test.sh`).
 
 ## Codegen emitter strategies
 

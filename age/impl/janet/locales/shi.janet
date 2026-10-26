@@ -18,20 +18,20 @@
 (def locale
   {:code "shi"
    :plural plural
-   :units {:day {:one "{n} ass" :few "{n} ussan" :other "{n} ass"}
-          :week {:one "{n} imalass" :few "{n} imalassn" :other "{n} imalass"}
-          :month {:one "{n} ayyur" :few "{n} ayyurn" :other "{n} ayyur"}
-          :year {:one "{n} aseggas" :few "{n} iseggasen" :other "{n} aseggas"}}
-   :half "{0} d uzgen"
+   :units {:day {:one "{n} ⴰⵙⵙ" :few "{n} ⵓⵙⵙⴰⵏ" :other "{n} ⴰⵙⵙ"}
+          :week {:one "{n} ⵉⵎⴰⵍⴰⵙⵙ" :few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" :other "{n} ⵉⵎⴰⵍⴰⵙⵙ"}
+          :month {:one "{n} ⴰⵢⵢⵓⵔ" :few "{n} ⴰⵢⵢⵓⵔⵏ" :other "{n} ⴰⵢⵢⵓⵔ"}
+          :year {:one "{n} ⴰⵙⴳⴳⵯⴰⵙ" :few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" :other "{n} ⴰⵙⴳⴳⵯⴰⵙ"}}
+   :half "{0} ⴷ ⵓⵣⴳⵏ"
    :delimiter ", "
-   :just-born "Iɣ d illul"
-   :stages {:newborn "Iɣ d illul"
-            :infant "Llufan"
-            :toddler {:m "Aḥenjir" :f "Taḥenjirt"}
-            :child {:m "Afrux" :f "Tafruxt"}
-            :teenager {:m "Aɛrim" :f "Taɛrimt"}
-            :adult {:m "Argaz" :f "Tamṭṭuṭ"}
+   :just-born "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+   :stages {:newborn "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+            :infant "ⵍⵍⵓⴼⴰⵏ"
+            :toddler {:m "ⴰⵃⵏⵊⵉⵔ" :f "ⵜⴰⵃⵏⵊⵉⵔⵜ"}
+            :child {:m "ⴰⴼⵔⵓⵅ" :f "ⵜⴰⴼⵔⵓⵅⵜ"}
+            :teenager {:m "ⴰⵄⵔⵉⵎ" :f "ⵜⴰⵄⵔⵉⵎⵜ"}
+            :adult {:m "ⴰⵔⴳⴰⵣ" :f "ⵜⴰⵎⵟⵟⵓⵟ"}
 }
-   :short {:units {:day {:one "{n} ass" :few "{n} ussan" :other "{n} ass"} :week {:one "{n} imalass" :few "{n} imalassn" :other "{n} imalass"} :month {:one "{n} ayyur" :few "{n} ayyurn" :other "{n} ayyur"} :year {:one "{n} aseggas" :few "{n} iseggasen" :other "{n} aseggas"}}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
+   :short {:units {:day {:one "{n} ⴰⵙⵙ" :few "{n} ⵓⵙⵙⴰⵏ" :other "{n} ⴰⵙⵙ"} :week {:one "{n} ⵉⵎⴰⵍⴰⵙⵙ" :few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" :other "{n} ⵉⵎⴰⵍⴰⵙⵙ"} :month {:one "{n} ⴰⵢⵢⵓⵔ" :few "{n} ⴰⵢⵢⵓⵔⵏ" :other "{n} ⴰⵢⵢⵓⵔ"} :year {:one "{n} ⴰⵙⴳⴳⵯⴰⵙ" :few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" :other "{n} ⴰⵙⴳⴳⵯⴰⵙ"}}}
+   :compact {:units {:day "{n} ⴰⵙⵙ" :week "{n} ⵉⵎⵍ" :month "{n} ⴰⵢⵔ" :year "{n} ⴰⵙⴳ"} :half "{n}½" :delimiter ""}
 })

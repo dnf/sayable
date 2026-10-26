@@ -386,6 +386,11 @@ t.assert("14.5", fmt.formatAge("2025-01-31", "2025-07-31"), "6 months")
 // ================================================================
 // Sections 15 and 23 skipped (require system date mocking)
 // ================================================================
+// 15.1: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 15.2: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 23.1: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 23.2: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 23.3: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
 
 // ================================================================
 // 16. formatStage — null / edge cases
@@ -892,7 +897,7 @@ t.assert("32.1", plFmt.formatAge("2021-06-15", "2025-01-15"), "3 i pół lata")
 t.assert("32.2", plShortFmt.formatAge("2020-06-15", "2025-12-15"), "5 i pół lat")
 
 // 32.3
-t.assert("32.3", shiFmt.formatAge("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")
+t.assert("32.3", shiFmt.formatAge("2005-06-08", "2012-06-07"), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")
 
 // ================================================================
 // 33. Input validation

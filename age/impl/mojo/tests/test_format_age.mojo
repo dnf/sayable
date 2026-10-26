@@ -1,5 +1,7 @@
 """Tests for format_age and format_stage -- all canonical test cases from age/config/tests.json."""
 
+from memory import alloc
+from sys.ffi import external_call
 from testing import assert_equal, assert_true
 
 from sayable_age.locale import (
@@ -1086,6 +1088,255 @@ fn test_29_34_am_just_born() raises:
     )
 
 
+# 29.9
+fn test_29_9_he_3half_years_half_marker() raises:
+    var sa = SayableAge(build_he())
+    assert_equal(
+        sa.format_age("2022-06-15", "2025-12-15"),
+        "3 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d \xd7\x95\xd7\x97\xd7\xa6\xd7\x99",
+    )
+
+
+# 29.10
+fn test_29_10_he_7_years_other() raises:
+    var sa = SayableAge(build_he())
+    assert_equal(
+        sa.format_age("2018-06-15", "2025-06-15"),
+        "7 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d",
+    )
+
+
+# 29.11
+fn test_29_11_he_masculine_newborn() raises:
+    var sa = SayableAge(build_he())
+    assert_equal(
+        sa.format_stage("2025-06-15", "2025-06-15", "m"),
+        "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93",
+    )
+
+
+# 29.12
+fn test_29_12_he_feminine_newborn() raises:
+    var sa = SayableAge(build_he())
+    assert_equal(
+        sa.format_stage("2025-06-15", "2025-06-15", "f"),
+        "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93\xd7\x94",
+    )
+
+
+# 29.13
+fn test_29_13_he_masculine_adult() raises:
+    var sa = SayableAge(build_he())
+    assert_equal(
+        sa.format_stage("2007-06-15", "2025-06-15", "m"),
+        "\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8",
+    )
+
+
+# 29.14
+fn test_29_14_he_feminine_adult() raises:
+    var sa = SayableAge(build_he())
+    assert_equal(
+        sa.format_stage("2007-06-15", "2025-06-15", "f"),
+        "\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8\xd7\xaa",
+    )
+
+
+# 29.18
+fn test_29_18_mk_6_months_other() raises:
+    var sa = SayableAge(build_mk())
+    assert_equal(
+        sa.format_age("2025-01-15", "2025-07-15"),
+        "6 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86\xd0\xb8",
+    )
+
+
+# 29.19
+fn test_29_19_mk_2y1m_one_for_month() raises:
+    var sa = SayableAge(build_mk())
+    assert_equal(
+        sa.format_age("2023-06-15", "2025-07-15"),
+        "2 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8, 1 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86",
+    )
+
+
+# 29.20
+fn test_29_20_mk_3half_years_half_marker() raises:
+    var sa = SayableAge(build_mk())
+    assert_equal(
+        sa.format_age("2022-06-15", "2025-12-15"),
+        "3 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8 \xd0\xb8 \xd0\xbf\xd0\xbe\xd0\xbb",
+    )
+
+
+# 29.21
+fn test_29_21_mk_7_years_other() raises:
+    var sa = SayableAge(build_mk())
+    assert_equal(
+        sa.format_age("2018-06-15", "2025-06-15"),
+        "7 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8",
+    )
+
+
+# 29.25
+fn test_29_25_sw_6_months_other_noun_class() raises:
+    var sa = SayableAge(build_sw())
+    assert_equal(
+        sa.format_age("2025-01-15", "2025-07-15"),
+        "miezi 6",
+    )
+
+
+# 29.26
+fn test_29_26_sw_2y_other_1m_one() raises:
+    var sa = SayableAge(build_sw())
+    assert_equal(
+        sa.format_age("2023-06-15", "2025-07-15"),
+        "miaka 2, mwezi 1",
+    )
+
+
+# 29.27
+fn test_29_27_sw_3half_years_half_marker() raises:
+    var sa = SayableAge(build_sw())
+    assert_equal(
+        sa.format_age("2022-06-15", "2025-12-15"),
+        "miaka 3 na nusu",
+    )
+
+
+# 29.31
+fn test_29_31_id_6_months() raises:
+    var sa = SayableAge(build_id())
+    assert_equal(
+        sa.format_age("2025-01-15", "2025-07-15"),
+        "6 bulan",
+    )
+
+
+# 29.32
+fn test_29_32_id_3half_years_half_marker() raises:
+    var sa = SayableAge(build_id())
+    assert_equal(
+        sa.format_age("2022-06-15", "2025-12-15"),
+        "3 setengah tahun",
+    )
+
+
+# 29.33
+fn test_29_33_id_7_years() raises:
+    var sa = SayableAge(build_id())
+    assert_equal(
+        sa.format_age("2018-06-15", "2025-06-15"),
+        "7 tahun",
+    )
+
+
+# 29.35
+fn test_29_35_am_1_day_one_form() raises:
+    var sa = SayableAge(build_am())
+    assert_equal(
+        sa.format_age("2025-06-14", "2025-06-15"),
+        "1 \xe1\x89\x80\xe1\x8a\x95",
+    )
+
+
+# 29.36
+fn test_29_36_am_3_days_other_form() raises:
+    var sa = SayableAge(build_am())
+    assert_equal(
+        sa.format_age("2025-06-12", "2025-06-15"),
+        "3 \xe1\x89\x80\xe1\x8a\x93\xe1\x89\xb5",
+    )
+
+
+# 29.37
+fn test_29_37_am_1w1d_with_ethiopic_delimiter() raises:
+    var sa = SayableAge(build_am())
+    assert_equal(
+        sa.format_age("2025-06-07", "2025-06-15"),
+        "1 \xe1\x88\xb3\xe1\x88\x9d\xe1\x8a\x95\xe1\x89\xb5\xe1\x8d\xa3 1 \xe1\x89\x80\xe1\x8a\x95",
+    )
+
+
+# 29.38
+fn test_29_38_am_6_months_other_form() raises:
+    var sa = SayableAge(build_am())
+    assert_equal(
+        sa.format_age("2025-01-15", "2025-07-15"),
+        "6 \xe1\x8b\x88\xe1\x88\xab\xe1\x89\xb5",
+    )
+
+
+# 29.39
+fn test_29_39_am_3half_years_half_marker() raises:
+    var sa = SayableAge(build_am())
+    assert_equal(
+        sa.format_age("2022-06-15", "2025-12-15"),
+        "3 \xe1\x8b\x93\xe1\x88\x98\xe1\x89\xb3\xe1\x89\xb5 \xe1\x89\xb0\xe1\x8a\xa9\xe1\x88\x8d",
+    )
+
+
+# 1.1
+# Mojo Strings cannot be null; the empty string is the null equivalent.
+fn test_1_1_null_equivalent_returns_empty() raises:
+    assert_equal(format_age("", "2025-06-15"), "")
+
+
+# 16.1
+# Mojo Strings cannot be null; the empty string is the null equivalent.
+fn test_16_1_stage_null_equivalent_returns_empty() raises:
+    assert_equal(format_stage("", "2025-06-15"), "")
+
+
+# Default asOf: dateOfBirth is derived from today's local date.
+fn _today_minus(years: Int, days: Int) -> String:
+    var now = alloc[Int64](1)
+    now[0] = external_call["time", Int64, Int](0) - Int64(days * 86400)
+    var broken_down = alloc[Int32](16)
+    _ = external_call["localtime_r", Int, Int, Int](Int(now), Int(broken_down))
+    var year = Int(broken_down[5]) + 1900 - years
+    var month = Int(broken_down[4]) + 1
+    var day = Int(broken_down[3])
+    now.free()
+    broken_down.free()
+    if month == 2 and day == 29 and years > 0:
+        day = 28
+    var month_text = String(month)
+    if month < 10:
+        month_text = "0" + month_text
+    var day_text = String(day)
+    if day < 10:
+        day_text = "0" + day_text
+    return String(year) + "-" + month_text + "-" + day_text
+
+
+# 15.1
+fn test_15_1_default_as_of_years() raises:
+    assert_equal(format_age(_today_minus(5, 0)), "5 years")
+    assert_equal(format_age(_today_minus(5, 0), ""), "5 years")
+
+
+# 15.2
+fn test_15_2_default_as_of_days() raises:
+    assert_equal(format_age(_today_minus(0, 5)), "5 days")
+
+
+# 23.1
+fn test_23_1_default_as_of_newborn() raises:
+    assert_equal(format_stage(_today_minus(0, 0)), "Newborn")
+
+
+# 23.2
+fn test_23_2_default_as_of_child() raises:
+    assert_equal(format_stage(_today_minus(5, 0)), "Child")
+
+
+# 23.3
+fn test_23_3_default_as_of_adult() raises:
+    assert_equal(format_stage(_today_minus(45, 0)), "Adult")
+
+
 # ================================================================
 # Locale lookup
 # ================================================================
@@ -1213,7 +1464,7 @@ fn test_32_2_pl_short_half_year_many() raises:
 # 32.3
 fn test_32_3_shi_half_year_few() raises:
     var sa = SayableAge(get_locale("shi"))
-    assert_equal(sa.format_age("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")
+    assert_equal(sa.format_age("2005-06-08", "2012-06-07"), "6 \xe2\xb5\x89\xe2\xb5\x99\xe2\xb4\xb3\xe2\xb4\xb3\xe2\xb5\xaf\xe2\xb4\xb0\xe2\xb5\x99\xe2\xb5\x8f \xe2\xb4\xb7 \xe2\xb5\x93\xe2\xb5\xa3\xe2\xb4\xb3\xe2\xb5\x8f")
 
 
 # ================================================================
@@ -1493,6 +1744,29 @@ fn main() raises:
     test_29_29_id_one_day()
     test_29_30_id_three_days()
     test_29_34_am_just_born()
+    test_29_9_he_3half_years_half_marker()
+    test_29_10_he_7_years_other()
+    test_29_11_he_masculine_newborn()
+    test_29_12_he_feminine_newborn()
+    test_29_13_he_masculine_adult()
+    test_29_14_he_feminine_adult()
+    test_29_18_mk_6_months_other()
+    test_29_19_mk_2y1m_one_for_month()
+    test_29_20_mk_3half_years_half_marker()
+    test_29_21_mk_7_years_other()
+    test_29_25_sw_6_months_other_noun_class()
+    test_29_26_sw_2y_other_1m_one()
+    test_29_27_sw_3half_years_half_marker()
+    test_29_31_id_6_months()
+    test_29_32_id_3half_years_half_marker()
+    test_29_33_id_7_years()
+    test_29_35_am_1_day_one_form()
+    test_29_36_am_3_days_other_form()
+    test_29_37_am_1w1d_with_ethiopic_delimiter()
+    test_29_38_am_6_months_other_form()
+    test_29_39_am_3half_years_half_marker()
+    test_1_1_null_equivalent_returns_empty()
+    test_16_1_stage_null_equivalent_returns_empty()
 
     # Locale lookup
     test_30_1_known_locale_en()
@@ -1531,6 +1805,12 @@ fn main() raises:
     test_33_8_invalid_as_of()
     test_33_9_format_stage_validates_too()
     test_33_10_february_29_in_leap_year_is_valid()
+
+    test_15_1_default_as_of_years()
+    test_15_2_default_as_of_days()
+    test_23_1_default_as_of_newborn()
+    test_23_2_default_as_of_child()
+    test_23_3_default_as_of_adult()
 
     # Version
     test_version()

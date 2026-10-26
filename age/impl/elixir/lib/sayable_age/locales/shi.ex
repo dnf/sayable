@@ -17,36 +17,36 @@ defmodule SayableAge.Locales.SHI do
       code: "shi",
       plural: (fn n when n in [0, 1] -> :one; n when n >= 2 and n <= 10 -> :few; _ -> :other end),
       units: %{
-        day: %{one: "{n} ass", few: "{n} ussan", other: "{n} ass"},
-        week: %{one: "{n} imalass", few: "{n} imalassn", other: "{n} imalass"},
-        month: %{one: "{n} ayyur", few: "{n} ayyurn", other: "{n} ayyur"},
-        year: %{one: "{n} aseggas", few: "{n} iseggasen", other: "{n} aseggas"}
+        day: %{one: "{n} ⴰⵙⵙ", few: "{n} ⵓⵙⵙⴰⵏ", other: "{n} ⴰⵙⵙ"},
+        week: %{one: "{n} ⵉⵎⴰⵍⴰⵙⵙ", few: "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other: "{n} ⵉⵎⴰⵍⴰⵙⵙ"},
+        month: %{one: "{n} ⴰⵢⵢⵓⵔ", few: "{n} ⴰⵢⵢⵓⵔⵏ", other: "{n} ⴰⵢⵢⵓⵔ"},
+        year: %{one: "{n} ⴰⵙⴳⴳⵯⴰⵙ", few: "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other: "{n} ⴰⵙⴳⴳⵯⴰⵙ"}
       },
-      half: "{0} d uzgen",
+      half: "{0} ⴷ ⵓⵣⴳⵏ",
       delimiter: ", ",
-      just_born: "Iɣ d illul",
+      just_born: "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
       stages: %{
-        newborn: "Iɣ d illul",
-        infant: "Llufan",
-        toddler: %{m: "Aḥenjir", f: "Taḥenjirt"},
-        child: %{m: "Afrux", f: "Tafruxt"},
-        teenager: %{m: "Aɛrim", f: "Taɛrimt"},
-        adult: %{m: "Argaz", f: "Tamṭṭuṭ"}
+        newborn: "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+        infant: "ⵍⵍⵓⴼⴰⵏ",
+        toddler: %{m: "ⴰⵃⵏⵊⵉⵔ", f: "ⵜⴰⵃⵏⵊⵉⵔⵜ"},
+        child: %{m: "ⴰⴼⵔⵓⵅ", f: "ⵜⴰⴼⵔⵓⵅⵜ"},
+        teenager: %{m: "ⴰⵄⵔⵉⵎ", f: "ⵜⴰⵄⵔⵉⵎⵜ"},
+        adult: %{m: "ⴰⵔⴳⴰⵣ", f: "ⵜⴰⵎⵟⵟⵓⵟ"}
       },
       short: %{
         units: %{
-          day: %{one: "{n} ass", few: "{n} ussan", other: "{n} ass"},
-          week: %{one: "{n} imalass", few: "{n} imalassn", other: "{n} imalass"},
-          month: %{one: "{n} ayyur", few: "{n} ayyurn", other: "{n} ayyur"},
-          year: %{one: "{n} aseggas", few: "{n} iseggasen", other: "{n} aseggas"}
+          day: %{one: "{n} ⴰⵙⵙ", few: "{n} ⵓⵙⵙⴰⵏ", other: "{n} ⴰⵙⵙ"},
+          week: %{one: "{n} ⵉⵎⴰⵍⴰⵙⵙ", few: "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other: "{n} ⵉⵎⴰⵍⴰⵙⵙ"},
+          month: %{one: "{n} ⴰⵢⵢⵓⵔ", few: "{n} ⴰⵢⵢⵓⵔⵏ", other: "{n} ⴰⵢⵢⵓⵔ"},
+          year: %{one: "{n} ⴰⵙⴳⴳⵯⴰⵙ", few: "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other: "{n} ⴰⵙⴳⴳⵯⴰⵙ"}
         }
       },
       compact: %{
         units: %{
-          day: "{n}d",
-          week: "{n}w",
-          month: "{n}m",
-          year: "{n}y"
+          day: "{n} ⴰⵙⵙ",
+          week: "{n} ⵉⵎⵍ",
+          month: "{n} ⴰⵢⵔ",
+          year: "{n} ⴰⵙⴳ"
         },
         half: "{n}½",
         delimiter: ""

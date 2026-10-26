@@ -127,6 +127,11 @@ defmodule SayableAge.Formatter do
 
   # Date computation
 
+  defp compute_age(dob, as_of) when as_of in [nil, ""] do
+    {{year, month, day}, _time} = :calendar.local_time()
+    compute_age(dob, :io_lib.format("~4..0B-~2..0B-~2..0B", [year, month, day]) |> IO.iodata_to_binary())
+  end
+
   defp compute_age(dob, as_of) do
     with {:ok, {dy, dm, dd}} <- parse_date(dob),
          {:ok, {ry, rm, rd}} <- parse_date(as_of) do

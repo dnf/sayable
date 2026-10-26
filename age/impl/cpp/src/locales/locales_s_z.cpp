@@ -138,27 +138,27 @@ const AgeLocale& SHI() {
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Plural({{PluralCategory::One, "{n} ass"}, {PluralCategory::Few, "{n} ussan"}, {PluralCategory::Other, "{n} ass"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} imalass"}, {PluralCategory::Few, "{n} imalassn"}, {PluralCategory::Other, "{n} imalass"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} ayyur"}, {PluralCategory::Few, "{n} ayyurn"}, {PluralCategory::Other, "{n} ayyur"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} aseggas"}, {PluralCategory::Few, "{n} iseggasen"}, {PluralCategory::Other, "{n} aseggas"}})
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵓⵙⵙⴰⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"}, {PluralCategory::Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵢⵢⵓⵔ"}, {PluralCategory::Few, "{n} ⴰⵢⵢⵓⵔⵏ"}, {PluralCategory::Other, "{n} ⴰⵢⵢⵓⵔ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}, {PluralCategory::Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}})
         },
-        "{0} d uzgen", ", ", "Iɣ d illul",
-        StageLabels{{"Iɣ d illul", ""}, {"Llufan", ""}, {"Aḥenjir", "Taḥenjirt"}, {"Afrux", "Tafruxt"}, {"Aɛrim", "Taɛrimt"}, {"Argaz", "Tamṭṭuṭ"}},
+        "{0} ⴷ ⵓⵣⴳⵏ", ", ", "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+        StageLabels{{"ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ", ""}, {"ⵍⵍⵓⴼⴰⵏ", ""}, {"ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"}, {"ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"}, {"ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"}, {"ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ"}},
         CompactnessOverride{
-            UnitForms::Plural({{PluralCategory::One, "{n} ass"}, {PluralCategory::Few, "{n} ussan"}, {PluralCategory::Other, "{n} ass"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} imalass"}, {PluralCategory::Few, "{n} imalassn"}, {PluralCategory::Other, "{n} imalass"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} ayyur"}, {PluralCategory::Few, "{n} ayyurn"}, {PluralCategory::Other, "{n} ayyur"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} aseggas"}, {PluralCategory::Few, "{n} iseggasen"}, {PluralCategory::Other, "{n} aseggas"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵓⵙⵙⴰⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"}, {PluralCategory::Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵢⵢⵓⵔ"}, {PluralCategory::Few, "{n} ⴰⵢⵢⵓⵔⵏ"}, {PluralCategory::Other, "{n} ⴰⵢⵢⵓⵔ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}, {PluralCategory::Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}}),
             std::nullopt,
             std::nullopt,
             std::nullopt
         },
         CompactnessOverride{
-            UnitForms::Simple("{n}d"),
-            UnitForms::Simple("{n}w"),
-            UnitForms::Simple("{n}m"),
-            UnitForms::Simple("{n}y"),
+            UnitForms::Simple("{n} ⴰⵙⵙ"),
+            UnitForms::Simple("{n} ⵉⵎⵍ"),
+            UnitForms::Simple("{n} ⴰⵢⵔ"),
+            UnitForms::Simple("{n} ⴰⵙⴳ"),
             std::string("{n}½"),
             std::string(""),
             std::nullopt

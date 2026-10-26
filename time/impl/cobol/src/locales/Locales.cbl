@@ -9670,57 +9670,57 @@
 *> Source: locales/shi.json
        INIT-LOCALE-SHI.
            MOVE "shi" TO WS-ACT-CODE
-           MOVE "tis snat d mrawt"
+           MOVE "ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"
                TO WS-ACT-HOUR(1)
-           MOVE "tis yat"
+           MOVE "ⵜⵉⵙ ⵢⴰⵜ"
                TO WS-ACT-HOUR(2)
-           MOVE "tis snat"
+           MOVE "ⵜⵉⵙ ⵙⵏⴰⵜ"
                TO WS-ACT-HOUR(3)
-           MOVE "tis kṛaṭṭ"
+           MOVE "ⵜⵉⵙ ⴽⵕⴰⵟⵟ"
                TO WS-ACT-HOUR(4)
-           MOVE "tis kkuẕt"
+           MOVE "ⵜⵉⵙ ⴽⴽⵓⵥⵜ"
                TO WS-ACT-HOUR(5)
-           MOVE "tis smmust"
+           MOVE "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ"
                TO WS-ACT-HOUR(6)
-           MOVE "tis sḍist"
+           MOVE "ⵜⵉⵙ ⵙⴹⵉⵙⵜ"
                TO WS-ACT-HOUR(7)
-           MOVE "tis sat"
+           MOVE "ⵜⵉⵙ ⵙⴰⵜ"
                TO WS-ACT-HOUR(8)
-           MOVE "tis tamt"
+           MOVE "ⵜⵉⵙ ⵜⴰⵎⵜ"
                TO WS-ACT-HOUR(9)
-           MOVE "tis tẕat"
+           MOVE "ⵜⵉⵙ ⵜⵥⴰⵜ"
                TO WS-ACT-HOUR(10)
-           MOVE "tis mrawt"
+           MOVE "ⵜⵉⵙ ⵎⵔⴰⵡⵜ"
                TO WS-ACT-HOUR(11)
-           MOVE "tis yat d mrawt"
+           MOVE "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"
                TO WS-ACT-HOUR(12)
-           MOVE "nṣ n iḍ"
+           MOVE "ⵏⵚ ⵏ ⵉⴹ"
                TO WS-ACT-MIDNIGHT
-           MOVE "tizwarnin"
+           MOVE "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
                TO WS-ACT-NOON
            MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h} d smmus tusdiqin"
+           MOVE "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h} d mraw tusdiqin"
+           MOVE "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h} d rrbɛ"
+           MOVE "{h} ⴷ ⵔⵔⴱⵄ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h} d ɛcrin n tusdiqt"
+           MOVE "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h} d xmsa u ɛcrin n tusdiqt"
+           MOVE "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h} d uzgen"
+           MOVE "{h} ⴷ ⵓⵣⴳⵏ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h} d xmsa u tlatin n tusdiqt"
+           MOVE "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h} d ṛbɛin n tusdiqt"
+           MOVE "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h} d xmsa u ṛbɛin n tusdiqt"
+           MOVE "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h} d xmsin n tusdiqt"
+           MOVE "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h} d xmsa u xmsin n tusdiqt"
+           MOVE "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1

@@ -78,6 +78,21 @@ begin
   end;
 end;
 
+function IsoToday: string;
+begin
+  Result := FormatDateTime('yyyy-mm-dd', Date);
+end;
+
+function IsoDaysAgo(ADays: Integer): string;
+begin
+  Result := FormatDateTime('yyyy-mm-dd', Date - ADays);
+end;
+
+function IsoYearsAgo(AYears: Integer): string;
+begin
+  Result := FormatDateTime('yyyy-mm-dd', IncMonth(Date, -12 * AYears));
+end;
+
 var
   EN, ES, HE, MK, SW, ID_LOC, AM: TAgeLocale;
   LPtr: TAgeLocalePtr;
@@ -281,7 +296,12 @@ begin
   { 14.5 }
   AssertEqual('14.5', '6 months', FormatAge(EN, csNormal, '2025-01-31', '2025-07-31'));
 
-  { Section 15: Default asOf - skipped (no system date mocking in Pascal) }
+  { Section 15: Default asOf. An empty AAsOf means today, so the birth date is
+    derived from the real current date to keep the canonical outputs. }
+  { 15.1 }
+  AssertEqual('15.1', '5 years', FormatAge(EN, csNormal, IsoYearsAgo(5), ''));
+  { 15.2 }
+  AssertEqual('15.2', '5 days', FormatAge(EN, csNormal, IsoDaysAgo(5), ''));
 
   { Section 16: formatStage null/edge cases }
   { 16.1 }
@@ -363,7 +383,13 @@ begin
   { 22.3 }
   AssertEqual('22.3', 'Adult', FormatStage(EN, '1980-01-01', '2025-06-15', ''));
 
-  { Section 23: formatStage default asOf - skipped (no system date mocking) }
+  { Section 23: formatStage default asOf (empty AAsOf means today) }
+  { 23.1 }
+  AssertEqual('23.1', 'Newborn', FormatStage(EN, IsoToday, '', ''));
+  { 23.2 }
+  AssertEqual('23.2', 'Child', FormatStage(EN, IsoYearsAgo(5), '', ''));
+  { 23.3 }
+  AssertEqual('23.3', 'Adult', FormatStage(EN, IsoYearsAgo(45), '', ''));
 
   { Section 24: SayableAge class - English locale delegation }
   { 24.1 }
@@ -559,7 +585,7 @@ begin
   { 32.2 }
   AssertEqual('32.2', '5 i pół lat', FormatAge(GetLocale('pl')^, csShort, '2020-06-15', '2025-12-15'));
   { 32.3 }
-  AssertEqual('32.3', '6 iseggasen d uzgen', FormatAge(GetLocale('shi')^, csNormal, '2005-06-08', '2012-06-07'));
+  AssertEqual('32.3', '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', FormatAge(GetLocale('shi')^, csNormal, '2005-06-08', '2012-06-07'));
 
   { Section 33: Input validation }
   { 33.1 }

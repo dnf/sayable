@@ -50,7 +50,7 @@
       (if (and as-of (not= as-of ""))
         (parse-date as-of)
         (let [t (os/date (os/time) true)]
-          [(+ (t :year) 1900) (+ (t :month) 1) (+ (t :month-day) 1)])))
+          [(t :year) (+ (t :month) 1) (+ (t :month-day) 1)])))
     (unless ref (break nil))
     (def [ref-y ref-m ref-d] ref)
     (def diff-days (days-between dob-y dob-m dob-d ref-y ref-m ref-d))

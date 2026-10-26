@@ -16,24 +16,24 @@ shi
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'shi'.
-	locale months: (OrderedCollection withAll: { 'innayr'. 'bṛayṛ'. 'maṛṣ'. 'ibrir'. 'mayyu'. 'yunyu'. 'yulyuz'. 'ɣuct'. 'cutanbir'. 'ktubr'. 'nuwanbir'. 'dujanbir' }).
-	locale weekdays: (OrderedCollection withAll: { 'asamas'. 'aynas'. 'asinas'. 'akṛas'. 'akwas'. 'asimwas'. 'asiḍyas' }).
+	locale months: (OrderedCollection withAll: { 'ⵉⵏⵏⴰⵢⵔ'. 'ⴱⵕⴰⵢⵕ'. 'ⵎⴰⵕⵚ'. 'ⵉⴱⵔⵉⵔ'. 'ⵎⴰⵢⵢⵓ'. 'ⵢⵓⵏⵢⵓ'. 'ⵢⵓⵍⵢⵓⵣ'. 'ⵖⵓⵛⵜ'. 'ⵛⵓⵜⴰⵏⴱⵉⵔ'. 'ⴽⵜⵓⴱⵔ'. 'ⵏⵓⵡⴰⵏⴱⵉⵔ'. 'ⴷⵓⵊⴰⵏⴱⵉⵔ' }).
+	locale weekdays: (OrderedCollection withAll: { 'ⴰⵙⴰⵎⴰⵙ'. 'ⴰⵢⵏⴰⵙ'. 'ⴰⵙⵉⵏⴰⵙ'. 'ⴰⴽⵕⴰⵙ'. 'ⴰⴽⵡⴰⵙ'. 'ⵙⵉⵎⵡⴰⵙ'. 'ⴰⵙⵉⴹⵢⴰⵙ' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
 	locale datePatternWithYear: '{day} {month} {year}'.
-	locale today: 'assa'.
-	locale tomorrow: 'askka'.
-	locale yesterday: 'iḍlli'.
+	locale today: 'ⴰⵙⵙⴰ'.
+	locale tomorrow: 'ⴰⵙⴽⴽⴰ'.
+	locale yesterday: 'ⵉⴹⵍⵍⵉ'.
 	locale dayAfterTomorrow: nil.
 	locale dayBeforeYesterday: nil.
-	locale thisWeekday: '{weekday} ad'.
-	locale nextWeekday: '{weekday} d iddan'.
-	locale lastWeekday: '{weekday} izrin'.
+	locale thisWeekday: '{weekday} ⴰⴷ'.
+	locale nextWeekday: '{weekday} ⴷ ⵉⴷⴷⴰⵏ'.
+	locale lastWeekday: '{weekday} ⵉⵣⵔⵉⵏ'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { 'inn'. 'bṛa'. 'maṛ'. 'ibr'. 'may'. 'yun'. 'yul'. 'ɣuc'. 'cut'. 'ktu'. 'nuw'. 'duj' }).
-		#weekdays. (OrderedCollection withAll: { 'asa'. 'ayn'. 'asi'. 'akṛ'. 'akw'. 'asim'. 'asiḍ' }).
+		#months. (OrderedCollection withAll: { 'ⵉⵏⵏ'. 'ⴱⵕⴰ'. 'ⵎⴰⵕ'. 'ⵉⴱⵔ'. 'ⵎⴰⵢ'. 'ⵢⵓⵏ'. 'ⵢⵓⵍ'. 'ⵖⵓⵛ'. 'ⵛⵓⵜ'. 'ⴽⵜⵓ'. 'ⵏⵓⵡ'. 'ⴷⵓⵊ' }).
+		#weekdays. (OrderedCollection withAll: { 'ⴰⵙⴰ'. 'ⴰⵢⵏ'. 'ⴰⵙⵉ'. 'ⴰⴽⵕ'. 'ⴰⴽⵡ'. 'ⴰⵙⵉⵎ'. 'ⴰⵙⵉⴹ' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
 		#datePatternWithYear. '{day} {month} {year}'.

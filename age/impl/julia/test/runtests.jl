@@ -1,5 +1,11 @@
 using Test
+using Dates
 using SayableAge
+
+# No as-of date means today, so the default-date tests derive their date of
+# birth from the real current date (Dates clamps Feb 29 to Feb 28).
+iso_days_ago(n) = string(Dates.today() - Day(n))
+iso_years_ago(n) = string(Dates.today() - Year(n))
 
 # Section 1: Null / edge cases
 @testset "Null / edge cases" begin
@@ -141,8 +147,8 @@ end
 
 # Section 15: Default asOf (current date)
 @testset "Default asOf (current date)" begin
-    # 15.1: skipped (uses current date)
-    # 15.2: skipped (uses current date)
+    @test format_age(SayableAgeFormatter(get_locale("en")), iso_years_ago(5)) == "5 years"  # 15.1
+    @test format_age(SayableAgeFormatter(get_locale("en")), iso_days_ago(5)) == "5 days"  # 15.2
 end
 
 # Section 16: formatStage — null / edge cases
@@ -209,9 +215,9 @@ end
 
 # Section 23: formatStage — default asOf
 @testset "formatStage — default asOf" begin
-    # 23.1: skipped (uses current date)
-    # 23.2: skipped (uses current date)
-    # 23.3: skipped (uses current date)
+    @test format_stage(SayableAgeFormatter(get_locale("en")), iso_days_ago(0)) == "Newborn"  # 23.1
+    @test format_stage(SayableAgeFormatter(get_locale("en")), iso_years_ago(5)) == "Child"  # 23.2
+    @test format_stage(SayableAgeFormatter(get_locale("en")), iso_years_ago(45)) == "Adult"  # 23.3
 end
 
 # Section 24: SayableAge class — English locale delegation
@@ -349,7 +355,7 @@ end
 @testset "Half years take their plural form from whole years" begin
     @test format_age(SayableAgeFormatter(get_locale("pl")), "2021-06-15", "2025-01-15") == "3 i pół lata"  # 32.1
     @test format_age(SayableAgeFormatter(get_locale("pl"), Short), "2020-06-15", "2025-12-15") == "5 i pół lat"  # 32.2
-    @test format_age(SayableAgeFormatter(get_locale("shi")), "2005-06-08", "2012-06-07") == "6 iseggasen d uzgen"  # 32.3
+    @test format_age(SayableAgeFormatter(get_locale("shi")), "2005-06-08", "2012-06-07") == "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"  # 32.3
 end
 
 # Section 33: Input validation

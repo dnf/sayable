@@ -23,36 +23,36 @@ shi
 					ifTrue: [ #few ]
 					ifFalse: [ #other ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #few. '{n} ussan'. #other. '{n} ass' }).
-		'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #few. '{n} imalassn'. #other. '{n} imalass' }).
-		'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #few. '{n} ayyurn'. #other. '{n} ayyur' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #few. '{n} iseggasen'. #other. '{n} aseggas' }).
+		'day'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⵙ'. #few. '{n} ⵓⵙⵙⴰⵏ'. #other. '{n} ⴰⵙⵙ' }).
+		'week'. (Dictionary newFromPairs: { #one. '{n} ⵉⵎⴰⵍⴰⵙⵙ'. #few. '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ'. #other. '{n} ⵉⵎⴰⵍⴰⵙⵙ' }).
+		'month'. (Dictionary newFromPairs: { #one. '{n} ⴰⵢⵢⵓⵔ'. #few. '{n} ⴰⵢⵢⵓⵔⵏ'. #other. '{n} ⴰⵢⵢⵓⵔ' }).
+		'year'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⴳⴳⵯⴰⵙ'. #few. '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ'. #other. '{n} ⴰⵙⴳⴳⵯⴰⵙ' }).
 	}).
-	locale half: '{0} d uzgen'.
+	locale half: '{0} ⴷ ⵓⵣⴳⵏ'.
 	locale delimiter: ', '.
-	locale justBorn: 'Iɣ d illul'.
+	locale justBorn: 'ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ'.
 	locale stages: (Dictionary newFromPairs: {
-		#newborn. 'Iɣ d illul'.
-		#infant. 'Llufan'.
-		#toddler. (Dictionary newFromPairs: { #m. 'Aḥenjir'. #f. 'Taḥenjirt' }).
-		#child. (Dictionary newFromPairs: { #m. 'Afrux'. #f. 'Tafruxt' }).
-		#teenager. (Dictionary newFromPairs: { #m. 'Aɛrim'. #f. 'Taɛrimt' }).
-		#adult. (Dictionary newFromPairs: { #m. 'Argaz'. #f. 'Tamṭṭuṭ' }).
+		#newborn. 'ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ'.
+		#infant. 'ⵍⵍⵓⴼⴰⵏ'.
+		#toddler. (Dictionary newFromPairs: { #m. 'ⴰⵃⵏⵊⵉⵔ'. #f. 'ⵜⴰⵃⵏⵊⵉⵔⵜ' }).
+		#child. (Dictionary newFromPairs: { #m. 'ⴰⴼⵔⵓⵅ'. #f. 'ⵜⴰⴼⵔⵓⵅⵜ' }).
+		#teenager. (Dictionary newFromPairs: { #m. 'ⴰⵄⵔⵉⵎ'. #f. 'ⵜⴰⵄⵔⵉⵎⵜ' }).
+		#adult. (Dictionary newFromPairs: { #m. 'ⴰⵔⴳⴰⵣ'. #f. 'ⵜⴰⵎⵟⵟⵓⵟ' }).
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #few. '{n} ussan'. #other. '{n} ass' }).
-			'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #few. '{n} imalassn'. #other. '{n} imalass' }).
-			'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #few. '{n} ayyurn'. #other. '{n} ayyur' }).
-			'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #few. '{n} iseggasen'. #other. '{n} aseggas' }).
+			'day'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⵙ'. #few. '{n} ⵓⵙⵙⴰⵏ'. #other. '{n} ⴰⵙⵙ' }).
+			'week'. (Dictionary newFromPairs: { #one. '{n} ⵉⵎⴰⵍⴰⵙⵙ'. #few. '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ'. #other. '{n} ⵉⵎⴰⵍⴰⵙⵙ' }).
+			'month'. (Dictionary newFromPairs: { #one. '{n} ⴰⵢⵢⵓⵔ'. #few. '{n} ⴰⵢⵢⵓⵔⵏ'. #other. '{n} ⴰⵢⵢⵓⵔ' }).
+			'year'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⴳⴳⵯⴰⵙ'. #few. '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ'. #other. '{n} ⴰⵙⴳⴳⵯⴰⵙ' }).
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. '{n}d'.
-			'week'. '{n}w'.
-			'month'. '{n}m'.
-			'year'. '{n}y'.
+			'day'. '{n} ⴰⵙⵙ'.
+			'week'. '{n} ⵉⵎⵍ'.
+			'month'. '{n} ⴰⵢⵔ'.
+			'year'. '{n} ⴰⵙⴳ'.
 		}).
 		#half. '{n}½'.
 		#delimiter. ''.

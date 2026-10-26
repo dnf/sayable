@@ -4676,32 +4676,32 @@ public enum Locales {
         code: "shi",
         plural: { pluralShi($0) },
         units: Units(
-            second: .plural([.one: "{n} tasint", .few: "{n} tisinin", .other: "{n} tisinin"]),
-            minute: .plural([.one: "{n} tusdiqt", .few: "{n} tusdiqin", .other: "{n} tusdiqin"]),
-            hour: .plural([.one: "{n} tasragt", .few: "{n} tisragin", .other: "{n} tisragin"]),
-            day: .plural([.one: "{n} ass", .few: "{n} ussan", .other: "{n} ass"]),
-            week: .plural([.one: "{n} imalass", .few: "{n} imalassn", .other: "{n} imalass"]),
-            month: .plural([.one: "{n} ayyur", .few: "{n} ayyurn", .other: "{n} ayyur"]),
-            year: .plural([.one: "{n} aseggas", .few: "{n} iseggasen", .other: "{n} aseggas"])
+            second: .plural([.one: "{n} ⵜⴰⵙⵉⵏⵜ", .few: "{n} ⵜⵉⵙⵉⵏⵉⵏ", .other: "{n} ⵜⵉⵙⵉⵏⵉⵏ"]),
+            minute: .plural([.one: "{n} ⵜⵓⵙⴷⵉⵇⵜ", .few: "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", .other: "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"]),
+            hour: .plural([.one: "{n} ⵜⴰⵙⵔⴰⴳⵜ", .few: "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", .other: "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"]),
+            day: .plural([.one: "{n} ⴰⵙⵙ", .few: "{n} ⵓⵙⵙⴰⵏ", .other: "{n} ⴰⵙⵙ"]),
+            week: .plural([.one: "{n} ⵉⵎⴰⵍⴰⵙⵙ", .few: "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", .other: "{n} ⵉⵎⴰⵍⴰⵙⵙ"]),
+            month: .plural([.one: "{n} ⴰⵢⵢⵓⵔ", .few: "{n} ⴰⵢⵢⵓⵔⵏ", .other: "{n} ⴰⵢⵢⵓⵔ"]),
+            year: .plural([.one: "{n} ⴰⵙⴳⴳⵯⴰⵙ", .few: "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", .other: "{n} ⴰⵙⴳⴳⵯⴰⵙ"])
         ),
-        half: "{0} d uzgen",
+        half: "{0} ⴷ ⵓⵣⴳⵏ",
         delimiter: ", ",
-        justNow: "ɣilad",
-        ago: "ɣ {0} zzrin",
-        inFuture: "ɣ {0}",
+        justNow: "ⵖⵉⵍⴰⴷ",
+        ago: "ⵖ {0} ⵣⵣⵔⵉⵏ",
+        inFuture: "ⵖ {0}",
         short: CompactnessOverride(
-            units: ["second": .plural([.one: "{n} tasint", .few: "{n} tasinin", .other: "{n} tasinin"]), "minute": .plural([.one: "{n} tusdiqt", .few: "{n} tusdiqin", .other: "{n} tusdiqin"]), "hour": .plural([.one: "{n} tasragt", .few: "{n} tisragin", .other: "{n} tisragin"]), "day": .plural([.one: "{n} ass", .few: "{n} ussan", .other: "{n} ass"]), "week": .plural([.one: "{n} imalass", .few: "{n} imalassn", .other: "{n} imalass"]), "month": .plural([.one: "{n} ayyur", .few: "{n} ayyurn", .other: "{n} ayyur"]), "year": .plural([.one: "{n} aseggas", .few: "{n} iseggasen", .other: "{n} aseggas"])],
+            units: ["second": .plural([.one: "{n} ⵜⴰⵙⵉⵏⵜ", .few: "{n} ⵜⵉⵙⵉⵏⵉⵏ", .other: "{n} ⵜⵉⵙⵉⵏⵉⵏ"]), "minute": .plural([.one: "{n} ⵜⵓⵙⴷⵉⵇⵜ", .few: "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", .other: "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"]), "hour": .plural([.one: "{n} ⵜⴰⵙⵔⴰⴳⵜ", .few: "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", .other: "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"]), "day": .plural([.one: "{n} ⴰⵙⵙ", .few: "{n} ⵓⵙⵙⴰⵏ", .other: "{n} ⴰⵙⵙ"]), "week": .plural([.one: "{n} ⵉⵎⴰⵍⴰⵙⵙ", .few: "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", .other: "{n} ⵉⵎⴰⵍⴰⵙⵙ"]), "month": .plural([.one: "{n} ⴰⵢⵢⵓⵔ", .few: "{n} ⴰⵢⵢⵓⵔⵏ", .other: "{n} ⴰⵢⵢⵓⵔ"]), "year": .plural([.one: "{n} ⴰⵙⴳⴳⵯⴰⵙ", .few: "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", .other: "{n} ⴰⵙⴳⴳⵯⴰⵙ"])],
             half: nil,
             delimiter: nil,
-            ago: "ɣ {0} zzrin",
-            inFuture: "ɣ {0}"
+            ago: "ⵖ {0} ⵣⵣⵔⵉⵏ",
+            inFuture: "ⵖ {0}"
         ),
         compact: CompactnessOverride(
-            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            units: ["second": .simple("{n} ⵜⵙⵏ"), "minute": .simple("{n} ⵜⵙⴷ"), "hour": .simple("{n} ⵜⵙⵔ"), "day": .simple("{n} ⴰⵙⵙ"), "week": .simple("{n} ⵉⵎⵍ"), "month": .simple("{n} ⴰⵢⵔ"), "year": .simple("{n} ⴰⵙⴳ")],
             half: "{n}½",
             delimiter: "",
-            ago: "ɣ {0} zzrin",
-            inFuture: "ɣ {0}"
+            ago: "ⵖ {0} ⵣⵣⵔⵉⵏ",
+            inFuture: "ⵖ {0}"
         )
     )
 

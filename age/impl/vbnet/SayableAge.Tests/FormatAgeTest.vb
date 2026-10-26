@@ -15,6 +15,12 @@ Namespace SayableAge.Tests
         ' ================================================================
         ' formatAge -- null/edge cases
         ' ================================================================
+        ' 1.1
+        <Fact>
+        Public Sub NullDobReturnsNull()
+            Assert.Null(SayableAgeFormatter.FormatAgeDefault(Nothing, "2025-06-15"))
+        End Sub
+
         ' 1.3
         <Fact>
         Public Sub EmptyStringReturnsNull()
@@ -483,9 +489,22 @@ Namespace SayableAge.Tests
         ' formatAge -- default asOf (uses current date)
         ' ================================================================
         ' 15.1, 15.2
+        <Fact>
+        Public Sub DefaultAsOfUsesMockedToday()
+            SayableAgeFormatter.TimeNow = Function() New DateTime(2025, 6, 15)
+            Assert.Equal("5 years", SayableAgeFormatter.FormatAgeDefault("2020-01-01")) ' 15.1
+            Assert.Equal("5 days", SayableAgeFormatter.FormatAgeDefault("2025-06-10")) ' 15.2
+        End Sub
+
         ' ================================================================
         ' formatStage -- null/edge cases
         ' ================================================================
+        ' 16.1
+        <Fact>
+        Public Sub StageNullDobReturnsNull()
+            Assert.Null(SayableAgeFormatter.FormatStageDefault(Nothing, "2025-06-15"))
+        End Sub
+
         ' 16.3
         <Fact>
         Public Sub StageEmptyStringReturnsNull()
@@ -700,22 +719,123 @@ Namespace SayableAge.Tests
         ' formatStage -- default asOf
         ' ================================================================
         ' 23.1, 23.2, 23.3
+        <Fact>
+        Public Sub StageDefaultAsOf()
+            SayableAgeFormatter.TimeNow = Function() New DateTime(2025, 6, 15)
+            Assert.Equal("Newborn", SayableAgeFormatter.FormatStageDefault("2025-06-15")) ' 23.1
+            Assert.Equal("Child", SayableAgeFormatter.FormatStageDefault("2020-01-01")) ' 23.2
+            Assert.Equal("Adult", SayableAgeFormatter.FormatStageDefault("1980-01-01")) ' 23.3
+        End Sub
+
         ' ================================================================
         ' SayableAgeFormatter class with English locale
         ' ================================================================
         ' 24.1, 24.2, 24.3, 24.4, 24.5, 24.6, 24.7, 24.8, 24.9, 24.10, 24.11, 24.12, 24.13, 24.14, 24.15
+        <Fact>
+        Public Sub SayableAgeEnglishAllTiers()
+            Dim pt = New SayableAgeFormatter(Locales.EN)
+            Assert.Equal("Newborn", pt.FormatAge("2025-06-15", "2025-06-15")) ' 24.1
+            Assert.Equal("3 days", pt.FormatAge("2025-06-12", "2025-06-15")) ' 24.2
+            Assert.Equal("1 week, 1 day", pt.FormatAge("2025-06-07", "2025-06-15")) ' 24.3
+            Assert.Equal("6 months", pt.FormatAge("2025-01-15", "2025-07-15")) ' 24.4
+            Assert.Equal("2 years, 1 month", pt.FormatAge("2023-06-15", "2025-07-15")) ' 24.5
+            Assert.Equal("3½ years", pt.FormatAge("2022-06-15", "2025-12-15")) ' 24.6
+            Assert.Equal("7 years", pt.FormatAge("2018-06-15", "2025-06-15")) ' 24.7
+            Assert.Equal("Newborn", pt.FormatStage("2025-06-15", "2025-06-15")) ' 24.8
+            Assert.Equal("Infant", pt.FormatStage("2025-01-15", "2025-06-15")) ' 24.9
+            Assert.Equal("Toddler", pt.FormatStage("2024-06-15", "2025-06-15")) ' 24.10
+            Assert.Equal("Child", pt.FormatStage("2022-06-15", "2025-06-15")) ' 24.11
+            Assert.Equal("Teenager", pt.FormatStage("2012-06-15", "2025-06-15")) ' 24.12
+            Assert.Equal("Adult", pt.FormatStage("2007-06-15", "2025-06-15")) ' 24.13
+            Assert.Null(pt.FormatAge(Nothing, "2025-06-15")) ' 24.14
+            Assert.Null(pt.FormatStage(Nothing, "2025-06-15")) ' 24.15
+        End Sub
+
         ' ================================================================
         ' SayableAgeFormatter with Spanish locale
         ' ================================================================
         ' 25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 25.10, 25.11, 25.12, 25.13, 25.14, 25.15, 25.16, 25.17, 25.18, 25.19, 25.20
+        <Fact>
+        Public Sub SayableAgeSpanishInlineLocale()
+            Dim es = New AgeLocale(
+                "es",
+                Function(n) If(n = 1, PluralCategory.One, PluralCategory.Other),
+                New Units(
+                    UnitForms.Plural(New Dictionary(Of PluralCategory, String) From {{PluralCategory.One, "{n} día"}, {PluralCategory.Other, "{n} días"}}),
+                    UnitForms.Plural(New Dictionary(Of PluralCategory, String) From {{PluralCategory.One, "{n} semana"}, {PluralCategory.Other, "{n} semanas"}}),
+                    UnitForms.Plural(New Dictionary(Of PluralCategory, String) From {{PluralCategory.One, "{n} mes"}, {PluralCategory.Other, "{n} meses"}}),
+                    UnitForms.Plural(New Dictionary(Of PluralCategory, String) From {{PluralCategory.One, "{n} año"}, {PluralCategory.Other, "{n} años"}})
+                ),
+                "{0} y medio",
+                ", ",
+                "Recién nacido",
+                New Stages(
+                    StageLabel.Gendered("Recién nacido", "Recién nacida"),
+                    StageLabel.Neutral("Bebé"),
+                    StageLabel.Gendered("Niño pequeño", "Niña pequeña"),
+                    StageLabel.Gendered("Niño", "Niña"),
+                    StageLabel.Neutral("Adolescente"),
+                    StageLabel.Gendered("Adulto", "Adulta")
+                )
+            )
+            Dim pt = New SayableAgeFormatter(es)
+            Assert.Equal("Recién nacido", pt.FormatAge("2025-06-15", "2025-06-15")) ' 25.1
+            Assert.Equal("1 día", pt.FormatAge("2025-06-14", "2025-06-15")) ' 25.2
+            Assert.Equal("3 días", pt.FormatAge("2025-06-12", "2025-06-15")) ' 25.3
+            Assert.Equal("1 semana", pt.FormatAge("2025-06-08", "2025-06-15")) ' 25.4
+            Assert.Equal("1 semana, 1 día", pt.FormatAge("2025-06-07", "2025-06-15")) ' 25.5
+            Assert.Equal("2 semanas, 6 días", pt.FormatAge("2025-05-26", "2025-06-15")) ' 25.6
+            Assert.Equal("6 meses", pt.FormatAge("2025-01-15", "2025-07-15")) ' 25.7
+            Assert.Equal("2 años, 1 mes", pt.FormatAge("2023-06-15", "2025-07-15")) ' 25.8
+            Assert.Equal("2 años, 6 meses", pt.FormatAge("2023-06-15", "2025-12-15")) ' 25.9
+            Assert.Equal("3 años y medio", pt.FormatAge("2022-06-15", "2025-12-15")) ' 25.10
+            Assert.Equal("3 años", pt.FormatAge("2022-06-15", "2025-06-15")) ' 25.11
+            Assert.Equal("7 años", pt.FormatAge("2018-06-15", "2025-06-15")) ' 25.12
+            Assert.Equal("Recién nacido", pt.FormatStage("2025-06-15", "2025-06-15")) ' 25.13
+            Assert.Equal("Bebé", pt.FormatStage("2025-01-15", "2025-06-15")) ' 25.14
+            Assert.Equal("Niño pequeño", pt.FormatStage("2024-06-15", "2025-06-15")) ' 25.15
+            Assert.Equal("Niño", pt.FormatStage("2022-06-15", "2025-06-15")) ' 25.16
+            Assert.Equal("Adolescente", pt.FormatStage("2012-06-15", "2025-06-15")) ' 25.17
+            Assert.Equal("Adulto", pt.FormatStage("2007-06-15", "2025-06-15")) ' 25.18
+            Assert.Null(pt.FormatAge(Nothing, "2025-06-15")) ' 25.19
+            Assert.Null(pt.FormatStage(Nothing, "2025-06-15")) ' 25.20
+        End Sub
+
         ' ================================================================
         ' Compactness: short
         ' ================================================================
         ' 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9
+        <Fact>
+        Public Sub CompactShort()
+            Dim pt = New SayableAgeFormatter(Locales.EN, Compactness.Short)
+            Assert.Equal("3 d", pt.FormatAge("2025-06-12", "2025-06-15")) ' 26.1
+            Assert.Equal("1 wk", pt.FormatAge("2025-06-08", "2025-06-15")) ' 26.2
+            Assert.Equal("1 wk, 1 d", pt.FormatAge("2025-06-07", "2025-06-15")) ' 26.3
+            Assert.Equal("6 mo", pt.FormatAge("2025-01-15", "2025-07-15")) ' 26.4
+            Assert.Equal("2 yr, 1 mo", pt.FormatAge("2023-06-15", "2025-07-15")) ' 26.5
+            Assert.Equal("3½ yr", pt.FormatAge("2022-06-15", "2025-12-15")) ' 26.6
+            Assert.Equal("7 yr", pt.FormatAge("2018-06-15", "2025-06-15")) ' 26.7
+            Assert.Equal("Newborn", pt.FormatAge("2025-06-15", "2025-06-15")) ' 26.8
+            Assert.Equal("Infant", pt.FormatStage("2025-01-15", "2025-06-15")) ' 26.9
+        End Sub
+
         ' ================================================================
         ' Compactness: compact
         ' ================================================================
         ' 27.1, 27.2, 27.3, 27.4, 27.5, 27.6, 27.7, 27.8
+        <Fact>
+        Public Sub CompactCompact()
+            Dim pt = New SayableAgeFormatter(Locales.EN, Compactness.Compact)
+            Assert.Equal("3d", pt.FormatAge("2025-06-12", "2025-06-15")) ' 27.1
+            Assert.Equal("1w", pt.FormatAge("2025-06-08", "2025-06-15")) ' 27.2
+            Assert.Equal("1w1d", pt.FormatAge("2025-06-07", "2025-06-15")) ' 27.3
+            Assert.Equal("6m", pt.FormatAge("2025-01-15", "2025-07-15")) ' 27.4
+            Assert.Equal("2y1m", pt.FormatAge("2023-06-15", "2025-07-15")) ' 27.5
+            Assert.Equal("3½y", pt.FormatAge("2022-06-15", "2025-12-15")) ' 27.6
+            Assert.Equal("7y", pt.FormatAge("2018-06-15", "2025-06-15")) ' 27.7
+            Assert.Equal("Newborn", pt.FormatAge("2025-06-15", "2025-06-15")) ' 27.8
+        End Sub
+
         ' ================================================================
         ' All 110 locales exist and have correct codes
         ' ================================================================
@@ -729,22 +849,100 @@ Namespace SayableAge.Tests
         ' Locale-specific edge cases — new plural rules
         ' ================================================================
         ' 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, 29.10, 29.11, 29.12, 29.13, 29.14
+        <Fact>
+        Public Sub LocaleHEPluralRules()
+            Dim pt = New SayableAgeFormatter(Locales.HE)
+            Assert.Equal("רק נולד", pt.FormatAge("2025-06-15", "2025-06-15")) ' 29.1
+            Assert.Equal("יום", pt.FormatAge("2025-06-14", "2025-06-15")) ' 29.2
+            Assert.Equal("3 ימים", pt.FormatAge("2025-06-12", "2025-06-15")) ' 29.3
+            Assert.Equal("שבועיים", pt.FormatAge("2025-06-01", "2025-06-15")) ' 29.4
+            Assert.Equal("3 שבועות", pt.FormatAge("2025-05-25", "2025-06-15")) ' 29.5
+            Assert.Equal("6 חודשים", pt.FormatAge("2025-01-15", "2025-07-15")) ' 29.6
+            Assert.Equal("3 חודשים", pt.FormatAge("2025-03-15", "2025-06-15")) ' 29.7
+            Assert.Equal("שנתיים, חודש", pt.FormatAge("2023-06-15", "2025-07-15")) ' 29.8
+            Assert.Equal("3 שנים וחצי", pt.FormatAge("2022-06-15", "2025-12-15")) ' 29.9
+            Assert.Equal("7 שנים", pt.FormatAge("2018-06-15", "2025-06-15")) ' 29.10
+            Assert.Equal("רק נולד", pt.FormatStage("2025-06-15", "2025-06-15", "m")) ' 29.11
+            Assert.Equal("רק נולדה", pt.FormatStage("2025-06-15", "2025-06-15", "f")) ' 29.12
+            Assert.Equal("מבוגר", pt.FormatStage("2007-06-15", "2025-06-15", "m")) ' 29.13
+            Assert.Equal("מבוגרת", pt.FormatStage("2007-06-15", "2025-06-15", "f")) ' 29.14
+        End Sub
+
+        <Fact>
+        Public Sub LocaleMKPluralRules()
+            Dim pt = New SayableAgeFormatter(Locales.MK)
+            Assert.Equal("Новороденче", pt.FormatAge("2025-06-15", "2025-06-15")) ' 29.15
+            Assert.Equal("1 ден", pt.FormatAge("2025-06-14", "2025-06-15")) ' 29.16
+            Assert.Equal("3 дена", pt.FormatAge("2025-06-12", "2025-06-15")) ' 29.17
+            Assert.Equal("6 месеци", pt.FormatAge("2025-01-15", "2025-07-15")) ' 29.18
+            Assert.Equal("2 години, 1 месец", pt.FormatAge("2023-06-15", "2025-07-15")) ' 29.19
+            Assert.Equal("3 години и пол", pt.FormatAge("2022-06-15", "2025-12-15")) ' 29.20
+            Assert.Equal("7 години", pt.FormatAge("2018-06-15", "2025-06-15")) ' 29.21
+        End Sub
+
+        <Fact>
+        Public Sub LocaleSWPluralRules()
+            Dim pt = New SayableAgeFormatter(Locales.SW)
+            Assert.Equal("Mzaliwa mpya", pt.FormatAge("2025-06-15", "2025-06-15")) ' 29.22
+            Assert.Equal("siku 1", pt.FormatAge("2025-06-14", "2025-06-15")) ' 29.23
+            Assert.Equal("siku 3", pt.FormatAge("2025-06-12", "2025-06-15")) ' 29.24
+            Assert.Equal("miezi 6", pt.FormatAge("2025-01-15", "2025-07-15")) ' 29.25
+            Assert.Equal("miaka 2, mwezi 1", pt.FormatAge("2023-06-15", "2025-07-15")) ' 29.26
+            Assert.Equal("miaka 3 na nusu", pt.FormatAge("2022-06-15", "2025-12-15")) ' 29.27
+        End Sub
+
+        <Fact>
+        Public Sub LocaleIDPluralRules()
+            Dim pt = New SayableAgeFormatter(Locales.ID)
+            Assert.Equal("Baru lahir", pt.FormatAge("2025-06-15", "2025-06-15")) ' 29.28
+            Assert.Equal("1 hari", pt.FormatAge("2025-06-14", "2025-06-15")) ' 29.29
+            Assert.Equal("3 hari", pt.FormatAge("2025-06-12", "2025-06-15")) ' 29.30
+            Assert.Equal("6 bulan", pt.FormatAge("2025-01-15", "2025-07-15")) ' 29.31
+            Assert.Equal("3 setengah tahun", pt.FormatAge("2022-06-15", "2025-12-15")) ' 29.32
+            Assert.Equal("7 tahun", pt.FormatAge("2018-06-15", "2025-06-15")) ' 29.33
+        End Sub
+
+        <Fact>
+        Public Sub LocaleAMPluralRules()
+            Dim pt = New SayableAgeFormatter(Locales.AM)
+            Assert.Equal("አዲስ የተወለደ", pt.FormatAge("2025-06-15", "2025-06-15")) ' 29.34
+            Assert.Equal("1 ቀን", pt.FormatAge("2025-06-14", "2025-06-15")) ' 29.35
+            Assert.Equal("3 ቀናት", pt.FormatAge("2025-06-12", "2025-06-15")) ' 29.36
+            Assert.Equal("1 ሳምንት፣ 1 ቀን", pt.FormatAge("2025-06-07", "2025-06-15")) ' 29.37
+            Assert.Equal("6 ወራት", pt.FormatAge("2025-01-15", "2025-07-15")) ' 29.38
+            Assert.Equal("3 ዓመታት ተኩል", pt.FormatAge("2022-06-15", "2025-12-15")) ' 29.39
+        End Sub
+
         ' ================================================================
         ' Locale lookup by code string
         ' ================================================================
         <Fact>
-        Public Sub GetLocaleReturnsNullForUnknownCode()
-            Assert.Null(Locales.Get("xx"))
+        Public Sub Spec30_1GetLocale()
+            Dim loc = Locales.Get("en")
+            Assert.NotNull(loc)
+            Assert.Equal("en", loc.Code) ' 30.1
         End Sub
 
         <Fact>
-        Public Sub GetLocaleReturnsNullForEmptyString()
-            Assert.Null(Locales.Get(""))
+        Public Sub Spec30_2GetLocale()
+            Dim loc = Locales.Get("fr")
+            Assert.NotNull(loc)
+            Assert.Equal("fr", loc.Code) ' 30.2
         End Sub
 
         <Fact>
-        Public Sub GetLocaleIsCaseSensitive()
-            Assert.Null(Locales.Get("EN"))
+        Public Sub Spec30_3GetLocale()
+            Assert.Null(Locales.Get("xx")) ' 30.3
+        End Sub
+
+        <Fact>
+        Public Sub Spec30_4GetLocale()
+            Assert.Null(Locales.Get("")) ' 30.4
+        End Sub
+
+        <Fact>
+        Public Sub Spec30_5GetLocale()
+            Assert.Null(Locales.Get("EN")) ' 30.5
         End Sub
 
         ' ================================================================
@@ -801,7 +999,7 @@ Namespace SayableAge.Tests
         <Fact>
         Public Sub Spec32_3_Tachelhit6IsFew()
             Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.SHI)
-            Assert.Equal("6 iseggasen d uzgen", f.FormatAge("2005-06-08", "2012-06-07"))
+            Assert.Equal("6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ", f.FormatAge("2005-06-08", "2012-06-07"))
         End Sub
 
         ' ================================================================

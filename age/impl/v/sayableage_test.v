@@ -1,6 +1,7 @@
 module sayableage
 
 import locales
+import time
 
 fn test_1_1() {
 	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
@@ -488,6 +489,38 @@ fn test_14_5() {
 	assert result == '6 months'
 }
 
+// Default as_of (empty string means today, local time): dateOfBirth is derived
+// from the real current date to keep the canonical expected output. The day
+// is capped at 28 so that a Feb 29 today still yields a real calendar date
+// years earlier.
+fn today_string() string {
+	return time.now().ymmdd()
+}
+
+fn years_before_today(years int) string {
+	today := time.now()
+	day := if today.day > 28 { 28 } else { today.day }
+	return '${today.year - years:04}-${today.month:02}-${day:02}'
+}
+
+fn days_before_today(days int) string {
+	return time.now().add_days(-days).ymmdd()
+}
+
+// 15.1
+fn test_15_1() {
+	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := sa.format_age(years_before_today(5), '') or { panic('15.1 should not be none') }
+	assert result == '5 years'
+}
+
+// 15.2
+fn test_15_2() {
+	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := sa.format_age(days_before_today(5), '') or { panic('15.2 should not be none') }
+	assert result == '5 days'
+}
+
 fn test_16_1() {
 	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
 	result := sa.format_stage('', '', '')
@@ -683,6 +716,27 @@ fn test_22_2() {
 fn test_22_3() {
 	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
 	result := sa.format_stage('1980-01-01', '2025-06-15', '') or { panic('22.3 should not be none') }
+	assert result == 'Adult'
+}
+
+// 23.1
+fn test_23_1() {
+	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := sa.format_stage(today_string(), '', '') or { panic('23.1 should not be none') }
+	assert result == 'Newborn'
+}
+
+// 23.2
+fn test_23_2() {
+	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := sa.format_stage(years_before_today(5), '', '') or { panic('23.2 should not be none') }
+	assert result == 'Child'
+}
+
+// 23.3
+fn test_23_3() {
+	sa := locales.new_sayable_age(locales.get_locale('en') or { panic('locale not found') }, .normal)
+	result := sa.format_stage(years_before_today(45), '', '') or { panic('23.3 should not be none') }
 	assert result == 'Adult'
 }
 
@@ -1308,7 +1362,7 @@ fn test_32_2() {
 fn test_32_3() {
 	f := locales.new_sayable_age(locales.get_locale('shi') or { panic('locale not found') }, .normal)
 	result := f.format_age('2005-06-08', '2012-06-07') or { panic('32.3 should not be none') }
-	assert result == '6 iseggasen d uzgen', '32.3'
+	assert result == '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', '32.3'
 }
 
 // Section 33: Input validation

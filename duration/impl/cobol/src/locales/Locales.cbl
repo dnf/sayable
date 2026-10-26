@@ -33536,130 +33536,130 @@
            MOVE 0 TO WS-ACT-SECOND-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SECOND-FORM(1)
            MOVE 1 TO WS-ACT-SECOND-HAS-FORM(2)
-           MOVE "{n} tasint"
+           MOVE "{n} ⵜⴰⵙⵉⵏⵜ"
                TO WS-ACT-SECOND-FORM(2)
            MOVE 0 TO WS-ACT-SECOND-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SECOND-FORM(3)
            MOVE 1 TO WS-ACT-SECOND-HAS-FORM(4)
-           MOVE "{n} tisinin"
+           MOVE "{n} ⵜⵉⵙⵉⵏⵉⵏ"
                TO WS-ACT-SECOND-FORM(4)
            MOVE 0 TO WS-ACT-SECOND-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SECOND-FORM(5)
            MOVE 1 TO WS-ACT-SECOND-HAS-FORM(6)
-           MOVE "{n} tisinin"
+           MOVE "{n} ⵜⵉⵙⵉⵏⵉⵏ"
                TO WS-ACT-SECOND-FORM(6)
            MOVE 0 TO WS-ACT-MINUTE-HAS-SIMPLE
            MOVE SPACES TO WS-ACT-MINUTE-SIMPLE
            MOVE 0 TO WS-ACT-MINUTE-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-MINUTE-FORM(1)
            MOVE 1 TO WS-ACT-MINUTE-HAS-FORM(2)
-           MOVE "{n} tusdiqt"
+           MOVE "{n} ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-MINUTE-FORM(2)
            MOVE 0 TO WS-ACT-MINUTE-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-MINUTE-FORM(3)
            MOVE 1 TO WS-ACT-MINUTE-HAS-FORM(4)
-           MOVE "{n} tusdiqin"
+           MOVE "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"
                TO WS-ACT-MINUTE-FORM(4)
            MOVE 0 TO WS-ACT-MINUTE-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-MINUTE-FORM(5)
            MOVE 1 TO WS-ACT-MINUTE-HAS-FORM(6)
-           MOVE "{n} tusdiqin"
+           MOVE "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"
                TO WS-ACT-MINUTE-FORM(6)
            MOVE 0 TO WS-ACT-HOUR-HAS-SIMPLE
            MOVE SPACES TO WS-ACT-HOUR-SIMPLE
            MOVE 0 TO WS-ACT-HOUR-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-HOUR-FORM(1)
            MOVE 1 TO WS-ACT-HOUR-HAS-FORM(2)
-           MOVE "{n} tasragt"
+           MOVE "{n} ⵜⴰⵙⵔⴰⴳⵜ"
                TO WS-ACT-HOUR-FORM(2)
            MOVE 0 TO WS-ACT-HOUR-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-HOUR-FORM(3)
            MOVE 1 TO WS-ACT-HOUR-HAS-FORM(4)
-           MOVE "{n} tisragin"
+           MOVE "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"
                TO WS-ACT-HOUR-FORM(4)
            MOVE 0 TO WS-ACT-HOUR-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-HOUR-FORM(5)
            MOVE 1 TO WS-ACT-HOUR-HAS-FORM(6)
-           MOVE "{n} tisragin"
+           MOVE "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"
                TO WS-ACT-HOUR-FORM(6)
            MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
            MOVE SPACES TO WS-ACT-DAY-SIMPLE
            MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-DAY-FORM(1)
            MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
-           MOVE "{n} ass"
+           MOVE "{n} ⴰⵙⵙ"
                TO WS-ACT-DAY-FORM(2)
            MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-DAY-FORM(3)
            MOVE 1 TO WS-ACT-DAY-HAS-FORM(4)
-           MOVE "{n} ussan"
+           MOVE "{n} ⵓⵙⵙⴰⵏ"
                TO WS-ACT-DAY-FORM(4)
            MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-DAY-FORM(5)
            MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
-           MOVE "{n} ass"
+           MOVE "{n} ⴰⵙⵙ"
                TO WS-ACT-DAY-FORM(6)
            MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
            MOVE SPACES TO WS-ACT-WEEK-SIMPLE
            MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-WEEK-FORM(1)
            MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
-           MOVE "{n} imalass"
+           MOVE "{n} ⵉⵎⴰⵍⴰⵙⵙ"
                TO WS-ACT-WEEK-FORM(2)
            MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-WEEK-FORM(3)
            MOVE 1 TO WS-ACT-WEEK-HAS-FORM(4)
-           MOVE "{n} imalassn"
+           MOVE "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"
                TO WS-ACT-WEEK-FORM(4)
            MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-WEEK-FORM(5)
            MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
-           MOVE "{n} imalass"
+           MOVE "{n} ⵉⵎⴰⵍⴰⵙⵙ"
                TO WS-ACT-WEEK-FORM(6)
            MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
            MOVE SPACES TO WS-ACT-MONTH-SIMPLE
            MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-MONTH-FORM(1)
            MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
-           MOVE "{n} ayyur"
+           MOVE "{n} ⴰⵢⵢⵓⵔ"
                TO WS-ACT-MONTH-FORM(2)
            MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-MONTH-FORM(3)
            MOVE 1 TO WS-ACT-MONTH-HAS-FORM(4)
-           MOVE "{n} ayyurn"
+           MOVE "{n} ⴰⵢⵢⵓⵔⵏ"
                TO WS-ACT-MONTH-FORM(4)
            MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-MONTH-FORM(5)
            MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
-           MOVE "{n} ayyur"
+           MOVE "{n} ⴰⵢⵢⵓⵔ"
                TO WS-ACT-MONTH-FORM(6)
            MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
            MOVE SPACES TO WS-ACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-YEAR-FORM(1)
            MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
-           MOVE "{n} aseggas"
+           MOVE "{n} ⴰⵙⴳⴳⵯⴰⵙ"
                TO WS-ACT-YEAR-FORM(2)
            MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-YEAR-FORM(3)
            MOVE 1 TO WS-ACT-YEAR-HAS-FORM(4)
-           MOVE "{n} iseggasen"
+           MOVE "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"
                TO WS-ACT-YEAR-FORM(4)
            MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-YEAR-FORM(5)
            MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
-           MOVE "{n} aseggas"
+           MOVE "{n} ⴰⵙⴳⴳⵯⴰⵙ"
                TO WS-ACT-YEAR-FORM(6)
-           MOVE "{0} d uzgen"
+           MOVE "{0} ⴷ ⵓⵣⴳⵏ"
                TO WS-ACT-HALF
            MOVE ", "
                TO WS-ACT-DELIMITER
            MOVE 2 TO WS-ACT-DELIM-LEN
-           MOVE "ɣilad"
+           MOVE "ⵖⵉⵍⴰⴷ"
                TO WS-ACT-JUST-NOW
-           MOVE "ɣ {0} zzrin"
+           MOVE "ⵖ {0} ⵣⵣⵔⵉⵏ"
                TO WS-ACT-AGO
-           MOVE "ɣ {0}"
+           MOVE "ⵖ {0}"
                TO WS-ACT-IN-FUTURE
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1 TO WS-ACT-SHORT-HAS-SECOND
@@ -33668,17 +33668,17 @@
            MOVE 0 TO WS-ACT-SHORT-SECOND-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SHORT-SECOND-FORM(1)
            MOVE 1 TO WS-ACT-SHORT-SECOND-HAS-FORM(2)
-           MOVE "{n} tasint"
+           MOVE "{n} ⵜⴰⵙⵉⵏⵜ"
                TO WS-ACT-SHORT-SECOND-FORM(2)
            MOVE 0 TO WS-ACT-SHORT-SECOND-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SHORT-SECOND-FORM(3)
            MOVE 1 TO WS-ACT-SHORT-SECOND-HAS-FORM(4)
-           MOVE "{n} tasinin"
+           MOVE "{n} ⵜⵉⵙⵉⵏⵉⵏ"
                TO WS-ACT-SHORT-SECOND-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-SECOND-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SHORT-SECOND-FORM(5)
            MOVE 1 TO WS-ACT-SHORT-SECOND-HAS-FORM(6)
-           MOVE "{n} tasinin"
+           MOVE "{n} ⵜⵉⵙⵉⵏⵉⵏ"
                TO WS-ACT-SHORT-SECOND-FORM(6)
            MOVE 1 TO WS-ACT-SHORT-HAS-MINUTE
            MOVE 0 TO WS-ACT-SHORT-MINUTE-HAS-SIMPLE
@@ -33686,17 +33686,17 @@
            MOVE 0 TO WS-ACT-SHORT-MINUTE-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SHORT-MINUTE-FORM(1)
            MOVE 1 TO WS-ACT-SHORT-MINUTE-HAS-FORM(2)
-           MOVE "{n} tusdiqt"
+           MOVE "{n} ⵜⵓⵙⴷⵉⵇⵜ"
                TO WS-ACT-SHORT-MINUTE-FORM(2)
            MOVE 0 TO WS-ACT-SHORT-MINUTE-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SHORT-MINUTE-FORM(3)
            MOVE 1 TO WS-ACT-SHORT-MINUTE-HAS-FORM(4)
-           MOVE "{n} tusdiqin"
+           MOVE "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"
                TO WS-ACT-SHORT-MINUTE-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-MINUTE-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SHORT-MINUTE-FORM(5)
            MOVE 1 TO WS-ACT-SHORT-MINUTE-HAS-FORM(6)
-           MOVE "{n} tusdiqin"
+           MOVE "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"
                TO WS-ACT-SHORT-MINUTE-FORM(6)
            MOVE 1 TO WS-ACT-SHORT-HAS-HOUR
            MOVE 0 TO WS-ACT-SHORT-HOUR-HAS-SIMPLE
@@ -33704,17 +33704,17 @@
            MOVE 0 TO WS-ACT-SHORT-HOUR-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SHORT-HOUR-FORM(1)
            MOVE 1 TO WS-ACT-SHORT-HOUR-HAS-FORM(2)
-           MOVE "{n} tasragt"
+           MOVE "{n} ⵜⴰⵙⵔⴰⴳⵜ"
                TO WS-ACT-SHORT-HOUR-FORM(2)
            MOVE 0 TO WS-ACT-SHORT-HOUR-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SHORT-HOUR-FORM(3)
            MOVE 1 TO WS-ACT-SHORT-HOUR-HAS-FORM(4)
-           MOVE "{n} tisragin"
+           MOVE "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"
                TO WS-ACT-SHORT-HOUR-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-HOUR-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SHORT-HOUR-FORM(5)
            MOVE 1 TO WS-ACT-SHORT-HOUR-HAS-FORM(6)
-           MOVE "{n} tisragin"
+           MOVE "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"
                TO WS-ACT-SHORT-HOUR-FORM(6)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY
            MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
@@ -33722,17 +33722,17 @@
            MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
            MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
-           MOVE "{n} ass"
+           MOVE "{n} ⴰⵙⵙ"
                TO WS-ACT-SHORT-DAY-FORM(2)
            MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
            MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
-           MOVE "{n} ussan"
+           MOVE "{n} ⵓⵙⵙⴰⵏ"
                TO WS-ACT-SHORT-DAY-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
            MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
-           MOVE "{n} ass"
+           MOVE "{n} ⴰⵙⵙ"
                TO WS-ACT-SHORT-DAY-FORM(6)
            MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
            MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
@@ -33740,17 +33740,17 @@
            MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
            MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
-           MOVE "{n} imalass"
+           MOVE "{n} ⵉⵎⴰⵍⴰⵙⵙ"
                TO WS-ACT-SHORT-WEEK-FORM(2)
            MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
            MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
-           MOVE "{n} imalassn"
+           MOVE "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"
                TO WS-ACT-SHORT-WEEK-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
            MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
-           MOVE "{n} imalass"
+           MOVE "{n} ⵉⵎⴰⵍⴰⵙⵙ"
                TO WS-ACT-SHORT-WEEK-FORM(6)
            MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
            MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
@@ -33758,17 +33758,17 @@
            MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
            MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
-           MOVE "{n} ayyur"
+           MOVE "{n} ⴰⵢⵢⵓⵔ"
                TO WS-ACT-SHORT-MONTH-FORM(2)
            MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
            MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
-           MOVE "{n} ayyurn"
+           MOVE "{n} ⴰⵢⵢⵓⵔⵏ"
                TO WS-ACT-SHORT-MONTH-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
            MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
-           MOVE "{n} ayyur"
+           MOVE "{n} ⴰⵢⵢⵓⵔ"
                TO WS-ACT-SHORT-MONTH-FORM(6)
            MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
            MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
@@ -33776,30 +33776,30 @@
            MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
            MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
            MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
-           MOVE "{n} aseggas"
+           MOVE "{n} ⴰⵙⴳⴳⵯⴰⵙ"
                TO WS-ACT-SHORT-YEAR-FORM(2)
            MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
            MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
            MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
-           MOVE "{n} iseggasen"
+           MOVE "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"
                TO WS-ACT-SHORT-YEAR-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
            MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
            MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
-           MOVE "{n} aseggas"
+           MOVE "{n} ⴰⵙⴳⴳⵯⴰⵙ"
                TO WS-ACT-SHORT-YEAR-FORM(6)
            MOVE 0 TO WS-ACT-SHORT-HAS-HALF
            MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
            MOVE 1 TO WS-ACT-SHORT-HAS-AGO
-           MOVE "ɣ {0} zzrin"
+           MOVE "ⵖ {0} ⵣⵣⵔⵉⵏ"
                TO WS-ACT-SHORT-AGO
            MOVE 1 TO WS-ACT-SHORT-HAS-IN-FUTURE
-           MOVE "ɣ {0}"
+           MOVE "ⵖ {0}"
                TO WS-ACT-SHORT-IN-FUTURE
            MOVE 1 TO WS-ACT-HAS-COMPACT
            MOVE 1 TO WS-ACT-COMPACT-HAS-SECOND
            MOVE 1 TO WS-ACT-COMPACT-SECOND-HAS-SIMPLE
-           MOVE "{n}s" TO WS-ACT-COMPACT-SECOND-SIMPLE
+           MOVE "{n} ⵜⵙⵏ" TO WS-ACT-COMPACT-SECOND-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-SECOND-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-SECOND-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-SECOND-HAS-FORM(3)
@@ -33808,7 +33808,7 @@
            MOVE 0 TO WS-ACT-COMPACT-SECOND-HAS-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-MINUTE
            MOVE 1 TO WS-ACT-COMPACT-MINUTE-HAS-SIMPLE
-           MOVE "{n}m" TO WS-ACT-COMPACT-MINUTE-SIMPLE
+           MOVE "{n} ⵜⵙⴷ" TO WS-ACT-COMPACT-MINUTE-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-MINUTE-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-MINUTE-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-MINUTE-HAS-FORM(3)
@@ -33817,7 +33817,7 @@
            MOVE 0 TO WS-ACT-COMPACT-MINUTE-HAS-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-HOUR
            MOVE 1 TO WS-ACT-COMPACT-HOUR-HAS-SIMPLE
-           MOVE "{n}h" TO WS-ACT-COMPACT-HOUR-SIMPLE
+           MOVE "{n} ⵜⵙⵔ" TO WS-ACT-COMPACT-HOUR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-HOUR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-HOUR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-HOUR-HAS-FORM(3)
@@ -33826,7 +33826,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HOUR-HAS-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
            MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
-           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE "{n} ⴰⵙⵙ" TO WS-ACT-COMPACT-DAY-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
@@ -33835,7 +33835,7 @@
            MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
            MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
-           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE "{n} ⵉⵎⵍ" TO WS-ACT-COMPACT-WEEK-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
@@ -33844,7 +33844,7 @@
            MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
            MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
-           MOVE "{n}mo" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE "{n} ⴰⵢⵔ" TO WS-ACT-COMPACT-MONTH-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
@@ -33853,7 +33853,7 @@
            MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
-           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE "{n} ⴰⵙⴳ" TO WS-ACT-COMPACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
@@ -33866,10 +33866,10 @@
            MOVE SPACES TO WS-ACT-COMPACT-DELIM
            MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
            MOVE 1 TO WS-ACT-COMPACT-HAS-AGO
-           MOVE "ɣ {0} zzrin"
+           MOVE "ⵖ {0} ⵣⵣⵔⵉⵏ"
                TO WS-ACT-COMPACT-AGO
            MOVE 1 TO WS-ACT-COMPACT-HAS-IN-FUTURE
-           MOVE "ɣ {0}"
+           MOVE "ⵖ {0}"
                TO WS-ACT-COMPACT-IN-FUTURE
            .
 

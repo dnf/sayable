@@ -5530,36 +5530,36 @@ public enum Locales {
         code: "shi",
         plural: { pluralShi($0) },
         units: Units(
-            day: .plural([.one: "{n} ass", .few: "{n} ussan", .other: "{n} ass"]),
-            week: .plural([.one: "{n} imalass", .few: "{n} imalassn", .other: "{n} imalass"]),
-            month: .plural([.one: "{n} ayyur", .few: "{n} ayyurn", .other: "{n} ayyur"]),
-            year: .plural([.one: "{n} aseggas", .few: "{n} iseggasen", .other: "{n} aseggas"])
+            day: .plural([.one: "{n} ⴰⵙⵙ", .few: "{n} ⵓⵙⵙⴰⵏ", .other: "{n} ⴰⵙⵙ"]),
+            week: .plural([.one: "{n} ⵉⵎⴰⵍⴰⵙⵙ", .few: "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", .other: "{n} ⵉⵎⴰⵍⴰⵙⵙ"]),
+            month: .plural([.one: "{n} ⴰⵢⵢⵓⵔ", .few: "{n} ⴰⵢⵢⵓⵔⵏ", .other: "{n} ⴰⵢⵢⵓⵔ"]),
+            year: .plural([.one: "{n} ⴰⵙⴳⴳⵯⴰⵙ", .few: "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", .other: "{n} ⴰⵙⴳⴳⵯⴰⵙ"])
         ),
-        half: "{0} d uzgen",
+        half: "{0} ⴷ ⵓⵣⴳⵏ",
         delimiter: ", ",
-        justBorn: "Iɣ d illul",
+        justBorn: "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
         stages: Stages(
-            newborn: .neutral("Iɣ d illul"),
-            infant: .neutral("Llufan"),
-            toddler: .gendered(m: "Aḥenjir", f: "Taḥenjirt"),
-            child: .gendered(m: "Afrux", f: "Tafruxt"),
-            teenager: .gendered(m: "Aɛrim", f: "Taɛrimt"),
-            adult: .gendered(m: "Argaz", f: "Tamṭṭuṭ")
+            newborn: .neutral("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"),
+            infant: .neutral("ⵍⵍⵓⴼⴰⵏ"),
+            toddler: .gendered(m: "ⴰⵃⵏⵊⵉⵔ", f: "ⵜⴰⵃⵏⵊⵉⵔⵜ"),
+            child: .gendered(m: "ⴰⴼⵔⵓⵅ", f: "ⵜⴰⴼⵔⵓⵅⵜ"),
+            teenager: .gendered(m: "ⴰⵄⵔⵉⵎ", f: "ⵜⴰⵄⵔⵉⵎⵜ"),
+            adult: .gendered(m: "ⴰⵔⴳⴰⵣ", f: "ⵜⴰⵎⵟⵟⵓⵟ")
         ),
         shortOverride: CompactnessOverride(
-            day: .plural([.one: "{n} ass", .few: "{n} ussan", .other: "{n} ass"]),
-            week: .plural([.one: "{n} imalass", .few: "{n} imalassn", .other: "{n} imalass"]),
-            month: .plural([.one: "{n} ayyur", .few: "{n} ayyurn", .other: "{n} ayyur"]),
-            year: .plural([.one: "{n} aseggas", .few: "{n} iseggasen", .other: "{n} aseggas"]),
+            day: .plural([.one: "{n} ⴰⵙⵙ", .few: "{n} ⵓⵙⵙⴰⵏ", .other: "{n} ⴰⵙⵙ"]),
+            week: .plural([.one: "{n} ⵉⵎⴰⵍⴰⵙⵙ", .few: "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", .other: "{n} ⵉⵎⴰⵍⴰⵙⵙ"]),
+            month: .plural([.one: "{n} ⴰⵢⵢⵓⵔ", .few: "{n} ⴰⵢⵢⵓⵔⵏ", .other: "{n} ⴰⵢⵢⵓⵔ"]),
+            year: .plural([.one: "{n} ⴰⵙⴳⴳⵯⴰⵙ", .few: "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", .other: "{n} ⴰⵙⴳⴳⵯⴰⵙ"]),
             half: nil,
             delimiter: nil,
             justBorn: nil
         ),
         compactOverride: CompactnessOverride(
-            day: .simple("{n}d"),
-            week: .simple("{n}w"),
-            month: .simple("{n}m"),
-            year: .simple("{n}y"),
+            day: .simple("{n} ⴰⵙⵙ"),
+            week: .simple("{n} ⵉⵎⵍ"),
+            month: .simple("{n} ⴰⵢⵔ"),
+            year: .simple("{n} ⴰⵙⴳ"),
             half: "{n}½",
             delimiter: "",
             justBorn: nil

@@ -1072,7 +1072,7 @@ void main() {
     });
     test('Tachelhit 6 is few', () {
       final pt = SayableAge(getLocale('shi')!);
-      expect(pt.formatAge('2005-06-08', '2012-06-07'), '6 iseggasen d uzgen'); // 32.3
+      expect(pt.formatAge('2005-06-08', '2012-06-07'), '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ'); // 32.3
     });
   });
 

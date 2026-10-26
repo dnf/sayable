@@ -20,6 +20,12 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.1
+    @Test
+    void 'null dob returns null'() {
+        assertNull(SayableAge.formatAgeDefault(null, '2025-06-15'))
+    }
+
     // 1.3
     @Test
     void 'empty string returns null'() {
@@ -575,6 +581,12 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- null/edge cases
     // ================================================================
+    // 16.1
+    @Test
+    void 'stage null dob returns null'() {
+        assertNull(SayableAge.formatStageDefault(null, '2025-06-15'))
+    }
+
     // 16.3
     @Test
     void 'stage empty string returns null'() {
@@ -1261,7 +1273,7 @@ class FormatAgeTest {
     @Test
     void 'tachelhit 6 is few'() {
         SayableAge f = new SayableAge(Locales.SHI)
-        assertEquals('6 iseggasen d uzgen', f.formatAge('2005-06-08', '2012-06-07'))
+        assertEquals('6 \u2D49\u2D59\u2D33\u2D33\u2D6F\u2D30\u2D59\u2D4F \u2D37 \u2D53\u2D63\u2D33\u2D4F', f.formatAge('2005-06-08', '2012-06-07'))
     }
 
     // ================================================================

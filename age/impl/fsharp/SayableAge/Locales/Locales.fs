@@ -6127,37 +6127,37 @@ let SHI: AgeLocale =
         Plural = pluralShi
         Units =
             {
-                Day = Plural (Map.ofList [ (One, "{n} ass"); (Few, "{n} ussan"); (Other, "{n} ass") ])
-                Week = Plural (Map.ofList [ (One, "{n} imalass"); (Few, "{n} imalassn"); (Other, "{n} imalass") ])
-                Month = Plural (Map.ofList [ (One, "{n} ayyur"); (Few, "{n} ayyurn"); (Other, "{n} ayyur") ])
-                Year = Plural (Map.ofList [ (One, "{n} aseggas"); (Few, "{n} iseggasen"); (Other, "{n} aseggas") ])
+                Day = Plural (Map.ofList [ (One, "{n} ⴰⵙⵙ"); (Few, "{n} ⵓⵙⵙⴰⵏ"); (Other, "{n} ⴰⵙⵙ") ])
+                Week = Plural (Map.ofList [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"); (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"); (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ") ])
+                Month = Plural (Map.ofList [ (One, "{n} ⴰⵢⵢⵓⵔ"); (Few, "{n} ⴰⵢⵢⵓⵔⵏ"); (Other, "{n} ⴰⵢⵢⵓⵔ") ])
+                Year = Plural (Map.ofList [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"); (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"); (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ") ])
             }
-        Half = "{0} d uzgen"
+        Half = "{0} ⴷ ⵓⵣⴳⵏ"
         Delimiter = ", "
-        JustBorn = "Iɣ d illul"
+        JustBorn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
         Stages =
             {
-                Newborn = Neutral "Iɣ d illul"
-                Infant = Neutral "Llufan"
-                Toddler = Gendered("Aḥenjir", "Taḥenjirt")
-                Child = Gendered("Afrux", "Tafruxt")
-                Teenager = Gendered("Aɛrim", "Taɛrimt")
-                Adult = Gendered("Argaz", "Tamṭṭuṭ")
+                Newborn = Neutral "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+                Infant = Neutral "ⵍⵍⵓⴼⴰⵏ"
+                Toddler = Gendered("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ")
+                Child = Gendered("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ")
+                Teenager = Gendered("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ")
+                Adult = Gendered("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
             }
         ShortOverride = Some {
-            Day = Some (Plural (Map.ofList [ (One, "{n} ass"); (Few, "{n} ussan"); (Other, "{n} ass") ]))
-            Week = Some (Plural (Map.ofList [ (One, "{n} imalass"); (Few, "{n} imalassn"); (Other, "{n} imalass") ]))
-            Month = Some (Plural (Map.ofList [ (One, "{n} ayyur"); (Few, "{n} ayyurn"); (Other, "{n} ayyur") ]))
-            Year = Some (Plural (Map.ofList [ (One, "{n} aseggas"); (Few, "{n} iseggasen"); (Other, "{n} aseggas") ]))
+            Day = Some (Plural (Map.ofList [ (One, "{n} ⴰⵙⵙ"); (Few, "{n} ⵓⵙⵙⴰⵏ"); (Other, "{n} ⴰⵙⵙ") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"); (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"); (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} ⴰⵢⵢⵓⵔ"); (Few, "{n} ⴰⵢⵢⵓⵔⵏ"); (Other, "{n} ⴰⵢⵢⵓⵔ") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"); (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"); (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ") ]))
             Half = None
             Delimiter = None
             JustBorn = None
             }
         CompactOverride = Some {
-            Day = Some (Simple "{n}d")
-            Week = Some (Simple "{n}w")
-            Month = Some (Simple "{n}m")
-            Year = Some (Simple "{n}y")
+            Day = Some (Simple "{n} ⴰⵙⵙ")
+            Week = Some (Simple "{n} ⵉⵎⵍ")
+            Month = Some (Simple "{n} ⴰⵢⵔ")
+            Year = Some (Simple "{n} ⴰⵙⴳ")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None

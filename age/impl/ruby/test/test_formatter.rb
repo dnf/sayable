@@ -1183,7 +1183,7 @@ class TestFormatter < Minitest::Test
   # 32.3
   def test_32_3_shi_six_few
     pt = SayableAge::Formatter.new(SayableAge::Locales::SHI)
-    assert_equal '6 iseggasen d uzgen', pt.format_age('2005-06-08', '2012-06-07')
+    assert_equal '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', pt.format_age('2005-06-08', '2012-06-07')
   end
 
   # ================================================================

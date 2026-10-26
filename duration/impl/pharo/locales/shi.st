@@ -23,46 +23,46 @@ shi
 					ifTrue: [ #few ]
 					ifFalse: [ #other ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. '{n} tasint'. #few. '{n} tisinin'. #other. '{n} tisinin' }).
-		'minute'. (Dictionary newFromPairs: { #one. '{n} tusdiqt'. #few. '{n} tusdiqin'. #other. '{n} tusdiqin' }).
-		'hour'. (Dictionary newFromPairs: { #one. '{n} tasragt'. #few. '{n} tisragin'. #other. '{n} tisragin' }).
-		'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #few. '{n} ussan'. #other. '{n} ass' }).
-		'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #few. '{n} imalassn'. #other. '{n} imalass' }).
-		'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #few. '{n} ayyurn'. #other. '{n} ayyur' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #few. '{n} iseggasen'. #other. '{n} aseggas' }).
+		'second'. (Dictionary newFromPairs: { #one. '{n} ⵜⴰⵙⵉⵏⵜ'. #few. '{n} ⵜⵉⵙⵉⵏⵉⵏ'. #other. '{n} ⵜⵉⵙⵉⵏⵉⵏ' }).
+		'minute'. (Dictionary newFromPairs: { #one. '{n} ⵜⵓⵙⴷⵉⵇⵜ'. #few. '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ'. #other. '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ' }).
+		'hour'. (Dictionary newFromPairs: { #one. '{n} ⵜⴰⵙⵔⴰⴳⵜ'. #few. '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ'. #other. '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ' }).
+		'day'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⵙ'. #few. '{n} ⵓⵙⵙⴰⵏ'. #other. '{n} ⴰⵙⵙ' }).
+		'week'. (Dictionary newFromPairs: { #one. '{n} ⵉⵎⴰⵍⴰⵙⵙ'. #few. '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ'. #other. '{n} ⵉⵎⴰⵍⴰⵙⵙ' }).
+		'month'. (Dictionary newFromPairs: { #one. '{n} ⴰⵢⵢⵓⵔ'. #few. '{n} ⴰⵢⵢⵓⵔⵏ'. #other. '{n} ⴰⵢⵢⵓⵔ' }).
+		'year'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⴳⴳⵯⴰⵙ'. #few. '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ'. #other. '{n} ⴰⵙⴳⴳⵯⴰⵙ' }).
 	}).
-	locale half: '{0} d uzgen'.
+	locale half: '{0} ⴷ ⵓⵣⴳⵏ'.
 	locale delimiter: ', '.
-	locale justNow: 'ɣilad'.
-	locale ago: 'ɣ {0} zzrin'.
-	locale inFuture: 'ɣ {0}'.
+	locale justNow: 'ⵖⵉⵍⴰⴷ'.
+	locale ago: 'ⵖ {0} ⵣⵣⵔⵉⵏ'.
+	locale inFuture: 'ⵖ {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. (Dictionary newFromPairs: { #one. '{n} tasint'. #few. '{n} tasinin'. #other. '{n} tasinin' }).
-			'minute'. (Dictionary newFromPairs: { #one. '{n} tusdiqt'. #few. '{n} tusdiqin'. #other. '{n} tusdiqin' }).
-			'hour'. (Dictionary newFromPairs: { #one. '{n} tasragt'. #few. '{n} tisragin'. #other. '{n} tisragin' }).
-			'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #few. '{n} ussan'. #other. '{n} ass' }).
-			'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #few. '{n} imalassn'. #other. '{n} imalass' }).
-			'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #few. '{n} ayyurn'. #other. '{n} ayyur' }).
-			'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #few. '{n} iseggasen'. #other. '{n} aseggas' }).
+			'second'. (Dictionary newFromPairs: { #one. '{n} ⵜⴰⵙⵉⵏⵜ'. #few. '{n} ⵜⵉⵙⵉⵏⵉⵏ'. #other. '{n} ⵜⵉⵙⵉⵏⵉⵏ' }).
+			'minute'. (Dictionary newFromPairs: { #one. '{n} ⵜⵓⵙⴷⵉⵇⵜ'. #few. '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ'. #other. '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ' }).
+			'hour'. (Dictionary newFromPairs: { #one. '{n} ⵜⴰⵙⵔⴰⴳⵜ'. #few. '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ'. #other. '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ' }).
+			'day'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⵙ'. #few. '{n} ⵓⵙⵙⴰⵏ'. #other. '{n} ⴰⵙⵙ' }).
+			'week'. (Dictionary newFromPairs: { #one. '{n} ⵉⵎⴰⵍⴰⵙⵙ'. #few. '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ'. #other. '{n} ⵉⵎⴰⵍⴰⵙⵙ' }).
+			'month'. (Dictionary newFromPairs: { #one. '{n} ⴰⵢⵢⵓⵔ'. #few. '{n} ⴰⵢⵢⵓⵔⵏ'. #other. '{n} ⴰⵢⵢⵓⵔ' }).
+			'year'. (Dictionary newFromPairs: { #one. '{n} ⴰⵙⴳⴳⵯⴰⵙ'. #few. '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ'. #other. '{n} ⴰⵙⴳⴳⵯⴰⵙ' }).
 		}).
-		#ago. 'ɣ {0} zzrin'.
-		#inFuture. 'ɣ {0}'.
+		#ago. 'ⵖ {0} ⵣⵣⵔⵉⵏ'.
+		#inFuture. 'ⵖ {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. '{n}s'.
-			'minute'. '{n}m'.
-			'hour'. '{n}h'.
-			'day'. '{n}d'.
-			'week'. '{n}w'.
-			'month'. '{n}mo'.
-			'year'. '{n}y'.
+			'second'. '{n} ⵜⵙⵏ'.
+			'minute'. '{n} ⵜⵙⴷ'.
+			'hour'. '{n} ⵜⵙⵔ'.
+			'day'. '{n} ⴰⵙⵙ'.
+			'week'. '{n} ⵉⵎⵍ'.
+			'month'. '{n} ⴰⵢⵔ'.
+			'year'. '{n} ⴰⵙⴳ'.
 		}).
 		#half. '{n}½'.
 		#delimiter. ''.
-		#ago. 'ɣ {0} zzrin'.
-		#inFuture. 'ɣ {0}'.
+		#ago. 'ⵖ {0} ⵣⵣⵔⵉⵏ'.
+		#inFuture. 'ⵖ {0}'.
 	}).
 	^ locale
 ! !

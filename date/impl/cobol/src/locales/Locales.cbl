@@ -17640,44 +17640,44 @@
 *> Source: locales/shi.json
        INIT-LOCALE-SHI.
            MOVE "shi" TO WS-ACT-CODE
-           MOVE "innayr"
+           MOVE "ⵉⵏⵏⴰⵢⵔ"
                TO WS-ACT-MONTH(1)
-           MOVE "bṛayṛ"
+           MOVE "ⴱⵕⴰⵢⵕ"
                TO WS-ACT-MONTH(2)
-           MOVE "maṛṣ"
+           MOVE "ⵎⴰⵕⵚ"
                TO WS-ACT-MONTH(3)
-           MOVE "ibrir"
+           MOVE "ⵉⴱⵔⵉⵔ"
                TO WS-ACT-MONTH(4)
-           MOVE "mayyu"
+           MOVE "ⵎⴰⵢⵢⵓ"
                TO WS-ACT-MONTH(5)
-           MOVE "yunyu"
+           MOVE "ⵢⵓⵏⵢⵓ"
                TO WS-ACT-MONTH(6)
-           MOVE "yulyuz"
+           MOVE "ⵢⵓⵍⵢⵓⵣ"
                TO WS-ACT-MONTH(7)
-           MOVE "ɣuct"
+           MOVE "ⵖⵓⵛⵜ"
                TO WS-ACT-MONTH(8)
-           MOVE "cutanbir"
+           MOVE "ⵛⵓⵜⴰⵏⴱⵉⵔ"
                TO WS-ACT-MONTH(9)
-           MOVE "ktubr"
+           MOVE "ⴽⵜⵓⴱⵔ"
                TO WS-ACT-MONTH(10)
-           MOVE "nuwanbir"
+           MOVE "ⵏⵓⵡⴰⵏⴱⵉⵔ"
                TO WS-ACT-MONTH(11)
-           MOVE "dujanbir"
+           MOVE "ⴷⵓⵊⴰⵏⴱⵉⵔ"
                TO WS-ACT-MONTH(12)
            MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
-           MOVE "asamas"
+           MOVE "ⴰⵙⴰⵎⴰⵙ"
                TO WS-ACT-WEEKDAY(1)
-           MOVE "aynas"
+           MOVE "ⴰⵢⵏⴰⵙ"
                TO WS-ACT-WEEKDAY(2)
-           MOVE "asinas"
+           MOVE "ⴰⵙⵉⵏⴰⵙ"
                TO WS-ACT-WEEKDAY(3)
-           MOVE "akṛas"
+           MOVE "ⴰⴽⵕⴰⵙ"
                TO WS-ACT-WEEKDAY(4)
-           MOVE "akwas"
+           MOVE "ⴰⴽⵡⴰⵙ"
                TO WS-ACT-WEEKDAY(5)
-           MOVE "asimwas"
+           MOVE "ⵙⵉⵎⵡⴰⵙ"
                TO WS-ACT-WEEKDAY(6)
-           MOVE "asiḍyas"
+           MOVE "ⴰⵙⵉⴹⵢⴰⵙ"
                TO WS-ACT-WEEKDAY(7)
            MOVE "{n}"
                TO WS-ACT-DAY-FORMAT
@@ -17686,63 +17686,63 @@
                TO WS-ACT-DATE-PATTERN
            MOVE "{day} {month} {year}"
                TO WS-ACT-DATE-PAT-WITH-YEAR
-           MOVE "assa"
+           MOVE "ⴰⵙⵙⴰ"
                TO WS-ACT-TODAY
-           MOVE "askka"
+           MOVE "ⴰⵙⴽⴽⴰ"
                TO WS-ACT-TOMORROW
-           MOVE "iḍlli"
+           MOVE "ⵉⴹⵍⵍⵉ"
                TO WS-ACT-YESTERDAY
            MOVE SPACES
                TO WS-ACT-DAY-AFTER-TOMORROW
            MOVE SPACES
                TO WS-ACT-DAY-BEFORE-YESTERDAY
-           MOVE "{weekday} ad"
+           MOVE "{weekday} ⴰⴷ"
                TO WS-ACT-THIS-WEEKDAY
-           MOVE "{weekday} d iddan"
+           MOVE "{weekday} ⴷ ⵉⴷⴷⴰⵏ"
                TO WS-ACT-NEXT-WEEKDAY
-           MOVE "{weekday} izrin"
+           MOVE "{weekday} ⵉⵣⵔⵉⵏ"
                TO WS-ACT-LAST-WEEKDAY
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
-           MOVE "inn"
+           MOVE "ⵉⵏⵏ"
                TO WS-ACT-SHORT-MONTH(1)
-           MOVE "bṛa"
+           MOVE "ⴱⵕⴰ"
                TO WS-ACT-SHORT-MONTH(2)
-           MOVE "maṛ"
+           MOVE "ⵎⴰⵕ"
                TO WS-ACT-SHORT-MONTH(3)
-           MOVE "ibr"
+           MOVE "ⵉⴱⵔ"
                TO WS-ACT-SHORT-MONTH(4)
-           MOVE "may"
+           MOVE "ⵎⴰⵢ"
                TO WS-ACT-SHORT-MONTH(5)
-           MOVE "yun"
+           MOVE "ⵢⵓⵏ"
                TO WS-ACT-SHORT-MONTH(6)
-           MOVE "yul"
+           MOVE "ⵢⵓⵍ"
                TO WS-ACT-SHORT-MONTH(7)
-           MOVE "ɣuc"
+           MOVE "ⵖⵓⵛ"
                TO WS-ACT-SHORT-MONTH(8)
-           MOVE "cut"
+           MOVE "ⵛⵓⵜ"
                TO WS-ACT-SHORT-MONTH(9)
-           MOVE "ktu"
+           MOVE "ⴽⵜⵓ"
                TO WS-ACT-SHORT-MONTH(10)
-           MOVE "nuw"
+           MOVE "ⵏⵓⵡ"
                TO WS-ACT-SHORT-MONTH(11)
-           MOVE "duj"
+           MOVE "ⴷⵓⵊ"
                TO WS-ACT-SHORT-MONTH(12)
            MOVE 0 TO WS-ACT-SHORT-HAS-MID
            MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
-           MOVE "asa"
+           MOVE "ⴰⵙⴰ"
                TO WS-ACT-SHORT-WKDAY(1)
-           MOVE "ayn"
+           MOVE "ⴰⵢⵏ"
                TO WS-ACT-SHORT-WKDAY(2)
-           MOVE "asi"
+           MOVE "ⴰⵙⵉ"
                TO WS-ACT-SHORT-WKDAY(3)
-           MOVE "akṛ"
+           MOVE "ⴰⴽⵕ"
                TO WS-ACT-SHORT-WKDAY(4)
-           MOVE "akw"
+           MOVE "ⴰⴽⵡ"
                TO WS-ACT-SHORT-WKDAY(5)
-           MOVE "asim"
+           MOVE "ⴰⵙⵉⵎ"
                TO WS-ACT-SHORT-WKDAY(6)
-           MOVE "asiḍ"
+           MOVE "ⴰⵙⵉⴹ"
                TO WS-ACT-SHORT-WKDAY(7)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
            MOVE "{n}"

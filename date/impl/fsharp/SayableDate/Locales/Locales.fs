@@ -6365,27 +6365,27 @@ let SG: DateLocale =
 let SHI: DateLocale =
     {
         Code = "shi"
-        Months = [| "innayr"; "bṛayṛ"; "maṛṣ"; "ibrir"; "mayyu"; "yunyu"; "yulyuz"; "ɣuct"; "cutanbir"; "ktubr"; "nuwanbir"; "dujanbir" |]
-        Weekdays = [| "asamas"; "aynas"; "asinas"; "akṛas"; "akwas"; "asimwas"; "asiḍyas" |]
+        Months = [| "ⵉⵏⵏⴰⵢⵔ"; "ⴱⵕⴰⵢⵕ"; "ⵎⴰⵕⵚ"; "ⵉⴱⵔⵉⵔ"; "ⵎⴰⵢⵢⵓ"; "ⵢⵓⵏⵢⵓ"; "ⵢⵓⵍⵢⵓⵣ"; "ⵖⵓⵛⵜ"; "ⵛⵓⵜⴰⵏⴱⵉⵔ"; "ⴽⵜⵓⴱⵔ"; "ⵏⵓⵡⴰⵏⴱⵉⵔ"; "ⴷⵓⵊⴰⵏⴱⵉⵔ" |]
+        Weekdays = [| "ⴰⵙⴰⵎⴰⵙ"; "ⴰⵢⵏⴰⵙ"; "ⴰⵙⵉⵏⴰⵙ"; "ⴰⴽⵕⴰⵙ"; "ⴰⴽⵡⴰⵙ"; "ⵙⵉⵎⵡⴰⵙ"; "ⴰⵙⵉⴹⵢⴰⵙ" |]
         DayFormat = "{n}"
         DayFormatExceptions = Map.empty
         DatePattern = "{day} {month}"
         DatePatternWithYear = "{day} {month} {year}"
-        Today = "assa"
-        Tomorrow = "askka"
-        Yesterday = "iḍlli"
+        Today = "ⴰⵙⵙⴰ"
+        Tomorrow = "ⴰⵙⴽⴽⴰ"
+        Yesterday = "ⵉⴹⵍⵍⵉ"
         DayAfterTomorrow = None
         DayBeforeYesterday = None
-        ThisWeekday = Some "{weekday} ad"
-        NextWeekday = Some "{weekday} d iddan"
-        LastWeekday = Some "{weekday} izrin"
+        ThisWeekday = Some "{weekday} ⴰⴷ"
+        NextWeekday = Some "{weekday} ⴷ ⵉⴷⴷⴰⵏ"
+        LastWeekday = Some "{weekday} ⵉⵣⵔⵉⵏ"
         MonthsInDate = None
         ShortOverride =
             Some
                 {
-                Months = Some [| "inn"; "bṛa"; "maṛ"; "ibr"; "may"; "yun"; "yul"; "ɣuc"; "cut"; "ktu"; "nuw"; "duj" |]
+                Months = Some [| "ⵉⵏⵏ"; "ⴱⵕⴰ"; "ⵎⴰⵕ"; "ⵉⴱⵔ"; "ⵎⴰⵢ"; "ⵢⵓⵏ"; "ⵢⵓⵍ"; "ⵖⵓⵛ"; "ⵛⵓⵜ"; "ⴽⵜⵓ"; "ⵏⵓⵡ"; "ⴷⵓⵊ" |]
                 MonthsInDate = None
-                Weekdays = Some [| "asa"; "ayn"; "asi"; "akṛ"; "akw"; "asim"; "asiḍ" |]
+                Weekdays = Some [| "ⴰⵙⴰ"; "ⴰⵢⵏ"; "ⴰⵙⵉ"; "ⴰⴽⵕ"; "ⴰⴽⵡ"; "ⴰⵙⵉⵎ"; "ⴰⵙⵉⴹ" |]
                 DayFormat = Some "{n}"
                 DayFormatExceptions = None
                 DatePattern = Some "{day} {month}"

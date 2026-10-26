@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SayableAge\Tests;
 
+use PHPUnit\Framework\TestCase;
 use SayableAge\Compactness;
 
 use function SayableAge\formatAge;
@@ -11,7 +12,6 @@ use function SayableAge\formatStage;
 
 use SayableAge\Locales\Locales;
 use SayableAge\SayableAge;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Canonical test suite — test cases from config/tests.json.
@@ -1578,7 +1578,7 @@ final class FormatAgeTest extends TestCase
     public function test_32_3_tachelhit_6_is_few(): void
     {
         $fmt = new SayableAge(Locales::SHI());
-        $this->assertSame('6 iseggasen d uzgen', $fmt->formatAge('2005-06-08', '2012-06-07'));
+        $this->assertSame('6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', $fmt->formatAge('2005-06-08', '2012-06-07'));
     }
 
     // 33.1

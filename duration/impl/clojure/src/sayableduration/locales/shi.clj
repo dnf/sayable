@@ -14,17 +14,17 @@
 (def locale
   {:code "shi"
    :plural (fn [n] (if (or (== n 0) (== n 1)) :one (if (<= 2 n 10) :few :other)))
-   :second {:type :pluralized :forms {:one "{n} tasint" :few "{n} tisinin" :other "{n} tisinin"}}
-   :minute {:type :pluralized :forms {:one "{n} tusdiqt" :few "{n} tusdiqin" :other "{n} tusdiqin"}}
-   :hour {:type :pluralized :forms {:one "{n} tasragt" :few "{n} tisragin" :other "{n} tisragin"}}
-   :day {:type :pluralized :forms {:one "{n} ass" :few "{n} ussan" :other "{n} ass"}}
-   :week {:type :pluralized :forms {:one "{n} imalass" :few "{n} imalassn" :other "{n} imalass"}}
-   :month {:type :pluralized :forms {:one "{n} ayyur" :few "{n} ayyurn" :other "{n} ayyur"}}
-   :year {:type :pluralized :forms {:one "{n} aseggas" :few "{n} iseggasen" :other "{n} aseggas"}}
-   :half "{0} d uzgen"
+   :second {:type :pluralized :forms {:one "{n} ⵜⴰⵙⵉⵏⵜ" :few "{n} ⵜⵉⵙⵉⵏⵉⵏ" :other "{n} ⵜⵉⵙⵉⵏⵉⵏ"}}
+   :minute {:type :pluralized :forms {:one "{n} ⵜⵓⵙⴷⵉⵇⵜ" :few "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" :other "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"}}
+   :hour {:type :pluralized :forms {:one "{n} ⵜⴰⵙⵔⴰⴳⵜ" :few "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" :other "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"}}
+   :day {:type :pluralized :forms {:one "{n} ⴰⵙⵙ" :few "{n} ⵓⵙⵙⴰⵏ" :other "{n} ⴰⵙⵙ"}}
+   :week {:type :pluralized :forms {:one "{n} ⵉⵎⴰⵍⴰⵙⵙ" :few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" :other "{n} ⵉⵎⴰⵍⴰⵙⵙ"}}
+   :month {:type :pluralized :forms {:one "{n} ⴰⵢⵢⵓⵔ" :few "{n} ⴰⵢⵢⵓⵔⵏ" :other "{n} ⴰⵢⵢⵓⵔ"}}
+   :year {:type :pluralized :forms {:one "{n} ⴰⵙⴳⴳⵯⴰⵙ" :few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" :other "{n} ⴰⵙⴳⴳⵯⴰⵙ"}}
+   :half "{0} ⴷ ⵓⵣⴳⵏ"
    :delimiter ", "
-   :just-now "ɣilad"
-   :ago "ɣ {0} zzrin"
-   :in-future "ɣ {0}"
-   :short {:second {:type :pluralized :forms {:one "{n} tasint" :few "{n} tasinin" :other "{n} tasinin"}} :minute {:type :pluralized :forms {:one "{n} tusdiqt" :few "{n} tusdiqin" :other "{n} tusdiqin"}} :hour {:type :pluralized :forms {:one "{n} tasragt" :few "{n} tisragin" :other "{n} tisragin"}} :day {:type :pluralized :forms {:one "{n} ass" :few "{n} ussan" :other "{n} ass"}} :week {:type :pluralized :forms {:one "{n} imalass" :few "{n} imalassn" :other "{n} imalass"}} :month {:type :pluralized :forms {:one "{n} ayyur" :few "{n} ayyurn" :other "{n} ayyur"}} :year {:type :pluralized :forms {:one "{n} aseggas" :few "{n} iseggasen" :other "{n} aseggas"}} :half nil :delimiter nil :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}})
+   :just-now "ⵖⵉⵍⴰⴷ"
+   :ago "ⵖ {0} ⵣⵣⵔⵉⵏ"
+   :in-future "ⵖ {0}"
+   :short {:second {:type :pluralized :forms {:one "{n} ⵜⴰⵙⵉⵏⵜ" :few "{n} ⵜⵉⵙⵉⵏⵉⵏ" :other "{n} ⵜⵉⵙⵉⵏⵉⵏ"}} :minute {:type :pluralized :forms {:one "{n} ⵜⵓⵙⴷⵉⵇⵜ" :few "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" :other "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"}} :hour {:type :pluralized :forms {:one "{n} ⵜⴰⵙⵔⴰⴳⵜ" :few "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" :other "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"}} :day {:type :pluralized :forms {:one "{n} ⴰⵙⵙ" :few "{n} ⵓⵙⵙⴰⵏ" :other "{n} ⴰⵙⵙ"}} :week {:type :pluralized :forms {:one "{n} ⵉⵎⴰⵍⴰⵙⵙ" :few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" :other "{n} ⵉⵎⴰⵍⴰⵙⵙ"}} :month {:type :pluralized :forms {:one "{n} ⴰⵢⵢⵓⵔ" :few "{n} ⴰⵢⵢⵓⵔⵏ" :other "{n} ⴰⵢⵢⵓⵔ"}} :year {:type :pluralized :forms {:one "{n} ⴰⵙⴳⴳⵯⴰⵙ" :few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" :other "{n} ⴰⵙⴳⴳⵯⴰⵙ"}} :half nil :delimiter nil :ago "ⵖ {0} ⵣⵣⵔⵉⵏ" :in-future "ⵖ {0}"}
+   :compact {:second {:type :simple :form "{n} ⵜⵙⵏ"} :minute {:type :simple :form "{n} ⵜⵙⴷ"} :hour {:type :simple :form "{n} ⵜⵙⵔ"} :day {:type :simple :form "{n} ⴰⵙⵙ"} :week {:type :simple :form "{n} ⵉⵎⵍ"} :month {:type :simple :form "{n} ⴰⵢⵔ"} :year {:type :simple :form "{n} ⴰⵙⴳ"} :half "{n}½" :delimiter "" :ago "ⵖ {0} ⵣⵣⵔⵉⵏ" :in-future "ⵖ {0}"}})

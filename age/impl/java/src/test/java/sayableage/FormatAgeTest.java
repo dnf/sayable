@@ -20,6 +20,11 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.1
+    @Test void nullDateOfBirthReturnsNull() {
+        assertNull(SayableAge.formatAgeDefault(null, "2025-06-15"));
+    }
+
     // 1.3
     @Test void emptyStringReturnsNull() {
         assertNull(SayableAge.formatAgeDefault("", "2025-06-15"));
@@ -1098,7 +1103,7 @@ class FormatAgeTest {
     @Test
     void s32_3Tachelhit6IsFew() {
         SayableAge f = new SayableAge(Locales.SHI);
-        assertEquals("6 iseggasen d uzgen", f.formatAge("2005-06-08", "2012-06-07"));
+        assertEquals("6 \u2D49\u2D59\u2D33\u2D33\u2D6F\u2D30\u2D59\u2D4F \u2D37 \u2D53\u2D63\u2D33\u2D4F", f.formatAge("2005-06-08", "2012-06-07"));
     }
 
     // ================================================================

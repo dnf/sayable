@@ -11,10 +11,10 @@
 
 function loc = locale_shi()
   loc.code = 'shi';
-  loc.clock.hours = {'tis snat d mrawt', 'tis yat', 'tis snat', 'tis kṛaṭṭ', 'tis kkuẕt', 'tis smmust', 'tis sḍist', 'tis sat', 'tis tamt', 'tis tẕat', 'tis mrawt', 'tis yat d mrawt'};
-  loc.clock.midnight = 'nṣ n iḍ';
-  loc.clock.noon = 'tizwarnin';
-  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} d smmus tusdiqin', "p10", '{h} d mraw tusdiqin', "p15", '{h} d rrbɛ', "p20", '{h} d ɛcrin n tusdiqt', "p25", '{h} d xmsa u ɛcrin n tusdiqt', "p30", '{h} d uzgen', "p35", '{h} d xmsa u tlatin n tusdiqt', "p40", '{h} d ṛbɛin n tusdiqt', "p45", '{h} d xmsa u ṛbɛin n tusdiqt', "p50", '{h} d xmsin n tusdiqt', "p55", '{h} d xmsa u xmsin n tusdiqt');
+  loc.clock.hours = {'ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ', 'ⵜⵉⵙ ⵙⵏⴰⵜ', 'ⵜⵉⵙ ⴽⵕⴰⵟⵟ', 'ⵜⵉⵙ ⴽⴽⵓⵥⵜ', 'ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ', 'ⵜⵉⵙ ⵙⴹⵉⵙⵜ', 'ⵜⵉⵙ ⵙⴰⵜ', 'ⵜⵉⵙ ⵜⴰⵎⵜ', 'ⵜⵉⵙ ⵜⵥⴰⵜ', 'ⵜⵉⵙ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ'};
+  loc.clock.midnight = 'ⵏⵚ ⵏ ⵉⴹ';
+  loc.clock.noon = 'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ';
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ', "p10", '{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ', "p15", '{h} ⴷ ⵔⵔⴱⵄ', "p20", '{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ', "p25", '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ', "p30", '{h} ⴷ ⵓⵣⴳⵏ', "p35", '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ', "p40", '{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ', "p45", '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ', "p50", '{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ', "p55", '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

@@ -2731,18 +2731,18 @@ fn locale_sg() -> DateLocale {
 fn locale_shi() -> DateLocale {
     DateLocale {
         code: "shi",
-        months: ["innayr", "bṛayṛ", "maṛṣ", "ibrir", "mayyu", "yunyu", "yulyuz", "ɣuct", "cutanbir", "ktubr", "nuwanbir", "dujanbir"],
-        weekdays: ["asamas", "aynas", "asinas", "akṛas", "akwas", "asimwas", "asiḍyas"],
+        months: ["ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"],
+        weekdays: ["ⴰⵙⴰⵎⴰⵙ", "ⴰⵢⵏⴰⵙ", "ⴰⵙⵉⵏⴰⵙ", "ⴰⴽⵕⴰⵙ", "ⴰⴽⵡⴰⵙ", "ⵙⵉⵎⵡⴰⵙ", "ⴰⵙⵉⴹⵢⴰⵙ"],
         day_format: "{n}",
         date_pattern: "{day} {month}",
         date_pattern_with_year: "{day} {month} {year}",
-        today: "assa",
-        tomorrow: "askka",
-        yesterday: "iḍlli",
-        this_weekday: "{weekday} ad",
-        next_weekday: "{weekday} d iddan",
-        last_weekday: "{weekday} izrin",
-        short_override: CompactnessOverride { has_months: true, months: ["inn", "bṛa", "maṛ", "ibr", "may", "yun", "yul", "ɣuc", "cut", "ktu", "nuw", "duj"], has_weekdays: true, weekdays: ["asa", "ayn", "asi", "akṛ", "akw", "asim", "asiḍ"], has_day_format: true, day_format: "{n}", has_date_pattern: true, date_pattern: "{day} {month}", has_date_pattern_with_year: true, date_pattern_with_year: "{day} {month} {year}", .. },
+        today: "ⴰⵙⵙⴰ",
+        tomorrow: "ⴰⵙⴽⴽⴰ",
+        yesterday: "ⵉⴹⵍⵍⵉ",
+        this_weekday: "{weekday} ⴰⴷ",
+        next_weekday: "{weekday} ⴷ ⵉⴷⴷⴰⵏ",
+        last_weekday: "{weekday} ⵉⵣⵔⵉⵏ",
+        short_override: CompactnessOverride { has_months: true, months: ["ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ"], has_weekdays: true, weekdays: ["ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"], has_day_format: true, day_format: "{n}", has_date_pattern: true, date_pattern: "{day} {month}", has_date_pattern_with_year: true, date_pattern_with_year: "{day} {month} {year}", .. },
         compact_override: CompactnessOverride { has_date_pattern: true, date_pattern: "{d}/{m}", has_date_pattern_with_year: true, date_pattern_with_year: "{d}/{m}/{yy}", .. },
     }
 }

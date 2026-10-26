@@ -9,6 +9,18 @@ defmodule SayableAgeTest do
   defp stage(dob, as_of), do: SayableAge.format_stage(SayableAge.Locales.EN.locale(), dob, as_of, nil)
   defp stage_locale(locale, dob, as_of, gender), do: SayableAge.format_stage(locale, dob, as_of, gender)
 
+  defp local_today do
+    {{y, m, d}, _} = :calendar.local_time()
+    Date.new!(y, m, d)
+  end
+
+  # Same calendar day n years before today, clamped so Feb 29 stays a real date.
+  defp years_ago(today, n) do
+    year = today.year - n
+    day = min(today.day, Date.days_in_month(Date.new!(year, today.month, 1)))
+    Date.to_iso8601(Date.new!(year, today.month, day))
+  end
+
   defp contains_week?(result) do
     case result do
       {:ok, s} -> String.contains?(s, "week")
@@ -354,7 +366,19 @@ defmodule SayableAgeTest do
     assert age("2025-01-31", "2025-07-31") == {:ok, "6 months"}
   end
 
-  # 15. Default asOf — skipped (test only pure variants)
+  # 15. Default asOf: a nil or empty as_of means today (local date), so dateOfBirth
+  # is derived from the real current local date.
+  test "15.1 - default asOf: born 5 years ago is 5 years" do
+    today = local_today()
+    dob = years_ago(today, 5)
+    assert age(dob, nil) == {:ok, "5 years"}
+  end
+
+  test "15.2 - default asOf: born 5 days ago is 5 days" do
+    today = local_today()
+    dob = Date.to_iso8601(Date.add(today, -5))
+    assert age(dob, nil) == {:ok, "5 days"}
+  end
 
   # 16. formatStage - null / edge cases
   test "16.1/16.2/16.3 - empty DOB returns error for stage" do
@@ -491,7 +515,23 @@ defmodule SayableAgeTest do
     assert stage("1980-01-01", "2025-06-15") == {:ok, "Adult"}
   end
 
-  # 23. formatStage — default asOf — skipped
+  # 23. formatStage — default asOf (see section 15).
+  test "23.1 - default asOf: born today is Newborn" do
+    today = Date.to_iso8601(local_today())
+    assert stage(today, "") == {:ok, "Newborn"}
+  end
+
+  test "23.2 - default asOf: born 5 years ago is Child" do
+    today = local_today()
+    dob = years_ago(today, 5)
+    assert stage(dob, nil) == {:ok, "Child"}
+  end
+
+  test "23.3 - default asOf: born 45 years ago is Adult" do
+    today = local_today()
+    dob = years_ago(today, 45)
+    assert stage(dob, nil) == {:ok, "Adult"}
+  end
 
   # 24. SayableAge class — English locale delegation
   test "24.1 - delegation: Newborn" do
@@ -995,7 +1035,7 @@ defmodule SayableAgeTest do
 
   test "32.3 - Tachelhit 6½ uses the few form" do
     shi = SayableAge.Locales.SHI.locale()
-    assert age_locale(shi, "2005-06-08", "2012-06-07") == {:ok, "6 iseggasen d uzgen"}
+    assert age_locale(shi, "2005-06-08", "2012-06-07") == {:ok, "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"}
   end
 
   # 33. Input validation

@@ -163,6 +163,16 @@ begin
     Result := 'adult';
 end;
 
+procedure DecodeLocalToday(out AY, AM, AD: Integer);
+var
+  Y, M, D: Word;
+begin
+  DecodeDate(Date, Y, M, D);
+  AY := Y;
+  AM := M;
+  AD := D;
+end;
+
 function FormatAge(const ALocale: TAgeLocale; ACompactness: TCompactness;
   const ADateOfBirth: string; const AAsOf: string): string;
 var
@@ -185,12 +195,9 @@ begin
     exit;
   end;
 
-  if AAsOf = '' then begin
-    Result := NullResult;
-    exit;
-  end;
-
-  if not ParseDateParts(AAsOf, RefY, RefM, RefD) then begin
+  if AAsOf = '' then
+    DecodeLocalToday(RefY, RefM, RefD)
+  else if not ParseDateParts(AAsOf, RefY, RefM, RefD) then begin
     Result := NullResult;
     exit;
   end;
@@ -322,12 +329,9 @@ begin
     exit;
   end;
 
-  if AAsOf = '' then begin
-    Result := NullResult;
-    exit;
-  end;
-
-  if not ParseDateParts(AAsOf, RefY, RefM, RefD) then begin
+  if AAsOf = '' then
+    DecodeLocalToday(RefY, RefM, RefD)
+  else if not ParseDateParts(AAsOf, RefY, RefM, RefD) then begin
     Result := NullResult;
     exit;
   end;

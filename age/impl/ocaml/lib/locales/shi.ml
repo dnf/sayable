@@ -15,66 +15,66 @@ let locale : locale =
   { code = "shi"
   ; plural = (fun n -> if n = 0 || n = 1 then One else if n >= 2 && n <= 10 then Few else Other)
   ; day = Pluralized
-      [ (One, "{n} ass")
-      ; (Few, "{n} ussan")
-      ; (Other, "{n} ass")
+      [ (One, "{n} ⴰⵙⵙ")
+      ; (Few, "{n} ⵓⵙⵙⴰⵏ")
+      ; (Other, "{n} ⴰⵙⵙ")
       ]
   ; week = Pluralized
-      [ (One, "{n} imalass")
-      ; (Few, "{n} imalassn")
-      ; (Other, "{n} imalass")
+      [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
+      ; (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ")
+      ; (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
       ]
   ; month = Pluralized
-      [ (One, "{n} ayyur")
-      ; (Few, "{n} ayyurn")
-      ; (Other, "{n} ayyur")
+      [ (One, "{n} ⴰⵢⵢⵓⵔ")
+      ; (Few, "{n} ⴰⵢⵢⵓⵔⵏ")
+      ; (Other, "{n} ⴰⵢⵢⵓⵔ")
       ]
   ; year = Pluralized
-      [ (One, "{n} aseggas")
-      ; (Few, "{n} iseggasen")
-      ; (Other, "{n} aseggas")
+      [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
+      ; (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ")
+      ; (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
       ]
-  ; half = "{0} d uzgen"
+  ; half = "{0} ⴷ ⵓⵣⴳⵏ"
   ; delimiter = ", "
-  ; just_born = "Iɣ d illul"
+  ; just_born = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
   ; stages =
-    { newborn = Neutral "Iɣ d illul"
-    ; infant = Neutral "Llufan"
-    ; toddler = Gendered ("Aḥenjir", "Taḥenjirt")
-    ; child = Gendered ("Afrux", "Tafruxt")
-    ; teenager = Gendered ("Aɛrim", "Taɛrimt")
-    ; adult = Gendered ("Argaz", "Tamṭṭuṭ")
+    { newborn = Neutral "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+    ; infant = Neutral "ⵍⵍⵓⴼⴰⵏ"
+    ; toddler = Gendered ("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ")
+    ; child = Gendered ("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ")
+    ; teenager = Gendered ("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ")
+    ; adult = Gendered ("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
     }
   ; short = Some
       { ovr_day = Some (Pluralized
-          [ (One, "{n} ass")
-          ; (Few, "{n} ussan")
-          ; (Other, "{n} ass")
+          [ (One, "{n} ⴰⵙⵙ")
+          ; (Few, "{n} ⵓⵙⵙⴰⵏ")
+          ; (Other, "{n} ⴰⵙⵙ")
           ])
       ; ovr_week = Some (Pluralized
-          [ (One, "{n} imalass")
-          ; (Few, "{n} imalassn")
-          ; (Other, "{n} imalass")
+          [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
+          ; (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ")
+          ; (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
           ])
       ; ovr_month = Some (Pluralized
-          [ (One, "{n} ayyur")
-          ; (Few, "{n} ayyurn")
-          ; (Other, "{n} ayyur")
+          [ (One, "{n} ⴰⵢⵢⵓⵔ")
+          ; (Few, "{n} ⴰⵢⵢⵓⵔⵏ")
+          ; (Other, "{n} ⴰⵢⵢⵓⵔ")
           ])
       ; ovr_year = Some (Pluralized
-          [ (One, "{n} aseggas")
-          ; (Few, "{n} iseggasen")
-          ; (Other, "{n} aseggas")
+          [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
+          ; (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ")
+          ; (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
           ])
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_just_born = None
       }
   ; compact = Some
-      { ovr_day = Some (Simple "{n}d")
-      ; ovr_week = Some (Simple "{n}w")
-      ; ovr_month = Some (Simple "{n}m")
-      ; ovr_year = Some (Simple "{n}y")
+      { ovr_day = Some (Simple "{n} ⴰⵙⵙ")
+      ; ovr_week = Some (Simple "{n} ⵉⵎⵍ")
+      ; ovr_month = Some (Simple "{n} ⴰⵢⵔ")
+      ; ovr_year = Some (Simple "{n} ⴰⵙⴳ")
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_just_born = None

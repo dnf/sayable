@@ -20,6 +20,9 @@ clojure/.cpcache/
 # COBOL
 cobol/build/
 
+# Crystal
+crystal/shard.lock
+
 # D
 d/*.o
 d/test_runner

@@ -44,6 +44,9 @@ procedure Test_Format_Duration is
       Loc : constant Locale_Access :=
         Sayableduration_Locales.Get_Locale ("en");
    begin
+      --  1.1: not applicable -- Seconds is a Long_Long_Integer, which
+      --  cannot be null.
+
       --  1.2
       Assert_Null ("1.2 negative seconds",
          Sayableduration.Format_Duration (Loc.all, Normal, -1));

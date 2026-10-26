@@ -732,7 +732,7 @@ func TestSection31WeeksAndDaysAcrossMonthEnds(t *testing.T) {
 func TestSection32HalfYearsTakeTheirPluralFormFromWholeYears(t *testing.T) {
 	assertAge(t, "32.1", sayableage.NewSayableAge(locales.PL).FormatAge("2021-06-15", "2025-01-15"), "3 i pół lata")                  // 32.1
 	assertAge(t, "32.2", sayableage.NewSayableAge(locales.PL, sayableage.Short).FormatAge("2020-06-15", "2025-12-15"), "5 i pół lat") // 32.2
-	assertAge(t, "32.3", sayableage.NewSayableAge(locales.SHI).FormatAge("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")          // 32.3
+	assertAge(t, "32.3", sayableage.NewSayableAge(locales.SHI).FormatAge("2005-06-08", "2012-06-07"), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")          // 32.3
 }
 
 // ── Section 33: Input validation ────────────────────────────────────

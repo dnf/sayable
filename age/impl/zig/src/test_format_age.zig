@@ -28,9 +28,42 @@ fn expectContains(actual: ?[]const u8, substr: []const u8) !void {
 }
 
 // ================================================================
+// Default asOf (15.1, 15.2, 23.1, 23.2, 23.3): dateOfBirth is derived from
+// today's UTC date (the library defaults to UTC; std has no local timezone).
+// ================================================================
+fn todayMinus(buf: *[10]u8, years: u32, days: u32) []const u8 {
+    const io = std.Io.Threaded.global_single_threaded.io();
+    const secs = std.Io.Clock.real.now(io).toSeconds();
+    const epoch_secs = std.time.epoch.EpochSeconds{ .secs = @intCast(secs - @as(i64, days) * 86400) };
+    const year_day = epoch_secs.getEpochDay().calculateYearDay();
+    const month_day = year_day.calculateMonthDay();
+    const month: u32 = @backingInt(month_day.month);
+    var day: u32 = month_day.day_index + 1;
+    if (month == 2 and day == 29 and years > 0) day = 28;
+    return std.fmt.bufPrint(buf, "{d:0>4}-{d:0>2}-{d:0>2}", .{ @as(u32, @intCast(year_day.year)) - years, month, day }) catch unreachable;
+}
+
+// 15.1, 15.2
+test "default asOf age" {
+    var buf: [256]u8 = undefined;
+    var dob_buf: [10]u8 = undefined;
+    try expectStr("5 years", pt.formatAge(&buf, &pt.locales.en, .normal, todayMinus(&dob_buf, 5, 0), null));
+    try expectStr("5 years", pt.formatAge(&buf, &pt.locales.en, .normal, todayMinus(&dob_buf, 5, 0), ""));
+    try expectStr("5 days", pt.formatAge(&buf, &pt.locales.en, .normal, todayMinus(&dob_buf, 0, 5), null));
+}
+
+// 23.1, 23.2, 23.3
+test "default asOf stage" {
+    var dob_buf: [10]u8 = undefined;
+    try expectStr("Newborn", pt.formatStage(&pt.locales.en, todayMinus(&dob_buf, 0, 0), null, null));
+    try expectStr("Child", pt.formatStage(&pt.locales.en, todayMinus(&dob_buf, 5, 0), null, null));
+    try expectStr("Adult", pt.formatStage(&pt.locales.en, todayMinus(&dob_buf, 45, 0), "", null));
+}
+
+// ================================================================
 // formatAge -- null/edge cases
 // ================================================================
-// 1.3
+// 1.1, 1.3
 test "empty string" {
     var buf: [256]u8 = undefined;
     try expectNull(fmt(&buf, "", "2025-06-15"));
@@ -552,7 +585,7 @@ test "Jan31->Jul31=6mo" {
 // ================================================================
 // formatStage -- null/edge cases
 // ================================================================
-// 16.3
+// 16.1, 16.3
 test "stage empty" {
     try expectNull(pt.formatStage(&pt.locales.en, "", "2025-06-15", ""));
 }
@@ -733,20 +766,34 @@ test "stage 45 years" {
 // ================================================================
 // formatStage -- gender: Spanish
 // ================================================================
+// 25.13
 test "ES stage newborn m" {
     try expectStr("Reci\xc3\xa9n nacido", pt.formatStage(&pt.locales.es, "2025-06-15", "2025-06-15", ""));
 }
 
+// 25.15
 test "ES stage toddler m" {
     try expectStr("Ni\xc3\xb1o peque\xc3\xb1o", pt.formatStage(&pt.locales.es, "2024-06-15", "2025-06-15", ""));
 }
 
+// 25.16
 test "ES stage child m" {
     try expectStr("Ni\xc3\xb1o", pt.formatStage(&pt.locales.es, "2022-06-15", "2025-06-15", ""));
 }
 
+// 25.18
 test "ES stage adult m" {
     try expectStr("Adulto", pt.formatStage(&pt.locales.es, "2007-06-15", "2025-06-15", ""));
+}
+
+// 25.14
+test "ES stage infant m" {
+    try expectStr("Beb\xc3\xa9", pt.formatStage(&pt.locales.es, "2025-01-15", "2025-06-15", ""));
+}
+
+// 25.17
+test "ES stage teenager m" {
+    try expectStr("Adolescente", pt.formatStage(&pt.locales.es, "2012-06-15", "2025-06-15", ""));
 }
 
 test "ES stage newborn f" {
@@ -974,71 +1021,85 @@ test "PT null stage" {
 // ================================================================
 // SayableAge with Spanish locale
 // ================================================================
+// 25.1
 test "ES justBorn" {
     var buf: [256]u8 = undefined;
     try expectStr("Reci\xc3\xa9n nacido", fmtWith(&buf, &pt.locales.es, .normal, "2025-06-15", "2025-06-15"));
 }
 
+// 25.2
 test "ES singular day" {
     var buf: [256]u8 = undefined;
     try expectStr("1 d\xc3\xada", fmtWith(&buf, &pt.locales.es, .normal, "2025-06-14", "2025-06-15"));
 }
 
+// 25.3
 test "ES plural days" {
     var buf: [256]u8 = undefined;
     try expectStr("3 d\xc3\xadas", fmtWith(&buf, &pt.locales.es, .normal, "2025-06-12", "2025-06-15"));
 }
 
+// 25.4
 test "ES singular week" {
     var buf: [256]u8 = undefined;
     try expectStr("1 semana", fmtWith(&buf, &pt.locales.es, .normal, "2025-06-08", "2025-06-15"));
 }
 
+// 25.5
 test "ES weeks+days" {
     var buf: [256]u8 = undefined;
     try expectStr("1 semana, 1 d\xc3\xada", fmtWith(&buf, &pt.locales.es, .normal, "2025-06-07", "2025-06-15"));
 }
 
+// 25.6
 test "ES plural weeks+days" {
     var buf: [256]u8 = undefined;
     try expectStr("2 semanas, 6 d\xc3\xadas", fmtWith(&buf, &pt.locales.es, .normal, "2025-05-26", "2025-06-15"));
 }
 
+// 25.7
 test "ES months" {
     var buf: [256]u8 = undefined;
     try expectStr("6 meses", fmtWith(&buf, &pt.locales.es, .normal, "2025-01-15", "2025-07-15"));
 }
 
+// 25.8
 test "ES singular month compound" {
     var buf: [256]u8 = undefined;
     try expectStr("2 a\xc3\xb1os, 1 mes", fmtWith(&buf, &pt.locales.es, .normal, "2023-06-15", "2025-07-15"));
 }
 
+// 25.9
 test "ES years+months" {
     var buf: [256]u8 = undefined;
     try expectStr("2 a\xc3\xb1os, 6 meses", fmtWith(&buf, &pt.locales.es, .normal, "2023-06-15", "2025-12-15"));
 }
 
+// 25.10
 test "ES half marker" {
     var buf: [256]u8 = undefined;
     try expectStr("3 a\xc3\xb1os y medio", fmtWith(&buf, &pt.locales.es, .normal, "2022-06-15", "2025-12-15"));
 }
 
+// 25.11
 test "ES integer years" {
     var buf: [256]u8 = undefined;
     try expectStr("3 a\xc3\xb1os", fmtWith(&buf, &pt.locales.es, .normal, "2022-06-15", "2025-06-15"));
 }
 
+// 25.12
 test "ES 7+ years" {
     var buf: [256]u8 = undefined;
     try expectStr("7 a\xc3\xb1os", fmtWith(&buf, &pt.locales.es, .normal, "2018-06-15", "2025-06-15"));
 }
 
+// 25.19
 test "ES null" {
     var buf: [256]u8 = undefined;
     try expectNull(fmtWith(&buf, &pt.locales.es, .normal, "", "2025-06-15"));
 }
 
+// 25.20
 test "ES null stage" {
     try expectNull(pt.formatStage(&pt.locales.es, "", "2025-06-15", ""));
 }
@@ -1046,46 +1107,55 @@ test "ES null stage" {
 // ================================================================
 // Compactness: short
 // ================================================================
+// 26.1
 test "short days" {
     var buf: [256]u8 = undefined;
     try expectStr("3 d", fmtWith(&buf, &pt.locales.en, .short_mode, "2025-06-12", "2025-06-15"));
 }
 
+// 26.2
 test "short weeks" {
     var buf: [256]u8 = undefined;
     try expectStr("1 wk", fmtWith(&buf, &pt.locales.en, .short_mode, "2025-06-08", "2025-06-15"));
 }
 
+// 26.3
 test "short weeks+days" {
     var buf: [256]u8 = undefined;
     try expectStr("1 wk, 1 d", fmtWith(&buf, &pt.locales.en, .short_mode, "2025-06-07", "2025-06-15"));
 }
 
+// 26.4
 test "short months" {
     var buf: [256]u8 = undefined;
     try expectStr("6 mo", fmtWith(&buf, &pt.locales.en, .short_mode, "2025-01-15", "2025-07-15"));
 }
 
+// 26.5
 test "short years+months" {
     var buf: [256]u8 = undefined;
     try expectStr("2 yr, 1 mo", fmtWith(&buf, &pt.locales.en, .short_mode, "2023-06-15", "2025-07-15"));
 }
 
+// 26.6
 test "short half years" {
     var buf: [256]u8 = undefined;
     try expectStr("3\xc2\xbd yr", fmtWith(&buf, &pt.locales.en, .short_mode, "2022-06-15", "2025-12-15"));
 }
 
+// 26.7
 test "short integer years" {
     var buf: [256]u8 = undefined;
     try expectStr("7 yr", fmtWith(&buf, &pt.locales.en, .short_mode, "2018-06-15", "2025-06-15"));
 }
 
+// 26.8
 test "short justBorn unchanged" {
     var buf: [256]u8 = undefined;
     try expectStr("Newborn", fmtWith(&buf, &pt.locales.en, .short_mode, "2025-06-15", "2025-06-15"));
 }
 
+// 26.9
 test "short stages unchanged" {
     try expectStr("Infant", pt.formatStage(&pt.locales.en, "2025-01-15", "2025-06-15", ""));
 }
@@ -1093,41 +1163,49 @@ test "short stages unchanged" {
 // ================================================================
 // Compactness: compact
 // ================================================================
+// 27.1
 test "compact days" {
     var buf: [256]u8 = undefined;
     try expectStr("3d", fmtWith(&buf, &pt.locales.en, .compact, "2025-06-12", "2025-06-15"));
 }
 
+// 27.2
 test "compact weeks" {
     var buf: [256]u8 = undefined;
     try expectStr("1w", fmtWith(&buf, &pt.locales.en, .compact, "2025-06-08", "2025-06-15"));
 }
 
+// 27.3
 test "compact weeks+days no delimiter" {
     var buf: [256]u8 = undefined;
     try expectStr("1w1d", fmtWith(&buf, &pt.locales.en, .compact, "2025-06-07", "2025-06-15"));
 }
 
+// 27.4
 test "compact months" {
     var buf: [256]u8 = undefined;
     try expectStr("6m", fmtWith(&buf, &pt.locales.en, .compact, "2025-01-15", "2025-07-15"));
 }
 
+// 27.5
 test "compact years+months no delimiter" {
     var buf: [256]u8 = undefined;
     try expectStr("2y1m", fmtWith(&buf, &pt.locales.en, .compact, "2023-06-15", "2025-07-15"));
 }
 
+// 27.6
 test "compact half years" {
     var buf: [256]u8 = undefined;
     try expectStr("3\xc2\xbdy", fmtWith(&buf, &pt.locales.en, .compact, "2022-06-15", "2025-12-15"));
 }
 
+// 27.7
 test "compact integer years" {
     var buf: [256]u8 = undefined;
     try expectStr("7y", fmtWith(&buf, &pt.locales.en, .compact, "2018-06-15", "2025-06-15"));
 }
 
+// 27.8
 test "compact justBorn unchanged" {
     var buf: [256]u8 = undefined;
     try expectStr("Newborn", fmtWith(&buf, &pt.locales.en, .compact, "2025-06-15", "2025-06-15"));
@@ -1136,68 +1214,82 @@ test "compact justBorn unchanged" {
 // ================================================================
 // Locale-specific edge cases: Hebrew
 // ================================================================
+// 29.1
 test "he justBorn" {
     var buf: [256]u8 = undefined;
     try expectStr("\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93", fmtWith(&buf, &pt.locales.he, .normal, "2025-06-15", "2025-06-15"));
 }
 
+// 29.2
 test "he 1 day one" {
     var buf: [256]u8 = undefined;
     try expectStr("\xd7\x99\xd7\x95\xd7\x9d", fmtWith(&buf, &pt.locales.he, .normal, "2025-06-14", "2025-06-15"));
 }
 
+// 29.3
 test "he 3 days other" {
     var buf: [256]u8 = undefined;
     try expectStr("3 \xd7\x99\xd7\x9e\xd7\x99\xd7\x9d", fmtWith(&buf, &pt.locales.he, .normal, "2025-06-12", "2025-06-15"));
 }
 
+// 29.4
 test "he 2 weeks dual" {
     var buf: [256]u8 = undefined;
     try expectStr("\xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x99\xd7\x99\xd7\x9d", fmtWith(&buf, &pt.locales.he, .normal, "2025-06-01", "2025-06-15"));
 }
 
+// 29.5
 test "he 3 weeks other" {
     var buf: [256]u8 = undefined;
     try expectStr("3 \xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x95\xd7\xaa", fmtWith(&buf, &pt.locales.he, .normal, "2025-05-25", "2025-06-15"));
 }
 
+// 29.6
 test "he 6 months" {
     var buf: [256]u8 = undefined;
     try expectStr("6 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d", fmtWith(&buf, &pt.locales.he, .normal, "2025-01-15", "2025-07-15"));
 }
 
+// 29.7
 test "he 3 months" {
     var buf: [256]u8 = undefined;
     try expectStr("3 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d", fmtWith(&buf, &pt.locales.he, .normal, "2025-03-15", "2025-06-15"));
 }
 
+// 29.8
 test "he 2y dual 1m one" {
     var buf: [256]u8 = undefined;
     try expectStr("\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9", fmtWith(&buf, &pt.locales.he, .normal, "2023-06-15", "2025-07-15"));
 }
 
+// 29.9
 test "he 3.5y half" {
     var buf: [256]u8 = undefined;
     try expectStr("3 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d \xd7\x95\xd7\x97\xd7\xa6\xd7\x99", fmtWith(&buf, &pt.locales.he, .normal, "2022-06-15", "2025-12-15"));
 }
 
+// 29.10
 test "he 7y other" {
     var buf: [256]u8 = undefined;
     try expectStr("7 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d", fmtWith(&buf, &pt.locales.he, .normal, "2018-06-15", "2025-06-15"));
 }
 
+// 29.11
 test "he stage m newborn" {
     try expectStr("\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93", pt.formatStage(&pt.locales.he, "2025-06-15", "2025-06-15", "m"));
 }
 
+// 29.12
 test "he stage f newborn" {
     try expectStr("\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93\xd7\x94", pt.formatStage(&pt.locales.he, "2025-06-15", "2025-06-15", "f"));
 }
 
+// 29.13
 test "he stage m adult" {
     try expectStr("\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8", pt.formatStage(&pt.locales.he, "2007-06-15", "2025-06-15", "m"));
 }
 
+// 29.14
 test "he stage f adult" {
     try expectStr("\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8\xd7\xaa", pt.formatStage(&pt.locales.he, "2007-06-15", "2025-06-15", "f"));
 }
@@ -1205,36 +1297,43 @@ test "he stage f adult" {
 // ================================================================
 // Locale-specific edge cases: Macedonian
 // ================================================================
+// 29.15
 test "mk justBorn" {
     var buf: [256]u8 = undefined;
     try expectStr("\xd0\x9d\xd0\xbe\xd0\xb2\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb4\xd0\xb5\xd0\xbd\xd1\x87\xd0\xb5", fmtWith(&buf, &pt.locales.mk, .normal, "2025-06-15", "2025-06-15"));
 }
 
+// 29.16
 test "mk 1 day one" {
     var buf: [256]u8 = undefined;
     try expectStr("1 \xd0\xb4\xd0\xb5\xd0\xbd", fmtWith(&buf, &pt.locales.mk, .normal, "2025-06-14", "2025-06-15"));
 }
 
+// 29.17
 test "mk 3 days other" {
     var buf: [256]u8 = undefined;
     try expectStr("3 \xd0\xb4\xd0\xb5\xd0\xbd\xd0\xb0", fmtWith(&buf, &pt.locales.mk, .normal, "2025-06-12", "2025-06-15"));
 }
 
+// 29.18
 test "mk 6 months" {
     var buf: [256]u8 = undefined;
     try expectStr("6 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86\xd0\xb8", fmtWith(&buf, &pt.locales.mk, .normal, "2025-01-15", "2025-07-15"));
 }
 
+// 29.19
 test "mk 2y1m one month" {
     var buf: [256]u8 = undefined;
     try expectStr("2 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8, 1 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86", fmtWith(&buf, &pt.locales.mk, .normal, "2023-06-15", "2025-07-15"));
 }
 
+// 29.20
 test "mk 3.5y half" {
     var buf: [256]u8 = undefined;
     try expectStr("3 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8 \xd0\xb8 \xd0\xbf\xd0\xbe\xd0\xbb", fmtWith(&buf, &pt.locales.mk, .normal, "2022-06-15", "2025-12-15"));
 }
 
+// 29.21
 test "mk 7y" {
     var buf: [256]u8 = undefined;
     try expectStr("7 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8", fmtWith(&buf, &pt.locales.mk, .normal, "2018-06-15", "2025-06-15"));
@@ -1243,31 +1342,37 @@ test "mk 7y" {
 // ================================================================
 // Locale-specific edge cases: Swahili
 // ================================================================
+// 29.22
 test "sw justBorn" {
     var buf: [256]u8 = undefined;
     try expectStr("Mzaliwa mpya", fmtWith(&buf, &pt.locales.sw, .normal, "2025-06-15", "2025-06-15"));
 }
 
+// 29.23
 test "sw 1 day" {
     var buf: [256]u8 = undefined;
     try expectStr("siku 1", fmtWith(&buf, &pt.locales.sw, .normal, "2025-06-14", "2025-06-15"));
 }
 
+// 29.24
 test "sw 3 days" {
     var buf: [256]u8 = undefined;
     try expectStr("siku 3", fmtWith(&buf, &pt.locales.sw, .normal, "2025-06-12", "2025-06-15"));
 }
 
+// 29.25
 test "sw 6 months" {
     var buf: [256]u8 = undefined;
     try expectStr("miezi 6", fmtWith(&buf, &pt.locales.sw, .normal, "2025-01-15", "2025-07-15"));
 }
 
+// 29.26
 test "sw 2y 1m" {
     var buf: [256]u8 = undefined;
     try expectStr("miaka 2, mwezi 1", fmtWith(&buf, &pt.locales.sw, .normal, "2023-06-15", "2025-07-15"));
 }
 
+// 29.27
 test "sw 3.5y half" {
     var buf: [256]u8 = undefined;
     try expectStr("miaka 3 na nusu", fmtWith(&buf, &pt.locales.sw, .normal, "2022-06-15", "2025-12-15"));
@@ -1276,31 +1381,37 @@ test "sw 3.5y half" {
 // ================================================================
 // Locale-specific edge cases: Indonesian
 // ================================================================
+// 29.28
 test "id justBorn" {
     var buf: [256]u8 = undefined;
     try expectStr("Baru lahir", fmtWith(&buf, &pt.locales.id, .normal, "2025-06-15", "2025-06-15"));
 }
 
+// 29.29
 test "id 1 day" {
     var buf: [256]u8 = undefined;
     try expectStr("1 hari", fmtWith(&buf, &pt.locales.id, .normal, "2025-06-14", "2025-06-15"));
 }
 
+// 29.30
 test "id 3 days" {
     var buf: [256]u8 = undefined;
     try expectStr("3 hari", fmtWith(&buf, &pt.locales.id, .normal, "2025-06-12", "2025-06-15"));
 }
 
+// 29.31
 test "id 6 months" {
     var buf: [256]u8 = undefined;
     try expectStr("6 bulan", fmtWith(&buf, &pt.locales.id, .normal, "2025-01-15", "2025-07-15"));
 }
 
+// 29.32
 test "id 3.5y half" {
     var buf: [256]u8 = undefined;
     try expectStr("3 setengah tahun", fmtWith(&buf, &pt.locales.id, .normal, "2022-06-15", "2025-12-15"));
 }
 
+// 29.33
 test "id 7y" {
     var buf: [256]u8 = undefined;
     try expectStr("7 tahun", fmtWith(&buf, &pt.locales.id, .normal, "2018-06-15", "2025-06-15"));
@@ -1309,31 +1420,37 @@ test "id 7y" {
 // ================================================================
 // Locale-specific edge cases: Amharic
 // ================================================================
+// 29.34
 test "am justBorn" {
     var buf: [512]u8 = undefined;
     try expectStr("\xe1\x8a\xa0\xe1\x8b\xb2\xe1\x88\xb5 \xe1\x8b\xa8\xe1\x89\xb0\xe1\x8b\x88\xe1\x88\x88\xe1\x8b\xb0", fmtWith(&buf, &pt.locales.am, .normal, "2025-06-15", "2025-06-15"));
 }
 
+// 29.35
 test "am 1 day" {
     var buf: [512]u8 = undefined;
     try expectStr("1 \xe1\x89\x80\xe1\x8a\x95", fmtWith(&buf, &pt.locales.am, .normal, "2025-06-14", "2025-06-15"));
 }
 
+// 29.36
 test "am 3 days" {
     var buf: [512]u8 = undefined;
     try expectStr("3 \xe1\x89\x80\xe1\x8a\x93\xe1\x89\xb5", fmtWith(&buf, &pt.locales.am, .normal, "2025-06-12", "2025-06-15"));
 }
 
+// 29.37
 test "am 1w1d ethiopic" {
     var buf: [512]u8 = undefined;
     try expectStr("1 \xe1\x88\xb3\xe1\x88\x9d\xe1\x8a\x95\xe1\x89\xb5\xe1\x8d\xa3 1 \xe1\x89\x80\xe1\x8a\x95", fmtWith(&buf, &pt.locales.am, .normal, "2025-06-07", "2025-06-15"));
 }
 
+// 29.38
 test "am 6 months" {
     var buf: [512]u8 = undefined;
     try expectStr("6 \xe1\x8b\x88\xe1\x88\xab\xe1\x89\xb5", fmtWith(&buf, &pt.locales.am, .normal, "2025-01-15", "2025-07-15"));
 }
 
+// 29.39
 test "am 3.5y half" {
     var buf: [512]u8 = undefined;
     try expectStr("3 \xe1\x8b\x93\xe1\x88\x98\xe1\x89\xb3\xe1\x89\xb5 \xe1\x89\xb0\xe1\x8a\xa9\xe1\x88\x8d", fmtWith(&buf, &pt.locales.am, .normal, "2022-06-15", "2025-12-15"));
@@ -1342,26 +1459,31 @@ test "am 3.5y half" {
 // ================================================================
 // Locale lookup by code string
 // ================================================================
+// 30.1
 test "get(en) not null" {
     const en_loc = pt.locales.get("en");
     try std.testing.expect(en_loc != null);
     try std.testing.expectEqualStrings("en", en_loc.?.code);
 }
 
+// 30.2
 test "get(fr) not null" {
     const fr_loc = pt.locales.get("fr");
     try std.testing.expect(fr_loc != null);
     try std.testing.expectEqualStrings("fr", fr_loc.?.code);
 }
 
+// 30.3
 test "get(xx) null" {
     try std.testing.expect(pt.locales.get("xx") == null);
 }
 
+// 30.4
 test "get empty null" {
     try std.testing.expect(pt.locales.get("") == null);
 }
 
+// 30.5
 test "get(EN) null" {
     try std.testing.expect(pt.locales.get("EN") == null);
 }
@@ -1411,7 +1533,7 @@ test "32.2 Polish 5 is 'many'" {
 // 32.3
 test "32.3 Tachelhit 6 is 'few'" {
     var buf: [256]u8 = undefined;
-    try expectStr("6 iseggasen d uzgen", pt.formatAge(&buf, &pt.locales.shi, .normal, "2005-06-08", "2012-06-07"));
+    try expectStr("6 \xe2\xb5\x89\xe2\xb5\x99\xe2\xb4\xb3\xe2\xb4\xb3\xe2\xb5\xaf\xe2\xb4\xb0\xe2\xb5\x99\xe2\xb5\x8f \xe2\xb4\xb7 \xe2\xb5\x93\xe2\xb5\xa3\xe2\xb4\xb3\xe2\xb5\x8f", pt.formatAge(&buf, &pt.locales.shi, .normal, "2005-06-08", "2012-06-07"));
 }
 
 // ================================================================

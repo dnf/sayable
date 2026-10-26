@@ -3064,10 +3064,10 @@ locale_sg : Time_Locale = {
 locale_shi : Time_Locale = {
     code = "shi",
     clock = Clock_Config{
-        hours = {"tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"},
-        midnight = "nṣ n iḍ",
-        noon = "tizwarnin",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} d smmus tusdiqin"}, Clock_Pattern{minute = 10, pattern = "{h} d mraw tusdiqin"}, Clock_Pattern{minute = 15, pattern = "{h} d rrbɛ"}, Clock_Pattern{minute = 20, pattern = "{h} d ɛcrin n tusdiqt"}, Clock_Pattern{minute = 25, pattern = "{h} d xmsa u ɛcrin n tusdiqt"}, Clock_Pattern{minute = 30, pattern = "{h} d uzgen"}, Clock_Pattern{minute = 35, pattern = "{h} d xmsa u tlatin n tusdiqt"}, Clock_Pattern{minute = 40, pattern = "{h} d ṛbɛin n tusdiqt"}, Clock_Pattern{minute = 45, pattern = "{h} d xmsa u ṛbɛin n tusdiqt"}, Clock_Pattern{minute = 50, pattern = "{h} d xmsin n tusdiqt"}, Clock_Pattern{minute = 55, pattern = "{h} d xmsa u xmsin n tusdiqt"}},
+        hours = {"ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ", "ⵜⵉⵙ ⵙⵏⴰⵜ", "ⵜⵉⵙ ⴽⵕⴰⵟⵟ", "ⵜⵉⵙ ⴽⴽⵓⵥⵜ", "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ", "ⵜⵉⵙ ⵙⴹⵉⵙⵜ", "ⵜⵉⵙ ⵙⴰⵜ", "ⵜⵉⵙ ⵜⴰⵎⵜ", "ⵜⵉⵙ ⵜⵥⴰⵜ", "ⵜⵉⵙ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"},
+        midnight = "ⵏⵚ ⵏ ⵉⴹ",
+        noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ"}, Clock_Pattern{minute = 10, pattern = "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ"}, Clock_Pattern{minute = 15, pattern = "{h} ⴷ ⵔⵔⴱⵄ"}, Clock_Pattern{minute = 20, pattern = "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"}, Clock_Pattern{minute = 25, pattern = "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"}, Clock_Pattern{minute = 30, pattern = "{h} ⴷ ⵓⵣⴳⵏ"}, Clock_Pattern{minute = 35, pattern = "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"}, Clock_Pattern{minute = 40, pattern = "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"}, Clock_Pattern{minute = 45, pattern = "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"}, Clock_Pattern{minute = 50, pattern = "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"}, Clock_Pattern{minute = 55, pattern = "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{

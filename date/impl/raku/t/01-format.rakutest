@@ -117,6 +117,45 @@ is SayableDate::format-date('2025-03-15T14:30:00'), 'March 15th', '2.7 ISO datet
     is $f.format-relative('2026-01-05', as-of => '2025-03-15'), '1/5/26', '6.4 compact diff year';
 }
 
+# Locale — German
+# 7.1
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('de')).format-date('2025-03-15'), '15. März', '7.1 Locale — German';
+# 7.2
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('de')).format-relative('2025-03-16', as-of => '2025-03-15'), 'morgen', '7.2 Locale — German';
+# 7.3
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('de')).format-relative('2025-03-17', as-of => '2025-03-15'), 'übermorgen', '7.3 Locale — German';
+# 7.4
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('de')).format-relative('2025-03-19', as-of => '2025-03-15'), 'diesen Mittwoch', '7.4 Locale — German';
+# Locale — French
+# 8.1
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('fr')).format-date('2025-03-01'), '1er mars', '8.1 Locale — French';
+# 8.2
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('fr')).format-date('2025-03-15'), '15 mars', '8.2 Locale — French';
+# 8.3
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('fr')).format-relative('2025-03-16', as-of => '2025-03-15'), 'demain', '8.3 Locale — French';
+# Locale — Japanese
+# 9.1
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('ja')).format-date('2025-03-15'), '3月15日', '9.1 Locale — Japanese';
+# 9.2
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('ja')).format-relative('2025-03-16', as-of => '2025-03-15'), '明日', '9.2 Locale — Japanese';
+# 9.3
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('ja')).format-relative('2025-03-19', as-of => '2025-03-15'), '今度の水曜日', '9.3 Locale — Japanese';
+# Locale — Russian (genitive months)
+# 10.1
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('ru')).format-date('2025-03-15'), '15 марта', '10.1 Uses genitive form марта not nominative март';
+# 10.2
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('ru')).format-relative('2025-03-16', as-of => '2025-03-15'), 'завтра', '10.2 Locale — Russian (genitive months)';
+# Locale — Arabic
+# 11.1
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('ar')).format-date('2025-03-15'), '15 مارس', '11.1 Locale — Arabic';
+# 11.2
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('ar')).format-relative('2025-03-16', as-of => '2025-03-15'), 'غداً', '11.2 Locale — Arabic';
+# Locale — Spanish
+# 12.1
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('es')).format-date('2025-03-15'), '15 de marzo', '12.1 Locale — Spanish';
+# 12.2
+is SayableDate::Formatter.new(SayableDate::Locales::Registry::get-locale('es')).format-relative('2025-03-17', as-of => '2025-03-15'), 'pasado mañana', '12.2 Locale — Spanish';
+
 # ================================================================
 # Sections 13-16: with year, short months, short phrases, input validation
 # ================================================================

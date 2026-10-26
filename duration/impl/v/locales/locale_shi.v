@@ -25,62 +25,62 @@ fn plural_shi(n int) PluralCategory {
 pub const locale_shi = DurationLocale{
 	code: 'shi'
 	plural: plural_shi
-	second: plural_unit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tisinin', PluralCategory.other: '{n} tisinin'})
-	minute: plural_unit({PluralCategory.one: '{n} tusdiqt', PluralCategory.few: '{n} tusdiqin', PluralCategory.other: '{n} tusdiqin'})
-	hour: plural_unit({PluralCategory.one: '{n} tasragt', PluralCategory.few: '{n} tisragin', PluralCategory.other: '{n} tisragin'})
-	day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'})
-	week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.few: '{n} imalassn', PluralCategory.other: '{n} imalass'})
-	month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.few: '{n} ayyurn', PluralCategory.other: '{n} ayyur'})
-	year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.few: '{n} iseggasen', PluralCategory.other: '{n} aseggas'})
-	half: '{0} d uzgen'
+	second: plural_unit({PluralCategory.one: '{n} ⵜⴰⵙⵉⵏⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵉⵏⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵉⵏⵉⵏ'})
+	minute: plural_unit({PluralCategory.one: '{n} ⵜⵓⵙⴷⵉⵇⵜ', PluralCategory.few: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ', PluralCategory.other: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ'})
+	hour: plural_unit({PluralCategory.one: '{n} ⵜⴰⵙⵔⴰⴳⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ'})
+	day: plural_unit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'})
+	week: plural_unit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'})
+	month: plural_unit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'})
+	year: plural_unit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'})
+	half: '{0} ⴷ ⵓⵣⴳⵏ'
 	delimiter: ', '
-	just_now: 'ɣilad'
-	ago: 'ɣ {0} zzrin'
-	in_future: 'ɣ {0}'
+	just_now: 'ⵖⵉⵍⴰⴷ'
+	ago: 'ⵖ {0} ⵣⵣⵔⵉⵏ'
+	in_future: 'ⵖ {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: plural_unit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tasinin', PluralCategory.other: '{n} tasinin'})
+		second: plural_unit({PluralCategory.one: '{n} ⵜⴰⵙⵉⵏⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵉⵏⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵉⵏⵉⵏ'})
 		has_second: true
-		minute: plural_unit({PluralCategory.one: '{n} tusdiqt', PluralCategory.few: '{n} tusdiqin', PluralCategory.other: '{n} tusdiqin'})
+		minute: plural_unit({PluralCategory.one: '{n} ⵜⵓⵙⴷⵉⵇⵜ', PluralCategory.few: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ', PluralCategory.other: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ'})
 		has_minute: true
-		hour: plural_unit({PluralCategory.one: '{n} tasragt', PluralCategory.few: '{n} tisragin', PluralCategory.other: '{n} tisragin'})
+		hour: plural_unit({PluralCategory.one: '{n} ⵜⴰⵙⵔⴰⴳⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ'})
 		has_hour: true
-		day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'})
+		day: plural_unit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'})
 		has_day: true
-		week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.few: '{n} imalassn', PluralCategory.other: '{n} imalass'})
+		week: plural_unit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'})
 		has_week: true
-		month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.few: '{n} ayyurn', PluralCategory.other: '{n} ayyur'})
+		month: plural_unit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'})
 		has_month: true
-		year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.few: '{n} iseggasen', PluralCategory.other: '{n} aseggas'})
+		year: plural_unit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'})
 		has_year: true
-		ago: 'ɣ {0} zzrin'
+		ago: 'ⵖ {0} ⵣⵣⵔⵉⵏ'
 		has_ago: true
-		in_future: 'ɣ {0}'
+		in_future: 'ⵖ {0}'
 		has_in_future: true
 	}
 	has_compact: true
 	compact_override: DurationCompactnessOverride{
-		second: simple_unit('{n}s')
+		second: simple_unit('{n} ⵜⵙⵏ')
 		has_second: true
-		minute: simple_unit('{n}m')
+		minute: simple_unit('{n} ⵜⵙⴷ')
 		has_minute: true
-		hour: simple_unit('{n}h')
+		hour: simple_unit('{n} ⵜⵙⵔ')
 		has_hour: true
-		day: simple_unit('{n}d')
+		day: simple_unit('{n} ⴰⵙⵙ')
 		has_day: true
-		week: simple_unit('{n}w')
+		week: simple_unit('{n} ⵉⵎⵍ')
 		has_week: true
-		month: simple_unit('{n}mo')
+		month: simple_unit('{n} ⴰⵢⵔ')
 		has_month: true
-		year: simple_unit('{n}y')
+		year: simple_unit('{n} ⴰⵙⴳ')
 		has_year: true
 		half: '{n}½'
 		has_half: true
 		delimiter: ''
 		has_delimiter: true
-		ago: 'ɣ {0} zzrin'
+		ago: 'ⵖ {0} ⵣⵣⵔⵉⵏ'
 		has_ago: true
-		in_future: 'ɣ {0}'
+		in_future: 'ⵖ {0}'
 		has_in_future: true
 	}
 }

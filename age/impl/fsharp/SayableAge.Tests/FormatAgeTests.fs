@@ -9,15 +9,15 @@ open SayableAgeLib.Locales
 let private formatAge dob asOf =
     formatAgeDefault (Some dob) (Some asOf)
 
+let private assertWeeksPattern (result: string option) =
+    Assert.NotNull(result)
+    Assert.Contains("week", result.Value)
+
 let private formatStage dob asOf =
     formatStageDefault (Some dob) (Some asOf) None
 
 let private formatStageGender dob asOf gender =
     formatStageDefault (Some dob) (Some asOf) (Some gender)
-
-let private assertWeeksPattern (result: string option) =
-    Assert.NotNull(result)
-    Assert.Contains("week", result.Value)
 
 // ================================================================
 // formatAge -- null/edge cases
@@ -1394,7 +1394,7 @@ let ``polish 5 is many`` () =
 [<Fact>]
 let ``tachelhit 6 is few`` () =
     let f = SayableAgeFormatter(SHI)
-    Assert.Equal(Some "6 iseggasen d uzgen", f.FormatAge(Some "2005-06-08", Some "2012-06-07"))
+    Assert.Equal(Some "6 \u2D49\u2D59\u2D33\u2D33\u2D6F\u2D30\u2D59\u2D4F \u2D37 \u2D53\u2D63\u2D33\u2D4F", f.FormatAge(Some "2005-06-08", Some "2012-06-07"))
 
 // ================================================================
 // Input validation

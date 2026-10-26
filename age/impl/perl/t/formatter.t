@@ -228,9 +228,27 @@ is(SayableAge->format_age('2025-01-31', '2025-07-01'), '5 months', '14.4 jan31-j
 is(SayableAge->format_age('2025-01-31', '2025-07-31'), '6 months', '14.5 jan31-jul31');
 
 # ================================================================
-# Default as_of (uses current date) — tests 15.1, 15.2
-# We skip these since they depend on overriding time, tested via explicit dates above
+# Default as_of (uses current date) — tests 15.1, 15.2, 23.1-23.3
+# There is no way to inject "today", so the dates are derived from the real
+# current date (local time, like the library) to keep the canonical outputs.
 # ================================================================
+use POSIX qw(mktime strftime);
+
+sub date_ago {
+  my ($years, $days) = @_;
+  my @now = localtime();
+  my $day = $now[3] - $days;
+  my $noon = mktime(0, 0, 12, $day, $now[4], $now[5] - $years);
+  my @then = localtime($noon);
+  # Feb 29 minus whole years can land on Mar 1; step back to keep the same month
+  @then = localtime(mktime(0, 0, 12, 28, $now[4], $now[5] - $years)) if $years && $then[4] != $now[4];
+  return strftime('%Y-%m-%d', @then);
+}
+
+# 15.1
+is(SayableAge->format_age(date_ago(5, 0)), '5 years', '15.1 default as_of 5 years');
+# 15.2
+is(SayableAge->format_age(date_ago(0, 5)), '5 days', '15.2 default as_of 5 days');
 
 # ================================================================
 # formatStage
@@ -245,6 +263,13 @@ is(SayableAge->format_stage('2025-07-01', '2025-06-15'), undef, '16.4 future ret
 is(SayableAge->format_stage('1525-06-15', '2025-06-15'), 'Adult', '16.5 500y returns adult');
 # 16.6
 is(SayableAge->format_stage('1524-06-15', '2025-06-15'), undef, '16.6 501y exceeds max');
+
+# 23.1
+is(SayableAge->format_stage(date_ago(0, 0)), 'Newborn', '23.1 default as_of newborn');
+# 23.2
+is(SayableAge->format_stage(date_ago(5, 0)), 'Child', '23.2 default as_of child');
+# 23.3
+is(SayableAge->format_stage(date_ago(45, 0)), 'Adult', '23.3 default as_of adult');
 
 # Newborn: 0-1 months
 # 17.1
@@ -661,7 +686,7 @@ is(SayableAge::Formatter->new(SayableAge::Locales->get('pl'))->format_age('2021-
 # 32.2
 is(SayableAge::Formatter->new(SayableAge::Locales->get('pl'), compactness => 'short')->format_age('2020-06-15', '2025-12-15'), '5 i pół lat', '32.2 Polish 5 is \'many\'');
 # 32.3
-is(SayableAge::Formatter->new(SayableAge::Locales->get('shi'))->format_age('2005-06-08', '2012-06-07'), '6 iseggasen d uzgen', '32.3 Tachelhit 6 is \'few\'');
+is(SayableAge::Formatter->new(SayableAge::Locales->get('shi'))->format_age('2005-06-08', '2012-06-07'), '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', '32.3 Tachelhit 6 is \'few\'');
 # 33.1
 is(SayableAge::Formatter->new(SayableAge::Locales->get('en'))->format_age('2025-02-30', '2032-06-25'), undef, '33.1 February 30 doesn\'t exist');
 # 33.2

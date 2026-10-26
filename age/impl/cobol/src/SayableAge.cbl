@@ -28,7 +28,7 @@
 
            *> Validate as-of
            IF FUNCTION TRIM(WS-FMT-AS-OF) = SPACES
-               EXIT PARAGRAPH
+               PERFORM DEFAULT-AS-OF-TODAY
            END-IF
            MOVE WS-FMT-AS-OF TO WS-DATE-STR
            MOVE WS-FMT-AS-OF-LEN TO WS-DATE-LEN
@@ -296,7 +296,7 @@
 
            *> Validate as-of
            IF FUNCTION TRIM(WS-FMT-AS-OF) = SPACES
-               EXIT PARAGRAPH
+               PERFORM DEFAULT-AS-OF-TODAY
            END-IF
            MOVE WS-FMT-AS-OF TO WS-DATE-STR
            MOVE WS-FMT-AS-OF-LEN TO WS-DATE-LEN
@@ -805,4 +805,19 @@
            MOVE WS-NUM-TO-STR-INPUT TO WS-NUM-TO-STR-EDITED
            MOVE FUNCTION TRIM(WS-NUM-TO-STR-EDITED)
                TO WS-NUM-TO-STR-RESULT
+           .
+
+*> ============================================================
+*> DEFAULT-AS-OF-TODAY: a blank as-of means today's local date
+*> Output: WS-FMT-AS-OF (YYYY-MM-DD); length 0 means trimmed length
+*> ============================================================
+       DEFAULT-AS-OF-TODAY.
+           MOVE FUNCTION CURRENT-DATE TO WS-NOW-STAMP
+           MOVE SPACES TO WS-FMT-AS-OF
+           STRING WS-NOW-STAMP(1:4) "-" WS-NOW-STAMP(5:2) "-"
+               WS-NOW-STAMP(7:2)
+               DELIMITED BY SIZE
+               INTO WS-FMT-AS-OF
+           END-STRING
+           MOVE 0 TO WS-FMT-AS-OF-LEN
            .

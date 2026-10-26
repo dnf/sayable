@@ -18,36 +18,36 @@ proc plural_shi {n} {
 proc locale_shi {} {
     set code {shi}
     set units [dict create \
-        day [dict create one "{n} ass" few "{n} ussan" other "{n} ass"] \
-        week [dict create one "{n} imalass" few "{n} imalassn" other "{n} imalass"] \
-        month [dict create one "{n} ayyur" few "{n} ayyurn" other "{n} ayyur"] \
-        year [dict create one "{n} aseggas" few "{n} iseggasen" other "{n} aseggas"] \
+        day [dict create one "{n} ⴰⵙⵙ" few "{n} ⵓⵙⵙⴰⵏ" other "{n} ⴰⵙⵙ"] \
+        week [dict create one "{n} ⵉⵎⴰⵍⴰⵙⵙ" few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" other "{n} ⵉⵎⴰⵍⴰⵙⵙ"] \
+        month [dict create one "{n} ⴰⵢⵢⵓⵔ" few "{n} ⴰⵢⵢⵓⵔⵏ" other "{n} ⴰⵢⵢⵓⵔ"] \
+        year [dict create one "{n} ⴰⵙⴳⴳⵯⴰⵙ" few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" other "{n} ⴰⵙⴳⴳⵯⴰⵙ"] \
     ]
-    set half "{0} d uzgen"
+    set half "{0} ⴷ ⵓⵣⴳⵏ"
     set delimiter {, }
-    set just_born {Iɣ d illul}
+    set just_born {ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ}
     set stages [dict create \
-        newborn {Iɣ d illul} \
-        infant {Llufan} \
-        toddler [dict create m {Aḥenjir} f {Taḥenjirt}] \
-        child [dict create m {Afrux} f {Tafruxt}] \
-        teenager [dict create m {Aɛrim} f {Taɛrimt}] \
-        adult [dict create m {Argaz} f {Tamṭṭuṭ}] \
+        newborn {ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ} \
+        infant {ⵍⵍⵓⴼⴰⵏ} \
+        toddler [dict create m {ⴰⵃⵏⵊⵉⵔ} f {ⵜⴰⵃⵏⵊⵉⵔⵜ}] \
+        child [dict create m {ⴰⴼⵔⵓⵅ} f {ⵜⴰⴼⵔⵓⵅⵜ}] \
+        teenager [dict create m {ⴰⵄⵔⵉⵎ} f {ⵜⴰⵄⵔⵉⵎⵜ}] \
+        adult [dict create m {ⴰⵔⴳⴰⵣ} f {ⵜⴰⵎⵟⵟⵓⵟ}] \
     ]
     set short [dict create \
         units [dict create \
-            day [dict create one "{n} ass" few "{n} ussan" other "{n} ass"] \
-            week [dict create one "{n} imalass" few "{n} imalassn" other "{n} imalass"] \
-            month [dict create one "{n} ayyur" few "{n} ayyurn" other "{n} ayyur"] \
-            year [dict create one "{n} aseggas" few "{n} iseggasen" other "{n} aseggas"] \
+            day [dict create one "{n} ⴰⵙⵙ" few "{n} ⵓⵙⵙⴰⵏ" other "{n} ⴰⵙⵙ"] \
+            week [dict create one "{n} ⵉⵎⴰⵍⴰⵙⵙ" few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" other "{n} ⵉⵎⴰⵍⴰⵙⵙ"] \
+            month [dict create one "{n} ⴰⵢⵢⵓⵔ" few "{n} ⴰⵢⵢⵓⵔⵏ" other "{n} ⴰⵢⵢⵓⵔ"] \
+            year [dict create one "{n} ⴰⵙⴳⴳⵯⴰⵙ" few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" other "{n} ⴰⵙⴳⴳⵯⴰⵙ"] \
         ] \
     ]
     set compact [dict create \
         units [dict create \
-            day "{n}d" \
-            week "{n}w" \
-            month "{n}m" \
-            year "{n}y" \
+            day "{n} ⴰⵙⵙ" \
+            week "{n} ⵉⵎⵍ" \
+            month "{n} ⴰⵢⵔ" \
+            year "{n} ⴰⵙⴳ" \
         ] \
         half "{n}½" \
         delimiter {} \

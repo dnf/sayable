@@ -25,19 +25,19 @@
         [(or (= n 0) (= n 1)) "one"]
         [(and (>= n 2) (<= n 10)) "few"]
         [else "other"]))
-   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "{n} ass" "few" "{n} ussan" "other" "{n} ass"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} imalass" "few" "{n} imalassn" "other" "{n} imalass"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} ayyur" "few" "{n} ayyurn" "other" "{n} ayyur"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} aseggas" "few" "{n} iseggasen" "other" "{n} aseggas")))
-   "{0} d uzgen"
+   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "{n} ⴰⵙⵙ" "few" "{n} ⵓⵙⵙⴰⵏ" "other" "{n} ⴰⵙⵙ"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} ⵉⵎⴰⵍⴰⵙⵙ" "few" "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" "other" "{n} ⵉⵎⴰⵍⴰⵙⵙ"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} ⴰⵢⵢⵓⵔ" "few" "{n} ⴰⵢⵢⵓⵔⵏ" "other" "{n} ⴰⵢⵢⵓⵔ"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} ⴰⵙⴳⴳⵯⴰⵙ" "few" "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" "other" "{n} ⴰⵙⴳⴳⵯⴰⵙ")))
+   "{0} ⴷ ⵓⵣⴳⵏ"
    ", "
-   "Iɣ d illul"
-   (hash "newborn" (stage-label "Iɣ d illul" #f #f)
-         "infant" (stage-label "Llufan" #f #f)
-         "toddler" (stage-label #f "Aḥenjir" "Taḥenjirt")
-         "child" (stage-label #f "Afrux" "Tafruxt")
-         "teenager" (stage-label #f "Aɛrim" "Taɛrimt")
-         "adult" (stage-label #f "Argaz" "Tamṭṭuṭ"))
-   (compactness-override (hash "type" "pluralized" "forms" (hash "one" "{n} ass" "few" "{n} ussan" "other" "{n} ass")) (hash "type" "pluralized" "forms" (hash "one" "{n} imalass" "few" "{n} imalassn" "other" "{n} imalass")) (hash "type" "pluralized" "forms" (hash "one" "{n} ayyur" "few" "{n} ayyurn" "other" "{n} ayyur")) (hash "type" "pluralized" "forms" (hash "one" "{n} aseggas" "few" "{n} iseggasen" "other" "{n} aseggas")) #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
+   "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+   (hash "newborn" (stage-label "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ" #f #f)
+         "infant" (stage-label "ⵍⵍⵓⴼⴰⵏ" #f #f)
+         "toddler" (stage-label #f "ⴰⵃⵏⵊⵉⵔ" "ⵜⴰⵃⵏⵊⵉⵔⵜ")
+         "child" (stage-label #f "ⴰⴼⵔⵓⵅ" "ⵜⴰⴼⵔⵓⵅⵜ")
+         "teenager" (stage-label #f "ⴰⵄⵔⵉⵎ" "ⵜⴰⵄⵔⵉⵎⵜ")
+         "adult" (stage-label #f "ⴰⵔⴳⴰⵣ" "ⵜⴰⵎⵟⵟⵓⵟ"))
+   (compactness-override (hash "type" "pluralized" "forms" (hash "one" "{n} ⴰⵙⵙ" "few" "{n} ⵓⵙⵙⴰⵏ" "other" "{n} ⴰⵙⵙ")) (hash "type" "pluralized" "forms" (hash "one" "{n} ⵉⵎⴰⵍⴰⵙⵙ" "few" "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" "other" "{n} ⵉⵎⴰⵍⴰⵙⵙ")) (hash "type" "pluralized" "forms" (hash "one" "{n} ⴰⵢⵢⵓⵔ" "few" "{n} ⴰⵢⵢⵓⵔⵏ" "other" "{n} ⴰⵢⵢⵓⵔ")) (hash "type" "pluralized" "forms" (hash "one" "{n} ⴰⵙⴳⴳⵯⴰⵙ" "few" "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" "other" "{n} ⴰⵙⴳⴳⵯⴰⵙ")) #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "{n} ⴰⵙⵙ") (hash "type" "simple" "form" "{n} ⵉⵎⵍ") (hash "type" "simple" "form" "{n} ⴰⵢⵔ") (hash "type" "simple" "form" "{n} ⴰⵙⴳ") "{n}½" "" #f)
   ))

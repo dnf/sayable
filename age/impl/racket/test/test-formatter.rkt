@@ -508,7 +508,7 @@
 ;; 32.2
 (check-equal? (format-age (get-locale "pl") "2020-06-15" "2025-12-15" #:compactness 'short) "5 i pół lat")
 ;; 32.3
-(check-equal? (format-age (get-locale "shi") "2005-06-08" "2012-06-07") "6 iseggasen d uzgen")
+(check-equal? (format-age (get-locale "shi") "2005-06-08" "2012-06-07") "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")
 ;; Section 33: Input validation
 ;; 33.1
 (check-false (format-age (get-locale "en") "2025-02-30" "2032-06-25"))

@@ -5534,36 +5534,36 @@ Public Module Locales
         "shi",
         AddressOf PluralShi,
         New Units(
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ass" }, { PluralCategory.Few, "{n} ussan" }, { PluralCategory.Other, "{n} ass" } }),
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} imalass" }, { PluralCategory.Few, "{n} imalassn" }, { PluralCategory.Other, "{n} imalass" } }),
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ayyur" }, { PluralCategory.Few, "{n} ayyurn" }, { PluralCategory.Other, "{n} ayyur" } }),
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} aseggas" }, { PluralCategory.Few, "{n} iseggasen" }, { PluralCategory.Other, "{n} aseggas" } })
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵓⵙⵙⴰⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⵙ" } }),
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" }, { PluralCategory.Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } }),
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⴰⵢⵢⵓⵔ" }, { PluralCategory.Few, "{n} ⴰⵢⵢⵓⵔⵏ" }, { PluralCategory.Other, "{n} ⴰⵢⵢⵓⵔ" } }),
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" }, { PluralCategory.Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } })
         ),
-        "{0} d uzgen",
+        "{0} ⴷ ⵓⵣⴳⵏ",
         ", ",
-        "Iɣ d illul",
+        "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
         New Stages(
-            StageLabel.Neutral("Iɣ d illul"),
-            StageLabel.Neutral("Llufan"),
-            StageLabel.Gendered("Aḥenjir", "Taḥenjirt"),
-            StageLabel.Gendered("Afrux", "Tafruxt"),
-            StageLabel.Gendered("Aɛrim", "Taɛrimt"),
-            StageLabel.Gendered("Argaz", "Tamṭṭuṭ")
+            StageLabel.Neutral("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"),
+            StageLabel.Neutral("ⵍⵍⵓⴼⴰⵏ"),
+            StageLabel.Gendered("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"),
+            StageLabel.Gendered("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"),
+            StageLabel.Gendered("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"),
+            StageLabel.Gendered("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
         ),
         New CompactnessOverride(
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ass" }, { PluralCategory.Few, "{n} ussan" }, { PluralCategory.Other, "{n} ass" } }),
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} imalass" }, { PluralCategory.Few, "{n} imalassn" }, { PluralCategory.Other, "{n} imalass" } }),
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ayyur" }, { PluralCategory.Few, "{n} ayyurn" }, { PluralCategory.Other, "{n} ayyur" } }),
-            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} aseggas" }, { PluralCategory.Few, "{n} iseggasen" }, { PluralCategory.Other, "{n} aseggas" } }),
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵓⵙⵙⴰⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⵙ" } }),
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" }, { PluralCategory.Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } }),
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⴰⵢⵢⵓⵔ" }, { PluralCategory.Few, "{n} ⴰⵢⵢⵓⵔⵏ" }, { PluralCategory.Other, "{n} ⴰⵢⵢⵓⵔ" } }),
+            UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" }, { PluralCategory.Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } }),
             Nothing,
             Nothing,
             Nothing
         ),
         New CompactnessOverride(
-            UnitForms.Simple("{n}d"),
-            UnitForms.Simple("{n}w"),
-            UnitForms.Simple("{n}m"),
-            UnitForms.Simple("{n}y"),
+            UnitForms.Simple("{n} ⴰⵙⵙ"),
+            UnitForms.Simple("{n} ⵉⵎⵍ"),
+            UnitForms.Simple("{n} ⴰⵢⵔ"),
+            UnitForms.Simple("{n} ⴰⵙⴳ"),
             "{n}½",
             "",
             Nothing

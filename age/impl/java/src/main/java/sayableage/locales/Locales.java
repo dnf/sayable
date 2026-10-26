@@ -5785,36 +5785,36 @@ public final class Locales {
         "shi",
         Locales::pluralShi,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ass", PluralCategory.FEW, "{n} ussan", PluralCategory.OTHER, "{n} ass")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} imalass", PluralCategory.FEW, "{n} imalassn", PluralCategory.OTHER, "{n} imalass")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ayyur", PluralCategory.FEW, "{n} ayyurn", PluralCategory.OTHER, "{n} ayyur")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} aseggas", PluralCategory.FEW, "{n} iseggasen", PluralCategory.OTHER, "{n} aseggas"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⵙ", PluralCategory.FEW, "{n} ⵓⵙⵙⴰⵏ", PluralCategory.OTHER, "{n} ⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⵉⵎⴰⵍⴰⵙⵙ", PluralCategory.FEW, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", PluralCategory.OTHER, "{n} ⵉⵎⴰⵍⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵢⵢⵓⵔ", PluralCategory.FEW, "{n} ⴰⵢⵢⵓⵔⵏ", PluralCategory.OTHER, "{n} ⴰⵢⵢⵓⵔ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⴳⴳⵯⴰⵙ", PluralCategory.FEW, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", PluralCategory.OTHER, "{n} ⴰⵙⴳⴳⵯⴰⵙ"))
         ),
-        "{0} d uzgen",
+        "{0} ⴷ ⵓⵣⴳⵏ",
         ", ",
-        "Iɣ d illul",
+        "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
         new Stages(
-            StageLabel.neutral("Iɣ d illul"),
-            StageLabel.neutral("Llufan"),
-            StageLabel.gendered("Aḥenjir", "Taḥenjirt"),
-            StageLabel.gendered("Afrux", "Tafruxt"),
-            StageLabel.gendered("Aɛrim", "Taɛrimt"),
-            StageLabel.gendered("Argaz", "Tamṭṭuṭ")
+            StageLabel.neutral("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"),
+            StageLabel.neutral("ⵍⵍⵓⴼⴰⵏ"),
+            StageLabel.gendered("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"),
+            StageLabel.gendered("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"),
+            StageLabel.gendered("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"),
+            StageLabel.gendered("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
         ),
         new CompactnessOverride(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ass", PluralCategory.FEW, "{n} ussan", PluralCategory.OTHER, "{n} ass")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} imalass", PluralCategory.FEW, "{n} imalassn", PluralCategory.OTHER, "{n} imalass")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ayyur", PluralCategory.FEW, "{n} ayyurn", PluralCategory.OTHER, "{n} ayyur")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} aseggas", PluralCategory.FEW, "{n} iseggasen", PluralCategory.OTHER, "{n} aseggas")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⵙ", PluralCategory.FEW, "{n} ⵓⵙⵙⴰⵏ", PluralCategory.OTHER, "{n} ⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⵉⵎⴰⵍⴰⵙⵙ", PluralCategory.FEW, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", PluralCategory.OTHER, "{n} ⵉⵎⴰⵍⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵢⵢⵓⵔ", PluralCategory.FEW, "{n} ⴰⵢⵢⵓⵔⵏ", PluralCategory.OTHER, "{n} ⴰⵢⵢⵓⵔ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⴳⴳⵯⴰⵙ", PluralCategory.FEW, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", PluralCategory.OTHER, "{n} ⴰⵙⴳⴳⵯⴰⵙ")),
             null,
             null,
             null
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n}d"),
-            UnitForms.simpleUnit("{n}w"),
-            UnitForms.simpleUnit("{n}m"),
-            UnitForms.simpleUnit("{n}y"),
+            UnitForms.simpleUnit("{n} ⴰⵙⵙ"),
+            UnitForms.simpleUnit("{n} ⵉⵎⵍ"),
+            UnitForms.simpleUnit("{n} ⴰⵢⵔ"),
+            UnitForms.simpleUnit("{n} ⴰⵙⴳ"),
             "{n}½",
             "",
             null

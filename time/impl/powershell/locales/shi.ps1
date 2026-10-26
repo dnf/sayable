@@ -10,22 +10,22 @@
 # Source: locales/shi.json
 
 function locale_shi {
-    $hours = @('tis snat d mrawt', 'tis yat', 'tis snat', 'tis kṛaṭṭ', 'tis kkuẕt', 'tis smmust', 'tis sḍist', 'tis sat', 'tis tamt', 'tis tẕat', 'tis mrawt', 'tis yat d mrawt')
-    $midnight = 'nṣ n iḍ'
-    $noon = 'tizwarnin'
+    $hours = @('ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ', 'ⵜⵉⵙ ⵙⵏⴰⵜ', 'ⵜⵉⵙ ⴽⵕⴰⵟⵟ', 'ⵜⵉⵙ ⴽⴽⵓⵥⵜ', 'ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ', 'ⵜⵉⵙ ⵙⴹⵉⵙⵜ', 'ⵜⵉⵙ ⵙⴰⵜ', 'ⵜⵉⵙ ⵜⴰⵎⵜ', 'ⵜⵉⵙ ⵜⵥⴰⵜ', 'ⵜⵉⵙ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ')
+    $midnight = 'ⵏⵚ ⵏ ⵉⴹ'
+    $noon = 'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ'
     $patterns = @{}
     $patterns[0] = '{h}'
-    $patterns[5] = '{h} d smmus tusdiqin'
-    $patterns[10] = '{h} d mraw tusdiqin'
-    $patterns[15] = '{h} d rrbɛ'
-    $patterns[20] = '{h} d ɛcrin n tusdiqt'
-    $patterns[25] = '{h} d xmsa u ɛcrin n tusdiqt'
-    $patterns[30] = '{h} d uzgen'
-    $patterns[35] = '{h} d xmsa u tlatin n tusdiqt'
-    $patterns[40] = '{h} d ṛbɛin n tusdiqt'
-    $patterns[45] = '{h} d xmsa u ṛbɛin n tusdiqt'
-    $patterns[50] = '{h} d xmsin n tusdiqt'
-    $patterns[55] = '{h} d xmsa u xmsin n tusdiqt'
+    $patterns[5] = '{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ'
+    $patterns[10] = '{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ'
+    $patterns[15] = '{h} ⴷ ⵔⵔⴱⵄ'
+    $patterns[20] = '{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    $patterns[25] = '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    $patterns[30] = '{h} ⴷ ⵓⵣⴳⵏ'
+    $patterns[35] = '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    $patterns[40] = '{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    $patterns[45] = '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    $patterns[50] = '{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    $patterns[55] = '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
     $clock = @{
         hours = $hours
         midnight = $midnight

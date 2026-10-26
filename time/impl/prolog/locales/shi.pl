@@ -11,22 +11,22 @@
 
 % Tachelhit locale.
 
-st_hours('shi', ['tis snat d mrawt', 'tis yat', 'tis snat', 'tis kṛaṭṭ', 'tis kkuẕt', 'tis smmust', 'tis sḍist', 'tis sat', 'tis tamt', 'tis tẕat', 'tis mrawt', 'tis yat d mrawt']).
-st_midnight('shi', 'nṣ n iḍ').
-st_noon('shi', 'tizwarnin').
+st_hours('shi', ['ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ', 'ⵜⵉⵙ ⵙⵏⴰⵜ', 'ⵜⵉⵙ ⴽⵕⴰⵟⵟ', 'ⵜⵉⵙ ⴽⴽⵓⵥⵜ', 'ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ', 'ⵜⵉⵙ ⵙⴹⵉⵙⵜ', 'ⵜⵉⵙ ⵙⴰⵜ', 'ⵜⵉⵙ ⵜⴰⵎⵜ', 'ⵜⵉⵙ ⵜⵥⴰⵜ', 'ⵜⵉⵙ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ']).
+st_midnight('shi', 'ⵏⵚ ⵏ ⵉⴹ').
+st_noon('shi', 'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ').
 
 st_pattern('shi', 0, '{h}').
-st_pattern('shi', 5, '{h} d smmus tusdiqin').
-st_pattern('shi', 10, '{h} d mraw tusdiqin').
-st_pattern('shi', 15, '{h} d rrbɛ').
-st_pattern('shi', 20, '{h} d ɛcrin n tusdiqt').
-st_pattern('shi', 25, '{h} d xmsa u ɛcrin n tusdiqt').
-st_pattern('shi', 30, '{h} d uzgen').
-st_pattern('shi', 35, '{h} d xmsa u tlatin n tusdiqt').
-st_pattern('shi', 40, '{h} d ṛbɛin n tusdiqt').
-st_pattern('shi', 45, '{h} d xmsa u ṛbɛin n tusdiqt').
-st_pattern('shi', 50, '{h} d xmsin n tusdiqt').
-st_pattern('shi', 55, '{h} d xmsa u xmsin n tusdiqt').
+st_pattern('shi', 5, '{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ').
+st_pattern('shi', 10, '{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ').
+st_pattern('shi', 15, '{h} ⴷ ⵔⵔⴱⵄ').
+st_pattern('shi', 20, '{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 25, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 30, '{h} ⴷ ⵓⵣⴳⵏ').
+st_pattern('shi', 35, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 40, '{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 45, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 50, '{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 55, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
 
 short_st_use24h('shi', true).
 short_st_format('shi', '{h}:{mm}').

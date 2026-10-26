@@ -25,39 +25,39 @@ fn plural_shi(n int) PluralCategory {
 pub const locale_shi = AgeLocale{
 	code: 'shi'
 	plural: plural_shi
-	day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'})
-	week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.few: '{n} imalassn', PluralCategory.other: '{n} imalass'})
-	month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.few: '{n} ayyurn', PluralCategory.other: '{n} ayyur'})
-	year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.few: '{n} iseggasen', PluralCategory.other: '{n} aseggas'})
-	half: '{0} d uzgen'
+	day: plural_unit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'})
+	week: plural_unit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'})
+	month: plural_unit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'})
+	year: plural_unit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'})
+	half: '{0} ⴷ ⵓⵣⴳⵏ'
 	delimiter: ', '
-	just_born: 'Iɣ d illul'
-	newborn: stage_neutral('Iɣ d illul')
-	infant: stage_neutral('Llufan')
-	toddler: stage_gendered('Aḥenjir', 'Taḥenjirt')
-	child: stage_gendered('Afrux', 'Tafruxt')
-	teenager: stage_gendered('Aɛrim', 'Taɛrimt')
-	adult: stage_gendered('Argaz', 'Tamṭṭuṭ')
+	just_born: 'ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ'
+	newborn: stage_neutral('ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ')
+	infant: stage_neutral('ⵍⵍⵓⴼⴰⵏ')
+	toddler: stage_gendered('ⴰⵃⵏⵊⵉⵔ', 'ⵜⴰⵃⵏⵊⵉⵔⵜ')
+	child: stage_gendered('ⴰⴼⵔⵓⵅ', 'ⵜⴰⴼⵔⵓⵅⵜ')
+	teenager: stage_gendered('ⴰⵄⵔⵉⵎ', 'ⵜⴰⵄⵔⵉⵎⵜ')
+	adult: stage_gendered('ⴰⵔⴳⴰⵣ', 'ⵜⴰⵎⵟⵟⵓⵟ')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'})
+		day: plural_unit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'})
 		has_day: true
-		week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.few: '{n} imalassn', PluralCategory.other: '{n} imalass'})
+		week: plural_unit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'})
 		has_week: true
-		month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.few: '{n} ayyurn', PluralCategory.other: '{n} ayyur'})
+		month: plural_unit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'})
 		has_month: true
-		year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.few: '{n} iseggasen', PluralCategory.other: '{n} aseggas'})
+		year: plural_unit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'})
 		has_year: true
 	}
 	has_compact: true
 	compact_override: CompactnessOverride{
-		day: simple_unit('{n}d')
+		day: simple_unit('{n} ⴰⵙⵙ')
 		has_day: true
-		week: simple_unit('{n}w')
+		week: simple_unit('{n} ⵉⵎⵍ')
 		has_week: true
-		month: simple_unit('{n}m')
+		month: simple_unit('{n} ⴰⵢⵔ')
 		has_month: true
-		year: simple_unit('{n}y')
+		year: simple_unit('{n} ⴰⵙⴳ')
 		has_year: true
 		half: '{n}½'
 		has_half: true

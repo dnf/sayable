@@ -2,9 +2,11 @@ module Main (main) where
 
 import Data.List (isInfixOf)
 import Data.Maybe (isNothing)
+import Data.Time (Day, addDays, addGregorianYearsClip, getCurrentTime, utctDay)
+import Data.Time.Format (defaultTimeLocale, formatTime)
 import Test.Hspec
 
-import SayableAge.Formatter (formatAgePure, formatStagePure)
+import SayableAge.Formatter (formatAge, formatAgePure, formatStage, formatStagePure)
 import SayableAge.Types
 
 import qualified SayableAge.Locales.Am as Am
@@ -41,6 +43,14 @@ shouldContainWeeks :: Maybe String -> Expectation
 shouldContainWeeks result = case result of
     Nothing -> expectationFailure "expected weeks pattern, got Nothing"
     Just s  -> s `shouldSatisfy` ("week" `isInfixOf`)
+
+-- | Today in UTC, the day the library's default-date path uses; the default
+-- path cannot be injected, so these tests derive their input from it.
+utcToday :: IO Day
+utcToday = utctDay <$> getCurrentTime
+
+isoDate :: Day -> String
+isoDate = formatTime defaultTimeLocale "%Y-%m-%d"
 
 -- | Formats with the locale for a code (Nothing for an unknown code).
 withLocale :: String -> (Locale -> Maybe String) -> Maybe String
@@ -591,7 +601,7 @@ main = hspec $ do
             withLocale "pl" (\l -> formatAgePure l Short "2020-06-15" "2025-12-15") `shouldBe` Just "5 i p\243\322 lat"
         -- 32.3
         it "32.3 Tachelhit 6 is 'few'" $
-            withLocale "shi" (\l -> formatAgePure l Normal "2005-06-08" "2012-06-07") `shouldBe` Just "6 iseggasen d uzgen"
+            withLocale "shi" (\l -> formatAgePure l Normal "2005-06-08" "2012-06-07") `shouldBe` Just "6 \11593\11609\11571\11571\11631\11568\11609\11599 \11575 \11603\11619\11571\11599"
 
     -- Section 33: Input validation
     describe "33. Input validation" $ do
@@ -625,3 +635,28 @@ main = hspec $ do
         -- 33.10
         it "33.10 February 29 in a leap year is valid" $
             withLocale "en" (\l -> formatAgePure l Normal "2024-02-29" "2026-03-01") `shouldBe` Just "2 years"
+
+    -- 15 and 23: no asOf, so "today" is the real current date
+    describe "15. formatAge default date (systemDate)" $ do
+        -- 15.1
+        it "15.1 default asOf uses the system date (5 years)" $ do
+            t <- utcToday
+            formatAge en Normal (isoDate (addGregorianYearsClip (-5) t)) Nothing `shouldReturn` Just "5 years"
+        -- 15.2
+        it "15.2 default asOf uses the system date (5 days)" $ do
+            t <- utcToday
+            formatAge en Normal (isoDate (addDays (-5) t)) Nothing `shouldReturn` Just "5 days"
+
+    describe "23. formatStage default date (systemDate)" $ do
+        -- 23.1
+        it "23.1 default asOf: born today is Newborn" $ do
+            t <- utcToday
+            formatStage en (isoDate t) Nothing Nothing `shouldReturn` Just "Newborn"
+        -- 23.2
+        it "23.2 default asOf: five years old is Child" $ do
+            t <- utcToday
+            formatStage en (isoDate (addGregorianYearsClip (-5) t)) Nothing Nothing `shouldReturn` Just "Child"
+        -- 23.3
+        it "23.3 default asOf: forty-five years old is Adult" $ do
+            t <- utcToday
+            formatStage en (isoDate (addGregorianYearsClip (-45) t)) Nothing Nothing `shouldReturn` Just "Adult"

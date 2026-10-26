@@ -22,6 +22,20 @@ let contains_weeks result =
     if not (Formatter.string_contains ~needle:"week" s) then
       Alcotest.failf "expected 'week' in %S" s
 
+(* The default-date path reads the system clock and there is no way to inject
+   one, so the dates below are derived from today to keep the canonical outputs. *)
+let iso_days_ago n =
+  let tm = Unix.gmtime (Unix.gettimeofday () -. float_of_int (n * 86400)) in
+  Printf.sprintf "%04d-%02d-%02d" (tm.Unix.tm_year + 1900) (tm.Unix.tm_mon + 1) tm.Unix.tm_mday
+
+let iso_years_ago n =
+  let tm = Unix.gmtime (Unix.gettimeofday ()) in
+  Printf.sprintf "%04d-%02d-%02d" (tm.Unix.tm_year + 1900 - n) (tm.Unix.tm_mon + 1)
+    (min tm.Unix.tm_mday 28)
+
+let age_default dob = Formatter.format_age en Types.Normal dob None
+let stage_default dob = Formatter.format_stage en dob None None
+
 (* 1. Null / edge cases *)
 let test_1_1 () = check_none (age "" "2025-06-15")        (* 1.1 null dateOfBirth *)
 let test_1_3 () = check_none (age "" "2025-06-15")        (* 1.3 empty string *)
@@ -130,6 +144,15 @@ let test_14_2 () = check_some "4 months" (age "2025-01-31" "2025-05-31")  (* 14.
 let test_14_3 () = check_some "5 months" (age "2025-01-31" "2025-06-30")  (* 14.3 Jan31->Jun30 *)
 let test_14_4 () = check_some "5 months" (age "2025-01-31" "2025-07-01")  (* 14.4 Jan31->Jul1 *)
 let test_14_5 () = check_some "6 months" (age "2025-01-31" "2025-07-31")  (* 14.5 Jan31->Jul31 *)
+
+(* 15. Default date *)
+let test_15_1 () = check_some "5 years" (age_default (iso_years_ago 5))  (* 15.1 default asOf, 5 years *)
+let test_15_2 () = check_some "5 days" (age_default (iso_days_ago 5))    (* 15.2 default asOf, 5 days *)
+
+(* 23. formatStage default date *)
+let test_23_1 () = check_some "Newborn" (stage_default (iso_days_ago 0))   (* 23.1 *)
+let test_23_2 () = check_some "Child" (stage_default (iso_years_ago 5))    (* 23.2 *)
+let test_23_3 () = check_some "Adult" (stage_default (iso_years_ago 45))   (* 23.3 *)
 
 (* 16. formatStage - null / edge cases *)
 let test_16_1 () = check_none (stage "" "2025-06-15")                  (* 16.1/16.3 empty string *)
@@ -312,7 +335,7 @@ let test_31_4 () = expect_canonical (Some "12w4d") (with_locale "en" (fun l -> F
 (* 32. Half years take their plural form from whole years *)
 let test_32_1 () = expect_canonical (Some "3 i pół lata") (with_locale "pl" (fun l -> Formatter.format_age_pure l Types.Normal "2021-06-15" "2025-01-15"))  (* 32.1 *)
 let test_32_2 () = expect_canonical (Some "5 i pół lat") (with_locale "pl" (fun l -> Formatter.format_age_pure l Types.Short "2020-06-15" "2025-12-15"))  (* 32.2 *)
-let test_32_3 () = expect_canonical (Some "6 iseggasen d uzgen") (with_locale "shi" (fun l -> Formatter.format_age_pure l Types.Normal "2005-06-08" "2012-06-07"))  (* 32.3 *)
+let test_32_3 () = expect_canonical (Some "6 \xe2\xb5\x89\xe2\xb5\x99\xe2\xb4\xb3\xe2\xb4\xb3\xe2\xb5\xaf\xe2\xb4\xb0\xe2\xb5\x99\xe2\xb5\x8f \xe2\xb4\xb7 \xe2\xb5\x93\xe2\xb5\xa3\xe2\xb4\xb3\xe2\xb5\x8f") (with_locale "shi" (fun l -> Formatter.format_age_pure l Types.Normal "2005-06-08" "2012-06-07"))  (* 32.3 *)
 (* 33. Input validation *)
 let test_33_1 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-02-30" "2032-06-25"))  (* 33.1 *)
 let test_33_2 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-13-01" "2027-01-31"))  (* 33.2 *)
@@ -436,6 +459,10 @@ let () =
         ; Alcotest.test_case "14.4 Jan31->Jul1 = 5 months" `Quick test_14_4
         ; Alcotest.test_case "14.5 Jan31->Jul31 = 6 months" `Quick test_14_5
         ] )
+    ; ( "15. Default date"
+      , [ Alcotest.test_case "15.1 default asOf 5 years" `Quick test_15_1
+        ; Alcotest.test_case "15.2 default asOf 5 days" `Quick test_15_2
+        ] )
     ; ( "16. formatStage null/edge"
       , [ Alcotest.test_case "16.1/16.3 empty string" `Quick test_16_1
         ; Alcotest.test_case "16.4 future DOB" `Quick test_16_4
@@ -481,6 +508,11 @@ let () =
       , [ Alcotest.test_case "22.1 18 years" `Quick test_22_1
         ; Alcotest.test_case "22.2 25 years" `Quick test_22_2
         ; Alcotest.test_case "22.3 45 years" `Quick test_22_3
+        ] )
+    ; ( "23. formatStage default date"
+      , [ Alcotest.test_case "23.1 born today" `Quick test_23_1
+        ; Alcotest.test_case "23.2 5 years old" `Quick test_23_2
+        ; Alcotest.test_case "23.3 45 years old" `Quick test_23_3
         ] )
     ; ( "24. English locale delegation"
       , [ Alcotest.test_case "24.1 Newborn" `Quick test_24_1

@@ -20,36 +20,36 @@ local M = {}
 M.code = "shi"
 M.plural = plural
 M.units = {
-    day = { one = "{n} ass", few = "{n} ussan", other = "{n} ass" },
-    week = { one = "{n} imalass", few = "{n} imalassn", other = "{n} imalass" },
-    month = { one = "{n} ayyur", few = "{n} ayyurn", other = "{n} ayyur" },
-    year = { one = "{n} aseggas", few = "{n} iseggasen", other = "{n} aseggas" },
+    day = { one = "{n} ⴰⵙⵙ", few = "{n} ⵓⵙⵙⴰⵏ", other = "{n} ⴰⵙⵙ" },
+    week = { one = "{n} ⵉⵎⴰⵍⴰⵙⵙ", few = "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other = "{n} ⵉⵎⴰⵍⴰⵙⵙ" },
+    month = { one = "{n} ⴰⵢⵢⵓⵔ", few = "{n} ⴰⵢⵢⵓⵔⵏ", other = "{n} ⴰⵢⵢⵓⵔ" },
+    year = { one = "{n} ⴰⵙⴳⴳⵯⴰⵙ", few = "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other = "{n} ⴰⵙⴳⴳⵯⴰⵙ" },
 }
-M.half = "{0} d uzgen"
+M.half = "{0} ⴷ ⵓⵣⴳⵏ"
 M.delimiter = ", "
-M.just_born = "Iɣ d illul"
+M.just_born = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
 M.stages = {
-    newborn = "Iɣ d illul",
-    infant = "Llufan",
-    toddler = { m = "Aḥenjir", f = "Taḥenjirt" },
-    child = { m = "Afrux", f = "Tafruxt" },
-    teenager = { m = "Aɛrim", f = "Taɛrimt" },
-    adult = { m = "Argaz", f = "Tamṭṭuṭ" },
+    newborn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+    infant = "ⵍⵍⵓⴼⴰⵏ",
+    toddler = { m = "ⴰⵃⵏⵊⵉⵔ", f = "ⵜⴰⵃⵏⵊⵉⵔⵜ" },
+    child = { m = "ⴰⴼⵔⵓⵅ", f = "ⵜⴰⴼⵔⵓⵅⵜ" },
+    teenager = { m = "ⴰⵄⵔⵉⵎ", f = "ⵜⴰⵄⵔⵉⵎⵜ" },
+    adult = { m = "ⴰⵔⴳⴰⵣ", f = "ⵜⴰⵎⵟⵟⵓⵟ" },
 }
 M.short = {
     units = {
-        day = { one = "{n} ass", few = "{n} ussan", other = "{n} ass" },
-        week = { one = "{n} imalass", few = "{n} imalassn", other = "{n} imalass" },
-        month = { one = "{n} ayyur", few = "{n} ayyurn", other = "{n} ayyur" },
-        year = { one = "{n} aseggas", few = "{n} iseggasen", other = "{n} aseggas" },
+        day = { one = "{n} ⴰⵙⵙ", few = "{n} ⵓⵙⵙⴰⵏ", other = "{n} ⴰⵙⵙ" },
+        week = { one = "{n} ⵉⵎⴰⵍⴰⵙⵙ", few = "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other = "{n} ⵉⵎⴰⵍⴰⵙⵙ" },
+        month = { one = "{n} ⴰⵢⵢⵓⵔ", few = "{n} ⴰⵢⵢⵓⵔⵏ", other = "{n} ⴰⵢⵢⵓⵔ" },
+        year = { one = "{n} ⴰⵙⴳⴳⵯⴰⵙ", few = "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other = "{n} ⴰⵙⴳⴳⵯⴰⵙ" },
     },
 }
 M.compact = {
     units = {
-        day = "{n}d",
-        week = "{n}w",
-        month = "{n}m",
-        year = "{n}y",
+        day = "{n} ⴰⵙⵙ",
+        week = "{n} ⵉⵎⵍ",
+        month = "{n} ⴰⵢⵔ",
+        year = "{n} ⴰⵙⴳ",
     },
     half = "{n}½",
     delimiter = "",

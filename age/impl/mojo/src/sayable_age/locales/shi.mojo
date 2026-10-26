@@ -34,36 +34,36 @@ fn _plural(n: Int) -> String:
 fn build_shi() -> AgeLocale:
     """Build the Tachelhit locale."""
 
-    var day = plural_unit(one="{n} ass", few="{n} ussan", other="{n} ass")
-    var week = plural_unit(one="{n} imalass", few="{n} imalassn", other="{n} imalass")
-    var month = plural_unit(one="{n} ayyur", few="{n} ayyurn", other="{n} ayyur")
-    var year = plural_unit(one="{n} aseggas", few="{n} iseggasen", other="{n} aseggas")
+    var day = plural_unit(one="{n} ⴰⵙⵙ", few="{n} ⵓⵙⵙⴰⵏ", other="{n} ⴰⵙⵙ")
+    var week = plural_unit(one="{n} ⵉⵎⴰⵍⴰⵙⵙ", few="{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other="{n} ⵉⵎⴰⵍⴰⵙⵙ")
+    var month = plural_unit(one="{n} ⴰⵢⵢⵓⵔ", few="{n} ⴰⵢⵢⵓⵔⵏ", other="{n} ⴰⵢⵢⵓⵔ")
+    var year = plural_unit(one="{n} ⴰⵙⴳⴳⵯⴰⵙ", few="{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other="{n} ⴰⵙⴳⴳⵯⴰⵙ")
 
-    var newborn = stage_neutral("Iɣ d illul")
-    var infant = stage_neutral("Llufan")
-    var toddler = stage_gendered("Aḥenjir", "Taḥenjirt")
-    var child = stage_gendered("Afrux", "Tafruxt")
-    var teenager = stage_gendered("Aɛrim", "Taɛrimt")
-    var adult = stage_gendered("Argaz", "Tamṭṭuṭ")
+    var newborn = stage_neutral("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ")
+    var infant = stage_neutral("ⵍⵍⵓⴼⴰⵏ")
+    var toddler = stage_gendered("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ")
+    var child = stage_gendered("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ")
+    var teenager = stage_gendered("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ")
+    var adult = stage_gendered("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = plural_unit(one="{n} ass", few="{n} ussan", other="{n} ass")
+    short_ovr.day = plural_unit(one="{n} ⴰⵙⵙ", few="{n} ⵓⵙⵙⴰⵏ", other="{n} ⴰⵙⵙ")
     short_ovr.has_day = True
-    short_ovr.week = plural_unit(one="{n} imalass", few="{n} imalassn", other="{n} imalass")
+    short_ovr.week = plural_unit(one="{n} ⵉⵎⴰⵍⴰⵙⵙ", few="{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other="{n} ⵉⵎⴰⵍⴰⵙⵙ")
     short_ovr.has_week = True
-    short_ovr.month = plural_unit(one="{n} ayyur", few="{n} ayyurn", other="{n} ayyur")
+    short_ovr.month = plural_unit(one="{n} ⴰⵢⵢⵓⵔ", few="{n} ⴰⵢⵢⵓⵔⵏ", other="{n} ⴰⵢⵢⵓⵔ")
     short_ovr.has_month = True
-    short_ovr.year = plural_unit(one="{n} aseggas", few="{n} iseggasen", other="{n} aseggas")
+    short_ovr.year = plural_unit(one="{n} ⴰⵙⴳⴳⵯⴰⵙ", few="{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other="{n} ⴰⵙⴳⴳⵯⴰⵙ")
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.day = simple_unit("{n} ⴰⵙⵙ")
     compact_ovr.has_day = True
-    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.week = simple_unit("{n} ⵉⵎⵍ")
     compact_ovr.has_week = True
-    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.month = simple_unit("{n} ⴰⵢⵔ")
     compact_ovr.has_month = True
-    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.year = simple_unit("{n} ⴰⵙⴳ")
     compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
@@ -77,9 +77,9 @@ fn build_shi() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} d uzgen",
+        half="{0} ⴷ ⵓⵣⴳⵏ",
         delimiter=", ",
-        just_born="Iɣ d illul",
+        just_born="ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
         newborn=newborn,
         infant=infant,
         toddler=toddler,

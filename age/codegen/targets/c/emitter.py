@@ -274,6 +274,7 @@ def formatter_path(root: str) -> str:
 
 _FORMATTER_SOURCE = "/* -*- coding: utf-8 -*- */\n" + HEADER.rstrip() + """
 #include "sayableage/sayableage.h"
+#include <time.h>
 
 /* ---- freestanding string helpers ---- */
 
@@ -470,6 +471,27 @@ static void sa_resolve_unit(SaWriter *w, int count, const SaUnitForms *uf,
     }
 }
 
+/* ---- default asOf: today's local date ---- */
+
+static void sa_local_today(char out[11]) {
+    time_t now = time((time_t *)0);
+    const struct tm *tm = localtime(&now);
+    int y = tm ? tm->tm_year + 1900 : 1970;
+    int m = tm ? tm->tm_mon + 1 : 1;
+    int d = tm ? tm->tm_mday : 1;
+    out[0] = (char)('0' + (y / 1000) % 10);
+    out[1] = (char)('0' + (y / 100) % 10);
+    out[2] = (char)('0' + (y / 10) % 10);
+    out[3] = (char)('0' + y % 10);
+    out[4] = '-';
+    out[5] = (char)('0' + m / 10);
+    out[6] = (char)('0' + m % 10);
+    out[7] = '-';
+    out[8] = (char)('0' + d / 10);
+    out[9] = (char)('0' + d % 10);
+    out[10] = (char)0;
+}
+
 /* ---- public API: sa_format_age ---- */
 
 int sa_format_age(char *buf, size_t bufsz, const SaLocale *locale,
@@ -477,6 +499,7 @@ int sa_format_age(char *buf, size_t bufsz, const SaLocale *locale,
     int dob_y, dob_m, dob_d, ref_y, ref_m, ref_d;
     int diff_days, months, last_day, clamped_birthday;
     SaWriter w;
+    char today_buf[11];
 
     const SaUnitForms *day_uf, *week_uf, *month_uf, *year_uf;
     const char *half, *delimiter, *just_born;
@@ -485,7 +508,10 @@ int sa_format_age(char *buf, size_t bufsz, const SaLocale *locale,
     buf[0] = '\\0';
 
     if (!sa_parse_date(dob, &dob_y, &dob_m, &dob_d)) return -1;
-    if (!as_of || !as_of[0]) return -1;
+    if (!as_of || !as_of[0]) {
+        sa_local_today(today_buf);
+        as_of = today_buf;
+    }
     if (!sa_parse_date(as_of, &ref_y, &ref_m, &ref_d)) return -1;
 
     diff_days = sa_julian_day(ref_y, ref_m, ref_d) - sa_julian_day(dob_y, dob_m, dob_d);
@@ -599,10 +625,14 @@ const char *sa_stage(const SaLocale *locale, const char *dob, const char *as_of,
     int dob_y, dob_m, dob_d, ref_y, ref_m, ref_d;
     int diff_days, months, last_day, clamped_birthday;
     const SaStageLabel *label;
+    char today_buf[11];
 
     if (!locale || !dob) return (const char *)0;
     if (!sa_parse_date(dob, &dob_y, &dob_m, &dob_d)) return (const char *)0;
-    if (!as_of || !as_of[0]) return (const char *)0;
+    if (!as_of || !as_of[0]) {
+        sa_local_today(today_buf);
+        as_of = today_buf;
+    }
     if (!sa_parse_date(as_of, &ref_y, &ref_m, &ref_d)) return (const char *)0;
 
     diff_days = sa_julian_day(ref_y, ref_m, ref_d) - sa_julian_day(dob_y, dob_m, dob_d);

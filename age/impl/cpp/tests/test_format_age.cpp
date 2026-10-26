@@ -558,7 +558,7 @@ void test_section_31_weeks_and_days_across_month_ends() {
 void test_section_32_half_years_take_their_plural_form_from_whole_years() {
     ASSERT_EQ("32.1 Polish 3 is 'few'", SayableAge(locales::PL(), Compactness::Normal).format_age("2021-06-15", "2025-01-15"), "3 i p\303\263\305\202 lata"); // 32.1
     ASSERT_EQ("32.2 Polish 5 is 'many'", SayableAge(locales::PL(), Compactness::Short).format_age("2020-06-15", "2025-12-15"), "5 i p\303\263\305\202 lat"); // 32.2
-    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", SayableAge(locales::SHI(), Compactness::Normal).format_age("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen"); // 32.3
+    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", SayableAge(locales::SHI(), Compactness::Normal).format_age("2005-06-08", "2012-06-07"), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"); // 32.3
 }
 
 // ================================================================

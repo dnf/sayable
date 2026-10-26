@@ -24,110 +24,110 @@ locale =
     , units =
         Dict.fromList
             [ ( "second", Pluralized
-              [ ( One, "{n} tasint" )
-              , ( Few, "{n} tisinin" )
-              , ( Other, "{n} tisinin" )
+              [ ( One, "{n} ⵜⴰⵙⵉⵏⵜ" )
+              , ( Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
+              , ( Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
               ] )
             , ( "minute", Pluralized
-              [ ( One, "{n} tusdiqt" )
-              , ( Few, "{n} tusdiqin" )
-              , ( Other, "{n} tusdiqin" )
+              [ ( One, "{n} ⵜⵓⵙⴷⵉⵇⵜ" )
+              , ( Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
+              , ( Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
               ] )
             , ( "hour", Pluralized
-              [ ( One, "{n} tasragt" )
-              , ( Few, "{n} tisragin" )
-              , ( Other, "{n} tisragin" )
+              [ ( One, "{n} ⵜⴰⵙⵔⴰⴳⵜ" )
+              , ( Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
+              , ( Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
               ] )
             , ( "day", Pluralized
-              [ ( One, "{n} ass" )
-              , ( Few, "{n} ussan" )
-              , ( Other, "{n} ass" )
+              [ ( One, "{n} ⴰⵙⵙ" )
+              , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+              , ( Other, "{n} ⴰⵙⵙ" )
               ] )
             , ( "week", Pluralized
-              [ ( One, "{n} imalass" )
-              , ( Few, "{n} imalassn" )
-              , ( Other, "{n} imalass" )
+              [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+              , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+              , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
               ] )
             , ( "month", Pluralized
-              [ ( One, "{n} ayyur" )
-              , ( Few, "{n} ayyurn" )
-              , ( Other, "{n} ayyur" )
+              [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+              , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+              , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
               ] )
             , ( "year", Pluralized
-              [ ( One, "{n} aseggas" )
-              , ( Few, "{n} iseggasen" )
-              , ( Other, "{n} aseggas" )
+              [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+              , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+              , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
               ] )
             ]
-    , half = "{0} d uzgen"
+    , half = "{0} ⴷ ⵓⵣⴳⵏ"
     , delimiter = ", "
-    , justNow = "ɣilad"
-    , ago = "ɣ {0} zzrin"
-    , inFuture = "ɣ {0}"
+    , justNow = "ⵖⵉⵍⴰⴷ"
+    , ago = "ⵖ {0} ⵣⵣⵔⵉⵏ"
+    , inFuture = "ⵖ {0}"
     , short =
         Just
             { ovrUnits =
                 Just
                     (Dict.fromList
                         [ ( "second", Pluralized
-                          [ ( One, "{n} tasint" )
-                          , ( Few, "{n} tasinin" )
-                          , ( Other, "{n} tasinin" )
+                          [ ( One, "{n} ⵜⴰⵙⵉⵏⵜ" )
+                          , ( Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
+                          , ( Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
                           ] )
                         , ( "minute", Pluralized
-                          [ ( One, "{n} tusdiqt" )
-                          , ( Few, "{n} tusdiqin" )
-                          , ( Other, "{n} tusdiqin" )
+                          [ ( One, "{n} ⵜⵓⵙⴷⵉⵇⵜ" )
+                          , ( Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
+                          , ( Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
                           ] )
                         , ( "hour", Pluralized
-                          [ ( One, "{n} tasragt" )
-                          , ( Few, "{n} tisragin" )
-                          , ( Other, "{n} tisragin" )
+                          [ ( One, "{n} ⵜⴰⵙⵔⴰⴳⵜ" )
+                          , ( Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
+                          , ( Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
                           ] )
                         , ( "day", Pluralized
-                          [ ( One, "{n} ass" )
-                          , ( Few, "{n} ussan" )
-                          , ( Other, "{n} ass" )
+                          [ ( One, "{n} ⴰⵙⵙ" )
+                          , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+                          , ( Other, "{n} ⴰⵙⵙ" )
                           ] )
                         , ( "week", Pluralized
-                          [ ( One, "{n} imalass" )
-                          , ( Few, "{n} imalassn" )
-                          , ( Other, "{n} imalass" )
+                          [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                          , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+                          , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
                           ] )
                         , ( "month", Pluralized
-                          [ ( One, "{n} ayyur" )
-                          , ( Few, "{n} ayyurn" )
-                          , ( Other, "{n} ayyur" )
+                          [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+                          , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+                          , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
                           ] )
                         , ( "year", Pluralized
-                          [ ( One, "{n} aseggas" )
-                          , ( Few, "{n} iseggasen" )
-                          , ( Other, "{n} aseggas" )
+                          [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                          , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+                          , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
                           ] )
                         ]
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "ɣ {0} zzrin"
-            , ovrInFuture = Just "ɣ {0}"
+            , ovrAgo = Just "ⵖ {0} ⵣⵣⵔⵉⵏ"
+            , ovrInFuture = Just "ⵖ {0}"
             }
     , compact =
         Just
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n}s" )
-                        , ( "minute", Simple "{n}m" )
-                        , ( "hour", Simple "{n}h" )
-                        , ( "day", Simple "{n}d" )
-                        , ( "week", Simple "{n}w" )
-                        , ( "month", Simple "{n}mo" )
-                        , ( "year", Simple "{n}y" )
+                        [ ( "second", Simple "{n} ⵜⵙⵏ" )
+                        , ( "minute", Simple "{n} ⵜⵙⴷ" )
+                        , ( "hour", Simple "{n} ⵜⵙⵔ" )
+                        , ( "day", Simple "{n} ⴰⵙⵙ" )
+                        , ( "week", Simple "{n} ⵉⵎⵍ" )
+                        , ( "month", Simple "{n} ⴰⵢⵔ" )
+                        , ( "year", Simple "{n} ⴰⵙⴳ" )
                         ]
                     )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
-            , ovrAgo = Just "ɣ {0} zzrin"
-            , ovrInFuture = Just "ɣ {0}"
+            , ovrAgo = Just "ⵖ {0} ⵣⵣⵔⵉⵏ"
+            , ovrInFuture = Just "ⵖ {0}"
             }
     }

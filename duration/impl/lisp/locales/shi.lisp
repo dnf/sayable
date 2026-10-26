@@ -25,36 +25,36 @@
   (make-duration-locale
    :code "shi"
    :plural #'plural-shi
-   :units (list (cons :second '((:one . "{n} tasint") (:few . "{n} tisinin") (:other . "{n} tisinin")))
-               (cons :minute '((:one . "{n} tusdiqt") (:few . "{n} tusdiqin") (:other . "{n} tusdiqin")))
-               (cons :hour '((:one . "{n} tasragt") (:few . "{n} tisragin") (:other . "{n} tisragin")))
-               (cons :day '((:one . "{n} ass") (:few . "{n} ussan") (:other . "{n} ass")))
-               (cons :week '((:one . "{n} imalass") (:few . "{n} imalassn") (:other . "{n} imalass")))
-               (cons :month '((:one . "{n} ayyur") (:few . "{n} ayyurn") (:other . "{n} ayyur")))
-               (cons :year '((:one . "{n} aseggas") (:few . "{n} iseggasen") (:other . "{n} aseggas"))))
-   :half "{0} d uzgen"
+   :units (list (cons :second '((:one . "{n} ⵜⴰⵙⵉⵏⵜ") (:few . "{n} ⵜⵉⵙⵉⵏⵉⵏ") (:other . "{n} ⵜⵉⵙⵉⵏⵉⵏ")))
+               (cons :minute '((:one . "{n} ⵜⵓⵙⴷⵉⵇⵜ") (:few . "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ") (:other . "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")))
+               (cons :hour '((:one . "{n} ⵜⴰⵙⵔⴰⴳⵜ") (:few . "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ") (:other . "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")))
+               (cons :day '((:one . "{n} ⴰⵙⵙ") (:few . "{n} ⵓⵙⵙⴰⵏ") (:other . "{n} ⴰⵙⵙ")))
+               (cons :week '((:one . "{n} ⵉⵎⴰⵍⴰⵙⵙ") (:few . "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ") (:other . "{n} ⵉⵎⴰⵍⴰⵙⵙ")))
+               (cons :month '((:one . "{n} ⴰⵢⵢⵓⵔ") (:few . "{n} ⴰⵢⵢⵓⵔⵏ") (:other . "{n} ⴰⵢⵢⵓⵔ")))
+               (cons :year '((:one . "{n} ⴰⵙⴳⴳⵯⴰⵙ") (:few . "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ") (:other . "{n} ⴰⵙⴳⴳⵯⴰⵙ"))))
+   :half "{0} ⴷ ⵓⵣⴳⵏ"
    :delimiter ", "
-   :just-now "ɣilad"
-   :ago "ɣ {0} zzrin"
-   :in-future "ɣ {0}"
-   :short-units (list (cons :second '((:one . "{n} tasint") (:few . "{n} tasinin") (:other . "{n} tasinin")))
-                       (cons :minute '((:one . "{n} tusdiqt") (:few . "{n} tusdiqin") (:other . "{n} tusdiqin")))
-                       (cons :hour '((:one . "{n} tasragt") (:few . "{n} tisragin") (:other . "{n} tisragin")))
-                       (cons :day '((:one . "{n} ass") (:few . "{n} ussan") (:other . "{n} ass")))
-                       (cons :week '((:one . "{n} imalass") (:few . "{n} imalassn") (:other . "{n} imalass")))
-                       (cons :month '((:one . "{n} ayyur") (:few . "{n} ayyurn") (:other . "{n} ayyur")))
-                       (cons :year '((:one . "{n} aseggas") (:few . "{n} iseggasen") (:other . "{n} aseggas"))))
-   :short-ago "ɣ {0} zzrin"
-   :short-in-future "ɣ {0}"
-   :compact-units (list (cons :second "{n}s")
-                       (cons :minute "{n}m")
-                       (cons :hour "{n}h")
-                       (cons :day "{n}d")
-                       (cons :week "{n}w")
-                       (cons :month "{n}mo")
-                       (cons :year "{n}y"))
+   :just-now "ⵖⵉⵍⴰⴷ"
+   :ago "ⵖ {0} ⵣⵣⵔⵉⵏ"
+   :in-future "ⵖ {0}"
+   :short-units (list (cons :second '((:one . "{n} ⵜⴰⵙⵉⵏⵜ") (:few . "{n} ⵜⵉⵙⵉⵏⵉⵏ") (:other . "{n} ⵜⵉⵙⵉⵏⵉⵏ")))
+                       (cons :minute '((:one . "{n} ⵜⵓⵙⴷⵉⵇⵜ") (:few . "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ") (:other . "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")))
+                       (cons :hour '((:one . "{n} ⵜⴰⵙⵔⴰⴳⵜ") (:few . "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ") (:other . "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")))
+                       (cons :day '((:one . "{n} ⴰⵙⵙ") (:few . "{n} ⵓⵙⵙⴰⵏ") (:other . "{n} ⴰⵙⵙ")))
+                       (cons :week '((:one . "{n} ⵉⵎⴰⵍⴰⵙⵙ") (:few . "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ") (:other . "{n} ⵉⵎⴰⵍⴰⵙⵙ")))
+                       (cons :month '((:one . "{n} ⴰⵢⵢⵓⵔ") (:few . "{n} ⴰⵢⵢⵓⵔⵏ") (:other . "{n} ⴰⵢⵢⵓⵔ")))
+                       (cons :year '((:one . "{n} ⴰⵙⴳⴳⵯⴰⵙ") (:few . "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ") (:other . "{n} ⴰⵙⴳⴳⵯⴰⵙ"))))
+   :short-ago "ⵖ {0} ⵣⵣⵔⵉⵏ"
+   :short-in-future "ⵖ {0}"
+   :compact-units (list (cons :second "{n} ⵜⵙⵏ")
+                       (cons :minute "{n} ⵜⵙⴷ")
+                       (cons :hour "{n} ⵜⵙⵔ")
+                       (cons :day "{n} ⴰⵙⵙ")
+                       (cons :week "{n} ⵉⵎⵍ")
+                       (cons :month "{n} ⴰⵢⵔ")
+                       (cons :year "{n} ⴰⵙⴳ"))
    :compact-half "{n}½"
    :compact-delimiter ""
-   :compact-ago "ɣ {0} zzrin"
-   :compact-in-future "ɣ {0}"
+   :compact-ago "ⵖ {0} ⵣⵣⵔⵉⵏ"
+   :compact-in-future "ⵖ {0}"
 ))

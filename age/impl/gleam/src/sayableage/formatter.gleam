@@ -267,9 +267,16 @@ fn try_compute_age(
   }
 }
 
+@external(erlang, "sayableage_ffi", "today")
+fn today() -> String
+
 fn compute_age(dob: String, as_of: String) -> Result(#(Int, Int), Nil) {
   use #(dy, dm, dd) <- try_parse(dob)
-  use #(ry, rm, rd) <- try_parse(as_of)
+  let reference = case as_of {
+    "" -> today()
+    _ -> as_of
+  }
+  use #(ry, rm, rd) <- try_parse(reference)
   let diff_days = days_between(dy, dm, dd, ry, rm, rd)
   case diff_days < 0 {
     True -> Error(Nil)

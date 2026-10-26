@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 static int tests_passed = 0;
 static int tests_failed = 0;
@@ -553,106 +554,148 @@ static void test_compact_compact(void) {
 }
 
 /* ================================================================ */
+/* Default asOf (15.1, 15.2, 23.1, 23.2, 23.3): dateOfBirth is derived */
+/* from the local current date, since the library reads the clock.     */
+/* ================================================================ */
+static void local_date_offset(char *out, int years_back, int days_back) {
+    time_t now = time(NULL);
+    struct tm tm = *localtime(&now);
+    tm.tm_hour = 12;
+    tm.tm_year -= years_back;
+    if (tm.tm_mon == 1 && tm.tm_mday == 29 && years_back > 0) tm.tm_mday = 28;
+    tm.tm_mday -= days_back;
+    tm.tm_isdst = -1;
+    mktime(&tm);
+    snprintf(out, 11, "%04d-%02d-%02d", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+}
+
+static void test_default_as_of(void) {
+    char buf[256];
+    char dob[11];
+    const char *stage;
+    int rc;
+
+    local_date_offset(dob, 5, 0);
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, dob, NULL);
+    ASSERT_EQ("default asOf 5 years", rc, buf, "5 years"); // 15.1
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, dob, "");
+    ASSERT_EQ("empty asOf 5 years", rc, buf, "5 years"); // 15.1
+    local_date_offset(dob, 0, 5);
+    rc = sa_format_age(buf, sizeof(buf), &sa_locale_en, SA_NORMAL, dob, NULL);
+    ASSERT_EQ("default asOf 5 days", rc, buf, "5 days"); // 15.2
+
+    local_date_offset(dob, 0, 0);
+    stage = sa_stage(&sa_locale_en, dob, NULL, "");
+    ASSERT_TRUE("default stage newborn", stage != NULL && strcmp(stage, "Newborn") == 0); // 23.1
+    local_date_offset(dob, 5, 0);
+    stage = sa_stage(&sa_locale_en, dob, NULL, "");
+    ASSERT_TRUE("default stage child", stage != NULL && strcmp(stage, "Child") == 0); // 23.2
+    local_date_offset(dob, 45, 0);
+    stage = sa_stage(&sa_locale_en, dob, "", "");
+    ASSERT_TRUE("default stage adult", stage != NULL && strcmp(stage, "Adult") == 0); // 23.3
+}
+
+/* ================================================================ */
 /* Locale-specific edge cases                                       */
 /* ================================================================ */
 static void test_locale_hebrew(void) {
     char buf[256];
     int rc;
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("he justBorn", rc, buf, "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93");
+    ASSERT_EQ("he justBorn", rc, buf, "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93"); // 29.1
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-14", "2025-06-15");
-    ASSERT_EQ("he 1 day one", rc, buf, "\xd7\x99\xd7\x95\xd7\x9d");
+    ASSERT_EQ("he 1 day one", rc, buf, "\xd7\x99\xd7\x95\xd7\x9d"); // 29.2
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("he 3 days other", rc, buf, "3 \xd7\x99\xd7\x9e\xd7\x99\xd7\x9d");
+    ASSERT_EQ("he 3 days other", rc, buf, "3 \xd7\x99\xd7\x9e\xd7\x99\xd7\x9d"); // 29.3
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-01", "2025-06-15");
-    ASSERT_EQ("he 2 weeks dual", rc, buf, "\xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x99\xd7\x99\xd7\x9d");
+    ASSERT_EQ("he 2 weeks dual", rc, buf, "\xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x99\xd7\x99\xd7\x9d"); // 29.4
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-05-25", "2025-06-15");
-    ASSERT_EQ("he 3 weeks other", rc, buf, "3 \xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x95\xd7\xaa");
+    ASSERT_EQ("he 3 weeks other", rc, buf, "3 \xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x95\xd7\xaa"); // 29.5
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("he 6 months", rc, buf, "6 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d");
+    ASSERT_EQ("he 6 months", rc, buf, "6 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d"); // 29.6
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-03-15", "2025-06-15");
-    ASSERT_EQ("he 3 months", rc, buf, "3 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d");
+    ASSERT_EQ("he 3 months", rc, buf, "3 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d"); // 29.7
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("he 2y dual 1m one", rc, buf, "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9");
+    ASSERT_EQ("he 2y dual 1m one", rc, buf, "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9"); // 29.8
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("he 3.5y half", rc, buf, "3 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d \xd7\x95\xd7\x97\xd7\xa6\xd7\x99");
+    ASSERT_EQ("he 3.5y half", rc, buf, "3 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d \xd7\x95\xd7\x97\xd7\xa6\xd7\x99"); // 29.9
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2018-06-15", "2025-06-15");
-    ASSERT_EQ("he 7y other", rc, buf, "7 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d");
+    ASSERT_EQ("he 7y other", rc, buf, "7 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d"); // 29.10
 
-    ASSERT_TRUE("he stage m newborn", strcmp(sa_stage(&sa_locale_he, "2025-06-15", "2025-06-15", "m"), "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93") == 0);
-    ASSERT_TRUE("he stage f newborn", strcmp(sa_stage(&sa_locale_he, "2025-06-15", "2025-06-15", "f"), "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93\xd7\x94") == 0);
-    ASSERT_TRUE("he stage m adult", strcmp(sa_stage(&sa_locale_he, "2007-06-15", "2025-06-15", "m"), "\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8") == 0);
-    ASSERT_TRUE("he stage f adult", strcmp(sa_stage(&sa_locale_he, "2007-06-15", "2025-06-15", "f"), "\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8\xd7\xaa") == 0);
+    ASSERT_TRUE("he stage m newborn", strcmp(sa_stage(&sa_locale_he, "2025-06-15", "2025-06-15", "m"), "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93") == 0); // 29.11
+    ASSERT_TRUE("he stage f newborn", strcmp(sa_stage(&sa_locale_he, "2025-06-15", "2025-06-15", "f"), "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93\xd7\x94") == 0); // 29.12
+    ASSERT_TRUE("he stage m adult", strcmp(sa_stage(&sa_locale_he, "2007-06-15", "2025-06-15", "m"), "\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8") == 0); // 29.13
+    ASSERT_TRUE("he stage f adult", strcmp(sa_stage(&sa_locale_he, "2007-06-15", "2025-06-15", "f"), "\xd7\x9e\xd7\x91\xd7\x95\xd7\x92\xd7\xa8\xd7\xaa") == 0); // 29.14
 }
 
 static void test_locale_macedonian(void) {
     char buf[256];
     int rc;
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_mk, SA_NORMAL, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("mk justBorn", rc, buf, "\xd0\x9d\xd0\xbe\xd0\xb2\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb4\xd0\xb5\xd0\xbd\xd1\x87\xd0\xb5");
+    ASSERT_EQ("mk justBorn", rc, buf, "\xd0\x9d\xd0\xbe\xd0\xb2\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb4\xd0\xb5\xd0\xbd\xd1\x87\xd0\xb5"); // 29.15
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_mk, SA_NORMAL, "2025-06-14", "2025-06-15");
-    ASSERT_EQ("mk 1 day one", rc, buf, "1 \xd0\xb4\xd0\xb5\xd0\xbd");
+    ASSERT_EQ("mk 1 day one", rc, buf, "1 \xd0\xb4\xd0\xb5\xd0\xbd"); // 29.16
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_mk, SA_NORMAL, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("mk 3 days other", rc, buf, "3 \xd0\xb4\xd0\xb5\xd0\xbd\xd0\xb0");
+    ASSERT_EQ("mk 3 days other", rc, buf, "3 \xd0\xb4\xd0\xb5\xd0\xbd\xd0\xb0"); // 29.17
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_mk, SA_NORMAL, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("mk 6 months", rc, buf, "6 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86\xd0\xb8");
+    ASSERT_EQ("mk 6 months", rc, buf, "6 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86\xd0\xb8"); // 29.18
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_mk, SA_NORMAL, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("mk 2y1m one month", rc, buf, "2 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8, 1 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86");
+    ASSERT_EQ("mk 2y1m one month", rc, buf, "2 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8, 1 \xd0\xbc\xd0\xb5\xd1\x81\xd0\xb5\xd1\x86"); // 29.19
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_mk, SA_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("mk 3.5y half", rc, buf, "3 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8 \xd0\xb8 \xd0\xbf\xd0\xbe\xd0\xbb");
+    ASSERT_EQ("mk 3.5y half", rc, buf, "3 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8 \xd0\xb8 \xd0\xbf\xd0\xbe\xd0\xbb"); // 29.20
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_mk, SA_NORMAL, "2018-06-15", "2025-06-15");
-    ASSERT_EQ("mk 7y", rc, buf, "7 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8");
+    ASSERT_EQ("mk 7y", rc, buf, "7 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb8"); // 29.21
 }
 
 static void test_locale_swahili(void) {
     char buf[256];
     int rc;
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_sw, SA_NORMAL, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("sw justBorn", rc, buf, "Mzaliwa mpya");
+    ASSERT_EQ("sw justBorn", rc, buf, "Mzaliwa mpya"); // 29.22
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_sw, SA_NORMAL, "2025-06-14", "2025-06-15");
-    ASSERT_EQ("sw 1 day", rc, buf, "siku 1");
+    ASSERT_EQ("sw 1 day", rc, buf, "siku 1"); // 29.23
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_sw, SA_NORMAL, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("sw 3 days", rc, buf, "siku 3");
+    ASSERT_EQ("sw 3 days", rc, buf, "siku 3"); // 29.24
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_sw, SA_NORMAL, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("sw 6 months", rc, buf, "miezi 6");
+    ASSERT_EQ("sw 6 months", rc, buf, "miezi 6"); // 29.25
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_sw, SA_NORMAL, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("sw 2y 1m", rc, buf, "miaka 2, mwezi 1");
+    ASSERT_EQ("sw 2y 1m", rc, buf, "miaka 2, mwezi 1"); // 29.26
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_sw, SA_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("sw 3.5y half", rc, buf, "miaka 3 na nusu");
+    ASSERT_EQ("sw 3.5y half", rc, buf, "miaka 3 na nusu"); // 29.27
 }
 
 static void test_locale_indonesian(void) {
     char buf[256];
     int rc;
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("id justBorn", rc, buf, "Baru lahir");
+    ASSERT_EQ("id justBorn", rc, buf, "Baru lahir"); // 29.28
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2025-06-14", "2025-06-15");
-    ASSERT_EQ("id 1 day", rc, buf, "1 hari");
+    ASSERT_EQ("id 1 day", rc, buf, "1 hari"); // 29.29
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("id 3 days", rc, buf, "3 hari");
+    ASSERT_EQ("id 3 days", rc, buf, "3 hari"); // 29.30
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("id 6 months", rc, buf, "6 bulan");
+    ASSERT_EQ("id 6 months", rc, buf, "6 bulan"); // 29.31
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("id 3.5y half", rc, buf, "3 setengah tahun");
+    ASSERT_EQ("id 3.5y half", rc, buf, "3 setengah tahun"); // 29.32
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2018-06-15", "2025-06-15");
-    ASSERT_EQ("id 7y", rc, buf, "7 tahun");
+    ASSERT_EQ("id 7y", rc, buf, "7 tahun"); // 29.33
 }
 
 static void test_locale_amharic(void) {
     char buf[512];
     int rc;
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_am, SA_NORMAL, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("am justBorn", rc, buf, "\xe1\x8a\xa0\xe1\x8b\xb2\xe1\x88\xb5 \xe1\x8b\xa8\xe1\x89\xb0\xe1\x8b\x88\xe1\x88\x88\xe1\x8b\xb0");
+    ASSERT_EQ("am justBorn", rc, buf, "\xe1\x8a\xa0\xe1\x8b\xb2\xe1\x88\xb5 \xe1\x8b\xa8\xe1\x89\xb0\xe1\x8b\x88\xe1\x88\x88\xe1\x8b\xb0"); // 29.34
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_am, SA_NORMAL, "2025-06-14", "2025-06-15");
-    ASSERT_EQ("am 1 day", rc, buf, "1 \xe1\x89\x80\xe1\x8a\x95");
+    ASSERT_EQ("am 1 day", rc, buf, "1 \xe1\x89\x80\xe1\x8a\x95"); // 29.35
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_am, SA_NORMAL, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("am 3 days", rc, buf, "3 \xe1\x89\x80\xe1\x8a\x93\xe1\x89\xb5");
+    ASSERT_EQ("am 3 days", rc, buf, "3 \xe1\x89\x80\xe1\x8a\x93\xe1\x89\xb5"); // 29.36
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_am, SA_NORMAL, "2025-06-07", "2025-06-15");
-    ASSERT_EQ("am 1w1d ethiopic", rc, buf, "1 \xe1\x88\xb3\xe1\x88\x9d\xe1\x8a\x95\xe1\x89\xb5\xe1\x8d\xa3 1 \xe1\x89\x80\xe1\x8a\x95");
+    ASSERT_EQ("am 1w1d ethiopic", rc, buf, "1 \xe1\x88\xb3\xe1\x88\x9d\xe1\x8a\x95\xe1\x89\xb5\xe1\x8d\xa3 1 \xe1\x89\x80\xe1\x8a\x95"); // 29.37
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_am, SA_NORMAL, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("am 6 months", rc, buf, "6 \xe1\x8b\x88\xe1\x88\xab\xe1\x89\xb5");
+    ASSERT_EQ("am 6 months", rc, buf, "6 \xe1\x8b\x88\xe1\x88\xab\xe1\x89\xb5"); // 29.38
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_am, SA_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("am 3.5y half", rc, buf, "3 \xe1\x8b\x93\xe1\x88\x98\xe1\x89\xb3\xe1\x89\xb5 \xe1\x89\xb0\xe1\x8a\xa9\xe1\x88\x8d");
+    ASSERT_EQ("am 3.5y half", rc, buf, "3 \xe1\x8b\x93\xe1\x88\x98\xe1\x89\xb3\xe1\x89\xb5 \xe1\x89\xb0\xe1\x8a\xa9\xe1\x88\x8d"); // 29.39
 }
 
 /* ================================================================ */
@@ -660,16 +703,16 @@ static void test_locale_amharic(void) {
 /* ================================================================ */
 static void test_locale_lookup(void) {
     const SaLocale *en_loc = sa_locale_get("en");
-    ASSERT_TRUE("get(en) not null", en_loc != NULL);
-    ASSERT_TRUE("get(en) code", strcmp(en_loc->code, "en") == 0);
+    ASSERT_TRUE("get(en) not null", en_loc != NULL); // 30.1
+    ASSERT_TRUE("get(en) code", strcmp(en_loc->code, "en") == 0); // 30.1
 
     const SaLocale *fr_loc = sa_locale_get("fr");
-    ASSERT_TRUE("get(fr) not null", fr_loc != NULL);
-    ASSERT_TRUE("get(fr) code", strcmp(fr_loc->code, "fr") == 0);
+    ASSERT_TRUE("get(fr) not null", fr_loc != NULL); // 30.2
+    ASSERT_TRUE("get(fr) code", strcmp(fr_loc->code, "fr") == 0); // 30.2
 
-    ASSERT_TRUE("get(xx) null", sa_locale_get("xx") == NULL);
-    ASSERT_TRUE("get('') null", sa_locale_get("") == NULL);
-    ASSERT_TRUE("get(EN) null", sa_locale_get("EN") == NULL);
+    ASSERT_TRUE("get(xx) null", sa_locale_get("xx") == NULL); // 30.3
+    ASSERT_TRUE("get('') null", sa_locale_get("") == NULL); // 30.4
+    ASSERT_TRUE("get(EN) null", sa_locale_get("EN") == NULL); // 30.5
 }
 
 /* ================================================================ */
@@ -699,7 +742,7 @@ static void test_section_32_half_years_take_their_plural_form_from_whole_years(v
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_pl, SA_SHORT, "2020-06-15", "2025-12-15");
     ASSERT_EQ("32.2 Polish 5 is 'many'", rc, buf, "5 i p\303\263\305\202 lat"); // 32.2
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_shi, SA_NORMAL, "2005-06-08", "2012-06-07");
-    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", rc, buf, "6 iseggasen d uzgen"); // 32.3
+    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", rc, buf, "6 \xe2\xb5\x89\xe2\xb5\x99\xe2\xb4\xb3\xe2\xb4\xb3\xe2\xb5\xaf\xe2\xb4\xb0\xe2\xb5\x99\xe2\xb5\x8f \xe2\xb4\xb7 \xe2\xb5\x93\xe2\xb5\xa3\xe2\xb4\xb3\xe2\xb5\x8f"); // 32.3
 }
 
 /* ================================================================ */
@@ -722,6 +765,7 @@ static void test_section_33_input_validation(void) {
 }
 
 int main(void) {
+    test_default_as_of();
     test_null_edge_cases();
     test_days_tier();
     test_weeks_days_tier();

@@ -1984,10 +1984,10 @@ public final class Locales {
     public static final TimeLocale SHI = new TimeLocale(
         "shi",
         new ClockConfig(
-            List.of("tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"),
-            "nṣ n iḍ",
-            "tizwarnin",
-            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} d smmus tusdiqin"), Map.entry(10, "{h} d mraw tusdiqin"), Map.entry(15, "{h} d rrbɛ"), Map.entry(20, "{h} d ɛcrin n tusdiqt"), Map.entry(25, "{h} d xmsa u ɛcrin n tusdiqt"), Map.entry(30, "{h} d uzgen"), Map.entry(35, "{h} d xmsa u tlatin n tusdiqt"), Map.entry(40, "{h} d ṛbɛin n tusdiqt"), Map.entry(45, "{h} d xmsa u ṛbɛin n tusdiqt"), Map.entry(50, "{h} d xmsin n tusdiqt"), Map.entry(55, "{h} d xmsa u xmsin n tusdiqt"))
+            List.of("ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ", "ⵜⵉⵙ ⵙⵏⴰⵜ", "ⵜⵉⵙ ⴽⵕⴰⵟⵟ", "ⵜⵉⵙ ⴽⴽⵓⵥⵜ", "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ", "ⵜⵉⵙ ⵙⴹⵉⵙⵜ", "ⵜⵉⵙ ⵙⴰⵜ", "ⵜⵉⵙ ⵜⴰⵎⵜ", "ⵜⵉⵙ ⵜⵥⴰⵜ", "ⵜⵉⵙ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"),
+            "ⵏⵚ ⵏ ⵉⴹ",
+            "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ"), Map.entry(10, "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ"), Map.entry(15, "{h} ⴷ ⵔⵔⴱⵄ"), Map.entry(20, "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(25, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(30, "{h} ⴷ ⵓⵣⴳⵏ"), Map.entry(35, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(40, "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(45, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(50, "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(55, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))

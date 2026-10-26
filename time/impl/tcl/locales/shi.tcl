@@ -11,22 +11,22 @@
 
 proc locale_time_shi {} {
     set code {shi}
-    set hours [list {tis snat d mrawt} {tis yat} {tis snat} {tis kṛaṭṭ} {tis kkuẕt} {tis smmust} {tis sḍist} {tis sat} {tis tamt} {tis tẕat} {tis mrawt} {tis yat d mrawt}]
-    set midnight {nṣ n iḍ}
-    set noon {tizwarnin}
+    set hours [list {ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ} {ⵜⵉⵙ ⵢⴰⵜ} {ⵜⵉⵙ ⵙⵏⴰⵜ} {ⵜⵉⵙ ⴽⵕⴰⵟⵟ} {ⵜⵉⵙ ⴽⴽⵓⵥⵜ} {ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ} {ⵜⵉⵙ ⵙⴹⵉⵙⵜ} {ⵜⵉⵙ ⵙⴰⵜ} {ⵜⵉⵙ ⵜⴰⵎⵜ} {ⵜⵉⵙ ⵜⵥⴰⵜ} {ⵜⵉⵙ ⵎⵔⴰⵡⵜ} {ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ}]
+    set midnight {ⵏⵚ ⵏ ⵉⴹ}
+    set noon {ⵜⵉⵣⵡⴰⵔⵏⵉⵏ}
     set patterns [dict create \
         0 "{h}" \
-        5 "{h} d smmus tusdiqin" \
-        10 "{h} d mraw tusdiqin" \
-        15 "{h} d rrbɛ" \
-        20 "{h} d ɛcrin n tusdiqt" \
-        25 "{h} d xmsa u ɛcrin n tusdiqt" \
-        30 "{h} d uzgen" \
-        35 "{h} d xmsa u tlatin n tusdiqt" \
-        40 "{h} d ṛbɛin n tusdiqt" \
-        45 "{h} d xmsa u ṛbɛin n tusdiqt" \
-        50 "{h} d xmsin n tusdiqt" \
-        55 "{h} d xmsa u xmsin n tusdiqt" \
+        5 "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ" \
+        10 "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ" \
+        15 "{h} ⴷ ⵔⵔⴱⵄ" \
+        20 "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" \
+        25 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" \
+        30 "{h} ⴷ ⵓⵣⴳⵏ" \
+        35 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" \
+        40 "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" \
+        45 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" \
+        50 "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" \
+        55 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" \
     ]
     set clock_config [dict create \
         hours $hours \

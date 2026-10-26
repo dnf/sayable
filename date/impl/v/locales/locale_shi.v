@@ -14,25 +14,25 @@ module locales
 
 pub const locale_shi = DateLocale{
 	code: 'shi'
-	months: ['innayr', 'bṛayṛ', 'maṛṣ', 'ibrir', 'mayyu', 'yunyu', 'yulyuz', 'ɣuct', 'cutanbir', 'ktubr', 'nuwanbir', 'dujanbir']!
-	weekdays: ['asamas', 'aynas', 'asinas', 'akṛas', 'akwas', 'asimwas', 'asiḍyas']!
+	months: ['ⵉⵏⵏⴰⵢⵔ', 'ⴱⵕⴰⵢⵕ', 'ⵎⴰⵕⵚ', 'ⵉⴱⵔⵉⵔ', 'ⵎⴰⵢⵢⵓ', 'ⵢⵓⵏⵢⵓ', 'ⵢⵓⵍⵢⵓⵣ', 'ⵖⵓⵛⵜ', 'ⵛⵓⵜⴰⵏⴱⵉⵔ', 'ⴽⵜⵓⴱⵔ', 'ⵏⵓⵡⴰⵏⴱⵉⵔ', 'ⴷⵓⵊⴰⵏⴱⵉⵔ']!
+	weekdays: ['ⴰⵙⴰⵎⴰⵙ', 'ⴰⵢⵏⴰⵙ', 'ⴰⵙⵉⵏⴰⵙ', 'ⴰⴽⵕⴰⵙ', 'ⴰⴽⵡⴰⵙ', 'ⵙⵉⵎⵡⴰⵙ', 'ⴰⵙⵉⴹⵢⴰⵙ']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
-	today: 'assa'
-	tomorrow: 'askka'
-	yesterday: 'iḍlli'
-	this_weekday: '{weekday} ad'
+	today: 'ⴰⵙⵙⴰ'
+	tomorrow: 'ⴰⵙⴽⴽⴰ'
+	yesterday: 'ⵉⴹⵍⵍⵉ'
+	this_weekday: '{weekday} ⴰⴷ'
 	has_this_weekday: true
-	next_weekday: '{weekday} d iddan'
+	next_weekday: '{weekday} ⴷ ⵉⴷⴷⴰⵏ'
 	has_next_weekday: true
-	last_weekday: '{weekday} izrin'
+	last_weekday: '{weekday} ⵉⵣⵔⵉⵏ'
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{
-		months: ['inn', 'bṛa', 'maṛ', 'ibr', 'may', 'yun', 'yul', 'ɣuc', 'cut', 'ktu', 'nuw', 'duj']!
+		months: ['ⵉⵏⵏ', 'ⴱⵕⴰ', 'ⵎⴰⵕ', 'ⵉⴱⵔ', 'ⵎⴰⵢ', 'ⵢⵓⵏ', 'ⵢⵓⵍ', 'ⵖⵓⵛ', 'ⵛⵓⵜ', 'ⴽⵜⵓ', 'ⵏⵓⵡ', 'ⴷⵓⵊ']!
 		has_months: true
-		weekdays: ['asa', 'ayn', 'asi', 'akṛ', 'akw', 'asim', 'asiḍ']!
+		weekdays: ['ⴰⵙⴰ', 'ⴰⵢⵏ', 'ⴰⵙⵉ', 'ⴰⴽⵕ', 'ⴰⴽⵡ', 'ⴰⵙⵉⵎ', 'ⴰⵙⵉⴹ']!
 		has_weekdays: true
 		day_format: '{n}'
 		has_day_format: true

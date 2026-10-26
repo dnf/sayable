@@ -1250,7 +1250,7 @@ describe("Sections 31-33: weeks+days across month ends, half-year plurals, input
 
     -- 32.3
     it("Tachelhit 6 is 'few'", function()
-        assert.are.equal("6 iseggasen d uzgen", sayableage.new(sayableage.get_locale("shi")).format_age("2005-06-08", "2012-06-07"))
+        assert.are.equal("6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ", sayableage.new(sayableage.get_locale("shi")).format_age("2005-06-08", "2012-06-07"))
     end)
 
     -- 33.1

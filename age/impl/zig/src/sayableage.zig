@@ -1,5 +1,7 @@
 // sayable-age Zig implementation — types and formatter.
 
+const std = @import("std");
+
 pub const version = "0.5.0";
 
 pub const locales = @import("locales/locales.zig");
@@ -265,12 +267,35 @@ fn resolveUnit(w: *Writer, count: i32, uf: UnitForms, locale: *const Locale, hal
     }
 }
 
+// ---- Default asOf ----
+
+/// Today's date as YYYY-MM-DD. Zig's standard library has no local-timezone
+/// support, so this is the UTC date (it can differ from the local date near midnight).
+fn utcToday(buf: *[10]u8) []const u8 {
+    const io = std.Io.Threaded.global_single_threaded.io();
+    const secs = std.Io.Clock.real.now(io).toSeconds();
+    const epoch_secs = std.time.epoch.EpochSeconds{ .secs = @intCast(secs) };
+    const year_day = epoch_secs.getEpochDay().calculateYearDay();
+    const month_day = year_day.calculateMonthDay();
+    const year: u32 = @intCast(year_day.year);
+    const month: u32 = @backingInt(month_day.month);
+    const day: u32 = month_day.day_index + 1;
+    return std.fmt.bufPrint(buf, "{d:0>4}-{d:0>2}-{d:0>2}", .{ year, month, day }) catch unreachable;
+}
+
+fn asOfOrToday(as_of: ?[]const u8, buf: *[10]u8) []const u8 {
+    if (as_of) |given| {
+        if (given.len > 0) return given;
+    }
+    return utcToday(buf);
+}
+
 // ---- Public API ----
 
-pub fn formatAge(buf: []u8, locale: *const Locale, compactness: Compactness, dob: []const u8, as_of: []const u8) ?[]const u8 {
+pub fn formatAge(buf: []u8, locale: *const Locale, compactness: Compactness, dob: []const u8, as_of: ?[]const u8) ?[]const u8 {
     const dob_date = parseDate(dob) orelse return null;
-    if (as_of.len == 0) return null;
-    const ref_date = parseDate(as_of) orelse return null;
+    var today_buf: [10]u8 = undefined;
+    const ref_date = parseDate(asOfOrToday(as_of, &today_buf)) orelse return null;
 
     const diff_days = julianDay(ref_date.y, ref_date.m, ref_date.d) - julianDay(dob_date.y, dob_date.m, dob_date.d);
     if (diff_days < 0) return null;
@@ -372,10 +397,10 @@ pub fn formatAge(buf: []u8, locale: *const Locale, compactness: Compactness, dob
     }
 }
 
-pub fn formatStage(locale: *const Locale, dob: []const u8, as_of: []const u8, gender: ?[]const u8) ?[]const u8 {
+pub fn formatStage(locale: *const Locale, dob: []const u8, as_of: ?[]const u8, gender: ?[]const u8) ?[]const u8 {
     const dob_date = parseDate(dob) orelse return null;
-    if (as_of.len == 0) return null;
-    const ref_date = parseDate(as_of) orelse return null;
+    var today_buf: [10]u8 = undefined;
+    const ref_date = parseDate(asOfOrToday(as_of, &today_buf)) orelse return null;
 
     const diff_days = julianDay(ref_date.y, ref_date.m, ref_date.d) - julianDay(dob_date.y, dob_date.m, dob_date.d);
     if (diff_days < 0) return null;

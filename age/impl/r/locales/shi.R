@@ -19,36 +19,36 @@ locale_shi <- list(
   code = "shi",
   plural = plural,
   units = list(
-    day = list(one = "{n} ass", few = "{n} ussan", other = "{n} ass"),
-    week = list(one = "{n} imalass", few = "{n} imalassn", other = "{n} imalass"),
-    month = list(one = "{n} ayyur", few = "{n} ayyurn", other = "{n} ayyur"),
-    year = list(one = "{n} aseggas", few = "{n} iseggasen", other = "{n} aseggas")
+    day = list(one = "{n} ⴰⵙⵙ", few = "{n} ⵓⵙⵙⴰⵏ", other = "{n} ⴰⵙⵙ"),
+    week = list(one = "{n} ⵉⵎⴰⵍⴰⵙⵙ", few = "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other = "{n} ⵉⵎⴰⵍⴰⵙⵙ"),
+    month = list(one = "{n} ⴰⵢⵢⵓⵔ", few = "{n} ⴰⵢⵢⵓⵔⵏ", other = "{n} ⴰⵢⵢⵓⵔ"),
+    year = list(one = "{n} ⴰⵙⴳⴳⵯⴰⵙ", few = "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other = "{n} ⴰⵙⴳⴳⵯⴰⵙ")
   ),
-  half = "{0} d uzgen",
+  half = "{0} ⴷ ⵓⵣⴳⵏ",
   delimiter = ", ",
-  just_born = "Iɣ d illul",
+  just_born = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
   stages = list(
-    newborn = "Iɣ d illul",
-    infant = "Llufan",
-    toddler = list(m = "Aḥenjir", f = "Taḥenjirt"),
-    child = list(m = "Afrux", f = "Tafruxt"),
-    teenager = list(m = "Aɛrim", f = "Taɛrimt"),
-    adult = list(m = "Argaz", f = "Tamṭṭuṭ")
+    newborn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+    infant = "ⵍⵍⵓⴼⴰⵏ",
+    toddler = list(m = "ⴰⵃⵏⵊⵉⵔ", f = "ⵜⴰⵃⵏⵊⵉⵔⵜ"),
+    child = list(m = "ⴰⴼⵔⵓⵅ", f = "ⵜⴰⴼⵔⵓⵅⵜ"),
+    teenager = list(m = "ⴰⵄⵔⵉⵎ", f = "ⵜⴰⵄⵔⵉⵎⵜ"),
+    adult = list(m = "ⴰⵔⴳⴰⵣ", f = "ⵜⴰⵎⵟⵟⵓⵟ")
   ),
   short = list(
     units = list(
-      day = list(one = "{n} ass", few = "{n} ussan", other = "{n} ass"),
-      week = list(one = "{n} imalass", few = "{n} imalassn", other = "{n} imalass"),
-      month = list(one = "{n} ayyur", few = "{n} ayyurn", other = "{n} ayyur"),
-      year = list(one = "{n} aseggas", few = "{n} iseggasen", other = "{n} aseggas")
+      day = list(one = "{n} ⴰⵙⵙ", few = "{n} ⵓⵙⵙⴰⵏ", other = "{n} ⴰⵙⵙ"),
+      week = list(one = "{n} ⵉⵎⴰⵍⴰⵙⵙ", few = "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other = "{n} ⵉⵎⴰⵍⴰⵙⵙ"),
+      month = list(one = "{n} ⴰⵢⵢⵓⵔ", few = "{n} ⴰⵢⵢⵓⵔⵏ", other = "{n} ⴰⵢⵢⵓⵔ"),
+      year = list(one = "{n} ⴰⵙⴳⴳⵯⴰⵙ", few = "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other = "{n} ⴰⵙⴳⴳⵯⴰⵙ")
     )
   ),
   compact = list(
     units = list(
-      day = "{n}d",
-      week = "{n}w",
-      month = "{n}m",
-      year = "{n}y"
+      day = "{n} ⴰⵙⵙ",
+      week = "{n} ⵉⵎⵍ",
+      month = "{n} ⴰⵢⵔ",
+      year = "{n} ⴰⵙⴳ"
     ),
     half = "{n}½",
     delimiter = ""

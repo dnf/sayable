@@ -1195,7 +1195,7 @@ class TestHalfYearPluralFromWholeYears:
 
     # 32.3
     def test_32_3_tachelhit_few(self) -> None:
-        assert SayableAge(SHI).format_age("2005-06-08", "2012-06-07") == "6 iseggasen d uzgen"
+        assert SayableAge(SHI).format_age("2005-06-08", "2012-06-07") == "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"
 
 
 # ================================================================

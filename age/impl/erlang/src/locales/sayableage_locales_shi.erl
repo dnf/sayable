@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "shi",
         plural = fun(N) when N =:= 0; N =:= 1 -> one; (N) when N >= 2, N =< 10 -> few; (_) -> other end,
-        day = {pluralized, [{one, "{n} ass"}, {few, "{n} ussan"}, {other, "{n} ass"}]},
-        week = {pluralized, [{one, "{n} imalass"}, {few, "{n} imalassn"}, {other, "{n} imalass"}]},
-        month = {pluralized, [{one, "{n} ayyur"}, {few, "{n} ayyurn"}, {other, "{n} ayyur"}]},
-        year = {pluralized, [{one, "{n} aseggas"}, {few, "{n} iseggasen"}, {other, "{n} aseggas"}]},
-        half = "{0} d uzgen",
+        day = {pluralized, [{one, "{n} ⴰⵙⵙ"}, {few, "{n} ⵓⵙⵙⴰⵏ"}, {other, "{n} ⴰⵙⵙ"}]},
+        week = {pluralized, [{one, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}, {few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"}, {other, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}]},
+        month = {pluralized, [{one, "{n} ⴰⵢⵢⵓⵔ"}, {few, "{n} ⴰⵢⵢⵓⵔⵏ"}, {other, "{n} ⴰⵢⵢⵓⵔ"}]},
+        year = {pluralized, [{one, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}, {few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"}, {other, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}]},
+        half = "{0} ⴷ ⵓⵣⴳⵏ",
         delimiter = ", ",
-        just_born = "Iɣ d illul",
-        stages = #stages{newborn = {neutral, "Iɣ d illul"}, infant = {neutral, "Llufan"}, toddler = {gendered, "Aḥenjir", "Taḥenjirt"}, child = {gendered, "Afrux", "Tafruxt"}, teenager = {gendered, "Aɛrim", "Taɛrimt"}, adult = {gendered, "Argaz", "Tamṭṭuṭ"}},
-        short = {just, #compactness_override{day = {just, {pluralized, [{one, "{n} ass"}, {few, "{n} ussan"}, {other, "{n} ass"}]}}, week = {just, {pluralized, [{one, "{n} imalass"}, {few, "{n} imalassn"}, {other, "{n} imalass"}]}}, month = {just, {pluralized, [{one, "{n} ayyur"}, {few, "{n} ayyurn"}, {other, "{n} ayyur"}]}}, year = {just, {pluralized, [{one, "{n} aseggas"}, {few, "{n} iseggasen"}, {other, "{n} aseggas"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
+        just_born = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+        stages = #stages{newborn = {neutral, "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"}, infant = {neutral, "ⵍⵍⵓⴼⴰⵏ"}, toddler = {gendered, "ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"}, child = {gendered, "ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"}, teenager = {gendered, "ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"}, adult = {gendered, "ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ"}},
+        short = {just, #compactness_override{day = {just, {pluralized, [{one, "{n} ⴰⵙⵙ"}, {few, "{n} ⵓⵙⵙⴰⵏ"}, {other, "{n} ⴰⵙⵙ"}]}}, week = {just, {pluralized, [{one, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}, {few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"}, {other, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}]}}, month = {just, {pluralized, [{one, "{n} ⴰⵢⵢⵓⵔ"}, {few, "{n} ⴰⵢⵢⵓⵔⵏ"}, {other, "{n} ⴰⵢⵢⵓⵔ"}]}}, year = {just, {pluralized, [{one, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}, {few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"}, {other, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n} ⴰⵙⵙ"}}, week = {just, {simple, "{n} ⵉⵎⵍ"}}, month = {just, {simple, "{n} ⴰⵢⵔ"}}, year = {just, {simple, "{n} ⴰⵙⴳ"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

@@ -2,6 +2,8 @@
 
 namespace sayableage;
 
+import os;
+
 let MAX_AGE_MONTHS = 6000;
 
 // ---- Date parsing and arithmetic ----
@@ -52,12 +54,33 @@ fn months_between(dob: Date, ref: Date) -> i64 {
     return months;
 }
 
-// Days and months elapsed from dob to as_of; false when either date is
+// Today's date. Goose's only clock is UTC, so this is the UTC date, not the
+// local one the other implementations use.
+fn today() -> Date {
+    var days = (time() / 86400.0) as i64;
+    var year = 1970;
+    loop {
+        let year_days = if days_in_month(year, 2) == 29 { 366 } else { 365 };
+        if days < year_days { break; }
+        days -= year_days;
+        year += 1;
+    }
+    var month = 1;
+    while days >= days_in_month(year, month) {
+        days -= days_in_month(year, month);
+        month += 1;
+    }
+    return Date { year, month, days + 1 };
+}
+
+// Days and months elapsed from dob to as_of (today when empty); false when either date is
 // invalid, as_of precedes dob, or the age exceeds MAX_AGE_MONTHS.
 fn elapsed(dob: u8[:], as_of: u8[:]) -> i64, i64, bool {
     let dob_date, ok_dob = parse_date(dob);
     guard ok_dob else { return 0, 0, false; }
-    let ref_date, ok_ref = parse_date(as_of);
+    var ref_date = today();
+    var ok_ref = true;
+    if as_of.len > 0 { ref_date, ok_ref = parse_date(as_of); }
     guard ok_ref else { return 0, 0, false; }
     let diff_days = julian_day(ref_date) - julian_day(dob_date);
     guard diff_days >= 0 else { return 0, 0, false; }

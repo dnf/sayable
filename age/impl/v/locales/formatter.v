@@ -1,5 +1,7 @@
 module locales
 
+import time
+
 const max_age_months = 6000
 
 struct AgeComponents {
@@ -184,7 +186,10 @@ fn parse_age(date_of_birth string, as_of string) ?AgeComponents {
 	if as_of.len > 0 {
 		ref_y, ref_m, ref_d = parse_date_parts(as_of) or { return none }
 	} else {
-		return none
+		today := time.now()
+		ref_y = today.year
+		ref_m = today.month
+		ref_d = today.day
 	}
 
 	diff_days := days_between(dob_y, dob_m, dob_d, ref_y, ref_m, ref_d)

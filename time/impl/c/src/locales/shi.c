@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_shi = {
     "shi",
     {
-        { "tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt" },
-        "nṣ n iḍ",
-        "tizwarnin",
-        { "{h}", "{h} d smmus tusdiqin", "{h} d mraw tusdiqin", "{h} d rrbɛ", "{h} d ɛcrin n tusdiqt", "{h} d xmsa u ɛcrin n tusdiqt", "{h} d uzgen", "{h} d xmsa u tlatin n tusdiqt", "{h} d ṛbɛin n tusdiqt", "{h} d xmsa u ṛbɛin n tusdiqt", "{h} d xmsin n tusdiqt", "{h} d xmsa u xmsin n tusdiqt" }
+        { "ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ", "ⵜⵉⵙ ⵙⵏⴰⵜ", "ⵜⵉⵙ ⴽⵕⴰⵟⵟ", "ⵜⵉⵙ ⴽⴽⵓⵥⵜ", "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ", "ⵜⵉⵙ ⵙⴹⵉⵙⵜ", "ⵜⵉⵙ ⵙⴰⵜ", "ⵜⵉⵙ ⵜⴰⵎⵜ", "ⵜⵉⵙ ⵜⵥⴰⵜ", "ⵜⵉⵙ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ" },
+        "ⵏⵚ ⵏ ⵉⴹ",
+        "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
+        { "{h}", "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ", "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ", "{h} ⴷ ⵔⵔⴱⵄ", "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵓⵣⴳⵏ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

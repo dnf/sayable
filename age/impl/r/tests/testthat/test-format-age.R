@@ -408,9 +408,21 @@ test_that("14.5 - Jan 31 to Jul 31", {
 # ================================================================
 # 15. Default asOf (current date)
 # ================================================================
-test_that("15.1, 15.2 - returns correct age with explicit as_of", {
-  expect_equal(sa$format_age("2020-01-01", "2025-06-15"), "5 years")
-  expect_equal(sa$format_age("2025-06-10", "2025-06-15"), "5 days")
+# The library reads today from the system clock and cannot be told otherwise, so the
+# inputs are derived from the real date instead of the canonical fixed dates.
+date_years_before_today <- function(years) {
+  today <- as.POSIXlt(Sys.Date())
+  today$year <- today$year - years
+  if (today$mon == 1 && today$mday == 29) today$mday <- 28L
+  format(as.Date(today), "%Y-%m-%d")
+}
+
+test_that("15.1 - five years before today, default as_of", {
+  expect_equal(sa$format_age(date_years_before_today(5)), "5 years")
+})
+
+test_that("15.2 - five days before today, default as_of", {
+  expect_equal(sa$format_age(format(Sys.Date() - 5, "%Y-%m-%d")), "5 days")
 })
 
 # ================================================================
@@ -569,16 +581,22 @@ test_that("22.3 - 45 years", {
 # ================================================================
 # 23. formatStage — default asOf
 # ================================================================
-test_that("23.1, 23.2, 23.3 - returns correct stage with explicit as_of", {
-  expect_equal(sa$format_stage("2025-06-15", "2025-06-15"), "Newborn")
-  expect_equal(sa$format_stage("2020-01-01", "2025-06-15"), "Child")
-  expect_equal(sa$format_stage("1980-01-01", "2025-06-15"), "Adult")
+test_that("23.1 - born today, default as_of", {
+  expect_equal(sa$format_stage(format(Sys.Date(), "%Y-%m-%d")), "Newborn")
+})
+
+test_that("23.2 - five years before today, default as_of", {
+  expect_equal(sa$format_stage(date_years_before_today(5)), "Child")
+})
+
+test_that("23.3 - 45 years before today, default as_of", {
+  expect_equal(sa$format_stage(date_years_before_today(45)), "Adult")
 })
 
 # ================================================================
 # 24. SayableAge class — English locale delegation
 # ================================================================
-test_that("24.1-24.7 - format_age delegates", {
+test_that("24.1, 24.2, 24.3, 24.4, 24.5, 24.6, 24.7 - format_age delegates", {
   expect_equal(sa$format_age("2025-06-15", "2025-06-15"), "Newborn")
   expect_equal(sa$format_age("2025-06-12", "2025-06-15"), "3 days")
   expect_equal(sa$format_age("2025-06-07", "2025-06-15"), "1 week, 1 day")
@@ -588,7 +606,7 @@ test_that("24.1-24.7 - format_age delegates", {
   expect_equal(sa$format_age("2018-06-15", "2025-06-15"), "7 years")
 })
 
-test_that("24.8-24.13 - format_stage delegates", {
+test_that("24.8, 24.9, 24.10, 24.11, 24.12, 24.13 - format_stage delegates", {
   expect_equal(sa$format_stage("2025-06-15", "2025-06-15"), "Newborn")
   expect_equal(sa$format_stage("2025-01-15", "2025-06-15"), "Infant")
   expect_equal(sa$format_stage("2024-06-15", "2025-06-15"), "Toddler")
@@ -605,7 +623,7 @@ test_that("24.14, 24.15 - returns NULL for invalid", {
 # ================================================================
 # 25. i18n — Spanish locale
 # ================================================================
-test_that("25.1-25.12 - Spanish locale format_age", {
+test_that("25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 25.10, 25.11, 25.12 - Spanish locale format_age", {
   es <- load_locale("es")
   pt <- sayable_age_new(es)
 
@@ -635,7 +653,7 @@ test_that("25.1-25.12 - Spanish locale format_age", {
   expect_equal(pt$format_age("2018-06-15", "2025-06-15"), "7 a\u00f1os")
 })
 
-test_that("25.13-25.18 - Spanish locale stage labels", {
+test_that("25.13, 25.14, 25.15, 25.16, 25.17, 25.18 - Spanish locale stage labels", {
   es <- load_locale("es")
   pt <- sayable_age_new(es)
 
@@ -837,6 +855,29 @@ test_that("30.2 - known locale fr", {
   expect_equal(loc$code, "fr")
 })
 
+# Registry lookup: NULL for a code without a locale file (case-sensitive on the variable name)
+lookup_locale <- function(code) {
+  locale_path <- file.path(.pkg_root, "locales", paste0(code, ".R"))
+  if (!file.exists(locale_path)) return(NULL)
+  env <- new.env(parent = baseenv())
+  source(locale_path, local = env)
+  var_name <- paste0("locale_", gsub("-", "_", code))
+  if (!exists(var_name, envir = env, inherits = FALSE)) return(NULL)
+  get(var_name, envir = env)
+}
+
+test_that("30.3 - unknown code", {
+  expect_null(lookup_locale("xx"))
+})
+
+test_that("30.4 - empty string", {
+  expect_null(lookup_locale(""))
+})
+
+test_that("30.5 - case-sensitive", {
+  expect_null(lookup_locale("EN"))
+})
+
 # ================================================================
 # Sections 31-33: weeks+days across month ends, half-year plurals, input validation
 # ================================================================
@@ -866,7 +907,7 @@ test_that("32.2 - Polish 5 is 'many'", {
 })
 
 test_that("32.3 - Tachelhit 6 is 'few'", {
-  expect_equal(sayable_age_new(load_locale("shi"))$format_age("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")
+  expect_equal(sayable_age_new(load_locale("shi"))$format_age("2005-06-08", "2012-06-07"), "6 \u2d49\u2d59\u2d33\u2d33\u2d6f\u2d30\u2d59\u2d4f \u2d37 \u2d53\u2d63\u2d33\u2d4f")
 })
 
 test_that("33.1 - February 30 doesn't exist", {
