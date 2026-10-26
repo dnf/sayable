@@ -10,17 +10,38 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        dc: [dmd-latest, ldc-latest]
+        dc: [dmd, ldc-latest]
+    env:
+      # dmd comes from its GitHub release, not downloads.dlang.org (which
+      # setup-dlang uses and which has outages lasting hours), checked against
+      # the SHA-256 GitHub publishes for the asset. To bump it, change both:
+      #   gh api repos/dlang/dmd/releases/tags/v<version> --jq '.assets[].digest'
+      DMD_VERSION: 2.113.0
+      DMD_SHA256: b342ab8bd40cc0c46407692b31d7cd69661ff01da686234f426949e881727294
     defaults:
       run:
         working-directory: age/impl/d
     steps:
       - uses: actions/checkout@v4
+      - name: Install dmd
+        if: matrix.dc == 'dmd'
+        working-directory: ${{ runner.temp }}
+        run: |
+          curl -fsSL --retry 3 -o dmd.tar.xz \
+            "https://github.com/dlang/dmd/releases/download/v${DMD_VERSION}/dmd.${DMD_VERSION}.linux.tar.xz"
+          echo "${DMD_SHA256}  dmd.tar.xz" | sha256sum --check --strict
+          tar -xJf dmd.tar.xz
+          echo "${RUNNER_TEMP}/dmd2/linux/bin64" >> "${GITHUB_PATH}"
+          echo "DC=dmd" >> "${GITHUB_ENV}"
+      # ldc comes from its GitHub release too.
       - uses: dlang-community/setup-dlang@v2
+        if: matrix.dc == 'ldc-latest'
         with:
           compiler: ${{ matrix.dc }}
-      - run: dub test
+      - name: Test age library
+        run: dub test
       - name: Test date library
         working-directory: date/impl/d
         run: dub test
