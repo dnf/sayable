@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace SayableDuration\Tests;
 
-use SayableDuration\Compactness;
-use SayableDuration\Locales\Locales;
-use SayableDuration\SayableDuration;
 use PHPUnit\Framework\TestCase;
+use SayableDuration\Compactness;
 
 use function SayableDuration\formatDuration;
 use function SayableDuration\formatSince;
 use function SayableDuration\formatUntil;
+
+use SayableDuration\Locales\Locales;
+use SayableDuration\SayableDuration;
 
 /**
  * Canonical test suite — test cases from config/tests.json.
@@ -272,16 +273,20 @@ final class FormatDurationTest extends TestCase
     public function test_iso_1_and_half_hours(): void
     {
         $sd = new SayableDuration(Locales::EN());
-        $this->assertSame("1\u{00BD} hours",
-            $sd->formatDurationIso('2025-01-15T10:00:00', '2025-01-15T11:30:00'));
+        $this->assertSame(
+            "1\u{00BD} hours",
+            $sd->formatDurationIso('2025-01-15T10:00:00', '2025-01-15T11:30:00'),
+        );
     }
 
     // 10.2
     public function test_iso_45_minutes(): void
     {
         $sd = new SayableDuration(Locales::EN());
-        $this->assertSame('45 minutes',
-            $sd->formatDurationIso('2025-01-15T10:00:00', '2025-01-15T10:45:00'));
+        $this->assertSame(
+            '45 minutes',
+            $sd->formatDurationIso('2025-01-15T10:00:00', '2025-01-15T10:45:00'),
+        );
     }
 
     // ================================================================
@@ -291,29 +296,37 @@ final class FormatDurationTest extends TestCase
     // 11.1
     public function test_since_just_now(): void
     {
-        $this->assertSame('just now',
-            formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:00'));
+        $this->assertSame(
+            'just now',
+            formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:00'),
+        );
     }
 
     // 11.2
     public function test_since_30_seconds_ago(): void
     {
-        $this->assertSame('30 seconds ago',
-            formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:30'));
+        $this->assertSame(
+            '30 seconds ago',
+            formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:30'),
+        );
     }
 
     // 11.3
     public function test_since_45_minutes_ago(): void
     {
-        $this->assertSame('45 minutes ago',
-            formatSince('2025-01-15T10:00:00', '2025-01-15T10:45:00'));
+        $this->assertSame(
+            '45 minutes ago',
+            formatSince('2025-01-15T10:00:00', '2025-01-15T10:45:00'),
+        );
     }
 
     // 11.4
     public function test_since_3_hours_ago(): void
     {
-        $this->assertSame('3 hours ago',
-            formatSince('2025-01-15T10:00:00', '2025-01-15T13:00:00'));
+        $this->assertSame(
+            '3 hours ago',
+            formatSince('2025-01-15T10:00:00', '2025-01-15T13:00:00'),
+        );
     }
 
     // ================================================================
@@ -323,22 +336,28 @@ final class FormatDurationTest extends TestCase
     // 12.1
     public function test_until_just_now(): void
     {
-        $this->assertSame('just now',
-            formatUntil('2025-01-15T10:00:00', '2025-01-15T10:00:00'));
+        $this->assertSame(
+            'just now',
+            formatUntil('2025-01-15T10:00:00', '2025-01-15T10:00:00'),
+        );
     }
 
     // 12.2
     public function test_until_in_20_minutes(): void
     {
-        $this->assertSame('in 20 minutes',
-            formatUntil('2025-01-15T10:20:00', '2025-01-15T10:00:00'));
+        $this->assertSame(
+            'in 20 minutes',
+            formatUntil('2025-01-15T10:20:00', '2025-01-15T10:00:00'),
+        );
     }
 
     // 12.3
     public function test_until_in_3_hours(): void
     {
-        $this->assertSame('in 3 hours',
-            formatUntil('2025-01-15T13:00:00', '2025-01-15T10:00:00'));
+        $this->assertSame(
+            'in 3 hours',
+            formatUntil('2025-01-15T13:00:00', '2025-01-15T10:00:00'),
+        );
     }
 
     // ================================================================
@@ -356,8 +375,10 @@ final class FormatDurationTest extends TestCase
     public function test_german_since_5_minutes(): void
     {
         $sd = new SayableDuration(Locales::DE());
-        $this->assertSame('vor 5 Minuten',
-            $sd->formatSince('2025-01-15T10:00:00', '2025-01-15T10:05:00'));
+        $this->assertSame(
+            'vor 5 Minuten',
+            $sd->formatSince('2025-01-15T10:00:00', '2025-01-15T10:05:00'),
+        );
     }
 
     // ================================================================
@@ -386,8 +407,10 @@ final class FormatDurationTest extends TestCase
     public function test_japanese_since_1_hour(): void
     {
         $sd = new SayableDuration(Locales::JA());
-        $this->assertSame("1\u{6642}\u{9593}\u{524D}",
-            $sd->formatSince('2025-01-15T10:00:00', '2025-01-15T11:00:00'));
+        $this->assertSame(
+            "1\u{6642}\u{9593}\u{524D}",
+            $sd->formatSince('2025-01-15T10:00:00', '2025-01-15T11:00:00'),
+        );
     }
 
     // ================================================================

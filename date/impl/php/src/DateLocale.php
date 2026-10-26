@@ -10,7 +10,7 @@ final class DateLocale
     /**
      * @param list<string> $months 12 month names
      * @param list<string> $weekdays 7 weekday names (0=Sunday)
-     * @param array<string, string> $dayFormatExceptions
+     * @param array<int|string, string> $dayFormatExceptions
      * @param list<string>|null $monthsInDate
      */
     public function __construct(

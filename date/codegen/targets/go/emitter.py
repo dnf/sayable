@@ -2,13 +2,24 @@
 
 from __future__ import annotations
 
+import re
+import unicodedata
+
 from codegen.banner import locale_source_comment, make_header
 
 HEADER = make_header("codegen/targets/go/emitter.py")
 
 
+def _escape_format_char(char: str) -> str:
+    """Escape invisible format characters (ZWNJ, ZWJ...) so they stay visible in source (staticcheck ST1018)."""
+    if unicodedata.category(char) != "Cf":
+        return char
+    return f"\\u{ord(char):04x}"
+
+
 def _quote(s: str) -> str:
     escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+    escaped = "".join(_escape_format_char(c) for c in escaped)
     return f'"{escaped}"'
 
 
@@ -40,6 +51,34 @@ def _opt_str(data: dict, key: str) -> str:
     if key in data:
         return _str_ptr(data[key])
     return "nil"
+
+
+_FIELD_LINE = re.compile(r"^(\t+)(\w+): +(.*)$")
+
+
+def _gofmt_align(lines: list[str]) -> list[str]:
+    """Align the values of consecutive single-line struct fields the way gofmt does."""
+    aligned: list[str] = []
+    run: list[tuple[str, str, str]] = []
+
+    def flush() -> None:
+        width = max((len(key) for _, key, _ in run), default=0)
+        for indent, key, value in run:
+            aligned.append(f"{indent}{key + ':':<{width + 1}} {value}")
+        run.clear()
+
+    for line in lines:
+        match = _FIELD_LINE.match(line)
+        if match and not match.group(3).endswith("{") and (not run or run[0][0] == match.group(1)):
+            run.append(match.groups())
+            continue
+        flush()
+        if match and not match.group(3).endswith("{"):
+            run.append(match.groups())
+        else:
+            aligned.append(line)
+    flush()
+    return aligned
 
 
 def emit_locale(data: dict) -> str:
@@ -126,7 +165,7 @@ def emit_locale(data: dict) -> str:
     lines.append("}")
     lines.append("")
 
-    return "\n".join(lines)
+    return "\n".join(_gofmt_align(lines))
 
 
 def emit_barrel(all_locales: list[dict]) -> str | None:

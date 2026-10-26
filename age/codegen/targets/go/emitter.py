@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import unicodedata
+
 from codegen.banner import locale_source_comment, make_header
 from codegen.targets.go.plural_rules import get_go_plural
 
@@ -14,8 +16,16 @@ _CAT_MAP = {
 }
 
 
+def _escape_format_char(char: str) -> str:
+    """Escape invisible format characters (ZWNJ, ZWJ...) so they stay visible in source (staticcheck ST1018)."""
+    if unicodedata.category(char) != "Cf":
+        return char
+    return f"\\u{ord(char):04x}"
+
+
 def _quote(s: str) -> str:
     escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+    escaped = "".join(_escape_format_char(c) for c in escaped)
     return f'"{escaped}"'
 
 

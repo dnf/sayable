@@ -31,13 +31,13 @@ module SayableTime
           45 => 'penkiolika iki {next_h}',
           50 => 'dešimt iki {next_h}',
           55 => 'penkios iki {next_h}',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

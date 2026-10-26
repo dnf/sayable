@@ -49,6 +49,6 @@
     ],
     "support": {
         "issues": "https://github.com/dnf/sayable/issues",
-        "source": "https://github.com/dnf/sayable/tree/main/src/php"
+        "source": "https://github.com/dnf/sayable/tree/main/age/impl/php"
     }
 }

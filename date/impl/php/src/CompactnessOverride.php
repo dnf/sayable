@@ -11,7 +11,7 @@ final class CompactnessOverride
      * @param list<string>|null $months
      * @param list<string>|null $monthsInDate
      * @param list<string>|null $weekdays
-     * @param array<string, string>|null $dayFormatExceptions
+     * @param array<int|string, string>|null $dayFormatExceptions
      */
     public function __construct(
         public readonly ?array $months = null,

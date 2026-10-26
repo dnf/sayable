@@ -31,13 +31,13 @@ module SayableTime
           45 => 'háromnegyed {next_h}',
           50 => 'tíz perc múlva {next_h}',
           55 => 'öt perc múlva {next_h}',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

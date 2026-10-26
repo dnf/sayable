@@ -31,13 +31,13 @@ module SayableTime
           45 => 'thaa {h} na ndagĩka mĩrongo ĩna na ithano',
           50 => 'thaa {h} na ndagĩka mĩrongo ĩtano',
           55 => 'thaa {h} na ndagĩka mĩrongo ĩtano na ithano',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, am_pm: ['Kiroko', 'Hwaĩ-inĩ'], format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, am_pm: ['Kiroko', 'Hwaĩ-inĩ'], format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

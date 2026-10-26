@@ -31,13 +31,13 @@ module SayableTime
           45 => '{h} koloko na maminiti makhumi ghanayi na vinkhondi',
           50 => '{h} koloko na maminiti makhumi ghankhondi',
           55 => '{h} koloko na maminiti makhumi ghankhondi na vinkhondi',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
       ),
     )
   end

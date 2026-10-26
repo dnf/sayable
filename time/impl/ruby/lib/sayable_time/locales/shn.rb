@@ -31,13 +31,13 @@ module SayableTime
           45 => '{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ',
           50 => '{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ',
           55 => '{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
       ),
     )
   end

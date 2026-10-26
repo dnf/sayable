@@ -31,13 +31,13 @@ module SayableTime
           45 => '{h}ໂມງ ສີ່ສິບຫ້ານາທີ',
           50 => '{h}ໂມງ ຫ້າສິບນາທີ',
           55 => '{h}ໂມງ ຫ້າສິບຫ້ານາທີ',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

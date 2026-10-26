@@ -31,13 +31,13 @@ module SayableTime
           45 => 'ihola {h} lemizuzu engamatshumi amane lanhlanu',
           50 => 'ihola {h} lemizuzu engamatshumi amahlanu',
           55 => 'ihola {h} lemizuzu engamatshumi amahlanu lanhlanu',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
       ),
     )
   end

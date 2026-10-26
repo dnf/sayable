@@ -72,7 +72,7 @@ export class SayableTime {
     const [hour, minute] = parsed;
 
     if (this.compactness !== 'normal' && this.shortClock) {
-      return this.formatDigital(hour, minute);
+      return this.formatDigital(hour, minute, this.shortClock);
     }
     return this.formatNatural(hour, minute);
   }
@@ -97,8 +97,7 @@ export class SayableTime {
     return pattern.replace('{h}', hName).replace('{next_h}', nextHName);
   }
 
-  private formatDigital(hour: number, minute: number): string {
-    const sc = this.shortClock!;
+  private formatDigital(hour: number, minute: number, sc: ShortClockConfig): string {
     const fmt = sc.format;
     if (sc.use24h) {
       return fmt.replace('{h}', String(hour)).replace('{mm}', String(minute).padStart(2, '0'));
@@ -110,7 +109,7 @@ export class SayableTime {
     return fmt
       .replace('{h}', String(h12))
       .replace('{mm}', String(minute).padStart(2, '0'))
-      .replace('{ampm}', ampmStr ?? '');
+      .replace('{ampm}', ampmStr);
   }
 }
 

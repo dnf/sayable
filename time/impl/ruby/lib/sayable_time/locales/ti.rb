@@ -31,13 +31,13 @@ module SayableTime
           45 => 'ርብዒ ጎደል {next_h}',
           50 => 'ዓሰርተ ጎደል {next_h}',
           55 => 'ሓሙሽተ ጎደል {next_h}',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

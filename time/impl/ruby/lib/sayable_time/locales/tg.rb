@@ -31,13 +31,13 @@ module SayableTime
           45 => 'соати {h} ва чилу панҷ дақиқа',
           50 => 'соати {h} ва панҷоҳ дақиқа',
           55 => 'соати {h} ва панҷоҳу панҷ дақиқа',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

@@ -27,7 +27,7 @@ module SayableDate
                                  pick(ovr, :day_format_exceptions, locale.day_format_exceptions)
                                end
 
-      @date_pattern          = pick(ovr, :date_pattern, locale.date_pattern)
+      @date_pattern = pick(ovr, :date_pattern, locale.date_pattern)
       @date_pattern_with_year = pick(ovr, :date_pattern_with_year, locale.date_pattern_with_year)
       @today               = pick(ovr, :today, locale.today)
       @tomorrow            = pick(ovr, :tomorrow, locale.tomorrow)
@@ -38,7 +38,7 @@ module SayableDate
     # Format a calendar date in locale-appropriate form (no year).
     # Returns nil if the input is nil, empty, or unparseable.
     def format_date(date)
-      parsed = parse_date(date)
+      parsed = Calendar.parse_date(date)
       return nil if parsed.nil?
 
       format_absolute(parsed[0], parsed[1], parsed[2], false)
@@ -47,7 +47,7 @@ module SayableDate
     # Format a calendar date with year in locale-appropriate form.
     # Returns nil if the input is nil, empty, or unparseable.
     def format_date_with_year(date)
-      parsed = parse_date(date)
+      parsed = Calendar.parse_date(date)
       return nil if parsed.nil?
 
       format_absolute(parsed[0], parsed[1], parsed[2], true)
@@ -59,15 +59,15 @@ module SayableDate
     def format_relative(date, as_of)
       return nil if date.nil? || date.empty? || as_of.nil? || as_of.empty?
 
-      parsed_date = parse_date(date)
-      parsed_as_of = parse_date(as_of)
+      parsed_date = Calendar.parse_date(date)
+      parsed_as_of = Calendar.parse_date(as_of)
       return nil if parsed_date.nil? || parsed_as_of.nil?
 
       dy, dm, dd = parsed_date
       ay, am, ad = parsed_as_of
 
-      date_jdn = to_jdn(dy, dm, dd)
-      asof_jdn = to_jdn(ay, am, ad)
+      date_jdn = Calendar.to_jdn(dy, dm, dd)
+      asof_jdn = Calendar.to_jdn(ay, am, ad)
       diff = date_jdn - asof_jdn
 
       # Today
@@ -94,26 +94,8 @@ module SayableDate
         return format_absolute(dy, dm, dd, include_year)
       end
 
-      # This weekday (+2 to +6)
-      if diff >= 2 && diff <= 6 && loc.this_weekday
-        dow = weekday(dy, dm, dd)
-        weekday_name = @weekdays[dow]
-        return loc.this_weekday.sub('{weekday}', weekday_name)
-      end
-
-      # Last weekday (-6 to -2)
-      if diff >= -6 && diff <= -2 && loc.last_weekday
-        dow = weekday(dy, dm, dd)
-        weekday_name = @weekdays[dow]
-        return loc.last_weekday.sub('{weekday}', weekday_name)
-      end
-
-      # Next weekday (+7 to +13)
-      if diff >= 7 && diff <= 13 && loc.next_weekday
-        dow = weekday(dy, dm, dd)
-        weekday_name = @weekdays[dow]
-        return loc.next_weekday.sub('{weekday}', weekday_name)
-      end
+      weekday_text = weekday_reference(diff, dy, dm, dd)
+      return weekday_text if weekday_text
 
       # Calendar fallback
       include_year = dy != ay
@@ -122,46 +104,22 @@ module SayableDate
 
     private
 
+    # "this Friday", "last Friday" or "next Friday" for dates within about two weeks.
+    def weekday_reference(diff, year, month, day)
+      template = if diff.between?(2, 6) then @locale.this_weekday
+                 elsif diff.between?(-6, -2) then @locale.last_weekday
+                 elsif diff.between?(7, 13) then @locale.next_weekday
+                 end
+      return nil unless template
+
+      template.sub('{weekday}', @weekdays[Calendar.weekday(year, month, day)])
+    end
+
     def pick(ovr, field, default)
       return default if ovr.nil?
 
       val = ovr.send(field)
       val.nil? ? default : val
-    end
-
-    # YYYY-MM-DD, optionally followed by T and a time (which is not read).
-    ISO_DATE = /\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T|\z)/
-
-    def parse_date(s)
-      return nil if s.nil?
-
-      match = ISO_DATE.match(s)
-      return nil if match.nil?
-
-      year, month, day = match.captures.map(&:to_i)
-      return nil unless month.between?(1, 12) && day.between?(1, days_in_month(year, month))
-
-      [year, month, day]
-    end
-
-    def days_in_month(year, month)
-      return 30 if [4, 6, 9, 11].include?(month)
-      return 31 unless month == 2
-
-      leap = (year % 4).zero? && (!(year % 100).zero? || (year % 400).zero?)
-      leap ? 29 : 28
-    end
-
-    def to_jdn(year, month, day)
-      a = (14 - month) / 12
-      y = year + 4800 - a
-      m = month + 12 * a - 3
-      day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045
-    end
-
-    def weekday(year, month, day)
-      jdn = to_jdn(year, month, day)
-      (jdn + 1) % 7
     end
 
     def format_absolute(year, month, day, include_year)

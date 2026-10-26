@@ -381,7 +381,10 @@ end)
 describe("Sections 18-20: short since, 500-year ceiling, timestamp validation", function()
     -- 18.1
     it("days and hours both kept", function()
-        assert.are.equal("lɔhɔnga 2, awa 14 taa gbɔyɔ", sd.new(sd.get_locale("men"), "short").format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16"))
+        assert.are.equal(
+            "lɔhɔnga 2, awa 14 taa gbɔyɔ",
+            sd.new(sd.get_locale("men"), "short").format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16")
+        )
     end)
 
     -- 19.1
@@ -411,7 +414,10 @@ describe("Sections 18-20: short since, 500-year ceiling, timestamp validation", 
 
     -- 20.1
     it("seconds are optional", function()
-        assert.are.equal("1½ hours", sd.new(sd.get_locale("en")).format_duration_iso("2025-01-15T10:00", "2025-01-15T11:30:00"))
+        assert.are.equal(
+            "1½ hours",
+            sd.new(sd.get_locale("en")).format_duration_iso("2025-01-15T10:00", "2025-01-15T11:30:00")
+        )
     end)
 
     -- 20.2

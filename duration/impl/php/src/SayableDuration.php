@@ -47,18 +47,33 @@ final class SayableDuration
             Compactness::Normal => null,
         };
 
-        $this->second = $ovr?->second ?? $locale->units->second;
-        $this->minute = $ovr?->minute ?? $locale->units->minute;
-        $this->hour = $ovr?->hour ?? $locale->units->hour;
-        $this->day = $ovr?->day ?? $locale->units->day;
-        $this->week = $ovr?->week ?? $locale->units->week;
-        $this->month = $ovr?->month ?? $locale->units->month;
-        $this->year = $ovr?->year ?? $locale->units->year;
-        $this->half = $ovr?->half ?? $locale->half;
-        $this->delimiter = $ovr?->delimiter ?? $locale->delimiter;
-        $this->justNow = $locale->justNow;
-        $this->ago = $ovr?->ago ?? $locale->ago;
-        $this->inFuture = $ovr?->inFuture ?? $locale->inFuture;
+        if ($ovr !== null) {
+            $this->second = $ovr->second ?? $locale->units->second;
+            $this->minute = $ovr->minute ?? $locale->units->minute;
+            $this->hour = $ovr->hour ?? $locale->units->hour;
+            $this->day = $ovr->day ?? $locale->units->day;
+            $this->week = $ovr->week ?? $locale->units->week;
+            $this->month = $ovr->month ?? $locale->units->month;
+            $this->year = $ovr->year ?? $locale->units->year;
+            $this->half = $ovr->half ?? $locale->half;
+            $this->delimiter = $ovr->delimiter ?? $locale->delimiter;
+            $this->justNow = $locale->justNow;
+            $this->ago = $ovr->ago ?? $locale->ago;
+            $this->inFuture = $ovr->inFuture ?? $locale->inFuture;
+        } else {
+            $this->second = $locale->units->second;
+            $this->minute = $locale->units->minute;
+            $this->hour = $locale->units->hour;
+            $this->day = $locale->units->day;
+            $this->week = $locale->units->week;
+            $this->month = $locale->units->month;
+            $this->year = $locale->units->year;
+            $this->half = $locale->half;
+            $this->delimiter = $locale->delimiter;
+            $this->justNow = $locale->justNow;
+            $this->ago = $locale->ago;
+            $this->inFuture = $locale->inFuture;
+        }
     }
 
     public function formatDuration(int $seconds): ?string

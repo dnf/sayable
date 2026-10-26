@@ -31,13 +31,13 @@ module SayableTime
           45 => 'saa {next_h} kasoro robo',
           50 => 'saa {next_h} kasoro dakika kumi',
           55 => 'saa {next_h} kasoro dakika tano',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

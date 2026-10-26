@@ -16,7 +16,7 @@ final class SayableDate
     /** @var list<string> */
     private readonly array $weekdays;
     private readonly string $dayFormat;
-    /** @var array<string, string> */
+    /** @var array<int|string, string> */
     private readonly array $dayFormatExceptions;
     private readonly string $datePattern;
     private readonly string $datePatternWithYear;
@@ -36,20 +36,33 @@ final class SayableDate
             Compactness::Normal => null,
         };
 
-        $this->months = $ovr?->months ?? $locale->months;
-        $this->monthsInDate = $ovr?->monthsInDate ?? $locale->monthsInDate;
-        $this->weekdays = $ovr?->weekdays ?? $locale->weekdays;
-        $this->dayFormat = $ovr?->dayFormat ?? $locale->dayFormat;
-        if ($ovr !== null && $ovr->dayFormat !== null && $ovr->dayFormatExceptions === null) {
+        if ($ovr === null) {
+            $this->months = $locale->months;
+            $this->monthsInDate = $locale->monthsInDate;
+            $this->weekdays = $locale->weekdays;
+            $this->dayFormat = $locale->dayFormat;
+            $this->dayFormatExceptions = $locale->dayFormatExceptions;
+            $this->datePattern = $locale->datePattern;
+            $this->datePatternWithYear = $locale->datePatternWithYear;
+            $this->today = $locale->today;
+            $this->tomorrow = $locale->tomorrow;
+            $this->yesterday = $locale->yesterday;
+            return;
+        }
+        $this->months = $ovr->months ?? $locale->months;
+        $this->monthsInDate = $ovr->monthsInDate ?? $locale->monthsInDate;
+        $this->weekdays = $ovr->weekdays ?? $locale->weekdays;
+        $this->dayFormat = $ovr->dayFormat ?? $locale->dayFormat;
+        if ($ovr->dayFormat !== null && $ovr->dayFormatExceptions === null) {
             $this->dayFormatExceptions = [];
         } else {
-            $this->dayFormatExceptions = $ovr?->dayFormatExceptions ?? $locale->dayFormatExceptions;
+            $this->dayFormatExceptions = $ovr->dayFormatExceptions ?? $locale->dayFormatExceptions;
         }
-        $this->datePattern = $ovr?->datePattern ?? $locale->datePattern;
-        $this->datePatternWithYear = $ovr?->datePatternWithYear ?? $locale->datePatternWithYear;
-        $this->today = $ovr?->today ?? $locale->today;
-        $this->tomorrow = $ovr?->tomorrow ?? $locale->tomorrow;
-        $this->yesterday = $ovr?->yesterday ?? $locale->yesterday;
+        $this->datePattern = $ovr->datePattern ?? $locale->datePattern;
+        $this->datePatternWithYear = $ovr->datePatternWithYear ?? $locale->datePatternWithYear;
+        $this->today = $ovr->today ?? $locale->today;
+        $this->tomorrow = $ovr->tomorrow ?? $locale->tomorrow;
+        $this->yesterday = $ovr->yesterday ?? $locale->yesterday;
     }
 
     public function formatDate(?string $date): ?string

@@ -29,7 +29,9 @@ local function to_jdn(year, month, day)
     local a = math.floor((14 - month) / 12)
     local y = year + 4800 - a
     local m = month + 12 * a - 3
-    return day + math.floor((153 * m + 2) / 5) + 365 * y + math.floor(y / 4) - math.floor(y / 100) + math.floor(y / 400) - 32045
+    local days_before_month = math.floor((153 * m + 2) / 5)
+    local leap_days = math.floor(y / 4) - math.floor(y / 100) + math.floor(y / 400)
+    return day + days_before_month + 365 * y + leap_days - 32045
 end
 
 local function weekday(year, month, day)

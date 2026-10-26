@@ -37,9 +37,9 @@ def _clock_override(clock: dict, indent: str) -> list[str]:
     fmt = clock.get("format", "{h}:{mm}")
 
     if am_pm:
-        lines.append(f"{indent}clock: ShortClockConfig.new(use24h: {use24h}, am_pm: [{_quote(am_pm[0])}, {_quote(am_pm[1])}], format: {_quote(fmt)})")
+        lines.append(f"{indent}clock: ShortClockConfig.new(use24h: {use24h}, am_pm: [{_quote(am_pm[0])}, {_quote(am_pm[1])}], format: {_quote(fmt)}),")
     else:
-        lines.append(f"{indent}clock: ShortClockConfig.new(use24h: {use24h}, format: {_quote(fmt)})")
+        lines.append(f"{indent}clock: ShortClockConfig.new(use24h: {use24h}, format: {_quote(fmt)}),")
 
     return lines
 
@@ -64,7 +64,7 @@ def emit_locale(data: dict) -> str:
     lines.append(f"        hours: {_str_array_12(clock['hours'])},")
     lines.append(f"        midnight: {_quote(clock['midnight'])},")
     lines.append(f"        noon: {_quote(clock['noon'])},")
-    lines.append(f"        patterns: {_patterns_hash(clock['patterns'])}")
+    lines.append(f"        patterns: {_patterns_hash(clock['patterns'])},")
     lines.append("      ),")
 
     # Short override

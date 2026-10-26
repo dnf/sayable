@@ -2,14 +2,24 @@
 
 from __future__ import annotations
 
+import unicodedata
+
 from codegen.banner import locale_source_comment, make_header
 
 HEADER = make_header("codegen/targets/go/emitter.py")
 
 
+def _escape_format_char(char: str) -> str:
+    """Escape invisible format characters (ZWNJ, ZWJ...) so they stay visible in source (staticcheck ST1018)."""
+    if unicodedata.category(char) != "Cf":
+        return char
+    return f"\\u{ord(char):04x}"
+
+
 def _quote(s: str) -> str:
     """Quote a string for Go."""
     escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+    escaped = "".join(_escape_format_char(c) for c in escaped)
     return f'"{escaped}"'
 
 

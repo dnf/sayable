@@ -2,6 +2,7 @@
 
 require_relative 'sayable_date/version'
 require_relative 'sayable_date/locale'
+require_relative 'sayable_date/calendar'
 require_relative 'sayable_date/formatter'
 
 # Auto-require all locale files

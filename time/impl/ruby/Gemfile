@@ -1,5 +1,11 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 
 gemspec
 
-gem "rubocop", "~> 1.85", group: :development
+group :development do
+  gem 'minitest', '~> 5.0'
+  gem 'rake', '~> 13.0'
+  gem 'rubocop', '~> 1.85'
+end
