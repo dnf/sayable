@@ -1,8 +1,0 @@
-{
-  "abbreviation": "rk",
-  "dependency": "raku",
-  "lintDependency": null,
-  "compiled": false,
-  "hasClean": true,
-  "hasLint": false
-}

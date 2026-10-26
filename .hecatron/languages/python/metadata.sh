@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Update Python package metadata
-source "$(dirname "$0")/../_common.sh"
+# _common.sh ships with hecatron, outside this repository.
+# shellcheck source=/dev/null
+source "${HECATRON_HOME}/languages/_common.sh"
 
 _sed_i 's/^description = "[^"]*"/description = "'"${PT_DESCRIPTION}"'"/' \
     "${ROOT}/age/impl/python/pyproject.toml"

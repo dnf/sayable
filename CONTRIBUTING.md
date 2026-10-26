@@ -37,41 +37,9 @@ just enable --all  # re-enable all disabled languages
 
 ### Single-language commands
 
-All commands below are prefixed with `just` (e.g., `just test cpp`):
+`just test <lang>`, `just build <lang>`, `just lint <lang>` and `just clean <lang>` act on one language across all four libraries (`-c age` limits a run to one library). `just test help` lists every language with its short alias (`cs` for C#, `hs` for Haskell, ...). `just build` and `just lint` cover only the languages that have a build or a separate linter; the others are interpreted, or are linted by building with warnings as errors.
 
-| Language   | test                           | build                            | lint                           | clean                            |
-| ---------- | ------------------------------ | -------------------------------- | ------------------------------ | -------------------------------- |
-| Ada        | `test ada`<br>`test ad`        | `build ada`<br>`build ad`        | 🛠️                             | `clean ada`<br>`clean ad`        |
-| C          | `test c`                       | `build c`                        | 🛠️                             | `clean c`                        |
-| C#         | `test csharp`<br>`test cs`     | `build csharp`<br>`build cs`     | 🛠️                             | `clean csharp`<br>`clean cs`     |
-| C++        | `test cpp`<br>`test c++`       | `build cpp`<br>`build c++`       | 🛠️                             | `clean cpp`<br>`clean c++`       |
-| Clojure    | `test clojure`<br>`test clj`   | ⚡                                | 🛠️                             | `clean clojure`<br>`clean clj`   |
-| COBOL      | `test cobol`<br>`test cb`      | `build cobol`<br>`build cb`      | 🛠️                             | `clean cobol`<br>`clean cb`      |
-| Dart       | `test dart`<br>`test dt`       | ⚡                                | `lint dart`<br>`lint dt`       | `clean dart`<br>`clean dt`       |
-| Elixir     | `test elixir`<br>`test ex`     | `build elixir`<br>`build ex`     | 🛠️                             | `clean elixir`<br>`clean ex`     |
-| Elm        | `test elm`<br>`test el`        | ⚡                                | 🛠️                             | `clean elm`<br>`clean el`        |
-| Erlang     | `test erlang`<br>`test erl`    | `build erlang`<br>`build erl`    | 🛠️                             | `clean erlang`<br>`clean erl`    |
-| F#         | `test fsharp`<br>`test fs`     | `build fsharp`<br>`build fs`     | 🛠️                             | `clean fsharp`<br>`clean fs`     |
-| Fortran    | `test fortran`<br>`test ft`    | `build fortran`<br>`build ft`    | 🛠️                             | `clean fortran`<br>`clean ft`    |
-| Gleam      | `test gleam`<br>`test gm`      | `build gleam`<br>`build gm`      | 🛠️                             | `clean gleam`<br>`clean gm`      |
-| Go         | `test go`                      | ⚡                                | `lint go`                      | ⚡                                |
-| Groovy     | `test groovy`<br>`test gy`     | `build groovy`<br>`build gy`     | 🛠️                             | `clean groovy`<br>`clean gy`     |
-| Haskell    | `test haskell`<br>`test hs`    | `build haskell`<br>`build hs`    | 🛠️                             | `clean haskell`<br>`clean hs`    |
-| Java       | `test java`                    | `build java`                     | 🛠️                             | `clean java`                     |
-| Kotlin     | `test kotlin`<br>`test kt`     | `build kotlin`<br>`build kt`     | 🛠️                             | `clean kotlin`<br>`clean kt`     |
-| Lua        | `test lua`<br>`test lu`        | ⚡                                | `lint lua`<br>`lint lu`        | ⚡                                |
-| OCaml      | `test ocaml`<br>`test ml`      | `build ocaml`<br>`build ml`      | 🛠️                             | `clean ocaml`<br>`clean ml`      |
-| Perl       | `test perl`<br>`test pl`       | ⚡                                | 🛠️                             | ⚡                                |
-| PHP        | `test php`                     | ⚡                                | `lint php`                     | ⚡                                |
-| Python     | `test python`<br>`test py`     | ⚡                                | `lint python`<br>`lint py`     | `clean python`<br>`clean py`     |
-| Ruby       | `test ruby`<br>`test rb`       | ⚡                                | `lint ruby`<br>`lint rb`       | ⚡                                |
-| Rust       | `test rust`<br>`test rs`       | `build rust`<br>`build rs`       | `lint rust`<br>`lint rs`       | `clean rust`<br>`clean rs`       |
-| Scala      | `test scala`<br>`test sc`      | `build scala`<br>`build sc`      | 🛠️                             | `clean scala`<br>`clean sc`      |
-| Swift      | `test swift`<br>`test sw`      | `build swift`<br>`build sw`      | 🛠️                             | `clean swift`<br>`clean sw`      |
-| TypeScript | `test typescript`<br>`test ts` | `build typescript`<br>`build ts` | `lint typescript`<br>`lint ts` | `clean typescript`<br>`clean ts` |
-| Zig        | `test zig`<br>`test zg`        | `build zig`<br>`build zg`        | 🛠️                             | `clean zig`<br>`clean zg`        |
-
-⚡ = interpreted, no build step needed · 🛠️ = linted via warnings-as-errors in build
+These commands are delegated to [hecatron](https://github.com/dnf/hecatron), which runs sayable's hooks in [`.hecatron/languages/<lang>/`](.hecatron/). See the [README](README.md#getting-started) to set it up.
 
 ### Logs
 

@@ -1,7 +1,7 @@
-"""Generated-file banner and locale source comment helpers.
+"""Generated-file banner and locale helpers shared by the four libraries' codegen.
 
-This is the canonical location. codegen/banner.py re-exports
-from here so existing emitter imports continue to work.
+Each <library>/codegen/banner.py re-exports from here. The banner matches the
+one hecatron puts on the files it generates (`hecatron banner`).
 """
 
 from __future__ import annotations
@@ -65,10 +65,7 @@ def locale_source_comment(locale_code: str, line_prefix: str = "// ", line_suffi
     return f"{line_prefix}Source: locales/{locale_code}.json{line_suffix}\n"
 
 
-LOCALES_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
-    "locales",
-)
+LOCALES_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "locales")
 # Fields every library shares; each library's own data is under its name.
 SHARED_LOCALE_FIELDS = ("code", "name", "pluralRule")
 

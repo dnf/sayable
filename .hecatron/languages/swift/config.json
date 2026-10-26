@@ -1,8 +1,0 @@
-{
-  "abbreviation": "sw",
-  "dependency": "swift",
-  "lintDependency": null,
-  "compiled": true,
-  "hasClean": true,
-  "hasLint": true
-}

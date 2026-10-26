@@ -1,8 +1,0 @@
-{
-  "abbreviation": null,
-  "dependency": "ldc2",
-  "lintDependency": null,
-  "compiled": true,
-  "hasClean": true,
-  "hasLint": false
-}

@@ -1,8 +1,0 @@
-{
-  "abbreviation": "ts",
-  "dependency": "npm",
-  "lintDependency": null,
-  "compiled": true,
-  "hasClean": true,
-  "hasLint": true
-}

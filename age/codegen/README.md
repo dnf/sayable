@@ -17,7 +17,7 @@ locales/                  # Repository root: one JSON file per language, shared 
 age/codegen/
   generate.py             # Orchestrator: loads the age section of each locale, runs emitters, writes files
   docgen.py               # `--sections`: the Age section of each docs/locales/<code>.md page
-  banner.py               # Re-exports the banner and locale loader from .hecatron/tools/codegen/util.py
+  banner.py               # Re-exports the banner and locale loader from tools/codegen_util.py
   locale_groups.py        # Named groups for `--locales` subsetting
   test_locale_groups.py   # Unit tests (`just test codegen`)
   align_tables.py         # Markdown table aligner (`just maintain docs`)
@@ -30,7 +30,7 @@ age/codegen/
 
 ## Canonical JSON format
 
-One file per language, `locales/<code>.json`, with the shared `code`, `name` and `pluralRule` and then a section per library. `load_component_locales("age")` in `.hecatron/tools/codegen/util.py` gives this generator the shared fields plus the `age` section, so emitters see one flat dict per locale. From `locales/fr.json`:
+One file per language, `locales/<code>.json`, with the shared `code`, `name` and `pluralRule` and then a section per library. `load_component_locales("age")` in `tools/codegen_util.py` gives this generator the shared fields plus the `age` section, so emitters see one flat dict per locale. From `locales/fr.json`:
 
 ```json
 {
@@ -140,7 +140,7 @@ Paths are relative to `age/impl/<lang>/`.
 
 Locale codes that are reserved words in a target (`is`, `or`) get a suffixed file or identifier name there (e.g. Mojo's `is_locale.mojo`).
 
-Every generated file begins with the 9-line `DO NOT EDIT` banner from `.hecatron/tools/codegen/util.py`, and each locale file carries a `Source: locales/<code>.json` comment.
+Every generated file begins with the 9-line `DO NOT EDIT` banner from `tools/codegen_util.py`, and each locale file carries a `Source: locales/<code>.json` comment.
 
 ## Usage
 

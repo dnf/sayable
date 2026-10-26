@@ -1,200 +1,105 @@
-# sayable-age task runner
-# Run `just --list` to see all available commands.
+# sayable task runner. Run `just --list` to see every recipe.
+#
+# Toolchains and per-language runs (test, lint, build, clean, install, doctor,
+# add, ...) are delegated to hecatron (https://github.com/dnf/hecatron), which
+# reads .hecatron/config.json and the hooks in .hecatron/languages/<lang>/.
+# Put a hecatron checkout's bin/ on PATH to use it (a Homebrew formula is
+# planned). The rest of this file is sayable's own: codegen, docs, the CLI
+# harness, fuzzing and benchmarks.
 
 python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "python" }
 
-# Run all test suites + codegen check
+# Run every language's tests (all four libraries) in parallel, or one target's; `just test cli [lang]` runs the CLI harness
 [group('test')]
-test *target:
+test *args:
     #!/usr/bin/env bash
     set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    _jflag=""; _sflag=""; _target=""; _prev=""
-    for _a in {{target}}; do
-        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
-        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
-        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
-        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _target="${_target:+$_target }$_a"
-    done
-    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just test [flags] [target]" \
-            "" \
-            "Run every language's native suites (all four libraries) in parallel, or one target's." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Tools:" \
-            "  cli        CLI integration tests" \
-            "" \
-            "  codegen    Run codegen unit tests only" \
-            "" \
-            "Flags:" \
-            "  -j VALUE   Set concurrency: integer, percentage (default 50%), or 'unlimited'" \
-            "  -s MODE    Visualization: scroll (default), full, or zoom" \
-            "" \
-            "Examples:" \
-            "  just test              Run all suites + codegen check in parallel" \
-            "  just test go           Run Go's age, date, duration and time suites" \
-            "  just test rs           Run Rust's suites (abbreviation)" \
-            "  just test cli          Run CLI integration tests" \
-            "  just test -j 4         Run all in parallel with 4 job slots" \
-            "  just test -j 2 -s full Run with 2 slots, full-width visualization"
-        exit 0
-    fi
-    if [ -z "$_target" ]; then
-        _tools="codegen"
-        args=("check")
-        for target in $_ALL_LANGS; do
-            [ -z "$target" ] && continue
-            if _is_disabled "$target"; then
-                args+=("disable:$target")
-            else
-                if _dep_available "$target"; then
-                    args+=("test $target")
-                else
-                    args+=("skip:$target")
-                fi
-            fi
-        done
-        args+=("---")
-        for target in $_tools; do
-            if _dep_available "$target"; then
-                args+=("test $target")
-            else
-                args+=("skip:$target")
-            fi
-        done
-        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} test "${args[@]}"
-    elif [ "$_target" = "cli" ]; then
-        args=()
-        for _cli_dir in cli/impl/*/; do
-            _cl=$(basename "$_cli_dir")
-            _cli_bin="${_cli_dir}sayable"
-            if [ ! -x "${_cli_bin}" ]; then
-                args+=("skip:${_cl}")
-                continue
-            fi
-            if ! _dep_available "${_cl}"; then
-                args+=("skip:${_cl}")
-                continue
-            fi
-            args+=("_test_cli ${_cl}")
-        done
-        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} cli "${args[@]}"
+    _args=({{args}})
+    if [ "${_args[0]:-}" = "cli" ]; then
+        just _test_clis ${_args[@]:1}
     else
-        name=$(_name "$_target")
-        if _is_removed "${name}"; then
-            echo "Language '${name}' is not added. Run 'just add ${name}' to add it." >&2
-            exit 1
-        fi
-        mkdir -p .logs/test
-        (
-            if [[ "$_target" = cli\ * ]]; then
-                _cli_lang="${_target#cli }"
-                _cli_lang=$(_name "$_cli_lang")
-                _cli_bin="cli/impl/${_cli_lang}/sayable"
-                if [ ! -x "${_cli_bin}" ]; then
-                    echo "error: ${_cli_bin} is not executable or not found" >&2
-                    exit 1
-                fi
-                bash cli/test-harness.sh "${_cli_bin}"
-            elif [ "$_target" = "codegen" ]; then
-                cd age && {{python}} -m unittest codegen.test_locale_groups -v
-            elif printf '%s\n' ${_ALL_LANGS} | grep -qx "${name}"; then
-                # Every library's native suite (age, date, duration, time)
-                bash .hecatron/tools/language/test.sh "${name}"
-            else
-                echo "Unknown target: $_target (try 'just test help')" >&2
-                exit 1
-            fi
-        ) 2>&1 | tee ".logs/test/$name.log"
+        hecatron test ${_args[@]+"${_args[@]}"}
     fi
 
-# Build all compiled targets (languages + tools)
+# Run every linter, or one language's (all four libraries); `just lint shell` runs shellcheck
+[group('lint')]
+lint *args:
+    hecatron lint {{args}}
+
+# Build every compiled language, or one language's four libraries
 [group('build')]
-build *target:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    _jflag=""; _sflag=""; _target=""; _prev=""
-    for _a in {{target}}; do
-        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
-        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
-        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
-        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _target="${_target:+$_target }$_a"
-    done
-    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just build [flags] [target]" \
-            "" \
-            "Build all compiled targets in parallel, or one target's four libraries." \
-            ""
-        _lang_grid "Languages" "$_COMPILED_LANGS"
-        printf '%s\n' \
-            "" \
-            "Tools:" \
-            "  cli        CLI tool (links against C library)" \
-            "" \
-            "  Targets without a build step: $(_lang_csv "$_NO_BUILD_LANGS")" \
-            "" \
-            "Flags:" \
-            "  -j VALUE   Set concurrency: integer, percentage (default 50%), or 'unlimited'" \
-            "  -s MODE    Visualization: scroll (default), full, or zoom" \
-            "" \
-            "Examples:" \
-            "  just build             Build all compiled languages + tools in parallel" \
-            "  just build rust        Build Rust only" \
-            "  just build c++         Build C++ (abbreviation)" \
-            "  just build cli         Build the CLI tool only" \
-            "  just build -j 2        Build all with 2 job slots"
-        exit 0
-    fi
-    if [ -z "$_target" ]; then
-        _tools="cli"
-        args=()
-        for target in $_COMPILED_LANGS; do
-            [ -z "$target" ] && continue
-            if _is_disabled "$target"; then
-                args+=("disable:$target")
-            else
-                if _dep_available "$target"; then
-                    args+=("build $target")
-                else
-                    args+=("skip:$target")
-                fi
-            fi
-        done
-        args+=("---")
-        for target in $_tools; do
-            if _dep_available "$target"; then
-                args+=("build $target")
-            else
-                args+=("skip:$target")
-            fi
-        done
-        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} build "${args[@]}"
-    else
-        name=$(_name "$_target")
-        if _is_removed "${name}"; then
-            echo "Language '${name}' is not added. Run 'just add ${name}' to add it." >&2
-            exit 1
-        fi
-        mkdir -p .logs/build
-        (
-            if [ "$_target" = "cli" ]; then
-                echo "No build step for CLI (language-specific builds handled by each implementation)"
-            elif [ -f ".hecatron/languages/${name}/build.sh" ]; then
-                # Every library (age, date, duration, time)
-                bash .hecatron/tools/language/build.sh "${name}"
-            else
-                echo "No build step for: $_target"
-            fi
-        ) 2>&1 | tee ".logs/build/$name.log"
-    fi
+build *args:
+    hecatron build {{args}}
+
+# Remove build artifacts (keeps installed dependencies)
+[group('build')]
+clean *args:
+    hecatron clean {{args}}
+
+# Clean, then build
+[group('build')]
+rebuild *args:
+    hecatron rebuild {{args}}
+
+# Clean, then test
+[group('test')]
+retest *args:
+    hecatron retest {{args}}
+
+# Install language toolchains (every one the project uses, or those named)
+[group('setup')]
+install *args:
+    hecatron install {{args}}
+
+# Uninstall language toolchains
+[group('setup')]
+uninstall *args:
+    hecatron uninstall {{args}}
+
+# Check every toolchain works; --fix runs installers to repair
+[group('setup')]
+doctor *args:
+    hecatron doctor {{args}}
+
+# Onboarding: status table and install menu
+[group('setup')]
+get-started *args:
+    hecatron get-started {{args}}
+
+# Skip languages in parallel runs, for you only
+[group('setup')]
+disable *args:
+    hecatron disable {{args}}
+
+# Re-enable disabled languages
+[group('setup')]
+enable *args:
+    hecatron enable {{args}}
+
+# Add languages to the project
+[group('manage')]
+add *args:
+    hecatron add {{args}}
+
+# Remove languages from the project
+[group('manage')]
+remove *args:
+    hecatron remove {{args}}
+
+# List the project's languages (--all: every language hecatron knows)
+[group('manage')]
+list *args:
+    hecatron list {{args}}
+
+# Regenerate age/Dockerfile from each language's snippet
+[group('codegen')]
+dockerfile:
+    hecatron dockerfile
+
+# Update project metadata across all manifests
+[group('codegen')]
+metadata:
+    hecatron metadata
 
 # Generate locale source files and documentation from canonical JSON
 [group('codegen')]
@@ -258,24 +163,16 @@ check:
     (cd duration && {{python}} -m codegen.generate --check)
     (cd time && {{python}} -m codegen.generate --check)
     {{python}} tools/generate_locale_docs.py --check
-    {{python}} .hecatron/tools/codegen/dockerfile.py --check
+    hecatron check
     {{python}} tools/generate_compatibility.py --check
-    {{python}} tools/check_workflow_components.py
     {{python}} tools/check_test_ids.py
     uv run --with geopandas --with matplotlib {{python}} tools/geography/generate.py --check
-
-# Generate Dockerfile from per-language snippets
-[group('codegen')]
-dockerfile:
-    {{python}} .hecatron/tools/codegen/dockerfile.py
 
 # Show or set the library version across all implementations
 [group('codegen')]
 version *ver:
     #!/usr/bin/env bash
     set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-
     ver="{{ver}}"
     if [ -z "${ver}" ]; then
         {{python}} -c "import json; print(json.load(open('age/config/version.json'))['version'])"
@@ -298,12 +195,8 @@ version *ver:
     printf '{\n  "version": "%s"\n}\n' "${ver}" > age/config/version.json
     echo "  updated age/config/version.json"
 
-    # 2. Update all language implementations via their installer scripts
-    for lang in ${_ALL_LANGS}; do
-        [ -z "${lang}" ] && continue
-        bash ".hecatron/languages/${lang}/version.sh" "${ver}"
-        echo "  updated ${lang}"
-    done
+    # 2. Update every language's implementation (each one's version.sh hook)
+    hecatron version "${ver}"
 
     # 3. Regenerate C header (uses updated emitter.py)
     (cd age && {{python}} -m codegen.generate)
@@ -330,236 +223,7 @@ version *ver:
     echo "Done. Version is now ${ver}."
     echo "Run 'just test' to verify, then commit."
 
-# Update project metadata across all manifests
-[group('codegen')]
-metadata:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    bash .hecatron/tools/metadata/set.sh
-
-# Run all available linters
-[group('lint')]
-lint *target:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    _jflag=""; _sflag=""; _target=""; _prev=""
-    for _a in {{target}}; do
-        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
-        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
-        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
-        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _target="${_target:+$_target }$_a"
-    done
-    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just lint [flags] [target]" \
-            "" \
-            "Run all linters in parallel, or a single target's linter." \
-            ""
-        _lang_grid "Languages with separate linters" "$_LINT_LANGS"
-        printf '%s\n' \
-            "" \
-            "Tools:" \
-            "  cli        Warnings-as-errors in build" \
-            "  shell      shellcheck on every shell script" \
-            "" \
-            "  Other languages use warnings-as-errors in their build step (no separate linter)." \
-            "" \
-            "Flags:" \
-            "  -j VALUE   Set concurrency: integer, percentage (default 50%), or 'unlimited'" \
-            "  -s MODE    Visualization: scroll (default), full, or zoom" \
-            "" \
-            "Examples:" \
-            "  just lint              Run every linter in parallel" \
-            "  just lint python       Run Python linter only (ruff + pyright)" \
-            "  just lint rs           Run Rust linter (clippy, abbreviation)" \
-            "  just lint -j 3         Run all with 3 job slots"
-        exit 0
-    fi
-    if [ -z "$_target" ]; then
-        _dep() { _lint_dep "$@"; }
-        args=()
-        for target in $_LINT_LANGS; do
-            [ -z "$target" ] && continue
-            if _is_disabled "$target"; then
-                args+=("disable:$target")
-            else
-                if _dep_available "$target"; then
-                    args+=("lint $target")
-                else
-                    args+=("skip:$target")
-                fi
-            fi
-        done
-        args+=("---")
-        if command -v shellcheck >/dev/null 2>&1; then
-            args+=("lint shell")
-        else
-            args+=("skip:shell")
-        fi
-        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} lint "${args[@]}"
-    else
-        name=$(_name "$_target")
-        if _is_removed "${name}"; then
-            echo "Language '${name}' is not added. Run 'just add ${name}' to add it." >&2
-            exit 1
-        fi
-        mkdir -p .logs/lint
-        (
-            if [ "$_target" = "shell" ]; then
-                bash .hecatron/tools/lint/shellcheck.sh
-            elif [ "$_target" = "cli" ]; then
-                echo "CLI uses warnings-as-errors in build (no separate linter)"
-            elif [ -f ".hecatron/languages/${name}/lint.sh" ]; then
-                # Every library (age, date, duration, time)
-                bash .hecatron/tools/language/lint.sh "${name}"
-            elif printf '%s\n' ${_ALL_LANGS} | grep -qx "${name}"; then
-                echo "${name} has no separate linter: its build treats warnings as errors (just test ${name})"
-            else
-                echo "Unknown target: $_target (try 'just lint help')" >&2
-                exit 1
-            fi
-        ) 2>&1 | tee ".logs/lint/$name.log"
-    fi
-
-# Remove build artifacts (keeps installed dependencies)
-[group('build')]
-clean *target:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    _jflag=""; _sflag=""; _target=""; _prev=""
-    for _a in {{target}}; do
-        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
-        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
-        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
-        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _target="${_target:+$_target }$_a"
-    done
-    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just clean [flags] [target]" \
-            "" \
-            "Remove build artifacts for all targets in parallel, or one target's (every library)." \
-            "Keeps installed dependencies (node_modules, .venv, etc.)." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Tools:" \
-            "  cli        CLI build artifacts" \
-            "" \
-            "  codegen    Clean codegen __pycache__ directories" \
-            "" \
-            "Flags:" \
-            "  -j VALUE   Set concurrency: integer, percentage (default 50%), or 'unlimited'" \
-            "  -s MODE    Visualization: scroll (default), full, or zoom" \
-            "" \
-            "Examples:" \
-            "  just clean             Clean all targets in parallel" \
-            "  just clean rust        Clean Rust's age, date, duration and time artifacts" \
-            "  just clean ts          Clean TypeScript (abbreviation)" \
-            "  just clean -j 4        Clean all with 4 job slots"
-        exit 0
-    fi
-    if [ -z "$_target" ]; then
-        _tools="cli"
-        args=()
-        for target in $_CLEAN_LANGS; do
-            [ -z "$target" ] && continue
-            args+=("clean $target")
-        done
-        args+=("---")
-        for target in $_tools codegen; do
-            args+=("clean $target")
-        done
-        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} clean "${args[@]}"
-    else
-        _cname=$(_name "$_target")
-        if _is_removed "${_cname}"; then
-            echo "Language '${_cname}' is not added. Run 'just add ${_cname}' to add it." >&2
-            exit 1
-        fi
-        if [ "$_target" = "cli" ]; then
-            echo "No build artifacts for: cli"
-        elif [ "$_target" = "codegen" ]; then
-            find age/codegen date/codegen duration/codegen time/codegen tools .hecatron \
-                -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
-        elif [ -f ".hecatron/languages/${_cname}/clean.sh" ]; then
-            # Every library's build artifacts (age, date, duration, time)
-            bash .hecatron/tools/language/clean.sh "${_cname}"
-        elif printf '%s\n' ${_ALL_LANGS} | grep -qx "${_cname}"; then
-            echo "No build artifacts for: ${_cname}"
-        else
-            echo "Unknown target: $_target (try 'just clean help')" >&2
-            exit 1
-        fi
-    fi
-
-# Install language toolchains (all if no args, or specific languages)
-[group('setup')]
-install *langs:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-
-    langs="{{langs}}"
-    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just install [language ...]" \
-            "" \
-            "Install language toolchains. With no arguments, installs all." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Examples:" \
-            "  just install           Install every language toolchain" \
-            "  just install go rust   Install Go and Rust only" \
-            "  just install rs        Install Rust (abbreviation)"
-        exit 0
-    fi
-    {{python}} .hecatron/tools/language/install.py $langs
-
-# Check every language's toolchain (or the ones named) and say how to repair it
-[group('setup')]
-doctor *langs:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    _args=({{langs}})
-    if [ "${_args[0]:-}" = "help" ] || [ "${_args[0]:-}" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just doctor [--fix] [language ...]" \
-            "" \
-            "Check that each language's toolchain works: its build and lint tools run," \
-            "and known breakages are absent (a linter built with an older Go, luacheck on" \
-            "Lua 5.5, a moved virtualenv, a missing test package...). With no languages," \
-            "checks every added, enabled one." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Flags:" \
-            "  --fix      Run each unhealthy language's installer, then check it again" \
-            "" \
-            "Examples:" \
-            "  just doctor            Check every toolchain" \
-            "  just doctor go lua     Check Go and Lua only" \
-            "  just doctor --fix      Check everything and repair what's broken"
-        exit 0
-    fi
-    for _a in ${_args[@]+"${_args[@]}"}; do
-        [ "${_a}" = "--fix" ] && continue
-        if ! _check "${_a}" >/dev/null 2>&1; then
-            echo "Unknown language: ${_a} (try 'just doctor help')" >&2
-            exit 1
-        fi
-    done
-    bash .hecatron/tools/language/doctor.sh ${_args[@]+"${_args[@]}"}
-
-# Run CLI test harness (all languages or specify one: just cli python)
+# Run the CLI harness (all CLIs, or one): `just cli go` is `just test cli go`
 [group('test')]
 cli *lang:
     just test cli {{lang}}
@@ -575,13 +239,36 @@ fuzz *args:
     fi
     {{python}} cli/fuzz.py ${_args[@]+"${_args[@]}"}
 
-# Internal: test a single CLI language
+# Internal: run the CLI harness for every CLI in parallel, or the ones named
+[private]
+_test_clis *langs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    eval "$(hecatron env)"
+    _langs=({{langs}})
+    if [ "${#_langs[@]}" -gt 0 ]; then
+        for _cl in "${_langs[@]}"; do just _test_cli "$(_name "${_cl}")"; done
+        exit 0
+    fi
+    _jobs=()
+    for _cli_dir in cli/impl/*/; do
+        _cl=$(basename "${_cli_dir}")
+        if [ ! -x "${_cli_dir}sayable" ] || ! _dep_available "${_cl}"; then
+            _jobs+=("skip:${_cl}")
+        else
+            _jobs+=("_test_cli ${_cl}")
+        fi
+    done
+    hecatron parallel cli "${_jobs[@]}"
+
+# Internal: run the CLI harness for one CLI
 [private]
 _test_cli lang:
     #!/usr/bin/env bash
     set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    if [ "{{lang}}" = "ada" ]; then _ada_env; fi
+    eval "$(hecatron env)"
+    # The language's own toolchain directories (e.g. Ada's GNAT under Alire)
+    _use_lang_path "{{lang}}"
     _cli_bin="cli/impl/{{lang}}/sayable"
     if [ ! -x "${_cli_bin}" ]; then
         echo "error: ${_cli_bin} is not executable or not found" >&2
@@ -589,311 +276,12 @@ _test_cli lang:
     fi
     bash cli/test-harness.sh "${_cli_bin}"
 
-# Internal: clean then build a single target
-[private]
-_rebuild target:
-    just clean {{target}} && just build {{target}}
-
-# Internal: clean then test a single target
-[private]
-_retest target:
-    just clean {{target}} && just test {{target}}
-
-# Clean then build all compiled targets, or a single target
-[group('build')]
-rebuild *target:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    _jflag=""; _sflag=""; _target=""; _prev=""
-    for _a in {{target}}; do
-        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
-        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
-        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
-        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _target="${_target:+$_target }$_a"
-    done
-    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just rebuild [flags] [target]" \
-            "" \
-            "Clean then build all compiled targets in parallel, or a single target." \
-            ""
-        _lang_grid "Languages" "$_COMPILED_LANGS"
-        printf '%s\n' \
-            "" \
-            "Tools:" \
-            "  cli        CLI tool (links against C library)" \
-            "" \
-            "Flags:" \
-            "  -j VALUE   Set concurrency: integer, percentage (default 50%), or 'unlimited'" \
-            "  -s MODE    Visualization: scroll (default), full, or zoom" \
-            "" \
-            "Examples:" \
-            "  just rebuild           Clean + build all compiled targets in parallel" \
-            "  just rebuild rust      Clean + build Rust only" \
-            "  just rebuild -j 2      Clean + build all with 2 job slots"
-        exit 0
-    fi
-    if [ -z "$_target" ]; then
-        _tools="cli"
-        args=()
-        for target in $_COMPILED_LANGS; do
-            [ -z "$target" ] && continue
-            if _is_disabled "$target"; then
-                args+=("disable:$target")
-            else
-                if _dep_available "$target"; then
-                    args+=("_rebuild $target")
-                else
-                    args+=("skip:$target")
-                fi
-            fi
-        done
-        args+=("---")
-        for target in $_tools; do
-            if _dep_available "$target"; then
-                args+=("_rebuild $target")
-            else
-                args+=("skip:$target")
-            fi
-        done
-        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} rebuild "${args[@]}"
-    else
-        name=$(_name "$_target")
-        just clean "$_target" && just build "$_target"
-    fi
-
-# Clean then test all targets, or a single target
-[group('test')]
-retest *target:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-    _jflag=""; _sflag=""; _target=""; _prev=""
-    for _a in {{target}}; do
-        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
-        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
-        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
-        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _target="${_target:+$_target }$_a"
-    done
-    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just retest [flags] [target]" \
-            "" \
-            "Clean then test all targets in parallel, or a single target." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Tools:" \
-            "  cli        CLI integration tests" \
-            "" \
-            "Flags:" \
-            "  -j VALUE   Set concurrency: integer, percentage (default 50%), or 'unlimited'" \
-            "  -s MODE    Visualization: scroll (default), full, or zoom" \
-            "" \
-            "Examples:" \
-            "  just retest            Clean + test all targets in parallel" \
-            "  just retest go         Clean + test Go only" \
-            "  just retest -j 4       Clean + test all with 4 job slots"
-        exit 0
-    fi
-    if [ -z "$_target" ]; then
-        _tools="codegen"
-        args=("check")
-        for target in $_ALL_LANGS; do
-            [ -z "$target" ] && continue
-            if _is_disabled "$target"; then
-                args+=("disable:$target")
-            else
-                if _dep_available "$target"; then
-                    args+=("_retest $target")
-                else
-                    args+=("skip:$target")
-                fi
-            fi
-        done
-        args+=("---")
-        for target in $_tools; do
-            if _dep_available "$target"; then
-                args+=("_retest $target")
-            else
-                args+=("skip:$target")
-            fi
-        done
-        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} retest "${args[@]}"
-    else
-        if [ "$_target" = "check" ]; then
-            just check
-        elif [ "$_target" = "codegen" ]; then
-            just test codegen
-        else
-            just clean "$_target" && just test "$_target"
-        fi
-    fi
-
-# Interactive onboarding: show project info, installed languages, and install menu
-[group('setup')]
-get-started *args:
-    @bash .hecatron/tools/onboarding/get-started.sh {{args}}
-
-# Uninstall language toolchains
-[group('setup')]
-uninstall *langs:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-
-    langs="{{langs}}"
-    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just uninstall <language> [language ...]" \
-            "" \
-            "Uninstall language toolchains." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Examples:" \
-            "  just uninstall go rust   Uninstall Go and Rust" \
-            "  just uninstall rs        Uninstall Rust (abbreviation)"
-        exit 0
-    fi
-    {{python}} .hecatron/tools/language/uninstall.py $langs
-
-# Temporarily disable languages from parallel runs (test, build, lint, etc.)
-[group('setup')]
-disable *langs:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-
-    langs="{{langs}}"
-    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just disable <language> [language ...]" \
-            "" \
-            "Temporarily disable languages from parallel runs (test, build, lint, etc.)." \
-            "Disabled languages show as orange '⊘ disabled' in runner output." \
-            "Does not affect single-language runs, clean, install, or uninstall." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Examples:" \
-            "  just disable haskell ada   Disable Haskell and Ada" \
-            "  just disable hs            Disable Haskell (abbreviation)"
-        if [ -n "${_DISABLED_LANGS}" ]; then
-            printf '\n%s\n' "Currently disabled:"
-            while read -r _l; do
-                [ -n "${_l}" ] && printf '  %s\n' "${_l}"
-            done <<< "${_DISABLED_LANGS}"
-        fi
-        exit 0
-    fi
-    {{python}} .hecatron/tools/language/disable.py $langs
-
-# Re-enable previously disabled languages
-[group('setup')]
-enable *langs:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
-
-    langs="{{langs}}"
-    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just enable <language> [language ...] | --all" \
-            "" \
-            "Re-enable previously disabled languages." \
-            ""
-        _lang_grid "Languages" "$_ALL_LANGS"
-        printf '%s\n' \
-            "" \
-            "Flags:" \
-            "  --all      Re-enable all disabled languages" \
-            "" \
-            "Examples:" \
-            "  just enable haskell       Re-enable Haskell" \
-            "  just enable hs            Re-enable Haskell (abbreviation)" \
-            "  just enable --all         Re-enable everything"
-        if [ -n "${_DISABLED_LANGS}" ]; then
-            printf '\n%s\n' "Currently disabled:"
-            while read -r _l; do
-                [ -n "${_l}" ] && printf '  %s\n' "${_l}"
-            done <<< "${_DISABLED_LANGS}"
-        fi
-        exit 0
-    fi
-    {{python}} .hecatron/tools/language/enable.py $langs
-
-# Add language(s) to the project's active set
-[group('manage')]
-add *langs:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    if [ -z "{{langs}}" ] || [ "{{langs}}" = "help" ] || [ "{{langs}}" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just add <language> [language...]" \
-            "" \
-            "Add language(s) to the project's active set." \
-            "Abbreviations are accepted." \
-            "" \
-            "Examples:" \
-            "  just add go" \
-            "  just add rs py ts"
-        exit 0
-    fi
-    {{python}} .hecatron/tools/language/add.py {{langs}}
-
-# Remove language(s) from the project's active set
-[group('manage')]
-remove *langs:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    if [ -z "{{langs}}" ] || [ "{{langs}}" = "help" ] || [ "{{langs}}" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just remove <language> [language...]" \
-            "" \
-            "Remove language(s) from the project's active set." \
-            "Abbreviations are accepted." \
-            "" \
-            "Examples:" \
-            "  just remove go" \
-            "  just remove rs py ts"
-        exit 0
-    fi
-    {{python}} .hecatron/tools/language/remove.py {{langs}}
-
-# List project languages
-[group('manage')]
-list *what:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    if [ "{{what}}" = "help" ] || [ "{{what}}" = "--help" ]; then
-        printf '%s\n' \
-            "Usage: just list languages [--all]" \
-            "" \
-            "List active project languages. Use --all to see all known languages."
-        exit 0
-    fi
-    if [ "{{what}}" = "languages" ] || [ "{{what}}" = "langs" ]; then
-        {{python}} .hecatron/tools/language/list.py
-    elif [ "{{what}}" = "languages --all" ] || [ "{{what}}" = "langs --all" ]; then
-        {{python}} .hecatron/tools/language/list.py --all
-    else
-        echo "Usage: just list languages [--all]" >&2
-        exit 1
-    fi
-
 # Run benchmarks across all or individual language implementations
 [group('benchmark')]
 benchmark type="cpu" *target:
     #!/usr/bin/env bash
     set -euo pipefail
-    source .hecatron/tools/language/helpers.sh
+    eval "$(hecatron env)"
     # Benchmark-eligible languages (all except elm — no native timing primitives)
     _BENCH_LANGS=$(echo "$_ALL_LANGS" | grep -vx elm)
     # If type looks like a flag, treat it as part of target with default type (cpu)
@@ -955,7 +343,7 @@ benchmark type="cpu" *target:
                     args+=("skip:$lang")
                 fi
             done <<< "$_COMPILED_LANGS"
-            .hecatron/tools/runner/run-parallel.sh -j "${_jflag}" -n "${_nflag}" ${_sflag:+-s "${_sflag}"} benchmark "${args[@]}"
+            hecatron parallel -j "${_jflag}" -n "${_nflag}" ${_sflag:+-s "${_sflag}"} benchmark "${args[@]}"
         else
             name=$(_name "$_target")
             if ! echo "$_COMPILED_LANGS" | grep -qx "$name"; then
@@ -1022,7 +410,7 @@ benchmark type="cpu" *target:
                 args+=("skip:$lang")
             fi
         done <<< "$_BENCH_LANGS"
-        .hecatron/tools/runner/run-parallel.sh -j "${_jflag}" -n "${_nflag}" ${_sflag:+-s "${_sflag}"} benchmark "${args[@]}"
+        hecatron parallel -j "${_jflag}" -n "${_nflag}" ${_sflag:+-s "${_sflag}"} benchmark "${args[@]}"
     else
         name=$(_name "$_target")
         mkdir -p .logs/benchmark

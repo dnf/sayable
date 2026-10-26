@@ -19,7 +19,7 @@ age/
   codegen/
     generate.py            # Codegen orchestrator: locales/*.json (age section) -> all 51 languages
     docgen.py              # `--sections`: each locale's Age section for docs/locales/<code>.md
-    banner.py              # Re-exports the DO NOT EDIT banner and locale loader from .hecatron/tools/codegen/util.py
+    banner.py              # Re-exports the DO NOT EDIT banner and locale loader from tools/codegen_util.py
     locale_groups.py       # Named locale groups for `--locales` subsetting
     align_tables.py        # Markdown table aligner (`just maintain docs`)
     README.md              # How the generator works

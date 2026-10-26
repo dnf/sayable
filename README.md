@@ -71,23 +71,32 @@ See the [locale coverage maps](docs/geography/README.md) for a visual breakdown 
 
 ### Getting started
 
-Develop and test natively on macOS/Linux or inside a Docker container.
-
-#### Docker (no local toolchain setup)
+Develop and test natively on macOS/Linux or inside a Docker container. Either
+way you need [`just`](https://github.com/casey/just) and
+[hecatron](https://github.com/dnf/hecatron), the separate tool that installs,
+checks and repairs each language's toolchain and runs the per-language
+commands. Sayable's side of it is [`.hecatron/`](.hecatron/): the project
+config and each language's test, lint, build and clean hooks. Until hecatron
+has a Homebrew formula, use a checkout:
 
 ```bash
-./.hecatron/tools/docker/test.sh          # build image + run all tests
-./.hecatron/tools/docker/test.sh bash     # interactive shell inside the container
+brew install just                # or your package manager's just
+git clone https://github.com/dnf/hecatron ~/hecatron
+export PATH="${HOME}/hecatron/bin:${PATH}"   # add to your shell profile
 ```
 
 #### Native setup
 
 ```bash
-# macOS (uses Homebrew)
-./.hecatron/tools/bootstrap/macos.sh
+hecatron bootstrap       # base packages + every language toolchain (macOS or Ubuntu/Debian)
+hecatron doctor          # check every toolchain works; --fix repairs
+```
 
-# Ubuntu / Debian
-./.hecatron/tools/bootstrap/linux.sh
+#### Docker (no local toolchains)
+
+```bash
+./tools/docker-test.sh          # build the image (age/Dockerfile) and run every test suite
+./tools/docker-test.sh bash     # interactive shell inside the container
 ```
 
 Install or uninstall individual languages:
@@ -105,9 +114,12 @@ A top-level [`justfile`](https://github.com/casey/just) provides a single entry 
 
 ```bash
 just test                # run all test suites + codegen check
-just test go             # run one language's tests
+just test go             # one language's tests, all four libraries
+just test go -c age      # one language, one library
+just test cli            # canonical tests through every language's CLI
 just build               # build all compiled languages
 just lint                # run all linters
+just doctor              # check every toolchain works (--fix repairs)
 just generate locales    # regenerate locale files from canonical JSON
 just check               # verify generated files are up-to-date
 just --list              # see all available commands

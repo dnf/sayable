@@ -83,8 +83,8 @@ def id_pattern(test_id: str) -> re.Pattern:
 
 
 def languages() -> list[str]:
-    with open(os.path.join(ROOT, ".hecatron", "config", "languages", "added.json"), encoding="utf-8") as f:
-        return json.load(f)
+    with open(os.path.join(ROOT, ".hecatron", "config.json"), encoding="utf-8") as f:
+        return json.load(f)["languages"]
 
 
 def main() -> int:

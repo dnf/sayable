@@ -124,7 +124,7 @@ how each language enforces this:
 
 Every file produced by `codegen/generate.py` carries two markers:
 
-1. **Box-frame banner** — a 9-line box (`.hecatron/tools/codegen/util.py`,
+1. **Box-frame banner** — a 9-line box (`tools/codegen_util.py`,
    re-exported by `codegen/banner.py`) that names
    the generator path and warns against manual edits. Each language uses its
    native comment syntax (`//`, `#`, `/* */`, `--`, `%%`, `;;`).
@@ -192,13 +192,13 @@ comment, or inline comment) used across languages.
 
 ## Shell scripts
 
-The project's runner (`.hecatron/tools/runner/run-parallel.sh`) and helpers
-(`.hecatron/tools/language/helpers.sh`) follow these conventions:
+Sayable's shell scripts (hooks, CLI wrappers, justfile recipes) and
+hecatron's runner and helpers, which sayable uses, follow these conventions:
 
 ### ANSI color variables
 
-All ANSI escape codes are defined in two layers at the top of
-`run-parallel.sh`:
+All ANSI escape codes are defined in two layers at the top of the script
+(hecatron's `run-parallel.sh` is the reference):
 
 1. **Base colors** (`_c_*`) — raw ANSI codes, each defined once:
    `_c_reset`, `_c_dim`, `_c_green`, `_c_red`, `_c_yellow`, `_c_orange`,
@@ -217,8 +217,7 @@ a new `_s_*` variable built from a `_c_*` base color. Never use raw
 ### Disable/enable
 
 Languages can be temporarily disabled from parallel runs using
-`just disable <lang>` (stored in `.hecatron/config/languages/disabled.json`,
-gitignored). Disabled languages appear as orange `⊘ disabled` in runner
+`just disable <lang>` (stored in `.hecatron/local.json`, gitignored). Disabled languages appear as orange `⊘ disabled` in runner
 output. Single-language runs, `clean`, `install`, and `uninstall` are
 not affected.
 

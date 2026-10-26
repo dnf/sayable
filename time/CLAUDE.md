@@ -19,7 +19,7 @@ time/
   codegen/
     generate.py            # Codegen orchestrator: locales/*.json (time section) -> all 51 languages
     docgen.py              # `--sections`: each locale's Time section for docs/locales/<code>.md
-    banner.py              # Re-exports the DO NOT EDIT banner and locale loader from .hecatron/tools/codegen/util.py
+    banner.py              # Re-exports the DO NOT EDIT banner and locale loader from tools/codegen_util.py
     targets/               # 51 language emitters (no plural_rules — time doesn't need them)
       <lang>/
         emitter.py         # Generates locale source files from JSON
