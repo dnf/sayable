@@ -131,7 +131,7 @@ build *target:
         printf '%s\n' \
             "Usage: just build [flags] [target]" \
             "" \
-            "Build all compiled targets in parallel, or a single target." \
+            "Build all compiled targets in parallel, or one target's four libraries." \
             ""
         _lang_grid "Languages" "$_COMPILED_LANGS"
         printf '%s\n' \
@@ -185,65 +185,11 @@ build *target:
         fi
         mkdir -p .logs/build
         (
-            if [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
-                _ada_env
-                cd age/impl/ada && gprbuild -P sayableage.gpr -XBUILD_MODE=build
-            elif [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-                cd age/impl/typescript && npm run build
-            elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-                cd age/impl/rust && cargo build
-            elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
-                cd age/impl/kotlin && ./gradlew build
-            elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
-                cd age/impl/cpp && cmake -B build && cmake --build build
-            elif [ "$_target" = "c" ]; then
-                cd age/impl/c && cmake -B build && cmake --build build
-            elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
-                cd age/impl/cobol && cmake -B build && cmake --build build
-            elif [ "$_target" = "cli" ]; then
+            if [ "$_target" = "cli" ]; then
                 echo "No build step for CLI (language-specific builds handled by each implementation)"
-            elif [ "$_target" = "java" ]; then
-                cd age/impl/java && ./gradlew build
-            elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
-                cd age/impl/csharp && dotnet build
-            elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
-                cd age/impl/fsharp && dotnet build
-            elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
-                cd age/impl/swift && swift build
-            elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
-                cd age/impl/haskell && cabal build
-            elif [ "$_target" = "ocaml" ] || [ "$_target" = "ml" ]; then
-                cd age/impl/ocaml && eval "$(opam env 2>/dev/null)" && dune build
-            elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
-                cd age/impl/elixir && mix compile --warnings-as-errors
-            elif [ "$_target" = "gleam" ] || [ "$_target" = "gm" ]; then
-                cd age/impl/gleam && gleam build
-            elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
-                cd age/impl/erlang && rebar3 compile
-            elif [ "$_target" = "fortran" ] || [ "$_target" = "ft" ]; then
-                cd age/impl/fortran && cmake -B build && cmake --build build
-            elif [ "$_target" = "groovy" ] || [ "$_target" = "gy" ]; then
-                cd age/impl/groovy && ./gradlew build
-            elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
-                cd age/impl/scala && ./gradlew build
-            elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
-                for _c in age date duration time; do bash "${_c}/impl/goose/build.sh"; done
-            elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
-                cd age/impl/zig && zig build
-            elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
-                cd age/impl/pascal && mkdir -p build && fpc -FEbuild -FUbuild -Fulocales -o"build/test_format_age" test_format_age.pas
-            elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
-                cd age/impl/crystal && shards build
-            elif [ "$_target" = "d" ]; then
-                cd age/impl/d && ldc2 -I=source source/sayableage/locale.d source/sayableage/format_age.d source/sayableage/locales.d -of=sayableage.o -c
-            elif [ "$_target" = "v" ]; then
-                cd age/impl/v && v .
-            elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
-                cd age/impl/nim && nim c --noMain --path:src src/sayable_age/formatter.nim
-            elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
-                cd age/impl/vbnet && dotnet build
-            elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
-                cd age/impl/mojo && mojo build src/
+            elif [ -f ".hecatron/languages/${name}/build.sh" ]; then
+                # Every library (age, date, duration, time)
+                bash .hecatron/tools/language/build.sh "${name}"
             else
                 echo "No build step for: $_target"
             fi
@@ -461,78 +407,15 @@ lint *target:
         fi
         mkdir -p .logs/lint
         (
-            if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-                bash .hecatron/tools/language/lint.sh typescript
-            elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
-                bash .hecatron/tools/language/lint.sh dart
-            elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
-                bash .hecatron/tools/language/lint.sh python
-            elif [ "$_target" = "go" ]; then
-                bash .hecatron/tools/language/lint.sh go
-            elif [ "$_target" = "ruby" ] || [ "$_target" = "rb" ]; then
-                bash .hecatron/tools/language/lint.sh ruby
-            elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-                bash .hecatron/tools/language/lint.sh rust
-            elif [ "$_target" = "php" ]; then
-                bash .hecatron/tools/language/lint.sh php
-            elif [ "$_target" = "lua" ] || [ "$_target" = "lu" ]; then
-                bash .hecatron/tools/language/lint.sh lua
-            elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
-                echo "Kotlin uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "c" ]; then
-                echo "C uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "shell" ]; then
+            if [ "$_target" = "shell" ]; then
                 bash .hecatron/tools/lint/shellcheck.sh
             elif [ "$_target" = "cli" ]; then
                 echo "CLI uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
-                echo "C++ uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "java" ]; then
-                echo "Java uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
-                echo "C# uses TreatWarningsAsErrors in build (no separate linter)"
-            elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
-                echo "F# uses TreatWarningsAsErrors in build (no separate linter)"
-            elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
-                echo "Swift uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
-                echo "Haskell uses -Wall -Werror in build (no separate linter)"
-            elif [ "$_target" = "ocaml" ] || [ "$_target" = "ml" ]; then
-                echo "OCaml uses -warn-error in build (no separate linter)"
-            elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
-                echo "Erlang uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "fortran" ] || [ "$_target" = "ft" ]; then
-                echo "Fortran uses -Wall -Wextra -Wpedantic -Werror in build (no separate linter)"
-            elif [ "$_target" = "groovy" ] || [ "$_target" = "gy" ]; then
-                echo "Groovy uses -Werror in build (no separate linter)"
-            elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
-                echo "Clojure uses *warn-on-reflection* in build (no separate linter)"
-            elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
-                echo "COBOL uses -Wall in build (no separate linter)"
-            elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
-                echo "Scala uses -Werror in build (no separate linter)"
-            elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
-                echo "Elixir uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "gleam" ] || [ "$_target" = "gm" ]; then
-                echo "Gleam uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
-                echo "Elm compiler is warnings-as-errors (no separate linter)"
-            elif [ "$_target" = "perl" ] || [ "$_target" = "pl" ]; then
-                echo "Perl uses strict/warnings (no separate linter)"
-            elif [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
-                echo "Ada uses -gnatwe (warnings-as-errors) in build (no separate linter)"
-            elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
-                bash .hecatron/tools/language/lint.sh goose
-            elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
-                echo "Zig uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
-                echo "Nim uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
-                bash .hecatron/tools/language/lint.sh crystal
-            elif [ "$_target" = "r" ]; then
-                echo "R uses stop() on warnings (no separate linter)"
-            elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
-                echo "VB.NET uses TreatWarningsAsErrors in build (no separate linter)"
+            elif [ -f ".hecatron/languages/${name}/lint.sh" ]; then
+                # Every library (age, date, duration, time)
+                bash .hecatron/tools/language/lint.sh "${name}"
+            elif printf '%s\n' ${_ALL_LANGS} | grep -qx "${name}"; then
+                echo "${name} has no separate linter: its build treats warnings as errors (just test ${name})"
             else
                 echo "Unknown target: $_target (try 'just lint help')" >&2
                 exit 1
@@ -558,7 +441,7 @@ clean *target:
         printf '%s\n' \
             "Usage: just clean [flags] [target]" \
             "" \
-            "Remove build artifacts for all targets in parallel, or a single target." \
+            "Remove build artifacts for all targets in parallel, or one target's (every library)." \
             "Keeps installed dependencies (node_modules, .venv, etc.)." \
             ""
         _lang_grid "Languages" "$_ALL_LANGS"
@@ -575,7 +458,7 @@ clean *target:
             "" \
             "Examples:" \
             "  just clean             Clean all targets in parallel" \
-            "  just clean rust        Clean Rust build artifacts only" \
+            "  just clean rust        Clean Rust's age, date, duration and time artifacts" \
             "  just clean ts          Clean TypeScript (abbreviation)" \
             "  just clean -j 4        Clean all with 4 job slots"
         exit 0
@@ -598,93 +481,20 @@ clean *target:
             echo "Language '${_cname}' is not added. Run 'just add ${_cname}' to add it." >&2
             exit 1
         fi
-        if [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
-        rm -rf age/impl/ada/build src/ada/obj
-    elif [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-        rm -rf age/impl/typescript/dist
-    elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
-        find age/impl/python -type d -name __pycache__ -not -path '*/\.venv/*' -exec rm -rf {} + 2>/dev/null || true
-        rm -rf age/impl/python/.pytest_cache
-    elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-        rm -rf age/impl/rust/target
-    elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
-        rm -rf age/impl/kotlin/build src/kotlin/.gradle
-    elif [ "$_target" = "c" ]; then
-        rm -rf age/impl/c/build || rm -rf age/impl/c/build
-    elif [ "$_target" = "cli" ]; then
-        echo "No build artifacts for: cli"
-    elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
-        rm -rf age/impl/cpp/build || rm -rf age/impl/cpp/build
-    elif [ "$_target" = "java" ]; then
-        rm -rf age/impl/java/build src/java/.gradle
-    elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
-        rm -rf age/impl/csharp/SayableAge/bin src/csharp/SayableAge/obj src/csharp/SayableAge.Tests/bin src/csharp/SayableAge.Tests/obj
-    elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
-        rm -rf age/impl/fsharp/SayableAge/bin src/fsharp/SayableAge/obj src/fsharp/SayableAge.Tests/bin src/fsharp/SayableAge.Tests/obj
-    elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
-        rm -rf age/impl/swift/.build
-    elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
-        rm -rf age/impl/haskell/dist-newstyle
-    elif [ "$_target" = "ocaml" ] || [ "$_target" = "ml" ]; then
-        rm -rf age/impl/ocaml/_build
-    elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
-        rm -rf age/impl/erlang/_build
-    elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
-        rm -rf age/impl/clojure/.cpcache
-    elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
-        rm -rf age/impl/cobol/build
-    elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
-        rm -rf age/impl/scala/build src/scala/.gradle
-    elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
-        rm -rf age/impl/goose/build date/impl/goose/build duration/impl/goose/build time/impl/goose/build
-    elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
-        rm -rf age/impl/zig/zig-out src/zig/.zig-cache
-    elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
-        rm -rf age/impl/elixir/_build
-    elif [ "$_target" = "gleam" ] || [ "$_target" = "gm" ]; then
-        rm -rf age/impl/gleam/build
-    elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
-        rm -rf age/impl/elm/elm-stuff
-    elif [ "$_target" = "fortran" ] || [ "$_target" = "ft" ]; then
-        rm -rf age/impl/fortran/build
-    elif [ "$_target" = "groovy" ] || [ "$_target" = "gy" ]; then
-        rm -rf age/impl/groovy/build src/groovy/.gradle
-    elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
-        rm -rf age/impl/dart/.dart_tool
-    elif [ "$_target" = "codegen" ]; then
-        find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
-    elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
-        rm -rf age/impl/pascal/build age/impl/pascal/*.o age/impl/pascal/*.ppu
-    elif [ "$_target" = "d" ]; then
-        rm -rf age/impl/d/.dub age/impl/d/*.o age/impl/d/test_runner
-    elif [ "$_target" = "racket" ] || [ "$_target" = "rkt" ]; then
-        find age/impl/racket -type d -name compiled -exec rm -rf {} + 2>/dev/null || true
-    elif [ "$_target" = "prolog" ] || [ "$_target" = "swi" ]; then
-        rm -f age/impl/prolog/*.qlf
-    elif [ "$_target" = "raku" ] || [ "$_target" = "rk" ]; then
-        rm -rf age/impl/raku/.precomp
-    elif [ "$_target" = "v" ]; then
-        rm -rf age/impl/v/v
-    elif [ "$_target" = "lisp" ] || [ "$_target" = "cl" ]; then
-        rm -f age/impl/lisp/*.fasl
-    elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
-        rm -rf age/impl/crystal/lib age/impl/crystal/bin age/impl/crystal/.shards
-    elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
-        rm -rf age/impl/nim/nimcache age/impl/nim/tests/nimcache age/impl/nim/src/nimcache
-        find age/impl/nim -type d -name nimcache -exec rm -rf {} + 2>/dev/null || true
-    elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
-        rm -rf age/impl/vbnet/SayableAge/bin age/impl/vbnet/SayableAge/obj age/impl/vbnet/SayableAge.Tests/bin age/impl/vbnet/SayableAge.Tests/obj
-    elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
-        rm -rf age/impl/mojo/.mojopkg age/impl/mojo/build
-    elif [ "$_target" = "pharo" ] || [ "$_target" = "ph" ]; then
-        rm -f age/impl/pharo/Pharo.image age/impl/pharo/Pharo.changes age/impl/pharo/*.sources
-        rm -rf age/impl/pharo/pharo-local
-    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ] || [ "$_target" = "tcl" ] || [ "$_target" = "wren" ] || [ "$_target" = "janet" ] || [ "$_target" = "jt" ] || [ "$_target" = "r" ] || [ "$_target" = "bash" ] || [ "$_target" = "sh" ] || [ "$_target" = "odin" ] || [ "$_target" = "od" ] || [ "$_target" = "octave" ] || [ "$_target" = "oct" ] || [ "$_target" = "powershell" ] || [ "$_target" = "ps1" ]; then
-        echo "No build artifacts for: $_target"
-    else
-        echo "Unknown target: $_target (try 'just clean help')" >&2
-        exit 1
-    fi
+        if [ "$_target" = "cli" ]; then
+            echo "No build artifacts for: cli"
+        elif [ "$_target" = "codegen" ]; then
+            find age/codegen date/codegen duration/codegen time/codegen tools .hecatron \
+                -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+        elif [ -f ".hecatron/languages/${_cname}/clean.sh" ]; then
+            # Every library's build artifacts (age, date, duration, time)
+            bash .hecatron/tools/language/clean.sh "${_cname}"
+        elif printf '%s\n' ${_ALL_LANGS} | grep -qx "${_cname}"; then
+            echo "No build artifacts for: ${_cname}"
+        else
+            echo "Unknown target: $_target (try 'just clean help')" >&2
+            exit 1
+        fi
     fi
 
 # Install language toolchains (all if no args, or specific languages)

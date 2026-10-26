@@ -89,6 +89,10 @@ lisp/*.fasl
 lua/.busted
 lua/luarocks/
 
+# Mojo
+mojo/.mojopkg
+mojo/build/
+
 # Nim
 nim/nimcache/
 
@@ -153,6 +157,9 @@ typescript/package-lock.json
 
 # V
 v/sayabledate
+v/sayabledate.dylib
+v/sayabledate.so
+v/sayabledate.dll
 
 # VB.NET
 vbnet/*/bin/

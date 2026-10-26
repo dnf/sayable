@@ -166,6 +166,9 @@ typescript/node_modules/
 
 # V
 v/sayableage
+v/sayableage.dylib
+v/sayableage.so
+v/sayableage.dll
 
 # VB.NET
 vbnet/SayableAge/bin/

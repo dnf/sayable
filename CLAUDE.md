@@ -18,7 +18,7 @@ Single-language commands stream to terminal and save to a log file:
 
 ```
 just test go       # one language, all four libraries → .logs/test/go.log
-just build rust    # build one       → .logs/build/rust.log
+just build rust    # one language, all four libraries → .logs/build/rust.log
 just lint python   # one language, all four libraries → .logs/lint/python.log
 ```
 
@@ -63,6 +63,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
   - `just install` (all) continues past individual failures and reports them at the end.
   - Elm has no arm64 Linux binary; the installer detects this and skips with a message.
 - **The age/Dockerfile is generated.** Never edit `age/Dockerfile` by hand. Each language has a `.hecatron/languages/<lang>/dockerfile` snippet with `# apt:` directives (collected, deduplicated, sorted into one `apt-get install`), optional `# after:` ordering constraints, and literal `RUN`/`ENV` blocks. Run `just dockerfile` to regenerate. `just add` and `just remove` regenerate automatically. `just check` verifies the age/Dockerfile is current.
+- **A `just` command for one language acts on all four libraries.** `just test|lint|build|clean <lang>` run `.hecatron/languages/<lang>/<action>.sh` once per library through `.hecatron/tools/language/each-library.sh`; never hard-code `age/impl/<lang>` in a recipe.
 - **Justfile recipes must support `help`/`--help`.** Every recipe that accepts language arguments (test, build, lint, clean, install, uninstall) must handle `help` and `--help` as a first argument, printing usage with a consistent structure: Usage line, description, language list (alphabetical, with abbreviations), flags (if applicable), and examples. Error messages for unknown languages should print to stderr and point to help (e.g. `"try 'just test help'"`), not dump inline language lists.
 
 ## Versioning
@@ -141,8 +142,8 @@ See [`.hecatron/docs/adding-a-language.md`](.hecatron/docs/adding-a-language.md)
 
 Then, once for the language:
 
-5. Create `.hecatron/languages/<lang>/`: `config.json`, `test.sh` (runs one library's native suite), `lint.sh` if the language has a separate linter, `install.sh`, `uninstall.sh`, `version.sh` (optionally `metadata.sh`), a `dockerfile` snippet, and `workflow.yml` testing every library (`tools/check_workflow_components.py` enforces this)
-6. Add justfile arms for build, lint and clean (`just test <lang>` and `just lint <lang>` run `test.sh` and `lint.sh` for all four libraries); configure the language's linter with zero warnings, with the same config in every library
+5. Create `.hecatron/languages/<lang>/`: `config.json`, `test.sh` (runs one library's native suite), `build.sh` and `clean.sh` if it has a build, `lint.sh` if it has a separate linter, `install.sh`, `uninstall.sh`, `version.sh` (optionally `metadata.sh`), a `dockerfile` snippet, and `workflow.yml` testing every library (`tools/check_workflow_components.py` enforces this)
+6. No justfile arms are needed: `just test|lint|build|clean <lang>` run those scripts once per library. Configure the language's linter with zero warnings, with the same config in every library
 7. Add a CLI in `cli/impl/<lang>/` implementing `--repl` (`cli/SPEC.md`)
 8. Run `just add <lang>` (registers it, copies the workflow, regenerates `age/Dockerfile`) and `python3 tools/generate_compatibility.py`
 9. Update the language counts and lists (keep rows sorted alphabetically)
