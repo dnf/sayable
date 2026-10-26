@@ -52,7 +52,7 @@ All 51 languages have identical implementations across all 4 libraries:
 
 Ada, Bash, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Goose, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Mojo, Nim, OCaml, Octave, Odin, Pascal, Perl, Pharo, PHP, PowerShell, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig
 
-See the [full compatibility matrix](Compatibility.md).
+See the [full compatibility matrix](docs/compatibility.md).
 
 ### Locale coverage
 
