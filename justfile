@@ -267,7 +267,8 @@ _test_cli lang:
     #!/usr/bin/env bash
     set -euo pipefail
     eval "$(hecatron env)"
-    if [ "{{lang}}" = "ada" ]; then _ada_env; fi
+    # The language's own toolchain directories (e.g. Ada's GNAT under Alire)
+    _use_lang_path "{{lang}}"
     _cli_bin="cli/impl/{{lang}}/sayable"
     if [ ! -x "${_cli_bin}" ]; then
         echo "error: ${_cli_bin} is not executable or not found" >&2
