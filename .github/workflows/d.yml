@@ -19,24 +19,45 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        dc: [dmd-latest, ldc-latest]
+        # dmd comes from downloads.dlang.org, which has outages lasting hours,
+        # so it is pinned and cached, and a failed download only warns. ldc
+        # comes from GitHub releases and runs the CLI checks and fuzzing.
+        # Bump the dmd version when a new one is released.
+        dc: [dmd-2.113.0, ldc-latest]
     defaults:
       run:
         working-directory: age/impl/d
     steps:
       - uses: actions/checkout@v4
+      # setup-dlang looks in the runner's tool cache before downloading.
+      - uses: actions/cache@v4
+        if: startsWith(matrix.dc, 'dmd-')
+        with:
+          path: ${{ runner.tool_cache }}/dmd
+          key: ${{ matrix.dc }}-${{ runner.os }}-${{ runner.arch }}
       - uses: dlang-community/setup-dlang@v2
+        id: setup
+        continue-on-error: ${{ startsWith(matrix.dc, 'dmd-') }}
         with:
           compiler: ${{ matrix.dc }}
-      - run: dub test
+      - name: Skip dmd when downloads.dlang.org is down
+        if: steps.setup.outcome == 'failure'
+        run: echo "::warning::Couldn't download ${{ matrix.dc }} from downloads.dlang.org, so its tests were skipped"
+      - name: Test age library
+        if: steps.setup.outcome == 'success'
+        run: dub test
       - name: Test date library
+        if: steps.setup.outcome == 'success'
         working-directory: date/impl/d
         run: dub test
       - name: Test duration library
+        if: steps.setup.outcome == 'success'
         working-directory: duration/impl/d
         run: dub test
       - name: Test time library
+        if: steps.setup.outcome == 'success'
         working-directory: time/impl/d
         run: dub test
 
