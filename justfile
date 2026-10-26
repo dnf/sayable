@@ -3,8 +3,8 @@
 # Toolchains and per-language runs (test, lint, build, clean, install, doctor,
 # add, ...) are delegated to hecatron (https://github.com/dnf/hecatron), which
 # reads .hecatron/config.json and the hooks in .hecatron/languages/<lang>/.
-# Install it with `brew install dnf/tap/hecatron` (or put a checkout's bin/ on
-# PATH). The rest of this file is sayable's own: codegen, docs, the CLI
+# Put a hecatron checkout's bin/ on PATH to use it (a Homebrew formula is
+# planned). The rest of this file is sayable's own: codegen, docs, the CLI
 # harness, fuzzing and benchmarks.
 
 python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "python" }

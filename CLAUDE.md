@@ -57,7 +57,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Generated files carry a prominent banner.** Every generated source file starts with a 9-line double-line box-frame `DO NOT EDIT` banner (from `tools/codegen_util.py`, re-exported by each `<library>/codegen/banner.py`; hecatron puts the same banner on the files it generates) referencing the generator. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON. Workflow files in `.github/workflows/` and the `age/Dockerfile` also carry this banner.
 - **Every implementation must have a `<library>/impl/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. Each library's `README.md` table must link to it in the Docs column.
 - **Every language must have a CI workflow** at `.github/workflows/<lang>.yml` that runs tests on push and PR to `main`. Use a version matrix when the language supports it.
-- **Toolchains and per-language runs are hecatron's.** [hecatron](https://github.com/dnf/hecatron) (`brew install dnf/tap/hecatron`) installs, checks and repairs every language's toolchain and runs the per-language commands; the justfile delegates to it. Sayable's side is `.hecatron/config.json` (components, `implPath`, languages, tools, generated files, tasks) and its hooks in `.hecatron/languages/<lang>/`: `test.sh`, `lint.sh`, `build.sh`, `clean.sh`, `version.sh`, `metadata.sh` and `workflow.yml`. Installers, doctors and Dockerfile snippets come from hecatron; to change one, change it there (or override it with a file of the same name in `.hecatron/languages/<lang>/`). Key points:
+- **Toolchains and per-language runs are hecatron's.** [hecatron](https://github.com/dnf/hecatron) (a checkout's `bin/` on PATH; a Homebrew formula is planned) installs, checks and repairs every language's toolchain and runs the per-language commands; the justfile delegates to it. Sayable's side is `.hecatron/config.json` (components, `implPath`, languages, tools, generated files, tasks) and its hooks in `.hecatron/languages/<lang>/`: `test.sh`, `lint.sh`, `build.sh`, `clean.sh`, `version.sh`, `metadata.sh` and `workflow.yml`. Installers, doctors and Dockerfile snippets come from hecatron; to change one, change it there (or override it with a file of the same name in `.hecatron/languages/<lang>/`). Key points:
   - `just doctor` checks every toolchain works; `just doctor --fix` runs the installer of each one that doesn't.
   - Shared toolchains (cmake→C/C++, .NET→C#/F#, JDK→Java/Kotlin/Scala/Groovy, Node→TypeScript/Elm) mean uninstalling one language can break another.
   - `just install` (all) continues past individual failures and reports them at the end.
@@ -96,8 +96,8 @@ time/             # sayable-time       }   impl/     <lang>/ (51 implementations
                   #                    }   docs/     library-specific docs
 cli/              # sayable CLI for every language (REPL mode), test harness, fuzzer
 docs/             # Cross-library docs: testing, input formats, compatibility, locales/<code>.md
-tools/            # Repo-wide generators and checks (locale docs, compatibility, geography, workflow guard)
-.hecatron/        # Build tooling and per-language definitions (installers, CI templates)
+tools/            # Repo-wide generators and checks (locale docs, compatibility, geography, test IDs, Docker test)
+.hecatron/        # hecatron config.json and sayable's per-language hooks and CI workflow templates
 .github/          # CI workflows (generated from .hecatron/languages/<lang>/workflow.yml)
 justfile          # Primary task runner
 ```
