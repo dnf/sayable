@@ -11,19 +11,23 @@
 FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8
 
 # System packages + language runtimes available from distro
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    binutils \
     build-essential \
     ca-certificates \
-    clang-14 \
+    clang \
     cmake \
     curl \
     dotnet-sdk-10.0 \
+    dub \
     elixir \
     erlang-dev \
     erlang-tools \
     fpc \
+    g++ \
     gcc \
     gfortran \
     git \
@@ -32,41 +36,64 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg \
     gprbuild \
     ldc \
+    libc6-dev \
+    libcurl4-openssl-dev \
+    libedit2 \
+    libevent-dev \
+    libgmp-dev \
     libicu-dev \
     liblua5.4-dev \
-    llvm-14 \
+    libncurses-dev \
+    libpcre2-dev \
+    libpython3-dev \
+    libsqlite3-0 \
+    libssl-dev \
+    libxml2-dev \
+    libyaml-dev \
+    libz3-dev \
     lua5.4 \
     luarocks \
     make \
-    nim \
     octave \
     opam \
     openjdk-17-jdk-headless \
+    perl \
     php-cli \
     php-mbstring \
     php-xml \
+    pkg-config \
     python3 \
     python3-venv \
     r-base \
+    r-cran-testthat \
     racket \
     rakudo \
     rebar3 \
     rlwrap \
     ruby \
+    ruby-bundler \
     sbcl \
     swi-prolog \
     tcl \
+    tzdata \
     unzip \
+    xz-utils \
+    zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Clojure CLI
 RUN curl -fsSL https://download.clojure.org/install/linux-install.sh | bash
 
-# Crystal
-RUN curl -fsSL https://crystal-lang.org/install.sh | bash
+# Crystal: the official build of the latest release (its apt repository has no
+# arm64 packages), with the libraries the compiler links programs against
+RUN VERSION="$(curl -fsSLI -o /dev/null -w '%{url_effective}' https://github.com/crystal-lang/crystal/releases/latest)" && \
+    VERSION="${VERSION##*/}" && \
+    mkdir -p /opt/crystal && \
+    curl -fsSL "https://github.com/crystal-lang/crystal/releases/download/${VERSION}/crystal-${VERSION}-1-linux-$(uname -m).tar.gz" | tar -C /opt/crystal --strip-components=1 -xz && \
+    ln -s /opt/crystal/bin/crystal /opt/crystal/bin/shards /usr/local/bin/
 
-# Dart SDK
-RUN ARCH="$(dpkg --print-architecture)" && \
+# Dart SDK (its archive names x86_64 "x64")
+RUN case "$(uname -m)" in aarch64) ARCH=arm64 ;; *) ARCH=x64 ;; esac && \
     curl -fsSL "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-${ARCH}-release.zip" -o /tmp/dart.zip && \
     unzip -q /tmp/dart.zip -d /opt && rm /tmp/dart.zip
 ENV PATH="/opt/dart-sdk/bin:${PATH}"
@@ -76,10 +103,14 @@ RUN GLEAM_ARCH="$(uname -m)" && \
     curl -fsSL "https://github.com/gleam-lang/gleam/releases/download/v1.14.0/gleam-v1.14.0-${GLEAM_ARCH}-unknown-linux-musl.tar.gz" \
     | tar xz -C /usr/local/bin gleam
 
-# Go
+# Go: the latest release, as install.sh installs it (golangci-lint needs a
+# recent Go)
 RUN ARCH="$(dpkg --print-architecture)" && \
-    curl -fsSL "https://go.dev/dl/go1.21.13.linux-${ARCH}.tar.gz" | tar -C /usr/local -xz
+    VERSION="$(curl -fsSL 'https://go.dev/VERSION?m=text' | head -1)" && \
+    curl -fsSL "https://go.dev/dl/${VERSION}.linux-${ARCH}.tar.gz" | tar -C /usr/local -xz
 ENV PATH="/usr/local/go/bin:${PATH}"
+# golangci-lint, built with this Go (see install.sh)
+RUN GOBIN=/usr/local/bin go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
 
 # Goose
 RUN GOOSE_VERSION="v2026.3" && \
@@ -89,6 +120,8 @@ RUN GOOSE_VERSION="v2026.3" && \
         tar -xzf /tmp/goose.tar.gz -C /opt/goose --strip-components=1 && \
         rm /tmp/goose.tar.gz && \
         ln -sf /opt/goose/goose /usr/local/bin/goose; \
+    else \
+        echo "Skipping Goose: no Linux $(uname -m) release"; \
     fi
 
 # Haskell (GHC + cabal) via ghcup
@@ -111,13 +144,27 @@ RUN ARCH="$(uname -m)" && \
     mkdir -p /opt/julia && curl -fsSL "$URL" | tar -C /opt/julia --strip-components=1 -xz && \
     ln -s /opt/julia/bin/julia /usr/local/bin/julia
 
-# Lua testing framework (busted) via LuaRocks
-RUN luarocks install busted
+# Lua testing framework (busted) and linter (luacheck, which needs Lua 5.4;
+# see install.sh) via LuaRocks
+RUN luarocks install busted && \
+    for rock in argparse luafilesystem luacheck; do \
+        luarocks --lua-version=5.4 --lua-dir=/usr install "$rock"; \
+    done
 
-# Mojo via Modular CLI
-RUN curl -s https://get.modular.com | sh -
-RUN modular install mojo
-ENV PATH="/root/.modular/bin:${PATH}"
+# Mojo: the PyPI package as a uv tool, the same pinned version as install.sh
+# (Modular retired its `modular` CLI and apt repository)
+RUN command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh && \
+    UV_TOOL_DIR=/opt/uv-tools UV_TOOL_BIN_DIR=/usr/local/bin \
+    uv tool install "mojo==0.26.1.0" --with-executables-from mojo-compiler
+
+# Nim: the latest stable official build for the image's architecture
+# (distributions lag: Ubuntu 24.04 has 1.6, Debian 13 none), and the C
+# compiler Nim compiles through
+RUN VERSION="$(curl -fsSL https://nim-lang.org/channels/stable)" && \
+    case "$(uname -m)" in aarch64) ARCH=arm64 ;; *) ARCH=x64 ;; esac && \
+    mkdir -p /opt/nim && \
+    curl -fsSL "https://nim-lang.org/download/nim-${VERSION}-linux_${ARCH}.tar.xz" | tar -C /opt/nim --strip-components=1 -xJ && \
+    ln -s /opt/nim/bin/nim /opt/nim/bin/nimble /usr/local/bin/
 
 # OCaml via opam
 RUN opam init --disable-sandboxing --yes \
@@ -125,17 +172,26 @@ RUN opam init --disable-sandboxing --yes \
     && opam install dune alcotest --yes
 ENV PATH="/root/.opam/default/bin:${PATH}"
 
-# Odin
-RUN ARCH="$(dpkg --print-architecture)" && \
-    ODIN_VERSION="dev-2025-03" && \
-    curl -fsSL "https://github.com/odin-lang/Odin/releases/download/${ODIN_VERSION}/odin-ubuntu_amd64-${ODIN_VERSION}.zip" -o /tmp/odin.zip && \
+# Odin: the latest monthly release for this architecture, as install.sh
+# installs it, and the clang it links through
+RUN RELEASE="$(curl -fsSLI -o /dev/null -w '%{url_effective}' https://github.com/odin-lang/Odin/releases/latest)" && \
+    RELEASE="${RELEASE##*/}" && \
+    ARCH="$(dpkg --print-architecture)" && \
     mkdir -p /opt/odin && \
-    unzip -qo /tmp/odin.zip -d /opt/odin && \
-    rm /tmp/odin.zip && \
-    ln -sf /opt/odin/odin /usr/local/bin/odin
+    curl -fsSL "https://github.com/odin-lang/Odin/releases/download/${RELEASE}/odin-linux-${ARCH}-${RELEASE}.tar.gz" | tar -C /opt/odin --strip-components=1 -xz && \
+    ln -s /opt/odin/odin /usr/local/bin/odin
 
-RUN mkdir -p /opt/pharo && cd /opt/pharo && curl -fsSL https://get.pharo.org/64/120+vm | bash
-ENV PATH="/opt/pharo:${PATH}"
+# Pharo: Pharo 12's VM for the image's architecture, as install.sh installs it
+# (get.pharo.org's script only knows x86 Linux): the stable VM, else the
+# latest, which is all Pharo publishes for aarch64. The launcher finds its
+# libraries from the path it was run by, so `pharo` is a wrapper.
+RUN BASE="https://files.pharo.org/get-files/120/pharo-vm-Linux-$(uname -m)" && \
+    URL="${BASE}-stable.zip" && \
+    { curl -fsSI -o /dev/null "$URL" || URL="${BASE}-latest.zip"; } && \
+    curl -fsSL -o /tmp/pharo-vm.zip "$URL" && \
+    mkdir -p /opt/pharo/vm && unzip -q /tmp/pharo-vm.zip -d /opt/pharo/vm && rm /tmp/pharo-vm.zip && \
+    printf '#!/bin/sh\nexec /opt/pharo/vm/bin/pharo --headless "$@"\n' > /usr/local/bin/pharo && \
+    chmod +x /usr/local/bin/pharo
 
 # Composer (PHP package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -155,22 +211,19 @@ RUN pwsh -Command "Install-Module -Name Pester -Force -SkipPublisherCheck -Scope
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:${PATH}"
 
-# R testing framework (testthat)
-RUN Rscript -e 'install.packages("testthat", repos = "https://cloud.r-project.org")'
-
 # Rust stable via rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# Swift
-RUN ARCH="$(dpkg --print-architecture)" && \
-    VER="5.10.1" && \
-    if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then \
-      URL="https://download.swift.org/swift-${VER}-release/ubuntu2404-aarch64/swift-${VER}-RELEASE/swift-${VER}-RELEASE-ubuntu24.04-aarch64.tar.gz"; \
-    else \
-      URL="https://download.swift.org/swift-${VER}-release/ubuntu2404/swift-${VER}-RELEASE/swift-${VER}-RELEASE-ubuntu24.04.tar.gz"; \
-    fi && \
-    curl -fsSL "$URL" | tar -C /usr/local --strip-components=2 -xz
+# Swift: swift.org's build of the latest release for the image's distribution,
+# in its own prefix as install.sh installs it (merged into /usr/local, SwiftPM
+# can't find swiftc), with the libraries the toolchain needs
+RUN VERSION="$(curl -fsSL https://www.swift.org/api/v1/install/releases.json | python3 -c 'import json, sys; print(json.load(sys.stdin)[-1]["name"])')" && \
+    PLATFORM="$(. /etc/os-release && echo "${ID}${VERSION_ID}")" && \
+    SUFFIX="$([ "$(uname -m)" = aarch64 ] && echo -aarch64 || true)" && \
+    mkdir -p /opt/swift && \
+    curl -fsSL "https://download.swift.org/swift-${VERSION}-release/$(echo "$PLATFORM" | tr -d .)${SUFFIX}/swift-${VERSION}-RELEASE/swift-${VERSION}-RELEASE-${PLATFORM}${SUFFIX}.tar.gz" | tar -C /opt/swift --strip-components=1 -xz && \
+    ln -s /opt/swift/usr/bin/swift /opt/swift/usr/bin/swiftc /opt/swift/usr/bin/swift-format /opt/swift/usr/bin/sourcekit-lsp /usr/local/bin/
 
 # Node.js 22 via NodeSource
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
@@ -190,21 +243,28 @@ RUN git clone --depth 1 https://github.com/vlang/v.git /opt/v && \
     cd /opt/v && make && \
     ln -s /opt/v/v /usr/local/bin/v
 
-# Install wren_cli from prebuilt release
-RUN curl -fsSL -o /tmp/wren-cli.zip https://github.com/wren-lang/wren-cli/releases/download/0.4.0/wren-cli-linux-0.4.0.zip && \
-    unzip -o /tmp/wren-cli.zip -d /tmp && \
-    cp /tmp/wren-cli-linux-0.4.0/wren_cli /usr/local/bin/wren_cli && \
-    chmod +x /usr/local/bin/wren_cli && \
-    rm -rf /tmp/wren-cli.zip /tmp/wren-cli-linux-0.4.0
+# wren_cli, as install.sh installs it: the 0.4.0 release on x86_64 (the only
+# Linux build published), else built from source at the last commit on main
+# (0.4.0's source no longer compiles with current GCC)
+RUN if [ "$(uname -m)" = "x86_64" ]; then \
+        curl -fsSL -o /tmp/wren-cli.zip https://github.com/wren-lang/wren-cli/releases/download/0.4.0/wren-cli-linux-0.4.0.zip && \
+        unzip -o /tmp/wren-cli.zip -d /tmp && \
+        cp /tmp/wren-cli-linux-0.4.0/wren_cli /usr/local/bin/wren_cli && \
+        rm -rf /tmp/wren-cli.zip /tmp/wren-cli-linux-0.4.0; \
+    else \
+        COMMIT=18553636618a4d33f10af9b5ab92da6431784a8c && \
+        curl -fsSL "https://github.com/wren-lang/wren-cli/archive/${COMMIT}.tar.gz" | tar -C /tmp -xz && \
+        make -C "/tmp/wren-cli-${COMMIT}/projects/make" -j"$(nproc)" && \
+        cp "/tmp/wren-cli-${COMMIT}/bin/wren_cli" /usr/local/bin/wren_cli && \
+        rm -rf "/tmp/wren-cli-${COMMIT}"; \
+    fi && \
+    chmod +x /usr/local/bin/wren_cli
 
-# Zig
-RUN ARCH="$(dpkg --print-architecture)" && \
-    ZIG_ARCH="$ARCH" && \
-    if [ "$ARCH" = "amd64" ]; then ZIG_ARCH="x86_64"; fi && \
-    if [ "$ARCH" = "arm64" ]; then ZIG_ARCH="aarch64"; fi && \
+# Zig: the latest release, as install.sh installs it
+RUN URL="$(curl -fsSL https://ziglang.org/download/index.json | python3 -c 'import json, sys; r = json.load(sys.stdin); v = max((v for v in r if v != "master"), key=lambda v: tuple(map(int, v.split(".")))); print(r[v][sys.argv[1] + "-linux"]["tarball"])' "$(uname -m)")" && \
     mkdir -p /opt/zig && \
-    curl -fsSL "https://ziglang.org/download/0.14.0/zig-linux-${ZIG_ARCH}-0.14.0.tar.xz" | tar -C /opt/zig --strip-components=1 -xJ && \
-    ln -sf /opt/zig/zig /usr/local/bin/zig
+    curl -fsSL "$URL" | tar -C /opt/zig --strip-components=1 -xJ && \
+    ln -s /opt/zig/zig /usr/local/bin/zig
 
 # just (task runner)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
