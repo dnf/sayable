@@ -199,6 +199,22 @@ contains
     ! 6.1 — trois heures et quart
     res = st_format_time(fr, ST_NORMAL, '15:15')
     call assert_eq('6.1 fr quarter past three', res, 'trois heures et quart')
+
+    ! 6.2 — une heure
+    res = st_format_time(fr, ST_NORMAL, '13:00')
+    call assert_eq('6.2 fr on the hour', res, 'une heure')
+
+    ! 6.3 — une heure et demie
+    res = st_format_time(fr, ST_NORMAL, '13:30')
+    call assert_eq('6.3 fr half past', res, 'une heure et demie')
+
+    ! 6.4 — trois heures moins le quart
+    res = st_format_time(fr, ST_NORMAL, '14:45')
+    call assert_eq('6.4 fr quarter to', res, 'trois heures moins le quart')
+
+    ! 6.5 — trois heures moins dix
+    res = st_format_time(fr, ST_NORMAL, '14:50')
+    call assert_eq('6.5 fr ten to', res, 'trois heures moins dix')
   end subroutine test_locale_french
 
   ! ================================================================

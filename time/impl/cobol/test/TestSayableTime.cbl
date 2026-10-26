@@ -121,6 +121,14 @@ DISPATCH-TEST.
             PERFORM RUN-5-1
         WHEN "6.1"
             PERFORM RUN-6-1
+        WHEN "6.2"
+            PERFORM RUN-6-2
+        WHEN "6.3"
+            PERFORM RUN-6-3
+        WHEN "6.4"
+            PERFORM RUN-6-4
+        WHEN "6.5"
+            PERFORM RUN-6-5
         WHEN "7.1"
             PERFORM RUN-7-1
         WHEN "8.1"
@@ -469,6 +477,54 @@ RUN-6-1.
     PERFORM FORMAT-TIME
     MOVE "6.1" TO WS-TEST-NAME
     MOVE "trois heures et quart" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.2: French "13:00" -> "une heure"
+RUN-6-2.
+    MOVE "fr" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "13:00" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "6.2" TO WS-TEST-NAME
+    MOVE "une heure" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.3: French "13:30" -> "une heure et demie"
+RUN-6-3.
+    MOVE "fr" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "13:30" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "6.3" TO WS-TEST-NAME
+    MOVE "une heure et demie" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.4: French "14:45" -> "trois heures moins le quart"
+RUN-6-4.
+    MOVE "fr" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "14:45" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "6.4" TO WS-TEST-NAME
+    MOVE "trois heures moins le quart" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.5: French "14:50" -> "trois heures moins dix"
+RUN-6-5.
+    MOVE "fr" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "14:50" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "6.5" TO WS-TEST-NAME
+    MOVE "trois heures moins dix" TO WS-TEST-EXPECTED
     PERFORM ASSERT-EQ
     .
 

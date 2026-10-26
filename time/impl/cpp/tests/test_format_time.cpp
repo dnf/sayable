@@ -114,6 +114,14 @@ void test_french_locale() {
     SayableTime st(locales::FR());
     // 6.1
     ASSERT_EQ("6.1 fr 15:15", st.format_time("15:15"), "trois heures et quart");
+    // 6.2
+    ASSERT_EQ("6.2 fr 13:00", st.format_time("13:00"), "une heure");
+    // 6.3
+    ASSERT_EQ("6.3 fr 13:30", st.format_time("13:30"), "une heure et demie");
+    // 6.4
+    ASSERT_EQ("6.4 fr 14:45", st.format_time("14:45"), "trois heures moins le quart");
+    // 6.5
+    ASSERT_EQ("6.5 fr 14:50", st.format_time("14:50"), "trois heures moins dix");
 }
 
 // ================================================================

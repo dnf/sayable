@@ -127,6 +127,14 @@ static void test_locale_french(void) {
     int rc;
     rc = st_format_time(buf, sizeof(buf), &st_locale_fr, ST_NORMAL, "15:15");
     ASSERT_EQ("6.1 French trois heures et quart", rc, buf, "trois heures et quart");
+    rc = st_format_time(buf, sizeof(buf), &st_locale_fr, ST_NORMAL, "13:00");
+    ASSERT_EQ("6.2 French one o'clock", rc, buf, "une heure");
+    rc = st_format_time(buf, sizeof(buf), &st_locale_fr, ST_NORMAL, "13:30");
+    ASSERT_EQ("6.3 French half past one", rc, buf, "une heure et demie");
+    rc = st_format_time(buf, sizeof(buf), &st_locale_fr, ST_NORMAL, "14:45");
+    ASSERT_EQ("6.4 French quarter to three", rc, buf, "trois heures moins le quart");
+    rc = st_format_time(buf, sizeof(buf), &st_locale_fr, ST_NORMAL, "14:50");
+    ASSERT_EQ("6.5 French ten to three", rc, buf, "trois heures moins dix");
 }
 
 /* ================================================================ */

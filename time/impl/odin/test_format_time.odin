@@ -151,6 +151,22 @@ test_de_half_four :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "halb vie
 @(test)
 test_fr_quarter_past :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "trois heures et quart", format_time(buf[:], &locale_fr, .Normal, "15:15")) }
 
+// 6.2
+@(test)
+test_fr_one_oclock :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "une heure", format_time(buf[:], &locale_fr, .Normal, "13:00")) }
+
+// 6.3
+@(test)
+test_fr_half_past_one :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "une heure et demie", format_time(buf[:], &locale_fr, .Normal, "13:30")) }
+
+// 6.4
+@(test)
+test_fr_quarter_to_three :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "trois heures moins le quart", format_time(buf[:], &locale_fr, .Normal, "14:45")) }
+
+// 6.5
+@(test)
+test_fr_ten_to_three :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "trois heures moins dix", format_time(buf[:], &locale_fr, .Normal, "14:50")) }
+
 // ================================================================
 // Locale — Japanese (7.1)
 // ================================================================

@@ -55,6 +55,10 @@ german_test_() ->
 french_test_() ->
     Fr = sayabletime_locales_fr:locale(),
     [?_assertEqual({ok, "trois heures et quart"}, fmt_locale(Fr, "15:15"))      %% 6.1
+    ,?_assertEqual({ok, "une heure"}, fmt_locale(Fr, "13:00"))      %% 6.2
+    ,?_assertEqual({ok, "une heure et demie"}, fmt_locale(Fr, "13:30"))      %% 6.3
+    ,?_assertEqual({ok, "trois heures moins le quart"}, fmt_locale(Fr, "14:45"))      %% 6.4
+    ,?_assertEqual({ok, "trois heures moins dix"}, fmt_locale(Fr, "14:50"))      %% 6.5
     ].
 
 %% 7. Locale — Japanese

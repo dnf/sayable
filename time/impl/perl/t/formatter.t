@@ -95,6 +95,14 @@ is(SayableTime->format_time('25:00'), undef, '1.4 invalid hour');
   my $fmt = SayableTime::Formatter->new(SayableTime::Locales->get('fr'));
   # 6.1
   is($fmt->format_time('15:15'), 'trois heures et quart', '6.1 fr quarter past');
+  # 6.2
+  is($fmt->format_time('13:00'), 'une heure', '6.2 fr une heure');
+  # 6.3
+  is($fmt->format_time('13:30'), 'une heure et demie', '6.3 fr une heure et demie');
+  # 6.4
+  is($fmt->format_time('14:45'), 'trois heures moins le quart', '6.4 fr trois heures moins le quart');
+  # 6.5
+  is($fmt->format_time('14:50'), 'trois heures moins dix', '6.5 fr trois heures moins dix');
 }
 
 # ================================================================

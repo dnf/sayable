@@ -192,6 +192,22 @@ procedure Test_Format_Time is
       Assert_Eq ("6.1 French trois heures et quart",
          Sayabletime.Format_Time (Loc.all, Normal, "15:15"),
          "trois heures et quart");
+      --  6.2
+      Assert_Eq ("6.2 French one o'clock",
+         Sayabletime.Format_Time (Loc.all, Normal, "13:00"),
+         "une heure");
+      --  6.3
+      Assert_Eq ("6.3 French half past one",
+         Sayabletime.Format_Time (Loc.all, Normal, "13:30"),
+         "une heure et demie");
+      --  6.4
+      Assert_Eq ("6.4 French quarter to three",
+         Sayabletime.Format_Time (Loc.all, Normal, "14:45"),
+         "trois heures moins le quart");
+      --  6.5
+      Assert_Eq ("6.5 French ten to three",
+         Sayabletime.Format_Time (Loc.all, Normal, "14:50"),
+         "trois heures moins dix");
    end Test_Locale_French;
 
    ---------------------------------------------------------------------------

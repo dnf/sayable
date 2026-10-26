@@ -190,6 +190,34 @@ class FormatTimeTest {
         assertEquals('trois heures et quart', st.formatTime('15:15'))
     }
 
+    // 6.2
+    @Test
+    void 'French on the hour'() {
+        SayableTime st = new SayableTime(Locales.FR)
+        assertEquals('une heure', st.formatTime('13:00'))
+    }
+
+    // 6.3
+    @Test
+    void 'French half past'() {
+        SayableTime st = new SayableTime(Locales.FR)
+        assertEquals('une heure et demie', st.formatTime('13:30'))
+    }
+
+    // 6.4
+    @Test
+    void 'French quarter to'() {
+        SayableTime st = new SayableTime(Locales.FR)
+        assertEquals('trois heures moins le quart', st.formatTime('14:45'))
+    }
+
+    // 6.5
+    @Test
+    void 'French ten to'() {
+        SayableTime st = new SayableTime(Locales.FR)
+        assertEquals('trois heures moins dix', st.formatTime('14:50'))
+    }
+
     // ================================================================
     // Section 7: Locale -- Japanese
     // ================================================================

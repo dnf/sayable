@@ -91,6 +91,18 @@ describe('Locale — French', () => {
 
   // 6.1
   it('quarter past', () => expect(st.formatTime('15:15')).toBe('trois heures et quart'));
+
+  // 6.2
+  it('singular hour', () => expect(st.formatTime('13:00')).toBe('une heure'));
+
+  // 6.3
+  it('half past singular hour', () => expect(st.formatTime('13:30')).toBe('une heure et demie'));
+
+  // 6.4
+  it('quarter to', () => expect(st.formatTime('14:45')).toBe('trois heures moins le quart'));
+
+  // 6.5
+  it('ten to', () => expect(st.formatTime('14:50')).toBe('trois heures moins dix'));
 });
 
 // ── Section 7: Locale — Japanese ─────────────────────────────────────

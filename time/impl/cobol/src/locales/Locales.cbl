@@ -3520,57 +3520,57 @@
 *> Source: locales/fr.json
        INIT-LOCALE-FR.
            MOVE "fr" TO WS-ACT-CODE
-           MOVE "douze"
+           MOVE "douze heures"
                TO WS-ACT-HOUR(1)
-           MOVE "une"
+           MOVE "une heure"
                TO WS-ACT-HOUR(2)
-           MOVE "deux"
+           MOVE "deux heures"
                TO WS-ACT-HOUR(3)
-           MOVE "trois"
+           MOVE "trois heures"
                TO WS-ACT-HOUR(4)
-           MOVE "quatre"
+           MOVE "quatre heures"
                TO WS-ACT-HOUR(5)
-           MOVE "cinq"
+           MOVE "cinq heures"
                TO WS-ACT-HOUR(6)
-           MOVE "six"
+           MOVE "six heures"
                TO WS-ACT-HOUR(7)
-           MOVE "sept"
+           MOVE "sept heures"
                TO WS-ACT-HOUR(8)
-           MOVE "huit"
+           MOVE "huit heures"
                TO WS-ACT-HOUR(9)
-           MOVE "neuf"
+           MOVE "neuf heures"
                TO WS-ACT-HOUR(10)
-           MOVE "dix"
+           MOVE "dix heures"
                TO WS-ACT-HOUR(11)
-           MOVE "onze"
+           MOVE "onze heures"
                TO WS-ACT-HOUR(12)
            MOVE "minuit"
                TO WS-ACT-MIDNIGHT
            MOVE "midi"
                TO WS-ACT-NOON
-           MOVE "{h} heures"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h} heures cinq"
+           MOVE "{h} cinq"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h} heures dix"
+           MOVE "{h} dix"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h} heures et quart"
+           MOVE "{h} et quart"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h} heures vingt"
+           MOVE "{h} vingt"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h} heures vingt-cinq"
+           MOVE "{h} vingt-cinq"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h} heures et demie"
+           MOVE "{h} et demie"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h} heures trente-cinq"
+           MOVE "{next_h} moins vingt-cinq"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h} heures quarante"
+           MOVE "{next_h} moins vingt"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h} heures moins le quart"
+           MOVE "{next_h} moins le quart"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h} heures cinquante"
+           MOVE "{next_h} moins dix"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h} heures cinquante-cinq"
+           MOVE "{next_h} moins cinq"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1

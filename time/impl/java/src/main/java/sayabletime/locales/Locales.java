@@ -672,10 +672,10 @@ public final class Locales {
     public static final TimeLocale FR = new TimeLocale(
         "fr",
         new ClockConfig(
-            List.of("douze", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze"),
+            List.of("douze heures", "une heure", "deux heures", "trois heures", "quatre heures", "cinq heures", "six heures", "sept heures", "huit heures", "neuf heures", "dix heures", "onze heures"),
             "minuit",
             "midi",
-            Map.ofEntries(Map.entry(0, "{h} heures"), Map.entry(5, "{h} heures cinq"), Map.entry(10, "{h} heures dix"), Map.entry(15, "{h} heures et quart"), Map.entry(20, "{h} heures vingt"), Map.entry(25, "{h} heures vingt-cinq"), Map.entry(30, "{h} heures et demie"), Map.entry(35, "{h} heures trente-cinq"), Map.entry(40, "{h} heures quarante"), Map.entry(45, "{h} heures moins le quart"), Map.entry(50, "{h} heures cinquante"), Map.entry(55, "{h} heures cinquante-cinq"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} cinq"), Map.entry(10, "{h} dix"), Map.entry(15, "{h} et quart"), Map.entry(20, "{h} vingt"), Map.entry(25, "{h} vingt-cinq"), Map.entry(30, "{h} et demie"), Map.entry(35, "{next_h} moins vingt-cinq"), Map.entry(40, "{next_h} moins vingt"), Map.entry(45, "{next_h} moins le quart"), Map.entry(50, "{next_h} moins dix"), Map.entry(55, "{next_h} moins cinq"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}h{mm}"))

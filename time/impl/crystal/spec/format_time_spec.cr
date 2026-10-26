@@ -157,6 +157,26 @@ describe "Locale — French" do
   it "formats 15:15 as trois heures et quart" do
     formatter.format_time("15:15").should eq "trois heures et quart"
   end
+
+  # 6.2
+  it "formats 13:00 as une heure" do
+    formatter.format_time("13:00").should eq "une heure"
+  end
+
+  # 6.3
+  it "formats 13:30 as une heure et demie" do
+    formatter.format_time("13:30").should eq "une heure et demie"
+  end
+
+  # 6.4
+  it "formats 14:45 as trois heures moins le quart" do
+    formatter.format_time("14:45").should eq "trois heures moins le quart"
+  end
+
+  # 6.5
+  it "formats 14:50 as trois heures moins dix" do
+    formatter.format_time("14:50").should eq "trois heures moins dix"
+  end
 end
 
 # ================================================================

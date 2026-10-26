@@ -182,6 +182,34 @@ class FormatTimeTest {
         assertEquals("trois heures et quart", st.formatTime("15:15"))
     }
 
+    // 6.2
+    @Test
+    fun `French on the hour`() {
+        val st = SayableTime(Locales.FR)
+        assertEquals("une heure", st.formatTime("13:00"))
+    }
+
+    // 6.3
+    @Test
+    fun `French half past`() {
+        val st = SayableTime(Locales.FR)
+        assertEquals("une heure et demie", st.formatTime("13:30"))
+    }
+
+    // 6.4
+    @Test
+    fun `French quarter to`() {
+        val st = SayableTime(Locales.FR)
+        assertEquals("trois heures moins le quart", st.formatTime("14:45"))
+    }
+
+    // 6.5
+    @Test
+    fun `French ten to`() {
+        val st = SayableTime(Locales.FR)
+        assertEquals("trois heures moins dix", st.formatTime("14:50"))
+    }
+
     // ================================================================
     // Section 7: Locale — Japanese
     // ================================================================

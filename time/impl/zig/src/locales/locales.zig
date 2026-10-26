@@ -534,10 +534,10 @@ pub const fon: sayabletime.TimeLocale = .{
 pub const fr: sayabletime.TimeLocale = .{
     .code = "fr",
     .clock = .{
-        .hours = .{ "douze", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze" },
+        .hours = .{ "douze heures", "une heure", "deux heures", "trois heures", "quatre heures", "cinq heures", "six heures", "sept heures", "huit heures", "neuf heures", "dix heures", "onze heures" },
         .midnight = "minuit",
         .noon = "midi",
-        .patterns = .{ "{h} heures", "{h} heures cinq", "{h} heures dix", "{h} heures et quart", "{h} heures vingt", "{h} heures vingt-cinq", "{h} heures et demie", "{h} heures trente-cinq", "{h} heures quarante", "{h} heures moins le quart", "{h} heures cinquante", "{h} heures cinquante-cinq" },
+        .patterns = .{ "{h}", "{h} cinq", "{h} dix", "{h} et quart", "{h} vingt", "{h} vingt-cinq", "{h} et demie", "{next_h} moins vingt-cinq", "{next_h} moins vingt", "{next_h} moins le quart", "{next_h} moins dix", "{next_h} moins cinq" },
     },
     .short_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}h{mm}" } },

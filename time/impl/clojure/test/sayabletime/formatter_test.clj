@@ -148,6 +148,26 @@
   (testing "6.1 French quarter past"
     (is (= "trois heures et quart" (time-locale (locales/get-locale "fr") "15:15")))))
 
+;; 6.2
+(deftest french-6-2
+  (testing "6.2 French one o'clock"
+    (is (= "une heure" (time-locale (locales/get-locale "fr") "13:00")))))
+
+;; 6.3
+(deftest french-6-3
+  (testing "6.3 French half past one"
+    (is (= "une heure et demie" (time-locale (locales/get-locale "fr") "13:30")))))
+
+;; 6.4
+(deftest french-6-4
+  (testing "6.4 French quarter to three"
+    (is (= "trois heures moins le quart" (time-locale (locales/get-locale "fr") "14:45")))))
+
+;; 6.5
+(deftest french-6-5
+  (testing "6.5 French ten to three"
+    (is (= "trois heures moins dix" (time-locale (locales/get-locale "fr") "14:50")))))
+
 ;; ================================================================
 ;; Section 7: Locale -- Japanese
 ;; ================================================================

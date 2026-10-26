@@ -130,6 +130,30 @@ defmodule SayableTimeTest do
     assert time_locale(fr, "15:15") == {:ok, "trois heures et quart"}
   end
 
+  # 6.2
+  test "6.2 - French: une heure" do
+    fr = SayableTime.Locales.FR.locale()
+    assert time_locale(fr, "13:00") == {:ok, "une heure"}
+  end
+
+  # 6.3
+  test "6.3 - French: une heure et demie" do
+    fr = SayableTime.Locales.FR.locale()
+    assert time_locale(fr, "13:30") == {:ok, "une heure et demie"}
+  end
+
+  # 6.4
+  test "6.4 - French: trois heures moins le quart" do
+    fr = SayableTime.Locales.FR.locale()
+    assert time_locale(fr, "14:45") == {:ok, "trois heures moins le quart"}
+  end
+
+  # 6.5
+  test "6.5 - French: trois heures moins dix" do
+    fr = SayableTime.Locales.FR.locale()
+    assert time_locale(fr, "14:50") == {:ok, "trois heures moins dix"}
+  end
+
   # 7. Locale — Japanese
   # 7.1
   test "7.1 - Japanese: 三時半" do

@@ -202,6 +202,34 @@ fn test_french_quarter_past() {
     assert_time("French quarter past", f.format_time("15:15"), "trois heures et quart");
 }
 
+// 6.2
+#[test]
+fn test_french_singular_hour() {
+    let f = SayableTime::new(&locales::FR, Compactness::Normal);
+    assert_time("French singular hour", f.format_time("13:00"), "une heure");
+}
+
+// 6.3
+#[test]
+fn test_french_half_past_singular_hour() {
+    let f = SayableTime::new(&locales::FR, Compactness::Normal);
+    assert_time("French half past singular hour", f.format_time("13:30"), "une heure et demie");
+}
+
+// 6.4
+#[test]
+fn test_french_quarter_to() {
+    let f = SayableTime::new(&locales::FR, Compactness::Normal);
+    assert_time("French quarter to", f.format_time("14:45"), "trois heures moins le quart");
+}
+
+// 6.5
+#[test]
+fn test_french_ten_to() {
+    let f = SayableTime::new(&locales::FR, Compactness::Normal);
+    assert_time("French ten to", f.format_time("14:50"), "trois heures moins dix");
+}
+
 // ================================================================
 // Section 7: Locale -- Japanese
 // ================================================================

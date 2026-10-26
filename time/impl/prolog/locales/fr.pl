@@ -11,22 +11,22 @@
 
 % French locale.
 
-st_hours('fr', ['douze', 'une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze']).
+st_hours('fr', ['douze heures', 'une heure', 'deux heures', 'trois heures', 'quatre heures', 'cinq heures', 'six heures', 'sept heures', 'huit heures', 'neuf heures', 'dix heures', 'onze heures']).
 st_midnight('fr', 'minuit').
 st_noon('fr', 'midi').
 
-st_pattern('fr', 0, '{h} heures').
-st_pattern('fr', 5, '{h} heures cinq').
-st_pattern('fr', 10, '{h} heures dix').
-st_pattern('fr', 15, '{h} heures et quart').
-st_pattern('fr', 20, '{h} heures vingt').
-st_pattern('fr', 25, '{h} heures vingt-cinq').
-st_pattern('fr', 30, '{h} heures et demie').
-st_pattern('fr', 35, '{h} heures trente-cinq').
-st_pattern('fr', 40, '{h} heures quarante').
-st_pattern('fr', 45, '{h} heures moins le quart').
-st_pattern('fr', 50, '{h} heures cinquante').
-st_pattern('fr', 55, '{h} heures cinquante-cinq').
+st_pattern('fr', 0, '{h}').
+st_pattern('fr', 5, '{h} cinq').
+st_pattern('fr', 10, '{h} dix').
+st_pattern('fr', 15, '{h} et quart').
+st_pattern('fr', 20, '{h} vingt').
+st_pattern('fr', 25, '{h} vingt-cinq').
+st_pattern('fr', 30, '{h} et demie').
+st_pattern('fr', 35, '{next_h} moins vingt-cinq').
+st_pattern('fr', 40, '{next_h} moins vingt').
+st_pattern('fr', 45, '{next_h} moins le quart').
+st_pattern('fr', 50, '{next_h} moins dix').
+st_pattern('fr', 55, '{next_h} moins cinq').
 
 short_st_use24h('fr', true).
 short_st_format('fr', '{h}:{mm}').

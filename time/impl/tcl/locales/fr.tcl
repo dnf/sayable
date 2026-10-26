@@ -11,22 +11,22 @@
 
 proc locale_time_fr {} {
     set code {fr}
-    set hours [list {douze} {une} {deux} {trois} {quatre} {cinq} {six} {sept} {huit} {neuf} {dix} {onze}]
+    set hours [list {douze heures} {une heure} {deux heures} {trois heures} {quatre heures} {cinq heures} {six heures} {sept heures} {huit heures} {neuf heures} {dix heures} {onze heures}]
     set midnight {minuit}
     set noon {midi}
     set patterns [dict create \
-        0 "{h} heures" \
-        5 "{h} heures cinq" \
-        10 "{h} heures dix" \
-        15 "{h} heures et quart" \
-        20 "{h} heures vingt" \
-        25 "{h} heures vingt-cinq" \
-        30 "{h} heures et demie" \
-        35 "{h} heures trente-cinq" \
-        40 "{h} heures quarante" \
-        45 "{h} heures moins le quart" \
-        50 "{h} heures cinquante" \
-        55 "{h} heures cinquante-cinq" \
+        0 "{h}" \
+        5 "{h} cinq" \
+        10 "{h} dix" \
+        15 "{h} et quart" \
+        20 "{h} vingt" \
+        25 "{h} vingt-cinq" \
+        30 "{h} et demie" \
+        35 "{next_h} moins vingt-cinq" \
+        40 "{next_h} moins vingt" \
+        45 "{next_h} moins le quart" \
+        50 "{next_h} moins dix" \
+        55 "{next_h} moins cinq" \
     ]
     set clock_config [dict create \
         hours $hours \

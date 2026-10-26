@@ -167,6 +167,26 @@ Describe 'Locale — French (Time)' {
     It 'French: trois heures et quart' {
         Format-SayableTime -Formatter $script:frFmt -InputStr '15:15' | Should -Be 'trois heures et quart'
     }
+
+    # 6.2
+    It 'French: une heure' {
+        Format-SayableTime -Formatter $script:frFmt -InputStr '13:00' | Should -Be 'une heure'
+    }
+
+    # 6.3
+    It 'French: une heure et demie' {
+        Format-SayableTime -Formatter $script:frFmt -InputStr '13:30' | Should -Be 'une heure et demie'
+    }
+
+    # 6.4
+    It 'French: trois heures moins le quart' {
+        Format-SayableTime -Formatter $script:frFmt -InputStr '14:45' | Should -Be 'trois heures moins le quart'
+    }
+
+    # 6.5
+    It 'French: trois heures moins dix' {
+        Format-SayableTime -Formatter $script:frFmt -InputStr '14:50' | Should -Be 'trois heures moins dix'
+    }
 }
 
 # ================================================================

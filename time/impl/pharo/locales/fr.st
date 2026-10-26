@@ -17,22 +17,22 @@ fr
 	locale := SayableTimeLocale new.
 	locale code: 'fr'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'douze'. 'une'. 'deux'. 'trois'. 'quatre'. 'cinq'. 'six'. 'sept'. 'huit'. 'neuf'. 'dix'. 'onze' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'douze heures'. 'une heure'. 'deux heures'. 'trois heures'. 'quatre heures'. 'cinq heures'. 'six heures'. 'sept heures'. 'huit heures'. 'neuf heures'. 'dix heures'. 'onze heures' }).
 	clock at: #midnight put: 'minuit'.
 	clock at: #noon put: 'midi'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h} heures'.
-		5. '{h} heures cinq'.
-		10. '{h} heures dix'.
-		15. '{h} heures et quart'.
-		20. '{h} heures vingt'.
-		25. '{h} heures vingt-cinq'.
-		30. '{h} heures et demie'.
-		35. '{h} heures trente-cinq'.
-		40. '{h} heures quarante'.
-		45. '{h} heures moins le quart'.
-		50. '{h} heures cinquante'.
-		55. '{h} heures cinquante-cinq'.
+		0. '{h}'.
+		5. '{h} cinq'.
+		10. '{h} dix'.
+		15. '{h} et quart'.
+		20. '{h} vingt'.
+		25. '{h} vingt-cinq'.
+		30. '{h} et demie'.
+		35. '{next_h} moins vingt-cinq'.
+		40. '{next_h} moins vingt'.
+		45. '{next_h} moins le quart'.
+		50. '{next_h} moins dix'.
+		55. '{next_h} moins cinq'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

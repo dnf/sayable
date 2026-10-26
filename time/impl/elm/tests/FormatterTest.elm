@@ -95,6 +95,14 @@ suite =
         , describe "6. Locale - French"
             [ test "6.1 trois heures et quart" <|
                 \_ -> Expect.equal (Just "trois heures et quart") (formatTime Fr.locale Normal "15:15")
+            , test "6.2 une heure" <|
+                \_ -> Expect.equal (Just "une heure") (formatTime Fr.locale Normal "13:00")
+            , test "6.3 une heure et demie" <|
+                \_ -> Expect.equal (Just "une heure et demie") (formatTime Fr.locale Normal "13:30")
+            , test "6.4 trois heures moins le quart" <|
+                \_ -> Expect.equal (Just "trois heures moins le quart") (formatTime Fr.locale Normal "14:45")
+            , test "6.5 trois heures moins dix" <|
+                \_ -> Expect.equal (Just "trois heures moins dix") (formatTime Fr.locale Normal "14:50")
             ]
         , describe "7. Locale - Japanese"
             [ test "7.1 \u{4E09}\u{6642}\u{534A}" <|

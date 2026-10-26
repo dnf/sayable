@@ -49,6 +49,10 @@ let test_5_1 () = check_some "halb vier" (ftime de "15:30")                     
 
 (* 6. Locale — French *)
 let test_6_1 () = check_some "trois heures et quart" (ftime fr "15:15")              (* 6.1 *)
+let test_6_2 () = check_some "une heure" (ftime fr "13:00")  (* 6.2 *)
+let test_6_3 () = check_some "une heure et demie" (ftime fr "13:30")  (* 6.3 *)
+let test_6_4 () = check_some "trois heures moins le quart" (ftime fr "14:45")  (* 6.4 *)
+let test_6_5 () = check_some "trois heures moins dix" (ftime fr "14:50")  (* 6.5 *)
 
 (* 7. Locale — Japanese *)
 let test_7_1 () = check_some "\xe4\xb8\x89\xe6\x99\x82\xe5\x8d\x8a" (ftime ja "15:30") (* 7.1 *)
@@ -113,6 +117,10 @@ let () =
         ] )
     ; ( "6. Locale French"
       , [ Alcotest.test_case "6.1 trois heures et quart" `Quick test_6_1
+        ; Alcotest.test_case "6.2 une heure" `Quick test_6_2
+        ; Alcotest.test_case "6.3 une heure et demie" `Quick test_6_3
+        ; Alcotest.test_case "6.4 trois heures moins le quart" `Quick test_6_4
+        ; Alcotest.test_case "6.5 trois heures moins dix" `Quick test_6_5
         ] )
     ; ( "7. Locale Japanese"
       , [ Alcotest.test_case "7.1 san ji han" `Quick test_7_1

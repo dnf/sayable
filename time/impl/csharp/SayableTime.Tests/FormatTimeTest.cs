@@ -209,6 +209,38 @@ public class FormatTimeTest
         Assert.Equal("trois heures et quart", st.Format("15:15"));
     }
 
+    // 6.2
+    [Fact]
+    public void French_one_oclock()
+    {
+        var st = new SayableTime(Locales.FR);
+        Assert.Equal("une heure", st.Format("13:00"));
+    }
+
+    // 6.3
+    [Fact]
+    public void French_half_past_one()
+    {
+        var st = new SayableTime(Locales.FR);
+        Assert.Equal("une heure et demie", st.Format("13:30"));
+    }
+
+    // 6.4
+    [Fact]
+    public void French_quarter_to_three()
+    {
+        var st = new SayableTime(Locales.FR);
+        Assert.Equal("trois heures moins le quart", st.Format("14:45"));
+    }
+
+    // 6.5
+    [Fact]
+    public void French_ten_to_three()
+    {
+        var st = new SayableTime(Locales.FR);
+        Assert.Equal("trois heures moins dix", st.Format("14:50"));
+    }
+
     // ================================================================
     // Section 7: Locale — Japanese
     // ================================================================

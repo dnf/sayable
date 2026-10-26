@@ -1014,10 +1014,10 @@ locale_fon : Time_Locale = {
 locale_fr : Time_Locale = {
     code = "fr",
     clock = Clock_Config{
-        hours = {"douze", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze"},
+        hours = {"douze heures", "une heure", "deux heures", "trois heures", "quatre heures", "cinq heures", "six heures", "sept heures", "huit heures", "neuf heures", "dix heures", "onze heures"},
         midnight = "minuit",
         noon = "midi",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} heures"}, Clock_Pattern{minute = 5, pattern = "{h} heures cinq"}, Clock_Pattern{minute = 10, pattern = "{h} heures dix"}, Clock_Pattern{minute = 15, pattern = "{h} heures et quart"}, Clock_Pattern{minute = 20, pattern = "{h} heures vingt"}, Clock_Pattern{minute = 25, pattern = "{h} heures vingt-cinq"}, Clock_Pattern{minute = 30, pattern = "{h} heures et demie"}, Clock_Pattern{minute = 35, pattern = "{h} heures trente-cinq"}, Clock_Pattern{minute = 40, pattern = "{h} heures quarante"}, Clock_Pattern{minute = 45, pattern = "{h} heures moins le quart"}, Clock_Pattern{minute = 50, pattern = "{h} heures cinquante"}, Clock_Pattern{minute = 55, pattern = "{h} heures cinquante-cinq"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} cinq"}, Clock_Pattern{minute = 10, pattern = "{h} dix"}, Clock_Pattern{minute = 15, pattern = "{h} et quart"}, Clock_Pattern{minute = 20, pattern = "{h} vingt"}, Clock_Pattern{minute = 25, pattern = "{h} vingt-cinq"}, Clock_Pattern{minute = 30, pattern = "{h} et demie"}, Clock_Pattern{minute = 35, pattern = "{next_h} moins vingt-cinq"}, Clock_Pattern{minute = 40, pattern = "{next_h} moins vingt"}, Clock_Pattern{minute = 45, pattern = "{next_h} moins le quart"}, Clock_Pattern{minute = 50, pattern = "{next_h} moins dix"}, Clock_Pattern{minute = 55, pattern = "{next_h} moins cinq"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{

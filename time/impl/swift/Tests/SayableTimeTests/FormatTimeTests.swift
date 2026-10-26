@@ -159,6 +159,30 @@ import Testing
         #expect(st.formatTime("15:15") == "trois heures et quart")
     }
 
+    // 6.2
+    @Test func frenchSingularHour() {
+        let st = SayableTimeFormatter(Locales.FR)
+        #expect(st.formatTime("13:00") == "une heure")
+    }
+
+    // 6.3
+    @Test func frenchHalfPastSingularHour() {
+        let st = SayableTimeFormatter(Locales.FR)
+        #expect(st.formatTime("13:30") == "une heure et demie")
+    }
+
+    // 6.4
+    @Test func frenchQuarterTo() {
+        let st = SayableTimeFormatter(Locales.FR)
+        #expect(st.formatTime("14:45") == "trois heures moins le quart")
+    }
+
+    // 6.5
+    @Test func frenchTenTo() {
+        let st = SayableTimeFormatter(Locales.FR)
+        #expect(st.formatTime("14:50") == "trois heures moins dix")
+    }
+
     // ================================================================
     // Locale -- Japanese
     // ================================================================

@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Canonical test cases for sayable-time. This is the single source of truth — every test case listed here must be implemented in every language.",
-    "totalTests": 37,
+    "totalTests": 41,
     "notes": [
       "All test cases use explicit inputs for determinism.",
       "When a single test covers multiple canonical IDs, list them with commas."
@@ -68,7 +68,11 @@
       "title": "Locale — French",
       "locale": "fr",
       "tests": [
-        {"id": "6.1", "function": "format_time", "input": {"time": "15:15"}, "expected": "trois heures et quart"}
+        {"id": "6.1", "function": "format_time", "input": {"time": "15:15"}, "expected": "trois heures et quart"},
+        {"id": "6.2", "function": "format_time", "input": {"time": "13:00"}, "expected": "une heure", "notes": "singular: une heure, not une heures"},
+        {"id": "6.3", "function": "format_time", "input": {"time": "13:30"}, "expected": "une heure et demie", "notes": "singular hour with et demie"},
+        {"id": "6.4", "function": "format_time", "input": {"time": "14:45"}, "expected": "trois heures moins le quart", "notes": "counts down to the next hour"},
+        {"id": "6.5", "function": "format_time", "input": {"time": "14:50"}, "expected": "trois heures moins dix", "notes": "after the half hour, French counts down to the next hour"}
       ]
     },
     {

@@ -906,10 +906,10 @@ public object Locales {
     private fun buildFr(): TimeLocale = TimeLocale(
         code = "fr",
         clock = ClockConfig(
-            hours = listOf("douze", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze"),
+            hours = listOf("douze heures", "une heure", "deux heures", "trois heures", "quatre heures", "cinq heures", "six heures", "sept heures", "huit heures", "neuf heures", "dix heures", "onze heures"),
             midnight = "minuit",
             noon = "midi",
-            patterns = mapOf(0 to "{h} heures", 5 to "{h} heures cinq", 10 to "{h} heures dix", 15 to "{h} heures et quart", 20 to "{h} heures vingt", 25 to "{h} heures vingt-cinq", 30 to "{h} heures et demie", 35 to "{h} heures trente-cinq", 40 to "{h} heures quarante", 45 to "{h} heures moins le quart", 50 to "{h} heures cinquante", 55 to "{h} heures cinquante-cinq"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} cinq", 10 to "{h} dix", 15 to "{h} et quart", 20 to "{h} vingt", 25 to "{h} vingt-cinq", 30 to "{h} et demie", 35 to "{next_h} moins vingt-cinq", 40 to "{next_h} moins vingt", 45 to "{next_h} moins le quart", 50 to "{next_h} moins dix", 55 to "{next_h} moins cinq"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),

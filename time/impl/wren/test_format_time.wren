@@ -151,6 +151,18 @@ var frFmt = SayableTime.new(FRLocale)
 // 6.1
 t.assert("6.1", frFmt.formatTime("15:15"), "trois heures et quart")
 
+// 6.2
+t.assert("6.2", frFmt.formatTime("13:00"), "une heure")
+
+// 6.3
+t.assert("6.3", frFmt.formatTime("13:30"), "une heure et demie")
+
+// 6.4
+t.assert("6.4", frFmt.formatTime("14:45"), "trois heures moins le quart")
+
+// 6.5
+t.assert("6.5", frFmt.formatTime("14:50"), "trois heures moins dix")
+
 // ================================================================
 // 7. Locale — Japanese
 // ================================================================

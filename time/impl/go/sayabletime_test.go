@@ -189,6 +189,26 @@ func TestLocaleFrench(t *testing.T) {
 	t.Run("quarter_past", func(t *testing.T) {
 		assertEq(t, f.FormatTime("15:15"), "trois heures et quart")
 	})
+
+	// 6.2
+	t.Run("on_the_hour", func(t *testing.T) {
+		assertEq(t, f.FormatTime("13:00"), "une heure")
+	})
+
+	// 6.3
+	t.Run("half_past", func(t *testing.T) {
+		assertEq(t, f.FormatTime("13:30"), "une heure et demie")
+	})
+
+	// 6.4
+	t.Run("quarter_to", func(t *testing.T) {
+		assertEq(t, f.FormatTime("14:45"), "trois heures moins le quart")
+	})
+
+	// 6.5
+	t.Run("ten_to", func(t *testing.T) {
+		assertEq(t, f.FormatTime("14:50"), "trois heures moins dix")
+	})
 }
 
 // ================================================================
