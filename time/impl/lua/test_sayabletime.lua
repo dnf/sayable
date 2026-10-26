@@ -160,6 +160,26 @@ describe("Locale — French", function()
     it("trois heures et quart", function()
         assert.are.equal("trois heures et quart", stf.format_time("15:15"))
     end)
+
+    -- 6.2
+    it("une heure", function()
+        assert.are.equal("une heure", stf.format_time("13:00"))
+    end)
+
+    -- 6.3
+    it("une heure et demie", function()
+        assert.are.equal("une heure et demie", stf.format_time("13:30"))
+    end)
+
+    -- 6.4
+    it("trois heures moins le quart", function()
+        assert.are.equal("trois heures moins le quart", stf.format_time("14:45"))
+    end)
+
+    -- 6.5
+    it("trois heures moins dix", function()
+        assert.are.equal("trois heures moins dix", stf.format_time("14:50"))
+    end)
 end)
 
 -- ================================================================

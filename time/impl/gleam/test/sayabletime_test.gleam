@@ -159,6 +159,30 @@ pub fn french_quarter_past_three_test() {
   |> should.equal(Ok("trois heures et quart"))
 }
 
+// 6.2
+pub fn french_on_the_hour_test() {
+  sayabletime.format_time(locale_fr.locale(), Normal, "13:00")
+  |> should.equal(Ok("une heure"))
+}
+
+// 6.3
+pub fn french_half_past_test() {
+  sayabletime.format_time(locale_fr.locale(), Normal, "13:30")
+  |> should.equal(Ok("une heure et demie"))
+}
+
+// 6.4
+pub fn french_quarter_to_test() {
+  sayabletime.format_time(locale_fr.locale(), Normal, "14:45")
+  |> should.equal(Ok("trois heures moins le quart"))
+}
+
+// 6.5
+pub fn french_ten_to_test() {
+  sayabletime.format_time(locale_fr.locale(), Normal, "14:50")
+  |> should.equal(Ok("trois heures moins dix"))
+}
+
 // 7. Locale -- Japanese
 
 // 7.1

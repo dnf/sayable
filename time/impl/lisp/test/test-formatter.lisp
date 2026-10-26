@@ -91,6 +91,14 @@
 (defun test-section-6 ()
   ;; 6.1
   (check-equal "6.1" (format-time (make-formatter (get-locale "fr") :normal) "15:15") "trois heures et quart")
+  ;; 6.2
+  (check-equal "6.2" (format-time (make-formatter (get-locale "fr") :normal) "13:00") "une heure")
+  ;; 6.3
+  (check-equal "6.3" (format-time (make-formatter (get-locale "fr") :normal) "13:30") "une heure et demie")
+  ;; 6.4
+  (check-equal "6.4" (format-time (make-formatter (get-locale "fr") :normal) "14:45") "trois heures moins le quart")
+  ;; 6.5
+  (check-equal "6.5" (format-time (make-formatter (get-locale "fr") :normal) "14:50") "trois heures moins dix")
 )
 
 ;; Section 7: Locale — Japanese

@@ -63,6 +63,18 @@
 ;; 6.1
 (check-equal? (format-time (get-locale "fr") "15:15") "trois heures et quart")
 
+;; 6.2
+(check-equal? (format-time (get-locale "fr") "13:00") "une heure")
+
+;; 6.3
+(check-equal? (format-time (get-locale "fr") "13:30") "une heure et demie")
+
+;; 6.4
+(check-equal? (format-time (get-locale "fr") "14:45") "trois heures moins le quart")
+
+;; 6.5
+(check-equal? (format-time (get-locale "fr") "14:50") "trois heures moins dix")
+
 ;; Section 7: Locale -- Japanese
 ;; 7.1
 (check-equal? (format-time (get-locale "ja") "15:30") "\u4e09\u6642\u534a")

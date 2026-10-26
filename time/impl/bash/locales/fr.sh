@@ -10,21 +10,21 @@
 # Source: locales/fr.json
 
 _sayabletime_locale_fr() {
-    _clock_hours=('douze' 'une' 'deux' 'trois' 'quatre' 'cinq' 'six' 'sept' 'huit' 'neuf' 'dix' 'onze')
+    _clock_hours=('douze heures' 'une heure' 'deux heures' 'trois heures' 'quatre heures' 'cinq heures' 'six heures' 'sept heures' 'huit heures' 'neuf heures' 'dix heures' 'onze heures')
     _clock_midnight='minuit'
     _clock_noon='midi'
-    _clock_pattern_0='{h} heures'
-    _clock_pattern_5='{h} heures cinq'
-    _clock_pattern_10='{h} heures dix'
-    _clock_pattern_15='{h} heures et quart'
-    _clock_pattern_20='{h} heures vingt'
-    _clock_pattern_25='{h} heures vingt-cinq'
-    _clock_pattern_30='{h} heures et demie'
-    _clock_pattern_35='{h} heures trente-cinq'
-    _clock_pattern_40='{h} heures quarante'
-    _clock_pattern_45='{h} heures moins le quart'
-    _clock_pattern_50='{h} heures cinquante'
-    _clock_pattern_55='{h} heures cinquante-cinq'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} cinq'
+    _clock_pattern_10='{h} dix'
+    _clock_pattern_15='{h} et quart'
+    _clock_pattern_20='{h} vingt'
+    _clock_pattern_25='{h} vingt-cinq'
+    _clock_pattern_30='{h} et demie'
+    _clock_pattern_35='{next_h} moins vingt-cinq'
+    _clock_pattern_40='{next_h} moins vingt'
+    _clock_pattern_45='{next_h} moins le quart'
+    _clock_pattern_50='{next_h} moins dix'
+    _clock_pattern_55='{next_h} moins cinq'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

@@ -158,6 +158,30 @@ class TestFormatTime < Minitest::Test
     assert_equal 'trois heures et quart', st.format_time('15:15')
   end
 
+  # 6.2
+  def test_french_singular_hour
+    st = SayableTime::Formatter.new(SayableTime::Locales::FR)
+    assert_equal 'une heure', st.format_time('13:00')
+  end
+
+  # 6.3
+  def test_french_half_past_singular_hour
+    st = SayableTime::Formatter.new(SayableTime::Locales::FR)
+    assert_equal 'une heure et demie', st.format_time('13:30')
+  end
+
+  # 6.4
+  def test_french_quarter_to
+    st = SayableTime::Formatter.new(SayableTime::Locales::FR)
+    assert_equal 'trois heures moins le quart', st.format_time('14:45')
+  end
+
+  # 6.5
+  def test_french_ten_to
+    st = SayableTime::Formatter.new(SayableTime::Locales::FR)
+    assert_equal 'trois heures moins dix', st.format_time('14:50')
+  end
+
   # ================================================================
   # Section 7: Locale — Japanese
   # ================================================================

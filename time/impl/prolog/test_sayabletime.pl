@@ -122,6 +122,26 @@ test_case(test_6_1) :-
     format_time('fr', '15:15', normal, Result),
     Result == 'trois heures et quart'.
 
+% 6.2:
+test_case(test_6_2) :-
+    format_time('fr', '13:00', normal, Result),
+    Result == 'une heure'.
+
+% 6.3:
+test_case(test_6_3) :-
+    format_time('fr', '13:30', normal, Result),
+    Result == 'une heure et demie'.
+
+% 6.4:
+test_case(test_6_4) :-
+    format_time('fr', '14:45', normal, Result),
+    Result == 'trois heures moins le quart'.
+
+% 6.5:
+test_case(test_6_5) :-
+    format_time('fr', '14:50', normal, Result),
+    Result == 'trois heures moins dix'.
+
 % Section 7: Locale — Japanese
 % 7.1:
 test_case(test_7_1) :-
@@ -222,6 +242,10 @@ test_case_name(test_4_1).
 test_case_name(test_4_2).
 test_case_name(test_5_1).
 test_case_name(test_6_1).
+test_case_name(test_6_2).
+test_case_name(test_6_3).
+test_case_name(test_6_4).
+test_case_name(test_6_5).
 test_case_name(test_7_1).
 test_case_name(test_8_1).
 test_case_name(test_8_2).

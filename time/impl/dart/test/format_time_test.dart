@@ -113,6 +113,18 @@ void main() {
     test('quarter past', () {
       expect(st.formatTime('15:15'), 'trois heures et quart'); // 6.1
     });
+    test('one oclock', () {
+      expect(st.formatTime('13:00'), 'une heure'); // 6.2
+    });
+    test('half past one', () {
+      expect(st.formatTime('13:30'), 'une heure et demie'); // 6.3
+    });
+    test('quarter to three', () {
+      expect(st.formatTime('14:45'), 'trois heures moins le quart'); // 6.4
+    });
+    test('ten to three', () {
+      expect(st.formatTime('14:50'), 'trois heures moins dix'); // 6.5
+    });
   });
 
   // ================================================================

@@ -186,6 +186,34 @@ final class FormatTimeTest extends TestCase
         $this->assertSame('trois heures et quart', $st->formatTime('15:15'));
     }
 
+    // 6.2
+    public function test_french_6_2(): void
+    {
+        $st = new SayableTime(Locales::FR());
+        $this->assertSame('une heure', $st->formatTime('13:00'));
+    }
+
+    // 6.3
+    public function test_french_6_3(): void
+    {
+        $st = new SayableTime(Locales::FR());
+        $this->assertSame('une heure et demie', $st->formatTime('13:30'));
+    }
+
+    // 6.4
+    public function test_french_6_4(): void
+    {
+        $st = new SayableTime(Locales::FR());
+        $this->assertSame('trois heures moins le quart', $st->formatTime('14:45'));
+    }
+
+    // 6.5
+    public function test_french_6_5(): void
+    {
+        $st = new SayableTime(Locales::FR());
+        $this->assertSame('trois heures moins dix', $st->formatTime('14:50'));
+    }
+
     // ================================================================
     // Section 7: Locale — Japanese
     // ================================================================

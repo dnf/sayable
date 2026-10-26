@@ -175,6 +175,34 @@ fn test_6_1() {
 	assert result == 'trois heures et quart', '6.1: got ${result}'
 }
 
+// 6.2
+fn test_6_2() {
+	st := locales.new_sayable_time(locales.get_time_locale('fr') or { assert false; return }, .normal)
+	result := st.format_time('13:00') or { assert false, '6.2 should not be none'; return }
+	assert result == 'une heure', '6.2: got ${result}'
+}
+
+// 6.3
+fn test_6_3() {
+	st := locales.new_sayable_time(locales.get_time_locale('fr') or { assert false; return }, .normal)
+	result := st.format_time('13:30') or { assert false, '6.3 should not be none'; return }
+	assert result == 'une heure et demie', '6.3: got ${result}'
+}
+
+// 6.4
+fn test_6_4() {
+	st := locales.new_sayable_time(locales.get_time_locale('fr') or { assert false; return }, .normal)
+	result := st.format_time('14:45') or { assert false, '6.4 should not be none'; return }
+	assert result == 'trois heures moins le quart', '6.4: got ${result}'
+}
+
+// 6.5
+fn test_6_5() {
+	st := locales.new_sayable_time(locales.get_time_locale('fr') or { assert false; return }, .normal)
+	result := st.format_time('14:50') or { assert false, '6.5 should not be none'; return }
+	assert result == 'trois heures moins dix', '6.5: got ${result}'
+}
+
 // Section 7: Locale -- Japanese
 
 // 7.1

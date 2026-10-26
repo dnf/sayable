@@ -152,6 +152,30 @@ let ``French 15:15 is trois heures et quart`` () =
     let st = SayableTimeFormatter(FR)
     Assert.Equal(Some "trois heures et quart", st.FormatTime(Some "15:15"))
 
+// 6.2
+[<Fact>]
+let ``French 13:00 is une heure`` () =
+    let st = SayableTimeFormatter(FR)
+    Assert.Equal(Some "une heure", st.FormatTime(Some "13:00"))
+
+// 6.3
+[<Fact>]
+let ``French 13:30 is une heure et demie`` () =
+    let st = SayableTimeFormatter(FR)
+    Assert.Equal(Some "une heure et demie", st.FormatTime(Some "13:30"))
+
+// 6.4
+[<Fact>]
+let ``French 14:45 is trois heures moins le quart`` () =
+    let st = SayableTimeFormatter(FR)
+    Assert.Equal(Some "trois heures moins le quart", st.FormatTime(Some "14:45"))
+
+// 6.5
+[<Fact>]
+let ``French 14:50 is trois heures moins dix`` () =
+    let st = SayableTimeFormatter(FR)
+    Assert.Equal(Some "trois heures moins dix", st.FormatTime(Some "14:50"))
+
 // ================================================================
 // Locale -- Japanese
 // ================================================================

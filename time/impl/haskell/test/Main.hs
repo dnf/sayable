@@ -119,6 +119,22 @@ main = hspec $ do
         it "6.1 French quarter past" $
             formatTime Fr.locale Normal (Just "15:15") `shouldBe` Just "trois heures et quart"
 
+        -- 6.2
+        it "6.2 French on the hour" $
+            formatTime Fr.locale Normal (Just "13:00") `shouldBe` Just "une heure"
+
+        -- 6.3
+        it "6.3 French half past" $
+            formatTime Fr.locale Normal (Just "13:30") `shouldBe` Just "une heure et demie"
+
+        -- 6.4
+        it "6.4 French quarter to" $
+            formatTime Fr.locale Normal (Just "14:45") `shouldBe` Just "trois heures moins le quart"
+
+        -- 6.5
+        it "6.5 French ten to" $
+            formatTime Fr.locale Normal (Just "14:50") `shouldBe` Just "trois heures moins dix"
+
     -- Section 7: Locale -- Japanese
     describe "7. Locale -- Japanese" $ do
         -- 7.1

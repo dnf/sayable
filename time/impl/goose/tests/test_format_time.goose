@@ -122,6 +122,14 @@ fn main() {
     check_time("5.1", "de", normal, "15:30", "halb vier");
     // 6.1
     check_time("6.1", "fr", normal, "15:15", "trois heures et quart");
+    // 6.2
+    check_time("6.2", "fr", normal, "13:00", "une heure");
+    // 6.3
+    check_time("6.3", "fr", normal, "13:30", "une heure et demie");
+    // 6.4
+    check_time("6.4", "fr", normal, "14:45", "trois heures moins le quart");
+    // 6.5
+    check_time("6.5", "fr", normal, "14:50", "trois heures moins dix");
     // 7.1
     check_time("7.1", "ja", normal, "15:30", "三時半");
 

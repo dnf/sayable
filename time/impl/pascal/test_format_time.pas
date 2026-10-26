@@ -95,6 +95,14 @@ begin
   { Section 6: Locale — French }
   { 6.1 }
   AssertEqual('6.1', 'trois heures et quart', FormatTime(FR, tcNormal, '15:15'));
+  { 6.2 }
+  AssertEqual('6.2', 'une heure', FormatTime(FR, tcNormal, '13:00'));
+  { 6.3 }
+  AssertEqual('6.3', 'une heure et demie', FormatTime(FR, tcNormal, '13:30'));
+  { 6.4 }
+  AssertEqual('6.4', 'trois heures moins le quart', FormatTime(FR, tcNormal, '14:45'));
+  { 6.5 }
+  AssertEqual('6.5', 'trois heures moins dix', FormatTime(FR, tcNormal, '14:50'));
 
   { Section 7: Locale — Japanese }
   { 7.1 }

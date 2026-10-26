@@ -124,6 +124,18 @@
 # 6.1
 (assert-eq "6.1" ((pt-fr :format-time) "15:15") "trois heures et quart")
 
+# 6.2
+(assert-eq "6.2" ((pt-fr :format-time) "13:00") "une heure")
+
+# 6.3
+(assert-eq "6.3" ((pt-fr :format-time) "13:30") "une heure et demie")
+
+# 6.4
+(assert-eq "6.4" ((pt-fr :format-time) "14:45") "trois heures moins le quart")
+
+# 6.5
+(assert-eq "6.5" ((pt-fr :format-time) "14:50") "trois heures moins dix")
+
 # =============================================================================
 # Section 7: Locale - Japanese
 # =============================================================================

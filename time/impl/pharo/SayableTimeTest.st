@@ -165,6 +165,38 @@ testFrenchQuarterPast3
 	self assert: (st formatTime: '15:15') equals: 'trois heures et quart'
 ! !
 
+!SayableTimeTest methodsFor: 'tests-locale-french'!
+"6.2"
+testFrenchOneOclock
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'fr').
+	self assert: (st formatTime: '13:00') equals: 'une heure'
+! !
+
+!SayableTimeTest methodsFor: 'tests-locale-french'!
+"6.3"
+testFrenchHalfPastOne
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'fr').
+	self assert: (st formatTime: '13:30') equals: 'une heure et demie'
+! !
+
+!SayableTimeTest methodsFor: 'tests-locale-french'!
+"6.4"
+testFrenchQuarterToThree
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'fr').
+	self assert: (st formatTime: '14:45') equals: 'trois heures moins le quart'
+! !
+
+!SayableTimeTest methodsFor: 'tests-locale-french'!
+"6.5"
+testFrenchTenToThree
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'fr').
+	self assert: (st formatTime: '14:50') equals: 'trois heures moins dix'
+! !
+
 !SayableTimeTest methodsFor: 'tests-locale-japanese'!
 "7.1"
 testJapanese330

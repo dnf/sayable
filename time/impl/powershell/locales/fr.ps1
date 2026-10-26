@@ -10,22 +10,22 @@
 # Source: locales/fr.json
 
 function locale_fr {
-    $hours = @('douze', 'une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze')
+    $hours = @('douze heures', 'une heure', 'deux heures', 'trois heures', 'quatre heures', 'cinq heures', 'six heures', 'sept heures', 'huit heures', 'neuf heures', 'dix heures', 'onze heures')
     $midnight = 'minuit'
     $noon = 'midi'
     $patterns = @{}
-    $patterns[0] = '{h} heures'
-    $patterns[5] = '{h} heures cinq'
-    $patterns[10] = '{h} heures dix'
-    $patterns[15] = '{h} heures et quart'
-    $patterns[20] = '{h} heures vingt'
-    $patterns[25] = '{h} heures vingt-cinq'
-    $patterns[30] = '{h} heures et demie'
-    $patterns[35] = '{h} heures trente-cinq'
-    $patterns[40] = '{h} heures quarante'
-    $patterns[45] = '{h} heures moins le quart'
-    $patterns[50] = '{h} heures cinquante'
-    $patterns[55] = '{h} heures cinquante-cinq'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} cinq'
+    $patterns[10] = '{h} dix'
+    $patterns[15] = '{h} et quart'
+    $patterns[20] = '{h} vingt'
+    $patterns[25] = '{h} vingt-cinq'
+    $patterns[30] = '{h} et demie'
+    $patterns[35] = '{next_h} moins vingt-cinq'
+    $patterns[40] = '{next_h} moins vingt'
+    $patterns[45] = '{next_h} moins le quart'
+    $patterns[50] = '{next_h} moins dix'
+    $patterns[55] = '{next_h} moins cinq'
     $clock = @{
         hours = $hours
         midnight = $midnight

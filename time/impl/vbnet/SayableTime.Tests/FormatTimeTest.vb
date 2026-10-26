@@ -180,6 +180,34 @@ Namespace SayableTime.Tests
             Assert.Equal("trois heures et quart", st.Format("15:15"))
         End Sub
 
+        ' 6.2
+        <Fact>
+        Public Sub French_singular_hour()
+            Dim st = New SayableTimeLib.SayableTime(Locales.FR)
+            Assert.Equal("une heure", st.Format("13:00"))
+        End Sub
+
+        ' 6.3
+        <Fact>
+        Public Sub French_half_past_singular_hour()
+            Dim st = New SayableTimeLib.SayableTime(Locales.FR)
+            Assert.Equal("une heure et demie", st.Format("13:30"))
+        End Sub
+
+        ' 6.4
+        <Fact>
+        Public Sub French_quarter_to()
+            Dim st = New SayableTimeLib.SayableTime(Locales.FR)
+            Assert.Equal("trois heures moins le quart", st.Format("14:45"))
+        End Sub
+
+        ' 6.5
+        <Fact>
+        Public Sub French_ten_to()
+            Dim st = New SayableTimeLib.SayableTime(Locales.FR)
+            Assert.Equal("trois heures moins dix", st.Format("14:50"))
+        End Sub
+
         ' ================================================================
         ' Section 7: Locale — Japanese
         ' ================================================================

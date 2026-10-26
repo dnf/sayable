@@ -492,6 +492,10 @@ run_test 'time:5.1' 'halb vier' time 15:30 -l de
 
 # === Time 6: Locale — French ===
 run_test 'time:6.1' 'trois heures et quart' time 15:15 -l fr
+run_test 'time:6.2' 'une heure' time 13:00 -l fr
+run_test 'time:6.3' 'une heure et demie' time 13:30 -l fr
+run_test 'time:6.4' 'trois heures moins le quart' time 14:45 -l fr
+run_test 'time:6.5' 'trois heures moins dix' time 14:50 -l fr
 
 # === Time 7: Locale — Japanese ===
 run_test 'time:7.1' '三時半' time 15:30 -l ja

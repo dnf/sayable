@@ -160,6 +160,30 @@ fn test_french_quarter_past() raises:
     assert_equal(st.format_time("15:15"), "trois heures et quart")
 
 
+# 6.2
+fn test_french_6_2() raises:
+    var st = SayableTime(build_fr())
+    assert_equal(st.format_time("13:00"), "une heure")
+
+
+# 6.3
+fn test_french_6_3() raises:
+    var st = SayableTime(build_fr())
+    assert_equal(st.format_time("13:30"), "une heure et demie")
+
+
+# 6.4
+fn test_french_6_4() raises:
+    var st = SayableTime(build_fr())
+    assert_equal(st.format_time("14:45"), "trois heures moins le quart")
+
+
+# 6.5
+fn test_french_6_5() raises:
+    var st = SayableTime(build_fr())
+    assert_equal(st.format_time("14:50"), "trois heures moins dix")
+
+
 # ================================================================
 # Locale — Japanese
 # ================================================================

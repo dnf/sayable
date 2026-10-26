@@ -183,6 +183,26 @@ unittest {
     auto st = SayableTime(FR);
     assertEq("6.1 French quarter past three", st.formatTime("15:15"), "trois heures et quart");
 }
+// 6.2
+unittest {
+    auto st = SayableTime(FR);
+    assertEq("6.2 French one o'clock", st.formatTime("13:00"), "une heure");
+}
+// 6.3
+unittest {
+    auto st = SayableTime(FR);
+    assertEq("6.3 French half past one", st.formatTime("13:30"), "une heure et demie");
+}
+// 6.4
+unittest {
+    auto st = SayableTime(FR);
+    assertEq("6.4 French quarter to three", st.formatTime("14:45"), "trois heures moins le quart");
+}
+// 6.5
+unittest {
+    auto st = SayableTime(FR);
+    assertEq("6.5 French ten to three", st.formatTime("14:50"), "trois heures moins dix");
+}
 
 // ================================================================
 // Section 7: Locale — Japanese

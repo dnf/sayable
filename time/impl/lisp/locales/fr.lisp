@@ -17,10 +17,10 @@
   (make-time-locale
    :code "fr"
    :clock (make-clock-config
-    :hours (list "douze" "une" "deux" "trois" "quatre" "cinq" "six" "sept" "huit" "neuf" "dix" "onze")
+    :hours (list "douze heures" "une heure" "deux heures" "trois heures" "quatre heures" "cinq heures" "six heures" "sept heures" "huit heures" "neuf heures" "dix heures" "onze heures")
     :midnight "minuit"
     :noon "midi"
-    :patterns (list (cons 0 "{h} heures") (cons 5 "{h} heures cinq") (cons 10 "{h} heures dix") (cons 15 "{h} heures et quart") (cons 20 "{h} heures vingt") (cons 25 "{h} heures vingt-cinq") (cons 30 "{h} heures et demie") (cons 35 "{h} heures trente-cinq") (cons 40 "{h} heures quarante") (cons 45 "{h} heures moins le quart") (cons 50 "{h} heures cinquante") (cons 55 "{h} heures cinquante-cinq")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} cinq") (cons 10 "{h} dix") (cons 15 "{h} et quart") (cons 20 "{h} vingt") (cons 25 "{h} vingt-cinq") (cons 30 "{h} et demie") (cons 35 "{next_h} moins vingt-cinq") (cons 40 "{next_h} moins vingt") (cons 45 "{next_h} moins le quart") (cons 50 "{next_h} moins dix") (cons 55 "{next_h} moins cinq")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}h{mm}")
 ))

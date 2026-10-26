@@ -175,6 +175,30 @@ test "French quarter past" {
 }
 
 // 6.2
+test "French singular hour" {
+    var buf: [256]u8 = undefined;
+    try expectStr("une heure", fmtWith(&buf, &st.locales.fr, .normal, "13:00"));
+}
+
+// 6.3
+test "French half past singular hour" {
+    var buf: [256]u8 = undefined;
+    try expectStr("une heure et demie", fmtWith(&buf, &st.locales.fr, .normal, "13:30"));
+}
+
+// 6.4
+test "French quarter to" {
+    var buf: [256]u8 = undefined;
+    try expectStr("trois heures moins le quart", fmtWith(&buf, &st.locales.fr, .normal, "14:45"));
+}
+
+// 6.5
+test "French ten to" {
+    var buf: [256]u8 = undefined;
+    try expectStr("trois heures moins dix", fmtWith(&buf, &st.locales.fr, .normal, "14:50"));
+}
+
+// (extra, not in tests.json)
 test "French noon" {
     var buf: [256]u8 = undefined;
     try expectStr("midi", fmtWith(&buf, &st.locales.fr, .normal, "12:00"));

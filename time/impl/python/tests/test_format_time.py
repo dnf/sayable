@@ -141,6 +141,26 @@ class TestLocaleFrench:
         st = SayableTime(FR)
         assert st.format_time("15:15") == "trois heures et quart"
 
+    # 6.2
+    def test_one_oclock(self) -> None:
+        st = SayableTime(FR)
+        assert st.format_time("13:00") == "une heure"
+
+    # 6.3
+    def test_half_past_one(self) -> None:
+        st = SayableTime(FR)
+        assert st.format_time("13:30") == "une heure et demie"
+
+    # 6.4
+    def test_quarter_to_three(self) -> None:
+        st = SayableTime(FR)
+        assert st.format_time("14:45") == "trois heures moins le quart"
+
+    # 6.5
+    def test_ten_to_three(self) -> None:
+        st = SayableTime(FR)
+        assert st.format_time("14:50") == "trois heures moins dix"
+
 
 # ── Section 7: Locale — Japanese ─────────────────────────────────────
 

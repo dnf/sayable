@@ -120,6 +120,22 @@ suite "Locale - French":
   test "trois heures et quart":
     check st.formatTime("15:15").get == "trois heures et quart"
 
+  # 6.2
+  test "une heure":
+    check st.formatTime("13:00").get == "une heure"
+
+  # 6.3
+  test "une heure et demie":
+    check st.formatTime("13:30").get == "une heure et demie"
+
+  # 6.4
+  test "trois heures moins le quart":
+    check st.formatTime("14:45").get == "trois heures moins le quart"
+
+  # 6.5
+  test "trois heures moins dix":
+    check st.formatTime("14:50").get == "trois heures moins dix"
+
 
 suite "Locale - Japanese":
   let st = newSayableTime(getLocale("ja").get)

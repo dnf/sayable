@@ -134,6 +134,18 @@ set fr [::sayabletime::new $fr_locale]
 # 6.1
 assert_eq [::sayabletime::format_time $fr "15:15"] "trois heures et quart" "6.1"
 
+# 6.2
+assert_eq [::sayabletime::format_time $fr "13:00"] "une heure" "6.2"
+
+# 6.3
+assert_eq [::sayabletime::format_time $fr "13:30"] "une heure et demie" "6.3"
+
+# 6.4
+assert_eq [::sayabletime::format_time $fr "14:45"] "trois heures moins le quart" "6.4"
+
+# 6.5
+assert_eq [::sayabletime::format_time $fr "14:50"] "trois heures moins dix" "6.5"
+
 # ================================================================
 # Section 7: Locale — Japanese
 # ================================================================

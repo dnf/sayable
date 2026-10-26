@@ -131,6 +131,34 @@ test_that("6.1 - French locale", {
   expect_equal(st_fr$format_time("15:15"), "trois heures et quart")
 })
 
+test_that("6.2 - French locale une heure", {
+  fr <- load_locale("fr")
+  st_fr <- sayable_time_new(fr)
+
+  expect_equal(st_fr$format_time("13:00"), "une heure")
+})
+
+test_that("6.3 - French locale une heure et demie", {
+  fr <- load_locale("fr")
+  st_fr <- sayable_time_new(fr)
+
+  expect_equal(st_fr$format_time("13:30"), "une heure et demie")
+})
+
+test_that("6.4 - French locale trois heures moins le quart", {
+  fr <- load_locale("fr")
+  st_fr <- sayable_time_new(fr)
+
+  expect_equal(st_fr$format_time("14:45"), "trois heures moins le quart")
+})
+
+test_that("6.5 - French locale trois heures moins dix", {
+  fr <- load_locale("fr")
+  st_fr <- sayable_time_new(fr)
+
+  expect_equal(st_fr$format_time("14:50"), "trois heures moins dix")
+})
+
 # ================================================================
 # 7. Locale — Japanese
 # ================================================================

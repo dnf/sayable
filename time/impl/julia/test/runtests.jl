@@ -50,6 +50,10 @@ end
 @testset "Locale — French" begin
     fr = SayableTimeFormatter(get_locale("fr"))
     @test format_time(fr, "15:15") == "trois heures et quart"  # 6.1
+    @test format_time(fr, "13:00") == "une heure"  # 6.2
+    @test format_time(fr, "13:30") == "une heure et demie"  # 6.3
+    @test format_time(fr, "14:45") == "trois heures moins le quart"  # 6.4
+    @test format_time(fr, "14:50") == "trois heures moins dix"  # 6.5
 end
 
 # Section 7: Locale — Japanese

@@ -145,6 +145,18 @@ st_fr = sayable_time_new(fr);
 % 6.1
 check('6.1 fr trois heures et quart', st_fr.format_time('15:15'), 'trois heures et quart');
 
+% 6.2
+check('6.2 fr une heure', st_fr.format_time('13:00'), 'une heure');
+
+% 6.3
+check('6.3 fr une heure et demie', st_fr.format_time('13:30'), 'une heure et demie');
+
+% 6.4
+check('6.4 fr trois heures moins le quart', st_fr.format_time('14:45'), 'trois heures moins le quart');
+
+% 6.5
+check('6.5 fr trois heures moins dix', st_fr.format_time('14:50'), 'trois heures moins dix');
+
 % ================================================================
 % 7. Locale — Japanese
 % ================================================================

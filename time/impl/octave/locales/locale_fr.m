@@ -11,10 +11,10 @@
 
 function loc = locale_fr()
   loc.code = 'fr';
-  loc.clock.hours = {'douze', 'une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze'};
+  loc.clock.hours = {'douze heures', 'une heure', 'deux heures', 'trois heures', 'quatre heures', 'cinq heures', 'six heures', 'sept heures', 'huit heures', 'neuf heures', 'dix heures', 'onze heures'};
   loc.clock.midnight = 'minuit';
   loc.clock.noon = 'midi';
-  loc.clock.patterns = struct("p0", '{h} heures', "p5", '{h} heures cinq', "p10", '{h} heures dix', "p15", '{h} heures et quart', "p20", '{h} heures vingt', "p25", '{h} heures vingt-cinq', "p30", '{h} heures et demie', "p35", '{h} heures trente-cinq', "p40", '{h} heures quarante', "p45", '{h} heures moins le quart', "p50", '{h} heures cinquante', "p55", '{h} heures cinquante-cinq');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} cinq', "p10", '{h} dix', "p15", '{h} et quart', "p20", '{h} vingt', "p25", '{h} vingt-cinq', "p30", '{h} et demie', "p35", '{next_h} moins vingt-cinq', "p40", '{next_h} moins vingt', "p45", '{next_h} moins le quart', "p50", '{next_h} moins dix', "p55", '{next_h} moins cinq');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};
