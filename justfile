@@ -52,8 +52,7 @@ test *target:
             if _is_disabled "$target"; then
                 args+=("disable:$target")
             else
-                dep=$(_dep "$target")
-                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                if _dep_available "$target"; then
                     args+=("test $target")
                 else
                     args+=("skip:$target")
@@ -62,8 +61,7 @@ test *target:
         done
         args+=("---")
         for target in $_tools; do
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+            if _dep_available "$target"; then
                 args+=("test $target")
             else
                 args+=("skip:$target")
@@ -79,8 +77,7 @@ test *target:
                 args+=("skip:${_cl}")
                 continue
             fi
-            dep=$(_dep "$_cl" 2>/dev/null || true)
-            if [ -n "${dep}" ] && ! command -v "${dep}" &>/dev/null; then
+            if ! _dep_available "${_cl}"; then
                 args+=("skip:${_cl}")
                 continue
             fi
@@ -278,8 +275,7 @@ build *target:
             if _is_disabled "$target"; then
                 args+=("disable:$target")
             else
-                dep=$(_dep "$target")
-                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                if _dep_available "$target"; then
                     args+=("build $target")
                 else
                     args+=("skip:$target")
@@ -288,8 +284,7 @@ build *target:
         done
         args+=("---")
         for target in $_tools; do
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+            if _dep_available "$target"; then
                 args+=("build $target")
             else
                 args+=("skip:$target")
@@ -549,8 +544,7 @@ lint *target:
             if _is_disabled "$target"; then
                 args+=("disable:$target")
             else
-                dep=$(_dep "$target")
-                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                if _dep_available "$target"; then
                     args+=("lint $target")
                 else
                     args+=("skip:$target")
@@ -836,6 +830,8 @@ fuzz *args:
 _test_cli lang:
     #!/usr/bin/env bash
     set -euo pipefail
+    source .hecatron/tools/language/helpers.sh
+    if [ "{{lang}}" = "ada" ]; then _ada_env; fi
     _cli_bin="cli/impl/{{lang}}/sayable"
     if [ ! -x "${_cli_bin}" ]; then
         echo "error: ${_cli_bin} is not executable or not found" >&2
@@ -897,8 +893,7 @@ rebuild *target:
             if _is_disabled "$target"; then
                 args+=("disable:$target")
             else
-                dep=$(_dep "$target")
-                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                if _dep_available "$target"; then
                     args+=("_rebuild $target")
                 else
                     args+=("skip:$target")
@@ -907,8 +902,7 @@ rebuild *target:
         done
         args+=("---")
         for target in $_tools; do
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+            if _dep_available "$target"; then
                 args+=("_rebuild $target")
             else
                 args+=("skip:$target")
@@ -964,8 +958,7 @@ retest *target:
             if _is_disabled "$target"; then
                 args+=("disable:$target")
             else
-                dep=$(_dep "$target")
-                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                if _dep_available "$target"; then
                     args+=("_retest $target")
                 else
                     args+=("skip:$target")
@@ -974,8 +967,7 @@ retest *target:
         done
         args+=("---")
         for target in $_tools; do
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+            if _dep_available "$target"; then
                 args+=("_retest $target")
             else
                 args+=("skip:$target")
@@ -1207,8 +1199,7 @@ benchmark type="cpu" *target:
             args=()
             while read -r lang; do
                 [ -z "$lang" ] && continue
-                dep=$(_dep "$lang")
-                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                if _dep_available "$lang"; then
                     args+=("benchmark build $lang")
                 else
                     args+=("skip:$lang")
@@ -1275,8 +1266,7 @@ benchmark type="cpu" *target:
         args=()
         while read -r lang; do
             [ -z "$lang" ] && continue
-            dep=$(_dep "$lang")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+            if _dep_available "$lang"; then
                 args+=("benchmark cpu $lang")
             else
                 args+=("skip:$lang")
