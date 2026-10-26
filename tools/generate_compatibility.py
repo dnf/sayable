@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Compatibility.md from component impl/ directories."""
+"""Generate docs/compatibility.md from component impl/ directories."""
 
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ _DISPLAY_NAMES: dict[str, str] = {
 }
 
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-_OUTPUT = os.path.join(_ROOT, "Compatibility.md")
+_OUTPUT = os.path.join(_ROOT, "docs", "compatibility.md")
 
 
 def _display_name(dirname: str) -> str:
@@ -45,7 +45,7 @@ def _discover() -> dict[str, set[str]]:
 
 
 def _generate() -> str:
-    """Return the full Compatibility.md content."""
+    """Return the full docs/compatibility.md content."""
     data = _discover()
 
     all_langs = set()
@@ -77,7 +77,7 @@ def _generate() -> str:
         for comp in _COMPONENTS:
             if dirname in data[comp]:
                 lines.append(
-                    f'  <td align="center"><a href="{comp}/impl/{dirname}/">✅</a></td>\n'
+                    f'  <td align="center"><a href="../{comp}/impl/{dirname}/">✅</a></td>\n'
                 )
             else:
                 lines.append('  <td align="center">❌</td>\n')
@@ -98,13 +98,13 @@ def main() -> None:
             with open(_OUTPUT, encoding="utf-8") as f:
                 existing = f.read()
             if existing == content:
-                print("Compatibility.md is up to date.")
+                print("docs/compatibility.md is up to date.")
                 return
-            print("Compatibility.md is out of date.")
+            print("docs/compatibility.md is out of date.")
             print("Run 'python tools/generate_compatibility.py' to update.")
             sys.exit(1)
         else:
-            print("Compatibility.md does not exist.")
+            print("docs/compatibility.md does not exist.")
             print("Run 'python tools/generate_compatibility.py' to generate it.")
             sys.exit(1)
 
