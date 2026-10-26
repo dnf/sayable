@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "hecatron": ">=0.1.0",
+  "hecatron": ">=0.2.0",
   "project": "sayable",
   "components": [
     "age",

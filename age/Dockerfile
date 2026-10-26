@@ -31,8 +31,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gnucobol \
     gnupg \
     gprbuild \
-    julia \
     ldc \
+    libicu-dev \
     liblua5.4-dev \
     llvm-14 \
     lua5.4 \
@@ -45,7 +45,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     php-cli \
     php-mbstring \
     php-xml \
-    powershell \
     python3 \
     python3-venv \
     r-base \
@@ -106,6 +105,12 @@ RUN cd /tmp && \
     cd janet-1.37.1 && make -j$(nproc) && make install && \
     rm -rf /tmp/janet-1.37.1
 
+# Julia: the official tarball (Debian and Ubuntu don't package it), latest stable
+RUN ARCH="$(uname -m)" && \
+    URL="$(curl -fsSL https://julialang-s3.julialang.org/bin/versions.json | python3 -c 'import json, sys; r = json.load(sys.stdin); v = max((v for v in r if r[v]["stable"] and v.replace(".", "").isdigit()), key=lambda v: tuple(map(int, v.split(".")))); print(next(f["url"] for f in r[v]["files"] if f["os"] == "linux" and f["arch"] == sys.argv[1] and f["kind"] == "archive" and f["extension"] == "tar.gz"))' "$ARCH")" && \
+    mkdir -p /opt/julia && curl -fsSL "$URL" | tar -C /opt/julia --strip-components=1 -xz && \
+    ln -s /opt/julia/bin/julia /usr/local/bin/julia
+
 # Lua testing framework (busted) via LuaRocks
 RUN luarocks install busted
 
@@ -135,6 +140,15 @@ ENV PATH="/opt/pharo:${PATH}"
 # Composer (PHP package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# PowerShell: the official tarball (distributions don't package it, and
+# Microsoft's apt repository has no arm64 build), latest release
+RUN VERSION="$(curl -fsSLI -o /dev/null -w '%{url_effective}' https://github.com/PowerShell/PowerShell/releases/latest)" && \
+    VERSION="${VERSION##*/v}" && \
+    case "$(uname -m)" in aarch64) ARCH=arm64 ;; *) ARCH=x64 ;; esac && \
+    mkdir -p /opt/microsoft/powershell/7 && \
+    curl -fsSL "https://github.com/PowerShell/PowerShell/releases/download/v${VERSION}/powershell-${VERSION}-linux-${ARCH}.tar.gz" | tar -C /opt/microsoft/powershell/7 -xz && \
+    chmod +x /opt/microsoft/powershell/7/pwsh && \
+    ln -s /opt/microsoft/powershell/7/pwsh /usr/local/bin/pwsh
 RUN pwsh -Command "Install-Module -Name Pester -Force -SkipPublisherCheck -Scope AllUsers"
 
 # uv (Python package manager)
