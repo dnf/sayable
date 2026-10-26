@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace SayableDate\Tests;
 
-use SayableDate\Compactness;
-use SayableDate\Locales\Locales;
-use SayableDate\SayableDate;
 use PHPUnit\Framework\TestCase;
+use SayableDate\Compactness;
 
 use function SayableDate\formatDate;
 use function SayableDate\formatRelative;
+
+use SayableDate\Locales\Locales;
+use SayableDate\SayableDate;
 
 /**
  * Canonical test suite — test cases from config/tests.json.

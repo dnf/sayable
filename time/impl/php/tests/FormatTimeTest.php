@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace SayableTime\Tests;
 
-use SayableTime\Compactness;
-use SayableTime\Locales\Locales;
-use SayableTime\SayableTime;
 use PHPUnit\Framework\TestCase;
+use SayableTime\Compactness;
 
 use function SayableTime\formatTime;
+
+use SayableTime\Locales\Locales;
+use SayableTime\SayableTime;
 
 /**
  * Canonical test suite — test cases from config/tests.json.

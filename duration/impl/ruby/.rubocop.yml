@@ -1,0 +1,109 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+
+# Line length — locale data and test files have long lines
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'lib/sayable_duration/locales/*.rb'
+    - 'test/**/*.rb'
+
+# Frozen string literal — enforce immutability
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+# Documentation — not needed for locale data or internal modules
+Style/Documentation:
+  Exclude:
+    - 'lib/sayable_duration/locales/*.rb'
+    - 'lib/sayable_duration.rb'
+    - 'lib/sayable_duration/formatter.rb'
+    - 'lib/sayable_duration/locale.rb'
+    - 'test/**/*.rb'
+
+# Allow hash rockets in locale data (more readable for symbol keys)
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
+# Multiple test classes per file is standard Minitest pattern
+Style/OneClassPerFile:
+  Exclude:
+    - 'test/**/*.rb'
+
+# Method length — formatter methods and locale builder are intentionally long
+Metrics/MethodLength:
+  Max: 30
+  Exclude:
+    - 'test/**/*.rb'
+
+# Class length — test files are long
+Metrics/ClassLength:
+  Exclude:
+    - 'test/**/*.rb'
+
+# Block length for tests
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*.rb'
+    - 'Rakefile'
+    - '*.gemspec'
+
+# ABC size — formatter algorithm is complex but clear
+Metrics/AbcSize:
+  Max: 45
+
+# Cyclomatic complexity for format_age
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+# Perceived complexity
+Metrics/PerceivedComplexity:
+  Max: 20
+
+# Struct#compact override is intentional — our field is named "compact"
+Lint/StructNewOverride:
+  Enabled: false
+
+# Generated locale data ends every multi-line entry with a comma (one-line
+# diffs when an entry changes); hand-written code follows the same style.
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+# Plural rules in generated locale data are the same CLDR formulas in every
+# language, so they keep the formula's shape (if/elsif chains, `n == 0`,
+# grouping parentheses) rather than Ruby-specific rewrites.
+Style/CaseLikeIf:
+  Exclude:
+    - 'lib/sayable_duration/locales/*.rb'
+
+# Word lists (months, weekdays, hours, AM/PM) stay as quoted arrays so every
+# language's locale file reads alike and entries with spaces need no escaping.
+Style/WordArray:
+  Exclude:
+    - 'lib/sayable_duration/locales/*.rb'
+
+Style/NumericPredicate:
+  Exclude:
+    - 'lib/sayable_duration/locales/*.rb'
+
+Style/RedundantParentheses:
+  Exclude:
+    - 'lib/sayable_duration/locales/*.rb'
+
+# Generated locale data and the locale registry are long by nature.
+Metrics:
+  Exclude:
+    - 'lib/sayable_duration/locales/*.rb'
+
+# .hecatron/languages/ruby/metadata.sh rewrites the gemspec's double-quoted values.
+Style/StringLiterals:
+  Exclude:
+    - '*.gemspec'

@@ -19,7 +19,7 @@ Single-language commands stream to terminal and save to a log file:
 ```
 just test go       # one language, all four libraries → .logs/test/go.log
 just build rust    # build one       → .logs/build/rust.log
-just lint python   # lint one        → .logs/lint/python.log
+just lint python   # one language, all four libraries → .logs/lint/python.log
 ```
 
 All output is captured to `.logs/<command>/<language>.log` — both parallel and single-language runs.
@@ -141,8 +141,8 @@ See [`.hecatron/docs/adding-a-language.md`](.hecatron/docs/adding-a-language.md)
 
 Then, once for the language:
 
-5. Create `.hecatron/languages/<lang>/`: `config.json`, `test.sh` (runs one library's native suite), `install.sh`, `uninstall.sh`, `version.sh` (optionally `metadata.sh`), a `dockerfile` snippet, and `workflow.yml` testing every library (`tools/check_workflow_components.py` enforces this)
-6. Add justfile arms for build, lint and clean (`just test <lang>` uses `test.sh`); configure the language's linter with zero warnings
+5. Create `.hecatron/languages/<lang>/`: `config.json`, `test.sh` (runs one library's native suite), `lint.sh` if the language has a separate linter, `install.sh`, `uninstall.sh`, `version.sh` (optionally `metadata.sh`), a `dockerfile` snippet, and `workflow.yml` testing every library (`tools/check_workflow_components.py` enforces this)
+6. Add justfile arms for build, lint and clean (`just test <lang>` and `just lint <lang>` run `test.sh` and `lint.sh` for all four libraries); configure the language's linter with zero warnings, with the same config in every library
 7. Add a CLI in `cli/impl/<lang>/` implementing `--repl` (`cli/SPEC.md`)
 8. Run `just add <lang>` (registers it, copies the workflow, regenerates `age/Dockerfile`) and `python3 tools/generate_compatibility.py`
 9. Update the language counts and lists (keep rows sorted alphabetically)

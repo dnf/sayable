@@ -394,7 +394,10 @@ describe("Sections 13-16: with year, short months, short phrases, input validati
 
     -- 14.4
     it("format_relative", function()
-        assert.are.equal("8. elokuuta", sd.new(sd.get_locale("fi"), "short").format_relative("1998-08-08", "1998-08-15"))
+        assert.are.equal(
+            "8. elokuuta",
+            sd.new(sd.get_locale("fi"), "short").format_relative("1998-08-08", "1998-08-15")
+        )
     end)
 
     -- 15.1
@@ -404,7 +407,10 @@ describe("Sections 13-16: with year, short months, short phrases, input validati
 
     -- 15.2
     it("day before yesterday", function()
-        assert.are.equal("Dom nchi'j", sd.new(sd.get_locale("mam"), "short").format_relative("2000-01-23", "2000-01-25"))
+        assert.are.equal(
+            "Dom nchi'j",
+            sd.new(sd.get_locale("mam"), "short").format_relative("2000-01-23", "2000-01-25")
+        )
     end)
 
     -- 15.3

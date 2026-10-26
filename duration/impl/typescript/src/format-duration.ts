@@ -6,8 +6,6 @@ export const VERSION = '0.5.0';
 /** 500 years, the same ceiling as sayable-age. */
 const MAX_DURATION_MONTHS = 6000;
 
-type UnitKey = 'second' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year';
-
 function isLeapYear(year: number): boolean {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }

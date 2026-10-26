@@ -84,6 +84,12 @@ Style/CaseLikeIf:
   Exclude:
     - 'lib/sayable_age/locales/*.rb'
 
+# Word lists (months, weekdays, hours, AM/PM) stay as quoted arrays so every
+# language's locale file reads alike and entries with spaces need no escaping.
+Style/WordArray:
+  Exclude:
+    - 'lib/sayable_age/locales/*.rb'
+
 Style/NumericPredicate:
   Exclude:
     - 'lib/sayable_age/locales/*.rb'

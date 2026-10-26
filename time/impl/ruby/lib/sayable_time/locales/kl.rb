@@ -31,13 +31,13 @@ module SayableTime
           45 => '{next_h} sioqqullugu minutsit aqqaneq-tallimat',
           50 => '{next_h} sioqqullugu minutsit qulit',
           55 => '{next_h} sioqqullugu minutsit tallimat',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}.{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}.{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}.{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}.{mm}'),
       ),
     )
   end

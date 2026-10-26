@@ -462,21 +462,21 @@ lint *target:
         mkdir -p .logs/lint
         (
             if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-                cd age/impl/typescript && npm run lint
+                bash .hecatron/tools/language/lint.sh typescript
             elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
-                cd age/impl/dart && dart analyze
+                bash .hecatron/tools/language/lint.sh dart
             elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
-                cd age/impl/python && uv run --extra dev ruff check . && uv run --extra dev pyright
+                bash .hecatron/tools/language/lint.sh python
             elif [ "$_target" = "go" ]; then
-                cd age/impl/go && golangci-lint run
+                bash .hecatron/tools/language/lint.sh go
             elif [ "$_target" = "ruby" ] || [ "$_target" = "rb" ]; then
-                cd age/impl/ruby && bundle exec rubocop
+                bash .hecatron/tools/language/lint.sh ruby
             elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-                cd age/impl/rust && cargo clippy
+                bash .hecatron/tools/language/lint.sh rust
             elif [ "$_target" = "php" ]; then
-                cd age/impl/php && composer analyse && composer cs-check
+                bash .hecatron/tools/language/lint.sh php
             elif [ "$_target" = "lua" ] || [ "$_target" = "lu" ]; then
-                cd age/impl/lua && luacheck sayableage.lua locales/
+                bash .hecatron/tools/language/lint.sh lua
             elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
                 echo "Kotlin uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "c" ]; then
@@ -522,13 +522,13 @@ lint *target:
             elif [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
                 echo "Ada uses -gnatwe (warnings-as-errors) in build (no separate linter)"
             elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
-                for _c in age date duration time; do bash "${_c}/impl/goose/lint.sh"; done
+                bash .hecatron/tools/language/lint.sh goose
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 echo "Zig uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
                 echo "Nim uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
-                cd age/impl/crystal && crystal tool format --check src/ spec/
+                bash .hecatron/tools/language/lint.sh crystal
             elif [ "$_target" = "r" ]; then
                 echo "R uses stop() on warnings (no separate linter)"
             elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then

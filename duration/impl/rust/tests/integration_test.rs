@@ -1,3 +1,6 @@
+#![allow(missing_docs)]
+
+
 use sayable_duration::formatter::SayableDuration;
 use sayable_duration::types::Compactness;
 

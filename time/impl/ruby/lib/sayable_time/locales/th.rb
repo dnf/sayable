@@ -31,13 +31,13 @@ module SayableTime
           45 => '{h} นาฬิกา สี่สิบห้านาที',
           50 => '{h} นาฬิกา ห้าสิบนาที',
           55 => '{h} นาฬิกา ห้าสิบห้านาที',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

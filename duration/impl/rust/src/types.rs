@@ -165,10 +165,10 @@ pub fn resolve_unit(count: i32, uf: &UnitForms, locale: &DurationLocale, half: &
         UnitForms::Simple(s) => s.clone(),
         UnitForms::Plural(forms) => {
             // Half-marked values use "other" plural (e.g. "1½ hours" not "1½ hour")
-            let cat = if !half.is_empty() {
-                PluralCategory::Other
-            } else {
+            let cat = if half.is_empty() {
                 (locale.plural)(count)
+            } else {
+                PluralCategory::Other
             };
             if let Some(t) = forms.get(&cat) {
                 t.clone()

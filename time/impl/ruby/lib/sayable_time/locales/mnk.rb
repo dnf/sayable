@@ -31,13 +31,13 @@ module SayableTime
           45 => 'talaŋ {h} aniŋ miniti taŋ naani niŋ luulu',
           50 => 'talaŋ {h} aniŋ miniti taŋ luulu',
           55 => 'talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
       ),
     )
   end

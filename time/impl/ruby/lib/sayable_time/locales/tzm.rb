@@ -31,13 +31,13 @@ module SayableTime
           45 => '{h} d xmsa u ṛbɛin n tusdiqt',
           50 => '{h} d xmsin n tusdiqt',
           55 => '{h} d xmsa u xmsin n tusdiqt',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

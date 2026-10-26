@@ -31,13 +31,13 @@ module SayableTime
           45 => '{next_h} moins le quart',
           50 => '{next_h} moins dix',
           55 => '{next_h} moins cinq',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}h{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}h{mm}'),
       ),
     )
   end

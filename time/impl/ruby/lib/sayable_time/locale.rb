@@ -27,7 +27,7 @@ module SayableTime
   # Optional overrides for short/compact display modes.
   CompactnessOverride = Struct.new(
     :clock,
-    keyword_init: true
+    keyword_init: true,
   ) do
     def initialize(**kwargs)
       kwargs[:clock] ||= nil

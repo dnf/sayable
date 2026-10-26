@@ -1220,37 +1220,58 @@ end)
 describe("Sections 31-33: weeks+days across month ends, half-year plurals, input validation", function()
     -- 31.1
     it("88 days across a 28-day February", function()
-        assert.are.equal("12 weeks, 4 days", sayableage.new(sayableage.get_locale("en")).format_age("2016-12-31", "2017-03-29"))
+        assert.are.equal(
+            "12 weeks, 4 days",
+            sayableage.new(sayableage.get_locale("en")).format_age("2016-12-31", "2017-03-29")
+        )
     end)
 
     -- 31.2
     it("90 days across a year end into a leap year", function()
-        assert.are.equal("12 weeks, 6 days", sayableage.new(sayableage.get_locale("en")).format_age("1991-11-27", "1992-02-25"))
+        assert.are.equal(
+            "12 weeks, 6 days",
+            sayableage.new(sayableage.get_locale("en")).format_age("1991-11-27", "1992-02-25")
+        )
     end)
 
     -- 31.3
     it("33 days across a year end", function()
-        assert.are.equal("4 weeks, 5 days", sayableage.new(sayableage.get_locale("en")).format_age("2020-11-30", "2021-01-02"))
+        assert.are.equal(
+            "4 weeks, 5 days",
+            sayableage.new(sayableage.get_locale("en")).format_age("2020-11-30", "2021-01-02")
+        )
     end)
 
     -- 31.4
     it("Compact form of 31.1", function()
-        assert.are.equal("12w4d", sayableage.new(sayableage.get_locale("en"), "compact").format_age("2016-12-31", "2017-03-29"))
+        assert.are.equal(
+            "12w4d",
+            sayableage.new(sayableage.get_locale("en"), "compact").format_age("2016-12-31", "2017-03-29")
+        )
     end)
 
     -- 32.1
     it("Polish 3 is 'few'", function()
-        assert.are.equal("3 i pół lata", sayableage.new(sayableage.get_locale("pl")).format_age("2021-06-15", "2025-01-15"))
+        assert.are.equal(
+            "3 i pół lata",
+            sayableage.new(sayableage.get_locale("pl")).format_age("2021-06-15", "2025-01-15")
+        )
     end)
 
     -- 32.2
     it("Polish 5 is 'many'", function()
-        assert.are.equal("5 i pół lat", sayableage.new(sayableage.get_locale("pl"), "short").format_age("2020-06-15", "2025-12-15"))
+        assert.are.equal(
+            "5 i pół lat",
+            sayableage.new(sayableage.get_locale("pl"), "short").format_age("2020-06-15", "2025-12-15")
+        )
     end)
 
     -- 32.3
     it("Tachelhit 6 is 'few'", function()
-        assert.are.equal("6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ", sayableage.new(sayableage.get_locale("shi")).format_age("2005-06-08", "2012-06-07"))
+        assert.are.equal(
+            "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ",
+            sayableage.new(sayableage.get_locale("shi")).format_age("2005-06-08", "2012-06-07")
+        )
     end)
 
     -- 33.1

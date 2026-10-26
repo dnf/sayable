@@ -31,13 +31,13 @@ module SayableTime
           45 => 'ለ{next_h} ሰዓት ሩብ ጉዳይ',
           50 => 'ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ',
           55 => 'ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}')
+        clock: ShortClockConfig.new(use24h: true, format: '{h}:{mm}'),
       ),
     )
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "lib/sayable_time/version"
 
 Gem::Specification.new do |s|
@@ -16,10 +18,8 @@ Gem::Specification.new do |s|
     "source_code_uri" => "https://github.com/dnf/sayable/tree/main/time/impl/ruby",
     "bug_tracker_uri" => "https://github.com/dnf/sayable/issues",
     "homepage_uri" => "https://github.com/dnf/sayable",
+    'rubygems_mfa_required' => 'true',
   }
 
   s.files = Dir["lib/**/*.rb"]
-
-  s.add_development_dependency "minitest", "~> 5.0"
-  s.add_development_dependency "rake", "~> 13.0"
 end

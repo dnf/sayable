@@ -88,17 +88,17 @@ class TestFormatDateShortEnglish < Minitest::Test
   end
 
   # 3.1
-  def test_mar_15
+  def test_mar_fifteenth
     assert_equal 'Mar 15', @f.format_date('2025-03-15')
   end
 
   # 3.2
-  def test_jan_1
+  def test_jan_first
     assert_equal 'Jan 1', @f.format_date('2025-01-01')
   end
 
   # 3.3
-  def test_dec_25
+  def test_dec_twenty_fifth
     assert_equal 'Dec 25', @f.format_date('2025-12-25')
   end
 end
@@ -112,12 +112,12 @@ class TestFormatDateCompactEnglish < Minitest::Test
   end
 
   # 4.1
-  def test_3_15
+  def test_numeric_march_fifteenth
     assert_equal '3/15', @f.format_date('2025-03-15')
   end
 
   # 4.2
-  def test_1_1
+  def test_numeric_january_first
     assert_equal '1/1', @f.format_date('2025-01-01')
   end
 end
@@ -293,7 +293,7 @@ class TestLocaleJapanese < Minitest::Test
 
   # 9.1
   def test_format_date
-    assert_equal "3\u6708" + "15\u65E5", @f.format_date('2025-03-15')
+    assert_equal "3\u670815\u65E5", @f.format_date('2025-03-15')
   end
 
   # 9.2
@@ -355,7 +355,7 @@ class TestLocaleSpanish < Minitest::Test
 
   # 12.1
   def test_format_date
-    assert_equal "15 de marzo", @f.format_date('2025-03-15')
+    assert_equal '15 de marzo', @f.format_date('2025-03-15')
   end
 
   # 12.2
@@ -514,7 +514,7 @@ class TestSpecInputFormats < Minitest::Test
   end
 
   # 16.2
-  def test_16_2_month_13
+  def test_16_2_month_thirteen
     assert_nil SayableDate::Formatter.new(SayableDate::Locales::EN).format_date('2025-13-01')
   end
 

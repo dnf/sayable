@@ -31,13 +31,13 @@ module SayableTime
           45 => 'hora ya {h} le metsotso e mashome a mane a metso e mehlano',
           50 => 'hora ya {h} le metsotso e mashome a mahlano',
           55 => 'hora ya {h} le metsotso e mashome a mahlano a metso e mehlano',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
       ),
     )
   end

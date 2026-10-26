@@ -44,12 +44,12 @@ module SayableTime
       end
     end
 
-    private
-
     # A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
     # suffix, which is ignored), alone or after the T of an ISO datetime.
     CLOCK_TIME = /\A(?:([0-9]{4})-([0-9]{2})-([0-9]{2})T)?([0-9]{1,2}):([0-9]{2})
                   (?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/x
+
+    private
 
     def parse_time(input_str)
       return nil if input_str.nil?
@@ -76,13 +76,13 @@ module SayableTime
       leap ? 29 : 28
     end
 
-    def round_to_5(minute)
+    def round_to_five(minute)
       ((minute + 2) / 5) * 5
     end
 
     def format_natural(hour, minute)
       clock = @locale.clock
-      rounded = round_to_5(minute)
+      rounded = round_to_five(minute)
       h = hour
 
       if rounded == 60
@@ -96,9 +96,9 @@ module SayableTime
       end
 
       h12 = h % 12
-      next_h12 = (h + 1) % 12
+      next_hour_index = (h + 1) % 12
       h_name = clock.hours[h12]
-      next_h_name = clock.hours[next_h12]
+      next_h_name = clock.hours[next_hour_index]
       pattern = clock.patterns.fetch(rounded, clock.patterns.fetch(0, '{h}'))
       pattern.gsub('{h}', h_name).gsub('{next_h}', next_h_name)
     end
@@ -107,9 +107,7 @@ module SayableTime
       sc = @short_clock
       fmt = sc.format
 
-      if sc.use24h
-        return fmt.gsub('{h}', hour.to_s).gsub('{mm}', minute.to_s.rjust(2, '0'))
-      end
+      return fmt.gsub('{h}', hour.to_s).gsub('{mm}', minute.to_s.rjust(2, '0')) if sc.use24h
 
       h12 = hour % 12
       h12 = 12 if h12.zero?

@@ -110,7 +110,7 @@ impl SayableDuration {
     }
 
     /// Formats elapsed time as "X ago".
-    /// Returns `None` if start or as_of are empty, unparseable, or if as_of is before start.
+    /// Returns `None` if start or `as_of` are empty, unparseable, or if `as_of` is before start.
     pub fn format_since(&self, start: &str, as_of: &str) -> Option<String> {
         if start.is_empty() || as_of.is_empty() {
             return None;
@@ -129,7 +129,7 @@ impl SayableDuration {
     }
 
     /// Formats time until a future event as "in X".
-    /// Returns `None` if target or as_of are empty, unparseable, or if target is before as_of.
+    /// Returns `None` if target or `as_of` are empty, unparseable, or if target is before `as_of`.
     pub fn format_until(&self, target: &str, as_of: &str) -> Option<String> {
         if target.is_empty() || as_of.is_empty() {
             return None;
@@ -261,7 +261,7 @@ impl SayableDuration {
 }
 
 /// Approximates months from days using 30.44 average days per month,
-/// matching Python's round(total_days / 30.44).
+/// matching Python's `round(total_days / 30.44)`.
 #[allow(clippy::cast_possible_truncation, clippy::cast_precision_loss)] // days < 2^53, months fit i64
 fn round_div(total_days: i64) -> i64 {
     (total_days as f64 / 30.44 + 0.5) as i64

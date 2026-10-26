@@ -31,13 +31,13 @@ module SayableTime
           45 => 'ngonga ya {h} na miniti ntúkú mínéi na mítáno',
           50 => 'ngonga ya {h} na miniti ntúkú mítáno',
           55 => 'ngonga ya {h} na miniti ntúkú mítáno na mítáno',
-        }
+        },
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}')
+        clock: ShortClockConfig.new(use24h: false, am_pm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
       ),
     )
   end

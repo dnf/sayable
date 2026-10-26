@@ -2,10 +2,11 @@
 
 require_relative 'sayable_duration/version'
 require_relative 'sayable_duration/locale'
+require_relative 'sayable_duration/timestamp'
 require_relative 'sayable_duration/formatter'
 
 # Auto-require all locale files
-Dir[File.join(__dir__, 'sayable_duration', 'locales', '*.rb')].sort.each { |f| require f }
+Dir[File.join(__dir__, 'sayable_duration', 'locales', '*.rb')].each { |f| require f }
 
 module SayableDuration
   # Convenience methods using the default English locale (normal compactness).
