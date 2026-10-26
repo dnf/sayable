@@ -19,8 +19,7 @@ else
 fi
 
 mkdir -p "${SCRIPT_DIR}/build"
-# -g0: without debug info the build peaks at ~3.4 GB instead of ~8.9 GB,
-# which the CI runner's memory limit killed.
+# -g0: without debug info the build peaks at ~3.4 GB instead of ~8.9 GB.
 "${mojo[@]}" build -g0 \
     -I "${PROJECT_ROOT}/age/impl/mojo/src" \
     -I "${PROJECT_ROOT}/date/impl/mojo/src" \
