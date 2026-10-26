@@ -154,7 +154,7 @@ public enum Locales {
         return .other
     }
 
-    // Source: duration/locales/src/af.json
+    // Source: locales/af.json
     // ================================================================
     // AF — Afrikaans
     // ================================================================
@@ -191,7 +191,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ak.json
+    // Source: locales/ak.json
     // ================================================================
     // AK — Akan
     // ================================================================
@@ -228,7 +228,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/am.json
+    // Source: locales/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
@@ -265,7 +265,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ar.json
+    // Source: locales/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
@@ -302,7 +302,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ay.json
+    // Source: locales/ay.json
     // ================================================================
     // AY — Aymara
     // ================================================================
@@ -339,7 +339,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/az.json
+    // Source: locales/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
@@ -376,7 +376,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/bci.json
+    // Source: locales/bci.json
     // ================================================================
     // BCI — Baoulé
     // ================================================================
@@ -413,7 +413,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/be.json
+    // Source: locales/be.json
     // ================================================================
     // BE — Belarusian
     // ================================================================
@@ -450,7 +450,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/bem.json
+    // Source: locales/bem.json
     // ================================================================
     // BEM — Bemba
     // ================================================================
@@ -487,7 +487,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/bg.json
+    // Source: locales/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
@@ -524,7 +524,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/bi.json
+    // Source: locales/bi.json
     // ================================================================
     // BI — Bislama
     // ================================================================
@@ -561,7 +561,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/bm.json
+    // Source: locales/bm.json
     // ================================================================
     // BM — Bambara
     // ================================================================
@@ -598,7 +598,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/bn.json
+    // Source: locales/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
@@ -635,7 +635,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/br.json
+    // Source: locales/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
@@ -672,7 +672,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/bs.json
+    // Source: locales/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
@@ -709,7 +709,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ca.json
+    // Source: locales/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
@@ -746,7 +746,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/cak.json
+    // Source: locales/cak.json
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
@@ -783,7 +783,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ================================================================
     // CEB — Cebuano
     // ================================================================
@@ -820,7 +820,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/cs.json
+    // Source: locales/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
@@ -857,7 +857,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/cy.json
+    // Source: locales/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
@@ -894,7 +894,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/da.json
+    // Source: locales/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
@@ -931,7 +931,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/de.json
+    // Source: locales/de.json
     // ================================================================
     // DE — German
     // ================================================================
@@ -968,7 +968,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/din.json
+    // Source: locales/din.json
     // ================================================================
     // DIN — Dinka
     // ================================================================
@@ -1005,7 +1005,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/dje.json
+    // Source: locales/dje.json
     // ================================================================
     // DJE — Zarma
     // ================================================================
@@ -1042,7 +1042,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/dv.json
+    // Source: locales/dv.json
     // ================================================================
     // DV — Dhivehi
     // ================================================================
@@ -1079,7 +1079,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ================================================================
     // DYU — Dyula
     // ================================================================
@@ -1116,7 +1116,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/dz.json
+    // Source: locales/dz.json
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
@@ -1153,7 +1153,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ee.json
+    // Source: locales/ee.json
     // ================================================================
     // EE — Ewe
     // ================================================================
@@ -1190,7 +1190,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/el.json
+    // Source: locales/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
@@ -1227,7 +1227,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/en.json
+    // Source: locales/en.json
     // ================================================================
     // EN — English
     // ================================================================
@@ -1264,7 +1264,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/es.json
+    // Source: locales/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
@@ -1301,7 +1301,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/et.json
+    // Source: locales/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
@@ -1338,7 +1338,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/eu.json
+    // Source: locales/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
@@ -1375,7 +1375,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/fa.json
+    // Source: locales/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
@@ -1412,7 +1412,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/fan.json
+    // Source: locales/fan.json
     // ================================================================
     // FAN — Fang
     // ================================================================
@@ -1449,7 +1449,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ff.json
+    // Source: locales/ff.json
     // ================================================================
     // FF — Fulah
     // ================================================================
@@ -1486,7 +1486,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/fi.json
+    // Source: locales/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
@@ -1523,7 +1523,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/fil.json
+    // Source: locales/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
@@ -1560,7 +1560,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/fj.json
+    // Source: locales/fj.json
     // ================================================================
     // FJ — Fijian
     // ================================================================
@@ -1597,7 +1597,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/fon.json
+    // Source: locales/fon.json
     // ================================================================
     // FON — Fon
     // ================================================================
@@ -1634,7 +1634,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/fr.json
+    // Source: locales/fr.json
     // ================================================================
     // FR — French
     // ================================================================
@@ -1671,7 +1671,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ga.json
+    // Source: locales/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
@@ -1708,7 +1708,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/gd.json
+    // Source: locales/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
@@ -1745,7 +1745,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/gl.json
+    // Source: locales/gl.json
     // ================================================================
     // GL — Galician
     // ================================================================
@@ -1782,7 +1782,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/gn.json
+    // Source: locales/gn.json
     // ================================================================
     // GN — Guarani
     // ================================================================
@@ -1819,7 +1819,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/gu.json
+    // Source: locales/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
@@ -1856,7 +1856,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/gv.json
+    // Source: locales/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
@@ -1893,7 +1893,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ha.json
+    // Source: locales/ha.json
     // ================================================================
     // HA — Hausa
     // ================================================================
@@ -1930,7 +1930,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/he.json
+    // Source: locales/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
@@ -1967,7 +1967,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/hi.json
+    // Source: locales/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
@@ -2004,7 +2004,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ================================================================
     // HMN — Hmong
     // ================================================================
@@ -2041,7 +2041,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/hr.json
+    // Source: locales/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
@@ -2078,7 +2078,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ht.json
+    // Source: locales/ht.json
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
@@ -2115,7 +2115,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/hu.json
+    // Source: locales/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
@@ -2152,7 +2152,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/hy.json
+    // Source: locales/hy.json
     // ================================================================
     // HY — Armenian
     // ================================================================
@@ -2189,7 +2189,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/id.json
+    // Source: locales/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
@@ -2226,7 +2226,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ig.json
+    // Source: locales/ig.json
     // ================================================================
     // IG — Igbo
     // ================================================================
@@ -2263,7 +2263,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/is.json
+    // Source: locales/is.json
     // ================================================================
     // IS — Icelandic
     // ================================================================
@@ -2300,7 +2300,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/it.json
+    // Source: locales/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
@@ -2337,7 +2337,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ja.json
+    // Source: locales/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
@@ -2374,7 +2374,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/jv.json
+    // Source: locales/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
@@ -2411,7 +2411,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ka.json
+    // Source: locales/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
@@ -2448,7 +2448,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ================================================================
     // KBP — Kabiye
     // ================================================================
@@ -2485,7 +2485,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kek.json
+    // Source: locales/kek.json
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
@@ -2522,7 +2522,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ki.json
+    // Source: locales/ki.json
     // ================================================================
     // KI — Kikuyu
     // ================================================================
@@ -2559,7 +2559,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kk.json
+    // Source: locales/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
@@ -2596,7 +2596,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kl.json
+    // Source: locales/kl.json
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
@@ -2633,7 +2633,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/km.json
+    // Source: locales/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
@@ -2670,7 +2670,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kn.json
+    // Source: locales/kn.json
     // ================================================================
     // KN — Kannada
     // ================================================================
@@ -2707,7 +2707,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ko.json
+    // Source: locales/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
@@ -2744,7 +2744,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ================================================================
     // KPE — Kpelle
     // ================================================================
@@ -2781,7 +2781,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kri.json
+    // Source: locales/kri.json
     // ================================================================
     // KRI — Krio
     // ================================================================
@@ -2818,7 +2818,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ================================================================
     // KTU — Kituba
     // ================================================================
@@ -2855,7 +2855,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ku.json
+    // Source: locales/ku.json
     // ================================================================
     // KU — Kurdish
     // ================================================================
@@ -2892,7 +2892,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/kw.json
+    // Source: locales/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
@@ -2929,7 +2929,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ky.json
+    // Source: locales/ky.json
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
@@ -2966,7 +2966,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/lb.json
+    // Source: locales/lb.json
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
@@ -3003,7 +3003,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/lg.json
+    // Source: locales/lg.json
     // ================================================================
     // LG — Luganda
     // ================================================================
@@ -3040,7 +3040,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ln.json
+    // Source: locales/ln.json
     // ================================================================
     // LN — Lingala
     // ================================================================
@@ -3077,7 +3077,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/lo.json
+    // Source: locales/lo.json
     // ================================================================
     // LO — Lao
     // ================================================================
@@ -3114,7 +3114,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/lt.json
+    // Source: locales/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
@@ -3151,7 +3151,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/luo.json
+    // Source: locales/luo.json
     // ================================================================
     // LUO — Dholuo
     // ================================================================
@@ -3188,7 +3188,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/lv.json
+    // Source: locales/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
@@ -3225,7 +3225,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mam.json
+    // Source: locales/mam.json
     // ================================================================
     // MAM — Mam
     // ================================================================
@@ -3262,7 +3262,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/men.json
+    // Source: locales/men.json
     // ================================================================
     // MEN — Mende
     // ================================================================
@@ -3299,7 +3299,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
@@ -3336,7 +3336,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mg.json
+    // Source: locales/mg.json
     // ================================================================
     // MG — Malagasy
     // ================================================================
@@ -3373,7 +3373,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mi.json
+    // Source: locales/mi.json
     // ================================================================
     // MI — Māori
     // ================================================================
@@ -3410,7 +3410,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mk.json
+    // Source: locales/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
@@ -3447,7 +3447,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ml.json
+    // Source: locales/ml.json
     // ================================================================
     // ML — Malayalam
     // ================================================================
@@ -3484,7 +3484,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mn.json
+    // Source: locales/mn.json
     // ================================================================
     // MN — Mongolian
     // ================================================================
@@ -3521,7 +3521,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ================================================================
     // MNK — Mandinka
     // ================================================================
@@ -3558,7 +3558,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mos.json
+    // Source: locales/mos.json
     // ================================================================
     // MOS — Moore
     // ================================================================
@@ -3595,7 +3595,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mr.json
+    // Source: locales/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
@@ -3632,7 +3632,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ms.json
+    // Source: locales/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
@@ -3669,7 +3669,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/mt.json
+    // Source: locales/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
@@ -3706,7 +3706,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/my.json
+    // Source: locales/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
@@ -3743,7 +3743,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/nb.json
+    // Source: locales/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
@@ -3780,7 +3780,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/nd.json
+    // Source: locales/nd.json
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
@@ -3817,7 +3817,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ne.json
+    // Source: locales/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
@@ -3854,7 +3854,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ng.json
+    // Source: locales/ng.json
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
@@ -3891,7 +3891,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/nl.json
+    // Source: locales/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
@@ -3928,7 +3928,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/nr.json
+    // Source: locales/nr.json
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
@@ -3965,7 +3965,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/nso.json
+    // Source: locales/nso.json
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
@@ -4002,7 +4002,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/nus.json
+    // Source: locales/nus.json
     // ================================================================
     // NUS — Nuer
     // ================================================================
@@ -4039,7 +4039,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ny.json
+    // Source: locales/ny.json
     // ================================================================
     // NY — Chichewa
     // ================================================================
@@ -4076,7 +4076,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/om.json
+    // Source: locales/om.json
     // ================================================================
     // OM — Oromo
     // ================================================================
@@ -4113,7 +4113,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/or.json
+    // Source: locales/or.json
     // ================================================================
     // OR — Odia
     // ================================================================
@@ -4150,7 +4150,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/pa.json
+    // Source: locales/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
@@ -4187,7 +4187,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/pis.json
+    // Source: locales/pis.json
     // ================================================================
     // PIS — Pijin
     // ================================================================
@@ -4224,7 +4224,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/pl.json
+    // Source: locales/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
@@ -4261,7 +4261,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/pov.json
+    // Source: locales/pov.json
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
@@ -4298,7 +4298,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ps.json
+    // Source: locales/ps.json
     // ================================================================
     // PS — Pashto
     // ================================================================
@@ -4335,7 +4335,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/pt.json
+    // Source: locales/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================
@@ -4372,7 +4372,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/qu.json
+    // Source: locales/qu.json
     // ================================================================
     // QU — Quechua
     // ================================================================
@@ -4409,7 +4409,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/quc.json
+    // Source: locales/quc.json
     // ================================================================
     // QUC — K'iche'
     // ================================================================
@@ -4446,7 +4446,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ro.json
+    // Source: locales/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
@@ -4483,7 +4483,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ru.json
+    // Source: locales/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
@@ -4520,7 +4520,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/rw.json
+    // Source: locales/rw.json
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
@@ -4557,7 +4557,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sar.json
+    // Source: locales/sar.json
     // ================================================================
     // SAR — Sara
     // ================================================================
@@ -4594,7 +4594,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sd.json
+    // Source: locales/sd.json
     // ================================================================
     // SD — Sindhi
     // ================================================================
@@ -4631,7 +4631,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sg.json
+    // Source: locales/sg.json
     // ================================================================
     // SG — Sango
     // ================================================================
@@ -4668,7 +4668,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/shi.json
+    // Source: locales/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
@@ -4705,7 +4705,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/shn.json
+    // Source: locales/shn.json
     // ================================================================
     // SHN — Shan
     // ================================================================
@@ -4742,7 +4742,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/si.json
+    // Source: locales/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
@@ -4779,7 +4779,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sk.json
+    // Source: locales/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
@@ -4816,7 +4816,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sl.json
+    // Source: locales/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
@@ -4853,7 +4853,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sn.json
+    // Source: locales/sn.json
     // ================================================================
     // SN — Shona
     // ================================================================
@@ -4890,7 +4890,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/snk.json
+    // Source: locales/snk.json
     // ================================================================
     // SNK — Soninke
     // ================================================================
@@ -4927,7 +4927,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/so.json
+    // Source: locales/so.json
     // ================================================================
     // SO — Somali
     // ================================================================
@@ -4964,7 +4964,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sq.json
+    // Source: locales/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
@@ -5001,7 +5001,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sr.json
+    // Source: locales/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
@@ -5038,7 +5038,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ss.json
+    // Source: locales/ss.json
     // ================================================================
     // SS — siSwati
     // ================================================================
@@ -5075,7 +5075,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/st.json
+    // Source: locales/st.json
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
@@ -5112,7 +5112,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/su.json
+    // Source: locales/su.json
     // ================================================================
     // SU — Sundanese
     // ================================================================
@@ -5149,7 +5149,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/suk.json
+    // Source: locales/suk.json
     // ================================================================
     // SUK — Sukuma
     // ================================================================
@@ -5186,7 +5186,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sv.json
+    // Source: locales/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
@@ -5223,7 +5223,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/sw.json
+    // Source: locales/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
@@ -5260,7 +5260,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ta.json
+    // Source: locales/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
@@ -5297,7 +5297,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/te.json
+    // Source: locales/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
@@ -5334,7 +5334,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tem.json
+    // Source: locales/tem.json
     // ================================================================
     // TEM — Temne
     // ================================================================
@@ -5371,7 +5371,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tet.json
+    // Source: locales/tet.json
     // ================================================================
     // TET — Tetum
     // ================================================================
@@ -5408,7 +5408,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tg.json
+    // Source: locales/tg.json
     // ================================================================
     // TG — Tajik
     // ================================================================
@@ -5445,7 +5445,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/th.json
+    // Source: locales/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
@@ -5482,7 +5482,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ti.json
+    // Source: locales/ti.json
     // ================================================================
     // TI — Tigrinya
     // ================================================================
@@ -5519,7 +5519,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tig.json
+    // Source: locales/tig.json
     // ================================================================
     // TIG — Tigre
     // ================================================================
@@ -5556,7 +5556,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tk.json
+    // Source: locales/tk.json
     // ================================================================
     // TK — Turkmen
     // ================================================================
@@ -5593,7 +5593,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tn.json
+    // Source: locales/tn.json
     // ================================================================
     // TN — Tswana
     // ================================================================
@@ -5630,7 +5630,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
@@ -5667,7 +5667,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tr.json
+    // Source: locales/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
@@ -5704,7 +5704,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ts.json
+    // Source: locales/ts.json
     // ================================================================
     // TS — Tsonga
     // ================================================================
@@ -5741,7 +5741,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tum.json
+    // Source: locales/tum.json
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
@@ -5778,7 +5778,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
@@ -5815,7 +5815,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/uk.json
+    // Source: locales/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
@@ -5852,7 +5852,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/umb.json
+    // Source: locales/umb.json
     // ================================================================
     // UMB — Umbundu
     // ================================================================
@@ -5889,7 +5889,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ur.json
+    // Source: locales/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
@@ -5926,7 +5926,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/uz.json
+    // Source: locales/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
@@ -5963,7 +5963,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/ve.json
+    // Source: locales/ve.json
     // ================================================================
     // VE — Venda
     // ================================================================
@@ -6000,7 +6000,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/vi.json
+    // Source: locales/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
@@ -6037,7 +6037,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
@@ -6074,7 +6074,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/wo.json
+    // Source: locales/wo.json
     // ================================================================
     // WO — Wolof
     // ================================================================
@@ -6111,7 +6111,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/xh.json
+    // Source: locales/xh.json
     // ================================================================
     // XH — Xhosa
     // ================================================================
@@ -6148,7 +6148,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/yao.json
+    // Source: locales/yao.json
     // ================================================================
     // YAO — Yao
     // ================================================================
@@ -6185,7 +6185,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/yo.json
+    // Source: locales/yo.json
     // ================================================================
     // YO — Yoruba
     // ================================================================
@@ -6222,7 +6222,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/yue.json
+    // Source: locales/yue.json
     // ================================================================
     // YUE — Cantonese
     // ================================================================
@@ -6259,7 +6259,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
@@ -6296,7 +6296,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/zh.json
+    // Source: locales/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================
@@ -6333,7 +6333,7 @@ public enum Locales {
         )
     )
 
-    // Source: duration/locales/src/zu.json
+    // Source: locales/zu.json
     // ================================================================
     // ZU — Zulu
     // ================================================================

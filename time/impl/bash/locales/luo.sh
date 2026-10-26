@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/luo.json
+# Source: locales/luo.json
 
 _sayabletime_locale_luo() {
     _clock_hours=('apar gi ariyo' 'achiel' 'ariyo' 'adek' 'ang'\''wen' 'abich' 'auchiel' 'abiriyo' 'aboro' 'ochiko' 'apar' 'apar gi achiel')

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/bem.json
+# Source: locales/bem.json
 
 _sayabledate_locale_bem() {
     _months=('Januari' 'Februari' 'Machi' 'Epreli' 'Mei' 'Juni' 'Julai' 'Ogasti' 'Septemba' 'Oktoba' 'Novemba' 'Disemba')

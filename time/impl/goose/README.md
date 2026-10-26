@@ -45,7 +45,7 @@ Spoken times round to the nearest five minutes. Short and compact modes print th
 
 ## Internationalization
 
-All 168 locales are generated from `time/locales/src/*.json` into `sayabletime/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
+All 168 locales are generated from the shared `locales/*.json` files into `sayabletime/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
 
 ```goose
 let ja, found_ja = sayabletime::get_locale("ja");

@@ -7,7 +7,7 @@
 % ║ Changes will be overwritten the next time codegen runs.      ║
 % ║ Edit the generator or locale JSON instead.                   ║
 % ╚══════════════════════════════════════════════════════════════╝
-% Source: age/locales/src/lt.json
+% Source: locales/lt.json
 
 function loc = locale_lt()
   loc.code = 'lt';

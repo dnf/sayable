@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/lv.json
+# Source: locales/lv.json
 module SayableDuration
   module Locales
     LV = DurationLocale.new(

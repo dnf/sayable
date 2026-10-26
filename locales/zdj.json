@@ -1,0 +1,224 @@
+{
+  "code": "zdj",
+  "name": "Comorian",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "suku {n}",
+      "week": "djumwa {n}",
+      "month": "mwezi {n}",
+      "year": "mwaha {n}"
+    },
+    "half": "{0} na nusu",
+    "delimiter": ", ",
+    "justBorn": "Mwana mdzuhu",
+    "stages": {
+      "newborn": "Mwana mdzuhu",
+      "infant": "Mwana mdzo",
+      "toddler": "Mwana mtsanga",
+      "child": "Mwana",
+      "teenager": "Mwanantsi",
+      "adult": "Mtu mzima"
+    },
+    "short": {
+      "units": {
+        "day": "suku {n}",
+        "week": "djum. {n}",
+        "month": "mw. {n}",
+        "year": "mwa. {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Januari",
+      "Februari",
+      "Machi",
+      "Aprili",
+      "Mei",
+      "Juni",
+      "Julai",
+      "Agosti",
+      "Septemba",
+      "Oktoba",
+      "Novemba",
+      "Desemba"
+    ],
+    "weekdays": [
+      "Jumapili",
+      "Jumatatu",
+      "Jumanne",
+      "Jumatano",
+      "Alhamisi",
+      "Ijumaa",
+      "Jumamosi"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "leo",
+    "tomorrow": "mesha",
+    "yesterday": "jana",
+    "dayAfterTomorrow": "kesho kutwa",
+    "dayBeforeYesterday": "juzi",
+    "thisWeekday": "{weekday} iyi",
+    "nextWeekday": "{weekday} ya udjayo",
+    "lastWeekday": "{weekday} ya hupitsa",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mac",
+        "Apr",
+        "Mei",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Pil",
+        "Tat",
+        "Nne",
+        "Tan",
+        "Alh",
+        "Iju",
+        "Mos"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "sekunde {n}",
+      "minute": "dakika {n}",
+      "hour": "saa {n}",
+      "day": "suku {n}",
+      "week": "djumwa {n}",
+      "month": "mwezi {n}",
+      "year": "mwaha {n}"
+    },
+    "half": "{0} na nusu",
+    "delimiter": ", ",
+    "justNow": "vavo hangu",
+    "ago": "{0} zilizopita",
+    "inFuture": "ha {0}",
+    "short": {
+      "units": {
+        "second": "sek. {n}",
+        "minute": "dak. {n}",
+        "hour": "saa {n}",
+        "day": "suku {n}",
+        "week": "djum. {n}",
+        "month": "mw. {n}",
+        "year": "mwa. {n}"
+      },
+      "ago": "{0} zilizopita",
+      "inFuture": "ha {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} zilizopita",
+      "inFuture": "ha {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "kumi na mbili",
+        "moja",
+        "mbili",
+        "tatu",
+        "nne",
+        "tano",
+        "sita",
+        "saba",
+        "nane",
+        "tisa",
+        "kumi",
+        "kumi na moja"
+      ],
+      "midnight": "usiku wa manane",
+      "noon": "adhuhuri",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

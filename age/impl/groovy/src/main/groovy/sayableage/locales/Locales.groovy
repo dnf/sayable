@@ -17,1009 +17,1009 @@ import sayableage.*
  */
 class Locales {
 
-    // Source: age/locales/src/af.json
+    // Source: locales/af.json
     // ================================================================
     // AF — Afrikaans
     // ================================================================
     static final AgeLocale AF = _af()
 
-    // Source: age/locales/src/ak.json
+    // Source: locales/ak.json
     // ================================================================
     // AK — Akan
     // ================================================================
     static final AgeLocale AK = _ak()
 
-    // Source: age/locales/src/am.json
+    // Source: locales/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
     static final AgeLocale AM = _am()
 
-    // Source: age/locales/src/ar.json
+    // Source: locales/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
     static final AgeLocale AR = _ar()
 
-    // Source: age/locales/src/ay.json
+    // Source: locales/ay.json
     // ================================================================
     // AY — Aymara
     // ================================================================
     static final AgeLocale AY = _ay()
 
-    // Source: age/locales/src/az.json
+    // Source: locales/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
     static final AgeLocale AZ = _az()
 
-    // Source: age/locales/src/bci.json
+    // Source: locales/bci.json
     // ================================================================
     // BCI — Baoulé
     // ================================================================
     static final AgeLocale BCI = _bci()
 
-    // Source: age/locales/src/be.json
+    // Source: locales/be.json
     // ================================================================
     // BE — Belarusian
     // ================================================================
     static final AgeLocale BE = _be()
 
-    // Source: age/locales/src/bem.json
+    // Source: locales/bem.json
     // ================================================================
     // BEM — Bemba
     // ================================================================
     static final AgeLocale BEM = _bem()
 
-    // Source: age/locales/src/bg.json
+    // Source: locales/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
     static final AgeLocale BG = _bg()
 
-    // Source: age/locales/src/bi.json
+    // Source: locales/bi.json
     // ================================================================
     // BI — Bislama
     // ================================================================
     static final AgeLocale BI = _bi()
 
-    // Source: age/locales/src/bm.json
+    // Source: locales/bm.json
     // ================================================================
     // BM — Bambara
     // ================================================================
     static final AgeLocale BM = _bm()
 
-    // Source: age/locales/src/bn.json
+    // Source: locales/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
     static final AgeLocale BN = _bn()
 
-    // Source: age/locales/src/br.json
+    // Source: locales/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
     static final AgeLocale BR = _br()
 
-    // Source: age/locales/src/bs.json
+    // Source: locales/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
     static final AgeLocale BS = _bs()
 
-    // Source: age/locales/src/ca.json
+    // Source: locales/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
     static final AgeLocale CA = _ca()
 
-    // Source: age/locales/src/cak.json
+    // Source: locales/cak.json
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
     static final AgeLocale CAK = _cak()
 
-    // Source: age/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ================================================================
     // CEB — Cebuano
     // ================================================================
     static final AgeLocale CEB = _ceb()
 
-    // Source: age/locales/src/cs.json
+    // Source: locales/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
     static final AgeLocale CS = _cs()
 
-    // Source: age/locales/src/cy.json
+    // Source: locales/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
     static final AgeLocale CY = _cy()
 
-    // Source: age/locales/src/da.json
+    // Source: locales/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
     static final AgeLocale DA = _da()
 
-    // Source: age/locales/src/de.json
+    // Source: locales/de.json
     // ================================================================
     // DE — German
     // ================================================================
     static final AgeLocale DE = _de()
 
-    // Source: age/locales/src/din.json
+    // Source: locales/din.json
     // ================================================================
     // DIN — Dinka
     // ================================================================
     static final AgeLocale DIN = _din()
 
-    // Source: age/locales/src/dje.json
+    // Source: locales/dje.json
     // ================================================================
     // DJE — Zarma
     // ================================================================
     static final AgeLocale DJE = _dje()
 
-    // Source: age/locales/src/dv.json
+    // Source: locales/dv.json
     // ================================================================
     // DV — Dhivehi
     // ================================================================
     static final AgeLocale DV = _dv()
 
-    // Source: age/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ================================================================
     // DYU — Dyula
     // ================================================================
     static final AgeLocale DYU = _dyu()
 
-    // Source: age/locales/src/dz.json
+    // Source: locales/dz.json
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
     static final AgeLocale DZ = _dz()
 
-    // Source: age/locales/src/ee.json
+    // Source: locales/ee.json
     // ================================================================
     // EE — Ewe
     // ================================================================
     static final AgeLocale EE = _ee()
 
-    // Source: age/locales/src/el.json
+    // Source: locales/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
     static final AgeLocale EL = _el()
 
-    // Source: age/locales/src/en.json
+    // Source: locales/en.json
     // ================================================================
     // EN — English
     // ================================================================
     static final AgeLocale EN = _en()
 
-    // Source: age/locales/src/es.json
+    // Source: locales/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
     static final AgeLocale ES = _es()
 
-    // Source: age/locales/src/et.json
+    // Source: locales/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
     static final AgeLocale ET = _et()
 
-    // Source: age/locales/src/eu.json
+    // Source: locales/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
     static final AgeLocale EU = _eu()
 
-    // Source: age/locales/src/fa.json
+    // Source: locales/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
     static final AgeLocale FA = _fa()
 
-    // Source: age/locales/src/fan.json
+    // Source: locales/fan.json
     // ================================================================
     // FAN — Fang
     // ================================================================
     static final AgeLocale FAN = _fan()
 
-    // Source: age/locales/src/ff.json
+    // Source: locales/ff.json
     // ================================================================
     // FF — Fulah
     // ================================================================
     static final AgeLocale FF = _ff()
 
-    // Source: age/locales/src/fi.json
+    // Source: locales/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
     static final AgeLocale FI = _fi()
 
-    // Source: age/locales/src/fil.json
+    // Source: locales/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
     static final AgeLocale FIL = _fil()
 
-    // Source: age/locales/src/fj.json
+    // Source: locales/fj.json
     // ================================================================
     // FJ — Fijian
     // ================================================================
     static final AgeLocale FJ = _fj()
 
-    // Source: age/locales/src/fon.json
+    // Source: locales/fon.json
     // ================================================================
     // FON — Fon
     // ================================================================
     static final AgeLocale FON = _fon()
 
-    // Source: age/locales/src/fr.json
+    // Source: locales/fr.json
     // ================================================================
     // FR — French
     // ================================================================
     static final AgeLocale FR = _fr()
 
-    // Source: age/locales/src/ga.json
+    // Source: locales/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
     static final AgeLocale GA = _ga()
 
-    // Source: age/locales/src/gd.json
+    // Source: locales/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
     static final AgeLocale GD = _gd()
 
-    // Source: age/locales/src/gl.json
+    // Source: locales/gl.json
     // ================================================================
     // GL — Galician
     // ================================================================
     static final AgeLocale GL = _gl()
 
-    // Source: age/locales/src/gn.json
+    // Source: locales/gn.json
     // ================================================================
     // GN — Guarani
     // ================================================================
     static final AgeLocale GN = _gn()
 
-    // Source: age/locales/src/gu.json
+    // Source: locales/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
     static final AgeLocale GU = _gu()
 
-    // Source: age/locales/src/gv.json
+    // Source: locales/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
     static final AgeLocale GV = _gv()
 
-    // Source: age/locales/src/ha.json
+    // Source: locales/ha.json
     // ================================================================
     // HA — Hausa
     // ================================================================
     static final AgeLocale HA = _ha()
 
-    // Source: age/locales/src/he.json
+    // Source: locales/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
     static final AgeLocale HE = _he()
 
-    // Source: age/locales/src/hi.json
+    // Source: locales/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
     static final AgeLocale HI = _hi()
 
-    // Source: age/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ================================================================
     // HMN — Hmong
     // ================================================================
     static final AgeLocale HMN = _hmn()
 
-    // Source: age/locales/src/hr.json
+    // Source: locales/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
     static final AgeLocale HR = _hr()
 
-    // Source: age/locales/src/ht.json
+    // Source: locales/ht.json
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
     static final AgeLocale HT = _ht()
 
-    // Source: age/locales/src/hu.json
+    // Source: locales/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
     static final AgeLocale HU = _hu()
 
-    // Source: age/locales/src/hy.json
+    // Source: locales/hy.json
     // ================================================================
     // HY — Armenian
     // ================================================================
     static final AgeLocale HY = _hy()
 
-    // Source: age/locales/src/id.json
+    // Source: locales/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
     static final AgeLocale ID = _id()
 
-    // Source: age/locales/src/ig.json
+    // Source: locales/ig.json
     // ================================================================
     // IG — Igbo
     // ================================================================
     static final AgeLocale IG = _ig()
 
-    // Source: age/locales/src/is.json
+    // Source: locales/is.json
     // ================================================================
     // IS — Icelandic
     // ================================================================
     static final AgeLocale IS = _is()
 
-    // Source: age/locales/src/it.json
+    // Source: locales/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
     static final AgeLocale IT = _it()
 
-    // Source: age/locales/src/ja.json
+    // Source: locales/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
     static final AgeLocale JA = _ja()
 
-    // Source: age/locales/src/jv.json
+    // Source: locales/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
     static final AgeLocale JV = _jv()
 
-    // Source: age/locales/src/ka.json
+    // Source: locales/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
     static final AgeLocale KA = _ka()
 
-    // Source: age/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ================================================================
     // KBP — Kabiye
     // ================================================================
     static final AgeLocale KBP = _kbp()
 
-    // Source: age/locales/src/kek.json
+    // Source: locales/kek.json
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
     static final AgeLocale KEK = _kek()
 
-    // Source: age/locales/src/ki.json
+    // Source: locales/ki.json
     // ================================================================
     // KI — Kikuyu
     // ================================================================
     static final AgeLocale KI = _ki()
 
-    // Source: age/locales/src/kk.json
+    // Source: locales/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
     static final AgeLocale KK = _kk()
 
-    // Source: age/locales/src/kl.json
+    // Source: locales/kl.json
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
     static final AgeLocale KL = _kl()
 
-    // Source: age/locales/src/km.json
+    // Source: locales/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
     static final AgeLocale KM = _km()
 
-    // Source: age/locales/src/kn.json
+    // Source: locales/kn.json
     // ================================================================
     // KN — Kannada
     // ================================================================
     static final AgeLocale KN = _kn()
 
-    // Source: age/locales/src/ko.json
+    // Source: locales/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
     static final AgeLocale KO = _ko()
 
-    // Source: age/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ================================================================
     // KPE — Kpelle
     // ================================================================
     static final AgeLocale KPE = _kpe()
 
-    // Source: age/locales/src/kri.json
+    // Source: locales/kri.json
     // ================================================================
     // KRI — Krio
     // ================================================================
     static final AgeLocale KRI = _kri()
 
-    // Source: age/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ================================================================
     // KTU — Kituba
     // ================================================================
     static final AgeLocale KTU = _ktu()
 
-    // Source: age/locales/src/ku.json
+    // Source: locales/ku.json
     // ================================================================
     // KU — Kurdish
     // ================================================================
     static final AgeLocale KU = _ku()
 
-    // Source: age/locales/src/kw.json
+    // Source: locales/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
     static final AgeLocale KW = _kw()
 
-    // Source: age/locales/src/ky.json
+    // Source: locales/ky.json
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
     static final AgeLocale KY = _ky()
 
-    // Source: age/locales/src/lb.json
+    // Source: locales/lb.json
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
     static final AgeLocale LB = _lb()
 
-    // Source: age/locales/src/lg.json
+    // Source: locales/lg.json
     // ================================================================
     // LG — Luganda
     // ================================================================
     static final AgeLocale LG = _lg()
 
-    // Source: age/locales/src/ln.json
+    // Source: locales/ln.json
     // ================================================================
     // LN — Lingala
     // ================================================================
     static final AgeLocale LN = _ln()
 
-    // Source: age/locales/src/lo.json
+    // Source: locales/lo.json
     // ================================================================
     // LO — Lao
     // ================================================================
     static final AgeLocale LO = _lo()
 
-    // Source: age/locales/src/lt.json
+    // Source: locales/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
     static final AgeLocale LT = _lt()
 
-    // Source: age/locales/src/luo.json
+    // Source: locales/luo.json
     // ================================================================
     // LUO — Dholuo
     // ================================================================
     static final AgeLocale LUO = _luo()
 
-    // Source: age/locales/src/lv.json
+    // Source: locales/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
     static final AgeLocale LV = _lv()
 
-    // Source: age/locales/src/mam.json
+    // Source: locales/mam.json
     // ================================================================
     // MAM — Mam
     // ================================================================
     static final AgeLocale MAM = _mam()
 
-    // Source: age/locales/src/men.json
+    // Source: locales/men.json
     // ================================================================
     // MEN — Mende
     // ================================================================
     static final AgeLocale MEN = _men()
 
-    // Source: age/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
     static final AgeLocale MFE = _mfe()
 
-    // Source: age/locales/src/mg.json
+    // Source: locales/mg.json
     // ================================================================
     // MG — Malagasy
     // ================================================================
     static final AgeLocale MG = _mg()
 
-    // Source: age/locales/src/mi.json
+    // Source: locales/mi.json
     // ================================================================
     // MI — Māori
     // ================================================================
     static final AgeLocale MI = _mi()
 
-    // Source: age/locales/src/mk.json
+    // Source: locales/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
     static final AgeLocale MK = _mk()
 
-    // Source: age/locales/src/ml.json
+    // Source: locales/ml.json
     // ================================================================
     // ML — Malayalam
     // ================================================================
     static final AgeLocale ML = _ml()
 
-    // Source: age/locales/src/mn.json
+    // Source: locales/mn.json
     // ================================================================
     // MN — Mongolian
     // ================================================================
     static final AgeLocale MN = _mn()
 
-    // Source: age/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ================================================================
     // MNK — Mandinka
     // ================================================================
     static final AgeLocale MNK = _mnk()
 
-    // Source: age/locales/src/mos.json
+    // Source: locales/mos.json
     // ================================================================
     // MOS — Moore
     // ================================================================
     static final AgeLocale MOS = _mos()
 
-    // Source: age/locales/src/mr.json
+    // Source: locales/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
     static final AgeLocale MR = _mr()
 
-    // Source: age/locales/src/ms.json
+    // Source: locales/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
     static final AgeLocale MS = _ms()
 
-    // Source: age/locales/src/mt.json
+    // Source: locales/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
     static final AgeLocale MT = _mt()
 
-    // Source: age/locales/src/my.json
+    // Source: locales/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
     static final AgeLocale MY = _my()
 
-    // Source: age/locales/src/nb.json
+    // Source: locales/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
     static final AgeLocale NB = _nb()
 
-    // Source: age/locales/src/nd.json
+    // Source: locales/nd.json
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
     static final AgeLocale ND = _nd()
 
-    // Source: age/locales/src/ne.json
+    // Source: locales/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
     static final AgeLocale NE = _ne()
 
-    // Source: age/locales/src/ng.json
+    // Source: locales/ng.json
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
     static final AgeLocale NG = _ng()
 
-    // Source: age/locales/src/nl.json
+    // Source: locales/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
     static final AgeLocale NL = _nl()
 
-    // Source: age/locales/src/nr.json
+    // Source: locales/nr.json
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
     static final AgeLocale NR = _nr()
 
-    // Source: age/locales/src/nso.json
+    // Source: locales/nso.json
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
     static final AgeLocale NSO = _nso()
 
-    // Source: age/locales/src/nus.json
+    // Source: locales/nus.json
     // ================================================================
     // NUS — Nuer
     // ================================================================
     static final AgeLocale NUS = _nus()
 
-    // Source: age/locales/src/ny.json
+    // Source: locales/ny.json
     // ================================================================
     // NY — Chichewa
     // ================================================================
     static final AgeLocale NY = _ny()
 
-    // Source: age/locales/src/om.json
+    // Source: locales/om.json
     // ================================================================
     // OM — Oromo
     // ================================================================
     static final AgeLocale OM = _om()
 
-    // Source: age/locales/src/or.json
+    // Source: locales/or.json
     // ================================================================
     // OR — Odia
     // ================================================================
     static final AgeLocale OR = _or()
 
-    // Source: age/locales/src/pa.json
+    // Source: locales/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
     static final AgeLocale PA = _pa()
 
-    // Source: age/locales/src/pis.json
+    // Source: locales/pis.json
     // ================================================================
     // PIS — Pijin
     // ================================================================
     static final AgeLocale PIS = _pis()
 
-    // Source: age/locales/src/pl.json
+    // Source: locales/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
     static final AgeLocale PL = _pl()
 
-    // Source: age/locales/src/pov.json
+    // Source: locales/pov.json
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
     static final AgeLocale POV = _pov()
 
-    // Source: age/locales/src/ps.json
+    // Source: locales/ps.json
     // ================================================================
     // PS — Pashto
     // ================================================================
     static final AgeLocale PS = _ps()
 
-    // Source: age/locales/src/pt.json
+    // Source: locales/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================
     static final AgeLocale PT = _pt()
 
-    // Source: age/locales/src/qu.json
+    // Source: locales/qu.json
     // ================================================================
     // QU — Quechua
     // ================================================================
     static final AgeLocale QU = _qu()
 
-    // Source: age/locales/src/quc.json
+    // Source: locales/quc.json
     // ================================================================
     // QUC — K'iche'
     // ================================================================
     static final AgeLocale QUC = _quc()
 
-    // Source: age/locales/src/ro.json
+    // Source: locales/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
     static final AgeLocale RO = _ro()
 
-    // Source: age/locales/src/ru.json
+    // Source: locales/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
     static final AgeLocale RU = _ru()
 
-    // Source: age/locales/src/rw.json
+    // Source: locales/rw.json
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
     static final AgeLocale RW = _rw()
 
-    // Source: age/locales/src/sar.json
+    // Source: locales/sar.json
     // ================================================================
     // SAR — Sara
     // ================================================================
     static final AgeLocale SAR = _sar()
 
-    // Source: age/locales/src/sd.json
+    // Source: locales/sd.json
     // ================================================================
     // SD — Sindhi
     // ================================================================
     static final AgeLocale SD = _sd()
 
-    // Source: age/locales/src/sg.json
+    // Source: locales/sg.json
     // ================================================================
     // SG — Sango
     // ================================================================
     static final AgeLocale SG = _sg()
 
-    // Source: age/locales/src/shi.json
+    // Source: locales/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
     static final AgeLocale SHI = _shi()
 
-    // Source: age/locales/src/shn.json
+    // Source: locales/shn.json
     // ================================================================
     // SHN — Shan
     // ================================================================
     static final AgeLocale SHN = _shn()
 
-    // Source: age/locales/src/si.json
+    // Source: locales/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
     static final AgeLocale SI = _si()
 
-    // Source: age/locales/src/sk.json
+    // Source: locales/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
     static final AgeLocale SK = _sk()
 
-    // Source: age/locales/src/sl.json
+    // Source: locales/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
     static final AgeLocale SL = _sl()
 
-    // Source: age/locales/src/sn.json
+    // Source: locales/sn.json
     // ================================================================
     // SN — Shona
     // ================================================================
     static final AgeLocale SN = _sn()
 
-    // Source: age/locales/src/snk.json
+    // Source: locales/snk.json
     // ================================================================
     // SNK — Soninke
     // ================================================================
     static final AgeLocale SNK = _snk()
 
-    // Source: age/locales/src/so.json
+    // Source: locales/so.json
     // ================================================================
     // SO — Somali
     // ================================================================
     static final AgeLocale SO = _so()
 
-    // Source: age/locales/src/sq.json
+    // Source: locales/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
     static final AgeLocale SQ = _sq()
 
-    // Source: age/locales/src/sr.json
+    // Source: locales/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
     static final AgeLocale SR = _sr()
 
-    // Source: age/locales/src/ss.json
+    // Source: locales/ss.json
     // ================================================================
     // SS — siSwati
     // ================================================================
     static final AgeLocale SS = _ss()
 
-    // Source: age/locales/src/st.json
+    // Source: locales/st.json
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
     static final AgeLocale ST = _st()
 
-    // Source: age/locales/src/su.json
+    // Source: locales/su.json
     // ================================================================
     // SU — Sundanese
     // ================================================================
     static final AgeLocale SU = _su()
 
-    // Source: age/locales/src/suk.json
+    // Source: locales/suk.json
     // ================================================================
     // SUK — Sukuma
     // ================================================================
     static final AgeLocale SUK = _suk()
 
-    // Source: age/locales/src/sv.json
+    // Source: locales/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
     static final AgeLocale SV = _sv()
 
-    // Source: age/locales/src/sw.json
+    // Source: locales/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
     static final AgeLocale SW = _sw()
 
-    // Source: age/locales/src/ta.json
+    // Source: locales/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
     static final AgeLocale TA = _ta()
 
-    // Source: age/locales/src/te.json
+    // Source: locales/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
     static final AgeLocale TE = _te()
 
-    // Source: age/locales/src/tem.json
+    // Source: locales/tem.json
     // ================================================================
     // TEM — Temne
     // ================================================================
     static final AgeLocale TEM = _tem()
 
-    // Source: age/locales/src/tet.json
+    // Source: locales/tet.json
     // ================================================================
     // TET — Tetum
     // ================================================================
     static final AgeLocale TET = _tet()
 
-    // Source: age/locales/src/tg.json
+    // Source: locales/tg.json
     // ================================================================
     // TG — Tajik
     // ================================================================
     static final AgeLocale TG = _tg()
 
-    // Source: age/locales/src/th.json
+    // Source: locales/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
     static final AgeLocale TH = _th()
 
-    // Source: age/locales/src/ti.json
+    // Source: locales/ti.json
     // ================================================================
     // TI — Tigrinya
     // ================================================================
     static final AgeLocale TI = _ti()
 
-    // Source: age/locales/src/tig.json
+    // Source: locales/tig.json
     // ================================================================
     // TIG — Tigre
     // ================================================================
     static final AgeLocale TIG = _tig()
 
-    // Source: age/locales/src/tk.json
+    // Source: locales/tk.json
     // ================================================================
     // TK — Turkmen
     // ================================================================
     static final AgeLocale TK = _tk()
 
-    // Source: age/locales/src/tn.json
+    // Source: locales/tn.json
     // ================================================================
     // TN — Tswana
     // ================================================================
     static final AgeLocale TN = _tn()
 
-    // Source: age/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
     static final AgeLocale TPI = _tpi()
 
-    // Source: age/locales/src/tr.json
+    // Source: locales/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
     static final AgeLocale TR = _tr()
 
-    // Source: age/locales/src/ts.json
+    // Source: locales/ts.json
     // ================================================================
     // TS — Tsonga
     // ================================================================
     static final AgeLocale TS = _ts()
 
-    // Source: age/locales/src/tum.json
+    // Source: locales/tum.json
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
     static final AgeLocale TUM = _tum()
 
-    // Source: age/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
     static final AgeLocale TZM = _tzm()
 
-    // Source: age/locales/src/uk.json
+    // Source: locales/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
     static final AgeLocale UK = _uk()
 
-    // Source: age/locales/src/umb.json
+    // Source: locales/umb.json
     // ================================================================
     // UMB — Umbundu
     // ================================================================
     static final AgeLocale UMB = _umb()
 
-    // Source: age/locales/src/ur.json
+    // Source: locales/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
     static final AgeLocale UR = _ur()
 
-    // Source: age/locales/src/uz.json
+    // Source: locales/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
     static final AgeLocale UZ = _uz()
 
-    // Source: age/locales/src/ve.json
+    // Source: locales/ve.json
     // ================================================================
     // VE — Venda
     // ================================================================
     static final AgeLocale VE = _ve()
 
-    // Source: age/locales/src/vi.json
+    // Source: locales/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
     static final AgeLocale VI = _vi()
 
-    // Source: age/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
     static final AgeLocale VMW = _vmw()
 
-    // Source: age/locales/src/wo.json
+    // Source: locales/wo.json
     // ================================================================
     // WO — Wolof
     // ================================================================
     static final AgeLocale WO = _wo()
 
-    // Source: age/locales/src/xh.json
+    // Source: locales/xh.json
     // ================================================================
     // XH — Xhosa
     // ================================================================
     static final AgeLocale XH = _xh()
 
-    // Source: age/locales/src/yao.json
+    // Source: locales/yao.json
     // ================================================================
     // YAO — Yao
     // ================================================================
     static final AgeLocale YAO = _yao()
 
-    // Source: age/locales/src/yo.json
+    // Source: locales/yo.json
     // ================================================================
     // YO — Yoruba
     // ================================================================
     static final AgeLocale YO = _yo()
 
-    // Source: age/locales/src/yue.json
+    // Source: locales/yue.json
     // ================================================================
     // YUE — Cantonese
     // ================================================================
     static final AgeLocale YUE = _yue()
 
-    // Source: age/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
     static final AgeLocale ZDJ = _zdj()
 
-    // Source: age/locales/src/zh.json
+    // Source: locales/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================
     static final AgeLocale ZH = _zh()
 
-    // Source: age/locales/src/zu.json
+    // Source: locales/zu.json
     // ================================================================
     // ZU — Zulu
     // ================================================================

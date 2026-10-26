@@ -1,0 +1,240 @@
+{
+  "code": "fa",
+  "name": "Persian",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} روز",
+        "other": "{n} روز"
+      },
+      "week": {
+        "one": "{n} هفته",
+        "other": "{n} هفته"
+      },
+      "month": {
+        "one": "{n} ماه",
+        "other": "{n} ماه"
+      },
+      "year": {
+        "one": "{n} سال",
+        "other": "{n} سال"
+      }
+    },
+    "half": "{0} و نیم",
+    "delimiter": " و ",
+    "justBorn": "نوزاد",
+    "stages": {
+      "newborn": "نوزاد",
+      "infant": "شیرخوار",
+      "toddler": "نوپا",
+      "child": "کودک",
+      "teenager": "نوجوان",
+      "adult": "بزرگسال"
+    },
+    "short": {
+      "units": {
+        "day": "{n} روز",
+        "week": "{n} هفته",
+        "month": "{n} ماه",
+        "year": "{n} سال"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} روز",
+        "week": "{n} هفته",
+        "month": "{n} ماه",
+        "year": "{n} سال"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ژانویه",
+      "فوریه",
+      "مارس",
+      "آوریل",
+      "مه",
+      "ژوئن",
+      "ژوئیه",
+      "اوت",
+      "سپتامبر",
+      "اکتبر",
+      "نوامبر",
+      "دسامبر"
+    ],
+    "weekdays": [
+      "یکشنبه",
+      "دوشنبه",
+      "سه‌شنبه",
+      "چهارشنبه",
+      "پنجشنبه",
+      "جمعه",
+      "شنبه"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "امروز",
+    "tomorrow": "فردا",
+    "yesterday": "دیروز",
+    "dayAfterTomorrow": "پس‌فردا",
+    "dayBeforeYesterday": "پریروز",
+    "thisWeekday": "این {weekday}",
+    "nextWeekday": "{weekday} آینده",
+    "lastWeekday": "{weekday} گذشته",
+    "short": {
+      "months": [
+        "ژان",
+        "فور",
+        "مار",
+        "آور",
+        "مه",
+        "ژوئن",
+        "ژوئیه",
+        "اوت",
+        "سپت",
+        "اکت",
+        "نوا",
+        "دسا"
+      ],
+      "weekdays": [
+        "یکش",
+        "دوش",
+        "سه‌ش",
+        "چهار",
+        "پنجش",
+        "جمعه",
+        "شنبه"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} ثانیه",
+      "minute": "{n} دقیقه",
+      "hour": "{n} ساعت",
+      "day": {
+        "one": "{n} روز",
+        "other": "{n} روز"
+      },
+      "week": {
+        "one": "{n} هفته",
+        "other": "{n} هفته"
+      },
+      "month": {
+        "one": "{n} ماه",
+        "other": "{n} ماه"
+      },
+      "year": {
+        "one": "{n} سال",
+        "other": "{n} سال"
+      }
+    },
+    "half": "{0} و نیم",
+    "delimiter": " و ",
+    "justNow": "همین الان",
+    "ago": "{0} پیش",
+    "inFuture": "{0} دیگر",
+    "short": {
+      "units": {
+        "second": "{n} ثانیه",
+        "minute": "{n} دقیقه",
+        "hour": "{n} ساعت",
+        "day": "{n} روز",
+        "week": "{n} هفته",
+        "month": "{n} ماه",
+        "year": "{n} سال"
+      },
+      "ago": "{0} پیش",
+      "inFuture": "{0} دیگر",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n} روز",
+        "week": "{n} هفته",
+        "month": "{n} ماه",
+        "year": "{n} سال"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} پیش",
+      "inFuture": "{0} دیگر",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "دوازده",
+        "یک",
+        "دو",
+        "سه",
+        "چهار",
+        "پنج",
+        "شش",
+        "هفت",
+        "هشت",
+        "نه",
+        "ده",
+        "یازده"
+      ],
+      "midnight": "نیمه‌شب",
+      "noon": "ظهر",
+      "patterns": {
+        "0": "ساعت {h}",
+        "5": "{h} و پنج دقیقه",
+        "10": "{h} و ده دقیقه",
+        "15": "{h} و ربع",
+        "20": "{h} و بیست دقیقه",
+        "25": "{h} و بیست و پنج دقیقه",
+        "30": "{h} و نیم",
+        "35": "بیست و پنج دقیقه به {next_h}",
+        "40": "بیست دقیقه به {next_h}",
+        "45": "ربع به {next_h}",
+        "50": "ده دقیقه به {next_h}",
+        "55": "پنج دقیقه به {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

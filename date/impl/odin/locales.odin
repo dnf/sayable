@@ -10,7 +10,7 @@
 
 package sayabledate
 
-// Source: date/locales/src/af.json
+// Source: locales/af.json
 locale_af : Date_Locale = {
     code = "af",
     months = {"Januarie", "Februarie", "Maart", "April", "Mei", "Junie", "Julie", "Augustus", "September", "Oktober", "November", "Desember"},
@@ -54,7 +54,7 @@ locale_af : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ak.json
+// Source: locales/ak.json
 locale_ak : Date_Locale = {
     code = "ak",
     months = {"Ɔpɛpɔn", "Ɔgyefuo", "Ɔbenem", "Oforisuo", "Kotonimma", "Ayɛwohomumu", "Kutawonkuku", "Ɔsannaa", "Ɛbɔ", "Ahinime", "Obubuo", "Ɔpenimba"},
@@ -98,7 +98,7 @@ locale_ak : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/am.json
+// Source: locales/am.json
 locale_am : Date_Locale = {
     code = "am",
     months = {"ጃንዋሪ", "ፌብሩወሪ", "ማርች", "ኤፕሪል", "ሜይ", "ጁን", "ጁላይ", "ኦገስት", "ሴፕቴምበር", "ኦክቶበር", "ኖቬምበር", "ዲሴምበር"},
@@ -142,7 +142,7 @@ locale_am : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ar.json
+// Source: locales/ar.json
 locale_ar : Date_Locale = {
     code = "ar",
     months = {"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"},
@@ -186,7 +186,7 @@ locale_ar : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ay.json
+// Source: locales/ay.json
 locale_ay : Date_Locale = {
     code = "ay",
     months = {"Chinuqa", "Anata", "Achuqa", "Qasiwi", "Llamayu", "Marat'aqa", "Willkakuti", "Llumpaqa", "Sata", "Taypisata", "Lapaqa", "Jalluqallta"},
@@ -230,7 +230,7 @@ locale_ay : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/az.json
+// Source: locales/az.json
 locale_az : Date_Locale = {
     code = "az",
     months = {"yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avqust", "sentyabr", "oktyabr", "noyabr", "dekabr"},
@@ -274,7 +274,7 @@ locale_az : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/bci.json
+// Source: locales/bci.json
 locale_bci : Date_Locale = {
     code = "bci",
     months = {"Zanvie", "Flevie", "Masi", "Avrili", "Mɛ", "Zuɛn", "Zulɛ", "Uti", "Sɛtanbu", "Ɔtɔbu", "Novanbu", "Desanbu"},
@@ -318,7 +318,7 @@ locale_bci : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/be.json
+// Source: locales/be.json
 locale_be : Date_Locale = {
     code = "be",
     months = {"студзень", "люты", "сакавік", "красавік", "май", "чэрвень", "ліпень", "жнівень", "верасень", "кастрычнік", "лістапад", "снежань"},
@@ -362,7 +362,7 @@ locale_be : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/bem.json
+// Source: locales/bem.json
 locale_bem : Date_Locale = {
     code = "bem",
     months = {"Januari", "Februari", "Machi", "Epreli", "Mei", "Juni", "Julai", "Ogasti", "Septemba", "Oktoba", "Novemba", "Disemba"},
@@ -406,7 +406,7 @@ locale_bem : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/bg.json
+// Source: locales/bg.json
 locale_bg : Date_Locale = {
     code = "bg",
     months = {"януари", "февруари", "март", "април", "май", "юни", "юли", "август", "септември", "октомври", "ноември", "декември"},
@@ -450,7 +450,7 @@ locale_bg : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/bi.json
+// Source: locales/bi.json
 locale_bi : Date_Locale = {
     code = "bi",
     months = {"Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba"},
@@ -494,7 +494,7 @@ locale_bi : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/bm.json
+// Source: locales/bm.json
 locale_bm : Date_Locale = {
     code = "bm",
     months = {"Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"},
@@ -538,7 +538,7 @@ locale_bm : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/bn.json
+// Source: locales/bn.json
 locale_bn : Date_Locale = {
     code = "bn",
     months = {"জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"},
@@ -582,7 +582,7 @@ locale_bn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/br.json
+// Source: locales/br.json
 locale_br : Date_Locale = {
     code = "br",
     months = {"Genver", "C'hwevrer", "Meurzh", "Ebrel", "Mae", "Mezheven", "Gouere", "Eost", "Gwengolo", "Here", "Du", "Kerzu"},
@@ -626,7 +626,7 @@ locale_br : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/bs.json
+// Source: locales/bs.json
 locale_bs : Date_Locale = {
     code = "bs",
     months = {"januar", "februar", "mart", "april", "maj", "juni", "juli", "august", "septembar", "oktobar", "novembar", "decembar"},
@@ -670,7 +670,7 @@ locale_bs : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ca.json
+// Source: locales/ca.json
 locale_ca : Date_Locale = {
     code = "ca",
     months = {"gener", "febrer", "març", "abril", "maig", "juny", "juliol", "agost", "setembre", "octubre", "novembre", "desembre"},
@@ -714,7 +714,7 @@ locale_ca : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/cak.json
+// Source: locales/cak.json
 locale_cak : Date_Locale = {
     code = "cak",
     months = {"Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'"},
@@ -758,7 +758,7 @@ locale_cak : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ceb.json
+// Source: locales/ceb.json
 locale_ceb : Date_Locale = {
     code = "ceb",
     months = {"Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Septyembre", "Oktubre", "Nobyembre", "Disyembre"},
@@ -802,7 +802,7 @@ locale_ceb : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/cs.json
+// Source: locales/cs.json
 locale_cs : Date_Locale = {
     code = "cs",
     months = {"leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"},
@@ -846,7 +846,7 @@ locale_cs : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/cy.json
+// Source: locales/cy.json
 locale_cy : Date_Locale = {
     code = "cy",
     months = {"Ionawr", "Chwefror", "Mawrth", "Ebrill", "Mai", "Mehefin", "Gorffennaf", "Awst", "Medi", "Hydref", "Tachwedd", "Rhagfyr"},
@@ -890,7 +890,7 @@ locale_cy : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/da.json
+// Source: locales/da.json
 locale_da : Date_Locale = {
     code = "da",
     months = {"januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"},
@@ -934,7 +934,7 @@ locale_da : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/de.json
+// Source: locales/de.json
 locale_de : Date_Locale = {
     code = "de",
     months = {"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"},
@@ -978,7 +978,7 @@ locale_de : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/din.json
+// Source: locales/din.json
 locale_din : Date_Locale = {
     code = "din",
     months = {"Tiɔp in dit", "Pɛt", "Duɔ̈ɔ̈ŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk"},
@@ -1022,7 +1022,7 @@ locale_din : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/dje.json
+// Source: locales/dje.json
 locale_dje : Date_Locale = {
     code = "dje",
     months = {"Žanwiye", "Feewiriye", "Marsi", "Awiril", "Me", "Žuweŋ", "Žuyye", "Ut", "Sektanbur", "Oktoobur", "Noowanbur", "Deesanbur"},
@@ -1066,7 +1066,7 @@ locale_dje : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/dv.json
+// Source: locales/dv.json
 locale_dv : Date_Locale = {
     code = "dv",
     months = {"ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު"},
@@ -1110,7 +1110,7 @@ locale_dv : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/dyu.json
+// Source: locales/dyu.json
 locale_dyu : Date_Locale = {
     code = "dyu",
     months = {"Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburdukalo", "Desanburukalo"},
@@ -1154,7 +1154,7 @@ locale_dyu : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/dz.json
+// Source: locales/dz.json
 locale_dz : Date_Locale = {
     code = "dz",
     months = {"ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ"},
@@ -1198,7 +1198,7 @@ locale_dz : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ee.json
+// Source: locales/ee.json
 locale_ee : Date_Locale = {
     code = "ee",
     months = {"Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Damɛ", "Masa", "Siamlɔm", "Dasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome"},
@@ -1242,7 +1242,7 @@ locale_ee : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/el.json
+// Source: locales/el.json
 locale_el : Date_Locale = {
     code = "el",
     months = {"Ιανουαρίου", "Φεβρουαρίου", "Μαρτίου", "Απριλίου", "Μαΐου", "Ιουνίου", "Ιουλίου", "Αυγούστου", "Σεπτεμβρίου", "Οκτωβρίου", "Νοεμβρίου", "Δεκεμβρίου"},
@@ -1286,7 +1286,7 @@ locale_el : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/en.json
+// Source: locales/en.json
 locale_en : Date_Locale = {
     code = "en",
     months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"},
@@ -1330,7 +1330,7 @@ locale_en : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/es.json
+// Source: locales/es.json
 locale_es : Date_Locale = {
     code = "es",
     months = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"},
@@ -1374,7 +1374,7 @@ locale_es : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/et.json
+// Source: locales/et.json
 locale_et : Date_Locale = {
     code = "et",
     months = {"jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"},
@@ -1418,7 +1418,7 @@ locale_et : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/eu.json
+// Source: locales/eu.json
 locale_eu : Date_Locale = {
     code = "eu",
     months = {"urtarril", "otsail", "martxo", "apiril", "maiatz", "ekain", "uztail", "abuztu", "irail", "urri", "azaro", "abendu"},
@@ -1462,7 +1462,7 @@ locale_eu : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/fa.json
+// Source: locales/fa.json
 locale_fa : Date_Locale = {
     code = "fa",
     months = {"ژانویه", "فوریه", "مارس", "آوریل", "مه", "ژوئن", "ژوئیه", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"},
@@ -1506,7 +1506,7 @@ locale_fa : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/fan.json
+// Source: locales/fan.json
 locale_fan : Date_Locale = {
     code = "fan",
     months = {"Nzas Ngon", "Nzas Mekié", "Nzas Okúa", "Nzas Angón", "Nzas Obuí", "Nzas Okéna", "Nzas Osúa", "Nzas Mwom", "Nzas Ebulú", "Nzas Owono", "Nzas Owono-abé", "Nzas Nkéng"},
@@ -1550,7 +1550,7 @@ locale_fan : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ff.json
+// Source: locales/ff.json
 locale_ff : Date_Locale = {
     code = "ff",
     months = {"Siilo", "Colte", "Mbooy", "Seeɗto", "Duujal", "Korse", "Morso", "Juko", "Siilto", "Yarkomaa", "Jolal", "Bowte"},
@@ -1594,7 +1594,7 @@ locale_ff : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/fi.json
+// Source: locales/fi.json
 locale_fi : Date_Locale = {
     code = "fi",
     months = {"tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinäkuu", "elokuu", "syyskuu", "lokakuu", "marraskuu", "joulukuu"},
@@ -1638,7 +1638,7 @@ locale_fi : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/fil.json
+// Source: locales/fil.json
 locale_fil : Date_Locale = {
     code = "fil",
     months = {"Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Setyembre", "Oktubre", "Nobyembre", "Disyembre"},
@@ -1682,7 +1682,7 @@ locale_fil : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/fj.json
+// Source: locales/fj.json
 locale_fj : Date_Locale = {
     code = "fj",
     months = {"Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba"},
@@ -1726,7 +1726,7 @@ locale_fj : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/fon.json
+// Source: locales/fon.json
 locale_fon : Date_Locale = {
     code = "fon",
     months = {"Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"},
@@ -1770,7 +1770,7 @@ locale_fon : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/fr.json
+// Source: locales/fr.json
 locale_fr : Date_Locale = {
     code = "fr",
     months = {"janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"},
@@ -1814,7 +1814,7 @@ locale_fr : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ga.json
+// Source: locales/ga.json
 locale_ga : Date_Locale = {
     code = "ga",
     months = {"Eanáir", "Feabhra", "Márta", "Aibreán", "Bealtaine", "Meitheamh", "Iúil", "Lúnasa", "Meán Fómhair", "Deireadh Fómhair", "Samhain", "Nollaig"},
@@ -1858,7 +1858,7 @@ locale_ga : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/gd.json
+// Source: locales/gd.json
 locale_gd : Date_Locale = {
     code = "gd",
     months = {"Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd"},
@@ -1902,7 +1902,7 @@ locale_gd : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/gl.json
+// Source: locales/gl.json
 locale_gl : Date_Locale = {
     code = "gl",
     months = {"xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"},
@@ -1946,7 +1946,7 @@ locale_gl : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/gn.json
+// Source: locales/gn.json
 locale_gn : Date_Locale = {
     code = "gn",
     months = {"Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi"},
@@ -1990,7 +1990,7 @@ locale_gn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/gu.json
+// Source: locales/gu.json
 locale_gu : Date_Locale = {
     code = "gu",
     months = {"જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર"},
@@ -2034,7 +2034,7 @@ locale_gu : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/gv.json
+// Source: locales/gv.json
 locale_gv : Date_Locale = {
     code = "gv",
     months = {"Jerrey Geuree", "Toshiaght Arree", "Mayrnt", "Averil", "Boaldyn", "Mean Souree", "Jerrey Souree", "Luanistyn", "Mean Fouyir", "Jerrey Fouyir", "Mee Houney", "Mee ny Nollick"},
@@ -2078,7 +2078,7 @@ locale_gv : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ha.json
+// Source: locales/ha.json
 locale_ha : Date_Locale = {
     code = "ha",
     months = {"Janairu", "Fabrairu", "Maris", "Afrilu", "Mayu", "Yuni", "Yuli", "Agusta", "Satumba", "Oktoba", "Nuwamba", "Disamba"},
@@ -2122,7 +2122,7 @@ locale_ha : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/he.json
+// Source: locales/he.json
 locale_he : Date_Locale = {
     code = "he",
     months = {"ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"},
@@ -2166,7 +2166,7 @@ locale_he : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/hi.json
+// Source: locales/hi.json
 locale_hi : Date_Locale = {
     code = "hi",
     months = {"जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्तूबर", "नवंबर", "दिसंबर"},
@@ -2210,7 +2210,7 @@ locale_hi : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/hmn.json
+// Source: locales/hmn.json
 locale_hmn : Date_Locale = {
     code = "hmn",
     months = {"Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis"},
@@ -2254,7 +2254,7 @@ locale_hmn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/hr.json
+// Source: locales/hr.json
 locale_hr : Date_Locale = {
     code = "hr",
     months = {"siječanj", "veljača", "ožujak", "travanj", "svibanj", "lipanj", "srpanj", "kolovoz", "rujan", "listopad", "studeni", "prosinac"},
@@ -2298,7 +2298,7 @@ locale_hr : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ht.json
+// Source: locales/ht.json
 locale_ht : Date_Locale = {
     code = "ht",
     months = {"Janvye", "Fevriye", "Mas", "Avril", "Me", "Jen", "Jiyè", "Out", "Septanm", "Oktòb", "Novanm", "Desanm"},
@@ -2342,7 +2342,7 @@ locale_ht : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/hu.json
+// Source: locales/hu.json
 locale_hu : Date_Locale = {
     code = "hu",
     months = {"január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"},
@@ -2386,7 +2386,7 @@ locale_hu : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/hy.json
+// Source: locales/hy.json
 locale_hy : Date_Locale = {
     code = "hy",
     months = {"Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"},
@@ -2430,7 +2430,7 @@ locale_hy : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/id.json
+// Source: locales/id.json
 locale_id : Date_Locale = {
     code = "id",
     months = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"},
@@ -2474,7 +2474,7 @@ locale_id : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ig.json
+// Source: locales/ig.json
 locale_ig : Date_Locale = {
     code = "ig",
     months = {"Jenụwarị", "Febrụwarị", "Maachị", "Epreel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba"},
@@ -2518,7 +2518,7 @@ locale_ig : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/is.json
+// Source: locales/is.json
 locale_is : Date_Locale = {
     code = "is",
     months = {"janúar", "febrúar", "mars", "apríl", "maí", "júní", "júlí", "ágúst", "september", "október", "nóvember", "desember"},
@@ -2562,7 +2562,7 @@ locale_is : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/it.json
+// Source: locales/it.json
 locale_it : Date_Locale = {
     code = "it",
     months = {"gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"},
@@ -2606,7 +2606,7 @@ locale_it : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ja.json
+// Source: locales/ja.json
 locale_ja : Date_Locale = {
     code = "ja",
     months = {"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"},
@@ -2650,7 +2650,7 @@ locale_ja : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/jv.json
+// Source: locales/jv.json
 locale_jv : Date_Locale = {
     code = "jv",
     months = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"},
@@ -2694,7 +2694,7 @@ locale_jv : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ka.json
+// Source: locales/ka.json
 locale_ka : Date_Locale = {
     code = "ka",
     months = {"იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"},
@@ -2738,7 +2738,7 @@ locale_ka : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kbp.json
+// Source: locales/kbp.json
 locale_kbp : Date_Locale = {
     code = "kbp",
     months = {"Kɔlaɣ", "Naaɣ Kɩŋ", "Naataŋgʊ", "Naalɩɩ", "Lɛlɩɩ", "Kʊɖʊmaa", "Saŋayɩɩ", "Kɩyɛɛna", "Lɩtɩɩ", "Kʊɖʊmaɣ", "Tɩŋgɩzɩɩ", "Abranɩɩ"},
@@ -2782,7 +2782,7 @@ locale_kbp : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kek.json
+// Source: locales/kek.json
 locale_kek : Date_Locale = {
     code = "kek",
     months = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"},
@@ -2826,7 +2826,7 @@ locale_kek : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ki.json
+// Source: locales/ki.json
 locale_ki : Date_Locale = {
     code = "ki",
     months = {"Njenuarĩ", "Mwere wa kerĩ", "Mwere wa gatatũ", "Mwere wa kana", "Mwere wa gatano", "Mwere wa gatandatũ", "Mwere wa mũgwanja", "Mwere wa kanana", "Mwere wa kenda", "Mwere wa ikũmi", "Mwere wa ikũmi na ũmwe", "Ndithemba"},
@@ -2870,7 +2870,7 @@ locale_ki : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kk.json
+// Source: locales/kk.json
 locale_kk : Date_Locale = {
     code = "kk",
     months = {"қаңтар", "ақпан", "наурыз", "сәуір", "мамыр", "маусым", "шілде", "тамыз", "қыркүйек", "қазан", "қараша", "желтоқсан"},
@@ -2914,7 +2914,7 @@ locale_kk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kl.json
+// Source: locales/kl.json
 locale_kl : Date_Locale = {
     code = "kl",
     months = {"januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip"},
@@ -2958,7 +2958,7 @@ locale_kl : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/km.json
+// Source: locales/km.json
 locale_km : Date_Locale = {
     code = "km",
     months = {"មករា", "កុម្ភៈ", "មីនា", "មេសា", "ឧសភា", "មិថុនា", "កក្កដា", "សីហា", "កញ្ញា", "តុលា", "វិច្ឆិកា", "ធ្នូ"},
@@ -3002,7 +3002,7 @@ locale_km : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kn.json
+// Source: locales/kn.json
 locale_kn : Date_Locale = {
     code = "kn",
     months = {"ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"},
@@ -3046,7 +3046,7 @@ locale_kn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ko.json
+// Source: locales/ko.json
 locale_ko : Date_Locale = {
     code = "ko",
     months = {"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"},
@@ -3090,7 +3090,7 @@ locale_ko : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kpe.json
+// Source: locales/kpe.json
 locale_kpe : Date_Locale = {
     code = "kpe",
     months = {"Yanuwali", "Fɛbɛli", "Maachi", "Eepɛli", "Mɛɛ", "Juŋ", "Julai", "Ɔɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba"},
@@ -3134,7 +3134,7 @@ locale_kpe : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kri.json
+// Source: locales/kri.json
 locale_kri : Date_Locale = {
     code = "kri",
     months = {"Jenyuari", "Febyuari", "Mach", "Epril", "Me", "Jun", "Julay", "Ogost", "Septemba", "Oktoba", "Novemba", "Disemba"},
@@ -3178,7 +3178,7 @@ locale_kri : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ktu.json
+// Source: locales/ktu.json
 locale_ktu : Date_Locale = {
     code = "ktu",
     months = {"Yanvye", "Fevrye", "Marsi", "Avrili", "Mɛ", "Yuwɛ", "Yulɛ", "Uti", "Sɛtambre", "Ɔtɔbre", "Nɔvambre", "Desambre"},
@@ -3222,7 +3222,7 @@ locale_ktu : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ku.json
+// Source: locales/ku.json
 locale_ku : Date_Locale = {
     code = "ku",
     months = {"Rêbendan", "Reşemî", "Adar", "Avrêl", "Gulan", "Pûşper", "Tîrmeh", "Tebax", "Îlon", "Cotmeh", "Mijdar", "Berfanbar"},
@@ -3266,7 +3266,7 @@ locale_ku : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/kw.json
+// Source: locales/kw.json
 locale_kw : Date_Locale = {
     code = "kw",
     months = {"Genver", "Hwevrer", "Meurth", "Ebrel", "Me", "Metheven", "Gortheren", "Est", "Gwynngala", "Hedra", "Du", "Kevardhu"},
@@ -3310,7 +3310,7 @@ locale_kw : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ky.json
+// Source: locales/ky.json
 locale_ky : Date_Locale = {
     code = "ky",
     months = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"},
@@ -3354,7 +3354,7 @@ locale_ky : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/lb.json
+// Source: locales/lb.json
 locale_lb : Date_Locale = {
     code = "lb",
     months = {"Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"},
@@ -3398,7 +3398,7 @@ locale_lb : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/lg.json
+// Source: locales/lg.json
 locale_lg : Date_Locale = {
     code = "lg",
     months = {"Janwali", "Febwali", "Marisi", "Apuli", "Mayi", "Yuni", "Yuli", "Agositi", "Seputemba", "Okitobba", "Novemba", "Desemba"},
@@ -3442,7 +3442,7 @@ locale_lg : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ln.json
+// Source: locales/ln.json
 locale_ln : Date_Locale = {
     code = "ln",
     months = {"Yanwáli", "Febwáli", "Mársi", "Apríli", "Máyi", "Yúni", "Yúli", "Augústu", "Sɛtɛ́mbɛ", "Ɔkɔtɔ́bɛ", "Novɛ́mbɛ", "Dɛsɛ́mbɛ"},
@@ -3486,7 +3486,7 @@ locale_ln : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/lo.json
+// Source: locales/lo.json
 locale_lo : Date_Locale = {
     code = "lo",
     months = {"ມັງກອນ", "ກຸມພາ", "ມີນາ", "ເມສາ", "ພຶດສະພາ", "ມິຖຸນາ", "ກໍລະກົດ", "ສິງຫາ", "ກັນຍາ", "ຕຸລາ", "ພະຈິກ", "ທັນວາ"},
@@ -3530,7 +3530,7 @@ locale_lo : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/lt.json
+// Source: locales/lt.json
 locale_lt : Date_Locale = {
     code = "lt",
     months = {"sausis", "vasaris", "kovas", "balandis", "gegužė", "birželis", "liepa", "rugpjūtis", "rugsėjis", "spalis", "lapkritis", "gruodis"},
@@ -3574,7 +3574,7 @@ locale_lt : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/luo.json
+// Source: locales/luo.json
 locale_luo : Date_Locale = {
     code = "luo",
     months = {"Dwe mar Achiel", "Dwe mar Ariyo", "Dwe mar Adek", "Dwe mar Ang'wen", "Dwe mar Abich", "Dwe mar Auchiel", "Dwe mar Abiriyo", "Dwe mar Aboro", "Dwe mar Ochiko", "Dwe mar Apar", "Dwe mar Apar gi Achiel", "Dwe mar Apar gi Ariyo"},
@@ -3618,7 +3618,7 @@ locale_luo : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/lv.json
+// Source: locales/lv.json
 locale_lv : Date_Locale = {
     code = "lv",
     months = {"janvāris", "februāris", "marts", "aprīlis", "maijs", "jūnijs", "jūlijs", "augusts", "septembris", "oktobris", "novembris", "decembris"},
@@ -3662,7 +3662,7 @@ locale_lv : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mam.json
+// Source: locales/mam.json
 locale_mam : Date_Locale = {
     code = "mam",
     months = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"},
@@ -3706,7 +3706,7 @@ locale_mam : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/men.json
+// Source: locales/men.json
 locale_men : Date_Locale = {
     code = "men",
     months = {"Januwali", "Febluwali", "Maachi", "Epuli", "Mei", "Juun", "Julai", "Ɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba"},
@@ -3750,7 +3750,7 @@ locale_men : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mfe.json
+// Source: locales/mfe.json
 locale_mfe : Date_Locale = {
     code = "mfe",
     months = {"Zanvie", "Fevrie", "Mars", "Avril", "Me", "Zwin", "Zwiye", "Out", "Septam", "Oktob", "Novam", "Desam"},
@@ -3794,7 +3794,7 @@ locale_mfe : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mg.json
+// Source: locales/mg.json
 locale_mg : Date_Locale = {
     code = "mg",
     months = {"Janoary", "Febroary", "Martsa", "Aprily", "Mey", "Jona", "Jolay", "Aogositra", "Septambra", "Oktobra", "Novambra", "Desambra"},
@@ -3838,7 +3838,7 @@ locale_mg : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mi.json
+// Source: locales/mi.json
 locale_mi : Date_Locale = {
     code = "mi",
     months = {"Kohi-tātea", "Hui-tanguru", "Poutū-te-rangi", "Paenga-whāwhā", "Haratua", "Pipiri", "Hōngongoi", "Here-turi-kōkā", "Mahuru", "Whiringa-ā-nuku", "Whiringa-ā-rangi", "Hakihea"},
@@ -3882,7 +3882,7 @@ locale_mi : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mk.json
+// Source: locales/mk.json
 locale_mk : Date_Locale = {
     code = "mk",
     months = {"јануари", "февруари", "март", "април", "мај", "јуни", "јули", "август", "септември", "октомври", "ноември", "декември"},
@@ -3926,7 +3926,7 @@ locale_mk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ml.json
+// Source: locales/ml.json
 locale_ml : Date_Locale = {
     code = "ml",
     months = {"ജനുവരി", "ഫെബ്രുവരി", "മാർച്ച്", "ഏപ്രിൽ", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗസ്റ്റ്", "സെപ്റ്റംബർ", "ഒക്ടോബർ", "നവംബർ", "ഡിസംബർ"},
@@ -3970,7 +3970,7 @@ locale_ml : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mn.json
+// Source: locales/mn.json
 locale_mn : Date_Locale = {
     code = "mn",
     months = {"Нэгдүгээр сар", "Хоёрдугаар сар", "Гуравдугаар сар", "Дөрөвдүгээр сар", "Тавдугаар сар", "Зургаадугаар сар", "Долоодугаар сар", "Наймдугаар сар", "Есдүгээр сар", "Аравдугаар сар", "Арван нэгдүгээр сар", "Арван хоёрдугаар сар"},
@@ -4014,7 +4014,7 @@ locale_mn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mnk.json
+// Source: locales/mnk.json
 locale_mnk : Date_Locale = {
     code = "mnk",
     months = {"Samwiye", "Feburiye", "Marsi", "Afiril", "Meyi", "Juŋ", "Julaa", "Ooti", "Sɛtɛmba", "Ɔtɔba", "Nuwɛmba", "Disɛmba"},
@@ -4058,7 +4058,7 @@ locale_mnk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mos.json
+// Source: locales/mos.json
 locale_mos : Date_Locale = {
     code = "mos",
     months = {"Zãn-naabu", "Sig-noy-yaadre", "Sig-noy-taabo", "Kãn-saglem", "Koabg-taabo", "Koabg-yaadre", "Baspɩɩre", "Gɩ-sõongo", "Tũubg-sõongo", "Pẽemb-sõongo", "Laafi-bãaga", "Filiga-bãaga"},
@@ -4102,7 +4102,7 @@ locale_mos : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mr.json
+// Source: locales/mr.json
 locale_mr : Date_Locale = {
     code = "mr",
     months = {"जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल", "मे", "जून", "जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर"},
@@ -4146,7 +4146,7 @@ locale_mr : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ms.json
+// Source: locales/ms.json
 locale_ms : Date_Locale = {
     code = "ms",
     months = {"Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"},
@@ -4190,7 +4190,7 @@ locale_ms : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/mt.json
+// Source: locales/mt.json
 locale_mt : Date_Locale = {
     code = "mt",
     months = {"Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru"},
@@ -4234,7 +4234,7 @@ locale_mt : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/my.json
+// Source: locales/my.json
 locale_my : Date_Locale = {
     code = "my",
     months = {"ဇန်နဝါရီ", "ဖေဖော်ဝါရီ", "မတ်", "ဧပြီ", "မေ", "ဇွန်", "ဇူလိုင်", "ဩဂုတ်", "စက်တင်ဘာ", "အောက်တိုဘာ", "နိုဝင်ဘာ", "ဒီဇင်ဘာ"},
@@ -4278,7 +4278,7 @@ locale_my : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/nb.json
+// Source: locales/nb.json
 locale_nb : Date_Locale = {
     code = "nb",
     months = {"januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"},
@@ -4322,7 +4322,7 @@ locale_nb : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/nd.json
+// Source: locales/nd.json
 locale_nd : Date_Locale = {
     code = "nd",
     months = {"Zibandlela", "Nhlolanja", "Mbimbitho", "Mabasa", "Nkwenkwezi", "Nhlangula", "Kholwane", "Ingci", "Inyoni", "Imphala", "Lwezi", "Mpalakazi"},
@@ -4366,7 +4366,7 @@ locale_nd : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ne.json
+// Source: locales/ne.json
 locale_ne : Date_Locale = {
     code = "ne",
     months = {"जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"},
@@ -4410,7 +4410,7 @@ locale_ne : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ng.json
+// Source: locales/ng.json
 locale_ng : Date_Locale = {
     code = "ng",
     months = {"Januali", "Febluali", "Malitsi", "Aplili", "Mei", "Juni", "Juli", "Augustu", "Septemba", "Oktoba", "Novemba", "Desemba"},
@@ -4454,7 +4454,7 @@ locale_ng : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/nl.json
+// Source: locales/nl.json
 locale_nl : Date_Locale = {
     code = "nl",
     months = {"januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"},
@@ -4498,7 +4498,7 @@ locale_nl : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/nr.json
+// Source: locales/nr.json
 locale_nr : Date_Locale = {
     code = "nr",
     months = {"uTjhirhweni", "uMhlolanja", "iNtaka", "iSihlabantangana", "uMrhayili", "uMgwengweni", "uVelabahlinze", "uRhoboyi", "uKhukhulamungu", "iSewula", "uSikinyikhaba", "uNobayeni"},
@@ -4542,7 +4542,7 @@ locale_nr : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/nso.json
+// Source: locales/nso.json
 locale_nso : Date_Locale = {
     code = "nso",
     months = {"Pherekgong", "Hlakola", "Mopitlo", "Moranang", "Mosegamanye", "Ngoatobošego", "Phukwi", "Phatwe", "Lewedi", "Diphalane", "Dibatsela", "Manthole"},
@@ -4586,7 +4586,7 @@ locale_nso : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/nus.json
+// Source: locales/nus.json
 locale_nus : Date_Locale = {
     code = "nus",
     months = {"Tiɔp thar", "Pɛt", "Duɔɔŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk"},
@@ -4630,7 +4630,7 @@ locale_nus : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ny.json
+// Source: locales/ny.json
 locale_ny : Date_Locale = {
     code = "ny",
     months = {"Januwale", "Febuluwale", "Matchi", "Epulo", "Meyi", "Juni", "Julaye", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba"},
@@ -4674,7 +4674,7 @@ locale_ny : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/om.json
+// Source: locales/om.json
 locale_om : Date_Locale = {
     code = "om",
     months = {"Amajjii", "Guraandhala", "Bitooteessa", "Elba", "Caamsa", "Waxabajjii", "Adooleessa", "Hagayya", "Fuulbana", "Onkololeessa", "Sadaasa", "Muddee"},
@@ -4718,7 +4718,7 @@ locale_om : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/or.json
+// Source: locales/or.json
 locale_or : Date_Locale = {
     code = "or",
     months = {"ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଏପ୍ରିଲ", "ମଇ", "ଜୁନ", "ଜୁಲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"},
@@ -4762,7 +4762,7 @@ locale_or : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/pa.json
+// Source: locales/pa.json
 locale_pa : Date_Locale = {
     code = "pa",
     months = {"ਜਨਵਰੀ", "ਫ਼ਰਵਰੀ", "ਮਾਰਚ", "ਅਪ੍ਰੈਲ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾਈ", "ਅਗਸਤ", "ਸਤੰਬਰ", "ਅਕਤੂਬਰ", "ਨਵੰਬਰ", "ਦਸੰਬਰ"},
@@ -4806,7 +4806,7 @@ locale_pa : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/pis.json
+// Source: locales/pis.json
 locale_pis : Date_Locale = {
     code = "pis",
     months = {"Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba"},
@@ -4850,7 +4850,7 @@ locale_pis : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/pl.json
+// Source: locales/pl.json
 locale_pl : Date_Locale = {
     code = "pl",
     months = {"styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"},
@@ -4894,7 +4894,7 @@ locale_pl : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/pov.json
+// Source: locales/pov.json
 locale_pov : Date_Locale = {
     code = "pov",
     months = {"Janeru", "Febreru", "Marsu", "Abril", "Maiu", "Junhu", "Julhu", "Agostu", "Setembru", "Otubru", "Novembru", "Dizembru"},
@@ -4938,7 +4938,7 @@ locale_pov : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ps.json
+// Source: locales/ps.json
 locale_ps : Date_Locale = {
     code = "ps",
     months = {"جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سپتمبر", "اکتوبر", "نومبر", "دسمبر"},
@@ -4982,7 +4982,7 @@ locale_ps : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/pt.json
+// Source: locales/pt.json
 locale_pt : Date_Locale = {
     code = "pt",
     months = {"janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"},
@@ -5026,7 +5026,7 @@ locale_pt : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/qu.json
+// Source: locales/qu.json
 locale_qu : Date_Locale = {
     code = "qu",
     months = {"Qhulla puquy", "Hatun puquy", "Pawqar waray", "Ayriwa", "Aymuray", "Inti raymi", "Anta sitwa", "Qhapaq sitwa", "Uma raymi", "Kantaray", "Ayamarq'a", "Qhapaq raymi"},
@@ -5070,7 +5070,7 @@ locale_qu : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/quc.json
+// Source: locales/quc.json
 locale_quc : Date_Locale = {
     code = "quc",
     months = {"Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'"},
@@ -5114,7 +5114,7 @@ locale_quc : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ro.json
+// Source: locales/ro.json
 locale_ro : Date_Locale = {
     code = "ro",
     months = {"ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"},
@@ -5158,7 +5158,7 @@ locale_ro : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ru.json
+// Source: locales/ru.json
 locale_ru : Date_Locale = {
     code = "ru",
     months = {"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"},
@@ -5202,7 +5202,7 @@ locale_ru : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/rw.json
+// Source: locales/rw.json
 locale_rw : Date_Locale = {
     code = "rw",
     months = {"Mutarama", "Gashyantare", "Werurwe", "Mata", "Gicurasi", "Kamena", "Nyakanga", "Kanama", "Nzeli", "Ukwakira", "Ugushyingo", "Ukuboza"},
@@ -5246,7 +5246,7 @@ locale_rw : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sar.json
+// Source: locales/sar.json
 locale_sar : Date_Locale = {
     code = "sar",
     months = {"Zanviye", "Fevriye", "Maars", "Avriil", "Mee", "Zuɛ̃", "Zulɛ", "Uut", "Sɛtɛmbar", "Ɔtɔbar", "Nɔvambar", "Desambar"},
@@ -5290,7 +5290,7 @@ locale_sar : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sd.json
+// Source: locales/sd.json
 locale_sd : Date_Locale = {
     code = "sd",
     months = {"جنوري", "فيبروري", "مارچ", "اپريل", "مئي", "جون", "جولاءِ", "آگسٽ", "سيپٽمبر", "آڪٽوبر", "نومبر", "ڊسمبر"},
@@ -5334,7 +5334,7 @@ locale_sd : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sg.json
+// Source: locales/sg.json
 locale_sg : Date_Locale = {
     code = "sg",
     months = {"Nyenye", "Fulundïgi", "Mbängü", "Ngubùe", "Bêläwü", "Föndo", "Lengua", "Kükürü", "Mvuka", "Ngberere", "Nabändüru", "Kakauka"},
@@ -5378,7 +5378,7 @@ locale_sg : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/shi.json
+// Source: locales/shi.json
 locale_shi : Date_Locale = {
     code = "shi",
     months = {"ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"},
@@ -5422,7 +5422,7 @@ locale_shi : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/shn.json
+// Source: locales/shn.json
 locale_shn : Date_Locale = {
     code = "shn",
     months = {"ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ"},
@@ -5466,7 +5466,7 @@ locale_shn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/si.json
+// Source: locales/si.json
 locale_si : Date_Locale = {
     code = "si",
     months = {"ජනවාරි", "පෙබරවාරි", "මාර්තු", "අප්‍රේල්", "මැයි", "ජූනි", "ජූලි", "අගෝස්තු", "සැප්තැම්බර්", "ඔක්තෝබර්", "නොවැම්බර්", "දෙසැම්බර්"},
@@ -5510,7 +5510,7 @@ locale_si : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sk.json
+// Source: locales/sk.json
 locale_sk : Date_Locale = {
     code = "sk",
     months = {"január", "február", "marec", "apríl", "máj", "jún", "júl", "august", "september", "október", "november", "december"},
@@ -5554,7 +5554,7 @@ locale_sk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sl.json
+// Source: locales/sl.json
 locale_sl : Date_Locale = {
     code = "sl",
     months = {"januar", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september", "oktober", "november", "december"},
@@ -5598,7 +5598,7 @@ locale_sl : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sn.json
+// Source: locales/sn.json
 locale_sn : Date_Locale = {
     code = "sn",
     months = {"Ndira", "Kukadzi", "Kurume", "Kubvumbi", "Chivabvu", "Chikumi", "Chikunguru", "Nyamavhuvhu", "Gunyana", "Gumiguru", "Mbudzi", "Zvita"},
@@ -5642,7 +5642,7 @@ locale_sn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/snk.json
+// Source: locales/snk.json
 locale_snk : Date_Locale = {
     code = "snk",
     months = {"Janwiye", "Feburiye", "Marasi", "Abirili", "Meyi", "Juwɛ", "Juliye", "Awutu", "Sɛtanburu", "Okutoburu", "Nuwanburu", "Desanburu"},
@@ -5686,7 +5686,7 @@ locale_snk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/so.json
+// Source: locales/so.json
 locale_so : Date_Locale = {
     code = "so",
     months = {"Janaayo", "Febraayo", "Maarso", "Abriil", "Maajo", "Juun", "Luuliyo", "Ogost", "Sebtembar", "Oktoobar", "Nofembar", "Disembar"},
@@ -5730,7 +5730,7 @@ locale_so : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sq.json
+// Source: locales/sq.json
 locale_sq : Date_Locale = {
     code = "sq",
     months = {"janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"},
@@ -5774,7 +5774,7 @@ locale_sq : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sr.json
+// Source: locales/sr.json
 locale_sr : Date_Locale = {
     code = "sr",
     months = {"јануар", "фебруар", "март", "април", "мај", "јун", "јул", "август", "септембар", "октобар", "новембар", "децембар"},
@@ -5818,7 +5818,7 @@ locale_sr : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ss.json
+// Source: locales/ss.json
 locale_ss : Date_Locale = {
     code = "ss",
     months = {"Bhimbidvwane", "iNdlovana", "iNdlovulenkhulu", "Mabasa", "iNkhwekhweti", "iNhlaba", "Kholwane", "iNgci", "iNyoni", "iMphala", "Lweti", "iNgongoni"},
@@ -5862,7 +5862,7 @@ locale_ss : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/st.json
+// Source: locales/st.json
 locale_st : Date_Locale = {
     code = "st",
     months = {"Pherekgong", "Hlakola", "Hlakubele", "Mmese", "Motsheanong", "Phupjane", "Phupu", "Phato", "Leotshe", "Mphalane", "Pudungwana", "Tshitwe"},
@@ -5906,7 +5906,7 @@ locale_st : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/su.json
+// Source: locales/su.json
 locale_su : Date_Locale = {
     code = "su",
     months = {"Januari", "Pébruari", "Maret", "April", "Méi", "Juni", "Juli", "Agustus", "Séptémber", "Oktober", "Nopémber", "Désémber"},
@@ -5950,7 +5950,7 @@ locale_su : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/suk.json
+// Source: locales/suk.json
 locale_suk : Date_Locale = {
     code = "suk",
     months = {"Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"},
@@ -5994,7 +5994,7 @@ locale_suk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sv.json
+// Source: locales/sv.json
 locale_sv : Date_Locale = {
     code = "sv",
     months = {"januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"},
@@ -6038,7 +6038,7 @@ locale_sv : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/sw.json
+// Source: locales/sw.json
 locale_sw : Date_Locale = {
     code = "sw",
     months = {"Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"},
@@ -6082,7 +6082,7 @@ locale_sw : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ta.json
+// Source: locales/ta.json
 locale_ta : Date_Locale = {
     code = "ta",
     months = {"ஜனவரி", "பிப்ரவரி", "மார்ச்", "ஏப்ரல்", "மே", "ஜூன்", "ஜூலை", "ஆகஸ்ட்", "செப்டம்பர்", "அக்டோபர்", "நவம்பர்", "டிசம்பர்"},
@@ -6126,7 +6126,7 @@ locale_ta : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/te.json
+// Source: locales/te.json
 locale_te : Date_Locale = {
     code = "te",
     months = {"జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్", "జులై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"},
@@ -6170,7 +6170,7 @@ locale_te : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tem.json
+// Source: locales/tem.json
 locale_tem : Date_Locale = {
     code = "tem",
     months = {"Janɛri", "Fɛbrɛri", "Mach", "Epril", "Me", "Jun", "Julai", "Ɔgɔst", "Sɛtɛmba", "Ɔktoba", "Novɛmba", "Disɛmba"},
@@ -6214,7 +6214,7 @@ locale_tem : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tet.json
+// Source: locales/tet.json
 locale_tet : Date_Locale = {
     code = "tet",
     months = {"Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru"},
@@ -6258,7 +6258,7 @@ locale_tet : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tg.json
+// Source: locales/tg.json
 locale_tg : Date_Locale = {
     code = "tg",
     months = {"Январ", "Феврал", "Март", "Апрел", "Май", "Июн", "Июл", "Август", "Сентябр", "Октябр", "Ноябр", "Декабр"},
@@ -6302,7 +6302,7 @@ locale_tg : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/th.json
+// Source: locales/th.json
 locale_th : Date_Locale = {
     code = "th",
     months = {"มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"},
@@ -6346,7 +6346,7 @@ locale_th : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ti.json
+// Source: locales/ti.json
 locale_ti : Date_Locale = {
     code = "ti",
     months = {"ጥሪ", "ለካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰነ", "ሓምለ", "ነሓሰ", "መስከረም", "ጥቅምቲ", "ሕዳር", "ታሕሳስ"},
@@ -6390,7 +6390,7 @@ locale_ti : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tig.json
+// Source: locales/tig.json
 locale_tig : Date_Locale = {
     code = "tig",
     months = {"Yannaayer", "Febbraayer", "Maaris", "Abriil", "Maay", "Yuunyo", "Yulyo", "Agoosṭo", "Seṭṭembre", "Oṭṭoobre", "Noovembre", "Diičembre"},
@@ -6434,7 +6434,7 @@ locale_tig : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tk.json
+// Source: locales/tk.json
 locale_tk : Date_Locale = {
     code = "tk",
     months = {"Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"},
@@ -6478,7 +6478,7 @@ locale_tk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tn.json
+// Source: locales/tn.json
 locale_tn : Date_Locale = {
     code = "tn",
     months = {"Ferikgong", "Tlhakole", "Mopitlo", "Moranang", "Motsheganong", "Seetebosigo", "Phukwi", "Phatwe", "Lwetse", "Diphalane", "Ngwanatsele", "Sedimothole"},
@@ -6522,7 +6522,7 @@ locale_tn : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tpi.json
+// Source: locales/tpi.json
 locale_tpi : Date_Locale = {
     code = "tpi",
     months = {"Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba"},
@@ -6566,7 +6566,7 @@ locale_tpi : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tr.json
+// Source: locales/tr.json
 locale_tr : Date_Locale = {
     code = "tr",
     months = {"Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"},
@@ -6610,7 +6610,7 @@ locale_tr : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ts.json
+// Source: locales/ts.json
 locale_ts : Date_Locale = {
     code = "ts",
     months = {"Sunguti", "Nyenyenyani", "Nyenyankulu", "Dzivamisoko", "Mudyaxihi", "Khotavuxika", "Mawuwani", "Mhawuri", "Ndzhati", "Nhlangula", "Hukuri", "N'wendzamhala"},
@@ -6654,7 +6654,7 @@ locale_ts : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tum.json
+// Source: locales/tum.json
 locale_tum : Date_Locale = {
     code = "tum",
     months = {"Janyuwale", "Feburuware", "Marichi", "Epurelo", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputembala", "Okutobala", "Novembala", "Disembala"},
@@ -6698,7 +6698,7 @@ locale_tum : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/tzm.json
+// Source: locales/tzm.json
 locale_tzm : Date_Locale = {
     code = "tzm",
     months = {"ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"},
@@ -6742,7 +6742,7 @@ locale_tzm : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/uk.json
+// Source: locales/uk.json
 locale_uk : Date_Locale = {
     code = "uk",
     months = {"січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"},
@@ -6786,7 +6786,7 @@ locale_uk : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/umb.json
+// Source: locales/umb.json
 locale_umb : Date_Locale = {
     code = "umb",
     months = {"Janelu", "Fevelelu", "Malsu", "Abili", "Mayu", "Junyu", "Julyu", "Agostu", "Setembu", "Otubu", "Novembu", "Desembu"},
@@ -6830,7 +6830,7 @@ locale_umb : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ur.json
+// Source: locales/ur.json
 locale_ur : Date_Locale = {
     code = "ur",
     months = {"جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر"},
@@ -6874,7 +6874,7 @@ locale_ur : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/uz.json
+// Source: locales/uz.json
 locale_uz : Date_Locale = {
     code = "uz",
     months = {"yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"},
@@ -6918,7 +6918,7 @@ locale_uz : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/ve.json
+// Source: locales/ve.json
 locale_ve : Date_Locale = {
     code = "ve",
     months = {"Phando", "Luhuhi", "Thafamuhwe", "Lambamai", "Shundunthule", "Fulwi", "Fulwana", "Thangule", "Khubvumedzi", "Tshimedzi", "Lara", "Nyendavhusiku"},
@@ -6962,7 +6962,7 @@ locale_ve : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/vi.json
+// Source: locales/vi.json
 locale_vi : Date_Locale = {
     code = "vi",
     months = {"tháng 1", "tháng 2", "tháng 3", "tháng 4", "tháng 5", "tháng 6", "tháng 7", "tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12"},
@@ -7006,7 +7006,7 @@ locale_vi : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/vmw.json
+// Source: locales/vmw.json
 locale_vmw : Date_Locale = {
     code = "vmw",
     months = {"Januário", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"},
@@ -7050,7 +7050,7 @@ locale_vmw : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/wo.json
+// Source: locales/wo.json
 locale_wo : Date_Locale = {
     code = "wo",
     months = {"Samwiyee", "Fewriyee", "Maars", "Awril", "Mee", "Suwe", "Sullet", "Ut", "Septàmbar", "Oktoobar", "Nowàmbar", "Desàmbar"},
@@ -7094,7 +7094,7 @@ locale_wo : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/xh.json
+// Source: locales/xh.json
 locale_xh : Date_Locale = {
     code = "xh",
     months = {"Janyuwari", "Februwari", "Matshi", "Epreli", "Meyi", "Juni", "Julayi", "Agasti", "Septemba", "Okthobha", "Novemba", "Disemba"},
@@ -7138,7 +7138,7 @@ locale_xh : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/yao.json
+// Source: locales/yao.json
 locale_yao : Date_Locale = {
     code = "yao",
     months = {"Janyuwale", "Febuwale", "Malichi", "Epireli", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba"},
@@ -7182,7 +7182,7 @@ locale_yao : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/yo.json
+// Source: locales/yo.json
 locale_yo : Date_Locale = {
     code = "yo",
     months = {"Oṣù Ṣẹ́rẹ́", "Oṣù Èrèlè", "Oṣù Ẹrẹ̀nà", "Oṣù Ìgbé", "Oṣù Ẹ̀bibi", "Oṣù Òkúdu", "Oṣù Agẹmọ", "Oṣù Ògún", "Oṣù Owewe", "Oṣù Ọ̀wàrà", "Oṣù Bélú", "Oṣù Ọ̀pẹ̀"},
@@ -7226,7 +7226,7 @@ locale_yo : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/yue.json
+// Source: locales/yue.json
 locale_yue : Date_Locale = {
     code = "yue",
     months = {"一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"},
@@ -7270,7 +7270,7 @@ locale_yue : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/zdj.json
+// Source: locales/zdj.json
 locale_zdj : Date_Locale = {
     code = "zdj",
     months = {"Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"},
@@ -7314,7 +7314,7 @@ locale_zdj : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/zh.json
+// Source: locales/zh.json
 locale_zh : Date_Locale = {
     code = "zh",
     months = {"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"},
@@ -7358,7 +7358,7 @@ locale_zh : Date_Locale = {
     },
 }
 
-// Source: date/locales/src/zu.json
+// Source: locales/zu.json
 locale_zu : Date_Locale = {
     code = "zu",
     months = {"Januwari", "Februwari", "Mashi", "Ephreli", "Meyi", "Juni", "Julayi", "Agasti", "Septhemba", "Okthoba", "Novemba", "Disemba"},

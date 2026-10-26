@@ -1,0 +1,224 @@
+{
+  "code": "ig",
+  "name": "Igbo",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} ụbọchị",
+      "week": "{n} izu",
+      "month": "{n} ọnwa",
+      "year": "{n} afọ"
+    },
+    "half": "{0} na ọkara",
+    "delimiter": ", ",
+    "justBorn": "Nwa ọhụrụ",
+    "stages": {
+      "newborn": "Nwa ọhụrụ",
+      "infant": "Nwa ọhụrụ",
+      "toddler": "Nwa nta",
+      "child": "Nwa",
+      "teenager": "Nwokorobịa",
+      "adult": "Okenye"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ụbọchị",
+        "week": "{n} izu",
+        "month": "{n} ọnwa",
+        "year": "{n} afọ"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Jenụwarị",
+      "Febrụwarị",
+      "Maachị",
+      "Epreel",
+      "Mee",
+      "Juun",
+      "Julaị",
+      "Ọgọọst",
+      "Septemba",
+      "Ọktoba",
+      "Novemba",
+      "Disemba"
+    ],
+    "weekdays": [
+      "Ụbọchị Ụka",
+      "Mọnde",
+      "Tụụzdee",
+      "Wenezdee",
+      "Tọọzdee",
+      "Fraịdee",
+      "Satọdee"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "taa",
+    "tomorrow": "echi",
+    "yesterday": "ụnyaahụ",
+    "dayAfterTomorrow": "mbọ echi",
+    "dayBeforeYesterday": "ụnyaahụ nke gara aga",
+    "thisWeekday": "{weekday} a",
+    "nextWeekday": "{weekday} na-abịa",
+    "lastWeekday": "{weekday} gara aga",
+    "short": {
+      "months": [
+        "Jen",
+        "Feb",
+        "Maa",
+        "Epr",
+        "Mee",
+        "Jun",
+        "Jul",
+        "Ọgọ",
+        "Sep",
+        "Ọkt",
+        "Nov",
+        "Dis"
+      ],
+      "weekdays": [
+        "Ụka",
+        "Mọn",
+        "Tụụ",
+        "Wen",
+        "Tọọ",
+        "Fra",
+        "Sat"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} sekọnd",
+      "minute": "{n} nkeji",
+      "hour": "{n} awa",
+      "day": "{n} ụbọchị",
+      "week": "{n} izu",
+      "month": "{n} ọnwa",
+      "year": "{n} afọ"
+    },
+    "half": "{0} na ọkara",
+    "delimiter": ", ",
+    "justNow": "ugbu a",
+    "ago": "{0} gara aga",
+    "inFuture": "na {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} nkeji",
+        "hour": "{n} awa",
+        "day": "{n} ụbọchị",
+        "week": "{n} izu",
+        "month": "{n} ọnwa",
+        "year": "{n} afọ"
+      },
+      "ago": "{0} gara aga",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} gara aga",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "iri na abụọ",
+        "otu",
+        "abụọ",
+        "atọ",
+        "anọ",
+        "ise",
+        "isii",
+        "asaa",
+        "asatọ",
+        "itoolu",
+        "iri",
+        "iri na otu"
+      ],
+      "midnight": "etiti abalị",
+      "noon": "ehihie",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

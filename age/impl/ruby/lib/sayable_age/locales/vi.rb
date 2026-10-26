@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/vi.json
+# Source: locales/vi.json
 module SayableAge
   module Locales
     VI = AgeLocale.new(

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/umb.json
+# Source: locales/umb.json
 
 defmodule SayableDate.Locales.UMB do
   @moduledoc false

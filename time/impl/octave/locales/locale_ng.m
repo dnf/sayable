@@ -7,7 +7,7 @@
 % ║ Changes will be overwritten the next time codegen runs.      ║
 % ║ Edit the generator or locale JSON instead.                   ║
 % ╚══════════════════════════════════════════════════════════════╝
-% Source: time/locales/src/ng.json
+% Source: locales/ng.json
 
 function loc = locale_ng()
   loc.code = 'ng';

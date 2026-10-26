@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: age/locales/src/sk.json
+-- Source: locales/sk.json
 
 local function plural(n)
     if n == 1 then return "one" end

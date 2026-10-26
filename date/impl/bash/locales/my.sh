@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/my.json
+# Source: locales/my.json
 
 _sayabledate_locale_my() {
     _months=('ဇန်နဝါရီ' 'ဖေဖော်ဝါရီ' 'မတ်' 'ဧပြီ' 'မေ' 'ဇွန်' 'ဇူလိုင်' 'ဩဂုတ်' 'စက်တင်ဘာ' 'အောက်တိုဘာ' 'နိုဝင်ဘာ' 'ဒီဇင်ဘာ')

@@ -1,0 +1,216 @@
+{
+  "code": "km",
+  "name": "Khmer",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} ថ្ងៃ",
+      "week": "{n} សប្ដាហ៍",
+      "month": "{n} ខែ",
+      "year": "{n} ឆ្នាំ"
+    },
+    "half": "{0}កន្លះ",
+    "delimiter": ", ",
+    "justBorn": "ទើបនឹងកើត",
+    "stages": {
+      "newborn": "ទើបនឹងកើត",
+      "infant": "ទារក",
+      "toddler": "កុមារតូច",
+      "child": "កុមារ",
+      "teenager": "យុវវ័យ",
+      "adult": "មនុស្សពេញវ័យ"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ថ្ងៃ",
+        "week": "{n} សប្ដាហ៍",
+        "month": "{n} ខែ",
+        "year": "{n} ឆ្នាំ"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ថ្ងៃ",
+        "week": "{n} សប្ដាហ៍",
+        "month": "{n} ខែ",
+        "year": "{n} ឆ្នាំ"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "មករា",
+      "កុម្ភៈ",
+      "មីនា",
+      "មេសា",
+      "ឧសភា",
+      "មិថុនា",
+      "កក្កដា",
+      "សីហា",
+      "កញ្ញា",
+      "តុលា",
+      "វិច្ឆិកា",
+      "ធ្នូ"
+    ],
+    "weekdays": [
+      "អាទិត្យ",
+      "ចន្ទ",
+      "អង្គារ",
+      "ពុធ",
+      "ព្រហស្បតិ៍",
+      "សុក្រ",
+      "សៅរ៍"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ថ្ងៃនេះ",
+    "tomorrow": "ថ្ងៃស្អែក",
+    "yesterday": "ម្សិលមិញ",
+    "dayAfterTomorrow": "ខានស្អែក",
+    "dayBeforeYesterday": "ម្សិលម៉្ង៉ៃ",
+    "thisWeekday": "{weekday}នេះ",
+    "nextWeekday": "{weekday}ក្រោយ",
+    "lastWeekday": "{weekday}មុន",
+    "short": {
+      "months": [
+        "មករា",
+        "កុម្ភៈ",
+        "មីនា",
+        "មេសា",
+        "ឧសភា",
+        "មិថុ",
+        "កក្ក",
+        "សីហា",
+        "កញ្ញា",
+        "តុលា",
+        "វិច្ឆិ",
+        "ធ្នូ"
+      ],
+      "weekdays": [
+        "អា",
+        "ច",
+        "អ",
+        "ពុ",
+        "ព្រ",
+        "សុ",
+        "ស"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} វិនាទី",
+      "minute": "{n} នាទី",
+      "hour": "{n} ម៉ោង",
+      "day": "{n} ថ្ងៃ",
+      "week": "{n} សប្ដាហ៍",
+      "month": "{n} ខែ",
+      "year": "{n} ឆ្នាំ"
+    },
+    "half": "{0}កន្លះ",
+    "delimiter": ", ",
+    "justNow": "ឥឡូវនេះ",
+    "ago": "{0}មុន",
+    "inFuture": "ក្នុង{0}",
+    "short": {
+      "units": {
+        "second": "{n} វិនាទី",
+        "minute": "{n} នាទី",
+        "hour": "{n} ម៉ោង",
+        "day": "{n} ថ្ងៃ",
+        "week": "{n} សប្ដាហ៍",
+        "month": "{n} ខែ",
+        "year": "{n} ឆ្នាំ"
+      },
+      "ago": "{0}មុន",
+      "inFuture": "ក្នុង{0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} វិនាទី",
+        "minute": "{n} នាទី",
+        "hour": "{n} ម៉ោង",
+        "day": "{n} ថ្ងៃ",
+        "week": "{n} សប្ដាហ៍",
+        "month": "{n} ខែ",
+        "year": "{n} ឆ្នាំ"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0}មុន",
+      "inFuture": "ក្នុង{0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "ដប់ពីរ",
+        "មួយ",
+        "ពីរ",
+        "បី",
+        "បួន",
+        "ប្រាំ",
+        "ប្រាំមួយ",
+        "ប្រាំពីរ",
+        "ប្រាំបី",
+        "ប្រាំបួន",
+        "ដប់",
+        "ដប់មួយ"
+      ],
+      "midnight": "កណ្ដាលអធ្រាត្រ",
+      "noon": "ថ្ងៃត្រង់",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ku.json
+# Source: locales/ku.json
 
 _sayabledate_locale_ku() {
     _months=('Rêbendan' 'Reşemî' 'Adar' 'Avrêl' 'Gulan' 'Pûşper' 'Tîrmeh' 'Tebax' 'Îlon' 'Cotmeh' 'Mijdar' 'Berfanbar')

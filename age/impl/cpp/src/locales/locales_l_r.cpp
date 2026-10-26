@@ -13,7 +13,7 @@
 namespace sayableage {
 namespace locales {
 
-// Source: age/locales/src/lb.json
+// Source: locales/lb.json
 const AgeLocale& LB() {
     static const AgeLocale loc{
         "lb",
@@ -52,7 +52,7 @@ const AgeLocale& LB() {
     return loc;
 }
 
-// Source: age/locales/src/lg.json
+// Source: locales/lg.json
 const AgeLocale& LG() {
     static const AgeLocale loc{
         "lg",
@@ -91,7 +91,7 @@ const AgeLocale& LG() {
     return loc;
 }
 
-// Source: age/locales/src/ln.json
+// Source: locales/ln.json
 const AgeLocale& LN() {
     static const AgeLocale loc{
         "ln",
@@ -130,7 +130,7 @@ const AgeLocale& LN() {
     return loc;
 }
 
-// Source: age/locales/src/lo.json
+// Source: locales/lo.json
 const AgeLocale& LO() {
     static const AgeLocale loc{
         "lo",
@@ -168,7 +168,7 @@ const AgeLocale& LO() {
     return loc;
 }
 
-// Source: age/locales/src/lt.json
+// Source: locales/lt.json
 const AgeLocale& LT() {
     static const AgeLocale loc{
         "lt",
@@ -210,7 +210,7 @@ const AgeLocale& LT() {
     return loc;
 }
 
-// Source: age/locales/src/luo.json
+// Source: locales/luo.json
 const AgeLocale& LUO() {
     static const AgeLocale loc{
         "luo",
@@ -249,7 +249,7 @@ const AgeLocale& LUO() {
     return loc;
 }
 
-// Source: age/locales/src/lv.json
+// Source: locales/lv.json
 const AgeLocale& LV() {
     static const AgeLocale loc{
         "lv",
@@ -291,7 +291,7 @@ const AgeLocale& LV() {
     return loc;
 }
 
-// Source: age/locales/src/mam.json
+// Source: locales/mam.json
 const AgeLocale& MAM() {
     static const AgeLocale loc{
         "mam",
@@ -329,7 +329,7 @@ const AgeLocale& MAM() {
     return loc;
 }
 
-// Source: age/locales/src/men.json
+// Source: locales/men.json
 const AgeLocale& MEN() {
     static const AgeLocale loc{
         "men",
@@ -368,7 +368,7 @@ const AgeLocale& MEN() {
     return loc;
 }
 
-// Source: age/locales/src/mfe.json
+// Source: locales/mfe.json
 const AgeLocale& MFE() {
     static const AgeLocale loc{
         "mfe",
@@ -406,7 +406,7 @@ const AgeLocale& MFE() {
     return loc;
 }
 
-// Source: age/locales/src/mg.json
+// Source: locales/mg.json
 const AgeLocale& MG() {
     static const AgeLocale loc{
         "mg",
@@ -445,7 +445,7 @@ const AgeLocale& MG() {
     return loc;
 }
 
-// Source: age/locales/src/mi.json
+// Source: locales/mi.json
 const AgeLocale& MI() {
     static const AgeLocale loc{
         "mi",
@@ -484,7 +484,7 @@ const AgeLocale& MI() {
     return loc;
 }
 
-// Source: age/locales/src/mk.json
+// Source: locales/mk.json
 const AgeLocale& MK() {
     static const AgeLocale loc{
         "mk",
@@ -525,7 +525,7 @@ const AgeLocale& MK() {
     return loc;
 }
 
-// Source: age/locales/src/ml.json
+// Source: locales/ml.json
 const AgeLocale& ML() {
     static const AgeLocale loc{
         "ml",
@@ -564,7 +564,7 @@ const AgeLocale& ML() {
     return loc;
 }
 
-// Source: age/locales/src/mn.json
+// Source: locales/mn.json
 const AgeLocale& MN() {
     static const AgeLocale loc{
         "mn",
@@ -603,7 +603,7 @@ const AgeLocale& MN() {
     return loc;
 }
 
-// Source: age/locales/src/mnk.json
+// Source: locales/mnk.json
 const AgeLocale& MNK() {
     static const AgeLocale loc{
         "mnk",
@@ -641,7 +641,7 @@ const AgeLocale& MNK() {
     return loc;
 }
 
-// Source: age/locales/src/mos.json
+// Source: locales/mos.json
 const AgeLocale& MOS() {
     static const AgeLocale loc{
         "mos",
@@ -679,7 +679,7 @@ const AgeLocale& MOS() {
     return loc;
 }
 
-// Source: age/locales/src/mr.json
+// Source: locales/mr.json
 const AgeLocale& MR() {
     static const AgeLocale loc{
         "mr",
@@ -718,7 +718,7 @@ const AgeLocale& MR() {
     return loc;
 }
 
-// Source: age/locales/src/ms.json
+// Source: locales/ms.json
 const AgeLocale& MS() {
     static const AgeLocale loc{
         "ms",
@@ -756,7 +756,7 @@ const AgeLocale& MS() {
     return loc;
 }
 
-// Source: age/locales/src/mt.json
+// Source: locales/mt.json
 const AgeLocale& MT() {
     static const AgeLocale loc{
         "mt",
@@ -799,7 +799,7 @@ const AgeLocale& MT() {
     return loc;
 }
 
-// Source: age/locales/src/my.json
+// Source: locales/my.json
 const AgeLocale& MY() {
     static const AgeLocale loc{
         "my",
@@ -837,7 +837,7 @@ const AgeLocale& MY() {
     return loc;
 }
 
-// Source: age/locales/src/nb.json
+// Source: locales/nb.json
 const AgeLocale& NB() {
     static const AgeLocale loc{
         "nb",
@@ -876,7 +876,7 @@ const AgeLocale& NB() {
     return loc;
 }
 
-// Source: age/locales/src/nd.json
+// Source: locales/nd.json
 const AgeLocale& ND() {
     static const AgeLocale loc{
         "nd",
@@ -915,7 +915,7 @@ const AgeLocale& ND() {
     return loc;
 }
 
-// Source: age/locales/src/ne.json
+// Source: locales/ne.json
 const AgeLocale& NE() {
     static const AgeLocale loc{
         "ne",
@@ -954,7 +954,7 @@ const AgeLocale& NE() {
     return loc;
 }
 
-// Source: age/locales/src/ng.json
+// Source: locales/ng.json
 const AgeLocale& NG() {
     static const AgeLocale loc{
         "ng",
@@ -993,7 +993,7 @@ const AgeLocale& NG() {
     return loc;
 }
 
-// Source: age/locales/src/nl.json
+// Source: locales/nl.json
 const AgeLocale& NL() {
     static const AgeLocale loc{
         "nl",
@@ -1032,7 +1032,7 @@ const AgeLocale& NL() {
     return loc;
 }
 
-// Source: age/locales/src/nr.json
+// Source: locales/nr.json
 const AgeLocale& NR() {
     static const AgeLocale loc{
         "nr",
@@ -1071,7 +1071,7 @@ const AgeLocale& NR() {
     return loc;
 }
 
-// Source: age/locales/src/nso.json
+// Source: locales/nso.json
 const AgeLocale& NSO() {
     static const AgeLocale loc{
         "nso",
@@ -1110,7 +1110,7 @@ const AgeLocale& NSO() {
     return loc;
 }
 
-// Source: age/locales/src/nus.json
+// Source: locales/nus.json
 const AgeLocale& NUS() {
     static const AgeLocale loc{
         "nus",
@@ -1149,7 +1149,7 @@ const AgeLocale& NUS() {
     return loc;
 }
 
-// Source: age/locales/src/ny.json
+// Source: locales/ny.json
 const AgeLocale& NY() {
     static const AgeLocale loc{
         "ny",
@@ -1188,7 +1188,7 @@ const AgeLocale& NY() {
     return loc;
 }
 
-// Source: age/locales/src/om.json
+// Source: locales/om.json
 const AgeLocale& OM() {
     static const AgeLocale loc{
         "om",
@@ -1227,7 +1227,7 @@ const AgeLocale& OM() {
     return loc;
 }
 
-// Source: age/locales/src/or.json
+// Source: locales/or.json
 const AgeLocale& OR() {
     static const AgeLocale loc{
         "or",
@@ -1266,7 +1266,7 @@ const AgeLocale& OR() {
     return loc;
 }
 
-// Source: age/locales/src/pa.json
+// Source: locales/pa.json
 const AgeLocale& PA() {
     static const AgeLocale loc{
         "pa",
@@ -1305,7 +1305,7 @@ const AgeLocale& PA() {
     return loc;
 }
 
-// Source: age/locales/src/pis.json
+// Source: locales/pis.json
 const AgeLocale& PIS() {
     static const AgeLocale loc{
         "pis",
@@ -1343,7 +1343,7 @@ const AgeLocale& PIS() {
     return loc;
 }
 
-// Source: age/locales/src/pl.json
+// Source: locales/pl.json
 const AgeLocale& PL() {
     static const AgeLocale loc{
         "pl",
@@ -1385,7 +1385,7 @@ const AgeLocale& PL() {
     return loc;
 }
 
-// Source: age/locales/src/pov.json
+// Source: locales/pov.json
 const AgeLocale& POV() {
     static const AgeLocale loc{
         "pov",
@@ -1423,7 +1423,7 @@ const AgeLocale& POV() {
     return loc;
 }
 
-// Source: age/locales/src/ps.json
+// Source: locales/ps.json
 const AgeLocale& PS() {
     static const AgeLocale loc{
         "ps",
@@ -1462,7 +1462,7 @@ const AgeLocale& PS() {
     return loc;
 }
 
-// Source: age/locales/src/pt.json
+// Source: locales/pt.json
 const AgeLocale& PT() {
     static const AgeLocale loc{
         "pt",
@@ -1501,7 +1501,7 @@ const AgeLocale& PT() {
     return loc;
 }
 
-// Source: age/locales/src/qu.json
+// Source: locales/qu.json
 const AgeLocale& QU() {
     static const AgeLocale loc{
         "qu",
@@ -1539,7 +1539,7 @@ const AgeLocale& QU() {
     return loc;
 }
 
-// Source: age/locales/src/quc.json
+// Source: locales/quc.json
 const AgeLocale& QUC() {
     static const AgeLocale loc{
         "quc",
@@ -1577,7 +1577,7 @@ const AgeLocale& QUC() {
     return loc;
 }
 
-// Source: age/locales/src/ro.json
+// Source: locales/ro.json
 const AgeLocale& RO() {
     static const AgeLocale loc{
         "ro",
@@ -1617,7 +1617,7 @@ const AgeLocale& RO() {
     return loc;
 }
 
-// Source: age/locales/src/ru.json
+// Source: locales/ru.json
 const AgeLocale& RU() {
     static const AgeLocale loc{
         "ru",
@@ -1659,7 +1659,7 @@ const AgeLocale& RU() {
     return loc;
 }
 
-// Source: age/locales/src/rw.json
+// Source: locales/rw.json
 const AgeLocale& RW() {
     static const AgeLocale loc{
         "rw",

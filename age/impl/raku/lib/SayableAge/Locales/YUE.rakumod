@@ -9,7 +9,7 @@ use v6.d;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/yue.json
+# Source: locales/yue.json
 unit module SayableAge::Locales::YUE;
 
 our sub locale() {

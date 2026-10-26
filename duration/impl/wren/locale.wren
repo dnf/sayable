@@ -1,6 +1,6 @@
 // Type definitions for sayable-duration locale data.
 // A locale class exposes static getters for all fields.
-// See duration/locales/src/*.json for the canonical schema.
+// See the "duration" section of locales/*.json for the canonical schema.
 //
 // Required static fields:
 //   code      : String

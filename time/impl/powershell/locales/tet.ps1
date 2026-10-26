@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tet.json
+# Source: locales/tet.json
 
 function locale_tet {
     $hours = @('sanulu-resin-rua', 'ida', 'rua', 'tolu', 'haat', 'lima', 'neen', 'hitu', 'ualu', 'sia', 'sanulu', 'sanulu-resin-ida')

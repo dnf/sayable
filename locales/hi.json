@@ -1,0 +1,257 @@
+{
+  "code": "hi",
+  "name": "Hindi",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} दिन",
+        "other": "{n} दिन"
+      },
+      "week": {
+        "one": "{n} सप्ताह",
+        "other": "{n} सप्ताह"
+      },
+      "month": {
+        "one": "{n} महीना",
+        "other": "{n} महीने"
+      },
+      "year": {
+        "one": "{n} साल",
+        "other": "{n} साल"
+      }
+    },
+    "half": "साढ़े {n}",
+    "delimiter": ", ",
+    "justBorn": "नवजात",
+    "stages": {
+      "newborn": "नवजात",
+      "infant": "शिशु",
+      "toddler": {
+        "m": "छोटा बच्चा",
+        "f": "छोटी बच्ची"
+      },
+      "child": {
+        "m": "बच्चा",
+        "f": "बच्ची"
+      },
+      "teenager": {
+        "m": "किशोर",
+        "f": "किशोरी"
+      },
+      "adult": "वयस्क"
+    },
+    "short": {
+      "units": {
+        "day": "{n} दिन",
+        "week": "{n} सप्ताह",
+        "month": "{n} माह",
+        "year": "{n} वर्ष"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} दि",
+        "week": "{n} सप्ताह",
+        "month": "{n} माह",
+        "year": "{n} व"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "जनवरी",
+      "फ़रवरी",
+      "मार्च",
+      "अप्रैल",
+      "मई",
+      "जून",
+      "जुलाई",
+      "अगस्त",
+      "सितंबर",
+      "अक्तूबर",
+      "नवंबर",
+      "दिसंबर"
+    ],
+    "weekdays": [
+      "रविवार",
+      "सोमवार",
+      "मंगलवार",
+      "बुधवार",
+      "गुरुवार",
+      "शुक्रवार",
+      "शनिवार"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "आज",
+    "tomorrow": "कल",
+    "yesterday": "कल",
+    "dayAfterTomorrow": "परसों",
+    "dayBeforeYesterday": "परसों",
+    "thisWeekday": "इस {weekday}",
+    "nextWeekday": "अगले {weekday}",
+    "lastWeekday": "पिछले {weekday}",
+    "short": {
+      "months": [
+        "जन",
+        "फ़र",
+        "मार्च",
+        "अप्रैल",
+        "मई",
+        "जून",
+        "जुल",
+        "अग",
+        "सित",
+        "अक्तू",
+        "नव",
+        "दिस"
+      ],
+      "weekdays": [
+        "रवि",
+        "सोम",
+        "मंगल",
+        "बुध",
+        "गुरु",
+        "शुक्र",
+        "शनि"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} सेकंड",
+      "minute": "{n} मिनट",
+      "hour": "{n} घंटा",
+      "day": {
+        "one": "{n} दिन",
+        "other": "{n} दिन"
+      },
+      "week": {
+        "one": "{n} सप्ताह",
+        "other": "{n} सप्ताह"
+      },
+      "month": {
+        "one": "{n} महीना",
+        "other": "{n} महीने"
+      },
+      "year": {
+        "one": "{n} साल",
+        "other": "{n} साल"
+      }
+    },
+    "half": "साढ़े {n}",
+    "delimiter": ", ",
+    "justNow": "अभी",
+    "ago": "{0} पहले",
+    "inFuture": "{0} में",
+    "short": {
+      "units": {
+        "second": "{n} से॰",
+        "minute": "{n} मि॰",
+        "hour": "{n} घं॰",
+        "day": "{n} दिन",
+        "week": "{n} सप्ताह",
+        "month": "{n} माह",
+        "year": "{n} वर्ष"
+      },
+      "ago": "{0} पहले",
+      "inFuture": "{0} में",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} से",
+        "minute": "{n} मि",
+        "hour": "{n} घं",
+        "day": "{n} दि",
+        "week": "{n} सप्ताह",
+        "month": "{n} माह",
+        "year": "{n} व"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} पहले",
+      "inFuture": "{0} में",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "बारह",
+        "एक",
+        "दो",
+        "तीन",
+        "चार",
+        "पाँच",
+        "छह",
+        "सात",
+        "आठ",
+        "नौ",
+        "दस",
+        "ग्यारह"
+      ],
+      "midnight": "आधी रात",
+      "noon": "दोपहर",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

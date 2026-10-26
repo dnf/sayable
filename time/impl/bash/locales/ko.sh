@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ko.json
+# Source: locales/ko.json
 
 _sayabletime_locale_ko() {
     _clock_hours=('열두' '한' '두' '세' '네' '다섯' '여섯' '일곱' '여덟' '아홉' '열' '열한')

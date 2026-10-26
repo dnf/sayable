@@ -1,0 +1,222 @@
+{
+  "code": "kri",
+  "name": "Krio",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} de",
+      "week": "{n} wik",
+      "month": "{n} mont",
+      "year": "{n} ia"
+    },
+    "half": "{n} na af",
+    "delimiter": ", ",
+    "justBorn": "Nyubon bebi",
+    "stages": {
+      "newborn": "Nyubon bebi",
+      "infant": "Smol pikin",
+      "toddler": "Smol pikin",
+      "child": "Pikin",
+      "teenager": "Yong posin",
+      "adult": "Big posin"
+    },
+    "short": {
+      "units": {
+        "day": "{n} de",
+        "week": "{n} wik",
+        "month": "{n} mont",
+        "year": "{n} ia"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Jenyuari",
+      "Febyuari",
+      "Mach",
+      "Epril",
+      "Me",
+      "Jun",
+      "Julay",
+      "Ogost",
+      "Septemba",
+      "Oktoba",
+      "Novemba",
+      "Disemba"
+    ],
+    "weekdays": [
+      "Sonde",
+      "Monde",
+      "Tyusde",
+      "Wensde",
+      "Tosde",
+      "Frayde",
+      "Satide"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "tide",
+    "tomorrow": "tumara",
+    "yesterday": "yestade",
+    "dayAfterTomorrow": "afta tumara",
+    "dayBeforeYesterday": "bifo yestade",
+    "thisWeekday": "dis {weekday}",
+    "nextWeekday": "neks {weekday}",
+    "lastWeekday": "las {weekday}",
+    "short": {
+      "months": [
+        "Jen",
+        "Feb",
+        "Mach",
+        "Ep",
+        "Me",
+        "Jun",
+        "Jul",
+        "Og",
+        "Sep",
+        "Ok",
+        "Nov",
+        "Dis"
+      ],
+      "weekdays": [
+        "Son",
+        "Mon",
+        "Tyu",
+        "Wen",
+        "Tos",
+        "Fra",
+        "Sat"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} sekon",
+      "minute": "{n} minit",
+      "hour": "{n} awa",
+      "day": "{n} de",
+      "week": "{n} wik",
+      "month": "{n} mont",
+      "year": "{n} ia"
+    },
+    "half": "{n} na af",
+    "delimiter": ", ",
+    "justNow": "jos naw",
+    "ago": "{0} bak",
+    "inFuture": "na {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min.",
+        "hour": "{n} awa",
+        "day": "{n} de",
+        "week": "{n} wik",
+        "month": "{n} mont",
+        "year": "{n} ia"
+      },
+      "ago": "{0} bak",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} bak",
+      "inFuture": "na {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "twelv",
+        "wan",
+        "tu",
+        "tri",
+        "fo",
+        "fayv",
+        "siks",
+        "sevin",
+        "et",
+        "nayn",
+        "ten",
+        "ilevin"
+      ],
+      "midnight": "midul net",
+      "noon": "midul de",
+      "patterns": {
+        "0": "{h} oklok",
+        "5": "fayv pas {h}",
+        "10": "ten pas {h}",
+        "15": "kwota pas {h}",
+        "20": "twenti pas {h}",
+        "25": "twenti fayv pas {h}",
+        "30": "af pas {h}",
+        "35": "twenti fayv tu {next_h}",
+        "40": "twenti tu {next_h}",
+        "45": "kwota tu {next_h}",
+        "50": "ten tu {next_h}",
+        "55": "fayv tu {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

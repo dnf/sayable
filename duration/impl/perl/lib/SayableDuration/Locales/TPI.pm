@@ -11,7 +11,7 @@ use utf8;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/tpi.json
+# Source: locales/tpi.json
 package SayableDuration::Locales::TPI;
 
 sub locale {{

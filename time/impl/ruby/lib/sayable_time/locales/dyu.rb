@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/dyu.json
+# Source: locales/dyu.json
 module SayableTime
   module Locales
     DYU = TimeLocale.new(

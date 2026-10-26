@@ -1,0 +1,290 @@
+{
+  "code": "nd",
+  "name": "Northern Ndebele",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "usuku {n}",
+        "other": "insuku {n}"
+      },
+      "week": {
+        "one": "iviki {n}",
+        "other": "amaviki {n}"
+      },
+      "month": {
+        "one": "inyanga {n}",
+        "other": "izinyanga {n}"
+      },
+      "year": {
+        "one": "umnyaka {n}",
+        "other": "iminyaka {n}"
+      }
+    },
+    "half": "{0} lengxenye",
+    "delimiter": ", ",
+    "justBorn": "Usanda kuzalwa",
+    "stages": {
+      "newborn": "Usane olusanda kuzalwa",
+      "infant": "Usane",
+      "toddler": "Umntwana omncane",
+      "child": "Umntwana",
+      "teenager": "Isitsha",
+      "adult": "Umuntu omdala"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "usuku {n}",
+          "other": "insuku {n}"
+        },
+        "week": {
+          "one": "iviki {n}",
+          "other": "amaviki {n}"
+        },
+        "month": {
+          "one": "iny. {n}",
+          "other": "iziny. {n}"
+        },
+        "year": {
+          "one": "umny. {n}",
+          "other": "iminy. {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Zibandlela",
+      "Nhlolanja",
+      "Mbimbitho",
+      "Mabasa",
+      "Nkwenkwezi",
+      "Nhlangula",
+      "Kholwane",
+      "Ingci",
+      "Inyoni",
+      "Imphala",
+      "Lwezi",
+      "Mpalakazi"
+    ],
+    "weekdays": [
+      "Sonto",
+      "Mvulo",
+      "Sibili",
+      "Sithathu",
+      "Sine",
+      "Sihlanu",
+      "Mgqibelo"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "lamuhla",
+    "tomorrow": "kusasa",
+    "yesterday": "izolo",
+    "dayAfterTomorrow": "ngomhlomunye",
+    "dayBeforeYesterday": "usuku olwedlule izolo",
+    "thisWeekday": "leli {weekday}",
+    "nextWeekday": "{weekday} elizayo",
+    "lastWeekday": "{weekday} eledlule",
+    "short": {
+      "months": [
+        "Zib",
+        "Nhl",
+        "Mbi",
+        "Mab",
+        "Nkw",
+        "Nhl",
+        "Kho",
+        "Ing",
+        "Iny",
+        "Imp",
+        "Lwe",
+        "Mpa"
+      ],
+      "weekdays": [
+        "Son",
+        "Mvu",
+        "Sib",
+        "Sit",
+        "Sin",
+        "Sih",
+        "Mgq"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "umzuzwana {n}",
+        "other": "imizuzwana {n}"
+      },
+      "minute": {
+        "one": "umzuzu {n}",
+        "other": "imizuzu {n}"
+      },
+      "hour": {
+        "one": "ihora {n}",
+        "other": "amahora {n}"
+      },
+      "day": {
+        "one": "usuku {n}",
+        "other": "insuku {n}"
+      },
+      "week": {
+        "one": "iviki {n}",
+        "other": "amaviki {n}"
+      },
+      "month": {
+        "one": "inyanga {n}",
+        "other": "izinyanga {n}"
+      },
+      "year": {
+        "one": "umnyaka {n}",
+        "other": "iminyaka {n}"
+      }
+    },
+    "half": "{0} lengxenye",
+    "delimiter": ", ",
+    "justNow": "khathesi",
+    "ago": "{0} edlulileyo",
+    "inFuture": "nge-{0}",
+    "short": {
+      "units": {
+        "second": {
+          "one": "umzuzw. {n}",
+          "other": "imizuzw. {n}"
+        },
+        "minute": {
+          "one": "umzuzu {n}",
+          "other": "imizuzu {n}"
+        },
+        "hour": {
+          "one": "ihora {n}",
+          "other": "amahora {n}"
+        },
+        "day": {
+          "one": "usuku {n}",
+          "other": "insuku {n}"
+        },
+        "week": {
+          "one": "iviki {n}",
+          "other": "amaviki {n}"
+        },
+        "month": {
+          "one": "iny. {n}",
+          "other": "iziny. {n}"
+        },
+        "year": {
+          "one": "umny. {n}",
+          "other": "iminy. {n}"
+        }
+      },
+      "ago": "{0} edlulileyo",
+      "inFuture": "nge-{0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} edlulileyo",
+      "inFuture": "nge-{0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "litshumi lambili",
+        "kunye",
+        "kubili",
+        "kuthathu",
+        "kune",
+        "kuhlanu",
+        "isithupha",
+        "isikhombisa",
+        "isitshiyangalombili",
+        "isitshiyangalolunye",
+        "litshumi",
+        "litshumi lanye"
+      ],
+      "midnight": "phakathi kobusuku",
+      "noon": "emini",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/nso.json
+# Source: locales/nso.json
 
 function locale_nso {
     $months = @('Pherekgong', 'Hlakola', 'Mopitlo', 'Moranang', 'Mosegamanye', 'Ngoatobošego', 'Phukwi', 'Phatwe', 'Lewedi', 'Diphalane', 'Dibatsela', 'Manthole')

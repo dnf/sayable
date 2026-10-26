@@ -1,0 +1,269 @@
+{
+  "code": "luo",
+  "name": "Dholuo",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "odiechieng' {n}",
+        "other": "ndalo {n}"
+      },
+      "week": {
+        "one": "juma {n}",
+        "other": "jumbe {n}"
+      },
+      "month": {
+        "one": "dwe {n}",
+        "other": "dweche {n}"
+      },
+      "year": {
+        "one": "higa {n}",
+        "other": "higni {n}"
+      }
+    },
+    "half": "{0} gi nus",
+    "delimiter": ", ",
+    "justBorn": "Nyathi manyien",
+    "stages": {
+      "newborn": "Nyathi manyien",
+      "infant": "Kidoro",
+      "toddler": "Nyathi matin",
+      "child": "Nyathi",
+      "teenager": "Rawera",
+      "adult": "Ng'ama duong'"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "odie. {n}",
+          "other": "ndalo {n}"
+        },
+        "week": {
+          "one": "juma {n}",
+          "other": "jumbe {n}"
+        },
+        "month": {
+          "one": "dwe {n}",
+          "other": "dwe. {n}"
+        },
+        "year": {
+          "one": "higa {n}",
+          "other": "higni {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Dwe mar Achiel",
+      "Dwe mar Ariyo",
+      "Dwe mar Adek",
+      "Dwe mar Ang'wen",
+      "Dwe mar Abich",
+      "Dwe mar Auchiel",
+      "Dwe mar Abiriyo",
+      "Dwe mar Aboro",
+      "Dwe mar Ochiko",
+      "Dwe mar Apar",
+      "Dwe mar Apar gi Achiel",
+      "Dwe mar Apar gi Ariyo"
+    ],
+    "weekdays": [
+      "Jumapil",
+      "Wuok Tich",
+      "Tich Ariyo",
+      "Tich Adek",
+      "Tich Ang'wen",
+      "Tich Abich",
+      "Chieng' Ngeso"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "kawuono",
+    "tomorrow": "kiny",
+    "yesterday": "nyoro",
+    "dayAfterTomorrow": "orucha",
+    "thisWeekday": "{weekday} ma",
+    "nextWeekday": "{weekday} mabiro",
+    "lastWeekday": "{weekday} mokalo",
+    "short": {
+      "months": [
+        "Ach",
+        "Ari",
+        "Ade",
+        "Ang",
+        "Abi",
+        "Auc",
+        "Abr",
+        "Abo",
+        "Och",
+        "Apa",
+        "ApA",
+        "ApR"
+      ],
+      "weekdays": [
+        "JMP",
+        "WUT",
+        "TAR",
+        "TAD",
+        "TAN",
+        "TAB",
+        "ChN"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "sekunde {n}",
+      "minute": "dakika {n}",
+      "hour": "saa {n}",
+      "day": {
+        "one": "odiechieng' {n}",
+        "other": "ndalo {n}"
+      },
+      "week": {
+        "one": "juma {n}",
+        "other": "jumbe {n}"
+      },
+      "month": {
+        "one": "dwe {n}",
+        "other": "dweche {n}"
+      },
+      "year": {
+        "one": "higa {n}",
+        "other": "higni {n}"
+      }
+    },
+    "half": "{0} gi nus",
+    "delimiter": ", ",
+    "justNow": "sani",
+    "ago": "{0} mokalo",
+    "inFuture": "bang' {0}",
+    "short": {
+      "units": {
+        "second": "sek. {n}",
+        "minute": "dak. {n}",
+        "hour": "saa {n}",
+        "day": {
+          "one": "odie. {n}",
+          "other": "ndalo {n}"
+        },
+        "week": {
+          "one": "juma {n}",
+          "other": "jumbe {n}"
+        },
+        "month": {
+          "one": "dwe {n}",
+          "other": "dwe. {n}"
+        },
+        "year": {
+          "one": "higa {n}",
+          "other": "higni {n}"
+        }
+      },
+      "ago": "{0} mokalo",
+      "inFuture": "bang' {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} mokalo",
+      "inFuture": "bang' {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "apar gi ariyo",
+        "achiel",
+        "ariyo",
+        "adek",
+        "ang'wen",
+        "abich",
+        "auchiel",
+        "abiriyo",
+        "aboro",
+        "ochiko",
+        "apar",
+        "apar gi achiel"
+      ],
+      "midnight": "dier otieno",
+      "noon": "odiechieng' tir",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/tem.json
+# Source: locales/tem.json
 
 function locale_tem {
     $months = @('Janɛri', 'Fɛbrɛri', 'Mach', 'Epril', 'Me', 'Jun', 'Julai', 'Ɔgɔst', 'Sɛtɛmba', 'Ɔktoba', 'Novɛmba', 'Disɛmba')

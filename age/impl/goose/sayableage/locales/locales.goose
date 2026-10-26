@@ -210,7 +210,7 @@ fn plural_category(rule: PluralRule, n: i64) -> PluralCategory {
     }
 }
 
-// Source: age/locales/src/af.json
+// Source: locales/af.json
 fn locale_af() -> Locale {
     Locale {
         code: "af",
@@ -237,7 +237,7 @@ fn locale_af() -> Locale {
     }
 }
 
-// Source: age/locales/src/ak.json
+// Source: locales/ak.json
 fn locale_ak() -> Locale {
     Locale {
         code: "ak",
@@ -264,7 +264,7 @@ fn locale_ak() -> Locale {
     }
 }
 
-// Source: age/locales/src/am.json
+// Source: locales/am.json
 fn locale_am() -> Locale {
     Locale {
         code: "am",
@@ -291,7 +291,7 @@ fn locale_am() -> Locale {
     }
 }
 
-// Source: age/locales/src/ar.json
+// Source: locales/ar.json
 fn locale_ar() -> Locale {
     Locale {
         code: "ar",
@@ -318,7 +318,7 @@ fn locale_ar() -> Locale {
     }
 }
 
-// Source: age/locales/src/ay.json
+// Source: locales/ay.json
 fn locale_ay() -> Locale {
     Locale {
         code: "ay",
@@ -345,7 +345,7 @@ fn locale_ay() -> Locale {
     }
 }
 
-// Source: age/locales/src/az.json
+// Source: locales/az.json
 fn locale_az() -> Locale {
     Locale {
         code: "az",
@@ -372,7 +372,7 @@ fn locale_az() -> Locale {
     }
 }
 
-// Source: age/locales/src/bci.json
+// Source: locales/bci.json
 fn locale_bci() -> Locale {
     Locale {
         code: "bci",
@@ -399,7 +399,7 @@ fn locale_bci() -> Locale {
     }
 }
 
-// Source: age/locales/src/be.json
+// Source: locales/be.json
 fn locale_be() -> Locale {
     Locale {
         code: "be",
@@ -426,7 +426,7 @@ fn locale_be() -> Locale {
     }
 }
 
-// Source: age/locales/src/bem.json
+// Source: locales/bem.json
 fn locale_bem() -> Locale {
     Locale {
         code: "bem",
@@ -453,7 +453,7 @@ fn locale_bem() -> Locale {
     }
 }
 
-// Source: age/locales/src/bg.json
+// Source: locales/bg.json
 fn locale_bg() -> Locale {
     Locale {
         code: "bg",
@@ -480,7 +480,7 @@ fn locale_bg() -> Locale {
     }
 }
 
-// Source: age/locales/src/bi.json
+// Source: locales/bi.json
 fn locale_bi() -> Locale {
     Locale {
         code: "bi",
@@ -507,7 +507,7 @@ fn locale_bi() -> Locale {
     }
 }
 
-// Source: age/locales/src/bm.json
+// Source: locales/bm.json
 fn locale_bm() -> Locale {
     Locale {
         code: "bm",
@@ -534,7 +534,7 @@ fn locale_bm() -> Locale {
     }
 }
 
-// Source: age/locales/src/bn.json
+// Source: locales/bn.json
 fn locale_bn() -> Locale {
     Locale {
         code: "bn",
@@ -561,7 +561,7 @@ fn locale_bn() -> Locale {
     }
 }
 
-// Source: age/locales/src/br.json
+// Source: locales/br.json
 fn locale_br() -> Locale {
     Locale {
         code: "br",
@@ -588,7 +588,7 @@ fn locale_br() -> Locale {
     }
 }
 
-// Source: age/locales/src/bs.json
+// Source: locales/bs.json
 fn locale_bs() -> Locale {
     Locale {
         code: "bs",
@@ -615,7 +615,7 @@ fn locale_bs() -> Locale {
     }
 }
 
-// Source: age/locales/src/ca.json
+// Source: locales/ca.json
 fn locale_ca() -> Locale {
     Locale {
         code: "ca",
@@ -642,7 +642,7 @@ fn locale_ca() -> Locale {
     }
 }
 
-// Source: age/locales/src/cak.json
+// Source: locales/cak.json
 fn locale_cak() -> Locale {
     Locale {
         code: "cak",
@@ -669,7 +669,7 @@ fn locale_cak() -> Locale {
     }
 }
 
-// Source: age/locales/src/ceb.json
+// Source: locales/ceb.json
 fn locale_ceb() -> Locale {
     Locale {
         code: "ceb",
@@ -696,7 +696,7 @@ fn locale_ceb() -> Locale {
     }
 }
 
-// Source: age/locales/src/cs.json
+// Source: locales/cs.json
 fn locale_cs() -> Locale {
     Locale {
         code: "cs",
@@ -723,7 +723,7 @@ fn locale_cs() -> Locale {
     }
 }
 
-// Source: age/locales/src/cy.json
+// Source: locales/cy.json
 fn locale_cy() -> Locale {
     Locale {
         code: "cy",
@@ -750,7 +750,7 @@ fn locale_cy() -> Locale {
     }
 }
 
-// Source: age/locales/src/da.json
+// Source: locales/da.json
 fn locale_da() -> Locale {
     Locale {
         code: "da",
@@ -777,7 +777,7 @@ fn locale_da() -> Locale {
     }
 }
 
-// Source: age/locales/src/de.json
+// Source: locales/de.json
 fn locale_de() -> Locale {
     Locale {
         code: "de",
@@ -804,7 +804,7 @@ fn locale_de() -> Locale {
     }
 }
 
-// Source: age/locales/src/din.json
+// Source: locales/din.json
 fn locale_din() -> Locale {
     Locale {
         code: "din",
@@ -831,7 +831,7 @@ fn locale_din() -> Locale {
     }
 }
 
-// Source: age/locales/src/dje.json
+// Source: locales/dje.json
 fn locale_dje() -> Locale {
     Locale {
         code: "dje",
@@ -858,7 +858,7 @@ fn locale_dje() -> Locale {
     }
 }
 
-// Source: age/locales/src/dv.json
+// Source: locales/dv.json
 fn locale_dv() -> Locale {
     Locale {
         code: "dv",
@@ -885,7 +885,7 @@ fn locale_dv() -> Locale {
     }
 }
 
-// Source: age/locales/src/dyu.json
+// Source: locales/dyu.json
 fn locale_dyu() -> Locale {
     Locale {
         code: "dyu",
@@ -912,7 +912,7 @@ fn locale_dyu() -> Locale {
     }
 }
 
-// Source: age/locales/src/dz.json
+// Source: locales/dz.json
 fn locale_dz() -> Locale {
     Locale {
         code: "dz",
@@ -939,7 +939,7 @@ fn locale_dz() -> Locale {
     }
 }
 
-// Source: age/locales/src/ee.json
+// Source: locales/ee.json
 fn locale_ee() -> Locale {
     Locale {
         code: "ee",
@@ -966,7 +966,7 @@ fn locale_ee() -> Locale {
     }
 }
 
-// Source: age/locales/src/el.json
+// Source: locales/el.json
 fn locale_el() -> Locale {
     Locale {
         code: "el",
@@ -993,7 +993,7 @@ fn locale_el() -> Locale {
     }
 }
 
-// Source: age/locales/src/en.json
+// Source: locales/en.json
 fn locale_en() -> Locale {
     Locale {
         code: "en",
@@ -1020,7 +1020,7 @@ fn locale_en() -> Locale {
     }
 }
 
-// Source: age/locales/src/es.json
+// Source: locales/es.json
 fn locale_es() -> Locale {
     Locale {
         code: "es",
@@ -1047,7 +1047,7 @@ fn locale_es() -> Locale {
     }
 }
 
-// Source: age/locales/src/et.json
+// Source: locales/et.json
 fn locale_et() -> Locale {
     Locale {
         code: "et",
@@ -1074,7 +1074,7 @@ fn locale_et() -> Locale {
     }
 }
 
-// Source: age/locales/src/eu.json
+// Source: locales/eu.json
 fn locale_eu() -> Locale {
     Locale {
         code: "eu",
@@ -1101,7 +1101,7 @@ fn locale_eu() -> Locale {
     }
 }
 
-// Source: age/locales/src/fa.json
+// Source: locales/fa.json
 fn locale_fa() -> Locale {
     Locale {
         code: "fa",
@@ -1128,7 +1128,7 @@ fn locale_fa() -> Locale {
     }
 }
 
-// Source: age/locales/src/fan.json
+// Source: locales/fan.json
 fn locale_fan() -> Locale {
     Locale {
         code: "fan",
@@ -1155,7 +1155,7 @@ fn locale_fan() -> Locale {
     }
 }
 
-// Source: age/locales/src/ff.json
+// Source: locales/ff.json
 fn locale_ff() -> Locale {
     Locale {
         code: "ff",
@@ -1182,7 +1182,7 @@ fn locale_ff() -> Locale {
     }
 }
 
-// Source: age/locales/src/fi.json
+// Source: locales/fi.json
 fn locale_fi() -> Locale {
     Locale {
         code: "fi",
@@ -1209,7 +1209,7 @@ fn locale_fi() -> Locale {
     }
 }
 
-// Source: age/locales/src/fil.json
+// Source: locales/fil.json
 fn locale_fil() -> Locale {
     Locale {
         code: "fil",
@@ -1236,7 +1236,7 @@ fn locale_fil() -> Locale {
     }
 }
 
-// Source: age/locales/src/fj.json
+// Source: locales/fj.json
 fn locale_fj() -> Locale {
     Locale {
         code: "fj",
@@ -1263,7 +1263,7 @@ fn locale_fj() -> Locale {
     }
 }
 
-// Source: age/locales/src/fon.json
+// Source: locales/fon.json
 fn locale_fon() -> Locale {
     Locale {
         code: "fon",
@@ -1290,7 +1290,7 @@ fn locale_fon() -> Locale {
     }
 }
 
-// Source: age/locales/src/fr.json
+// Source: locales/fr.json
 fn locale_fr() -> Locale {
     Locale {
         code: "fr",
@@ -1317,7 +1317,7 @@ fn locale_fr() -> Locale {
     }
 }
 
-// Source: age/locales/src/ga.json
+// Source: locales/ga.json
 fn locale_ga() -> Locale {
     Locale {
         code: "ga",
@@ -1344,7 +1344,7 @@ fn locale_ga() -> Locale {
     }
 }
 
-// Source: age/locales/src/gd.json
+// Source: locales/gd.json
 fn locale_gd() -> Locale {
     Locale {
         code: "gd",
@@ -1371,7 +1371,7 @@ fn locale_gd() -> Locale {
     }
 }
 
-// Source: age/locales/src/gl.json
+// Source: locales/gl.json
 fn locale_gl() -> Locale {
     Locale {
         code: "gl",
@@ -1398,7 +1398,7 @@ fn locale_gl() -> Locale {
     }
 }
 
-// Source: age/locales/src/gn.json
+// Source: locales/gn.json
 fn locale_gn() -> Locale {
     Locale {
         code: "gn",
@@ -1425,7 +1425,7 @@ fn locale_gn() -> Locale {
     }
 }
 
-// Source: age/locales/src/gu.json
+// Source: locales/gu.json
 fn locale_gu() -> Locale {
     Locale {
         code: "gu",
@@ -1452,7 +1452,7 @@ fn locale_gu() -> Locale {
     }
 }
 
-// Source: age/locales/src/gv.json
+// Source: locales/gv.json
 fn locale_gv() -> Locale {
     Locale {
         code: "gv",
@@ -1479,7 +1479,7 @@ fn locale_gv() -> Locale {
     }
 }
 
-// Source: age/locales/src/ha.json
+// Source: locales/ha.json
 fn locale_ha() -> Locale {
     Locale {
         code: "ha",
@@ -1506,7 +1506,7 @@ fn locale_ha() -> Locale {
     }
 }
 
-// Source: age/locales/src/he.json
+// Source: locales/he.json
 fn locale_he() -> Locale {
     Locale {
         code: "he",
@@ -1533,7 +1533,7 @@ fn locale_he() -> Locale {
     }
 }
 
-// Source: age/locales/src/hi.json
+// Source: locales/hi.json
 fn locale_hi() -> Locale {
     Locale {
         code: "hi",
@@ -1560,7 +1560,7 @@ fn locale_hi() -> Locale {
     }
 }
 
-// Source: age/locales/src/hmn.json
+// Source: locales/hmn.json
 fn locale_hmn() -> Locale {
     Locale {
         code: "hmn",
@@ -1587,7 +1587,7 @@ fn locale_hmn() -> Locale {
     }
 }
 
-// Source: age/locales/src/hr.json
+// Source: locales/hr.json
 fn locale_hr() -> Locale {
     Locale {
         code: "hr",
@@ -1614,7 +1614,7 @@ fn locale_hr() -> Locale {
     }
 }
 
-// Source: age/locales/src/ht.json
+// Source: locales/ht.json
 fn locale_ht() -> Locale {
     Locale {
         code: "ht",
@@ -1641,7 +1641,7 @@ fn locale_ht() -> Locale {
     }
 }
 
-// Source: age/locales/src/hu.json
+// Source: locales/hu.json
 fn locale_hu() -> Locale {
     Locale {
         code: "hu",
@@ -1668,7 +1668,7 @@ fn locale_hu() -> Locale {
     }
 }
 
-// Source: age/locales/src/hy.json
+// Source: locales/hy.json
 fn locale_hy() -> Locale {
     Locale {
         code: "hy",
@@ -1695,7 +1695,7 @@ fn locale_hy() -> Locale {
     }
 }
 
-// Source: age/locales/src/id.json
+// Source: locales/id.json
 fn locale_id() -> Locale {
     Locale {
         code: "id",
@@ -1722,7 +1722,7 @@ fn locale_id() -> Locale {
     }
 }
 
-// Source: age/locales/src/ig.json
+// Source: locales/ig.json
 fn locale_ig() -> Locale {
     Locale {
         code: "ig",
@@ -1749,7 +1749,7 @@ fn locale_ig() -> Locale {
     }
 }
 
-// Source: age/locales/src/is.json
+// Source: locales/is.json
 fn locale_is() -> Locale {
     Locale {
         code: "is",
@@ -1776,7 +1776,7 @@ fn locale_is() -> Locale {
     }
 }
 
-// Source: age/locales/src/it.json
+// Source: locales/it.json
 fn locale_it() -> Locale {
     Locale {
         code: "it",
@@ -1803,7 +1803,7 @@ fn locale_it() -> Locale {
     }
 }
 
-// Source: age/locales/src/ja.json
+// Source: locales/ja.json
 fn locale_ja() -> Locale {
     Locale {
         code: "ja",
@@ -1830,7 +1830,7 @@ fn locale_ja() -> Locale {
     }
 }
 
-// Source: age/locales/src/jv.json
+// Source: locales/jv.json
 fn locale_jv() -> Locale {
     Locale {
         code: "jv",
@@ -1857,7 +1857,7 @@ fn locale_jv() -> Locale {
     }
 }
 
-// Source: age/locales/src/ka.json
+// Source: locales/ka.json
 fn locale_ka() -> Locale {
     Locale {
         code: "ka",
@@ -1884,7 +1884,7 @@ fn locale_ka() -> Locale {
     }
 }
 
-// Source: age/locales/src/kbp.json
+// Source: locales/kbp.json
 fn locale_kbp() -> Locale {
     Locale {
         code: "kbp",
@@ -1911,7 +1911,7 @@ fn locale_kbp() -> Locale {
     }
 }
 
-// Source: age/locales/src/kek.json
+// Source: locales/kek.json
 fn locale_kek() -> Locale {
     Locale {
         code: "kek",
@@ -1938,7 +1938,7 @@ fn locale_kek() -> Locale {
     }
 }
 
-// Source: age/locales/src/ki.json
+// Source: locales/ki.json
 fn locale_ki() -> Locale {
     Locale {
         code: "ki",
@@ -1965,7 +1965,7 @@ fn locale_ki() -> Locale {
     }
 }
 
-// Source: age/locales/src/kk.json
+// Source: locales/kk.json
 fn locale_kk() -> Locale {
     Locale {
         code: "kk",
@@ -1992,7 +1992,7 @@ fn locale_kk() -> Locale {
     }
 }
 
-// Source: age/locales/src/kl.json
+// Source: locales/kl.json
 fn locale_kl() -> Locale {
     Locale {
         code: "kl",
@@ -2019,7 +2019,7 @@ fn locale_kl() -> Locale {
     }
 }
 
-// Source: age/locales/src/km.json
+// Source: locales/km.json
 fn locale_km() -> Locale {
     Locale {
         code: "km",
@@ -2046,7 +2046,7 @@ fn locale_km() -> Locale {
     }
 }
 
-// Source: age/locales/src/kn.json
+// Source: locales/kn.json
 fn locale_kn() -> Locale {
     Locale {
         code: "kn",
@@ -2073,7 +2073,7 @@ fn locale_kn() -> Locale {
     }
 }
 
-// Source: age/locales/src/ko.json
+// Source: locales/ko.json
 fn locale_ko() -> Locale {
     Locale {
         code: "ko",
@@ -2100,7 +2100,7 @@ fn locale_ko() -> Locale {
     }
 }
 
-// Source: age/locales/src/kpe.json
+// Source: locales/kpe.json
 fn locale_kpe() -> Locale {
     Locale {
         code: "kpe",
@@ -2127,7 +2127,7 @@ fn locale_kpe() -> Locale {
     }
 }
 
-// Source: age/locales/src/kri.json
+// Source: locales/kri.json
 fn locale_kri() -> Locale {
     Locale {
         code: "kri",
@@ -2154,7 +2154,7 @@ fn locale_kri() -> Locale {
     }
 }
 
-// Source: age/locales/src/ktu.json
+// Source: locales/ktu.json
 fn locale_ktu() -> Locale {
     Locale {
         code: "ktu",
@@ -2181,7 +2181,7 @@ fn locale_ktu() -> Locale {
     }
 }
 
-// Source: age/locales/src/ku.json
+// Source: locales/ku.json
 fn locale_ku() -> Locale {
     Locale {
         code: "ku",
@@ -2208,7 +2208,7 @@ fn locale_ku() -> Locale {
     }
 }
 
-// Source: age/locales/src/kw.json
+// Source: locales/kw.json
 fn locale_kw() -> Locale {
     Locale {
         code: "kw",
@@ -2235,7 +2235,7 @@ fn locale_kw() -> Locale {
     }
 }
 
-// Source: age/locales/src/ky.json
+// Source: locales/ky.json
 fn locale_ky() -> Locale {
     Locale {
         code: "ky",
@@ -2262,7 +2262,7 @@ fn locale_ky() -> Locale {
     }
 }
 
-// Source: age/locales/src/lb.json
+// Source: locales/lb.json
 fn locale_lb() -> Locale {
     Locale {
         code: "lb",
@@ -2289,7 +2289,7 @@ fn locale_lb() -> Locale {
     }
 }
 
-// Source: age/locales/src/lg.json
+// Source: locales/lg.json
 fn locale_lg() -> Locale {
     Locale {
         code: "lg",
@@ -2316,7 +2316,7 @@ fn locale_lg() -> Locale {
     }
 }
 
-// Source: age/locales/src/ln.json
+// Source: locales/ln.json
 fn locale_ln() -> Locale {
     Locale {
         code: "ln",
@@ -2343,7 +2343,7 @@ fn locale_ln() -> Locale {
     }
 }
 
-// Source: age/locales/src/lo.json
+// Source: locales/lo.json
 fn locale_lo() -> Locale {
     Locale {
         code: "lo",
@@ -2370,7 +2370,7 @@ fn locale_lo() -> Locale {
     }
 }
 
-// Source: age/locales/src/lt.json
+// Source: locales/lt.json
 fn locale_lt() -> Locale {
     Locale {
         code: "lt",
@@ -2397,7 +2397,7 @@ fn locale_lt() -> Locale {
     }
 }
 
-// Source: age/locales/src/luo.json
+// Source: locales/luo.json
 fn locale_luo() -> Locale {
     Locale {
         code: "luo",
@@ -2424,7 +2424,7 @@ fn locale_luo() -> Locale {
     }
 }
 
-// Source: age/locales/src/lv.json
+// Source: locales/lv.json
 fn locale_lv() -> Locale {
     Locale {
         code: "lv",
@@ -2451,7 +2451,7 @@ fn locale_lv() -> Locale {
     }
 }
 
-// Source: age/locales/src/mam.json
+// Source: locales/mam.json
 fn locale_mam() -> Locale {
     Locale {
         code: "mam",
@@ -2478,7 +2478,7 @@ fn locale_mam() -> Locale {
     }
 }
 
-// Source: age/locales/src/men.json
+// Source: locales/men.json
 fn locale_men() -> Locale {
     Locale {
         code: "men",
@@ -2505,7 +2505,7 @@ fn locale_men() -> Locale {
     }
 }
 
-// Source: age/locales/src/mfe.json
+// Source: locales/mfe.json
 fn locale_mfe() -> Locale {
     Locale {
         code: "mfe",
@@ -2532,7 +2532,7 @@ fn locale_mfe() -> Locale {
     }
 }
 
-// Source: age/locales/src/mg.json
+// Source: locales/mg.json
 fn locale_mg() -> Locale {
     Locale {
         code: "mg",
@@ -2559,7 +2559,7 @@ fn locale_mg() -> Locale {
     }
 }
 
-// Source: age/locales/src/mi.json
+// Source: locales/mi.json
 fn locale_mi() -> Locale {
     Locale {
         code: "mi",
@@ -2586,7 +2586,7 @@ fn locale_mi() -> Locale {
     }
 }
 
-// Source: age/locales/src/mk.json
+// Source: locales/mk.json
 fn locale_mk() -> Locale {
     Locale {
         code: "mk",
@@ -2613,7 +2613,7 @@ fn locale_mk() -> Locale {
     }
 }
 
-// Source: age/locales/src/ml.json
+// Source: locales/ml.json
 fn locale_ml() -> Locale {
     Locale {
         code: "ml",
@@ -2640,7 +2640,7 @@ fn locale_ml() -> Locale {
     }
 }
 
-// Source: age/locales/src/mn.json
+// Source: locales/mn.json
 fn locale_mn() -> Locale {
     Locale {
         code: "mn",
@@ -2667,7 +2667,7 @@ fn locale_mn() -> Locale {
     }
 }
 
-// Source: age/locales/src/mnk.json
+// Source: locales/mnk.json
 fn locale_mnk() -> Locale {
     Locale {
         code: "mnk",
@@ -2694,7 +2694,7 @@ fn locale_mnk() -> Locale {
     }
 }
 
-// Source: age/locales/src/mos.json
+// Source: locales/mos.json
 fn locale_mos() -> Locale {
     Locale {
         code: "mos",
@@ -2721,7 +2721,7 @@ fn locale_mos() -> Locale {
     }
 }
 
-// Source: age/locales/src/mr.json
+// Source: locales/mr.json
 fn locale_mr() -> Locale {
     Locale {
         code: "mr",
@@ -2748,7 +2748,7 @@ fn locale_mr() -> Locale {
     }
 }
 
-// Source: age/locales/src/ms.json
+// Source: locales/ms.json
 fn locale_ms() -> Locale {
     Locale {
         code: "ms",
@@ -2775,7 +2775,7 @@ fn locale_ms() -> Locale {
     }
 }
 
-// Source: age/locales/src/mt.json
+// Source: locales/mt.json
 fn locale_mt() -> Locale {
     Locale {
         code: "mt",
@@ -2802,7 +2802,7 @@ fn locale_mt() -> Locale {
     }
 }
 
-// Source: age/locales/src/my.json
+// Source: locales/my.json
 fn locale_my() -> Locale {
     Locale {
         code: "my",
@@ -2829,7 +2829,7 @@ fn locale_my() -> Locale {
     }
 }
 
-// Source: age/locales/src/nb.json
+// Source: locales/nb.json
 fn locale_nb() -> Locale {
     Locale {
         code: "nb",
@@ -2856,7 +2856,7 @@ fn locale_nb() -> Locale {
     }
 }
 
-// Source: age/locales/src/nd.json
+// Source: locales/nd.json
 fn locale_nd() -> Locale {
     Locale {
         code: "nd",
@@ -2883,7 +2883,7 @@ fn locale_nd() -> Locale {
     }
 }
 
-// Source: age/locales/src/ne.json
+// Source: locales/ne.json
 fn locale_ne() -> Locale {
     Locale {
         code: "ne",
@@ -2910,7 +2910,7 @@ fn locale_ne() -> Locale {
     }
 }
 
-// Source: age/locales/src/ng.json
+// Source: locales/ng.json
 fn locale_ng() -> Locale {
     Locale {
         code: "ng",
@@ -2937,7 +2937,7 @@ fn locale_ng() -> Locale {
     }
 }
 
-// Source: age/locales/src/nl.json
+// Source: locales/nl.json
 fn locale_nl() -> Locale {
     Locale {
         code: "nl",
@@ -2964,7 +2964,7 @@ fn locale_nl() -> Locale {
     }
 }
 
-// Source: age/locales/src/nr.json
+// Source: locales/nr.json
 fn locale_nr() -> Locale {
     Locale {
         code: "nr",
@@ -2991,7 +2991,7 @@ fn locale_nr() -> Locale {
     }
 }
 
-// Source: age/locales/src/nso.json
+// Source: locales/nso.json
 fn locale_nso() -> Locale {
     Locale {
         code: "nso",
@@ -3018,7 +3018,7 @@ fn locale_nso() -> Locale {
     }
 }
 
-// Source: age/locales/src/nus.json
+// Source: locales/nus.json
 fn locale_nus() -> Locale {
     Locale {
         code: "nus",
@@ -3045,7 +3045,7 @@ fn locale_nus() -> Locale {
     }
 }
 
-// Source: age/locales/src/ny.json
+// Source: locales/ny.json
 fn locale_ny() -> Locale {
     Locale {
         code: "ny",
@@ -3072,7 +3072,7 @@ fn locale_ny() -> Locale {
     }
 }
 
-// Source: age/locales/src/om.json
+// Source: locales/om.json
 fn locale_om() -> Locale {
     Locale {
         code: "om",
@@ -3099,7 +3099,7 @@ fn locale_om() -> Locale {
     }
 }
 
-// Source: age/locales/src/or.json
+// Source: locales/or.json
 fn locale_or() -> Locale {
     Locale {
         code: "or",
@@ -3126,7 +3126,7 @@ fn locale_or() -> Locale {
     }
 }
 
-// Source: age/locales/src/pa.json
+// Source: locales/pa.json
 fn locale_pa() -> Locale {
     Locale {
         code: "pa",
@@ -3153,7 +3153,7 @@ fn locale_pa() -> Locale {
     }
 }
 
-// Source: age/locales/src/pis.json
+// Source: locales/pis.json
 fn locale_pis() -> Locale {
     Locale {
         code: "pis",
@@ -3180,7 +3180,7 @@ fn locale_pis() -> Locale {
     }
 }
 
-// Source: age/locales/src/pl.json
+// Source: locales/pl.json
 fn locale_pl() -> Locale {
     Locale {
         code: "pl",
@@ -3207,7 +3207,7 @@ fn locale_pl() -> Locale {
     }
 }
 
-// Source: age/locales/src/pov.json
+// Source: locales/pov.json
 fn locale_pov() -> Locale {
     Locale {
         code: "pov",
@@ -3234,7 +3234,7 @@ fn locale_pov() -> Locale {
     }
 }
 
-// Source: age/locales/src/ps.json
+// Source: locales/ps.json
 fn locale_ps() -> Locale {
     Locale {
         code: "ps",
@@ -3261,7 +3261,7 @@ fn locale_ps() -> Locale {
     }
 }
 
-// Source: age/locales/src/pt.json
+// Source: locales/pt.json
 fn locale_pt() -> Locale {
     Locale {
         code: "pt",
@@ -3288,7 +3288,7 @@ fn locale_pt() -> Locale {
     }
 }
 
-// Source: age/locales/src/qu.json
+// Source: locales/qu.json
 fn locale_qu() -> Locale {
     Locale {
         code: "qu",
@@ -3315,7 +3315,7 @@ fn locale_qu() -> Locale {
     }
 }
 
-// Source: age/locales/src/quc.json
+// Source: locales/quc.json
 fn locale_quc() -> Locale {
     Locale {
         code: "quc",
@@ -3342,7 +3342,7 @@ fn locale_quc() -> Locale {
     }
 }
 
-// Source: age/locales/src/ro.json
+// Source: locales/ro.json
 fn locale_ro() -> Locale {
     Locale {
         code: "ro",
@@ -3369,7 +3369,7 @@ fn locale_ro() -> Locale {
     }
 }
 
-// Source: age/locales/src/ru.json
+// Source: locales/ru.json
 fn locale_ru() -> Locale {
     Locale {
         code: "ru",
@@ -3396,7 +3396,7 @@ fn locale_ru() -> Locale {
     }
 }
 
-// Source: age/locales/src/rw.json
+// Source: locales/rw.json
 fn locale_rw() -> Locale {
     Locale {
         code: "rw",
@@ -3423,7 +3423,7 @@ fn locale_rw() -> Locale {
     }
 }
 
-// Source: age/locales/src/sar.json
+// Source: locales/sar.json
 fn locale_sar() -> Locale {
     Locale {
         code: "sar",
@@ -3450,7 +3450,7 @@ fn locale_sar() -> Locale {
     }
 }
 
-// Source: age/locales/src/sd.json
+// Source: locales/sd.json
 fn locale_sd() -> Locale {
     Locale {
         code: "sd",
@@ -3477,7 +3477,7 @@ fn locale_sd() -> Locale {
     }
 }
 
-// Source: age/locales/src/sg.json
+// Source: locales/sg.json
 fn locale_sg() -> Locale {
     Locale {
         code: "sg",
@@ -3504,7 +3504,7 @@ fn locale_sg() -> Locale {
     }
 }
 
-// Source: age/locales/src/shi.json
+// Source: locales/shi.json
 fn locale_shi() -> Locale {
     Locale {
         code: "shi",
@@ -3531,7 +3531,7 @@ fn locale_shi() -> Locale {
     }
 }
 
-// Source: age/locales/src/shn.json
+// Source: locales/shn.json
 fn locale_shn() -> Locale {
     Locale {
         code: "shn",
@@ -3558,7 +3558,7 @@ fn locale_shn() -> Locale {
     }
 }
 
-// Source: age/locales/src/si.json
+// Source: locales/si.json
 fn locale_si() -> Locale {
     Locale {
         code: "si",
@@ -3585,7 +3585,7 @@ fn locale_si() -> Locale {
     }
 }
 
-// Source: age/locales/src/sk.json
+// Source: locales/sk.json
 fn locale_sk() -> Locale {
     Locale {
         code: "sk",
@@ -3612,7 +3612,7 @@ fn locale_sk() -> Locale {
     }
 }
 
-// Source: age/locales/src/sl.json
+// Source: locales/sl.json
 fn locale_sl() -> Locale {
     Locale {
         code: "sl",
@@ -3639,7 +3639,7 @@ fn locale_sl() -> Locale {
     }
 }
 
-// Source: age/locales/src/sn.json
+// Source: locales/sn.json
 fn locale_sn() -> Locale {
     Locale {
         code: "sn",
@@ -3666,7 +3666,7 @@ fn locale_sn() -> Locale {
     }
 }
 
-// Source: age/locales/src/snk.json
+// Source: locales/snk.json
 fn locale_snk() -> Locale {
     Locale {
         code: "snk",
@@ -3693,7 +3693,7 @@ fn locale_snk() -> Locale {
     }
 }
 
-// Source: age/locales/src/so.json
+// Source: locales/so.json
 fn locale_so() -> Locale {
     Locale {
         code: "so",
@@ -3720,7 +3720,7 @@ fn locale_so() -> Locale {
     }
 }
 
-// Source: age/locales/src/sq.json
+// Source: locales/sq.json
 fn locale_sq() -> Locale {
     Locale {
         code: "sq",
@@ -3747,7 +3747,7 @@ fn locale_sq() -> Locale {
     }
 }
 
-// Source: age/locales/src/sr.json
+// Source: locales/sr.json
 fn locale_sr() -> Locale {
     Locale {
         code: "sr",
@@ -3774,7 +3774,7 @@ fn locale_sr() -> Locale {
     }
 }
 
-// Source: age/locales/src/ss.json
+// Source: locales/ss.json
 fn locale_ss() -> Locale {
     Locale {
         code: "ss",
@@ -3801,7 +3801,7 @@ fn locale_ss() -> Locale {
     }
 }
 
-// Source: age/locales/src/st.json
+// Source: locales/st.json
 fn locale_st() -> Locale {
     Locale {
         code: "st",
@@ -3828,7 +3828,7 @@ fn locale_st() -> Locale {
     }
 }
 
-// Source: age/locales/src/su.json
+// Source: locales/su.json
 fn locale_su() -> Locale {
     Locale {
         code: "su",
@@ -3855,7 +3855,7 @@ fn locale_su() -> Locale {
     }
 }
 
-// Source: age/locales/src/suk.json
+// Source: locales/suk.json
 fn locale_suk() -> Locale {
     Locale {
         code: "suk",
@@ -3882,7 +3882,7 @@ fn locale_suk() -> Locale {
     }
 }
 
-// Source: age/locales/src/sv.json
+// Source: locales/sv.json
 fn locale_sv() -> Locale {
     Locale {
         code: "sv",
@@ -3909,7 +3909,7 @@ fn locale_sv() -> Locale {
     }
 }
 
-// Source: age/locales/src/sw.json
+// Source: locales/sw.json
 fn locale_sw() -> Locale {
     Locale {
         code: "sw",
@@ -3936,7 +3936,7 @@ fn locale_sw() -> Locale {
     }
 }
 
-// Source: age/locales/src/ta.json
+// Source: locales/ta.json
 fn locale_ta() -> Locale {
     Locale {
         code: "ta",
@@ -3963,7 +3963,7 @@ fn locale_ta() -> Locale {
     }
 }
 
-// Source: age/locales/src/te.json
+// Source: locales/te.json
 fn locale_te() -> Locale {
     Locale {
         code: "te",
@@ -3990,7 +3990,7 @@ fn locale_te() -> Locale {
     }
 }
 
-// Source: age/locales/src/tem.json
+// Source: locales/tem.json
 fn locale_tem() -> Locale {
     Locale {
         code: "tem",
@@ -4017,7 +4017,7 @@ fn locale_tem() -> Locale {
     }
 }
 
-// Source: age/locales/src/tet.json
+// Source: locales/tet.json
 fn locale_tet() -> Locale {
     Locale {
         code: "tet",
@@ -4044,7 +4044,7 @@ fn locale_tet() -> Locale {
     }
 }
 
-// Source: age/locales/src/tg.json
+// Source: locales/tg.json
 fn locale_tg() -> Locale {
     Locale {
         code: "tg",
@@ -4071,7 +4071,7 @@ fn locale_tg() -> Locale {
     }
 }
 
-// Source: age/locales/src/th.json
+// Source: locales/th.json
 fn locale_th() -> Locale {
     Locale {
         code: "th",
@@ -4098,7 +4098,7 @@ fn locale_th() -> Locale {
     }
 }
 
-// Source: age/locales/src/ti.json
+// Source: locales/ti.json
 fn locale_ti() -> Locale {
     Locale {
         code: "ti",
@@ -4125,7 +4125,7 @@ fn locale_ti() -> Locale {
     }
 }
 
-// Source: age/locales/src/tig.json
+// Source: locales/tig.json
 fn locale_tig() -> Locale {
     Locale {
         code: "tig",
@@ -4152,7 +4152,7 @@ fn locale_tig() -> Locale {
     }
 }
 
-// Source: age/locales/src/tk.json
+// Source: locales/tk.json
 fn locale_tk() -> Locale {
     Locale {
         code: "tk",
@@ -4179,7 +4179,7 @@ fn locale_tk() -> Locale {
     }
 }
 
-// Source: age/locales/src/tn.json
+// Source: locales/tn.json
 fn locale_tn() -> Locale {
     Locale {
         code: "tn",
@@ -4206,7 +4206,7 @@ fn locale_tn() -> Locale {
     }
 }
 
-// Source: age/locales/src/tpi.json
+// Source: locales/tpi.json
 fn locale_tpi() -> Locale {
     Locale {
         code: "tpi",
@@ -4233,7 +4233,7 @@ fn locale_tpi() -> Locale {
     }
 }
 
-// Source: age/locales/src/tr.json
+// Source: locales/tr.json
 fn locale_tr() -> Locale {
     Locale {
         code: "tr",
@@ -4260,7 +4260,7 @@ fn locale_tr() -> Locale {
     }
 }
 
-// Source: age/locales/src/ts.json
+// Source: locales/ts.json
 fn locale_ts() -> Locale {
     Locale {
         code: "ts",
@@ -4287,7 +4287,7 @@ fn locale_ts() -> Locale {
     }
 }
 
-// Source: age/locales/src/tum.json
+// Source: locales/tum.json
 fn locale_tum() -> Locale {
     Locale {
         code: "tum",
@@ -4314,7 +4314,7 @@ fn locale_tum() -> Locale {
     }
 }
 
-// Source: age/locales/src/tzm.json
+// Source: locales/tzm.json
 fn locale_tzm() -> Locale {
     Locale {
         code: "tzm",
@@ -4341,7 +4341,7 @@ fn locale_tzm() -> Locale {
     }
 }
 
-// Source: age/locales/src/uk.json
+// Source: locales/uk.json
 fn locale_uk() -> Locale {
     Locale {
         code: "uk",
@@ -4368,7 +4368,7 @@ fn locale_uk() -> Locale {
     }
 }
 
-// Source: age/locales/src/umb.json
+// Source: locales/umb.json
 fn locale_umb() -> Locale {
     Locale {
         code: "umb",
@@ -4395,7 +4395,7 @@ fn locale_umb() -> Locale {
     }
 }
 
-// Source: age/locales/src/ur.json
+// Source: locales/ur.json
 fn locale_ur() -> Locale {
     Locale {
         code: "ur",
@@ -4422,7 +4422,7 @@ fn locale_ur() -> Locale {
     }
 }
 
-// Source: age/locales/src/uz.json
+// Source: locales/uz.json
 fn locale_uz() -> Locale {
     Locale {
         code: "uz",
@@ -4449,7 +4449,7 @@ fn locale_uz() -> Locale {
     }
 }
 
-// Source: age/locales/src/ve.json
+// Source: locales/ve.json
 fn locale_ve() -> Locale {
     Locale {
         code: "ve",
@@ -4476,7 +4476,7 @@ fn locale_ve() -> Locale {
     }
 }
 
-// Source: age/locales/src/vi.json
+// Source: locales/vi.json
 fn locale_vi() -> Locale {
     Locale {
         code: "vi",
@@ -4503,7 +4503,7 @@ fn locale_vi() -> Locale {
     }
 }
 
-// Source: age/locales/src/vmw.json
+// Source: locales/vmw.json
 fn locale_vmw() -> Locale {
     Locale {
         code: "vmw",
@@ -4530,7 +4530,7 @@ fn locale_vmw() -> Locale {
     }
 }
 
-// Source: age/locales/src/wo.json
+// Source: locales/wo.json
 fn locale_wo() -> Locale {
     Locale {
         code: "wo",
@@ -4557,7 +4557,7 @@ fn locale_wo() -> Locale {
     }
 }
 
-// Source: age/locales/src/xh.json
+// Source: locales/xh.json
 fn locale_xh() -> Locale {
     Locale {
         code: "xh",
@@ -4584,7 +4584,7 @@ fn locale_xh() -> Locale {
     }
 }
 
-// Source: age/locales/src/yao.json
+// Source: locales/yao.json
 fn locale_yao() -> Locale {
     Locale {
         code: "yao",
@@ -4611,7 +4611,7 @@ fn locale_yao() -> Locale {
     }
 }
 
-// Source: age/locales/src/yo.json
+// Source: locales/yo.json
 fn locale_yo() -> Locale {
     Locale {
         code: "yo",
@@ -4638,7 +4638,7 @@ fn locale_yo() -> Locale {
     }
 }
 
-// Source: age/locales/src/yue.json
+// Source: locales/yue.json
 fn locale_yue() -> Locale {
     Locale {
         code: "yue",
@@ -4665,7 +4665,7 @@ fn locale_yue() -> Locale {
     }
 }
 
-// Source: age/locales/src/zdj.json
+// Source: locales/zdj.json
 fn locale_zdj() -> Locale {
     Locale {
         code: "zdj",
@@ -4692,7 +4692,7 @@ fn locale_zdj() -> Locale {
     }
 }
 
-// Source: age/locales/src/zh.json
+// Source: locales/zh.json
 fn locale_zh() -> Locale {
     Locale {
         code: "zh",
@@ -4719,7 +4719,7 @@ fn locale_zh() -> Locale {
     }
 }
 
-// Source: age/locales/src/zu.json
+// Source: locales/zu.json
 fn locale_zu() -> Locale {
     Locale {
         code: "zu",

@@ -7,7 +7,7 @@
 %% ║ Changes will be overwritten the next time codegen runs.      ║
 %% ║ Edit the generator or locale JSON instead.                   ║
 %% ╚══════════════════════════════════════════════════════════════╝
-%% Source: duration/locales/src/pt.json
+%% Source: locales/pt.json
 
 -module(sayableduration_locales_pt).
 -include("sayableduration.hrl").

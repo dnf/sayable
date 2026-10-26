@@ -1,0 +1,216 @@
+{
+  "code": "jv",
+  "name": "Javanese",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} dina",
+      "week": "{n} minggu",
+      "month": "{n} wulan",
+      "year": "{n} taun"
+    },
+    "half": "{0} setengah",
+    "delimiter": ", ",
+    "justBorn": "Bayi anyar",
+    "stages": {
+      "newborn": "Bayi anyar",
+      "infant": "Bayi",
+      "toddler": "Balita",
+      "child": "Bocah",
+      "teenager": "Remaja",
+      "adult": "Diwasa"
+    },
+    "short": {
+      "units": {
+        "day": "{n} dina",
+        "week": "{n} peken",
+        "month": "{n} sasi",
+        "year": "{n} taun"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n} peken",
+        "month": "{n} sasi",
+        "year": "{n} taun"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember"
+    ],
+    "weekdays": [
+      "Minggu",
+      "Senin",
+      "Selasa",
+      "Rabu",
+      "Kamis",
+      "Jumat",
+      "Sabtu"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "dina iki",
+    "tomorrow": "sesuk",
+    "yesterday": "wingi",
+    "dayAfterTomorrow": "embèn",
+    "dayBeforeYesterday": "dhèk wingi",
+    "thisWeekday": "{weekday} iki",
+    "nextWeekday": "{weekday} ngarep",
+    "lastWeekday": "{weekday} wingi",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "Mei",
+        "Jun",
+        "Jul",
+        "Agt",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Min",
+        "Sen",
+        "Sel",
+        "Rab",
+        "Kam",
+        "Jum",
+        "Sab"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} detik",
+      "minute": "{n} menit",
+      "hour": "{n} jam",
+      "day": "{n} dina",
+      "week": "{n} minggu",
+      "month": "{n} wulan",
+      "year": "{n} taun"
+    },
+    "half": "{0} setengah",
+    "delimiter": ", ",
+    "justNow": "saiki",
+    "ago": "{0} kepungkur",
+    "inFuture": "ing {0}",
+    "short": {
+      "units": {
+        "second": "{n} dtk",
+        "minute": "{n} mnt",
+        "hour": "{n} jam",
+        "day": "{n} dina",
+        "week": "{n} peken",
+        "month": "{n} sasi",
+        "year": "{n} taun"
+      },
+      "ago": "{0} kepungkur",
+      "inFuture": "ing {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} dtk",
+        "minute": "{n} mnt",
+        "hour": "{n}j",
+        "day": "{n}d",
+        "week": "{n} peken",
+        "month": "{n} sasi",
+        "year": "{n} taun"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} kepungkur",
+      "inFuture": "ing {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "rolas",
+        "siji",
+        "loro",
+        "telu",
+        "papat",
+        "lima",
+        "enem",
+        "pitu",
+        "wolu",
+        "sanga",
+        "sepuluh",
+        "sewelas"
+      ],
+      "midnight": "tengah wengi",
+      "noon": "awan",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

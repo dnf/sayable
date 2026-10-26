@@ -1,0 +1,257 @@
+{
+  "code": "te",
+  "name": "Telugu",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} రోజు",
+        "other": "{n} రోజులు"
+      },
+      "week": {
+        "one": "{n} వారం",
+        "other": "{n} వారాలు"
+      },
+      "month": {
+        "one": "{n} నెల",
+        "other": "{n} నెలలు"
+      },
+      "year": {
+        "one": "{n} సంవత్సరం",
+        "other": "{n} సంవత్సరాలు"
+      }
+    },
+    "half": "{0}న్నర",
+    "delimiter": ", ",
+    "justBorn": "నవజాత శిశువు",
+    "stages": {
+      "newborn": "నవజాత శిశువు",
+      "infant": "శిశువు",
+      "toddler": "చిన్న బిడ్డ",
+      "child": "బిడ్డ",
+      "teenager": "కౌమారదశ",
+      "adult": "వయోజనులు"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} రోజు",
+          "other": "{n} రోజులు"
+        },
+        "week": "{n} వా.",
+        "month": "{n} నె.",
+        "year": "{n} సం."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}రో",
+        "week": "{n}వా",
+        "month": "{n}నె",
+        "year": "{n}సం"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "జనవరి",
+      "ఫిబ్రవరి",
+      "మార్చి",
+      "ఏప్రిల్",
+      "మే",
+      "జూన్",
+      "జులై",
+      "ఆగస్టు",
+      "సెప్టెంబర్",
+      "అక్టోబర్",
+      "నవంబర్",
+      "డిసెంబర్"
+    ],
+    "weekdays": [
+      "ఆదివారం",
+      "సోమవారం",
+      "మంగళవారం",
+      "బుధవారం",
+      "గురువారం",
+      "శుక్రవారం",
+      "శనివారం"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ఈ రోజు",
+    "tomorrow": "రేపు",
+    "yesterday": "నిన్న",
+    "dayAfterTomorrow": "ఎల్లుండి",
+    "dayBeforeYesterday": "మొన్న",
+    "thisWeekday": "ఈ {weekday}",
+    "nextWeekday": "వచ్చే {weekday}",
+    "lastWeekday": "గత {weekday}",
+    "short": {
+      "months": [
+        "జన",
+        "ఫిబ్ర",
+        "మార్చి",
+        "ఏప్రి",
+        "మే",
+        "జూన్",
+        "జులై",
+        "ఆగ",
+        "సెప్టెం",
+        "అక్టో",
+        "నవం",
+        "డిసెం"
+      ],
+      "weekdays": [
+        "ఆది",
+        "సోమ",
+        "మంగ",
+        "బుధ",
+        "గురు",
+        "శుక్ర",
+        "శని"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} సెకను",
+      "minute": "{n} నిమిషం",
+      "hour": "{n} గంట",
+      "day": {
+        "one": "{n} రోజు",
+        "other": "{n} రోజులు"
+      },
+      "week": {
+        "one": "{n} వారం",
+        "other": "{n} వారాలు"
+      },
+      "month": {
+        "one": "{n} నెల",
+        "other": "{n} నెలలు"
+      },
+      "year": {
+        "one": "{n} సంవత్సరం",
+        "other": "{n} సంవత్సరాలు"
+      }
+    },
+    "half": "{0}న్నర",
+    "delimiter": ", ",
+    "justNow": "ఇప్పుడే",
+    "ago": "{0} క్రితం",
+    "inFuture": "{0} తర్వాత",
+    "short": {
+      "units": {
+        "second": {
+          "one": "{n} సె.",
+          "other": "{n} సెక."
+        },
+        "minute": "{n} నిమి.",
+        "hour": "{n} గం.",
+        "day": {
+          "one": "{n} రోజు",
+          "other": "{n} రోజులు"
+        },
+        "week": "{n} వా.",
+        "month": "{n} నె.",
+        "year": "{n} సం."
+      },
+      "ago": "{0} క్రితం",
+      "inFuture": "{0} తర్వాత",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}సె",
+        "minute": "{n}ని",
+        "hour": "{n}గం",
+        "day": "{n}రో",
+        "week": "{n}వా",
+        "month": "{n}నె",
+        "year": "{n}సం"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} క్రితం",
+      "inFuture": "{0} తర్వాత",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "పన్నెండు",
+        "ఒకటి",
+        "రెండు",
+        "మూడు",
+        "నాలుగు",
+        "ఐదు",
+        "ఆరు",
+        "ఏడు",
+        "ఎనిమిది",
+        "తొమ్మిది",
+        "పది",
+        "పదకొండు"
+      ],
+      "midnight": "అర్ధరాత్రి",
+      "noon": "మధ్యాహ్నం",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

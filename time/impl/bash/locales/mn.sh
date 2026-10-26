@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/mn.json
+# Source: locales/mn.json
 
 _sayabletime_locale_mn() {
     _clock_hours=('арван хоёр' 'нэг' 'хоёр' 'гурав' 'дөрөв' 'тав' 'зургаа' 'долоо' 'найм' 'ес' 'арав' 'арван нэг')

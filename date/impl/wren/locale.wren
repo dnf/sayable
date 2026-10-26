@@ -1,6 +1,6 @@
 // Type definitions for sayable-date locale data.
 // A locale class exposes static getters for all fields.
-// See date/locales/src/*.json for the canonical schema.
+// See the "date" section of locales/*.json for the canonical schema.
 //
 // Required static fields:
 //   code         : String

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tzm.json
+# Source: locales/tzm.json
 
 function locale_tzm {
     $hours = @('12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11')

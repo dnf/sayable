@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/bg.json
+# Source: locales/bg.json
 
 _sayabletime_locale_bg() {
     _clock_hours=('дванадесет' 'един' 'два' 'три' 'четири' 'пет' 'шест' 'седем' 'осем' 'девет' 'десет' 'единадесет')

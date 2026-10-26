@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/tpi.json
+# Source: locales/tpi.json
 
 _sayabledate_locale_tpi() {
     _months=('Janueri' 'Februeri' 'Mas' 'Epril' 'Me' 'Jun' 'Julai' 'Ogas' 'Septemba' 'Oktoba' 'Novemba' 'Desemba')

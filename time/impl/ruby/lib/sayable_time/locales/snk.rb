@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/snk.json
+# Source: locales/snk.json
 module SayableTime
   module Locales
     SNK = TimeLocale.new(

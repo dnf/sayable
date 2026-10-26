@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: time/locales/src/ktu.json
+-- Source: locales/ktu.json
 
 
 module SayableTime.Locales.Ktu exposing (locale)

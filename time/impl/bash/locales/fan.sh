@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/fan.json
+# Source: locales/fan.json
 
 _sayabletime_locale_fan() {
     _clock_hours=('awom mebú' 'fóg' 'abúi' 'aláa' 'anyin' 'atán' 'asaman' 'zamgbala' 'mwom' 'ebulú' 'awom' 'awom mefóg')

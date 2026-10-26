@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/nus.json
+# Source: locales/nus.json
 
 _sayabletime_locale_nus() {
     _clock_hours=('thiäär ke rou' 'tök' 'rou' 'diäk' 'ŋuan' 'dhiëc' 'bäkɛl' 'dhorou' 'bät' 'kuɔn' 'thiäär' 'thiäär ku tök')

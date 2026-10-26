@@ -1,0 +1,240 @@
+{
+  "code": "si",
+  "name": "Sinhala",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "දින {n}",
+        "other": "දින {n}"
+      },
+      "week": {
+        "one": "සති {n}",
+        "other": "සති {n}"
+      },
+      "month": {
+        "one": "මාස {n}",
+        "other": "මාස {n}"
+      },
+      "year": {
+        "one": "වසර {n}",
+        "other": "වසර {n}"
+      }
+    },
+    "half": "{0}යි භාගයයි",
+    "delimiter": ", ",
+    "justBorn": "අලුත උපන්",
+    "stages": {
+      "newborn": "අලුත උපන්",
+      "infant": "බිළිඳා",
+      "toddler": "ගමන් යන දරුවා",
+      "child": "ළමයා",
+      "teenager": "නව යොවුන්",
+      "adult": "වැඩිහිටි"
+    },
+    "short": {
+      "units": {
+        "day": "දින {n}",
+        "week": "සති {n}",
+        "month": "මාස {n}",
+        "year": "වසර {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "දි {n}",
+        "week": "ස {n}",
+        "month": "මා {n}",
+        "year": "ව {n}"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ජනවාරි",
+      "පෙබරවාරි",
+      "මාර්තු",
+      "අප්‍රේල්",
+      "මැයි",
+      "ජූනි",
+      "ජූලි",
+      "අගෝස්තු",
+      "සැප්තැම්බර්",
+      "ඔක්තෝබර්",
+      "නොවැම්බර්",
+      "දෙසැම්බර්"
+    ],
+    "weekdays": [
+      "ඉරිදා",
+      "සඳුදා",
+      "අඟහරුවාදා",
+      "බදාදා",
+      "බ්‍රහස්පතින්දා",
+      "සිකුරාදා",
+      "සෙනසුරාදා"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "අද",
+    "tomorrow": "හෙට",
+    "yesterday": "ඊයේ",
+    "dayAfterTomorrow": "අනිද්දා",
+    "dayBeforeYesterday": "පෙරේදා",
+    "thisWeekday": "මේ {weekday}",
+    "nextWeekday": "ඊළඟ {weekday}",
+    "lastWeekday": "පසුගිය {weekday}",
+    "short": {
+      "months": [
+        "ජන",
+        "පෙබ",
+        "මාර්",
+        "අප්‍",
+        "මැයි",
+        "ජූනි",
+        "ජූලි",
+        "අගෝ",
+        "සැප්",
+        "ඔක්",
+        "නොවැ",
+        "දෙසැ"
+      ],
+      "weekdays": [
+        "ඉරි",
+        "සඳු",
+        "අඟ",
+        "බදා",
+        "බ්‍ර",
+        "සිකු",
+        "සෙන"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} තත්පරය",
+      "minute": "{n} මිනිත්තුව",
+      "hour": "{n} පැය",
+      "day": {
+        "one": "දින {n}",
+        "other": "දින {n}"
+      },
+      "week": {
+        "one": "සති {n}",
+        "other": "සති {n}"
+      },
+      "month": {
+        "one": "මාස {n}",
+        "other": "මාස {n}"
+      },
+      "year": {
+        "one": "වසර {n}",
+        "other": "වසර {n}"
+      }
+    },
+    "half": "{0}යි භාගයයි",
+    "delimiter": ", ",
+    "justNow": "දැන්",
+    "ago": "{0}ට පෙර",
+    "inFuture": "{0}කින්",
+    "short": {
+      "units": {
+        "second": "තත් {n}",
+        "minute": "මිනි {n}",
+        "hour": "පැය {n}",
+        "day": "දින {n}",
+        "week": "සති {n}",
+        "month": "මාස {n}",
+        "year": "වසර {n}"
+      },
+      "ago": "{0}ට පෙර",
+      "inFuture": "{0}කින්",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "ත {n}",
+        "minute": "මි {n}",
+        "hour": "පැය {n}",
+        "day": "දි {n}",
+        "week": "ස {n}",
+        "month": "මා {n}",
+        "year": "ව {n}"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0}ට පෙර",
+      "inFuture": "{0}කින්",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "දොළහ",
+        "එක",
+        "දෙක",
+        "තුන",
+        "හතර",
+        "පහ",
+        "හය",
+        "හත",
+        "අට",
+        "නවය",
+        "දහය",
+        "එකොළහ"
+      ],
+      "midnight": "මධ්‍යම රාත්‍රිය",
+      "noon": "මධ්‍යාහ්නය",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

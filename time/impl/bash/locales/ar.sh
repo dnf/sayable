@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ar.json
+# Source: locales/ar.json
 
 _sayabletime_locale_ar() {
     _clock_hours=('الثانية عشرة' 'الواحدة' 'الثانية' 'الثالثة' 'الرابعة' 'الخامسة' 'السادسة' 'السابعة' 'الثامنة' 'التاسعة' 'العاشرة' 'الحادية عشرة')

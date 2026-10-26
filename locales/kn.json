@@ -1,0 +1,257 @@
+{
+  "code": "kn",
+  "name": "Kannada",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ದಿನ",
+        "other": "{n} ದಿನಗಳು"
+      },
+      "week": {
+        "one": "{n} ವಾರ",
+        "other": "{n} ವಾರಗಳು"
+      },
+      "month": {
+        "one": "{n} ತಿಂಗಳು",
+        "other": "{n} ತಿಂಗಳುಗಳು"
+      },
+      "year": {
+        "one": "{n} ವರ್ಷ",
+        "other": "{n} ವರ್ಷಗಳು"
+      }
+    },
+    "half": "{0}ವರೆ",
+    "delimiter": ", ",
+    "justBorn": "ನವಜಾತ ಶಿಶು",
+    "stages": {
+      "newborn": "ನವಜಾತ ಶಿಶು",
+      "infant": "ಶಿಶು",
+      "toddler": "ಪುಟ್ಟ ಮಗು",
+      "child": "ಮಗು",
+      "teenager": "ಹದಿಹರೆಯದವರು",
+      "adult": "ವಯಸ್ಕ"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ದಿನ",
+        "week": "{n} ವಾರ",
+        "month": "{n} ತಿಂಗಳು",
+        "year": "{n} ವರ್ಷ"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ದಿ",
+        "week": "{n} ವಾ",
+        "month": "{n} ತಿಂ",
+        "year": "{n} ವ"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ಜನವರಿ",
+      "ಫೆಬ್ರವರಿ",
+      "ಮಾರ್ಚ್",
+      "ಏಪ್ರಿಲ್",
+      "ಮೇ",
+      "ಜೂನ್",
+      "ಜುಲೈ",
+      "ಆಗಸ್ಟ್",
+      "ಸೆಪ್ಟೆಂಬರ್",
+      "ಅಕ್ಟೋಬರ್",
+      "ನವೆಂಬರ್",
+      "ಡಿಸೆಂಬರ್"
+    ],
+    "weekdays": [
+      "ಭಾನುವಾರ",
+      "ಸೋಮವಾರ",
+      "ಮಂಗಳವಾರ",
+      "ಬುಧವಾರ",
+      "ಗುರುವಾರ",
+      "ಶುಕ್ರವಾರ",
+      "ಶನಿವಾರ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ಇಂದು",
+    "tomorrow": "ನಾಳೆ",
+    "yesterday": "ನಿನ್ನೆ",
+    "dayAfterTomorrow": "ನಾಡಿದ್ದು",
+    "dayBeforeYesterday": "ಮೊನ್ನೆ",
+    "thisWeekday": "ಈ {weekday}",
+    "nextWeekday": "ಮುಂದಿನ {weekday}",
+    "lastWeekday": "ಕಳೆದ {weekday}",
+    "short": {
+      "months": [
+        "ಜನ",
+        "ಫೆಬ್ರ",
+        "ಮಾರ್ಚ್",
+        "ಏಪ್ರಿ",
+        "ಮೇ",
+        "ಜೂನ್",
+        "ಜುಲೈ",
+        "ಆಗ",
+        "ಸೆಪ್ಟೆಂ",
+        "ಅಕ್ಟೋ",
+        "ನವೆಂ",
+        "ಡಿಸೆಂ"
+      ],
+      "weekdays": [
+        "ಭಾನು",
+        "ಸೋಮ",
+        "ಮಂಗಳ",
+        "ಬುಧ",
+        "ಗುರು",
+        "ಶುಕ್ರ",
+        "ಶನಿ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} ಸೆಕೆಂಡ್",
+        "other": "{n} ಸೆಕೆಂಡುಗಳು"
+      },
+      "minute": {
+        "one": "{n} ನಿಮಿಷ",
+        "other": "{n} ನಿಮಿಷಗಳು"
+      },
+      "hour": {
+        "one": "{n} ಗಂಟೆ",
+        "other": "{n} ಗಂಟೆಗಳು"
+      },
+      "day": {
+        "one": "{n} ದಿನ",
+        "other": "{n} ದಿನಗಳು"
+      },
+      "week": {
+        "one": "{n} ವಾರ",
+        "other": "{n} ವಾರಗಳು"
+      },
+      "month": {
+        "one": "{n} ತಿಂಗಳು",
+        "other": "{n} ತಿಂಗಳುಗಳು"
+      },
+      "year": {
+        "one": "{n} ವರ್ಷ",
+        "other": "{n} ವರ್ಷಗಳು"
+      }
+    },
+    "half": "{0}ವರೆ",
+    "delimiter": ", ",
+    "justNow": "ಈಗಷ್ಟೇ",
+    "ago": "{0} ಹಿಂದೆ",
+    "inFuture": "{0} ನಂತರ",
+    "short": {
+      "units": {
+        "second": "{n} ಸೆ॰",
+        "minute": "{n} ನಿ॰",
+        "hour": "{n} ಗಂ॰",
+        "day": "{n} ದಿನ",
+        "week": "{n} ವಾರ",
+        "month": "{n} ತಿಂಗಳು",
+        "year": "{n} ವರ್ಷ"
+      },
+      "ago": "{0} ಹಿಂದೆ",
+      "inFuture": "{0} ನಂತರ",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} ಸೆ",
+        "minute": "{n} ನಿ",
+        "hour": "{n} ಗಂ",
+        "day": "{n} ದಿ",
+        "week": "{n} ವಾ",
+        "month": "{n} ತಿಂ",
+        "year": "{n} ವ"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ಹಿಂದೆ",
+      "inFuture": "{0} ನಂತರ",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "ಹನ್ನೆರಡು",
+        "ಒಂದು",
+        "ಎರಡು",
+        "ಮೂರು",
+        "ನಾಲ್ಕು",
+        "ಐದು",
+        "ಆರು",
+        "ಏಳು",
+        "ಎಂಟು",
+        "ಒಂಬತ್ತು",
+        "ಹತ್ತು",
+        "ಹನ್ನೊಂದು"
+      ],
+      "midnight": "ಮಧ್ಯರಾತ್ರಿ",
+      "noon": "ಮಧ್ಯಾಹ್ನ",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

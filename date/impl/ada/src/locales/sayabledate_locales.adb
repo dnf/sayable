@@ -182,7 +182,7 @@ package body Sayabledate_Locales is
 
    Initialized : Boolean := False;
 
-   --  Source: date/locales/src/af.json
+   --  Source: locales/af.json
    procedure Init_af is
    begin
       Locale_Af.Code := To_Unbounded_String ("af");
@@ -279,7 +279,7 @@ package body Sayabledate_Locales is
 
    end Init_af;
 
-   --  Source: date/locales/src/ak.json
+   --  Source: locales/ak.json
    procedure Init_ak is
    begin
       Locale_Ak.Code := To_Unbounded_String ("ak");
@@ -376,7 +376,7 @@ package body Sayabledate_Locales is
 
    end Init_ak;
 
-   --  Source: date/locales/src/am.json
+   --  Source: locales/am.json
    procedure Init_am is
    begin
       Locale_Am.Code := To_Unbounded_String ("am");
@@ -473,7 +473,7 @@ package body Sayabledate_Locales is
 
    end Init_am;
 
-   --  Source: date/locales/src/ar.json
+   --  Source: locales/ar.json
    procedure Init_ar is
    begin
       Locale_Ar.Code := To_Unbounded_String ("ar");
@@ -570,7 +570,7 @@ package body Sayabledate_Locales is
 
    end Init_ar;
 
-   --  Source: date/locales/src/ay.json
+   --  Source: locales/ay.json
    procedure Init_ay is
    begin
       Locale_Ay.Code := To_Unbounded_String ("ay");
@@ -665,7 +665,7 @@ package body Sayabledate_Locales is
 
    end Init_ay;
 
-   --  Source: date/locales/src/az.json
+   --  Source: locales/az.json
    procedure Init_az is
    begin
       Locale_Az.Code := To_Unbounded_String ("az");
@@ -762,7 +762,7 @@ package body Sayabledate_Locales is
 
    end Init_az;
 
-   --  Source: date/locales/src/bci.json
+   --  Source: locales/bci.json
    procedure Init_bci is
    begin
       Locale_Bci.Code := To_Unbounded_String ("bci");
@@ -859,7 +859,7 @@ package body Sayabledate_Locales is
 
    end Init_bci;
 
-   --  Source: date/locales/src/be.json
+   --  Source: locales/be.json
    procedure Init_be is
    begin
       Locale_Be.Code := To_Unbounded_String ("be");
@@ -968,7 +968,7 @@ package body Sayabledate_Locales is
 
    end Init_be;
 
-   --  Source: date/locales/src/bem.json
+   --  Source: locales/bem.json
    procedure Init_bem is
    begin
       Locale_Bem.Code := To_Unbounded_String ("bem");
@@ -1065,7 +1065,7 @@ package body Sayabledate_Locales is
 
    end Init_bem;
 
-   --  Source: date/locales/src/bg.json
+   --  Source: locales/bg.json
    procedure Init_bg is
    begin
       Locale_Bg.Code := To_Unbounded_String ("bg");
@@ -1162,7 +1162,7 @@ package body Sayabledate_Locales is
 
    end Init_bg;
 
-   --  Source: date/locales/src/bi.json
+   --  Source: locales/bi.json
    procedure Init_bi is
    begin
       Locale_Bi.Code := To_Unbounded_String ("bi");
@@ -1259,7 +1259,7 @@ package body Sayabledate_Locales is
 
    end Init_bi;
 
-   --  Source: date/locales/src/bm.json
+   --  Source: locales/bm.json
    procedure Init_bm is
    begin
       Locale_Bm.Code := To_Unbounded_String ("bm");
@@ -1356,7 +1356,7 @@ package body Sayabledate_Locales is
 
    end Init_bm;
 
-   --  Source: date/locales/src/bn.json
+   --  Source: locales/bn.json
    procedure Init_bn is
    begin
       Locale_Bn.Code := To_Unbounded_String ("bn");
@@ -1453,7 +1453,7 @@ package body Sayabledate_Locales is
 
    end Init_bn;
 
-   --  Source: date/locales/src/br.json
+   --  Source: locales/br.json
    procedure Init_br is
    begin
       Locale_Br.Code := To_Unbounded_String ("br");
@@ -1548,7 +1548,7 @@ package body Sayabledate_Locales is
 
    end Init_br;
 
-   --  Source: date/locales/src/bs.json
+   --  Source: locales/bs.json
    procedure Init_bs is
    begin
       Locale_Bs.Code := To_Unbounded_String ("bs");
@@ -1645,7 +1645,7 @@ package body Sayabledate_Locales is
 
    end Init_bs;
 
-   --  Source: date/locales/src/ca.json
+   --  Source: locales/ca.json
    procedure Init_ca is
    begin
       Locale_Ca.Code := To_Unbounded_String ("ca");
@@ -1742,7 +1742,7 @@ package body Sayabledate_Locales is
 
    end Init_ca;
 
-   --  Source: date/locales/src/cak.json
+   --  Source: locales/cak.json
    procedure Init_cak is
    begin
       Locale_Cak.Code := To_Unbounded_String ("cak");
@@ -1839,7 +1839,7 @@ package body Sayabledate_Locales is
 
    end Init_cak;
 
-   --  Source: date/locales/src/ceb.json
+   --  Source: locales/ceb.json
    procedure Init_ceb is
    begin
       Locale_Ceb.Code := To_Unbounded_String ("ceb");
@@ -1936,7 +1936,7 @@ package body Sayabledate_Locales is
 
    end Init_ceb;
 
-   --  Source: date/locales/src/cs.json
+   --  Source: locales/cs.json
    procedure Init_cs is
    begin
       Locale_Cs.Code := To_Unbounded_String ("cs");
@@ -2045,7 +2045,7 @@ package body Sayabledate_Locales is
 
    end Init_cs;
 
-   --  Source: date/locales/src/cy.json
+   --  Source: locales/cy.json
    procedure Init_cy is
    begin
       Locale_Cy.Code := To_Unbounded_String ("cy");
@@ -2142,7 +2142,7 @@ package body Sayabledate_Locales is
 
    end Init_cy;
 
-   --  Source: date/locales/src/da.json
+   --  Source: locales/da.json
    procedure Init_da is
    begin
       Locale_Da.Code := To_Unbounded_String ("da");
@@ -2239,7 +2239,7 @@ package body Sayabledate_Locales is
 
    end Init_da;
 
-   --  Source: date/locales/src/de.json
+   --  Source: locales/de.json
    procedure Init_de is
    begin
       Locale_De.Code := To_Unbounded_String ("de");
@@ -2336,7 +2336,7 @@ package body Sayabledate_Locales is
 
    end Init_de;
 
-   --  Source: date/locales/src/din.json
+   --  Source: locales/din.json
    procedure Init_din is
    begin
       Locale_Din.Code := To_Unbounded_String ("din");
@@ -2433,7 +2433,7 @@ package body Sayabledate_Locales is
 
    end Init_din;
 
-   --  Source: date/locales/src/dje.json
+   --  Source: locales/dje.json
    procedure Init_dje is
    begin
       Locale_Dje.Code := To_Unbounded_String ("dje");
@@ -2530,7 +2530,7 @@ package body Sayabledate_Locales is
 
    end Init_dje;
 
-   --  Source: date/locales/src/dv.json
+   --  Source: locales/dv.json
    procedure Init_dv is
    begin
       Locale_Dv.Code := To_Unbounded_String ("dv");
@@ -2627,7 +2627,7 @@ package body Sayabledate_Locales is
 
    end Init_dv;
 
-   --  Source: date/locales/src/dyu.json
+   --  Source: locales/dyu.json
    procedure Init_dyu is
    begin
       Locale_Dyu.Code := To_Unbounded_String ("dyu");
@@ -2724,7 +2724,7 @@ package body Sayabledate_Locales is
 
    end Init_dyu;
 
-   --  Source: date/locales/src/dz.json
+   --  Source: locales/dz.json
    procedure Init_dz is
    begin
       Locale_Dz.Code := To_Unbounded_String ("dz");
@@ -2821,7 +2821,7 @@ package body Sayabledate_Locales is
 
    end Init_dz;
 
-   --  Source: date/locales/src/ee.json
+   --  Source: locales/ee.json
    procedure Init_ee is
    begin
       Locale_Ee.Code := To_Unbounded_String ("ee");
@@ -2918,7 +2918,7 @@ package body Sayabledate_Locales is
 
    end Init_ee;
 
-   --  Source: date/locales/src/el.json
+   --  Source: locales/el.json
    procedure Init_el is
    begin
       Locale_El.Code := To_Unbounded_String ("el");
@@ -3027,7 +3027,7 @@ package body Sayabledate_Locales is
 
    end Init_el;
 
-   --  Source: date/locales/src/en.json
+   --  Source: locales/en.json
    procedure Init_en is
    begin
       Locale_En.Code := To_Unbounded_String ("en");
@@ -3138,7 +3138,7 @@ package body Sayabledate_Locales is
 
    end Init_en;
 
-   --  Source: date/locales/src/es.json
+   --  Source: locales/es.json
    procedure Init_es is
    begin
       Locale_Es.Code := To_Unbounded_String ("es");
@@ -3235,7 +3235,7 @@ package body Sayabledate_Locales is
 
    end Init_es;
 
-   --  Source: date/locales/src/et.json
+   --  Source: locales/et.json
    procedure Init_et is
    begin
       Locale_Et.Code := To_Unbounded_String ("et");
@@ -3332,7 +3332,7 @@ package body Sayabledate_Locales is
 
    end Init_et;
 
-   --  Source: date/locales/src/eu.json
+   --  Source: locales/eu.json
    procedure Init_eu is
    begin
       Locale_Eu.Code := To_Unbounded_String ("eu");
@@ -3429,7 +3429,7 @@ package body Sayabledate_Locales is
 
    end Init_eu;
 
-   --  Source: date/locales/src/fa.json
+   --  Source: locales/fa.json
    procedure Init_fa is
    begin
       Locale_Fa.Code := To_Unbounded_String ("fa");
@@ -3526,7 +3526,7 @@ package body Sayabledate_Locales is
 
    end Init_fa;
 
-   --  Source: date/locales/src/fan.json
+   --  Source: locales/fan.json
    procedure Init_fan is
    begin
       Locale_Fan.Code := To_Unbounded_String ("fan");
@@ -3623,7 +3623,7 @@ package body Sayabledate_Locales is
 
    end Init_fan;
 
-   --  Source: date/locales/src/ff.json
+   --  Source: locales/ff.json
    procedure Init_ff is
    begin
       Locale_Ff.Code := To_Unbounded_String ("ff");
@@ -3720,7 +3720,7 @@ package body Sayabledate_Locales is
 
    end Init_ff;
 
-   --  Source: date/locales/src/fi.json
+   --  Source: locales/fi.json
    procedure Init_fi is
    begin
       Locale_Fi.Code := To_Unbounded_String ("fi");
@@ -3829,7 +3829,7 @@ package body Sayabledate_Locales is
 
    end Init_fi;
 
-   --  Source: date/locales/src/fil.json
+   --  Source: locales/fil.json
    procedure Init_fil is
    begin
       Locale_Fil.Code := To_Unbounded_String ("fil");
@@ -3926,7 +3926,7 @@ package body Sayabledate_Locales is
 
    end Init_fil;
 
-   --  Source: date/locales/src/fj.json
+   --  Source: locales/fj.json
    procedure Init_fj is
    begin
       Locale_Fj.Code := To_Unbounded_String ("fj");
@@ -4023,7 +4023,7 @@ package body Sayabledate_Locales is
 
    end Init_fj;
 
-   --  Source: date/locales/src/fon.json
+   --  Source: locales/fon.json
    procedure Init_fon is
    begin
       Locale_Fon.Code := To_Unbounded_String ("fon");
@@ -4120,7 +4120,7 @@ package body Sayabledate_Locales is
 
    end Init_fon;
 
-   --  Source: date/locales/src/fr.json
+   --  Source: locales/fr.json
    procedure Init_fr is
    begin
       Locale_Fr.Code := To_Unbounded_String ("fr");
@@ -4219,7 +4219,7 @@ package body Sayabledate_Locales is
 
    end Init_fr;
 
-   --  Source: date/locales/src/ga.json
+   --  Source: locales/ga.json
    procedure Init_ga is
    begin
       Locale_Ga.Code := To_Unbounded_String ("ga");
@@ -4316,7 +4316,7 @@ package body Sayabledate_Locales is
 
    end Init_ga;
 
-   --  Source: date/locales/src/gd.json
+   --  Source: locales/gd.json
    procedure Init_gd is
    begin
       Locale_Gd.Code := To_Unbounded_String ("gd");
@@ -4413,7 +4413,7 @@ package body Sayabledate_Locales is
 
    end Init_gd;
 
-   --  Source: date/locales/src/gl.json
+   --  Source: locales/gl.json
    procedure Init_gl is
    begin
       Locale_Gl.Code := To_Unbounded_String ("gl");
@@ -4510,7 +4510,7 @@ package body Sayabledate_Locales is
 
    end Init_gl;
 
-   --  Source: date/locales/src/gn.json
+   --  Source: locales/gn.json
    procedure Init_gn is
    begin
       Locale_Gn.Code := To_Unbounded_String ("gn");
@@ -4607,7 +4607,7 @@ package body Sayabledate_Locales is
 
    end Init_gn;
 
-   --  Source: date/locales/src/gu.json
+   --  Source: locales/gu.json
    procedure Init_gu is
    begin
       Locale_Gu.Code := To_Unbounded_String ("gu");
@@ -4704,7 +4704,7 @@ package body Sayabledate_Locales is
 
    end Init_gu;
 
-   --  Source: date/locales/src/gv.json
+   --  Source: locales/gv.json
    procedure Init_gv is
    begin
       Locale_Gv.Code := To_Unbounded_String ("gv");
@@ -4799,7 +4799,7 @@ package body Sayabledate_Locales is
 
    end Init_gv;
 
-   --  Source: date/locales/src/ha.json
+   --  Source: locales/ha.json
    procedure Init_ha is
    begin
       Locale_Ha.Code := To_Unbounded_String ("ha");
@@ -4896,7 +4896,7 @@ package body Sayabledate_Locales is
 
    end Init_ha;
 
-   --  Source: date/locales/src/he.json
+   --  Source: locales/he.json
    procedure Init_he is
    begin
       Locale_He.Code := To_Unbounded_String ("he");
@@ -4993,7 +4993,7 @@ package body Sayabledate_Locales is
 
    end Init_he;
 
-   --  Source: date/locales/src/hi.json
+   --  Source: locales/hi.json
    procedure Init_hi is
    begin
       Locale_Hi.Code := To_Unbounded_String ("hi");
@@ -5090,7 +5090,7 @@ package body Sayabledate_Locales is
 
    end Init_hi;
 
-   --  Source: date/locales/src/hmn.json
+   --  Source: locales/hmn.json
    procedure Init_hmn is
    begin
       Locale_Hmn.Code := To_Unbounded_String ("hmn");
@@ -5187,7 +5187,7 @@ package body Sayabledate_Locales is
 
    end Init_hmn;
 
-   --  Source: date/locales/src/hr.json
+   --  Source: locales/hr.json
    procedure Init_hr is
    begin
       Locale_Hr.Code := To_Unbounded_String ("hr");
@@ -5296,7 +5296,7 @@ package body Sayabledate_Locales is
 
    end Init_hr;
 
-   --  Source: date/locales/src/ht.json
+   --  Source: locales/ht.json
    procedure Init_ht is
    begin
       Locale_Ht.Code := To_Unbounded_String ("ht");
@@ -5393,7 +5393,7 @@ package body Sayabledate_Locales is
 
    end Init_ht;
 
-   --  Source: date/locales/src/hu.json
+   --  Source: locales/hu.json
    procedure Init_hu is
    begin
       Locale_Hu.Code := To_Unbounded_String ("hu");
@@ -5490,7 +5490,7 @@ package body Sayabledate_Locales is
 
    end Init_hu;
 
-   --  Source: date/locales/src/hy.json
+   --  Source: locales/hy.json
    procedure Init_hy is
    begin
       Locale_Hy.Code := To_Unbounded_String ("hy");
@@ -5587,7 +5587,7 @@ package body Sayabledate_Locales is
 
    end Init_hy;
 
-   --  Source: date/locales/src/id.json
+   --  Source: locales/id.json
    procedure Init_id is
    begin
       Locale_Id.Code := To_Unbounded_String ("id");
@@ -5684,7 +5684,7 @@ package body Sayabledate_Locales is
 
    end Init_id;
 
-   --  Source: date/locales/src/ig.json
+   --  Source: locales/ig.json
    procedure Init_ig is
    begin
       Locale_Ig.Code := To_Unbounded_String ("ig");
@@ -5781,7 +5781,7 @@ package body Sayabledate_Locales is
 
    end Init_ig;
 
-   --  Source: date/locales/src/is.json
+   --  Source: locales/is.json
    procedure Init_is is
    begin
       Locale_Is.Code := To_Unbounded_String ("is");
@@ -5878,7 +5878,7 @@ package body Sayabledate_Locales is
 
    end Init_is;
 
-   --  Source: date/locales/src/it.json
+   --  Source: locales/it.json
    procedure Init_it is
    begin
       Locale_It.Code := To_Unbounded_String ("it");
@@ -5975,7 +5975,7 @@ package body Sayabledate_Locales is
 
    end Init_it;
 
-   --  Source: date/locales/src/ja.json
+   --  Source: locales/ja.json
    procedure Init_ja is
    begin
       Locale_Ja.Code := To_Unbounded_String ("ja");
@@ -6072,7 +6072,7 @@ package body Sayabledate_Locales is
 
    end Init_ja;
 
-   --  Source: date/locales/src/jv.json
+   --  Source: locales/jv.json
    procedure Init_jv is
    begin
       Locale_Jv.Code := To_Unbounded_String ("jv");
@@ -6169,7 +6169,7 @@ package body Sayabledate_Locales is
 
    end Init_jv;
 
-   --  Source: date/locales/src/ka.json
+   --  Source: locales/ka.json
    procedure Init_ka is
    begin
       Locale_Ka.Code := To_Unbounded_String ("ka");
@@ -6266,7 +6266,7 @@ package body Sayabledate_Locales is
 
    end Init_ka;
 
-   --  Source: date/locales/src/kbp.json
+   --  Source: locales/kbp.json
    procedure Init_kbp is
    begin
       Locale_Kbp.Code := To_Unbounded_String ("kbp");
@@ -6363,7 +6363,7 @@ package body Sayabledate_Locales is
 
    end Init_kbp;
 
-   --  Source: date/locales/src/kek.json
+   --  Source: locales/kek.json
    procedure Init_kek is
    begin
       Locale_Kek.Code := To_Unbounded_String ("kek");
@@ -6458,7 +6458,7 @@ package body Sayabledate_Locales is
 
    end Init_kek;
 
-   --  Source: date/locales/src/ki.json
+   --  Source: locales/ki.json
    procedure Init_ki is
    begin
       Locale_Ki.Code := To_Unbounded_String ("ki");
@@ -6553,7 +6553,7 @@ package body Sayabledate_Locales is
 
    end Init_ki;
 
-   --  Source: date/locales/src/kk.json
+   --  Source: locales/kk.json
    procedure Init_kk is
    begin
       Locale_Kk.Code := To_Unbounded_String ("kk");
@@ -6650,7 +6650,7 @@ package body Sayabledate_Locales is
 
    end Init_kk;
 
-   --  Source: date/locales/src/kl.json
+   --  Source: locales/kl.json
    procedure Init_kl is
    begin
       Locale_Kl.Code := To_Unbounded_String ("kl");
@@ -6747,7 +6747,7 @@ package body Sayabledate_Locales is
 
    end Init_kl;
 
-   --  Source: date/locales/src/km.json
+   --  Source: locales/km.json
    procedure Init_km is
    begin
       Locale_Km.Code := To_Unbounded_String ("km");
@@ -6844,7 +6844,7 @@ package body Sayabledate_Locales is
 
    end Init_km;
 
-   --  Source: date/locales/src/kn.json
+   --  Source: locales/kn.json
    procedure Init_kn is
    begin
       Locale_Kn.Code := To_Unbounded_String ("kn");
@@ -6941,7 +6941,7 @@ package body Sayabledate_Locales is
 
    end Init_kn;
 
-   --  Source: date/locales/src/ko.json
+   --  Source: locales/ko.json
    procedure Init_ko is
    begin
       Locale_Ko.Code := To_Unbounded_String ("ko");
@@ -7038,7 +7038,7 @@ package body Sayabledate_Locales is
 
    end Init_ko;
 
-   --  Source: date/locales/src/kpe.json
+   --  Source: locales/kpe.json
    procedure Init_kpe is
    begin
       Locale_Kpe.Code := To_Unbounded_String ("kpe");
@@ -7135,7 +7135,7 @@ package body Sayabledate_Locales is
 
    end Init_kpe;
 
-   --  Source: date/locales/src/kri.json
+   --  Source: locales/kri.json
    procedure Init_kri is
    begin
       Locale_Kri.Code := To_Unbounded_String ("kri");
@@ -7232,7 +7232,7 @@ package body Sayabledate_Locales is
 
    end Init_kri;
 
-   --  Source: date/locales/src/ktu.json
+   --  Source: locales/ktu.json
    procedure Init_ktu is
    begin
       Locale_Ktu.Code := To_Unbounded_String ("ktu");
@@ -7329,7 +7329,7 @@ package body Sayabledate_Locales is
 
    end Init_ktu;
 
-   --  Source: date/locales/src/ku.json
+   --  Source: locales/ku.json
    procedure Init_ku is
    begin
       Locale_Ku.Code := To_Unbounded_String ("ku");
@@ -7426,7 +7426,7 @@ package body Sayabledate_Locales is
 
    end Init_ku;
 
-   --  Source: date/locales/src/kw.json
+   --  Source: locales/kw.json
    procedure Init_kw is
    begin
       Locale_Kw.Code := To_Unbounded_String ("kw");
@@ -7521,7 +7521,7 @@ package body Sayabledate_Locales is
 
    end Init_kw;
 
-   --  Source: date/locales/src/ky.json
+   --  Source: locales/ky.json
    procedure Init_ky is
    begin
       Locale_Ky.Code := To_Unbounded_String ("ky");
@@ -7618,7 +7618,7 @@ package body Sayabledate_Locales is
 
    end Init_ky;
 
-   --  Source: date/locales/src/lb.json
+   --  Source: locales/lb.json
    procedure Init_lb is
    begin
       Locale_Lb.Code := To_Unbounded_String ("lb");
@@ -7715,7 +7715,7 @@ package body Sayabledate_Locales is
 
    end Init_lb;
 
-   --  Source: date/locales/src/lg.json
+   --  Source: locales/lg.json
    procedure Init_lg is
    begin
       Locale_Lg.Code := To_Unbounded_String ("lg");
@@ -7812,7 +7812,7 @@ package body Sayabledate_Locales is
 
    end Init_lg;
 
-   --  Source: date/locales/src/ln.json
+   --  Source: locales/ln.json
    procedure Init_ln is
    begin
       Locale_Ln.Code := To_Unbounded_String ("ln");
@@ -7909,7 +7909,7 @@ package body Sayabledate_Locales is
 
    end Init_ln;
 
-   --  Source: date/locales/src/lo.json
+   --  Source: locales/lo.json
    procedure Init_lo is
    begin
       Locale_Lo.Code := To_Unbounded_String ("lo");
@@ -8006,7 +8006,7 @@ package body Sayabledate_Locales is
 
    end Init_lo;
 
-   --  Source: date/locales/src/lt.json
+   --  Source: locales/lt.json
    procedure Init_lt is
    begin
       Locale_Lt.Code := To_Unbounded_String ("lt");
@@ -8115,7 +8115,7 @@ package body Sayabledate_Locales is
 
    end Init_lt;
 
-   --  Source: date/locales/src/luo.json
+   --  Source: locales/luo.json
    procedure Init_luo is
    begin
       Locale_Luo.Code := To_Unbounded_String ("luo");
@@ -8211,7 +8211,7 @@ package body Sayabledate_Locales is
 
    end Init_luo;
 
-   --  Source: date/locales/src/lv.json
+   --  Source: locales/lv.json
    procedure Init_lv is
    begin
       Locale_Lv.Code := To_Unbounded_String ("lv");
@@ -8308,7 +8308,7 @@ package body Sayabledate_Locales is
 
    end Init_lv;
 
-   --  Source: date/locales/src/mam.json
+   --  Source: locales/mam.json
    procedure Init_mam is
    begin
       Locale_Mam.Code := To_Unbounded_String ("mam");
@@ -8403,7 +8403,7 @@ package body Sayabledate_Locales is
 
    end Init_mam;
 
-   --  Source: date/locales/src/men.json
+   --  Source: locales/men.json
    procedure Init_men is
    begin
       Locale_Men.Code := To_Unbounded_String ("men");
@@ -8500,7 +8500,7 @@ package body Sayabledate_Locales is
 
    end Init_men;
 
-   --  Source: date/locales/src/mfe.json
+   --  Source: locales/mfe.json
    procedure Init_mfe is
    begin
       Locale_Mfe.Code := To_Unbounded_String ("mfe");
@@ -8597,7 +8597,7 @@ package body Sayabledate_Locales is
 
    end Init_mfe;
 
-   --  Source: date/locales/src/mg.json
+   --  Source: locales/mg.json
    procedure Init_mg is
    begin
       Locale_Mg.Code := To_Unbounded_String ("mg");
@@ -8694,7 +8694,7 @@ package body Sayabledate_Locales is
 
    end Init_mg;
 
-   --  Source: date/locales/src/mi.json
+   --  Source: locales/mi.json
    procedure Init_mi is
    begin
       Locale_Mi.Code := To_Unbounded_String ("mi");
@@ -8791,7 +8791,7 @@ package body Sayabledate_Locales is
 
    end Init_mi;
 
-   --  Source: date/locales/src/mk.json
+   --  Source: locales/mk.json
    procedure Init_mk is
    begin
       Locale_Mk.Code := To_Unbounded_String ("mk");
@@ -8888,7 +8888,7 @@ package body Sayabledate_Locales is
 
    end Init_mk;
 
-   --  Source: date/locales/src/ml.json
+   --  Source: locales/ml.json
    procedure Init_ml is
    begin
       Locale_Ml.Code := To_Unbounded_String ("ml");
@@ -8985,7 +8985,7 @@ package body Sayabledate_Locales is
 
    end Init_ml;
 
-   --  Source: date/locales/src/mn.json
+   --  Source: locales/mn.json
    procedure Init_mn is
    begin
       Locale_Mn.Code := To_Unbounded_String ("mn");
@@ -9082,7 +9082,7 @@ package body Sayabledate_Locales is
 
    end Init_mn;
 
-   --  Source: date/locales/src/mnk.json
+   --  Source: locales/mnk.json
    procedure Init_mnk is
    begin
       Locale_Mnk.Code := To_Unbounded_String ("mnk");
@@ -9179,7 +9179,7 @@ package body Sayabledate_Locales is
 
    end Init_mnk;
 
-   --  Source: date/locales/src/mos.json
+   --  Source: locales/mos.json
    procedure Init_mos is
    begin
       Locale_Mos.Code := To_Unbounded_String ("mos");
@@ -9276,7 +9276,7 @@ package body Sayabledate_Locales is
 
    end Init_mos;
 
-   --  Source: date/locales/src/mr.json
+   --  Source: locales/mr.json
    procedure Init_mr is
    begin
       Locale_Mr.Code := To_Unbounded_String ("mr");
@@ -9373,7 +9373,7 @@ package body Sayabledate_Locales is
 
    end Init_mr;
 
-   --  Source: date/locales/src/ms.json
+   --  Source: locales/ms.json
    procedure Init_ms is
    begin
       Locale_Ms.Code := To_Unbounded_String ("ms");
@@ -9470,7 +9470,7 @@ package body Sayabledate_Locales is
 
    end Init_ms;
 
-   --  Source: date/locales/src/mt.json
+   --  Source: locales/mt.json
    procedure Init_mt is
    begin
       Locale_Mt.Code := To_Unbounded_String ("mt");
@@ -9567,7 +9567,7 @@ package body Sayabledate_Locales is
 
    end Init_mt;
 
-   --  Source: date/locales/src/my.json
+   --  Source: locales/my.json
    procedure Init_my is
    begin
       Locale_My.Code := To_Unbounded_String ("my");
@@ -9664,7 +9664,7 @@ package body Sayabledate_Locales is
 
    end Init_my;
 
-   --  Source: date/locales/src/nb.json
+   --  Source: locales/nb.json
    procedure Init_nb is
    begin
       Locale_Nb.Code := To_Unbounded_String ("nb");
@@ -9761,7 +9761,7 @@ package body Sayabledate_Locales is
 
    end Init_nb;
 
-   --  Source: date/locales/src/nd.json
+   --  Source: locales/nd.json
    procedure Init_nd is
    begin
       Locale_Nd.Code := To_Unbounded_String ("nd");
@@ -9858,7 +9858,7 @@ package body Sayabledate_Locales is
 
    end Init_nd;
 
-   --  Source: date/locales/src/ne.json
+   --  Source: locales/ne.json
    procedure Init_ne is
    begin
       Locale_Ne.Code := To_Unbounded_String ("ne");
@@ -9955,7 +9955,7 @@ package body Sayabledate_Locales is
 
    end Init_ne;
 
-   --  Source: date/locales/src/ng.json
+   --  Source: locales/ng.json
    procedure Init_ng is
    begin
       Locale_Ng.Code := To_Unbounded_String ("ng");
@@ -10052,7 +10052,7 @@ package body Sayabledate_Locales is
 
    end Init_ng;
 
-   --  Source: date/locales/src/nl.json
+   --  Source: locales/nl.json
    procedure Init_nl is
    begin
       Locale_Nl.Code := To_Unbounded_String ("nl");
@@ -10149,7 +10149,7 @@ package body Sayabledate_Locales is
 
    end Init_nl;
 
-   --  Source: date/locales/src/nr.json
+   --  Source: locales/nr.json
    procedure Init_nr is
    begin
       Locale_Nr.Code := To_Unbounded_String ("nr");
@@ -10244,7 +10244,7 @@ package body Sayabledate_Locales is
 
    end Init_nr;
 
-   --  Source: date/locales/src/nso.json
+   --  Source: locales/nso.json
    procedure Init_nso is
    begin
       Locale_Nso.Code := To_Unbounded_String ("nso");
@@ -10341,7 +10341,7 @@ package body Sayabledate_Locales is
 
    end Init_nso;
 
-   --  Source: date/locales/src/nus.json
+   --  Source: locales/nus.json
    procedure Init_nus is
    begin
       Locale_Nus.Code := To_Unbounded_String ("nus");
@@ -10438,7 +10438,7 @@ package body Sayabledate_Locales is
 
    end Init_nus;
 
-   --  Source: date/locales/src/ny.json
+   --  Source: locales/ny.json
    procedure Init_ny is
    begin
       Locale_Ny.Code := To_Unbounded_String ("ny");
@@ -10535,7 +10535,7 @@ package body Sayabledate_Locales is
 
    end Init_ny;
 
-   --  Source: date/locales/src/om.json
+   --  Source: locales/om.json
    procedure Init_om is
    begin
       Locale_Om.Code := To_Unbounded_String ("om");
@@ -10632,7 +10632,7 @@ package body Sayabledate_Locales is
 
    end Init_om;
 
-   --  Source: date/locales/src/or.json
+   --  Source: locales/or.json
    procedure Init_or is
    begin
       Locale_Or.Code := To_Unbounded_String ("or");
@@ -10729,7 +10729,7 @@ package body Sayabledate_Locales is
 
    end Init_or;
 
-   --  Source: date/locales/src/pa.json
+   --  Source: locales/pa.json
    procedure Init_pa is
    begin
       Locale_Pa.Code := To_Unbounded_String ("pa");
@@ -10826,7 +10826,7 @@ package body Sayabledate_Locales is
 
    end Init_pa;
 
-   --  Source: date/locales/src/pis.json
+   --  Source: locales/pis.json
    procedure Init_pis is
    begin
       Locale_Pis.Code := To_Unbounded_String ("pis");
@@ -10923,7 +10923,7 @@ package body Sayabledate_Locales is
 
    end Init_pis;
 
-   --  Source: date/locales/src/pl.json
+   --  Source: locales/pl.json
    procedure Init_pl is
    begin
       Locale_Pl.Code := To_Unbounded_String ("pl");
@@ -11032,7 +11032,7 @@ package body Sayabledate_Locales is
 
    end Init_pl;
 
-   --  Source: date/locales/src/pov.json
+   --  Source: locales/pov.json
    procedure Init_pov is
    begin
       Locale_Pov.Code := To_Unbounded_String ("pov");
@@ -11129,7 +11129,7 @@ package body Sayabledate_Locales is
 
    end Init_pov;
 
-   --  Source: date/locales/src/ps.json
+   --  Source: locales/ps.json
    procedure Init_ps is
    begin
       Locale_Ps.Code := To_Unbounded_String ("ps");
@@ -11226,7 +11226,7 @@ package body Sayabledate_Locales is
 
    end Init_ps;
 
-   --  Source: date/locales/src/pt.json
+   --  Source: locales/pt.json
    procedure Init_pt is
    begin
       Locale_Pt.Code := To_Unbounded_String ("pt");
@@ -11323,7 +11323,7 @@ package body Sayabledate_Locales is
 
    end Init_pt;
 
-   --  Source: date/locales/src/qu.json
+   --  Source: locales/qu.json
    procedure Init_qu is
    begin
       Locale_Qu.Code := To_Unbounded_String ("qu");
@@ -11420,7 +11420,7 @@ package body Sayabledate_Locales is
 
    end Init_qu;
 
-   --  Source: date/locales/src/quc.json
+   --  Source: locales/quc.json
    procedure Init_quc is
    begin
       Locale_Quc.Code := To_Unbounded_String ("quc");
@@ -11517,7 +11517,7 @@ package body Sayabledate_Locales is
 
    end Init_quc;
 
-   --  Source: date/locales/src/ro.json
+   --  Source: locales/ro.json
    procedure Init_ro is
    begin
       Locale_Ro.Code := To_Unbounded_String ("ro");
@@ -11626,7 +11626,7 @@ package body Sayabledate_Locales is
 
    end Init_ro;
 
-   --  Source: date/locales/src/ru.json
+   --  Source: locales/ru.json
    procedure Init_ru is
    begin
       Locale_Ru.Code := To_Unbounded_String ("ru");
@@ -11735,7 +11735,7 @@ package body Sayabledate_Locales is
 
    end Init_ru;
 
-   --  Source: date/locales/src/rw.json
+   --  Source: locales/rw.json
    procedure Init_rw is
    begin
       Locale_Rw.Code := To_Unbounded_String ("rw");
@@ -11832,7 +11832,7 @@ package body Sayabledate_Locales is
 
    end Init_rw;
 
-   --  Source: date/locales/src/sar.json
+   --  Source: locales/sar.json
    procedure Init_sar is
    begin
       Locale_Sar.Code := To_Unbounded_String ("sar");
@@ -11929,7 +11929,7 @@ package body Sayabledate_Locales is
 
    end Init_sar;
 
-   --  Source: date/locales/src/sd.json
+   --  Source: locales/sd.json
    procedure Init_sd is
    begin
       Locale_Sd.Code := To_Unbounded_String ("sd");
@@ -12026,7 +12026,7 @@ package body Sayabledate_Locales is
 
    end Init_sd;
 
-   --  Source: date/locales/src/sg.json
+   --  Source: locales/sg.json
    procedure Init_sg is
    begin
       Locale_Sg.Code := To_Unbounded_String ("sg");
@@ -12123,7 +12123,7 @@ package body Sayabledate_Locales is
 
    end Init_sg;
 
-   --  Source: date/locales/src/shi.json
+   --  Source: locales/shi.json
    procedure Init_shi is
    begin
       Locale_Shi.Code := To_Unbounded_String ("shi");
@@ -12218,7 +12218,7 @@ package body Sayabledate_Locales is
 
    end Init_shi;
 
-   --  Source: date/locales/src/shn.json
+   --  Source: locales/shn.json
    procedure Init_shn is
    begin
       Locale_Shn.Code := To_Unbounded_String ("shn");
@@ -12315,7 +12315,7 @@ package body Sayabledate_Locales is
 
    end Init_shn;
 
-   --  Source: date/locales/src/si.json
+   --  Source: locales/si.json
    procedure Init_si is
    begin
       Locale_Si.Code := To_Unbounded_String ("si");
@@ -12412,7 +12412,7 @@ package body Sayabledate_Locales is
 
    end Init_si;
 
-   --  Source: date/locales/src/sk.json
+   --  Source: locales/sk.json
    procedure Init_sk is
    begin
       Locale_Sk.Code := To_Unbounded_String ("sk");
@@ -12521,7 +12521,7 @@ package body Sayabledate_Locales is
 
    end Init_sk;
 
-   --  Source: date/locales/src/sl.json
+   --  Source: locales/sl.json
    procedure Init_sl is
    begin
       Locale_Sl.Code := To_Unbounded_String ("sl");
@@ -12630,7 +12630,7 @@ package body Sayabledate_Locales is
 
    end Init_sl;
 
-   --  Source: date/locales/src/sn.json
+   --  Source: locales/sn.json
    procedure Init_sn is
    begin
       Locale_Sn.Code := To_Unbounded_String ("sn");
@@ -12727,7 +12727,7 @@ package body Sayabledate_Locales is
 
    end Init_sn;
 
-   --  Source: date/locales/src/snk.json
+   --  Source: locales/snk.json
    procedure Init_snk is
    begin
       Locale_Snk.Code := To_Unbounded_String ("snk");
@@ -12824,7 +12824,7 @@ package body Sayabledate_Locales is
 
    end Init_snk;
 
-   --  Source: date/locales/src/so.json
+   --  Source: locales/so.json
    procedure Init_so is
    begin
       Locale_So.Code := To_Unbounded_String ("so");
@@ -12921,7 +12921,7 @@ package body Sayabledate_Locales is
 
    end Init_so;
 
-   --  Source: date/locales/src/sq.json
+   --  Source: locales/sq.json
    procedure Init_sq is
    begin
       Locale_Sq.Code := To_Unbounded_String ("sq");
@@ -13018,7 +13018,7 @@ package body Sayabledate_Locales is
 
    end Init_sq;
 
-   --  Source: date/locales/src/sr.json
+   --  Source: locales/sr.json
    procedure Init_sr is
    begin
       Locale_Sr.Code := To_Unbounded_String ("sr");
@@ -13115,7 +13115,7 @@ package body Sayabledate_Locales is
 
    end Init_sr;
 
-   --  Source: date/locales/src/ss.json
+   --  Source: locales/ss.json
    procedure Init_ss is
    begin
       Locale_Ss.Code := To_Unbounded_String ("ss");
@@ -13212,7 +13212,7 @@ package body Sayabledate_Locales is
 
    end Init_ss;
 
-   --  Source: date/locales/src/st.json
+   --  Source: locales/st.json
    procedure Init_st is
    begin
       Locale_St.Code := To_Unbounded_String ("st");
@@ -13309,7 +13309,7 @@ package body Sayabledate_Locales is
 
    end Init_st;
 
-   --  Source: date/locales/src/su.json
+   --  Source: locales/su.json
    procedure Init_su is
    begin
       Locale_Su.Code := To_Unbounded_String ("su");
@@ -13406,7 +13406,7 @@ package body Sayabledate_Locales is
 
    end Init_su;
 
-   --  Source: date/locales/src/suk.json
+   --  Source: locales/suk.json
    procedure Init_suk is
    begin
       Locale_Suk.Code := To_Unbounded_String ("suk");
@@ -13503,7 +13503,7 @@ package body Sayabledate_Locales is
 
    end Init_suk;
 
-   --  Source: date/locales/src/sv.json
+   --  Source: locales/sv.json
    procedure Init_sv is
    begin
       Locale_Sv.Code := To_Unbounded_String ("sv");
@@ -13600,7 +13600,7 @@ package body Sayabledate_Locales is
 
    end Init_sv;
 
-   --  Source: date/locales/src/sw.json
+   --  Source: locales/sw.json
    procedure Init_sw is
    begin
       Locale_Sw.Code := To_Unbounded_String ("sw");
@@ -13697,7 +13697,7 @@ package body Sayabledate_Locales is
 
    end Init_sw;
 
-   --  Source: date/locales/src/ta.json
+   --  Source: locales/ta.json
    procedure Init_ta is
    begin
       Locale_Ta.Code := To_Unbounded_String ("ta");
@@ -13794,7 +13794,7 @@ package body Sayabledate_Locales is
 
    end Init_ta;
 
-   --  Source: date/locales/src/te.json
+   --  Source: locales/te.json
    procedure Init_te is
    begin
       Locale_Te.Code := To_Unbounded_String ("te");
@@ -13891,7 +13891,7 @@ package body Sayabledate_Locales is
 
    end Init_te;
 
-   --  Source: date/locales/src/tem.json
+   --  Source: locales/tem.json
    procedure Init_tem is
    begin
       Locale_Tem.Code := To_Unbounded_String ("tem");
@@ -13988,7 +13988,7 @@ package body Sayabledate_Locales is
 
    end Init_tem;
 
-   --  Source: date/locales/src/tet.json
+   --  Source: locales/tet.json
    procedure Init_tet is
    begin
       Locale_Tet.Code := To_Unbounded_String ("tet");
@@ -14085,7 +14085,7 @@ package body Sayabledate_Locales is
 
    end Init_tet;
 
-   --  Source: date/locales/src/tg.json
+   --  Source: locales/tg.json
    procedure Init_tg is
    begin
       Locale_Tg.Code := To_Unbounded_String ("tg");
@@ -14182,7 +14182,7 @@ package body Sayabledate_Locales is
 
    end Init_tg;
 
-   --  Source: date/locales/src/th.json
+   --  Source: locales/th.json
    procedure Init_th is
    begin
       Locale_Th.Code := To_Unbounded_String ("th");
@@ -14279,7 +14279,7 @@ package body Sayabledate_Locales is
 
    end Init_th;
 
-   --  Source: date/locales/src/ti.json
+   --  Source: locales/ti.json
    procedure Init_ti is
    begin
       Locale_Ti.Code := To_Unbounded_String ("ti");
@@ -14376,7 +14376,7 @@ package body Sayabledate_Locales is
 
    end Init_ti;
 
-   --  Source: date/locales/src/tig.json
+   --  Source: locales/tig.json
    procedure Init_tig is
    begin
       Locale_Tig.Code := To_Unbounded_String ("tig");
@@ -14473,7 +14473,7 @@ package body Sayabledate_Locales is
 
    end Init_tig;
 
-   --  Source: date/locales/src/tk.json
+   --  Source: locales/tk.json
    procedure Init_tk is
    begin
       Locale_Tk.Code := To_Unbounded_String ("tk");
@@ -14570,7 +14570,7 @@ package body Sayabledate_Locales is
 
    end Init_tk;
 
-   --  Source: date/locales/src/tn.json
+   --  Source: locales/tn.json
    procedure Init_tn is
    begin
       Locale_Tn.Code := To_Unbounded_String ("tn");
@@ -14667,7 +14667,7 @@ package body Sayabledate_Locales is
 
    end Init_tn;
 
-   --  Source: date/locales/src/tpi.json
+   --  Source: locales/tpi.json
    procedure Init_tpi is
    begin
       Locale_Tpi.Code := To_Unbounded_String ("tpi");
@@ -14764,7 +14764,7 @@ package body Sayabledate_Locales is
 
    end Init_tpi;
 
-   --  Source: date/locales/src/tr.json
+   --  Source: locales/tr.json
    procedure Init_tr is
    begin
       Locale_Tr.Code := To_Unbounded_String ("tr");
@@ -14861,7 +14861,7 @@ package body Sayabledate_Locales is
 
    end Init_tr;
 
-   --  Source: date/locales/src/ts.json
+   --  Source: locales/ts.json
    procedure Init_ts is
    begin
       Locale_Ts.Code := To_Unbounded_String ("ts");
@@ -14958,7 +14958,7 @@ package body Sayabledate_Locales is
 
    end Init_ts;
 
-   --  Source: date/locales/src/tum.json
+   --  Source: locales/tum.json
    procedure Init_tum is
    begin
       Locale_Tum.Code := To_Unbounded_String ("tum");
@@ -15053,7 +15053,7 @@ package body Sayabledate_Locales is
 
    end Init_tum;
 
-   --  Source: date/locales/src/tzm.json
+   --  Source: locales/tzm.json
    procedure Init_tzm is
    begin
       Locale_Tzm.Code := To_Unbounded_String ("tzm");
@@ -15148,7 +15148,7 @@ package body Sayabledate_Locales is
 
    end Init_tzm;
 
-   --  Source: date/locales/src/uk.json
+   --  Source: locales/uk.json
    procedure Init_uk is
    begin
       Locale_Uk.Code := To_Unbounded_String ("uk");
@@ -15257,7 +15257,7 @@ package body Sayabledate_Locales is
 
    end Init_uk;
 
-   --  Source: date/locales/src/umb.json
+   --  Source: locales/umb.json
    procedure Init_umb is
    begin
       Locale_Umb.Code := To_Unbounded_String ("umb");
@@ -15354,7 +15354,7 @@ package body Sayabledate_Locales is
 
    end Init_umb;
 
-   --  Source: date/locales/src/ur.json
+   --  Source: locales/ur.json
    procedure Init_ur is
    begin
       Locale_Ur.Code := To_Unbounded_String ("ur");
@@ -15451,7 +15451,7 @@ package body Sayabledate_Locales is
 
    end Init_ur;
 
-   --  Source: date/locales/src/uz.json
+   --  Source: locales/uz.json
    procedure Init_uz is
    begin
       Locale_Uz.Code := To_Unbounded_String ("uz");
@@ -15548,7 +15548,7 @@ package body Sayabledate_Locales is
 
    end Init_uz;
 
-   --  Source: date/locales/src/ve.json
+   --  Source: locales/ve.json
    procedure Init_ve is
    begin
       Locale_Ve.Code := To_Unbounded_String ("ve");
@@ -15644,7 +15644,7 @@ package body Sayabledate_Locales is
 
    end Init_ve;
 
-   --  Source: date/locales/src/vi.json
+   --  Source: locales/vi.json
    procedure Init_vi is
    begin
       Locale_Vi.Code := To_Unbounded_String ("vi");
@@ -15741,7 +15741,7 @@ package body Sayabledate_Locales is
 
    end Init_vi;
 
-   --  Source: date/locales/src/vmw.json
+   --  Source: locales/vmw.json
    procedure Init_vmw is
    begin
       Locale_Vmw.Code := To_Unbounded_String ("vmw");
@@ -15838,7 +15838,7 @@ package body Sayabledate_Locales is
 
    end Init_vmw;
 
-   --  Source: date/locales/src/wo.json
+   --  Source: locales/wo.json
    procedure Init_wo is
    begin
       Locale_Wo.Code := To_Unbounded_String ("wo");
@@ -15935,7 +15935,7 @@ package body Sayabledate_Locales is
 
    end Init_wo;
 
-   --  Source: date/locales/src/xh.json
+   --  Source: locales/xh.json
    procedure Init_xh is
    begin
       Locale_Xh.Code := To_Unbounded_String ("xh");
@@ -16032,7 +16032,7 @@ package body Sayabledate_Locales is
 
    end Init_xh;
 
-   --  Source: date/locales/src/yao.json
+   --  Source: locales/yao.json
    procedure Init_yao is
    begin
       Locale_Yao.Code := To_Unbounded_String ("yao");
@@ -16127,7 +16127,7 @@ package body Sayabledate_Locales is
 
    end Init_yao;
 
-   --  Source: date/locales/src/yo.json
+   --  Source: locales/yo.json
    procedure Init_yo is
    begin
       Locale_Yo.Code := To_Unbounded_String ("yo");
@@ -16224,7 +16224,7 @@ package body Sayabledate_Locales is
 
    end Init_yo;
 
-   --  Source: date/locales/src/yue.json
+   --  Source: locales/yue.json
    procedure Init_yue is
    begin
       Locale_Yue.Code := To_Unbounded_String ("yue");
@@ -16321,7 +16321,7 @@ package body Sayabledate_Locales is
 
    end Init_yue;
 
-   --  Source: date/locales/src/zdj.json
+   --  Source: locales/zdj.json
    procedure Init_zdj is
    begin
       Locale_Zdj.Code := To_Unbounded_String ("zdj");
@@ -16418,7 +16418,7 @@ package body Sayabledate_Locales is
 
    end Init_zdj;
 
-   --  Source: date/locales/src/zh.json
+   --  Source: locales/zh.json
    procedure Init_zh is
    begin
       Locale_Zh.Code := To_Unbounded_String ("zh");
@@ -16515,7 +16515,7 @@ package body Sayabledate_Locales is
 
    end Init_zh;
 
-   --  Source: date/locales/src/zu.json
+   --  Source: locales/zu.json
    procedure Init_zu is
    begin
       Locale_Zu.Code := To_Unbounded_String ("zu");

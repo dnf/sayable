@@ -172,9 +172,11 @@ already numeric (1月, 2月, etc.). Short weekday names reduce to single charact
 
 ## Adding or modifying locale data
 
-1. Edit `locales/src/{code}.json`
-2. Run `just generate locales` from the `date/` directory
-3. Run `just test` to verify all implementations pass
+1. Edit the `date` section of `locales/{code}.json` at the repository root (one file per language, shared by all four libraries)
+2. Run `just generate locales` from the repository root (it regenerates every library's locale code and `docs/locales/{code}.md`)
+3. Run `just check`, `just test cli` and the native suites to verify all implementations pass
+
+See [`docs/adding-a-locale.md`](../../docs/adding-a-locale.md) for every field of the `date` section.
 
 When adding a new locale, verify against CLDR data at:
 https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-dates-full/main

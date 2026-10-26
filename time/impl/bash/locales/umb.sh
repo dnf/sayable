@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/umb.json
+# Source: locales/umb.json
 
 _sayabletime_locale_umb() {
     _clock_hours=('olohola likumi na yivali' 'yimosi' 'yivali' 'yitathu' 'yinyali' 'yitanu' 'yitathu-va-yivali' 'yisemba' 'yinyali-va-yivali' 'yitanu-va-yivali' 'likumi' 'likumi na yimosi')

@@ -1,0 +1,208 @@
+{
+  "code": "hu",
+  "name": "Hungarian",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} nap",
+      "week": "{n} hét",
+      "month": "{n} hónap",
+      "year": "{n} év"
+    },
+    "half": "{n} és fél",
+    "delimiter": ", ",
+    "justBorn": "Újszülött",
+    "stages": {
+      "newborn": "Újszülött",
+      "infant": "Csecsemő",
+      "toddler": "Kisgyermek",
+      "child": "Gyermek",
+      "teenager": "Tinédzser",
+      "adult": "Felnőtt"
+    },
+    "short": {
+      "units": {
+        "day": "{n} nap",
+        "week": "{n} hét",
+        "month": "{n} hónap",
+        "year": "{n} év"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} nap",
+        "week": "{n} hét",
+        "month": "{n} h.",
+        "year": "{n} év"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "január",
+      "február",
+      "március",
+      "április",
+      "május",
+      "június",
+      "július",
+      "augusztus",
+      "szeptember",
+      "október",
+      "november",
+      "december"
+    ],
+    "weekdays": [
+      "vasárnap",
+      "hétfő",
+      "kedd",
+      "szerda",
+      "csütörtök",
+      "péntek",
+      "szombat"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{year}. {month} {day}",
+    "today": "ma",
+    "tomorrow": "holnap",
+    "yesterday": "tegnap",
+    "dayAfterTomorrow": "holnapután",
+    "dayBeforeYesterday": "tegnapelőtt",
+    "thisWeekday": "ezen a {weekday}",
+    "nextWeekday": "jövő {weekday}",
+    "lastWeekday": "múlt {weekday}",
+    "short": {
+      "months": [
+        "jan",
+        "feb",
+        "már",
+        "ápr",
+        "máj",
+        "jún",
+        "júl",
+        "aug",
+        "szept",
+        "okt",
+        "nov",
+        "dec"
+      ],
+      "weekdays": [
+        "V",
+        "H",
+        "K",
+        "Sze",
+        "Cs",
+        "P",
+        "Szo"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{year}. {month} {day}"
+    },
+    "compact": {
+      "datePattern": "{m}.{d}.",
+      "datePatternWithYear": "{yy}.{m}.{d}."
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} másodperc",
+      "minute": "{n} perc",
+      "hour": "{n} óra",
+      "day": "{n} nap",
+      "week": "{n} hét",
+      "month": "{n} hónap",
+      "year": "{n} év"
+    },
+    "half": "{n} és fél",
+    "delimiter": ", ",
+    "justNow": "éppen most",
+    "ago": "{0} ezelőtt",
+    "inFuture": "{0} múlva",
+    "short": {
+      "units": {
+        "second": "{n} mp",
+        "minute": "{n} p",
+        "hour": "{n} ó",
+        "day": "{n} nap",
+        "week": "{n} hét",
+        "month": "{n} hónap",
+        "year": "{n} év"
+      },
+      "ago": "{0} ezelőtt",
+      "inFuture": "{0} múlva",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} mp",
+        "minute": "{n} p",
+        "hour": "{n} ó",
+        "day": "{n} nap",
+        "week": "{n} hét",
+        "month": "{n} h.",
+        "year": "{n} év"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ezelőtt",
+      "inFuture": "{0} múlva",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "tizenkettő",
+        "egy",
+        "kettő",
+        "három",
+        "négy",
+        "öt",
+        "hat",
+        "hét",
+        "nyolc",
+        "kilenc",
+        "tíz",
+        "tizenegy"
+      ],
+      "midnight": "éjfél",
+      "noon": "dél",
+      "patterns": {
+        "0": "{h} óra",
+        "5": "öt múlt {h}",
+        "10": "tíz múlt {h}",
+        "15": "negyed múlt {h}",
+        "20": "húsz múlt {h}",
+        "25": "huszonöt múlt {h}",
+        "30": "fél múlt {h}",
+        "35": "huszonöt múlva {next_h}",
+        "40": "húsz múlva {next_h}",
+        "45": "negyed múlva {next_h}",
+        "50": "tíz múlva {next_h}",
+        "55": "öt múlva {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

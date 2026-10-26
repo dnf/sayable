@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/sq.json
+# Source: locales/sq.json
 
 _sayabledate_locale_sq() {
     _months=('janar' 'shkurt' 'mars' 'prill' 'maj' 'qershor' 'korrik' 'gusht' 'shtator' 'tetor' 'nëntor' 'dhjetor')

@@ -1,0 +1,299 @@
+{
+  "code": "ng",
+  "name": "Oshiwambo",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "esiku {n}",
+        "other": "omasiku {n}"
+      },
+      "week": {
+        "one": "oshiwike {n}",
+        "other": "iiwike {n}"
+      },
+      "month": {
+        "one": "omuedhi {n}",
+        "other": "omiedhi {n}"
+      },
+      "year": {
+        "one": "omvula {n}",
+        "other": "omivula {n}"
+      }
+    },
+    "half": "{0} netata",
+    "delimiter": ", ",
+    "justBorn": "Okwa dalwa po",
+    "stages": {
+      "newborn": "Okaana ke li po",
+      "infant": "Okaana",
+      "toddler": "Okanona",
+      "child": "Okanona",
+      "teenager": "Omunyasha",
+      "adult": "Omuntu omukulu"
+    },
+    "short": {
+      "units": {
+        "day": "omasiku {n}",
+        "week": {
+          "one": "oshiwike {n}",
+          "other": "iiwike {n}"
+        },
+        "month": {
+          "one": "omuedhi {n}",
+          "other": "omiedhi {n}"
+        },
+        "year": {
+          "one": "omvula {n}",
+          "other": "omivula {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "omasiku {n}",
+        "week": {
+          "one": "oshiw {n}",
+          "other": "iiw {n}"
+        },
+        "month": {
+          "one": "omued {n}",
+          "other": "omied {n}"
+        },
+        "year": {
+          "one": "omv {n}",
+          "other": "omiv {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Januali",
+      "Febluali",
+      "Malitsi",
+      "Aplili",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Augustu",
+      "Septemba",
+      "Oktoba",
+      "Novemba",
+      "Desemba"
+    ],
+    "weekdays": [
+      "Osoondaha",
+      "Omaandaha",
+      "Etitatu",
+      "Etitano",
+      "Etine",
+      "Oshitimuine",
+      "Eshabati"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "nena",
+    "tomorrow": "mongula",
+    "yesterday": "ongula ya dja ko",
+    "dayAfterTomorrow": "mongula e li ko",
+    "dayBeforeYesterday": "ongula ya dja ko nale",
+    "thisWeekday": "{weekday} eshi",
+    "nextWeekday": "{weekday} e li ko",
+    "lastWeekday": "{weekday} ya dja ko",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mal",
+        "Apl",
+        "Mei",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Oso",
+        "Oma",
+        "Eti",
+        "Etn",
+        "Etn",
+        "Osh",
+        "Esh"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "osekonde {n}",
+        "other": "oosekonde {n}"
+      },
+      "minute": {
+        "one": "ominute {n}",
+        "other": "oominute {n}"
+      },
+      "hour": {
+        "one": "owoola {n}",
+        "other": "iiwoola {n}"
+      },
+      "day": {
+        "one": "esiku {n}",
+        "other": "omasiku {n}"
+      },
+      "week": {
+        "one": "oshiwike {n}",
+        "other": "iiwike {n}"
+      },
+      "month": {
+        "one": "omuedhi {n}",
+        "other": "omiedhi {n}"
+      },
+      "year": {
+        "one": "omvula {n}",
+        "other": "omivula {n}"
+      }
+    },
+    "half": "{0} netata",
+    "delimiter": ", ",
+    "justNow": "ngashingeyi",
+    "ago": "{0} ya pita",
+    "inFuture": "mo {0}",
+    "short": {
+      "units": {
+        "second": "oosekonde {n}",
+        "minute": "oominute {n}",
+        "hour": {
+          "one": "owoola {n}",
+          "other": "iiwoola {n}"
+        },
+        "day": "omasiku {n}",
+        "week": {
+          "one": "oshiwike {n}",
+          "other": "iiwike {n}"
+        },
+        "month": {
+          "one": "omuedhi {n}",
+          "other": "omiedhi {n}"
+        },
+        "year": {
+          "one": "omvula {n}",
+          "other": "omivula {n}"
+        }
+      },
+      "ago": "{0} ya pita",
+      "inFuture": "mo {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "oosek {n}",
+        "minute": "oomin {n}",
+        "hour": {
+          "one": "owool {n}",
+          "other": "iiwool {n}"
+        },
+        "day": "omasik {n}",
+        "week": {
+          "one": "oshiw {n}",
+          "other": "iiw {n}"
+        },
+        "month": {
+          "one": "omued {n}",
+          "other": "omied {n}"
+        },
+        "year": {
+          "one": "omv {n}",
+          "other": "omiv {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} pita",
+      "inFuture": "mo {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "omulongo nambali",
+        "imwe",
+        "mbali",
+        "ndatu",
+        "ne",
+        "ntano",
+        "hamano",
+        "heyali",
+        "hetatu",
+        "omugoyi",
+        "omulongo",
+        "omulongo nimwe"
+      ],
+      "midnight": "onguloshi pakati",
+      "noon": "omutenya",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

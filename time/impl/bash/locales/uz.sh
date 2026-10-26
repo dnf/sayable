@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/uz.json
+# Source: locales/uz.json
 
 _sayabletime_locale_uz() {
     _clock_hours=('o'\''n ikki' 'bir' 'ikki' 'uch' 'to'\''rt' 'besh' 'olti' 'yetti' 'sakkiz' 'to'\''qqiz' 'o'\''n' 'o'\''n bir')

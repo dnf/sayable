@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/mfe.json
+# Source: locales/mfe.json
 
 function locale_mfe {
     $months = @('Zanvie', 'Fevrie', 'Mars', 'Avril', 'Me', 'Zwin', 'Zwiye', 'Out', 'Septam', 'Oktob', 'Novam', 'Desam')

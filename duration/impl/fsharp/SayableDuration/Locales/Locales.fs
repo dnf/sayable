@@ -139,7 +139,7 @@ open SayableDurationLib.Types
         if n = 0 || n = 1 || (n >= 11 && n <= 99) then One
         else Other
 
-// Source: duration/locales/src/af.json
+// Source: locales/af.json
 // ================================================================
 // AF — Afrikaans
 // ================================================================
@@ -192,7 +192,7 @@ let AF: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ak.json
+// Source: locales/ak.json
 // ================================================================
 // AK — Akan
 // ================================================================
@@ -245,7 +245,7 @@ let AK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/am.json
+// Source: locales/am.json
 // ================================================================
 // AM — Amharic
 // ================================================================
@@ -298,7 +298,7 @@ let AM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ar.json
+// Source: locales/ar.json
 // ================================================================
 // AR — Arabic
 // ================================================================
@@ -351,7 +351,7 @@ let AR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ay.json
+// Source: locales/ay.json
 // ================================================================
 // AY — Aymara
 // ================================================================
@@ -404,7 +404,7 @@ let AY: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/az.json
+// Source: locales/az.json
 // ================================================================
 // AZ — Azerbaijani
 // ================================================================
@@ -457,7 +457,7 @@ let AZ: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/bci.json
+// Source: locales/bci.json
 // ================================================================
 // BCI — Baoulé
 // ================================================================
@@ -510,7 +510,7 @@ let BCI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/be.json
+// Source: locales/be.json
 // ================================================================
 // BE — Belarusian
 // ================================================================
@@ -563,7 +563,7 @@ let BE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/bem.json
+// Source: locales/bem.json
 // ================================================================
 // BEM — Bemba
 // ================================================================
@@ -616,7 +616,7 @@ let BEM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/bg.json
+// Source: locales/bg.json
 // ================================================================
 // BG — Bulgarian
 // ================================================================
@@ -669,7 +669,7 @@ let BG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/bi.json
+// Source: locales/bi.json
 // ================================================================
 // BI — Bislama
 // ================================================================
@@ -722,7 +722,7 @@ let BI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/bm.json
+// Source: locales/bm.json
 // ================================================================
 // BM — Bambara
 // ================================================================
@@ -775,7 +775,7 @@ let BM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/bn.json
+// Source: locales/bn.json
 // ================================================================
 // BN — Bengali
 // ================================================================
@@ -828,7 +828,7 @@ let BN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/br.json
+// Source: locales/br.json
 // ================================================================
 // BR — Breton
 // ================================================================
@@ -881,7 +881,7 @@ let BR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/bs.json
+// Source: locales/bs.json
 // ================================================================
 // BS — Bosnian
 // ================================================================
@@ -934,7 +934,7 @@ let BS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ca.json
+// Source: locales/ca.json
 // ================================================================
 // CA — Catalan
 // ================================================================
@@ -987,7 +987,7 @@ let CA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/cak.json
+// Source: locales/cak.json
 // ================================================================
 // CAK — Kaqchikel
 // ================================================================
@@ -1040,7 +1040,7 @@ let CAK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ceb.json
+// Source: locales/ceb.json
 // ================================================================
 // CEB — Cebuano
 // ================================================================
@@ -1093,7 +1093,7 @@ let CEB: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/cs.json
+// Source: locales/cs.json
 // ================================================================
 // CS — Czech
 // ================================================================
@@ -1146,7 +1146,7 @@ let CS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/cy.json
+// Source: locales/cy.json
 // ================================================================
 // CY — Welsh
 // ================================================================
@@ -1199,7 +1199,7 @@ let CY: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/da.json
+// Source: locales/da.json
 // ================================================================
 // DA — Danish
 // ================================================================
@@ -1252,7 +1252,7 @@ let DA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/de.json
+// Source: locales/de.json
 // ================================================================
 // DE — German
 // ================================================================
@@ -1305,7 +1305,7 @@ let DE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/din.json
+// Source: locales/din.json
 // ================================================================
 // DIN — Dinka
 // ================================================================
@@ -1358,7 +1358,7 @@ let DIN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/dje.json
+// Source: locales/dje.json
 // ================================================================
 // DJE — Zarma
 // ================================================================
@@ -1411,7 +1411,7 @@ let DJE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/dv.json
+// Source: locales/dv.json
 // ================================================================
 // DV — Dhivehi
 // ================================================================
@@ -1464,7 +1464,7 @@ let DV: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/dyu.json
+// Source: locales/dyu.json
 // ================================================================
 // DYU — Dyula
 // ================================================================
@@ -1517,7 +1517,7 @@ let DYU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/dz.json
+// Source: locales/dz.json
 // ================================================================
 // DZ — Dzongkha
 // ================================================================
@@ -1570,7 +1570,7 @@ let DZ: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ee.json
+// Source: locales/ee.json
 // ================================================================
 // EE — Ewe
 // ================================================================
@@ -1623,7 +1623,7 @@ let EE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/el.json
+// Source: locales/el.json
 // ================================================================
 // EL — Greek
 // ================================================================
@@ -1676,7 +1676,7 @@ let EL: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/en.json
+// Source: locales/en.json
 // ================================================================
 // EN — English
 // ================================================================
@@ -1729,7 +1729,7 @@ let EN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/es.json
+// Source: locales/es.json
 // ================================================================
 // ES — Spanish
 // ================================================================
@@ -1782,7 +1782,7 @@ let ES: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/et.json
+// Source: locales/et.json
 // ================================================================
 // ET — Estonian
 // ================================================================
@@ -1835,7 +1835,7 @@ let ET: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/eu.json
+// Source: locales/eu.json
 // ================================================================
 // EU — Basque
 // ================================================================
@@ -1888,7 +1888,7 @@ let EU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/fa.json
+// Source: locales/fa.json
 // ================================================================
 // FA — Persian
 // ================================================================
@@ -1941,7 +1941,7 @@ let FA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/fan.json
+// Source: locales/fan.json
 // ================================================================
 // FAN — Fang
 // ================================================================
@@ -1994,7 +1994,7 @@ let FAN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ff.json
+// Source: locales/ff.json
 // ================================================================
 // FF — Fulah
 // ================================================================
@@ -2047,7 +2047,7 @@ let FF: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/fi.json
+// Source: locales/fi.json
 // ================================================================
 // FI — Finnish
 // ================================================================
@@ -2100,7 +2100,7 @@ let FI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/fil.json
+// Source: locales/fil.json
 // ================================================================
 // FIL — Filipino
 // ================================================================
@@ -2153,7 +2153,7 @@ let FIL: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/fj.json
+// Source: locales/fj.json
 // ================================================================
 // FJ — Fijian
 // ================================================================
@@ -2206,7 +2206,7 @@ let FJ: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/fon.json
+// Source: locales/fon.json
 // ================================================================
 // FON — Fon
 // ================================================================
@@ -2259,7 +2259,7 @@ let FON: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/fr.json
+// Source: locales/fr.json
 // ================================================================
 // FR — French
 // ================================================================
@@ -2312,7 +2312,7 @@ let FR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ga.json
+// Source: locales/ga.json
 // ================================================================
 // GA — Irish
 // ================================================================
@@ -2365,7 +2365,7 @@ let GA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/gd.json
+// Source: locales/gd.json
 // ================================================================
 // GD — Scottish Gaelic
 // ================================================================
@@ -2418,7 +2418,7 @@ let GD: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/gl.json
+// Source: locales/gl.json
 // ================================================================
 // GL — Galician
 // ================================================================
@@ -2471,7 +2471,7 @@ let GL: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/gn.json
+// Source: locales/gn.json
 // ================================================================
 // GN — Guarani
 // ================================================================
@@ -2524,7 +2524,7 @@ let GN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/gu.json
+// Source: locales/gu.json
 // ================================================================
 // GU — Gujarati
 // ================================================================
@@ -2577,7 +2577,7 @@ let GU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/gv.json
+// Source: locales/gv.json
 // ================================================================
 // GV — Manx
 // ================================================================
@@ -2630,7 +2630,7 @@ let GV: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ha.json
+// Source: locales/ha.json
 // ================================================================
 // HA — Hausa
 // ================================================================
@@ -2683,7 +2683,7 @@ let HA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/he.json
+// Source: locales/he.json
 // ================================================================
 // HE — Hebrew
 // ================================================================
@@ -2736,7 +2736,7 @@ let HE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/hi.json
+// Source: locales/hi.json
 // ================================================================
 // HI — Hindi
 // ================================================================
@@ -2789,7 +2789,7 @@ let HI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/hmn.json
+// Source: locales/hmn.json
 // ================================================================
 // HMN — Hmong
 // ================================================================
@@ -2842,7 +2842,7 @@ let HMN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/hr.json
+// Source: locales/hr.json
 // ================================================================
 // HR — Croatian
 // ================================================================
@@ -2895,7 +2895,7 @@ let HR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ht.json
+// Source: locales/ht.json
 // ================================================================
 // HT — Haitian Creole
 // ================================================================
@@ -2948,7 +2948,7 @@ let HT: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/hu.json
+// Source: locales/hu.json
 // ================================================================
 // HU — Hungarian
 // ================================================================
@@ -3001,7 +3001,7 @@ let HU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/hy.json
+// Source: locales/hy.json
 // ================================================================
 // HY — Armenian
 // ================================================================
@@ -3054,7 +3054,7 @@ let HY: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/id.json
+// Source: locales/id.json
 // ================================================================
 // ID — Indonesian
 // ================================================================
@@ -3107,7 +3107,7 @@ let ID: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ig.json
+// Source: locales/ig.json
 // ================================================================
 // IG — Igbo
 // ================================================================
@@ -3160,7 +3160,7 @@ let IG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/is.json
+// Source: locales/is.json
 // ================================================================
 // IS — Icelandic
 // ================================================================
@@ -3213,7 +3213,7 @@ let IS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/it.json
+// Source: locales/it.json
 // ================================================================
 // IT — Italian
 // ================================================================
@@ -3266,7 +3266,7 @@ let IT: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ja.json
+// Source: locales/ja.json
 // ================================================================
 // JA — Japanese
 // ================================================================
@@ -3319,7 +3319,7 @@ let JA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/jv.json
+// Source: locales/jv.json
 // ================================================================
 // JV — Javanese
 // ================================================================
@@ -3372,7 +3372,7 @@ let JV: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ka.json
+// Source: locales/ka.json
 // ================================================================
 // KA — Georgian
 // ================================================================
@@ -3425,7 +3425,7 @@ let KA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kbp.json
+// Source: locales/kbp.json
 // ================================================================
 // KBP — Kabiye
 // ================================================================
@@ -3478,7 +3478,7 @@ let KBP: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kek.json
+// Source: locales/kek.json
 // ================================================================
 // KEK — Q'eqchi'
 // ================================================================
@@ -3531,7 +3531,7 @@ let KEK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ki.json
+// Source: locales/ki.json
 // ================================================================
 // KI — Kikuyu
 // ================================================================
@@ -3584,7 +3584,7 @@ let KI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kk.json
+// Source: locales/kk.json
 // ================================================================
 // KK — Kazakh
 // ================================================================
@@ -3637,7 +3637,7 @@ let KK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kl.json
+// Source: locales/kl.json
 // ================================================================
 // KL — Kalaallisut
 // ================================================================
@@ -3690,7 +3690,7 @@ let KL: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/km.json
+// Source: locales/km.json
 // ================================================================
 // KM — Khmer
 // ================================================================
@@ -3743,7 +3743,7 @@ let KM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kn.json
+// Source: locales/kn.json
 // ================================================================
 // KN — Kannada
 // ================================================================
@@ -3796,7 +3796,7 @@ let KN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ko.json
+// Source: locales/ko.json
 // ================================================================
 // KO — Korean
 // ================================================================
@@ -3849,7 +3849,7 @@ let KO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kpe.json
+// Source: locales/kpe.json
 // ================================================================
 // KPE — Kpelle
 // ================================================================
@@ -3902,7 +3902,7 @@ let KPE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kri.json
+// Source: locales/kri.json
 // ================================================================
 // KRI — Krio
 // ================================================================
@@ -3955,7 +3955,7 @@ let KRI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ktu.json
+// Source: locales/ktu.json
 // ================================================================
 // KTU — Kituba
 // ================================================================
@@ -4008,7 +4008,7 @@ let KTU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ku.json
+// Source: locales/ku.json
 // ================================================================
 // KU — Kurdish
 // ================================================================
@@ -4061,7 +4061,7 @@ let KU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/kw.json
+// Source: locales/kw.json
 // ================================================================
 // KW — Cornish
 // ================================================================
@@ -4114,7 +4114,7 @@ let KW: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ky.json
+// Source: locales/ky.json
 // ================================================================
 // KY — Kyrgyz
 // ================================================================
@@ -4167,7 +4167,7 @@ let KY: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/lb.json
+// Source: locales/lb.json
 // ================================================================
 // LB — Luxembourgish
 // ================================================================
@@ -4220,7 +4220,7 @@ let LB: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/lg.json
+// Source: locales/lg.json
 // ================================================================
 // LG — Luganda
 // ================================================================
@@ -4273,7 +4273,7 @@ let LG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ln.json
+// Source: locales/ln.json
 // ================================================================
 // LN — Lingala
 // ================================================================
@@ -4326,7 +4326,7 @@ let LN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/lo.json
+// Source: locales/lo.json
 // ================================================================
 // LO — Lao
 // ================================================================
@@ -4379,7 +4379,7 @@ let LO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/lt.json
+// Source: locales/lt.json
 // ================================================================
 // LT — Lithuanian
 // ================================================================
@@ -4432,7 +4432,7 @@ let LT: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/luo.json
+// Source: locales/luo.json
 // ================================================================
 // LUO — Dholuo
 // ================================================================
@@ -4485,7 +4485,7 @@ let LUO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/lv.json
+// Source: locales/lv.json
 // ================================================================
 // LV — Latvian
 // ================================================================
@@ -4538,7 +4538,7 @@ let LV: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mam.json
+// Source: locales/mam.json
 // ================================================================
 // MAM — Mam
 // ================================================================
@@ -4591,7 +4591,7 @@ let MAM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/men.json
+// Source: locales/men.json
 // ================================================================
 // MEN — Mende
 // ================================================================
@@ -4644,7 +4644,7 @@ let MEN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mfe.json
+// Source: locales/mfe.json
 // ================================================================
 // MFE — Mauritian Creole
 // ================================================================
@@ -4697,7 +4697,7 @@ let MFE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mg.json
+// Source: locales/mg.json
 // ================================================================
 // MG — Malagasy
 // ================================================================
@@ -4750,7 +4750,7 @@ let MG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mi.json
+// Source: locales/mi.json
 // ================================================================
 // MI — Māori
 // ================================================================
@@ -4803,7 +4803,7 @@ let MI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mk.json
+// Source: locales/mk.json
 // ================================================================
 // MK — Macedonian
 // ================================================================
@@ -4856,7 +4856,7 @@ let MK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ml.json
+// Source: locales/ml.json
 // ================================================================
 // ML — Malayalam
 // ================================================================
@@ -4909,7 +4909,7 @@ let ML: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mn.json
+// Source: locales/mn.json
 // ================================================================
 // MN — Mongolian
 // ================================================================
@@ -4962,7 +4962,7 @@ let MN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mnk.json
+// Source: locales/mnk.json
 // ================================================================
 // MNK — Mandinka
 // ================================================================
@@ -5015,7 +5015,7 @@ let MNK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mos.json
+// Source: locales/mos.json
 // ================================================================
 // MOS — Moore
 // ================================================================
@@ -5068,7 +5068,7 @@ let MOS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mr.json
+// Source: locales/mr.json
 // ================================================================
 // MR — Marathi
 // ================================================================
@@ -5121,7 +5121,7 @@ let MR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ms.json
+// Source: locales/ms.json
 // ================================================================
 // MS — Malay
 // ================================================================
@@ -5174,7 +5174,7 @@ let MS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/mt.json
+// Source: locales/mt.json
 // ================================================================
 // MT — Maltese
 // ================================================================
@@ -5227,7 +5227,7 @@ let MT: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/my.json
+// Source: locales/my.json
 // ================================================================
 // MY — Burmese
 // ================================================================
@@ -5280,7 +5280,7 @@ let MY: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/nb.json
+// Source: locales/nb.json
 // ================================================================
 // NB — Norwegian Bokmål
 // ================================================================
@@ -5333,7 +5333,7 @@ let NB: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/nd.json
+// Source: locales/nd.json
 // ================================================================
 // ND — Northern Ndebele
 // ================================================================
@@ -5386,7 +5386,7 @@ let ND: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ne.json
+// Source: locales/ne.json
 // ================================================================
 // NE — Nepali
 // ================================================================
@@ -5439,7 +5439,7 @@ let NE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ng.json
+// Source: locales/ng.json
 // ================================================================
 // NG — Oshiwambo
 // ================================================================
@@ -5492,7 +5492,7 @@ let NG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/nl.json
+// Source: locales/nl.json
 // ================================================================
 // NL — Dutch
 // ================================================================
@@ -5545,7 +5545,7 @@ let NL: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/nr.json
+// Source: locales/nr.json
 // ================================================================
 // NR — Southern Ndebele
 // ================================================================
@@ -5598,7 +5598,7 @@ let NR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/nso.json
+// Source: locales/nso.json
 // ================================================================
 // NSO — Northern Sotho
 // ================================================================
@@ -5651,7 +5651,7 @@ let NSO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/nus.json
+// Source: locales/nus.json
 // ================================================================
 // NUS — Nuer
 // ================================================================
@@ -5704,7 +5704,7 @@ let NUS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ny.json
+// Source: locales/ny.json
 // ================================================================
 // NY — Chichewa
 // ================================================================
@@ -5757,7 +5757,7 @@ let NY: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/om.json
+// Source: locales/om.json
 // ================================================================
 // OM — Oromo
 // ================================================================
@@ -5810,7 +5810,7 @@ let OM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/or.json
+// Source: locales/or.json
 // ================================================================
 // OR — Odia
 // ================================================================
@@ -5863,7 +5863,7 @@ let OR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/pa.json
+// Source: locales/pa.json
 // ================================================================
 // PA — Punjabi
 // ================================================================
@@ -5916,7 +5916,7 @@ let PA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/pis.json
+// Source: locales/pis.json
 // ================================================================
 // PIS — Pijin
 // ================================================================
@@ -5969,7 +5969,7 @@ let PIS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/pl.json
+// Source: locales/pl.json
 // ================================================================
 // PL — Polish
 // ================================================================
@@ -6022,7 +6022,7 @@ let PL: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/pov.json
+// Source: locales/pov.json
 // ================================================================
 // POV — Guinea-Bissau Creole
 // ================================================================
@@ -6075,7 +6075,7 @@ let POV: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ps.json
+// Source: locales/ps.json
 // ================================================================
 // PS — Pashto
 // ================================================================
@@ -6128,7 +6128,7 @@ let PS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/pt.json
+// Source: locales/pt.json
 // ================================================================
 // PT — Portuguese
 // ================================================================
@@ -6181,7 +6181,7 @@ let PT: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/qu.json
+// Source: locales/qu.json
 // ================================================================
 // QU — Quechua
 // ================================================================
@@ -6234,7 +6234,7 @@ let QU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/quc.json
+// Source: locales/quc.json
 // ================================================================
 // QUC — K'iche'
 // ================================================================
@@ -6287,7 +6287,7 @@ let QUC: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ro.json
+// Source: locales/ro.json
 // ================================================================
 // RO — Romanian
 // ================================================================
@@ -6340,7 +6340,7 @@ let RO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ru.json
+// Source: locales/ru.json
 // ================================================================
 // RU — Russian
 // ================================================================
@@ -6393,7 +6393,7 @@ let RU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/rw.json
+// Source: locales/rw.json
 // ================================================================
 // RW — Kinyarwanda
 // ================================================================
@@ -6446,7 +6446,7 @@ let RW: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sar.json
+// Source: locales/sar.json
 // ================================================================
 // SAR — Sara
 // ================================================================
@@ -6499,7 +6499,7 @@ let SAR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sd.json
+// Source: locales/sd.json
 // ================================================================
 // SD — Sindhi
 // ================================================================
@@ -6552,7 +6552,7 @@ let SD: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sg.json
+// Source: locales/sg.json
 // ================================================================
 // SG — Sango
 // ================================================================
@@ -6605,7 +6605,7 @@ let SG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/shi.json
+// Source: locales/shi.json
 // ================================================================
 // SHI — Tachelhit
 // ================================================================
@@ -6658,7 +6658,7 @@ let SHI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/shn.json
+// Source: locales/shn.json
 // ================================================================
 // SHN — Shan
 // ================================================================
@@ -6711,7 +6711,7 @@ let SHN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/si.json
+// Source: locales/si.json
 // ================================================================
 // SI — Sinhala
 // ================================================================
@@ -6764,7 +6764,7 @@ let SI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sk.json
+// Source: locales/sk.json
 // ================================================================
 // SK — Slovak
 // ================================================================
@@ -6817,7 +6817,7 @@ let SK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sl.json
+// Source: locales/sl.json
 // ================================================================
 // SL — Slovenian
 // ================================================================
@@ -6870,7 +6870,7 @@ let SL: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sn.json
+// Source: locales/sn.json
 // ================================================================
 // SN — Shona
 // ================================================================
@@ -6923,7 +6923,7 @@ let SN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/snk.json
+// Source: locales/snk.json
 // ================================================================
 // SNK — Soninke
 // ================================================================
@@ -6976,7 +6976,7 @@ let SNK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/so.json
+// Source: locales/so.json
 // ================================================================
 // SO — Somali
 // ================================================================
@@ -7029,7 +7029,7 @@ let SO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sq.json
+// Source: locales/sq.json
 // ================================================================
 // SQ — Albanian
 // ================================================================
@@ -7082,7 +7082,7 @@ let SQ: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sr.json
+// Source: locales/sr.json
 // ================================================================
 // SR — Serbian
 // ================================================================
@@ -7135,7 +7135,7 @@ let SR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ss.json
+// Source: locales/ss.json
 // ================================================================
 // SS — siSwati
 // ================================================================
@@ -7188,7 +7188,7 @@ let SS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/st.json
+// Source: locales/st.json
 // ================================================================
 // ST — Southern Sotho
 // ================================================================
@@ -7241,7 +7241,7 @@ let ST: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/su.json
+// Source: locales/su.json
 // ================================================================
 // SU — Sundanese
 // ================================================================
@@ -7294,7 +7294,7 @@ let SU: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/suk.json
+// Source: locales/suk.json
 // ================================================================
 // SUK — Sukuma
 // ================================================================
@@ -7347,7 +7347,7 @@ let SUK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sv.json
+// Source: locales/sv.json
 // ================================================================
 // SV — Swedish
 // ================================================================
@@ -7400,7 +7400,7 @@ let SV: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/sw.json
+// Source: locales/sw.json
 // ================================================================
 // SW — Swahili
 // ================================================================
@@ -7453,7 +7453,7 @@ let SW: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ta.json
+// Source: locales/ta.json
 // ================================================================
 // TA — Tamil
 // ================================================================
@@ -7506,7 +7506,7 @@ let TA: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/te.json
+// Source: locales/te.json
 // ================================================================
 // TE — Telugu
 // ================================================================
@@ -7559,7 +7559,7 @@ let TE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tem.json
+// Source: locales/tem.json
 // ================================================================
 // TEM — Temne
 // ================================================================
@@ -7612,7 +7612,7 @@ let TEM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tet.json
+// Source: locales/tet.json
 // ================================================================
 // TET — Tetum
 // ================================================================
@@ -7665,7 +7665,7 @@ let TET: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tg.json
+// Source: locales/tg.json
 // ================================================================
 // TG — Tajik
 // ================================================================
@@ -7718,7 +7718,7 @@ let TG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/th.json
+// Source: locales/th.json
 // ================================================================
 // TH — Thai
 // ================================================================
@@ -7771,7 +7771,7 @@ let TH: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ti.json
+// Source: locales/ti.json
 // ================================================================
 // TI — Tigrinya
 // ================================================================
@@ -7824,7 +7824,7 @@ let TI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tig.json
+// Source: locales/tig.json
 // ================================================================
 // TIG — Tigre
 // ================================================================
@@ -7877,7 +7877,7 @@ let TIG: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tk.json
+// Source: locales/tk.json
 // ================================================================
 // TK — Turkmen
 // ================================================================
@@ -7930,7 +7930,7 @@ let TK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tn.json
+// Source: locales/tn.json
 // ================================================================
 // TN — Tswana
 // ================================================================
@@ -7983,7 +7983,7 @@ let TN: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tpi.json
+// Source: locales/tpi.json
 // ================================================================
 // TPI — Tok Pisin
 // ================================================================
@@ -8036,7 +8036,7 @@ let TPI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tr.json
+// Source: locales/tr.json
 // ================================================================
 // TR — Turkish
 // ================================================================
@@ -8089,7 +8089,7 @@ let TR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ts.json
+// Source: locales/ts.json
 // ================================================================
 // TS — Tsonga
 // ================================================================
@@ -8142,7 +8142,7 @@ let TS: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tum.json
+// Source: locales/tum.json
 // ================================================================
 // TUM — Tumbuka
 // ================================================================
@@ -8195,7 +8195,7 @@ let TUM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/tzm.json
+// Source: locales/tzm.json
 // ================================================================
 // TZM — Central Atlas Tamazight
 // ================================================================
@@ -8248,7 +8248,7 @@ let TZM: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/uk.json
+// Source: locales/uk.json
 // ================================================================
 // UK — Ukrainian
 // ================================================================
@@ -8301,7 +8301,7 @@ let UK: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/umb.json
+// Source: locales/umb.json
 // ================================================================
 // UMB — Umbundu
 // ================================================================
@@ -8354,7 +8354,7 @@ let UMB: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ur.json
+// Source: locales/ur.json
 // ================================================================
 // UR — Urdu
 // ================================================================
@@ -8407,7 +8407,7 @@ let UR: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/uz.json
+// Source: locales/uz.json
 // ================================================================
 // UZ — Uzbek
 // ================================================================
@@ -8460,7 +8460,7 @@ let UZ: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/ve.json
+// Source: locales/ve.json
 // ================================================================
 // VE — Venda
 // ================================================================
@@ -8513,7 +8513,7 @@ let VE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/vi.json
+// Source: locales/vi.json
 // ================================================================
 // VI — Vietnamese
 // ================================================================
@@ -8566,7 +8566,7 @@ let VI: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/vmw.json
+// Source: locales/vmw.json
 // ================================================================
 // VMW — Makhuwa
 // ================================================================
@@ -8619,7 +8619,7 @@ let VMW: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/wo.json
+// Source: locales/wo.json
 // ================================================================
 // WO — Wolof
 // ================================================================
@@ -8672,7 +8672,7 @@ let WO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/xh.json
+// Source: locales/xh.json
 // ================================================================
 // XH — Xhosa
 // ================================================================
@@ -8725,7 +8725,7 @@ let XH: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/yao.json
+// Source: locales/yao.json
 // ================================================================
 // YAO — Yao
 // ================================================================
@@ -8778,7 +8778,7 @@ let YAO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/yo.json
+// Source: locales/yo.json
 // ================================================================
 // YO — Yoruba
 // ================================================================
@@ -8831,7 +8831,7 @@ let YO: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/yue.json
+// Source: locales/yue.json
 // ================================================================
 // YUE — Cantonese
 // ================================================================
@@ -8884,7 +8884,7 @@ let YUE: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/zdj.json
+// Source: locales/zdj.json
 // ================================================================
 // ZDJ — Comorian
 // ================================================================
@@ -8937,7 +8937,7 @@ let ZDJ: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/zh.json
+// Source: locales/zh.json
 // ================================================================
 // ZH — Chinese
 // ================================================================
@@ -8990,7 +8990,7 @@ let ZH: DurationLocale =
         FormatUnit = None
     }
 
-// Source: duration/locales/src/zu.json
+// Source: locales/zu.json
 // ================================================================
 // ZU — Zulu
 // ================================================================

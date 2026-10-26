@@ -1,0 +1,284 @@
+{
+  "code": "ak",
+  "name": "Akan",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "da {n}",
+        "other": "nna {n}"
+      },
+      "week": {
+        "one": "dapɛn {n}",
+        "other": "nnapɛn {n}"
+      },
+      "month": {
+        "one": "bosome {n}",
+        "other": "abosome {n}"
+      },
+      "year": {
+        "one": "afe {n}",
+        "other": "mfe {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Abofra foforo",
+    "stages": {
+      "newborn": "Abofra foforo",
+      "infant": "Akwadaa",
+      "toddler": "Abofra",
+      "child": "Abofra",
+      "teenager": "Abarimaa",
+      "adult": "Ɔpanyin"
+    },
+    "short": {
+      "units": {
+        "day": "nna {n}",
+        "week": {
+          "one": "dapɛn {n}",
+          "other": "nnapɛn {n}"
+        },
+        "month": {
+          "one": "bosome {n}",
+          "other": "abosome {n}"
+        },
+        "year": {
+          "one": "afe {n}",
+          "other": "mfe {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "nna {n}",
+        "week": {
+          "one": "dapɛn {n}",
+          "other": "nnapɛn {n}"
+        },
+        "month": {
+          "one": "bos {n}",
+          "other": "abos {n}"
+        },
+        "year": {
+          "one": "afe {n}",
+          "other": "mfe {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Ɔpɛpɔn",
+      "Ɔgyefuo",
+      "Ɔbenem",
+      "Oforisuo",
+      "Kotonimma",
+      "Ayɛwohomumu",
+      "Kutawonkuku",
+      "Ɔsannaa",
+      "Ɛbɔ",
+      "Ahinime",
+      "Obubuo",
+      "Ɔpenimba"
+    ],
+    "weekdays": [
+      "Kwasiada",
+      "Ɛdwoada",
+      "Ɛbenada",
+      "Wukuada",
+      "Yawoada",
+      "Efiada",
+      "Memeneda"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ɛnnɛ",
+    "tomorrow": "ɔkyena",
+    "yesterday": "nnora",
+    "dayAfterTomorrow": "ɛkyena",
+    "dayBeforeYesterday": "nnansa",
+    "thisWeekday": "{weekday} yi",
+    "nextWeekday": "{weekday} a ɛba",
+    "lastWeekday": "{weekday} a etwaam",
+    "short": {
+      "months": [
+        "Ɔpɛ",
+        "Ɔgy",
+        "Ɔbe",
+        "Ofo",
+        "Kot",
+        "Ayɛ",
+        "Kut",
+        "Ɔsa",
+        "Ɛbɔ",
+        "Ahi",
+        "Obu",
+        "Ɔpe"
+      ],
+      "weekdays": [
+        "Kwa",
+        "Ɛdw",
+        "Ɛbe",
+        "Wuk",
+        "Yaw",
+        "Efi",
+        "Mem"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "sɛkɛnd {n}",
+      "minute": "sema {n}",
+      "hour": "dɔnhwere {n}",
+      "day": {
+        "one": "da {n}",
+        "other": "nna {n}"
+      },
+      "week": {
+        "one": "dapɛn {n}",
+        "other": "nnapɛn {n}"
+      },
+      "month": {
+        "one": "bosome {n}",
+        "other": "abosome {n}"
+      },
+      "year": {
+        "one": "afe {n}",
+        "other": "mfe {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "sɛɛsei",
+    "ago": "{0} a etwaam",
+    "inFuture": "{0} mu",
+    "short": {
+      "units": {
+        "second": "sɛkɛnd {n}",
+        "minute": "sema {n}",
+        "hour": "dɔnhwere {n}",
+        "day": "nna {n}",
+        "week": {
+          "one": "dapɛn {n}",
+          "other": "nnapɛn {n}"
+        },
+        "month": {
+          "one": "bosome {n}",
+          "other": "abosome {n}"
+        },
+        "year": {
+          "one": "afe {n}",
+          "other": "mfe {n}"
+        }
+      },
+      "ago": "{0} a etwaam",
+      "inFuture": "{0} mu",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "sɛk {n}",
+        "minute": "sem {n}",
+        "hour": "dɔn {n}",
+        "day": "nna {n}",
+        "week": {
+          "one": "dapɛn {n}",
+          "other": "nnapɛn {n}"
+        },
+        "month": {
+          "one": "bos {n}",
+          "other": "abos {n}"
+        },
+        "year": {
+          "one": "afe {n}",
+          "other": "mfe {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} a etwaam",
+      "inFuture": "{0} mu",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dumien",
+        "baako",
+        "mmienu",
+        "mmiensa",
+        "anan",
+        "anum",
+        "nsia",
+        "nson",
+        "nwɔtwe",
+        "nkron",
+        "edu",
+        "dubaako"
+      ],
+      "midnight": "anadwo",
+      "noon": "awia",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

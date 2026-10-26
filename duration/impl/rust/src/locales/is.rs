@@ -7,7 +7,7 @@
 // ║ Changes will be overwritten the next time codegen runs.      ║
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
-// Source: duration/locales/src/is.json
+// Source: locales/is.json
 
 use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
 

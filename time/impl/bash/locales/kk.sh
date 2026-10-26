@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kk.json
+# Source: locales/kk.json
 
 _sayabletime_locale_kk() {
     _clock_hours=('он екі' 'бір' 'екі' 'үш' 'төрт' 'бес' 'алты' 'жеті' 'сегіз' 'тоғыз' 'он' 'он бір')

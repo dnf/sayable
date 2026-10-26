@@ -1,0 +1,290 @@
+{
+  "code": "zu",
+  "name": "Zulu",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "usuku {n}",
+        "other": "izinsuku {n}"
+      },
+      "week": {
+        "one": "iviki {n}",
+        "other": "amaviki {n}"
+      },
+      "month": {
+        "one": "inyanga {n}",
+        "other": "izinyanga {n}"
+      },
+      "year": {
+        "one": "unyaka {n}",
+        "other": "iminyaka {n}"
+      }
+    },
+    "half": "{0} nohhafu",
+    "delimiter": ", ",
+    "justBorn": "Usanda kuzalwa",
+    "stages": {
+      "newborn": "Usana olusanda kuzalwa",
+      "infant": "Usana",
+      "toddler": "Umntwana omncane",
+      "child": "Umntwana",
+      "teenager": "Intsha",
+      "adult": "Umuntu omdala"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "usuku {n}",
+          "other": "izinsuku {n}"
+        },
+        "week": {
+          "one": "iviki {n}",
+          "other": "amaviki {n}"
+        },
+        "month": {
+          "one": "inyanga {n}",
+          "other": "izinyanga {n}"
+        },
+        "year": {
+          "one": "unyaka {n}",
+          "other": "iminyaka {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ns",
+        "week": "{n} vk",
+        "month": "{n} ny",
+        "year": "{n} mk"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Januwari",
+      "Februwari",
+      "Mashi",
+      "Ephreli",
+      "Meyi",
+      "Juni",
+      "Julayi",
+      "Agasti",
+      "Septhemba",
+      "Okthoba",
+      "Novemba",
+      "Disemba"
+    ],
+    "weekdays": [
+      "ISonto",
+      "UMsombuluko",
+      "ULwesibili",
+      "ULwesithathu",
+      "ULwesine",
+      "ULwesihlanu",
+      "UMgqibelo"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "namuhla",
+    "tomorrow": "kusasa",
+    "yesterday": "izolo",
+    "dayAfterTomorrow": "ngomhlomunye",
+    "dayBeforeYesterday": "usuku olwedlule izolo",
+    "thisWeekday": "leli {weekday}",
+    "nextWeekday": "{weekday} elizayo",
+    "lastWeekday": "{weekday} eledlule",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mas",
+        "Eph",
+        "Mey",
+        "Jun",
+        "Jul",
+        "Aga",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Dis"
+      ],
+      "weekdays": [
+        "Son",
+        "Mso",
+        "Bil",
+        "Tha",
+        "Sin",
+        "Hla",
+        "Mgq"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "isekhondi {n}",
+        "other": "amasekhondi {n}"
+      },
+      "minute": {
+        "one": "umzuzu {n}",
+        "other": "imizuzu {n}"
+      },
+      "hour": {
+        "one": "ihora {n}",
+        "other": "amahora {n}"
+      },
+      "day": {
+        "one": "usuku {n}",
+        "other": "izinsuku {n}"
+      },
+      "week": {
+        "one": "iviki {n}",
+        "other": "amaviki {n}"
+      },
+      "month": {
+        "one": "inyanga {n}",
+        "other": "izinyanga {n}"
+      },
+      "year": {
+        "one": "unyaka {n}",
+        "other": "iminyaka {n}"
+      }
+    },
+    "half": "{0} nohhafu",
+    "delimiter": ", ",
+    "justNow": "khona manje",
+    "ago": "{0} edlule",
+    "inFuture": "ngo-{0}",
+    "short": {
+      "units": {
+        "second": {
+          "one": "isekhondi {n}",
+          "other": "amasekhondi {n}"
+        },
+        "minute": {
+          "one": "umzuzu {n}",
+          "other": "imizuzu {n}"
+        },
+        "hour": {
+          "one": "ihora {n}",
+          "other": "amahora {n}"
+        },
+        "day": {
+          "one": "usuku {n}",
+          "other": "izinsuku {n}"
+        },
+        "week": {
+          "one": "iviki {n}",
+          "other": "amaviki {n}"
+        },
+        "month": {
+          "one": "inyanga {n}",
+          "other": "izinyanga {n}"
+        },
+        "year": {
+          "one": "unyaka {n}",
+          "other": "iminyaka {n}"
+        }
+      },
+      "ago": "{0} edlule",
+      "inFuture": "ngo-{0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} sk",
+        "minute": "{n} mz",
+        "hour": "{n} hr",
+        "day": "{n} ns",
+        "week": "{n} vk",
+        "month": "{n} ny",
+        "year": "{n} mk"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} edlule",
+      "inFuture": "ngo-{0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "ishumi nambili",
+        "kunye",
+        "kubili",
+        "kuthathu",
+        "kune",
+        "kuhlanu",
+        "isithupha",
+        "isikhombisa",
+        "isishiyagalombili",
+        "isishiyagalolunye",
+        "ishumi",
+        "ishumi nanye"
+      ],
+      "midnight": "phakathi kwamabili",
+      "noon": "emini",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "emva kwemizuzu emihlanu ngo-{h}",
+        "10": "emva kwemizuzu eyishumi ngo-{h}",
+        "15": "ikota edlule ngo-{h}",
+        "20": "emva kwemizuzu engamashumi amabili ngo-{h}",
+        "25": "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}",
+        "30": "uhhafu edlule ngo-{h}",
+        "35": "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}",
+        "40": "imizuzu engamashumi amabili ngaphambi kuka-{next_h}",
+        "45": "ikota ngaphambi kuka-{next_h}",
+        "50": "imizuzu eyishumi ngaphambi kuka-{next_h}",
+        "55": "imizuzu emihlanu ngaphambi kuka-{next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

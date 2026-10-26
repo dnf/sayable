@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/bs.json
+# Source: locales/bs.json
 
 defmodule SayableTime.Locales.BS do
   @moduledoc false

@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: time/locales/src/shn.json
+-- Source: locales/shn.json
 
 
 module SayableTime.Locales.Shn exposing (locale)

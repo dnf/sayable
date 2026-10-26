@@ -181,7 +181,7 @@ fn plural_tzm(n: i32) sayableduration.PluralCategory {
     return .other;
 }
 
-// Source: duration/locales/src/af.json
+// Source: locales/af.json
 pub const af: sayableduration.DurationLocale = .{
     .code = "af",
     .plural = plural_one_other,
@@ -203,7 +203,7 @@ pub const af: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}u" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}j" }, .half = "{n}½", .delimiter = "", .ago = "{0} gelede", .in_future = "oor {0}" },
 };
 
-// Source: duration/locales/src/ak.json
+// Source: locales/ak.json
 pub const ak: sayableduration.DurationLocale = .{
     .code = "ak",
     .plural = plural_one_other_zero_one,
@@ -225,7 +225,7 @@ pub const ak: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "sɛk {n}" }, .minute = .{ .simple = "sem {n}" }, .hour = .{ .simple = "dɔn {n}" }, .day = .{ .simple = "nna {n}" }, .week = .{ .forms = .{ .zero = null, .one = "dapɛn {n}", .two = null, .few = null, .many = null, .other = "nnapɛn {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "bos {n}", .two = null, .few = null, .many = null, .other = "abos {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "afe {n}", .two = null, .few = null, .many = null, .other = "mfe {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} a etwaam", .in_future = "{0} mu" },
 };
 
-// Source: duration/locales/src/am.json
+// Source: locales/am.json
 pub const am: sayableduration.DurationLocale = .{
     .code = "am",
     .plural = plural_one_other_zero_one,
@@ -247,7 +247,7 @@ pub const am: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ሰ" }, .minute = .{ .simple = "{n} ደ" }, .hour = .{ .simple = "{n} ሰ" }, .day = .{ .simple = "{n} ቀ" }, .week = .{ .simple = "{n} ሳምንት" }, .month = .{ .simple = "{n} ወር" }, .year = .{ .forms = .{ .zero = null, .one = "{n} ዓመት", .two = null, .few = null, .many = null, .other = "{n} ዓ" } }, .half = "{n}½", .delimiter = "", .ago = "ከ{0} በፊት", .in_future = "በ{0} ውስጥ" },
 };
 
-// Source: duration/locales/src/ar.json
+// Source: locales/ar.json
 pub const ar: sayableduration.DurationLocale = .{
     .code = "ar",
     .plural = plural_ar,
@@ -269,7 +269,7 @@ pub const ar: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ث" }, .minute = .{ .simple = "{n} د" }, .hour = .{ .simple = "{n} س" }, .day = .{ .simple = "{n} ي" }, .week = .{ .simple = "{n} أ" }, .month = .{ .forms = .{ .zero = "{n} شهر", .one = "شهر", .two = "شهران", .few = "{n} أشهر", .many = "{n} شهرًا", .other = "{n} شهر" } }, .year = .{ .simple = "{n} سنة" }, .half = "{n}½", .delimiter = "", .ago = "منذ {0}", .in_future = "بعد {0}" },
 };
 
-// Source: duration/locales/src/ay.json
+// Source: locales/ay.json
 pub const ay: sayableduration.DurationLocale = .{
     .code = "ay",
     .plural = plural_other_only,
@@ -291,7 +291,7 @@ pub const ay: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} nayraqata", .in_future = "{0} jutirïn" },
 };
 
-// Source: duration/locales/src/az.json
+// Source: locales/az.json
 pub const az: sayableduration.DurationLocale = .{
     .code = "az",
     .plural = plural_one_other,
@@ -313,7 +313,7 @@ pub const az: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} san" }, .minute = .{ .simple = "{n} dəq" }, .hour = .{ .simple = "{n} saat" }, .day = .{ .simple = "{n} gün" }, .week = .{ .simple = "{n} hft" }, .month = .{ .simple = "{n} ay" }, .year = .{ .simple = "{n} il" }, .half = "{n}½", .delimiter = "", .ago = "{0} əvvəl", .in_future = "{0} sonra" },
 };
 
-// Source: duration/locales/src/bci.json
+// Source: locales/bci.json
 pub const bci: sayableduration.DurationLocale = .{
     .code = "bci",
     .plural = plural_other_only,
@@ -335,7 +335,7 @@ pub const bci: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} sín", .in_future = "ɔ {0}" },
 };
 
-// Source: duration/locales/src/be.json
+// Source: locales/be.json
 pub const be: sayableduration.DurationLocale = .{
     .code = "be",
     .plural = plural_ru_uk,
@@ -357,7 +357,7 @@ pub const be: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} с" }, .minute = .{ .simple = "{n} хв" }, .hour = .{ .simple = "{n} гадз" }, .day = .{ .simple = "{n} д." }, .week = .{ .simple = "{n} т." }, .month = .{ .simple = "{n} м." }, .year = .{ .forms = .{ .zero = null, .one = "{n} г.", .two = null, .few = "{n} г.", .many = "{n} г.", .other = "{n} г." } }, .half = "{n}½", .delimiter = "", .ago = "{0} таму", .in_future = "праз {0}" },
 };
 
-// Source: duration/locales/src/bem.json
+// Source: locales/bem.json
 pub const bem: sayableduration.DurationLocale = .{
     .code = "bem",
     .plural = plural_one_other,
@@ -379,7 +379,7 @@ pub const bem: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} iyapita", .in_future = "mu {0}" },
 };
 
-// Source: duration/locales/src/bg.json
+// Source: locales/bg.json
 pub const bg: sayableduration.DurationLocale = .{
     .code = "bg",
     .plural = plural_one_other,
@@ -401,7 +401,7 @@ pub const bg: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} с" }, .minute = .{ .simple = "{n} мин" }, .hour = .{ .simple = "{n} ч" }, .day = .{ .simple = "{n} д" }, .week = .{ .simple = "{n} седм." }, .month = .{ .simple = "{n} мес." }, .year = .{ .simple = "{n} г." }, .half = "{n}½", .delimiter = "", .ago = "преди {0}", .in_future = "след {0}" },
 };
 
-// Source: duration/locales/src/bi.json
+// Source: locales/bi.json
 pub const bi: sayableduration.DurationLocale = .{
     .code = "bi",
     .plural = plural_other_only,
@@ -423,7 +423,7 @@ pub const bi: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} bifo", .in_future = "long {0}" },
 };
 
-// Source: duration/locales/src/bm.json
+// Source: locales/bm.json
 pub const bm: sayableduration.DurationLocale = .{
     .code = "bm",
     .plural = plural_other_only,
@@ -445,7 +445,7 @@ pub const bm: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "sek {n}" }, .minute = .{ .simple = "min {n}" }, .hour = .{ .simple = "lɛr {n}" }, .day = .{ .simple = "don {n}" }, .week = .{ .simple = "dɔgɔk {n}" }, .month = .{ .simple = "kalo {n}" }, .year = .{ .simple = "san {n}" }, .half = "{n}½", .delimiter = "", .ago = "{0} bɔlen", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/bn.json
+// Source: locales/bn.json
 pub const bn: sayableduration.DurationLocale = .{
     .code = "bn",
     .plural = plural_one_other_zero_one,
@@ -467,7 +467,7 @@ pub const bn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} সেঃ" }, .minute = .{ .simple = "{n} মিঃ" }, .hour = .{ .simple = "{n} ঘঃ" }, .day = .{ .simple = "{n} দিন" }, .week = .{ .simple = "{n} সপ্তাহ" }, .month = .{ .simple = "{n} মাস" }, .year = .{ .simple = "{n} বছর" }, .half = "{n}½", .delimiter = "", .ago = "{0} আগে", .in_future = "{0} পরে" },
 };
 
-// Source: duration/locales/src/br.json
+// Source: locales/br.json
 pub const br: sayableduration.DurationLocale = .{
     .code = "br",
     .plural = plural_br,
@@ -489,7 +489,7 @@ pub const br: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}sizh." }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}b" }, .half = "{n}½", .delimiter = "", .ago = "{0} zo", .in_future = "a-benn {0}" },
 };
 
-// Source: duration/locales/src/bs.json
+// Source: locales/bs.json
 pub const bs: sayableduration.DurationLocale = .{
     .code = "bs",
     .plural = plural_slavic_bcs,
@@ -511,7 +511,7 @@ pub const bs: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} sedm." }, .month = .{ .simple = "{n} mj." }, .year = .{ .simple = "{n} god." }, .half = "{n}½", .delimiter = "", .ago = "prije {0}", .in_future = "za {0}" },
 };
 
-// Source: duration/locales/src/ca.json
+// Source: locales/ca.json
 pub const ca: sayableduration.DurationLocale = .{
     .code = "ca",
     .plural = plural_one_other,
@@ -533,7 +533,7 @@ pub const ca: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} setm." }, .month = .{ .simple = "{n} m" }, .year = .{ .forms = .{ .zero = null, .one = "{n} any", .two = null, .few = null, .many = null, .other = "{n} anys" } }, .half = "{n}½", .delimiter = "", .ago = "fa {0}", .in_future = "d'aquí a {0}" },
 };
 
-// Source: duration/locales/src/cak.json
+// Source: locales/cak.json
 pub const cak: sayableduration.DurationLocale = .{
     .code = "cak",
     .plural = plural_other_only,
@@ -555,7 +555,7 @@ pub const cak: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} k'o chi", .in_future = "pa {0}" },
 };
 
-// Source: duration/locales/src/ceb.json
+// Source: locales/ceb.json
 pub const ceb: sayableduration.DurationLocale = .{
     .code = "ceb",
     .plural = plural_one_other_zero_one,
@@ -577,7 +577,7 @@ pub const ceb: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}seg" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}o" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}sem" }, .month = .{ .simple = "{n}b" }, .year = .{ .simple = "{n}t" }, .half = "{n}½", .delimiter = "", .ago = "{0} ang milabay", .in_future = "sulod sa {0}" },
 };
 
-// Source: duration/locales/src/cs.json
+// Source: locales/cs.json
 pub const cs: sayableduration.DurationLocale = .{
     .code = "cs",
     .plural = plural_cs_sk,
@@ -599,7 +599,7 @@ pub const cs: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} t." }, .month = .{ .simple = "{n} m." }, .year = .{ .forms = .{ .zero = null, .one = "{n} r.", .two = null, .few = "{n} r.", .many = "{n} r.", .other = "{n} l." } }, .half = null, .delimiter = "", .ago = "před {0}", .in_future = "za {0}" },
 };
 
-// Source: duration/locales/src/cy.json
+// Source: locales/cy.json
 pub const cy: sayableduration.DurationLocale = .{
     .code = "cy",
     .plural = plural_cy,
@@ -621,7 +621,7 @@ pub const cy: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} eil" }, .minute = .{ .simple = "{n}mun" }, .hour = .{ .simple = "{n} awr" }, .day = .{ .simple = "{n}d" }, .week = .{ .forms = .{ .zero = "{n} ws", .one = "{n}w", .two = "{n} ws", .few = "{n} ws", .many = "{n} ws", .other = "{n}w" } }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}bl" }, .half = "{n}½", .delimiter = "", .ago = "{0} yn ôl", .in_future = "mewn {0}" },
 };
 
-// Source: duration/locales/src/da.json
+// Source: locales/da.json
 pub const da: sayableduration.DurationLocale = .{
     .code = "da",
     .plural = plural_one_other,
@@ -643,7 +643,7 @@ pub const da: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} t" }, .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} u" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} år" }, .half = null, .delimiter = "", .ago = "{0} siden", .in_future = "om {0}" },
 };
 
-// Source: duration/locales/src/de.json
+// Source: locales/de.json
 pub const de: sayableduration.DurationLocale = .{
     .code = "de",
     .plural = plural_one_other,
@@ -665,7 +665,7 @@ pub const de: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} Sek." }, .minute = .{ .simple = "{n} Min." }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n} T" }, .week = .{ .simple = "{n} W" }, .month = .{ .simple = "{n} M" }, .year = .{ .simple = "{n} J" }, .half = null, .delimiter = "", .ago = "vor {0}", .in_future = "in {0}" },
 };
 
-// Source: duration/locales/src/din.json
+// Source: locales/din.json
 pub const din: sayableduration.DurationLocale = .{
     .code = "din",
     .plural = plural_one_other,
@@ -687,7 +687,7 @@ pub const din: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} cï wëëŋ", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/dje.json
+// Source: locales/dje.json
 pub const dje: sayableduration.DurationLocale = .{
     .code = "dje",
     .plural = plural_other_only,
@@ -709,7 +709,7 @@ pub const dje: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ban", .in_future = "da {0}" },
 };
 
-// Source: duration/locales/src/dv.json
+// Source: locales/dv.json
 pub const dv: sayableduration.DurationLocale = .{
     .code = "dv",
     .plural = plural_other_only,
@@ -731,7 +731,7 @@ pub const dv: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "މީގެ {0} ކުރިން", .in_future = "{0} ފަހުން" },
 };
 
-// Source: duration/locales/src/dyu.json
+// Source: locales/dyu.json
 pub const dyu: sayableduration.DurationLocale = .{
     .code = "dyu",
     .plural = plural_other_only,
@@ -753,7 +753,7 @@ pub const dyu: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} tɛmɛnen", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/dz.json
+// Source: locales/dz.json
 pub const dz: sayableduration.DurationLocale = .{
     .code = "dz",
     .plural = plural_other_only,
@@ -775,7 +775,7 @@ pub const dz: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} ཧེ་མ", .in_future = "{0} ཤུལ་ལས" },
 };
 
-// Source: duration/locales/src/ee.json
+// Source: locales/ee.json
 pub const ee: sayableduration.DurationLocale = .{
     .code = "ee",
     .plural = plural_one_other,
@@ -797,7 +797,7 @@ pub const ee: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "ɖe {0} me", .in_future = "le {0} me" },
 };
 
-// Source: duration/locales/src/el.json
+// Source: locales/el.json
 pub const el: sayableduration.DurationLocale = .{
     .code = "el",
     .plural = plural_one_other,
@@ -819,7 +819,7 @@ pub const el: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} δ" }, .minute = .{ .simple = "{n} λ" }, .hour = .{ .simple = "{n} ώ" }, .day = .{ .simple = "{n} η" }, .week = .{ .simple = "{n} ε" }, .month = .{ .simple = "{n} μ" }, .year = .{ .simple = "{n} έ" }, .half = "{n}½", .delimiter = "", .ago = "πριν από {0}", .in_future = "σε {0}" },
 };
 
-// Source: duration/locales/src/en.json
+// Source: locales/en.json
 pub const en: sayableduration.DurationLocale = .{
     .code = "en",
     .plural = plural_one_other,
@@ -841,7 +841,7 @@ pub const en: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} ago", .in_future = "in {0}" },
 };
 
-// Source: duration/locales/src/es.json
+// Source: locales/es.json
 pub const es: sayableduration.DurationLocale = .{
     .code = "es",
     .plural = plural_one_other,
@@ -863,7 +863,7 @@ pub const es: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}sem" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}a" }, .half = "{n}½", .delimiter = "", .ago = "hace {0}", .in_future = "en {0}" },
 };
 
-// Source: duration/locales/src/et.json
+// Source: locales/et.json
 pub const et: sayableduration.DurationLocale = .{
     .code = "et",
     .plural = plural_one_other,
@@ -885,7 +885,7 @@ pub const et: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} t" }, .day = .{ .simple = "{n} p" }, .week = .{ .simple = "{n} n" }, .month = .{ .simple = "{n} k" }, .year = .{ .simple = "{n} a" }, .half = null, .delimiter = "", .ago = "{0} tagasi", .in_future = "{0} pärast" },
 };
 
-// Source: duration/locales/src/eu.json
+// Source: locales/eu.json
 pub const eu: sayableduration.DurationLocale = .{
     .code = "eu",
     .plural = plural_other_only,
@@ -907,7 +907,7 @@ pub const eu: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} e." }, .week = .{ .simple = "{n} aste" }, .month = .{ .simple = "{n} hil" }, .year = .{ .simple = "{n} u." }, .half = "{n}½", .delimiter = "", .ago = "duela {0}", .in_future = "{0} barru" },
 };
 
-// Source: duration/locales/src/fa.json
+// Source: locales/fa.json
 pub const fa: sayableduration.DurationLocale = .{
     .code = "fa",
     .plural = plural_one_other_zero_one,
@@ -929,7 +929,7 @@ pub const fa: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n} روز" }, .week = .{ .simple = "{n} هفته" }, .month = .{ .simple = "{n} ماه" }, .year = .{ .simple = "{n} سال" }, .half = "{n}½", .delimiter = "", .ago = "{0} پیش", .in_future = "{0} دیگر" },
 };
 
-// Source: duration/locales/src/fan.json
+// Source: locales/fan.json
 pub const fan: sayableduration.DurationLocale = .{
     .code = "fan",
     .plural = plural_one_other,
@@ -951,7 +951,7 @@ pub const fan: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} a ja", .in_future = "a {0}" },
 };
 
-// Source: duration/locales/src/ff.json
+// Source: locales/ff.json
 pub const ff: sayableduration.DurationLocale = .{
     .code = "ff",
     .plural = plural_one_other_zero_one,
@@ -973,7 +973,7 @@ pub const ff: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "maj {n}" }, .minute = .{ .simple = "hoj {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "wak {n}", .two = null, .few = null, .many = null, .other = "wakji {n}" } }, .day = .{ .simple = "ñalɗe {n}" }, .week = .{ .forms = .{ .zero = null, .one = "yont {n}", .two = null, .few = null, .many = null, .other = "yontji {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "lew {n}", .two = null, .few = null, .many = null, .other = "leb {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "hit {n}", .two = null, .few = null, .many = null, .other = "duuɓi {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} ɓennuɗo", .in_future = "nder {0}" },
 };
 
-// Source: duration/locales/src/fi.json
+// Source: locales/fi.json
 pub const fi: sayableduration.DurationLocale = .{
     .code = "fi",
     .plural = plural_one_other,
@@ -995,7 +995,7 @@ pub const fi: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}t" }, .day = .{ .simple = "{n}pv" }, .week = .{ .simple = "{n}vk" }, .month = .{ .simple = "{n}kk" }, .year = .{ .simple = "{n}v" }, .half = "{n}½", .delimiter = "", .ago = "{0} sitten", .in_future = "{0} kuluttua" },
 };
 
-// Source: duration/locales/src/fil.json
+// Source: locales/fil.json
 pub const fil: sayableduration.DurationLocale = .{
     .code = "fil",
     .plural = plural_other_only,
@@ -1017,7 +1017,7 @@ pub const fil: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n} oras" }, .day = .{ .forms = .{ .zero = null, .one = "{n} araw", .two = null, .few = null, .many = null, .other = "{n} na araw" } }, .week = .{ .simple = "{n}linggo" }, .month = .{ .forms = .{ .zero = null, .one = "{n}buwan", .two = null, .few = null, .many = null, .other = "{n} buwan" } }, .year = .{ .simple = "{n}taon" }, .half = "{n}½", .delimiter = "", .ago = "{0} na ang nakalipas", .in_future = "sa loob ng {0}" },
 };
 
-// Source: duration/locales/src/fj.json
+// Source: locales/fj.json
 pub const fj: sayableduration.DurationLocale = .{
     .code = "fj",
     .plural = plural_other_only,
@@ -1039,7 +1039,7 @@ pub const fj: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} sa oti", .in_future = "ena {0}" },
 };
 
-// Source: duration/locales/src/fon.json
+// Source: locales/fon.json
 pub const fon: sayableduration.DurationLocale = .{
     .code = "fon",
     .plural = plural_other_only,
@@ -1061,7 +1061,7 @@ pub const fon: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ɖo", .in_future = "ɖo {0} mɛ" },
 };
 
-// Source: duration/locales/src/fr.json
+// Source: locales/fr.json
 pub const fr: sayableduration.DurationLocale = .{
     .code = "fr",
     .plural = plural_one_other_zero_one,
@@ -1083,7 +1083,7 @@ pub const fr: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}j" }, .week = .{ .simple = "{n}sem." }, .month = .{ .simple = "{n}m." }, .year = .{ .simple = "{n}a" }, .half = "{n}½", .delimiter = "", .ago = "il y a {0}", .in_future = "dans {0}" },
 };
 
-// Source: duration/locales/src/ga.json
+// Source: locales/ga.json
 pub const ga: sayableduration.DurationLocale = .{
     .code = "ga",
     .plural = plural_ga,
@@ -1105,7 +1105,7 @@ pub const ga: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} soic" }, .minute = .{ .forms = .{ .zero = null, .one = "{n} nóim", .two = "{n} nóim", .few = "{n} nóim", .many = "{n}n", .other = "{n} nóim" } }, .hour = .{ .simple = "{n} u" }, .day = .{ .simple = "{n} lá" }, .week = .{ .simple = "{n} scht" }, .month = .{ .forms = .{ .zero = null, .one = "{n}m", .two = "{n}m", .few = "{n}m", .many = "{n}m", .other = "{n} m" } }, .year = .{ .simple = "{n} bl" }, .half = "{n}½", .delimiter = "", .ago = "{0} ó shin", .in_future = "i gceann {0}" },
 };
 
-// Source: duration/locales/src/gd.json
+// Source: locales/gd.json
 pub const gd: sayableduration.DurationLocale = .{
     .code = "gd",
     .plural = plural_gd,
@@ -1127,7 +1127,7 @@ pub const gd: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}d" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}u" }, .day = .{ .simple = "{n}là" }, .week = .{ .simple = "{n}s" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}bl" }, .half = "{n}½", .delimiter = "", .ago = "o chionn {0}", .in_future = "an ceann {0}" },
 };
 
-// Source: duration/locales/src/gl.json
+// Source: locales/gl.json
 pub const gl: sayableduration.DurationLocale = .{
     .code = "gl",
     .plural = plural_one_other,
@@ -1149,7 +1149,7 @@ pub const gl: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}sem" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}a" }, .half = "{n}½", .delimiter = "", .ago = "hai {0}", .in_future = "en {0}" },
 };
 
-// Source: duration/locales/src/gn.json
+// Source: locales/gn.json
 pub const gn: sayableduration.DurationLocale = .{
     .code = "gn",
     .plural = plural_one_other,
@@ -1171,7 +1171,7 @@ pub const gn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ohasava'ekue", .in_future = "{0} rire" },
 };
 
-// Source: duration/locales/src/gu.json
+// Source: locales/gu.json
 pub const gu: sayableduration.DurationLocale = .{
     .code = "gu",
     .plural = plural_one_other_zero_one,
@@ -1193,7 +1193,7 @@ pub const gu: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} સે" }, .minute = .{ .simple = "{n} મિ" }, .hour = .{ .simple = "{n} ક" }, .day = .{ .simple = "{n} દિ" }, .week = .{ .simple = "{n} અઠ." }, .month = .{ .simple = "{n} મ" }, .year = .{ .simple = "{n} વ" }, .half = "{n}½", .delimiter = "", .ago = "{0} પહેલાં", .in_future = "{0} પછી" },
 };
 
-// Source: duration/locales/src/gv.json
+// Source: locales/gv.json
 pub const gv: sayableduration.DurationLocale = .{
     .code = "gv",
     .plural = plural_gv,
@@ -1215,7 +1215,7 @@ pub const gv: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} er dy henney", .in_future = "ayns {0}" },
 };
 
-// Source: duration/locales/src/ha.json
+// Source: locales/ha.json
 pub const ha: sayableduration.DurationLocale = .{
     .code = "ha",
     .plural = plural_one_other,
@@ -1237,7 +1237,7 @@ pub const ha: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} da suka wuce", .in_future = "cikin {0}" },
 };
 
-// Source: duration/locales/src/he.json
+// Source: locales/he.json
 pub const he: sayableduration.DurationLocale = .{
     .code = "he",
     .plural = plural_he,
@@ -1259,7 +1259,7 @@ pub const he: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} שנ׳" }, .minute = .{ .simple = "{n} דק׳" }, .hour = .{ .simple = "{n} שע׳" }, .day = .{ .simple = "{n} י׳" }, .week = .{ .simple = "{n} ש′" }, .month = .{ .simple = "{n} ח׳" }, .year = .{ .simple = "{n} ש′" }, .half = "{n}½", .delimiter = "", .ago = "לפני {0}", .in_future = "בעוד {0}" },
 };
 
-// Source: duration/locales/src/hi.json
+// Source: locales/hi.json
 pub const hi: sayableduration.DurationLocale = .{
     .code = "hi",
     .plural = plural_one_other_zero_one,
@@ -1281,7 +1281,7 @@ pub const hi: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} से" }, .minute = .{ .simple = "{n} मि" }, .hour = .{ .simple = "{n} घं" }, .day = .{ .simple = "{n} दि" }, .week = .{ .simple = "{n} सप्ताह" }, .month = .{ .simple = "{n} माह" }, .year = .{ .simple = "{n} व" }, .half = "{n}½", .delimiter = "", .ago = "{0} पहले", .in_future = "{0} में" },
 };
 
-// Source: duration/locales/src/hmn.json
+// Source: locales/hmn.json
 pub const hmn: sayableduration.DurationLocale = .{
     .code = "hmn",
     .plural = plural_other_only,
@@ -1303,7 +1303,7 @@ pub const hmn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} dhau los", .in_future = "hauv {0}" },
 };
 
-// Source: duration/locales/src/hr.json
+// Source: locales/hr.json
 pub const hr: sayableduration.DurationLocale = .{
     .code = "hr",
     .plural = plural_slavic_bcs,
@@ -1325,7 +1325,7 @@ pub const hr: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} tj." }, .month = .{ .simple = "{n} mj." }, .year = .{ .simple = "{n} g." }, .half = "{n}½", .delimiter = "", .ago = "prije {0}", .in_future = "za {0}" },
 };
 
-// Source: duration/locales/src/ht.json
+// Source: locales/ht.json
 pub const ht: sayableduration.DurationLocale = .{
     .code = "ht",
     .plural = plural_one_other_zero_one,
@@ -1347,7 +1347,7 @@ pub const ht: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}seg" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}èdt" }, .day = .{ .simple = "{n}j" }, .week = .{ .simple = "{n}sem" }, .month = .{ .simple = "{n}mwa" }, .year = .{ .simple = "{n}an" }, .half = "{n}½", .delimiter = "", .ago = "sa gen {0}", .in_future = "nan {0}" },
 };
 
-// Source: duration/locales/src/hu.json
+// Source: locales/hu.json
 pub const hu: sayableduration.DurationLocale = .{
     .code = "hu",
     .plural = plural_other_only,
@@ -1369,7 +1369,7 @@ pub const hu: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} mp" }, .minute = .{ .simple = "{n} p" }, .hour = .{ .simple = "{n} ó" }, .day = .{ .simple = "{n} nap" }, .week = .{ .simple = "{n} hét" }, .month = .{ .simple = "{n} h." }, .year = .{ .simple = "{n} év" }, .half = "{n}½", .delimiter = "", .ago = "{0} ezelőtt", .in_future = "{0} múlva" },
 };
 
-// Source: duration/locales/src/hy.json
+// Source: locales/hy.json
 pub const hy: sayableduration.DurationLocale = .{
     .code = "hy",
     .plural = plural_one_other_zero_one,
@@ -1391,7 +1391,7 @@ pub const hy: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} վ" }, .minute = .{ .simple = "{n} ր" }, .hour = .{ .simple = "{n} ժ" }, .day = .{ .simple = "{n} օ" }, .week = .{ .simple = "{n} շ" }, .month = .{ .simple = "{n} ա" }, .year = .{ .simple = "{n} տ" }, .half = "{n}½", .delimiter = "", .ago = "{0} առաջ", .in_future = "{0} հետո" },
 };
 
-// Source: duration/locales/src/id.json
+// Source: locales/id.json
 pub const id: sayableduration.DurationLocale = .{
     .code = "id",
     .plural = plural_other_only,
@@ -1413,7 +1413,7 @@ pub const id: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} dtk" }, .minute = .{ .simple = "{n} mnt" }, .hour = .{ .simple = "{n} j" }, .day = .{ .simple = "{n} hr" }, .week = .{ .simple = "{n} mgg" }, .month = .{ .simple = "{n} bln" }, .year = .{ .simple = "{n} thn" }, .half = "{n}½", .delimiter = "", .ago = "{0} yang lalu", .in_future = "dalam {0}" },
 };
 
-// Source: duration/locales/src/ig.json
+// Source: locales/ig.json
 pub const ig: sayableduration.DurationLocale = .{
     .code = "ig",
     .plural = plural_other_only,
@@ -1435,7 +1435,7 @@ pub const ig: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} gara aga", .in_future = "na {0}" },
 };
 
-// Source: duration/locales/src/is.json
+// Source: locales/is.json
 pub const is: sayableduration.DurationLocale = .{
     .code = "is",
     .plural = plural_mk,
@@ -1457,7 +1457,7 @@ pub const is: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}k" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}v" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}á" }, .half = "{n}½", .delimiter = "", .ago = "fyrir {0}", .in_future = "eftir {0}" },
 };
 
-// Source: duration/locales/src/it.json
+// Source: locales/it.json
 pub const it: sayableduration.DurationLocale = .{
     .code = "it",
     .plural = plural_one_other,
@@ -1479,7 +1479,7 @@ pub const it: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}h" }, .day = .{ .forms = .{ .zero = null, .one = "{n}g", .two = null, .few = null, .many = null, .other = "{n}gg" } }, .week = .{ .simple = "{n}sett." }, .month = .{ .forms = .{ .zero = null, .one = "{n} mese", .two = null, .few = null, .many = null, .other = "{n} mesi" } }, .year = .{ .forms = .{ .zero = null, .one = "{n}anno", .two = null, .few = null, .many = null, .other = "{n}anni" } }, .half = "{n}½", .delimiter = "", .ago = "{0} fa", .in_future = "tra {0}" },
 };
 
-// Source: duration/locales/src/ja.json
+// Source: locales/ja.json
 pub const ja: sayableduration.DurationLocale = .{
     .code = "ja",
     .plural = plural_other_only,
@@ -1501,7 +1501,7 @@ pub const ja: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0}前", .in_future = "{0}後" },
 };
 
-// Source: duration/locales/src/jv.json
+// Source: locales/jv.json
 pub const jv: sayableduration.DurationLocale = .{
     .code = "jv",
     .plural = plural_other_only,
@@ -1523,7 +1523,7 @@ pub const jv: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} dtk" }, .minute = .{ .simple = "{n} mnt" }, .hour = .{ .simple = "{n}j" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n} peken" }, .month = .{ .simple = "{n} sasi" }, .year = .{ .simple = "{n} taun" }, .half = "{n}½", .delimiter = "", .ago = "{0} kepungkur", .in_future = "ing {0}" },
 };
 
-// Source: duration/locales/src/ka.json
+// Source: locales/ka.json
 pub const ka: sayableduration.DurationLocale = .{
     .code = "ka",
     .plural = plural_one_other,
@@ -1545,7 +1545,7 @@ pub const ka: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}წმ" }, .minute = .{ .simple = "{n}წთ" }, .hour = .{ .simple = "{n}სთ" }, .day = .{ .simple = "{n} დღე" }, .week = .{ .simple = "{n} კვრ" }, .month = .{ .simple = "{n} თვე" }, .year = .{ .simple = "{n} წ" }, .half = "{n}½", .delimiter = "", .ago = "{0} წინ", .in_future = "{0} შემდეგ" },
 };
 
-// Source: duration/locales/src/kbp.json
+// Source: locales/kbp.json
 pub const kbp: sayableduration.DurationLocale = .{
     .code = "kbp",
     .plural = plural_other_only,
@@ -1567,7 +1567,7 @@ pub const kbp: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} yɔ", .in_future = "pɩ {0}" },
 };
 
-// Source: duration/locales/src/kek.json
+// Source: locales/kek.json
 pub const kek: sayableduration.DurationLocale = .{
     .code = "kek",
     .plural = plural_other_only,
@@ -1589,7 +1589,7 @@ pub const kek: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} qakab'", .in_future = "chi {0}" },
 };
 
-// Source: duration/locales/src/ki.json
+// Source: locales/ki.json
 pub const ki: sayableduration.DurationLocale = .{
     .code = "ki",
     .plural = plural_one_other,
@@ -1611,7 +1611,7 @@ pub const ki: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} ĩhĩtũkĩte", .in_future = "{0} ĩyothe" },
 };
 
-// Source: duration/locales/src/kk.json
+// Source: locales/kk.json
 pub const kk: sayableduration.DurationLocale = .{
     .code = "kk",
     .plural = plural_one_other,
@@ -1633,7 +1633,7 @@ pub const kk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} с" }, .minute = .{ .simple = "{n} мин" }, .hour = .{ .simple = "{n} сағ" }, .day = .{ .simple = "{n} к." }, .week = .{ .simple = "{n} ап." }, .month = .{ .simple = "{n} ай" }, .year = .{ .simple = "{n} ж." }, .half = "{n}½", .delimiter = "", .ago = "{0} бұрын", .in_future = "{0} кейін" },
 };
 
-// Source: duration/locales/src/kl.json
+// Source: locales/kl.json
 pub const kl: sayableduration.DurationLocale = .{
     .code = "kl",
     .plural = plural_other_only,
@@ -1655,7 +1655,7 @@ pub const kl: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} matuma siorna", .in_future = "{0} siunissami" },
 };
 
-// Source: duration/locales/src/km.json
+// Source: locales/km.json
 pub const km: sayableduration.DurationLocale = .{
     .code = "km",
     .plural = plural_other_only,
@@ -1677,7 +1677,7 @@ pub const km: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} វិនាទី" }, .minute = .{ .simple = "{n} នាទី" }, .hour = .{ .simple = "{n} ម៉ោង" }, .day = .{ .simple = "{n} ថ្ងៃ" }, .week = .{ .simple = "{n} សប្ដាហ៍" }, .month = .{ .simple = "{n} ខែ" }, .year = .{ .simple = "{n} ឆ្នាំ" }, .half = "{n}½", .delimiter = "", .ago = "{0}មុន", .in_future = "ក្នុង{0}" },
 };
 
-// Source: duration/locales/src/kn.json
+// Source: locales/kn.json
 pub const kn: sayableduration.DurationLocale = .{
     .code = "kn",
     .plural = plural_one_other_zero_one,
@@ -1699,7 +1699,7 @@ pub const kn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ಸೆ" }, .minute = .{ .simple = "{n} ನಿ" }, .hour = .{ .simple = "{n} ಗಂ" }, .day = .{ .simple = "{n} ದಿ" }, .week = .{ .simple = "{n} ವಾ" }, .month = .{ .simple = "{n} ತಿಂ" }, .year = .{ .simple = "{n} ವ" }, .half = "{n}½", .delimiter = "", .ago = "{0} ಹಿಂದೆ", .in_future = "{0} ನಂತರ" },
 };
 
-// Source: duration/locales/src/ko.json
+// Source: locales/ko.json
 pub const ko: sayableduration.DurationLocale = .{
     .code = "ko",
     .plural = plural_other_only,
@@ -1721,7 +1721,7 @@ pub const ko: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}초" }, .minute = .{ .simple = "{n}분" }, .hour = .{ .simple = "{n}시간" }, .day = .{ .simple = "{n}일" }, .week = .{ .simple = "{n}주" }, .month = .{ .simple = "{n}개월" }, .year = .{ .simple = "{n}년" }, .half = null, .delimiter = "", .ago = "{0} 전", .in_future = "{0} 후" },
 };
 
-// Source: duration/locales/src/kpe.json
+// Source: locales/kpe.json
 pub const kpe: sayableduration.DurationLocale = .{
     .code = "kpe",
     .plural = plural_other_only,
@@ -1743,7 +1743,7 @@ pub const kpe: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} pɔlɔ", .in_future = "ya {0}" },
 };
 
-// Source: duration/locales/src/kri.json
+// Source: locales/kri.json
 pub const kri: sayableduration.DurationLocale = .{
     .code = "kri",
     .plural = plural_other_only,
@@ -1765,7 +1765,7 @@ pub const kri: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} bak", .in_future = "na {0}" },
 };
 
-// Source: duration/locales/src/ktu.json
+// Source: locales/ktu.json
 pub const ktu: sayableduration.DurationLocale = .{
     .code = "ktu",
     .plural = plural_one_other,
@@ -1787,7 +1787,7 @@ pub const ktu: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "masek {n}" }, .minute = .{ .simple = "mamin {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "ngon {n}", .two = null, .few = null, .many = null, .other = "mingon {n}" } }, .day = .{ .simple = "malum {n}" }, .week = .{ .forms = .{ .zero = null, .one = "poso {n}", .two = null, .few = null, .many = null, .other = "maposo {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "ngon {n}", .two = null, .few = null, .many = null, .other = "mingon {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "mvula {n}", .two = null, .few = null, .many = null, .other = "mimv {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} vioka", .in_future = "na {0}" },
 };
 
-// Source: duration/locales/src/ku.json
+// Source: locales/ku.json
 pub const ku: sayableduration.DurationLocale = .{
     .code = "ku",
     .plural = plural_one_other,
@@ -1809,7 +1809,7 @@ pub const ku: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}d" }, .hour = .{ .simple = "{n}st" }, .day = .{ .simple = "{n}r" }, .week = .{ .simple = "{n}h" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}s" }, .half = "{n}½", .delimiter = "", .ago = "berî {0}", .in_future = "di {0} de" },
 };
 
-// Source: duration/locales/src/kw.json
+// Source: locales/kw.json
 pub const kw: sayableduration.DurationLocale = .{
     .code = "kw",
     .plural = plural_kw,
@@ -1831,7 +1831,7 @@ pub const kw: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} a-dhia", .in_future = "a-ji {0}" },
 };
 
-// Source: duration/locales/src/ky.json
+// Source: locales/ky.json
 pub const ky: sayableduration.DurationLocale = .{
     .code = "ky",
     .plural = plural_one_other,
@@ -1853,7 +1853,7 @@ pub const ky: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} сек" }, .minute = .{ .simple = "{n} мүн" }, .hour = .{ .simple = "{n}ч" }, .day = .{ .simple = "{n} к" }, .week = .{ .simple = "{n} апт" }, .month = .{ .simple = "{n} ай" }, .year = .{ .simple = "{n} ж" }, .half = "{n}½", .delimiter = "", .ago = "{0} мурун", .in_future = "{0} кийин" },
 };
 
-// Source: duration/locales/src/lb.json
+// Source: locales/lb.json
 pub const lb: sayableduration.DurationLocale = .{
     .code = "lb",
     .plural = plural_one_other,
@@ -1875,7 +1875,7 @@ pub const lb: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}D" }, .week = .{ .simple = "{n}W" }, .month = .{ .simple = "{n}M" }, .year = .{ .simple = "{n}J" }, .half = null, .delimiter = "", .ago = "virun {0}", .in_future = "an {0}" },
 };
 
-// Source: duration/locales/src/lg.json
+// Source: locales/lg.json
 pub const lg: sayableduration.DurationLocale = .{
     .code = "lg",
     .plural = plural_one_other,
@@ -1897,7 +1897,7 @@ pub const lg: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "sik {n}" }, .minute = .{ .simple = "dak {n}" }, .hour = .{ .simple = "ssa {n}" }, .day = .{ .simple = "ennaku {n}" }, .week = .{ .forms = .{ .zero = null, .one = "sab {n}", .two = null, .few = null, .many = null, .other = "sab {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "mwezi {n}", .two = null, .few = null, .many = null, .other = "myezi {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "mwaka {n}", .two = null, .few = null, .many = null, .other = "myaka {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} emabega", .in_future = "mu {0}" },
 };
 
-// Source: duration/locales/src/ln.json
+// Source: locales/ln.json
 pub const ln: sayableduration.DurationLocale = .{
     .code = "ln",
     .plural = plural_one_other_zero_one,
@@ -1919,7 +1919,7 @@ pub const ln: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "s {n}" }, .minute = .{ .simple = "m {n}" }, .hour = .{ .simple = "ng {n}" }, .day = .{ .forms = .{ .zero = null, .one = "mok {n}", .two = null, .few = null, .many = null, .other = "mik {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "pos {n}", .two = null, .few = null, .many = null, .other = "bap {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "sza {n}", .two = null, .few = null, .many = null, .other = "bsza {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "mb {n}", .two = null, .few = null, .many = null, .other = "mib {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} elékí", .in_future = "na {0}" },
 };
 
-// Source: duration/locales/src/lo.json
+// Source: locales/lo.json
 pub const lo: sayableduration.DurationLocale = .{
     .code = "lo",
     .plural = plural_other_only,
@@ -1941,7 +1941,7 @@ pub const lo: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ກ່ອນ", .in_future = "ໃນ {0}" },
 };
 
-// Source: duration/locales/src/lt.json
+// Source: locales/lt.json
 pub const lt: sayableduration.DurationLocale = .{
     .code = "lt",
     .plural = plural_lt,
@@ -1963,7 +1963,7 @@ pub const lt: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min." }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} sav." }, .month = .{ .simple = "{n} mėn." }, .year = .{ .simple = "{n} m." }, .half = null, .delimiter = "", .ago = "prieš {0}", .in_future = "po {0}" },
 };
 
-// Source: duration/locales/src/luo.json
+// Source: locales/luo.json
 pub const luo: sayableduration.DurationLocale = .{
     .code = "luo",
     .plural = plural_one_other,
@@ -1985,7 +1985,7 @@ pub const luo: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} mokalo", .in_future = "bang' {0}" },
 };
 
-// Source: duration/locales/src/lv.json
+// Source: locales/lv.json
 pub const lv: sayableduration.DurationLocale = .{
     .code = "lv",
     .plural = plural_lv,
@@ -2007,7 +2007,7 @@ pub const lv: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} n." }, .month = .{ .simple = "{n} m." }, .year = .{ .simple = "{n} g." }, .half = null, .delimiter = "", .ago = "pirms {0}", .in_future = "pēc {0}" },
 };
 
-// Source: duration/locales/src/mam.json
+// Source: locales/mam.json
 pub const mam: sayableduration.DurationLocale = .{
     .code = "mam",
     .plural = plural_other_only,
@@ -2029,7 +2029,7 @@ pub const mam: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} chi'j", .in_future = "tu'n {0}" },
 };
 
-// Source: duration/locales/src/men.json
+// Source: locales/men.json
 pub const men: sayableduration.DurationLocale = .{
     .code = "men",
     .plural = plural_one_other,
@@ -2051,7 +2051,7 @@ pub const men: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} taa gbɔyɔ", .in_future = "yɛ {0}" },
 };
 
-// Source: duration/locales/src/mfe.json
+// Source: locales/mfe.json
 pub const mfe: sayableduration.DurationLocale = .{
     .code = "mfe",
     .plural = plural_other_only,
@@ -2073,7 +2073,7 @@ pub const mfe: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} seg" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} ler" }, .day = .{ .simple = "{n} zr" }, .week = .{ .simple = "{n} sem" }, .month = .{ .simple = "{n} mwa" }, .year = .{ .simple = "{n} la" }, .half = "{n}½", .delimiter = "", .ago = "sa fer {0}", .in_future = "dan {0}" },
 };
 
-// Source: duration/locales/src/mg.json
+// Source: locales/mg.json
 pub const mg: sayableduration.DurationLocale = .{
     .code = "mg",
     .plural = plural_one_other_zero_one,
@@ -2095,7 +2095,7 @@ pub const mg: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} o" }, .day = .{ .simple = "{n} a" }, .week = .{ .simple = "{n} h" }, .month = .{ .simple = "{n} v" }, .year = .{ .simple = "{n} t" }, .half = "{n}½", .delimiter = "", .ago = "{0} lasa", .in_future = "ao anatin'ny {0}" },
 };
 
-// Source: duration/locales/src/mi.json
+// Source: locales/mi.json
 pub const mi: sayableduration.DurationLocale = .{
     .code = "mi",
     .plural = plural_one_other,
@@ -2117,7 +2117,7 @@ pub const mi: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}hēk" }, .minute = .{ .simple = "{n}men" }, .hour = .{ .simple = "{n}hāo" }, .day = .{ .simple = "{n}r" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}t" }, .half = "{n}½", .delimiter = "", .ago = "{0} i mua", .in_future = "ā te {0}" },
 };
 
-// Source: duration/locales/src/mk.json
+// Source: locales/mk.json
 pub const mk: sayableduration.DurationLocale = .{
     .code = "mk",
     .plural = plural_mk,
@@ -2139,7 +2139,7 @@ pub const mk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} с." }, .minute = .{ .simple = "{n} м." }, .hour = .{ .simple = "{n} ч." }, .day = .{ .simple = "{n} д." }, .week = .{ .simple = "{n} с." }, .month = .{ .simple = "{n} м." }, .year = .{ .simple = "{n} г." }, .half = "{n}½", .delimiter = "", .ago = "пред {0}", .in_future = "за {0}" },
 };
 
-// Source: duration/locales/src/ml.json
+// Source: locales/ml.json
 pub const ml: sayableduration.DurationLocale = .{
     .code = "ml",
     .plural = plural_one_other_zero_one,
@@ -2161,7 +2161,7 @@ pub const ml: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} സെ" }, .minute = .{ .simple = "{n} മി" }, .hour = .{ .simple = "{n} മ" }, .day = .{ .simple = "{n} ദി" }, .week = .{ .simple = "{n} ആ" }, .month = .{ .simple = "{n} മാ" }, .year = .{ .simple = "{n} വ" }, .half = "{n}½", .delimiter = "", .ago = "{0} മുമ്പ്", .in_future = "{0} കഴിഞ്ഞ്" },
 };
 
-// Source: duration/locales/src/mn.json
+// Source: locales/mn.json
 pub const mn: sayableduration.DurationLocale = .{
     .code = "mn",
     .plural = plural_one_other,
@@ -2183,7 +2183,7 @@ pub const mn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} сек" }, .minute = .{ .simple = "{n} мин" }, .hour = .{ .simple = "{n} ц" }, .day = .{ .simple = "{n} ө" }, .week = .{ .simple = "{n} д" }, .month = .{ .simple = "{n} с" }, .year = .{ .simple = "{n} ж" }, .half = "{n}½", .delimiter = "", .ago = "{0}-н өмнө", .in_future = "{0}-н дараа" },
 };
 
-// Source: duration/locales/src/mnk.json
+// Source: locales/mnk.json
 pub const mnk: sayableduration.DurationLocale = .{
     .code = "mnk",
     .plural = plural_other_only,
@@ -2205,7 +2205,7 @@ pub const mnk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "sɛk {n}" }, .minute = .{ .simple = "min {n}" }, .hour = .{ .simple = "waa {n}" }, .day = .{ .simple = "tili {n}" }, .week = .{ .simple = "lɔkɔ {n}" }, .month = .{ .simple = "kalo {n}" }, .year = .{ .simple = "sanj {n}" }, .half = "{n}½", .delimiter = "", .ago = "{0} taata", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/mos.json
+// Source: locales/mos.json
 pub const mos: sayableduration.DurationLocale = .{
     .code = "mos",
     .plural = plural_other_only,
@@ -2227,7 +2227,7 @@ pub const mos: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "sẽk {n}" }, .minute = .{ .simple = "min {n}" }, .hour = .{ .simple = "lɛɛr {n}" }, .day = .{ .simple = "daar {n}" }, .week = .{ .simple = "sem {n}" }, .month = .{ .simple = "kiu {n}" }, .year = .{ .simple = "yʋʋm {n}" }, .half = "{n}½", .delimiter = "", .ago = "{0} loog", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/mr.json
+// Source: locales/mr.json
 pub const mr: sayableduration.DurationLocale = .{
     .code = "mr",
     .plural = plural_one_other,
@@ -2249,7 +2249,7 @@ pub const mr: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}से" }, .minute = .{ .simple = "{n}मि" }, .hour = .{ .simple = "{n}ता" }, .day = .{ .simple = "{n}दि" }, .week = .{ .simple = "{n}आ" }, .month = .{ .simple = "{n}म" }, .year = .{ .simple = "{n}व" }, .half = "{n}½", .delimiter = "", .ago = "{0} पूर्वी", .in_future = "{0} मध्ये" },
 };
 
-// Source: duration/locales/src/ms.json
+// Source: locales/ms.json
 pub const ms: sayableduration.DurationLocale = .{
     .code = "ms",
     .plural = plural_other_only,
@@ -2271,7 +2271,7 @@ pub const ms: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} j" }, .day = .{ .simple = "{n} h" }, .week = .{ .simple = "{n} mgu" }, .month = .{ .simple = "{n} bln" }, .year = .{ .simple = "{n} thn" }, .half = "{n}½", .delimiter = "", .ago = "{0} lalu", .in_future = "dalam {0}" },
 };
 
-// Source: duration/locales/src/mt.json
+// Source: locales/mt.json
 pub const mt: sayableduration.DurationLocale = .{
     .code = "mt",
     .plural = plural_mt,
@@ -2293,7 +2293,7 @@ pub const mt: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} w" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ilu", .in_future = "fi {0}" },
 };
 
-// Source: duration/locales/src/my.json
+// Source: locales/my.json
 pub const my: sayableduration.DurationLocale = .{
     .code = "my",
     .plural = plural_other_only,
@@ -2315,7 +2315,7 @@ pub const my: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} မိနစ်" }, .hour = .{ .simple = "{n} နာရီ" }, .day = .{ .simple = "{n} ရက်" }, .week = .{ .simple = "{n} ပတ်" }, .month = .{ .simple = "{n} လ" }, .year = .{ .simple = "{n} နှစ်" }, .half = "{n}½", .delimiter = "", .ago = "လွန်ခဲ့သော {0}", .in_future = "{0} အတွင်း" },
 };
 
-// Source: duration/locales/src/nb.json
+// Source: locales/nb.json
 pub const nb: sayableduration.DurationLocale = .{
     .code = "nb",
     .plural = plural_one_other,
@@ -2337,7 +2337,7 @@ pub const nb: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}t" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}u" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n}å" }, .half = null, .delimiter = "", .ago = "{0} siden", .in_future = "om {0}" },
 };
 
-// Source: duration/locales/src/nd.json
+// Source: locales/nd.json
 pub const nd: sayableduration.DurationLocale = .{
     .code = "nd",
     .plural = plural_one_other,
@@ -2359,7 +2359,7 @@ pub const nd: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} edlulileyo", .in_future = "nge-{0}" },
 };
 
-// Source: duration/locales/src/ne.json
+// Source: locales/ne.json
 pub const ne: sayableduration.DurationLocale = .{
     .code = "ne",
     .plural = plural_one_other,
@@ -2381,7 +2381,7 @@ pub const ne: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} सेकेन्ड" }, .minute = .{ .simple = "{n} मिनेट" }, .hour = .{ .simple = "{n} घण्टा" }, .day = .{ .simple = "{n} दिन" }, .week = .{ .simple = "{n} हप्ता" }, .month = .{ .simple = "{n} महिना" }, .year = .{ .simple = "{n} वर्ष" }, .half = "{n}½", .delimiter = "", .ago = "{0} अगाडि", .in_future = "{0} पछि" },
 };
 
-// Source: duration/locales/src/ng.json
+// Source: locales/ng.json
 pub const ng: sayableduration.DurationLocale = .{
     .code = "ng",
     .plural = plural_one_other,
@@ -2403,7 +2403,7 @@ pub const ng: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "oosek {n}" }, .minute = .{ .simple = "oomin {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "owool {n}", .two = null, .few = null, .many = null, .other = "iiwool {n}" } }, .day = .{ .simple = "omasik {n}" }, .week = .{ .forms = .{ .zero = null, .one = "oshiw {n}", .two = null, .few = null, .many = null, .other = "iiw {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "omued {n}", .two = null, .few = null, .many = null, .other = "omied {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "omv {n}", .two = null, .few = null, .many = null, .other = "omiv {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} pita", .in_future = "mo {0}" },
 };
 
-// Source: duration/locales/src/nl.json
+// Source: locales/nl.json
 pub const nl: sayableduration.DurationLocale = .{
     .code = "nl",
     .plural = plural_one_other,
@@ -2425,7 +2425,7 @@ pub const nl: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} u" }, .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} w" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} jr" }, .half = null, .delimiter = "", .ago = "{0} geleden", .in_future = "over {0}" },
 };
 
-// Source: duration/locales/src/nr.json
+// Source: locales/nr.json
 pub const nr: sayableduration.DurationLocale = .{
     .code = "nr",
     .plural = plural_one_other,
@@ -2447,7 +2447,7 @@ pub const nr: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} eyadlulileko", .in_future = "nge {0}" },
 };
 
-// Source: duration/locales/src/nso.json
+// Source: locales/nso.json
 pub const nso: sayableduration.DurationLocale = .{
     .code = "nso",
     .plural = plural_one_other,
@@ -2469,7 +2469,7 @@ pub const nso: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} fetilego", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/nus.json
+// Source: locales/nus.json
 pub const nus: sayableduration.DurationLocale = .{
     .code = "nus",
     .plural = plural_one_other,
@@ -2491,7 +2491,7 @@ pub const nus: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} kuɔ̈ɔ̈t", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/ny.json
+// Source: locales/ny.json
 pub const ny: sayableduration.DurationLocale = .{
     .code = "ny",
     .plural = plural_one_other,
@@ -2513,7 +2513,7 @@ pub const ny: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "s {n}" }, .minute = .{ .simple = "m {n}" }, .hour = .{ .simple = "o {n}" }, .day = .{ .forms = .{ .zero = null, .one = "ts {n}", .two = null, .few = null, .many = null, .other = "mas {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "sab {n}", .two = null, .few = null, .many = null, .other = "msb {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "mw {n}", .two = null, .few = null, .many = null, .other = "miy {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "ch {n}", .two = null, .few = null, .many = null, .other = "z {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} zapitazo", .in_future = "mu {0}" },
 };
 
-// Source: duration/locales/src/om.json
+// Source: locales/om.json
 pub const om: sayableduration.DurationLocale = .{
     .code = "om",
     .plural = plural_one_other,
@@ -2535,7 +2535,7 @@ pub const om: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "sek {n}" }, .minute = .{ .simple = "daq {n}" }, .hour = .{ .simple = "sa'a {n}" }, .day = .{ .simple = "{n}g" }, .week = .{ .simple = "{n}t" }, .month = .{ .simple = "{n}j" }, .year = .{ .simple = "{n}w" }, .half = "{n}½", .delimiter = "", .ago = "{0} dura", .in_future = "{0} keessatti" },
 };
 
-// Source: duration/locales/src/or.json
+// Source: locales/or.json
 pub const @"or": sayableduration.DurationLocale = .{
     .code = "or",
     .plural = plural_one_other,
@@ -2557,7 +2557,7 @@ pub const @"or": sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ସେ" }, .minute = .{ .simple = "{n} ମି" }, .hour = .{ .simple = "{n} ଘ" }, .day = .{ .simple = "{n} ଦି" }, .week = .{ .simple = "{n} ସ" }, .month = .{ .simple = "{n} ମା" }, .year = .{ .simple = "{n} ବ" }, .half = "{n}½", .delimiter = "", .ago = "{0} ପୂର୍ବେ", .in_future = "{0} ପରେ" },
 };
 
-// Source: duration/locales/src/pa.json
+// Source: locales/pa.json
 pub const pa: sayableduration.DurationLocale = .{
     .code = "pa",
     .plural = plural_one_other_zero_one,
@@ -2579,7 +2579,7 @@ pub const pa: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ਸਕਿੰਟ" }, .minute = .{ .simple = "{n} ਮਿੰਟ" }, .hour = .{ .forms = .{ .zero = null, .one = "{n} ਘੰਟਾ", .two = null, .few = null, .many = null, .other = "{n} ਘੰਟੇ" } }, .day = .{ .simple = "{n} ਦਿਨ" }, .week = .{ .forms = .{ .zero = null, .one = "{n} ਹਫ਼ਤਾ", .two = null, .few = null, .many = null, .other = "{n} ਹਫ਼ਤੇ" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} ਮਹੀਨਾ", .two = null, .few = null, .many = null, .other = "{n} ਮਹੀਨੇ" } }, .year = .{ .simple = "{n} ਸਾਲ" }, .half = "{n}½", .delimiter = "", .ago = "{0} ਪਹਿਲਾਂ", .in_future = "{0} ਵਿੱਚ" },
 };
 
-// Source: duration/locales/src/pis.json
+// Source: locales/pis.json
 pub const pis: sayableduration.DurationLocale = .{
     .code = "pis",
     .plural = plural_other_only,
@@ -2601,7 +2601,7 @@ pub const pis: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} bifoa", .in_future = "long {0}" },
 };
 
-// Source: duration/locales/src/pl.json
+// Source: locales/pl.json
 pub const pl: sayableduration.DurationLocale = .{
     .code = "pl",
     .plural = plural_pl,
@@ -2623,7 +2623,7 @@ pub const pl: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} t." }, .month = .{ .forms = .{ .zero = null, .one = "{n} m-c", .two = null, .few = "{n} m-ce", .many = "{n} m-cy", .other = "{n} m-ca" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} r.", .two = null, .few = "{n} l.", .many = "{n} l.", .other = "{n} r." } }, .half = "{n}½", .delimiter = "", .ago = "{0} temu", .in_future = "za {0}" },
 };
 
-// Source: duration/locales/src/pov.json
+// Source: locales/pov.json
 pub const pov: sayableduration.DurationLocale = .{
     .code = "pov",
     .plural = plural_other_only,
@@ -2645,7 +2645,7 @@ pub const pov: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} sig" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} ora" }, .day = .{ .simple = "{n} dia" }, .week = .{ .simple = "{n} sim" }, .month = .{ .simple = "{n} mis" }, .year = .{ .simple = "{n} anu" }, .half = "{n}½", .delimiter = "", .ago = "faz {0}", .in_future = "di {0}" },
 };
 
-// Source: duration/locales/src/ps.json
+// Source: locales/ps.json
 pub const ps: sayableduration.DurationLocale = .{
     .code = "ps",
     .plural = plural_one_other,
@@ -2667,7 +2667,7 @@ pub const ps: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ث" }, .minute = .{ .simple = "{n} د" }, .hour = .{ .simple = "{n} س" }, .day = .{ .simple = "{n} و" }, .week = .{ .simple = "{n} او" }, .month = .{ .simple = "{n} م" }, .year = .{ .simple = "{n} ک" }, .half = "{n}½", .delimiter = "", .ago = "د {0} مخکې", .in_future = "په {0} کې" },
 };
 
-// Source: duration/locales/src/pt.json
+// Source: locales/pt.json
 pub const pt: sayableduration.DurationLocale = .{
     .code = "pt",
     .plural = plural_one_other_zero_one,
@@ -2689,7 +2689,7 @@ pub const pt: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .forms = .{ .zero = null, .one = "{n} dia", .two = null, .few = null, .many = null, .other = "{n} dias" } }, .week = .{ .simple = "{n} sem." }, .month = .{ .forms = .{ .zero = null, .one = "{n} mês", .two = null, .few = null, .many = null, .other = "{n} meses" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} ano", .two = null, .few = null, .many = null, .other = "{n} anos" } }, .half = "{n}½", .delimiter = "", .ago = "há {0}", .in_future = "em {0}" },
 };
 
-// Source: duration/locales/src/qu.json
+// Source: locales/qu.json
 pub const qu: sayableduration.DurationLocale = .{
     .code = "qu",
     .plural = plural_other_only,
@@ -2711,7 +2711,7 @@ pub const qu: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ñawpaqta", .in_future = "{0} qhipata" },
 };
 
-// Source: duration/locales/src/quc.json
+// Source: locales/quc.json
 pub const quc: sayableduration.DurationLocale = .{
     .code = "quc",
     .plural = plural_other_only,
@@ -2733,7 +2733,7 @@ pub const quc: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} k'o chi", .in_future = "pa {0}" },
 };
 
-// Source: duration/locales/src/ro.json
+// Source: locales/ro.json
 pub const ro: sayableduration.DurationLocale = .{
     .code = "ro",
     .plural = plural_ro,
@@ -2755,7 +2755,7 @@ pub const ro: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} z" }, .week = .{ .simple = "{n} săpt." }, .month = .{ .simple = "{n} l" }, .year = .{ .simple = "{n} a" }, .half = "{n}½", .delimiter = "", .ago = "acum {0}", .in_future = "peste {0}" },
 };
 
-// Source: duration/locales/src/ru.json
+// Source: locales/ru.json
 pub const ru: sayableduration.DurationLocale = .{
     .code = "ru",
     .plural = plural_ru_uk,
@@ -2777,7 +2777,7 @@ pub const ru: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} с" }, .minute = .{ .simple = "{n} мин" }, .hour = .{ .simple = "{n} ч" }, .day = .{ .simple = "{n} д." }, .week = .{ .simple = "{n} н." }, .month = .{ .simple = "{n} м." }, .year = .{ .forms = .{ .zero = null, .one = "{n} г.", .two = null, .few = "{n} г.", .many = "{n} л.", .other = "{n} г." } }, .half = "{n}½", .delimiter = "", .ago = "{0} назад", .in_future = "через {0}" },
 };
 
-// Source: duration/locales/src/rw.json
+// Source: locales/rw.json
 pub const rw: sayableduration.DurationLocale = .{
     .code = "rw",
     .plural = plural_one_other,
@@ -2799,7 +2799,7 @@ pub const rw: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "seg {n}" }, .minute = .{ .simple = "mno {n}" }, .hour = .{ .simple = "sha {n}" }, .day = .{ .simple = "{n}m" }, .week = .{ .simple = "{n}c" }, .month = .{ .simple = "{n}k" }, .year = .{ .simple = "{n}u" }, .half = "{n}½", .delimiter = "", .ago = "hashize {0}", .in_future = "mu {0}" },
 };
 
-// Source: duration/locales/src/sar.json
+// Source: locales/sar.json
 pub const sar: sayableduration.DurationLocale = .{
     .code = "sar",
     .plural = plural_other_only,
@@ -2821,7 +2821,7 @@ pub const sar: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ɓòo kɔ", .in_future = "ga {0}" },
 };
 
-// Source: duration/locales/src/sd.json
+// Source: locales/sd.json
 pub const sd: sayableduration.DurationLocale = .{
     .code = "sd",
     .plural = plural_one_other,
@@ -2843,7 +2843,7 @@ pub const sd: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} سي" }, .minute = .{ .simple = "{n} م" }, .hour = .{ .simple = "{n} ڪ" }, .day = .{ .simple = "{n} ڏ" }, .week = .{ .simple = "{n} ه" }, .month = .{ .simple = "{n} مه" }, .year = .{ .simple = "{n} س" }, .half = "{n}½", .delimiter = "", .ago = "{0} اڳ", .in_future = "{0} ۾" },
 };
 
-// Source: duration/locales/src/sg.json
+// Source: locales/sg.json
 pub const sg: sayableduration.DurationLocale = .{
     .code = "sg",
     .plural = plural_other_only,
@@ -2865,7 +2865,7 @@ pub const sg: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} na pekô", .in_future = "na {0}" },
 };
 
-// Source: duration/locales/src/shi.json
+// Source: locales/shi.json
 pub const shi: sayableduration.DurationLocale = .{
     .code = "shi",
     .plural = plural_shi,
@@ -2887,7 +2887,7 @@ pub const shi: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "ɣ {0} zzrin", .in_future = "ɣ {0}" },
 };
 
-// Source: duration/locales/src/shn.json
+// Source: locales/shn.json
 pub const shn: sayableduration.DurationLocale = .{
     .code = "shn",
     .plural = plural_other_only,
@@ -2909,7 +2909,7 @@ pub const shn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} ပူၼ်ႉမႃး", .in_future = "ထႅင်ႈ {0}" },
 };
 
-// Source: duration/locales/src/si.json
+// Source: locales/si.json
 pub const si: sayableduration.DurationLocale = .{
     .code = "si",
     .plural = plural_one_other_zero_one,
@@ -2931,7 +2931,7 @@ pub const si: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "ත {n}" }, .minute = .{ .simple = "මි {n}" }, .hour = .{ .simple = "පැය {n}" }, .day = .{ .simple = "දි {n}" }, .week = .{ .simple = "ස {n}" }, .month = .{ .simple = "මා {n}" }, .year = .{ .simple = "ව {n}" }, .half = "{n}½", .delimiter = "", .ago = "{0}ට පෙර", .in_future = "{0}කින්" },
 };
 
-// Source: duration/locales/src/sk.json
+// Source: locales/sk.json
 pub const sk: sayableduration.DurationLocale = .{
     .code = "sk",
     .plural = plural_cs_sk,
@@ -2953,7 +2953,7 @@ pub const sk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} t." }, .month = .{ .simple = "{n} m." }, .year = .{ .simple = "{n} r." }, .half = null, .delimiter = "", .ago = "pred {0}", .in_future = "o {0}" },
 };
 
-// Source: duration/locales/src/sl.json
+// Source: locales/sl.json
 pub const sl: sayableduration.DurationLocale = .{
     .code = "sl",
     .plural = plural_sl,
@@ -2975,7 +2975,7 @@ pub const sl: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} t" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} l" }, .half = "{n}½", .delimiter = "", .ago = "pred {0}", .in_future = "čez {0}" },
 };
 
-// Source: duration/locales/src/sn.json
+// Source: locales/sn.json
 pub const sn: sayableduration.DurationLocale = .{
     .code = "sn",
     .plural = plural_one_other,
@@ -2997,7 +2997,7 @@ pub const sn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "s {n}" }, .minute = .{ .simple = "m {n}" }, .hour = .{ .simple = "a {n}" }, .day = .{ .forms = .{ .zero = null, .one = "z {n}", .two = null, .few = null, .many = null, .other = "maz {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "vh {n}", .two = null, .few = null, .many = null, .other = "mvh {n}" } }, .month = .{ .simple = "mw {n}" }, .year = .{ .forms = .{ .zero = null, .one = "g {n}", .two = null, .few = null, .many = null, .other = "mak {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} yapfuura", .in_future = "mu{0}" },
 };
 
-// Source: duration/locales/src/snk.json
+// Source: locales/snk.json
 pub const snk: sayableduration.DurationLocale = .{
     .code = "snk",
     .plural = plural_other_only,
@@ -3019,7 +3019,7 @@ pub const snk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} kille", .in_future = "do {0}" },
 };
 
-// Source: duration/locales/src/so.json
+// Source: locales/so.json
 pub const so: sayableduration.DurationLocale = .{
     .code = "so",
     .plural = plural_one_other,
@@ -3041,7 +3041,7 @@ pub const so: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "ilb {n}" }, .minute = .{ .simple = "daq {n}" }, .hour = .{ .simple = "scd {n}" }, .day = .{ .simple = "{n}m" }, .week = .{ .simple = "{n}t" }, .month = .{ .simple = "{n}b" }, .year = .{ .simple = "{n}s" }, .half = "{n}½", .delimiter = "", .ago = "{0} ka hor", .in_future = "{0} gudahood" },
 };
 
-// Source: duration/locales/src/sq.json
+// Source: locales/sq.json
 pub const sq: sayableduration.DurationLocale = .{
     .code = "sq",
     .plural = plural_one_other,
@@ -3063,7 +3063,7 @@ pub const sq: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} sek." }, .minute = .{ .simple = "{n} min." }, .hour = .{ .simple = "{n} orë" }, .day = .{ .simple = "{n} ditë" }, .week = .{ .simple = "{n} javë" }, .month = .{ .simple = "{n} muaj" }, .year = .{ .forms = .{ .zero = null, .one = "{n} vit", .two = null, .few = null, .many = null, .other = "{n} vjet" } }, .half = "{n}½", .delimiter = "", .ago = "{0} më parë", .in_future = "për {0}" },
 };
 
-// Source: duration/locales/src/sr.json
+// Source: locales/sr.json
 pub const sr: sayableduration.DurationLocale = .{
     .code = "sr",
     .plural = plural_slavic_bcs,
@@ -3085,7 +3085,7 @@ pub const sr: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} с" }, .minute = .{ .simple = "{n} м" }, .hour = .{ .simple = "{n} ч" }, .day = .{ .simple = "{n} д" }, .week = .{ .simple = "{n} н" }, .month = .{ .simple = "{n} м" }, .year = .{ .simple = "{n} г" }, .half = "{n}½", .delimiter = "", .ago = "пре {0}", .in_future = "за {0}" },
 };
 
-// Source: duration/locales/src/ss.json
+// Source: locales/ss.json
 pub const ss: sayableduration.DurationLocale = .{
     .code = "ss",
     .plural = plural_one_other,
@@ -3107,7 +3107,7 @@ pub const ss: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} lokwendlulile", .in_future = "nge-{0}" },
 };
 
-// Source: duration/locales/src/st.json
+// Source: locales/st.json
 pub const st: sayableduration.DurationLocale = .{
     .code = "st",
     .plural = plural_one_other,
@@ -3129,7 +3129,7 @@ pub const st: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} e fetileng", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/su.json
+// Source: locales/su.json
 pub const su: sayableduration.DurationLocale = .{
     .code = "su",
     .plural = plural_other_only,
@@ -3151,7 +3151,7 @@ pub const su: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}dtk" }, .minute = .{ .simple = "{n}mnt" }, .hour = .{ .simple = "{n}j" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}mg" }, .month = .{ .simple = "{n}s" }, .year = .{ .simple = "{n}t" }, .half = "{n}½", .delimiter = "", .ago = "{0} kapengker", .in_future = "dina {0}" },
 };
 
-// Source: duration/locales/src/suk.json
+// Source: locales/suk.json
 pub const suk: sayableduration.DurationLocale = .{
     .code = "suk",
     .plural = plural_one_other,
@@ -3173,7 +3173,7 @@ pub const suk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} zilizopita", .in_future = "kwa {0}" },
 };
 
-// Source: duration/locales/src/sv.json
+// Source: locales/sv.json
 pub const sv: sayableduration.DurationLocale = .{
     .code = "sv",
     .plural = plural_one_other,
@@ -3195,7 +3195,7 @@ pub const sv: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}v" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}å" }, .half = null, .delimiter = "", .ago = "{0} sedan", .in_future = "om {0}" },
 };
 
-// Source: duration/locales/src/sw.json
+// Source: locales/sw.json
 pub const sw: sayableduration.DurationLocale = .{
     .code = "sw",
     .plural = plural_one_other,
@@ -3217,7 +3217,7 @@ pub const sw: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "sek {n}" }, .minute = .{ .simple = "dak {n}" }, .hour = .{ .simple = "saa {n}" }, .day = .{ .simple = "siku {n}" }, .week = .{ .simple = "wiki {n}" }, .month = .{ .forms = .{ .zero = null, .one = "mwezi {n}", .two = null, .few = null, .many = null, .other = "miezi {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "mwaka {n}", .two = null, .few = null, .many = null, .other = "miaka {n}" } }, .half = "{n}½", .delimiter = "", .ago = "{0} iliyopita", .in_future = "baada ya {0}" },
 };
 
-// Source: duration/locales/src/ta.json
+// Source: locales/ta.json
 pub const ta: sayableduration.DurationLocale = .{
     .code = "ta",
     .plural = plural_one_other,
@@ -3239,7 +3239,7 @@ pub const ta: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} வி." }, .minute = .{ .simple = "{n} நிமி." }, .hour = .{ .simple = "{n} ம.நே." }, .day = .{ .simple = "{n} நா" }, .week = .{ .simple = "{n} வா" }, .month = .{ .simple = "{n} மா" }, .year = .{ .simple = "{n} ஆ" }, .half = null, .delimiter = "", .ago = "{0} முன்", .in_future = "{0} கழித்து" },
 };
 
-// Source: duration/locales/src/te.json
+// Source: locales/te.json
 pub const te: sayableduration.DurationLocale = .{
     .code = "te",
     .plural = plural_one_other,
@@ -3261,7 +3261,7 @@ pub const te: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}సె" }, .minute = .{ .simple = "{n}ని" }, .hour = .{ .simple = "{n}గం" }, .day = .{ .simple = "{n}రో" }, .week = .{ .simple = "{n}వా" }, .month = .{ .simple = "{n}నె" }, .year = .{ .simple = "{n}సం" }, .half = "{n}½", .delimiter = "", .ago = "{0} క్రితం", .in_future = "{0} తర్వాత" },
 };
 
-// Source: duration/locales/src/tem.json
+// Source: locales/tem.json
 pub const tem: sayableduration.DurationLocale = .{
     .code = "tem",
     .plural = plural_one_other,
@@ -3283,7 +3283,7 @@ pub const tem: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} ro ba", .in_future = "ro {0}" },
 };
 
-// Source: duration/locales/src/tet.json
+// Source: locales/tet.json
 pub const tet: sayableduration.DurationLocale = .{
     .code = "tet",
     .plural = plural_other_only,
@@ -3305,7 +3305,7 @@ pub const tet: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} liu ba", .in_future = "iha {0}" },
 };
 
-// Source: duration/locales/src/tg.json
+// Source: locales/tg.json
 pub const tg: sayableduration.DurationLocale = .{
     .code = "tg",
     .plural = plural_other_only,
@@ -3327,7 +3327,7 @@ pub const tg: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}сон" }, .minute = .{ .simple = "{n}дақ" }, .hour = .{ .simple = "{n}соат" }, .day = .{ .simple = "{n}р" }, .week = .{ .simple = "{n}ҳ" }, .month = .{ .simple = "{n}м" }, .year = .{ .simple = "{n}с" }, .half = "{n}½", .delimiter = "", .ago = "{0} пеш", .in_future = "баъди {0}" },
 };
 
-// Source: duration/locales/src/th.json
+// Source: locales/th.json
 pub const th: sayableduration.DurationLocale = .{
     .code = "th",
     .plural = plural_other_only,
@@ -3349,7 +3349,7 @@ pub const th: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}วิ" }, .minute = .{ .simple = "{n}นาที" }, .hour = .{ .simple = "{n}ชม." }, .day = .{ .simple = "{n}วัน" }, .week = .{ .simple = "{n}สัปดาห์" }, .month = .{ .simple = "{n}เดือน" }, .year = .{ .simple = "{n}ปี" }, .half = "{n}½", .delimiter = "", .ago = "{0}ที่แล้ว", .in_future = "ใน{0}" },
 };
 
-// Source: duration/locales/src/ti.json
+// Source: locales/ti.json
 pub const ti: sayableduration.DurationLocale = .{
     .code = "ti",
     .plural = plural_one_other_zero_one,
@@ -3371,7 +3371,7 @@ pub const ti: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ካ" }, .minute = .{ .simple = "{n} ደ" }, .hour = .{ .simple = "{n} ሰ" }, .day = .{ .simple = "{n} መ" }, .week = .{ .simple = "{n} ሰሙን" }, .month = .{ .simple = "{n} ወር" }, .year = .{ .forms = .{ .zero = null, .one = "{n} ዓመት", .two = null, .few = null, .many = null, .other = "{n} ዓ" } }, .half = "{n}½", .delimiter = "", .ago = "ቅድሚ {0}", .in_future = "ድሕሪ {0}" },
 };
 
-// Source: duration/locales/src/tig.json
+// Source: locales/tig.json
 pub const tig: sayableduration.DurationLocale = .{
     .code = "tig",
     .plural = plural_one_other,
@@ -3393,7 +3393,7 @@ pub const tig: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "qədmi {0}", .in_future = "ba {0}" },
 };
 
-// Source: duration/locales/src/tk.json
+// Source: locales/tk.json
 pub const tk: sayableduration.DurationLocale = .{
     .code = "tk",
     .plural = plural_one_other,
@@ -3415,7 +3415,7 @@ pub const tk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}sek" }, .minute = .{ .simple = "{n}min" }, .hour = .{ .simple = "{n}sag" }, .day = .{ .simple = "{n}g" }, .week = .{ .simple = "{n}h" }, .month = .{ .simple = "{n}a" }, .year = .{ .simple = "{n}ý" }, .half = "{n}½", .delimiter = "", .ago = "{0} öň", .in_future = "{0} soň" },
 };
 
-// Source: duration/locales/src/tn.json
+// Source: locales/tn.json
 pub const tn: sayableduration.DurationLocale = .{
     .code = "tn",
     .plural = plural_one_other,
@@ -3437,7 +3437,7 @@ pub const tn: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} e e fetileng", .in_future = "ka {0}" },
 };
 
-// Source: duration/locales/src/tpi.json
+// Source: locales/tpi.json
 pub const tpi: sayableduration.DurationLocale = .{
     .code = "tpi",
     .plural = plural_other_only,
@@ -3459,7 +3459,7 @@ pub const tpi: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} i go pinis", .in_future = "long {0}" },
 };
 
-// Source: duration/locales/src/tr.json
+// Source: locales/tr.json
 pub const tr: sayableduration.DurationLocale = .{
     .code = "tr",
     .plural = plural_one_other,
@@ -3481,7 +3481,7 @@ pub const tr: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}sn" }, .minute = .{ .simple = "{n}d" }, .hour = .{ .forms = .{ .zero = null, .one = "{n} sa", .two = null, .few = null, .many = null, .other = "{n}s" } }, .day = .{ .simple = "{n}g" }, .week = .{ .simple = "{n}h" }, .month = .{ .simple = "{n}a" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} önce", .in_future = "{0} sonra" },
 };
 
-// Source: duration/locales/src/ts.json
+// Source: locales/ts.json
 pub const ts: sayableduration.DurationLocale = .{
     .code = "ts",
     .plural = plural_one_other,
@@ -3503,7 +3503,7 @@ pub const ts: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} hundza", .in_future = "hi {0}" },
 };
 
-// Source: duration/locales/src/tum.json
+// Source: locales/tum.json
 pub const tum: sayableduration.DurationLocale = .{
     .code = "tum",
     .plural = plural_one_other,
@@ -3525,7 +3525,7 @@ pub const tum: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} yamala", .in_future = "mu {0}" },
 };
 
-// Source: duration/locales/src/tzm.json
+// Source: locales/tzm.json
 pub const tzm: sayableduration.DurationLocale = .{
     .code = "tzm",
     .plural = plural_tzm,
@@ -3547,7 +3547,7 @@ pub const tzm: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "ɣ {0} zzrin", .in_future = "ɣ {0}" },
 };
 
-// Source: duration/locales/src/uk.json
+// Source: locales/uk.json
 pub const uk: sayableduration.DurationLocale = .{
     .code = "uk",
     .plural = plural_ru_uk,
@@ -3569,7 +3569,7 @@ pub const uk: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}с" }, .minute = .{ .simple = "{n}х" }, .hour = .{ .simple = "{n}г" }, .day = .{ .simple = "{n}д" }, .week = .{ .simple = "{n}т" }, .month = .{ .simple = "{n}м" }, .year = .{ .simple = "{n}р" }, .half = "{n}½", .delimiter = "", .ago = "{0} тому", .in_future = "через {0}" },
 };
 
-// Source: duration/locales/src/umb.json
+// Source: locales/umb.json
 pub const umb: sayableduration.DurationLocale = .{
     .code = "umb",
     .plural = plural_one_other,
@@ -3591,7 +3591,7 @@ pub const umb: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} pita", .in_future = "ko {0}" },
 };
 
-// Source: duration/locales/src/ur.json
+// Source: locales/ur.json
 pub const ur: sayableduration.DurationLocale = .{
     .code = "ur",
     .plural = plural_one_other,
@@ -3613,7 +3613,7 @@ pub const ur: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} سیکنڈ" }, .minute = .{ .simple = "{n} منٹ" }, .hour = .{ .forms = .{ .zero = null, .one = "{n} گھنٹہ", .two = null, .few = null, .many = null, .other = "{n} گھنٹے" } }, .day = .{ .simple = "{n} دن" }, .week = .{ .forms = .{ .zero = null, .one = "{n} ہفتہ", .two = null, .few = null, .many = null, .other = "{n} ہفتے" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} مہینہ", .two = null, .few = null, .many = null, .other = "{n} مہینے" } }, .year = .{ .simple = "{n} سال" }, .half = "{n}½", .delimiter = "", .ago = "{0} پہلے", .in_future = "{0} میں" },
 };
 
-// Source: duration/locales/src/uz.json
+// Source: locales/uz.json
 pub const uz: sayableduration.DurationLocale = .{
     .code = "uz",
     .plural = plural_one_other,
@@ -3635,7 +3635,7 @@ pub const uz: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} daq." }, .hour = .{ .simple = "{n} soat" }, .day = .{ .simple = "{n} kun" }, .week = .{ .simple = "{n} hafta" }, .month = .{ .simple = "{n} oy" }, .year = .{ .simple = "{n} yil" }, .half = "{n}½", .delimiter = "", .ago = "{0} oldin", .in_future = "{0} ichida" },
 };
 
-// Source: duration/locales/src/ve.json
+// Source: locales/ve.json
 pub const ve: sayableduration.DurationLocale = .{
     .code = "ve",
     .plural = plural_one_other,
@@ -3657,7 +3657,7 @@ pub const ve: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} yo fhiraho", .in_future = "nga {0}" },
 };
 
-// Source: duration/locales/src/vi.json
+// Source: locales/vi.json
 pub const vi: sayableduration.DurationLocale = .{
     .code = "vi",
     .plural = plural_other_only,
@@ -3679,7 +3679,7 @@ pub const vi: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} giây" }, .minute = .{ .simple = "{n} phút" }, .hour = .{ .simple = "{n} giờ" }, .day = .{ .simple = "{n} ngày" }, .week = .{ .simple = "{n} tuần" }, .month = .{ .simple = "{n} tháng" }, .year = .{ .simple = "{n} năm" }, .half = "{n}½", .delimiter = "", .ago = "{0} trước", .in_future = "trong {0}" },
 };
 
-// Source: duration/locales/src/vmw.json
+// Source: locales/vmw.json
 pub const vmw: sayableduration.DurationLocale = .{
     .code = "vmw",
     .plural = plural_one_other,
@@ -3701,7 +3701,7 @@ pub const vmw: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} zapita", .in_future = "mu {0}" },
 };
 
-// Source: duration/locales/src/wo.json
+// Source: locales/wo.json
 pub const wo: sayableduration.DurationLocale = .{
     .code = "wo",
     .plural = plural_other_only,
@@ -3723,7 +3723,7 @@ pub const wo: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "saa {n}" }, .minute = .{ .simple = "sim {n}" }, .hour = .{ .simple = "wax {n}" }, .day = .{ .simple = "bés {n}" }, .week = .{ .simple = "ayub {n}" }, .month = .{ .simple = "weer {n}" }, .year = .{ .simple = "at {n}" }, .half = "{n}½", .delimiter = "", .ago = "{0} ci gin.", .in_future = "ci {0}" },
 };
 
-// Source: duration/locales/src/xh.json
+// Source: locales/xh.json
 pub const xh: sayableduration.DurationLocale = .{
     .code = "xh",
     .plural = plural_one_other,
@@ -3745,7 +3745,7 @@ pub const xh: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "kwi{0} edlulileyo", .in_future = "kwi{0}" },
 };
 
-// Source: duration/locales/src/yao.json
+// Source: locales/yao.json
 pub const yao: sayableduration.DurationLocale = .{
     .code = "yao",
     .plural = plural_one_other,
@@ -3767,7 +3767,7 @@ pub const yao: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} lyapite", .in_future = "mu {0}" },
 };
 
-// Source: duration/locales/src/yo.json
+// Source: locales/yo.json
 pub const yo: sayableduration.DurationLocale = .{
     .code = "yo",
     .plural = plural_other_only,
@@ -3789,7 +3789,7 @@ pub const yo: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} sẹ́yìn", .in_future = "ní {0}" },
 };
 
-// Source: duration/locales/src/yue.json
+// Source: locales/yue.json
 pub const yue: sayableduration.DurationLocale = .{
     .code = "yue",
     .plural = plural_other_only,
@@ -3811,7 +3811,7 @@ pub const yue: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}秒" }, .minute = .{ .simple = "{n}分" }, .hour = .{ .simple = "{n}時" }, .day = .{ .simple = "{n}日" }, .week = .{ .simple = "{n}週" }, .month = .{ .simple = "{n}月" }, .year = .{ .simple = "{n}年" }, .half = "{n}½", .delimiter = "", .ago = "{0}前", .in_future = "{0}之後" },
 };
 
-// Source: duration/locales/src/zdj.json
+// Source: locales/zdj.json
 pub const zdj: sayableduration.DurationLocale = .{
     .code = "zdj",
     .plural = plural_other_only,
@@ -3833,7 +3833,7 @@ pub const zdj: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} zilizopita", .in_future = "ha {0}" },
 };
 
-// Source: duration/locales/src/zh.json
+// Source: locales/zh.json
 pub const zh: sayableduration.DurationLocale = .{
     .code = "zh",
     .plural = plural_other_only,
@@ -3855,7 +3855,7 @@ pub const zh: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}秒" }, .minute = .{ .simple = "{n}分钟" }, .hour = .{ .simple = "{n}小时" }, .day = .{ .simple = "{n}天" }, .week = .{ .simple = "{n}周" }, .month = .{ .simple = "{n}个月" }, .year = .{ .simple = "{n}年" }, .half = null, .delimiter = "", .ago = "{0}前", .in_future = "{0}后" },
 };
 
-// Source: duration/locales/src/zu.json
+// Source: locales/zu.json
 pub const zu: sayableduration.DurationLocale = .{
     .code = "zu",
     .plural = plural_one_other_zero_one,

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/pis.json
+# Source: locales/pis.json
 
 function locale_pis {
     $hours = @('twelf', 'wan', 'tu', 'tri', 'foa', 'faev', 'sikis', 'seven', 'eit', 'naen', 'ten', 'eleven')

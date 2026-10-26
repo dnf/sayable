@@ -7,7 +7,7 @@
 // ║ Changes will be overwritten the next time codegen runs.      ║
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
-// Source: date/locales/src/ay.json
+// Source: locales/ay.json
 
 class AYLocale {
   static code { "ay" }

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/uk.json
+# Source: locales/uk.json
 
 function locale_uk {
     $hours = @('дванадцята', 'перша', 'друга', 'третя', 'четверта', 'п''ята', 'шоста', 'сьома', 'восьма', 'дев''ята', 'десята', 'одинадцята')

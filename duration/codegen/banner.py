@@ -1,7 +1,6 @@
 """Generated-file banner and locale source comment helpers.
 
-Re-exported from .hecatron/tools/codegen/util.py (canonical location),
-with locale_source_comment overridden for sayable-duration paths.
+Re-exported from .hecatron/tools/codegen/util.py (canonical location).
 """
 
 import importlib.util as _ilu
@@ -17,8 +16,6 @@ _spec.loader.exec_module(_mod)
 
 make_banner = _mod.make_banner
 make_header = _mod.make_header
-
-
-def locale_source_comment(locale_code: str, line_prefix: str = "// ", line_suffix: str = "") -> str:
-    """Return a single-line source comment for a sayable-duration locale file."""
-    return f"{line_prefix}Source: duration/locales/src/{locale_code}.json{line_suffix}\n"
+locale_source_comment = _mod.locale_source_comment
+load_component_locales = _mod.load_component_locales
+LOCALES_DIR = _mod.LOCALES_DIR

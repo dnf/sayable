@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: time/locales/src/id.json */
+/* Source: locales/id.json */
 #include "sayabletime/sayabletime.h"
 
 const StTimeLocale st_locale_id = {

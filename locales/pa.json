@@ -1,0 +1,290 @@
+{
+  "code": "pa",
+  "name": "Punjabi",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ਦਿਨ",
+        "other": "{n} ਦਿਨ"
+      },
+      "week": {
+        "one": "{n} ਹਫ਼ਤਾ",
+        "other": "{n} ਹਫ਼ਤੇ"
+      },
+      "month": {
+        "one": "{n} ਮਹੀਨਾ",
+        "other": "{n} ਮਹੀਨੇ"
+      },
+      "year": {
+        "one": "{n} ਸਾਲ",
+        "other": "{n} ਸਾਲ"
+      }
+    },
+    "half": "ਸਾਢੇ {n}",
+    "delimiter": ", ",
+    "justBorn": "ਨਵਜੰਮਿਆ",
+    "stages": {
+      "newborn": {
+        "m": "ਨਵਜੰਮਿਆ",
+        "f": "ਨਵਜੰਮੀ"
+      },
+      "infant": "ਸ਼ਿਸ਼ੂ",
+      "toddler": {
+        "m": "ਛੋਟਾ ਬੱਚਾ",
+        "f": "ਛੋਟੀ ਬੱਚੀ"
+      },
+      "child": {
+        "m": "ਬੱਚਾ",
+        "f": "ਬੱਚੀ"
+      },
+      "teenager": {
+        "m": "ਕਿਸ਼ੋਰ",
+        "f": "ਕਿਸ਼ੋਰੀ"
+      },
+      "adult": "ਬਾਲਗ"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ਦਿਨ",
+        "week": {
+          "one": "{n} ਹਫ਼ਤਾ",
+          "other": "{n} ਹਫ਼ਤੇ"
+        },
+        "month": {
+          "one": "{n} ਮਹੀਨਾ",
+          "other": "{n} ਮਹੀਨੇ"
+        },
+        "year": "{n} ਸਾਲ"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ਦਿਨ",
+        "week": {
+          "one": "{n} ਹਫ਼ਤਾ",
+          "other": "{n} ਹਫ਼ਤੇ"
+        },
+        "month": {
+          "one": "{n} ਮਹੀਨਾ",
+          "other": "{n} ਮਹੀਨੇ"
+        },
+        "year": "{n} ਸਾਲ"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ਜਨਵਰੀ",
+      "ਫ਼ਰਵਰੀ",
+      "ਮਾਰਚ",
+      "ਅਪ੍ਰੈਲ",
+      "ਮਈ",
+      "ਜੂਨ",
+      "ਜੁਲਾਈ",
+      "ਅਗਸਤ",
+      "ਸਤੰਬਰ",
+      "ਅਕਤੂਬਰ",
+      "ਨਵੰਬਰ",
+      "ਦਸੰਬਰ"
+    ],
+    "weekdays": [
+      "ਐਤਵਾਰ",
+      "ਸੋਮਵਾਰ",
+      "ਮੰਗਲਵਾਰ",
+      "ਬੁੱਧਵਾਰ",
+      "ਵੀਰਵਾਰ",
+      "ਸ਼ੁੱਕਰਵਾਰ",
+      "ਸ਼ਨਿੱਚਰਵਾਰ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ਅੱਜ",
+    "tomorrow": "ਕੱਲ੍ਹ",
+    "yesterday": "ਕੱਲ੍ਹ",
+    "dayAfterTomorrow": "ਪਰਸੋਂ",
+    "dayBeforeYesterday": "ਪਰਸੋਂ",
+    "thisWeekday": "ਇਸ {weekday}",
+    "nextWeekday": "ਅਗਲੇ {weekday}",
+    "lastWeekday": "ਪਿਛਲੇ {weekday}",
+    "short": {
+      "months": [
+        "ਜਨ",
+        "ਫ਼ਰ",
+        "ਮਾਰਚ",
+        "ਅਪ੍ਰੈ",
+        "ਮਈ",
+        "ਜੂਨ",
+        "ਜੁਲਾ",
+        "ਅਗ",
+        "ਸਤੰ",
+        "ਅਕਤੂ",
+        "ਨਵੰ",
+        "ਦਸੰ"
+      ],
+      "weekdays": [
+        "ਐਤ",
+        "ਸੋਮ",
+        "ਮੰਗ",
+        "ਬੁੱਧ",
+        "ਵੀਰ",
+        "ਸ਼ੁੱਕ",
+        "ਸ਼ਨਿ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} ਸਕਿੰਟ",
+      "minute": "{n} ਮਿੰਟ",
+      "hour": "{n} ਘੰਟਾ",
+      "day": {
+        "one": "{n} ਦਿਨ",
+        "other": "{n} ਦਿਨ"
+      },
+      "week": {
+        "one": "{n} ਹਫ਼ਤਾ",
+        "other": "{n} ਹਫ਼ਤੇ"
+      },
+      "month": {
+        "one": "{n} ਮਹੀਨਾ",
+        "other": "{n} ਮਹੀਨੇ"
+      },
+      "year": {
+        "one": "{n} ਸਾਲ",
+        "other": "{n} ਸਾਲ"
+      }
+    },
+    "half": "ਸਾਢੇ {n}",
+    "delimiter": ", ",
+    "justNow": "ਹੁਣੇ",
+    "ago": "{0} ਪਹਿਲਾਂ",
+    "inFuture": "{0} ਵਿੱਚ",
+    "short": {
+      "units": {
+        "second": "{n} ਸਕਿੰਟ",
+        "minute": "{n} ਮਿੰਟ",
+        "hour": {
+          "one": "{n} ਘੰਟਾ",
+          "other": "{n} ਘੰਟੇ"
+        },
+        "day": "{n} ਦਿਨ",
+        "week": {
+          "one": "{n} ਹਫ਼ਤਾ",
+          "other": "{n} ਹਫ਼ਤੇ"
+        },
+        "month": {
+          "one": "{n} ਮਹੀਨਾ",
+          "other": "{n} ਮਹੀਨੇ"
+        },
+        "year": "{n} ਸਾਲ"
+      },
+      "ago": "{0} ਪਹਿਲਾਂ",
+      "inFuture": "{0} ਵਿੱਚ",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} ਸਕਿੰਟ",
+        "minute": "{n} ਮਿੰਟ",
+        "hour": {
+          "one": "{n} ਘੰਟਾ",
+          "other": "{n} ਘੰਟੇ"
+        },
+        "day": "{n} ਦਿਨ",
+        "week": {
+          "one": "{n} ਹਫ਼ਤਾ",
+          "other": "{n} ਹਫ਼ਤੇ"
+        },
+        "month": {
+          "one": "{n} ਮਹੀਨਾ",
+          "other": "{n} ਮਹੀਨੇ"
+        },
+        "year": "{n} ਸਾਲ"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ਪਹਿਲਾਂ",
+      "inFuture": "{0} ਵਿੱਚ",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "ਬਾਰਾਂ",
+        "ਇੱਕ",
+        "ਦੋ",
+        "ਤਿੰਨ",
+        "ਚਾਰ",
+        "ਪੰਜ",
+        "ਛੇ",
+        "ਸੱਤ",
+        "ਅੱਠ",
+        "ਨੌਂ",
+        "ਦਸ",
+        "ਗਿਆਰਾਂ"
+      ],
+      "midnight": "ਅੱਧੀ ਰਾਤ",
+      "noon": "ਦੁਪਹਿਰ",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

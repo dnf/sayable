@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/af.json
+# Source: locales/af.json
 
 _sayabletime_locale_af() {
     _clock_hours=('twaalf' 'een' 'twee' 'drie' 'vier' 'vyf' 'ses' 'sewe' 'agt' 'nege' 'tien' 'elf')

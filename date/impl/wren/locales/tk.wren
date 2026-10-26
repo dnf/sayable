@@ -7,7 +7,7 @@
 // ║ Changes will be overwritten the next time codegen runs.      ║
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
-// Source: date/locales/src/tk.json
+// Source: locales/tk.json
 
 class TKLocale {
   static code { "tk" }

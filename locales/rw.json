@@ -1,0 +1,257 @@
+{
+  "code": "rw",
+  "name": "Kinyarwanda",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "umunsi {n}",
+        "other": "iminsi {n}"
+      },
+      "week": {
+        "one": "icyumweru {n}",
+        "other": "ibyumweru {n}"
+      },
+      "month": {
+        "one": "ukwezi {n}",
+        "other": "amezi {n}"
+      },
+      "year": {
+        "one": "umwaka {n}",
+        "other": "imyaka {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Avutse",
+    "stages": {
+      "newborn": "Uruhinja",
+      "infant": "Uruhinja",
+      "toddler": "Umwana muto",
+      "child": "Umwana",
+      "teenager": "Umusore",
+      "adult": "Umuntu mukuru"
+    },
+    "short": {
+      "units": {
+        "day": "mns {n}",
+        "week": "cyu {n}",
+        "month": "kwe {n}",
+        "year": "mwk {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}m",
+        "week": "{n}c",
+        "month": "{n}k",
+        "year": "{n}u"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Mutarama",
+      "Gashyantare",
+      "Werurwe",
+      "Mata",
+      "Gicurasi",
+      "Kamena",
+      "Nyakanga",
+      "Kanama",
+      "Nzeli",
+      "Ukwakira",
+      "Ugushyingo",
+      "Ukuboza"
+    ],
+    "weekdays": [
+      "Ku cyumweru",
+      "Kuwa mbere",
+      "Kuwa kabiri",
+      "Kuwa gatatu",
+      "Kuwa kane",
+      "Kuwa gatanu",
+      "Kuwa gatandatu"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "uyu munsi",
+    "tomorrow": "ejo",
+    "yesterday": "ejo hashize",
+    "dayAfterTomorrow": "ejobundi",
+    "dayBeforeYesterday": "juzi",
+    "thisWeekday": "iyi {weekday}",
+    "nextWeekday": "{weekday} ntaha",
+    "lastWeekday": "{weekday} ishize",
+    "short": {
+      "months": [
+        "Mut",
+        "Gas",
+        "Wer",
+        "Mat",
+        "Gic",
+        "Kam",
+        "Nya",
+        "Kan",
+        "Nze",
+        "Ukw",
+        "Ugu",
+        "Uku"
+      ],
+      "weekdays": [
+        "Cyu",
+        "Mbe",
+        "Kab",
+        "Gat",
+        "Kan",
+        "Gat",
+        "Gnd"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "isegonda {n}",
+        "other": "amasegonda {n}"
+      },
+      "minute": {
+        "one": "umunota {n}",
+        "other": "iminota {n}"
+      },
+      "hour": {
+        "one": "isaha {n}",
+        "other": "amasaha {n}"
+      },
+      "day": {
+        "one": "umunsi {n}",
+        "other": "iminsi {n}"
+      },
+      "week": {
+        "one": "icyumweru {n}",
+        "other": "ibyumweru {n}"
+      },
+      "month": {
+        "one": "ukwezi {n}",
+        "other": "amezi {n}"
+      },
+      "year": {
+        "one": "umwaka {n}",
+        "other": "imyaka {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "ubu nyine",
+    "ago": "hashize {0}",
+    "inFuture": "mu {0}",
+    "short": {
+      "units": {
+        "second": "seg {n}",
+        "minute": "mno {n}",
+        "hour": "sha {n}",
+        "day": "mns {n}",
+        "week": "cyu {n}",
+        "month": "kwe {n}",
+        "year": "mwk {n}"
+      },
+      "ago": "hashize {0}",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "seg {n}",
+        "minute": "mno {n}",
+        "hour": "sha {n}",
+        "day": "{n}m",
+        "week": "{n}c",
+        "month": "{n}k",
+        "year": "{n}u"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "hashize {0}",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "cumi n'ebyiri",
+        "rimwe",
+        "ebyiri",
+        "eshatu",
+        "enye",
+        "eshanu",
+        "esheshatu",
+        "indwi",
+        "umunani",
+        "icyenda",
+        "icumi",
+        "cumi n'imwe"
+      ],
+      "midnight": "igicuku",
+      "noon": "saa sita",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

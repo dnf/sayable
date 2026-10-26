@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/bci.json
+# Source: locales/bci.json
 
 defmodule SayableAge.Locales.BCI do
   @moduledoc false

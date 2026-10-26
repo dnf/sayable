@@ -9,7 +9,7 @@ use v6.d;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/tpi.json
+# Source: locales/tpi.json
 unit module SayableAge::Locales::TPI;
 
 our sub locale() {

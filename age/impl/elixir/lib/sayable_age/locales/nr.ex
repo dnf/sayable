@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/nr.json
+# Source: locales/nr.json
 
 defmodule SayableAge.Locales.NR do
   @moduledoc false

@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: date/locales/src/bg.json */
+/* Source: locales/bg.json */
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_bg[12] = {

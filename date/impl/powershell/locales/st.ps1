@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/st.json
+# Source: locales/st.json
 
 function locale_st {
     $months = @('Pherekgong', 'Hlakola', 'Hlakubele', 'Mmese', 'Motsheanong', 'Phupjane', 'Phupu', 'Phato', 'Leotshe', 'Mphalane', 'Pudungwana', 'Tshitwe')

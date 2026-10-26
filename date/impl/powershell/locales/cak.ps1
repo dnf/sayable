@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/cak.json
+# Source: locales/cak.json
 
 function locale_cak {
     $months = @('Nab''ey ik''', 'Ruka''n ik''', 'Rox ik''', 'Rukaj ik''', 'Ro'' ik''', 'Ruwaq ik''', 'Ruwuq ik''', 'Ruwajxaq ik''', 'Rub''elej ik''', 'Rulaj ik''', 'Rujulaj ik''', 'Rukab''laj ik''')

@@ -517,7 +517,7 @@
            END-EVALUATE
            .
 
-*> Source: date/locales/src/af.json
+*> Source: locales/af.json
        INIT-LOCALE-AF.
            MOVE "af" TO WS-ACT-CODE
            MOVE "Januarie"
@@ -654,7 +654,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ak.json
+*> Source: locales/ak.json
        INIT-LOCALE-AK.
            MOVE "ak" TO WS-ACT-CODE
            MOVE "Ɔpɛpɔn"
@@ -791,7 +791,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/am.json
+*> Source: locales/am.json
        INIT-LOCALE-AM.
            MOVE "am" TO WS-ACT-CODE
            MOVE "ጃንዋሪ"
@@ -928,7 +928,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ar.json
+*> Source: locales/ar.json
        INIT-LOCALE-AR.
            MOVE "ar" TO WS-ACT-CODE
            MOVE "يناير"
@@ -1065,7 +1065,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ay.json
+*> Source: locales/ay.json
        INIT-LOCALE-AY.
            MOVE "ay" TO WS-ACT-CODE
            MOVE "Chinuqa"
@@ -1202,7 +1202,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/az.json
+*> Source: locales/az.json
        INIT-LOCALE-AZ.
            MOVE "az" TO WS-ACT-CODE
            MOVE "yanvar"
@@ -1339,7 +1339,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/bci.json
+*> Source: locales/bci.json
        INIT-LOCALE-BCI.
            MOVE "bci" TO WS-ACT-CODE
            MOVE "Zanvie"
@@ -1476,7 +1476,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/be.json
+*> Source: locales/be.json
        INIT-LOCALE-BE.
            MOVE "be" TO WS-ACT-CODE
            MOVE "студзень"
@@ -1637,7 +1637,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/bem.json
+*> Source: locales/bem.json
        INIT-LOCALE-BEM.
            MOVE "bem" TO WS-ACT-CODE
            MOVE "Januari"
@@ -1774,7 +1774,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/bg.json
+*> Source: locales/bg.json
        INIT-LOCALE-BG.
            MOVE "bg" TO WS-ACT-CODE
            MOVE "януари"
@@ -1911,7 +1911,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/bi.json
+*> Source: locales/bi.json
        INIT-LOCALE-BI.
            MOVE "bi" TO WS-ACT-CODE
            MOVE "Janueri"
@@ -2048,7 +2048,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/bm.json
+*> Source: locales/bm.json
        INIT-LOCALE-BM.
            MOVE "bm" TO WS-ACT-CODE
            MOVE "Zanwuye"
@@ -2185,7 +2185,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/bn.json
+*> Source: locales/bn.json
        INIT-LOCALE-BN.
            MOVE "bn" TO WS-ACT-CODE
            MOVE "জানুয়ারি"
@@ -2322,7 +2322,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/br.json
+*> Source: locales/br.json
        INIT-LOCALE-BR.
            MOVE "br" TO WS-ACT-CODE
            MOVE "Genver"
@@ -2459,7 +2459,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/bs.json
+*> Source: locales/bs.json
        INIT-LOCALE-BS.
            MOVE "bs" TO WS-ACT-CODE
            MOVE "januar"
@@ -2596,7 +2596,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ca.json
+*> Source: locales/ca.json
        INIT-LOCALE-CA.
            MOVE "ca" TO WS-ACT-CODE
            MOVE "gener"
@@ -2733,7 +2733,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/cak.json
+*> Source: locales/cak.json
        INIT-LOCALE-CAK.
            MOVE "cak" TO WS-ACT-CODE
            MOVE "Nab'ey ik'"
@@ -2870,7 +2870,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ceb.json
+*> Source: locales/ceb.json
        INIT-LOCALE-CEB.
            MOVE "ceb" TO WS-ACT-CODE
            MOVE "Enero"
@@ -3007,7 +3007,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/cs.json
+*> Source: locales/cs.json
        INIT-LOCALE-CS.
            MOVE "cs" TO WS-ACT-CODE
            MOVE "leden"
@@ -3168,7 +3168,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/cy.json
+*> Source: locales/cy.json
        INIT-LOCALE-CY.
            MOVE "cy" TO WS-ACT-CODE
            MOVE "Ionawr"
@@ -3305,7 +3305,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/da.json
+*> Source: locales/da.json
        INIT-LOCALE-DA.
            MOVE "da" TO WS-ACT-CODE
            MOVE "januar"
@@ -3442,7 +3442,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/de.json
+*> Source: locales/de.json
        INIT-LOCALE-DE.
            MOVE "de" TO WS-ACT-CODE
            MOVE "Januar"
@@ -3579,7 +3579,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/din.json
+*> Source: locales/din.json
        INIT-LOCALE-DIN.
            MOVE "din" TO WS-ACT-CODE
            MOVE "Tiɔp in dit"
@@ -3716,7 +3716,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/dje.json
+*> Source: locales/dje.json
        INIT-LOCALE-DJE.
            MOVE "dje" TO WS-ACT-CODE
            MOVE "Žanwiye"
@@ -3853,7 +3853,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/dv.json
+*> Source: locales/dv.json
        INIT-LOCALE-DV.
            MOVE "dv" TO WS-ACT-CODE
            MOVE "ޖެނުއަރީ"
@@ -3990,7 +3990,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/dyu.json
+*> Source: locales/dyu.json
        INIT-LOCALE-DYU.
            MOVE "dyu" TO WS-ACT-CODE
            MOVE "Zanwuyekalo"
@@ -4127,7 +4127,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/dz.json
+*> Source: locales/dz.json
        INIT-LOCALE-DZ.
            MOVE "dz" TO WS-ACT-CODE
            MOVE "ཟླ་དངཔ"
@@ -4264,7 +4264,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ee.json
+*> Source: locales/ee.json
        INIT-LOCALE-EE.
            MOVE "ee" TO WS-ACT-CODE
            MOVE "Dzove"
@@ -4401,7 +4401,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/el.json
+*> Source: locales/el.json
        INIT-LOCALE-EL.
            MOVE "el" TO WS-ACT-CODE
            MOVE "Ιανουαρίου"
@@ -4562,7 +4562,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/en.json
+*> Source: locales/en.json
        INIT-LOCALE-EN.
            MOVE "en" TO WS-ACT-CODE
            MOVE "January"
@@ -4748,7 +4748,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/es.json
+*> Source: locales/es.json
        INIT-LOCALE-ES.
            MOVE "es" TO WS-ACT-CODE
            MOVE "enero"
@@ -4885,7 +4885,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/et.json
+*> Source: locales/et.json
        INIT-LOCALE-ET.
            MOVE "et" TO WS-ACT-CODE
            MOVE "jaanuar"
@@ -5022,7 +5022,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/eu.json
+*> Source: locales/eu.json
        INIT-LOCALE-EU.
            MOVE "eu" TO WS-ACT-CODE
            MOVE "urtarril"
@@ -5159,7 +5159,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/fa.json
+*> Source: locales/fa.json
        INIT-LOCALE-FA.
            MOVE "fa" TO WS-ACT-CODE
            MOVE "ژانویه"
@@ -5296,7 +5296,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/fan.json
+*> Source: locales/fan.json
        INIT-LOCALE-FAN.
            MOVE "fan" TO WS-ACT-CODE
            MOVE "Nzas Ngon"
@@ -5433,7 +5433,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ff.json
+*> Source: locales/ff.json
        INIT-LOCALE-FF.
            MOVE "ff" TO WS-ACT-CODE
            MOVE "Siilo"
@@ -5570,7 +5570,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/fi.json
+*> Source: locales/fi.json
        INIT-LOCALE-FI.
            MOVE "fi" TO WS-ACT-CODE
            MOVE "tammikuu"
@@ -5731,7 +5731,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/fil.json
+*> Source: locales/fil.json
        INIT-LOCALE-FIL.
            MOVE "fil" TO WS-ACT-CODE
            MOVE "Enero"
@@ -5868,7 +5868,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/fj.json
+*> Source: locales/fj.json
        INIT-LOCALE-FJ.
            MOVE "fj" TO WS-ACT-CODE
            MOVE "Janueri"
@@ -6005,7 +6005,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/fon.json
+*> Source: locales/fon.json
        INIT-LOCALE-FON.
            MOVE "fon" TO WS-ACT-CODE
            MOVE "Alɔfí"
@@ -6142,7 +6142,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/fr.json
+*> Source: locales/fr.json
        INIT-LOCALE-FR.
            MOVE "fr" TO WS-ACT-CODE
            MOVE "janvier"
@@ -6286,7 +6286,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ga.json
+*> Source: locales/ga.json
        INIT-LOCALE-GA.
            MOVE "ga" TO WS-ACT-CODE
            MOVE "Eanáir"
@@ -6423,7 +6423,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/gd.json
+*> Source: locales/gd.json
        INIT-LOCALE-GD.
            MOVE "gd" TO WS-ACT-CODE
            MOVE "Am Faoilleach"
@@ -6560,7 +6560,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/gl.json
+*> Source: locales/gl.json
        INIT-LOCALE-GL.
            MOVE "gl" TO WS-ACT-CODE
            MOVE "xaneiro"
@@ -6697,7 +6697,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/gn.json
+*> Source: locales/gn.json
        INIT-LOCALE-GN.
            MOVE "gn" TO WS-ACT-CODE
            MOVE "Jasyteĩ"
@@ -6834,7 +6834,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/gu.json
+*> Source: locales/gu.json
        INIT-LOCALE-GU.
            MOVE "gu" TO WS-ACT-CODE
            MOVE "જાન્યુઆરી"
@@ -6971,7 +6971,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/gv.json
+*> Source: locales/gv.json
        INIT-LOCALE-GV.
            MOVE "gv" TO WS-ACT-CODE
            MOVE "Jerrey Geuree"
@@ -7108,7 +7108,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ha.json
+*> Source: locales/ha.json
        INIT-LOCALE-HA.
            MOVE "ha" TO WS-ACT-CODE
            MOVE "Janairu"
@@ -7245,7 +7245,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/he.json
+*> Source: locales/he.json
        INIT-LOCALE-HE.
            MOVE "he" TO WS-ACT-CODE
            MOVE "ינואר"
@@ -7382,7 +7382,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/hi.json
+*> Source: locales/hi.json
        INIT-LOCALE-HI.
            MOVE "hi" TO WS-ACT-CODE
            MOVE "जनवरी"
@@ -7519,7 +7519,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/hmn.json
+*> Source: locales/hmn.json
        INIT-LOCALE-HMN.
            MOVE "hmn" TO WS-ACT-CODE
            MOVE "Ib Hlis"
@@ -7656,7 +7656,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/hr.json
+*> Source: locales/hr.json
        INIT-LOCALE-HR.
            MOVE "hr" TO WS-ACT-CODE
            MOVE "siječanj"
@@ -7817,7 +7817,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ht.json
+*> Source: locales/ht.json
        INIT-LOCALE-HT.
            MOVE "ht" TO WS-ACT-CODE
            MOVE "Janvye"
@@ -7954,7 +7954,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/hu.json
+*> Source: locales/hu.json
        INIT-LOCALE-HU.
            MOVE "hu" TO WS-ACT-CODE
            MOVE "január"
@@ -8091,7 +8091,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/hy.json
+*> Source: locales/hy.json
        INIT-LOCALE-HY.
            MOVE "hy" TO WS-ACT-CODE
            MOVE "Հունվար"
@@ -8228,7 +8228,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/id.json
+*> Source: locales/id.json
        INIT-LOCALE-ID.
            MOVE "id" TO WS-ACT-CODE
            MOVE "Januari"
@@ -8365,7 +8365,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ig.json
+*> Source: locales/ig.json
        INIT-LOCALE-IG.
            MOVE "ig" TO WS-ACT-CODE
            MOVE "Jenụwarị"
@@ -8502,7 +8502,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/is.json
+*> Source: locales/is.json
        INIT-LOCALE-IS.
            MOVE "is" TO WS-ACT-CODE
            MOVE "janúar"
@@ -8639,7 +8639,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/it.json
+*> Source: locales/it.json
        INIT-LOCALE-IT.
            MOVE "it" TO WS-ACT-CODE
            MOVE "gennaio"
@@ -8776,7 +8776,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ja.json
+*> Source: locales/ja.json
        INIT-LOCALE-JA.
            MOVE "ja" TO WS-ACT-CODE
            MOVE "1月"
@@ -8913,7 +8913,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/jv.json
+*> Source: locales/jv.json
        INIT-LOCALE-JV.
            MOVE "jv" TO WS-ACT-CODE
            MOVE "Januari"
@@ -9050,7 +9050,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ka.json
+*> Source: locales/ka.json
        INIT-LOCALE-KA.
            MOVE "ka" TO WS-ACT-CODE
            MOVE "იანვარი"
@@ -9187,7 +9187,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kbp.json
+*> Source: locales/kbp.json
        INIT-LOCALE-KBP.
            MOVE "kbp" TO WS-ACT-CODE
            MOVE "Kɔlaɣ"
@@ -9324,7 +9324,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kek.json
+*> Source: locales/kek.json
        INIT-LOCALE-KEK.
            MOVE "kek" TO WS-ACT-CODE
            MOVE "Enero"
@@ -9461,7 +9461,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ki.json
+*> Source: locales/ki.json
        INIT-LOCALE-KI.
            MOVE "ki" TO WS-ACT-CODE
            MOVE "Njenuarĩ"
@@ -9598,7 +9598,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kk.json
+*> Source: locales/kk.json
        INIT-LOCALE-KK.
            MOVE "kk" TO WS-ACT-CODE
            MOVE "қаңтар"
@@ -9735,7 +9735,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kl.json
+*> Source: locales/kl.json
        INIT-LOCALE-KL.
            MOVE "kl" TO WS-ACT-CODE
            MOVE "januaarip"
@@ -9872,7 +9872,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/km.json
+*> Source: locales/km.json
        INIT-LOCALE-KM.
            MOVE "km" TO WS-ACT-CODE
            MOVE "មករា"
@@ -10009,7 +10009,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kn.json
+*> Source: locales/kn.json
        INIT-LOCALE-KN.
            MOVE "kn" TO WS-ACT-CODE
            MOVE "ಜನವರಿ"
@@ -10146,7 +10146,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ko.json
+*> Source: locales/ko.json
        INIT-LOCALE-KO.
            MOVE "ko" TO WS-ACT-CODE
            MOVE "1월"
@@ -10283,7 +10283,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kpe.json
+*> Source: locales/kpe.json
        INIT-LOCALE-KPE.
            MOVE "kpe" TO WS-ACT-CODE
            MOVE "Yanuwali"
@@ -10420,7 +10420,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kri.json
+*> Source: locales/kri.json
        INIT-LOCALE-KRI.
            MOVE "kri" TO WS-ACT-CODE
            MOVE "Jenyuari"
@@ -10557,7 +10557,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ktu.json
+*> Source: locales/ktu.json
        INIT-LOCALE-KTU.
            MOVE "ktu" TO WS-ACT-CODE
            MOVE "Yanvye"
@@ -10694,7 +10694,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ku.json
+*> Source: locales/ku.json
        INIT-LOCALE-KU.
            MOVE "ku" TO WS-ACT-CODE
            MOVE "Rêbendan"
@@ -10831,7 +10831,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/kw.json
+*> Source: locales/kw.json
        INIT-LOCALE-KW.
            MOVE "kw" TO WS-ACT-CODE
            MOVE "Genver"
@@ -10968,7 +10968,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ky.json
+*> Source: locales/ky.json
        INIT-LOCALE-KY.
            MOVE "ky" TO WS-ACT-CODE
            MOVE "Январь"
@@ -11105,7 +11105,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/lb.json
+*> Source: locales/lb.json
        INIT-LOCALE-LB.
            MOVE "lb" TO WS-ACT-CODE
            MOVE "Januar"
@@ -11242,7 +11242,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/lg.json
+*> Source: locales/lg.json
        INIT-LOCALE-LG.
            MOVE "lg" TO WS-ACT-CODE
            MOVE "Janwali"
@@ -11379,7 +11379,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ln.json
+*> Source: locales/ln.json
        INIT-LOCALE-LN.
            MOVE "ln" TO WS-ACT-CODE
            MOVE "Yanwáli"
@@ -11516,7 +11516,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/lo.json
+*> Source: locales/lo.json
        INIT-LOCALE-LO.
            MOVE "lo" TO WS-ACT-CODE
            MOVE "ມັງກອນ"
@@ -11653,7 +11653,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/lt.json
+*> Source: locales/lt.json
        INIT-LOCALE-LT.
            MOVE "lt" TO WS-ACT-CODE
            MOVE "sausis"
@@ -11814,7 +11814,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/luo.json
+*> Source: locales/luo.json
        INIT-LOCALE-LUO.
            MOVE "luo" TO WS-ACT-CODE
            MOVE "Dwe mar Achiel"
@@ -11951,7 +11951,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/lv.json
+*> Source: locales/lv.json
        INIT-LOCALE-LV.
            MOVE "lv" TO WS-ACT-CODE
            MOVE "janvāris"
@@ -12088,7 +12088,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mam.json
+*> Source: locales/mam.json
        INIT-LOCALE-MAM.
            MOVE "mam" TO WS-ACT-CODE
            MOVE "Enero"
@@ -12225,7 +12225,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/men.json
+*> Source: locales/men.json
        INIT-LOCALE-MEN.
            MOVE "men" TO WS-ACT-CODE
            MOVE "Januwali"
@@ -12362,7 +12362,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mfe.json
+*> Source: locales/mfe.json
        INIT-LOCALE-MFE.
            MOVE "mfe" TO WS-ACT-CODE
            MOVE "Zanvie"
@@ -12499,7 +12499,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mg.json
+*> Source: locales/mg.json
        INIT-LOCALE-MG.
            MOVE "mg" TO WS-ACT-CODE
            MOVE "Janoary"
@@ -12636,7 +12636,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mi.json
+*> Source: locales/mi.json
        INIT-LOCALE-MI.
            MOVE "mi" TO WS-ACT-CODE
            MOVE "Kohi-tātea"
@@ -12773,7 +12773,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mk.json
+*> Source: locales/mk.json
        INIT-LOCALE-MK.
            MOVE "mk" TO WS-ACT-CODE
            MOVE "јануари"
@@ -12910,7 +12910,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ml.json
+*> Source: locales/ml.json
        INIT-LOCALE-ML.
            MOVE "ml" TO WS-ACT-CODE
            MOVE "ജനുവരി"
@@ -13047,7 +13047,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mn.json
+*> Source: locales/mn.json
        INIT-LOCALE-MN.
            MOVE "mn" TO WS-ACT-CODE
            MOVE "Нэгдүгээр сар"
@@ -13184,7 +13184,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mnk.json
+*> Source: locales/mnk.json
        INIT-LOCALE-MNK.
            MOVE "mnk" TO WS-ACT-CODE
            MOVE "Samwiye"
@@ -13321,7 +13321,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mos.json
+*> Source: locales/mos.json
        INIT-LOCALE-MOS.
            MOVE "mos" TO WS-ACT-CODE
            MOVE "Zãn-naabu"
@@ -13458,7 +13458,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mr.json
+*> Source: locales/mr.json
        INIT-LOCALE-MR.
            MOVE "mr" TO WS-ACT-CODE
            MOVE "जानेवारी"
@@ -13595,7 +13595,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ms.json
+*> Source: locales/ms.json
        INIT-LOCALE-MS.
            MOVE "ms" TO WS-ACT-CODE
            MOVE "Januari"
@@ -13732,7 +13732,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/mt.json
+*> Source: locales/mt.json
        INIT-LOCALE-MT.
            MOVE "mt" TO WS-ACT-CODE
            MOVE "Jannar"
@@ -13869,7 +13869,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/my.json
+*> Source: locales/my.json
        INIT-LOCALE-MY.
            MOVE "my" TO WS-ACT-CODE
            MOVE "ဇန်နဝါရီ"
@@ -14006,7 +14006,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/nb.json
+*> Source: locales/nb.json
        INIT-LOCALE-NB.
            MOVE "nb" TO WS-ACT-CODE
            MOVE "januar"
@@ -14143,7 +14143,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/nd.json
+*> Source: locales/nd.json
        INIT-LOCALE-ND.
            MOVE "nd" TO WS-ACT-CODE
            MOVE "Zibandlela"
@@ -14280,7 +14280,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ne.json
+*> Source: locales/ne.json
        INIT-LOCALE-NE.
            MOVE "ne" TO WS-ACT-CODE
            MOVE "जनवरी"
@@ -14417,7 +14417,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ng.json
+*> Source: locales/ng.json
        INIT-LOCALE-NG.
            MOVE "ng" TO WS-ACT-CODE
            MOVE "Januali"
@@ -14554,7 +14554,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/nl.json
+*> Source: locales/nl.json
        INIT-LOCALE-NL.
            MOVE "nl" TO WS-ACT-CODE
            MOVE "januari"
@@ -14691,7 +14691,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/nr.json
+*> Source: locales/nr.json
        INIT-LOCALE-NR.
            MOVE "nr" TO WS-ACT-CODE
            MOVE "uTjhirhweni"
@@ -14828,7 +14828,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/nso.json
+*> Source: locales/nso.json
        INIT-LOCALE-NSO.
            MOVE "nso" TO WS-ACT-CODE
            MOVE "Pherekgong"
@@ -14965,7 +14965,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/nus.json
+*> Source: locales/nus.json
        INIT-LOCALE-NUS.
            MOVE "nus" TO WS-ACT-CODE
            MOVE "Tiɔp thar"
@@ -15102,7 +15102,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ny.json
+*> Source: locales/ny.json
        INIT-LOCALE-NY.
            MOVE "ny" TO WS-ACT-CODE
            MOVE "Januwale"
@@ -15239,7 +15239,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/om.json
+*> Source: locales/om.json
        INIT-LOCALE-OM.
            MOVE "om" TO WS-ACT-CODE
            MOVE "Amajjii"
@@ -15376,7 +15376,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/or.json
+*> Source: locales/or.json
        INIT-LOCALE-OR.
            MOVE "or" TO WS-ACT-CODE
            MOVE "ଜାନୁଆରୀ"
@@ -15513,7 +15513,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/pa.json
+*> Source: locales/pa.json
        INIT-LOCALE-PA.
            MOVE "pa" TO WS-ACT-CODE
            MOVE "ਜਨਵਰੀ"
@@ -15650,7 +15650,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/pis.json
+*> Source: locales/pis.json
        INIT-LOCALE-PIS.
            MOVE "pis" TO WS-ACT-CODE
            MOVE "Janueri"
@@ -15787,7 +15787,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/pl.json
+*> Source: locales/pl.json
        INIT-LOCALE-PL.
            MOVE "pl" TO WS-ACT-CODE
            MOVE "styczeń"
@@ -15948,7 +15948,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/pov.json
+*> Source: locales/pov.json
        INIT-LOCALE-POV.
            MOVE "pov" TO WS-ACT-CODE
            MOVE "Janeru"
@@ -16085,7 +16085,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ps.json
+*> Source: locales/ps.json
        INIT-LOCALE-PS.
            MOVE "ps" TO WS-ACT-CODE
            MOVE "جنوري"
@@ -16222,7 +16222,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/pt.json
+*> Source: locales/pt.json
        INIT-LOCALE-PT.
            MOVE "pt" TO WS-ACT-CODE
            MOVE "janeiro"
@@ -16359,7 +16359,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/qu.json
+*> Source: locales/qu.json
        INIT-LOCALE-QU.
            MOVE "qu" TO WS-ACT-CODE
            MOVE "Qhulla puquy"
@@ -16496,7 +16496,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/quc.json
+*> Source: locales/quc.json
        INIT-LOCALE-QUC.
            MOVE "quc" TO WS-ACT-CODE
            MOVE "Nab'e ik'"
@@ -16633,7 +16633,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ro.json
+*> Source: locales/ro.json
        INIT-LOCALE-RO.
            MOVE "ro" TO WS-ACT-CODE
            MOVE "ianuarie"
@@ -16794,7 +16794,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ru.json
+*> Source: locales/ru.json
        INIT-LOCALE-RU.
            MOVE "ru" TO WS-ACT-CODE
            MOVE "январь"
@@ -16955,7 +16955,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/rw.json
+*> Source: locales/rw.json
        INIT-LOCALE-RW.
            MOVE "rw" TO WS-ACT-CODE
            MOVE "Mutarama"
@@ -17092,7 +17092,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sar.json
+*> Source: locales/sar.json
        INIT-LOCALE-SAR.
            MOVE "sar" TO WS-ACT-CODE
            MOVE "Zanviye"
@@ -17229,7 +17229,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sd.json
+*> Source: locales/sd.json
        INIT-LOCALE-SD.
            MOVE "sd" TO WS-ACT-CODE
            MOVE "جنوري"
@@ -17366,7 +17366,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sg.json
+*> Source: locales/sg.json
        INIT-LOCALE-SG.
            MOVE "sg" TO WS-ACT-CODE
            MOVE "Nyenye"
@@ -17503,7 +17503,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/shi.json
+*> Source: locales/shi.json
        INIT-LOCALE-SHI.
            MOVE "shi" TO WS-ACT-CODE
            MOVE "ⵉⵏⵏⴰⵢⵔ"
@@ -17640,7 +17640,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/shn.json
+*> Source: locales/shn.json
        INIT-LOCALE-SHN.
            MOVE "shn" TO WS-ACT-CODE
            MOVE "ၸၼ်ႇဝႃႇရီႇ"
@@ -17777,7 +17777,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/si.json
+*> Source: locales/si.json
        INIT-LOCALE-SI.
            MOVE "si" TO WS-ACT-CODE
            MOVE "ජනවාරි"
@@ -17914,7 +17914,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sk.json
+*> Source: locales/sk.json
        INIT-LOCALE-SK.
            MOVE "sk" TO WS-ACT-CODE
            MOVE "január"
@@ -18075,7 +18075,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sl.json
+*> Source: locales/sl.json
        INIT-LOCALE-SL.
            MOVE "sl" TO WS-ACT-CODE
            MOVE "januar"
@@ -18236,7 +18236,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sn.json
+*> Source: locales/sn.json
        INIT-LOCALE-SN.
            MOVE "sn" TO WS-ACT-CODE
            MOVE "Ndira"
@@ -18373,7 +18373,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/snk.json
+*> Source: locales/snk.json
        INIT-LOCALE-SNK.
            MOVE "snk" TO WS-ACT-CODE
            MOVE "Janwiye"
@@ -18510,7 +18510,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/so.json
+*> Source: locales/so.json
        INIT-LOCALE-SO.
            MOVE "so" TO WS-ACT-CODE
            MOVE "Janaayo"
@@ -18647,7 +18647,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sq.json
+*> Source: locales/sq.json
        INIT-LOCALE-SQ.
            MOVE "sq" TO WS-ACT-CODE
            MOVE "janar"
@@ -18784,7 +18784,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sr.json
+*> Source: locales/sr.json
        INIT-LOCALE-SR.
            MOVE "sr" TO WS-ACT-CODE
            MOVE "јануар"
@@ -18921,7 +18921,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ss.json
+*> Source: locales/ss.json
        INIT-LOCALE-SS.
            MOVE "ss" TO WS-ACT-CODE
            MOVE "Bhimbidvwane"
@@ -19058,7 +19058,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/st.json
+*> Source: locales/st.json
        INIT-LOCALE-ST.
            MOVE "st" TO WS-ACT-CODE
            MOVE "Pherekgong"
@@ -19195,7 +19195,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/su.json
+*> Source: locales/su.json
        INIT-LOCALE-SU.
            MOVE "su" TO WS-ACT-CODE
            MOVE "Januari"
@@ -19332,7 +19332,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/suk.json
+*> Source: locales/suk.json
        INIT-LOCALE-SUK.
            MOVE "suk" TO WS-ACT-CODE
            MOVE "Januari"
@@ -19469,7 +19469,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sv.json
+*> Source: locales/sv.json
        INIT-LOCALE-SV.
            MOVE "sv" TO WS-ACT-CODE
            MOVE "januari"
@@ -19606,7 +19606,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/sw.json
+*> Source: locales/sw.json
        INIT-LOCALE-SW.
            MOVE "sw" TO WS-ACT-CODE
            MOVE "Januari"
@@ -19743,7 +19743,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ta.json
+*> Source: locales/ta.json
        INIT-LOCALE-TA.
            MOVE "ta" TO WS-ACT-CODE
            MOVE "ஜனவரி"
@@ -19880,7 +19880,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/te.json
+*> Source: locales/te.json
        INIT-LOCALE-TE.
            MOVE "te" TO WS-ACT-CODE
            MOVE "జనవరి"
@@ -20017,7 +20017,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tem.json
+*> Source: locales/tem.json
        INIT-LOCALE-TEM.
            MOVE "tem" TO WS-ACT-CODE
            MOVE "Janɛri"
@@ -20154,7 +20154,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tet.json
+*> Source: locales/tet.json
        INIT-LOCALE-TET.
            MOVE "tet" TO WS-ACT-CODE
            MOVE "Janeiru"
@@ -20291,7 +20291,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tg.json
+*> Source: locales/tg.json
        INIT-LOCALE-TG.
            MOVE "tg" TO WS-ACT-CODE
            MOVE "Январ"
@@ -20428,7 +20428,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/th.json
+*> Source: locales/th.json
        INIT-LOCALE-TH.
            MOVE "th" TO WS-ACT-CODE
            MOVE "มกราคม"
@@ -20565,7 +20565,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ti.json
+*> Source: locales/ti.json
        INIT-LOCALE-TI.
            MOVE "ti" TO WS-ACT-CODE
            MOVE "ጥሪ"
@@ -20702,7 +20702,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tig.json
+*> Source: locales/tig.json
        INIT-LOCALE-TIG.
            MOVE "tig" TO WS-ACT-CODE
            MOVE "Yannaayer"
@@ -20839,7 +20839,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tk.json
+*> Source: locales/tk.json
        INIT-LOCALE-TK.
            MOVE "tk" TO WS-ACT-CODE
            MOVE "Ýanwar"
@@ -20976,7 +20976,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tn.json
+*> Source: locales/tn.json
        INIT-LOCALE-TN.
            MOVE "tn" TO WS-ACT-CODE
            MOVE "Ferikgong"
@@ -21113,7 +21113,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tpi.json
+*> Source: locales/tpi.json
        INIT-LOCALE-TPI.
            MOVE "tpi" TO WS-ACT-CODE
            MOVE "Janueri"
@@ -21250,7 +21250,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tr.json
+*> Source: locales/tr.json
        INIT-LOCALE-TR.
            MOVE "tr" TO WS-ACT-CODE
            MOVE "Ocak"
@@ -21387,7 +21387,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ts.json
+*> Source: locales/ts.json
        INIT-LOCALE-TS.
            MOVE "ts" TO WS-ACT-CODE
            MOVE "Sunguti"
@@ -21524,7 +21524,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tum.json
+*> Source: locales/tum.json
        INIT-LOCALE-TUM.
            MOVE "tum" TO WS-ACT-CODE
            MOVE "Janyuwale"
@@ -21661,7 +21661,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/tzm.json
+*> Source: locales/tzm.json
        INIT-LOCALE-TZM.
            MOVE "tzm" TO WS-ACT-CODE
            MOVE "ⵉⵏⵏⴰⵢⵔ"
@@ -21798,7 +21798,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/uk.json
+*> Source: locales/uk.json
        INIT-LOCALE-UK.
            MOVE "uk" TO WS-ACT-CODE
            MOVE "січень"
@@ -21959,7 +21959,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/umb.json
+*> Source: locales/umb.json
        INIT-LOCALE-UMB.
            MOVE "umb" TO WS-ACT-CODE
            MOVE "Janelu"
@@ -22096,7 +22096,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ur.json
+*> Source: locales/ur.json
        INIT-LOCALE-UR.
            MOVE "ur" TO WS-ACT-CODE
            MOVE "جنوری"
@@ -22233,7 +22233,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/uz.json
+*> Source: locales/uz.json
        INIT-LOCALE-UZ.
            MOVE "uz" TO WS-ACT-CODE
            MOVE "yanvar"
@@ -22370,7 +22370,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/ve.json
+*> Source: locales/ve.json
        INIT-LOCALE-VE.
            MOVE "ve" TO WS-ACT-CODE
            MOVE "Phando"
@@ -22507,7 +22507,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/vi.json
+*> Source: locales/vi.json
        INIT-LOCALE-VI.
            MOVE "vi" TO WS-ACT-CODE
            MOVE "tháng 1"
@@ -22644,7 +22644,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/vmw.json
+*> Source: locales/vmw.json
        INIT-LOCALE-VMW.
            MOVE "vmw" TO WS-ACT-CODE
            MOVE "Januário"
@@ -22781,7 +22781,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/wo.json
+*> Source: locales/wo.json
        INIT-LOCALE-WO.
            MOVE "wo" TO WS-ACT-CODE
            MOVE "Samwiyee"
@@ -22918,7 +22918,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/xh.json
+*> Source: locales/xh.json
        INIT-LOCALE-XH.
            MOVE "xh" TO WS-ACT-CODE
            MOVE "Janyuwari"
@@ -23055,7 +23055,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/yao.json
+*> Source: locales/yao.json
        INIT-LOCALE-YAO.
            MOVE "yao" TO WS-ACT-CODE
            MOVE "Janyuwale"
@@ -23192,7 +23192,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/yo.json
+*> Source: locales/yo.json
        INIT-LOCALE-YO.
            MOVE "yo" TO WS-ACT-CODE
            MOVE "Oṣù Ṣẹ́rẹ́"
@@ -23329,7 +23329,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/yue.json
+*> Source: locales/yue.json
        INIT-LOCALE-YUE.
            MOVE "yue" TO WS-ACT-CODE
            MOVE "一月"
@@ -23466,7 +23466,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/zdj.json
+*> Source: locales/zdj.json
        INIT-LOCALE-ZDJ.
            MOVE "zdj" TO WS-ACT-CODE
            MOVE "Januari"
@@ -23603,7 +23603,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/zh.json
+*> Source: locales/zh.json
        INIT-LOCALE-ZH.
            MOVE "zh" TO WS-ACT-CODE
            MOVE "1月"
@@ -23740,7 +23740,7 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
-*> Source: date/locales/src/zu.json
+*> Source: locales/zu.json
        INIT-LOCALE-ZU.
            MOVE "zu" TO WS-ACT-CODE
            MOVE "Januwari"

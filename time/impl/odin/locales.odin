@@ -10,7 +10,7 @@
 
 package sayabletime
 
-// Source: time/locales/src/af.json
+// Source: locales/af.json
 locale_af : Time_Locale = {
     code = "af",
     clock = Clock_Config{
@@ -35,7 +35,7 @@ locale_af : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ak.json
+// Source: locales/ak.json
 locale_ak : Time_Locale = {
     code = "ak",
     clock = Clock_Config{
@@ -60,7 +60,7 @@ locale_ak : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/am.json
+// Source: locales/am.json
 locale_am : Time_Locale = {
     code = "am",
     clock = Clock_Config{
@@ -85,7 +85,7 @@ locale_am : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ar.json
+// Source: locales/ar.json
 locale_ar : Time_Locale = {
     code = "ar",
     clock = Clock_Config{
@@ -110,7 +110,7 @@ locale_ar : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ay.json
+// Source: locales/ay.json
 locale_ay : Time_Locale = {
     code = "ay",
     clock = Clock_Config{
@@ -135,7 +135,7 @@ locale_ay : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/az.json
+// Source: locales/az.json
 locale_az : Time_Locale = {
     code = "az",
     clock = Clock_Config{
@@ -160,7 +160,7 @@ locale_az : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/bci.json
+// Source: locales/bci.json
 locale_bci : Time_Locale = {
     code = "bci",
     clock = Clock_Config{
@@ -185,7 +185,7 @@ locale_bci : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/be.json
+// Source: locales/be.json
 locale_be : Time_Locale = {
     code = "be",
     clock = Clock_Config{
@@ -210,7 +210,7 @@ locale_be : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/bem.json
+// Source: locales/bem.json
 locale_bem : Time_Locale = {
     code = "bem",
     clock = Clock_Config{
@@ -235,7 +235,7 @@ locale_bem : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/bg.json
+// Source: locales/bg.json
 locale_bg : Time_Locale = {
     code = "bg",
     clock = Clock_Config{
@@ -260,7 +260,7 @@ locale_bg : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/bi.json
+// Source: locales/bi.json
 locale_bi : Time_Locale = {
     code = "bi",
     clock = Clock_Config{
@@ -285,7 +285,7 @@ locale_bi : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/bm.json
+// Source: locales/bm.json
 locale_bm : Time_Locale = {
     code = "bm",
     clock = Clock_Config{
@@ -310,7 +310,7 @@ locale_bm : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/bn.json
+// Source: locales/bn.json
 locale_bn : Time_Locale = {
     code = "bn",
     clock = Clock_Config{
@@ -335,7 +335,7 @@ locale_bn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/br.json
+// Source: locales/br.json
 locale_br : Time_Locale = {
     code = "br",
     clock = Clock_Config{
@@ -360,7 +360,7 @@ locale_br : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/bs.json
+// Source: locales/bs.json
 locale_bs : Time_Locale = {
     code = "bs",
     clock = Clock_Config{
@@ -385,7 +385,7 @@ locale_bs : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ca.json
+// Source: locales/ca.json
 locale_ca : Time_Locale = {
     code = "ca",
     clock = Clock_Config{
@@ -410,7 +410,7 @@ locale_ca : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/cak.json
+// Source: locales/cak.json
 locale_cak : Time_Locale = {
     code = "cak",
     clock = Clock_Config{
@@ -435,7 +435,7 @@ locale_cak : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ceb.json
+// Source: locales/ceb.json
 locale_ceb : Time_Locale = {
     code = "ceb",
     clock = Clock_Config{
@@ -460,7 +460,7 @@ locale_ceb : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/cs.json
+// Source: locales/cs.json
 locale_cs : Time_Locale = {
     code = "cs",
     clock = Clock_Config{
@@ -485,7 +485,7 @@ locale_cs : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/cy.json
+// Source: locales/cy.json
 locale_cy : Time_Locale = {
     code = "cy",
     clock = Clock_Config{
@@ -510,7 +510,7 @@ locale_cy : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/da.json
+// Source: locales/da.json
 locale_da : Time_Locale = {
     code = "da",
     clock = Clock_Config{
@@ -535,7 +535,7 @@ locale_da : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/de.json
+// Source: locales/de.json
 locale_de : Time_Locale = {
     code = "de",
     clock = Clock_Config{
@@ -560,7 +560,7 @@ locale_de : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/din.json
+// Source: locales/din.json
 locale_din : Time_Locale = {
     code = "din",
     clock = Clock_Config{
@@ -585,7 +585,7 @@ locale_din : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/dje.json
+// Source: locales/dje.json
 locale_dje : Time_Locale = {
     code = "dje",
     clock = Clock_Config{
@@ -610,7 +610,7 @@ locale_dje : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/dv.json
+// Source: locales/dv.json
 locale_dv : Time_Locale = {
     code = "dv",
     clock = Clock_Config{
@@ -635,7 +635,7 @@ locale_dv : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/dyu.json
+// Source: locales/dyu.json
 locale_dyu : Time_Locale = {
     code = "dyu",
     clock = Clock_Config{
@@ -660,7 +660,7 @@ locale_dyu : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/dz.json
+// Source: locales/dz.json
 locale_dz : Time_Locale = {
     code = "dz",
     clock = Clock_Config{
@@ -685,7 +685,7 @@ locale_dz : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ee.json
+// Source: locales/ee.json
 locale_ee : Time_Locale = {
     code = "ee",
     clock = Clock_Config{
@@ -710,7 +710,7 @@ locale_ee : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/el.json
+// Source: locales/el.json
 locale_el : Time_Locale = {
     code = "el",
     clock = Clock_Config{
@@ -735,7 +735,7 @@ locale_el : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/en.json
+// Source: locales/en.json
 locale_en : Time_Locale = {
     code = "en",
     clock = Clock_Config{
@@ -760,7 +760,7 @@ locale_en : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/es.json
+// Source: locales/es.json
 locale_es : Time_Locale = {
     code = "es",
     clock = Clock_Config{
@@ -785,7 +785,7 @@ locale_es : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/et.json
+// Source: locales/et.json
 locale_et : Time_Locale = {
     code = "et",
     clock = Clock_Config{
@@ -810,7 +810,7 @@ locale_et : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/eu.json
+// Source: locales/eu.json
 locale_eu : Time_Locale = {
     code = "eu",
     clock = Clock_Config{
@@ -835,7 +835,7 @@ locale_eu : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/fa.json
+// Source: locales/fa.json
 locale_fa : Time_Locale = {
     code = "fa",
     clock = Clock_Config{
@@ -860,7 +860,7 @@ locale_fa : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/fan.json
+// Source: locales/fan.json
 locale_fan : Time_Locale = {
     code = "fan",
     clock = Clock_Config{
@@ -885,7 +885,7 @@ locale_fan : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ff.json
+// Source: locales/ff.json
 locale_ff : Time_Locale = {
     code = "ff",
     clock = Clock_Config{
@@ -910,7 +910,7 @@ locale_ff : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/fi.json
+// Source: locales/fi.json
 locale_fi : Time_Locale = {
     code = "fi",
     clock = Clock_Config{
@@ -935,7 +935,7 @@ locale_fi : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/fil.json
+// Source: locales/fil.json
 locale_fil : Time_Locale = {
     code = "fil",
     clock = Clock_Config{
@@ -960,7 +960,7 @@ locale_fil : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/fj.json
+// Source: locales/fj.json
 locale_fj : Time_Locale = {
     code = "fj",
     clock = Clock_Config{
@@ -985,7 +985,7 @@ locale_fj : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/fon.json
+// Source: locales/fon.json
 locale_fon : Time_Locale = {
     code = "fon",
     clock = Clock_Config{
@@ -1010,7 +1010,7 @@ locale_fon : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/fr.json
+// Source: locales/fr.json
 locale_fr : Time_Locale = {
     code = "fr",
     clock = Clock_Config{
@@ -1035,7 +1035,7 @@ locale_fr : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ga.json
+// Source: locales/ga.json
 locale_ga : Time_Locale = {
     code = "ga",
     clock = Clock_Config{
@@ -1060,7 +1060,7 @@ locale_ga : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/gd.json
+// Source: locales/gd.json
 locale_gd : Time_Locale = {
     code = "gd",
     clock = Clock_Config{
@@ -1085,7 +1085,7 @@ locale_gd : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/gl.json
+// Source: locales/gl.json
 locale_gl : Time_Locale = {
     code = "gl",
     clock = Clock_Config{
@@ -1110,7 +1110,7 @@ locale_gl : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/gn.json
+// Source: locales/gn.json
 locale_gn : Time_Locale = {
     code = "gn",
     clock = Clock_Config{
@@ -1135,7 +1135,7 @@ locale_gn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/gu.json
+// Source: locales/gu.json
 locale_gu : Time_Locale = {
     code = "gu",
     clock = Clock_Config{
@@ -1160,7 +1160,7 @@ locale_gu : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/gv.json
+// Source: locales/gv.json
 locale_gv : Time_Locale = {
     code = "gv",
     clock = Clock_Config{
@@ -1185,7 +1185,7 @@ locale_gv : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ha.json
+// Source: locales/ha.json
 locale_ha : Time_Locale = {
     code = "ha",
     clock = Clock_Config{
@@ -1210,7 +1210,7 @@ locale_ha : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/he.json
+// Source: locales/he.json
 locale_he : Time_Locale = {
     code = "he",
     clock = Clock_Config{
@@ -1235,7 +1235,7 @@ locale_he : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/hi.json
+// Source: locales/hi.json
 locale_hi : Time_Locale = {
     code = "hi",
     clock = Clock_Config{
@@ -1260,7 +1260,7 @@ locale_hi : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/hmn.json
+// Source: locales/hmn.json
 locale_hmn : Time_Locale = {
     code = "hmn",
     clock = Clock_Config{
@@ -1285,7 +1285,7 @@ locale_hmn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/hr.json
+// Source: locales/hr.json
 locale_hr : Time_Locale = {
     code = "hr",
     clock = Clock_Config{
@@ -1310,7 +1310,7 @@ locale_hr : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ht.json
+// Source: locales/ht.json
 locale_ht : Time_Locale = {
     code = "ht",
     clock = Clock_Config{
@@ -1335,7 +1335,7 @@ locale_ht : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/hu.json
+// Source: locales/hu.json
 locale_hu : Time_Locale = {
     code = "hu",
     clock = Clock_Config{
@@ -1360,7 +1360,7 @@ locale_hu : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/hy.json
+// Source: locales/hy.json
 locale_hy : Time_Locale = {
     code = "hy",
     clock = Clock_Config{
@@ -1385,7 +1385,7 @@ locale_hy : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/id.json
+// Source: locales/id.json
 locale_id : Time_Locale = {
     code = "id",
     clock = Clock_Config{
@@ -1410,7 +1410,7 @@ locale_id : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ig.json
+// Source: locales/ig.json
 locale_ig : Time_Locale = {
     code = "ig",
     clock = Clock_Config{
@@ -1435,7 +1435,7 @@ locale_ig : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/is.json
+// Source: locales/is.json
 locale_is : Time_Locale = {
     code = "is",
     clock = Clock_Config{
@@ -1460,7 +1460,7 @@ locale_is : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/it.json
+// Source: locales/it.json
 locale_it : Time_Locale = {
     code = "it",
     clock = Clock_Config{
@@ -1485,7 +1485,7 @@ locale_it : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ja.json
+// Source: locales/ja.json
 locale_ja : Time_Locale = {
     code = "ja",
     clock = Clock_Config{
@@ -1510,7 +1510,7 @@ locale_ja : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/jv.json
+// Source: locales/jv.json
 locale_jv : Time_Locale = {
     code = "jv",
     clock = Clock_Config{
@@ -1535,7 +1535,7 @@ locale_jv : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ka.json
+// Source: locales/ka.json
 locale_ka : Time_Locale = {
     code = "ka",
     clock = Clock_Config{
@@ -1560,7 +1560,7 @@ locale_ka : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kbp.json
+// Source: locales/kbp.json
 locale_kbp : Time_Locale = {
     code = "kbp",
     clock = Clock_Config{
@@ -1585,7 +1585,7 @@ locale_kbp : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kek.json
+// Source: locales/kek.json
 locale_kek : Time_Locale = {
     code = "kek",
     clock = Clock_Config{
@@ -1610,7 +1610,7 @@ locale_kek : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ki.json
+// Source: locales/ki.json
 locale_ki : Time_Locale = {
     code = "ki",
     clock = Clock_Config{
@@ -1635,7 +1635,7 @@ locale_ki : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kk.json
+// Source: locales/kk.json
 locale_kk : Time_Locale = {
     code = "kk",
     clock = Clock_Config{
@@ -1660,7 +1660,7 @@ locale_kk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kl.json
+// Source: locales/kl.json
 locale_kl : Time_Locale = {
     code = "kl",
     clock = Clock_Config{
@@ -1685,7 +1685,7 @@ locale_kl : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/km.json
+// Source: locales/km.json
 locale_km : Time_Locale = {
     code = "km",
     clock = Clock_Config{
@@ -1710,7 +1710,7 @@ locale_km : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kn.json
+// Source: locales/kn.json
 locale_kn : Time_Locale = {
     code = "kn",
     clock = Clock_Config{
@@ -1735,7 +1735,7 @@ locale_kn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ko.json
+// Source: locales/ko.json
 locale_ko : Time_Locale = {
     code = "ko",
     clock = Clock_Config{
@@ -1760,7 +1760,7 @@ locale_ko : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kpe.json
+// Source: locales/kpe.json
 locale_kpe : Time_Locale = {
     code = "kpe",
     clock = Clock_Config{
@@ -1785,7 +1785,7 @@ locale_kpe : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kri.json
+// Source: locales/kri.json
 locale_kri : Time_Locale = {
     code = "kri",
     clock = Clock_Config{
@@ -1810,7 +1810,7 @@ locale_kri : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ktu.json
+// Source: locales/ktu.json
 locale_ktu : Time_Locale = {
     code = "ktu",
     clock = Clock_Config{
@@ -1835,7 +1835,7 @@ locale_ktu : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ku.json
+// Source: locales/ku.json
 locale_ku : Time_Locale = {
     code = "ku",
     clock = Clock_Config{
@@ -1860,7 +1860,7 @@ locale_ku : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/kw.json
+// Source: locales/kw.json
 locale_kw : Time_Locale = {
     code = "kw",
     clock = Clock_Config{
@@ -1885,7 +1885,7 @@ locale_kw : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ky.json
+// Source: locales/ky.json
 locale_ky : Time_Locale = {
     code = "ky",
     clock = Clock_Config{
@@ -1910,7 +1910,7 @@ locale_ky : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/lb.json
+// Source: locales/lb.json
 locale_lb : Time_Locale = {
     code = "lb",
     clock = Clock_Config{
@@ -1935,7 +1935,7 @@ locale_lb : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/lg.json
+// Source: locales/lg.json
 locale_lg : Time_Locale = {
     code = "lg",
     clock = Clock_Config{
@@ -1960,7 +1960,7 @@ locale_lg : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ln.json
+// Source: locales/ln.json
 locale_ln : Time_Locale = {
     code = "ln",
     clock = Clock_Config{
@@ -1985,7 +1985,7 @@ locale_ln : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/lo.json
+// Source: locales/lo.json
 locale_lo : Time_Locale = {
     code = "lo",
     clock = Clock_Config{
@@ -2010,7 +2010,7 @@ locale_lo : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/lt.json
+// Source: locales/lt.json
 locale_lt : Time_Locale = {
     code = "lt",
     clock = Clock_Config{
@@ -2035,7 +2035,7 @@ locale_lt : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/luo.json
+// Source: locales/luo.json
 locale_luo : Time_Locale = {
     code = "luo",
     clock = Clock_Config{
@@ -2060,7 +2060,7 @@ locale_luo : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/lv.json
+// Source: locales/lv.json
 locale_lv : Time_Locale = {
     code = "lv",
     clock = Clock_Config{
@@ -2085,7 +2085,7 @@ locale_lv : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mam.json
+// Source: locales/mam.json
 locale_mam : Time_Locale = {
     code = "mam",
     clock = Clock_Config{
@@ -2110,7 +2110,7 @@ locale_mam : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/men.json
+// Source: locales/men.json
 locale_men : Time_Locale = {
     code = "men",
     clock = Clock_Config{
@@ -2135,7 +2135,7 @@ locale_men : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mfe.json
+// Source: locales/mfe.json
 locale_mfe : Time_Locale = {
     code = "mfe",
     clock = Clock_Config{
@@ -2160,7 +2160,7 @@ locale_mfe : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mg.json
+// Source: locales/mg.json
 locale_mg : Time_Locale = {
     code = "mg",
     clock = Clock_Config{
@@ -2185,7 +2185,7 @@ locale_mg : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mi.json
+// Source: locales/mi.json
 locale_mi : Time_Locale = {
     code = "mi",
     clock = Clock_Config{
@@ -2210,7 +2210,7 @@ locale_mi : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mk.json
+// Source: locales/mk.json
 locale_mk : Time_Locale = {
     code = "mk",
     clock = Clock_Config{
@@ -2235,7 +2235,7 @@ locale_mk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ml.json
+// Source: locales/ml.json
 locale_ml : Time_Locale = {
     code = "ml",
     clock = Clock_Config{
@@ -2260,7 +2260,7 @@ locale_ml : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mn.json
+// Source: locales/mn.json
 locale_mn : Time_Locale = {
     code = "mn",
     clock = Clock_Config{
@@ -2285,7 +2285,7 @@ locale_mn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mnk.json
+// Source: locales/mnk.json
 locale_mnk : Time_Locale = {
     code = "mnk",
     clock = Clock_Config{
@@ -2310,7 +2310,7 @@ locale_mnk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mos.json
+// Source: locales/mos.json
 locale_mos : Time_Locale = {
     code = "mos",
     clock = Clock_Config{
@@ -2335,7 +2335,7 @@ locale_mos : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mr.json
+// Source: locales/mr.json
 locale_mr : Time_Locale = {
     code = "mr",
     clock = Clock_Config{
@@ -2360,7 +2360,7 @@ locale_mr : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ms.json
+// Source: locales/ms.json
 locale_ms : Time_Locale = {
     code = "ms",
     clock = Clock_Config{
@@ -2385,7 +2385,7 @@ locale_ms : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/mt.json
+// Source: locales/mt.json
 locale_mt : Time_Locale = {
     code = "mt",
     clock = Clock_Config{
@@ -2410,7 +2410,7 @@ locale_mt : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/my.json
+// Source: locales/my.json
 locale_my : Time_Locale = {
     code = "my",
     clock = Clock_Config{
@@ -2435,7 +2435,7 @@ locale_my : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/nb.json
+// Source: locales/nb.json
 locale_nb : Time_Locale = {
     code = "nb",
     clock = Clock_Config{
@@ -2460,7 +2460,7 @@ locale_nb : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/nd.json
+// Source: locales/nd.json
 locale_nd : Time_Locale = {
     code = "nd",
     clock = Clock_Config{
@@ -2485,7 +2485,7 @@ locale_nd : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ne.json
+// Source: locales/ne.json
 locale_ne : Time_Locale = {
     code = "ne",
     clock = Clock_Config{
@@ -2510,7 +2510,7 @@ locale_ne : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ng.json
+// Source: locales/ng.json
 locale_ng : Time_Locale = {
     code = "ng",
     clock = Clock_Config{
@@ -2535,7 +2535,7 @@ locale_ng : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/nl.json
+// Source: locales/nl.json
 locale_nl : Time_Locale = {
     code = "nl",
     clock = Clock_Config{
@@ -2560,7 +2560,7 @@ locale_nl : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/nr.json
+// Source: locales/nr.json
 locale_nr : Time_Locale = {
     code = "nr",
     clock = Clock_Config{
@@ -2585,7 +2585,7 @@ locale_nr : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/nso.json
+// Source: locales/nso.json
 locale_nso : Time_Locale = {
     code = "nso",
     clock = Clock_Config{
@@ -2610,7 +2610,7 @@ locale_nso : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/nus.json
+// Source: locales/nus.json
 locale_nus : Time_Locale = {
     code = "nus",
     clock = Clock_Config{
@@ -2635,7 +2635,7 @@ locale_nus : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ny.json
+// Source: locales/ny.json
 locale_ny : Time_Locale = {
     code = "ny",
     clock = Clock_Config{
@@ -2660,7 +2660,7 @@ locale_ny : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/om.json
+// Source: locales/om.json
 locale_om : Time_Locale = {
     code = "om",
     clock = Clock_Config{
@@ -2685,7 +2685,7 @@ locale_om : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/or.json
+// Source: locales/or.json
 locale_or : Time_Locale = {
     code = "or",
     clock = Clock_Config{
@@ -2710,7 +2710,7 @@ locale_or : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/pa.json
+// Source: locales/pa.json
 locale_pa : Time_Locale = {
     code = "pa",
     clock = Clock_Config{
@@ -2735,7 +2735,7 @@ locale_pa : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/pis.json
+// Source: locales/pis.json
 locale_pis : Time_Locale = {
     code = "pis",
     clock = Clock_Config{
@@ -2760,7 +2760,7 @@ locale_pis : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/pl.json
+// Source: locales/pl.json
 locale_pl : Time_Locale = {
     code = "pl",
     clock = Clock_Config{
@@ -2785,7 +2785,7 @@ locale_pl : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/pov.json
+// Source: locales/pov.json
 locale_pov : Time_Locale = {
     code = "pov",
     clock = Clock_Config{
@@ -2810,7 +2810,7 @@ locale_pov : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ps.json
+// Source: locales/ps.json
 locale_ps : Time_Locale = {
     code = "ps",
     clock = Clock_Config{
@@ -2835,7 +2835,7 @@ locale_ps : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/pt.json
+// Source: locales/pt.json
 locale_pt : Time_Locale = {
     code = "pt",
     clock = Clock_Config{
@@ -2860,7 +2860,7 @@ locale_pt : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/qu.json
+// Source: locales/qu.json
 locale_qu : Time_Locale = {
     code = "qu",
     clock = Clock_Config{
@@ -2885,7 +2885,7 @@ locale_qu : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/quc.json
+// Source: locales/quc.json
 locale_quc : Time_Locale = {
     code = "quc",
     clock = Clock_Config{
@@ -2910,7 +2910,7 @@ locale_quc : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ro.json
+// Source: locales/ro.json
 locale_ro : Time_Locale = {
     code = "ro",
     clock = Clock_Config{
@@ -2935,7 +2935,7 @@ locale_ro : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ru.json
+// Source: locales/ru.json
 locale_ru : Time_Locale = {
     code = "ru",
     clock = Clock_Config{
@@ -2960,7 +2960,7 @@ locale_ru : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/rw.json
+// Source: locales/rw.json
 locale_rw : Time_Locale = {
     code = "rw",
     clock = Clock_Config{
@@ -2985,7 +2985,7 @@ locale_rw : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sar.json
+// Source: locales/sar.json
 locale_sar : Time_Locale = {
     code = "sar",
     clock = Clock_Config{
@@ -3010,7 +3010,7 @@ locale_sar : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sd.json
+// Source: locales/sd.json
 locale_sd : Time_Locale = {
     code = "sd",
     clock = Clock_Config{
@@ -3035,7 +3035,7 @@ locale_sd : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sg.json
+// Source: locales/sg.json
 locale_sg : Time_Locale = {
     code = "sg",
     clock = Clock_Config{
@@ -3060,7 +3060,7 @@ locale_sg : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/shi.json
+// Source: locales/shi.json
 locale_shi : Time_Locale = {
     code = "shi",
     clock = Clock_Config{
@@ -3085,7 +3085,7 @@ locale_shi : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/shn.json
+// Source: locales/shn.json
 locale_shn : Time_Locale = {
     code = "shn",
     clock = Clock_Config{
@@ -3110,7 +3110,7 @@ locale_shn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/si.json
+// Source: locales/si.json
 locale_si : Time_Locale = {
     code = "si",
     clock = Clock_Config{
@@ -3135,7 +3135,7 @@ locale_si : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sk.json
+// Source: locales/sk.json
 locale_sk : Time_Locale = {
     code = "sk",
     clock = Clock_Config{
@@ -3160,7 +3160,7 @@ locale_sk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sl.json
+// Source: locales/sl.json
 locale_sl : Time_Locale = {
     code = "sl",
     clock = Clock_Config{
@@ -3185,7 +3185,7 @@ locale_sl : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sn.json
+// Source: locales/sn.json
 locale_sn : Time_Locale = {
     code = "sn",
     clock = Clock_Config{
@@ -3210,7 +3210,7 @@ locale_sn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/snk.json
+// Source: locales/snk.json
 locale_snk : Time_Locale = {
     code = "snk",
     clock = Clock_Config{
@@ -3235,7 +3235,7 @@ locale_snk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/so.json
+// Source: locales/so.json
 locale_so : Time_Locale = {
     code = "so",
     clock = Clock_Config{
@@ -3260,7 +3260,7 @@ locale_so : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sq.json
+// Source: locales/sq.json
 locale_sq : Time_Locale = {
     code = "sq",
     clock = Clock_Config{
@@ -3285,7 +3285,7 @@ locale_sq : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sr.json
+// Source: locales/sr.json
 locale_sr : Time_Locale = {
     code = "sr",
     clock = Clock_Config{
@@ -3310,7 +3310,7 @@ locale_sr : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ss.json
+// Source: locales/ss.json
 locale_ss : Time_Locale = {
     code = "ss",
     clock = Clock_Config{
@@ -3335,7 +3335,7 @@ locale_ss : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/st.json
+// Source: locales/st.json
 locale_st : Time_Locale = {
     code = "st",
     clock = Clock_Config{
@@ -3360,7 +3360,7 @@ locale_st : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/su.json
+// Source: locales/su.json
 locale_su : Time_Locale = {
     code = "su",
     clock = Clock_Config{
@@ -3385,7 +3385,7 @@ locale_su : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/suk.json
+// Source: locales/suk.json
 locale_suk : Time_Locale = {
     code = "suk",
     clock = Clock_Config{
@@ -3410,7 +3410,7 @@ locale_suk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sv.json
+// Source: locales/sv.json
 locale_sv : Time_Locale = {
     code = "sv",
     clock = Clock_Config{
@@ -3435,7 +3435,7 @@ locale_sv : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/sw.json
+// Source: locales/sw.json
 locale_sw : Time_Locale = {
     code = "sw",
     clock = Clock_Config{
@@ -3460,7 +3460,7 @@ locale_sw : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ta.json
+// Source: locales/ta.json
 locale_ta : Time_Locale = {
     code = "ta",
     clock = Clock_Config{
@@ -3485,7 +3485,7 @@ locale_ta : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/te.json
+// Source: locales/te.json
 locale_te : Time_Locale = {
     code = "te",
     clock = Clock_Config{
@@ -3510,7 +3510,7 @@ locale_te : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tem.json
+// Source: locales/tem.json
 locale_tem : Time_Locale = {
     code = "tem",
     clock = Clock_Config{
@@ -3535,7 +3535,7 @@ locale_tem : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tet.json
+// Source: locales/tet.json
 locale_tet : Time_Locale = {
     code = "tet",
     clock = Clock_Config{
@@ -3560,7 +3560,7 @@ locale_tet : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tg.json
+// Source: locales/tg.json
 locale_tg : Time_Locale = {
     code = "tg",
     clock = Clock_Config{
@@ -3585,7 +3585,7 @@ locale_tg : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/th.json
+// Source: locales/th.json
 locale_th : Time_Locale = {
     code = "th",
     clock = Clock_Config{
@@ -3610,7 +3610,7 @@ locale_th : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ti.json
+// Source: locales/ti.json
 locale_ti : Time_Locale = {
     code = "ti",
     clock = Clock_Config{
@@ -3635,7 +3635,7 @@ locale_ti : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tig.json
+// Source: locales/tig.json
 locale_tig : Time_Locale = {
     code = "tig",
     clock = Clock_Config{
@@ -3660,7 +3660,7 @@ locale_tig : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tk.json
+// Source: locales/tk.json
 locale_tk : Time_Locale = {
     code = "tk",
     clock = Clock_Config{
@@ -3685,7 +3685,7 @@ locale_tk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tn.json
+// Source: locales/tn.json
 locale_tn : Time_Locale = {
     code = "tn",
     clock = Clock_Config{
@@ -3710,7 +3710,7 @@ locale_tn : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tpi.json
+// Source: locales/tpi.json
 locale_tpi : Time_Locale = {
     code = "tpi",
     clock = Clock_Config{
@@ -3735,7 +3735,7 @@ locale_tpi : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tr.json
+// Source: locales/tr.json
 locale_tr : Time_Locale = {
     code = "tr",
     clock = Clock_Config{
@@ -3760,7 +3760,7 @@ locale_tr : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ts.json
+// Source: locales/ts.json
 locale_ts : Time_Locale = {
     code = "ts",
     clock = Clock_Config{
@@ -3785,7 +3785,7 @@ locale_ts : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tum.json
+// Source: locales/tum.json
 locale_tum : Time_Locale = {
     code = "tum",
     clock = Clock_Config{
@@ -3810,7 +3810,7 @@ locale_tum : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/tzm.json
+// Source: locales/tzm.json
 locale_tzm : Time_Locale = {
     code = "tzm",
     clock = Clock_Config{
@@ -3835,7 +3835,7 @@ locale_tzm : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/uk.json
+// Source: locales/uk.json
 locale_uk : Time_Locale = {
     code = "uk",
     clock = Clock_Config{
@@ -3860,7 +3860,7 @@ locale_uk : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/umb.json
+// Source: locales/umb.json
 locale_umb : Time_Locale = {
     code = "umb",
     clock = Clock_Config{
@@ -3885,7 +3885,7 @@ locale_umb : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ur.json
+// Source: locales/ur.json
 locale_ur : Time_Locale = {
     code = "ur",
     clock = Clock_Config{
@@ -3910,7 +3910,7 @@ locale_ur : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/uz.json
+// Source: locales/uz.json
 locale_uz : Time_Locale = {
     code = "uz",
     clock = Clock_Config{
@@ -3935,7 +3935,7 @@ locale_uz : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/ve.json
+// Source: locales/ve.json
 locale_ve : Time_Locale = {
     code = "ve",
     clock = Clock_Config{
@@ -3960,7 +3960,7 @@ locale_ve : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/vi.json
+// Source: locales/vi.json
 locale_vi : Time_Locale = {
     code = "vi",
     clock = Clock_Config{
@@ -3985,7 +3985,7 @@ locale_vi : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/vmw.json
+// Source: locales/vmw.json
 locale_vmw : Time_Locale = {
     code = "vmw",
     clock = Clock_Config{
@@ -4010,7 +4010,7 @@ locale_vmw : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/wo.json
+// Source: locales/wo.json
 locale_wo : Time_Locale = {
     code = "wo",
     clock = Clock_Config{
@@ -4035,7 +4035,7 @@ locale_wo : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/xh.json
+// Source: locales/xh.json
 locale_xh : Time_Locale = {
     code = "xh",
     clock = Clock_Config{
@@ -4060,7 +4060,7 @@ locale_xh : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/yao.json
+// Source: locales/yao.json
 locale_yao : Time_Locale = {
     code = "yao",
     clock = Clock_Config{
@@ -4085,7 +4085,7 @@ locale_yao : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/yo.json
+// Source: locales/yo.json
 locale_yo : Time_Locale = {
     code = "yo",
     clock = Clock_Config{
@@ -4110,7 +4110,7 @@ locale_yo : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/yue.json
+// Source: locales/yue.json
 locale_yue : Time_Locale = {
     code = "yue",
     clock = Clock_Config{
@@ -4135,7 +4135,7 @@ locale_yue : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/zdj.json
+// Source: locales/zdj.json
 locale_zdj : Time_Locale = {
     code = "zdj",
     clock = Clock_Config{
@@ -4160,7 +4160,7 @@ locale_zdj : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/zh.json
+// Source: locales/zh.json
 locale_zh : Time_Locale = {
     code = "zh",
     clock = Clock_Config{
@@ -4185,7 +4185,7 @@ locale_zh : Time_Locale = {
     },
 }
 
-// Source: time/locales/src/zu.json
+// Source: locales/zu.json
 locale_zu : Time_Locale = {
     code = "zu",
     clock = Clock_Config{

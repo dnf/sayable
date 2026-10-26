@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/gu.json
+# Source: locales/gu.json
 
 _sayabletime_locale_gu() {
     _clock_hours=('બાર' 'એક' 'બે' 'ત્રણ' 'ચાર' 'પાંચ' 'છ' 'સાત' 'આઠ' 'નવ' 'દસ' 'અગિયાર')

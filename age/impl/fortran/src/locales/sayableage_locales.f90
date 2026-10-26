@@ -530,7 +530,7 @@ contains
   end function plural_tzm
 
 
-  ! Source: age/locales/src/af.json
+  ! Source: locales/af.json
   subroutine init_af()
     locale_af%code = 'af'
     locale_af%plural => plural_one_other
@@ -654,7 +654,7 @@ contains
 
   end subroutine init_af
 
-  ! Source: age/locales/src/ak.json
+  ! Source: locales/ak.json
   subroutine init_ak()
     locale_ak%code = 'ak'
     locale_ak%plural => plural_one_other_zero_one
@@ -850,7 +850,7 @@ contains
 
   end subroutine init_ak
 
-  ! Source: age/locales/src/am.json
+  ! Source: locales/am.json
   subroutine init_am()
     locale_am%code = 'am'
     locale_am%plural => plural_one_other_zero_one
@@ -1010,7 +1010,7 @@ contains
 
   end subroutine init_am
 
-  ! Source: age/locales/src/ar.json
+  ! Source: locales/ar.json
   subroutine init_ar()
     locale_ar%code = 'ar'
     locale_ar%plural => plural_ar
@@ -1194,7 +1194,7 @@ contains
 
   end subroutine init_ar
 
-  ! Source: age/locales/src/ay.json
+  ! Source: locales/ay.json
   subroutine init_ay()
     locale_ay%code = 'ay'
     locale_ay%plural => plural_other_only
@@ -1278,7 +1278,7 @@ contains
 
   end subroutine init_ay
 
-  ! Source: age/locales/src/az.json
+  ! Source: locales/az.json
   subroutine init_az()
     locale_az%code = 'az'
     locale_az%plural => plural_one_other
@@ -1402,7 +1402,7 @@ contains
 
   end subroutine init_az
 
-  ! Source: age/locales/src/bci.json
+  ! Source: locales/bci.json
   subroutine init_bci()
     locale_bci%code = 'bci'
     locale_bci%plural => plural_other_only
@@ -1486,7 +1486,7 @@ contains
 
   end subroutine init_bci
 
-  ! Source: age/locales/src/be.json
+  ! Source: locales/be.json
   subroutine init_be()
     locale_be%code = 'be'
     locale_be%plural => plural_ru_uk
@@ -1634,7 +1634,7 @@ contains
 
   end subroutine init_be
 
-  ! Source: age/locales/src/bem.json
+  ! Source: locales/bem.json
   subroutine init_bem()
     locale_bem%code = 'bem'
     locale_bem%plural => plural_one_other
@@ -1806,7 +1806,7 @@ contains
 
   end subroutine init_bem
 
-  ! Source: age/locales/src/bg.json
+  ! Source: locales/bg.json
   subroutine init_bg()
     locale_bg%code = 'bg'
     locale_bg%plural => plural_one_other
@@ -1930,7 +1930,7 @@ contains
 
   end subroutine init_bg
 
-  ! Source: age/locales/src/bi.json
+  ! Source: locales/bi.json
   subroutine init_bi()
     locale_bi%code = 'bi'
     locale_bi%plural => plural_other_only
@@ -2014,7 +2014,7 @@ contains
 
   end subroutine init_bi
 
-  ! Source: age/locales/src/bm.json
+  ! Source: locales/bm.json
   subroutine init_bm()
     locale_bm%code = 'bm'
     locale_bm%plural => plural_other_only
@@ -2098,7 +2098,7 @@ contains
 
   end subroutine init_bm
 
-  ! Source: age/locales/src/bn.json
+  ! Source: locales/bn.json
   subroutine init_bn()
     locale_bn%code = 'bn'
     locale_bn%plural => plural_one_other_zero_one
@@ -2222,7 +2222,7 @@ contains
 
   end subroutine init_bn
 
-  ! Source: age/locales/src/br.json
+  ! Source: locales/br.json
   subroutine init_br()
     locale_br%code = 'br'
     locale_br%plural => plural_br
@@ -2346,7 +2346,7 @@ contains
 
   end subroutine init_br
 
-  ! Source: age/locales/src/bs.json
+  ! Source: locales/bs.json
   subroutine init_bs()
     locale_bs%code = 'bs'
     locale_bs%plural => plural_slavic_bcs
@@ -2482,7 +2482,7 @@ contains
 
   end subroutine init_bs
 
-  ! Source: age/locales/src/ca.json
+  ! Source: locales/ca.json
   subroutine init_ca()
     locale_ca%code = 'ca'
     locale_ca%plural => plural_one_other
@@ -2654,7 +2654,7 @@ contains
 
   end subroutine init_ca
 
-  ! Source: age/locales/src/cak.json
+  ! Source: locales/cak.json
   subroutine init_cak()
     locale_cak%code = 'cak'
     locale_cak%plural => plural_other_only
@@ -2738,7 +2738,7 @@ contains
 
   end subroutine init_cak
 
-  ! Source: age/locales/src/ceb.json
+  ! Source: locales/ceb.json
   subroutine init_ceb()
     locale_ceb%code = 'ceb'
     locale_ceb%plural => plural_one_other_zero_one
@@ -2822,7 +2822,7 @@ contains
 
   end subroutine init_ceb
 
-  ! Source: age/locales/src/cs.json
+  ! Source: locales/cs.json
   subroutine init_cs()
     locale_cs%code = 'cs'
     locale_cs%plural => plural_cs_sk
@@ -2982,7 +2982,7 @@ contains
 
   end subroutine init_cs
 
-  ! Source: age/locales/src/cy.json
+  ! Source: locales/cy.json
   subroutine init_cy()
     locale_cy%code = 'cy'
     locale_cy%plural => plural_cy
@@ -3142,7 +3142,7 @@ contains
 
   end subroutine init_cy
 
-  ! Source: age/locales/src/da.json
+  ! Source: locales/da.json
   subroutine init_da()
     locale_da%code = 'da'
     locale_da%plural => plural_one_other
@@ -3302,7 +3302,7 @@ contains
 
   end subroutine init_da
 
-  ! Source: age/locales/src/de.json
+  ! Source: locales/de.json
   subroutine init_de()
     locale_de%code = 'de'
     locale_de%plural => plural_one_other
@@ -3426,7 +3426,7 @@ contains
 
   end subroutine init_de
 
-  ! Source: age/locales/src/din.json
+  ! Source: locales/din.json
   subroutine init_din()
     locale_din%code = 'din'
     locale_din%plural => plural_one_other
@@ -3562,7 +3562,7 @@ contains
 
   end subroutine init_din
 
-  ! Source: age/locales/src/dje.json
+  ! Source: locales/dje.json
   subroutine init_dje()
     locale_dje%code = 'dje'
     locale_dje%plural => plural_other_only
@@ -3646,7 +3646,7 @@ contains
 
   end subroutine init_dje
 
-  ! Source: age/locales/src/dv.json
+  ! Source: locales/dv.json
   subroutine init_dv()
     locale_dv%code = 'dv'
     locale_dv%plural => plural_other_only
@@ -3730,7 +3730,7 @@ contains
 
   end subroutine init_dv
 
-  ! Source: age/locales/src/dyu.json
+  ! Source: locales/dyu.json
   subroutine init_dyu()
     locale_dyu%code = 'dyu'
     locale_dyu%plural => plural_other_only
@@ -3814,7 +3814,7 @@ contains
 
   end subroutine init_dyu
 
-  ! Source: age/locales/src/dz.json
+  ! Source: locales/dz.json
   subroutine init_dz()
     locale_dz%code = 'dz'
     locale_dz%plural => plural_other_only
@@ -3898,7 +3898,7 @@ contains
 
   end subroutine init_dz
 
-  ! Source: age/locales/src/ee.json
+  ! Source: locales/ee.json
   subroutine init_ee()
     locale_ee%code = 'ee'
     locale_ee%plural => plural_one_other
@@ -4058,7 +4058,7 @@ contains
 
   end subroutine init_ee
 
-  ! Source: age/locales/src/el.json
+  ! Source: locales/el.json
   subroutine init_el()
     locale_el%code = 'el'
     locale_el%plural => plural_one_other
@@ -4194,7 +4194,7 @@ contains
 
   end subroutine init_el
 
-  ! Source: age/locales/src/en.json
+  ! Source: locales/en.json
   subroutine init_en()
     locale_en%code = 'en'
     locale_en%plural => plural_one_other
@@ -4318,7 +4318,7 @@ contains
 
   end subroutine init_en
 
-  ! Source: age/locales/src/es.json
+  ! Source: locales/es.json
   subroutine init_es()
     locale_es%code = 'es'
     locale_es%plural => plural_one_other
@@ -4442,7 +4442,7 @@ contains
 
   end subroutine init_es
 
-  ! Source: age/locales/src/et.json
+  ! Source: locales/et.json
   subroutine init_et()
     locale_et%code = 'et'
     locale_et%plural => plural_one_other
@@ -4590,7 +4590,7 @@ contains
 
   end subroutine init_et
 
-  ! Source: age/locales/src/eu.json
+  ! Source: locales/eu.json
   subroutine init_eu()
     locale_eu%code = 'eu'
     locale_eu%plural => plural_other_only
@@ -4674,7 +4674,7 @@ contains
 
   end subroutine init_eu
 
-  ! Source: age/locales/src/fa.json
+  ! Source: locales/fa.json
   subroutine init_fa()
     locale_fa%code = 'fa'
     locale_fa%plural => plural_one_other_zero_one
@@ -4798,7 +4798,7 @@ contains
 
   end subroutine init_fa
 
-  ! Source: age/locales/src/fan.json
+  ! Source: locales/fan.json
   subroutine init_fan()
     locale_fan%code = 'fan'
     locale_fan%plural => plural_one_other
@@ -4970,7 +4970,7 @@ contains
 
   end subroutine init_fan
 
-  ! Source: age/locales/src/ff.json
+  ! Source: locales/ff.json
   subroutine init_ff()
     locale_ff%code = 'ff'
     locale_ff%plural => plural_one_other_zero_one
@@ -5166,7 +5166,7 @@ contains
 
   end subroutine init_ff
 
-  ! Source: age/locales/src/fi.json
+  ! Source: locales/fi.json
   subroutine init_fi()
     locale_fi%code = 'fi'
     locale_fi%plural => plural_one_other
@@ -5290,7 +5290,7 @@ contains
 
   end subroutine init_fi
 
-  ! Source: age/locales/src/fil.json
+  ! Source: locales/fil.json
   subroutine init_fil()
     locale_fil%code = 'fil'
     locale_fil%plural => plural_other_only
@@ -5410,7 +5410,7 @@ contains
 
   end subroutine init_fil
 
-  ! Source: age/locales/src/fj.json
+  ! Source: locales/fj.json
   subroutine init_fj()
     locale_fj%code = 'fj'
     locale_fj%plural => plural_other_only
@@ -5494,7 +5494,7 @@ contains
 
   end subroutine init_fj
 
-  ! Source: age/locales/src/fon.json
+  ! Source: locales/fon.json
   subroutine init_fon()
     locale_fon%code = 'fon'
     locale_fon%plural => plural_other_only
@@ -5578,7 +5578,7 @@ contains
 
   end subroutine init_fon
 
-  ! Source: age/locales/src/fr.json
+  ! Source: locales/fr.json
   subroutine init_fr()
     locale_fr%code = 'fr'
     locale_fr%plural => plural_one_other_zero_one
@@ -5704,7 +5704,7 @@ contains
 
   end subroutine init_fr
 
-  ! Source: age/locales/src/ga.json
+  ! Source: locales/ga.json
   subroutine init_ga()
     locale_ga%code = 'ga'
     locale_ga%plural => plural_ga
@@ -5852,7 +5852,7 @@ contains
 
   end subroutine init_ga
 
-  ! Source: age/locales/src/gd.json
+  ! Source: locales/gd.json
   subroutine init_gd()
     locale_gd%code = 'gd'
     locale_gd%plural => plural_gd
@@ -6012,7 +6012,7 @@ contains
 
   end subroutine init_gd
 
-  ! Source: age/locales/src/gl.json
+  ! Source: locales/gl.json
   subroutine init_gl()
     locale_gl%code = 'gl'
     locale_gl%plural => plural_one_other
@@ -6136,7 +6136,7 @@ contains
 
   end subroutine init_gl
 
-  ! Source: age/locales/src/gn.json
+  ! Source: locales/gn.json
   subroutine init_gn()
     locale_gn%code = 'gn'
     locale_gn%plural => plural_one_other
@@ -6220,7 +6220,7 @@ contains
 
   end subroutine init_gn
 
-  ! Source: age/locales/src/gu.json
+  ! Source: locales/gu.json
   subroutine init_gu()
     locale_gu%code = 'gu'
     locale_gu%plural => plural_one_other_zero_one
@@ -6356,7 +6356,7 @@ contains
 
   end subroutine init_gu
 
-  ! Source: age/locales/src/gv.json
+  ! Source: locales/gv.json
   subroutine init_gv()
     locale_gv%code = 'gv'
     locale_gv%plural => plural_gv
@@ -6480,7 +6480,7 @@ contains
 
   end subroutine init_gv
 
-  ! Source: age/locales/src/ha.json
+  ! Source: locales/ha.json
   subroutine init_ha()
     locale_ha%code = 'ha'
     locale_ha%plural => plural_one_other
@@ -6604,7 +6604,7 @@ contains
 
   end subroutine init_ha
 
-  ! Source: age/locales/src/he.json
+  ! Source: locales/he.json
   subroutine init_he()
     locale_he%code = 'he'
     locale_he%plural => plural_he
@@ -6764,7 +6764,7 @@ contains
 
   end subroutine init_he
 
-  ! Source: age/locales/src/hi.json
+  ! Source: locales/hi.json
   subroutine init_hi()
     locale_hi%code = 'hi'
     locale_hi%plural => plural_one_other_zero_one
@@ -6888,7 +6888,7 @@ contains
 
   end subroutine init_hi
 
-  ! Source: age/locales/src/hmn.json
+  ! Source: locales/hmn.json
   subroutine init_hmn()
     locale_hmn%code = 'hmn'
     locale_hmn%plural => plural_other_only
@@ -6972,7 +6972,7 @@ contains
 
   end subroutine init_hmn
 
-  ! Source: age/locales/src/hr.json
+  ! Source: locales/hr.json
   subroutine init_hr()
     locale_hr%code = 'hr'
     locale_hr%plural => plural_slavic_bcs
@@ -7108,7 +7108,7 @@ contains
 
   end subroutine init_hr
 
-  ! Source: age/locales/src/ht.json
+  ! Source: locales/ht.json
   subroutine init_ht()
     locale_ht%code = 'ht'
     locale_ht%plural => plural_one_other_zero_one
@@ -7192,7 +7192,7 @@ contains
 
   end subroutine init_ht
 
-  ! Source: age/locales/src/hu.json
+  ! Source: locales/hu.json
   subroutine init_hu()
     locale_hu%code = 'hu'
     locale_hu%plural => plural_other_only
@@ -7276,7 +7276,7 @@ contains
 
   end subroutine init_hu
 
-  ! Source: age/locales/src/hy.json
+  ! Source: locales/hy.json
   subroutine init_hy()
     locale_hy%code = 'hy'
     locale_hy%plural => plural_one_other_zero_one
@@ -7400,7 +7400,7 @@ contains
 
   end subroutine init_hy
 
-  ! Source: age/locales/src/id.json
+  ! Source: locales/id.json
   subroutine init_id()
     locale_id%code = 'id'
     locale_id%plural => plural_other_only
@@ -7484,7 +7484,7 @@ contains
 
   end subroutine init_id
 
-  ! Source: age/locales/src/ig.json
+  ! Source: locales/ig.json
   subroutine init_ig()
     locale_ig%code = 'ig'
     locale_ig%plural => plural_other_only
@@ -7568,7 +7568,7 @@ contains
 
   end subroutine init_ig
 
-  ! Source: age/locales/src/is.json
+  ! Source: locales/is.json
   subroutine init_is()
     locale_is%code = 'is'
     locale_is%plural => plural_mk
@@ -7692,7 +7692,7 @@ contains
 
   end subroutine init_is
 
-  ! Source: age/locales/src/it.json
+  ! Source: locales/it.json
   subroutine init_it()
     locale_it%code = 'it'
     locale_it%plural => plural_one_other
@@ -7888,7 +7888,7 @@ contains
 
   end subroutine init_it
 
-  ! Source: age/locales/src/ja.json
+  ! Source: locales/ja.json
   subroutine init_ja()
     locale_ja%code = 'ja'
     locale_ja%plural => plural_other_only
@@ -7972,7 +7972,7 @@ contains
 
   end subroutine init_ja
 
-  ! Source: age/locales/src/jv.json
+  ! Source: locales/jv.json
   subroutine init_jv()
     locale_jv%code = 'jv'
     locale_jv%plural => plural_other_only
@@ -8056,7 +8056,7 @@ contains
 
   end subroutine init_jv
 
-  ! Source: age/locales/src/ka.json
+  ! Source: locales/ka.json
   subroutine init_ka()
     locale_ka%code = 'ka'
     locale_ka%plural => plural_one_other
@@ -8180,7 +8180,7 @@ contains
 
   end subroutine init_ka
 
-  ! Source: age/locales/src/kbp.json
+  ! Source: locales/kbp.json
   subroutine init_kbp()
     locale_kbp%code = 'kbp'
     locale_kbp%plural => plural_other_only
@@ -8264,7 +8264,7 @@ contains
 
   end subroutine init_kbp
 
-  ! Source: age/locales/src/kek.json
+  ! Source: locales/kek.json
   subroutine init_kek()
     locale_kek%code = 'kek'
     locale_kek%plural => plural_other_only
@@ -8348,7 +8348,7 @@ contains
 
   end subroutine init_kek
 
-  ! Source: age/locales/src/ki.json
+  ! Source: locales/ki.json
   subroutine init_ki()
     locale_ki%code = 'ki'
     locale_ki%plural => plural_one_other
@@ -8508,7 +8508,7 @@ contains
 
   end subroutine init_ki
 
-  ! Source: age/locales/src/kk.json
+  ! Source: locales/kk.json
   subroutine init_kk()
     locale_kk%code = 'kk'
     locale_kk%plural => plural_one_other
@@ -8632,7 +8632,7 @@ contains
 
   end subroutine init_kk
 
-  ! Source: age/locales/src/kl.json
+  ! Source: locales/kl.json
   subroutine init_kl()
     locale_kl%code = 'kl'
     locale_kl%plural => plural_other_only
@@ -8716,7 +8716,7 @@ contains
 
   end subroutine init_kl
 
-  ! Source: age/locales/src/km.json
+  ! Source: locales/km.json
   subroutine init_km()
     locale_km%code = 'km'
     locale_km%plural => plural_other_only
@@ -8800,7 +8800,7 @@ contains
 
   end subroutine init_km
 
-  ! Source: age/locales/src/kn.json
+  ! Source: locales/kn.json
   subroutine init_kn()
     locale_kn%code = 'kn'
     locale_kn%plural => plural_one_other_zero_one
@@ -8924,7 +8924,7 @@ contains
 
   end subroutine init_kn
 
-  ! Source: age/locales/src/ko.json
+  ! Source: locales/ko.json
   subroutine init_ko()
     locale_ko%code = 'ko'
     locale_ko%plural => plural_other_only
@@ -9008,7 +9008,7 @@ contains
 
   end subroutine init_ko
 
-  ! Source: age/locales/src/kpe.json
+  ! Source: locales/kpe.json
   subroutine init_kpe()
     locale_kpe%code = 'kpe'
     locale_kpe%plural => plural_other_only
@@ -9092,7 +9092,7 @@ contains
 
   end subroutine init_kpe
 
-  ! Source: age/locales/src/kri.json
+  ! Source: locales/kri.json
   subroutine init_kri()
     locale_kri%code = 'kri'
     locale_kri%plural => plural_other_only
@@ -9176,7 +9176,7 @@ contains
 
   end subroutine init_kri
 
-  ! Source: age/locales/src/ktu.json
+  ! Source: locales/ktu.json
   subroutine init_ktu()
     locale_ktu%code = 'ktu'
     locale_ktu%plural => plural_one_other
@@ -9372,7 +9372,7 @@ contains
 
   end subroutine init_ktu
 
-  ! Source: age/locales/src/ku.json
+  ! Source: locales/ku.json
   subroutine init_ku()
     locale_ku%code = 'ku'
     locale_ku%plural => plural_one_other
@@ -9496,7 +9496,7 @@ contains
 
   end subroutine init_ku
 
-  ! Source: age/locales/src/kw.json
+  ! Source: locales/kw.json
   subroutine init_kw()
     locale_kw%code = 'kw'
     locale_kw%plural => plural_kw
@@ -9620,7 +9620,7 @@ contains
 
   end subroutine init_kw
 
-  ! Source: age/locales/src/ky.json
+  ! Source: locales/ky.json
   subroutine init_ky()
     locale_ky%code = 'ky'
     locale_ky%plural => plural_one_other
@@ -9704,7 +9704,7 @@ contains
 
   end subroutine init_ky
 
-  ! Source: age/locales/src/lb.json
+  ! Source: locales/lb.json
   subroutine init_lb()
     locale_lb%code = 'lb'
     locale_lb%plural => plural_one_other
@@ -9828,7 +9828,7 @@ contains
 
   end subroutine init_lb
 
-  ! Source: age/locales/src/lg.json
+  ! Source: locales/lg.json
   subroutine init_lg()
     locale_lg%code = 'lg'
     locale_lg%plural => plural_one_other
@@ -10024,7 +10024,7 @@ contains
 
   end subroutine init_lg
 
-  ! Source: age/locales/src/ln.json
+  ! Source: locales/ln.json
   subroutine init_ln()
     locale_ln%code = 'ln'
     locale_ln%plural => plural_one_other_zero_one
@@ -10244,7 +10244,7 @@ contains
 
   end subroutine init_ln
 
-  ! Source: age/locales/src/lo.json
+  ! Source: locales/lo.json
   subroutine init_lo()
     locale_lo%code = 'lo'
     locale_lo%plural => plural_other_only
@@ -10328,7 +10328,7 @@ contains
 
   end subroutine init_lo
 
-  ! Source: age/locales/src/lt.json
+  ! Source: locales/lt.json
   subroutine init_lt()
     locale_lt%code = 'lt'
     locale_lt%plural => plural_lt
@@ -10452,7 +10452,7 @@ contains
 
   end subroutine init_lt
 
-  ! Source: age/locales/src/luo.json
+  ! Source: locales/luo.json
   subroutine init_luo()
     locale_luo%code = 'luo'
     locale_luo%plural => plural_one_other
@@ -10624,7 +10624,7 @@ contains
 
   end subroutine init_luo
 
-  ! Source: age/locales/src/lv.json
+  ! Source: locales/lv.json
   subroutine init_lv()
     locale_lv%code = 'lv'
     locale_lv%plural => plural_lv
@@ -10748,7 +10748,7 @@ contains
 
   end subroutine init_lv
 
-  ! Source: age/locales/src/mam.json
+  ! Source: locales/mam.json
   subroutine init_mam()
     locale_mam%code = 'mam'
     locale_mam%plural => plural_other_only
@@ -10832,7 +10832,7 @@ contains
 
   end subroutine init_mam
 
-  ! Source: age/locales/src/men.json
+  ! Source: locales/men.json
   subroutine init_men()
     locale_men%code = 'men'
     locale_men%plural => plural_one_other
@@ -10992,7 +10992,7 @@ contains
 
   end subroutine init_men
 
-  ! Source: age/locales/src/mfe.json
+  ! Source: locales/mfe.json
   subroutine init_mfe()
     locale_mfe%code = 'mfe'
     locale_mfe%plural => plural_other_only
@@ -11076,7 +11076,7 @@ contains
 
   end subroutine init_mfe
 
-  ! Source: age/locales/src/mg.json
+  ! Source: locales/mg.json
   subroutine init_mg()
     locale_mg%code = 'mg'
     locale_mg%plural => plural_one_other_zero_one
@@ -11160,7 +11160,7 @@ contains
 
   end subroutine init_mg
 
-  ! Source: age/locales/src/mi.json
+  ! Source: locales/mi.json
   subroutine init_mi()
     locale_mi%code = 'mi'
     locale_mi%plural => plural_one_other
@@ -11244,7 +11244,7 @@ contains
 
   end subroutine init_mi
 
-  ! Source: age/locales/src/mk.json
+  ! Source: locales/mk.json
   subroutine init_mk()
     locale_mk%code = 'mk'
     locale_mk%plural => plural_mk
@@ -11380,7 +11380,7 @@ contains
 
   end subroutine init_mk
 
-  ! Source: age/locales/src/ml.json
+  ! Source: locales/ml.json
   subroutine init_ml()
     locale_ml%code = 'ml'
     locale_ml%plural => plural_one_other_zero_one
@@ -11504,7 +11504,7 @@ contains
 
   end subroutine init_ml
 
-  ! Source: age/locales/src/mn.json
+  ! Source: locales/mn.json
   subroutine init_mn()
     locale_mn%code = 'mn'
     locale_mn%plural => plural_one_other
@@ -11588,7 +11588,7 @@ contains
 
   end subroutine init_mn
 
-  ! Source: age/locales/src/mnk.json
+  ! Source: locales/mnk.json
   subroutine init_mnk()
     locale_mnk%code = 'mnk'
     locale_mnk%plural => plural_other_only
@@ -11672,7 +11672,7 @@ contains
 
   end subroutine init_mnk
 
-  ! Source: age/locales/src/mos.json
+  ! Source: locales/mos.json
   subroutine init_mos()
     locale_mos%code = 'mos'
     locale_mos%plural => plural_other_only
@@ -11756,7 +11756,7 @@ contains
 
   end subroutine init_mos
 
-  ! Source: age/locales/src/mr.json
+  ! Source: locales/mr.json
   subroutine init_mr()
     locale_mr%code = 'mr'
     locale_mr%plural => plural_one_other
@@ -11904,7 +11904,7 @@ contains
 
   end subroutine init_mr
 
-  ! Source: age/locales/src/ms.json
+  ! Source: locales/ms.json
   subroutine init_ms()
     locale_ms%code = 'ms'
     locale_ms%plural => plural_other_only
@@ -11988,7 +11988,7 @@ contains
 
   end subroutine init_ms
 
-  ! Source: age/locales/src/mt.json
+  ! Source: locales/mt.json
   subroutine init_mt()
     locale_mt%code = 'mt'
     locale_mt%plural => plural_mt
@@ -12112,7 +12112,7 @@ contains
 
   end subroutine init_mt
 
-  ! Source: age/locales/src/my.json
+  ! Source: locales/my.json
   subroutine init_my()
     locale_my%code = 'my'
     locale_my%plural => plural_other_only
@@ -12196,7 +12196,7 @@ contains
 
   end subroutine init_my
 
-  ! Source: age/locales/src/nb.json
+  ! Source: locales/nb.json
   subroutine init_nb()
     locale_nb%code = 'nb'
     locale_nb%plural => plural_one_other
@@ -12320,7 +12320,7 @@ contains
 
   end subroutine init_nb
 
-  ! Source: age/locales/src/nd.json
+  ! Source: locales/nd.json
   subroutine init_nd()
     locale_nd%code = 'nd'
     locale_nd%plural => plural_one_other
@@ -12492,7 +12492,7 @@ contains
 
   end subroutine init_nd
 
-  ! Source: age/locales/src/ne.json
+  ! Source: locales/ne.json
   subroutine init_ne()
     locale_ne%code = 'ne'
     locale_ne%plural => plural_one_other
@@ -12616,7 +12616,7 @@ contains
 
   end subroutine init_ne
 
-  ! Source: age/locales/src/ng.json
+  ! Source: locales/ng.json
   subroutine init_ng()
     locale_ng%code = 'ng'
     locale_ng%plural => plural_one_other
@@ -12812,7 +12812,7 @@ contains
 
   end subroutine init_ng
 
-  ! Source: age/locales/src/nl.json
+  ! Source: locales/nl.json
   subroutine init_nl()
     locale_nl%code = 'nl'
     locale_nl%plural => plural_one_other
@@ -12960,7 +12960,7 @@ contains
 
   end subroutine init_nl
 
-  ! Source: age/locales/src/nr.json
+  ! Source: locales/nr.json
   subroutine init_nr()
     locale_nr%code = 'nr'
     locale_nr%plural => plural_one_other
@@ -13132,7 +13132,7 @@ contains
 
   end subroutine init_nr
 
-  ! Source: age/locales/src/nso.json
+  ! Source: locales/nso.json
   subroutine init_nso()
     locale_nso%code = 'nso'
     locale_nso%plural => plural_one_other
@@ -13304,7 +13304,7 @@ contains
 
   end subroutine init_nso
 
-  ! Source: age/locales/src/nus.json
+  ! Source: locales/nus.json
   subroutine init_nus()
     locale_nus%code = 'nus'
     locale_nus%plural => plural_one_other
@@ -13476,7 +13476,7 @@ contains
 
   end subroutine init_nus
 
-  ! Source: age/locales/src/ny.json
+  ! Source: locales/ny.json
   subroutine init_ny()
     locale_ny%code = 'ny'
     locale_ny%plural => plural_one_other
@@ -13696,7 +13696,7 @@ contains
 
   end subroutine init_ny
 
-  ! Source: age/locales/src/om.json
+  ! Source: locales/om.json
   subroutine init_om()
     locale_om%code = 'om'
     locale_om%plural => plural_one_other
@@ -13820,7 +13820,7 @@ contains
 
   end subroutine init_om
 
-  ! Source: age/locales/src/or.json
+  ! Source: locales/or.json
   subroutine init_or()
     locale_or%code = 'or'
     locale_or%plural => plural_one_other
@@ -13944,7 +13944,7 @@ contains
 
   end subroutine init_or
 
-  ! Source: age/locales/src/pa.json
+  ! Source: locales/pa.json
   subroutine init_pa()
     locale_pa%code = 'pa'
     locale_pa%plural => plural_one_other_zero_one
@@ -14116,7 +14116,7 @@ contains
 
   end subroutine init_pa
 
-  ! Source: age/locales/src/pis.json
+  ! Source: locales/pis.json
   subroutine init_pis()
     locale_pis%code = 'pis'
     locale_pis%plural => plural_other_only
@@ -14200,7 +14200,7 @@ contains
 
   end subroutine init_pis
 
-  ! Source: age/locales/src/pl.json
+  ! Source: locales/pl.json
   subroutine init_pl()
     locale_pl%code = 'pl'
     locale_pl%plural => plural_pl
@@ -14384,7 +14384,7 @@ contains
 
   end subroutine init_pl
 
-  ! Source: age/locales/src/pov.json
+  ! Source: locales/pov.json
   subroutine init_pov()
     locale_pov%code = 'pov'
     locale_pov%plural => plural_other_only
@@ -14468,7 +14468,7 @@ contains
 
   end subroutine init_pov
 
-  ! Source: age/locales/src/ps.json
+  ! Source: locales/ps.json
   subroutine init_ps()
     locale_ps%code = 'ps'
     locale_ps%plural => plural_one_other
@@ -14618,7 +14618,7 @@ contains
 
   end subroutine init_ps
 
-  ! Source: age/locales/src/pt.json
+  ! Source: locales/pt.json
   subroutine init_pt()
     locale_pt%code = 'pt'
     locale_pt%plural => plural_one_other_zero_one
@@ -14814,7 +14814,7 @@ contains
 
   end subroutine init_pt
 
-  ! Source: age/locales/src/qu.json
+  ! Source: locales/qu.json
   subroutine init_qu()
     locale_qu%code = 'qu'
     locale_qu%plural => plural_other_only
@@ -14898,7 +14898,7 @@ contains
 
   end subroutine init_qu
 
-  ! Source: age/locales/src/quc.json
+  ! Source: locales/quc.json
   subroutine init_quc()
     locale_quc%code = 'quc'
     locale_quc%plural => plural_other_only
@@ -14982,7 +14982,7 @@ contains
 
   end subroutine init_quc
 
-  ! Source: age/locales/src/ro.json
+  ! Source: locales/ro.json
   subroutine init_ro()
     locale_ro%code = 'ro'
     locale_ro%plural => plural_ro
@@ -15142,7 +15142,7 @@ contains
 
   end subroutine init_ro
 
-  ! Source: age/locales/src/ru.json
+  ! Source: locales/ru.json
   subroutine init_ru()
     locale_ru%code = 'ru'
     locale_ru%plural => plural_ru_uk
@@ -15290,7 +15290,7 @@ contains
 
   end subroutine init_ru
 
-  ! Source: age/locales/src/rw.json
+  ! Source: locales/rw.json
   subroutine init_rw()
     locale_rw%code = 'rw'
     locale_rw%plural => plural_one_other
@@ -15414,7 +15414,7 @@ contains
 
   end subroutine init_rw
 
-  ! Source: age/locales/src/sar.json
+  ! Source: locales/sar.json
   subroutine init_sar()
     locale_sar%code = 'sar'
     locale_sar%plural => plural_other_only
@@ -15498,7 +15498,7 @@ contains
 
   end subroutine init_sar
 
-  ! Source: age/locales/src/sd.json
+  ! Source: locales/sd.json
   subroutine init_sd()
     locale_sd%code = 'sd'
     locale_sd%plural => plural_one_other
@@ -15626,7 +15626,7 @@ contains
 
   end subroutine init_sd
 
-  ! Source: age/locales/src/sg.json
+  ! Source: locales/sg.json
   subroutine init_sg()
     locale_sg%code = 'sg'
     locale_sg%plural => plural_other_only
@@ -15710,7 +15710,7 @@ contains
 
   end subroutine init_sg
 
-  ! Source: age/locales/src/shi.json
+  ! Source: locales/shi.json
   subroutine init_shi()
     locale_shi%code = 'shi'
     locale_shi%plural => plural_shi
@@ -15834,7 +15834,7 @@ contains
 
   end subroutine init_shi
 
-  ! Source: age/locales/src/shn.json
+  ! Source: locales/shn.json
   subroutine init_shn()
     locale_shn%code = 'shn'
     locale_shn%plural => plural_other_only
@@ -15918,7 +15918,7 @@ contains
 
   end subroutine init_shn
 
-  ! Source: age/locales/src/si.json
+  ! Source: locales/si.json
   subroutine init_si()
     locale_si%code = 'si'
     locale_si%plural => plural_one_other_zero_one
@@ -16042,7 +16042,7 @@ contains
 
   end subroutine init_si
 
-  ! Source: age/locales/src/sk.json
+  ! Source: locales/sk.json
   subroutine init_sk()
     locale_sk%code = 'sk'
     locale_sk%plural => plural_cs_sk
@@ -16178,7 +16178,7 @@ contains
 
   end subroutine init_sk
 
-  ! Source: age/locales/src/sl.json
+  ! Source: locales/sl.json
   subroutine init_sl()
     locale_sl%code = 'sl'
     locale_sl%plural => plural_sl
@@ -16302,7 +16302,7 @@ contains
 
   end subroutine init_sl
 
-  ! Source: age/locales/src/sn.json
+  ! Source: locales/sn.json
   subroutine init_sn()
     locale_sn%code = 'sn'
     locale_sn%plural => plural_one_other
@@ -16498,7 +16498,7 @@ contains
 
   end subroutine init_sn
 
-  ! Source: age/locales/src/snk.json
+  ! Source: locales/snk.json
   subroutine init_snk()
     locale_snk%code = 'snk'
     locale_snk%plural => plural_other_only
@@ -16582,7 +16582,7 @@ contains
 
   end subroutine init_snk
 
-  ! Source: age/locales/src/so.json
+  ! Source: locales/so.json
   subroutine init_so()
     locale_so%code = 'so'
     locale_so%plural => plural_one_other
@@ -16706,7 +16706,7 @@ contains
 
   end subroutine init_so
 
-  ! Source: age/locales/src/sq.json
+  ! Source: locales/sq.json
   subroutine init_sq()
     locale_sq%code = 'sq'
     locale_sq%plural => plural_one_other
@@ -16854,7 +16854,7 @@ contains
 
   end subroutine init_sq
 
-  ! Source: age/locales/src/sr.json
+  ! Source: locales/sr.json
   subroutine init_sr()
     locale_sr%code = 'sr'
     locale_sr%plural => plural_slavic_bcs
@@ -17002,7 +17002,7 @@ contains
 
   end subroutine init_sr
 
-  ! Source: age/locales/src/ss.json
+  ! Source: locales/ss.json
   subroutine init_ss()
     locale_ss%code = 'ss'
     locale_ss%plural => plural_one_other
@@ -17174,7 +17174,7 @@ contains
 
   end subroutine init_ss
 
-  ! Source: age/locales/src/st.json
+  ! Source: locales/st.json
   subroutine init_st()
     locale_st%code = 'st'
     locale_st%plural => plural_one_other
@@ -17346,7 +17346,7 @@ contains
 
   end subroutine init_st
 
-  ! Source: age/locales/src/su.json
+  ! Source: locales/su.json
   subroutine init_su()
     locale_su%code = 'su'
     locale_su%plural => plural_other_only
@@ -17430,7 +17430,7 @@ contains
 
   end subroutine init_su
 
-  ! Source: age/locales/src/suk.json
+  ! Source: locales/suk.json
   subroutine init_suk()
     locale_suk%code = 'suk'
     locale_suk%plural => plural_one_other
@@ -17602,7 +17602,7 @@ contains
 
   end subroutine init_suk
 
-  ! Source: age/locales/src/sv.json
+  ! Source: locales/sv.json
   subroutine init_sv()
     locale_sv%code = 'sv'
     locale_sv%plural => plural_one_other
@@ -17726,7 +17726,7 @@ contains
 
   end subroutine init_sv
 
-  ! Source: age/locales/src/sw.json
+  ! Source: locales/sw.json
   subroutine init_sw()
     locale_sw%code = 'sw'
     locale_sw%plural => plural_one_other
@@ -17898,7 +17898,7 @@ contains
 
   end subroutine init_sw
 
-  ! Source: age/locales/src/ta.json
+  ! Source: locales/ta.json
   subroutine init_ta()
     locale_ta%code = 'ta'
     locale_ta%plural => plural_one_other
@@ -18070,7 +18070,7 @@ contains
 
   end subroutine init_ta
 
-  ! Source: age/locales/src/te.json
+  ! Source: locales/te.json
   subroutine init_te()
     locale_te%code = 'te'
     locale_te%plural => plural_one_other
@@ -18206,7 +18206,7 @@ contains
 
   end subroutine init_te
 
-  ! Source: age/locales/src/tem.json
+  ! Source: locales/tem.json
   subroutine init_tem()
     locale_tem%code = 'tem'
     locale_tem%plural => plural_one_other
@@ -18366,7 +18366,7 @@ contains
 
   end subroutine init_tem
 
-  ! Source: age/locales/src/tet.json
+  ! Source: locales/tet.json
   subroutine init_tet()
     locale_tet%code = 'tet'
     locale_tet%plural => plural_other_only
@@ -18450,7 +18450,7 @@ contains
 
   end subroutine init_tet
 
-  ! Source: age/locales/src/tg.json
+  ! Source: locales/tg.json
   subroutine init_tg()
     locale_tg%code = 'tg'
     locale_tg%plural => plural_other_only
@@ -18534,7 +18534,7 @@ contains
 
   end subroutine init_tg
 
-  ! Source: age/locales/src/th.json
+  ! Source: locales/th.json
   subroutine init_th()
     locale_th%code = 'th'
     locale_th%plural => plural_other_only
@@ -18618,7 +18618,7 @@ contains
 
   end subroutine init_th
 
-  ! Source: age/locales/src/ti.json
+  ! Source: locales/ti.json
   subroutine init_ti()
     locale_ti%code = 'ti'
     locale_ti%plural => plural_one_other_zero_one
@@ -18778,7 +18778,7 @@ contains
 
   end subroutine init_ti
 
-  ! Source: age/locales/src/tig.json
+  ! Source: locales/tig.json
   subroutine init_tig()
     locale_tig%code = 'tig'
     locale_tig%plural => plural_one_other
@@ -18950,7 +18950,7 @@ contains
 
   end subroutine init_tig
 
-  ! Source: age/locales/src/tk.json
+  ! Source: locales/tk.json
   subroutine init_tk()
     locale_tk%code = 'tk'
     locale_tk%plural => plural_one_other
@@ -19034,7 +19034,7 @@ contains
 
   end subroutine init_tk
 
-  ! Source: age/locales/src/tn.json
+  ! Source: locales/tn.json
   subroutine init_tn()
     locale_tn%code = 'tn'
     locale_tn%plural => plural_one_other
@@ -19206,7 +19206,7 @@ contains
 
   end subroutine init_tn
 
-  ! Source: age/locales/src/tpi.json
+  ! Source: locales/tpi.json
   subroutine init_tpi()
     locale_tpi%code = 'tpi'
     locale_tpi%plural => plural_other_only
@@ -19290,7 +19290,7 @@ contains
 
   end subroutine init_tpi
 
-  ! Source: age/locales/src/tr.json
+  ! Source: locales/tr.json
   subroutine init_tr()
     locale_tr%code = 'tr'
     locale_tr%plural => plural_one_other
@@ -19414,7 +19414,7 @@ contains
 
   end subroutine init_tr
 
-  ! Source: age/locales/src/ts.json
+  ! Source: locales/ts.json
   subroutine init_ts()
     locale_ts%code = 'ts'
     locale_ts%plural => plural_one_other
@@ -19586,7 +19586,7 @@ contains
 
   end subroutine init_ts
 
-  ! Source: age/locales/src/tum.json
+  ! Source: locales/tum.json
   subroutine init_tum()
     locale_tum%code = 'tum'
     locale_tum%plural => plural_one_other
@@ -19758,7 +19758,7 @@ contains
 
   end subroutine init_tum
 
-  ! Source: age/locales/src/tzm.json
+  ! Source: locales/tzm.json
   subroutine init_tzm()
     locale_tzm%code = 'tzm'
     locale_tzm%plural => plural_tzm
@@ -19882,7 +19882,7 @@ contains
 
   end subroutine init_tzm
 
-  ! Source: age/locales/src/uk.json
+  ! Source: locales/uk.json
   subroutine init_uk()
     locale_uk%code = 'uk'
     locale_uk%plural => plural_ru_uk
@@ -20006,7 +20006,7 @@ contains
 
   end subroutine init_uk
 
-  ! Source: age/locales/src/umb.json
+  ! Source: locales/umb.json
   subroutine init_umb()
     locale_umb%code = 'umb'
     locale_umb%plural => plural_one_other
@@ -20178,7 +20178,7 @@ contains
 
   end subroutine init_umb
 
-  ! Source: age/locales/src/ur.json
+  ! Source: locales/ur.json
   subroutine init_ur()
     locale_ur%code = 'ur'
     locale_ur%plural => plural_one_other
@@ -20350,7 +20350,7 @@ contains
 
   end subroutine init_ur
 
-  ! Source: age/locales/src/uz.json
+  ! Source: locales/uz.json
   subroutine init_uz()
     locale_uz%code = 'uz'
     locale_uz%plural => plural_one_other
@@ -20474,7 +20474,7 @@ contains
 
   end subroutine init_uz
 
-  ! Source: age/locales/src/ve.json
+  ! Source: locales/ve.json
   subroutine init_ve()
     locale_ve%code = 've'
     locale_ve%plural => plural_one_other
@@ -20646,7 +20646,7 @@ contains
 
   end subroutine init_ve
 
-  ! Source: age/locales/src/vi.json
+  ! Source: locales/vi.json
   subroutine init_vi()
     locale_vi%code = 'vi'
     locale_vi%plural => plural_other_only
@@ -20730,7 +20730,7 @@ contains
 
   end subroutine init_vi
 
-  ! Source: age/locales/src/vmw.json
+  ! Source: locales/vmw.json
   subroutine init_vmw()
     locale_vmw%code = 'vmw'
     locale_vmw%plural => plural_one_other
@@ -20902,7 +20902,7 @@ contains
 
   end subroutine init_vmw
 
-  ! Source: age/locales/src/wo.json
+  ! Source: locales/wo.json
   subroutine init_wo()
     locale_wo%code = 'wo'
     locale_wo%plural => plural_other_only
@@ -20986,7 +20986,7 @@ contains
 
   end subroutine init_wo
 
-  ! Source: age/locales/src/xh.json
+  ! Source: locales/xh.json
   subroutine init_xh()
     locale_xh%code = 'xh'
     locale_xh%plural => plural_one_other
@@ -21158,7 +21158,7 @@ contains
 
   end subroutine init_xh
 
-  ! Source: age/locales/src/yao.json
+  ! Source: locales/yao.json
   subroutine init_yao()
     locale_yao%code = 'yao'
     locale_yao%plural => plural_one_other
@@ -21330,7 +21330,7 @@ contains
 
   end subroutine init_yao
 
-  ! Source: age/locales/src/yo.json
+  ! Source: locales/yo.json
   subroutine init_yo()
     locale_yo%code = 'yo'
     locale_yo%plural => plural_other_only
@@ -21414,7 +21414,7 @@ contains
 
   end subroutine init_yo
 
-  ! Source: age/locales/src/yue.json
+  ! Source: locales/yue.json
   subroutine init_yue()
     locale_yue%code = 'yue'
     locale_yue%plural => plural_other_only
@@ -21498,7 +21498,7 @@ contains
 
   end subroutine init_yue
 
-  ! Source: age/locales/src/zdj.json
+  ! Source: locales/zdj.json
   subroutine init_zdj()
     locale_zdj%code = 'zdj'
     locale_zdj%plural => plural_other_only
@@ -21582,7 +21582,7 @@ contains
 
   end subroutine init_zdj
 
-  ! Source: age/locales/src/zh.json
+  ! Source: locales/zh.json
   subroutine init_zh()
     locale_zh%code = 'zh'
     locale_zh%plural => plural_other_only
@@ -21666,7 +21666,7 @@ contains
 
   end subroutine init_zh
 
-  ! Source: age/locales/src/zu.json
+  ! Source: locales/zu.json
   subroutine init_zu()
     locale_zu%code = 'zu'
     locale_zu%plural => plural_one_other_zero_one

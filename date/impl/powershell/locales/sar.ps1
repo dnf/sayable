@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/sar.json
+# Source: locales/sar.json
 
 function locale_sar {
     $months = @('Zanviye', 'Fevriye', 'Maars', 'Avriil', 'Mee', 'Zuɛ̃', 'Zulɛ', 'Uut', 'Sɛtɛmbar', 'Ɔtɔbar', 'Nɔvambar', 'Desambar')

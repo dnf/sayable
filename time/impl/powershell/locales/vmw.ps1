@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/vmw.json
+# Source: locales/vmw.json
 
 function locale_vmw {
     $hours = @('khumi na pili', 'mosa', 'pili', 'ttatthu', 'ncheche', 'thanu', 'thanu na mosa', 'thanu na pili', 'thanu na ttatthu', 'thanu na ncheche', 'khumi', 'khumi na mosa')

@@ -1,0 +1,290 @@
+{
+  "code": "tn",
+  "name": "Tswana",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "letsatsi {n}",
+        "other": "malatsi {n}"
+      },
+      "week": {
+        "one": "beke {n}",
+        "other": "dibeke {n}"
+      },
+      "month": {
+        "one": "kgwedi {n}",
+        "other": "dikgwedi {n}"
+      },
+      "year": {
+        "one": "ngwaga {n}",
+        "other": "dingwaga {n}"
+      }
+    },
+    "half": "{0} le halofo",
+    "delimiter": ", ",
+    "justBorn": "O sa tswa tsalwa",
+    "stages": {
+      "newborn": "Lesea le sa tswa tsalwa",
+      "infant": "Lesea",
+      "toddler": "Ngwana yo monnye",
+      "child": "Ngwana",
+      "teenager": "Lekgarebe",
+      "adult": "Motho yo mogolo"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "letsatsi {n}",
+          "other": "malatsi {n}"
+        },
+        "week": {
+          "one": "beke {n}",
+          "other": "dibeke {n}"
+        },
+        "month": {
+          "one": "kgw. {n}",
+          "other": "dikgw. {n}"
+        },
+        "year": {
+          "one": "ngw. {n}",
+          "other": "dingw. {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Ferikgong",
+      "Tlhakole",
+      "Mopitlo",
+      "Moranang",
+      "Motsheganong",
+      "Seetebosigo",
+      "Phukwi",
+      "Phatwe",
+      "Lwetse",
+      "Diphalane",
+      "Ngwanatsele",
+      "Sedimothole"
+    ],
+    "weekdays": [
+      "Tshipi",
+      "Mosopulogo",
+      "Labobedi",
+      "Laboraro",
+      "Labone",
+      "Labotlhano",
+      "Matlhatso"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "gompieno",
+    "tomorrow": "kamoso",
+    "yesterday": "maabane",
+    "dayAfterTomorrow": "morago ga kamoso",
+    "dayBeforeYesterday": "maabanyane",
+    "thisWeekday": "{weekday} e",
+    "nextWeekday": "{weekday} e e tlang",
+    "lastWeekday": "{weekday} e e fetileng",
+    "short": {
+      "months": [
+        "Fer",
+        "Tlh",
+        "Mop",
+        "Mor",
+        "Mot",
+        "See",
+        "Phk",
+        "Pha",
+        "Lwe",
+        "Dip",
+        "Ngw",
+        "Sed"
+      ],
+      "weekdays": [
+        "Tsh",
+        "Mos",
+        "Bed",
+        "Rar",
+        "Bon",
+        "Tlh",
+        "Mat"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "motsotswana {n}",
+        "other": "dimetsotswana {n}"
+      },
+      "minute": {
+        "one": "metsotso {n}",
+        "other": "dimetsotso {n}"
+      },
+      "hour": {
+        "one": "ura {n}",
+        "other": "diura {n}"
+      },
+      "day": {
+        "one": "letsatsi {n}",
+        "other": "malatsi {n}"
+      },
+      "week": {
+        "one": "beke {n}",
+        "other": "dibeke {n}"
+      },
+      "month": {
+        "one": "kgwedi {n}",
+        "other": "dikgwedi {n}"
+      },
+      "year": {
+        "one": "ngwaga {n}",
+        "other": "dingwaga {n}"
+      }
+    },
+    "half": "{0} le halofo",
+    "delimiter": ", ",
+    "justNow": "jaanong fela",
+    "ago": "{0} e e fetileng",
+    "inFuture": "ka {0}",
+    "short": {
+      "units": {
+        "second": {
+          "one": "motsotswana {n}",
+          "other": "dimetsotswana {n}"
+        },
+        "minute": {
+          "one": "metsotso {n}",
+          "other": "dimetsotso {n}"
+        },
+        "hour": {
+          "one": "ura {n}",
+          "other": "diura {n}"
+        },
+        "day": {
+          "one": "letsatsi {n}",
+          "other": "malatsi {n}"
+        },
+        "week": {
+          "one": "beke {n}",
+          "other": "dibeke {n}"
+        },
+        "month": {
+          "one": "kgw. {n}",
+          "other": "dikgw. {n}"
+        },
+        "year": {
+          "one": "ngw. {n}",
+          "other": "dingw. {n}"
+        }
+      },
+      "ago": "{0} e e fetileng",
+      "inFuture": "ka {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} e e fetileng",
+      "inFuture": "ka {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "lesome le bobedi",
+        "nngwe",
+        "pedi",
+        "tharo",
+        "nne",
+        "tlhano",
+        "thataro",
+        "supa",
+        "robedi",
+        "robongwe",
+        "lesome",
+        "lesome le bongwe"
+      ],
+      "midnight": "bosigo jwa magareng",
+      "noon": "motshegare",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

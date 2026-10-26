@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ss.json
+# Source: locales/ss.json
 
 _sayabletime_locale_ss() {
     _clock_hours=('lishumi nambili' 'kunye' 'kubili' 'kutsatfu' 'kune' 'kusihlanu' 'sitfupha' 'sikhombisa' 'siphohlongo' 'sifisagcina' 'lishumi' 'lishumi nakunye')

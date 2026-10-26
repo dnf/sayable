@@ -1,0 +1,284 @@
+{
+  "code": "ur",
+  "name": "Urdu",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} دن",
+        "other": "{n} دن"
+      },
+      "week": {
+        "one": "{n} ہفتہ",
+        "other": "{n} ہفتے"
+      },
+      "month": {
+        "one": "{n} مہینہ",
+        "other": "{n} مہینے"
+      },
+      "year": {
+        "one": "{n} سال",
+        "other": "{n} سال"
+      }
+    },
+    "half": "ساڑھے {n}",
+    "delimiter": "، ",
+    "justBorn": "نومولود",
+    "stages": {
+      "newborn": "نومولود",
+      "infant": "شیرخوار",
+      "toddler": {
+        "m": "چھوٹا بچہ",
+        "f": "چھوٹی بچی"
+      },
+      "child": {
+        "m": "بچہ",
+        "f": "بچی"
+      },
+      "teenager": "نوجوان",
+      "adult": "بالغ"
+    },
+    "short": {
+      "units": {
+        "day": "{n} دن",
+        "week": {
+          "one": "{n} ہفتہ",
+          "other": "{n} ہفتے"
+        },
+        "month": {
+          "one": "{n} مہینہ",
+          "other": "{n} مہینے"
+        },
+        "year": "{n} سال"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} دن",
+        "week": {
+          "one": "{n} ہفتہ",
+          "other": "{n} ہفتے"
+        },
+        "month": {
+          "one": "{n} مہینہ",
+          "other": "{n} مہینے"
+        },
+        "year": "{n} سال"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "جنوری",
+      "فروری",
+      "مارچ",
+      "اپریل",
+      "مئی",
+      "جون",
+      "جولائی",
+      "اگست",
+      "ستمبر",
+      "اکتوبر",
+      "نومبر",
+      "دسمبر"
+    ],
+    "weekdays": [
+      "اتوار",
+      "پیر",
+      "منگل",
+      "بدھ",
+      "جمعرات",
+      "جمعہ",
+      "ہفتہ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "آج",
+    "tomorrow": "کل",
+    "yesterday": "کل",
+    "dayAfterTomorrow": "پرسوں",
+    "dayBeforeYesterday": "پرسوں",
+    "thisWeekday": "اس {weekday}",
+    "nextWeekday": "اگلے {weekday}",
+    "lastWeekday": "پچھلے {weekday}",
+    "short": {
+      "months": [
+        "جن",
+        "فر",
+        "مار",
+        "اپر",
+        "مئی",
+        "جون",
+        "جول",
+        "اگ",
+        "ست",
+        "اکت",
+        "نو",
+        "دس"
+      ],
+      "weekdays": [
+        "اتو",
+        "پیر",
+        "منگ",
+        "بدھ",
+        "جمع",
+        "جمعہ",
+        "ہفتہ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} سیکنڈ",
+      "minute": "{n} منٹ",
+      "hour": "{n} گھنٹہ",
+      "day": {
+        "one": "{n} دن",
+        "other": "{n} دن"
+      },
+      "week": {
+        "one": "{n} ہفتہ",
+        "other": "{n} ہفتے"
+      },
+      "month": {
+        "one": "{n} مہینہ",
+        "other": "{n} مہینے"
+      },
+      "year": {
+        "one": "{n} سال",
+        "other": "{n} سال"
+      }
+    },
+    "half": "ساڑھے {n}",
+    "delimiter": "، ",
+    "justNow": "ابھی",
+    "ago": "{0} پہلے",
+    "inFuture": "{0} میں",
+    "short": {
+      "units": {
+        "second": "{n} سیکنڈ",
+        "minute": "{n} منٹ",
+        "hour": {
+          "one": "{n} گھنٹہ",
+          "other": "{n} گھنٹے"
+        },
+        "day": "{n} دن",
+        "week": {
+          "one": "{n} ہفتہ",
+          "other": "{n} ہفتے"
+        },
+        "month": {
+          "one": "{n} مہینہ",
+          "other": "{n} مہینے"
+        },
+        "year": "{n} سال"
+      },
+      "ago": "{0} پہلے",
+      "inFuture": "{0} میں",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} سیکنڈ",
+        "minute": "{n} منٹ",
+        "hour": {
+          "one": "{n} گھنٹہ",
+          "other": "{n} گھنٹے"
+        },
+        "day": "{n} دن",
+        "week": {
+          "one": "{n} ہفتہ",
+          "other": "{n} ہفتے"
+        },
+        "month": {
+          "one": "{n} مہینہ",
+          "other": "{n} مہینے"
+        },
+        "year": "{n} سال"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} پہلے",
+      "inFuture": "{0} میں",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "بارہ",
+        "ایک",
+        "دو",
+        "تین",
+        "چار",
+        "پانچ",
+        "چھ",
+        "سات",
+        "آٹھ",
+        "نو",
+        "دس",
+        "گیارہ"
+      ],
+      "midnight": "آدھی رات",
+      "noon": "دوپہر",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

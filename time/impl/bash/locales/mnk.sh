@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/mnk.json
+# Source: locales/mnk.json
 
 _sayabletime_locale_mnk() {
     _clock_hours=('tan ning fula' 'kiliŋ' 'fula' 'saba' 'naani' 'luulu' 'wɔɔrɔ' 'wolonfila' 'sey' 'kɔnɔntɔ' 'taŋ' 'taŋ ning kiliŋ')

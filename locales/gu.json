@@ -1,0 +1,257 @@
+{
+  "code": "gu",
+  "name": "Gujarati",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} દિવસ",
+        "other": "{n} દિવસ"
+      },
+      "week": {
+        "one": "{n} અઠવાડિયું",
+        "other": "{n} અઠવાડિયા"
+      },
+      "month": {
+        "one": "{n} મહિનો",
+        "other": "{n} મહિના"
+      },
+      "year": {
+        "one": "{n} વર્ષ",
+        "other": "{n} વર્ષ"
+      }
+    },
+    "half": "સાડા {n}",
+    "delimiter": ", ",
+    "justBorn": "નવજાત",
+    "stages": {
+      "newborn": "નવજાત",
+      "infant": "શિશુ",
+      "toddler": "નાનું બાળક",
+      "child": "બાળક",
+      "teenager": {
+        "m": "કિશોર",
+        "f": "કિશોરી"
+      },
+      "adult": "પુખ્ત"
+    },
+    "short": {
+      "units": {
+        "day": "{n} દિવસ",
+        "week": "{n} અઠ.",
+        "month": {
+          "one": "{n} મહિનો",
+          "other": "{n} મહિના"
+        },
+        "year": "{n} વર્ષ"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} દિ",
+        "week": "{n} અઠ.",
+        "month": "{n} મ",
+        "year": "{n} વ"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "જાન્યુઆરી",
+      "ફેબ્રુઆરી",
+      "માર્ચ",
+      "એપ્રિલ",
+      "મે",
+      "જૂન",
+      "જુલાઈ",
+      "ઑગસ્ટ",
+      "સપ્ટેમ્બર",
+      "ઑક્ટોબર",
+      "નવેમ્બર",
+      "ડિસેમ્બર"
+    ],
+    "weekdays": [
+      "રવિવાર",
+      "સોમવાર",
+      "મંગળવાર",
+      "બુધવાર",
+      "ગુરુવાર",
+      "શુક્રવાર",
+      "શનિવાર"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "આજે",
+    "tomorrow": "આવતીકાલે",
+    "yesterday": "ગઈકાલે",
+    "dayAfterTomorrow": "પરમદિવસે",
+    "dayBeforeYesterday": "ગયા પરમદિવસે",
+    "thisWeekday": "આ {weekday}",
+    "nextWeekday": "આવતા {weekday}",
+    "lastWeekday": "ગયા {weekday}",
+    "short": {
+      "months": [
+        "જાન્યુ",
+        "ફેબ્રુ",
+        "માર્ચ",
+        "એપ્રિ",
+        "મે",
+        "જૂન",
+        "જુલાઈ",
+        "ઑગ",
+        "સપ્ટે",
+        "ઑક્ટો",
+        "નવે",
+        "ડિસે"
+      ],
+      "weekdays": [
+        "રવિ",
+        "સોમ",
+        "મંગ",
+        "બુધ",
+        "ગુરુ",
+        "શુક્ર",
+        "શનિ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} સેકન્ડ",
+      "minute": "{n} મિનિટ",
+      "hour": "{n} કલાક",
+      "day": {
+        "one": "{n} દિવસ",
+        "other": "{n} દિવસ"
+      },
+      "week": {
+        "one": "{n} અઠવાડિયું",
+        "other": "{n} અઠવાડિયા"
+      },
+      "month": {
+        "one": "{n} મહિનો",
+        "other": "{n} મહિના"
+      },
+      "year": {
+        "one": "{n} વર્ષ",
+        "other": "{n} વર્ષ"
+      }
+    },
+    "half": "સાડા {n}",
+    "delimiter": ", ",
+    "justNow": "હમણાં",
+    "ago": "{0} પહેલાં",
+    "inFuture": "{0} પછી",
+    "short": {
+      "units": {
+        "second": "{n} સેકંડ",
+        "minute": "{n} મિનિટ",
+        "hour": "{n} કલાક",
+        "day": "{n} દિવસ",
+        "week": "{n} અઠ.",
+        "month": {
+          "one": "{n} મહિનો",
+          "other": "{n} મહિના"
+        },
+        "year": "{n} વર્ષ"
+      },
+      "ago": "{0} પહેલાં",
+      "inFuture": "{0} પછી",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} સે",
+        "minute": "{n} મિ",
+        "hour": "{n} ક",
+        "day": "{n} દિ",
+        "week": "{n} અઠ.",
+        "month": "{n} મ",
+        "year": "{n} વ"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} પહેલાં",
+      "inFuture": "{0} પછી",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "બાર",
+        "એક",
+        "બે",
+        "ત્રણ",
+        "ચાર",
+        "પાંચ",
+        "છ",
+        "સાત",
+        "આઠ",
+        "નવ",
+        "દસ",
+        "અગિયાર"
+      ],
+      "midnight": "મધ્યરાત્રિ",
+      "noon": "બપોર",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

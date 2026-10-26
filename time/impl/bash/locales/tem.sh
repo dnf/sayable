@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tem.json
+# Source: locales/tem.json
 
 _sayabletime_locale_tem() {
     _clock_hours=('pɛn pu' 'kɩrɩŋ' 'rɔŋ' 'rasar' 'rɔŋ-anat' 'rɔman' 'rɔmata' 'rɔmbot' 'rɔmɔntat' 'rɔmɔntaŋka' 'pɛn' 'pɛn nɛ kɩrɩŋ')

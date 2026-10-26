@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/nd.json
+# Source: locales/nd.json
 
 _sayabledate_locale_nd() {
     _months=('Zibandlela' 'Nhlolanja' 'Mbimbitho' 'Mabasa' 'Nkwenkwezi' 'Nhlangula' 'Kholwane' 'Ingci' 'Inyoni' 'Imphala' 'Lwezi' 'Mpalakazi')

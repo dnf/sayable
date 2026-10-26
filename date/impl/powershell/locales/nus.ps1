@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/nus.json
+# Source: locales/nus.json
 
 function locale_nus {
     $months = @('Tiɔp thar', 'Pɛt', 'Duɔɔŋ', 'Guak', 'Duät', 'Kornyot', 'Payi', 'Tio̱p in thii', 'Laath', 'Kur', 'Tio̱p in laat', 'Jiɔk')

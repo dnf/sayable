@@ -1,0 +1,235 @@
+{
+  "code": "tr",
+  "name": "Turkish",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} gün",
+        "other": "{n} gün"
+      },
+      "week": {
+        "one": "{n} hafta",
+        "other": "{n} hafta"
+      },
+      "month": {
+        "one": "{n} ay",
+        "other": "{n} ay"
+      },
+      "year": {
+        "one": "{n} yaş",
+        "other": "{n} yaş"
+      }
+    },
+    "half": "{n} buçuk",
+    "delimiter": ", ",
+    "justBorn": "Yeni doğan",
+    "stages": {
+      "newborn": "Yeni doğan",
+      "infant": "Bebek",
+      "toddler": "Küçük çocuk",
+      "child": "Çocuk",
+      "teenager": "Ergen",
+      "adult": "Yetişkin"
+    },
+    "short": {
+      "units": {
+        "day": "{n} gün",
+        "week": "{n} hf.",
+        "month": "{n} ay",
+        "year": "{n} yıl"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}g",
+        "week": "{n}h",
+        "month": "{n}a",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Ocak",
+      "Şubat",
+      "Mart",
+      "Nisan",
+      "Mayıs",
+      "Haziran",
+      "Temmuz",
+      "Ağustos",
+      "Eylül",
+      "Ekim",
+      "Kasım",
+      "Aralık"
+    ],
+    "weekdays": [
+      "Pazar",
+      "Pazartesi",
+      "Salı",
+      "Çarşamba",
+      "Perşembe",
+      "Cuma",
+      "Cumartesi"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "bugün",
+    "tomorrow": "yarın",
+    "yesterday": "dün",
+    "dayAfterTomorrow": "öbür gün",
+    "dayBeforeYesterday": "evvelsi gün",
+    "thisWeekday": "bu {weekday}",
+    "nextWeekday": "gelecek {weekday}",
+    "lastWeekday": "geçen {weekday}",
+    "short": {
+      "months": [
+        "Oca",
+        "Şub",
+        "Mar",
+        "Nis",
+        "May",
+        "Haz",
+        "Tem",
+        "Ağu",
+        "Eyl",
+        "Eki",
+        "Kas",
+        "Ara"
+      ],
+      "weekdays": [
+        "Paz",
+        "Pzt",
+        "Sal",
+        "Çar",
+        "Per",
+        "Cum",
+        "Cmt"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} saniye",
+      "minute": "{n} dakika",
+      "hour": "{n} saat",
+      "day": {
+        "one": "{n} gün",
+        "other": "{n} gün"
+      },
+      "week": {
+        "one": "{n} hafta",
+        "other": "{n} hafta"
+      },
+      "month": {
+        "one": "{n} ay",
+        "other": "{n} ay"
+      },
+      "year": {
+        "one": "{n} yaş",
+        "other": "{n} yaş"
+      }
+    },
+    "half": "{n} buçuk",
+    "delimiter": ", ",
+    "justNow": "az önce",
+    "ago": "{0} önce",
+    "inFuture": "{0} sonra",
+    "short": {
+      "units": {
+        "second": "{n} sn.",
+        "minute": "{n} dk.",
+        "hour": "{n} sa.",
+        "day": "{n} gün",
+        "week": "{n} hf.",
+        "month": "{n} ay",
+        "year": "{n} yıl"
+      },
+      "ago": "{0} önce",
+      "inFuture": "{0} sonra",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}sn",
+        "minute": "{n}d",
+        "hour": {
+          "one": "{n} sa",
+          "other": "{n}s"
+        },
+        "day": "{n}g",
+        "week": "{n}h",
+        "month": "{n}a",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} önce",
+      "inFuture": "{0} sonra",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "on iki",
+        "bir",
+        "iki",
+        "üç",
+        "dört",
+        "beş",
+        "altı",
+        "yedi",
+        "sekiz",
+        "dokuz",
+        "on",
+        "on bir"
+      ],
+      "midnight": "gece yarısı",
+      "noon": "öğle",
+      "patterns": {
+        "0": "saat {h}",
+        "5": "{h}'i beş geçiyor",
+        "10": "{h}'i on geçiyor",
+        "15": "{h}'i çeyrek geçiyor",
+        "20": "{h}'i yirmi geçiyor",
+        "25": "{h}'i yirmi beş geçiyor",
+        "30": "{h} buçuk",
+        "35": "{next_h}'e yirmi beş var",
+        "40": "{next_h}'e yirmi var",
+        "45": "{next_h}'e çeyrek var",
+        "50": "{next_h}'e on var",
+        "55": "{next_h}'e beş var"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/mnk.json
+# Source: locales/mnk.json
 
 _sayabledate_locale_mnk() {
     _months=('Samwiye' 'Feburiye' 'Marsi' 'Afiril' 'Meyi' 'Juŋ' 'Julaa' 'Ooti' 'Sɛtɛmba' 'Ɔtɔba' 'Nuwɛmba' 'Disɛmba')

@@ -7,7 +7,7 @@
 ;; ║ Changes will be overwritten the next time codegen runs.      ║
 ;; ║ Edit the generator or locale JSON instead.                   ║
 ;; ╚══════════════════════════════════════════════════════════════╝
-;; Source: date/locales/src/sv.json
+;; Source: locales/sv.json
 
 (ns sayabledate.locales.sv)
 

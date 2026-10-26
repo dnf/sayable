@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ht.json
+# Source: locales/ht.json
 
 _sayabletime_locale_ht() {
     _clock_hours=('douz' 'en' 'de' 'twa' 'kat' 'senk' 'sis' 'sèt' 'uit' 'nèf' 'dis' 'onz')

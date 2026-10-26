@@ -9,7 +9,7 @@
 ; ║ Changes will be overwritten the next time codegen runs.      ║
 ; ║ Edit the generator or locale JSON instead.                   ║
 ; ╚══════════════════════════════════════════════════════════════╝
-; Source: time/locales/src/nb.json
+; Source: locales/nb.json
 
 ; Norwegian Bokmål locale.
 

@@ -7,7 +7,7 @@
 // ║ Changes will be overwritten the next time codegen runs.      ║
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
-// Source: date/locales/src/bg.json
+// Source: locales/bg.json
 
 class BGLocale {
   static code { "bg" }

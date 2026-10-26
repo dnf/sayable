@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/hmn.json
+# Source: locales/hmn.json
 
 function locale_hmn {
     $months = @('Ib Hlis', 'Ob Hlis', 'Peb Hlis', 'Plaub Hlis', 'Tsib Hlis', 'Rau Hlis', 'Xya Hlis', 'Yim Hlis', 'Cuaj Hlis', 'Kaum Hlis', 'Kaum Ib Hlis', 'Kaum Ob Hlis')

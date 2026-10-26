@@ -1,74 +1,66 @@
 # Locale Code Generator
 
-The `codegen/` directory contains a code generator that maintains all locale definitions across the language implementations from a single canonical source.
+The `codegen/` directory generates sayable-age's locale definitions in every language implementation from a single canonical source. The other three libraries (date, duration, time) have the same generator in their own `codegen/` directories, with the same structure and the same source files.
 
 ## Why
 
-110 locales across many languages means hundreds of locale files. Before this generator, every locale change required editing files by hand across every language. The generator eliminates that by deriving all locale source files from one set of JSON definitions.
+168 locales across 51 languages means thousands of locale files per library. Before this generator, every locale change required editing files by hand across every language. The generator eliminates that by deriving all locale source files from one set of JSON definitions.
 
 ## Architecture
 
 ```
-locales/             # 71 JSON files — the single source of truth
+locales/                  # Repository root: one JSON file per language, shared by all four libraries
   en.json
   fr.json
   ar.json
   ...
-codegen/
-  generate.py        # Orchestrator: loads JSON, runs emitters, writes files
-  extract.py         # One-time bootstrap: read TS files → JSON (already run)
-  targets/           # One subdirectory per target language
-    ada/             #   emitter.py + plural_rules.py
-    typescript/      #   emitter.py + plural_rules.py
-    python/
-    go/
-    groovy/
-    perl/
-    ruby/
-    rust/
-    scala/
-    kotlin/
-    lua/
-    ocaml/
-    cpp/
-    php/
-    java/
-    csharp/
-    elixir/
-    elm/
-    fsharp/
-    fortran/
-    gleam/
-    swift/
+age/codegen/
+  generate.py             # Orchestrator: loads the age section of each locale, runs emitters, writes files
+  docgen.py               # `--sections`: the Age section of each docs/locales/<code>.md page
+  banner.py               # Re-exports the banner and locale loader from .hecatron/tools/codegen/util.py
+  locale_groups.py        # Named groups for `--locales` subsetting
+  test_locale_groups.py   # Unit tests (`just test codegen`)
+  align_tables.py         # Markdown table aligner (`just maintain docs`)
+  targets/                # One subdirectory per target language (51)
+    ada/                  #   emitter.py + plural_rules.py
+    bash/
+    ...
     zig/
 ```
 
 ## Canonical JSON format
 
-One file per locale. Example (`fr.json`):
+One file per language, `locales/<code>.json`, with the shared `code`, `name` and `pluralRule` and then a section per library. `load_component_locales("age")` in `.hecatron/tools/codegen/util.py` gives this generator the shared fields plus the `age` section, so emitters see one flat dict per locale. From `locales/fr.json`:
 
 ```json
 {
   "code": "fr",
   "name": "French",
   "pluralRule": "one_other_zero_one",
-  "units": {
-    "day":   { "one": "{n} jour", "other": "{n} jours" },
-    "week":  { "one": "{n} semaine", "other": "{n} semaines" },
-    "month": "{n} mois",
-    "year":  { "one": "{n} an", "other": "{n} ans" }
+  "age": {
+    "units": {
+      "day":   { "one": "{n} jour", "other": "{n} jours" },
+      "week":  { "one": "{n} semaine", "other": "{n} semaines" },
+      "month": "{n} mois",
+      "year":  { "one": "{n} an", "other": "{n} ans" }
+    },
+    "half": "{0} et demi",
+    "delimiter": ", ",
+    "justBorn": "Nouveau-né",
+    "stages": {
+      "newborn": { "m": "Nouveau-né", "f": "Nouveau-née" },
+      "infant": "Nourrisson",
+      "toddler": "Tout-petit",
+      "child": "Enfant",
+      "teenager": { "m": "Adolescent", "f": "Adolescente" },
+      "adult": "Adulte"
+    },
+    "short": { "units": { ... } },
+    "compact": { "units": { ... }, "delimiter": "", "half": "{n}½" }
   },
-  "half": "{0} et demi",
-  "delimiter": ", ",
-  "justBorn": "Nouveau-né",
-  "stages": {
-    "newborn": { "m": "Nouveau-né", "f": "Nouveau-née" },
-    "infant": "Nourrisson",
-    "toddler": "Tout-petit",
-    "child": "Enfant",
-    "teenager": { "m": "Adolescent", "f": "Adolescente" },
-    "adult": "Adulte"
-  }
+  "date": { ... },
+  "duration": { ... },
+  "time": { ... }
 }
 ```
 
@@ -77,44 +69,78 @@ One file per locale. Example (`fr.json`):
 - **`units`**: A string value means no plural forms (e.g. `"{n} mois"` for French months). An object maps plural categories to templates (`"other"` is required, rest optional).
 - **`stages`**: A string means gender-neutral. An `{"m": ..., "f": ...}` object means gendered.
 - **`pluralRule`**: One of the 23 named rules below. The rule's logic lives in each `targets/<lang>/plural_rules.py`, not in the JSON.
-- **`short`** / **`compact`**: Optional compactness overrides (same structure as `units`). Currently only English uses these.
+- **`short`** / **`compact`**: Compactness overrides for `units`, `half`, `delimiter` and `justBorn`; omitted keys fall back to the normal values.
+
+[`docs/adding-a-locale.md`](../../docs/adding-a-locale.md) documents every field of every library's section.
 
 ## 23 plural rules
 
 All CLDR cardinal plural patterns are supported. See
-[`docs/adding-a-locale.md`](../docs/adding-a-locale.md) for the full rule table.
+[`docs/adding-a-locale.md`](../../docs/adding-a-locale.md) for the full rule table.
 
-Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a code string in the target language.
+Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a code string in the target language. Duration, the other library that uses plurals, has its own copy in `duration/codegen/targets/<lang>/plural_rules.py`.
 
 ## Output per language
 
-| Language   | Output files                                     | Pattern                         |
-| ---------- | ------------------------------------------------ | ------------------------------- |
-| Ada        | `sayableage_locales.ads` + `.adb`                | single file, all 71             |
-| TypeScript | `locales/{code}.ts` + `locales/index.ts`         | one per locale + barrel         |
-| Python     | `locales/{code}.py` + `locales/__init__.py`      | one per locale + barrel         |
-| Go         | `locale_{code}.go`                               | one per locale                  |
-| Groovy     | `Locales.groovy`                                 | single file, all 71             |
-| Ruby       | `locales/{code}.rb`                              | one per locale                  |
-| Rust       | `locales/{code}.rs` + `locales/mod.rs`           | one per locale + barrel         |
-| Kotlin     | `Locales.kt`                                     | single file, all 71             |
-| Lua        | `locales/{code}.lua` + `locales/init.lua`        | one per locale + barrel         |
-| OCaml      | `locales/{code}.ml` + `locales/locales.ml`       | one per locale + barrel         |
-| Scala      | `Locales.scala`                                  | single file, all 71             |
-| C++        | `locales_{a_e,f_k,l_r,s_z}.cpp` + `locales.hpp`  | 4 files by alpha range + header |
-| Perl       | `Locales/{CODE}.pm` + `Locales.pm`               | one per locale + registry       |
-| PHP        | `Locales.php`                                    | single file, all 71             |
-| Java       | `Locales.java`                                   | single file, all 71             |
-| C#         | `Locales.cs`                                     | single file, all 71             |
-| Elixir     | `locales/{code}.ex` + `locales.ex`               | one per locale + registry       |
-| Elm        | `Locales/{Code}.elm` + `Locales.elm`             | one per locale + barrel         |
-| F#         | `Locales/Locales.fs`                             | single file, all 71             |
-| Fortran    | `sayableage_locales.f90`                         | single file, all 71             |
-| Gleam      | `locales/{code}.gleam` + `locales/locales.gleam` | one per locale + registry       |
-| Swift      | `Locales.swift`                                  | single file, all 71             |
-| Zig        | `locales.zig`                                    | single file, all 71             |
+Paths are relative to `age/impl/<lang>/`.
 
-Every generated file begins with a comment: `// This file is auto-generated by codegen/generate.py — do not edit manually.`
+| Language    | Output files                                                                  | Pattern                          |
+| ----------- | ----------------------------------------------------------------------------- | -------------------------------- |
+| Ada         | `src/locales/sayableage_locales.ads` + `.adb`                                 | single spec + body               |
+| Bash        | `locales/{code}.sh` + `locales/registry.sh`                                   | one per locale + registry        |
+| C           | `src/locales/{code}.c` + `src/locales_registry.c`, `include/sayableage/locales.h`, `include/sayableage/sayableage.h`, `src/sayableage.c` | one per locale + registry, header and formatter |
+| C#          | `SayableAge/Locales/Locales.cs`                                               | single file                      |
+| C++         | `src/locales/locales_{a_e,f_k,l_r,s_z}.cpp` + `locales_registry.cpp`, `include/sayableage/locales/locales.hpp` | 4 files by alpha range + registry + header |
+| Clojure     | `src/sayableage/locales/{code}.clj` + `src/sayableage/locales.clj`            | one per locale + registry        |
+| COBOL       | `src/locales/Locales.cbl`                                                     | single file                      |
+| Common Lisp | `locales/{code}.lisp` + `locales/registry.lisp`                               | one per locale + registry        |
+| Crystal     | `src/sayable_age/locales/{code}.cr` + `registry.cr`                           | one per locale + registry        |
+| D           | `source/sayableage/locales.d`                                                 | single file                      |
+| Dart        | `lib/src/locales/{code}.dart` + `locales.dart`                                | one per locale + barrel          |
+| Elixir      | `lib/sayable_age/locales/{code}.ex` + `lib/sayable_age/locales.ex`            | one per locale + registry        |
+| Elm         | `src/SayableAge/Locales/{Code}.elm` + `src/SayableAge/Locales.elm`            | one per locale + barrel          |
+| Erlang      | `src/locales/sayableage_locales_{code}.erl` + `sayableage_locales.erl`        | one per locale + registry        |
+| F#          | `SayableAge/Locales/Locales.fs`                                               | single file                      |
+| Fortran     | `src/locales/sayableage_locales.f90`                                          | single file                      |
+| Gleam       | `src/sayableage/locales/{code}.gleam` + `locales.gleam`                       | one per locale + registry        |
+| Go          | `locales/locale_{code}.go` + `locale_registry.go`, `helpers.go`               | one per locale + registry        |
+| Goose       | `sayableage/locales/locales.goose`                                            | single file                      |
+| Groovy      | `src/main/groovy/sayableage/locales/Locales.groovy`                           | single file                      |
+| Haskell     | `src/SayableAge/Locales/{Code}.hs` + `src/SayableAge/Locales.hs`              | one per locale + barrel          |
+| Janet       | `locales/{code}.janet` + `locales/registry.janet`                             | one per locale + registry        |
+| Java        | `src/main/java/sayableage/locales/Locales.java`                               | single file                      |
+| Julia       | `src/locales/{code}.jl` + `src/locales/registry.jl`                           | one per locale + registry        |
+| Kotlin      | `src/main/kotlin/sayableage/locales/Locales.kt`                               | single file                      |
+| Lua         | `locales/{code}.lua` + `locales/init.lua`                                     | one per locale + barrel          |
+| Mojo        | `src/sayable_age/locales/{code}.mojo` + `registry.mojo`                       | one per locale + registry        |
+| Nim         | `src/sayable_age/locales/{code}.nim` + `registry.nim`                         | one per locale + registry        |
+| OCaml       | `lib/locales/{code}.ml` + `lib/locales/locales.ml`                            | one per locale + barrel          |
+| Octave      | `locales/locale_{code}.m` + `locales/get_age_locale.m`                        | one per locale + lookup          |
+| Odin        | `locales.odin`                                                                | single file                      |
+| Pascal      | `locales/SayableAgeLocales.pas`                                               | single file                      |
+| Perl        | `lib/SayableAge/Locales/{CODE}.pm` + `lib/SayableAge/Locales.pm`              | one per locale + registry        |
+| Pharo       | `locales/{code}.st` + `locales/registry.st`                                   | one per locale + registry        |
+| PHP         | `src/Locales/Locales.php`                                                     | single file                      |
+| PowerShell  | `locales/{code}.ps1` + `locales/registry.ps1`                                 | one per locale + registry        |
+| Prolog      | `locales/{code}.pl` + `locales/registry.pl`                                   | one per locale + registry        |
+| Python      | `src/sayable_age/locales/{code}.py` + `__init__.py`                           | one per locale + barrel          |
+| R           | `locales/{code}.R` + `locales/registry.R`                                     | one per locale + registry        |
+| Racket      | `locales/{code}.rkt` + `locales/registry.rkt`                                 | one per locale + registry        |
+| Raku        | `lib/SayableAge/Locales/{CODE}.rakumod` + `Registry.rakumod`                  | one per locale + registry        |
+| Ruby        | `lib/sayable_age/locales/{code}.rb` + `registry.rb`                           | one per locale + registry        |
+| Rust        | `src/locales/{code}.rs` + `src/locales/mod.rs`                                | one per locale + barrel          |
+| Scala       | `src/main/scala/sayableage/locales/Locales.scala`                             | single file                      |
+| Swift       | `Sources/SayableAge/Locales/Locales.swift`                                    | single file                      |
+| Tcl         | `locales/{code}.tcl` + `locales/registry.tcl`                                 | one per locale + registry        |
+| TypeScript  | `src/locales/{code}.ts` + `src/locales/index.ts`                              | one per locale + barrel          |
+| V           | `locales/locale_{code}.v` + `locales/registry.v`                              | one per locale + registry        |
+| VB.NET      | `SayableAge/Locales/Locales.vb`                                               | single file                      |
+| Wren        | `locales/{code}.wren` + `locales/registry.wren`                               | one per locale + registry        |
+| Zig         | `src/locales/locales.zig`                                                     | single file                      |
+
+Locale codes that are reserved words in a target (`is`, `or`) get a suffixed file or identifier name there (e.g. Mojo's `is_locale.mojo`).
+
+Every generated file begins with the 9-line `DO NOT EDIT` banner from `.hecatron/tools/codegen/util.py`, and each locale file carries a `Source: locales/<code>.json` comment.
 
 ## Usage
 
@@ -124,44 +150,44 @@ Every generated file begins with a comment: `// This file is auto-generated by c
 just generate locales
 ```
 
-This runs both `codegen/generate.py` (locale source files) and `codegen/docgen.py` (locale documentation) in sequence.
+From the repository root, this runs `codegen/generate.py` in each of the four libraries (locale source files), then `tools/generate_locale_docs.py`, which calls each library's `codegen/docgen.py --sections` and writes `docs/locales/<code>.md` and `locales/README.md`.
 
 ### Generate for one language only
 
-For language-specific codegen, use the underlying command directly (docgen doesn't support `--lang`):
+For language-specific codegen, run this library's generator directly from `age/` (it writes code only, not docs):
 
 ```bash
-python -m codegen.generate --lang typescript
-python -m codegen.generate --lang python
-python -m codegen.generate --lang go
+python3 -m codegen.generate --lang typescript
+python3 -m codegen.generate --lang python
+python3 -m codegen.generate --lang go
 # etc.
 ```
 
 ### Subsetting with `--locales`
 
-By default all 110 locales are generated. Use `--locales` to generate only what you need:
+By default all 168 locales are generated. This library's generator accepts `--locales` to generate only what you need (run from `age/`; the other libraries' generators don't take it):
 
 ```bash
-just generate locales --locales core         # top 10 by internet users
-just generate locales --locales core,ja,ko   # core group + extras
-just generate locales --locales cjk,romance  # combine groups
-just generate locales --locales fr            # just en + fr (en always included)
+python3 -m codegen.generate --locales core          # top 10 by internet users
+python3 -m codegen.generate --locales core,ja,ko    # core group + extras
+python3 -m codegen.generate --locales cjk,romance   # combine groups
+python3 -m codegen.generate --locales fr            # just en + fr (en always included)
 ```
 
 Tokens are comma-separated. Each token is either a named group or a locale code. Use `--list-groups` to see all groups:
 
 ```bash
-python -m codegen.generate --list-groups
+python3 -m codegen.generate --list-groups
 ```
 
 Works with other flags:
 
 ```bash
-python -m codegen.generate --locales core --lang typescript
-just generate locales --locales core --check
+python3 -m codegen.generate --locales core --lang typescript
+python3 -m codegen.generate --locales core --check
 ```
 
-When subsetting, stale locale files from previous full generations are automatically deleted (or flagged in `--check` mode).
+When subsetting, stale locale files from previous full generations are automatically deleted (or flagged in `--check` mode). Run a full `just generate locales` before committing.
 
 ### Check for drift (CI mode)
 
@@ -169,26 +195,28 @@ When subsetting, stale locale files from previous full generations are automatic
 just check
 ```
 
-Runs all three checks: locale codegen, locale docs, and markdown table alignment. Exits with code 1 if any generated or maintained file would change. This runs in CI to ensure locale files stay in sync with the canonical JSON.
+Checks every library's locale codegen and the locale docs (plus the Dockerfile, compatibility table, CI workflows and geography maps). Exits with code 1 if any generated file would change. This runs in CI to ensure locale files stay in sync with the canonical JSON.
 
 ## Workflows
 
 ### Modifying an existing locale
 
-1. Edit the JSON file in `locales/{code}.json`
+1. Edit the locale's `age` section in `locales/{code}.json`
 2. Run `just generate locales`
-3. Run the test suites to verify
+3. Review `docs/locales/{code}.md` and run the test suites to verify
 
 ### Adding a new locale
 
-1. Create `locales/{code}.json` with the locale data (use an existing plural rule — all 23 CLDR patterns are supported)
+See [`docs/adding-a-locale.md`](../../docs/adding-a-locale.md). In short:
+
+1. Create `locales/{code}.json` with the shared fields and all four library sections (use an existing plural rule — all 23 CLDR patterns are supported)
 2. Run `just generate locales`
-4. Add test cases to `config/tests.json` and implement them in all test files
-5. Run all test suites
+3. Add test cases to the libraries' `config/tests.json` and implement them in all test files
+4. Run all test suites, `just test cli` and `just fuzz`
 
 ### Fixing a plural rule
 
-1. Edit the rule in `plural_rules.py` (it has per-language code strings)
+1. Edit the rule in `plural_rules.py` (it has per-language code strings), in both `age/codegen/targets/<lang>/` and `duration/codegen/targets/<lang>/`
 2. Run `just generate locales`
 3. Run all test suites
 
@@ -200,10 +228,6 @@ The generated locale files are committed to each language's directory rather tha
 - **Consumers can browse source on GitHub** without running the generator to see what a locale looks like.
 - **Contributors can clone and test immediately** without installing Python or running the generator first.
 - **CI `--check` mode prevents drift.** `just check` exits non-zero if any generated file would change, so the canonical JSON and the checked-in files can never get out of sync.
-
-## How it was bootstrapped
-
-The `extract.py` script was a one-time tool that read the original TypeScript locale files and produced the canonical JSON files. It does not need to be run again — the JSON files are now the source of truth, and all locale files are generated from them.
 
 ## Requirements
 

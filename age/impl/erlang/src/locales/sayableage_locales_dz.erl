@@ -7,7 +7,7 @@
 %% ║ Changes will be overwritten the next time codegen runs.      ║
 %% ║ Edit the generator or locale JSON instead.                   ║
 %% ╚══════════════════════════════════════════════════════════════╝
-%% Source: age/locales/src/dz.json
+%% Source: locales/dz.json
 
 -module(sayableage_locales_dz).
 -include("sayableage.hrl").

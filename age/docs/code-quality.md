@@ -124,7 +124,8 @@ how each language enforces this:
 
 Every file produced by `codegen/generate.py` carries two markers:
 
-1. **Box-frame banner** — a 9-line ASCII box (`codegen/banner.py`) that names
+1. **Box-frame banner** — a 9-line box (`.hecatron/tools/codegen/util.py`,
+   re-exported by `codegen/banner.py`) that names
    the generator path and warns against manual edits. Each language uses its
    native comment syntax (`//`, `#`, `/* */`, `--`, `%%`, `;;`).
 2. **Locale source comment** — a single line
@@ -137,7 +138,7 @@ to a single locale).
 
 ### i18n locale data
 
-All implementations contain 110 locale files with Unicode string literals
+All implementations contain 168 generated locales with Unicode string literals
 (Arabic, Chinese, Devanagari, Cyrillic, etc.). This creates predictable
 friction with certain lint rules:
 
@@ -177,8 +178,9 @@ convenience but is **not enforced in CI** — unaligned tables are fine.
 - Files covered: `README.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
   `codegen/README.md`, `locales/README.md`, `tests/README.md`,
   `config/tests.json`, `docs/*.md`, `src/*/README.md`
-- Generated files (`locales/examples/*.md`) are excluded — they are
-  maintained by `codegen/docgen.py`
+- Generated files (`docs/locales/*.md`, `locales/README.md`) are excluded —
+  they are maintained by `tools/generate_locale_docs.py`, which calls each
+  library's `codegen/docgen.py --sections`
 
 ### Canonical test IDs
 

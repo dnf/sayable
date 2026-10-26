@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/az.json
+# Source: locales/az.json
 
 _sayabledate_locale_az() {
     _months=('yanvar' 'fevral' 'mart' 'aprel' 'may' 'iyun' 'iyul' 'avqust' 'sentyabr' 'oktyabr' 'noyabr' 'dekabr')

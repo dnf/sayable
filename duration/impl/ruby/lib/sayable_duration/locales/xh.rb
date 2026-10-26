@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/xh.json
+# Source: locales/xh.json
 module SayableDuration
   module Locales
     XH = DurationLocale.new(

@@ -1,0 +1,224 @@
+{
+  "code": "mg",
+  "name": "Malagasy",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": "{n} andro",
+      "week": "{n} herinandro",
+      "month": "{n} volana",
+      "year": "{n} taona"
+    },
+    "half": "{0} sy sasany",
+    "delimiter": ", ",
+    "justBorn": "Vao teraka",
+    "stages": {
+      "newborn": "Vao teraka",
+      "infant": "Zazakely",
+      "toddler": "Zazakely",
+      "child": "Ankizy",
+      "teenager": "Tanora",
+      "adult": "Olon-dehibe"
+    },
+    "short": {
+      "units": {
+        "day": "{n} and",
+        "week": "{n} her",
+        "month": "{n} vol",
+        "year": "{n} tna"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} a",
+        "week": "{n} h",
+        "month": "{n} v",
+        "year": "{n} t"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Janoary",
+      "Febroary",
+      "Martsa",
+      "Aprily",
+      "Mey",
+      "Jona",
+      "Jolay",
+      "Aogositra",
+      "Septambra",
+      "Oktobra",
+      "Novambra",
+      "Desambra"
+    ],
+    "weekdays": [
+      "Alahady",
+      "Alatsinainy",
+      "Talata",
+      "Alarobia",
+      "Alakamisy",
+      "Zoma",
+      "Asabotsy"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "anio",
+    "tomorrow": "rahampitso",
+    "yesterday": "omaly",
+    "dayAfterTomorrow": "rahafakampitso",
+    "dayBeforeYesterday": "afakomaly",
+    "thisWeekday": "ity {weekday} ity",
+    "nextWeekday": "{weekday} ho avy",
+    "lastWeekday": "{weekday} lasa",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "Mey",
+        "Jon",
+        "Jol",
+        "Aog",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Alah",
+        "Alats",
+        "Tal",
+        "Alar",
+        "Alak",
+        "Zom",
+        "Asab"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} segondra",
+      "minute": "{n} minitra",
+      "hour": "{n} ora",
+      "day": "{n} andro",
+      "week": "{n} herinandro",
+      "month": "{n} volana",
+      "year": "{n} taona"
+    },
+    "half": "{0} sy sasany",
+    "delimiter": ", ",
+    "justNow": "vao haingana",
+    "ago": "{0} lasa",
+    "inFuture": "ao anatin'ny {0}",
+    "short": {
+      "units": {
+        "second": "{n} seg",
+        "minute": "{n} min",
+        "hour": "{n} ora",
+        "day": "{n} and",
+        "week": "{n} her",
+        "month": "{n} vol",
+        "year": "{n} tna"
+      },
+      "ago": "{0} lasa",
+      "inFuture": "ao anatin'ny {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} m",
+        "hour": "{n} o",
+        "day": "{n} a",
+        "week": "{n} h",
+        "month": "{n} v",
+        "year": "{n} t"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} lasa",
+      "inFuture": "ao anatin'ny {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "roa ambin'ny folo",
+        "iray",
+        "roa",
+        "telo",
+        "efatra",
+        "dimy",
+        "enina",
+        "fito",
+        "valo",
+        "sivy",
+        "folo",
+        "iraika ambin'ny folo"
+      ],
+      "midnight": "misasakalina",
+      "noon": "atoandro",
+      "patterns": {
+        "0": "{h} ora",
+        "5": "{h} sy dimy minitra",
+        "10": "{h} sy folo minitra",
+        "15": "{h} sy fahefatra",
+        "20": "{h} sy roapolo minitra",
+        "25": "{h} sy dimy amby roapolo minitra",
+        "30": "{h} sy sasany",
+        "35": "dimy amby roapolo minitra alohan'ny {next_h}",
+        "40": "roapolo minitra alohan'ny {next_h}",
+        "45": "fahefatra alohan'ny {next_h}",
+        "50": "folo minitra alohan'ny {next_h}",
+        "55": "dimy minitra alohan'ny {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

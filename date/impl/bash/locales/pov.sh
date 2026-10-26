@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/pov.json
+# Source: locales/pov.json
 
 _sayabledate_locale_pov() {
     _months=('Janeru' 'Febreru' 'Marsu' 'Abril' 'Maiu' 'Junhu' 'Julhu' 'Agostu' 'Setembru' 'Otubru' 'Novembru' 'Dizembru')

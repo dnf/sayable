@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/vmw.json
+# Source: locales/vmw.json
 
 _sayableduration_plural_vmw() {
     local n=$1

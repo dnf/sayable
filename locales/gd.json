@@ -1,0 +1,311 @@
+{
+  "code": "gd",
+  "name": "Scottish Gaelic",
+  "pluralRule": "gd",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} latha",
+        "two": "{n} latha",
+        "few": "{n} làithean",
+        "other": "{n} latha"
+      },
+      "week": {
+        "one": "{n} sheachdain",
+        "two": "{n} sheachdain",
+        "few": "{n} seachdainean",
+        "other": "{n} seachdain"
+      },
+      "month": {
+        "one": "{n} mhìos",
+        "two": "{n} mhìos",
+        "few": "{n} mìosan",
+        "other": "{n} mìos"
+      },
+      "year": {
+        "one": "{n} bhliadhna",
+        "two": "{n} bhliadhna",
+        "few": "{n} bliadhna",
+        "other": "{n} bliadhna"
+      }
+    },
+    "half": "{0} gu leth",
+    "delimiter": ", ",
+    "justBorn": "Ùr-bhreith",
+    "stages": {
+      "newborn": "Ùr-bhreith",
+      "infant": "Naoidhean",
+      "toddler": "Pàiste beag",
+      "child": "Pàiste",
+      "teenager": "Deugaire",
+      "adult": "Inbheach"
+    },
+    "short": {
+      "units": {
+        "day": "{n} là",
+        "week": {
+          "one": "{n} shn",
+          "two": "{n} shn",
+          "few": "{n} sn",
+          "other": "{n} sn"
+        },
+        "month": {
+          "one": "{n} mhìos",
+          "two": "{n} mhìos",
+          "few": "{n} mìos",
+          "other": "{n} mìos"
+        },
+        "year": {
+          "one": "{n} bhlia",
+          "two": "{n} bhlia",
+          "few": "{n} blia",
+          "other": "{n} blia"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}là",
+        "week": "{n}s",
+        "month": "{n}m",
+        "year": "{n}bl"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Am Faoilleach",
+      "An Gearran",
+      "Am Màrt",
+      "An Giblean",
+      "An Cèitean",
+      "An t-Ògmhios",
+      "An t-Iuchar",
+      "An Lùnastal",
+      "An t-Sultain",
+      "An Dàmhair",
+      "An t-Samhain",
+      "An Dùbhlachd"
+    ],
+    "weekdays": [
+      "DiDòmhnaich",
+      "DiLuain",
+      "DiMàirt",
+      "DiCiadain",
+      "DiarDaoin",
+      "DihAoine",
+      "DiSathairne"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "an-diugh",
+    "tomorrow": "a-màireach",
+    "yesterday": "an-dè",
+    "dayAfterTomorrow": "an-earar",
+    "dayBeforeYesterday": "a-bhòin-dè",
+    "thisWeekday": "{weekday} seo",
+    "nextWeekday": "{weekday} sa tighinn",
+    "lastWeekday": "{weekday} seo chaidh",
+    "short": {
+      "months": [
+        "Faoi",
+        "Gearr",
+        "Màrt",
+        "Gibl",
+        "Cèit",
+        "Ògmh",
+        "Iuch",
+        "Lùna",
+        "Sult",
+        "Dàmh",
+        "Samh",
+        "Dùbh"
+      ],
+      "weekdays": [
+        "DiD",
+        "DiL",
+        "DiM",
+        "DiC",
+        "Dia",
+        "Dih",
+        "DiS"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} diog",
+        "two": "{n} dhiog",
+        "few": "{n} diogan",
+        "other": "{n} diog"
+      },
+      "minute": {
+        "one": "{n} mhionaid",
+        "two": "{n} mhionaid",
+        "few": "{n} mionaidean",
+        "other": "{n} mionaid"
+      },
+      "hour": {
+        "one": "{n} uair",
+        "two": "{n} uair",
+        "few": "{n} uairean",
+        "other": "{n} uair"
+      },
+      "day": {
+        "one": "{n} latha",
+        "two": "{n} latha",
+        "few": "{n} làithean",
+        "other": "{n} latha"
+      },
+      "week": {
+        "one": "{n} sheachdain",
+        "two": "{n} sheachdain",
+        "few": "{n} seachdainean",
+        "other": "{n} seachdain"
+      },
+      "month": {
+        "one": "{n} mhìos",
+        "two": "{n} mhìos",
+        "few": "{n} mìosan",
+        "other": "{n} mìos"
+      },
+      "year": {
+        "one": "{n} bhliadhna",
+        "two": "{n} bhliadhna",
+        "few": "{n} bliadhna",
+        "other": "{n} bliadhna"
+      }
+    },
+    "half": "{0} gu leth",
+    "delimiter": ", ",
+    "justNow": "an-dràsta",
+    "ago": "o chionn {0}",
+    "inFuture": "an ceann {0}",
+    "short": {
+      "units": {
+        "second": {
+          "one": "{n} diog",
+          "two": "{n} dhiog",
+          "few": "{n} diog",
+          "other": "{n} diog"
+        },
+        "minute": {
+          "one": "{n} mhion",
+          "two": "{n} mhion",
+          "few": "{n} mion",
+          "other": "{n} mion"
+        },
+        "hour": "{n} uair",
+        "day": "{n} là",
+        "week": {
+          "one": "{n} shn",
+          "two": "{n} shn",
+          "few": "{n} sn",
+          "other": "{n} sn"
+        },
+        "month": {
+          "one": "{n} mhìos",
+          "two": "{n} mhìos",
+          "few": "{n} mìos",
+          "other": "{n} mìos"
+        },
+        "year": {
+          "one": "{n} bhlia",
+          "two": "{n} bhlia",
+          "few": "{n} blia",
+          "other": "{n} blia"
+        }
+      },
+      "ago": "o chionn {0}",
+      "inFuture": "an ceann {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}d",
+        "minute": "{n}m",
+        "hour": "{n}u",
+        "day": "{n}là",
+        "week": "{n}s",
+        "month": "{n}m",
+        "year": "{n}bl"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "o chionn {0}",
+      "inFuture": "an ceann {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dà-dheug",
+        "aon",
+        "dà",
+        "trì",
+        "ceithir",
+        "còig",
+        "sia",
+        "seachd",
+        "ochd",
+        "naoi",
+        "deich",
+        "aon-deug"
+      ],
+      "midnight": "meadhan-oidhche",
+      "noon": "meadhan-latha",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

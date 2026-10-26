@@ -1,0 +1,270 @@
+{
+  "code": "shi",
+  "name": "Tachelhit",
+  "pluralRule": "shi",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ass",
+        "few": "{n} ussan",
+        "other": "{n} ass"
+      },
+      "week": {
+        "one": "{n} imalass",
+        "few": "{n} imalassn",
+        "other": "{n} imalass"
+      },
+      "month": {
+        "one": "{n} ayyur",
+        "few": "{n} ayyurn",
+        "other": "{n} ayyur"
+      },
+      "year": {
+        "one": "{n} aseggas",
+        "few": "{n} iseggasen",
+        "other": "{n} aseggas"
+      }
+    },
+    "half": "{0} d uzgen",
+    "delimiter": ", ",
+    "justBorn": "Iɣ d illul",
+    "stages": {
+      "newborn": "Iɣ d illul",
+      "infant": "Agellid",
+      "toddler": {
+        "m": "Aḥenjir",
+        "f": "Taḥenjirt"
+      },
+      "child": {
+        "m": "Afrux",
+        "f": "Tafruxṭ"
+      },
+      "teenager": {
+        "m": "Aɛrim",
+        "f": "Taɛrimt"
+      },
+      "adult": {
+        "m": "Argaz",
+        "f": "Tamṭṭuṭ"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} d",
+        "week": "{n} wk",
+        "month": "{n} mo",
+        "year": "{n} yr"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ⵉⵏⵏⴰⵢⵔ",
+      "ⴱⵕⴰⵢⵕ",
+      "ⵎⴰⵕⵚ",
+      "ⵉⴱⵔⵉⵔ",
+      "ⵎⴰⵢⵢⵓ",
+      "ⵢⵓⵏⵢⵓ",
+      "ⵢⵓⵍⵢⵓⵣ",
+      "ⵖⵓⵛⵜ",
+      "ⵛⵓⵜⴰⵏⴱⵉⵔ",
+      "ⴽⵜⵓⴱⵔ",
+      "ⵏⵓⵡⴰⵏⴱⵉⵔ",
+      "ⴷⵓⵊⴰⵏⴱⵉⵔ"
+    ],
+    "weekdays": [
+      "ⴰⵙⴰⵎⴰⵙ",
+      "ⴰⵢⵏⴰⵙ",
+      "ⴰⵙⵉⵏⴰⵙ",
+      "ⴰⴽⵕⴰⵙ",
+      "ⴰⴽⵡⴰⵙ",
+      "ⴰⵙⵉⵎⵡⴰⵙ",
+      "ⴰⵙⵉⴹⵢⴰⵙ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ⴰⵙⵙⴰ",
+    "tomorrow": "ⴰⵙⴽⴽⴰ",
+    "yesterday": "ⵉⴹⵍⵍⵉ",
+    "thisWeekday": "{weekday} ⴰⴷ",
+    "nextWeekday": "{weekday} ⴷ ⵉⴷⴷⴰⵏ",
+    "lastWeekday": "{weekday} ⵉⵣⵔⵉⵏ",
+    "short": {
+      "months": [
+        "ⵉⵏⵏ",
+        "ⴱⵕⴰ",
+        "ⵎⴰⵕ",
+        "ⵉⴱⵔ",
+        "ⵎⴰⵢ",
+        "ⵢⵓⵏ",
+        "ⵢⵓⵍ",
+        "ⵖⵓⵛ",
+        "ⵛⵓⵜ",
+        "ⴽⵜⵓ",
+        "ⵏⵓⵡ",
+        "ⴷⵓⵊ"
+      ],
+      "weekdays": [
+        "ⴰⵙⴰ",
+        "ⴰⵢⵏ",
+        "ⴰⵙⵉ",
+        "ⴰⴽⵕ",
+        "ⴰⴽⵡ",
+        "ⴰⵙⵉⵎ",
+        "ⴰⵙⵉⴹ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} tasint",
+        "few": "{n} tasinin",
+        "other": "{n} tasinin"
+      },
+      "minute": {
+        "one": "{n} tusdiqt",
+        "few": "{n} tusdiqin",
+        "other": "{n} tusdiqin"
+      },
+      "hour": {
+        "one": "{n} tasragt",
+        "few": "{n} tisragin",
+        "other": "{n} tisragin"
+      },
+      "day": {
+        "one": "{n} ass",
+        "few": "{n} ussan",
+        "other": "{n} ass"
+      },
+      "week": {
+        "one": "{n} imalass",
+        "few": "{n} imalassn",
+        "other": "{n} imalass"
+      },
+      "month": {
+        "one": "{n} ayyur",
+        "few": "{n} ayyurn",
+        "other": "{n} ayyur"
+      },
+      "year": {
+        "one": "{n} aseggas",
+        "few": "{n} iseggasen",
+        "other": "{n} aseggas"
+      }
+    },
+    "half": "{0} d uzgen",
+    "delimiter": ", ",
+    "justNow": "ɣilad",
+    "ago": "ɣ {0} zzrin",
+    "inFuture": "ɣ {0}",
+    "short": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "ago": "ɣ {0} zzrin",
+      "inFuture": "ɣ {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "ɣ {0} zzrin",
+      "inFuture": "ɣ {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "12",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "midnight": "ⵏⵚ ⵏ ⵉⴹ",
+      "noon": "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

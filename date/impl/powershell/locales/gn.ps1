@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/gn.json
+# Source: locales/gn.json
 
 function locale_gn {
     $months = @('Jasyteĩ', 'Jasykõi', 'Jasyapy', 'Jasyrundy', 'Jasypo', 'Jasypoteĩ', 'Jasypokõi', 'Jasypoapy', 'Jasyporundy', 'Jasypa', 'Jasypateĩ', 'Jasypakõi')

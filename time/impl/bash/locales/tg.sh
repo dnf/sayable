@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tg.json
+# Source: locales/tg.json
 
 _sayabletime_locale_tg() {
     _clock_hours=('дувоздаҳ' 'як' 'ду' 'се' 'чор' 'панҷ' 'шаш' 'ҳафт' 'ҳашт' 'нӯҳ' 'даҳ' 'ёздаҳ')

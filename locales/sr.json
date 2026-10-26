@@ -1,0 +1,280 @@
+{
+  "code": "sr",
+  "name": "Serbian",
+  "pluralRule": "slavic_bcs",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} дан",
+        "few": "{n} дана",
+        "many": "{n} дана",
+        "other": "{n} дана"
+      },
+      "week": {
+        "one": "{n} недеља",
+        "few": "{n} недеље",
+        "many": "{n} недеља",
+        "other": "{n} недеља"
+      },
+      "month": {
+        "one": "{n} месец",
+        "few": "{n} месеца",
+        "many": "{n} месеци",
+        "other": "{n} месеци"
+      },
+      "year": {
+        "one": "{n} година",
+        "few": "{n} године",
+        "many": "{n} година",
+        "other": "{n} година"
+      }
+    },
+    "half": "{0} и по",
+    "delimiter": ", ",
+    "justBorn": "Новорођенче",
+    "stages": {
+      "newborn": "Новорођенче",
+      "infant": "Одојче",
+      "toddler": "Мало дете",
+      "child": "Дете",
+      "teenager": "Тинејџер",
+      "adult": "Одрасла особа"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "{n} дан",
+          "few": "{n} дана",
+          "other": "{n} дана"
+        },
+        "week": "{n} нед.",
+        "month": "{n} мес.",
+        "year": {
+          "one": "{n} год",
+          "few": "{n} год.",
+          "other": "{n} год."
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} д",
+        "week": "{n} н",
+        "month": "{n} м",
+        "year": "{n} г"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "јануар",
+      "фебруар",
+      "март",
+      "април",
+      "мај",
+      "јун",
+      "јул",
+      "август",
+      "септембар",
+      "октобар",
+      "новембар",
+      "децембар"
+    ],
+    "weekdays": [
+      "недеља",
+      "понедељак",
+      "уторак",
+      "среда",
+      "четвртак",
+      "петак",
+      "субота"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "данас",
+    "tomorrow": "сутра",
+    "yesterday": "јуче",
+    "dayAfterTomorrow": "прекосутра",
+    "dayBeforeYesterday": "прекјуче",
+    "thisWeekday": "овај {weekday}",
+    "nextWeekday": "следећи {weekday}",
+    "lastWeekday": "прошли {weekday}",
+    "short": {
+      "months": [
+        "јан",
+        "феб",
+        "мар",
+        "апр",
+        "мај",
+        "јун",
+        "јул",
+        "авг",
+        "сеп",
+        "окт",
+        "нов",
+        "дец"
+      ],
+      "weekdays": [
+        "нед",
+        "пон",
+        "уто",
+        "сре",
+        "чет",
+        "пет",
+        "суб"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} секунда",
+        "few": "{n} секунде",
+        "other": "{n} секунди"
+      },
+      "minute": {
+        "one": "{n} минут",
+        "few": "{n} минута",
+        "other": "{n} минута"
+      },
+      "hour": {
+        "one": "{n} сат",
+        "few": "{n} сата",
+        "other": "{n} сати"
+      },
+      "day": {
+        "one": "{n} дан",
+        "few": "{n} дана",
+        "many": "{n} дана",
+        "other": "{n} дана"
+      },
+      "week": {
+        "one": "{n} недеља",
+        "few": "{n} недеље",
+        "many": "{n} недеља",
+        "other": "{n} недеља"
+      },
+      "month": {
+        "one": "{n} месец",
+        "few": "{n} месеца",
+        "many": "{n} месеци",
+        "other": "{n} месеци"
+      },
+      "year": {
+        "one": "{n} година",
+        "few": "{n} године",
+        "many": "{n} година",
+        "other": "{n} година"
+      }
+    },
+    "half": "{0} и по",
+    "delimiter": ", ",
+    "justNow": "управо",
+    "ago": "пре {0}",
+    "inFuture": "за {0}",
+    "short": {
+      "units": {
+        "second": "{n} сек",
+        "minute": "{n} мин",
+        "hour": {
+          "one": "{n} сат",
+          "few": "{n} сата",
+          "other": "{n} сати"
+        },
+        "day": {
+          "one": "{n} дан",
+          "few": "{n} дана",
+          "other": "{n} дана"
+        },
+        "week": "{n} нед.",
+        "month": "{n} мес.",
+        "year": {
+          "one": "{n} год",
+          "few": "{n} год.",
+          "other": "{n} год."
+        }
+      },
+      "ago": "пре {0}",
+      "inFuture": "за {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} с",
+        "minute": "{n} м",
+        "hour": "{n} ч",
+        "day": "{n} д",
+        "week": "{n} н",
+        "month": "{n} м",
+        "year": "{n} г"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "пре {0}",
+      "inFuture": "за {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "дванаест",
+        "један",
+        "два",
+        "три",
+        "четири",
+        "пет",
+        "шест",
+        "седам",
+        "осам",
+        "девет",
+        "десет",
+        "једанаест"
+      ],
+      "midnight": "поноћ",
+      "noon": "подне",
+      "patterns": {
+        "0": "{h} часа",
+        "5": "пет po {h}",
+        "10": "десет po {h}",
+        "15": "петнаест po {h}",
+        "20": "двадесет po {h}",
+        "25": "двадесет пет po {h}",
+        "30": "тридесет po {h}",
+        "35": "двадесет пет do {next_h}",
+        "40": "двадесет do {next_h}",
+        "45": "петнаест do {next_h}",
+        "50": "десет do {next_h}",
+        "55": "пет do {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

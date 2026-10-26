@@ -1,0 +1,280 @@
+{
+  "code": "tum",
+  "name": "Tumbuka",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "dazi {n}",
+        "other": "madazi {n}"
+      },
+      "week": {
+        "one": "sabata {n}",
+        "other": "masabata {n}"
+      },
+      "month": {
+        "one": "mwezi {n}",
+        "other": "miyezi {n}"
+      },
+      "year": {
+        "one": "chaka {n}",
+        "other": "vyaka {n}"
+      }
+    },
+    "half": "{0} na hafu",
+    "delimiter": ", ",
+    "justBorn": "Mwana wabadwa wala",
+    "stages": {
+      "newborn": "Mwana wabadwa wala",
+      "infant": "Mwana wakumawere",
+      "toddler": "Kamwana",
+      "child": "Mwana",
+      "teenager": "Munyamata",
+      "adult": "Munthu mukuru"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "dazi {n}",
+          "other": "mad. {n}"
+        },
+        "week": {
+          "one": "sab. {n}",
+          "other": "mas. {n}"
+        },
+        "month": {
+          "one": "mwezi {n}",
+          "other": "miy. {n}"
+        },
+        "year": {
+          "one": "chaka {n}",
+          "other": "vyaka {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Janyuwale",
+      "Feburuware",
+      "Marichi",
+      "Epurelo",
+      "Meyi",
+      "Juni",
+      "Julayi",
+      "Ogasiti",
+      "Seputembala",
+      "Okutobala",
+      "Novembala",
+      "Disembala"
+    ],
+    "weekdays": [
+      "Sabata",
+      "Mande",
+      "Chibiri",
+      "Chitatu",
+      "Chinayi",
+      "Chinkondi",
+      "Chisulo"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "lero",
+    "tomorrow": "namachero",
+    "yesterday": "mayiro",
+    "thisWeekday": "{weekday} yino",
+    "nextWeekday": "{weekday} yikwiza",
+    "lastWeekday": "{weekday} yamala",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Epu",
+        "Mey",
+        "Jun",
+        "Jul",
+        "Oga",
+        "Sep",
+        "Oku",
+        "Nov",
+        "Dis"
+      ],
+      "weekdays": [
+        "Sab",
+        "Man",
+        "Chb",
+        "Cht",
+        "Chn",
+        "Chk",
+        "Chs"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "sekendi {n}",
+        "other": "masekendi {n}"
+      },
+      "minute": {
+        "one": "miniti {n}",
+        "other": "maminiti {n}"
+      },
+      "hour": {
+        "one": "ola {n}",
+        "other": "maola {n}"
+      },
+      "day": {
+        "one": "dazi {n}",
+        "other": "madazi {n}"
+      },
+      "week": {
+        "one": "sabata {n}",
+        "other": "masabata {n}"
+      },
+      "month": {
+        "one": "mwezi {n}",
+        "other": "miyezi {n}"
+      },
+      "year": {
+        "one": "chaka {n}",
+        "other": "vyaka {n}"
+      }
+    },
+    "half": "{0} na hafu",
+    "delimiter": ", ",
+    "justNow": "sono",
+    "ago": "{0} yamala",
+    "inFuture": "mu {0}",
+    "short": {
+      "units": {
+        "second": "sek. {n}",
+        "minute": "min. {n}",
+        "hour": {
+          "one": "ola {n}",
+          "other": "maola {n}"
+        },
+        "day": {
+          "one": "dazi {n}",
+          "other": "mad. {n}"
+        },
+        "week": {
+          "one": "sab. {n}",
+          "other": "mas. {n}"
+        },
+        "month": {
+          "one": "mwezi {n}",
+          "other": "miy. {n}"
+        },
+        "year": {
+          "one": "chaka {n}",
+          "other": "vyaka {n}"
+        }
+      },
+      "ago": "{0} yamala",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} yamala",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "khumi na yibili",
+        "chimoza",
+        "vibili",
+        "vitatu",
+        "vinayi",
+        "vikhondi",
+        "vikhondi na kamoza",
+        "vikhondi na tubili",
+        "vikhondi na tutatu",
+        "vikhondi na tunayi",
+        "khumi",
+        "khumi na kamoza"
+      ],
+      "midnight": "pakati pa usiku",
+      "noon": "muhanya",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

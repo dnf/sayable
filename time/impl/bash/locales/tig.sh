@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tig.json
+# Source: locales/tig.json
 
 _sayabletime_locale_tig() {
     _clock_hours=('ʿasərte wəkəlte' 'ḥante' 'kəlʾe' 'səleste' 'arbaʿte' 'ḥamməste' 'səste' 'sabʿate' 'səmmunte' 'təsʿate' 'ʿasərte' 'ʿasərte wəḥante')

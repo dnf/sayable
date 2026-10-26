@@ -1,0 +1,242 @@
+{
+  "code": "lb",
+  "name": "Luxembourgish",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} Dag",
+        "other": "{n} Deeg"
+      },
+      "week": {
+        "one": "{n} Woch",
+        "other": "{n} Wochen"
+      },
+      "month": {
+        "one": "{n} Mount",
+        "other": "{n} Méint"
+      },
+      "year": {
+        "one": "{n} Joer",
+        "other": "{n} Joer"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Neigebuerenen",
+    "stages": {
+      "newborn": "Neigebuerenen",
+      "infant": "Puppelchen",
+      "toddler": "Klengkand",
+      "child": "Kand",
+      "teenager": "Jugendlechen",
+      "adult": {
+        "m": "Erwuessenen",
+        "f": "Erwuessen"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} D.",
+        "week": "{n} W.",
+        "month": "{n} M.",
+        "year": "{n} J."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}D",
+        "week": "{n}W",
+        "month": "{n}M",
+        "year": "{n}J"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Januar",
+      "Februar",
+      "Mäerz",
+      "Abrëll",
+      "Mee",
+      "Juni",
+      "Juli",
+      "August",
+      "September",
+      "Oktober",
+      "November",
+      "Dezember"
+    ],
+    "weekdays": [
+      "Sonndeg",
+      "Méindeg",
+      "Dënschdeg",
+      "Mëttwoch",
+      "Donneschdeg",
+      "Freideg",
+      "Samschdeg"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "haut",
+    "tomorrow": "muer",
+    "yesterday": "gëschter",
+    "dayAfterTomorrow": "iwwermuer",
+    "dayBeforeYesterday": "virgëschter",
+    "thisWeekday": "dësen {weekday}",
+    "nextWeekday": "nächsten {weekday}",
+    "lastWeekday": "leschten {weekday}",
+    "short": {
+      "months": [
+        "Jan.",
+        "Feb.",
+        "Mäe.",
+        "Abr.",
+        "Mee",
+        "Jun.",
+        "Jul.",
+        "Aug.",
+        "Sep.",
+        "Okt.",
+        "Nov.",
+        "Dez."
+      ],
+      "weekdays": [
+        "So.",
+        "Mé.",
+        "Dë.",
+        "Më.",
+        "Do.",
+        "Fr.",
+        "Sa."
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} Sekonn",
+        "other": "{n} Sekonnen"
+      },
+      "minute": {
+        "one": "{n} Minutt",
+        "other": "{n} Minutten"
+      },
+      "hour": {
+        "one": "{n} Stonn",
+        "other": "{n} Stonnen"
+      },
+      "day": {
+        "one": "{n} Dag",
+        "other": "{n} Deeg"
+      },
+      "week": {
+        "one": "{n} Woch",
+        "other": "{n} Wochen"
+      },
+      "month": {
+        "one": "{n} Mount",
+        "other": "{n} Méint"
+      },
+      "year": {
+        "one": "{n} Joer",
+        "other": "{n} Joer"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "elo grad",
+    "ago": "virun {0}",
+    "inFuture": "an {0}",
+    "short": {
+      "units": {
+        "second": "{n} Sek.",
+        "minute": "{n} Min.",
+        "hour": "{n} Std.",
+        "day": "{n} D.",
+        "week": "{n} W.",
+        "month": "{n} M.",
+        "year": "{n} J."
+      },
+      "ago": "virun {0}",
+      "inFuture": "an {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}D",
+        "week": "{n}W",
+        "month": "{n}M",
+        "year": "{n}J"
+      },
+      "delimiter": "",
+      "ago": "virun {0}",
+      "inFuture": "an {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "zwielef",
+        "eent",
+        "zwee",
+        "dräi",
+        "véier",
+        "fënnef",
+        "sechs",
+        "siwen",
+        "aacht",
+        "néng",
+        "zéng",
+        "eelef"
+      ],
+      "midnight": "Mëtternuecht",
+      "noon": "Mëtteg",
+      "patterns": {
+        "0": "{h} Auer",
+        "5": "fënnef op {h}",
+        "10": "zéng op {h}",
+        "15": "Véierel op {h}",
+        "20": "zwanzeg op {h}",
+        "25": "fënnef vir hallwer {next_h}",
+        "30": "hallwer {next_h}",
+        "35": "fënnef op hallwer {next_h}",
+        "40": "zwanzeg vir {next_h}",
+        "45": "Véierel vir {next_h}",
+        "50": "zéng vir {next_h}",
+        "55": "fënnef vir {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

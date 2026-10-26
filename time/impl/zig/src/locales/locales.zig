@@ -10,7 +10,7 @@
 
 const sayabletime = @import("../sayabletime.zig");
 
-// Source: time/locales/src/af.json
+// Source: locales/af.json
 pub const af: sayabletime.TimeLocale = .{
     .code = "af",
     .clock = .{
@@ -23,7 +23,7 @@ pub const af: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ak.json
+// Source: locales/ak.json
 pub const ak: sayabletime.TimeLocale = .{
     .code = "ak",
     .clock = .{
@@ -36,7 +36,7 @@ pub const ak: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/am.json
+// Source: locales/am.json
 pub const am: sayabletime.TimeLocale = .{
     .code = "am",
     .clock = .{
@@ -49,7 +49,7 @@ pub const am: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ar.json
+// Source: locales/ar.json
 pub const ar: sayabletime.TimeLocale = .{
     .code = "ar",
     .clock = .{
@@ -62,7 +62,7 @@ pub const ar: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ay.json
+// Source: locales/ay.json
 pub const ay: sayabletime.TimeLocale = .{
     .code = "ay",
     .clock = .{
@@ -75,7 +75,7 @@ pub const ay: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/az.json
+// Source: locales/az.json
 pub const az: sayabletime.TimeLocale = .{
     .code = "az",
     .clock = .{
@@ -88,7 +88,7 @@ pub const az: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/bci.json
+// Source: locales/bci.json
 pub const bci: sayabletime.TimeLocale = .{
     .code = "bci",
     .clock = .{
@@ -101,7 +101,7 @@ pub const bci: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/be.json
+// Source: locales/be.json
 pub const be: sayabletime.TimeLocale = .{
     .code = "be",
     .clock = .{
@@ -114,7 +114,7 @@ pub const be: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/bem.json
+// Source: locales/bem.json
 pub const bem: sayabletime.TimeLocale = .{
     .code = "bem",
     .clock = .{
@@ -127,7 +127,7 @@ pub const bem: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/bg.json
+// Source: locales/bg.json
 pub const bg: sayabletime.TimeLocale = .{
     .code = "bg",
     .clock = .{
@@ -140,7 +140,7 @@ pub const bg: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/bi.json
+// Source: locales/bi.json
 pub const bi: sayabletime.TimeLocale = .{
     .code = "bi",
     .clock = .{
@@ -153,7 +153,7 @@ pub const bi: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/bm.json
+// Source: locales/bm.json
 pub const bm: sayabletime.TimeLocale = .{
     .code = "bm",
     .clock = .{
@@ -166,7 +166,7 @@ pub const bm: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/bn.json
+// Source: locales/bn.json
 pub const bn: sayabletime.TimeLocale = .{
     .code = "bn",
     .clock = .{
@@ -179,7 +179,7 @@ pub const bn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/br.json
+// Source: locales/br.json
 pub const br: sayabletime.TimeLocale = .{
     .code = "br",
     .clock = .{
@@ -192,7 +192,7 @@ pub const br: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/bs.json
+// Source: locales/bs.json
 pub const bs: sayabletime.TimeLocale = .{
     .code = "bs",
     .clock = .{
@@ -205,7 +205,7 @@ pub const bs: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ca.json
+// Source: locales/ca.json
 pub const ca: sayabletime.TimeLocale = .{
     .code = "ca",
     .clock = .{
@@ -218,7 +218,7 @@ pub const ca: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/cak.json
+// Source: locales/cak.json
 pub const cak: sayabletime.TimeLocale = .{
     .code = "cak",
     .clock = .{
@@ -231,7 +231,7 @@ pub const cak: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ceb.json
+// Source: locales/ceb.json
 pub const ceb: sayabletime.TimeLocale = .{
     .code = "ceb",
     .clock = .{
@@ -244,7 +244,7 @@ pub const ceb: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/cs.json
+// Source: locales/cs.json
 pub const cs: sayabletime.TimeLocale = .{
     .code = "cs",
     .clock = .{
@@ -257,7 +257,7 @@ pub const cs: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/cy.json
+// Source: locales/cy.json
 pub const cy: sayabletime.TimeLocale = .{
     .code = "cy",
     .clock = .{
@@ -270,7 +270,7 @@ pub const cy: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/da.json
+// Source: locales/da.json
 pub const da: sayabletime.TimeLocale = .{
     .code = "da",
     .clock = .{
@@ -283,7 +283,7 @@ pub const da: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}.{mm}" } },
 };
 
-// Source: time/locales/src/de.json
+// Source: locales/de.json
 pub const de: sayabletime.TimeLocale = .{
     .code = "de",
     .clock = .{
@@ -296,7 +296,7 @@ pub const de: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/din.json
+// Source: locales/din.json
 pub const din: sayabletime.TimeLocale = .{
     .code = "din",
     .clock = .{
@@ -309,7 +309,7 @@ pub const din: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/dje.json
+// Source: locales/dje.json
 pub const dje: sayabletime.TimeLocale = .{
     .code = "dje",
     .clock = .{
@@ -322,7 +322,7 @@ pub const dje: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/dv.json
+// Source: locales/dv.json
 pub const dv: sayabletime.TimeLocale = .{
     .code = "dv",
     .clock = .{
@@ -335,7 +335,7 @@ pub const dv: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/dyu.json
+// Source: locales/dyu.json
 pub const dyu: sayabletime.TimeLocale = .{
     .code = "dyu",
     .clock = .{
@@ -348,7 +348,7 @@ pub const dyu: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/dz.json
+// Source: locales/dz.json
 pub const dz: sayabletime.TimeLocale = .{
     .code = "dz",
     .clock = .{
@@ -361,7 +361,7 @@ pub const dz: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ee.json
+// Source: locales/ee.json
 pub const ee: sayabletime.TimeLocale = .{
     .code = "ee",
     .clock = .{
@@ -374,7 +374,7 @@ pub const ee: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/el.json
+// Source: locales/el.json
 pub const el: sayabletime.TimeLocale = .{
     .code = "el",
     .clock = .{
@@ -387,7 +387,7 @@ pub const el: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/en.json
+// Source: locales/en.json
 pub const en: sayabletime.TimeLocale = .{
     .code = "en",
     .clock = .{
@@ -400,7 +400,7 @@ pub const en: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/es.json
+// Source: locales/es.json
 pub const es: sayabletime.TimeLocale = .{
     .code = "es",
     .clock = .{
@@ -413,7 +413,7 @@ pub const es: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/et.json
+// Source: locales/et.json
 pub const et: sayabletime.TimeLocale = .{
     .code = "et",
     .clock = .{
@@ -426,7 +426,7 @@ pub const et: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/eu.json
+// Source: locales/eu.json
 pub const eu: sayabletime.TimeLocale = .{
     .code = "eu",
     .clock = .{
@@ -439,7 +439,7 @@ pub const eu: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/fa.json
+// Source: locales/fa.json
 pub const fa: sayabletime.TimeLocale = .{
     .code = "fa",
     .clock = .{
@@ -452,7 +452,7 @@ pub const fa: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/fan.json
+// Source: locales/fan.json
 pub const fan: sayabletime.TimeLocale = .{
     .code = "fan",
     .clock = .{
@@ -465,7 +465,7 @@ pub const fan: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ff.json
+// Source: locales/ff.json
 pub const ff: sayabletime.TimeLocale = .{
     .code = "ff",
     .clock = .{
@@ -478,7 +478,7 @@ pub const ff: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/fi.json
+// Source: locales/fi.json
 pub const fi: sayabletime.TimeLocale = .{
     .code = "fi",
     .clock = .{
@@ -491,7 +491,7 @@ pub const fi: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}.{mm}" } },
 };
 
-// Source: time/locales/src/fil.json
+// Source: locales/fil.json
 pub const fil: sayabletime.TimeLocale = .{
     .code = "fil",
     .clock = .{
@@ -504,7 +504,7 @@ pub const fil: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/fj.json
+// Source: locales/fj.json
 pub const fj: sayabletime.TimeLocale = .{
     .code = "fj",
     .clock = .{
@@ -517,7 +517,7 @@ pub const fj: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/fon.json
+// Source: locales/fon.json
 pub const fon: sayabletime.TimeLocale = .{
     .code = "fon",
     .clock = .{
@@ -530,7 +530,7 @@ pub const fon: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/fr.json
+// Source: locales/fr.json
 pub const fr: sayabletime.TimeLocale = .{
     .code = "fr",
     .clock = .{
@@ -543,7 +543,7 @@ pub const fr: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}h{mm}" } },
 };
 
-// Source: time/locales/src/ga.json
+// Source: locales/ga.json
 pub const ga: sayabletime.TimeLocale = .{
     .code = "ga",
     .clock = .{
@@ -556,7 +556,7 @@ pub const ga: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/gd.json
+// Source: locales/gd.json
 pub const gd: sayabletime.TimeLocale = .{
     .code = "gd",
     .clock = .{
@@ -569,7 +569,7 @@ pub const gd: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/gl.json
+// Source: locales/gl.json
 pub const gl: sayabletime.TimeLocale = .{
     .code = "gl",
     .clock = .{
@@ -582,7 +582,7 @@ pub const gl: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/gn.json
+// Source: locales/gn.json
 pub const gn: sayabletime.TimeLocale = .{
     .code = "gn",
     .clock = .{
@@ -595,7 +595,7 @@ pub const gn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/gu.json
+// Source: locales/gu.json
 pub const gu: sayabletime.TimeLocale = .{
     .code = "gu",
     .clock = .{
@@ -608,7 +608,7 @@ pub const gu: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/gv.json
+// Source: locales/gv.json
 pub const gv: sayabletime.TimeLocale = .{
     .code = "gv",
     .clock = .{
@@ -621,7 +621,7 @@ pub const gv: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ha.json
+// Source: locales/ha.json
 pub const ha: sayabletime.TimeLocale = .{
     .code = "ha",
     .clock = .{
@@ -634,7 +634,7 @@ pub const ha: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/he.json
+// Source: locales/he.json
 pub const he: sayabletime.TimeLocale = .{
     .code = "he",
     .clock = .{
@@ -647,7 +647,7 @@ pub const he: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/hi.json
+// Source: locales/hi.json
 pub const hi: sayabletime.TimeLocale = .{
     .code = "hi",
     .clock = .{
@@ -660,7 +660,7 @@ pub const hi: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/hmn.json
+// Source: locales/hmn.json
 pub const hmn: sayabletime.TimeLocale = .{
     .code = "hmn",
     .clock = .{
@@ -673,7 +673,7 @@ pub const hmn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/hr.json
+// Source: locales/hr.json
 pub const hr: sayabletime.TimeLocale = .{
     .code = "hr",
     .clock = .{
@@ -686,7 +686,7 @@ pub const hr: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ht.json
+// Source: locales/ht.json
 pub const ht: sayabletime.TimeLocale = .{
     .code = "ht",
     .clock = .{
@@ -699,7 +699,7 @@ pub const ht: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/hu.json
+// Source: locales/hu.json
 pub const hu: sayabletime.TimeLocale = .{
     .code = "hu",
     .clock = .{
@@ -712,7 +712,7 @@ pub const hu: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/hy.json
+// Source: locales/hy.json
 pub const hy: sayabletime.TimeLocale = .{
     .code = "hy",
     .clock = .{
@@ -725,7 +725,7 @@ pub const hy: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/id.json
+// Source: locales/id.json
 pub const id: sayabletime.TimeLocale = .{
     .code = "id",
     .clock = .{
@@ -738,7 +738,7 @@ pub const id: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}.{mm}" } },
 };
 
-// Source: time/locales/src/ig.json
+// Source: locales/ig.json
 pub const ig: sayabletime.TimeLocale = .{
     .code = "ig",
     .clock = .{
@@ -751,7 +751,7 @@ pub const ig: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/is.json
+// Source: locales/is.json
 pub const is: sayabletime.TimeLocale = .{
     .code = "is",
     .clock = .{
@@ -764,7 +764,7 @@ pub const is: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/it.json
+// Source: locales/it.json
 pub const it: sayabletime.TimeLocale = .{
     .code = "it",
     .clock = .{
@@ -777,7 +777,7 @@ pub const it: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ja.json
+// Source: locales/ja.json
 pub const ja: sayabletime.TimeLocale = .{
     .code = "ja",
     .clock = .{
@@ -790,7 +790,7 @@ pub const ja: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/jv.json
+// Source: locales/jv.json
 pub const jv: sayabletime.TimeLocale = .{
     .code = "jv",
     .clock = .{
@@ -803,7 +803,7 @@ pub const jv: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ka.json
+// Source: locales/ka.json
 pub const ka: sayabletime.TimeLocale = .{
     .code = "ka",
     .clock = .{
@@ -816,7 +816,7 @@ pub const ka: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/kbp.json
+// Source: locales/kbp.json
 pub const kbp: sayabletime.TimeLocale = .{
     .code = "kbp",
     .clock = .{
@@ -829,7 +829,7 @@ pub const kbp: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/kek.json
+// Source: locales/kek.json
 pub const kek: sayabletime.TimeLocale = .{
     .code = "kek",
     .clock = .{
@@ -842,7 +842,7 @@ pub const kek: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ki.json
+// Source: locales/ki.json
 pub const ki: sayabletime.TimeLocale = .{
     .code = "ki",
     .clock = .{
@@ -855,7 +855,7 @@ pub const ki: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/kk.json
+// Source: locales/kk.json
 pub const kk: sayabletime.TimeLocale = .{
     .code = "kk",
     .clock = .{
@@ -868,7 +868,7 @@ pub const kk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/kl.json
+// Source: locales/kl.json
 pub const kl: sayabletime.TimeLocale = .{
     .code = "kl",
     .clock = .{
@@ -881,7 +881,7 @@ pub const kl: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}.{mm}" } },
 };
 
-// Source: time/locales/src/km.json
+// Source: locales/km.json
 pub const km: sayabletime.TimeLocale = .{
     .code = "km",
     .clock = .{
@@ -894,7 +894,7 @@ pub const km: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/kn.json
+// Source: locales/kn.json
 pub const kn: sayabletime.TimeLocale = .{
     .code = "kn",
     .clock = .{
@@ -907,7 +907,7 @@ pub const kn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ko.json
+// Source: locales/ko.json
 pub const ko: sayabletime.TimeLocale = .{
     .code = "ko",
     .clock = .{
@@ -920,7 +920,7 @@ pub const ko: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/kpe.json
+// Source: locales/kpe.json
 pub const kpe: sayabletime.TimeLocale = .{
     .code = "kpe",
     .clock = .{
@@ -933,7 +933,7 @@ pub const kpe: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/kri.json
+// Source: locales/kri.json
 pub const kri: sayabletime.TimeLocale = .{
     .code = "kri",
     .clock = .{
@@ -946,7 +946,7 @@ pub const kri: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ktu.json
+// Source: locales/ktu.json
 pub const ktu: sayabletime.TimeLocale = .{
     .code = "ktu",
     .clock = .{
@@ -959,7 +959,7 @@ pub const ktu: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ku.json
+// Source: locales/ku.json
 pub const ku: sayabletime.TimeLocale = .{
     .code = "ku",
     .clock = .{
@@ -972,7 +972,7 @@ pub const ku: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/kw.json
+// Source: locales/kw.json
 pub const kw: sayabletime.TimeLocale = .{
     .code = "kw",
     .clock = .{
@@ -985,7 +985,7 @@ pub const kw: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ky.json
+// Source: locales/ky.json
 pub const ky: sayabletime.TimeLocale = .{
     .code = "ky",
     .clock = .{
@@ -998,7 +998,7 @@ pub const ky: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/lb.json
+// Source: locales/lb.json
 pub const lb: sayabletime.TimeLocale = .{
     .code = "lb",
     .clock = .{
@@ -1011,7 +1011,7 @@ pub const lb: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/lg.json
+// Source: locales/lg.json
 pub const lg: sayabletime.TimeLocale = .{
     .code = "lg",
     .clock = .{
@@ -1024,7 +1024,7 @@ pub const lg: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ln.json
+// Source: locales/ln.json
 pub const ln: sayabletime.TimeLocale = .{
     .code = "ln",
     .clock = .{
@@ -1037,7 +1037,7 @@ pub const ln: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/lo.json
+// Source: locales/lo.json
 pub const lo: sayabletime.TimeLocale = .{
     .code = "lo",
     .clock = .{
@@ -1050,7 +1050,7 @@ pub const lo: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/lt.json
+// Source: locales/lt.json
 pub const lt: sayabletime.TimeLocale = .{
     .code = "lt",
     .clock = .{
@@ -1063,7 +1063,7 @@ pub const lt: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/luo.json
+// Source: locales/luo.json
 pub const luo: sayabletime.TimeLocale = .{
     .code = "luo",
     .clock = .{
@@ -1076,7 +1076,7 @@ pub const luo: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/lv.json
+// Source: locales/lv.json
 pub const lv: sayabletime.TimeLocale = .{
     .code = "lv",
     .clock = .{
@@ -1089,7 +1089,7 @@ pub const lv: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/mam.json
+// Source: locales/mam.json
 pub const mam: sayabletime.TimeLocale = .{
     .code = "mam",
     .clock = .{
@@ -1102,7 +1102,7 @@ pub const mam: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/men.json
+// Source: locales/men.json
 pub const men: sayabletime.TimeLocale = .{
     .code = "men",
     .clock = .{
@@ -1115,7 +1115,7 @@ pub const men: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/mfe.json
+// Source: locales/mfe.json
 pub const mfe: sayabletime.TimeLocale = .{
     .code = "mfe",
     .clock = .{
@@ -1128,7 +1128,7 @@ pub const mfe: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/mg.json
+// Source: locales/mg.json
 pub const mg: sayabletime.TimeLocale = .{
     .code = "mg",
     .clock = .{
@@ -1141,7 +1141,7 @@ pub const mg: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/mi.json
+// Source: locales/mi.json
 pub const mi: sayabletime.TimeLocale = .{
     .code = "mi",
     .clock = .{
@@ -1154,7 +1154,7 @@ pub const mi: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/mk.json
+// Source: locales/mk.json
 pub const mk: sayabletime.TimeLocale = .{
     .code = "mk",
     .clock = .{
@@ -1167,7 +1167,7 @@ pub const mk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ml.json
+// Source: locales/ml.json
 pub const ml: sayabletime.TimeLocale = .{
     .code = "ml",
     .clock = .{
@@ -1180,7 +1180,7 @@ pub const ml: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/mn.json
+// Source: locales/mn.json
 pub const mn: sayabletime.TimeLocale = .{
     .code = "mn",
     .clock = .{
@@ -1193,7 +1193,7 @@ pub const mn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/mnk.json
+// Source: locales/mnk.json
 pub const mnk: sayabletime.TimeLocale = .{
     .code = "mnk",
     .clock = .{
@@ -1206,7 +1206,7 @@ pub const mnk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/mos.json
+// Source: locales/mos.json
 pub const mos: sayabletime.TimeLocale = .{
     .code = "mos",
     .clock = .{
@@ -1219,7 +1219,7 @@ pub const mos: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/mr.json
+// Source: locales/mr.json
 pub const mr: sayabletime.TimeLocale = .{
     .code = "mr",
     .clock = .{
@@ -1232,7 +1232,7 @@ pub const mr: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ms.json
+// Source: locales/ms.json
 pub const ms: sayabletime.TimeLocale = .{
     .code = "ms",
     .clock = .{
@@ -1245,7 +1245,7 @@ pub const ms: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/mt.json
+// Source: locales/mt.json
 pub const mt: sayabletime.TimeLocale = .{
     .code = "mt",
     .clock = .{
@@ -1258,7 +1258,7 @@ pub const mt: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/my.json
+// Source: locales/my.json
 pub const my: sayabletime.TimeLocale = .{
     .code = "my",
     .clock = .{
@@ -1271,7 +1271,7 @@ pub const my: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/nb.json
+// Source: locales/nb.json
 pub const nb: sayabletime.TimeLocale = .{
     .code = "nb",
     .clock = .{
@@ -1284,7 +1284,7 @@ pub const nb: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/nd.json
+// Source: locales/nd.json
 pub const nd: sayabletime.TimeLocale = .{
     .code = "nd",
     .clock = .{
@@ -1297,7 +1297,7 @@ pub const nd: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ne.json
+// Source: locales/ne.json
 pub const ne: sayabletime.TimeLocale = .{
     .code = "ne",
     .clock = .{
@@ -1310,7 +1310,7 @@ pub const ne: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ng.json
+// Source: locales/ng.json
 pub const ng: sayabletime.TimeLocale = .{
     .code = "ng",
     .clock = .{
@@ -1323,7 +1323,7 @@ pub const ng: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/nl.json
+// Source: locales/nl.json
 pub const nl: sayabletime.TimeLocale = .{
     .code = "nl",
     .clock = .{
@@ -1336,7 +1336,7 @@ pub const nl: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/nr.json
+// Source: locales/nr.json
 pub const nr: sayabletime.TimeLocale = .{
     .code = "nr",
     .clock = .{
@@ -1349,7 +1349,7 @@ pub const nr: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/nso.json
+// Source: locales/nso.json
 pub const nso: sayabletime.TimeLocale = .{
     .code = "nso",
     .clock = .{
@@ -1362,7 +1362,7 @@ pub const nso: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/nus.json
+// Source: locales/nus.json
 pub const nus: sayabletime.TimeLocale = .{
     .code = "nus",
     .clock = .{
@@ -1375,7 +1375,7 @@ pub const nus: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ny.json
+// Source: locales/ny.json
 pub const ny: sayabletime.TimeLocale = .{
     .code = "ny",
     .clock = .{
@@ -1388,7 +1388,7 @@ pub const ny: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/om.json
+// Source: locales/om.json
 pub const om: sayabletime.TimeLocale = .{
     .code = "om",
     .clock = .{
@@ -1401,7 +1401,7 @@ pub const om: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/or.json
+// Source: locales/or.json
 pub const @"or": sayabletime.TimeLocale = .{
     .code = "or",
     .clock = .{
@@ -1414,7 +1414,7 @@ pub const @"or": sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/pa.json
+// Source: locales/pa.json
 pub const pa: sayabletime.TimeLocale = .{
     .code = "pa",
     .clock = .{
@@ -1427,7 +1427,7 @@ pub const pa: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/pis.json
+// Source: locales/pis.json
 pub const pis: sayabletime.TimeLocale = .{
     .code = "pis",
     .clock = .{
@@ -1440,7 +1440,7 @@ pub const pis: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/pl.json
+// Source: locales/pl.json
 pub const pl: sayabletime.TimeLocale = .{
     .code = "pl",
     .clock = .{
@@ -1453,7 +1453,7 @@ pub const pl: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/pov.json
+// Source: locales/pov.json
 pub const pov: sayabletime.TimeLocale = .{
     .code = "pov",
     .clock = .{
@@ -1466,7 +1466,7 @@ pub const pov: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ps.json
+// Source: locales/ps.json
 pub const ps: sayabletime.TimeLocale = .{
     .code = "ps",
     .clock = .{
@@ -1479,7 +1479,7 @@ pub const ps: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/pt.json
+// Source: locales/pt.json
 pub const pt: sayabletime.TimeLocale = .{
     .code = "pt",
     .clock = .{
@@ -1492,7 +1492,7 @@ pub const pt: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/qu.json
+// Source: locales/qu.json
 pub const qu: sayabletime.TimeLocale = .{
     .code = "qu",
     .clock = .{
@@ -1505,7 +1505,7 @@ pub const qu: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/quc.json
+// Source: locales/quc.json
 pub const quc: sayabletime.TimeLocale = .{
     .code = "quc",
     .clock = .{
@@ -1518,7 +1518,7 @@ pub const quc: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ro.json
+// Source: locales/ro.json
 pub const ro: sayabletime.TimeLocale = .{
     .code = "ro",
     .clock = .{
@@ -1531,7 +1531,7 @@ pub const ro: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ru.json
+// Source: locales/ru.json
 pub const ru: sayabletime.TimeLocale = .{
     .code = "ru",
     .clock = .{
@@ -1544,7 +1544,7 @@ pub const ru: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/rw.json
+// Source: locales/rw.json
 pub const rw: sayabletime.TimeLocale = .{
     .code = "rw",
     .clock = .{
@@ -1557,7 +1557,7 @@ pub const rw: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/sar.json
+// Source: locales/sar.json
 pub const sar: sayabletime.TimeLocale = .{
     .code = "sar",
     .clock = .{
@@ -1570,7 +1570,7 @@ pub const sar: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/sd.json
+// Source: locales/sd.json
 pub const sd: sayabletime.TimeLocale = .{
     .code = "sd",
     .clock = .{
@@ -1583,7 +1583,7 @@ pub const sd: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/sg.json
+// Source: locales/sg.json
 pub const sg: sayabletime.TimeLocale = .{
     .code = "sg",
     .clock = .{
@@ -1596,7 +1596,7 @@ pub const sg: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/shi.json
+// Source: locales/shi.json
 pub const shi: sayabletime.TimeLocale = .{
     .code = "shi",
     .clock = .{
@@ -1609,7 +1609,7 @@ pub const shi: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/shn.json
+// Source: locales/shn.json
 pub const shn: sayabletime.TimeLocale = .{
     .code = "shn",
     .clock = .{
@@ -1622,7 +1622,7 @@ pub const shn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/si.json
+// Source: locales/si.json
 pub const si: sayabletime.TimeLocale = .{
     .code = "si",
     .clock = .{
@@ -1635,7 +1635,7 @@ pub const si: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/sk.json
+// Source: locales/sk.json
 pub const sk: sayabletime.TimeLocale = .{
     .code = "sk",
     .clock = .{
@@ -1648,7 +1648,7 @@ pub const sk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/sl.json
+// Source: locales/sl.json
 pub const sl: sayabletime.TimeLocale = .{
     .code = "sl",
     .clock = .{
@@ -1661,7 +1661,7 @@ pub const sl: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/sn.json
+// Source: locales/sn.json
 pub const sn: sayabletime.TimeLocale = .{
     .code = "sn",
     .clock = .{
@@ -1674,7 +1674,7 @@ pub const sn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/snk.json
+// Source: locales/snk.json
 pub const snk: sayabletime.TimeLocale = .{
     .code = "snk",
     .clock = .{
@@ -1687,7 +1687,7 @@ pub const snk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/so.json
+// Source: locales/so.json
 pub const so: sayabletime.TimeLocale = .{
     .code = "so",
     .clock = .{
@@ -1700,7 +1700,7 @@ pub const so: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/sq.json
+// Source: locales/sq.json
 pub const sq: sayabletime.TimeLocale = .{
     .code = "sq",
     .clock = .{
@@ -1713,7 +1713,7 @@ pub const sq: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/sr.json
+// Source: locales/sr.json
 pub const sr: sayabletime.TimeLocale = .{
     .code = "sr",
     .clock = .{
@@ -1726,7 +1726,7 @@ pub const sr: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ss.json
+// Source: locales/ss.json
 pub const ss: sayabletime.TimeLocale = .{
     .code = "ss",
     .clock = .{
@@ -1739,7 +1739,7 @@ pub const ss: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/st.json
+// Source: locales/st.json
 pub const st: sayabletime.TimeLocale = .{
     .code = "st",
     .clock = .{
@@ -1752,7 +1752,7 @@ pub const st: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/su.json
+// Source: locales/su.json
 pub const su: sayabletime.TimeLocale = .{
     .code = "su",
     .clock = .{
@@ -1765,7 +1765,7 @@ pub const su: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/suk.json
+// Source: locales/suk.json
 pub const suk: sayabletime.TimeLocale = .{
     .code = "suk",
     .clock = .{
@@ -1778,7 +1778,7 @@ pub const suk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/sv.json
+// Source: locales/sv.json
 pub const sv: sayabletime.TimeLocale = .{
     .code = "sv",
     .clock = .{
@@ -1791,7 +1791,7 @@ pub const sv: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/sw.json
+// Source: locales/sw.json
 pub const sw: sayabletime.TimeLocale = .{
     .code = "sw",
     .clock = .{
@@ -1804,7 +1804,7 @@ pub const sw: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ta.json
+// Source: locales/ta.json
 pub const ta: sayabletime.TimeLocale = .{
     .code = "ta",
     .clock = .{
@@ -1817,7 +1817,7 @@ pub const ta: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/te.json
+// Source: locales/te.json
 pub const te: sayabletime.TimeLocale = .{
     .code = "te",
     .clock = .{
@@ -1830,7 +1830,7 @@ pub const te: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tem.json
+// Source: locales/tem.json
 pub const tem: sayabletime.TimeLocale = .{
     .code = "tem",
     .clock = .{
@@ -1843,7 +1843,7 @@ pub const tem: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tet.json
+// Source: locales/tet.json
 pub const tet: sayabletime.TimeLocale = .{
     .code = "tet",
     .clock = .{
@@ -1856,7 +1856,7 @@ pub const tet: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tg.json
+// Source: locales/tg.json
 pub const tg: sayabletime.TimeLocale = .{
     .code = "tg",
     .clock = .{
@@ -1869,7 +1869,7 @@ pub const tg: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/th.json
+// Source: locales/th.json
 pub const th: sayabletime.TimeLocale = .{
     .code = "th",
     .clock = .{
@@ -1882,7 +1882,7 @@ pub const th: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ti.json
+// Source: locales/ti.json
 pub const ti: sayabletime.TimeLocale = .{
     .code = "ti",
     .clock = .{
@@ -1895,7 +1895,7 @@ pub const ti: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/tig.json
+// Source: locales/tig.json
 pub const tig: sayabletime.TimeLocale = .{
     .code = "tig",
     .clock = .{
@@ -1908,7 +1908,7 @@ pub const tig: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tk.json
+// Source: locales/tk.json
 pub const tk: sayabletime.TimeLocale = .{
     .code = "tk",
     .clock = .{
@@ -1921,7 +1921,7 @@ pub const tk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/tn.json
+// Source: locales/tn.json
 pub const tn: sayabletime.TimeLocale = .{
     .code = "tn",
     .clock = .{
@@ -1934,7 +1934,7 @@ pub const tn: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tpi.json
+// Source: locales/tpi.json
 pub const tpi: sayabletime.TimeLocale = .{
     .code = "tpi",
     .clock = .{
@@ -1947,7 +1947,7 @@ pub const tpi: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tr.json
+// Source: locales/tr.json
 pub const tr: sayabletime.TimeLocale = .{
     .code = "tr",
     .clock = .{
@@ -1960,7 +1960,7 @@ pub const tr: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ts.json
+// Source: locales/ts.json
 pub const ts: sayabletime.TimeLocale = .{
     .code = "ts",
     .clock = .{
@@ -1973,7 +1973,7 @@ pub const ts: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tum.json
+// Source: locales/tum.json
 pub const tum: sayabletime.TimeLocale = .{
     .code = "tum",
     .clock = .{
@@ -1986,7 +1986,7 @@ pub const tum: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/tzm.json
+// Source: locales/tzm.json
 pub const tzm: sayabletime.TimeLocale = .{
     .code = "tzm",
     .clock = .{
@@ -1999,7 +1999,7 @@ pub const tzm: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/uk.json
+// Source: locales/uk.json
 pub const uk: sayabletime.TimeLocale = .{
     .code = "uk",
     .clock = .{
@@ -2012,7 +2012,7 @@ pub const uk: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/umb.json
+// Source: locales/umb.json
 pub const umb: sayabletime.TimeLocale = .{
     .code = "umb",
     .clock = .{
@@ -2025,7 +2025,7 @@ pub const umb: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/ur.json
+// Source: locales/ur.json
 pub const ur: sayabletime.TimeLocale = .{
     .code = "ur",
     .clock = .{
@@ -2038,7 +2038,7 @@ pub const ur: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/uz.json
+// Source: locales/uz.json
 pub const uz: sayabletime.TimeLocale = .{
     .code = "uz",
     .clock = .{
@@ -2051,7 +2051,7 @@ pub const uz: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/ve.json
+// Source: locales/ve.json
 pub const ve: sayabletime.TimeLocale = .{
     .code = "ve",
     .clock = .{
@@ -2064,7 +2064,7 @@ pub const ve: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/vi.json
+// Source: locales/vi.json
 pub const vi: sayabletime.TimeLocale = .{
     .code = "vi",
     .clock = .{
@@ -2077,7 +2077,7 @@ pub const vi: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/vmw.json
+// Source: locales/vmw.json
 pub const vmw: sayabletime.TimeLocale = .{
     .code = "vmw",
     .clock = .{
@@ -2090,7 +2090,7 @@ pub const vmw: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/wo.json
+// Source: locales/wo.json
 pub const wo: sayabletime.TimeLocale = .{
     .code = "wo",
     .clock = .{
@@ -2103,7 +2103,7 @@ pub const wo: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/xh.json
+// Source: locales/xh.json
 pub const xh: sayabletime.TimeLocale = .{
     .code = "xh",
     .clock = .{
@@ -2116,7 +2116,7 @@ pub const xh: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/yao.json
+// Source: locales/yao.json
 pub const yao: sayabletime.TimeLocale = .{
     .code = "yao",
     .clock = .{
@@ -2129,7 +2129,7 @@ pub const yao: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/yo.json
+// Source: locales/yo.json
 pub const yo: sayabletime.TimeLocale = .{
     .code = "yo",
     .clock = .{
@@ -2142,7 +2142,7 @@ pub const yo: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/yue.json
+// Source: locales/yue.json
 pub const yue: sayabletime.TimeLocale = .{
     .code = "yue",
     .clock = .{
@@ -2155,7 +2155,7 @@ pub const yue: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/zdj.json
+// Source: locales/zdj.json
 pub const zdj: sayabletime.TimeLocale = .{
     .code = "zdj",
     .clock = .{
@@ -2168,7 +2168,7 @@ pub const zdj: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
-// Source: time/locales/src/zh.json
+// Source: locales/zh.json
 pub const zh: sayabletime.TimeLocale = .{
     .code = "zh",
     .clock = .{
@@ -2181,7 +2181,7 @@ pub const zh: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
-// Source: time/locales/src/zu.json
+// Source: locales/zu.json
 pub const zu: sayabletime.TimeLocale = .{
     .code = "zu",
     .clock = .{

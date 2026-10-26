@@ -1,0 +1,216 @@
+{
+  "code": "eu",
+  "name": "Basque",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} egun",
+      "week": "{n} aste",
+      "month": "{n} hilabete",
+      "year": "{n} urte"
+    },
+    "half": "{0} eta erdi",
+    "delimiter": ", ",
+    "justBorn": "Jaioberria",
+    "stages": {
+      "newborn": "Jaioberria",
+      "infant": "Haurra",
+      "toddler": "Haur txikia",
+      "child": "Umea",
+      "teenager": "Nerabea",
+      "adult": "Heldua"
+    },
+    "short": {
+      "units": {
+        "day": "{n} egun",
+        "week": "{n} aste",
+        "month": "{n} hilabete",
+        "year": "{n} urte"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} e.",
+        "week": "{n} aste",
+        "month": "{n} hil",
+        "year": "{n} u."
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "urtarril",
+      "otsail",
+      "martxo",
+      "apiril",
+      "maiatz",
+      "ekain",
+      "uztail",
+      "abuztu",
+      "irail",
+      "urri",
+      "azaro",
+      "abendu"
+    ],
+    "weekdays": [
+      "igandea",
+      "astelehena",
+      "asteartea",
+      "asteazkena",
+      "osteguna",
+      "ostirala",
+      "larunbata"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{month}ren {day}",
+    "datePatternWithYear": "{year}ko {month}ren {day}",
+    "today": "gaur",
+    "tomorrow": "bihar",
+    "yesterday": "atzo",
+    "dayAfterTomorrow": "etzi",
+    "dayBeforeYesterday": "herenegun",
+    "thisWeekday": "{weekday} hau",
+    "nextWeekday": "hurrengo {weekday}",
+    "lastWeekday": "aurreko {weekday}",
+    "short": {
+      "months": [
+        "urt",
+        "ots",
+        "mar",
+        "api",
+        "mai",
+        "eka",
+        "uzt",
+        "abu",
+        "ira",
+        "urr",
+        "aza",
+        "abe"
+      ],
+      "weekdays": [
+        "ig",
+        "al",
+        "ar",
+        "az",
+        "og",
+        "or",
+        "lr"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{year} {month} {day}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} segundo",
+      "minute": "{n} minutu",
+      "hour": "{n} ordu",
+      "day": "{n} egun",
+      "week": "{n} aste",
+      "month": "{n} hilabete",
+      "year": "{n} urte"
+    },
+    "half": "{0} eta erdi",
+    "delimiter": ", ",
+    "justNow": "oraintxe",
+    "ago": "duela {0}",
+    "inFuture": "{0} barru",
+    "short": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} egun",
+        "week": "{n} aste",
+        "month": "{n} hilabete",
+        "year": "{n} urte"
+      },
+      "ago": "duela {0}",
+      "inFuture": "{0} barru",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} e.",
+        "week": "{n} aste",
+        "month": "{n} hil",
+        "year": "{n} u."
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "duela {0}",
+      "inFuture": "{0} barru",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "hamabi",
+        "bat",
+        "bi",
+        "hiru",
+        "lau",
+        "bost",
+        "sei",
+        "zazpi",
+        "zortzi",
+        "bederatzi",
+        "hamar",
+        "hamaika"
+      ],
+      "midnight": "gauerdia",
+      "noon": "eguerdia",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

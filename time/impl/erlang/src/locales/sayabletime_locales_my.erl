@@ -7,7 +7,7 @@
 %% ║ Changes will be overwritten the next time codegen runs.      ║
 %% ║ Edit the generator or locale JSON instead.                   ║
 %% ╚══════════════════════════════════════════════════════════════╝
-%% Source: time/locales/src/my.json
+%% Source: locales/my.json
 
 -module(sayabletime_locales_my).
 -include("sayabletime.hrl").

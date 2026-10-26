@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/mam.json
+# Source: locales/mam.json
 
 function locale_mam {
     $hours = @('kab''laj', 'jun', 'kab''', 'oxe', 'kyaje', 'jwe''', 'qaq', 'wuq', 'wajxaq', 'b''alaj', 'laj', 'junlaj')

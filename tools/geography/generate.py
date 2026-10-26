@@ -25,7 +25,7 @@ _DOCS_DIR = os.path.join(_ROOT, "docs", "geography")
 _ASSETS_DIR = os.path.join(_DOCS_DIR, "assets")
 
 _COMPONENTS = ["age", "date", "duration", "time"]
-_LOCALE_SUBDIR = os.path.join("locales", "src")
+_LOCALES_DIR = os.path.join(_ROOT, "locales")
 
 # ---------------------------------------------------------------------------
 # GeoJSON ISO code overrides (Natural Earth quirks)
@@ -91,18 +91,16 @@ _CONTINENT_SLUGS: dict[str, str] = {
 # ---------------------------------------------------------------------------
 
 def _discover_locales() -> dict[str, set[str]]:
-    """Return {component: set of locale codes} for each component."""
-    result: dict[str, set[str]] = {}
-    for comp in _COMPONENTS:
-        locale_dir = os.path.join(_ROOT, comp, _LOCALE_SUBDIR)
-        if os.path.isdir(locale_dir):
-            codes = set()
-            for f in os.listdir(locale_dir):
-                if f.endswith(".json"):
-                    codes.add(f.removesuffix(".json"))
-            result[comp] = codes
-        else:
-            result[comp] = set()
+    """Return {component: set of locale codes}: a locale supports a component
+    when its locales/<code>.json has that component's section."""
+    result: dict[str, set[str]] = {comp: set() for comp in _COMPONENTS}
+    for f in os.listdir(_LOCALES_DIR):
+        if f.endswith(".json"):
+            with open(os.path.join(_LOCALES_DIR, f), encoding="utf-8") as fh:
+                data = json.load(fh)
+            for comp in _COMPONENTS:
+                if comp in data:
+                    result[comp].add(data["code"])
     return result
 
 
@@ -384,17 +382,9 @@ def _generate_readme(
 
     # Read locale names from JSON files
     locale_names: dict[str, str] = {}
-    for comp in _COMPONENTS:
-        locale_dir = os.path.join(_ROOT, comp, _LOCALE_SUBDIR)
-        if os.path.isdir(locale_dir):
-            for code in all_codes:
-                if code in locale_names:
-                    continue
-                path = os.path.join(locale_dir, f"{code}.json")
-                if os.path.exists(path):
-                    with open(path, encoding="utf-8") as f:
-                        data = json.load(f)
-                    locale_names[code] = data.get("name", code)
+    for code in all_codes:
+        with open(os.path.join(_LOCALES_DIR, f"{code}.json"), encoding="utf-8") as f:
+            locale_names[code] = json.load(f).get("name", code)
 
     # Which components have each locale
     lines.append("| Code | Name | Components |\n")

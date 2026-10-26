@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kek.json
+# Source: locales/kek.json
 module SayableTime
   module Locales
     KEK = TimeLocale.new(

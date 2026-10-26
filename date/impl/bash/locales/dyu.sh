@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/dyu.json
+# Source: locales/dyu.json
 
 _sayabledate_locale_dyu() {
     _months=('Zanwuyekalo' 'Feburuyekalo' 'Marisikalo' 'Awirilikalo' 'Mɛkalo' 'Zuwɛnkalo' 'Zuluyekalo' 'Utikalo' 'Sɛtanburukalo' 'Ɔkutɔburukalo' 'Nowanburdukalo' 'Desanburukalo')

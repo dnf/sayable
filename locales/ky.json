@@ -1,0 +1,208 @@
+{
+  "code": "ky",
+  "name": "Kyrgyz",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": "{n} күн",
+      "week": "{n} апта",
+      "month": "{n} ай",
+      "year": "{n} жаш"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Жаңы төрөлгөн",
+    "stages": {
+      "newborn": "Жаңы төрөлгөн",
+      "infant": "Наристе",
+      "toddler": "Бөбөк",
+      "child": "Бала",
+      "teenager": "Жаш өспүрүм",
+      "adult": "Чоң адам"
+    },
+    "short": {
+      "units": {
+        "day": "{n} күн",
+        "week": "{n} апта",
+        "month": "{n} ай",
+        "year": "{n} жаш"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь"
+    ],
+    "weekdays": [
+      "Жекшемби",
+      "Дүйшөмбү",
+      "Шейшемби",
+      "Шаршемби",
+      "Бейшемби",
+      "Жума",
+      "Ишемби"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "бүгүн",
+    "tomorrow": "эртең",
+    "yesterday": "кечээ",
+    "dayAfterTomorrow": "бүрсүгүнү",
+    "dayBeforeYesterday": "мурунку күнү",
+    "thisWeekday": "бул {weekday}",
+    "nextWeekday": "кийинки {weekday}",
+    "lastWeekday": "өткөн {weekday}",
+    "short": {
+      "months": [
+        "Янв",
+        "Фев",
+        "Мар",
+        "Апр",
+        "Май",
+        "Июн",
+        "Июл",
+        "Авг",
+        "Сен",
+        "Окт",
+        "Ноя",
+        "Дек"
+      ],
+      "weekdays": [
+        "Жек",
+        "Дүй",
+        "Шей",
+        "Шар",
+        "Бей",
+        "Жум",
+        "Ише"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} секунд",
+      "minute": "{n} мүнөт",
+      "hour": "{n} саат",
+      "day": "{n} күн",
+      "week": "{n} апта",
+      "month": "{n} ай",
+      "year": "{n} жыл"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "азыр эле",
+    "ago": "{0} мурун",
+    "inFuture": "{0} кийин",
+    "short": {
+      "units": {
+        "second": "{n} сек",
+        "minute": "{n} мүн",
+        "hour": "{n} саат",
+        "day": "{n} күн",
+        "week": "{n} апта",
+        "month": "{n} ай",
+        "year": "{n} жыл"
+      },
+      "ago": "{0} мурун",
+      "inFuture": "{0} кийин",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} сек",
+        "minute": "{n} мүн",
+        "hour": "{n}ч",
+        "day": "{n} к",
+        "week": "{n} апт",
+        "month": "{n} ай",
+        "year": "{n} ж"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} мурун",
+      "inFuture": "{0} кийин",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "он эки",
+        "бир",
+        "эки",
+        "үч",
+        "төрт",
+        "беш",
+        "алты",
+        "жети",
+        "сегиз",
+        "тогуз",
+        "он",
+        "он бир"
+      ],
+      "midnight": "түн ортосу",
+      "noon": "түш",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

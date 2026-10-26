@@ -13,23 +13,19 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import json
 import os
 import sys
 
+from codegen.banner import LOCALES_DIR, load_component_locales
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-JSON_DIR = os.path.join(ROOT, "locales", "src")
+
+COMPONENT = "age"
 
 
 def load_locales() -> list[dict]:
-    """Load all canonical JSON locale files."""
-    locales = []
-    for fname in sorted(os.listdir(JSON_DIR)):
-        if not fname.endswith(".json"):
-            continue
-        with open(os.path.join(JSON_DIR, fname), encoding="utf-8") as f:
-            locales.append(json.load(f))
-    return locales
+    """Load every locale's age data from the shared locales/*.json files."""
+    return load_component_locales(COMPONENT)
 
 
 def _write_or_check(path: str, content: str, check: bool, diffs: list[str]) -> None:
@@ -1000,7 +996,7 @@ def main() -> None:
         print(f"Selected {len(all_locales)} of {len(all_codes)} locales: {', '.join(selected)}")
     else:
         selected_set = None
-        print(f"Loaded {len(all_locales)} locales from {JSON_DIR}")
+        print(f"Loaded {len(all_locales)} locales from {LOCALES_DIR}")
 
     diffs: list[str] = []
     generators = {args.lang: _GENERATORS[args.lang]} if args.lang else _GENERATORS

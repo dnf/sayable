@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/hu.json
+# Source: locales/hu.json
 
 _sayabletime_locale_hu() {
     _clock_hours=('tizenkettő' 'egy' 'kettő' 'három' 'négy' 'öt' 'hat' 'hét' 'nyolc' 'kilenc' 'tíz' 'tizenegy')

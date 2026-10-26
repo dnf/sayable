@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/yao.json
+# Source: locales/yao.json
 
 function locale_yao {
     $hours = @('likumi na iwili', 'cimo', 'iwili', 'itatu', 'ncece', 'nsano', 'nsano nacimo', 'nsano nawili', 'nsano naitatu', 'nsano nancece', 'likumi', 'likumi nacimo')

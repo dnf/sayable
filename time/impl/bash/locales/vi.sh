@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/vi.json
+# Source: locales/vi.json
 
 _sayabletime_locale_vi() {
     _clock_hours=('mười hai' 'một' 'hai' 'ba' 'bốn' 'năm' 'sáu' 'bảy' 'tám' 'chín' 'mười' 'mười một')

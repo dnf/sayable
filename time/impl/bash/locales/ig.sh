@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ig.json
+# Source: locales/ig.json
 
 _sayabletime_locale_ig() {
     _clock_hours=('iri na abụọ' 'otu' 'abụọ' 'atọ' 'anọ' 'ise' 'isii' 'asaa' 'asatọ' 'itoolu' 'iri' 'iri na otu')

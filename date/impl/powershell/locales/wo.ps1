@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/wo.json
+# Source: locales/wo.json
 
 function locale_wo {
     $months = @('Samwiyee', 'Fewriyee', 'Maars', 'Awril', 'Mee', 'Suwe', 'Sullet', 'Ut', 'Septàmbar', 'Oktoobar', 'Nowàmbar', 'Desàmbar')

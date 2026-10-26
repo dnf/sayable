@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ny.json
+# Source: locales/ny.json
 
 _sayabledate_locale_ny() {
     _months=('Januwale' 'Febuluwale' 'Matchi' 'Epulo' 'Meyi' 'Juni' 'Julaye' 'Ogasiti' 'Seputemba' 'Okutoba' 'Novemba' 'Disemba')

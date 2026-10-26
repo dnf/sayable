@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/hi.json
+# Source: locales/hi.json
 
 _sayabletime_locale_hi() {
     _clock_hours=('बारह' 'एक' 'दो' 'तीन' 'चार' 'पाँच' 'छह' 'सात' 'आठ' 'नौ' 'दस' 'ग्यारह')

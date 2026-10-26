@@ -22,7 +22,7 @@ use SayableTime\TimeLocale;
 /** Built-in locale definitions. */
 final class Locales
 {
-    // Source: time/locales/src/af.json
+    // Source: locales/af.json
     // ── Afrikaans ───────────────────────────────────────────────────
 
     public static function AF(): TimeLocale
@@ -46,7 +46,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ak.json
+    // Source: locales/ak.json
     // ── Akan ────────────────────────────────────────────────────────
 
     public static function AK(): TimeLocale
@@ -70,7 +70,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/am.json
+    // Source: locales/am.json
     // ── Amharic ─────────────────────────────────────────────────────
 
     public static function AM(): TimeLocale
@@ -94,7 +94,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ar.json
+    // Source: locales/ar.json
     // ── Arabic ──────────────────────────────────────────────────────
 
     public static function AR(): TimeLocale
@@ -118,7 +118,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ay.json
+    // Source: locales/ay.json
     // ── Aymara ──────────────────────────────────────────────────────
 
     public static function AY(): TimeLocale
@@ -142,7 +142,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/az.json
+    // Source: locales/az.json
     // ── Azerbaijani ─────────────────────────────────────────────────
 
     public static function AZ(): TimeLocale
@@ -166,7 +166,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/bci.json
+    // Source: locales/bci.json
     // ── Baoulé ──────────────────────────────────────────────────────
 
     public static function BCI(): TimeLocale
@@ -190,7 +190,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/be.json
+    // Source: locales/be.json
     // ── Belarusian ──────────────────────────────────────────────────
 
     public static function BE(): TimeLocale
@@ -214,7 +214,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/bem.json
+    // Source: locales/bem.json
     // ── Bemba ───────────────────────────────────────────────────────
 
     public static function BEM(): TimeLocale
@@ -238,7 +238,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/bg.json
+    // Source: locales/bg.json
     // ── Bulgarian ───────────────────────────────────────────────────
 
     public static function BG(): TimeLocale
@@ -262,7 +262,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/bi.json
+    // Source: locales/bi.json
     // ── Bislama ─────────────────────────────────────────────────────
 
     public static function BI(): TimeLocale
@@ -286,7 +286,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/bm.json
+    // Source: locales/bm.json
     // ── Bambara ─────────────────────────────────────────────────────
 
     public static function BM(): TimeLocale
@@ -310,7 +310,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/bn.json
+    // Source: locales/bn.json
     // ── Bengali ─────────────────────────────────────────────────────
 
     public static function BN(): TimeLocale
@@ -334,7 +334,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/br.json
+    // Source: locales/br.json
     // ── Breton ──────────────────────────────────────────────────────
 
     public static function BR(): TimeLocale
@@ -358,7 +358,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/bs.json
+    // Source: locales/bs.json
     // ── Bosnian ─────────────────────────────────────────────────────
 
     public static function BS(): TimeLocale
@@ -382,7 +382,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ca.json
+    // Source: locales/ca.json
     // ── Catalan ─────────────────────────────────────────────────────
 
     public static function CA(): TimeLocale
@@ -406,7 +406,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/cak.json
+    // Source: locales/cak.json
     // ── Kaqchikel ───────────────────────────────────────────────────
 
     public static function CAK(): TimeLocale
@@ -430,7 +430,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ── Cebuano ─────────────────────────────────────────────────────
 
     public static function CEB(): TimeLocale
@@ -454,7 +454,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/cs.json
+    // Source: locales/cs.json
     // ── Czech ───────────────────────────────────────────────────────
 
     public static function CS(): TimeLocale
@@ -478,7 +478,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/cy.json
+    // Source: locales/cy.json
     // ── Welsh ───────────────────────────────────────────────────────
 
     public static function CY(): TimeLocale
@@ -502,7 +502,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/da.json
+    // Source: locales/da.json
     // ── Danish ──────────────────────────────────────────────────────
 
     public static function DA(): TimeLocale
@@ -526,7 +526,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/de.json
+    // Source: locales/de.json
     // ── German ──────────────────────────────────────────────────────
 
     public static function DE(): TimeLocale
@@ -550,7 +550,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/din.json
+    // Source: locales/din.json
     // ── Dinka ───────────────────────────────────────────────────────
 
     public static function DIN(): TimeLocale
@@ -574,7 +574,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/dje.json
+    // Source: locales/dje.json
     // ── Zarma ───────────────────────────────────────────────────────
 
     public static function DJE(): TimeLocale
@@ -598,7 +598,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/dv.json
+    // Source: locales/dv.json
     // ── Dhivehi ─────────────────────────────────────────────────────
 
     public static function DV(): TimeLocale
@@ -622,7 +622,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ── Dyula ───────────────────────────────────────────────────────
 
     public static function DYU(): TimeLocale
@@ -646,7 +646,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/dz.json
+    // Source: locales/dz.json
     // ── Dzongkha ────────────────────────────────────────────────────
 
     public static function DZ(): TimeLocale
@@ -670,7 +670,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ee.json
+    // Source: locales/ee.json
     // ── Ewe ─────────────────────────────────────────────────────────
 
     public static function EE(): TimeLocale
@@ -694,7 +694,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/el.json
+    // Source: locales/el.json
     // ── Greek ───────────────────────────────────────────────────────
 
     public static function EL(): TimeLocale
@@ -718,7 +718,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/en.json
+    // Source: locales/en.json
     // ── English ─────────────────────────────────────────────────────
 
     public static function EN(): TimeLocale
@@ -742,7 +742,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/es.json
+    // Source: locales/es.json
     // ── Spanish ─────────────────────────────────────────────────────
 
     public static function ES(): TimeLocale
@@ -766,7 +766,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/et.json
+    // Source: locales/et.json
     // ── Estonian ────────────────────────────────────────────────────
 
     public static function ET(): TimeLocale
@@ -790,7 +790,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/eu.json
+    // Source: locales/eu.json
     // ── Basque ──────────────────────────────────────────────────────
 
     public static function EU(): TimeLocale
@@ -814,7 +814,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/fa.json
+    // Source: locales/fa.json
     // ── Persian ─────────────────────────────────────────────────────
 
     public static function FA(): TimeLocale
@@ -838,7 +838,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/fan.json
+    // Source: locales/fan.json
     // ── Fang ────────────────────────────────────────────────────────
 
     public static function FAN(): TimeLocale
@@ -862,7 +862,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ff.json
+    // Source: locales/ff.json
     // ── Fulah ───────────────────────────────────────────────────────
 
     public static function FF(): TimeLocale
@@ -886,7 +886,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/fi.json
+    // Source: locales/fi.json
     // ── Finnish ─────────────────────────────────────────────────────
 
     public static function FI(): TimeLocale
@@ -910,7 +910,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/fil.json
+    // Source: locales/fil.json
     // ── Filipino ────────────────────────────────────────────────────
 
     public static function FIL(): TimeLocale
@@ -934,7 +934,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/fj.json
+    // Source: locales/fj.json
     // ── Fijian ──────────────────────────────────────────────────────
 
     public static function FJ(): TimeLocale
@@ -958,7 +958,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/fon.json
+    // Source: locales/fon.json
     // ── Fon ─────────────────────────────────────────────────────────
 
     public static function FON(): TimeLocale
@@ -982,7 +982,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/fr.json
+    // Source: locales/fr.json
     // ── French ──────────────────────────────────────────────────────
 
     public static function FR(): TimeLocale
@@ -1006,7 +1006,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ga.json
+    // Source: locales/ga.json
     // ── Irish ───────────────────────────────────────────────────────
 
     public static function GA(): TimeLocale
@@ -1030,7 +1030,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/gd.json
+    // Source: locales/gd.json
     // ── Scottish Gaelic ─────────────────────────────────────────────
 
     public static function GD(): TimeLocale
@@ -1054,7 +1054,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/gl.json
+    // Source: locales/gl.json
     // ── Galician ────────────────────────────────────────────────────
 
     public static function GL(): TimeLocale
@@ -1078,7 +1078,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/gn.json
+    // Source: locales/gn.json
     // ── Guarani ─────────────────────────────────────────────────────
 
     public static function GN(): TimeLocale
@@ -1102,7 +1102,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/gu.json
+    // Source: locales/gu.json
     // ── Gujarati ────────────────────────────────────────────────────
 
     public static function GU(): TimeLocale
@@ -1126,7 +1126,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/gv.json
+    // Source: locales/gv.json
     // ── Manx ────────────────────────────────────────────────────────
 
     public static function GV(): TimeLocale
@@ -1150,7 +1150,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ha.json
+    // Source: locales/ha.json
     // ── Hausa ───────────────────────────────────────────────────────
 
     public static function HA(): TimeLocale
@@ -1174,7 +1174,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/he.json
+    // Source: locales/he.json
     // ── Hebrew ──────────────────────────────────────────────────────
 
     public static function HE(): TimeLocale
@@ -1198,7 +1198,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/hi.json
+    // Source: locales/hi.json
     // ── Hindi ───────────────────────────────────────────────────────
 
     public static function HI(): TimeLocale
@@ -1222,7 +1222,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ── Hmong ───────────────────────────────────────────────────────
 
     public static function HMN(): TimeLocale
@@ -1246,7 +1246,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/hr.json
+    // Source: locales/hr.json
     // ── Croatian ────────────────────────────────────────────────────
 
     public static function HR(): TimeLocale
@@ -1270,7 +1270,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ht.json
+    // Source: locales/ht.json
     // ── Haitian Creole ──────────────────────────────────────────────
 
     public static function HT(): TimeLocale
@@ -1294,7 +1294,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/hu.json
+    // Source: locales/hu.json
     // ── Hungarian ───────────────────────────────────────────────────
 
     public static function HU(): TimeLocale
@@ -1318,7 +1318,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/hy.json
+    // Source: locales/hy.json
     // ── Armenian ────────────────────────────────────────────────────
 
     public static function HY(): TimeLocale
@@ -1342,7 +1342,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/id.json
+    // Source: locales/id.json
     // ── Indonesian ──────────────────────────────────────────────────
 
     public static function ID(): TimeLocale
@@ -1366,7 +1366,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ig.json
+    // Source: locales/ig.json
     // ── Igbo ────────────────────────────────────────────────────────
 
     public static function IG(): TimeLocale
@@ -1390,7 +1390,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/is.json
+    // Source: locales/is.json
     // ── Icelandic ───────────────────────────────────────────────────
 
     public static function IS(): TimeLocale
@@ -1414,7 +1414,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/it.json
+    // Source: locales/it.json
     // ── Italian ─────────────────────────────────────────────────────
 
     public static function IT(): TimeLocale
@@ -1438,7 +1438,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ja.json
+    // Source: locales/ja.json
     // ── Japanese ────────────────────────────────────────────────────
 
     public static function JA(): TimeLocale
@@ -1462,7 +1462,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/jv.json
+    // Source: locales/jv.json
     // ── Javanese ────────────────────────────────────────────────────
 
     public static function JV(): TimeLocale
@@ -1486,7 +1486,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ka.json
+    // Source: locales/ka.json
     // ── Georgian ────────────────────────────────────────────────────
 
     public static function KA(): TimeLocale
@@ -1510,7 +1510,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ── Kabiye ──────────────────────────────────────────────────────
 
     public static function KBP(): TimeLocale
@@ -1534,7 +1534,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kek.json
+    // Source: locales/kek.json
     // ── Q'eqchi' ────────────────────────────────────────────────────
 
     public static function KEK(): TimeLocale
@@ -1558,7 +1558,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ki.json
+    // Source: locales/ki.json
     // ── Kikuyu ──────────────────────────────────────────────────────
 
     public static function KI(): TimeLocale
@@ -1582,7 +1582,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kk.json
+    // Source: locales/kk.json
     // ── Kazakh ──────────────────────────────────────────────────────
 
     public static function KK(): TimeLocale
@@ -1606,7 +1606,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kl.json
+    // Source: locales/kl.json
     // ── Kalaallisut ─────────────────────────────────────────────────
 
     public static function KL(): TimeLocale
@@ -1630,7 +1630,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/km.json
+    // Source: locales/km.json
     // ── Khmer ───────────────────────────────────────────────────────
 
     public static function KM(): TimeLocale
@@ -1654,7 +1654,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kn.json
+    // Source: locales/kn.json
     // ── Kannada ─────────────────────────────────────────────────────
 
     public static function KN(): TimeLocale
@@ -1678,7 +1678,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ko.json
+    // Source: locales/ko.json
     // ── Korean ──────────────────────────────────────────────────────
 
     public static function KO(): TimeLocale
@@ -1702,7 +1702,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ── Kpelle ──────────────────────────────────────────────────────
 
     public static function KPE(): TimeLocale
@@ -1726,7 +1726,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kri.json
+    // Source: locales/kri.json
     // ── Krio ────────────────────────────────────────────────────────
 
     public static function KRI(): TimeLocale
@@ -1750,7 +1750,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ── Kituba ──────────────────────────────────────────────────────
 
     public static function KTU(): TimeLocale
@@ -1774,7 +1774,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ku.json
+    // Source: locales/ku.json
     // ── Kurdish ─────────────────────────────────────────────────────
 
     public static function KU(): TimeLocale
@@ -1798,7 +1798,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/kw.json
+    // Source: locales/kw.json
     // ── Cornish ─────────────────────────────────────────────────────
 
     public static function KW(): TimeLocale
@@ -1822,7 +1822,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ky.json
+    // Source: locales/ky.json
     // ── Kyrgyz ──────────────────────────────────────────────────────
 
     public static function KY(): TimeLocale
@@ -1846,7 +1846,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/lb.json
+    // Source: locales/lb.json
     // ── Luxembourgish ───────────────────────────────────────────────
 
     public static function LB(): TimeLocale
@@ -1870,7 +1870,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/lg.json
+    // Source: locales/lg.json
     // ── Luganda ─────────────────────────────────────────────────────
 
     public static function LG(): TimeLocale
@@ -1894,7 +1894,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ln.json
+    // Source: locales/ln.json
     // ── Lingala ─────────────────────────────────────────────────────
 
     public static function LN(): TimeLocale
@@ -1918,7 +1918,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/lo.json
+    // Source: locales/lo.json
     // ── Lao ─────────────────────────────────────────────────────────
 
     public static function LO(): TimeLocale
@@ -1942,7 +1942,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/lt.json
+    // Source: locales/lt.json
     // ── Lithuanian ──────────────────────────────────────────────────
 
     public static function LT(): TimeLocale
@@ -1966,7 +1966,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/luo.json
+    // Source: locales/luo.json
     // ── Dholuo ──────────────────────────────────────────────────────
 
     public static function LUO(): TimeLocale
@@ -1990,7 +1990,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/lv.json
+    // Source: locales/lv.json
     // ── Latvian ─────────────────────────────────────────────────────
 
     public static function LV(): TimeLocale
@@ -2014,7 +2014,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mam.json
+    // Source: locales/mam.json
     // ── Mam ─────────────────────────────────────────────────────────
 
     public static function MAM(): TimeLocale
@@ -2038,7 +2038,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/men.json
+    // Source: locales/men.json
     // ── Mende ───────────────────────────────────────────────────────
 
     public static function MEN(): TimeLocale
@@ -2062,7 +2062,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ── Mauritian Creole ────────────────────────────────────────────
 
     public static function MFE(): TimeLocale
@@ -2086,7 +2086,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mg.json
+    // Source: locales/mg.json
     // ── Malagasy ────────────────────────────────────────────────────
 
     public static function MG(): TimeLocale
@@ -2110,7 +2110,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mi.json
+    // Source: locales/mi.json
     // ── Māori ───────────────────────────────────────────────────────
 
     public static function MI(): TimeLocale
@@ -2134,7 +2134,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mk.json
+    // Source: locales/mk.json
     // ── Macedonian ──────────────────────────────────────────────────
 
     public static function MK(): TimeLocale
@@ -2158,7 +2158,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ml.json
+    // Source: locales/ml.json
     // ── Malayalam ───────────────────────────────────────────────────
 
     public static function ML(): TimeLocale
@@ -2182,7 +2182,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mn.json
+    // Source: locales/mn.json
     // ── Mongolian ───────────────────────────────────────────────────
 
     public static function MN(): TimeLocale
@@ -2206,7 +2206,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ── Mandinka ────────────────────────────────────────────────────
 
     public static function MNK(): TimeLocale
@@ -2230,7 +2230,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mos.json
+    // Source: locales/mos.json
     // ── Moore ───────────────────────────────────────────────────────
 
     public static function MOS(): TimeLocale
@@ -2254,7 +2254,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mr.json
+    // Source: locales/mr.json
     // ── Marathi ─────────────────────────────────────────────────────
 
     public static function MR(): TimeLocale
@@ -2278,7 +2278,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ms.json
+    // Source: locales/ms.json
     // ── Malay ───────────────────────────────────────────────────────
 
     public static function MS(): TimeLocale
@@ -2302,7 +2302,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/mt.json
+    // Source: locales/mt.json
     // ── Maltese ─────────────────────────────────────────────────────
 
     public static function MT(): TimeLocale
@@ -2326,7 +2326,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/my.json
+    // Source: locales/my.json
     // ── Burmese ─────────────────────────────────────────────────────
 
     public static function MY(): TimeLocale
@@ -2350,7 +2350,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/nb.json
+    // Source: locales/nb.json
     // ── Norwegian Bokmål ────────────────────────────────────────────
 
     public static function NB(): TimeLocale
@@ -2374,7 +2374,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/nd.json
+    // Source: locales/nd.json
     // ── Northern Ndebele ────────────────────────────────────────────
 
     public static function ND(): TimeLocale
@@ -2398,7 +2398,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ne.json
+    // Source: locales/ne.json
     // ── Nepali ──────────────────────────────────────────────────────
 
     public static function NE(): TimeLocale
@@ -2422,7 +2422,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ng.json
+    // Source: locales/ng.json
     // ── Oshiwambo ───────────────────────────────────────────────────
 
     public static function NG(): TimeLocale
@@ -2446,7 +2446,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/nl.json
+    // Source: locales/nl.json
     // ── Dutch ───────────────────────────────────────────────────────
 
     public static function NL(): TimeLocale
@@ -2470,7 +2470,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/nr.json
+    // Source: locales/nr.json
     // ── Southern Ndebele ────────────────────────────────────────────
 
     public static function NR(): TimeLocale
@@ -2494,7 +2494,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/nso.json
+    // Source: locales/nso.json
     // ── Northern Sotho ──────────────────────────────────────────────
 
     public static function NSO(): TimeLocale
@@ -2518,7 +2518,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/nus.json
+    // Source: locales/nus.json
     // ── Nuer ────────────────────────────────────────────────────────
 
     public static function NUS(): TimeLocale
@@ -2542,7 +2542,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ny.json
+    // Source: locales/ny.json
     // ── Chichewa ────────────────────────────────────────────────────
 
     public static function NY(): TimeLocale
@@ -2566,7 +2566,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/om.json
+    // Source: locales/om.json
     // ── Oromo ───────────────────────────────────────────────────────
 
     public static function OM(): TimeLocale
@@ -2590,7 +2590,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/or.json
+    // Source: locales/or.json
     // ── Odia ────────────────────────────────────────────────────────
 
     public static function OR(): TimeLocale
@@ -2614,7 +2614,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/pa.json
+    // Source: locales/pa.json
     // ── Punjabi ─────────────────────────────────────────────────────
 
     public static function PA(): TimeLocale
@@ -2638,7 +2638,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/pis.json
+    // Source: locales/pis.json
     // ── Pijin ───────────────────────────────────────────────────────
 
     public static function PIS(): TimeLocale
@@ -2662,7 +2662,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/pl.json
+    // Source: locales/pl.json
     // ── Polish ──────────────────────────────────────────────────────
 
     public static function PL(): TimeLocale
@@ -2686,7 +2686,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/pov.json
+    // Source: locales/pov.json
     // ── Guinea-Bissau Creole ────────────────────────────────────────
 
     public static function POV(): TimeLocale
@@ -2710,7 +2710,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ps.json
+    // Source: locales/ps.json
     // ── Pashto ──────────────────────────────────────────────────────
 
     public static function PS(): TimeLocale
@@ -2734,7 +2734,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/pt.json
+    // Source: locales/pt.json
     // ── Portuguese ──────────────────────────────────────────────────
 
     public static function PT(): TimeLocale
@@ -2758,7 +2758,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/qu.json
+    // Source: locales/qu.json
     // ── Quechua ─────────────────────────────────────────────────────
 
     public static function QU(): TimeLocale
@@ -2782,7 +2782,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/quc.json
+    // Source: locales/quc.json
     // ── K'iche' ─────────────────────────────────────────────────────
 
     public static function QUC(): TimeLocale
@@ -2806,7 +2806,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ro.json
+    // Source: locales/ro.json
     // ── Romanian ────────────────────────────────────────────────────
 
     public static function RO(): TimeLocale
@@ -2830,7 +2830,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ru.json
+    // Source: locales/ru.json
     // ── Russian ─────────────────────────────────────────────────────
 
     public static function RU(): TimeLocale
@@ -2854,7 +2854,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/rw.json
+    // Source: locales/rw.json
     // ── Kinyarwanda ─────────────────────────────────────────────────
 
     public static function RW(): TimeLocale
@@ -2878,7 +2878,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sar.json
+    // Source: locales/sar.json
     // ── Sara ────────────────────────────────────────────────────────
 
     public static function SAR(): TimeLocale
@@ -2902,7 +2902,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sd.json
+    // Source: locales/sd.json
     // ── Sindhi ──────────────────────────────────────────────────────
 
     public static function SD(): TimeLocale
@@ -2926,7 +2926,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sg.json
+    // Source: locales/sg.json
     // ── Sango ───────────────────────────────────────────────────────
 
     public static function SG(): TimeLocale
@@ -2950,7 +2950,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/shi.json
+    // Source: locales/shi.json
     // ── Tachelhit ───────────────────────────────────────────────────
 
     public static function SHI(): TimeLocale
@@ -2974,7 +2974,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/shn.json
+    // Source: locales/shn.json
     // ── Shan ────────────────────────────────────────────────────────
 
     public static function SHN(): TimeLocale
@@ -2998,7 +2998,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/si.json
+    // Source: locales/si.json
     // ── Sinhala ─────────────────────────────────────────────────────
 
     public static function SI(): TimeLocale
@@ -3022,7 +3022,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sk.json
+    // Source: locales/sk.json
     // ── Slovak ──────────────────────────────────────────────────────
 
     public static function SK(): TimeLocale
@@ -3046,7 +3046,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sl.json
+    // Source: locales/sl.json
     // ── Slovenian ───────────────────────────────────────────────────
 
     public static function SL(): TimeLocale
@@ -3070,7 +3070,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sn.json
+    // Source: locales/sn.json
     // ── Shona ───────────────────────────────────────────────────────
 
     public static function SN(): TimeLocale
@@ -3094,7 +3094,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/snk.json
+    // Source: locales/snk.json
     // ── Soninke ─────────────────────────────────────────────────────
 
     public static function SNK(): TimeLocale
@@ -3118,7 +3118,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/so.json
+    // Source: locales/so.json
     // ── Somali ──────────────────────────────────────────────────────
 
     public static function SO(): TimeLocale
@@ -3142,7 +3142,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sq.json
+    // Source: locales/sq.json
     // ── Albanian ────────────────────────────────────────────────────
 
     public static function SQ(): TimeLocale
@@ -3166,7 +3166,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sr.json
+    // Source: locales/sr.json
     // ── Serbian ─────────────────────────────────────────────────────
 
     public static function SR(): TimeLocale
@@ -3190,7 +3190,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ss.json
+    // Source: locales/ss.json
     // ── siSwati ─────────────────────────────────────────────────────
 
     public static function SS(): TimeLocale
@@ -3214,7 +3214,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/st.json
+    // Source: locales/st.json
     // ── Southern Sotho ──────────────────────────────────────────────
 
     public static function ST(): TimeLocale
@@ -3238,7 +3238,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/su.json
+    // Source: locales/su.json
     // ── Sundanese ───────────────────────────────────────────────────
 
     public static function SU(): TimeLocale
@@ -3262,7 +3262,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/suk.json
+    // Source: locales/suk.json
     // ── Sukuma ──────────────────────────────────────────────────────
 
     public static function SUK(): TimeLocale
@@ -3286,7 +3286,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sv.json
+    // Source: locales/sv.json
     // ── Swedish ─────────────────────────────────────────────────────
 
     public static function SV(): TimeLocale
@@ -3310,7 +3310,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/sw.json
+    // Source: locales/sw.json
     // ── Swahili ─────────────────────────────────────────────────────
 
     public static function SW(): TimeLocale
@@ -3334,7 +3334,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ta.json
+    // Source: locales/ta.json
     // ── Tamil ───────────────────────────────────────────────────────
 
     public static function TA(): TimeLocale
@@ -3358,7 +3358,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/te.json
+    // Source: locales/te.json
     // ── Telugu ──────────────────────────────────────────────────────
 
     public static function TE(): TimeLocale
@@ -3382,7 +3382,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tem.json
+    // Source: locales/tem.json
     // ── Temne ───────────────────────────────────────────────────────
 
     public static function TEM(): TimeLocale
@@ -3406,7 +3406,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tet.json
+    // Source: locales/tet.json
     // ── Tetum ───────────────────────────────────────────────────────
 
     public static function TET(): TimeLocale
@@ -3430,7 +3430,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tg.json
+    // Source: locales/tg.json
     // ── Tajik ───────────────────────────────────────────────────────
 
     public static function TG(): TimeLocale
@@ -3454,7 +3454,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/th.json
+    // Source: locales/th.json
     // ── Thai ────────────────────────────────────────────────────────
 
     public static function TH(): TimeLocale
@@ -3478,7 +3478,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ti.json
+    // Source: locales/ti.json
     // ── Tigrinya ────────────────────────────────────────────────────
 
     public static function TI(): TimeLocale
@@ -3502,7 +3502,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tig.json
+    // Source: locales/tig.json
     // ── Tigre ───────────────────────────────────────────────────────
 
     public static function TIG(): TimeLocale
@@ -3526,7 +3526,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tk.json
+    // Source: locales/tk.json
     // ── Turkmen ─────────────────────────────────────────────────────
 
     public static function TK(): TimeLocale
@@ -3550,7 +3550,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tn.json
+    // Source: locales/tn.json
     // ── Tswana ──────────────────────────────────────────────────────
 
     public static function TN(): TimeLocale
@@ -3574,7 +3574,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ── Tok Pisin ───────────────────────────────────────────────────
 
     public static function TPI(): TimeLocale
@@ -3598,7 +3598,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tr.json
+    // Source: locales/tr.json
     // ── Turkish ─────────────────────────────────────────────────────
 
     public static function TR(): TimeLocale
@@ -3622,7 +3622,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ts.json
+    // Source: locales/ts.json
     // ── Tsonga ──────────────────────────────────────────────────────
 
     public static function TS(): TimeLocale
@@ -3646,7 +3646,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tum.json
+    // Source: locales/tum.json
     // ── Tumbuka ─────────────────────────────────────────────────────
 
     public static function TUM(): TimeLocale
@@ -3670,7 +3670,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ── Central Atlas Tamazight ─────────────────────────────────────
 
     public static function TZM(): TimeLocale
@@ -3694,7 +3694,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/uk.json
+    // Source: locales/uk.json
     // ── Ukrainian ───────────────────────────────────────────────────
 
     public static function UK(): TimeLocale
@@ -3718,7 +3718,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/umb.json
+    // Source: locales/umb.json
     // ── Umbundu ─────────────────────────────────────────────────────
 
     public static function UMB(): TimeLocale
@@ -3742,7 +3742,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ur.json
+    // Source: locales/ur.json
     // ── Urdu ────────────────────────────────────────────────────────
 
     public static function UR(): TimeLocale
@@ -3766,7 +3766,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/uz.json
+    // Source: locales/uz.json
     // ── Uzbek ───────────────────────────────────────────────────────
 
     public static function UZ(): TimeLocale
@@ -3790,7 +3790,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/ve.json
+    // Source: locales/ve.json
     // ── Venda ───────────────────────────────────────────────────────
 
     public static function VE(): TimeLocale
@@ -3814,7 +3814,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/vi.json
+    // Source: locales/vi.json
     // ── Vietnamese ──────────────────────────────────────────────────
 
     public static function VI(): TimeLocale
@@ -3838,7 +3838,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ── Makhuwa ─────────────────────────────────────────────────────
 
     public static function VMW(): TimeLocale
@@ -3862,7 +3862,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/wo.json
+    // Source: locales/wo.json
     // ── Wolof ───────────────────────────────────────────────────────
 
     public static function WO(): TimeLocale
@@ -3886,7 +3886,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/xh.json
+    // Source: locales/xh.json
     // ── Xhosa ───────────────────────────────────────────────────────
 
     public static function XH(): TimeLocale
@@ -3910,7 +3910,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/yao.json
+    // Source: locales/yao.json
     // ── Yao ─────────────────────────────────────────────────────────
 
     public static function YAO(): TimeLocale
@@ -3934,7 +3934,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/yo.json
+    // Source: locales/yo.json
     // ── Yoruba ──────────────────────────────────────────────────────
 
     public static function YO(): TimeLocale
@@ -3958,7 +3958,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/yue.json
+    // Source: locales/yue.json
     // ── Cantonese ───────────────────────────────────────────────────
 
     public static function YUE(): TimeLocale
@@ -3982,7 +3982,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ── Comorian ────────────────────────────────────────────────────
 
     public static function ZDJ(): TimeLocale
@@ -4006,7 +4006,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/zh.json
+    // Source: locales/zh.json
     // ── Chinese ─────────────────────────────────────────────────────
 
     public static function ZH(): TimeLocale
@@ -4030,7 +4030,7 @@ final class Locales
         );
     }
 
-    // Source: time/locales/src/zu.json
+    // Source: locales/zu.json
     // ── Zulu ────────────────────────────────────────────────────────
 
     public static function ZU(): TimeLocale

@@ -1,0 +1,257 @@
+{
+  "code": "ml",
+  "name": "Malayalam",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ദിവസം",
+        "other": "{n} ദിവസങ്ങൾ"
+      },
+      "week": {
+        "one": "{n} ആഴ്ച",
+        "other": "{n} ആഴ്ചകൾ"
+      },
+      "month": {
+        "one": "{n} മാസം",
+        "other": "{n} മാസങ്ങൾ"
+      },
+      "year": {
+        "one": "{n} വയസ്സ്",
+        "other": "{n} വയസ്സ്"
+      }
+    },
+    "half": "{0} ര",
+    "delimiter": ", ",
+    "justBorn": "നവജാതശിശു",
+    "stages": {
+      "newborn": "നവജാതശിശു",
+      "infant": "ശിശു",
+      "toddler": "കുഞ്ഞ്",
+      "child": "കുട്ടി",
+      "teenager": "കൗമാരക്കാരൻ",
+      "adult": "മുതിർന്നയാൾ"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ദിവസം",
+        "week": "{n} ആഴ്ച",
+        "month": "{n} മാസം",
+        "year": "{n} വർഷം"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ദി",
+        "week": "{n} ആ",
+        "month": "{n} മാ",
+        "year": "{n} വ"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ജനുവരി",
+      "ഫെബ്രുവരി",
+      "മാർച്ച്",
+      "ഏപ്രിൽ",
+      "മേയ്",
+      "ജൂൺ",
+      "ജൂലൈ",
+      "ഓഗസ്റ്റ്",
+      "സെപ്റ്റംബർ",
+      "ഒക്ടോബർ",
+      "നവംബർ",
+      "ഡിസംബർ"
+    ],
+    "weekdays": [
+      "ഞായറാഴ്ച",
+      "തിങ്കളാഴ്ച",
+      "ചൊവ്വാഴ്ച",
+      "ബുധനാഴ്ച",
+      "വ്യാഴാഴ്ച",
+      "വെള്ളിയാഴ്ച",
+      "ശനിയാഴ്ച"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ഇന്ന്",
+    "tomorrow": "നാളെ",
+    "yesterday": "ഇന്നലെ",
+    "dayAfterTomorrow": "മറ്റന്നാൾ",
+    "dayBeforeYesterday": "മിനിഞ്ഞാന്ന്",
+    "thisWeekday": "ഈ {weekday}",
+    "nextWeekday": "അടുത്ത {weekday}",
+    "lastWeekday": "കഴിഞ്ഞ {weekday}",
+    "short": {
+      "months": [
+        "ജനു",
+        "ഫെബ്രു",
+        "മാർ",
+        "ഏപ്രി",
+        "മേയ്",
+        "ജൂൺ",
+        "ജൂലൈ",
+        "ഓഗ",
+        "സെപ്റ്റം",
+        "ഒക്ടോ",
+        "നവം",
+        "ഡിസം"
+      ],
+      "weekdays": [
+        "ഞായർ",
+        "തിങ്കൾ",
+        "ചൊവ്വ",
+        "ബുധൻ",
+        "വ്യാഴം",
+        "വെള്ളി",
+        "ശനി"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} സെക്കൻഡ്",
+        "other": "{n} സെക്കൻഡുകൾ"
+      },
+      "minute": {
+        "one": "{n} മിനിറ്റ്",
+        "other": "{n} മിനിറ്റുകൾ"
+      },
+      "hour": {
+        "one": "{n} മണിക്കൂർ",
+        "other": "{n} മണിക്കൂറുകൾ"
+      },
+      "day": {
+        "one": "{n} ദിവസം",
+        "other": "{n} ദിവസങ്ങൾ"
+      },
+      "week": {
+        "one": "{n} ആഴ്ച",
+        "other": "{n} ആഴ്ചകൾ"
+      },
+      "month": {
+        "one": "{n} മാസം",
+        "other": "{n} മാസങ്ങൾ"
+      },
+      "year": {
+        "one": "{n} വർഷം",
+        "other": "{n} വർഷങ്ങൾ"
+      }
+    },
+    "half": "{0} ര",
+    "delimiter": ", ",
+    "justNow": "ഇപ്പോൾ",
+    "ago": "{0} മുമ്പ്",
+    "inFuture": "{0} കഴിഞ്ഞ്",
+    "short": {
+      "units": {
+        "second": "{n} സെ॰",
+        "minute": "{n} മി॰",
+        "hour": "{n} മ॰",
+        "day": "{n} ദിവസം",
+        "week": "{n} ആഴ്ച",
+        "month": "{n} മാസം",
+        "year": "{n} വർഷം"
+      },
+      "ago": "{0} മുമ്പ്",
+      "inFuture": "{0} കഴിഞ്ഞ്",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} സെ",
+        "minute": "{n} മി",
+        "hour": "{n} മ",
+        "day": "{n} ദി",
+        "week": "{n} ആ",
+        "month": "{n} മാ",
+        "year": "{n} വ"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} മുമ്പ്",
+      "inFuture": "{0} കഴിഞ്ഞ്",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "പന്ത്രണ്ട്",
+        "ഒന്ന്",
+        "രണ്ട്",
+        "മൂന്ന്",
+        "നാല്",
+        "അഞ്ച്",
+        "ആറ്",
+        "ഏഴ്",
+        "എട്ട്",
+        "ഒമ്പത്",
+        "പത്ത്",
+        "പതിനൊന്ന്"
+      ],
+      "midnight": "അർദ്ധരാത്രി",
+      "noon": "ഉച്ച",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

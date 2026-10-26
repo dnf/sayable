@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/zu.json
+# Source: locales/zu.json
 
 _sayabledate_locale_zu() {
     _months=('Januwari' 'Februwari' 'Mashi' 'Ephreli' 'Meyi' 'Juni' 'Julayi' 'Agasti' 'Septhemba' 'Okthoba' 'Novemba' 'Disemba')

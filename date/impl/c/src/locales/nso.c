@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: date/locales/src/nso.json */
+/* Source: locales/nso.json */
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_nso[12] = {

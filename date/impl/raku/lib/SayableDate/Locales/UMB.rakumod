@@ -9,7 +9,7 @@ use v6.d;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/umb.json
+# Source: locales/umb.json
 unit module SayableDate::Locales::UMB;
 
 our sub locale() {

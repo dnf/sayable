@@ -11,15 +11,15 @@ Thanks for your interest in contributing! Sayable maintains identical implementa
 ## Project structure
 
 ```
-age/impl/
-  ada/  c/  clojure/  cobol/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
-  java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
-age/locales/       # 110 JSON files — single source of truth for locale data
-age/codegen/
-  targets/     # One emitter + plural rules per target language
-  generate.py  # Orchestrator: loads JSON, runs emitters, writes files
-age/tests/         # Canonical test specification
-age/docs/          # Shared documentation
+locales/           # One JSON file per language, shared by all four libraries: the single source of truth for locale data
+age/               # sayable-age       } each library has the same layout:
+date/              # sayable-date      }   config/   version.json, metadata.json, tests.json (canonical test spec)
+duration/          # sayable-duration  }   codegen/  generate.py + targets/<lang>/ (one emitter per language)
+time/              # sayable-time      }   impl/     <lang>/ for every language (ada/, bash/, c/, ... zig/)
+                   #                   }   docs/     library-specific docs
+cli/               # sayable CLI for every language, the generated test harness, the fuzzer
+docs/              # Cross-library docs: testing, input formats, adding a locale, docs/locales/<code>.md examples
+tools/             # Repo-wide generators and checks
 ```
 
 ## Development workflow
@@ -85,7 +85,7 @@ Every run captures output to `.logs/<action>/<language>.log` (e.g., `.logs/test/
 - **All implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
 - **Deterministic tests.** Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero dependencies.** No runtime dependencies in any language. Pure date arithmetic.
-- **Spec-first testing.** The canonical test specification lives in [`age/config/tests.json`](age/config/tests.json). Add new test cases there first, then implement in all languages.
+- **Spec-first testing.** Each library's canonical test specification lives in its `config/tests.json` (for example [`age/config/tests.json`](age/config/tests.json)). Add new test cases there first, then implement in all languages.
 - **Don't trust a language's own tests.** Native suites are hand-written per language and can drift. The CLI harness (`just test cli`) runs the canonical spec against every language's CLI from one generated script, and the fuzz test (`just fuzz`) checks that every language gives the same answer to thousands of random requests. See [`docs/testing.md`](docs/testing.md).
 
 ## Discuss before implementing
@@ -100,29 +100,31 @@ The only exception: if you're a native speaker fixing a translation or plural ru
 
 Native speaker feedback is especially welcome. If a translation sounds unnatural, a plural rule is wrong, or a stage label uses the wrong register, please open an issue or PR.
 
+Each language's data for all four libraries is in one file, `locales/{code}.json`: the shared `code`, `name` and `pluralRule`, then an `age`, `date`, `duration` and `time` section. The generated example page, [`docs/locales/{code}.md`](docs/locales/), shows what every library currently outputs for that locale, which is usually the quickest way to spot what sounds wrong.
+
 To fix a locale:
 
-1. Edit the JSON file in `age/locales/{code}.json`
-2. Run `python -m codegen.generate` to regenerate all language implementations
-3. Run `just test` to verify
+1. Edit its section in `locales/{code}.json`
+2. Run `just generate locales` to regenerate the locale code in every library and language, and the example pages
+3. Run `just check`, `just test` and `just test cli` to verify
 
-Never edit the generated locale files (e.g. `age/impl/typescript/age/impl/age/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`age/codegen/README.md`](age/codegen/README.md) for full details.
+Never edit the generated locale files (e.g. `age/impl/typescript/src/locales/fr.ts`) or `docs/locales/*.md` by hand — they will be overwritten by the generator. See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for every field and [`age/codegen/README.md`](age/codegen/README.md) for how the generator works.
 
 See [`age/docs/gender-and-stages.md`](age/docs/gender-and-stages.md) for the gender analysis of stage labels.
 
 ### New locales
 
-See [`age/docs/adding-a-locale.md`](age/docs/adding-a-locale.md) for a detailed guide. In short:
+See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. In short:
 
-1. Identify the CLDR plural rule for the language (one of the 23 existing rules usually fits)
-2. Create `age/locales/{code}.json` with the locale data
-3. Run `python -m codegen.generate` to generate locale files in all languages
-4. Add test cases to `age/config/tests.json` and implement them in all test files
-5. Run `just test`
+1. Identify the CLDR plural rule for the language (one of the 23 existing rules covers every CLDR pattern)
+2. Create `locales/{code}.json` with the shared fields and a section for each library (`age`, `date`, `duration`, `time`)
+3. Run `just generate locales` to generate locale code in every library and language, plus `docs/locales/{code}.md`
+4. Add test cases to the libraries' `config/tests.json` files and implement them in all test files
+5. Run `just check`, `just test`, `just test cli` and `just fuzz`
 
 ### Bug fixes
 
-If you find a discrepancy between implementations, file an issue with the input and the differing outputs. `just fuzz` finds these automatically and prints a reproducible seed. All implementations must match the spec in `age/config/tests.json`.
+If you find a discrepancy between implementations, file an issue with the input and the differing outputs. `just fuzz` finds these automatically and prints a reproducible seed. All implementations must match the spec in each library's `config/tests.json`.
 
 The fastest way to get a bug fixed is to include a failing test case in the format used by [`age/config/tests.json`](age/config/tests.json). If you can't reproduce it with a specific date pair, we probably can't either.
 
@@ -155,10 +157,10 @@ Before submitting a PR, verify:
 
 - [ ] Tests pass in all affected languages (`just test`)
 - [ ] The CLI harness passes for affected languages (`just test cli <lang>`) and `just fuzz` reports no disagreements
-- [ ] New test cases added to `age/config/tests.json` first (if applicable)
+- [ ] New test cases added to the library's `config/tests.json` first (if applicable), and the CLI harness regenerated (`python3 cli/generate-test-harness.py`)
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
-- [ ] Locale changes made in `age/locales/*.json` and regenerated (not hand-edited)
-- [ ] `just check` passes (codegen files up to date)
+- [ ] Locale changes made in `locales/*.json` and regenerated with `just generate locales` (not hand-edited)
+- [ ] `just check` passes (generated code and locale docs up to date)
 - [ ] All implementations updated (for logic/feature changes)
 - [ ] No runtime dependencies added
 

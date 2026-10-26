@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/tig.json
+# Source: locales/tig.json
 
 _sayabledate_locale_tig() {
     _months=('Yannaayer' 'Febbraayer' 'Maaris' 'Abriil' 'Maay' 'Yuunyo' 'Yulyo' 'Agoosṭo' 'Seṭṭembre' 'Oṭṭoobre' 'Noovembre' 'Diičembre')

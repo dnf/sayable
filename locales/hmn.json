@@ -1,0 +1,206 @@
+{
+  "code": "hmn",
+  "name": "Hmong",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "{n} hnub",
+      "week": "{n} lub lim tiam",
+      "month": "{n} lub hlis",
+      "year": "{n} xyoo"
+    },
+    "half": "{0} thiab ib nrab",
+    "delimiter": ", ",
+    "justBorn": "Nyuam qhuav yug",
+    "stages": {
+      "newborn": "Nyuam qhuav yug",
+      "infant": "Me nyuam mos",
+      "toddler": "Me nyuam tseem taug kev",
+      "child": "Me nyuam",
+      "teenager": "Tub ntxhais hluas",
+      "adult": "Neeg laus"
+    },
+    "short": {
+      "units": {
+        "day": "{n} hnub",
+        "week": "{n} lim tiam",
+        "month": "{n} hlis",
+        "year": "{n} xyoo"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Ib Hlis",
+      "Ob Hlis",
+      "Peb Hlis",
+      "Plaub Hlis",
+      "Tsib Hlis",
+      "Rau Hlis",
+      "Xya Hlis",
+      "Yim Hlis",
+      "Cuaj Hlis",
+      "Kaum Hlis",
+      "Kaum Ib Hlis",
+      "Kaum Ob Hlis"
+    ],
+    "weekdays": [
+      "Hnub Tim Ib",
+      "Hnub Tim Ob",
+      "Hnub Tim Peb",
+      "Hnub Tim Plaub",
+      "Hnub Tim Tsib",
+      "Hnub Tim Rau",
+      "Hnub Tim Xya"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "hnub no",
+    "tomorrow": "tag kis",
+    "yesterday": "nag hmo",
+    "dayAfterTomorrow": "ob hnub tom ntej",
+    "dayBeforeYesterday": "ob hnub dhau los",
+    "thisWeekday": "{weekday} no",
+    "nextWeekday": "{weekday} tom ntej",
+    "lastWeekday": "{weekday} tas los",
+    "short": {
+      "months": [
+        "1 Hli",
+        "2 Hli",
+        "3 Hli",
+        "4 Hli",
+        "5 Hli",
+        "6 Hli",
+        "7 Hli",
+        "8 Hli",
+        "9 Hli",
+        "10 Hli",
+        "11 Hli",
+        "12 Hli"
+      ],
+      "weekdays": [
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{m}/{d}",
+      "datePatternWithYear": "{m}/{d}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} chib",
+      "minute": "{n} feeb",
+      "hour": "{n} teev",
+      "day": "{n} hnub",
+      "week": "{n} lub lim tiam",
+      "month": "{n} lub hlis",
+      "year": "{n} xyoo"
+    },
+    "half": "{0} thiab ib nrab",
+    "delimiter": ", ",
+    "justNow": "tam sim no",
+    "ago": "{0} dhau los",
+    "inFuture": "hauv {0}",
+    "short": {
+      "units": {
+        "second": "{n} chib",
+        "minute": "{n} feeb",
+        "hour": "{n} teev",
+        "day": "{n} hnub",
+        "week": "{n} lim tiam",
+        "month": "{n} hlis",
+        "year": "{n} xyoo"
+      },
+      "ago": "{0} dhau los",
+      "inFuture": "hauv {0}"
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} dhau los",
+      "inFuture": "hauv {0}"
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "kaum ob",
+        "ib",
+        "ob",
+        "peb",
+        "plaub",
+        "tsib",
+        "rau",
+        "xya",
+        "yim",
+        "cuaj",
+        "kaum",
+        "kaum ib"
+      ],
+      "midnight": "ib tag hmo",
+      "noon": "tav su",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

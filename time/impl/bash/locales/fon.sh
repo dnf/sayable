@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/fon.json
+# Source: locales/fon.json
 
 _sayabletime_locale_fon() {
     _clock_hours=('wěwè' 'ɖokpo' 'wè' 'atɔn' 'ɛnɛ' 'atɔ́ɔ́n' 'ayizɛ̀n' 'tɛnwè' 'tantɔn' 'tɛnɛnɛ' 'wǒ' 'ɖokpo-wǒ')

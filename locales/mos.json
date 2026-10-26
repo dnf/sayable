@@ -1,0 +1,224 @@
+{
+  "code": "mos",
+  "name": "Moore",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "daare {n}",
+      "week": "semaana {n}",
+      "month": "kiuugu {n}",
+      "year": "yʋʋmde {n}"
+    },
+    "half": "{0} la pʋɩ-sʋka",
+    "delimiter": ", ",
+    "justBorn": "A sẽn dog-a",
+    "stages": {
+      "newborn": "Bi-paalga",
+      "infant": "Bi-bɩɩga",
+      "toddler": "Bi-kɩdga",
+      "child": "Biiga",
+      "teenager": "Bi-raaga",
+      "adult": "Nin-kẽema"
+    },
+    "short": {
+      "units": {
+        "day": "daar. {n}",
+        "week": "sem. {n}",
+        "month": "kiu. {n}",
+        "year": "yʋʋm. {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "daar {n}",
+        "week": "sem {n}",
+        "month": "kiu {n}",
+        "year": "yʋʋm {n}"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Zãn-naabu",
+      "Sig-noy-yaadre",
+      "Sig-noy-taabo",
+      "Kãn-saglem",
+      "Koabg-taabo",
+      "Koabg-yaadre",
+      "Baspɩɩre",
+      "Gɩ-sõongo",
+      "Tũubg-sõongo",
+      "Pẽemb-sõongo",
+      "Laafi-bãaga",
+      "Filiga-bãaga"
+    ],
+    "weekdays": [
+      "Alhadi",
+      "Atɩnni",
+      "Atalaata",
+      "Alarba",
+      "Alkamisa",
+      "Arjuma",
+      "Asibti"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "rũnda",
+    "tomorrow": "beoog",
+    "yesterday": "zaame",
+    "dayAfterTomorrow": "beoog sẽn wat",
+    "dayBeforeYesterday": "zaame sẽn loog",
+    "thisWeekday": "{weekday} kãnga",
+    "nextWeekday": "{weekday} sẽn wat",
+    "lastWeekday": "{weekday} sẽn loog",
+    "short": {
+      "months": [
+        "Zãn",
+        "S-y",
+        "S-t",
+        "Kãn",
+        "K-t",
+        "K-y",
+        "Bas",
+        "Gɩ",
+        "Tũu",
+        "Pẽe",
+        "Laa",
+        "Fil"
+      ],
+      "weekdays": [
+        "Alh",
+        "Atɩ",
+        "Ata",
+        "Ala",
+        "Alk",
+        "Arj",
+        "Asi"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "sẽk {n}",
+      "minute": "minit {n}",
+      "hour": "lɛɛre {n}",
+      "day": "daare {n}",
+      "week": "semaana {n}",
+      "month": "kiuugu {n}",
+      "year": "yʋʋmde {n}"
+    },
+    "half": "{0} la pʋɩ-sʋka",
+    "delimiter": ", ",
+    "justNow": "masã",
+    "ago": "{0} sẽn loog",
+    "inFuture": "ka {0}",
+    "short": {
+      "units": {
+        "second": "sẽk {n}",
+        "minute": "min. {n}",
+        "hour": "lɛɛr. {n}",
+        "day": "daar. {n}",
+        "week": "sem. {n}",
+        "month": "kiu. {n}",
+        "year": "yʋʋm. {n}"
+      },
+      "ago": "{0} sẽn loog",
+      "inFuture": "ka {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "sẽk {n}",
+        "minute": "min {n}",
+        "hour": "lɛɛr {n}",
+        "day": "daar {n}",
+        "week": "sem {n}",
+        "month": "kiu {n}",
+        "year": "yʋʋm {n}"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} loog",
+      "inFuture": "ka {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "piig la a yiibu",
+        "a yembre",
+        "a yiibu",
+        "a tãabo",
+        "a naase",
+        "a nu",
+        "a yoobe",
+        "a yopoe",
+        "a niini",
+        "a wae",
+        "piiga",
+        "piig la a yembre"
+      ],
+      "midnight": "yʋng-vɩɩse",
+      "noon": "wĩntoog zabre",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: duration/locales/src/ta.json
+# Source: locales/ta.json
 
 proc plural_ta {n} {
     if {$n == 1} { return "one" }

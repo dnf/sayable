@@ -7,7 +7,7 @@
 % ║ Changes will be overwritten the next time codegen runs.      ║
 % ║ Edit the generator or locale JSON instead.                   ║
 % ╚══════════════════════════════════════════════════════════════╝
-% Source: date/locales/src/bci.json
+% Source: locales/bci.json
 
 function loc = locale_bci()
   loc.code = 'bci';

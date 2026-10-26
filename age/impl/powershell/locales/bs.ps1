@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: age/locales/src/bs.json
+# Source: locales/bs.json
 
 function plural_bs([int]$n) {
     $mod10 = $n % 10

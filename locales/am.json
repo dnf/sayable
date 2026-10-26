@@ -1,0 +1,270 @@
+{
+  "code": "am",
+  "name": "Amharic",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} ቀን",
+        "other": "{n} ቀናት"
+      },
+      "week": {
+        "one": "{n} ሳምንት",
+        "other": "{n} ሳምንታት"
+      },
+      "month": {
+        "one": "{n} ወር",
+        "other": "{n} ወራት"
+      },
+      "year": {
+        "one": "{n} ዓመት",
+        "other": "{n} ዓመታት"
+      }
+    },
+    "half": "{0} ተኩል",
+    "delimiter": "፣ ",
+    "justBorn": "አዲስ የተወለደ",
+    "stages": {
+      "newborn": "አዲስ የተወለደ",
+      "infant": "ሕፃን",
+      "toddler": "ሕፃን ልጅ",
+      "child": "ልጅ",
+      "teenager": "ታዳጊ",
+      "adult": "አዋቂ"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ቀናት",
+        "week": {
+          "one": "{n} ሳምንት",
+          "other": "{n} ሳምንታት"
+        },
+        "month": "{n} ወራት",
+        "year": {
+          "one": "{n} ዓመት",
+          "other": "{n} ዓመታት"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} ቀ",
+        "week": "{n} ሳምንት",
+        "month": "{n} ወር",
+        "year": {
+          "one": "{n} ዓመት",
+          "other": "{n} ዓ"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "ጃንዋሪ",
+      "ፌብሩወሪ",
+      "ማርች",
+      "ኤፕሪል",
+      "ሜይ",
+      "ጁን",
+      "ጁላይ",
+      "ኦገስት",
+      "ሴፕቴምበር",
+      "ኦክቶበር",
+      "ኖቬምበር",
+      "ዲሴምበር"
+    ],
+    "weekdays": [
+      "እሑድ",
+      "ሰኞ",
+      "ማክሰኞ",
+      "ረቡዕ",
+      "ሐሙስ",
+      "ዓርብ",
+      "ቅዳሜ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ዛሬ",
+    "tomorrow": "ነገ",
+    "yesterday": "ትናንት",
+    "dayAfterTomorrow": "ከነገ ወዲያ",
+    "dayBeforeYesterday": "ከትናንት በፊት",
+    "thisWeekday": "ይህ {weekday}",
+    "nextWeekday": "ቀጣይ {weekday}",
+    "lastWeekday": "ያለፈው {weekday}",
+    "short": {
+      "months": [
+        "ጃንዋ",
+        "ፌብሩ",
+        "ማርች",
+        "ኤፕሪ",
+        "ሜይ",
+        "ጁን",
+        "ጁላይ",
+        "ኦገስ",
+        "ሴፕቴ",
+        "ኦክቶ",
+        "ኖቬም",
+        "ዲሴም"
+      ],
+      "weekdays": [
+        "እሑድ",
+        "ሰኞ",
+        "ማክሰ",
+        "ረቡዕ",
+        "ሐሙስ",
+        "ዓርብ",
+        "ቅዳሜ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} ሰከንድ",
+        "other": "{n} ሰከንዶች"
+      },
+      "minute": {
+        "one": "{n} ደቂቃ",
+        "other": "{n} ደቂቃዎች"
+      },
+      "hour": {
+        "one": "{n} ሰዓት",
+        "other": "{n} ሰዓቶች"
+      },
+      "day": {
+        "one": "{n} ቀን",
+        "other": "{n} ቀናት"
+      },
+      "week": {
+        "one": "{n} ሳምንት",
+        "other": "{n} ሳምንታት"
+      },
+      "month": {
+        "one": "{n} ወር",
+        "other": "{n} ወራት"
+      },
+      "year": {
+        "one": "{n} ዓመት",
+        "other": "{n} ዓመታት"
+      }
+    },
+    "half": "{0} ተኩል",
+    "delimiter": "፣ ",
+    "justNow": "አሁን",
+    "ago": "ከ{0} በፊት",
+    "inFuture": "በ{0} ውስጥ",
+    "short": {
+      "units": {
+        "second": "{n} ሰከ",
+        "minute": {
+          "one": "{n} ደቂ",
+          "other": "{n} ደቂቃ"
+        },
+        "hour": "{n} ሰዓ",
+        "day": "{n} ቀናት",
+        "week": {
+          "one": "{n} ሳምንት",
+          "other": "{n} ሳምንታት"
+        },
+        "month": "{n} ወራት",
+        "year": {
+          "one": "{n} ዓመት",
+          "other": "{n} ዓመታት"
+        }
+      },
+      "ago": "ከ{0} በፊት",
+      "inFuture": "በ{0} ውስጥ",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} ሰ",
+        "minute": "{n} ደ",
+        "hour": "{n} ሰ",
+        "day": "{n} ቀ",
+        "week": "{n} ሳምንት",
+        "month": "{n} ወር",
+        "year": {
+          "one": "{n} ዓመት",
+          "other": "{n} ዓ"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "ከ{0} በፊት",
+      "inFuture": "በ{0} ውስጥ",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "አሥራ ሁለት",
+        "አንድ",
+        "ሁለት",
+        "ሦስት",
+        "አራት",
+        "አምስት",
+        "ስድስት",
+        "ሰባት",
+        "ስምንት",
+        "ዘጠኝ",
+        "አሥር",
+        "አሥራ አንድ"
+      ],
+      "midnight": "እኩለ ሌሊት",
+      "noon": "እኩለ ቀን",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

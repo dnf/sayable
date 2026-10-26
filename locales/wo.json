@@ -1,0 +1,224 @@
+{
+  "code": "wo",
+  "name": "Wolof",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "bés {n}",
+      "week": "ayubés {n}",
+      "month": "weer {n}",
+      "year": "at {n}"
+    },
+    "half": "{0} ak genn-wàll",
+    "delimiter": ", ",
+    "justBorn": "Dees ko sax juddu",
+    "stages": {
+      "newborn": "Dees ko sax juddu",
+      "infant": "Njàmbaar bu ndaw",
+      "toddler": "Xale bu ndaw",
+      "child": "Xale",
+      "teenager": "Ndaw-ndaw",
+      "adult": "Mag"
+    },
+    "short": {
+      "units": {
+        "day": "bés {n}",
+        "week": "ayub. {n}",
+        "month": "weer {n}",
+        "year": "at {n}"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "bés {n}",
+        "week": "ayub {n}",
+        "month": "weer {n}",
+        "year": "at {n}"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Samwiyee",
+      "Fewriyee",
+      "Maars",
+      "Awril",
+      "Mee",
+      "Suwe",
+      "Sullet",
+      "Ut",
+      "Septàmbar",
+      "Oktoobar",
+      "Nowàmbar",
+      "Desàmbar"
+    ],
+    "weekdays": [
+      "Dibéer",
+      "Altine",
+      "Talaata",
+      "Àllarba",
+      "Alxames",
+      "Àjjuma",
+      "Gaawu"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "tey",
+    "tomorrow": "suba",
+    "yesterday": "démb",
+    "dayAfterTomorrow": "suba-suba",
+    "dayBeforeYesterday": "démb-démb",
+    "thisWeekday": "{weekday} bi",
+    "nextWeekday": "{weekday} bi ñëw",
+    "lastWeekday": "{weekday} bi weex",
+    "short": {
+      "months": [
+        "Sam",
+        "Few",
+        "Maa",
+        "Awr",
+        "Mee",
+        "Suw",
+        "Sul",
+        "Ut",
+        "Sep",
+        "Okt",
+        "Now",
+        "Des"
+      ],
+      "weekdays": [
+        "Dib",
+        "Alt",
+        "Tal",
+        "Àll",
+        "Alx",
+        "Àjj",
+        "Gaa"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "saa-yépp {n}",
+      "minute": "simili {n}",
+      "hour": "waxtu {n}",
+      "day": "bés {n}",
+      "week": "ayubés {n}",
+      "month": "weer {n}",
+      "year": "at {n}"
+    },
+    "half": "{0} ak genn-wàll",
+    "delimiter": ", ",
+    "justNow": "léegi",
+    "ago": "{0} ci ginaaw",
+    "inFuture": "ci {0}",
+    "short": {
+      "units": {
+        "second": "saa-y. {n}",
+        "minute": "sim. {n}",
+        "hour": "wax. {n}",
+        "day": "bés {n}",
+        "week": "ayub. {n}",
+        "month": "weer {n}",
+        "year": "at {n}"
+      },
+      "ago": "{0} ci ginaaw",
+      "inFuture": "ci {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "saa {n}",
+        "minute": "sim {n}",
+        "hour": "wax {n}",
+        "day": "bés {n}",
+        "week": "ayub {n}",
+        "month": "weer {n}",
+        "year": "at {n}"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ci gin.",
+      "inFuture": "ci {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "fukki ñaar",
+        "benn",
+        "ñaar",
+        "ñett",
+        "ñeent",
+        "juróom",
+        "juróom-benn",
+        "juróom-ñaar",
+        "juróom-ñett",
+        "juróom-ñeent",
+        "fukk",
+        "fukki benn"
+      ],
+      "midnight": "bu guddi",
+      "noon": "ci àttaya",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

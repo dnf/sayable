@@ -1,0 +1,284 @@
+{
+  "code": "lg",
+  "name": "Luganda",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "olunaku {n}",
+        "other": "ennaku {n}"
+      },
+      "week": {
+        "one": "sabbiiti {n}",
+        "other": "sabiiti {n}"
+      },
+      "month": {
+        "one": "omwezi {n}",
+        "other": "emyezi {n}"
+      },
+      "year": {
+        "one": "omwaka {n}",
+        "other": "emyaka {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Omwana omuto",
+    "stages": {
+      "newborn": "Omwana omuto",
+      "infant": "Omwana",
+      "toddler": "Omwana omuto",
+      "child": "Omwana",
+      "teenager": "Omuvubuka",
+      "adult": "Omukulu"
+    },
+    "short": {
+      "units": {
+        "day": "ennaku {n}",
+        "week": {
+          "one": "sabbiiti {n}",
+          "other": "sabiiti {n}"
+        },
+        "month": {
+          "one": "omwezi {n}",
+          "other": "emyezi {n}"
+        },
+        "year": {
+          "one": "omwaka {n}",
+          "other": "emyaka {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "ennaku {n}",
+        "week": {
+          "one": "sab {n}",
+          "other": "sab {n}"
+        },
+        "month": {
+          "one": "mwezi {n}",
+          "other": "myezi {n}"
+        },
+        "year": {
+          "one": "mwaka {n}",
+          "other": "myaka {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Janwali",
+      "Febwali",
+      "Marisi",
+      "Apuli",
+      "Mayi",
+      "Yuni",
+      "Yuli",
+      "Agositi",
+      "Seputemba",
+      "Okitobba",
+      "Novemba",
+      "Desemba"
+    ],
+    "weekdays": [
+      "Sabbiiti",
+      "Balaza",
+      "Lwakubiri",
+      "Lwakusatu",
+      "Lwakuna",
+      "Lwakutaano",
+      "Lwamukaaga"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "leero",
+    "tomorrow": "enkya",
+    "yesterday": "jjo",
+    "dayAfterTomorrow": "enkya ogwa",
+    "dayBeforeYesterday": "jjo edda",
+    "thisWeekday": "{weekday} eno",
+    "nextWeekday": "{weekday} eddirira",
+    "lastWeekday": "{weekday} eggudde",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apu",
+        "May",
+        "Yun",
+        "Yul",
+        "Ago",
+        "Sep",
+        "Oki",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Sab",
+        "Bal",
+        "Lbi",
+        "Lst",
+        "Lkn",
+        "Lkt",
+        "Lmk"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "sikonda {n}",
+      "minute": "dakiika {n}",
+      "hour": "essaawa {n}",
+      "day": {
+        "one": "olunaku {n}",
+        "other": "ennaku {n}"
+      },
+      "week": {
+        "one": "sabbiiti {n}",
+        "other": "sabiiti {n}"
+      },
+      "month": {
+        "one": "omwezi {n}",
+        "other": "emyezi {n}"
+      },
+      "year": {
+        "one": "omwaka {n}",
+        "other": "emyaka {n}"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "kaakano",
+    "ago": "{0} emabega",
+    "inFuture": "mu {0}",
+    "short": {
+      "units": {
+        "second": "sikonda {n}",
+        "minute": "dakiika {n}",
+        "hour": "essaawa {n}",
+        "day": "ennaku {n}",
+        "week": {
+          "one": "sabbiiti {n}",
+          "other": "sabiiti {n}"
+        },
+        "month": {
+          "one": "omwezi {n}",
+          "other": "emyezi {n}"
+        },
+        "year": {
+          "one": "omwaka {n}",
+          "other": "emyaka {n}"
+        }
+      },
+      "ago": "{0} emabega",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "sik {n}",
+        "minute": "dak {n}",
+        "hour": "ssa {n}",
+        "day": "ennaku {n}",
+        "week": {
+          "one": "sab {n}",
+          "other": "sab {n}"
+        },
+        "month": {
+          "one": "mwezi {n}",
+          "other": "myezi {n}"
+        },
+        "year": {
+          "one": "mwaka {n}",
+          "other": "myaka {n}"
+        }
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} emabega",
+      "inFuture": "mu {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "kkumi na bbiri",
+        "emu",
+        "bbiri",
+        "ssatu",
+        "nnya",
+        "ttaano",
+        "mukaaga",
+        "musanvu",
+        "munaana",
+        "mwenda",
+        "kkumi",
+        "kkumi na emu"
+      ],
+      "midnight": "ekiro eky'omu ttumbi",
+      "noon": "ettuntu",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

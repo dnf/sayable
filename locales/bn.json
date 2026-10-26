@@ -1,0 +1,251 @@
+{
+  "code": "bn",
+  "name": "Bengali",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} দিন",
+        "other": "{n} দিন"
+      },
+      "week": {
+        "one": "{n} সপ্তাহ",
+        "other": "{n} সপ্তাহ"
+      },
+      "month": {
+        "one": "{n} মাস",
+        "other": "{n} মাস"
+      },
+      "year": {
+        "one": "{n} বছর",
+        "other": "{n} বছর"
+      }
+    },
+    "half": "সাড়ে {n}",
+    "delimiter": ", ",
+    "justBorn": "নবজাতক",
+    "stages": {
+      "newborn": "নবজাতক",
+      "infant": "শিশু",
+      "toddler": "ছোট শিশু",
+      "child": "শিশু",
+      "teenager": {
+        "m": "কিশোর",
+        "f": "কিশোরী"
+      },
+      "adult": "প্রাপ্তবয়স্ক"
+    },
+    "short": {
+      "units": {
+        "day": "{n} দিন",
+        "week": "{n} সপ্তাহ",
+        "month": "{n} মাস",
+        "year": "{n} বছর"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} দিন",
+        "week": "{n} সপ্তাহ",
+        "month": "{n} মাস",
+        "year": "{n} বছর"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "জানুয়ারি",
+      "ফেব্রুয়ারি",
+      "মার্চ",
+      "এপ্রিল",
+      "মে",
+      "জুন",
+      "জুলাই",
+      "আগস্ট",
+      "সেপ্টেম্বর",
+      "অক্টোবর",
+      "নভেম্বর",
+      "ডিসেম্বর"
+    ],
+    "weekdays": [
+      "রবিবার",
+      "সোমবার",
+      "মঙ্গলবার",
+      "বুধবার",
+      "বৃহস্পতিবার",
+      "শুক্রবার",
+      "শনিবার"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "আজ",
+    "tomorrow": "আগামীকাল",
+    "yesterday": "গতকাল",
+    "dayAfterTomorrow": "পরশু",
+    "dayBeforeYesterday": "গত পরশু",
+    "thisWeekday": "এই {weekday}",
+    "nextWeekday": "আগামী {weekday}",
+    "lastWeekday": "গত {weekday}",
+    "short": {
+      "months": [
+        "জানু",
+        "ফেব্রু",
+        "মার্চ",
+        "এপ্রি",
+        "মে",
+        "জুন",
+        "জুলাই",
+        "আগ",
+        "সেপ্টে",
+        "অক্টো",
+        "নভে",
+        "ডিসে"
+      ],
+      "weekdays": [
+        "রবি",
+        "সোম",
+        "মঙ্গ",
+        "বুধ",
+        "বৃহ",
+        "শুক্র",
+        "শনি"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} সেকেন্ড",
+      "minute": "{n} মিনিট",
+      "hour": "{n} ঘন্টা",
+      "day": {
+        "one": "{n} দিন",
+        "other": "{n} দিন"
+      },
+      "week": {
+        "one": "{n} সপ্তাহ",
+        "other": "{n} সপ্তাহ"
+      },
+      "month": {
+        "one": "{n} মাস",
+        "other": "{n} মাস"
+      },
+      "year": {
+        "one": "{n} বছর",
+        "other": "{n} বছর"
+      }
+    },
+    "half": "সাড়ে {n}",
+    "delimiter": ", ",
+    "justNow": "এইমাত্র",
+    "ago": "{0} আগে",
+    "inFuture": "{0} পরে",
+    "short": {
+      "units": {
+        "second": "{n} সেকেন্ড",
+        "minute": "{n} মিনিট",
+        "hour": "{n} ঘণ্টা",
+        "day": "{n} দিন",
+        "week": "{n} সপ্তাহ",
+        "month": "{n} মাস",
+        "year": "{n} বছর"
+      },
+      "ago": "{0} আগে",
+      "inFuture": "{0} পরে",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} সেঃ",
+        "minute": "{n} মিঃ",
+        "hour": "{n} ঘঃ",
+        "day": "{n} দিন",
+        "week": "{n} সপ্তাহ",
+        "month": "{n} মাস",
+        "year": "{n} বছর"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} আগে",
+      "inFuture": "{0} পরে",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "বারো",
+        "এক",
+        "দুই",
+        "তিন",
+        "চার",
+        "পাঁচ",
+        "ছয়",
+        "সাত",
+        "আট",
+        "নয়",
+        "দশ",
+        "এগারো"
+      ],
+      "midnight": "মধ্যরাত",
+      "noon": "দুপুর",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

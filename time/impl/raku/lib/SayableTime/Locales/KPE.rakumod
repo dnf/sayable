@@ -9,7 +9,7 @@ use v6.d;
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kpe.json
+# Source: locales/kpe.json
 unit module SayableTime::Locales::KPE;
 
 our sub locale() {

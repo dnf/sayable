@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/am.json
+# Source: locales/am.json
 
 _sayabledate_locale_am() {
     _months=('ጃንዋሪ' 'ፌብሩወሪ' 'ማርች' 'ኤፕሪል' 'ሜይ' 'ጁን' 'ጁላይ' 'ኦገስት' 'ሴፕቴምበር' 'ኦክቶበር' 'ኖቬምበር' 'ዲሴምበር')

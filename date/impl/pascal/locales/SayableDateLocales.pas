@@ -188,7 +188,7 @@ function GetLocaleByCode(const ACode: string): TDateLocalePtr;
 
 implementation
 
-{ Source: date/locales/src/af.json }
+{ Source: locales/af.json }
 { Afrikaans locale. }
 procedure GetLocale_af(out ALoc: TDateLocale);
 var
@@ -297,7 +297,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ak.json }
+{ Source: locales/ak.json }
 { Akan locale. }
 procedure GetLocale_ak(out ALoc: TDateLocale);
 var
@@ -406,7 +406,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/am.json }
+{ Source: locales/am.json }
 { Amharic locale. }
 procedure GetLocale_am(out ALoc: TDateLocale);
 var
@@ -515,7 +515,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ar.json }
+{ Source: locales/ar.json }
 { Arabic locale. }
 procedure GetLocale_ar(out ALoc: TDateLocale);
 var
@@ -624,7 +624,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ay.json }
+{ Source: locales/ay.json }
 { Aymara locale. }
 procedure GetLocale_ay(out ALoc: TDateLocale);
 var
@@ -733,7 +733,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/az.json }
+{ Source: locales/az.json }
 { Azerbaijani locale. }
 procedure GetLocale_az(out ALoc: TDateLocale);
 var
@@ -842,7 +842,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/bci.json }
+{ Source: locales/bci.json }
 { Baoulé locale. }
 procedure GetLocale_bci(out ALoc: TDateLocale);
 var
@@ -951,7 +951,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/be.json }
+{ Source: locales/be.json }
 { Belarusian locale. }
 procedure GetLocale_be(out ALoc: TDateLocale);
 var
@@ -1070,7 +1070,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/bem.json }
+{ Source: locales/bem.json }
 { Bemba locale. }
 procedure GetLocale_bem(out ALoc: TDateLocale);
 var
@@ -1179,7 +1179,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/bg.json }
+{ Source: locales/bg.json }
 { Bulgarian locale. }
 procedure GetLocale_bg(out ALoc: TDateLocale);
 var
@@ -1288,7 +1288,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/bi.json }
+{ Source: locales/bi.json }
 { Bislama locale. }
 procedure GetLocale_bi(out ALoc: TDateLocale);
 var
@@ -1397,7 +1397,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/bm.json }
+{ Source: locales/bm.json }
 { Bambara locale. }
 procedure GetLocale_bm(out ALoc: TDateLocale);
 var
@@ -1506,7 +1506,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/bn.json }
+{ Source: locales/bn.json }
 { Bengali locale. }
 procedure GetLocale_bn(out ALoc: TDateLocale);
 var
@@ -1615,7 +1615,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/br.json }
+{ Source: locales/br.json }
 { Breton locale. }
 procedure GetLocale_br(out ALoc: TDateLocale);
 var
@@ -1724,7 +1724,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/bs.json }
+{ Source: locales/bs.json }
 { Bosnian locale. }
 procedure GetLocale_bs(out ALoc: TDateLocale);
 var
@@ -1833,7 +1833,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ca.json }
+{ Source: locales/ca.json }
 { Catalan locale. }
 procedure GetLocale_ca(out ALoc: TDateLocale);
 var
@@ -1942,7 +1942,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/cak.json }
+{ Source: locales/cak.json }
 { Kaqchikel locale. }
 procedure GetLocale_cak(out ALoc: TDateLocale);
 var
@@ -2051,7 +2051,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ceb.json }
+{ Source: locales/ceb.json }
 { Cebuano locale. }
 procedure GetLocale_ceb(out ALoc: TDateLocale);
 var
@@ -2160,7 +2160,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/cs.json }
+{ Source: locales/cs.json }
 { Czech locale. }
 procedure GetLocale_cs(out ALoc: TDateLocale);
 var
@@ -2279,7 +2279,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/cy.json }
+{ Source: locales/cy.json }
 { Welsh locale. }
 procedure GetLocale_cy(out ALoc: TDateLocale);
 var
@@ -2388,7 +2388,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/da.json }
+{ Source: locales/da.json }
 { Danish locale. }
 procedure GetLocale_da(out ALoc: TDateLocale);
 var
@@ -2497,7 +2497,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/de.json }
+{ Source: locales/de.json }
 { German locale. }
 procedure GetLocale_de(out ALoc: TDateLocale);
 var
@@ -2606,7 +2606,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/din.json }
+{ Source: locales/din.json }
 { Dinka locale. }
 procedure GetLocale_din(out ALoc: TDateLocale);
 var
@@ -2715,7 +2715,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/dje.json }
+{ Source: locales/dje.json }
 { Zarma locale. }
 procedure GetLocale_dje(out ALoc: TDateLocale);
 var
@@ -2824,7 +2824,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/dv.json }
+{ Source: locales/dv.json }
 { Dhivehi locale. }
 procedure GetLocale_dv(out ALoc: TDateLocale);
 var
@@ -2933,7 +2933,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/dyu.json }
+{ Source: locales/dyu.json }
 { Dyula locale. }
 procedure GetLocale_dyu(out ALoc: TDateLocale);
 var
@@ -3042,7 +3042,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/dz.json }
+{ Source: locales/dz.json }
 { Dzongkha locale. }
 procedure GetLocale_dz(out ALoc: TDateLocale);
 var
@@ -3151,7 +3151,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ee.json }
+{ Source: locales/ee.json }
 { Ewe locale. }
 procedure GetLocale_ee(out ALoc: TDateLocale);
 var
@@ -3260,7 +3260,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/el.json }
+{ Source: locales/el.json }
 { Greek locale. }
 procedure GetLocale_el(out ALoc: TDateLocale);
 var
@@ -3379,7 +3379,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/en.json }
+{ Source: locales/en.json }
 { English locale. }
 procedure GetLocale_en(out ALoc: TDateLocale);
 var
@@ -3495,7 +3495,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/es.json }
+{ Source: locales/es.json }
 { Spanish locale. }
 procedure GetLocale_es(out ALoc: TDateLocale);
 var
@@ -3604,7 +3604,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/et.json }
+{ Source: locales/et.json }
 { Estonian locale. }
 procedure GetLocale_et(out ALoc: TDateLocale);
 var
@@ -3713,7 +3713,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/eu.json }
+{ Source: locales/eu.json }
 { Basque locale. }
 procedure GetLocale_eu(out ALoc: TDateLocale);
 var
@@ -3822,7 +3822,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/fa.json }
+{ Source: locales/fa.json }
 { Persian locale. }
 procedure GetLocale_fa(out ALoc: TDateLocale);
 var
@@ -3931,7 +3931,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/fan.json }
+{ Source: locales/fan.json }
 { Fang locale. }
 procedure GetLocale_fan(out ALoc: TDateLocale);
 var
@@ -4040,7 +4040,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ff.json }
+{ Source: locales/ff.json }
 { Fulah locale. }
 procedure GetLocale_ff(out ALoc: TDateLocale);
 var
@@ -4149,7 +4149,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/fi.json }
+{ Source: locales/fi.json }
 { Finnish locale. }
 procedure GetLocale_fi(out ALoc: TDateLocale);
 var
@@ -4268,7 +4268,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/fil.json }
+{ Source: locales/fil.json }
 { Filipino locale. }
 procedure GetLocale_fil(out ALoc: TDateLocale);
 var
@@ -4377,7 +4377,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/fj.json }
+{ Source: locales/fj.json }
 { Fijian locale. }
 procedure GetLocale_fj(out ALoc: TDateLocale);
 var
@@ -4486,7 +4486,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/fon.json }
+{ Source: locales/fon.json }
 { Fon locale. }
 procedure GetLocale_fon(out ALoc: TDateLocale);
 var
@@ -4595,7 +4595,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/fr.json }
+{ Source: locales/fr.json }
 { French locale. }
 procedure GetLocale_fr(out ALoc: TDateLocale);
 var
@@ -4705,7 +4705,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ga.json }
+{ Source: locales/ga.json }
 { Irish locale. }
 procedure GetLocale_ga(out ALoc: TDateLocale);
 var
@@ -4814,7 +4814,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/gd.json }
+{ Source: locales/gd.json }
 { Scottish Gaelic locale. }
 procedure GetLocale_gd(out ALoc: TDateLocale);
 var
@@ -4923,7 +4923,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/gl.json }
+{ Source: locales/gl.json }
 { Galician locale. }
 procedure GetLocale_gl(out ALoc: TDateLocale);
 var
@@ -5032,7 +5032,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/gn.json }
+{ Source: locales/gn.json }
 { Guarani locale. }
 procedure GetLocale_gn(out ALoc: TDateLocale);
 var
@@ -5141,7 +5141,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/gu.json }
+{ Source: locales/gu.json }
 { Gujarati locale. }
 procedure GetLocale_gu(out ALoc: TDateLocale);
 var
@@ -5250,7 +5250,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/gv.json }
+{ Source: locales/gv.json }
 { Manx locale. }
 procedure GetLocale_gv(out ALoc: TDateLocale);
 var
@@ -5359,7 +5359,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ha.json }
+{ Source: locales/ha.json }
 { Hausa locale. }
 procedure GetLocale_ha(out ALoc: TDateLocale);
 var
@@ -5468,7 +5468,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/he.json }
+{ Source: locales/he.json }
 { Hebrew locale. }
 procedure GetLocale_he(out ALoc: TDateLocale);
 var
@@ -5577,7 +5577,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/hi.json }
+{ Source: locales/hi.json }
 { Hindi locale. }
 procedure GetLocale_hi(out ALoc: TDateLocale);
 var
@@ -5686,7 +5686,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/hmn.json }
+{ Source: locales/hmn.json }
 { Hmong locale. }
 procedure GetLocale_hmn(out ALoc: TDateLocale);
 var
@@ -5795,7 +5795,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/hr.json }
+{ Source: locales/hr.json }
 { Croatian locale. }
 procedure GetLocale_hr(out ALoc: TDateLocale);
 var
@@ -5914,7 +5914,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ht.json }
+{ Source: locales/ht.json }
 { Haitian Creole locale. }
 procedure GetLocale_ht(out ALoc: TDateLocale);
 var
@@ -6023,7 +6023,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/hu.json }
+{ Source: locales/hu.json }
 { Hungarian locale. }
 procedure GetLocale_hu(out ALoc: TDateLocale);
 var
@@ -6132,7 +6132,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/hy.json }
+{ Source: locales/hy.json }
 { Armenian locale. }
 procedure GetLocale_hy(out ALoc: TDateLocale);
 var
@@ -6241,7 +6241,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/id.json }
+{ Source: locales/id.json }
 { Indonesian locale. }
 procedure GetLocale_id(out ALoc: TDateLocale);
 var
@@ -6350,7 +6350,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ig.json }
+{ Source: locales/ig.json }
 { Igbo locale. }
 procedure GetLocale_ig(out ALoc: TDateLocale);
 var
@@ -6459,7 +6459,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/is.json }
+{ Source: locales/is.json }
 { Icelandic locale. }
 procedure GetLocale_is(out ALoc: TDateLocale);
 var
@@ -6568,7 +6568,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/it.json }
+{ Source: locales/it.json }
 { Italian locale. }
 procedure GetLocale_it(out ALoc: TDateLocale);
 var
@@ -6677,7 +6677,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ja.json }
+{ Source: locales/ja.json }
 { Japanese locale. }
 procedure GetLocale_ja(out ALoc: TDateLocale);
 var
@@ -6786,7 +6786,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/jv.json }
+{ Source: locales/jv.json }
 { Javanese locale. }
 procedure GetLocale_jv(out ALoc: TDateLocale);
 var
@@ -6895,7 +6895,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ka.json }
+{ Source: locales/ka.json }
 { Georgian locale. }
 procedure GetLocale_ka(out ALoc: TDateLocale);
 var
@@ -7004,7 +7004,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kbp.json }
+{ Source: locales/kbp.json }
 { Kabiye locale. }
 procedure GetLocale_kbp(out ALoc: TDateLocale);
 var
@@ -7113,7 +7113,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kek.json }
+{ Source: locales/kek.json }
 { Q'eqchi' locale. }
 procedure GetLocale_kek(out ALoc: TDateLocale);
 var
@@ -7222,7 +7222,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ki.json }
+{ Source: locales/ki.json }
 { Kikuyu locale. }
 procedure GetLocale_ki(out ALoc: TDateLocale);
 var
@@ -7331,7 +7331,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kk.json }
+{ Source: locales/kk.json }
 { Kazakh locale. }
 procedure GetLocale_kk(out ALoc: TDateLocale);
 var
@@ -7440,7 +7440,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kl.json }
+{ Source: locales/kl.json }
 { Kalaallisut locale. }
 procedure GetLocale_kl(out ALoc: TDateLocale);
 var
@@ -7549,7 +7549,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/km.json }
+{ Source: locales/km.json }
 { Khmer locale. }
 procedure GetLocale_km(out ALoc: TDateLocale);
 var
@@ -7658,7 +7658,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kn.json }
+{ Source: locales/kn.json }
 { Kannada locale. }
 procedure GetLocale_kn(out ALoc: TDateLocale);
 var
@@ -7767,7 +7767,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ko.json }
+{ Source: locales/ko.json }
 { Korean locale. }
 procedure GetLocale_ko(out ALoc: TDateLocale);
 var
@@ -7876,7 +7876,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kpe.json }
+{ Source: locales/kpe.json }
 { Kpelle locale. }
 procedure GetLocale_kpe(out ALoc: TDateLocale);
 var
@@ -7985,7 +7985,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kri.json }
+{ Source: locales/kri.json }
 { Krio locale. }
 procedure GetLocale_kri(out ALoc: TDateLocale);
 var
@@ -8094,7 +8094,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ktu.json }
+{ Source: locales/ktu.json }
 { Kituba locale. }
 procedure GetLocale_ktu(out ALoc: TDateLocale);
 var
@@ -8203,7 +8203,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ku.json }
+{ Source: locales/ku.json }
 { Kurdish locale. }
 procedure GetLocale_ku(out ALoc: TDateLocale);
 var
@@ -8312,7 +8312,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/kw.json }
+{ Source: locales/kw.json }
 { Cornish locale. }
 procedure GetLocale_kw(out ALoc: TDateLocale);
 var
@@ -8421,7 +8421,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ky.json }
+{ Source: locales/ky.json }
 { Kyrgyz locale. }
 procedure GetLocale_ky(out ALoc: TDateLocale);
 var
@@ -8530,7 +8530,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/lb.json }
+{ Source: locales/lb.json }
 { Luxembourgish locale. }
 procedure GetLocale_lb(out ALoc: TDateLocale);
 var
@@ -8639,7 +8639,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/lg.json }
+{ Source: locales/lg.json }
 { Luganda locale. }
 procedure GetLocale_lg(out ALoc: TDateLocale);
 var
@@ -8748,7 +8748,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ln.json }
+{ Source: locales/ln.json }
 { Lingala locale. }
 procedure GetLocale_ln(out ALoc: TDateLocale);
 var
@@ -8857,7 +8857,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/lo.json }
+{ Source: locales/lo.json }
 { Lao locale. }
 procedure GetLocale_lo(out ALoc: TDateLocale);
 var
@@ -8966,7 +8966,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/lt.json }
+{ Source: locales/lt.json }
 { Lithuanian locale. }
 procedure GetLocale_lt(out ALoc: TDateLocale);
 var
@@ -9085,7 +9085,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/luo.json }
+{ Source: locales/luo.json }
 { Dholuo locale. }
 procedure GetLocale_luo(out ALoc: TDateLocale);
 var
@@ -9194,7 +9194,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/lv.json }
+{ Source: locales/lv.json }
 { Latvian locale. }
 procedure GetLocale_lv(out ALoc: TDateLocale);
 var
@@ -9303,7 +9303,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mam.json }
+{ Source: locales/mam.json }
 { Mam locale. }
 procedure GetLocale_mam(out ALoc: TDateLocale);
 var
@@ -9412,7 +9412,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/men.json }
+{ Source: locales/men.json }
 { Mende locale. }
 procedure GetLocale_men(out ALoc: TDateLocale);
 var
@@ -9521,7 +9521,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mfe.json }
+{ Source: locales/mfe.json }
 { Mauritian Creole locale. }
 procedure GetLocale_mfe(out ALoc: TDateLocale);
 var
@@ -9630,7 +9630,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mg.json }
+{ Source: locales/mg.json }
 { Malagasy locale. }
 procedure GetLocale_mg(out ALoc: TDateLocale);
 var
@@ -9739,7 +9739,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mi.json }
+{ Source: locales/mi.json }
 { Māori locale. }
 procedure GetLocale_mi(out ALoc: TDateLocale);
 var
@@ -9848,7 +9848,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mk.json }
+{ Source: locales/mk.json }
 { Macedonian locale. }
 procedure GetLocale_mk(out ALoc: TDateLocale);
 var
@@ -9957,7 +9957,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ml.json }
+{ Source: locales/ml.json }
 { Malayalam locale. }
 procedure GetLocale_ml(out ALoc: TDateLocale);
 var
@@ -10066,7 +10066,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mn.json }
+{ Source: locales/mn.json }
 { Mongolian locale. }
 procedure GetLocale_mn(out ALoc: TDateLocale);
 var
@@ -10175,7 +10175,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mnk.json }
+{ Source: locales/mnk.json }
 { Mandinka locale. }
 procedure GetLocale_mnk(out ALoc: TDateLocale);
 var
@@ -10284,7 +10284,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mos.json }
+{ Source: locales/mos.json }
 { Moore locale. }
 procedure GetLocale_mos(out ALoc: TDateLocale);
 var
@@ -10393,7 +10393,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mr.json }
+{ Source: locales/mr.json }
 { Marathi locale. }
 procedure GetLocale_mr(out ALoc: TDateLocale);
 var
@@ -10502,7 +10502,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ms.json }
+{ Source: locales/ms.json }
 { Malay locale. }
 procedure GetLocale_ms(out ALoc: TDateLocale);
 var
@@ -10611,7 +10611,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/mt.json }
+{ Source: locales/mt.json }
 { Maltese locale. }
 procedure GetLocale_mt(out ALoc: TDateLocale);
 var
@@ -10720,7 +10720,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/my.json }
+{ Source: locales/my.json }
 { Burmese locale. }
 procedure GetLocale_my(out ALoc: TDateLocale);
 var
@@ -10829,7 +10829,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/nb.json }
+{ Source: locales/nb.json }
 { Norwegian Bokmål locale. }
 procedure GetLocale_nb(out ALoc: TDateLocale);
 var
@@ -10938,7 +10938,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/nd.json }
+{ Source: locales/nd.json }
 { Northern Ndebele locale. }
 procedure GetLocale_nd(out ALoc: TDateLocale);
 var
@@ -11047,7 +11047,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ne.json }
+{ Source: locales/ne.json }
 { Nepali locale. }
 procedure GetLocale_ne(out ALoc: TDateLocale);
 var
@@ -11156,7 +11156,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ng.json }
+{ Source: locales/ng.json }
 { Oshiwambo locale. }
 procedure GetLocale_ng(out ALoc: TDateLocale);
 var
@@ -11265,7 +11265,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/nl.json }
+{ Source: locales/nl.json }
 { Dutch locale. }
 procedure GetLocale_nl(out ALoc: TDateLocale);
 var
@@ -11374,7 +11374,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/nr.json }
+{ Source: locales/nr.json }
 { Southern Ndebele locale. }
 procedure GetLocale_nr(out ALoc: TDateLocale);
 var
@@ -11483,7 +11483,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/nso.json }
+{ Source: locales/nso.json }
 { Northern Sotho locale. }
 procedure GetLocale_nso(out ALoc: TDateLocale);
 var
@@ -11592,7 +11592,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/nus.json }
+{ Source: locales/nus.json }
 { Nuer locale. }
 procedure GetLocale_nus(out ALoc: TDateLocale);
 var
@@ -11701,7 +11701,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ny.json }
+{ Source: locales/ny.json }
 { Chichewa locale. }
 procedure GetLocale_ny(out ALoc: TDateLocale);
 var
@@ -11810,7 +11810,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/om.json }
+{ Source: locales/om.json }
 { Oromo locale. }
 procedure GetLocale_om(out ALoc: TDateLocale);
 var
@@ -11919,7 +11919,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/or.json }
+{ Source: locales/or.json }
 { Odia locale. }
 procedure GetLocale_or(out ALoc: TDateLocale);
 var
@@ -12028,7 +12028,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/pa.json }
+{ Source: locales/pa.json }
 { Punjabi locale. }
 procedure GetLocale_pa(out ALoc: TDateLocale);
 var
@@ -12137,7 +12137,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/pis.json }
+{ Source: locales/pis.json }
 { Pijin locale. }
 procedure GetLocale_pis(out ALoc: TDateLocale);
 var
@@ -12246,7 +12246,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/pl.json }
+{ Source: locales/pl.json }
 { Polish locale. }
 procedure GetLocale_pl(out ALoc: TDateLocale);
 var
@@ -12365,7 +12365,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/pov.json }
+{ Source: locales/pov.json }
 { Guinea-Bissau Creole locale. }
 procedure GetLocale_pov(out ALoc: TDateLocale);
 var
@@ -12474,7 +12474,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ps.json }
+{ Source: locales/ps.json }
 { Pashto locale. }
 procedure GetLocale_ps(out ALoc: TDateLocale);
 var
@@ -12583,7 +12583,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/pt.json }
+{ Source: locales/pt.json }
 { Portuguese locale. }
 procedure GetLocale_pt(out ALoc: TDateLocale);
 var
@@ -12692,7 +12692,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/qu.json }
+{ Source: locales/qu.json }
 { Quechua locale. }
 procedure GetLocale_qu(out ALoc: TDateLocale);
 var
@@ -12801,7 +12801,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/quc.json }
+{ Source: locales/quc.json }
 { K'iche' locale. }
 procedure GetLocale_quc(out ALoc: TDateLocale);
 var
@@ -12910,7 +12910,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ro.json }
+{ Source: locales/ro.json }
 { Romanian locale. }
 procedure GetLocale_ro(out ALoc: TDateLocale);
 var
@@ -13029,7 +13029,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ru.json }
+{ Source: locales/ru.json }
 { Russian locale. }
 procedure GetLocale_ru(out ALoc: TDateLocale);
 var
@@ -13148,7 +13148,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/rw.json }
+{ Source: locales/rw.json }
 { Kinyarwanda locale. }
 procedure GetLocale_rw(out ALoc: TDateLocale);
 var
@@ -13257,7 +13257,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sar.json }
+{ Source: locales/sar.json }
 { Sara locale. }
 procedure GetLocale_sar(out ALoc: TDateLocale);
 var
@@ -13366,7 +13366,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sd.json }
+{ Source: locales/sd.json }
 { Sindhi locale. }
 procedure GetLocale_sd(out ALoc: TDateLocale);
 var
@@ -13475,7 +13475,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sg.json }
+{ Source: locales/sg.json }
 { Sango locale. }
 procedure GetLocale_sg(out ALoc: TDateLocale);
 var
@@ -13584,7 +13584,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/shi.json }
+{ Source: locales/shi.json }
 { Tachelhit locale. }
 procedure GetLocale_shi(out ALoc: TDateLocale);
 var
@@ -13693,7 +13693,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/shn.json }
+{ Source: locales/shn.json }
 { Shan locale. }
 procedure GetLocale_shn(out ALoc: TDateLocale);
 var
@@ -13802,7 +13802,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/si.json }
+{ Source: locales/si.json }
 { Sinhala locale. }
 procedure GetLocale_si(out ALoc: TDateLocale);
 var
@@ -13911,7 +13911,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sk.json }
+{ Source: locales/sk.json }
 { Slovak locale. }
 procedure GetLocale_sk(out ALoc: TDateLocale);
 var
@@ -14030,7 +14030,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sl.json }
+{ Source: locales/sl.json }
 { Slovenian locale. }
 procedure GetLocale_sl(out ALoc: TDateLocale);
 var
@@ -14149,7 +14149,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sn.json }
+{ Source: locales/sn.json }
 { Shona locale. }
 procedure GetLocale_sn(out ALoc: TDateLocale);
 var
@@ -14258,7 +14258,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/snk.json }
+{ Source: locales/snk.json }
 { Soninke locale. }
 procedure GetLocale_snk(out ALoc: TDateLocale);
 var
@@ -14367,7 +14367,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/so.json }
+{ Source: locales/so.json }
 { Somali locale. }
 procedure GetLocale_so(out ALoc: TDateLocale);
 var
@@ -14476,7 +14476,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sq.json }
+{ Source: locales/sq.json }
 { Albanian locale. }
 procedure GetLocale_sq(out ALoc: TDateLocale);
 var
@@ -14585,7 +14585,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sr.json }
+{ Source: locales/sr.json }
 { Serbian locale. }
 procedure GetLocale_sr(out ALoc: TDateLocale);
 var
@@ -14694,7 +14694,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ss.json }
+{ Source: locales/ss.json }
 { siSwati locale. }
 procedure GetLocale_ss(out ALoc: TDateLocale);
 var
@@ -14803,7 +14803,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/st.json }
+{ Source: locales/st.json }
 { Southern Sotho locale. }
 procedure GetLocale_st(out ALoc: TDateLocale);
 var
@@ -14912,7 +14912,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/su.json }
+{ Source: locales/su.json }
 { Sundanese locale. }
 procedure GetLocale_su(out ALoc: TDateLocale);
 var
@@ -15021,7 +15021,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/suk.json }
+{ Source: locales/suk.json }
 { Sukuma locale. }
 procedure GetLocale_suk(out ALoc: TDateLocale);
 var
@@ -15130,7 +15130,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sv.json }
+{ Source: locales/sv.json }
 { Swedish locale. }
 procedure GetLocale_sv(out ALoc: TDateLocale);
 var
@@ -15239,7 +15239,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/sw.json }
+{ Source: locales/sw.json }
 { Swahili locale. }
 procedure GetLocale_sw(out ALoc: TDateLocale);
 var
@@ -15348,7 +15348,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ta.json }
+{ Source: locales/ta.json }
 { Tamil locale. }
 procedure GetLocale_ta(out ALoc: TDateLocale);
 var
@@ -15457,7 +15457,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/te.json }
+{ Source: locales/te.json }
 { Telugu locale. }
 procedure GetLocale_te(out ALoc: TDateLocale);
 var
@@ -15566,7 +15566,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tem.json }
+{ Source: locales/tem.json }
 { Temne locale. }
 procedure GetLocale_tem(out ALoc: TDateLocale);
 var
@@ -15675,7 +15675,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tet.json }
+{ Source: locales/tet.json }
 { Tetum locale. }
 procedure GetLocale_tet(out ALoc: TDateLocale);
 var
@@ -15784,7 +15784,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tg.json }
+{ Source: locales/tg.json }
 { Tajik locale. }
 procedure GetLocale_tg(out ALoc: TDateLocale);
 var
@@ -15893,7 +15893,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/th.json }
+{ Source: locales/th.json }
 { Thai locale. }
 procedure GetLocale_th(out ALoc: TDateLocale);
 var
@@ -16002,7 +16002,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ti.json }
+{ Source: locales/ti.json }
 { Tigrinya locale. }
 procedure GetLocale_ti(out ALoc: TDateLocale);
 var
@@ -16111,7 +16111,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tig.json }
+{ Source: locales/tig.json }
 { Tigre locale. }
 procedure GetLocale_tig(out ALoc: TDateLocale);
 var
@@ -16220,7 +16220,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tk.json }
+{ Source: locales/tk.json }
 { Turkmen locale. }
 procedure GetLocale_tk(out ALoc: TDateLocale);
 var
@@ -16329,7 +16329,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tn.json }
+{ Source: locales/tn.json }
 { Tswana locale. }
 procedure GetLocale_tn(out ALoc: TDateLocale);
 var
@@ -16438,7 +16438,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tpi.json }
+{ Source: locales/tpi.json }
 { Tok Pisin locale. }
 procedure GetLocale_tpi(out ALoc: TDateLocale);
 var
@@ -16547,7 +16547,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tr.json }
+{ Source: locales/tr.json }
 { Turkish locale. }
 procedure GetLocale_tr(out ALoc: TDateLocale);
 var
@@ -16656,7 +16656,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ts.json }
+{ Source: locales/ts.json }
 { Tsonga locale. }
 procedure GetLocale_ts(out ALoc: TDateLocale);
 var
@@ -16765,7 +16765,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tum.json }
+{ Source: locales/tum.json }
 { Tumbuka locale. }
 procedure GetLocale_tum(out ALoc: TDateLocale);
 var
@@ -16874,7 +16874,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/tzm.json }
+{ Source: locales/tzm.json }
 { Central Atlas Tamazight locale. }
 procedure GetLocale_tzm(out ALoc: TDateLocale);
 var
@@ -16983,7 +16983,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/uk.json }
+{ Source: locales/uk.json }
 { Ukrainian locale. }
 procedure GetLocale_uk(out ALoc: TDateLocale);
 var
@@ -17102,7 +17102,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/umb.json }
+{ Source: locales/umb.json }
 { Umbundu locale. }
 procedure GetLocale_umb(out ALoc: TDateLocale);
 var
@@ -17211,7 +17211,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ur.json }
+{ Source: locales/ur.json }
 { Urdu locale. }
 procedure GetLocale_ur(out ALoc: TDateLocale);
 var
@@ -17320,7 +17320,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/uz.json }
+{ Source: locales/uz.json }
 { Uzbek locale. }
 procedure GetLocale_uz(out ALoc: TDateLocale);
 var
@@ -17429,7 +17429,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/ve.json }
+{ Source: locales/ve.json }
 { Venda locale. }
 procedure GetLocale_ve(out ALoc: TDateLocale);
 var
@@ -17538,7 +17538,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/vi.json }
+{ Source: locales/vi.json }
 { Vietnamese locale. }
 procedure GetLocale_vi(out ALoc: TDateLocale);
 var
@@ -17647,7 +17647,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/vmw.json }
+{ Source: locales/vmw.json }
 { Makhuwa locale. }
 procedure GetLocale_vmw(out ALoc: TDateLocale);
 var
@@ -17756,7 +17756,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/wo.json }
+{ Source: locales/wo.json }
 { Wolof locale. }
 procedure GetLocale_wo(out ALoc: TDateLocale);
 var
@@ -17865,7 +17865,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/xh.json }
+{ Source: locales/xh.json }
 { Xhosa locale. }
 procedure GetLocale_xh(out ALoc: TDateLocale);
 var
@@ -17974,7 +17974,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/yao.json }
+{ Source: locales/yao.json }
 { Yao locale. }
 procedure GetLocale_yao(out ALoc: TDateLocale);
 var
@@ -18083,7 +18083,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/yo.json }
+{ Source: locales/yo.json }
 { Yoruba locale. }
 procedure GetLocale_yo(out ALoc: TDateLocale);
 var
@@ -18192,7 +18192,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/yue.json }
+{ Source: locales/yue.json }
 { Cantonese locale. }
 procedure GetLocale_yue(out ALoc: TDateLocale);
 var
@@ -18301,7 +18301,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/zdj.json }
+{ Source: locales/zdj.json }
 { Comorian locale. }
 procedure GetLocale_zdj(out ALoc: TDateLocale);
 var
@@ -18410,7 +18410,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/zh.json }
+{ Source: locales/zh.json }
 { Chinese locale. }
 procedure GetLocale_zh(out ALoc: TDateLocale);
 var
@@ -18519,7 +18519,7 @@ begin
   ALoc.CompactOverride.Yesterday := '';
 end;
 
-{ Source: date/locales/src/zu.json }
+{ Source: locales/zu.json }
 { Zulu locale. }
 procedure GetLocale_zu(out ALoc: TDateLocale);
 var

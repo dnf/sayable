@@ -1,0 +1,279 @@
+{
+  "code": "lt",
+  "name": "Lithuanian",
+  "pluralRule": "lt",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} diena",
+        "few": "{n} dienos",
+        "other": "{n} dienų"
+      },
+      "week": {
+        "one": "{n} savaitė",
+        "few": "{n} savaitės",
+        "other": "{n} savaičių"
+      },
+      "month": {
+        "one": "{n} mėnuo",
+        "few": "{n} mėnesiai",
+        "other": "{n} mėnesių"
+      },
+      "year": {
+        "one": "{n} metai",
+        "few": "{n} metai",
+        "other": "{n} metų"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Naujagimis",
+    "stages": {
+      "newborn": {
+        "m": "Naujagimis",
+        "f": "Naujagimė"
+      },
+      "infant": {
+        "m": "Kūdikis",
+        "f": "Kūdikė"
+      },
+      "toddler": {
+        "m": "Mažylis",
+        "f": "Mažylė"
+      },
+      "child": "Vaikas",
+      "teenager": {
+        "m": "Paauglys",
+        "f": "Paauglė"
+      },
+      "adult": {
+        "m": "Suaugęs",
+        "f": "Suaugusi"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} sav.",
+        "month": "{n} mėn.",
+        "year": "{n} m."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d.",
+        "week": "{n} sav.",
+        "month": "{n} mėn.",
+        "year": "{n} m."
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "sausis",
+      "vasaris",
+      "kovas",
+      "balandis",
+      "gegužė",
+      "birželis",
+      "liepa",
+      "rugpjūtis",
+      "rugsėjis",
+      "spalis",
+      "lapkritis",
+      "gruodis"
+    ],
+    "weekdays": [
+      "sekmadienis",
+      "pirmadienis",
+      "antradienis",
+      "trečiadienis",
+      "ketvirtadienis",
+      "penktadienis",
+      "šeštadienis"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "šiandien",
+    "tomorrow": "rytoj",
+    "yesterday": "vakar",
+    "dayAfterTomorrow": "poryt",
+    "dayBeforeYesterday": "užvakar",
+    "thisWeekday": "šį {weekday}",
+    "nextWeekday": "kitą {weekday}",
+    "lastWeekday": "praėjusį {weekday}",
+    "monthsInDate": [
+      "sausio",
+      "vasario",
+      "kovo",
+      "balandžio",
+      "gegužės",
+      "birželio",
+      "liepos",
+      "rugpjūčio",
+      "rugsėjo",
+      "spalio",
+      "lapkričio",
+      "gruodžio"
+    ],
+    "short": {
+      "months": [
+        "saus",
+        "vas",
+        "kov",
+        "bal",
+        "geg",
+        "birž",
+        "liep",
+        "rugp",
+        "rugs",
+        "spal",
+        "lapkr",
+        "gruod"
+      ],
+      "weekdays": [
+        "sk",
+        "pr",
+        "an",
+        "tr",
+        "kt",
+        "pn",
+        "št"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{m}-{d}",
+      "datePatternWithYear": "{yy}-{m}-{d}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekundė",
+        "few": "{n} sekundės",
+        "other": "{n} sekundžių"
+      },
+      "minute": {
+        "one": "{n} minutė",
+        "few": "{n} minutės",
+        "other": "{n} minučių"
+      },
+      "hour": {
+        "one": "{n} valanda",
+        "few": "{n} valandos",
+        "other": "{n} valandų"
+      },
+      "day": {
+        "one": "{n} diena",
+        "few": "{n} dienos",
+        "other": "{n} dienų"
+      },
+      "week": {
+        "one": "{n} savaitė",
+        "few": "{n} savaitės",
+        "other": "{n} savaičių"
+      },
+      "month": {
+        "one": "{n} mėnuo",
+        "few": "{n} mėnesiai",
+        "other": "{n} mėnesių"
+      },
+      "year": {
+        "one": "{n} metai",
+        "few": "{n} metai",
+        "other": "{n} metų"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "ką tik",
+    "ago": "prieš {0}",
+    "inFuture": "po {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min.",
+        "hour": "{n} val.",
+        "day": "{n} d.",
+        "week": "{n} sav.",
+        "month": "{n} mėn.",
+        "year": "{n} m."
+      },
+      "ago": "prieš {0}",
+      "inFuture": "po {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min.",
+        "hour": "{n} h",
+        "day": "{n} d.",
+        "week": "{n} sav.",
+        "month": "{n} mėn.",
+        "year": "{n} m."
+      },
+      "delimiter": "",
+      "ago": "prieš {0}",
+      "inFuture": "po {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dvylika",
+        "viena",
+        "dvi",
+        "trys",
+        "keturios",
+        "penkios",
+        "šešios",
+        "septynios",
+        "aštuonios",
+        "devynios",
+        "dešimt",
+        "vienuolika"
+      ],
+      "midnight": "vidurnaktis",
+      "noon": "vidurdienis",
+      "patterns": {
+        "0": "{h}",
+        "5": "penkios minuta {h}",
+        "10": "dešimt minuta {h}",
+        "15": "penkiolika minuta {h}",
+        "20": "dvidešimt minuta {h}",
+        "25": "dvidešimt penkios minuta {h}",
+        "30": "trisdešimt minuta {h}",
+        "35": "dvidešimt penkios iki {next_h}",
+        "40": "dvidešimt iki {next_h}",
+        "45": "penkiolika iki {next_h}",
+        "50": "dešimt iki {next_h}",
+        "55": "penkios iki {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "code": "gn",
+  "name": "Guarani",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": "{n} ára",
+      "week": "{n} arapokõindy",
+      "month": "{n} jasy",
+      "year": "{n} ary"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Mitã pyahu",
+    "stages": {
+      "newborn": "Mitã pyahu",
+      "infant": "Mitã'i",
+      "toddler": "Mitã",
+      "child": "Mitã",
+      "teenager": "Mitãrusu",
+      "adult": "Karai"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ára",
+        "week": "{n} ara",
+        "month": "{n} jas",
+        "year": "{n} ary"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Jasyteĩ",
+      "Jasykõi",
+      "Jasyapy",
+      "Jasyrundy",
+      "Jasypo",
+      "Jasypoteĩ",
+      "Jasypokõi",
+      "Jasypoapy",
+      "Jasyporundy",
+      "Jasypa",
+      "Jasypateĩ",
+      "Jasypakõi"
+    ],
+    "weekdays": [
+      "Arateĩ",
+      "Arakõi",
+      "Araapy",
+      "Ararundy",
+      "Arapo",
+      "Arapoteĩ",
+      "Arapokõi"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "ko'ágã",
+    "tomorrow": "ko'ẽrõ",
+    "yesterday": "kuehe",
+    "dayAfterTomorrow": "ko'ẽrõ rire",
+    "dayBeforeYesterday": "kuehe ñepyrũme",
+    "thisWeekday": "ko {weekday}",
+    "nextWeekday": "{weekday} ou vave",
+    "lastWeekday": "{weekday} ohasava'ekue",
+    "short": {
+      "months": [
+        "Jte",
+        "Jkõ",
+        "Jap",
+        "Jru",
+        "Jpo",
+        "Jpte",
+        "Jpkõ",
+        "Jpap",
+        "Jpr",
+        "Jpa",
+        "Jpte",
+        "Jpkõ"
+      ],
+      "weekdays": [
+        "Art",
+        "Ark",
+        "Ara",
+        "Arr",
+        "Arp",
+        "Apt",
+        "Apk"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} aravo'i",
+      "minute": "{n} aravo",
+      "hour": "{n} aravo guasu",
+      "day": "{n} ára",
+      "week": "{n} arapokõindy",
+      "month": "{n} jasy",
+      "year": "{n} ary"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "ko'ágã",
+    "ago": "{0} ohasava'ekue",
+    "inFuture": "{0} rire",
+    "short": {
+      "units": {
+        "second": "{n} ara'i",
+        "minute": "{n} ara",
+        "hour": "{n} ara g",
+        "day": "{n} ára",
+        "week": "{n} ara",
+        "month": "{n} jas",
+        "year": "{n} ary"
+      },
+      "ago": "{0} ohasava'ekue",
+      "inFuture": "{0} rire",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ohasava'ekue",
+      "inFuture": "{0} rire",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "pa mokõi",
+        "peteĩ",
+        "mokõi",
+        "mbohapy",
+        "irundy",
+        "po",
+        "poteĩ",
+        "pokõi",
+        "poapy",
+        "porundy",
+        "pa",
+        "pa peteĩ"
+      ],
+      "midnight": "pyhareve",
+      "noon": "asaje",
+      "patterns": {
+        "0": "{h}",
+        "5": "{h} ha po",
+        "10": "{h} ha pa",
+        "15": "{h} ha pa po",
+        "20": "{h} ha mokõi pa",
+        "25": "{h} ha mokõi pa po",
+        "30": "{h} ha mbohapy pa",
+        "35": "{next_h} mba'e mokõi pa po",
+        "40": "{next_h} mba'e mokõi pa",
+        "45": "{next_h} mba'e pa po",
+        "50": "{next_h} mba'e pa",
+        "55": "{next_h} mba'e po"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

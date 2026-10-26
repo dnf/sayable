@@ -1,0 +1,224 @@
+{
+  "code": "ceb",
+  "name": "Cebuano",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": "{n} ka adlaw",
+      "week": "{n} ka semana",
+      "month": "{n} ka bulan",
+      "year": "{n} ka tuig"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Bag-ong natawo",
+    "stages": {
+      "newborn": "Bag-ong natawo",
+      "infant": "Masuso",
+      "toddler": "Gamay nga bata",
+      "child": "Bata",
+      "teenager": "Tin-edyer",
+      "adult": "Hamtong"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ka adlaw",
+        "week": "{n} ka semana",
+        "month": "{n} ka bulan",
+        "year": "{n} ka tuig"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Enero",
+      "Pebrero",
+      "Marso",
+      "Abril",
+      "Mayo",
+      "Hunyo",
+      "Hulyo",
+      "Agosto",
+      "Septyembre",
+      "Oktubre",
+      "Nobyembre",
+      "Disyembre"
+    ],
+    "weekdays": [
+      "Dominggo",
+      "Lunes",
+      "Martes",
+      "Miyerkules",
+      "Huwebes",
+      "Biyernes",
+      "Sabado"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{month} {day}, {year}",
+    "today": "karong adlawa",
+    "tomorrow": "ugma",
+    "yesterday": "gahapon",
+    "dayAfterTomorrow": "sunod ugma",
+    "dayBeforeYesterday": "miaging gahapon",
+    "thisWeekday": "karong {weekday}",
+    "nextWeekday": "sunod nga {weekday}",
+    "lastWeekday": "miaging {weekday}",
+    "short": {
+      "months": [
+        "Ene",
+        "Peb",
+        "Mar",
+        "Abr",
+        "May",
+        "Hun",
+        "Hul",
+        "Ago",
+        "Sep",
+        "Okt",
+        "Nob",
+        "Dis"
+      ],
+      "weekdays": [
+        "Dom",
+        "Lun",
+        "Mar",
+        "Miy",
+        "Huw",
+        "Biy",
+        "Sab"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{month} {day}, {year}"
+    },
+    "compact": {
+      "datePattern": "{m}/{d}",
+      "datePatternWithYear": "{m}/{d}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} ka segundo",
+      "minute": "{n} ka minuto",
+      "hour": "{n} ka oras",
+      "day": "{n} ka adlaw",
+      "week": "{n} ka semana",
+      "month": "{n} ka bulan",
+      "year": "{n} ka tuig"
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "karon lang",
+    "ago": "{0} ang milabay",
+    "inFuture": "sulod sa {0}",
+    "short": {
+      "units": {
+        "second": "{n} seg",
+        "minute": "{n} min",
+        "hour": "{n} oras",
+        "day": "{n} ka adlaw",
+        "week": "{n} ka semana",
+        "month": "{n} ka bulan",
+        "year": "{n} ka tuig"
+      },
+      "ago": "{0} ang milabay",
+      "inFuture": "sulod sa {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}seg",
+        "minute": "{n}min",
+        "hour": "{n}o",
+        "day": "{n}d",
+        "week": "{n}sem",
+        "month": "{n}b",
+        "year": "{n}t"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} ang milabay",
+      "inFuture": "sulod sa {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dose",
+        "uno",
+        "dos",
+        "tres",
+        "kwatro",
+        "singko",
+        "sais",
+        "siyete",
+        "otso",
+        "nuwebe",
+        "diyes",
+        "onse"
+      ],
+      "midnight": "tungang gabii",
+      "noon": "udtong tutok",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

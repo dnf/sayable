@@ -58,7 +58,7 @@ let bad, ok_bad = sayabledate::format_date(fr, sayabledate::Compactness.Normal, 
 
 ## Internationalization
 
-All 168 locales are generated from `date/locales/src/*.json` into `sayabledate/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
+All 168 locales are generated from the shared `locales/*.json` files into `sayabledate/locales/locales.goose` (do not edit it by hand; run `just generate locales`). Look one up by its exact, case-sensitive code with `get_locale(code)`; `LOCALE_CODES` lists them all.
 
 ## Compactness
 

@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/mi.json
+# Source: locales/mi.json
 
 _sayabletime_locale_mi() {
     _clock_hours=('tekau mā rua' 'tahi' 'rua' 'toru' 'whā' 'rima' 'ono' 'whitu' 'waru' 'iwa' 'tekau' 'tekau mā tahi')

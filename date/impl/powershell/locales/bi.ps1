@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/bi.json
+# Source: locales/bi.json
 
 function locale_bi {
     $months = @('Janueri', 'Februari', 'Maj', 'Epril', 'Mei', 'Jun', 'Julae', 'Ogis', 'Septemba', 'Oktoba', 'Novemba', 'Disemba')

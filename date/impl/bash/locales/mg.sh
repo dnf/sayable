@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/mg.json
+# Source: locales/mg.json
 
 _sayabledate_locale_mg() {
     _months=('Janoary' 'Febroary' 'Martsa' 'Aprily' 'Mey' 'Jona' 'Jolay' 'Aogositra' 'Septambra' 'Oktobra' 'Novambra' 'Desambra')

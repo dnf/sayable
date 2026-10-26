@@ -1,0 +1,240 @@
+{
+  "code": "az",
+  "name": "Azerbaijani",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} gün",
+        "other": "{n} gün"
+      },
+      "week": {
+        "one": "{n} həftə",
+        "other": "{n} həftə"
+      },
+      "month": {
+        "one": "{n} ay",
+        "other": "{n} ay"
+      },
+      "year": {
+        "one": "{n} yaş",
+        "other": "{n} yaş"
+      }
+    },
+    "half": "{n} yarım",
+    "delimiter": ", ",
+    "justBorn": "Təzə doğulub",
+    "stages": {
+      "newborn": "Təzə doğulub",
+      "infant": "Körpə",
+      "toddler": "Azyaşlı",
+      "child": "Uşaq",
+      "teenager": "Yeniyetmə",
+      "adult": "Böyük"
+    },
+    "short": {
+      "units": {
+        "day": "{n} gün",
+        "week": "{n} hft",
+        "month": "{n} ay",
+        "year": "{n} il"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} gün",
+        "week": "{n} hft",
+        "month": "{n} ay",
+        "year": "{n} il"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "yanvar",
+      "fevral",
+      "mart",
+      "aprel",
+      "may",
+      "iyun",
+      "iyul",
+      "avqust",
+      "sentyabr",
+      "oktyabr",
+      "noyabr",
+      "dekabr"
+    ],
+    "weekdays": [
+      "bazar",
+      "bazar ertəsi",
+      "çərşənbə axşamı",
+      "çərşənbə",
+      "cümə axşamı",
+      "cümə",
+      "şənbə"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "bu gün",
+    "tomorrow": "sabah",
+    "yesterday": "dünən",
+    "dayAfterTomorrow": "birisi gün",
+    "dayBeforeYesterday": "srağagün",
+    "thisWeekday": "bu {weekday}",
+    "nextWeekday": "gələn {weekday}",
+    "lastWeekday": "keçən {weekday}",
+    "short": {
+      "months": [
+        "yan",
+        "fev",
+        "mar",
+        "apr",
+        "may",
+        "iyn",
+        "iyl",
+        "avq",
+        "sen",
+        "okt",
+        "noy",
+        "dek"
+      ],
+      "weekdays": [
+        "B.",
+        "B.e.",
+        "Ç.a.",
+        "Ç.",
+        "C.a.",
+        "C.",
+        "Ş."
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} saniyə",
+      "minute": "{n} dəqiqə",
+      "hour": "{n} saat",
+      "day": {
+        "one": "{n} gün",
+        "other": "{n} gün"
+      },
+      "week": {
+        "one": "{n} həftə",
+        "other": "{n} həftə"
+      },
+      "month": {
+        "one": "{n} ay",
+        "other": "{n} ay"
+      },
+      "year": {
+        "one": "{n} yaş",
+        "other": "{n} yaş"
+      }
+    },
+    "half": "{n} yarım",
+    "delimiter": ", ",
+    "justNow": "indi",
+    "ago": "{0} əvvəl",
+    "inFuture": "{0} sonra",
+    "short": {
+      "units": {
+        "second": "{n} san",
+        "minute": "{n} dəq",
+        "hour": "{n} saat",
+        "day": "{n} gün",
+        "week": "{n} hft",
+        "month": "{n} ay",
+        "year": "{n} il"
+      },
+      "ago": "{0} əvvəl",
+      "inFuture": "{0} sonra",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} san",
+        "minute": "{n} dəq",
+        "hour": "{n} saat",
+        "day": "{n} gün",
+        "week": "{n} hft",
+        "month": "{n} ay",
+        "year": "{n} il"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} əvvəl",
+      "inFuture": "{0} sonra",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "on iki",
+        "bir",
+        "iki",
+        "üç",
+        "dörd",
+        "beş",
+        "altı",
+        "yeddi",
+        "səkkiz",
+        "doqquz",
+        "on",
+        "on bir"
+      ],
+      "midnight": "gecə yarısı",
+      "noon": "günorta",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "beş keçir {h}",
+        "10": "on keçir {h}",
+        "15": "on beş keçir {h}",
+        "20": "iyirmi keçir {h}",
+        "25": "iyirmi beş keçir {h}",
+        "30": "otuz keçir {h}",
+        "35": "iyirmi beş qalmış {next_h}",
+        "40": "iyirmi qalmış {next_h}",
+        "45": "on beş qalmış {next_h}",
+        "50": "on qalmış {next_h}",
+        "55": "beş qalmış {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

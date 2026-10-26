@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: age/locales/src/mi.json
+-- Source: locales/mi.json
 
 module SayableAge.Locales.Mi (locale) where
 

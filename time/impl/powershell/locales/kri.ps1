@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/kri.json
+# Source: locales/kri.json
 
 function locale_kri {
     $hours = @('twelv', 'wan', 'tu', 'tri', 'fo', 'fayv', 'siks', 'sevin', 'et', 'nayn', 'ten', 'ilevin')

@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: date/locales/src/shi.json
+-- Source: locales/shi.json
 
 module SayableDate.Locales.Shi (locale) where
 

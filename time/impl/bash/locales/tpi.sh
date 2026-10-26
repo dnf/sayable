@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/tpi.json
+# Source: locales/tpi.json
 
 _sayabletime_locale_tpi() {
     _clock_hours=('twelp' 'wan' 'tu' 'tri' 'foa' 'faiv' 'sikis' 'seven' 'et' 'nain' 'ten' 'eleven')

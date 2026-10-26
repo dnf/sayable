@@ -1,0 +1,220 @@
+{
+  "code": "ay",
+  "name": "Aymara",
+  "pluralRule": "other_only",
+  "age": {
+    "units": {
+      "day": "uru {n}",
+      "week": "simana {n}",
+      "month": "phaxsi {n}",
+      "year": "mara {n}"
+    },
+    "half": "{0} chika",
+    "delimiter": ", ",
+    "justBorn": "Wawa machaqa",
+    "stages": {
+      "newborn": "Wawa machaqa",
+      "infant": "Wawa",
+      "toddler": "Jisk'a wawa",
+      "child": "Yuqalla",
+      "teenager": "Wayna",
+      "adult": "Jaqi"
+    },
+    "short": {
+      "units": {
+        "day": "{n} ur.",
+        "week": "{n} sim.",
+        "month": "{n} phx.",
+        "year": "{n} mr."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Chinuqa",
+      "Anata",
+      "Achuqa",
+      "Qasiwi",
+      "Llamayu",
+      "Marat'aqa",
+      "Willkakuti",
+      "Llumpaqa",
+      "Sata",
+      "Taypisata",
+      "Lapaqa",
+      "Jalluqallta"
+    ],
+    "weekdays": [
+      "Samaya",
+      "Maytita",
+      "Paytita",
+      "Iritita",
+      "Yunkita",
+      "Chipanata",
+      "Takirita"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "jichha uru",
+    "tomorrow": "q'aya",
+    "yesterday": "masüru",
+    "thisWeekday": "aka {weekday}",
+    "nextWeekday": "jutir {weekday}",
+    "lastWeekday": "nayra {weekday}",
+    "short": {
+      "months": [
+        "Chi",
+        "Ana",
+        "Ach",
+        "Qas",
+        "Lla",
+        "Mar",
+        "Wil",
+        "Llu",
+        "Sat",
+        "Tay",
+        "Lap",
+        "Jal"
+      ],
+      "weekdays": [
+        "Sam",
+        "May",
+        "Pay",
+        "Iri",
+        "Yun",
+        "Chi",
+        "Tak"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "sikundu {n}",
+      "minute": "minutu {n}",
+      "hour": "ura {n}",
+      "day": "uru {n}",
+      "week": "simana {n}",
+      "month": "phaxsi {n}",
+      "year": "mara {n}"
+    },
+    "half": "{0} chika",
+    "delimiter": ", ",
+    "justNow": "jichha",
+    "ago": "{0} nayraqata",
+    "inFuture": "{0} jutirïn",
+    "short": {
+      "units": {
+        "second": "sik. {n}",
+        "minute": "min. {n}",
+        "hour": "ur. {n}",
+        "day": "{n} ur.",
+        "week": "{n} sim.",
+        "month": "{n} phx.",
+        "year": "{n} mr."
+      },
+      "ago": "{0} nayraqata",
+      "inFuture": "{0} jutirïn",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} nayraqata",
+      "inFuture": "{0} jutirïn",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "tunka payani",
+        "maya",
+        "paya",
+        "kimsa",
+        "pusi",
+        "phisqa",
+        "suxta",
+        "paqallqu",
+        "kimsaqallqu",
+        "llantunka",
+        "tunka",
+        "tunka mayani"
+      ],
+      "midnight": "aruma chika",
+      "noon": "chika uru",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

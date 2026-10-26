@@ -10,7 +10,7 @@
 
 namespace sayabletime;
 
-// Source: time/locales/src/af.json
+// Source: locales/af.json
 fn locale_af() -> TimeLocale {
     TimeLocale {
         code: "af",
@@ -25,7 +25,7 @@ fn locale_af() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ak.json
+// Source: locales/ak.json
 fn locale_ak() -> TimeLocale {
     TimeLocale {
         code: "ak",
@@ -40,7 +40,7 @@ fn locale_ak() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/am.json
+// Source: locales/am.json
 fn locale_am() -> TimeLocale {
     TimeLocale {
         code: "am",
@@ -55,7 +55,7 @@ fn locale_am() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ar.json
+// Source: locales/ar.json
 fn locale_ar() -> TimeLocale {
     TimeLocale {
         code: "ar",
@@ -70,7 +70,7 @@ fn locale_ar() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ay.json
+// Source: locales/ay.json
 fn locale_ay() -> TimeLocale {
     TimeLocale {
         code: "ay",
@@ -85,7 +85,7 @@ fn locale_ay() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/az.json
+// Source: locales/az.json
 fn locale_az() -> TimeLocale {
     TimeLocale {
         code: "az",
@@ -100,7 +100,7 @@ fn locale_az() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/bci.json
+// Source: locales/bci.json
 fn locale_bci() -> TimeLocale {
     TimeLocale {
         code: "bci",
@@ -115,7 +115,7 @@ fn locale_bci() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/be.json
+// Source: locales/be.json
 fn locale_be() -> TimeLocale {
     TimeLocale {
         code: "be",
@@ -130,7 +130,7 @@ fn locale_be() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/bem.json
+// Source: locales/bem.json
 fn locale_bem() -> TimeLocale {
     TimeLocale {
         code: "bem",
@@ -145,7 +145,7 @@ fn locale_bem() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/bg.json
+// Source: locales/bg.json
 fn locale_bg() -> TimeLocale {
     TimeLocale {
         code: "bg",
@@ -160,7 +160,7 @@ fn locale_bg() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/bi.json
+// Source: locales/bi.json
 fn locale_bi() -> TimeLocale {
     TimeLocale {
         code: "bi",
@@ -175,7 +175,7 @@ fn locale_bi() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/bm.json
+// Source: locales/bm.json
 fn locale_bm() -> TimeLocale {
     TimeLocale {
         code: "bm",
@@ -190,7 +190,7 @@ fn locale_bm() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/bn.json
+// Source: locales/bn.json
 fn locale_bn() -> TimeLocale {
     TimeLocale {
         code: "bn",
@@ -205,7 +205,7 @@ fn locale_bn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/br.json
+// Source: locales/br.json
 fn locale_br() -> TimeLocale {
     TimeLocale {
         code: "br",
@@ -220,7 +220,7 @@ fn locale_br() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/bs.json
+// Source: locales/bs.json
 fn locale_bs() -> TimeLocale {
     TimeLocale {
         code: "bs",
@@ -235,7 +235,7 @@ fn locale_bs() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ca.json
+// Source: locales/ca.json
 fn locale_ca() -> TimeLocale {
     TimeLocale {
         code: "ca",
@@ -250,7 +250,7 @@ fn locale_ca() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/cak.json
+// Source: locales/cak.json
 fn locale_cak() -> TimeLocale {
     TimeLocale {
         code: "cak",
@@ -265,7 +265,7 @@ fn locale_cak() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ceb.json
+// Source: locales/ceb.json
 fn locale_ceb() -> TimeLocale {
     TimeLocale {
         code: "ceb",
@@ -280,7 +280,7 @@ fn locale_ceb() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/cs.json
+// Source: locales/cs.json
 fn locale_cs() -> TimeLocale {
     TimeLocale {
         code: "cs",
@@ -295,7 +295,7 @@ fn locale_cs() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/cy.json
+// Source: locales/cy.json
 fn locale_cy() -> TimeLocale {
     TimeLocale {
         code: "cy",
@@ -310,7 +310,7 @@ fn locale_cy() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/da.json
+// Source: locales/da.json
 fn locale_da() -> TimeLocale {
     TimeLocale {
         code: "da",
@@ -325,7 +325,7 @@ fn locale_da() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/de.json
+// Source: locales/de.json
 fn locale_de() -> TimeLocale {
     TimeLocale {
         code: "de",
@@ -340,7 +340,7 @@ fn locale_de() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/din.json
+// Source: locales/din.json
 fn locale_din() -> TimeLocale {
     TimeLocale {
         code: "din",
@@ -355,7 +355,7 @@ fn locale_din() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/dje.json
+// Source: locales/dje.json
 fn locale_dje() -> TimeLocale {
     TimeLocale {
         code: "dje",
@@ -370,7 +370,7 @@ fn locale_dje() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/dv.json
+// Source: locales/dv.json
 fn locale_dv() -> TimeLocale {
     TimeLocale {
         code: "dv",
@@ -385,7 +385,7 @@ fn locale_dv() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/dyu.json
+// Source: locales/dyu.json
 fn locale_dyu() -> TimeLocale {
     TimeLocale {
         code: "dyu",
@@ -400,7 +400,7 @@ fn locale_dyu() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/dz.json
+// Source: locales/dz.json
 fn locale_dz() -> TimeLocale {
     TimeLocale {
         code: "dz",
@@ -415,7 +415,7 @@ fn locale_dz() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ee.json
+// Source: locales/ee.json
 fn locale_ee() -> TimeLocale {
     TimeLocale {
         code: "ee",
@@ -430,7 +430,7 @@ fn locale_ee() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/el.json
+// Source: locales/el.json
 fn locale_el() -> TimeLocale {
     TimeLocale {
         code: "el",
@@ -445,7 +445,7 @@ fn locale_el() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/en.json
+// Source: locales/en.json
 fn locale_en() -> TimeLocale {
     TimeLocale {
         code: "en",
@@ -460,7 +460,7 @@ fn locale_en() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/es.json
+// Source: locales/es.json
 fn locale_es() -> TimeLocale {
     TimeLocale {
         code: "es",
@@ -475,7 +475,7 @@ fn locale_es() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/et.json
+// Source: locales/et.json
 fn locale_et() -> TimeLocale {
     TimeLocale {
         code: "et",
@@ -490,7 +490,7 @@ fn locale_et() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/eu.json
+// Source: locales/eu.json
 fn locale_eu() -> TimeLocale {
     TimeLocale {
         code: "eu",
@@ -505,7 +505,7 @@ fn locale_eu() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/fa.json
+// Source: locales/fa.json
 fn locale_fa() -> TimeLocale {
     TimeLocale {
         code: "fa",
@@ -520,7 +520,7 @@ fn locale_fa() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/fan.json
+// Source: locales/fan.json
 fn locale_fan() -> TimeLocale {
     TimeLocale {
         code: "fan",
@@ -535,7 +535,7 @@ fn locale_fan() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ff.json
+// Source: locales/ff.json
 fn locale_ff() -> TimeLocale {
     TimeLocale {
         code: "ff",
@@ -550,7 +550,7 @@ fn locale_ff() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/fi.json
+// Source: locales/fi.json
 fn locale_fi() -> TimeLocale {
     TimeLocale {
         code: "fi",
@@ -565,7 +565,7 @@ fn locale_fi() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/fil.json
+// Source: locales/fil.json
 fn locale_fil() -> TimeLocale {
     TimeLocale {
         code: "fil",
@@ -580,7 +580,7 @@ fn locale_fil() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/fj.json
+// Source: locales/fj.json
 fn locale_fj() -> TimeLocale {
     TimeLocale {
         code: "fj",
@@ -595,7 +595,7 @@ fn locale_fj() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/fon.json
+// Source: locales/fon.json
 fn locale_fon() -> TimeLocale {
     TimeLocale {
         code: "fon",
@@ -610,7 +610,7 @@ fn locale_fon() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/fr.json
+// Source: locales/fr.json
 fn locale_fr() -> TimeLocale {
     TimeLocale {
         code: "fr",
@@ -625,7 +625,7 @@ fn locale_fr() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ga.json
+// Source: locales/ga.json
 fn locale_ga() -> TimeLocale {
     TimeLocale {
         code: "ga",
@@ -640,7 +640,7 @@ fn locale_ga() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/gd.json
+// Source: locales/gd.json
 fn locale_gd() -> TimeLocale {
     TimeLocale {
         code: "gd",
@@ -655,7 +655,7 @@ fn locale_gd() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/gl.json
+// Source: locales/gl.json
 fn locale_gl() -> TimeLocale {
     TimeLocale {
         code: "gl",
@@ -670,7 +670,7 @@ fn locale_gl() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/gn.json
+// Source: locales/gn.json
 fn locale_gn() -> TimeLocale {
     TimeLocale {
         code: "gn",
@@ -685,7 +685,7 @@ fn locale_gn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/gu.json
+// Source: locales/gu.json
 fn locale_gu() -> TimeLocale {
     TimeLocale {
         code: "gu",
@@ -700,7 +700,7 @@ fn locale_gu() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/gv.json
+// Source: locales/gv.json
 fn locale_gv() -> TimeLocale {
     TimeLocale {
         code: "gv",
@@ -715,7 +715,7 @@ fn locale_gv() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ha.json
+// Source: locales/ha.json
 fn locale_ha() -> TimeLocale {
     TimeLocale {
         code: "ha",
@@ -730,7 +730,7 @@ fn locale_ha() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/he.json
+// Source: locales/he.json
 fn locale_he() -> TimeLocale {
     TimeLocale {
         code: "he",
@@ -745,7 +745,7 @@ fn locale_he() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/hi.json
+// Source: locales/hi.json
 fn locale_hi() -> TimeLocale {
     TimeLocale {
         code: "hi",
@@ -760,7 +760,7 @@ fn locale_hi() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/hmn.json
+// Source: locales/hmn.json
 fn locale_hmn() -> TimeLocale {
     TimeLocale {
         code: "hmn",
@@ -775,7 +775,7 @@ fn locale_hmn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/hr.json
+// Source: locales/hr.json
 fn locale_hr() -> TimeLocale {
     TimeLocale {
         code: "hr",
@@ -790,7 +790,7 @@ fn locale_hr() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ht.json
+// Source: locales/ht.json
 fn locale_ht() -> TimeLocale {
     TimeLocale {
         code: "ht",
@@ -805,7 +805,7 @@ fn locale_ht() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/hu.json
+// Source: locales/hu.json
 fn locale_hu() -> TimeLocale {
     TimeLocale {
         code: "hu",
@@ -820,7 +820,7 @@ fn locale_hu() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/hy.json
+// Source: locales/hy.json
 fn locale_hy() -> TimeLocale {
     TimeLocale {
         code: "hy",
@@ -835,7 +835,7 @@ fn locale_hy() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/id.json
+// Source: locales/id.json
 fn locale_id() -> TimeLocale {
     TimeLocale {
         code: "id",
@@ -850,7 +850,7 @@ fn locale_id() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ig.json
+// Source: locales/ig.json
 fn locale_ig() -> TimeLocale {
     TimeLocale {
         code: "ig",
@@ -865,7 +865,7 @@ fn locale_ig() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/is.json
+// Source: locales/is.json
 fn locale_is() -> TimeLocale {
     TimeLocale {
         code: "is",
@@ -880,7 +880,7 @@ fn locale_is() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/it.json
+// Source: locales/it.json
 fn locale_it() -> TimeLocale {
     TimeLocale {
         code: "it",
@@ -895,7 +895,7 @@ fn locale_it() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ja.json
+// Source: locales/ja.json
 fn locale_ja() -> TimeLocale {
     TimeLocale {
         code: "ja",
@@ -910,7 +910,7 @@ fn locale_ja() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/jv.json
+// Source: locales/jv.json
 fn locale_jv() -> TimeLocale {
     TimeLocale {
         code: "jv",
@@ -925,7 +925,7 @@ fn locale_jv() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ka.json
+// Source: locales/ka.json
 fn locale_ka() -> TimeLocale {
     TimeLocale {
         code: "ka",
@@ -940,7 +940,7 @@ fn locale_ka() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kbp.json
+// Source: locales/kbp.json
 fn locale_kbp() -> TimeLocale {
     TimeLocale {
         code: "kbp",
@@ -955,7 +955,7 @@ fn locale_kbp() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kek.json
+// Source: locales/kek.json
 fn locale_kek() -> TimeLocale {
     TimeLocale {
         code: "kek",
@@ -970,7 +970,7 @@ fn locale_kek() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ki.json
+// Source: locales/ki.json
 fn locale_ki() -> TimeLocale {
     TimeLocale {
         code: "ki",
@@ -985,7 +985,7 @@ fn locale_ki() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kk.json
+// Source: locales/kk.json
 fn locale_kk() -> TimeLocale {
     TimeLocale {
         code: "kk",
@@ -1000,7 +1000,7 @@ fn locale_kk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kl.json
+// Source: locales/kl.json
 fn locale_kl() -> TimeLocale {
     TimeLocale {
         code: "kl",
@@ -1015,7 +1015,7 @@ fn locale_kl() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/km.json
+// Source: locales/km.json
 fn locale_km() -> TimeLocale {
     TimeLocale {
         code: "km",
@@ -1030,7 +1030,7 @@ fn locale_km() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kn.json
+// Source: locales/kn.json
 fn locale_kn() -> TimeLocale {
     TimeLocale {
         code: "kn",
@@ -1045,7 +1045,7 @@ fn locale_kn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ko.json
+// Source: locales/ko.json
 fn locale_ko() -> TimeLocale {
     TimeLocale {
         code: "ko",
@@ -1060,7 +1060,7 @@ fn locale_ko() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kpe.json
+// Source: locales/kpe.json
 fn locale_kpe() -> TimeLocale {
     TimeLocale {
         code: "kpe",
@@ -1075,7 +1075,7 @@ fn locale_kpe() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kri.json
+// Source: locales/kri.json
 fn locale_kri() -> TimeLocale {
     TimeLocale {
         code: "kri",
@@ -1090,7 +1090,7 @@ fn locale_kri() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ktu.json
+// Source: locales/ktu.json
 fn locale_ktu() -> TimeLocale {
     TimeLocale {
         code: "ktu",
@@ -1105,7 +1105,7 @@ fn locale_ktu() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ku.json
+// Source: locales/ku.json
 fn locale_ku() -> TimeLocale {
     TimeLocale {
         code: "ku",
@@ -1120,7 +1120,7 @@ fn locale_ku() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/kw.json
+// Source: locales/kw.json
 fn locale_kw() -> TimeLocale {
     TimeLocale {
         code: "kw",
@@ -1135,7 +1135,7 @@ fn locale_kw() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ky.json
+// Source: locales/ky.json
 fn locale_ky() -> TimeLocale {
     TimeLocale {
         code: "ky",
@@ -1150,7 +1150,7 @@ fn locale_ky() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/lb.json
+// Source: locales/lb.json
 fn locale_lb() -> TimeLocale {
     TimeLocale {
         code: "lb",
@@ -1165,7 +1165,7 @@ fn locale_lb() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/lg.json
+// Source: locales/lg.json
 fn locale_lg() -> TimeLocale {
     TimeLocale {
         code: "lg",
@@ -1180,7 +1180,7 @@ fn locale_lg() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ln.json
+// Source: locales/ln.json
 fn locale_ln() -> TimeLocale {
     TimeLocale {
         code: "ln",
@@ -1195,7 +1195,7 @@ fn locale_ln() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/lo.json
+// Source: locales/lo.json
 fn locale_lo() -> TimeLocale {
     TimeLocale {
         code: "lo",
@@ -1210,7 +1210,7 @@ fn locale_lo() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/lt.json
+// Source: locales/lt.json
 fn locale_lt() -> TimeLocale {
     TimeLocale {
         code: "lt",
@@ -1225,7 +1225,7 @@ fn locale_lt() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/luo.json
+// Source: locales/luo.json
 fn locale_luo() -> TimeLocale {
     TimeLocale {
         code: "luo",
@@ -1240,7 +1240,7 @@ fn locale_luo() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/lv.json
+// Source: locales/lv.json
 fn locale_lv() -> TimeLocale {
     TimeLocale {
         code: "lv",
@@ -1255,7 +1255,7 @@ fn locale_lv() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mam.json
+// Source: locales/mam.json
 fn locale_mam() -> TimeLocale {
     TimeLocale {
         code: "mam",
@@ -1270,7 +1270,7 @@ fn locale_mam() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/men.json
+// Source: locales/men.json
 fn locale_men() -> TimeLocale {
     TimeLocale {
         code: "men",
@@ -1285,7 +1285,7 @@ fn locale_men() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mfe.json
+// Source: locales/mfe.json
 fn locale_mfe() -> TimeLocale {
     TimeLocale {
         code: "mfe",
@@ -1300,7 +1300,7 @@ fn locale_mfe() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mg.json
+// Source: locales/mg.json
 fn locale_mg() -> TimeLocale {
     TimeLocale {
         code: "mg",
@@ -1315,7 +1315,7 @@ fn locale_mg() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mi.json
+// Source: locales/mi.json
 fn locale_mi() -> TimeLocale {
     TimeLocale {
         code: "mi",
@@ -1330,7 +1330,7 @@ fn locale_mi() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mk.json
+// Source: locales/mk.json
 fn locale_mk() -> TimeLocale {
     TimeLocale {
         code: "mk",
@@ -1345,7 +1345,7 @@ fn locale_mk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ml.json
+// Source: locales/ml.json
 fn locale_ml() -> TimeLocale {
     TimeLocale {
         code: "ml",
@@ -1360,7 +1360,7 @@ fn locale_ml() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mn.json
+// Source: locales/mn.json
 fn locale_mn() -> TimeLocale {
     TimeLocale {
         code: "mn",
@@ -1375,7 +1375,7 @@ fn locale_mn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mnk.json
+// Source: locales/mnk.json
 fn locale_mnk() -> TimeLocale {
     TimeLocale {
         code: "mnk",
@@ -1390,7 +1390,7 @@ fn locale_mnk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mos.json
+// Source: locales/mos.json
 fn locale_mos() -> TimeLocale {
     TimeLocale {
         code: "mos",
@@ -1405,7 +1405,7 @@ fn locale_mos() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mr.json
+// Source: locales/mr.json
 fn locale_mr() -> TimeLocale {
     TimeLocale {
         code: "mr",
@@ -1420,7 +1420,7 @@ fn locale_mr() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ms.json
+// Source: locales/ms.json
 fn locale_ms() -> TimeLocale {
     TimeLocale {
         code: "ms",
@@ -1435,7 +1435,7 @@ fn locale_ms() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/mt.json
+// Source: locales/mt.json
 fn locale_mt() -> TimeLocale {
     TimeLocale {
         code: "mt",
@@ -1450,7 +1450,7 @@ fn locale_mt() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/my.json
+// Source: locales/my.json
 fn locale_my() -> TimeLocale {
     TimeLocale {
         code: "my",
@@ -1465,7 +1465,7 @@ fn locale_my() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/nb.json
+// Source: locales/nb.json
 fn locale_nb() -> TimeLocale {
     TimeLocale {
         code: "nb",
@@ -1480,7 +1480,7 @@ fn locale_nb() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/nd.json
+// Source: locales/nd.json
 fn locale_nd() -> TimeLocale {
     TimeLocale {
         code: "nd",
@@ -1495,7 +1495,7 @@ fn locale_nd() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ne.json
+// Source: locales/ne.json
 fn locale_ne() -> TimeLocale {
     TimeLocale {
         code: "ne",
@@ -1510,7 +1510,7 @@ fn locale_ne() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ng.json
+// Source: locales/ng.json
 fn locale_ng() -> TimeLocale {
     TimeLocale {
         code: "ng",
@@ -1525,7 +1525,7 @@ fn locale_ng() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/nl.json
+// Source: locales/nl.json
 fn locale_nl() -> TimeLocale {
     TimeLocale {
         code: "nl",
@@ -1540,7 +1540,7 @@ fn locale_nl() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/nr.json
+// Source: locales/nr.json
 fn locale_nr() -> TimeLocale {
     TimeLocale {
         code: "nr",
@@ -1555,7 +1555,7 @@ fn locale_nr() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/nso.json
+// Source: locales/nso.json
 fn locale_nso() -> TimeLocale {
     TimeLocale {
         code: "nso",
@@ -1570,7 +1570,7 @@ fn locale_nso() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/nus.json
+// Source: locales/nus.json
 fn locale_nus() -> TimeLocale {
     TimeLocale {
         code: "nus",
@@ -1585,7 +1585,7 @@ fn locale_nus() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ny.json
+// Source: locales/ny.json
 fn locale_ny() -> TimeLocale {
     TimeLocale {
         code: "ny",
@@ -1600,7 +1600,7 @@ fn locale_ny() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/om.json
+// Source: locales/om.json
 fn locale_om() -> TimeLocale {
     TimeLocale {
         code: "om",
@@ -1615,7 +1615,7 @@ fn locale_om() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/or.json
+// Source: locales/or.json
 fn locale_or() -> TimeLocale {
     TimeLocale {
         code: "or",
@@ -1630,7 +1630,7 @@ fn locale_or() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/pa.json
+// Source: locales/pa.json
 fn locale_pa() -> TimeLocale {
     TimeLocale {
         code: "pa",
@@ -1645,7 +1645,7 @@ fn locale_pa() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/pis.json
+// Source: locales/pis.json
 fn locale_pis() -> TimeLocale {
     TimeLocale {
         code: "pis",
@@ -1660,7 +1660,7 @@ fn locale_pis() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/pl.json
+// Source: locales/pl.json
 fn locale_pl() -> TimeLocale {
     TimeLocale {
         code: "pl",
@@ -1675,7 +1675,7 @@ fn locale_pl() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/pov.json
+// Source: locales/pov.json
 fn locale_pov() -> TimeLocale {
     TimeLocale {
         code: "pov",
@@ -1690,7 +1690,7 @@ fn locale_pov() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ps.json
+// Source: locales/ps.json
 fn locale_ps() -> TimeLocale {
     TimeLocale {
         code: "ps",
@@ -1705,7 +1705,7 @@ fn locale_ps() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/pt.json
+// Source: locales/pt.json
 fn locale_pt() -> TimeLocale {
     TimeLocale {
         code: "pt",
@@ -1720,7 +1720,7 @@ fn locale_pt() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/qu.json
+// Source: locales/qu.json
 fn locale_qu() -> TimeLocale {
     TimeLocale {
         code: "qu",
@@ -1735,7 +1735,7 @@ fn locale_qu() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/quc.json
+// Source: locales/quc.json
 fn locale_quc() -> TimeLocale {
     TimeLocale {
         code: "quc",
@@ -1750,7 +1750,7 @@ fn locale_quc() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ro.json
+// Source: locales/ro.json
 fn locale_ro() -> TimeLocale {
     TimeLocale {
         code: "ro",
@@ -1765,7 +1765,7 @@ fn locale_ro() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ru.json
+// Source: locales/ru.json
 fn locale_ru() -> TimeLocale {
     TimeLocale {
         code: "ru",
@@ -1780,7 +1780,7 @@ fn locale_ru() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/rw.json
+// Source: locales/rw.json
 fn locale_rw() -> TimeLocale {
     TimeLocale {
         code: "rw",
@@ -1795,7 +1795,7 @@ fn locale_rw() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sar.json
+// Source: locales/sar.json
 fn locale_sar() -> TimeLocale {
     TimeLocale {
         code: "sar",
@@ -1810,7 +1810,7 @@ fn locale_sar() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sd.json
+// Source: locales/sd.json
 fn locale_sd() -> TimeLocale {
     TimeLocale {
         code: "sd",
@@ -1825,7 +1825,7 @@ fn locale_sd() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sg.json
+// Source: locales/sg.json
 fn locale_sg() -> TimeLocale {
     TimeLocale {
         code: "sg",
@@ -1840,7 +1840,7 @@ fn locale_sg() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/shi.json
+// Source: locales/shi.json
 fn locale_shi() -> TimeLocale {
     TimeLocale {
         code: "shi",
@@ -1855,7 +1855,7 @@ fn locale_shi() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/shn.json
+// Source: locales/shn.json
 fn locale_shn() -> TimeLocale {
     TimeLocale {
         code: "shn",
@@ -1870,7 +1870,7 @@ fn locale_shn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/si.json
+// Source: locales/si.json
 fn locale_si() -> TimeLocale {
     TimeLocale {
         code: "si",
@@ -1885,7 +1885,7 @@ fn locale_si() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sk.json
+// Source: locales/sk.json
 fn locale_sk() -> TimeLocale {
     TimeLocale {
         code: "sk",
@@ -1900,7 +1900,7 @@ fn locale_sk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sl.json
+// Source: locales/sl.json
 fn locale_sl() -> TimeLocale {
     TimeLocale {
         code: "sl",
@@ -1915,7 +1915,7 @@ fn locale_sl() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sn.json
+// Source: locales/sn.json
 fn locale_sn() -> TimeLocale {
     TimeLocale {
         code: "sn",
@@ -1930,7 +1930,7 @@ fn locale_sn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/snk.json
+// Source: locales/snk.json
 fn locale_snk() -> TimeLocale {
     TimeLocale {
         code: "snk",
@@ -1945,7 +1945,7 @@ fn locale_snk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/so.json
+// Source: locales/so.json
 fn locale_so() -> TimeLocale {
     TimeLocale {
         code: "so",
@@ -1960,7 +1960,7 @@ fn locale_so() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sq.json
+// Source: locales/sq.json
 fn locale_sq() -> TimeLocale {
     TimeLocale {
         code: "sq",
@@ -1975,7 +1975,7 @@ fn locale_sq() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sr.json
+// Source: locales/sr.json
 fn locale_sr() -> TimeLocale {
     TimeLocale {
         code: "sr",
@@ -1990,7 +1990,7 @@ fn locale_sr() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ss.json
+// Source: locales/ss.json
 fn locale_ss() -> TimeLocale {
     TimeLocale {
         code: "ss",
@@ -2005,7 +2005,7 @@ fn locale_ss() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/st.json
+// Source: locales/st.json
 fn locale_st() -> TimeLocale {
     TimeLocale {
         code: "st",
@@ -2020,7 +2020,7 @@ fn locale_st() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/su.json
+// Source: locales/su.json
 fn locale_su() -> TimeLocale {
     TimeLocale {
         code: "su",
@@ -2035,7 +2035,7 @@ fn locale_su() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/suk.json
+// Source: locales/suk.json
 fn locale_suk() -> TimeLocale {
     TimeLocale {
         code: "suk",
@@ -2050,7 +2050,7 @@ fn locale_suk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sv.json
+// Source: locales/sv.json
 fn locale_sv() -> TimeLocale {
     TimeLocale {
         code: "sv",
@@ -2065,7 +2065,7 @@ fn locale_sv() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/sw.json
+// Source: locales/sw.json
 fn locale_sw() -> TimeLocale {
     TimeLocale {
         code: "sw",
@@ -2080,7 +2080,7 @@ fn locale_sw() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ta.json
+// Source: locales/ta.json
 fn locale_ta() -> TimeLocale {
     TimeLocale {
         code: "ta",
@@ -2095,7 +2095,7 @@ fn locale_ta() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/te.json
+// Source: locales/te.json
 fn locale_te() -> TimeLocale {
     TimeLocale {
         code: "te",
@@ -2110,7 +2110,7 @@ fn locale_te() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tem.json
+// Source: locales/tem.json
 fn locale_tem() -> TimeLocale {
     TimeLocale {
         code: "tem",
@@ -2125,7 +2125,7 @@ fn locale_tem() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tet.json
+// Source: locales/tet.json
 fn locale_tet() -> TimeLocale {
     TimeLocale {
         code: "tet",
@@ -2140,7 +2140,7 @@ fn locale_tet() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tg.json
+// Source: locales/tg.json
 fn locale_tg() -> TimeLocale {
     TimeLocale {
         code: "tg",
@@ -2155,7 +2155,7 @@ fn locale_tg() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/th.json
+// Source: locales/th.json
 fn locale_th() -> TimeLocale {
     TimeLocale {
         code: "th",
@@ -2170,7 +2170,7 @@ fn locale_th() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ti.json
+// Source: locales/ti.json
 fn locale_ti() -> TimeLocale {
     TimeLocale {
         code: "ti",
@@ -2185,7 +2185,7 @@ fn locale_ti() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tig.json
+// Source: locales/tig.json
 fn locale_tig() -> TimeLocale {
     TimeLocale {
         code: "tig",
@@ -2200,7 +2200,7 @@ fn locale_tig() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tk.json
+// Source: locales/tk.json
 fn locale_tk() -> TimeLocale {
     TimeLocale {
         code: "tk",
@@ -2215,7 +2215,7 @@ fn locale_tk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tn.json
+// Source: locales/tn.json
 fn locale_tn() -> TimeLocale {
     TimeLocale {
         code: "tn",
@@ -2230,7 +2230,7 @@ fn locale_tn() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tpi.json
+// Source: locales/tpi.json
 fn locale_tpi() -> TimeLocale {
     TimeLocale {
         code: "tpi",
@@ -2245,7 +2245,7 @@ fn locale_tpi() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tr.json
+// Source: locales/tr.json
 fn locale_tr() -> TimeLocale {
     TimeLocale {
         code: "tr",
@@ -2260,7 +2260,7 @@ fn locale_tr() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ts.json
+// Source: locales/ts.json
 fn locale_ts() -> TimeLocale {
     TimeLocale {
         code: "ts",
@@ -2275,7 +2275,7 @@ fn locale_ts() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tum.json
+// Source: locales/tum.json
 fn locale_tum() -> TimeLocale {
     TimeLocale {
         code: "tum",
@@ -2290,7 +2290,7 @@ fn locale_tum() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/tzm.json
+// Source: locales/tzm.json
 fn locale_tzm() -> TimeLocale {
     TimeLocale {
         code: "tzm",
@@ -2305,7 +2305,7 @@ fn locale_tzm() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/uk.json
+// Source: locales/uk.json
 fn locale_uk() -> TimeLocale {
     TimeLocale {
         code: "uk",
@@ -2320,7 +2320,7 @@ fn locale_uk() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/umb.json
+// Source: locales/umb.json
 fn locale_umb() -> TimeLocale {
     TimeLocale {
         code: "umb",
@@ -2335,7 +2335,7 @@ fn locale_umb() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ur.json
+// Source: locales/ur.json
 fn locale_ur() -> TimeLocale {
     TimeLocale {
         code: "ur",
@@ -2350,7 +2350,7 @@ fn locale_ur() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/uz.json
+// Source: locales/uz.json
 fn locale_uz() -> TimeLocale {
     TimeLocale {
         code: "uz",
@@ -2365,7 +2365,7 @@ fn locale_uz() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/ve.json
+// Source: locales/ve.json
 fn locale_ve() -> TimeLocale {
     TimeLocale {
         code: "ve",
@@ -2380,7 +2380,7 @@ fn locale_ve() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/vi.json
+// Source: locales/vi.json
 fn locale_vi() -> TimeLocale {
     TimeLocale {
         code: "vi",
@@ -2395,7 +2395,7 @@ fn locale_vi() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/vmw.json
+// Source: locales/vmw.json
 fn locale_vmw() -> TimeLocale {
     TimeLocale {
         code: "vmw",
@@ -2410,7 +2410,7 @@ fn locale_vmw() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/wo.json
+// Source: locales/wo.json
 fn locale_wo() -> TimeLocale {
     TimeLocale {
         code: "wo",
@@ -2425,7 +2425,7 @@ fn locale_wo() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/xh.json
+// Source: locales/xh.json
 fn locale_xh() -> TimeLocale {
     TimeLocale {
         code: "xh",
@@ -2440,7 +2440,7 @@ fn locale_xh() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/yao.json
+// Source: locales/yao.json
 fn locale_yao() -> TimeLocale {
     TimeLocale {
         code: "yao",
@@ -2455,7 +2455,7 @@ fn locale_yao() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/yo.json
+// Source: locales/yo.json
 fn locale_yo() -> TimeLocale {
     TimeLocale {
         code: "yo",
@@ -2470,7 +2470,7 @@ fn locale_yo() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/yue.json
+// Source: locales/yue.json
 fn locale_yue() -> TimeLocale {
     TimeLocale {
         code: "yue",
@@ -2485,7 +2485,7 @@ fn locale_yue() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/zdj.json
+// Source: locales/zdj.json
 fn locale_zdj() -> TimeLocale {
     TimeLocale {
         code: "zdj",
@@ -2500,7 +2500,7 @@ fn locale_zdj() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/zh.json
+// Source: locales/zh.json
 fn locale_zh() -> TimeLocale {
     TimeLocale {
         code: "zh",
@@ -2515,7 +2515,7 @@ fn locale_zh() -> TimeLocale {
     }
 }
 
-// Source: time/locales/src/zu.json
+// Source: locales/zu.json
 fn locale_zu() -> TimeLocale {
     TimeLocale {
         code: "zu",

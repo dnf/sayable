@@ -1,0 +1,290 @@
+{
+  "code": "umb",
+  "name": "Umbundu",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "elityi {n}",
+        "other": "omatyi {n}"
+      },
+      "week": {
+        "one": "osemana {n}",
+        "other": "olosemana {n}"
+      },
+      "month": {
+        "one": "ondjambi {n}",
+        "other": "olondjambi {n}"
+      },
+      "year": {
+        "one": "ombula {n}",
+        "other": "olombula {n}"
+      }
+    },
+    "half": "{0} na oñali",
+    "delimiter": ", ",
+    "justBorn": "Omola wa kulwa",
+    "stages": {
+      "newborn": "Omola wa kulwa kwenda",
+      "infant": "Okambulu",
+      "toddler": "Omola okanini",
+      "child": "Omola",
+      "teenager": "Oloneke",
+      "adult": "Omundu onene"
+    },
+    "short": {
+      "units": {
+        "day": {
+          "one": "elit. {n}",
+          "other": "omat. {n}"
+        },
+        "week": {
+          "one": "osem. {n}",
+          "other": "olosem. {n}"
+        },
+        "month": {
+          "one": "ondj. {n}",
+          "other": "olondj. {n}"
+        },
+        "year": {
+          "one": "omb. {n}",
+          "other": "olomb. {n}"
+        }
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Janelu",
+      "Fevelelu",
+      "Malsu",
+      "Abili",
+      "Mayu",
+      "Junyu",
+      "Julyu",
+      "Agostu",
+      "Setembu",
+      "Otubu",
+      "Novembu",
+      "Desembu"
+    ],
+    "weekdays": [
+      "Lumingu",
+      "Cimosi",
+      "Civali",
+      "Citathu",
+      "Cinyali",
+      "Citanu",
+      "Cisabalu"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "oloku",
+    "tomorrow": "ocisungu",
+    "yesterday": "ondjo",
+    "dayAfterTomorrow": "ocisungu va pili",
+    "dayBeforeYesterday": "ondjo va pili",
+    "thisWeekday": "{weekday} yo",
+    "nextWeekday": "{weekday} ya kuvela",
+    "lastWeekday": "{weekday} ya pita",
+    "short": {
+      "months": [
+        "Jan",
+        "Fev",
+        "Mal",
+        "Abi",
+        "May",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Otu",
+        "Nov",
+        "Des"
+      ],
+      "weekdays": [
+        "Lum",
+        "Cim",
+        "Civ",
+        "Cit",
+        "Cin",
+        "Cit",
+        "Cis"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "osekunde {n}",
+        "other": "olosekunde {n}"
+      },
+      "minute": {
+        "one": "ominute {n}",
+        "other": "olominute {n}"
+      },
+      "hour": {
+        "one": "ohola {n}",
+        "other": "olohola {n}"
+      },
+      "day": {
+        "one": "elityi {n}",
+        "other": "omatyi {n}"
+      },
+      "week": {
+        "one": "osemana {n}",
+        "other": "olosemana {n}"
+      },
+      "month": {
+        "one": "ondjambi {n}",
+        "other": "olondjambi {n}"
+      },
+      "year": {
+        "one": "ombula {n}",
+        "other": "olombula {n}"
+      }
+    },
+    "half": "{0} na oñali",
+    "delimiter": ", ",
+    "justNow": "kosi",
+    "ago": "{0} ya pita",
+    "inFuture": "ko {0}",
+    "short": {
+      "units": {
+        "second": {
+          "one": "osek. {n}",
+          "other": "olosek. {n}"
+        },
+        "minute": {
+          "one": "omin. {n}",
+          "other": "olomin. {n}"
+        },
+        "hour": {
+          "one": "ohola {n}",
+          "other": "olohola {n}"
+        },
+        "day": {
+          "one": "elit. {n}",
+          "other": "omat. {n}"
+        },
+        "week": {
+          "one": "osem. {n}",
+          "other": "olosem. {n}"
+        },
+        "month": {
+          "one": "ondj. {n}",
+          "other": "olondj. {n}"
+        },
+        "year": {
+          "one": "omb. {n}",
+          "other": "olomb. {n}"
+        }
+      },
+      "ago": "{0} ya pita",
+      "inFuture": "ko {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} pita",
+      "inFuture": "ko {0}",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "olohola likumi na yivali",
+        "yimosi",
+        "yivali",
+        "yitathu",
+        "yinyali",
+        "yitanu",
+        "yitathu-va-yivali",
+        "yisemba",
+        "yinyali-va-yivali",
+        "yitanu-va-yivali",
+        "likumi",
+        "likumi na yimosi"
+      ],
+      "midnight": "ocitapi",
+      "noon": "ocivali",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

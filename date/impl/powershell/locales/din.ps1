@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/din.json
+# Source: locales/din.json
 
 function locale_din {
     $months = @('Tiɔp in dit', 'Pɛt', 'Duɔ̈ɔ̈ŋ', 'Guak', 'Duät', 'Kornyot', 'Payi', 'Tio̱p in thii', 'Laath', 'Kur', 'Tio̱p in laat', 'Jiɔk')

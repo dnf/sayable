@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/shn.json
+# Source: locales/shn.json
 
 function locale_shn {
     $hours = @('သိပ်းသွင်', 'ၼိုင်ႈ', 'သွင်', 'သၢမ်', 'သီႇ', 'ႁႃႈ', 'ႁူၵ်း', 'ၸဵတ်း', 'ပႅတ်ႇ', 'ၵဝ်ႈ', 'သိပ်း', 'သိပ်းဢဵတ်း')

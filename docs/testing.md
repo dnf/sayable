@@ -1,6 +1,6 @@
 # Testing
 
-Sayable promises that every implementation produces **identical output** for the same input, in 50 languages. A promise like that can't rest on 50 hand-written test suites, so testing is layered: one language-independent specification, a native suite per language that implements it, and then two checks that **don't trust those native suites at all**.
+Sayable promises that every implementation produces **identical output** for the same input, in 51 languages. A promise like that can't rest on 51 hand-written test suites, so testing is layered: one language-independent specification, a native suite per language that implements it, and then two checks that **don't trust those native suites at all**.
 
 | Layer | What it is | What it guards against | Run it |
 |---|---|---|---|
@@ -13,7 +13,7 @@ Sayable promises that every implementation produces **identical output** for the
 
 Each component's `config/tests.json` (for example [`age/config/tests.json`](../age/config/tests.json)) is the single, language-independent definition of correct behaviour. Each case has an ID, an input, the expected output and a note on why it matters. Every input is an explicit date pair; tests never depend on today's date.
 
-**Spec first.** A new behaviour, edge case or bug fix starts as a case in `tests.json`, then gets implemented everywhere. A bug that can't be written as a spec case can't be reliably fixed in 50 languages.
+**Spec first.** A new behaviour, edge case or bug fix starts as a case in `tests.json`, then gets implemented everywhere. A bug that can't be written as a spec case can't be reliably fixed in 51 languages.
 
 ## 2. Native test suites
 

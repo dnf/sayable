@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: duration/locales/src/ar.json */
+/* Source: locales/ar.json */
 #include "sayableduration/sayableduration.h"
 
 static SduPluralCategory plural_ar(int n) {

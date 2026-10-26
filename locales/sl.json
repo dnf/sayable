@@ -1,0 +1,292 @@
+{
+  "code": "sl",
+  "name": "Slovenian",
+  "pluralRule": "sl",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} dan",
+        "two": "{n} dneva",
+        "few": "{n} dni",
+        "other": "{n} dni"
+      },
+      "week": {
+        "one": "{n} teden",
+        "two": "{n} tedna",
+        "few": "{n} tedne",
+        "other": "{n} tednov"
+      },
+      "month": {
+        "one": "{n} mesec",
+        "two": "{n} meseca",
+        "few": "{n} mesece",
+        "other": "{n} mesecev"
+      },
+      "year": {
+        "one": "{n} leto",
+        "two": "{n} leti",
+        "few": "{n} leta",
+        "other": "{n} let"
+      }
+    },
+    "half": "{0} in pol",
+    "delimiter": ", ",
+    "justBorn": "Novorojenček",
+    "stages": {
+      "newborn": {
+        "m": "Novorojenček",
+        "f": "Novorojenčica"
+      },
+      "infant": {
+        "m": "Dojenček",
+        "f": "Dojenčica"
+      },
+      "toddler": {
+        "m": "Malček",
+        "f": "Malčica"
+      },
+      "child": "Otrok",
+      "teenager": {
+        "m": "Najstnik",
+        "f": "Najstnica"
+      },
+      "adult": {
+        "m": "Odrasel",
+        "f": "Odrasla"
+      }
+    },
+    "short": {
+      "units": {
+        "day": "{n} d",
+        "week": "{n} t",
+        "month": "{n} m",
+        "year": "{n} l"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} d",
+        "week": "{n} t",
+        "month": "{n} m",
+        "year": "{n} l"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "januar",
+      "februar",
+      "marec",
+      "april",
+      "maj",
+      "junij",
+      "julij",
+      "avgust",
+      "september",
+      "oktober",
+      "november",
+      "december"
+    ],
+    "weekdays": [
+      "nedelja",
+      "ponedeljek",
+      "torek",
+      "sreda",
+      "četrtek",
+      "petek",
+      "sobota"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "danes",
+    "tomorrow": "jutri",
+    "yesterday": "včeraj",
+    "dayAfterTomorrow": "pojutrišnjem",
+    "dayBeforeYesterday": "predvčerajšnjim",
+    "thisWeekday": "ta {weekday}",
+    "nextWeekday": "naslednji {weekday}",
+    "lastWeekday": "prejšnji {weekday}",
+    "monthsInDate": [
+      "januarja",
+      "februarja",
+      "marca",
+      "aprila",
+      "maja",
+      "junija",
+      "julija",
+      "avgusta",
+      "septembra",
+      "oktobra",
+      "novembra",
+      "decembra"
+    ],
+    "short": {
+      "months": [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "maj",
+        "jun",
+        "jul",
+        "avg",
+        "sep",
+        "okt",
+        "nov",
+        "dec"
+      ],
+      "weekdays": [
+        "ned",
+        "pon",
+        "tor",
+        "sre",
+        "čet",
+        "pet",
+        "sob"
+      ],
+      "dayFormat": "{n}.",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}.{m}.",
+      "datePatternWithYear": "{d}.{m}.{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} sekunda",
+        "two": "{n} sekundi",
+        "few": "{n} sekunde",
+        "other": "{n} sekund"
+      },
+      "minute": {
+        "one": "{n} minuta",
+        "two": "{n} minuti",
+        "few": "{n} minute",
+        "other": "{n} minut"
+      },
+      "hour": {
+        "one": "{n} ura",
+        "two": "{n} uri",
+        "few": "{n} ure",
+        "other": "{n} ur"
+      },
+      "day": {
+        "one": "{n} dan",
+        "two": "{n} dneva",
+        "few": "{n} dni",
+        "other": "{n} dni"
+      },
+      "week": {
+        "one": "{n} teden",
+        "two": "{n} tedna",
+        "few": "{n} tedne",
+        "other": "{n} tednov"
+      },
+      "month": {
+        "one": "{n} mesec",
+        "two": "{n} meseca",
+        "few": "{n} mesece",
+        "other": "{n} mesecev"
+      },
+      "year": {
+        "one": "{n} leto",
+        "two": "{n} leti",
+        "few": "{n} leta",
+        "other": "{n} let"
+      }
+    },
+    "half": "{0} in pol",
+    "delimiter": ", ",
+    "justNow": "ravnokar",
+    "ago": "pred {0}",
+    "inFuture": "čez {0}",
+    "short": {
+      "units": {
+        "second": "{n} sek.",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} d",
+        "week": "{n} t",
+        "month": "{n} m",
+        "year": "{n} l"
+      },
+      "ago": "pred {0}",
+      "inFuture": "čez {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} s",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} d",
+        "week": "{n} t",
+        "month": "{n} m",
+        "year": "{n} l"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "pred {0}",
+      "inFuture": "čez {0}",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "dvanajst",
+        "ena",
+        "dve",
+        "tri",
+        "štiri",
+        "pet",
+        "šest",
+        "sedem",
+        "osem",
+        "devet",
+        "deset",
+        "enajst"
+      ],
+      "midnight": "polnoč",
+      "noon": "poldne",
+      "patterns": {
+        "0": "{h} ura",
+        "5": "pet po {h}",
+        "10": "deset po {h}",
+        "15": "petnajst po {h}",
+        "20": "dvajset po {h}",
+        "25": "dvajset pet po {h}",
+        "30": "trideset po {h}",
+        "35": "dvajset pet do {next_h}",
+        "40": "dvajset do {next_h}",
+        "45": "petnajst do {next_h}",
+        "50": "deset do {next_h}",
+        "55": "pet do {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

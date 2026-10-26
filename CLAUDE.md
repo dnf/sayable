@@ -2,7 +2,7 @@
 
 ## What this project is
 
-Sayable is a family of zero-dependency formatting libraries for how humans actually speak. The first component is **sayable-age**, which formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 51 identical implementations (Ada, Bash, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Goose, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Mojo, Nim, OCaml, Octave, Odin, Pascal, Perl, Pharo, PHP, PowerShell, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig) and 168 locales.
+Sayable is a family of zero-dependency formatting libraries for how humans actually speak. There are four libraries, and they are peers built the same way: **sayable-age** ("6 weeks", "14 months", "3½ years"), **sayable-date** ("March 15th", "tomorrow"), **sayable-duration** ("about 2 hours", "3 days ago") and **sayable-time** ("a quarter past three"). Each has 51 identical implementations (Ada, Bash, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Goose, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Mojo, Nim, OCaml, Octave, Odin, Pascal, Perl, Pharo, PHP, PowerShell, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig) and 168 locales, shared across all four.
 
 ## Build and test commands
 
@@ -45,18 +45,18 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 ## Key rules
 
 - **All implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
-- **Spec-first testing.** New test cases go in `age/config/tests.json` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **Spec-first testing.** New test cases go in the library's `<library>/config/tests.json` first, then get implemented in all languages. Every test uses explicit inputs and reference dates — never "today."
 - **Don't trust per-language test suites alone.** The generated CLI harness (`cli/test-harness.sh`, from `cli/generate-test-harness.py`) runs the canonical tests against every language's CLI through a single `sayable --repl` process, and `just fuzz` (`cli/fuzz.py`) sends random requests to every CLI and fails on any disagreement. Regenerate the harness after changing a `tests.json`. Every CLI must implement the REPL protocol in `cli/SPEC.md`. See [`docs/testing.md`](docs/testing.md).
 - **Strict input parsing.** Dates, clock times and timestamps follow the exact grammar in [`docs/input-formats.md`](docs/input-formats.md) (real calendar days only, no unpadded or whitespace-padded input), and durations over 500 years have no value. Lenient parsing in one language is a cross-language divergence.
-- **Canonical test IDs.** Every test must be annotated with the ID(s) from `age/config/tests.json` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
+- **Canonical test IDs.** Every test must be annotated with the ID(s) from its library's `tests.json` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
-- **Locale data lives in `age/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `just generate locales` to regenerate all language implementations. Never edit generated locale files by hand.
-- **Generated locale files must be in their own subdirectory.** Every language implementation must place generated locale files in a dedicated `age/locales/` (or language-idiomatic equivalent) subdirectory, separate from hand-written source files.
-- **Generated locale files and docs must be current.** Run `just generate locales` after editing `age/locales/*.json`. `just check` verifies this in CI.
-- **Generated files carry a prominent banner.** Every generated file starts with a 9-line double-line box-frame `DO NOT EDIT` banner (from `.hecatron/tools/age/codegen/util.py`, re-exported by `age/codegen/banner.py`) referencing the generator and source path. Locale files also include a `Source: age/locales/{code}.json` comment linking to the canonical JSON. Workflow files in `.github/workflows/` and the `age/Dockerfile` also carry this banner.
-- **Every language must have a `age/impl/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
+- **Locale data lives in `locales/<code>.json`, one file per language.** Each file holds the shared `code`, `name` and `pluralRule`, then a section per library (`age`, `date`, `duration`, `time`). It is the single source of truth for that language in every library and every programming language. To change a locale, edit its JSON file and run `just generate locales`. Never edit generated locale files by hand.
+- **Generated locale files must be in their own subdirectory.** Every implementation (`<library>/impl/<lang>/`) places generated locale files in a dedicated `locales/` (or language-idiomatic equivalent) subdirectory, separate from hand-written source files.
+- **Generated locale files and docs must be current.** `just generate locales` regenerates every library's locale code in every language, plus the generated docs: `docs/locales/<code>.md` (each locale's real output from all four libraries) and the `locales/README.md` index. `just check` verifies all of it in CI.
+- **Generated files carry a prominent banner.** Every generated source file starts with a 9-line double-line box-frame `DO NOT EDIT` banner (from `.hecatron/tools/codegen/util.py`, re-exported by each `<library>/codegen/banner.py`) referencing the generator. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON. Workflow files in `.github/workflows/` and the `age/Dockerfile` also carry this banner.
+- **Every implementation must have a `<library>/impl/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. Each library's `README.md` table must link to it in the Docs column.
 - **Every language must have a CI workflow** at `.github/workflows/<lang>.yml` that runs tests on push and PR to `main`. Use a version matrix when the language supports it.
-- **Installer scripts** live in `.hecatron/languages/<lang>/` as separate single-purpose files (`install.sh`, `uninstall.sh`, `version.sh`, and optionally `metadata.sh`). See [`.hecatron/age/docs/installers.md`](.hecatron/age/docs/installers.md) for the full reference. Key points:
+- **Installer scripts** live in `.hecatron/languages/<lang>/` as separate single-purpose files (`install.sh`, `uninstall.sh`, `version.sh`, and optionally `metadata.sh`). See [`.hecatron/docs/installers.md`](.hecatron/docs/installers.md) for the full reference. Key points:
   - Shared toolchains (cmake→C/C++, .NET→C#/F#, JDK→Java/Kotlin/Scala/Groovy, Node→TypeScript/Elm) mean uninstalling one language can break another.
   - JDK uninstall is a no-op (shared by 4 languages). Perl and Swift on macOS are also no-ops (system-provided).
   - `just install` (all) continues past individual failures and reports them at the end.
@@ -66,16 +66,16 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 
 ## Versioning
 
-- **`age/config/version.json` is the single source of truth** for the library version. All implementations and their package manifests must match it.
+- **Each library's `<library>/config/version.json` is the single source of truth** for that library's version (all four are 0.5.0). All implementations and their package manifests must match it.
 - **Every implementation exposes a version constant** using the idiomatic pattern for that language. See [`age/docs/versioning.md`](age/docs/versioning.md) for the full list.
-- **The C version define lives in the codegen emitter** (`age/codegen/targets/c/emitter.py`) because `sayableage.h` is auto-generated. Run `just generate locales` after changing it.
-- When bumping the version, update `age/config/version.json`, all source constants, all package manifests, and the C codegen emitter.
+- **The C version define lives in each library's C codegen emitter** (`<library>/codegen/targets/c/emitter.py`), because the C headers are generated. Run `just generate locales` after changing it.
+- `just version <ver>` currently bumps **age only** (`age/config/version.json` and the per-language `version.sh` scripts); the other three libraries are bumped by hand until it covers them.
 
 ## Metadata
 
-- **`age/config/metadata.json` is the single source of truth** for project metadata (description, author, license, repository URL). See [`age/docs/metadata.md`](age/docs/metadata.md) for details.
-- Run `just metadata` to interactively update metadata across all package manifests.
-- `just metadata` and `just version` are separate commands — different concerns, different sources of truth (`age/config/metadata.json` and `age/config/version.json`), different change frequencies.
+- **Each library's `<library>/config/metadata.json` is the source of truth** for its package metadata (description, author, license, repository URL). See [`age/docs/metadata.md`](age/docs/metadata.md) for details.
+- Run `just metadata` to interactively update metadata across package manifests.
+- `just metadata` and `just version` are separate commands: different concerns, different sources of truth, different change frequencies.
 
 ## Language management
 
@@ -88,27 +88,21 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 ## Project layout
 
 ```
-age/                (first component)
-  src/
-    ada/       # Ada        cpp/       # C++       gleam/     # Gleam
-    c/         # C          csharp/    # C#        go/        # Go
-    clojure/   # Clojure    dart/      # Dart      groovy/    # Groovy
-    cobol/     # COBOL      elixir/    # Elixir    haskell/   # Haskell
-    ...        (33 languages total)
-  config/      # Project configuration (version.json, metadata.json, tests.json)
-  tests/       # Test documentation
-  locales/     # Canonical locale JSON files (single source of truth)
-  codegen/     # Locale code generator (JSON → all languages)
-  docs/        # Shared docs, locale docs
-.hecatron/     # Build tooling (stays at root, shared across future components)
-.github/       # CI workflows
-justfile       # Primary task runner
+locales/          # One JSON file per language (shared by all four libraries) + README index
+age/              # sayable-age        } each library has the same layout:
+date/             # sayable-date       }   config/   version.json, metadata.json, tests.json
+duration/         # sayable-duration   }   codegen/  generate.py, banner.py, docgen.py, targets/<lang>/
+time/             # sayable-time       }   impl/     <lang>/ (51 implementations) and impl/.gitignore
+                  #                    }   docs/     library-specific docs
+cli/              # sayable CLI for every language (REPL mode), test harness, fuzzer
+docs/             # Cross-library docs: testing, input formats, compatibility, locales/<code>.md
+tools/            # Repo-wide generators and checks (locale docs, compatibility, geography, workflow guard)
+.hecatron/        # Build tooling and per-language definitions (installers, CI templates)
+.github/          # CI workflows (generated from .hecatron/languages/<lang>/workflow.yml)
+justfile          # Primary task runner
 ```
 
-Core files per language follow a consistent pattern:
-- Formatter: `sayableage.adb`, `sayableage.c` (generated), `formatter.clj`, `sayableage.cpp`, `SayableAge.cs`, `format_age.dart`, `formatter.ex`, `Formatter.elm`, `sayableage_formatter.erl`, `Formatter.fs`, `sayableage.f90`, `formatter.gleam`, `sayableage.go`, `SayableAge.groovy`, `Formatter.hs`, `SayableAge.java`, `SayableAge.kt`, `sayableage.lua`, `formatter.ml`, `Formatter.pm`, `SayableAge.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `SayableAge.scala`, `SayableAge.swift`, `format-age.ts`, `sayableage.zig`
-- Types/Locale: `sayableage_types.ads`, `sayableage.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `types.dart`, `locale.ex`, `Types.elm`, `sayableage.hrl`, `Types.fs`, `sayableage_types.f90`, `types.gleam`, `locale.go`, `AgeLocale.groovy`, `Types.hs`, `AgeLocale.java`, `Types.kt`, (tables), `types.ml`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
-- Locale data files: `locales/` subdirectory (one file per locale)
+Each implementation follows the same pattern in every library: a formatter, a types/locale module, and a generated `locales/` subdirectory with one file (or one block) per locale. For example, sayable-age's formatter is `format_age.py` in Python, `formatter.rs` in Rust and `sayableage.zig` in Zig.
 
 ## Code style
 
@@ -117,39 +111,40 @@ Core files per language follow a consistent pattern:
 - **Name over comment.** When a line needs a comment to explain *what* it does, extract it into a named function or variable instead. The name replaces the comment. Comments should explain "why", not "what."
 - Locale data files will have long lines — that's expected.
 - **Markdown table alignment is optional.** `just maintain docs` can auto-align tables if desired, but it is not enforced in CI.
-- Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in `age/impl/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
-- **Gitignore sections must be alphabetically ordered.** In `age/impl/.gitignore`, language sections are ordered alphabetically by language name (C, C#, C++, Clojure, …, Zig). In the root `.gitignore`, entries are also kept in alphabetical order.
-- **One language per line in justfile lists.** Language lists (`_ALL_LANGS`, `_COMPILED_LANGS`, etc.), abbreviation maps (`_name()`, `_abbr()`), and dependency maps (`_dep()`) all live in `.hecatron/tools/language/helpers.sh` with one entry per `case` arm. This prevents merge conflicts when multiple branches add languages concurrently. Help text grids are generated dynamically from these lists — never hardcode multi-language grid rows.
+- Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in the library's `<library>/impl/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
+- **Gitignore sections must be alphabetically ordered.** In each `<library>/impl/.gitignore`, language sections are ordered alphabetically by language name (C, C#, C++, Clojure, …, Zig). In the root `.gitignore`, entries are also kept in alphabetical order.
+- **Language properties live in `.hecatron/languages/<lang>/config.json`.** `.hecatron/tools/language/helpers.sh` builds every language list, abbreviation and dependency map from those files (via `emit-config.py`), so adding a language never means editing shared lists. Help text grids are generated from them too — never hardcode multi-language grid rows.
 - **ANSI colors use two layers of named variables.** In `.hecatron/tools/runner/run-parallel.sh`, raw ANSI escape codes are defined as `_c_*` base color variables (e.g., `_c_green`, `_c_red`, `_c_orange`), and semantic `_s_*` variables are built from them (e.g., `_s_pass="$_c_green"`, `_s_fail="$_c_red"`, `_s_run="$_c_yellow"`). Printf statements must use semantic `$_s_*` variables — never raw `\033[` codes or base `$_c_*` colors directly (except `$_c_reset`, `$_c_erase`, `$_c_bg256`, `$_c_fg256`, and `$_c_lane_idle` which are structural). To change a color, update the semantic variable; to add a new status, add a new `_s_*` variable.
 - **Always brace-delimit shell variables.** Use `${var}` not `$var` in all shell scripts (justfile recipes, runner scripts, installer scripts). This ensures consistent style and prevents ambiguous variable boundaries. The only exception is positional parameters `$1`, `$2`, etc. and special variables `$?`, `$!`, `$$`, `$@`, `$*`, `$#` which remain unbraced.
 - **Brace-delimit variables before Unicode characters in shell scripts.** Bash 3.2 (macOS default) treats many Unicode characters (⊘, ⚙, ✓, ✗, ◌, ▲, ▼, etc.) as valid identifier characters. Under `set -u`, `$_s_pass✓` is parsed as the variable `_s_pass✓` (unbound → crash), not `$_s_pass` followed by `✓`. Always use `${_s_pass}✓` with explicit braces when a variable is followed by a non-ASCII character. ASCII symbols (`-`, `%`, ` `, etc.) are safe delimiters.
 
 ## Adding a new locale
 
-See [`age/docs/adding-a-locale.md`](age/docs/adding-a-locale.md) for the full guide. Summary:
+See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Summary:
 
 1. Identify the CLDR plural rule — one of the 23 existing rules covers every CLDR cardinal pattern
-2. Create `age/locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
-3. Run `just generate locales` — generates locale files and docs in all languages
-4. Run `just test && just lint` to verify
-5. Optionally add locale-specific test cases to `age/config/tests.json`
+2. Create `locales/{code}.json` with the shared fields and a section for each library (`age`, `date`, `duration`, `time`)
+3. Run `just generate locales` — regenerates locale code in every library and language, and the docs
+4. Run `just test && just test cli && just lint` to verify
+5. Optionally add locale-specific test cases to the libraries' `tests.json` files
 
 ## Adding a new language
 
-See [`.hecatron/age/docs/adding-a-language.md`](.hecatron/age/docs/adding-a-language.md) for the full guide. Summary:
+See [`.hecatron/docs/adding-a-language.md`](.hecatron/docs/adding-a-language.md) for the full guide. A language implements **all four libraries**, so for each `<library>` in age, date, duration and time:
 
-1. Create `age/codegen/targets/<lang>/emitter.py` — emits locale source files from JSON
-2. Create `age/codegen/targets/<lang>/plural_rules.py` with all 23 plural patterns
-3. Register the generator in `age/codegen/generate.py` (`_GENERATORS` dict)
-4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from an existing implementation)
-5. Implement all test cases from `age/config/tests.json`
-6. Add to `.hecatron/tools/language/helpers.sh` (language lists, abbreviation, dependency) and `justfile` (test, build, lint, clean recipe handlers)
-7. Configure the language's standard linter with zero warnings
-8. Create installer scripts at `.hecatron/languages/<lang>/` (`install.sh`, `uninstall.sh`, `version.sh`, and optionally `metadata.sh`) and a `dockerfile` snippet for the age/Dockerfile generator
-9. Create `age/impl/<lang>/README.md` with a `## License` section linking to `LICENSE.md`
-10. Create `.github/workflows/<lang>.yml` CI workflow with a version matrix
-11. Update cross-language doc tables (keep rows sorted alphabetically; don't hardcode counts in prose — update only the `CLAUDE.md` project description)
-12. Verify: `just generate locales && just check && just test && just lint`
+1. Create `<library>/codegen/targets/<lang>/emitter.py` (and `plural_rules.py` with all 23 patterns for age and duration), and register it in `<library>/codegen/generate.py` (`_GENERATORS`)
+2. Implement the types and formatter in `<library>/impl/<lang>/` (port from an existing implementation), with generated locales in a `locales/` subdirectory
+3. Implement every case in `<library>/config/tests.json`, annotated with its ID
+4. Create `<library>/impl/<lang>/README.md` with a `## License` section linking to `LICENSE.md`, and add a row to the library's README table
+
+Then, once for the language:
+
+5. Create `.hecatron/languages/<lang>/`: `config.json`, `install.sh`, `uninstall.sh`, `version.sh` (optionally `metadata.sh`), a `dockerfile` snippet, and `workflow.yml` testing every library (`tools/check_workflow_components.py` enforces this)
+6. Add justfile arms for test, build, lint and clean; configure the language's linter with zero warnings
+7. Add a CLI in `cli/impl/<lang>/` implementing `--repl` (`cli/SPEC.md`)
+8. Run `just add <lang>` (registers it, copies the workflow, regenerates `age/Dockerfile`) and `python3 tools/generate_compatibility.py`
+9. Update the language counts and lists (keep rows sorted alphabetically)
+10. Verify: `just generate locales && just check && just test && just lint && just test cli <lang> && just fuzz --langs <lang>`
 
 ## Commit conventions
 

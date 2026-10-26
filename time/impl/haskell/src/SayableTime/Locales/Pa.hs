@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: time/locales/src/pa.json
+-- Source: locales/pa.json
 
 module SayableTime.Locales.Pa (locale) where
 

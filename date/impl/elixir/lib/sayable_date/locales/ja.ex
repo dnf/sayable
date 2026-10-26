@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/ja.json
+# Source: locales/ja.json
 
 defmodule SayableDate.Locales.JA do
   @moduledoc false

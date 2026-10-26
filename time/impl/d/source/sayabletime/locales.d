@@ -14,7 +14,7 @@ module sayabletime.locales;
 
 import sayabletime.locale;
 
-// // Source: time/locales/src/af.json
+// // Source: locales/af.json
 // Afrikaans locale.
 immutable TimeLocale AF = TimeLocale(
     code: "af",
@@ -45,7 +45,7 @@ immutable TimeLocale AF = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ak.json
+// // Source: locales/ak.json
 // Akan locale.
 immutable TimeLocale AK = TimeLocale(
     code: "ak",
@@ -76,7 +76,7 @@ immutable TimeLocale AK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/am.json
+// // Source: locales/am.json
 // Amharic locale.
 immutable TimeLocale AM = TimeLocale(
     code: "am",
@@ -107,7 +107,7 @@ immutable TimeLocale AM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ar.json
+// // Source: locales/ar.json
 // Arabic locale.
 immutable TimeLocale AR = TimeLocale(
     code: "ar",
@@ -138,7 +138,7 @@ immutable TimeLocale AR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ay.json
+// // Source: locales/ay.json
 // Aymara locale.
 immutable TimeLocale AY = TimeLocale(
     code: "ay",
@@ -169,7 +169,7 @@ immutable TimeLocale AY = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/az.json
+// // Source: locales/az.json
 // Azerbaijani locale.
 immutable TimeLocale AZ = TimeLocale(
     code: "az",
@@ -200,7 +200,7 @@ immutable TimeLocale AZ = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/bci.json
+// // Source: locales/bci.json
 // Baoulé locale.
 immutable TimeLocale BCI = TimeLocale(
     code: "bci",
@@ -231,7 +231,7 @@ immutable TimeLocale BCI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/be.json
+// // Source: locales/be.json
 // Belarusian locale.
 immutable TimeLocale BE = TimeLocale(
     code: "be",
@@ -262,7 +262,7 @@ immutable TimeLocale BE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/bem.json
+// // Source: locales/bem.json
 // Bemba locale.
 immutable TimeLocale BEM = TimeLocale(
     code: "bem",
@@ -293,7 +293,7 @@ immutable TimeLocale BEM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/bg.json
+// // Source: locales/bg.json
 // Bulgarian locale.
 immutable TimeLocale BG = TimeLocale(
     code: "bg",
@@ -324,7 +324,7 @@ immutable TimeLocale BG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/bi.json
+// // Source: locales/bi.json
 // Bislama locale.
 immutable TimeLocale BI = TimeLocale(
     code: "bi",
@@ -355,7 +355,7 @@ immutable TimeLocale BI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/bm.json
+// // Source: locales/bm.json
 // Bambara locale.
 immutable TimeLocale BM = TimeLocale(
     code: "bm",
@@ -386,7 +386,7 @@ immutable TimeLocale BM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/bn.json
+// // Source: locales/bn.json
 // Bengali locale.
 immutable TimeLocale BN = TimeLocale(
     code: "bn",
@@ -417,7 +417,7 @@ immutable TimeLocale BN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/br.json
+// // Source: locales/br.json
 // Breton locale.
 immutable TimeLocale BR = TimeLocale(
     code: "br",
@@ -448,7 +448,7 @@ immutable TimeLocale BR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/bs.json
+// // Source: locales/bs.json
 // Bosnian locale.
 immutable TimeLocale BS = TimeLocale(
     code: "bs",
@@ -479,7 +479,7 @@ immutable TimeLocale BS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ca.json
+// // Source: locales/ca.json
 // Catalan locale.
 immutable TimeLocale CA = TimeLocale(
     code: "ca",
@@ -510,7 +510,7 @@ immutable TimeLocale CA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/cak.json
+// // Source: locales/cak.json
 // Kaqchikel locale.
 immutable TimeLocale CAK = TimeLocale(
     code: "cak",
@@ -541,7 +541,7 @@ immutable TimeLocale CAK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ceb.json
+// // Source: locales/ceb.json
 // Cebuano locale.
 immutable TimeLocale CEB = TimeLocale(
     code: "ceb",
@@ -572,7 +572,7 @@ immutable TimeLocale CEB = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/cs.json
+// // Source: locales/cs.json
 // Czech locale.
 immutable TimeLocale CS = TimeLocale(
     code: "cs",
@@ -603,7 +603,7 @@ immutable TimeLocale CS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/cy.json
+// // Source: locales/cy.json
 // Welsh locale.
 immutable TimeLocale CY = TimeLocale(
     code: "cy",
@@ -634,7 +634,7 @@ immutable TimeLocale CY = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/da.json
+// // Source: locales/da.json
 // Danish locale.
 immutable TimeLocale DA = TimeLocale(
     code: "da",
@@ -665,7 +665,7 @@ immutable TimeLocale DA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/de.json
+// // Source: locales/de.json
 // German locale.
 immutable TimeLocale DE = TimeLocale(
     code: "de",
@@ -696,7 +696,7 @@ immutable TimeLocale DE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/din.json
+// // Source: locales/din.json
 // Dinka locale.
 immutable TimeLocale DIN = TimeLocale(
     code: "din",
@@ -727,7 +727,7 @@ immutable TimeLocale DIN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/dje.json
+// // Source: locales/dje.json
 // Zarma locale.
 immutable TimeLocale DJE = TimeLocale(
     code: "dje",
@@ -758,7 +758,7 @@ immutable TimeLocale DJE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/dv.json
+// // Source: locales/dv.json
 // Dhivehi locale.
 immutable TimeLocale DV = TimeLocale(
     code: "dv",
@@ -789,7 +789,7 @@ immutable TimeLocale DV = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/dyu.json
+// // Source: locales/dyu.json
 // Dyula locale.
 immutable TimeLocale DYU = TimeLocale(
     code: "dyu",
@@ -820,7 +820,7 @@ immutable TimeLocale DYU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/dz.json
+// // Source: locales/dz.json
 // Dzongkha locale.
 immutable TimeLocale DZ = TimeLocale(
     code: "dz",
@@ -851,7 +851,7 @@ immutable TimeLocale DZ = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ee.json
+// // Source: locales/ee.json
 // Ewe locale.
 immutable TimeLocale EE = TimeLocale(
     code: "ee",
@@ -882,7 +882,7 @@ immutable TimeLocale EE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/el.json
+// // Source: locales/el.json
 // Greek locale.
 immutable TimeLocale EL = TimeLocale(
     code: "el",
@@ -913,7 +913,7 @@ immutable TimeLocale EL = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/en.json
+// // Source: locales/en.json
 // English locale.
 immutable TimeLocale EN = TimeLocale(
     code: "en",
@@ -944,7 +944,7 @@ immutable TimeLocale EN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/es.json
+// // Source: locales/es.json
 // Spanish locale.
 immutable TimeLocale ES = TimeLocale(
     code: "es",
@@ -975,7 +975,7 @@ immutable TimeLocale ES = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/et.json
+// // Source: locales/et.json
 // Estonian locale.
 immutable TimeLocale ET = TimeLocale(
     code: "et",
@@ -1006,7 +1006,7 @@ immutable TimeLocale ET = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/eu.json
+// // Source: locales/eu.json
 // Basque locale.
 immutable TimeLocale EU = TimeLocale(
     code: "eu",
@@ -1037,7 +1037,7 @@ immutable TimeLocale EU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/fa.json
+// // Source: locales/fa.json
 // Persian locale.
 immutable TimeLocale FA = TimeLocale(
     code: "fa",
@@ -1068,7 +1068,7 @@ immutable TimeLocale FA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/fan.json
+// // Source: locales/fan.json
 // Fang locale.
 immutable TimeLocale FAN = TimeLocale(
     code: "fan",
@@ -1099,7 +1099,7 @@ immutable TimeLocale FAN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ff.json
+// // Source: locales/ff.json
 // Fulah locale.
 immutable TimeLocale FF = TimeLocale(
     code: "ff",
@@ -1130,7 +1130,7 @@ immutable TimeLocale FF = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/fi.json
+// // Source: locales/fi.json
 // Finnish locale.
 immutable TimeLocale FI = TimeLocale(
     code: "fi",
@@ -1161,7 +1161,7 @@ immutable TimeLocale FI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/fil.json
+// // Source: locales/fil.json
 // Filipino locale.
 immutable TimeLocale FIL = TimeLocale(
     code: "fil",
@@ -1192,7 +1192,7 @@ immutable TimeLocale FIL = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/fj.json
+// // Source: locales/fj.json
 // Fijian locale.
 immutable TimeLocale FJ = TimeLocale(
     code: "fj",
@@ -1223,7 +1223,7 @@ immutable TimeLocale FJ = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/fon.json
+// // Source: locales/fon.json
 // Fon locale.
 immutable TimeLocale FON = TimeLocale(
     code: "fon",
@@ -1254,7 +1254,7 @@ immutable TimeLocale FON = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/fr.json
+// // Source: locales/fr.json
 // French locale.
 immutable TimeLocale FR = TimeLocale(
     code: "fr",
@@ -1285,7 +1285,7 @@ immutable TimeLocale FR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ga.json
+// // Source: locales/ga.json
 // Irish locale.
 immutable TimeLocale GA = TimeLocale(
     code: "ga",
@@ -1316,7 +1316,7 @@ immutable TimeLocale GA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/gd.json
+// // Source: locales/gd.json
 // Scottish Gaelic locale.
 immutable TimeLocale GD = TimeLocale(
     code: "gd",
@@ -1347,7 +1347,7 @@ immutable TimeLocale GD = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/gl.json
+// // Source: locales/gl.json
 // Galician locale.
 immutable TimeLocale GL = TimeLocale(
     code: "gl",
@@ -1378,7 +1378,7 @@ immutable TimeLocale GL = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/gn.json
+// // Source: locales/gn.json
 // Guarani locale.
 immutable TimeLocale GN = TimeLocale(
     code: "gn",
@@ -1409,7 +1409,7 @@ immutable TimeLocale GN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/gu.json
+// // Source: locales/gu.json
 // Gujarati locale.
 immutable TimeLocale GU = TimeLocale(
     code: "gu",
@@ -1440,7 +1440,7 @@ immutable TimeLocale GU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/gv.json
+// // Source: locales/gv.json
 // Manx locale.
 immutable TimeLocale GV = TimeLocale(
     code: "gv",
@@ -1471,7 +1471,7 @@ immutable TimeLocale GV = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ha.json
+// // Source: locales/ha.json
 // Hausa locale.
 immutable TimeLocale HA = TimeLocale(
     code: "ha",
@@ -1502,7 +1502,7 @@ immutable TimeLocale HA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/he.json
+// // Source: locales/he.json
 // Hebrew locale.
 immutable TimeLocale HE = TimeLocale(
     code: "he",
@@ -1533,7 +1533,7 @@ immutable TimeLocale HE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/hi.json
+// // Source: locales/hi.json
 // Hindi locale.
 immutable TimeLocale HI = TimeLocale(
     code: "hi",
@@ -1564,7 +1564,7 @@ immutable TimeLocale HI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/hmn.json
+// // Source: locales/hmn.json
 // Hmong locale.
 immutable TimeLocale HMN = TimeLocale(
     code: "hmn",
@@ -1595,7 +1595,7 @@ immutable TimeLocale HMN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/hr.json
+// // Source: locales/hr.json
 // Croatian locale.
 immutable TimeLocale HR = TimeLocale(
     code: "hr",
@@ -1626,7 +1626,7 @@ immutable TimeLocale HR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ht.json
+// // Source: locales/ht.json
 // Haitian Creole locale.
 immutable TimeLocale HT = TimeLocale(
     code: "ht",
@@ -1657,7 +1657,7 @@ immutable TimeLocale HT = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/hu.json
+// // Source: locales/hu.json
 // Hungarian locale.
 immutable TimeLocale HU = TimeLocale(
     code: "hu",
@@ -1688,7 +1688,7 @@ immutable TimeLocale HU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/hy.json
+// // Source: locales/hy.json
 // Armenian locale.
 immutable TimeLocale HY = TimeLocale(
     code: "hy",
@@ -1719,7 +1719,7 @@ immutable TimeLocale HY = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/id.json
+// // Source: locales/id.json
 // Indonesian locale.
 immutable TimeLocale ID = TimeLocale(
     code: "id",
@@ -1750,7 +1750,7 @@ immutable TimeLocale ID = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ig.json
+// // Source: locales/ig.json
 // Igbo locale.
 immutable TimeLocale IG = TimeLocale(
     code: "ig",
@@ -1781,7 +1781,7 @@ immutable TimeLocale IG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/is.json
+// // Source: locales/is.json
 // Icelandic locale.
 immutable TimeLocale IS_ = TimeLocale(
     code: "is",
@@ -1812,7 +1812,7 @@ immutable TimeLocale IS_ = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/it.json
+// // Source: locales/it.json
 // Italian locale.
 immutable TimeLocale IT = TimeLocale(
     code: "it",
@@ -1843,7 +1843,7 @@ immutable TimeLocale IT = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ja.json
+// // Source: locales/ja.json
 // Japanese locale.
 immutable TimeLocale JA = TimeLocale(
     code: "ja",
@@ -1874,7 +1874,7 @@ immutable TimeLocale JA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/jv.json
+// // Source: locales/jv.json
 // Javanese locale.
 immutable TimeLocale JV = TimeLocale(
     code: "jv",
@@ -1905,7 +1905,7 @@ immutable TimeLocale JV = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ka.json
+// // Source: locales/ka.json
 // Georgian locale.
 immutable TimeLocale KA = TimeLocale(
     code: "ka",
@@ -1936,7 +1936,7 @@ immutable TimeLocale KA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kbp.json
+// // Source: locales/kbp.json
 // Kabiye locale.
 immutable TimeLocale KBP = TimeLocale(
     code: "kbp",
@@ -1967,7 +1967,7 @@ immutable TimeLocale KBP = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kek.json
+// // Source: locales/kek.json
 // Q'eqchi' locale.
 immutable TimeLocale KEK = TimeLocale(
     code: "kek",
@@ -1998,7 +1998,7 @@ immutable TimeLocale KEK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ki.json
+// // Source: locales/ki.json
 // Kikuyu locale.
 immutable TimeLocale KI = TimeLocale(
     code: "ki",
@@ -2029,7 +2029,7 @@ immutable TimeLocale KI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kk.json
+// // Source: locales/kk.json
 // Kazakh locale.
 immutable TimeLocale KK = TimeLocale(
     code: "kk",
@@ -2060,7 +2060,7 @@ immutable TimeLocale KK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kl.json
+// // Source: locales/kl.json
 // Kalaallisut locale.
 immutable TimeLocale KL = TimeLocale(
     code: "kl",
@@ -2091,7 +2091,7 @@ immutable TimeLocale KL = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/km.json
+// // Source: locales/km.json
 // Khmer locale.
 immutable TimeLocale KM = TimeLocale(
     code: "km",
@@ -2122,7 +2122,7 @@ immutable TimeLocale KM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kn.json
+// // Source: locales/kn.json
 // Kannada locale.
 immutable TimeLocale KN = TimeLocale(
     code: "kn",
@@ -2153,7 +2153,7 @@ immutable TimeLocale KN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ko.json
+// // Source: locales/ko.json
 // Korean locale.
 immutable TimeLocale KO = TimeLocale(
     code: "ko",
@@ -2184,7 +2184,7 @@ immutable TimeLocale KO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kpe.json
+// // Source: locales/kpe.json
 // Kpelle locale.
 immutable TimeLocale KPE = TimeLocale(
     code: "kpe",
@@ -2215,7 +2215,7 @@ immutable TimeLocale KPE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kri.json
+// // Source: locales/kri.json
 // Krio locale.
 immutable TimeLocale KRI = TimeLocale(
     code: "kri",
@@ -2246,7 +2246,7 @@ immutable TimeLocale KRI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ktu.json
+// // Source: locales/ktu.json
 // Kituba locale.
 immutable TimeLocale KTU = TimeLocale(
     code: "ktu",
@@ -2277,7 +2277,7 @@ immutable TimeLocale KTU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ku.json
+// // Source: locales/ku.json
 // Kurdish locale.
 immutable TimeLocale KU = TimeLocale(
     code: "ku",
@@ -2308,7 +2308,7 @@ immutable TimeLocale KU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/kw.json
+// // Source: locales/kw.json
 // Cornish locale.
 immutable TimeLocale KW = TimeLocale(
     code: "kw",
@@ -2339,7 +2339,7 @@ immutable TimeLocale KW = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ky.json
+// // Source: locales/ky.json
 // Kyrgyz locale.
 immutable TimeLocale KY = TimeLocale(
     code: "ky",
@@ -2370,7 +2370,7 @@ immutable TimeLocale KY = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/lb.json
+// // Source: locales/lb.json
 // Luxembourgish locale.
 immutable TimeLocale LB = TimeLocale(
     code: "lb",
@@ -2401,7 +2401,7 @@ immutable TimeLocale LB = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/lg.json
+// // Source: locales/lg.json
 // Luganda locale.
 immutable TimeLocale LG = TimeLocale(
     code: "lg",
@@ -2432,7 +2432,7 @@ immutable TimeLocale LG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ln.json
+// // Source: locales/ln.json
 // Lingala locale.
 immutable TimeLocale LN = TimeLocale(
     code: "ln",
@@ -2463,7 +2463,7 @@ immutable TimeLocale LN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/lo.json
+// // Source: locales/lo.json
 // Lao locale.
 immutable TimeLocale LO = TimeLocale(
     code: "lo",
@@ -2494,7 +2494,7 @@ immutable TimeLocale LO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/lt.json
+// // Source: locales/lt.json
 // Lithuanian locale.
 immutable TimeLocale LT = TimeLocale(
     code: "lt",
@@ -2525,7 +2525,7 @@ immutable TimeLocale LT = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/luo.json
+// // Source: locales/luo.json
 // Dholuo locale.
 immutable TimeLocale LUO = TimeLocale(
     code: "luo",
@@ -2556,7 +2556,7 @@ immutable TimeLocale LUO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/lv.json
+// // Source: locales/lv.json
 // Latvian locale.
 immutable TimeLocale LV = TimeLocale(
     code: "lv",
@@ -2587,7 +2587,7 @@ immutable TimeLocale LV = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mam.json
+// // Source: locales/mam.json
 // Mam locale.
 immutable TimeLocale MAM = TimeLocale(
     code: "mam",
@@ -2618,7 +2618,7 @@ immutable TimeLocale MAM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/men.json
+// // Source: locales/men.json
 // Mende locale.
 immutable TimeLocale MEN = TimeLocale(
     code: "men",
@@ -2649,7 +2649,7 @@ immutable TimeLocale MEN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mfe.json
+// // Source: locales/mfe.json
 // Mauritian Creole locale.
 immutable TimeLocale MFE = TimeLocale(
     code: "mfe",
@@ -2680,7 +2680,7 @@ immutable TimeLocale MFE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mg.json
+// // Source: locales/mg.json
 // Malagasy locale.
 immutable TimeLocale MG = TimeLocale(
     code: "mg",
@@ -2711,7 +2711,7 @@ immutable TimeLocale MG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mi.json
+// // Source: locales/mi.json
 // Māori locale.
 immutable TimeLocale MI = TimeLocale(
     code: "mi",
@@ -2742,7 +2742,7 @@ immutable TimeLocale MI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mk.json
+// // Source: locales/mk.json
 // Macedonian locale.
 immutable TimeLocale MK = TimeLocale(
     code: "mk",
@@ -2773,7 +2773,7 @@ immutable TimeLocale MK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ml.json
+// // Source: locales/ml.json
 // Malayalam locale.
 immutable TimeLocale ML = TimeLocale(
     code: "ml",
@@ -2804,7 +2804,7 @@ immutable TimeLocale ML = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mn.json
+// // Source: locales/mn.json
 // Mongolian locale.
 immutable TimeLocale MN = TimeLocale(
     code: "mn",
@@ -2835,7 +2835,7 @@ immutable TimeLocale MN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mnk.json
+// // Source: locales/mnk.json
 // Mandinka locale.
 immutable TimeLocale MNK = TimeLocale(
     code: "mnk",
@@ -2866,7 +2866,7 @@ immutable TimeLocale MNK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mos.json
+// // Source: locales/mos.json
 // Moore locale.
 immutable TimeLocale MOS = TimeLocale(
     code: "mos",
@@ -2897,7 +2897,7 @@ immutable TimeLocale MOS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mr.json
+// // Source: locales/mr.json
 // Marathi locale.
 immutable TimeLocale MR = TimeLocale(
     code: "mr",
@@ -2928,7 +2928,7 @@ immutable TimeLocale MR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ms.json
+// // Source: locales/ms.json
 // Malay locale.
 immutable TimeLocale MS = TimeLocale(
     code: "ms",
@@ -2959,7 +2959,7 @@ immutable TimeLocale MS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/mt.json
+// // Source: locales/mt.json
 // Maltese locale.
 immutable TimeLocale MT = TimeLocale(
     code: "mt",
@@ -2990,7 +2990,7 @@ immutable TimeLocale MT = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/my.json
+// // Source: locales/my.json
 // Burmese locale.
 immutable TimeLocale MY = TimeLocale(
     code: "my",
@@ -3021,7 +3021,7 @@ immutable TimeLocale MY = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/nb.json
+// // Source: locales/nb.json
 // Norwegian Bokmål locale.
 immutable TimeLocale NB = TimeLocale(
     code: "nb",
@@ -3052,7 +3052,7 @@ immutable TimeLocale NB = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/nd.json
+// // Source: locales/nd.json
 // Northern Ndebele locale.
 immutable TimeLocale ND = TimeLocale(
     code: "nd",
@@ -3083,7 +3083,7 @@ immutable TimeLocale ND = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ne.json
+// // Source: locales/ne.json
 // Nepali locale.
 immutable TimeLocale NE = TimeLocale(
     code: "ne",
@@ -3114,7 +3114,7 @@ immutable TimeLocale NE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ng.json
+// // Source: locales/ng.json
 // Oshiwambo locale.
 immutable TimeLocale NG = TimeLocale(
     code: "ng",
@@ -3145,7 +3145,7 @@ immutable TimeLocale NG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/nl.json
+// // Source: locales/nl.json
 // Dutch locale.
 immutable TimeLocale NL = TimeLocale(
     code: "nl",
@@ -3176,7 +3176,7 @@ immutable TimeLocale NL = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/nr.json
+// // Source: locales/nr.json
 // Southern Ndebele locale.
 immutable TimeLocale NR = TimeLocale(
     code: "nr",
@@ -3207,7 +3207,7 @@ immutable TimeLocale NR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/nso.json
+// // Source: locales/nso.json
 // Northern Sotho locale.
 immutable TimeLocale NSO = TimeLocale(
     code: "nso",
@@ -3238,7 +3238,7 @@ immutable TimeLocale NSO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/nus.json
+// // Source: locales/nus.json
 // Nuer locale.
 immutable TimeLocale NUS = TimeLocale(
     code: "nus",
@@ -3269,7 +3269,7 @@ immutable TimeLocale NUS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ny.json
+// // Source: locales/ny.json
 // Chichewa locale.
 immutable TimeLocale NY = TimeLocale(
     code: "ny",
@@ -3300,7 +3300,7 @@ immutable TimeLocale NY = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/om.json
+// // Source: locales/om.json
 // Oromo locale.
 immutable TimeLocale OM = TimeLocale(
     code: "om",
@@ -3331,7 +3331,7 @@ immutable TimeLocale OM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/or.json
+// // Source: locales/or.json
 // Odia locale.
 immutable TimeLocale OR = TimeLocale(
     code: "or",
@@ -3362,7 +3362,7 @@ immutable TimeLocale OR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/pa.json
+// // Source: locales/pa.json
 // Punjabi locale.
 immutable TimeLocale PA = TimeLocale(
     code: "pa",
@@ -3393,7 +3393,7 @@ immutable TimeLocale PA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/pis.json
+// // Source: locales/pis.json
 // Pijin locale.
 immutable TimeLocale PIS = TimeLocale(
     code: "pis",
@@ -3424,7 +3424,7 @@ immutable TimeLocale PIS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/pl.json
+// // Source: locales/pl.json
 // Polish locale.
 immutable TimeLocale PL = TimeLocale(
     code: "pl",
@@ -3455,7 +3455,7 @@ immutable TimeLocale PL = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/pov.json
+// // Source: locales/pov.json
 // Guinea-Bissau Creole locale.
 immutable TimeLocale POV = TimeLocale(
     code: "pov",
@@ -3486,7 +3486,7 @@ immutable TimeLocale POV = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ps.json
+// // Source: locales/ps.json
 // Pashto locale.
 immutable TimeLocale PS = TimeLocale(
     code: "ps",
@@ -3517,7 +3517,7 @@ immutable TimeLocale PS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/pt.json
+// // Source: locales/pt.json
 // Portuguese locale.
 immutable TimeLocale PT = TimeLocale(
     code: "pt",
@@ -3548,7 +3548,7 @@ immutable TimeLocale PT = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/qu.json
+// // Source: locales/qu.json
 // Quechua locale.
 immutable TimeLocale QU = TimeLocale(
     code: "qu",
@@ -3579,7 +3579,7 @@ immutable TimeLocale QU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/quc.json
+// // Source: locales/quc.json
 // K'iche' locale.
 immutable TimeLocale QUC = TimeLocale(
     code: "quc",
@@ -3610,7 +3610,7 @@ immutable TimeLocale QUC = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ro.json
+// // Source: locales/ro.json
 // Romanian locale.
 immutable TimeLocale RO = TimeLocale(
     code: "ro",
@@ -3641,7 +3641,7 @@ immutable TimeLocale RO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ru.json
+// // Source: locales/ru.json
 // Russian locale.
 immutable TimeLocale RU = TimeLocale(
     code: "ru",
@@ -3672,7 +3672,7 @@ immutable TimeLocale RU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/rw.json
+// // Source: locales/rw.json
 // Kinyarwanda locale.
 immutable TimeLocale RW = TimeLocale(
     code: "rw",
@@ -3703,7 +3703,7 @@ immutable TimeLocale RW = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sar.json
+// // Source: locales/sar.json
 // Sara locale.
 immutable TimeLocale SAR = TimeLocale(
     code: "sar",
@@ -3734,7 +3734,7 @@ immutable TimeLocale SAR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sd.json
+// // Source: locales/sd.json
 // Sindhi locale.
 immutable TimeLocale SD = TimeLocale(
     code: "sd",
@@ -3765,7 +3765,7 @@ immutable TimeLocale SD = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sg.json
+// // Source: locales/sg.json
 // Sango locale.
 immutable TimeLocale SG = TimeLocale(
     code: "sg",
@@ -3796,7 +3796,7 @@ immutable TimeLocale SG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/shi.json
+// // Source: locales/shi.json
 // Tachelhit locale.
 immutable TimeLocale SHI = TimeLocale(
     code: "shi",
@@ -3827,7 +3827,7 @@ immutable TimeLocale SHI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/shn.json
+// // Source: locales/shn.json
 // Shan locale.
 immutable TimeLocale SHN = TimeLocale(
     code: "shn",
@@ -3858,7 +3858,7 @@ immutable TimeLocale SHN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/si.json
+// // Source: locales/si.json
 // Sinhala locale.
 immutable TimeLocale SI = TimeLocale(
     code: "si",
@@ -3889,7 +3889,7 @@ immutable TimeLocale SI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sk.json
+// // Source: locales/sk.json
 // Slovak locale.
 immutable TimeLocale SK = TimeLocale(
     code: "sk",
@@ -3920,7 +3920,7 @@ immutable TimeLocale SK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sl.json
+// // Source: locales/sl.json
 // Slovenian locale.
 immutable TimeLocale SL = TimeLocale(
     code: "sl",
@@ -3951,7 +3951,7 @@ immutable TimeLocale SL = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sn.json
+// // Source: locales/sn.json
 // Shona locale.
 immutable TimeLocale SN = TimeLocale(
     code: "sn",
@@ -3982,7 +3982,7 @@ immutable TimeLocale SN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/snk.json
+// // Source: locales/snk.json
 // Soninke locale.
 immutable TimeLocale SNK = TimeLocale(
     code: "snk",
@@ -4013,7 +4013,7 @@ immutable TimeLocale SNK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/so.json
+// // Source: locales/so.json
 // Somali locale.
 immutable TimeLocale SO = TimeLocale(
     code: "so",
@@ -4044,7 +4044,7 @@ immutable TimeLocale SO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sq.json
+// // Source: locales/sq.json
 // Albanian locale.
 immutable TimeLocale SQ = TimeLocale(
     code: "sq",
@@ -4075,7 +4075,7 @@ immutable TimeLocale SQ = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sr.json
+// // Source: locales/sr.json
 // Serbian locale.
 immutable TimeLocale SR = TimeLocale(
     code: "sr",
@@ -4106,7 +4106,7 @@ immutable TimeLocale SR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ss.json
+// // Source: locales/ss.json
 // siSwati locale.
 immutable TimeLocale SS = TimeLocale(
     code: "ss",
@@ -4137,7 +4137,7 @@ immutable TimeLocale SS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/st.json
+// // Source: locales/st.json
 // Southern Sotho locale.
 immutable TimeLocale ST = TimeLocale(
     code: "st",
@@ -4168,7 +4168,7 @@ immutable TimeLocale ST = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/su.json
+// // Source: locales/su.json
 // Sundanese locale.
 immutable TimeLocale SU = TimeLocale(
     code: "su",
@@ -4199,7 +4199,7 @@ immutable TimeLocale SU = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/suk.json
+// // Source: locales/suk.json
 // Sukuma locale.
 immutable TimeLocale SUK = TimeLocale(
     code: "suk",
@@ -4230,7 +4230,7 @@ immutable TimeLocale SUK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sv.json
+// // Source: locales/sv.json
 // Swedish locale.
 immutable TimeLocale SV = TimeLocale(
     code: "sv",
@@ -4261,7 +4261,7 @@ immutable TimeLocale SV = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/sw.json
+// // Source: locales/sw.json
 // Swahili locale.
 immutable TimeLocale SW = TimeLocale(
     code: "sw",
@@ -4292,7 +4292,7 @@ immutable TimeLocale SW = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ta.json
+// // Source: locales/ta.json
 // Tamil locale.
 immutable TimeLocale TA = TimeLocale(
     code: "ta",
@@ -4323,7 +4323,7 @@ immutable TimeLocale TA = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/te.json
+// // Source: locales/te.json
 // Telugu locale.
 immutable TimeLocale TE = TimeLocale(
     code: "te",
@@ -4354,7 +4354,7 @@ immutable TimeLocale TE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tem.json
+// // Source: locales/tem.json
 // Temne locale.
 immutable TimeLocale TEM = TimeLocale(
     code: "tem",
@@ -4385,7 +4385,7 @@ immutable TimeLocale TEM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tet.json
+// // Source: locales/tet.json
 // Tetum locale.
 immutable TimeLocale TET = TimeLocale(
     code: "tet",
@@ -4416,7 +4416,7 @@ immutable TimeLocale TET = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tg.json
+// // Source: locales/tg.json
 // Tajik locale.
 immutable TimeLocale TG = TimeLocale(
     code: "tg",
@@ -4447,7 +4447,7 @@ immutable TimeLocale TG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/th.json
+// // Source: locales/th.json
 // Thai locale.
 immutable TimeLocale TH = TimeLocale(
     code: "th",
@@ -4478,7 +4478,7 @@ immutable TimeLocale TH = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ti.json
+// // Source: locales/ti.json
 // Tigrinya locale.
 immutable TimeLocale TI = TimeLocale(
     code: "ti",
@@ -4509,7 +4509,7 @@ immutable TimeLocale TI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tig.json
+// // Source: locales/tig.json
 // Tigre locale.
 immutable TimeLocale TIG = TimeLocale(
     code: "tig",
@@ -4540,7 +4540,7 @@ immutable TimeLocale TIG = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tk.json
+// // Source: locales/tk.json
 // Turkmen locale.
 immutable TimeLocale TK = TimeLocale(
     code: "tk",
@@ -4571,7 +4571,7 @@ immutable TimeLocale TK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tn.json
+// // Source: locales/tn.json
 // Tswana locale.
 immutable TimeLocale TN = TimeLocale(
     code: "tn",
@@ -4602,7 +4602,7 @@ immutable TimeLocale TN = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tpi.json
+// // Source: locales/tpi.json
 // Tok Pisin locale.
 immutable TimeLocale TPI = TimeLocale(
     code: "tpi",
@@ -4633,7 +4633,7 @@ immutable TimeLocale TPI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tr.json
+// // Source: locales/tr.json
 // Turkish locale.
 immutable TimeLocale TR = TimeLocale(
     code: "tr",
@@ -4664,7 +4664,7 @@ immutable TimeLocale TR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ts.json
+// // Source: locales/ts.json
 // Tsonga locale.
 immutable TimeLocale TS = TimeLocale(
     code: "ts",
@@ -4695,7 +4695,7 @@ immutable TimeLocale TS = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tum.json
+// // Source: locales/tum.json
 // Tumbuka locale.
 immutable TimeLocale TUM = TimeLocale(
     code: "tum",
@@ -4726,7 +4726,7 @@ immutable TimeLocale TUM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/tzm.json
+// // Source: locales/tzm.json
 // Central Atlas Tamazight locale.
 immutable TimeLocale TZM = TimeLocale(
     code: "tzm",
@@ -4757,7 +4757,7 @@ immutable TimeLocale TZM = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/uk.json
+// // Source: locales/uk.json
 // Ukrainian locale.
 immutable TimeLocale UK = TimeLocale(
     code: "uk",
@@ -4788,7 +4788,7 @@ immutable TimeLocale UK = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/umb.json
+// // Source: locales/umb.json
 // Umbundu locale.
 immutable TimeLocale UMB = TimeLocale(
     code: "umb",
@@ -4819,7 +4819,7 @@ immutable TimeLocale UMB = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ur.json
+// // Source: locales/ur.json
 // Urdu locale.
 immutable TimeLocale UR = TimeLocale(
     code: "ur",
@@ -4850,7 +4850,7 @@ immutable TimeLocale UR = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/uz.json
+// // Source: locales/uz.json
 // Uzbek locale.
 immutable TimeLocale UZ = TimeLocale(
     code: "uz",
@@ -4881,7 +4881,7 @@ immutable TimeLocale UZ = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/ve.json
+// // Source: locales/ve.json
 // Venda locale.
 immutable TimeLocale VE = TimeLocale(
     code: "ve",
@@ -4912,7 +4912,7 @@ immutable TimeLocale VE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/vi.json
+// // Source: locales/vi.json
 // Vietnamese locale.
 immutable TimeLocale VI = TimeLocale(
     code: "vi",
@@ -4943,7 +4943,7 @@ immutable TimeLocale VI = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/vmw.json
+// // Source: locales/vmw.json
 // Makhuwa locale.
 immutable TimeLocale VMW = TimeLocale(
     code: "vmw",
@@ -4974,7 +4974,7 @@ immutable TimeLocale VMW = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/wo.json
+// // Source: locales/wo.json
 // Wolof locale.
 immutable TimeLocale WO = TimeLocale(
     code: "wo",
@@ -5005,7 +5005,7 @@ immutable TimeLocale WO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/xh.json
+// // Source: locales/xh.json
 // Xhosa locale.
 immutable TimeLocale XH = TimeLocale(
     code: "xh",
@@ -5036,7 +5036,7 @@ immutable TimeLocale XH = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/yao.json
+// // Source: locales/yao.json
 // Yao locale.
 immutable TimeLocale YAO = TimeLocale(
     code: "yao",
@@ -5067,7 +5067,7 @@ immutable TimeLocale YAO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/yo.json
+// // Source: locales/yo.json
 // Yoruba locale.
 immutable TimeLocale YO = TimeLocale(
     code: "yo",
@@ -5098,7 +5098,7 @@ immutable TimeLocale YO = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/yue.json
+// // Source: locales/yue.json
 // Cantonese locale.
 immutable TimeLocale YUE = TimeLocale(
     code: "yue",
@@ -5129,7 +5129,7 @@ immutable TimeLocale YUE = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/zdj.json
+// // Source: locales/zdj.json
 // Comorian locale.
 immutable TimeLocale ZDJ = TimeLocale(
     code: "zdj",
@@ -5160,7 +5160,7 @@ immutable TimeLocale ZDJ = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/zh.json
+// // Source: locales/zh.json
 // Chinese locale.
 immutable TimeLocale ZH = TimeLocale(
     code: "zh",
@@ -5191,7 +5191,7 @@ immutable TimeLocale ZH = TimeLocale(
     ),
 );
 
-// // Source: time/locales/src/zu.json
+// // Source: locales/zu.json
 // Zulu locale.
 immutable TimeLocale ZU = TimeLocale(
     code: "zu",

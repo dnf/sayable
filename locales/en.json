@@ -1,0 +1,248 @@
+{
+  "code": "en",
+  "name": "English",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} day",
+        "other": "{n} days"
+      },
+      "week": {
+        "one": "{n} week",
+        "other": "{n} weeks"
+      },
+      "month": {
+        "one": "{n} month",
+        "other": "{n} months"
+      },
+      "year": {
+        "one": "{n} year",
+        "other": "{n} years"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Newborn",
+    "stages": {
+      "newborn": "Newborn",
+      "infant": "Infant",
+      "toddler": "Toddler",
+      "child": "Child",
+      "teenager": "Teenager",
+      "adult": "Adult"
+    },
+    "short": {
+      "units": {
+        "day": "{n} d",
+        "week": "{n} wk",
+        "month": "{n} mo",
+        "year": "{n} yr"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}m",
+        "year": "{n}y"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "weekdays": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "dayFormat": "{n}th",
+    "dayFormatExceptions": {
+      "1": "{n}st",
+      "2": "{n}nd",
+      "3": "{n}rd",
+      "21": "{n}st",
+      "22": "{n}nd",
+      "23": "{n}rd",
+      "31": "{n}st"
+    },
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{month} {day}, {year}",
+    "today": "today",
+    "tomorrow": "tomorrow",
+    "yesterday": "yesterday",
+    "dayAfterTomorrow": "the day after tomorrow",
+    "dayBeforeYesterday": "the day before yesterday",
+    "thisWeekday": "this {weekday}",
+    "nextWeekday": "next {weekday}",
+    "lastWeekday": "last {weekday}",
+    "short": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "weekdays": [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{month} {day}, {year}"
+    },
+    "compact": {
+      "datePattern": "{m}/{d}",
+      "datePatternWithYear": "{m}/{d}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} second",
+        "other": "{n} seconds"
+      },
+      "minute": {
+        "one": "{n} minute",
+        "other": "{n} minutes"
+      },
+      "hour": {
+        "one": "{n} hour",
+        "other": "{n} hours"
+      },
+      "day": {
+        "one": "{n} day",
+        "other": "{n} days"
+      },
+      "week": {
+        "one": "{n} week",
+        "other": "{n} weeks"
+      },
+      "month": {
+        "one": "{n} month",
+        "other": "{n} months"
+      },
+      "year": {
+        "one": "{n} year",
+        "other": "{n} years"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "just now",
+    "ago": "{0} ago",
+    "inFuture": "in {0}",
+    "short": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "ago": "{0} ago",
+      "inFuture": "in {0}"
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}m",
+        "hour": "{n}h",
+        "day": "{n}d",
+        "week": "{n}w",
+        "month": "{n}mo",
+        "year": "{n}y"
+      },
+      "delimiter": "",
+      "ago": "{0} ago",
+      "inFuture": "in {0}"
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "twelve",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "eleven"
+      ],
+      "midnight": "midnight",
+      "noon": "noon",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "five past {h}",
+        "10": "ten past {h}",
+        "15": "a quarter past {h}",
+        "20": "twenty past {h}",
+        "25": "twenty-five past {h}",
+        "30": "half past {h}",
+        "35": "twenty-five to {next_h}",
+        "40": "twenty to {next_h}",
+        "45": "a quarter to {next_h}",
+        "50": "ten to {next_h}",
+        "55": "five to {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  }
+}

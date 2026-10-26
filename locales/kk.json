@@ -1,0 +1,240 @@
+{
+  "code": "kk",
+  "name": "Kazakh",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} күн",
+        "other": "{n} күн"
+      },
+      "week": {
+        "one": "{n} апта",
+        "other": "{n} апта"
+      },
+      "month": {
+        "one": "{n} ай",
+        "other": "{n} ай"
+      },
+      "year": {
+        "one": "{n} жас",
+        "other": "{n} жас"
+      }
+    },
+    "half": "{n} жарым",
+    "delimiter": ", ",
+    "justBorn": "Жаңа туған",
+    "stages": {
+      "newborn": "Жаңа туған",
+      "infant": "Нәресте",
+      "toddler": "Сәби",
+      "child": "Бала",
+      "teenager": "Жасөспірім",
+      "adult": "Ересек"
+    },
+    "short": {
+      "units": {
+        "day": "{n} күн",
+        "week": "{n} ап.",
+        "month": "{n} ай",
+        "year": "{n} ж."
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} к.",
+        "week": "{n} ап.",
+        "month": "{n} ай",
+        "year": "{n} ж."
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "қаңтар",
+      "ақпан",
+      "наурыз",
+      "сәуір",
+      "мамыр",
+      "маусым",
+      "шілде",
+      "тамыз",
+      "қыркүйек",
+      "қазан",
+      "қараша",
+      "желтоқсан"
+    ],
+    "weekdays": [
+      "жексенбі",
+      "дүйсенбі",
+      "сейсенбі",
+      "сәрсенбі",
+      "бейсенбі",
+      "жұма",
+      "сенбі"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "бүгін",
+    "tomorrow": "ертең",
+    "yesterday": "кеше",
+    "dayAfterTomorrow": "бүрсігүні",
+    "dayBeforeYesterday": "алдыңғы күні",
+    "thisWeekday": "осы {weekday}",
+    "nextWeekday": "келесі {weekday}",
+    "lastWeekday": "өткен {weekday}",
+    "short": {
+      "months": [
+        "қаң",
+        "ақп",
+        "нау",
+        "сәу",
+        "мам",
+        "мау",
+        "шіл",
+        "там",
+        "қыр",
+        "қаз",
+        "қар",
+        "жел"
+      ],
+      "weekdays": [
+        "жс",
+        "дс",
+        "сс",
+        "ср",
+        "бс",
+        "жм",
+        "сб"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": "{n} секунд",
+      "minute": "{n} минут",
+      "hour": "{n} сағат",
+      "day": {
+        "one": "{n} күн",
+        "other": "{n} күн"
+      },
+      "week": {
+        "one": "{n} апта",
+        "other": "{n} апта"
+      },
+      "month": {
+        "one": "{n} ай",
+        "other": "{n} ай"
+      },
+      "year": {
+        "one": "{n} жас",
+        "other": "{n} жас"
+      }
+    },
+    "half": "{n} жарым",
+    "delimiter": ", ",
+    "justNow": "дәл қазір",
+    "ago": "{0} бұрын",
+    "inFuture": "{0} кейін",
+    "short": {
+      "units": {
+        "second": "{n} с",
+        "minute": "{n} мин",
+        "hour": "{n} сағ",
+        "day": "{n} күн",
+        "week": "{n} ап.",
+        "month": "{n} ай",
+        "year": "{n} ж."
+      },
+      "ago": "{0} бұрын",
+      "inFuture": "{0} кейін",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "AM",
+          "PM"
+        ],
+        "format": "{h}:{mm} {ampm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} с",
+        "minute": "{n} мин",
+        "hour": "{n} сағ",
+        "day": "{n} к.",
+        "week": "{n} ап.",
+        "month": "{n} ай",
+        "year": "{n} ж."
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} бұрын",
+      "inFuture": "{0} кейін",
+      "clock": {
+        "use24h": false,
+        "amPm": [
+          "a",
+          "p"
+        ],
+        "format": "{h}:{mm}{ampm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "он екі",
+        "бір",
+        "екі",
+        "үш",
+        "төрт",
+        "бес",
+        "алты",
+        "жеті",
+        "сегіз",
+        "тоғыз",
+        "он",
+        "он бір"
+      ],
+      "midnight": "түн ортасы",
+      "noon": "түс",
+      "patterns": {
+        "0": "{h} o'clock",
+        "5": "бес past {h}",
+        "10": "он past {h}",
+        "15": "он бес past {h}",
+        "20": "жиырма past {h}",
+        "25": "жиырма бес past {h}",
+        "30": "отыз past {h}",
+        "35": "жиырма бес to {next_h}",
+        "40": "жиырма to {next_h}",
+        "45": "он бес to {next_h}",
+        "50": "он to {next_h}",
+        "55": "бес to {next_h}"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

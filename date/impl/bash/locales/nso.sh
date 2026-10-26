@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/nso.json
+# Source: locales/nso.json
 
 _sayabledate_locale_nso() {
     _months=('Pherekgong' 'Hlakola' 'Mopitlo' 'Moranang' 'Mosegamanye' 'Ngoatobošego' 'Phukwi' 'Phatwe' 'Lewedi' 'Diphalane' 'Dibatsela' 'Manthole')

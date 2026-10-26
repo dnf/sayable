@@ -20,7 +20,7 @@ use SayableDate\DateLocale;
 /** Built-in locale definitions. */
 final class Locales
 {
-    // Source: date/locales/src/af.json
+    // Source: locales/af.json
     // ── Afrikaans ───────────────────────────────────────────────────
 
     public static function AF(): DateLocale
@@ -57,7 +57,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ak.json
+    // Source: locales/ak.json
     // ── Akan ────────────────────────────────────────────────────────
 
     public static function AK(): DateLocale
@@ -94,7 +94,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/am.json
+    // Source: locales/am.json
     // ── Amharic ─────────────────────────────────────────────────────
 
     public static function AM(): DateLocale
@@ -131,7 +131,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ar.json
+    // Source: locales/ar.json
     // ── Arabic ──────────────────────────────────────────────────────
 
     public static function AR(): DateLocale
@@ -168,7 +168,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ay.json
+    // Source: locales/ay.json
     // ── Aymara ──────────────────────────────────────────────────────
 
     public static function AY(): DateLocale
@@ -203,7 +203,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/az.json
+    // Source: locales/az.json
     // ── Azerbaijani ─────────────────────────────────────────────────
 
     public static function AZ(): DateLocale
@@ -240,7 +240,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/bci.json
+    // Source: locales/bci.json
     // ── Baoulé ──────────────────────────────────────────────────────
 
     public static function BCI(): DateLocale
@@ -277,7 +277,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/be.json
+    // Source: locales/be.json
     // ── Belarusian ──────────────────────────────────────────────────
 
     public static function BE(): DateLocale
@@ -315,7 +315,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/bem.json
+    // Source: locales/bem.json
     // ── Bemba ───────────────────────────────────────────────────────
 
     public static function BEM(): DateLocale
@@ -352,7 +352,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/bg.json
+    // Source: locales/bg.json
     // ── Bulgarian ───────────────────────────────────────────────────
 
     public static function BG(): DateLocale
@@ -389,7 +389,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/bi.json
+    // Source: locales/bi.json
     // ── Bislama ─────────────────────────────────────────────────────
 
     public static function BI(): DateLocale
@@ -426,7 +426,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/bm.json
+    // Source: locales/bm.json
     // ── Bambara ─────────────────────────────────────────────────────
 
     public static function BM(): DateLocale
@@ -463,7 +463,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/bn.json
+    // Source: locales/bn.json
     // ── Bengali ─────────────────────────────────────────────────────
 
     public static function BN(): DateLocale
@@ -500,7 +500,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/br.json
+    // Source: locales/br.json
     // ── Breton ──────────────────────────────────────────────────────
 
     public static function BR(): DateLocale
@@ -535,7 +535,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/bs.json
+    // Source: locales/bs.json
     // ── Bosnian ─────────────────────────────────────────────────────
 
     public static function BS(): DateLocale
@@ -572,7 +572,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ca.json
+    // Source: locales/ca.json
     // ── Catalan ─────────────────────────────────────────────────────
 
     public static function CA(): DateLocale
@@ -609,7 +609,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/cak.json
+    // Source: locales/cak.json
     // ── Kaqchikel ───────────────────────────────────────────────────
 
     public static function CAK(): DateLocale
@@ -646,7 +646,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ceb.json
+    // Source: locales/ceb.json
     // ── Cebuano ─────────────────────────────────────────────────────
 
     public static function CEB(): DateLocale
@@ -683,7 +683,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/cs.json
+    // Source: locales/cs.json
     // ── Czech ───────────────────────────────────────────────────────
 
     public static function CS(): DateLocale
@@ -721,7 +721,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/cy.json
+    // Source: locales/cy.json
     // ── Welsh ───────────────────────────────────────────────────────
 
     public static function CY(): DateLocale
@@ -758,7 +758,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/da.json
+    // Source: locales/da.json
     // ── Danish ──────────────────────────────────────────────────────
 
     public static function DA(): DateLocale
@@ -795,7 +795,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/de.json
+    // Source: locales/de.json
     // ── German ──────────────────────────────────────────────────────
 
     public static function DE(): DateLocale
@@ -832,7 +832,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/din.json
+    // Source: locales/din.json
     // ── Dinka ───────────────────────────────────────────────────────
 
     public static function DIN(): DateLocale
@@ -869,7 +869,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/dje.json
+    // Source: locales/dje.json
     // ── Zarma ───────────────────────────────────────────────────────
 
     public static function DJE(): DateLocale
@@ -906,7 +906,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/dv.json
+    // Source: locales/dv.json
     // ── Dhivehi ─────────────────────────────────────────────────────
 
     public static function DV(): DateLocale
@@ -943,7 +943,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/dyu.json
+    // Source: locales/dyu.json
     // ── Dyula ───────────────────────────────────────────────────────
 
     public static function DYU(): DateLocale
@@ -980,7 +980,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/dz.json
+    // Source: locales/dz.json
     // ── Dzongkha ────────────────────────────────────────────────────
 
     public static function DZ(): DateLocale
@@ -1017,7 +1017,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ee.json
+    // Source: locales/ee.json
     // ── Ewe ─────────────────────────────────────────────────────────
 
     public static function EE(): DateLocale
@@ -1054,7 +1054,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/el.json
+    // Source: locales/el.json
     // ── Greek ───────────────────────────────────────────────────────
 
     public static function EL(): DateLocale
@@ -1092,7 +1092,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/en.json
+    // Source: locales/en.json
     // ── English ─────────────────────────────────────────────────────
 
     public static function EN(): DateLocale
@@ -1129,7 +1129,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/es.json
+    // Source: locales/es.json
     // ── Spanish ─────────────────────────────────────────────────────
 
     public static function ES(): DateLocale
@@ -1166,7 +1166,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/et.json
+    // Source: locales/et.json
     // ── Estonian ────────────────────────────────────────────────────
 
     public static function ET(): DateLocale
@@ -1203,7 +1203,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/eu.json
+    // Source: locales/eu.json
     // ── Basque ──────────────────────────────────────────────────────
 
     public static function EU(): DateLocale
@@ -1240,7 +1240,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/fa.json
+    // Source: locales/fa.json
     // ── Persian ─────────────────────────────────────────────────────
 
     public static function FA(): DateLocale
@@ -1277,7 +1277,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/fan.json
+    // Source: locales/fan.json
     // ── Fang ────────────────────────────────────────────────────────
 
     public static function FAN(): DateLocale
@@ -1314,7 +1314,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ff.json
+    // Source: locales/ff.json
     // ── Fulah ───────────────────────────────────────────────────────
 
     public static function FF(): DateLocale
@@ -1351,7 +1351,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/fi.json
+    // Source: locales/fi.json
     // ── Finnish ─────────────────────────────────────────────────────
 
     public static function FI(): DateLocale
@@ -1389,7 +1389,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/fil.json
+    // Source: locales/fil.json
     // ── Filipino ────────────────────────────────────────────────────
 
     public static function FIL(): DateLocale
@@ -1426,7 +1426,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/fj.json
+    // Source: locales/fj.json
     // ── Fijian ──────────────────────────────────────────────────────
 
     public static function FJ(): DateLocale
@@ -1463,7 +1463,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/fon.json
+    // Source: locales/fon.json
     // ── Fon ─────────────────────────────────────────────────────────
 
     public static function FON(): DateLocale
@@ -1500,7 +1500,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/fr.json
+    // Source: locales/fr.json
     // ── French ──────────────────────────────────────────────────────
 
     public static function FR(): DateLocale
@@ -1537,7 +1537,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ga.json
+    // Source: locales/ga.json
     // ── Irish ───────────────────────────────────────────────────────
 
     public static function GA(): DateLocale
@@ -1574,7 +1574,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/gd.json
+    // Source: locales/gd.json
     // ── Scottish Gaelic ─────────────────────────────────────────────
 
     public static function GD(): DateLocale
@@ -1611,7 +1611,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/gl.json
+    // Source: locales/gl.json
     // ── Galician ────────────────────────────────────────────────────
 
     public static function GL(): DateLocale
@@ -1648,7 +1648,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/gn.json
+    // Source: locales/gn.json
     // ── Guarani ─────────────────────────────────────────────────────
 
     public static function GN(): DateLocale
@@ -1685,7 +1685,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/gu.json
+    // Source: locales/gu.json
     // ── Gujarati ────────────────────────────────────────────────────
 
     public static function GU(): DateLocale
@@ -1722,7 +1722,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/gv.json
+    // Source: locales/gv.json
     // ── Manx ────────────────────────────────────────────────────────
 
     public static function GV(): DateLocale
@@ -1757,7 +1757,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ha.json
+    // Source: locales/ha.json
     // ── Hausa ───────────────────────────────────────────────────────
 
     public static function HA(): DateLocale
@@ -1794,7 +1794,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/he.json
+    // Source: locales/he.json
     // ── Hebrew ──────────────────────────────────────────────────────
 
     public static function HE(): DateLocale
@@ -1831,7 +1831,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/hi.json
+    // Source: locales/hi.json
     // ── Hindi ───────────────────────────────────────────────────────
 
     public static function HI(): DateLocale
@@ -1868,7 +1868,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/hmn.json
+    // Source: locales/hmn.json
     // ── Hmong ───────────────────────────────────────────────────────
 
     public static function HMN(): DateLocale
@@ -1905,7 +1905,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/hr.json
+    // Source: locales/hr.json
     // ── Croatian ────────────────────────────────────────────────────
 
     public static function HR(): DateLocale
@@ -1943,7 +1943,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ht.json
+    // Source: locales/ht.json
     // ── Haitian Creole ──────────────────────────────────────────────
 
     public static function HT(): DateLocale
@@ -1980,7 +1980,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/hu.json
+    // Source: locales/hu.json
     // ── Hungarian ───────────────────────────────────────────────────
 
     public static function HU(): DateLocale
@@ -2017,7 +2017,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/hy.json
+    // Source: locales/hy.json
     // ── Armenian ────────────────────────────────────────────────────
 
     public static function HY(): DateLocale
@@ -2054,7 +2054,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/id.json
+    // Source: locales/id.json
     // ── Indonesian ──────────────────────────────────────────────────
 
     public static function ID(): DateLocale
@@ -2091,7 +2091,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ig.json
+    // Source: locales/ig.json
     // ── Igbo ────────────────────────────────────────────────────────
 
     public static function IG(): DateLocale
@@ -2128,7 +2128,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/is.json
+    // Source: locales/is.json
     // ── Icelandic ───────────────────────────────────────────────────
 
     public static function IS(): DateLocale
@@ -2165,7 +2165,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/it.json
+    // Source: locales/it.json
     // ── Italian ─────────────────────────────────────────────────────
 
     public static function IT(): DateLocale
@@ -2202,7 +2202,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ja.json
+    // Source: locales/ja.json
     // ── Japanese ────────────────────────────────────────────────────
 
     public static function JA(): DateLocale
@@ -2239,7 +2239,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/jv.json
+    // Source: locales/jv.json
     // ── Javanese ────────────────────────────────────────────────────
 
     public static function JV(): DateLocale
@@ -2276,7 +2276,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ka.json
+    // Source: locales/ka.json
     // ── Georgian ────────────────────────────────────────────────────
 
     public static function KA(): DateLocale
@@ -2313,7 +2313,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kbp.json
+    // Source: locales/kbp.json
     // ── Kabiye ──────────────────────────────────────────────────────
 
     public static function KBP(): DateLocale
@@ -2350,7 +2350,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kek.json
+    // Source: locales/kek.json
     // ── Q'eqchi' ────────────────────────────────────────────────────
 
     public static function KEK(): DateLocale
@@ -2385,7 +2385,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ki.json
+    // Source: locales/ki.json
     // ── Kikuyu ──────────────────────────────────────────────────────
 
     public static function KI(): DateLocale
@@ -2420,7 +2420,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kk.json
+    // Source: locales/kk.json
     // ── Kazakh ──────────────────────────────────────────────────────
 
     public static function KK(): DateLocale
@@ -2457,7 +2457,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kl.json
+    // Source: locales/kl.json
     // ── Kalaallisut ─────────────────────────────────────────────────
 
     public static function KL(): DateLocale
@@ -2494,7 +2494,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/km.json
+    // Source: locales/km.json
     // ── Khmer ───────────────────────────────────────────────────────
 
     public static function KM(): DateLocale
@@ -2531,7 +2531,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kn.json
+    // Source: locales/kn.json
     // ── Kannada ─────────────────────────────────────────────────────
 
     public static function KN(): DateLocale
@@ -2568,7 +2568,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ko.json
+    // Source: locales/ko.json
     // ── Korean ──────────────────────────────────────────────────────
 
     public static function KO(): DateLocale
@@ -2605,7 +2605,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kpe.json
+    // Source: locales/kpe.json
     // ── Kpelle ──────────────────────────────────────────────────────
 
     public static function KPE(): DateLocale
@@ -2642,7 +2642,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kri.json
+    // Source: locales/kri.json
     // ── Krio ────────────────────────────────────────────────────────
 
     public static function KRI(): DateLocale
@@ -2679,7 +2679,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ktu.json
+    // Source: locales/ktu.json
     // ── Kituba ──────────────────────────────────────────────────────
 
     public static function KTU(): DateLocale
@@ -2716,7 +2716,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ku.json
+    // Source: locales/ku.json
     // ── Kurdish ─────────────────────────────────────────────────────
 
     public static function KU(): DateLocale
@@ -2753,7 +2753,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/kw.json
+    // Source: locales/kw.json
     // ── Cornish ─────────────────────────────────────────────────────
 
     public static function KW(): DateLocale
@@ -2788,7 +2788,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ky.json
+    // Source: locales/ky.json
     // ── Kyrgyz ──────────────────────────────────────────────────────
 
     public static function KY(): DateLocale
@@ -2825,7 +2825,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/lb.json
+    // Source: locales/lb.json
     // ── Luxembourgish ───────────────────────────────────────────────
 
     public static function LB(): DateLocale
@@ -2862,7 +2862,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/lg.json
+    // Source: locales/lg.json
     // ── Luganda ─────────────────────────────────────────────────────
 
     public static function LG(): DateLocale
@@ -2899,7 +2899,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ln.json
+    // Source: locales/ln.json
     // ── Lingala ─────────────────────────────────────────────────────
 
     public static function LN(): DateLocale
@@ -2936,7 +2936,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/lo.json
+    // Source: locales/lo.json
     // ── Lao ─────────────────────────────────────────────────────────
 
     public static function LO(): DateLocale
@@ -2973,7 +2973,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/lt.json
+    // Source: locales/lt.json
     // ── Lithuanian ──────────────────────────────────────────────────
 
     public static function LT(): DateLocale
@@ -3011,7 +3011,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/luo.json
+    // Source: locales/luo.json
     // ── Dholuo ──────────────────────────────────────────────────────
 
     public static function LUO(): DateLocale
@@ -3047,7 +3047,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/lv.json
+    // Source: locales/lv.json
     // ── Latvian ─────────────────────────────────────────────────────
 
     public static function LV(): DateLocale
@@ -3084,7 +3084,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mam.json
+    // Source: locales/mam.json
     // ── Mam ─────────────────────────────────────────────────────────
 
     public static function MAM(): DateLocale
@@ -3119,7 +3119,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/men.json
+    // Source: locales/men.json
     // ── Mende ───────────────────────────────────────────────────────
 
     public static function MEN(): DateLocale
@@ -3156,7 +3156,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mfe.json
+    // Source: locales/mfe.json
     // ── Mauritian Creole ────────────────────────────────────────────
 
     public static function MFE(): DateLocale
@@ -3193,7 +3193,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mg.json
+    // Source: locales/mg.json
     // ── Malagasy ────────────────────────────────────────────────────
 
     public static function MG(): DateLocale
@@ -3230,7 +3230,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mi.json
+    // Source: locales/mi.json
     // ── Māori ───────────────────────────────────────────────────────
 
     public static function MI(): DateLocale
@@ -3267,7 +3267,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mk.json
+    // Source: locales/mk.json
     // ── Macedonian ──────────────────────────────────────────────────
 
     public static function MK(): DateLocale
@@ -3304,7 +3304,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ml.json
+    // Source: locales/ml.json
     // ── Malayalam ───────────────────────────────────────────────────
 
     public static function ML(): DateLocale
@@ -3341,7 +3341,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mn.json
+    // Source: locales/mn.json
     // ── Mongolian ───────────────────────────────────────────────────
 
     public static function MN(): DateLocale
@@ -3378,7 +3378,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mnk.json
+    // Source: locales/mnk.json
     // ── Mandinka ────────────────────────────────────────────────────
 
     public static function MNK(): DateLocale
@@ -3415,7 +3415,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mos.json
+    // Source: locales/mos.json
     // ── Moore ───────────────────────────────────────────────────────
 
     public static function MOS(): DateLocale
@@ -3452,7 +3452,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mr.json
+    // Source: locales/mr.json
     // ── Marathi ─────────────────────────────────────────────────────
 
     public static function MR(): DateLocale
@@ -3489,7 +3489,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ms.json
+    // Source: locales/ms.json
     // ── Malay ───────────────────────────────────────────────────────
 
     public static function MS(): DateLocale
@@ -3526,7 +3526,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/mt.json
+    // Source: locales/mt.json
     // ── Maltese ─────────────────────────────────────────────────────
 
     public static function MT(): DateLocale
@@ -3563,7 +3563,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/my.json
+    // Source: locales/my.json
     // ── Burmese ─────────────────────────────────────────────────────
 
     public static function MY(): DateLocale
@@ -3600,7 +3600,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/nb.json
+    // Source: locales/nb.json
     // ── Norwegian Bokmål ────────────────────────────────────────────
 
     public static function NB(): DateLocale
@@ -3637,7 +3637,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/nd.json
+    // Source: locales/nd.json
     // ── Northern Ndebele ────────────────────────────────────────────
 
     public static function ND(): DateLocale
@@ -3674,7 +3674,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ne.json
+    // Source: locales/ne.json
     // ── Nepali ──────────────────────────────────────────────────────
 
     public static function NE(): DateLocale
@@ -3711,7 +3711,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ng.json
+    // Source: locales/ng.json
     // ── Oshiwambo ───────────────────────────────────────────────────
 
     public static function NG(): DateLocale
@@ -3748,7 +3748,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/nl.json
+    // Source: locales/nl.json
     // ── Dutch ───────────────────────────────────────────────────────
 
     public static function NL(): DateLocale
@@ -3785,7 +3785,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/nr.json
+    // Source: locales/nr.json
     // ── Southern Ndebele ────────────────────────────────────────────
 
     public static function NR(): DateLocale
@@ -3820,7 +3820,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/nso.json
+    // Source: locales/nso.json
     // ── Northern Sotho ──────────────────────────────────────────────
 
     public static function NSO(): DateLocale
@@ -3857,7 +3857,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/nus.json
+    // Source: locales/nus.json
     // ── Nuer ────────────────────────────────────────────────────────
 
     public static function NUS(): DateLocale
@@ -3894,7 +3894,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ny.json
+    // Source: locales/ny.json
     // ── Chichewa ────────────────────────────────────────────────────
 
     public static function NY(): DateLocale
@@ -3931,7 +3931,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/om.json
+    // Source: locales/om.json
     // ── Oromo ───────────────────────────────────────────────────────
 
     public static function OM(): DateLocale
@@ -3968,7 +3968,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/or.json
+    // Source: locales/or.json
     // ── Odia ────────────────────────────────────────────────────────
 
     public static function OR(): DateLocale
@@ -4005,7 +4005,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/pa.json
+    // Source: locales/pa.json
     // ── Punjabi ─────────────────────────────────────────────────────
 
     public static function PA(): DateLocale
@@ -4042,7 +4042,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/pis.json
+    // Source: locales/pis.json
     // ── Pijin ───────────────────────────────────────────────────────
 
     public static function PIS(): DateLocale
@@ -4079,7 +4079,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/pl.json
+    // Source: locales/pl.json
     // ── Polish ──────────────────────────────────────────────────────
 
     public static function PL(): DateLocale
@@ -4117,7 +4117,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/pov.json
+    // Source: locales/pov.json
     // ── Guinea-Bissau Creole ────────────────────────────────────────
 
     public static function POV(): DateLocale
@@ -4154,7 +4154,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ps.json
+    // Source: locales/ps.json
     // ── Pashto ──────────────────────────────────────────────────────
 
     public static function PS(): DateLocale
@@ -4191,7 +4191,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/pt.json
+    // Source: locales/pt.json
     // ── Portuguese ──────────────────────────────────────────────────
 
     public static function PT(): DateLocale
@@ -4228,7 +4228,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/qu.json
+    // Source: locales/qu.json
     // ── Quechua ─────────────────────────────────────────────────────
 
     public static function QU(): DateLocale
@@ -4265,7 +4265,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/quc.json
+    // Source: locales/quc.json
     // ── K'iche' ─────────────────────────────────────────────────────
 
     public static function QUC(): DateLocale
@@ -4302,7 +4302,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ro.json
+    // Source: locales/ro.json
     // ── Romanian ────────────────────────────────────────────────────
 
     public static function RO(): DateLocale
@@ -4340,7 +4340,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ru.json
+    // Source: locales/ru.json
     // ── Russian ─────────────────────────────────────────────────────
 
     public static function RU(): DateLocale
@@ -4378,7 +4378,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/rw.json
+    // Source: locales/rw.json
     // ── Kinyarwanda ─────────────────────────────────────────────────
 
     public static function RW(): DateLocale
@@ -4415,7 +4415,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sar.json
+    // Source: locales/sar.json
     // ── Sara ────────────────────────────────────────────────────────
 
     public static function SAR(): DateLocale
@@ -4452,7 +4452,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sd.json
+    // Source: locales/sd.json
     // ── Sindhi ──────────────────────────────────────────────────────
 
     public static function SD(): DateLocale
@@ -4489,7 +4489,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sg.json
+    // Source: locales/sg.json
     // ── Sango ───────────────────────────────────────────────────────
 
     public static function SG(): DateLocale
@@ -4526,7 +4526,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/shi.json
+    // Source: locales/shi.json
     // ── Tachelhit ───────────────────────────────────────────────────
 
     public static function SHI(): DateLocale
@@ -4561,7 +4561,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/shn.json
+    // Source: locales/shn.json
     // ── Shan ────────────────────────────────────────────────────────
 
     public static function SHN(): DateLocale
@@ -4598,7 +4598,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/si.json
+    // Source: locales/si.json
     // ── Sinhala ─────────────────────────────────────────────────────
 
     public static function SI(): DateLocale
@@ -4635,7 +4635,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sk.json
+    // Source: locales/sk.json
     // ── Slovak ──────────────────────────────────────────────────────
 
     public static function SK(): DateLocale
@@ -4673,7 +4673,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sl.json
+    // Source: locales/sl.json
     // ── Slovenian ───────────────────────────────────────────────────
 
     public static function SL(): DateLocale
@@ -4711,7 +4711,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sn.json
+    // Source: locales/sn.json
     // ── Shona ───────────────────────────────────────────────────────
 
     public static function SN(): DateLocale
@@ -4748,7 +4748,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/snk.json
+    // Source: locales/snk.json
     // ── Soninke ─────────────────────────────────────────────────────
 
     public static function SNK(): DateLocale
@@ -4785,7 +4785,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/so.json
+    // Source: locales/so.json
     // ── Somali ──────────────────────────────────────────────────────
 
     public static function SO(): DateLocale
@@ -4822,7 +4822,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sq.json
+    // Source: locales/sq.json
     // ── Albanian ────────────────────────────────────────────────────
 
     public static function SQ(): DateLocale
@@ -4859,7 +4859,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sr.json
+    // Source: locales/sr.json
     // ── Serbian ─────────────────────────────────────────────────────
 
     public static function SR(): DateLocale
@@ -4896,7 +4896,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ss.json
+    // Source: locales/ss.json
     // ── siSwati ─────────────────────────────────────────────────────
 
     public static function SS(): DateLocale
@@ -4933,7 +4933,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/st.json
+    // Source: locales/st.json
     // ── Southern Sotho ──────────────────────────────────────────────
 
     public static function ST(): DateLocale
@@ -4970,7 +4970,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/su.json
+    // Source: locales/su.json
     // ── Sundanese ───────────────────────────────────────────────────
 
     public static function SU(): DateLocale
@@ -5007,7 +5007,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/suk.json
+    // Source: locales/suk.json
     // ── Sukuma ──────────────────────────────────────────────────────
 
     public static function SUK(): DateLocale
@@ -5044,7 +5044,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sv.json
+    // Source: locales/sv.json
     // ── Swedish ─────────────────────────────────────────────────────
 
     public static function SV(): DateLocale
@@ -5081,7 +5081,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/sw.json
+    // Source: locales/sw.json
     // ── Swahili ─────────────────────────────────────────────────────
 
     public static function SW(): DateLocale
@@ -5118,7 +5118,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ta.json
+    // Source: locales/ta.json
     // ── Tamil ───────────────────────────────────────────────────────
 
     public static function TA(): DateLocale
@@ -5155,7 +5155,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/te.json
+    // Source: locales/te.json
     // ── Telugu ──────────────────────────────────────────────────────
 
     public static function TE(): DateLocale
@@ -5192,7 +5192,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tem.json
+    // Source: locales/tem.json
     // ── Temne ───────────────────────────────────────────────────────
 
     public static function TEM(): DateLocale
@@ -5229,7 +5229,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tet.json
+    // Source: locales/tet.json
     // ── Tetum ───────────────────────────────────────────────────────
 
     public static function TET(): DateLocale
@@ -5266,7 +5266,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tg.json
+    // Source: locales/tg.json
     // ── Tajik ───────────────────────────────────────────────────────
 
     public static function TG(): DateLocale
@@ -5303,7 +5303,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/th.json
+    // Source: locales/th.json
     // ── Thai ────────────────────────────────────────────────────────
 
     public static function TH(): DateLocale
@@ -5340,7 +5340,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ti.json
+    // Source: locales/ti.json
     // ── Tigrinya ────────────────────────────────────────────────────
 
     public static function TI(): DateLocale
@@ -5377,7 +5377,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tig.json
+    // Source: locales/tig.json
     // ── Tigre ───────────────────────────────────────────────────────
 
     public static function TIG(): DateLocale
@@ -5414,7 +5414,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tk.json
+    // Source: locales/tk.json
     // ── Turkmen ─────────────────────────────────────────────────────
 
     public static function TK(): DateLocale
@@ -5451,7 +5451,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tn.json
+    // Source: locales/tn.json
     // ── Tswana ──────────────────────────────────────────────────────
 
     public static function TN(): DateLocale
@@ -5488,7 +5488,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tpi.json
+    // Source: locales/tpi.json
     // ── Tok Pisin ───────────────────────────────────────────────────
 
     public static function TPI(): DateLocale
@@ -5525,7 +5525,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tr.json
+    // Source: locales/tr.json
     // ── Turkish ─────────────────────────────────────────────────────
 
     public static function TR(): DateLocale
@@ -5562,7 +5562,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ts.json
+    // Source: locales/ts.json
     // ── Tsonga ──────────────────────────────────────────────────────
 
     public static function TS(): DateLocale
@@ -5599,7 +5599,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tum.json
+    // Source: locales/tum.json
     // ── Tumbuka ─────────────────────────────────────────────────────
 
     public static function TUM(): DateLocale
@@ -5634,7 +5634,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/tzm.json
+    // Source: locales/tzm.json
     // ── Central Atlas Tamazight ─────────────────────────────────────
 
     public static function TZM(): DateLocale
@@ -5669,7 +5669,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/uk.json
+    // Source: locales/uk.json
     // ── Ukrainian ───────────────────────────────────────────────────
 
     public static function UK(): DateLocale
@@ -5707,7 +5707,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/umb.json
+    // Source: locales/umb.json
     // ── Umbundu ─────────────────────────────────────────────────────
 
     public static function UMB(): DateLocale
@@ -5744,7 +5744,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ur.json
+    // Source: locales/ur.json
     // ── Urdu ────────────────────────────────────────────────────────
 
     public static function UR(): DateLocale
@@ -5781,7 +5781,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/uz.json
+    // Source: locales/uz.json
     // ── Uzbek ───────────────────────────────────────────────────────
 
     public static function UZ(): DateLocale
@@ -5818,7 +5818,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/ve.json
+    // Source: locales/ve.json
     // ── Venda ───────────────────────────────────────────────────────
 
     public static function VE(): DateLocale
@@ -5854,7 +5854,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/vi.json
+    // Source: locales/vi.json
     // ── Vietnamese ──────────────────────────────────────────────────
 
     public static function VI(): DateLocale
@@ -5891,7 +5891,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/vmw.json
+    // Source: locales/vmw.json
     // ── Makhuwa ─────────────────────────────────────────────────────
 
     public static function VMW(): DateLocale
@@ -5928,7 +5928,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/wo.json
+    // Source: locales/wo.json
     // ── Wolof ───────────────────────────────────────────────────────
 
     public static function WO(): DateLocale
@@ -5965,7 +5965,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/xh.json
+    // Source: locales/xh.json
     // ── Xhosa ───────────────────────────────────────────────────────
 
     public static function XH(): DateLocale
@@ -6002,7 +6002,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/yao.json
+    // Source: locales/yao.json
     // ── Yao ─────────────────────────────────────────────────────────
 
     public static function YAO(): DateLocale
@@ -6037,7 +6037,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/yo.json
+    // Source: locales/yo.json
     // ── Yoruba ──────────────────────────────────────────────────────
 
     public static function YO(): DateLocale
@@ -6074,7 +6074,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/yue.json
+    // Source: locales/yue.json
     // ── Cantonese ───────────────────────────────────────────────────
 
     public static function YUE(): DateLocale
@@ -6111,7 +6111,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/zdj.json
+    // Source: locales/zdj.json
     // ── Comorian ────────────────────────────────────────────────────
 
     public static function ZDJ(): DateLocale
@@ -6148,7 +6148,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/zh.json
+    // Source: locales/zh.json
     // ── Chinese ─────────────────────────────────────────────────────
 
     public static function ZH(): DateLocale
@@ -6185,7 +6185,7 @@ final class Locales
         );
     }
 
-    // Source: date/locales/src/zu.json
+    // Source: locales/zu.json
     // ── Zulu ────────────────────────────────────────────────────────
 
     public static function ZU(): DateLocale

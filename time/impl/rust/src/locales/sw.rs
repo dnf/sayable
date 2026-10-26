@@ -7,7 +7,7 @@
 // ║ Changes will be overwritten the next time codegen runs.      ║
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
-// Source: time/locales/src/sw.json
+// Source: locales/sw.json
 
 use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
 use std::collections::HashMap;

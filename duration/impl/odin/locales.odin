@@ -180,7 +180,7 @@ plural_tzm :: proc(n: int) -> Duration_Plural_Category {
     return .Other
 }
 
-// Source: duration/locales/src/af.json
+// Source: locales/af.json
 locale_af : Duration_Locale = {
     code = "af",
     plural = plural_one_other,
@@ -226,7 +226,7 @@ locale_af : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ak.json
+// Source: locales/ak.json
 locale_ak : Duration_Locale = {
     code = "ak",
     plural = plural_one_other_zero_one,
@@ -272,7 +272,7 @@ locale_ak : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/am.json
+// Source: locales/am.json
 locale_am : Duration_Locale = {
     code = "am",
     plural = plural_one_other_zero_one,
@@ -318,7 +318,7 @@ locale_am : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ar.json
+// Source: locales/ar.json
 locale_ar : Duration_Locale = {
     code = "ar",
     plural = plural_ar,
@@ -364,7 +364,7 @@ locale_ar : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ay.json
+// Source: locales/ay.json
 locale_ay : Duration_Locale = {
     code = "ay",
     plural = plural_other_only,
@@ -410,7 +410,7 @@ locale_ay : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/az.json
+// Source: locales/az.json
 locale_az : Duration_Locale = {
     code = "az",
     plural = plural_one_other,
@@ -456,7 +456,7 @@ locale_az : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/bci.json
+// Source: locales/bci.json
 locale_bci : Duration_Locale = {
     code = "bci",
     plural = plural_other_only,
@@ -502,7 +502,7 @@ locale_bci : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/be.json
+// Source: locales/be.json
 locale_be : Duration_Locale = {
     code = "be",
     plural = plural_ru_uk,
@@ -548,7 +548,7 @@ locale_be : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/bem.json
+// Source: locales/bem.json
 locale_bem : Duration_Locale = {
     code = "bem",
     plural = plural_one_other,
@@ -594,7 +594,7 @@ locale_bem : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/bg.json
+// Source: locales/bg.json
 locale_bg : Duration_Locale = {
     code = "bg",
     plural = plural_one_other,
@@ -640,7 +640,7 @@ locale_bg : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/bi.json
+// Source: locales/bi.json
 locale_bi : Duration_Locale = {
     code = "bi",
     plural = plural_other_only,
@@ -686,7 +686,7 @@ locale_bi : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/bm.json
+// Source: locales/bm.json
 locale_bm : Duration_Locale = {
     code = "bm",
     plural = plural_other_only,
@@ -732,7 +732,7 @@ locale_bm : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/bn.json
+// Source: locales/bn.json
 locale_bn : Duration_Locale = {
     code = "bn",
     plural = plural_one_other_zero_one,
@@ -778,7 +778,7 @@ locale_bn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/br.json
+// Source: locales/br.json
 locale_br : Duration_Locale = {
     code = "br",
     plural = plural_br,
@@ -824,7 +824,7 @@ locale_br : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/bs.json
+// Source: locales/bs.json
 locale_bs : Duration_Locale = {
     code = "bs",
     plural = plural_slavic_bcs,
@@ -870,7 +870,7 @@ locale_bs : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ca.json
+// Source: locales/ca.json
 locale_ca : Duration_Locale = {
     code = "ca",
     plural = plural_one_other,
@@ -916,7 +916,7 @@ locale_ca : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/cak.json
+// Source: locales/cak.json
 locale_cak : Duration_Locale = {
     code = "cak",
     plural = plural_other_only,
@@ -962,7 +962,7 @@ locale_cak : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ceb.json
+// Source: locales/ceb.json
 locale_ceb : Duration_Locale = {
     code = "ceb",
     plural = plural_one_other_zero_one,
@@ -1008,7 +1008,7 @@ locale_ceb : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/cs.json
+// Source: locales/cs.json
 locale_cs : Duration_Locale = {
     code = "cs",
     plural = plural_cs_sk,
@@ -1054,7 +1054,7 @@ locale_cs : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/cy.json
+// Source: locales/cy.json
 locale_cy : Duration_Locale = {
     code = "cy",
     plural = plural_cy,
@@ -1100,7 +1100,7 @@ locale_cy : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/da.json
+// Source: locales/da.json
 locale_da : Duration_Locale = {
     code = "da",
     plural = plural_one_other,
@@ -1146,7 +1146,7 @@ locale_da : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/de.json
+// Source: locales/de.json
 locale_de : Duration_Locale = {
     code = "de",
     plural = plural_one_other,
@@ -1192,7 +1192,7 @@ locale_de : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/din.json
+// Source: locales/din.json
 locale_din : Duration_Locale = {
     code = "din",
     plural = plural_one_other,
@@ -1238,7 +1238,7 @@ locale_din : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/dje.json
+// Source: locales/dje.json
 locale_dje : Duration_Locale = {
     code = "dje",
     plural = plural_other_only,
@@ -1284,7 +1284,7 @@ locale_dje : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/dv.json
+// Source: locales/dv.json
 locale_dv : Duration_Locale = {
     code = "dv",
     plural = plural_other_only,
@@ -1330,7 +1330,7 @@ locale_dv : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/dyu.json
+// Source: locales/dyu.json
 locale_dyu : Duration_Locale = {
     code = "dyu",
     plural = plural_other_only,
@@ -1376,7 +1376,7 @@ locale_dyu : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/dz.json
+// Source: locales/dz.json
 locale_dz : Duration_Locale = {
     code = "dz",
     plural = plural_other_only,
@@ -1422,7 +1422,7 @@ locale_dz : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ee.json
+// Source: locales/ee.json
 locale_ee : Duration_Locale = {
     code = "ee",
     plural = plural_one_other,
@@ -1468,7 +1468,7 @@ locale_ee : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/el.json
+// Source: locales/el.json
 locale_el : Duration_Locale = {
     code = "el",
     plural = plural_one_other,
@@ -1514,7 +1514,7 @@ locale_el : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/en.json
+// Source: locales/en.json
 locale_en : Duration_Locale = {
     code = "en",
     plural = plural_one_other,
@@ -1560,7 +1560,7 @@ locale_en : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/es.json
+// Source: locales/es.json
 locale_es : Duration_Locale = {
     code = "es",
     plural = plural_one_other,
@@ -1606,7 +1606,7 @@ locale_es : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/et.json
+// Source: locales/et.json
 locale_et : Duration_Locale = {
     code = "et",
     plural = plural_one_other,
@@ -1652,7 +1652,7 @@ locale_et : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/eu.json
+// Source: locales/eu.json
 locale_eu : Duration_Locale = {
     code = "eu",
     plural = plural_other_only,
@@ -1698,7 +1698,7 @@ locale_eu : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/fa.json
+// Source: locales/fa.json
 locale_fa : Duration_Locale = {
     code = "fa",
     plural = plural_one_other_zero_one,
@@ -1744,7 +1744,7 @@ locale_fa : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/fan.json
+// Source: locales/fan.json
 locale_fan : Duration_Locale = {
     code = "fan",
     plural = plural_one_other,
@@ -1790,7 +1790,7 @@ locale_fan : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ff.json
+// Source: locales/ff.json
 locale_ff : Duration_Locale = {
     code = "ff",
     plural = plural_one_other_zero_one,
@@ -1836,7 +1836,7 @@ locale_ff : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/fi.json
+// Source: locales/fi.json
 locale_fi : Duration_Locale = {
     code = "fi",
     plural = plural_one_other,
@@ -1882,7 +1882,7 @@ locale_fi : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/fil.json
+// Source: locales/fil.json
 locale_fil : Duration_Locale = {
     code = "fil",
     plural = plural_other_only,
@@ -1928,7 +1928,7 @@ locale_fil : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/fj.json
+// Source: locales/fj.json
 locale_fj : Duration_Locale = {
     code = "fj",
     plural = plural_other_only,
@@ -1974,7 +1974,7 @@ locale_fj : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/fon.json
+// Source: locales/fon.json
 locale_fon : Duration_Locale = {
     code = "fon",
     plural = plural_other_only,
@@ -2020,7 +2020,7 @@ locale_fon : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/fr.json
+// Source: locales/fr.json
 locale_fr : Duration_Locale = {
     code = "fr",
     plural = plural_one_other_zero_one,
@@ -2066,7 +2066,7 @@ locale_fr : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ga.json
+// Source: locales/ga.json
 locale_ga : Duration_Locale = {
     code = "ga",
     plural = plural_ga,
@@ -2112,7 +2112,7 @@ locale_ga : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/gd.json
+// Source: locales/gd.json
 locale_gd : Duration_Locale = {
     code = "gd",
     plural = plural_gd,
@@ -2158,7 +2158,7 @@ locale_gd : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/gl.json
+// Source: locales/gl.json
 locale_gl : Duration_Locale = {
     code = "gl",
     plural = plural_one_other,
@@ -2204,7 +2204,7 @@ locale_gl : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/gn.json
+// Source: locales/gn.json
 locale_gn : Duration_Locale = {
     code = "gn",
     plural = plural_one_other,
@@ -2250,7 +2250,7 @@ locale_gn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/gu.json
+// Source: locales/gu.json
 locale_gu : Duration_Locale = {
     code = "gu",
     plural = plural_one_other_zero_one,
@@ -2296,7 +2296,7 @@ locale_gu : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/gv.json
+// Source: locales/gv.json
 locale_gv : Duration_Locale = {
     code = "gv",
     plural = plural_gv,
@@ -2342,7 +2342,7 @@ locale_gv : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ha.json
+// Source: locales/ha.json
 locale_ha : Duration_Locale = {
     code = "ha",
     plural = plural_one_other,
@@ -2388,7 +2388,7 @@ locale_ha : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/he.json
+// Source: locales/he.json
 locale_he : Duration_Locale = {
     code = "he",
     plural = plural_he,
@@ -2434,7 +2434,7 @@ locale_he : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/hi.json
+// Source: locales/hi.json
 locale_hi : Duration_Locale = {
     code = "hi",
     plural = plural_one_other_zero_one,
@@ -2480,7 +2480,7 @@ locale_hi : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/hmn.json
+// Source: locales/hmn.json
 locale_hmn : Duration_Locale = {
     code = "hmn",
     plural = plural_other_only,
@@ -2526,7 +2526,7 @@ locale_hmn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/hr.json
+// Source: locales/hr.json
 locale_hr : Duration_Locale = {
     code = "hr",
     plural = plural_slavic_bcs,
@@ -2572,7 +2572,7 @@ locale_hr : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ht.json
+// Source: locales/ht.json
 locale_ht : Duration_Locale = {
     code = "ht",
     plural = plural_one_other_zero_one,
@@ -2618,7 +2618,7 @@ locale_ht : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/hu.json
+// Source: locales/hu.json
 locale_hu : Duration_Locale = {
     code = "hu",
     plural = plural_other_only,
@@ -2664,7 +2664,7 @@ locale_hu : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/hy.json
+// Source: locales/hy.json
 locale_hy : Duration_Locale = {
     code = "hy",
     plural = plural_one_other_zero_one,
@@ -2710,7 +2710,7 @@ locale_hy : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/id.json
+// Source: locales/id.json
 locale_id : Duration_Locale = {
     code = "id",
     plural = plural_other_only,
@@ -2756,7 +2756,7 @@ locale_id : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ig.json
+// Source: locales/ig.json
 locale_ig : Duration_Locale = {
     code = "ig",
     plural = plural_other_only,
@@ -2802,7 +2802,7 @@ locale_ig : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/is.json
+// Source: locales/is.json
 locale_is : Duration_Locale = {
     code = "is",
     plural = plural_mk,
@@ -2848,7 +2848,7 @@ locale_is : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/it.json
+// Source: locales/it.json
 locale_it : Duration_Locale = {
     code = "it",
     plural = plural_one_other,
@@ -2894,7 +2894,7 @@ locale_it : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ja.json
+// Source: locales/ja.json
 locale_ja : Duration_Locale = {
     code = "ja",
     plural = plural_other_only,
@@ -2940,7 +2940,7 @@ locale_ja : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/jv.json
+// Source: locales/jv.json
 locale_jv : Duration_Locale = {
     code = "jv",
     plural = plural_other_only,
@@ -2986,7 +2986,7 @@ locale_jv : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ka.json
+// Source: locales/ka.json
 locale_ka : Duration_Locale = {
     code = "ka",
     plural = plural_one_other,
@@ -3032,7 +3032,7 @@ locale_ka : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kbp.json
+// Source: locales/kbp.json
 locale_kbp : Duration_Locale = {
     code = "kbp",
     plural = plural_other_only,
@@ -3078,7 +3078,7 @@ locale_kbp : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kek.json
+// Source: locales/kek.json
 locale_kek : Duration_Locale = {
     code = "kek",
     plural = plural_other_only,
@@ -3124,7 +3124,7 @@ locale_kek : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ki.json
+// Source: locales/ki.json
 locale_ki : Duration_Locale = {
     code = "ki",
     plural = plural_one_other,
@@ -3170,7 +3170,7 @@ locale_ki : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kk.json
+// Source: locales/kk.json
 locale_kk : Duration_Locale = {
     code = "kk",
     plural = plural_one_other,
@@ -3216,7 +3216,7 @@ locale_kk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kl.json
+// Source: locales/kl.json
 locale_kl : Duration_Locale = {
     code = "kl",
     plural = plural_other_only,
@@ -3262,7 +3262,7 @@ locale_kl : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/km.json
+// Source: locales/km.json
 locale_km : Duration_Locale = {
     code = "km",
     plural = plural_other_only,
@@ -3308,7 +3308,7 @@ locale_km : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kn.json
+// Source: locales/kn.json
 locale_kn : Duration_Locale = {
     code = "kn",
     plural = plural_one_other_zero_one,
@@ -3354,7 +3354,7 @@ locale_kn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ko.json
+// Source: locales/ko.json
 locale_ko : Duration_Locale = {
     code = "ko",
     plural = plural_other_only,
@@ -3400,7 +3400,7 @@ locale_ko : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kpe.json
+// Source: locales/kpe.json
 locale_kpe : Duration_Locale = {
     code = "kpe",
     plural = plural_other_only,
@@ -3446,7 +3446,7 @@ locale_kpe : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kri.json
+// Source: locales/kri.json
 locale_kri : Duration_Locale = {
     code = "kri",
     plural = plural_other_only,
@@ -3492,7 +3492,7 @@ locale_kri : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ktu.json
+// Source: locales/ktu.json
 locale_ktu : Duration_Locale = {
     code = "ktu",
     plural = plural_one_other,
@@ -3538,7 +3538,7 @@ locale_ktu : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ku.json
+// Source: locales/ku.json
 locale_ku : Duration_Locale = {
     code = "ku",
     plural = plural_one_other,
@@ -3584,7 +3584,7 @@ locale_ku : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/kw.json
+// Source: locales/kw.json
 locale_kw : Duration_Locale = {
     code = "kw",
     plural = plural_kw,
@@ -3630,7 +3630,7 @@ locale_kw : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ky.json
+// Source: locales/ky.json
 locale_ky : Duration_Locale = {
     code = "ky",
     plural = plural_one_other,
@@ -3676,7 +3676,7 @@ locale_ky : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/lb.json
+// Source: locales/lb.json
 locale_lb : Duration_Locale = {
     code = "lb",
     plural = plural_one_other,
@@ -3722,7 +3722,7 @@ locale_lb : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/lg.json
+// Source: locales/lg.json
 locale_lg : Duration_Locale = {
     code = "lg",
     plural = plural_one_other,
@@ -3768,7 +3768,7 @@ locale_lg : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ln.json
+// Source: locales/ln.json
 locale_ln : Duration_Locale = {
     code = "ln",
     plural = plural_one_other_zero_one,
@@ -3814,7 +3814,7 @@ locale_ln : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/lo.json
+// Source: locales/lo.json
 locale_lo : Duration_Locale = {
     code = "lo",
     plural = plural_other_only,
@@ -3860,7 +3860,7 @@ locale_lo : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/lt.json
+// Source: locales/lt.json
 locale_lt : Duration_Locale = {
     code = "lt",
     plural = plural_lt,
@@ -3906,7 +3906,7 @@ locale_lt : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/luo.json
+// Source: locales/luo.json
 locale_luo : Duration_Locale = {
     code = "luo",
     plural = plural_one_other,
@@ -3952,7 +3952,7 @@ locale_luo : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/lv.json
+// Source: locales/lv.json
 locale_lv : Duration_Locale = {
     code = "lv",
     plural = plural_lv,
@@ -3998,7 +3998,7 @@ locale_lv : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mam.json
+// Source: locales/mam.json
 locale_mam : Duration_Locale = {
     code = "mam",
     plural = plural_other_only,
@@ -4044,7 +4044,7 @@ locale_mam : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/men.json
+// Source: locales/men.json
 locale_men : Duration_Locale = {
     code = "men",
     plural = plural_one_other,
@@ -4090,7 +4090,7 @@ locale_men : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mfe.json
+// Source: locales/mfe.json
 locale_mfe : Duration_Locale = {
     code = "mfe",
     plural = plural_other_only,
@@ -4136,7 +4136,7 @@ locale_mfe : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mg.json
+// Source: locales/mg.json
 locale_mg : Duration_Locale = {
     code = "mg",
     plural = plural_one_other_zero_one,
@@ -4182,7 +4182,7 @@ locale_mg : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mi.json
+// Source: locales/mi.json
 locale_mi : Duration_Locale = {
     code = "mi",
     plural = plural_one_other,
@@ -4228,7 +4228,7 @@ locale_mi : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mk.json
+// Source: locales/mk.json
 locale_mk : Duration_Locale = {
     code = "mk",
     plural = plural_mk,
@@ -4274,7 +4274,7 @@ locale_mk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ml.json
+// Source: locales/ml.json
 locale_ml : Duration_Locale = {
     code = "ml",
     plural = plural_one_other_zero_one,
@@ -4320,7 +4320,7 @@ locale_ml : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mn.json
+// Source: locales/mn.json
 locale_mn : Duration_Locale = {
     code = "mn",
     plural = plural_one_other,
@@ -4366,7 +4366,7 @@ locale_mn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mnk.json
+// Source: locales/mnk.json
 locale_mnk : Duration_Locale = {
     code = "mnk",
     plural = plural_other_only,
@@ -4412,7 +4412,7 @@ locale_mnk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mos.json
+// Source: locales/mos.json
 locale_mos : Duration_Locale = {
     code = "mos",
     plural = plural_other_only,
@@ -4458,7 +4458,7 @@ locale_mos : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mr.json
+// Source: locales/mr.json
 locale_mr : Duration_Locale = {
     code = "mr",
     plural = plural_one_other,
@@ -4504,7 +4504,7 @@ locale_mr : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ms.json
+// Source: locales/ms.json
 locale_ms : Duration_Locale = {
     code = "ms",
     plural = plural_other_only,
@@ -4550,7 +4550,7 @@ locale_ms : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/mt.json
+// Source: locales/mt.json
 locale_mt : Duration_Locale = {
     code = "mt",
     plural = plural_mt,
@@ -4596,7 +4596,7 @@ locale_mt : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/my.json
+// Source: locales/my.json
 locale_my : Duration_Locale = {
     code = "my",
     plural = plural_other_only,
@@ -4642,7 +4642,7 @@ locale_my : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/nb.json
+// Source: locales/nb.json
 locale_nb : Duration_Locale = {
     code = "nb",
     plural = plural_one_other,
@@ -4688,7 +4688,7 @@ locale_nb : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/nd.json
+// Source: locales/nd.json
 locale_nd : Duration_Locale = {
     code = "nd",
     plural = plural_one_other,
@@ -4734,7 +4734,7 @@ locale_nd : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ne.json
+// Source: locales/ne.json
 locale_ne : Duration_Locale = {
     code = "ne",
     plural = plural_one_other,
@@ -4780,7 +4780,7 @@ locale_ne : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ng.json
+// Source: locales/ng.json
 locale_ng : Duration_Locale = {
     code = "ng",
     plural = plural_one_other,
@@ -4826,7 +4826,7 @@ locale_ng : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/nl.json
+// Source: locales/nl.json
 locale_nl : Duration_Locale = {
     code = "nl",
     plural = plural_one_other,
@@ -4872,7 +4872,7 @@ locale_nl : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/nr.json
+// Source: locales/nr.json
 locale_nr : Duration_Locale = {
     code = "nr",
     plural = plural_one_other,
@@ -4918,7 +4918,7 @@ locale_nr : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/nso.json
+// Source: locales/nso.json
 locale_nso : Duration_Locale = {
     code = "nso",
     plural = plural_one_other,
@@ -4964,7 +4964,7 @@ locale_nso : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/nus.json
+// Source: locales/nus.json
 locale_nus : Duration_Locale = {
     code = "nus",
     plural = plural_one_other,
@@ -5010,7 +5010,7 @@ locale_nus : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ny.json
+// Source: locales/ny.json
 locale_ny : Duration_Locale = {
     code = "ny",
     plural = plural_one_other,
@@ -5056,7 +5056,7 @@ locale_ny : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/om.json
+// Source: locales/om.json
 locale_om : Duration_Locale = {
     code = "om",
     plural = plural_one_other,
@@ -5102,7 +5102,7 @@ locale_om : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/or.json
+// Source: locales/or.json
 locale_or : Duration_Locale = {
     code = "or",
     plural = plural_one_other,
@@ -5148,7 +5148,7 @@ locale_or : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/pa.json
+// Source: locales/pa.json
 locale_pa : Duration_Locale = {
     code = "pa",
     plural = plural_one_other_zero_one,
@@ -5194,7 +5194,7 @@ locale_pa : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/pis.json
+// Source: locales/pis.json
 locale_pis : Duration_Locale = {
     code = "pis",
     plural = plural_other_only,
@@ -5240,7 +5240,7 @@ locale_pis : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/pl.json
+// Source: locales/pl.json
 locale_pl : Duration_Locale = {
     code = "pl",
     plural = plural_pl,
@@ -5286,7 +5286,7 @@ locale_pl : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/pov.json
+// Source: locales/pov.json
 locale_pov : Duration_Locale = {
     code = "pov",
     plural = plural_other_only,
@@ -5332,7 +5332,7 @@ locale_pov : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ps.json
+// Source: locales/ps.json
 locale_ps : Duration_Locale = {
     code = "ps",
     plural = plural_one_other,
@@ -5378,7 +5378,7 @@ locale_ps : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/pt.json
+// Source: locales/pt.json
 locale_pt : Duration_Locale = {
     code = "pt",
     plural = plural_one_other_zero_one,
@@ -5424,7 +5424,7 @@ locale_pt : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/qu.json
+// Source: locales/qu.json
 locale_qu : Duration_Locale = {
     code = "qu",
     plural = plural_other_only,
@@ -5470,7 +5470,7 @@ locale_qu : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/quc.json
+// Source: locales/quc.json
 locale_quc : Duration_Locale = {
     code = "quc",
     plural = plural_other_only,
@@ -5516,7 +5516,7 @@ locale_quc : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ro.json
+// Source: locales/ro.json
 locale_ro : Duration_Locale = {
     code = "ro",
     plural = plural_ro,
@@ -5562,7 +5562,7 @@ locale_ro : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ru.json
+// Source: locales/ru.json
 locale_ru : Duration_Locale = {
     code = "ru",
     plural = plural_ru_uk,
@@ -5608,7 +5608,7 @@ locale_ru : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/rw.json
+// Source: locales/rw.json
 locale_rw : Duration_Locale = {
     code = "rw",
     plural = plural_one_other,
@@ -5654,7 +5654,7 @@ locale_rw : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sar.json
+// Source: locales/sar.json
 locale_sar : Duration_Locale = {
     code = "sar",
     plural = plural_other_only,
@@ -5700,7 +5700,7 @@ locale_sar : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sd.json
+// Source: locales/sd.json
 locale_sd : Duration_Locale = {
     code = "sd",
     plural = plural_one_other,
@@ -5746,7 +5746,7 @@ locale_sd : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sg.json
+// Source: locales/sg.json
 locale_sg : Duration_Locale = {
     code = "sg",
     plural = plural_other_only,
@@ -5792,7 +5792,7 @@ locale_sg : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/shi.json
+// Source: locales/shi.json
 locale_shi : Duration_Locale = {
     code = "shi",
     plural = plural_shi,
@@ -5838,7 +5838,7 @@ locale_shi : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/shn.json
+// Source: locales/shn.json
 locale_shn : Duration_Locale = {
     code = "shn",
     plural = plural_other_only,
@@ -5884,7 +5884,7 @@ locale_shn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/si.json
+// Source: locales/si.json
 locale_si : Duration_Locale = {
     code = "si",
     plural = plural_one_other_zero_one,
@@ -5930,7 +5930,7 @@ locale_si : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sk.json
+// Source: locales/sk.json
 locale_sk : Duration_Locale = {
     code = "sk",
     plural = plural_cs_sk,
@@ -5976,7 +5976,7 @@ locale_sk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sl.json
+// Source: locales/sl.json
 locale_sl : Duration_Locale = {
     code = "sl",
     plural = plural_sl,
@@ -6022,7 +6022,7 @@ locale_sl : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sn.json
+// Source: locales/sn.json
 locale_sn : Duration_Locale = {
     code = "sn",
     plural = plural_one_other,
@@ -6068,7 +6068,7 @@ locale_sn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/snk.json
+// Source: locales/snk.json
 locale_snk : Duration_Locale = {
     code = "snk",
     plural = plural_other_only,
@@ -6114,7 +6114,7 @@ locale_snk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/so.json
+// Source: locales/so.json
 locale_so : Duration_Locale = {
     code = "so",
     plural = plural_one_other,
@@ -6160,7 +6160,7 @@ locale_so : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sq.json
+// Source: locales/sq.json
 locale_sq : Duration_Locale = {
     code = "sq",
     plural = plural_one_other,
@@ -6206,7 +6206,7 @@ locale_sq : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sr.json
+// Source: locales/sr.json
 locale_sr : Duration_Locale = {
     code = "sr",
     plural = plural_slavic_bcs,
@@ -6252,7 +6252,7 @@ locale_sr : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ss.json
+// Source: locales/ss.json
 locale_ss : Duration_Locale = {
     code = "ss",
     plural = plural_one_other,
@@ -6298,7 +6298,7 @@ locale_ss : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/st.json
+// Source: locales/st.json
 locale_st : Duration_Locale = {
     code = "st",
     plural = plural_one_other,
@@ -6344,7 +6344,7 @@ locale_st : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/su.json
+// Source: locales/su.json
 locale_su : Duration_Locale = {
     code = "su",
     plural = plural_other_only,
@@ -6390,7 +6390,7 @@ locale_su : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/suk.json
+// Source: locales/suk.json
 locale_suk : Duration_Locale = {
     code = "suk",
     plural = plural_one_other,
@@ -6436,7 +6436,7 @@ locale_suk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sv.json
+// Source: locales/sv.json
 locale_sv : Duration_Locale = {
     code = "sv",
     plural = plural_one_other,
@@ -6482,7 +6482,7 @@ locale_sv : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/sw.json
+// Source: locales/sw.json
 locale_sw : Duration_Locale = {
     code = "sw",
     plural = plural_one_other,
@@ -6528,7 +6528,7 @@ locale_sw : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ta.json
+// Source: locales/ta.json
 locale_ta : Duration_Locale = {
     code = "ta",
     plural = plural_one_other,
@@ -6574,7 +6574,7 @@ locale_ta : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/te.json
+// Source: locales/te.json
 locale_te : Duration_Locale = {
     code = "te",
     plural = plural_one_other,
@@ -6620,7 +6620,7 @@ locale_te : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tem.json
+// Source: locales/tem.json
 locale_tem : Duration_Locale = {
     code = "tem",
     plural = plural_one_other,
@@ -6666,7 +6666,7 @@ locale_tem : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tet.json
+// Source: locales/tet.json
 locale_tet : Duration_Locale = {
     code = "tet",
     plural = plural_other_only,
@@ -6712,7 +6712,7 @@ locale_tet : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tg.json
+// Source: locales/tg.json
 locale_tg : Duration_Locale = {
     code = "tg",
     plural = plural_other_only,
@@ -6758,7 +6758,7 @@ locale_tg : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/th.json
+// Source: locales/th.json
 locale_th : Duration_Locale = {
     code = "th",
     plural = plural_other_only,
@@ -6804,7 +6804,7 @@ locale_th : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ti.json
+// Source: locales/ti.json
 locale_ti : Duration_Locale = {
     code = "ti",
     plural = plural_one_other_zero_one,
@@ -6850,7 +6850,7 @@ locale_ti : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tig.json
+// Source: locales/tig.json
 locale_tig : Duration_Locale = {
     code = "tig",
     plural = plural_one_other,
@@ -6896,7 +6896,7 @@ locale_tig : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tk.json
+// Source: locales/tk.json
 locale_tk : Duration_Locale = {
     code = "tk",
     plural = plural_one_other,
@@ -6942,7 +6942,7 @@ locale_tk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tn.json
+// Source: locales/tn.json
 locale_tn : Duration_Locale = {
     code = "tn",
     plural = plural_one_other,
@@ -6988,7 +6988,7 @@ locale_tn : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tpi.json
+// Source: locales/tpi.json
 locale_tpi : Duration_Locale = {
     code = "tpi",
     plural = plural_other_only,
@@ -7034,7 +7034,7 @@ locale_tpi : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tr.json
+// Source: locales/tr.json
 locale_tr : Duration_Locale = {
     code = "tr",
     plural = plural_one_other,
@@ -7080,7 +7080,7 @@ locale_tr : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ts.json
+// Source: locales/ts.json
 locale_ts : Duration_Locale = {
     code = "ts",
     plural = plural_one_other,
@@ -7126,7 +7126,7 @@ locale_ts : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tum.json
+// Source: locales/tum.json
 locale_tum : Duration_Locale = {
     code = "tum",
     plural = plural_one_other,
@@ -7172,7 +7172,7 @@ locale_tum : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/tzm.json
+// Source: locales/tzm.json
 locale_tzm : Duration_Locale = {
     code = "tzm",
     plural = plural_tzm,
@@ -7218,7 +7218,7 @@ locale_tzm : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/uk.json
+// Source: locales/uk.json
 locale_uk : Duration_Locale = {
     code = "uk",
     plural = plural_ru_uk,
@@ -7264,7 +7264,7 @@ locale_uk : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/umb.json
+// Source: locales/umb.json
 locale_umb : Duration_Locale = {
     code = "umb",
     plural = plural_one_other,
@@ -7310,7 +7310,7 @@ locale_umb : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ur.json
+// Source: locales/ur.json
 locale_ur : Duration_Locale = {
     code = "ur",
     plural = plural_one_other,
@@ -7356,7 +7356,7 @@ locale_ur : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/uz.json
+// Source: locales/uz.json
 locale_uz : Duration_Locale = {
     code = "uz",
     plural = plural_one_other,
@@ -7402,7 +7402,7 @@ locale_uz : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/ve.json
+// Source: locales/ve.json
 locale_ve : Duration_Locale = {
     code = "ve",
     plural = plural_one_other,
@@ -7448,7 +7448,7 @@ locale_ve : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/vi.json
+// Source: locales/vi.json
 locale_vi : Duration_Locale = {
     code = "vi",
     plural = plural_other_only,
@@ -7494,7 +7494,7 @@ locale_vi : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/vmw.json
+// Source: locales/vmw.json
 locale_vmw : Duration_Locale = {
     code = "vmw",
     plural = plural_one_other,
@@ -7540,7 +7540,7 @@ locale_vmw : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/wo.json
+// Source: locales/wo.json
 locale_wo : Duration_Locale = {
     code = "wo",
     plural = plural_other_only,
@@ -7586,7 +7586,7 @@ locale_wo : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/xh.json
+// Source: locales/xh.json
 locale_xh : Duration_Locale = {
     code = "xh",
     plural = plural_one_other,
@@ -7632,7 +7632,7 @@ locale_xh : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/yao.json
+// Source: locales/yao.json
 locale_yao : Duration_Locale = {
     code = "yao",
     plural = plural_one_other,
@@ -7678,7 +7678,7 @@ locale_yao : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/yo.json
+// Source: locales/yo.json
 locale_yo : Duration_Locale = {
     code = "yo",
     plural = plural_other_only,
@@ -7724,7 +7724,7 @@ locale_yo : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/yue.json
+// Source: locales/yue.json
 locale_yue : Duration_Locale = {
     code = "yue",
     plural = plural_other_only,
@@ -7770,7 +7770,7 @@ locale_yue : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/zdj.json
+// Source: locales/zdj.json
 locale_zdj : Duration_Locale = {
     code = "zdj",
     plural = plural_other_only,
@@ -7816,7 +7816,7 @@ locale_zdj : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/zh.json
+// Source: locales/zh.json
 locale_zh : Duration_Locale = {
     code = "zh",
     plural = plural_other_only,
@@ -7862,7 +7862,7 @@ locale_zh : Duration_Locale = {
     },
 }
 
-// Source: duration/locales/src/zu.json
+// Source: locales/zu.json
 locale_zu : Duration_Locale = {
     code = "zu",
     plural = plural_one_other_zero_one,

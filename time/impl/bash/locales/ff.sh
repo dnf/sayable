@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ff.json
+# Source: locales/ff.json
 
 _sayabletime_locale_ff() {
     _clock_hours=('sappo e ɗiɗi' 'go'\''o' 'ɗiɗi' 'tati' 'nay' 'joy' 'jeegom' 'jeeɗiɗi' 'jeetati' 'jeenay' 'sappo' 'sappo e go'\''o')

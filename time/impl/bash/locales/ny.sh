@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/ny.json
+# Source: locales/ny.json
 
 _sayabletime_locale_ny() {
     _clock_hours=('khumi ndi ziwiri' 'imodzi' 'ziwiri' 'zitatu' 'zinayi' 'zisanu' 'zisanu ndi chimodzi' 'zisanu ndi ziwiri' 'zisanu ndi zitatu' 'zisanu ndi zinayi' 'khumi' 'khumi ndi chimodzi')

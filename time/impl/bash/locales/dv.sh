@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/dv.json
+# Source: locales/dv.json
 
 _sayabletime_locale_dv() {
     _clock_hours=('ބާރަ' 'އެކެއް' 'ދޭއް' 'ތިނެއް' 'ހަތަރެއް' 'ފަހެއް' 'ހައެއް' 'ހަތެއް' 'އަށެއް' 'ނުވައެއް' 'ދިހައެއް' 'އެގާރަ')

@@ -1,0 +1,241 @@
+{
+  "code": "hy",
+  "name": "Armenian",
+  "pluralRule": "one_other_zero_one",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} օր",
+        "other": "{n} օր"
+      },
+      "week": {
+        "one": "{n} շաբաթ",
+        "other": "{n} շաբաթ"
+      },
+      "month": {
+        "one": "{n} ամիս",
+        "other": "{n} ամիս"
+      },
+      "year": {
+        "one": "{n} տարի",
+        "other": "{n} տարի"
+      }
+    },
+    "half": "{0} ու կես",
+    "delimiter": ", ",
+    "justBorn": "Նորածին",
+    "stages": {
+      "newborn": "Նորածին",
+      "infant": "Մանկիկ",
+      "toddler": "Փոքրիկ",
+      "child": "Երեխա",
+      "teenager": "Պատանի",
+      "adult": "Մեծահասակ"
+    },
+    "short": {
+      "units": {
+        "day": "{n} օր",
+        "week": "{n} շաբ",
+        "month": "{n} ամս",
+        "year": "{n} տ"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n} օ",
+        "week": "{n} շ",
+        "month": "{n} ա",
+        "year": "{n} տ"
+      },
+      "delimiter": "",
+      "half": "{n}½"
+    }
+  },
+  "date": {
+    "months": [
+      "Հունվար",
+      "Փետրվար",
+      "Մարտ",
+      "Ապրիլ",
+      "Մայիս",
+      "Հունիս",
+      "Հուլիս",
+      "Օգոստոս",
+      "Սեպտեմբեր",
+      "Հոկտեմբեր",
+      "Նոյեմբեր",
+      "Դեկտեմբեր"
+    ],
+    "weekdays": [
+      "Կիրակի",
+      "Երկուշաբթի",
+      "Երեքշաբթի",
+      "Չորեքշաբթի",
+      "Հինգշաբթի",
+      "Ուրբաթ",
+      "Շաբաթ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "այսօր",
+    "tomorrow": "վաղը",
+    "yesterday": "երեկ",
+    "dayAfterTomorrow": "վաղը մյուս օրը",
+    "dayBeforeYesterday": "երեկ մյուս օրը",
+    "thisWeekday": "այս {weekday}",
+    "nextWeekday": "հաջորդ {weekday}",
+    "lastWeekday": "անցած {weekday}",
+    "short": {
+      "months": [
+        "Հնվ",
+        "Փտր",
+        "Մրտ",
+        "Ապր",
+        "Մյս",
+        "Հնս",
+        "Հլս",
+        "Օգս",
+        "Սեպ",
+        "Հկտ",
+        "Նոյ",
+        "Դեկ"
+      ],
+      "weekdays": [
+        "Կիր",
+        "Երկ",
+        "Երք",
+        "Չրք",
+        "Հնգ",
+        "Ուր",
+        "Շբթ"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} վայրկյան",
+        "other": "{n} վայրկյան"
+      },
+      "minute": {
+        "one": "{n} րոպե",
+        "other": "{n} րոպե"
+      },
+      "hour": {
+        "one": "{n} ժամ",
+        "other": "{n} ժամ"
+      },
+      "day": {
+        "one": "{n} օր",
+        "other": "{n} օր"
+      },
+      "week": {
+        "one": "{n} շաբաթ",
+        "other": "{n} շաբաթ"
+      },
+      "month": {
+        "one": "{n} ամիս",
+        "other": "{n} ամիս"
+      },
+      "year": {
+        "one": "{n} տարի",
+        "other": "{n} տարի"
+      }
+    },
+    "half": "{0} ու կես",
+    "delimiter": ", ",
+    "justNow": "հիմա",
+    "ago": "{0} առաջ",
+    "inFuture": "{0} հետո",
+    "short": {
+      "units": {
+        "second": "{n} վրկ",
+        "minute": "{n} րոպ",
+        "hour": "{n} ժ",
+        "day": "{n} օր",
+        "week": "{n} շաբ",
+        "month": "{n} ամս",
+        "year": "{n} տ"
+      },
+      "ago": "{0} առաջ",
+      "inFuture": "{0} հետո",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n} վ",
+        "minute": "{n} ր",
+        "hour": "{n} ժ",
+        "day": "{n} օ",
+        "week": "{n} շ",
+        "month": "{n} ա",
+        "year": "{n} տ"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "{0} առաջ",
+      "inFuture": "{0} հետո",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "տասներկու",
+        "մեկ",
+        "երկու",
+        "երեք",
+        "չորս",
+        "հինգ",
+        "վեց",
+        "յոթ",
+        "ութ",
+        "ինը",
+        "տաս",
+        "տասնմեկ"
+      ],
+      "midnight": "կեսգիշեր",
+      "noon": "կեսօր",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

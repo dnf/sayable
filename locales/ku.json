@@ -1,0 +1,240 @@
+{
+  "code": "ku",
+  "name": "Kurdish",
+  "pluralRule": "one_other",
+  "age": {
+    "units": {
+      "day": {
+        "one": "{n} roj",
+        "other": "{n} roj"
+      },
+      "week": {
+        "one": "{n} hefte",
+        "other": "{n} hefte"
+      },
+      "month": {
+        "one": "{n} meh",
+        "other": "{n} meh"
+      },
+      "year": {
+        "one": "{n} sal",
+        "other": "{n} sal"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justBorn": "Nûbûyî",
+    "stages": {
+      "newborn": "Nûbûyî",
+      "infant": "Şîrexwar",
+      "toddler": "Zarok",
+      "child": "Zarok",
+      "teenager": "Ciwan",
+      "adult": "Mezin"
+    },
+    "short": {
+      "units": {
+        "day": "{n} roj",
+        "week": "{n} hft.",
+        "month": "{n} meh",
+        "year": "{n} sal"
+      }
+    },
+    "compact": {
+      "units": {
+        "day": "{n}r",
+        "week": "{n}h",
+        "month": "{n}m",
+        "year": "{n}s"
+      },
+      "delimiter": ""
+    }
+  },
+  "date": {
+    "months": [
+      "Rêbendan",
+      "Reşemî",
+      "Adar",
+      "Avrêl",
+      "Gulan",
+      "Pûşper",
+      "Tîrmeh",
+      "Tebax",
+      "Îlon",
+      "Cotmeh",
+      "Mijdar",
+      "Berfanbar"
+    ],
+    "weekdays": [
+      "Yekşem",
+      "Duşem",
+      "Sêşem",
+      "Çarşem",
+      "Pêncşem",
+      "Înî",
+      "Şemî"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}",
+    "today": "îro",
+    "tomorrow": "sibê",
+    "yesterday": "duh",
+    "dayAfterTomorrow": "dotira",
+    "dayBeforeYesterday": "pêroj",
+    "thisWeekday": "vê {weekday}",
+    "nextWeekday": "{weekday}a bê",
+    "lastWeekday": "{weekday}a borî",
+    "short": {
+      "months": [
+        "Rêb",
+        "Reş",
+        "Ada",
+        "Avr",
+        "Gul",
+        "Pûş",
+        "Tîr",
+        "Teb",
+        "Îlo",
+        "Cot",
+        "Mij",
+        "Ber"
+      ],
+      "weekdays": [
+        "Yşm",
+        "Dşm",
+        "Sşm",
+        "Çşm",
+        "Pşm",
+        "Înî",
+        "Şmî"
+      ],
+      "dayFormat": "{n}",
+      "datePattern": "{day} {month}",
+      "datePatternWithYear": "{day} {month} {year}"
+    },
+    "compact": {
+      "datePattern": "{d}/{m}",
+      "datePatternWithYear": "{d}/{m}/{yy}"
+    }
+  },
+  "duration": {
+    "units": {
+      "second": {
+        "one": "{n} çirke",
+        "other": "{n} çirke"
+      },
+      "minute": {
+        "one": "{n} deqîqe",
+        "other": "{n} deqîqe"
+      },
+      "hour": {
+        "one": "{n} saet",
+        "other": "{n} saet"
+      },
+      "day": {
+        "one": "{n} roj",
+        "other": "{n} roj"
+      },
+      "week": {
+        "one": "{n} hefte",
+        "other": "{n} hefte"
+      },
+      "month": {
+        "one": "{n} meh",
+        "other": "{n} meh"
+      },
+      "year": {
+        "one": "{n} sal",
+        "other": "{n} sal"
+      }
+    },
+    "half": "{n}½",
+    "delimiter": ", ",
+    "justNow": "niha",
+    "ago": "berî {0}",
+    "inFuture": "di {0} de",
+    "short": {
+      "units": {
+        "second": "{n} çrk.",
+        "minute": "{n} deq.",
+        "hour": "{n} st.",
+        "day": "{n} roj",
+        "week": "{n} hft.",
+        "month": "{n} meh",
+        "year": "{n} sal"
+      },
+      "ago": "berî {0}",
+      "inFuture": "di {0} de",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "units": {
+        "second": "{n}s",
+        "minute": "{n}d",
+        "hour": "{n}st",
+        "day": "{n}r",
+        "week": "{n}h",
+        "month": "{n}m",
+        "year": "{n}s"
+      },
+      "delimiter": "",
+      "half": "{n}½",
+      "ago": "berî {0}",
+      "inFuture": "di {0} de",
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  },
+  "time": {
+    "clock": {
+      "hours": [
+        "diwanzdeh",
+        "yek",
+        "du",
+        "sê",
+        "çar",
+        "pênc",
+        "şeş",
+        "heft",
+        "heşt",
+        "neh",
+        "deh",
+        "yanzdeh"
+      ],
+      "midnight": "nîvê şevê",
+      "noon": "nîvro",
+      "patterns": {
+        "0": "{h}:00",
+        "5": "{h}:05",
+        "10": "{h}:10",
+        "15": "{h}:15",
+        "20": "{h}:20",
+        "25": "{h}:25",
+        "30": "{h}:30",
+        "35": "{h}:35",
+        "40": "{h}:40",
+        "45": "{h}:45",
+        "50": "{h}:50",
+        "55": "{h}:55"
+      }
+    },
+    "short": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    },
+    "compact": {
+      "clock": {
+        "use24h": true,
+        "format": "{h}:{mm}"
+      }
+    }
+  }
+}

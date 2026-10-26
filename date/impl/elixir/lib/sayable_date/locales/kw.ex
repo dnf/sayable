@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: date/locales/src/kw.json
+# Source: locales/kw.json
 
 defmodule SayableDate.Locales.KW do
   @moduledoc false

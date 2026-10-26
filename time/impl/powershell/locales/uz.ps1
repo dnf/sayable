@@ -7,7 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: time/locales/src/uz.json
+# Source: locales/uz.json
 
 function locale_uz {
     $hours = @('o''n ikki', 'bir', 'ikki', 'uch', 'to''rt', 'besh', 'olti', 'yetti', 'sakkiz', 'to''qqiz', 'o''n', 'o''n bir')
