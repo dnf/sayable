@@ -1,8 +1,0 @@
-{
-  "abbreviation": "erl",
-  "dependency": "rebar3",
-  "lintDependency": null,
-  "compiled": true,
-  "hasClean": true,
-  "hasLint": false
-}

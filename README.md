@@ -76,18 +76,18 @@ Develop and test natively on macOS/Linux or inside a Docker container.
 #### Docker (no local toolchain setup)
 
 ```bash
-./.hecatron/tools/docker/test.sh          # build image + run all tests
-./.hecatron/tools/docker/test.sh bash     # interactive shell inside the container
+./tools/docker-test.sh          # build image + run all tests
+./tools/docker-test.sh bash     # interactive shell inside the container
 ```
 
 #### Native setup
 
-```bash
-# macOS (uses Homebrew)
-./.hecatron/tools/bootstrap/macos.sh
+Toolchains are managed by [hecatron](https://github.com/dnf/hecatron):
 
-# Ubuntu / Debian
-./.hecatron/tools/bootstrap/linux.sh
+```bash
+brew install dnf/tap/hecatron   # or put a hecatron checkout's bin/ on PATH
+hecatron bootstrap              # base packages + every language toolchain (macOS or Ubuntu/Debian)
+hecatron doctor                 # check every toolchain works; --fix repairs
 ```
 
 Install or uninstall individual languages:

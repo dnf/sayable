@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Update PHP package metadata
-source "$(dirname "$0")/../_common.sh"
+# _common.sh ships with hecatron, outside this repository.
+# shellcheck source=/dev/null
+source "${HECATRON_HOME}/languages/_common.sh"
 
 python3 -c "
 import json, os

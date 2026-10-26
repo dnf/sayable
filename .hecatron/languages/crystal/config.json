@@ -1,8 +1,0 @@
-{
-  "abbreviation": "cr",
-  "dependency": "crystal",
-  "lintDependency": null,
-  "compiled": true,
-  "hasClean": true,
-  "hasLint": true
-}

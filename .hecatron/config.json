@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "hecatron": ">=0.1.0",
+  "project": "sayable",
+  "components": [
+    "age",
+    "date",
+    "duration",
+    "time"
+  ],
+  "implPath": "{component}/impl/{lang}",
+  "languages": [
+    "ada",
+    "bash",
+    "c",
+    "clojure",
+    "cobol",
+    "cpp",
+    "crystal",
+    "csharp",
+    "d",
+    "dart",
+    "elixir",
+    "elm",
+    "erlang",
+    "fortran",
+    "fsharp",
+    "gleam",
+    "go",
+    "goose",
+    "groovy",
+    "haskell",
+    "janet",
+    "java",
+    "julia",
+    "kotlin",
+    "lisp",
+    "lua",
+    "mojo",
+    "nim",
+    "ocaml",
+    "octave",
+    "odin",
+    "pascal",
+    "perl",
+    "pharo",
+    "php",
+    "powershell",
+    "prolog",
+    "python",
+    "r",
+    "racket",
+    "raku",
+    "ruby",
+    "rust",
+    "scala",
+    "swift",
+    "tcl",
+    "typescript",
+    "v",
+    "vbnet",
+    "wren",
+    "zig"
+  ],
+  "tools": {
+    "cli": {
+      "dependency": "cmake"
+    },
+    "shell": {
+      "dependency": "shellcheck"
+    }
+  },
+  "generated": {
+    "dockerfile": "age/Dockerfile",
+    "workflows": ".github/workflows/{lang}.yml"
+  },
+  "tasks": {
+    "test": {
+      "check": "just check",
+      "codegen": "cd age && python3 -m unittest codegen.test_locale_groups -v"
+    }
+  },
+  "metadata": "age/config/metadata.json",
+  "logs": ".logs"
+}

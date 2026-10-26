@@ -1,3 +1,0 @@
-# Crystal
-# apt: gnupg
-RUN curl -fsSL https://crystal-lang.org/install.sh | bash

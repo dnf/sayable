@@ -1,8 +1,0 @@
-{
-  "abbreviation": "rb",
-  "dependency": "ruby",
-  "lintDependency": null,
-  "compiled": false,
-  "hasClean": false,
-  "hasLint": true
-}

@@ -1,5 +1,0 @@
-# V
-# apt: git gcc make
-RUN git clone --depth 1 https://github.com/vlang/v.git /opt/v && \
-    cd /opt/v && make && \
-    ln -s /opt/v/v /usr/local/bin/v

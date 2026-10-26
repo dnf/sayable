@@ -16,9 +16,18 @@ jobs:
           python-version: "3.12"
       - run: python -m codegen.generate --check
         working-directory: age
-      - name: Every language workflow tests every component it implements
-        run: python tools/check_workflow_components.py
+      # hecatron (https://github.com/dnf/hecatron) checks the generated
+      # Dockerfile and workflows; pinned so a hecatron change can't break CI.
+      - name: Install hecatron
+        uses: actions/checkout@v4
+        with:
+          repository: dnf/hecatron
+          ref: v0.1.0
+          path: .hecatron-tool
+      - run: echo "${GITHUB_WORKSPACE}/.hecatron-tool/bin" >> "${GITHUB_PATH}"
+      - name: Generated Dockerfile and workflows are current, and every workflow tests every component
+        run: hecatron check
       - name: Every native suite implements every canonical test
         run: python tools/check_test_ids.py
       - name: shellcheck every shell script
-        run: bash .hecatron/tools/lint/shellcheck.sh
+        run: hecatron lint shell

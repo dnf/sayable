@@ -21,8 +21,9 @@ just list languages   # list active languages
 
 See [`docs/versioning.md`](../docs/versioning.md) and [`docs/metadata.md`](../docs/metadata.md) for details.
 
-Language management config has moved to [`.hecatron/config/languages.json`](../.hecatron/config/languages.json)
-(active set, disabled set, tools) with per-language data in `.hecatron/languages/<lang>/config.json`.
+Language management lives in [`.hecatron/config.json`](../../.hecatron/config.json) (languages, components,
+tools, generated files), read by [hecatron](https://github.com/dnf/hecatron); sayable's per-language hooks are in
+`.hecatron/languages/<lang>/`.
 
 ## License
 

@@ -117,7 +117,7 @@ No library reads `review`. The docs generator shows the notes at the top of
 When the data has been checked and fixed, delete the note.
 
 Each library's codegen sees the shared fields plus its own section
-(`load_component_locales()` in `.hecatron/tools/codegen/util.py`), so within a
+(`load_component_locales()` in `tools/codegen_util.py`), so within a
 section the keys below are exactly what that library reads. Start by copying
 the closest existing locale, a related language with the same plural rule,
 and translate it. [`locales/fr.json`](../locales/fr.json) and

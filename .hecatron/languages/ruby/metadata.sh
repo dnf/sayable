@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Update Ruby package metadata
-source "$(dirname "$0")/../_common.sh"
+# _common.sh ships with hecatron, outside this repository.
+# shellcheck source=/dev/null
+source "${HECATRON_HOME}/languages/_common.sh"
 
 _sed_i 's|s\.summary     = "[^"]*"|s.summary     = "'"${PT_DESCRIPTION}"'"|' \
     "${ROOT}/age/impl/ruby/sayable_age.gemspec"

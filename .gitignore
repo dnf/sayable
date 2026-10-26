@@ -4,6 +4,7 @@
 __pycache__/
 .claude/
 .coverage-thresholds.json
+.hecatron-tool/
 .logs/
 .metaswarm/
 .pytest_cache/
@@ -15,5 +16,5 @@ benchmarks/cpu/results/
 cli/build/
 dist/
 erl_crash.dump
-test_io
 node_modules/
+test_io

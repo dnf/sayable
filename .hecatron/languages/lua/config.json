@@ -1,8 +1,0 @@
-{
-  "abbreviation": "lu",
-  "dependency": "lua",
-  "lintDependency": "luacheck",
-  "compiled": false,
-  "hasClean": true,
-  "hasLint": true
-}
