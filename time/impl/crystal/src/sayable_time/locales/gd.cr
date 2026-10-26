@@ -17,8 +17,8 @@ module SayableTime
         midnight: "meadhan-oidhche",
         noon: "meadhan-latha",
         patterns: {
-          0 => "{h}",
-          5 => "còig mionaidean an dèidh {h}",
+           0 => "{h}",
+           5 => "còig mionaidean an dèidh {h}",
           10 => "deich mionaidean an dèidh {h}",
           15 => "cairteal an dèidh {h}",
           20 => "fichead mionaid an dèidh {h}",

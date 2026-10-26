@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     TG = AgeLocale.new(
       code: 'tg',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} рӯз',
         'week' => '{n} ҳафта',

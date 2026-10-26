@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     BCI = AgeLocale.new(
       code: 'bci',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'cɛn {n}',
         'week' => 'lemɔcuɛ {n}',

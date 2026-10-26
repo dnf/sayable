@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     FIL = AgeLocale.new(
       code: 'fil',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} araw',
         'week' => '{n} linggo',

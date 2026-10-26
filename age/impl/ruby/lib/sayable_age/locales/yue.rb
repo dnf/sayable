@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     YUE = AgeLocale.new(
       code: 'yue',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n}日',
         'week' => '{n}個星期',

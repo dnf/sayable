@@ -17,8 +17,8 @@ module SayableTime
         midnight: "nik'aj aq'ab'",
         noon: "nik'aj q'ij",
         patterns: {
-          0 => "{h} ramaj",
-          5 => "{h} ramaj job'",
+           0 => "{h} ramaj",
+           5 => "{h} ramaj job'",
           10 => "{h} ramaj lajuj",
           15 => "{h} ramaj olajuj",
           20 => "{h} ramaj juwinaq",

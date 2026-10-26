@@ -2,8 +2,14 @@
 # sayableage.sh — Human-friendly age formatting for young children.
 # Zero dependencies. Source this file to use format_age and format_stage.
 
-SAYABLEAGE_VERSION="0.5.0"
+# The locale variables (_half, _delimiter...) are set by the locale file a
+# function loads at run time, which shellcheck can't follow.
+# shellcheck disable=SC2154
+
 _SAYABLEAGE_MAX_AGE_MONTHS=6000
+# Read by callers, not by this file.
+# shellcheck disable=SC2034
+SAYABLEAGE_VERSION="0.5.0"
 _SAYABLEAGE_REGISTRY_LOADED=0
 
 # --- Date helpers ---

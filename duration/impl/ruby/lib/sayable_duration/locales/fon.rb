@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     FON = DurationLocale.new(
       code: 'fon',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'segɔ́ndu {n}',
         'minute' => 'miniti {n}',

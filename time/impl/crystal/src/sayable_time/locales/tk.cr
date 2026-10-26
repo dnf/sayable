@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ýary gije",
         noon: "günorta",
         patterns: {
-          0 => "sagat {h}",
-          5 => "sagat {h} bäş minut",
+           0 => "sagat {h}",
+           5 => "sagat {h} bäş minut",
           10 => "sagat {h} on minut",
           15 => "sagat {h} on bäş minut",
           20 => "sagat {h} ýigrimi minut",

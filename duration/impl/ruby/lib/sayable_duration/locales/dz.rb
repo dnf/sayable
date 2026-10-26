@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     DZ = DurationLocale.new(
       code: 'dz',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'སྐར་ཆ་ {n}',
         'minute' => 'སྐར་མ་ {n}',

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "nəs-leyla",
         noon: "qayḥ",
         patterns: {
-          0 => "saʿa {h}",
-          5 => "saʿa {h} we ḥamməste",
+           0 => "saʿa {h}",
+           5 => "saʿa {h} we ḥamməste",
           10 => "saʿa {h} we ʿasərte",
           15 => "saʿa {h} we ʿasərte we ḥamməste",
           20 => "saʿa {h} we ʿəsra",

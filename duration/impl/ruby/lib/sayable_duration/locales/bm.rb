@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     BM = DurationLocale.new(
       code: 'bm',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sekondi {n}',
         'minute' => 'miniti {n}',

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "chawpi tuta",
         noon: "chawpi p'unchaw",
         patterns: {
-          0 => "{h} ura",
-          5 => "{h} ura pichqa",
+           0 => "{h} ura",
+           5 => "{h} ura pichqa",
           10 => "{h} ura chunka",
           15 => "{h} ura chunka pichqayuq",
           20 => "{h} ura iskay chunka",

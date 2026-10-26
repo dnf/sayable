@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     DJE = DurationLocale.new(
       code: 'dje',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sɛkondi {n}',
         'minute' => 'miniti {n}',

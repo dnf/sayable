@@ -32,7 +32,7 @@ class DateLocale:
     months: list[str]
     weekdays: list[str]
     day_format: str
-    day_format_exceptions: dict[str, str] = field(default_factory=dict)
+    day_format_exceptions: dict[str, str] = field(default_factory=dict[str, str])
     date_pattern: str = "{day} {month}"
     date_pattern_with_year: str = "{day} {month} {year}"
     today: str = "today"

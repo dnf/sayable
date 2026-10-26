@@ -17,8 +17,8 @@ module SayableAge
       plural: lambda { |n|
         if n == 1 then :one
         elsif n == 2 then :two
-        elsif n >= 3 && n <= 6 then :few
-        elsif n >= 7 && n <= 10 then :many
+        elsif n.between?(3, 6) then :few
+        elsif n.between?(7, 10) then :many
         else :other
         end
       },

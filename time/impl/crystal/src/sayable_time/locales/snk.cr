@@ -17,8 +17,8 @@ module SayableTime
         midnight: "sulen noxo",
         noon: "tili seren",
         patterns: {
-          0 => "{h}",
-          5 => "{h} do miniti karago",
+           0 => "{h}",
+           5 => "{h} do miniti karago",
           10 => "{h} do miniti tanmu",
           15 => "{h} do miniti tanmu do karago",
           20 => "{h} do miniti tanpille",

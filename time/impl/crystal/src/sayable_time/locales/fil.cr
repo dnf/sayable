@@ -17,8 +17,8 @@ module SayableTime
         midnight: "hatinggabi",
         noon: "tanghali",
         patterns: {
-          0 => "{h}",
-          5 => "{h} y singko",
+           0 => "{h}",
+           5 => "{h} y singko",
           10 => "{h} y diyes",
           15 => "{h} y kinse",
           20 => "{h} y beynte",

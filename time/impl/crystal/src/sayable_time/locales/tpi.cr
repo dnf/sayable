@@ -17,8 +17,8 @@ module SayableTime
         midnight: "biknait",
         noon: "belo",
         patterns: {
-          0 => "{h} kilok",
-          5 => "faiv minit pas {h}",
+           0 => "{h} kilok",
+           5 => "faiv minit pas {h}",
           10 => "ten minit pas {h}",
           15 => "kwata pas {h}",
           20 => "twenti minit pas {h}",

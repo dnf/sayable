@@ -17,8 +17,8 @@ module SayableTime
         midnight: "medianoche",
         noon: "mediodía",
         patterns: {
-          0 => "{h} en punto",
-          5 => "{h} y cinco",
+           0 => "{h} en punto",
+           5 => "{h} y cinco",
           10 => "{h} y diez",
           15 => "{h} y cuarto",
           20 => "{h} y veinte",

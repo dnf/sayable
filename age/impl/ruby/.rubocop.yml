@@ -65,3 +65,39 @@ Metrics/PerceivedComplexity:
 # Struct#compact override is intentional — our field is named "compact"
 Lint/StructNewOverride:
   Enabled: false
+
+# Generated locale data ends every multi-line entry with a comma (one-line
+# diffs when an entry changes); hand-written code follows the same style.
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+# Plural rules in generated locale data are the same CLDR formulas in every
+# language, so they keep the formula's shape (if/elsif chains, `n == 0`,
+# grouping parentheses) rather than Ruby-specific rewrites.
+Style/CaseLikeIf:
+  Exclude:
+    - 'lib/sayable_age/locales/*.rb'
+
+Style/NumericPredicate:
+  Exclude:
+    - 'lib/sayable_age/locales/*.rb'
+
+Style/RedundantParentheses:
+  Exclude:
+    - 'lib/sayable_age/locales/*.rb'
+
+# Generated locale data and the locale registry are long by nature.
+Metrics:
+  Exclude:
+    - 'lib/sayable_age/locales/*.rb'
+
+# .hecatron/languages/ruby/metadata.sh rewrites the gemspec's double-quoted values.
+Style/StringLiterals:
+  Exclude:
+    - '*.gemspec'

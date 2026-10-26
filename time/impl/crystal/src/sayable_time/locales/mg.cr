@@ -17,8 +17,8 @@ module SayableTime
         midnight: "misasakalina",
         noon: "atoandro",
         patterns: {
-          0 => "{h} ora",
-          5 => "{h} ora sy dimy minitra",
+           0 => "{h} ora",
+           5 => "{h} ora sy dimy minitra",
           10 => "{h} ora sy folo minitra",
           15 => "{h} ora sy fahefany",
           20 => "{h} ora sy roapolo minitra",

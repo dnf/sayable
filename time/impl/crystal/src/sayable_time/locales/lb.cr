@@ -17,8 +17,8 @@ module SayableTime
         midnight: "Mëtternuecht",
         noon: "Mëtteg",
         patterns: {
-          0 => "{h} Auer",
-          5 => "fënnef op {h}",
+           0 => "{h} Auer",
+           5 => "fënnef op {h}",
           10 => "zéng op {h}",
           15 => "Véierel op {h}",
           20 => "zwanzeg op {h}",

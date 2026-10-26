@@ -17,8 +17,8 @@ module SayableTime
         midnight: "bogi levu",
         noon: "sigalevu",
         patterns: {
-          0 => "{h} na kaloko",
-          5 => "{h} na kaloko ka lima na miniti",
+           0 => "{h} na kaloko",
+           5 => "{h} na kaloko ka lima na miniti",
           10 => "{h} na kaloko ka tini na miniti",
           15 => "{h} na kaloko ka tini ka lima na miniti",
           20 => "{h} na kaloko ka ruasagavulu na miniti",

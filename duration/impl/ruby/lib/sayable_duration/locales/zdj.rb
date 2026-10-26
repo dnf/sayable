@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     ZDJ = DurationLocale.new(
       code: 'zdj',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sekunde {n}',
         'minute' => 'dakika {n}',

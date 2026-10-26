@@ -17,8 +17,8 @@ module SayableTime
         midnight: "saa sita z'ijoro",
         noon: "saa sita z'amanywa",
         patterns: {
-          0 => "saa {h}",
-          5 => "saa {h} n'iminota itanu",
+           0 => "saa {h}",
+           5 => "saa {h} n'iminota itanu",
           10 => "saa {h} n'iminota icumi",
           15 => "saa {h} n'iminota cumi n'itanu",
           20 => "saa {h} n'iminota makumyabiri",

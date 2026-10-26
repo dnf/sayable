@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ọ̀gànjọ́ òru",
         noon: "ọ̀sán gangan",
         patterns: {
-          0 => "aago {h}",
-          5 => "aago {h} kọjá ìṣẹ́jú márùn-ún",
+           0 => "aago {h}",
+           5 => "aago {h} kọjá ìṣẹ́jú márùn-ún",
           10 => "aago {h} kọjá ìṣẹ́jú mẹ́wàá",
           15 => "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún",
           20 => "aago {h} kọjá ogún ìṣẹ́jú",

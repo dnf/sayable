@@ -17,8 +17,8 @@ module SayableTime
         midnight: "hanter nos",
         noon: "hanter dydh",
         patterns: {
-          0 => "{h} eur",
-          5 => "pymp mynysen wosa {h}",
+           0 => "{h} eur",
+           5 => "pymp mynysen wosa {h}",
           10 => "deg mynysen wosa {h}",
           15 => "kwarter wosa {h}",
           20 => "ugens mynysen wosa {h}",

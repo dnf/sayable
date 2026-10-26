@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     TPI = AgeLocale.new(
       code: 'tpi',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} de',
         'week' => '{n} wik',

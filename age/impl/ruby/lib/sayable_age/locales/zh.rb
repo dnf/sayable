@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     ZH = AgeLocale.new(
       code: 'zh',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n}天',
         'week' => '{n}周',

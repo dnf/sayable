@@ -17,8 +17,8 @@ module SayableTime
         midnight: "akiri alúk",
         noon: "ewaŋ",
         patterns: {
-          0 => "awola {h}",
-          5 => "awola {h} ai minit tán",
+           0 => "awola {h}",
+           5 => "awola {h} ai minit tán",
           10 => "awola {h} ai minit awom",
           15 => "awola {h} ai minit awom ai tán",
           20 => "awola {h} ai minit mewom mebú",

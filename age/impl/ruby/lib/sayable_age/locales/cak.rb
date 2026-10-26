@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     CAK = AgeLocale.new(
       code: 'cak',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} q\'ij',
         'week' => '{n} wuqq\'ij',

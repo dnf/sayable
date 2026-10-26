@@ -18,7 +18,7 @@ module SayableDuration
         mod100 = n % 100
         if mod100 == 1 then :one
         elsif mod100 == 2 then :two
-        elsif mod100 == 3 || mod100 == 4 then :few
+        elsif [3, 4].include?(mod100) then :few
         else :other
         end
       },

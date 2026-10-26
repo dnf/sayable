@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     PIS = AgeLocale.new(
       code: 'pis',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} dei',
         'week' => '{n} wik',

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "unnuap qeqqa",
         noon: "ulloqeqqap qeqqa",
         patterns: {
-          0 => "nalunaaqutaq {h}",
-          5 => "{h} qaangiullugu minutsit tallimat",
+           0 => "nalunaaqutaq {h}",
+           5 => "{h} qaangiullugu minutsit tallimat",
           10 => "{h} qaangiullugu minutsit qulit",
           15 => "{h} qaangiullugu minutsit aqqaneq-tallimat",
           20 => "{h} qaangiullugu minutsit marlunnik qulillit",

@@ -20,8 +20,8 @@ module SayableAge
         elsif n == 2 then :two
         else
           mod100 = n % 100
-          if mod100 >= 3 && mod100 <= 10 then :few
-          elsif mod100 >= 11 && mod100 <= 99 then :many
+          if mod100.between?(3, 10) then :few
+          elsif mod100.between?(11, 99) then :many
           else :other
           end
         end

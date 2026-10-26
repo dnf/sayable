@@ -17,8 +17,8 @@ module SayableTime
         midnight: "mean oie",
         noon: "munlaa",
         patterns: {
-          0 => "{h} er y chlag",
-          5 => "queig minnidyn lurg {h}",
+           0 => "{h} er y chlag",
+           5 => "queig minnidyn lurg {h}",
           10 => "jeih minnidyn lurg {h}",
           15 => "kerroo lurg {h}",
           20 => "feed minnid lurg {h}",

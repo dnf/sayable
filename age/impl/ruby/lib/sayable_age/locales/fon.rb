@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     FON = AgeLocale.new(
       code: 'fon',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'azǎn {n}',
         'week' => 'aklunɔ̌zán {n}',

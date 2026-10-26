@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     SHN = DurationLocale.new(
       code: 'shn',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} ဝိၼႃးတီႇ',
         'minute' => '{n} မိၼိတ်ႉ',

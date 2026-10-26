@@ -26,7 +26,7 @@ elif [[ -n "$(find "${SCRIPT_DIR}/Program.vb" "${SCRIPT_DIR}/SayableCli.vbproj" 
 fi
 
 if ${_needs_build}; then
-    dotnet build "${SCRIPT_DIR}/SayableCli.vbproj" -c Release --nologo -v quiet 2>&1 >/dev/null
+    dotnet build "${SCRIPT_DIR}/SayableCli.vbproj" -c Release --nologo -v quiet >&2
     # MSBuild leaves an up-to-date DLL untouched; mark it as checked
     touch "${DLL}"
 fi

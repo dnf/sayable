@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     LO = DurationLocale.new(
       code: 'lo',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} ວິນາທີ',
         'minute' => '{n} ນາທີ',

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "midnatt",
         noon: "middag",
         patterns: {
-          0 => "klockan {h}",
-          5 => "fem över {h}",
+           0 => "klockan {h}",
+           5 => "fem över {h}",
           10 => "tio över {h}",
           15 => "kvart över {h}",
           20 => "tjugo över {h}",

@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     KEK = AgeLocale.new(
       code: 'kek',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} q\'e',
         'week' => '{n} seman',

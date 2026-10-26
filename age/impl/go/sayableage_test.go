@@ -619,13 +619,13 @@ func TestLocale_Hebrew(t *testing.T) {
 	pt := sayableage.NewSayableAge(locales.HE)
 
 	assertAge(t, "he justBorn", pt.FormatAge("2025-06-15", "2025-06-15"), "רק נולד")                // 29.1
-	assertAge(t, "he 1 day one", pt.FormatAge("2025-06-14", "2025-06-15"), "יום")                 // 29.2
+	assertAge(t, "he 1 day one", pt.FormatAge("2025-06-14", "2025-06-15"), "יום")                   // 29.2
 	assertAge(t, "he 3 days other", pt.FormatAge("2025-06-12", "2025-06-15"), "3 ימים")             // 29.3
 	assertAge(t, "he 2 weeks dual", pt.FormatAge("2025-06-01", "2025-06-15"), "שבועיים")            // 29.4
 	assertAge(t, "he 3 weeks other", pt.FormatAge("2025-05-25", "2025-06-15"), "3 שבועות")          // 29.5
 	assertAge(t, "he 6 months", pt.FormatAge("2025-01-15", "2025-07-15"), "6 חודשים")               // 29.6
 	assertAge(t, "he 3 months", pt.FormatAge("2025-03-15", "2025-06-15"), "3 חודשים")               // 29.7
-	assertAge(t, "he 2y dual 1m one", pt.FormatAge("2023-06-15", "2025-07-15"), "שנתיים, חודש")   // 29.8
+	assertAge(t, "he 2y dual 1m one", pt.FormatAge("2023-06-15", "2025-07-15"), "שנתיים, חודש")     // 29.8
 	assertAge(t, "he 3.5y half", pt.FormatAge("2022-06-15", "2025-12-15"), "3 שנים וחצי")           // 29.9
 	assertAge(t, "he 7y other", pt.FormatAge("2018-06-15", "2025-06-15"), "7 שנים")                 // 29.10
 	assertAge(t, "he stage m newborn", pt.FormatStage("2025-06-15", "2025-06-15", "m"), "רק נולד")  // 29.11
@@ -732,7 +732,7 @@ func TestSection31WeeksAndDaysAcrossMonthEnds(t *testing.T) {
 func TestSection32HalfYearsTakeTheirPluralFormFromWholeYears(t *testing.T) {
 	assertAge(t, "32.1", sayableage.NewSayableAge(locales.PL).FormatAge("2021-06-15", "2025-01-15"), "3 i pół lata")                  // 32.1
 	assertAge(t, "32.2", sayableage.NewSayableAge(locales.PL, sayableage.Short).FormatAge("2020-06-15", "2025-12-15"), "5 i pół lat") // 32.2
-	assertAge(t, "32.3", sayableage.NewSayableAge(locales.SHI).FormatAge("2005-06-08", "2012-06-07"), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")          // 32.3
+	assertAge(t, "32.3", sayableage.NewSayableAge(locales.SHI).FormatAge("2005-06-08", "2012-06-07"), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")            // 32.3
 }
 
 // ── Section 33: Input validation ────────────────────────────────────

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "nîvê şevê",
         noon: "nîvro",
         patterns: {
-          0 => "saet {h}",
-          5 => "{h} û pênc deqe",
+           0 => "saet {h}",
+           5 => "{h} û pênc deqe",
           10 => "{h} û deh deqe",
           15 => "{h} û çaryek",
           20 => "{h} û bîst deqe",

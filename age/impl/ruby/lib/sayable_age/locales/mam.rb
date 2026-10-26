@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     MAM = AgeLocale.new(
       code: 'mam',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} q\'ij',
         'week' => '{n} seman',

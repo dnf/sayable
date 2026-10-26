@@ -19,8 +19,8 @@ module SayableDuration
         elsif n == 2 then :two
         else
           mod100 = n % 100
-          if n == 0 || (mod100 >= 3 && mod100 <= 10) then :few
-          elsif mod100 >= 11 && mod100 <= 19 then :many
+          if n == 0 || (mod100.between?(3, 10)) then :few
+          elsif mod100.between?(11, 19) then :many
           else :other
           end
         end

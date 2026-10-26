@@ -17,8 +17,8 @@ module SayableTime
         midnight: "wakɔ̈u",
         noon: "akɔ̈l ciëŋ",
         patterns: {
-          0 => "thä {h}",
-          5 => "thä {h} ku minitö dhiëc",
+           0 => "thä {h}",
+           5 => "thä {h} ku minitö dhiëc",
           10 => "thä {h} ku minitö thiäär",
           15 => "thä {h} ku minitö thiäär ku dhiëc",
           20 => "thä {h} ku minitö thiärou",

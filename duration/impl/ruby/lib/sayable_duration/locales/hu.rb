@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     HU = DurationLocale.new(
       code: 'hu',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} másodperc',
         'minute' => '{n} perc',

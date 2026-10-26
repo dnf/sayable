@@ -17,8 +17,8 @@ module SayableTime
         midnight: "saa sita usiku",
         noon: "saa sita mchana",
         patterns: {
-          0 => "saa {h}",
-          5 => "saa {h} na dakika tano",
+           0 => "saa {h}",
+           5 => "saa {h} na dakika tano",
           10 => "saa {h} na dakika kumi",
           15 => "saa {h} na robo",
           20 => "saa {h} na dakika ishirini",

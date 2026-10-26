@@ -699,7 +699,7 @@ class TestFormatter < Minitest::Test
         'day' => { one: '{n} día', other: '{n} días' },
         'week' => { one: '{n} semana', other: '{n} semanas' },
         'month' => { one: '{n} mes', other: '{n} meses' },
-        'year' => { one: '{n} año', other: '{n} años' }
+        'year' => { one: '{n} año', other: '{n} años' },
       },
       half: '{0} y medio',
       delimiter: ', ',
@@ -710,8 +710,8 @@ class TestFormatter < Minitest::Test
         toddler: 'Niño pequeño',
         child: 'Niño',
         teenager: 'Adolescente',
-        adult: 'Adulto'
-      }
+        adult: 'Adulto',
+      },
     )
 
     pt = SayableAge::Formatter.new(es)
@@ -1191,12 +1191,12 @@ class TestFormatter < Minitest::Test
   # ================================================================
 
   # 33.1
-  def test_33_1_february_30
+  def test_33_1_february30
     assert_nil SayableAge.format_age('2025-02-30', '2032-06-25')
   end
 
   # 33.2
-  def test_33_2_month_13
+  def test_33_2_month13
     assert_nil SayableAge.format_age('2025-13-01', '2027-01-31')
   end
 
@@ -1206,7 +1206,7 @@ class TestFormatter < Minitest::Test
   end
 
   # 33.4
-  def test_33_4_day_00
+  def test_33_4_day00
     assert_nil SayableAge.format_age('2025-06-00', '2027-02-25')
   end
 

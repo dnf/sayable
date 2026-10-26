@@ -17,8 +17,8 @@ module SayableTime
         midnight: "usiku wa manane",
         noon: "adhuhuri",
         patterns: {
-          0 => "saa {h}",
-          5 => "saa {h} na ntsanu",
+           0 => "saa {h}",
+           5 => "saa {h} na ntsanu",
           10 => "saa {h} na kumi",
           15 => "saa {h} na kumi na ntsanu",
           20 => "saa {h} na shirini",

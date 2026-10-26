@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     QU = AgeLocale.new(
       code: 'qu',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} p\'unchaw',
         'week' => '{n} simana',

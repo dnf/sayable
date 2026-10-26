@@ -20,3 +20,5 @@ jobs:
         run: python tools/check_workflow_components.py
       - name: Every native suite implements every canonical test
         run: python tools/check_test_ids.py
+      - name: shellcheck every shell script
+        run: bash .hecatron/tools/lint/shellcheck.sh

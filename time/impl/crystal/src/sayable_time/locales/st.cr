@@ -17,8 +17,8 @@ module SayableTime
         midnight: "hara bosiu",
         noon: "motsheare",
         patterns: {
-          0 => "hora ya {h}",
-          5 => "hora ya {h} le metsotso e mehlano",
+           0 => "hora ya {h}",
+           5 => "hora ya {h} le metsotso e mehlano",
           10 => "hora ya {h} le metsotso e leshome",
           15 => "hora ya {h} le kotara",
           20 => "hora ya {h} le metsotso e mashome a mabedi",

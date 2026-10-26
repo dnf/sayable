@@ -3,15 +3,15 @@
 from __future__ import annotations
 
 import re
+from typing import TYPE_CHECKING, Literal
 
-from typing import Literal
-
-from sayable_time.locale import (
-    CompactnessOverride,
-    ShortClockConfig,
-    TimeLocale,
-)
 from sayable_time.locales.en import EN
+
+if TYPE_CHECKING:
+    from sayable_time.locale import (
+        ShortClockConfig,
+        TimeLocale,
+    )
 
 __version__ = "0.5.0"
 

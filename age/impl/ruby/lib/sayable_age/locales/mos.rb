@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     MOS = AgeLocale.new(
       code: 'mos',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'daare {n}',
         'week' => 'semaana {n}',

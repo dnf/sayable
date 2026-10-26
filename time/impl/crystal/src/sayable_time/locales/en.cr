@@ -17,8 +17,8 @@ module SayableTime
         midnight: "midnight",
         noon: "noon",
         patterns: {
-          0 => "{h} o'clock",
-          5 => "five past {h}",
+           0 => "{h} o'clock",
+           5 => "five past {h}",
           10 => "ten past {h}",
           15 => "a quarter past {h}",
           20 => "twenty past {h}",

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "éjfél",
         noon: "dél",
         patterns: {
-          0 => "{h} óra",
-          5 => "öt perccel múlt {h}",
+           0 => "{h} óra",
+           5 => "öt perccel múlt {h}",
           10 => "tíz perccel múlt {h}",
           15 => "negyed {next_h}",
           20 => "húsz perccel múlt {h}",

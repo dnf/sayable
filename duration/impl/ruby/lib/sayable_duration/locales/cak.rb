@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     CAK = DurationLocale.new(
       code: 'cak',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} tz\'aqät',
         'minute' => '{n} ch\'utik ramaj',

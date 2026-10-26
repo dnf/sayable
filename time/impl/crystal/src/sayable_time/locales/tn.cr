@@ -17,8 +17,8 @@ module SayableTime
         midnight: "bosigo jwa magareng",
         noon: "motshegare",
         patterns: {
-          0 => "ura {h}",
-          5 => "ura {h} le metsotso e metlhano",
+           0 => "ura {h}",
+           5 => "ura {h} le metsotso e metlhano",
           10 => "ura {h} le metsotso e le lesome",
           15 => "ura {h} le kotara",
           20 => "ura {h} le metsotso e le masome a mabedi",

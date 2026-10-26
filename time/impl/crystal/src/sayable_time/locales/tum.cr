@@ -17,8 +17,8 @@ module SayableTime
         midnight: "pakati pa usiku",
         noon: "muhanya",
         patterns: {
-          0 => "{h} koloko",
-          5 => "{h} koloko na maminiti vinkhondi",
+           0 => "{h} koloko",
+           5 => "{h} koloko na maminiti vinkhondi",
           10 => "{h} koloko na maminiti khumi",
           15 => "{h} koloko na maminiti khumi na vinkhondi",
           20 => "{h} koloko na maminiti makhumi ghaŵiri",

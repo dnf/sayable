@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     MOS = DurationLocale.new(
       code: 'mos',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sẽk {n}',
         'minute' => 'minit {n}',

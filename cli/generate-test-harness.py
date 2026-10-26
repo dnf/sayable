@@ -30,11 +30,17 @@ def shell_escape(s: str) -> str:
     return s.replace("'", "'\\''")
 
 
+# Locale codes that are also shell keywords (Finnish "fi") are quoted so
+# shellcheck doesn't read them as syntax.
+SHELL_KEYWORDS = {"if", "then", "else", "elif", "fi", "case", "esac", "for", "while",
+                  "until", "do", "done", "in", "function", "select"}
+
+
 def quote_arg(a: str) -> str:
     """Quote a CLI argument for the generated bash script."""
     if a == "":
         return "''"
-    if " " in a or "'" in a:
+    if " " in a or "'" in a or a in SHELL_KEYWORDS:
         return f"'{shell_escape(a)}'"
     return a
 

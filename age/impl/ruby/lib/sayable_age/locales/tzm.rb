@@ -15,7 +15,7 @@ module SayableAge
     TZM = AgeLocale.new(
       code: 'tzm',
       plural: lambda { |n|
-        if [0, 1].include?(n) || (n >= 11 && n <= 99) then :one
+        if [0, 1].include?(n) || (n.between?(11, 99)) then :one
         else :other
         end
       },

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "pakati pausiku",
         noon: "usana",
         patterns: {
-          0 => "ola {h}",
-          5 => "ola {h} ndi mphindi zisanu",
+           0 => "ola {h}",
+           5 => "ola {h} ndi mphindi zisanu",
           10 => "ola {h} ndi mphindi khumi",
           15 => "ola {h} ndi mphindi khumi ndi zisanu",
           20 => "ola {h} ndi mphindi makumi awiri",

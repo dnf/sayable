@@ -17,8 +17,8 @@ module SayableTime
         midnight: "minwi",
         noon: "midi",
         patterns: {
-          0 => "{h}",
-          5 => "{h} senk",
+           0 => "{h}",
+           5 => "{h} senk",
           10 => "{h} dis",
           15 => "{h} e ka",
           20 => "{h} ven",

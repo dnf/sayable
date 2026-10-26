@@ -17,8 +17,8 @@ module SayableTime
         midnight: "nik' aq'b'il",
         noon: "nik' q'ij",
         patterns: {
-          0 => "{h} or",
-          5 => "{h} or tuk' jwe' minut",
+           0 => "{h} or",
+           5 => "{h} or tuk' jwe' minut",
           10 => "{h} or tuk' laj minut",
           15 => "{h} or tuk' o'laj minut",
           20 => "{h} or tuk' winqan minut",

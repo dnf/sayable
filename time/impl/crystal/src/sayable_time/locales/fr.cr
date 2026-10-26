@@ -17,8 +17,8 @@ module SayableTime
         midnight: "minuit",
         noon: "midi",
         patterns: {
-          0 => "{h}",
-          5 => "{h} cinq",
+           0 => "{h}",
+           5 => "{h} cinq",
           10 => "{h} dix",
           15 => "{h} et quart",
           20 => "{h} vingt",

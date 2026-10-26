@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ezinzulwini zobusuku",
         noon: "emini",
         patterns: {
-          0 => "intsimbi {h}",
-          5 => "imizuzu emihlanu emva kwentsimbi {h}",
+           0 => "intsimbi {h}",
+           5 => "imizuzu emihlanu emva kwentsimbi {h}",
           10 => "imizuzu elishumi emva kwentsimbi {h}",
           15 => "ikota emva kwentsimbi {h}",
           20 => "imizuzu engamashumi amabini emva kwentsimbi {h}",

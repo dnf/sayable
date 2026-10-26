@@ -17,8 +17,8 @@ module SayableTime
         midnight: "cin beri",
         noon: "zaari gaaham",
         patterns: {
-          0 => "guuru {h}",
-          5 => "guuru {h} nda miniti gu",
+           0 => "guuru {h}",
+           5 => "guuru {h} nda miniti gu",
           10 => "guuru {h} nda miniti iway",
           15 => "guuru {h} nda miniti iway cindi gu",
           20 => "guuru {h} nda miniti waranka",

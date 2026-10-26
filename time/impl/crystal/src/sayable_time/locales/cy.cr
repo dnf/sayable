@@ -17,8 +17,8 @@ module SayableTime
         midnight: "hanner nos",
         noon: "hanner dydd",
         patterns: {
-          0 => "{h} o'r gloch",
-          5 => "pum munud wedi {h}",
+           0 => "{h} o'r gloch",
+           5 => "pum munud wedi {h}",
           10 => "deg munud wedi {h}",
           15 => "chwarter wedi {h}",
           20 => "ugain munud wedi {h}",

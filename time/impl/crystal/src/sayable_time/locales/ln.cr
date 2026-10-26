@@ -17,8 +17,8 @@ module SayableTime
         midnight: "midí ya butú",
         noon: "midí",
         patterns: {
-          0 => "ngonga ya {h}",
-          5 => "ngonga ya {h} na miniti mítáno",
+           0 => "ngonga ya {h}",
+           5 => "ngonga ya {h} na miniti mítáno",
           10 => "ngonga ya {h} na miniti zómi",
           15 => "ngonga ya {h} na miniti zómi na mítáno",
           20 => "ngonga ya {h} na miniti ntúkú míbalé",

@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     MAM = DurationLocale.new(
       code: 'mam',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} segundo',
         'minute' => '{n} minuto',

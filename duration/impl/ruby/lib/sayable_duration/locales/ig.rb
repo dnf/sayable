@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     IG = DurationLocale.new(
       code: 'ig',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sekọnd {n}',
         'minute' => 'nkeji {n}',

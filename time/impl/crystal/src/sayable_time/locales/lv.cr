@@ -17,8 +17,8 @@ module SayableTime
         midnight: "pusnakts",
         noon: "pusdiena",
         patterns: {
-          0 => "{h}",
-          5 => "pieci pēc {h}",
+           0 => "{h}",
+           5 => "pieci pēc {h}",
           10 => "desmit pēc {h}",
           15 => "piecpadsmit pēc {h}",
           20 => "divdesmit pēc {h}",

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "gauerdia",
         noon: "eguerdia",
         patterns: {
-          0 => "{h}",
-          5 => "{h} eta bost",
+           0 => "{h}",
+           5 => "{h} eta bost",
           10 => "{h} eta hamar",
           15 => "{h} eta laurden",
           20 => "{h} eta hogei",

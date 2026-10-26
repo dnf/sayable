@@ -17,8 +17,8 @@ module SayableTime
         midnight: "zã titina",
         noon: "ŋdɔ",
         patterns: {
-          0 => "ga {h}",
-          5 => "ga {h} kple aɖabaƒoƒo atɔ̃",
+           0 => "ga {h}",
+           5 => "ga {h} kple aɖabaƒoƒo atɔ̃",
           10 => "ga {h} kple aɖabaƒoƒo ewo",
           15 => "ga {h} kple aɖabaƒoƒo wuiatɔ̃",
           20 => "ga {h} kple aɖabaƒoƒo blaeve",

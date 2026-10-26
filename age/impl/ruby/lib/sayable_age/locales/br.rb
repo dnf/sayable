@@ -19,8 +19,8 @@ module SayableAge
         mod100 = n % 100
         if mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91 then :one
         elsif mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92 then :two
-        elsif [3, 4, 9].include?(mod10) && !(mod100 >= 10 && mod100 <= 19) && !(mod100 >= 70 && mod100 <= 79) && !(mod100 >= 90 && mod100 <= 99) then :few
-        elsif n != 0 && n % 1000000 == 0 then :many
+        elsif [3, 4, 9].include?(mod10) && !(mod100.between?(10, 19)) && !(mod100.between?(70, 79)) && !(mod100.between?(90, 99)) then :few
+        elsif n != 0 && n % 1_000_000 == 0 then :many
         else :other
         end
       },

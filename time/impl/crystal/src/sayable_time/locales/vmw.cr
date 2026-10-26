@@ -17,8 +17,8 @@ module SayableTime
         midnight: "usiku wopakhala",
         noon: "muttana",
         patterns: {
-          0 => "hora {h}",
-          5 => "hora {h} na thanu",
+           0 => "hora {h}",
+           5 => "hora {h} na thanu",
           10 => "hora {h} na khumi",
           15 => "hora {h} na khumi na thanu",
           20 => "hora {h} na makhumi mapili",

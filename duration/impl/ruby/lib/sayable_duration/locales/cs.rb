@@ -16,7 +16,7 @@ module SayableDuration
       code: 'cs',
       plural: lambda { |n|
         if n == 1 then :one
-        elsif n >= 2 && n <= 4 then :few
+        elsif n.between?(2, 4) then :few
         else :other
         end
       },

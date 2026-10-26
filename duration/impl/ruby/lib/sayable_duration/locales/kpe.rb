@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     KPE = DurationLocale.new(
       code: 'kpe',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sɛkɔŋ {n}',
         'minute' => 'miniti {n}',

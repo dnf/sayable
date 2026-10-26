@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
 
-from sayable_date.locale import CompactnessOverride, DateLocale
 from sayable_date.locales.en import EN
+
+if TYPE_CHECKING:
+    from sayable_date.locale import CompactnessOverride, DateLocale
 
 __version__ = "0.5.0"
 

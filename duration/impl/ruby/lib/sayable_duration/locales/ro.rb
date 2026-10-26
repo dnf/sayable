@@ -16,7 +16,7 @@ module SayableDuration
       code: 'ro',
       plural: lambda { |n|
         if n == 1 then :one
-        elsif n == 0 || (n % 100 >= 1 && n % 100 <= 19) then :few
+        elsif n == 0 || ((n % 100).between?(1, 19)) then :few
         else :other
         end
       },

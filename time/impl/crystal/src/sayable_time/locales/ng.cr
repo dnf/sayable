@@ -17,8 +17,8 @@ module SayableTime
         midnight: "onguloshi pakati",
         noon: "omutenya",
         patterns: {
-          0 => "otundi {h}",
-          5 => "otundi {h} noominute ntano",
+           0 => "otundi {h}",
+           5 => "otundi {h} noominute ntano",
           10 => "otundi {h} noominute omulongo",
           15 => "otundi {h} noominute omulongo nantano",
           20 => "otundi {h} noominute omilongo mbali",

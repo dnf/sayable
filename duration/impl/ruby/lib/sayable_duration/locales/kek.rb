@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     KEK = DurationLocale.new(
       code: 'kek',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} segundo',
         'minute' => '{n} minuto',

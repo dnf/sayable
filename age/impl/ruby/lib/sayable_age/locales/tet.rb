@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     TET = AgeLocale.new(
       code: 'tet',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'loron {n}',
         'week' => 'semana {n}',

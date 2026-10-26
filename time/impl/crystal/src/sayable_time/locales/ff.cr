@@ -17,8 +17,8 @@ module SayableTime
         midnight: "jamma hejjere",
         noon: "zuhr",
         patterns: {
-          0 => "waktu {h}",
-          5 => "waktu {h} e hojomaaje joy",
+           0 => "waktu {h}",
+           5 => "waktu {h} e hojomaaje joy",
           10 => "waktu {h} e hojomaaje sappo",
           15 => "waktu {h} e hojomaaje sappo e joy",
           20 => "waktu {h} e hojomaaje noogas",

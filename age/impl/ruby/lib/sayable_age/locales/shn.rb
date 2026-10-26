@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     SHN = AgeLocale.new(
       code: 'shn',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} ဝၼ်း',
         'week' => '{n} ဝူင်ႈ',

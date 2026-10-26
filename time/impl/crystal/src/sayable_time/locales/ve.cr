@@ -17,8 +17,8 @@ module SayableTime
         midnight: "vhukati ha vhusiku",
         noon: "vhukati ha masiari",
         patterns: {
-          0 => "awara {h}",
-          5 => "awara {h} na ṱhanu",
+           0 => "awara {h}",
+           5 => "awara {h} na ṱhanu",
           10 => "awara {h} na fumi",
           15 => "awara {h} na kotara",
           20 => "awara {h} na mahumi mavhili",

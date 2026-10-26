@@ -17,8 +17,8 @@ module SayableTime
         midnight: "miezul nopții",
         noon: "amiază",
         patterns: {
-          0 => "ora {h}",
-          5 => "{h} și cinci",
+           0 => "ora {h}",
+           5 => "{h} și cinci",
           10 => "{h} și zece",
           15 => "{h} și un sfert",
           20 => "{h} și douăzeci",

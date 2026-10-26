@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     PIS = DurationLocale.new(
       code: 'pis',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} sekon',
         'minute' => '{n} minit',

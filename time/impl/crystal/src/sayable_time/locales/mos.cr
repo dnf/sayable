@@ -17,8 +17,8 @@ module SayableTime
         midnight: "yʋng-vɩɩse",
         noon: "wĩntoog zabre",
         patterns: {
-          0 => "{h}",
-          5 => "{h} la minit a nu",
+           0 => "{h}",
+           5 => "{h} la minit a nu",
           10 => "{h} la minit piiga",
           15 => "{h} la minit piig la a nu",
           20 => "{h} la minit pisi",

@@ -7,6 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
+# shellcheck shell=bash disable=SC2034
 # Source: locales/ga.json
 
 _sayabletime_locale_ga() {

@@ -13,6 +13,12 @@ def _quote(s: str) -> str:
     return f'"{escaped}"'
 
 
+def _hash_entries(indent: str, entries: list[tuple[str, str]]) -> list[str]:
+    """One line per entry, `=>` aligned the way `crystal tool format` aligns it."""
+    width = max(len(_quote(key)) for key, _ in entries)
+    return [f"{indent}{_quote(key).ljust(width)} => {value}," for key, value in entries]
+
+
 def _unit_forms(unit: object) -> str:
     if isinstance(unit, str):
         return f"UnitForms.new({_quote(unit)})"
@@ -49,9 +55,8 @@ def emit_locale(data: dict) -> str:
 
     # Units
     lines.append("      units: {")
-    for unit_name in ("day", "week", "month", "year"):
-        val = _unit_forms(data["units"][unit_name])
-        lines.append(f"        {_quote(unit_name)} => {val},")
+    lines += _hash_entries("        ", [(unit, _unit_forms(data["units"][unit]))
+                                      for unit in ("day", "week", "month", "year")])
     lines.append("      },")
 
     # Simple fields
@@ -61,9 +66,8 @@ def emit_locale(data: dict) -> str:
 
     # Stages
     lines.append("      stages: {")
-    for stage in ("newborn", "infant", "toddler", "child", "teenager", "adult"):
-        val = _stage_label(data["stages"][stage])
-        lines.append(f"        {_quote(stage)} => {val},")
+    lines += _hash_entries("        ", [(stage, _stage_label(data["stages"][stage]))
+                                      for stage in ("newborn", "infant", "toddler", "child", "teenager", "adult")])
     lines.append("      },")
 
     # Short/compact
@@ -73,10 +77,9 @@ def emit_locale(data: dict) -> str:
             lines.append(f"      {mode}: CompactnessOverride.new(")
             if "units" in ovr:
                 lines.append("        units: {")
-                for unit_name in ("day", "week", "month", "year"):
-                    if unit_name in ovr["units"]:
-                        val = _unit_forms(ovr["units"][unit_name])
-                        lines.append(f"          {_quote(unit_name)} => {val},")
+                lines += _hash_entries("          ", [(unit, _unit_forms(ovr["units"][unit]))
+                                                    for unit in ("day", "week", "month", "year")
+                                                    if unit in ovr["units"]])
                 lines.append("        },")
             if "delimiter" in ovr:
                 lines.append(f"        delimiter: {_quote(ovr['delimiter'])},")
@@ -106,10 +109,12 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("  module Locales")
     lines.append("    def self.get(code : String) : AgeLocale?")
     lines.append("      case code")
+    code_width = max(len(_quote(loc["code"])) for loc in sorted_locs)
     for loc in sorted_locs:
         code = loc["code"]
-        lines.append(f"      when {_quote(code)} then {code.upper()}")
-    lines.append("      else nil")
+        lines.append(f"      when {_quote(code).ljust(code_width)} then {code.upper()}")
+    # `crystal tool format` aligns every branch's result, `else` included.
+    lines.append(f"      {'else'.ljust(len('when ') + code_width + len(' then '))}nil")
     lines.append("      end")
     lines.append("    end")
     lines.append("  end")
