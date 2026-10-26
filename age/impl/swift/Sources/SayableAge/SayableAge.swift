@@ -128,14 +128,14 @@ public struct SayableAgeFormatter: Sendable {
         return AgeComponents(months: months, diffDays: diffDays)
     }
 
+    /// Exactly YYYY-MM-DD naming a real calendar day.
     private static func parseDateParts(_ s: String) -> (Int, Int, Int)? {
         let chars = Array(s.utf8)
-        guard chars.count >= 10, chars[4] == 0x2D, chars[7] == 0x2D else { return nil }
+        guard chars.count == 10, chars[4] == 0x2D, chars[7] == 0x2D else { return nil }
         let y = safeAtoi(chars, 0, 4)
         let m = safeAtoi(chars, 5, 7)
         let d = safeAtoi(chars, 8, 10)
-        guard y >= 0, m >= 0, d >= 0 else { return nil }
-        guard !(y == 0 && m == 0 && d == 0) else { return nil }
+        guard y >= 0, (1...12).contains(m), d >= 1, d <= daysInMonth(year: y, month: m) else { return nil }
         return (y, m, d)
     }
 

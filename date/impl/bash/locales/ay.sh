@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ay.json
 
-_locale_ay() {
+_sayabledate_locale_ay() {
     _months=('Chinuqa' 'Anata' 'Achuqa' 'Qasiwi' 'Llamayu' 'Marat'\''aqa' 'Willkakuti' 'Llumpaqa' 'Sata' 'Taypisata' 'Lapaqa' 'Jalluqallta')
     _weekdays=('Samaya' 'Maytita' 'Paytita' 'Iritita' 'Yunkita' 'Chipanata' 'Takirita')
     _day_format='{n}'

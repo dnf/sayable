@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/su.json
 
-_plural_su() {
+_sayableduration_plural_su() {
     echo "other"
 }
 
-_locale_su() {
+_sayableduration_locale_su() {
     _unit_second='{n} detik'
     _unit_minute='{n} menit'
     _unit_hour='{n} jam'
@@ -46,5 +46,5 @@ _locale_su() {
     _compact_delimiter=''
     _compact_ago='{0} kapengker'
     _compact_in_future='dina {0}'
-    _plural_func=_plural_su
+    _plural_func=_sayableduration_plural_su
 }

@@ -1,5 +1,7 @@
 #include <algorithm>
+#include <cerrno>
 #include <chrono>
+#include <cstdlib>
 #include <ctime>
 #include <iostream>
 #include <optional>
@@ -47,21 +49,23 @@ static const char* HELP_TEXT =
 
 // All locale codes sorted alphabetically.
 static const char* ALL_LOCALE_CODES[] = {
-    "af", "ak", "am", "ar", "az", "bci", "be", "bem", "bg", "bm",
-    "bn", "br", "bs", "ca", "ceb", "cs", "cy", "da", "de", "din",
-    "dje", "dyu", "ee", "el", "en", "es", "et", "eu", "fa", "fan",
-    "ff", "fi", "fil", "fon", "fr", "ga", "gd", "gl", "gn", "gu",
-    "gv", "ha", "he", "hi", "hr", "ht", "hu", "hy", "id", "ig",
-    "is", "it", "ja", "jv", "ka", "kbp", "kk", "km", "kn", "ko",
-    "kpe", "ktu", "ku", "kw", "ky", "lg", "ln", "lo", "lt", "lv",
-    "men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk", "mos", "mr",
-    "ms", "mt", "my", "nb", "nd", "ne", "ng", "nl", "nso", "nus",
-    "ny", "om", "or", "pa", "pl", "pov", "ps", "pt", "qu", "ro",
-    "ru", "rw", "sar", "sd", "sg", "shi", "si", "sk", "sl", "sn",
-    "snk", "so", "sq", "sr", "ss", "st", "su", "suk", "sv", "sw",
-    "ta", "te", "tem", "tg", "th", "ti", "tig", "tk", "tn", "tr",
-    "ts", "tzm", "uk", "umb", "ur", "uz", "vi", "vmw", "wo", "xh",
-    "yo", "yue", "zdj", "zh", "zu",
+    "af", "ak", "am", "ar", "ay", "az", "bci", "be", "bem", "bg",
+    "bi", "bm", "bn", "br", "bs", "ca", "cak", "ceb", "cs", "cy",
+    "da", "de", "din", "dje", "dv", "dyu", "dz", "ee", "el", "en",
+    "es", "et", "eu", "fa", "fan", "ff", "fi", "fil", "fj", "fon",
+    "fr", "ga", "gd", "gl", "gn", "gu", "gv", "ha", "he", "hi",
+    "hmn", "hr", "ht", "hu", "hy", "id", "ig", "is", "it", "ja",
+    "jv", "ka", "kbp", "kek", "ki", "kk", "kl", "km", "kn", "ko",
+    "kpe", "kri", "ktu", "ku", "kw", "ky", "lb", "lg", "ln", "lo",
+    "lt", "luo", "lv", "mam", "men", "mfe", "mg", "mi", "mk", "ml",
+    "mn", "mnk", "mos", "mr", "ms", "mt", "my", "nb", "nd", "ne",
+    "ng", "nl", "nr", "nso", "nus", "ny", "om", "or", "pa", "pis",
+    "pl", "pov", "ps", "pt", "qu", "quc", "ro", "ru", "rw", "sar",
+    "sd", "sg", "shi", "shn", "si", "sk", "sl", "sn", "snk", "so",
+    "sq", "sr", "ss", "st", "su", "suk", "sv", "sw", "ta", "te",
+    "tem", "tet", "tg", "th", "ti", "tig", "tk", "tn", "tpi", "tr",
+    "ts", "tum", "tzm", "uk", "umb", "ur", "uz", "ve", "vi", "vmw",
+    "wo", "xh", "yao", "yo", "yue", "zdj", "zh", "zu",
 };
 static constexpr int NUM_LOCALES = sizeof(ALL_LOCALE_CODES) / sizeof(ALL_LOCALE_CODES[0]);
 
@@ -103,17 +107,24 @@ static std::string get_today() {
 
 // ---------- integer detection ----------
 
+// Seconds mode, as the reference CLI decides it: digits after any leading minus signs.
 static bool is_integer(const std::string& s) {
-    if (s.empty()) return false;
-    size_t start = 0;
-    if (s[0] == '-') {
-        if (s.size() == 1) return false;
-        start = 1;
-    }
+    const size_t start = s.find_first_not_of('-');
+    if (start == std::string::npos) return false;
     for (size_t i = start; i < s.size(); ++i) {
         if (s[i] < '0' || s[i] > '9') return false;
     }
     return true;
+}
+
+// Seconds as a 64-bit integer; nullopt when malformed ("--5") or out of range,
+// which is far beyond the 500-year ceiling either way.
+static std::optional<long long> parse_seconds(const std::string& s) {
+    char* end = nullptr;
+    errno = 0;
+    const long long seconds = std::strtoll(s.c_str(), &end, 10);
+    if (errno != 0 || *end != '\0') return std::nullopt;
+    return seconds;
 }
 
 // ---------- parsed options ----------
@@ -350,8 +361,9 @@ static int cmd_duration(const std::vector<std::string>& positionals, const Optio
         result = formatter.format_duration(-1);
     } else if (is_integer(value_str)) {
         // Seconds mode
-        int seconds = std::stoi(value_str);
-        result = formatter.format_duration(seconds);
+        const auto seconds = parse_seconds(value_str);
+        if (!seconds) return 1;
+        result = formatter.format_duration(*seconds);
     } else {
         // Timestamp mode: need an end argument
         if (positionals.size() < 2) {

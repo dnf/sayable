@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/lt.json
 
-_locale_lt() {
+_sayabletime_locale_lt() {
     _clock_hours=('dvylika' 'viena' 'dvi' 'trys' 'keturios' 'penkios' 'šešios' 'septynios' 'aštuonios' 'devynios' 'dešimt' 'vienuolika')
     _clock_midnight='vidurnaktis'
     _clock_noon='vidurdienis'

@@ -75,26 +75,81 @@ class SayableTime {
     return fmt.replace("{h}", h12.toString).replace("{mm}", mm).replace("{ampm}", ampmStr)
   }
 
+  // A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+  // suffix, which is ignored), alone or after the T of an ISO datetime, as
+  // [hour, minute]; else null.
   static parseTime_(inputStr) {
-    if (inputStr == null || inputStr == "") return null
-    var t = inputStr
-    if (t.contains("T")) {
-      t = t.split("T")[1]
+    if (!(inputStr is String) || inputStr == "") return null
+    var bytes = inputStr.bytes
+    var clockStart = 0
+    var t = inputStr.indexOf("T")
+    if (t >= 0) {
+      if (t != 10 || !isRealDate_(bytes)) return null
+      clockStart = 11
     }
-    if (t.contains("+")) {
-      t = t.split("+")[0]
+    return parseClock_(bytes, clockStart)
+  }
+
+  static isDigitAt_(bytes, i) { i < bytes.count && bytes[i] >= 48 && bytes[i] <= 57 }
+
+  static digitsValue_(bytes, from, to) {
+    var value = 0
+    for (i in from...to) value = value * 10 + bytes[i] - 48
+    return value
+  }
+
+  static isLeapYear_(y) { (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 }
+
+  static daysInMonth_(y, m) {
+    if (m == 2) return isLeapYear_(y) ? 29 : 28
+    return (m == 4 || m == 6 || m == 9 || m == 11) ? 30 : 31
+  }
+
+  // The first ten bytes are YYYY-MM-DD naming a real calendar day.
+  static isRealDate_(bytes) {
+    if (bytes[4] != 45 || bytes[7] != 45) return false
+    for (i in [0, 1, 2, 3, 5, 6, 8, 9]) {
+      if (!isDigitAt_(bytes, i)) return false
     }
-    if (t.contains("Z")) {
-      t = t.split("Z")[0]
+    var year = digitsValue_(bytes, 0, 4)
+    var month = digitsValue_(bytes, 5, 7)
+    var day = digitsValue_(bytes, 8, 10)
+    return month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth_(year, month)
+  }
+
+  // A zone suffix Z or +HH:MM / -HH:MM running exactly to the end.
+  static isZoneSuffix_(bytes, i) {
+    var n = bytes.count
+    if (i == n) return true
+    if (bytes[i] == 90) return i + 1 == n
+    if (bytes[i] != 43 && bytes[i] != 45) return false
+    return i + 6 == n && isDigitAt_(bytes, i + 1) && isDigitAt_(bytes, i + 2) &&
+      bytes[i + 3] == 58 && isDigitAt_(bytes, i + 4) && isDigitAt_(bytes, i + 5)
+  }
+
+  static parseClock_(bytes, start) {
+    var i = start
+    if (!isDigitAt_(bytes, i)) return null
+    i = i + 1
+    if (isDigitAt_(bytes, i)) i = i + 1
+    var hour = digitsValue_(bytes, start, i)
+    if (i >= bytes.count || bytes[i] != 58) return null
+    if (!isDigitAt_(bytes, i + 1) || !isDigitAt_(bytes, i + 2)) return null
+    var minute = digitsValue_(bytes, i + 1, i + 3)
+    i = i + 3
+    var second = 0
+    if (i < bytes.count && bytes[i] == 58) {
+      if (!isDigitAt_(bytes, i + 1) || !isDigitAt_(bytes, i + 2)) return null
+      second = digitsValue_(bytes, i + 1, i + 3)
+      i = i + 3
+      if (i < bytes.count && bytes[i] == 46) {
+        i = i + 1
+        if (!isDigitAt_(bytes, i)) return null
+        while (isDigitAt_(bytes, i)) i = i + 1
+      }
     }
-    var parts = t.split(":")
-    if (parts.count < 2) return null
-    var hour = Num.fromString(parts[0])
-    var minStr = parts[1]
-    if (minStr.contains(".")) minStr = minStr.split(".")[0]
-    var minute = Num.fromString(minStr)
-    if (hour == null || minute == null) return null
-    if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return null
+    if (!isZoneSuffix_(bytes, i)) return null
+    if (hour > 23 || minute > 59 || second > 59) return null
     return [hour, minute]
   }
 

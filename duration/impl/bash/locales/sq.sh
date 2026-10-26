@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/sq.json
 
-_plural_sq() {
+_sayableduration_plural_sq() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sq() {
+_sayableduration_locale_sq() {
     _unit_second_one='{n} sekondë'
     _unit_second_other='{n} sekonda'
     _unit_minute_one='{n} minutë'
@@ -57,5 +57,5 @@ _locale_sq() {
     _compact_delimiter=''
     _compact_ago='{0} më parë'
     _compact_in_future='për {0}'
-    _plural_func=_plural_sq
+    _plural_func=_sayableduration_plural_sq
 }

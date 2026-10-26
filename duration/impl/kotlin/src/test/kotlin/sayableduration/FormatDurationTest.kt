@@ -434,4 +434,93 @@ class FormatDurationTest {
         val sd = SayableDuration(Locales.EN, Compactness.COMPACT)
         assertEquals("1m30s", sd.formatDurationSeconds(90))
     }
+
+    // ================================================================
+    // Short compactness — relative time
+    // ================================================================
+
+    // 18.1
+    @Test
+    fun `days and hours both kept`() {
+        val f = SayableDuration(Locales.MEN, Compactness.SHORT)
+        assertEquals("l\u0254h\u0254nga 2, awa 14 taa gb\u0254y\u0254", f.formatSince("2025-01-20T01:32:11", "2025-01-22T15:39:16"))
+    }
+
+    // ================================================================
+    // Range (500-year ceiling)
+    // ================================================================
+
+    // 19.1
+    @Test
+    fun `500 julian years 6000 months the ceiling`() {
+        val f = SayableDuration(Locales.EN)
+        assertEquals("500 years", f.formatDurationSeconds(15778800000))
+    }
+
+    // 19.2
+    @Test
+    fun `over 6000 months`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatDurationSeconds(15800000000))
+    }
+
+    // 19.3
+    @Test
+    fun `well beyond the ceiling and 32 bit`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatDurationSeconds(99999999999))
+    }
+
+    // 19.4
+    @Test
+    fun `525 years ago`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatSince("1500-01-01T00:00:00", "2025-01-01T00:00:00"))
+    }
+
+    // 19.5
+    @Test
+    fun `575 years from now`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatUntil("2600-01-01T00:00:00", "2025-01-01T00:00:00"))
+    }
+
+    // ================================================================
+    // Timestamp validation
+    // ================================================================
+
+    // 20.1
+    @Test
+    fun `seconds are optional`() {
+        val f = SayableDuration(Locales.EN)
+        assertEquals("1\u00BD hours", f.formatDurationIso("2025-01-15T10:00", "2025-01-15T11:30:00"))
+    }
+
+    // 20.2
+    @Test
+    fun `minutes are required`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatDurationIso("2025-01-15T10", "2025-01-15T11:30:00"))
+    }
+
+    // 20.3
+    @Test
+    fun `unpadded date`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatDurationIso("2025-1-5T10:00:00", "2025-01-15T11:30:00"))
+    }
+
+    // 20.4
+    @Test
+    fun `impossible date`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatDurationIso("2025-02-30T10:00:00", "2025-03-15T11:30:00"))
+    }
+
+    // 20.5
+    @Test
+    fun `hour out of range`() {
+        val f = SayableDuration(Locales.EN)
+        assertNull(f.formatSince("2025-01-15T10:00:00", "2025-01-15T25:00:00"))
+    }
 }

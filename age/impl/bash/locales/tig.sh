@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/tig.json
 
-_plural_tig() {
+_sayableage_plural_tig() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tig() {
+_sayableage_locale_tig() {
     _unit_day_one='yom {n}'
     _unit_day_other='ayam {n}'
     _unit_week_one='semun {n}'
@@ -47,5 +47,5 @@ _locale_tig() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_tig
+    _plural_func=_sayableage_plural_tig
 }

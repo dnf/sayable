@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/ceb.json "
 
-"Locale: ceb"
+"Locale: ceb"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 ceb

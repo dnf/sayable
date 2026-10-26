@@ -205,3 +205,75 @@ test "Finnish midnight dot" {
     var buf: [256]u8 = undefined;
     try expectStr("0.00", fmtWith(&buf, &st.locales.fi, .short_mode, "00:00"));
 }
+
+// ================================================================
+// Section 9: Minutes in short and compact modes
+// ================================================================
+// 9.1
+test "9.1 digital modes keep the exact minute" {
+    var buf: [256]u8 = undefined;
+    try expectStr("6:01 PM", st.formatTime(&buf, &st.locales.en, .short_mode, "18:01"));
+}
+
+// 9.2
+test "9.2 digital modes keep the exact minute" {
+    var buf: [256]u8 = undefined;
+    try expectStr("7:05p", st.formatTime(&buf, &st.locales.en, .compact, "19:05"));
+}
+
+// ================================================================
+// Section 10: Input validation
+// ================================================================
+// 10.1
+test "10.1 one-digit hour" {
+    var buf: [256]u8 = undefined;
+    try expectStr("half past nine", st.formatTime(&buf, &st.locales.en, .normal, "9:30"));
+}
+
+// 10.2
+test "10.2 two-digit hour" {
+    var buf: [256]u8 = undefined;
+    try expectStr("half past nine", st.formatTime(&buf, &st.locales.en, .normal, "09:30"));
+}
+
+// 10.3
+test "10.3 leading whitespace" {
+    var buf: [256]u8 = undefined;
+    try expectNull(st.formatTime(&buf, &st.locales.en, .normal, " 9:30"));
+}
+
+// 10.4
+test "10.4 trailing whitespace" {
+    var buf: [256]u8 = undefined;
+    try expectNull(st.formatTime(&buf, &st.locales.en, .normal, "9:30 "));
+}
+
+// 10.5
+test "10.5 minutes need two digits" {
+    var buf: [256]u8 = undefined;
+    try expectNull(st.formatTime(&buf, &st.locales.en, .normal, "9:5"));
+}
+
+// 10.6
+test "10.6 hour out of range" {
+    var buf: [256]u8 = undefined;
+    try expectNull(st.formatTime(&buf, &st.locales.en, .normal, "24:00"));
+}
+
+// 10.7
+test "10.7 seconds are allowed and ignored" {
+    var buf: [256]u8 = undefined;
+    try expectStr("a quarter past two", st.formatTime(&buf, &st.locales.en, .normal, "14:15:30"));
+}
+
+// 10.8
+test "10.8 ISO datetime with zone suffix (ignored)" {
+    var buf: [256]u8 = undefined;
+    try expectStr("a quarter past two", st.formatTime(&buf, &st.locales.en, .normal, "2025-01-15T14:15:00Z"));
+}
+
+// 10.9
+test "10.9 ISO datetime with an impossible date" {
+    var buf: [256]u8 = undefined;
+    try expectNull(st.formatTime(&buf, &st.locales.en, .normal, "2025-02-30T14:15:00"));
+}

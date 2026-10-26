@@ -190,8 +190,10 @@ let private cmdDuration (positionals: string list) (opts: Options) : Outcome =
             match value with
             | None -> printResult None
             | Some v when isInteger v ->
-                let seconds = Int32.Parse(v)
-                printResult (formatter.FormatDurationSeconds(seconds))
+                // A digit string too long for an int64 is far beyond the 500-year ceiling
+                match Int64.TryParse(v, Globalization.NumberStyles.AllowLeadingSign, Globalization.CultureInfo.InvariantCulture) with
+                | true, seconds -> printResult (formatter.FormatDurationSeconds(seconds))
+                | false, _ -> printResult None
             | Some v ->
                 match rest with
                 | [] -> printError "duration with timestamps requires start and end arguments"

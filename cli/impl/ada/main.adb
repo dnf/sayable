@@ -29,7 +29,7 @@ procedure Main is
 
    Version : constant String := "0.5.0";
 
-   --  Locale codes sorted alphabetically (110 locales)
+   --  Locale codes sorted alphabetically (168 locales)
    type Locale_Code_Array is array (Positive range <>) of
      Unbounded_String;
    All_Locales : constant Locale_Code_Array :=
@@ -37,6 +37,7 @@ procedure Main is
       To_Unbounded_String ("ak"),
       To_Unbounded_String ("am"),
       To_Unbounded_String ("ar"),
+      To_Unbounded_String ("ay"),
       To_Unbounded_String ("az"),
       To_Unbounded_String ("bci"),
       To_Unbounded_String ("be"),
@@ -48,6 +49,7 @@ procedure Main is
       To_Unbounded_String ("br"),
       To_Unbounded_String ("bs"),
       To_Unbounded_String ("ca"),
+      To_Unbounded_String ("cak"),
       To_Unbounded_String ("ceb"),
       To_Unbounded_String ("cs"),
       To_Unbounded_String ("cy"),
@@ -55,7 +57,9 @@ procedure Main is
       To_Unbounded_String ("de"),
       To_Unbounded_String ("din"),
       To_Unbounded_String ("dje"),
+      To_Unbounded_String ("dv"),
       To_Unbounded_String ("dyu"),
+      To_Unbounded_String ("dz"),
       To_Unbounded_String ("ee"),
       To_Unbounded_String ("el"),
       To_Unbounded_String ("en"),
@@ -79,6 +83,7 @@ procedure Main is
       To_Unbounded_String ("ha"),
       To_Unbounded_String ("he"),
       To_Unbounded_String ("hi"),
+      To_Unbounded_String ("hmn"),
       To_Unbounded_String ("hr"),
       To_Unbounded_String ("ht"),
       To_Unbounded_String ("hu"),
@@ -91,20 +96,27 @@ procedure Main is
       To_Unbounded_String ("jv"),
       To_Unbounded_String ("ka"),
       To_Unbounded_String ("kbp"),
+      To_Unbounded_String ("kek"),
+      To_Unbounded_String ("ki"),
       To_Unbounded_String ("kk"),
+      To_Unbounded_String ("kl"),
       To_Unbounded_String ("km"),
       To_Unbounded_String ("kn"),
       To_Unbounded_String ("ko"),
       To_Unbounded_String ("kpe"),
+      To_Unbounded_String ("kri"),
       To_Unbounded_String ("ktu"),
       To_Unbounded_String ("ku"),
       To_Unbounded_String ("kw"),
       To_Unbounded_String ("ky"),
+      To_Unbounded_String ("lb"),
       To_Unbounded_String ("lg"),
       To_Unbounded_String ("ln"),
       To_Unbounded_String ("lo"),
       To_Unbounded_String ("lt"),
+      To_Unbounded_String ("luo"),
       To_Unbounded_String ("lv"),
+      To_Unbounded_String ("mam"),
       To_Unbounded_String ("men"),
       To_Unbounded_String ("mfe"),
       To_Unbounded_String ("mg"),
@@ -123,6 +135,7 @@ procedure Main is
       To_Unbounded_String ("ne"),
       To_Unbounded_String ("ng"),
       To_Unbounded_String ("nl"),
+      To_Unbounded_String ("nr"),
       To_Unbounded_String ("nso"),
       To_Unbounded_String ("nus"),
       To_Unbounded_String ("ny"),
@@ -135,6 +148,7 @@ procedure Main is
       To_Unbounded_String ("ps"),
       To_Unbounded_String ("pt"),
       To_Unbounded_String ("qu"),
+      To_Unbounded_String ("quc"),
       To_Unbounded_String ("ro"),
       To_Unbounded_String ("ru"),
       To_Unbounded_String ("rw"),
@@ -142,6 +156,7 @@ procedure Main is
       To_Unbounded_String ("sd"),
       To_Unbounded_String ("sg"),
       To_Unbounded_String ("shi"),
+      To_Unbounded_String ("shn"),
       To_Unbounded_String ("si"),
       To_Unbounded_String ("sk"),
       To_Unbounded_String ("sl"),
@@ -159,6 +174,7 @@ procedure Main is
       To_Unbounded_String ("ta"),
       To_Unbounded_String ("te"),
       To_Unbounded_String ("tem"),
+      To_Unbounded_String ("tet"),
       To_Unbounded_String ("tg"),
       To_Unbounded_String ("th"),
       To_Unbounded_String ("ti"),
@@ -168,15 +184,18 @@ procedure Main is
       To_Unbounded_String ("tpi"),
       To_Unbounded_String ("tr"),
       To_Unbounded_String ("ts"),
+      To_Unbounded_String ("tum"),
       To_Unbounded_String ("tzm"),
       To_Unbounded_String ("uk"),
       To_Unbounded_String ("umb"),
       To_Unbounded_String ("ur"),
       To_Unbounded_String ("uz"),
+      To_Unbounded_String ("ve"),
       To_Unbounded_String ("vi"),
       To_Unbounded_String ("vmw"),
       To_Unbounded_String ("wo"),
       To_Unbounded_String ("xh"),
+      To_Unbounded_String ("yao"),
       To_Unbounded_String ("yo"),
       To_Unbounded_String ("yue"),
       To_Unbounded_String ("zdj"),
@@ -313,275 +332,29 @@ procedure Main is
       return Is_All_Digits (S (S'First + 1 .. S'Last));
    end Is_Negative_Integer;
 
-   function Parse_Int (S : String) return Integer is
-      Neg : Boolean := False;
-      Val : Integer := 0;
-      Start : Integer;
+   --  Longer digit strings are far beyond the 500-year ceiling, so
+   --  they saturate instead of overflowing.
+   Max_Exact_Digits : constant := 18;
+
+   function Parse_Seconds (S : String) return Long_Long_Integer is
+      Neg   : constant Boolean := S (S'First) = '-';
+      Start : Integer := (if Neg then S'First + 1 else S'First);
+      Val   : Long_Long_Integer := 0;
    begin
-      Start := S'First;
-      if S (Start) = '-' then
-         Neg := True;
+      while Start < S'Last and then S (Start) = '0' loop
          Start := Start + 1;
-      end if;
-      for I in Start .. S'Last loop
-         Val := Val * 10
-           + Character'Pos (S (I)) - Character'Pos ('0');
       end loop;
-      if Neg then
-         return -Val;
+      if S'Last - Start + 1 > Max_Exact_Digits then
+         Val := Long_Long_Integer'Last;
       else
-         return Val;
-      end if;
-   end Parse_Int;
-
-   --  Parse ISO 8601 datetime to epoch seconds (relative to 2000-01-01)
-   function Is_Leap_Year (Year : Integer) return Boolean is
-   begin
-      return Year mod 4 = 0
-        and then (Year mod 100 /= 0 or else Year mod 400 = 0);
-   end Is_Leap_Year;
-
-   function Days_In_Month
-     (Year : Integer; Month : Integer) return Integer
-   is
-      Month_Days : constant array (1 .. 12) of Integer :=
-        (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-   begin
-      if Month = 2 and then Is_Leap_Year (Year) then
-         return 29;
-      else
-         return Month_Days (Month);
-      end if;
-   end Days_In_Month;
-
-   function Days_Since_Epoch
-     (Year : Integer; Month : Integer; Day : Integer)
-      return Integer
-   is
-      D : Integer := 0;
-      Y : Integer;
-      M : Integer;
-   begin
-      if Year >= 2000 then
-         Y := 2000;
-         while Y < Year loop
-            if Is_Leap_Year (Y) then
-               D := D + 366;
-            else
-               D := D + 365;
-            end if;
-            Y := Y + 1;
-         end loop;
-      else
-         Y := Year;
-         while Y < 2000 loop
-            if Is_Leap_Year (Y) then
-               D := D - 366;
-            else
-               D := D - 365;
-            end if;
-            Y := Y + 1;
+         for I in Start .. S'Last loop
+            Val := Val * 10
+              + Long_Long_Integer
+                  (Character'Pos (S (I)) - Character'Pos ('0'));
          end loop;
       end if;
-
-      M := 1;
-      while M < Month loop
-         D := D + Days_In_Month (Year, M);
-         M := M + 1;
-      end loop;
-
-      D := D + Day - 1;
-      return D;
-   end Days_Since_Epoch;
-
-   type ISO_Result is record
-      Epoch_Seconds : Integer := 0;
-      OK            : Boolean := False;
-   end record;
-
-   function Parse_ISO (S : String) return ISO_Result is
-      R     : ISO_Result;
-      Pos_T : Natural;
-   begin
-      if S'Length = 0 then
-         return R;
-      end if;
-
-      Pos_T := Ada.Strings.Fixed.Index (S, "T");
-      if Pos_T = 0 then
-         return R;
-      end if;
-
-      declare
-         Date_Str : constant String :=
-           S (S'First .. Pos_T - 1);
-         Year     : Integer := 0;
-         Month    : Integer := 0;
-         Day      : Integer := 0;
-      begin
-         if Date_Str'Length < 10 then
-            return R;
-         end if;
-
-         if Date_Str (Date_Str'First + 4) /= '-'
-           or else Date_Str (Date_Str'First + 7) /= '-'
-         then
-            return R;
-         end if;
-
-         for I in 0 .. 3 loop
-            if not Is_Digit (Date_Str (Date_Str'First + I)) then
-               return R;
-            end if;
-            Year := Year * 10
-              + Character'Pos (Date_Str (Date_Str'First + I))
-              - Character'Pos ('0');
-         end loop;
-
-         for I in 5 .. 6 loop
-            if not Is_Digit (Date_Str (Date_Str'First + I)) then
-               return R;
-            end if;
-            Month := Month * 10
-              + Character'Pos (Date_Str (Date_Str'First + I))
-              - Character'Pos ('0');
-         end loop;
-
-         for I in 8 .. 9 loop
-            if not Is_Digit (Date_Str (Date_Str'First + I)) then
-               return R;
-            end if;
-            Day := Day * 10
-              + Character'Pos (Date_Str (Date_Str'First + I))
-              - Character'Pos ('0');
-         end loop;
-
-         declare
-            Time_Raw : constant String :=
-              S (Pos_T + 1 .. S'Last);
-            Time_Str : Unbounded_String :=
-              To_Unbounded_String (Time_Raw);
-            Pos_P    : Natural;
-            Pos_Z    : Natural;
-            Hour     : Integer := 0;
-            Minute   : Integer := 0;
-            Second   : Integer := 0;
-         begin
-            --  Strip timezone (+)
-            declare
-               TS : constant String := To_String (Time_Str);
-            begin
-               Pos_P := Ada.Strings.Fixed.Index (TS, "+");
-               if Pos_P > 0 then
-                  Time_Str := To_Unbounded_String
-                    (TS (TS'First .. Pos_P - 1));
-               end if;
-            end;
-
-            --  Strip Z
-            declare
-               TS : constant String := To_String (Time_Str);
-            begin
-               Pos_Z := Ada.Strings.Fixed.Index (TS, "Z");
-               if Pos_Z > 0 then
-                  Time_Str := To_Unbounded_String
-                    (TS (TS'First .. Pos_Z - 1));
-               end if;
-            end;
-
-            --  Parse HH:MM[:SS]
-            declare
-               TS     : constant String := To_String (Time_Str);
-               Colon1 : Natural;
-            begin
-               Colon1 := Ada.Strings.Fixed.Index (TS, ":");
-               if Colon1 = 0 then
-                  return R;
-               end if;
-
-               declare
-                  H_Str : constant String :=
-                    TS (TS'First .. Colon1 - 1);
-               begin
-                  for I in H_Str'Range loop
-                     if not Is_Digit (H_Str (I)) then
-                        return R;
-                     end if;
-                     Hour := Hour * 10
-                       + Character'Pos (H_Str (I))
-                       - Character'Pos ('0');
-                  end loop;
-               end;
-
-               declare
-                  Rest   : constant String :=
-                    TS (Colon1 + 1 .. TS'Last);
-                  Colon2 : Natural;
-               begin
-                  Colon2 := Ada.Strings.Fixed.Index (Rest, ":");
-                  if Colon2 > 0 then
-                     declare
-                        M_Str : constant String :=
-                          Rest (Rest'First .. Colon2 - 1);
-                        S_Raw : constant String :=
-                          Rest (Colon2 + 1 .. Rest'Last);
-                        S_Str : Unbounded_String;
-                        Dot   : Natural;
-                     begin
-                        for I in M_Str'Range loop
-                           if not Is_Digit (M_Str (I)) then
-                              return R;
-                           end if;
-                           Minute := Minute * 10
-                             + Character'Pos (M_Str (I))
-                             - Character'Pos ('0');
-                        end loop;
-
-                        Dot := Ada.Strings.Fixed.Index
-                          (S_Raw, ".");
-                        if Dot > 0 then
-                           S_Str := To_Unbounded_String
-                             (S_Raw (S_Raw'First .. Dot - 1));
-                        else
-                           S_Str := To_Unbounded_String (S_Raw);
-                        end if;
-
-                        declare
-                           SS : constant String :=
-                             To_String (S_Str);
-                        begin
-                           for I in SS'Range loop
-                              if not Is_Digit (SS (I)) then
-                                 return R;
-                              end if;
-                              Second := Second * 10
-                                + Character'Pos (SS (I))
-                                - Character'Pos ('0');
-                           end loop;
-                        end;
-                     end;
-                  else
-                     for I in Rest'Range loop
-                        if not Is_Digit (Rest (I)) then
-                           return R;
-                        end if;
-                        Minute := Minute * 10
-                          + Character'Pos (Rest (I))
-                          - Character'Pos ('0');
-                     end loop;
-                  end if;
-               end;
-            end;
-
-            R.Epoch_Seconds :=
-              Days_Since_Epoch (Year, Month, Day) * 86400
-              + Hour * 3600 + Minute * 60 + Second;
-            R.OK := True;
-         end;
-      end;
-
-      return R;
-   end Parse_ISO;
+      return (if Neg then -Val else Val);
+   end Parse_Seconds;
 
    function Parse_Arguments (Argv : Arg_List) return Parsed_Args is
       Args     : Parsed_Args;
@@ -779,15 +552,11 @@ procedure Main is
             return 2;
          end if;
 
-         if Args.Has_As_Of then
-            declare
-               AO : constant String := To_String (Args.As_Of);
-            begin
-               if Is_Null (AO) then
-                  return 1;
-               end if;
-               As_Of := To_Unbounded_String (AO);
-            end;
+         --  A null or empty as-of means today, as in the reference.
+         if Args.Has_As_Of and then not Is_Null (To_String (Args.As_Of))
+           and then Length (Args.As_Of) > 0
+         then
+            As_Of := Args.As_Of;
          else
             As_Of := To_Unbounded_String (Get_Today);
          end if;
@@ -839,15 +608,11 @@ procedure Main is
             return 2;
          end if;
 
-         if Args.Has_As_Of then
-            declare
-               AO : constant String := To_String (Args.As_Of);
-            begin
-               if Is_Null (AO) then
-                  return 1;
-               end if;
-               As_Of := To_Unbounded_String (AO);
-            end;
+         --  A null or empty as-of means today, as in the reference.
+         if Args.Has_As_Of and then not Is_Null (To_String (Args.As_Of))
+           and then Length (Args.As_Of) > 0
+         then
+            As_Of := Args.As_Of;
          else
             As_Of := To_Unbounded_String (Get_Today);
          end if;
@@ -1047,21 +812,13 @@ procedure Main is
             return 2;
          end if;
 
-         if Is_All_Digits (Value) then
-            --  Seconds mode (non-negative integer)
+         if Is_All_Digits (Value) or else Is_Negative_Integer (Value) then
+            --  Seconds mode (negative seconds have no value)
             Result := To_Unbounded_String
               (Sayableduration.Format_Duration
                  (Loc_Ptr.all,
                   To_Duration_Compactness (Args.Compactness),
-                  Parse_Int (Value)));
-
-         elsif Is_Negative_Integer (Value) then
-            --  Negative integer: returns null
-            Result := To_Unbounded_String
-              (Sayableduration.Format_Duration
-                 (Loc_Ptr.all,
-                  To_Duration_Compactness (Args.Compactness),
-                  Parse_Int (Value)));
+                  Parse_Seconds (Value)));
 
          else
             --  Timestamp mode: parse both ISO timestamps
@@ -1075,23 +832,8 @@ procedure Main is
             declare
                End_Val : constant String :=
                  To_String (Args.Positionals (2));
-               S_ISO   : ISO_Result;
-               E_ISO   : ISO_Result;
-               Diff    : Integer;
             begin
                if Is_Null (End_Val) then
-                  return 1;
-               end if;
-
-               S_ISO := Parse_ISO (Value);
-               E_ISO := Parse_ISO (End_Val);
-
-               if not S_ISO.OK or else not E_ISO.OK then
-                  return 1;
-               end if;
-
-               Diff := E_ISO.Epoch_Seconds - S_ISO.Epoch_Seconds;
-               if Diff < 0 then
                   return 1;
                end if;
 
@@ -1099,7 +841,7 @@ procedure Main is
                  (Sayableduration.Format_Duration
                     (Loc_Ptr.all,
                      To_Duration_Compactness (Args.Compactness),
-                     Diff));
+                     Value, End_Val));
             end;
          end if;
 

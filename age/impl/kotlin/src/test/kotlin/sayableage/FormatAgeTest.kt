@@ -1203,4 +1203,135 @@ class FormatAgeTest {
     fun `getLocale is case-sensitive`() {
         assertNull(Locales.get("EN"))
     }
+
+    // ================================================================
+    // Weeks and days across month ends
+    // ================================================================
+
+    // 31.1
+    @Test
+    fun `88 days across a 28 day february`() {
+        val f = SayableAge(Locales.EN)
+        assertEquals("12 weeks, 4 days", f.formatAge("2016-12-31", "2017-03-29"))
+    }
+
+    // 31.2
+    @Test
+    fun `90 days across a year end into`() {
+        val f = SayableAge(Locales.EN)
+        assertEquals("12 weeks, 6 days", f.formatAge("1991-11-27", "1992-02-25"))
+    }
+
+    // 31.3
+    @Test
+    fun `33 days across a year end`() {
+        val f = SayableAge(Locales.EN)
+        assertEquals("4 weeks, 5 days", f.formatAge("2020-11-30", "2021-01-02"))
+    }
+
+    // 31.4
+    @Test
+    fun `compact form of 31 1`() {
+        val f = SayableAge(Locales.EN, Compactness.COMPACT)
+        assertEquals("12w4d", f.formatAge("2016-12-31", "2017-03-29"))
+    }
+
+    // ================================================================
+    // Half years take their plural form from whole years
+    // ================================================================
+
+    // 32.1
+    @Test
+    fun `polish 3 is few`() {
+        val f = SayableAge(Locales.PL)
+        assertEquals("3 i p\u00F3\u0142 lata", f.formatAge("2021-06-15", "2025-01-15"))
+    }
+
+    // 32.2
+    @Test
+    fun `polish 5 is many`() {
+        val f = SayableAge(Locales.PL, Compactness.SHORT)
+        assertEquals("5 i p\u00F3\u0142 lat", f.formatAge("2020-06-15", "2025-12-15"))
+    }
+
+    // 32.3
+    @Test
+    fun `tachelhit 6 is few`() {
+        val f = SayableAge(Locales.SHI)
+        assertEquals("6 iseggasen d uzgen", f.formatAge("2005-06-08", "2012-06-07"))
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 33.1
+    @Test
+    fun `february 30 doesnt exist`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge("2025-02-30", "2032-06-25"))
+    }
+
+    // 33.2
+    @Test
+    fun `month 13`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge("2025-13-01", "2027-01-31"))
+    }
+
+    // 33.3
+    @Test
+    fun `february 29 in a non leap year`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge("2023-02-29", "2025-03-01"))
+    }
+
+    // 33.4
+    @Test
+    fun `day 00`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge("2025-06-00", "2027-02-25"))
+    }
+
+    // 33.5
+    @Test
+    fun `unpadded month and day`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge("2025-6-1", "2027-02-25"))
+    }
+
+    // 33.6
+    @Test
+    fun `surrounding whitespace`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge(" 2025-06-01", "2027-02-25"))
+    }
+
+    // 33.7
+    @Test
+    fun `a datetime is not a date`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge("2025-06-15T10:00:00", "2027-02-25"))
+    }
+
+    // 33.8
+    @Test
+    fun `invalid asof`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatAge("2020-01-01", "2025-04-31"))
+    }
+
+    // 33.9
+    @Test
+    fun `formatstage validates too`() {
+        val f = SayableAge(Locales.EN)
+        assertNull(f.formatStage("2025-02-30", "2027-09-05"))
+    }
+
+    // 33.10
+    @Test
+    fun `february 29 in a leap year is`() {
+        val f = SayableAge(Locales.EN)
+        assertEquals("2 years", f.formatAge("2024-02-29", "2026-03-01"))
+    }
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ts.json
 
-_locale_ts() {
+_sayabletime_locale_ts() {
     _clock_hours=('khume mbiri' 'yin'\''we' 'mbirhi' 'nharhu' 'mune' 'ntlhanu' 'tsevu' 'nkombo' 'nhungu' 'kaye' 'khume' 'khume yin'\''we')
     _clock_midnight='vusiku exikarhi'
     _clock_noon='nhlekanhi'

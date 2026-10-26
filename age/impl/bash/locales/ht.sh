@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ht.json
 
-_plural_ht() {
+_sayableage_plural_ht() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ht() {
+_sayableage_locale_ht() {
     _unit_day='{n} jou'
     _unit_week='{n} semèn'
     _unit_month='{n} mwa'
@@ -39,5 +39,5 @@ _locale_ht() {
     _compact_unit_year='{n}an'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ht
+    _plural_func=_sayableage_plural_ht
 }

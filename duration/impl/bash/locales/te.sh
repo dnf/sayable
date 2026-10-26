@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/te.json
 
-_plural_te() {
+_sayableduration_plural_te() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_te() {
+_sayableduration_locale_te() {
     _unit_second='{n} సెకను'
     _unit_minute='{n} నిమిషం'
     _unit_hour='{n} గంట'
@@ -54,5 +54,5 @@ _locale_te() {
     _compact_delimiter=''
     _compact_ago='{0} క్రితం'
     _compact_in_future='{0} తర్వాత'
-    _plural_func=_plural_te
+    _plural_func=_sayableduration_plural_te
 }

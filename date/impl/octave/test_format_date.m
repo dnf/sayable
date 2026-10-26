@@ -272,6 +272,83 @@ check('12.1 es date', sd_es.format_date('2025-03-15'), '15 de marzo');
 check('12.2 es day after tomorrow', sd_es.format_relative('2025-03-17', '2025-03-15'), 'pasado mañana');
 
 % ================================================================
+% 13. format_date_with_year
+% ================================================================
+printf('Section 13: format_date_with_year\n');
+
+% 13.1
+check('13.1 en with year', sd.format_date_with_year('2018-02-04'), 'February 4th, 2018');
+
+% 13.2
+check('13.2 en short with year', sayable_date_new(en, 'short').format_date_with_year('2025-03-15'), 'Mar 15, 2025');
+
+% 13.3
+check('13.3 en compact with year', sayable_date_new(en, 'compact').format_date_with_year('1997-01-21'), '1/21/97');
+
+% 13.4
+check('13.4 tg compact keeps two-digit year zero', sayable_date_new(locale_tg(), 'compact').format_date_with_year('2007-05-20'), '20/5/07');
+
+% 13.5
+check('13.5 fi short with year', sayable_date_new(locale_fi(), 'short').format_date_with_year('1996-06-21'), '21. kesäkuuta 1996');
+
+% ================================================================
+% 14. Short month names (locales that keep the full genitive)
+% ================================================================
+printf('Section 14: Short month names\n');
+
+% 14.1
+check('14.1 sk short', sayable_date_new(locale_sk(), 'short').format_date('2031-02-15'), '15. februára');
+
+% 14.2
+check('14.2 cs short', sayable_date_new(locale_cs(), 'short').format_date('2025-12-10'), '10. prosince');
+
+% 14.3
+check('14.3 uk short', sayable_date_new(locale_uk(), 'short').format_date('2025-11-05'), '5 листопада');
+
+% 14.4
+check('14.4 fi short relative', sayable_date_new(locale_fi(), 'short').format_relative('1998-08-08', '1998-08-15'), '8. elokuuta');
+
+% ================================================================
+% 15. format_relative — short phrases
+% ================================================================
+printf('Section 15: format_relative short phrases\n');
+
+% 15.1
+check('15.1 kw short day after tomorrow', sayable_date_new(locale_kw(), 'short').format_relative('2035-12-04', '2035-12-02'), 'an Mth ma');
+
+% 15.2
+check('15.2 mam short day before yesterday', sayable_date_new(locale_mam(), 'short').format_relative('2000-01-23', '2000-01-25'), 'Dom nchi''j');
+
+% 15.3
+check('15.3 kek short day after tomorrow', sayable_date_new(locale_kek(), 'short').format_relative('2014-10-24', '2014-10-22'), 'a''in Vie');
+
+% ================================================================
+% 16. Input validation
+% ================================================================
+printf('Section 16: Input validation\n');
+
+% 16.1
+check('16.1 February 30', sd.format_date('2025-02-30'), []);
+
+% 16.2
+check('16.2 month 13', sd.format_date('2025-13-01'), []);
+
+% 16.3
+check('16.3 unpadded', sd.format_date('2025-6-1'), []);
+
+% 16.4
+check('16.4 surrounding whitespace', sd.format_date(' 2025-06-01'), []);
+
+% 16.5
+check('16.5 ISO datetime', sd.format_date('2025-06-01T10:00:00'), 'June 1st');
+
+% 16.6
+check('16.6 February 29 in a non-leap year', sd.format_date_with_year('2023-02-29'), []);
+
+% 16.7
+check('16.7 invalid asOf', sd.format_relative('2025-03-16', '2025-04-31'), []);
+
+% ================================================================
 % Summary
 % ================================================================
 printf('\n');

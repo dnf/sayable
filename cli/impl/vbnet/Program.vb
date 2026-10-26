@@ -468,8 +468,13 @@ Options:
         If value Is Nothing Then
             Return Outcome.OfResult(Nothing)
         ElseIf IsInteger(value) Then
-            Dim seconds = Integer.Parse(value)
-            result = formatter.FormatDuration(seconds)
+            ' A digit string too long for a Long is far beyond the 500-year ceiling
+            Dim seconds As Long
+            If Long.TryParse(value, Globalization.NumberStyles.AllowLeadingSign, Globalization.CultureInfo.InvariantCulture, seconds) Then
+                result = formatter.FormatDuration(seconds)
+            Else
+                result = Nothing
+            End If
         Else
             If positionals.Count < 2 Then
                 Return PrintError("duration with timestamps requires start and end arguments")

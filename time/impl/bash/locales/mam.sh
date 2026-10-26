@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mam.json
 
-_locale_mam() {
+_sayabletime_locale_mam() {
     _clock_hours=('kab'\''laj' 'jun' 'kab'\''' 'oxe' 'kyaje' 'jwe'\''' 'qaq' 'wuq' 'wajxaq' 'b'\''alaj' 'laj' 'junlaj')
     _clock_midnight='nik'\'' aq'\''b'\''il'
     _clock_noon='nik'\'' q'\''ij'

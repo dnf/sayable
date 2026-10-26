@@ -12,19 +12,23 @@
 
 ;; ---- Date parsing ----
 
+(define (ascii-digits? s)
+  (for/and ([c (in-string s)]) (char<=? #\0 c #\9)))
+
 (define (parse-date-parts s)
-  "Parse a YYYY-MM-DD string into (values year month day). Returns (values 0 0 0) on failure."
-  (if (or (not (string? s))
-          (< (string-length s) 10)
-          (not (char=? (string-ref s 4) #\-))
-          (not (char=? (string-ref s 7) #\-)))
-      (values 0 0 0)
+  "Parse exactly YYYY-MM-DD naming a real calendar day into (values year month day). Returns (values #f #f #f) on failure."
+  (if (and (string? s)
+           (= (string-length s) 10)
+           (char=? (string-ref s 4) #\-)
+           (char=? (string-ref s 7) #\-)
+           (ascii-digits? (string-append (substring s 0 4) (substring s 5 7) (substring s 8 10))))
       (let ([y (string->number (substring s 0 4))]
             [m (string->number (substring s 5 7))]
             [d (string->number (substring s 8 10))])
-        (if (and y m d)
+        (if (and (<= 1 m 12) (<= 1 d (days-in-month y m)))
             (values y m d)
-            (values 0 0 0)))))
+            (values #f #f #f)))
+      (values #f #f #f)))
 
 ;; ---- Leap year and days-in-month ----
 
@@ -63,12 +67,10 @@
 
 (define (parse-age dob [as-of #f])
   "Parse age from dob and as-of strings. Returns (values months diff-days) or (values #f #f)."
-  (when (or (not dob) (equal? dob "") (not (string? dob)))
-    (values #f #f))
   (if (or (not dob) (equal? dob "") (not (string? dob)))
       (values #f #f)
       (let-values ([(dob-y dob-m dob-d) (parse-date-parts dob)])
-        (if (and (= dob-y 0) (= dob-m 0) (= dob-d 0))
+        (if (not dob-y)
             (values #f #f)
             (let-values ([(ref-y ref-m ref-d)
                           (if (and as-of (not (equal? as-of "")))
@@ -77,7 +79,7 @@
                                 (values (date-year now)
                                         (date-month now)
                                         (date-day now))))])
-              (if (and (= ref-y 0) (= ref-m 0) (= ref-d 0))
+              (if (not ref-y)
                   (values #f #f)
                   (let ([diff-days (days-between dob-y dob-m dob-d ref-y ref-m ref-d)])
                     (if (< diff-days 0)

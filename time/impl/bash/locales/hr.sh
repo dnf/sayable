@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/hr.json
 
-_locale_hr() {
+_sayabletime_locale_hr() {
     _clock_hours=('dvanaest' 'jedan' 'dva' 'tri' 'četiri' 'pet' 'šest' 'sedam' 'osam' 'devet' 'deset' 'jedanaest')
     _clock_midnight='ponoć'
     _clock_noon='podne'

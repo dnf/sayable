@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ca.json
 
-_locale_ca() {
+_sayabledate_locale_ca() {
     _months=('gener' 'febrer' 'març' 'abril' 'maig' 'juny' 'juliol' 'agost' 'setembre' 'octubre' 'novembre' 'desembre')
     _weekdays=('diumenge' 'dilluns' 'dimarts' 'dimecres' 'dijous' 'divendres' 'dissabte')
     _day_format='{n}'

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ff.json
 
-_plural_ff() {
+_sayableage_plural_ff() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ff() {
+_sayableage_locale_ff() {
     _unit_day_one='ñalawma {n}'
     _unit_day_other='ñalɗe {n}'
     _unit_week_one='yontere {n}'
@@ -49,5 +49,5 @@ _locale_ff() {
     _compact_unit_year_other='duuɓi {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ff
+    _plural_func=_sayableage_plural_ff
 }

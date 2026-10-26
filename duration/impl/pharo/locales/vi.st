@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/vi.json "
 
-"Locale: vi"
+"Locale: vi"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 vi

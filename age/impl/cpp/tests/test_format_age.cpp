@@ -542,6 +542,41 @@ void test_locale_lookup() {
     ASSERT_TRUE("get(EN) null", locales::get("EN") == nullptr);
 }
 
+// ================================================================
+// Section 31: Weeks and days across month ends
+// ================================================================
+void test_section_31_weeks_and_days_across_month_ends() {
+    ASSERT_EQ("31.1 88 days across a 28-day February", SayableAge(locales::EN(), Compactness::Normal).format_age("2016-12-31", "2017-03-29"), "12 weeks, 4 days"); // 31.1
+    ASSERT_EQ("31.2 90 days across a year end into a leap year", SayableAge(locales::EN(), Compactness::Normal).format_age("1991-11-27", "1992-02-25"), "12 weeks, 6 days"); // 31.2
+    ASSERT_EQ("31.3 33 days across a year end", SayableAge(locales::EN(), Compactness::Normal).format_age("2020-11-30", "2021-01-02"), "4 weeks, 5 days"); // 31.3
+    ASSERT_EQ("31.4 Compact form of 31.1", SayableAge(locales::EN(), Compactness::Compact).format_age("2016-12-31", "2017-03-29"), "12w4d"); // 31.4
+}
+
+// ================================================================
+// Section 32: Half years take their plural form from whole years
+// ================================================================
+void test_section_32_half_years_take_their_plural_form_from_whole_years() {
+    ASSERT_EQ("32.1 Polish 3 is 'few'", SayableAge(locales::PL(), Compactness::Normal).format_age("2021-06-15", "2025-01-15"), "3 i p\303\263\305\202 lata"); // 32.1
+    ASSERT_EQ("32.2 Polish 5 is 'many'", SayableAge(locales::PL(), Compactness::Short).format_age("2020-06-15", "2025-12-15"), "5 i p\303\263\305\202 lat"); // 32.2
+    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", SayableAge(locales::SHI(), Compactness::Normal).format_age("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen"); // 32.3
+}
+
+// ================================================================
+// Section 33: Input validation
+// ================================================================
+void test_section_33_input_validation() {
+    ASSERT_NULL("33.1 February 30 doesn't exist", SayableAge(locales::EN(), Compactness::Normal).format_age("2025-02-30", "2032-06-25")); // 33.1
+    ASSERT_NULL("33.2 Month 13", SayableAge(locales::EN(), Compactness::Normal).format_age("2025-13-01", "2027-01-31")); // 33.2
+    ASSERT_NULL("33.3 February 29 in a non-leap year", SayableAge(locales::EN(), Compactness::Normal).format_age("2023-02-29", "2025-03-01")); // 33.3
+    ASSERT_NULL("33.4 Day 00", SayableAge(locales::EN(), Compactness::Normal).format_age("2025-06-00", "2027-02-25")); // 33.4
+    ASSERT_NULL("33.5 Unpadded month and day", SayableAge(locales::EN(), Compactness::Normal).format_age("2025-6-1", "2027-02-25")); // 33.5
+    ASSERT_NULL("33.6 Surrounding whitespace", SayableAge(locales::EN(), Compactness::Normal).format_age(" 2025-06-01", "2027-02-25")); // 33.6
+    ASSERT_NULL("33.7 A datetime is not a date", SayableAge(locales::EN(), Compactness::Normal).format_age("2025-06-15T10:00:00", "2027-02-25")); // 33.7
+    ASSERT_NULL("33.8 Invalid asOf", SayableAge(locales::EN(), Compactness::Normal).format_age("2020-01-01", "2025-04-31")); // 33.8
+    ASSERT_NULL("33.9 formatStage validates too", SayableAge(locales::EN(), Compactness::Normal).format_stage("2025-02-30", "2027-09-05")); // 33.9
+    ASSERT_EQ("33.10 February 29 in a leap year is valid", SayableAge(locales::EN(), Compactness::Normal).format_age("2024-02-29", "2026-03-01"), "2 years"); // 33.10
+}
+
 int main() {
     test_null_edge_cases();
     test_days_tier();
@@ -581,6 +616,10 @@ int main() {
     test_locale_indonesian();
     test_locale_amharic();
     test_locale_lookup();
+
+    test_section_31_weeks_and_days_across_month_ends();
+    test_section_32_half_years_take_their_plural_form_from_whole_years();
+    test_section_33_input_validation();
 
     std::cout << "\n=== Results ===" << std::endl;
     std::cout << "Passed: " << tests_passed << std::endl;

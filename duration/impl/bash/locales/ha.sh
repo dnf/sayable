@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ha.json
 
-_plural_ha() {
+_sayableduration_plural_ha() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ha() {
+_sayableduration_locale_ha() {
     _unit_second_one='{n} daƙiƙa'
     _unit_second_other='{n} daƙiƙoƙi'
     _unit_minute_one='{n} minti'
@@ -55,5 +55,5 @@ _locale_ha() {
     _compact_delimiter=''
     _compact_ago='{0} da suka wuce'
     _compact_in_future='cikin {0}'
-    _plural_func=_plural_ha
+    _plural_func=_sayableduration_plural_ha
 }

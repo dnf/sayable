@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kl.json
 
-_plural_kl() {
+_sayableduration_plural_kl() {
     echo "other"
 }
 
-_locale_kl() {
+_sayableduration_locale_kl() {
     _unit_second='sekundit {n}'
     _unit_minute='minutsit {n}'
     _unit_hour='nalunaaqutap akunnera {n}'
@@ -45,5 +45,5 @@ _locale_kl() {
     _compact_delimiter=''
     _compact_ago='{0} matuma siorna'
     _compact_in_future='{0} siunissami'
-    _plural_func=_plural_kl
+    _plural_func=_sayableduration_plural_kl
 }

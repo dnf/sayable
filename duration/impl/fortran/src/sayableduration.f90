@@ -1,11 +1,20 @@
 module sayableduration
+  use, intrinsic :: iso_fortran_env, only: int64
   use sayableduration_types
   implicit none
   private
 
   character(len=*), parameter, public :: DUR_VERSION = "0.5.0"
 
+  ! 500 years, the same ceiling as sayable-age
+  integer, parameter, public :: DUR_MAX_DURATION_MONTHS = 6000
+
   public :: dur_format_duration, dur_format_duration_iso, dur_format_since, dur_format_until
+
+  ! Seconds as a default or a 64-bit integer (500 years exceed 32 bits).
+  interface dur_format_duration
+    module procedure dur_format_duration_default, dur_format_duration_int64
+  end interface dur_format_duration
 
 contains
 
@@ -53,102 +62,167 @@ contains
     total = total + day - 1
   end function days_since_epoch
 
+  ! The character at position i, or NUL past either end, so callers can
+  ! look ahead without bounds checks (Fortran doesn't short-circuit).
+  pure function char_at(s, i) result(c)
+    character(len=*), intent(in) :: s
+    integer, intent(in) :: i
+    character(len=1) :: c
+    if (i < 1 .or. i > len(s)) then
+      c = achar(0)
+    else
+      c = s(i:i)
+    end if
+  end function char_at
+
+  pure function is_digit_at(s, i) result(res)
+    character(len=*), intent(in) :: s
+    integer, intent(in) :: i
+    logical :: res
+    character(len=1) :: c
+    c = char_at(s, i)
+    res = (c >= '0' .and. c <= '9')
+  end function is_digit_at
+
+  pure function all_digits_at(s, first, count) result(res)
+    character(len=*), intent(in) :: s
+    integer, intent(in) :: first, count
+    logical :: res
+    integer :: i
+    res = .false.
+    do i = first, first + count - 1
+      if (.not. is_digit_at(s, i)) return
+    end do
+    res = .true.
+  end function all_digits_at
+
+  ! The value of count digits starting at first (checked by all_digits_at).
+  pure function digits_value(s, first, count) result(val)
+    character(len=*), intent(in) :: s
+    integer, intent(in) :: first, count
+    integer :: val, i
+    val = 0
+    do i = first, first + count - 1
+      val = val * 10 + ichar(s(i:i)) - ichar('0')
+    end do
+  end function digits_value
+
+  pure function days_in_month_of(year, month) result(days)
+    integer, intent(in) :: year, month
+    integer :: days
+    select case (month)
+    case (4, 6, 9, 11)
+      days = 30
+    case (2)
+      if ((mod(year, 4) == 0 .and. mod(year, 100) /= 0) .or. mod(year, 400) == 0) then
+        days = 29
+      else
+        days = 28
+      end if
+    case default
+      days = 31
+    end select
+  end function days_in_month_of
+
+  ! YYYY-MM-DD naming a real calendar day.
+  pure subroutine parse_calendar_date(s, year, month, day, ok)
+    character(len=*), intent(in) :: s
+    integer, intent(out) :: year, month, day
+    logical, intent(out) :: ok
+    ok = .false.
+    year = 0
+    month = 0
+    day = 0
+    if (len(s) /= 10) return
+    if (char_at(s, 5) /= '-' .or. char_at(s, 8) /= '-') return
+    if (.not. (all_digits_at(s, 1, 4) .and. all_digits_at(s, 6, 2) .and. all_digits_at(s, 9, 2))) return
+    year = digits_value(s, 1, 4)
+    month = digits_value(s, 6, 2)
+    day = digits_value(s, 9, 2)
+    if (month < 1 .or. month > 12) return
+    ok = (day >= 1 .and. day <= days_in_month_of(year, month))
+  end subroutine parse_calendar_date
+
+  ! Z or +HH:MM / -HH:MM (validated, never applied).
+  pure function is_zone_suffix(s) result(res)
+    character(len=*), intent(in) :: s
+    logical :: res
+    if (len(s) == 1) then
+      res = (s == 'Z')
+    else if (len(s) == 6) then
+      res = (char_at(s, 1) == '+' .or. char_at(s, 1) == '-') .and. all_digits_at(s, 2, 2) &
+        .and. char_at(s, 4) == ':' .and. all_digits_at(s, 5, 2)
+    else
+      res = .false.
+    end if
+  end function is_zone_suffix
+
+  ! H:MM or HH:MM, then optional :SS with optional .fraction, then an
+  ! optional zone suffix.
+  pure subroutine parse_clock(s, hour, minute, second, ok)
+    character(len=*), intent(in) :: s
+    integer, intent(out) :: hour, minute, second
+    logical, intent(out) :: ok
+    integer :: hour_digits, p
+
+    ok = .false.
+    hour = 0
+    minute = 0
+    second = 0
+    hour_digits = 0
+    do while (hour_digits < 2 .and. is_digit_at(s, hour_digits + 1))
+      hour_digits = hour_digits + 1
+    end do
+    if (hour_digits == 0) return
+    p = hour_digits + 1
+    if (char_at(s, p) /= ':' .or. .not. all_digits_at(s, p + 1, 2)) return
+    hour = digits_value(s, 1, hour_digits)
+    minute = digits_value(s, p + 1, 2)
+    p = p + 3
+
+    if (char_at(s, p) == ':' .and. all_digits_at(s, p + 1, 2)) then
+      second = digits_value(s, p + 1, 2)
+      p = p + 3
+      if (char_at(s, p) == '.' .and. is_digit_at(s, p + 1)) then
+        p = p + 1
+        do while (is_digit_at(s, p))
+          p = p + 1
+        end do
+      end if
+    end if
+
+    if (p <= len(s)) then
+      if (.not. is_zone_suffix(s(p:))) return
+    end if
+    ok = (hour <= 23 .and. minute <= 59 .and. second <= 59)
+  end subroutine parse_clock
+
+  ! YYYY-MM-DDTHH:MM (one- or two-digit hour), then optional :SS with
+  ! optional .fraction, then an optional zone suffix that is ignored.
   subroutine parse_iso_datetime(s, seconds, ok)
     character(len=*), intent(in) :: s
-    integer, intent(out) :: seconds
+    integer(int64), intent(out) :: seconds
     logical, intent(out) :: ok
-    integer :: slen, t_pos, i
     integer :: year, month, day, hour, minute, second
-    integer :: time_start, time_end, colon1, colon2, total_days
-    character(len=64) :: time_str
 
     ok = .false.
     seconds = 0
-
-    slen = len_trim(s)
-    if (slen == 0) return
-
-    ! Must have 'T' for ISO datetime
-    t_pos = index(s(1:slen), 'T')
-    if (t_pos == 0) return
-    if (t_pos < 11) return
-
-    ! Parse date part
-    if (s(5:5) /= '-' .or. s(8:8) /= '-') return
-    year = 0
-    do i = 1, 4
-      if (s(i:i) < '0' .or. s(i:i) > '9') return
-      year = year * 10 + ichar(s(i:i)) - ichar('0')
-    end do
-    month = 0
-    do i = 6, 7
-      if (s(i:i) < '0' .or. s(i:i) > '9') return
-      month = month * 10 + ichar(s(i:i)) - ichar('0')
-    end do
-    day = 0
-    do i = 9, 10
-      if (s(i:i) < '0' .or. s(i:i) > '9') return
-      day = day * 10 + ichar(s(i:i)) - ichar('0')
-    end do
-
-    ! Extract time part, strip timezone
-    time_start = t_pos + 1
-    time_str = ''
-    time_end = 0
-    do i = time_start, slen
-      if (s(i:i) == '+' .or. s(i:i) == 'Z') exit
-      time_end = time_end + 1
-      time_str(time_end:time_end) = s(i:i)
-    end do
-
-    ! Parse time: HH:MM or HH:MM:SS
-    colon1 = index(time_str(1:time_end), ':')
-    if (colon1 == 0) return
-
-    hour = 0
-    do i = 1, colon1 - 1
-      if (time_str(i:i) < '0' .or. time_str(i:i) > '9') return
-      hour = hour * 10 + ichar(time_str(i:i)) - ichar('0')
-    end do
-
-    ! Find second colon for seconds
-    colon2 = 0
-    if (colon1 + 1 <= time_end) then
-      colon2 = index(time_str(colon1 + 1:time_end), ':')
-      if (colon2 > 0) colon2 = colon2 + colon1
-    end if
-
-    minute = 0
-    if (colon2 > 0) then
-      do i = colon1 + 1, colon2 - 1
-        if (time_str(i:i) < '0' .or. time_str(i:i) > '9') return
-        minute = minute * 10 + ichar(time_str(i:i)) - ichar('0')
-      end do
-    else
-      do i = colon1 + 1, time_end
-        if (time_str(i:i) < '0' .or. time_str(i:i) > '9') then
-          if (time_str(i:i) == '.') exit
-          return
-        end if
-        minute = minute * 10 + ichar(time_str(i:i)) - ichar('0')
-      end do
-    end if
-
-    second = 0
-    if (colon2 > 0 .and. colon2 + 1 <= time_end) then
-      do i = colon2 + 1, time_end
-        if (time_str(i:i) < '0' .or. time_str(i:i) > '9') then
-          if (time_str(i:i) == '.') exit
-          return
-        end if
-        second = second * 10 + ichar(time_str(i:i)) - ichar('0')
-      end do
-    end if
-
-    total_days = days_since_epoch(year, month, day)
-    seconds = total_days * 86400 + hour * 3600 + minute * 60 + second
-    ok = .true.
+    if (len(s) < 11) return
+    if (s(11:11) /= 'T') return
+    call parse_calendar_date(s(1:10), year, month, day, ok)
+    if (.not. ok) return
+    call parse_clock(s(12:), hour, minute, second, ok)
+    if (.not. ok) return
+    seconds = int(days_since_epoch(year, month, day), int64) * 86400_int64 &
+      + int(hour * 3600 + minute * 60 + second, int64)
   end subroutine parse_iso_datetime
+
+  ! Months of 30.44 days (the average month), rounded.
+  pure function approximate_months(days) result(months)
+    integer(int64), intent(in) :: days
+    integer(int64) :: months
+    months = (days * 100_int64 + 1522_int64) / 3044_int64
+  end function approximate_months
 
   function int_to_str(n) result(s)
     integer, intent(in) :: n
@@ -224,8 +298,9 @@ contains
     end if
   end function resolve_unit
 
-  function format_duration_seconds(total, locale, compactness) result(res)
-    integer, intent(in) :: total, compactness
+  function format_duration_seconds(total_secs, locale, compactness) result(res)
+    integer(int64), intent(in) :: total_secs
+    integer, intent(in) :: compactness
     type(dur_locale), intent(in), target :: locale
     character(len=DUR_MAX_STR_LEN) :: res
     integer :: total_minutes, remainder_seconds, total_hours, remainder_minutes
@@ -279,20 +354,23 @@ contains
       end if
     end if
 
+    res = ''
+    if (approximate_months(total_secs / 86400_int64) > DUR_MAX_DURATION_MONTHS) return
+
     ! 0 seconds
-    if (total == 0) then
+    if (total_secs == 0) then
       res = locale%just_now
       return
     end if
 
     ! 1-59 seconds
-    if (total < 60) then
-      res = resolve_unit(total, second_uf, locale, '')
+    if (total_secs < 60) then
+      res = resolve_unit(int(total_secs), second_uf, locale, '')
       return
     end if
 
-    total_minutes = total / 60
-    remainder_seconds = mod(total, 60)
+    total_minutes = int(total_secs / 60_int64)
+    remainder_seconds = int(mod(total_secs, 60_int64))
 
     ! 1-4 minutes: minutes + seconds
     if (total_minutes < 5) then
@@ -312,8 +390,8 @@ contains
       return
     end if
 
-    total_hours = total / 3600
-    remainder_minutes = mod(total, 3600) / 60
+    total_hours = int(total_secs / 3600_int64)
+    remainder_minutes = int(mod(total_secs, 3600_int64)) / 60
 
     ! 1-5 hours: hours + minutes (with half marker)
     if (total_hours <= 5) then
@@ -337,8 +415,8 @@ contains
       return
     end if
 
-    total_days = total / 86400
-    remainder_hours = mod(total, 86400) / 3600
+    total_days = int(total_secs / 86400_int64)
+    remainder_hours = int(mod(total_secs, 86400_int64)) / 3600
 
     ! 1-2 days: days + hours (with half marker)
     if (total_days <= 2) then
@@ -377,8 +455,7 @@ contains
       return
     end if
 
-    ! Approximate months (30.44 days average)
-    total_months = nint(real(total_days) / 30.44)
+    total_months = int(approximate_months(int(total_days, int64)))
 
     ! 1-11 months
     if (total_months < 12) then
@@ -399,22 +476,31 @@ contains
     end if
   end function format_duration_seconds
 
-  function dur_format_duration(locale, compactness, seconds) result(res)
+  function dur_format_duration_default(locale, compactness, seconds) result(res)
     type(dur_locale), intent(in), target :: locale
     integer, intent(in) :: compactness, seconds
+    character(len=DUR_MAX_STR_LEN) :: res
+
+    res = dur_format_duration_int64(locale, compactness, int(seconds, int64))
+  end function dur_format_duration_default
+
+  function dur_format_duration_int64(locale, compactness, seconds) result(res)
+    type(dur_locale), intent(in), target :: locale
+    integer, intent(in) :: compactness
+    integer(int64), intent(in) :: seconds
     character(len=DUR_MAX_STR_LEN) :: res
 
     res = ''
     if (seconds < 0) return
     res = format_duration_seconds(seconds, locale, compactness)
-  end function dur_format_duration
+  end function dur_format_duration_int64
 
   function dur_format_duration_iso(locale, compactness, start_str, end_str) result(res)
     type(dur_locale), intent(in), target :: locale
     integer, intent(in) :: compactness
     character(len=*), intent(in) :: start_str, end_str
     character(len=DUR_MAX_STR_LEN) :: res
-    integer :: s_secs, e_secs, diff
+    integer(int64) :: s_secs, e_secs, diff
     logical :: ok
 
     res = ''
@@ -435,7 +521,7 @@ contains
     integer, intent(in) :: compactness
     character(len=*), intent(in) :: start_str, as_of_str
     character(len=DUR_MAX_STR_LEN) :: res
-    integer :: s_secs, a_secs, diff
+    integer(int64) :: s_secs, a_secs, diff
     logical :: ok
     character(len=DUR_MAX_STR_LEN) :: dur, ago_tmpl
     type(dur_compactness_override) :: ovr
@@ -458,6 +544,7 @@ contains
     end if
 
     dur = format_duration_seconds(diff, locale, compactness)
+    if (len_trim(dur) == 0) return
 
     ago_tmpl = locale%ago
     if (compactness == DUR_SHORT .and. locale%has_short) then
@@ -476,7 +563,7 @@ contains
     integer, intent(in) :: compactness
     character(len=*), intent(in) :: target_str, as_of_str
     character(len=DUR_MAX_STR_LEN) :: res
-    integer :: t_secs, a_secs, diff
+    integer(int64) :: t_secs, a_secs, diff
     logical :: ok
     character(len=DUR_MAX_STR_LEN) :: dur, future_tmpl
     type(dur_compactness_override) :: ovr
@@ -499,6 +586,7 @@ contains
     end if
 
     dur = format_duration_seconds(diff, locale, compactness)
+    if (len_trim(dur) == 0) return
 
     future_tmpl = locale%in_future
     if (compactness == DUR_SHORT .and. locale%has_short) then

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/quc.json
 
-_plural_quc() {
+_sayableduration_plural_quc() {
     echo "other"
 }
 
-_locale_quc() {
+_sayableduration_locale_quc() {
     _unit_second='{n} tz'\''aqat'
     _unit_minute='{n} ch'\''utaq ramaj'
     _unit_hour='{n} ramaj'
@@ -45,5 +45,5 @@ _locale_quc() {
     _compact_delimiter=''
     _compact_ago='{0} k'\''o chi'
     _compact_in_future='pa {0}'
-    _plural_func=_plural_quc
+    _plural_func=_sayableduration_plural_quc
 }

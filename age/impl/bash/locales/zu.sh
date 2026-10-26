@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/zu.json
 
-_plural_zu() {
+_sayableage_plural_zu() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_zu() {
+_sayableage_locale_zu() {
     _unit_day_one='usuku {n}'
     _unit_day_other='izinsuku {n}'
     _unit_week_one='iviki {n}'
@@ -47,5 +47,5 @@ _locale_zu() {
     _compact_unit_year='{n} mk'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_zu
+    _plural_func=_sayableage_plural_zu
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mk.json
 
-_plural_mk() {
+_sayableduration_plural_mk() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -17,7 +17,7 @@ _plural_mk() {
     echo "other"
 }
 
-_locale_mk() {
+_sayableduration_locale_mk() {
     _unit_second_one='{n} секунда'
     _unit_second_other='{n} секунди'
     _unit_minute_one='{n} минута'
@@ -58,5 +58,5 @@ _locale_mk() {
     _compact_delimiter=''
     _compact_ago='пред {0}'
     _compact_in_future='за {0}'
-    _plural_func=_plural_mk
+    _plural_func=_sayableduration_plural_mk
 }

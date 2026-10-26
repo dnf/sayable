@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ktu.json
 
-_locale_ktu() {
+_sayabledate_locale_ktu() {
     _months=('Yanvye' 'Fevrye' 'Marsi' 'Avrili' 'Mɛ' 'Yuwɛ' 'Yulɛ' 'Uti' 'Sɛtambre' 'Ɔtɔbre' 'Nɔvambre' 'Desambre')
     _weekdays=('Lumingu' 'Kimosi' 'Kizole' 'Kizoluntatu' 'Kinya' 'Kisabala' 'Kimpwanza')
     _day_format='{n}'

@@ -178,3 +178,33 @@ test_fi_midnight :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "0.00", fo
 @(test) test_get_locale_fr :: proc(t: ^testing.T) { loc := get_locale("fr"); testing.expect(t, loc != nil); if loc != nil do testing.expect_value(t, loc.code, "fr") }
 @(test) test_get_locale_unknown :: proc(t: ^testing.T) { testing.expect(t, get_locale("xx") == nil) }
 @(test) test_get_locale_empty :: proc(t: ^testing.T) { testing.expect(t, get_locale("") == nil) }
+
+// ================================================================
+// Section 9: Minutes in short and compact modes
+// ================================================================
+// 9.1
+@(test) test_9_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6:01 PM", format_time(buf[:], &locale_en, .Short, "18:01")) }
+// 9.2
+@(test) test_9_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "7:05p", format_time(buf[:], &locale_en, .Compact, "19:05")) }
+
+// ================================================================
+// Section 10: Input validation
+// ================================================================
+// 10.1
+@(test) test_10_1 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "half past nine", format_time(buf[:], &locale_en, .Normal, "9:30")) }
+// 10.2
+@(test) test_10_2 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "half past nine", format_time(buf[:], &locale_en, .Normal, "09:30")) }
+// 10.3
+@(test) test_10_3 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_time(buf[:], &locale_en, .Normal, " 9:30")) }
+// 10.4
+@(test) test_10_4 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_time(buf[:], &locale_en, .Normal, "9:30 ")) }
+// 10.5
+@(test) test_10_5 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_time(buf[:], &locale_en, .Normal, "9:5")) }
+// 10.6
+@(test) test_10_6 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_time(buf[:], &locale_en, .Normal, "24:00")) }
+// 10.7
+@(test) test_10_7 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "a quarter past two", format_time(buf[:], &locale_en, .Normal, "14:15:30")) }
+// 10.8
+@(test) test_10_8 :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "a quarter past two", format_time(buf[:], &locale_en, .Normal, "2025-01-15T14:15:00Z")) }
+// 10.9
+@(test) test_10_9 :: proc(t: ^testing.T) { buf: [256]u8; expect_nil(t, format_time(buf[:], &locale_en, .Normal, "2025-02-30T14:15:00")) }

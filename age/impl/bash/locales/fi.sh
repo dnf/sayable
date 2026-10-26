@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/fi.json
 
-_plural_fi() {
+_sayableage_plural_fi() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_fi() {
+_sayableage_locale_fi() {
     _unit_day_one='{n} päivä'
     _unit_day_other='{n} päivää'
     _unit_week_one='{n} viikko'
@@ -43,5 +43,5 @@ _locale_fi() {
     _compact_unit_year='{n}v'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_fi
+    _plural_func=_sayableage_plural_fi
 }

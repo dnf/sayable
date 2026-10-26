@@ -234,4 +234,30 @@ is(SayableDuration->format_until('2025-01-15T09:00:00', '2025-01-15T10:00:00'), 
   is($fmt->format_duration(90), '1m30s', '17.2 compact 1m30s');
 }
 
+# ================================================================
+# Sections 18-20: short since, 500-year ceiling, timestamp validation
+# ================================================================
+# 18.1
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('men'), compactness => 'short')->format_since('2025-01-20T01:32:11', '2025-01-22T15:39:16'), 'lɔhɔnga 2, awa 14 taa gbɔyɔ', '18.1 days and hours both kept');
+# 19.1
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_duration(15778800000), '500 years', '19.1 500 Julian years: 6000 months, the ceiling');
+# 19.2
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_duration(15800000000), undef, '19.2 over 6000 months');
+# 19.3
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_duration(99999999999), undef, '19.3 well beyond the ceiling (and 32-bit range)');
+# 19.4
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_since('1500-01-01T00:00:00', '2025-01-01T00:00:00'), undef, '19.4 525 years ago');
+# 19.5
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_until('2600-01-01T00:00:00', '2025-01-01T00:00:00'), undef, '19.5 575 years from now');
+# 20.1
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_duration('2025-01-15T10:00', '2025-01-15T11:30:00'), '1½ hours', '20.1 seconds are optional');
+# 20.2
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_duration('2025-01-15T10', '2025-01-15T11:30:00'), undef, '20.2 minutes are required');
+# 20.3
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_duration('2025-1-5T10:00:00', '2025-01-15T11:30:00'), undef, '20.3 unpadded date');
+# 20.4
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_duration('2025-02-30T10:00:00', '2025-03-15T11:30:00'), undef, '20.4 impossible date');
+# 20.5
+is(SayableDuration::Formatter->new(SayableDuration::Locales->get('en'))->format_since('2025-01-15T10:00:00', '2025-01-15T25:00:00'), undef, '20.5 hour out of range');
+
 done_testing();

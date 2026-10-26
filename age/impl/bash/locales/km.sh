@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/km.json
 
-_plural_km() {
+_sayableage_plural_km() {
     echo "other"
 }
 
-_locale_km() {
+_sayableage_locale_km() {
     _unit_day='{n} ថ្ងៃ'
     _unit_week='{n} សប្ដាហ៍'
     _unit_month='{n} ខែ'
@@ -37,5 +37,5 @@ _locale_km() {
     _compact_unit_year='{n} ឆ្នាំ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_km
+    _plural_func=_sayableage_plural_km
 }

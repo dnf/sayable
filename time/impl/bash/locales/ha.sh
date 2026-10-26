@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ha.json
 
-_locale_ha() {
+_sayabletime_locale_ha() {
     _clock_hours=('sha biyu' 'ɗaya' 'biyu' 'uku' 'huɗu' 'biyar' 'shida' 'bakwai' 'takwas' 'tara' 'goma' 'goma sha ɗaya')
     _clock_midnight='tsakar dare'
     _clock_noon='tsakar rana'

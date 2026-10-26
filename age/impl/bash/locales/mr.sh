@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mr.json
 
-_plural_mr() {
+_sayableage_plural_mr() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_mr() {
+_sayableage_locale_mr() {
     _unit_day_one='{n} दिवस'
     _unit_day_other='{n} दिवस'
     _unit_week_one='{n} आठवडा'
@@ -46,5 +46,5 @@ _locale_mr() {
     _compact_unit_year='{n}व'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mr
+    _plural_func=_sayableage_plural_mr
 }

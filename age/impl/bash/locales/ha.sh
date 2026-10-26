@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ha.json
 
-_plural_ha() {
+_sayableage_plural_ha() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ha() {
+_sayableage_locale_ha() {
     _unit_day_one='{n} kwana'
     _unit_day_other='{n} kwanaki'
     _unit_week_one='{n} mako'
@@ -42,5 +42,5 @@ _locale_ha() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_ha
+    _plural_func=_sayableage_plural_ha
 }

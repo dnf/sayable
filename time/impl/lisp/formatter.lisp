@@ -20,66 +20,101 @@
 
 ;;; --- Time parsing ---
 
-(defun split-string (s delimiter)
-  "Split S by DELIMITER character."
-  (let ((result nil)
-        (start 0))
-    (loop for i from 0 below (length s)
-          when (char= (char s i) delimiter)
-            do (push (subseq s start i) result)
-               (setf start (1+ i)))
-    (push (subseq s start) result)
-    (nreverse result)))
+(defun leap-year-p (year)
+  "Return T if YEAR is a Gregorian leap year."
+  (or (and (zerop (mod year 4))
+           (not (zerop (mod year 100))))
+      (zerop (mod year 400))))
 
-(defun str-to-int (s)
-  "Parse a string as a non-negative integer."
-  (str-to-int-impl s 0 0))
+(defun days-in-month (year month)
+  "Return the number of days in MONTH of YEAR."
+  (case month
+    ((4 6 9 11) 30)
+    (2 (if (leap-year-p year) 29 28))
+    (otherwise 31)))
 
-(defun str-to-int-impl (s idx acc)
-  (if (>= idx (length s))
-      acc
-      (let ((ch (char s idx)))
-        (if (digit-char-p ch)
-            (str-to-int-impl s (1+ idx) (+ (* acc 10) (digit-char-p ch)))
-            acc))))
+(defun ascii-digit-p (ch)
+  "Return T if CH is one of the ASCII digits 0-9."
+  (char<= #\0 ch #\9))
+
+(defun scan-digits (s pos min-count max-count)
+  "Return the position after MIN-COUNT to MAX-COUNT ASCII digits of S at POS, or NIL."
+  (let ((end (or (position-if-not #'ascii-digit-p s :start pos
+                                  :end (min (length s) (+ pos max-count)))
+                 (min (length s) (+ pos max-count)))))
+    (when (>= (- end pos) min-count)
+      end)))
+
+(defun char-at-p (s pos ch)
+  "Return T if S has the character CH at POS."
+  (and (< pos (length s)) (char= (char s pos) ch)))
+
+(defun scan-fraction (s pos)
+  "Skip an optional . and one or more digits at POS; return the next position or NIL."
+  (if (char-at-p s pos #\.)
+      (scan-digits s (1+ pos) 1 (length s))
+      pos))
+
+(defun scan-zone (s pos)
+  "Skip an optional Z or +HH:MM / -HH:MM zone suffix at POS; return the next position or NIL."
+  (cond
+    ((char-at-p s pos #\Z) (1+ pos))
+    ((or (char-at-p s pos #\+) (char-at-p s pos #\-))
+     (let ((hours-end (scan-digits s (1+ pos) 2 2)))
+       (when (and hours-end (char-at-p s hours-end #\:))
+         (scan-digits s (1+ hours-end) 2 2))))
+    (t pos)))
+
+(defun parse-clock (s start)
+  "Parse H:MM or HH:MM with optional :SS, fraction and zone, filling S from START to its end.
+Returns (values hour minute second), or NIL when malformed or out of range."
+  (let* ((hour-end (scan-digits s start 1 2))
+         (minute-end (and hour-end (char-at-p s hour-end #\:)
+                          (scan-digits s (1+ hour-end) 2 2)))
+         (second-end (and minute-end (char-at-p s minute-end #\:)
+                          (scan-digits s (1+ minute-end) 2 2)))
+         (fraction-end (if second-end (scan-fraction s second-end) minute-end))
+         (zone-end (and fraction-end (scan-zone s fraction-end))))
+    (when (eql zone-end (length s))
+      (let ((hour (parse-integer s :start start :end hour-end))
+            (minute (parse-integer s :start (1+ hour-end) :end minute-end))
+            (second-val (if second-end
+                            (parse-integer s :start (1+ minute-end) :end second-end)
+                            0)))
+        (when (and (<= hour 23) (<= minute 59) (<= second-val 59))
+          (values hour minute second-val))))))
+
+(defun parse-date-part (s)
+  "Parse the YYYY-MM-DD that opens S into (values year month day), or NIL unless it names a real day."
+  (when (and (>= (length s) 10)
+             (scan-digits s 0 4 4)
+             (char-at-p s 4 #\-)
+             (eql (scan-digits s 5 2 2) 7)
+             (char-at-p s 7 #\-)
+             (eql (scan-digits s 8 2 2) 10))
+    (let ((year (parse-integer s :start 0 :end 4))
+          (month (parse-integer s :start 5 :end 7))
+          (day (parse-integer s :start 8 :end 10)))
+      (when (and (<= 1 month 12) (<= 1 day (days-in-month year month)))
+        (values year month day)))))
+
+(defun clock-start (input-str)
+  "Return where the clock time starts in INPUT-STR: 0, or after the T of an ISO datetime
+whose date part is a real YYYY-MM-DD day. Returns NIL for a malformed date part."
+  (let ((t-pos (position #\T input-str)))
+    (cond
+      ((null t-pos) 0)
+      ((and (= t-pos 10) (parse-date-part input-str)) 11)
+      (t nil))))
 
 (defun parse-time (input-str)
-  "Parse HH:MM or ISO datetime to (values hour minute). Returns NIL on failure."
-  (when (or (null input-str)
-            (not (stringp input-str))
-            (zerop (length input-str)))
-    (return-from parse-time nil))
-  (let ((t-str input-str))
-    ;; Strip date part from ISO datetime
-    (let ((t-pos (position #\T t-str)))
-      (when t-pos
-        (setf t-str (subseq t-str (1+ t-pos)))))
-    ;; Strip timezone
-    (let ((plus-pos (position #\+ t-str)))
-      (when plus-pos
-        (setf t-str (subseq t-str 0 plus-pos))))
-    (let ((z-pos (position #\Z t-str)))
-      (when z-pos
-        (setf t-str (subseq t-str 0 z-pos))))
-    (let ((parts (split-string t-str #\:)))
-      (when (< (length parts) 2)
-        (return-from parse-time nil))
-      ;; Strip fractional seconds from minute part if present
-      (let* ((hour-str (first parts))
-             (min-str (first (split-string (second parts) #\.)))
-             (hour (str-to-int hour-str))
-             (minute (str-to-int min-str)))
-        ;; Validate
-        (when (or (< hour 0) (> hour 23)
-                  (< minute 0) (> minute 59))
-          (return-from parse-time nil))
-        ;; Extra validation: make sure the strings were numeric
-        (when (or (zerop (length hour-str))
-                  (zerop (length min-str))
-                  (not (digit-char-p (char hour-str 0)))
-                  (not (digit-char-p (char min-str 0))))
-          (return-from parse-time nil))
-        (values hour minute)))))
+  "Parse a clock time or ISO datetime to (values hour minute). Returns NIL on failure."
+  (when (and (stringp input-str) (plusp (length input-str)))
+    (let ((start (clock-start input-str)))
+      (when start
+        (multiple-value-bind (hour minute) (parse-clock input-str start)
+          (when hour
+            (values hour minute)))))))
 
 (defun round-to-5 (minute)
   "Round minute to nearest 5."
@@ -179,6 +214,8 @@
         (format-natural formatter hour minute))))
 
 ;;; --- Default English function ---
+
+(declaim (ftype function get-locale)) ; defined by the generated locale registry, loaded later
 
 (defvar *default-formatter* nil
   "Default English formatter, initialized when locales are loaded.")

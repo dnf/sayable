@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mfe.json
 
-_plural_mfe() {
+_sayableduration_plural_mfe() {
     echo "other"
 }
 
-_locale_mfe() {
+_sayableduration_locale_mfe() {
     _unit_second='{n} segonn'
     _unit_minute='{n} minit'
     _unit_hour='{n} ler'
@@ -46,5 +46,5 @@ _locale_mfe() {
     _compact_delimiter=''
     _compact_ago='sa fer {0}'
     _compact_in_future='dan {0}'
-    _plural_func=_plural_mfe
+    _plural_func=_sayableduration_plural_mfe
 }

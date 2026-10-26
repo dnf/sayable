@@ -207,6 +207,91 @@ Namespace SayableTime.Tests
             Assert.Equal("0.00", st.Format("00:00"))
         End Sub
 
+        ' ================================================================
+        ' Minutes in short and compact modes
+        ' ================================================================
+
+        ' 9.1
+        <Fact>
+        Public Sub Spec9_1_DigitalModesKeepTheExactMinute()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN, Compactness.Short)
+            Assert.Equal("6:01 PM", f.Format("18:01"))
+        End Sub
+
+        ' 9.2
+        <Fact>
+        Public Sub Spec9_2_DigitalModesKeepTheExactMinute()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN, Compactness.Compact)
+            Assert.Equal("7:05p", f.Format("19:05"))
+        End Sub
+
+        ' ================================================================
+        ' Input validation
+        ' ================================================================
+
+        ' 10.1
+        <Fact>
+        Public Sub Spec10_1_OneDigitHour()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Equal("half past nine", f.Format("9:30"))
+        End Sub
+
+        ' 10.2
+        <Fact>
+        Public Sub Spec10_2_TwoDigitHour()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Equal("half past nine", f.Format("09:30"))
+        End Sub
+
+        ' 10.3
+        <Fact>
+        Public Sub Spec10_3_LeadingWhitespace()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Null(f.Format(" 9:30"))
+        End Sub
+
+        ' 10.4
+        <Fact>
+        Public Sub Spec10_4_TrailingWhitespace()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Null(f.Format("9:30 "))
+        End Sub
+
+        ' 10.5
+        <Fact>
+        Public Sub Spec10_5_MinutesNeedTwoDigits()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Null(f.Format("9:5"))
+        End Sub
+
+        ' 10.6
+        <Fact>
+        Public Sub Spec10_6_HourOutOfRange()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Null(f.Format("24:00"))
+        End Sub
+
+        ' 10.7
+        <Fact>
+        Public Sub Spec10_7_SecondsAreAllowedAndIgnored()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Equal("a quarter past two", f.Format("14:15:30"))
+        End Sub
+
+        ' 10.8
+        <Fact>
+        Public Sub Spec10_8_ISODatetimeWithZoneSuffixIgnored()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Equal("a quarter past two", f.Format("2025-01-15T14:15:00Z"))
+        End Sub
+
+        ' 10.9
+        <Fact>
+        Public Sub Spec10_9_ISODatetimeWithAnImpossibleDate()
+            Dim f = New SayableTimeLib.SayableTime(Locales.EN)
+            Assert.Null(f.Format("2025-02-30T14:15:00"))
+        End Sub
+
     End Class
 
 End Namespace

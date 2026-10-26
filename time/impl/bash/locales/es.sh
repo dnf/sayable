@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/es.json
 
-_locale_es() {
+_sayabletime_locale_es() {
     _clock_hours=('doce' 'una' 'dos' 'tres' 'cuatro' 'cinco' 'seis' 'siete' 'ocho' 'nueve' 'diez' 'once')
     _clock_midnight='medianoche'
     _clock_noon='mediodía'

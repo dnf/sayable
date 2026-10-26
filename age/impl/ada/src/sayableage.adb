@@ -44,7 +44,7 @@ package body Sayableage is
    function Parse_Date (S : String) return Parse_Result is
       R : Parse_Result;
    begin
-      if S'Length < 10 then
+      if S'Length /= 10 then
          return R;
       end if;
       if S (S'First + 4) /= '-' or else S (S'First + 7) /= '-' then
@@ -71,7 +71,8 @@ package body Sayableage is
          R.Day := R.Day * 10
            + Character'Pos (S (S'First + I)) - Character'Pos ('0');
       end loop;
-      R.OK := R.Year /= 0 or else R.Month /= 0 or else R.Day /= 0;
+      R.OK := R.Month in 1 .. 12
+        and then R.Day in 1 .. Days_In_Month (R.Year, R.Month);
       return R;
    end Parse_Date;
 

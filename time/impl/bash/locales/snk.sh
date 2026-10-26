@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/snk.json
 
-_locale_snk() {
+_sayabletime_locale_snk() {
     _clock_hours=('tanmu fillo' 'baane' 'fillo' 'sikko' 'naaxato' 'karago' 'tunmu' 'ñerru' 'segu' 'kaburu' 'tanmu' 'tanmu baane')
     _clock_midnight='sulen noxo'
     _clock_noon='tili seren'

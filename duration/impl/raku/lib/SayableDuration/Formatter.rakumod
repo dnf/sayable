@@ -6,6 +6,8 @@ unit class SayableDuration::Formatter;
 
 our $VERSION = '0.5.0';
 
+my constant MAX-DURATION-MONTHS = 6000;  # 500 years, the same ceiling as sayable-age
+
 has %.locale;
 has %.units;
 has $.half;
@@ -156,6 +158,7 @@ method !format-duration-seconds(Int $total --> Str) {
 
     # Approximate months (30.44 days average)
     my $total-months = ($total-days / 30.44).round;
+    return Nil if $total-months > MAX-DURATION-MONTHS;
 
     # 1-11 months
     if $total-months < 12 {
@@ -183,6 +186,7 @@ method format-since(Str $start?, Str $as-of? --> Str) {
     return Nil if $diff < 0;
     return $.just-now if $diff == 0;
     my $dur = self!format-duration-seconds($diff);
+    return Nil unless $dur.defined;
     return $.ago.subst('{0}', $dur);
 }
 
@@ -196,32 +200,29 @@ method format-until(Str $target?, Str $as-of? --> Str) {
     return Nil if $diff < 0;
     return $.just-now if $diff == 0;
     my $dur = self!format-duration-seconds($diff);
+    return Nil unless $dur.defined;
     return $.in-future.subst('{0}', $dur);
 }
 
+#| YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+my regex timestamp {
+    ^ (<[0..9]> ** 4) '-' (<[0..9]> ** 2) '-' (<[0..9]> ** 2) 'T'
+    (<[0..9]> ** 1..2) ':' (<[0..9]> ** 2)
+    [ ':' (<[0..9]> ** 2) [ '.' <[0..9]>+ ]? ]?
+    [ 'Z' | <[+-]> <[0..9]> ** 2 ':' <[0..9]> ** 2 ]? $
+}
+
 sub parse-iso-to-seconds(Str $iso-str --> Int) {
-    return Nil unless $iso-str.defined && $iso-str ne '';
-    try {
-        my @parts = $iso-str.split('T');
-        return Nil unless @parts.elems == 2;
-        my @dp = @parts[0].split('-');
-        my $year = @dp[0].Int;
-        my $month = @dp[1].Int;
-        my $day = @dp[2].Int;
+    return Nil unless $iso-str.defined;
+    my $m = $iso-str ~~ &timestamp;
+    return Nil unless $m;
+    my ($year, $month, $day, $hour, $minute) = $m[0..4]».Int;
+    my $second = $m[5] ?? $m[5].Int !! 0;
+    return Nil unless 1 <= $month <= 12 && 1 <= $day <= days-in-month($year, $month);
+    return Nil if $hour > 23 || $minute > 59 || $second > 59;
 
-        my $time-str = @parts[1];
-        $time-str = $time-str.split('+')[0] if $time-str.contains('+');
-        $time-str = $time-str.split('Z')[0] if $time-str.contains('Z');
-
-        my @tp = $time-str.split(':');
-        my $hour = @tp[0].Int;
-        my $minute = @tp.elems > 1 ?? @tp[1].Int !! 0;
-        my $second = @tp.elems > 2 ?? @tp[2].split('.')[0].Int !! 0;
-
-        my $days = days-since-epoch($year, $month, $day);
-        return $days * 86400 + $hour * 3600 + $minute * 60 + $second;
-        CATCH { default { return Nil } }
-    }
+    my $days = days-since-epoch($year, $month, $day);
+    return $days * 86400 + $hour * 3600 + $minute * 60 + $second;
 }
 
 sub is-leap-year(Int $year --> Bool) {

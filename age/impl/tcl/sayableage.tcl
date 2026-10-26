@@ -32,18 +32,14 @@ namespace eval ::sayableage {
     }
 
     proc _parse_date {datestr} {
-        # Parse YYYY-MM-DD string, return list {year month day} or empty
-        if {$datestr eq ""} {
+        # Parse exactly YYYY-MM-DD naming a real calendar day into
+        # {year month day}, or return empty
+        if {![regexp {^([0-9]{4})-([0-9]{2})-([0-9]{2})$} $datestr -> ys ms ds]} {
             return {}
         }
-        set parts [split $datestr "-"]
-        if {[llength $parts] != 3} {
-            return {}
-        }
-        set y [scan [lindex $parts 0] %d]
-        set m [scan [lindex $parts 1] %d]
-        set d [scan [lindex $parts 2] %d]
-        if {$y eq "" || $m eq "" || $d eq ""} {
+        # scan reads leading zeros as decimal (expr would read 08 as octal)
+        scan "$ys $ms $ds" "%d %d %d" y m d
+        if {$m < 1 || $m > 12 || $d < 1 || $d > [_days_in_month $y $m]} {
             return {}
         }
         return [list $y $m $d]

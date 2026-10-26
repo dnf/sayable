@@ -17,6 +17,7 @@
                EXIT PARAGRAPH
            END-IF
            MOVE WS-FMT-DOB TO WS-DATE-STR
+           MOVE WS-FMT-DOB-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -30,6 +31,7 @@
                EXIT PARAGRAPH
            END-IF
            MOVE WS-FMT-AS-OF TO WS-DATE-STR
+           MOVE WS-FMT-AS-OF-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -283,6 +285,7 @@
                EXIT PARAGRAPH
            END-IF
            MOVE WS-FMT-DOB TO WS-DATE-STR
+           MOVE WS-FMT-DOB-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -296,6 +299,7 @@
                EXIT PARAGRAPH
            END-IF
            MOVE WS-FMT-AS-OF TO WS-DATE-STR
+           MOVE WS-FMT-AS-OF-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -693,23 +697,39 @@
            .
 
 *> ============================================================
-*> PARSE-DATE: Parse YYYY-MM-DD from WS-DATE-STR
+*> PARSE-DATE: Parse exactly YYYY-MM-DD naming a real calendar day
+*> Input:  WS-DATE-STR, WS-DATE-LEN (0 = length without trailing blanks)
 *> Output: WS-PARSED-YEAR, WS-PARSED-MONTH, WS-PARSED-DAY,
 *>         WS-PARSE-OK (1=success, 0=failure)
 *> ============================================================
        PARSE-DATE.
            MOVE 0 TO WS-PARSE-OK
-           IF FUNCTION LENGTH(FUNCTION TRIM(WS-DATE-STR))
-               < 10
+           IF WS-DATE-LEN = 0
+               MOVE FUNCTION STORED-CHAR-LENGTH(WS-DATE-STR)
+                   TO WS-DATE-LEN
+           END-IF
+           IF WS-DATE-LEN NOT = 10
                EXIT PARAGRAPH
            END-IF
            IF WS-DATE-STR(5:1) NOT = "-"
                OR WS-DATE-STR(8:1) NOT = "-"
+               OR WS-DATE-STR(1:4) IS NOT NUMERIC
+               OR WS-DATE-STR(6:2) IS NOT NUMERIC
+               OR WS-DATE-STR(9:2) IS NOT NUMERIC
                EXIT PARAGRAPH
            END-IF
            MOVE WS-DATE-STR(1:4) TO WS-PARSED-YEAR
            MOVE WS-DATE-STR(6:2) TO WS-PARSED-MONTH
            MOVE WS-DATE-STR(9:2) TO WS-PARSED-DAY
+           IF WS-PARSED-MONTH < 1 OR WS-PARSED-MONTH > 12
+               EXIT PARAGRAPH
+           END-IF
+           MOVE WS-PARSED-YEAR TO WS-DIM-YEAR
+           MOVE WS-PARSED-MONTH TO WS-DIM-MONTH
+           PERFORM CALC-DAYS-IN-MONTH
+           IF WS-PARSED-DAY < 1 OR WS-PARSED-DAY > WS-DIM-RESULT
+               EXIT PARAGRAPH
+           END-IF
            MOVE 1 TO WS-PARSE-OK
            .
 

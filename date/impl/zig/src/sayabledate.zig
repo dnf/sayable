@@ -155,24 +155,25 @@ fn itoa(n: i32) []const u8 {
 
 const Date = struct { y: i32, m: i32, d: i32 };
 
+/// YYYY-MM-DD naming a real calendar day, optionally followed by T and
+/// anything else (docs/input-formats.md).
 fn parseDate(s: []const u8) ?Date {
-    if (s.len == 0) return null;
-
-    // Strip time part from ISO datetime
-    var date_part = s;
-    for (s, 0..) |c, i| {
-        if (c == 'T') {
-            date_part = s[0..i];
-            break;
-        }
-    }
-
-    if (date_part.len < 10 or date_part[4] != '-' or date_part[7] != '-') return null;
-    const y = parseDigits(date_part[0..4]) orelse return null;
-    const m = parseDigits(date_part[5..7]) orelse return null;
-    const d = parseDigits(date_part[8..10]) orelse return null;
-    if (m < 1 or m > 12 or d < 1 or d > 31) return null;
+    const is_date_alone = s.len == 10;
+    const is_datetime = s.len > 10 and s[10] == 'T';
+    if (!(is_date_alone or is_datetime) or s[4] != '-' or s[7] != '-') return null;
+    const y = parseDigits(s[0..4]) orelse return null;
+    const m = parseDigits(s[5..7]) orelse return null;
+    const d = parseDigits(s[8..10]) orelse return null;
+    if (m < 1 or m > 12 or d < 1 or d > daysInMonth(y, m)) return null;
     return .{ .y = y, .m = m, .d = d };
+}
+
+fn daysInMonth(year: i32, month: i32) i32 {
+    if (month == 2) {
+        return if (@mod(year, 4) == 0 and (@mod(year, 100) != 0 or @mod(year, 400) == 0)) 29 else 28;
+    }
+    if (month == 4 or month == 6 or month == 9 or month == 11) return 30;
+    return 31;
 }
 
 fn parseDigits(s: []const u8) ?i32 {

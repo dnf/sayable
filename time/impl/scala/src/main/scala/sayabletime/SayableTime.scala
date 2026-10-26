@@ -1,5 +1,6 @@
 package sayabletime
 
+import java.time.YearMonth
 import sayabletime.locales.Locales
 
 val Version = "0.5.0"
@@ -62,38 +63,30 @@ object SayableTime:
     def formatTime(input: String): Option[String] =
         defaultSt.formatTime(input)
 
-/** Parse "HH:MM" or ISO datetime string into (hour, minute). */
+/** H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored). */
+private val Clock = """([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?""".r
+
+private val DateOnly = """([0-9]{4})-([0-9]{2})-([0-9]{2})""".r
+
+/** Parse a clock time or ISO datetime string into (hour, minute). */
 private[sayabletime] def parseTime(input: String): Option[(Int, Int)] =
-    if (input.isEmpty) None
-    else
-        var t = input
-        val tIdx = t.indexOf('T')
-        if (tIdx >= 0) t = t.substring(tIdx + 1)
-        val plusIdx = t.indexOf('+')
-        if (plusIdx >= 0) t = t.substring(0, plusIdx)
-        val zIdx = t.indexOf('Z')
-        if (zIdx >= 0) t = t.substring(0, zIdx)
-        val parts = t.split(":")
-        if (parts.length < 2) None
-        else
-            for
-                hour <- safeAtoi(parts(0))
-                minute <- safeAtoi(parts(1))
-                if hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59
-            yield (hour, minute)
+    val tIdx = input.indexOf('T')
+    val datePartIsValid = tIdx < 0 || isRealDate(input.substring(0, tIdx))
+    val clock = input.substring(tIdx + 1)
+    clock match
+        case Clock(h, m, sec) if datePartIsValid =>
+            val (hour, minute) = (h.toInt, m.toInt)
+            val second = Option(sec).fold(0)(_.toInt)
+            if hour <= 23 && minute <= 59 && second <= 59 then Some((hour, minute)) else None
+        case _ => None
+
+private def isRealDate(s: String): Boolean =
+    s match
+        case DateOnly(y, m, d) =>
+            val month = m.toInt
+            month >= 1 && month <= 12 && d.toInt >= 1 && d.toInt <= YearMonth.of(y.toInt, month).lengthOfMonth()
+        case _ => false
 
 /** Round minute to nearest 5. */
 private[sayabletime] def roundTo5(minute: Int): Int =
     (minute + 2) / 5 * 5
-
-private def safeAtoi(s: String): Option[Int] =
-    if (s.isEmpty) None
-    else
-        var n = 0
-        var i = 0
-        while (i < s.length)
-            val c = s.charAt(i)
-            if (c < '0' || c > '9') return None
-            n = n * 10 + (c - '0')
-            i += 1
-        Some(n)

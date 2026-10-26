@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ny.json
 
-_locale_ny() {
+_sayabledate_locale_ny() {
     _months=('Januwale' 'Febuluwale' 'Matchi' 'Epulo' 'Meyi' 'Juni' 'Julaye' 'Ogasiti' 'Seputemba' 'Okutoba' 'Novemba' 'Disemba')
     _weekdays=('Lamulungu' 'Lolemba' 'Lachiwiri' 'Lachitatu' 'Lachinayi' 'Lachisanu' 'Loweruka')
     _day_format='{n}'

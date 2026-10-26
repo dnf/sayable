@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ng.json
 
-_locale_ng() {
+_sayabledate_locale_ng() {
     _months=('Januali' 'Febluali' 'Malitsi' 'Aplili' 'Mei' 'Juni' 'Juli' 'Augustu' 'Septemba' 'Oktoba' 'Novemba' 'Desemba')
     _weekdays=('Osoondaha' 'Omaandaha' 'Etitatu' 'Etitano' 'Etine' 'Oshitimuine' 'Eshabati')
     _day_format='{n}'

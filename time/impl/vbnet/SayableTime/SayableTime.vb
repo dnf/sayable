@@ -1,4 +1,6 @@
 Imports System
+Imports System.Globalization
+Imports System.Text.RegularExpressions
 
 Namespace SayableTimeLib
 
@@ -85,22 +87,53 @@ Namespace SayableTimeLib
             Return fmt.Replace("{h}", h12.ToString()).Replace("{mm}", minute.ToString().PadLeft(2, "0"c)).Replace("{ampm}", ampmStr)
         End Function
 
+        ''' <summary>H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored).</summary>
+        Private Shared ReadOnly Clock As New Regex(
+            "\A([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z",
+            RegexOptions.CultureInvariant)
+
+        Private Shared ReadOnly DateOnly As New Regex(
+            "\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z", RegexOptions.CultureInvariant)
+
         Friend Shared Function ParseTime(input As String) As Integer()
             If String.IsNullOrEmpty(input) Then Return Nothing
-            Dim t = input
-            Dim tIdx = t.IndexOf("T"c)
-            If tIdx >= 0 Then t = t.Substring(tIdx + 1)
-            Dim plusIdx = t.IndexOf("+"c)
-            If plusIdx >= 0 Then t = t.Substring(0, plusIdx)
-            Dim zIdx = t.IndexOf("Z"c)
-            If zIdx >= 0 Then t = t.Substring(0, zIdx)
-            Dim parts = t.Split(":"c)
-            If parts.Length < 2 Then Return Nothing
-            Dim hour, minute As Integer
-            If Not Integer.TryParse(parts(0), hour) Then Return Nothing
-            If Not Integer.TryParse(parts(1), minute) Then Return Nothing
-            If hour < 0 OrElse hour > 23 OrElse minute < 0 OrElse minute > 59 Then Return Nothing
+            Dim clockPart = input
+            Dim tIdx = input.IndexOf("T"c)
+            If tIdx >= 0 Then
+                If Not IsRealDate(input.Substring(0, tIdx)) Then Return Nothing
+                clockPart = input.Substring(tIdx + 1)
+            End If
+            Dim match = Clock.Match(clockPart)
+            If Not match.Success Then Return Nothing
+            Dim hour = Field(match, 1)
+            Dim minute = Field(match, 2)
+            Dim second = If(match.Groups(3).Success, Field(match, 3), 0)
+            If hour > 23 OrElse minute > 59 OrElse second > 59 Then Return Nothing
             Return New Integer() {hour, minute}
+        End Function
+
+        Private Shared Function IsRealDate(s As String) As Boolean
+            Dim match = DateOnly.Match(s)
+            If Not match.Success Then Return False
+            Dim month = Field(match, 2)
+            Dim day = Field(match, 3)
+            Return month >= 1 AndAlso month <= 12 AndAlso day >= 1 AndAlso day <= DaysInMonth(Field(match, 1), month)
+        End Function
+
+        ' DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+        Private Shared Function DaysInMonth(year As Integer, month As Integer) As Integer
+            Select Case month
+                Case 2
+                    Return If((year Mod 4 = 0 AndAlso year Mod 100 <> 0) OrElse year Mod 400 = 0, 29, 28)
+                Case 4, 6, 9, 11
+                    Return 30
+                Case Else
+                    Return 31
+            End Select
+        End Function
+
+        Private Shared Function Field(match As Match, group As Integer) As Integer
+            Return Integer.Parse(match.Groups(group).Value, CultureInfo.InvariantCulture)
         End Function
 
         Friend Shared Function RoundTo5(minute As Integer) As Integer

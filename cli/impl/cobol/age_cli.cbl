@@ -12,9 +12,11 @@
        01 WS-ARG-VAL           PIC X(256).
        01 WS-CMD               PIC X(20).
        01 WS-POS1              PIC X(256).
+       01 WS-POS1-LEN          PIC 9(4) VALUE 0.
        01 WS-POS1-SET          PIC 9 VALUE 0.
        01 WS-OPT-LOCALE        PIC X(8) VALUE "en".
-       01 WS-OPT-AS-OF         PIC X(30).
+       01 WS-OPT-AS-OF         PIC X(256).
+       01 WS-OPT-AS-OF-LEN     PIC 9(4) VALUE 0.
        01 WS-OPT-AS-OF-SET     PIC 9 VALUE 0.
        01 WS-OPT-GENDER        PIC X(1).
        01 WS-OPT-GENDER-SET    PIC 9 VALUE 0.
@@ -35,6 +37,7 @@
           05 FILLER            PIC X(3) VALUE "ak".
           05 FILLER            PIC X(3) VALUE "am".
           05 FILLER            PIC X(3) VALUE "ar".
+          05 FILLER            PIC X(3) VALUE "ay".
           05 FILLER            PIC X(3) VALUE "az".
           05 FILLER            PIC X(3) VALUE "bci".
           05 FILLER            PIC X(3) VALUE "be".
@@ -46,6 +49,7 @@
           05 FILLER            PIC X(3) VALUE "br".
           05 FILLER            PIC X(3) VALUE "bs".
           05 FILLER            PIC X(3) VALUE "ca".
+          05 FILLER            PIC X(3) VALUE "cak".
           05 FILLER            PIC X(3) VALUE "ceb".
           05 FILLER            PIC X(3) VALUE "cs".
           05 FILLER            PIC X(3) VALUE "cy".
@@ -53,7 +57,9 @@
           05 FILLER            PIC X(3) VALUE "de".
           05 FILLER            PIC X(3) VALUE "din".
           05 FILLER            PIC X(3) VALUE "dje".
+          05 FILLER            PIC X(3) VALUE "dv".
           05 FILLER            PIC X(3) VALUE "dyu".
+          05 FILLER            PIC X(3) VALUE "dz".
           05 FILLER            PIC X(3) VALUE "ee".
           05 FILLER            PIC X(3) VALUE "el".
           05 FILLER            PIC X(3) VALUE "en".
@@ -65,6 +71,7 @@
           05 FILLER            PIC X(3) VALUE "ff".
           05 FILLER            PIC X(3) VALUE "fi".
           05 FILLER            PIC X(3) VALUE "fil".
+          05 FILLER            PIC X(3) VALUE "fj".
           05 FILLER            PIC X(3) VALUE "fon".
           05 FILLER            PIC X(3) VALUE "fr".
           05 FILLER            PIC X(3) VALUE "ga".
@@ -76,6 +83,7 @@
           05 FILLER            PIC X(3) VALUE "ha".
           05 FILLER            PIC X(3) VALUE "he".
           05 FILLER            PIC X(3) VALUE "hi".
+          05 FILLER            PIC X(3) VALUE "hmn".
           05 FILLER            PIC X(3) VALUE "hr".
           05 FILLER            PIC X(3) VALUE "ht".
           05 FILLER            PIC X(3) VALUE "hu".
@@ -88,20 +96,27 @@
           05 FILLER            PIC X(3) VALUE "jv".
           05 FILLER            PIC X(3) VALUE "ka".
           05 FILLER            PIC X(3) VALUE "kbp".
+          05 FILLER            PIC X(3) VALUE "kek".
+          05 FILLER            PIC X(3) VALUE "ki".
           05 FILLER            PIC X(3) VALUE "kk".
+          05 FILLER            PIC X(3) VALUE "kl".
           05 FILLER            PIC X(3) VALUE "km".
           05 FILLER            PIC X(3) VALUE "kn".
           05 FILLER            PIC X(3) VALUE "ko".
           05 FILLER            PIC X(3) VALUE "kpe".
+          05 FILLER            PIC X(3) VALUE "kri".
           05 FILLER            PIC X(3) VALUE "ktu".
           05 FILLER            PIC X(3) VALUE "ku".
           05 FILLER            PIC X(3) VALUE "kw".
           05 FILLER            PIC X(3) VALUE "ky".
+          05 FILLER            PIC X(3) VALUE "lb".
           05 FILLER            PIC X(3) VALUE "lg".
           05 FILLER            PIC X(3) VALUE "ln".
           05 FILLER            PIC X(3) VALUE "lo".
           05 FILLER            PIC X(3) VALUE "lt".
+          05 FILLER            PIC X(3) VALUE "luo".
           05 FILLER            PIC X(3) VALUE "lv".
+          05 FILLER            PIC X(3) VALUE "mam".
           05 FILLER            PIC X(3) VALUE "men".
           05 FILLER            PIC X(3) VALUE "mfe".
           05 FILLER            PIC X(3) VALUE "mg".
@@ -120,17 +135,20 @@
           05 FILLER            PIC X(3) VALUE "ne".
           05 FILLER            PIC X(3) VALUE "ng".
           05 FILLER            PIC X(3) VALUE "nl".
+          05 FILLER            PIC X(3) VALUE "nr".
           05 FILLER            PIC X(3) VALUE "nso".
           05 FILLER            PIC X(3) VALUE "nus".
           05 FILLER            PIC X(3) VALUE "ny".
           05 FILLER            PIC X(3) VALUE "om".
           05 FILLER            PIC X(3) VALUE "or".
           05 FILLER            PIC X(3) VALUE "pa".
+          05 FILLER            PIC X(3) VALUE "pis".
           05 FILLER            PIC X(3) VALUE "pl".
           05 FILLER            PIC X(3) VALUE "pov".
           05 FILLER            PIC X(3) VALUE "ps".
           05 FILLER            PIC X(3) VALUE "pt".
           05 FILLER            PIC X(3) VALUE "qu".
+          05 FILLER            PIC X(3) VALUE "quc".
           05 FILLER            PIC X(3) VALUE "ro".
           05 FILLER            PIC X(3) VALUE "ru".
           05 FILLER            PIC X(3) VALUE "rw".
@@ -138,6 +156,7 @@
           05 FILLER            PIC X(3) VALUE "sd".
           05 FILLER            PIC X(3) VALUE "sg".
           05 FILLER            PIC X(3) VALUE "shi".
+          05 FILLER            PIC X(3) VALUE "shn".
           05 FILLER            PIC X(3) VALUE "si".
           05 FILLER            PIC X(3) VALUE "sk".
           05 FILLER            PIC X(3) VALUE "sl".
@@ -155,31 +174,36 @@
           05 FILLER            PIC X(3) VALUE "ta".
           05 FILLER            PIC X(3) VALUE "te".
           05 FILLER            PIC X(3) VALUE "tem".
+          05 FILLER            PIC X(3) VALUE "tet".
           05 FILLER            PIC X(3) VALUE "tg".
           05 FILLER            PIC X(3) VALUE "th".
           05 FILLER            PIC X(3) VALUE "ti".
           05 FILLER            PIC X(3) VALUE "tig".
           05 FILLER            PIC X(3) VALUE "tk".
           05 FILLER            PIC X(3) VALUE "tn".
+          05 FILLER            PIC X(3) VALUE "tpi".
           05 FILLER            PIC X(3) VALUE "tr".
           05 FILLER            PIC X(3) VALUE "ts".
+          05 FILLER            PIC X(3) VALUE "tum".
           05 FILLER            PIC X(3) VALUE "tzm".
           05 FILLER            PIC X(3) VALUE "uk".
           05 FILLER            PIC X(3) VALUE "umb".
           05 FILLER            PIC X(3) VALUE "ur".
           05 FILLER            PIC X(3) VALUE "uz".
+          05 FILLER            PIC X(3) VALUE "ve".
           05 FILLER            PIC X(3) VALUE "vi".
           05 FILLER            PIC X(3) VALUE "vmw".
           05 FILLER            PIC X(3) VALUE "wo".
           05 FILLER            PIC X(3) VALUE "xh".
+          05 FILLER            PIC X(3) VALUE "yao".
           05 FILLER            PIC X(3) VALUE "yo".
           05 FILLER            PIC X(3) VALUE "yue".
           05 FILLER            PIC X(3) VALUE "zdj".
           05 FILLER            PIC X(3) VALUE "zh".
           05 FILLER            PIC X(3) VALUE "zu".
        01 WS-LOCALE-CODE-TABLE REDEFINES WS-LOCALE-CODE-VALUES.
-          05 WS-LOCALE-CODE    PIC X(3) OCCURS 146 TIMES.
-       01 WS-LOCALE-COUNT      PIC 9(3) VALUE 146.
+          05 WS-LOCALE-CODE    PIC X(3) OCCURS 168 TIMES.
+       01 WS-LOCALE-COUNT      PIC 9(3) VALUE 168.
        01 WS-LOCALE-IDX        PIC 9(3).
 
        COPY "age/impl/cobol/src/Types.cbl".
@@ -227,6 +251,7 @@
                                GOBACK
                            END-IF
                            MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-LOCALE
+                           PERFORM REJECT-UNSTORABLE-LOCALE
                        WHEN "-d"
                        WHEN "--as-of"
                            ADD 1 TO WS-ARG-IDX
@@ -237,6 +262,8 @@
                                GOBACK
                            END-IF
                            MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-AS-OF
+                           MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                               TO WS-OPT-AS-OF-LEN
                            MOVE 1 TO WS-OPT-AS-OF-SET
                        WHEN "-g"
                        WHEN "--gender"
@@ -266,6 +293,8 @@
                ELSE
                    IF WS-POS1-SET = 0
                        MOVE WS-ARG-VAL TO WS-POS1
+                       MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                           TO WS-POS1-LEN
                        MOVE 1 TO WS-POS1-SET
                    END-IF
                END-IF
@@ -300,7 +329,7 @@
            END-IF
 
       *>   Check for null
-           IF FUNCTION TRIM(WS-POS1) = "null"
+           IF (WS-POS1-LEN = 4 AND WS-POS1(1:4) = "null")
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
@@ -324,12 +353,12 @@
            END-IF
 
       *>   Set up as-of
-           IF WS-OPT-AS-OF-SET = 1
-               IF FUNCTION TRIM(WS-OPT-AS-OF) = "null"
-                   MOVE 1 TO REQ-EXIT-CODE
-                   EXIT PARAGRAPH
-               END-IF
+      *>   A null or empty as-of means today, as in the reference.
+           IF WS-OPT-AS-OF-SET = 1 AND WS-OPT-AS-OF-LEN > 0
+               AND NOT (WS-OPT-AS-OF-LEN = 4
+                   AND WS-OPT-AS-OF(1:4) = "null")
                MOVE WS-OPT-AS-OF TO WS-FMT-AS-OF
+               MOVE WS-OPT-AS-OF-LEN TO WS-FMT-AS-OF-LEN
            ELSE
                ACCEPT WS-TODAY-INT FROM DATE YYYYMMDD
                DIVIDE WS-TODAY-INT BY 10000
@@ -350,6 +379,7 @@
            END-IF
 
            MOVE WS-POS1 TO WS-FMT-DOB
+           MOVE WS-POS1-LEN TO WS-FMT-DOB-LEN
            MOVE WS-OPT-COMPACTNESS TO WS-FMT-COMPACTNESS
            PERFORM FORMAT-AGE
 
@@ -373,7 +403,7 @@
            END-IF
 
       *>   Check for null or "undefined"
-           IF FUNCTION TRIM(WS-POS1) = "null"
+           IF (WS-POS1-LEN = 4 AND WS-POS1(1:4) = "null")
                OR FUNCTION TRIM(WS-POS1) = "undefined"
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
@@ -398,12 +428,12 @@
            END-IF
 
       *>   Set up as-of
-           IF WS-OPT-AS-OF-SET = 1
-               IF FUNCTION TRIM(WS-OPT-AS-OF) = "null"
-                   MOVE 1 TO REQ-EXIT-CODE
-                   EXIT PARAGRAPH
-               END-IF
+      *>   A null or empty as-of means today, as in the reference.
+           IF WS-OPT-AS-OF-SET = 1 AND WS-OPT-AS-OF-LEN > 0
+               AND NOT (WS-OPT-AS-OF-LEN = 4
+                   AND WS-OPT-AS-OF(1:4) = "null")
                MOVE WS-OPT-AS-OF TO WS-FMT-AS-OF
+               MOVE WS-OPT-AS-OF-LEN TO WS-FMT-AS-OF-LEN
            ELSE
                ACCEPT WS-TODAY-INT FROM DATE YYYYMMDD
                DIVIDE WS-TODAY-INT BY 10000
@@ -424,6 +454,7 @@
            END-IF
 
            MOVE WS-POS1 TO WS-FMT-DOB
+           MOVE WS-POS1-LEN TO WS-FMT-DOB-LEN
            MOVE WS-OPT-COMPACTNESS TO WS-FMT-COMPACTNESS
            IF WS-OPT-GENDER-SET = 1
                MOVE WS-OPT-GENDER TO WS-FMT-GENDER
@@ -452,6 +483,17 @@
                MOVE WS-LOCALE-CODE(WS-LOCALE-IDX) TO WS-EMIT-TEXT
                PERFORM EMIT-LINE
            END-PERFORM
+           .
+
+      *> A locale code longer than WS-OPT-LOCALE, or with trailing
+      *> blanks, would match a real code once padded or cut; it names
+      *> no locale.
+       REJECT-UNSTORABLE-LOCALE.
+           IF REQ-ARG-LEN(WS-ARG-IDX) > LENGTH OF WS-OPT-LOCALE
+               OR REQ-ARG-LEN(WS-ARG-IDX) NOT =
+                   FUNCTION STORED-CHAR-LENGTH(REQ-ARG(WS-ARG-IDX))
+               MOVE "?" TO WS-OPT-LOCALE
+           END-IF
            .
 
       *> Appends one stdout line to the response.

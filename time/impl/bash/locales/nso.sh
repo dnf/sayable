@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/nso.json
 
-_locale_nso() {
+_sayabletime_locale_nso() {
     _clock_hours=('lesome pedi' 'tee' 'pedi' 'tharo' 'nne' 'hlano' 'tshela' 'šupa' 'seswai' 'senyane' 'lesome' 'lesome tee')
     _clock_midnight='bošego gare'
     _clock_noon='mosegare'

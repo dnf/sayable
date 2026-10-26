@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ceb.json
 
-_locale_ceb() {
+_sayabledate_locale_ceb() {
     _months=('Enero' 'Pebrero' 'Marso' 'Abril' 'Mayo' 'Hunyo' 'Hulyo' 'Agosto' 'Septyembre' 'Oktubre' 'Nobyembre' 'Disyembre')
     _weekdays=('Dominggo' 'Lunes' 'Martes' 'Miyerkules' 'Huwebes' 'Biyernes' 'Sabado')
     _day_format='{n}'

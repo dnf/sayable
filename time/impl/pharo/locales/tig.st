@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/tig.json "
 
-"Locale: tig"
+"Locale: tig"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 tig

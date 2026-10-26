@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sn.json
 
-_plural_sn() {
+_sayableage_plural_sn() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sn() {
+_sayableage_locale_sn() {
     _unit_day_one='zuva {n}'
     _unit_day_other='mazuva {n}'
     _unit_week_one='vhiki {n}'
@@ -49,5 +49,5 @@ _locale_sn() {
     _compact_unit_year_other='mak {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_sn
+    _plural_func=_sayableage_plural_sn
 }

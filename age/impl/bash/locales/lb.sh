@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/lb.json
 
-_plural_lb() {
+_sayableage_plural_lb() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_lb() {
+_sayableage_locale_lb() {
     _unit_day_one='{n} Dag'
     _unit_day_other='{n} Deeg'
     _unit_week_one='{n} Woch'
@@ -43,5 +43,5 @@ _locale_lb() {
     _compact_unit_month='{n}M'
     _compact_unit_year='{n}J'
     _compact_delimiter=''
-    _plural_func=_plural_lb
+    _plural_func=_sayableage_plural_lb
 }

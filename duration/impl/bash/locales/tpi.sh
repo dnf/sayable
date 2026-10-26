@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tpi.json
 
-_plural_tpi() {
+_sayableduration_plural_tpi() {
     echo "other"
 }
 
-_locale_tpi() {
+_sayableduration_locale_tpi() {
     _unit_second='{n} sekon'
     _unit_minute='{n} minit'
     _unit_hour='{n} aua'
@@ -45,5 +45,5 @@ _locale_tpi() {
     _compact_delimiter=''
     _compact_ago='{0} i go pinis'
     _compact_in_future='long {0}'
-    _plural_func=_plural_tpi
+    _plural_func=_sayableduration_plural_tpi
 }

@@ -271,4 +271,64 @@ void main() {
       expect(sd.formatDuration(90), '1m30s'); // 17.2
     });
   });
+
+  // ================================================================
+  // Short compactness — relative time
+  // ================================================================
+  group('Short compactness — relative time', () {
+    test('days and hours both kept', () {
+      final sd = SayableDuration(getLocale('men')!, Compactness.short);
+      expect(sd.formatSince('2025-01-20T01:32:11', '2025-01-22T15:39:16'),
+          'lɔhɔnga 2, awa 14 taa gbɔyɔ'); // 18.1
+    });
+  });
+
+  // ================================================================
+  // Range (500-year ceiling)
+  // ================================================================
+  group('Range (500-year ceiling)', () {
+    test('500 Julian years is the ceiling', () {
+      expect(formatDuration(15778800000), '500 years'); // 19.1
+    });
+    test('over 6000 months', () {
+      expect(formatDuration(15800000000), isNull); // 19.2
+    });
+    test('well beyond the ceiling', () {
+      expect(formatDuration(99999999999), isNull); // 19.3
+    });
+    test('525 years ago', () {
+      expect(formatSince('1500-01-01T00:00:00', '2025-01-01T00:00:00'),
+          isNull); // 19.4
+    });
+    test('575 years from now', () {
+      expect(formatUntil('2600-01-01T00:00:00', '2025-01-01T00:00:00'),
+          isNull); // 19.5
+    });
+  });
+
+  // ================================================================
+  // Timestamp validation
+  // ================================================================
+  group('Timestamp validation', () {
+    test('seconds are optional', () {
+      expect(formatDuration('2025-01-15T10:00', '2025-01-15T11:30:00'),
+          '1½ hours'); // 20.1
+    });
+    test('minutes are required', () {
+      expect(formatDuration('2025-01-15T10', '2025-01-15T11:30:00'),
+          isNull); // 20.2
+    });
+    test('unpadded date', () {
+      expect(formatDuration('2025-1-5T10:00:00', '2025-01-15T11:30:00'),
+          isNull); // 20.3
+    });
+    test('impossible date', () {
+      expect(formatDuration('2025-02-30T10:00:00', '2025-03-15T11:30:00'),
+          isNull); // 20.4
+    });
+    test('hour out of range', () {
+      expect(formatSince('2025-01-15T10:00:00', '2025-01-15T25:00:00'),
+          isNull); // 20.5
+    });
+  });
 }

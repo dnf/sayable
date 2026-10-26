@@ -11,24 +11,36 @@
 
 ;; ---- Date parsing ----
 
+(define (ascii-digits? s)
+  (for/and ([c (in-string s)]) (char<=? #\0 c #\9)))
+
+(define (leap-year? y)
+  (or (and (zero? (remainder y 4)) (not (zero? (remainder y 100))))
+      (zero? (remainder y 400))))
+
+(define (days-in-month y m)
+  (cond
+    [(= m 2) (if (leap-year? y) 29 28)]
+    [(memv m '(4 6 9 11)) 30]
+    [else 31]))
+
+(define (date-alone-or-before-time? s)
+  (or (= (string-length s) 10)
+      (and (> (string-length s) 10) (char=? (string-ref s 10) #\T))))
+
 (define (parse-date s)
-  "Parse YYYY-MM-DD or ISO datetime to (values year month day). Returns #f on failure."
-  (if (or (not s) (not (string? s)) (equal? s ""))
-      #f
-      (let* ([date-part (if (string-contains? s "T")
-                            (car (string-split s "T"))
-                            s)]
-             [parts (string-split date-part "-")])
-        (if (not (= (length parts) 3))
-            #f
-            (let ([y (string->number (list-ref parts 0))]
-                  [m (string->number (list-ref parts 1))]
-                  [d (string->number (list-ref parts 2))])
-              (if (and y m d
-                       (>= m 1) (<= m 12)
-                       (>= d 1) (<= d 31))
-                  (list y m d)
-                  #f))))))
+  "Parse YYYY-MM-DD, optionally followed by T and a time, naming a real calendar day, to (list year month day). Returns #f on failure."
+  (and (string? s)
+       (date-alone-or-before-time? s)
+       (char=? (string-ref s 4) #\-)
+       (char=? (string-ref s 7) #\-)
+       (ascii-digits? (string-append (substring s 0 4) (substring s 5 7) (substring s 8 10)))
+       (let ([y (string->number (substring s 0 4))]
+             [m (string->number (substring s 5 7))]
+             [d (string->number (substring s 8 10))])
+         (and (<= 1 m 12)
+              (<= 1 d (days-in-month y m))
+              (list y m d)))))
 
 ;; ---- Julian Day Number ----
 

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tet.json
 
-_plural_tet() {
+_sayableduration_plural_tet() {
     echo "other"
 }
 
-_locale_tet() {
+_sayableduration_locale_tet() {
     _unit_second='segundu {n}'
     _unit_minute='minutu {n}'
     _unit_hour='oras {n}'
@@ -45,5 +45,5 @@ _locale_tet() {
     _compact_delimiter=''
     _compact_ago='{0} liu ba'
     _compact_in_future='iha {0}'
-    _plural_func=_plural_tet
+    _plural_func=_sayableduration_plural_tet
 }

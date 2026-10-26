@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/zdj.json
 
-_locale_zdj() {
+_sayabledate_locale_zdj() {
     _months=('Januari' 'Februari' 'Machi' 'Aprili' 'Mei' 'Juni' 'Julai' 'Agosti' 'Septemba' 'Oktoba' 'Novemba' 'Desemba')
     _weekdays=('Jumapili' 'Jumatatu' 'Jumanne' 'Jumatano' 'Alhamisi' 'Ijumaa' 'Jumamosi')
     _day_format='{n}'

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/vmw.json
 
-_locale_vmw() {
+_sayabletime_locale_vmw() {
     _clock_hours=('khumi na pili' 'mosa' 'pili' 'ttatthu' 'ncheche' 'thanu' 'thanu na mosa' 'thanu na pili' 'thanu na ttatthu' 'thanu na ncheche' 'khumi' 'khumi na mosa')
     _clock_midnight='usiku wopakhala'
     _clock_noon='muttana'

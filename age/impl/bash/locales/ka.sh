@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ka.json
 
-_plural_ka() {
+_sayableage_plural_ka() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ka() {
+_sayableage_locale_ka() {
     _unit_day_one='{n} დღე'
     _unit_day_other='{n} დღე'
     _unit_week_one='{n} კვირა'
@@ -43,5 +43,5 @@ _locale_ka() {
     _compact_unit_year='{n} წ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ka
+    _plural_func=_sayableage_plural_ka
 }

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/vi.json
 
-_plural_vi() {
+_sayableduration_plural_vi() {
     echo "other"
 }
 
-_locale_vi() {
+_sayableduration_locale_vi() {
     _unit_second='{n} giây'
     _unit_minute='{n} phút'
     _unit_hour='{n} giờ'
@@ -46,5 +46,5 @@ _locale_vi() {
     _compact_delimiter=''
     _compact_ago='{0} trước'
     _compact_in_future='trong {0}'
-    _plural_func=_plural_vi
+    _plural_func=_sayableduration_plural_vi
 }

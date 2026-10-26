@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/lb.json
 
-_plural_lb() {
+_sayableduration_plural_lb() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_lb() {
+_sayableduration_locale_lb() {
     _unit_second_one='{n} Sekonn'
     _unit_second_other='{n} Sekonnen'
     _unit_minute_one='{n} Minutt'
@@ -54,5 +54,5 @@ _locale_lb() {
     _compact_delimiter=''
     _compact_ago='virun {0}'
     _compact_in_future='an {0}'
-    _plural_func=_plural_lb
+    _plural_func=_sayableduration_plural_lb
 }

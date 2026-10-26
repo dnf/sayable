@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/shn.json
 
-_plural_shn() {
+_sayableduration_plural_shn() {
     echo "other"
 }
 
-_locale_shn() {
+_sayableduration_locale_shn() {
     _unit_second='{n} ဝိၼႃးတီႇ'
     _unit_minute='{n} မိၼိတ်ႉ'
     _unit_hour='{n} ၸူဝ်ႈမူင်း'
@@ -45,5 +45,5 @@ _locale_shn() {
     _compact_delimiter=''
     _compact_ago='{0} ပူၼ်ႉမႃး'
     _compact_in_future='ထႅင်ႈ {0}'
-    _plural_func=_plural_shn
+    _plural_func=_sayableduration_plural_shn
 }

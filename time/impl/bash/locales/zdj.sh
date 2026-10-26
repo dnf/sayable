@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/zdj.json
 
-_locale_zdj() {
+_sayabletime_locale_zdj() {
     _clock_hours=('kumi na mbili' 'moja' 'mbili' 'tatu' 'nne' 'tano' 'sita' 'saba' 'nane' 'tisa' 'kumi' 'kumi na moja')
     _clock_midnight='usiku wa manane'
     _clock_noon='adhuhuri'

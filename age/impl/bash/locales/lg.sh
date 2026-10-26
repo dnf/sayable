@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/lg.json
 
-_plural_lg() {
+_sayableage_plural_lg() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_lg() {
+_sayableage_locale_lg() {
     _unit_day_one='olunaku {n}'
     _unit_day_other='ennaku {n}'
     _unit_week_one='sabbiiti {n}'
@@ -49,5 +49,5 @@ _locale_lg() {
     _compact_unit_year_other='myaka {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_lg
+    _plural_func=_sayableage_plural_lg
 }

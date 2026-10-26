@@ -67,19 +67,25 @@ function _resolve_unit(count::Int, uf, locale::AgeLocale, half::String)
     result
 end
 
-function _parse_date(s::String)
-    length(s) < 10 && return nothing
-    s[5] != '-' && return nothing
-    s[8] != '-' && return nothing
-    y = tryparse(Int, s[1:4])
-    m = tryparse(Int, s[6:7])
-    d = tryparse(Int, s[9:10])
-    (y === nothing || m === nothing || d === nothing) && return nothing
-    (y, m, d)
-end
+_is_ascii_digit(b::UInt8) = UInt8('0') <= b <= UInt8('9')
+
+_digits_value(cu, range) = foldl((acc, i) -> acc * 10 + Int(cu[i] - UInt8('0')), range; init=0)
 
 function _days_in_month(y::Int, m::Int)
     Dates.daysinmonth(y, m)
+end
+
+# Exactly YYYY-MM-DD naming a real calendar day, else nothing.
+function _parse_date(s::String)
+    cu = codeunits(s)
+    length(cu) != 10 && return nothing
+    (cu[5] != UInt8('-') || cu[8] != UInt8('-')) && return nothing
+    all(i -> _is_ascii_digit(cu[i]), (1, 2, 3, 4, 6, 7, 9, 10)) || return nothing
+    y = _digits_value(cu, 1:4)
+    m = _digits_value(cu, 6:7)
+    d = _digits_value(cu, 9:10)
+    (1 <= m <= 12 && 1 <= d <= _days_in_month(y, m)) || return nothing
+    (y, m, d)
 end
 
 function _parse_age(dob::String, as_of::String="")

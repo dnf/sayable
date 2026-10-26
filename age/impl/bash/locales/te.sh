@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/te.json
 
-_plural_te() {
+_sayableage_plural_te() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_te() {
+_sayableage_locale_te() {
     _unit_day_one='{n} రోజు'
     _unit_day_other='{n} రోజులు'
     _unit_week_one='{n} వారం'
@@ -44,5 +44,5 @@ _locale_te() {
     _compact_unit_year='{n}సం'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_te
+    _plural_func=_sayableage_plural_te
 }

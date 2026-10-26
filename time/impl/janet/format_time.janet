@@ -2,24 +2,35 @@
 
 (def version "0.5.0")
 
+(defn- leap-year? [y]
+  (or (and (= (% y 4) 0) (not= (% y 100) 0))
+      (= (% y 400) 0)))
+
+(defn- days-in-month [y m]
+  (cond
+    (= m 2) (if (leap-year? y) 29 28)
+    (index-of m [4 6 9 11]) 30
+    31))
+
+(defn- real-date? [[y m d]]
+  (and (<= 1 m 12) (<= 1 d (days-in-month y m))))
+
+# A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+# suffix, which is ignored), alone or after the T of an ISO datetime.
+(def- time-grammar
+  (peg/compile
+    ~{:date (group (* (number (4 :d)) "-" (number (2 :d)) "-" (number (2 :d))))
+      :clock (group (* (number (between 1 2 :d)) ":" (number (2 :d))
+                       (? (* ":" (number (2 :d)) (? (* "." (some :d)))))
+                       (? (+ "Z" (* (set "+-") (2 :d) ":" (2 :d))))))
+      :main (* (+ (* :date "T") (constant nil)) :clock -1)}))
+
 (defn- parse-time [s]
-  (when (and s (not= s ""))
-    (var t s)
-    (when (string/find "T" t)
-      (set t (last (string/split "T" t))))
-    (when (string/find "+" t)
-      (set t (first (string/split "+" t))))
-    (when (string/find "Z" t)
-      (set t (first (string/split "Z" t))))
-    (def parts (string/split ":" t))
-    (when (< (length parts) 2) (break nil))
-    (def hour (scan-number (in parts 0)))
-    (def min-str (first (string/split "." (in parts 1))))
-    (def minute (scan-number min-str))
-    (when (or (nil? hour) (nil? minute)) (break nil))
-    (when (or (< hour 0) (> hour 23) (< minute 0) (> minute 59))
-      (break nil))
-    [hour minute]))
+  (when-let [parts (and (string? s) (peg/match time-grammar s))
+             [date-part [hour minute second]] parts]
+    (when (and (or (nil? date-part) (real-date? date-part))
+               (<= hour 23) (<= minute 59) (<= (or second 0) 59))
+      [hour minute])))
 
 (defn- round-to-5 [minute]
   (* (math/floor (/ (+ minute 2) 5)) 5))

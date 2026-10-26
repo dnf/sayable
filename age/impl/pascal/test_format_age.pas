@@ -543,6 +543,46 @@ begin
   { 30.5 }
   AssertLocaleNil('30.5', GetLocale('EN'));
 
+  { Section 31: Weeks and days across month ends }
+  { 31.1 }
+  AssertEqual('31.1', '12 weeks, 4 days', FormatAge(GetLocale('en')^, csNormal, '2016-12-31', '2017-03-29'));
+  { 31.2 }
+  AssertEqual('31.2', '12 weeks, 6 days', FormatAge(GetLocale('en')^, csNormal, '1991-11-27', '1992-02-25'));
+  { 31.3 }
+  AssertEqual('31.3', '4 weeks, 5 days', FormatAge(GetLocale('en')^, csNormal, '2020-11-30', '2021-01-02'));
+  { 31.4 }
+  AssertEqual('31.4', '12w4d', FormatAge(GetLocale('en')^, csCompact, '2016-12-31', '2017-03-29'));
+
+  { Section 32: Half years take their plural form from whole years }
+  { 32.1 }
+  AssertEqual('32.1', '3 i pół lata', FormatAge(GetLocale('pl')^, csNormal, '2021-06-15', '2025-01-15'));
+  { 32.2 }
+  AssertEqual('32.2', '5 i pół lat', FormatAge(GetLocale('pl')^, csShort, '2020-06-15', '2025-12-15'));
+  { 32.3 }
+  AssertEqual('32.3', '6 iseggasen d uzgen', FormatAge(GetLocale('shi')^, csNormal, '2005-06-08', '2012-06-07'));
+
+  { Section 33: Input validation }
+  { 33.1 }
+  AssertNull('33.1', FormatAge(GetLocale('en')^, csNormal, '2025-02-30', '2032-06-25'));
+  { 33.2 }
+  AssertNull('33.2', FormatAge(GetLocale('en')^, csNormal, '2025-13-01', '2027-01-31'));
+  { 33.3 }
+  AssertNull('33.3', FormatAge(GetLocale('en')^, csNormal, '2023-02-29', '2025-03-01'));
+  { 33.4 }
+  AssertNull('33.4', FormatAge(GetLocale('en')^, csNormal, '2025-06-00', '2027-02-25'));
+  { 33.5 }
+  AssertNull('33.5', FormatAge(GetLocale('en')^, csNormal, '2025-6-1', '2027-02-25'));
+  { 33.6 }
+  AssertNull('33.6', FormatAge(GetLocale('en')^, csNormal, ' 2025-06-01', '2027-02-25'));
+  { 33.7 }
+  AssertNull('33.7', FormatAge(GetLocale('en')^, csNormal, '2025-06-15T10:00:00', '2027-02-25'));
+  { 33.8 }
+  AssertNull('33.8', FormatAge(GetLocale('en')^, csNormal, '2020-01-01', '2025-04-31'));
+  { 33.9 }
+  AssertNull('33.9', FormatStage(GetLocale('en')^, '2025-02-30', '2027-09-05', ''));
+  { 33.10 }
+  AssertEqual('33.10', '2 years', FormatAge(GetLocale('en')^, csNormal, '2024-02-29', '2026-03-01'));
+
   { Print results }
   WriteLn('');
   WriteLn(PassCount, ' passed, ', FailCount, ' failed');

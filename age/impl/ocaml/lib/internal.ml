@@ -1,7 +1,18 @@
 let is_digit c = c >= '0' && c <= '9'
 
+let is_leap_year y =
+  (y mod 4 = 0 && y mod 100 <> 0) || y mod 400 = 0
+
+let days_in_month y m =
+  match m with
+  | 1 | 3 | 5 | 7 | 8 | 10 | 12 -> 31
+  | 4 | 6 | 9 | 11 -> 30
+  | 2 -> if is_leap_year y then 29 else 28
+  | _ -> 30
+
+(* Exactly YYYY-MM-DD naming a real calendar day. *)
 let parse_date s =
-  if String.length s < 10 then None
+  if String.length s <> 10 then None
   else if s.[4] <> '-' || s.[7] <> '-' then None
   else
     let y_str = String.sub s 0 4 in
@@ -17,18 +28,8 @@ let parse_date s =
       let y = int_of_string y_str in
       let m = int_of_string m_str in
       let d = int_of_string d_str in
-      if y = 0 && m = 0 && d = 0 then None
+      if m < 1 || m > 12 || d < 1 || d > days_in_month y m then None
       else Some (y, m, d)
-
-let is_leap_year y =
-  (y mod 4 = 0 && y mod 100 <> 0) || y mod 400 = 0
-
-let days_in_month y m =
-  match m with
-  | 1 | 3 | 5 | 7 | 8 | 10 | 12 -> 31
-  | 4 | 6 | 9 | 11 -> 30
-  | 2 -> if is_leap_year y then 29 else 28
-  | _ -> 30
 
 let to_jdn y m d =
   let a = (14 - m) / 12 in

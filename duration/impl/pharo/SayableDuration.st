@@ -3,11 +3,16 @@
 Object subclass: #SayableDuration
 	instanceVariableNames: 'locale units half delimiter justNow agoTemplate inFutureTemplate'
 	classVariableNames: 'Version'
-	package: 'SayableDuration'.
+	package: 'SayableDuration'!
 
-SayableDuration class instanceVariableNames: ''.
+SayableDuration class instanceVariableNames: ''!
 
-Version := '0.5.0'.
+!SayableDuration class methodsFor: 'class initialization'!
+initialize
+	Version := '0.5.0'
+! !
+
+SayableDuration initialize!
 
 !SayableDuration class methodsFor: 'accessing'!
 version
@@ -113,6 +118,7 @@ formatSince: start asOf: asOf
 	diff < 0 ifTrue: [ ^ nil ].
 	diff = 0 ifTrue: [ ^ justNow ].
 	dur := self formatDurationSeconds: diff.
+	dur ifNil: [ ^ nil ].
 	^ agoTemplate copyReplaceAll: '{0}' with: dur
 !
 
@@ -128,6 +134,7 @@ formatUntil: target asOf: asOf
 	diff < 0 ifTrue: [ ^ nil ].
 	diff = 0 ifTrue: [ ^ justNow ].
 	dur := self formatDurationSeconds: diff.
+	dur ifNil: [ ^ nil ].
 	^ inFutureTemplate copyReplaceAll: '{0}' with: dur
 ! !
 
@@ -199,6 +206,7 @@ formatDurationSeconds: total
 
 	"Approximate months (30.44 days average)"
 	totalMonths := (totalDays / 30.44) rounded.
+	totalMonths > self class maxDurationMonths ifTrue: [ ^ nil ].
 
 	"1-11 months"
 	totalMonths < 12 ifTrue: [
@@ -241,35 +249,24 @@ resolveUnit: count forms: unitForms half: halfTemplate
 
 !SayableDuration methodsFor: 'private-parsing'!
 parseIsoToSeconds: isoStr
-	"Parse ISO datetime string to epoch-ish seconds for diffing."
-	| datePart timePart dp year month day timeStr tp hour minute second days |
+	"Parse YYYY-MM-DDTHH:MM (optional :SS, fraction and zone suffix, which is
+	ignored) to epoch-ish seconds for diffing. Returns nil if malformed."
+	| year month day colon hour minute second |
 	isoStr isNil ifTrue: [ ^ nil ].
-	isoStr isEmpty ifTrue: [ ^ nil ].
-	[
-		| parts |
-		parts := isoStr substrings: $T.
-		datePart := parts first.
-		timePart := parts size > 1 ifTrue: [ parts second ] ifFalse: [ '0:0:0' ].
-
-		dp := datePart substrings: $-.
-		year := dp first asInteger.
-		month := (dp at: 2) asInteger.
-		day := dp third asInteger.
-
-		timeStr := timePart.
-		(timeStr includes: $+)
-			ifTrue: [ timeStr := (timeStr substrings: $+) first ].
-		(timeStr includes: $Z)
-			ifTrue: [ timeStr := timeStr copyReplaceAll: 'Z' with: '' ].
-
-		tp := timeStr substrings: $:.
-		hour := tp first asInteger.
-		minute := tp size > 1 ifTrue: [ (tp at: 2) asInteger ] ifFalse: [ 0 ].
-		second := tp size > 2 ifTrue: [ ((tp at: 3) substrings: $.) first asInteger ] ifFalse: [ 0 ].
-
-		days := self daysSinceEpoch: year month: month day: day.
-		^ (days * 86400) + (hour * 3600) + (minute * 60) + second
-	] on: Error do: [ :e | ^ nil ]
+	(isoStr matchesRegex: self class timestampPattern) ifFalse: [ ^ nil ].
+	year := (isoStr copyFrom: 1 to: 4) asInteger.
+	month := (isoStr copyFrom: 6 to: 7) asInteger.
+	day := (isoStr copyFrom: 9 to: 10) asInteger.
+	colon := isoStr indexOf: $: startingAt: 12.
+	hour := (isoStr copyFrom: 12 to: colon - 1) asInteger.
+	minute := (isoStr copyFrom: colon + 1 to: colon + 2) asInteger.
+	second := (isoStr size >= (colon + 5) and: [ (isoStr at: colon + 3) = $: ])
+		ifTrue: [ (isoStr copyFrom: colon + 4 to: colon + 5) asInteger ]
+		ifFalse: [ 0 ].
+	(month between: 1 and: 12) ifFalse: [ ^ nil ].
+	(day between: 1 and: (self daysInMonth: year month: month)) ifFalse: [ ^ nil ].
+	(hour > 23 or: [ minute > 59 or: [ second > 59 ] ]) ifTrue: [ ^ nil ].
+	^ ((self daysSinceEpoch: year month: month day: day) * 86400) + (hour * 3600) + (minute * 60) + second
 !
 
 daysSinceEpoch: year month: month day: day
@@ -303,4 +300,15 @@ daysInMonth: year month: month
 	(#(1 3 5 7 8 10 12) includes: month) ifTrue: [ ^ 31 ].
 	(#(4 6 9 11) includes: month) ifTrue: [ ^ 30 ].
 	^ (self isLeapYear: year) ifTrue: [ 29 ] ifFalse: [ 28 ]
+! !
+
+!SayableDuration class methodsFor: 'constants'!
+maxDurationMonths
+	"500 years, the same ceiling as sayable-age."
+	^ 6000
+!
+
+timestampPattern
+	"YYYY-MM-DDTHH:MM, optional :SS with an optional fraction, optional zone suffix."
+	^ '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]?\:[0-9][0-9](\:[0-9][0-9](\.[0-9]+)?)?(Z|\+[0-9][0-9]\:[0-9][0-9]|-[0-9][0-9]\:[0-9][0-9])?'
 ! !

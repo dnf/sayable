@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/id.json
 
-_plural_id() {
+_sayableduration_plural_id() {
     echo "other"
 }
 
-_locale_id() {
+_sayableduration_locale_id() {
     _unit_second='{n} detik'
     _unit_minute='{n} menit'
     _unit_hour='{n} jam'
@@ -46,5 +46,5 @@ _locale_id() {
     _compact_delimiter=''
     _compact_ago='{0} yang lalu'
     _compact_in_future='dalam {0}'
-    _plural_func=_plural_id
+    _plural_func=_sayableduration_plural_id
 }

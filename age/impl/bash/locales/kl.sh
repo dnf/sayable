@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/kl.json
 
-_plural_kl() {
+_sayableage_plural_kl() {
     echo "other"
 }
 
-_locale_kl() {
+_sayableage_locale_kl() {
     _unit_day='ullut {n}'
     _unit_week='sapaatit {n}'
     _unit_month='qaammatit {n}'
@@ -36,5 +36,5 @@ _locale_kl() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_kl
+    _plural_func=_sayableage_plural_kl
 }

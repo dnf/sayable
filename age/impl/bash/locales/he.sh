@@ -9,14 +9,14 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/he.json
 
-_plural_he() {
+_sayableage_plural_he() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ]; then echo "two"; return; fi
     echo "other"
 }
 
-_locale_he() {
+_sayableage_locale_he() {
     _unit_day_one='יום {n}'
     _unit_day_two='יומיים'
     _unit_day_other='{n} ימים'
@@ -58,5 +58,5 @@ _locale_he() {
     _compact_unit_year='{n} ש′'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_he
+    _plural_func=_sayableage_plural_he
 }

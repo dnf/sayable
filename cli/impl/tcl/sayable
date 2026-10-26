@@ -94,7 +94,7 @@ proc parse_args {argv} {
             continue
         }
 
-        if {!$stop_opts && [string index $arg 0] eq "-" && ![string is integer -strict $arg]} {
+        if {!$stop_opts && [string index $arg 0] eq "-"} {
             if {$arg eq "-l" || $arg eq "--locale"} {
                 incr i
                 if {$i >= [llength $argv]} {
@@ -304,7 +304,7 @@ proc cmd_duration {positionals options} {
 
     if {[is_null $value]} {
         set result [::sayableduration::format_duration $formatter ""]
-    } elseif {[string is integer -strict $value]} {
+    } elseif {[regexp {^-?[0-9]+$} $value]} {
         set result [::sayableduration::format_duration $formatter $value]
     } else {
         # Timestamp mode: need end argument

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 from typing import Literal
 
 from sayable_time.locale import (
@@ -14,26 +16,38 @@ from sayable_time.locales.en import EN
 __version__ = "0.5.0"
 
 
+# A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+# suffix, which is ignored), alone or after the T of an ISO datetime.
+_CLOCK = re.compile(r"([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?")
+_DATE = re.compile(r"([0-9]{4})-([0-9]{2})-([0-9]{2})")
+
+
+def _days_in_month(year: int, month: int) -> int:
+    if month == 2:
+        return 29 if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0 else 28
+    return 30 if month in (4, 6, 9, 11) else 31
+
+
+def _is_real_date(year: int, month: int, day: int) -> bool:
+    return 1 <= month <= 12 and 1 <= day <= _days_in_month(year, month)
+
+
 def _parse_time(input_str: str) -> tuple[int, int] | None:
-    """Parse HH:MM or ISO datetime to (hour, minute). Returns None on failure."""
+    """Parse a clock time or ISO datetime to (hour, minute). Returns None on failure."""
     if not input_str:
         return None
-    t = input_str
-    if "T" in t:
-        t = t.split("T")[1]
-    if "+" in t:
-        t = t.split("+")[0]
-    if "Z" in t:
-        t = t.split("Z")[0]
-    parts = t.split(":")
-    if len(parts) < 2:
+    clock = input_str
+    if "T" in input_str:
+        date_part, _, clock = input_str.partition("T")
+        d = _DATE.fullmatch(date_part)
+        if not d or not _is_real_date(int(d[1]), int(d[2]), int(d[3])):
+            return None
+    m = _CLOCK.fullmatch(clock)
+    if not m:
         return None
-    try:
-        hour = int(parts[0])
-        minute = int(parts[1].split(".")[0])
-    except ValueError:
-        return None
-    if hour < 0 or hour > 23 or minute < 0 or minute > 59:
+    hour, minute = int(m[1]), int(m[2])
+    second = int(m[3]) if m[3] else 0
+    if hour > 23 or minute > 59 or second > 59:
         return None
     return (hour, minute)
 

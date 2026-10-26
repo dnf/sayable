@@ -20,12 +20,12 @@ def emit_locale(data: dict) -> str:
     lines = [HEADER + locale_source_comment(code, line_prefix="# ")]
 
     # Plural rule function
-    plural_body = get_bash_plural(rule).replace("$CODE", code)
+    plural_body = get_bash_plural(rule).replace("_plural_$CODE", f"_sayableduration_plural_{code}")
     lines.append(plural_body)
     lines.append("")
 
     # Locale data function that sets variables in the caller's scope
-    lines.append(f"_locale_{code}() {{")
+    lines.append(f"_sayableduration_locale_{code}() {{")
 
     # Units
     for unit_name in ("second", "minute", "hour", "day", "week", "month", "year"):
@@ -70,7 +70,7 @@ def emit_locale(data: dict) -> str:
                 lines.append(f"    _{mode}_in_future={_quote(ovr['inFuture'])}")
 
     # Plural function name
-    lines.append(f"    _plural_func=_plural_{code}")
+    lines.append(f"    _plural_func=_sayableduration_plural_{code}")
 
     lines.append("}")
     lines.append("")
@@ -103,7 +103,7 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("    local known")
     lines.append("    for known in ${_SAYABLEDURATION_LOCALES}; do")
     lines.append("        if [ \"${known}\" = \"${code}\" ]; then")
-    lines.append("            _locale_${code}")
+    lines.append("            _sayableduration_locale_${code}")
     lines.append("            return 0")
     lines.append("        fi")
     lines.append("    done")

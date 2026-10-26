@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/tet.json
 
-_plural_tet() {
+_sayableage_plural_tet() {
     echo "other"
 }
 
-_locale_tet() {
+_sayableage_locale_tet() {
     _unit_day='loron {n}'
     _unit_week='semana {n}'
     _unit_month='fulan {n}'
@@ -36,5 +36,5 @@ _locale_tet() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_tet
+    _plural_func=_sayableage_plural_tet
 }

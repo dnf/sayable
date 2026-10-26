@@ -1,3 +1,5 @@
+const MAX_DURATION_MONTHS = 6000  # 500 years, the same ceiling as sayable-age
+
 struct SayableDurationFormatter
     locale::DurationLocale
     second::Any
@@ -108,44 +110,17 @@ function _days_since_epoch(year::Int, month::Int, day::Int)
     days
 end
 
+# YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+const _TIMESTAMP = r"\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z"
+
+_capture_int(m::RegexMatch, i::Int) = m[i] === nothing ? 0 : parse(Int, m[i])
+
 function _parse_iso_to_seconds(iso_str::String)
-    isempty(iso_str) && return nothing
-    !occursin("T", iso_str) && return nothing
-    parts = split(iso_str, "T")
-    length(parts) != 2 && return nothing
-    date_part = parts[1]
-    time_part = string(parts[2])
-
-    dp = split(date_part, "-")
-    length(dp) != 3 && return nothing
-    year = tryparse(Int, dp[1])
-    month = tryparse(Int, dp[2])
-    day = tryparse(Int, dp[3])
-    (year === nothing || month === nothing || day === nothing) && return nothing
-
-    # Strip timezone
-    time_str = time_part
-    if occursin("+", time_str)
-        time_str = split(time_str, "+")[1]
-    end
-    if occursin("Z", time_str)
-        time_str = split(time_str, "Z")[1]
-    end
-
-    tp = split(time_str, ":")
-    hour = tryparse(Int, tp[1])
-    hour === nothing && return nothing
-    minute = length(tp) > 1 ? tryparse(Int, tp[2]) : 0
-    minute === nothing && return nothing
-    second = if length(tp) > 2
-        # Handle fractional seconds
-        sec_str = split(string(tp[3]), ".")[1]
-        tryparse(Int, sec_str)
-    else
-        0
-    end
-    second === nothing && return nothing
-
+    m = match(_TIMESTAMP, iso_str)
+    m === nothing && return nothing
+    year, month, day, hour, minute, second = (_capture_int(m, i) for i in 1:6)
+    (1 <= month <= 12 && 1 <= day <= _days_in_month(year, month)) || return nothing
+    (hour > 23 || minute > 59 || second > 59) && return nothing
     days = _days_since_epoch(year, month, day)
     days * 86400 + hour * 3600 + minute * 60 + second
 end
@@ -230,6 +205,7 @@ function _format_duration_seconds(fmt::SayableDurationFormatter, total::Int)
 
     # Approximate months (30.44 days average)
     total_months = round(Int, total_days / 30.44)
+    total_months > MAX_DURATION_MONTHS && return nothing
 
     # 1-11 months
     if total_months < 12
@@ -270,7 +246,7 @@ function format_since(fmt::SayableDurationFormatter, start::String, as_of::Strin
     diff < 0 && return nothing
     diff == 0 && return fmt.just_now
     dur = _format_duration_seconds(fmt, diff)
-    replace(fmt.ago, "{0}" => dur)
+    dur === nothing ? nothing : replace(fmt.ago, "{0}" => dur)
 end
 
 function format_until(fmt::SayableDurationFormatter, target::String, as_of::String)
@@ -282,5 +258,5 @@ function format_until(fmt::SayableDurationFormatter, target::String, as_of::Stri
     diff < 0 && return nothing
     diff == 0 && return fmt.just_now
     dur = _format_duration_seconds(fmt, diff)
-    replace(fmt.in_future, "{0}" => dur)
+    dur === nothing ? nothing : replace(fmt.in_future, "{0}" => dur)
 end

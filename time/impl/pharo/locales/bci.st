@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/bci.json "
 
-"Locale: bci"
+"Locale: bci"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 bci

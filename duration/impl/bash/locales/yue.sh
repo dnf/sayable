@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/yue.json
 
-_plural_yue() {
+_sayableduration_plural_yue() {
     echo "other"
 }
 
-_locale_yue() {
+_sayableduration_locale_yue() {
     _unit_second='{n}秒'
     _unit_minute='{n}分鐘'
     _unit_hour='{n}個鐘頭'
@@ -46,5 +46,5 @@ _locale_yue() {
     _compact_delimiter=''
     _compact_ago='{0}前'
     _compact_in_future='{0}之後'
-    _plural_func=_plural_yue
+    _plural_func=_sayableduration_plural_yue
 }

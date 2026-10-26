@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ki.json
 
-_locale_ki() {
+_sayabledate_locale_ki() {
     _months=('Njenuarĩ' 'Mwere wa kerĩ' 'Mwere wa gatatũ' 'Mwere wa kana' 'Mwere wa gatano' 'Mwere wa gatandatũ' 'Mwere wa mũgwanja' 'Mwere wa kanana' 'Mwere wa kenda' 'Mwere wa ikũmi' 'Mwere wa ikũmi na ũmwe' 'Ndithemba')
     _weekdays=('Kiumia' 'Njumatatũ' 'Njumaine' 'Njumatana' 'Aramithi' 'Njumaa' 'Njumamothi')
     _day_format='{n}'

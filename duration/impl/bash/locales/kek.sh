@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kek.json
 
-_plural_kek() {
+_sayableduration_plural_kek() {
     echo "other"
 }
 
-_locale_kek() {
+_sayableduration_locale_kek() {
     _unit_second='{n} segundo'
     _unit_minute='{n} minuto'
     _unit_hour='{n} hora'
@@ -45,5 +45,5 @@ _locale_kek() {
     _compact_delimiter=''
     _compact_ago='{0} qakab'\'''
     _compact_in_future='chi {0}'
-    _plural_func=_plural_kek
+    _plural_func=_sayableduration_plural_kek
 }

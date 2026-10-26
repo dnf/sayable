@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/dz.json
 
-_plural_dz() {
+_sayableage_plural_dz() {
     echo "other"
 }
 
-_locale_dz() {
+_sayableage_locale_dz() {
     _unit_day='ཉིན་ {n}'
     _unit_week='བདུན་ཕྲག་ {n}'
     _unit_month='ཟླ་ {n}'
@@ -36,5 +36,5 @@ _locale_dz() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_dz
+    _plural_func=_sayableage_plural_dz
 }

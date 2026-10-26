@@ -111,7 +111,7 @@ def emit_locale(data: dict) -> str:
 
 
 def emit_registry(all_locales: list[dict]) -> str:
-    """Generate the locales module with get(code) function."""
+    """Generate the locales module with the sorted codes and get(code)."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER]
     lines.append("import sayableage/types")
@@ -121,6 +121,13 @@ def emit_registry(all_locales: list[dict]) -> str:
         code = loc["code"]
         mod = _module_name(code)
         lines.append(f"import sayableage/locales/{mod} as locale_{mod}")
+    lines.append("")
+
+    lines.append("/// Every locale code, sorted.")
+    lines.append("pub const codes = [")
+    for loc in sorted_locs:
+        lines.append(f"  {_quote(loc['code'])},")
+    lines.append("]")
     lines.append("")
 
     lines.append("pub fn get(code: String) -> Result(types.AgeLocale, Nil) {")

@@ -16,31 +16,28 @@ private struct AgeComponents {
     int diffDays;
 }
 
-/// Parse a YYYY-MM-DD date string into (year, month, day).
-/// Returns false if the string is invalid.
+/// Parse exactly YYYY-MM-DD naming a real calendar day into (year, month, day)
+/// (docs/input-formats.md). Returns false for anything else.
 private bool parseDateParts(string s, out int y, out int m, out int d) {
-    if (s.length < 10 || s[4] != '-' || s[7] != '-') {
+    if (s.length != 10 || s[4] != '-' || s[7] != '-') {
         return false;
     }
-    y = atoiSlice(s[0 .. 4]);
-    m = atoiSlice(s[5 .. 7]);
-    d = atoiSlice(s[8 .. 10]);
-    if (y == 0 && m == 0 && d == 0) {
+    if (!parseDigits(s[0 .. 4], y) || !parseDigits(s[5 .. 7], m) || !parseDigits(s[8 .. 10], d)) {
         return false;
     }
-    return true;
+    return m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth(y, m);
 }
 
-/// Convert a numeric string slice to int.
-private int atoiSlice(string s) {
-    int n = 0;
+/// Convert a run of ASCII digits to int. Returns false if any isn't a digit.
+private bool parseDigits(string s, out int n) {
+    n = 0;
     foreach (c; s) {
         if (c < '0' || c > '9') {
-            return 0;
+            return false;
         }
         n = n * 10 + (c - '0');
     }
-    return n;
+    return true;
 }
 
 /// Check if a year is a leap year.
@@ -56,19 +53,13 @@ private int daysInMonth(int y, int m) {
     return _days[m - 1];
 }
 
-/// Count days from a civil date to a serial day number (for diffing).
-private long serialDay(int y, int m, int d) {
-    long result = 365L * y + y / 4 - y / 100 + y / 400;
-    static immutable int[12] cumDays = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
-    if (m >= 1 && m <= 12) {
-        result += cumDays[m - 1];
-    }
-    result += d;
-    // Adjust for leap year: if month > 2 and leap year, add 1.
-    if (m > 2 && isLeapYear(y)) {
-        result += 1;
-    }
-    return result;
+/// Julian Day Number of a Gregorian date, for diffing.
+/// See https://en.wikipedia.org/wiki/Julian_day#Converting_Gregorian_calendar_date_to_JDN
+private long serialDay(int year, int month, int day) {
+    immutable long a = (14 - month) / 12;
+    immutable long y = year + 4800 - a;
+    immutable long m = month + 12 * a - 3;
+    return day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045;
 }
 
 /// Parse age from date of birth and optional reference date.

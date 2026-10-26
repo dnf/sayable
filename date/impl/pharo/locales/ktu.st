@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/ktu.json "
 
-"Locale: ktu"
+"Locale: ktu"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 ktu

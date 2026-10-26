@@ -26,22 +26,37 @@ module SayableTime
       end
     end
 
+    # A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+    # suffix, which is ignored), alone or after the T of an ISO datetime.
+    CLOCK_PATTERN = /\A([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/
+    DATE_PATTERN  = /\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z/
+
     private def parse_time(input_str : String) : Tuple(Int32, Int32)?
-      return nil if input_str.empty?
-
-      t = input_str
-      t = t.split('T')[1] if t.includes?('T')
-      t = t.split('+')[0] if t.includes?('+')
-      t = t.split('Z')[0] if t.includes?('Z')
-
-      parts = t.split(':')
-      return nil if parts.size < 2
-
-      hour = parts[0].to_i? || return nil
-      minute = parts[1].split('.')[0].to_i? || return nil
-      return nil if hour < 0 || hour > 23 || minute < 0 || minute > 59
+      clock = input_str
+      if t = input_str.index('T')
+        return nil unless real_date?(input_str[0, t])
+        clock = input_str[(t + 1)..]
+      end
+      m = CLOCK_PATTERN.match(clock) || return nil
+      hour, minute = m[1].to_i, m[2].to_i
+      second = m[3]?.try(&.to_i) || 0
+      return nil if hour > 23 || minute > 59 || second > 59
 
       {hour, minute}
+    end
+
+    private def real_date?(s : String) : Bool
+      m = DATE_PATTERN.match(s) || return false
+      year, month, day = m[1].to_i, m[2].to_i, m[3].to_i
+      1 <= month <= 12 && 1 <= day <= days_in_month(year, month)
+    end
+
+    private def days_in_month(year : Int32, month : Int32) : Int32
+      case month
+      when 4, 6, 9, 11 then 30
+      when 2           then (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28
+      else                  31
+      end
     end
 
     private def round_to_5(minute : Int32) : Int32
@@ -85,8 +100,8 @@ module SayableTime
       ampm_str = hour < 12 ? am_pm[0] : am_pm[1]
 
       fmt.gsub("{h}", h12.to_s)
-         .gsub("{mm}", minute.to_s.rjust(2, '0'))
-         .gsub("{ampm}", ampm_str)
+        .gsub("{mm}", minute.to_s.rjust(2, '0'))
+        .gsub("{ampm}", ampm_str)
     end
   end
 end

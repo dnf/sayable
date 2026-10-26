@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ky.json
 
-_locale_ky() {
+_sayabletime_locale_ky() {
     _clock_hours=('он эки' 'бир' 'эки' 'үч' 'төрт' 'беш' 'алты' 'жети' 'сегиз' 'тогуз' 'он' 'он бир')
     _clock_midnight='түн ортосу'
     _clock_noon='түш'

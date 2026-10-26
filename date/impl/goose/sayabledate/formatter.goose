@@ -16,17 +16,25 @@ fn parse_digits(s: u8[:]) -> i64, bool {
     return v, true;
 }
 
-// Accepts YYYY-MM-DD, ignoring any time part of an ISO datetime.
+fn days_in_month(year: i64, month: i64) -> i64 {
+    match month {
+        2 => if year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) { 29 } else { 28 },
+        4, 6, 9, 11 => 30,
+        _ => 31,
+    }
+}
+
+// Exactly YYYY-MM-DD naming a real calendar day, optionally followed by
+// "T" and the rest of an ISO datetime, which is ignored
+// (docs/input-formats.md).
 fn parse_date(s: u8[:]) -> Date, bool {
-    let time_start = find(s, "T");
-    let date_part = if time_start >= 0 { s[..time_start] } else { s[..] };
-    let parts = split(date_part, '-');
-    guard parts.len == 3 else { return Date { 0, 0, 0 }, false; }
-    let y, oky = parse_digits(parts[0]);
-    let m, okm = parse_digits(parts[1]);
-    let d, okd = parse_digits(parts[2]);
+    guard s.len == 10 || (s.len > 10 && s[10] == 'T') else { return Date { 0, 0, 0 }, false; }
+    guard s[4] == '-' && s[7] == '-' else { return Date { 0, 0, 0 }, false; }
+    let y, oky = parse_digits(s[0..4]);
+    let m, okm = parse_digits(s[5..7]);
+    let d, okd = parse_digits(s[8..10]);
     guard oky && okm && okd else { return Date { 0, 0, 0 }, false; }
-    guard m >= 1 && m <= 12 && d >= 1 && d <= 31 else { return Date { 0, 0, 0 }, false; }
+    guard m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m) else { return Date { 0, 0, 0 }, false; }
     return Date { y, m, d }, true;
 }
 

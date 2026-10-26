@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/is.json
 
-_plural_is() {
+_sayableage_plural_is() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -17,7 +17,7 @@ _plural_is() {
     echo "other"
 }
 
-_locale_is() {
+_sayableage_locale_is() {
     _unit_day_one='{n} dagur'
     _unit_day_other='{n} dagar'
     _unit_week_one='{n} vika'
@@ -45,5 +45,5 @@ _locale_is() {
     _compact_unit_year='{n}á'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_is
+    _plural_func=_sayableage_plural_is
 }

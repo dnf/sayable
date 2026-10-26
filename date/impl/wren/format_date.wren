@@ -169,19 +169,37 @@ class SayableDate {
     return result
   }
 
+  static isLeapYear_(y) { (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 }
+
+  static daysInMonth_(y, m) {
+    if (m == 2) return isLeapYear_(y) ? 29 : 28
+    return (m == 4 || m == 6 || m == 9 || m == 11) ? 30 : 31
+  }
+
+  static isDigitAt_(bytes, i) { bytes[i] >= 48 && bytes[i] <= 57 }
+
+  static digitsValue_(bytes, from, to) {
+    var value = 0
+    for (i in from...to) value = value * 10 + bytes[i] - 48
+    return value
+  }
+
+  // YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+  // time (which is not read), as [year, month, day]; else null.
   static parseDate_(s) {
-    if (s == null || s == "") return null
-    var datePart = s
-    if (s.contains("T")) {
-      datePart = s.split("T")[0]
+    if (!(s is String)) return null
+    var bytes = s.bytes
+    var isDateAlone = bytes.count == 10
+    var isDateTime = bytes.count > 10 && bytes[10] == 84
+    if (!isDateAlone && !isDateTime) return null
+    if (bytes[4] != 45 || bytes[7] != 45) return null
+    for (i in [0, 1, 2, 3, 5, 6, 8, 9]) {
+      if (!isDigitAt_(bytes, i)) return null
     }
-    var parts = datePart.split("-")
-    if (parts.count != 3) return null
-    var year = Num.fromString(parts[0])
-    var month = Num.fromString(parts[1])
-    var day = Num.fromString(parts[2])
-    if (year == null || month == null || day == null) return null
-    if (month < 1 || month > 12 || day < 1 || day > 31) return null
+    var year = digitsValue_(bytes, 0, 4)
+    var month = digitsValue_(bytes, 5, 7)
+    var day = digitsValue_(bytes, 8, 10)
+    if (month < 1 || month > 12 || day < 1 || day > daysInMonth_(year, month)) return null
     return [year, month, day]
   }
 

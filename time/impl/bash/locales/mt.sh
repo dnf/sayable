@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mt.json
 
-_locale_mt() {
+_sayabletime_locale_mt() {
     _clock_hours=('tnax' 'waħda' 'tnejn' 'tlieta' 'erbgħa' 'ħamsa' 'sitta' 'sebgħa' 'tmienja' 'disgħa' 'għaxra' 'ħdax')
     _clock_midnight='nofsinhar'
     _clock_noon='nofsinhar'

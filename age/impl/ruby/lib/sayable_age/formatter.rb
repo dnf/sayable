@@ -5,6 +5,35 @@ require 'date'
 module SayableAge
   MAX_AGE_MONTHS = 6000
 
+  STRICT_DATE = /\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z/
+
+  def self.days_in_month(year, month)
+    return 30 if [4, 6, 9, 11].include?(month)
+    return 31 unless month == 2
+
+    leap = (year % 4).zero? && (!(year % 100).zero? || (year % 400).zero?)
+    leap ? 29 : 28
+  end
+
+  # Parse exactly YYYY-MM-DD naming a real calendar day into [y, m, d], else nil.
+  def self.parse_date(str)
+    match = STRICT_DATE.match(str)
+    return nil if match.nil?
+
+    year, month, day = match.captures.map(&:to_i)
+    return nil unless month.between?(1, 12) && day.between?(1, days_in_month(year, month))
+
+    [year, month, day]
+  end
+
+  # Proleptic Gregorian day number, so old dates follow the same calendar as recent ones.
+  def self.julian_day(year, month, day)
+    a = (14 - month) / 12
+    y = year + 4800 - a
+    m = month + (12 * a) - 3
+    day + (((153 * m) + 2) / 5) + (365 * y) + (y / 4) - (y / 100) + (y / 400) - 32_045
+  end
+
   class Formatter
     def initialize(locale, compactness: :normal)
       @locale = locale
@@ -98,31 +127,28 @@ module SayableAge
     def parse_age(date_of_birth, as_of)
       return nil if date_of_birth.nil? || date_of_birth.empty?
 
-      dob_y, dob_m, dob_d = date_of_birth.split('-').map(&:to_i)
+      dob = SayableAge.parse_date(date_of_birth)
+      ref = as_of && !as_of.empty? ? SayableAge.parse_date(as_of) : today_parts
+      return nil if dob.nil? || ref.nil?
 
-      if as_of && !as_of.empty?
-        ref_y, ref_m, ref_d = as_of.split('-').map(&:to_i)
-      else
-        today = Date.today
-        ref_y = today.year
-        ref_m = today.month
-        ref_d = today.day
-      end
-
-      dob_date = Date.new(dob_y, dob_m, dob_d)
-      ref_date = Date.new(ref_y, ref_m, ref_d)
-      diff_days = (ref_date - dob_date).to_i
+      dob_y, dob_m, dob_d = dob
+      ref_y, ref_m, ref_d = ref
+      diff_days = SayableAge.julian_day(ref_y, ref_m, ref_d) - SayableAge.julian_day(dob_y, dob_m, dob_d)
       return nil if diff_days.negative?
 
       # Calendar months: clamp birthday to last day of reference month so that
       # e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
-      last_day = Date.new(ref_y, ref_m, -1).day
-      clamped_birthday = [dob_d, last_day].min
+      clamped_birthday = [dob_d, SayableAge.days_in_month(ref_y, ref_m)].min
       months = ((ref_y - dob_y) * 12) + (ref_m - dob_m)
       months -= 1 if ref_d < clamped_birthday
       return nil if months > MAX_AGE_MONTHS
 
       [months, diff_days]
+    end
+
+    def today_parts
+      today = Date.today
+      [today.year, today.month, today.day]
     end
 
     def stage_key(months)

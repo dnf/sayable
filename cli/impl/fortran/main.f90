@@ -1,6 +1,6 @@
 program sayable_cli
   use iso_c_binding, only: c_int
-  use iso_fortran_env, only: input_unit, output_unit, error_unit
+  use iso_fortran_env, only: input_unit, output_unit, error_unit, int64
   use sayableage_types
   use sayableage
   use sayableage_locales
@@ -21,16 +21,24 @@ program sayable_cli
   character(len=1), parameter :: TAB = achar(9)
   character(len=1), parameter :: NEWLINE = achar(10)
   character(len=1), parameter :: CARRIAGE_RETURN = achar(13)
+  ! Stands in for a locale code with trailing blanks, which Fortran's
+  ! blank-padded comparison would otherwise match to a real code.
+  character(len=1), parameter :: UNKNOWN_LOCALE = '?'
 
   ! The current request's arguments: the command line, or one REPL line.
+  ! Lengths are kept separately because Fortran strings are blank-padded,
+  ! and a trailing blank must make a value invalid, not vanish.
   character(len=MAX_ARG_LEN), allocatable :: args(:)
+  integer, allocatable :: arg_lens(:)
   integer :: argc
 
   character(len=MAX_ARG_LEN) :: command
   character(len=MAX_ARG_LEN) :: positionals(MAX_POSITIONALS)
+  integer :: pos_lens(MAX_POSITIONALS)
   integer :: pos_count
   character(len=MAX_ARG_LEN) :: locale_code
   character(len=MAX_ARG_LEN) :: as_of_str
+  integer :: as_of_len
   character(len=MAX_ARG_LEN) :: gender_str
   integer :: compactness
   logical :: with_year
@@ -77,13 +85,40 @@ contains
     res = (first_len == len('--repl') .and. first == '--repl')
   end function is_repl_invocation
 
-  subroutine load_command_line()
-    integer :: i
-    argc = command_argument_count()
+  ! Stores one argument with its exact length. An argument too long for the
+  ! buffer becomes a NUL, which no parser accepts, instead of being
+  ! truncated into something that might look valid.
+  subroutine store_arg(i, value)
+    integer, intent(in) :: i
+    character(len=*), intent(in) :: value
+    if (len(value) > MAX_ARG_LEN) then
+      args(i) = achar(0)
+      arg_lens(i) = 1
+    else
+      args(i) = value
+      arg_lens(i) = len(value)
+    end if
+  end subroutine store_arg
+
+  subroutine allocate_args(count)
+    integer, intent(in) :: count
     if (allocated(args)) deallocate(args)
-    allocate(args(max(argc, 1)))
+    if (allocated(arg_lens)) deallocate(arg_lens)
+    allocate(args(max(count, 1)), arg_lens(max(count, 1)))
+    arg_lens = 0
+  end subroutine allocate_args
+
+  subroutine load_command_line()
+    integer :: i, arg_len
+    character(len=:), allocatable :: value
+    argc = command_argument_count()
+    call allocate_args(argc)
     do i = 1, argc
-      call get_command_argument(i, args(i))
+      call get_command_argument(i, length=arg_len)
+      allocate(character(len=arg_len) :: value)
+      call get_command_argument(i, value)
+      call store_arg(i, value)
+      deallocate(value)
     end do
   end subroutine load_command_line
 
@@ -95,18 +130,17 @@ contains
     do i = 1, len(line)
       if (line(i:i) == TAB) argc = argc + 1
     end do
-    if (allocated(args)) deallocate(args)
-    allocate(args(argc))
+    call allocate_args(argc)
     field = 1
     start = 1
     do i = 1, len(line)
       if (line(i:i) == TAB) then
-        args(field) = line(start:i - 1)
+        call store_arg(field, line(start:i - 1))
         field = field + 1
         start = i + 1
       end if
     end do
-    args(field) = line(start:)
+    call store_arg(field, line(start:))
   end subroutine load_request
 
   ! Reads one stdin line of any length; returns .false. at end of input.
@@ -235,24 +269,37 @@ contains
     call emit('  -v, --version          Show version')
   end subroutine print_help
 
-  subroutine get_today(buf)
-    character(len=*), intent(out) :: buf
+  function today() result(buf)
+    character(len=10) :: buf
     integer :: values(8)
     call date_and_time(values=values)
     write(buf, '(I4.4,A,I2.2,A,I2.2)') values(1), '-', values(2), '-', values(3)
-  end subroutine get_today
+  end function today
+
+  ! Positional n exactly as given (trailing blanks included).
+  function positional(n) result(value)
+    integer, intent(in) :: n
+    character(len=:), allocatable :: value
+    value = positionals(n)(1:pos_lens(n))
+  end function positional
+
+  ! The --as-of value exactly as given (trailing blanks included).
+  function as_of_value() result(value)
+    character(len=:), allocatable :: value
+    value = as_of_str(1:as_of_len)
+  end function as_of_value
 
   function is_null_str(s) result(res)
     character(len=*), intent(in) :: s
     logical :: res
-    res = (s == 'null')
+    res = (len(s) == 4 .and. s == 'null')
   end function is_null_str
 
   function is_all_digits(s) result(res)
     character(len=*), intent(in) :: s
     logical :: res
     integer :: i, slen
-    slen = len_trim(s)
+    slen = len(s)
     res = .false.
     if (slen == 0) return
     do i = 1, slen
@@ -265,32 +312,37 @@ contains
     character(len=*), intent(in) :: s
     logical :: res
     integer :: slen
-    slen = len_trim(s)
+    slen = len(s)
     res = .false.
     if (slen < 2) return
     if (s(1:1) /= '-') return
     res = is_all_digits(s(2:slen))
   end function is_negative_integer
 
-  function str_to_int(s) result(val)
+  ! A (possibly negative) digit string as seconds. Values with more digits
+  ! than int64 holds are far beyond the 500-year ceiling, so they
+  ! saturate instead of overflowing.
+  function str_to_seconds(s) result(val)
     character(len=*), intent(in) :: s
-    integer :: val
-    integer :: i, slen
+    integer(int64) :: val
+    integer, parameter :: MAX_EXACT_DIGITS = 18
+    integer :: i, first
     logical :: neg
-    val = 0
-    slen = len_trim(s)
-    neg = .false.
-    i = 1
-    if (s(1:1) == '-') then
-      neg = .true.
-      i = 2
-    end if
-    do while (i <= slen)
-      val = val * 10 + ichar(s(i:i)) - ichar('0')
-      i = i + 1
+    neg = (s(1:1) == '-')
+    first = merge(2, 1, neg)
+    do while (first < len(s) .and. s(first:first) == '0')
+      first = first + 1
     end do
+    val = 0
+    if (len(s) - first + 1 > MAX_EXACT_DIGITS) then
+      val = huge(val)
+    else
+      do i = first, len(s)
+        val = val * 10_int64 + int(ichar(s(i:i)) - ichar('0'), int64)
+      end do
+    end if
     if (neg) val = -val
-  end function str_to_int
+  end function str_to_seconds
 
   subroutine parse_args(rc)
     integer, intent(out) :: rc
@@ -301,9 +353,11 @@ contains
     rc = 0
     command = ''
     positionals = ''
+    pos_lens = 0
     pos_count = 0
     locale_code = 'en'
     as_of_str = ''
+    as_of_len = 0
     gender_str = ''
     compactness = 0
     with_year = .false.
@@ -344,6 +398,7 @@ contains
           end if
           i = i + 1
           locale_code = args(i)
+          if (arg_lens(i) /= len_trim(args(i)(1:arg_lens(i)))) locale_code = UNKNOWN_LOCALE
         else if (arg == '-d' .or. arg == '--as-of') then
           if (i + 1 > argc) then
             call usage_error("'--as-of' requires a value", rc)
@@ -351,6 +406,7 @@ contains
           end if
           i = i + 1
           as_of_str = args(i)
+          as_of_len = arg_lens(i)
           has_as_of = .true.
         else if (arg == '-g' .or. arg == '--gender') then
           if (i + 1 > argc) then
@@ -378,7 +434,10 @@ contains
         end if
       else
         pos_count = pos_count + 1
-        if (pos_count <= MAX_POSITIONALS) positionals(pos_count) = arg
+        if (pos_count <= MAX_POSITIONALS) then
+          positionals(pos_count) = arg
+          pos_lens(pos_count) = arg_lens(i)
+        end if
       end if
 
       i = i + 1
@@ -388,7 +447,7 @@ contains
   subroutine cmd_age(rc)
     integer, intent(out) :: rc
     type(pt_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: dob, ref_date
+    character(len=:), allocatable :: dob, ref_date
     character(len=PT_MAX_STR_LEN) :: result
 
     rc = 0
@@ -397,11 +456,11 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
+    if (is_null_str(positional(1)) .or. pos_lens(1) == 0) then
       rc = 1
       return
     end if
-    dob = positionals(1)
+    dob = positional(1)
 
     loc => pt_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -409,17 +468,13 @@ contains
       return
     end if
 
-    if (has_as_of) then
-      if (is_null_str(trim(as_of_str))) then
-        rc = 1
-        return
-      end if
-      ref_date = as_of_str
-    else
-      call get_today(ref_date)
+    ! A null or empty as-of means today, as in the reference.
+    ref_date = today()
+    if (has_as_of .and. as_of_len > 0) then
+      if (.not. is_null_str(as_of_value())) ref_date = as_of_value()
     end if
 
-    result = pt_format_age(loc, compactness, trim(dob), trim(ref_date))
+    result = pt_format_age(loc, compactness, dob, ref_date)
 
     if (len_trim(result) == 0) then
       rc = 1
@@ -432,7 +487,7 @@ contains
   subroutine cmd_stage(rc)
     integer, intent(out) :: rc
     type(pt_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: dob, ref_date
+    character(len=:), allocatable :: dob, ref_date
     character(len=PT_MAX_STR_LEN) :: result
 
     rc = 0
@@ -441,11 +496,11 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
+    if (is_null_str(positional(1)) .or. pos_lens(1) == 0) then
       rc = 1
       return
     end if
-    dob = positionals(1)
+    dob = positional(1)
 
     loc => pt_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -453,20 +508,16 @@ contains
       return
     end if
 
-    if (has_as_of) then
-      if (is_null_str(trim(as_of_str))) then
-        rc = 1
-        return
-      end if
-      ref_date = as_of_str
-    else
-      call get_today(ref_date)
+    ! A null or empty as-of means today, as in the reference.
+    ref_date = today()
+    if (has_as_of .and. as_of_len > 0) then
+      if (.not. is_null_str(as_of_value())) ref_date = as_of_value()
     end if
 
     if (has_gender) then
-      result = pt_format_stage(loc, trim(dob), trim(ref_date), trim(gender_str))
+      result = pt_format_stage(loc, dob, ref_date, trim(gender_str))
     else
-      result = pt_format_stage(loc, trim(dob), trim(ref_date))
+      result = pt_format_stage(loc, dob, ref_date)
     end if
 
     if (len_trim(result) == 0) then
@@ -480,7 +531,7 @@ contains
   subroutine cmd_date(rc)
     integer, intent(out) :: rc
     type(sd_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: date_str
+    character(len=:), allocatable :: date_str
     character(len=SD_MAX_STR_LEN) :: result
 
     rc = 0
@@ -489,11 +540,11 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
+    if (is_null_str(positional(1)) .or. pos_lens(1) == 0) then
       rc = 1
       return
     end if
-    date_str = positionals(1)
+    date_str = positional(1)
 
     loc => sd_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -502,9 +553,9 @@ contains
     end if
 
     if (with_year) then
-      result = sd_format_date_with_year(loc, compactness, trim(date_str))
+      result = sd_format_date_with_year(loc, compactness, date_str)
     else
-      result = sd_format_date(loc, compactness, trim(date_str))
+      result = sd_format_date(loc, compactness, date_str)
     end if
 
     if (len_trim(result) == 0) then
@@ -518,7 +569,7 @@ contains
   subroutine cmd_relative(rc)
     integer, intent(out) :: rc
     type(sd_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: date_str, ref_date
+    character(len=:), allocatable :: date_str, ref_date
     character(len=SD_MAX_STR_LEN) :: result
 
     rc = 0
@@ -527,22 +578,22 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
+    if (is_null_str(positional(1)) .or. pos_lens(1) == 0) then
       rc = 1
       return
     end if
-    date_str = positionals(1)
+    date_str = positional(1)
 
     if (.not. has_as_of) then
       call usage_error('relative requires --as-of / -d option', rc)
       return
     end if
 
-    if (is_null_str(trim(as_of_str))) then
+    if (is_null_str(as_of_value())) then
       rc = 1
       return
     end if
-    ref_date = as_of_str
+    ref_date = as_of_value()
 
     loc => sd_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -550,7 +601,7 @@ contains
       return
     end if
 
-    result = sd_format_relative(loc, compactness, trim(date_str), trim(ref_date))
+    result = sd_format_relative(loc, compactness, date_str, ref_date)
 
     if (len_trim(result) == 0) then
       rc = 1
@@ -563,7 +614,7 @@ contains
   subroutine cmd_time(rc)
     integer, intent(out) :: rc
     type(st_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: time_str
+    character(len=:), allocatable :: time_str
     character(len=ST_MAX_STR_LEN) :: result
 
     rc = 0
@@ -572,11 +623,11 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
+    if (is_null_str(positional(1)) .or. pos_lens(1) == 0) then
       rc = 1
       return
     end if
-    time_str = positionals(1)
+    time_str = positional(1)
 
     loc => st_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -584,7 +635,7 @@ contains
       return
     end if
 
-    result = st_format_time(loc, compactness, trim(time_str))
+    result = st_format_time(loc, compactness, time_str)
 
     if (len_trim(result) == 0) then
       rc = 1
@@ -597,9 +648,9 @@ contains
   subroutine cmd_duration(rc)
     integer, intent(out) :: rc
     type(dur_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: value_str, end_str
+    character(len=:), allocatable :: value_str, end_str
     character(len=DUR_MAX_STR_LEN) :: result
-    integer :: seconds
+    integer(int64) :: seconds
 
     rc = 0
     if (pos_count < 1) then
@@ -607,11 +658,11 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1)))) then
+    if (is_null_str(positional(1))) then
       rc = 1
       return
     end if
-    value_str = positionals(1)
+    value_str = positional(1)
 
     loc => dur_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -619,23 +670,23 @@ contains
       return
     end if
 
-    if (is_all_digits(trim(value_str))) then
-      seconds = str_to_int(trim(value_str))
+    if (is_all_digits(value_str)) then
+      seconds = str_to_seconds(value_str)
       result = dur_format_duration(loc, compactness, seconds)
-    else if (is_negative_integer(trim(value_str))) then
-      seconds = str_to_int(trim(value_str))
+    else if (is_negative_integer(value_str)) then
+      seconds = str_to_seconds(value_str)
       result = dur_format_duration(loc, compactness, seconds)
     else
       if (pos_count < 2) then
         call usage_error('duration with timestamps requires start and end arguments', rc)
         return
       end if
-      end_str = positionals(2)
-      if (is_null_str(trim(end_str))) then
+      end_str = positional(2)
+      if (is_null_str(end_str)) then
         rc = 1
         return
       end if
-      result = dur_format_duration_iso(loc, compactness, trim(value_str), trim(end_str))
+      result = dur_format_duration_iso(loc, compactness, value_str, end_str)
     end if
 
     if (len_trim(result) == 0) then
@@ -649,7 +700,7 @@ contains
   subroutine cmd_since(rc)
     integer, intent(out) :: rc
     type(dur_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: start_str, ref_str
+    character(len=:), allocatable :: start_str, ref_str
     character(len=DUR_MAX_STR_LEN) :: result
 
     rc = 0
@@ -658,22 +709,22 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1)))) then
+    if (is_null_str(positional(1))) then
       rc = 1
       return
     end if
-    start_str = positionals(1)
+    start_str = positional(1)
 
     if (.not. has_as_of) then
       call usage_error('since requires --as-of / -d option', rc)
       return
     end if
 
-    if (is_null_str(trim(as_of_str))) then
+    if (is_null_str(as_of_value())) then
       rc = 1
       return
     end if
-    ref_str = as_of_str
+    ref_str = as_of_value()
 
     loc => dur_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -681,7 +732,7 @@ contains
       return
     end if
 
-    result = dur_format_since(loc, compactness, trim(start_str), trim(ref_str))
+    result = dur_format_since(loc, compactness, start_str, ref_str)
 
     if (len_trim(result) == 0) then
       rc = 1
@@ -694,7 +745,7 @@ contains
   subroutine cmd_until(rc)
     integer, intent(out) :: rc
     type(dur_locale), pointer :: loc
-    character(len=MAX_ARG_LEN) :: target_str, ref_str
+    character(len=:), allocatable :: target_str, ref_str
     character(len=DUR_MAX_STR_LEN) :: result
 
     rc = 0
@@ -703,22 +754,22 @@ contains
       return
     end if
 
-    if (is_null_str(trim(positionals(1)))) then
+    if (is_null_str(positional(1))) then
       rc = 1
       return
     end if
-    target_str = positionals(1)
+    target_str = positional(1)
 
     if (.not. has_as_of) then
       call usage_error('until requires --as-of / -d option', rc)
       return
     end if
 
-    if (is_null_str(trim(as_of_str))) then
+    if (is_null_str(as_of_value())) then
       rc = 1
       return
     end if
-    ref_str = as_of_str
+    ref_str = as_of_value()
 
     loc => dur_get_locale(trim(locale_code))
     if (.not. associated(loc)) then
@@ -726,7 +777,7 @@ contains
       return
     end if
 
-    result = dur_format_until(loc, compactness, trim(target_str), trim(ref_str))
+    result = dur_format_until(loc, compactness, target_str, ref_str)
 
     if (len_trim(result) == 0) then
       rc = 1
@@ -738,160 +789,180 @@ contains
 
   subroutine cmd_locales()
     ! Sorted list of all locale codes
-    character(len=8) :: codes(149)
+    integer, parameter :: LOCALE_COUNT = 168
+    character(len=8) :: codes(LOCALE_COUNT)
     integer :: i
 
     codes(1) = 'af'
     codes(2) = 'ak'
     codes(3) = 'am'
     codes(4) = 'ar'
-    codes(5) = 'az'
-    codes(6) = 'bci'
-    codes(7) = 'be'
-    codes(8) = 'bem'
-    codes(9) = 'bg'
-    codes(10) = 'bi'
-    codes(11) = 'bm'
-    codes(12) = 'bn'
-    codes(13) = 'br'
-    codes(14) = 'bs'
-    codes(15) = 'ca'
-    codes(16) = 'ceb'
-    codes(17) = 'cs'
-    codes(18) = 'cy'
-    codes(19) = 'da'
-    codes(20) = 'de'
-    codes(21) = 'din'
-    codes(22) = 'dje'
-    codes(23) = 'dyu'
-    codes(24) = 'ee'
-    codes(25) = 'el'
-    codes(26) = 'en'
-    codes(27) = 'es'
-    codes(28) = 'et'
-    codes(29) = 'eu'
-    codes(30) = 'fa'
-    codes(31) = 'fan'
-    codes(32) = 'ff'
-    codes(33) = 'fi'
-    codes(34) = 'fil'
-    codes(35) = 'fj'
-    codes(36) = 'fon'
-    codes(37) = 'fr'
-    codes(38) = 'ga'
-    codes(39) = 'gd'
-    codes(40) = 'gl'
-    codes(41) = 'gn'
-    codes(42) = 'gu'
-    codes(43) = 'gv'
-    codes(44) = 'ha'
-    codes(45) = 'he'
-    codes(46) = 'hi'
-    codes(47) = 'hr'
-    codes(48) = 'ht'
-    codes(49) = 'hu'
-    codes(50) = 'hy'
-    codes(51) = 'id'
-    codes(52) = 'ig'
-    codes(53) = 'is'
-    codes(54) = 'it'
-    codes(55) = 'ja'
-    codes(56) = 'jv'
-    codes(57) = 'ka'
-    codes(58) = 'kbp'
-    codes(59) = 'kk'
-    codes(60) = 'km'
-    codes(61) = 'kn'
-    codes(62) = 'ko'
-    codes(63) = 'kpe'
-    codes(64) = 'ktu'
-    codes(65) = 'ku'
-    codes(66) = 'kw'
-    codes(67) = 'ky'
-    codes(68) = 'lg'
-    codes(69) = 'ln'
-    codes(70) = 'lo'
-    codes(71) = 'lt'
-    codes(72) = 'lv'
-    codes(73) = 'men'
-    codes(74) = 'mfe'
-    codes(75) = 'mg'
-    codes(76) = 'mi'
-    codes(77) = 'mk'
-    codes(78) = 'ml'
-    codes(79) = 'mn'
-    codes(80) = 'mnk'
-    codes(81) = 'mos'
-    codes(82) = 'mr'
-    codes(83) = 'ms'
-    codes(84) = 'mt'
-    codes(85) = 'my'
-    codes(86) = 'nb'
-    codes(87) = 'nd'
-    codes(88) = 'ne'
-    codes(89) = 'ng'
-    codes(90) = 'nl'
-    codes(91) = 'nso'
-    codes(92) = 'nus'
-    codes(93) = 'ny'
-    codes(94) = 'om'
-    codes(95) = 'or'
-    codes(96) = 'pa'
-    codes(97) = 'pis'
-    codes(98) = 'pl'
-    codes(99) = 'pov'
-    codes(100) = 'ps'
-    codes(101) = 'pt'
-    codes(102) = 'qu'
-    codes(103) = 'ro'
-    codes(104) = 'ru'
-    codes(105) = 'rw'
-    codes(106) = 'sar'
-    codes(107) = 'sd'
-    codes(108) = 'sg'
-    codes(109) = 'shi'
-    codes(110) = 'si'
-    codes(111) = 'sk'
-    codes(112) = 'sl'
-    codes(113) = 'sn'
-    codes(114) = 'snk'
-    codes(115) = 'so'
-    codes(116) = 'sq'
-    codes(117) = 'sr'
-    codes(118) = 'ss'
-    codes(119) = 'st'
-    codes(120) = 'su'
-    codes(121) = 'suk'
-    codes(122) = 'sv'
-    codes(123) = 'sw'
-    codes(124) = 'ta'
-    codes(125) = 'te'
-    codes(126) = 'tem'
-    codes(127) = 'tg'
-    codes(128) = 'th'
-    codes(129) = 'ti'
-    codes(130) = 'tig'
-    codes(131) = 'tk'
-    codes(132) = 'tn'
-    codes(133) = 'tpi'
-    codes(134) = 'tr'
-    codes(135) = 'ts'
-    codes(136) = 'tzm'
-    codes(137) = 'uk'
-    codes(138) = 'umb'
-    codes(139) = 'ur'
-    codes(140) = 'uz'
-    codes(141) = 'vi'
-    codes(142) = 'vmw'
-    codes(143) = 'wo'
-    codes(144) = 'xh'
-    codes(145) = 'yo'
-    codes(146) = 'yue'
-    codes(147) = 'zdj'
-    codes(148) = 'zh'
-    codes(149) = 'zu'
+    codes(5) = 'ay'
+    codes(6) = 'az'
+    codes(7) = 'bci'
+    codes(8) = 'be'
+    codes(9) = 'bem'
+    codes(10) = 'bg'
+    codes(11) = 'bi'
+    codes(12) = 'bm'
+    codes(13) = 'bn'
+    codes(14) = 'br'
+    codes(15) = 'bs'
+    codes(16) = 'ca'
+    codes(17) = 'cak'
+    codes(18) = 'ceb'
+    codes(19) = 'cs'
+    codes(20) = 'cy'
+    codes(21) = 'da'
+    codes(22) = 'de'
+    codes(23) = 'din'
+    codes(24) = 'dje'
+    codes(25) = 'dv'
+    codes(26) = 'dyu'
+    codes(27) = 'dz'
+    codes(28) = 'ee'
+    codes(29) = 'el'
+    codes(30) = 'en'
+    codes(31) = 'es'
+    codes(32) = 'et'
+    codes(33) = 'eu'
+    codes(34) = 'fa'
+    codes(35) = 'fan'
+    codes(36) = 'ff'
+    codes(37) = 'fi'
+    codes(38) = 'fil'
+    codes(39) = 'fj'
+    codes(40) = 'fon'
+    codes(41) = 'fr'
+    codes(42) = 'ga'
+    codes(43) = 'gd'
+    codes(44) = 'gl'
+    codes(45) = 'gn'
+    codes(46) = 'gu'
+    codes(47) = 'gv'
+    codes(48) = 'ha'
+    codes(49) = 'he'
+    codes(50) = 'hi'
+    codes(51) = 'hmn'
+    codes(52) = 'hr'
+    codes(53) = 'ht'
+    codes(54) = 'hu'
+    codes(55) = 'hy'
+    codes(56) = 'id'
+    codes(57) = 'ig'
+    codes(58) = 'is'
+    codes(59) = 'it'
+    codes(60) = 'ja'
+    codes(61) = 'jv'
+    codes(62) = 'ka'
+    codes(63) = 'kbp'
+    codes(64) = 'kek'
+    codes(65) = 'ki'
+    codes(66) = 'kk'
+    codes(67) = 'kl'
+    codes(68) = 'km'
+    codes(69) = 'kn'
+    codes(70) = 'ko'
+    codes(71) = 'kpe'
+    codes(72) = 'kri'
+    codes(73) = 'ktu'
+    codes(74) = 'ku'
+    codes(75) = 'kw'
+    codes(76) = 'ky'
+    codes(77) = 'lb'
+    codes(78) = 'lg'
+    codes(79) = 'ln'
+    codes(80) = 'lo'
+    codes(81) = 'lt'
+    codes(82) = 'luo'
+    codes(83) = 'lv'
+    codes(84) = 'mam'
+    codes(85) = 'men'
+    codes(86) = 'mfe'
+    codes(87) = 'mg'
+    codes(88) = 'mi'
+    codes(89) = 'mk'
+    codes(90) = 'ml'
+    codes(91) = 'mn'
+    codes(92) = 'mnk'
+    codes(93) = 'mos'
+    codes(94) = 'mr'
+    codes(95) = 'ms'
+    codes(96) = 'mt'
+    codes(97) = 'my'
+    codes(98) = 'nb'
+    codes(99) = 'nd'
+    codes(100) = 'ne'
+    codes(101) = 'ng'
+    codes(102) = 'nl'
+    codes(103) = 'nr'
+    codes(104) = 'nso'
+    codes(105) = 'nus'
+    codes(106) = 'ny'
+    codes(107) = 'om'
+    codes(108) = 'or'
+    codes(109) = 'pa'
+    codes(110) = 'pis'
+    codes(111) = 'pl'
+    codes(112) = 'pov'
+    codes(113) = 'ps'
+    codes(114) = 'pt'
+    codes(115) = 'qu'
+    codes(116) = 'quc'
+    codes(117) = 'ro'
+    codes(118) = 'ru'
+    codes(119) = 'rw'
+    codes(120) = 'sar'
+    codes(121) = 'sd'
+    codes(122) = 'sg'
+    codes(123) = 'shi'
+    codes(124) = 'shn'
+    codes(125) = 'si'
+    codes(126) = 'sk'
+    codes(127) = 'sl'
+    codes(128) = 'sn'
+    codes(129) = 'snk'
+    codes(130) = 'so'
+    codes(131) = 'sq'
+    codes(132) = 'sr'
+    codes(133) = 'ss'
+    codes(134) = 'st'
+    codes(135) = 'su'
+    codes(136) = 'suk'
+    codes(137) = 'sv'
+    codes(138) = 'sw'
+    codes(139) = 'ta'
+    codes(140) = 'te'
+    codes(141) = 'tem'
+    codes(142) = 'tet'
+    codes(143) = 'tg'
+    codes(144) = 'th'
+    codes(145) = 'ti'
+    codes(146) = 'tig'
+    codes(147) = 'tk'
+    codes(148) = 'tn'
+    codes(149) = 'tpi'
+    codes(150) = 'tr'
+    codes(151) = 'ts'
+    codes(152) = 'tum'
+    codes(153) = 'tzm'
+    codes(154) = 'uk'
+    codes(155) = 'umb'
+    codes(156) = 'ur'
+    codes(157) = 'uz'
+    codes(158) = 've'
+    codes(159) = 'vi'
+    codes(160) = 'vmw'
+    codes(161) = 'wo'
+    codes(162) = 'xh'
+    codes(163) = 'yao'
+    codes(164) = 'yo'
+    codes(165) = 'yue'
+    codes(166) = 'zdj'
+    codes(167) = 'zh'
+    codes(168) = 'zu'
 
-    do i = 1, 149
+    do i = 1, LOCALE_COUNT
       call emit(trim(codes(i)))
     end do
   end subroutine cmd_locales

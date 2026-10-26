@@ -94,6 +94,36 @@ let test_11_2 () = check_some "\xd8\xba\xd8\xaf\xd8\xa7\xd9\x8b" (frel ar "2025-
 let test_12_1 () = check_some "15 de marzo" (fdate es "2025-03-15")                                  (* 12.1 *)
 let test_12_2 () = check_some "pasado ma\xc3\xb1ana" (frel es "2025-03-17" "2025-03-15")             (* 12.2 *)
 
+(* Formats with the locale for a code (None for an unknown code). *)
+let with_locale code f = Option.bind (Locales.get_locale code) f
+
+let expect_canonical expected actual =
+  Alcotest.(check (option string)) "canonical" expected actual
+
+(* 13. format_date_with_year *)
+let test_13_1 () = expect_canonical (Some "February 4th, 2018") (with_locale "en" (fun l -> Formatter.format_date_with_year l Types.Normal "2018-02-04"))  (* 13.1 *)
+let test_13_2 () = expect_canonical (Some "Mar 15, 2025") (with_locale "en" (fun l -> Formatter.format_date_with_year l Types.Short "2025-03-15"))  (* 13.2 *)
+let test_13_3 () = expect_canonical (Some "1/21/97") (with_locale "en" (fun l -> Formatter.format_date_with_year l Types.Compact "1997-01-21"))  (* 13.3 *)
+let test_13_4 () = expect_canonical (Some "20/5/07") (with_locale "tg" (fun l -> Formatter.format_date_with_year l Types.Compact "2007-05-20"))  (* 13.4 *)
+let test_13_5 () = expect_canonical (Some "21. kesäkuuta 1996") (with_locale "fi" (fun l -> Formatter.format_date_with_year l Types.Short "1996-06-21"))  (* 13.5 *)
+(* 14. Short month names (locales that keep the full genitive) *)
+let test_14_1 () = expect_canonical (Some "15. februára") (with_locale "sk" (fun l -> Formatter.format_date l Types.Short "2031-02-15"))  (* 14.1 *)
+let test_14_2 () = expect_canonical (Some "10. prosince") (with_locale "cs" (fun l -> Formatter.format_date l Types.Short "2025-12-10"))  (* 14.2 *)
+let test_14_3 () = expect_canonical (Some "5 листопада") (with_locale "uk" (fun l -> Formatter.format_date l Types.Short "2025-11-05"))  (* 14.3 *)
+let test_14_4 () = expect_canonical (Some "8. elokuuta") (with_locale "fi" (fun l -> Formatter.format_relative l Types.Short "1998-08-08" "1998-08-15"))  (* 14.4 *)
+(* 15. format_relative — short phrases *)
+let test_15_1 () = expect_canonical (Some "an Mth ma") (with_locale "kw" (fun l -> Formatter.format_relative l Types.Short "2035-12-04" "2035-12-02"))  (* 15.1 *)
+let test_15_2 () = expect_canonical (Some "Dom nchi'j") (with_locale "mam" (fun l -> Formatter.format_relative l Types.Short "2000-01-23" "2000-01-25"))  (* 15.2 *)
+let test_15_3 () = expect_canonical (Some "a'in Vie") (with_locale "kek" (fun l -> Formatter.format_relative l Types.Short "2014-10-24" "2014-10-22"))  (* 15.3 *)
+(* 16. Input validation *)
+let test_16_1 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_date l Types.Normal "2025-02-30"))  (* 16.1 *)
+let test_16_2 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_date l Types.Normal "2025-13-01"))  (* 16.2 *)
+let test_16_3 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_date l Types.Normal "2025-6-1"))  (* 16.3 *)
+let test_16_4 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_date l Types.Normal " 2025-06-01"))  (* 16.4 *)
+let test_16_5 () = expect_canonical (Some "June 1st") (with_locale "en" (fun l -> Formatter.format_date l Types.Normal "2025-06-01T10:00:00"))  (* 16.5 *)
+let test_16_6 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_date_with_year l Types.Normal "2023-02-29"))  (* 16.6 *)
+let test_16_7 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_relative l Types.Normal "2025-03-16" "2025-04-31"))  (* 16.7 *)
+
 let () =
   Alcotest.run "sayable-date"
     [ ( "1. Null / edge cases"
@@ -170,5 +200,32 @@ let () =
     ; ( "12. Locale Spanish"
       , [ Alcotest.test_case "12.1 format_date" `Quick test_12_1
         ; Alcotest.test_case "12.2 pasado manana" `Quick test_12_2
+        ] )
+    ; ( "13. format_date_with_year"
+      , [ Alcotest.test_case "13.1 format_date_with_year en normal" `Quick test_13_1
+        ; Alcotest.test_case "13.2 format_date_with_year en short" `Quick test_13_2
+        ; Alcotest.test_case "13.3 format_date_with_year en compact" `Quick test_13_3
+        ; Alcotest.test_case "13.4 two-digit year keeps its leading zero" `Quick test_13_4
+        ; Alcotest.test_case "13.5 format_date_with_year fi short" `Quick test_13_5
+        ] )
+    ; ( "14. Short month names (locales that keep the full genitive)"
+      , [ Alcotest.test_case "14.1 format_date sk short" `Quick test_14_1
+        ; Alcotest.test_case "14.2 format_date cs short" `Quick test_14_2
+        ; Alcotest.test_case "14.3 format_date uk short" `Quick test_14_3
+        ; Alcotest.test_case "14.4 format_relative fi short" `Quick test_14_4
+        ] )
+    ; ( "15. format_relative — short phrases"
+      , [ Alcotest.test_case "15.1 day after tomorrow" `Quick test_15_1
+        ; Alcotest.test_case "15.2 day before yesterday" `Quick test_15_2
+        ; Alcotest.test_case "15.3 day after tomorrow" `Quick test_15_3
+        ] )
+    ; ( "16. Input validation"
+      , [ Alcotest.test_case "16.1 February 30 doesn't exist" `Quick test_16_1
+        ; Alcotest.test_case "16.2 Month 13" `Quick test_16_2
+        ; Alcotest.test_case "16.3 Unpadded month and day" `Quick test_16_3
+        ; Alcotest.test_case "16.4 Surrounding whitespace" `Quick test_16_4
+        ; Alcotest.test_case "16.5 An ISO datetime: only the date part is used" `Quick test_16_5
+        ; Alcotest.test_case "16.6 February 29 in a non-leap year" `Quick test_16_6
+        ; Alcotest.test_case "16.7 Invalid asOf" `Quick test_16_7
         ] )
     ]

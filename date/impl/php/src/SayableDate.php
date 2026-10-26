@@ -158,28 +158,35 @@ final class SayableDate
         return $result;
     }
 
-    /** @return array{int, int, int}|null */
+    /**
+     * YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+     * time (which is not read).
+     *
+     * @return array{int, int, int}|null
+     */
     private static function parseDate(string $s): ?array
     {
-        $datePart = $s;
-        $tIdx = \strpos($s, 'T');
-        if ($tIdx !== false) {
-            $datePart = \substr($s, 0, $tIdx);
-        }
-        $parts = \explode('-', $datePart);
-        if (\count($parts) !== 3) {
+        if (\preg_match('/\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T|\z)/', $s, $m) !== 1) {
             return null;
         }
-        if (!\ctype_digit($parts[0]) || !\ctype_digit($parts[1]) || !\ctype_digit($parts[2])) {
-            return null;
-        }
-        $year = (int) $parts[0];
-        $month = (int) $parts[1];
-        $day = (int) $parts[2];
-        if ($month < 1 || $month > 12 || $day < 1 || $day > 31) {
+        $year = (int) $m[1];
+        $month = (int) $m[2];
+        $day = (int) $m[3];
+        if ($month < 1 || $month > 12 || $day < 1 || $day > self::daysInMonth($year, $month)) {
             return null;
         }
         return [$year, $month, $day];
+    }
+
+    private static function daysInMonth(int $year, int $month): int
+    {
+        if ($month === 2) {
+            return ($year % 4 === 0 && ($year % 100 !== 0 || $year % 400 === 0)) ? 29 : 28;
+        }
+        return match ($month) {
+            4, 6, 9, 11 => 30,
+            default => 31,
+        };
     }
 
     private static function toJdn(int $year, int $month, int $day): int

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/cak.json
 
-_plural_cak() {
+_sayableduration_plural_cak() {
     echo "other"
 }
 
-_locale_cak() {
+_sayableduration_locale_cak() {
     _unit_second='{n} tz'\''aqät'
     _unit_minute='{n} ch'\''utik ramaj'
     _unit_hour='{n} ramaj'
@@ -45,5 +45,5 @@ _locale_cak() {
     _compact_delimiter=''
     _compact_ago='{0} k'\''o chi'
     _compact_in_future='pa {0}'
-    _plural_func=_plural_cak
+    _plural_func=_sayableduration_plural_cak
 }

@@ -536,3 +536,46 @@
     (is (nil? (pt/get-locale ""))))
   (testing "30.5 uppercase"
     (is (nil? (pt/get-locale "EN")))))
+
+;; 31. Weeks and days across month ends
+(deftest weeks-and-days-across-month-ends
+  (testing "31.1 88 days across a 28 day february"
+    (is (= "12 weeks, 4 days" (pt/format-age-pure (pt/get-locale "en") :normal "2016-12-31" "2017-03-29"))))
+  (testing "31.2 90 days across a year end into"
+    (is (= "12 weeks, 6 days" (pt/format-age-pure (pt/get-locale "en") :normal "1991-11-27" "1992-02-25"))))
+  (testing "31.3 33 days across a year end"
+    (is (= "4 weeks, 5 days" (pt/format-age-pure (pt/get-locale "en") :normal "2020-11-30" "2021-01-02"))))
+  (testing "31.4 compact form of 31 1"
+    (is (= "12w4d" (pt/format-age-pure (pt/get-locale "en") :compact "2016-12-31" "2017-03-29")))))
+
+;; 32. Half years take their plural form from whole years
+(deftest half-years-take-their-plural-form-from-whole-years
+  (testing "32.1 polish 3 is few"
+    (is (= "3 i p\u00F3\u0142 lata" (pt/format-age-pure (pt/get-locale "pl") :normal "2021-06-15" "2025-01-15"))))
+  (testing "32.2 polish 5 is many"
+    (is (= "5 i p\u00F3\u0142 lat" (pt/format-age-pure (pt/get-locale "pl") :short "2020-06-15" "2025-12-15"))))
+  (testing "32.3 tachelhit 6 is few"
+    (is (= "6 iseggasen d uzgen" (pt/format-age-pure (pt/get-locale "shi") :normal "2005-06-08" "2012-06-07")))))
+
+;; 33. Input validation
+(deftest input-validation
+  (testing "33.1 february 30 doesnt exist"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal "2025-02-30" "2032-06-25"))))
+  (testing "33.2 month 13"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal "2025-13-01" "2027-01-31"))))
+  (testing "33.3 february 29 in a non leap year"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal "2023-02-29" "2025-03-01"))))
+  (testing "33.4 day 00"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal "2025-06-00" "2027-02-25"))))
+  (testing "33.5 unpadded month and day"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal "2025-6-1" "2027-02-25"))))
+  (testing "33.6 surrounding whitespace"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal " 2025-06-01" "2027-02-25"))))
+  (testing "33.7 a datetime is not a date"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal "2025-06-15T10:00:00" "2027-02-25"))))
+  (testing "33.8 invalid asof"
+    (is (nil? (pt/format-age-pure (pt/get-locale "en") :normal "2020-01-01" "2025-04-31"))))
+  (testing "33.9 formatstage validates too"
+    (is (nil? (pt/format-stage-pure (pt/get-locale "en") "2025-02-30" "2027-09-05" nil))))
+  (testing "33.10 february 29 in a leap year is"
+    (is (= "2 years" (pt/format-age-pure (pt/get-locale "en") :normal "2024-02-29" "2026-03-01")))))

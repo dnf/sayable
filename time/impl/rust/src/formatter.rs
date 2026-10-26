@@ -112,69 +112,94 @@ fn format_digital(hour: i32, minute: i32, sc: &ShortClockConfig) -> String {
         .replace("{ampm}", ampm)
 }
 
-/// Parses "HH:MM" or an ISO datetime string into (hour, minute).
-/// Returns `None` on failure.
+/// Parses a clock time, alone or after the "T" of an ISO datetime, into
+/// (hour, minute). Returns `None` for anything that doesn't follow
+/// docs/input-formats.md.
 fn parse_time(input: &str) -> Option<(i32, i32)> {
-    if input.is_empty() {
+    let bytes = input.as_bytes();
+    let clock = match bytes.iter().position(|&c| c == b'T') {
+        Some(t) => {
+            if !is_real_date(&bytes[..t]) {
+                return None;
+            }
+            &bytes[t + 1..]
+        }
+        None => bytes,
+    };
+    parse_clock(clock)
+}
+
+/// True for exactly "YYYY-MM-DD" naming a real Gregorian calendar day.
+fn is_real_date(date: &[u8]) -> bool {
+    if date.len() != 10 || date[4] != b'-' || date[7] != b'-' {
+        return false;
+    }
+    match (digits(&date[0..4]), digits(&date[5..7]), digits(&date[8..10])) {
+        (Some(year), Some(month), Some(day)) => {
+            (1..=12).contains(&month) && day >= 1 && day <= days_in_month(year, month)
+        }
+        _ => false,
+    }
+}
+
+fn days_in_month(year: i32, month: i32) -> i32 {
+    match month {
+        2 if (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 => 29,
+        2 => 28,
+        4 | 6 | 9 | 11 => 30,
+        _ => 31,
+    }
+}
+
+/// Parses "H:MM" or "HH:MM", then optional ":SS", optional "." plus digits
+/// (only after seconds), and an optional zone suffix "Z" or "±HH:MM", which
+/// is validated but ignored.
+fn parse_clock(clock: &[u8]) -> Option<(i32, i32)> {
+    let hour_len = clock.iter().take_while(|c| c.is_ascii_digit()).count();
+    if !(1..=2).contains(&hour_len) || clock.get(hour_len) != Some(&b':') {
         return None;
     }
-
-    let mut t = input;
-
-    // Strip date portion from ISO datetime
-    if let Some(pos) = t.find('T') {
-        t = &t[pos + 1..];
+    let hour = digits(&clock[..hour_len])?;
+    let minute = digits(clock.get(hour_len + 1..hour_len + 3)?)?;
+    let mut rest = &clock[hour_len + 3..];
+    let mut second = 0;
+    if rest.first() == Some(&b':') {
+        second = digits(rest.get(1..3)?)?;
+        rest = &rest[3..];
+        if rest.first() == Some(&b'.') {
+            let fraction_len = rest[1..].iter().take_while(|c| c.is_ascii_digit()).count();
+            if fraction_len == 0 {
+                return None;
+            }
+            rest = &rest[1 + fraction_len..];
+        }
     }
-
-    // Strip timezone offset
-    if let Some(pos) = t.find('+') {
-        t = &t[..pos];
-    }
-    if let Some(pos) = t.find('Z') {
-        t = &t[..pos];
-    }
-
-    let parts: Vec<&str> = t.split(':').collect();
-    if parts.len() < 2 {
+    if !is_zone_suffix(rest) || hour > 23 || minute > 59 || second > 59 {
         return None;
     }
-
-    let hour_str = parts[0];
-    let mut minute_str = parts[1];
-
-    // Strip fractional seconds from minute part (e.g., "15.123")
-    if let Some(dot_pos) = minute_str.find('.') {
-        minute_str = &minute_str[..dot_pos];
-    }
-
-    let hour = parse_int(hour_str)?;
-    let minute = parse_int(minute_str)?;
-
-    if hour > 23 || minute > 59 {
-        return None;
-    }
-
     Some((hour, minute))
+}
+
+/// True for nothing at all, "Z", or "+HH:MM" / "-HH:MM".
+fn is_zone_suffix(zone: &[u8]) -> bool {
+    match zone {
+        [] | [b'Z'] => true,
+        [b'+' | b'-', h1, h2, b':', m1, m2] => [h1, h2, m1, m2].iter().all(|c| c.is_ascii_digit()),
+        _ => false,
+    }
+}
+
+/// Converts a non-empty run of ASCII digits to an i32; `None` if any byte isn't a digit.
+fn digits(run: &[u8]) -> Option<i32> {
+    if run.is_empty() {
+        return None;
+    }
+    run.iter().try_fold(0, |n, &c| c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0')))
 }
 
 /// Rounds a minute value to the nearest 5.
 fn round_to_5(minute: i32) -> i32 {
     ((minute + 2) / 5) * 5
-}
-
-/// Parses a non-negative integer from a string. Returns `None` on failure.
-fn parse_int(s: &str) -> Option<i32> {
-    if s.is_empty() {
-        return None;
-    }
-    let mut n: i32 = 0;
-    for c in s.chars() {
-        if !c.is_ascii_digit() {
-            return None;
-        }
-        n = n * 10 + (c as i32 - '0' as i32);
-    }
-    Some(n)
 }
 
 /// Returns a two-digit zero-padded string.

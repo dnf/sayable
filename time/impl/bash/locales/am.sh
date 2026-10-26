@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/am.json
 
-_locale_am() {
+_sayabletime_locale_am() {
     _clock_hours=('አሥራ ሁለት' 'አንድ' 'ሁለት' 'ሦስት' 'አራት' 'አምስት' 'ስድስት' 'ሰባት' 'ስምንት' 'ዘጠኝ' 'አሥር' 'አሥራ አንድ')
     _clock_midnight='እኩለ ሌሊት'
     _clock_noon='እኩለ ቀን'

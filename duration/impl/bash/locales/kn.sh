@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kn.json
 
-_plural_kn() {
+_sayableduration_plural_kn() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_kn() {
+_sayableduration_locale_kn() {
     _unit_second_one='{n} ಸೆಕೆಂಡ್'
     _unit_second_other='{n} ಸೆಕೆಂಡುಗಳು'
     _unit_minute_one='{n} ನಿಮಿಷ'
@@ -55,5 +55,5 @@ _locale_kn() {
     _compact_delimiter=''
     _compact_ago='{0} ಹಿಂದೆ'
     _compact_in_future='{0} ನಂತರ'
-    _plural_func=_plural_kn
+    _plural_func=_sayableduration_plural_kn
 }

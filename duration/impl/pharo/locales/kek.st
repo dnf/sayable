@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/kek.json "
 
-"Locale: kek"
+"Locale: kek"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 kek

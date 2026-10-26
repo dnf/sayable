@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ps.json
 
-_locale_ps() {
+_sayabletime_locale_ps() {
     _clock_hours=('دولس' 'یو' 'دوه' 'درې' 'څلور' 'پنځه' 'شپږ' 'اووه' 'اته' 'نهه' 'لس' 'یوولس')
     _clock_midnight='نیمه شپه'
     _clock_noon='غرمه'

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mi.json
 
-_locale_mi() {
+_sayabletime_locale_mi() {
     _clock_hours=('tekau mā rua' 'tahi' 'rua' 'toru' 'whā' 'rima' 'ono' 'whitu' 'waru' 'iwa' 'tekau' 'tekau mā tahi')
     _clock_midnight='waenganui pō'
     _clock_noon='poupoutanga o te rā'

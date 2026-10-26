@@ -5,34 +5,23 @@ local M = {}
 
 M.VERSION = "0.5.0"
 
-local function safe_atoi(s)
-    if not s or s == "" then return nil end
-    for i = 1, #s do
-        local b = s:byte(i)
-        if b < 48 or b > 57 then return nil end
+local function days_in_month(year, month)
+    if month == 2 then
+        local leap = (year % 4 == 0 and year % 100 ~= 0) or year % 400 == 0
+        return leap and 29 or 28
     end
-    return tonumber(s)
+    if month == 4 or month == 6 or month == 9 or month == 11 then return 30 end
+    return 31
 end
 
+--- Parse YYYY-MM-DD naming a real calendar day, optionally followed by T and
+-- a time (which is not read); nil otherwise.
 local function parse_date(s)
-    if not s or s == "" then return nil end
-    -- Strip time part from ISO datetime
-    local date_part = s
-    local t_idx = s:find("T", 1, true)
-    if t_idx then date_part = s:sub(1, t_idx - 1) end
-
-    local parts = {}
-    for seg in date_part:gmatch("[^-]+") do
-        parts[#parts + 1] = seg
-    end
-    if #parts ~= 3 then return nil end
-
-    local year = safe_atoi(parts[1])
-    local month = safe_atoi(parts[2])
-    local day = safe_atoi(parts[3])
-    if not year or not month or not day then return nil end
-    if month < 1 or month > 12 or day < 1 or day > 31 then return nil end
-
+    if not s then return nil end
+    local y, m, d, rest = s:match("^(%d%d%d%d)-(%d%d)-(%d%d)(.*)$")
+    if not y or (rest ~= "" and rest:sub(1, 1) ~= "T") then return nil end
+    local year, month, day = tonumber(y), tonumber(m), tonumber(d)
+    if month < 1 or month > 12 or day < 1 or day > days_in_month(year, month) then return nil end
     return year, month, day
 end
 

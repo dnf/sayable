@@ -70,6 +70,25 @@ finnish_dot_test_() ->
      ?_assertEqual({ok, "0.00"}, sayabletime:format_time(Fi, short, "00:00"))    %% 8.2
     ].
 
+%% 9. Minutes in short and compact modes
+exact_minutes_test_() ->
+    [?_assertEqual({ok, "6:01 PM"}, fmt_short("18:01")),                        %% 9.1
+     ?_assertEqual({ok, "7:05p"}, fmt_compact("19:05"))                         %% 9.2
+    ].
+
+%% 10. Input validation
+input_validation_test_() ->
+    [?_assertEqual({ok, "half past nine"}, fmt("9:30")),                        %% 10.1
+     ?_assertEqual({ok, "half past nine"}, fmt("09:30")),                       %% 10.2
+     ?_assertEqual(error, fmt(" 9:30")),                                        %% 10.3
+     ?_assertEqual(error, fmt("9:30 ")),                                        %% 10.4
+     ?_assertEqual(error, fmt("9:5")),                                          %% 10.5
+     ?_assertEqual(error, fmt("24:00")),                                        %% 10.6
+     ?_assertEqual({ok, "a quarter past two"}, fmt("14:15:30")),                %% 10.7
+     ?_assertEqual({ok, "a quarter past two"}, fmt("2025-01-15T14:15:00Z")),    %% 10.8
+     ?_assertEqual(error, fmt("2025-02-30T14:15:00"))                           %% 10.9
+    ].
+
 %% Locale lookup
 locale_lookup_test_() ->
     [?_assertMatch({ok, #time_locale{code = "en"}}, sayabletime:get_locale("en")),

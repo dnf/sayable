@@ -5,12 +5,12 @@ from __future__ import annotations
 from sayable_time import SayableTime, format_time
 from sayable_time.locales.de import DE
 from sayable_time.locales.en import EN
-from sayable_time.locales.fr import FR
 from sayable_time.locales.fi import FI
+from sayable_time.locales.fr import FR
 from sayable_time.locales.ja import JA
 
-
 # ── Section 1: Null / edge cases ──────────────────────────────────────
+
 
 class TestNullEdgeCases:
     # 1.1
@@ -31,6 +31,7 @@ class TestNullEdgeCases:
 
 
 # ── Section 2: Clock time (normal compactness) ────────────────────────
+
 
 class TestClockTimeNormal:
     def setup_method(self) -> None:
@@ -83,6 +84,7 @@ class TestClockTimeNormal:
 
 # ── Section 3: Clock time (short compactness) ─────────────────────────
 
+
 class TestClockTimeShort:
     def setup_method(self) -> None:
         self.st = SayableTime(EN, "short")
@@ -106,6 +108,7 @@ class TestClockTimeShort:
 
 # ── Section 4: Clock time (compact) ───────────────────────────────────
 
+
 class TestClockTimeCompact:
     def setup_method(self) -> None:
         self.st = SayableTime(EN, "compact")
@@ -121,6 +124,7 @@ class TestClockTimeCompact:
 
 # ── Section 5: Locale — German ───────────────────────────────────────
 
+
 class TestLocaleGerman:
     # 5.1
     def test_half_to_pattern(self) -> None:
@@ -129,6 +133,7 @@ class TestLocaleGerman:
 
 
 # ── Section 6: Locale — French ───────────────────────────────────────
+
 
 class TestLocaleFrench:
     # 6.1
@@ -139,6 +144,7 @@ class TestLocaleFrench:
 
 # ── Section 7: Locale — Japanese ─────────────────────────────────────
 
+
 class TestLocaleJapanese:
     # 7.1
     def test_half_past(self) -> None:
@@ -147,6 +153,7 @@ class TestLocaleJapanese:
 
 
 # ── Section 8: Locale — Finnish (dot separator, short) ────────────────
+
 
 class TestLocaleFinnishDotSeparator:
     def setup_method(self) -> None:
@@ -159,3 +166,57 @@ class TestLocaleFinnishDotSeparator:
     # 8.2
     def test_midnight_dot(self) -> None:
         assert self.st.format_time("00:00") == "0.00"
+
+
+# ── Section 9: Minutes in short and compact modes ─────────────────────
+
+
+class TestExactMinutesDigital:
+    # 9.1
+    def test_short_keeps_exact_minute(self) -> None:
+        assert SayableTime(EN, "short").format_time("18:01") == "6:01 PM"
+
+    # 9.2
+    def test_compact_keeps_exact_minute(self) -> None:
+        assert SayableTime(EN, "compact").format_time("19:05") == "7:05p"
+
+
+# ── Section 10: Input validation ──────────────────────────────────────
+
+
+class TestInputValidation:
+    # 10.1
+    def test_one_digit_hour(self) -> None:
+        assert format_time("9:30") == "half past nine"
+
+    # 10.2
+    def test_two_digit_hour(self) -> None:
+        assert format_time("09:30") == "half past nine"
+
+    # 10.3
+    def test_leading_whitespace(self) -> None:
+        assert format_time(" 9:30") is None
+
+    # 10.4
+    def test_trailing_whitespace(self) -> None:
+        assert format_time("9:30 ") is None
+
+    # 10.5
+    def test_minutes_need_two_digits(self) -> None:
+        assert format_time("9:5") is None
+
+    # 10.6
+    def test_hour_out_of_range(self) -> None:
+        assert format_time("24:00") is None
+
+    # 10.7
+    def test_seconds_allowed_and_ignored(self) -> None:
+        assert format_time("14:15:30") == "a quarter past two"
+
+    # 10.8
+    def test_iso_datetime_with_zone_suffix(self) -> None:
+        assert format_time("2025-01-15T14:15:00Z") == "a quarter past two"
+
+    # 10.9
+    def test_iso_datetime_with_impossible_date(self) -> None:
+        assert format_time("2025-02-30T14:15:00") is None

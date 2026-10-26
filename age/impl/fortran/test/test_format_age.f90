@@ -41,6 +41,9 @@ program test_format_age
   call test_locale_indonesian()
   call test_locale_amharic()
   call test_locale_lookup()
+  call test_section_31()
+  call test_section_32()
+  call test_section_33()
 
   write(*, '(A)') ''
   write(*, '(A)') '=== Results ==='
@@ -1113,5 +1116,125 @@ contains
     loc => pt_get_locale('EN')
     call assert_true('get(EN) null', .not. associated(loc))
   end subroutine test_locale_lookup
+
+  ! ================================================================
+  ! Weeks and days across month ends
+  ! ================================================================
+  subroutine test_section_31()
+    type(pt_locale), pointer :: loc
+    character(len=PT_MAX_STR_LEN) :: res
+
+    ! 31.1
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2016-12-31', '2017-03-29')
+    call assert_eq('31.1 formatAge en normal', res, &
+      '12 weeks, 4 days')
+
+    ! 31.2
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '1991-11-27', '1992-02-25')
+    call assert_eq('31.2 formatAge en normal', res, &
+      '12 weeks, 6 days')
+
+    ! 31.3
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2020-11-30', '2021-01-02')
+    call assert_eq('31.3 formatAge en normal', res, &
+      '4 weeks, 5 days')
+
+    ! 31.4
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_COMPACT, '2016-12-31', '2017-03-29')
+    call assert_eq('31.4 formatAge en compact', res, &
+      '12w4d')
+
+  end subroutine test_section_31
+
+  ! ================================================================
+  ! Half years take their plural form from whole years
+  ! ================================================================
+  subroutine test_section_32()
+    type(pt_locale), pointer :: loc
+    character(len=PT_MAX_STR_LEN) :: res
+
+    ! 32.1
+    loc => pt_get_locale('pl')
+    res = pt_format_age(loc, PT_NORMAL, '2021-06-15', '2025-01-15')
+    call assert_eq('32.1 formatAge pl normal', res, &
+      '3 i p' // char(195) // char(179) // char(197) // char(130) // ' lata')
+
+    ! 32.2
+    loc => pt_get_locale('pl')
+    res = pt_format_age(loc, PT_SHORT, '2020-06-15', '2025-12-15')
+    call assert_eq('32.2 formatAge pl short', res, &
+      '5 i p' // char(195) // char(179) // char(197) // char(130) // ' lat')
+
+    ! 32.3
+    loc => pt_get_locale('shi')
+    res = pt_format_age(loc, PT_NORMAL, '2005-06-08', '2012-06-07')
+    call assert_eq('32.3 formatAge shi normal', res, &
+      '6 iseggasen d uzgen')
+
+  end subroutine test_section_32
+
+  ! ================================================================
+  ! Input validation
+  ! ================================================================
+  subroutine test_section_33()
+    type(pt_locale), pointer :: loc
+    character(len=PT_MAX_STR_LEN) :: res
+
+    ! 33.1
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2025-02-30', '2032-06-25')
+    call assert_null('33.1 formatAge en normal', res)
+
+    ! 33.2
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2025-13-01', '2027-01-31')
+    call assert_null('33.2 formatAge en normal', res)
+
+    ! 33.3
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2023-02-29', '2025-03-01')
+    call assert_null('33.3 formatAge en normal', res)
+
+    ! 33.4
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2025-06-00', '2027-02-25')
+    call assert_null('33.4 formatAge en normal', res)
+
+    ! 33.5
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2025-6-1', '2027-02-25')
+    call assert_null('33.5 formatAge en normal', res)
+
+    ! 33.6
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, ' 2025-06-01', '2027-02-25')
+    call assert_null('33.6 formatAge en normal', res)
+
+    ! 33.7
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2025-06-15T10:00:00', '2027-02-25')
+    call assert_null('33.7 formatAge en normal', res)
+
+    ! 33.8
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2020-01-01', '2025-04-31')
+    call assert_null('33.8 formatAge en normal', res)
+
+    ! 33.9
+    loc => pt_get_locale('en')
+    res = pt_format_stage(loc, '2025-02-30', '2027-09-05')
+    call assert_null('33.9 formatStage en normal', res)
+
+    ! 33.10
+    loc => pt_get_locale('en')
+    res = pt_format_age(loc, PT_NORMAL, '2024-02-29', '2026-03-01')
+    call assert_eq('33.10 formatAge en normal', res, &
+      '2 years')
+
+  end subroutine test_section_33
 
 end program test_format_age

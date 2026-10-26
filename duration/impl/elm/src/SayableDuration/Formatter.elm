@@ -83,7 +83,7 @@ formatDuration loc compactness seconds =
             r =
                 resolveLocale loc compactness
         in
-        Just (formatDurationSeconds loc r seconds)
+        formatWithinCeiling loc r seconds
 
 
 formatDurationTimestamps : Locale -> Compactness -> String -> String -> Maybe String
@@ -101,7 +101,7 @@ formatDurationTimestamps loc compactness start end =
                     r =
                         resolveLocale loc compactness
                 in
-                Just (formatDurationSeconds loc r totalSeconds)
+                formatWithinCeiling loc r totalSeconds
 
             _ ->
                 Nothing
@@ -134,10 +134,9 @@ formatSince loc compactness start asOf =
                         r =
                             resolveLocale loc compactness
 
-                        dur =
-                            formatDurationSeconds loc r diff
                     in
-                    Just (String.replace "{0}" dur r.ago)
+                    formatWithinCeiling loc r diff
+                        |> Maybe.map (\dur -> String.replace "{0}" dur r.ago)
 
             _ ->
                 Nothing
@@ -170,13 +169,33 @@ formatUntil loc compactness target asOf =
                         r =
                             resolveLocale loc compactness
 
-                        dur =
-                            formatDurationSeconds loc r diff
                     in
-                    Just (String.replace "{0}" dur r.inFuture)
+                    formatWithinCeiling loc r diff
+                        |> Maybe.map (\dur -> String.replace "{0}" dur r.inFuture)
 
             _ ->
                 Nothing
+
+
+{-| 500 years, the same ceiling as sayable-age.
+-}
+maxDurationMonths : Int
+maxDurationMonths =
+    6000
+
+
+approximateMonths : Int -> Int
+approximateMonths totalDays =
+    round (toFloat totalDays / 30.44)
+
+
+formatWithinCeiling : Locale -> Resolved -> Int -> Maybe String
+formatWithinCeiling loc r total =
+    if approximateMonths (total // 86400) > maxDurationMonths then
+        Nothing
+
+    else
+        Just (formatDurationSeconds loc r total)
 
 
 formatDurationSeconds : Locale -> Resolved -> Int -> String
@@ -281,7 +300,7 @@ formatDurationSeconds loc r total =
                 else
                     let
                         totalMonths =
-                            round (toFloat totalDays / 30.44)
+                            approximateMonths totalDays
 
                         effectiveMonths =
                             if totalMonths == 0 then

@@ -178,23 +178,33 @@ public final class SayableDate {
     }
 
     static int[] parseDate(String s) {
-        if (s == null || s.isEmpty()) return null;
-        // Strip time part from ISO datetime
-        String datePart = s.contains("T") ? s.substring(0, s.indexOf('T')) : s;
-        String[] parts = datePart.split("-");
-        if (parts.length != 3) return null;
-        int year = safeAtoi(parts[0]);
-        int month = safeAtoi(parts[1]);
-        int day = safeAtoi(parts[2]);
-        if (year < 0 || month < 0 || day < 0) return null;
-        if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+        if (s == null || !hasDateShape(s)) return null;
+        int year = safeAtoi(s, 0, 4);
+        int month = safeAtoi(s, 5, 7);
+        int day = safeAtoi(s, 8, 10);
+        if (year < 0 || month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month)) return null;
         return new int[]{year, month, day};
     }
 
-    private static int safeAtoi(String s) {
-        if (s == null || s.isEmpty()) return -1;
+    /** Exactly YYYY-MM-DD, or that followed by T and anything (an ISO datetime). */
+    private static boolean hasDateShape(String s) {
+        boolean dateAlone = s.length() == 10;
+        boolean datetime = s.length() > 10 && s.charAt(10) == 'T';
+        return (dateAlone || datetime) && s.charAt(4) == '-' && s.charAt(7) == '-';
+    }
+
+    private static int daysInMonth(int year, int month) {
+        if (month == 2) return isLeapYear(year) ? 29 : 28;
+        return month == 4 || month == 6 || month == 9 || month == 11 ? 30 : 31;
+    }
+
+    private static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+    }
+
+    private static int safeAtoi(String s, int from, int to) {
         int n = 0;
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = from; i < to; i++) {
             char c = s.charAt(i);
             if (c < '0' || c > '9') return -1;
             n = n * 10 + (c - '0');

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/gv.json
 
-_plural_gv() {
+_sayableage_plural_gv() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -19,7 +19,7 @@ _plural_gv() {
     echo "other"
 }
 
-_locale_gv() {
+_sayableage_locale_gv() {
     _unit_day_one='{n} laa'
     _unit_day_two='{n} laa'
     _unit_day_few='{n} laa'
@@ -55,5 +55,5 @@ _locale_gv() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_gv
+    _plural_func=_sayableage_plural_gv
 }

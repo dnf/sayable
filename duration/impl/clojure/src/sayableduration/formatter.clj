@@ -4,6 +4,10 @@
 
 (def version "0.5.0")
 
+(def ^:private max-duration-months
+  "500 years, the same ceiling as sayable-age."
+  6000)
+
 (defn- lookup-unit-form [cat forms]
   (or (get forms cat) (get forms :other) ""))
 
@@ -124,10 +128,15 @@
                       :else
                       (let [total-months (Math/round (/ (double total-days) 30.44))
                             total-months (if (and (< total-months 12) (== total-months 0)) 1 total-months)]
-                        (if (< total-months 12)
+                        (cond
+                          (> total-months max-duration-months) nil
+
                           ;; 1-11 months
+                          (< total-months 12)
                           (resolve-unit total-months month locale "")
+
                           ;; 12+ months: years + months
+                          :else
                           (let [total-years (quot total-months 12)
                                 remainder-months (mod total-months 12)
                                 result (resolve-unit total-years year locale "")]
@@ -144,7 +153,7 @@
   (when (and (seq start) (seq end))
     (when-let [s (internal/parse-iso-to-seconds start)]
       (when-let [e (internal/parse-iso-to-seconds end)]
-        (let [total (Math/abs (- e s))
+        (let [total (abs (- e s))
               resolved (resolve-locale locale compactness)]
           (format-duration-internal locale resolved total))))))
 
@@ -156,9 +165,9 @@
           (when (>= diff 0)
             (if (== diff 0)
               (:just-now locale)
-              (let [resolved (resolve-locale locale compactness)
-                    dur (format-duration-internal locale resolved diff)]
-                (str/replace (:ago resolved) "{0}" dur)))))))))
+              (let [resolved (resolve-locale locale compactness)]
+                (when-let [dur (format-duration-internal locale resolved diff)]
+                  (str/replace (:ago resolved) "{0}" dur))))))))))
 
 (defn format-until [locale compactness target as-of]
   (when (and (seq target) (seq as-of))
@@ -168,6 +177,6 @@
           (when (>= diff 0)
             (if (== diff 0)
               (:just-now locale)
-              (let [resolved (resolve-locale locale compactness)
-                    dur (format-duration-internal locale resolved diff)]
-                (str/replace (:in-future resolved) "{0}" dur)))))))))
+              (let [resolved (resolve-locale locale compactness)]
+                (when-let [dur (format-duration-internal locale resolved diff)]
+                  (str/replace (:in-future resolved) "{0}" dur))))))))))

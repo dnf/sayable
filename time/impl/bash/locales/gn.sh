@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/gn.json
 
-_locale_gn() {
+_sayabletime_locale_gn() {
     _clock_hours=('pa mokõi' 'peteĩ' 'mokõi' 'mbohapy' 'irundy' 'po' 'poteĩ' 'pokõi' 'poapy' 'porundy' 'pa' 'pa peteĩ')
     _clock_midnight='pyhareve'
     _clock_noon='asaje'

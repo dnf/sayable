@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ar.json
 
-_plural_ar() {
+_sayableduration_plural_ar() {
     local n=$1
     if [ "${n}" -eq 0 ]; then echo "zero"; return; fi
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
@@ -20,7 +20,7 @@ _plural_ar() {
     echo "other"
 }
 
-_locale_ar() {
+_sayableduration_locale_ar() {
     _unit_second_zero='{n} ثانية'
     _unit_second_one='ثانية واحدة'
     _unit_second_two='ثانيتان'
@@ -113,5 +113,5 @@ _locale_ar() {
     _compact_delimiter=''
     _compact_ago='منذ {0}'
     _compact_in_future='بعد {0}'
-    _plural_func=_plural_ar
+    _plural_func=_sayableduration_plural_ar
 }

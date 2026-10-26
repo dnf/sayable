@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/sk.json
 
-_locale_sk() {
+_sayabletime_locale_sk() {
     _clock_hours=('dvanásť' 'jedna' 'dve' 'tri' 'štyri' 'päť' 'šesť' 'sedem' 'osem' 'deväť' 'desať' 'jedenásť')
     _clock_midnight='polnoc'
     _clock_noon='poludnie'

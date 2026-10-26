@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/din.json "
 
-"Locale: din"
+"Locale: din"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 din

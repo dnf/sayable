@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/az.json
 
-_plural_az() {
+_sayableage_plural_az() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_az() {
+_sayableage_locale_az() {
     _unit_day_one='{n} gün'
     _unit_day_other='{n} gün'
     _unit_week_one='{n} həftə'
@@ -43,5 +43,5 @@ _locale_az() {
     _compact_unit_year='{n} il'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_az
+    _plural_func=_sayableage_plural_az
 }

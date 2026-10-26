@@ -7,6 +7,10 @@
        01 SAYABLE-REQUEST.
           05 REQ-ARG-COUNT     PIC 9(4).
           05 REQ-ARG           PIC X(1024) OCCURS 256 TIMES.
+      *>  Each argument's exact length (trailing blanks count, and an
+      *>  argument longer than REQ-ARG keeps its real length), so
+      *>  components can reject what the padded text would hide.
+          05 REQ-ARG-LEN       PIC 9(5) OCCURS 256 TIMES.
           05 REQ-OUTPUT        PIC X(8192).
           05 REQ-OUTPUT-PTR    PIC 9(5).
           05 REQ-EXIT-CODE     PIC 9.

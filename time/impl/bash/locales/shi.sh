@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/shi.json
 
-_locale_shi() {
+_sayabletime_locale_shi() {
     _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
     _clock_midnight='ⵏⵚ ⵏ ⵉⴹ'
     _clock_noon='ⵜⵉⵣⵡⴰⵔⵏⵉⵏ'

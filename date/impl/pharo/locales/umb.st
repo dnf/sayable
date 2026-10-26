@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/umb.json "
 
-"Locale: umb"
+"Locale: umb"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 umb

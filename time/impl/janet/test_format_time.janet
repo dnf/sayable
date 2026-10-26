@@ -148,6 +148,49 @@
 (assert-eq "8.2" ((pt-fi-short :format-time) "00:00") "0.00")
 
 # =============================================================================
+# Section 9: Minutes in short and compact modes
+# =============================================================================
+
+(def en-locale-9 (st/get-locale "en"))
+
+# 9.1
+(assert-eq "9.1" (((st/make-formatter en-locale-9 "short") :format-time) "18:01") "6:01 PM")
+
+# 9.2
+(assert-eq "9.2" (((st/make-formatter en-locale-9 "compact") :format-time) "19:05") "7:05p")
+
+# =============================================================================
+# Section 10: Input validation
+# =============================================================================
+
+# 10.1
+(assert-eq "10.1" (st/format-time "9:30") "half past nine")
+
+# 10.2
+(assert-eq "10.2" (st/format-time "09:30") "half past nine")
+
+# 10.3
+(assert-nil "10.3" (st/format-time " 9:30"))
+
+# 10.4
+(assert-nil "10.4" (st/format-time "9:30 "))
+
+# 10.5
+(assert-nil "10.5" (st/format-time "9:5"))
+
+# 10.6
+(assert-nil "10.6" (st/format-time "24:00"))
+
+# 10.7
+(assert-eq "10.7" (st/format-time "14:15:30") "a quarter past two")
+
+# 10.8
+(assert-eq "10.8" (st/format-time "2025-01-15T14:15:00Z") "a quarter past two")
+
+# 10.9
+(assert-nil "10.9" (st/format-time "2025-02-30T14:15:00"))
+
+# =============================================================================
 # Results
 # =============================================================================
 

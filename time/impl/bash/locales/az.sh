@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/az.json
 
-_locale_az() {
+_sayabletime_locale_az() {
     _clock_hours=('on iki' 'bir' 'iki' 'üç' 'dörd' 'beş' 'altı' 'yeddi' 'səkkiz' 'doqquz' 'on' 'on bir')
     _clock_midnight='gecə yarısı'
     _clock_noon='günorta'

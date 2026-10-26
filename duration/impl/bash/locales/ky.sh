@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ky.json
 
-_plural_ky() {
+_sayableduration_plural_ky() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ky() {
+_sayableduration_locale_ky() {
     _unit_second='{n} секунд'
     _unit_minute='{n} мүнөт'
     _unit_hour='{n} саат'
@@ -48,5 +48,5 @@ _locale_ky() {
     _compact_delimiter=''
     _compact_ago='{0} мурун'
     _compact_in_future='{0} кийин'
-    _plural_func=_plural_ky
+    _plural_func=_sayableduration_plural_ky
 }

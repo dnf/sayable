@@ -784,6 +784,72 @@ else
 endif
 
 % ================================================================
+% 31. Weeks and days across month ends
+% ================================================================
+printf('Section 31: Weeks and days across month ends\n');
+
+% 31.1
+check('31.1 across a 28-day February', format_age('2016-12-31', '2017-03-29'), '12 weeks, 4 days');
+
+% 31.2
+check('31.2 across a year end into a leap year', format_age('1991-11-27', '1992-02-25'), '12 weeks, 6 days');
+
+% 31.3
+check('31.3 across a year end', format_age('2020-11-30', '2021-01-02'), '4 weeks, 5 days');
+
+% 31.4
+check('31.4 compact', format_age('2016-12-31', '2017-03-29', en, 'compact'), '12w4d');
+
+% ================================================================
+% 32. Half years take their plural form from whole years
+% ================================================================
+printf('Section 32: Half-year plurals\n');
+
+% 32.1
+check('32.1 pl 3 is few', format_age('2021-06-15', '2025-01-15', locale_pl()), '3 i pół lata');
+
+% 32.2
+check('32.2 pl short 5 is many', format_age('2020-06-15', '2025-12-15', locale_pl(), 'short'), '5 i pół lat');
+
+% 32.3
+check('32.3 shi 6 is few', format_age('2005-06-08', '2012-06-07', locale_shi()), '6 iseggasen d uzgen');
+
+% ================================================================
+% 33. Input validation
+% ================================================================
+printf('Section 33: Input validation\n');
+
+% 33.1
+check('33.1 February 30', format_age('2025-02-30', '2032-06-25'), []);
+
+% 33.2
+check('33.2 month 13', format_age('2025-13-01', '2027-01-31'), []);
+
+% 33.3
+check('33.3 February 29 in a non-leap year', format_age('2023-02-29', '2025-03-01'), []);
+
+% 33.4
+check('33.4 day 00', format_age('2025-06-00', '2027-02-25'), []);
+
+% 33.5
+check('33.5 unpadded', format_age('2025-6-1', '2027-02-25'), []);
+
+% 33.6
+check('33.6 surrounding whitespace', format_age(' 2025-06-01', '2027-02-25'), []);
+
+% 33.7
+check('33.7 datetime', format_age('2025-06-15T10:00:00', '2027-02-25'), []);
+
+% 33.8
+check('33.8 invalid asOf', format_age('2020-01-01', '2025-04-31'), []);
+
+% 33.9
+check('33.9 formatStage validates', format_stage('2025-02-30', '2027-09-05'), []);
+
+% 33.10
+check('33.10 February 29 in a leap year', format_age('2024-02-29', '2026-03-01'), '2 years');
+
+% ================================================================
 % Summary
 % ================================================================
 printf('\n');

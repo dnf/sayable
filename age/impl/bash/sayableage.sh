@@ -39,18 +39,21 @@ _sayableage_julian_day() {
     echo $(( d + (153 * m1 + 2) / 5 + 365 * y1 + y1 / 4 - y1 / 100 + y1 / 400 - 32045 ))
 }
 
-# Parse YYYY-MM-DD, sets _pd_y _pd_m _pd_d. Returns 1 on failure.
+# Exactly YYYY-MM-DD. The digit class is spelled out because a [0-9] range
+# can match other characters in some locales.
+_SAYABLEAGE_DATE_PATTERN='^([0123456789]{4})-([0123456789]{2})-([0123456789]{2})$'
+
+# Parse exactly YYYY-MM-DD naming a real calendar day, sets _pd_y _pd_m _pd_d.
+# Returns 1 on failure.
 _sayableage_parse_date() {
     local datestr="$1"
-    if [ -z "${datestr}" ]; then return 1; fi
-    local IFS='-'
-    # shellcheck disable=SC2086
-    set -- ${datestr}
-    if [ $# -ne 3 ]; then return 1; fi
-    # Remove leading zeros for arithmetic
-    _pd_y=$(( 10#$1 ))
-    _pd_m=$(( 10#$2 ))
-    _pd_d=$(( 10#$3 ))
+    if ! [[ "${datestr}" =~ ${_SAYABLEAGE_DATE_PATTERN} ]]; then return 1; fi
+    # 10# reads leading zeros as decimal, not octal
+    _pd_y=$(( 10#${BASH_REMATCH[1]} ))
+    _pd_m=$(( 10#${BASH_REMATCH[2]} ))
+    _pd_d=$(( 10#${BASH_REMATCH[3]} ))
+    if [ ${_pd_m} -lt 1 ] || [ ${_pd_m} -gt 12 ] || [ ${_pd_d} -lt 1 ]; then return 1; fi
+    if [ ${_pd_d} -gt "$(_sayableage_days_in_month "${_pd_y}" "${_pd_m}")" ]; then return 1; fi
     return 0
 }
 

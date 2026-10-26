@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/ig.json "
 
-"Locale: ig"
+"Locale: ig"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 ig

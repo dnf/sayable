@@ -8,6 +8,8 @@ use SayableDuration::Locale;
 
 our $VERSION = '0.5.0';
 
+my $MAX_DURATION_MONTHS = 6000;    # 500 years, the same ceiling as sayable-age
+
 sub new {
   my ($class, $locale, %opts) = @_;
   my $compactness = $opts{compactness} || 'normal';
@@ -78,6 +80,7 @@ sub format_since {
   return undef if $diff < 0;
   return $self->{just_now} if $diff == 0;
   my $dur = _format_duration_seconds($self, $diff);
+  return undef unless defined $dur;
   my $result = $self->{ago};
   $result =~ s/\{0\}/$dur/;
   return $result;
@@ -94,6 +97,7 @@ sub format_until {
   return undef if $diff < 0;
   return $self->{just_now} if $diff == 0;
   my $dur = _format_duration_seconds($self, $diff);
+  return undef unless defined $dur;
   my $result = $self->{in_future};
   $result =~ s/\{0\}/$dur/;
   return $result;
@@ -182,6 +186,7 @@ sub _format_duration_seconds {
 
   # Approximate months (30.44 days average)
   my $total_months = _round(($total_days / 30.44));
+  return undef if $total_months > $MAX_DURATION_MONTHS;
 
   # 1-11 months
   if ($total_months < 12) {
@@ -204,32 +209,19 @@ sub _round {
   return int($n + 0.5);
 }
 
+# YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+my $TIMESTAMP = qr/
+  \A ([0-9]{4}) - ([0-9]{2}) - ([0-9]{2}) T ([0-9]{1,2}) : ([0-9]{2})
+  (?: : ([0-9]{2}) (?: \.[0-9]+ )? )? (?: Z | [+-][0-9]{2}:[0-9]{2} )? \z
+/x;
+
 sub _parse_iso_to_seconds {
   my ($iso_str) = @_;
-  return undef unless defined $iso_str && $iso_str ne '';
-  my @dt = split(/T/, $iso_str);
-  return undef unless scalar @dt == 2;
-  my ($date_part, $time_part) = @dt;
-
-  my @dp = split(/-/, $date_part);
-  return undef unless scalar @dp == 3;
-  my ($year, $month, $day) = (int($dp[0]), int($dp[1]), int($dp[2]));
-
-  my $time_str = $time_part;
-  if (index($time_str, '+') != -1) {
-    $time_str = (split(/\+/, $time_str))[0];
-  }
-  if (index($time_str, 'Z') != -1) {
-    $time_str = (split(/Z/, $time_str))[0];
-  }
-
-  my @tp = split(/:/, $time_str);
-  my $hour = int($tp[0]);
-  my $minute = (scalar @tp > 1) ? int($tp[1]) : 0;
-  my $second = 0;
-  if (scalar @tp > 2) {
-    $second = int((split(/\./, $tp[2]))[0]);
-  }
+  return undef unless defined $iso_str;
+  my ($year, $month, $day, $hour, $minute, $second) = $iso_str =~ $TIMESTAMP or return undef;
+  ($year, $month, $day, $hour, $minute, $second) = map { ($_ // 0) + 0 } ($year, $month, $day, $hour, $minute, $second);
+  return undef if $month < 1 || $month > 12 || $day < 1 || $day > _days_in_month($year, $month);
+  return undef if $hour > 23 || $minute > 59 || $second > 59;
 
   my $days = _days_since_epoch($year, $month, $day);
   return $days * 86400 + $hour * 3600 + $minute * 60 + $second;

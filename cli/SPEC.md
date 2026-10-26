@@ -184,13 +184,14 @@ The `duration` command determines its mode from the first value argument:
 - If the value is `null` → pass null to `format_duration`
 - If the value is a non-negative integer (all digits) → seconds mode: `format_duration(int(value))`
 - If the value contains `-` or `T` → timestamp mode: requires a second positional argument (`end`), calls `format_duration(start, end)`
-- Negative integers (e.g., `-1`) → pass as negative to `format_duration` (which returns null)
+- Negative integers (e.g., `-1`) → pass as negative to `format_duration` (which returns null). Because a leading `-` starts an option, a negative value must follow `--`: `sayable duration -- -1`; `sayable duration -1` is an unknown-option usage error (exit 2).
+- Digits are ASCII `0`–`9` only; other Unicode digits make the value a (malformed) timestamp.
 
 ## Reference Implementation Behavior
 
 When `-d` / `--as-of` is not provided:
 
-- `age` and `stage`: use today's date (YYYY-MM-DD)
+- `age` and `stage`: use today's date (YYYY-MM-DD); so does `-d null` or `-d ''` (an absent reference date)
 - `relative`, `since`, `until`: the `-d` option is **required** — omitting it is a usage error (exit 2)
 
 ## Example Usage

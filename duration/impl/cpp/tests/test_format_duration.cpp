@@ -243,6 +243,35 @@ void test_compact_compactness() {
     ASSERT_EQ("17.2 compact 90 seconds", sd.format_duration(90), "1m30s");
 }
 
+// ================================================================
+// Section 18: Short compactness — relative time
+// ================================================================
+void test_section_18_short_compactness_relative_time() {
+    ASSERT_EQ("18.1 days and hours both kept", SayableDuration(locales::MEN(), Compactness::Normal).format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16"), "l\311\224h\311\224nga 2, awa 14 taa gb\311\224y\311\224"); // 18.1
+}
+
+// ================================================================
+// Section 19: Range (500-year ceiling)
+// ================================================================
+void test_section_19_range_500_year_ceiling() {
+    ASSERT_EQ("19.1 500 Julian years: 6000 months, the ceiling", SayableDuration(locales::EN(), Compactness::Normal).format_duration(15778800000LL), "500 years"); // 19.1
+    ASSERT_NULL("19.2 over 6000 months", SayableDuration(locales::EN(), Compactness::Normal).format_duration(15800000000LL)); // 19.2
+    ASSERT_NULL("19.3 well beyond the ceiling (and 32-bit range)", SayableDuration(locales::EN(), Compactness::Normal).format_duration(99999999999LL)); // 19.3
+    ASSERT_NULL("19.4 525 years ago", SayableDuration(locales::EN(), Compactness::Normal).format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00")); // 19.4
+    ASSERT_NULL("19.5 575 years from now", SayableDuration(locales::EN(), Compactness::Normal).format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00")); // 19.5
+}
+
+// ================================================================
+// Section 20: Timestamp validation
+// ================================================================
+void test_section_20_timestamp_validation() {
+    ASSERT_EQ("20.1 seconds are optional", SayableDuration(locales::EN(), Compactness::Normal).format_duration("2025-01-15T10:00", "2025-01-15T11:30:00"), "1\302\275 hours"); // 20.1
+    ASSERT_NULL("20.2 minutes are required", SayableDuration(locales::EN(), Compactness::Normal).format_duration("2025-01-15T10", "2025-01-15T11:30:00")); // 20.2
+    ASSERT_NULL("20.3 unpadded date", SayableDuration(locales::EN(), Compactness::Normal).format_duration("2025-1-5T10:00:00", "2025-01-15T11:30:00")); // 20.3
+    ASSERT_NULL("20.4 impossible date", SayableDuration(locales::EN(), Compactness::Normal).format_duration("2025-02-30T10:00:00", "2025-03-15T11:30:00")); // 20.4
+    ASSERT_NULL("20.5 hour out of range", SayableDuration(locales::EN(), Compactness::Normal).format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00")); // 20.5
+}
+
 int main() {
     test_null_edge_cases();
     test_seconds_tier();
@@ -261,6 +290,10 @@ int main() {
     test_locale_japanese();
     test_short_compactness();
     test_compact_compactness();
+
+    test_section_18_short_compactness_relative_time();
+    test_section_19_range_500_year_ceiling();
+    test_section_20_timestamp_validation();
 
     std::cout << "\n=== Results ===" << std::endl;
     std::cout << "Passed: " << tests_passed << std::endl;

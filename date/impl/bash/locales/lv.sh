@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/lv.json
 
-_locale_lv() {
+_sayabledate_locale_lv() {
     _months=('janvāris' 'februāris' 'marts' 'aprīlis' 'maijs' 'jūnijs' 'jūlijs' 'augusts' 'septembris' 'oktobris' 'novembris' 'decembris')
     _weekdays=('svētdiena' 'pirmdiena' 'otrdiena' 'trešdiena' 'ceturtdiena' 'piektdiena' 'sestdiena')
     _day_format='{n}.'

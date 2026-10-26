@@ -29,15 +29,16 @@ days_between <- function(y1, m1, d1, y2, m2, d2) {
   to_days(y2, m2, d2) - to_days(y1, m1, d1)
 }
 
+# Parse exactly YYYY-MM-DD naming a real calendar day; NULL otherwise.
 parse_date <- function(s) {
-  if (is.null(s) || !is.character(s) || nchar(s) == 0) return(NULL)
-  parts <- strsplit(s, "-", fixed = TRUE)[[1]]
-  if (length(parts) != 3) return(NULL)
-  y <- suppressWarnings(as.integer(parts[1]))
-  m <- suppressWarnings(as.integer(parts[2]))
-  d <- suppressWarnings(as.integer(parts[3]))
-  if (is.na(y) || is.na(m) || is.na(d)) return(NULL)
-  list(year = y, month = m, day = d)
+  if (!is.character(s) || length(s) != 1 || is.na(s)) return(NULL)
+  m <- regmatches(s, regexec("^([0-9]{4})-([0-9]{2})-([0-9]{2})\\z", s, perl = TRUE))[[1]]
+  if (length(m) == 0) return(NULL)
+  y <- as.integer(m[2])
+  mo <- as.integer(m[3])
+  d <- as.integer(m[4])
+  if (mo < 1 || mo > 12 || d < 1 || d > days_in_month(y, mo)) return(NULL)
+  list(year = y, month = mo, day = d)
 }
 
 parse_age <- function(date_of_birth, as_of = NULL) {
@@ -48,7 +49,7 @@ parse_age <- function(date_of_birth, as_of = NULL) {
   dob <- parse_date(date_of_birth)
   if (is.null(dob)) return(NULL)
 
-  if (!is.null(as_of)) {
+  if (!is.null(as_of) && !identical(as_of, "")) {
     ref <- parse_date(as_of)
     if (is.null(ref)) return(NULL)
   } else {

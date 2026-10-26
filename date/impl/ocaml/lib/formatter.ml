@@ -40,33 +40,34 @@ let string_contains ~needle haystack =
 
 let is_digit c = c >= '0' && c <= '9'
 
+let days_in_month y m =
+  match m with
+  | 4 | 6 | 9 | 11 -> 30
+  | 2 -> if (y mod 4 = 0 && y mod 100 <> 0) || y mod 400 = 0 then 29 else 28
+  | _ -> 31
+
+(* YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+   time (only the date part is read). *)
 let parse_date s =
-  if String.length s = 0 then None
+  let len = String.length s in
+  if len < 10 || (len > 10 && s.[10] <> 'T') then None
+  else if s.[4] <> '-' || s.[7] <> '-' then None
   else
-    let date_part =
-      if string_contains ~needle:"T" s then
-        let idx = String.index s 'T' in
-        String.sub s 0 idx
-      else s
+    let y_str = String.sub s 0 4 in
+    let m_str = String.sub s 5 2 in
+    let d_str = String.sub s 8 2 in
+    let all_digits str =
+      let ok = ref true in
+      String.iter (fun c -> if not (is_digit c) then ok := false) str;
+      !ok
     in
-    if String.length date_part < 10 then None
-    else if date_part.[4] <> '-' || date_part.[7] <> '-' then None
+    if not (all_digits y_str && all_digits m_str && all_digits d_str) then None
     else
-      let y_str = String.sub date_part 0 4 in
-      let m_str = String.sub date_part 5 2 in
-      let d_str = String.sub date_part 8 2 in
-      let all_digits str =
-        let ok = ref true in
-        String.iter (fun c -> if not (is_digit c) then ok := false) str;
-        !ok
-      in
-      if not (all_digits y_str && all_digits m_str && all_digits d_str) then None
-      else
-        let y = int_of_string y_str in
-        let m = int_of_string m_str in
-        let d = int_of_string d_str in
-        if m < 1 || m > 12 || d < 1 || d > 31 then None
-        else Some (y, m, d)
+      let y = int_of_string y_str in
+      let m = int_of_string m_str in
+      let d = int_of_string d_str in
+      if m < 1 || m > 12 || d < 1 || d > days_in_month y m then None
+      else Some (y, m, d)
 
 let to_jdn y m d =
   let a = (14 - m) / 12 in

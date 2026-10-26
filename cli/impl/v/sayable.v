@@ -45,6 +45,7 @@ struct CliOptions {
 mut:
 	locale      string = 'en'
 	as_of       string
+	has_as_of   bool
 	compactness string = 'normal'
 	gender      string
 	with_year   bool
@@ -88,23 +89,48 @@ fn today_str() string {
 	return ''
 }
 
+// given_as_of_or_today treats a missing, null or empty as-of as today, as the
+// reference CLI does.
+fn given_as_of_or_today(as_of string) string {
+	return if as_of.len == 0 || is_null_arg(as_of) { today_str() } else { as_of }
+}
+
+// is_integer decides seconds mode as the reference CLI does: digits after any
+// leading minus signs.
 fn is_integer(s string) bool {
-	if s.len == 0 {
+	digits := s.trim_left('-')
+	if digits.len == 0 {
 		return false
 	}
-	mut start := 0
-	if s[0] == `-` {
-		if s.len == 1 {
-			return false
-		}
-		start = 1
-	}
-	for i in start .. s.len {
-		if s[i] < `0` || s[i] > `9` {
+	for c in digits {
+		if c < `0` || c > `9` {
 			return false
 		}
 	}
 	return true
+}
+
+// parse_seconds parses seconds as a 64-bit integer; none when malformed ("--5")
+// or out of range, which is far beyond the 500-year ceiling either way.
+fn parse_seconds(s string) ?i64 {
+	negative := s.starts_with('-')
+	digits := if negative { s[1..] } else { s }
+	if digits.len == 0 {
+		return none
+	}
+	max := i64(9223372036854775807)
+	mut n := i64(0)
+	for c in digits {
+		if c < `0` || c > `9` {
+			return none
+		}
+		digit := i64(c - `0`)
+		if n > (max - digit) / 10 {
+			return none
+		}
+		n = n * 10 + digit
+	}
+	return if negative { -n } else { n }
 }
 
 // Parsed holds the parsed arguments, or the outcome when parsing already
@@ -152,6 +178,7 @@ fn parse_options(args []string) Parsed {
 				}
 				i++
 				opts.as_of = args[i]
+				opts.has_as_of = true
 				i++
 				continue
 			}
@@ -185,14 +212,6 @@ fn parse_options(args []string) Parsed {
 			if a in ['-v', '--version'] {
 				return finished(printed('sayable ${cli_version}'))
 			}
-			// Check for negative numbers
-			if a.len > 1 && a[0] == `-` {
-				if is_integer(a) {
-					positionals << a
-					i++
-					continue
-				}
-			}
 			return finished(usage_error("unknown option '${a}'"))
 		}
 		positionals << a
@@ -207,7 +226,11 @@ fn parse_options(args []string) Parsed {
 // run executes one invocation (`args` excludes the program name).
 fn run(args []string) Outcome {
 	if args.len == 0 {
-		return printed(help_text)
+		// No command: help on stdout, but still a usage error (as the reference CLI).
+		return Outcome{
+			code:   2
+			output: help_text + '\n'
+		}
 	}
 
 	first := args[0]
@@ -288,7 +311,7 @@ fn cmd_age(positionals []string, opts CliOptions) Outcome {
 	locale := age_locales.get_locale(opts.locale) or {
 		return usage_error("unknown locale '${opts.locale}'")
 	}
-	as_of := if opts.as_of.len > 0 { opts.as_of } else { today_str() }
+	as_of := given_as_of_or_today(opts.as_of)
 	sa := age_locales.new_sayable_age(&locale, age_compactness(opts.compactness))
 	result := sa.format_age(positionals[0], as_of) or { return null_result() }
 	return printed(result)
@@ -304,7 +327,7 @@ fn cmd_stage(positionals []string, opts CliOptions) Outcome {
 	locale := age_locales.get_locale(opts.locale) or {
 		return usage_error("unknown locale '${opts.locale}'")
 	}
-	as_of := if opts.as_of.len > 0 { opts.as_of } else { today_str() }
+	as_of := given_as_of_or_today(opts.as_of)
 	sa := age_locales.new_sayable_age(&locale, age_compactness(opts.compactness))
 	result := sa.format_stage(positionals[0], as_of, opts.gender) or { return null_result() }
 	return printed(result)
@@ -344,7 +367,7 @@ fn cmd_relative(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
 		return usage_error("'relative' requires a date argument")
 	}
-	if opts.as_of.len == 0 {
+	if !opts.has_as_of {
 		return usage_error("'relative' requires --as-of (-d) option")
 	}
 	if is_null_arg(positionals[0]) {
@@ -406,7 +429,7 @@ fn cmd_duration(positionals []string, opts CliOptions) Outcome {
 	sd := duration_locales.new_sayable_duration(&locale, duration_compactness(opts.compactness))
 	val := positionals[0]
 	if is_integer(val) {
-		secs := val.int()
+		secs := parse_seconds(val) or { return null_result() }
 		result := sd.format_duration(secs) or { return null_result() }
 		return printed(result)
 	} else {
@@ -422,7 +445,7 @@ fn cmd_since(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
 		return usage_error("'since' requires a start argument")
 	}
-	if opts.as_of.len == 0 {
+	if !opts.has_as_of {
 		return usage_error("'since' requires --as-of (-d) option")
 	}
 	if is_null_arg(positionals[0]) {
@@ -440,7 +463,7 @@ fn cmd_until(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
 		return usage_error("'until' requires a target argument")
 	}
-	if opts.as_of.len == 0 {
+	if !opts.has_as_of {
 		return usage_error("'until' requires --as-of (-d) option")
 	}
 	if is_null_arg(positionals[0]) {

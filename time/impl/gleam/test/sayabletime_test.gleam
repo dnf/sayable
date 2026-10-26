@@ -180,3 +180,62 @@ pub fn finnish_midnight_dot_test() {
   sayabletime.format_time(locale_fi.locale(), Short, "00:00")
   |> should.equal(Ok("0.00"))
 }
+
+// 9. Minutes in short and compact modes
+
+// 9.1
+pub fn short_keeps_exact_minute_test() {
+  time_short("18:01") |> should.equal(Ok("6:01 PM"))
+}
+
+// 9.2
+pub fn compact_keeps_exact_minute_test() {
+  time_compact("19:05") |> should.equal(Ok("7:05p"))
+}
+
+// 10. Input validation
+
+// 10.1
+pub fn one_digit_hour_test() {
+  time("9:30") |> should.equal(Ok("half past nine"))
+}
+
+// 10.2
+pub fn two_digit_hour_test() {
+  time("09:30") |> should.equal(Ok("half past nine"))
+}
+
+// 10.3
+pub fn leading_whitespace_test() {
+  time(" 9:30") |> should.equal(Error(Nil))
+}
+
+// 10.4
+pub fn trailing_whitespace_test() {
+  time("9:30 ") |> should.equal(Error(Nil))
+}
+
+// 10.5
+pub fn one_digit_minute_test() {
+  time("9:5") |> should.equal(Error(Nil))
+}
+
+// 10.6
+pub fn hour_out_of_range_test() {
+  time("24:00") |> should.equal(Error(Nil))
+}
+
+// 10.7
+pub fn seconds_ignored_test() {
+  time("14:15:30") |> should.equal(Ok("a quarter past two"))
+}
+
+// 10.8
+pub fn iso_datetime_with_zone_test() {
+  time("2025-01-15T14:15:00Z") |> should.equal(Ok("a quarter past two"))
+}
+
+// 10.9
+pub fn iso_datetime_impossible_date_test() {
+  time("2025-02-30T14:15:00") |> should.equal(Error(Nil))
+}

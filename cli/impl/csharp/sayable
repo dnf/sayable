@@ -4,14 +4,31 @@ set -euo pipefail
 # Resolve the directory this script lives in
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Build if needed (check if the DLL exists and is newer than source)
+# Build directory and output DLL
 BUILD_DIR="${SCRIPT_DIR}/bin/Release/net10.0"
 DLL="${BUILD_DIR}/SayableCli.dll"
 
-if [[ ! -f "${DLL}" ]] || \
-   [[ "${SCRIPT_DIR}/Program.cs" -nt "${DLL}" ]] || \
-   [[ "${SCRIPT_DIR}/SayableCli.csproj" -nt "${DLL}" ]]; then
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+LIB_DIRS=()
+for _component in Age Date Time Duration; do
+    _lower="$(echo "${_component}" | tr '[:upper:]' '[:lower:]')"
+    LIB_DIRS+=("${PROJECT_ROOT}/${_lower}/impl/csharp/Sayable${_component}")
+done
+
+# Rebuild if the DLL is missing or older than the CLI or any library source
+_needs_build=false
+if [[ ! -f "${DLL}" ]]; then
+    _needs_build=true
+elif [[ -n "$(find "${SCRIPT_DIR}/Program.cs" "${SCRIPT_DIR}/SayableCli.csproj" "${LIB_DIRS[@]}" \
+        \( -path '*/bin' -o -path '*/obj' \) -prune -o \
+        \( -name '*.cs' -o -name '*.csproj' \) -newer "${DLL}" -print 2>/dev/null | head -1)" ]]; then
+    _needs_build=true
+fi
+
+if ${_needs_build}; then
     dotnet build "${SCRIPT_DIR}/SayableCli.csproj" -c Release --nologo -v quiet 2>&1 >/dev/null
+    # MSBuild leaves an up-to-date DLL untouched; mark it as checked
+    touch "${DLL}"
 fi
 
 # Run via dotnet exec (avoids native host DOTNET_ROOT issues)

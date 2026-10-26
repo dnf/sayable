@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/xh.json
 
-_locale_xh() {
+_sayabletime_locale_xh() {
     _clock_hours=('ishumi elinambini' 'inye' 'ezimbini' 'ezintathu' 'ezine' 'ezintlanu' 'ezintandathu' 'ezisixhenxe' 'ezisibhozo' 'ethoba' 'ishumi' 'ishumi elinanye')
     _clock_midnight='ezinzulwini zobusuku'
     _clock_noon='emini'

@@ -16,6 +16,7 @@
                EXIT PARAGRAPH
            END-IF
            MOVE WS-FMT-DATE TO WS-DATE-STR
+           MOVE WS-FMT-DATE-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE-INPUT
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -41,6 +42,7 @@
                EXIT PARAGRAPH
            END-IF
            MOVE WS-FMT-DATE TO WS-DATE-STR
+           MOVE WS-FMT-DATE-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE-INPUT
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -70,6 +72,7 @@
            END-IF
 
            MOVE WS-FMT-DATE TO WS-DATE-STR
+           MOVE WS-FMT-DATE-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE-INPUT
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -79,6 +82,7 @@
            MOVE WS-PARSED-DAY TO WS-DATE-DAY
 
            MOVE WS-FMT-AS-OF TO WS-DATE-STR
+           MOVE WS-FMT-AS-OF-LEN TO WS-DATE-LEN
            PERFORM PARSE-DATE-INPUT
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -305,22 +309,11 @@
                MOVE WS-REPLACE-RESULT TO WS-PATTERN
 
                *> {yy} = last 2 digits, zero-padded
-               DIVIDE WS-DATE-YEAR BY 100
-                   GIVING WS-YY-NUM REMAINDER WS-YY-NUM
-               MOVE WS-YY-NUM TO WS-YY-EDITED
-               MOVE FUNCTION TRIM(WS-YY-EDITED)
-                   TO WS-YY-STR
-               IF WS-YY-NUM < 10
-                   STRING "0"
-                       FUNCTION TRIM(WS-YY-STR)
-                       DELIMITED BY SIZE
-                       INTO WS-YY-STR
-                   END-STRING
-               END-IF
+               COMPUTE WS-YY-DIGITS =
+                   FUNCTION MOD(WS-DATE-YEAR, 100)
                MOVE WS-PATTERN TO WS-REPLACE-SRC
                MOVE "{yy}" TO WS-REPLACE-MARKER
-               MOVE FUNCTION TRIM(WS-YY-STR)
-                   TO WS-REPLACE-REPL
+               MOVE WS-YY-DIGITS TO WS-REPLACE-REPL
                PERFORM REPLACE-FIRST
                MOVE WS-REPLACE-RESULT TO WS-PATTERN
            END-IF
@@ -574,19 +567,29 @@
            .
 
 *> ============================================================
-*> PARSE-DATE-INPUT: Parse YYYY-MM-DD from WS-DATE-STR
-*> Handles ISO datetime (strips T... suffix)
+*> PARSE-DATE-INPUT: Parse YYYY-MM-DD naming a real calendar day,
+*> optionally followed by T and a time (only the date part is read)
+*> Input:  WS-DATE-STR, WS-DATE-LEN (0 = length without trailing blanks)
 *> Output: WS-PARSED-YEAR, WS-PARSED-MONTH, WS-PARSED-DAY,
 *>         WS-PARSE-OK (1=success, 0=failure)
 *> ============================================================
        PARSE-DATE-INPUT.
            MOVE 0 TO WS-PARSE-OK
-           IF FUNCTION LENGTH(FUNCTION TRIM(WS-DATE-STR))
-               < 10
+           IF WS-DATE-LEN = 0
+               MOVE FUNCTION STORED-CHAR-LENGTH(WS-DATE-STR)
+                   TO WS-DATE-LEN
+           END-IF
+           IF WS-DATE-LEN < 10
+               EXIT PARAGRAPH
+           END-IF
+           IF WS-DATE-LEN > 10 AND WS-DATE-STR(11:1) NOT = "T"
                EXIT PARAGRAPH
            END-IF
            IF WS-DATE-STR(5:1) NOT = "-"
                OR WS-DATE-STR(8:1) NOT = "-"
+               OR WS-DATE-STR(1:4) IS NOT NUMERIC
+               OR WS-DATE-STR(6:2) IS NOT NUMERIC
+               OR WS-DATE-STR(9:2) IS NOT NUMERIC
                EXIT PARAGRAPH
            END-IF
            MOVE WS-DATE-STR(1:4) TO WS-PARSED-YEAR
@@ -595,7 +598,22 @@
            IF WS-PARSED-MONTH < 1 OR WS-PARSED-MONTH > 12
                EXIT PARAGRAPH
            END-IF
-           IF WS-PARSED-DAY < 1 OR WS-PARSED-DAY > 31
+           EVALUATE WS-PARSED-MONTH
+               WHEN 4 WHEN 6 WHEN 9 WHEN 11
+                   MOVE 30 TO WS-PARSED-MONTH-DAYS
+               WHEN 2
+                   IF (FUNCTION MOD(WS-PARSED-YEAR, 4) = 0
+                       AND FUNCTION MOD(WS-PARSED-YEAR, 100) NOT = 0)
+                       OR FUNCTION MOD(WS-PARSED-YEAR, 400) = 0
+                       MOVE 29 TO WS-PARSED-MONTH-DAYS
+                   ELSE
+                       MOVE 28 TO WS-PARSED-MONTH-DAYS
+                   END-IF
+               WHEN OTHER
+                   MOVE 31 TO WS-PARSED-MONTH-DAYS
+           END-EVALUATE
+           IF WS-PARSED-DAY < 1
+               OR WS-PARSED-DAY > WS-PARSED-MONTH-DAYS
                EXIT PARAGRAPH
            END-IF
            MOVE 1 TO WS-PARSE-OK

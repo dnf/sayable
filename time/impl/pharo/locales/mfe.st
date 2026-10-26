@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/mfe.json "
 
-"Locale: mfe"
+"Locale: mfe"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 mfe

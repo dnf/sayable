@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/gv.json
 
-_locale_gv() {
+_sayabledate_locale_gv() {
     _months=('Jerrey Geuree' 'Toshiaght Arree' 'Mayrnt' 'Averil' 'Boaldyn' 'Mean Souree' 'Jerrey Souree' 'Luanistyn' 'Mean Fouyir' 'Jerrey Fouyir' 'Mee Houney' 'Mee ny Nollick')
     _weekdays=('Jedoonee' 'Jelhein' 'Jemayrt' 'Jercean' 'Jerdein' 'Jeheiney' 'Jesarn')
     _day_format='{n}'

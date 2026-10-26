@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/snk.json
 
-_plural_snk() {
+_sayableduration_plural_snk() {
     echo "other"
 }
 
-_locale_snk() {
+_sayableduration_locale_snk() {
     _unit_second='sɛgɔndi {n}'
     _unit_minute='miniti {n}'
     _unit_hour='waxati {n}'
@@ -46,5 +46,5 @@ _locale_snk() {
     _compact_delimiter=''
     _compact_ago='{0} kille'
     _compact_in_future='do {0}'
-    _plural_func=_plural_snk
+    _plural_func=_sayableduration_plural_snk
 }

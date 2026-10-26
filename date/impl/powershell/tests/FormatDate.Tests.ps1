@@ -363,3 +363,122 @@ Describe 'Locale — Spanish' {
         Format-SayableRelativeDate -Formatter $script:esFmt -Date '2025-03-17' -AsOf '2025-03-15' | Should -BeExactly 'pasado mañana'
     }
 }
+
+# ================================================================
+# Sections 13-16: with year, short months, short phrases, input validation
+# ================================================================
+Describe 'Sections 13-16: with year, short months, short phrases, input validation' {
+    # 13.1
+    It '13.1 format_date_with_year' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableDateWithYear -Formatter $fmt -Date '2018-02-04' | Should -BeExactly 'February 4th, 2018'
+    }
+
+    # 13.2
+    It '13.2 format_date_with_year' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en') -Compactness 'short'
+        Format-SayableDateWithYear -Formatter $fmt -Date '2025-03-15' | Should -BeExactly 'Mar 15, 2025'
+    }
+
+    # 13.3
+    It '13.3 format_date_with_year' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en') -Compactness 'compact'
+        Format-SayableDateWithYear -Formatter $fmt -Date '1997-01-21' | Should -BeExactly '1/21/97'
+    }
+
+    # 13.4
+    It '13.4 two-digit year keeps its leading zero' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'tg') -Compactness 'compact'
+        Format-SayableDateWithYear -Formatter $fmt -Date '2007-05-20' | Should -BeExactly '20/5/07'
+    }
+
+    # 13.5
+    It '13.5 format_date_with_year' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'fi') -Compactness 'short'
+        Format-SayableDateWithYear -Formatter $fmt -Date '1996-06-21' | Should -BeExactly '21. kesäkuuta 1996'
+    }
+
+    # 14.1
+    It '14.1 format_date' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'sk') -Compactness 'short'
+        Format-SayableDate -Formatter $fmt -Date '2031-02-15' | Should -BeExactly '15. februára'
+    }
+
+    # 14.2
+    It '14.2 format_date' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'cs') -Compactness 'short'
+        Format-SayableDate -Formatter $fmt -Date '2025-12-10' | Should -BeExactly '10. prosince'
+    }
+
+    # 14.3
+    It '14.3 format_date' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'uk') -Compactness 'short'
+        Format-SayableDate -Formatter $fmt -Date '2025-11-05' | Should -BeExactly '5 листопада'
+    }
+
+    # 14.4
+    It '14.4 format_relative' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'fi') -Compactness 'short'
+        Format-SayableRelativeDate -Formatter $fmt -Date '1998-08-08' -AsOf '1998-08-15' | Should -BeExactly '8. elokuuta'
+    }
+
+    # 15.1
+    It '15.1 day after tomorrow' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'kw') -Compactness 'short'
+        Format-SayableRelativeDate -Formatter $fmt -Date '2035-12-04' -AsOf '2035-12-02' | Should -BeExactly 'an Mth ma'
+    }
+
+    # 15.2
+    It '15.2 day before yesterday' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'mam') -Compactness 'short'
+        Format-SayableRelativeDate -Formatter $fmt -Date '2000-01-23' -AsOf '2000-01-25' | Should -BeExactly 'Dom nchi''j'
+    }
+
+    # 15.3
+    It '15.3 day after tomorrow' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'kek') -Compactness 'short'
+        Format-SayableRelativeDate -Formatter $fmt -Date '2014-10-24' -AsOf '2014-10-22' | Should -BeExactly 'a''in Vie'
+    }
+
+    # 16.1
+    It '16.1 February 30 doesn''t exist' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableDate -Formatter $fmt -Date '2025-02-30' | Should -BeNullOrEmpty
+    }
+
+    # 16.2
+    It '16.2 Month 13' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableDate -Formatter $fmt -Date '2025-13-01' | Should -BeNullOrEmpty
+    }
+
+    # 16.3
+    It '16.3 Unpadded month and day' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableDate -Formatter $fmt -Date '2025-6-1' | Should -BeNullOrEmpty
+    }
+
+    # 16.4
+    It '16.4 Surrounding whitespace' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableDate -Formatter $fmt -Date ' 2025-06-01' | Should -BeNullOrEmpty
+    }
+
+    # 16.5
+    It '16.5 An ISO datetime: only the date part is used' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableDate -Formatter $fmt -Date '2025-06-01T10:00:00' | Should -BeExactly 'June 1st'
+    }
+
+    # 16.6
+    It '16.6 February 29 in a non-leap year' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableDateWithYear -Formatter $fmt -Date '2023-02-29' | Should -BeNullOrEmpty
+    }
+
+    # 16.7
+    It '16.7 Invalid asOf' {
+        $fmt = New-SayableDateFormatter -Locale (Get-SayableDateLocale -Code 'en')
+        Format-SayableRelativeDate -Formatter $fmt -Date '2025-03-16' -AsOf '2025-04-31' | Should -BeNullOrEmpty
+    }
+}

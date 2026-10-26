@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/hy.json
 
-_plural_hy() {
+_sayableduration_plural_hy() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_hy() {
+_sayableduration_locale_hy() {
     _unit_second_one='{n} վայրկյան'
     _unit_second_other='{n} վայրկյան'
     _unit_minute_one='{n} րոպե'
@@ -55,5 +55,5 @@ _locale_hy() {
     _compact_delimiter=''
     _compact_ago='{0} առաջ'
     _compact_in_future='{0} հետո'
-    _plural_func=_plural_hy
+    _plural_func=_sayableduration_plural_hy
 }

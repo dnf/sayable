@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/eu.json
 
-_locale_eu() {
+_sayabletime_locale_eu() {
     _clock_hours=('hamabi' 'bat' 'bi' 'hiru' 'lau' 'bost' 'sei' 'zazpi' 'zortzi' 'bederatzi' 'hamar' 'hamaika')
     _clock_midnight='gauerdia'
     _clock_noon='eguerdia'

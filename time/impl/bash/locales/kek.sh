@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/kek.json
 
-_locale_kek() {
+_sayabletime_locale_kek() {
     _clock_hours=('kab'\''laju' 'jun' 'kab'\''' 'oxib'\''' 'kab'\''ib'\''' 'o'\''ib'\''' 'waqib'\''' 'uqub'\''' 'wajxaqib'\''' 'b'\''elejeb'\''' 'lajeb'\''' 'junlaju')
     _clock_midnight='chaq'\'' xkab'\'''
     _clock_noon='chaq'\'' chaab'\''il'

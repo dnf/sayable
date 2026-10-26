@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mnk.json
 
-_locale_mnk() {
+_sayabletime_locale_mnk() {
     _clock_hours=('tan ning fula' 'kiliŋ' 'fula' 'saba' 'naani' 'luulu' 'wɔɔrɔ' 'wolonfila' 'sey' 'kɔnɔntɔ' 'taŋ' 'taŋ ning kiliŋ')
     _clock_midnight='sutu-tili-laŋ'
     _clock_noon='tili-konto'

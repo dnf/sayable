@@ -9,14 +9,14 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/shi.json
 
-_plural_shi() {
+_sayableage_plural_shi() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -ge 2 ] && [ "${n}" -le 10 ]; then echo "few"; return; fi
     echo "other"
 }
 
-_locale_shi() {
+_sayableage_locale_shi() {
     _unit_day_one='{n} ass'
     _unit_day_few='{n} ussan'
     _unit_day_other='{n} ass'
@@ -52,5 +52,5 @@ _locale_shi() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_shi
+    _plural_func=_sayableage_plural_shi
 }

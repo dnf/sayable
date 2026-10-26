@@ -128,40 +128,68 @@ fn replaceFirst(w: *Writer, tmpl: []const u8, marker: []const u8, replacement: [
 
 // ---- Time parsing ----
 
+/// A clock time, alone or after the T of an ISO datetime whose date is valid
+/// (docs/input-formats.md).
 fn parseTime(input: []const u8) ?[2]i32 {
-    if (input.len == 0) return null;
-
-    // Extract time portion from ISO datetime
-    var t = input;
-    if (indexOfByte(t, 'T')) |ti| {
-        t = t[ti + 1 ..];
+    if (indexOfByte(input, 'T')) |ti| {
+        if (!isRealDate(input[0..ti])) return null;
+        return parseClock(input[ti + 1 ..]);
     }
+    return parseClock(input);
+}
 
-    // Strip timezone
-    for (t, 0..) |c, i| {
-        if (c == '+' or c == 'Z') {
-            t = t[0..i];
-            break;
+/// Exactly YYYY-MM-DD naming a real Gregorian calendar day.
+fn isRealDate(s: []const u8) bool {
+    if (s.len != 10 or s[4] != '-' or s[7] != '-') return false;
+    const year = parseDigits(s[0..4]) orelse return false;
+    const month = parseDigits(s[5..7]) orelse return false;
+    const day = parseDigits(s[8..10]) orelse return false;
+    return month >= 1 and month <= 12 and day >= 1 and day <= daysInMonth(year, month);
+}
+
+fn daysInMonth(year: i32, month: i32) i32 {
+    if (month == 2) {
+        return if (@mod(year, 4) == 0 and (@mod(year, 100) != 0 or @mod(year, 400) == 0)) 29 else 28;
+    }
+    if (month == 4 or month == 6 or month == 9 or month == 11) return 30;
+    return 31;
+}
+
+/// Number of leading ASCII digits in s.
+fn digitRun(s: []const u8) usize {
+    var n: usize = 0;
+    while (n < s.len and s[n] >= '0' and s[n] <= '9') n += 1;
+    return n;
+}
+
+/// Nothing, "Z", or "+HH:MM" / "-HH:MM".
+fn isZoneSuffix(s: []const u8) bool {
+    if (s.len == 0) return true;
+    if (s.len == 1) return s[0] == 'Z';
+    return s.len == 6 and (s[0] == '+' or s[0] == '-') and digitRun(s[1..3]) == 2 and
+        s[3] == ':' and digitRun(s[4..6]) == 2;
+}
+
+/// H:MM or HH:MM, optional :SS, optional . plus digits after the seconds, and
+/// an optional zone suffix, which is validated but ignored.
+fn parseClock(clock: []const u8) ?[2]i32 {
+    const hour_len = digitRun(clock);
+    if (hour_len < 1 or hour_len > 2 or clock.len < hour_len + 3 or clock[hour_len] != ':') return null;
+    const hour = parseDigits(clock[0..hour_len]) orelse return null;
+    const minute = parseDigits(clock[hour_len + 1 .. hour_len + 3]) orelse return null;
+    var rest = clock[hour_len + 3 ..];
+    var second: i32 = 0;
+    if (rest.len > 0 and rest[0] == ':') {
+        if (rest.len < 3) return null;
+        second = parseDigits(rest[1..3]) orelse return null;
+        rest = rest[3..];
+        if (rest.len > 0 and rest[0] == '.') {
+            const fraction_len = digitRun(rest[1..]);
+            if (fraction_len == 0) return null;
+            rest = rest[1 + fraction_len ..];
         }
     }
-
-    // Split by ':'
-    const colon_pos = indexOfByte(t, ':') orelse return null;
-    const hour_str = t[0..colon_pos];
-    var minute_str = t[colon_pos + 1 ..];
-
-    // Strip fractional seconds or seconds part from minute
-    for (minute_str, 0..) |c, i| {
-        if (c == '.' or c == ':') {
-            minute_str = minute_str[0..i];
-            break;
-        }
-    }
-
-    const hour = parseDigits(hour_str) orelse return null;
-    const minute = parseDigits(minute_str) orelse return null;
-
-    if (hour > 23 or minute > 59) return null;
+    if (!isZoneSuffix(rest) or hour > 23 or minute > 59 or second > 59) return null;
     return .{ hour, minute };
 }
 

@@ -436,4 +436,172 @@ public class FormatDateTest
         var f = new SayableDate(Locales.ES);
         Assert.Equal("pasado ma\u00F1ana", f.Relative("2025-03-17", "2025-03-15"));
     }
+
+    // ================================================================
+    // format_date_with_year
+    // ================================================================
+
+    // 13.1
+    [Fact]
+    public void Spec13_1_FormatDateWithYear()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Equal("February 4th, 2018", f.FormatWithYear("2018-02-04"));
+    }
+
+    // 13.2
+    [Fact]
+    public void Spec13_2_FormatDateWithYear()
+    {
+        var f = new SayableDate(Locales.EN, Compactness.Short);
+        Assert.Equal("Mar 15, 2025", f.FormatWithYear("2025-03-15"));
+    }
+
+    // 13.3
+    [Fact]
+    public void Spec13_3_FormatDateWithYear()
+    {
+        var f = new SayableDate(Locales.EN, Compactness.Compact);
+        Assert.Equal("1/21/97", f.FormatWithYear("1997-01-21"));
+    }
+
+    // 13.4
+    [Fact]
+    public void Spec13_4_TwoDigitYearKeepsItsLeadingZero()
+    {
+        var f = new SayableDate(Locales.TG, Compactness.Compact);
+        Assert.Equal("20/5/07", f.FormatWithYear("2007-05-20"));
+    }
+
+    // 13.5
+    [Fact]
+    public void Spec13_5_FormatDateWithYear()
+    {
+        var f = new SayableDate(Locales.FI, Compactness.Short);
+        Assert.Equal("21. kes\u00E4kuuta 1996", f.FormatWithYear("1996-06-21"));
+    }
+
+    // ================================================================
+    // Short month names (locales that keep the full genitive)
+    // ================================================================
+
+    // 14.1
+    [Fact]
+    public void Spec14_1_ShortMonthNamesLocalesThatKeepThe()
+    {
+        var f = new SayableDate(Locales.SK, Compactness.Short);
+        Assert.Equal("15. febru\u00E1ra", f.Format("2031-02-15"));
+    }
+
+    // 14.2
+    [Fact]
+    public void Spec14_2_ShortMonthNamesLocalesThatKeepThe()
+    {
+        var f = new SayableDate(Locales.CS, Compactness.Short);
+        Assert.Equal("10. prosince", f.Format("2025-12-10"));
+    }
+
+    // 14.3
+    [Fact]
+    public void Spec14_3_ShortMonthNamesLocalesThatKeepThe()
+    {
+        var f = new SayableDate(Locales.UK, Compactness.Short);
+        Assert.Equal("5 \u043B\u0438\u0441\u0442\u043E\u043F\u0430\u0434\u0430", f.Format("2025-11-05"));
+    }
+
+    // 14.4
+    [Fact]
+    public void Spec14_4_ShortMonthNamesLocalesThatKeepThe()
+    {
+        var f = new SayableDate(Locales.FI, Compactness.Short);
+        Assert.Equal("8. elokuuta", f.Relative("1998-08-08", "1998-08-15"));
+    }
+
+    // ================================================================
+    // format_relative — short phrases
+    // ================================================================
+
+    // 15.1
+    [Fact]
+    public void Spec15_1_DayAfterTomorrow()
+    {
+        var f = new SayableDate(Locales.KW, Compactness.Short);
+        Assert.Equal("an Mth ma", f.Relative("2035-12-04", "2035-12-02"));
+    }
+
+    // 15.2
+    [Fact]
+    public void Spec15_2_DayBeforeYesterday()
+    {
+        var f = new SayableDate(Locales.MAM, Compactness.Short);
+        Assert.Equal("Dom nchi'j", f.Relative("2000-01-23", "2000-01-25"));
+    }
+
+    // 15.3
+    [Fact]
+    public void Spec15_3_DayAfterTomorrow()
+    {
+        var f = new SayableDate(Locales.KEK, Compactness.Short);
+        Assert.Equal("a'in Vie", f.Relative("2014-10-24", "2014-10-22"));
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 16.1
+    [Fact]
+    public void Spec16_1_February30DoesntExist()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Null(f.Format("2025-02-30"));
+    }
+
+    // 16.2
+    [Fact]
+    public void Spec16_2_Month13()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Null(f.Format("2025-13-01"));
+    }
+
+    // 16.3
+    [Fact]
+    public void Spec16_3_UnpaddedMonthAndDay()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Null(f.Format("2025-6-1"));
+    }
+
+    // 16.4
+    [Fact]
+    public void Spec16_4_SurroundingWhitespace()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Null(f.Format(" 2025-06-01"));
+    }
+
+    // 16.5
+    [Fact]
+    public void Spec16_5_AnISODatetimeOnlyTheDatePart()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Equal("June 1st", f.Format("2025-06-01T10:00:00"));
+    }
+
+    // 16.6
+    [Fact]
+    public void Spec16_6_February29InANonLeapYear()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Null(f.FormatWithYear("2023-02-29"));
+    }
+
+    // 16.7
+    [Fact]
+    public void Spec16_7_InvalidAsOf()
+    {
+        var f = new SayableDate(Locales.EN);
+        Assert.Null(f.Relative("2025-03-16", "2025-04-31"));
+    }
 }

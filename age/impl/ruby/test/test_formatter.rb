@@ -1138,4 +1138,105 @@ class TestFormatter < Minitest::Test
   def test_30_5_get_locale_case_sensitive
     assert_nil SayableAge::Locales.get('EN')
   end
+
+  # ================================================================
+  # Section 31: Weeks and days across month ends
+  # ================================================================
+
+  # 31.1
+  def test_31_1_weeks_days_across_short_february
+    assert_equal '12 weeks, 4 days', SayableAge.format_age('2016-12-31', '2017-03-29')
+  end
+
+  # 31.2
+  def test_31_2_weeks_days_into_leap_year
+    assert_equal '12 weeks, 6 days', SayableAge.format_age('1991-11-27', '1992-02-25')
+  end
+
+  # 31.3
+  def test_31_3_weeks_days_across_year_end
+    assert_equal '4 weeks, 5 days', SayableAge.format_age('2020-11-30', '2021-01-02')
+  end
+
+  # 31.4
+  def test_31_4_weeks_days_compact
+    pt = SayableAge::Formatter.new(SayableAge::Locales::EN, compactness: :compact)
+    assert_equal '12w4d', pt.format_age('2016-12-31', '2017-03-29')
+  end
+
+  # ================================================================
+  # Section 32: Half years take their plural form from whole years
+  # ================================================================
+
+  # 32.1
+  def test_32_1_pl_three_and_half_few
+    pt = SayableAge::Formatter.new(SayableAge::Locales::PL)
+    assert_equal '3 i pół lata', pt.format_age('2021-06-15', '2025-01-15')
+  end
+
+  # 32.2
+  def test_32_2_pl_five_and_half_many_short
+    pt = SayableAge::Formatter.new(SayableAge::Locales::PL, compactness: :short)
+    assert_equal '5 i pół lat', pt.format_age('2020-06-15', '2025-12-15')
+  end
+
+  # 32.3
+  def test_32_3_shi_six_few
+    pt = SayableAge::Formatter.new(SayableAge::Locales::SHI)
+    assert_equal '6 iseggasen d uzgen', pt.format_age('2005-06-08', '2012-06-07')
+  end
+
+  # ================================================================
+  # Section 33: Input validation
+  # ================================================================
+
+  # 33.1
+  def test_33_1_february_30
+    assert_nil SayableAge.format_age('2025-02-30', '2032-06-25')
+  end
+
+  # 33.2
+  def test_33_2_month_13
+    assert_nil SayableAge.format_age('2025-13-01', '2027-01-31')
+  end
+
+  # 33.3
+  def test_33_3_february_29_non_leap
+    assert_nil SayableAge.format_age('2023-02-29', '2025-03-01')
+  end
+
+  # 33.4
+  def test_33_4_day_00
+    assert_nil SayableAge.format_age('2025-06-00', '2027-02-25')
+  end
+
+  # 33.5
+  def test_33_5_unpadded
+    assert_nil SayableAge.format_age('2025-6-1', '2027-02-25')
+  end
+
+  # 33.6
+  def test_33_6_whitespace
+    assert_nil SayableAge.format_age(' 2025-06-01', '2027-02-25')
+  end
+
+  # 33.7
+  def test_33_7_datetime_is_not_a_date
+    assert_nil SayableAge.format_age('2025-06-15T10:00:00', '2027-02-25')
+  end
+
+  # 33.8
+  def test_33_8_invalid_as_of
+    assert_nil SayableAge.format_age('2020-01-01', '2025-04-31')
+  end
+
+  # 33.9
+  def test_33_9_format_stage_validates
+    assert_nil SayableAge.format_stage('2025-02-30', '2027-09-05')
+  end
+
+  # 33.10
+  def test_33_10_february_29_leap_year
+    assert_equal '2 years', SayableAge.format_age('2024-02-29', '2026-03-01')
+  end
 end

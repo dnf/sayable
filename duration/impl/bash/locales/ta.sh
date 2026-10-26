@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ta.json
 
-_plural_ta() {
+_sayableduration_plural_ta() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ta() {
+_sayableduration_locale_ta() {
     _unit_second='{n} விநாடி'
     _unit_minute='{n} நிமிடம்'
     _unit_hour='{n} மணி நேரம்'
@@ -55,5 +55,5 @@ _locale_ta() {
     _compact_delimiter=''
     _compact_ago='{0} முன்'
     _compact_in_future='{0} கழித்து'
-    _plural_func=_plural_ta
+    _plural_func=_sayableduration_plural_ta
 }

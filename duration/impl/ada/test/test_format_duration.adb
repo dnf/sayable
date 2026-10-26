@@ -309,17 +309,17 @@ procedure Test_Format_Duration is
    begin
       --  10.1
       Assert_Eq ("10.1 ISO 1.5 hours",
-         Sayableduration.Format_Since
+         Sayableduration.Format_Duration
            (Loc.all, Normal,
             "2025-01-15T10:00:00", "2025-01-15T11:30:00"),
-         "1" & Half & " hours ago");
+         "1" & Half & " hours");
 
       --  10.2
       Assert_Eq ("10.2 ISO 45 minutes",
-         Sayableduration.Format_Since
+         Sayableduration.Format_Duration
            (Loc.all, Normal,
             "2025-01-15T10:00:00", "2025-01-15T10:45:00"),
-         "45 minutes ago");
+         "45 minutes");
    end Test_ISO_Timestamps;
 
    ---------------------------------------------------------------------------
@@ -345,10 +345,10 @@ procedure Test_Format_Duration is
 
       --  11.3
       Assert_Eq ("11.3 45 minutes ago",
-         Sayableduration.Format_Since
+         Sayableduration.Format_Duration
            (Loc.all, Normal,
             "2025-01-15T10:00:00", "2025-01-15T10:45:00"),
-         "45 minutes ago");
+         "45 minutes");
 
       --  11.4
       Assert_Eq ("11.4 3 hours ago",
@@ -489,6 +489,85 @@ procedure Test_Format_Duration is
          "1m30s");
    end Test_Compact_Compactness;
 
+   ---------------------------------------------------------------------------
+   --  18. Short compactness -- relative time
+   ---------------------------------------------------------------------------
+   procedure Test_Short_Relative is
+   begin
+      --  18.1
+      Assert_Eq ("18.1 days and hours both kept",
+         Sayableduration.Format_Since
+           (Sayableduration_Locales.Get_Locale ("men").all,
+            Normal, "2025-01-20T01:32:11", "2025-01-22T15:39:16"),
+         "l" & Character'Val (16#C9#) & Character'Val (16#94#) & "h" & Character'Val (16#C9#) & Character'Val (16#94#) & "nga 2, awa 14 taa gb" & Character'Val (16#C9#) & Character'Val (16#94#) & "y" & Character'Val (16#C9#) & Character'Val (16#94#));
+   end Test_Short_Relative;
+
+   ---------------------------------------------------------------------------
+   --  19. Range (500-year ceiling)
+   ---------------------------------------------------------------------------
+   procedure Test_Range_Ceiling is
+   begin
+      --  19.1
+      Assert_Eq ("19.1 500 Julian years: 6000 months, the ceiling",
+         Sayableduration.Format_Duration
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, 15778800000),
+         "500 years");
+      --  19.2
+      Assert_Null ("19.2 over 6000 months",
+         Sayableduration.Format_Duration
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, 15800000000));
+      --  19.3
+      Assert_Null ("19.3 well beyond the ceiling (and 32-bit range)",
+         Sayableduration.Format_Duration
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, 99999999999));
+      --  19.4
+      Assert_Null ("19.4 525 years ago",
+         Sayableduration.Format_Since
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, "1500-01-01T00:00:00", "2025-01-01T00:00:00"));
+      --  19.5
+      Assert_Null ("19.5 575 years from now",
+         Sayableduration.Format_Until
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, "2600-01-01T00:00:00", "2025-01-01T00:00:00"));
+   end Test_Range_Ceiling;
+
+   ---------------------------------------------------------------------------
+   --  20. Timestamp validation
+   ---------------------------------------------------------------------------
+   procedure Test_Timestamp_Validation is
+   begin
+      --  20.1
+      Assert_Eq ("20.1 seconds are optional",
+         Sayableduration.Format_Duration
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, "2025-01-15T10:00", "2025-01-15T11:30:00"),
+         "1" & Character'Val (16#C2#) & Character'Val (16#BD#) & " hours");
+      --  20.2
+      Assert_Null ("20.2 minutes are required",
+         Sayableduration.Format_Duration
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, "2025-01-15T10", "2025-01-15T11:30:00"));
+      --  20.3
+      Assert_Null ("20.3 unpadded date",
+         Sayableduration.Format_Duration
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, "2025-1-5T10:00:00", "2025-01-15T11:30:00"));
+      --  20.4
+      Assert_Null ("20.4 impossible date",
+         Sayableduration.Format_Duration
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, "2025-02-30T10:00:00", "2025-03-15T11:30:00"));
+      --  20.5
+      Assert_Null ("20.5 hour out of range",
+         Sayableduration.Format_Since
+           (Sayableduration_Locales.Get_Locale ("en").all,
+            Normal, "2025-01-15T10:00:00", "2025-01-15T25:00:00"));
+   end Test_Timestamp_Validation;
+
 begin
    Test_Null_Edge_Cases;
    Test_Seconds_Tier;
@@ -507,6 +586,9 @@ begin
    Test_Locale_Japanese;
    Test_Short_Compactness;
    Test_Compact_Compactness;
+   Test_Short_Relative;
+   Test_Range_Ceiling;
+   Test_Timestamp_Validation;
 
    Put_Line (Natural'Image (Tests_Passed) & " passed," &
              Natural'Image (Tests_Failed) & " failed");

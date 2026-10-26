@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ee.json
 
-_plural_ee() {
+_sayableduration_plural_ee() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ee() {
+_sayableduration_locale_ee() {
     _unit_second_one='sekend {n}'
     _unit_second_other='sekendwo {n}'
     _unit_minute_one='aɖabaƒoƒo {n}'
@@ -58,5 +58,5 @@ _locale_ee() {
     _compact_delimiter=''
     _compact_ago='ɖe {0} me'
     _compact_in_future='le {0} me'
-    _plural_func=_plural_ee
+    _plural_func=_sayableduration_plural_ee
 }

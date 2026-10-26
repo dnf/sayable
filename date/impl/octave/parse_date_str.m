@@ -1,35 +1,36 @@
-% Parse a YYYY-MM-DD or ISO datetime string into a struct.
+% Parse YYYY-MM-DD, optionally followed by T and a time, into a struct with
+% .year, .month, .day fields. Only the first ten characters are read, and
+% they must name a real calendar day (docs/input-formats.md).
 % Returns [] on invalid input.
 
 function result = parse_date_str(s)
-  if (isempty(s) || !ischar(s))
-    result = [];
+  result = [];
+  if (!ischar(s) || length(s) < 10 || (length(s) > 10 && s(11) != 'T'))
     return;
   endif
-  % Strip ISO datetime portion
-  t_idx = strfind(s, 'T');
-  if (!isempty(t_idx))
-    s = s(1:t_idx(1) - 1);
-  endif
-  parts = strsplit(s, '-');
-  if (length(parts) != 3)
-    result = [];
+  if (s(5) != '-' || s(8) != '-')
     return;
   endif
-  y = str2double(parts{1});
-  m = str2double(parts{2});
-  d = str2double(parts{3});
-  if (isnan(y) || isnan(m) || isnan(d))
-    result = [];
+  digit_positions = [1:4, 6:7, 9:10];
+  if (!all(s(digit_positions) >= '0' & s(digit_positions) <= '9'))
     return;
   endif
-  m = floor(m);
-  d = floor(d);
-  if (m < 1 || m > 12 || d < 1 || d > 31)
-    result = [];
+  y = str2double(s(1:4));
+  m = str2double(s(6:7));
+  d = str2double(s(9:10));
+  if (m < 1 || m > 12 || d < 1 || d > month_length(y, m))
     return;
   endif
-  result.year = floor(y);
+  result.year = y;
   result.month = m;
   result.day = d;
+endfunction
+
+function n = month_length(year, month)
+  lengths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  n = lengths(month);
+  is_leap = (mod(year, 4) == 0 && mod(year, 100) != 0) || mod(year, 400) == 0;
+  if (month == 2 && is_leap)
+    n = 29;
+  endif
 endfunction

@@ -9,61 +9,159 @@ module sayabletime
 
 contains
 
-  subroutine parse_time(s, hour, minute, ok)
+  ! The character at position i, or NUL past either end, so callers can
+  ! look ahead without bounds checks (Fortran doesn't short-circuit).
+  pure function char_at(s, i) result(c)
     character(len=*), intent(in) :: s
-    integer, intent(out) :: hour, minute
+    integer, intent(in) :: i
+    character(len=1) :: c
+    if (i < 1 .or. i > len(s)) then
+      c = achar(0)
+    else
+      c = s(i:i)
+    end if
+  end function char_at
+
+  pure function is_digit_at(s, i) result(res)
+    character(len=*), intent(in) :: s
+    integer, intent(in) :: i
+    logical :: res
+    character(len=1) :: c
+    c = char_at(s, i)
+    res = (c >= '0' .and. c <= '9')
+  end function is_digit_at
+
+  pure function all_digits_at(s, first, count) result(res)
+    character(len=*), intent(in) :: s
+    integer, intent(in) :: first, count
+    logical :: res
+    integer :: i
+    res = .false.
+    do i = first, first + count - 1
+      if (.not. is_digit_at(s, i)) return
+    end do
+    res = .true.
+  end function all_digits_at
+
+  ! The value of count digits starting at first (checked by all_digits_at).
+  pure function digits_value(s, first, count) result(val)
+    character(len=*), intent(in) :: s
+    integer, intent(in) :: first, count
+    integer :: val, i
+    val = 0
+    do i = first, first + count - 1
+      val = val * 10 + ichar(s(i:i)) - ichar('0')
+    end do
+  end function digits_value
+
+  pure function days_in_month_of(year, month) result(days)
+    integer, intent(in) :: year, month
+    integer :: days
+    select case (month)
+    case (4, 6, 9, 11)
+      days = 30
+    case (2)
+      if ((mod(year, 4) == 0 .and. mod(year, 100) /= 0) .or. mod(year, 400) == 0) then
+        days = 29
+      else
+        days = 28
+      end if
+    case default
+      days = 31
+    end select
+  end function days_in_month_of
+
+  ! YYYY-MM-DD naming a real calendar day.
+  pure subroutine parse_calendar_date(s, year, month, day, ok)
+    character(len=*), intent(in) :: s
+    integer, intent(out) :: year, month, day
     logical, intent(out) :: ok
-    integer :: slen, t_pos, start_pos, colon_pos, i
-    character(len=64) :: time_str
+    ok = .false.
+    year = 0
+    month = 0
+    day = 0
+    if (len(s) /= 10) return
+    if (char_at(s, 5) /= '-' .or. char_at(s, 8) /= '-') return
+    if (.not. (all_digits_at(s, 1, 4) .and. all_digits_at(s, 6, 2) .and. all_digits_at(s, 9, 2))) return
+    year = digits_value(s, 1, 4)
+    month = digits_value(s, 6, 2)
+    day = digits_value(s, 9, 2)
+    if (month < 1 .or. month > 12) return
+    ok = (day >= 1 .and. day <= days_in_month_of(year, month))
+  end subroutine parse_calendar_date
+
+  ! Z or +HH:MM / -HH:MM (validated, never applied).
+  pure function is_zone_suffix(s) result(res)
+    character(len=*), intent(in) :: s
+    logical :: res
+    if (len(s) == 1) then
+      res = (s == 'Z')
+    else if (len(s) == 6) then
+      res = (char_at(s, 1) == '+' .or. char_at(s, 1) == '-') .and. all_digits_at(s, 2, 2) &
+        .and. char_at(s, 4) == ':' .and. all_digits_at(s, 5, 2)
+    else
+      res = .false.
+    end if
+  end function is_zone_suffix
+
+  ! H:MM or HH:MM, then optional :SS with optional .fraction, then an
+  ! optional zone suffix.
+  pure subroutine parse_clock(s, hour, minute, second, ok)
+    character(len=*), intent(in) :: s
+    integer, intent(out) :: hour, minute, second
+    logical, intent(out) :: ok
+    integer :: hour_digits, p
 
     ok = .false.
     hour = 0
     minute = 0
+    second = 0
+    hour_digits = 0
+    do while (hour_digits < 2 .and. is_digit_at(s, hour_digits + 1))
+      hour_digits = hour_digits + 1
+    end do
+    if (hour_digits == 0) return
+    p = hour_digits + 1
+    if (char_at(s, p) /= ':' .or. .not. all_digits_at(s, p + 1, 2)) return
+    hour = digits_value(s, 1, hour_digits)
+    minute = digits_value(s, p + 1, 2)
+    p = p + 3
 
-    slen = len_trim(s)
-    if (slen == 0) return
-
-    ! Find time part (after 'T' if ISO datetime)
-    t_pos = index(s(1:slen), 'T')
-    if (t_pos > 0) then
-      start_pos = t_pos + 1
-    else
-      start_pos = 1
+    if (char_at(s, p) == ':' .and. all_digits_at(s, p + 1, 2)) then
+      second = digits_value(s, p + 1, 2)
+      p = p + 3
+      if (char_at(s, p) == '.' .and. is_digit_at(s, p + 1)) then
+        p = p + 1
+        do while (is_digit_at(s, p))
+          p = p + 1
+        end do
+      end if
     end if
 
-    ! Extract time string, strip timezone
-    time_str = ''
-    do i = start_pos, slen
-      if (s(i:i) == '+' .or. s(i:i) == 'Z') exit
-      time_str(i - start_pos + 1:i - start_pos + 1) = s(i:i)
-    end do
+    if (p <= len(s)) then
+      if (.not. is_zone_suffix(s(p:))) return
+    end if
+    ok = (hour <= 23 .and. minute <= 59 .and. second <= 59)
+  end subroutine parse_clock
 
-    ! Find colon
-    colon_pos = index(trim(time_str), ':')
-    if (colon_pos == 0) return
-    if (colon_pos < 2) return
+  ! A clock time alone, or after the T of an ISO datetime whose date part
+  ! is a real calendar day.
+  subroutine parse_time(s, hour, minute, ok)
+    character(len=*), intent(in) :: s
+    integer, intent(out) :: hour, minute
+    logical, intent(out) :: ok
+    integer :: t_pos, second, year, month, day
 
-    ! Parse hour
     hour = 0
-    do i = 1, colon_pos - 1
-      if (time_str(i:i) < '0' .or. time_str(i:i) > '9') return
-      hour = hour * 10 + ichar(time_str(i:i)) - ichar('0')
-    end do
-
-    ! Parse minute (first 2 digits after colon, ignore seconds)
     minute = 0
-    do i = colon_pos + 1, min(colon_pos + 2, len_trim(time_str))
-      if (time_str(i:i) < '0' .or. time_str(i:i) > '9') then
-        ! Allow dot for fractional seconds
-        if (time_str(i:i) == '.') exit
-        return
-      end if
-      minute = minute * 10 + ichar(time_str(i:i)) - ichar('0')
-    end do
-
-    if (hour < 0 .or. hour > 23) return
-    if (minute < 0 .or. minute > 59) return
-    ok = .true.
+    t_pos = index(s, 'T')
+    if (t_pos == 0) then
+      call parse_clock(s, hour, minute, second, ok)
+      return
+    end if
+    call parse_calendar_date(s(1:t_pos - 1), year, month, day, ok)
+    if (.not. ok) return
+    call parse_clock(s(t_pos + 1:), hour, minute, second, ok)
   end subroutine parse_time
 
   pure function round_to_5(minute) result(rounded)

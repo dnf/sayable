@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/zdj.json
 
-_plural_zdj() {
+_sayableage_plural_zdj() {
     echo "other"
 }
 
-_locale_zdj() {
+_sayableage_locale_zdj() {
     _unit_day='suku {n}'
     _unit_week='djumwa {n}'
     _unit_month='mwezi {n}'
@@ -37,5 +37,5 @@ _locale_zdj() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_zdj
+    _plural_func=_sayableage_plural_zdj
 }

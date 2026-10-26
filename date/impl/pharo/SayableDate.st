@@ -3,11 +3,16 @@
 Object subclass: #SayableDate
 	instanceVariableNames: 'locale compactness months monthsInDate weekdays dayFormat dayFormatExceptions datePattern datePatternWithYear todayStr tomorrowStr yesterdayStr'
 	classVariableNames: 'Version'
-	package: 'SayableDate'.
+	package: 'SayableDate'!
 
-SayableDate class instanceVariableNames: ''.
+SayableDate class instanceVariableNames: ''!
 
-Version := '0.5.0'.
+!SayableDate class methodsFor: 'class initialization'!
+initialize
+	Version := '0.5.0'
+! !
+
+SayableDate initialize!
 
 !SayableDate class methodsFor: 'accessing'!
 version
@@ -181,24 +186,24 @@ formatAbsolute: parsed includeYear: includeYear
 	result := result copyReplaceAll: '{m}' with: month printString.
 	includeYear ifTrue: [
 		result := result copyReplaceAll: '{year}' with: year printString.
-		result := result copyReplaceAll: '{yy}' with: (year \\ 100 printString padLeftTo: 2 with: $0) ].
+		result := result copyReplaceAll: '{yy}' with: ((year \\ 100) printString padLeftTo: 2 with: $0) ].
 	^ result
 ! !
 
 !SayableDate methodsFor: 'private-parsing'!
 parseDate: input
-	"Parse YYYY-MM-DD or ISO datetime to {year. month. day}. Returns nil on failure."
-	| datePart parts year month day |
-	(input includesSubstring: 'T')
-		ifTrue: [ datePart := (input substrings: $T) first ]
-		ifFalse: [ datePart := input ].
-	parts := datePart substrings: $-.
-	parts size = 3 ifFalse: [ ^ nil ].
-	[ year := parts first asInteger.
-	  month := (parts at: 2) asInteger.
-	  day := parts third asInteger ]
-		on: Error do: [ :e | ^ nil ].
-	(month < 1 or: [ month > 12 or: [ day < 1 or: [ day > 31 ] ] ]) ifTrue: [ ^ nil ].
+	"Parse YYYY-MM-DD, optionally followed by T and a time, to {year. month. day}.
+	The date must name a real calendar day. Returns nil on failure."
+	| datePart year month day |
+	(input size = 10 or: [ input size > 10 and: [ (input at: 11) = $T ] ]) ifFalse: [ ^ nil ].
+	datePart := input first: 10.
+	((datePart at: 5) = $- and: [ (datePart at: 8) = $- ]) ifFalse: [ ^ nil ].
+	(#(1 2 3 4 6 7 9 10) allSatisfy: [ :i | (datePart at: i) between: $0 and: $9 ]) ifFalse: [ ^ nil ].
+	year := (datePart copyFrom: 1 to: 4) asInteger.
+	month := (datePart copyFrom: 6 to: 7) asInteger.
+	day := (datePart copyFrom: 9 to: 10) asInteger.
+	(month between: 1 and: 12) ifFalse: [ ^ nil ].
+	(day between: 1 and: (self daysInMonth: month year: year)) ifFalse: [ ^ nil ].
 	^ { year. month. day }
 ! !
 
@@ -215,4 +220,13 @@ toJdn: year month: month day: day
 weekdayOf: year month: month day: day
 	"Return day of week: 0=Sunday, 1=Monday, ..., 6=Saturday."
 	^ ((self toJdn: year month: month day: day) + 1) \\ 7
+!
+
+isLeapYear: year
+	^ (year \\ 4 = 0 and: [ year \\ 100 ~= 0 ]) or: [ year \\ 400 = 0 ]
+!
+
+daysInMonth: month year: year
+	month = 2 ifTrue: [ ^ (self isLeapYear: year) ifTrue: [ 29 ] ifFalse: [ 28 ] ].
+	^ (#(4 6 9 11) includes: month) ifTrue: [ 30 ] ifFalse: [ 31 ]
 ! !

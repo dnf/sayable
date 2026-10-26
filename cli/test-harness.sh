@@ -325,6 +325,29 @@ run_test 'age:29.38' '6 ወራት' age 2025-01-15 -d 2025-07-15 -l am
 run_test 'age:29.39' '3 ዓመታት ተኩል' age 2022-06-15 -d 2025-12-15 -l am
 # Skipped: section 30 — Locale lookup by code string
 
+# === Age 31: Weeks and days across month ends ===
+run_test 'age:31.1' '12 weeks, 4 days' age 2016-12-31 -d 2017-03-29
+run_test 'age:31.2' '12 weeks, 6 days' age 1991-11-27 -d 1992-02-25
+run_test 'age:31.3' '4 weeks, 5 days' age 2020-11-30 -d 2021-01-02
+run_test 'age:31.4' '12w4d' age 2016-12-31 -d 2017-03-29 --compact
+
+# === Age 32: Half years take their plural form from whole years ===
+run_test 'age:32.1' '3 i pół lata' age 2021-06-15 -d 2025-01-15 -l pl
+run_test 'age:32.2' '5 i pół lat' age 2020-06-15 -d 2025-12-15 -l pl --short
+run_test 'age:32.3' '6 iseggasen d uzgen' age 2005-06-08 -d 2012-06-07 -l shi
+
+# === Age 33: Input validation ===
+run_null 'age:33.1' age 2025-02-30 -d 2032-06-25
+run_null 'age:33.2' age 2025-13-01 -d 2027-01-31
+run_null 'age:33.3' age 2023-02-29 -d 2025-03-01
+run_null 'age:33.4' age 2025-06-00 -d 2027-02-25
+run_null 'age:33.5' age 2025-6-1 -d 2027-02-25
+run_null 'age:33.6' age ' 2025-06-01' -d 2027-02-25
+run_null 'age:33.7' age 2025-06-15T10:00:00 -d 2027-02-25
+run_null 'age:33.8' age 2020-01-01 -d 2025-04-31
+run_null 'age:33.9' stage 2025-02-30 -d 2027-09-05
+run_test 'age:33.10' '2 years' age 2024-02-29 -d 2026-03-01
+
 # ══════════════════════════════════════════════════════════════
 # DATE COMPONENT
 # ══════════════════════════════════════════════════════════════
@@ -404,6 +427,33 @@ run_test 'date:11.2' 'غداً' relative 2025-03-16 -d 2025-03-15 -l ar
 run_test 'date:12.1' '15 de marzo' date 2025-03-15 -l es
 run_test 'date:12.2' 'pasado mañana' relative 2025-03-17 -d 2025-03-15 -l es
 
+# === Date: format_date_with_year ===
+run_test 'date:13.1' 'February 4th, 2018' date 2018-02-04 -l en --with-year
+run_test 'date:13.2' 'Mar 15, 2025' date 2025-03-15 -l en --short --with-year
+run_test 'date:13.3' '1/21/97' date 1997-01-21 -l en --compact --with-year
+run_test 'date:13.4' '20/5/07' date 2007-05-20 -l tg --compact --with-year
+run_test 'date:13.5' '21. kesäkuuta 1996' date 1996-06-21 -l fi --short --with-year
+
+# === Date: Short month names (locales that keep the full genitive) ===
+run_test 'date:14.1' '15. februára' date 2031-02-15 -l sk --short
+run_test 'date:14.2' '10. prosince' date 2025-12-10 -l cs --short
+run_test 'date:14.3' '5 листопада' date 2025-11-05 -l uk --short
+run_test 'date:14.4' '8. elokuuta' relative 1998-08-08 -d 1998-08-15 -l fi --short
+
+# === Date: format_relative — short phrases ===
+run_test 'date:15.1' 'an Mth ma' relative 2035-12-04 -d 2035-12-02 -l kw --short
+run_test 'date:15.2' 'Dom nchi'\''j' relative 2000-01-23 -d 2000-01-25 -l mam --short
+run_test 'date:15.3' 'a'\''in Vie' relative 2014-10-24 -d 2014-10-22 -l kek --short
+
+# === Date: Input validation ===
+run_null 'date:16.1' date 2025-02-30 -l en
+run_null 'date:16.2' date 2025-13-01 -l en
+run_null 'date:16.3' date 2025-6-1 -l en
+run_null 'date:16.4' date ' 2025-06-01' -l en
+run_test 'date:16.5' 'June 1st' date 2025-06-01T10:00:00 -l en
+run_null 'date:16.6' date 2023-02-29 -l en --with-year
+run_null 'date:16.7' relative 2025-03-16 -d 2025-04-31 -l en
+
 # ══════════════════════════════════════════════════════════════
 # TIME COMPONENT
 # ══════════════════════════════════════════════════════════════
@@ -449,6 +499,21 @@ run_test 'time:7.1' '三時半' time 15:30 -l ja
 # === Time 8: Locale — Finnish (dot separator, short) ===
 run_test 'time:8.1' '14.15' time 14:15 -l fi --short
 run_test 'time:8.2' '0.00' time 00:00 -l fi --short
+
+# === Time 9: Minutes in short and compact modes ===
+run_test 'time:9.1' '6:01 PM' time 18:01 --short
+run_test 'time:9.2' '7:05p' time 19:05 --compact
+
+# === Time 10: Input validation ===
+run_test 'time:10.1' 'half past nine' time 9:30
+run_test 'time:10.2' 'half past nine' time 09:30
+run_null 'time:10.3' time ' 9:30'
+run_null 'time:10.4' time '9:30 '
+run_null 'time:10.5' time 9:5
+run_null 'time:10.6' time 24:00
+run_test 'time:10.7' 'a quarter past two' time 14:15:30
+run_test 'time:10.8' 'a quarter past two' time 2025-01-15T14:15:00Z
+run_null 'time:10.9' time 2025-02-30T14:15:00
 
 # ══════════════════════════════════════════════════════════════
 # DURATION COMPONENT
@@ -540,6 +605,23 @@ run_test 'dur:16.2' '1m, 30s' duration 90 --short
 # === Duration 17: Compact compactness — duration ===
 run_test 'dur:17.1' '1h' duration 3600 --compact
 run_test 'dur:17.2' '1m30s' duration 90 --compact
+
+# === Duration 18: Short compactness — relative time ===
+run_test 'dur:18.1' 'lɔhɔnga 2, awa 14 taa gbɔyɔ' since 2025-01-20T01:32:11 -d 2025-01-22T15:39:16 -l men --short
+
+# === Duration 19: Range (500-year ceiling) ===
+run_test 'dur:19.1' '500 years' duration 15778800000
+run_null 'dur:19.2' duration 15800000000
+run_null 'dur:19.3' duration 99999999999
+run_null 'dur:19.4' since 1500-01-01T00:00:00 -d 2025-01-01T00:00:00
+run_null 'dur:19.5' until 2600-01-01T00:00:00 -d 2025-01-01T00:00:00
+
+# === Duration 20: Timestamp validation ===
+run_test 'dur:20.1' '1½ hours' duration 2025-01-15T10:00 2025-01-15T11:30:00
+run_null 'dur:20.2' duration 2025-01-15T10 2025-01-15T11:30:00
+run_null 'dur:20.3' duration 2025-1-5T10:00:00 2025-01-15T11:30:00
+run_null 'dur:20.4' duration 2025-02-30T10:00:00 2025-03-15T11:30:00
+run_null 'dur:20.5' since 2025-01-15T10:00:00 -d 2025-01-15T25:00:00
 
 # ══════════════════════════════════════════════════════════════
 # RUN AND CHECK

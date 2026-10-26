@@ -125,42 +125,96 @@ func (st *SayableTime) formatDigital(hour, minute int) string {
 	return result
 }
 
-// parseTime parses "HH:MM" or an ISO datetime string into [hour, minute].
-// Returns nil on failure.
+// parseTime parses a clock time, alone or after the "T" of an ISO datetime,
+// into [hour, minute]. Returns nil for anything that doesn't follow
+// docs/input-formats.md.
 func parseTime(input string) *[2]int {
-	if input == "" {
-		return nil
+	clock := input
+	if idx := strings.IndexByte(input, 'T'); idx >= 0 {
+		if !isRealDate(input[:idx]) {
+			return nil
+		}
+		clock = input[idx+1:]
 	}
-	t := input
-	if strings.Contains(t, "T") {
-		parts := strings.SplitN(t, "T", 2)
-		t = parts[1]
-	}
-	if idx := strings.Index(t, "+"); idx >= 0 {
-		t = t[:idx]
-	}
-	if idx := strings.Index(t, "Z"); idx >= 0 {
-		t = t[:idx]
-	}
-	colonParts := strings.Split(t, ":")
-	if len(colonParts) < 2 {
-		return nil
-	}
-	hourStr := colonParts[0]
-	minuteStr := colonParts[1]
-	// Strip fractional seconds from minute part (e.g. "15.123")
-	if dotIdx := strings.Index(minuteStr, "."); dotIdx >= 0 {
-		minuteStr = minuteStr[:dotIdx]
-	}
-	hour := parseInt(hourStr)
-	minute := parseInt(minuteStr)
-	if hour < 0 || minute < 0 {
-		return nil
-	}
-	if hour > 23 || minute > 59 {
+	hour, minute, ok := parseClock(clock)
+	if !ok {
 		return nil
 	}
 	return &[2]int{hour, minute}
+}
+
+// isRealDate reports whether s is exactly "YYYY-MM-DD" naming a real Gregorian day.
+func isRealDate(s string) bool {
+	if len(s) != 10 || s[4] != '-' || s[7] != '-' {
+		return false
+	}
+	year, month, day := parseInt(s[0:4]), parseInt(s[5:7]), parseInt(s[8:10])
+	return year >= 0 && month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth(year, month)
+}
+
+// daysInMonth returns the days in a Gregorian month (leap years by the 4/100/400 rule).
+func daysInMonth(year, month int) int {
+	switch month {
+	case 2:
+		if (year%4 == 0 && year%100 != 0) || year%400 == 0 {
+			return 29
+		}
+		return 28
+	case 4, 6, 9, 11:
+		return 30
+	default:
+		return 31
+	}
+}
+
+// parseClock parses "H:MM" or "HH:MM", then optional ":SS", an optional "."
+// plus digits (only after seconds), and an optional zone suffix "Z" or
+// "±HH:MM", which is validated but ignored.
+func parseClock(clock string) (hour, minute int, ok bool) {
+	hourLen := digitRun(clock)
+	if hourLen < 1 || hourLen > 2 || len(clock) < hourLen+3 || clock[hourLen] != ':' {
+		return 0, 0, false
+	}
+	hour = parseInt(clock[:hourLen])
+	minute = parseInt(clock[hourLen+1 : hourLen+3])
+	rest := clock[hourLen+3:]
+	second := 0
+	if len(rest) > 0 && rest[0] == ':' {
+		if len(rest) < 3 {
+			return 0, 0, false
+		}
+		second = parseInt(rest[1:3])
+		rest = rest[3:]
+		if len(rest) > 0 && rest[0] == '.' {
+			fractionLen := digitRun(rest[1:])
+			if fractionLen == 0 {
+				return 0, 0, false
+			}
+			rest = rest[1+fractionLen:]
+		}
+	}
+	if minute < 0 || second < 0 || hour > 23 || minute > 59 || second > 59 || !isZoneSuffix(rest) {
+		return 0, 0, false
+	}
+	return hour, minute, true
+}
+
+// digitRun returns the number of leading ASCII digits in s.
+func digitRun(s string) int {
+	n := 0
+	for n < len(s) && s[n] >= '0' && s[n] <= '9' {
+		n++
+	}
+	return n
+}
+
+// isZoneSuffix reports whether s is empty, "Z", or "+HH:MM" / "-HH:MM".
+func isZoneSuffix(s string) bool {
+	if s == "" || s == "Z" {
+		return true
+	}
+	return len(s) == 6 && (s[0] == '+' || s[0] == '-') && s[3] == ':' &&
+		digitRun(s[1:3]) == 2 && digitRun(s[4:6]) == 2
 }
 
 // roundTo5 rounds a minute value to the nearest 5.

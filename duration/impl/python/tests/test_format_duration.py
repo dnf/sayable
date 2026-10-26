@@ -7,9 +7,10 @@ from sayable_duration.locales.de import DE
 from sayable_duration.locales.en import EN
 from sayable_duration.locales.fr import FR
 from sayable_duration.locales.ja import JA
-
+from sayable_duration.locales.men import MEN
 
 # ── Section 1: Null / edge cases ──────────────────────────────────────
+
 
 class TestNullEdgeCases:
     # 1.1
@@ -39,6 +40,7 @@ class TestNullEdgeCases:
 
 # ── Section 2: Duration — seconds tier (0-59s) ────────────────────────
 
+
 class TestDurationSeconds:
     # 2.1
     def test_zero(self) -> None:
@@ -58,6 +60,7 @@ class TestDurationSeconds:
 
 
 # ── Section 3: Duration — minutes + seconds tier (1-4 min) ────────────
+
 
 class TestDurationMinutesSeconds:
     # 3.1
@@ -79,6 +82,7 @@ class TestDurationMinutesSeconds:
 
 # ── Section 4: Duration — minutes tier (5-59 min) ─────────────────────
 
+
 class TestDurationMinutes:
     # 4.1
     def test_five_minutes(self) -> None:
@@ -94,6 +98,7 @@ class TestDurationMinutes:
 
 
 # ── Section 5: Duration — hours + minutes tier (1-5 hr) ───────────────
+
 
 class TestDurationHoursMinutes:
     # 5.1
@@ -115,6 +120,7 @@ class TestDurationHoursMinutes:
 
 # ── Section 6: Duration — hours tier (6-23 hr) ────────────────────────
 
+
 class TestDurationHours:
     # 6.1
     def test_eight_hours(self) -> None:
@@ -126,6 +132,7 @@ class TestDurationHours:
 
 
 # ── Section 7: Duration — days tier ──────────────────────────────────
+
 
 class TestDurationDays:
     # 7.1
@@ -151,6 +158,7 @@ class TestDurationDays:
 
 # ── Section 8: Duration — weeks tier ─────────────────────────────────
 
+
 class TestDurationWeeks:
     # 8.1
     def test_one_week(self) -> None:
@@ -166,6 +174,7 @@ class TestDurationWeeks:
 
 
 # ── Section 9: Duration — months and years tier ──────────────────────
+
 
 class TestDurationMonthsYears:
     # 9.1
@@ -187,6 +196,7 @@ class TestDurationMonthsYears:
 
 # ── Section 10: Duration from ISO timestamps ──────────────────────────
 
+
 class TestDurationISO:
     # 10.1
     def test_iso_one_and_half_hours(self) -> None:
@@ -198,6 +208,7 @@ class TestDurationISO:
 
 
 # ── Section 11: Relative time — since ─────────────────────────────────
+
 
 class TestFormatSince:
     # 11.1
@@ -219,6 +230,7 @@ class TestFormatSince:
 
 # ── Section 12: Relative time — until ─────────────────────────────────
 
+
 class TestFormatUntil:
     # 12.1
     def test_just_now(self) -> None:
@@ -234,6 +246,7 @@ class TestFormatUntil:
 
 
 # ── Section 13: Locale — German ───────────────────────────────────────
+
 
 class TestLocaleGerman:
     def setup_method(self) -> None:
@@ -251,6 +264,7 @@ class TestLocaleGerman:
 
 # ── Section 14: Locale — French ───────────────────────────────────────
 
+
 class TestLocaleFrench:
     def setup_method(self) -> None:
         self.sd = SayableDuration(FR)
@@ -261,6 +275,7 @@ class TestLocaleFrench:
 
 
 # ── Section 15: Locale — Japanese ─────────────────────────────────────
+
 
 class TestLocaleJapanese:
     def setup_method(self) -> None:
@@ -278,6 +293,7 @@ class TestLocaleJapanese:
 
 # ── Section 16: Short compactness — duration ──────────────────────────
 
+
 class TestShortDuration:
     def setup_method(self) -> None:
         self.sd = SayableDuration(EN, "short")
@@ -293,6 +309,7 @@ class TestShortDuration:
 
 # ── Section 17: Compact compactness — duration ────────────────────────
 
+
 class TestCompactDuration:
     def setup_method(self) -> None:
         self.sd = SayableDuration(EN, "compact")
@@ -304,3 +321,63 @@ class TestCompactDuration:
     # 17.2
     def test_one_minute_thirty_seconds(self) -> None:
         assert self.sd.format_duration(90) == "1m30s"
+
+
+# ── Section 18: Short compactness — relative time ─────────────────────
+
+
+class TestShortSince:
+    # 18.1
+    def test_days_and_hours_both_kept(self) -> None:
+        sd = SayableDuration(MEN, "short")
+        assert sd.format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16") == "lɔhɔnga 2, awa 14 taa gbɔyɔ"
+
+
+# ── Section 19: Range (500-year ceiling) ──────────────────────────────
+
+
+class TestRangeCeiling:
+    # 19.1
+    def test_500_julian_years_is_the_ceiling(self) -> None:
+        assert format_duration(15778800000) == "500 years"
+
+    # 19.2
+    def test_over_6000_months(self) -> None:
+        assert format_duration(15800000000) is None
+
+    # 19.3
+    def test_well_beyond_ceiling(self) -> None:
+        assert format_duration(99999999999) is None
+
+    # 19.4
+    def test_since_525_years(self) -> None:
+        assert format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00") is None
+
+    # 19.5
+    def test_until_575_years(self) -> None:
+        assert format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00") is None
+
+
+# ── Section 20: Timestamp validation ──────────────────────────────────
+
+
+class TestTimestampValidation:
+    # 20.1
+    def test_seconds_are_optional(self) -> None:
+        assert format_duration("2025-01-15T10:00", "2025-01-15T11:30:00") == "1½ hours"
+
+    # 20.2
+    def test_minutes_are_required(self) -> None:
+        assert format_duration("2025-01-15T10", "2025-01-15T11:30:00") is None
+
+    # 20.3
+    def test_unpadded_date(self) -> None:
+        assert format_duration("2025-1-5T10:00:00", "2025-01-15T11:30:00") is None
+
+    # 20.4
+    def test_impossible_date(self) -> None:
+        assert format_duration("2025-02-30T10:00:00", "2025-03-15T11:30:00") is None
+
+    # 20.5
+    def test_hour_out_of_range(self) -> None:
+        assert format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00") is None

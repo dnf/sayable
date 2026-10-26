@@ -2,6 +2,7 @@
 -export([main/0, main/1]).
 
 -define(VERSION, "0.5.0").
+-define(MAX_REQUEST_BYTES, 65536).
 
 %% A command's exit code and the lines it prints to stdout.
 -type result() :: {0..2, [unicode:chardata()]}.
@@ -35,25 +36,35 @@ dispatch({Command, Positionals, Options}) -> run_command(Command, Positionals, O
 
 %% ── REPL mode (see cli/SPEC.md) ───────────────────────────────────
 
+%% Requests are read from stdin through an fd port, not io:get_line: on
+%% OTP 26/27 the I/O server's line editing treats a tab as completion and
+%% drops it, merging the tab-separated fields when a driver sends one
+%% request at a time. The wrapper starts erl with -noinput so nothing else
+%% reads stdin.
 repl() ->
     ok = io:setopts(standard_io, [binary, {encoding, unicode}]),
-    repl_loop().
+    Stdin = open_port({fd, 0, 1}, [{line, ?MAX_REQUEST_BYTES}, binary, eof, in]),
+    repl_loop(Stdin, <<>>).
 
-repl_loop() ->
-    case io:get_line(standard_io, "") of
-        eof ->
+repl_loop(Stdin, Partial) ->
+    receive
+        {Stdin, {data, {noeol, Chunk}}} ->
+            repl_loop(Stdin, <<Partial/binary, Chunk/binary>>);
+        {Stdin, {data, {eol, Chunk}}} ->
+            answer(<<Partial/binary, Chunk/binary>>),
+            repl_loop(Stdin, <<>>);
+        {Stdin, eof} when Partial =:= <<>> ->
             ok;
-        {error, Reason} ->
-            io:format(standard_error, "error: cannot read request: ~p~n", [Reason]),
-            erlang:halt(1);
-        Line ->
-            {Code, Lines} = run_isolated(request_args(Line)),
-            io:put_chars(standard_io, [integer_to_list(Code), $\t, response_text(Lines), $\n]),
-            repl_loop()
+        {Stdin, eof} ->
+            answer(Partial)
     end.
 
+answer(Line) ->
+    {Code, Lines} = run_isolated(request_args(Line)),
+    io:put_chars(standard_io, [integer_to_list(Code), $\t, response_text(Lines), $\n]).
+
 request_args(Line) ->
-    Fields = binary:split(string:chomp(Line), <<"\t">>, [global]),
+    Fields = binary:split(string:trim(Line, trailing, "\r"), <<"\t">>, [global]),
     [unicode:characters_to_list(Field) || Field <- Fields].
 
 response_text(Lines) ->
@@ -264,26 +275,13 @@ cmd_until([RawTarget | _], #{locale := LocaleCode, as_of := RawAsOf, compactness
 
 %% ── Locales command ───────────────────────────────────────────────
 
+%% All four components share the same locale codes, so the generated age
+%% locale modules on the code path name them all.
 collect_locale_codes() ->
-    %% All four components share the same locale codes.
-    %% Enumerate by probing the age locales barrel module with all known codes.
-    AllCodes = all_locale_codes(),
-    lists:sort(AllCodes).
-
-all_locale_codes() ->
-    %% Complete list derived from the generated locales barrel modules.
-    ["af","ak","am","ar","az","bci","be","bem","bg","bm","bn","br","bs",
-     "ca","ceb","cs","cy","da","de","din","dje","dyu","ee","el","en","es",
-     "et","eu","fa","fan","ff","fi","fil","fon","fr","ga","gd","gl","gn",
-     "gu","gv","ha","he","hi","hr","ht","hu","hy","id","ig","is","it",
-     "ja","jv","ka","kbp","kk","km","kn","ko","kpe","ktu","ku","kw","ky",
-     "lg","ln","lo","lt","lv","men","mfe","mg","mi","mk","ml","mn","mnk",
-     "mos","mr","ms","mt","my","nb","nd","ne","ng","nl","nso","nus","ny",
-     "om","or","pa","pl","pov","ps","pt","qu","ro","ru","rw","sar","sd",
-     "sg","shi","si","sk","sl","sn","snk","so","sq","sr","ss","st","su",
-     "suk","sv","sw","ta","te","tem","tg","th","ti","tig","tk","tn","tr",
-     "ts","tzm","uk","umb","ur","uz","vi","vmw","wo","xh","yo","yue",
-     "zdj","zh","zu"].
+    Prefix = "sayableage_locales_",
+    lists:usort([lists:nthtail(length(Prefix), Module)
+                 || {Module, _File, _Loaded} <- code:all_available(),
+                    lists:prefix(Prefix, Module)]).
 
 %% ── Integer detection ─────────────────────────────────────────────
 

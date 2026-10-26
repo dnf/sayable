@@ -39,6 +39,11 @@ fmtCompact =
     formatAge en Compact
 
 
+fmtCode : String -> Compactness -> String -> String -> Maybe String
+fmtCode code compactness dob asOf =
+    getLocale code |> Maybe.andThen (\loc -> formatAge loc compactness dob asOf)
+
+
 stg : String -> String -> Maybe String
 stg dob asOf =
     formatStage en dob asOf Nothing
@@ -541,5 +546,45 @@ suite =
                 \_ -> Expect.equal Nothing (getLocale "")
             , test "30.5 case-sensitive" <|
                 \_ -> Expect.equal Nothing (getLocale "EN")
+            ]
+        , describe "31. Weeks and days across month ends"
+            [ test "31.1 88 days across February" <|
+                \_ -> Expect.equal (Just "12 weeks, 4 days") (fmt "2016-12-31" "2017-03-29")
+            , test "31.2 90 days into a leap year" <|
+                \_ -> Expect.equal (Just "12 weeks, 6 days") (fmt "1991-11-27" "1992-02-25")
+            , test "31.3 33 days across a year end" <|
+                \_ -> Expect.equal (Just "4 weeks, 5 days") (fmt "2020-11-30" "2021-01-02")
+            , test "31.4 compact form of 31.1" <|
+                \_ -> Expect.equal (Just "12w4d") (fmtCompact "2016-12-31" "2017-03-29")
+            ]
+        , describe "32. Half years take their plural form from whole years"
+            [ test "32.1 Polish 3 is few" <|
+                \_ -> Expect.equal (Just "3 i pół lata") (fmtCode "pl" Normal "2021-06-15" "2025-01-15")
+            , test "32.2 Polish 5 is many" <|
+                \_ -> Expect.equal (Just "5 i pół lat") (fmtCode "pl" Short "2020-06-15" "2025-12-15")
+            , test "32.3 Tachelhit 6 is few" <|
+                \_ -> Expect.equal (Just "6 iseggasen d uzgen") (fmtCode "shi" Normal "2005-06-08" "2012-06-07")
+            ]
+        , describe "33. Input validation"
+            [ test "33.1 February 30" <|
+                \_ -> Expect.equal Nothing (fmt "2025-02-30" "2032-06-25")
+            , test "33.2 month 13" <|
+                \_ -> Expect.equal Nothing (fmt "2025-13-01" "2027-01-31")
+            , test "33.3 February 29 in a non-leap year" <|
+                \_ -> Expect.equal Nothing (fmt "2023-02-29" "2025-03-01")
+            , test "33.4 day 00" <|
+                \_ -> Expect.equal Nothing (fmt "2025-06-00" "2027-02-25")
+            , test "33.5 unpadded month and day" <|
+                \_ -> Expect.equal Nothing (fmt "2025-6-1" "2027-02-25")
+            , test "33.6 surrounding whitespace" <|
+                \_ -> Expect.equal Nothing (fmt " 2025-06-01" "2027-02-25")
+            , test "33.7 a datetime is not a date" <|
+                \_ -> Expect.equal Nothing (fmt "2025-06-15T10:00:00" "2027-02-25")
+            , test "33.8 invalid asOf" <|
+                \_ -> Expect.equal Nothing (fmt "2020-01-01" "2025-04-31")
+            , test "33.9 formatStage validates too" <|
+                \_ -> Expect.equal Nothing (stg "2025-02-30" "2027-09-05")
+            , test "33.10 February 29 in a leap year" <|
+                \_ -> Expect.equal (Just "2 years") (fmt "2024-02-29" "2026-03-01")
             ]
         ]

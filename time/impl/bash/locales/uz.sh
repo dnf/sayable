@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/uz.json
 
-_locale_uz() {
+_sayabletime_locale_uz() {
     _clock_hours=('o'\''n ikki' 'bir' 'ikki' 'uch' 'to'\''rt' 'besh' 'olti' 'yetti' 'sakkiz' 'to'\''qqiz' 'o'\''n' 'o'\''n bir')
     _clock_midnight='yarim tun'
     _clock_noon='tush'

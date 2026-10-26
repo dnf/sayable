@@ -40,7 +40,7 @@ _AgeComponents? _parseAge(String dateOfBirth, [String? asOf]) {
   if (diffDays < 0) return null;
 
   // Calendar months with birthday clamping
-  final lastDay = DateTime.utc(refY, refM + 1, 0).day;
+  final lastDay = _daysInMonth(refY, refM);
   var clampedBirthday = dob.$3;
   if (clampedBirthday > lastDay) clampedBirthday = lastDay;
 
@@ -51,13 +51,28 @@ _AgeComponents? _parseAge(String dateOfBirth, [String? asOf]) {
   return _AgeComponents(months, diffDays);
 }
 
+bool _isLeapYear(int year) =>
+    (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+
+int _daysInMonth(int year, int month) {
+  if (month == 2) return _isLeapYear(year) ? 29 : 28;
+  return const [4, 6, 9, 11].contains(month) ? 30 : 31;
+}
+
+bool _isAsciiDigits(String s) =>
+    s.codeUnits.every((c) => c >= 0x30 && c <= 0x39);
+
+/// Parses exactly YYYY-MM-DD naming a real calendar day, else null.
 (int, int, int)? _parseDateParts(String s) {
-  if (s.length < 10 || s[4] != '-' || s[7] != '-') return null;
-  final y = int.tryParse(s.substring(0, 4));
-  final m = int.tryParse(s.substring(5, 7));
-  final d = int.tryParse(s.substring(8, 10));
-  if (y == null || m == null || d == null) return null;
-  if (y == 0 && m == 0 && d == 0) return null;
+  if (s.length != 10 || s[4] != '-' || s[7] != '-') return null;
+  final yearPart = s.substring(0, 4);
+  final monthPart = s.substring(5, 7);
+  final dayPart = s.substring(8, 10);
+  if (!_isAsciiDigits(yearPart + monthPart + dayPart)) return null;
+  final y = int.parse(yearPart);
+  final m = int.parse(monthPart);
+  final d = int.parse(dayPart);
+  if (m < 1 || m > 12 || d < 1 || d > _daysInMonth(y, m)) return null;
   return (y, m, d);
 }
 

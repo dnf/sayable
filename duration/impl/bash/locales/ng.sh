@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ng.json
 
-_plural_ng() {
+_sayableduration_plural_ng() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ng() {
+_sayableduration_locale_ng() {
     _unit_second_one='osekonde {n}'
     _unit_second_other='oosekonde {n}'
     _unit_minute_one='ominute {n}'
@@ -63,5 +63,5 @@ _locale_ng() {
     _compact_delimiter=''
     _compact_ago='{0} pita'
     _compact_in_future='mo {0}'
-    _plural_func=_plural_ng
+    _plural_func=_sayableduration_plural_ng
 }

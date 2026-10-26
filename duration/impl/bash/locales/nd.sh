@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/nd.json
 
-_plural_nd() {
+_sayableduration_plural_nd() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_nd() {
+_sayableduration_locale_nd() {
     _unit_second_one='umzuzwana {n}'
     _unit_second_other='imizuzwana {n}'
     _unit_minute_one='umzuzu {n}'
@@ -62,5 +62,5 @@ _locale_nd() {
     _compact_delimiter=''
     _compact_ago='{0} edlulileyo'
     _compact_in_future='nge-{0}'
-    _plural_func=_plural_nd
+    _plural_func=_sayableduration_plural_nd
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/sk.json
 
-_locale_sk() {
+_sayabledate_locale_sk() {
     _months=('január' 'február' 'marec' 'apríl' 'máj' 'jún' 'júl' 'august' 'september' 'október' 'november' 'december')
     _weekdays=('nedeľa' 'pondelok' 'utorok' 'streda' 'štvrtok' 'piatok' 'sobota')
     _day_format='{n}.'

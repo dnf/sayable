@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/sd.json
 
-_plural_sd() {
+_sayableduration_plural_sd() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sd() {
+_sayableduration_locale_sd() {
     _unit_second='{n} سيڪنڊ'
     _unit_minute='{n} منٽ'
     _unit_hour='{n} ڪلاڪ'
@@ -52,5 +52,5 @@ _locale_sd() {
     _compact_delimiter=''
     _compact_ago='{0} اڳ'
     _compact_in_future='{0} ۾'
-    _plural_func=_plural_sd
+    _plural_func=_sayableduration_plural_sd
 }

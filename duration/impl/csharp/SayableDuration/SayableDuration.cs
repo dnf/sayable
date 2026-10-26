@@ -1,11 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace SayableDurationLib;
 
 public class SayableDuration
 {
     public const string Version = "0.5.0";
+
+    /// <summary>500 years, the same ceiling as sayable-age.</summary>
+    private const long MaxDurationMonths = 6000;
+
+    /// <summary>YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).</summary>
+    private static readonly Regex Timestamp = new(
+        @"\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z",
+        RegexOptions.CultureInvariant);
 
     private readonly DurationLocale _locale;
     private readonly UnitForms _second;
@@ -49,7 +59,7 @@ public class SayableDuration
         _inFuture = ovr?.InFuture ?? locale.InFuture;
     }
 
-    public static string? FormatDurationSeconds(int seconds) =>
+    public static string? FormatDurationSeconds(long seconds) =>
         Default.FormatDuration(seconds);
 
     public static string? FormatDurationIso(string start, string end) =>
@@ -61,7 +71,7 @@ public class SayableDuration
     public static string? FormatUntil(string? target, string? asOf) =>
         Default.Until(target, asOf);
 
-    public string? FormatDuration(int seconds)
+    public string? FormatDuration(long seconds)
     {
         if (seconds < 0) return null;
         return FormatDurationInternal(seconds);
@@ -87,7 +97,7 @@ public class SayableDuration
         if (diff < 0) return null;
         if (diff == 0) return _justNow;
         var dur = FormatDurationInternal(diff);
-        return _ago.Replace("{0}", dur);
+        return dur == null ? null : _ago.Replace("{0}", dur);
     }
 
     public string? Until(string? target, string? asOf)
@@ -100,18 +110,18 @@ public class SayableDuration
         if (diff < 0) return null;
         if (diff == 0) return _justNow;
         var dur = FormatDurationInternal(diff);
-        return _inFuture.Replace("{0}", dur);
+        return dur == null ? null : _inFuture.Replace("{0}", dur);
     }
 
-    private string FormatDurationInternal(int total)
+    private string? FormatDurationInternal(long total)
     {
         if (total == 0) return _justNow;
 
         // 1-59 seconds
         if (total < 60) return ResolveUnit(total, _second);
 
-        int totalMinutes = total / 60;
-        int remainderSeconds = total % 60;
+        long totalMinutes = total / 60;
+        long remainderSeconds = total % 60;
 
         // 1-4 minutes: minutes + seconds
         if (totalMinutes < 5)
@@ -125,8 +135,8 @@ public class SayableDuration
         // 5-59 minutes
         if (totalMinutes < 60) return ResolveUnit(totalMinutes, _minute);
 
-        int totalHours = total / 3600;
-        int remainderMinutes = (total % 3600) / 60;
+        long totalHours = total / 3600;
+        long remainderMinutes = (total % 3600) / 60;
 
         // 1-5 hours: hours + minutes (with half marker)
         if (totalHours <= 5)
@@ -142,8 +152,8 @@ public class SayableDuration
         // 6-23 hours
         if (totalHours < 24) return ResolveUnit(totalHours, _hour);
 
-        int totalDays = total / 86400;
-        int remainderHours = (total % 86400) / 3600;
+        long totalDays = total / 86400;
+        long remainderHours = (total % 86400) / 3600;
 
         // 1-2 days: days + hours (with half marker)
         if (totalDays <= 2)
@@ -159,8 +169,8 @@ public class SayableDuration
         // 3-6 days
         if (totalDays < 7) return ResolveUnit(totalDays, _day);
 
-        int totalWeeks = totalDays / 7;
-        int remainderDays = totalDays % 7;
+        long totalWeeks = totalDays / 7;
+        long remainderDays = totalDays % 7;
 
         // 1-4 weeks (up to 29 days; 30+ transitions to months)
         if (totalDays < 30)
@@ -172,7 +182,8 @@ public class SayableDuration
         }
 
         // Approximate months (30.44 days average)
-        int totalMonths = (int)Math.Round(totalDays / 30.44);
+        long totalMonths = (long)Math.Round(totalDays / 30.44);
+        if (totalMonths > MaxDurationMonths) return null;
 
         // 1-11 months
         if (totalMonths < 12)
@@ -182,16 +193,18 @@ public class SayableDuration
         }
 
         // 12+ months: years + months
-        int totalYears = totalMonths / 12;
-        int remainderMonths = totalMonths % 12;
+        long totalYears = totalMonths / 12;
+        long remainderMonths = totalMonths % 12;
         var yearResult = ResolveUnit(totalYears, _year);
         if (remainderMonths > 0)
             yearResult += _delimiter + ResolveUnit(remainderMonths, _month);
         return yearResult;
     }
 
-    private string ResolveUnit(int count, UnitForms uf, string half = "")
+    /// <summary>Counts are bounded by the 500-year ceiling, so they always fit in an int.</summary>
+    private string ResolveUnit(long boundedCount, UnitForms uf, string half = "")
     {
+        int count = checked((int)boundedCount);
         string baseN = _locale.FormatNumber != null
             ? _locale.FormatNumber(count)
             : count.ToString();
@@ -229,61 +242,24 @@ public class SayableDuration
         return result;
     }
 
-    internal static int? ParseIsoToSeconds(string iso)
+    internal static long? ParseIsoToSeconds(string iso)
     {
-        if (string.IsNullOrEmpty(iso)) return null;
-
-        int tIdx = iso.IndexOf('T');
-        if (tIdx < 0) return null;
-
-        var datePart = iso.Substring(0, tIdx);
-        var timePart = iso.Substring(tIdx + 1);
-
-        var dp = datePart.Split('-');
-        if (dp.Length < 3) return null;
-        var year = SafeAtoi(dp[0]);
-        var month = SafeAtoi(dp[1]);
-        var day = SafeAtoi(dp[2]);
-        if (year == null || month == null || day == null) return null;
-
-        int plusIdx = timePart.IndexOf('+');
-        if (plusIdx >= 0) timePart = timePart.Substring(0, plusIdx);
-        int zIdx = timePart.IndexOf('Z');
-        if (zIdx >= 0) timePart = timePart.Substring(0, zIdx);
-
-        var tp = timePart.Split(':');
-        var hour = SafeAtoi(tp[0]);
-        if (hour == null) return null;
-        var minute = tp.Length > 1 ? SafeAtoi(tp[1]) : 0;
-        if (minute == null) return null;
-        int second;
-        if (tp.Length > 2)
-        {
-            var secStr = tp[2].Split('.')[0];
-            var s = SafeAtoi(secStr);
-            if (s == null) return null;
-            second = s.Value;
-        }
-        else
-        {
-            second = 0;
-        }
-
-        int days = DaysSinceEpoch(year.Value, month.Value, day.Value);
-        return days * 86400 + hour.Value * 3600 + minute.Value * 60 + second;
+        var match = Timestamp.Match(iso);
+        if (!match.Success) return null;
+        int year = Field(match, 1);
+        int month = Field(match, 2);
+        int day = Field(match, 3);
+        int hour = Field(match, 4);
+        int minute = Field(match, 5);
+        int second = match.Groups[6].Success ? Field(match, 6) : 0;
+        if (month < 1 || month > 12 || day < 1 || day > DaysInMonth(year, month)) return null;
+        if (hour > 23 || minute > 59 || second > 59) return null;
+        long days = DaysSinceEpoch(year, month, day);
+        return days * 86400 + hour * 3600 + minute * 60 + second;
     }
 
-    private static int? SafeAtoi(string s)
-    {
-        if (string.IsNullOrEmpty(s)) return null;
-        int n = 0;
-        foreach (char c in s)
-        {
-            if (c < '0' || c > '9') return null;
-            n = n * 10 + (c - '0');
-        }
-        return n;
-    }
+    private static int Field(Match match, int group) =>
+        int.Parse(match.Groups[group].Value, CultureInfo.InvariantCulture);
 
     private static bool IsLeapYear(int year) =>
         (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);

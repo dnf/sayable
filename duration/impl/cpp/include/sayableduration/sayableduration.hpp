@@ -16,8 +16,8 @@ public:
                              Compactness compactness = Compactness::Normal);
 
     /// Format a duration in human-friendly terms from total seconds.
-    /// Returns std::nullopt for null or negative input.
-    std::optional<std::string> format_duration(int seconds) const;
+    /// Returns std::nullopt for null or negative input, or over 500 years.
+    std::optional<std::string> format_duration(long long seconds) const;
 
     /// Format a duration between two ISO datetime strings.
     /// Returns std::nullopt if either string is empty or unparseable.
@@ -49,14 +49,18 @@ private:
     std::string ago_;
     std::string in_future_;
 
-    /// Internal: format total seconds into a human string.
-    std::string format_seconds(int total) const;
+    /// Internal: format total seconds into a human string; std::nullopt
+    /// beyond the 500-year ceiling.
+    std::optional<std::string> format_seconds(long long total_seconds) const;
+
+    /// Internal: apply the duration tiers to total seconds within the ceiling.
+    std::string format_tiers(long long total) const;
 };
 
 // Free functions using the default English locale.
 
 /// Format a duration in seconds using the default English locale.
-std::optional<std::string> format_duration(int seconds);
+std::optional<std::string> format_duration(long long seconds);
 
 /// Format a duration between ISO datetime strings using the default English locale.
 std::optional<std::string> format_duration(const std::string& start,

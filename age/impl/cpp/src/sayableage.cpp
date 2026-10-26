@@ -52,33 +52,6 @@ bool contains(const std::string& str, const std::string& substr) {
     return str.find(substr) != std::string::npos;
 }
 
-/// Parse "YYYY-MM-DD" into (year, month, day). Returns false on failure.
-bool parse_date_parts(const std::string& s, int& y, int& m, int& d) {
-    if (s.size() < 10 || s[4] != '-' || s[7] != '-') {
-        y = m = d = 0;
-        return false;
-    }
-    y = 0;
-    for (int i = 0; i < 4; ++i) {
-        const char c = s[static_cast<size_t>(i)];
-        if (c < '0' || c > '9') { y = m = d = 0; return false; }
-        y = y * 10 + (c - '0');
-    }
-    m = 0;
-    for (int i = 5; i < 7; ++i) {
-        const char c = s[static_cast<size_t>(i)];
-        if (c < '0' || c > '9') { y = m = d = 0; return false; }
-        m = m * 10 + (c - '0');
-    }
-    d = 0;
-    for (int i = 8; i < 10; ++i) {
-        const char c = s[static_cast<size_t>(i)];
-        if (c < '0' || c > '9') { y = m = d = 0; return false; }
-        d = d * 10 + (c - '0');
-    }
-    return (y != 0 || m != 0 || d != 0);
-}
-
 /// Days in a given month.
 int days_in_month(int year, int month) {
     if (month == 2) {
@@ -86,6 +59,26 @@ int days_in_month(int year, int month) {
     }
     if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
     return 31;
+}
+
+/// Parse a fixed-width run of ASCII digits. Returns false if any isn't a digit.
+bool parse_digits(const std::string& s, size_t pos, size_t count, int& out) {
+    out = 0;
+    for (size_t i = pos; i < pos + count; ++i) {
+        const char c = s[i];
+        if (c < '0' || c > '9') return false;
+        out = out * 10 + (c - '0');
+    }
+    return true;
+}
+
+/// Parse exactly "YYYY-MM-DD" naming a real calendar day (docs/input-formats.md).
+bool parse_date_parts(const std::string& s, int& y, int& m, int& d) {
+    if (s.size() != 10 || s[4] != '-' || s[7] != '-') return false;
+    if (!parse_digits(s, 0, 4, y) || !parse_digits(s, 5, 2, m) || !parse_digits(s, 8, 2, d)) {
+        return false;
+    }
+    return m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m);
 }
 
 /// Julian Day Number for computing day differences between dates.

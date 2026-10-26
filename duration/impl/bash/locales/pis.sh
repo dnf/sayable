@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/pis.json
 
-_plural_pis() {
+_sayableduration_plural_pis() {
     echo "other"
 }
 
-_locale_pis() {
+_sayableduration_locale_pis() {
     _unit_second='{n} sekon'
     _unit_minute='{n} minit'
     _unit_hour='{n} aoa'
@@ -45,5 +45,5 @@ _locale_pis() {
     _compact_delimiter=''
     _compact_ago='{0} bifoa'
     _compact_in_future='long {0}'
-    _plural_func=_plural_pis
+    _plural_func=_sayableduration_plural_pis
 }

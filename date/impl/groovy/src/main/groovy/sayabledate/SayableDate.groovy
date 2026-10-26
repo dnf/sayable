@@ -1,5 +1,9 @@
 package sayabledate
 
+import java.time.YearMonth
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 import sayabledate.locales.Locales
 
 class SayableDate {
@@ -170,31 +174,18 @@ class SayableDate {
 
     // --- Internal helpers ---
 
-    private static int[] parseDate(String s) {
-        if (s == null || s.isEmpty()) return null
-        // Strip time part from ISO datetime
-        String datePart = s.contains('T') ? s.substring(0, s.indexOf('T')) : s
-        String[] parts = datePart.split('-')
-        if (parts.length != 3) return null
-        int year = safeAtoi(parts[0])
-        int month = safeAtoi(parts[1])
-        int day = safeAtoi(parts[2])
-        if (year < 0 || month < 0 || day < 0) return null
-        if (month < 1 || month > 12 || day < 1 || day > 31) return null
-        return [year, month, day] as int[]
-    }
+    /** YYYY-MM-DD, alone or followed by T and anything (an ISO datetime). */
+    private static final Pattern DATE_PREFIX = ~/([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T(?s:.*))?/
 
-    private static int safeAtoi(String s) {
-        if (s == null || s.isEmpty()) return -1
-        int n = 0
-        char zero = '0' as char
-        char nine = '9' as char
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i)
-            if (c < zero || c > nine) return -1
-            n = n * 10 + (c - zero)
-        }
-        return n
+    private static int[] parseDate(String s) {
+        if (s == null) return null
+        Matcher m = DATE_PREFIX.matcher(s)
+        if (!m.matches()) return null
+        int year = m.group(1) as int
+        int month = m.group(2) as int
+        int day = m.group(3) as int
+        if (month < 1 || month > 12 || day < 1 || day > YearMonth.of(year, month).lengthOfMonth()) return null
+        return [year, month, day] as int[]
     }
 
     private static int toJdn(int year, int month, int day) {

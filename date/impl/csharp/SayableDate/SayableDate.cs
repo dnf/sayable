@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace SayableDateLib;
 
@@ -162,18 +164,29 @@ public class SayableDate
         return result;
     }
 
-    internal static int[]? ParseDate(string s)
+    /// <summary>YYYY-MM-DD, alone or followed by T and anything (an ISO datetime).</summary>
+    private static readonly Regex DatePrefix =
+        new(@"\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T.*)?\z", RegexOptions.Singleline | RegexOptions.CultureInvariant);
+
+    internal static int[]? ParseDate(string? s)
     {
-        if (string.IsNullOrEmpty(s)) return null;
-        string datePart = s.Contains('T') ? s.Substring(0, s.IndexOf('T')) : s;
-        var parts = datePart.Split('-');
-        if (parts.Length != 3) return null;
-        if (!int.TryParse(parts[0], out int year)) return null;
-        if (!int.TryParse(parts[1], out int month)) return null;
-        if (!int.TryParse(parts[2], out int day)) return null;
-        if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+        if (s == null) return null;
+        var match = DatePrefix.Match(s);
+        if (!match.Success) return null;
+        int year = int.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+        int month = int.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
+        int day = int.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
+        if (month < 1 || month > 12 || day < 1 || day > DaysInMonth(year, month)) return null;
         return new[] { year, month, day };
     }
+
+    // DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+    private static int DaysInMonth(int year, int month) => month switch
+    {
+        2 => (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28,
+        4 or 6 or 9 or 11 => 30,
+        _ => 31,
+    };
 
     internal static int ToJdn(int year, int month, int day)
     {

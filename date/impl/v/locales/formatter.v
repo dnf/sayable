@@ -204,24 +204,30 @@ fn (sd &SayableDate) format_absolute(year int, month int, day int, include_year 
 	return result
 }
 
+// parse_date parses YYYY-MM-DD naming a real calendar day, optionally followed
+// by T and anything else (docs/input-formats.md).
 fn parse_date(s string) ?(int, int, int) {
-	// Handle ISO datetime by stripping time part
-	mut date_part := s
-	t_pos := s.index('T') or { -1 }
-	if t_pos >= 0 {
-		date_part = s[..t_pos]
-	}
-
-	if date_part.len < 10 || date_part[4] != `-` || date_part[7] != `-` {
+	is_date_alone := s.len == 10
+	is_datetime := s.len > 10 && s[10] == `T`
+	if !(is_date_alone || is_datetime) || s[4] != `-` || s[7] != `-` {
 		return none
 	}
-	y := str_to_int(date_part[0..4]) or { return none }
-	m := str_to_int(date_part[5..7]) or { return none }
-	d := str_to_int(date_part[8..10]) or { return none }
-	if m < 1 || m > 12 || d < 1 || d > 31 {
+	y := str_to_int(s[0..4]) or { return none }
+	m := str_to_int(s[5..7]) or { return none }
+	d := str_to_int(s[8..10]) or { return none }
+	if m < 1 || m > 12 || d < 1 || d > days_in_month(y, m) {
 		return none
 	}
 	return y, m, d
+}
+
+// days_in_month returns the days in a Gregorian month (leap years by the 4/100/400 rule).
+fn days_in_month(y int, m int) int {
+	return match m {
+		2 { if (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 { 29 } else { 28 } }
+		4, 6, 9, 11 { 30 }
+		else { 31 }
+	}
 }
 
 fn str_to_int(s string) ?int {

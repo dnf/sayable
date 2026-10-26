@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/dv.json
 
-_plural_dv() {
+_sayableduration_plural_dv() {
     echo "other"
 }
 
-_locale_dv() {
+_sayableduration_locale_dv() {
     _unit_second='{n} ސިކުންތު'
     _unit_minute='{n} މިނެޓު'
     _unit_hour='{n} ގަޑިއިރު'
@@ -45,5 +45,5 @@ _locale_dv() {
     _compact_delimiter=''
     _compact_ago='މީގެ {0} ކުރިން'
     _compact_in_future='{0} ފަހުން'
-    _plural_func=_plural_dv
+    _plural_func=_sayableduration_plural_dv
 }

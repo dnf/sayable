@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tet.json
 
-_locale_tet() {
+_sayabletime_locale_tet() {
     _clock_hours=('sanulu-resin-rua' 'ida' 'rua' 'tolu' 'haat' 'lima' 'neen' 'hitu' 'ualu' 'sia' 'sanulu' 'sanulu-resin-ida')
     _clock_midnight='meiu-kalan'
     _clock_noon='meiu-loron'

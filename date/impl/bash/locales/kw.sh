@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/kw.json
 
-_locale_kw() {
+_sayabledate_locale_kw() {
     _months=('Genver' 'Hwevrer' 'Meurth' 'Ebrel' 'Me' 'Metheven' 'Gortheren' 'Est' 'Gwynngala' 'Hedra' 'Du' 'Kevardhu')
     _weekdays=('De Sul' 'De Lun' 'De Merth' 'De Merher' 'De Yow' 'De Gwener' 'De Sadorn')
     _day_format='{n}'

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/kpe.json
 
-_plural_kpe() {
+_sayableage_plural_kpe() {
     echo "other"
 }
 
-_locale_kpe() {
+_sayableage_locale_kpe() {
     _unit_day='ɓɛlɛɛ {n}'
     _unit_week='wikii {n}'
     _unit_month='ŋuŋ {n}'
@@ -37,5 +37,5 @@ _locale_kpe() {
     _compact_unit_year='kɛ̃ɛ̃ {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_kpe
+    _plural_func=_sayableage_plural_kpe
 }

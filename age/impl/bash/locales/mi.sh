@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mi.json
 
-_plural_mi() {
+_sayableage_plural_mi() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_mi() {
+_sayableage_locale_mi() {
     _unit_day='rā {n}'
     _unit_week='wiki {n}'
     _unit_month='marama {n}'
@@ -39,5 +39,5 @@ _locale_mi() {
     _compact_unit_year='{n}t'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mi
+    _plural_func=_sayableage_plural_mi
 }

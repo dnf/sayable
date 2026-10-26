@@ -9,7 +9,7 @@
 -- ╚══════════════════════════════════════════════════════════════╝
 
 
-module SayableAge.Locales exposing (getLocale)
+module SayableAge.Locales exposing (codes, getLocale)
 
 
 import Dict exposing (Dict)
@@ -361,3 +361,9 @@ allLocales =
 getLocale : String -> Maybe Locale
 getLocale code =
     Dict.get code allLocales
+
+
+{-| Every locale code, sorted. -}
+codes : List String
+codes =
+    Dict.keys allLocales

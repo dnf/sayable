@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/bci.json
 
-_locale_bci() {
+_sayabledate_locale_bci() {
     _months=('Zanvie' 'Flevie' 'Masi' 'Avrili' 'Mɛ' 'Zuɛn' 'Zulɛ' 'Uti' 'Sɛtanbu' 'Ɔtɔbu' 'Novanbu' 'Desanbu')
     _weekdays=('Mɔndi' 'Lunji' 'Madi' 'Mliku' 'Juedi' 'Vaandredi' 'Sanmdi')
     _day_format='{n}'

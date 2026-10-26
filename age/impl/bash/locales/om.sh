@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/om.json
 
-_plural_om() {
+_sayableage_plural_om() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_om() {
+_sayableage_locale_om() {
     _unit_day_one='guyyaa {n}'
     _unit_day_other='guyyoota {n}'
     _unit_week_one='torban {n}'
@@ -43,5 +43,5 @@ _locale_om() {
     _compact_unit_year='{n}w'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_om
+    _plural_func=_sayableage_plural_om
 }

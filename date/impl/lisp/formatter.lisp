@@ -20,47 +20,48 @@
 
 ;;; --- Date parsing ---
 
-(defun split-string (s delimiter)
-  "Split S by DELIMITER character."
-  (let ((result nil)
-        (start 0))
-    (loop for i from 0 below (length s)
-          when (char= (char s i) delimiter)
-            do (push (subseq s start i) result)
-               (setf start (1+ i)))
-    (push (subseq s start) result)
-    (nreverse result)))
+(defun leap-year-p (year)
+  "Return T if YEAR is a Gregorian leap year."
+  (or (and (zerop (mod year 4))
+           (not (zerop (mod year 100))))
+      (zerop (mod year 400))))
 
-(defun str-to-int (s)
-  "Parse a string as a non-negative integer."
-  (str-to-int-impl s 0 0))
+(defun days-in-month (year month)
+  "Return the number of days in MONTH of YEAR."
+  (case month
+    ((4 6 9 11) 30)
+    (2 (if (leap-year-p year) 29 28))
+    (otherwise 31)))
 
-(defun str-to-int-impl (s idx acc)
-  (if (>= idx (length s))
-      acc
-      (let ((ch (char s idx)))
-        (if (digit-char-p ch)
-            (str-to-int-impl s (1+ idx) (+ (* acc 10) (digit-char-p ch)))
-            acc))))
+(defun ascii-digit-p (ch)
+  "Return T if CH is one of the ASCII digits 0-9."
+  (char<= #\0 ch #\9))
+
+(defun digits-value (s start end)
+  "Return the integer spelled by the ASCII digits of S from START to END, or NIL."
+  (when (every #'ascii-digit-p (subseq s start end))
+    (parse-integer s :start start :end end)))
+
+(defun date-shaped-p (s)
+  "Return T if S is ten characters long, or longer with a T after the date."
+  (or (= (length s) 10)
+      (and (> (length s) 10)
+           (char= (char s 10) #\T))))
 
 (defun parse-date (date-str)
-  "Parse a YYYY-MM-DD or ISO datetime string into (values year month day).
-Returns NIL on failure."
-  (when (and date-str
-             (stringp date-str)
-             (> (length date-str) 0))
-    ;; Strip time part if ISO datetime
-    (let ((date-part (if (position #\T date-str)
-                         (subseq date-str 0 (position #\T date-str))
-                         date-str)))
-      (let ((parts (split-string date-part #\-)))
-        (when (= (length parts) 3)
-          (let ((year (str-to-int (first parts)))
-                (month (str-to-int (second parts)))
-                (day (str-to-int (third parts))))
-            (when (and (>= month 1) (<= month 12)
-                       (>= day 1) (<= day 31))
-              (values year month day))))))))
+  "Parse YYYY-MM-DD, optionally followed by T and a time, into (values year month day).
+The date must name a real calendar day. Returns NIL on failure."
+  (when (and (stringp date-str)
+             (date-shaped-p date-str)
+             (char= (char date-str 4) #\-)
+             (char= (char date-str 7) #\-))
+    (let ((year (digits-value date-str 0 4))
+          (month (digits-value date-str 5 7))
+          (day (digits-value date-str 8 10)))
+      (when (and year month day
+                 (<= 1 month 12)
+                 (<= 1 day (days-in-month year month)))
+        (values year month day)))))
 
 ;;; --- Date arithmetic ---
 
@@ -267,6 +268,8 @@ Returns NIL for invalid input."
           (format-absolute formatter dy dm dd include-year))))))
 
 ;;; --- Default English functions ---
+
+(declaim (ftype function get-locale)) ; defined by the generated locale registry, loaded later
 
 (defvar *default-formatter* nil
   "Default English formatter, initialized when locales are loaded.")

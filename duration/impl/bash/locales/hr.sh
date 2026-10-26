@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/hr.json
 
-_plural_hr() {
+_sayableduration_plural_hr() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_hr() {
     echo "other"
 }
 
-_locale_hr() {
+_sayableduration_locale_hr() {
     _unit_second_one='{n} sekunda'
     _unit_second_few='{n} sekunde'
     _unit_second_other='{n} sekundi'
@@ -71,5 +71,5 @@ _locale_hr() {
     _compact_delimiter=''
     _compact_ago='prije {0}'
     _compact_in_future='za {0}'
-    _plural_func=_plural_hr
+    _plural_func=_sayableduration_plural_hr
 }

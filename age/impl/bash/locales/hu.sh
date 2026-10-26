@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/hu.json
 
-_plural_hu() {
+_sayableage_plural_hu() {
     echo "other"
 }
 
-_locale_hu() {
+_sayableage_locale_hu() {
     _unit_day='{n} nap'
     _unit_week='{n} hét'
     _unit_month='{n} hónap'
@@ -37,5 +37,5 @@ _locale_hu() {
     _compact_unit_year='{n} év'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_hu
+    _plural_func=_sayableage_plural_hu
 }

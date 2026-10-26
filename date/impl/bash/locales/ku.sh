@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ku.json
 
-_locale_ku() {
+_sayabledate_locale_ku() {
     _months=('Rêbendan' 'Reşemî' 'Adar' 'Avrêl' 'Gulan' 'Pûşper' 'Tîrmeh' 'Tebax' 'Îlon' 'Cotmeh' 'Mijdar' 'Berfanbar')
     _weekdays=('Yekşem' 'Duşem' 'Sêşem' 'Çarşem' 'Pêncşem' 'Înî' 'Şemî')
     _day_format='{n}'

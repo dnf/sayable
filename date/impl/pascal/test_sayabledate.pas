@@ -193,6 +193,52 @@ begin
   LPtr := GetLocale('xx');
   AssertLocaleNil('lookup.2', LPtr);
 
+  { Section 13: format_date_with_year }
+  { 13.1 }
+  AssertEqual('13.1', 'February 4th, 2018', FormatDateWithYear(GetLocale('en')^, csNormal, '2018-02-04'));
+  { 13.2 }
+  AssertEqual('13.2', 'Mar 15, 2025', FormatDateWithYear(GetLocale('en')^, csShort, '2025-03-15'));
+  { 13.3 }
+  AssertEqual('13.3', '1/21/97', FormatDateWithYear(GetLocale('en')^, csCompact, '1997-01-21'));
+  { 13.4 }
+  AssertEqual('13.4', '20/5/07', FormatDateWithYear(GetLocale('tg')^, csCompact, '2007-05-20'));
+  { 13.5 }
+  AssertEqual('13.5', '21. kesäkuuta 1996', FormatDateWithYear(GetLocale('fi')^, csShort, '1996-06-21'));
+
+  { Section 14: Short month names (locales that keep the full genitive) }
+  { 14.1 }
+  AssertEqual('14.1', '15. februára', FormatDate(GetLocale('sk')^, csShort, '2031-02-15'));
+  { 14.2 }
+  AssertEqual('14.2', '10. prosince', FormatDate(GetLocale('cs')^, csShort, '2025-12-10'));
+  { 14.3 }
+  AssertEqual('14.3', '5 листопада', FormatDate(GetLocale('uk')^, csShort, '2025-11-05'));
+  { 14.4 }
+  AssertEqual('14.4', '8. elokuuta', FormatRelative(GetLocale('fi')^, csShort, '1998-08-08', '1998-08-15'));
+
+  { Section 15: format_relative — short phrases }
+  { 15.1 }
+  AssertEqual('15.1', 'an Mth ma', FormatRelative(GetLocale('kw')^, csShort, '2035-12-04', '2035-12-02'));
+  { 15.2 }
+  AssertEqual('15.2', 'Dom nchi''j', FormatRelative(GetLocale('mam')^, csShort, '2000-01-23', '2000-01-25'));
+  { 15.3 }
+  AssertEqual('15.3', 'a''in Vie', FormatRelative(GetLocale('kek')^, csShort, '2014-10-24', '2014-10-22'));
+
+  { Section 16: Input validation }
+  { 16.1 }
+  AssertNull('16.1', FormatDate(GetLocale('en')^, csNormal, '2025-02-30'));
+  { 16.2 }
+  AssertNull('16.2', FormatDate(GetLocale('en')^, csNormal, '2025-13-01'));
+  { 16.3 }
+  AssertNull('16.3', FormatDate(GetLocale('en')^, csNormal, '2025-6-1'));
+  { 16.4 }
+  AssertNull('16.4', FormatDate(GetLocale('en')^, csNormal, ' 2025-06-01'));
+  { 16.5 }
+  AssertEqual('16.5', 'June 1st', FormatDate(GetLocale('en')^, csNormal, '2025-06-01T10:00:00'));
+  { 16.6 }
+  AssertNull('16.6', FormatDateWithYear(GetLocale('en')^, csNormal, '2023-02-29'));
+  { 16.7 }
+  AssertNull('16.7', FormatRelative(GetLocale('en')^, csNormal, '2025-03-16', '2025-04-31'));
+
   { Print results }
   WriteLn('');
   WriteLn(PassCount, ' passed, ', FailCount, ' failed');

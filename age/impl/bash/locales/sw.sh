@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sw.json
 
-_plural_sw() {
+_sayableage_plural_sw() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sw() {
+_sayableage_locale_sw() {
     _unit_day_one='siku {n}'
     _unit_day_other='siku {n}'
     _unit_week_one='wiki {n}'
@@ -47,5 +47,5 @@ _locale_sw() {
     _compact_unit_year_other='miaka {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_sw
+    _plural_func=_sayableage_plural_sw
 }

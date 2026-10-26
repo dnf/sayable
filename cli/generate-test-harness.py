@@ -127,7 +127,8 @@ def emit_date_tests(sections: list, out: list):
             compactness = test.get("compactness", section_compactness) or ""
 
             # Map function to CLI command
-            if func == "format_date":
+            with_year = func == "format_date_with_year"
+            if func in ("format_date", "format_date_with_year"):
                 cmd = "date"
             elif func == "format_relative":
                 cmd = "relative"
@@ -157,6 +158,8 @@ def emit_date_tests(sections: list, out: list):
                 args.append("--short")
             elif compactness == "compact":
                 args.append("--compact")
+            if with_year:
+                args.append("--with-year")
 
             cli_args = " ".join(quote_arg(a) for a in args)
 

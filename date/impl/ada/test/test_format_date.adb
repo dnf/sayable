@@ -1,5 +1,4 @@
 with Ada.Text_IO;          use Ada.Text_IO;
-with Ada.Strings.Unbounded;
 with Sayabledate_Types;    use Sayabledate_Types;
 with Sayabledate;
 with Sayabledate_Locales;
@@ -443,6 +442,142 @@ procedure Test_Format_Date is
          & Character'Val (16#B1#) & "ana");
    end Test_Locale_Spanish;
 
+   ---------------------------------------------------------------------------
+   --  13. format_date_with_year
+   ---------------------------------------------------------------------------
+   procedure Test_Format_Date_With_Year is
+   begin
+      --  13.1
+      Assert_Eq ("13.1 format_date_with_year en normal",
+         Sayabledate.Format_Date_With_Year
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, "2018-02-04"),
+         "February 4th, 2018");
+      --  13.2
+      Assert_Eq ("13.2 format_date_with_year en short",
+         Sayabledate.Format_Date_With_Year
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Short, "2025-03-15"),
+         "Mar 15, 2025");
+      --  13.3
+      Assert_Eq ("13.3 format_date_with_year en compact",
+         Sayabledate.Format_Date_With_Year
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Compact, "1997-01-21"),
+         "1/21/97");
+      --  13.4
+      Assert_Eq ("13.4 format_date_with_year tg compact",
+         Sayabledate.Format_Date_With_Year
+           (Sayabledate_Locales.Get_Locale ("tg").all,
+            Compact, "2007-05-20"),
+         "20/5/07");
+      --  13.5
+      Assert_Eq ("13.5 format_date_with_year fi short",
+         Sayabledate.Format_Date_With_Year
+           (Sayabledate_Locales.Get_Locale ("fi").all,
+            Short, "1996-06-21"),
+         "21. kes" & Character'Val (16#C3#) & Character'Val (16#A4#) & "kuuta 1996");
+   end Test_Format_Date_With_Year;
+
+   ---------------------------------------------------------------------------
+   --  14. Short month names (locales that keep the full genitive)
+   ---------------------------------------------------------------------------
+   procedure Test_Short_Month_Names is
+   begin
+      --  14.1
+      Assert_Eq ("14.1 format_date sk short",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("sk").all,
+            Short, "2031-02-15"),
+         "15. febru" & Character'Val (16#C3#) & Character'Val (16#A1#) & "ra");
+      --  14.2
+      Assert_Eq ("14.2 format_date cs short",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("cs").all,
+            Short, "2025-12-10"),
+         "10. prosince");
+      --  14.3
+      Assert_Eq ("14.3 format_date uk short",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("uk").all,
+            Short, "2025-11-05"),
+         "5 " & Character'Val (16#D0#) & Character'Val (16#BB#) & Character'Val (16#D0#) & Character'Val (16#B8#) & Character'Val (16#D1#) & Character'Val (16#81#) & Character'Val (16#D1#) & Character'Val (16#82#) & Character'Val (16#D0#) & Character'Val (16#BE#) & Character'Val (16#D0#) & Character'Val (16#BF#) & Character'Val (16#D0#) & Character'Val (16#B0#) & Character'Val (16#D0#) & Character'Val (16#B4#) & Character'Val (16#D0#) & Character'Val (16#B0#));
+      --  14.4
+      Assert_Eq ("14.4 format_relative fi short",
+         Sayabledate.Format_Relative
+           (Sayabledate_Locales.Get_Locale ("fi").all,
+            Short, "1998-08-08", "1998-08-15"),
+         "8. elokuuta");
+   end Test_Short_Month_Names;
+
+   ---------------------------------------------------------------------------
+   --  15. format_relative -- short phrases
+   ---------------------------------------------------------------------------
+   procedure Test_Relative_Short_Phrases is
+   begin
+      --  15.1
+      Assert_Eq ("15.1 format_relative kw short",
+         Sayabledate.Format_Relative
+           (Sayabledate_Locales.Get_Locale ("kw").all,
+            Short, "2035-12-04", "2035-12-02"),
+         "an Mth ma");
+      --  15.2
+      Assert_Eq ("15.2 format_relative mam short",
+         Sayabledate.Format_Relative
+           (Sayabledate_Locales.Get_Locale ("mam").all,
+            Short, "2000-01-23", "2000-01-25"),
+         "Dom nchi'j");
+      --  15.3
+      Assert_Eq ("15.3 format_relative kek short",
+         Sayabledate.Format_Relative
+           (Sayabledate_Locales.Get_Locale ("kek").all,
+            Short, "2014-10-24", "2014-10-22"),
+         "a'in Vie");
+   end Test_Relative_Short_Phrases;
+
+   ---------------------------------------------------------------------------
+   --  16. Input validation
+   ---------------------------------------------------------------------------
+   procedure Test_Input_Validation is
+   begin
+      --  16.1
+      Assert_Null ("16.1 format_date en normal",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, "2025-02-30"));
+      --  16.2
+      Assert_Null ("16.2 format_date en normal",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, "2025-13-01"));
+      --  16.3
+      Assert_Null ("16.3 format_date en normal",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, "2025-6-1"));
+      --  16.4
+      Assert_Null ("16.4 format_date en normal",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, " 2025-06-01"));
+      --  16.5
+      Assert_Eq ("16.5 format_date en normal",
+         Sayabledate.Format_Date
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, "2025-06-01T10:00:00"),
+         "June 1st");
+      --  16.6
+      Assert_Null ("16.6 format_date_with_year en normal",
+         Sayabledate.Format_Date_With_Year
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, "2023-02-29"));
+      --  16.7
+      Assert_Null ("16.7 format_relative en normal",
+         Sayabledate.Format_Relative
+           (Sayabledate_Locales.Get_Locale ("en").all,
+            Normal, "2025-03-16", "2025-04-31"));
+   end Test_Input_Validation;
+
 begin
    Test_Null_Edge_Cases;
    Test_Format_Date_Normal;
@@ -456,6 +591,10 @@ begin
    Test_Locale_Russian;
    Test_Locale_Arabic;
    Test_Locale_Spanish;
+   Test_Format_Date_With_Year;
+   Test_Short_Month_Names;
+   Test_Relative_Short_Phrases;
+   Test_Input_Validation;
 
    Put_Line (Natural'Image (Tests_Passed) & " passed," &
              Natural'Image (Tests_Failed) & " failed");

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ktu.json
 
-_locale_ktu() {
+_sayabletime_locale_ktu() {
     _clock_hours=('zomi na zole' 'mosi' 'zole' 'tatu' 'ya' 'tanu' 'sambanu' 'nsambwadi' 'nana' 'vwa' 'zomi' 'zomi na mosi')
     _clock_midnight='midi ya butu'
     _clock_noon='midi'

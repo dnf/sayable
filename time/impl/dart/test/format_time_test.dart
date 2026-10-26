@@ -137,4 +137,51 @@ void main() {
       expect(st.formatTime('00:00'), '0.00'); // 8.2
     });
   });
+
+  // ================================================================
+  // Minutes in short and compact modes
+  // ================================================================
+  group('Minutes in short and compact modes', () {
+    test('short keeps the exact minute', () {
+      final st = SayableTime(getLocale('en')!, Compactness.short);
+      expect(st.formatTime('18:01'), '6:01 PM'); // 9.1
+    });
+    test('compact keeps the exact minute', () {
+      final st = SayableTime(getLocale('en')!, Compactness.compact);
+      expect(st.formatTime('19:05'), '7:05p'); // 9.2
+    });
+  });
+
+  // ================================================================
+  // Input validation
+  // ================================================================
+  group('Input validation', () {
+    test('one-digit hour', () {
+      expect(formatTime('9:30'), 'half past nine'); // 10.1
+    });
+    test('two-digit hour', () {
+      expect(formatTime('09:30'), 'half past nine'); // 10.2
+    });
+    test('leading whitespace', () {
+      expect(formatTime(' 9:30'), isNull); // 10.3
+    });
+    test('trailing whitespace', () {
+      expect(formatTime('9:30 '), isNull); // 10.4
+    });
+    test('minutes need two digits', () {
+      expect(formatTime('9:5'), isNull); // 10.5
+    });
+    test('hour out of range', () {
+      expect(formatTime('24:00'), isNull); // 10.6
+    });
+    test('seconds are allowed and ignored', () {
+      expect(formatTime('14:15:30'), 'a quarter past two'); // 10.7
+    });
+    test('ISO datetime with zone suffix (ignored)', () {
+      expect(formatTime('2025-01-15T14:15:00Z'), 'a quarter past two'); // 10.8
+    });
+    test('ISO datetime with an impossible date', () {
+      expect(formatTime('2025-02-30T14:15:00'), isNull); // 10.9
+    });
+  });
 }

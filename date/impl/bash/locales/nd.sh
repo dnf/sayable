@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/nd.json
 
-_locale_nd() {
+_sayabledate_locale_nd() {
     _months=('Zibandlela' 'Nhlolanja' 'Mbimbitho' 'Mabasa' 'Nkwenkwezi' 'Nhlangula' 'Kholwane' 'Ingci' 'Inyoni' 'Imphala' 'Lwezi' 'Mpalakazi')
     _weekdays=('Sonto' 'Mvulo' 'Sibili' 'Sithathu' 'Sine' 'Sihlanu' 'Mgqibelo')
     _day_format='{n}'

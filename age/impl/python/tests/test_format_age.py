@@ -7,7 +7,7 @@ from importlib import import_module
 from unittest.mock import patch
 
 from sayable_age import EN, AgeLocale, SayableAge, format_age, format_stage, get_locale, resolve_stage
-from sayable_age.locales import AM, AR, ES, HE, ID, MK, SW
+from sayable_age.locales import AM, AR, ES, HE, ID, MK, PL, SHI, SW
 
 _format_age_mod = import_module("sayable_age.format_age")
 
@@ -1154,3 +1154,92 @@ class TestLocaleLookup:
     # 30.5
     def test_30_5_case_sensitive(self) -> None:
         assert get_locale("EN") is None
+
+
+# ================================================================
+# Section 31: Weeks and days across month ends
+# ================================================================
+
+
+class TestWeeksAndDaysAcrossMonthEnds:
+    # 31.1
+    def test_31_1_across_short_february(self) -> None:
+        assert format_age("2016-12-31", "2017-03-29") == "12 weeks, 4 days"
+
+    # 31.2
+    def test_31_2_across_year_end_into_leap_year(self) -> None:
+        assert format_age("1991-11-27", "1992-02-25") == "12 weeks, 6 days"
+
+    # 31.3
+    def test_31_3_across_year_end(self) -> None:
+        assert format_age("2020-11-30", "2021-01-02") == "4 weeks, 5 days"
+
+    # 31.4
+    def test_31_4_compact(self) -> None:
+        assert SayableAge(EN, "compact").format_age("2016-12-31", "2017-03-29") == "12w4d"
+
+
+# ================================================================
+# Section 32: Half years take their plural form from whole years
+# ================================================================
+
+
+class TestHalfYearPluralFromWholeYears:
+    # 32.1
+    def test_32_1_polish_few(self) -> None:
+        assert SayableAge(PL).format_age("2021-06-15", "2025-01-15") == "3 i pół lata"
+
+    # 32.2
+    def test_32_2_polish_many_short(self) -> None:
+        assert SayableAge(PL, "short").format_age("2020-06-15", "2025-12-15") == "5 i pół lat"
+
+    # 32.3
+    def test_32_3_tachelhit_few(self) -> None:
+        assert SayableAge(SHI).format_age("2005-06-08", "2012-06-07") == "6 iseggasen d uzgen"
+
+
+# ================================================================
+# Section 33: Input validation
+# ================================================================
+
+
+class TestInputValidation:
+    # 33.1
+    def test_33_1_february_30(self) -> None:
+        assert format_age("2025-02-30", "2032-06-25") is None
+
+    # 33.2
+    def test_33_2_month_13(self) -> None:
+        assert format_age("2025-13-01", "2027-01-31") is None
+
+    # 33.3
+    def test_33_3_february_29_non_leap_year(self) -> None:
+        assert format_age("2023-02-29", "2025-03-01") is None
+
+    # 33.4
+    def test_33_4_day_00(self) -> None:
+        assert format_age("2025-06-00", "2027-02-25") is None
+
+    # 33.5
+    def test_33_5_unpadded_month_and_day(self) -> None:
+        assert format_age("2025-6-1", "2027-02-25") is None
+
+    # 33.6
+    def test_33_6_surrounding_whitespace(self) -> None:
+        assert format_age(" 2025-06-01", "2027-02-25") is None
+
+    # 33.7
+    def test_33_7_datetime_is_not_a_date(self) -> None:
+        assert format_age("2025-06-15T10:00:00", "2027-02-25") is None
+
+    # 33.8
+    def test_33_8_invalid_as_of(self) -> None:
+        assert format_age("2020-01-01", "2025-04-31") is None
+
+    # 33.9
+    def test_33_9_format_stage_validates(self) -> None:
+        assert format_stage("2025-02-30", "2027-09-05") is None
+
+    # 33.10
+    def test_33_10_february_29_leap_year(self) -> None:
+        assert format_age("2024-02-29", "2026-03-01") == "2 years"

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/am.json
 
-_plural_am() {
+_sayableage_plural_am() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_am() {
+_sayableage_locale_am() {
     _unit_day_one='{n} ቀን'
     _unit_day_other='{n} ቀናት'
     _unit_week_one='{n} ሳምንት'
@@ -46,5 +46,5 @@ _locale_am() {
     _compact_unit_year_other='{n} ዓ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_am
+    _plural_func=_sayableage_plural_am
 }

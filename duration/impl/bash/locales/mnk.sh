@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mnk.json
 
-_plural_mnk() {
+_sayableduration_plural_mnk() {
     echo "other"
 }
 
-_locale_mnk() {
+_sayableduration_locale_mnk() {
     _unit_second='sɛkɔŋ {n}'
     _unit_minute='miniti {n}'
     _unit_hour='tili-waati {n}'
@@ -46,5 +46,5 @@ _locale_mnk() {
     _compact_delimiter=''
     _compact_ago='{0} taata'
     _compact_in_future='ka {0}'
-    _plural_func=_plural_mnk
+    _plural_func=_sayableduration_plural_mnk
 }

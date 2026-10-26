@@ -3,11 +3,16 @@
 Object subclass: #SayableTime
 	instanceVariableNames: 'locale compactness shortClock'
 	classVariableNames: 'Version'
-	package: 'SayableTime'.
+	package: 'SayableTime'!
 
-SayableTime class instanceVariableNames: ''.
+SayableTime class instanceVariableNames: ''!
 
-Version := '0.5.0'.
+!SayableTime class methodsFor: 'class initialization'!
+initialize
+	Version := '0.5.0'
+! !
+
+SayableTime initialize!
 
 !SayableTime class methodsFor: 'accessing'!
 version
@@ -98,22 +103,47 @@ formatDigital: hour minute: minute
 
 !SayableTime methodsFor: 'private-parsing'!
 parseTime: input
-	"Parse HH:MM or ISO datetime to {hour. minute}. Returns nil on failure."
-	| t parts hour minute |
-	t := input.
-	(t includes: $T) ifTrue: [ t := (t substrings: $T) second ].
-	(t includes: $+) ifTrue: [ t := (t substrings: $+) first ].
-	(t includes: $Z) ifTrue: [ t := t copyReplaceAll: 'Z' with: '' ].
-
-	parts := t substrings: $:.
-	parts size < 2 ifTrue: [ ^ nil ].
-	[
-		hour := parts first asInteger.
-		minute := ((parts at: 2) substrings: $.) first asInteger
-	] on: Error do: [ :e | ^ nil ].
-
-	(hour < 0 or: [ hour > 23 or: [ minute < 0 or: [ minute > 59 ] ] ]) ifTrue: [ ^ nil ].
+	"Parse a clock time (H:MM or HH:MM, optional :SS and fraction, optional
+	zone suffix, which is ignored), alone or after the T of an ISO datetime,
+	to {hour. minute}. Returns nil on failure."
+	| tIndex clock colon hour minute second |
+	tIndex := input indexOf: $T.
+	clock := input.
+	tIndex > 0 ifTrue: [
+		(self isRealDate: (input copyFrom: 1 to: tIndex - 1)) ifFalse: [ ^ nil ].
+		clock := input copyFrom: tIndex + 1 to: input size ].
+	(clock matchesRegex: self class clockPattern) ifFalse: [ ^ nil ].
+	colon := clock indexOf: $:.
+	hour := (clock copyFrom: 1 to: colon - 1) asInteger.
+	minute := (clock copyFrom: colon + 1 to: colon + 2) asInteger.
+	second := (clock size >= (colon + 5) and: [ (clock at: colon + 3) = $: ])
+		ifTrue: [ (clock copyFrom: colon + 4 to: colon + 5) asInteger ]
+		ifFalse: [ 0 ].
+	(hour > 23 or: [ minute > 59 or: [ second > 59 ] ]) ifTrue: [ ^ nil ].
 	^ { hour. minute }
+!
+
+isRealDate: aString
+	"True when aString is exactly YYYY-MM-DD naming a real calendar day."
+	| year month day |
+	(aString matchesRegex: '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') ifFalse: [ ^ false ].
+	year := (aString copyFrom: 1 to: 4) asInteger.
+	month := (aString copyFrom: 6 to: 7) asInteger.
+	day := (aString copyFrom: 9 to: 10) asInteger.
+	^ (month between: 1 and: 12) and: [ day between: 1 and: (self daysInMonth: month year: year) ]
+!
+
+daysInMonth: month year: year
+	| isLeap |
+	isLeap := (year \\ 4 = 0 and: [ year \\ 100 ~= 0 ]) or: [ year \\ 400 = 0 ].
+	month = 2 ifTrue: [ ^ isLeap ifTrue: [ 29 ] ifFalse: [ 28 ] ].
+	^ (#(4 6 9 11) includes: month) ifTrue: [ 30 ] ifFalse: [ 31 ]
+! !
+
+!SayableTime class methodsFor: 'parsing'!
+clockPattern
+	"H:MM or HH:MM, optional :SS with an optional fraction, optional zone suffix."
+	^ '[0-9][0-9]?\:[0-9][0-9](\:[0-9][0-9](\.[0-9]+)?)?(Z|\+[0-9][0-9]\:[0-9][0-9]|-[0-9][0-9]\:[0-9][0-9])?'
 ! !
 
 !SayableTime methodsFor: 'private-helpers'!

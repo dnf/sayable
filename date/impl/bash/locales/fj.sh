@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/fj.json
 
-_locale_fj() {
+_sayabledate_locale_fj() {
     _months=('Janueri' 'Feperueri' 'Maji' 'Epereli' 'Me' 'June' 'Julai' 'Okosita' 'Sepiteba' 'Okotova' 'Noveba' 'Tiseba')
     _weekdays=('Sigatapu' 'Moniti' 'Tusiti' 'Vukelulu' 'Lotulevu' 'Vakaraubuka' 'Vakarauwai')
     _day_format='{n}'

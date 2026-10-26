@@ -21,7 +21,9 @@ public object Locales {
     // ================================================================
     // AF — Afrikaans
     // ================================================================
-    public val AF: DurationLocale = DurationLocale(
+    public val AF: DurationLocale = buildAf()
+
+    private fun buildAf(): DurationLocale = DurationLocale(
         code = "af",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -68,7 +70,9 @@ public object Locales {
     // ================================================================
     // AK — Akan
     // ================================================================
-    public val AK: DurationLocale = DurationLocale(
+    public val AK: DurationLocale = buildAk()
+
+    private fun buildAk(): DurationLocale = DurationLocale(
         code = "ak",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -115,7 +119,9 @@ public object Locales {
     // ================================================================
     // AM — Amharic
     // ================================================================
-    public val AM: DurationLocale = DurationLocale(
+    public val AM: DurationLocale = buildAm()
+
+    private fun buildAm(): DurationLocale = DurationLocale(
         code = "am",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -162,7 +168,9 @@ public object Locales {
     // ================================================================
     // AR — Arabic
     // ================================================================
-    public val AR: DurationLocale = DurationLocale(
+    public val AR: DurationLocale = buildAr()
+
+    private fun buildAr(): DurationLocale = DurationLocale(
         code = "ar",
         plural = { n ->
             when {
@@ -218,7 +226,9 @@ public object Locales {
     // ================================================================
     // AY — Aymara
     // ================================================================
-    public val AY: DurationLocale = DurationLocale(
+    public val AY: DurationLocale = buildAy()
+
+    private fun buildAy(): DurationLocale = DurationLocale(
         code = "ay",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -264,7 +274,9 @@ public object Locales {
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
-    public val AZ: DurationLocale = DurationLocale(
+    public val AZ: DurationLocale = buildAz()
+
+    private fun buildAz(): DurationLocale = DurationLocale(
         code = "az",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -311,7 +323,9 @@ public object Locales {
     // ================================================================
     // BCI — Baoulé
     // ================================================================
-    public val BCI: DurationLocale = DurationLocale(
+    public val BCI: DurationLocale = buildBci()
+
+    private fun buildBci(): DurationLocale = DurationLocale(
         code = "bci",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -358,7 +372,9 @@ public object Locales {
     // ================================================================
     // BE — Belarusian
     // ================================================================
-    public val BE: DurationLocale = DurationLocale(
+    public val BE: DurationLocale = buildBe()
+
+    private fun buildBe(): DurationLocale = DurationLocale(
         code = "be",
         plural = { n ->
             val mod10 = n % 10
@@ -413,7 +429,9 @@ public object Locales {
     // ================================================================
     // BEM — Bemba
     // ================================================================
-    public val BEM: DurationLocale = DurationLocale(
+    public val BEM: DurationLocale = buildBem()
+
+    private fun buildBem(): DurationLocale = DurationLocale(
         code = "bem",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -460,7 +478,9 @@ public object Locales {
     // ================================================================
     // BG — Bulgarian
     // ================================================================
-    public val BG: DurationLocale = DurationLocale(
+    public val BG: DurationLocale = buildBg()
+
+    private fun buildBg(): DurationLocale = DurationLocale(
         code = "bg",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -507,7 +527,9 @@ public object Locales {
     // ================================================================
     // BI — Bislama
     // ================================================================
-    public val BI: DurationLocale = DurationLocale(
+    public val BI: DurationLocale = buildBi()
+
+    private fun buildBi(): DurationLocale = DurationLocale(
         code = "bi",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -553,7 +575,9 @@ public object Locales {
     // ================================================================
     // BM — Bambara
     // ================================================================
-    public val BM: DurationLocale = DurationLocale(
+    public val BM: DurationLocale = buildBm()
+
+    private fun buildBm(): DurationLocale = DurationLocale(
         code = "bm",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -600,7 +624,9 @@ public object Locales {
     // ================================================================
     // BN — Bengali
     // ================================================================
-    public val BN: DurationLocale = DurationLocale(
+    public val BN: DurationLocale = buildBn()
+
+    private fun buildBn(): DurationLocale = DurationLocale(
         code = "bn",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -647,7 +673,9 @@ public object Locales {
     // ================================================================
     // BR — Breton
     // ================================================================
-    public val BR: DurationLocale = DurationLocale(
+    public val BR: DurationLocale = buildBr()
+
+    private fun buildBr(): DurationLocale = DurationLocale(
         code = "br",
         plural = { n ->
             val mod10 = n % 10
@@ -704,7 +732,9 @@ public object Locales {
     // ================================================================
     // BS — Bosnian
     // ================================================================
-    public val BS: DurationLocale = DurationLocale(
+    public val BS: DurationLocale = buildBs()
+
+    private fun buildBs(): DurationLocale = DurationLocale(
         code = "bs",
         plural = { n ->
             val mod10 = n % 10
@@ -759,7 +789,9 @@ public object Locales {
     // ================================================================
     // CA — Catalan
     // ================================================================
-    public val CA: DurationLocale = DurationLocale(
+    public val CA: DurationLocale = buildCa()
+
+    private fun buildCa(): DurationLocale = DurationLocale(
         code = "ca",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -806,7 +838,9 @@ public object Locales {
     // ================================================================
     // CAK — Kaqchikel
     // ================================================================
-    public val CAK: DurationLocale = DurationLocale(
+    public val CAK: DurationLocale = buildCak()
+
+    private fun buildCak(): DurationLocale = DurationLocale(
         code = "cak",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -852,7 +886,9 @@ public object Locales {
     // ================================================================
     // CEB — Cebuano
     // ================================================================
-    public val CEB: DurationLocale = DurationLocale(
+    public val CEB: DurationLocale = buildCeb()
+
+    private fun buildCeb(): DurationLocale = DurationLocale(
         code = "ceb",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -899,7 +935,9 @@ public object Locales {
     // ================================================================
     // CS — Czech
     // ================================================================
-    public val CS: DurationLocale = DurationLocale(
+    public val CS: DurationLocale = buildCs()
+
+    private fun buildCs(): DurationLocale = DurationLocale(
         code = "cs",
         plural = { n ->
             when {
@@ -951,7 +989,9 @@ public object Locales {
     // ================================================================
     // CY — Welsh
     // ================================================================
-    public val CY: DurationLocale = DurationLocale(
+    public val CY: DurationLocale = buildCy()
+
+    private fun buildCy(): DurationLocale = DurationLocale(
         code = "cy",
         plural = { n ->
             when (n) {
@@ -1007,7 +1047,9 @@ public object Locales {
     // ================================================================
     // DA — Danish
     // ================================================================
-    public val DA: DurationLocale = DurationLocale(
+    public val DA: DurationLocale = buildDa()
+
+    private fun buildDa(): DurationLocale = DurationLocale(
         code = "da",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1053,7 +1095,9 @@ public object Locales {
     // ================================================================
     // DE — German
     // ================================================================
-    public val DE: DurationLocale = DurationLocale(
+    public val DE: DurationLocale = buildDe()
+
+    private fun buildDe(): DurationLocale = DurationLocale(
         code = "de",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1099,7 +1143,9 @@ public object Locales {
     // ================================================================
     // DIN — Dinka
     // ================================================================
-    public val DIN: DurationLocale = DurationLocale(
+    public val DIN: DurationLocale = buildDin()
+
+    private fun buildDin(): DurationLocale = DurationLocale(
         code = "din",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1146,7 +1192,9 @@ public object Locales {
     // ================================================================
     // DJE — Zarma
     // ================================================================
-    public val DJE: DurationLocale = DurationLocale(
+    public val DJE: DurationLocale = buildDje()
+
+    private fun buildDje(): DurationLocale = DurationLocale(
         code = "dje",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1193,7 +1241,9 @@ public object Locales {
     // ================================================================
     // DV — Dhivehi
     // ================================================================
-    public val DV: DurationLocale = DurationLocale(
+    public val DV: DurationLocale = buildDv()
+
+    private fun buildDv(): DurationLocale = DurationLocale(
         code = "dv",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1239,7 +1289,9 @@ public object Locales {
     // ================================================================
     // DYU — Dyula
     // ================================================================
-    public val DYU: DurationLocale = DurationLocale(
+    public val DYU: DurationLocale = buildDyu()
+
+    private fun buildDyu(): DurationLocale = DurationLocale(
         code = "dyu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1286,7 +1338,9 @@ public object Locales {
     // ================================================================
     // DZ — Dzongkha
     // ================================================================
-    public val DZ: DurationLocale = DurationLocale(
+    public val DZ: DurationLocale = buildDz()
+
+    private fun buildDz(): DurationLocale = DurationLocale(
         code = "dz",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1332,7 +1386,9 @@ public object Locales {
     // ================================================================
     // EE — Ewe
     // ================================================================
-    public val EE: DurationLocale = DurationLocale(
+    public val EE: DurationLocale = buildEe()
+
+    private fun buildEe(): DurationLocale = DurationLocale(
         code = "ee",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1379,7 +1435,9 @@ public object Locales {
     // ================================================================
     // EL — Greek
     // ================================================================
-    public val EL: DurationLocale = DurationLocale(
+    public val EL: DurationLocale = buildEl()
+
+    private fun buildEl(): DurationLocale = DurationLocale(
         code = "el",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1426,7 +1484,9 @@ public object Locales {
     // ================================================================
     // EN — English
     // ================================================================
-    public val EN: DurationLocale = DurationLocale(
+    public val EN: DurationLocale = buildEn()
+
+    private fun buildEn(): DurationLocale = DurationLocale(
         code = "en",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1472,7 +1532,9 @@ public object Locales {
     // ================================================================
     // ES — Spanish
     // ================================================================
-    public val ES: DurationLocale = DurationLocale(
+    public val ES: DurationLocale = buildEs()
+
+    private fun buildEs(): DurationLocale = DurationLocale(
         code = "es",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1519,7 +1581,9 @@ public object Locales {
     // ================================================================
     // ET — Estonian
     // ================================================================
-    public val ET: DurationLocale = DurationLocale(
+    public val ET: DurationLocale = buildEt()
+
+    private fun buildEt(): DurationLocale = DurationLocale(
         code = "et",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1565,7 +1629,9 @@ public object Locales {
     // ================================================================
     // EU — Basque
     // ================================================================
-    public val EU: DurationLocale = DurationLocale(
+    public val EU: DurationLocale = buildEu()
+
+    private fun buildEu(): DurationLocale = DurationLocale(
         code = "eu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1612,7 +1678,9 @@ public object Locales {
     // ================================================================
     // FA — Persian
     // ================================================================
-    public val FA: DurationLocale = DurationLocale(
+    public val FA: DurationLocale = buildFa()
+
+    private fun buildFa(): DurationLocale = DurationLocale(
         code = "fa",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1659,7 +1727,9 @@ public object Locales {
     // ================================================================
     // FAN — Fang
     // ================================================================
-    public val FAN: DurationLocale = DurationLocale(
+    public val FAN: DurationLocale = buildFan()
+
+    private fun buildFan(): DurationLocale = DurationLocale(
         code = "fan",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1706,7 +1776,9 @@ public object Locales {
     // ================================================================
     // FF — Fulah
     // ================================================================
-    public val FF: DurationLocale = DurationLocale(
+    public val FF: DurationLocale = buildFf()
+
+    private fun buildFf(): DurationLocale = DurationLocale(
         code = "ff",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1753,7 +1825,9 @@ public object Locales {
     // ================================================================
     // FI — Finnish
     // ================================================================
-    public val FI: DurationLocale = DurationLocale(
+    public val FI: DurationLocale = buildFi()
+
+    private fun buildFi(): DurationLocale = DurationLocale(
         code = "fi",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1800,7 +1874,9 @@ public object Locales {
     // ================================================================
     // FIL — Filipino
     // ================================================================
-    public val FIL: DurationLocale = DurationLocale(
+    public val FIL: DurationLocale = buildFil()
+
+    private fun buildFil(): DurationLocale = DurationLocale(
         code = "fil",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1847,7 +1923,9 @@ public object Locales {
     // ================================================================
     // FJ — Fijian
     // ================================================================
-    public val FJ: DurationLocale = DurationLocale(
+    public val FJ: DurationLocale = buildFj()
+
+    private fun buildFj(): DurationLocale = DurationLocale(
         code = "fj",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1893,7 +1971,9 @@ public object Locales {
     // ================================================================
     // FON — Fon
     // ================================================================
-    public val FON: DurationLocale = DurationLocale(
+    public val FON: DurationLocale = buildFon()
+
+    private fun buildFon(): DurationLocale = DurationLocale(
         code = "fon",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -1940,7 +2020,9 @@ public object Locales {
     // ================================================================
     // FR — French
     // ================================================================
-    public val FR: DurationLocale = DurationLocale(
+    public val FR: DurationLocale = buildFr()
+
+    private fun buildFr(): DurationLocale = DurationLocale(
         code = "fr",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -1987,7 +2069,9 @@ public object Locales {
     // ================================================================
     // GA — Irish
     // ================================================================
-    public val GA: DurationLocale = DurationLocale(
+    public val GA: DurationLocale = buildGa()
+
+    private fun buildGa(): DurationLocale = DurationLocale(
         code = "ga",
         plural = { n ->
             when {
@@ -2042,7 +2126,9 @@ public object Locales {
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
-    public val GD: DurationLocale = DurationLocale(
+    public val GD: DurationLocale = buildGd()
+
+    private fun buildGd(): DurationLocale = DurationLocale(
         code = "gd",
         plural = { n ->
             when {
@@ -2096,7 +2182,9 @@ public object Locales {
     // ================================================================
     // GL — Galician
     // ================================================================
-    public val GL: DurationLocale = DurationLocale(
+    public val GL: DurationLocale = buildGl()
+
+    private fun buildGl(): DurationLocale = DurationLocale(
         code = "gl",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2143,7 +2231,9 @@ public object Locales {
     // ================================================================
     // GN — Guarani
     // ================================================================
-    public val GN: DurationLocale = DurationLocale(
+    public val GN: DurationLocale = buildGn()
+
+    private fun buildGn(): DurationLocale = DurationLocale(
         code = "gn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2190,7 +2280,9 @@ public object Locales {
     // ================================================================
     // GU — Gujarati
     // ================================================================
-    public val GU: DurationLocale = DurationLocale(
+    public val GU: DurationLocale = buildGu()
+
+    private fun buildGu(): DurationLocale = DurationLocale(
         code = "gu",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2237,7 +2329,9 @@ public object Locales {
     // ================================================================
     // GV — Manx
     // ================================================================
-    public val GV: DurationLocale = DurationLocale(
+    public val GV: DurationLocale = buildGv()
+
+    private fun buildGv(): DurationLocale = DurationLocale(
         code = "gv",
         plural = { n ->
             val mod10 = n % 10
@@ -2293,7 +2387,9 @@ public object Locales {
     // ================================================================
     // HA — Hausa
     // ================================================================
-    public val HA: DurationLocale = DurationLocale(
+    public val HA: DurationLocale = buildHa()
+
+    private fun buildHa(): DurationLocale = DurationLocale(
         code = "ha",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2340,7 +2436,9 @@ public object Locales {
     // ================================================================
     // HE — Hebrew
     // ================================================================
-    public val HE: DurationLocale = DurationLocale(
+    public val HE: DurationLocale = buildHe()
+
+    private fun buildHe(): DurationLocale = DurationLocale(
         code = "he",
         plural = { n ->
             when (n) {
@@ -2393,7 +2491,9 @@ public object Locales {
     // ================================================================
     // HI — Hindi
     // ================================================================
-    public val HI: DurationLocale = DurationLocale(
+    public val HI: DurationLocale = buildHi()
+
+    private fun buildHi(): DurationLocale = DurationLocale(
         code = "hi",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2440,7 +2540,9 @@ public object Locales {
     // ================================================================
     // HMN — Hmong
     // ================================================================
-    public val HMN: DurationLocale = DurationLocale(
+    public val HMN: DurationLocale = buildHmn()
+
+    private fun buildHmn(): DurationLocale = DurationLocale(
         code = "hmn",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2486,7 +2588,9 @@ public object Locales {
     // ================================================================
     // HR — Croatian
     // ================================================================
-    public val HR: DurationLocale = DurationLocale(
+    public val HR: DurationLocale = buildHr()
+
+    private fun buildHr(): DurationLocale = DurationLocale(
         code = "hr",
         plural = { n ->
             val mod10 = n % 10
@@ -2541,7 +2645,9 @@ public object Locales {
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
-    public val HT: DurationLocale = DurationLocale(
+    public val HT: DurationLocale = buildHt()
+
+    private fun buildHt(): DurationLocale = DurationLocale(
         code = "ht",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2588,7 +2694,9 @@ public object Locales {
     // ================================================================
     // HU — Hungarian
     // ================================================================
-    public val HU: DurationLocale = DurationLocale(
+    public val HU: DurationLocale = buildHu()
+
+    private fun buildHu(): DurationLocale = DurationLocale(
         code = "hu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2635,7 +2743,9 @@ public object Locales {
     // ================================================================
     // HY — Armenian
     // ================================================================
-    public val HY: DurationLocale = DurationLocale(
+    public val HY: DurationLocale = buildHy()
+
+    private fun buildHy(): DurationLocale = DurationLocale(
         code = "hy",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2682,7 +2792,9 @@ public object Locales {
     // ================================================================
     // ID — Indonesian
     // ================================================================
-    public val ID: DurationLocale = DurationLocale(
+    public val ID: DurationLocale = buildId()
+
+    private fun buildId(): DurationLocale = DurationLocale(
         code = "id",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2729,7 +2841,9 @@ public object Locales {
     // ================================================================
     // IG — Igbo
     // ================================================================
-    public val IG: DurationLocale = DurationLocale(
+    public val IG: DurationLocale = buildIg()
+
+    private fun buildIg(): DurationLocale = DurationLocale(
         code = "ig",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2776,7 +2890,9 @@ public object Locales {
     // ================================================================
     // IS — Icelandic
     // ================================================================
-    public val IS: DurationLocale = DurationLocale(
+    public val IS: DurationLocale = buildIs()
+
+    private fun buildIs(): DurationLocale = DurationLocale(
         code = "is",
         plural = { n ->
             val mod10 = n % 10
@@ -2827,7 +2943,9 @@ public object Locales {
     // ================================================================
     // IT — Italian
     // ================================================================
-    public val IT: DurationLocale = DurationLocale(
+    public val IT: DurationLocale = buildIt()
+
+    private fun buildIt(): DurationLocale = DurationLocale(
         code = "it",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -2874,7 +2992,9 @@ public object Locales {
     // ================================================================
     // JA — Japanese
     // ================================================================
-    public val JA: DurationLocale = DurationLocale(
+    public val JA: DurationLocale = buildJa()
+
+    private fun buildJa(): DurationLocale = DurationLocale(
         code = "ja",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2920,7 +3040,9 @@ public object Locales {
     // ================================================================
     // JV — Javanese
     // ================================================================
-    public val JV: DurationLocale = DurationLocale(
+    public val JV: DurationLocale = buildJv()
+
+    private fun buildJv(): DurationLocale = DurationLocale(
         code = "jv",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -2967,7 +3089,9 @@ public object Locales {
     // ================================================================
     // KA — Georgian
     // ================================================================
-    public val KA: DurationLocale = DurationLocale(
+    public val KA: DurationLocale = buildKa()
+
+    private fun buildKa(): DurationLocale = DurationLocale(
         code = "ka",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3014,7 +3138,9 @@ public object Locales {
     // ================================================================
     // KBP — Kabiye
     // ================================================================
-    public val KBP: DurationLocale = DurationLocale(
+    public val KBP: DurationLocale = buildKbp()
+
+    private fun buildKbp(): DurationLocale = DurationLocale(
         code = "kbp",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3061,7 +3187,9 @@ public object Locales {
     // ================================================================
     // KEK — Q'eqchi'
     // ================================================================
-    public val KEK: DurationLocale = DurationLocale(
+    public val KEK: DurationLocale = buildKek()
+
+    private fun buildKek(): DurationLocale = DurationLocale(
         code = "kek",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3107,7 +3235,9 @@ public object Locales {
     // ================================================================
     // KI — Kikuyu
     // ================================================================
-    public val KI: DurationLocale = DurationLocale(
+    public val KI: DurationLocale = buildKi()
+
+    private fun buildKi(): DurationLocale = DurationLocale(
         code = "ki",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3153,7 +3283,9 @@ public object Locales {
     // ================================================================
     // KK — Kazakh
     // ================================================================
-    public val KK: DurationLocale = DurationLocale(
+    public val KK: DurationLocale = buildKk()
+
+    private fun buildKk(): DurationLocale = DurationLocale(
         code = "kk",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3200,7 +3332,9 @@ public object Locales {
     // ================================================================
     // KL — Kalaallisut
     // ================================================================
-    public val KL: DurationLocale = DurationLocale(
+    public val KL: DurationLocale = buildKl()
+
+    private fun buildKl(): DurationLocale = DurationLocale(
         code = "kl",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3246,7 +3380,9 @@ public object Locales {
     // ================================================================
     // KM — Khmer
     // ================================================================
-    public val KM: DurationLocale = DurationLocale(
+    public val KM: DurationLocale = buildKm()
+
+    private fun buildKm(): DurationLocale = DurationLocale(
         code = "km",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3293,7 +3429,9 @@ public object Locales {
     // ================================================================
     // KN — Kannada
     // ================================================================
-    public val KN: DurationLocale = DurationLocale(
+    public val KN: DurationLocale = buildKn()
+
+    private fun buildKn(): DurationLocale = DurationLocale(
         code = "kn",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3340,7 +3478,9 @@ public object Locales {
     // ================================================================
     // KO — Korean
     // ================================================================
-    public val KO: DurationLocale = DurationLocale(
+    public val KO: DurationLocale = buildKo()
+
+    private fun buildKo(): DurationLocale = DurationLocale(
         code = "ko",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3386,7 +3526,9 @@ public object Locales {
     // ================================================================
     // KPE — Kpelle
     // ================================================================
-    public val KPE: DurationLocale = DurationLocale(
+    public val KPE: DurationLocale = buildKpe()
+
+    private fun buildKpe(): DurationLocale = DurationLocale(
         code = "kpe",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3433,7 +3575,9 @@ public object Locales {
     // ================================================================
     // KRI — Krio
     // ================================================================
-    public val KRI: DurationLocale = DurationLocale(
+    public val KRI: DurationLocale = buildKri()
+
+    private fun buildKri(): DurationLocale = DurationLocale(
         code = "kri",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3479,7 +3623,9 @@ public object Locales {
     // ================================================================
     // KTU — Kituba
     // ================================================================
-    public val KTU: DurationLocale = DurationLocale(
+    public val KTU: DurationLocale = buildKtu()
+
+    private fun buildKtu(): DurationLocale = DurationLocale(
         code = "ktu",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3526,7 +3672,9 @@ public object Locales {
     // ================================================================
     // KU — Kurdish
     // ================================================================
-    public val KU: DurationLocale = DurationLocale(
+    public val KU: DurationLocale = buildKu()
+
+    private fun buildKu(): DurationLocale = DurationLocale(
         code = "ku",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3573,7 +3721,9 @@ public object Locales {
     // ================================================================
     // KW — Cornish
     // ================================================================
-    public val KW: DurationLocale = DurationLocale(
+    public val KW: DurationLocale = buildKw()
+
+    private fun buildKw(): DurationLocale = DurationLocale(
         code = "kw",
         plural = { n ->
             when {
@@ -3634,7 +3784,9 @@ public object Locales {
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
-    public val KY: DurationLocale = DurationLocale(
+    public val KY: DurationLocale = buildKy()
+
+    private fun buildKy(): DurationLocale = DurationLocale(
         code = "ky",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3681,7 +3833,9 @@ public object Locales {
     // ================================================================
     // LB — Luxembourgish
     // ================================================================
-    public val LB: DurationLocale = DurationLocale(
+    public val LB: DurationLocale = buildLb()
+
+    private fun buildLb(): DurationLocale = DurationLocale(
         code = "lb",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3727,7 +3881,9 @@ public object Locales {
     // ================================================================
     // LG — Luganda
     // ================================================================
-    public val LG: DurationLocale = DurationLocale(
+    public val LG: DurationLocale = buildLg()
+
+    private fun buildLg(): DurationLocale = DurationLocale(
         code = "lg",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3774,7 +3930,9 @@ public object Locales {
     // ================================================================
     // LN — Lingala
     // ================================================================
-    public val LN: DurationLocale = DurationLocale(
+    public val LN: DurationLocale = buildLn()
+
+    private fun buildLn(): DurationLocale = DurationLocale(
         code = "ln",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3821,7 +3979,9 @@ public object Locales {
     // ================================================================
     // LO — Lao
     // ================================================================
-    public val LO: DurationLocale = DurationLocale(
+    public val LO: DurationLocale = buildLo()
+
+    private fun buildLo(): DurationLocale = DurationLocale(
         code = "lo",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -3868,7 +4028,9 @@ public object Locales {
     // ================================================================
     // LT — Lithuanian
     // ================================================================
-    public val LT: DurationLocale = DurationLocale(
+    public val LT: DurationLocale = buildLt()
+
+    private fun buildLt(): DurationLocale = DurationLocale(
         code = "lt",
         plural = { n ->
             val mod10 = n % 10
@@ -3922,7 +4084,9 @@ public object Locales {
     // ================================================================
     // LUO — Dholuo
     // ================================================================
-    public val LUO: DurationLocale = DurationLocale(
+    public val LUO: DurationLocale = buildLuo()
+
+    private fun buildLuo(): DurationLocale = DurationLocale(
         code = "luo",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -3968,7 +4132,9 @@ public object Locales {
     // ================================================================
     // LV — Latvian
     // ================================================================
-    public val LV: DurationLocale = DurationLocale(
+    public val LV: DurationLocale = buildLv()
+
+    private fun buildLv(): DurationLocale = DurationLocale(
         code = "lv",
         plural = { n ->
             val mod10 = n % 10
@@ -4022,7 +4188,9 @@ public object Locales {
     // ================================================================
     // MAM — Mam
     // ================================================================
-    public val MAM: DurationLocale = DurationLocale(
+    public val MAM: DurationLocale = buildMam()
+
+    private fun buildMam(): DurationLocale = DurationLocale(
         code = "mam",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4068,7 +4236,9 @@ public object Locales {
     // ================================================================
     // MEN — Mende
     // ================================================================
-    public val MEN: DurationLocale = DurationLocale(
+    public val MEN: DurationLocale = buildMen()
+
+    private fun buildMen(): DurationLocale = DurationLocale(
         code = "men",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4115,7 +4285,9 @@ public object Locales {
     // ================================================================
     // MFE — Mauritian Creole
     // ================================================================
-    public val MFE: DurationLocale = DurationLocale(
+    public val MFE: DurationLocale = buildMfe()
+
+    private fun buildMfe(): DurationLocale = DurationLocale(
         code = "mfe",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4162,7 +4334,9 @@ public object Locales {
     // ================================================================
     // MG — Malagasy
     // ================================================================
-    public val MG: DurationLocale = DurationLocale(
+    public val MG: DurationLocale = buildMg()
+
+    private fun buildMg(): DurationLocale = DurationLocale(
         code = "mg",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4209,7 +4383,9 @@ public object Locales {
     // ================================================================
     // MI — Māori
     // ================================================================
-    public val MI: DurationLocale = DurationLocale(
+    public val MI: DurationLocale = buildMi()
+
+    private fun buildMi(): DurationLocale = DurationLocale(
         code = "mi",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4256,7 +4432,9 @@ public object Locales {
     // ================================================================
     // MK — Macedonian
     // ================================================================
-    public val MK: DurationLocale = DurationLocale(
+    public val MK: DurationLocale = buildMk()
+
+    private fun buildMk(): DurationLocale = DurationLocale(
         code = "mk",
         plural = { n ->
             val mod10 = n % 10
@@ -4307,7 +4485,9 @@ public object Locales {
     // ================================================================
     // ML — Malayalam
     // ================================================================
-    public val ML: DurationLocale = DurationLocale(
+    public val ML: DurationLocale = buildMl()
+
+    private fun buildMl(): DurationLocale = DurationLocale(
         code = "ml",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4354,7 +4534,9 @@ public object Locales {
     // ================================================================
     // MN — Mongolian
     // ================================================================
-    public val MN: DurationLocale = DurationLocale(
+    public val MN: DurationLocale = buildMn()
+
+    private fun buildMn(): DurationLocale = DurationLocale(
         code = "mn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4401,7 +4583,9 @@ public object Locales {
     // ================================================================
     // MNK — Mandinka
     // ================================================================
-    public val MNK: DurationLocale = DurationLocale(
+    public val MNK: DurationLocale = buildMnk()
+
+    private fun buildMnk(): DurationLocale = DurationLocale(
         code = "mnk",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4448,7 +4632,9 @@ public object Locales {
     // ================================================================
     // MOS — Moore
     // ================================================================
-    public val MOS: DurationLocale = DurationLocale(
+    public val MOS: DurationLocale = buildMos()
+
+    private fun buildMos(): DurationLocale = DurationLocale(
         code = "mos",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4495,7 +4681,9 @@ public object Locales {
     // ================================================================
     // MR — Marathi
     // ================================================================
-    public val MR: DurationLocale = DurationLocale(
+    public val MR: DurationLocale = buildMr()
+
+    private fun buildMr(): DurationLocale = DurationLocale(
         code = "mr",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4542,7 +4730,9 @@ public object Locales {
     // ================================================================
     // MS — Malay
     // ================================================================
-    public val MS: DurationLocale = DurationLocale(
+    public val MS: DurationLocale = buildMs()
+
+    private fun buildMs(): DurationLocale = DurationLocale(
         code = "ms",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4589,7 +4779,9 @@ public object Locales {
     // ================================================================
     // MT — Maltese
     // ================================================================
-    public val MT: DurationLocale = DurationLocale(
+    public val MT: DurationLocale = buildMt()
+
+    private fun buildMt(): DurationLocale = DurationLocale(
         code = "mt",
         plural = { n ->
             when {
@@ -4644,7 +4836,9 @@ public object Locales {
     // ================================================================
     // MY — Burmese
     // ================================================================
-    public val MY: DurationLocale = DurationLocale(
+    public val MY: DurationLocale = buildMy()
+
+    private fun buildMy(): DurationLocale = DurationLocale(
         code = "my",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -4691,7 +4885,9 @@ public object Locales {
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
-    public val NB: DurationLocale = DurationLocale(
+    public val NB: DurationLocale = buildNb()
+
+    private fun buildNb(): DurationLocale = DurationLocale(
         code = "nb",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4737,7 +4933,9 @@ public object Locales {
     // ================================================================
     // ND — Northern Ndebele
     // ================================================================
-    public val ND: DurationLocale = DurationLocale(
+    public val ND: DurationLocale = buildNd()
+
+    private fun buildNd(): DurationLocale = DurationLocale(
         code = "nd",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4784,7 +4982,9 @@ public object Locales {
     // ================================================================
     // NE — Nepali
     // ================================================================
-    public val NE: DurationLocale = DurationLocale(
+    public val NE: DurationLocale = buildNe()
+
+    private fun buildNe(): DurationLocale = DurationLocale(
         code = "ne",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4831,7 +5031,9 @@ public object Locales {
     // ================================================================
     // NG — Oshiwambo
     // ================================================================
-    public val NG: DurationLocale = DurationLocale(
+    public val NG: DurationLocale = buildNg()
+
+    private fun buildNg(): DurationLocale = DurationLocale(
         code = "ng",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4878,7 +5080,9 @@ public object Locales {
     // ================================================================
     // NL — Dutch
     // ================================================================
-    public val NL: DurationLocale = DurationLocale(
+    public val NL: DurationLocale = buildNl()
+
+    private fun buildNl(): DurationLocale = DurationLocale(
         code = "nl",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4924,7 +5128,9 @@ public object Locales {
     // ================================================================
     // NR — Southern Ndebele
     // ================================================================
-    public val NR: DurationLocale = DurationLocale(
+    public val NR: DurationLocale = buildNr()
+
+    private fun buildNr(): DurationLocale = DurationLocale(
         code = "nr",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -4970,7 +5176,9 @@ public object Locales {
     // ================================================================
     // NSO — Northern Sotho
     // ================================================================
-    public val NSO: DurationLocale = DurationLocale(
+    public val NSO: DurationLocale = buildNso()
+
+    private fun buildNso(): DurationLocale = DurationLocale(
         code = "nso",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5017,7 +5225,9 @@ public object Locales {
     // ================================================================
     // NUS — Nuer
     // ================================================================
-    public val NUS: DurationLocale = DurationLocale(
+    public val NUS: DurationLocale = buildNus()
+
+    private fun buildNus(): DurationLocale = DurationLocale(
         code = "nus",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5064,7 +5274,9 @@ public object Locales {
     // ================================================================
     // NY — Chichewa
     // ================================================================
-    public val NY: DurationLocale = DurationLocale(
+    public val NY: DurationLocale = buildNy()
+
+    private fun buildNy(): DurationLocale = DurationLocale(
         code = "ny",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5111,7 +5323,9 @@ public object Locales {
     // ================================================================
     // OM — Oromo
     // ================================================================
-    public val OM: DurationLocale = DurationLocale(
+    public val OM: DurationLocale = buildOm()
+
+    private fun buildOm(): DurationLocale = DurationLocale(
         code = "om",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5158,7 +5372,9 @@ public object Locales {
     // ================================================================
     // OR — Odia
     // ================================================================
-    public val OR: DurationLocale = DurationLocale(
+    public val OR: DurationLocale = buildOr()
+
+    private fun buildOr(): DurationLocale = DurationLocale(
         code = "or",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5205,7 +5421,9 @@ public object Locales {
     // ================================================================
     // PA — Punjabi
     // ================================================================
-    public val PA: DurationLocale = DurationLocale(
+    public val PA: DurationLocale = buildPa()
+
+    private fun buildPa(): DurationLocale = DurationLocale(
         code = "pa",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5252,7 +5470,9 @@ public object Locales {
     // ================================================================
     // PIS — Pijin
     // ================================================================
-    public val PIS: DurationLocale = DurationLocale(
+    public val PIS: DurationLocale = buildPis()
+
+    private fun buildPis(): DurationLocale = DurationLocale(
         code = "pis",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5298,7 +5518,9 @@ public object Locales {
     // ================================================================
     // PL — Polish
     // ================================================================
-    public val PL: DurationLocale = DurationLocale(
+    public val PL: DurationLocale = buildPl()
+
+    private fun buildPl(): DurationLocale = DurationLocale(
         code = "pl",
         plural = { n ->
             if (n == 1) PluralCategory.ONE
@@ -5353,7 +5575,9 @@ public object Locales {
     // ================================================================
     // POV — Guinea-Bissau Creole
     // ================================================================
-    public val POV: DurationLocale = DurationLocale(
+    public val POV: DurationLocale = buildPov()
+
+    private fun buildPov(): DurationLocale = DurationLocale(
         code = "pov",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5400,7 +5624,9 @@ public object Locales {
     // ================================================================
     // PS — Pashto
     // ================================================================
-    public val PS: DurationLocale = DurationLocale(
+    public val PS: DurationLocale = buildPs()
+
+    private fun buildPs(): DurationLocale = DurationLocale(
         code = "ps",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5447,7 +5673,9 @@ public object Locales {
     // ================================================================
     // PT — Portuguese
     // ================================================================
-    public val PT: DurationLocale = DurationLocale(
+    public val PT: DurationLocale = buildPt()
+
+    private fun buildPt(): DurationLocale = DurationLocale(
         code = "pt",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5494,7 +5722,9 @@ public object Locales {
     // ================================================================
     // QU — Quechua
     // ================================================================
-    public val QU: DurationLocale = DurationLocale(
+    public val QU: DurationLocale = buildQu()
+
+    private fun buildQu(): DurationLocale = DurationLocale(
         code = "qu",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5541,7 +5771,9 @@ public object Locales {
     // ================================================================
     // QUC — K'iche'
     // ================================================================
-    public val QUC: DurationLocale = DurationLocale(
+    public val QUC: DurationLocale = buildQuc()
+
+    private fun buildQuc(): DurationLocale = DurationLocale(
         code = "quc",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5587,7 +5819,9 @@ public object Locales {
     // ================================================================
     // RO — Romanian
     // ================================================================
-    public val RO: DurationLocale = DurationLocale(
+    public val RO: DurationLocale = buildRo()
+
+    private fun buildRo(): DurationLocale = DurationLocale(
         code = "ro",
         plural = { n ->
             when {
@@ -5640,7 +5874,9 @@ public object Locales {
     // ================================================================
     // RU — Russian
     // ================================================================
-    public val RU: DurationLocale = DurationLocale(
+    public val RU: DurationLocale = buildRu()
+
+    private fun buildRu(): DurationLocale = DurationLocale(
         code = "ru",
         plural = { n ->
             val mod10 = n % 10
@@ -5695,7 +5931,9 @@ public object Locales {
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
-    public val RW: DurationLocale = DurationLocale(
+    public val RW: DurationLocale = buildRw()
+
+    private fun buildRw(): DurationLocale = DurationLocale(
         code = "rw",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5742,7 +5980,9 @@ public object Locales {
     // ================================================================
     // SAR — Sara
     // ================================================================
-    public val SAR: DurationLocale = DurationLocale(
+    public val SAR: DurationLocale = buildSar()
+
+    private fun buildSar(): DurationLocale = DurationLocale(
         code = "sar",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5789,7 +6029,9 @@ public object Locales {
     // ================================================================
     // SD — Sindhi
     // ================================================================
-    public val SD: DurationLocale = DurationLocale(
+    public val SD: DurationLocale = buildSd()
+
+    private fun buildSd(): DurationLocale = DurationLocale(
         code = "sd",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -5836,7 +6078,9 @@ public object Locales {
     // ================================================================
     // SG — Sango
     // ================================================================
-    public val SG: DurationLocale = DurationLocale(
+    public val SG: DurationLocale = buildSg()
+
+    private fun buildSg(): DurationLocale = DurationLocale(
         code = "sg",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5883,7 +6127,9 @@ public object Locales {
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
-    public val SHI: DurationLocale = DurationLocale(
+    public val SHI: DurationLocale = buildShi()
+
+    private fun buildShi(): DurationLocale = DurationLocale(
         code = "shi",
         plural = { n ->
             when {
@@ -5936,7 +6182,9 @@ public object Locales {
     // ================================================================
     // SHN — Shan
     // ================================================================
-    public val SHN: DurationLocale = DurationLocale(
+    public val SHN: DurationLocale = buildShn()
+
+    private fun buildShn(): DurationLocale = DurationLocale(
         code = "shn",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -5982,7 +6230,9 @@ public object Locales {
     // ================================================================
     // SI — Sinhala
     // ================================================================
-    public val SI: DurationLocale = DurationLocale(
+    public val SI: DurationLocale = buildSi()
+
+    private fun buildSi(): DurationLocale = DurationLocale(
         code = "si",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6029,7 +6279,9 @@ public object Locales {
     // ================================================================
     // SK — Slovak
     // ================================================================
-    public val SK: DurationLocale = DurationLocale(
+    public val SK: DurationLocale = buildSk()
+
+    private fun buildSk(): DurationLocale = DurationLocale(
         code = "sk",
         plural = { n ->
             when {
@@ -6081,7 +6333,9 @@ public object Locales {
     // ================================================================
     // SL — Slovenian
     // ================================================================
-    public val SL: DurationLocale = DurationLocale(
+    public val SL: DurationLocale = buildSl()
+
+    private fun buildSl(): DurationLocale = DurationLocale(
         code = "sl",
         plural = { n ->
             val mod100 = n % 100
@@ -6136,7 +6390,9 @@ public object Locales {
     // ================================================================
     // SN — Shona
     // ================================================================
-    public val SN: DurationLocale = DurationLocale(
+    public val SN: DurationLocale = buildSn()
+
+    private fun buildSn(): DurationLocale = DurationLocale(
         code = "sn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6183,7 +6439,9 @@ public object Locales {
     // ================================================================
     // SNK — Soninke
     // ================================================================
-    public val SNK: DurationLocale = DurationLocale(
+    public val SNK: DurationLocale = buildSnk()
+
+    private fun buildSnk(): DurationLocale = DurationLocale(
         code = "snk",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6230,7 +6488,9 @@ public object Locales {
     // ================================================================
     // SO — Somali
     // ================================================================
-    public val SO: DurationLocale = DurationLocale(
+    public val SO: DurationLocale = buildSo()
+
+    private fun buildSo(): DurationLocale = DurationLocale(
         code = "so",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6277,7 +6537,9 @@ public object Locales {
     // ================================================================
     // SQ — Albanian
     // ================================================================
-    public val SQ: DurationLocale = DurationLocale(
+    public val SQ: DurationLocale = buildSq()
+
+    private fun buildSq(): DurationLocale = DurationLocale(
         code = "sq",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6324,7 +6586,9 @@ public object Locales {
     // ================================================================
     // SR — Serbian
     // ================================================================
-    public val SR: DurationLocale = DurationLocale(
+    public val SR: DurationLocale = buildSr()
+
+    private fun buildSr(): DurationLocale = DurationLocale(
         code = "sr",
         plural = { n ->
             val mod10 = n % 10
@@ -6379,7 +6643,9 @@ public object Locales {
     // ================================================================
     // SS — siSwati
     // ================================================================
-    public val SS: DurationLocale = DurationLocale(
+    public val SS: DurationLocale = buildSs()
+
+    private fun buildSs(): DurationLocale = DurationLocale(
         code = "ss",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6426,7 +6692,9 @@ public object Locales {
     // ================================================================
     // ST — Southern Sotho
     // ================================================================
-    public val ST: DurationLocale = DurationLocale(
+    public val ST: DurationLocale = buildSt()
+
+    private fun buildSt(): DurationLocale = DurationLocale(
         code = "st",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6473,7 +6741,9 @@ public object Locales {
     // ================================================================
     // SU — Sundanese
     // ================================================================
-    public val SU: DurationLocale = DurationLocale(
+    public val SU: DurationLocale = buildSu()
+
+    private fun buildSu(): DurationLocale = DurationLocale(
         code = "su",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6520,7 +6790,9 @@ public object Locales {
     // ================================================================
     // SUK — Sukuma
     // ================================================================
-    public val SUK: DurationLocale = DurationLocale(
+    public val SUK: DurationLocale = buildSuk()
+
+    private fun buildSuk(): DurationLocale = DurationLocale(
         code = "suk",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6567,7 +6839,9 @@ public object Locales {
     // ================================================================
     // SV — Swedish
     // ================================================================
-    public val SV: DurationLocale = DurationLocale(
+    public val SV: DurationLocale = buildSv()
+
+    private fun buildSv(): DurationLocale = DurationLocale(
         code = "sv",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6613,7 +6887,9 @@ public object Locales {
     // ================================================================
     // SW — Swahili
     // ================================================================
-    public val SW: DurationLocale = DurationLocale(
+    public val SW: DurationLocale = buildSw()
+
+    private fun buildSw(): DurationLocale = DurationLocale(
         code = "sw",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6660,7 +6936,9 @@ public object Locales {
     // ================================================================
     // TA — Tamil
     // ================================================================
-    public val TA: DurationLocale = DurationLocale(
+    public val TA: DurationLocale = buildTa()
+
+    private fun buildTa(): DurationLocale = DurationLocale(
         code = "ta",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6706,7 +6984,9 @@ public object Locales {
     // ================================================================
     // TE — Telugu
     // ================================================================
-    public val TE: DurationLocale = DurationLocale(
+    public val TE: DurationLocale = buildTe()
+
+    private fun buildTe(): DurationLocale = DurationLocale(
         code = "te",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6753,7 +7033,9 @@ public object Locales {
     // ================================================================
     // TEM — Temne
     // ================================================================
-    public val TEM: DurationLocale = DurationLocale(
+    public val TEM: DurationLocale = buildTem()
+
+    private fun buildTem(): DurationLocale = DurationLocale(
         code = "tem",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6800,7 +7082,9 @@ public object Locales {
     // ================================================================
     // TET — Tetum
     // ================================================================
-    public val TET: DurationLocale = DurationLocale(
+    public val TET: DurationLocale = buildTet()
+
+    private fun buildTet(): DurationLocale = DurationLocale(
         code = "tet",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6846,7 +7130,9 @@ public object Locales {
     // ================================================================
     // TG — Tajik
     // ================================================================
-    public val TG: DurationLocale = DurationLocale(
+    public val TG: DurationLocale = buildTg()
+
+    private fun buildTg(): DurationLocale = DurationLocale(
         code = "tg",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6893,7 +7179,9 @@ public object Locales {
     // ================================================================
     // TH — Thai
     // ================================================================
-    public val TH: DurationLocale = DurationLocale(
+    public val TH: DurationLocale = buildTh()
+
+    private fun buildTh(): DurationLocale = DurationLocale(
         code = "th",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -6940,7 +7228,9 @@ public object Locales {
     // ================================================================
     // TI — Tigrinya
     // ================================================================
-    public val TI: DurationLocale = DurationLocale(
+    public val TI: DurationLocale = buildTi()
+
+    private fun buildTi(): DurationLocale = DurationLocale(
         code = "ti",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -6987,7 +7277,9 @@ public object Locales {
     // ================================================================
     // TIG — Tigre
     // ================================================================
-    public val TIG: DurationLocale = DurationLocale(
+    public val TIG: DurationLocale = buildTig()
+
+    private fun buildTig(): DurationLocale = DurationLocale(
         code = "tig",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7034,7 +7326,9 @@ public object Locales {
     // ================================================================
     // TK — Turkmen
     // ================================================================
-    public val TK: DurationLocale = DurationLocale(
+    public val TK: DurationLocale = buildTk()
+
+    private fun buildTk(): DurationLocale = DurationLocale(
         code = "tk",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7081,7 +7375,9 @@ public object Locales {
     // ================================================================
     // TN — Tswana
     // ================================================================
-    public val TN: DurationLocale = DurationLocale(
+    public val TN: DurationLocale = buildTn()
+
+    private fun buildTn(): DurationLocale = DurationLocale(
         code = "tn",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7128,7 +7424,9 @@ public object Locales {
     // ================================================================
     // TPI — Tok Pisin
     // ================================================================
-    public val TPI: DurationLocale = DurationLocale(
+    public val TPI: DurationLocale = buildTpi()
+
+    private fun buildTpi(): DurationLocale = DurationLocale(
         code = "tpi",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -7174,7 +7472,9 @@ public object Locales {
     // ================================================================
     // TR — Turkish
     // ================================================================
-    public val TR: DurationLocale = DurationLocale(
+    public val TR: DurationLocale = buildTr()
+
+    private fun buildTr(): DurationLocale = DurationLocale(
         code = "tr",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7221,7 +7521,9 @@ public object Locales {
     // ================================================================
     // TS — Tsonga
     // ================================================================
-    public val TS: DurationLocale = DurationLocale(
+    public val TS: DurationLocale = buildTs()
+
+    private fun buildTs(): DurationLocale = DurationLocale(
         code = "ts",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7268,7 +7570,9 @@ public object Locales {
     // ================================================================
     // TUM — Tumbuka
     // ================================================================
-    public val TUM: DurationLocale = DurationLocale(
+    public val TUM: DurationLocale = buildTum()
+
+    private fun buildTum(): DurationLocale = DurationLocale(
         code = "tum",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7314,7 +7618,9 @@ public object Locales {
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
-    public val TZM: DurationLocale = DurationLocale(
+    public val TZM: DurationLocale = buildTzm()
+
+    private fun buildTzm(): DurationLocale = DurationLocale(
         code = "tzm",
         plural = { n ->
             when {
@@ -7366,7 +7672,9 @@ public object Locales {
     // ================================================================
     // UK — Ukrainian
     // ================================================================
-    public val UK: DurationLocale = DurationLocale(
+    public val UK: DurationLocale = buildUk()
+
+    private fun buildUk(): DurationLocale = DurationLocale(
         code = "uk",
         plural = { n ->
             val mod10 = n % 10
@@ -7421,7 +7729,9 @@ public object Locales {
     // ================================================================
     // UMB — Umbundu
     // ================================================================
-    public val UMB: DurationLocale = DurationLocale(
+    public val UMB: DurationLocale = buildUmb()
+
+    private fun buildUmb(): DurationLocale = DurationLocale(
         code = "umb",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7468,7 +7778,9 @@ public object Locales {
     // ================================================================
     // UR — Urdu
     // ================================================================
-    public val UR: DurationLocale = DurationLocale(
+    public val UR: DurationLocale = buildUr()
+
+    private fun buildUr(): DurationLocale = DurationLocale(
         code = "ur",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7515,7 +7827,9 @@ public object Locales {
     // ================================================================
     // UZ — Uzbek
     // ================================================================
-    public val UZ: DurationLocale = DurationLocale(
+    public val UZ: DurationLocale = buildUz()
+
+    private fun buildUz(): DurationLocale = DurationLocale(
         code = "uz",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7562,7 +7876,9 @@ public object Locales {
     // ================================================================
     // VE — Venda
     // ================================================================
-    public val VE: DurationLocale = DurationLocale(
+    public val VE: DurationLocale = buildVe()
+
+    private fun buildVe(): DurationLocale = DurationLocale(
         code = "ve",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7608,7 +7924,9 @@ public object Locales {
     // ================================================================
     // VI — Vietnamese
     // ================================================================
-    public val VI: DurationLocale = DurationLocale(
+    public val VI: DurationLocale = buildVi()
+
+    private fun buildVi(): DurationLocale = DurationLocale(
         code = "vi",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -7655,7 +7973,9 @@ public object Locales {
     // ================================================================
     // VMW — Makhuwa
     // ================================================================
-    public val VMW: DurationLocale = DurationLocale(
+    public val VMW: DurationLocale = buildVmw()
+
+    private fun buildVmw(): DurationLocale = DurationLocale(
         code = "vmw",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7702,7 +8022,9 @@ public object Locales {
     // ================================================================
     // WO — Wolof
     // ================================================================
-    public val WO: DurationLocale = DurationLocale(
+    public val WO: DurationLocale = buildWo()
+
+    private fun buildWo(): DurationLocale = DurationLocale(
         code = "wo",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -7749,7 +8071,9 @@ public object Locales {
     // ================================================================
     // XH — Xhosa
     // ================================================================
-    public val XH: DurationLocale = DurationLocale(
+    public val XH: DurationLocale = buildXh()
+
+    private fun buildXh(): DurationLocale = DurationLocale(
         code = "xh",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7796,7 +8120,9 @@ public object Locales {
     // ================================================================
     // YAO — Yao
     // ================================================================
-    public val YAO: DurationLocale = DurationLocale(
+    public val YAO: DurationLocale = buildYao()
+
+    private fun buildYao(): DurationLocale = DurationLocale(
         code = "yao",
         plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
@@ -7842,7 +8168,9 @@ public object Locales {
     // ================================================================
     // YO — Yoruba
     // ================================================================
-    public val YO: DurationLocale = DurationLocale(
+    public val YO: DurationLocale = buildYo()
+
+    private fun buildYo(): DurationLocale = DurationLocale(
         code = "yo",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -7889,7 +8217,9 @@ public object Locales {
     // ================================================================
     // YUE — Cantonese
     // ================================================================
-    public val YUE: DurationLocale = DurationLocale(
+    public val YUE: DurationLocale = buildYue()
+
+    private fun buildYue(): DurationLocale = DurationLocale(
         code = "yue",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -7936,7 +8266,9 @@ public object Locales {
     // ================================================================
     // ZDJ — Comorian
     // ================================================================
-    public val ZDJ: DurationLocale = DurationLocale(
+    public val ZDJ: DurationLocale = buildZdj()
+
+    private fun buildZdj(): DurationLocale = DurationLocale(
         code = "zdj",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -7983,7 +8315,9 @@ public object Locales {
     // ================================================================
     // ZH — Chinese
     // ================================================================
-    public val ZH: DurationLocale = DurationLocale(
+    public val ZH: DurationLocale = buildZh()
+
+    private fun buildZh(): DurationLocale = DurationLocale(
         code = "zh",
         plural = { _ -> PluralCategory.OTHER },
         units = Units(
@@ -8029,7 +8363,9 @@ public object Locales {
     // ================================================================
     // ZU — Zulu
     // ================================================================
-    public val ZU: DurationLocale = DurationLocale(
+    public val ZU: DurationLocale = buildZu()
+
+    private fun buildZu(): DurationLocale = DurationLocale(
         code = "zu",
         plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(

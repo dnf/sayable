@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/bem.json "
 
-"Locale: bem"
+"Locale: bem"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 bem

@@ -1,6 +1,9 @@
 /// Core formatting logic for sayable-date.
 
+import gleam/bit_array
 import gleam/int
+import gleam/list
+import gleam/result
 import gleam/string
 import sayabledate/types.{
   type Compactness, type DateLocale, Compact, Normal,
@@ -363,29 +366,59 @@ fn try_parse_ref(
   }
 }
 
+/// Parse YYYY-MM-DD, optionally followed by T and a time, naming a real
+/// calendar day.
 fn parse_date(s: String) -> Result(#(Int, Int, Int), Nil) {
-  let date_part = case string.contains(s, "T") {
-    True -> {
-      let parts = string.split(s, "T")
-      case parts {
-        [d, ..] -> d
-        _ -> s
-      }
-    }
-    False -> s
-  }
-  let parts = string.split(date_part, "-")
-  case parts {
-    [year_str, month_str, day_str] ->
-      case int.parse(year_str), int.parse(month_str), int.parse(day_str) {
-        Ok(y), Ok(m), Ok(d) ->
-          case m >= 1 && m <= 12 && d >= 1 && d <= 31 {
+  case bit_array.from_string(s) {
+    <<y1, y2, y3, y4, 0x2D, m1, m2, 0x2D, d1, d2, rest:bits>> ->
+      case is_time_suffix(rest) {
+        False -> Error(Nil)
+        True -> {
+          use y <- result.try(digits_value([y1, y2, y3, y4]))
+          use m <- result.try(digits_value([m1, m2]))
+          use d <- result.try(digits_value([d1, d2]))
+          case m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m) {
             True -> Ok(#(y, m, d))
             False -> Error(Nil)
           }
-        _, _, _ -> Error(Nil)
+        }
       }
     _ -> Error(Nil)
+  }
+}
+
+/// Whatever follows the date: nothing, or the T of an ISO datetime.
+fn is_time_suffix(rest: BitArray) -> Bool {
+  case rest {
+    <<>> -> True
+    <<0x54, _:bits>> -> True
+    _ -> False
+  }
+}
+
+/// The value of a run of ASCII digit bytes, or an error if any byte is not one.
+fn digits_value(bytes: List(Int)) -> Result(Int, Nil) {
+  list.try_fold(bytes, 0, fn(acc, byte) {
+    case byte >= 0x30 && byte <= 0x39 {
+      True -> Ok(acc * 10 + byte - 0x30)
+      False -> Error(Nil)
+    }
+  })
+}
+
+fn is_leap_year(y: Int) -> Bool {
+  { y % 4 == 0 && y % 100 != 0 } || y % 400 == 0
+}
+
+fn days_in_month(y: Int, m: Int) -> Int {
+  case m {
+    4 | 6 | 9 | 11 -> 30
+    2 ->
+      case is_leap_year(y) {
+        True -> 29
+        False -> 28
+      }
+    _ -> 31
   }
 }
 

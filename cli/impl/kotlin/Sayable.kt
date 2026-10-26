@@ -290,7 +290,8 @@ private fun cmdDuration(positionals: List<String>, localeCode: String, compactne
         // null -> formatDurationSeconds(-1) which returns null
         formatter.formatDurationSeconds(-1)
     } else if (isInteger(value)) {
-        formatter.formatDurationSeconds(value.toInt())
+        // A digit string too long for a Long is far beyond the 500-year ceiling
+        value.toLongOrNull()?.let { formatter.formatDurationSeconds(it) }
     } else {
         // Timestamp mode: need an end argument
         if (positionals.size < 2) usage("duration with timestamps requires start and end arguments")

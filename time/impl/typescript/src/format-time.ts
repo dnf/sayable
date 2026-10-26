@@ -3,19 +3,32 @@ import { en } from './locale.js';
 
 export const VERSION = '0.5.0';
 
-/** Parse HH:MM or ISO datetime to [hour, minute]. Returns null on failure. */
+/**
+ * A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+ * suffix, which is ignored), alone or after the T of an ISO datetime.
+ */
+const TIME_PATTERN =
+  /^(?:(\d{4})-(\d{2})-(\d{2})T)?(\d{1,2}):(\d{2})(?::(\d{2})(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})?$/;
+
+function daysInMonth(year: number, month: number): number {
+  if (month === 2) return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
+  return month === 4 || month === 6 || month === 9 || month === 11 ? 30 : 31;
+}
+
+function isRealDate(year: number, month: number, day: number): boolean {
+  return month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth(year, month);
+}
+
+/** Parse a clock time or ISO datetime to [hour, minute]. Returns null on failure. */
 function parseTime(input: string): [number, number] | null {
-  if (!input) return null;
-  let t = input;
-  if (t.includes('T')) t = t.split('T')[1] ?? '';
-  if (t.includes('+')) t = t.split('+')[0] ?? '';
-  if (t.includes('Z')) t = t.split('Z')[0] ?? '';
-  const parts = t.split(':');
-  if (parts.length < 2) return null;
-  const hour = Number(parts[0]);
-  const minute = Number(parts[1]);
-  if (isNaN(hour) || isNaN(minute)) return null;
-  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return null;
+  const match = TIME_PATTERN.exec(input);
+  if (!match) return null;
+  const hasDate = match[1] !== undefined;
+  if (hasDate && !isRealDate(Number(match[1]), Number(match[2]), Number(match[3]))) return null;
+  const hour = Number(match[4]);
+  const minute = Number(match[5]);
+  const second = match[6] === undefined ? 0 : Number(match[6]);
+  if (hour > 23 || minute > 59 || second > 59) return null;
   return [hour, minute];
 }
 

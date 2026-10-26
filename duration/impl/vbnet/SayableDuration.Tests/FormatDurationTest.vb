@@ -394,6 +394,95 @@ Namespace SayableDuration.Tests
             Assert.Equal("1m30s", sd.FormatDuration(90))
         End Sub
 
+        ' ================================================================
+        ' Short compactness — relative time
+        ' ================================================================
+
+        ' 18.1
+        <Fact>
+        Public Sub Spec18_1_DaysAndHoursBothKept()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.MEN, Compactness.Short)
+            Assert.Equal("lɔhɔnga 2, awa 14 taa gbɔyɔ", f.Since("2025-01-20T01:32:11", "2025-01-22T15:39:16"))
+        End Sub
+
+        ' ================================================================
+        ' Range (500-year ceiling)
+        ' ================================================================
+
+        ' 19.1
+        <Fact>
+        Public Sub Spec19_1_500JulianYears6000MonthsTheCeiling()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Equal("500 years", f.FormatDuration(15778800000L))
+        End Sub
+
+        ' 19.2
+        <Fact>
+        Public Sub Spec19_2_Over6000Months()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.FormatDuration(15800000000L))
+        End Sub
+
+        ' 19.3
+        <Fact>
+        Public Sub Spec19_3_WellBeyondTheCeilingAnd32Bit()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.FormatDuration(99999999999L))
+        End Sub
+
+        ' 19.4
+        <Fact>
+        Public Sub Spec19_4_525YearsAgo()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.Since("1500-01-01T00:00:00", "2025-01-01T00:00:00"))
+        End Sub
+
+        ' 19.5
+        <Fact>
+        Public Sub Spec19_5_575YearsFromNow()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.Until("2600-01-01T00:00:00", "2025-01-01T00:00:00"))
+        End Sub
+
+        ' ================================================================
+        ' Timestamp validation
+        ' ================================================================
+
+        ' 20.1
+        <Fact>
+        Public Sub Spec20_1_SecondsAreOptional()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Equal("1½ hours", f.FormatIso("2025-01-15T10:00", "2025-01-15T11:30:00"))
+        End Sub
+
+        ' 20.2
+        <Fact>
+        Public Sub Spec20_2_MinutesAreRequired()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.FormatIso("2025-01-15T10", "2025-01-15T11:30:00"))
+        End Sub
+
+        ' 20.3
+        <Fact>
+        Public Sub Spec20_3_UnpaddedDate()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.FormatIso("2025-1-5T10:00:00", "2025-01-15T11:30:00"))
+        End Sub
+
+        ' 20.4
+        <Fact>
+        Public Sub Spec20_4_ImpossibleDate()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.FormatIso("2025-02-30T10:00:00", "2025-03-15T11:30:00"))
+        End Sub
+
+        ' 20.5
+        <Fact>
+        Public Sub Spec20_5_HourOutOfRange()
+            Dim f = New SayableDurationLib.SayableDuration(Locales.EN)
+            Assert.Null(f.Since("2025-01-15T10:00:00", "2025-01-15T25:00:00"))
+        End Sub
+
     End Class
 
 End Namespace

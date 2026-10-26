@@ -18,7 +18,7 @@ def emit_locale(data: dict) -> str:
     lines = [HEADER + locale_source_comment(code, line_prefix="# ")]
 
     # Locale data function that sets variables in the caller's scope
-    lines.append(f"_locale_{code}() {{")
+    lines.append(f"_sayabledate_locale_{code}() {{")
 
     # Months (0-indexed array)
     months_str = " ".join(_quote(m) for m in data["months"])
@@ -110,7 +110,7 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("    local known")
     lines.append("    for known in ${_SAYABLEDATE_LOCALES}; do")
     lines.append("        if [ \"${known}\" = \"${code}\" ]; then")
-    lines.append("            _locale_${code}")
+    lines.append("            _sayabledate_locale_${code}")
     lines.append("            return 0")
     lines.append("        fi")
     lines.append("    done")

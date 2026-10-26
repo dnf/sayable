@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/shi.json "
 
-"Locale: shi"
+"Locale: shi"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 shi

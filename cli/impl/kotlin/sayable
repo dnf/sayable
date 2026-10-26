@@ -11,12 +11,15 @@ DATE_JAR="${PROJECT_ROOT}/date/impl/kotlin/build/libs/sayable-date-0.5.0.jar"
 TIME_JAR="${PROJECT_ROOT}/time/impl/kotlin/build/libs/sayable-time-0.5.0.jar"
 DURATION_JAR="${PROJECT_ROOT}/duration/impl/kotlin/build/libs/sayable-duration-0.5.0.jar"
 
-# Build component jars if they don't exist
+# Build a component jar if it is missing or older than any of its sources
 build_if_needed() {
     local component="$1" jar="$2"
-    if [[ ! -f "${jar}" ]]; then
+    local src_dir="${PROJECT_ROOT}/${component}/impl/kotlin/src/main"
+    if [[ ! -f "${jar}" || -n "$(find "${src_dir}" -name '*.kt' -newer "${jar}" 2>/dev/null | head -1)" ]]; then
         echo "Building ${component} jar..." >&2
         (cd "${PROJECT_ROOT}/${component}/impl/kotlin" && ./gradlew jar --quiet)
+        # Gradle leaves an up-to-date jar untouched; mark it as checked
+        touch "${jar}"
     fi
 }
 
@@ -56,9 +59,21 @@ KOTLIN_STDLIB="${KOTLIN_LIB}/kotlin-stdlib.jar"
 # Build directory for the CLI
 BUILD_DIR="${SCRIPT_DIR}/build"
 
-# Compile CLI if needed
-if [[ ! -f "${BUILD_DIR}/SayableKt.class" ]] || \
-   [[ "${SCRIPT_DIR}/Sayable.kt" -nt "${BUILD_DIR}/SayableKt.class" ]]; then
+# Compile CLI if it is missing or older than its source or any component jar
+_needs_build=false
+if [[ ! -f "${BUILD_DIR}/SayableKt.class" ]]; then
+    _needs_build=true
+else
+    for _input in "${SCRIPT_DIR}/Sayable.kt" "${AGE_JAR}" "${DATE_JAR}" "${TIME_JAR}" "${DURATION_JAR}"; do
+        if [[ "${_input}" -nt "${BUILD_DIR}/SayableKt.class" ]]; then
+            _needs_build=true
+            break
+        fi
+    done
+fi
+
+if ${_needs_build}; then
+    rm -rf "${BUILD_DIR}"
     mkdir -p "${BUILD_DIR}"
     kotlinc -nowarn \
         -cp "${CP}" \

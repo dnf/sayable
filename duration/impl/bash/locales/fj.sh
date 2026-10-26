@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/fj.json
 
-_plural_fj() {
+_sayableduration_plural_fj() {
     echo "other"
 }
 
-_locale_fj() {
+_sayableduration_locale_fj() {
     _unit_second='{n} na sekodi'
     _unit_minute='{n} na miniti'
     _unit_hour='{n} na aua'
@@ -45,5 +45,5 @@ _locale_fj() {
     _compact_delimiter=''
     _compact_ago='{0} sa oti'
     _compact_in_future='ena {0}'
-    _plural_func=_plural_fj
+    _plural_func=_sayableduration_plural_fj
 }

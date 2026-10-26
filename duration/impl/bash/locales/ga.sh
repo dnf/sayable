@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ga.json
 
-_plural_ga() {
+_sayableduration_plural_ga() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ]; then echo "two"; return; fi
@@ -18,7 +18,7 @@ _plural_ga() {
     echo "other"
 }
 
-_locale_ga() {
+_sayableduration_locale_ga() {
     _unit_second_one='{n} soicind'
     _unit_second_two='{n} shoicind'
     _unit_second_few='{n} shoicind'
@@ -91,5 +91,5 @@ _locale_ga() {
     _compact_delimiter=''
     _compact_ago='{0} ó shin'
     _compact_in_future='i gceann {0}'
-    _plural_func=_plural_ga
+    _plural_func=_sayableduration_plural_ga
 }

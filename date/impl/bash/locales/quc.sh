@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/quc.json
 
-_locale_quc() {
+_sayabledate_locale_quc() {
     _months=('Nab'\''e ik'\''' 'Ukab'\'' ik'\''' 'Urox ik'\''' 'Ukaj ik'\''' 'Uro'\'' ik'\''' 'Uwaq ik'\''' 'Uwuq ik'\''' 'Uwajxaq ik'\''' 'Ub'\''elej ik'\''' 'Ulaj ik'\''' 'Ujulaj ik'\''' 'Ukab'\''laj ik'\''')
     _weekdays=('Domingo' 'Lunes' 'Martes' 'Miércoles' 'Jueves' 'Viernes' 'Sábado')
     _day_format='{n}'

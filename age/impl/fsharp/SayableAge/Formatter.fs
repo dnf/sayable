@@ -26,15 +26,28 @@ module Formatter =
                 i <- i + 1
         if ok then n else -1
 
+    // DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+    let private daysInMonth (year: int) (month: int) : int =
+        match month with
+        | 2 -> if (year % 4 = 0 && year % 100 <> 0) || year % 400 = 0 then 29 else 28
+        | 4 | 6 | 9 | 11 -> 30
+        | _ -> 31
+
+    let private julianDay (year: int) (month: int) (day: int) : int =
+        let a = (14 - month) / 12
+        let y = year + 4800 - a
+        let m = month + 12 * a - 3
+        day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045
+
+    /// Parses exactly YYYY-MM-DD naming a real calendar day.
     let private parseDateParts (s: string) : (int * int * int) option =
-        if s.Length < 10 || s.[4] <> '-' || s.[7] <> '-' then
+        if s.Length <> 10 || s.[4] <> '-' || s.[7] <> '-' then
             None
         else
             let y = safeAtoi s 0 4
             let m = safeAtoi s 5 7
             let d = safeAtoi s 8 10
-            if y < 0 || m < 0 || d < 0 then None
-            elif y = 0 && m = 0 && d = 0 then None
+            if y < 0 || m < 1 || m > 12 || d < 1 || d > daysInMonth y m then None
             else Some(y, m, d)
 
     let private parseAge (dateOfBirth: string option) (asOf: string option) : AgeComponents option =
@@ -58,13 +71,11 @@ module Formatter =
                 if refY < 0 then
                     None
                 else
-                    let dobDate = DateTime(dobY, dobM, dobD)
-                    let refDate = DateTime(refY, refM, refD)
-                    let diffDays = int (refDate - dobDate).TotalDays
+                    let diffDays = julianDay refY refM refD - julianDay dobY dobM dobD
                     if diffDays < 0 then
                         None
                     else
-                        let lastDay = DateTime.DaysInMonth(refY, refM)
+                        let lastDay = daysInMonth refY refM
                         let clampedBirthday = min dobD lastDay
                         let mutable months = (refY - dobY) * 12 + (refM - dobM)
                         if refD < clampedBirthday then months <- months - 1

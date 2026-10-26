@@ -66,24 +66,43 @@ format_relative(Code, Date, AsOf, Compactness, Result) :-
     Diff is DateJDN - AsOfJDN,
     format_relative_diff(Code, Diff, DY, DM, DD, AY, Compactness, Result).
 
-%% parse_date(+Atom, -Y, -M, -D) — parse YYYY-MM-DD or ISO datetime.
+%% parse_date(+Atom, -Y, -M, -D) — parse YYYY-MM-DD, optionally followed by
+%% T and anything else (an ISO datetime). The date must name a real calendar
+%% day (docs/input-formats.md). Fails for anything else.
 parse_date(Atom, Y, M, D) :-
-    atom_string(Atom, FullStr),
-    % Strip time part if present (ISO datetime)
-    (sub_string(FullStr, Before, _, _, "T")
-     -> sub_string(FullStr, 0, Before, _, Str)
-     ;  Str = FullStr
-    ),
-    string_length(Str, Len),
-    Len >= 10,
-    sub_string(Str, 0, 4, _, YStr),
-    sub_string(Str, 5, 2, _, MStr),
-    sub_string(Str, 8, 2, _, DStr),
-    number_string(Y, YStr),
-    number_string(M, MStr),
-    number_string(D, DStr),
+    atomic(Atom),
+    atom_codes(Atom, Codes),
+    phrase(iso_date(Y, M, D), Codes, Rest),
+    (Rest == [] ; Rest = [0'T|_]),
+    !.
+
+iso_date(Y, M, D) -->
+    fixed_digits(4, Y), "-", fixed_digits(2, M), "-", fixed_digits(2, D),
+    { real_calendar_day(Y, M, D) }.
+
+%% fixed_digits(+Count, -Value)// — exactly Count ASCII digits.
+fixed_digits(Count, Value) -->
+    ascii_digits(Count, Codes),
+    { number_codes(Value, Codes) }.
+
+ascii_digits(0, []) --> !, [].
+ascii_digits(Count, [C|Cs]) -->
+    [C], { C >= 0'0, C =< 0'9 },
+    { Rest is Count - 1 },
+    ascii_digits(Rest, Cs).
+
+real_calendar_day(Y, M, D) :-
     M >= 1, M =< 12,
-    D >= 1, D =< 31.
+    days_in_month(Y, M, LastDay),
+    D >= 1, D =< LastDay.
+
+days_in_month(Y, 2, Days) :- !,
+    (is_leap_year(Y) -> Days = 29 ; Days = 28).
+days_in_month(_, M, 30) :- memberchk(M, [4, 6, 9, 11]), !.
+days_in_month(_, _, 31).
+
+is_leap_year(Y) :-
+    (Y mod 4 =:= 0, Y mod 100 =\= 0 ; Y mod 400 =:= 0), !.
 
 %% julian_day(+Y, +M, +D, -JD)
 julian_day(Y, M, D, JD) :-
@@ -223,12 +242,15 @@ effective_day_format(Code, DayStr, normal, Fmt) :-
     ).
 
 %% effective_months_in_date(+Code, +Compactness, -Months)
+%% The genitive month names (monthsInDate) win over the plain names, and no
+%% override replaces them, so a locale that keeps the full genitive in short
+%% dates (cs, fi, sk, uk, ...) keeps it here too.
+effective_months_in_date(Code, _, Months) :-
+    sd_months_in_date(Code, Months), !.
 effective_months_in_date(Code, short, Months) :-
-    (short_sd_months(Code, M) -> Months = M ; effective_months_in_date(Code, normal, Months)), !.
-effective_months_in_date(Code, compact, Months) :-
-    effective_months_in_date(Code, normal, Months), !.
-effective_months_in_date(Code, normal, Months) :-
-    (sd_months_in_date(Code, M) -> Months = M ; sd_months(Code, Months)).
+    short_sd_months(Code, Months), !.
+effective_months_in_date(Code, _, Months) :-
+    sd_months(Code, Months).
 
 %% effective_weekdays(+Code, +Compactness, -Weekdays)
 effective_weekdays(Code, short, WD) :-

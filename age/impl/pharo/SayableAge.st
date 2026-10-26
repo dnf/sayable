@@ -174,39 +174,56 @@ formatHalfYears: months
 
 !SayableAge methodsFor: 'private-parsing'!
 parseAge: dateOfBirth asOf: asOfDate
-	| dobParts refParts dobY dobM dobD refY refM refD dobDate refDate diffDays lastDay clampedBirthday months today |
+	"Parse two YYYY-MM-DD strings into {calendarMonths. elapsedDays}.
+	Answers nil if either date is missing or invalid, or dateOfBirth is after asOfDate."
+	| dob ref today diffDays lastDay clampedBirthday months |
 	(dateOfBirth isNil or: [ dateOfBirth isEmpty ]) ifTrue: [ ^ nil ].
-
-	dobParts := dateOfBirth substrings: '-'.
-	dobY := dobParts first asInteger.
-	dobM := (dobParts at: 2) asInteger.
-	dobD := dobParts third asInteger.
-
+	dob := self parseDate: dateOfBirth.
 	(asOfDate isNil or: [ asOfDate isEmpty ])
 		ifTrue: [
 			today := Date today.
-			refY := today year.
-			refM := today monthIndex.
-			refD := today dayOfMonth ]
-		ifFalse: [
-			refParts := asOfDate substrings: '-'.
-			refY := refParts first asInteger.
-			refM := (refParts at: 2) asInteger.
-			refD := refParts third asInteger ].
+			ref := { today year. today monthIndex. today dayOfMonth } ]
+		ifFalse: [ ref := self parseDate: asOfDate ].
+	(dob isNil or: [ ref isNil ]) ifTrue: [ ^ nil ].
 
-	dobDate := Date year: dobY month: dobM day: dobD.
-	refDate := Date year: refY month: refM day: refD.
-	diffDays := refDate julianDayNumber - dobDate julianDayNumber.
+	diffDays := (self julianDay: ref) - (self julianDay: dob).
 	diffDays < 0 ifTrue: [ ^ nil ].
 
 	"Calendar months: clamp birthday to last day of reference month"
-	lastDay := Date daysInMonth: refM forYear: refY.
-	clampedBirthday := dobD min: lastDay.
-	months := ((refY - dobY) * 12) + (refM - dobM).
-	refD < clampedBirthday ifTrue: [ months := months - 1 ].
+	lastDay := self daysInMonth: ref second year: ref first.
+	clampedBirthday := dob third min: lastDay.
+	months := ((ref first - dob first) * 12) + (ref second - dob second).
+	ref third < clampedBirthday ifTrue: [ months := months - 1 ].
 	months > 6000 ifTrue: [ ^ nil ].
 
 	^ { months. diffDays }
+!
+
+parseDate: aString
+	"Parse exactly YYYY-MM-DD naming a real calendar day to {year. month. day}, else nil."
+	| year month day |
+	(aString matchesRegex: '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') ifFalse: [ ^ nil ].
+	year := (aString copyFrom: 1 to: 4) asInteger.
+	month := (aString copyFrom: 6 to: 7) asInteger.
+	day := (aString copyFrom: 9 to: 10) asInteger.
+	(month between: 1 and: 12) ifFalse: [ ^ nil ].
+	(day between: 1 and: (self daysInMonth: month year: year)) ifFalse: [ ^ nil ].
+	^ { year. month. day }
+!
+
+daysInMonth: month year: year
+	| isLeap |
+	isLeap := (year \\ 4 = 0 and: [ year \\ 100 ~= 0 ]) or: [ year \\ 400 = 0 ].
+	month = 2 ifTrue: [ ^ isLeap ifTrue: [ 29 ] ifFalse: [ 28 ] ].
+	^ (#(4 6 9 11) includes: month) ifTrue: [ 30 ] ifFalse: [ 31 ]
+!
+
+julianDay: ymd
+	| a y m |
+	a := (14 - ymd second) // 12.
+	y := ymd first + 4800 - a.
+	m := ymd second + (12 * a) - 3.
+	^ ymd third + ((153 * m + 2) // 5) + (365 * y) + (y // 4) - (y // 100) + (y // 400) - 32045
 ! !
 
 !SayableAge methodsFor: 'private-helpers'!

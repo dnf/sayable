@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/qu.json
 
-_plural_qu() {
+_sayableage_plural_qu() {
     echo "other"
 }
 
-_locale_qu() {
+_sayableage_locale_qu() {
     _unit_day='{n} p'\''unchaw'
     _unit_week='{n} simana'
     _unit_month='{n} killa'
@@ -37,5 +37,5 @@ _locale_qu() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_qu
+    _plural_func=_sayableage_plural_qu
 }

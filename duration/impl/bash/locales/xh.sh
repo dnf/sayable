@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/xh.json
 
-_plural_xh() {
+_sayableduration_plural_xh() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_xh() {
+_sayableduration_locale_xh() {
     _unit_second_one='umzuzwana {n}'
     _unit_second_other='imizuzwana {n}'
     _unit_minute_one='umzuzu {n}'
@@ -62,5 +62,5 @@ _locale_xh() {
     _compact_delimiter=''
     _compact_ago='kwi{0} edlulileyo'
     _compact_in_future='kwi{0}'
-    _plural_func=_plural_xh
+    _plural_func=_sayableduration_plural_xh
 }

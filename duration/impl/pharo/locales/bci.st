@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/bci.json "
 
-"Locale: bci"
+"Locale: bci"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 bci

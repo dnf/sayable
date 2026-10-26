@@ -165,6 +165,10 @@ function result = format_duration_seconds(total, locale, units, half, delimiter,
 
   % Approximate months (30.44 days average)
   total_months = round(total_days / 30.44);
+  if (total_months > max_duration_months())
+    result = [];
+    return;
+  endif
 
   % 1-11 months
   if (total_months < 12)
@@ -205,6 +209,10 @@ function result = do_format_since(start, as_of, locale, units, half, delimiter, 
     return;
   endif
   dur = format_duration_seconds(diff, locale, units, half, delimiter, just_now);
+  if (isempty(dur))
+    result = [];
+    return;
+  endif
   result = strrep(ago, '{0}', dur);
 endfunction
 
@@ -229,5 +237,14 @@ function result = do_format_until(target, as_of, locale, units, half, delimiter,
     return;
   endif
   dur = format_duration_seconds(diff, locale, units, half, delimiter, just_now);
+  if (isempty(dur))
+    result = [];
+    return;
+  endif
   result = strrep(in_future, '{0}', dur);
+endfunction
+
+% 500 years, the same ceiling as sayable-age.
+function n = max_duration_months()
+  n = 6000;
 endfunction

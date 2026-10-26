@@ -46,23 +46,34 @@ module SayableTime
 
     private
 
+    # A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+    # suffix, which is ignored), alone or after the T of an ISO datetime.
+    CLOCK_TIME = /\A(?:([0-9]{4})-([0-9]{2})-([0-9]{2})T)?([0-9]{1,2}):([0-9]{2})
+                  (?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/x
+
     def parse_time(input_str)
-      return nil if input_str.nil? || input_str.empty?
+      return nil if input_str.nil?
 
-      t = input_str.to_s
-      t = t.split('T')[1] if t.include?('T')
-      t = t.split('+')[0] if t.include?('+')
-      t = t.split('Z')[0] if t.include?('Z')
+      match = CLOCK_TIME.match(input_str.to_s)
+      return nil if match.nil?
 
-      parts = t.split(':')
-      return nil if parts.length < 2
-
-      hour = Integer(parts[0], 10, exception: false)
-      minute = Integer(parts[1].split('.')[0], 10, exception: false)
-      return nil if hour.nil? || minute.nil?
-      return nil if hour < 0 || hour > 23 || minute < 0 || minute > 59
+      year, month, day, hour, minute, second = match.captures.map { |part| part&.to_i }
+      return nil if year && !real_date?(year, month, day)
+      return nil if hour > 23 || minute > 59 || (second || 0) > 59
 
       [hour, minute]
+    end
+
+    def real_date?(year, month, day)
+      month.between?(1, 12) && day.between?(1, days_in_month(year, month))
+    end
+
+    def days_in_month(year, month)
+      return 30 if [4, 6, 9, 11].include?(month)
+      return 31 unless month == 2
+
+      leap = (year % 4).zero? && (!(year % 100).zero? || (year % 400).zero?)
+      leap ? 29 : 28
     end
 
     def round_to_5(minute)

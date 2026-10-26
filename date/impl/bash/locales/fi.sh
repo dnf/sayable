@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/fi.json
 
-_locale_fi() {
+_sayabledate_locale_fi() {
     _months=('tammikuu' 'helmikuu' 'maaliskuu' 'huhtikuu' 'toukokuu' 'kesäkuu' 'heinäkuu' 'elokuu' 'syyskuu' 'lokakuu' 'marraskuu' 'joulukuu')
     _weekdays=('sunnuntai' 'maanantai' 'tiistai' 'keskiviikko' 'torstai' 'perjantai' 'lauantai')
     _day_format='{n}.'

@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/pis.json "
 
-"Locale: pis"
+"Locale: pis"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 pis

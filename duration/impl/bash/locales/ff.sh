@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ff.json
 
-_plural_ff() {
+_sayableduration_plural_ff() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ff() {
+_sayableduration_locale_ff() {
     _unit_second='majaango {n}'
     _unit_minute='hojomaaje {n}'
     _unit_hour_one='waktu {n}'
@@ -61,5 +61,5 @@ _locale_ff() {
     _compact_delimiter=''
     _compact_ago='{0} ɓennuɗo'
     _compact_in_future='nder {0}'
-    _plural_func=_plural_ff
+    _plural_func=_sayableduration_plural_ff
 }

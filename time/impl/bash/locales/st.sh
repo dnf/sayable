@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/st.json
 
-_locale_st() {
+_sayabletime_locale_st() {
     _clock_hours=('leshome le metso e mmedi' 'e nngwe' 'tse pedi' 'tse tharo' 'tse nne' 'tse hlano' 'tse tshelela' 'tse supileng' 'tse robedi' 'tse robong' 'leshome' 'leshome le motso o le mong')
     _clock_midnight='hara bosiu'
     _clock_noon='motsheare'

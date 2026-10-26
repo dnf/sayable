@@ -834,6 +834,63 @@ else
 fi
 
 # ================================================================
+# Sections 31-33: weeks+days across month ends, half-year plurals, input validation
+# ================================================================
+echo "Sections 31-33: weeks+days across month ends, half-year plurals, input validation"
+
+# 31.1 — 88 days across a 28-day February
+assert_eq "$(sayableage_format_age "en" "2016-12-31" "2017-03-29" "normal")" "12 weeks, 4 days" "31.1"
+
+# 31.2 — 90 days across a year end into a leap year
+assert_eq "$(sayableage_format_age "en" "1991-11-27" "1992-02-25" "normal")" "12 weeks, 6 days" "31.2"
+
+# 31.3 — 33 days across a year end
+assert_eq "$(sayableage_format_age "en" "2020-11-30" "2021-01-02" "normal")" "4 weeks, 5 days" "31.3"
+
+# 31.4 — Compact form of 31.1
+assert_eq "$(sayableage_format_age "en" "2016-12-31" "2017-03-29" "compact")" "12w4d" "31.4"
+
+# 32.1 — Polish 3 is 'few'
+assert_eq "$(sayableage_format_age "pl" "2021-06-15" "2025-01-15" "normal")" "3 i pół lata" "32.1"
+
+# 32.2 — Polish 5 is 'many'
+assert_eq "$(sayableage_format_age "pl" "2020-06-15" "2025-12-15" "short")" "5 i pół lat" "32.2"
+
+# 32.3 — Tachelhit 6 is 'few'
+assert_eq "$(sayableage_format_age "shi" "2005-06-08" "2012-06-07" "normal")" "6 iseggasen d uzgen" "32.3"
+
+# 33.1 — February 30 doesn't exist
+assert_eq "$(sayableage_format_age "en" "2025-02-30" "2032-06-25" "normal")" "" "33.1"
+
+# 33.2 — Month 13
+assert_eq "$(sayableage_format_age "en" "2025-13-01" "2027-01-31" "normal")" "" "33.2"
+
+# 33.3 — February 29 in a non-leap year
+assert_eq "$(sayableage_format_age "en" "2023-02-29" "2025-03-01" "normal")" "" "33.3"
+
+# 33.4 — Day 00
+assert_eq "$(sayableage_format_age "en" "2025-06-00" "2027-02-25" "normal")" "" "33.4"
+
+# 33.5 — Unpadded month and day
+assert_eq "$(sayableage_format_age "en" "2025-6-1" "2027-02-25" "normal")" "" "33.5"
+
+# 33.6 — Surrounding whitespace
+assert_eq "$(sayableage_format_age "en" " 2025-06-01" "2027-02-25" "normal")" "" "33.6"
+
+# 33.7 — A datetime is not a date
+assert_eq "$(sayableage_format_age "en" "2025-06-15T10:00:00" "2027-02-25" "normal")" "" "33.7"
+
+# 33.8 — Invalid asOf
+assert_eq "$(sayableage_format_age "en" "2020-01-01" "2025-04-31" "normal")" "" "33.8"
+
+# 33.9 — formatStage validates too
+assert_eq "$(sayableage_format_stage "en" "2025-02-30" "2027-09-05")" "" "33.9"
+
+# 33.10 — February 29 in a leap year is valid
+assert_eq "$(sayableage_format_age "en" "2024-02-29" "2026-03-01" "normal")" "2 years" "33.10"
+
+
+# ================================================================
 # Summary
 # ================================================================
 echo ""

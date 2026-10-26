@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/fan.json
 
-_plural_fan() {
+_sayableduration_plural_fan() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_fan() {
+_sayableduration_locale_fan() {
     _unit_second_one='sɛgon {n}'
     _unit_second_other='bisɛgon {n}'
     _unit_minute_one='minit {n}'
@@ -59,5 +59,5 @@ _locale_fan() {
     _compact_delimiter=''
     _compact_ago='{0} a ja'
     _compact_in_future='a {0}'
-    _plural_func=_plural_fan
+    _plural_func=_sayableduration_plural_fan
 }

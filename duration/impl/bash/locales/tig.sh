@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tig.json
 
-_plural_tig() {
+_sayableduration_plural_tig() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tig() {
+_sayableduration_locale_tig() {
     _unit_second_one='sanya {n}'
     _unit_second_other='sanayat {n}'
     _unit_minute_one='daqiqa {n}'
@@ -59,5 +59,5 @@ _locale_tig() {
     _compact_delimiter=''
     _compact_ago='qədmi {0}'
     _compact_in_future='ba {0}'
-    _plural_func=_plural_tig
+    _plural_func=_sayableduration_plural_tig
 }

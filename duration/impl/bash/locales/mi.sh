@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/mi.json
 
-_plural_mi() {
+_sayableduration_plural_mi() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_mi() {
+_sayableduration_locale_mi() {
     _unit_second='{n} hēkona'
     _unit_minute='{n} meneti'
     _unit_hour='{n} hāora'
@@ -48,5 +48,5 @@ _locale_mi() {
     _compact_delimiter=''
     _compact_ago='{0} i mua'
     _compact_in_future='ā te {0}'
-    _plural_func=_plural_mi
+    _plural_func=_sayableduration_plural_mi
 }

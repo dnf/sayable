@@ -119,23 +119,24 @@ module SayableDate
       format_absolute(dy, dm, dd, include_year)
     end
 
+    # YYYY-MM-DD, optionally followed by T and a time; only the date part
+    # is read, and it must name a real calendar day.
+    DATE_PATTERN = /\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T|\z)/
+
     private def parse_date(s : String?) : Tuple(Int32, Int32, Int32)?
-      return nil if s.nil? || s.empty?
-
-      # Strip time part from ISO datetime
-      date_part = s.includes?('T') ? s.split('T')[0] : s
-      parts = date_part.split('-')
-      return nil if parts.size != 3
-
-      year = parts[0].to_i? || return nil
-      month = parts[1].to_i? || return nil
-      day = parts[2].to_i? || return nil
-
-      return nil if month < 1 || month > 12 || day < 1 || day > 31
-      # Reject non-numeric parts
-      return nil if parts.any? { |p| p.empty? || p != p.to_i?.try(&.to_s.rjust(p.size, '0')) }
-
+      return nil if s.nil?
+      m = DATE_PATTERN.match(s) || return nil
+      year, month, day = m[1].to_i, m[2].to_i, m[3].to_i
+      return nil unless 1 <= month <= 12 && 1 <= day <= days_in_month(year, month)
       {year, month, day}
+    end
+
+    private def days_in_month(year : Int32, month : Int32) : Int32
+      case month
+      when 4, 6, 9, 11 then 30
+      when 2           then (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28
+      else                  31
+      end
     end
 
     private def to_jdn(year : Int32, month : Int32, day : Int32) : Int32

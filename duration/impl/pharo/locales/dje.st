@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/dje.json "
 
-"Locale: dje"
+"Locale: dje"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 dje

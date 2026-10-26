@@ -224,19 +224,19 @@ final class SayableAge
      */
     private static function parseDateParts(string $s): ?array
     {
-        if (\strlen($s) < 10 || $s[4] !== '-' || $s[7] !== '-') {
+        if (\preg_match('/\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z/', $s, $m) !== 1) {
             return null;
         }
 
-        $y = (int) \substr($s, 0, 4);
-        $m = (int) \substr($s, 5, 2);
-        $d = (int) \substr($s, 8, 2);
+        $y = (int) $m[1];
+        $month = (int) $m[2];
+        $d = (int) $m[3];
 
-        if ($y === 0 && $m === 0 && $d === 0) {
+        if ($month < 1 || $month > 12 || $d < 1 || $d > self::daysInMonth($y, $month)) {
             return null;
         }
 
-        return [$y, $m, $d];
+        return [$y, $month, $d];
     }
 
     private static function julianDay(int $y, int $m, int $d): int

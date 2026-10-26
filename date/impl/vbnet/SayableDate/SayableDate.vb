@@ -1,5 +1,7 @@
 Imports System
 Imports System.Collections.Generic
+Imports System.Globalization
+Imports System.Text.RegularExpressions
 
 Namespace SayableDateLib
 
@@ -164,22 +166,31 @@ Namespace SayableDateLib
             Return result
         End Function
 
+        ''' <summary>YYYY-MM-DD, alone or followed by T and anything (an ISO datetime).</summary>
+        Private Shared ReadOnly DatePrefix As New Regex(
+            "\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T.*)?\z", RegexOptions.Singleline Or RegexOptions.CultureInvariant)
+
         Friend Shared Function ParseDate(s As String) As Integer()
-            If String.IsNullOrEmpty(s) Then Return Nothing
-            Dim datePart As String
-            If s.Contains("T"c) Then
-                datePart = s.Substring(0, s.IndexOf("T"c))
-            Else
-                datePart = s
-            End If
-            Dim parts = datePart.Split("-"c)
-            If parts.Length <> 3 Then Return Nothing
-            Dim year, month, day As Integer
-            If Not Integer.TryParse(parts(0), year) Then Return Nothing
-            If Not Integer.TryParse(parts(1), month) Then Return Nothing
-            If Not Integer.TryParse(parts(2), day) Then Return Nothing
-            If month < 1 OrElse month > 12 OrElse day < 1 OrElse day > 31 Then Return Nothing
+            If s Is Nothing Then Return Nothing
+            Dim match = DatePrefix.Match(s)
+            If Not match.Success Then Return Nothing
+            Dim year = Integer.Parse(match.Groups(1).Value, CultureInfo.InvariantCulture)
+            Dim month = Integer.Parse(match.Groups(2).Value, CultureInfo.InvariantCulture)
+            Dim day = Integer.Parse(match.Groups(3).Value, CultureInfo.InvariantCulture)
+            If month < 1 OrElse month > 12 OrElse day < 1 OrElse day > DaysInMonth(year, month) Then Return Nothing
             Return New Integer() {year, month, day}
+        End Function
+
+        ' DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+        Private Shared Function DaysInMonth(year As Integer, month As Integer) As Integer
+            Select Case month
+                Case 2
+                    Return If((year Mod 4 = 0 AndAlso year Mod 100 <> 0) OrElse year Mod 400 = 0, 29, 28)
+                Case 4, 6, 9, 11
+                    Return 30
+                Case Else
+                    Return 31
+            End Select
         End Function
 
         Friend Shared Function ToJdn(year As Integer, month As Integer, day As Integer) As Integer

@@ -82,43 +82,72 @@ let days_since_epoch year month day =
   done;
   !days + day - 1
 
-let strip_tz s =
-  let s =
-    if string_contains ~needle:"+" s then
-      let idx = String.index s '+' in
-      String.sub s 0 idx
-    else s
-  in
-  if string_contains ~needle:"Z" s then
-    let idx = String.index s 'Z' in
-    String.sub s 0 idx
-  else s
+let is_digit c = c >= '0' && c <= '9'
 
+(* The value of the digits in s.[pos .. pos + len - 1], or None if any
+   position is out of range or not a digit. *)
+let digits_value s pos len =
+  if pos < 0 || len <= 0 || pos + len > String.length s then None
+  else begin
+    let value = ref 0 in
+    let ok = ref true in
+    for i = pos to pos + len - 1 do
+      if is_digit s.[i] then value := !value * 10 + (Char.code s.[i] - Char.code '0')
+      else ok := false
+    done;
+    if !ok then Some !value else None
+  end
+
+(* Z or +HH:MM / -HH:MM (validated, never applied). *)
+let is_zone_suffix s =
+  s = "Z"
+  || (String.length s = 6 && (s.[0] = '+' || s.[0] = '-')
+      && digits_value s 1 2 <> None && s.[3] = ':' && digits_value s 4 2 <> None)
+
+(* H:MM or HH:MM, then optional :SS with optional .fraction, then an
+   optional zone suffix. *)
+let parse_clock s =
+  let len = String.length s in
+  let hour_digits = if len > 1 && is_digit s.[0] && is_digit s.[1] then 2 else 1 in
+  match digits_value s 0 hour_digits, digits_value s (hour_digits + 1) 2 with
+  | Some hour, Some minute when s.[hour_digits] = ':' ->
+    let pos = ref (hour_digits + 3) in
+    let second = ref 0 in
+    (if !pos < len && s.[!pos] = ':' then
+       match digits_value s (!pos + 1) 2 with
+       | Some sec ->
+         second := sec;
+         pos := !pos + 3;
+         if !pos + 1 < len && s.[!pos] = '.' && is_digit s.[!pos + 1] then begin
+           incr pos;
+           while !pos < len && is_digit s.[!pos] do incr pos done
+         end
+       | None -> ());
+    let zone = String.sub s !pos (len - !pos) in
+    if (zone = "" || is_zone_suffix zone) && hour <= 23 && minute <= 59 && !second <= 59
+    then Some (hour, minute, !second)
+    else None
+  | _ -> None
+
+(* YYYY-MM-DDTHH:MM (one- or two-digit hour), then optional :SS with
+   optional .fraction, then an optional zone suffix that is ignored. *)
 let parse_iso_to_seconds iso_str =
-  if String.length iso_str = 0 then None
+  let len = String.length iso_str in
+  if len < 11 || iso_str.[4] <> '-' || iso_str.[7] <> '-' || iso_str.[10] <> 'T' then None
   else
-    try
-      let t_idx = String.index iso_str 'T' in
-      let date_part = String.sub iso_str 0 t_idx in
-      let time_part = String.sub iso_str (t_idx + 1) (String.length iso_str - t_idx - 1) in
-      let dp = String.split_on_char '-' date_part in
-      let year, month, day =
-        match dp with
-        | [y; m; d] -> (int_of_string y, int_of_string m, int_of_string d)
-        | _ -> raise (Failure "bad date")
-      in
-      let time_str = strip_tz time_part in
-      let tp = String.split_on_char ':' time_str in
-      let hour = match tp with h :: _ -> int_of_string h | [] -> 0 in
-      let minute = match tp with _ :: m :: _ -> int_of_string m | _ -> 0 in
-      let second = match tp with _ :: _ :: s :: _ ->
-        let s = if string_contains ~needle:"." s then
-          let idx = String.index s '.' in String.sub s 0 idx
-        else s in
-        int_of_string s | _ -> 0 in
-      let days = days_since_epoch year month day in
-      Some (days * 86400 + hour * 3600 + minute * 60 + second)
-    with _ -> None
+    match digits_value iso_str 0 4, digits_value iso_str 5 2, digits_value iso_str 8 2 with
+    | Some year, Some month, Some day when month >= 1 && month <= 12 && day >= 1 && day <= days_in_month year month ->
+      (match parse_clock (String.sub iso_str 11 (len - 11)) with
+       | Some (hour, minute, second) ->
+         Some (days_since_epoch year month day * 86400 + hour * 3600 + minute * 60 + second)
+       | None -> None)
+    | _ -> None
+
+(* 500 years, the same ceiling as sayable-age *)
+let max_duration_months = 6000
+
+(* Months of 30.44 days (the average month), rounded. *)
+let approximate_months days = int_of_float (Float.round (float_of_int days /. 30.44))
 
 let resolve_locale loc compactness =
   let m_ovr =
@@ -148,7 +177,7 @@ let resolve_locale loc compactness =
     , pick_s ovr.ovr_in_future loc.in_future
     )
 
-let format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now total =
+let format_tiers loc second' minute' hour' day' week' month' year' half' delim just_now total =
   if total = 0 then just_now
   else if total < 60 then
     resolve_unit total second' loc ""
@@ -197,7 +226,7 @@ let format_duration_seconds loc second' minute' hour' day' week' month' year' ha
               result ^ delim ^ resolve_unit remainder_days day' loc ""
             else result
           end else
-            let total_months = int_of_float (Float.round (float_of_int total_days /. 30.44)) in
+            let total_months = approximate_months total_days in
             let total_months = if total_months = 0 then 1 else total_months in
             if total_months < 12 then
               resolve_unit total_months month' loc ""
@@ -209,6 +238,11 @@ let format_duration_seconds loc second' minute' hour' day' week' month' year' ha
                 result ^ delim ^ resolve_unit remainder_months month' loc ""
               else result
 
+(* The formatted duration, or None beyond the 500-year ceiling. *)
+let format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now total =
+  if approximate_months (total / 86400) > max_duration_months then None
+  else Some (format_tiers loc second' minute' hour' day' week' month' year' half' delim just_now total)
+
 let format_duration loc compactness start_or_seconds end_iso =
   match start_or_seconds with
   | `Null -> None
@@ -218,7 +252,7 @@ let format_duration loc compactness start_or_seconds end_iso =
       let (second', minute', hour', day', week', month', year', half', delim, just_now, _ago, _in_future) =
         resolve_locale loc compactness
       in
-      Some (format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now total_seconds)
+      format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now total_seconds
   | `Iso start_iso ->
     match end_iso with
     | None -> None
@@ -229,7 +263,7 @@ let format_duration loc compactness start_or_seconds end_iso =
         let (second', minute', hour', day', week', month', year', half', delim, just_now, _ago, _in_future) =
           resolve_locale loc compactness
         in
-        Some (format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now total_seconds)
+        format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now total_seconds
       | _ -> None
 
 let format_since loc compactness start as_of =
@@ -246,8 +280,8 @@ let format_since loc compactness start as_of =
         let (second', minute', hour', day', week', month', year', half', delim, just_now, ago, _) =
           resolve_locale loc compactness
         in
-        let dur = format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now diff in
-        Some (string_replace ~needle:"{0}" ~replacement:dur ago)
+        format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now diff
+        |> Option.map (fun dur -> string_replace ~needle:"{0}" ~replacement:dur ago)
     | _ -> None
 
 let format_until loc compactness target as_of =
@@ -264,6 +298,6 @@ let format_until loc compactness target as_of =
         let (second', minute', hour', day', week', month', year', half', delim, just_now, _, in_future) =
           resolve_locale loc compactness
         in
-        let dur = format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now diff in
-        Some (string_replace ~needle:"{0}" ~replacement:dur in_future)
+        format_duration_seconds loc second' minute' hour' day' week' month' year' half' delim just_now diff
+        |> Option.map (fun dur -> string_replace ~needle:"{0}" ~replacement:dur in_future)
     | _ -> None

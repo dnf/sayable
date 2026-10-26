@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/mg.json "
 
-"Locale: mg"
+"Locale: mg"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 mg

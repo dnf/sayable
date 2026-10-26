@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/lv.json
 
-_plural_lv() {
+_sayableage_plural_lv() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_lv() {
     echo "other"
 }
 
-_locale_lv() {
+_sayableage_locale_lv() {
     _unit_day_zero='{n} dienu'
     _unit_day_one='{n} diena'
     _unit_day_other='{n} dienas'
@@ -54,5 +54,5 @@ _locale_lv() {
     _compact_unit_month='{n} m.'
     _compact_unit_year='{n} g.'
     _compact_delimiter=''
-    _plural_func=_plural_lv
+    _plural_func=_sayableage_plural_lv
 }

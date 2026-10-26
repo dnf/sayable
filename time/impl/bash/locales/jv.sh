@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/jv.json
 
-_locale_jv() {
+_sayabletime_locale_jv() {
     _clock_hours=('rolas' 'siji' 'loro' 'telu' 'papat' 'lima' 'enem' 'pitu' 'wolu' 'sanga' 'sepuluh' 'sewelas')
     _clock_midnight='tengah wengi'
     _clock_noon='awan'

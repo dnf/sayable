@@ -3,16 +3,26 @@ import 'locales/locales.dart';
 
 const String version = '0.5.0';
 
+bool _isAsciiDigits(String s) =>
+    s.codeUnits.every((c) => c >= 0x30 && c <= 0x39);
+
+/// Parses YYYY-MM-DD, optionally followed by T and a time, naming a real
+/// calendar day; returns null otherwise.
 (int, int, int)? _parseDate(String s) {
-  if (s.isEmpty) return null;
-  final datePart = s.contains('T') ? s.split('T')[0] : s;
-  final parts = datePart.split('-');
-  if (parts.length != 3) return null;
-  final year = int.tryParse(parts[0]);
-  final month = int.tryParse(parts[1]);
-  final day = int.tryParse(parts[2]);
-  if (year == null || month == null || day == null) return null;
-  if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+  final isDateAlone = s.length == 10;
+  final isDateTime = s.length > 10 && s[10] == 'T';
+  if (!isDateAlone && !isDateTime) return null;
+  if (s[4] != '-' || s[7] != '-') return null;
+  final yearPart = s.substring(0, 4);
+  final monthPart = s.substring(5, 7);
+  final dayPart = s.substring(8, 10);
+  if (!_isAsciiDigits(yearPart + monthPart + dayPart)) return null;
+  final year = int.parse(yearPart);
+  final month = int.parse(monthPart);
+  final day = int.parse(dayPart);
+  if (month < 1 || month > 12 || day < 1 || day > _daysInMonth(year, month)) {
+    return null;
+  }
   return (year, month, day);
 }
 

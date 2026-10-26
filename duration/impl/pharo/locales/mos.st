@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/mos.json "
 
-"Locale: mos"
+"Locale: mos"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 mos

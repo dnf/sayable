@@ -1,41 +1,59 @@
 namespace SayableTimeLib
 
 open System
+open System.Globalization
+open System.Text.RegularExpressions
 open SayableTimeLib.Types
 
 module Formatter =
 
     let [<Literal>] Version = "0.5.0"
 
+    /// H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored).
+    let private clock =
+        Regex(
+            @"\A([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z",
+            RegexOptions.CultureInvariant
+        )
+
+    let private dateOnly =
+        Regex(@"\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z", RegexOptions.CultureInvariant)
+
+    let private field (m: Match) (i: int) : int =
+        Int32.Parse(m.Groups.[i].Value, CultureInfo.InvariantCulture)
+
+    // DateTime can't represent year 0000, which the spec accepts (proleptic Gregorian).
+    let private daysInMonth (year: int) (month: int) : int =
+        match month with
+        | 2 -> if (year % 4 = 0 && year % 100 <> 0) || year % 400 = 0 then 29 else 28
+        | 4 | 6 | 9 | 11 -> 30
+        | _ -> 31
+
+    let private isRealDate (s: string) : bool =
+        let m = dateOnly.Match(s)
+        m.Success
+        && (let month = field m 2
+            let day = field m 3
+            month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth (field m 1) month)
+
     let internal parseTime (input: string) : (int * int) option =
         if String.IsNullOrEmpty(input) then
             None
         else
-            let mutable t = input
-            let tIdx = t.IndexOf('T')
+            let tIdx = input.IndexOf('T')
+            let datePartIsValid = tIdx < 0 || isRealDate (input.Substring(0, tIdx))
+            let m = clock.Match(input.Substring(tIdx + 1))
 
-            if tIdx >= 0 then
-                t <- t.Substring(tIdx + 1)
-
-            let plusIdx = t.IndexOf('+')
-
-            if plusIdx >= 0 then
-                t <- t.Substring(0, plusIdx)
-
-            let zIdx = t.IndexOf('Z')
-
-            if zIdx >= 0 then
-                t <- t.Substring(0, zIdx)
-
-            let parts = t.Split(':')
-
-            if parts.Length < 2 then
+            if not datePartIsValid || not m.Success then
                 None
             else
-                match System.Int32.TryParse(parts.[0]), System.Int32.TryParse(parts.[1]) with
-                | (true, hour), (true, minute) when hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 ->
+                let hour, minute = field m 1, field m 2
+                let second = if m.Groups.[3].Success then field m 3 else 0
+
+                if hour <= 23 && minute <= 59 && second <= 59 then
                     Some(hour, minute)
-                | _ -> None
+                else
+                    None
 
     let internal roundTo5 (minute: int) : int =
         (minute + 2) / 5 * 5

@@ -181,3 +181,77 @@ class FormatTimeTest:
     def `Finnish midnight dot`(): Unit =
         val st = SayableTime(Locales.FI, Compactness.SHORT)
         assertEquals(Some("0.00"), st.formatTime("00:00"))
+
+    // ================================================================
+    // Minutes in short and compact modes
+    // ================================================================
+
+    // 9.1
+    @Test
+    def `digital modes keep the exact minute en short 18-01`(): Unit =
+        val f = SayableTime(Locales.EN, Compactness.SHORT)
+        assertEquals(Some("6:01 PM"), f.formatTime("18:01"))
+
+    // 9.2
+    @Test
+    def `digital modes keep the exact minute en compact 19-05`(): Unit =
+        val f = SayableTime(Locales.EN, Compactness.COMPACT)
+        assertEquals(Some("7:05p"), f.formatTime("19:05"))
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    // 10.1
+    @Test
+    def `one digit hour`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(Some("half past nine"), f.formatTime("9:30"))
+
+    // 10.2
+    @Test
+    def `two digit hour`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(Some("half past nine"), f.formatTime("09:30"))
+
+    // 10.3
+    @Test
+    def `leading whitespace`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(None, f.formatTime(" 9:30"))
+
+    // 10.4
+    @Test
+    def `trailing whitespace`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(None, f.formatTime("9:30 "))
+
+    // 10.5
+    @Test
+    def `minutes need two digits`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(None, f.formatTime("9:5"))
+
+    // 10.6
+    @Test
+    def `hour out of range`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(None, f.formatTime("24:00"))
+
+    // 10.7
+    @Test
+    def `seconds are allowed and ignored`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(Some("a quarter past two"), f.formatTime("14:15:30"))
+
+    // 10.8
+    @Test
+    def `iso datetime with zone suffix ignored`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(Some("a quarter past two"), f.formatTime("2025-01-15T14:15:00Z"))
+
+    // 10.9
+    @Test
+    def `iso datetime with an impossible date`(): Unit =
+        val f = SayableTime(Locales.EN)
+        assertEquals(None, f.formatTime("2025-02-30T14:15:00"))

@@ -15,16 +15,40 @@ get_today() ->
 halt(Code) ->
     erlang:halt(Code).
 
+%% Arguments arrive as lists of Unicode code points, not bytes.
 get_args() ->
-    [list_to_binary(A) || A <- init:get_plain_arguments()].
+    [unicode:characters_to_binary(A) || A <- init:get_plain_arguments()].
 
-%% One stdin line without its "\n" or "\r\n"; a read error ends input like EOF.
+%% One stdin line without its "\n" or "\r\n", or {error, nil} at end of input.
+%% Read through an fd port, not io:get_line: on OTP 26/27 the I/O server's
+%% line editing treats a tab as completion and drops it, merging the REPL's
+%% tab-separated fields. The wrapper starts erl with -noinput so nothing
+%% else reads stdin.
 read_line() ->
-    ok = io:setopts(standard_io, [binary, {encoding, unicode}]),
-    case io:get_line(standard_io, "") of
-        eof -> {error, nil};
-        {error, _Reason} -> {error, nil};
-        Line -> {ok, string:chomp(Line)}
+    case get(sayable_stdin_eof) of
+        true -> {error, nil};
+        undefined -> read_line(stdin(), <<>>)
+    end.
+
+read_line(Stdin, Partial) ->
+    receive
+        {Stdin, {data, {noeol, Chunk}}} -> read_line(Stdin, <<Partial/binary, Chunk/binary>>);
+        {Stdin, {data, {eol, Chunk}}} -> {ok, strip_cr(<<Partial/binary, Chunk/binary>>)};
+        {Stdin, eof} when Partial =:= <<>> -> {error, nil};
+        {Stdin, eof} -> put(sayable_stdin_eof, true), {ok, strip_cr(Partial)}
+    end.
+
+strip_cr(Line) -> string:trim(Line, trailing, "\r").
+
+stdin() ->
+    case get(sayable_stdin) of
+        undefined ->
+            ok = io:setopts(standard_io, [binary, {encoding, unicode}]),
+            Stdin = open_port({fd, 0, 1}, [{line, 65536}, binary, eof, in]),
+            put(sayable_stdin, Stdin),
+            Stdin;
+        Stdin ->
+            Stdin
     end.
 
 rescue(Fun) ->

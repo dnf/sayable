@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/mam.json "
 
-"Locale: mam"
+"Locale: mam"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 mam

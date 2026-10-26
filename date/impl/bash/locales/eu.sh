@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/eu.json
 
-_locale_eu() {
+_sayabledate_locale_eu() {
     _months=('urtarril' 'otsail' 'martxo' 'apiril' 'maiatz' 'ekain' 'uztail' 'abuztu' 'irail' 'urri' 'azaro' 'abendu')
     _weekdays=('igandea' 'astelehena' 'asteartea' 'asteazkena' 'osteguna' 'ostirala' 'larunbata')
     _day_format='{n}'

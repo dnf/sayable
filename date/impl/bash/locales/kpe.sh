@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/kpe.json
 
-_locale_kpe() {
+_sayabledate_locale_kpe() {
     _months=('Yanuwali' 'Fɛbɛli' 'Maachi' 'Eepɛli' 'Mɛɛ' 'Juŋ' 'Julai' 'Ɔɔgɔsi' 'Sɛtɛmba' 'Ɔtɔba' 'Nɔvɛmba' 'Disɛmba')
     _weekdays=('Saadee' 'Tɛnɛɛ' 'Talata' 'Alaba' 'Aimisa' 'Juma' 'Satɛdee')
     _day_format='{n}'

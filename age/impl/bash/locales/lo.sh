@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/lo.json
 
-_plural_lo() {
+_sayableage_plural_lo() {
     echo "other"
 }
 
-_locale_lo() {
+_sayableage_locale_lo() {
     _unit_day='{n} ມື້'
     _unit_week='{n} ອາທິດ'
     _unit_month='{n} ເດືອນ'
@@ -35,5 +35,5 @@ _locale_lo() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
-    _plural_func=_plural_lo
+    _plural_func=_sayableage_plural_lo
 }

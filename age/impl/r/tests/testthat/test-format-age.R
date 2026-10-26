@@ -836,3 +836,75 @@ test_that("30.2 - known locale fr", {
   expect_false(is.null(loc))
   expect_equal(loc$code, "fr")
 })
+
+# ================================================================
+# Sections 31-33: weeks+days across month ends, half-year plurals, input validation
+# ================================================================
+
+test_that("31.1 - 88 days across a 28-day February", {
+  expect_equal(sayable_age_new(en)$format_age("2016-12-31", "2017-03-29"), "12 weeks, 4 days")
+})
+
+test_that("31.2 - 90 days across a year end into a leap year", {
+  expect_equal(sayable_age_new(en)$format_age("1991-11-27", "1992-02-25"), "12 weeks, 6 days")
+})
+
+test_that("31.3 - 33 days across a year end", {
+  expect_equal(sayable_age_new(en)$format_age("2020-11-30", "2021-01-02"), "4 weeks, 5 days")
+})
+
+test_that("31.4 - Compact form of 31.1", {
+  expect_equal(sayable_age_new(en, "compact")$format_age("2016-12-31", "2017-03-29"), "12w4d")
+})
+
+test_that("32.1 - Polish 3 is 'few'", {
+  expect_equal(sayable_age_new(load_locale("pl"))$format_age("2021-06-15", "2025-01-15"), "3 i p\u00f3\u0142 lata")
+})
+
+test_that("32.2 - Polish 5 is 'many'", {
+  expect_equal(sayable_age_new(load_locale("pl"), "short")$format_age("2020-06-15", "2025-12-15"), "5 i p\u00f3\u0142 lat")
+})
+
+test_that("32.3 - Tachelhit 6 is 'few'", {
+  expect_equal(sayable_age_new(load_locale("shi"))$format_age("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")
+})
+
+test_that("33.1 - February 30 doesn't exist", {
+  expect_null(sayable_age_new(en)$format_age("2025-02-30", "2032-06-25"))
+})
+
+test_that("33.2 - Month 13", {
+  expect_null(sayable_age_new(en)$format_age("2025-13-01", "2027-01-31"))
+})
+
+test_that("33.3 - February 29 in a non-leap year", {
+  expect_null(sayable_age_new(en)$format_age("2023-02-29", "2025-03-01"))
+})
+
+test_that("33.4 - Day 00", {
+  expect_null(sayable_age_new(en)$format_age("2025-06-00", "2027-02-25"))
+})
+
+test_that("33.5 - Unpadded month and day", {
+  expect_null(sayable_age_new(en)$format_age("2025-6-1", "2027-02-25"))
+})
+
+test_that("33.6 - Surrounding whitespace", {
+  expect_null(sayable_age_new(en)$format_age(" 2025-06-01", "2027-02-25"))
+})
+
+test_that("33.7 - A datetime is not a date", {
+  expect_null(sayable_age_new(en)$format_age("2025-06-15T10:00:00", "2027-02-25"))
+})
+
+test_that("33.8 - Invalid asOf", {
+  expect_null(sayable_age_new(en)$format_age("2020-01-01", "2025-04-31"))
+})
+
+test_that("33.9 - formatStage validates too", {
+  expect_null(sayable_age_new(en)$format_stage("2025-02-30", "2027-09-05"))
+})
+
+test_that("33.10 - February 29 in a leap year is valid", {
+  expect_equal(sayable_age_new(en)$format_age("2024-02-29", "2026-03-01"), "2 years")
+})

@@ -62,7 +62,7 @@ println(sd.format_duration(120) or { '' })  // "2分"
 
 ```v
 fn new_sayable_duration(locale &DurationLocale, compactness Compactness) SayableDuration
-fn (sd &SayableDuration) format_duration(total_seconds int) ?string
+fn (sd &SayableDuration) format_duration(total_seconds i64) ?string
 fn (sd &SayableDuration) format_duration_iso(start string, end string) ?string
 fn (sd &SayableDuration) format_since(start string, as_of string) ?string
 fn (sd &SayableDuration) format_until(target string, as_of string) ?string

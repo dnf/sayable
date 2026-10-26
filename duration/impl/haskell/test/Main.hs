@@ -27,6 +27,10 @@ since = formatSince en Normal
 until' :: Maybe String -> Maybe String -> Maybe String
 until' = formatUntil en Normal
 
+-- | Formats with the locale for a code (Nothing for an unknown code).
+withLocale :: String -> (DurationLocale -> Maybe String) -> Maybe String
+withLocale code f = getLocale code >>= f
+
 main :: IO ()
 main = hspec $ do
 
@@ -246,3 +250,45 @@ main = hspec $ do
             fmap localeCode (getLocale "en") `shouldBe` Just "en"
         it "unknown code" $
             getLocale "xx" `shouldSatisfy` isNothing
+
+    -- Section 18: Short compactness — relative time
+    describe "18. Short compactness \8212 relative time" $ do
+        -- 18.1
+        it "18.1 days and hours both kept" $
+            withLocale "men" (\l -> formatSince l Normal (Just "2025-01-20T01:32:11") (Just "2025-01-22T15:39:16")) `shouldBe` Just "l\596h\596nga 2, awa 14 taa gb\596y\596"
+
+    -- Section 19: Range (500-year ceiling)
+    describe "19. Range (500-year ceiling)" $ do
+        -- 19.1
+        it "19.1 500 Julian years: 6000 months, the ceiling" $
+            withLocale "en" (\l -> formatDuration l Normal 15778800000) `shouldBe` Just "500 years"
+        -- 19.2
+        it "19.2 over 6000 months" $
+            withLocale "en" (\l -> formatDuration l Normal 15800000000) `shouldBe` Nothing
+        -- 19.3
+        it "19.3 well beyond the ceiling (and 32-bit range)" $
+            withLocale "en" (\l -> formatDuration l Normal 99999999999) `shouldBe` Nothing
+        -- 19.4
+        it "19.4 525 years ago" $
+            withLocale "en" (\l -> formatSince l Normal (Just "1500-01-01T00:00:00") (Just "2025-01-01T00:00:00")) `shouldBe` Nothing
+        -- 19.5
+        it "19.5 575 years from now" $
+            withLocale "en" (\l -> formatUntil l Normal (Just "2600-01-01T00:00:00") (Just "2025-01-01T00:00:00")) `shouldBe` Nothing
+
+    -- Section 20: Timestamp validation
+    describe "20. Timestamp validation" $ do
+        -- 20.1
+        it "20.1 seconds are optional" $
+            withLocale "en" (\l -> formatDurationIso l Normal "2025-01-15T10:00" "2025-01-15T11:30:00") `shouldBe` Just "1\189 hours"
+        -- 20.2
+        it "20.2 minutes are required" $
+            withLocale "en" (\l -> formatDurationIso l Normal "2025-01-15T10" "2025-01-15T11:30:00") `shouldBe` Nothing
+        -- 20.3
+        it "20.3 unpadded date" $
+            withLocale "en" (\l -> formatDurationIso l Normal "2025-1-5T10:00:00" "2025-01-15T11:30:00") `shouldBe` Nothing
+        -- 20.4
+        it "20.4 impossible date" $
+            withLocale "en" (\l -> formatDurationIso l Normal "2025-02-30T10:00:00" "2025-03-15T11:30:00") `shouldBe` Nothing
+        -- 20.5
+        it "20.5 hour out of range" $
+            withLocale "en" (\l -> formatSince l Normal (Just "2025-01-15T10:00:00") (Just "2025-01-15T25:00:00")) `shouldBe` Nothing

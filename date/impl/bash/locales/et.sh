@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/et.json
 
-_locale_et() {
+_sayabledate_locale_et() {
     _months=('jaanuar' 'veebruar' 'märts' 'aprill' 'mai' 'juuni' 'juuli' 'august' 'september' 'oktoober' 'november' 'detsember')
     _weekdays=('pühapäev' 'esmaspäev' 'teisipäev' 'kolmapäev' 'neljapäev' 'reede' 'laupäev')
     _day_format='{n}.'

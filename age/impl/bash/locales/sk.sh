@@ -9,14 +9,14 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/sk.json
 
-_plural_sk() {
+_sayableage_plural_sk() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -ge 2 ] && [ "${n}" -le 4 ]; then echo "few"; return; fi
     echo "other"
 }
 
-_locale_sk() {
+_sayableage_locale_sk() {
     _unit_day_one='{n} deň'
     _unit_day_few='{n} dni'
     _unit_day_other='{n} dní'
@@ -51,5 +51,5 @@ _locale_sk() {
     _compact_unit_month='{n} m.'
     _compact_unit_year='{n} r.'
     _compact_delimiter=''
-    _plural_func=_plural_sk
+    _plural_func=_sayableage_plural_sk
 }

@@ -357,4 +357,8 @@ sub get {
   return $_LOCALES{$code};
 }
 
+sub codes {
+  return sort keys %_LOCALES;
+}
+
 1;

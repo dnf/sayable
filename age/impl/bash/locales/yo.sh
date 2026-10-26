@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/yo.json
 
-_plural_yo() {
+_sayableage_plural_yo() {
     echo "other"
 }
 
-_locale_yo() {
+_sayableage_locale_yo() {
     _unit_day='ọjọ́ {n}'
     _unit_week='ọ̀sẹ̀ {n}'
     _unit_month='oṣù {n}'
@@ -37,5 +37,5 @@ _locale_yo() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_yo
+    _plural_func=_sayableage_plural_yo
 }

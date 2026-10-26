@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/men.json
 
-_locale_men() {
+_sayabletime_locale_men() {
     _clock_hours=('pu wɛlɛ' 'yila' 'fele' 'sawa' 'nani' 'lɔlu' 'wɛita' 'wɔfela' 'wayakpa' 'taawu' 'pu' 'pu mahu yila')
     _clock_midnight='kpindi gbɔyɔŋ'
     _clock_noon='ndɔlei-ma'

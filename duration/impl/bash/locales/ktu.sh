@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ktu.json
 
-_plural_ktu() {
+_sayableduration_plural_ktu() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ktu() {
+_sayableduration_locale_ktu() {
     _unit_second_one='sekonde {n}'
     _unit_second_other='masekonde {n}'
     _unit_minute_one='miniti {n}'
@@ -63,5 +63,5 @@ _locale_ktu() {
     _compact_delimiter=''
     _compact_ago='{0} vioka'
     _compact_in_future='na {0}'
-    _plural_func=_plural_ktu
+    _plural_func=_sayableduration_plural_ktu
 }

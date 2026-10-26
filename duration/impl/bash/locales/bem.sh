@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/bem.json
 
-_plural_bem() {
+_sayableduration_plural_bem() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_bem() {
+_sayableduration_locale_bem() {
     _unit_second_one='isekondi {n}'
     _unit_second_other='amasekondi {n}'
     _unit_minute_one='iminiti {n}'
@@ -59,5 +59,5 @@ _locale_bem() {
     _compact_delimiter=''
     _compact_ago='{0} iyapita'
     _compact_in_future='mu {0}'
-    _plural_func=_plural_bem
+    _plural_func=_sayableduration_plural_bem
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/af.json
 
-_locale_af() {
+_sayabletime_locale_af() {
     _clock_hours=('twaalf' 'een' 'twee' 'drie' 'vier' 'vyf' 'ses' 'sewe' 'agt' 'nege' 'tien' 'elf')
     _clock_midnight='middernag'
     _clock_noon='middag'

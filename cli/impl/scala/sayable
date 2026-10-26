@@ -34,6 +34,7 @@ for candidate in \
     "${SCALA_HOME}/libexec/maven2/org/scala-lang/scala3-library_3" \
     "${SCALA_HOME}/maven2/org/scala-lang/scala3-library_3" \
     "${SCALA_HOME}/lib"; do
+    [[ -d "${candidate}" ]] || continue
     jar="$(find "${candidate}" -name 'scala3-library_3-*.jar' 2>/dev/null | head -1)"
     if [[ -n "${jar}" ]]; then
         SCALA3_LIB="${jar}"
@@ -46,6 +47,7 @@ for candidate in \
     "${SCALA_HOME}/libexec/maven2/org/scala-lang/scala-library" \
     "${SCALA_HOME}/maven2/org/scala-lang/scala-library" \
     "${SCALA_HOME}/lib"; do
+    [[ -d "${candidate}" ]] || continue
     jar="$(find "${candidate}" -name 'scala-library-*.jar' 2>/dev/null | head -1)"
     if [[ -n "${jar}" ]]; then
         SCALA2_LIB="${jar}"
@@ -63,15 +65,17 @@ if [[ -z "${SCALA2_LIB}" ]]; then
     exit 2
 fi
 
-# Compile if needed (check if Sayable.class exists and is newer than source)
+# Compile if Sayable.class is missing or older than any CLI or library source
 needs_compile=false
 if [[ ! -f "${BUILD_DIR}/Sayable.class" ]]; then
     needs_compile=true
-elif [[ "${SCRIPT_DIR}/Sayable.scala" -nt "${BUILD_DIR}/Sayable.class" ]]; then
+elif [[ -n "$(find "${SCRIPT_DIR}/Sayable.scala" "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DURATION_SRC}" \
+        -name '*.scala' -newer "${BUILD_DIR}/Sayable.class" 2>/dev/null | head -1)" ]]; then
     needs_compile=true
 fi
 
 if ${needs_compile}; then
+    rm -rf "${BUILD_DIR}"
     mkdir -p "${BUILD_DIR}"
 
     # Collect all Scala source files from all four components + CLI

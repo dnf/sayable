@@ -1,9 +1,19 @@
 Imports System
+Imports System.Globalization
+Imports System.Text.RegularExpressions
 
 Namespace SayableDurationLib
 
     Public Class SayableDuration
         Public Const Version As String = "0.5.0"
+
+        ''' <summary>500 years, the same ceiling as sayable-age.</summary>
+        Private Const MaxDurationMonths As Long = 6000
+
+        ''' <summary>YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).</summary>
+        Private Shared ReadOnly Timestamp As New Regex(
+            "\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z",
+            RegexOptions.CultureInvariant)
 
         Private ReadOnly _locale As DurationLocale
         Private ReadOnly _second As UnitForms
@@ -46,7 +56,7 @@ Namespace SayableDurationLib
             If ovr IsNot Nothing AndAlso ovr.InFuture IsNot Nothing Then _inFuture = ovr.InFuture Else _inFuture = locale.InFuture
         End Sub
 
-        Public Shared Function FormatDurationSeconds(seconds As Integer) As String
+        Public Shared Function FormatDurationSeconds(seconds As Long) As String
             Return DefaultInstance.FormatDuration(seconds)
         End Function
 
@@ -62,7 +72,7 @@ Namespace SayableDurationLib
             Return DefaultInstance.Until(target, asOf)
         End Function
 
-        Public Function FormatDuration(seconds As Integer) As String
+        Public Function FormatDuration(seconds As Long) As String
             If seconds < 0 Then Return Nothing
             Return FormatDurationInternal(seconds)
         End Function
@@ -85,7 +95,7 @@ Namespace SayableDurationLib
             If diff < 0 Then Return Nothing
             If diff = 0 Then Return _justNow
             Dim dur = FormatDurationInternal(diff)
-            Return _ago.Replace("{0}", dur)
+            Return If(dur Is Nothing, Nothing, _ago.Replace("{0}", dur))
         End Function
 
         Public Function Until(target As String, asOf As String) As String
@@ -97,10 +107,10 @@ Namespace SayableDurationLib
             If diff < 0 Then Return Nothing
             If diff = 0 Then Return _justNow
             Dim dur = FormatDurationInternal(diff)
-            Return _inFuture.Replace("{0}", dur)
+            Return If(dur Is Nothing, Nothing, _inFuture.Replace("{0}", dur))
         End Function
 
-        Private Function FormatDurationInternal(total As Integer) As String
+        Private Function FormatDurationInternal(total As Long) As String
             If total = 0 Then Return _justNow
 
             ' 1-59 seconds
@@ -170,7 +180,8 @@ Namespace SayableDurationLib
             End If
 
             ' Approximate months (30.44 days average)
-            Dim totalMonths = CInt(Math.Round(totalDays / 30.44))
+            Dim totalMonths = CLng(Math.Round(totalDays / 30.44))
+            If totalMonths > MaxDurationMonths Then Return Nothing
 
             ' 1-11 months
             If totalMonths < 12 Then
@@ -188,7 +199,9 @@ Namespace SayableDurationLib
             Return yearResult
         End Function
 
-        Private Function ResolveUnit(count As Integer, uf As UnitForms, Optional half As String = "") As String
+        ''' <summary>Counts are bounded by the 500-year ceiling, so they always fit in an Integer.</summary>
+        Private Function ResolveUnit(boundedCount As Long, uf As UnitForms, Optional half As String = "") As String
+            Dim count = CInt(boundedCount)
             Dim baseN As String
             If _locale.FormatNumber IsNot Nothing Then
                 baseN = _locale.FormatNumber(count)
@@ -239,55 +252,24 @@ Namespace SayableDurationLib
             Return result
         End Function
 
-        Friend Shared Function ParseIsoToSeconds(iso As String) As Integer?
-            If String.IsNullOrEmpty(iso) Then Return Nothing
-
-            Dim tIdx = iso.IndexOf("T"c)
-            If tIdx < 0 Then Return Nothing
-
-            Dim datePart = iso.Substring(0, tIdx)
-            Dim timePart = iso.Substring(tIdx + 1)
-
-            Dim dp = datePart.Split("-"c)
-            If dp.Length < 3 Then Return Nothing
-            Dim year = SafeAtoi(dp(0))
-            Dim month = SafeAtoi(dp(1))
-            Dim day = SafeAtoi(dp(2))
-            If year Is Nothing OrElse month Is Nothing OrElse day Is Nothing Then Return Nothing
-
-            Dim plusIdx = timePart.IndexOf("+"c)
-            If plusIdx >= 0 Then timePart = timePart.Substring(0, plusIdx)
-            Dim zIdx = timePart.IndexOf("Z"c)
-            If zIdx >= 0 Then timePart = timePart.Substring(0, zIdx)
-
-            Dim tp = timePart.Split(":"c)
-            Dim hour = SafeAtoi(tp(0))
-            If hour Is Nothing Then Return Nothing
-            Dim minute As Integer?
-            If tp.Length > 1 Then minute = SafeAtoi(tp(1)) Else minute = 0
-            If minute Is Nothing Then Return Nothing
-            Dim second As Integer
-            If tp.Length > 2 Then
-                Dim secStr = tp(2).Split("."c)(0)
-                Dim s = SafeAtoi(secStr)
-                If s Is Nothing Then Return Nothing
-                second = s.Value
-            Else
-                second = 0
-            End If
-
-            Dim days = DaysSinceEpoch(year.Value, month.Value, day.Value)
-            Return days * 86400 + hour.Value * 3600 + minute.Value * 60 + second
+        Friend Shared Function ParseIsoToSeconds(iso As String) As Long?
+            If iso Is Nothing Then Return Nothing
+            Dim match = Timestamp.Match(iso)
+            If Not match.Success Then Return Nothing
+            Dim year = Field(match, 1)
+            Dim month = Field(match, 2)
+            Dim day = Field(match, 3)
+            Dim hour = Field(match, 4)
+            Dim minute = Field(match, 5)
+            Dim second = If(match.Groups(6).Success, Field(match, 6), 0)
+            If month < 1 OrElse month > 12 OrElse day < 1 OrElse day > DaysInMonth(year, month) Then Return Nothing
+            If hour > 23 OrElse minute > 59 OrElse second > 59 Then Return Nothing
+            Dim days = CLng(DaysSinceEpoch(year, month, day))
+            Return days * 86400 + hour * 3600 + minute * 60 + second
         End Function
 
-        Private Shared Function SafeAtoi(s As String) As Integer?
-            If String.IsNullOrEmpty(s) Then Return Nothing
-            Dim n = 0
-            For Each c In s
-                If c < "0"c OrElse c > "9"c Then Return Nothing
-                n = n * 10 + (AscW(c) - AscW("0"c))
-            Next
-            Return n
+        Private Shared Function Field(match As Match, group As Integer) As Integer
+            Return Integer.Parse(match.Groups(group).Value, CultureInfo.InvariantCulture)
         End Function
 
         Private Shared Function IsLeapYear(year As Integer) As Boolean

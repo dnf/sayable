@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/tk.json
 
-_locale_tk() {
+_sayabledate_locale_tk() {
     _months=('Ýanwar' 'Fewral' 'Mart' 'Aprel' 'Maý' 'Iýun' 'Iýul' 'Awgust' 'Sentýabr' 'Oktýabr' 'Noýabr' 'Dekabr')
     _weekdays=('Ýekşenbe' 'Duşenbe' 'Sişenbe' 'Çarşenbe' 'Penşenbe' 'Anna' 'Şenbe')
     _day_format='{n}'

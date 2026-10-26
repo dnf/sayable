@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/tum.json
 
-_plural_tum() {
+_sayableage_plural_tum() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tum() {
+_sayableage_locale_tum() {
     _unit_day_one='dazi {n}'
     _unit_day_other='madazi {n}'
     _unit_week_one='sabata {n}'
@@ -46,5 +46,5 @@ _locale_tum() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_tum
+    _plural_func=_sayableage_plural_tum
 }

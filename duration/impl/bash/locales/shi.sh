@@ -9,14 +9,14 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/shi.json
 
-_plural_shi() {
+_sayableduration_plural_shi() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -ge 2 ] && [ "${n}" -le 10 ]; then echo "few"; return; fi
     echo "other"
 }
 
-_locale_shi() {
+_sayableduration_locale_shi() {
     _unit_second_one='{n} tasint'
     _unit_second_few='{n} tasinin'
     _unit_second_other='{n} tasinin'
@@ -63,5 +63,5 @@ _locale_shi() {
     _compact_delimiter=''
     _compact_ago='ɣ {0} zzrin'
     _compact_in_future='ɣ {0}'
-    _plural_func=_plural_shi
+    _plural_func=_sayableduration_plural_shi
 }

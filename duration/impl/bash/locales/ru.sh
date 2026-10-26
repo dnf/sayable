@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ru.json
 
-_plural_ru() {
+_sayableduration_plural_ru() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -18,7 +18,7 @@ _plural_ru() {
     echo "many"
 }
 
-_locale_ru() {
+_sayableduration_locale_ru() {
     _unit_second_one='{n} секунда'
     _unit_second_few='{n} секунды'
     _unit_second_many='{n} секунд'
@@ -78,5 +78,5 @@ _locale_ru() {
     _compact_delimiter=''
     _compact_ago='{0} назад'
     _compact_in_future='через {0}'
-    _plural_func=_plural_ru
+    _plural_func=_sayableduration_plural_ru
 }

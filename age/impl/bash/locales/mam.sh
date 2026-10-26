@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mam.json
 
-_plural_mam() {
+_sayableage_plural_mam() {
     echo "other"
 }
 
-_locale_mam() {
+_sayableage_locale_mam() {
     _unit_day='{n} q'\''ij'
     _unit_week='{n} xjaw'
     _unit_month='{n} xjaw'
@@ -36,5 +36,5 @@ _locale_mam() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_mam
+    _plural_func=_sayableage_plural_mam
 }

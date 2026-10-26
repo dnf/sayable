@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ne.json
 
-_locale_ne() {
+_sayabletime_locale_ne() {
     _clock_hours=('बाह्र' 'एक' 'दुई' 'तीन' 'चार' 'पाँच' 'छ' 'सात' 'आठ' 'नौ' 'दश' 'एघार')
     _clock_midnight='मध्यरात'
     _clock_noon='मध्यान्ह'

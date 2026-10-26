@@ -31,6 +31,9 @@
 
 version('0.5.0').
 
+%% The 500-year ceiling (6000 months), the same as sayable-age.
+max_duration_months(6000).
+
 %% get_locale(+Code) — succeeds if Code is a known locale.
 get_locale(Code) :-
     sd_locale(Code).
@@ -103,33 +106,59 @@ format_until(Code, Target, AsOf, Compactness, Result) :-
     ).
 
 %% parse_iso_to_seconds(+ISOStr, -Seconds)
+%% Parses YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (the
+%% zone is accepted but not applied; docs/input-formats.md). Fails if the
+%% timestamp is malformed or names an impossible date or time.
 parse_iso_to_seconds(Atom, Seconds) :-
-    atom_string(Atom, Str),
-    split_string(Str, "T", "", [DatePart, TimePart0]),
-    % Strip timezone
-    (sub_string(TimePart0, Pos, _, _, "+")
-     -> sub_string(TimePart0, 0, Pos, _, TimePart)
-     ;  (sub_string(TimePart0, Pos2, _, _, "Z")
-         -> sub_string(TimePart0, 0, Pos2, _, TimePart)
-         ;  TimePart = TimePart0
-        )
-    ),
-    split_string(DatePart, "-", "", [YStr, MStr, DStr]),
-    number_string(Y, YStr),
-    number_string(Mo, MStr),
-    number_string(D, DStr),
-    split_string(TimePart, ":", "", TParts),
-    nth0(0, TParts, HStr),
-    (nth0(1, TParts, MinStr0) -> true ; MinStr0 = "0"),
-    (nth0(2, TParts, SecStr0) -> true ; SecStr0 = "0"),
-    % Strip fractional seconds
-    split_string(SecStr0, ".", "", SecParts),
-    nth0(0, SecParts, SecStr),
-    number_string(H, HStr),
-    number_string(Min, MinStr0),
-    number_string(Sec, SecStr),
+    atomic(Atom),
+    atom_codes(Atom, Codes),
+    phrase(timestamp(Y, Mo, D, H, Min, Sec), Codes),
+    !,
     days_since_epoch(Y, Mo, D, Days),
     Seconds is Days * 86400 + H * 3600 + Min * 60 + Sec.
+
+timestamp(Y, Mo, D, H, Min, Sec) -->
+    fixed_digits(4, Y), "-", fixed_digits(2, Mo), "-", fixed_digits(2, D),
+    { real_calendar_day(Y, Mo, D) },
+    "T", clock_hour(H), ":", fixed_digits(2, Min), optional_seconds(Sec),
+    optional_zone,
+    { H =< 23, Min =< 59, Sec =< 59 }.
+
+clock_hour(H) --> fixed_digits(2, H).
+clock_hour(H) --> fixed_digits(1, H).
+
+optional_seconds(Sec) --> ":", fixed_digits(2, Sec), optional_fraction.
+optional_seconds(0) --> [].
+
+optional_fraction --> ".", ascii_digits_1(_).
+optional_fraction --> [].
+
+optional_zone --> "Z".
+optional_zone --> [Sign], { memberchk(Sign, `+-`) },
+    fixed_digits(2, _), ":", fixed_digits(2, _).
+optional_zone --> [].
+
+%% fixed_digits(+Count, -Value)// — exactly Count ASCII digits.
+fixed_digits(Count, Value) -->
+    ascii_digits(Count, Codes),
+    { number_codes(Value, Codes) }.
+
+ascii_digits(0, []) --> !, [].
+ascii_digits(Count, [C|Cs]) -->
+    ascii_digit(C),
+    { Rest is Count - 1 },
+    ascii_digits(Rest, Cs).
+
+%% ascii_digits_1(-Codes)// — one or more ASCII digits.
+ascii_digits_1([C|Cs]) --> ascii_digit(C), ascii_digits_1(Cs).
+ascii_digits_1([C]) --> ascii_digit(C).
+
+ascii_digit(C) --> [C], { C >= 0'0, C =< 0'9 }.
+
+real_calendar_day(Y, M, D) :-
+    M >= 1, M =< 12,
+    days_in_month(Y, M, LastDay),
+    D >= 1, D =< LastDay.
 
 %% days_since_epoch(+Y, +M, +D, -Days) — days since 2000-01-01.
 days_since_epoch(Y, M, D, Days) :-
@@ -255,6 +284,8 @@ format_duration_secs(Code, Total, Compactness, Result) :-
     TotalDays is Total // 86400,
     TotalDays >= 30, !,
     TotalMonths0 is round(TotalDays / 30.44),
+    max_duration_months(MaxMonths),
+    TotalMonths0 =< MaxMonths,
     (TotalMonths0 < 12
      -> (TotalMonths0 =:= 0 -> TotalMonths = 1 ; TotalMonths = TotalMonths0),
         resolve_unit(Code, TotalMonths, month, "", Compactness, Result)

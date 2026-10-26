@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/pov.json
 
-_plural_pov() {
+_sayableduration_plural_pov() {
     echo "other"
 }
 
-_locale_pov() {
+_sayableduration_locale_pov() {
     _unit_second='{n} sigundu'
     _unit_minute='{n} minutu'
     _unit_hour='{n} ora'
@@ -46,5 +46,5 @@ _locale_pov() {
     _compact_delimiter=''
     _compact_ago='faz {0}'
     _compact_in_future='di {0}'
-    _plural_func=_plural_pov
+    _plural_func=_sayableduration_plural_pov
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/pl.json
 
-_locale_pl() {
+_sayabletime_locale_pl() {
     _clock_hours=('dwunasta' 'pierwsza' 'druga' 'trzecia' 'czwarta' 'piąta' 'szósta' 'siódma' 'ósma' 'dziewiąta' 'dziesiąta' 'jedenasta')
     _clock_midnight='północ'
     _clock_noon='południe'

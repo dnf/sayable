@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/snk.json "
 
-"Locale: snk"
+"Locale: snk"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 snk

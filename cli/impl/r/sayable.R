@@ -276,7 +276,9 @@ cmd_duration <- function(positionals, options) {
   if (is.null(value)) {
     result <- formatter$format_duration(NULL)
   } else if (grepl("^-?[0-9]+$", value)) {
-    result <- formatter$format_duration(as.integer(value))
+    # Doubles hold every second count up to the 500-year ceiling exactly;
+    # R integers stop at 2^31 - 1.
+    result <- formatter$format_duration(as.numeric(value))
   } else {
     # Timestamp mode
     if (length(positionals) < 2) {

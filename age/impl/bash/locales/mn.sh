@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mn.json
 
-_plural_mn() {
+_sayableage_plural_mn() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_mn() {
+_sayableage_locale_mn() {
     _unit_day='{n} өдөр'
     _unit_week='{n} долоо хоног'
     _unit_month='{n} сар'
@@ -39,5 +39,5 @@ _locale_mn() {
     _compact_unit_year='{n} н'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mn
+    _plural_func=_sayableage_plural_mn
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/nus.json
 
-_locale_nus() {
+_sayabletime_locale_nus() {
     _clock_hours=('thiäär ke rou' 'tök' 'rou' 'diäk' 'ŋuan' 'dhiëc' 'bäkɛl' 'dhorou' 'bät' 'kuɔn' 'thiäär' 'thiäär ku tök')
     _clock_midnight='wakɔ̈u'
     _clock_noon='cäŋ kɔ̈k'

@@ -12,6 +12,7 @@
        01 WS-ARG-VAL           PIC X(256).
        01 WS-CMD               PIC X(20).
        01 WS-POS1              PIC X(256).
+       01 WS-POS1-LEN          PIC 9(4) VALUE 0.
        01 WS-POS1-SET          PIC 9 VALUE 0.
        01 WS-OPT-LOCALE        PIC X(8) VALUE "en".
        01 WS-OPT-COMPACTNESS   PIC 9 VALUE 0.
@@ -61,6 +62,7 @@
                                GOBACK
                            END-IF
                            MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-LOCALE
+                           PERFORM REJECT-UNSTORABLE-LOCALE
                        WHEN "--short"
                            MOVE 1 TO WS-OPT-COMPACTNESS
                        WHEN "--compact"
@@ -78,6 +80,8 @@
                ELSE
                    IF WS-POS1-SET = 0
                        MOVE WS-ARG-VAL TO WS-POS1
+                       MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                           TO WS-POS1-LEN
                        MOVE 1 TO WS-POS1-SET
                    END-IF
                END-IF
@@ -106,7 +110,7 @@
                EXIT PARAGRAPH
            END-IF
 
-           IF FUNCTION TRIM(WS-POS1) = "null"
+           IF (WS-POS1-LEN = 4 AND WS-POS1(1:4) = "null")
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
@@ -128,6 +132,7 @@
            END-IF
 
            MOVE WS-POS1 TO WS-FMT-TIME
+           MOVE WS-POS1-LEN TO WS-FMT-TIME-LEN
            MOVE WS-OPT-COMPACTNESS TO WS-FMT-COMPACTNESS
            PERFORM FORMAT-TIME
 
@@ -137,6 +142,17 @@
                MOVE WS-FORMAT-RESULT TO WS-EMIT-TEXT
                PERFORM EMIT-LINE
                MOVE 0 TO REQ-EXIT-CODE
+           END-IF
+           .
+
+      *> A locale code longer than WS-OPT-LOCALE, or with trailing
+      *> blanks, would match a real code once padded or cut; it names
+      *> no locale.
+       REJECT-UNSTORABLE-LOCALE.
+           IF REQ-ARG-LEN(WS-ARG-IDX) > LENGTH OF WS-OPT-LOCALE
+               OR REQ-ARG-LEN(WS-ARG-IDX) NOT =
+                   FUNCTION STORED-CHAR-LENGTH(REQ-ARG(WS-ARG-IDX))
+               MOVE "?" TO WS-OPT-LOCALE
            END-IF
            .
 

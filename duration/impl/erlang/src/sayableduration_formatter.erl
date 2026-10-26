@@ -2,10 +2,12 @@
 -include("sayableduration.hrl").
 -export([format_duration/4, format_since/4, format_until/4]).
 
+-define(MAX_DURATION_MONTHS, 6000).  % 500 years, the same ceiling as sayable-age
+
 -spec format_duration(#duration_locale{}, compactness(), integer() | string() | undefined, string() | undefined) -> {ok, string()} | error.
 format_duration(_Locale, _Compactness, undefined, _End) -> error;
 format_duration(Locale, Compactness, Seconds, _End) when is_integer(Seconds) ->
-    case Seconds < 0 of
+    case Seconds < 0 orelse beyond_ceiling(Seconds) of
         true -> error;
         false ->
             {Second, Minute, Hour, Day, Week, Month, Year, Half, Delim, JustNow, _Ago, _InFuture} =
@@ -20,10 +22,7 @@ format_duration(Locale, Compactness, Start, End) when is_list(Start) ->
             case {sayableduration_internal:parse_iso_to_seconds(Start),
                   sayableduration_internal:parse_iso_to_seconds(End)} of
                 {{ok, S}, {ok, E}} ->
-                    Total = abs(E - S),
-                    {Second, Minute, Hour, Day, Week, Month, Year, Half, Delim, JustNow, _Ago, _InFuture} =
-                        resolve_locale(Locale, Compactness),
-                    {ok, format_seconds(Locale, Second, Minute, Hour, Day, Week, Month, Year, Half, Delim, JustNow, Total)};
+                    format_duration(Locale, Compactness, abs(E - S), undefined);
                 _ -> error
             end
     end;
@@ -39,8 +38,10 @@ format_since(Locale, Compactness, Start, AsOf) ->
           sayableduration_internal:parse_iso_to_seconds(AsOf)} of
         {{ok, S}, {ok, A}} ->
             Diff = A - S,
+            BeyondCeiling = beyond_ceiling(Diff),
             if
                 Diff < 0 -> error;
+                BeyondCeiling -> error;
                 Diff =:= 0 ->
                     {_Second, _Minute, _Hour, _Day, _Week, _Month, _Year, _Half, _Delim, JustNow, _Ago, _InFuture} =
                         resolve_locale(Locale, Compactness),
@@ -64,8 +65,10 @@ format_until(Locale, Compactness, Target, AsOf) ->
           sayableduration_internal:parse_iso_to_seconds(AsOf)} of
         {{ok, T}, {ok, A}} ->
             Diff = T - A,
+            BeyondCeiling = beyond_ceiling(Diff),
             if
                 Diff < 0 -> error;
+                BeyondCeiling -> error;
                 Diff =:= 0 ->
                     {_Second, _Minute, _Hour, _Day, _Week, _Month, _Year, _Half, _Delim, JustNow, _Ago, _InFuture} =
                         resolve_locale(Locale, Compactness),
@@ -80,6 +83,12 @@ format_until(Locale, Compactness, Target, AsOf) ->
     end.
 
 %% Internal
+
+%% Months are counted the way format_seconds counts them; the day bound keeps
+%% huge second counts away from float conversion.
+beyond_ceiling(Total) ->
+    TotalDays = Total div 86400,
+    TotalDays > ?MAX_DURATION_MONTHS * 31 orelse round(TotalDays / 30.44) > ?MAX_DURATION_MONTHS.
 
 format_seconds(_Locale, _Second, _Minute, _Hour, _Day, _Week, _Month, _Year, _Half, _Delim, JustNow, 0) ->
     JustNow;

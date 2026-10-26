@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/cak.json
 
-_locale_cak() {
+_sayabledate_locale_cak() {
     _months=('Nab'\''ey ik'\''' 'Ruka'\''n ik'\''' 'Rox ik'\''' 'Rukaj ik'\''' 'Ro'\'' ik'\''' 'Ruwaq ik'\''' 'Ruwuq ik'\''' 'Ruwajxaq ik'\''' 'Rub'\''elej ik'\''' 'Rulaj ik'\''' 'Rujulaj ik'\''' 'Rukab'\''laj ik'\''')
     _weekdays=('Domingo' 'Lunes' 'Martes' 'Miércoles' 'Jueves' 'Viernes' 'Sábado')
     _day_format='{n}'

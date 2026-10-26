@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ka.json
 
-_plural_ka() {
+_sayableduration_plural_ka() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ka() {
+_sayableduration_locale_ka() {
     _unit_second='{n} წამი'
     _unit_minute='{n} წუთი'
     _unit_hour='{n} საათი'
@@ -52,5 +52,5 @@ _locale_ka() {
     _compact_delimiter=''
     _compact_ago='{0} წინ'
     _compact_in_future='{0} შემდეგ'
-    _plural_func=_plural_ka
+    _plural_func=_sayableduration_plural_ka
 }

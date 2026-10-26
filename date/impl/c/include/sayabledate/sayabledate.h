@@ -63,6 +63,9 @@ typedef struct {
 int sd_format_date(char *buf, size_t bufsz, const SdDateLocale *locale,
                    SdCompactness compactness, const char *date_str);
 
+int sd_format_date_with_year(char *buf, size_t bufsz, const SdDateLocale *locale,
+                             SdCompactness compactness, const char *date_str);
+
 int sd_format_relative(char *buf, size_t bufsz, const SdDateLocale *locale,
                        SdCompactness compactness, const char *date_str,
                        const char *as_of_str);

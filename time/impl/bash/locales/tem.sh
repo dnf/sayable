@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tem.json
 
-_locale_tem() {
+_sayabletime_locale_tem() {
     _clock_hours=('pɛn pu' 'kɩrɩŋ' 'rɔŋ' 'rasar' 'rɔŋ-anat' 'rɔman' 'rɔmata' 'rɔmbot' 'rɔmɔntat' 'rɔmɔntaŋka' 'pɛn' 'pɛn nɛ kɩrɩŋ')
     _clock_midnight='rofɛt anpa'
     _clock_noon='lən'

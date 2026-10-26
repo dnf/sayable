@@ -106,13 +106,16 @@ public final class SayableAge {
     }
 
     static int[] parseDateParts(String s) {
-        if (s.length() < 10 || s.charAt(4) != '-' || s.charAt(7) != '-') return null;
+        if (s.length() != 10 || s.charAt(4) != '-' || s.charAt(7) != '-') return null;
         int y = safeAtoi(s, 0, 4);
         int m = safeAtoi(s, 5, 7);
         int d = safeAtoi(s, 8, 10);
-        if (y < 0 || m < 0 || d < 0) return null;
-        if (y == 0 && m == 0 && d == 0) return null;
+        if (y < 0 || m < 1 || m > 12 || d < 1 || d > daysInMonth(y, m)) return null;
         return new int[]{y, m, d};
+    }
+
+    static int daysInMonth(int year, int month) {
+        return YearMonth.of(year, month).lengthOfMonth();
     }
 
     static int safeAtoi(String s, int from, int to) {

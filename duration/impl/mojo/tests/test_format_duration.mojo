@@ -373,6 +373,86 @@ fn test_compact_one_minute_30_seconds() raises:
 
 
 # ================================================================
+# Short since keeps days and hours
+# ================================================================
+
+
+# 18.1
+fn test_18_1_short_since_keeps_days_and_hours() raises:
+    var sd = SayableDuration(get_locale("men"))
+    assert_equal(sd.format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16"), "lɔhɔnga 2, awa 14 taa gbɔyɔ")
+
+
+# ================================================================
+# 500-year range
+# ================================================================
+
+
+# 19.1
+fn test_19_1_500_julian_years_is_the_ceiling() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_duration_seconds(15778800000), "500 years")
+
+
+# 19.2
+fn test_19_2_over_6000_months_is_invalid() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_duration_seconds(15800000000), "")
+
+
+# 19.3
+fn test_19_3_far_beyond_ceiling_is_invalid() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_duration_seconds(99999999999), "")
+
+
+# 19.4
+fn test_19_4_since_525_years_is_invalid() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00"), "")
+
+
+# 19.5
+fn test_19_5_until_575_years_is_invalid() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00"), "")
+
+
+# ================================================================
+# Timestamp validation
+# ================================================================
+
+
+# 20.1
+fn test_20_1_seconds_are_optional() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_duration_iso("2025-01-15T10:00", "2025-01-15T11:30:00"), "1½ hours")
+
+
+# 20.2
+fn test_20_2_minutes_are_required() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_duration_iso("2025-01-15T10", "2025-01-15T11:30:00"), "")
+
+
+# 20.3
+fn test_20_3_unpadded_date_is_invalid() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_duration_iso("2025-1-5T10:00:00", "2025-01-15T11:30:00"), "")
+
+
+# 20.4
+fn test_20_4_impossible_date_is_invalid() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_duration_iso("2025-02-30T10:00:00", "2025-03-15T11:30:00"), "")
+
+
+# 20.5
+fn test_20_5_hour_out_of_range_is_invalid() raises:
+    var sd = SayableDuration(get_locale("en"))
+    assert_equal(sd.format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00"), "")
+
+# ================================================================
 # Registry
 # ================================================================
 
@@ -449,4 +529,15 @@ fn main() raises:
     test_compact_one_minute_30_seconds()
     test_registry_lookup()
     test_registry_fallback()
-    print("All 55 duration tests passed.")
+    test_18_1_short_since_keeps_days_and_hours()
+    test_19_1_500_julian_years_is_the_ceiling()
+    test_19_2_over_6000_months_is_invalid()
+    test_19_3_far_beyond_ceiling_is_invalid()
+    test_19_4_since_525_years_is_invalid()
+    test_19_5_until_575_years_is_invalid()
+    test_20_1_seconds_are_optional()
+    test_20_2_minutes_are_required()
+    test_20_3_unpadded_date_is_invalid()
+    test_20_4_impossible_date_is_invalid()
+    test_20_5_hour_out_of_range_is_invalid()
+    print("All 65 duration tests passed.")

@@ -15,7 +15,10 @@ import os
 import selectors
 import subprocess
 import sys
+import tempfile
+from pathlib import Path
 
+STDERR_TAIL_LINES = 20
 TIMEOUT_SECONDS = 60  # generous: the first request may trigger a JIT or a build
 
 CHECKS = [
@@ -30,6 +33,12 @@ CHECKS = [
     ("version", ["version"], 0, "sayable 0.5.0"),
     ("still alive", ["age", "2025-06-14", "-d", "2025-06-15"], 0, "1 day"),
 ]
+
+
+def canonical_locales() -> list[str]:
+    """Every locale code, sorted, from the age component's locale JSON files."""
+    root = Path(__file__).resolve().parent.parent
+    return sorted(p.stem for p in (root / "age" / "locales" / "src").glob("*.json"))
 
 
 def read_line(proc: subprocess.Popen, sel: selectors.BaseSelector) -> str | None:
@@ -48,8 +57,10 @@ def main() -> int:
     if len(sys.argv) != 2:
         print(__doc__, file=sys.stderr)
         return 2
+    # stderr goes to a file so a failure can show why (CI has nothing else).
+    stderr_log = tempfile.TemporaryFile()
     proc = subprocess.Popen([sys.argv[1], "--repl"], stdin=subprocess.PIPE,
-                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+                            stdout=subprocess.PIPE, stderr=stderr_log)
     sel = selectors.DefaultSelector()
     sel.register(proc.stdout, selectors.EVENT_READ)
     failures = 0
@@ -77,8 +88,10 @@ def main() -> int:
     if failures == 0:
         got = exchange(["locales"])
         codes = got[1].split("\t") if got else []
-        if not got or got[0] != "0" or "en" not in codes or len(codes) < 100:
-            print(f"FAIL locales: want exit 0 and the codes joined by tabs, got {got!r:.120}")
+        if not got or got[0] != "0" or codes != canonical_locales():
+            missing = sorted(set(canonical_locales()) - set(codes))
+            print(f"FAIL locales: want exit 0 and all {len(canonical_locales())} codes, sorted and joined by tabs; "
+                  f"got exit {got[0] if got else None!r} with {len(codes)} codes (missing {missing[:8]})")
             failures += 1
 
     proc.stdin.close()
@@ -92,6 +105,12 @@ def main() -> int:
         print("FAIL end of input: REPL did not exit")
         failures += 1
 
+    if failures:
+        stderr_log.seek(0)
+        tail = stderr_log.read().decode("utf-8", errors="replace").strip().splitlines()[-STDERR_TAIL_LINES:]
+        if tail:
+            print(f"--- last {len(tail)} line(s) of the CLI's stderr ---")
+            print("\n".join(tail))
     print("REPL protocol OK" if failures == 0 else f"{failures} REPL protocol check(s) failed")
     return 0 if failures == 0 else 1
 

@@ -13,24 +13,55 @@ DURATION_SRC="${PROJECT_ROOT}/duration/impl/java/src/main/java"
 
 # Build directory for compiled component classes
 BUILD_DIR="${SCRIPT_DIR}/build"
+BUILD_STAMP="${BUILD_DIR}/.built"
 
-# Compile Java component classes if needed
-_needs_build=false
-if [[ ! -d "${BUILD_DIR}" ]]; then
-    _needs_build=true
-else
-    # Rebuild if any source is newer than the build dir
-    for _src_dir in "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DURATION_SRC}"; do
-        if [[ $(find "${_src_dir}" -name "*.java" -newer "${BUILD_DIR}" 2>/dev/null | head -1) ]]; then
-            _needs_build=true
-            break
+# Groovy 4 can't read class files from newer JDKs (e.g. "Unsupported class
+# file major version 71" on JDK 27), so prefer a JDK 17: JAVA_HOME if set
+# (CI sets it), then a registered or Homebrew JDK 17, then java on PATH.
+_find_java_home() {
+    if [[ -n "${JAVA_HOME:-}" && -x "${JAVA_HOME}/bin/java" ]]; then
+        echo "${JAVA_HOME}"
+        return
+    fi
+    local _candidate
+    for _candidate in \
+        "$(/usr/libexec/java_home -v 17 2>/dev/null || true)" \
+        /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home \
+        /usr/local/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home; do
+        if _is_jdk17 "${_candidate}"; then
+            echo "${_candidate}"
+            return
         fi
     done
+}
+
+# java_home -v 17 falls back to a newer JDK, so check the version it found
+_is_jdk17() {
+    [[ -n "$1" && -x "$1/bin/java" ]] && grep -q '^JAVA_VERSION="17' "$1/release" 2>/dev/null
+}
+_java_home="$(_find_java_home)"
+if [[ -n "${_java_home}" ]]; then
+    JAVA="${_java_home}/bin/java"
+    JAVAC="${_java_home}/bin/javac"
+else
+    JAVA="java"
+    JAVAC="javac"
+fi
+
+# Compile Java component classes if the build is missing, was made by another
+# javac, or is older than any source
+_needs_build=false
+if [[ ! -f "${BUILD_STAMP}" || "$(cat "${BUILD_STAMP}")" != "${JAVAC}" ]]; then
+    _needs_build=true
+elif [[ -n "$(find "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DURATION_SRC}" \
+        -name '*.java' -newer "${BUILD_STAMP}" 2>/dev/null | head -1)" ]]; then
+    _needs_build=true
 fi
 
 if ${_needs_build}; then
+    rm -rf "${BUILD_DIR}"
     mkdir -p "${BUILD_DIR}"
-    javac -encoding UTF-8 \
+    "${JAVAC}" -encoding UTF-8 \
         -sourcepath "${AGE_SRC}:${DATE_SRC}:${TIME_SRC}:${DURATION_SRC}" \
         -d "${BUILD_DIR}" \
         "${AGE_SRC}"/sayableage/*.java \
@@ -41,6 +72,7 @@ if ${_needs_build}; then
         "${TIME_SRC}"/sayabletime/locales/*.java \
         "${DURATION_SRC}"/sayableduration/*.java \
         "${DURATION_SRC}"/sayableduration/locales/*.java 2>&1
+    echo "${JAVAC}" > "${BUILD_STAMP}"
 fi
 
 # Find the Groovy jar from Gradle wrapper distribution
@@ -57,4 +89,4 @@ if [[ -z "${GROOVY_JAR}" ]]; then
 fi
 
 # Run the Groovy CLI script with compiled component classes on the classpath
-java -cp "${GROOVY_JAR}:${BUILD_DIR}:${SCRIPT_DIR}" groovy.ui.GroovyMain "${SCRIPT_DIR}/Sayable.groovy" "$@"
+"${JAVA}" -cp "${GROOVY_JAR}:${BUILD_DIR}:${SCRIPT_DIR}" groovy.ui.GroovyMain "${SCRIPT_DIR}/Sayable.groovy" "$@"

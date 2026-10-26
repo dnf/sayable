@@ -318,25 +318,8 @@ sub cmd_until {
 }
 
 sub cmd_locales {
-    # Use age locales as the canonical list (all components share the same set)
-    my @codes;
-    my %seen;
-    # Access the internal hash of SayableAge::Locales by trying all known codes
-    # Instead, iterate through the locales hash directly
-    no strict 'refs';
-    # The Locales module uses a lexical %_LOCALES hash, so we need to probe
-    # known locale codes. We can get them from the module's use statements.
-    # A simpler approach: try all plausible codes.
-    my @all_codes = qw(
-        af ak am ar az bci be bem bg bm bn br bs ca ceb cs cy da de din dje
-        dyu ee el en es et eu fa fan ff fi fil fon fr ga gd gl gn gu gv ha he
-        hi hr ht hu hy id ig is it ja jv ka kbp kk km kn ko kpe ktu ku kw ky
-        lg ln lo lt lv men mfe mg mi mk ml mn mnk mos mr ms mt my nb nd ne ng
-        nl nso nus ny om or pa pl pov ps pt qu ro ru rw sar sd sg shi si sk sl
-        sn snk so sq sr ss st su suk sv sw ta te tem tg th ti tig tk tn tr ts
-        tzm uk umb ur uz vi vmw wo xh yo yue zdj zh zu
-    );
-    return join "\n", grep { defined SayableAge::Locales->get($_) } sort @all_codes;
+    # All components share the same locale set, so age's registry is canonical.
+    return join "\n", SayableAge::Locales->codes;
 }
 
 my %COMMANDS = (

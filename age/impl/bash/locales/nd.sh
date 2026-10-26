@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/nd.json
 
-_plural_nd() {
+_sayableage_plural_nd() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_nd() {
+_sayableage_locale_nd() {
     _unit_day_one='usuku {n}'
     _unit_day_other='insuku {n}'
     _unit_week_one='iviki {n}'
@@ -47,5 +47,5 @@ _locale_nd() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_nd
+    _plural_func=_sayableage_plural_nd
 }

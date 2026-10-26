@@ -371,4 +371,70 @@ import Testing
         let sd = SayableDurationFormatter(Locales.EN, compactness: .compact)
         #expect(sd.formatDuration(90) == "1m30s")
     }
+
+    // ================================================================
+    // Short compactness — relative time
+    // ================================================================
+    // 18.1
+    @Test func canonical18_1() {
+        #expect(SayableDurationFormatter(Locales.get("men")!).formatSince(start: "2025-01-20T01:32:11", asOf: "2025-01-22T15:39:16") == "lɔhɔnga 2, awa 14 taa gbɔyɔ")
+    }
+
+
+    // ================================================================
+    // Range (500-year ceiling)
+    // ================================================================
+    // 19.1
+    @Test func canonical19_1() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatDuration(15778800000) == "500 years")
+    }
+
+    // 19.2
+    @Test func canonical19_2() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatDuration(15800000000) == nil)
+    }
+
+    // 19.3
+    @Test func canonical19_3() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatDuration(99999999999) == nil)
+    }
+
+    // 19.4
+    @Test func canonical19_4() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatSince(start: "1500-01-01T00:00:00", asOf: "2025-01-01T00:00:00") == nil)
+    }
+
+    // 19.5
+    @Test func canonical19_5() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatUntil(target: "2600-01-01T00:00:00", asOf: "2025-01-01T00:00:00") == nil)
+    }
+
+
+    // ================================================================
+    // Timestamp validation
+    // ================================================================
+    // 20.1
+    @Test func canonical20_1() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatDuration(start: "2025-01-15T10:00", end: "2025-01-15T11:30:00") == "1½ hours")
+    }
+
+    // 20.2
+    @Test func canonical20_2() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatDuration(start: "2025-01-15T10", end: "2025-01-15T11:30:00") == nil)
+    }
+
+    // 20.3
+    @Test func canonical20_3() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatDuration(start: "2025-1-5T10:00:00", end: "2025-01-15T11:30:00") == nil)
+    }
+
+    // 20.4
+    @Test func canonical20_4() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatDuration(start: "2025-02-30T10:00:00", end: "2025-03-15T11:30:00") == nil)
+    }
+
+    // 20.5
+    @Test func canonical20_5() {
+        #expect(SayableDurationFormatter(Locales.get("en")!).formatSince(start: "2025-01-15T10:00:00", asOf: "2025-01-15T25:00:00") == nil)
+    }
 }

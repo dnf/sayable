@@ -6,36 +6,31 @@ $script:VERSION = '0.5.0'
 # Source locale registry
 . "$PSScriptRoot/locales/registry.ps1"
 
+function Get-DaysInMonthDate {
+    param([int]$Year, [int]$Month)
+    if ($Month -eq 2) {
+        $isLeap = ($Year % 4 -eq 0 -and $Year % 100 -ne 0) -or ($Year % 400 -eq 0)
+        return $(if ($isLeap) { 29 } else { 28 })
+    }
+    if ($Month -in @(4, 6, 9, 11)) { return 30 }
+    return 31
+}
+
+# Parse YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+# time (which is not read), into @(year, month, day); $null otherwise.
 function Parse-SayableDate {
     param(
         [AllowNull()][AllowEmptyString()][string]$DateStr
     )
 
-    if ([string]::IsNullOrEmpty($DateStr)) {
+    $m = [regex]::Match($DateStr, '\A([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T|\z)')
+    if (-not $m.Success) {
         return $null
     }
-
-    # Strip time part from ISO datetime
-    $datePart = $DateStr
-    $tIdx = $DateStr.IndexOf('T')
-    if ($tIdx -ge 0) {
-        $datePart = $DateStr.Substring(0, $tIdx)
-    }
-
-    $parts = $datePart.Split('-')
-    if ($parts.Count -ne 3) {
-        return $null
-    }
-
-    try {
-        [int]$year = $parts[0]
-        [int]$month = $parts[1]
-        [int]$day = $parts[2]
-    } catch {
-        return $null
-    }
-
-    if ($month -lt 1 -or $month -gt 12 -or $day -lt 1 -or $day -gt 31) {
+    [int]$year = $m.Groups[1].Value
+    [int]$month = $m.Groups[2].Value
+    [int]$day = $m.Groups[3].Value
+    if ($month -lt 1 -or $month -gt 12 -or $day -lt 1 -or $day -gt (Get-DaysInMonthDate -Year $year -Month $month)) {
         return $null
     }
 

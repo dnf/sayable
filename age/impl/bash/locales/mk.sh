@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mk.json
 
-_plural_mk() {
+_sayableage_plural_mk() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -17,7 +17,7 @@ _plural_mk() {
     echo "other"
 }
 
-_locale_mk() {
+_sayableage_locale_mk() {
     _unit_day_one='{n} ден'
     _unit_day_other='{n} дена'
     _unit_week_one='{n} недела'
@@ -46,5 +46,5 @@ _locale_mk() {
     _compact_unit_year='{n} г.'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mk
+    _plural_func=_sayableage_plural_mk
 }

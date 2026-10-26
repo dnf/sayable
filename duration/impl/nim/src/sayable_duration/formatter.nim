@@ -32,38 +32,79 @@ proc daysSinceEpoch(year, month, day: int): int =
   days + day - 1
 
 
+proc digitRun(s: string, start: int): int =
+  ## Number of ASCII digits in s from start.
+  var n = 0
+  while start + n < s.len and s[start + n] in {'0'..'9'}:
+    inc n
+  n
+
+
+proc digitsValue(s: string, start, count: int): int =
+  ## Value of the count ASCII digits at start (the caller has checked them).
+  for i in start ..< start + count:
+    result = result * 10 + (ord(s[i]) - ord('0'))
+
+
+proc isZoneSuffix(s: string, start: int): bool =
+  ## Nothing, "Z", or "+HH:MM" / "-HH:MM" from start to the end of s.
+  let zone = s[start .. ^1]
+  if zone.len == 0 or zone == "Z":
+    return true
+  zone.len == 6 and zone[0] in {'+', '-'} and digitRun(zone, 1) == 2 and
+    zone[3] == ':' and digitRun(zone, 4) == 2
+
+
+proc parseClock(clock: string): Option[tuple[hour, minute, second: int]] =
+  ## H:MM or HH:MM, optional :SS, optional . plus digits after the seconds, and
+  ## an optional zone suffix, which is validated but ignored.
+  let hourLen = digitRun(clock, 0)
+  if hourLen < 1 or hourLen > 2 or clock.len < hourLen + 3 or clock[hourLen] != ':' or
+      digitRun(clock, hourLen + 1) < 2:
+    return none(tuple[hour, minute, second: int])
+  let hour = digitsValue(clock, 0, hourLen)
+  let minute = digitsValue(clock, hourLen + 1, 2)
+  var second = 0
+  var rest = hourLen + 3
+  if rest < clock.len and clock[rest] == ':':
+    if digitRun(clock, rest + 1) < 2:
+      return none(tuple[hour, minute, second: int])
+    second = digitsValue(clock, rest + 1, 2)
+    rest += 3
+    if rest < clock.len and clock[rest] == '.':
+      let fractionLen = digitRun(clock, rest + 1)
+      if fractionLen == 0:
+        return none(tuple[hour, minute, second: int])
+      rest += 1 + fractionLen
+  if not isZoneSuffix(clock, rest) or hour > 23 or minute > 59 or second > 59:
+    return none(tuple[hour, minute, second: int])
+  some((hour: hour, minute: minute, second: second))
+
+
 proc parseIsoToSeconds(isoStr: string): Option[int] =
-  ## Parse ISO datetime string to epoch-ish seconds for diffing.
-  if isoStr.len == 0:
+  ## Parse a timestamp YYYY-MM-DDTHH:MM[:SS[.fff]][zone] (docs/input-formats.md)
+  ## to seconds since 2000-01-01 for diffing; none if malformed.
+  if isoStr.len < 11 or isoStr[4] != '-' or isoStr[7] != '-' or isoStr[10] != 'T' or
+      digitRun(isoStr, 0) != 4 or digitRun(isoStr, 5) != 2 or digitRun(isoStr, 8) != 2:
     return none(int)
-  try:
-    let parts = isoStr.split("T")
-    if parts.len < 2:
-      return none(int)
-    let datePart = parts[0]
-    var timePart = parts[1]
+  let year = digitsValue(isoStr, 0, 4)
+  let month = digitsValue(isoStr, 5, 2)
+  let day = digitsValue(isoStr, 8, 2)
+  if month < 1 or month > 12 or day < 1 or day > daysInMonth(year, month):
+    return none(int)
+  let clock = parseClock(isoStr[11 .. ^1])
+  if clock.isNone:
+    return none(int)
+  let (hour, minute, second) = clock.get
+  some(daysSinceEpoch(year, month, day) * 86400 + hour * 3600 + minute * 60 + second)
 
-    let dp = datePart.split("-")
-    if dp.len < 3:
-      return none(int)
-    let year = parseInt(dp[0])
-    let month = parseInt(dp[1])
-    let day = parseInt(dp[2])
 
-    if "+" in timePart:
-      timePart = timePart.split("+")[0]
-    if "Z" in timePart:
-      timePart = timePart.split("Z")[0]
+const MaxDurationMonths = 6000  ## 500 years, the same ceiling as sayable-age
 
-    let tp = timePart.split(":")
-    let hour = parseInt(tp[0])
-    let minute = if tp.len > 1: parseInt(tp[1]) else: 0
-    let second = if tp.len > 2: parseInt(tp[2].split(".")[0]) else: 0
 
-    let days = daysSinceEpoch(year, month, day)
-    some(days * 86400 + hour * 3600 + minute * 60 + second)
-  except ValueError, IndexDefect:
-    none(int)
+proc approximateMonths(totalDays: int): int =
+  ## Months from whole days, 30.44 days to the month, rounded.
+  round(totalDays.float / 30.44).int
 
 
 proc pick[T](override: Option[T], getter: proc(o: T): Option[string],
@@ -194,7 +235,7 @@ proc formatDurationSeconds(sd: SayableDuration, total: int): string =
     return result
 
   # Approximate months (30.44 days average)
-  var totalMonths = round(totalDays.float / 30.44).int
+  var totalMonths = approximateMonths(totalDays)
 
   # 1-11 months
   if totalMonths < 12:
@@ -211,12 +252,20 @@ proc formatDurationSeconds(sd: SayableDuration, total: int): string =
     result.add(resolveUnit(remainderMonths, sd.units["month"], loc))
 
 
+proc formatWithinCeiling(sd: SayableDuration, total: int): Option[string] =
+  ## Apply the duration tiers; none beyond the 500-year ceiling.
+  let wholeDays = total div 86400
+  if wholeDays >= 30 and approximateMonths(wholeDays) > MaxDurationMonths:
+    return none(string)
+  some(sd.formatDurationSeconds(total))
+
+
 proc formatDuration*(sd: SayableDuration,
     seconds: int): Option[string] =
   ## Format a duration in seconds as human-friendly text.
   if seconds < 0:
     return none(string)
-  some(sd.formatDurationSeconds(seconds))
+  sd.formatWithinCeiling(seconds)
 
 
 proc formatDurationIso*(sd: SayableDuration,
@@ -228,8 +277,7 @@ proc formatDurationIso*(sd: SayableDuration,
   let e = parseIsoToSeconds(endIso)
   if s.isNone or e.isNone:
     return none(string)
-  let total = abs(e.get - s.get)
-  some(sd.formatDurationSeconds(total))
+  sd.formatWithinCeiling(abs(e.get - s.get))
 
 
 proc formatSince*(sd: SayableDuration,
@@ -246,8 +294,10 @@ proc formatSince*(sd: SayableDuration,
     return none(string)
   if diff == 0:
     return some(sd.justNow)
-  let dur = sd.formatDurationSeconds(diff)
-  some(sd.ago.replace("{0}", dur))
+  let dur = sd.formatWithinCeiling(diff)
+  if dur.isNone:
+    return none(string)
+  some(sd.ago.replace("{0}", dur.get))
 
 
 proc formatUntil*(sd: SayableDuration,
@@ -264,5 +314,7 @@ proc formatUntil*(sd: SayableDuration,
     return none(string)
   if diff == 0:
     return some(sd.justNow)
-  let dur = sd.formatDurationSeconds(diff)
-  some(sd.inFuture.replace("{0}", dur))
+  let dur = sd.formatWithinCeiling(diff)
+  if dur.isNone:
+    return none(string)
+  some(sd.inFuture.replace("{0}", dur.get))

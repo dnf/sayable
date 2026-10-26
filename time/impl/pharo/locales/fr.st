@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/fr.json "
 
-"Locale: fr"
+"Locale: fr"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 fr

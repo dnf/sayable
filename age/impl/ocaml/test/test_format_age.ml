@@ -298,6 +298,33 @@ let test_30_3 () = Alcotest.(check bool) "unknown" true (Option.is_none (Locales
 let test_30_4 () = Alcotest.(check bool) "empty" true (Option.is_none (Locales.get_locale ""))
 let test_30_5 () = Alcotest.(check bool) "case-sensitive" true (Option.is_none (Locales.get_locale "EN"))
 
+(* Formats with the locale for a code (None for an unknown code). *)
+let with_locale code f = Option.bind (Locales.get_locale code) f
+
+let expect_canonical expected actual =
+  Alcotest.(check (option string)) "canonical" expected actual
+
+(* 31. Weeks and days across month ends *)
+let test_31_1 () = expect_canonical (Some "12 weeks, 4 days") (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2016-12-31" "2017-03-29"))  (* 31.1 *)
+let test_31_2 () = expect_canonical (Some "12 weeks, 6 days") (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "1991-11-27" "1992-02-25"))  (* 31.2 *)
+let test_31_3 () = expect_canonical (Some "4 weeks, 5 days") (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2020-11-30" "2021-01-02"))  (* 31.3 *)
+let test_31_4 () = expect_canonical (Some "12w4d") (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Compact "2016-12-31" "2017-03-29"))  (* 31.4 *)
+(* 32. Half years take their plural form from whole years *)
+let test_32_1 () = expect_canonical (Some "3 i pół lata") (with_locale "pl" (fun l -> Formatter.format_age_pure l Types.Normal "2021-06-15" "2025-01-15"))  (* 32.1 *)
+let test_32_2 () = expect_canonical (Some "5 i pół lat") (with_locale "pl" (fun l -> Formatter.format_age_pure l Types.Short "2020-06-15" "2025-12-15"))  (* 32.2 *)
+let test_32_3 () = expect_canonical (Some "6 iseggasen d uzgen") (with_locale "shi" (fun l -> Formatter.format_age_pure l Types.Normal "2005-06-08" "2012-06-07"))  (* 32.3 *)
+(* 33. Input validation *)
+let test_33_1 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-02-30" "2032-06-25"))  (* 33.1 *)
+let test_33_2 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-13-01" "2027-01-31"))  (* 33.2 *)
+let test_33_3 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2023-02-29" "2025-03-01"))  (* 33.3 *)
+let test_33_4 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-06-00" "2027-02-25"))  (* 33.4 *)
+let test_33_5 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-6-1" "2027-02-25"))  (* 33.5 *)
+let test_33_6 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal " 2025-06-01" "2027-02-25"))  (* 33.6 *)
+let test_33_7 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-06-15T10:00:00" "2027-02-25"))  (* 33.7 *)
+let test_33_8 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2020-01-01" "2025-04-31"))  (* 33.8 *)
+let test_33_9 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_stage_pure l "2025-02-30" "2027-09-05" None))  (* 33.9 *)
+let test_33_10 () = expect_canonical (Some "2 years") (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2024-02-29" "2026-03-01"))  (* 33.10 *)
+
 let () =
   Alcotest.run "sayable-age"
     [ ( "1. Null / edge cases"
@@ -570,5 +597,28 @@ let () =
         ; Alcotest.test_case "30.3 unknown code" `Quick test_30_3
         ; Alcotest.test_case "30.4 empty string" `Quick test_30_4
         ; Alcotest.test_case "30.5 case-sensitive" `Quick test_30_5
+        ] )
+    ; ( "31. Weeks and days across month ends"
+      , [ Alcotest.test_case "31.1 88 days across a 28-day February" `Quick test_31_1
+        ; Alcotest.test_case "31.2 90 days across a year end into a leap year" `Quick test_31_2
+        ; Alcotest.test_case "31.3 33 days across a year end" `Quick test_31_3
+        ; Alcotest.test_case "31.4 Compact form of 31.1" `Quick test_31_4
+        ] )
+    ; ( "32. Half years take their plural form from whole years"
+      , [ Alcotest.test_case "32.1 Polish 3 is 'few'" `Quick test_32_1
+        ; Alcotest.test_case "32.2 Polish 5 is 'many'" `Quick test_32_2
+        ; Alcotest.test_case "32.3 Tachelhit 6 is 'few'" `Quick test_32_3
+        ] )
+    ; ( "33. Input validation"
+      , [ Alcotest.test_case "33.1 February 30 doesn't exist" `Quick test_33_1
+        ; Alcotest.test_case "33.2 Month 13" `Quick test_33_2
+        ; Alcotest.test_case "33.3 February 29 in a non-leap year" `Quick test_33_3
+        ; Alcotest.test_case "33.4 Day 00" `Quick test_33_4
+        ; Alcotest.test_case "33.5 Unpadded month and day" `Quick test_33_5
+        ; Alcotest.test_case "33.6 Surrounding whitespace" `Quick test_33_6
+        ; Alcotest.test_case "33.7 A datetime is not a date" `Quick test_33_7
+        ; Alcotest.test_case "33.8 Invalid asOf" `Quick test_33_8
+        ; Alcotest.test_case "33.9 formatStage validates too" `Quick test_33_9
+        ; Alcotest.test_case "33.10 February 29 in a leap year is valid" `Quick test_33_10
         ] )
     ]

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/wo.json
 
-_plural_wo() {
+_sayableage_plural_wo() {
     echo "other"
 }
 
-_locale_wo() {
+_sayableage_locale_wo() {
     _unit_day='bés {n}'
     _unit_week='ayubés {n}'
     _unit_month='weer {n}'
@@ -37,5 +37,5 @@ _locale_wo() {
     _compact_unit_year='at {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_wo
+    _plural_func=_sayableage_plural_wo
 }

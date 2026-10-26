@@ -137,6 +137,29 @@ end
     @test format_duration(en_compact, 90) == "1m30s"  # 17.2
 end
 
+# Section 18: Short compactness — relative time
+@testset "Short compactness — relative time" begin
+    @test format_since(SayableDurationFormatter(get_locale("men"), Short), "2025-01-20T01:32:11", "2025-01-22T15:39:16") == "lɔhɔnga 2, awa 14 taa gbɔyɔ"  # 18.1
+end
+
+# Section 19: Range (500-year ceiling)
+@testset "Range (500-year ceiling)" begin
+    @test format_duration(SayableDurationFormatter(get_locale("en")), 15778800000) == "500 years"  # 19.1
+    @test format_duration(SayableDurationFormatter(get_locale("en")), 15800000000) === nothing  # 19.2
+    @test format_duration(SayableDurationFormatter(get_locale("en")), 99999999999) === nothing  # 19.3
+    @test format_since(SayableDurationFormatter(get_locale("en")), "1500-01-01T00:00:00", "2025-01-01T00:00:00") === nothing  # 19.4
+    @test format_until(SayableDurationFormatter(get_locale("en")), "2600-01-01T00:00:00", "2025-01-01T00:00:00") === nothing  # 19.5
+end
+
+# Section 20: Timestamp validation
+@testset "Timestamp validation" begin
+    @test format_duration(SayableDurationFormatter(get_locale("en")), "2025-01-15T10:00", "2025-01-15T11:30:00") == "1½ hours"  # 20.1
+    @test format_duration(SayableDurationFormatter(get_locale("en")), "2025-01-15T10", "2025-01-15T11:30:00") === nothing  # 20.2
+    @test format_duration(SayableDurationFormatter(get_locale("en")), "2025-1-5T10:00:00", "2025-01-15T11:30:00") === nothing  # 20.3
+    @test format_duration(SayableDurationFormatter(get_locale("en")), "2025-02-30T10:00:00", "2025-03-15T11:30:00") === nothing  # 20.4
+    @test format_since(SayableDurationFormatter(get_locale("en")), "2025-01-15T10:00:00", "2025-01-15T25:00:00") === nothing  # 20.5
+end
+
 # Locale lookup
 @testset "Locale lookup" begin
     @test get_locale("en") !== nothing

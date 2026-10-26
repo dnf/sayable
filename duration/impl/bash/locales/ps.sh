@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ps.json
 
-_plural_ps() {
+_sayableduration_plural_ps() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ps() {
+_sayableduration_locale_ps() {
     _unit_second_one='{n} ثانیه'
     _unit_second_other='{n} ثانیې'
     _unit_minute_one='{n} دقیقه'
@@ -60,5 +60,5 @@ _locale_ps() {
     _compact_delimiter=''
     _compact_ago='د {0} مخکې'
     _compact_in_future='په {0} کې'
-    _plural_func=_plural_ps
+    _plural_func=_sayableduration_plural_ps
 }

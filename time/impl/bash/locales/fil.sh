@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/fil.json
 
-_locale_fil() {
+_sayabletime_locale_fil() {
     _clock_hours=('dose' 'una' 'dos' 'tres' 'kwatro' 'singko' 'seis' 'syete' 'otso' 'nuwebe' 'diyes' 'onse')
     _clock_midnight='hatinggabi'
     _clock_noon='tanghali'

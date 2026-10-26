@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tk.json
 
-_plural_tk() {
+_sayableduration_plural_tk() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tk() {
+_sayableduration_locale_tk() {
     _unit_second='{n} sekunt'
     _unit_minute='{n} minut'
     _unit_hour='{n} sagat'
@@ -48,5 +48,5 @@ _locale_tk() {
     _compact_delimiter=''
     _compact_ago='{0} öň'
     _compact_in_future='{0} soň'
-    _plural_func=_plural_tk
+    _plural_func=_sayableduration_plural_tk
 }

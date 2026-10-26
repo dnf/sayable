@@ -169,23 +169,20 @@ method !format-absolute(Int $year, Int $month, Int $day, Bool $include-year --> 
     return $result;
 }
 
+#| YYYY-MM-DD naming a real calendar day, optionally followed by T and a time
+#| (which is not read), into [year, month, day]; Nil otherwise.
 method !parse-date(Str $s) {
-    return Nil unless $s.defined && $s ne '';
-    my $date-part = $s;
-    $date-part = $s.split('T')[0] if $s.contains('T');
-    my @parts = $date-part.split('-');
-    return Nil unless @parts.elems == 3;
-    my Int $year;
-    my Int $month;
-    my Int $day;
-    try {
-        $year = @parts[0].Int;
-        $month = @parts[1].Int;
-        $day = @parts[2].Int;
-        CATCH { default { return Nil } }
-    }
-    return Nil if $month < 1 || $month > 12 || $day < 1 || $day > 31;
+    return Nil unless $s.defined;
+    return Nil unless $s ~~ /^ (<[0..9]> ** 4) '-' (<[0..9]> ** 2) '-' (<[0..9]> ** 2) [ 'T' | $ ] /;
+    my ($year, $month, $day) = $0.Int, $1.Int, $2.Int;
+    return Nil unless 1 <= $month <= 12 && 1 <= $day <= days-in-month($year, $month);
     return [$year, $month, $day];
+}
+
+sub days-in-month(Int $year, Int $month --> Int) {
+    return 30 if $month == 4 | 6 | 9 | 11;
+    return 31 unless $month == 2;
+    return ($year %% 4 && !($year %% 100)) || $year %% 400 ?? 29 !! 28;
 }
 
 sub to-jdn(Int $year, Int $month, Int $day --> Int) {

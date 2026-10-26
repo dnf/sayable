@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/hr.json
 
-_locale_hr() {
+_sayabledate_locale_hr() {
     _months=('siječanj' 'veljača' 'ožujak' 'travanj' 'svibanj' 'lipanj' 'srpanj' 'kolovoz' 'rujan' 'listopad' 'studeni' 'prosinac')
     _weekdays=('nedjelja' 'ponedjeljak' 'utorak' 'srijeda' 'četvrtak' 'petak' 'subota')
     _day_format='{n}.'

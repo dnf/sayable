@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/pa.json
 
-_locale_pa() {
+_sayabletime_locale_pa() {
     _clock_hours=('ਬਾਰਾਂ' 'ਇੱਕ' 'ਦੋ' 'ਤਿੰਨ' 'ਚਾਰ' 'ਪੰਜ' 'ਛੇ' 'ਸੱਤ' 'ਅੱਠ' 'ਨੌਂ' 'ਦਸ' 'ਗਿਆਰਾਂ')
     _clock_midnight='ਅੱਧੀ ਰਾਤ'
     _clock_noon='ਦੁਪਹਿਰ'

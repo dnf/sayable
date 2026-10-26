@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/tem.json
 
-_locale_tem() {
+_sayabledate_locale_tem() {
     _months=('Janɛri' 'Fɛbrɛri' 'Mach' 'Epril' 'Me' 'Jun' 'Julai' 'Ɔgɔst' 'Sɛtɛmba' 'Ɔktoba' 'Novɛmba' 'Disɛmba')
     _weekdays=('Ləpɛt' 'Lətalɛ' 'Ləsalɛ' 'Lərarɛ' 'Lənɛr' 'Ləjuma' 'Ləsɛbɛ')
     _day_format='{n}'

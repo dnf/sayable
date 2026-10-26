@@ -3,7 +3,7 @@
 Object subclass: #SayableDurationLocale
 	instanceVariableNames: 'code plural units half delimiter justNow ago inFuture short compact'
 	classVariableNames: ''
-	package: 'SayableDuration'.
+	package: 'SayableDuration'!
 
 !SayableDurationLocale methodsFor: 'accessing'!
 code

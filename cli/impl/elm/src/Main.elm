@@ -452,27 +452,6 @@ cmdUntil flags =
                                 nullResult
 
 
-allLocaleCodes : List String
-allLocaleCodes =
-    [ "af", "ak", "am", "ar", "az", "bci", "be", "bem", "bg", "bi", "bm", "bn", "br", "bs"
-    , "ca", "ceb", "cs", "cy", "da", "de", "din", "dje", "dyu", "ee", "el", "en", "es"
-    , "et", "eu", "fa", "fan", "ff", "fi", "fil", "fj", "fon", "fr", "ga", "gd", "gl", "gn"
-    , "gu", "gv", "ha", "he", "hi", "hr", "ht", "hu", "hy", "id", "ig", "is", "it"
-    , "ja", "jv", "ka", "kbp", "kk", "km", "kn", "ko", "kpe", "ktu", "ku", "kw", "ky"
-    , "lg", "ln", "lo", "lt", "lv", "men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk"
-    , "mos", "mr", "ms", "mt", "my", "nb", "nd", "ne", "ng", "nl", "nso", "nus", "ny"
-    , "om", "or", "pa", "pis", "pl", "pov", "ps", "pt", "qu", "ro", "ru", "rw", "sar", "sd"
-    , "sg", "shi", "si", "sk", "sl", "sn", "snk", "so", "sq", "sr", "ss", "st", "su"
-    , "suk", "sv", "sw", "ta", "te", "tem", "tg", "th", "ti", "tig", "tk", "tn", "tpi"
-    , "tr", "ts", "tzm", "uk", "umb", "ur", "uz", "vi", "vmw", "wo", "xh", "yo", "yue"
-    , "zdj", "zh", "zu"
-    ]
-
-
 cmdLocales : { output : String, exitCode : Int }
 cmdLocales =
-    let
-        validCodes =
-            List.filter (\code -> AgeLocales.getLocale code /= Nothing) allLocaleCodes
-    in
-    { output = String.join "\n" validCodes, exitCode = 0 }
+    { output = String.join "\n" AgeLocales.codes, exitCode = 0 }

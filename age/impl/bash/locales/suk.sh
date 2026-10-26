@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/suk.json
 
-_plural_suk() {
+_sayableage_plural_suk() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_suk() {
+_sayableage_locale_suk() {
     _unit_day_one='isiku {n}'
     _unit_day_other='amasiku {n}'
     _unit_week_one='ishuma {n}'
@@ -47,5 +47,5 @@ _locale_suk() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_suk
+    _plural_func=_sayableage_plural_suk
 }

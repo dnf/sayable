@@ -27,21 +27,23 @@ let help_text =
   \  -v, --version          Show version"
 
 let all_locales =
-  [ "af"; "ak"; "am"; "ar"; "az"; "bci"; "be"; "bem"; "bg"; "bm"
-  ; "bn"; "br"; "bs"; "ca"; "ceb"; "cs"; "cy"; "da"; "de"; "din"
-  ; "dje"; "dyu"; "ee"; "el"; "en"; "es"; "et"; "eu"; "fa"; "fan"
-  ; "ff"; "fi"; "fil"; "fon"; "fr"; "ga"; "gd"; "gl"; "gn"; "gu"
-  ; "gv"; "ha"; "he"; "hi"; "hr"; "ht"; "hu"; "hy"; "id"; "ig"
-  ; "is"; "it"; "ja"; "jv"; "ka"; "kbp"; "kk"; "km"; "kn"; "ko"
-  ; "kpe"; "ktu"; "ku"; "kw"; "ky"; "lg"; "ln"; "lo"; "lt"; "lv"
-  ; "men"; "mfe"; "mg"; "mi"; "mk"; "ml"; "mn"; "mnk"; "mos"; "mr"
-  ; "ms"; "mt"; "my"; "nb"; "nd"; "ne"; "ng"; "nl"; "nso"; "nus"
-  ; "ny"; "om"; "or"; "pa"; "pl"; "pov"; "ps"; "pt"; "qu"; "ro"
-  ; "ru"; "rw"; "sar"; "sd"; "sg"; "shi"; "si"; "sk"; "sl"; "sn"
-  ; "snk"; "so"; "sq"; "sr"; "ss"; "st"; "su"; "suk"; "sv"; "sw"
-  ; "ta"; "te"; "tem"; "tg"; "th"; "ti"; "tig"; "tk"; "tn"; "tr"
-  ; "ts"; "tzm"; "uk"; "umb"; "ur"; "uz"; "vi"; "vmw"; "wo"; "xh"
-  ; "yo"; "yue"; "zdj"; "zh"; "zu"
+  [ "af"; "ak"; "am"; "ar"; "ay"; "az"; "bci"; "be"; "bem"; "bg"
+  ; "bi"; "bm"; "bn"; "br"; "bs"; "ca"; "cak"; "ceb"; "cs"; "cy"
+  ; "da"; "de"; "din"; "dje"; "dv"; "dyu"; "dz"; "ee"; "el"; "en"
+  ; "es"; "et"; "eu"; "fa"; "fan"; "ff"; "fi"; "fil"; "fj"; "fon"
+  ; "fr"; "ga"; "gd"; "gl"; "gn"; "gu"; "gv"; "ha"; "he"; "hi"
+  ; "hmn"; "hr"; "ht"; "hu"; "hy"; "id"; "ig"; "is"; "it"; "ja"
+  ; "jv"; "ka"; "kbp"; "kek"; "ki"; "kk"; "kl"; "km"; "kn"; "ko"
+  ; "kpe"; "kri"; "ktu"; "ku"; "kw"; "ky"; "lb"; "lg"; "ln"; "lo"
+  ; "lt"; "luo"; "lv"; "mam"; "men"; "mfe"; "mg"; "mi"; "mk"; "ml"
+  ; "mn"; "mnk"; "mos"; "mr"; "ms"; "mt"; "my"; "nb"; "nd"; "ne"
+  ; "ng"; "nl"; "nr"; "nso"; "nus"; "ny"; "om"; "or"; "pa"; "pis"
+  ; "pl"; "pov"; "ps"; "pt"; "qu"; "quc"; "ro"; "ru"; "rw"; "sar"
+  ; "sd"; "sg"; "shi"; "shn"; "si"; "sk"; "sl"; "sn"; "snk"; "so"
+  ; "sq"; "sr"; "ss"; "st"; "su"; "suk"; "sv"; "sw"; "ta"; "te"
+  ; "tem"; "tet"; "tg"; "th"; "ti"; "tig"; "tk"; "tn"; "tpi"; "tr"
+  ; "ts"; "tum"; "tzm"; "uk"; "umb"; "ur"; "uz"; "ve"; "vi"; "vmw"
+  ; "wo"; "xh"; "yao"; "yo"; "yue"; "zdj"; "zh"; "zu"
   ]
 
 type options =
@@ -125,6 +127,13 @@ let is_integer_string s =
     String.length s > 1 && is_all_digits (String.sub s 1 (String.length s - 1))
   else
     is_all_digits s
+
+(* Digit strings beyond the native int are far past the 500-year ceiling,
+   so they saturate instead of failing. *)
+let parse_seconds s =
+  match int_of_string_opt s with
+  | Some n -> n
+  | None -> if s.[0] = '-' then min_int else max_int
 
 let parse_args argv =
   let len = Array.length argv in
@@ -289,7 +298,7 @@ let cmd_duration positionals opts =
       | Some s ->
         if is_integer_string s then
           Sayable_duration.Formatter.format_duration loc compact
-            (`Seconds (int_of_string s)) None
+            (`Seconds (parse_seconds s)) None
         else begin
           if List.length positionals < 2 then
             usage_error "duration with timestamps requires start and end arguments";
@@ -398,7 +407,13 @@ let () =
   let argv = Array.sub Sys.argv 1 (Array.length Sys.argv - 1) in
   if argv = [| "--repl" |] then repl ()
   else begin
-    let { code; output } = run_or_usage_error argv in
+    let { code; output } =
+      try run_or_usage_error argv
+      with exn ->
+        (* A crash exits 1, as in the reference, not OCaml's default 2. *)
+        Printf.eprintf "error: %s\n%!" (Printexc.to_string exn);
+        { code = 1; output = None }
+    in
     Option.iter print_endline output;
     exit code
   end

@@ -5,6 +5,8 @@ local M = {}
 
 M.VERSION = "0.5.0"
 
+local MAX_DURATION_MONTHS = 6000 -- 500 years, the same ceiling as sayable-age
+
 local function is_leap_year(y)
     return (y % 4 == 0 and y % 100 ~= 0) or (y % 400 == 0)
 end
@@ -33,60 +35,26 @@ local function days_since_epoch(year, month, day)
     return days
 end
 
-local function safe_atoi(s)
-    if not s or s == "" then return nil end
-    for i = 1, #s do
-        local b = s:byte(i)
-        if b < 48 or b > 57 then return nil end
-    end
-    return tonumber(s)
+local function is_zone_suffix(s)
+    return s == "" or s == "Z" or s:match("^[+-]%d%d:%d%d$") ~= nil
 end
 
+--- Parse YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix
+-- (which is ignored) to epoch-ish seconds; nil if malformed.
 local function parse_iso_to_seconds(iso)
-    if not iso or iso == "" then return nil end
-
-    local t_idx = iso:find("T", 1, true)
-    if not t_idx then return nil end
-
-    local date_part = iso:sub(1, t_idx - 1)
-    local time_part = iso:sub(t_idx + 1)
-
-    -- Parse date: YYYY-MM-DD
-    local dp = {}
-    for seg in date_part:gmatch("[^-]+") do
-        dp[#dp + 1] = seg
+    if not iso then return nil end
+    local y, mo, d, h, mi, rest = iso:match("^(%d%d%d%d)-(%d%d)-(%d%d)T(%d%d?):(%d%d)(.*)$")
+    if not y then return nil end
+    local sec, after_sec = rest:match("^:(%d%d)(.*)$")
+    if sec then
+        rest = after_sec:match("^%.%d+(.*)$") or after_sec
     end
-    if #dp < 3 then return nil end
-    local year = safe_atoi(dp[1])
-    local month = safe_atoi(dp[2])
-    local day = safe_atoi(dp[3])
-    if not year or not month or not day then return nil end
+    if not is_zone_suffix(rest) then return nil end
 
-    -- Strip timezone info
-    local plus_idx = time_part:find("+", 1, true)
-    if plus_idx then time_part = time_part:sub(1, plus_idx - 1) end
-    local z_idx = time_part:find("Z", 1, true)
-    if z_idx then time_part = time_part:sub(1, z_idx - 1) end
-
-    -- Parse time: HH:MM:SS
-    local tp = {}
-    for seg in time_part:gmatch("[^:]+") do
-        tp[#tp + 1] = seg
-    end
-    local hour = safe_atoi(tp[1])
-    if not hour then return nil end
-    local minute = 0
-    if #tp > 1 then
-        minute = safe_atoi(tp[2])
-        if not minute then return nil end
-    end
-    local second = 0
-    if #tp > 2 then
-        -- Strip fractional seconds
-        local sec_str = tp[3]:match("^([^.]+)")
-        second = safe_atoi(sec_str)
-        if not second then return nil end
-    end
+    local year, month, day = tonumber(y), tonumber(mo), tonumber(d)
+    local hour, minute, second = tonumber(h), tonumber(mi), tonumber(sec or "0")
+    if month < 1 or month > 12 or day < 1 or day > days_in_month(year, month) then return nil end
+    if hour > 23 or minute > 59 or second > 59 then return nil end
 
     local days = days_since_epoch(year, month, day)
     return days * 86400 + hour * 3600 + minute * 60 + second
@@ -249,6 +217,7 @@ function M.new(locale, compactness)
 
         -- Approximate months (30.44 days average)
         local total_months = math.floor(total_days / 30.44 + 0.5)
+        if total_months > MAX_DURATION_MONTHS then return nil end
 
         -- 1-11 months
         if total_months < 12 then
@@ -303,6 +272,7 @@ function M.new(locale, compactness)
         if diff < 0 then return nil end
         if diff == 0 then return just_now end
         local dur = format_duration_internal(diff)
+        if not dur then return nil end
         return (ago:gsub("{0}", dur))
     end
 
@@ -320,6 +290,7 @@ function M.new(locale, compactness)
         if diff < 0 then return nil end
         if diff == 0 then return just_now end
         local dur = format_duration_internal(diff)
+        if not dur then return nil end
         return (in_future:gsub("{0}", dur))
     end
 

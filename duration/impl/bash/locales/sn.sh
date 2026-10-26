@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/sn.json
 
-_plural_sn() {
+_sayableduration_plural_sn() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_sn() {
+_sayableduration_locale_sn() {
     _unit_second='{n} sekondi'
     _unit_minute='{n} miniti'
     _unit_hour='{n} awa'
@@ -58,5 +58,5 @@ _locale_sn() {
     _compact_delimiter=''
     _compact_ago='{0} yapfuura'
     _compact_in_future='mu{0}'
-    _plural_func=_plural_sn
+    _plural_func=_sayableduration_plural_sn
 }

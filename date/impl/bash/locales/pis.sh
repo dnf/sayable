@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/pis.json
 
-_locale_pis() {
+_sayabledate_locale_pis() {
     _months=('Janueri' 'Februeri' 'Maj' 'Epril' 'Mei' 'Jun' 'Julae' 'Ogas' 'Septemba' 'Oktoba' 'Novemba' 'Disemba')
     _weekdays=('Sande' 'Mande' 'Tiusde' 'Wenesde' 'Tosde' 'Fraede' 'Sarere')
     _day_format='{n}'

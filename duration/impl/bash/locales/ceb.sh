@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ceb.json
 
-_plural_ceb() {
+_sayableduration_plural_ceb() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ceb() {
+_sayableduration_locale_ceb() {
     _unit_second='{n} ka segundo'
     _unit_minute='{n} ka minuto'
     _unit_hour='{n} ka oras'
@@ -48,5 +48,5 @@ _locale_ceb() {
     _compact_delimiter=''
     _compact_ago='{0} ang milabay'
     _compact_in_future='sulod sa {0}'
-    _plural_func=_plural_ceb
+    _plural_func=_sayableduration_plural_ceb
 }

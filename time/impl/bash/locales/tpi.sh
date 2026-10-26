@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/tpi.json
 
-_locale_tpi() {
+_sayabletime_locale_tpi() {
     _clock_hours=('twelp' 'wan' 'tu' 'tri' 'foa' 'faiv' 'sikis' 'seven' 'et' 'nain' 'ten' 'eleven')
     _clock_midnight='biknait'
     _clock_noon='belo'

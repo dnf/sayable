@@ -9,6 +9,14 @@ import "./locales/ja" for JALocale
 import "./locales/ru" for RULocale
 import "./locales/ar" for ARLocale
 import "./locales/es" for ESLocale
+import "./locales/tg" for TGLocale
+import "./locales/fi" for FILocale
+import "./locales/sk" for SKLocale
+import "./locales/cs" for CSLocale
+import "./locales/uk" for UKLocale
+import "./locales/kw" for KWLocale
+import "./locales/mam" for MAMLocale
+import "./locales/kek" for KEKLocale
 
 class Test {
   construct new() {
@@ -270,6 +278,85 @@ t.assert("12.1", esFmt.formatDate("2025-03-15"), "15 de marzo")
 
 // 12.2
 t.assert("12.2", esFmt.formatRelative("2025-03-17", "2025-03-15"), "pasado mañana")
+
+// ================================================================
+// 13. format_date_with_year
+// ================================================================
+t.section("13. format_date_with_year")
+var tgCompactFmt = SayableDate.new(TGLocale, "compact")
+var fiShortFmt = SayableDate.new(FILocale, "short")
+
+// 13.1
+t.assert("13.1", fmt.formatDateWithYear("2018-02-04"), "February 4th, 2018")
+
+// 13.2
+t.assert("13.2", shortFmt.formatDateWithYear("2025-03-15"), "Mar 15, 2025")
+
+// 13.3
+t.assert("13.3", compactFmt.formatDateWithYear("1997-01-21"), "1/21/97")
+
+// 13.4
+t.assert("13.4", tgCompactFmt.formatDateWithYear("2007-05-20"), "20/5/07")
+
+// 13.5
+t.assert("13.5", fiShortFmt.formatDateWithYear("1996-06-21"), "21. kesäkuuta 1996")
+
+// ================================================================
+// 14. Short month names (locales that keep the full genitive)
+// ================================================================
+t.section("14. Short month names")
+
+// 14.1
+t.assert("14.1", SayableDate.new(SKLocale, "short").formatDate("2031-02-15"), "15. februára")
+
+// 14.2
+t.assert("14.2", SayableDate.new(CSLocale, "short").formatDate("2025-12-10"), "10. prosince")
+
+// 14.3
+t.assert("14.3", SayableDate.new(UKLocale, "short").formatDate("2025-11-05"), "5 листопада")
+
+// 14.4
+t.assert("14.4", fiShortFmt.formatRelative("1998-08-08", "1998-08-15"), "8. elokuuta")
+
+// ================================================================
+// 15. format_relative — short phrases
+// ================================================================
+t.section("15. format_relative short phrases")
+
+// 15.1
+t.assert("15.1", SayableDate.new(KWLocale, "short").formatRelative("2035-12-04", "2035-12-02"), "an Mth ma")
+
+// 15.2
+t.assert("15.2", SayableDate.new(MAMLocale, "short").formatRelative("2000-01-23", "2000-01-25"), "Dom nchi'j")
+
+// 15.3
+t.assert("15.3", SayableDate.new(KEKLocale, "short").formatRelative("2014-10-24", "2014-10-22"), "a'in Vie")
+
+// ================================================================
+// 16. Input validation
+// ================================================================
+t.section("16. Input validation")
+
+// 16.1
+t.assertNull("16.1", fmt.formatDate("2025-02-30"))
+
+// 16.2
+t.assertNull("16.2", fmt.formatDate("2025-13-01"))
+
+// 16.3
+t.assertNull("16.3", fmt.formatDate("2025-6-1"))
+
+// 16.4
+t.assertNull("16.4", fmt.formatDate(" 2025-06-01"))
+
+// 16.5
+t.assert("16.5", fmt.formatDate("2025-06-01T10:00:00"), "June 1st")
+
+// 16.6
+t.assertNull("16.6", fmt.formatDateWithYear("2023-02-29"))
+
+// 16.7
+t.assertNull("16.7", fmt.formatRelative("2025-03-16", "2025-04-31"))
 
 // ================================================================
 t.summary()

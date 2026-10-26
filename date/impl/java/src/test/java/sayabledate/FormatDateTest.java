@@ -344,4 +344,134 @@ class FormatDateTest {
     void versionMatchesConfig() {
         assertEquals("0.5.0", SayableDate.VERSION);
     }
+
+    // ================================================================
+    // format_date_with_year
+    // ================================================================
+
+    @Test // 13.1
+    void s13_1FormatDateWithYear() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertEquals("February 4th, 2018", f.formatDateWithYear("2018-02-04"));
+    }
+
+    @Test // 13.2
+    void s13_2FormatDateWithYear() {
+        SayableDate f = new SayableDate(Locales.EN, Compactness.SHORT);
+        assertEquals("Mar 15, 2025", f.formatDateWithYear("2025-03-15"));
+    }
+
+    @Test // 13.3
+    void s13_3FormatDateWithYear() {
+        SayableDate f = new SayableDate(Locales.EN, Compactness.COMPACT);
+        assertEquals("1/21/97", f.formatDateWithYear("1997-01-21"));
+    }
+
+    @Test // 13.4
+    void s13_4TwoDigitYearKeepsItsLeadingZero() {
+        SayableDate f = new SayableDate(Locales.TG, Compactness.COMPACT);
+        assertEquals("20/5/07", f.formatDateWithYear("2007-05-20"));
+    }
+
+    @Test // 13.5
+    void s13_5FormatDateWithYear() {
+        SayableDate f = new SayableDate(Locales.FI, Compactness.SHORT);
+        assertEquals("21. kes\u00E4kuuta 1996", f.formatDateWithYear("1996-06-21"));
+    }
+
+    // ================================================================
+    // Short month names (locales that keep the full genitive)
+    // ================================================================
+
+    @Test // 14.1
+    void s14_1ShortMonthNamesLocalesThatKeepThe() {
+        SayableDate f = new SayableDate(Locales.SK, Compactness.SHORT);
+        assertEquals("15. febru\u00E1ra", f.formatDate("2031-02-15"));
+    }
+
+    @Test // 14.2
+    void s14_2ShortMonthNamesLocalesThatKeepThe() {
+        SayableDate f = new SayableDate(Locales.CS, Compactness.SHORT);
+        assertEquals("10. prosince", f.formatDate("2025-12-10"));
+    }
+
+    @Test // 14.3
+    void s14_3ShortMonthNamesLocalesThatKeepThe() {
+        SayableDate f = new SayableDate(Locales.UK, Compactness.SHORT);
+        assertEquals("5 \u043B\u0438\u0441\u0442\u043E\u043F\u0430\u0434\u0430", f.formatDate("2025-11-05"));
+    }
+
+    @Test // 14.4
+    void s14_4ShortMonthNamesLocalesThatKeepThe() {
+        SayableDate f = new SayableDate(Locales.FI, Compactness.SHORT);
+        assertEquals("8. elokuuta", f.formatRelative("1998-08-08", "1998-08-15"));
+    }
+
+    // ================================================================
+    // format_relative — short phrases
+    // ================================================================
+
+    @Test // 15.1
+    void s15_1DayAfterTomorrow() {
+        SayableDate f = new SayableDate(Locales.KW, Compactness.SHORT);
+        assertEquals("an Mth ma", f.formatRelative("2035-12-04", "2035-12-02"));
+    }
+
+    @Test // 15.2
+    void s15_2DayBeforeYesterday() {
+        SayableDate f = new SayableDate(Locales.MAM, Compactness.SHORT);
+        assertEquals("Dom nchi'j", f.formatRelative("2000-01-23", "2000-01-25"));
+    }
+
+    @Test // 15.3
+    void s15_3DayAfterTomorrow() {
+        SayableDate f = new SayableDate(Locales.KEK, Compactness.SHORT);
+        assertEquals("a'in Vie", f.formatRelative("2014-10-24", "2014-10-22"));
+    }
+
+    // ================================================================
+    // Input validation
+    // ================================================================
+
+    @Test // 16.1
+    void s16_1February30DoesntExist() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertNull(f.formatDate("2025-02-30"));
+    }
+
+    @Test // 16.2
+    void s16_2Month13() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertNull(f.formatDate("2025-13-01"));
+    }
+
+    @Test // 16.3
+    void s16_3UnpaddedMonthAndDay() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertNull(f.formatDate("2025-6-1"));
+    }
+
+    @Test // 16.4
+    void s16_4SurroundingWhitespace() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertNull(f.formatDate(" 2025-06-01"));
+    }
+
+    @Test // 16.5
+    void s16_5AnISODatetimeOnlyTheDatePart() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertEquals("June 1st", f.formatDate("2025-06-01T10:00:00"));
+    }
+
+    @Test // 16.6
+    void s16_6February29InANonLeapYear() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertNull(f.formatDateWithYear("2023-02-29"));
+    }
+
+    @Test // 16.7
+    void s16_7InvalidAsOf() {
+        SayableDate f = new SayableDate(Locales.EN);
+        assertNull(f.formatRelative("2025-03-16", "2025-04-31"));
+    }
 }

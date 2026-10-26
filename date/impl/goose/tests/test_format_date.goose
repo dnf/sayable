@@ -45,6 +45,18 @@ fn check_no_date(id: const u8[:], code: const u8[:], compactness: sayabledate::C
     expect_none(id, got, ok);
 }
 
+fn check_date_with_year(id: const u8[:], code: const u8[:], compactness: sayabledate::Compactness, date: u8[:], want: u8[:]) {
+    let locale = locale_for(code);
+    let got, ok = sayabledate::format_date_with_year(locale, compactness, date);
+    expect(id, got, ok, want);
+}
+
+fn check_no_date_with_year(id: const u8[:], code: const u8[:], compactness: sayabledate::Compactness, date: u8[:]) {
+    let locale = locale_for(code);
+    let got, ok = sayabledate::format_date_with_year(locale, compactness, date);
+    expect_none(id, got, ok);
+}
+
 fn check_relative(id: const u8[:], code: const u8[:], compactness: sayabledate::Compactness, date: u8[:], as_of: u8[:], want: u8[:]) {
     let locale = locale_for(code);
     let got, ok = sayabledate::format_relative(locale, compactness, date, as_of);
@@ -186,6 +198,52 @@ fn main() {
     check_date("12.1", "es", sayabledate::Compactness.Normal, "2025-03-15", "15 de marzo");
     // 12.2
     check_relative("12.2", "es", sayabledate::Compactness.Normal, "2025-03-17", "2025-03-15", "pasado mañana");
+
+    // ---- 13. format_date_with_year ----
+    // 13.1
+    check_date_with_year("13.1", "en", sayabledate::Compactness.Normal, "2018-02-04", "February 4th, 2018");
+    // 13.2
+    check_date_with_year("13.2", "en", sayabledate::Compactness.Short, "2025-03-15", "Mar 15, 2025");
+    // 13.3
+    check_date_with_year("13.3", "en", sayabledate::Compactness.Compact, "1997-01-21", "1/21/97");
+    // 13.4
+    check_date_with_year("13.4", "tg", sayabledate::Compactness.Compact, "2007-05-20", "20/5/07");
+    // 13.5
+    check_date_with_year("13.5", "fi", sayabledate::Compactness.Short, "1996-06-21", "21. kesäkuuta 1996");
+
+    // ---- 14. Short month names (locales that keep the full genitive) ----
+    // 14.1
+    check_date("14.1", "sk", sayabledate::Compactness.Short, "2031-02-15", "15. februára");
+    // 14.2
+    check_date("14.2", "cs", sayabledate::Compactness.Short, "2025-12-10", "10. prosince");
+    // 14.3
+    check_date("14.3", "uk", sayabledate::Compactness.Short, "2025-11-05", "5 листопада");
+    // 14.4
+    check_relative("14.4", "fi", sayabledate::Compactness.Short, "1998-08-08", "1998-08-15", "8. elokuuta");
+
+    // ---- 15. format_relative — short phrases ----
+    // 15.1
+    check_relative("15.1", "kw", sayabledate::Compactness.Short, "2035-12-04", "2035-12-02", "an Mth ma");
+    // 15.2
+    check_relative("15.2", "mam", sayabledate::Compactness.Short, "2000-01-23", "2000-01-25", "Dom nchi'j");
+    // 15.3
+    check_relative("15.3", "kek", sayabledate::Compactness.Short, "2014-10-24", "2014-10-22", "a'in Vie");
+
+    // ---- 16. Input validation ----
+    // 16.1
+    check_no_date("16.1", "en", sayabledate::Compactness.Normal, "2025-02-30");
+    // 16.2
+    check_no_date("16.2", "en", sayabledate::Compactness.Normal, "2025-13-01");
+    // 16.3
+    check_no_date("16.3", "en", sayabledate::Compactness.Normal, "2025-6-1");
+    // 16.4
+    check_no_date("16.4", "en", sayabledate::Compactness.Normal, " 2025-06-01");
+    // 16.5
+    check_date("16.5", "en", sayabledate::Compactness.Normal, "2025-06-01T10:00:00", "June 1st");
+    // 16.6
+    check_no_date_with_year("16.6", "en", sayabledate::Compactness.Normal, "2023-02-29");
+    // 16.7
+    check_no_relative("16.7", "en", sayabledate::Compactness.Normal, "2025-03-16", "2025-04-31");
 
     print(passed, " passed, ", failed, " failed");
     if failed > 0 { exit(1); }

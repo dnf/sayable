@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/sg.json
 
-_plural_sg() {
+_sayableduration_plural_sg() {
     echo "other"
 }
 
-_locale_sg() {
+_sayableduration_locale_sg() {
     _unit_second='ndo-sêse {n}'
     _unit_minute='ndo {n}'
     _unit_hour='ngbonga {n}'
@@ -46,5 +46,5 @@ _locale_sg() {
     _compact_delimiter=''
     _compact_ago='{0} na pekô'
     _compact_in_future='na {0}'
-    _plural_func=_plural_sg
+    _plural_func=_sayableduration_plural_sg
 }

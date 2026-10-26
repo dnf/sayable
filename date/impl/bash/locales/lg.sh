@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/lg.json
 
-_locale_lg() {
+_sayabledate_locale_lg() {
     _months=('Janwali' 'Febwali' 'Marisi' 'Apuli' 'Mayi' 'Yuni' 'Yuli' 'Agositi' 'Seputemba' 'Okitobba' 'Novemba' 'Desemba')
     _weekdays=('Sabbiiti' 'Balaza' 'Lwakubiri' 'Lwakusatu' 'Lwakuna' 'Lwakutaano' 'Lwamukaaga')
     _day_format='{n}'

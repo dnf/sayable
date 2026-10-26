@@ -52,7 +52,12 @@ def _emit_compactness_override(ovr: dict, indent: str) -> list[str]:
 
 
 def emit_all(all_locales: list[dict]) -> str:
-    """Generate the single Locales.groovy file with all date locales."""
+    """Generate the single Locales.groovy file with all date locales.
+
+    Each locale is built in its own private static factory method, and the
+    ALL map by one helper per first letter, so <clinit> stays under the
+    JVM's 64KB method size limit.
+    """
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER, "package sayabledate.locales\n"]
     lines.append("import sayabledate.*\n")
@@ -71,7 +76,11 @@ def emit_all(all_locales: list[dict]) -> str:
         lines.append(f"    // {uc} — {name}")
         lines.append("    // ================================================================")
 
-        lines.append(f"    static final DateLocale {uc} = new DateLocale(")
+        lines.append(f"    static final DateLocale {uc} = _{code}()")
+        lines.append("")
+        lines.append(f"    private static DateLocale _{code}() {{")
+        body_start = len(lines)
+        lines.append("    new DateLocale(")
         lines.append(f"        {_quote(code)},")
         lines.append(f"        {_str_list(data['months'])},")
         lines.append(f"        {_str_list(data['weekdays'])},")
@@ -117,20 +126,32 @@ def emit_all(all_locales: list[dict]) -> str:
             lines.append("        null")
 
         lines.append("    )")
+        lines[body_start:] = ["    " + line if line else line for line in lines[body_start:]]
+        lines.append("    }")
 
         if i < len(sorted_locs) - 1:
             lines.append("")
 
-    # ALL map
+    # ALL map, built by one helper method per first letter
+    groups: dict[str, list[dict]] = {}
+    for loc in sorted_locs:
+        groups.setdefault(loc["code"][0].upper(), []).append(loc)
+
+    for letter, locs in groups.items():
+        lines.append("")
+        lines.append(f"    private static Map<String, DateLocale> _locales{letter}() {{")
+        lines.append("        [")
+        entries = [f"({_quote(loc['code'])}): {loc['code'].upper()}" for loc in locs]
+        for k in range(0, len(entries), 3):
+            chunk = ", ".join(entries[k : k + 3])
+            comma = "," if k + 3 < len(entries) else ""
+            lines.append(f"            {chunk}{comma}")
+        lines.append("        ]")
+        lines.append("    }")
+
     lines.append("")
-    lines.append("    static final Map<String, DateLocale> ALL = Collections.unmodifiableMap([")
-    # Format in rows of 3
-    entries = [f"({_quote(loc['code'])}): {loc['code'].upper()}" for loc in sorted_locs]
-    for i in range(0, len(entries), 3):
-        chunk = ", ".join(entries[i : i + 3])
-        comma = "," if i + 3 < len(entries) else ""
-        lines.append(f"        {chunk}{comma}")
-    lines.append("    ])")
+    group_calls = " + ".join(f"_locales{letter}()" for letter in groups)
+    lines.append(f"    static final Map<String, DateLocale> ALL = Collections.unmodifiableMap({group_calls})")
 
     # get() method
     lines.append("")

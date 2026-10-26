@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 from typing import Literal
 
 from sayable_duration.locale import (
@@ -15,30 +17,30 @@ from sayable_duration.locales.en import EN
 __version__ = "0.5.0"
 
 
+MAX_DURATION_MONTHS = 6000  # 500 years, the same ceiling as sayable-age
+
+# YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+_TIMESTAMP = re.compile(
+    r"([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})"
+    r"(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?"
+)
+
+
 def _parse_iso_to_seconds(iso_str: str) -> int | None:
-    """Parse ISO datetime string to epoch-ish seconds for diffing."""
+    """Parse an ISO datetime to epoch-ish seconds for diffing; None if malformed."""
     if not iso_str:
         return None
-    try:
-        date_part, time_part = iso_str.split("T")
-        dp = date_part.split("-")
-        year, month, day = int(dp[0]), int(dp[1]), int(dp[2])
-
-        time_str = time_part
-        if "+" in time_str:
-            time_str = time_str.split("+")[0]
-        if "Z" in time_str:
-            time_str = time_str.split("Z")[0]
-
-        tp = time_str.split(":")
-        hour = int(tp[0])
-        minute = int(tp[1]) if len(tp) > 1 else 0
-        second = int(tp[2].split(".")[0]) if len(tp) > 2 else 0
-
-        days = _days_since_epoch(year, month, day)
-        return days * 86400 + hour * 3600 + minute * 60 + second
-    except (ValueError, IndexError):
+    m = _TIMESTAMP.fullmatch(iso_str)
+    if not m:
         return None
+    year, month, day, hour, minute = (int(m[i]) for i in range(1, 6))
+    second = int(m[6]) if m[6] else 0
+    if not 1 <= month <= 12 or not 1 <= day <= _days_in_month(year, month):
+        return None
+    if hour > 23 or minute > 59 or second > 59:
+        return None
+    days = _days_since_epoch(year, month, day)
+    return days * 86400 + hour * 3600 + minute * 60 + second
 
 
 def _is_leap_year(year: int) -> bool:
@@ -143,7 +145,7 @@ class SayableDuration:
 
         return self._format_duration_seconds(total_seconds)
 
-    def _format_duration_seconds(self, total: int) -> str:
+    def _format_duration_seconds(self, total: int) -> str | None:
         """Apply duration tiers to total seconds."""
         loc = self._locale
 
@@ -213,6 +215,8 @@ class SayableDuration:
 
         # Approximate months (30.44 days average)
         total_months = round(total_days / 30.44)
+        if total_months > MAX_DURATION_MONTHS:
+            return None
 
         # 1-11 months
         if total_months < 12:
@@ -251,7 +255,7 @@ class SayableDuration:
         if diff == 0:
             return self._just_now
         dur = self._format_duration_seconds(diff)
-        return self._ago.replace("{0}", dur)
+        return None if dur is None else self._ago.replace("{0}", dur)
 
     def format_until(
         self,
@@ -276,7 +280,7 @@ class SayableDuration:
         if diff == 0:
             return self._just_now
         dur = self._format_duration_seconds(diff)
-        return self._in_future.replace("{0}", dur)
+        return None if dur is None else self._in_future.replace("{0}", dur)
 
 
 _default = SayableDuration(EN)

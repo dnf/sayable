@@ -4,7 +4,7 @@ Uses SUnit framework. Each test annotated with canonical IDs."
 TestCase subclass: #SayableTimeTest
 	instanceVariableNames: ''
 	classVariableNames: ''
-	package: 'SayableTime-Tests'.
+	package: 'SayableTime-Tests'!
 
 !SayableTimeTest methodsFor: 'tests-null'!
 "1.1"
@@ -186,4 +186,82 @@ testFinnishMidnight24h
 	| st |
 	st := SayableTime withLocale: (SayableTimeLocales get: 'fi') compactness: #short.
 	self assert: (st formatTime: '00:00') equals: '0.00'
+! !
+
+!SayableTimeTest methodsFor: 'tests-input-formats-and-regressions'!
+"9.1"
+test9_1DigitalModesKeepTheExactMinute
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en') compactness: #short.
+	self assert: (st formatTime: '18:01') equals: '6:01 PM'
+!
+
+"9.2"
+test9_2DigitalModesKeepTheExactMinute
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en') compactness: #compact.
+	self assert: (st formatTime: '19:05') equals: '7:05p'
+!
+
+"10.1"
+test10_1OneDigitHour
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '9:30') equals: 'half past nine'
+!
+
+"10.2"
+test10_2TwoDigitHour
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '09:30') equals: 'half past nine'
+!
+
+"10.3"
+test10_3LeadingWhitespace
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: ' 9:30') isNil
+!
+
+"10.4"
+test10_4TrailingWhitespace
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '9:30 ') isNil
+!
+
+"10.5"
+test10_5MinutesNeedTwoDigits
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '9:5') isNil
+!
+
+"10.6"
+test10_6HourOutOfRange
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '24:00') isNil
+!
+
+"10.7"
+test10_7SecondsAreAllowedAndIgnored
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '14:15:30') equals: 'a quarter past two'
+!
+
+"10.8"
+test10_8ISODatetimeWithZoneSuffixIgnored
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '2025-01-15T14:15:00Z') equals: 'a quarter past two'
+!
+
+"10.9"
+test10_9ISODatetimeWithAnImpossibleDate
+	| st |
+	st := SayableTime withLocale: (SayableTimeLocales get: 'en').
+	self assert: (st formatTime: '2025-02-30T14:15:00') isNil
 ! !

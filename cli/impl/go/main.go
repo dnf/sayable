@@ -7,6 +7,7 @@ import (
 	"io"
 	"os"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 
@@ -475,8 +476,7 @@ func cmdDuration(positionals []string, opts options) (*string, error) {
 		// null input: pass -1 to get nil result
 		result = formatter.FormatDurationSeconds(-1)
 	} else if isInteger(value) {
-		seconds := parseInt(value)
-		result = formatter.FormatDurationSeconds(seconds)
+		result = formatSeconds(formatter, value)
 	} else {
 		// Timestamp mode: need an end argument
 		if len(positionals) < 2 {
@@ -547,31 +547,31 @@ func cmdUntil(positionals []string, opts options) (*string, error) {
 
 // allLocaleCodes returns all supported locale codes, sorted alphabetically.
 var allLocaleCodes = []string{
-	"af", "ak", "am", "ar", "az",
-	"bci", "be", "bem", "bg", "bm", "bn", "br", "bs",
-	"ca", "ceb", "cs", "cy",
-	"da", "de", "din", "dje", "dyu",
+	"af", "ak", "am", "ar", "ay", "az",
+	"bci", "be", "bem", "bg", "bi", "bm", "bn", "br", "bs",
+	"ca", "cak", "ceb", "cs", "cy",
+	"da", "de", "din", "dje", "dv", "dyu", "dz",
 	"ee", "el", "en", "es", "et", "eu",
-	"fa", "fan", "ff", "fi", "fil", "fon", "fr",
+	"fa", "fan", "ff", "fi", "fil", "fj", "fon", "fr",
 	"ga", "gd", "gl", "gn", "gu", "gv",
-	"ha", "he", "hi", "hr", "ht", "hu", "hy",
+	"ha", "he", "hi", "hmn", "hr", "ht", "hu", "hy",
 	"id", "ig", "is", "it",
 	"ja", "jv",
-	"ka", "kbp", "kk", "km", "kn", "ko", "kpe", "ktu", "ku", "kw", "ky",
-	"lg", "ln", "lo", "lt", "lv",
-	"men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk", "mos", "mr", "ms", "mt", "my",
-	"nb", "nd", "ne", "ng", "nl", "nso", "nus", "ny",
+	"ka", "kbp", "kek", "ki", "kk", "kl", "km", "kn", "ko", "kpe", "kri", "ktu", "ku", "kw", "ky",
+	"lb", "lg", "ln", "lo", "lt", "luo", "lv",
+	"mam", "men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk", "mos", "mr", "ms", "mt", "my",
+	"nb", "nd", "ne", "ng", "nl", "nr", "nso", "nus", "ny",
 	"om", "or",
-	"pa", "pl", "pov", "ps", "pt",
-	"qu",
+	"pa", "pis", "pl", "pov", "ps", "pt",
+	"qu", "quc",
 	"ro", "ru", "rw",
-	"sar", "sd", "sg", "shi", "si", "sk", "sl", "sn", "snk", "so", "sq", "sr", "ss", "st", "su", "suk", "sv", "sw",
-	"ta", "te", "tem", "tg", "th", "ti", "tig", "tk", "tn", "tr", "ts", "tzm",
+	"sar", "sd", "sg", "shi", "shn", "si", "sk", "sl", "sn", "snk", "so", "sq", "sr", "ss", "st", "su", "suk", "sv", "sw",
+	"ta", "te", "tem", "tet", "tg", "th", "ti", "tig", "tk", "tn", "tpi", "tr", "ts", "tum", "tzm",
 	"uk", "umb", "ur", "uz",
-	"vi", "vmw",
+	"ve", "vi", "vmw",
 	"wo",
 	"xh",
-	"yo", "yue",
+	"yao", "yo", "yue",
 	"zdj", "zh", "zu",
 }
 
@@ -584,40 +584,27 @@ func cmdLocales(out io.Writer) {
 	}
 }
 
-// isInteger returns true if the string represents an integer (possibly negative).
+// isInteger reports whether s is digits after any leading minus signs: the
+// reference CLI's test for seconds mode.
 func isInteger(s string) bool {
-	if len(s) == 0 {
+	digits := strings.TrimLeft(s, "-")
+	if digits == "" {
 		return false
 	}
-	start := 0
-	if s[0] == '-' {
-		start = 1
-		if len(s) == 1 {
-			return false
-		}
-	}
-	for i := start; i < len(s); i++ {
-		if s[i] < '0' || s[i] > '9' {
+	for i := 0; i < len(digits); i++ {
+		if digits[i] < '0' || digits[i] > '9' {
 			return false
 		}
 	}
 	return true
 }
 
-// parseInt parses a string as an integer (possibly negative).
-func parseInt(s string) int {
-	negative := false
-	start := 0
-	if s[0] == '-' {
-		negative = true
-		start = 1
+// formatSeconds formats seconds mode; a value that isn't a 64-bit integer has
+// no value, since it is far beyond the 500-year ceiling (or malformed).
+func formatSeconds(formatter *sayableduration.SayableDuration, value string) *string {
+	seconds, err := strconv.ParseInt(value, 10, 64)
+	if err != nil {
+		return nil
 	}
-	n := 0
-	for i := start; i < len(s); i++ {
-		n = n*10 + int(s[i]-'0')
-	}
-	if negative {
-		return -n
-	}
-	return n
+	return formatter.FormatDurationSeconds(seconds)
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/sq.json
 
-_locale_sq() {
+_sayabledate_locale_sq() {
     _months=('janar' 'shkurt' 'mars' 'prill' 'maj' 'qershor' 'korrik' 'gusht' 'shtator' 'tetor' 'nëntor' 'dhjetor')
     _weekdays=('e diel' 'e hënë' 'e martë' 'e mërkurë' 'e enjte' 'e premte' 'e shtunë')
     _day_format='{n}'

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/sn.json
 
-_locale_sn() {
+_sayabletime_locale_sn() {
     _clock_hours=('gumi nembiri' 'imwe' 'mbiri' 'nhatu' 'ina' 'shanu' 'nhanhatu' 'nomwe' 'sere' 'pfumbamwe' 'gumi' 'gumi neimwe')
     _clock_midnight='usiku hwepakati'
     _clock_noon='masikati'

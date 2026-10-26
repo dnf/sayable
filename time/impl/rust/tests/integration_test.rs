@@ -256,3 +256,86 @@ fn test_all_locales_load() {
     assert_eq!(locales::JA.code, "ja");
     assert_eq!(locales::ZH.code, "zh");
 }
+
+// ── Section 9: Minutes in short and compact modes ────────────────────────────────────
+
+// 9.1 — digital modes keep the exact minute
+#[test]
+fn test_case_9_1() {
+    let f = SayableTime::new(&locales::EN, Compactness::Short);
+    assert_eq!(f.format_time("18:01"), Some("6:01 PM".to_string()));
+}
+
+// 9.2 — digital modes keep the exact minute
+#[test]
+fn test_case_9_2() {
+    let f = SayableTime::new(&locales::EN, Compactness::Compact);
+    assert_eq!(f.format_time("19:05"), Some("7:05p".to_string()));
+}
+
+
+// ── Section 10: Input validation ────────────────────────────────────
+
+// 10.1 — one-digit hour
+#[test]
+fn test_case_10_1() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("9:30"), Some("half past nine".to_string()));
+}
+
+// 10.2 — two-digit hour
+#[test]
+fn test_case_10_2() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("09:30"), Some("half past nine".to_string()));
+}
+
+// 10.3 — leading whitespace
+#[test]
+fn test_case_10_3() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time(" 9:30"), None);
+}
+
+// 10.4 — trailing whitespace
+#[test]
+fn test_case_10_4() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("9:30 "), None);
+}
+
+// 10.5 — minutes need two digits
+#[test]
+fn test_case_10_5() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("9:5"), None);
+}
+
+// 10.6 — hour out of range
+#[test]
+fn test_case_10_6() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("24:00"), None);
+}
+
+// 10.7 — seconds are allowed and ignored
+#[test]
+fn test_case_10_7() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("14:15:30"), Some("a quarter past two".to_string()));
+}
+
+// 10.8 — ISO datetime with zone suffix (ignored)
+#[test]
+fn test_case_10_8() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("2025-01-15T14:15:00Z"), Some("a quarter past two".to_string()));
+}
+
+// 10.9 — ISO datetime with an impossible date
+#[test]
+fn test_case_10_9() {
+    let f = SayableTime::new(&locales::EN, Compactness::Normal);
+    assert_eq!(f.format_time("2025-02-30T14:15:00"), None);
+}
+

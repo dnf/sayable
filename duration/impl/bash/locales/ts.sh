@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ts.json
 
-_plural_ts() {
+_sayableduration_plural_ts() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ts() {
+_sayableduration_locale_ts() {
     _unit_second_one='xikontiri {n}'
     _unit_second_other='swikontiri {n}'
     _unit_minute_one='minete {n}'
@@ -62,5 +62,5 @@ _locale_ts() {
     _compact_delimiter=''
     _compact_ago='{0} hundza'
     _compact_in_future='hi {0}'
-    _plural_func=_plural_ts
+    _plural_func=_sayableduration_plural_ts
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/umb.json
 
-_locale_umb() {
+_sayabletime_locale_umb() {
     _clock_hours=('olohola likumi na yivali' 'yimosi' 'yivali' 'yitathu' 'yinyali' 'yitanu' 'yitathu-va-yivali' 'yisemba' 'yinyali-va-yivali' 'yitanu-va-yivali' 'likumi' 'likumi na yimosi')
     _clock_midnight='ocitapi'
     _clock_noon='ocivali'

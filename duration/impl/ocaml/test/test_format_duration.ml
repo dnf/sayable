@@ -115,6 +115,27 @@ let test_16_2 () = check_some "1m, 30s" (dur_s en Types.Short 90)        (* 16.2
 let test_17_1 () = check_some "1h" (dur_s en Types.Compact 3600)         (* 17.1 *)
 let test_17_2 () = check_some "1m30s" (dur_s en Types.Compact 90)        (* 17.2 *)
 
+(* Formats with the locale for a code (None for an unknown code). *)
+let with_locale code f = Option.bind (Locales.get_locale code) f
+
+let expect_canonical expected actual =
+  Alcotest.(check (option string)) "canonical" expected actual
+
+(* 18. Short compactness — relative time *)
+let test_18_1 () = expect_canonical (Some "lɔhɔnga 2, awa 14 taa gbɔyɔ") (with_locale "men" (fun l -> Formatter.format_since l Types.Normal "2025-01-20T01:32:11" "2025-01-22T15:39:16"))  (* 18.1 *)
+(* 19. Range (500-year ceiling) *)
+let test_19_1 () = expect_canonical (Some "500 years") (with_locale "en" (fun l -> Formatter.format_duration l Types.Normal (`Seconds 15778800000) None))  (* 19.1 *)
+let test_19_2 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_duration l Types.Normal (`Seconds 15800000000) None))  (* 19.2 *)
+let test_19_3 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_duration l Types.Normal (`Seconds 99999999999) None))  (* 19.3 *)
+let test_19_4 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_since l Types.Normal "1500-01-01T00:00:00" "2025-01-01T00:00:00"))  (* 19.4 *)
+let test_19_5 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_until l Types.Normal "2600-01-01T00:00:00" "2025-01-01T00:00:00"))  (* 19.5 *)
+(* 20. Timestamp validation *)
+let test_20_1 () = expect_canonical (Some "1½ hours") (with_locale "en" (fun l -> Formatter.format_duration l Types.Normal (`Iso "2025-01-15T10:00") (Some "2025-01-15T11:30:00")))  (* 20.1 *)
+let test_20_2 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_duration l Types.Normal (`Iso "2025-01-15T10") (Some "2025-01-15T11:30:00")))  (* 20.2 *)
+let test_20_3 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_duration l Types.Normal (`Iso "2025-1-5T10:00:00") (Some "2025-01-15T11:30:00")))  (* 20.3 *)
+let test_20_4 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_duration l Types.Normal (`Iso "2025-02-30T10:00:00") (Some "2025-03-15T11:30:00")))  (* 20.4 *)
+let test_20_5 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_since l Types.Normal "2025-01-15T10:00:00" "2025-01-15T25:00:00"))  (* 20.5 *)
+
 let () =
   Alcotest.run "sayable-duration"
     [ ( "1. Null / edge cases"
@@ -203,5 +224,22 @@ let () =
     ; ( "17. Compact compactness"
       , [ Alcotest.test_case "17.1 1h" `Quick test_17_1
         ; Alcotest.test_case "17.2 1m30s" `Quick test_17_2
+        ] )
+    ; ( "18. Short compactness — relative time"
+      , [ Alcotest.test_case "18.1 days and hours both kept" `Quick test_18_1
+        ] )
+    ; ( "19. Range (500-year ceiling)"
+      , [ Alcotest.test_case "19.1 500 Julian years: 6000 months, the ceiling" `Quick test_19_1
+        ; Alcotest.test_case "19.2 over 6000 months" `Quick test_19_2
+        ; Alcotest.test_case "19.3 well beyond the ceiling (and 32-bit range)" `Quick test_19_3
+        ; Alcotest.test_case "19.4 525 years ago" `Quick test_19_4
+        ; Alcotest.test_case "19.5 575 years from now" `Quick test_19_5
+        ] )
+    ; ( "20. Timestamp validation"
+      , [ Alcotest.test_case "20.1 seconds are optional" `Quick test_20_1
+        ; Alcotest.test_case "20.2 minutes are required" `Quick test_20_2
+        ; Alcotest.test_case "20.3 unpadded date" `Quick test_20_3
+        ; Alcotest.test_case "20.4 impossible date" `Quick test_20_4
+        ; Alcotest.test_case "20.5 hour out of range" `Quick test_20_5
         ] )
     ]

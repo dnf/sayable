@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/st.json
 
-_plural_st() {
+_sayableduration_plural_st() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_st() {
+_sayableduration_locale_st() {
     _unit_second_one='motsotswana {n}'
     _unit_second_other='dimetsotswana {n}'
     _unit_minute_one='metsotso {n}'
@@ -62,5 +62,5 @@ _locale_st() {
     _compact_delimiter=''
     _compact_ago='{0} e fetileng'
     _compact_in_future='ka {0}'
-    _plural_func=_plural_st
+    _plural_func=_sayableduration_plural_st
 }

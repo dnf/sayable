@@ -295,3 +295,114 @@
 (deftest version-matches-config
   (testing "version matches config"
     (is (= "0.5.0" sayabledate.formatter/version))))
+
+;; ================================================================
+;; format_date_with_year
+;; ================================================================
+
+;; 13.1
+(deftest case-13-1-format-date-with-year-en-normal-2018-02-04
+  (testing "13.1 format date with year en normal 2018-02-04"
+    (is (= "February 4th, 2018" (sd/format-date-with-year (sd/get-locale "en") :normal "2018-02-04")))))
+
+;; 13.2
+(deftest case-13-2-format-date-with-year-en-short-2025-03-15
+  (testing "13.2 format date with year en short 2025-03-15"
+    (is (= "Mar 15, 2025" (sd/format-date-with-year (sd/get-locale "en") :short "2025-03-15")))))
+
+;; 13.3
+(deftest case-13-3-format-date-with-year-en-compact-1997-01-21
+  (testing "13.3 format date with year en compact 1997-01-21"
+    (is (= "1/21/97" (sd/format-date-with-year (sd/get-locale "en") :compact "1997-01-21")))))
+
+;; 13.4
+(deftest case-13-4-two-digit-year-keeps-its-leading-zero
+  (testing "13.4 two digit year keeps its leading zero"
+    (is (= "20/5/07" (sd/format-date-with-year (sd/get-locale "tg") :compact "2007-05-20")))))
+
+;; 13.5
+(deftest case-13-5-format-date-with-year-fi-short-1996-06-21
+  (testing "13.5 format date with year fi short 1996-06-21"
+    (is (= "21. kes\u00E4kuuta 1996" (sd/format-date-with-year (sd/get-locale "fi") :short "1996-06-21")))))
+
+;; ================================================================
+;; Short month names (locales that keep the full genitive)
+;; ================================================================
+
+;; 14.1
+(deftest case-14-1-short-month-names-locales-that-keep-the-sk-short-2031-02-15
+  (testing "14.1 short month names locales that keep the sk short 2031-02-15"
+    (is (= "15. febru\u00E1ra" (sd/format-date (sd/get-locale "sk") :short "2031-02-15")))))
+
+;; 14.2
+(deftest case-14-2-short-month-names-locales-that-keep-the-cs-short-2025-12-10
+  (testing "14.2 short month names locales that keep the cs short 2025-12-10"
+    (is (= "10. prosince" (sd/format-date (sd/get-locale "cs") :short "2025-12-10")))))
+
+;; 14.3
+(deftest case-14-3-short-month-names-locales-that-keep-the-uk-short-2025-11-05
+  (testing "14.3 short month names locales that keep the uk short 2025-11-05"
+    (is (= "5 \u043B\u0438\u0441\u0442\u043E\u043F\u0430\u0434\u0430" (sd/format-date (sd/get-locale "uk") :short "2025-11-05")))))
+
+;; 14.4
+(deftest case-14-4-short-month-names-locales-that-keep-the-fi-short-1998-08-08
+  (testing "14.4 short month names locales that keep the fi short 1998-08-08"
+    (is (= "8. elokuuta" (sd/format-relative (sd/get-locale "fi") :short "1998-08-08" "1998-08-15")))))
+
+;; ================================================================
+;; format_relative — short phrases
+;; ================================================================
+
+;; 15.1
+(deftest case-15-1-day-after-tomorrow-kw-short-2035-12-04
+  (testing "15.1 day after tomorrow kw short 2035-12-04"
+    (is (= "an Mth ma" (sd/format-relative (sd/get-locale "kw") :short "2035-12-04" "2035-12-02")))))
+
+;; 15.2
+(deftest case-15-2-day-before-yesterday
+  (testing "15.2 day before yesterday"
+    (is (= "Dom nchi'j" (sd/format-relative (sd/get-locale "mam") :short "2000-01-23" "2000-01-25")))))
+
+;; 15.3
+(deftest case-15-3-day-after-tomorrow-kek-short-2014-10-24
+  (testing "15.3 day after tomorrow kek short 2014-10-24"
+    (is (= "a'in Vie" (sd/format-relative (sd/get-locale "kek") :short "2014-10-24" "2014-10-22")))))
+
+;; ================================================================
+;; Input validation
+;; ================================================================
+
+;; 16.1
+(deftest case-16-1-february-30-doesnt-exist
+  (testing "16.1 february 30 doesnt exist"
+    (is (nil? (sd/format-date (sd/get-locale "en") :normal "2025-02-30")))))
+
+;; 16.2
+(deftest case-16-2-month-13
+  (testing "16.2 month 13"
+    (is (nil? (sd/format-date (sd/get-locale "en") :normal "2025-13-01")))))
+
+;; 16.3
+(deftest case-16-3-unpadded-month-and-day
+  (testing "16.3 unpadded month and day"
+    (is (nil? (sd/format-date (sd/get-locale "en") :normal "2025-6-1")))))
+
+;; 16.4
+(deftest case-16-4-surrounding-whitespace
+  (testing "16.4 surrounding whitespace"
+    (is (nil? (sd/format-date (sd/get-locale "en") :normal " 2025-06-01")))))
+
+;; 16.5
+(deftest case-16-5-an-iso-datetime-only-the-date-part
+  (testing "16.5 an iso datetime only the date part"
+    (is (= "June 1st" (sd/format-date (sd/get-locale "en") :normal "2025-06-01T10:00:00")))))
+
+;; 16.6
+(deftest case-16-6-february-29-in-a-non-leap-year
+  (testing "16.6 february 29 in a non leap year"
+    (is (nil? (sd/format-date-with-year (sd/get-locale "en") :normal "2023-02-29")))))
+
+;; 16.7
+(deftest case-16-7-invalid-asof
+  (testing "16.7 invalid asof"
+    (is (nil? (sd/format-relative (sd/get-locale "en") :normal "2025-03-16" "2025-04-31")))))

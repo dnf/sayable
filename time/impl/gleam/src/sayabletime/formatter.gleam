@@ -1,6 +1,9 @@
 /// Core formatting logic for sayable-time.
 
+import gleam/bit_array
 import gleam/int
+import gleam/list
+import gleam/result
 import gleam/string
 import sayabletime/types.{
   type Compactness, type ShortClockConfig,
@@ -161,59 +164,127 @@ fn try_parse(
   }
 }
 
+/// Parse a clock time, alone or after the T of an ISO datetime whose date
+/// part names a real calendar day, to (hour, minute).
 fn parse_time(input: String) -> Result(#(Int, Int), Nil) {
-  let t = case string.contains(input, "T") {
-    True -> {
-      let parts = string.split(input, "T")
-      case parts {
-        [_, time_part, ..] -> time_part
-        _ -> input
+  case string.split_once(input, "T") {
+    Ok(#(date_part, clock)) ->
+      case is_real_date(date_part) {
+        True -> parse_clock(clock)
+        False -> Error(Nil)
       }
-    }
-    False -> input
+    Error(Nil) -> parse_clock(input)
   }
-  let t2 = case string.contains(t, "+") {
-    True -> {
-      let parts = string.split(t, "+")
-      case parts {
-        [first, ..] -> first
-        _ -> t
-      }
-    }
-    False -> t
+}
+
+/// H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored).
+fn parse_clock(clock: String) -> Result(#(Int, Int), Nil) {
+  let #(hour_digits, after_hour) = case bit_array.from_string(clock) {
+    <<h1, h2, 0x3A, rest:bits>> -> #([h1, h2], rest)
+    <<h1, 0x3A, rest:bits>> -> #([h1], rest)
+    other -> #([], other)
   }
-  let t3 = case string.contains(t2, "Z") {
-    True -> {
-      let parts = string.split(t2, "Z")
-      case parts {
-        [first, ..] -> first
-        _ -> t2
-      }
-    }
-    False -> t2
-  }
-  let parts = string.split(t3, ":")
-  case parts {
-    [hour_str, min_str, ..] -> {
-      let min_clean = case string.contains(min_str, ".") {
-        True -> {
-          let ps = string.split(min_str, ".")
-          case ps {
-            [first, ..] -> first
-            _ -> min_str
-          }
-        }
-        False -> min_str
-      }
-      case int.parse(hour_str), int.parse(min_clean) {
-        Ok(h), Ok(m) ->
-          case h >= 0 && h <= 23 && m >= 0 && m <= 59 {
-            True -> Ok(#(h, m))
-            False -> Error(Nil)
-          }
-        _, _ -> Error(Nil)
+  case after_hour {
+    <<m1, m2, rest:bits>> -> {
+      use hour <- result.try(digits_value(hour_digits))
+      use minute <- result.try(digits_value([m1, m2]))
+      use second <- result.try(parse_seconds_and_zone(rest))
+      case hour <= 23 && minute <= 59 && second <= 59 {
+        True -> Ok(#(hour, minute))
+        False -> Error(Nil)
       }
     }
     _ -> Error(Nil)
+  }
+}
+
+/// The optional :SS (with optional fraction) and zone suffix after the
+/// minutes; the seconds value, 0 when absent.
+fn parse_seconds_and_zone(rest: BitArray) -> Result(Int, Nil) {
+  case rest {
+    <<0x3A, s1, s2, after_seconds:bits>> -> {
+      use second <- result.try(digits_value([s1, s2]))
+      use zone <- result.try(skip_fraction(after_seconds))
+      case is_zone_suffix(zone) {
+        True -> Ok(second)
+        False -> Error(Nil)
+      }
+    }
+    _ ->
+      case is_zone_suffix(rest) {
+        True -> Ok(0)
+        False -> Error(Nil)
+      }
+  }
+}
+
+/// Skip an optional . followed by one or more digits.
+fn skip_fraction(rest: BitArray) -> Result(BitArray, Nil) {
+  case rest {
+    <<0x2E, digit, after:bits>> if digit >= 0x30 && digit <= 0x39 ->
+      Ok(skip_digits(after))
+    <<0x2E, _:bits>> -> Error(Nil)
+    _ -> Ok(rest)
+  }
+}
+
+fn skip_digits(rest: BitArray) -> BitArray {
+  case rest {
+    <<digit, after:bits>> if digit >= 0x30 && digit <= 0x39 ->
+      skip_digits(after)
+    _ -> rest
+  }
+}
+
+/// Nothing, Z, or +HH:MM / -HH:MM.
+fn is_zone_suffix(rest: BitArray) -> Bool {
+  case rest {
+    <<>> | <<0x5A>> -> True
+    <<sign, a, b, 0x3A, c, d>> if sign == 0x2B || sign == 0x2D ->
+      result.is_ok(digits_value([a, b, c, d]))
+    _ -> False
+  }
+}
+
+/// Exactly YYYY-MM-DD naming a real calendar day (Gregorian leap years).
+fn is_real_date(s: String) -> Bool {
+  case bit_array.from_string(s) {
+    <<y1, y2, y3, y4, 0x2D, m1, m2, 0x2D, d1, d2>> ->
+      case
+        digits_value([y1, y2, y3, y4]),
+        digits_value([m1, m2]),
+        digits_value([d1, d2])
+      {
+        Ok(y), Ok(m), Ok(d) -> m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m)
+        _, _, _ -> False
+      }
+    _ -> False
+  }
+}
+
+fn days_in_month(y: Int, m: Int) -> Int {
+  case m {
+    4 | 6 | 9 | 11 -> 30
+    2 ->
+      case { y % 4 == 0 && y % 100 != 0 } || y % 400 == 0 {
+        True -> 29
+        False -> 28
+      }
+    _ -> 31
+  }
+}
+
+/// The value of a non-empty run of ASCII digit bytes, or an error if any byte
+/// is not one.
+fn digits_value(bytes: List(Int)) -> Result(Int, Nil) {
+  case bytes {
+    [] -> Error(Nil)
+    _ ->
+      list.try_fold(bytes, 0, fn(acc, byte) {
+        case byte >= 0x30 && byte <= 0x39 {
+          True -> Ok(acc * 10 + byte - 0x30)
+          False -> Error(Nil)
+        }
+      })
   }
 }

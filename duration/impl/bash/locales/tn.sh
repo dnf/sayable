@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/tn.json
 
-_plural_tn() {
+_sayableduration_plural_tn() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_tn() {
+_sayableduration_locale_tn() {
     _unit_second_one='motsotswana {n}'
     _unit_second_other='dimetsotswana {n}'
     _unit_minute_one='metsotso {n}'
@@ -62,5 +62,5 @@ _locale_tn() {
     _compact_delimiter=''
     _compact_ago='{0} e e fetileng'
     _compact_in_future='ka {0}'
-    _plural_func=_plural_tn
+    _plural_func=_sayableduration_plural_tn
 }

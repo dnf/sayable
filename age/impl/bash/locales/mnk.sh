@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/mnk.json
 
-_plural_mnk() {
+_sayableage_plural_mnk() {
     echo "other"
 }
 
-_locale_mnk() {
+_sayableage_locale_mnk() {
     _unit_day='tili {n}'
     _unit_week='lɔkɔ {n}'
     _unit_month='kalo {n}'
@@ -37,5 +37,5 @@ _locale_mnk() {
     _compact_unit_year='sanj {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_mnk
+    _plural_func=_sayableage_plural_mnk
 }

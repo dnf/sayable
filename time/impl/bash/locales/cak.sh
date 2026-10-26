@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/cak.json
 
-_locale_cak() {
+_sayabletime_locale_cak() {
     _clock_hours=('kab'\''lajuj' 'jun' 'ka'\''i'\''' 'oxi'\''' 'kaji'\''' 'wo'\''o'\''' 'waqi'\''' 'wuqu'\''' 'waqxaqi'\''' 'b'\''eleje'\''' 'lajuj' 'julajuj')
     _clock_midnight='nik'\''aj aq'\''a'\'''
     _clock_noon='nik'\''aj q'\''ij'

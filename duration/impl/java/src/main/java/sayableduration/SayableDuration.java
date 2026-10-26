@@ -1,10 +1,21 @@
 package sayableduration;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import sayableduration.locales.Locales;
 
 public final class SayableDuration {
 
     public static final String VERSION = "0.5.0";
+
+    /** 500 years, the same ceiling as sayable-age. */
+    private static final int MAX_DURATION_MONTHS = 6000;
+
+    /** YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored). */
+    private static final Pattern TIMESTAMP = Pattern.compile(
+        "([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})"
+        + "(?::([0-9]{2})(?:\\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?");
 
     private final DurationLocale locale;
     private final UnitForms second;
@@ -74,57 +85,57 @@ public final class SayableDuration {
         this.inFuture = inf;
     }
 
-    public String formatDurationSeconds(int seconds) {
+    public String formatDurationSeconds(long seconds) {
         if (seconds < 0) return null;
         return formatDurationSecondsInternal(seconds);
     }
 
     public String formatDurationIso(String start, String end) {
         if (start == null || start.isEmpty() || end == null || end.isEmpty()) return null;
-        Integer s = parseIsoToSeconds(start);
+        Long s = parseIsoToSeconds(start);
         if (s == null) return null;
-        Integer e = parseIsoToSeconds(end);
+        Long e = parseIsoToSeconds(end);
         if (e == null) return null;
-        int total = Math.abs(e - s);
+        long total = Math.abs(e - s);
         return formatDurationSecondsInternal(total);
     }
 
     public String formatSince(String start, String asOf) {
         if (start == null || start.isEmpty() || asOf == null || asOf.isEmpty()) return null;
-        Integer s = parseIsoToSeconds(start);
+        Long s = parseIsoToSeconds(start);
         if (s == null) return null;
-        Integer a = parseIsoToSeconds(asOf);
+        Long a = parseIsoToSeconds(asOf);
         if (a == null) return null;
-        int diff = a - s;
+        long diff = a - s;
         if (diff < 0) return null;
         if (diff == 0) return justNow;
         String dur = formatDurationSecondsInternal(diff);
-        return ago.replace("{0}", dur);
+        return dur == null ? null : ago.replace("{0}", dur);
     }
 
     public String formatUntil(String target, String asOf) {
         if (target == null || target.isEmpty() || asOf == null || asOf.isEmpty()) return null;
-        Integer t = parseIsoToSeconds(target);
+        Long t = parseIsoToSeconds(target);
         if (t == null) return null;
-        Integer a = parseIsoToSeconds(asOf);
+        Long a = parseIsoToSeconds(asOf);
         if (a == null) return null;
-        int diff = t - a;
+        long diff = t - a;
         if (diff < 0) return null;
         if (diff == 0) return justNow;
         String dur = formatDurationSecondsInternal(diff);
-        return inFuture.replace("{0}", dur);
+        return dur == null ? null : inFuture.replace("{0}", dur);
     }
 
     @SuppressWarnings("MethodLength")
-    private String formatDurationSecondsInternal(int total) {
+    private String formatDurationSecondsInternal(long total) {
         // 0 seconds
         if (total == 0) return justNow;
 
         // 1-59 seconds
         if (total < 60) return resolveUnit(total, second, locale, "");
 
-        int totalMinutes = total / 60;
-        int remainderSeconds = total % 60;
+        long totalMinutes = total / 60;
+        long remainderSeconds = total % 60;
 
         // 1-4 minutes: minutes + seconds
         if (totalMinutes < 5) {
@@ -138,8 +149,8 @@ public final class SayableDuration {
         // 5-59 minutes
         if (totalMinutes < 60) return resolveUnit(totalMinutes, minute, locale, "");
 
-        int totalHours = total / 3600;
-        int remainderMinutes = (total % 3600) / 60;
+        long totalHours = total / 3600;
+        long remainderMinutes = (total % 3600) / 60;
 
         // 1-5 hours: hours + minutes (with half marker)
         if (totalHours <= 5) {
@@ -156,8 +167,8 @@ public final class SayableDuration {
         // 6-23 hours
         if (totalHours < 24) return resolveUnit(totalHours, hour, locale, "");
 
-        int totalDays = total / 86400;
-        int remainderHours = (total % 86400) / 3600;
+        long totalDays = total / 86400;
+        long remainderHours = (total % 86400) / 3600;
 
         // 1-2 days: days + hours (with half marker)
         if (totalDays <= 2) {
@@ -174,8 +185,8 @@ public final class SayableDuration {
         // 3-6 days
         if (totalDays < 7) return resolveUnit(totalDays, day, locale, "");
 
-        int totalWeeks = totalDays / 7;
-        int remainderDays = totalDays % 7;
+        long totalWeeks = totalDays / 7;
+        long remainderDays = totalDays % 7;
 
         // 1-4 weeks: weeks + days (up to 29 days; 30+ transitions to months)
         if (totalDays < 30) {
@@ -187,7 +198,8 @@ public final class SayableDuration {
         }
 
         // Approximate months (30.44 days average)
-        int totalMonths = (int) Math.round(totalDays / 30.44);
+        long totalMonths = Math.round(totalDays / 30.44);
+        if (totalMonths > MAX_DURATION_MONTHS) return null;
 
         // 1-11 months
         if (totalMonths < 12) {
@@ -196,8 +208,8 @@ public final class SayableDuration {
         }
 
         // 12+ months: years + months
-        int totalYears = totalMonths / 12;
-        int remainderMonths = totalMonths % 12;
+        long totalYears = totalMonths / 12;
+        long remainderMonths = totalMonths % 12;
         String result = resolveUnit(totalYears, year, locale, "");
         if (remainderMonths > 0) {
             result += delimiter + resolveUnit(remainderMonths, month, locale, "");
@@ -205,7 +217,9 @@ public final class SayableDuration {
         return result;
     }
 
-    static String resolveUnit(int count, UnitForms uf, DurationLocale loc, String half) {
+    /** Counts are bounded by the 500-year ceiling, so they always fit in an int. */
+    static String resolveUnit(long boundedCount, UnitForms uf, DurationLocale loc, String half) {
+        int count = Math.toIntExact(boundedCount);
         String baseN;
         if (loc.formatNumber() != null) {
             baseN = loc.formatNumber().apply(count);
@@ -248,7 +262,7 @@ public final class SayableDuration {
     // Static convenience methods using default English locale
     private static final SayableDuration DEFAULT = new SayableDuration(Locales.EN);
 
-    public static String formatDurationSecondsDefault(int seconds) {
+    public static String formatDurationSecondsDefault(long seconds) {
         return DEFAULT.formatDurationSeconds(seconds);
     }
 
@@ -264,57 +278,20 @@ public final class SayableDuration {
         return DEFAULT.formatUntil(target, asOf);
     }
 
-    static Integer parseIsoToSeconds(String iso) {
-        if (iso == null || iso.isEmpty()) return null;
-
-        int tIdx = iso.indexOf('T');
-        if (tIdx < 0) return null;
-
-        String datePart = iso.substring(0, tIdx);
-        String timePart = iso.substring(tIdx + 1);
-
-        // Parse date: YYYY-MM-DD
-        String[] dp = datePart.split("-");
-        if (dp.length < 3) return null;
-        int year = safeAtoi(dp[0]);
-        int month = safeAtoi(dp[1]);
-        int day = safeAtoi(dp[2]);
-        if (year < 0 || month < 0 || day < 0) return null;
-
-        // Strip timezone info
-        int plusIdx = timePart.indexOf('+');
-        if (plusIdx >= 0) timePart = timePart.substring(0, plusIdx);
-        int zIdx = timePart.indexOf('Z');
-        if (zIdx >= 0) timePart = timePart.substring(0, zIdx);
-
-        // Parse time: HH:MM:SS
-        String[] tp = timePart.split(":");
-        int hour = safeAtoi(tp[0]);
-        if (hour < 0) return null;
-        int minute = tp.length > 1 ? safeAtoi(tp[1]) : 0;
-        if (minute < 0) return null;
-        int second;
-        if (tp.length > 2) {
-            String secStr = tp[2].split("\\.")[0];
-            second = safeAtoi(secStr);
-        } else {
-            second = 0;
-        }
-        if (second < 0) return null;
-
-        int days = daysSinceEpoch(year, month, day);
+    static Long parseIsoToSeconds(String iso) {
+        if (iso == null) return null;
+        Matcher m = TIMESTAMP.matcher(iso);
+        if (!m.matches()) return null;
+        int year = Integer.parseInt(m.group(1));
+        int month = Integer.parseInt(m.group(2));
+        int day = Integer.parseInt(m.group(3));
+        int hour = Integer.parseInt(m.group(4));
+        int minute = Integer.parseInt(m.group(5));
+        int second = m.group(6) == null ? 0 : Integer.parseInt(m.group(6));
+        if (month < 1 || month > 12 || day < 1 || day > daysInMonth(year, month)) return null;
+        if (hour > 23 || minute > 59 || second > 59) return null;
+        long days = daysSinceEpoch(year, month, day);
         return days * 86400 + hour * 3600 + minute * 60 + second;
-    }
-
-    static int safeAtoi(String s) {
-        if (s == null || s.isEmpty()) return -1;
-        int n = 0;
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c < '0' || c > '9') return -1;
-            n = n * 10 + (c - '0');
-        }
-        return n;
     }
 
     static boolean isLeapYear(int year) {

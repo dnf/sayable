@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ps.json
 
-_plural_ps() {
+_sayableage_plural_ps() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ps() {
+_sayableage_locale_ps() {
     _unit_day_one='{n} ورځ'
     _unit_day_other='{n} ورځې'
     _unit_week='{n} اونۍ'
@@ -45,5 +45,5 @@ _locale_ps() {
     _compact_unit_year='{n} ک'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ps
+    _plural_func=_sayableage_plural_ps
 }

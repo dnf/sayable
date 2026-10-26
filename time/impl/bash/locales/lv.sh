@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/lv.json
 
-_locale_lv() {
+_sayabletime_locale_lv() {
     _clock_hours=('divpadsmit' 'viens' 'divi' 'trīs' 'četri' 'pieci' 'seši' 'septiņi' 'astoņi' 'deviņi' 'desmit' 'vienpadsmit')
     _clock_midnight='pusnakts'
     _clock_noon='pusdiena'

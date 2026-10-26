@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/tpi.json "
 
-"Locale: tpi"
+"Locale: tpi"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 tpi

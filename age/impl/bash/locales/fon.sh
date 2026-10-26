@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/fon.json
 
-_plural_fon() {
+_sayableage_plural_fon() {
     echo "other"
 }
 
-_locale_fon() {
+_sayableage_locale_fon() {
     _unit_day='azǎn {n}'
     _unit_week='aklunɔ̌zán {n}'
     _unit_month='sun {n}'
@@ -37,5 +37,5 @@ _locale_fon() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_fon
+    _plural_func=_sayableage_plural_fon
 }

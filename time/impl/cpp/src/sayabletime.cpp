@@ -9,61 +9,84 @@ namespace sayabletime {
 
 namespace {
 
-/// Parse "HH:MM" or ISO datetime string to (hour, minute).
-/// Returns std::nullopt on failure.
-std::optional<std::pair<int, int>> parse_time(const std::string& input) {
-    if (input.empty()) return std::nullopt;
+/// Number of leading ASCII digits in s from pos.
+size_t digit_run(const std::string& s, size_t pos) {
+    size_t n = 0;
+    while (pos + n < s.size() && s[pos + n] >= '0' && s[pos + n] <= '9') ++n;
+    return n;
+}
 
-    std::string t = input;
+/// Value of the count ASCII digits at pos (the caller has checked they are digits).
+int digits_value(const std::string& s, size_t pos, size_t count) {
+    int value = 0;
+    for (size_t i = pos; i < pos + count; ++i) value = value * 10 + (s[i] - '0');
+    return value;
+}
 
-    // Extract time portion from ISO datetime
-    auto pos_t = t.find('T');
-    if (pos_t != std::string::npos) {
-        t = t.substr(pos_t + 1);
+/// Days in a Gregorian month (leap years by the 4/100/400 rule).
+int days_in_month(int year, int month) {
+    if (month == 2) {
+        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
     }
+    if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
+    return 31;
+}
 
-    // Strip timezone suffix
-    auto pos_plus = t.find('+');
-    if (pos_plus != std::string::npos) {
-        t = t.substr(0, pos_plus);
+/// True for exactly "YYYY-MM-DD" naming a real calendar day.
+bool is_real_date(const std::string& s) {
+    if (s.size() != 10 || s[4] != '-' || s[7] != '-' || digit_run(s, 0) != 4 ||
+        digit_run(s, 5) != 2 || digit_run(s, 8) != 2) {
+        return false;
     }
-    auto pos_z = t.find('Z');
-    if (pos_z != std::string::npos) {
-        t = t.substr(0, pos_z);
-    }
+    const int year = digits_value(s, 0, 4);
+    const int month = digits_value(s, 5, 2);
+    const int day = digits_value(s, 8, 2);
+    return month >= 1 && month <= 12 && day >= 1 && day <= days_in_month(year, month);
+}
 
-    // Split on ':'
-    auto colon_pos = t.find(':');
-    if (colon_pos == std::string::npos) return std::nullopt;
+/// True for nothing, "Z", or "+HH:MM" / "-HH:MM" starting at pos.
+bool is_zone_suffix(const std::string& s, size_t pos) {
+    const std::string zone = s.substr(pos);
+    if (zone.empty() || zone == "Z") return true;
+    return zone.size() == 6 && (zone[0] == '+' || zone[0] == '-') && digit_run(zone, 1) == 2 &&
+           zone[3] == ':' && digit_run(zone, 4) == 2;
+}
 
-    std::string hour_str = t.substr(0, colon_pos);
-    std::string rest = t.substr(colon_pos + 1);
-
-    // Strip fractional seconds from minute part
-    auto dot_pos = rest.find('.');
-    if (dot_pos != std::string::npos) {
-        rest = rest.substr(0, dot_pos);
-    }
-    // Also handle seconds part (HH:MM:SS)
-    auto colon2 = rest.find(':');
-    if (colon2 != std::string::npos) {
-        rest = rest.substr(0, colon2);
-    }
-
-    int hour = 0;
-    int minute = 0;
-    try {
-        hour = std::stoi(hour_str);
-        minute = std::stoi(rest);
-    } catch (...) {
+/// Parse "H:MM" or "HH:MM", optional ":SS", optional "." plus digits after the
+/// seconds, and an optional zone suffix, which is validated but ignored.
+std::optional<std::pair<int, int>> parse_clock(const std::string& clock) {
+    const size_t hour_len = digit_run(clock, 0);
+    if (hour_len < 1 || hour_len > 2 || hour_len >= clock.size() || clock[hour_len] != ':' ||
+        digit_run(clock, hour_len + 1) < 2) {
         return std::nullopt;
     }
-
-    if (hour < 0 || hour > 23 || minute < 0 || minute > 59) {
+    const int hour = digits_value(clock, 0, hour_len);
+    const int minute = digits_value(clock, hour_len + 1, 2);
+    int second = 0;
+    size_t rest = hour_len + 3;
+    if (rest < clock.size() && clock[rest] == ':') {
+        if (digit_run(clock, rest + 1) < 2) return std::nullopt;
+        second = digits_value(clock, rest + 1, 2);
+        rest += 3;
+        if (rest < clock.size() && clock[rest] == '.') {
+            const size_t fraction_len = digit_run(clock, rest + 1);
+            if (fraction_len == 0) return std::nullopt;
+            rest += 1 + fraction_len;
+        }
+    }
+    if (!is_zone_suffix(clock, rest) || hour > 23 || minute > 59 || second > 59) {
         return std::nullopt;
     }
-
     return std::make_pair(hour, minute);
+}
+
+/// Parse a clock time, alone or after the "T" of an ISO datetime whose date
+/// is valid, to (hour, minute) (docs/input-formats.md).
+std::optional<std::pair<int, int>> parse_time(const std::string& input) {
+    const auto pos_t = input.find('T');
+    if (pos_t == std::string::npos) return parse_clock(input);
+    if (!is_real_date(input.substr(0, pos_t))) return std::nullopt;
+    return parse_clock(input.substr(pos_t + 1));
 }
 
 /// Round minute to nearest 5.

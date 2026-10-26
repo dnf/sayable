@@ -8,9 +8,11 @@ uses SayableDurationTypes, SayableDurationLocales;
 
 const
   SayableDurationVersion = '0.5.0';
+  { 500 years, the same ceiling as sayable-age }
+  MaxDurationMonths = 6000;
 
 function FormatDuration(const ALocale: TDurationLocale; ACompactness: TCompactness;
-  ATotalSeconds: Integer): string;
+  ATotalSeconds: Int64): string;
 
 function FormatDurationISO(const ALocale: TDurationLocale; ACompactness: TCompactness;
   const AStart, AEnd: string): string;
@@ -83,88 +85,69 @@ begin
   Result := Days;
 end;
 
-function ParseISOToSeconds(const AISO: string): Int64;
+function IsDigitsAt(const S: string; AFirst, ACount: Integer): Boolean;
 var
-  DatePart, TimePart, TimeStr: string;
-  Dp: array[0..2] of string;
-  Tp: array[0..2] of string;
-  AYear, AMonth, ADay, AHour, AMinute, ASecond: Integer;
-  Days: Int64;
-  P, I, Start, Idx: Integer;
-  DotPos: Integer;
+  I: Integer;
 begin
-  Result := -1;
-  if AISO = '' then exit;
+  Result := False;
+  if (AFirst < 1) or (AFirst + ACount - 1 > Length(S)) then exit;
+  for I := AFirst to AFirst + ACount - 1 do
+    if not (S[I] in ['0'..'9']) then exit;
+  Result := True;
+end;
 
-  P := Pos('T', AISO);
-  if P = 0 then exit;
+function DigitsValue(const S: string; AFirst, ACount: Integer): Integer;
+var
+  I: Integer;
+begin
+  Result := 0;
+  for I := AFirst to AFirst + ACount - 1 do
+    Result := Result * 10 + Ord(S[I]) - Ord('0');
+end;
 
-  DatePart := Copy(AISO, 1, P - 1);
-  TimePart := Copy(AISO, P + 1, MaxInt);
+{ Z or +HH:MM / -HH:MM (validated, never applied). }
+function IsZoneSuffix(const S: string): Boolean;
+begin
+  Result := (S = 'Z') or ((Length(S) = 6) and (S[1] in ['+', '-']) and IsDigitsAt(S, 2, 2)
+    and (S[4] = ':') and IsDigitsAt(S, 5, 2));
+end;
 
-  { Parse date parts }
-  Idx := 0;
-  Start := 1;
-  for I := 1 to Length(DatePart) do begin
-    if DatePart[I] = '-' then begin
-      if Idx > 2 then exit;
-      Dp[Idx] := Copy(DatePart, Start, I - Start);
-      Inc(Idx);
-      Start := I + 1;
+{ YYYY-MM-DDTHH:MM (one- or two-digit hour), then optional :SS with
+  optional .fraction, then an optional zone suffix that is ignored. }
+function ParseISOToSeconds(const AISO: string; out ASeconds: Int64): Boolean;
+var
+  AYear, AMonth, ADay, AHour, AMinute, ASecond: Integer;
+  P, HourDigits: Integer;
+begin
+  Result := False;
+  ASeconds := 0;
+  if (Length(AISO) < 15) or (AISO[5] <> '-') or (AISO[8] <> '-') or (AISO[11] <> 'T') then exit;
+  if not (IsDigitsAt(AISO, 1, 4) and IsDigitsAt(AISO, 6, 2) and IsDigitsAt(AISO, 9, 2)) then exit;
+  HourDigits := 0;
+  while (HourDigits < 2) and IsDigitsAt(AISO, 12 + HourDigits, 1) do Inc(HourDigits);
+  P := 12 + HourDigits;
+  if (HourDigits = 0) or (P > Length(AISO)) or (AISO[P] <> ':') or not IsDigitsAt(AISO, P + 1, 2) then exit;
+  AYear := DigitsValue(AISO, 1, 4);
+  AMonth := DigitsValue(AISO, 6, 2);
+  ADay := DigitsValue(AISO, 9, 2);
+  AHour := DigitsValue(AISO, 12, HourDigits);
+  AMinute := DigitsValue(AISO, P + 1, 2);
+  ASecond := 0;
+  P := P + 3;
+  if (P <= Length(AISO)) and (AISO[P] = ':') and IsDigitsAt(AISO, P + 1, 2) then begin
+    ASecond := DigitsValue(AISO, P + 1, 2);
+    P := P + 3;
+    if (P <= Length(AISO)) and (AISO[P] = '.') and IsDigitsAt(AISO, P + 1, 1) then begin
+      Inc(P);
+      while IsDigitsAt(AISO, P, 1) do Inc(P);
     end;
   end;
-  if Idx <> 2 then exit;
-  Dp[2] := Copy(DatePart, Start, MaxInt);
-
-  try
-    AYear := StrToInt(Dp[0]);
-    AMonth := StrToInt(Dp[1]);
-    ADay := StrToInt(Dp[2]);
-  except
-    exit;
-  end;
-
-  { Strip timezone }
-  TimeStr := TimePart;
-  P := Pos('+', TimeStr);
-  if P > 0 then TimeStr := Copy(TimeStr, 1, P - 1);
-  P := Pos('Z', TimeStr);
-  if P > 0 then TimeStr := Copy(TimeStr, 1, P - 1);
-
-  { Parse time parts }
-  Idx := 0;
-  Start := 1;
-  Tp[0] := '';
-  Tp[1] := '';
-  Tp[2] := '';
-  for I := 1 to Length(TimeStr) do begin
-    if TimeStr[I] = ':' then begin
-      if Idx > 2 then exit;
-      Tp[Idx] := Copy(TimeStr, Start, I - Start);
-      Inc(Idx);
-      Start := I + 1;
-    end;
-  end;
-  if Idx < 1 then exit;
-  Tp[Idx] := Copy(TimeStr, Start, MaxInt);
-
-  try
-    AHour := StrToInt(Tp[0]);
-    if Tp[1] <> '' then AMinute := StrToInt(Tp[1]) else AMinute := 0;
-    if Tp[2] <> '' then begin
-      DotPos := Pos('.', Tp[2]);
-      if DotPos > 0 then
-        ASecond := StrToInt(Copy(Tp[2], 1, DotPos - 1))
-      else
-        ASecond := StrToInt(Tp[2]);
-    end else
-      ASecond := 0;
-  except
-    exit;
-  end;
-
-  Days := DaysSinceEpoch(AYear, AMonth, ADay);
-  Result := Days * 86400 + Int64(AHour) * 3600 + Int64(AMinute) * 60 + Int64(ASecond);
+  if (P <= Length(AISO)) and not IsZoneSuffix(Copy(AISO, P, MaxInt)) then exit;
+  if (AMonth < 1) or (AMonth > 12) or (ADay < 1) or (ADay > DaysInMonth(AYear, AMonth)) then exit;
+  if (AHour > 23) or (AMinute > 59) or (ASecond > 59) then exit;
+  ASeconds := DaysSinceEpoch(AYear, AMonth, ADay) * 86400
+    + Int64(AHour) * 3600 + Int64(AMinute) * 60 + Int64(ASecond);
+  Result := True;
 end;
 
 function ResolveUnit(ACount: Integer; const AUnitForms: TUnitForms;
@@ -198,7 +181,7 @@ begin
     Result := StringReplace1(AHalf, '{0}', Result);
 end;
 
-function FormatDurationSeconds(ATotalSeconds: Integer;
+function FormatDurationSeconds(ATotalSeconds: Int64;
   const ALocale: TDurationLocale; ACompactness: TCompactness): string;
 var
   SecUF, MinUF, HourUF, DayUF, WeekUF, MonthUF, YearUF: TUnitForms;
@@ -245,6 +228,11 @@ begin
     if Ovr.HasDelimiter then Delim := Ovr.Delimiter;
   end;
 
+  if Round((ATotalSeconds div 86400) / 30.44) > MaxDurationMonths then begin
+    Result := NullResult;
+    exit;
+  end;
+
   { 0 seconds }
   if ATotalSeconds = 0 then begin
     Result := ALocale.JustNow;
@@ -253,12 +241,12 @@ begin
 
   { 1-59 seconds }
   if ATotalSeconds < 60 then begin
-    Result := ResolveUnit(ATotalSeconds, SecUF, ALocale, '');
+    Result := ResolveUnit(Integer(ATotalSeconds), SecUF, ALocale, '');
     exit;
   end;
 
-  TotalMinutes := ATotalSeconds div 60;
-  RemainderSeconds := ATotalSeconds mod 60;
+  TotalMinutes := Integer(ATotalSeconds div 60);
+  RemainderSeconds := Integer(ATotalSeconds mod 60);
 
   { 1-4 minutes: minutes + seconds }
   if TotalMinutes < 5 then begin
@@ -274,8 +262,8 @@ begin
     exit;
   end;
 
-  TotalHours := ATotalSeconds div 3600;
-  RemainderMinutes := (ATotalSeconds mod 3600) div 60;
+  TotalHours := Integer(ATotalSeconds div 3600);
+  RemainderMinutes := Integer((ATotalSeconds mod 3600) div 60);
 
   { 1-5 hours: hours + minutes (with half marker) }
   if TotalHours <= 5 then begin
@@ -295,8 +283,8 @@ begin
     exit;
   end;
 
-  TotalDays := ATotalSeconds div 86400;
-  RemainderHours := (ATotalSeconds mod 86400) div 3600;
+  TotalDays := Integer(ATotalSeconds div 86400);
+  RemainderHours := Integer((ATotalSeconds mod 86400) div 3600);
 
   { 1-2 days: days + hours (with half marker) }
   if TotalDays <= 2 then begin
@@ -347,7 +335,7 @@ begin
 end;
 
 function FormatDuration(const ALocale: TDurationLocale; ACompactness: TCompactness;
-  ATotalSeconds: Integer): string;
+  ATotalSeconds: Int64): string;
 begin
   if ATotalSeconds < 0 then begin
     Result := NullResult;
@@ -365,14 +353,12 @@ begin
     Result := NullResult;
     exit;
   end;
-  S := ParseISOToSeconds(AStart);
-  E := ParseISOToSeconds(AEnd);
-  if (S = -1) or (E = -1) then begin
+  if not (ParseISOToSeconds(AStart, S) and ParseISOToSeconds(AEnd, E)) then begin
     Result := NullResult;
     exit;
   end;
   Total := Abs(E - S);
-  Result := FormatDurationSeconds(Integer(Total), ALocale, ACompactness);
+  Result := FormatDurationSeconds(Total, ALocale, ACompactness);
 end;
 
 function FormatSince(const ALocale: TDurationLocale; ACompactness: TCompactness;
@@ -385,9 +371,7 @@ begin
     Result := NullResult;
     exit;
   end;
-  S := ParseISOToSeconds(AStart);
-  A := ParseISOToSeconds(AAsOf);
-  if (S = -1) or (A = -1) then begin
+  if not (ParseISOToSeconds(AStart, S) and ParseISOToSeconds(AAsOf, A)) then begin
     Result := NullResult;
     exit;
   end;
@@ -400,7 +384,11 @@ begin
     Result := ALocale.JustNow;
     exit;
   end;
-  Dur := FormatDurationSeconds(Integer(Diff), ALocale, ACompactness);
+  Dur := FormatDurationSeconds(Diff, ALocale, ACompactness);
+  if IsNullResult(Dur) then begin
+    Result := NullResult;
+    exit;
+  end;
 
   Ago := ALocale.Ago;
   if (ACompactness = csShort) and ALocale.HasShort and ALocale.ShortOverride.HasAgo then
@@ -421,9 +409,7 @@ begin
     Result := NullResult;
     exit;
   end;
-  T := ParseISOToSeconds(ATarget);
-  A := ParseISOToSeconds(AAsOf);
-  if (T = -1) or (A = -1) then begin
+  if not (ParseISOToSeconds(ATarget, T) and ParseISOToSeconds(AAsOf, A)) then begin
     Result := NullResult;
     exit;
   end;
@@ -436,7 +422,11 @@ begin
     Result := ALocale.JustNow;
     exit;
   end;
-  Dur := FormatDurationSeconds(Integer(Diff), ALocale, ACompactness);
+  Dur := FormatDurationSeconds(Diff, ALocale, ACompactness);
+  if IsNullResult(Dur) then begin
+    Result := NullResult;
+    exit;
+  end;
 
   InFut := ALocale.InFuture;
   if (ACompactness = csShort) and ALocale.HasShort and ALocale.ShortOverride.HasInFuture then

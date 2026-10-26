@@ -1,11 +1,11 @@
 const std = @import("std");
 const sd = @import("sayableduration");
 
-fn fmtSecs(buf: []u8, seconds: i32) ?[]const u8 {
+fn fmtSecs(buf: []u8, seconds: i64) ?[]const u8 {
     return sd.formatDurationSecs(buf, &sd.locales.en, .normal, seconds);
 }
 
-fn fmtSecsWith(buf: []u8, locale: *const sd.DurationLocale, compactness: sd.Compactness, seconds: i32) ?[]const u8 {
+fn fmtSecsWith(buf: []u8, locale: *const sd.DurationLocale, compactness: sd.Compactness, seconds: i64) ?[]const u8 {
     return sd.formatDurationSecs(buf, locale, compactness, seconds);
 }
 
@@ -418,4 +418,79 @@ test "compact one hour" {
 test "compact one minute thirty seconds" {
     var buf: [256]u8 = undefined;
     try expectStr("1m30s", fmtSecsWith(&buf, &sd.locales.en, .compact, 90));
+}
+
+// ================================================================
+// Section 18: Short compactness — relative time
+// ================================================================
+// 18.1
+test "18.1 days and hours both kept" {
+    var buf: [256]u8 = undefined;
+    try expectStr("lɔhɔnga 2, awa 14 taa gbɔyɔ", sd.formatSince(&buf, &sd.locales.men, .normal, "2025-01-20T01:32:11", "2025-01-22T15:39:16"));
+}
+
+// ================================================================
+// Section 19: Range (500-year ceiling)
+// ================================================================
+// 19.1
+test "19.1 500 Julian years: 6000 months, the ceiling" {
+    var buf: [256]u8 = undefined;
+    try expectStr("500 years", sd.formatDurationSecs(&buf, &sd.locales.en, .normal, 15778800000));
+}
+
+// 19.2
+test "19.2 over 6000 months" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDurationSecs(&buf, &sd.locales.en, .normal, 15800000000));
+}
+
+// 19.3
+test "19.3 well beyond the ceiling (and 32-bit range)" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDurationSecs(&buf, &sd.locales.en, .normal, 99999999999));
+}
+
+// 19.4
+test "19.4 525 years ago" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatSince(&buf, &sd.locales.en, .normal, "1500-01-01T00:00:00", "2025-01-01T00:00:00"));
+}
+
+// 19.5
+test "19.5 575 years from now" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatUntil(&buf, &sd.locales.en, .normal, "2600-01-01T00:00:00", "2025-01-01T00:00:00"));
+}
+
+// ================================================================
+// Section 20: Timestamp validation
+// ================================================================
+// 20.1
+test "20.1 seconds are optional" {
+    var buf: [256]u8 = undefined;
+    try expectStr("1½ hours", sd.formatDurationISO(&buf, &sd.locales.en, .normal, "2025-01-15T10:00", "2025-01-15T11:30:00"));
+}
+
+// 20.2
+test "20.2 minutes are required" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDurationISO(&buf, &sd.locales.en, .normal, "2025-01-15T10", "2025-01-15T11:30:00"));
+}
+
+// 20.3
+test "20.3 unpadded date" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDurationISO(&buf, &sd.locales.en, .normal, "2025-1-5T10:00:00", "2025-01-15T11:30:00"));
+}
+
+// 20.4
+test "20.4 impossible date" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatDurationISO(&buf, &sd.locales.en, .normal, "2025-02-30T10:00:00", "2025-03-15T11:30:00"));
+}
+
+// 20.5
+test "20.5 hour out of range" {
+    var buf: [256]u8 = undefined;
+    try expectNull(sd.formatSince(&buf, &sd.locales.en, .normal, "2025-01-15T10:00:00", "2025-01-15T25:00:00"));
 }

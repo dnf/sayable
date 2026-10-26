@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/cy.json
 
-_locale_cy() {
+_sayabletime_locale_cy() {
     _clock_hours=('deuddeg' 'un' 'dau' 'tri' 'pedwar' 'pump' 'chwech' 'saith' 'wyth' 'naw' 'deg' 'un ar ddeg')
     _clock_midnight='hanner nos'
     _clock_noon='hanner dydd'

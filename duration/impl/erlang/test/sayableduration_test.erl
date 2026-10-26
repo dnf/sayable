@@ -136,6 +136,31 @@ compact_test_() ->
      ?_assertEqual({ok, "1m30s"}, dur_compact(90))                              %% 17.2
     ].
 
+%% 18. Short compactness — relative time
+since_short_test_() ->
+    [?_assertEqual({ok, "lɔhɔnga 2, awa 14 taa gbɔyɔ"},
+                   sayableduration:format_since(sayableduration_locales_men:locale(), short,
+                                                "2025-01-20T01:32:11", "2025-01-22T15:39:16"))     %% 18.1
+    ].
+
+%% 19. Range (500-year ceiling)
+ceiling_test_() ->
+    [?_assertEqual({ok, "500 years"}, dur(15778800000)),                                   %% 19.1
+     ?_assertEqual(error, dur(15800000000)),                                               %% 19.2
+     ?_assertEqual(error, dur(99999999999)),                                               %% 19.3
+     ?_assertEqual(error, since("1500-01-01T00:00:00", "2025-01-01T00:00:00")),            %% 19.4
+     ?_assertEqual(error, until("2600-01-01T00:00:00", "2025-01-01T00:00:00"))             %% 19.5
+    ].
+
+%% 20. Timestamp validation
+timestamp_validation_test_() ->
+    [?_assertEqual({ok, "1½ hours"}, dur_ts("2025-01-15T10:00", "2025-01-15T11:30:00")),   %% 20.1
+     ?_assertEqual(error, dur_ts("2025-01-15T10", "2025-01-15T11:30:00")),                 %% 20.2
+     ?_assertEqual(error, dur_ts("2025-1-5T10:00:00", "2025-01-15T11:30:00")),             %% 20.3
+     ?_assertEqual(error, dur_ts("2025-02-30T10:00:00", "2025-03-15T11:30:00")),           %% 20.4
+     ?_assertEqual(error, since("2025-01-15T10:00:00", "2025-01-15T25:00:00"))             %% 20.5
+    ].
+
 %% Locale lookup
 locale_lookup_test_() ->
     [?_assertMatch({ok, #duration_locale{code = "en"}}, sayableduration:get_locale("en")),

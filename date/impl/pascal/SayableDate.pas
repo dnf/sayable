@@ -34,30 +34,53 @@ begin
   Result := AResult = NullResult;
 end;
 
-function ParseDateParts(const ADate: string; out AYear, AMonth, ADay: Integer): Boolean;
+function DaysInMonth(AYear, AMonth: Integer): Integer;
+begin
+  case AMonth of
+    2: begin
+      if ((AYear mod 4 = 0) and (AYear mod 100 <> 0)) or (AYear mod 400 = 0) then
+        Result := 29
+      else
+        Result := 28;
+    end;
+    4, 6, 9, 11: Result := 30;
+  else
+    Result := 31;
+  end;
+end;
+
+function IsDigitsAt(const S: string; AFirst, ACount: Integer): Boolean;
 var
-  DatePart: string;
-  P: Integer;
+  I: Integer;
 begin
   Result := False;
-  if Length(ADate) = 0 then exit;
+  for I := AFirst to AFirst + ACount - 1 do
+    if not (S[I] in ['0'..'9']) then exit;
+  Result := True;
+end;
 
-  DatePart := ADate;
-  P := Pos('T', DatePart);
-  if P > 0 then
-    DatePart := Copy(DatePart, 1, P - 1);
+function DigitsValue(const S: string; AFirst, ACount: Integer): Integer;
+var
+  I: Integer;
+begin
+  Result := 0;
+  for I := AFirst to AFirst + ACount - 1 do
+    Result := Result * 10 + Ord(S[I]) - Ord('0');
+end;
 
-  if Length(DatePart) < 10 then exit;
-  if (DatePart[5] <> '-') or (DatePart[8] <> '-') then exit;
-  try
-    AYear := StrToInt(Copy(DatePart, 1, 4));
-    AMonth := StrToInt(Copy(DatePart, 6, 2));
-    ADay := StrToInt(Copy(DatePart, 9, 2));
-    if (AMonth < 1) or (AMonth > 12) or (ADay < 1) or (ADay > 31) then exit;
-    Result := True;
-  except
-    Result := False;
-  end;
+{ YYYY-MM-DD naming a real calendar day, optionally followed by T and a
+  time (only the date part is read). }
+function ParseDateParts(const ADate: string; out AYear, AMonth, ADay: Integer): Boolean;
+begin
+  Result := False;
+  AYear := 0; AMonth := 0; ADay := 0;
+  if (Length(ADate) < 10) or ((Length(ADate) > 10) and (ADate[11] <> 'T')) then exit;
+  if (ADate[5] <> '-') or (ADate[8] <> '-') then exit;
+  if not (IsDigitsAt(ADate, 1, 4) and IsDigitsAt(ADate, 6, 2) and IsDigitsAt(ADate, 9, 2)) then exit;
+  AYear := DigitsValue(ADate, 1, 4);
+  AMonth := DigitsValue(ADate, 6, 2);
+  ADay := DigitsValue(ADate, 9, 2);
+  Result := (AMonth >= 1) and (AMonth <= 12) and (ADay >= 1) and (ADay <= DaysInMonth(AYear, AMonth));
 end;
 
 function JulianDay(AYear, AMonth, ADay: Integer): Int64;

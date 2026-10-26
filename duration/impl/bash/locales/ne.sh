@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ne.json
 
-_plural_ne() {
+_sayableduration_plural_ne() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ne() {
+_sayableduration_locale_ne() {
     _unit_second='{n} सेकेन्ड'
     _unit_minute='{n} मिनेट'
     _unit_hour='{n} घण्टा'
@@ -52,5 +52,5 @@ _locale_ne() {
     _compact_delimiter=''
     _compact_ago='{0} अगाडि'
     _compact_in_future='{0} पछि'
-    _plural_func=_plural_ne
+    _plural_func=_sayableduration_plural_ne
 }

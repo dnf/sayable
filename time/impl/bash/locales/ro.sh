@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ro.json
 
-_locale_ro() {
+_sayabletime_locale_ro() {
     _clock_hours=('douăsprezece' 'unu' 'două' 'trei' 'patru' 'cinci' 'șase' 'șapte' 'opt' 'nouă' 'zece' 'unsprezece')
     _clock_midnight='miezul nopții'
     _clock_noon='amiază'

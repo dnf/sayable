@@ -747,6 +747,137 @@ Namespace SayableAge.Tests
             Assert.Null(Locales.Get("EN"))
         End Sub
 
+        ' ================================================================
+        ' Weeks and days across month ends
+        ' ================================================================
+
+        ' 31.1
+        <Fact>
+        Public Sub Spec31_1_88DaysAcrossA28DayFebruary()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Equal("12 weeks, 4 days", f.FormatAge("2016-12-31", "2017-03-29"))
+        End Sub
+
+        ' 31.2
+        <Fact>
+        Public Sub Spec31_2_90DaysAcrossAYearEndInto()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Equal("12 weeks, 6 days", f.FormatAge("1991-11-27", "1992-02-25"))
+        End Sub
+
+        ' 31.3
+        <Fact>
+        Public Sub Spec31_3_33DaysAcrossAYearEnd()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Equal("4 weeks, 5 days", f.FormatAge("2020-11-30", "2021-01-02"))
+        End Sub
+
+        ' 31.4
+        <Fact>
+        Public Sub Spec31_4_CompactFormOf311()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN, Compactness.Compact)
+            Assert.Equal("12w4d", f.FormatAge("2016-12-31", "2017-03-29"))
+        End Sub
+
+        ' ================================================================
+        ' Half years take their plural form from whole years
+        ' ================================================================
+
+        ' 32.1
+        <Fact>
+        Public Sub Spec32_1_Polish3IsFew()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.PL)
+            Assert.Equal("3 i pół lata", f.FormatAge("2021-06-15", "2025-01-15"))
+        End Sub
+
+        ' 32.2
+        <Fact>
+        Public Sub Spec32_2_Polish5IsMany()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.PL, Compactness.Short)
+            Assert.Equal("5 i pół lat", f.FormatAge("2020-06-15", "2025-12-15"))
+        End Sub
+
+        ' 32.3
+        <Fact>
+        Public Sub Spec32_3_Tachelhit6IsFew()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.SHI)
+            Assert.Equal("6 iseggasen d uzgen", f.FormatAge("2005-06-08", "2012-06-07"))
+        End Sub
+
+        ' ================================================================
+        ' Input validation
+        ' ================================================================
+
+        ' 33.1
+        <Fact>
+        Public Sub Spec33_1_February30DoesntExist()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge("2025-02-30", "2032-06-25"))
+        End Sub
+
+        ' 33.2
+        <Fact>
+        Public Sub Spec33_2_Month13()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge("2025-13-01", "2027-01-31"))
+        End Sub
+
+        ' 33.3
+        <Fact>
+        Public Sub Spec33_3_February29InANonLeapYear()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge("2023-02-29", "2025-03-01"))
+        End Sub
+
+        ' 33.4
+        <Fact>
+        Public Sub Spec33_4_Day00()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge("2025-06-00", "2027-02-25"))
+        End Sub
+
+        ' 33.5
+        <Fact>
+        Public Sub Spec33_5_UnpaddedMonthAndDay()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge("2025-6-1", "2027-02-25"))
+        End Sub
+
+        ' 33.6
+        <Fact>
+        Public Sub Spec33_6_SurroundingWhitespace()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge(" 2025-06-01", "2027-02-25"))
+        End Sub
+
+        ' 33.7
+        <Fact>
+        Public Sub Spec33_7_ADatetimeIsNotADate()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge("2025-06-15T10:00:00", "2027-02-25"))
+        End Sub
+
+        ' 33.8
+        <Fact>
+        Public Sub Spec33_8_InvalidAsOf()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatAge("2020-01-01", "2025-04-31"))
+        End Sub
+
+        ' 33.9
+        <Fact>
+        Public Sub Spec33_9_FormatStageValidatesToo()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Null(f.FormatStage("2025-02-30", "2027-09-05"))
+        End Sub
+
+        ' 33.10
+        <Fact>
+        Public Sub Spec33_10_February29InALeapYearIs()
+            Dim f = New SayableAgeLib.SayableAgeFormatter(Locales.EN)
+            Assert.Equal("2 years", f.FormatAge("2024-02-29", "2026-03-01"))
+        End Sub
+
     End Class
 
 End Namespace

@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/shn.json
 
-_plural_shn() {
+_sayableage_plural_shn() {
     echo "other"
 }
 
-_locale_shn() {
+_sayableage_locale_shn() {
     _unit_day='{n} ဝၼ်း'
     _unit_week='{n} ဝူင်ႈ'
     _unit_month='{n} လိူၼ်'
@@ -36,5 +36,5 @@ _locale_shn() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_shn
+    _plural_func=_sayableage_plural_shn
 }

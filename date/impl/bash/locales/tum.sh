@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/tum.json
 
-_locale_tum() {
+_sayabledate_locale_tum() {
     _months=('Janyuwale' 'Feburuware' 'Marichi' 'Epurelo' 'Meyi' 'Juni' 'Julayi' 'Ogasiti' 'Seputembala' 'Okutobala' 'Novembala' 'Disembala')
     _weekdays=('Sabata' 'Mande' 'Chibiri' 'Chitatu' 'Chinayi' 'Chinkondi' 'Chisulo')
     _day_format='{n}'

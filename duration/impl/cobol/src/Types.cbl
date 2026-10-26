@@ -180,7 +180,6 @@
  01 WS-REM-DAYS              PIC S9(12).
  01 WS-REM-MONTHS            PIC S9(12).
  01 WS-TEMP-CALC             PIC S9(12).
- 01 WS-TEMP-FLOAT            PIC S9(12)V9(4).
 
 *> Effective locale fields (after compactness override applied)
  01 WS-EFF-SECOND-HAS-SIMPLE PIC 9.
@@ -249,7 +248,14 @@
  01 WS-REPLACE-MRK-LEN       PIC 9(4).
 
 *> ISO datetime parsing variables
- 01 WS-ISO-STR               PIC X(30).
+*> Lookahead past the input may read three characters beyond it,
+*> so the buffer has room after the longest input.
+ 01 WS-ISO-STR               PIC X(260).
+ 01 WS-ISO-LEN               PIC 9(4).
+ 01 WS-ISO-SCAN-POS          PIC 9(4).
+ 01 WS-ISO-HOUR-DIGITS       PIC 9.
+ 01 WS-ISO-ZONE-LEN          PIC S9(4).
+ 01 WS-ISO-DATE-OK           PIC 9.
  01 WS-ISO-YEAR              PIC 9(4).
  01 WS-ISO-MONTH             PIC 9(2).
  01 WS-ISO-DAY               PIC 9(2).
@@ -259,7 +265,6 @@
  01 WS-ISO-PARSE-OK          PIC 9.
  01 WS-ISO-RESULT            PIC S9(12).
  01 WS-ISO-DAYS-COUNT        PIC S9(12).
- 01 WS-ISO-TIME-STR          PIC X(20).
 
 *> Days-since-epoch variables
  01 WS-DSE-YEAR              PIC 9(4).
@@ -308,10 +313,19 @@
 *> Format arguments
  01 WS-FMT-COMPACTNESS       PIC 9.
  01 WS-FMT-SECONDS           PIC S9(12).
- 01 WS-FMT-START             PIC X(30).
- 01 WS-FMT-END               PIC X(30).
- 01 WS-FMT-AS-OF             PIC X(30).
- 01 WS-FMT-TARGET            PIC X(30).
+*> An input's -LEN is its exact length, trailing blanks included, for
+*> callers that know it (the CLI); 0 means the length without them.
+ 01 WS-FMT-START             PIC X(256).
+ 01 WS-FMT-START-LEN         PIC 9(4) VALUE 0.
+ 01 WS-FMT-END               PIC X(256).
+ 01 WS-FMT-END-LEN           PIC 9(4) VALUE 0.
+ 01 WS-FMT-AS-OF             PIC X(256).
+ 01 WS-FMT-AS-OF-LEN         PIC 9(4) VALUE 0.
+ 01 WS-FMT-TARGET            PIC X(256).
+ 01 WS-FMT-TARGET-LEN        PIC 9(4) VALUE 0.
+
+*> 500 years, the same ceiling as sayable-age
+ 01 PT-MAX-DURATION-MONTHS   PIC 9(4) VALUE 6000.
 
 *> ISO parse results
  01 WS-ISO-EPOCH-1           PIC S9(12).

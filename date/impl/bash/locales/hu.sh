@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/hu.json
 
-_locale_hu() {
+_sayabledate_locale_hu() {
     _months=('január' 'február' 'március' 'április' 'május' 'június' 'július' 'augusztus' 'szeptember' 'október' 'november' 'december')
     _weekdays=('vasárnap' 'hétfő' 'kedd' 'szerda' 'csütörtök' 'péntek' 'szombat')
     _day_format='{n}.'

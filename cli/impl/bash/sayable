@@ -62,6 +62,26 @@ _get_today() {
     date +%Y-%m-%d
 }
 
+# Exit 2 unless the component's registry (named by its ensure function and
+# code-list variable) knows the requested locale.
+_require_locale() {
+    local ensure_registry="$1" codes_var="$2"
+    "${ensure_registry}"
+    local code
+    for code in ${!codes_var}; do
+        if [ "${code}" = "${_locale}" ]; then
+            return 0
+        fi
+    done
+    _error "unknown locale '${_locale}'"
+}
+
+_require_as_of() {
+    if [ ${_as_of_given} -eq 0 ]; then
+        _error "${_command} requires --as-of / -d option"
+    fi
+}
+
 # Parse CLI arguments into globals:
 #   _command, _positionals (array), _locale, _as_of, _compactness, _gender, _with_year
 _parse_args() {
@@ -69,6 +89,7 @@ _parse_args() {
     _positionals=()
     _locale="en"
     _as_of=""
+    _as_of_given=0
     _compactness="normal"
     _gender=""
     _with_year=0
@@ -117,6 +138,7 @@ _parse_args() {
                     fi
                     shift
                     _as_of="$1"
+                    _as_of_given=1
                     ;;
                 -g|--gender)
                     if [ $# -lt 2 ]; then
@@ -160,6 +182,7 @@ cmd_age() {
     fi
     local dob
     dob=$(_nullify "${_positionals[0]}")
+    _require_locale _sayableage_ensure_registry _SAYABLEAGE_LOCALES
 
     local as_of="${_as_of}"
     if [ -n "${as_of}" ]; then
@@ -183,6 +206,7 @@ cmd_stage() {
     fi
     local dob
     dob=$(_nullify "${_positionals[0]}")
+    _require_locale _sayableage_ensure_registry _SAYABLEAGE_LOCALES
 
     local as_of="${_as_of}"
     if [ -n "${as_of}" ]; then
@@ -206,6 +230,7 @@ cmd_date() {
     fi
     local date_val
     date_val=$(_nullify "${_positionals[0]}")
+    _require_locale _sayabledate_ensure_registry _SAYABLEDATE_LOCALES
 
     local result
     if [ ${_with_year} -eq 1 ]; then
@@ -227,11 +252,10 @@ cmd_relative() {
     local date_val
     date_val=$(_nullify "${_positionals[0]}")
 
-    if [ -z "${_as_of}" ]; then
-        _error "relative requires --as-of / -d option"
-    fi
+    _require_as_of
     local as_of
     as_of=$(_nullify "${_as_of}")
+    _require_locale _sayabledate_ensure_registry _SAYABLEDATE_LOCALES
 
     local result
     result=$(sayabledate_format_relative "${_locale}" "${date_val}" "${as_of}" "${_compactness}")
@@ -248,6 +272,7 @@ cmd_time() {
     fi
     local time_val
     time_val=$(_nullify "${_positionals[0]}")
+    _require_locale _sayabletime_ensure_registry _SAYABLETIME_LOCALES
 
     local result
     result=$(sayabletime_format_time "${_locale}" "${time_val}" "${_compactness}")
@@ -258,48 +283,38 @@ cmd_time() {
     echo "${result}"
 }
 
+# A whole number of seconds: an optional '-' then ASCII digits. The digit
+# class is spelled out because a [0-9] range can match other characters in
+# some locales.
+_SECONDS_PATTERN='^-?[0123456789]+$'
+
+# Print the formatted duration, or exit 1 when it has no value.
+_print_duration() {
+    local result
+    result=$(sayableduration_format_duration "${_locale}" "$1" "$2" "${_compactness}")
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
 cmd_duration() {
     if [ ${#_positionals[@]} -eq 0 ]; then
         _error "duration requires a value argument"
     fi
-    local value
-    value=$(_nullify "${_positionals[0]}")
+    local value="${_positionals[0]}"
+    _require_locale _sayableduration_ensure_registry _SAYABLEDURATION_LOCALES
 
-    if [ -z "${value}" ]; then
-        # null input
-        local result
-        result=$(sayableduration_format_duration "${_locale}" "" "" "${_compactness}")
-        if [ -z "${result}" ]; then
-            exit 1
-        fi
-        echo "${result}"
-        return
-    fi
-
-    # Detect mode: integer (seconds) vs timestamp
-    # Strip leading minus to check if remaining is all digits
-    local stripped="${value#-}"
-    if [[ "${stripped}" =~ ^[0-9]+$ ]]; then
-        # Seconds mode (includes negative integers)
-        local result
-        result=$(sayableduration_format_duration "${_locale}" "${value}" "" "${_compactness}")
-        if [ -z "${result}" ]; then
-            exit 1
-        fi
-        echo "${result}"
+    # Only the literal null is a missing value; "" is an empty timestamp.
+    if [ "${value}" = "null" ]; then
+        _print_duration "" ""
+    elif [[ "${value}" =~ ${_SECONDS_PATTERN} ]]; then
+        _print_duration "${value}" ""
     else
-        # Timestamp mode: need an end argument
         if [ ${#_positionals[@]} -lt 2 ]; then
             _error "duration with timestamps requires start and end arguments"
         fi
-        local end
-        end=$(_nullify "${_positionals[1]}")
-        local result
-        result=$(sayableduration_format_duration "${_locale}" "${value}" "${end}" "${_compactness}")
-        if [ -z "${result}" ]; then
-            exit 1
-        fi
-        echo "${result}"
+        _print_duration "${value}" "$(_nullify "${_positionals[1]}")"
     fi
 }
 
@@ -310,11 +325,10 @@ cmd_since() {
     local start
     start=$(_nullify "${_positionals[0]}")
 
-    if [ -z "${_as_of}" ]; then
-        _error "since requires --as-of / -d option"
-    fi
+    _require_as_of
     local as_of
     as_of=$(_nullify "${_as_of}")
+    _require_locale _sayableduration_ensure_registry _SAYABLEDURATION_LOCALES
 
     local result
     result=$(sayableduration_format_since "${_locale}" "${start}" "${as_of}" "${_compactness}")
@@ -332,11 +346,10 @@ cmd_until() {
     local target
     target=$(_nullify "${_positionals[0]}")
 
-    if [ -z "${_as_of}" ]; then
-        _error "until requires --as-of / -d option"
-    fi
+    _require_as_of
     local as_of
     as_of=$(_nullify "${_as_of}")
+    _require_locale _sayableduration_ensure_registry _SAYABLEDURATION_LOCALES
 
     local result
     result=$(sayableduration_format_until "${_locale}" "${target}" "${as_of}" "${_compactness}")
@@ -425,18 +438,19 @@ _split_request() {
 }
 
 # Each formatter call loads its component's locale registry lazily inside its
-# own command substitution, so without this every request re-sources it.
-# Only one component can be preloaded: the registries share function names
-# (_locale_<code>, _plural_<code>), so loading a second would shadow the first.
-# Age is the busiest component, and the others still load lazily per call.
-_preload_age_registry() {
+# own command substitution, so without this every request re-sources it. The
+# registries namespace their functions per component, so all four can load.
+_preload_registries() {
     _sayableage_ensure_registry
+    _sayabledate_ensure_registry
+    _sayableduration_ensure_registry
+    _sayabletime_ensure_registry
 }
 
 # Answer one tab-separated request per stdin line (see cli/SPEC.md).
 # Each request runs in a subshell so its exit and globals stay contained.
 _repl() {
-    _preload_age_registry
+    _preload_registries
     local line output code
     while IFS= read -r line || [ -n "${line}" ]; do
         _split_request "${line%"${_carriage_return}"}"

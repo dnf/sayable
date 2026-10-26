@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/fa.json
 
-_plural_fa() {
+_sayableduration_plural_fa() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_fa() {
+_sayableduration_locale_fa() {
     _unit_second='{n} ثانیه'
     _unit_minute='{n} دقیقه'
     _unit_hour='{n} ساعت'
@@ -52,5 +52,5 @@ _locale_fa() {
     _compact_delimiter=''
     _compact_ago='{0} پیش'
     _compact_in_future='{0} دیگر'
-    _plural_func=_plural_fa
+    _plural_func=_sayableduration_plural_fa
 }

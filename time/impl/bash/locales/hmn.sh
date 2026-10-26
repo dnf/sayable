@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/hmn.json
 
-_locale_hmn() {
+_sayabletime_locale_hmn() {
     _clock_hours=('kaum ob' 'ib' 'ob' 'peb' 'plaub' 'tsib' 'rau' 'xya' 'yim' 'cuaj' 'kaum' 'kaum ib')
     _clock_midnight='ib tag hmo'
     _clock_noon='tav su'

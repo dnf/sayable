@@ -149,7 +149,9 @@
  01 WS-INCLUDE-YEAR          PIC 9.
 
 *> Date parsing variables
- 01 WS-DATE-STR              PIC X(30).
+ 01 WS-DATE-STR              PIC X(256).
+ 01 WS-DATE-LEN              PIC 9(4).
+ 01 WS-PARSED-MONTH-DAYS     PIC 9(2).
  01 WS-PARSED-YEAR           PIC 9(4).
  01 WS-PARSED-MONTH          PIC 9(2).
  01 WS-PARSED-DAY            PIC 9(2).
@@ -175,8 +177,12 @@
 
 *> Format arguments
  01 WS-FMT-COMPACTNESS       PIC 9.
- 01 WS-FMT-DATE              PIC X(30).
- 01 WS-FMT-AS-OF             PIC X(30).
+*> An input's -LEN is its exact length, trailing blanks included, for
+*> callers that know it (the CLI); 0 means the length without them.
+ 01 WS-FMT-DATE              PIC X(256).
+ 01 WS-FMT-DATE-LEN          PIC 9(4) VALUE 0.
+ 01 WS-FMT-AS-OF             PIC X(256).
+ 01 WS-FMT-AS-OF-LEN         PIC 9(4) VALUE 0.
 
 *> Working temporaries for formatting
  01 WS-DAY-STR               PIC X(12).
@@ -184,9 +190,7 @@
  01 WS-MONTH-NAME            PIC X(64).
  01 WS-PATTERN               PIC X(128).
  01 WS-YEAR-STR              PIC X(12).
- 01 WS-YY-STR                PIC X(4).
- 01 WS-YY-NUM                PIC 9(4).
- 01 WS-YY-EDITED             PIC Z9.
+ 01 WS-YY-DIGITS             PIC 99.
  01 WS-WEEKDAY-NAME          PIC X(64).
  01 WS-EXC-FOUND             PIC 9.
 

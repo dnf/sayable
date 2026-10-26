@@ -50,53 +50,78 @@ private int atoiSlice(string s) {
     return n;
 }
 
-/// Parse HH:MM or ISO datetime to (hour, minute). Returns false on failure.
-private bool parseTime(string s, out int hour, out int minute) {
-    if (s.length == 0) {
+/// Number of leading ASCII digits in s.
+private size_t digitRun(string s) {
+    size_t n = 0;
+    while (n < s.length && s[n] >= '0' && s[n] <= '9') {
+        n++;
+    }
+    return n;
+}
+
+/// Nothing, "Z", or "+HH:MM" / "-HH:MM".
+private bool isZoneSuffix(string s) {
+    if (s.length == 0) return true;
+    if (s.length == 1) return s[0] == 'Z';
+    return s.length == 6 && (s[0] == '+' || s[0] == '-') && digitRun(s[1 .. 3]) == 2
+        && s[3] == ':' && digitRun(s[4 .. 6]) == 2;
+}
+
+/// Parse H:MM or HH:MM, optional :SS, optional . plus digits after the seconds,
+/// and an optional zone suffix, which is validated but ignored.
+private bool parseClock(string clock, out int hour, out int minute, out int second) {
+    immutable hourLen = digitRun(clock);
+    if (hourLen < 1 || hourLen > 2 || clock.length < hourLen + 3 || clock[hourLen] != ':'
+        || digitRun(clock[hourLen + 1 .. hourLen + 3]) != 2) {
         return false;
     }
+    hour = atoiSlice(clock[0 .. hourLen]);
+    minute = atoiSlice(clock[hourLen + 1 .. hourLen + 3]);
+    second = 0;
+    string rest = clock[hourLen + 3 .. $];
+    if (rest.length > 0 && rest[0] == ':') {
+        if (rest.length < 3 || digitRun(rest[1 .. 3]) != 2) return false;
+        second = atoiSlice(rest[1 .. 3]);
+        rest = rest[3 .. $];
+        if (rest.length > 0 && rest[0] == '.') {
+            immutable fractionLen = digitRun(rest[1 .. $]);
+            if (fractionLen == 0) return false;
+            rest = rest[1 + fractionLen .. $];
+        }
+    }
+    return isZoneSuffix(rest) && hour <= 23 && minute <= 59 && second <= 59;
+}
 
-    string t = s;
-    // Strip date part if ISO datetime
+/// Days in a Gregorian month (leap years by the 4/100/400 rule).
+private int daysInMonth(int y, int m) {
+    if (m == 2) {
+        return ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0) ? 29 : 28;
+    }
+    return (m == 4 || m == 6 || m == 9 || m == 11) ? 30 : 31;
+}
+
+/// True for exactly YYYY-MM-DD naming a real calendar day.
+private bool isRealDate(string s) {
+    if (s.length != 10 || s[4] != '-' || s[7] != '-') return false;
+    immutable year = atoiSlice(s[0 .. 4]);
+    immutable month = atoiSlice(s[5 .. 7]);
+    immutable day = atoiSlice(s[8 .. 10]);
+    return year >= 0 && month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth(year, month);
+}
+
+/// Parse a clock time, alone or after the T of an ISO datetime whose date is
+/// valid, to (hour, minute) (docs/input-formats.md). Returns false on failure.
+private bool parseTime(string s, out int hour, out int minute) {
+    string clock = s;
     foreach (i, c; s) {
         if (c == 'T') {
-            t = s[i + 1 .. $];
+            if (!isRealDate(s[0 .. i])) return false;
+            clock = s[i + 1 .. $];
             break;
         }
     }
-    // Strip timezone
-    foreach (i, c; t) {
-        if (c == '+' || c == 'Z') {
-            t = t[0 .. i];
-            break;
-        }
-    }
-
-    // Find the colon
-    int colonPos = -1;
-    foreach (i, c; t) {
-        if (c == ':') {
-            colonPos = cast(int) i;
-            break;
-        }
-    }
-    if (colonPos < 1) return false;
-
-    hour = atoiSlice(t[0 .. colonPos]);
-    if (hour < 0) return false;
-
-    // Get minute part (strip fractional seconds)
-    string minPart = t[colonPos + 1 .. $];
-    if (minPart.length < 2) return false;
-    // Only take first 2 chars
-    minPart = minPart[0 .. 2];
-    minute = atoiSlice(minPart);
-    if (minute < 0) return false;
-
-    if (hour < 0 || hour > 23 || minute < 0 || minute > 59) {
-        return false;
-    }
-    return true;
+    int second;
+    return parseClock(clock, hour, minute, second);
 }
 
 /// Round minute to nearest 5.

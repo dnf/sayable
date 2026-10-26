@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/nus.json
 
-_plural_nus() {
+_sayableage_plural_nus() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_nus() {
+_sayableage_locale_nus() {
     _unit_day_one='cäŋ {n}'
     _unit_day_other='cëŋ {n}'
     _unit_week_one='korɛ {n}'
@@ -47,5 +47,5 @@ _locale_nus() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_nus
+    _plural_func=_sayableage_plural_nus
 }

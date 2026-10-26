@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/vi.json
 
-_plural_vi() {
+_sayableage_plural_vi() {
     echo "other"
 }
 
-_locale_vi() {
+_sayableage_locale_vi() {
     _unit_day='{n} ngày'
     _unit_week='{n} tuần'
     _unit_month='{n} tháng'
@@ -37,5 +37,5 @@ _locale_vi() {
     _compact_unit_year='{n} năm'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_vi
+    _plural_func=_sayableage_plural_vi
 }

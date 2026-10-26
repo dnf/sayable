@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/is.json
 
-_plural_is() {
+_sayableduration_plural_is() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -17,7 +17,7 @@ _plural_is() {
     echo "other"
 }
 
-_locale_is() {
+_sayableduration_locale_is() {
     _unit_second_one='{n} sekúnda'
     _unit_second_other='{n} sekúndur'
     _unit_minute_one='{n} mínúta'
@@ -57,5 +57,5 @@ _locale_is() {
     _compact_delimiter=''
     _compact_ago='fyrir {0}'
     _compact_in_future='eftir {0}'
-    _plural_func=_plural_is
+    _plural_func=_sayableduration_plural_is
 }

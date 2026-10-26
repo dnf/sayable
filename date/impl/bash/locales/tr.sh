@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/tr.json
 
-_locale_tr() {
+_sayabledate_locale_tr() {
     _months=('Ocak' 'Şubat' 'Mart' 'Nisan' 'Mayıs' 'Haziran' 'Temmuz' 'Ağustos' 'Eylül' 'Ekim' 'Kasım' 'Aralık')
     _weekdays=('Pazar' 'Pazartesi' 'Salı' 'Çarşamba' 'Perşembe' 'Cuma' 'Cumartesi')
     _day_format='{n}'

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/luo.json
 
-_plural_luo() {
+_sayableduration_plural_luo() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_luo() {
+_sayableduration_locale_luo() {
     _unit_second='sekunde {n}'
     _unit_minute='dakika {n}'
     _unit_hour='saa {n}'
@@ -55,5 +55,5 @@ _locale_luo() {
     _compact_delimiter=''
     _compact_ago='{0} mokalo'
     _compact_in_future='bang'\'' {0}'
-    _plural_func=_plural_luo
+    _plural_func=_sayableduration_plural_luo
 }

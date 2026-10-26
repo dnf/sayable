@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ve.json
 
-_plural_ve() {
+_sayableage_plural_ve() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ve() {
+_sayableage_locale_ve() {
     _unit_day_one='duvha {n}'
     _unit_day_other='maduvha {n}'
     _unit_week_one='vhege {n}'
@@ -46,5 +46,5 @@ _locale_ve() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_ve
+    _plural_func=_sayableage_plural_ve
 }

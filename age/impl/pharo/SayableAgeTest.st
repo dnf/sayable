@@ -1105,3 +1105,123 @@ test30_4GetLocaleEmpty
 test30_5GetLocaleCaseSensitive
 	self assert: (SayableAgeLocales get: 'EN') isNil
 ! !
+
+!SayableAgeFormatAgeTest methodsFor: 'tests-input-formats-and-regressions'!
+"31.1"
+test31_188DaysAcrossA28DayFebruary
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2016-12-31' asOf: '2017-03-29') equals: '12 weeks, 4 days'
+!
+
+"31.2"
+test31_290DaysAcrossAYearEndIntoALeapYear
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '1991-11-27' asOf: '1992-02-25') equals: '12 weeks, 6 days'
+!
+
+"31.3"
+test31_333DaysAcrossAYearEnd
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2020-11-30' asOf: '2021-01-02') equals: '4 weeks, 5 days'
+!
+
+"31.4"
+test31_4CompactFormOf311
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en') compactness: #compact.
+	self assert: (sa formatAge: '2016-12-31' asOf: '2017-03-29') equals: '12w4d'
+!
+
+"32.1"
+test32_1Polish3IsFew
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'pl').
+	self assert: (sa formatAge: '2021-06-15' asOf: '2025-01-15') equals: '3 i pół lata'
+!
+
+"32.2"
+test32_2Polish5IsMany
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'pl') compactness: #short.
+	self assert: (sa formatAge: '2020-06-15' asOf: '2025-12-15') equals: '5 i pół lat'
+!
+
+"32.3"
+test32_3Tachelhit6IsFew
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'shi').
+	self assert: (sa formatAge: '2005-06-08' asOf: '2012-06-07') equals: '6 iseggasen d uzgen'
+!
+
+"33.1"
+test33_1February30DoesnTExist
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2025-02-30' asOf: '2032-06-25') isNil
+!
+
+"33.2"
+test33_2Month13
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2025-13-01' asOf: '2027-01-31') isNil
+!
+
+"33.3"
+test33_3February29InANonLeapYear
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2023-02-29' asOf: '2025-03-01') isNil
+!
+
+"33.4"
+test33_4Day00
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2025-06-00' asOf: '2027-02-25') isNil
+!
+
+"33.5"
+test33_5UnpaddedMonthAndDay
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2025-6-1' asOf: '2027-02-25') isNil
+!
+
+"33.6"
+test33_6SurroundingWhitespace
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: ' 2025-06-01' asOf: '2027-02-25') isNil
+!
+
+"33.7"
+test33_7ADatetimeIsNotADate
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2025-06-15T10:00:00' asOf: '2027-02-25') isNil
+!
+
+"33.8"
+test33_8InvalidAsOf
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2020-01-01' asOf: '2025-04-31') isNil
+!
+
+"33.9"
+test33_9FormatStageValidatesToo
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatStage: '2025-02-30' asOf: '2027-09-05') isNil
+!
+
+"33.10"
+test33_10February29InALeapYearIsValid
+	| sa |
+	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
+	self assert: (sa formatAge: '2024-02-29' asOf: '2026-03-01') equals: '2 years'
+! !

@@ -35,29 +35,30 @@
                     (+ d (days-in-month year m)))])
         (+ days day -1)))))
 
+(define max-duration-months 6000) ; 500 years, the same ceiling as sayable-age
+
+;; YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+(define timestamp-pattern
+  (pregexp (string-append
+            "^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})"
+            "(?::([0-9]{2})(?:[.][0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$")))
+
 (define (parse-iso-to-seconds iso-str)
-  "Parse ISO datetime string to epoch-ish seconds for diffing. Returns #f on failure."
-  (if (or (not iso-str) (not (string? iso-str)) (equal? iso-str ""))
-      #f
-      (with-handlers ([exn:fail? (lambda (_) #f)])
-        (let* ([parts (string-split iso-str "T")]
-               [date-part (car parts)]
-               [time-part (if (> (length parts) 1) (cadr parts) "0:0:0")]
-               [dp (string-split date-part "-")]
-               [year (string->number (list-ref dp 0))]
-               [month (string->number (list-ref dp 1))]
-               [day (string->number (list-ref dp 2))]
-               ;; Strip timezone info
-               [time-str (car (string-split time-part "+"))]
-               [time-str (car (string-split time-str "Z"))]
-               [tp (string-split time-str ":")]
-               [hour (string->number (list-ref tp 0))]
-               [minute (if (> (length tp) 1) (string->number (list-ref tp 1)) 0)]
-               [second (if (> (length tp) 2)
-                           (string->number (car (string-split (list-ref tp 2) ".")))
-                           0)]
-               [days (days-since-epoch year month day)])
-          (+ (* days 86400) (* hour 3600) (* minute 60) second)))))
+  "Parse an ISO datetime to epoch-ish seconds for diffing. Returns #f if malformed."
+  (match (and (string? iso-str) (regexp-match timestamp-pattern iso-str))
+    [(list _ y mo d h mi sec)
+     (let ([year (string->number y)]
+           [month (string->number mo)]
+           [day (string->number d)]
+           [hour (string->number h)]
+           [minute (string->number mi)]
+           [second (if sec (string->number sec) 0)])
+       (and (<= 1 month 12)
+            (<= 1 day (days-in-month year month))
+            (<= hour 23) (<= minute 59) (<= second 59)
+            (+ (* (days-since-epoch year month day) 86400)
+               (* hour 3600) (* minute 60) second)))]
+    [_ #f]))
 
 ;; ---- Pick override value ----
 
@@ -117,7 +118,7 @@
 ;; ---- Duration tier formatting ----
 
 (define (format-duration-seconds total locale compactness)
-  "Apply duration tiers to total seconds."
+  "Apply duration tiers to total seconds. Returns #f beyond the 500-year ceiling."
   (let ([sec-unit (effective-unit locale compactness "second")]
         [min-unit (effective-unit locale compactness "minute")]
         [hr-unit (effective-unit locale compactness "hour")]
@@ -200,14 +201,17 @@
        (let* ([total-days (quotient total 86400)]
               [total-months (inexact->exact (round (/ total-days 30.44)))]
               [total-months (if (= total-months 0) 1 total-months)])
-         (if (< total-months 12)
-             (resolve-unit total-months mo-unit locale)
-             (let* ([total-years (quotient total-months 12)]
-                    [rem-months (remainder total-months 12)]
-                    [result (resolve-unit total-years yr-unit locale)])
-               (if (> rem-months 0)
-                   (string-append result delimiter (resolve-unit rem-months mo-unit locale))
-                   result))))])))
+         (cond
+           [(> total-months max-duration-months) #f]
+           [(< total-months 12)
+            (resolve-unit total-months mo-unit locale)]
+           [else
+            (let* ([total-years (quotient total-months 12)]
+                   [rem-months (remainder total-months 12)]
+                   [result (resolve-unit total-years yr-unit locale)])
+              (if (> rem-months 0)
+                  (string-append result delimiter (resolve-unit rem-months mo-unit locale))
+                  result))]))])))
 
 ;; ---- Public API ----
 
@@ -248,7 +252,7 @@
                 [else
                  (let ([dur (format-duration-seconds diff locale compactness)]
                        [ago-tmpl (effective-ago locale compactness)])
-                   (string-replace ago-tmpl "{0}" dur))]))))))
+                   (and dur (string-replace ago-tmpl "{0}" dur)))]))))))
 
 (define (format-until locale target as-of [compactness 'normal])
   "Format time until a future event as 'in X'. Returns #f if invalid."
@@ -266,4 +270,4 @@
                 [else
                  (let ([dur (format-duration-seconds diff locale compactness)]
                        [future-tmpl (effective-in-future locale compactness)])
-                   (string-replace future-tmpl "{0}" dur))]))))))
+                   (and dur (string-replace future-tmpl "{0}" dur)))]))))))

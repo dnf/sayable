@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/lg.json
 
-_locale_lg() {
+_sayabletime_locale_lg() {
     _clock_hours=('kkumi na bbiri' 'emu' 'bbiri' 'ssatu' 'nnya' 'ttaano' 'mukaaga' 'musanvu' 'munaana' 'mwenda' 'kkumi' 'kkumi na emu')
     _clock_midnight='ekiro eky'\''omu ttumbi'
     _clock_noon='ettuntu'

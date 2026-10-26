@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/af.json
 
-_plural_af() {
+_sayableduration_plural_af() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_af() {
+_sayableduration_locale_af() {
     _unit_second_one='{n} sekonde'
     _unit_second_other='{n} sekondes'
     _unit_minute_one='{n} minuut'
@@ -55,5 +55,5 @@ _locale_af() {
     _compact_delimiter=''
     _compact_ago='{0} gelede'
     _compact_in_future='oor {0}'
-    _plural_func=_plural_af
+    _plural_func=_sayableduration_plural_af
 }

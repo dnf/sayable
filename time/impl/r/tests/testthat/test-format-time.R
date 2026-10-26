@@ -153,3 +153,51 @@ test_that("8.1-8.2 - Finnish dot separator", {
   # 8.2
   expect_equal(st_fi$format_time("00:00"), "0.00")
 })
+
+# ================================================================
+# Sections 9-10: minutes in short/compact, input validation
+# ================================================================
+
+test_that("9.1 - digital modes keep the exact minute", {
+  expect_equal(sayable_time_new(en, "short")$format_time("18:01"), "6:01 PM")
+})
+
+test_that("9.2 - digital modes keep the exact minute", {
+  expect_equal(sayable_time_new(en, "compact")$format_time("19:05"), "7:05p")
+})
+
+test_that("10.1 - one-digit hour", {
+  expect_equal(sayable_time_new(en)$format_time("9:30"), "half past nine")
+})
+
+test_that("10.2 - two-digit hour", {
+  expect_equal(sayable_time_new(en)$format_time("09:30"), "half past nine")
+})
+
+test_that("10.3 - leading whitespace", {
+  expect_null(sayable_time_new(en)$format_time(" 9:30"))
+})
+
+test_that("10.4 - trailing whitespace", {
+  expect_null(sayable_time_new(en)$format_time("9:30 "))
+})
+
+test_that("10.5 - minutes need two digits", {
+  expect_null(sayable_time_new(en)$format_time("9:5"))
+})
+
+test_that("10.6 - hour out of range", {
+  expect_null(sayable_time_new(en)$format_time("24:00"))
+})
+
+test_that("10.7 - seconds are allowed and ignored", {
+  expect_equal(sayable_time_new(en)$format_time("14:15:30"), "a quarter past two")
+})
+
+test_that("10.8 - ISO datetime with zone suffix (ignored)", {
+  expect_equal(sayable_time_new(en)$format_time("2025-01-15T14:15:00Z"), "a quarter past two")
+})
+
+test_that("10.9 - ISO datetime with an impossible date", {
+  expect_null(sayable_time_new(en)$format_time("2025-02-30T14:15:00"))
+})

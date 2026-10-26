@@ -149,4 +149,74 @@ defmodule SayableTimeTest do
     fi = SayableTime.Locales.FI.locale()
     assert SayableTime.format_time(fi, :short, "00:00") == {:ok, "0.00"}
   end
+
+  # 9. Minutes in short and compact modes
+  # 9.1
+  test "9.1 - digital modes keep the exact minute" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :short, "18:01") ==
+             {:ok, "6:01 PM"}
+  end
+
+  # 9.2
+  test "9.2 - digital modes keep the exact minute" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :compact, "19:05") ==
+             {:ok, "7:05p"}
+  end
+
+  # 10. Input validation
+  # 10.1
+  test "10.1 - one-digit hour" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :normal, "9:30") ==
+             {:ok, "half past nine"}
+  end
+
+  # 10.2
+  test "10.2 - two-digit hour" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :normal, "09:30") ==
+             {:ok, "half past nine"}
+  end
+
+  # 10.3
+  test "10.3 - leading whitespace" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :normal, " 9:30") == nil
+  end
+
+  # 10.4
+  test "10.4 - trailing whitespace" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :normal, "9:30 ") == nil
+  end
+
+  # 10.5
+  test "10.5 - minutes need two digits" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :normal, "9:5") == nil
+  end
+
+  # 10.6
+  test "10.6 - hour out of range" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :normal, "24:00") == nil
+  end
+
+  # 10.7
+  test "10.7 - seconds are allowed and ignored" do
+    assert SayableTime.format_time(SayableTime.Locales.EN.locale(), :normal, "14:15:30") ==
+             {:ok, "a quarter past two"}
+  end
+
+  # 10.8
+  test "10.8 - ISO datetime with zone suffix (ignored)" do
+    assert SayableTime.format_time(
+             SayableTime.Locales.EN.locale(),
+             :normal,
+             "2025-01-15T14:15:00Z"
+           ) == {:ok, "a quarter past two"}
+  end
+
+  # 10.9
+  test "10.9 - ISO datetime with an impossible date" do
+    assert SayableTime.format_time(
+             SayableTime.Locales.EN.locale(),
+             :normal,
+             "2025-02-30T14:15:00"
+           ) == nil
+  end
 end

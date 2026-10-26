@@ -58,14 +58,15 @@ internal fun parseAge(dateOfBirth: String, asOf: String? = null): AgeComponents?
 }
 
 /**
- * Parses "YYYY-MM-DD" into (year, month, day). Returns null on failure.
+ * Parses exactly "YYYY-MM-DD", naming a real calendar day, into (year, month, day).
+ * Returns null on failure.
  */
 internal fun parseDateParts(s: String): Triple<Int, Int, Int>? {
-    if (s.length < 10 || s[4] != '-' || s[7] != '-') return null
+    if (s.length != 10 || s[4] != '-' || s[7] != '-') return null
     val y = safeAtoi(s.substring(0, 4)) ?: return null
     val m = safeAtoi(s.substring(5, 7)) ?: return null
     val d = safeAtoi(s.substring(8, 10)) ?: return null
-    if (y == 0 && m == 0 && d == 0) return null
+    if (m !in 1..12 || d !in 1..YearMonth.of(y, m).lengthOfMonth()) return null
     return Triple(y, m, d)
 }
 

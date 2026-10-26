@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ve.json
 
-_locale_ve() {
+_sayabletime_locale_ve() {
     _clock_hours=('fumimbili' 'thihi' 'mbili' 'raru' 'ina' 'thanu' 'rathi' 'sumbe' 'malo' 'tahe' 'fumi' 'fuminthihi')
     _clock_midnight='vhukati ha vhusiku'
     _clock_noon='vhukati ha masiari'

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ff.json
 
-_locale_ff() {
+_sayabledate_locale_ff() {
     _months=('Siilo' 'Colte' 'Mbooy' 'Seeɗto' 'Duujal' 'Korse' 'Morso' 'Juko' 'Siilto' 'Yarkomaa' 'Jolal' 'Bowte')
     _weekdays=('Dewo' 'Aaɓnde' 'Mawbaare' 'Njeslaare' 'Naasaande' 'Mawnde' 'Hoore-biir')
     _day_format='{n}'

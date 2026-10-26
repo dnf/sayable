@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/tum.json "
 
-"Locale: tum"
+"Locale: tum"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 tum

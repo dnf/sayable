@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/fon.json
 
-_locale_fon() {
+_sayabledate_locale_fon() {
     _months=('Alɔfí' 'Alɔnyɔ' 'Ataɖaxɔ' 'Tlɛsún' 'Axɔsún' 'Ayɛsún' 'Nùxwásún' 'Ayidosún' 'Kɛnísún' 'Kanyásún' 'Abɔxwísún' 'Adɔxwísún')
     _weekdays=('Sidégbe' 'Tɛnígbe' 'Talɛtagbe' 'Azǎngagbe' 'Nyɔnúgbe' 'Axɔ́sùgbe' 'Abámɛ́ta')
     _day_format='{n}'

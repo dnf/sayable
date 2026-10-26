@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/fj.json
 
-_plural_fj() {
+_sayableage_plural_fj() {
     echo "other"
 }
 
-_locale_fj() {
+_sayableage_locale_fj() {
     _unit_day='{n} na siga'
     _unit_week='{n} na macawa'
     _unit_month='{n} na vula'
@@ -36,5 +36,5 @@ _locale_fj() {
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
     _compact_delimiter=''
-    _plural_func=_plural_fj
+    _plural_func=_sayableage_plural_fj
 }

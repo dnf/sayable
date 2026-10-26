@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/nr.json
 
-_locale_nr() {
+_sayabletime_locale_nr() {
     _clock_hours=('itshumi lambili' 'kunye' 'kubili' 'kuthathu' 'kune' 'kuhlanu' 'isithupha' 'isikhombisa' 'isitshiyagalombili' 'isitshiyagalolunye' 'itshumi' 'itshumi lanye')
     _clock_midnight='phakathi kobusuku'
     _clock_noon='emini'

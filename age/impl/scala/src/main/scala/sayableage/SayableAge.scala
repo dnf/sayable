@@ -39,13 +39,13 @@ private[sayableage] def parseAge(dateOfBirth: String, asOf: Option[String] = Non
         }
 
 private[sayableage] def parseDateParts(s: String): Option[(Int, Int, Int)] =
-    if (s.length < 10 || s.charAt(4) != '-' || s.charAt(7) != '-') None
+    if (s.length != 10 || s.charAt(4) != '-' || s.charAt(7) != '-') None
     else
         for
             y <- safeAtoi(s.substring(0, 4))
             m <- safeAtoi(s.substring(5, 7))
             d <- safeAtoi(s.substring(8, 10))
-            if !(y == 0 && m == 0 && d == 0)
+            if m >= 1 && m <= 12 && d >= 1 && d <= YearMonth.of(y, m).lengthOfMonth()
         yield (y, m, d)
 
 private[sayableage] def safeAtoi(s: String): Option[Int] =

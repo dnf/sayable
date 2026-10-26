@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/ak.json
 
-_locale_ak() {
+_sayabledate_locale_ak() {
     _months=('Ɔpɛpɔn' 'Ɔgyefuo' 'Ɔbenem' 'Oforisuo' 'Kotonimma' 'Ayɛwohomumu' 'Kutawonkuku' 'Ɔsannaa' 'Ɛbɔ' 'Ahinime' 'Obubuo' 'Ɔpenimba')
     _weekdays=('Kwasiada' 'Ɛdwoada' 'Ɛbenada' 'Wukuada' 'Yawoada' 'Efiada' 'Memeneda')
     _day_format='{n}'

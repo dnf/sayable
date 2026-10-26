@@ -1,6 +1,7 @@
 /* getline and open_memstream are POSIX.1-2008, outside strict C11. */
 #define _POSIX_C_SOURCE 200809L
 
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,35 +21,40 @@
 /* ---- locale list (sorted alphabetically, shared across all components) ---- */
 
 static const SaLocale *all_locales[] = {
-    &sa_locale_af, &sa_locale_ak, &sa_locale_am, &sa_locale_ar, &sa_locale_az,
-    &sa_locale_bci, &sa_locale_be, &sa_locale_bem, &sa_locale_bg, &sa_locale_bm,
-    &sa_locale_bn, &sa_locale_br, &sa_locale_bs, &sa_locale_ca, &sa_locale_ceb,
-    &sa_locale_cs, &sa_locale_cy, &sa_locale_da, &sa_locale_de, &sa_locale_din,
-    &sa_locale_dje, &sa_locale_dyu, &sa_locale_ee, &sa_locale_el, &sa_locale_en,
+    &sa_locale_af, &sa_locale_ak, &sa_locale_am, &sa_locale_ar, &sa_locale_ay,
+    &sa_locale_az, &sa_locale_bci, &sa_locale_be, &sa_locale_bem, &sa_locale_bg,
+    &sa_locale_bi, &sa_locale_bm, &sa_locale_bn, &sa_locale_br, &sa_locale_bs,
+    &sa_locale_ca, &sa_locale_cak, &sa_locale_ceb, &sa_locale_cs, &sa_locale_cy,
+    &sa_locale_da, &sa_locale_de, &sa_locale_din, &sa_locale_dje, &sa_locale_dv,
+    &sa_locale_dyu, &sa_locale_dz, &sa_locale_ee, &sa_locale_el, &sa_locale_en,
     &sa_locale_es, &sa_locale_et, &sa_locale_eu, &sa_locale_fa, &sa_locale_fan,
-    &sa_locale_ff, &sa_locale_fi, &sa_locale_fil, &sa_locale_fon, &sa_locale_fr,
-    &sa_locale_ga, &sa_locale_gd, &sa_locale_gl, &sa_locale_gn, &sa_locale_gu,
-    &sa_locale_gv, &sa_locale_ha, &sa_locale_he, &sa_locale_hi, &sa_locale_hr,
-    &sa_locale_ht, &sa_locale_hu, &sa_locale_hy, &sa_locale_id, &sa_locale_ig,
-    &sa_locale_is, &sa_locale_it, &sa_locale_ja, &sa_locale_jv, &sa_locale_ka,
-    &sa_locale_kbp, &sa_locale_kk, &sa_locale_km, &sa_locale_kn, &sa_locale_ko,
-    &sa_locale_kpe, &sa_locale_ktu, &sa_locale_ku, &sa_locale_kw, &sa_locale_ky,
-    &sa_locale_lg, &sa_locale_ln, &sa_locale_lo, &sa_locale_lt, &sa_locale_lv,
-    &sa_locale_men, &sa_locale_mfe, &sa_locale_mg, &sa_locale_mi, &sa_locale_mk,
-    &sa_locale_ml, &sa_locale_mn, &sa_locale_mnk, &sa_locale_mos, &sa_locale_mr,
-    &sa_locale_ms, &sa_locale_mt, &sa_locale_my, &sa_locale_nb, &sa_locale_nd,
-    &sa_locale_ne, &sa_locale_ng, &sa_locale_nl, &sa_locale_nso, &sa_locale_nus,
-    &sa_locale_ny, &sa_locale_om, &sa_locale_or, &sa_locale_pa, &sa_locale_pl,
-    &sa_locale_pov, &sa_locale_ps, &sa_locale_pt, &sa_locale_qu, &sa_locale_ro,
-    &sa_locale_ru, &sa_locale_rw, &sa_locale_sar, &sa_locale_sd, &sa_locale_sg,
-    &sa_locale_shi, &sa_locale_si, &sa_locale_sk, &sa_locale_sl, &sa_locale_sn,
-    &sa_locale_snk, &sa_locale_so, &sa_locale_sq, &sa_locale_sr, &sa_locale_ss,
-    &sa_locale_st, &sa_locale_su, &sa_locale_suk, &sa_locale_sv, &sa_locale_sw,
-    &sa_locale_ta, &sa_locale_te, &sa_locale_tem, &sa_locale_tg, &sa_locale_th,
-    &sa_locale_ti, &sa_locale_tig, &sa_locale_tk, &sa_locale_tn, &sa_locale_tr,
-    &sa_locale_ts, &sa_locale_tzm, &sa_locale_uk, &sa_locale_umb, &sa_locale_ur,
-    &sa_locale_uz, &sa_locale_vi, &sa_locale_vmw, &sa_locale_wo, &sa_locale_xh,
-    &sa_locale_yo, &sa_locale_yue, &sa_locale_zdj, &sa_locale_zh, &sa_locale_zu,
+    &sa_locale_ff, &sa_locale_fi, &sa_locale_fil, &sa_locale_fj, &sa_locale_fon,
+    &sa_locale_fr, &sa_locale_ga, &sa_locale_gd, &sa_locale_gl, &sa_locale_gn,
+    &sa_locale_gu, &sa_locale_gv, &sa_locale_ha, &sa_locale_he, &sa_locale_hi,
+    &sa_locale_hmn, &sa_locale_hr, &sa_locale_ht, &sa_locale_hu, &sa_locale_hy,
+    &sa_locale_id, &sa_locale_ig, &sa_locale_is, &sa_locale_it, &sa_locale_ja,
+    &sa_locale_jv, &sa_locale_ka, &sa_locale_kbp, &sa_locale_kek, &sa_locale_ki,
+    &sa_locale_kk, &sa_locale_kl, &sa_locale_km, &sa_locale_kn, &sa_locale_ko,
+    &sa_locale_kpe, &sa_locale_kri, &sa_locale_ktu, &sa_locale_ku, &sa_locale_kw,
+    &sa_locale_ky, &sa_locale_lb, &sa_locale_lg, &sa_locale_ln, &sa_locale_lo,
+    &sa_locale_lt, &sa_locale_luo, &sa_locale_lv, &sa_locale_mam, &sa_locale_men,
+    &sa_locale_mfe, &sa_locale_mg, &sa_locale_mi, &sa_locale_mk, &sa_locale_ml,
+    &sa_locale_mn, &sa_locale_mnk, &sa_locale_mos, &sa_locale_mr, &sa_locale_ms,
+    &sa_locale_mt, &sa_locale_my, &sa_locale_nb, &sa_locale_nd, &sa_locale_ne,
+    &sa_locale_ng, &sa_locale_nl, &sa_locale_nr, &sa_locale_nso, &sa_locale_nus,
+    &sa_locale_ny, &sa_locale_om, &sa_locale_or, &sa_locale_pa, &sa_locale_pis,
+    &sa_locale_pl, &sa_locale_pov, &sa_locale_ps, &sa_locale_pt, &sa_locale_qu,
+    &sa_locale_quc, &sa_locale_ro, &sa_locale_ru, &sa_locale_rw, &sa_locale_sar,
+    &sa_locale_sd, &sa_locale_sg, &sa_locale_shi, &sa_locale_shn, &sa_locale_si,
+    &sa_locale_sk, &sa_locale_sl, &sa_locale_sn, &sa_locale_snk, &sa_locale_so,
+    &sa_locale_sq, &sa_locale_sr, &sa_locale_ss, &sa_locale_st, &sa_locale_su,
+    &sa_locale_suk, &sa_locale_sv, &sa_locale_sw, &sa_locale_ta, &sa_locale_te,
+    &sa_locale_tem, &sa_locale_tet, &sa_locale_tg, &sa_locale_th, &sa_locale_ti,
+    &sa_locale_tig, &sa_locale_tk, &sa_locale_tn, &sa_locale_tpi, &sa_locale_tr,
+    &sa_locale_ts, &sa_locale_tum, &sa_locale_tzm, &sa_locale_uk, &sa_locale_umb,
+    &sa_locale_ur, &sa_locale_uz, &sa_locale_ve, &sa_locale_vi, &sa_locale_vmw,
+    &sa_locale_wo, &sa_locale_xh, &sa_locale_yao, &sa_locale_yo, &sa_locale_yue,
+    &sa_locale_zdj, &sa_locale_zh, &sa_locale_zu,
 };
 static const int NUM_LOCALES = (int)(sizeof(all_locales) / sizeof(all_locales[0]));
 
@@ -80,23 +86,11 @@ static void error_fmt(const char *fmt, const char *arg)
     fprintf(stderr, "Run 'sayable help' for usage.\n");
 }
 
-/* Detect whether a string is purely digits (non-negative integer) */
+/* Seconds mode, as the reference CLI decides it: digits after any leading minus signs. */
 static int is_integer(const char *s)
 {
-    if (!s || !*s) return 0;
-    while (*s) {
-        if (*s < '0' || *s > '9') return 0;
-        s++;
-    }
-    return 1;
-}
-
-/* Detect whether a string is a negative integer (starts with '-' followed by digits) */
-static int is_negative_integer(const char *s)
-{
-    if (!s || !*s) return 0;
-    if (s[0] != '-') return 0;
-    s++;
+    if (!s) return 0;
+    while (*s == '-') s++;
     if (!*s) return 0;
     while (*s) {
         if (*s < '0' || *s > '9') return 0;
@@ -105,16 +99,14 @@ static int is_negative_integer(const char *s)
     return 1;
 }
 
-static int parse_int(const char *s)
+/* Parse seconds; false when the value is malformed ("--5") or doesn't fit in
+ * 64 bits, which is far beyond the 500-year ceiling either way. */
+static int parse_seconds(const char *s, long long *seconds)
 {
-    int neg = 0;
-    int val = 0;
-    if (*s == '-') { neg = 1; s++; }
-    while (*s) {
-        val = val * 10 + (*s - '0');
-        s++;
-    }
-    return neg ? -val : val;
+    char *end;
+    errno = 0;
+    *seconds = strtoll(s, &end, 10);
+    return errno == 0 && *end == '\0';
 }
 
 static void print_help(FILE *out)
@@ -268,8 +260,8 @@ static int cmd_age(const Args *args, FILE *out)
     }
 
     as_of = args->as_of;
-    if (as_of && is_null(as_of)) return 1;
-    if (!as_of) {
+    /* A null or empty as-of means today, as in the reference CLI. */
+    if (!as_of || is_null(as_of) || !as_of[0]) {
         today(today_buf, sizeof(today_buf));
         as_of = today_buf;
     }
@@ -309,8 +301,8 @@ static int cmd_stage(const Args *args, FILE *out)
     }
 
     as_of = args->as_of;
-    if (as_of && is_null(as_of)) return 1;
-    if (!as_of) {
+    /* A null or empty as-of means today, as in the reference CLI. */
+    if (!as_of || is_null(as_of) || !as_of[0]) {
         today(today_buf, sizeof(today_buf));
         as_of = today_buf;
     }
@@ -349,7 +341,11 @@ static int cmd_date(const Args *args, FILE *out)
     if (args->compactness == 1) compactness = SD_SHORT;
     else if (args->compactness == 2) compactness = SD_COMPACT;
 
-    rc = sd_format_date(buf, sizeof(buf), locale, compactness, date_str);
+    if (args->with_year) {
+        rc = sd_format_date_with_year(buf, sizeof(buf), locale, compactness, date_str);
+    } else {
+        rc = sd_format_date(buf, sizeof(buf), locale, compactness, date_str);
+    }
     if (rc != 0) return 1;
 
     fprintf(out, "%s\n", buf);
@@ -461,12 +457,8 @@ static int cmd_duration(const Args *args, FILE *out)
     else if (args->compactness == 2) compactness = SDU_COMPACT;
 
     if (is_integer(value)) {
-        /* Seconds mode */
-        int seconds = parse_int(value);
-        rc = sdu_format_duration_secs(buf, sizeof(buf), locale, compactness, seconds);
-    } else if (is_negative_integer(value)) {
-        /* Negative integer: pass to format_duration which returns null */
-        int seconds = parse_int(value);
+        long long seconds;
+        if (!parse_seconds(value, &seconds)) return 1;
         rc = sdu_format_duration_secs(buf, sizeof(buf), locale, compactness, seconds);
     } else {
         /* Timestamp mode: need start and end */

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ro.json
 
-_plural_ro() {
+_sayableage_plural_ro() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     local mod100=$(( n % 100 ))
@@ -17,7 +17,7 @@ _plural_ro() {
     echo "other"
 }
 
-_locale_ro() {
+_sayableage_locale_ro() {
     _unit_day_one='{n} zi'
     _unit_day_few='{n} zile'
     _unit_day_other='{n} de zile'
@@ -58,5 +58,5 @@ _locale_ro() {
     _compact_unit_year='{n} a'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ro
+    _plural_func=_sayableage_plural_ro
 }

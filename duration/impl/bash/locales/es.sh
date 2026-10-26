@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/es.json
 
-_plural_es() {
+_sayableduration_plural_es() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_es() {
+_sayableduration_locale_es() {
     _unit_second_one='{n} segundo'
     _unit_second_other='{n} segundos'
     _unit_minute_one='{n} minuto'
@@ -55,5 +55,5 @@ _locale_es() {
     _compact_delimiter=''
     _compact_ago='hace {0}'
     _compact_in_future='en {0}'
-    _plural_func=_plural_es
+    _plural_func=_sayableduration_plural_es
 }

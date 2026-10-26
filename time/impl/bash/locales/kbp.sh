@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/kbp.json
 
-_locale_kbp() {
+_sayabletime_locale_kbp() {
     _clock_hours=('hiu nɛ naalɛ' 'kʊɖʊm' 'naalɛ' 'naadozo' 'naanaza' 'kagbanzɩ' 'loɖo' 'lʊbɛ' 'lɛɛtɛ' 'nakʊ' 'hiu' 'hiu nɛ kʊɖʊm')
     _clock_midnight='ɖoo hɛkʊ'
     _clock_noon='wɩsɩ taa'

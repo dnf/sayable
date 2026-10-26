@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/dje.json "
 
-"Locale: dje"
+"Locale: dje"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 dje

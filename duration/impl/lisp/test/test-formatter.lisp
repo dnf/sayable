@@ -197,6 +197,40 @@
   (check-equal "17.2" (format-duration (make-formatter (get-locale "en") :compact) 90) "1m30s")
 )
 
+;; Section 18: Short compactness — relative time
+(defun test-section-18 ()
+  ;; 18.1
+  (check-equal "18.1" (format-since (make-formatter (get-locale "men") :normal) "2025-01-20T01:32:11" "2025-01-22T15:39:16") "lɔhɔnga 2, awa 14 taa gbɔyɔ")
+)
+
+;; Section 19: Range (500-year ceiling)
+(defun test-section-19 ()
+  ;; 19.1
+  (check-equal "19.1" (format-duration (make-formatter (get-locale "en") :normal) 15778800000) "500 years")
+  ;; 19.2
+  (check-nil "19.2" (format-duration (make-formatter (get-locale "en") :normal) 15800000000))
+  ;; 19.3
+  (check-nil "19.3" (format-duration (make-formatter (get-locale "en") :normal) 99999999999))
+  ;; 19.4
+  (check-nil "19.4" (format-since (make-formatter (get-locale "en") :normal) "1500-01-01T00:00:00" "2025-01-01T00:00:00"))
+  ;; 19.5
+  (check-nil "19.5" (format-until (make-formatter (get-locale "en") :normal) "2600-01-01T00:00:00" "2025-01-01T00:00:00"))
+)
+
+;; Section 20: Timestamp validation
+(defun test-section-20 ()
+  ;; 20.1
+  (check-equal "20.1" (format-duration (make-formatter (get-locale "en") :normal) "2025-01-15T10:00" "2025-01-15T11:30:00") "1½ hours")
+  ;; 20.2
+  (check-nil "20.2" (format-duration (make-formatter (get-locale "en") :normal) "2025-01-15T10" "2025-01-15T11:30:00"))
+  ;; 20.3
+  (check-nil "20.3" (format-duration (make-formatter (get-locale "en") :normal) "2025-1-5T10:00:00" "2025-01-15T11:30:00"))
+  ;; 20.4
+  (check-nil "20.4" (format-duration (make-formatter (get-locale "en") :normal) "2025-02-30T10:00:00" "2025-03-15T11:30:00"))
+  ;; 20.5
+  (check-nil "20.5" (format-since (make-formatter (get-locale "en") :normal) "2025-01-15T10:00:00" "2025-01-15T25:00:00"))
+)
+
 (defun run-tests ()
   (setf *pass-count* 0)
   (setf *fail-count* 0)
@@ -218,6 +252,9 @@
   (test-section-15)
   (test-section-16)
   (test-section-17)
+  (test-section-18)
+  (test-section-19)
+  (test-section-20)
 
   (format t "~%Results: ~a passed, ~a failed~%" *pass-count* *fail-count*)
   (when (> *fail-count* 0)

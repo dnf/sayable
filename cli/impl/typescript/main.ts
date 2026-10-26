@@ -7,6 +7,7 @@
 import { createInterface } from 'node:readline';
 
 import { SayableAge } from '../../../age/impl/typescript/src/format-age.js';
+import * as ageLocales from '../../../age/impl/typescript/src/locales/index.js';
 import { getLocale as getAgeLocale } from '../../../age/impl/typescript/src/locales/index.js';
 import type { Compactness as AgeCompactness, Gender } from '../../../age/impl/typescript/src/locale.js';
 
@@ -324,37 +325,10 @@ function cmdUntil(positionals: string[], options: Options): string | null {
   return result;
 }
 
+/** Every locale code the age component ships, sorted (the canonical set). */
 function cmdLocales(): string {
-  // Collect all locale codes from the age locales index (canonical set)
-  const allLocales = new Set<string>();
-  // Import all locales dynamically by checking what getAgeLocale accepts
-  // Since we have the _ALL map, we need to iterate it — but we don't have direct access.
-  // Instead, we use the known list of locale codes by probing the getLocale function.
-  // The most reliable approach: import the barrel and check each export's code property.
-  // For simplicity, we use a known approach matching the Python reference:
-  // use the age locales index which exports all locales.
-  const knownCodes = [
-    'af', 'ak', 'am', 'ar', 'az', 'bci', 'be', 'bem', 'bg', 'bm', 'bn', 'br', 'bs',
-    'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'din', 'dje', 'dyu', 'ee', 'el', 'en', 'es',
-    'et', 'eu', 'fa', 'fan', 'ff', 'fi', 'fil', 'fon', 'fr', 'ga', 'gd', 'gl', 'gn',
-    'gu', 'gv', 'ha', 'he', 'hi', 'hr', 'ht', 'hu', 'hy', 'id', 'ig', 'is', 'it',
-    'ja', 'jv', 'ka', 'kbp', 'kk', 'km', 'kn', 'ko', 'kpe', 'ktu', 'ku', 'kw', 'ky',
-    'lg', 'ln', 'lo', 'lt', 'lv', 'men', 'mfe', 'mg', 'mi', 'mk', 'ml', 'mn', 'mnk',
-    'mos', 'mr', 'ms', 'mt', 'my', 'nb', 'nd', 'ne', 'ng', 'nl', 'nso', 'nus', 'ny',
-    'om', 'or', 'pa', 'pl', 'pov', 'ps', 'pt', 'qu', 'ro', 'ru', 'rw', 'sar', 'sd',
-    'sg', 'shi', 'si', 'sk', 'sl', 'sn', 'snk', 'so', 'sq', 'sr', 'ss', 'st', 'su',
-    'suk', 'sv', 'sw', 'ta', 'te', 'tem', 'tg', 'th', 'ti', 'tig', 'tk', 'tn', 'tr',
-    'ts', 'tzm', 'uk', 'umb', 'ur', 'uz', 'vi', 'vmw', 'wo', 'xh', 'yo', 'yue', 'zdj',
-    'zh', 'zu',
-  ];
-
-  for (const code of knownCodes) {
-    if (getAgeLocale(code)) {
-      allLocales.add(code);
-    }
-  }
-
-  return [...allLocales].sort().join('\n');
+  const codes = Object.keys(ageLocales).filter((name) => getAgeLocale(name) !== undefined);
+  return codes.sort().join('\n');
 }
 
 const COMMANDS: Record<string, (positionals: string[], options: Options) => string | null> = {

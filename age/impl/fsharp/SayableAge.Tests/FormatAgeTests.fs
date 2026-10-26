@@ -1345,3 +1345,117 @@ let ``getLocale empty returns None`` () =
 [<Fact>]
 let ``getLocale case sensitive`` () =
     Assert.Equal(None, get "EN")
+
+// ================================================================
+// Weeks and days across month ends
+// ================================================================
+
+// 31.1
+[<Fact>]
+let ``88 days across a 28 day february`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(Some "12 weeks, 4 days", f.FormatAge(Some "2016-12-31", Some "2017-03-29"))
+
+// 31.2
+[<Fact>]
+let ``90 days across a year end into`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(Some "12 weeks, 6 days", f.FormatAge(Some "1991-11-27", Some "1992-02-25"))
+
+// 31.3
+[<Fact>]
+let ``33 days across a year end`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(Some "4 weeks, 5 days", f.FormatAge(Some "2020-11-30", Some "2021-01-02"))
+
+// 31.4
+[<Fact>]
+let ``compact form of 31 1`` () =
+    let f = SayableAgeFormatter(EN, Compact)
+    Assert.Equal(Some "12w4d", f.FormatAge(Some "2016-12-31", Some "2017-03-29"))
+
+// ================================================================
+// Half years take their plural form from whole years
+// ================================================================
+
+// 32.1
+[<Fact>]
+let ``polish 3 is few`` () =
+    let f = SayableAgeFormatter(PL)
+    Assert.Equal(Some "3 i p\u00F3\u0142 lata", f.FormatAge(Some "2021-06-15", Some "2025-01-15"))
+
+// 32.2
+[<Fact>]
+let ``polish 5 is many`` () =
+    let f = SayableAgeFormatter(PL, Short)
+    Assert.Equal(Some "5 i p\u00F3\u0142 lat", f.FormatAge(Some "2020-06-15", Some "2025-12-15"))
+
+// 32.3
+[<Fact>]
+let ``tachelhit 6 is few`` () =
+    let f = SayableAgeFormatter(SHI)
+    Assert.Equal(Some "6 iseggasen d uzgen", f.FormatAge(Some "2005-06-08", Some "2012-06-07"))
+
+// ================================================================
+// Input validation
+// ================================================================
+
+// 33.1
+[<Fact>]
+let ``february 30 doesnt exist`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some "2025-02-30", Some "2032-06-25"))
+
+// 33.2
+[<Fact>]
+let ``month 13`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some "2025-13-01", Some "2027-01-31"))
+
+// 33.3
+[<Fact>]
+let ``february 29 in a non leap year`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some "2023-02-29", Some "2025-03-01"))
+
+// 33.4
+[<Fact>]
+let ``day 00`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some "2025-06-00", Some "2027-02-25"))
+
+// 33.5
+[<Fact>]
+let ``unpadded month and day`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some "2025-6-1", Some "2027-02-25"))
+
+// 33.6
+[<Fact>]
+let ``surrounding whitespace`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some " 2025-06-01", Some "2027-02-25"))
+
+// 33.7
+[<Fact>]
+let ``a datetime is not a date`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some "2025-06-15T10:00:00", Some "2027-02-25"))
+
+// 33.8
+[<Fact>]
+let ``invalid asof`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatAge(Some "2020-01-01", Some "2025-04-31"))
+
+// 33.9
+[<Fact>]
+let ``formatstage validates too`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(None, f.FormatStage(Some "2025-02-30", Some "2027-09-05"))
+
+// 33.10
+[<Fact>]
+let ``february 29 in a leap year is`` () =
+    let f = SayableAgeFormatter(EN)
+    Assert.Equal(Some "2 years", f.FormatAge(Some "2024-02-29", Some "2026-03-01"))

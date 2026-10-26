@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/nso.json
 
-_locale_nso() {
+_sayabledate_locale_nso() {
     _months=('Pherekgong' 'Hlakola' 'Mopitlo' 'Moranang' 'Mosegamanye' 'Ngoatobošego' 'Phukwi' 'Phatwe' 'Lewedi' 'Diphalane' 'Dibatsela' 'Manthole')
     _weekdays=('Lamorena' 'Mošupologo' 'Labobedi' 'Laboraro' 'Labone' 'Labohlano' 'Mokibelo')
     _day_format='{n}'

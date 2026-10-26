@@ -2,9 +2,12 @@ package sayableduration
 
 import sayableduration.locales.Locales
 import kotlin.math.abs
-import kotlin.math.roundToInt
+import kotlin.math.roundToLong
 
 public const val VERSION: String = "0.5.0"
+
+/** 500 years, the same ceiling as sayable-age. */
+private const val MAX_DURATION_MONTHS = 6000L
 
 /**
  * A locale-aware duration and relative time formatter.
@@ -78,7 +81,7 @@ public class SayableDuration(
      * Formats an integer number of seconds as a human-friendly duration string.
      * Returns null for negative values.
      */
-    public fun formatDurationSeconds(seconds: Int): String? {
+    public fun formatDurationSeconds(seconds: Long): String? {
         if (seconds < 0) return null
         return formatDurationSecondsInternal(seconds)
     }
@@ -105,8 +108,8 @@ public class SayableDuration(
         val a = parseIsoToSeconds(asOf) ?: return null
         val diff = a - s
         if (diff < 0) return null
-        if (diff == 0) return justNow
-        val dur = formatDurationSecondsInternal(diff)
+        if (diff == 0L) return justNow
+        val dur = formatDurationSecondsInternal(diff) ?: return null
         return ago.replace("{0}", dur)
     }
 
@@ -120,16 +123,16 @@ public class SayableDuration(
         val a = parseIsoToSeconds(asOf) ?: return null
         val diff = t - a
         if (diff < 0) return null
-        if (diff == 0) return justNow
-        val dur = formatDurationSecondsInternal(diff)
+        if (diff == 0L) return justNow
+        val dur = formatDurationSecondsInternal(diff) ?: return null
         return inFuture.replace("{0}", dur)
     }
 
-    private fun formatDurationSecondsInternal(total: Int): String {
+    private fun formatDurationSecondsInternal(total: Long): String? {
         val loc = locale
 
         // 0 seconds
-        if (total == 0) return justNow
+        if (total == 0L) return justNow
 
         // 1-59 seconds
         if (total < 60) return resolveUnit(total, second, loc)
@@ -140,7 +143,7 @@ public class SayableDuration(
         // 1-4 minutes: minutes + seconds
         if (totalMinutes < 5) {
             var result = resolveUnit(totalMinutes, minute, loc)
-            if (remainderSeconds > 0) {
+            if (remainderSeconds > 0L) {
                 result += delimiter + resolveUnit(remainderSeconds, second, loc)
             }
             return result
@@ -154,11 +157,11 @@ public class SayableDuration(
 
         // 1-5 hours: hours + minutes (with half marker)
         if (totalHours <= 5) {
-            if (remainderMinutes == 30) {
+            if (remainderMinutes == 30L) {
                 return resolveUnit(totalHours, hour, loc, half)
             }
             var result = resolveUnit(totalHours, hour, loc)
-            if (remainderMinutes > 0) {
+            if (remainderMinutes > 0L) {
                 result += delimiter + resolveUnit(remainderMinutes, minute, loc)
             }
             return result
@@ -172,11 +175,11 @@ public class SayableDuration(
 
         // 1-2 days: days + hours (with half marker)
         if (totalDays <= 2) {
-            if (remainderHours == 12) {
+            if (remainderHours == 12L) {
                 return resolveUnit(totalDays, day, loc, half)
             }
             var result = resolveUnit(totalDays, day, loc)
-            if (remainderHours > 0) {
+            if (remainderHours > 0L) {
                 result += delimiter + resolveUnit(remainderHours, hour, loc)
             }
             return result
@@ -191,18 +194,19 @@ public class SayableDuration(
         // 1-4 weeks: weeks + days (up to 29 days; 30+ transitions to months)
         if (totalDays < 30) {
             var result = resolveUnit(totalWeeks, week, loc)
-            if (remainderDays > 0) {
+            if (remainderDays > 0L) {
                 result += delimiter + resolveUnit(remainderDays, day, loc)
             }
             return result
         }
 
         // Approximate months (30.44 days average)
-        var totalMonths = (totalDays.toDouble() / 30.44).roundToInt()
+        var totalMonths = (totalDays.toDouble() / 30.44).roundToLong()
+        if (totalMonths > MAX_DURATION_MONTHS) return null
 
         // 1-11 months
         if (totalMonths < 12) {
-            if (totalMonths == 0) totalMonths = 1
+            if (totalMonths == 0L) totalMonths = 1
             return resolveUnit(totalMonths, month, loc)
         }
 
@@ -210,7 +214,7 @@ public class SayableDuration(
         val totalYears = totalMonths / 12
         val remainderMonths = totalMonths % 12
         var result = resolveUnit(totalYears, year, loc)
-        if (remainderMonths > 0) {
+        if (remainderMonths > 0L) {
             result += delimiter + resolveUnit(remainderMonths, month, loc)
         }
         return result
@@ -222,7 +226,7 @@ public class SayableDuration(
         /**
          * Formats a duration in seconds using the default English locale.
          */
-        public fun formatDurationSeconds(seconds: Int): String? =
+        public fun formatDurationSeconds(seconds: Long): String? =
             defaultSd.formatDurationSeconds(seconds)
 
         /**
@@ -249,55 +253,25 @@ public class SayableDuration(
  * Parses an ISO datetime string to epoch-relative seconds for diffing.
  * Returns null if the string is empty or cannot be parsed.
  */
-internal fun parseIsoToSeconds(iso: String): Int? {
-    if (iso.isEmpty()) return null
-
-    val tIdx = iso.indexOf('T')
-    if (tIdx < 0) return null
-
-    val datePart = iso.substring(0, tIdx)
-    var timePart = iso.substring(tIdx + 1)
-
-    // Parse date: YYYY-MM-DD
-    val dp = datePart.split("-")
-    if (dp.size < 3) return null
-    val year = safeAtoi(dp[0]) ?: return null
-    val month = safeAtoi(dp[1]) ?: return null
-    val day = safeAtoi(dp[2]) ?: return null
-
-    // Strip timezone info
-    val plusIdx = timePart.indexOf('+')
-    if (plusIdx >= 0) timePart = timePart.substring(0, plusIdx)
-    val zIdx = timePart.indexOf('Z')
-    if (zIdx >= 0) timePart = timePart.substring(0, zIdx)
-
-    // Parse time: HH:MM:SS
-    val tp = timePart.split(":")
-    val hour = safeAtoi(tp[0]) ?: return null
-    val minute = if (tp.size > 1) safeAtoi(tp[1]) ?: return null else 0
-    val second = if (tp.size > 2) {
-        val secStr = tp[2].split(".")[0]
-        safeAtoi(secStr) ?: return null
-    } else {
-        0
-    }
-
-    val days = daysSinceEpoch(year, month, day)
+internal fun parseIsoToSeconds(iso: String): Long? {
+    val match = TIMESTAMP.matchEntire(iso) ?: return null
+    val (year, month, day, hour, minute) = match.destructured.toList().take(5).map { it.toInt() }
+    val second = match.groupValues[6].ifEmpty { "0" }.toInt()
+    if (month !in 1..12 || day !in 1..daysInMonth(year, month)) return null
+    if (hour > 23 || minute > 59 || second > 59) return null
+    val days = daysSinceEpoch(year, month, day).toLong()
     return days * 86400 + hour * 3600 + minute * 60 + second
 }
 
-/**
- * Converts a string of digits to an int. Returns null if any character is not a digit.
- */
-private fun safeAtoi(s: String): Int? {
-    if (s.isEmpty()) return null
-    var n = 0
-    for (c in s) {
-        if (c < '0' || c > '9') return null
-        n = n * 10 + (c - '0')
-    }
-    return n
-}
+/** YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored). */
+private val TIMESTAMP = Regex(
+    """([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})""" +
+        """(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?"""
+)
+
+/** Counts are bounded by the 500-year ceiling, so they always fit in an Int. */
+private fun resolveUnit(count: Long, uf: UnitForms, locale: DurationLocale, half: String = ""): String =
+    resolveUnit(Math.toIntExact(count), uf, locale, half)
 
 /**
  * Returns whether the given year is a leap year.

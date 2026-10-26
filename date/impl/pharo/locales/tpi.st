@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/tpi.json "
 
-"Locale: tpi"
+"Locale: tpi"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 tpi

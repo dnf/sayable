@@ -106,4 +106,30 @@ suite =
             , test "8.2 0.00 midnight dot" <|
                 \_ -> Expect.equal (Just "0.00") (formatTime Fi.locale Short "00:00")
             ]
+        , describe "9. Minutes in short and compact modes"
+            [ test "9.1 short keeps the exact minute" <|
+                \_ -> Expect.equal (Just "6:01 PM") (fmtShort "18:01")
+            , test "9.2 compact keeps the exact minute" <|
+                \_ -> Expect.equal (Just "7:05p") (fmtCompact "19:05")
+            ]
+        , describe "10. Input validation"
+            [ test "10.1 one-digit hour" <|
+                \_ -> Expect.equal (Just "half past nine") (fmt "9:30")
+            , test "10.2 two-digit hour" <|
+                \_ -> Expect.equal (Just "half past nine") (fmt "09:30")
+            , test "10.3 leading whitespace" <|
+                \_ -> Expect.equal Nothing (fmt " 9:30")
+            , test "10.4 trailing whitespace" <|
+                \_ -> Expect.equal Nothing (fmt "9:30 ")
+            , test "10.5 minutes need two digits" <|
+                \_ -> Expect.equal Nothing (fmt "9:5")
+            , test "10.6 hour out of range" <|
+                \_ -> Expect.equal Nothing (fmt "24:00")
+            , test "10.7 seconds are allowed and ignored" <|
+                \_ -> Expect.equal (Just "a quarter past two") (fmt "14:15:30")
+            , test "10.8 ISO datetime with zone suffix" <|
+                \_ -> Expect.equal (Just "a quarter past two") (fmt "2025-01-15T14:15:00Z")
+            , test "10.9 ISO datetime with an impossible date" <|
+                \_ -> Expect.equal Nothing (fmt "2025-02-30T14:15:00")
+            ]
         ]

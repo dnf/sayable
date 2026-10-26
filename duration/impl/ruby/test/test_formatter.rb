@@ -376,3 +376,63 @@ class TestCompactDuration < Minitest::Test
     assert_equal '1m30s', @sd.format_duration(90)
   end
 end
+
+# ================================================================
+# Sections 18-20: short since, 500-year ceiling, timestamp validation
+# ================================================================
+class TestSpecSections18To20 < Minitest::Test
+  # 18.1
+  def test_18_1_days_and_hours_both_kept
+    assert_equal 'lɔhɔnga 2, awa 14 taa gbɔyɔ', SayableDuration::Formatter.new(SayableDuration::Locales::MEN).format_since('2025-01-20T01:32:11', '2025-01-22T15:39:16')
+  end
+
+  # 19.1
+  def test_19_1_500_julian_years_6000_months_the_ceiling
+    assert_equal '500 years', SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_duration(15_778_800_000)
+  end
+
+  # 19.2
+  def test_19_2_over_6000_months
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_duration(15_800_000_000)
+  end
+
+  # 19.3
+  def test_19_3_well_beyond_the_ceiling_and_32_bit_range
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_duration(99_999_999_999)
+  end
+
+  # 19.4
+  def test_19_4_525_years_ago
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_since('1500-01-01T00:00:00', '2025-01-01T00:00:00')
+  end
+
+  # 19.5
+  def test_19_5_575_years_from_now
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_until('2600-01-01T00:00:00', '2025-01-01T00:00:00')
+  end
+
+  # 20.1
+  def test_20_1_seconds_are_optional
+    assert_equal '1½ hours', SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_duration('2025-01-15T10:00', '2025-01-15T11:30:00')
+  end
+
+  # 20.2
+  def test_20_2_minutes_are_required
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_duration('2025-01-15T10', '2025-01-15T11:30:00')
+  end
+
+  # 20.3
+  def test_20_3_unpadded_date
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_duration('2025-1-5T10:00:00', '2025-01-15T11:30:00')
+  end
+
+  # 20.4
+  def test_20_4_impossible_date
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_duration('2025-02-30T10:00:00', '2025-03-15T11:30:00')
+  end
+
+  # 20.5
+  def test_20_5_hour_out_of_range
+    assert_nil SayableDuration::Formatter.new(SayableDuration::Locales::EN).format_since('2025-01-15T10:00:00', '2025-01-15T25:00:00')
+  end
+end

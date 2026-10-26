@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/qu.json
 
-_locale_qu() {
+_sayabledate_locale_qu() {
     _months=('Qhulla puquy' 'Hatun puquy' 'Pawqar waray' 'Ayriwa' 'Aymuray' 'Inti raymi' 'Anta sitwa' 'Qhapaq sitwa' 'Uma raymi' 'Kantaray' 'Ayamarq'\''a' 'Qhapaq raymi')
     _weekdays=('Intichaw' 'Killachaw' 'Atipachaw' 'Quyllurchaw' 'Illapachaw' 'Ch'\''askachaw' 'K'\''uychichaw')
     _day_format='{n}'

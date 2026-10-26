@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mr.json
 
-_locale_mr() {
+_sayabletime_locale_mr() {
     _clock_hours=('बारा' 'एक' 'दोन' 'तीन' 'चार' 'पाच' 'सहा' 'सात' 'आठ' 'नऊ' 'दहा' 'अकरा')
     _clock_midnight='मध्यरात्र'
     _clock_noon='दुपार'

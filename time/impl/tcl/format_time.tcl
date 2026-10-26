@@ -10,36 +10,40 @@ namespace eval ::sayabletime {
 
     # --- Helpers ---
 
+    # A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+    # suffix, which is ignored), alone or after the T of an ISO datetime.
+    variable CLOCK_TIME {^(?:([0-9]{4})-([0-9]{2})-([0-9]{2})T)?([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$}
+
+    proc _is_real_date {y m d} {
+        if {$m < 1 || $m > 12 || $d < 1} {
+            return 0
+        }
+        if {$m == 2} {
+            set last [expr {(($y % 4 == 0 && $y % 100 != 0) || $y % 400 == 0) ? 29 : 28}]
+        } else {
+            set last [expr {$m in {4 6 9 11} ? 30 : 31}]
+        }
+        return [expr {$d <= $last}]
+    }
+
     proc _parse_time {input_str} {
-        # Parse HH:MM or ISO datetime to list {hour minute} or empty
-        if {$input_str eq ""} {
+        # Parse a clock time or ISO datetime to list {hour minute} or empty
+        variable CLOCK_TIME
+        if {![regexp $CLOCK_TIME $input_str -> ys ms ds hs mins secs]} {
             return {}
         }
-        set t $input_str
-        if {[string first "T" $t] >= 0} {
-            set t [lindex [split $t "T"] 1]
+        # scan reads leading zeros as decimal (expr would read 08 as octal)
+        if {$ys ne ""} {
+            scan "$ys $ms $ds" "%d %d %d" y m d
+            if {![_is_real_date $y $m $d]} {
+                return {}
+            }
         }
-        if {[string first "+" $t] >= 0} {
-            set t [lindex [split $t "+"] 0]
+        if {$secs eq ""} {
+            set secs 0
         }
-        if {[string first "Z" $t] >= 0} {
-            set t [lindex [split $t "Z"] 0]
-        }
-        set parts [split $t ":"]
-        if {[llength $parts] < 2} {
-            return {}
-        }
-        set hour [scan [lindex $parts 0] %d]
-        set min_str [lindex $parts 1]
-        # Handle fractional seconds in minute field (unlikely but safe)
-        if {[string first "." $min_str] >= 0} {
-            set min_str [lindex [split $min_str "."] 0]
-        }
-        set minute [scan $min_str %d]
-        if {$hour eq "" || $minute eq ""} {
-            return {}
-        }
-        if {$hour < 0 || $hour > 23 || $minute < 0 || $minute > 59} {
+        scan "$hs $mins $secs" "%d %d %d" hour minute second
+        if {$hour > 23 || $minute > 59 || $second > 59} {
             return {}
         }
         return [list $hour $minute]

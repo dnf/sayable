@@ -1,6 +1,9 @@
 /// Core formatting logic for sayable-duration.
 
+import gleam/bit_array
 import gleam/int
+import gleam/list
+import gleam/result
 import gleam/string
 import sayableduration/types.{
   type Compactness, type DurationLocale,
@@ -9,6 +12,9 @@ import sayableduration/types.{
 }
 
 pub const version = "0.5.0"
+
+/// 500 years, the same ceiling as sayable-age.
+const max_duration_months = 6000
 
 // --- Public API ---
 
@@ -21,7 +27,7 @@ pub fn format_duration_seconds(
     True -> Error(Nil)
     False -> {
       let resolved = resolve_locale(locale, compactness)
-      Ok(do_format_duration(locale, resolved, seconds))
+      format_within_ceiling(locale, resolved, seconds)
     }
   }
 }
@@ -39,7 +45,7 @@ pub fn format_duration_timestamps(
       use e <- try_parse_iso(end)
       let total = abs_int(e - s)
       let resolved = resolve_locale(locale, compactness)
-      Ok(do_format_duration(locale, resolved, total))
+      format_within_ceiling(locale, resolved, total)
     }
   }
 }
@@ -63,8 +69,8 @@ pub fn format_since(
           case diff == 0 {
             True -> Ok(resolved.just_now)
             False -> {
-              let dur = do_format_duration(locale, resolved, diff)
-              Ok(string.replace(resolved.ago, "{0}", dur))
+              use dur <- result.map(format_within_ceiling(locale, resolved, diff))
+              string.replace(resolved.ago, "{0}", dur)
             }
           }
         }
@@ -92,8 +98,8 @@ pub fn format_until(
           case diff == 0 {
             True -> Ok(resolved.just_now)
             False -> {
-              let dur = do_format_duration(locale, resolved, diff)
-              Ok(string.replace(resolved.in_future, "{0}", dur))
+              use dur <- result.map(format_within_ceiling(locale, resolved, diff))
+              string.replace(resolved.in_future, "{0}", dur)
             }
           }
         }
@@ -192,6 +198,22 @@ fn find_unit(
 
 // --- Duration tiers ---
 
+fn format_within_ceiling(
+  locale: DurationLocale,
+  resolved: ResolvedLocale,
+  total: Int,
+) -> Result(String, Nil) {
+  case approximate_months(total / 86_400) > max_duration_months {
+    True -> Error(Nil)
+    False -> Ok(do_format_duration(locale, resolved, total))
+  }
+}
+
+/// Whole days divided by 30.44, rounded.
+fn approximate_months(total_days: Int) -> Int {
+  round_div(total_days * 100, 3044)
+}
+
 fn do_format_duration(
   locale: DurationLocale,
   resolved: ResolvedLocale,
@@ -273,7 +295,7 @@ fn do_format_duration(
                                       }
                                     }
                                     False -> {
-                                      let total_months = round_div(total_days * 100, 3044)
+                                      let total_months = approximate_months(total_days)
                                       let clamped_months = case total_months < 1 {
                                         True -> 1
                                         False -> total_months
@@ -387,87 +409,109 @@ fn try_parse_iso(
   }
 }
 
+/// Parse YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (which
+/// is ignored) to epoch-ish seconds for diffing.
 fn parse_iso_to_seconds(iso_str: String) -> Result(Int, Nil) {
-  case string.contains(iso_str, "T") {
-    False -> Error(Nil)
-    True -> {
-      let parts = string.split(iso_str, "T")
-      case parts {
-        [date_part, time_part] -> {
-          use #(year, month, day) <- try_parse_date(date_part)
-          use #(hour, minute, second) <- try_parse_time_parts(time_part)
+  case bit_array.from_string(iso_str) {
+    <<y1, y2, y3, y4, 0x2D, m1, m2, 0x2D, d1, d2, 0x54, clock:bits>> -> {
+      use year <- result.try(digits_value([y1, y2, y3, y4]))
+      use month <- result.try(digits_value([m1, m2]))
+      use day <- result.try(digits_value([d1, d2]))
+      use #(hour, minute, second) <- result.try(parse_clock(clock))
+      case month >= 1 && month <= 12 && day >= 1 && day <= days_in_month(year, month) {
+        True -> {
           let days = days_since_epoch(year, month, day)
           Ok(days * 86_400 + hour * 3600 + minute * 60 + second)
         }
-        _ -> Error(Nil)
+        False -> Error(Nil)
       }
     }
-  }
-}
-
-fn try_parse_date(
-  s: String,
-  continuation: fn(#(Int, Int, Int)) -> Result(Int, Nil),
-) -> Result(Int, Nil) {
-  let parts = string.split(s, "-")
-  case parts {
-    [y_str, m_str, d_str] ->
-      case int.parse(y_str), int.parse(m_str), int.parse(d_str) {
-        Ok(y), Ok(m), Ok(d) -> continuation(#(y, m, d))
-        _, _, _ -> Error(Nil)
-      }
     _ -> Error(Nil)
   }
 }
 
-fn try_parse_time_parts(
-  s: String,
-  continuation: fn(#(Int, Int, Int)) -> Result(Int, Nil),
-) -> Result(Int, Nil) {
-  let t = case string.contains(s, "+") {
-    True -> {
-      let ps = string.split(s, "+")
-      case ps {
-        [first, ..] -> first
-        _ -> s
+/// H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored),
+/// to (hour, minute, second).
+fn parse_clock(clock: BitArray) -> Result(#(Int, Int, Int), Nil) {
+  let #(hour_digits, after_hour) = case clock {
+    <<h1, h2, 0x3A, rest:bits>> -> #([h1, h2], rest)
+    <<h1, 0x3A, rest:bits>> -> #([h1], rest)
+    other -> #([], other)
+  }
+  case after_hour {
+    <<m1, m2, rest:bits>> -> {
+      use hour <- result.try(digits_value(hour_digits))
+      use minute <- result.try(digits_value([m1, m2]))
+      use second <- result.try(parse_seconds_and_zone(rest))
+      case hour <= 23 && minute <= 59 && second <= 59 {
+        True -> Ok(#(hour, minute, second))
+        False -> Error(Nil)
       }
     }
-    False -> s
+    _ -> Error(Nil)
   }
-  let t2 = case string.contains(t, "Z") {
-    True -> {
-      let ps = string.split(t, "Z")
-      case ps {
-        [first, ..] -> first
-        _ -> t
+}
+
+/// The optional :SS (with optional fraction) and zone suffix after the
+/// minutes; the seconds value, 0 when absent.
+fn parse_seconds_and_zone(rest: BitArray) -> Result(Int, Nil) {
+  case rest {
+    <<0x3A, s1, s2, after_seconds:bits>> -> {
+      use second <- result.try(digits_value([s1, s2]))
+      use zone <- result.try(skip_fraction(after_seconds))
+      case is_zone_suffix(zone) {
+        True -> Ok(second)
+        False -> Error(Nil)
       }
     }
-    False -> t
-  }
-  let parts = string.split(t2, ":")
-  case parts {
-    [h_str, m_str] ->
-      case int.parse(h_str), int.parse(m_str) {
-        Ok(h), Ok(m) -> continuation(#(h, m, 0))
-        _, _ -> Error(Nil)
+    _ ->
+      case is_zone_suffix(rest) {
+        True -> Ok(0)
+        False -> Error(Nil)
       }
-    [h_str, m_str, s_str] -> {
-      let s_clean = case string.contains(s_str, ".") {
-        True -> {
-          let ps = string.split(s_str, ".")
-          case ps {
-            [first, ..] -> first
-            _ -> s_str
-          }
+  }
+}
+
+/// Skip an optional . followed by one or more digits.
+fn skip_fraction(rest: BitArray) -> Result(BitArray, Nil) {
+  case rest {
+    <<0x2E, digit, after:bits>> if digit >= 0x30 && digit <= 0x39 ->
+      Ok(skip_digits(after))
+    <<0x2E, _:bits>> -> Error(Nil)
+    _ -> Ok(rest)
+  }
+}
+
+fn skip_digits(rest: BitArray) -> BitArray {
+  case rest {
+    <<digit, after:bits>> if digit >= 0x30 && digit <= 0x39 ->
+      skip_digits(after)
+    _ -> rest
+  }
+}
+
+/// Nothing, Z, or +HH:MM / -HH:MM.
+fn is_zone_suffix(rest: BitArray) -> Bool {
+  case rest {
+    <<>> | <<0x5A>> -> True
+    <<sign, a, b, 0x3A, c, d>> if sign == 0x2B || sign == 0x2D ->
+      result.is_ok(digits_value([a, b, c, d]))
+    _ -> False
+  }
+}
+
+/// The value of a non-empty run of ASCII digit bytes, or an error if any byte
+/// is not one.
+fn digits_value(bytes: List(Int)) -> Result(Int, Nil) {
+  case bytes {
+    [] -> Error(Nil)
+    _ ->
+      list.try_fold(bytes, 0, fn(acc, byte) {
+        case byte >= 0x30 && byte <= 0x39 {
+          True -> Ok(acc * 10 + byte - 0x30)
+          False -> Error(Nil)
         }
-        False -> s_str
-      }
-      case int.parse(h_str), int.parse(m_str), int.parse(s_clean) {
-        Ok(h), Ok(m), Ok(sec) -> continuation(#(h, m, sec))
-        _, _, _ -> Error(Nil)
-      }
-    }
-    _ -> Error(Nil)
+      })
   }
 }
 

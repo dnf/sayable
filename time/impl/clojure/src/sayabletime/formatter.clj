@@ -6,24 +6,39 @@
 (defn- round-to-5 [minute]
   (* (quot (+ minute 2) 5) 5))
 
-(defn- parse-time [^String input]
-  (when (seq input)
-    (let [;; Strip date part if ISO datetime
-          t (let [t-idx (.indexOf input (int \T))]
-              (if (>= t-idx 0) (subs input (inc t-idx)) input))
-          ;; Strip timezone
-          t (let [plus-idx (.indexOf ^String t (int \+))]
-              (if (>= plus-idx 0) (subs t 0 plus-idx) t))
-          t (let [z-idx (.indexOf ^String t (int \Z))]
-              (if (>= z-idx 0) (subs t 0 z-idx) t))
-          parts (str/split t #":")]
-      (when (>= (count parts) 2)
-        (try
-          (let [hour (Integer/parseInt (nth parts 0))
-                minute (Integer/parseInt (nth parts 1))]
-            (when (and (>= hour 0) (<= hour 23) (>= minute 0) (<= minute 59))
-              [hour minute]))
-          (catch NumberFormatException _ nil))))))
+(def ^:private clock-pattern
+  "H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored)."
+  #"([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?")
+
+(def ^:private date-pattern #"([0-9]{4})-([0-9]{2})-([0-9]{2})")
+
+(defn- days-in-month [y m]
+  (case (int m)
+    2 (if (or (and (zero? (mod y 4)) (not (zero? (mod y 100)))) (zero? (mod y 400))) 29 28)
+    (4 6 9 11) 30
+    31))
+
+(defn- real-date? [s]
+  (if-let [[_ y m d] (re-matches date-pattern s)]
+    (let [year (Integer/parseInt y)
+          month (Integer/parseInt m)
+          day (Integer/parseInt d)]
+      (and (<= 1 month 12) (<= 1 day (days-in-month year month))))
+    false))
+
+(defn- parse-time
+  "Parses a clock time, alone or after the T of an ISO datetime, into [hour minute]."
+  [input]
+  (when (string? input)
+    (let [t-idx (.indexOf ^String input (int \T))
+          clock (if (>= t-idx 0) (subs input (inc t-idx)) input)]
+      (when (or (neg? t-idx) (real-date? (subs input 0 t-idx)))
+        (when-let [[_ h m sec] (re-matches clock-pattern clock)]
+          (let [hour (Integer/parseInt h)
+                minute (Integer/parseInt m)
+                second (if sec (Integer/parseInt sec) 0)]
+            (when (and (<= hour 23) (<= minute 59) (<= second 59))
+              [hour minute])))))))
 
 (defn- resolve-locale [locale compactness]
   (let [ovr (case compactness

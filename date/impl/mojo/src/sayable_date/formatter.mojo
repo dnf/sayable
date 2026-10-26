@@ -44,45 +44,57 @@ struct ParsedDate(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
         self.valid = False
 
 
+fn _is_leap_year(year: Int) -> Bool:
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+
+fn _days_in_month(year: Int, month: Int) -> Int:
+    if month == 2:
+        if _is_leap_year(year):
+            return 29
+        return 28
+    if month == 4 or month == 6 or month == 9 or month == 11:
+        return 30
+    return 31
+
+
 fn _parse_date(s: String) -> ParsedDate:
-    """Parse YYYY-MM-DD or ISO datetime to components. Returns invalid on failure."""
+    """Parse YYYY-MM-DD, optionally followed by T and a time, to components.
+
+    The date must name a real calendar day. Returns invalid on failure.
+    """
     var result = ParsedDate()
-    if len(s) == 0:
+    var is_date_alone = len(s) == 10
+    var is_datetime = len(s) > 10 and s[10:11] == "T"
+    if not is_date_alone and not is_datetime:
         return result
 
-    # Strip time part if ISO datetime
-    var date_part = s
-    var t_pos = s.find("T")
-    if t_pos != -1:
-        date_part = s[:t_pos]
-
-    if len(date_part) < 10:
-        return result
+    var date_part = String(s[:10])
     if date_part[4:5] != "-" or date_part[7:8] != "-":
         return result
 
     var year = 0
     for i in range(4):
-        var d = _char_to_digit(date_part[i : i + 1])
+        var d = _char_to_digit(String(date_part[i : i + 1]))
         if d < 0:
             return result
         year = year * 10 + d
 
     var month = 0
     for i in range(5, 7):
-        var d = _char_to_digit(date_part[i : i + 1])
+        var d = _char_to_digit(String(date_part[i : i + 1]))
         if d < 0:
             return result
         month = month * 10 + d
 
     var day = 0
     for i in range(8, 10):
-        var d = _char_to_digit(date_part[i : i + 1])
+        var d = _char_to_digit(String(date_part[i : i + 1]))
         if d < 0:
             return result
         day = day * 10 + d
 
-    if month < 1 or month > 12 or day < 1 or day > 31:
+    if month < 1 or month > 12 or day < 1 or day > _days_in_month(year, month):
         return result
 
     result.year = year

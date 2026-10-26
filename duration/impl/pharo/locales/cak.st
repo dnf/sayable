@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/cak.json "
 
-"Locale: cak"
+"Locale: cak"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 cak

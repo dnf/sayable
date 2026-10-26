@@ -58,7 +58,7 @@ typedef struct {
 } SduDurationLocale;
 
 int sdu_format_duration_secs(char *buf, size_t bufsz, const SduDurationLocale *locale,
-                             SduCompactness compactness, int seconds);
+                             SduCompactness compactness, long long seconds);
 
 int sdu_format_duration_iso(char *buf, size_t bufsz, const SduDurationLocale *locale,
                             SduCompactness compactness, const char *start, const char *end);

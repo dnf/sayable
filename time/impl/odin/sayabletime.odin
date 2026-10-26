@@ -51,50 +51,79 @@ parse_digits :: proc(s: string) -> (int, bool) {
     return v, true
 }
 
+// Number of leading ASCII digits in s.
+digit_run :: proc(s: string) -> int {
+    n := 0
+    for n < len(s) && s[n] >= '0' && s[n] <= '9' do n += 1
+    return n
+}
+
+// Nothing, "Z", or "+HH:MM" / "-HH:MM".
+is_zone_suffix :: proc(s: string) -> bool {
+    if len(s) == 0 do return true
+    if len(s) == 1 do return s[0] == 'Z'
+    return len(s) == 6 && (s[0] == '+' || s[0] == '-') && digit_run(s[1:3]) == 2 && s[3] == ':' && digit_run(s[4:6]) == 2
+}
+
+Clock :: struct {
+    hour, minute, second: int,
+}
+
+// H:MM or HH:MM, optional :SS, optional . plus digits after the seconds, and an
+// optional zone suffix, which is validated but ignored.
+parse_clock :: proc(clock: string) -> (Clock, bool) {
+    hour_len := digit_run(clock)
+    if hour_len < 1 || hour_len > 2 || len(clock) < hour_len + 3 || clock[hour_len] != ':' do return {}, false
+    if digit_run(clock[hour_len + 1:hour_len + 3]) != 2 do return {}, false
+    hour, _ := parse_digits(clock[0:hour_len])
+    minute, _ := parse_digits(clock[hour_len + 1:hour_len + 3])
+    second := 0
+    rest := clock[hour_len + 3:]
+    if len(rest) > 0 && rest[0] == ':' {
+        if len(rest) < 3 || digit_run(rest[1:3]) != 2 do return {}, false
+        second, _ = parse_digits(rest[1:3])
+        rest = rest[3:]
+        if len(rest) > 0 && rest[0] == '.' {
+            fraction_len := digit_run(rest[1:])
+            if fraction_len == 0 do return {}, false
+            rest = rest[1 + fraction_len:]
+        }
+    }
+    if !is_zone_suffix(rest) || hour > 23 || minute > 59 || second > 59 do return {}, false
+    return Clock{hour, minute, second}, true
+}
+
+days_in_month :: proc(year, month: int) -> int {
+    if month == 2 {
+        is_leap := year %% 4 == 0 && (year %% 100 != 0 || year %% 400 == 0)
+        return is_leap ? 29 : 28
+    }
+    if month == 4 || month == 6 || month == 9 || month == 11 do return 30
+    return 31
+}
+
+// Exactly YYYY-MM-DD naming a real Gregorian calendar day.
+is_real_date :: proc(s: string) -> bool {
+    if len(s) != 10 || s[4] != '-' || s[7] != '-' do return false
+    year, y_ok := parse_digits(s[0:4])
+    month, m_ok := parse_digits(s[5:7])
+    day, d_ok := parse_digits(s[8:10])
+    return y_ok && m_ok && d_ok && month >= 1 && month <= 12 && day >= 1 && day <= days_in_month(year, month)
+}
+
+// A clock time, alone or after the T of an ISO datetime whose date is valid
+// (docs/input-formats.md).
 parse_time :: proc(s: string) -> (int, int, bool) {
-    if len(s) == 0 do return 0, 0, false
-    t := s
-    // Handle ISO datetime
-    for i := 0; i < len(t); i += 1 {
-        if t[i] == 'T' {
-            t = t[i + 1:]
+    clock := s
+    for i := 0; i < len(s); i += 1 {
+        if s[i] == 'T' {
+            if !is_real_date(s[0:i]) do return 0, 0, false
+            clock = s[i + 1:]
             break
         }
     }
-    // Strip timezone
-    for i := 0; i < len(t); i += 1 {
-        if t[i] == '+' || t[i] == 'Z' {
-            t = t[0:i]
-            break
-        }
-    }
-    // Find first colon
-    colon := -1
-    for i := 0; i < len(t); i += 1 {
-        if t[i] == ':' {
-            colon = i
-            break
-        }
-    }
-    if colon < 0 do return 0, 0, false
-
-    hour, h_ok := parse_digits(t[0:colon])
-    if !h_ok do return 0, 0, false
-
-    rest := t[colon + 1:]
-    // Strip seconds part if present
-    for i := 0; i < len(rest); i += 1 {
-        if rest[i] == ':' || rest[i] == '.' {
-            rest = rest[0:i]
-            break
-        }
-    }
-
-    minute, m_ok := parse_digits(rest)
-    if !m_ok do return 0, 0, false
-
-    if hour < 0 || hour > 23 || minute < 0 || minute > 59 do return 0, 0, false
-    return hour, minute, true
+    c, ok := parse_clock(clock)
+    return c.hour, c.minute, ok
 }
 
 // Integer to string conversion (no allocations, uses caller buffer)

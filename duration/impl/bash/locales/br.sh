@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/br.json
 
-_plural_br() {
+_sayableduration_plural_br() {
     local n=$1
     local mod10=$(( n % 10 ))
     local mod100=$(( n % 100 ))
@@ -20,7 +20,7 @@ _plural_br() {
     echo "other"
 }
 
-_locale_br() {
+_sayableduration_locale_br() {
     _unit_second_one='{n} eilenn'
     _unit_second_two='{n} eilenn'
     _unit_second_few='{n} eilenn'
@@ -81,5 +81,5 @@ _locale_br() {
     _compact_delimiter=''
     _compact_ago='{0} zo'
     _compact_in_future='a-benn {0}'
-    _plural_func=_plural_br
+    _plural_func=_sayableduration_plural_br
 }

@@ -12,14 +12,14 @@ function result = parse_age(date_of_birth, as_of)
     return;
   endif
 
-  dob = parse_date_str(date_of_birth);
+  dob = parse_age_date(date_of_birth);
   if (isempty(dob))
     result = [];
     return;
   endif
 
   if (!isempty(as_of) && ischar(as_of))
-    ref = parse_date_str(as_of);
+    ref = parse_age_date(as_of);
     if (isempty(ref))
       result = [];
       return;

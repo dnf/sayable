@@ -257,7 +257,8 @@ object Sayable:
         if value == null then
             formatter.formatDurationSeconds(-1)
         else if isInteger(value) then
-            formatter.formatDurationSeconds(value.toInt)
+            // A digit string too long for a Long is far beyond the 500-year ceiling
+            value.toLongOption.flatMap(formatter.formatDurationSeconds)
         else
             if positionals.size < 2 then
                 usage("duration with timestamps requires start and end arguments")

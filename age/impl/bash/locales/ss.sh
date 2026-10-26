@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ss.json
 
-_plural_ss() {
+_sayableage_plural_ss() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ss() {
+_sayableage_locale_ss() {
     _unit_day_one='lilanga {n}'
     _unit_day_other='emalanga {n}'
     _unit_week_one='liviki {n}'
@@ -47,5 +47,5 @@ _locale_ss() {
     _compact_unit_year='{n}y'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ss
+    _plural_func=_sayableage_plural_ss
 }

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ti.json
 
-_locale_ti() {
+_sayabletime_locale_ti() {
     _clock_hours=('ዓሰርተ ክልተ' 'ሓደ' 'ክልተ' 'ሰለስተ' 'ኣርባዕተ' 'ሓሙሽተ' 'ሽድሽተ' 'ሸውዓተ' 'ሸሞንተ' 'ትሽዓተ' 'ዓሰርተ' 'ዓሰርተ ሓደ')
     _clock_midnight='ፍርቂ ለይቲ'
     _clock_noon='ቀትሪ'

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/gn.json
 
-_locale_gn() {
+_sayabledate_locale_gn() {
     _months=('Jasyteĩ' 'Jasykõi' 'Jasyapy' 'Jasyrundy' 'Jasypo' 'Jasypoteĩ' 'Jasypokõi' 'Jasypoapy' 'Jasyporundy' 'Jasypa' 'Jasypateĩ' 'Jasypakõi')
     _weekdays=('Arateĩ' 'Arakõi' 'Araapy' 'Ararundy' 'Arapo' 'Arapoteĩ' 'Arapokõi')
     _day_format='{n}'

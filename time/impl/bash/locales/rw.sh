@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/rw.json
 
-_locale_rw() {
+_sayabletime_locale_rw() {
     _clock_hours=('cumi n'\''ebyiri' 'rimwe' 'ebyiri' 'eshatu' 'enye' 'eshanu' 'esheshatu' 'indwi' 'umunani' 'icyenda' 'icumi' 'cumi n'\''imwe')
     _clock_midnight='igicuku'
     _clock_noon='saa sita'

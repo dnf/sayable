@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/so.json
 
-_locale_so() {
+_sayabletime_locale_so() {
     _clock_hours=('laba iyo toban' 'kow' 'laba' 'saddex' 'afar' 'shan' 'lix' 'toddoba' 'siddeed' 'sagaal' 'toban' 'kow iyo toban')
     _clock_midnight='saqda dhexe'
     _clock_noon='duhur'

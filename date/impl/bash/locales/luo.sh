@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/luo.json
 
-_locale_luo() {
+_sayabledate_locale_luo() {
     _months=('Dwe mar Achiel' 'Dwe mar Ariyo' 'Dwe mar Adek' 'Dwe mar Ang'\''wen' 'Dwe mar Abich' 'Dwe mar Auchiel' 'Dwe mar Abiriyo' 'Dwe mar Aboro' 'Dwe mar Ochiko' 'Dwe mar Apar' 'Dwe mar Apar gi Achiel' 'Dwe mar Apar gi Ariyo')
     _weekdays=('Jumapil' 'Wuok Tich' 'Tich Ariyo' 'Tich Adek' 'Tich Ang'\''wen' 'Tich Abich' 'Chieng'\'' Ngeso')
     _day_format='{n}'

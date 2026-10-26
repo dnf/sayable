@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ko.json
 
-_plural_ko() {
+_sayableage_plural_ko() {
     echo "other"
 }
 
-_locale_ko() {
+_sayableage_locale_ko() {
     _unit_day='{n}일'
     _unit_week='{n}주'
     _unit_month='{n}개월'
@@ -36,5 +36,5 @@ _locale_ko() {
     _compact_unit_month='{n}개월'
     _compact_unit_year='{n}년'
     _compact_delimiter=''
-    _plural_func=_plural_ko
+    _plural_func=_sayableage_plural_ko
 }

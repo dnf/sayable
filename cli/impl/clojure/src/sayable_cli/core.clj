@@ -253,8 +253,10 @@ Options:
                    (nil? value)
                    nil
 
+                   ;; A digit string too long for a long is far beyond the
+                   ;; 500-year ceiling, and parse-long returns nil for it
                    (integer-string? value)
-                   (let [n (Long/parseLong value)]
+                   (when-let [n (parse-long value)]
                      (duration/format-duration-seconds locale compactness n))
 
                    :else
@@ -297,39 +299,14 @@ Options:
             result (duration/format-until locale compactness target as-of)]
         result))))
 
-(defn- cmd-locales []
-  (let [codes (into (sorted-set)
-                    (keep (fn [code]
-                            (when (age-locales/get-locale code) code))
-                          ;; Extract locale codes from the age locales registry
-                          ;; by trying all known codes. We use the file listing
-                          ;; approach: every locale file defines a code.
-                          (map :code
-                               (keep (fn [ns-sym]
-                                       (try
-                                         (require ns-sym)
-                                         (let [ns-obj (find-ns ns-sym)]
-                                           (when-let [v (ns-resolve ns-obj 'locale)]
-                                             (deref v)))
-                                         (catch Exception _ nil)))
-                                     ;; Generate namespace symbols for all possible locale namespaces
-                                     (for [code ["af" "ak" "am" "ar" "az" "bci" "be" "bem" "bg" "bm"
-                                                 "bn" "br" "bs" "ca" "ceb" "cs" "cy" "da" "de" "din"
-                                                 "dje" "dyu" "ee" "el" "en" "es" "et" "eu" "fa" "fan"
-                                                 "ff" "fi" "fil" "fon" "fr" "ga" "gd" "gl" "gn" "gu"
-                                                 "gv" "ha" "he" "hi" "hr" "ht" "hu" "hy" "id" "ig"
-                                                 "is" "it" "ja" "jv" "ka" "kbp" "kk" "km" "kn" "ko"
-                                                 "kpe" "ktu" "ku" "kw" "ky" "lg" "ln" "lo" "lt" "lv"
-                                                 "men" "mfe" "mg" "mi" "mk" "ml" "mn" "mnk" "mos" "mr"
-                                                 "ms" "mt" "my" "nb" "nd" "ne" "ng" "nl" "nso" "nus"
-                                                 "ny" "om" "or" "pa" "pl" "pov" "ps" "pt" "qu" "ro"
-                                                 "ru" "rw" "sar" "sd" "sg" "shi" "si" "sk" "sl" "sn"
-                                                 "snk" "so" "sq" "sr" "ss" "st" "su" "suk" "sv" "sw"
-                                                 "ta" "te" "tem" "tg" "th" "ti" "tig" "tk" "tn" "tr"
-                                                 "ts" "tzm" "uk" "umb" "ur" "uz" "vi" "vmw" "wo" "xh"
-                                                 "yo" "yue" "zdj" "zh" "zu"]]
-                                       (symbol (str "sayableage.locales." code)))))))]
-    (str/join "\n" codes)))
+(defn- cmd-locales
+  "Every locale code, read from the namespaces the generated age locales
+  registry requires, so the list can't drift from the locale files."
+  []
+  (->> (vals (ns-aliases 'sayableage.locales))
+       (keep #(some-> (ns-resolve % 'locale) deref :code))
+       (into (sorted-set))
+       (str/join "\n")))
 
 (def ^:private commands
   {"age" cmd-age

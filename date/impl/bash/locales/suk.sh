@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/suk.json
 
-_locale_suk() {
+_sayabledate_locale_suk() {
     _months=('Januari' 'Februari' 'Machi' 'Aprili' 'Mei' 'Juni' 'Julai' 'Agosti' 'Septemba' 'Oktoba' 'Novemba' 'Desemba')
     _weekdays=('Jumapili' 'Jumatatu' 'Jumanne' 'Jumatano' 'Alhamisi' 'Ijumaa' 'Jumamosi')
     _day_format='{n}'

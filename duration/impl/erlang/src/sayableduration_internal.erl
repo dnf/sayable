@@ -1,65 +1,65 @@
 -module(sayableduration_internal).
 -export([parse_iso_to_seconds/1]).
 
+%% Accepts YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix
+%% (the zone is validated but ignored).
 -spec parse_iso_to_seconds(string()) -> {ok, integer()} | error.
-parse_iso_to_seconds([]) -> error;
-parse_iso_to_seconds(S) ->
-    case find_char($T, S) of
-        {DatePart, TimePart} ->
-            case parse_date_part(DatePart) of
-                {ok, {Y, M, D}} ->
-                    case parse_time_part(TimePart) of
-                        {ok, {Hr, Min, Sec}} ->
-                            Days = days_since_epoch(Y, M, D),
-                            {ok, Days * 86400 + Hr * 3600 + Min * 60 + Sec};
-                        error -> error
-                    end;
-                error -> error
+parse_iso_to_seconds([Y1, Y2, Y3, Y4, $-, M1, M2, $-, D1, D2, $T | Clock]) ->
+    case all_digits([Y1, Y2, Y3, Y4, M1, M2, D1, D2]) of
+        true ->
+            Y = list_to_integer([Y1, Y2, Y3, Y4]),
+            M = two_digits(M1, M2),
+            D = two_digits(D1, D2),
+            case is_real_date(Y, M, D) andalso parse_clock(Clock) of
+                {ok, {Hr, Min, Sec}} ->
+                    {ok, days_since_epoch(Y, M, D) * 86400 + Hr * 3600 + Min * 60 + Sec};
+                _ -> error
             end;
-        not_found -> error
-    end.
+        false -> error
+    end;
+parse_iso_to_seconds(_) -> error.
 
 %% Internal helpers
 
-parse_date_part(S) ->
-    case length(S) >= 10 andalso
-         lists:nth(5, S) =:= $- andalso
-         lists:nth(8, S) =:= $- of
-        true ->
-            YStr = lists:sublist(S, 1, 4),
-            MStr = lists:sublist(S, 6, 2),
-            DStr = lists:sublist(S, 9, 2),
-            case all_digits(YStr) andalso all_digits(MStr) andalso all_digits(DStr) of
-                true ->
-                    {ok, {list_to_integer(YStr), list_to_integer(MStr), list_to_integer(DStr)}};
-                false -> error
-            end;
-        false -> error
-    end.
+-define(IS_DIGIT(C), (C >= $0 andalso C =< $9)).
 
-parse_time_part(S) ->
-    S1 = strip_at_char($+, S),
-    S2 = strip_at_char($Z, S1),
-    Parts = split_colons(S2),
-    case Parts of
-        [HStr] ->
-            case all_digits(HStr) of
-                true -> {ok, {list_to_integer(HStr), 0, 0}};
-                false -> error
-            end;
-        [HStr, MStr] ->
-            case all_digits(HStr) andalso all_digits(MStr) of
-                true -> {ok, {list_to_integer(HStr), list_to_integer(MStr), 0}};
-                false -> error
-            end;
-        [HStr, MStr, SStr0] ->
-            SStr = strip_at_char($., SStr0),
-            case all_digits(HStr) andalso all_digits(MStr) andalso all_digits(SStr) of
-                true -> {ok, {list_to_integer(HStr), list_to_integer(MStr), list_to_integer(SStr)}};
-                false -> error
-            end;
-        _ -> error
-    end.
+parse_clock([H1, H2, $: | Rest]) when ?IS_DIGIT(H1), ?IS_DIGIT(H2) ->
+    clock_minutes(two_digits(H1, H2), Rest);
+parse_clock([H1, $: | Rest]) when ?IS_DIGIT(H1) ->
+    clock_minutes(H1 - $0, Rest);
+parse_clock(_) -> error.
+
+clock_minutes(H, [M1, M2 | Rest]) when ?IS_DIGIT(M1), ?IS_DIGIT(M2) ->
+    clock_seconds(H, two_digits(M1, M2), Rest);
+clock_minutes(_, _) -> error.
+
+clock_seconds(H, M, [$:, S1, S2 | Rest]) when ?IS_DIGIT(S1), ?IS_DIGIT(S2) ->
+    clock_fraction(H, M, two_digits(S1, S2), Rest);
+clock_seconds(H, M, Rest) ->
+    clock_zone(H, M, 0, Rest).
+
+clock_fraction(H, M, Sec, [$., C | Rest]) when ?IS_DIGIT(C) ->
+    clock_zone(H, M, Sec, lists:dropwhile(fun(D) -> ?IS_DIGIT(D) end, Rest));
+clock_fraction(H, M, Sec, Rest) ->
+    clock_zone(H, M, Sec, Rest).
+
+clock_zone(H, M, Sec, Zone) when H =< 23, M =< 59, Sec =< 59 ->
+    case is_zone_suffix(Zone) of
+        true -> {ok, {H, M, Sec}};
+        false -> error
+    end;
+clock_zone(_, _, _, _) -> error.
+
+is_zone_suffix([]) -> true;
+is_zone_suffix("Z") -> true;
+is_zone_suffix([Sign, A, B, $:, C, D]) when Sign =:= $+ orelse Sign =:= $- ->
+    all_digits([A, B, C, D]);
+is_zone_suffix(_) -> false.
+
+two_digits(A, B) -> (A - $0) * 10 + (B - $0).
+
+is_real_date(Y, M, D) ->
+    M >= 1 andalso M =< 12 andalso D >= 1 andalso D =< dim(Y, M).
 
 days_since_epoch(Year, Month, Day) ->
     YDays = year_days(2000, Year),
@@ -90,26 +90,6 @@ dim(_, M) when M =:= 4; M =:= 6; M =:= 9; M =:= 11 -> 30;
 dim(Y, 2) ->
     case is_leap_year(Y) of true -> 29; false -> 28 end.
 
-find_char(_C, []) -> not_found;
-find_char(C, [C | Rest]) -> {[], Rest};
-find_char(C, [H | Rest]) ->
-    case find_char(C, Rest) of
-        {Before, After} -> {[H | Before], After};
-        not_found -> not_found
-    end.
-
-strip_at_char(C, S) ->
-    case find_char(C, S) of
-        {Before, _After} -> Before;
-        not_found -> S
-    end.
-
-split_colons(S) -> split_colons(S, [], []).
-
-split_colons([], Cur, Acc) -> lists:reverse([lists:reverse(Cur) | Acc]);
-split_colons([$: | Rest], Cur, Acc) -> split_colons(Rest, [], [lists:reverse(Cur) | Acc]);
-split_colons([C | Rest], Cur, Acc) -> split_colons(Rest, [C | Cur], Acc).
-
 all_digits([]) -> true;
-all_digits([C | Rest]) when C >= $0, C =< $9 -> all_digits(Rest);
+all_digits([C | Rest]) when ?IS_DIGIT(C) -> all_digits(Rest);
 all_digits(_) -> false.

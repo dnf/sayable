@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/suk.json "
 
-"Locale: suk"
+"Locale: suk"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 suk

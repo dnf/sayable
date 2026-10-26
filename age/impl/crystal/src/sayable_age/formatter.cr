@@ -56,8 +56,8 @@ module SayableAge
         rem = months % 12
         return SayableAge.resolve_unit(years, @year, @locale) if rem == 0
         return SayableAge.resolve_unit(years, @year, @locale) +
-               @delimiter +
-               SayableAge.resolve_unit(rem, @month, @locale)
+          @delimiter +
+          SayableAge.resolve_unit(rem, @month, @locale)
       end
 
       # Tier 5: 3-6 years -> years with half marker
@@ -85,19 +85,11 @@ module SayableAge
     private def parse_age(date_of_birth : String?, as_of : String?) : Tuple(Int32, Int32)?
       return nil if date_of_birth.nil? || date_of_birth.empty?
 
-      dob_parts = date_of_birth.split('-')
-      return nil if dob_parts.size != 3
-
-      dob_y = dob_parts[0].to_i? || return nil
-      dob_m = dob_parts[1].to_i? || return nil
-      dob_d = dob_parts[2].to_i? || return nil
+      dob = parse_date(date_of_birth) || return nil
+      dob_y, dob_m, dob_d = dob
 
       if as_of && !as_of.empty?
-        ref_parts = as_of.split('-')
-        return nil if ref_parts.size != 3
-        ref_y = ref_parts[0].to_i? || return nil
-        ref_m = ref_parts[1].to_i? || return nil
-        ref_d = ref_parts[2].to_i? || return nil
+        ref_y, ref_m, ref_d = parse_date(as_of) || return nil
       else
         now = Time.local
         ref_y = now.year
@@ -118,6 +110,16 @@ module SayableAge
       return nil if months > MAX_AGE_MONTHS
 
       {months, diff_days}
+    end
+
+    DATE_PATTERN = /\A([0-9]{4})-([0-9]{2})-([0-9]{2})\z/
+
+    # Exactly YYYY-MM-DD naming a real calendar day, else nil.
+    private def parse_date(s : String) : Tuple(Int32, Int32, Int32)?
+      m = DATE_PATTERN.match(s) || return nil
+      year, month, day = m[1].to_i, m[2].to_i, m[3].to_i
+      return nil unless 1 <= month <= 12 && 1 <= day <= days_in_month(year, month)
+      {year, month, day}
     end
 
     private def stage_key(months : Int32) : String
@@ -146,7 +148,7 @@ module SayableAge
     private def days_in_month(year : Int32, month : Int32) : Int32
       case month
       when 1, 3, 5, 7, 8, 10, 12 then 31
-      when 4, 6, 9, 11            then 30
+      when 4, 6, 9, 11           then 30
       when 2
         (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28
       else

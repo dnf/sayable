@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/bn.json
 
-_plural_bn() {
+_sayableduration_plural_bn() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_bn() {
+_sayableduration_locale_bn() {
     _unit_second='{n} সেকেন্ড'
     _unit_minute='{n} মিনিট'
     _unit_hour='{n} ঘন্টা'
@@ -52,5 +52,5 @@ _locale_bn() {
     _compact_delimiter=''
     _compact_ago='{0} আগে'
     _compact_in_future='{0} পরে'
-    _plural_func=_plural_bn
+    _plural_func=_sayableduration_plural_bn
 }

@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/km.json "
 
-"Locale: km"
+"Locale: km"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 km

@@ -2,6 +2,8 @@
 #include "sayableduration/locales/locales.hpp"
 
 #include <cmath>
+#include <cstdlib>
+#include <optional>
 #include <string>
 
 namespace sayableduration {
@@ -73,105 +75,95 @@ std::string resolve_unit(int count, const UnitForms& uf, const DurationLocale* l
     return result;
 }
 
-/// Parse an ISO datetime "YYYY-MM-DDTHH:MM:SS" into total seconds since epoch.
-/// Returns -1 on parse failure.
-int parse_iso_to_seconds(const std::string& iso) {
-    if (iso.empty()) return -1;
-
-    // Find T separator
-    const auto t_pos = iso.find('T');
-    if (t_pos == std::string::npos || t_pos < 10) return -1;
-
-    // Parse date part
-    const std::string date_part = iso.substr(0, t_pos);
-    if (date_part.size() < 10 || date_part[4] != '-' || date_part[7] != '-') return -1;
-
-    int year = 0;
-    for (int i = 0; i < 4; ++i) {
-        const char c = date_part[static_cast<size_t>(i)];
-        if (c < '0' || c > '9') return -1;
-        year = year * 10 + (c - '0');
-    }
-    int month = 0;
-    for (int i = 5; i < 7; ++i) {
-        const char c = date_part[static_cast<size_t>(i)];
-        if (c < '0' || c > '9') return -1;
-        month = month * 10 + (c - '0');
-    }
-    int day = 0;
-    for (int i = 8; i < 10; ++i) {
-        const char c = date_part[static_cast<size_t>(i)];
-        if (c < '0' || c > '9') return -1;
-        day = day * 10 + (c - '0');
-    }
-
-    // Parse time part (strip timezone suffix)
-    std::string time_str = iso.substr(t_pos + 1);
-    {
-        const auto plus_pos = time_str.find('+');
-        if (plus_pos != std::string::npos) {
-            time_str = time_str.substr(0, plus_pos);
-        }
-        const auto z_pos = time_str.find('Z');
-        if (z_pos != std::string::npos) {
-            time_str = time_str.substr(0, z_pos);
-        }
-    }
-
-    int hour = 0;
-    int minute = 0;
-    int second = 0;
-
-    if (time_str.size() >= 2) {
-        for (int i = 0; i < 2; ++i) {
-            const char c = time_str[static_cast<size_t>(i)];
-            if (c < '0' || c > '9') return -1;
-            hour = hour * 10 + (c - '0');
-        }
-    }
-    if (time_str.size() >= 5 && time_str[2] == ':') {
-        for (int i = 3; i < 5; ++i) {
-            const char c = time_str[static_cast<size_t>(i)];
-            if (c < '0' || c > '9') return -1;
-            minute = minute * 10 + (c - '0');
-        }
-    }
-    if (time_str.size() >= 8 && time_str[5] == ':') {
-        for (int i = 6; i < 8; ++i) {
-            const char c = time_str[static_cast<size_t>(i)];
-            if (c < '0' || c > '9') return -1;
-            second = second * 10 + (c - '0');
-        }
-    }
-
-    // Calculate days since epoch (2000-01-01)
-    auto is_leap = [](int y) -> bool {
-        return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
-    };
-
-    auto days_in_month_fn = [&is_leap](int y, int m) -> int {
-        if (m == 2) return is_leap(y) ? 29 : 28;
-        if (m == 4 || m == 6 || m == 9 || m == 11) return 30;
-        return 31;
-    };
-
-    int days = 0;
-    if (year >= 2000) {
-        for (int y = 2000; y < year; ++y) {
-            days += is_leap(y) ? 366 : 365;
-        }
-    } else {
-        for (int y = year; y < 2000; ++y) {
-            days -= is_leap(y) ? 366 : 365;
-        }
-    }
-    for (int m = 1; m < month; ++m) {
-        days += days_in_month_fn(year, m);
-    }
-    days += day - 1;
-
-    return days * 86400 + hour * 3600 + minute * 60 + second;
+/// Number of leading ASCII digits in s from pos.
+size_t digit_run(const std::string& s, size_t pos) {
+    size_t n = 0;
+    while (pos + n < s.size() && s[pos + n] >= '0' && s[pos + n] <= '9') ++n;
+    return n;
 }
+
+/// Value of the count ASCII digits at pos (the caller has checked they are digits).
+int digits_value(const std::string& s, size_t pos, size_t count) {
+    int value = 0;
+    for (size_t i = pos; i < pos + count; ++i) value = value * 10 + (s[i] - '0');
+    return value;
+}
+
+bool is_leap(int y) {
+    return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+}
+
+int days_in_month(int y, int m) {
+    if (m == 2) return is_leap(y) ? 29 : 28;
+    if (m == 4 || m == 6 || m == 9 || m == 11) return 30;
+    return 31;
+}
+
+/// Days from 2000-01-01 to the given date (negative before it).
+long long days_since_epoch(int year, int month, int day) {
+    long long days = 0;
+    if (year >= 2000) {
+        for (int y = 2000; y < year; ++y) days += is_leap(y) ? 366 : 365;
+    } else {
+        for (int y = year; y < 2000; ++y) days -= is_leap(y) ? 366 : 365;
+    }
+    for (int m = 1; m < month; ++m) days += days_in_month(year, m);
+    return days + day - 1;
+}
+
+/// True for nothing, "Z", or "+HH:MM" / "-HH:MM" starting at pos.
+bool is_zone_suffix(const std::string& s, size_t pos) {
+    const std::string zone = s.substr(pos);
+    if (zone.empty() || zone == "Z") return true;
+    return zone.size() == 6 && (zone[0] == '+' || zone[0] == '-') && digit_run(zone, 1) == 2 &&
+           zone[3] == ':' && digit_run(zone, 4) == 2;
+}
+
+/// Parse a timestamp "YYYY-MM-DDTHH:MM", optional ":SS", optional "." plus
+/// digits after the seconds, and an optional zone suffix, which is ignored
+/// (docs/input-formats.md), into seconds since 2000-01-01 for diffing.
+std::optional<long long> parse_iso_to_seconds(const std::string& iso) {
+    if (iso.size() < 11 || iso[4] != '-' || iso[7] != '-' || iso[10] != 'T' ||
+        digit_run(iso, 0) != 4 || digit_run(iso, 5) != 2 || digit_run(iso, 8) != 2) {
+        return std::nullopt;
+    }
+    const int year = digits_value(iso, 0, 4);
+    const int month = digits_value(iso, 5, 2);
+    const int day = digits_value(iso, 8, 2);
+    if (month < 1 || month > 12 || day < 1 || day > days_in_month(year, month)) return std::nullopt;
+
+    const size_t clock = 11;
+    const size_t hour_len = digit_run(iso, clock);
+    if (hour_len < 1 || hour_len > 2 || clock + hour_len >= iso.size() || iso[clock + hour_len] != ':' ||
+        digit_run(iso, clock + hour_len + 1) < 2) {
+        return std::nullopt;
+    }
+    const int hour = digits_value(iso, clock, hour_len);
+    const int minute = digits_value(iso, clock + hour_len + 1, 2);
+    int second = 0;
+    size_t rest = clock + hour_len + 3;
+    if (rest < iso.size() && iso[rest] == ':') {
+        if (digit_run(iso, rest + 1) < 2) return std::nullopt;
+        second = digits_value(iso, rest + 1, 2);
+        rest += 3;
+        if (rest < iso.size() && iso[rest] == '.') {
+            const size_t fraction_len = digit_run(iso, rest + 1);
+            if (fraction_len == 0) return std::nullopt;
+            rest += 1 + fraction_len;
+        }
+    }
+    if (!is_zone_suffix(iso, rest) || hour > 23 || minute > 59 || second > 59) return std::nullopt;
+
+    return days_since_epoch(year, month, day) * 86400 + hour * 3600 + minute * 60 + second;
+}
+
+/// Months from whole days, 30.44 days to the month, rounded (as Python's round()).
+long long approximate_months(long long total_days) {
+    return static_cast<long long>(std::round(static_cast<double>(total_days) / 30.44));
+}
+
+/// Durations over 6000 months (500 years) have no value: the same ceiling as sayable-age.
+constexpr long long MAX_DURATION_MONTHS = 6000;
 
 } // anonymous namespace
 
@@ -220,7 +212,7 @@ SayableDuration::SayableDuration(const DurationLocale& locale, Compactness compa
     }
 }
 
-std::optional<std::string> SayableDuration::format_duration(int seconds) const {
+std::optional<std::string> SayableDuration::format_duration(long long seconds) const {
     if (seconds < 0) return std::nullopt;
     return format_seconds(seconds);
 }
@@ -228,54 +220,59 @@ std::optional<std::string> SayableDuration::format_duration(int seconds) const {
 std::optional<std::string> SayableDuration::format_duration(
     const std::string& start, const std::string& end) const {
 
-    if (start.empty() || end.empty()) return std::nullopt;
-    const int s = parse_iso_to_seconds(start);
-    const int e = parse_iso_to_seconds(end);
-    if (s < 0 || e < 0) return std::nullopt;
-    const int diff = e - s;
-    if (diff < 0) return std::nullopt;
-    return format_seconds(diff);
+    const auto s = parse_iso_to_seconds(start);
+    const auto e = parse_iso_to_seconds(end);
+    if (!s || !e) return std::nullopt;
+    return format_seconds(std::llabs(*e - *s));
 }
 
 std::optional<std::string> SayableDuration::format_since(
     const std::string& start, const std::string& as_of) const {
 
-    if (start.empty() || as_of.empty()) return std::nullopt;
-    const int s = parse_iso_to_seconds(start);
-    const int a = parse_iso_to_seconds(as_of);
-    if (s < 0 || a < 0) return std::nullopt;
-    const int diff = a - s;
+    const auto s = parse_iso_to_seconds(start);
+    const auto a = parse_iso_to_seconds(as_of);
+    if (!s || !a) return std::nullopt;
+    const long long diff = *a - *s;
     if (diff < 0) return std::nullopt;
     if (diff == 0) return just_now_;
-    const std::string dur = format_seconds(diff);
-    return replace_first(ago_, "{0}", dur);
+    const auto dur = format_seconds(diff);
+    if (!dur) return std::nullopt;
+    return replace_first(ago_, "{0}", *dur);
 }
 
 std::optional<std::string> SayableDuration::format_until(
     const std::string& target, const std::string& as_of) const {
 
-    if (target.empty() || as_of.empty()) return std::nullopt;
-    const int t = parse_iso_to_seconds(target);
-    const int a = parse_iso_to_seconds(as_of);
-    if (t < 0 || a < 0) return std::nullopt;
-    const int diff = t - a;
+    const auto t = parse_iso_to_seconds(target);
+    const auto a = parse_iso_to_seconds(as_of);
+    if (!t || !a) return std::nullopt;
+    const long long diff = *t - *a;
     if (diff < 0) return std::nullopt;
     if (diff == 0) return just_now_;
-    const std::string dur = format_seconds(diff);
-    return replace_first(in_future_, "{0}", dur);
+    const auto dur = format_seconds(diff);
+    if (!dur) return std::nullopt;
+    return replace_first(in_future_, "{0}", *dur);
 }
 
-std::string SayableDuration::format_seconds(int total) const {
+std::optional<std::string> SayableDuration::format_seconds(long long total_seconds) const {
+    const long long whole_days = total_seconds / 86400;
+    if (whole_days >= 30 && approximate_months(whole_days) > MAX_DURATION_MONTHS) return std::nullopt;
+    return format_tiers(total_seconds);
+}
+
+std::string SayableDuration::format_tiers(long long total) const {
+    // Within the 500-year ceiling every count below fits an int.
+
     // 0 seconds
     if (total == 0) return just_now_;
 
     // 1-59 seconds
     if (total < 60) {
-        return resolve_unit(total, second_, locale_);
+        return resolve_unit(static_cast<int>(total), second_, locale_);
     }
 
-    const int total_minutes = total / 60;
-    const int remainder_seconds = total % 60;
+    const int total_minutes = static_cast<int>(total / 60);
+    const int remainder_seconds = static_cast<int>(total % 60);
 
     // 1-4 minutes: minutes + seconds
     if (total_minutes < 5) {
@@ -291,8 +288,8 @@ std::string SayableDuration::format_seconds(int total) const {
         return resolve_unit(total_minutes, minute_, locale_);
     }
 
-    const int total_hours = total / 3600;
-    const int remainder_minutes = (total % 3600) / 60;
+    const int total_hours = static_cast<int>(total / 3600);
+    const int remainder_minutes = static_cast<int>((total % 3600) / 60);
 
     // 1-5 hours: hours + minutes (with half marker)
     if (total_hours <= 5) {
@@ -311,8 +308,8 @@ std::string SayableDuration::format_seconds(int total) const {
         return resolve_unit(total_hours, hour_, locale_);
     }
 
-    const int total_days = total / 86400;
-    const int remainder_hours = (total % 86400) / 3600;
+    const int total_days = static_cast<int>(total / 86400);
+    const int remainder_hours = static_cast<int>((total % 86400) / 3600);
 
     // 1-2 days: days + hours (with half marker)
     if (total_days <= 2) {
@@ -344,7 +341,7 @@ std::string SayableDuration::format_seconds(int total) const {
     }
 
     // Approximate months (30.44 days average)
-    int total_months = static_cast<int>(std::round(static_cast<double>(total_days) / 30.44));
+    int total_months = static_cast<int>(approximate_months(total_days));
 
     // 1-11 months
     if (total_months < 12) {
@@ -369,7 +366,7 @@ static const SayableDuration& default_sd() {
     return sd;
 }
 
-std::optional<std::string> format_duration(int seconds) {
+std::optional<std::string> format_duration(long long seconds) {
     return default_sd().format_duration(seconds);
 }
 

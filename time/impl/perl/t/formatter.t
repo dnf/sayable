@@ -118,4 +118,30 @@ is(SayableTime->format_time('25:00'), undef, '1.4 invalid hour');
   is($fmt->format_time('00:00'), '0.00', '8.2 fi midnight dot');
 }
 
+# ================================================================
+# Sections 9-10: minutes in short/compact, input validation
+# ================================================================
+# 9.1
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'), compactness => 'short')->format_time('18:01'), '6:01 PM', '9.1 digital modes keep the exact minute');
+# 9.2
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'), compactness => 'compact')->format_time('19:05'), '7:05p', '9.2 digital modes keep the exact minute');
+# 10.1
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('9:30'), 'half past nine', '10.1 one-digit hour');
+# 10.2
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('09:30'), 'half past nine', '10.2 two-digit hour');
+# 10.3
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time(' 9:30'), undef, '10.3 leading whitespace');
+# 10.4
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('9:30 '), undef, '10.4 trailing whitespace');
+# 10.5
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('9:5'), undef, '10.5 minutes need two digits');
+# 10.6
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('24:00'), undef, '10.6 hour out of range');
+# 10.7
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('14:15:30'), 'a quarter past two', '10.7 seconds are allowed and ignored');
+# 10.8
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('2025-01-15T14:15:00Z'), 'a quarter past two', '10.8 ISO datetime with zone suffix (ignored)');
+# 10.9
+is(SayableTime::Formatter->new(SayableTime::Locales->get('en'))->format_time('2025-02-30T14:15:00'), undef, '10.9 ISO datetime with an impossible date');
+
 done_testing();

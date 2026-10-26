@@ -29,15 +29,17 @@
 (defn- days-between [y1 m1 d1 y2 m2 d2]
   (- (to-jdn y2 m2 d2) (to-jdn y1 m1 d1)))
 
+(def- date-grammar
+  (peg/compile
+    '(* (capture (4 :d)) "-" (capture (2 :d)) "-" (capture (2 :d)) -1)))
+
+(defn- real-date? [y m d]
+  (and (<= 1 m 12) (<= 1 d (days-in-month y m))))
+
 (defn- parse-date [s]
-  (when (and s (not= s ""))
-    (if-let [parts (peg/match '(* (capture (some :d)) "-"
-                                  (capture (some :d)) "-"
-                                  (capture (some :d)) -1) s)]
-      [(scan-number (in parts 0))
-       (scan-number (in parts 1))
-       (scan-number (in parts 2))]
-      nil)))
+  (when-let [parts (and (string? s) (peg/match date-grammar s))
+             ymd (map scan-number parts)]
+    (when (real-date? ;ymd) ymd)))
 
 (defn- parse-age [date-of-birth as-of]
   (when (and date-of-birth (not= date-of-birth ""))
@@ -45,7 +47,7 @@
     (unless dob (break nil))
     (def [dob-y dob-m dob-d] dob)
     (def ref
-      (if as-of
+      (if (and as-of (not= as-of ""))
         (parse-date as-of)
         (let [t (os/date (os/time) true)]
           [(+ (t :year) 1900) (+ (t :month) 1) (+ (t :month-day) 1)])))
@@ -104,18 +106,18 @@
     (string-replace-all half "{0}" result)
     result))
 
-(defn- resolve-stage [label gender]
-  (if (string? label)
-    label
+(defn- resolve-stage [stage-label gender]
+  (if (string? stage-label)
+    stage-label
     (if (= gender "f")
-      (get label :f)
-      (get label :m))))
+      (get stage-label :f)
+      (get stage-label :m))))
 
-(defn- pick [override attr default]
+(defn- pick [override attr fallback]
   (if override
     (let [val (get override attr)]
-      (if (not= val nil) val default))
-    default))
+      (if (not= val nil) val fallback))
+    fallback))
 
 (defn make-formatter [loc &opt compactness]
   (default compactness "normal")

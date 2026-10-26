@@ -1,12 +1,20 @@
 import { describe, expect, it } from 'vitest';
 import { SayableDate, formatDate, formatRelative } from '../src/index.js';
 import { ar } from '../src/locales/ar.js';
+import { cs } from '../src/locales/cs.js';
 import { de } from '../src/locales/de.js';
 import { en } from '../src/locales/en.js';
 import { es } from '../src/locales/es.js';
+import { fi } from '../src/locales/fi.js';
 import { fr } from '../src/locales/fr.js';
 import { ja } from '../src/locales/ja.js';
+import { kek } from '../src/locales/kek.js';
+import { kw } from '../src/locales/kw.js';
+import { mam } from '../src/locales/mam.js';
 import { ru } from '../src/locales/ru.js';
+import { sk } from '../src/locales/sk.js';
+import { tg } from '../src/locales/tg.js';
+import { uk } from '../src/locales/uk.js';
 
 // ── Section 1: Null / edge cases ────────────────────────────────────
 
@@ -190,4 +198,67 @@ describe('Locale — Spanish', () => {
   it('format_date', () => expect(sd.formatDate('2025-03-15')).toBe('15 de marzo'));
   // 12.2
   it('day after tomorrow', () => expect(sd.formatRelative('2025-03-17', '2025-03-15')).toBe('pasado mañana'));
+});
+
+// ── Section 13: format_date_with_year ───────────────────────────────
+
+describe('format_date_with_year', () => {
+  // 13.1
+  it('normal', () => expect(new SayableDate(en).formatDateWithYear('2018-02-04')).toBe('February 4th, 2018'));
+  // 13.2
+  it('short', () => expect(new SayableDate(en, 'short').formatDateWithYear('2025-03-15')).toBe('Mar 15, 2025'));
+  // 13.3
+  it('compact', () => expect(new SayableDate(en, 'compact').formatDateWithYear('1997-01-21')).toBe('1/21/97'));
+  // 13.4
+  it('two-digit year keeps its leading zero', () =>
+    expect(new SayableDate(tg, 'compact').formatDateWithYear('2007-05-20')).toBe('20/5/07'));
+  // 13.5
+  it('Finnish short', () => expect(new SayableDate(fi, 'short').formatDateWithYear('1996-06-21')).toBe('21. kesäkuuta 1996'));
+});
+
+// ── Section 14: Short month names (locales that keep the full genitive) ──
+
+describe('Short month names (full genitive)', () => {
+  // 14.1
+  it('Slovak', () => expect(new SayableDate(sk, 'short').formatDate('2031-02-15')).toBe('15. februára'));
+  // 14.2
+  it('Czech', () => expect(new SayableDate(cs, 'short').formatDate('2025-12-10')).toBe('10. prosince'));
+  // 14.3
+  it('Ukrainian', () => expect(new SayableDate(uk, 'short').formatDate('2025-11-05')).toBe('5 листопада'));
+  // 14.4
+  it('Finnish relative', () =>
+    expect(new SayableDate(fi, 'short').formatRelative('1998-08-08', '1998-08-15')).toBe('8. elokuuta'));
+});
+
+// ── Section 15: format_relative — short phrases ─────────────────────
+
+describe('format_relative — short phrases', () => {
+  // 15.1
+  it('Cornish day after tomorrow', () =>
+    expect(new SayableDate(kw, 'short').formatRelative('2035-12-04', '2035-12-02')).toBe('an Mth ma'));
+  // 15.2
+  it('Mam day before yesterday', () =>
+    expect(new SayableDate(mam, 'short').formatRelative('2000-01-23', '2000-01-25')).toBe("Dom nchi'j"));
+  // 15.3
+  it("Q'eqchi' day after tomorrow", () =>
+    expect(new SayableDate(kek, 'short').formatRelative('2014-10-24', '2014-10-22')).toBe("a'in Vie"));
+});
+
+// ── Section 16: Input validation ────────────────────────────────────
+
+describe('Input validation', () => {
+  // 16.1
+  it('February 30 does not exist', () => expect(formatDate('2025-02-30')).toBeNull());
+  // 16.2
+  it('month 13', () => expect(formatDate('2025-13-01')).toBeNull());
+  // 16.3
+  it('unpadded month and day', () => expect(formatDate('2025-6-1')).toBeNull());
+  // 16.4
+  it('surrounding whitespace', () => expect(formatDate(' 2025-06-01')).toBeNull());
+  // 16.5
+  it('ISO datetime uses only the date part', () => expect(formatDate('2025-06-01T10:00:00')).toBe('June 1st'));
+  // 16.6
+  it('February 29 in a non-leap year', () => expect(new SayableDate(en).formatDateWithYear('2023-02-29')).toBeNull());
+  // 16.7
+  it('invalid asOf', () => expect(formatRelative('2025-03-16', '2025-04-31')).toBeNull());
 });

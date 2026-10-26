@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ko.json
 
-_locale_ko() {
+_sayabletime_locale_ko() {
     _clock_hours=('열두' '한' '두' '세' '네' '다섯' '여섯' '일곱' '여덟' '아홉' '열' '열한')
     _clock_midnight='자정'
     _clock_noon='정오'

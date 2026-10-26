@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/gu.json
 
-_locale_gu() {
+_sayabletime_locale_gu() {
     _clock_hours=('બાર' 'એક' 'બે' 'ત્રણ' 'ચાર' 'પાંચ' 'છ' 'સાત' 'આઠ' 'નવ' 'દસ' 'અગિયાર')
     _clock_midnight='મધ્યરાત્રિ'
     _clock_noon='બપોર'

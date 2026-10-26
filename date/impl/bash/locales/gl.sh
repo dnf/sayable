@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/gl.json
 
-_locale_gl() {
+_sayabledate_locale_gl() {
     _months=('xaneiro' 'febreiro' 'marzo' 'abril' 'maio' 'xuño' 'xullo' 'agosto' 'setembro' 'outubro' 'novembro' 'decembro')
     _weekdays=('domingo' 'luns' 'martes' 'mércores' 'xoves' 'venres' 'sábado')
     _day_format='{n}'

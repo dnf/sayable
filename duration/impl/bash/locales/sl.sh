@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/sl.json
 
-_plural_sl() {
+_sayableduration_plural_sl() {
     local n=$1
     local mod100=$(( n % 100 ))
     if [ "${mod100}" -eq 1 ]; then echo "one"; return; fi
@@ -18,7 +18,7 @@ _plural_sl() {
     echo "other"
 }
 
-_locale_sl() {
+_sayableduration_locale_sl() {
     _unit_second_one='{n} sekunda'
     _unit_second_two='{n} sekundi'
     _unit_second_few='{n} sekunde'
@@ -72,5 +72,5 @@ _locale_sl() {
     _compact_delimiter=''
     _compact_ago='pred {0}'
     _compact_in_future='čez {0}'
-    _plural_func=_plural_sl
+    _plural_func=_sayableduration_plural_sl
 }

@@ -39,46 +39,101 @@ begin
     Result := Copy(ASource, 1, P - 1) + AReplace + Copy(ASource, P + Length(ASearch), MaxInt);
 end;
 
-function ParseTime(const AInput: string; out AHour, AMinute: Integer): Boolean;
+function DaysInMonth(AYear, AMonth: Integer): Integer;
+begin
+  case AMonth of
+    2: begin
+      if ((AYear mod 4 = 0) and (AYear mod 100 <> 0)) or (AYear mod 400 = 0) then
+        Result := 29
+      else
+        Result := 28;
+    end;
+    4, 6, 9, 11: Result := 30;
+  else
+    Result := 31;
+  end;
+end;
+
+function IsDigitsAt(const S: string; AFirst, ACount: Integer): Boolean;
 var
-  T: string;
-  P, ColonPos: Integer;
-  DotPos: Integer;
+  I: Integer;
 begin
   Result := False;
-  if AInput = '' then exit;
-
-  T := AInput;
-  P := Pos('T', T);
-  if P > 0 then
-    T := Copy(T, P + 1, MaxInt);
-  P := Pos('+', T);
-  if P > 0 then
-    T := Copy(T, 1, P - 1);
-  P := Pos('Z', T);
-  if P > 0 then
-    T := Copy(T, 1, P - 1);
-
-  ColonPos := Pos(':', T);
-  if ColonPos = 0 then exit;
-
-  try
-    AHour := StrToInt(Copy(T, 1, ColonPos - 1));
-    { Handle seconds part after minute }
-    T := Copy(T, ColonPos + 1, MaxInt);
-    P := Pos(':', T);
-    if P > 0 then
-      T := Copy(T, 1, P - 1);
-    DotPos := Pos('.', T);
-    if DotPos > 0 then
-      T := Copy(T, 1, DotPos - 1);
-    AMinute := StrToInt(T);
-  except
-    exit;
-  end;
-
-  if (AHour < 0) or (AHour > 23) or (AMinute < 0) or (AMinute > 59) then exit;
+  if (AFirst < 1) or (AFirst + ACount - 1 > Length(S)) then exit;
+  for I := AFirst to AFirst + ACount - 1 do
+    if not (S[I] in ['0'..'9']) then exit;
   Result := True;
+end;
+
+function DigitsValue(const S: string; AFirst, ACount: Integer): Integer;
+var
+  I: Integer;
+begin
+  Result := 0;
+  for I := AFirst to AFirst + ACount - 1 do
+    Result := Result * 10 + Ord(S[I]) - Ord('0');
+end;
+
+{ YYYY-MM-DD naming a real calendar day. }
+function IsRealDate(const S: string): Boolean;
+var
+  Y, M, D: Integer;
+begin
+  Result := False;
+  if (Length(S) <> 10) or (S[5] <> '-') or (S[8] <> '-') then exit;
+  if not (IsDigitsAt(S, 1, 4) and IsDigitsAt(S, 6, 2) and IsDigitsAt(S, 9, 2)) then exit;
+  Y := DigitsValue(S, 1, 4);
+  M := DigitsValue(S, 6, 2);
+  D := DigitsValue(S, 9, 2);
+  Result := (M >= 1) and (M <= 12) and (D >= 1) and (D <= DaysInMonth(Y, M));
+end;
+
+{ Z or +HH:MM / -HH:MM (validated, never applied). }
+function IsZoneSuffix(const S: string): Boolean;
+begin
+  Result := (S = 'Z') or ((Length(S) = 6) and (S[1] in ['+', '-']) and IsDigitsAt(S, 2, 2)
+    and (S[4] = ':') and IsDigitsAt(S, 5, 2));
+end;
+
+{ H:MM or HH:MM, then optional :SS with optional .fraction, then an
+  optional zone suffix. }
+function ParseClock(const S: string; out AHour, AMinute: Integer): Boolean;
+var
+  P, HourDigits, Second: Integer;
+begin
+  Result := False;
+  AHour := 0; AMinute := 0; Second := 0;
+  HourDigits := 0;
+  while (HourDigits < 2) and IsDigitsAt(S, HourDigits + 1, 1) do Inc(HourDigits);
+  P := HourDigits + 1;
+  if (HourDigits = 0) or (P > Length(S)) or (S[P] <> ':') or not IsDigitsAt(S, P + 1, 2) then exit;
+  AHour := DigitsValue(S, 1, HourDigits);
+  AMinute := DigitsValue(S, P + 1, 2);
+  P := P + 3;
+  if (P <= Length(S)) and (S[P] = ':') and IsDigitsAt(S, P + 1, 2) then begin
+    Second := DigitsValue(S, P + 1, 2);
+    P := P + 3;
+    if (P <= Length(S)) and (S[P] = '.') and IsDigitsAt(S, P + 1, 1) then begin
+      Inc(P);
+      while IsDigitsAt(S, P, 1) do Inc(P);
+    end;
+  end;
+  if (P <= Length(S)) and not IsZoneSuffix(Copy(S, P, MaxInt)) then exit;
+  Result := (AHour <= 23) and (AMinute <= 59) and (Second <= 59);
+end;
+
+{ A clock time alone, or after the T of an ISO datetime whose date part
+  is a real calendar day. }
+function ParseTime(const AInput: string; out AHour, AMinute: Integer): Boolean;
+var
+  P: Integer;
+begin
+  AHour := 0; AMinute := 0;
+  P := Pos('T', AInput);
+  if P = 0 then
+    Result := ParseClock(AInput, AHour, AMinute)
+  else
+    Result := IsRealDate(Copy(AInput, 1, P - 1)) and ParseClock(Copy(AInput, P + 1, MaxInt), AHour, AMinute);
 end;
 
 function RoundTo5(AMinute: Integer): Integer;

@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/kn.json
 
-_plural_kn() {
+_sayableage_plural_kn() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_kn() {
+_sayableage_locale_kn() {
     _unit_day_one='{n} ದಿನ'
     _unit_day_other='{n} ದಿನಗಳು'
     _unit_week_one='{n} ವಾರ'
@@ -43,5 +43,5 @@ _locale_kn() {
     _compact_unit_year='{n} ವ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_kn
+    _plural_func=_sayableage_plural_kn
 }

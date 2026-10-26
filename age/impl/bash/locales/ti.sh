@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ti.json
 
-_plural_ti() {
+_sayableage_plural_ti() {
     local n=$1
     if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ti() {
+_sayableage_locale_ti() {
     _unit_day_one='{n} መዓልቲ'
     _unit_day_other='{n} መዓልትታት'
     _unit_week_one='{n} ሰሙን'
@@ -46,5 +46,5 @@ _locale_ti() {
     _compact_unit_year_other='{n} ዓ'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ti
+    _plural_func=_sayableage_plural_ti
 }

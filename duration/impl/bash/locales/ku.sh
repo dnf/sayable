@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/ku.json
 
-_plural_ku() {
+_sayableduration_plural_ku() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_ku() {
+_sayableduration_locale_ku() {
     _unit_second_one='{n} çirke'
     _unit_second_other='{n} çirke'
     _unit_minute_one='{n} deqîqe'
@@ -55,5 +55,5 @@ _locale_ku() {
     _compact_delimiter=''
     _compact_ago='berî {0}'
     _compact_in_future='di {0} de'
-    _plural_func=_plural_ku
+    _plural_func=_sayableduration_plural_ku
 }

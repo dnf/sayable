@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/pis.json "
 
-"Locale: pis"
+"Locale: pis"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 pis

@@ -65,7 +65,12 @@ def emit_all(all_locales: list[dict]) -> str:
         lines.append("    // ================================================================")
 
         clock = data["clock"]
-        lines.append(f"    public val {uc}: TimeLocale = TimeLocale(")
+        # One builder function per locale keeps Locales.<clinit> under the
+        # JVM's 64KB method size limit.
+        builder = f"build{code.capitalize()}"
+        lines.append(f"    public val {uc}: TimeLocale = {builder}()")
+        lines.append("")
+        lines.append(f"    private fun {builder}(): TimeLocale = TimeLocale(")
         lines.append(f"        code = {_quote(code)},")
 
         # Clock config

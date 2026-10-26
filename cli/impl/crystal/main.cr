@@ -72,11 +72,11 @@ def parse_args(argv : Array(String)) : Tuple(String?, Array(String), Hash(String
   command = argv[0]
   positionals = [] of String
   options = {
-    "locale"      => "en" .as(String | Bool | Nil),
-    "as_of"       => nil   .as(String | Bool | Nil),
-    "compactness" => "normal" .as(String | Bool | Nil),
-    "gender"      => nil   .as(String | Bool | Nil),
-    "with_year"   => false .as(String | Bool | Nil),
+    "locale"      => "en".as(String | Bool | Nil),
+    "as_of"       => nil.as(String | Bool | Nil),
+    "compactness" => "normal".as(String | Bool | Nil),
+    "gender"      => nil.as(String | Bool | Nil),
+    "with_year"   => false.as(String | Bool | Nil),
   }
 
   i = 1
@@ -221,6 +221,12 @@ def cmd_time(positionals : Array(String), options : Hash(String, String | Bool |
   formatter.format_time(time_val)
 end
 
+# Digit strings beyond Int64 are far past the 500-year ceiling, so they
+# saturate instead of overflowing.
+def parse_seconds(value : String) : Int64
+  value.to_i64? || (value.starts_with?('-') ? Int64::MIN : Int64::MAX)
+end
+
 def cmd_duration(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("duration requires a value argument") if positionals.empty?
   value = nullify(positionals[0])
@@ -231,10 +237,11 @@ def cmd_duration(positionals : Array(String), options : Hash(String, String | Bo
 
   formatter = SayableDuration::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
 
+  digits = value.try(&.lstrip('-'))
   if value.nil?
-    formatter.format_duration(nil.as(Int32?))
-  elsif value.lstrip('-').chars.all?(&.ascii_number?)
-    formatter.format_duration(value.to_i)
+    formatter.format_duration(nil.as(Int64?))
+  elsif digits && !digits.empty? && digits.chars.all?(&.ascii_number?)
+    formatter.format_duration(parse_seconds(value))
   else
     cli_error("duration with timestamps requires start and end arguments") if positionals.size < 2
     end_val = nullify(positionals[1])
@@ -277,7 +284,7 @@ end
 def cmd_locales : String
   codes = [] of String
   # Use age locales as the canonical list
-  %w[af ak am ar az bci be bem bg bi bm bn br bs ca ceb cs cy da de din dje dyu ee el en es et eu fa fan ff fi fil fj fon fr ga gd gl gn gu gv ha he hi hr ht hu hy id ig is it ja jv ka kbp kk km kn ko kpe ktu ku kw ky lg ln lo lt lv men mfe mg mi mk ml mn mnk mos mr ms mt my nb nd ne ng nl nso nus ny om or pa pis pl pov ps pt qu ro ru rw sar sd sg shi si sk sl sn snk so sq sr ss st su suk sv sw ta te tem tg th ti tig tk tn tpi tr ts tzm uk umb ur uz vi vmw wo xh yo yue zdj zh zu].each do |code|
+  %w[af ak am ar ay az bci be bem bg bi bm bn br bs ca cak ceb cs cy da de din dje dv dyu dz ee el en es et eu fa fan ff fi fil fj fon fr ga gd gl gn gu gv ha he hi hmn hr ht hu hy id ig is it ja jv ka kbp kek ki kk kl km kn ko kpe kri ktu ku kw ky lb lg ln lo lt luo lv mam men mfe mg mi mk ml mn mnk mos mr ms mt my nb nd ne ng nl nr nso nus ny om or pa pis pl pov ps pt qu quc ro ru rw sar sd sg shi shn si sk sl sn snk so sq sr ss st su suk sv sw ta te tem tet tg th ti tig tk tn tpi tr ts tum tzm uk umb ur uz ve vi vmw wo xh yao yo yue zdj zh zu].each do |code|
     locale = SayableAge::Locales.get(code)
     codes << code if locale
   end

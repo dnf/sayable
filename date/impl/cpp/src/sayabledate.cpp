@@ -9,8 +9,18 @@ namespace sayabledate {
 
 namespace {
 
-/// Parse "YYYY-MM-DD" or ISO datetime to (year, month, day).
-/// Returns false on failure.
+/// Days in a Gregorian month (leap years by the 4/100/400 rule).
+int days_in_month(int year, int month) {
+    if (month == 2) {
+        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
+    }
+    if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
+    return 31;
+}
+
+/// Parse "YYYY-MM-DD", optionally followed by "T" and anything else, to
+/// (year, month, day). The date must name a real calendar day
+/// (docs/input-formats.md). Returns false on failure.
 bool parse_date(const std::string& s, int& y, int& m, int& d) {
     if (s.empty()) return false;
 
@@ -44,8 +54,7 @@ bool parse_date(const std::string& s, int& y, int& m, int& d) {
         d = d * 10 + (c - '0');
     }
 
-    if (m < 1 || m > 12 || d < 1 || d > 31) return false;
-    return true;
+    return m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m);
 }
 
 /// Julian Day Number for date arithmetic.

@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Canonical test cases for sayable-time. This is the single source of truth — every test case listed here must be implemented in every language.",
-    "totalTests": 26,
+    "totalTests": 37,
     "notes": [
       "All test cases use explicit inputs for determinism.",
       "When a single test covers multiple canonical IDs, list them with commas."
@@ -87,6 +87,29 @@
       "tests": [
         {"id": "8.1", "function": "format_time", "input": {"time": "14:15"}, "expected": "14.15", "notes": "dot separator per CLDR Finnish time format"},
         {"id": "8.2", "function": "format_time", "input": {"time": "00:00"}, "expected": "0.00", "notes": "midnight in 24h dot format"}
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Minutes in short and compact modes",
+      "tests": [
+        {"id": "9.1", "function": "format_time", "input": {"time": "18:01"}, "compactness": "short", "expected": "6:01 PM", "notes": "digital modes keep the exact minute"},
+        {"id": "9.2", "function": "format_time", "input": {"time": "19:05"}, "compactness": "compact", "expected": "7:05p", "notes": "digital modes keep the exact minute"}
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Input validation",
+      "tests": [
+        {"id": "10.1", "function": "format_time", "input": {"time": "9:30"}, "expected": "half past nine", "notes": "one-digit hour"},
+        {"id": "10.2", "function": "format_time", "input": {"time": "09:30"}, "expected": "half past nine", "notes": "two-digit hour"},
+        {"id": "10.3", "function": "format_time", "input": {"time": " 9:30"}, "expected": null, "notes": "leading whitespace"},
+        {"id": "10.4", "function": "format_time", "input": {"time": "9:30 "}, "expected": null, "notes": "trailing whitespace"},
+        {"id": "10.5", "function": "format_time", "input": {"time": "9:5"}, "expected": null, "notes": "minutes need two digits"},
+        {"id": "10.6", "function": "format_time", "input": {"time": "24:00"}, "expected": null, "notes": "hour out of range"},
+        {"id": "10.7", "function": "format_time", "input": {"time": "14:15:30"}, "expected": "a quarter past two", "notes": "seconds are allowed and ignored"},
+        {"id": "10.8", "function": "format_time", "input": {"time": "2025-01-15T14:15:00Z"}, "expected": "a quarter past two", "notes": "ISO datetime with zone suffix (ignored)"},
+        {"id": "10.9", "function": "format_time", "input": {"time": "2025-02-30T14:15:00"}, "expected": null, "notes": "ISO datetime with an impossible date"}
       ]
     }
   ]

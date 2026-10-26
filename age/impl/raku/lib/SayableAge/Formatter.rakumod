@@ -145,25 +145,11 @@ method format-stage(Str $date-of-birth?, Str $as-of?, Str :$gender = '' --> Str)
 method !parse-age(Str $date-of-birth?, Str $as-of?) {
     return Nil unless $date-of-birth.defined && $date-of-birth ne '';
 
-    my @dob-parts = $date-of-birth.split('-');
-    my $dob-y = @dob-parts[0].Int;
-    my $dob-m = @dob-parts[1].Int;
-    my $dob-d = @dob-parts[2].Int;
-
-    my Int $ref-y;
-    my Int $ref-m;
-    my Int $ref-d;
-    if $as-of.defined && $as-of ne '' {
-        my @ref-parts = $as-of.split('-');
-        $ref-y = @ref-parts[0].Int;
-        $ref-m = @ref-parts[1].Int;
-        $ref-d = @ref-parts[2].Int;
-    } else {
-        my $now = Date.today;
-        $ref-y = $now.year;
-        $ref-m = $now.month;
-        $ref-d = $now.day;
-    }
+    my $dob = parse-date($date-of-birth);
+    my $ref = ($as-of.defined && $as-of ne '') ?? parse-date($as-of) !! today-parts();
+    return Nil unless $dob.defined && $ref.defined;
+    my ($dob-y, $dob-m, $dob-d) = @$dob;
+    my ($ref-y, $ref-m, $ref-d) = @$ref;
 
     my $dob-date = Date.new($dob-y, $dob-m, $dob-d);
     my $ref-date = Date.new($ref-y, $ref-m, $ref-d);
@@ -178,6 +164,19 @@ method !parse-age(Str $date-of-birth?, Str $as-of?) {
     return Nil if $months > MAX-AGE-MONTHS;
 
     return [$months, $diff-days];
+}
+
+#| Parse exactly YYYY-MM-DD naming a real calendar day into [y, m, d], else Nil.
+sub parse-date(Str $s) {
+    return Nil unless $s ~~ /^ (<[0..9]> ** 4) '-' (<[0..9]> ** 2) '-' (<[0..9]> ** 2) $/;
+    my ($y, $m, $d) = $0.Int, $1.Int, $2.Int;
+    return Nil unless 1 <= $m <= 12 && 1 <= $d <= days-in-month($y, $m);
+    return [$y, $m, $d];
+}
+
+sub today-parts() {
+    my $now = Date.today;
+    return [$now.year, $now.month, $now.day];
 }
 
 sub stage-key(Int $months --> Str) {

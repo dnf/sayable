@@ -25,31 +25,27 @@ struct AgeComponents {
     diff_days: i32,
 }
 
-/// Parses "YYYY-MM-DD" into (year, month, day). Returns None on failure.
+/// Parses exactly "YYYY-MM-DD" naming a real calendar day into (year, month, day).
+/// Returns None for anything else (see docs/input-formats.md).
 fn parse_date_parts(s: &str) -> Option<(i32, i32, i32)> {
     let bytes = s.as_bytes();
-    if bytes.len() < 10 || bytes[4] != b'-' || bytes[7] != b'-' {
+    if bytes.len() != 10 || bytes[4] != b'-' || bytes[7] != b'-' {
         return None;
     }
-    let y = atoi(&s[0..4]);
-    let m = atoi(&s[5..7]);
-    let d = atoi(&s[8..10]);
-    if y == 0 && m == 0 && d == 0 {
+    let y = parse_digits(&bytes[0..4])?;
+    let m = parse_digits(&bytes[5..7])?;
+    let d = parse_digits(&bytes[8..10])?;
+    if !(1..=12).contains(&m) || d < 1 || d > days_in_month(y, m) {
         return None;
     }
     Some((y, m, d))
 }
 
-/// Converts a string of digits to an i32. Returns 0 on failure.
-fn atoi(s: &str) -> i32 {
-    let mut n: i32 = 0;
-    for c in s.chars() {
-        if !c.is_ascii_digit() {
-            return 0;
-        }
-        n = n * 10 + (c as i32 - '0' as i32);
-    }
-    n
+/// Converts a run of ASCII digits to an i32. Returns None if any byte isn't a digit.
+fn parse_digits(digits: &[u8]) -> Option<i32> {
+    digits.iter().try_fold(0, |n, &c| {
+        c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0'))
+    })
 }
 
 /// Returns true if the given year is a leap year.
@@ -87,7 +83,7 @@ fn days_between(y1: i32, m1: i32, d1: i32, y2: i32, m2: i32, d2: i32) -> i32 {
 }
 
 /// Returns today's date as (year, month, day) using `SystemTime`.
-/// Uses Howard Hinnant's civil_from_days algorithm
+/// Uses Howard Hinnant's `civil_from_days` algorithm
 /// (see <http://howardhinnant.github.io/date_algorithms.html>).
 fn today() -> (i32, i32, i32) {
     if let Some(date) = *NOW_OVERRIDE.lock().unwrap() {

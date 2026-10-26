@@ -9,6 +9,13 @@ final class SayableDuration
 {
     public const VERSION = '0.5.0';
 
+    /** 500 years, the same ceiling as sayable-age. */
+    public const MAX_DURATION_MONTHS = 6000;
+
+    /** YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored). */
+    private const TIMESTAMP = '/\A([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})'
+        . '(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?\z/';
+
     private readonly DurationLocale $locale;
     /** @var array<string, string>|string */
     private readonly string|array $second;
@@ -92,7 +99,8 @@ final class SayableDuration
         if ($diff === 0) {
             return $this->justNow;
         }
-        return \str_replace('{0}', $this->formatDurationInternal($diff), $this->ago);
+        $duration = $this->formatDurationInternal($diff);
+        return $duration === null ? null : \str_replace('{0}', $duration, $this->ago);
     }
 
     public function formatUntil(?string $target, ?string $asOf): ?string
@@ -112,10 +120,11 @@ final class SayableDuration
         if ($diff === 0) {
             return $this->justNow;
         }
-        return \str_replace('{0}', $this->formatDurationInternal($diff), $this->inFuture);
+        $duration = $this->formatDurationInternal($diff);
+        return $duration === null ? null : \str_replace('{0}', $duration, $this->inFuture);
     }
 
-    private function formatDurationInternal(int $total): string
+    private function formatDurationInternal(int $total): ?string
     {
         if ($total === 0) {
             return $this->justNow;
@@ -197,6 +206,9 @@ final class SayableDuration
 
         // Approximate months (30.44 days average)
         $totalMonths = (int) \round($totalDays / 30.44);
+        if ($totalMonths > self::MAX_DURATION_MONTHS) {
+            return null;
+        }
 
         // 1-11 months
         if ($totalMonths < 12) {
@@ -218,76 +230,24 @@ final class SayableDuration
 
     private static function parseIsoToSeconds(string $iso): ?int
     {
-        if ($iso === '') {
+        if (\preg_match(self::TIMESTAMP, $iso, $m) !== 1) {
             return null;
         }
-
-        $tIdx = \strpos($iso, 'T');
-        if ($tIdx === false) {
+        $year = (int) $m[1];
+        $month = (int) $m[2];
+        $day = (int) $m[3];
+        $hour = (int) $m[4];
+        $minute = (int) $m[5];
+        $second = (int) ($m[6] ?? 0);
+        if ($month < 1 || $month > 12 || $day < 1 || $day > self::daysInMonth($year, $month)) {
             return null;
         }
-
-        $datePart = \substr($iso, 0, $tIdx);
-        $timePart = \substr($iso, $tIdx + 1);
-
-        $dp = \explode('-', $datePart);
-        if (\count($dp) < 3) {
+        if ($hour > 23 || $minute > 59 || $second > 59) {
             return null;
-        }
-
-        $year = self::safeAtoi($dp[0]);
-        $month = self::safeAtoi($dp[1]);
-        $day = self::safeAtoi($dp[2]);
-        if ($year === null || $month === null || $day === null) {
-            return null;
-        }
-
-        $plusIdx = \strpos($timePart, '+');
-        if ($plusIdx !== false) {
-            $timePart = \substr($timePart, 0, $plusIdx);
-        }
-        $zIdx = \strpos($timePart, 'Z');
-        if ($zIdx !== false) {
-            $timePart = \substr($timePart, 0, $zIdx);
-        }
-
-        $tp = \explode(':', $timePart);
-        $hour = self::safeAtoi($tp[0]);
-        if ($hour === null) {
-            return null;
-        }
-        $minute = \count($tp) > 1 ? self::safeAtoi($tp[1]) : 0;
-        if ($minute === null) {
-            return null;
-        }
-        if (\count($tp) > 2) {
-            $secParts = \explode('.', $tp[2]);
-            $second = self::safeAtoi($secParts[0]);
-            if ($second === null) {
-                return null;
-            }
-        } else {
-            $second = 0;
         }
 
         $days = self::daysSinceEpoch($year, $month, $day);
         return $days * 86400 + $hour * 3600 + $minute * 60 + $second;
-    }
-
-    private static function safeAtoi(string $s): ?int
-    {
-        if ($s === '') {
-            return null;
-        }
-        $n = 0;
-        for ($i = 0, $len = \strlen($s); $i < $len; $i++) {
-            $c = \ord($s[$i]);
-            if ($c < 48 || $c > 57) {
-                return null;
-            }
-            $n = $n * 10 + ($c - 48);
-        }
-        return $n;
     }
 
     private static function isLeapYear(int $year): bool

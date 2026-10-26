@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/sn.json
 
-_locale_sn() {
+_sayabledate_locale_sn() {
     _months=('Ndira' 'Kukadzi' 'Kurume' 'Kubvumbi' 'Chivabvu' 'Chikumi' 'Chikunguru' 'Nyamavhuvhu' 'Gunyana' 'Gumiguru' 'Mbudzi' 'Zvita')
     _weekdays=('Svondo' 'Muvhuro' 'Chipiri' 'Chitatu' 'China' 'Chishanu' 'Mugovera')
     _day_format='{n}'

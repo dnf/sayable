@@ -9,26 +9,48 @@
 
 ;; ---- Time parsing ----
 
+;; A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone
+;; suffix, which is ignored), alone or after the T of an ISO datetime.
+(define clock-pattern
+  #px"^([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:[.][0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$")
+(define date-pattern #px"^([0-9]{4})-([0-9]{2})-([0-9]{2})$")
+
+(define (leap-year? y)
+  (or (and (zero? (remainder y 4)) (not (zero? (remainder y 100))))
+      (zero? (remainder y 400))))
+
+(define (days-in-month y m)
+  (cond
+    [(= m 2) (if (leap-year? y) 29 28)]
+    [(memv m '(4 6 9 11)) 30]
+    [else 31]))
+
+(define (real-date? date-part)
+  (match (regexp-match date-pattern date-part)
+    [(list _ y m d)
+     (let ([year (string->number y)] [month (string->number m)] [day (string->number d)])
+       (and (<= 1 month 12) (<= 1 day (days-in-month year month))))]
+    [_ #f]))
+
+(define (clock-part input-str)
+  "The clock time of input-str, or #f when an ISO date part is not a real date."
+  (match (regexp-match-positions #rx"T" input-str)
+    [(list (cons t-start t-end))
+     (and (real-date? (substring input-str 0 t-start))
+          (substring input-str t-end))]
+    [_ input-str]))
+
 (define (parse-time input-str)
-  "Parse HH:MM or ISO datetime to (values hour minute). Returns #f on failure."
-  (if (or (not input-str) (not (string? input-str)) (equal? input-str ""))
-      #f
-      (with-handlers ([exn:fail? (lambda (_) #f)])
-        (let* ([t (if (string-contains? input-str "T")
-                      (cadr (string-split input-str "T"))
-                      input-str)]
-               [t (car (string-split t "+"))]
-               [t (car (string-split t "Z"))]
-               [parts (string-split t ":")]
-               [_ (when (< (length parts) 2) (error "need at least H:M"))]
-               [hour (string->number (list-ref parts 0))]
-               [minute-str (car (string-split (list-ref parts 1) "."))]
-               [minute (string->number minute-str)])
-          (if (and hour minute
-                   (>= hour 0) (<= hour 23)
-                   (>= minute 0) (<= minute 59))
-              (list hour minute)
-              #f)))))
+  "Parse a clock time or ISO datetime to (list hour minute). Returns #f on failure."
+  (define clock (and (string? input-str) (clock-part input-str)))
+  (match (and clock (regexp-match clock-pattern clock))
+    [(list _ h m sec)
+     (let ([hour (string->number h)]
+           [minute (string->number m)]
+           [second (if sec (string->number sec) 0)])
+       (and (<= hour 23) (<= minute 59) (<= second 59)
+            (list hour minute)))]
+    [_ #f]))
 
 ;; ---- Round to nearest 5 minutes ----
 

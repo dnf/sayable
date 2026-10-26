@@ -165,16 +165,25 @@ public struct SayableDateFormatter: Sendable {
         return result
     }
 
+    /// YYYY-MM-DD naming a real calendar day, optionally followed by T and
+    /// a time (only the date part is read).
     private static func parseDateParts(_ s: String) -> (Int, Int, Int)? {
         let chars = Array(s.utf8)
-        // Handle ISO datetime by taking only the date part
-        let dateLen = min(chars.count, 10)
-        guard dateLen >= 10, chars[4] == 0x2D, chars[7] == 0x2D else { return nil }
+        let isDateOrDatetime = chars.count == 10 || (chars.count > 10 && chars[10] == 0x54)
+        guard isDateOrDatetime, chars[4] == 0x2D, chars[7] == 0x2D else { return nil }
         let y = safeAtoi(chars, 0, 4)
         let m = safeAtoi(chars, 5, 7)
         let d = safeAtoi(chars, 8, 10)
-        guard y >= 0, m >= 1, m <= 12, d >= 1, d <= 31 else { return nil }
+        guard y >= 0, (1...12).contains(m), d >= 1, d <= daysInMonth(year: y, month: m) else { return nil }
         return (y, m, d)
+    }
+
+    private static func daysInMonth(year y: Int, month m: Int) -> Int {
+        switch m {
+        case 4, 6, 9, 11: return 30
+        case 2: return (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 ? 29 : 28
+        default: return 31
+        }
     }
 
     private static func safeAtoi(_ chars: [UInt8], _ from: Int, _ to: Int) -> Int {

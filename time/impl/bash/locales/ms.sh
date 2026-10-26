@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ms.json
 
-_locale_ms() {
+_sayabletime_locale_ms() {
     _clock_hours=('dua belas' 'satu' 'dua' 'tiga' 'empat' 'lima' 'enam' 'tujuh' 'lapan' 'sembilan' 'sepuluh' 'sebelas')
     _clock_midnight='tengah malam'
     _clock_noon='tengah hari'

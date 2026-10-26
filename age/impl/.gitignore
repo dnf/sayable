@@ -25,6 +25,7 @@ cobol/build/
 # D
 d/*.o
 d/test_runner
+d/*-test-library
 
 # Dart
 dart/.dart_tool/

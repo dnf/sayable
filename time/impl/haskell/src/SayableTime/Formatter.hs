@@ -3,6 +3,8 @@ module SayableTime.Formatter
     , version
     ) where
 
+import Control.Monad (guard)
+import Data.Char (isDigit)
 import SayableTime.Types
 
 version :: String
@@ -69,22 +71,61 @@ formatDigital sc hour minute =
 roundTo5 :: Int -> Int
 roundTo5 m = ((m + 2) `div` 5) * 5
 
+-- | A clock time alone, or after the T of an ISO datetime whose date part
+-- is a real calendar day.
 parseTime :: String -> Maybe (Int, Int)
-parseTime input
-    | null input = Nothing
-    | otherwise =
-        let t = case indexOf 'T' input of
-                    i | i >= 0 -> drop (i + 1) input
-                    _          -> input
-            t' = stripTz t
-        in case splitOn ':' t' of
-            (hs:ms:_) -> do
-                h <- safeAtoi hs
-                m <- safeAtoi ms
-                if h < 0 || h > 23 || m < 0 || m > 59
-                    then Nothing
-                    else Just (h, m)
-            _ -> Nothing
+parseTime input = case break (== 'T') input of
+    (clock, []) -> parseClock clock
+    (date, _ : clock) -> do
+        guard (isRealDate date)
+        parseClock clock
+
+-- | H:MM or HH:MM, then optional :SS with optional .fraction, then an
+-- optional zone suffix (validated, never applied).
+parseClock :: String -> Maybe (Int, Int)
+parseClock s = do
+    let (hs, afterHour) = span isDigit s
+    guard (length hs == 1 || length hs == 2)
+    ':' : m1 : m2 : afterMinute <- Just afterHour
+    guard (isDigit m1 && isDigit m2)
+    let (second, zone) = case afterMinute of
+            ':' : s1 : s2 : rest | isDigit s1 && isDigit s2 -> (digitsValue [s1, s2], dropFraction rest)
+            rest -> (0, rest)
+        hour = digitsValue hs
+        minute = digitsValue [m1, m2]
+    guard (null zone || isZoneSuffix zone)
+    guard (hour <= 23 && minute <= 59 && second <= 59)
+    Just (hour, minute)
+  where
+    dropFraction ('.' : d : rest) | isDigit d = dropWhile isDigit rest
+    dropFraction rest = rest
+
+isZoneSuffix :: String -> Bool
+isZoneSuffix "Z" = True
+isZoneSuffix [sign, h1, h2, ':', m1, m2] = sign `elem` "+-" && all isDigit [h1, h2, m1, m2]
+isZoneSuffix _ = False
+
+-- | YYYY-MM-DD naming a real calendar day.
+isRealDate :: String -> Bool
+isRealDate [y1, y2, y3, y4, '-', m1, m2, '-', d1, d2]
+    | all isDigit [y1, y2, y3, y4, m1, m2, d1, d2] =
+        let y = digitsValue [y1, y2, y3, y4]
+            m = digitsValue [m1, m2]
+            d = digitsValue [d1, d2]
+        in m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth y m
+isRealDate _ = False
+
+daysInMonth :: Int -> Int -> Int
+daysInMonth y m
+    | m == 2 = if isLeap then 29 else 28
+    | m `elem` [4, 6, 9, 11] = 30
+    | otherwise = 31
+  where
+    isLeap = (y `mod` 4 == 0 && y `mod` 100 /= 0) || y `mod` 400 == 0
+
+-- | The value of a string of ASCII digits.
+digitsValue :: String -> Int
+digitsValue = foldl (\n c -> n * 10 + fromEnum c - fromEnum '0') 0
 
 -- String helpers (zero-dependency)
 
@@ -95,36 +136,6 @@ replace needle replacement haystack@(c:rest)
     | otherwise = c : replace needle replacement rest
   where
     nLen = length needle
-
-indexOf :: Char -> String -> Int
-indexOf _ [] = -1
-indexOf c (x:xs)
-    | c == x    = 0
-    | otherwise = let r = indexOf c xs
-                  in if r < 0 then -1 else 1 + r
-
-stripTz :: String -> String
-stripTz [] = []
-stripTz (c:rest)
-    | c == '+' || c == 'Z' = []
-    | otherwise = c : stripTz rest
-
-splitOn :: Char -> String -> [String]
-splitOn _ [] = [""]
-splitOn sep (c:rest)
-    | c == sep  = "" : splitOn sep rest
-    | otherwise = case splitOn sep rest of
-        (x:xs) -> (c:x) : xs
-        []     -> [[c]]
-
-safeAtoi :: String -> Maybe Int
-safeAtoi [] = Nothing
-safeAtoi s  = go 0 s
-  where
-    go n [] = Just n
-    go n (c:rest')
-        | c >= '0' && c <= '9' = go (n * 10 + fromEnum c - fromEnum '0') rest'
-        | otherwise = Nothing
 
 padLeft :: Int -> Char -> String -> String
 padLeft n c s = replicate (max 0 (n - length s)) c ++ s

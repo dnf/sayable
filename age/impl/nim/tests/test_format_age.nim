@@ -1,12 +1,10 @@
 ## Tests for formatAge and formatStage — all canonical test cases from age/config/tests.json.
 
-import std/[unittest, options, tables]
+import std/[unittest, options]
 import ../src/sayable_age/locale
 import ../src/sayable_age/formatter
 import ../src/sayable_age/locales/registry
 import ../src/sayable_age/locales/en
-import ../src/sayable_age/locales/es
-import ../src/sayable_age/locales/ar
 import ../src/sayable_age/locales/he
 import ../src/sayable_age/locales/mk
 import ../src/sayable_age/locales/sw
@@ -822,3 +820,86 @@ suite "Locale lookup":
   # 30.5
   test "case sensitive":
     check getLocale("EN").isNone
+
+# ================================================================
+# Section 31: Weeks and days across month ends
+# ================================================================
+suite "Section 31: Weeks and days across month ends":
+  # 31.1
+  test "31.1 88 days across a 28-day February":
+    check newSayableAge(getLocale("en").get).formatAge("2016-12-31", "2017-03-29") == some("12 weeks, 4 days")
+
+  # 31.2
+  test "31.2 90 days across a year end into a leap year":
+    check newSayableAge(getLocale("en").get).formatAge("1991-11-27", "1992-02-25") == some("12 weeks, 6 days")
+
+  # 31.3
+  test "31.3 33 days across a year end":
+    check newSayableAge(getLocale("en").get).formatAge("2020-11-30", "2021-01-02") == some("4 weeks, 5 days")
+
+  # 31.4
+  test "31.4 Compact form of 31.1":
+    check newSayableAge(getLocale("en").get, cCompact).formatAge("2016-12-31", "2017-03-29") == some("12w4d")
+
+
+# ================================================================
+# Section 32: Half years take their plural form from whole years
+# ================================================================
+suite "Section 32: Half years take their plural form from whole years":
+  # 32.1
+  test "32.1 Polish 3 is 'few'":
+    check newSayableAge(getLocale("pl").get).formatAge("2021-06-15", "2025-01-15") == some("3 i pół lata")
+
+  # 32.2
+  test "32.2 Polish 5 is 'many'":
+    check newSayableAge(getLocale("pl").get, cShort).formatAge("2020-06-15", "2025-12-15") == some("5 i pół lat")
+
+  # 32.3
+  test "32.3 Tachelhit 6 is 'few'":
+    check newSayableAge(getLocale("shi").get).formatAge("2005-06-08", "2012-06-07") == some("6 iseggasen d uzgen")
+
+
+# ================================================================
+# Section 33: Input validation
+# ================================================================
+suite "Section 33: Input validation":
+  # 33.1
+  test "33.1 February 30 doesn't exist":
+    check newSayableAge(getLocale("en").get).formatAge("2025-02-30", "2032-06-25").isNone
+
+  # 33.2
+  test "33.2 Month 13":
+    check newSayableAge(getLocale("en").get).formatAge("2025-13-01", "2027-01-31").isNone
+
+  # 33.3
+  test "33.3 February 29 in a non-leap year":
+    check newSayableAge(getLocale("en").get).formatAge("2023-02-29", "2025-03-01").isNone
+
+  # 33.4
+  test "33.4 Day 00":
+    check newSayableAge(getLocale("en").get).formatAge("2025-06-00", "2027-02-25").isNone
+
+  # 33.5
+  test "33.5 Unpadded month and day":
+    check newSayableAge(getLocale("en").get).formatAge("2025-6-1", "2027-02-25").isNone
+
+  # 33.6
+  test "33.6 Surrounding whitespace":
+    check newSayableAge(getLocale("en").get).formatAge(" 2025-06-01", "2027-02-25").isNone
+
+  # 33.7
+  test "33.7 A datetime is not a date":
+    check newSayableAge(getLocale("en").get).formatAge("2025-06-15T10:00:00", "2027-02-25").isNone
+
+  # 33.8
+  test "33.8 Invalid asOf":
+    check newSayableAge(getLocale("en").get).formatAge("2020-01-01", "2025-04-31").isNone
+
+  # 33.9
+  test "33.9 formatStage validates too":
+    check newSayableAge(getLocale("en").get).formatStage("2025-02-30", "2027-09-05").isNone
+
+  # 33.10
+  test "33.10 February 29 in a leap year is valid":
+    check newSayableAge(getLocale("en").get).formatAge("2024-02-29", "2026-03-01") == some("2 years")
+

@@ -281,6 +281,56 @@ test_case(test_17_2) :-
     format_duration('en', 90, compact, Result),
     Result == '1m30s'.
 
+% Section 18: Short compactness — relative time
+% 18.1: days and hours both kept
+test_case(test_18_1) :-
+    format_since('men', '2025-01-20T01:32:11', '2025-01-22T15:39:16', normal, Result),
+    Result == 'lɔhɔnga 2, awa 14 taa gbɔyɔ'.
+
+% Section 19: Range (500-year ceiling)
+% 19.1: 500 Julian years: 6000 months, the ceiling
+test_case(test_19_1) :-
+    format_duration('en', 15778800000, normal, Result),
+    Result == '500 years'.
+
+% 19.2: over 6000 months
+test_case(test_19_2) :-
+    \+ format_duration('en', 15800000000, normal, _).
+
+% 19.3: well beyond the ceiling (and 32-bit range)
+test_case(test_19_3) :-
+    \+ format_duration('en', 99999999999, normal, _).
+
+% 19.4: 525 years ago
+test_case(test_19_4) :-
+    \+ format_since('en', '1500-01-01T00:00:00', '2025-01-01T00:00:00', normal, _).
+
+% 19.5: 575 years from now
+test_case(test_19_5) :-
+    \+ format_until('en', '2600-01-01T00:00:00', '2025-01-01T00:00:00', normal, _).
+
+% Section 20: Timestamp validation
+% 20.1: seconds are optional
+test_case(test_20_1) :-
+    format_duration_ts('en', '2025-01-15T10:00', '2025-01-15T11:30:00', normal, Result),
+    Result == '1½ hours'.
+
+% 20.2: minutes are required
+test_case(test_20_2) :-
+    \+ format_duration_ts('en', '2025-01-15T10', '2025-01-15T11:30:00', normal, _).
+
+% 20.3: unpadded date
+test_case(test_20_3) :-
+    \+ format_duration_ts('en', '2025-1-5T10:00:00', '2025-01-15T11:30:00', normal, _).
+
+% 20.4: impossible date
+test_case(test_20_4) :-
+    \+ format_duration_ts('en', '2025-02-30T10:00:00', '2025-03-15T11:30:00', normal, _).
+
+% 20.5: hour out of range
+test_case(test_20_5) :-
+    \+ format_since('en', '2025-01-15T10:00:00', '2025-01-15T25:00:00', normal, _).
+
 % Test runner
 run_tests :-
     findall(Name, test_case_name(Name), Tests),
@@ -342,6 +392,17 @@ test_case_name(test_16_1).
 test_case_name(test_16_2).
 test_case_name(test_17_1).
 test_case_name(test_17_2).
+test_case_name(test_18_1).
+test_case_name(test_19_1).
+test_case_name(test_19_2).
+test_case_name(test_19_3).
+test_case_name(test_19_4).
+test_case_name(test_19_5).
+test_case_name(test_20_1).
+test_case_name(test_20_2).
+test_case_name(test_20_3).
+test_case_name(test_20_4).
+test_case_name(test_20_5).
 
 run_all([], Passed, Failed, Passed, Failed).
 run_all([Name|Rest], PassedIn, FailedIn, PassedOut, FailedOut) :-

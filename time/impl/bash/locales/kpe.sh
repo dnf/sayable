@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/kpe.json
 
-_locale_kpe() {
+_sayabletime_locale_kpe() {
     _clock_hours=('puu lɔŋ' 'tɔŋ' 'feere' 'sawa' 'naŋ' 'lɔɔlu' 'mɛi da tɔŋ' 'mɛi da feere' 'mɛi da sawa' 'mɛi da naŋ' 'puu' 'puu da tɔŋ')
     _clock_midnight='kpindi kɔlɛ'
     _clock_noon='tili-ma'

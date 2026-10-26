@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/mfe.json
 
-_locale_mfe() {
+_sayabledate_locale_mfe() {
     _months=('Zanvie' 'Fevrie' 'Mars' 'Avril' 'Me' 'Zwin' 'Zwiye' 'Out' 'Septam' 'Oktob' 'Novam' 'Desam')
     _weekdays=('Dimans' 'Lindi' 'Mardi' 'Merkredi' 'Zedi' 'Vandredi' 'Samdi')
     _day_format='{n}'

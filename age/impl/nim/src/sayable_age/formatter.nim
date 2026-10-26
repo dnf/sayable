@@ -1,6 +1,6 @@
 ## Human-friendly age formatting for young children.
 
-import std/[options, tables, strutils, times]
+import std/[options, tables, times]
 import locale
 
 const Version* = "0.5.0"
@@ -30,25 +30,41 @@ type ParsedAge = object
   months: int
   diffDays: int
 
+proc parseDigits(s: string): Option[int] =
+  ## A run of ASCII digits as an int; none if any character isn't a digit.
+  var n = 0
+  for c in s:
+    if c notin {'0'..'9'}:
+      return none(int)
+    n = n * 10 + (ord(c) - ord('0'))
+  some(n)
+
+proc parseDate(s: string): Option[(int, int, int)] =
+  ## Exactly YYYY-MM-DD naming a real calendar day (docs/input-formats.md).
+  if s.len != 10 or s[4] != '-' or s[7] != '-':
+    return none((int, int, int))
+  let y = parseDigits(s[0 .. 3])
+  let m = parseDigits(s[5 .. 6])
+  let d = parseDigits(s[8 .. 9])
+  if y.isNone or m.isNone or d.isNone:
+    return none((int, int, int))
+  if m.get < 1 or m.get > 12 or d.get < 1 or d.get > daysInMonth(y.get, m.get):
+    return none((int, int, int))
+  some((y.get, m.get, d.get))
+
 proc parseAge(dateOfBirth: string, asOf: string = ""): Option[ParsedAge] =
   ## Parse two YYYY-MM-DD strings into (calendar_months, elapsed_days).
-  if dateOfBirth.len == 0:
+  let dob = parseDate(dateOfBirth)
+  if dob.isNone:
     return none(ParsedAge)
-
-  let dobParts = dateOfBirth.split("-")
-  if dobParts.len < 3:
-    return none(ParsedAge)
-
-  let dobY = parseInt(dobParts[0])
-  let dobM = parseInt(dobParts[1])
-  let dobD = parseInt(dobParts[2])
+  let (dobY, dobM, dobD) = dob.get
 
   var refY, refM, refD: int
   if asOf.len > 0:
-    let refParts = asOf.split("-")
-    refY = parseInt(refParts[0])
-    refM = parseInt(refParts[1])
-    refD = parseInt(refParts[2])
+    let asOfDate = parseDate(asOf)
+    if asOfDate.isNone:
+      return none(ParsedAge)
+    (refY, refM, refD) = asOfDate.get
   else:
     let today = now().utc
     refY = today.year
@@ -142,11 +158,11 @@ proc formatAge*(sa: SayableAge, dateOfBirth: string,
   if months < 3:
     let weeks = diffDays div 7
     let days = diffDays mod 7
-    var result = resolveUnit(weeks, sa.units["week"], sa.locale)
+    var text = resolveUnit(weeks, sa.units["week"], sa.locale)
     if days > 0:
-      result.add(sa.delimiter)
-      result.add(resolveUnit(days, sa.units["day"], sa.locale))
-    return some(result)
+      text.add(sa.delimiter)
+      text.add(resolveUnit(days, sa.units["day"], sa.locale))
+    return some(text)
 
   # Tier 3: 3-23 months
   if months < 24:

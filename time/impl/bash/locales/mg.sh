@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/mg.json
 
-_locale_mg() {
+_sayabletime_locale_mg() {
     _clock_hours=('roa ambin'\''ny folo' 'iray' 'roa' 'telo' 'efatra' 'dimy' 'enina' 'fito' 'valo' 'sivy' 'folo' 'iraika ambin'\''ny folo')
     _clock_midnight='misasakalina'
     _clock_noon='atoandro'

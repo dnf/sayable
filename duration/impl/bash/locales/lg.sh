@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/lg.json
 
-_plural_lg() {
+_sayableduration_plural_lg() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_lg() {
+_sayableduration_locale_lg() {
     _unit_second='sikonda {n}'
     _unit_minute='dakiika {n}'
     _unit_hour='essaawa {n}'
@@ -58,5 +58,5 @@ _locale_lg() {
     _compact_delimiter=''
     _compact_ago='{0} emabega'
     _compact_in_future='mu {0}'
-    _plural_func=_plural_lg
+    _plural_func=_sayableduration_plural_lg
 }

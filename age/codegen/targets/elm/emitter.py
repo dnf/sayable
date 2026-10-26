@@ -142,7 +142,7 @@ def emit_barrel(all_locales: list[dict]) -> str:
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER]
     lines.append("")
-    lines.append("module SayableAge.Locales exposing (getLocale)")
+    lines.append("module SayableAge.Locales exposing (codes, getLocale)")
     lines.append("")
     lines.append("")
     lines.append("import Dict exposing (Dict)")
@@ -171,6 +171,12 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append("getLocale : String -> Maybe Locale")
     lines.append("getLocale code =")
     lines.append("    Dict.get code allLocales")
+    lines.append("")
+    lines.append("")
+    lines.append("{-| Every locale code, sorted. -}")
+    lines.append("codes : List String")
+    lines.append("codes =")
+    lines.append("    Dict.keys allLocales")
     lines.append("")
 
     return "\n".join(lines)

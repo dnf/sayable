@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/din.json
 
-_locale_din() {
+_sayabletime_locale_din() {
     _clock_hours=('thiäär ku rou' 'tök' 'rou' 'diäk' 'ŋuän' 'dhiëc' 'dhetem' 'dhorou' 'bɛ̈t' 'dhoŋuan' 'thiäär' 'thiäär ku tök')
     _clock_midnight='wakɔ̈u'
     _clock_noon='akɔ̈l ciëŋ'

@@ -4,6 +4,9 @@ import sayableduration.locales.Locales
 
 val Version = "0.5.0"
 
+/** 500 years, the same ceiling as sayable-age. */
+private val MaxDurationMonths = 6000L
+
 class SayableDuration(locale: DurationLocale, compactness: Compactness = Compactness.NORMAL):
     private val second: UnitForms = _resolve(_.second, _.units.second)
     private val minute: UnitForms = _resolve(_.minute, _.units.minute)
@@ -30,9 +33,9 @@ class SayableDuration(locale: DurationLocale, compactness: Compactness = Compact
         _override.flatMap(ovrField).getOrElse(base(locale))
 
     /** Formats an integer number of seconds as a human-friendly duration string. */
-    def formatDurationSeconds(seconds: Int): Option[String] =
+    def formatDurationSeconds(seconds: Long): Option[String] =
         if (seconds < 0) None
-        else Some(formatDurationSecondsInternal(seconds))
+        else formatDurationSecondsInternal(seconds)
 
     /** Formats the duration between two ISO datetime strings. */
     def formatDurationIso(start: String, end: String): Option[String] =
@@ -41,7 +44,8 @@ class SayableDuration(locale: DurationLocale, compactness: Compactness = Compact
             for
                 s <- parseIsoToSeconds(start)
                 e <- parseIsoToSeconds(end)
-            yield formatDurationSecondsInternal(math.abs(e - s))
+                dur <- formatDurationSecondsInternal(math.abs(e - s))
+            yield dur
 
     /** Formats elapsed time as "X ago". */
     def formatSince(start: String, asOf: String): Option[String] =
@@ -51,10 +55,8 @@ class SayableDuration(locale: DurationLocale, compactness: Compactness = Compact
                 s <- parseIsoToSeconds(start)
                 a <- parseIsoToSeconds(asOf)
                 if a - s >= 0
-            yield
-                val diff = a - s
-                if (diff == 0) justNow
-                else ago.replace("{0}", formatDurationSecondsInternal(diff))
+                phrase <- relative(a - s, ago)
+            yield phrase
 
     /** Formats time until a future event as "in X". */
     def formatUntil(target: String, asOf: String): Option[String] =
@@ -64,32 +66,37 @@ class SayableDuration(locale: DurationLocale, compactness: Compactness = Compact
                 t <- parseIsoToSeconds(target)
                 a <- parseIsoToSeconds(asOf)
                 if t - a >= 0
-            yield
-                val diff = t - a
-                if (diff == 0) justNow
-                else inFuture.replace("{0}", formatDurationSecondsInternal(diff))
+                phrase <- relative(t - a, inFuture)
+            yield phrase
 
-    private def formatDurationSecondsInternal(total: Int): String =
-        val loc = locale
+    /** "just now" for no difference, else the duration placed in an ago/inFuture template. */
+    private def relative(diff: Long, template: String): Option[String] =
+        if (diff == 0) Some(justNow)
+        else formatDurationSecondsInternal(diff).map(dur => template.replace("{0}", dur))
 
+    /** Counts are bounded by the 500-year ceiling, so they always fit in an Int. */
+    private def unit(count: Long, uf: UnitForms, half: String = ""): String =
+        resolveUnit(Math.toIntExact(count), uf, locale, half)
+
+    private def formatDurationSecondsInternal(total: Long): Option[String] =
         // 0 seconds
-        if (total == 0) return justNow
+        if (total == 0) return Some(justNow)
 
         // 1-59 seconds
-        if (total < 60) return resolveUnit(total, second, loc)
+        if (total < 60) return Some(unit(total, second))
 
         val totalMinutes = total / 60
         val remainderSeconds = total % 60
 
         // 1-4 minutes: minutes + seconds
         if (totalMinutes < 5)
-            var result = resolveUnit(totalMinutes, minute, loc)
+            var result = unit(totalMinutes, minute)
             if (remainderSeconds > 0)
-                result += delimiter + resolveUnit(remainderSeconds, second, loc)
-            return result
+                result += delimiter + unit(remainderSeconds, second)
+            return Some(result)
 
         // 5-59 minutes
-        if (totalMinutes < 60) return resolveUnit(totalMinutes, minute, loc)
+        if (totalMinutes < 60) return Some(unit(totalMinutes, minute))
 
         val totalHours = total / 3600
         val remainderMinutes = (total % 3600) / 60
@@ -97,14 +104,14 @@ class SayableDuration(locale: DurationLocale, compactness: Compactness = Compact
         // 1-5 hours: hours + minutes (with half marker)
         if (totalHours <= 5)
             if (remainderMinutes == 30)
-                return resolveUnit(totalHours, hour, loc, half)
-            var result = resolveUnit(totalHours, hour, loc)
+                return Some(unit(totalHours, hour, half))
+            var result = unit(totalHours, hour)
             if (remainderMinutes > 0)
-                result += delimiter + resolveUnit(remainderMinutes, minute, loc)
-            return result
+                result += delimiter + unit(remainderMinutes, minute)
+            return Some(result)
 
         // 6-23 hours
-        if (totalHours < 24) return resolveUnit(totalHours, hour, loc)
+        if (totalHours < 24) return Some(unit(totalHours, hour))
 
         val totalDays = total / 86400
         val remainderHours = (total % 86400) / 3600
@@ -112,45 +119,46 @@ class SayableDuration(locale: DurationLocale, compactness: Compactness = Compact
         // 1-2 days: days + hours (with half marker)
         if (totalDays <= 2)
             if (remainderHours == 12)
-                return resolveUnit(totalDays, day, loc, half)
-            var result = resolveUnit(totalDays, day, loc)
+                return Some(unit(totalDays, day, half))
+            var result = unit(totalDays, day)
             if (remainderHours > 0)
-                result += delimiter + resolveUnit(remainderHours, hour, loc)
-            return result
+                result += delimiter + unit(remainderHours, hour)
+            return Some(result)
 
         // 3-6 days
-        if (totalDays < 7) return resolveUnit(totalDays, day, loc)
+        if (totalDays < 7) return Some(unit(totalDays, day))
 
         val totalWeeks = totalDays / 7
         val remainderDays = totalDays % 7
 
         // 1-4 weeks: weeks + days (up to 29 days; 30+ transitions to months)
         if (totalDays < 30)
-            var result = resolveUnit(totalWeeks, week, loc)
+            var result = unit(totalWeeks, week)
             if (remainderDays > 0)
-                result += delimiter + resolveUnit(remainderDays, day, loc)
-            return result
+                result += delimiter + unit(remainderDays, day)
+            return Some(result)
 
         // Approximate months (30.44 days average)
-        var totalMonths = math.round(totalDays.toDouble / 30.44).toInt
+        var totalMonths = math.round(totalDays.toDouble / 30.44)
+        if (totalMonths > MaxDurationMonths) return None
 
         // 1-11 months
         if (totalMonths < 12)
             if (totalMonths == 0) totalMonths = 1
-            return resolveUnit(totalMonths, month, loc)
+            return Some(unit(totalMonths, month))
 
         // 12+ months: years + months
         val totalYears = totalMonths / 12
         val remainderMonths = totalMonths % 12
-        var result = resolveUnit(totalYears, year, loc)
+        var result = unit(totalYears, year)
         if (remainderMonths > 0)
-            result += delimiter + resolveUnit(remainderMonths, month, loc)
-        result
+            result += delimiter + unit(remainderMonths, month)
+        Some(result)
 
 object SayableDuration:
     private lazy val defaultSd: SayableDuration = SayableDuration(Locales.EN)
 
-    def formatDurationSeconds(seconds: Int): Option[String] =
+    def formatDurationSeconds(seconds: Long): Option[String] =
         defaultSd.formatDurationSeconds(seconds)
 
     def formatDurationIso(start: String, end: String): Option[String] =
@@ -162,54 +170,23 @@ object SayableDuration:
     def formatUntil(target: String, asOf: String): Option[String] =
         defaultSd.formatUntil(target, asOf)
 
+/** YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored). */
+private val Timestamp =
+    ("""([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})""" +
+        """(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?""").r
+
 /** Parses an ISO datetime string to epoch-relative seconds for diffing. */
-private[sayableduration] def parseIsoToSeconds(iso: String): Option[Int] =
-    if (iso.isEmpty) None
-    else
-        val tIdx = iso.indexOf('T')
-        if (tIdx < 0) None
-        else
-            val datePart = iso.substring(0, tIdx)
-            var timePart = iso.substring(tIdx + 1)
-
-            // Parse date: YYYY-MM-DD
-            val dp = datePart.split("-")
-            if (dp.length < 3) None
-            else
-                for
-                    year <- safeAtoi(dp(0))
-                    month <- safeAtoi(dp(1))
-                    day <- safeAtoi(dp(2))
-                yield
-                    // Strip timezone info
-                    val plusIdx = timePart.indexOf('+')
-                    if (plusIdx >= 0) timePart = timePart.substring(0, plusIdx)
-                    val zIdx = timePart.indexOf('Z')
-                    if (zIdx >= 0) timePart = timePart.substring(0, zIdx)
-
-                    // Parse time: HH:MM:SS
-                    val tp = timePart.split(":")
-                    val hour = safeAtoi(tp(0)).getOrElse(0)
-                    val minute = if (tp.length > 1) safeAtoi(tp(1)).getOrElse(0) else 0
-                    val second = if (tp.length > 2)
-                        val secStr = tp(2).split("\\.")(0)
-                        safeAtoi(secStr).getOrElse(0)
-                    else 0
-
-                    val days = daysSinceEpoch(year, month, day)
-                    days * 86400 + hour * 3600 + minute * 60 + second
-
-private[sayableduration] def safeAtoi(s: String): Option[Int] =
-    if (s.isEmpty) None
-    else
-        var n = 0
-        var i = 0
-        while (i < s.length)
-            val c = s.charAt(i)
-            if (c < '0' || c > '9') return None
-            n = n * 10 + (c - '0')
-            i += 1
-        Some(n)
+private[sayableduration] def parseIsoToSeconds(iso: String): Option[Long] =
+    iso match
+        case Timestamp(y, mo, d, h, mi, sec) =>
+            val (year, month, day, hour, minute) = (y.toInt, mo.toInt, d.toInt, h.toInt, mi.toInt)
+            val second = Option(sec).fold(0)(_.toInt)
+            val validDate = month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth(year, month)
+            val validClock = hour <= 23 && minute <= 59 && second <= 59
+            if validDate && validClock then
+                Some(daysSinceEpoch(year, month, day).toLong * 86400 + hour * 3600 + minute * 60 + second)
+            else None
+        case _ => None
 
 private def isLeapYear(year: Int): Boolean =
     (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)

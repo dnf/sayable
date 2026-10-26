@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/bm.json
 
-_plural_bm() {
+_sayableage_plural_bm() {
     echo "other"
 }
 
-_locale_bm() {
+_sayableage_locale_bm() {
     _unit_day='don {n}'
     _unit_week='dɔgɔkun {n}'
     _unit_month='kalo {n}'
@@ -37,5 +37,5 @@ _locale_bm() {
     _compact_unit_year='san {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_bm
+    _plural_func=_sayableage_plural_bm
 }

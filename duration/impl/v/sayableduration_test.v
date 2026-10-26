@@ -406,3 +406,86 @@ fn test_17_2() {
 	result := sd.format_duration(90) or { assert false, '17.2 should not be none'; return }
 	assert result == '1m30s', '17.2: got ${result}'
 }
+
+// Section 18: Short compactness — relative time
+
+// 18.1
+fn test_18_1() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('men') or { panic('locale not found') }, .normal)
+	result := f.format_since('2025-01-20T01:32:11', '2025-01-22T15:39:16') or { panic('18.1 should not be none') }
+	assert result == 'lɔhɔnga 2, awa 14 taa gbɔyɔ', '18.1'
+}
+
+// Section 19: Range (500-year ceiling)
+
+// 19.1
+fn test_19_1() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_duration(i64(15778800000)) or { panic('19.1 should not be none') }
+	assert result == '500 years', '19.1'
+}
+
+// 19.2
+fn test_19_2() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_duration(i64(15800000000))
+	assert result == none, '19.2'
+}
+
+// 19.3
+fn test_19_3() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_duration(i64(99999999999))
+	assert result == none, '19.3'
+}
+
+// 19.4
+fn test_19_4() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_since('1500-01-01T00:00:00', '2025-01-01T00:00:00')
+	assert result == none, '19.4'
+}
+
+// 19.5
+fn test_19_5() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_until('2600-01-01T00:00:00', '2025-01-01T00:00:00')
+	assert result == none, '19.5'
+}
+
+// Section 20: Timestamp validation
+
+// 20.1
+fn test_20_1() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_duration_iso('2025-01-15T10:00', '2025-01-15T11:30:00') or { panic('20.1 should not be none') }
+	assert result == '1½ hours', '20.1'
+}
+
+// 20.2
+fn test_20_2() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_duration_iso('2025-01-15T10', '2025-01-15T11:30:00')
+	assert result == none, '20.2'
+}
+
+// 20.3
+fn test_20_3() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_duration_iso('2025-1-5T10:00:00', '2025-01-15T11:30:00')
+	assert result == none, '20.3'
+}
+
+// 20.4
+fn test_20_4() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_duration_iso('2025-02-30T10:00:00', '2025-03-15T11:30:00')
+	assert result == none, '20.4'
+}
+
+// 20.5
+fn test_20_5() {
+	f := locales.new_sayable_duration(locales.get_duration_locale('en') or { panic('locale not found') }, .normal)
+	result := f.format_since('2025-01-15T10:00:00', '2025-01-15T25:00:00')
+	assert result == none, '20.5'
+}

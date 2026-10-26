@@ -1090,6 +1090,85 @@ test_case(test_30_4) :-
 test_case(test_30_5) :-
     \+ get_locale('EN').
 
+% Section 31: Weeks and days across month ends
+% 31.1: 88 days across a 28-day February
+test_case(test_31_1) :-
+    format_age('en', '2016-12-31', '2017-03-29', normal, Result),
+    Result == '12 weeks, 4 days'.
+
+% 31.2: 90 days across a year end into a leap year
+test_case(test_31_2) :-
+    format_age('en', '1991-11-27', '1992-02-25', normal, Result),
+    Result == '12 weeks, 6 days'.
+
+% 31.3: 33 days across a year end
+test_case(test_31_3) :-
+    format_age('en', '2020-11-30', '2021-01-02', normal, Result),
+    Result == '4 weeks, 5 days'.
+
+% 31.4: Compact form of 31.1
+test_case(test_31_4) :-
+    format_age('en', '2016-12-31', '2017-03-29', compact, Result),
+    Result == '12w4d'.
+
+% Section 32: Half years take their plural form from whole years
+% 32.1: Polish 3 is 'few'
+test_case(test_32_1) :-
+    format_age('pl', '2021-06-15', '2025-01-15', normal, Result),
+    Result == '3 i pół lata'.
+
+% 32.2: Polish 5 is 'many'
+test_case(test_32_2) :-
+    format_age('pl', '2020-06-15', '2025-12-15', short, Result),
+    Result == '5 i pół lat'.
+
+% 32.3: Tachelhit 6 is 'few'
+test_case(test_32_3) :-
+    format_age('shi', '2005-06-08', '2012-06-07', normal, Result),
+    Result == '6 iseggasen d uzgen'.
+
+% Section 33: Input validation
+% 33.1: February 30 doesn't exist
+test_case(test_33_1) :-
+    \+ format_age('en', '2025-02-30', '2032-06-25', normal, _).
+
+% 33.2: Month 13
+test_case(test_33_2) :-
+    \+ format_age('en', '2025-13-01', '2027-01-31', normal, _).
+
+% 33.3: February 29 in a non-leap year
+test_case(test_33_3) :-
+    \+ format_age('en', '2023-02-29', '2025-03-01', normal, _).
+
+% 33.4: Day 00
+test_case(test_33_4) :-
+    \+ format_age('en', '2025-06-00', '2027-02-25', normal, _).
+
+% 33.5: Unpadded month and day
+test_case(test_33_5) :-
+    \+ format_age('en', '2025-6-1', '2027-02-25', normal, _).
+
+% 33.6: Surrounding whitespace
+test_case(test_33_6) :-
+    \+ format_age('en', ' 2025-06-01', '2027-02-25', normal, _).
+
+% 33.7: A datetime is not a date
+test_case(test_33_7) :-
+    \+ format_age('en', '2025-06-15T10:00:00', '2027-02-25', normal, _).
+
+% 33.8: Invalid asOf
+test_case(test_33_8) :-
+    \+ format_age('en', '2020-01-01', '2025-04-31', normal, _).
+
+% 33.9: formatStage validates too
+test_case(test_33_9) :-
+    \+ format_stage('en', '2025-02-30', '2027-09-05', none, _).
+
+% 33.10: February 29 in a leap year is valid
+test_case(test_33_10) :-
+    format_age('en', '2024-02-29', '2026-03-01', normal, Result),
+    Result == '2 years'.
+
 % Test runner
 run_tests :-
     findall(Name, test_case_name(Name), Tests),
@@ -1310,6 +1389,23 @@ test_case_name(test_30_2).
 test_case_name(test_30_3).
 test_case_name(test_30_4).
 test_case_name(test_30_5).
+test_case_name(test_31_1).
+test_case_name(test_31_2).
+test_case_name(test_31_3).
+test_case_name(test_31_4).
+test_case_name(test_32_1).
+test_case_name(test_32_2).
+test_case_name(test_32_3).
+test_case_name(test_33_1).
+test_case_name(test_33_2).
+test_case_name(test_33_3).
+test_case_name(test_33_4).
+test_case_name(test_33_5).
+test_case_name(test_33_6).
+test_case_name(test_33_7).
+test_case_name(test_33_8).
+test_case_name(test_33_9).
+test_case_name(test_33_10).
 
 run_all([], Passed, Failed, Passed, Failed).
 run_all([Name|Rest], PassedIn, FailedIn, PassedOut, FailedOut) :-

@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ak.json
 
-_locale_ak() {
+_sayabletime_locale_ak() {
     _clock_hours=('dumien' 'baako' 'mmienu' 'mmiensa' 'anan' 'anum' 'nsia' 'nson' 'nwɔtwe' 'nkron' 'edu' 'dubaako')
     _clock_midnight='anadwo'
     _clock_noon='awia'

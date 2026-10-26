@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/kw.json
 
-_locale_kw() {
+_sayabletime_locale_kw() {
     _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
     _clock_midnight='hanter nos'
     _clock_noon='hanter dydh'

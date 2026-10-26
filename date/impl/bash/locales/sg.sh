@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/sg.json
 
-_locale_sg() {
+_sayabledate_locale_sg() {
     _months=('Nyenye' 'Fulundïgi' 'Mbängü' 'Ngubùe' 'Bêläwü' 'Föndo' 'Lengua' 'Kükürü' 'Mvuka' 'Ngberere' 'Nabändüru' 'Kakauka')
     _weekdays=('Bikua-ôko' 'Bïkua-ûse' 'Bïkua-ptâ' 'Bïkua-usïö' 'Bïkua-okü' 'Lâpôsö' 'Lâyenga')
     _day_format='{n}'

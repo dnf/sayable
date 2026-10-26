@@ -187,7 +187,7 @@ _sayabletime_load_locale() {
     local known
     for known in ${_SAYABLETIME_LOCALES}; do
         if [ "${known}" = "${code}" ]; then
-            _locale_${code}
+            _sayabletime_locale_${code}
             return 0
         fi
     done

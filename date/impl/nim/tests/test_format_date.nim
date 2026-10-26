@@ -258,3 +258,99 @@ suite "Locale - Spanish":
   # 12.2
   test "format_relative pasado manana":
     check sd.formatRelative("2025-03-17", "2025-03-15").get == "pasado ma\xC3\xB1ana"
+
+# ================================================================
+# Section 13: format_date_with_year
+# ================================================================
+suite "Section 13: format_date_with_year":
+  # 13.1
+  test "13.1":
+    check newSayableDate(getLocale("en").get).formatDateWithYear("2018-02-04") == some("February 4th, 2018")
+
+  # 13.2
+  test "13.2":
+    check newSayableDate(getLocale("en").get, cShort).formatDateWithYear("2025-03-15") == some("Mar 15, 2025")
+
+  # 13.3
+  test "13.3":
+    check newSayableDate(getLocale("en").get, cCompact).formatDateWithYear("1997-01-21") == some("1/21/97")
+
+  # 13.4
+  test "13.4 two-digit year keeps its leading zero":
+    check newSayableDate(getLocale("tg").get, cCompact).formatDateWithYear("2007-05-20") == some("20/5/07")
+
+  # 13.5
+  test "13.5":
+    check newSayableDate(getLocale("fi").get, cShort).formatDateWithYear("1996-06-21") == some("21. kesäkuuta 1996")
+
+
+# ================================================================
+# Section 14: Short month names
+# ================================================================
+suite "Section 14: Short month names":
+  # 14.1
+  test "14.1":
+    check newSayableDate(getLocale("sk").get, cShort).formatDate("2031-02-15") == some("15. februára")
+
+  # 14.2
+  test "14.2":
+    check newSayableDate(getLocale("cs").get, cShort).formatDate("2025-12-10") == some("10. prosince")
+
+  # 14.3
+  test "14.3":
+    check newSayableDate(getLocale("uk").get, cShort).formatDate("2025-11-05") == some("5 листопада")
+
+  # 14.4
+  test "14.4":
+    check newSayableDate(getLocale("fi").get, cShort).formatRelative("1998-08-08", "1998-08-15") == some("8. elokuuta")
+
+
+# ================================================================
+# Section 15: format_relative — short phrases
+# ================================================================
+suite "Section 15: format_relative — short phrases":
+  # 15.1
+  test "15.1 day after tomorrow":
+    check newSayableDate(getLocale("kw").get, cShort).formatRelative("2035-12-04", "2035-12-02") == some("an Mth ma")
+
+  # 15.2
+  test "15.2 day before yesterday":
+    check newSayableDate(getLocale("mam").get, cShort).formatRelative("2000-01-23", "2000-01-25") == some("Dom nchi'j")
+
+  # 15.3
+  test "15.3 day after tomorrow":
+    check newSayableDate(getLocale("kek").get, cShort).formatRelative("2014-10-24", "2014-10-22") == some("a'in Vie")
+
+
+# ================================================================
+# Section 16: Input validation
+# ================================================================
+suite "Section 16: Input validation":
+  # 16.1
+  test "16.1 February 30 doesn't exist":
+    check newSayableDate(getLocale("en").get).formatDate("2025-02-30").isNone
+
+  # 16.2
+  test "16.2 Month 13":
+    check newSayableDate(getLocale("en").get).formatDate("2025-13-01").isNone
+
+  # 16.3
+  test "16.3 Unpadded month and day":
+    check newSayableDate(getLocale("en").get).formatDate("2025-6-1").isNone
+
+  # 16.4
+  test "16.4 Surrounding whitespace":
+    check newSayableDate(getLocale("en").get).formatDate(" 2025-06-01").isNone
+
+  # 16.5
+  test "16.5 An ISO datetime: only the date part is used":
+    check newSayableDate(getLocale("en").get).formatDate("2025-06-01T10:00:00") == some("June 1st")
+
+  # 16.6
+  test "16.6 February 29 in a non-leap year":
+    check newSayableDate(getLocale("en").get).formatDateWithYear("2023-02-29").isNone
+
+  # 16.7
+  test "16.7 Invalid asOf":
+    check newSayableDate(getLocale("en").get).formatRelative("2025-03-16", "2025-04-31").isNone
+

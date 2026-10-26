@@ -267,6 +267,9 @@ def emit_header(all_locales: list[dict]) -> str:
     lines.append("int sd_format_date(char *buf, size_t bufsz, const SdDateLocale *locale,")
     lines.append("                   SdCompactness compactness, const char *date_str);")
     lines.append("")
+    lines.append("int sd_format_date_with_year(char *buf, size_t bufsz, const SdDateLocale *locale,")
+    lines.append("                             SdCompactness compactness, const char *date_str);")
+    lines.append("")
     lines.append("int sd_format_relative(char *buf, size_t bufsz, const SdDateLocale *locale,")
     lines.append("                       SdCompactness compactness, const char *date_str,")
     lines.append("                       const char *as_of_str);")
@@ -449,40 +452,35 @@ static void sd_replace_first(SdWriter *w, const char *tmpl, const char *marker, 
 
 /* ---- date parsing ---- */
 
-static bool sd_parse_date(const char *s, int *y, int *m, int *d) {
+static int sd_days_in_month(int year, int month) {
+    if (month == 2) {
+        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
+    }
+    if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
+    return 31;
+}
+
+static bool sd_parse_digits(const char *s, int count, int *out) {
     int i;
-    const char *p;
-    if (!s || !s[0]) return false;
-
-    /* Strip time part from ISO datetime */
-    p = s;
-    while (*p) {
-        if (*p == 'T') { break; }
-        p++;
+    *out = 0;
+    for (i = 0; i < count; i++) {
+        if (s[i] < '0' || s[i] > '9') return false;
+        *out = *out * 10 + (s[i] - '0');
     }
-    /* p now points to 'T' or end. Date part length = p - s */
-    if ((int)(p - s) < 10 || s[4] != '-' || s[7] != '-') return false;
-
-    *y = 0;
-    for (i = 0; i < 4; i++) {
-        char c = s[i];
-        if (c < '0' || c > '9') return false;
-        *y = *y * 10 + (c - '0');
-    }
-    *m = 0;
-    for (i = 5; i < 7; i++) {
-        char c = s[i];
-        if (c < '0' || c > '9') return false;
-        *m = *m * 10 + (c - '0');
-    }
-    *d = 0;
-    for (i = 8; i < 10; i++) {
-        char c = s[i];
-        if (c < '0' || c > '9') return false;
-        *d = *d * 10 + (c - '0');
-    }
-    if (*m < 1 || *m > 12 || *d < 1 || *d > 31) return false;
     return true;
+}
+
+/* YYYY-MM-DD naming a real calendar day, optionally followed by T and
+ * anything else (docs/input-formats.md). */
+static bool sd_parse_date(const char *s, int *y, int *m, int *d) {
+    size_t len;
+    if (!s) return false;
+    len = sd_strlen(s);
+    if (len < 10 || (len > 10 && s[10] != 'T') || s[4] != '-' || s[7] != '-') return false;
+    if (!sd_parse_digits(s, 4, y) || !sd_parse_digits(s + 5, 2, m) || !sd_parse_digits(s + 8, 2, d)) {
+        return false;
+    }
+    return *m >= 1 && *m <= 12 && *d >= 1 && *d <= sd_days_in_month(*y, *m);
 }
 
 /* ---- julian day for weekday calc ---- */
@@ -670,6 +668,22 @@ int sd_format_date(char *buf, size_t bufsz, const SdDateLocale *locale,
 
     sd_resolve(&rl, locale, compactness);
     return sd_format_absolute(buf, bufsz, &rl, y, m, d, false);
+}
+
+/* ---- public API: sd_format_date_with_year ---- */
+
+int sd_format_date_with_year(char *buf, size_t bufsz, const SdDateLocale *locale,
+                             SdCompactness compactness, const char *date_str) {
+    int y, m, d;
+    SdResolved rl;
+
+    if (!buf || bufsz == 0 || !locale) return -1;
+    buf[0] = '\\0';
+
+    if (!sd_parse_date(date_str, &y, &m, &d)) return -1;
+
+    sd_resolve(&rl, locale, compactness);
+    return sd_format_absolute(buf, bufsz, &rl, y, m, d, true);
 }
 
 /* ---- public API: sd_format_relative ---- */

@@ -270,6 +270,49 @@ void test_locale_spanish() {
 // ================================================================
 // Main
 // ================================================================
+// ================================================================
+// Section 13: format_date_with_year
+// ================================================================
+void test_section_13_format_date_with_year() {
+    ASSERT_EQ("13.1", SayableDate(locales::EN(), Compactness::Normal).format_date_with_year("2018-02-04"), "February 4th, 2018"); // 13.1
+    ASSERT_EQ("13.2", SayableDate(locales::EN(), Compactness::Short).format_date_with_year("2025-03-15"), "Mar 15, 2025"); // 13.2
+    ASSERT_EQ("13.3", SayableDate(locales::EN(), Compactness::Compact).format_date_with_year("1997-01-21"), "1/21/97"); // 13.3
+    ASSERT_EQ("13.4 two-digit year keeps its leading zero", SayableDate(locales::TG(), Compactness::Compact).format_date_with_year("2007-05-20"), "20/5/07"); // 13.4
+    ASSERT_EQ("13.5", SayableDate(locales::FI(), Compactness::Short).format_date_with_year("1996-06-21"), "21. kes\303\244kuuta 1996"); // 13.5
+}
+
+// ================================================================
+// Section 14: Short month names
+// ================================================================
+void test_section_14_short_month_names() {
+    ASSERT_EQ("14.1", SayableDate(locales::SK(), Compactness::Short).format_date("2031-02-15"), "15. febru\303\241ra"); // 14.1
+    ASSERT_EQ("14.2", SayableDate(locales::CS(), Compactness::Short).format_date("2025-12-10"), "10. prosince"); // 14.2
+    ASSERT_EQ("14.3", SayableDate(locales::UK(), Compactness::Short).format_date("2025-11-05"), "5 \320\273\320\270\321\201\321\202\320\276\320\277\320\260\320\264\320\260"); // 14.3
+    ASSERT_EQ("14.4", SayableDate(locales::FI(), Compactness::Short).format_relative("1998-08-08", "1998-08-15"), "8. elokuuta"); // 14.4
+}
+
+// ================================================================
+// Section 15: format_relative — short phrases
+// ================================================================
+void test_section_15_format_relative_short_phrases() {
+    ASSERT_EQ("15.1 day after tomorrow", SayableDate(locales::KW(), Compactness::Short).format_relative("2035-12-04", "2035-12-02"), "an Mth ma"); // 15.1
+    ASSERT_EQ("15.2 day before yesterday", SayableDate(locales::MAM(), Compactness::Short).format_relative("2000-01-23", "2000-01-25"), "Dom nchi'j"); // 15.2
+    ASSERT_EQ("15.3 day after tomorrow", SayableDate(locales::KEK(), Compactness::Short).format_relative("2014-10-24", "2014-10-22"), "a'in Vie"); // 15.3
+}
+
+// ================================================================
+// Section 16: Input validation
+// ================================================================
+void test_section_16_input_validation() {
+    ASSERT_NULL("16.1 February 30 doesn't exist", SayableDate(locales::EN(), Compactness::Normal).format_date("2025-02-30")); // 16.1
+    ASSERT_NULL("16.2 Month 13", SayableDate(locales::EN(), Compactness::Normal).format_date("2025-13-01")); // 16.2
+    ASSERT_NULL("16.3 Unpadded month and day", SayableDate(locales::EN(), Compactness::Normal).format_date("2025-6-1")); // 16.3
+    ASSERT_NULL("16.4 Surrounding whitespace", SayableDate(locales::EN(), Compactness::Normal).format_date(" 2025-06-01")); // 16.4
+    ASSERT_EQ("16.5 An ISO datetime: only the date part is used", SayableDate(locales::EN(), Compactness::Normal).format_date("2025-06-01T10:00:00"), "June 1st"); // 16.5
+    ASSERT_NULL("16.6 February 29 in a non-leap year", SayableDate(locales::EN(), Compactness::Normal).format_date_with_year("2023-02-29")); // 16.6
+    ASSERT_NULL("16.7 Invalid asOf", SayableDate(locales::EN(), Compactness::Normal).format_relative("2025-03-16", "2025-04-31")); // 16.7
+}
+
 int main() {
     test_null_edge_cases();
     test_format_date_normal();
@@ -283,6 +326,11 @@ int main() {
     test_locale_russian();
     test_locale_arabic();
     test_locale_spanish();
+
+    test_section_13_format_date_with_year();
+    test_section_14_short_month_names();
+    test_section_15_format_relative_short_phrases();
+    test_section_16_input_validation();
 
     std::cout << "\n" << tests_passed << " passed, " << tests_failed << " failed" << std::endl;
     return tests_failed > 0 ? 1 : 0;

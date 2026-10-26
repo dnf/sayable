@@ -187,3 +187,68 @@ describe "Locale — Finnish (dot separator, short)" do
     formatter.format_time("00:00").should eq "0.00"
   end
 end
+
+# ================================================================
+# Section 9: Minutes in short and compact modes
+# ================================================================
+describe "Minutes in short and compact modes" do
+  # 9.1
+  it "digital modes keep the exact minute" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :short).format_time("18:01").should eq "6:01 PM"
+  end
+
+  # 9.2
+  it "digital modes keep the exact minute" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :compact).format_time("19:05").should eq "7:05p"
+  end
+end
+
+# ================================================================
+# Section 10: Input validation
+# ================================================================
+describe "Input validation" do
+  # 10.1
+  it "one-digit hour" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("9:30").should eq "half past nine"
+  end
+
+  # 10.2
+  it "two-digit hour" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("09:30").should eq "half past nine"
+  end
+
+  # 10.3
+  it "leading whitespace" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time(" 9:30").should be_nil
+  end
+
+  # 10.4
+  it "trailing whitespace" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("9:30 ").should be_nil
+  end
+
+  # 10.5
+  it "minutes need two digits" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("9:5").should be_nil
+  end
+
+  # 10.6
+  it "hour out of range" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("24:00").should be_nil
+  end
+
+  # 10.7
+  it "seconds are allowed and ignored" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("14:15:30").should eq "a quarter past two"
+  end
+
+  # 10.8
+  it "ISO datetime with zone suffix (ignored)" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("2025-01-15T14:15:00Z").should eq "a quarter past two"
+  end
+
+  # 10.9
+  it "ISO datetime with an impossible date" do
+    SayableTime::Formatter.new(SayableTime::Locales.get("en").not_nil!, :normal).format_time("2025-02-30T14:15:00").should be_nil
+  end
+end

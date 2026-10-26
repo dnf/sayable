@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/az.json
 
-_locale_az() {
+_sayabledate_locale_az() {
     _months=('yanvar' 'fevral' 'mart' 'aprel' 'may' 'iyun' 'iyul' 'avqust' 'sentyabr' 'oktyabr' 'noyabr' 'dekabr')
     _weekdays=('bazar' 'bazar ertəsi' 'çərşənbə axşamı' 'çərşənbə' 'cümə axşamı' 'cümə' 'şənbə')
     _day_format='{n}'

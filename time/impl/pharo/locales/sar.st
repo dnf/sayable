@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: time/locales/src/sar.json "
 
-"Locale: sar"
+"Locale: sar"!
 
 !SayableTimeLocales class methodsFor: 'locales'!
 sar

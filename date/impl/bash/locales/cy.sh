@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/cy.json
 
-_locale_cy() {
+_sayabledate_locale_cy() {
     _months=('Ionawr' 'Chwefror' 'Mawrth' 'Ebrill' 'Mai' 'Mehefin' 'Gorffennaf' 'Awst' 'Medi' 'Hydref' 'Tachwedd' 'Rhagfyr')
     _weekdays=('Dydd Sul' 'Dydd Llun' 'Dydd Mawrth' 'Dydd Mercher' 'Dydd Iau' 'Dydd Gwener' 'Dydd Sadwrn')
     _day_format='{n}'

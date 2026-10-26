@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/bi.json
 
-_plural_bi() {
+_sayableduration_plural_bi() {
     echo "other"
 }
 
-_locale_bi() {
+_sayableduration_locale_bi() {
     _unit_second='{n} sekon'
     _unit_minute='{n} minit'
     _unit_hour='{n} aoa'
@@ -45,5 +45,5 @@ _locale_bi() {
     _compact_delimiter=''
     _compact_ago='{0} bifo'
     _compact_in_future='long {0}'
-    _plural_func=_plural_bi
+    _plural_func=_sayableduration_plural_bi
 }

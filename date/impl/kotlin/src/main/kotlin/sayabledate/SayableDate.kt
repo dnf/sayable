@@ -1,5 +1,6 @@
 package sayabledate
 
+import java.time.YearMonth
 import sayabledate.locales.Locales
 
 /** Library version, matching date/config/version.json. */
@@ -183,29 +184,17 @@ public class SayableDate(
     }
 }
 
-/** Parse "YYYY-MM-DD" or ISO datetime to [year, month, day]. Returns null on failure. */
-internal fun parseDate(s: String): IntArray? {
-    if (s.isEmpty()) return null
-    // Strip time part from ISO datetime
-    val datePart = if (s.contains('T')) s.substringBefore('T') else s
-    val parts = datePart.split('-')
-    if (parts.size != 3) return null
-    val year = safeAtoi(parts[0]) ?: return null
-    val month = safeAtoi(parts[1]) ?: return null
-    val day = safeAtoi(parts[2]) ?: return null
-    if (month < 1 || month > 12 || day < 1 || day > 31) return null
-    return intArrayOf(year, month, day)
-}
+/** YYYY-MM-DD, alone or followed by T and anything (an ISO datetime). */
+private val DATE_PREFIX = Regex("""([0-9]{4})-([0-9]{2})-([0-9]{2})(?:T(?s:.*))?""")
 
-/** Converts a string of digits to an int. Returns null if any character is not a digit. */
-internal fun safeAtoi(s: String): Int? {
-    if (s.isEmpty()) return null
-    var n = 0
-    for (c in s) {
-        if (c < '0' || c > '9') return null
-        n = n * 10 + (c - '0')
-    }
-    return n
+/** Parse "YYYY-MM-DD" or ISO datetime naming a real calendar day to [year, month, day]. Returns null on failure. */
+internal fun parseDate(s: String): IntArray? {
+    val (y, m, d) = DATE_PREFIX.matchEntire(s)?.destructured ?: return null
+    val year = y.toInt()
+    val month = m.toInt()
+    val day = d.toInt()
+    if (month !in 1..12 || day !in 1..YearMonth.of(year, month).lengthOfMonth()) return null
+    return intArrayOf(year, month, day)
 }
 
 /** Convert a date to Julian Day Number for day-difference arithmetic. */

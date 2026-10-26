@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/cs.json
 
-_locale_cs() {
+_sayabledate_locale_cs() {
     _months=('leden' 'únor' 'březen' 'duben' 'květen' 'červen' 'červenec' 'srpen' 'září' 'říjen' 'listopad' 'prosinec')
     _weekdays=('neděle' 'pondělí' 'úterý' 'středa' 'čtvrtek' 'pátek' 'sobota')
     _day_format='{n}.'

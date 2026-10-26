@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/kk.json
 
-_plural_kk() {
+_sayableduration_plural_kk() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_kk() {
+_sayableduration_locale_kk() {
     _unit_second='{n} секунд'
     _unit_minute='{n} минут'
     _unit_hour='{n} сағат'
@@ -52,5 +52,5 @@ _locale_kk() {
     _compact_delimiter=''
     _compact_ago='{0} бұрын'
     _compact_in_future='{0} кейін'
-    _plural_func=_plural_kk
+    _plural_func=_sayableduration_plural_kk
 }

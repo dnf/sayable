@@ -12,11 +12,14 @@
        01 WS-ARG-VAL           PIC X(256).
        01 WS-CMD               PIC X(20).
        01 WS-POS1              PIC X(256).
+       01 WS-POS1-LEN          PIC 9(4) VALUE 0.
        01 WS-POS1-SET          PIC 9 VALUE 0.
        01 WS-POS2              PIC X(256).
+       01 WS-POS2-LEN          PIC 9(4) VALUE 0.
        01 WS-POS2-SET          PIC 9 VALUE 0.
        01 WS-OPT-LOCALE        PIC X(8) VALUE "en".
-       01 WS-OPT-AS-OF         PIC X(30).
+       01 WS-OPT-AS-OF         PIC X(256).
+       01 WS-OPT-AS-OF-LEN     PIC 9(4) VALUE 0.
        01 WS-OPT-AS-OF-SET     PIC 9 VALUE 0.
        01 WS-OPT-COMPACTNESS   PIC 9 VALUE 0.
        01 WS-ARG-IDX           PIC 9(4).
@@ -29,6 +32,7 @@
        01 WS-DUR-CHR           PIC X(1).
        01 WS-DUR-IDX           PIC 9(4).
        01 WS-DUR-VALUE         PIC S9(12).
+       01 WS-DUR-MAX-DIGITS    PIC 99 VALUE 12.
        01 WS-DUR-DIGIT         PIC 9.
 
        COPY "duration/impl/cobol/src/Types.cbl".
@@ -59,10 +63,14 @@
                        MOVE REQ-ARG(WS-ARG-IDX) TO WS-ARG-VAL
                        IF WS-POS1-SET = 0
                            MOVE WS-ARG-VAL TO WS-POS1
+                           MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                               TO WS-POS1-LEN
                            MOVE 1 TO WS-POS1-SET
                        ELSE
                            IF WS-POS2-SET = 0
                                MOVE WS-ARG-VAL TO WS-POS2
+                               MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                                   TO WS-POS2-LEN
                                MOVE 1 TO WS-POS2-SET
                            END-IF
                        END-IF
@@ -85,6 +93,7 @@
                                GOBACK
                            END-IF
                            MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-LOCALE
+                           PERFORM REJECT-UNSTORABLE-LOCALE
                        WHEN "-d"
                        WHEN "--as-of"
                            ADD 1 TO WS-ARG-IDX
@@ -95,6 +104,8 @@
                                GOBACK
                            END-IF
                            MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-AS-OF
+                           MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                               TO WS-OPT-AS-OF-LEN
                            MOVE 1 TO WS-OPT-AS-OF-SET
                        WHEN "--short"
                            MOVE 1 TO WS-OPT-COMPACTNESS
@@ -113,10 +124,14 @@
                ELSE
                    IF WS-POS1-SET = 0
                        MOVE WS-ARG-VAL TO WS-POS1
+                       MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                           TO WS-POS1-LEN
                        MOVE 1 TO WS-POS1-SET
                    ELSE
                        IF WS-POS2-SET = 0
                            MOVE WS-ARG-VAL TO WS-POS2
+                           MOVE FUNCTION MIN(REQ-ARG-LEN(WS-ARG-IDX), 9999)
+                               TO WS-POS2-LEN
                            MOVE 1 TO WS-POS2-SET
                        END-IF
                    END-IF
@@ -150,7 +165,7 @@
                EXIT PARAGRAPH
            END-IF
 
-           IF FUNCTION TRIM(WS-POS1) = "null"
+           IF (WS-POS1-LEN = 4 AND WS-POS1(1:4) = "null")
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
@@ -193,12 +208,14 @@
                        MOVE 2 TO REQ-EXIT-CODE
                        EXIT PARAGRAPH
                    END-IF
-                   IF FUNCTION TRIM(WS-POS2) = "null"
+                   IF (WS-POS2-LEN = 4 AND WS-POS2(1:4) = "null")
                        MOVE 1 TO REQ-EXIT-CODE
                        EXIT PARAGRAPH
                    END-IF
                    MOVE WS-POS1 TO WS-FMT-START
+                   MOVE WS-POS1-LEN TO WS-FMT-START-LEN
                    MOVE WS-POS2 TO WS-FMT-END
+                   MOVE WS-POS2-LEN TO WS-FMT-END-LEN
                    PERFORM FORMAT-DURATION-ISO
                END-IF
            END-IF
@@ -222,7 +239,7 @@
                EXIT PARAGRAPH
            END-IF
 
-           IF FUNCTION TRIM(WS-POS1) = "null"
+           IF (WS-POS1-LEN = 4 AND WS-POS1(1:4) = "null")
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
@@ -236,7 +253,7 @@
                EXIT PARAGRAPH
            END-IF
 
-           IF FUNCTION TRIM(WS-OPT-AS-OF) = "null"
+           IF (WS-OPT-AS-OF-LEN = 4 AND WS-OPT-AS-OF(1:4) = "null")
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
@@ -254,7 +271,9 @@
 
            MOVE WS-OPT-COMPACTNESS TO WS-FMT-COMPACTNESS
            MOVE WS-POS1 TO WS-FMT-START
+           MOVE WS-POS1-LEN TO WS-FMT-START-LEN
            MOVE WS-OPT-AS-OF TO WS-FMT-AS-OF
+           MOVE WS-OPT-AS-OF-LEN TO WS-FMT-AS-OF-LEN
            PERFORM FORMAT-SINCE
 
            IF FUNCTION TRIM(WS-FORMAT-RESULT) = SPACES
@@ -276,7 +295,7 @@
                EXIT PARAGRAPH
            END-IF
 
-           IF FUNCTION TRIM(WS-POS1) = "null"
+           IF (WS-POS1-LEN = 4 AND WS-POS1(1:4) = "null")
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
@@ -290,7 +309,7 @@
                EXIT PARAGRAPH
            END-IF
 
-           IF FUNCTION TRIM(WS-OPT-AS-OF) = "null"
+           IF (WS-OPT-AS-OF-LEN = 4 AND WS-OPT-AS-OF(1:4) = "null")
                MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
@@ -308,7 +327,9 @@
 
            MOVE WS-OPT-COMPACTNESS TO WS-FMT-COMPACTNESS
            MOVE WS-POS1 TO WS-FMT-TARGET
+           MOVE WS-POS1-LEN TO WS-FMT-TARGET-LEN
            MOVE WS-OPT-AS-OF TO WS-FMT-AS-OF
+           MOVE WS-OPT-AS-OF-LEN TO WS-FMT-AS-OF-LEN
            PERFORM FORMAT-UNTIL
 
            IF FUNCTION TRIM(WS-FORMAT-RESULT) = SPACES
@@ -324,10 +345,9 @@
        CHECK-IS-INTEGER.
            MOVE 0 TO WS-DUR-IS-INT
            MOVE 0 TO WS-DUR-IS-NEG
-           MOVE FUNCTION LENGTH(FUNCTION TRIM(WS-POS1))
-               TO WS-DUR-LEN
+           MOVE WS-POS1-LEN TO WS-DUR-LEN
 
-           IF WS-DUR-LEN = 0
+           IF WS-DUR-LEN = 0 OR WS-DUR-LEN > LENGTH OF WS-POS1
                EXIT PARAGRAPH
            END-IF
 
@@ -358,29 +378,49 @@
            END-IF
            .
 
-      *> Parse integer value from WS-POS1
+      *> Parse integer value from WS-POS1. More significant digits
+      *> than WS-DUR-VALUE holds are far beyond the 500-year ceiling,
+      *> so the value saturates instead of losing its high digits.
        PARSE-INT-VALUE.
            MOVE 0 TO WS-DUR-VALUE
-           MOVE FUNCTION LENGTH(FUNCTION TRIM(WS-POS1))
-               TO WS-DUR-LEN
+           MOVE WS-POS1-LEN TO WS-DUR-LEN
            MOVE 1 TO WS-DUR-IDX
 
-      *>   Skip minus sign
+      *>   Skip minus sign and leading zeros
            IF WS-POS1(1:1) = "-"
                MOVE 2 TO WS-DUR-IDX
            END-IF
-
-           PERFORM UNTIL WS-DUR-IDX > WS-DUR-LEN
-               MOVE WS-POS1(WS-DUR-IDX:1) TO WS-DUR-CHR
-               COMPUTE WS-DUR-DIGIT =
-                   FUNCTION ORD(WS-DUR-CHR) - FUNCTION ORD("0")
-               COMPUTE WS-DUR-VALUE =
-                   WS-DUR-VALUE * 10 + WS-DUR-DIGIT
+           PERFORM UNTIL WS-DUR-IDX >= WS-DUR-LEN
+                   OR WS-POS1(WS-DUR-IDX:1) NOT = "0"
                ADD 1 TO WS-DUR-IDX
            END-PERFORM
 
+           IF WS-DUR-LEN - WS-DUR-IDX + 1 > WS-DUR-MAX-DIGITS
+               MOVE 999999999999 TO WS-DUR-VALUE
+           ELSE
+               PERFORM UNTIL WS-DUR-IDX > WS-DUR-LEN
+                   MOVE WS-POS1(WS-DUR-IDX:1) TO WS-DUR-CHR
+                   COMPUTE WS-DUR-DIGIT =
+                       FUNCTION ORD(WS-DUR-CHR) - FUNCTION ORD("0")
+                   COMPUTE WS-DUR-VALUE =
+                       WS-DUR-VALUE * 10 + WS-DUR-DIGIT
+                   ADD 1 TO WS-DUR-IDX
+               END-PERFORM
+           END-IF
+
            IF WS-POS1(1:1) = "-"
                MULTIPLY -1 BY WS-DUR-VALUE
+           END-IF
+           .
+
+      *> A locale code longer than WS-OPT-LOCALE, or with trailing
+      *> blanks, would match a real code once padded or cut; it names
+      *> no locale.
+       REJECT-UNSTORABLE-LOCALE.
+           IF REQ-ARG-LEN(WS-ARG-IDX) > LENGTH OF WS-OPT-LOCALE
+               OR REQ-ARG-LEN(WS-ARG-IDX) NOT =
+                   FUNCTION STORED-CHAR-LENGTH(REQ-ARG(WS-ARG-IDX))
+               MOVE "?" TO WS-OPT-LOCALE
            END-IF
            .
 

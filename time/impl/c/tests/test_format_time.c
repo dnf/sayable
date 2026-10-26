@@ -170,6 +170,39 @@ static void test_locale_lookup(void) {
     ASSERT_TRUE("get(EN) null", st_locale_get("EN") == NULL);
 }
 
+/* ================================================================ */
+/* Section 9: Minutes in short and compact modes */
+/* ================================================================ */
+static void test_section_9_minutes_in_short_and_compact_modes(void) {
+    char buf[256];
+    int rc;
+    rc = st_format_time(buf, sizeof(buf), &st_locale_en, ST_SHORT, "18:01");
+    ASSERT_EQ("9.1 digital modes keep the exact minute", rc, buf, "6:01 PM"); // 9.1
+    rc = st_format_time(buf, sizeof(buf), &st_locale_en, ST_COMPACT, "19:05");
+    ASSERT_EQ("9.2 digital modes keep the exact minute", rc, buf, "7:05p"); // 9.2
+}
+
+/* ================================================================ */
+/* Section 10: Input validation */
+/* ================================================================ */
+static void test_section_10_input_validation(void) {
+    char buf[256];
+    int rc;
+    rc = st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "9:30");
+    ASSERT_EQ("10.1 one-digit hour", rc, buf, "half past nine"); // 10.1
+    rc = st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "09:30");
+    ASSERT_EQ("10.2 two-digit hour", rc, buf, "half past nine"); // 10.2
+    ASSERT_NULL("10.3 leading whitespace", st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, " 9:30")); // 10.3
+    ASSERT_NULL("10.4 trailing whitespace", st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "9:30 ")); // 10.4
+    ASSERT_NULL("10.5 minutes need two digits", st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "9:5")); // 10.5
+    ASSERT_NULL("10.6 hour out of range", st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "24:00")); // 10.6
+    rc = st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "14:15:30");
+    ASSERT_EQ("10.7 seconds are allowed and ignored", rc, buf, "a quarter past two"); // 10.7
+    rc = st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "2025-01-15T14:15:00Z");
+    ASSERT_EQ("10.8 ISO datetime with zone suffix (ignored)", rc, buf, "a quarter past two"); // 10.8
+    ASSERT_NULL("10.9 ISO datetime with an impossible date", st_format_time(buf, sizeof(buf), &st_locale_en, ST_NORMAL, "2025-02-30T14:15:00")); // 10.9
+}
+
 int main(void) {
     test_null_edge_cases();
     test_clock_normal();
@@ -180,6 +213,9 @@ int main(void) {
     test_locale_japanese();
     test_finnish_dot_separator();
     test_locale_lookup();
+
+    test_section_9_minutes_in_short_and_compact_modes();
+    test_section_10_input_validation();
 
     printf("\n=== Results ===\n");
     printf("Passed: %d\n", tests_passed);

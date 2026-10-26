@@ -9,13 +9,13 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: duration/locales/src/uz.json
 
-_plural_uz() {
+_sayableduration_plural_uz() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
-_locale_uz() {
+_sayableduration_locale_uz() {
     _unit_second='{n} soniya'
     _unit_minute='{n} daqiqa'
     _unit_hour='{n} soat'
@@ -52,5 +52,5 @@ _locale_uz() {
     _compact_delimiter=''
     _compact_ago='{0} oldin'
     _compact_in_future='{0} ichida'
-    _plural_func=_plural_uz
+    _plural_func=_sayableduration_plural_uz
 }

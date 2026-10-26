@@ -16,6 +16,7 @@
                EXIT PARAGRAPH
            END-IF
            MOVE WS-FMT-TIME TO WS-TIME-STR
+           MOVE WS-FMT-TIME-LEN TO WS-TIME-LEN
            PERFORM PARSE-TIME-INPUT
            IF WS-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -75,16 +76,7 @@
            *> Calculate h12 and next_h12
            DIVIDE WS-HOUR BY 12
                GIVING WS-TEMP-CALC REMAINDER WS-H12
-           ADD 1 TO WS-HOUR
-           IF WS-HOUR > 23
-               MOVE 0 TO WS-HOUR
-           END-IF
-           DIVIDE WS-HOUR BY 12
-               GIVING WS-TEMP-CALC REMAINDER WS-NEXT-H12
-           SUBTRACT 1 FROM WS-HOUR
-           IF WS-HOUR < 0
-               ADD 24 TO WS-HOUR
-           END-IF
+           COMPUTE WS-NEXT-H12 = FUNCTION MOD(WS-HOUR + 1, 12)
 
            *> Get hour names (1-based array)
            ADD 1 TO WS-H12
@@ -159,16 +151,10 @@
            END-IF
 
            *> Replace {mm} with zero-padded minutes
-           MOVE WS-PARSED-MINUTE TO WS-MM-EDITED
-           MOVE FUNCTION TRIM(WS-MM-EDITED) TO WS-MM-STR
-           IF WS-PARSED-MINUTE < 10
-               STRING "0" FUNCTION TRIM(WS-MM-STR)
-                   DELIMITED BY SIZE INTO WS-MM-STR
-               END-STRING
-           END-IF
+           MOVE WS-PARSED-MINUTE TO WS-MM-DIGITS
            MOVE WS-PATTERN TO WS-REPLACE-SRC
            MOVE "{mm}" TO WS-REPLACE-MARKER
-           MOVE FUNCTION TRIM(WS-MM-STR) TO WS-REPLACE-REPL
+           MOVE WS-MM-DIGITS TO WS-REPLACE-REPL
            PERFORM REPLACE-FIRST
            MOVE WS-REPLACE-RESULT TO WS-FORMAT-RESULT
            .
@@ -217,71 +203,152 @@
            END-IF
 
            *> Replace {mm} with zero-padded minutes
-           MOVE WS-PARSED-MINUTE TO WS-MM-EDITED
-           MOVE FUNCTION TRIM(WS-MM-EDITED) TO WS-MM-STR
-           IF WS-PARSED-MINUTE < 10
-               STRING "0" FUNCTION TRIM(WS-MM-STR)
-                   DELIMITED BY SIZE INTO WS-MM-STR
-               END-STRING
-           END-IF
+           MOVE WS-PARSED-MINUTE TO WS-MM-DIGITS
            MOVE WS-PATTERN TO WS-REPLACE-SRC
            MOVE "{mm}" TO WS-REPLACE-MARKER
-           MOVE FUNCTION TRIM(WS-MM-STR) TO WS-REPLACE-REPL
+           MOVE WS-MM-DIGITS TO WS-REPLACE-REPL
            PERFORM REPLACE-FIRST
            MOVE WS-REPLACE-RESULT TO WS-FORMAT-RESULT
            .
 
 *> ============================================================
-*> PARSE-TIME-INPUT: Parse HH:MM from WS-TIME-STR
-*> Handles ISO datetime (strips date part)
+*> PARSE-TIME-INPUT: Parse a clock time, alone or after the T of an
+*> ISO datetime whose date part is a real calendar day
+*> Input:  WS-TIME-STR, WS-TIME-LEN (0 = length without trailing blanks)
 *> Output: WS-PARSED-HOUR, WS-PARSED-MINUTE,
 *>         WS-PARSE-OK (1=success, 0=failure)
 *> ============================================================
        PARSE-TIME-INPUT.
            MOVE 0 TO WS-PARSE-OK
-
-           *> Strip date part from ISO datetime (after T)
-           MOVE 0 TO WS-COLON-POS
-           INSPECT WS-TIME-STR
-               TALLYING WS-COLON-POS
+           IF WS-TIME-LEN = 0
+               MOVE FUNCTION STORED-CHAR-LENGTH(WS-TIME-STR)
+                   TO WS-TIME-LEN
+           END-IF
+           IF WS-TIME-LEN = 0 OR WS-TIME-LEN > 256
+               EXIT PARAGRAPH
+           END-IF
+           MOVE 0 TO WS-T-POS
+           INSPECT WS-TIME-STR(1:WS-TIME-LEN)
+               TALLYING WS-T-POS
                FOR CHARACTERS BEFORE INITIAL "T"
-           IF WS-COLON-POS <
-               FUNCTION LENGTH(FUNCTION TRIM(WS-TIME-STR))
-               ADD 1 TO WS-COLON-POS
-               MOVE WS-TIME-STR(WS-COLON-POS + 1:)
-                   TO WS-TIME-STR
+           IF WS-T-POS < WS-TIME-LEN
+               IF WS-T-POS NOT = 10
+                   EXIT PARAGRAPH
+               END-IF
+               PERFORM CHECK-REAL-DATE
+               IF WS-PARSE-OK = 0
+                   EXIT PARAGRAPH
+               END-IF
+               MOVE 0 TO WS-PARSE-OK
+               COMPUTE WS-CLOCK-START = WS-T-POS + 2
+           ELSE
+               MOVE 1 TO WS-CLOCK-START
            END-IF
+           PERFORM PARSE-CLOCK
+           .
 
-           *> Need at least HH:MM (5 chars)
-           IF FUNCTION LENGTH(FUNCTION TRIM(WS-TIME-STR))
-               < 5
+*> ============================================================
+*> CHECK-REAL-DATE: WS-TIME-STR(1:10) is YYYY-MM-DD naming a real
+*> calendar day
+*> Output: WS-PARSE-OK (1=real date, 0=not)
+*> ============================================================
+       CHECK-REAL-DATE.
+           MOVE 0 TO WS-PARSE-OK
+           IF WS-TIME-STR(5:1) NOT = "-"
+               OR WS-TIME-STR(8:1) NOT = "-"
+               OR WS-TIME-STR(1:4) IS NOT NUMERIC
+               OR WS-TIME-STR(6:2) IS NOT NUMERIC
+               OR WS-TIME-STR(9:2) IS NOT NUMERIC
                EXIT PARAGRAPH
            END-IF
-
-           *> Find colon position
-           MOVE 0 TO WS-COLON-POS
-           INSPECT WS-TIME-STR(1:FUNCTION LENGTH(
-               FUNCTION TRIM(WS-TIME-STR)))
-               TALLYING WS-COLON-POS
-               FOR CHARACTERS BEFORE INITIAL ":"
-           IF WS-COLON-POS >=
-               FUNCTION LENGTH(FUNCTION TRIM(WS-TIME-STR))
+           MOVE WS-TIME-STR(1:4) TO WS-DATE-YEAR
+           MOVE WS-TIME-STR(6:2) TO WS-DATE-MONTH
+           MOVE WS-TIME-STR(9:2) TO WS-DATE-DAY
+           IF WS-DATE-MONTH < 1 OR WS-DATE-MONTH > 12
                EXIT PARAGRAPH
            END-IF
+           EVALUATE WS-DATE-MONTH
+               WHEN 4 WHEN 6 WHEN 9 WHEN 11
+                   MOVE 30 TO WS-MONTH-DAY-COUNT
+               WHEN 2
+                   IF (FUNCTION MOD(WS-DATE-YEAR, 4) = 0
+                       AND FUNCTION MOD(WS-DATE-YEAR, 100) NOT = 0)
+                       OR FUNCTION MOD(WS-DATE-YEAR, 400) = 0
+                       MOVE 29 TO WS-MONTH-DAY-COUNT
+                   ELSE
+                       MOVE 28 TO WS-MONTH-DAY-COUNT
+                   END-IF
+               WHEN OTHER
+                   MOVE 31 TO WS-MONTH-DAY-COUNT
+           END-EVALUATE
+           IF WS-DATE-DAY >= 1 AND WS-DATE-DAY <= WS-MONTH-DAY-COUNT
+               MOVE 1 TO WS-PARSE-OK
+           END-IF
+           .
 
-           *> Extract hour and minute
-           MOVE WS-TIME-STR(1:WS-COLON-POS) TO WS-PARSED-HOUR
-           MOVE WS-TIME-STR(WS-COLON-POS + 2:2)
-               TO WS-PARSED-MINUTE
-
-           *> Validate
-           IF WS-PARSED-HOUR > 23
+*> ============================================================
+*> PARSE-CLOCK: H:MM or HH:MM from WS-CLOCK-START to WS-TIME-LEN,
+*> then optional :SS with optional .fraction, then an optional zone
+*> suffix (Z or +HH:MM / -HH:MM, validated but never applied)
+*> Output: WS-PARSED-HOUR, WS-PARSED-MINUTE, WS-PARSE-OK
+*> ============================================================
+       PARSE-CLOCK.
+           MOVE 0 TO WS-PARSE-OK
+           MOVE WS-CLOCK-START TO WS-SCAN-POS
+           MOVE 0 TO WS-HOUR-DIGITS
+           PERFORM UNTIL WS-HOUR-DIGITS = 2
+                   OR WS-SCAN-POS > WS-TIME-LEN
+                   OR WS-TIME-STR(WS-SCAN-POS:1) IS NOT NUMERIC
+               ADD 1 TO WS-HOUR-DIGITS
+               ADD 1 TO WS-SCAN-POS
+           END-PERFORM
+           IF WS-HOUR-DIGITS = 0 OR WS-SCAN-POS + 2 > WS-TIME-LEN
                EXIT PARAGRAPH
            END-IF
-           IF WS-PARSED-MINUTE > 59
+           IF WS-TIME-STR(WS-SCAN-POS:1) NOT = ":"
+               OR WS-TIME-STR(WS-SCAN-POS + 1:2) IS NOT NUMERIC
                EXIT PARAGRAPH
            END-IF
-           MOVE 1 TO WS-PARSE-OK
+           COMPUTE WS-PARSED-HOUR = FUNCTION NUMVAL(
+               WS-TIME-STR(WS-CLOCK-START:WS-HOUR-DIGITS))
+           MOVE WS-TIME-STR(WS-SCAN-POS + 1:2) TO WS-PARSED-MINUTE
+           ADD 3 TO WS-SCAN-POS
+           MOVE 0 TO WS-PARSED-SECOND
+           IF WS-SCAN-POS + 2 <= WS-TIME-LEN
+               AND WS-TIME-STR(WS-SCAN-POS:1) = ":"
+               AND WS-TIME-STR(WS-SCAN-POS + 1:2) IS NUMERIC
+               MOVE WS-TIME-STR(WS-SCAN-POS + 1:2) TO WS-PARSED-SECOND
+               ADD 3 TO WS-SCAN-POS
+               IF WS-SCAN-POS + 1 <= WS-TIME-LEN
+                   AND WS-TIME-STR(WS-SCAN-POS:1) = "."
+                   AND WS-TIME-STR(WS-SCAN-POS + 1:1) IS NUMERIC
+                   ADD 1 TO WS-SCAN-POS
+                   PERFORM UNTIL WS-SCAN-POS > WS-TIME-LEN
+                           OR WS-TIME-STR(WS-SCAN-POS:1) IS NOT NUMERIC
+                       ADD 1 TO WS-SCAN-POS
+                   END-PERFORM
+               END-IF
+           END-IF
+           COMPUTE WS-ZONE-LEN = WS-TIME-LEN - WS-SCAN-POS + 1
+           EVALUATE TRUE
+               WHEN WS-ZONE-LEN = 0
+                   CONTINUE
+               WHEN WS-ZONE-LEN = 1 AND WS-TIME-STR(WS-SCAN-POS:1) = "Z"
+                   CONTINUE
+               WHEN WS-ZONE-LEN = 6
+                   AND (WS-TIME-STR(WS-SCAN-POS:1) = "+"
+                       OR WS-TIME-STR(WS-SCAN-POS:1) = "-")
+                   AND WS-TIME-STR(WS-SCAN-POS + 1:2) IS NUMERIC
+                   AND WS-TIME-STR(WS-SCAN-POS + 3:1) = ":"
+                   AND WS-TIME-STR(WS-SCAN-POS + 4:2) IS NUMERIC
+                   CONTINUE
+               WHEN OTHER
+                   EXIT PARAGRAPH
+           END-EVALUATE
+           IF WS-PARSED-HOUR <= 23 AND WS-PARSED-MINUTE <= 59
+               AND WS-PARSED-SECOND <= 59
+               MOVE 1 TO WS-PARSE-OK
+           END-IF
            .
 
 *> ============================================================

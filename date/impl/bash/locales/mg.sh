@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: date/locales/src/mg.json
 
-_locale_mg() {
+_sayabledate_locale_mg() {
     _months=('Janoary' 'Febroary' 'Martsa' 'Aprily' 'Mey' 'Jona' 'Jolay' 'Aogositra' 'Septambra' 'Oktobra' 'Novambra' 'Desambra')
     _weekdays=('Alahady' 'Alatsinainy' 'Talata' 'Alarobia' 'Alakamisy' 'Zoma' 'Asabotsy')
     _day_format='{n}'

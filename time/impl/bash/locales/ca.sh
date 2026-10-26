@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/ca.json
 
-_locale_ca() {
+_sayabletime_locale_ca() {
     _clock_hours=('dotze' 'una' 'dues' 'tres' 'quatre' 'cinc' 'sis' 'set' 'vuit' 'nou' 'deu' 'onze')
     _clock_midnight='mitjanit'
     _clock_noon='migdia'

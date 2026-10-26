@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ga.json
 
-_plural_ga() {
+_sayableage_plural_ga() {
     local n=$1
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     if [ "${n}" -eq 2 ]; then echo "two"; return; fi
@@ -18,7 +18,7 @@ _plural_ga() {
     echo "other"
 }
 
-_locale_ga() {
+_sayableage_locale_ga() {
     _unit_day_one='{n} lá'
     _unit_day_two='{n} lá'
     _unit_day_few='{n} lá'
@@ -66,5 +66,5 @@ _locale_ga() {
     _compact_unit_year='{n} bl'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ga
+    _plural_func=_sayableage_plural_ga
 }

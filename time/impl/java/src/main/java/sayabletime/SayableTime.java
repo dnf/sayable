@@ -1,5 +1,9 @@
 package sayabletime;
 
+import java.time.YearMonth;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import sayabletime.locales.Locales;
 
 public final class SayableTime {
@@ -83,36 +87,39 @@ public final class SayableTime {
         return DEFAULT.formatTime(input);
     }
 
+    /** H:MM or HH:MM, optional :SS and fraction, optional zone suffix (ignored). */
+    private static final Pattern CLOCK = Pattern.compile(
+        "([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?");
+    private static final Pattern DATE = Pattern.compile("([0-9]{4})-([0-9]{2})-([0-9]{2})");
+
     static int[] parseTime(String input) {
         if (input == null || input.isEmpty()) return null;
-        String t = input;
-        int tIdx = t.indexOf('T');
-        if (tIdx >= 0) t = t.substring(tIdx + 1);
-        int plusIdx = t.indexOf('+');
-        if (plusIdx >= 0) t = t.substring(0, plusIdx);
-        int zIdx = t.indexOf('Z');
-        if (zIdx >= 0) t = t.substring(0, zIdx);
-        String[] parts = t.split(":");
-        if (parts.length < 2) return null;
-        int hour = safeAtoi(parts[0]);
-        int minute = safeAtoi(parts[1]);
-        if (hour < 0 || minute < 0) return null;
-        if (hour > 23 || minute > 59) return null;
+        String clock = input;
+        int tIdx = input.indexOf('T');
+        if (tIdx >= 0) {
+            if (!isRealDate(input.substring(0, tIdx))) return null;
+            clock = input.substring(tIdx + 1);
+        }
+        Matcher m = CLOCK.matcher(clock);
+        if (!m.matches()) return null;
+        int hour = Integer.parseInt(m.group(1));
+        int minute = Integer.parseInt(m.group(2));
+        int second = m.group(3) == null ? 0 : Integer.parseInt(m.group(3));
+        if (hour > 23 || minute > 59 || second > 59) return null;
         return new int[]{hour, minute};
+    }
+
+    private static boolean isRealDate(String s) {
+        Matcher m = DATE.matcher(s);
+        if (!m.matches()) return false;
+        int month = Integer.parseInt(m.group(2));
+        int day = Integer.parseInt(m.group(3));
+        return month >= 1 && month <= 12 && day >= 1
+            && day <= YearMonth.of(Integer.parseInt(m.group(1)), month).lengthOfMonth();
     }
 
     static int roundTo5(int minute) {
         return (minute + 2) / 5 * 5;
     }
 
-    private static int safeAtoi(String s) {
-        if (s == null || s.isEmpty()) return -1;
-        int n = 0;
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c < '0' || c > '9') return -1;
-            n = n * 10 + (c - '0');
-        }
-        return n;
-    }
 }

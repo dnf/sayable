@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: date/locales/src/sar.json "
 
-"Locale: sar"
+"Locale: sar"!
 
 !SayableDateLocales class methodsFor: 'locales'!
 sar

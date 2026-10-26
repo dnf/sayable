@@ -2,6 +2,8 @@
 
 (def version "0.5.0")
 
+(def- max-duration-months 6000) # 500 years, the same ceiling as sayable-age
+
 (defn- string-replace-all [s pattern replacement]
   (var result s)
   (var idx (string/find pattern result))
@@ -52,36 +54,34 @@
     (+= days (days-in-month y i)))
   (+ days d -1))
 
-(defn- parse-iso-to-seconds [s]
-  (when (and s (not= s ""))
-    (def parts (string/split "T" s))
-    (when (= (length parts) 2)
-      (def dp (string/split "-" (in parts 0)))
-      (when (= (length dp) 3)
-        (def year (scan-number (in dp 0)))
-        (def month (scan-number (in dp 1)))
-        (def day (scan-number (in dp 2)))
-        (var time-str (in parts 1))
-        (when (string/find "+" time-str)
-          (set time-str (first (string/split "+" time-str))))
-        (when (string/find "Z" time-str)
-          (set time-str (first (string/split "Z" time-str))))
-        (def tp (string/split ":" time-str))
-        (def hour (scan-number (in tp 0)))
-        (def minute (if (>= (length tp) 2) (scan-number (in tp 1)) 0))
-        (def sec-str (if (>= (length tp) 3)
-                       (first (string/split "." (in tp 2)))
-                       "0"))
-        (def second (scan-number sec-str))
-        (when (and year month day hour minute second)
-          (def days (days-since-epoch year month day))
-          (+ (* days 86400) (* hour 3600) (* minute 60) second))))))
+# YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
+(def- timestamp-grammar
+  (peg/compile
+    '(* (number (4 :d)) "-" (number (2 :d)) "-" (number (2 :d))
+        "T" (number (between 1 2 :d)) ":" (number (2 :d))
+        (? (* ":" (number (2 :d)) (? (* "." (some :d)))))
+        (? (+ "Z" (* (set "+-") (2 :d) ":" (2 :d))))
+        -1)))
 
-(defn- pick [override attr default]
+(defn- real-date? [y m d]
+  (and (<= 1 m 12) (<= 1 d (days-in-month y m))))
+
+(defn- real-clock? [hour minute second]
+  (and (<= hour 23) (<= minute 59) (<= second 59)))
+
+(defn- parse-iso-to-seconds [s]
+  (when-let [parts (and (string? s) (peg/match timestamp-grammar s))
+             [year month day hour minute second] parts
+             second (or second 0)]
+    (when (and (real-date? year month day) (real-clock? hour minute second))
+      (+ (* (days-since-epoch year month day) 86400)
+         (* hour 3600) (* minute 60) second))))
+
+(defn- pick [override attr fallback]
   (if override
     (let [val (get override attr)]
-      (if (not= val nil) val default))
-    default))
+      (if (not= val nil) val fallback))
+    fallback))
 
 (defn- format-duration-seconds [total units half delimiter just-now loc]
   # 0 seconds
@@ -156,6 +156,7 @@
 
   # Approximate months
   (var total-months (math/round (/ total-days 30.44)))
+  (when (> total-months max-duration-months) (break nil))
 
   # 1-11 months
   (when (< total-months 12)
@@ -221,7 +222,7 @@
      (when (< diff 0) (break nil))
      (when (= diff 0) (break just-now))
      (def dur (format-duration-seconds diff units half delimiter just-now loc))
-     (string-replace-all ago "{0}" dur))
+     (when dur (string-replace-all ago "{0}" dur)))
 
    :format-until
    (fn [target as-of]
@@ -234,7 +235,7 @@
      (when (< diff 0) (break nil))
      (when (= diff 0) (break just-now))
      (def dur (format-duration-seconds diff units half delimiter just-now loc))
-     (string-replace-all in-future "{0}" dur))})
+     (when dur (string-replace-all in-future "{0}" dur)))})
 
 # Default English locale
 (import ./locales/en :prefix "en-")

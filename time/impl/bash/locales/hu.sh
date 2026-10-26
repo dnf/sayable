@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: time/locales/src/hu.json
 
-_locale_hu() {
+_sayabletime_locale_hu() {
     _clock_hours=('tizenkettő' 'egy' 'kettő' 'három' 'négy' 'öt' 'hat' 'hét' 'nyolc' 'kilenc' 'tíz' 'tizenegy')
     _clock_midnight='éjfél'
     _clock_noon='dél'

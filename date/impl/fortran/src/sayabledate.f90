@@ -13,20 +13,18 @@ contains
     character(len=*), intent(in) :: s
     integer, intent(out) :: year, month, day
     logical, intent(out) :: ok
-    integer :: i, t_pos, slen
+    integer :: i
 
     ok = .false.
     year = 0
     month = 0
     day = 0
 
-    slen = len_trim(s)
-    if (slen < 10) return
-
-    ! Handle ISO datetime: extract date part before 'T'
-    t_pos = index(s(1:slen), 'T')
-    if (t_pos > 0) then
-      if (t_pos < 11) return
+    ! YYYY-MM-DD, optionally followed by T and a time (only the date part
+    ! is read).
+    if (len(s) < 10) return
+    if (len(s) > 10) then
+      if (s(11:11) /= 'T') return
     end if
 
     if (s(5:5) /= '-' .or. s(8:8) /= '-') return
@@ -45,9 +43,25 @@ contains
     end do
 
     if (month < 1 .or. month > 12) return
-    if (day < 1 .or. day > 31) return
-    ok = .true.
+    ok = (day >= 1 .and. day <= days_in_month(year, month))
   end subroutine parse_date
+
+  pure function days_in_month(year, month) result(days)
+    integer, intent(in) :: year, month
+    integer :: days
+    select case (month)
+    case (4, 6, 9, 11)
+      days = 30
+    case (2)
+      if ((mod(year, 4) == 0 .and. mod(year, 100) /= 0) .or. mod(year, 400) == 0) then
+        days = 29
+      else
+        days = 28
+      end if
+    case default
+      days = 31
+    end select
+  end function days_in_month
 
   pure function to_jdn(year, month, day) result(jd)
     integer, intent(in) :: year, month, day

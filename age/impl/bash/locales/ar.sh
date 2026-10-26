@@ -9,7 +9,7 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/ar.json
 
-_plural_ar() {
+_sayableage_plural_ar() {
     local n=$1
     if [ "${n}" -eq 0 ]; then echo "zero"; return; fi
     if [ "${n}" -eq 1 ]; then echo "one"; return; fi
@@ -20,7 +20,7 @@ _plural_ar() {
     echo "other"
 }
 
-_locale_ar() {
+_sayableage_locale_ar() {
     _unit_day_zero='{n} يوم'
     _unit_day_one='يوم'
     _unit_day_two='يومان'
@@ -95,5 +95,5 @@ _locale_ar() {
     _compact_unit_year='{n} سنة'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_ar
+    _plural_func=_sayableage_plural_ar
 }

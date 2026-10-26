@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: duration/locales/src/ceb.json "
 
-"Locale: ceb"
+"Locale: ceb"!
 
 !SayableDurationLocales class methodsFor: 'locales'!
 ceb

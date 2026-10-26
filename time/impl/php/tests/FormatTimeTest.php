@@ -214,4 +214,85 @@ final class FormatTimeTest extends TestCase
         $st = new SayableTime(Locales::FI(), Compactness::Short);
         $this->assertSame('0.00', $st->formatTime('00:00'));
     }
+
+    // ================================================================
+    // Sections 9-10: minutes in short/compact, input validation
+    // ================================================================
+
+    // 9.1
+    public function test_9_1_digital_modes_keep_the_exact_minute(): void
+    {
+        $fmt = new SayableTime(Locales::EN(), Compactness::Short);
+        $this->assertSame('6:01 PM', $fmt->formatTime('18:01'));
+    }
+
+    // 9.2
+    public function test_9_2_digital_modes_keep_the_exact_minute(): void
+    {
+        $fmt = new SayableTime(Locales::EN(), Compactness::Compact);
+        $this->assertSame('7:05p', $fmt->formatTime('19:05'));
+    }
+
+    // 10.1
+    public function test_10_1_one_digit_hour(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertSame('half past nine', $fmt->formatTime('9:30'));
+    }
+
+    // 10.2
+    public function test_10_2_two_digit_hour(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertSame('half past nine', $fmt->formatTime('09:30'));
+    }
+
+    // 10.3
+    public function test_10_3_leading_whitespace(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertNull($fmt->formatTime(' 9:30'));
+    }
+
+    // 10.4
+    public function test_10_4_trailing_whitespace(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertNull($fmt->formatTime('9:30 '));
+    }
+
+    // 10.5
+    public function test_10_5_minutes_need_two_digits(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertNull($fmt->formatTime('9:5'));
+    }
+
+    // 10.6
+    public function test_10_6_hour_out_of_range(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertNull($fmt->formatTime('24:00'));
+    }
+
+    // 10.7
+    public function test_10_7_seconds_are_allowed_and_ignored(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertSame('a quarter past two', $fmt->formatTime('14:15:30'));
+    }
+
+    // 10.8
+    public function test_10_8_iso_datetime_with_zone_suffix_ignored(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertSame('a quarter past two', $fmt->formatTime('2025-01-15T14:15:00Z'));
+    }
+
+    // 10.9
+    public function test_10_9_iso_datetime_with_an_impossible_date(): void
+    {
+        $fmt = new SayableTime(Locales::EN());
+        $this->assertNull($fmt->formatTime('2025-02-30T14:15:00'));
+    }
 }

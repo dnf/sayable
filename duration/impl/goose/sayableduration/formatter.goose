@@ -42,53 +42,64 @@ fn days_since_epoch(year: i64, month: i64, day: i64) -> i64 {
     return days + day - 1;
 }
 
-// Everything before the first byte of `stops`, or all of `s`.
-fn before_any(s: u8[:], stops: u8[:]) -> u8[:] {
-    for c, i in s {
-        for stop in stops {
-            if c == stop { return s[..i]; }
-        }
-    }
-    return s;
+fn is_digit(c: u8) -> bool { c >= '0' && c <= '9' }
+
+// Number of consecutive ASCII digits in `s` starting at `from`.
+fn digit_run(s: u8[:], from: i64) -> i64 {
+    var i = from;
+    while i < s.len && is_digit(s[i]) { i += 1; }
+    return i - from;
 }
 
-// Seconds since 2000-01-01T00:00 for "YYYY-MM-DDTHH:MM[:SS[.fff]]",
-// ignoring any "Z" or "+hh:mm" suffix; false when malformed.
-fn parse_iso_seconds(iso: u8[:]) -> i64, bool {
-    let t_idx = find(iso, "T");
-    guard t_idx >= 0 else { return 0, false; }
-    let date_part = iso[..t_idx];
-    let time_part = before_any(iso[t_idx + 1..], "+Z");
+// Value of the two ASCII digits at `at` (already checked to be digits).
+fn two_digit_value(s: u8[:], at: i64) -> i64 { (s[at] - '0') * 10 + (s[at + 1] - '0') }
 
-    guard date_part.len >= 10 && date_part[4] == '-' && date_part[7] == '-' else { return 0, false; }
-    let year, oky = parse_digits(date_part[0..4]);
-    let month, okm = parse_digits(date_part[5..7]);
-    let day, okd = parse_digits(date_part[8..10]);
-    guard oky && okm && okd else { return 0, false; }
+// Index just past an optional zone suffix ("Z" or "+HH:MM"/"-HH:MM") at
+// `from`, or -1 when a suffix starts but is malformed.
+fn skip_zone(s: u8[:], from: i64) -> i64 {
+    guard from < s.len else { return from; }
+    if s[from] == 'Z' { return from + 1; }
+    guard s[from] == '+' || s[from] == '-' else { return from; }
+    guard from + 6 <= s.len && digit_run(s, from + 1) >= 2 && s[from + 3] == ':' && digit_run(s, from + 4) >= 2 else { return -1; }
+    return from + 6;
+}
 
-    let c1 = find(time_part, ":");
-    guard c1 >= 0 else { return 0, false; }
-    let hour, okh = parse_digits(time_part[..c1]);
-    guard okh else { return 0, false; }
-    let rest = time_part[c1 + 1..];
-
-    var minute = 0;
+// Seconds into the day of a clock time: H:MM or HH:MM, then optional :SS,
+// an optional fraction after the seconds and an optional zone suffix,
+// which is validated but not applied; false when malformed.
+fn parse_clock_seconds(s: u8[:]) -> i64, bool {
+    let hour_digits = digit_run(s, 0);
+    guard hour_digits == 1 || hour_digits == 2 else { return 0, false; }
+    var i = hour_digits;
+    guard i < s.len && s[i] == ':' && digit_run(s, i + 1) >= 2 else { return 0, false; }
+    let hour = if hour_digits == 1 { s[0] - '0' } else { two_digit_value(s, 0) };
+    let minute = two_digit_value(s, i + 1);
+    i += 3;
     var second = 0;
-    let c2 = find(rest, ":");
-    if c2 >= 0 {
-        let mi, okmi = parse_digits(rest[..c2]);
-        let se, okse = parse_digits(before_any(rest[c2 + 1..], "."));
-        guard okmi && okse else { return 0, false; }
-        minute = mi;
-        second = se;
-    } else {
-        let mi, okmi = parse_digits(rest);
-        guard okmi else { return 0, false; }
-        minute = mi;
+    if i < s.len && s[i] == ':' {
+        guard digit_run(s, i + 1) >= 2 else { return 0, false; }
+        second = two_digit_value(s, i + 1);
+        i += 3;
+        if i < s.len && s[i] == '.' && digit_run(s, i + 1) > 0 { i += 1 + digit_run(s, i + 1); }
     }
+    let end = skip_zone(s, i);
+    guard end == s.len && hour <= 23 && minute <= 59 && second <= 59 else { return 0, false; }
+    return hour * 3600 + minute * 60 + second, true;
+}
 
-    let days = days_since_epoch(year, month, day);
-    return days * 86400 + hour * 3600 + minute * 60 + second, true;
+// Seconds since 2000-01-01T00:00 for a timestamp "YYYY-MM-DDTHH:MM" with
+// optional seconds, fraction and zone suffix (docs/input-formats.md);
+// false when malformed or not a real calendar day.
+fn parse_iso_seconds(iso: u8[:]) -> i64, bool {
+    guard iso.len > 11 && iso[4] == '-' && iso[7] == '-' && iso[10] == 'T' else { return 0, false; }
+    let year, oky = parse_digits(iso[0..4]);
+    let month, okm = parse_digits(iso[5..7]);
+    let day, okd = parse_digits(iso[8..10]);
+    guard oky && okm && okd else { return 0, false; }
+    guard month >= 1 && month <= 12 && day >= 1 && day <= days_in_month(year, month) else { return 0, false; }
+    let clock, okc = parse_clock_seconds(iso[11..]);
+    guard okc else { return 0, false; }
+    return days_since_epoch(year, month, day) * 86400 + clock, true;
 }
 
 // ---- Templates ----
@@ -178,6 +189,9 @@ fn append_pair(out: u8[>..]&, r: const Resolved&, major: i64, major_uf: const Un
     }
 }
 
+// 500 years, the same ceiling as sayable-age.
+let MAX_DURATION_MONTHS = 6000;
+
 // round(days / 30.44) in integer arithmetic.
 fn approximate_months(total_days: i64) -> i64 {
     return (total_days * 200 + 3044) / 6088;
@@ -185,27 +199,28 @@ fn approximate_months(total_days: i64) -> i64 {
 
 // ---- Duration tiers ----
 
-fn format_seconds(r: const Resolved&, total: i64) -> u8[>..] {
+// The duration of `total` seconds; false beyond MAX_DURATION_MONTHS.
+fn format_seconds(r: const Resolved&, total: i64) -> u8[>..], bool {
     var out: u8[>..] = [];
     let u = r.units;
 
     if total == 0 {
         out.append(r.just_now);
-        return out;
+        return out, true;
     }
     if total < 60 {
         append_unit(out, total, u.second, r.rule, "");
-        return out;
+        return out, true;
     }
 
     let total_minutes = total / 60;
     if total_minutes < 5 {
         append_pair(out, r, total_minutes, u.minute, total % 60, u.second);
-        return out;
+        return out, true;
     }
     if total_minutes < 60 {
         append_unit(out, total_minutes, u.minute, r.rule, "");
-        return out;
+        return out, true;
     }
 
     let total_hours = total / 3600;
@@ -216,11 +231,11 @@ fn format_seconds(r: const Resolved&, total: i64) -> u8[>..] {
         } else {
             append_pair(out, r, total_hours, u.hour, remainder_minutes, u.minute);
         }
-        return out;
+        return out, true;
     }
     if total_hours < 24 {
         append_unit(out, total_hours, u.hour, r.rule, "");
-        return out;
+        return out, true;
     }
 
     let total_days = total / 86400;
@@ -231,35 +246,39 @@ fn format_seconds(r: const Resolved&, total: i64) -> u8[>..] {
         } else {
             append_pair(out, r, total_days, u.day, remainder_hours, u.hour);
         }
-        return out;
+        return out, true;
     }
     if total_days < 7 {
         append_unit(out, total_days, u.day, r.rule, "");
-        return out;
+        return out, true;
     }
     if total_days < 30 {
         append_pair(out, r, total_days / 7, u.week, total_days % 7, u.day);
-        return out;
+        return out, true;
     }
 
     let total_months = max(approximate_months(total_days), 1);
+    guard total_months <= MAX_DURATION_MONTHS else { return [], false; }
     if total_months < 12 {
         append_unit(out, total_months, u.month, r.rule, "");
-        return out;
+        return out, true;
     }
     append_pair(out, r, total_months / 12, u.year, total_months % 12, u.month);
-    return out;
+    return out, true;
 }
 
-// "just now" at zero, otherwise the duration wrapped in `tmpl` ("{0} ago").
-fn format_relative(r: const Resolved&, diff: i64, tmpl: u8[:]) -> u8[>..] {
+// "just now" at zero, otherwise the duration wrapped in `tmpl` ("{0} ago");
+// false beyond MAX_DURATION_MONTHS.
+fn format_relative(r: const Resolved&, diff: i64, tmpl: u8[:]) -> u8[>..], bool {
     var out: u8[>..] = [];
     if diff == 0 {
         out.append(r.just_now);
-    } else {
-        append_replacing_first(out, tmpl, "{0}", format_seconds(r, diff));
+        return out, true;
     }
-    return out;
+    let duration, ok = format_seconds(r, diff);
+    guard ok else { return [], false; }
+    append_replacing_first(out, tmpl, "{0}", duration);
+    return out, true;
 }
 
 // The seconds from `from` to `to`; false when either is empty or malformed.
@@ -274,11 +293,11 @@ fn seconds_between(from: u8[:], to: u8[:]) -> i64, bool {
 
 // ---- Public API ----
 
-// A duration of `seconds`; false when negative.
+// A duration of `seconds`; false when negative or beyond 500 years.
 fn format_duration(locale: const Locale&, compactness: Compactness, seconds: i64) -> u8[>..], bool {
     guard seconds >= 0 else { return [], false; }
     let r = resolve(locale, compactness);
-    return format_seconds(r, seconds), true;
+    return format_seconds(r, seconds);
 }
 
 // The duration between two ISO timestamps, in either order.
@@ -286,7 +305,7 @@ fn format_duration_iso(locale: const Locale&, compactness: Compactness, start: u
     let diff, ok = seconds_between(start, end);
     guard ok else { return [], false; }
     let r = resolve(locale, compactness);
-    return format_seconds(r, abs(diff)), true;
+    return format_seconds(r, abs(diff));
 }
 
 // Time elapsed since `start` ("5 minutes ago"); false when `as_of` is earlier.
@@ -294,7 +313,7 @@ fn format_since(locale: const Locale&, compactness: Compactness, start: u8[:], a
     let diff, ok = seconds_between(start, as_of);
     guard ok && diff >= 0 else { return [], false; }
     let r = resolve(locale, compactness);
-    return format_relative(r, diff, r.ago), true;
+    return format_relative(r, diff, r.ago);
 }
 
 // Time remaining until `target` ("in 20 minutes"); false when it has passed.
@@ -302,5 +321,5 @@ fn format_until(locale: const Locale&, compactness: Compactness, target: u8[:], 
     let diff, ok = seconds_between(as_of, target);
     guard ok && diff >= 0 else { return [], false; }
     let r = resolve(locale, compactness);
-    return format_relative(r, diff, r.in_future), true;
+    return format_relative(r, diff, r.in_future);
 }

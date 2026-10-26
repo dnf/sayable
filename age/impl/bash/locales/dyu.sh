@@ -9,11 +9,11 @@
 # ╚══════════════════════════════════════════════════════════════╝
 # Source: age/locales/src/dyu.json
 
-_plural_dyu() {
+_sayableage_plural_dyu() {
     echo "other"
 }
 
-_locale_dyu() {
+_sayableage_locale_dyu() {
     _unit_day='don {n}'
     _unit_week='dɔgɔkun {n}'
     _unit_month='kalo {n}'
@@ -37,5 +37,5 @@ _locale_dyu() {
     _compact_unit_year='san {n}'
     _compact_half='{n}½'
     _compact_delimiter=''
-    _plural_func=_plural_dyu
+    _plural_func=_sayableage_plural_dyu
 }

@@ -300,4 +300,159 @@ defmodule SayableDateTest do
     es = SayableDate.Locales.ES.locale()
     assert relative_locale(es, "2025-03-17", "2025-03-15") == {:ok, "pasado mañana"}
   end
+
+  # 13. format_date_with_year
+  # 13.1
+  test "13.1 - en normal format_date_with_year" do
+    assert SayableDate.format_date_with_year(
+             SayableDate.Locales.EN.locale(),
+             :normal,
+             "2018-02-04"
+           ) == {:ok, "February 4th, 2018"}
+  end
+
+  # 13.2
+  test "13.2 - en short format_date_with_year" do
+    assert SayableDate.format_date_with_year(
+             SayableDate.Locales.EN.locale(),
+             :short,
+             "2025-03-15"
+           ) == {:ok, "Mar 15, 2025"}
+  end
+
+  # 13.3
+  test "13.3 - en compact format_date_with_year" do
+    assert SayableDate.format_date_with_year(
+             SayableDate.Locales.EN.locale(),
+             :compact,
+             "1997-01-21"
+           ) == {:ok, "1/21/97"}
+  end
+
+  # 13.4
+  test "13.4 - two-digit year keeps its leading zero" do
+    assert SayableDate.format_date_with_year(
+             SayableDate.Locales.TG.locale(),
+             :compact,
+             "2007-05-20"
+           ) == {:ok, "20/5/07"}
+  end
+
+  # 13.5
+  test "13.5 - fi short format_date_with_year" do
+    assert SayableDate.format_date_with_year(
+             SayableDate.Locales.FI.locale(),
+             :short,
+             "1996-06-21"
+           ) == {:ok, "21. kesäkuuta 1996"}
+  end
+
+  # 14. Short month names (locales that keep the full genitive)
+  # 14.1
+  test "14.1 - sk short format_date" do
+    assert SayableDate.format_date(SayableDate.Locales.SK.locale(), :short, "2031-02-15") ==
+             {:ok, "15. februára"}
+  end
+
+  # 14.2
+  test "14.2 - cs short format_date" do
+    assert SayableDate.format_date(SayableDate.Locales.CS.locale(), :short, "2025-12-10") ==
+             {:ok, "10. prosince"}
+  end
+
+  # 14.3
+  test "14.3 - uk short format_date" do
+    assert SayableDate.format_date(SayableDate.Locales.UK.locale(), :short, "2025-11-05") ==
+             {:ok, "5 листопада"}
+  end
+
+  # 14.4
+  test "14.4 - fi short format_relative" do
+    assert SayableDate.format_relative(
+             SayableDate.Locales.FI.locale(),
+             :short,
+             "1998-08-08",
+             "1998-08-15"
+           ) == {:ok, "8. elokuuta"}
+  end
+
+  # 15. format_relative — short phrases
+  # 15.1
+  test "15.1 - day after tomorrow" do
+    assert SayableDate.format_relative(
+             SayableDate.Locales.KW.locale(),
+             :short,
+             "2035-12-04",
+             "2035-12-02"
+           ) == {:ok, "an Mth ma"}
+  end
+
+  # 15.2
+  test "15.2 - day before yesterday" do
+    assert SayableDate.format_relative(
+             SayableDate.Locales.MAM.locale(),
+             :short,
+             "2000-01-23",
+             "2000-01-25"
+           ) == {:ok, "Dom nchi'j"}
+  end
+
+  # 15.3
+  test "15.3 - day after tomorrow" do
+    assert SayableDate.format_relative(
+             SayableDate.Locales.KEK.locale(),
+             :short,
+             "2014-10-24",
+             "2014-10-22"
+           ) == {:ok, "a'in Vie"}
+  end
+
+  # 16. Input validation
+  # 16.1
+  test "16.1 - February 30 doesn't exist" do
+    assert SayableDate.format_date(SayableDate.Locales.EN.locale(), :normal, "2025-02-30") == nil
+  end
+
+  # 16.2
+  test "16.2 - Month 13" do
+    assert SayableDate.format_date(SayableDate.Locales.EN.locale(), :normal, "2025-13-01") == nil
+  end
+
+  # 16.3
+  test "16.3 - Unpadded month and day" do
+    assert SayableDate.format_date(SayableDate.Locales.EN.locale(), :normal, "2025-6-1") == nil
+  end
+
+  # 16.4
+  test "16.4 - Surrounding whitespace" do
+    assert SayableDate.format_date(SayableDate.Locales.EN.locale(), :normal, " 2025-06-01") == nil
+  end
+
+  # 16.5
+  test "16.5 - An ISO datetime: only the date part is used" do
+    assert SayableDate.format_date(
+             SayableDate.Locales.EN.locale(),
+             :normal,
+             "2025-06-01T10:00:00"
+           ) == {:ok, "June 1st"}
+  end
+
+  # 16.6
+  test "16.6 - February 29 in a non-leap year" do
+    assert SayableDate.format_date_with_year(
+             SayableDate.Locales.EN.locale(),
+             :normal,
+             "2023-02-29"
+           ) == nil
+  end
+
+  # 16.7
+  test "16.7 - Invalid asOf" do
+    assert SayableDate.format_relative(
+             SayableDate.Locales.EN.locale(),
+             :normal,
+             "2025-03-16",
+             "2025-04-31"
+           ) == nil
+  end
 end

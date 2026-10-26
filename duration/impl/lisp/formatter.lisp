@@ -2,6 +2,9 @@
 
 (defvar +version+ "0.5.0")
 
+(defconstant +max-duration-months+ 6000
+  "500 years, the same ceiling as sayable-age.")
+
 ;;; --- String utilities ---
 
 (defun string-replace-all (string old new)
@@ -19,29 +22,6 @@
             finally (write-string (subseq string start) out)))))
 
 ;;; --- ISO timestamp parsing ---
-
-(defun split-string (s delimiter)
-  "Split S by DELIMITER character."
-  (let ((result nil)
-        (start 0))
-    (loop for i from 0 below (length s)
-          when (char= (char s i) delimiter)
-            do (push (subseq s start i) result)
-               (setf start (1+ i)))
-    (push (subseq s start) result)
-    (nreverse result)))
-
-(defun str-to-int (s)
-  "Parse a string as a non-negative integer."
-  (str-to-int-impl s 0 0))
-
-(defun str-to-int-impl (s idx acc)
-  (if (>= idx (length s))
-      acc
-      (let ((ch (char s idx)))
-        (if (digit-char-p ch)
-            (str-to-int-impl s (1+ idx) (+ (* acc 10) (digit-char-p ch)))
-            acc))))
 
 (defun leap-year-p (year)
   "Return T if YEAR is a leap year."
@@ -68,42 +48,81 @@
           do (incf days (days-in-month year m)))
     (+ days day -1)))
 
+(defun ascii-digit-p (ch)
+  "Return T if CH is one of the ASCII digits 0-9."
+  (char<= #\0 ch #\9))
+
+(defun scan-digits (s pos min-count max-count)
+  "Return the position after MIN-COUNT to MAX-COUNT ASCII digits of S at POS, or NIL."
+  (let ((end (or (position-if-not #'ascii-digit-p s :start pos
+                                  :end (min (length s) (+ pos max-count)))
+                 (min (length s) (+ pos max-count)))))
+    (when (>= (- end pos) min-count)
+      end)))
+
+(defun char-at-p (s pos ch)
+  "Return T if S has the character CH at POS."
+  (and (< pos (length s)) (char= (char s pos) ch)))
+
+(defun scan-fraction (s pos)
+  "Skip an optional . and one or more digits at POS; return the next position or NIL."
+  (if (char-at-p s pos #\.)
+      (scan-digits s (1+ pos) 1 (length s))
+      pos))
+
+(defun scan-zone (s pos)
+  "Skip an optional Z or +HH:MM / -HH:MM zone suffix at POS; return the next position or NIL."
+  (cond
+    ((char-at-p s pos #\Z) (1+ pos))
+    ((or (char-at-p s pos #\+) (char-at-p s pos #\-))
+     (let ((hours-end (scan-digits s (1+ pos) 2 2)))
+       (when (and hours-end (char-at-p s hours-end #\:))
+         (scan-digits s (1+ hours-end) 2 2))))
+    (t pos)))
+
+(defun parse-clock (s start)
+  "Parse H:MM or HH:MM with optional :SS, fraction and zone, filling S from START to its end.
+Returns (values hour minute second), or NIL when malformed or out of range."
+  (let* ((hour-end (scan-digits s start 1 2))
+         (minute-end (and hour-end (char-at-p s hour-end #\:)
+                          (scan-digits s (1+ hour-end) 2 2)))
+         (second-end (and minute-end (char-at-p s minute-end #\:)
+                          (scan-digits s (1+ minute-end) 2 2)))
+         (fraction-end (if second-end (scan-fraction s second-end) minute-end))
+         (zone-end (and fraction-end (scan-zone s fraction-end))))
+    (when (eql zone-end (length s))
+      (let ((hour (parse-integer s :start start :end hour-end))
+            (minute (parse-integer s :start (1+ hour-end) :end minute-end))
+            (second-val (if second-end
+                            (parse-integer s :start (1+ minute-end) :end second-end)
+                            0)))
+        (when (and (<= hour 23) (<= minute 59) (<= second-val 59))
+          (values hour minute second-val))))))
+
+(defun parse-date-part (s)
+  "Parse the YYYY-MM-DD that opens S into (values year month day), or NIL unless it names a real day."
+  (when (and (>= (length s) 10)
+             (scan-digits s 0 4 4)
+             (char-at-p s 4 #\-)
+             (eql (scan-digits s 5 2 2) 7)
+             (char-at-p s 7 #\-)
+             (eql (scan-digits s 8 2 2) 10))
+    (let ((year (parse-integer s :start 0 :end 4))
+          (month (parse-integer s :start 5 :end 7))
+          (day (parse-integer s :start 8 :end 10)))
+      (when (and (<= 1 month 12) (<= 1 day (days-in-month year month)))
+        (values year month day)))))
+
 (defun parse-iso-to-seconds (iso-str)
-  "Parse ISO datetime string to epoch-ish seconds for diffing. Returns NIL on failure."
-  (when (or (null iso-str)
-            (not (stringp iso-str))
-            (zerop (length iso-str)))
-    (return-from parse-iso-to-seconds nil))
-  (let ((t-pos (position #\T iso-str)))
-    (unless t-pos (return-from parse-iso-to-seconds nil))
-    (let* ((date-part (subseq iso-str 0 t-pos))
-           (time-part (subseq iso-str (1+ t-pos)))
-           (date-parts (split-string date-part #\-)))
-      (unless (= (length date-parts) 3)
-        (return-from parse-iso-to-seconds nil))
-      (let ((year (str-to-int (first date-parts)))
-            (month (str-to-int (second date-parts)))
-            (day (str-to-int (third date-parts))))
-        ;; Strip timezone info
-        (let ((time-str time-part))
-          (let ((plus-pos (position #\+ time-str)))
-            (when plus-pos
-              (setf time-str (subseq time-str 0 plus-pos))))
-          (let ((z-pos (position #\Z time-str)))
-            (when z-pos
-              (setf time-str (subseq time-str 0 z-pos))))
-          (let ((tp (split-string time-str #\:)))
-            (let ((hour (str-to-int (first tp)))
-                  (minute (if (> (length tp) 1)
-                              (str-to-int (second tp))
-                              0))
-                  (second-val (if (> (length tp) 2)
-                                  ;; Strip fractional seconds
-                                  (let ((sec-str (first (split-string (third tp) #\.))))
-                                    (str-to-int sec-str))
-                                  0)))
-              (let ((days (days-since-epoch year month day)))
-                (+ (* days 86400) (* hour 3600) (* minute 60) second-val)))))))))
+  "Parse a YYYY-MM-DDTHH:MM timestamp (optional :SS, fraction and ignored zone) to
+epoch-ish seconds for diffing. Returns NIL when malformed."
+  (when (and (stringp iso-str) (char-at-p iso-str 10 #\T))
+    (multiple-value-bind (year month day) (parse-date-part iso-str)
+      (when year
+        (multiple-value-bind (hour minute second-val) (parse-clock iso-str 11)
+          (when hour
+            (+ (* (days-since-epoch year month day) 86400)
+               (* hour 3600) (* minute 60) second-val)))))))
 
 ;;; --- Unit resolution ---
 
@@ -196,7 +215,7 @@
 ;;; --- Duration formatting ---
 
 (defun format-duration-seconds (formatter total)
-  "Apply duration tiers to total seconds."
+  "Apply duration tiers to total seconds. Returns NIL beyond the 500-year ceiling."
   (let* ((loc (sayable-duration-formatter-locale formatter))
          (units (sayable-duration-formatter-units formatter))
          (half (sayable-duration-formatter-half formatter))
@@ -267,8 +286,10 @@
                                                       (get-unit :day units) loc ""))))
             (return-from format-duration-seconds result)))
         ;; Approximate months (30.44 days average)
-        (let ((total-months (round total-days 30.44)))
+        (let ((total-months (round (/ total-days 30.44d0))))
           (when (< total-months 1) (setf total-months 1))
+          (when (> total-months +max-duration-months+)
+            (return-from format-duration-seconds nil))
           ;; 1-11 months
           (when (< total-months 12)
             (return-from format-duration-seconds
@@ -320,7 +341,8 @@
       (when (= diff 0)
         (return-from format-since (sayable-duration-formatter-just-now formatter)))
       (let ((dur (format-duration-seconds formatter diff)))
-        (string-replace-all (sayable-duration-formatter-ago formatter) "{0}" dur)))))
+        (when dur
+          (string-replace-all (sayable-duration-formatter-ago formatter) "{0}" dur))))))
 
 (defun format-until (formatter target as-of)
   "Format time until a future event as 'in X'. Returns NIL for invalid input."
@@ -338,9 +360,12 @@
       (when (= diff 0)
         (return-from format-until (sayable-duration-formatter-just-now formatter)))
       (let ((dur (format-duration-seconds formatter diff)))
-        (string-replace-all (sayable-duration-formatter-in-future formatter) "{0}" dur)))))
+        (when dur
+          (string-replace-all (sayable-duration-formatter-in-future formatter) "{0}" dur))))))
 
 ;;; --- Default English functions ---
+
+(declaim (ftype function get-locale)) ; defined by the generated locale registry, loaded later
 
 (defvar *default-formatter* nil
   "Default English formatter, initialized when locales are loaded.")

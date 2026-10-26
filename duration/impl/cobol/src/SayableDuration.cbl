@@ -39,6 +39,7 @@
            END-IF
 
            MOVE WS-FMT-START TO WS-ISO-STR
+           MOVE WS-FMT-START-LEN TO WS-ISO-LEN
            PERFORM PARSE-ISO-DATETIME
            IF WS-ISO-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -46,6 +47,7 @@
            MOVE WS-ISO-RESULT TO WS-ISO-EPOCH-1
 
            MOVE WS-FMT-END TO WS-ISO-STR
+           MOVE WS-FMT-END-LEN TO WS-ISO-LEN
            PERFORM PARSE-ISO-DATETIME
            IF WS-ISO-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -80,6 +82,7 @@
            END-IF
 
            MOVE WS-FMT-START TO WS-ISO-STR
+           MOVE WS-FMT-START-LEN TO WS-ISO-LEN
            PERFORM PARSE-ISO-DATETIME
            IF WS-ISO-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -87,6 +90,7 @@
            MOVE WS-ISO-RESULT TO WS-ISO-EPOCH-1
 
            MOVE WS-FMT-AS-OF TO WS-ISO-STR
+           MOVE WS-FMT-AS-OF-LEN TO WS-ISO-LEN
            PERFORM PARSE-ISO-DATETIME
            IF WS-ISO-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -108,6 +112,9 @@
            END-IF
 
            PERFORM FORMAT-DURATION-SECONDS
+           IF WS-FORMAT-RESULT = SPACES
+               EXIT PARAGRAPH
+           END-IF
 
            *> Wrap in ago template
            MOVE WS-EFF-AGO TO WS-REPLACE-SRC
@@ -134,6 +141,7 @@
            END-IF
 
            MOVE WS-FMT-TARGET TO WS-ISO-STR
+           MOVE WS-FMT-TARGET-LEN TO WS-ISO-LEN
            PERFORM PARSE-ISO-DATETIME
            IF WS-ISO-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -141,6 +149,7 @@
            MOVE WS-ISO-RESULT TO WS-ISO-EPOCH-1
 
            MOVE WS-FMT-AS-OF TO WS-ISO-STR
+           MOVE WS-FMT-AS-OF-LEN TO WS-ISO-LEN
            PERFORM PARSE-ISO-DATETIME
            IF WS-ISO-PARSE-OK = 0
                EXIT PARAGRAPH
@@ -162,6 +171,9 @@
            END-IF
 
            PERFORM FORMAT-DURATION-SECONDS
+           IF WS-FORMAT-RESULT = SPACES
+               EXIT PARAGRAPH
+           END-IF
 
            *> Wrap in inFuture template
            MOVE WS-EFF-IN-FUTURE TO WS-REPLACE-SRC
@@ -179,6 +191,13 @@
 *> ============================================================
        FORMAT-DURATION-SECONDS.
            MOVE SPACES TO WS-FORMAT-RESULT
+
+           *> Beyond the 500-year ceiling there is no value
+           DIVIDE WS-TOTAL-SECONDS BY 86400 GIVING WS-TOTAL-DAYS
+           PERFORM CALC-APPROXIMATE-MONTHS
+           IF WS-TOTAL-MONTHS > PT-MAX-DURATION-MONTHS
+               EXIT PARAGRAPH
+           END-IF
 
            *> 0 seconds
            IF WS-TOTAL-SECONDS = 0
@@ -370,11 +389,7 @@
                EXIT PARAGRAPH
            END-IF
 
-           *> Approximate months (30.44 days average)
-           COMPUTE WS-TEMP-FLOAT =
-               WS-TOTAL-DAYS / 30.44
-           COMPUTE WS-TOTAL-MONTHS =
-               FUNCTION INTEGER(WS-TEMP-FLOAT + 0.5)
+           PERFORM CALC-APPROXIMATE-MONTHS
 
            *> 1-11 months
            IF WS-TOTAL-MONTHS < 12
@@ -893,27 +908,95 @@
            .
 
 *> ============================================================
-*> PARSE-ISO-DATETIME: Parse ISO datetime to epoch seconds
-*> Input:  WS-ISO-STR
+*> PARSE-ISO-DATETIME: YYYY-MM-DDTHH:MM (one- or two-digit hour),
+*> then optional :SS with optional .fraction, then an optional zone
+*> suffix (Z or +HH:MM / -HH:MM, validated but never applied)
+*> Input:  WS-ISO-STR, WS-ISO-LEN (0 = length without trailing blanks)
 *> Output: WS-ISO-RESULT, WS-ISO-PARSE-OK
 *> ============================================================
        PARSE-ISO-DATETIME.
            MOVE 0 TO WS-ISO-PARSE-OK
-           IF FUNCTION LENGTH(FUNCTION TRIM(WS-ISO-STR)) < 19
+           IF WS-ISO-LEN = 0
+               MOVE FUNCTION STORED-CHAR-LENGTH(WS-ISO-STR)
+                   TO WS-ISO-LEN
+           END-IF
+           IF WS-ISO-LEN < 15 OR WS-ISO-LEN > 256
                EXIT PARAGRAPH
            END-IF
            IF WS-ISO-STR(5:1) NOT = "-"
                OR WS-ISO-STR(8:1) NOT = "-"
                OR WS-ISO-STR(11:1) NOT = "T"
+               OR WS-ISO-STR(1:4) IS NOT NUMERIC
+               OR WS-ISO-STR(6:2) IS NOT NUMERIC
+               OR WS-ISO-STR(9:2) IS NOT NUMERIC
                EXIT PARAGRAPH
            END-IF
-
            MOVE WS-ISO-STR(1:4) TO WS-ISO-YEAR
            MOVE WS-ISO-STR(6:2) TO WS-ISO-MONTH
            MOVE WS-ISO-STR(9:2) TO WS-ISO-DAY
-           MOVE WS-ISO-STR(12:2) TO WS-ISO-HOUR
-           MOVE WS-ISO-STR(15:2) TO WS-ISO-MINUTE
-           MOVE WS-ISO-STR(18:2) TO WS-ISO-SECOND
+           PERFORM CHECK-ISO-DATE
+           IF WS-ISO-DATE-OK = 0
+               EXIT PARAGRAPH
+           END-IF
+
+           MOVE 12 TO WS-ISO-SCAN-POS
+           MOVE 0 TO WS-ISO-HOUR-DIGITS
+           PERFORM UNTIL WS-ISO-HOUR-DIGITS = 2
+                   OR WS-ISO-SCAN-POS > WS-ISO-LEN
+                   OR WS-ISO-STR(WS-ISO-SCAN-POS:1) IS NOT NUMERIC
+               ADD 1 TO WS-ISO-HOUR-DIGITS
+               ADD 1 TO WS-ISO-SCAN-POS
+           END-PERFORM
+           IF WS-ISO-HOUR-DIGITS = 0
+               OR WS-ISO-SCAN-POS + 2 > WS-ISO-LEN
+               EXIT PARAGRAPH
+           END-IF
+           IF WS-ISO-STR(WS-ISO-SCAN-POS:1) NOT = ":"
+               OR WS-ISO-STR(WS-ISO-SCAN-POS + 1:2) IS NOT NUMERIC
+               EXIT PARAGRAPH
+           END-IF
+           COMPUTE WS-ISO-HOUR = FUNCTION NUMVAL(
+               WS-ISO-STR(12:WS-ISO-HOUR-DIGITS))
+           MOVE WS-ISO-STR(WS-ISO-SCAN-POS + 1:2) TO WS-ISO-MINUTE
+           ADD 3 TO WS-ISO-SCAN-POS
+           MOVE 0 TO WS-ISO-SECOND
+           IF WS-ISO-SCAN-POS + 2 <= WS-ISO-LEN
+               AND WS-ISO-STR(WS-ISO-SCAN-POS:1) = ":"
+               AND WS-ISO-STR(WS-ISO-SCAN-POS + 1:2) IS NUMERIC
+               MOVE WS-ISO-STR(WS-ISO-SCAN-POS + 1:2) TO WS-ISO-SECOND
+               ADD 3 TO WS-ISO-SCAN-POS
+               IF WS-ISO-SCAN-POS + 1 <= WS-ISO-LEN
+                   AND WS-ISO-STR(WS-ISO-SCAN-POS:1) = "."
+                   AND WS-ISO-STR(WS-ISO-SCAN-POS + 1:1) IS NUMERIC
+                   ADD 1 TO WS-ISO-SCAN-POS
+                   PERFORM UNTIL WS-ISO-SCAN-POS > WS-ISO-LEN
+                           OR WS-ISO-STR(WS-ISO-SCAN-POS:1)
+                               IS NOT NUMERIC
+                       ADD 1 TO WS-ISO-SCAN-POS
+                   END-PERFORM
+               END-IF
+           END-IF
+           COMPUTE WS-ISO-ZONE-LEN = WS-ISO-LEN - WS-ISO-SCAN-POS + 1
+           EVALUATE TRUE
+               WHEN WS-ISO-ZONE-LEN = 0
+                   CONTINUE
+               WHEN WS-ISO-ZONE-LEN = 1
+                   AND WS-ISO-STR(WS-ISO-SCAN-POS:1) = "Z"
+                   CONTINUE
+               WHEN WS-ISO-ZONE-LEN = 6
+                   AND (WS-ISO-STR(WS-ISO-SCAN-POS:1) = "+"
+                       OR WS-ISO-STR(WS-ISO-SCAN-POS:1) = "-")
+                   AND WS-ISO-STR(WS-ISO-SCAN-POS + 1:2) IS NUMERIC
+                   AND WS-ISO-STR(WS-ISO-SCAN-POS + 3:1) = ":"
+                   AND WS-ISO-STR(WS-ISO-SCAN-POS + 4:2) IS NUMERIC
+                   CONTINUE
+               WHEN OTHER
+                   EXIT PARAGRAPH
+           END-EVALUATE
+           IF WS-ISO-HOUR > 23 OR WS-ISO-MINUTE > 59
+               OR WS-ISO-SECOND > 59
+               EXIT PARAGRAPH
+           END-IF
 
            MOVE WS-ISO-YEAR TO WS-DSE-YEAR
            MOVE WS-ISO-MONTH TO WS-DSE-MONTH
@@ -926,6 +1009,34 @@
                + WS-ISO-MINUTE * 60
                + WS-ISO-SECOND
            MOVE 1 TO WS-ISO-PARSE-OK
+           .
+
+*> ============================================================
+*> CHECK-ISO-DATE: WS-ISO-YEAR/MONTH/DAY name a real calendar day
+*> Output: WS-ISO-DATE-OK (1=real date, 0=not)
+*> ============================================================
+       CHECK-ISO-DATE.
+           MOVE 0 TO WS-ISO-DATE-OK
+           IF WS-ISO-MONTH < 1 OR WS-ISO-MONTH > 12
+               EXIT PARAGRAPH
+           END-IF
+           MOVE WS-ISO-YEAR TO WS-DIM-YEAR
+           MOVE WS-ISO-MONTH TO WS-DIM-MONTH
+           PERFORM CALC-DAYS-IN-MONTH
+           IF WS-ISO-DAY >= 1 AND WS-ISO-DAY <= WS-DIM-RESULT
+               MOVE 1 TO WS-ISO-DATE-OK
+           END-IF
+           .
+
+*> ============================================================
+*> CALC-APPROXIMATE-MONTHS: Months of 30.44 days (the average
+*> month), rounded, in exact integer arithmetic
+*> Input:  WS-TOTAL-DAYS
+*> Output: WS-TOTAL-MONTHS
+*> ============================================================
+       CALC-APPROXIMATE-MONTHS.
+           COMPUTE WS-TOTAL-MONTHS =
+               (WS-TOTAL-DAYS * 100 + 1522) / 3044
            .
 
 *> ============================================================
