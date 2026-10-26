@@ -66,7 +66,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"src/sayable_age/locales/*.py" = ["E501"]  # long lines in locale data are unavoidable
+"src/sayable_age/locales/*.py" = ["E501", "N999"]  # long lines in locale data; modules are named by locale code, and some codes ("is", "or") are Python keywords
 
 [tool.pyright]
 pythonVersion = "3.10"

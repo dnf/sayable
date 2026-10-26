@@ -17,8 +17,8 @@ module SayableTime
         midnight: "meiu-kalan",
         noon: "meiu-loron",
         patterns: {
-          0 => "tuku {h}",
-          5 => "tuku {h} ho minutu lima",
+           0 => "tuku {h}",
+           5 => "tuku {h} ho minutu lima",
           10 => "tuku {h} ho minutu sanulu",
           15 => "tuku {h} ho minutu sanulu-resin-lima",
           20 => "tuku {h} ho minutu ruanulu",

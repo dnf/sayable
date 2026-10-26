@@ -17,8 +17,8 @@ module SayableTime
         midnight: "Mitternacht",
         noon: "Mittag",
         patterns: {
-          0 => "{h} Uhr",
-          5 => "fünf nach {h}",
+           0 => "{h} Uhr",
+           5 => "fünf nach {h}",
           10 => "zehn nach {h}",
           15 => "Viertel nach {h}",
           20 => "zwanzig nach {h}",

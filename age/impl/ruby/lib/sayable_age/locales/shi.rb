@@ -16,7 +16,7 @@ module SayableAge
       code: 'shi',
       plural: lambda { |n|
         if [0, 1].include?(n) then :one
-        elsif n >= 2 && n <= 10 then :few
+        elsif n.between?(2, 10) then :few
         else :other
         end
       },

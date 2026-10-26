@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     DJE = AgeLocale.new(
       code: 'dje',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'zaari {n}',
         'week' => 'hebu {n}',

@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     POV = DurationLocale.new(
       code: 'pov',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} sigundu',
         'minute' => '{n} minutu',

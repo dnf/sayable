@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     TET = DurationLocale.new(
       code: 'tet',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'segundu {n}',
         'minute' => 'minutu {n}',

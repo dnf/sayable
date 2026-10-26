@@ -17,8 +17,8 @@ module SayableTime
         midnight: "gece yarısı",
         noon: "öğle",
         patterns: {
-          0 => "saat {h}",
-          5 => "saat {h} sıfır beş",
+           0 => "saat {h}",
+           5 => "saat {h} sıfır beş",
           10 => "saat {h} on",
           15 => "saat {h} on beş",
           20 => "saat {h} yirmi",

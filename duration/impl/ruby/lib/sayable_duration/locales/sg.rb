@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     SG = DurationLocale.new(
       code: 'sg',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'ndo-sêse {n}',
         'minute' => 'ndo {n}',

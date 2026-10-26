@@ -17,8 +17,8 @@ module SayableTime
         midnight: "pakati ka bushiku",
         noon: "akasuba",
         patterns: {
-          0 => "insa {h}",
-          5 => "insa {h} na maminiti yasano",
+           0 => "insa {h}",
+           5 => "insa {h} na maminiti yasano",
           10 => "insa {h} na maminiti ikumi",
           15 => "insa {h} na maminiti ikumi na yasano",
           20 => "insa {h} na maminiti amakumi yabili",

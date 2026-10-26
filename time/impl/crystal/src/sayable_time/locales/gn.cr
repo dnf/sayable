@@ -17,8 +17,8 @@ module SayableTime
         midnight: "pyharepyte",
         noon: "asaje",
         patterns: {
-          0 => "{h}",
-          5 => "{h} ha po",
+           0 => "{h}",
+           5 => "{h} ha po",
           10 => "{h} ha pa",
           15 => "{h} ha pa po",
           20 => "{h} ha mokõi pa",

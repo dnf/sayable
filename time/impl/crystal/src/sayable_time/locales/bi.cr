@@ -17,8 +17,8 @@ module SayableTime
         midnight: "mednaet",
         noon: "medeldei",
         patterns: {
-          0 => "{h} klok",
-          5 => "faef pas {h}",
+           0 => "{h} klok",
+           5 => "faef pas {h}",
           10 => "ten pas {h}",
           15 => "kwota pas {h}",
           20 => "twenti pas {h}",

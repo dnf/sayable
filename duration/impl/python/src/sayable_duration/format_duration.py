@@ -3,11 +3,9 @@
 from __future__ import annotations
 
 import re
-
 from typing import Literal
 
 from sayable_duration.locale import (
-    CompactnessOverride,
     DurationLocale,
     UnitForms,
     resolve_unit,
@@ -129,7 +127,7 @@ class SayableDuration:
 
         if isinstance(start_or_seconds, int):
             total_seconds = start_or_seconds
-        elif isinstance(start_or_seconds, str):
+        else:
             if end is None:
                 return None
             s = _parse_iso_to_seconds(start_or_seconds)
@@ -137,8 +135,6 @@ class SayableDuration:
             if s is None or e is None:
                 return None
             total_seconds = abs(e - s)
-        else:
-            return None
 
         if total_seconds < 0:
             return None

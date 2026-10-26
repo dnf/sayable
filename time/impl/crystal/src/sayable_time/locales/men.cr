@@ -17,8 +17,8 @@ module SayableTime
         midnight: "kpindi gbɔyɔŋ",
         noon: "ndɔlei-ma",
         patterns: {
-          0 => "awa {h}",
-          5 => "awa {h} kɛ miniti lɔɔlu",
+           0 => "awa {h}",
+           5 => "awa {h} kɛ miniti lɔɔlu",
           10 => "awa {h} kɛ miniti pu",
           15 => "awa {h} kɛ miniti pu mahu lɔɔlu",
           20 => "awa {h} kɛ miniti nuu yila gboyongo",

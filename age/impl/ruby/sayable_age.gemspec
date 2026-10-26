@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "lib/sayable_age/version"
 
 Gem::Specification.new do |s|
@@ -5,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = SayableAge::VERSION
   s.summary     = "Human-friendly age formatting — how parents actually talk about little ones"
   s.description = "Human-friendly age formatting — how parents actually talk about little ones. " \
-                  "Zero dependencies, 110 built-in locales, 3 compactness levels."
+                  "Zero dependencies, 168 built-in locales, 3 compactness levels."
   s.authors     = ["Don Neufeld"]
   s.license     = "MIT"
   s.homepage    = "https://github.com/dnf/sayable"
@@ -13,13 +15,11 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 3.0"
 
   s.metadata = {
-    "source_code_uri" => "https://github.com/dnf/sayable/tree/main/src/ruby",
+    "source_code_uri" => "https://github.com/dnf/sayable/tree/main/age/impl/ruby",
     "bug_tracker_uri" => "https://github.com/dnf/sayable/issues",
     "homepage_uri" => "https://github.com/dnf/sayable",
+    "rubygems_mfa_required" => "true",
   }
 
   s.files = Dir["lib/**/*.rb"]
-
-  s.add_development_dependency "minitest", "~> 5.0"
-  s.add_development_dependency "rake", "~> 13.0"
 end

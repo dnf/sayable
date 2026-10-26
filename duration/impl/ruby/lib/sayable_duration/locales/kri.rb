@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     KRI = DurationLocale.new(
       code: 'kri',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} sekon',
         'minute' => '{n} minit',

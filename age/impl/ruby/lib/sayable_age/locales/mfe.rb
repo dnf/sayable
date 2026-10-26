@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     MFE = AgeLocale.new(
       code: 'mfe',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} zour',
         'week' => '{n} semenn',

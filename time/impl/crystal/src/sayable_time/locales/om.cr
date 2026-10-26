@@ -17,8 +17,8 @@ module SayableTime
         midnight: "walakkii halkan",
         noon: "guyyaa walakkaa",
         patterns: {
-          0 => "sa'aatii {h}",
-          5 => "sa'aatii {h} fi daqiiqaa shan",
+           0 => "sa'aatii {h}",
+           5 => "sa'aatii {h} fi daqiiqaa shan",
           10 => "sa'aatii {h} fi daqiiqaa kudhan",
           15 => "sa'aatii {h} fi daqiiqaa kudha shan",
           20 => "sa'aatii {h} fi daqiiqaa digdama",

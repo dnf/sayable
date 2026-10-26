@@ -17,8 +17,8 @@ module SayableTime
         midnight: "bošego gare",
         noon: "mosegare",
         patterns: {
-          0 => "iri ya {h}",
-          5 => "iri ya {h} le metsotso ye mehlano",
+           0 => "iri ya {h}",
+           5 => "iri ya {h} le metsotso ye mehlano",
           10 => "iri ya {h} le metsotso ye lesome",
           15 => "iri ya {h} le kotara",
           20 => "iri ya {h} le metsotso ye masomepedi",

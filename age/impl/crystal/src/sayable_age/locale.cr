@@ -36,12 +36,12 @@ module SayableAge
     def resolve(category : PluralCategory) : String
       return @invariant.not_nil! if @invariant
       case category
-      when .zero?  then @zero || @other.not_nil!
-      when .one?   then @one || @other.not_nil!
-      when .two?   then @two || @other.not_nil!
-      when .few?   then @few || @other.not_nil!
-      when .many?  then @many || @other.not_nil!
-      else              @other.not_nil!
+      when .zero? then @zero || @other.not_nil!
+      when .one?  then @one || @other.not_nil!
+      when .two?  then @two || @other.not_nil!
+      when .few?  then @few || @other.not_nil!
+      when .many? then @many || @other.not_nil!
+      else             @other.not_nil!
       end
     end
 

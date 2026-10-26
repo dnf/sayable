@@ -17,8 +17,8 @@ module SayableTime
         midnight: "meia noti",
         noon: "meiu dia",
         patterns: {
-          0 => "{h}",
-          5 => "{h} i sinku",
+           0 => "{h}",
+           5 => "{h} i sinku",
           10 => "{h} i des",
           15 => "{h} i kinzi",
           20 => "{h} i vinti",

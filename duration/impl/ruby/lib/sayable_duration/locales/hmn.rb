@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     HMN = DurationLocale.new(
       code: 'hmn',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} chib',
         'minute' => '{n} feeb',

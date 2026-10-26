@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     VI = DurationLocale.new(
       code: 'vi',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} giây',
         'minute' => '{n} phút',

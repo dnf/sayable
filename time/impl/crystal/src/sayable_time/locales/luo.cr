@@ -17,8 +17,8 @@ module SayableTime
         midnight: "dier otieno",
         noon: "odiechieng' tir",
         patterns: {
-          0 => "saa {h}",
-          5 => "saa {h} gi dakika abich",
+           0 => "saa {h}",
+           5 => "saa {h} gi dakika abich",
           10 => "saa {h} gi dakika apar",
           15 => "saa {h} gi dakika apar gabich",
           20 => "saa {h} gi dakika piero ariyo",

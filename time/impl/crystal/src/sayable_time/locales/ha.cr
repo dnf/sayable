@@ -17,8 +17,8 @@ module SayableTime
         midnight: "tsakar dare",
         noon: "tsakar rana",
         patterns: {
-          0 => "ƙarfe {h}",
-          5 => "ƙarfe {h} da minti biyar",
+           0 => "ƙarfe {h}",
+           5 => "ƙarfe {h} da minti biyar",
           10 => "ƙarfe {h} da minti goma",
           15 => "ƙarfe {h} da kwata",
           20 => "ƙarfe {h} da minti ashirin",

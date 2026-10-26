@@ -22,7 +22,8 @@ def _patterns_hash(patterns: dict[str, str]) -> str:
     for key in keys:
         skey = str(key)
         if skey in patterns:
-            pairs.append(f"{key} => {_quote(patterns[skey])}")
+            # `crystal tool format` right-aligns integer keys.
+            pairs.append(f"{key:>2} => {_quote(patterns[skey])}")
     return "{\n" + "".join(f"          {p},\n" for p in pairs) + "        }"
 
 
@@ -93,10 +94,12 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("  module Locales")
     lines.append("    def self.get(code : String) : TimeLocale?")
     lines.append("      case code")
+    code_width = max(len(_quote(loc["code"])) for loc in sorted_locs)
     for loc in sorted_locs:
         code = loc["code"]
-        lines.append(f"      when {_quote(code)} then {code.upper()}")
-    lines.append("      else nil")
+        lines.append(f"      when {_quote(code).ljust(code_width)} then {code.upper()}")
+    # `crystal tool format` aligns every branch's result, `else` included.
+    lines.append(f"      {'else'.ljust(len('when ') + code_width + len(' then '))}nil")
     lines.append("      end")
     lines.append("    end")
     lines.append("  end")

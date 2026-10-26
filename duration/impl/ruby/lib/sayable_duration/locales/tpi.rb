@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     TPI = DurationLocale.new(
       code: 'tpi',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} sekon',
         'minute' => '{n} minit',

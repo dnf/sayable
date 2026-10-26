@@ -17,8 +17,8 @@ module SayableTime
         midnight: "keskiyö",
         noon: "keskipäivä",
         patterns: {
-          0 => "kello {h}",
-          5 => "viisi yli {h}",
+           0 => "kello {h}",
+           5 => "viisi yli {h}",
           10 => "kymmenen yli {h}",
           15 => "vartti yli {h}",
           20 => "kaksikymmentä yli {h}",

@@ -5,6 +5,10 @@ from __future__ import annotations
 from codegen.banner import locale_source_comment, make_header
 
 HEADER = make_header("codegen/targets/bash/emitter.py", line_prefix="# ")
+# Generated files are sourced, never run, so they name their shell for
+# shellcheck; the library that sources a locale reads its variables.
+SHELLCHECK_SOURCED = "# shellcheck shell=bash\n"
+SHELLCHECK_LOCALE = "# shellcheck shell=bash disable=SC2034\n"
 
 
 def _quote(s: str) -> str:
@@ -16,7 +20,7 @@ def emit_locale(data: dict) -> str:
     code = data["code"]
     clock = data["clock"]
 
-    lines = [HEADER + locale_source_comment(code, line_prefix="# ")]
+    lines = [HEADER + SHELLCHECK_LOCALE + locale_source_comment(code, line_prefix="# ")]
 
     # Locale data function that sets variables in the caller's scope
     lines.append(f"_sayabletime_locale_{code}() {{")
@@ -56,7 +60,7 @@ def emit_locale(data: dict) -> str:
 def emit_registry(all_locales: list[dict]) -> str:
     """Generate registry.sh with locale loading."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
-    lines = [HEADER]
+    lines = [HEADER + SHELLCHECK_SOURCED]
 
     # Source all locale files
     lines.append("# Source all locale files relative to this script's directory")

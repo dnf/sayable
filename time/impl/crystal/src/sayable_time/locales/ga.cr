@@ -17,8 +17,8 @@ module SayableTime
         midnight: "meán oíche",
         noon: "meán lae",
         patterns: {
-          0 => "a {h} a chlog",
-          5 => "cúig tar éis a {h}",
+           0 => "a {h} a chlog",
+           5 => "cúig tar éis a {h}",
           10 => "deich tar éis a {h}",
           15 => "ceathrú tar éis a {h}",
           20 => "fiche tar éis a {h}",

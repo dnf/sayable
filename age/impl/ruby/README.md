@@ -52,7 +52,7 @@ pt = SayableAge::Formatter.new(SayableAge::Locales::JA)
 pt.format_age("2025-01-01", "2025-07-15")  # "6ヶ月"
 ```
 
-110 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
+168 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 

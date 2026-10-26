@@ -17,8 +17,8 @@ module SayableTime
         midnight: "sutu-tili-laŋ",
         noon: "tili-konto",
         patterns: {
-          0 => "talaŋ {h}",
-          5 => "talaŋ {h} aniŋ miniti luulu",
+           0 => "talaŋ {h}",
+           5 => "talaŋ {h} aniŋ miniti luulu",
           10 => "talaŋ {h} aniŋ miniti taŋ",
           15 => "talaŋ {h} aniŋ miniti taŋ niŋ luulu",
           20 => "talaŋ {h} aniŋ miniti muwaŋ",

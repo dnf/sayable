@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     BCI = DurationLocale.new(
       code: 'bci',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sɛgɔn {n}',
         'minute' => 'miniti {n}',

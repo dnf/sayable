@@ -6,7 +6,7 @@ from sayable_time.format_time import (
     format_time,
 )
 from sayable_time.locale import TimeLocale
-from sayable_time.locales import *  # noqa: F401,F403
+from sayable_time.locales import *  # noqa: F403
 from sayable_time.locales import get_locale
 
 __all__ = [

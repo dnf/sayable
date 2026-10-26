@@ -17,8 +17,8 @@ module SayableTime
         midnight: "rofɛt anpa",
         noon: "lən",
         patterns: {
-          0 => "{h}",
-          5 => "{h} nɛ minit rɔman",
+           0 => "{h}",
+           5 => "{h} nɛ minit rɔman",
           10 => "{h} nɛ minit pɛn",
           15 => "{h} nɛ minit pɛn nɛ rɔman",
           20 => "{h} nɛ minit kɩgba",

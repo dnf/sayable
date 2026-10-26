@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     VI = AgeLocale.new(
       code: 'vi',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} ngày',
         'week' => '{n} tuần',

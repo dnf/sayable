@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     YUE = DurationLocale.new(
       code: 'yue',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n}秒',
         'minute' => '{n}分鐘',

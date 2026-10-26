@@ -17,7 +17,7 @@ module SayableDuration
       plural: lambda { |n|
         mod10 = n % 10
         mod100 = n % 100
-        if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) then :zero
+        if mod10 == 0 || (mod100.between?(11, 19)) then :zero
         elsif mod10 == 1 && mod100 != 11 then :one
         else :other
         end

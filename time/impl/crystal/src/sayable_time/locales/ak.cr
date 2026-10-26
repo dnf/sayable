@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ɔdasuom",
         noon: "owigyinae",
         patterns: {
-          0 => "nnɔn {h}",
-          5 => "nnɔn {h} ne sima anum",
+           0 => "nnɔn {h}",
+           5 => "nnɔn {h} ne sima anum",
           10 => "nnɔn {h} ne sima edu",
           15 => "nnɔn {h} ne sima dunum",
           20 => "nnɔn {h} ne sima aduonu",

@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     KO = AgeLocale.new(
       code: 'ko',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n}일',
         'week' => '{n}주',

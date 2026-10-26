@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     KM = DurationLocale.new(
       code: 'km',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} វិនាទី',
         'minute' => '{n} នាទី',

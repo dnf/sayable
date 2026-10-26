@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     ID = AgeLocale.new(
       code: 'id',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} hari',
         'week' => '{n} minggu',

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "nửa đêm",
         noon: "mười hai giờ trưa",
         patterns: {
-          0 => "{h} giờ",
-          5 => "{h} giờ năm phút",
+           0 => "{h} giờ",
+           5 => "{h} giờ năm phút",
           10 => "{h} giờ mười phút",
           15 => "{h} giờ mười lăm phút",
           20 => "{h} giờ hai mươi phút",

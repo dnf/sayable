@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     EU = DurationLocale.new(
       code: 'eu',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} segundo',
         'minute' => '{n} minutu',

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ekiro eky'omu ttumbi",
         noon: "ettuntu",
         patterns: {
-          0 => "essaawa {h}",
-          5 => "essaawa {h} n'eddakiika ttaano",
+           0 => "essaawa {h}",
+           5 => "essaawa {h} n'eddakiika ttaano",
           10 => "essaawa {h} n'eddakiika kkumi",
           15 => "essaawa {h} n'eddakiika kkumi na ttaano",
           20 => "essaawa {h} n'eddakiika abiri",

@@ -12,7 +12,10 @@ from sayable_date.locales.en import EN
 
 __all__ = [
     "EN",
-    "SayableDate", "DateLocale", "__version__",
-    "format_date", "format_relative",
+    "DateLocale",
+    "SayableDate",
+    "__version__",
+    "format_date",
+    "format_relative",
     "get_locale",
 ]

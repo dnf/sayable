@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     TH = DurationLocale.new(
       code: 'th',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} วินาที',
         'minute' => '{n} นาที',

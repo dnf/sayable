@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     DYU = DurationLocale.new(
       code: 'dyu',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sɛkondi {n}',
         'minute' => 'miniti {n}',

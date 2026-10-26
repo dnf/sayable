@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     SAR = DurationLocale.new(
       code: 'sar',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => 'sɛɡɔn {n}',
         'minute' => 'minít {n}',

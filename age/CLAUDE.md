@@ -6,7 +6,7 @@ One of four peer libraries (age, date, duration, time) built the same way. See t
 
 ## Status
 
-v0.5.0, 51 languages, 168 locales, 234 canonical tests. Also has benchmarks and a stress test.
+v0.5.0, 51 languages, 168 locales, 234 canonical tests. Also has benchmarks.
 
 ## Directory structure
 
@@ -41,7 +41,6 @@ age/
     gender-and-stages.md
     unsupported-languages.md
   tests/                   # Test documentation
-  stress-test.sh
   Dockerfile               # Generated (never edit by hand); toolchains for every language
 ```
 

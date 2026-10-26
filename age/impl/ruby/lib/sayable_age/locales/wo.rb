@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     WO = AgeLocale.new(
       code: 'wo',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} fan',
         'week' => '{n} ayubés',

@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     KM = AgeLocale.new(
       code: 'km',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} ថ្ងៃ',
         'week' => '{n} សប្ដាហ៍',

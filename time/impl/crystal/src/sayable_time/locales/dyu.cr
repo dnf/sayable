@@ -17,8 +17,8 @@ module SayableTime
         midnight: "dugutilama",
         noon: "tilgari",
         patterns: {
-          0 => "lɛrɛ {h}",
-          5 => "lɛrɛ {h} ni miniti duuru",
+           0 => "lɛrɛ {h}",
+           5 => "lɛrɛ {h} ni miniti duuru",
           10 => "lɛrɛ {h} ni miniti tan",
           15 => "lɛrɛ {h} ni miniti tan ni duuru",
           20 => "lɛrɛ {h} ni miniti mugan",

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ũtukũ gatagatĩ",
         noon: "mũthenya gatagatĩ",
         patterns: {
-          0 => "thaa {h}",
-          5 => "thaa {h} na ndagĩka ithano",
+           0 => "thaa {h}",
+           5 => "thaa {h} na ndagĩka ithano",
           10 => "thaa {h} na ndagĩka ikũmi",
           15 => "thaa {h} na ndagĩka ikũmi na ithano",
           20 => "thaa {h} na ndagĩka mĩrongo ĩĩrĩ",

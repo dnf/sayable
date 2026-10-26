@@ -3,13 +3,13 @@
 from __future__ import annotations
 
 _RB = {
-    "other_only": "->(n) { :other }",
+    "other_only": "->(_n) { :other }",
     "one_other": "->(n) { n == 1 ? :one : :other }",
     "one_other_zero_one": "->(n) { [0, 1].include?(n) ? :one : :other }",
     "cs_sk": """\
 lambda { |n|
         if n == 1 then :one
-        elsif n >= 2 && n <= 4 then :few
+        elsif n.between?(2, 4) then :few
         else :other
         end
       }""",
@@ -18,14 +18,14 @@ lambda { |n|
         mod10 = n % 10
         mod100 = n % 100
         if mod10 == 1 && mod100 != 11 then :one
-        elsif mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19) then :few
+        elsif mod10.between?(2, 9) && (mod100 < 12 || mod100 > 19) then :few
         else :other
         end
       }""",
     "ro": """\
 lambda { |n|
         if n == 1 then :one
-        elsif n == 0 || (n % 100 >= 1 && n % 100 <= 19) then :few
+        elsif n == 0 || ((n % 100).between?(1, 19)) then :few
         else :other
         end
       }""",
@@ -34,7 +34,7 @@ lambda { |n|
         mod10 = n % 10
         mod100 = n % 100
         if mod10 == 1 && mod100 != 11 then :one
-        elsif mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then :few
+        elsif mod10.between?(2, 4) && (mod100 < 12 || mod100 > 14) then :few
         else :other
         end
       }""",
@@ -44,7 +44,7 @@ lambda { |n|
         else
           mod10 = n % 10
           mod100 = n % 100
-          if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then :few
+          if mod10.between?(2, 4) && (mod100 < 12 || mod100 > 14) then :few
           else :many
           end
         end
@@ -54,7 +54,7 @@ lambda { |n|
         mod10 = n % 10
         mod100 = n % 100
         if mod10 == 1 && mod100 != 11 then :one
-        elsif mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then :few
+        elsif mod10.between?(2, 4) && (mod100 < 12 || mod100 > 14) then :few
         else :many
         end
       }""",
@@ -63,7 +63,7 @@ lambda { |n|
         mod100 = n % 100
         if mod100 == 1 then :one
         elsif mod100 == 2 then :two
-        elsif mod100 == 3 || mod100 == 4 then :few
+        elsif [3, 4].include?(mod100) then :few
         else :other
         end
       }""",
@@ -74,8 +74,8 @@ lambda { |n|
         elsif n == 2 then :two
         else
           mod100 = n % 100
-          if mod100 >= 3 && mod100 <= 10 then :few
-          elsif mod100 >= 11 && mod100 <= 99 then :many
+          if mod100.between?(3, 10) then :few
+          elsif mod100.between?(11, 99) then :many
           else :other
           end
         end
@@ -84,7 +84,7 @@ lambda { |n|
 lambda { |n|
         mod10 = n % 10
         mod100 = n % 100
-        if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) then :zero
+        if mod10 == 0 || (mod100.between?(11, 19)) then :zero
         elsif mod10 == 1 && mod100 != 11 then :one
         else :other
         end
@@ -128,7 +128,7 @@ lambda { |n|
 lambda { |n|
         if [1, 11].include?(n) then :one
         elsif [2, 12].include?(n) then :two
-        elsif (n >= 3 && n <= 10) || (n >= 13 && n <= 19) then :few
+        elsif (n.between?(3, 10)) || (n.between?(13, 19)) then :few
         else :other
         end
       }""",
@@ -136,8 +136,8 @@ lambda { |n|
 lambda { |n|
         if n == 1 then :one
         elsif n == 2 then :two
-        elsif n >= 3 && n <= 6 then :few
-        elsif n >= 7 && n <= 10 then :many
+        elsif n.between?(3, 6) then :few
+        elsif n.between?(7, 10) then :many
         else :other
         end
       }""",
@@ -147,8 +147,8 @@ lambda { |n|
         elsif n == 2 then :two
         else
           mod100 = n % 100
-          if n == 0 || (mod100 >= 3 && mod100 <= 10) then :few
-          elsif mod100 >= 11 && mod100 <= 19 then :many
+          if n == 0 || (mod100.between?(3, 10)) then :few
+          elsif mod100.between?(11, 19) then :many
           else :other
           end
         end
@@ -159,8 +159,8 @@ lambda { |n|
         mod100 = n % 100
         if mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91 then :one
         elsif mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92 then :two
-        elsif [3, 4, 9].include?(mod10) && !(mod100 >= 10 && mod100 <= 19) && !(mod100 >= 70 && mod100 <= 79) && !(mod100 >= 90 && mod100 <= 99) then :few
-        elsif n != 0 && n % 1000000 == 0 then :many
+        elsif [3, 4, 9].include?(mod10) && !(mod100.between?(10, 19)) && !(mod100.between?(70, 79)) && !(mod100.between?(90, 99)) then :few
+        elsif n != 0 && n % 1_000_000 == 0 then :many
         else :other
         end
       }""",
@@ -180,13 +180,13 @@ lambda { |n|
     "shi": """\
 lambda { |n|
         if [0, 1].include?(n) then :one
-        elsif n >= 2 && n <= 10 then :few
+        elsif n.between?(2, 10) then :few
         else :other
         end
       }""",
     "tzm": """\
 lambda { |n|
-        if [0, 1].include?(n) || (n >= 11 && n <= 99) then :one
+        if [0, 1].include?(n) || (n.between?(11, 99)) then :one
         else :other
         end
       }""",

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "aruma chika",
         noon: "chika uru",
         patterns: {
-          0 => "{h} ura",
-          5 => "{h} ura phisqa minutuni",
+           0 => "{h} ura",
+           5 => "{h} ura phisqa minutuni",
           10 => "{h} ura tunka minutuni",
           15 => "{h} ura tunka phisqani minutuni",
           20 => "{h} ura pä tunka minutuni",

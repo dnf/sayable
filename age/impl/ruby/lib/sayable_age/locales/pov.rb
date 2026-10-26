@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     POV = AgeLocale.new(
       code: 'pov',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} dia',
         'week' => '{n} simana',

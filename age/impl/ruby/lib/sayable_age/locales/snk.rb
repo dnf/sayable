@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     SNK = AgeLocale.new(
       code: 'snk',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'xanne {n}',
         'week' => 'simanxe {n}',

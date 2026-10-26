@@ -17,8 +17,8 @@ module SayableTime
         midnight: "pakati pa usiku",
         noon: "pakati pa lisiku",
         patterns: {
-          0 => "saa {h}",
-          5 => "saa {h} na nsano",
+           0 => "saa {h}",
+           5 => "saa {h} na nsano",
           10 => "saa {h} na likumi",
           15 => "saa {h} na likumi na nsano",
           20 => "saa {h} na makumi gaŵili",

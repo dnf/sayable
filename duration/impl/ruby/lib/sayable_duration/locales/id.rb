@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     ID = DurationLocale.new(
       code: 'id',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} detik',
         'minute' => '{n} menit',

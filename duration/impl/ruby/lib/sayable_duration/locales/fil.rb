@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     FIL = DurationLocale.new(
       code: 'fil',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} segundo',
         'minute' => '{n} minuto',

@@ -16,8 +16,8 @@ module SayableDate
       weekdays: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
       day_format: "{n}",
       day_format_exceptions: {
-          "1" => "{n}er",
-        },
+        "1" => "{n}er",
+      },
       date_pattern: "{day} {month}",
       date_pattern_with_year: "{day} {month} {year}",
       today: "aujourd'hui",

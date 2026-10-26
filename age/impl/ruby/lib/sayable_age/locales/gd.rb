@@ -17,7 +17,7 @@ module SayableAge
       plural: lambda { |n|
         if [1, 11].include?(n) then :one
         elsif [2, 12].include?(n) then :two
-        elsif (n >= 3 && n <= 10) || (n >= 13 && n <= 19) then :few
+        elsif (n.between?(3, 10)) || (n.between?(13, 19)) then :few
         else :other
         end
       },

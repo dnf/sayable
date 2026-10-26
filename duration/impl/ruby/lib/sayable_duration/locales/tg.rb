@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     TG = DurationLocale.new(
       code: 'tg',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} сония',
         'minute' => '{n} дақиқа',

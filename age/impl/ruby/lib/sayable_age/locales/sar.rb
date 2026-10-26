@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     SAR = AgeLocale.new(
       code: 'sar',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'ndɔ {n}',
         'week' => 'lɔtɛ {n}',

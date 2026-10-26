@@ -17,8 +17,8 @@ module SayableTime
         midnight: "middernag",
         noon: "middag",
         patterns: {
-          0 => "{h}-uur",
-          5 => "vyf oor {h}",
+           0 => "{h}-uur",
+           5 => "vyf oor {h}",
           10 => "tien oor {h}",
           15 => "kwart oor {h}",
           20 => "twintig oor {h}",

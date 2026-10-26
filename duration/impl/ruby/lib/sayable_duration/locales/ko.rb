@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     KO = DurationLocale.new(
       code: 'ko',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n}초',
         'minute' => '{n}분',

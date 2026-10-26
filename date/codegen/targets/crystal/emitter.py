@@ -16,11 +16,13 @@ def _str_array(items: list[str]) -> str:
     return "[" + ", ".join(_quote(s) for s in items) + "]"
 
 
-def _str_hash(d: dict[str, str]) -> str:
+def _str_hash(d: dict[str, str], indent: str) -> str:
+    """A multi-line hash for a field at `indent`, laid out as `crystal tool format` does."""
     if not d:
         return "{} of String => String"
-    pairs = [f"{_quote(k)} => {_quote(v)}" for k, v in d.items()]
-    return "{\n" + "".join(f"          {p},\n" for p in pairs) + "        }"
+    width = max(len(_quote(k)) for k in d)
+    entries = "".join(f"{indent}  {_quote(k).ljust(width)} => {_quote(v)},\n" for k, v in d.items())
+    return "{\n" + entries + indent + "}"
 
 
 def emit_locale(data: dict) -> str:
@@ -44,7 +46,7 @@ def emit_locale(data: dict) -> str:
 
     # DayFormatExceptions
     exceptions = data.get("dayFormatExceptions", {})
-    lines.append(f"      day_format_exceptions: {_str_hash(exceptions)},")
+    lines.append(f"      day_format_exceptions: {_str_hash(exceptions, '      ')},")
 
     # Date patterns
     lines.append(f"      date_pattern: {_quote(data['datePattern'])},")
@@ -82,7 +84,7 @@ def emit_locale(data: dict) -> str:
         if "dayFormat" in ovr:
             lines.append(f"        day_format: {_quote(ovr['dayFormat'])},")
         if "dayFormatExceptions" in ovr:
-            lines.append(f"        day_format_exceptions: {_str_hash(ovr['dayFormatExceptions'])},")
+            lines.append(f"        day_format_exceptions: {_str_hash(ovr['dayFormatExceptions'], '        ')},")
         if "datePattern" in ovr:
             lines.append(f"        date_pattern: {_quote(ovr['datePattern'])},")
         if "datePatternWithYear" in ovr:
@@ -119,10 +121,12 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("  module Locales")
     lines.append("    def self.get(code : String) : DateLocale?")
     lines.append("      case code")
+    code_width = max(len(_quote(loc["code"])) for loc in sorted_locs)
     for loc in sorted_locs:
         code = loc["code"]
-        lines.append(f"      when {_quote(code)} then {code.upper()}")
-    lines.append("      else nil")
+        lines.append(f"      when {_quote(code).ljust(code_width)} then {code.upper()}")
+    # `crystal tool format` aligns every branch's result, `else` included.
+    lines.append(f"      {'else'.ljust(len('when ') + code_width + len(' then '))}nil")
     lines.append("      end")
     lines.append("    end")
     lines.append("  end")

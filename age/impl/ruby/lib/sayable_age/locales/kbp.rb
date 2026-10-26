@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     KBP = AgeLocale.new(
       code: 'kbp',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'kɩyakʊ {n}',
         'week' => 'kpɩtaʊ {n}',

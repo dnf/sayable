@@ -17,8 +17,8 @@ module SayableTime
         midnight: "waenganui pō",
         noon: "poupoutanga o te rā",
         patterns: {
-          0 => "{h} karaka",
-          5 => "rima meneti i muri i te {h}",
+           0 => "{h} karaka",
+           5 => "rima meneti i muri i te {h}",
           10 => "tekau meneti i muri i te {h}",
           15 => "hauwhā i muri i te {h}",
           20 => "rua tekau meneti i muri i te {h}",

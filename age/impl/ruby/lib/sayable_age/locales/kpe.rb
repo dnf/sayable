@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     KPE = AgeLocale.new(
       code: 'kpe',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'ɓɛlɛɛ {n}',
         'week' => 'wikii {n}',

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "hanternoz",
         noon: "kreisteiz",
         patterns: {
-          0 => "{h}",
-          5 => "{h} ha pemp",
+           0 => "{h}",
+           5 => "{h} ha pemp",
           10 => "{h} ha dek",
           15 => "{h} ha kard",
           20 => "{h} hag ugent",

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "saqda dhexe",
         noon: "duhur",
         patterns: {
-          0 => "{h}",
-          5 => "{h} iyo shan",
+           0 => "{h}",
+           5 => "{h} iyo shan",
           10 => "{h} iyo toban",
           15 => "{h} iyo rubuc",
           20 => "{h} iyo labaatan",

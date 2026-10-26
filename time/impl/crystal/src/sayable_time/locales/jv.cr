@@ -17,8 +17,8 @@ module SayableTime
         midnight: "tengah wengi",
         noon: "tengah awan",
         patterns: {
-          0 => "jam {h}",
-          5 => "jam {h} luwih limang menit",
+           0 => "jam {h}",
+           5 => "jam {h} luwih limang menit",
           10 => "jam {h} luwih sepuluh menit",
           15 => "jam {h} luwih seprapat",
           20 => "jam {h} luwih rong puluh menit",

@@ -17,8 +17,8 @@ module SayableTime
         midnight: "pakati peusiku",
         noon: "masikati",
         patterns: {
-          0 => "{h}",
-          5 => "{h} nemaminitsi mashanu",
+           0 => "{h}",
+           5 => "{h} nemaminitsi mashanu",
           10 => "{h} nemaminitsi gumi",
           15 => "{h} nemaminitsi gumi nemashanu",
           20 => "{h} nemaminitsi makumi maviri",

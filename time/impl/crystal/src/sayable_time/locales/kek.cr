@@ -17,8 +17,8 @@ module SayableTime
         midnight: "chaq' xkab'",
         noon: "chaq' chaab'il",
         patterns: {
-          0 => "{h} hoonal",
-          5 => "{h} hoonal rik'in oob' minuut",
+           0 => "{h} hoonal",
+           5 => "{h} hoonal rik'in oob' minuut",
           10 => "{h} hoonal rik'in lajeeb' minuut",
           15 => "{h} hoonal rik'in o'laju minuut",
           20 => "{h} hoonal rik'in junmay minuut",

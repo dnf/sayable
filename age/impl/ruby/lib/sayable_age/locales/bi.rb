@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     BI = AgeLocale.new(
       code: 'bi',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} dei',
         'week' => '{n} wik',

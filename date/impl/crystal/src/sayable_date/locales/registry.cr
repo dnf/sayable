@@ -11,175 +11,175 @@ module SayableDate
   module Locales
     def self.get(code : String) : DateLocale?
       case code
-      when "af" then AF
-      when "ak" then AK
-      when "am" then AM
-      when "ar" then AR
-      when "ay" then AY
-      when "az" then AZ
+      when "af"  then AF
+      when "ak"  then AK
+      when "am"  then AM
+      when "ar"  then AR
+      when "ay"  then AY
+      when "az"  then AZ
       when "bci" then BCI
-      when "be" then BE
+      when "be"  then BE
       when "bem" then BEM
-      when "bg" then BG
-      when "bi" then BI
-      when "bm" then BM
-      when "bn" then BN
-      when "br" then BR
-      when "bs" then BS
-      when "ca" then CA
+      when "bg"  then BG
+      when "bi"  then BI
+      when "bm"  then BM
+      when "bn"  then BN
+      when "br"  then BR
+      when "bs"  then BS
+      when "ca"  then CA
       when "cak" then CAK
       when "ceb" then CEB
-      when "cs" then CS
-      when "cy" then CY
-      when "da" then DA
-      when "de" then DE
+      when "cs"  then CS
+      when "cy"  then CY
+      when "da"  then DA
+      when "de"  then DE
       when "din" then DIN
       when "dje" then DJE
-      when "dv" then DV
+      when "dv"  then DV
       when "dyu" then DYU
-      when "dz" then DZ
-      when "ee" then EE
-      when "el" then EL
-      when "en" then EN
-      when "es" then ES
-      when "et" then ET
-      when "eu" then EU
-      when "fa" then FA
+      when "dz"  then DZ
+      when "ee"  then EE
+      when "el"  then EL
+      when "en"  then EN
+      when "es"  then ES
+      when "et"  then ET
+      when "eu"  then EU
+      when "fa"  then FA
       when "fan" then FAN
-      when "ff" then FF
-      when "fi" then FI
+      when "ff"  then FF
+      when "fi"  then FI
       when "fil" then FIL
-      when "fj" then FJ
+      when "fj"  then FJ
       when "fon" then FON
-      when "fr" then FR
-      when "ga" then GA
-      when "gd" then GD
-      when "gl" then GL
-      when "gn" then GN
-      when "gu" then GU
-      when "gv" then GV
-      when "ha" then HA
-      when "he" then HE
-      when "hi" then HI
+      when "fr"  then FR
+      when "ga"  then GA
+      when "gd"  then GD
+      when "gl"  then GL
+      when "gn"  then GN
+      when "gu"  then GU
+      when "gv"  then GV
+      when "ha"  then HA
+      when "he"  then HE
+      when "hi"  then HI
       when "hmn" then HMN
-      when "hr" then HR
-      when "ht" then HT
-      when "hu" then HU
-      when "hy" then HY
-      when "id" then ID
-      when "ig" then IG
-      when "is" then IS
-      when "it" then IT
-      when "ja" then JA
-      when "jv" then JV
-      when "ka" then KA
+      when "hr"  then HR
+      when "ht"  then HT
+      when "hu"  then HU
+      when "hy"  then HY
+      when "id"  then ID
+      when "ig"  then IG
+      when "is"  then IS
+      when "it"  then IT
+      when "ja"  then JA
+      when "jv"  then JV
+      when "ka"  then KA
       when "kbp" then KBP
       when "kek" then KEK
-      when "ki" then KI
-      when "kk" then KK
-      when "kl" then KL
-      when "km" then KM
-      when "kn" then KN
-      when "ko" then KO
+      when "ki"  then KI
+      when "kk"  then KK
+      when "kl"  then KL
+      when "km"  then KM
+      when "kn"  then KN
+      when "ko"  then KO
       when "kpe" then KPE
       when "kri" then KRI
       when "ktu" then KTU
-      when "ku" then KU
-      when "kw" then KW
-      when "ky" then KY
-      when "lb" then LB
-      when "lg" then LG
-      when "ln" then LN
-      when "lo" then LO
-      when "lt" then LT
+      when "ku"  then KU
+      when "kw"  then KW
+      when "ky"  then KY
+      when "lb"  then LB
+      when "lg"  then LG
+      when "ln"  then LN
+      when "lo"  then LO
+      when "lt"  then LT
       when "luo" then LUO
-      when "lv" then LV
+      when "lv"  then LV
       when "mam" then MAM
       when "men" then MEN
       when "mfe" then MFE
-      when "mg" then MG
-      when "mi" then MI
-      when "mk" then MK
-      when "ml" then ML
-      when "mn" then MN
+      when "mg"  then MG
+      when "mi"  then MI
+      when "mk"  then MK
+      when "ml"  then ML
+      when "mn"  then MN
       when "mnk" then MNK
       when "mos" then MOS
-      when "mr" then MR
-      when "ms" then MS
-      when "mt" then MT
-      when "my" then MY
-      when "nb" then NB
-      when "nd" then ND
-      when "ne" then NE
-      when "ng" then NG
-      when "nl" then NL
-      when "nr" then NR
+      when "mr"  then MR
+      when "ms"  then MS
+      when "mt"  then MT
+      when "my"  then MY
+      when "nb"  then NB
+      when "nd"  then ND
+      when "ne"  then NE
+      when "ng"  then NG
+      when "nl"  then NL
+      when "nr"  then NR
       when "nso" then NSO
       when "nus" then NUS
-      when "ny" then NY
-      when "om" then OM
-      when "or" then OR
-      when "pa" then PA
+      when "ny"  then NY
+      when "om"  then OM
+      when "or"  then OR
+      when "pa"  then PA
       when "pis" then PIS
-      when "pl" then PL
+      when "pl"  then PL
       when "pov" then POV
-      when "ps" then PS
-      when "pt" then PT
-      when "qu" then QU
+      when "ps"  then PS
+      when "pt"  then PT
+      when "qu"  then QU
       when "quc" then QUC
-      when "ro" then RO
-      when "ru" then RU
-      when "rw" then RW
+      when "ro"  then RO
+      when "ru"  then RU
+      when "rw"  then RW
       when "sar" then SAR
-      when "sd" then SD
-      when "sg" then SG
+      when "sd"  then SD
+      when "sg"  then SG
       when "shi" then SHI
       when "shn" then SHN
-      when "si" then SI
-      when "sk" then SK
-      when "sl" then SL
-      when "sn" then SN
+      when "si"  then SI
+      when "sk"  then SK
+      when "sl"  then SL
+      when "sn"  then SN
       when "snk" then SNK
-      when "so" then SO
-      when "sq" then SQ
-      when "sr" then SR
-      when "ss" then SS
-      when "st" then ST
-      when "su" then SU
+      when "so"  then SO
+      when "sq"  then SQ
+      when "sr"  then SR
+      when "ss"  then SS
+      when "st"  then ST
+      when "su"  then SU
       when "suk" then SUK
-      when "sv" then SV
-      when "sw" then SW
-      when "ta" then TA
-      when "te" then TE
+      when "sv"  then SV
+      when "sw"  then SW
+      when "ta"  then TA
+      when "te"  then TE
       when "tem" then TEM
       when "tet" then TET
-      when "tg" then TG
-      when "th" then TH
-      when "ti" then TI
+      when "tg"  then TG
+      when "th"  then TH
+      when "ti"  then TI
       when "tig" then TIG
-      when "tk" then TK
-      when "tn" then TN
+      when "tk"  then TK
+      when "tn"  then TN
       when "tpi" then TPI
-      when "tr" then TR
-      when "ts" then TS
+      when "tr"  then TR
+      when "ts"  then TS
       when "tum" then TUM
       when "tzm" then TZM
-      when "uk" then UK
+      when "uk"  then UK
       when "umb" then UMB
-      when "ur" then UR
-      when "uz" then UZ
-      when "ve" then VE
-      when "vi" then VI
+      when "ur"  then UR
+      when "uz"  then UZ
+      when "ve"  then VE
+      when "vi"  then VI
       when "vmw" then VMW
-      when "wo" then WO
-      when "xh" then XH
+      when "wo"  then WO
+      when "xh"  then XH
       when "yao" then YAO
-      when "yo" then YO
+      when "yo"  then YO
       when "yue" then YUE
       when "zdj" then ZDJ
-      when "zh" then ZH
-      when "zu" then ZU
-      else nil
+      when "zh"  then ZH
+      when "zu"  then ZU
+      else            nil
       end
     end
   end

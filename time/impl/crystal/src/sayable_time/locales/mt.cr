@@ -17,8 +17,8 @@ module SayableTime
         midnight: "nofsillejl",
         noon: "nofsinhar",
         patterns: {
-          0 => "{h}",
-          5 => "{h} u ħamsa",
+           0 => "{h}",
+           5 => "{h} u ħamsa",
           10 => "{h} u għaxra",
           15 => "{h} u kwart",
           20 => "{h} u għoxrin",

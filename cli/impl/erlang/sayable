@@ -25,14 +25,14 @@ needs_rebuild() {
 
     # Check if any source file is newer than the stamp
     for dir in "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DUR_SRC}" "${CLI_SRC}"; do
-        for f in $(find "${dir}" -name '*.erl' -o -name '*.hrl' 2>/dev/null); do
+        while IFS= read -r f; do
             [[ "${f}" -nt "${STAMP}" ]] && return 0
-        done
+        done < <(find "${dir}" -name '*.erl' -o -name '*.hrl' 2>/dev/null)
     done
     for dir in "${AGE_INC}" "${DATE_INC}" "${TIME_INC}" "${DUR_INC}"; do
-        for f in $(find "${dir}" -name '*.hrl' 2>/dev/null); do
+        while IFS= read -r f; do
             [[ "${f}" -nt "${STAMP}" ]] && return 0
-        done
+        done < <(find "${dir}" -name '*.hrl' 2>/dev/null)
     done
     return 1
 }

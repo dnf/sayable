@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     KRI = AgeLocale.new(
       code: 'kri',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} de',
         'week' => '{n} wik',

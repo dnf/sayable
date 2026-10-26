@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     ZDJ = AgeLocale.new(
       code: 'zdj',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'suku {n}',
         'week' => 'djumwa {n}',

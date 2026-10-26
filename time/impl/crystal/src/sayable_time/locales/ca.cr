@@ -17,8 +17,8 @@ module SayableTime
         midnight: "mitjanit",
         noon: "migdia",
         patterns: {
-          0 => "{h} en punt",
-          5 => "{h} i cinc",
+           0 => "{h} en punt",
+           5 => "{h} i cinc",
           10 => "{h} i deu",
           15 => "{h} i quart",
           20 => "{h} i vint",

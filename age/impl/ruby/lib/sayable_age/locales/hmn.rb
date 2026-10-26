@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     HMN = AgeLocale.new(
       code: 'hmn',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} hnub',
         'week' => '{n} lub lim tiam',

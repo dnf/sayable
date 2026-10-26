@@ -17,8 +17,8 @@ module SayableTime
         midnight: "etiti abalị",
         noon: "etiti ehihie",
         patterns: {
-          0 => "elekere {h}",
-          5 => "elekere {h} na nkeji ise",
+           0 => "elekere {h}",
+           5 => "elekere {h} na nkeji ise",
           10 => "elekere {h} na nkeji iri",
           15 => "elekere {h} na nkeji iri na ise",
           20 => "elekere {h} na nkeji iri abụọ",

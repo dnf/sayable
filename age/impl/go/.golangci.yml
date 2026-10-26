@@ -14,6 +14,9 @@ linters:
     - prealloc
   exclusions:
     rules:
+      # Generated locale data is words in other languages, not English.
+      - linters: [misspell]
+        path: "locales/"
       - linters: [unparam]
         path: "_test\\.go$"
 

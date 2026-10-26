@@ -17,8 +17,8 @@ module SayableTime
         midnight: "vidurnaktis",
         noon: "vidurdienis",
         patterns: {
-          0 => "{h}",
-          5 => "penkios minuta {h}",
+           0 => "{h}",
+           5 => "penkios minuta {h}",
           10 => "dešimt minuta {h}",
           15 => "penkiolika minuta {h}",
           20 => "dvidešimt minuta {h}",

@@ -425,13 +425,13 @@ run_test 'date:13.1' 'February 4th, 2018' date 2018-02-04 -l en --with-year
 run_test 'date:13.2' 'Mar 15, 2025' date 2025-03-15 -l en --short --with-year
 run_test 'date:13.3' '1/21/97' date 1997-01-21 -l en --compact --with-year
 run_test 'date:13.4' '20/5/07' date 2007-05-20 -l tg --compact --with-year
-run_test 'date:13.5' '21. kesäkuuta 1996' date 1996-06-21 -l fi --short --with-year
+run_test 'date:13.5' '21. kesäkuuta 1996' date 1996-06-21 -l 'fi' --short --with-year
 
 # === Date: Short month names (locales that keep the full genitive) ===
 run_test 'date:14.1' '15. februára' date 2031-02-15 -l sk --short
 run_test 'date:14.2' '10. prosince' date 2025-12-10 -l cs --short
 run_test 'date:14.3' '5 листопада' date 2025-11-05 -l uk --short
-run_test 'date:14.4' '8. elokuuta' relative 1998-08-08 -d 1998-08-15 -l fi --short
+run_test 'date:14.4' '8. elokuuta' relative 1998-08-08 -d 1998-08-15 -l 'fi' --short
 
 # === Date: format_relative — short phrases ===
 run_test 'date:15.1' 'an Mth ma' relative 2035-12-04 -d 2035-12-02 -l kw --short
@@ -494,8 +494,8 @@ run_test 'time:6.5' 'trois heures moins dix' time 14:50 -l fr
 run_test 'time:7.1' '三時半' time 15:30 -l ja
 
 # === Time 8: Locale — Finnish (dot separator, short) ===
-run_test 'time:8.1' '14.15' time 14:15 -l fi --short
-run_test 'time:8.2' '0.00' time 00:00 -l fi --short
+run_test 'time:8.1' '14.15' time 14:15 -l 'fi' --short
+run_test 'time:8.2' '0.00' time 00:00 -l 'fi' --short
 
 # === Time 9: Minutes in short and compact modes ===
 run_test 'time:9.1' '6:01 PM' time 18:01 --short
@@ -520,9 +520,9 @@ run_null 'time:10.9' time 2025-02-30T14:15:00
 run_null 'dur:1.1' duration null
 run_null 'dur:1.2' duration -- -1
 run_null 'dur:1.3' since null -d 2025-01-15T10:00:00
-run_null 'dur:1.4' until null -d 2025-01-15T10:00:00
+run_null 'dur:1.4' 'until' null -d 2025-01-15T10:00:00
 run_null 'dur:1.5' since 2025-01-15T10:00:00 -d 2025-01-15T09:00:00
-run_null 'dur:1.6' until 2025-01-15T09:00:00 -d 2025-01-15T10:00:00
+run_null 'dur:1.6' 'until' 2025-01-15T09:00:00 -d 2025-01-15T10:00:00
 
 # === Duration 2: Duration — seconds tier (0-59s) ===
 run_test 'dur:2.1' 'just now' duration 0
@@ -580,9 +580,9 @@ run_test 'dur:11.3' '45 minutes ago' since 2025-01-15T10:00:00 -d 2025-01-15T10:
 run_test 'dur:11.4' '3 hours ago' since 2025-01-15T10:00:00 -d 2025-01-15T13:00:00
 
 # === Duration 12: Relative time — until ===
-run_test 'dur:12.1' 'just now' until 2025-01-15T10:00:00 -d 2025-01-15T10:00:00
-run_test 'dur:12.2' 'in 20 minutes' until 2025-01-15T10:20:00 -d 2025-01-15T10:00:00
-run_test 'dur:12.3' 'in 3 hours' until 2025-01-15T13:00:00 -d 2025-01-15T10:00:00
+run_test 'dur:12.1' 'just now' 'until' 2025-01-15T10:00:00 -d 2025-01-15T10:00:00
+run_test 'dur:12.2' 'in 20 minutes' 'until' 2025-01-15T10:20:00 -d 2025-01-15T10:00:00
+run_test 'dur:12.3' 'in 3 hours' 'until' 2025-01-15T13:00:00 -d 2025-01-15T10:00:00
 
 # === Duration 13: Locale — German ===
 run_test 'dur:13.1' '1 Stunde' duration 3600 -l de
@@ -611,7 +611,7 @@ run_test 'dur:19.1' '500 years' duration 15778800000
 run_null 'dur:19.2' duration 15800000000
 run_null 'dur:19.3' duration 99999999999
 run_null 'dur:19.4' since 1500-01-01T00:00:00 -d 2025-01-01T00:00:00
-run_null 'dur:19.5' until 2600-01-01T00:00:00 -d 2025-01-01T00:00:00
+run_null 'dur:19.5' 'until' 2600-01-01T00:00:00 -d 2025-01-01T00:00:00
 
 # === Duration 20: Timestamp validation ===
 run_test 'dur:20.1' '1½ hours' duration 2025-01-15T10:00 2025-01-15T11:30:00

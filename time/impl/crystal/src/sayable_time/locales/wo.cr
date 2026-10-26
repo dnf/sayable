@@ -17,8 +17,8 @@ module SayableTime
         midnight: "digg-guddi",
         noon: "digg-bëccëg",
         patterns: {
-          0 => "{h}",
-          5 => "{h} ak juróomi simili",
+           0 => "{h}",
+           5 => "{h} ak juróomi simili",
           10 => "{h} ak fukki simili",
           15 => "{h} ak fukk ak juróomi simili",
           20 => "{h} ak ñaar-fukki simili",

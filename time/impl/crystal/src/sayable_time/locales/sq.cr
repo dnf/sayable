@@ -17,8 +17,8 @@ module SayableTime
         midnight: "mesnata",
         noon: "mesdita",
         patterns: {
-          0 => "ora {h}",
-          5 => "{h} e pesë",
+           0 => "ora {h}",
+           5 => "{h} e pesë",
           10 => "{h} e dhjetë",
           15 => "{h} e një çerek",
           20 => "{h} e njëzet",

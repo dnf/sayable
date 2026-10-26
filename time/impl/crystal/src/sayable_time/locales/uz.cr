@@ -17,8 +17,8 @@ module SayableTime
         midnight: "yarim tun",
         noon: "tush",
         patterns: {
-          0 => "soat {h}",
-          5 => "soat {h} nol besh",
+           0 => "soat {h}",
+           5 => "soat {h} nol besh",
           10 => "soat {h} o'n",
           15 => "soat {h} o'n besh",
           20 => "soat {h} yigirma",

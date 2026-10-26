@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ponoć",
         noon: "podne",
         patterns: {
-          0 => "{h}",
-          5 => "{h} i pet",
+           0 => "{h}",
+           5 => "{h} i pet",
           10 => "{h} i deset",
           15 => "{h} i petnaest",
           20 => "{h} i dvadeset",

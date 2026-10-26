@@ -2,8 +2,14 @@
 # sayableduration.sh — Human-friendly duration and relative time formatting.
 # Zero dependencies. Source this file to use format_duration, format_since, format_until.
 
-SAYABLEDURATION_VERSION="0.5.0"
+# The locale variables (_half, _delimiter...) are set by the locale file a
+# function loads at run time, which shellcheck can't follow.
+# shellcheck disable=SC2154
+
 _SAYABLEDURATION_REGISTRY_LOADED=0
+# Read by callers, not by this file.
+# shellcheck disable=SC2034
+SAYABLEDURATION_VERSION="0.5.0"
 _SAYABLEDURATION_MAX_MONTHS=6000  # 500 years, the same ceiling as sayable-age
 
 # --- Date/time helpers ---

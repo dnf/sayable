@@ -16,9 +16,9 @@ module SayableDate
       weekdays: ["igandea", "astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata"],
       day_format: "{n}a",
       day_format_exceptions: {
-          "11" => "{n}",
-          "31" => "{n}",
-        },
+        "11" => "{n}",
+        "31" => "{n}",
+      },
       date_pattern: "{month} {day}",
       date_pattern_with_year: "{year}ko {month} {day}",
       today: "gaur",

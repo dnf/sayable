@@ -17,8 +17,8 @@ module SayableTime
         midnight: "gï na lögö",
         noon: "lâ nzönï",
         patterns: {
-          0 => "ngbonga {h}",
-          5 => "ngbonga {h} na minüti okü",
+           0 => "ngbonga {h}",
+           5 => "ngbonga {h} na minüti okü",
           10 => "ngbonga {h} na minüti balë-ôko",
           15 => "ngbonga {h} na minüti balë-ôko na okü",
           20 => "ngbonga {h} na minüti balë-ûse",

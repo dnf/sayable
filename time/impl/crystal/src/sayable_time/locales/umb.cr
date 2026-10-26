@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ocitapi",
         noon: "ocivali",
         patterns: {
-          0 => "ohola {h}",
-          5 => "ohola {h} la tãlo",
+           0 => "ohola {h}",
+           5 => "ohola {h} la tãlo",
           10 => "ohola {h} la ekwi",
           15 => "ohola {h} la ekwi la tãlo",
           20 => "ohola {h} la akũi avali",

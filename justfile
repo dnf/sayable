@@ -416,6 +416,7 @@ lint *target:
             "" \
             "Tools:" \
             "  cli        Warnings-as-errors in build" \
+            "  shell      shellcheck on every shell script" \
             "" \
             "  Other languages use warnings-as-errors in their build step (no separate linter)." \
             "" \
@@ -424,7 +425,7 @@ lint *target:
             "  -s MODE    Visualization: scroll (default), full, or zoom" \
             "" \
             "Examples:" \
-            "  just lint              Run all 12 linters in parallel" \
+            "  just lint              Run every linter in parallel" \
             "  just lint python       Run Python linter only (ruff + pyright)" \
             "  just lint rs           Run Rust linter (clippy, abbreviation)" \
             "  just lint -j 3         Run all with 3 job slots"
@@ -445,6 +446,12 @@ lint *target:
                 fi
             fi
         done
+        args+=("---")
+        if command -v shellcheck >/dev/null 2>&1; then
+            args+=("lint shell")
+        else
+            args+=("skip:shell")
+        fi
         .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} lint "${args[@]}"
     else
         name=$(_name "$_target")
@@ -474,6 +481,8 @@ lint *target:
                 echo "Kotlin uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "c" ]; then
                 echo "C uses warnings-as-errors in build (no separate linter)"
+            elif [ "$_target" = "shell" ]; then
+                bash .hecatron/tools/lint/shellcheck.sh
             elif [ "$_target" = "cli" ]; then
                 echo "CLI uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
@@ -696,12 +705,49 @@ install *langs:
         printf '%s\n' \
             "" \
             "Examples:" \
-            "  just install           Install all 29 language toolchains" \
+            "  just install           Install every language toolchain" \
             "  just install go rust   Install Go and Rust only" \
             "  just install rs        Install Rust (abbreviation)"
         exit 0
     fi
     {{python}} .hecatron/tools/language/install.py $langs
+
+# Check every language's toolchain (or the ones named) and say how to repair it
+[group('setup')]
+doctor *langs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    source .hecatron/tools/language/helpers.sh
+    _args=({{langs}})
+    if [ "${_args[0]:-}" = "help" ] || [ "${_args[0]:-}" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just doctor [--fix] [language ...]" \
+            "" \
+            "Check that each language's toolchain works: its build and lint tools run," \
+            "and known breakages are absent (a linter built with an older Go, luacheck on" \
+            "Lua 5.5, a moved virtualenv, a missing test package...). With no languages," \
+            "checks every added, enabled one." \
+            ""
+        _lang_grid "Languages" "$_ALL_LANGS"
+        printf '%s\n' \
+            "" \
+            "Flags:" \
+            "  --fix      Run each unhealthy language's installer, then check it again" \
+            "" \
+            "Examples:" \
+            "  just doctor            Check every toolchain" \
+            "  just doctor go lua     Check Go and Lua only" \
+            "  just doctor --fix      Check everything and repair what's broken"
+        exit 0
+    fi
+    for _a in ${_args[@]+"${_args[@]}"}; do
+        [ "${_a}" = "--fix" ] && continue
+        if ! _check "${_a}" >/dev/null 2>&1; then
+            echo "Unknown language: ${_a} (try 'just doctor help')" >&2
+            exit 1
+        fi
+    done
+    bash .hecatron/tools/language/doctor.sh ${_args[@]+"${_args[@]}"}
 
 # Run CLI test harness (all languages or specify one: just cli python)
 [group('test')]

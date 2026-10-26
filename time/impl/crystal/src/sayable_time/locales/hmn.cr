@@ -17,8 +17,8 @@ module SayableTime
         midnight: "ib tag hmo",
         noon: "tav su",
         patterns: {
-          0 => "{h} teev",
-          5 => "{h} teev tsib feeb",
+           0 => "{h} teev",
+           5 => "{h} teev tsib feeb",
           10 => "{h} teev kaum feeb",
           15 => "{h} teev kaum tsib feeb",
           20 => "{h} teev nees nkaum feeb",

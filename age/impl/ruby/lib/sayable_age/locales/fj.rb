@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     FJ = AgeLocale.new(
       code: 'fj',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} na siga',
         'week' => '{n} na macawa',

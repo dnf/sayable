@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     BM = AgeLocale.new(
       code: 'bm',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => 'don {n}',
         'week' => 'dɔgɔkun {n}',

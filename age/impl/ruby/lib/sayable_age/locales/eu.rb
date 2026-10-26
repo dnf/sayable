@@ -14,7 +14,7 @@ module SayableAge
   module Locales
     EU = AgeLocale.new(
       code: 'eu',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'day' => '{n} egun',
         'week' => '{n} aste',

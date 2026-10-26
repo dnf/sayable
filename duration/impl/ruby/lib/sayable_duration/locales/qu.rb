@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     QU = DurationLocale.new(
       code: 'qu',
-      plural: ->(n) { :other },
+      plural: ->(_n) { :other },
       units: {
         'second' => '{n} sikundu',
         'minute' => '{n} minutu',

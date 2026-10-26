@@ -7,6 +7,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
+# shellcheck shell=bash
 
 # Source all locale files relative to this script's directory
 _sayabledate_locales_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
