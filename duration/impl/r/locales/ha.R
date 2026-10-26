@@ -13,13 +13,13 @@ locale_ha <- list(
   code = "ha",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = list(one = "{n} daƙiƙa", other = "{n} daƙiƙoƙi"),
-    minute = list(one = "{n} minti", other = "{n} mintoci"),
-    hour = list(one = "{n} awa", other = "{n} awanni"),
-    day = list(one = "{n} kwana", other = "{n} kwanaki"),
-    week = list(one = "{n} mako", other = "{n} makonni"),
-    month = list(one = "{n} wata", other = "{n} watanni"),
-    year = list(one = "{n} shekara", other = "{n} shekaru")
+    second = list(one = "daƙiƙa {n}", other = "daƙiƙoƙi {n}"),
+    minute = list(one = "minti {n}", other = "mintoci {n}"),
+    hour = list(one = "awa {n}", other = "awanni {n}"),
+    day = list(one = "kwana {n}", other = "kwanaki {n}"),
+    week = list(one = "mako {n}", other = "makonni {n}"),
+    month = list(one = "wata {n}", other = "watanni {n}"),
+    year = list(one = "shekara {n}", other = "shekaru {n}")
   ),
   half = "{n}½",
   delimiter = ", ",
@@ -28,13 +28,13 @@ locale_ha <- list(
   in_future = "cikin {0}",
   short = list(
     units = list(
-      second = "{n} daƙ.",
-      minute = "{n} mnt.",
-      hour = "{n} awa",
-      day = "{n} kw.",
-      week = "{n} mk.",
-      month = "{n} wt.",
-      year = "{n} shk."
+      second = "daƙ. {n}",
+      minute = "mnt. {n}",
+      hour = "awa {n}",
+      day = "kw. {n}",
+      week = "mk. {n}",
+      month = "wt. {n}",
+      year = "shk. {n}"
     ),
     ago = "{0} da suka wuce",
     in_future = "cikin {0}"

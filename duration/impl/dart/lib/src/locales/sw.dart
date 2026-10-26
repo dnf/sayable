@@ -19,9 +19,9 @@ final sw = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': simpleUnit('{n} sekunde'),
-    'minute': simpleUnit('{n} dakika'),
-    'hour': simpleUnit('{n} saa'),
+    'second': simpleUnit('sekunde {n}'),
+    'minute': simpleUnit('dakika {n}'),
+    'hour': simpleUnit('saa {n}'),
     'day': pluralUnit({PluralCategory.one: 'siku {n}', PluralCategory.other: 'siku {n}'}),
     'week': pluralUnit({PluralCategory.one: 'wiki {n}', PluralCategory.other: 'wiki {n}'}),
     'month': pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miezi {n}'}),

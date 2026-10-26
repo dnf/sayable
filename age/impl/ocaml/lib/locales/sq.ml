@@ -32,9 +32,9 @@ let locale : locale =
       ]
   ; half = "{0} e gjysmë"
   ; delimiter = ", "
-  ; just_born = "Sapolindur"
+  ; just_born = "I sapolindur"
   ; stages =
-    { newborn = Gendered ("Sapolindur", "Sapolindure")
+    { newborn = Gendered ("I sapolindur", "E sapolindur")
     ; infant = Neutral "Foshnjë"
     ; toddler = Gendered ("Fëmijë i vogël", "Fëmijë e vogël")
     ; child = Neutral "Fëmijë"

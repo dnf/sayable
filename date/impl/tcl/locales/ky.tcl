@@ -11,12 +11,12 @@
 
 proc locale_date_ky {} {
     set code {ky}
-    set months [list {Январь} {Февраль} {Март} {Апрель} {Май} {Июнь} {Июль} {Август} {Сентябрь} {Октябрь} {Ноябрь} {Декабрь}]
-    set weekdays [list {Жекшемби} {Дүйшөмбү} {Шейшемби} {Шаршемби} {Бейшемби} {Жума} {Ишемби}]
-    set day_format "{n}"
+    set months [list {январь} {февраль} {март} {апрель} {май} {июнь} {июль} {август} {сентябрь} {октябрь} {ноябрь} {декабрь}]
+    set weekdays [list {жекшемби} {дүйшөмбү} {шейшемби} {шаршемби} {бейшемби} {жума} {ишемби}]
+    set day_format "{n}-"
     set day_format_exceptions [dict create]
-    set date_pattern "{day} {month}"
-    set date_pattern_with_year "{day} {month} {year}"
+    set date_pattern "{day}{month}"
+    set date_pattern_with_year "{year}-ж., {day}{month}"
     set today {бүгүн}
     set tomorrow {эртең}
     set yesterday {кечээ}
@@ -27,8 +27,8 @@ proc locale_date_ky {} {
     set last_weekday "өткөн {weekday}"
     set months_in_date ""
     set short [dict create \
-        months [list {Янв} {Фев} {Мар} {Апр} {Май} {Июн} {Июл} {Авг} {Сен} {Окт} {Ноя} {Дек}] \
-        weekdays [list {Жек} {Дүй} {Шей} {Шар} {Бей} {Жум} {Ише}] \
+        months [list {янв} {фев} {мар} {апр} {май} {июн} {июл} {авг} {сен} {окт} {ноя} {дек}] \
+        weekdays [list {жек} {дүй} {шей} {шар} {бей} {жум} {ише}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \
         date_pattern_with_year "{day} {month} {year}" \

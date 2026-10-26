@@ -33,7 +33,7 @@ pub fn locale() -> DurationLocale {
             ]),
             hour: UnitForms::plural(&[
                 (PluralCategory::One, "insa {n}"),
-                (PluralCategory::Other, "amanso {n}"),
+                (PluralCategory::Other, "insa {n}"),
             ]),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "ubushiku {n}"),

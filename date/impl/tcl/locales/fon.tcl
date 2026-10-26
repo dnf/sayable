@@ -12,7 +12,7 @@
 proc locale_date_fon {} {
     set code {fon}
     set months [list {Alɔfí} {Alɔnyɔ} {Ataɖaxɔ} {Tlɛsún} {Axɔsún} {Ayɛsún} {Nùxwásún} {Ayidosún} {Kɛnísún} {Kanyásún} {Abɔxwísún} {Adɔxwísún}]
-    set weekdays [list {Sidégbe} {Tɛnígbe} {Talɛtagbe} {Azǎngagbe} {Nyɔnúgbe} {Axɔ́sùgbe} {Abámɛ́ta}]
+    set weekdays [list {Aklunɔzángbe} {Tɛnígbe} {Talɛtagbe} {Azǎngagbe} {Nyɔnúgbe} {Axɔ́sùgbe} {Sibigbe}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
@@ -28,7 +28,7 @@ proc locale_date_fon {} {
     set months_in_date ""
     set short [dict create \
         months [list {Alɔ} {Any} {Ata} {Tlɛ} {Axɔ} {Ayɛ} {Nùx} {Ayi} {Kɛn} {Kan} {Abɔ} {Adɔ}] \
-        weekdays [list {Sid} {Tɛn} {Tal} {Azǎ} {Nyɔ} {Axɔ} {Abá}] \
+        weekdays [list {Akl} {Tɛn} {Tal} {Azǎ} {Nyɔ} {Axɔ} {Sib}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \
         date_pattern_with_year "{day} {month} {year}" \

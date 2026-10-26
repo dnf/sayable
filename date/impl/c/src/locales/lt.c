@@ -27,10 +27,10 @@ const SdDateLocale sd_locale_lt = {
     "lt",
     { "sausis", "vasaris", "kovas", "balandis", "gegužė", "birželis", "liepa", "rugpjūtis", "rugsėjis", "spalis", "lapkritis", "gruodis" },
     { "sekmadienis", "pirmadienis", "antradienis", "trečiadienis", "ketvirtadienis", "penktadienis", "šeštadienis" },
-    "{n}.",
+    "{n} d.",
     (const SdDayFormatException *)0, 0,
-    "{day} {month}",
-    "{day} {month} {year}",
+    "{month} {day}",
+    "{year} m. {month} {day}",
     "šiandien",
     "rytoj",
     "vakar",
@@ -40,6 +40,6 @@ const SdDateLocale sd_locale_lt = {
     "kitą {weekday}",
     "praėjusį {weekday}",
     sd_months_in_date_lt,
-    true, { sd_short_months_lt, (const char **)0, sd_short_weekdays_lt, "{n}.", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
+    true, { sd_short_months_lt, (const char **)0, sd_short_weekdays_lt, "{n} d.", (const SdDayFormatException *)0, 0, true, "{month} {day}", "{year} m. {month} {day}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{m}-{d}", "{yy}-{m}-{d}", NULL, NULL, NULL }
 };

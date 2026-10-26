@@ -28,7 +28,7 @@ proc locale_duration_bm {} {
     set delimiter {, }
     set just_now {sisan}
     set ago "{0} bɔlen"
-    set in_future "ka {0}"
+    set in_future "{0} kɔnɔ"
     set short [dict create \
         units [dict create \
             second "sek. {n}" \
@@ -40,7 +40,7 @@ proc locale_duration_bm {} {
             year "san {n}" \
         ] \
         ago "{0} bɔlen" \
-        in_future "ka {0}" \
+        in_future "{0} kɔnɔ" \
     ]
     set compact [dict create \
         units [dict create \
@@ -55,7 +55,7 @@ proc locale_duration_bm {} {
         half "{n}½" \
         delimiter {} \
         ago "{0} bɔlen" \
-        in_future "ka {0}" \
+        in_future "{0} kɔnɔ" \
     ]
     return [dict create \
         code $code \

@@ -32,7 +32,7 @@ var KM = sd.DurationLocale{
 	Delimiter: ", ",
 	JustNow:   "ឥឡូវនេះ",
 	Ago:       "{0}មុន",
-	InFuture:  "ក្នុង{0}",
+	InFuture:  "{0}ទៀត",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "{n} វិនាទី"},
 		Minute:   &sd.UnitForms{Simple: "{n} នាទី"},
@@ -42,7 +42,7 @@ var KM = sd.DurationLocale{
 		Month:    &sd.UnitForms{Simple: "{n} ខែ"},
 		Year:     &sd.UnitForms{Simple: "{n} ឆ្នាំ"},
 		Ago:      strPtr("{0}មុន"),
-		InFuture: strPtr("ក្នុង{0}"),
+		InFuture: strPtr("{0}ទៀត"),
 	},
 	Compact: &sd.CompactnessOverride{
 		Second:    &sd.UnitForms{Simple: "{n} វិនាទី"},
@@ -55,6 +55,6 @@ var KM = sd.DurationLocale{
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0}មុន"),
-		InFuture:  strPtr("ក្នុង{0}"),
+		InFuture:  strPtr("{0}ទៀត"),
 	},
 }

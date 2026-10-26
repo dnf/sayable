@@ -26,7 +26,7 @@ kn
 		'month'. (Dictionary newFromPairs: { #one. '{n} ತಿಂಗಳು'. #other. '{n} ತಿಂಗಳುಗಳು' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} ವರ್ಷ'. #other. '{n} ವರ್ಷಗಳು' }).
 	}).
-	locale half: '{0}ವರೆ'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'ಈಗಷ್ಟೇ'.
 	locale ago: '{0} ಹಿಂದೆ'.

@@ -12,9 +12,9 @@
 function loc = locale_ln()
   loc.code = 'ln';
   loc.plural = @(n) ifelse(n == 0 || n == 1, "one", "other");
-  loc.units.second = '{n} segɔnde';
-  loc.units.minute = '{n} moniti';
-  loc.units.hour = '{n} ngonga';
+  loc.units.second = 'segɔnde {n}';
+  loc.units.minute = 'miniti {n}';
+  loc.units.hour = 'ngonga {n}';
   loc.units.day = struct("one", 'mokolo {n}', "other", 'mikolo {n}');
   loc.units.week = struct("one", 'poso {n}', "other", 'baposo {n}');
   loc.units.month = struct("one", 'sanza {n}', "other", 'basanza {n}');

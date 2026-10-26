@@ -19,39 +19,39 @@ fn plural_wo(n int) PluralCategory {
 pub const locale_wo = AgeLocale{
 	code: 'wo'
 	plural: plural_wo
-	day: simple_unit('bés {n}')
-	week: simple_unit('ayubés {n}')
-	month: simple_unit('weer {n}')
-	year: simple_unit('at {n}')
+	day: simple_unit('{n} fan')
+	week: simple_unit('{n} ayubés')
+	month: simple_unit('{n} weer')
+	year: simple_unit('{n} at')
 	half: '{0} ak genn-wàll'
 	delimiter: ', '
 	just_born: 'Dees ko sax juddu'
 	newborn: stage_neutral('Dees ko sax juddu')
-	infant: stage_neutral('Njàmbaar bu ndaw')
+	infant: stage_neutral('Liir')
 	toddler: stage_neutral('Xale bu ndaw')
 	child: stage_neutral('Xale')
 	teenager: stage_neutral('Ndaw-ndaw')
 	adult: stage_neutral('Mag')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('bés {n}')
+		day: simple_unit('{n} fan')
 		has_day: true
-		week: simple_unit('ayub. {n}')
+		week: simple_unit('{n} ayub.')
 		has_week: true
-		month: simple_unit('weer {n}')
+		month: simple_unit('{n} weer')
 		has_month: true
-		year: simple_unit('at {n}')
+		year: simple_unit('{n} at')
 		has_year: true
 	}
 	has_compact: true
 	compact_override: CompactnessOverride{
-		day: simple_unit('bés {n}')
+		day: simple_unit('{n} fan')
 		has_day: true
-		week: simple_unit('ayub {n}')
+		week: simple_unit('{n} ayub')
 		has_week: true
-		month: simple_unit('weer {n}')
+		month: simple_unit('{n} weer')
 		has_month: true
-		year: simple_unit('at {n}')
+		year: simple_unit('{n} at')
 		has_year: true
 		half: '{n}½'
 		has_half: true

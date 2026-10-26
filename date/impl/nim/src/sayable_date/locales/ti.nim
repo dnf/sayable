@@ -26,7 +26,7 @@ let TI* = DateLocale(
   yesterday: "ትማሊ",
   dayAfterTomorrow: some("ድሕሪ ጽባሕ"),
   dayBeforeYesterday: some("ቅድሚ ትማሊ"),
-  thisWeekday: some("እዛ {weekday}"),
+  thisWeekday: some("እዚ {weekday}"),
   nextWeekday: some("ዝመጽእ {weekday}"),
   lastWeekday: some("ዝሓለፈ {weekday}"),
   monthsInDate: none(seq[string]),

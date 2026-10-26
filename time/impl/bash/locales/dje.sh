@@ -10,21 +10,21 @@
 # Source: locales/dje.json
 
 _sayabletime_locale_dje() {
-    _clock_hours=('way cindi' 'afoo' 'ihinka' 'ihinza' 'itaaci' 'igu' 'iddu' 'iyye' 'isahkay' 'iyegga' 'iwoy' 'iwoy cindi')
+    _clock_hours=('iway cindi hinka' 'fo' 'hinka' 'hinza' 'taaci' 'gu' 'iddu' 'iyye' 'ahakku' 'yagga' 'iway' 'iway cindi fo')
     _clock_midnight='cin beri'
     _clock_noon='zaari gaaham'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='guuru {h}'
+    _clock_pattern_5='guuru {h} nda miniti gu'
+    _clock_pattern_10='guuru {h} nda miniti iway'
+    _clock_pattern_15='guuru {h} nda miniti iway cindi gu'
+    _clock_pattern_20='guuru {h} nda miniti waranka'
+    _clock_pattern_25='guuru {h} nda miniti waranka cindi gu'
+    _clock_pattern_30='guuru {h} nda jare'
+    _clock_pattern_35='guuru {h} nda miniti waranza cindi gu'
+    _clock_pattern_40='guuru {h} nda miniti waytaaci'
+    _clock_pattern_45='guuru {h} nda miniti waytaaci cindi gu'
+    _clock_pattern_50='guuru {h} nda miniti waygu'
+    _clock_pattern_55='guuru {h} nda miniti waygu cindi gu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

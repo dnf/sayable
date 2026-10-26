@@ -25,7 +25,7 @@ sub locale {{
   today => 'nhasi',
   tomorrow => 'mangwana',
   yesterday => 'nezuro',
-  day_after_tomorrow => 'mangwanani',
+  day_after_tomorrow => 'kuswera mangwana',
   day_before_yesterday => 'nezuro rakapera',
   this_weekday => '{weekday} ino',
   next_weekday => '{weekday} inotevera',

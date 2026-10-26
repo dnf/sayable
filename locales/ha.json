@@ -5,20 +5,20 @@
   "age": {
     "units": {
       "day": {
-        "one": "{n} kwana",
-        "other": "{n} kwanaki"
+        "one": "kwana {n}",
+        "other": "kwanaki {n}"
       },
       "week": {
-        "one": "{n} mako",
-        "other": "{n} makonni"
+        "one": "mako {n}",
+        "other": "makonni {n}"
       },
       "month": {
-        "one": "{n} wata",
-        "other": "{n} watanni"
+        "one": "wata {n}",
+        "other": "watanni {n}"
       },
       "year": {
-        "one": "{n} shekara",
-        "other": "{n} shekaru"
+        "one": "shekara {n}",
+        "other": "shekaru {n}"
       }
     },
     "half": "{n}½",
@@ -27,17 +27,26 @@
     "stages": {
       "newborn": "Jariri",
       "infant": "Jariri",
-      "toddler": "Ƙaramin yaro",
-      "child": "Yaro",
-      "teenager": "Saurayi",
+      "toddler": {
+        "m": "Ƙaramin yaro",
+        "f": "Ƙaramar yarinya"
+      },
+      "child": {
+        "m": "Yaro",
+        "f": "Yarinya"
+      },
+      "teenager": {
+        "m": "Saurayi",
+        "f": "Budurwa"
+      },
       "adult": "Babba"
     },
     "short": {
       "units": {
-        "day": "{n} kw.",
-        "week": "{n} mk.",
-        "month": "{n} wt.",
-        "year": "{n} shk."
+        "day": "kw. {n}",
+        "week": "mk. {n}",
+        "month": "wt. {n}",
+        "year": "shk. {n}"
       }
     },
     "compact": {
@@ -84,7 +93,7 @@
     "dayBeforeYesterday": "shekaranjiya",
     "thisWeekday": "wannan {weekday}",
     "nextWeekday": "{weekday} mai zuwa",
-    "lastWeekday": "{weekday} da ya wuce",
+    "lastWeekday": "{weekday} da ta wuce",
     "short": {
       "months": [
         "Jan",
@@ -121,32 +130,32 @@
   "duration": {
     "units": {
       "second": {
-        "one": "{n} daƙiƙa",
-        "other": "{n} daƙiƙoƙi"
+        "one": "daƙiƙa {n}",
+        "other": "daƙiƙoƙi {n}"
       },
       "minute": {
-        "one": "{n} minti",
-        "other": "{n} mintoci"
+        "one": "minti {n}",
+        "other": "mintoci {n}"
       },
       "hour": {
-        "one": "{n} awa",
-        "other": "{n} awanni"
+        "one": "awa {n}",
+        "other": "awanni {n}"
       },
       "day": {
-        "one": "{n} kwana",
-        "other": "{n} kwanaki"
+        "one": "kwana {n}",
+        "other": "kwanaki {n}"
       },
       "week": {
-        "one": "{n} mako",
-        "other": "{n} makonni"
+        "one": "mako {n}",
+        "other": "makonni {n}"
       },
       "month": {
-        "one": "{n} wata",
-        "other": "{n} watanni"
+        "one": "wata {n}",
+        "other": "watanni {n}"
       },
       "year": {
-        "one": "{n} shekara",
-        "other": "{n} shekaru"
+        "one": "shekara {n}",
+        "other": "shekaru {n}"
       }
     },
     "half": "{n}½",
@@ -156,13 +165,13 @@
     "inFuture": "cikin {0}",
     "short": {
       "units": {
-        "second": "{n} daƙ.",
-        "minute": "{n} mnt.",
-        "hour": "{n} awa",
-        "day": "{n} kw.",
-        "week": "{n} mk.",
-        "month": "{n} wt.",
-        "year": "{n} shk."
+        "second": "daƙ. {n}",
+        "minute": "mnt. {n}",
+        "hour": "awa {n}",
+        "day": "kw. {n}",
+        "week": "mk. {n}",
+        "month": "wt. {n}",
+        "year": "shk. {n}"
       },
       "ago": "{0} da suka wuce",
       "inFuture": "cikin {0}",
@@ -213,23 +222,23 @@
         "takwas",
         "tara",
         "goma",
-        "goma sha ɗaya"
+        "sha ɗaya"
       ],
       "midnight": "tsakar dare",
       "noon": "tsakar rana",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "ƙarfe {h}",
+        "5": "ƙarfe {h} da minti biyar",
+        "10": "ƙarfe {h} da minti goma",
+        "15": "ƙarfe {h} da kwata",
+        "20": "ƙarfe {h} da minti ashirin",
+        "25": "ƙarfe {h} da minti ashirin da biyar",
+        "30": "ƙarfe {h} da rabi",
+        "35": "ƙarfe {next_h} saura minti ashirin da biyar",
+        "40": "ƙarfe {next_h} saura minti ashirin",
+        "45": "ƙarfe {next_h} saura kwata",
+        "50": "ƙarfe {next_h} saura minti goma",
+        "55": "ƙarfe {next_h} saura minti biyar"
       }
     },
     "short": {

@@ -10,22 +10,22 @@
 # Source: locales/sd.json
 
 function locale_sd {
-    $hours = @('ٻارھ', 'ھڪ', 'ٻه', 'ٽي', 'چار', 'پنج', 'ڇھ', 'ست', 'اٺ', 'نائن', 'ڏھ', 'يارھ')
+    $hours = @('ٻارهن', 'هڪ', 'ٻه', 'ٽي', 'چار', 'پنج', 'ڇهه', 'ست', 'اٺ', 'نوَ', 'ڏهه', 'يارهن')
     $midnight = 'اڌ رات'
     $noon = 'ٽپھر'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h} وڳي'
+    $patterns[5] = '{h} وڳي پنج منٽ'
+    $patterns[10] = '{h} وڳي ڏهه منٽ'
+    $patterns[15] = 'سوا {h} وڳي'
+    $patterns[20] = '{h} وڳي ويهه منٽ'
+    $patterns[25] = '{h} وڳي پنجويهه منٽ'
+    $patterns[30] = '{h} وڳي ٽيهه منٽ'
+    $patterns[35] = '{next_h} وڳڻ ۾ پنجويهه منٽ'
+    $patterns[40] = '{next_h} وڳڻ ۾ ويهه منٽ'
+    $patterns[45] = 'پوڻا {next_h} وڳي'
+    $patterns[50] = '{next_h} وڳڻ ۾ ڏهه منٽ'
+    $patterns[55] = '{next_h} وڳڻ ۾ پنج منٽ'
     $clock = @{
         hours = $hours
         midnight = $midnight

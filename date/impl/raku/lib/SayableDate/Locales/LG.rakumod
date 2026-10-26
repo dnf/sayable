@@ -25,7 +25,7 @@ our sub locale() {
         tomorrow => 'enkya',
         yesterday => 'jjo',
         day-after-tomorrow => 'enkya ogwa',
-        day-before-yesterday => 'jjo edda',
+        day-before-yesterday => 'jjuuzi',
         this-weekday => '{weekday} eno',
         next-weekday => '{weekday} eddirira',
         last-weekday => '{weekday} eggudde',

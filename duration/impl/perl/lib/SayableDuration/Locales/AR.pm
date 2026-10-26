@@ -29,9 +29,9 @@ sub locale {{
         }
       },
   units => {
-    second => { zero => '{n} ثانية', one => 'ثانية واحدة', two => 'ثانيتان', few => '{n} ثوانٍ', many => '{n} ثانية', other => '{n} ثانية' },
-    minute => { zero => '{n} دقيقة', one => 'دقيقة واحدة', two => 'دقيقتان', few => '{n} دقائق', many => '{n} دقيقة', other => '{n} دقيقة' },
-    hour => { zero => '{n} ساعة', one => 'ساعة واحدة', two => 'ساعتان', few => '{n} ساعات', many => '{n} ساعة', other => '{n} ساعة' },
+    second => { zero => '{n} ثانية', one => 'ثانية', two => 'ثانيتان', few => '{n} ثوانٍ', many => '{n} ثانية', other => '{n} ثانية' },
+    minute => { zero => '{n} دقيقة', one => 'دقيقة', two => 'دقيقتان', few => '{n} دقائق', many => '{n} دقيقة', other => '{n} دقيقة' },
+    hour => { zero => '{n} ساعة', one => 'ساعة', two => 'ساعتان', few => '{n} ساعات', many => '{n} ساعة', other => '{n} ساعة' },
     day => { zero => '{n} يوم', one => 'يوم', two => 'يومان', few => '{n} أيام', many => '{n} يومًا', other => '{n} يوم' },
     week => { zero => '{n} أسبوع', one => 'أسبوع', two => 'أسبوعان', few => '{n} أسابيع', many => '{n} أسبوعًا', other => '{n} أسبوع' },
     month => { zero => '{n} شهر', one => 'شهر', two => 'شهران', few => '{n} أشهر', many => '{n} شهرًا', other => '{n} شهر' },
@@ -62,7 +62,7 @@ sub locale {{
       hour => '{n} س',
       day => '{n} ي',
       week => '{n} أ',
-      month => { zero => '{n} شهر', one => 'شهر', two => 'شهران', few => '{n} أشهر', many => '{n} شهرًا', other => '{n} شهر' },
+      month => '{n} شهر',
       year => '{n} سنة',
     },
     delimiter => '',

@@ -50,6 +50,7 @@ sub locale {{
       year => '{n}y',
     },
     delimiter => '',
+    half => '{n}½',
   },
 }}
 

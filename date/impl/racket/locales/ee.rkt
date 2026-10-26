@@ -20,21 +20,21 @@
 (define ee
   (date-locale
    "ee"
-   (list "Dzove" "Dzodze" "Tedoxe" "Afɔfĩe" "Damɛ" "Masa" "Siamlɔm" "Dasiamime" "Anyɔnyɔ" "Kele" "Adeɛmekpɔxe" "Dzome")
-   (list "Kɔsiɖa" "Dzoɖa" "Braɖa" "Kuɖa" "Yawoɖa" "Fiɖa" "Memleɖa")
+   (list "Dzove" "Dzodze" "Tedoxe" "Afɔfĩe" "Dama" "Masa" "Siamlɔm" "Deasiamime" "Anyɔnyɔ" "Kele" "Adeɛmekpɔxe" "Dzome")
+   (list "Kɔsiɖa" "Dzoɖa" "Blaɖa" "Kuɖa" "Yawoɖa" "Fiɖa" "Memleɖa")
    "{n}"
    (hash)
    "{day} {month}"
    "{day} {month} {year}"
    "egbe"
-   "etsɔ"
-   "etso"
-   "etsɔ megbe"
-   "etso nyitsɔ"
+   "etsɔ si gbɔna"
+   "etsɔ si va yi"
+   "nyitsɔ si gbɔna"
+   "nyitsɔ si va yi"
    "{weekday} sia"
    "{weekday} si gbɔna"
    "{weekday} si va yi"
    #f
-   (date-compactness-override (list "Dzv" "Dzd" "Ted" "Afɔ" "Dam" "Mas" "Sia" "Das" "Any" "Kel" "Ade" "Dzm") #f (list "Kɔs" "Dzo" "Bra" "Kuɖ" "Yaw" "Fiɖ" "Mem") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "Dzv" "Dzd" "Ted" "Afɔ" "Dam" "Mas" "Sia" "Dea" "Any" "Kel" "Ade" "Dzm") #f (list "Kɔs" "Dzo" "Bla" "Kuɖ" "Yaw" "Fiɖ" "Mem") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

@@ -46,7 +46,7 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Gendered { m: "Recén nacido".to_string(), f: "Recén nacida".to_string() },
             infant: StageLabel::Neutral("Bebé".to_string()),
-            toddler: StageLabel::Neutral("Neno".to_string()),
+            toddler: StageLabel::Gendered { m: "Neno pequeno".to_string(), f: "Nena pequena".to_string() },
             child: StageLabel::Gendered { m: "Neno".to_string(), f: "Nena".to_string() },
             teenager: StageLabel::Neutral("Adolescente".to_string()),
             adult: StageLabel::Gendered { m: "Adulto".to_string(), f: "Adulta".to_string() },

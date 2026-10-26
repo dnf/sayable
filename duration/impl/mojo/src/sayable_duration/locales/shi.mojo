@@ -31,56 +31,56 @@ fn _plural(n: Int) -> String:
 fn build_shi() -> DurationLocale:
     """Build the Tachelhit locale."""
 
-    var second = plural_unit(one="{n} tasint", few="{n} tasinin", other="{n} tasinin")
-    var minute = plural_unit(one="{n} tusdiqt", few="{n} tusdiqin", other="{n} tusdiqin")
-    var hour = plural_unit(one="{n} tasragt", few="{n} tisragin", other="{n} tisragin")
-    var day = plural_unit(one="{n} ass", few="{n} ussan", other="{n} ass")
-    var week = plural_unit(one="{n} imalass", few="{n} imalassn", other="{n} imalass")
-    var month = plural_unit(one="{n} ayyur", few="{n} ayyurn", other="{n} ayyur")
-    var year = plural_unit(one="{n} aseggas", few="{n} iseggasen", other="{n} aseggas")
+    var second = plural_unit(one="{n} ⵜⴰⵙⵉⵏⵜ", few="{n} ⵜⵉⵙⵉⵏⵉⵏ", other="{n} ⵜⵉⵙⵉⵏⵉⵏ")
+    var minute = plural_unit(one="{n} ⵜⵓⵙⴷⵉⵇⵜ", few="{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", other="{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")
+    var hour = plural_unit(one="{n} ⵜⴰⵙⵔⴰⴳⵜ", few="{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", other="{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")
+    var day = plural_unit(one="{n} ⴰⵙⵙ", few="{n} ⵓⵙⵙⴰⵏ", other="{n} ⴰⵙⵙ")
+    var week = plural_unit(one="{n} ⵉⵎⴰⵍⴰⵙⵙ", few="{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other="{n} ⵉⵎⴰⵍⴰⵙⵙ")
+    var month = plural_unit(one="{n} ⴰⵢⵢⵓⵔ", few="{n} ⴰⵢⵢⵓⵔⵏ", other="{n} ⴰⵢⵢⵓⵔ")
+    var year = plural_unit(one="{n} ⴰⵙⴳⴳⵯⴰⵙ", few="{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other="{n} ⴰⵙⴳⴳⵯⴰⵙ")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("{n}s")
+    short_ovr.second = plural_unit(one="{n} ⵜⴰⵙⵉⵏⵜ", few="{n} ⵜⵉⵙⵉⵏⵉⵏ", other="{n} ⵜⵉⵙⵉⵏⵉⵏ")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("{n}m")
+    short_ovr.minute = plural_unit(one="{n} ⵜⵓⵙⴷⵉⵇⵜ", few="{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", other="{n} ⵜⵓⵙⴷⵉⵇⵉⵏ")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("{n}h")
+    short_ovr.hour = plural_unit(one="{n} ⵜⴰⵙⵔⴰⴳⵜ", few="{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", other="{n} ⵜⵉⵙⵔⴰⴳⵉⵏ")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("{n}d")
+    short_ovr.day = plural_unit(one="{n} ⴰⵙⵙ", few="{n} ⵓⵙⵙⴰⵏ", other="{n} ⴰⵙⵙ")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n}w")
+    short_ovr.week = plural_unit(one="{n} ⵉⵎⴰⵍⴰⵙⵙ", few="{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other="{n} ⵉⵎⴰⵍⴰⵙⵙ")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("{n}mo")
+    short_ovr.month = plural_unit(one="{n} ⴰⵢⵢⵓⵔ", few="{n} ⴰⵢⵢⵓⵔⵏ", other="{n} ⴰⵢⵢⵓⵔ")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("{n}y")
+    short_ovr.year = plural_unit(one="{n} ⴰⵙⴳⴳⵯⴰⵙ", few="{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other="{n} ⴰⵙⴳⴳⵯⴰⵙ")
     short_ovr.has_year = True
-    short_ovr.ago = "ɣ {0} zzrin"
+    short_ovr.ago = "ⵖ {0} ⵣⵣⵔⵉⵏ"
     short_ovr.has_ago = True
-    short_ovr.in_future = "ɣ {0}"
+    short_ovr.in_future = "ⵖ {0}"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
-    compact_ovr.second = simple_unit("{n}s")
+    compact_ovr.second = simple_unit("{n} ⵜⵙⵏ")
     compact_ovr.has_second = True
-    compact_ovr.minute = simple_unit("{n}m")
+    compact_ovr.minute = simple_unit("{n} ⵜⵙⴷ")
     compact_ovr.has_minute = True
-    compact_ovr.hour = simple_unit("{n}h")
+    compact_ovr.hour = simple_unit("{n} ⵜⵙⵔ")
     compact_ovr.has_hour = True
-    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.day = simple_unit("{n} ⴰⵙⵙ")
     compact_ovr.has_day = True
-    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.week = simple_unit("{n} ⵉⵎⵍ")
     compact_ovr.has_week = True
-    compact_ovr.month = simple_unit("{n}mo")
+    compact_ovr.month = simple_unit("{n} ⴰⵢⵔ")
     compact_ovr.has_month = True
-    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.year = simple_unit("{n} ⴰⵙⴳ")
     compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
-    compact_ovr.ago = "ɣ {0} zzrin"
+    compact_ovr.ago = "ⵖ {0} ⵣⵣⵔⵉⵏ"
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "ɣ {0}"
+    compact_ovr.in_future = "ⵖ {0}"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -93,11 +93,11 @@ fn build_shi() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} d uzgen",
+        half="{0} ⴷ ⵓⵣⴳⵏ",
         delimiter=", ",
-        just_now="ɣilad",
-        ago="ɣ {0} zzrin",
-        in_future="ɣ {0}",
+        just_now="ⵖⵉⵍⴰⴷ",
+        ago="ⵖ {0} ⵣⵣⵔⵉⵏ",
+        in_future="ⵖ {0}",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

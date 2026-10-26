@@ -14,6 +14,10 @@ public class FormatAgeTest : IDisposable
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.1
+    [Fact] public void NullDobReturnsNull() =>
+        Assert.Null(SayableAgeFormatter.FormatAgeDefault(null, "2025-06-15"));
+
     // 1.3
     [Fact] public void EmptyStringReturnsNull() =>
         Assert.Null(SayableAgeFormatter.FormatAgeDefault("", "2025-06-15"));
@@ -431,6 +435,10 @@ public class FormatAgeTest : IDisposable
     // ================================================================
     // formatStage -- null/edge cases
     // ================================================================
+    // 16.1
+    [Fact] public void StageNullDobReturnsNull() =>
+        Assert.Null(SayableAgeFormatter.FormatStageDefault(null, "2025-06-15"));
+
     // 16.3
     [Fact] public void StageEmptyStringReturnsNull() =>
         Assert.Null(SayableAgeFormatter.FormatStageDefault("", "2025-06-15"));
@@ -630,7 +638,7 @@ public class FormatAgeTest : IDisposable
                 UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mes" }, { PluralCategory.Other, "{n} meses" } }),
                 UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} a\u00F1o" }, { PluralCategory.Other, "{n} a\u00F1os" } })
             ),
-            "{n} y medio",
+            "{0} y medio",
             ", ",
             "Reci\u00E9n nacido",
             new Stages(
@@ -654,7 +662,7 @@ public class FormatAgeTest : IDisposable
         Assert.Equal("6 meses", pt.FormatAge("2025-01-15", "2025-07-15")); // 25.7
         Assert.Equal("2 a\u00F1os, 1 mes", pt.FormatAge("2023-06-15", "2025-07-15")); // 25.8
         Assert.Equal("2 a\u00F1os, 6 meses", pt.FormatAge("2023-06-15", "2025-12-15")); // 25.9
-        Assert.Equal("3 y medio a\u00F1os", pt.FormatAge("2022-06-15", "2025-12-15")); // 25.10
+        Assert.Equal("3 a\u00F1os y medio", pt.FormatAge("2022-06-15", "2025-12-15")); // 25.10
         Assert.Equal("3 a\u00F1os", pt.FormatAge("2022-06-15", "2025-06-15")); // 25.11
         Assert.Equal("7 a\u00F1os", pt.FormatAge("2018-06-15", "2025-06-15")); // 25.12
 
@@ -874,13 +882,13 @@ public class FormatAgeTest : IDisposable
     {
         var pt = new SayableAgeFormatter(Locales.HE);
         Assert.Equal("\u05E8\u05E7 \u05E0\u05D5\u05DC\u05D3", pt.FormatAge("2025-06-15", "2025-06-15")); // 29.1
-        Assert.Equal("\u05D9\u05D5\u05DD 1", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.2
+        Assert.Equal("\u05D9\u05D5\u05DD", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.2
         Assert.Equal("3 \u05D9\u05DE\u05D9\u05DD", pt.FormatAge("2025-06-12", "2025-06-15")); // 29.3
         Assert.Equal("\u05E9\u05D1\u05D5\u05E2\u05D9\u05D9\u05DD", pt.FormatAge("2025-06-01", "2025-06-15")); // 29.4
         Assert.Equal("3 \u05E9\u05D1\u05D5\u05E2\u05D5\u05EA", pt.FormatAge("2025-05-25", "2025-06-15")); // 29.5
         Assert.Equal("6 \u05D7\u05D5\u05D3\u05E9\u05D9\u05DD", pt.FormatAge("2025-01-15", "2025-07-15")); // 29.6
         Assert.Equal("3 \u05D7\u05D5\u05D3\u05E9\u05D9\u05DD", pt.FormatAge("2025-03-15", "2025-06-15")); // 29.7
-        Assert.Equal("\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9 1", pt.FormatAge("2023-06-15", "2025-07-15")); // 29.8
+        Assert.Equal("\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9", pt.FormatAge("2023-06-15", "2025-07-15")); // 29.8
         Assert.Equal("3 \u05E9\u05E0\u05D9\u05DD \u05D5\u05D7\u05E6\u05D9", pt.FormatAge("2022-06-15", "2025-12-15")); // 29.9
         Assert.Equal("7 \u05E9\u05E0\u05D9\u05DD", pt.FormatAge("2018-06-15", "2025-06-15")); // 29.10
         Assert.Equal("\u05E8\u05E7 \u05E0\u05D5\u05DC\u05D3", pt.FormatStage("2025-06-15", "2025-06-15", "m")); // 29.11
@@ -892,51 +900,52 @@ public class FormatAgeTest : IDisposable
     [Fact] public void MacedonianLocaleMod10Mod100Rule()
     {
         var pt = new SayableAgeFormatter(Locales.MK);
-        Assert.Equal("\u041D\u043E\u0432\u043E\u0440\u043E\u0434\u0435\u043D\u0447\u0435", pt.FormatAge("2025-06-15", "2025-06-15"));
-        Assert.Equal("1 \u0434\u0435\u043D", pt.FormatAge("2025-06-14", "2025-06-15"));
-        Assert.Equal("3 \u0434\u0435\u043D\u0430", pt.FormatAge("2025-06-12", "2025-06-15"));
-        Assert.Equal("6 \u043C\u0435\u0441\u0435\u0446\u0438", pt.FormatAge("2025-01-15", "2025-07-15"));
-        Assert.Equal("2 \u0433\u043E\u0434\u0438\u043D\u0438, 1 \u043C\u0435\u0441\u0435\u0446", pt.FormatAge("2023-06-15", "2025-07-15"));
-        Assert.Equal("3 \u0433\u043E\u0434\u0438\u043D\u0438 \u0438 \u043F\u043E\u043B", pt.FormatAge("2022-06-15", "2025-12-15"));
-        Assert.Equal("7 \u0433\u043E\u0434\u0438\u043D\u0438", pt.FormatAge("2018-06-15", "2025-06-15"));
+        Assert.Equal("\u041D\u043E\u0432\u043E\u0440\u043E\u0434\u0435\u043D\u0447\u0435", pt.FormatAge("2025-06-15", "2025-06-15")); // 29.15
+        Assert.Equal("1 \u0434\u0435\u043D", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.16
+        Assert.Equal("3 \u0434\u0435\u043D\u0430", pt.FormatAge("2025-06-12", "2025-06-15")); // 29.17
+        Assert.Equal("6 \u043C\u0435\u0441\u0435\u0446\u0438", pt.FormatAge("2025-01-15", "2025-07-15")); // 29.18
+        Assert.Equal("2 \u0433\u043E\u0434\u0438\u043D\u0438, 1 \u043C\u0435\u0441\u0435\u0446", pt.FormatAge("2023-06-15", "2025-07-15")); // 29.19
+        Assert.Equal("3 \u0433\u043E\u0434\u0438\u043D\u0438 \u0438 \u043F\u043E\u043B", pt.FormatAge("2022-06-15", "2025-12-15")); // 29.20
+        Assert.Equal("7 \u0433\u043E\u0434\u0438\u043D\u0438", pt.FormatAge("2018-06-15", "2025-06-15")); // 29.21
     }
 
     [Fact] public void SwahiliLocaleNounClassChanges()
     {
         var pt = new SayableAgeFormatter(Locales.SW);
-        Assert.Equal("Mzaliwa mpya", pt.FormatAge("2025-06-15", "2025-06-15"));
-        Assert.Equal("siku 1", pt.FormatAge("2025-06-14", "2025-06-15"));
-        Assert.Equal("siku 3", pt.FormatAge("2025-06-12", "2025-06-15"));
-        Assert.Equal("miezi 6", pt.FormatAge("2025-01-15", "2025-07-15"));
-        Assert.Equal("miaka 2, mwezi 1", pt.FormatAge("2023-06-15", "2025-07-15"));
-        Assert.Equal("miaka 3 na nusu", pt.FormatAge("2022-06-15", "2025-12-15"));
+        Assert.Equal("Mzaliwa mpya", pt.FormatAge("2025-06-15", "2025-06-15")); // 29.22
+        Assert.Equal("siku 1", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.23
+        Assert.Equal("siku 3", pt.FormatAge("2025-06-12", "2025-06-15")); // 29.24
+        Assert.Equal("miezi 6", pt.FormatAge("2025-01-15", "2025-07-15")); // 29.25
+        Assert.Equal("miaka 2, mwezi 1", pt.FormatAge("2023-06-15", "2025-07-15")); // 29.26
+        Assert.Equal("miaka 3 na nusu", pt.FormatAge("2022-06-15", "2025-12-15")); // 29.27
     }
 
     [Fact] public void IndonesianLocaleOtherOnly()
     {
         var pt = new SayableAgeFormatter(Locales.ID);
-        Assert.Equal("Baru lahir", pt.FormatAge("2025-06-15", "2025-06-15"));
-        Assert.Equal("1 hari", pt.FormatAge("2025-06-14", "2025-06-15"));
-        Assert.Equal("3 hari", pt.FormatAge("2025-06-12", "2025-06-15"));
-        Assert.Equal("6 bulan", pt.FormatAge("2025-01-15", "2025-07-15"));
-        Assert.Equal("3 tahun setengah", pt.FormatAge("2022-06-15", "2025-12-15"));
-        Assert.Equal("7 tahun", pt.FormatAge("2018-06-15", "2025-06-15"));
+        Assert.Equal("Baru lahir", pt.FormatAge("2025-06-15", "2025-06-15")); // 29.28
+        Assert.Equal("1 hari", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.29
+        Assert.Equal("3 hari", pt.FormatAge("2025-06-12", "2025-06-15")); // 29.30
+        Assert.Equal("6 bulan", pt.FormatAge("2025-01-15", "2025-07-15")); // 29.31
+        Assert.Equal("3 setengah tahun", pt.FormatAge("2022-06-15", "2025-12-15")); // 29.32
+        Assert.Equal("7 tahun", pt.FormatAge("2018-06-15", "2025-06-15")); // 29.33
     }
 
     [Fact] public void AmharicLocaleEthiopicDelimiter()
     {
         var pt = new SayableAgeFormatter(Locales.AM);
-        Assert.Equal("\u12A0\u12F2\u1235 \u12E8\u1270\u12C8\u1208\u12F0", pt.FormatAge("2025-06-15", "2025-06-15"));
-        Assert.Equal("1 \u1240\u1295", pt.FormatAge("2025-06-14", "2025-06-15"));
-        Assert.Equal("3 \u1240\u1293\u1275", pt.FormatAge("2025-06-12", "2025-06-15"));
-        Assert.Equal("1 \u1233\u121D\u1295\u1275\u1363 1 \u1240\u1295", pt.FormatAge("2025-06-07", "2025-06-15"));
-        Assert.Equal("6 \u12C8\u122B\u1275", pt.FormatAge("2025-01-15", "2025-07-15"));
-        Assert.Equal("3 \u12D3\u1218\u1273\u1275 \u1270\u12A9\u120D", pt.FormatAge("2022-06-15", "2025-12-15"));
+        Assert.Equal("\u12A0\u12F2\u1235 \u12E8\u1270\u12C8\u1208\u12F0", pt.FormatAge("2025-06-15", "2025-06-15")); // 29.34
+        Assert.Equal("1 \u1240\u1295", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.35
+        Assert.Equal("3 \u1240\u1293\u1275", pt.FormatAge("2025-06-12", "2025-06-15")); // 29.36
+        Assert.Equal("1 \u1233\u121D\u1295\u1275\u1363 1 \u1240\u1295", pt.FormatAge("2025-06-07", "2025-06-15")); // 29.37
+        Assert.Equal("6 \u12C8\u122B\u1275", pt.FormatAge("2025-01-15", "2025-07-15")); // 29.38
+        Assert.Equal("3 \u12D3\u1218\u1273\u1275 \u1270\u12A9\u120D", pt.FormatAge("2022-06-15", "2025-12-15")); // 29.39
     }
 
     // ================================================================
     // Locale lookup by code string
     // ================================================================
+    // 30.1
     [Fact] public void GetLocaleReturnsEnLocale()
     {
         var loc = Locales.Get("en");
@@ -944,6 +953,7 @@ public class FormatAgeTest : IDisposable
         Assert.Equal("en", loc!.Code);
     }
 
+    // 30.2
     [Fact] public void GetLocaleReturnsFrLocale()
     {
         var loc = Locales.Get("fr");
@@ -951,12 +961,15 @@ public class FormatAgeTest : IDisposable
         Assert.Equal("fr", loc!.Code);
     }
 
+    // 30.3
     [Fact] public void GetLocaleReturnsNullForUnknownCode() =>
         Assert.Null(Locales.Get("xx"));
 
+    // 30.4
     [Fact] public void GetLocaleReturnsNullForEmptyString() =>
         Assert.Null(Locales.Get(""));
 
+    // 30.5
     [Fact] public void GetLocaleIsCaseSensitive() =>
         Assert.Null(Locales.Get("EN"));
 
@@ -1021,7 +1034,7 @@ public class FormatAgeTest : IDisposable
     public void Spec32_3_Tachelhit6IsFew()
     {
         var f = new SayableAgeFormatter(Locales.SHI);
-        Assert.Equal("6 iseggasen d uzgen", f.FormatAge("2005-06-08", "2012-06-07"));
+        Assert.Equal("6 \u2D49\u2D59\u2D33\u2D33\u2D6F\u2D30\u2D59\u2D4F \u2D37 \u2D53\u2D63\u2D33\u2D4F", f.FormatAge("2005-06-08", "2012-06-07"));
     }
 
     // ================================================================

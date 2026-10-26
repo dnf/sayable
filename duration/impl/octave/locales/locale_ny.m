@@ -12,9 +12,9 @@
 function loc = locale_ny()
   loc.code = 'ny';
   loc.plural = @(n) ifelse(n == 1, "one", "other");
-  loc.units.second = '{n} sekondi';
-  loc.units.minute = '{n} mphindi';
-  loc.units.hour = '{n} ola';
+  loc.units.second = 'sekondi {n}';
+  loc.units.minute = 'mphindi {n}';
+  loc.units.hour = struct("one", 'ola {n}', "other", 'maola {n}');
   loc.units.day = struct("one", 'tsiku {n}', "other", 'masiku {n}');
   loc.units.week = struct("one", 'sabata {n}', "other", 'masabata {n}');
   loc.units.month = struct("one", 'mwezi {n}', "other", 'miyezi {n}');
@@ -26,7 +26,7 @@ function loc = locale_ny()
   loc.in_future = 'mu {0}';
   loc.short.units.second = 'sek {n}';
   loc.short.units.minute = 'mph {n}';
-  loc.short.units.hour = 'ola {n}';
+  loc.short.units.hour = struct("one", 'ola {n}', "other", 'maola {n}');
   loc.short.units.day = struct("one", 'tsiku {n}', "other", 'mas {n}');
   loc.short.units.week = struct("one", 'sabata {n}', "other", 'masab {n}');
   loc.short.units.month = struct("one", 'mwezi {n}', "other", 'miyezi {n}');

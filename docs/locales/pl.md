@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | pojutrze          | 17.3.   |
 | Day before yesterday | przedwczoraj      | 13.3.   |
 | This Thursday (+5)   | ten czwartek      | 20.3.   |
-| Last Monday (-4)     | zeszły wtorek     | 11.3.   |
-| Next Wednesday (+12) | następny czwartek | 27.3.   |
-| Same month (+20)     | 4 kwietnia        | 4.4.    |
+| Last Tuesday (-4)    | zeszły wtorek     | 11.3.   |
+| Next Thursday (+12)  | następny czwartek | 27.3.   |
+| Same year (+20)      | 4 kwietnia        | 4.4.    |
 | Different year       | 10 stycznia 2026  | 10.1.26 |
 
 ## Duration
@@ -92,11 +92,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 minut             | 5 min           | 5 min         |
 | 45 minutes            | 45 minut            | 45 min          | 45 min        |
 | 1 hour                | 1 godzina           | 1 godz.         | 1 h           |
-| 1½ hours              | 1 i pół godzin      | 1 i pół godz.   | 1½ h          |
+| 1½ hours              | 1 i pół godziny     | 1 i pół godz.   | 1½ h          |
 | 3 hours               | 3 godziny           | 3 godz.         | 3 h           |
 | 6 hours               | 6 godzin            | 6 godz.         | 6 h           |
 | 1 day                 | 1 dzień             | 1 dzień         | 1 d.          |
-| 1½ days               | 1 i pół dni         | 1 i pół dnia    | 1½ d.         |
+| 1½ days               | 1 i pół dnia        | 1 i pół dnia    | 1½ d.         |
 | 3 days                | 3 dni               | 3 dni           | 3 d.          |
 | 1 week                | 1 tydzień           | 1 tydz.         | 1 t.          |
 | 2 weeks, 3 days       | 2 tygodnie, 3 dni   | 2 tyg., 3 dni   | 2 t.3 d.      |
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                   | Short | Compact |
-| --------------- | ------------------------ | ----- | ------- |
-| Midnight        | północ                   | 0:00  | 0:00    |
-| 1:00 AM         | pierwsza                 | 1:00  | 1:00    |
-| 5 past 9        | pięć po dziewiąta        | 9:05  | 9:05    |
-| Quarter past 10 | piętnaście po dziesiąta  | 10:15 | 10:15   |
-| Half past 11    | trzydzieści po jedenasta | 11:30 | 11:30   |
-| Noon            | południe                 | 12:00 | 12:00   |
-| Quarter to 3    | piętnaście do trzecia    | 14:45 | 14:45   |
-| 5 to 6          | pięć do szósta           | 17:55 | 17:55   |
-| 8 o'clock PM    | ósma                     | 20:00 | 20:00   |
-| 10:30 PM        | trzydzieści po dziesiąta | 22:30 | 22:30   |
-| 11:58 PM        | północ                   | 23:58 | 23:58   |
+| Time            | Normal                | Short | Compact |
+| --------------- | --------------------- | ----- | ------- |
+| Midnight        | północ                | 0:00  | 0:00    |
+| 1:00 AM         | pierwsza              | 1:00  | 1:00    |
+| 5 past 9        | dziewiąta pięć        | 9:05  | 9:05    |
+| Quarter past 10 | dziesiąta piętnaście  | 10:15 | 10:15   |
+| Half past 11    | jedenasta trzydzieści | 11:30 | 11:30   |
+| Noon            | południe              | 12:00 | 12:00   |
+| Quarter to 3    | za kwadrans trzecia   | 14:45 | 14:45   |
+| 5 to 6          | za pięć szósta        | 17:55 | 17:55   |
+| 8 o'clock PM    | ósma                  | 20:00 | 20:00   |
+| 10:30 PM        | dziesiąta trzydzieści | 22:30 | 22:30   |
+| 11:58 PM        | północ                | 23:58 | 23:58   |

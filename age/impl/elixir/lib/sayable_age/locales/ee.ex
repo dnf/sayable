@@ -17,10 +17,10 @@ defmodule SayableAge.Locales.EE do
       code: "ee",
       plural: (fn 1 -> :one; _ -> :other end),
       units: %{
-        day: %{one: "ŋkeke {n}", other: "ŋkekewo {n}"},
-        week: %{one: "kɔsiɖa {n}", other: "kɔsiɖawo {n}"},
-        month: %{one: "ɣleti {n}", other: "ɣletiwo {n}"},
-        year: %{one: "ƒe {n}", other: "ƒewo {n}"}
+        day: "ŋkeke {n}",
+        week: "kɔsiɖa {n}",
+        month: "ɣleti {n}",
+        year: "ƒe {n}"
       },
       half: "{0} kple afã",
       delimiter: ", ",
@@ -30,15 +30,15 @@ defmodule SayableAge.Locales.EE do
         infant: "Ɖevi",
         toddler: "Ɖevi sue",
         child: "Ɖevi",
-        teenager: "Ŋutsuviwo",
+        teenager: %{m: "Ɖekakpui", f: "Ɖetugbi"},
         adult: "Ame tsitsi"
       },
       short: %{
         units: %{
-          day: "ŋkekewo {n}",
-          week: %{one: "kɔsiɖa {n}", other: "kɔsiɖawo {n}"},
-          month: %{one: "ɣleti {n}", other: "ɣletiwo {n}"},
-          year: %{one: "ƒe {n}", other: "ƒewo {n}"}
+          day: "ŋkeke {n}",
+          week: "kɔsiɖa {n}",
+          month: "ɣleti {n}",
+          year: "ƒe {n}"
         }
       },
       compact: %{

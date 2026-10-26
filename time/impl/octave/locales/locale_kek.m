@@ -11,10 +11,10 @@
 
 function loc = locale_kek()
   loc.code = 'kek';
-  loc.clock.hours = {'kab''laju', 'jun', 'kab''', 'oxib''', 'kab''ib''', 'o''ib''', 'waqib''', 'uqub''', 'wajxaqib''', 'b''elejeb''', 'lajeb''', 'junlaju'};
+  loc.clock.hours = {'kab''laju', 'jun', 'kiib''', 'oxib''', 'kaahib''', 'oob''', 'waqib''', 'wuqub''', 'waqxaqib''', 'b''eleeb''', 'lajeeb''', 'junlaju'};
   loc.clock.midnight = 'chaq'' xkab''';
   loc.clock.noon = 'chaq'' chaab''il';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h} hoonal', "p5", '{h} hoonal rik''in oob'' minuut', "p10", '{h} hoonal rik''in lajeeb'' minuut', "p15", '{h} hoonal rik''in o''laju minuut', "p20", '{h} hoonal rik''in junmay minuut', "p25", '{h} hoonal rik''in oob'' xkak''aal minuut', "p30", '{h} hoonal rik''in yijach', "p35", '{h} hoonal rik''in o''laju xkak''aal minuut', "p40", '{h} hoonal rik''in kaak''aal minuut', "p45", '{h} hoonal rik''in oob'' roxk''aal minuut', "p50", '{h} hoonal rik''in lajeeb'' roxk''aal minuut', "p55", '{h} hoonal rik''in o''laju roxk''aal minuut');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

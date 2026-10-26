@@ -13,10 +13,10 @@ locale_ay <- list(
   code = "ay",
   plural = function(n) "other",
   units = list(
-    day = "uru {n}",
-    week = "simana {n}",
-    month = "phaxsi {n}",
-    year = "mara {n}"
+    day = "{n} uru",
+    week = "{n} simana",
+    month = "{n} phaxsi",
+    year = "{n} mara"
   ),
   half = "{0} chika",
   delimiter = ", ",
@@ -44,6 +44,7 @@ locale_ay <- list(
       month = "{n}m",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = ""
   )
 )

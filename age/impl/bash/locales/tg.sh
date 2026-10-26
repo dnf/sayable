@@ -18,7 +18,7 @@ _sayableage_locale_tg() {
     _unit_week='{n} ҳафта'
     _unit_month='{n} моҳ'
     _unit_year='{n} сол'
-    _half='{0} ним'
+    _half='{0}у ним'
     _delimiter=', '
     _just_born='Навзод'
     _stage_newborn='Навзод'

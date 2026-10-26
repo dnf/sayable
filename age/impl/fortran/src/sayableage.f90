@@ -35,6 +35,15 @@ contains
     jd = day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045
   end function julian_day
 
+  subroutine local_today(year, month, day)
+    integer, intent(out) :: year, month, day
+    integer :: values(8)
+    call date_and_time(values=values)
+    year = values(1)
+    month = values(2)
+    day = values(3)
+  end subroutine local_today
+
   subroutine parse_date(s, year, month, day, ok)
     character(len=*), intent(in) :: s
     integer, intent(out) :: year, month, day
@@ -156,9 +165,12 @@ contains
     if (len_trim(dob) == 0) return
     call parse_date(dob, dob_y, dob_m, dob_d, ok)
     if (.not. ok) return
-    if (len_trim(as_of) == 0) return
-    call parse_date(as_of, ref_y, ref_m, ref_d, ok)
-    if (.not. ok) return
+    if (len_trim(as_of) == 0) then
+      call local_today(ref_y, ref_m, ref_d)
+    else
+      call parse_date(as_of, ref_y, ref_m, ref_d, ok)
+      if (.not. ok) return
+    end if
 
     diff_days = julian_day(ref_y, ref_m, ref_d) - julian_day(dob_y, dob_m, dob_d)
     if (diff_days < 0) return
@@ -284,9 +296,12 @@ contains
     if (len_trim(dob) == 0) return
     call parse_date(dob, dob_y, dob_m, dob_d, ok)
     if (.not. ok) return
-    if (len_trim(as_of) == 0) return
-    call parse_date(as_of, ref_y, ref_m, ref_d, ok)
-    if (.not. ok) return
+    if (len_trim(as_of) == 0) then
+      call local_today(ref_y, ref_m, ref_d)
+    else
+      call parse_date(as_of, ref_y, ref_m, ref_d, ok)
+      if (.not. ok) return
+    end if
 
     diff_days = julian_day(ref_y, ref_m, ref_d) - julian_day(dob_y, dob_m, dob_d)
     if (diff_days < 0) return

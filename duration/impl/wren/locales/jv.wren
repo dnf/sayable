@@ -25,7 +25,7 @@ class JVLocale {
   }
   static half { "{0} setengah" }
   static delimiter { ", " }
-  static justNow { "saiki" }
+  static justNow { "lagi waé" }
   static ago { "{0} kepungkur" }
   static inFuture { "ing {0}" }
   static short {

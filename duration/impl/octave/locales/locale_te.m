@@ -12,14 +12,14 @@
 function loc = locale_te()
   loc.code = 'te';
   loc.plural = @(n) ifelse(n == 1, "one", "other");
-  loc.units.second = '{n} సెకను';
-  loc.units.minute = '{n} నిమిషం';
-  loc.units.hour = '{n} గంట';
+  loc.units.second = struct("one", '{n} సెకను', "other", '{n} సెకన్లు');
+  loc.units.minute = struct("one", '{n} నిమిషం', "other", '{n} నిమిషాలు');
+  loc.units.hour = struct("one", '{n} గంట', "other", '{n} గంటలు');
   loc.units.day = struct("one", '{n} రోజు', "other", '{n} రోజులు');
   loc.units.week = struct("one", '{n} వారం', "other", '{n} వారాలు');
   loc.units.month = struct("one", '{n} నెల', "other", '{n} నెలలు');
   loc.units.year = struct("one", '{n} సంవత్సరం', "other", '{n} సంవత్సరాలు');
-  loc.half = '{0}న్నర';
+  loc.half = '{n}½';
   loc.delimiter = ', ';
   loc.just_now = 'ఇప్పుడే';
   loc.ago = '{0} క్రితం';

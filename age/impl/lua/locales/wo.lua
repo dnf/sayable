@@ -14,17 +14,17 @@ local M = {}
 M.code = "wo"
 M.plural = function(_n) return "other" end
 M.units = {
-    day = "bés {n}",
-    week = "ayubés {n}",
-    month = "weer {n}",
-    year = "at {n}",
+    day = "{n} fan",
+    week = "{n} ayubés",
+    month = "{n} weer",
+    year = "{n} at",
 }
 M.half = "{0} ak genn-wàll"
 M.delimiter = ", "
 M.just_born = "Dees ko sax juddu"
 M.stages = {
     newborn = "Dees ko sax juddu",
-    infant = "Njàmbaar bu ndaw",
+    infant = "Liir",
     toddler = "Xale bu ndaw",
     child = "Xale",
     teenager = "Ndaw-ndaw",
@@ -32,18 +32,18 @@ M.stages = {
 }
 M.short = {
     units = {
-        day = "bés {n}",
-        week = "ayub. {n}",
-        month = "weer {n}",
-        year = "at {n}",
+        day = "{n} fan",
+        week = "{n} ayub.",
+        month = "{n} weer",
+        year = "{n} at",
     },
 }
 M.compact = {
     units = {
-        day = "bés {n}",
-        week = "ayub {n}",
-        month = "weer {n}",
-        year = "at {n}",
+        day = "{n} fan",
+        week = "{n} ayub",
+        month = "{n} weer",
+        year = "{n} at",
     },
     half = "{n}½",
     delimiter = "",

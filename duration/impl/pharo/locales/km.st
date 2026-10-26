@@ -30,7 +30,7 @@ km
 	locale delimiter: ', '.
 	locale justNow: 'ឥឡូវនេះ'.
 	locale ago: '{0}មុន'.
-	locale inFuture: 'ក្នុង{0}'.
+	locale inFuture: '{0}ទៀត'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. '{n} វិនាទី'.
@@ -42,7 +42,7 @@ km
 			'year'. '{n} ឆ្នាំ'.
 		}).
 		#ago. '{0}មុន'.
-		#inFuture. 'ក្នុង{0}'.
+		#inFuture. '{0}ទៀត'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -57,7 +57,7 @@ km
 		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0}មុន'.
-		#inFuture. 'ក្នុង{0}'.
+		#inFuture. '{0}ទៀត'.
 	}).
 	^ locale
 ! !

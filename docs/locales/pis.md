@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [pis.json](../../locales/pis.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): English-derived past/to system as in neighbouring Bislama: '{h} kilok', 'kwata pas / haf pas {h}', '<N> minit pas {h}', and 'kwata tu / <N> minit tu {next_h}'. 'kilok', 'kwata', 'haf pas', 'pas', 'minit' are attested Pijin; 'tu' for 'to' is taken from the Bislama pattern and is the least certain piece (1:45 renders as 'kwata tu tu').
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 yia, 1 manis | 2 yia, 1 man | 2y1m         |
 | 2 years, 6 months | 2 yia, 6 manis | 2 yia, 6 man | 2y6m         |
 | 3 years           | 3 yia          | 3 yia        | 3y           |
-| 3½ years          | 3 en haf yia   | 3 en haf yia | 3 en hafy    |
+| 3½ years          | 3 yia en haf   | 3 yia en haf | 3½y          |
 | 5 years           | 5 yia          | 5 yia        | 5y           |
-| 5½ years          | 5 en haf yia   | 5 en haf yia | 5 en hafy    |
+| 5½ years          | 5 yia en haf   | 5 yia en haf | 5½y          |
 | 7 years           | 7 yia          | 7 yia        | 7y           |
 | 10 years          | 10 yia         | 10 yia       | 10y          |
 | 18 years          | 18 yia         | 18 yia       | 18y          |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | bihaen tumoro   | 17/3     |
 | Day before yesterday | bifo yestedei   | 13/3     |
 | This Thursday (+5)   | disfala Tosde   | 20/3     |
-| Last Monday (-4)     | las Tiusde      | 11/3     |
-| Next Wednesday (+12) | nekis Tosde     | 27/3     |
-| Same month (+20)     | 4 Epril         | 4/4      |
+| Last Tuesday (-4)    | las Tiusde      | 11/3     |
+| Next Thursday (+12)  | nekis Tosde     | 27/3     |
+| Same year (+20)      | 4 Epril         | 4/4      |
 | Different year       | 10 Janueri 2026 | 10/1/26  |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 minit           | 5 min         | 5m        |
 | 45 minutes            | 45 minit          | 45 min        | 45m       |
 | 1 hour                | 1 aoa             | 1 aoa         | 1h        |
-| 1½ hours              | 1 en haf aoa      | 1 en haf aoa  | 1 en hafh |
+| 1½ hours              | 1 aoa en haf      | 1 aoa en haf  | 1½h       |
 | 3 hours               | 3 aoa             | 3 aoa         | 3h        |
 | 6 hours               | 6 aoa             | 6 aoa         | 6h        |
 | 1 day                 | 1 dei             | 1 dei         | 1d        |
-| 1½ days               | 1 en haf dei      | 1 en haf dei  | 1 en hafd |
+| 1½ days               | 1 dei en haf      | 1 dei en haf  | 1½d       |
 | 3 days                | 3 dei             | 3 dei         | 3d        |
 | 1 week                | 1 wik             | 1 wik         | 1w        |
 | 2 weeks, 3 days       | 2 wik, 3 dei      | 2 wik, 3 dei  | 2w3d      |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal    | Short    | Compact |
-| --------------- | --------- | -------- | ------- |
-| Midnight        | midonaet  | 12:00 AM | 12:00a  |
-| 1:00 AM         | wan:00    | 1:00 AM  | 1:00a   |
-| 5 past 9        | naen:05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ten:15    | 10:15 AM | 10:15a  |
-| Half past 11    | eleven:30 | 11:30 AM | 11:30a  |
-| Noon            | midei     | 12:00 PM | 12:00p  |
-| Quarter to 3    | tu:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | faev:55   | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | eit:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ten:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | midonaet  | 11:58 PM | 11:58p  |
+| Time            | Normal              | Short    | Compact |
+| --------------- | ------------------- | -------- | ------- |
+| Midnight        | midonaet            | 12:00 AM | 12:00a  |
+| 1:00 AM         | wan kilok           | 1:00 AM  | 1:00a   |
+| 5 past 9        | faev minit pas naen | 9:05 AM  | 9:05a   |
+| Quarter past 10 | kwata pas ten       | 10:15 AM | 10:15a  |
+| Half past 11    | haf pas eleven      | 11:30 AM | 11:30a  |
+| Noon            | midei               | 12:00 PM | 12:00p  |
+| Quarter to 3    | kwata tu tri        | 2:45 PM  | 2:45p   |
+| 5 to 6          | faev minit tu sikis | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | eit kilok           | 8:00 PM  | 8:00p   |
+| 10:30 PM        | haf pas ten         | 10:30 PM | 10:30p  |
+| 11:58 PM        | midonaet            | 11:58 PM | 11:58p  |

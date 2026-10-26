@@ -95,7 +95,7 @@
     ],
     "dayFormat": "{n}.",
     "datePattern": "{day} {month}",
-    "datePatternWithYear": "{day} {month} {year}",
+    "datePatternWithYear": "{year}. gada {day} {month}",
     "today": "šodien",
     "tomorrow": "rīt",
     "yesterday": "vakar",
@@ -130,7 +130,7 @@
       ],
       "dayFormat": "{n}.",
       "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}"
+      "datePatternWithYear": "{year}. gada {day} {month}"
     },
     "compact": {
       "datePattern": "{d}.{m}.",
@@ -261,5 +261,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Existing 'pieci pēc divi' / 'piecpadsmit līdz trīs' phrases are calques, but the audit lists the fix under schemaLimits (dative hours needed for past-buckets), so left alone."
+    }
+  ]
 }

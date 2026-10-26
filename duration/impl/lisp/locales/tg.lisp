@@ -24,7 +24,7 @@
                (cons :week "{n} ҳафта")
                (cons :month "{n} моҳ")
                (cons :year "{n} сол"))
-   :half "{0} ним"
+   :half "{0}у ним"
    :delimiter ", "
    :just-now "ҳамин ҳоло"
    :ago "{0} пеш"

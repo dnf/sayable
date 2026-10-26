@@ -49,7 +49,7 @@
                        (cons :year '((:zero . "{n} سنة") (:one . "سنة واحدة") (:two . "سنتان") (:few . "{n} سنوات") (:many . "{n} سنة") (:other . "{n} سنة"))))
    :compact-units (list (cons :day "{n} ي")
                        (cons :week "{n} أ")
-                       (cons :month '((:zero . "{n} شهر") (:one . "شهر") (:two . "شهران") (:few . "{n} أشهر") (:many . "{n} شهرًا") (:other . "{n} شهر")))
+                       (cons :month "{n} شهر")
                        (cons :year "{n} سنة"))
    :compact-half "{n}½"
    :compact-delimiter ""

@@ -12,22 +12,22 @@
 locale_ki <- list(
   code = "ki",
   clock = list(
-    hours = c("ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe"),
+    hours = c("ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe", "ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano"),
     midnight = "ũtukũ gatagatĩ",
     noon = "mũthenya gatagatĩ",
     patterns = list(
-      "0" = "{h}:00",
-      "5" = "{h}:05",
-      "10" = "{h}:10",
-      "15" = "{h}:15",
-      "20" = "{h}:20",
-      "25" = "{h}:25",
-      "30" = "{h}:30",
-      "35" = "{h}:35",
-      "40" = "{h}:40",
-      "45" = "{h}:45",
-      "50" = "{h}:50",
-      "55" = "{h}:55"
+      "0" = "thaa {h}",
+      "5" = "thaa {h} na ndagĩka ithano",
+      "10" = "thaa {h} na ndagĩka ikũmi",
+      "15" = "thaa {h} na ndagĩka ikũmi na ithano",
+      "20" = "thaa {h} na ndagĩka mĩrongo ĩĩrĩ",
+      "25" = "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano",
+      "30" = "thaa {h} na nuthu",
+      "35" = "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano",
+      "40" = "thaa {h} na ndagĩka mĩrongo ĩna",
+      "45" = "thaa {h} na ndagĩka mĩrongo ĩna na ithano",
+      "50" = "thaa {h} na ndagĩka mĩrongo ĩtano",
+      "55" = "thaa {h} na ndagĩka mĩrongo ĩtano na ithano"
     )
   ),
   short = list(

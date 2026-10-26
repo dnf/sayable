@@ -14,10 +14,10 @@ class IGLocale {
   static plural { Fn.new {|n| "other" } }
   static units {
     return {
-      "day": "{n} ụbọchị",
-      "week": "{n} izu",
-      "month": "{n} ọnwa",
-      "year": "{n} afọ",
+      "day": "ụbọchị {n}",
+      "week": "izu {n}",
+      "month": "ọnwa {n}",
+      "year": "afọ {n}",
     }
   }
   static half { "{0} na ọkara" }
@@ -29,17 +29,17 @@ class IGLocale {
       "infant": "Nwa ọhụrụ",
       "toddler": "Nwa nta",
       "child": "Nwa",
-      "teenager": "Nwokorobịa",
+      "teenager": {"m": "Nwokorobịa", "f": "Agbọghọbịa"},
       "adult": "Okenye",
     }
   }
   static short {
     return {
       "units": {
-        "day": "{n} ụbọchị",
-        "week": "{n} izu",
-        "month": "{n} ọnwa",
-        "year": "{n} afọ",
+        "day": "ụbọchị {n}",
+        "week": "izu {n}",
+        "month": "ọnwa {n}",
+        "year": "afọ {n}",
       },
     }
   }

@@ -16,9 +16,9 @@ pub fn locale() -> types.DurationLocale {
     code: "sw",
     plural: fn(n) { case n { 1 -> types.One _ -> types.Other } },
     units: [
-      #("second", types.SimpleUnit("{n} sekunde")),
-      #("minute", types.SimpleUnit("{n} dakika")),
-      #("hour", types.SimpleUnit("{n} saa")),
+      #("second", types.SimpleUnit("sekunde {n}")),
+      #("minute", types.SimpleUnit("dakika {n}")),
+      #("hour", types.SimpleUnit("saa {n}")),
       #("day", types.PluralUnit([#(types.One, "siku {n}"), #(types.Other, "siku {n}")])),
       #("week", types.PluralUnit([#(types.One, "wiki {n}"), #(types.Other, "wiki {n}")])),
       #("month", types.PluralUnit([#(types.One, "mwezi {n}"), #(types.Other, "miezi {n}")])),

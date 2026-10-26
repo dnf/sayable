@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [kn.json](../../locales/kn.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): '{h} ಗಂಟೆ' on the hour and '{h} ಗಂಟೆ N ನಿಮಿಷ' additive for every minute bucket (the common 'hour N minutes' form). Idiomatic fractions (ಮೂರೂಕಾಲು, ಮೂರೂವರೆ, ಮೂರೂ ಮುಕ್ಕಾಲು) lengthen the final vowel of the hour word and so cannot be expressed through the shared hours list; the subtractive 'ಗಂಟೆಗೆ N ನಿಮಿಷ ಇದೆ' form was avoided as less universal. noon changed to 'ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ' (ಮಧ್ಯಾಹ್ನ alone means afternoon).
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 | 2 years, 1 month  | 2 ವರ್ಷಗಳು, 1 ತಿಂಗಳು    | 2 ವರ್ಷ, 1 ತಿಂಗಳು | 2 ವ1 ತಿಂ   |
 | 2 years, 6 months | 2 ವರ್ಷಗಳು, 6 ತಿಂಗಳುಗಳು | 2 ವರ್ಷ, 6 ತಿಂಗಳು | 2 ವ6 ತಿಂ   |
 | 3 years           | 3 ವರ್ಷಗಳು              | 3 ವರ್ಷ           | 3 ವ        |
-| 3½ years          | 3 ವರ್ಷಗಳುವರೆ           | 3 ವರ್ಷವರೆ        | 3½ ವ       |
+| 3½ years          | 3½ ವರ್ಷಗಳು             | 3½ ವರ್ಷ          | 3½ ವ       |
 | 5 years           | 5 ವರ್ಷಗಳು              | 5 ವರ್ಷ           | 5 ವ        |
-| 5½ years          | 5 ವರ್ಷಗಳುವರೆ           | 5 ವರ್ಷವರೆ        | 5½ ವ       |
+| 5½ years          | 5½ ವರ್ಷಗಳು             | 5½ ವರ್ಷ          | 5½ ವ       |
 | 7 years           | 7 ವರ್ಷಗಳು              | 7 ವರ್ಷ           | 7 ವ        |
 | 10 years          | 10 ವರ್ಷಗಳು             | 10 ವರ್ಷ          | 10 ವ       |
 | 18 years          | 18 ವರ್ಷಗಳು             | 18 ವರ್ಷ          | 18 ವ       |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ನಾಡಿದ್ದು       | 17/3    |
 | Day before yesterday | ಮೊನ್ನೆ         | 13/3    |
 | This Thursday (+5)   | ಈ ಗುರುವಾರ      | 20/3    |
-| Last Monday (-4)     | ಕಳೆದ ಮಂಗಳವಾರ   | 11/3    |
-| Next Wednesday (+12) | ಮುಂದಿನ ಗುರುವಾರ | 27/3    |
-| Same month (+20)     | 4 ಏಪ್ರಿಲ್      | 4/4     |
+| Last Tuesday (-4)    | ಕಳೆದ ಮಂಗಳವಾರ   | 11/3    |
+| Next Thursday (+12)  | ಮುಂದಿನ ಗುರುವಾರ | 27/3    |
+| Same year (+20)      | 4 ಏಪ್ರಿಲ್      | 4/4     |
 | Different year       | 10 ಜನವರಿ 2026  | 10/1/26 |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 ನಿಮಿಷಗಳು                | 5 ನಿ॰            | 5 ನಿ      |
 | 45 minutes            | 45 ನಿಮಿಷಗಳು               | 45 ನಿ॰           | 45 ನಿ     |
 | 1 hour                | 1 ಗಂಟೆ                    | 1 ಗಂ॰            | 1 ಗಂ      |
-| 1½ hours              | 1 ಗಂಟೆಗಳುವರೆ              | 1 ಗಂ॰ವರೆ         | 1½ ಗಂ     |
+| 1½ hours              | 1½ ಗಂಟೆಗಳು                | 1½ ಗಂ॰           | 1½ ಗಂ     |
 | 3 hours               | 3 ಗಂಟೆಗಳು                 | 3 ಗಂ॰            | 3 ಗಂ      |
 | 6 hours               | 6 ಗಂಟೆಗಳು                 | 6 ಗಂ॰            | 6 ಗಂ      |
 | 1 day                 | 1 ದಿನ                     | 1 ದಿನ            | 1 ದಿ      |
-| 1½ days               | 1 ದಿನಗಳುವರೆ               | 1 ದಿನವರೆ         | 1½ ದಿ     |
+| 1½ days               | 1½ ದಿನಗಳು                 | 1½ ದಿನ           | 1½ ದಿ     |
 | 3 days                | 3 ದಿನಗಳು                  | 3 ದಿನ            | 3 ದಿ      |
 | 1 week                | 1 ವಾರ                     | 1 ವಾರ            | 1 ವಾ      |
 | 2 weeks, 3 days       | 2 ವಾರಗಳು, 3 ದಿನಗಳು        | 2 ವಾರ, 3 ದಿನ     | 2 ವಾ3 ದಿ  |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal      | Short    | Compact |
-| --------------- | ----------- | -------- | ------- |
-| Midnight        | ಮಧ್ಯರಾತ್ರಿ  | 12:00 AM | 12:00a  |
-| 1:00 AM         | ಒಂದು:00     | 1:00 AM  | 1:00a   |
-| 5 past 9        | ಒಂಬತ್ತು:05  | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ಹತ್ತು:15    | 10:15 AM | 10:15a  |
-| Half past 11    | ಹನ್ನೊಂದು:30 | 11:30 AM | 11:30a  |
-| Noon            | ಮಧ್ಯಾಹ್ನ    | 12:00 PM | 12:00p  |
-| Quarter to 3    | ಎರಡು:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | ಐದು:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | ಎಂಟು:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ಹತ್ತು:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | ಮಧ್ಯರಾತ್ರಿ  | 11:58 PM | 11:58p  |
+| Time            | Normal                      | Short    | Compact |
+| --------------- | --------------------------- | -------- | ------- |
+| Midnight        | ಮಧ್ಯರಾತ್ರಿ                  | 12:00 AM | 12:00a  |
+| 1:00 AM         | ಒಂದು ಗಂಟೆ                   | 1:00 AM  | 1:00a   |
+| 5 past 9        | ಒಂಬತ್ತು ಗಂಟೆ ಐದು ನಿಮಿಷ      | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ಹತ್ತು ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ    | 10:15 AM | 10:15a  |
+| Half past 11    | ಹನ್ನೊಂದು ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ | 11:30 AM | 11:30a  |
+| Noon            | ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ      | 12:00 PM | 12:00p  |
+| Quarter to 3    | ಎರಡು ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ   | 2:45 PM  | 2:45p   |
+| 5 to 6          | ಐದು ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ     | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ಎಂಟು ಗಂಟೆ                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ಹತ್ತು ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ    | 10:30 PM | 10:30p  |
+| 11:58 PM        | ಮಧ್ಯರಾತ್ರಿ                  | 11:58 PM | 11:58p  |

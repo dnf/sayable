@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "qu",
-        clock = #clock_config{hours = ["chunka iskayniyuq", "huk", "iskay", "kimsa", "tawa", "pichqa", "suqta", "qanchis", "pusaq", "isqun", "chunka", "chunka hukniyuq"], midnight = "chawpi tuta", noon = "chawpi p'unchaw", patterns = [{0, "{h}"}, {5, "{h} pichqa"}, {10, "{h} chunka"}, {15, "{h} chunka pichqayuq"}, {20, "{h} iskay chunka"}, {25, "{h} iskay chunka pichqayuq"}, {30, "{h} kimsa chunka"}, {35, "{next_h} mana iskay chunka pichqayuq"}, {40, "{next_h} mana iskay chunka"}, {45, "{next_h} mana chunka pichqayuq"}, {50, "{next_h} mana chunka"}, {55, "{next_h} mana pichqa"}]},
+        clock = #clock_config{hours = ["chunka iskayniyuq", "huk", "iskay", "kimsa", "tawa", "pichqa", "suqta", "qanchis", "pusaq", "isqun", "chunka", "chunka hukniyuq"], midnight = "chawpi tuta", noon = "chawpi p'unchaw", patterns = [{0, "{h} ura"}, {5, "{h} ura pichqa"}, {10, "{h} ura chunka"}, {15, "{h} ura chunka pichqayuq"}, {20, "{h} ura iskay chunka"}, {25, "{h} ura iskay chunka pichqayuq"}, {30, "{h} ura kimsa chunka"}, {35, "{h} ura kimsa chunka pichqayuq"}, {40, "{h} ura tawa chunka"}, {45, "{h} ura tawa chunka pichqayuq"}, {50, "{h} ura pichqa chunka"}, {55, "{h} ura pichqa chunka pichqayuq"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

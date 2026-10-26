@@ -16,8 +16,8 @@ const StTimeLocale st_locale_nl = {
     {
         { "twaalf", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf" },
         "middernacht",
-        "middag",
-        { "{h} uur", "vijf over {h}", "tien over {h}", "kwart over {h}", "twintig over {h}", "vijf voor half {next_h}", "half {next_h}", "vijf over half {next_h}", "twintig voor {next_h}", "kwart voor {next_h}", "tien voor {next_h}", "vijf voor {next_h}" }
+        "twaalf uur 's middags",
+        { "{h} uur", "vijf over {h}", "tien over {h}", "kwart over {h}", "tien voor half {next_h}", "vijf voor half {next_h}", "half {next_h}", "vijf over half {next_h}", "tien over half {next_h}", "kwart voor {next_h}", "tien voor {next_h}", "vijf voor {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

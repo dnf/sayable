@@ -21,7 +21,7 @@ proc locale_date_tpi {} {
     set tomorrow {tumora}
     set yesterday {asde}
     set day_after_tomorrow {haptumora}
-    set day_before_yesterday {asde bipo}
+    set day_before_yesterday {hapasde}
     set this_weekday "dispela {weekday}"
     set next_weekday "{weekday} bihain"
     set last_weekday "{weekday} bipo"

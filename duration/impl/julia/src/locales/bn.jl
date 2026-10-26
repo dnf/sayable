@@ -17,7 +17,7 @@ const BN = DurationLocale(
     units = Dict(
         "second" => "{n} সেকেন্ড",
         "minute" => "{n} মিনিট",
-        "hour" => "{n} ঘন্টা",
+        "hour" => "{n} ঘণ্টা",
         "day" => Dict("one" => "{n} দিন", "other" => "{n} দিন"),
         "week" => Dict("one" => "{n} সপ্তাহ", "other" => "{n} সপ্তাহ"),
         "month" => Dict("one" => "{n} মাস", "other" => "{n} মাস"),

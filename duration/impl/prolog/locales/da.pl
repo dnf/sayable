@@ -32,7 +32,7 @@ sd_unit('da', year, other, '{n} år').
 sd_half('da', '{n}½').
 sd_delimiter('da', ', ').
 sd_just_now('da', 'lige nu').
-sd_ago('da', '{0} siden').
+sd_ago('da', 'for {0} siden').
 sd_in_future('da', 'om {0}').
 
 short_sd_unit('da', second, _, '{n} sek.').

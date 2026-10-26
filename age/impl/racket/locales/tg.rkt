@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} ҳафта")
          "month" (hash "type" "simple" "form" "{n} моҳ")
          "year" (hash "type" "simple" "form" "{n} сол"))
-   "{0} ним"
+   "{0}у ним"
    ", "
    "Навзод"
    (hash "newborn" (stage-label "Навзод" #f #f)

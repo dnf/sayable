@@ -14,8 +14,8 @@ import sayabledate/types
 pub fn locale() -> types.DateLocale {
   types.DateLocale(
     code: "tk",
-    months: ["Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"],
-    weekdays: ["Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"],
+    months: ["ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"],
+    weekdays: ["ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"],
     day_format: "{n}",
     day_format_exceptions: [],
     date_pattern: "{day} {month}",
@@ -30,9 +30,9 @@ pub fn locale() -> types.DateLocale {
     last_weekday: Ok("geçen {weekday}"),
     months_in_date: Error(Nil),
     short: Ok(types.CompactnessOverride(
-      months: Ok(["Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"]),
+      months: Ok(["ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek"]),
       months_in_date: Error(Nil),
-      weekdays: Ok(["Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"]),
+      weekdays: Ok(["ýek", "duş", "siş", "çar", "pen", "ann", "şen"]),
       day_format: Ok("{n}"),
       date_pattern: Ok("{day} {month}"),
       date_pattern_with_year: Ok("{day} {month} {year}"),

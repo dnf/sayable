@@ -32,10 +32,13 @@ sa_stage('ff', newborn, _, 'Ɓinngel kesol').
 sa_stage('ff', infant, _, 'Ɓinngel').
 sa_stage('ff', toddler, _, 'Cukalel').
 sa_stage('ff', child, _, 'Suka').
-sa_stage('ff', teenager, _, 'Suka debbo').
+sa_stage('ff', teenager, m, 'Suka gorko').
+sa_stage('ff', teenager, f, 'Suka debbo').
+sa_stage('ff', teenager, _, 'Suka gorko').
 sa_stage('ff', adult, _, 'Mawɗo').
 
-short_sa_unit('ff', day, _, 'ñalɗe {n}').
+short_sa_unit('ff', day, one, 'ñalawma {n}').
+short_sa_unit('ff', day, other, 'ñalɗe {n}').
 short_sa_unit('ff', week, one, 'yontere {n}').
 short_sa_unit('ff', week, other, 'yontereeji {n}').
 short_sa_unit('ff', month, one, 'lewru {n}').
@@ -43,7 +46,8 @@ short_sa_unit('ff', month, other, 'lebbi {n}').
 short_sa_unit('ff', year, one, 'hitaande {n}').
 short_sa_unit('ff', year, other, 'duuɓi {n}').
 
-compact_sa_unit('ff', day, _, 'ñalɗe {n}').
+compact_sa_unit('ff', day, one, 'ñalawma {n}').
+compact_sa_unit('ff', day, other, 'ñalɗe {n}').
 compact_sa_unit('ff', week, one, 'yont {n}').
 compact_sa_unit('ff', week, other, 'yontji {n}').
 compact_sa_unit('ff', month, one, 'lew {n}').

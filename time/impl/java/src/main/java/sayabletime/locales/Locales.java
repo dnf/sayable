@@ -48,10 +48,10 @@ public final class Locales {
     public static final TimeLocale AK = new TimeLocale(
         "ak",
         new ClockConfig(
-            List.of("dumien", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"),
-            "anadwo",
-            "awia",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            List.of("dumienu", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"),
+            "ɔdasuom",
+            "owigyinae",
+            Map.ofEntries(Map.entry(0, "nnɔn {h}"), Map.entry(5, "nnɔn {h} ne sima anum"), Map.entry(10, "nnɔn {h} ne sima edu"), Map.entry(15, "nnɔn {h} ne sima dunum"), Map.entry(20, "nnɔn {h} ne sima aduonu"), Map.entry(25, "nnɔn {h} ne sima aduonu num"), Map.entry(30, "nnɔn {h} ne fa"), Map.entry(35, "aka sima aduonu num na abɔ nnɔn {next_h}"), Map.entry(40, "aka sima aduonu na abɔ nnɔn {next_h}"), Map.entry(45, "aka sima dunum na abɔ nnɔn {next_h}"), Map.entry(50, "aka sima edu na abɔ nnɔn {next_h}"), Map.entry(55, "aka sima anum na abɔ nnɔn {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -64,10 +64,10 @@ public final class Locales {
     public static final TimeLocale AM = new TimeLocale(
         "am",
         new ClockConfig(
-            List.of("አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት", "ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ"),
+            List.of("ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ", "አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት"),
             "እኩለ ሌሊት",
             "እኩለ ቀን",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} ሰዓት"), Map.entry(5, "{h} ሰዓት ከአምስት ደቂቃ"), Map.entry(10, "{h} ሰዓት ከአሥር ደቂቃ"), Map.entry(15, "{h} ሰዓት ከሩብ"), Map.entry(20, "{h} ሰዓት ከሃያ ደቂቃ"), Map.entry(25, "{h} ሰዓት ከሃያ አምስት ደቂቃ"), Map.entry(30, "{h} ሰዓት ተኩል"), Map.entry(35, "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ"), Map.entry(40, "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ"), Map.entry(45, "ለ{next_h} ሰዓት ሩብ ጉዳይ"), Map.entry(50, "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ"), Map.entry(55, "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -83,7 +83,7 @@ public final class Locales {
             List.of("الثانية عشرة", "الواحدة", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة", "الثامنة", "التاسعة", "العاشرة", "الحادية عشرة"),
             "منتصف الليل",
             "الظهر",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "الساعة {h}"), Map.entry(5, "{h} وخمس دقائق"), Map.entry(10, "{h} وعشر دقائق"), Map.entry(15, "{h} والربع"), Map.entry(20, "{h} والثلث"), Map.entry(25, "{h} والنصف إلا خمس دقائق"), Map.entry(30, "{h} والنصف"), Map.entry(35, "{h} والنصف وخمس دقائق"), Map.entry(40, "{next_h} إلا ثلثًا"), Map.entry(45, "{next_h} إلا ربعًا"), Map.entry(50, "{next_h} إلا عشر دقائق"), Map.entry(55, "{next_h} إلا خمس دقائق"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -96,10 +96,10 @@ public final class Locales {
     public static final TimeLocale AY = new TimeLocale(
         "ay",
         new ClockConfig(
-            List.of("tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani"),
+            List.of("tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llätunka", "tunka", "tunka mayani"),
             "aruma chika",
             "chika uru",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} ura"), Map.entry(5, "{h} ura phisqa minutuni"), Map.entry(10, "{h} ura tunka minutuni"), Map.entry(15, "{h} ura tunka phisqani minutuni"), Map.entry(20, "{h} ura pä tunka minutuni"), Map.entry(25, "{h} ura pä tunka phisqani minutuni"), Map.entry(30, "{h} ura chikani"), Map.entry(35, "{h} ura kimsa tunka phisqani minutuni"), Map.entry(40, "{h} ura pusi tunka minutuni"), Map.entry(45, "{h} ura pusi tunka phisqani minutuni"), Map.entry(50, "{h} ura phisqa tunka minutuni"), Map.entry(55, "{h} ura phisqa tunka phisqani minutuni"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -115,7 +115,7 @@ public final class Locales {
             List.of("on iki", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz", "on", "on bir"),
             "gecə yarısı",
             "günorta",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "beş keçir {h}"), Map.entry(10, "on keçir {h}"), Map.entry(15, "on beş keçir {h}"), Map.entry(20, "iyirmi keçir {h}"), Map.entry(25, "iyirmi beş keçir {h}"), Map.entry(30, "otuz keçir {h}"), Map.entry(35, "iyirmi beş qalmış {next_h}"), Map.entry(40, "iyirmi qalmış {next_h}"), Map.entry(45, "on beş qalmış {next_h}"), Map.entry(50, "on qalmış {next_h}"), Map.entry(55, "beş qalmış {next_h}"))
+            Map.ofEntries(Map.entry(0, "saat {h}"), Map.entry(5, "{h} sıfır beş"), Map.entry(10, "{h} on"), Map.entry(15, "{h} on beş"), Map.entry(20, "{h} iyirmi"), Map.entry(25, "{h} iyirmi beş"), Map.entry(30, "{h} otuz"), Map.entry(35, "{h} otuz beş"), Map.entry(40, "{h} qırx"), Map.entry(45, "{h} qırx beş"), Map.entry(50, "{h} əlli"), Map.entry(55, "{h} əlli beş"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -128,10 +128,10 @@ public final class Locales {
     public static final TimeLocale BCI = new TimeLocale(
         "bci",
         new ClockConfig(
-            List.of("blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"),
+            List.of("blu-nin-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-nin-kun"),
             "kɔnguɛ afiɛn",
             "nnɔsua",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "dɔ {h}"), Map.entry(5, "dɔ {h} nin miniti nnun"), Map.entry(10, "dɔ {h} nin miniti blu"), Map.entry(15, "dɔ {h} nin miniti blu-nin-nnun"), Map.entry(20, "dɔ {h} nin miniti ablaɔn"), Map.entry(25, "dɔ {h} nin miniti ablaɔn-nin-nnun"), Map.entry(30, "dɔ {h} nin miniti ablasan"), Map.entry(35, "dɔ {h} nin miniti ablasan-nin-nnun"), Map.entry(40, "dɔ {h} nin miniti ablanan"), Map.entry(45, "dɔ {h} nin miniti ablanan-nin-nnun"), Map.entry(50, "dɔ {h} nin miniti ablenun"), Map.entry(55, "dɔ {h} nin miniti ablenun-nin-nnun"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -144,10 +144,10 @@ public final class Locales {
     public static final TimeLocale BE = new TimeLocale(
         "be",
         new ClockConfig(
-            List.of("дванаццаць", "адзін", "два", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"),
+            List.of("дванаццаць", "гадзіна", "дзве", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"),
             "поўнач",
             "поўдзень",
-            Map.ofEntries(Map.entry(0, "{h} гадзін"), Map.entry(5, "пяць хвілін пасля {h}"), Map.entry(10, "дзесяць хвілін пасля {h}"), Map.entry(15, "чвэрць пасля {h}"), Map.entry(20, "дваццаць хвілін пасля {h}"), Map.entry(25, "дваццаць пяць хвілін пасля {h}"), Map.entry(30, "палова да {next_h}"), Map.entry(35, "без дваццаці пяці {next_h}"), Map.entry(40, "без дваццаці {next_h}"), Map.entry(45, "без чвэрці {next_h}"), Map.entry(50, "без дзесяці {next_h}"), Map.entry(55, "без пяці {next_h}"))
+            Map.ofEntries(Map.entry(0, "роўна {h}"), Map.entry(5, "{h} нуль пяць"), Map.entry(10, "{h} дзесяць"), Map.entry(15, "{h} пятнаццаць"), Map.entry(20, "{h} дваццаць"), Map.entry(25, "{h} дваццаць пяць"), Map.entry(30, "{h} трыццаць"), Map.entry(35, "без дваццаці пяці {next_h}"), Map.entry(40, "без дваццаці {next_h}"), Map.entry(45, "без чвэрці {next_h}"), Map.entry(50, "без дзесяці {next_h}"), Map.entry(55, "без пяці {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -160,10 +160,10 @@ public final class Locales {
     public static final TimeLocale BEM = new TimeLocale(
         "bem",
         new ClockConfig(
-            List.of("ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo"),
+            List.of("ikumi na shibili", "imo", "shibili", "shitatu", "shine", "shisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na imo"),
             "pakati ka bushiku",
             "akasuba",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "insa {h}"), Map.entry(5, "insa {h} na maminiti yasano"), Map.entry(10, "insa {h} na maminiti ikumi"), Map.entry(15, "insa {h} na maminiti ikumi na yasano"), Map.entry(20, "insa {h} na maminiti amakumi yabili"), Map.entry(25, "insa {h} na maminiti amakumi yabili na yasano"), Map.entry(30, "insa {h} na hafu"), Map.entry(35, "insa {h} na maminiti amakumi yatatu na yasano"), Map.entry(40, "insa {h} na maminiti amakumi yane"), Map.entry(45, "insa {h} na maminiti amakumi yane na yasano"), Map.entry(50, "insa {h} na maminiti amakumi yasano"), Map.entry(55, "insa {h} na maminiti amakumi yasano na yasano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -179,7 +179,7 @@ public final class Locales {
             List.of("дванадесет", "един", "два", "три", "четири", "пет", "шест", "седем", "осем", "девет", "десет", "единадесет"),
             "полунощ",
             "обяд",
-            Map.ofEntries(Map.entry(0, "{h} часа"), Map.entry(5, "пет na {h}"), Map.entry(10, "десет na {h}"), Map.entry(15, "петнадесет na {h}"), Map.entry(20, "двадесет na {h}"), Map.entry(25, "двадесет и пет na {h}"), Map.entry(30, "тридесет na {h}"), Map.entry(35, "двадесет и пет do {next_h}"), Map.entry(40, "двадесет do {next_h}"), Map.entry(45, "петнадесет do {next_h}"), Map.entry(50, "десет do {next_h}"), Map.entry(55, "пет do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} часа"), Map.entry(5, "{h} и пет"), Map.entry(10, "{h} и десет"), Map.entry(15, "{h} и петнадесет"), Map.entry(20, "{h} и двадесет"), Map.entry(25, "{h} и двадесет и пет"), Map.entry(30, "{h} и половина"), Map.entry(35, "{next_h} без двадесет и пет"), Map.entry(40, "{next_h} без двадесет"), Map.entry(45, "{next_h} без петнадесет"), Map.entry(50, "{next_h} без десет"), Map.entry(55, "{next_h} без пет"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -195,7 +195,7 @@ public final class Locales {
             List.of("twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"),
             "mednaet",
             "medeldei",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} klok"), Map.entry(5, "faef pas {h}"), Map.entry(10, "ten pas {h}"), Map.entry(15, "kwota pas {h}"), Map.entry(20, "twenti pas {h}"), Map.entry(25, "twenti faef pas {h}"), Map.entry(30, "haf pas {h}"), Map.entry(35, "twenti faef tu {next_h}"), Map.entry(40, "twenti tu {next_h}"), Map.entry(45, "kwota tu {next_h}"), Map.entry(50, "ten tu {next_h}"), Map.entry(55, "faef tu {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -211,7 +211,7 @@ public final class Locales {
             List.of("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
             "dugutilama",
             "tilgari",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "nɛgɛ kaɲɛ {h}"), Map.entry(5, "nɛgɛ kaɲɛ {h} ni miniti duuru"), Map.entry(10, "nɛgɛ kaɲɛ {h} ni miniti tan"), Map.entry(15, "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru"), Map.entry(20, "nɛgɛ kaɲɛ {h} ni miniti mugan"), Map.entry(25, "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru"), Map.entry(30, "nɛgɛ kaɲɛ {h} ni tilancɛ"), Map.entry(35, "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru"), Map.entry(40, "nɛgɛ kaɲɛ {h} ni miniti bi naani"), Map.entry(45, "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru"), Map.entry(50, "nɛgɛ kaɲɛ {h} ni miniti bi duuru"), Map.entry(55, "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -224,10 +224,10 @@ public final class Locales {
     public static final TimeLocale BN = new TimeLocale(
         "bn",
         new ClockConfig(
-            List.of("বারো", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়", "দশ", "এগারো"),
+            List.of("বারোটা", "একটা", "দুটো", "তিনটে", "চারটে", "পাঁচটা", "ছটা", "সাতটা", "আটটা", "নটা", "দশটা", "এগারোটা"),
             "মধ্যরাত",
-            "দুপুর",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "দুপুর বারোটা",
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} বেজে পাঁচ মিনিট"), Map.entry(10, "{h} বেজে দশ মিনিট"), Map.entry(15, "সোয়া {h}"), Map.entry(20, "{h} বেজে বিশ মিনিট"), Map.entry(25, "{h} বেজে পঁচিশ মিনিট"), Map.entry(30, "{h} বেজে ত্রিশ মিনিট"), Map.entry(35, "{next_h} বাজতে পঁচিশ মিনিট বাকি"), Map.entry(40, "{next_h} বাজতে বিশ মিনিট বাকি"), Map.entry(45, "পৌনে {next_h}"), Map.entry(50, "{next_h} বাজতে দশ মিনিট বাকি"), Map.entry(55, "{next_h} বাজতে পাঁচ মিনিট বাকি"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -240,10 +240,10 @@ public final class Locales {
     public static final TimeLocale BR = new TimeLocale(
         "br",
         new ClockConfig(
-            List.of("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            List.of("daouzek eur", "un eur", "div eur", "teir eur", "peder eur", "pemp eur", "c'hwec'h eur", "seizh eur", "eizh eur", "nav eur", "dek eur", "unnek eur"),
             "hanternoz",
             "kreisteiz",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} ha pemp"), Map.entry(10, "{h} ha dek"), Map.entry(15, "{h} ha kard"), Map.entry(20, "{h} hag ugent"), Map.entry(25, "{h} ha pemp warn-ugent"), Map.entry(30, "{h} hanter"), Map.entry(35, "{next_h} nemet pemp warn-ugent"), Map.entry(40, "{next_h} nemet ugent"), Map.entry(45, "{next_h} nemet kard"), Map.entry(50, "{next_h} nemet dek"), Map.entry(55, "{next_h} nemet pemp"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -259,7 +259,7 @@ public final class Locales {
             List.of("dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"),
             "ponoć",
             "podne",
-            Map.ofEntries(Map.entry(0, "{h} sati"), Map.entry(5, "pet po {h}"), Map.entry(10, "deset po {h}"), Map.entry(15, "petnaest po {h}"), Map.entry(20, "dvadeset po {h}"), Map.entry(25, "dvadeset pet po {h}"), Map.entry(30, "trideset po {h}"), Map.entry(35, "dvadeset pet do {next_h}"), Map.entry(40, "dvadeset do {next_h}"), Map.entry(45, "petnaest do {next_h}"), Map.entry(50, "deset do {next_h}"), Map.entry(55, "pet do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} i pet"), Map.entry(10, "{h} i deset"), Map.entry(15, "{h} i petnaest"), Map.entry(20, "{h} i dvadeset"), Map.entry(25, "{h} i dvadeset pet"), Map.entry(30, "pola {next_h}"), Map.entry(35, "dvadeset pet do {next_h}"), Map.entry(40, "dvadeset do {next_h}"), Map.entry(45, "petnaest do {next_h}"), Map.entry(50, "deset do {next_h}"), Map.entry(55, "pet do {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -272,10 +272,10 @@ public final class Locales {
     public static final TimeLocale CA = new TimeLocale(
         "ca",
         new ClockConfig(
-            List.of("dotze", "una", "dues", "tres", "quatre", "cinc", "sis", "set", "vuit", "nou", "deu", "onze"),
+            List.of("les dotze", "la una", "les dues", "les tres", "les quatre", "les cinc", "les sis", "les set", "les vuit", "les nou", "les deu", "les onze"),
             "mitjanit",
             "migdia",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "cinc past {h}"), Map.entry(10, "deu past {h}"), Map.entry(15, "un quart past {h}"), Map.entry(20, "vint past {h}"), Map.entry(25, "vint-i-cinc past {h}"), Map.entry(30, "mitja past {h}"), Map.entry(35, "vint-i-cinc to {next_h}"), Map.entry(40, "vint to {next_h}"), Map.entry(45, "un quart to {next_h}"), Map.entry(50, "deu to {next_h}"), Map.entry(55, "cinc to {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} en punt"), Map.entry(5, "{h} i cinc"), Map.entry(10, "{h} i deu"), Map.entry(15, "{h} i quart"), Map.entry(20, "{h} i vint"), Map.entry(25, "{h} i vint-i-cinc"), Map.entry(30, "{h} i mitja"), Map.entry(35, "{next_h} menys vint-i-cinc"), Map.entry(40, "{next_h} menys vint"), Map.entry(45, "{next_h} menys quart"), Map.entry(50, "{next_h} menys deu"), Map.entry(55, "{next_h} menys cinc"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -291,7 +291,7 @@ public final class Locales {
             List.of("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"),
             "nik'aj aq'a'",
             "nik'aj q'ij",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} ramaj"), Map.entry(5, "{h} ramaj rik'in wo'o'"), Map.entry(10, "{h} ramaj rik'in lajuj"), Map.entry(15, "{h} ramaj rik'in wolajuj"), Map.entry(20, "{h} ramaj rik'in juk'al"), Map.entry(25, "{h} ramaj rik'in juk'al wo'o'"), Map.entry(30, "{h} ramaj rik'in nik'aj"), Map.entry(35, "{h} ramaj rik'in juk'al wolajuj"), Map.entry(40, "{h} ramaj rik'in kak'al"), Map.entry(45, "{h} ramaj rik'in kak'al wo'o'"), Map.entry(50, "{h} ramaj rik'in kak'al lajuj"), Map.entry(55, "{h} ramaj rik'in kak'al wolajuj"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -304,10 +304,10 @@ public final class Locales {
     public static final TimeLocale CEB = new TimeLocale(
         "ceb",
         new ClockConfig(
-            List.of("dose", "uno", "dos", "tres", "kwatro", "singko", "sais", "siyete", "otso", "nuwebe", "diyes", "onse"),
+            List.of("alas dose", "ala una", "alas dos", "alas tres", "alas kwatro", "alas singko", "alas sais", "alas siyete", "alas otso", "alas nuwebe", "alas diyes", "alas onse"),
             "tungang gabii",
             "udtong tutok",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} y singko"), Map.entry(10, "{h} y diyes"), Map.entry(15, "{h} y kinse"), Map.entry(20, "{h} y beynte"), Map.entry(25, "{h} y beynte singko"), Map.entry(30, "{h} y medya"), Map.entry(35, "menos beynte singko para {next_h}"), Map.entry(40, "menos beynte para {next_h}"), Map.entry(45, "menos kinse para {next_h}"), Map.entry(50, "menos diyes para {next_h}"), Map.entry(55, "menos singko para {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -323,7 +323,7 @@ public final class Locales {
             List.of("dvanáct", "jedna", "dvě", "tři", "čtyři", "pět", "šest", "sedm", "osm", "devět", "deset", "jedenáct"),
             "půlnoc",
             "poledne",
-            Map.ofEntries(Map.entry(0, "{h} hodin"), Map.entry(5, "pět po {h}"), Map.entry(10, "deset po {h}"), Map.entry(15, "čtvrt po {h}"), Map.entry(20, "dvacet po {h}"), Map.entry(25, "dvacet pět po {h}"), Map.entry(30, "půl po {h}"), Map.entry(35, "dvacet pět do {next_h}"), Map.entry(40, "dvacet do {next_h}"), Map.entry(45, "čtvrt do {next_h}"), Map.entry(50, "deset do {next_h}"), Map.entry(55, "pět do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} nula pět"), Map.entry(10, "{h} deset"), Map.entry(15, "{h} patnáct"), Map.entry(20, "{h} dvacet"), Map.entry(25, "{h} dvacet pět"), Map.entry(30, "{h} třicet"), Map.entry(35, "za dvacet pět minut {next_h}"), Map.entry(40, "za dvacet minut {next_h}"), Map.entry(45, "za patnáct minut {next_h}"), Map.entry(50, "za deset minut {next_h}"), Map.entry(55, "za pět minut {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -339,7 +339,7 @@ public final class Locales {
             List.of("deuddeg", "un", "dau", "tri", "pedwar", "pump", "chwech", "saith", "wyth", "naw", "deg", "un ar ddeg"),
             "hanner nos",
             "hanner dydd",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} o'r gloch"), Map.entry(5, "pum munud wedi {h}"), Map.entry(10, "deg munud wedi {h}"), Map.entry(15, "chwarter wedi {h}"), Map.entry(20, "ugain munud wedi {h}"), Map.entry(25, "pum munud ar hugain wedi {h}"), Map.entry(30, "hanner awr wedi {h}"), Map.entry(35, "pum munud ar hugain i {next_h}"), Map.entry(40, "ugain munud i {next_h}"), Map.entry(45, "chwarter i {next_h}"), Map.entry(50, "deg munud i {next_h}"), Map.entry(55, "pum munud i {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -387,7 +387,7 @@ public final class Locales {
             List.of("thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök"),
             "wakɔ̈u",
             "akɔ̈l ciëŋ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "thä {h}"), Map.entry(5, "thä {h} ku minitö dhiëc"), Map.entry(10, "thä {h} ku minitö thiäär"), Map.entry(15, "thä {h} ku minitö thiäär ku dhiëc"), Map.entry(20, "thä {h} ku minitö thiärou"), Map.entry(25, "thä {h} ku minitö thiärou ku dhiëc"), Map.entry(30, "thä {h} ku minitö thiärdiäk"), Map.entry(35, "thä {h} ku minitö thiärdiäk ku dhiëc"), Map.entry(40, "thä {h} ku minitö thiärŋuan"), Map.entry(45, "thä {h} ku minitö thiärŋuan ku dhiëc"), Map.entry(50, "thä {h} ku minitö thiärdhiëc"), Map.entry(55, "thä {h} ku minitö thiärdhiëc ku dhiëc"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -400,10 +400,10 @@ public final class Locales {
     public static final TimeLocale DJE = new TimeLocale(
         "dje",
         new ClockConfig(
-            List.of("way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi"),
+            List.of("iway cindi hinka", "fo", "hinka", "hinza", "taaci", "gu", "iddu", "iyye", "ahakku", "yagga", "iway", "iway cindi fo"),
             "cin beri",
             "zaari gaaham",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "guuru {h}"), Map.entry(5, "guuru {h} nda miniti gu"), Map.entry(10, "guuru {h} nda miniti iway"), Map.entry(15, "guuru {h} nda miniti iway cindi gu"), Map.entry(20, "guuru {h} nda miniti waranka"), Map.entry(25, "guuru {h} nda miniti waranka cindi gu"), Map.entry(30, "guuru {h} nda jare"), Map.entry(35, "guuru {h} nda miniti waranza cindi gu"), Map.entry(40, "guuru {h} nda miniti waytaaci"), Map.entry(45, "guuru {h} nda miniti waytaaci cindi gu"), Map.entry(50, "guuru {h} nda miniti waygu"), Map.entry(55, "guuru {h} nda miniti waygu cindi gu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -419,7 +419,7 @@ public final class Locales {
             List.of("ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"),
             "މެންދަމު",
             "މެންދުރު",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ގަޑިން {h}"), Map.entry(5, "{h} ޖަހައި ފަސް މިނެޓު"), Map.entry(10, "{h} ޖަހައި ދިހަ މިނެޓު"), Map.entry(15, "{h} ޖަހައި ފަނަރަ މިނެޓު"), Map.entry(20, "{h} ޖަހައި ވިހި މިނެޓު"), Map.entry(25, "{h} ޖަހައި ފަންސަވީސް މިނެޓު"), Map.entry(30, "{h} ޖަހައި ބައި"), Map.entry(35, "{h} ޖަހައި ތިރީސްފަސް މިނެޓު"), Map.entry(40, "{h} ޖަހައި ސާޅީސް މިނެޓު"), Map.entry(45, "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު"), Map.entry(50, "{h} ޖަހައި ފަންސާސް މިނެޓު"), Map.entry(55, "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -435,7 +435,7 @@ public final class Locales {
             List.of("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
             "dugutilama",
             "tilgari",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "lɛrɛ {h}"), Map.entry(5, "lɛrɛ {h} ni miniti duuru"), Map.entry(10, "lɛrɛ {h} ni miniti tan"), Map.entry(15, "lɛrɛ {h} ni miniti tan ni duuru"), Map.entry(20, "lɛrɛ {h} ni miniti mugan"), Map.entry(25, "lɛrɛ {h} ni miniti mugan ni duuru"), Map.entry(30, "lɛrɛ {h} ni tilancɛ"), Map.entry(35, "lɛrɛ {h} ni miniti bi saba ni duuru"), Map.entry(40, "lɛrɛ {h} ni miniti bi naani"), Map.entry(45, "lɛrɛ {h} ni miniti bi naani ni duuru"), Map.entry(50, "lɛrɛ {h} ni miniti bi duuru"), Map.entry(55, "lɛrɛ {h} ni miniti bi duuru ni duuru"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -451,7 +451,7 @@ public final class Locales {
             List.of("བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"),
             "ནམ་ཕྱེད",
             "ཉིན་གུང",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ཆུ་ཚོད་{h}"), Map.entry(5, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ"), Map.entry(10, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ"), Map.entry(15, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ"), Map.entry(20, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ"), Map.entry(25, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ"), Map.entry(30, "ཆུ་ཚོད་{h}་དང་ཕྱེད"), Map.entry(35, "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ"), Map.entry(40, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ"), Map.entry(45, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ"), Map.entry(50, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ"), Map.entry(55, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -467,7 +467,7 @@ public final class Locales {
             List.of("wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"),
             "zã titina",
             "ŋdɔ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ga {h}"), Map.entry(5, "ga {h} kple aɖabaƒoƒo atɔ̃"), Map.entry(10, "ga {h} kple aɖabaƒoƒo ewo"), Map.entry(15, "ga {h} kple aɖabaƒoƒo wuiatɔ̃"), Map.entry(20, "ga {h} kple aɖabaƒoƒo blaeve"), Map.entry(25, "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃"), Map.entry(30, "ga {h} kple afã"), Map.entry(35, "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃"), Map.entry(40, "ga {h} kple aɖabaƒoƒo blaene"), Map.entry(45, "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃"), Map.entry(50, "ga {h} kple aɖabaƒoƒo blaatɔ̃"), Map.entry(55, "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -531,7 +531,7 @@ public final class Locales {
             List.of("kaksteist", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist"),
             "kesköö",
             "keskpäev",
-            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "viis efter {h}"), Map.entry(10, "kümme efter {h}"), Map.entry(15, "veerand efter {h}"), Map.entry(20, "kakskümmend efter {h}"), Map.entry(25, "kakskümmend viis efter {h}"), Map.entry(30, "pool efter {h}"), Map.entry(35, "kakskümmend viis enne {next_h}"), Map.entry(40, "kakskümmend enne {next_h}"), Map.entry(45, "veerand enne {next_h}"), Map.entry(50, "kümme enne {next_h}"), Map.entry(55, "viis enne {next_h}"))
+            Map.ofEntries(Map.entry(0, "kell {h}"), Map.entry(5, "viis minutit {h} läbi"), Map.entry(10, "kümme minutit {h} läbi"), Map.entry(15, "veerand {next_h}"), Map.entry(20, "kakskümmend minutit {h} läbi"), Map.entry(25, "kakskümmend viis minutit {h} läbi"), Map.entry(30, "pool {next_h}"), Map.entry(35, "kolmkümmend viis minutit {h} läbi"), Map.entry(40, "kahekümne minuti pärast {next_h}"), Map.entry(45, "kolmveerand {next_h}"), Map.entry(50, "kümne minuti pärast {next_h}"), Map.entry(55, "viie minuti pärast {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -544,10 +544,10 @@ public final class Locales {
     public static final TimeLocale EU = new TimeLocale(
         "eu",
         new ClockConfig(
-            List.of("hamabi", "bat", "bi", "hiru", "lau", "bost", "sei", "zazpi", "zortzi", "bederatzi", "hamar", "hamaika"),
+            List.of("hamabiak", "ordu bata", "ordu biak", "hirurak", "laurak", "bostak", "seiak", "zazpiak", "zortziak", "bederatziak", "hamarrak", "hamaikak"),
             "gauerdia",
             "eguerdia",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} eta bost"), Map.entry(10, "{h} eta hamar"), Map.entry(15, "{h} eta laurden"), Map.entry(20, "{h} eta hogei"), Map.entry(25, "{h} eta hogeita bost"), Map.entry(30, "{h} eta erdiak"), Map.entry(35, "{next_h} hogeita bost gutxi"), Map.entry(40, "{next_h} hogei gutxi"), Map.entry(45, "{next_h} laurden gutxi"), Map.entry(50, "{next_h} hamar gutxi"), Map.entry(55, "{next_h} bost gutxi"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -579,7 +579,7 @@ public final class Locales {
             List.of("awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"),
             "akiri alúk",
             "ewaŋ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "awola {h}"), Map.entry(5, "awola {h} ai minit tán"), Map.entry(10, "awola {h} ai minit awom"), Map.entry(15, "awola {h} ai minit awom ai tán"), Map.entry(20, "awola {h} ai minit mewom mebú"), Map.entry(25, "awola {h} ai minit mewom mebú ai tán"), Map.entry(30, "awola {h} ai minit mewom melaa"), Map.entry(35, "awola {h} ai minit mewom melaa ai tán"), Map.entry(40, "awola {h} ai minit mewom menyin"), Map.entry(45, "awola {h} ai minit mewom menyin ai tán"), Map.entry(50, "awola {h} ai minit mewom metán"), Map.entry(55, "awola {h} ai minit mewom metán ai tán"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -595,7 +595,7 @@ public final class Locales {
             List.of("sappo e ɗiɗi", "go'o", "ɗiɗi", "tati", "nay", "joy", "jeegom", "jeeɗiɗi", "jeetati", "jeenay", "sappo", "sappo e go'o"),
             "jamma hejjere",
             "zuhr",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "waktu {h}"), Map.entry(5, "waktu {h} e hojomaaje joy"), Map.entry(10, "waktu {h} e hojomaaje sappo"), Map.entry(15, "waktu {h} e hojomaaje sappo e joy"), Map.entry(20, "waktu {h} e hojomaaje noogas"), Map.entry(25, "waktu {h} e hojomaaje noogas e joy"), Map.entry(30, "waktu {h} e feccere"), Map.entry(35, "waktu {h} e hojomaaje cappanɗe tati e joy"), Map.entry(40, "waktu {h} e hojomaaje cappanɗe nay"), Map.entry(45, "waktu {h} e hojomaaje cappanɗe nay e joy"), Map.entry(50, "waktu {h} e hojomaaje cappanɗe joy"), Map.entry(55, "waktu {h} e hojomaaje cappanɗe joy e joy"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -611,7 +611,7 @@ public final class Locales {
             List.of("kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista"),
             "keskiyö",
             "keskipäivä",
-            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "viisi yli {h}"), Map.entry(10, "kymmenen yli {h}"), Map.entry(15, "vartti yli {h}"), Map.entry(20, "kaksikymmentä yli {h}"), Map.entry(25, "kaksikymmentäviisi yli {h}"), Map.entry(30, "puoli yli {h}"), Map.entry(35, "kaksikymmentäviisi vaille {next_h}"), Map.entry(40, "kaksikymmentä vaille {next_h}"), Map.entry(45, "vartti vaille {next_h}"), Map.entry(50, "kymmenen vaille {next_h}"), Map.entry(55, "viisi vaille {next_h}"))
+            Map.ofEntries(Map.entry(0, "kello {h}"), Map.entry(5, "viisi yli {h}"), Map.entry(10, "kymmenen yli {h}"), Map.entry(15, "vartti yli {h}"), Map.entry(20, "kaksikymmentä yli {h}"), Map.entry(25, "kaksikymmentäviisi yli {h}"), Map.entry(30, "puoli {next_h}"), Map.entry(35, "kaksikymmentäviisi vaille {next_h}"), Map.entry(40, "kaksikymmentä vaille {next_h}"), Map.entry(45, "vartti vaille {next_h}"), Map.entry(50, "kymmenen vaille {next_h}"), Map.entry(55, "viisi vaille {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}"))
@@ -624,10 +624,10 @@ public final class Locales {
     public static final TimeLocale FIL = new TimeLocale(
         "fil",
         new ClockConfig(
-            List.of("dose", "una", "dos", "tres", "kwatro", "singko", "seis", "syete", "otso", "nuwebe", "diyes", "onse"),
+            List.of("alas-dose", "ala-una", "alas-dos", "alas-tres", "alas-kuwatro", "alas-singko", "alas-sais", "alas-siyete", "alas-otso", "alas-nuwebe", "alas-diyes", "alas-onse"),
             "hatinggabi",
             "tanghali",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "lima dan {h}"), Map.entry(10, "sampu dan {h}"), Map.entry(15, "labinlima dan {h}"), Map.entry(20, "dalawampu dan {h}"), Map.entry(25, "dalawampu't lima dan {h}"), Map.entry(30, "tatlumpu dan {h}"), Map.entry(35, "dalawampu't lima bago mag {next_h}"), Map.entry(40, "dalawampu bago mag {next_h}"), Map.entry(45, "labinlima bago mag {next_h}"), Map.entry(50, "sampu bago mag {next_h}"), Map.entry(55, "lima bago mag {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} y singko"), Map.entry(10, "{h} y diyes"), Map.entry(15, "{h} y kinse"), Map.entry(20, "{h} y beynte"), Map.entry(25, "{h} y beynte singko"), Map.entry(30, "{h} y medya"), Map.entry(35, "menos beynte singko para {next_h}"), Map.entry(40, "menos beynte para {next_h}"), Map.entry(45, "menos kinse para {next_h}"), Map.entry(50, "menos diyes para {next_h}"), Map.entry(55, "menos singko para {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -643,7 +643,7 @@ public final class Locales {
             List.of("tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"),
             "bogi levu",
             "sigalevu",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} na kaloko"), Map.entry(5, "{h} na kaloko ka lima na miniti"), Map.entry(10, "{h} na kaloko ka tini na miniti"), Map.entry(15, "{h} na kaloko ka tini ka lima na miniti"), Map.entry(20, "{h} na kaloko ka ruasagavulu na miniti"), Map.entry(25, "{h} na kaloko ka ruasagavulu ka lima na miniti"), Map.entry(30, "{h} na kaloko ka tolusagavulu na miniti"), Map.entry(35, "{h} na kaloko ka tolusagavulu ka lima na miniti"), Map.entry(40, "{h} na kaloko ka vāsagavulu na miniti"), Map.entry(45, "{h} na kaloko ka vāsagavulu ka lima na miniti"), Map.entry(50, "{h} na kaloko ka limasagavulu na miniti"), Map.entry(55, "{h} na kaloko ka limasagavulu ka lima na miniti"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -656,10 +656,10 @@ public final class Locales {
     public static final TimeLocale FON = new TimeLocale(
         "fon",
         new ClockConfig(
-            List.of("wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ"),
+            List.of("wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "wěɖokpo"),
             "zǎnmɛ",
             "hwemɛnu",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "gan {h}"), Map.entry(5, "gan {h} kpo cɛju atɔ́ɔ́n kpo"), Map.entry(10, "gan {h} kpo cɛju wǒ kpo"), Map.entry(15, "gan {h} kpo cɛju afɔtɔ́n kpo"), Map.entry(20, "gan {h} kpo cɛju ko kpo"), Map.entry(25, "gan {h} kpo cɛju koatɔ́ɔ́n kpo"), Map.entry(30, "gan {h} kpo cɛju gban kpo"), Map.entry(35, "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo"), Map.entry(40, "gan {h} kpo cɛju kanɖé kpo"), Map.entry(45, "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo"), Map.entry(50, "gan {h} kpo cɛju kanɖéwǒ kpo"), Map.entry(55, "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -691,7 +691,7 @@ public final class Locales {
             List.of("dó dhéag", "haon", "dó", "trí", "ceathair", "cúig", "sé", "seacht", "hocht", "naoi", "deich", "haon déag"),
             "meán oíche",
             "meán lae",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "a {h} a chlog"), Map.entry(5, "cúig tar éis a {h}"), Map.entry(10, "deich tar éis a {h}"), Map.entry(15, "ceathrú tar éis a {h}"), Map.entry(20, "fiche tar éis a {h}"), Map.entry(25, "fiche cúig tar éis a {h}"), Map.entry(30, "leathuair tar éis a {h}"), Map.entry(35, "fiche cúig chun a {next_h}"), Map.entry(40, "fiche chun a {next_h}"), Map.entry(45, "ceathrú chun a {next_h}"), Map.entry(50, "deich chun a {next_h}"), Map.entry(55, "cúig chun a {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -704,10 +704,10 @@ public final class Locales {
     public static final TimeLocale GD = new TimeLocale(
         "gd",
         new ClockConfig(
-            List.of("dà-dheug", "aon", "dà", "trì", "ceithir", "còig", "sia", "seachd", "ochd", "naoi", "deich", "aon-deug"),
+            List.of("dà uair dheug", "uair", "dà uair", "trì uairean", "ceithir uairean", "còig uairean", "sia uairean", "seachd uairean", "ochd uairean", "naoi uairean", "deich uairean", "aon uair deug"),
             "meadhan-oidhche",
             "meadhan-latha",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "còig mionaidean an dèidh {h}"), Map.entry(10, "deich mionaidean an dèidh {h}"), Map.entry(15, "cairteal an dèidh {h}"), Map.entry(20, "fichead mionaid an dèidh {h}"), Map.entry(25, "còig mionaidean fichead an dèidh {h}"), Map.entry(30, "leth-uair an dèidh {h}"), Map.entry(35, "còig mionaidean fichead gu {next_h}"), Map.entry(40, "fichead mionaid gu {next_h}"), Map.entry(45, "cairteal gu {next_h}"), Map.entry(50, "deich mionaidean gu {next_h}"), Map.entry(55, "còig mionaidean gu {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -737,9 +737,9 @@ public final class Locales {
         "gn",
         new ClockConfig(
             List.of("pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"),
-            "pyhareve",
+            "pyharepyte",
             "asaje",
-            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} ha po"), Map.entry(10, "{h} ha pa"), Map.entry(15, "{h} ha pa po"), Map.entry(20, "{h} ha mokõi pa"), Map.entry(25, "{h} ha mokõi pa po"), Map.entry(30, "{h} ha mbohapy pa"), Map.entry(35, "{next_h} mba'e mokõi pa po"), Map.entry(40, "{next_h} mba'e mokõi pa"), Map.entry(45, "{next_h} mba'e pa po"), Map.entry(50, "{next_h} mba'e pa"), Map.entry(55, "{next_h} mba'e po"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} ha po"), Map.entry(10, "{h} ha pa"), Map.entry(15, "{h} ha pa po"), Map.entry(20, "{h} ha mokõi pa"), Map.entry(25, "{h} ha mokõi pa po"), Map.entry(30, "{h} ha mbohapy pa"), Map.entry(35, "{h} ha mbohapy pa po"), Map.entry(40, "{h} ha irundy pa"), Map.entry(45, "{h} ha irundy pa po"), Map.entry(50, "{h} ha po pa"), Map.entry(55, "{h} ha po pa po"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -754,8 +754,8 @@ public final class Locales {
         new ClockConfig(
             List.of("બાર", "એક", "બે", "ત્રણ", "ચાર", "પાંચ", "છ", "સાત", "આઠ", "નવ", "દસ", "અગિયાર"),
             "મધ્યરાત્રિ",
-            "બપોર",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "બપોરે બાર વાગ્યે",
+            Map.ofEntries(Map.entry(0, "{h} વાગ્યે"), Map.entry(5, "{h} વાગીને પાંચ મિનિટ"), Map.entry(10, "{h} વાગીને દસ મિનિટ"), Map.entry(15, "સવા {h}"), Map.entry(20, "{h} વાગીને વીસ મિનિટ"), Map.entry(25, "{h} વાગીને પચીસ મિનિટ"), Map.entry(30, "{h} વાગીને ત્રીસ મિનિટ"), Map.entry(35, "{h} વાગીને પાંત્રીસ મિનિટ"), Map.entry(40, "{h} વાગીને ચાલીસ મિનિટ"), Map.entry(45, "પોણા {next_h}"), Map.entry(50, "{next_h} વાગવામાં દસ મિનિટ"), Map.entry(55, "{next_h} વાગવામાં પાંચ મિનિટ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -768,10 +768,10 @@ public final class Locales {
     public static final TimeLocale GV = new TimeLocale(
         "gv",
         new ClockConfig(
-            List.of("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            List.of("daa-yeig", "nane", "jees", "tree", "kiare", "queig", "shey", "shiaght", "hoght", "nuy", "jeih", "nane-jeig"),
             "mean oie",
             "munlaa",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} er y chlag"), Map.entry(5, "queig minnidyn lurg {h}"), Map.entry(10, "jeih minnidyn lurg {h}"), Map.entry(15, "kerroo lurg {h}"), Map.entry(20, "feed minnid lurg {h}"), Map.entry(25, "queig minnidyn as feed lurg {h}"), Map.entry(30, "lieh-oor lurg {h}"), Map.entry(35, "queig minnidyn as feed gys {next_h}"), Map.entry(40, "feed minnid gys {next_h}"), Map.entry(45, "kerroo gys {next_h}"), Map.entry(50, "jeih minnidyn gys {next_h}"), Map.entry(55, "queig minnidyn gys {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -784,10 +784,10 @@ public final class Locales {
     public static final TimeLocale HA = new TimeLocale(
         "ha",
         new ClockConfig(
-            List.of("sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "goma sha ɗaya"),
+            List.of("sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "sha ɗaya"),
             "tsakar dare",
             "tsakar rana",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ƙarfe {h}"), Map.entry(5, "ƙarfe {h} da minti biyar"), Map.entry(10, "ƙarfe {h} da minti goma"), Map.entry(15, "ƙarfe {h} da kwata"), Map.entry(20, "ƙarfe {h} da minti ashirin"), Map.entry(25, "ƙarfe {h} da minti ashirin da biyar"), Map.entry(30, "ƙarfe {h} da rabi"), Map.entry(35, "ƙarfe {next_h} saura minti ashirin da biyar"), Map.entry(40, "ƙarfe {next_h} saura minti ashirin"), Map.entry(45, "ƙarfe {next_h} saura kwata"), Map.entry(50, "ƙarfe {next_h} saura minti goma"), Map.entry(55, "ƙarfe {next_h} saura minti biyar"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -818,8 +818,8 @@ public final class Locales {
         new ClockConfig(
             List.of("बारह", "एक", "दो", "तीन", "चार", "पाँच", "छह", "सात", "आठ", "नौ", "दस", "ग्यारह"),
             "आधी रात",
-            "दोपहर",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "दोपहर के बारह बजे",
+            Map.ofEntries(Map.entry(0, "{h} बजे"), Map.entry(5, "{h} बजकर पाँच मिनट"), Map.entry(10, "{h} बजकर दस मिनट"), Map.entry(15, "सवा {h} बजे"), Map.entry(20, "{h} बजकर बीस मिनट"), Map.entry(25, "{h} बजकर पच्चीस मिनट"), Map.entry(30, "{h} बजकर तीस मिनट"), Map.entry(35, "{h} बजकर पैंतीस मिनट"), Map.entry(40, "{h} बजकर चालीस मिनट"), Map.entry(45, "पौने {next_h} बजे"), Map.entry(50, "{next_h} बजने में दस मिनट"), Map.entry(55, "{next_h} बजने में पाँच मिनट"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -835,7 +835,7 @@ public final class Locales {
             List.of("kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"),
             "ib tag hmo",
             "tav su",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} teev"), Map.entry(5, "{h} teev tsib feeb"), Map.entry(10, "{h} teev kaum feeb"), Map.entry(15, "{h} teev kaum tsib feeb"), Map.entry(20, "{h} teev nees nkaum feeb"), Map.entry(25, "{h} teev nees nkaum tsib feeb"), Map.entry(30, "{h} teev ib nrab"), Map.entry(35, "{h} teev peb caug tsib feeb"), Map.entry(40, "{h} teev plaub caug feeb"), Map.entry(45, "{h} teev plaub caug tsib feeb"), Map.entry(50, "{h} teev tsib caug feeb"), Map.entry(55, "{h} teev tsib caug tsib feeb"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -851,7 +851,7 @@ public final class Locales {
             List.of("dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"),
             "ponoć",
             "podne",
-            Map.ofEntries(Map.entry(0, "{h} sati"), Map.entry(5, "pet po {h}"), Map.entry(10, "deset po {h}"), Map.entry(15, "petnaest po {h}"), Map.entry(20, "dvadeset po {h}"), Map.entry(25, "dvadeset pet po {h}"), Map.entry(30, "trideset po {h}"), Map.entry(35, "dvadeset pet do {next_h}"), Map.entry(40, "dvadeset do {next_h}"), Map.entry(45, "petnaest do {next_h}"), Map.entry(50, "deset do {next_h}"), Map.entry(55, "pet do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} i pet"), Map.entry(10, "{h} i deset"), Map.entry(15, "{h} i petnaest"), Map.entry(20, "{h} i dvadeset"), Map.entry(25, "{h} i dvadeset pet"), Map.entry(30, "pola {next_h}"), Map.entry(35, "dvadeset pet do {next_h}"), Map.entry(40, "dvadeset do {next_h}"), Map.entry(45, "petnaest do {next_h}"), Map.entry(50, "deset do {next_h}"), Map.entry(55, "pet do {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -864,10 +864,10 @@ public final class Locales {
     public static final TimeLocale HT = new TimeLocale(
         "ht",
         new ClockConfig(
-            List.of("douz", "en", "de", "twa", "kat", "senk", "sis", "sèt", "uit", "nèf", "dis", "onz"),
-            "minui",
+            List.of("douzè", "inè", "dezè", "twazè", "katrè", "senkè", "sizè", "setè", "uitè", "nevè", "dizè", "onzè"),
+            "minwi",
             "midi",
-            Map.ofEntries(Map.entry(0, "{h} è"), Map.entry(5, "{h} è senk"), Map.entry(10, "{h} è dis"), Map.entry(15, "{h} è ka"), Map.entry(20, "{h} è ven"), Map.entry(25, "{h} è vennsenk"), Map.entry(30, "{h} è demi"), Map.entry(35, "{next_h} mwen vennsenk"), Map.entry(40, "{next_h} mwen ven"), Map.entry(45, "{next_h} mwen ka"), Map.entry(50, "{next_h} mwen dis"), Map.entry(55, "{next_h} mwen senk"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} senk"), Map.entry(10, "{h} dis"), Map.entry(15, "{h} e ka"), Map.entry(20, "{h} ven"), Map.entry(25, "{h} vennsenk"), Map.entry(30, "{h} edmi"), Map.entry(35, "{next_h} mwen vennsenk"), Map.entry(40, "{next_h} mwen ven"), Map.entry(45, "{next_h} mwen ka"), Map.entry(50, "{next_h} mwen dis"), Map.entry(55, "{next_h} mwen senk"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -883,7 +883,7 @@ public final class Locales {
             List.of("tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy"),
             "éjfél",
             "dél",
-            Map.ofEntries(Map.entry(0, "{h} óra"), Map.entry(5, "öt múlt {h}"), Map.entry(10, "tíz múlt {h}"), Map.entry(15, "negyed múlt {h}"), Map.entry(20, "húsz múlt {h}"), Map.entry(25, "huszonöt múlt {h}"), Map.entry(30, "fél múlt {h}"), Map.entry(35, "huszonöt múlva {next_h}"), Map.entry(40, "húsz múlva {next_h}"), Map.entry(45, "negyed múlva {next_h}"), Map.entry(50, "tíz múlva {next_h}"), Map.entry(55, "öt múlva {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} óra"), Map.entry(5, "öt perccel múlt {h}"), Map.entry(10, "tíz perccel múlt {h}"), Map.entry(15, "negyed {next_h}"), Map.entry(20, "húsz perccel múlt {h}"), Map.entry(25, "öt perc múlva fél {next_h}"), Map.entry(30, "fél {next_h}"), Map.entry(35, "öt perccel múlt fél {next_h}"), Map.entry(40, "húsz perc múlva {next_h}"), Map.entry(45, "háromnegyed {next_h}"), Map.entry(50, "tíz perc múlva {next_h}"), Map.entry(55, "öt perc múlva {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -896,10 +896,10 @@ public final class Locales {
     public static final TimeLocale HY = new TimeLocale(
         "hy",
         new ClockConfig(
-            List.of("տասներկու", "մեկ", "երկու", "երեք", "չորս", "հինգ", "վեց", "յոթ", "ութ", "ինը", "տաս", "տասնմեկ"),
+            List.of("տասներկուսն", "մեկն", "երկուսն", "երեքն", "չորսն", "հինգն", "վեցն", "յոթն", "ութն", "ինն", "տասն", "տասնմեկն"),
             "կեսգիշեր",
             "կեսօր",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ժամը {h} է"), Map.entry(5, "{h} անց հինգ"), Map.entry(10, "{h} անց տասը"), Map.entry(15, "{h} անց տասնհինգ"), Map.entry(20, "{h} անց քսան"), Map.entry(25, "{h} անց քսանհինգ"), Map.entry(30, "{h} անց կես"), Map.entry(35, "{h} անց երեսունհինգ"), Map.entry(40, "{h} անց քառասուն"), Map.entry(45, "{h} անց քառասունհինգ"), Map.entry(50, "{h} անց հիսուն"), Map.entry(55, "{h} անց հիսունհինգ"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -915,7 +915,7 @@ public final class Locales {
             List.of("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"),
             "tengah malam",
             "tengah hari",
-            Map.ofEntries(Map.entry(0, "pukul {h}"), Map.entry(5, "lima lewat {h}"), Map.entry(10, "sepuluh lewat {h}"), Map.entry(15, "seperempat lewat {h}"), Map.entry(20, "dua puluh lewat {h}"), Map.entry(25, "dua puluh lima lewat {h}"), Map.entry(30, "setengah lewat {h}"), Map.entry(35, "dua puluh lima menjelang {next_h}"), Map.entry(40, "dua puluh menjelang {next_h}"), Map.entry(45, "seperempat menjelang {next_h}"), Map.entry(50, "sepuluh menjelang {next_h}"), Map.entry(55, "lima menjelang {next_h}"))
+            Map.ofEntries(Map.entry(0, "pukul {h}"), Map.entry(5, "pukul {h} lewat lima"), Map.entry(10, "pukul {h} lewat sepuluh"), Map.entry(15, "pukul {h} lewat seperempat"), Map.entry(20, "pukul {h} lewat dua puluh"), Map.entry(25, "pukul {h} lewat dua puluh lima"), Map.entry(30, "pukul setengah {next_h}"), Map.entry(35, "pukul {next_h} kurang dua puluh lima"), Map.entry(40, "pukul {next_h} kurang dua puluh"), Map.entry(45, "pukul {next_h} kurang seperempat"), Map.entry(50, "pukul {next_h} kurang sepuluh"), Map.entry(55, "pukul {next_h} kurang lima"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}"))
@@ -930,8 +930,8 @@ public final class Locales {
         new ClockConfig(
             List.of("iri na abụọ", "otu", "abụọ", "atọ", "anọ", "ise", "isii", "asaa", "asatọ", "itoolu", "iri", "iri na otu"),
             "etiti abalị",
-            "ehihie",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "etiti ehihie",
+            Map.ofEntries(Map.entry(0, "elekere {h}"), Map.entry(5, "elekere {h} na nkeji ise"), Map.entry(10, "elekere {h} na nkeji iri"), Map.entry(15, "elekere {h} na nkeji iri na ise"), Map.entry(20, "elekere {h} na nkeji iri abụọ"), Map.entry(25, "elekere {h} na nkeji iri abụọ na ise"), Map.entry(30, "elekere {h} na ọkara"), Map.entry(35, "elekere {h} na nkeji iri atọ na ise"), Map.entry(40, "elekere {h} na nkeji iri anọ"), Map.entry(45, "elekere {h} na nkeji iri anọ na ise"), Map.entry(50, "elekere {h} na nkeji iri ise"), Map.entry(55, "elekere {h} na nkeji iri ise na ise"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -960,10 +960,10 @@ public final class Locales {
     public static final TimeLocale IT = new TimeLocale(
         "it",
         new ClockConfig(
-            List.of("dodici", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici"),
+            List.of("le dodici", "l'una", "le due", "le tre", "le quattro", "le cinque", "le sei", "le sette", "le otto", "le nove", "le dieci", "le undici"),
             "mezzanotte",
             "mezzogiorno",
-            Map.ofEntries(Map.entry(0, "le {h}"), Map.entry(5, "{h} e cinque"), Map.entry(10, "{h} e dieci"), Map.entry(15, "{h} e un quarto"), Map.entry(20, "{h} e venti"), Map.entry(25, "{h} e venticinque"), Map.entry(30, "{h} e mezza"), Map.entry(35, "{next_h} meno venticinque"), Map.entry(40, "{next_h} meno venti"), Map.entry(45, "{next_h} meno un quarto"), Map.entry(50, "{next_h} meno dieci"), Map.entry(55, "{next_h} meno cinque"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} e cinque"), Map.entry(10, "{h} e dieci"), Map.entry(15, "{h} e un quarto"), Map.entry(20, "{h} e venti"), Map.entry(25, "{h} e venticinque"), Map.entry(30, "{h} e mezza"), Map.entry(35, "{next_h} meno venticinque"), Map.entry(40, "{next_h} meno venti"), Map.entry(45, "{next_h} meno un quarto"), Map.entry(50, "{next_h} meno dieci"), Map.entry(55, "{next_h} meno cinque"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -994,8 +994,8 @@ public final class Locales {
         new ClockConfig(
             List.of("rolas", "siji", "loro", "telu", "papat", "lima", "enem", "pitu", "wolu", "sanga", "sepuluh", "sewelas"),
             "tengah wengi",
-            "awan",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "tengah awan",
+            Map.ofEntries(Map.entry(0, "jam {h}"), Map.entry(5, "jam {h} luwih limang menit"), Map.entry(10, "jam {h} luwih sepuluh menit"), Map.entry(15, "jam {h} luwih seprapat"), Map.entry(20, "jam {h} luwih rong puluh menit"), Map.entry(25, "jam {h} luwih selawé menit"), Map.entry(30, "jam setengah {next_h}"), Map.entry(35, "jam {next_h} kurang selawé menit"), Map.entry(40, "jam {next_h} kurang rong puluh menit"), Map.entry(45, "jam {next_h} kurang seprapat"), Map.entry(50, "jam {next_h} kurang sepuluh menit"), Map.entry(55, "jam {next_h} kurang limang menit"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1011,7 +1011,7 @@ public final class Locales {
             List.of("თორმეტი", "ერთი", "ორი", "სამი", "ოთხი", "ხუთი", "ექვსი", "შვიდი", "რვა", "ცხრა", "ათი", "თერთმეტი"),
             "შუაღამე",
             "შუადღე",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "ხუთი past {h}"), Map.entry(10, "ათი past {h}"), Map.entry(15, "თხუთმეტი past {h}"), Map.entry(20, "ოცი past {h}"), Map.entry(25, "ოცდახუთი past {h}"), Map.entry(30, "ოცდაათი past {h}"), Map.entry(35, "ოცდახუთი to {next_h}"), Map.entry(40, "ოცი to {next_h}"), Map.entry(45, "თხუთმეტი to {next_h}"), Map.entry(50, "ათი to {next_h}"), Map.entry(55, "ხუთი to {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} საათი"), Map.entry(5, "{h} საათი და ხუთი წუთი"), Map.entry(10, "{h} საათი და ათი წუთი"), Map.entry(15, "{h} საათი და თხუთმეტი წუთი"), Map.entry(20, "{h} საათი და ოცი წუთი"), Map.entry(25, "{h} საათი და ოცდახუთი წუთი"), Map.entry(30, "{h} საათი და ოცდაათი წუთი"), Map.entry(35, "{h} საათი და ოცდათხუთმეტი წუთი"), Map.entry(40, "{h} საათი და ორმოცი წუთი"), Map.entry(45, "{h} საათი და ორმოცდახუთი წუთი"), Map.entry(50, "{h} საათი და ორმოცდაათი წუთი"), Map.entry(55, "{h} საათი და ორმოცდათხუთმეტი წუთი"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1027,7 +1027,7 @@ public final class Locales {
             List.of("hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"),
             "ɖoo hɛkʊ",
             "wɩsɩ taa",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ñɩɣyʊʊ {h}"), Map.entry(5, "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ"), Map.entry(10, "ñɩɣyʊʊ {h} nɛ miniti hiu"), Map.entry(15, "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ"), Map.entry(20, "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ"), Map.entry(25, "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ"), Map.entry(30, "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ"), Map.entry(35, "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ"), Map.entry(40, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza"), Map.entry(45, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ"), Map.entry(50, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa"), Map.entry(55, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1040,10 +1040,10 @@ public final class Locales {
     public static final TimeLocale KEK = new TimeLocale(
         "kek",
         new ClockConfig(
-            List.of("kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"),
+            List.of("kab'laju", "jun", "kiib'", "oxib'", "kaahib'", "oob'", "waqib'", "wuqub'", "waqxaqib'", "b'eleeb'", "lajeeb'", "junlaju"),
             "chaq' xkab'",
             "chaq' chaab'il",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} hoonal"), Map.entry(5, "{h} hoonal rik'in oob' minuut"), Map.entry(10, "{h} hoonal rik'in lajeeb' minuut"), Map.entry(15, "{h} hoonal rik'in o'laju minuut"), Map.entry(20, "{h} hoonal rik'in junmay minuut"), Map.entry(25, "{h} hoonal rik'in oob' xkak'aal minuut"), Map.entry(30, "{h} hoonal rik'in yijach"), Map.entry(35, "{h} hoonal rik'in o'laju xkak'aal minuut"), Map.entry(40, "{h} hoonal rik'in kaak'aal minuut"), Map.entry(45, "{h} hoonal rik'in oob' roxk'aal minuut"), Map.entry(50, "{h} hoonal rik'in lajeeb' roxk'aal minuut"), Map.entry(55, "{h} hoonal rik'in o'laju roxk'aal minuut"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1056,10 +1056,10 @@ public final class Locales {
     public static final TimeLocale KI = new TimeLocale(
         "ki",
         new ClockConfig(
-            List.of("ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe"),
+            List.of("ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe", "ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano"),
             "ũtukũ gatagatĩ",
             "mũthenya gatagatĩ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "thaa {h}"), Map.entry(5, "thaa {h} na ndagĩka ithano"), Map.entry(10, "thaa {h} na ndagĩka ikũmi"), Map.entry(15, "thaa {h} na ndagĩka ikũmi na ithano"), Map.entry(20, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ"), Map.entry(25, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano"), Map.entry(30, "thaa {h} na nuthu"), Map.entry(35, "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano"), Map.entry(40, "thaa {h} na ndagĩka mĩrongo ĩna"), Map.entry(45, "thaa {h} na ndagĩka mĩrongo ĩna na ithano"), Map.entry(50, "thaa {h} na ndagĩka mĩrongo ĩtano"), Map.entry(55, "thaa {h} na ndagĩka mĩrongo ĩtano na ithano"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, new String[]{"Kiroko", "Hwaĩ-inĩ"}, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1075,7 +1075,7 @@ public final class Locales {
             List.of("он екі", "бір", "екі", "үш", "төрт", "бес", "алты", "жеті", "сегіз", "тоғыз", "он", "он бір"),
             "түн ортасы",
             "түс",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "бес past {h}"), Map.entry(10, "он past {h}"), Map.entry(15, "он бес past {h}"), Map.entry(20, "жиырма past {h}"), Map.entry(25, "жиырма бес past {h}"), Map.entry(30, "отыз past {h}"), Map.entry(35, "жиырма бес to {next_h}"), Map.entry(40, "жиырма to {next_h}"), Map.entry(45, "он бес to {next_h}"), Map.entry(50, "он to {next_h}"), Map.entry(55, "бес to {next_h}"))
+            Map.ofEntries(Map.entry(0, "сағат {h}"), Map.entry(5, "{h} нөл бес"), Map.entry(10, "{h} он"), Map.entry(15, "{h} он бес"), Map.entry(20, "{h} жиырма"), Map.entry(25, "{h} жиырма бес"), Map.entry(30, "{h} жарым"), Map.entry(35, "{h} отыз бес"), Map.entry(40, "{h} қырық"), Map.entry(45, "{h} қырық бес"), Map.entry(50, "{h} елу"), Map.entry(55, "{h} елу бес"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1088,10 +1088,10 @@ public final class Locales {
     public static final TimeLocale KL = new TimeLocale(
         "kl",
         new ClockConfig(
-            List.of("akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"),
+            List.of("aqqaneq-marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "aqqaneq-ataaseq"),
             "unnuap qeqqa",
             "ulloqeqqap qeqqa",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "nalunaaqutaq {h}"), Map.entry(5, "{h} qaangiullugu minutsit tallimat"), Map.entry(10, "{h} qaangiullugu minutsit qulit"), Map.entry(15, "{h} qaangiullugu minutsit aqqaneq-tallimat"), Map.entry(20, "{h} qaangiullugu minutsit marlunnik qulillit"), Map.entry(25, "{h} qaangiullugu minutsit marlunnik qulillit tallimallu"), Map.entry(30, "{h} affarlu"), Map.entry(35, "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu"), Map.entry(40, "{next_h} sioqqullugu minutsit marlunnik qulillit"), Map.entry(45, "{next_h} sioqqullugu minutsit aqqaneq-tallimat"), Map.entry(50, "{next_h} sioqqullugu minutsit qulit"), Map.entry(55, "{next_h} sioqqullugu minutsit tallimat"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}"))
@@ -1107,7 +1107,7 @@ public final class Locales {
             List.of("ដប់ពីរ", "មួយ", "ពីរ", "បី", "បួន", "ប្រាំ", "ប្រាំមួយ", "ប្រាំពីរ", "ប្រាំបី", "ប្រាំបួន", "ដប់", "ដប់មួយ"),
             "កណ្ដាលអធ្រាត្រ",
             "ថ្ងៃត្រង់",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ម៉ោង{h}"), Map.entry(5, "ម៉ោង{h} ប្រាំនាទី"), Map.entry(10, "ម៉ោង{h} ដប់នាទី"), Map.entry(15, "ម៉ោង{h} ដប់ប្រាំនាទី"), Map.entry(20, "ម៉ោង{h} ម្ភៃនាទី"), Map.entry(25, "ម៉ោង{h} ម្ភៃប្រាំនាទី"), Map.entry(30, "ម៉ោង{h}កន្លះ"), Map.entry(35, "ម៉ោង{h} សាមសិបប្រាំនាទី"), Map.entry(40, "ម៉ោង{h} សែសិបនាទី"), Map.entry(45, "ម៉ោង{h} សែសិបប្រាំនាទី"), Map.entry(50, "ម៉ោង{h} ហាសិបនាទី"), Map.entry(55, "ម៉ោង{h} ហាសិបប្រាំនាទី"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1122,8 +1122,8 @@ public final class Locales {
         new ClockConfig(
             List.of("ಹನ್ನೆರಡು", "ಒಂದು", "ಎರಡು", "ಮೂರು", "ನಾಲ್ಕು", "ಐದು", "ಆರು", "ಏಳು", "ಎಂಟು", "ಒಂಬತ್ತು", "ಹತ್ತು", "ಹನ್ನೊಂದು"),
             "ಮಧ್ಯರಾತ್ರಿ",
-            "ಮಧ್ಯಾಹ್ನ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ",
+            Map.ofEntries(Map.entry(0, "{h} ಗಂಟೆ"), Map.entry(5, "{h} ಗಂಟೆ ಐದು ನಿಮಿಷ"), Map.entry(10, "{h} ಗಂಟೆ ಹತ್ತು ನಿಮಿಷ"), Map.entry(15, "{h} ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ"), Map.entry(20, "{h} ಗಂಟೆ ಇಪ್ಪತ್ತು ನಿಮಿಷ"), Map.entry(25, "{h} ಗಂಟೆ ಇಪ್ಪತ್ತೈದು ನಿಮಿಷ"), Map.entry(30, "{h} ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ"), Map.entry(35, "{h} ಗಂಟೆ ಮೂವತ್ತೈದು ನಿಮಿಷ"), Map.entry(40, "{h} ಗಂಟೆ ನಲವತ್ತು ನಿಮಿಷ"), Map.entry(45, "{h} ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ"), Map.entry(50, "{h} ಗಂಟೆ ಐವತ್ತು ನಿಮಿಷ"), Map.entry(55, "{h} ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1152,10 +1152,10 @@ public final class Locales {
     public static final TimeLocale KPE = new TimeLocale(
         "kpe",
         new ClockConfig(
-            List.of("puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"),
+            List.of("puu da feere", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"),
             "kpindi kɔlɛ",
             "tili-ma",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "awa {h}"), Map.entry(5, "awa {h} da miniti lɔɔlu"), Map.entry(10, "awa {h} da miniti puu"), Map.entry(15, "awa {h} da miniti puu da lɔɔlu"), Map.entry(20, "awa {h} da miniti puu feere"), Map.entry(25, "awa {h} da miniti puu feere da lɔɔlu"), Map.entry(30, "awa {h} da miniti puu sawa"), Map.entry(35, "awa {h} da miniti puu sawa da lɔɔlu"), Map.entry(40, "awa {h} da miniti puu naŋ"), Map.entry(45, "awa {h} da miniti puu naŋ da lɔɔlu"), Map.entry(50, "awa {h} da miniti puu lɔɔlu"), Map.entry(55, "awa {h} da miniti puu lɔɔlu da lɔɔlu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1187,7 +1187,7 @@ public final class Locales {
             List.of("zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"),
             "midi ya butu",
             "midi",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ngunga {h}"), Map.entry(5, "ngunga {h} na miniti tanu"), Map.entry(10, "ngunga {h} na miniti zomi"), Map.entry(15, "ngunga {h} na miniti zomi na tanu"), Map.entry(20, "ngunga {h} na miniti makumi zole"), Map.entry(25, "ngunga {h} na miniti makumi zole na tanu"), Map.entry(30, "ngunga {h} na ndambu"), Map.entry(35, "ngunga {h} na miniti makumi tatu na tanu"), Map.entry(40, "ngunga {h} na miniti makumi ya"), Map.entry(45, "ngunga {h} na miniti makumi ya na tanu"), Map.entry(50, "ngunga {h} na miniti makumi tanu"), Map.entry(55, "ngunga {h} na miniti makumi tanu na tanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1203,7 +1203,7 @@ public final class Locales {
             List.of("diwanzdeh", "yek", "du", "sê", "çar", "pênc", "şeş", "heft", "heşt", "neh", "deh", "yanzdeh"),
             "nîvê şevê",
             "nîvro",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "saet {h}"), Map.entry(5, "{h} û pênc deqe"), Map.entry(10, "{h} û deh deqe"), Map.entry(15, "{h} û çaryek"), Map.entry(20, "{h} û bîst deqe"), Map.entry(25, "{h} û bîst û pênc deqe"), Map.entry(30, "{h} û nîv"), Map.entry(35, "{next_h} kêm bîst û pênc deqe"), Map.entry(40, "{next_h} kêm bîst deqe"), Map.entry(45, "{next_h} kêm çaryek"), Map.entry(50, "{next_h} kêm deh deqe"), Map.entry(55, "{next_h} kêm pênc deqe"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1216,10 +1216,10 @@ public final class Locales {
     public static final TimeLocale KW = new TimeLocale(
         "kw",
         new ClockConfig(
-            List.of("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            List.of("dewdhek", "unn", "diw", "teyr", "peder", "pymp", "hwegh", "seyth", "eth", "naw", "deg", "unnek"),
             "hanter nos",
             "hanter dydh",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} eur"), Map.entry(5, "pymp mynysen wosa {h}"), Map.entry(10, "deg mynysen wosa {h}"), Map.entry(15, "kwarter wosa {h}"), Map.entry(20, "ugens mynysen wosa {h}"), Map.entry(25, "pymp mynysen warn ugens wosa {h}"), Map.entry(30, "hanter wosa {h}"), Map.entry(35, "pymp mynysen warn ugens dhe {next_h}"), Map.entry(40, "ugens mynysen dhe {next_h}"), Map.entry(45, "kwarter dhe {next_h}"), Map.entry(50, "deg mynysen dhe {next_h}"), Map.entry(55, "pymp mynysen dhe {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1235,7 +1235,7 @@ public final class Locales {
             List.of("он эки", "бир", "эки", "үч", "төрт", "беш", "алты", "жети", "сегиз", "тогуз", "он", "он бир"),
             "түн ортосу",
             "түш",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "саат {h}"), Map.entry(5, "{h} нөл беш"), Map.entry(10, "{h} он"), Map.entry(15, "{h} он беш"), Map.entry(20, "{h} жыйырма"), Map.entry(25, "{h} жыйырма беш"), Map.entry(30, "{h} жарым"), Map.entry(35, "{h} отуз беш"), Map.entry(40, "{h} кырк"), Map.entry(45, "{h} кырк беш"), Map.entry(50, "{h} элүү"), Map.entry(55, "{h} элүү беш"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1264,10 +1264,10 @@ public final class Locales {
     public static final TimeLocale LG = new TimeLocale(
         "lg",
         new ClockConfig(
-            List.of("kkumi na bbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano", "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi na emu"),
+            List.of("mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi n'emu", "kkumi n'ebbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano"),
             "ekiro eky'omu ttumbi",
             "ettuntu",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "essaawa {h}"), Map.entry(5, "essaawa {h} n'eddakiika ttaano"), Map.entry(10, "essaawa {h} n'eddakiika kkumi"), Map.entry(15, "essaawa {h} n'eddakiika kkumi na ttaano"), Map.entry(20, "essaawa {h} n'eddakiika abiri"), Map.entry(25, "essaawa {h} n'eddakiika abiri mu ttaano"), Map.entry(30, "essaawa {h} n'ekitundu"), Map.entry(35, "essaawa {h} n'eddakiika asatu mu ttaano"), Map.entry(40, "essaawa {h} n'eddakiika ana"), Map.entry(45, "essaawa {h} n'eddakiika ana mu ttaano"), Map.entry(50, "essaawa {h} n'eddakiika ataano"), Map.entry(55, "essaawa {h} n'eddakiika ataano mu ttaano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1281,9 +1281,9 @@ public final class Locales {
         "ln",
         new ClockConfig(
             List.of("zómi na míbalé", "mɔ̌kɔ́", "míbalé", "mísáto", "mínéi", "mítáno", "motóba", "nsambo", "mwambe", "libwá", "zómi", "zómi na mɔ̌kɔ́"),
-            "mpɔ́kwa",
-            "ntɔ́ngɔ́",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "midí ya butú",
+            "midí",
+            Map.ofEntries(Map.entry(0, "ngonga ya {h}"), Map.entry(5, "ngonga ya {h} na miniti mítáno"), Map.entry(10, "ngonga ya {h} na miniti zómi"), Map.entry(15, "ngonga ya {h} na miniti zómi na mítáno"), Map.entry(20, "ngonga ya {h} na miniti ntúkú míbalé"), Map.entry(25, "ngonga ya {h} na miniti ntúkú míbalé na mítáno"), Map.entry(30, "ngonga ya {h} na ndámbo"), Map.entry(35, "ngonga ya {h} na miniti ntúkú mísáto na mítáno"), Map.entry(40, "ngonga ya {h} na miniti ntúkú mínéi"), Map.entry(45, "ngonga ya {h} na miniti ntúkú mínéi na mítáno"), Map.entry(50, "ngonga ya {h} na miniti ntúkú mítáno"), Map.entry(55, "ngonga ya {h} na miniti ntúkú mítáno na mítáno"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1299,7 +1299,7 @@ public final class Locales {
             List.of("ສິບສອງ", "ໜຶ່ງ", "ສອງ", "ສາມ", "ສີ່", "ຫ້າ", "ຫົກ", "ເຈັດ", "ແປດ", "ເກົ້າ", "ສິບ", "ສິບເອັດ"),
             "ທ່ຽງຄືນ",
             "ທ່ຽງ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}ໂມງ"), Map.entry(5, "{h}ໂມງ ຫ້ານາທີ"), Map.entry(10, "{h}ໂມງ ສິບນາທີ"), Map.entry(15, "{h}ໂມງ ສິບຫ້ານາທີ"), Map.entry(20, "{h}ໂມງ ຊາວນາທີ"), Map.entry(25, "{h}ໂມງ ຊາວຫ້ານາທີ"), Map.entry(30, "{h}ໂມງເຄິ່ງ"), Map.entry(35, "{h}ໂມງ ສາມສິບຫ້ານາທີ"), Map.entry(40, "{h}ໂມງ ສີ່ສິບນາທີ"), Map.entry(45, "{h}ໂມງ ສີ່ສິບຫ້ານາທີ"), Map.entry(50, "{h}ໂມງ ຫ້າສິບນາທີ"), Map.entry(55, "{h}ໂມງ ຫ້າສິບຫ້ານາທີ"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1328,10 +1328,10 @@ public final class Locales {
     public static final TimeLocale LUO = new TimeLocale(
         "luo",
         new ClockConfig(
-            List.of("apar gi ariyo", "achiel", "ariyo", "adek", "ang'wen", "abich", "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gi achiel"),
+            List.of("auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gachiel", "apar gariyo", "achiel", "ariyo", "adek", "ang'wen", "abich"),
             "dier otieno",
             "odiechieng' tir",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "saa {h}"), Map.entry(5, "saa {h} gi dakika abich"), Map.entry(10, "saa {h} gi dakika apar"), Map.entry(15, "saa {h} gi dakika apar gabich"), Map.entry(20, "saa {h} gi dakika piero ariyo"), Map.entry(25, "saa {h} gi dakika piero ariyo gabich"), Map.entry(30, "saa {h} gi nus"), Map.entry(35, "saa {h} gi dakika piero adek gabich"), Map.entry(40, "saa {h} gi dakika piero ang'wen"), Map.entry(45, "saa {h} gi dakika piero ang'wen gabich"), Map.entry(50, "saa {h} gi dakika piero abich"), Map.entry(55, "saa {h} gi dakika piero abich gabich"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1360,10 +1360,10 @@ public final class Locales {
     public static final TimeLocale MAM = new TimeLocale(
         "mam",
         new ClockConfig(
-            List.of("kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"),
+            List.of("kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'elaj", "laj", "junlaj"),
             "nik' aq'b'il",
             "nik' q'ij",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} or"), Map.entry(5, "{h} or tuk' jwe' minut"), Map.entry(10, "{h} or tuk' laj minut"), Map.entry(15, "{h} or tuk' o'laj minut"), Map.entry(20, "{h} or tuk' winqan minut"), Map.entry(25, "{h} or tuk' jwe' toj ka'wnaq minut"), Map.entry(30, "{h} or tuk' nik'"), Map.entry(35, "{h} or tuk' o'laj toj ka'wnaq minut"), Map.entry(40, "{h} or tuk' ka'wnaq minut"), Map.entry(45, "{h} or tuk' jwe' toj oxk'al minut"), Map.entry(50, "{h} or tuk' laj toj oxk'al minut"), Map.entry(55, "{h} or tuk' o'laj toj oxk'al minut"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1376,10 +1376,10 @@ public final class Locales {
     public static final TimeLocale MEN = new TimeLocale(
         "men",
         new ClockConfig(
-            List.of("pu wɛlɛ", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"),
+            List.of("pu mahu fele", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"),
             "kpindi gbɔyɔŋ",
             "ndɔlei-ma",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "awa {h}"), Map.entry(5, "awa {h} kɛ miniti lɔɔlu"), Map.entry(10, "awa {h} kɛ miniti pu"), Map.entry(15, "awa {h} kɛ miniti pu mahu lɔɔlu"), Map.entry(20, "awa {h} kɛ miniti nuu yila gboyongo"), Map.entry(25, "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu"), Map.entry(30, "awa {h} kɛ miniti nuu yila gboyongo mahu pu"), Map.entry(35, "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu"), Map.entry(40, "awa {h} kɛ miniti nuu fele gboyongo"), Map.entry(45, "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu"), Map.entry(50, "awa {h} kɛ miniti nuu fele gboyongo mahu pu"), Map.entry(55, "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1392,10 +1392,10 @@ public final class Locales {
     public static final TimeLocale MFE = new TimeLocale(
         "mfe",
         new ClockConfig(
-            List.of("douz", "enn", "de", "trwa", "kat", "senk", "sis", "set", "wit", "nef", "dis", "onz"),
+            List.of("douzer", "enn er", "dezer", "trwazer", "katrer", "senker", "sizer", "seter", "witer", "never", "dizer", "onzer"),
             "minwi",
             "midi",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} senk"), Map.entry(10, "{h} dis"), Map.entry(15, "{h} ekar"), Map.entry(20, "{h} vin"), Map.entry(25, "{h} vennsenk"), Map.entry(30, "{h} edmi"), Map.entry(35, "{next_h} mwin vennsenk"), Map.entry(40, "{next_h} mwin vin"), Map.entry(45, "{next_h} mwin kar"), Map.entry(50, "{next_h} mwin dis"), Map.entry(55, "{next_h} mwin senk"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1411,7 +1411,7 @@ public final class Locales {
             List.of("roa ambin'ny folo", "iray", "roa", "telo", "efatra", "dimy", "enina", "fito", "valo", "sivy", "folo", "iraika ambin'ny folo"),
             "misasakalina",
             "atoandro",
-            Map.ofEntries(Map.entry(0, "{h} ora"), Map.entry(5, "{h} sy dimy minitra"), Map.entry(10, "{h} sy folo minitra"), Map.entry(15, "{h} sy fahefatra"), Map.entry(20, "{h} sy roapolo minitra"), Map.entry(25, "{h} sy dimy amby roapolo minitra"), Map.entry(30, "{h} sy sasany"), Map.entry(35, "dimy amby roapolo minitra alohan'ny {next_h}"), Map.entry(40, "roapolo minitra alohan'ny {next_h}"), Map.entry(45, "fahefatra alohan'ny {next_h}"), Map.entry(50, "folo minitra alohan'ny {next_h}"), Map.entry(55, "dimy minitra alohan'ny {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} ora"), Map.entry(5, "{h} ora sy dimy minitra"), Map.entry(10, "{h} ora sy folo minitra"), Map.entry(15, "{h} ora sy fahefany"), Map.entry(20, "{h} ora sy roapolo minitra"), Map.entry(25, "{h} ora sy dimy amby roapolo minitra"), Map.entry(30, "{h} ora sy sasany"), Map.entry(35, "{next_h} ora latsaka dimy amby roapolo minitra"), Map.entry(40, "{next_h} ora latsaka roapolo minitra"), Map.entry(45, "{next_h} ora latsaka fahefany"), Map.entry(50, "{next_h} ora latsaka folo minitra"), Map.entry(55, "{next_h} ora latsaka dimy minitra"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1443,7 +1443,7 @@ public final class Locales {
             List.of("дванаесет", "еден", "два", "три", "четири", "пет", "шест", "седум", "осум", "девет", "десет", "единаесет"),
             "полноќ",
             "пладне",
-            Map.ofEntries(Map.entry(0, "{h} часа"), Map.entry(5, "пет po {h}"), Map.entry(10, "десет po {h}"), Map.entry(15, "петнаесет po {h}"), Map.entry(20, "дваесет po {h}"), Map.entry(25, "дваесет и пет po {h}"), Map.entry(30, "триесет po {h}"), Map.entry(35, "дваесет и пет do {next_h}"), Map.entry(40, "дваесет do {next_h}"), Map.entry(45, "петнаесет do {next_h}"), Map.entry(50, "десет do {next_h}"), Map.entry(55, "пет do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} часот"), Map.entry(5, "{h} и пет"), Map.entry(10, "{h} и десет"), Map.entry(15, "{h} и петнаесет"), Map.entry(20, "{h} и дваесет"), Map.entry(25, "{h} и дваесет и пет"), Map.entry(30, "{h} и пол"), Map.entry(35, "дваесет и пет до {next_h}"), Map.entry(40, "дваесет до {next_h}"), Map.entry(45, "петнаесет до {next_h}"), Map.entry(50, "десет до {next_h}"), Map.entry(55, "пет до {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1456,10 +1456,10 @@ public final class Locales {
     public static final TimeLocale ML = new TimeLocale(
         "ml",
         new ClockConfig(
-            List.of("പന്ത്രണ്ട്", "ഒന്ന്", "രണ്ട്", "മൂന്ന്", "നാല്", "അഞ്ച്", "ആറ്", "ഏഴ്", "എട്ട്", "ഒമ്പത്", "പത്ത്", "പതിനൊന്ന്"),
+            List.of("പന്ത്രണ്ട", "ഒന്ന", "രണ്ട", "മൂന്ന", "നാല", "അഞ്ച", "ആറ", "ഏഴ", "എട്ട", "ഒമ്പത", "പത്ത", "പതിനൊന്ന"),
             "അർദ്ധരാത്രി",
             "ഉച്ച",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}് മണി"), Map.entry(5, "{h}് മണി അഞ്ച് മിനിറ്റ്"), Map.entry(10, "{h}് മണി പത്ത് മിനിറ്റ്"), Map.entry(15, "{h}േകാൽ"), Map.entry(20, "{h}് മണി ഇരുപത് മിനിറ്റ്"), Map.entry(25, "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്"), Map.entry(30, "{h}ര"), Map.entry(35, "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്"), Map.entry(40, "{h}് മണി നാൽപ്പത് മിനിറ്റ്"), Map.entry(45, "{h}േമുക്കാൽ"), Map.entry(50, "{h}് മണി അമ്പത് മിനിറ്റ്"), Map.entry(55, "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1472,10 +1472,10 @@ public final class Locales {
     public static final TimeLocale MN = new TimeLocale(
         "mn",
         new ClockConfig(
-            List.of("арван хоёр", "нэг", "хоёр", "гурав", "дөрөв", "тав", "зургаа", "долоо", "найм", "ес", "арав", "арван нэг"),
+            List.of("арван хоёр", "нэг", "хоёр", "гурван", "дөрвөн", "таван", "зургаан", "долоон", "найман", "есөн", "арван", "арван нэгэн"),
             "шөнө дунд",
             "үд дунд",
-            Map.ofEntries(Map.entry(0, "{h} цаг"), Map.entry(5, "{h} цаг {m} минут"), Map.entry(10, "{h} цаг {m} минут"), Map.entry(15, "{h} цаг {m} минут"), Map.entry(20, "{h} цаг {m} минут"), Map.entry(25, "{h} цаг {m} минут"), Map.entry(30, "{h} цаг {m} минут"), Map.entry(35, "{h} цаг {m} минут"), Map.entry(40, "{h} цаг {m} минут"), Map.entry(45, "{h} цаг {m} минут"), Map.entry(50, "{h} цаг {m} минут"), Map.entry(55, "{h} цаг {m} минут"))
+            Map.ofEntries(Map.entry(0, "{h} цаг"), Map.entry(5, "{h} цаг таван минут"), Map.entry(10, "{h} цаг арван минут"), Map.entry(15, "{h} цаг арван таван минут"), Map.entry(20, "{h} цаг хорин минут"), Map.entry(25, "{h} цаг хорин таван минут"), Map.entry(30, "{h} цаг хагас"), Map.entry(35, "{h} цаг гучин таван минут"), Map.entry(40, "{h} цаг дөчин минут"), Map.entry(45, "{h} цаг дөчин таван минут"), Map.entry(50, "{h} цаг тавин минут"), Map.entry(55, "{h} цаг тавин таван минут"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1488,10 +1488,10 @@ public final class Locales {
     public static final TimeLocale MNK = new TimeLocale(
         "mnk",
         new ClockConfig(
-            List.of("tan ning fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ ning kiliŋ"),
+            List.of("taŋ niŋ fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ niŋ kiliŋ"),
             "sutu-tili-laŋ",
             "tili-konto",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "talaŋ {h}"), Map.entry(5, "talaŋ {h} aniŋ miniti luulu"), Map.entry(10, "talaŋ {h} aniŋ miniti taŋ"), Map.entry(15, "talaŋ {h} aniŋ miniti taŋ niŋ luulu"), Map.entry(20, "talaŋ {h} aniŋ miniti muwaŋ"), Map.entry(25, "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu"), Map.entry(30, "talaŋ {h} aniŋ talantee"), Map.entry(35, "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu"), Map.entry(40, "talaŋ {h} aniŋ miniti taŋ naani"), Map.entry(45, "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu"), Map.entry(50, "talaŋ {h} aniŋ miniti taŋ luulu"), Map.entry(55, "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1504,10 +1504,10 @@ public final class Locales {
     public static final TimeLocale MOS = new TimeLocale(
         "mos",
         new ClockConfig(
-            List.of("piig la a yiibu", "a yembre", "a yiibu", "a tãabo", "a naase", "a nu", "a yoobe", "a yopoe", "a niini", "a wae", "piiga", "piig la a yembre"),
+            List.of("lɛɛr piig la a yiibu", "lɛɛr a yembre", "lɛɛr a yiibu", "lɛɛr a tãabo", "lɛɛr a naase", "lɛɛr a nu", "lɛɛr a yoobe", "lɛɛr a yopoe", "lɛɛr a nii", "lɛɛr a wae", "lɛɛr piiga", "lɛɛr piig la a yembre"),
             "yʋng-vɩɩse",
             "wĩntoog zabre",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} la minit a nu"), Map.entry(10, "{h} la minit piiga"), Map.entry(15, "{h} la minit piig la a nu"), Map.entry(20, "{h} la minit pisi"), Map.entry(25, "{h} la minit pisi la a nu"), Map.entry(30, "{h} la pʋɩ-sʋka"), Map.entry(35, "{h} la minit pis-tã la a nu"), Map.entry(40, "{h} la minit pis-naase"), Map.entry(45, "{h} la minit pis-naase la a nu"), Map.entry(50, "{h} la minit pis-nu"), Map.entry(55, "{h} la minit pis-nu la a nu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1523,7 +1523,7 @@ public final class Locales {
             List.of("बारा", "एक", "दोन", "तीन", "चार", "पाच", "सहा", "सात", "आठ", "नऊ", "दहा", "अकरा"),
             "मध्यरात्र",
             "दुपार",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} वाजता"), Map.entry(5, "{h} वाजून पाच मिनिटे"), Map.entry(10, "{h} वाजून दहा मिनिटे"), Map.entry(15, "सव्वा {h}"), Map.entry(20, "{h} वाजून वीस मिनिटे"), Map.entry(25, "{h} वाजून पंचवीस मिनिटे"), Map.entry(30, "{h} वाजून तीस मिनिटे"), Map.entry(35, "{next_h} वाजायला पंचवीस मिनिटे"), Map.entry(40, "{next_h} वाजायला वीस मिनिटे"), Map.entry(45, "पावणे {next_h}"), Map.entry(50, "{next_h} वाजायला दहा मिनिटे"), Map.entry(55, "{next_h} वाजायला पाच मिनिटे"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1539,7 +1539,7 @@ public final class Locales {
             List.of("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "lapan", "sembilan", "sepuluh", "sebelas"),
             "tengah malam",
             "tengah hari",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "lima lewat {h}"), Map.entry(10, "sepuluh lewat {h}"), Map.entry(15, "suku lewat {h}"), Map.entry(20, "dua puluh lewat {h}"), Map.entry(25, "dua puluh lima lewat {h}"), Map.entry(30, "setengah lewat {h}"), Map.entry(35, "dua puluh lima menjelang {next_h}"), Map.entry(40, "dua puluh menjelang {next_h}"), Map.entry(45, "suku menjelang {next_h}"), Map.entry(50, "sepuluh menjelang {next_h}"), Map.entry(55, "lima menjelang {next_h}"))
+            Map.ofEntries(Map.entry(0, "pukul {h}"), Map.entry(5, "pukul {h} lima minit"), Map.entry(10, "pukul {h} sepuluh minit"), Map.entry(15, "pukul {h} suku"), Map.entry(20, "pukul {h} dua puluh minit"), Map.entry(25, "pukul {h} dua puluh lima minit"), Map.entry(30, "pukul {h} setengah"), Map.entry(35, "pukul {next_h} kurang dua puluh lima minit"), Map.entry(40, "pukul {next_h} kurang dua puluh minit"), Map.entry(45, "pukul {next_h} kurang suku"), Map.entry(50, "pukul {next_h} kurang sepuluh minit"), Map.entry(55, "pukul {next_h} kurang lima minit"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1552,10 +1552,10 @@ public final class Locales {
     public static final TimeLocale MT = new TimeLocale(
         "mt",
         new ClockConfig(
-            List.of("tnax", "waħda", "tnejn", "tlieta", "erbgħa", "ħamsa", "sitta", "sebgħa", "tmienja", "disgħa", "għaxra", "ħdax"),
+            List.of("it-tnax", "is-siegħa", "is-sagħtejn", "it-tlieta", "l-erbgħa", "il-ħamsa", "is-sitta", "is-sebgħa", "it-tmienja", "id-disgħa", "l-għaxra", "il-ħdax"),
+            "nofsillejl",
             "nofsinhar",
-            "nofsinhar",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} u ħamsa"), Map.entry(10, "{h} u għaxra"), Map.entry(15, "{h} u kwart"), Map.entry(20, "{h} u għoxrin"), Map.entry(25, "{h} u ħamsa u għoxrin"), Map.entry(30, "{h} u nofs"), Map.entry(35, "{next_h} neqsin ħamsa u għoxrin"), Map.entry(40, "{next_h} neqsin għoxrin"), Map.entry(45, "{next_h} neqsin kwart"), Map.entry(50, "{next_h} neqsin għaxra"), Map.entry(55, "{next_h} neqsin ħamsa"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1571,7 +1571,7 @@ public final class Locales {
             List.of("ဆယ့်နှစ်", "တစ်", "နှစ်", "သုံး", "လေး", "ငါး", "ခြောက်", "ခုနစ်", "ရှစ်", "ကိုး", "ဆယ်", "ဆယ့်တစ်"),
             "သန်းခေါင်",
             "မွန်းတည့်",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}နာရီ"), Map.entry(5, "{h}နာရီ ငါးမိနစ်"), Map.entry(10, "{h}နာရီ ဆယ်မိနစ်"), Map.entry(15, "{h}နာရီ ဆယ့်ငါးမိနစ်"), Map.entry(20, "{h}နာရီ နှစ်ဆယ်မိနစ်"), Map.entry(25, "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်"), Map.entry(30, "{h}နာရီခွဲ"), Map.entry(35, "{h}နာရီ သုံးဆယ့်ငါးမိနစ်"), Map.entry(40, "{h}နာရီ လေးဆယ်မိနစ်"), Map.entry(45, "{h}နာရီ လေးဆယ့်ငါးမိနစ်"), Map.entry(50, "{h}နာရီ ငါးဆယ်မိနစ်"), Map.entry(55, "{h}နာရီ ငါးဆယ့်ငါးမိနစ်"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1584,7 +1584,7 @@ public final class Locales {
     public static final TimeLocale NB = new TimeLocale(
         "nb",
         new ClockConfig(
-            List.of("tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"),
+            List.of("tolv", "ett", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"),
             "midnatt",
             "middag",
             Map.ofEntries(Map.entry(0, "klokka {h}"), Map.entry(5, "fem over {h}"), Map.entry(10, "ti over {h}"), Map.entry(15, "kvart over {h}"), Map.entry(20, "tjue over {h}"), Map.entry(25, "fem på halv {next_h}"), Map.entry(30, "halv {next_h}"), Map.entry(35, "fem over halv {next_h}"), Map.entry(40, "tjue på {next_h}"), Map.entry(45, "kvart på {next_h}"), Map.entry(50, "ti på {next_h}"), Map.entry(55, "fem på {next_h}"))
@@ -1600,10 +1600,10 @@ public final class Locales {
     public static final TimeLocale ND = new TimeLocale(
         "nd",
         new ClockConfig(
-            List.of("litshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyangalombili", "isitshiyangalolunye", "litshumi", "litshumi lanye"),
+            List.of("letshumi lambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesitshiyangalombili", "lesitshiyangalolunye", "letshumi", "letshumi lanye"),
             "phakathi kobusuku",
             "emini",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ihola {h}"), Map.entry(5, "ihola {h} lemizuzu emihlanu"), Map.entry(10, "ihola {h} lemizuzu elitshumi"), Map.entry(15, "ihola {h} lemizuzu elitshumi lanhlanu"), Map.entry(20, "ihola {h} lemizuzu engamatshumi amabili"), Map.entry(25, "ihola {h} lemizuzu engamatshumi amabili lanhlanu"), Map.entry(30, "ihola {h} lengxenye"), Map.entry(35, "ihola {h} lemizuzu engamatshumi amathathu lanhlanu"), Map.entry(40, "ihola {h} lemizuzu engamatshumi amane"), Map.entry(45, "ihola {h} lemizuzu engamatshumi amane lanhlanu"), Map.entry(50, "ihola {h} lemizuzu engamatshumi amahlanu"), Map.entry(55, "ihola {h} lemizuzu engamatshumi amahlanu lanhlanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1619,7 +1619,7 @@ public final class Locales {
             List.of("बाह्र", "एक", "दुई", "तीन", "चार", "पाँच", "छ", "सात", "आठ", "नौ", "दश", "एघार"),
             "मध्यरात",
             "मध्यान्ह",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} बजे"), Map.entry(5, "{h} बजेर पाँच मिनेट"), Map.entry(10, "{h} बजेर दश मिनेट"), Map.entry(15, "सवा {h} बजे"), Map.entry(20, "{h} बजेर बीस मिनेट"), Map.entry(25, "{h} बजेर पच्चीस मिनेट"), Map.entry(30, "{h} बजेर तीस मिनेट"), Map.entry(35, "{next_h} बज्न पच्चीस मिनेट बाँकी"), Map.entry(40, "{next_h} बज्न बीस मिनेट बाँकी"), Map.entry(45, "पौने {next_h} बजे"), Map.entry(50, "{next_h} बज्न दश मिनेट बाँकी"), Map.entry(55, "{next_h} बज्न पाँच मिनेट बाँकी"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1635,7 +1635,7 @@ public final class Locales {
             List.of("omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe"),
             "onguloshi pakati",
             "omutenya",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "otundi {h}"), Map.entry(5, "otundi {h} noominute ntano"), Map.entry(10, "otundi {h} noominute omulongo"), Map.entry(15, "otundi {h} noominute omulongo nantano"), Map.entry(20, "otundi {h} noominute omilongo mbali"), Map.entry(25, "otundi {h} noominute omilongo mbali nantano"), Map.entry(30, "otundi {h} netata"), Map.entry(35, "otundi {h} noominute omilongo ndatu nantano"), Map.entry(40, "otundi {h} noominute omilongo ne"), Map.entry(45, "otundi {h} noominute omilongo ne nantano"), Map.entry(50, "otundi {h} noominute omilongo ntano"), Map.entry(55, "otundi {h} noominute omilongo ntano nantano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1650,8 +1650,8 @@ public final class Locales {
         new ClockConfig(
             List.of("twaalf", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf"),
             "middernacht",
-            "middag",
-            Map.ofEntries(Map.entry(0, "{h} uur"), Map.entry(5, "vijf over {h}"), Map.entry(10, "tien over {h}"), Map.entry(15, "kwart over {h}"), Map.entry(20, "twintig over {h}"), Map.entry(25, "vijf voor half {next_h}"), Map.entry(30, "half {next_h}"), Map.entry(35, "vijf over half {next_h}"), Map.entry(40, "twintig voor {next_h}"), Map.entry(45, "kwart voor {next_h}"), Map.entry(50, "tien voor {next_h}"), Map.entry(55, "vijf voor {next_h}"))
+            "twaalf uur 's middags",
+            Map.ofEntries(Map.entry(0, "{h} uur"), Map.entry(5, "vijf over {h}"), Map.entry(10, "tien over {h}"), Map.entry(15, "kwart over {h}"), Map.entry(20, "tien voor half {next_h}"), Map.entry(25, "vijf voor half {next_h}"), Map.entry(30, "half {next_h}"), Map.entry(35, "vijf over half {next_h}"), Map.entry(40, "tien over half {next_h}"), Map.entry(45, "kwart voor {next_h}"), Map.entry(50, "tien voor {next_h}"), Map.entry(55, "vijf voor {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1664,10 +1664,10 @@ public final class Locales {
     public static final TimeLocale NR = new TimeLocale(
         "nr",
         new ClockConfig(
-            List.of("itshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyagalombili", "isitshiyagalolunye", "itshumi", "itshumi lanye"),
+            List.of("letjhumi nambili", "lokuthoma", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithandathu", "lekhomba", "lobunane", "lethoba", "letjhumi", "letjhumi nanye"),
             "phakathi kobusuku",
             "emini",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ihora {h}"), Map.entry(5, "ihora {h} nemizuzu emihlanu"), Map.entry(10, "ihora {h} nemizuzu elitjhumi"), Map.entry(15, "ihora {h} nemizuzu elitjhumi nanhlanu"), Map.entry(20, "ihora {h} nemizuzu engamatjhumi amabili"), Map.entry(25, "ihora {h} nemizuzu engamatjhumi amabili nanhlanu"), Map.entry(30, "ihora {h} nesiquntu"), Map.entry(35, "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu"), Map.entry(40, "ihora {h} nemizuzu engamatjhumi amane"), Map.entry(45, "ihora {h} nemizuzu engamatjhumi amane nanhlanu"), Map.entry(50, "ihora {h} nemizuzu engamatjhumi amahlanu"), Map.entry(55, "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1680,10 +1680,10 @@ public final class Locales {
     public static final TimeLocale NSO = new TimeLocale(
         "nso",
         new ClockConfig(
-            List.of("lesome pedi", "tee", "pedi", "tharo", "nne", "hlano", "tshela", "šupa", "seswai", "senyane", "lesome", "lesome tee"),
+            List.of("lesomepedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshela", "bošupa", "seswai", "senyane", "lesome", "lesometee"),
             "bošego gare",
             "mosegare",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "iri ya {h}"), Map.entry(5, "iri ya {h} le metsotso ye mehlano"), Map.entry(10, "iri ya {h} le metsotso ye lesome"), Map.entry(15, "iri ya {h} le kotara"), Map.entry(20, "iri ya {h} le metsotso ye masomepedi"), Map.entry(25, "iri ya {h} le metsotso ye masomepedi-hlano"), Map.entry(30, "iri ya {h} le seripagare"), Map.entry(35, "iri ya {h} le metsotso ye masometharo-hlano"), Map.entry(40, "iri ya {h} le metsotso ye masomenne"), Map.entry(45, "iri ya {h} le metsotso ye masomenne-hlano"), Map.entry(50, "iri ya {h} le metsotso ye masomehlano"), Map.entry(55, "iri ya {h} le metsotso ye masomehlano-hlano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1696,10 +1696,10 @@ public final class Locales {
     public static final TimeLocale NUS = new TimeLocale(
         "nus",
         new ClockConfig(
-            List.of("thiäär ke rou", "tök", "rou", "diäk", "ŋuan", "dhiëc", "bäkɛl", "dhorou", "bät", "kuɔn", "thiäär", "thiäär ku tök"),
+            List.of("wäl wi̱ rɛw", "kɛl", "rɛw", "diɔk", "ŋuaan", "dhieec", "bäkɛl", "bäärɔw", "bädäk", "bäŋuan", "wäl", "wäl wi̱ kɛl"),
             "wakɔ̈u",
             "cäŋ kɔ̈k",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "thaar {h}"), Map.entry(5, "thaar {h} kɛnɛ minit dhieec"), Map.entry(10, "thaar {h} kɛnɛ minit wäl"), Map.entry(15, "thaar {h} kɛnɛ minit wäl wi̱ dhieec"), Map.entry(20, "thaar {h} kɛnɛ minit jiɛn rɛw"), Map.entry(25, "thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec"), Map.entry(30, "thaar {h} kɛnɛ minit jiɛn diɔk"), Map.entry(35, "thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec"), Map.entry(40, "thaar {h} kɛnɛ minit jiɛn ŋuaan"), Map.entry(45, "thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec"), Map.entry(50, "thaar {h} kɛnɛ minit jiɛn dhieec"), Map.entry(55, "thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1712,10 +1712,10 @@ public final class Locales {
     public static final TimeLocale NY = new TimeLocale(
         "ny",
         new ClockConfig(
-            List.of("khumi ndi ziwiri", "imodzi", "ziwiri", "zitatu", "zinayi", "zisanu", "zisanu ndi chimodzi", "zisanu ndi ziwiri", "zisanu ndi zitatu", "zisanu ndi zinayi", "khumi", "khumi ndi chimodzi"),
+            List.of("lakhumi ndi chiwiri", "loyamba", "lachiwiri", "lachitatu", "lachinayi", "lachisanu", "lachisanu ndi chimodzi", "lachisanu ndi chiwiri", "lachisanu ndi chitatu", "lachisanu ndi chinayi", "lakhumi", "lakhumi ndi chimodzi"),
             "pakati pausiku",
             "usana",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ola {h}"), Map.entry(5, "ola {h} ndi mphindi zisanu"), Map.entry(10, "ola {h} ndi mphindi khumi"), Map.entry(15, "ola {h} ndi mphindi khumi ndi zisanu"), Map.entry(20, "ola {h} ndi mphindi makumi awiri"), Map.entry(25, "ola {h} ndi mphindi makumi awiri ndi zisanu"), Map.entry(30, "ola {h} ndi theka"), Map.entry(35, "ola {h} ndi mphindi makumi atatu ndi zisanu"), Map.entry(40, "ola {h} ndi mphindi makumi anayi"), Map.entry(45, "ola {h} ndi mphindi makumi anayi ndi zisanu"), Map.entry(50, "ola {h} ndi mphindi makumi asanu"), Map.entry(55, "ola {h} ndi mphindi makumi asanu ndi zisanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1728,10 +1728,10 @@ public final class Locales {
     public static final TimeLocale OM = new TimeLocale(
         "om",
         new ClockConfig(
-            List.of("kudha lama", "tokko", "lama", "sadii", "afur", "shan", "jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko"),
+            List.of("jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko", "kudha lama", "tokko", "lama", "sadii", "afur", "shan"),
             "walakkii halkan",
             "guyyaa walakkaa",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "sa'aatii {h}"), Map.entry(5, "sa'aatii {h} fi daqiiqaa shan"), Map.entry(10, "sa'aatii {h} fi daqiiqaa kudhan"), Map.entry(15, "sa'aatii {h} fi daqiiqaa kudha shan"), Map.entry(20, "sa'aatii {h} fi daqiiqaa digdama"), Map.entry(25, "sa'aatii {h} fi daqiiqaa digdamii shan"), Map.entry(30, "sa'aatii {h} fi walakkaa"), Map.entry(35, "sa'aatii {h} fi daqiiqaa soddomii shan"), Map.entry(40, "sa'aatii {h} fi daqiiqaa afurtama"), Map.entry(45, "sa'aatii {h} fi daqiiqaa afurtamii shan"), Map.entry(50, "sa'aatii {h} fi daqiiqaa shantama"), Map.entry(55, "sa'aatii {h} fi daqiiqaa shantamii shan"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1747,7 +1747,7 @@ public final class Locales {
             List.of("ବାରଟା", "ଗୋଟିଏ", "ଦୁଇଟା", "ତିନିଟା", "ଚାରିଟା", "ପାଞ୍ଚଟା", "ଛଅଟା", "ସାତଟା", "ଆଠଟା", "ନଅଟା", "ଦଶଟା", "ଏଗାରଟା"),
             "ମଧ୍ୟରାତ୍ରି",
             "ମଧ୍ୟାହ୍ନ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍"), Map.entry(10, "{h} ବାଜି ଦଶ ମିନିଟ୍"), Map.entry(15, "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍"), Map.entry(20, "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍"), Map.entry(25, "{h} ବାଜି ପଚିଶ ମିନିଟ୍"), Map.entry(30, "{h} ବାଜି ତିରିଶ ମିନିଟ୍"), Map.entry(35, "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍"), Map.entry(40, "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍"), Map.entry(45, "ପାଉଣେ {next_h}"), Map.entry(50, "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍"), Map.entry(55, "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1763,7 +1763,7 @@ public final class Locales {
             List.of("ਬਾਰਾਂ", "ਇੱਕ", "ਦੋ", "ਤਿੰਨ", "ਚਾਰ", "ਪੰਜ", "ਛੇ", "ਸੱਤ", "ਅੱਠ", "ਨੌਂ", "ਦਸ", "ਗਿਆਰਾਂ"),
             "ਅੱਧੀ ਰਾਤ",
             "ਦੁਪਹਿਰ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} ਵਜੇ"), Map.entry(5, "{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ"), Map.entry(10, "{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ"), Map.entry(15, "ਸਵਾ {h} ਵਜੇ"), Map.entry(20, "{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ"), Map.entry(25, "{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ"), Map.entry(30, "{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ"), Map.entry(35, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ"), Map.entry(40, "{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ"), Map.entry(45, "ਪੌਣੇ {next_h} ਵਜੇ"), Map.entry(50, "{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ"), Map.entry(55, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1779,7 +1779,7 @@ public final class Locales {
             List.of("twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"),
             "midonaet",
             "midei",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} kilok"), Map.entry(5, "faev minit pas {h}"), Map.entry(10, "ten minit pas {h}"), Map.entry(15, "kwata pas {h}"), Map.entry(20, "twenti minit pas {h}"), Map.entry(25, "twenti faev minit pas {h}"), Map.entry(30, "haf pas {h}"), Map.entry(35, "twenti faev minit tu {next_h}"), Map.entry(40, "twenti minit tu {next_h}"), Map.entry(45, "kwata tu {next_h}"), Map.entry(50, "ten minit tu {next_h}"), Map.entry(55, "faev minit tu {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1795,7 +1795,7 @@ public final class Locales {
             List.of("dwunasta", "pierwsza", "druga", "trzecia", "czwarta", "piąta", "szósta", "siódma", "ósma", "dziewiąta", "dziesiąta", "jedenasta"),
             "północ",
             "południe",
-            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "pięć po {h}"), Map.entry(10, "dziesięć po {h}"), Map.entry(15, "piętnaście po {h}"), Map.entry(20, "dwadzieścia po {h}"), Map.entry(25, "dwadzieścia pięć po {h}"), Map.entry(30, "trzydzieści po {h}"), Map.entry(35, "dwadzieścia pięć do {next_h}"), Map.entry(40, "dwadzieścia do {next_h}"), Map.entry(45, "piętnaście do {next_h}"), Map.entry(50, "dziesięć do {next_h}"), Map.entry(55, "pięć do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} pięć"), Map.entry(10, "{h} dziesięć"), Map.entry(15, "{h} piętnaście"), Map.entry(20, "{h} dwadzieścia"), Map.entry(25, "{h} dwadzieścia pięć"), Map.entry(30, "{h} trzydzieści"), Map.entry(35, "za dwadzieścia pięć {next_h}"), Map.entry(40, "za dwadzieścia {next_h}"), Map.entry(45, "za kwadrans {next_h}"), Map.entry(50, "za dziesięć {next_h}"), Map.entry(55, "za pięć {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1808,10 +1808,10 @@ public final class Locales {
     public static final TimeLocale POV = new TimeLocale(
         "pov",
         new ClockConfig(
-            List.of("dozi", "un", "dos", "tres", "kuatru", "sinku", "seis", "seti", "oitu", "novi", "des", "onzi"),
+            List.of("dozi ora", "un ora", "dos ora", "tres ora", "kuatru ora", "sinku ora", "seis ora", "seti ora", "oitu ora", "novi ora", "des ora", "onzi ora"),
             "meia noti",
             "meiu dia",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} i sinku"), Map.entry(10, "{h} i des"), Map.entry(15, "{h} i kinzi"), Map.entry(20, "{h} i vinti"), Map.entry(25, "{h} i vinti i sinku"), Map.entry(30, "{h} i meiu"), Map.entry(35, "{h} i trinta i sinku"), Map.entry(40, "{h} i kuarenta"), Map.entry(45, "{h} i kuarenta i sinku"), Map.entry(50, "{h} i sinkuenta"), Map.entry(55, "{h} i sinkuenta i sinku"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1824,10 +1824,10 @@ public final class Locales {
     public static final TimeLocale PS = new TimeLocale(
         "ps",
         new ClockConfig(
-            List.of("دولس", "یو", "دوه", "درې", "څلور", "پنځه", "شپږ", "اووه", "اته", "نهه", "لس", "یوولس"),
+            List.of("دولس بجې", "یوه بجه", "دوه بجې", "درې بجې", "څلور بجې", "پنځه بجې", "شپږ بجې", "اووه بجې", "اته بجې", "نهه بجې", "لس بجې", "یوولس بجې"),
             "نیمه شپه",
             "غرمه",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} او پنځه دقیقې"), Map.entry(10, "{h} او لس دقیقې"), Map.entry(15, "{h} او پنځلس دقیقې"), Map.entry(20, "{h} او شل دقیقې"), Map.entry(25, "{h} او پنځه ویشت دقیقې"), Map.entry(30, "{h} او دېرش دقیقې"), Map.entry(35, "{h} او پنځه دېرش دقیقې"), Map.entry(40, "{h} او څلوېښت دقیقې"), Map.entry(45, "{h} او پنځه څلوېښت دقیقې"), Map.entry(50, "{h} او پنځوس دقیقې"), Map.entry(55, "{h} او پنځه پنځوس دقیقې"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1843,7 +1843,7 @@ public final class Locales {
             List.of("doze", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze"),
             "meia-noite",
             "meio-dia",
-            Map.ofEntries(Map.entry(0, "{h} horas"), Map.entry(5, "{h} e cinco"), Map.entry(10, "{h} e dez"), Map.entry(15, "{h} e um quarto"), Map.entry(20, "{h} e vinte"), Map.entry(25, "{h} e vinte e cinco"), Map.entry(30, "{h} e meia"), Map.entry(35, "vinte e cinco para as {next_h}"), Map.entry(40, "vinte para as {next_h}"), Map.entry(45, "um quarto para as {next_h}"), Map.entry(50, "dez para as {next_h}"), Map.entry(55, "cinco para as {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} em ponto"), Map.entry(5, "{h} e cinco"), Map.entry(10, "{h} e dez"), Map.entry(15, "{h} e um quarto"), Map.entry(20, "{h} e vinte"), Map.entry(25, "{h} e vinte e cinco"), Map.entry(30, "{h} e meia"), Map.entry(35, "vinte e cinco para as {next_h}"), Map.entry(40, "vinte para as {next_h}"), Map.entry(45, "um quarto para as {next_h}"), Map.entry(50, "dez para as {next_h}"), Map.entry(55, "cinco para as {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1859,7 +1859,7 @@ public final class Locales {
             List.of("chunka iskayniyuq", "huk", "iskay", "kimsa", "tawa", "pichqa", "suqta", "qanchis", "pusaq", "isqun", "chunka", "chunka hukniyuq"),
             "chawpi tuta",
             "chawpi p'unchaw",
-            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} pichqa"), Map.entry(10, "{h} chunka"), Map.entry(15, "{h} chunka pichqayuq"), Map.entry(20, "{h} iskay chunka"), Map.entry(25, "{h} iskay chunka pichqayuq"), Map.entry(30, "{h} kimsa chunka"), Map.entry(35, "{next_h} mana iskay chunka pichqayuq"), Map.entry(40, "{next_h} mana iskay chunka"), Map.entry(45, "{next_h} mana chunka pichqayuq"), Map.entry(50, "{next_h} mana chunka"), Map.entry(55, "{next_h} mana pichqa"))
+            Map.ofEntries(Map.entry(0, "{h} ura"), Map.entry(5, "{h} ura pichqa"), Map.entry(10, "{h} ura chunka"), Map.entry(15, "{h} ura chunka pichqayuq"), Map.entry(20, "{h} ura iskay chunka"), Map.entry(25, "{h} ura iskay chunka pichqayuq"), Map.entry(30, "{h} ura kimsa chunka"), Map.entry(35, "{h} ura kimsa chunka pichqayuq"), Map.entry(40, "{h} ura tawa chunka"), Map.entry(45, "{h} ura tawa chunka pichqayuq"), Map.entry(50, "{h} ura pichqa chunka"), Map.entry(55, "{h} ura pichqa chunka pichqayuq"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1872,10 +1872,10 @@ public final class Locales {
     public static final TimeLocale QUC = new TimeLocale(
         "quc",
         new ClockConfig(
-            List.of("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"),
+            List.of("kab'lajuj", "jun", "keb'", "oxib'", "kajib'", "job'", "waqib'", "wuqub'", "wajxaqib'", "b'elejeb'", "lajuj", "julajuj"),
             "nik'aj aq'ab'",
             "nik'aj q'ij",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} ramaj"), Map.entry(5, "{h} ramaj job'"), Map.entry(10, "{h} ramaj lajuj"), Map.entry(15, "{h} ramaj olajuj"), Map.entry(20, "{h} ramaj juwinaq"), Map.entry(25, "{h} ramaj juwinaq job'"), Map.entry(30, "{h} ramaj juwinaq lajuj"), Map.entry(35, "{h} ramaj juwinaq olajuj"), Map.entry(40, "{h} ramaj kawinaq"), Map.entry(45, "{h} ramaj kawinaq job'"), Map.entry(50, "{h} ramaj kawinaq lajuj"), Map.entry(55, "{h} ramaj kawinaq olajuj"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1891,7 +1891,7 @@ public final class Locales {
             List.of("douăsprezece", "unu", "două", "trei", "patru", "cinci", "șase", "șapte", "opt", "nouă", "zece", "unsprezece"),
             "miezul nopții",
             "amiază",
-            Map.ofEntries(Map.entry(0, "{h} ore"), Map.entry(5, "cinci peste {h}"), Map.entry(10, "zece peste {h}"), Map.entry(15, "un sfert peste {h}"), Map.entry(20, "douăzeci peste {h}"), Map.entry(25, "douăzeci și cinci peste {h}"), Map.entry(30, "jumătate peste {h}"), Map.entry(35, "douăzeci și cinci înainte de {next_h}"), Map.entry(40, "douăzeci înainte de {next_h}"), Map.entry(45, "un sfert înainte de {next_h}"), Map.entry(50, "zece înainte de {next_h}"), Map.entry(55, "cinci înainte de {next_h}"))
+            Map.ofEntries(Map.entry(0, "ora {h}"), Map.entry(5, "{h} și cinci"), Map.entry(10, "{h} și zece"), Map.entry(15, "{h} și un sfert"), Map.entry(20, "{h} și douăzeci"), Map.entry(25, "{h} și douăzeci și cinci"), Map.entry(30, "{h} și jumătate"), Map.entry(35, "{next_h} fără douăzeci și cinci"), Map.entry(40, "{next_h} fără douăzeci"), Map.entry(45, "{next_h} fără un sfert"), Map.entry(50, "{next_h} fără zece"), Map.entry(55, "{next_h} fără cinci"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1907,7 +1907,7 @@ public final class Locales {
             List.of("двенадцать", "час", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать"),
             "полночь",
             "полдень",
-            Map.ofEntries(Map.entry(0, "{h} часа"), Map.entry(5, "пять po {h}"), Map.entry(10, "десять po {h}"), Map.entry(15, "пятнадцать po {h}"), Map.entry(20, "двадцать po {h}"), Map.entry(25, "двадцать пять po {h}"), Map.entry(30, "тридцать po {h}"), Map.entry(35, "двадцать пять do {next_h}"), Map.entry(40, "двадцать do {next_h}"), Map.entry(45, "пятнадцать do {next_h}"), Map.entry(50, "десять do {next_h}"), Map.entry(55, "пять do {next_h}"))
+            Map.ofEntries(Map.entry(0, "ровно {h}"), Map.entry(5, "{h} ноль пять"), Map.entry(10, "{h} десять"), Map.entry(15, "{h} пятнадцать"), Map.entry(20, "{h} двадцать"), Map.entry(25, "{h} двадцать пять"), Map.entry(30, "{h} тридцать"), Map.entry(35, "без двадцати пяти {next_h}"), Map.entry(40, "без двадцати {next_h}"), Map.entry(45, "без четверти {next_h}"), Map.entry(50, "без десяти {next_h}"), Map.entry(55, "без пяти {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -1920,10 +1920,10 @@ public final class Locales {
     public static final TimeLocale RW = new TimeLocale(
         "rw",
         new ClockConfig(
-            List.of("cumi n'ebyiri", "rimwe", "ebyiri", "eshatu", "enye", "eshanu", "esheshatu", "indwi", "umunani", "icyenda", "icumi", "cumi n'imwe"),
-            "igicuku",
-            "saa sita",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            List.of("sita", "saba", "munani", "cyenda", "kumi", "kumi n'imwe", "kumi n'ebyiri", "moya", "mbiri", "tatu", "ine", "tanu"),
+            "saa sita z'ijoro",
+            "saa sita z'amanywa",
+            Map.ofEntries(Map.entry(0, "saa {h}"), Map.entry(5, "saa {h} n'iminota itanu"), Map.entry(10, "saa {h} n'iminota icumi"), Map.entry(15, "saa {h} n'iminota cumi n'itanu"), Map.entry(20, "saa {h} n'iminota makumyabiri"), Map.entry(25, "saa {h} n'iminota makumyabiri n'itanu"), Map.entry(30, "saa {h} n'igice"), Map.entry(35, "saa {h} n'iminota mirongo itatu n'itanu"), Map.entry(40, "saa {h} n'iminota mirongo ine"), Map.entry(45, "saa {h} n'iminota mirongo ine n'itanu"), Map.entry(50, "saa {h} n'iminota mirongo itanu"), Map.entry(55, "saa {h} n'iminota mirongo itanu n'itanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1936,10 +1936,10 @@ public final class Locales {
     public static final TimeLocale SAR = new TimeLocale(
         "sar",
         new ClockConfig(
-            List.of("mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "kɨ̀ndá", "ɗìi", "mùtá", "sɔ̀", "mɨ̀ndɨ̀", "mɨ̀ndɨ̀ kɨ̀ndá", "mɨ̀sá", "mɨ̀ndɨ̀ mùtá", "mɨ̀ndɨ̀ sɔ̀", "mɔ̀ɔ́", "mɔ̀ɔ́ kɨ̀ndá"),
+            List.of("lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "lɛɛr kɨ̀ndá", "lɛɛr ɗìi", "lɛɛr mùtá", "lɛɛr sɔ̀", "lɛɛr mɨ̀ndɨ̀", "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá", "lɛɛr mɨ̀sá", "lɛɛr mɨ̀ndɨ̀ mùtá", "lɛɛr mɨ̀ndɨ̀ sɔ̀", "lɛɛr mɔ̀ɔ́", "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá"),
             "badɔ",
             "mbɔr ndɔ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} kɨ̀ minít mɨ̀ndɨ̀"), Map.entry(10, "{h} kɨ̀ minít mɔ̀ɔ́"), Map.entry(15, "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"), Map.entry(20, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi"), Map.entry(25, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"), Map.entry(30, "{h} kɩ̀ ndá̰ŋ"), Map.entry(35, "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"), Map.entry(40, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀"), Map.entry(45, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"), Map.entry(50, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀"), Map.entry(55, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1952,10 +1952,10 @@ public final class Locales {
     public static final TimeLocale SD = new TimeLocale(
         "sd",
         new ClockConfig(
-            List.of("ٻارھ", "ھڪ", "ٻه", "ٽي", "چار", "پنج", "ڇھ", "ست", "اٺ", "نائن", "ڏھ", "يارھ"),
+            List.of("ٻارهن", "هڪ", "ٻه", "ٽي", "چار", "پنج", "ڇهه", "ست", "اٺ", "نوَ", "ڏهه", "يارهن"),
             "اڌ رات",
             "ٽپھر",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} وڳي"), Map.entry(5, "{h} وڳي پنج منٽ"), Map.entry(10, "{h} وڳي ڏهه منٽ"), Map.entry(15, "سوا {h} وڳي"), Map.entry(20, "{h} وڳي ويهه منٽ"), Map.entry(25, "{h} وڳي پنجويهه منٽ"), Map.entry(30, "{h} وڳي ٽيهه منٽ"), Map.entry(35, "{next_h} وڳڻ ۾ پنجويهه منٽ"), Map.entry(40, "{next_h} وڳڻ ۾ ويهه منٽ"), Map.entry(45, "پوڻا {next_h} وڳي"), Map.entry(50, "{next_h} وڳڻ ۾ ڏهه منٽ"), Map.entry(55, "{next_h} وڳڻ ۾ پنج منٽ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1968,10 +1968,10 @@ public final class Locales {
     public static final TimeLocale SG = new TimeLocale(
         "sg",
         new ClockConfig(
-            List.of("bâlè-ûse", "ôko", "ûse", "otâ", "usïö", "okü", "ömënë", "mbïrïmbïrï", "mënâmbârâ", "gonambâlâ", "bâlè", "bâlè na ôko"),
+            List.of("balë-ôko na ûse", "ôko", "ûse", "otâ", "usïö", "okü", "omanä", "mbâsâmbârâ", "miombe", "gümbâyä", "balë-ôko", "balë-ôko na ôko"),
             "gï na lögö",
             "lâ nzönï",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ngbonga {h}"), Map.entry(5, "ngbonga {h} na minüti okü"), Map.entry(10, "ngbonga {h} na minüti balë-ôko"), Map.entry(15, "ngbonga {h} na minüti balë-ôko na okü"), Map.entry(20, "ngbonga {h} na minüti balë-ûse"), Map.entry(25, "ngbonga {h} na minüti balë-ûse na okü"), Map.entry(30, "ngbonga {h} na ndâmbo"), Map.entry(35, "ngbonga {h} na minüti balë-otâ na okü"), Map.entry(40, "ngbonga {h} na minüti balë-usïö"), Map.entry(45, "ngbonga {h} na minüti balë-usïö na okü"), Map.entry(50, "ngbonga {h} na minüti balë-okü"), Map.entry(55, "ngbonga {h} na minüti balë-okü na okü"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1984,10 +1984,10 @@ public final class Locales {
     public static final TimeLocale SHI = new TimeLocale(
         "shi",
         new ClockConfig(
-            List.of("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            List.of("ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ", "ⵜⵉⵙ ⵙⵏⴰⵜ", "ⵜⵉⵙ ⴽⵕⴰⵟⵟ", "ⵜⵉⵙ ⴽⴽⵓⵥⵜ", "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ", "ⵜⵉⵙ ⵙⴹⵉⵙⵜ", "ⵜⵉⵙ ⵙⴰⵜ", "ⵜⵉⵙ ⵜⴰⵎⵜ", "ⵜⵉⵙ ⵜⵥⴰⵜ", "ⵜⵉⵙ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"),
             "ⵏⵚ ⵏ ⵉⴹ",
             "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ"), Map.entry(10, "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ"), Map.entry(15, "{h} ⴷ ⵔⵔⴱⵄ"), Map.entry(20, "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(25, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(30, "{h} ⴷ ⵓⵣⴳⵏ"), Map.entry(35, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(40, "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(45, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(50, "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"), Map.entry(55, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2003,7 +2003,7 @@ public final class Locales {
             List.of("သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း"),
             "ၵၢင်ၶိုၼ်း",
             "ၵၢင်ဝၼ်း",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}မူင်း"), Map.entry(5, "{h}မူင်း ႁႃႈမိၼိတ်ႉ"), Map.entry(10, "{h}မူင်း သိပ်းမိၼိတ်ႉ"), Map.entry(15, "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ"), Map.entry(20, "{h}မူင်း သၢဝ်းမိၼိတ်ႉ"), Map.entry(25, "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ"), Map.entry(30, "{h}မူင်းၶိုင်ႈ"), Map.entry(35, "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ"), Map.entry(40, "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ"), Map.entry(45, "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ"), Map.entry(50, "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ"), Map.entry(55, "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2019,7 +2019,7 @@ public final class Locales {
             List.of("දොළහ", "එක", "දෙක", "තුන", "හතර", "පහ", "හය", "හත", "අට", "නවය", "දහය", "එකොළහ"),
             "මධ්‍යම රාත්‍රිය",
             "මධ්‍යාහ්නය",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}යි"), Map.entry(5, "{h}යි විනාඩි පහයි"), Map.entry(10, "{h}යි විනාඩි දහයයි"), Map.entry(15, "{h}යි කාලයි"), Map.entry(20, "{h}යි විනාඩි විස්සයි"), Map.entry(25, "{h}යි විනාඩි විසිපහයි"), Map.entry(30, "{h} හමාරයි"), Map.entry(35, "{next_h}ට විනාඩි විසිපහයි"), Map.entry(40, "{next_h}ට විනාඩි විස්සයි"), Map.entry(45, "{next_h}ට කාලයි"), Map.entry(50, "{next_h}ට විනාඩි දහයයි"), Map.entry(55, "{next_h}ට විනාඩි පහයි"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2035,7 +2035,7 @@ public final class Locales {
             List.of("dvanásť", "jedna", "dve", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť", "desať", "jedenásť"),
             "polnoc",
             "poludnie",
-            Map.ofEntries(Map.entry(0, "{h} hodín"), Map.entry(5, "päť po {h}"), Map.entry(10, "desať po {h}"), Map.entry(15, "štvrť po {h}"), Map.entry(20, "dvadsať po {h}"), Map.entry(25, "dvadsať päť po {h}"), Map.entry(30, "pol po {h}"), Map.entry(35, "dvadsať päť do {next_h}"), Map.entry(40, "dvadsať do {next_h}"), Map.entry(45, "štvrť do {next_h}"), Map.entry(50, "desať do {next_h}"), Map.entry(55, "päť do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} nula päť"), Map.entry(10, "{h} desať"), Map.entry(15, "{h} pätnásť"), Map.entry(20, "{h} dvadsať"), Map.entry(25, "{h} dvadsaťpäť"), Map.entry(30, "{h} tridsať"), Map.entry(35, "o dvadsaťpäť minút {next_h}"), Map.entry(40, "o dvadsať minút {next_h}"), Map.entry(45, "o pätnásť minút {next_h}"), Map.entry(50, "o desať minút {next_h}"), Map.entry(55, "o päť minút {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2051,7 +2051,7 @@ public final class Locales {
             List.of("dvanajst", "ena", "dve", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet", "deset", "enajst"),
             "polnoč",
             "poldne",
-            Map.ofEntries(Map.entry(0, "{h} ura"), Map.entry(5, "pet po {h}"), Map.entry(10, "deset po {h}"), Map.entry(15, "petnajst po {h}"), Map.entry(20, "dvajset po {h}"), Map.entry(25, "dvajset pet po {h}"), Map.entry(30, "trideset po {h}"), Map.entry(35, "dvajset pet do {next_h}"), Map.entry(40, "dvajset do {next_h}"), Map.entry(45, "petnajst do {next_h}"), Map.entry(50, "deset do {next_h}"), Map.entry(55, "pet do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "pet čez {h}"), Map.entry(10, "deset čez {h}"), Map.entry(15, "petnajst čez {h}"), Map.entry(20, "dvajset čez {h}"), Map.entry(25, "petindvajset čez {h}"), Map.entry(30, "{h} trideset"), Map.entry(35, "{h} petintrideset"), Map.entry(40, "{h} štirideset"), Map.entry(45, "{h} petinštirideset"), Map.entry(50, "{h} petdeset"), Map.entry(55, "{h} petinpetdeset"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2064,10 +2064,10 @@ public final class Locales {
     public static final TimeLocale SN = new TimeLocale(
         "sn",
         new ClockConfig(
-            List.of("gumi nembiri", "imwe", "mbiri", "nhatu", "ina", "shanu", "nhanhatu", "nomwe", "sere", "pfumbamwe", "gumi", "gumi neimwe"),
-            "usiku hwepakati",
+            List.of("dzava gumi nembiri", "yava imwe", "dzava mbiri", "dzava nhatu", "dzava ina", "dzava shanu", "dzava nhanhatu", "dzava nomwe", "dzava sere", "dzava pfumbamwe", "dzava gumi", "dzava gumi neimwe"),
+            "pakati peusiku",
             "masikati",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} nemaminitsi mashanu"), Map.entry(10, "{h} nemaminitsi gumi"), Map.entry(15, "{h} nemaminitsi gumi nemashanu"), Map.entry(20, "{h} nemaminitsi makumi maviri"), Map.entry(25, "{h} nemaminitsi makumi maviri nemashanu"), Map.entry(30, "{h} nehafu"), Map.entry(35, "{h} nemaminitsi makumi matatu nemashanu"), Map.entry(40, "{h} nemaminitsi makumi mana"), Map.entry(45, "{h} nemaminitsi makumi mana nemashanu"), Map.entry(50, "{h} nemaminitsi makumi mashanu"), Map.entry(55, "{h} nemaminitsi makumi mashanu nemashanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2080,10 +2080,10 @@ public final class Locales {
     public static final TimeLocale SNK = new TimeLocale(
         "snk",
         new ClockConfig(
-            List.of("tanmu fillo", "baane", "fillo", "sikko", "naaxato", "karago", "tunmu", "ñerru", "segu", "kaburu", "tanmu", "tanmu baane"),
+            List.of("waxati tanmu do fillo", "waxati baane", "waxati fillo", "waxati sikko", "waxati naaxato", "waxati karago", "waxati tunmu", "waxati ñerru", "waxati segu", "waxati kaburu", "waxati tanmu", "waxati tanmu do baane"),
             "sulen noxo",
             "tili seren",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} do miniti karago"), Map.entry(10, "{h} do miniti tanmu"), Map.entry(15, "{h} do miniti tanmu do karago"), Map.entry(20, "{h} do miniti tanpille"), Map.entry(25, "{h} do miniti tanpille do karago"), Map.entry(30, "{h} do faabe"), Map.entry(35, "{h} do miniti tanjikke do karago"), Map.entry(40, "{h} do miniti tannaxate"), Map.entry(45, "{h} do miniti tannaxate do karago"), Map.entry(50, "{h} do miniti tankarage"), Map.entry(55, "{h} do miniti tankarage do karago"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2096,10 +2096,10 @@ public final class Locales {
     public static final TimeLocale SO = new TimeLocale(
         "so",
         new ClockConfig(
-            List.of("laba iyo toban", "kow", "laba", "saddex", "afar", "shan", "lix", "toddoba", "siddeed", "sagaal", "toban", "kow iyo toban"),
+            List.of("laba iyo tobanka", "kowda", "labada", "saddexda", "afarta", "shanta", "lixda", "toddobada", "siddeedda", "sagaasha", "tobanka", "kow iyo tobanka"),
             "saqda dhexe",
             "duhur",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} iyo shan"), Map.entry(10, "{h} iyo toban"), Map.entry(15, "{h} iyo rubuc"), Map.entry(20, "{h} iyo labaatan"), Map.entry(25, "{h} iyo shan iyo labaatan"), Map.entry(30, "{h} iyo bar"), Map.entry(35, "{next_h} shan iyo labaatan la'"), Map.entry(40, "{next_h} labaatan la'"), Map.entry(45, "{next_h} rubuc la'"), Map.entry(50, "{next_h} toban la'"), Map.entry(55, "{next_h} shan la'"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2115,7 +2115,7 @@ public final class Locales {
             List.of("dymbëdhjetë", "një", "dy", "tre", "katër", "pesë", "gjashtë", "shtatë", "tetë", "nëntë", "dhjetë", "njëmbëdhjetë"),
             "mesnata",
             "mesdita",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "pesë past {h}"), Map.entry(10, "dhjetë past {h}"), Map.entry(15, "një çerek past {h}"), Map.entry(20, "njëzet past {h}"), Map.entry(25, "njëzet e pesë past {h}"), Map.entry(30, "gjysma past {h}"), Map.entry(35, "njëzet e pesë to {next_h}"), Map.entry(40, "njëzet to {next_h}"), Map.entry(45, "një çerek to {next_h}"), Map.entry(50, "dhjetë to {next_h}"), Map.entry(55, "pesë to {next_h}"))
+            Map.ofEntries(Map.entry(0, "ora {h}"), Map.entry(5, "{h} e pesë"), Map.entry(10, "{h} e dhjetë"), Map.entry(15, "{h} e një çerek"), Map.entry(20, "{h} e njëzet"), Map.entry(25, "{h} e njëzet e pesë"), Map.entry(30, "{h} e gjysmë"), Map.entry(35, "{next_h} pa njëzet e pesë"), Map.entry(40, "{next_h} pa njëzet"), Map.entry(45, "{next_h} pa një çerek"), Map.entry(50, "{next_h} pa dhjetë"), Map.entry(55, "{next_h} pa pesë"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2131,7 +2131,7 @@ public final class Locales {
             List.of("дванаест", "један", "два", "три", "четири", "пет", "шест", "седам", "осам", "девет", "десет", "једанаест"),
             "поноћ",
             "подне",
-            Map.ofEntries(Map.entry(0, "{h} часа"), Map.entry(5, "пет po {h}"), Map.entry(10, "десет po {h}"), Map.entry(15, "петнаест po {h}"), Map.entry(20, "двадесет po {h}"), Map.entry(25, "двадесет пет po {h}"), Map.entry(30, "тридесет po {h}"), Map.entry(35, "двадесет пет do {next_h}"), Map.entry(40, "двадесет do {next_h}"), Map.entry(45, "петнаест do {next_h}"), Map.entry(50, "десет do {next_h}"), Map.entry(55, "пет do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} и пет"), Map.entry(10, "{h} и десет"), Map.entry(15, "{h} и петнаест"), Map.entry(20, "{h} и двадесет"), Map.entry(25, "{h} и двадесет пет"), Map.entry(30, "пола {next_h}"), Map.entry(35, "двадесет пет до {next_h}"), Map.entry(40, "двадесет до {next_h}"), Map.entry(45, "петнаест до {next_h}"), Map.entry(50, "десет до {next_h}"), Map.entry(55, "пет до {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2144,10 +2144,10 @@ public final class Locales {
     public static final TimeLocale SS = new TimeLocale(
         "ss",
         new ClockConfig(
-            List.of("lishumi nambili", "kunye", "kubili", "kutsatfu", "kune", "kusihlanu", "sitfupha", "sikhombisa", "siphohlongo", "sifisagcina", "lishumi", "lishumi nakunye"),
+            List.of("lelishumi nakubili", "lekucala", "lesibili", "lesitsatfu", "lesine", "lesihlanu", "lesitfupha", "lesikhombisa", "lesiphohlongo", "lemfica", "lelishumi", "lelishumi nakunye"),
             "phakathi kwebusuku",
             "emini",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "lihora {h}"), Map.entry(5, "lihora {h} nemizuzu lemihlanu"), Map.entry(10, "lihora {h} nemizuzu lelishumi"), Map.entry(15, "lihora {h} nemizuzu lelishumi nesihlanu"), Map.entry(20, "lihora {h} nemizuzu lemashumi lamabili"), Map.entry(25, "lihora {h} nemizuzu lemashumi lamabili nesihlanu"), Map.entry(30, "lihora {h} nenhafu"), Map.entry(35, "lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu"), Map.entry(40, "lihora {h} nemizuzu lemashumi lamane"), Map.entry(45, "lihora {h} nemizuzu lemashumi lamane nesihlanu"), Map.entry(50, "lihora {h} nemizuzu lemashumi lasihlanu"), Map.entry(55, "lihora {h} nemizuzu lemashumi lasihlanu nesihlanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2160,10 +2160,10 @@ public final class Locales {
     public static final TimeLocale ST = new TimeLocale(
         "st",
         new ClockConfig(
-            List.of("leshome le metso e mmedi", "e nngwe", "tse pedi", "tse tharo", "tse nne", "tse hlano", "tse tshelela", "tse supileng", "tse robedi", "tse robong", "leshome", "leshome le motso o le mong"),
+            List.of("leshome le metso e mmedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshelela", "bosupa", "borobedi", "borobong", "leshome", "leshome le motso o le mong"),
             "hara bosiu",
             "motsheare",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "hora ya {h}"), Map.entry(5, "hora ya {h} le metsotso e mehlano"), Map.entry(10, "hora ya {h} le metsotso e leshome"), Map.entry(15, "hora ya {h} le kotara"), Map.entry(20, "hora ya {h} le metsotso e mashome a mabedi"), Map.entry(25, "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano"), Map.entry(30, "hora ya {h} le halofo"), Map.entry(35, "hora ya {h} le metsotso e mashome a mararo a metso e mehlano"), Map.entry(40, "hora ya {h} le metsotso e mashome a mane"), Map.entry(45, "hora ya {h} le metsotso e mashome a mane a metso e mehlano"), Map.entry(50, "hora ya {h} le metsotso e mashome a mahlano"), Map.entry(55, "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2179,7 +2179,7 @@ public final class Locales {
             List.of("dua welas", "hiji", "dua", "tilu", "opat", "lima", "genep", "tujuh", "dalapan", "salapan", "sapuluh", "sabelas"),
             "tengah peuting",
             "beurang",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "jam {h}"), Map.entry(5, "jam {h} leuwih lima menit"), Map.entry(10, "jam {h} leuwih sapuluh menit"), Map.entry(15, "jam {h} leuwih saparapat"), Map.entry(20, "jam {h} leuwih dua puluh menit"), Map.entry(25, "jam {h} leuwih dua puluh lima menit"), Map.entry(30, "satengah {next_h}"), Map.entry(35, "jam {next_h} kurang dua puluh lima menit"), Map.entry(40, "jam {next_h} kurang dua puluh menit"), Map.entry(45, "jam {next_h} kurang saparapat"), Map.entry(50, "jam {next_h} kurang sapuluh menit"), Map.entry(55, "jam {next_h} kurang lima menit"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2192,10 +2192,10 @@ public final class Locales {
     public static final TimeLocale SUK = new TimeLocale(
         "suk",
         new ClockConfig(
-            List.of("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
+            List.of("sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"),
             "usiku gati",
             "adhuhuri",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "saa {h}"), Map.entry(5, "saa {h} na dakika tano"), Map.entry(10, "saa {h} na dakika kumi"), Map.entry(15, "saa {h} na robo"), Map.entry(20, "saa {h} na dakika ishirini"), Map.entry(25, "saa {h} na dakika ishirini na tano"), Map.entry(30, "saa {h} na nusu"), Map.entry(35, "saa {next_h} kasoro dakika ishirini na tano"), Map.entry(40, "saa {next_h} kasoro dakika ishirini"), Map.entry(45, "saa {next_h} kasoro robo"), Map.entry(50, "saa {next_h} kasoro dakika kumi"), Map.entry(55, "saa {next_h} kasoro dakika tano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2224,10 +2224,10 @@ public final class Locales {
     public static final TimeLocale SW = new TimeLocale(
         "sw",
         new ClockConfig(
-            List.of("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
-            "usiku wa manane",
-            "adhuhuri",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "tano kupita {h}"), Map.entry(10, "kumi kupita {h}"), Map.entry(15, "robo kupita {h}"), Map.entry(20, "ishirini kupita {h}"), Map.entry(25, "ishirini na tano kupita {h}"), Map.entry(30, "nusu kupita {h}"), Map.entry(35, "ishirini na tano kabla ya {next_h}"), Map.entry(40, "ishirini kabla ya {next_h}"), Map.entry(45, "robo kabla ya {next_h}"), Map.entry(50, "kumi kabla ya {next_h}"), Map.entry(55, "tano kabla ya {next_h}"))
+            List.of("sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"),
+            "saa sita usiku",
+            "saa sita mchana",
+            Map.ofEntries(Map.entry(0, "saa {h}"), Map.entry(5, "saa {h} na dakika tano"), Map.entry(10, "saa {h} na dakika kumi"), Map.entry(15, "saa {h} na robo"), Map.entry(20, "saa {h} na dakika ishirini"), Map.entry(25, "saa {h} na dakika ishirini na tano"), Map.entry(30, "saa {h} na nusu"), Map.entry(35, "saa {next_h} kasoro dakika ishirini na tano"), Map.entry(40, "saa {next_h} kasoro dakika ishirini"), Map.entry(45, "saa {next_h} kasoro robo"), Map.entry(50, "saa {next_h} kasoro dakika kumi"), Map.entry(55, "saa {next_h} kasoro dakika tano"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2240,10 +2240,10 @@ public final class Locales {
     public static final TimeLocale TA = new TimeLocale(
         "ta",
         new ClockConfig(
-            List.of("பன்னிரண்டு", "ஒன்று", "இரண்டு", "மூன்று", "நான்கு", "ஐந்து", "ஆறு", "ஏழு", "எட்டு", "ஒன்பது", "பத்து", "பதினொன்று"),
+            List.of("பன்னிரண்ட", "ஒன்ற", "இரண்ட", "மூன்ற", "நான்க", "ஐந்த", "ஆற", "ஏழ", "எட்ட", "ஒன்பத", "பத்த", "பதினொன்ற"),
             "நள்ளிரவு",
             "நண்பகல்",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}ு மணி"), Map.entry(5, "{h}ு மணி ஐந்து நிமிடம்"), Map.entry(10, "{h}ு மணி பத்து நிமிடம்"), Map.entry(15, "{h}ே கால்"), Map.entry(20, "{h}ு மணி இருபது நிமிடம்"), Map.entry(25, "{h}ு மணி இருபத்தைந்து நிமிடம்"), Map.entry(30, "{h}ரை"), Map.entry(35, "{h}ு மணி முப்பத்தைந்து நிமிடம்"), Map.entry(40, "{h}ு மணி நாற்பது நிமிடம்"), Map.entry(45, "{h}ே முக்கால்"), Map.entry(50, "{h}ு மணி ஐம்பது நிமிடம்"), Map.entry(55, "{h}ு மணி ஐம்பத்தைந்து நிமிடம்"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2259,7 +2259,7 @@ public final class Locales {
             List.of("పన్నెండు", "ఒకటి", "రెండు", "మూడు", "నాలుగు", "ఐదు", "ఆరు", "ఏడు", "ఎనిమిది", "తొమ్మిది", "పది", "పదకొండు"),
             "అర్ధరాత్రి",
             "మధ్యాహ్నం",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} అయింది"), Map.entry(5, "{h} దాటి ఐదు నిమిషాలు"), Map.entry(10, "{h} దాటి పది నిమిషాలు"), Map.entry(15, "{h}ంపావు"), Map.entry(20, "{h} దాటి ఇరవై నిమిషాలు"), Map.entry(25, "{h} దాటి ఇరవై ఐదు నిమిషాలు"), Map.entry(30, "{h}న్నర"), Map.entry(35, "{h} దాటి ముప్పై ఐదు నిమిషాలు"), Map.entry(40, "{next_h} కావడానికి ఇరవై నిమిషాలు"), Map.entry(45, "పావు తక్కువ {next_h}"), Map.entry(50, "{next_h} కావడానికి పది నిమిషాలు"), Map.entry(55, "{next_h} కావడానికి ఐదు నిమిషాలు"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2272,10 +2272,10 @@ public final class Locales {
     public static final TimeLocale TEM = new TimeLocale(
         "tem",
         new ClockConfig(
-            List.of("pɛn pu", "kɩrɩŋ", "rɔŋ", "rasar", "rɔŋ-anat", "rɔman", "rɔmata", "rɔmbot", "rɔmɔntat", "rɔmɔntaŋka", "pɛn", "pɛn nɛ kɩrɩŋ"),
+            List.of("awa pɛn nɛ rɔŋ", "awa kɩrɩŋ", "awa rɔŋ", "awa rasar", "awa rɔŋ-anat", "awa rɔman", "awa rɔmata", "awa rɔmbot", "awa rɔmɔntat", "awa rɔmɔntaŋka", "awa pɛn", "awa pɛn nɛ kɩrɩŋ"),
             "rofɛt anpa",
             "lən",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} nɛ minit rɔman"), Map.entry(10, "{h} nɛ minit pɛn"), Map.entry(15, "{h} nɛ minit pɛn nɛ rɔman"), Map.entry(20, "{h} nɛ minit kɩgba"), Map.entry(25, "{h} nɛ minit kɩgba nɛ rɔman"), Map.entry(30, "{h} a gbankɛ"), Map.entry(35, "{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman"), Map.entry(40, "{h} nɛ minit tɔgba rɔŋ"), Map.entry(45, "{h} nɛ minit tɔgba rɔŋ nɛ rɔman"), Map.entry(50, "{h} nɛ minit tɔgba rɔŋ nɛ pɛn"), Map.entry(55, "{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2291,7 +2291,7 @@ public final class Locales {
             List.of("sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"),
             "meiu-kalan",
             "meiu-loron",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "tuku {h}"), Map.entry(5, "tuku {h} ho minutu lima"), Map.entry(10, "tuku {h} ho minutu sanulu"), Map.entry(15, "tuku {h} ho minutu sanulu-resin-lima"), Map.entry(20, "tuku {h} ho minutu ruanulu"), Map.entry(25, "tuku {h} ho minutu ruanulu-resin-lima"), Map.entry(30, "tuku {h} ho balun"), Map.entry(35, "tuku {h} ho minutu tolunulu-resin-lima"), Map.entry(40, "tuku {h} ho minutu haatnulu"), Map.entry(45, "tuku {h} ho minutu haatnulu-resin-lima"), Map.entry(50, "tuku {h} ho minutu limanulu"), Map.entry(55, "tuku {h} ho minutu limanulu-resin-lima"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2307,7 +2307,7 @@ public final class Locales {
             List.of("дувоздаҳ", "як", "ду", "се", "чор", "панҷ", "шаш", "ҳафт", "ҳашт", "нӯҳ", "даҳ", "ёздаҳ"),
             "нимишаб",
             "нимирӯз",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "соати {h}"), Map.entry(5, "соати {h} ва панҷ дақиқа"), Map.entry(10, "соати {h} ва даҳ дақиқа"), Map.entry(15, "соати {h} ва понздаҳ дақиқа"), Map.entry(20, "соати {h} ва бист дақиқа"), Map.entry(25, "соати {h} ва бисту панҷ дақиқа"), Map.entry(30, "соати {h} ва ним"), Map.entry(35, "соати {h} ва сию панҷ дақиқа"), Map.entry(40, "соати {h} ва чил дақиқа"), Map.entry(45, "соати {h} ва чилу панҷ дақиқа"), Map.entry(50, "соати {h} ва панҷоҳ дақиқа"), Map.entry(55, "соати {h} ва панҷоҳу панҷ дақиқа"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2339,7 +2339,7 @@ public final class Locales {
             List.of("ዓሰርተ ክልተ", "ሓደ", "ክልተ", "ሰለስተ", "ኣርባዕተ", "ሓሙሽተ", "ሽድሽተ", "ሸውዓተ", "ሸሞንተ", "ትሽዓተ", "ዓሰርተ", "ዓሰርተ ሓደ"),
             "ፍርቂ ለይቲ",
             "ቀትሪ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} ሰዓት"), Map.entry(5, "{h}ን ሓሙሽተን"), Map.entry(10, "{h}ን ዓሰርተን"), Map.entry(15, "{h}ን ርብዒን"), Map.entry(20, "{h}ን ዕስራን"), Map.entry(25, "{h}ን ዕስራን ሓሙሽተን"), Map.entry(30, "{h}ን ፈረቓን"), Map.entry(35, "{h}ን ሰላሳን ሓሙሽተን"), Map.entry(40, "ዕስራ ጎደል {next_h}"), Map.entry(45, "ርብዒ ጎደል {next_h}"), Map.entry(50, "ዓሰርተ ጎደል {next_h}"), Map.entry(55, "ሓሙሽተ ጎደል {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2355,7 +2355,7 @@ public final class Locales {
             List.of("ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante"),
             "nəs-leyla",
             "qayḥ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "saʿa {h}"), Map.entry(5, "saʿa {h} we ḥamməste"), Map.entry(10, "saʿa {h} we ʿasərte"), Map.entry(15, "saʿa {h} we ʿasərte we ḥamməste"), Map.entry(20, "saʿa {h} we ʿəsra"), Map.entry(25, "saʿa {h} we ʿəsra we ḥamməste"), Map.entry(30, "saʿa {h} we nəs"), Map.entry(35, "saʿa {h} we salasa we ḥamməste"), Map.entry(40, "saʿa {h} we arbaʿa"), Map.entry(45, "saʿa {h} we arbaʿa we ḥamməste"), Map.entry(50, "saʿa {h} we ḥamsa"), Map.entry(55, "saʿa {h} we ḥamsa we ḥamməste"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2371,7 +2371,7 @@ public final class Locales {
             List.of("on iki", "bir", "iki", "üç", "dört", "bäş", "alty", "ýedi", "sekiz", "dokuz", "on", "on bir"),
             "ýary gije",
             "günorta",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "sagat {h}"), Map.entry(5, "sagat {h} bäş minut"), Map.entry(10, "sagat {h} on minut"), Map.entry(15, "sagat {h} on bäş minut"), Map.entry(20, "sagat {h} ýigrimi minut"), Map.entry(25, "sagat {h} ýigrimi bäş minut"), Map.entry(30, "sagat {h} ýarym"), Map.entry(35, "sagat {h} otuz bäş minut"), Map.entry(40, "sagat {h} kyrk minut"), Map.entry(45, "sagat {h} kyrk bäş minut"), Map.entry(50, "sagat {h} elli minut"), Map.entry(55, "sagat {h} elli bäş minut"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2384,10 +2384,10 @@ public final class Locales {
     public static final TimeLocale TN = new TimeLocale(
         "tn",
         new ClockConfig(
-            List.of("lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"),
+            List.of("ya lesome le bobedi", "ya ntlha", "ya bobedi", "ya boraro", "ya bone", "ya botlhano", "ya borataro", "ya bosupa", "ya borobedi", "ya borobongwe", "ya lesome", "ya lesome le bongwe"),
             "bosigo jwa magareng",
             "motshegare",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ura {h}"), Map.entry(5, "ura {h} le metsotso e metlhano"), Map.entry(10, "ura {h} le metsotso e le lesome"), Map.entry(15, "ura {h} le kotara"), Map.entry(20, "ura {h} le metsotso e le masome a mabedi"), Map.entry(25, "ura {h} le metsotso e le masome a mabedi le botlhano"), Map.entry(30, "ura {h} le halofo"), Map.entry(35, "ura {h} le metsotso e le masome a mararo le botlhano"), Map.entry(40, "ura {h} le metsotso e le masome a mane"), Map.entry(45, "ura {h} le metsotso e le masome a mane le botlhano"), Map.entry(50, "ura {h} le metsotso e le masome a matlhano"), Map.entry(55, "ura {h} le metsotso e le masome a matlhano le botlhano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2403,7 +2403,7 @@ public final class Locales {
             List.of("twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"),
             "biknait",
             "belo",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} kilok"), Map.entry(5, "faiv minit pas {h}"), Map.entry(10, "ten minit pas {h}"), Map.entry(15, "kwata pas {h}"), Map.entry(20, "twenti minit pas {h}"), Map.entry(25, "twenti faiv minit pas {h}"), Map.entry(30, "hap pas {h}"), Map.entry(35, "teti faiv minit pas {h}"), Map.entry(40, "foti minit pas {h}"), Map.entry(45, "foti faiv minit pas {h}"), Map.entry(50, "fifti minit pas {h}"), Map.entry(55, "fifti faiv minit pas {h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2419,7 +2419,7 @@ public final class Locales {
             List.of("on iki", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on", "on bir"),
             "gece yarısı",
             "öğle",
-            Map.ofEntries(Map.entry(0, "saat {h}"), Map.entry(5, "{h}'i beş geçiyor"), Map.entry(10, "{h}'i on geçiyor"), Map.entry(15, "{h}'i çeyrek geçiyor"), Map.entry(20, "{h}'i yirmi geçiyor"), Map.entry(25, "{h}'i yirmi beş geçiyor"), Map.entry(30, "{h} buçuk"), Map.entry(35, "{next_h}'e yirmi beş var"), Map.entry(40, "{next_h}'e yirmi var"), Map.entry(45, "{next_h}'e çeyrek var"), Map.entry(50, "{next_h}'e on var"), Map.entry(55, "{next_h}'e beş var"))
+            Map.ofEntries(Map.entry(0, "saat {h}"), Map.entry(5, "saat {h} sıfır beş"), Map.entry(10, "saat {h} on"), Map.entry(15, "saat {h} on beş"), Map.entry(20, "saat {h} yirmi"), Map.entry(25, "saat {h} yirmi beş"), Map.entry(30, "saat {h} buçuk"), Map.entry(35, "saat {h} otuz beş"), Map.entry(40, "saat {h} kırk"), Map.entry(45, "saat {h} kırk beş"), Map.entry(50, "saat {h} elli"), Map.entry(55, "saat {h} elli beş"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2432,10 +2432,10 @@ public final class Locales {
     public static final TimeLocale TS = new TimeLocale(
         "ts",
         new ClockConfig(
-            List.of("khume mbiri", "yin'we", "mbirhi", "nharhu", "mune", "ntlhanu", "tsevu", "nkombo", "nhungu", "kaye", "khume", "khume yin'we"),
+            List.of("ya khume mbirhi", "yo sungula", "ya vumbirhi", "ya vunharhu", "ya vumune", "ya vuntlhanu", "ya vutsevu", "ya vunkombo", "ya vunhungu", "ya vukaye", "ya khume", "ya khume n'we"),
             "vusiku exikarhi",
             "nhlekanhi",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "awara {h}"), Map.entry(5, "awara {h} na timinete ta ntlhanu"), Map.entry(10, "awara {h} na timinete ta khume"), Map.entry(15, "awara {h} na kotara"), Map.entry(20, "awara {h} na timinete ta makume mambirhi"), Map.entry(25, "awara {h} na timinete ta makume mambirhi na ntlhanu"), Map.entry(30, "awara {h} na hafu"), Map.entry(35, "awara {h} na timinete ta makume manharhu na ntlhanu"), Map.entry(40, "awara {h} na timinete ta makume mune"), Map.entry(45, "awara {h} na timinete ta makume mune na ntlhanu"), Map.entry(50, "awara {h} na timinete ta makume ntlhanu"), Map.entry(55, "awara {h} na timinete ta makume ntlhanu na ntlhanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2451,7 +2451,7 @@ public final class Locales {
             List.of("khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza"),
             "pakati pa usiku",
             "muhanya",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} koloko"), Map.entry(5, "{h} koloko na maminiti vinkhondi"), Map.entry(10, "{h} koloko na maminiti khumi"), Map.entry(15, "{h} koloko na maminiti khumi na vinkhondi"), Map.entry(20, "{h} koloko na maminiti makhumi ghaŵiri"), Map.entry(25, "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi"), Map.entry(30, "{h} koloko na hafu"), Map.entry(35, "{h} koloko na maminiti makhumi ghatatu na vinkhondi"), Map.entry(40, "{h} koloko na maminiti makhumi ghanayi"), Map.entry(45, "{h} koloko na maminiti makhumi ghanayi na vinkhondi"), Map.entry(50, "{h} koloko na maminiti makhumi ghankhondi"), Map.entry(55, "{h} koloko na maminiti makhumi ghankhondi na vinkhondi"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2464,10 +2464,10 @@ public final class Locales {
     public static final TimeLocale TZM = new TimeLocale(
         "tzm",
         new ClockConfig(
-            List.of("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
-            "ⵏⵚ ⵏ ⵉⴹ",
-            "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            List.of("tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"),
+            "nṣ n iḍ",
+            "tizwarnin",
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} d smmus tusdiqin"), Map.entry(10, "{h} d mraw tusdiqin"), Map.entry(15, "{h} d rrbɛ"), Map.entry(20, "{h} d ɛcrin n tusdiqt"), Map.entry(25, "{h} d xmsa u ɛcrin n tusdiqt"), Map.entry(30, "{h} d uzgen"), Map.entry(35, "{h} d xmsa u tlatin n tusdiqt"), Map.entry(40, "{h} d ṛbɛin n tusdiqt"), Map.entry(45, "{h} d xmsa u ṛbɛin n tusdiqt"), Map.entry(50, "{h} d xmsin n tusdiqt"), Map.entry(55, "{h} d xmsa u xmsin n tusdiqt"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2483,7 +2483,7 @@ public final class Locales {
             List.of("дванадцята", "перша", "друга", "третя", "четверта", "п'ята", "шоста", "сьома", "восьма", "дев'ята", "десята", "одинадцята"),
             "опівніч",
             "полудень",
-            Map.ofEntries(Map.entry(0, "{h} часа"), Map.entry(5, "п'ять po {h}"), Map.entry(10, "десять po {h}"), Map.entry(15, "п'ятнадцять po {h}"), Map.entry(20, "двадцять po {h}"), Map.entry(25, "двадцять п'ять po {h}"), Map.entry(30, "тридцять po {h}"), Map.entry(35, "двадцять п'ять do {next_h}"), Map.entry(40, "двадцять do {next_h}"), Map.entry(45, "п'ятнадцять do {next_h}"), Map.entry(50, "десять do {next_h}"), Map.entry(55, "п'ять do {next_h}"))
+            Map.ofEntries(Map.entry(0, "{h} година"), Map.entry(5, "{h} нуль п'ять"), Map.entry(10, "{h} десять"), Map.entry(15, "{h} п'ятнадцять"), Map.entry(20, "{h} двадцять"), Map.entry(25, "{h} двадцять п'ять"), Map.entry(30, "{h} тридцять"), Map.entry(35, "за двадцять п'ять хвилин {next_h}"), Map.entry(40, "за двадцять хвилин {next_h}"), Map.entry(45, "за чверть {next_h}"), Map.entry(50, "за десять хвилин {next_h}"), Map.entry(55, "за п'ять хвилин {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2496,10 +2496,10 @@ public final class Locales {
     public static final TimeLocale UMB = new TimeLocale(
         "umb",
         new ClockConfig(
-            List.of("olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi"),
+            List.of("ekwi la vali", "mosi", "vali", "tatu", "kwãla", "tãlo", "epandu", "epanduvali", "ecelãla", "ecea", "ekwi", "ekwi la mosi"),
             "ocitapi",
             "ocivali",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "ohola {h}"), Map.entry(5, "ohola {h} la tãlo"), Map.entry(10, "ohola {h} la ekwi"), Map.entry(15, "ohola {h} la ekwi la tãlo"), Map.entry(20, "ohola {h} la akũi avali"), Map.entry(25, "ohola {h} la akũi avali la tãlo"), Map.entry(30, "ohola {h} la oñali"), Map.entry(35, "ohola {h} la akũi atatu la tãlo"), Map.entry(40, "ohola {h} la akũi akwãla"), Map.entry(45, "ohola {h} la akũi akwãla la tãlo"), Map.entry(50, "ohola {h} la akũi atãlo"), Map.entry(55, "ohola {h} la akũi atãlo la tãlo"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2515,7 +2515,7 @@ public final class Locales {
             List.of("بارہ", "ایک", "دو", "تین", "چار", "پانچ", "چھ", "سات", "آٹھ", "نو", "دس", "گیارہ"),
             "آدھی رات",
             "دوپہر",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "{h} بجے"), Map.entry(5, "{h} بج کر پانچ منٹ"), Map.entry(10, "{h} بج کر دس منٹ"), Map.entry(15, "سوا {h} بجے"), Map.entry(20, "{h} بج کر بیس منٹ"), Map.entry(25, "{h} بج کر پچیس منٹ"), Map.entry(30, "{h} بج کر تیس منٹ"), Map.entry(35, "{h} بج کر پینتیس منٹ"), Map.entry(40, "{next_h} بجنے میں بیس منٹ"), Map.entry(45, "پونے {next_h} بجے"), Map.entry(50, "{next_h} بجنے میں دس منٹ"), Map.entry(55, "{next_h} بجنے میں پانچ منٹ"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2531,7 +2531,7 @@ public final class Locales {
             List.of("o'n ikki", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz", "o'n", "o'n bir"),
             "yarim tun",
             "tush",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "besh past {h}"), Map.entry(10, "o'n past {h}"), Map.entry(15, "o'n besh past {h}"), Map.entry(20, "yigirma past {h}"), Map.entry(25, "yigirma besh past {h}"), Map.entry(30, "o'ttiz past {h}"), Map.entry(35, "yigirma besh to {next_h}"), Map.entry(40, "yigirma to {next_h}"), Map.entry(45, "o'n besh to {next_h}"), Map.entry(50, "o'n to {next_h}"), Map.entry(55, "besh to {next_h}"))
+            Map.ofEntries(Map.entry(0, "soat {h}"), Map.entry(5, "soat {h} nol besh"), Map.entry(10, "soat {h} o'n"), Map.entry(15, "soat {h} o'n besh"), Map.entry(20, "soat {h} yigirma"), Map.entry(25, "soat {h} yigirma besh"), Map.entry(30, "soat {h} yarim"), Map.entry(35, "soat {h} o'ttiz besh"), Map.entry(40, "soat {h} qirq"), Map.entry(45, "soat {h} qirq besh"), Map.entry(50, "soat {h} ellik"), Map.entry(55, "soat {h} ellik besh"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2544,10 +2544,10 @@ public final class Locales {
     public static final TimeLocale VE = new TimeLocale(
         "ve",
         new ClockConfig(
-            List.of("fumimbili", "thihi", "mbili", "raru", "ina", "thanu", "rathi", "sumbe", "malo", "tahe", "fumi", "fuminthihi"),
+            List.of("ya fumi na mbili", "ya u thoma", "ya vhuvhili", "ya vhuraru", "ya vhuṋa", "ya vhuṱanu", "ya vhurathi", "ya vhusumbe", "ya vhumalo", "ya vhuṱahe", "ya fumi", "ya fumi na nthihi"),
             "vhukati ha vhusiku",
             "vhukati ha masiari",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "awara {h}"), Map.entry(5, "awara {h} na ṱhanu"), Map.entry(10, "awara {h} na fumi"), Map.entry(15, "awara {h} na kotara"), Map.entry(20, "awara {h} na mahumi mavhili"), Map.entry(25, "awara {h} na mahumi mavhili na ṱhanu"), Map.entry(30, "awara {h} na hafu"), Map.entry(35, "awara {h} na mahumi mararu na ṱhanu"), Map.entry(40, "awara {h} na mahumi maṋa"), Map.entry(45, "awara {h} na mahumi maṋa na ṱhanu"), Map.entry(50, "awara {h} na mahumi maṱanu"), Map.entry(55, "awara {h} na mahumi maṱanu na ṱhanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2562,8 +2562,8 @@ public final class Locales {
         new ClockConfig(
             List.of("mười hai", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "mười một"),
             "nửa đêm",
-            "trưa",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "năm qua {h}"), Map.entry(10, "mười qua {h}"), Map.entry(15, "mười lăm qua {h}"), Map.entry(20, "hai mươi qua {h}"), Map.entry(25, "hai mươi lăm qua {h}"), Map.entry(30, "ba mươi qua {h}"), Map.entry(35, "hai mươi lăm trước {next_h}"), Map.entry(40, "hai mươi trước {next_h}"), Map.entry(45, "mười lăm trước {next_h}"), Map.entry(50, "mười trước {next_h}"), Map.entry(55, "năm trước {next_h}"))
+            "mười hai giờ trưa",
+            Map.ofEntries(Map.entry(0, "{h} giờ"), Map.entry(5, "{h} giờ năm phút"), Map.entry(10, "{h} giờ mười phút"), Map.entry(15, "{h} giờ mười lăm phút"), Map.entry(20, "{h} giờ hai mươi phút"), Map.entry(25, "{h} giờ hai mươi lăm phút"), Map.entry(30, "{h} giờ rưỡi"), Map.entry(35, "{next_h} giờ kém hai mươi lăm"), Map.entry(40, "{next_h} giờ kém hai mươi"), Map.entry(45, "{next_h} giờ kém mười lăm"), Map.entry(50, "{next_h} giờ kém mười"), Map.entry(55, "{next_h} giờ kém năm"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2579,7 +2579,7 @@ public final class Locales {
             List.of("khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa"),
             "usiku wopakhala",
             "muttana",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "hora {h}"), Map.entry(5, "hora {h} na thanu"), Map.entry(10, "hora {h} na khumi"), Map.entry(15, "hora {h} na khumi na thanu"), Map.entry(20, "hora {h} na makhumi mapili"), Map.entry(25, "hora {h} na makhumi mapili na thanu"), Map.entry(30, "hora {h} na mettenhe"), Map.entry(35, "hora {h} na makhumi mararu na thanu"), Map.entry(40, "hora {h} na makhumi mancheche"), Map.entry(45, "hora {h} na makhumi mancheche na thanu"), Map.entry(50, "hora {h} na makhumi mathanu"), Map.entry(55, "hora {h} na makhumi mathanu na thanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2592,10 +2592,10 @@ public final class Locales {
     public static final TimeLocale WO = new TimeLocale(
         "wo",
         new ClockConfig(
-            List.of("fukki ñaar", "benn", "ñaar", "ñett", "ñeent", "juróom", "juróom-benn", "juróom-ñaar", "juróom-ñett", "juróom-ñeent", "fukk", "fukki benn"),
-            "bu guddi",
-            "ci àttaya",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            List.of("fukk ak ñaari waxtu", "benn waxtu", "ñaari waxtu", "ñetti waxtu", "ñeenti waxtu", "juróomi waxtu", "juróom-benni waxtu", "juróom-ñaari waxtu", "juróom-ñetti waxtu", "juróom-ñeenti waxtu", "fukki waxtu", "fukk ak benn waxtu"),
+            "digg-guddi",
+            "digg-bëccëg",
+            Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} ak juróomi simili"), Map.entry(10, "{h} ak fukki simili"), Map.entry(15, "{h} ak fukk ak juróomi simili"), Map.entry(20, "{h} ak ñaar-fukki simili"), Map.entry(25, "{h} ak ñaar-fukk ak juróomi simili"), Map.entry(30, "{h} ak genn-wàll"), Map.entry(35, "{next_h} des na ñaar-fukk ak juróomi simili"), Map.entry(40, "{next_h} des na ñaar-fukki simili"), Map.entry(45, "{next_h} des na fukk ak juróomi simili"), Map.entry(50, "{next_h} des na fukki simili"), Map.entry(55, "{next_h} des na juróomi simili"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2608,10 +2608,10 @@ public final class Locales {
     public static final TimeLocale XH = new TimeLocale(
         "xh",
         new ClockConfig(
-            List.of("ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye"),
+            List.of("yeshumi elinesibini", "yokuqala", "yesibini", "yesithathu", "yesine", "yesihlanu", "yesithandathu", "yesixhenxe", "yesibhozo", "yethoba", "yeshumi", "yeshumi elinanye"),
             "ezinzulwini zobusuku",
             "emini",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "intsimbi {h}"), Map.entry(5, "imizuzu emihlanu emva kwentsimbi {h}"), Map.entry(10, "imizuzu elishumi emva kwentsimbi {h}"), Map.entry(15, "ikota emva kwentsimbi {h}"), Map.entry(20, "imizuzu engamashumi amabini emva kwentsimbi {h}"), Map.entry(25, "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}"), Map.entry(30, "isiqingatha emva kwentsimbi {h}"), Map.entry(35, "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}"), Map.entry(40, "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}"), Map.entry(45, "ikota ukuya kwintsimbi {next_h}"), Map.entry(50, "imizuzu elishumi ukuya kwintsimbi {next_h}"), Map.entry(55, "imizuzu emihlanu ukuya kwintsimbi {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2627,7 +2627,7 @@ public final class Locales {
             List.of("likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo"),
             "pakati pa usiku",
             "pakati pa lisiku",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "saa {h}"), Map.entry(5, "saa {h} na nsano"), Map.entry(10, "saa {h} na likumi"), Map.entry(15, "saa {h} na likumi na nsano"), Map.entry(20, "saa {h} na makumi gaŵili"), Map.entry(25, "saa {h} na makumi gaŵili na nsano"), Map.entry(30, "saa {h} na nusu"), Map.entry(35, "saa {h} na makumi gatatu na nsano"), Map.entry(40, "saa {h} na makumi ncece"), Map.entry(45, "saa {h} na makumi ncece na nsano"), Map.entry(50, "saa {h} na makumi nsano"), Map.entry(55, "saa {h} na makumi nsano na nsano"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2641,9 +2641,9 @@ public final class Locales {
         "yo",
         new ClockConfig(
             List.of("méjìlá", "kan", "méjì", "mẹ́ta", "mẹ́rin", "márùn-ún", "mẹ́fà", "méje", "mẹ́jọ", "mẹ́sàn-án", "mẹ́wàá", "mọ́kànlá"),
-            "àárọ̀ òru",
-            "ọ̀sán",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            "ọ̀gànjọ́ òru",
+            "ọ̀sán gangan",
+            Map.ofEntries(Map.entry(0, "aago {h}"), Map.entry(5, "aago {h} kọjá ìṣẹ́jú márùn-ún"), Map.entry(10, "aago {h} kọjá ìṣẹ́jú mẹ́wàá"), Map.entry(15, "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"), Map.entry(20, "aago {h} kọjá ogún ìṣẹ́jú"), Map.entry(25, "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"), Map.entry(30, "aago {h} àbọ̀"), Map.entry(35, "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"), Map.entry(40, "aago {next_h} kù ogún ìṣẹ́jú"), Map.entry(45, "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"), Map.entry(50, "aago {next_h} kù ìṣẹ́jú mẹ́wàá"), Map.entry(55, "aago {next_h} kù ìṣẹ́jú márùn-ún"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2656,10 +2656,10 @@ public final class Locales {
     public static final TimeLocale YUE = new TimeLocale(
         "yue",
         new ClockConfig(
-            List.of("十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
+            List.of("十二", "一", "兩", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
             "午夜",
             "正午",
-            Map.ofEntries(Map.entry(0, "{h}點整"), Map.entry(5, "{h}點零五分"), Map.entry(10, "{h}點十分"), Map.entry(15, "{h}點十五分"), Map.entry(20, "{h}點二十分"), Map.entry(25, "{h}點二十五分"), Map.entry(30, "{h}點半"), Map.entry(35, "{h}點三十五分"), Map.entry(40, "{h}點四十分"), Map.entry(45, "{h}點四十五分"), Map.entry(50, "{h}點五十分"), Map.entry(55, "{h}點五十五分"))
+            Map.ofEntries(Map.entry(0, "{h}點正"), Map.entry(5, "{h}點一個字"), Map.entry(10, "{h}點兩個字"), Map.entry(15, "{h}點三個字"), Map.entry(20, "{h}點四個字"), Map.entry(25, "{h}點五個字"), Map.entry(30, "{h}點半"), Map.entry(35, "{h}點七個字"), Map.entry(40, "{h}點八個字"), Map.entry(45, "{h}點九個字"), Map.entry(50, "{h}點十個字"), Map.entry(55, "{h}點十一個字"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2672,10 +2672,10 @@ public final class Locales {
     public static final TimeLocale ZDJ = new TimeLocale(
         "zdj",
         new ClockConfig(
-            List.of("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
+            List.of("kumi na mbili", "moja", "mbili", "ndraru", "nne", "ntsanu", "sita", "saba", "nane", "shenda", "kumi", "kumi na moja"),
             "usiku wa manane",
             "adhuhuri",
-            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+            Map.ofEntries(Map.entry(0, "saa {h}"), Map.entry(5, "saa {h} na ntsanu"), Map.entry(10, "saa {h} na kumi"), Map.entry(15, "saa {h} na kumi na ntsanu"), Map.entry(20, "saa {h} na shirini"), Map.entry(25, "saa {h} na shirini na ntsanu"), Map.entry(30, "saa {h} na nusu"), Map.entry(35, "saa {h} na thalathini na ntsanu"), Map.entry(40, "saa {h} na arubaini"), Map.entry(45, "saa {h} na arubaini na ntsanu"), Map.entry(50, "saa {h} na hamsini"), Map.entry(55, "saa {h} na hamsini na ntsanu"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -2688,10 +2688,10 @@ public final class Locales {
     public static final TimeLocale ZH = new TimeLocale(
         "zh",
         new ClockConfig(
-            List.of("十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
+            List.of("十二", "一", "两", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
             "午夜",
             "正午",
-            Map.ofEntries(Map.entry(0, "{h}点整"), Map.entry(5, "{h}点五分"), Map.entry(10, "{h}点十分"), Map.entry(15, "{h}点十五分"), Map.entry(20, "{h}点二十分"), Map.entry(25, "{h}点二十五分"), Map.entry(30, "{h}点半"), Map.entry(35, "{h}点三十五分"), Map.entry(40, "{h}点四十分"), Map.entry(45, "{h}点四十五分"), Map.entry(50, "{h}点五十分"), Map.entry(55, "{h}点五十五分"))
+            Map.ofEntries(Map.entry(0, "{h}点整"), Map.entry(5, "{h}点零五分"), Map.entry(10, "{h}点十分"), Map.entry(15, "{h}点十五分"), Map.entry(20, "{h}点二十分"), Map.entry(25, "{h}点二十五分"), Map.entry(30, "{h}点半"), Map.entry(35, "{h}点三十五分"), Map.entry(40, "{h}点四十分"), Map.entry(45, "{h}点四十五分"), Map.entry(50, "{h}点五十分"), Map.entry(55, "{h}点五十五分"))
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
@@ -2704,10 +2704,10 @@ public final class Locales {
     public static final TimeLocale ZU = new TimeLocale(
         "zu",
         new ClockConfig(
-            List.of("ishumi nambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isishiyagalombili", "isishiyagalolunye", "ishumi", "ishumi nanye"),
+            List.of("leshumi nambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesishiyagalombili", "lesishiyagalolunye", "leshumi", "leshumi nanye"),
             "phakathi kwamabili",
             "emini",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "emva kwemizuzu emihlanu ngo-{h}"), Map.entry(10, "emva kwemizuzu eyishumi ngo-{h}"), Map.entry(15, "ikota edlule ngo-{h}"), Map.entry(20, "emva kwemizuzu engamashumi amabili ngo-{h}"), Map.entry(25, "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}"), Map.entry(30, "uhhafu edlule ngo-{h}"), Map.entry(35, "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}"), Map.entry(40, "imizuzu engamashumi amabili ngaphambi kuka-{next_h}"), Map.entry(45, "ikota ngaphambi kuka-{next_h}"), Map.entry(50, "imizuzu eyishumi ngaphambi kuka-{next_h}"), Map.entry(55, "imizuzu emihlanu ngaphambi kuka-{next_h}"))
+            Map.ofEntries(Map.entry(0, "ihora {h}"), Map.entry(5, "imizuzu emihlanu emva kwehora {h}"), Map.entry(10, "imizuzu eyishumi emva kwehora {h}"), Map.entry(15, "ikota emva kwehora {h}"), Map.entry(20, "imizuzu engamashumi amabili emva kwehora {h}"), Map.entry(25, "imizuzu engamashumi amabili nanhlanu emva kwehora {h}"), Map.entry(30, "uhhafu emva kwehora {h}"), Map.entry(35, "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}"), Map.entry(40, "imizuzu engamashumi amabili ngaphambi kwehora {next_h}"), Map.entry(45, "ikota ngaphambi kwehora {next_h}"), Map.entry(50, "imizuzu eyishumi ngaphambi kwehora {next_h}"), Map.entry(55, "imizuzu emihlanu ngaphambi kwehora {next_h}"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))

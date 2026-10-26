@@ -29,7 +29,7 @@ mg
 	locale half: '{0} sy sasany'.
 	locale delimiter: ', '.
 	locale justNow: 'vao haingana'.
-	locale ago: '{0} lasa'.
+	locale ago: '{0} lasa izay'.
 	locale inFuture: 'ao anatin''ny {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -41,7 +41,7 @@ mg
 			'month'. '{n} vol'.
 			'year'. '{n} tna'.
 		}).
-		#ago. '{0} lasa'.
+		#ago. '{0} lasa izay'.
 		#inFuture. 'ao anatin''ny {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {

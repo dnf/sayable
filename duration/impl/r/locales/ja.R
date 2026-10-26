@@ -19,7 +19,7 @@ locale_ja <- list(
     day = "{n}日",
     week = "{n}週",
     month = "{n}ヶ月",
-    year = "{n}歳"
+    year = "{n}年"
   ),
   half = "{0}半",
   delimiter = "",
@@ -49,6 +49,7 @@ locale_ja <- list(
       month = "{n}m",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0}前",
     in_future = "{0}後"

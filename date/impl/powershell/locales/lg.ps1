@@ -20,7 +20,7 @@ function locale_lg {
     $tomorrow = 'enkya'
     $yesterday = 'jjo'
     $dayAfterTomorrow = 'enkya ogwa'
-    $dayBeforeYesterday = 'jjo edda'
+    $dayBeforeYesterday = 'jjuuzi'
     $thisWeekday = '{weekday} eno'
     $nextWeekday = '{weekday} eddirira'
     $lastWeekday = '{weekday} eggudde'

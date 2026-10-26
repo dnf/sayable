@@ -15,20 +15,20 @@ let locale : locale =
   { code = "ha"
   ; plural = (fun n -> if n = 1 then One else Other)
   ; day = Pluralized
-      [ (One, "{n} kwana")
-      ; (Other, "{n} kwanaki")
+      [ (One, "kwana {n}")
+      ; (Other, "kwanaki {n}")
       ]
   ; week = Pluralized
-      [ (One, "{n} mako")
-      ; (Other, "{n} makonni")
+      [ (One, "mako {n}")
+      ; (Other, "makonni {n}")
       ]
   ; month = Pluralized
-      [ (One, "{n} wata")
-      ; (Other, "{n} watanni")
+      [ (One, "wata {n}")
+      ; (Other, "watanni {n}")
       ]
   ; year = Pluralized
-      [ (One, "{n} shekara")
-      ; (Other, "{n} shekaru")
+      [ (One, "shekara {n}")
+      ; (Other, "shekaru {n}")
       ]
   ; half = "{n}½"
   ; delimiter = ", "
@@ -36,16 +36,16 @@ let locale : locale =
   ; stages =
     { newborn = Neutral "Jariri"
     ; infant = Neutral "Jariri"
-    ; toddler = Neutral "Ƙaramin yaro"
-    ; child = Neutral "Yaro"
-    ; teenager = Neutral "Saurayi"
+    ; toddler = Gendered ("Ƙaramin yaro", "Ƙaramar yarinya")
+    ; child = Gendered ("Yaro", "Yarinya")
+    ; teenager = Gendered ("Saurayi", "Budurwa")
     ; adult = Neutral "Babba"
     }
   ; short = Some
-      { ovr_day = Some (Simple "{n} kw.")
-      ; ovr_week = Some (Simple "{n} mk.")
-      ; ovr_month = Some (Simple "{n} wt.")
-      ; ovr_year = Some (Simple "{n} shk.")
+      { ovr_day = Some (Simple "kw. {n}")
+      ; ovr_week = Some (Simple "mk. {n}")
+      ; ovr_month = Some (Simple "wt. {n}")
+      ; ovr_year = Some (Simple "shk. {n}")
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_just_born = None

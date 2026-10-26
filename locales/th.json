@@ -121,7 +121,7 @@
     "delimiter": " ",
     "justNow": "เมื่อกี้",
     "ago": "{0}ที่แล้ว",
-    "inFuture": "ใน{0}",
+    "inFuture": "ในอีก {0}",
     "short": {
       "units": {
         "second": "{n} วิ",
@@ -133,7 +133,7 @@
         "year": "{n} ปี"
       },
       "ago": "{0}ที่แล้ว",
-      "inFuture": "ใน{0}",
+      "inFuture": "ในอีก {0}",
       "clock": {
         "use24h": true,
         "format": "{h}:{mm}"
@@ -152,7 +152,7 @@
       "delimiter": "",
       "half": "{n}½",
       "ago": "{0}ที่แล้ว",
-      "inFuture": "ใน{0}",
+      "inFuture": "ในอีก {0}",
       "clock": {
         "use24h": true,
         "format": "{h}:{mm}"
@@ -204,5 +204,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Not touched: the audit's finding that 12 hour names cannot express Thai's hour-of-day-specific systems (นาฬิกา 24h, or ตี/โมงเช้า/บ่าย/ทุ่ม) is a schema limit, left as context."
+    }
+  ]
 }

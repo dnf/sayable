@@ -26,7 +26,7 @@ class SVLocale {
   static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "just nu" }
-  static ago { "{0} sedan" }
+  static ago { "för {0} sedan" }
   static inFuture { "om {0}" }
   static short {
     return {
@@ -39,7 +39,7 @@ class SVLocale {
         "month": "{n} mån",
         "year": "{n} år",
       },
-      "ago": "{0} sedan",
+      "ago": "för {0} sedan",
       "inFuture": "om {0}",
     }
   }
@@ -55,7 +55,7 @@ class SVLocale {
         "year": "{n}å",
       },
       "delimiter": "",
-      "ago": "{0} sedan",
+      "ago": "för {0} sedan",
       "inFuture": "om {0}",
     }
   }

@@ -26,9 +26,9 @@ let NY* = DateLocale(
   yesterday: "dzulo",
   dayAfterTomorrow: some("mkucha"),
   dayBeforeYesterday: some("dzana"),
-  thisWeekday: some("{weekday} ino"),
-  nextWeekday: some("{weekday} yotsatira"),
-  lastWeekday: some("{weekday} yatha"),
+  thisWeekday: some("{weekday} lino"),
+  nextWeekday: some("{weekday} lotsatira"),
+  lastWeekday: some("{weekday} latha"),
   monthsInDate: none(seq[string]),
   short: some(CompactnessOverride(
     months: some(@["Jan", "Feb", "Mat", "Epu", "Mey", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"]),

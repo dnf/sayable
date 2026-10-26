@@ -16,9 +16,9 @@ module SayableDuration
       code: 'gn',
       plural: ->(n) { n == 1 ? :one : :other },
       units: {
-        'second' => '{n} aravo\'i',
-        'minute' => '{n} aravo',
-        'hour' => '{n} aravo guasu',
+        'second' => '{n} aravo\'ive',
+        'minute' => '{n} aravo\'i',
+        'hour' => '{n} aravo',
         'day' => '{n} ára',
         'week' => '{n} arapokõindy',
         'month' => '{n} jasy',
@@ -31,9 +31,9 @@ module SayableDuration
       in_future: '{0} rire',
       short: CompactnessOverride.new(
         units: {
-          'second' => '{n} ara\'i',
-          'minute' => '{n} ara',
-          'hour' => '{n} ara g',
+          'second' => '{n} aravo\'ive',
+          'minute' => '{n} aravo\'i',
+          'hour' => '{n} aravo',
           'day' => '{n} ára',
           'week' => '{n} ara',
           'month' => '{n} jas',

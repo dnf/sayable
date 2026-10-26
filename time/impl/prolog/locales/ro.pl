@@ -15,18 +15,18 @@ st_hours('ro', ['douăsprezece', 'unu', 'două', 'trei', 'patru', 'cinci', 'șas
 st_midnight('ro', 'miezul nopții').
 st_noon('ro', 'amiază').
 
-st_pattern('ro', 0, '{h} ore').
-st_pattern('ro', 5, 'cinci peste {h}').
-st_pattern('ro', 10, 'zece peste {h}').
-st_pattern('ro', 15, 'un sfert peste {h}').
-st_pattern('ro', 20, 'douăzeci peste {h}').
-st_pattern('ro', 25, 'douăzeci și cinci peste {h}').
-st_pattern('ro', 30, 'jumătate peste {h}').
-st_pattern('ro', 35, 'douăzeci și cinci înainte de {next_h}').
-st_pattern('ro', 40, 'douăzeci înainte de {next_h}').
-st_pattern('ro', 45, 'un sfert înainte de {next_h}').
-st_pattern('ro', 50, 'zece înainte de {next_h}').
-st_pattern('ro', 55, 'cinci înainte de {next_h}').
+st_pattern('ro', 0, 'ora {h}').
+st_pattern('ro', 5, '{h} și cinci').
+st_pattern('ro', 10, '{h} și zece').
+st_pattern('ro', 15, '{h} și un sfert').
+st_pattern('ro', 20, '{h} și douăzeci').
+st_pattern('ro', 25, '{h} și douăzeci și cinci').
+st_pattern('ro', 30, '{h} și jumătate').
+st_pattern('ro', 35, '{next_h} fără douăzeci și cinci').
+st_pattern('ro', 40, '{next_h} fără douăzeci').
+st_pattern('ro', 45, '{next_h} fără un sfert').
+st_pattern('ro', 50, '{next_h} fără zece').
+st_pattern('ro', 55, '{next_h} fără cinci').
 
 short_st_use24h('ro', true).
 short_st_format('ro', '{h}:{mm}').

@@ -29,7 +29,7 @@ let TH* = DurationLocale(
   delimiter: " ",
   justNow: "เมื่อกี้",
   ago: "{0}ที่แล้ว",
-  inFuture: "ใน{0}",
+  inFuture: "ในอีก {0}",
   short: some(CompactnessOverride(
     units: some({
       "second": simpleUnit("{n} วิ"),
@@ -43,7 +43,7 @@ let TH* = DurationLocale(
     half: none(string),
     delimiter: none(string),
     ago: some("{0}ที่แล้ว"),
-    inFuture: some("ใน{0}"),
+    inFuture: some("ในอีก {0}"),
   )),
   compact: some(CompactnessOverride(
     units: some({
@@ -58,6 +58,6 @@ let TH* = DurationLocale(
     half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0}ที่แล้ว"),
-    inFuture: some("ใน{0}"),
+    inFuture: some("ในอีก {0}"),
   )),
 )

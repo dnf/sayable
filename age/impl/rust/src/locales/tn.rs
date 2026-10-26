@@ -48,7 +48,7 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Lesea".to_string()),
             toddler: StageLabel::Neutral("Ngwana yo monnye".to_string()),
             child: StageLabel::Neutral("Ngwana".to_string()),
-            teenager: StageLabel::Neutral("Lekgarebe".to_string()),
+            teenager: StageLabel::Neutral("Mosha".to_string()),
             adult: StageLabel::Neutral("Motho yo mogolo".to_string()),
         },
         short: Some(CompactnessOverride {

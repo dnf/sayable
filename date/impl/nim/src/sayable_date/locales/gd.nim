@@ -17,7 +17,7 @@ let GD* = DateLocale(
   code: "gd",
   months: @["Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd"],
   weekdays: @["DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"],
-  dayFormat: "{n}",
+  dayFormat: "{n}mh",
   dayFormatExceptions: initOrderedTable[string, string](),
   datePattern: "{day} {month}",
   datePatternWithYear: "{day} {month} {year}",
@@ -29,7 +29,7 @@ let GD* = DateLocale(
   thisWeekday: some("{weekday} seo"),
   nextWeekday: some("{weekday} sa tighinn"),
   lastWeekday: some("{weekday} seo chaidh"),
-  monthsInDate: none(seq[string]),
+  monthsInDate: some(@["dhen Fhaoilleach", "dhen Ghearran", "dhen Mhàrt", "dhen Ghiblean", "dhen Chèitean", "dhen Ògmhios", "dhen Iuchar", "dhen Lùnastal", "dhen t-Sultain", "dhen Dàmhair", "dhen t-Samhain", "dhen Dùbhlachd"]),
   short: some(CompactnessOverride(
     months: some(@["Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"]),
     monthsInDate: none(seq[string]),

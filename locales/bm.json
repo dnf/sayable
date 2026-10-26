@@ -42,7 +42,7 @@
   "date": {
     "months": [
       "Zanwuye",
-      "Fewuriye",
+      "Feburuye",
       "Marisi",
       "Awirili",
       "Mɛ",
@@ -50,8 +50,8 @@
       "Zuluye",
       "Uti",
       "Sɛtanburu",
-      "ɔkutɔburu",
-      "Nowanbudu",
+      "Ɔkutɔburu",
+      "Nowanburu",
       "Desanburu"
     ],
     "weekdays": [
@@ -77,7 +77,7 @@
     "short": {
       "months": [
         "Zan",
-        "Few",
+        "Feb",
         "Mar",
         "Awi",
         "Mɛ",
@@ -85,7 +85,7 @@
         "Zul",
         "Uti",
         "Sɛt",
-        "ɔku",
+        "Ɔku",
         "Now",
         "Des"
       ],
@@ -121,7 +121,7 @@
     "delimiter": ", ",
     "justNow": "sisan",
     "ago": "{0} bɔlen",
-    "inFuture": "ka {0}",
+    "inFuture": "{0} kɔnɔ",
     "short": {
       "units": {
         "second": "sek. {n}",
@@ -133,7 +133,7 @@
         "year": "san {n}"
       },
       "ago": "{0} bɔlen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -156,7 +156,7 @@
       "delimiter": "",
       "half": "{n}½",
       "ago": "{0} bɔlen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -186,18 +186,18 @@
       "midnight": "dugutilama",
       "noon": "tilgari",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "nɛgɛ kaɲɛ {h}",
+        "5": "nɛgɛ kaɲɛ {h} ni miniti duuru",
+        "10": "nɛgɛ kaɲɛ {h} ni miniti tan",
+        "15": "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru",
+        "20": "nɛgɛ kaɲɛ {h} ni miniti mugan",
+        "25": "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru",
+        "30": "nɛgɛ kaɲɛ {h} ni tilancɛ",
+        "35": "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru",
+        "40": "nɛgɛ kaɲɛ {h} ni miniti bi naani",
+        "45": "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru",
+        "50": "nɛgɛ kaɲɛ {h} ni miniti bi duuru",
+        "55": "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Bambara 'nɛgɛ kaɲɛ {h}' (the classic 'o'clock' expression), additive 'nɛgɛ kaɲɛ {h} ni miniti N' with Bambara numerals (duuru, tan, tan ni duuru, mugan, bi saba, bi naani, bi duuru) and 'ni tilancɛ' for half (tilancɛ already used by this locale). Standard 12-hour count. No subtractive 'to' form used because I could not confirm the idiom."
+    }
+  ]
 }

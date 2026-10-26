@@ -23,4 +23,4 @@
    :just-born "K'ak'a alaj"
    :stages {:newborn {:type :neutral :label "K'ak'a alaj"} :infant {:type :neutral :label "Alaj ak'al"} :toddler {:type :neutral :label "Ak'al"} :child {:type :neutral :label "Ak'al"} :teenager {:type :neutral :label "K'ajol"} :adult {:type :neutral :label "Achi"}}
    :short {:day {:type :simple :form "{n} q'ij"} :week {:type :simple :form "{n} wuqq'ij"} :month {:type :simple :form "{n} ik'"} :year {:type :simple :form "{n} jun."} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

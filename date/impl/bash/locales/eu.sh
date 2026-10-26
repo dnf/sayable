@@ -12,9 +12,11 @@
 _sayabledate_locale_eu() {
     _months=('urtarril' 'otsail' 'martxo' 'apiril' 'maiatz' 'ekain' 'uztail' 'abuztu' 'irail' 'urri' 'azaro' 'abendu')
     _weekdays=('igandea' 'astelehena' 'asteartea' 'asteazkena' 'osteguna' 'ostirala' 'larunbata')
-    _day_format='{n}'
-    _date_pattern='{month}ren {day}'
-    _date_pattern_with_year='{year}ko {month}ren {day}'
+    _day_format='{n}a'
+    _day_format_ex_11='{n}'
+    _day_format_ex_31='{n}'
+    _date_pattern='{month} {day}'
+    _date_pattern_with_year='{year}ko {month} {day}'
     _today='gaur'
     _tomorrow='bihar'
     _yesterday='atzo'
@@ -23,6 +25,7 @@ _sayabledate_locale_eu() {
     _this_weekday='{weekday} hau'
     _next_weekday='hurrengo {weekday}'
     _last_weekday='aurreko {weekday}'
+    _months_in_date=('urtarrilaren' 'otsailaren' 'martxoaren' 'apirilaren' 'maiatzaren' 'ekainaren' 'uztailaren' 'abuztuaren' 'irailaren' 'urriaren' 'azaroaren' 'abenduaren')
     _short_months=('urt' 'ots' 'mar' 'api' 'mai' 'eka' 'uzt' 'abu' 'ira' 'urr' 'aza' 'abe')
     _short_weekdays=('ig' 'al' 'ar' 'az' 'og' 'or' 'lr')
     _short_day_format='{n}'

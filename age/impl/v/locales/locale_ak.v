@@ -33,11 +33,11 @@ pub const locale_ak = AgeLocale{
 	infant: stage_neutral('Akwadaa')
 	toddler: stage_neutral('Abofra')
 	child: stage_neutral('Abofra')
-	teenager: stage_neutral('Abarimaa')
+	teenager: stage_gendered('Abarimaa', 'Abaayewa')
 	adult: stage_neutral('Ɔpanyin')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('nna {n}')
+		day: plural_unit({PluralCategory.one: 'da {n}', PluralCategory.other: 'nna {n}'})
 		has_day: true
 		week: plural_unit({PluralCategory.one: 'dapɛn {n}', PluralCategory.other: 'nnapɛn {n}'})
 		has_week: true
@@ -48,7 +48,7 @@ pub const locale_ak = AgeLocale{
 	}
 	has_compact: true
 	compact_override: CompactnessOverride{
-		day: simple_unit('nna {n}')
+		day: plural_unit({PluralCategory.one: 'da {n}', PluralCategory.other: 'nna {n}'})
 		has_day: true
 		week: plural_unit({PluralCategory.one: 'dapɛn {n}', PluralCategory.other: 'nnapɛn {n}'})
 		has_week: true

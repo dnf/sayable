@@ -28,7 +28,7 @@
                  (cons :infant "Lesea")
                  (cons :toddler "Ngwana yo monnye")
                  (cons :child "Ngwana")
-                 (cons :teenager "Lekgarebe")
+                 (cons :teenager "Mosha")
                  (cons :adult "Motho yo mogolo"))
    :short-units (list (cons :day '((:one . "letsatsi {n}") (:other . "malatsi {n}")))
                        (cons :week '((:one . "beke {n}") (:other . "dibeke {n}")))

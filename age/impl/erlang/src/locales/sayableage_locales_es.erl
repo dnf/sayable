@@ -21,7 +21,7 @@ locale() ->
         week = {pluralized, [{one, "{n} semana"}, {other, "{n} semanas"}]},
         month = {pluralized, [{one, "{n} mes"}, {other, "{n} meses"}]},
         year = {pluralized, [{one, "{n} año"}, {other, "{n} años"}]},
-        half = "{n} y medio",
+        half = "{0} y medio",
         delimiter = ", ",
         just_born = "Recién nacido",
         stages = #stages{newborn = {gendered, "Recién nacido", "Recién nacida"}, infant = {neutral, "Bebé"}, toddler = {gendered, "Niño pequeño", "Niña pequeña"}, child = {gendered, "Niño", "Niña"}, teenager = {neutral, "Adolescente"}, adult = {gendered, "Adulto", "Adulta"}},

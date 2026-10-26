@@ -14,7 +14,7 @@ module SayableDuration
   module Locales
     ML = DurationLocale.new(
       code: 'ml',
-      plural: ->(n) { [0, 1].include?(n) ? :one : :other },
+      plural: ->(n) { n == 1 ? :one : :other },
       units: {
         'second' => { one: '{n} സെക്കൻഡ്', other: '{n} സെക്കൻഡുകൾ' },
         'minute' => { one: '{n} മിനിറ്റ്', other: '{n} മിനിറ്റുകൾ' },
@@ -24,7 +24,7 @@ module SayableDuration
         'month' => { one: '{n} മാസം', other: '{n} മാസങ്ങൾ' },
         'year' => { one: '{n} വർഷം', other: '{n} വർഷങ്ങൾ' },
       },
-      half: '{0} ര',
+      half: '{n}½',
       delimiter: ', ',
       just_now: 'ഇപ്പോൾ',
       ago: '{0} മുമ്പ്',

@@ -15,18 +15,18 @@ st_hours('yao', ['likumi na iwili', 'cimo', 'iwili', 'itatu', 'ncece', 'nsano', 
 st_midnight('yao', 'pakati pa usiku').
 st_noon('yao', 'pakati pa lisiku').
 
-st_pattern('yao', 0, '{h}:00').
-st_pattern('yao', 5, '{h}:05').
-st_pattern('yao', 10, '{h}:10').
-st_pattern('yao', 15, '{h}:15').
-st_pattern('yao', 20, '{h}:20').
-st_pattern('yao', 25, '{h}:25').
-st_pattern('yao', 30, '{h}:30').
-st_pattern('yao', 35, '{h}:35').
-st_pattern('yao', 40, '{h}:40').
-st_pattern('yao', 45, '{h}:45').
-st_pattern('yao', 50, '{h}:50').
-st_pattern('yao', 55, '{h}:55').
+st_pattern('yao', 0, 'saa {h}').
+st_pattern('yao', 5, 'saa {h} na nsano').
+st_pattern('yao', 10, 'saa {h} na likumi').
+st_pattern('yao', 15, 'saa {h} na likumi na nsano').
+st_pattern('yao', 20, 'saa {h} na makumi gaŵili').
+st_pattern('yao', 25, 'saa {h} na makumi gaŵili na nsano').
+st_pattern('yao', 30, 'saa {h} na nusu').
+st_pattern('yao', 35, 'saa {h} na makumi gatatu na nsano').
+st_pattern('yao', 40, 'saa {h} na makumi ncece').
+st_pattern('yao', 45, 'saa {h} na makumi ncece na nsano').
+st_pattern('yao', 50, 'saa {h} na makumi nsano').
+st_pattern('yao', 55, 'saa {h} na makumi nsano na nsano').
 
 short_st_use24h('yao', false).
 short_st_format('yao', '{h}:{mm} {ampm}').

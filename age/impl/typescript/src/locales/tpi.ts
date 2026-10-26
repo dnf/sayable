@@ -20,7 +20,7 @@ export const tpi: AgeLocale = {
     month: '{n} mun',
     year:  '{n} yia',
   },
-  half: '{n} na hap',
+  half: '{0} na hap',
   delimiter: ', ',
   justBorn: 'Nupela pikinini',
   stages: {
@@ -46,6 +46,7 @@ export const tpi: AgeLocale = {
       month: '{n}m',
       year:  '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
   },
 };

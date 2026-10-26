@@ -10,21 +10,21 @@
 # Source: locales/luo.json
 
 _sayabletime_locale_luo() {
-    _clock_hours=('apar gi ariyo' 'achiel' 'ariyo' 'adek' 'ang'\''wen' 'abich' 'auchiel' 'abiriyo' 'aboro' 'ochiko' 'apar' 'apar gi achiel')
+    _clock_hours=('auchiel' 'abiriyo' 'aboro' 'ochiko' 'apar' 'apar gachiel' 'apar gariyo' 'achiel' 'ariyo' 'adek' 'ang'\''wen' 'abich')
     _clock_midnight='dier otieno'
     _clock_noon='odiechieng'\'' tir'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='saa {h}'
+    _clock_pattern_5='saa {h} gi dakika abich'
+    _clock_pattern_10='saa {h} gi dakika apar'
+    _clock_pattern_15='saa {h} gi dakika apar gabich'
+    _clock_pattern_20='saa {h} gi dakika piero ariyo'
+    _clock_pattern_25='saa {h} gi dakika piero ariyo gabich'
+    _clock_pattern_30='saa {h} gi nus'
+    _clock_pattern_35='saa {h} gi dakika piero adek gabich'
+    _clock_pattern_40='saa {h} gi dakika piero ang'\''wen'
+    _clock_pattern_45='saa {h} gi dakika piero ang'\''wen gabich'
+    _clock_pattern_50='saa {h} gi dakika piero abich'
+    _clock_pattern_55='saa {h} gi dakika piero abich gabich'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

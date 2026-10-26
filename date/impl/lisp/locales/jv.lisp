@@ -26,7 +26,7 @@
    :tomorrow "sesuk"
    :yesterday "wingi"
    :day-after-tomorrow "embèn"
-   :day-before-yesterday "dhèk wingi"
+   :day-before-yesterday "wingenané"
    :this-weekday "{weekday} iki"
    :next-weekday "{weekday} ngarep"
    :last-weekday "{weekday} wingi"

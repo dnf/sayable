@@ -20,14 +20,14 @@ class VILocale {
       "day": "{n} ngày",
       "week": "{n} tuần",
       "month": "{n} tháng",
-      "year": "{n} tuổi",
+      "year": "{n} năm",
     }
   }
   static half { "{0} rưỡi" }
   static delimiter { ", " }
   static justNow { "vừa xong" }
   static ago { "{0} trước" }
-  static inFuture { "trong {0}" }
+  static inFuture { "{0} nữa" }
   static short {
     return {
       "units": {
@@ -40,7 +40,7 @@ class VILocale {
         "year": "{n} năm",
       },
       "ago": "{0} trước",
-      "inFuture": "trong {0}",
+      "inFuture": "{0} nữa",
     }
   }
   static compact {
@@ -57,7 +57,7 @@ class VILocale {
       "half": "{n}½",
       "delimiter": "",
       "ago": "{0} trước",
-      "inFuture": "trong {0}",
+      "inFuture": "{0} nữa",
     }
   }
 }

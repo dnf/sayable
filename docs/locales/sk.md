@@ -6,6 +6,14 @@
 
 Plural rule: `cs_sk` (categories: one, few, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [sk.json](../../locales/sk.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Replaced the non-Slovak 'päť po dve' / 'pol po dve' / '{h} hodín' set. :00 is the bare hour ('dve', 'jedna'); :05-:30 use the common spoken digital reading ('dve nula päť', 'dve pätnásť', 'dve tridsať'); :35-:55 use the idiomatic 'o X minút <next hour>' ('o päť minút tri' = 2:55, 'o pätnásť minút jedna' = 12:45, nominative is correct there). The most idiomatic 'štvrť na tri' / 'pol tretej' / 'trištvrte na tri' need accusative ('jednu') and genitive-ordinal next-hour lists, so they were not used (schema limit). Compound numeral written as one word ('dvadsaťpäť').
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | pozajtra         | 17.3.   |
 | Day before yesterday | predvčerom       | 13.3.   |
 | This Thursday (+5)   | tento štvrtok    | 20.3.   |
-| Last Monday (-4)     | minulý utorok    | 11.3.   |
-| Next Wednesday (+12) | budúci štvrtok   | 27.3.   |
-| Same month (+20)     | 4. apríla        | 4.4.    |
+| Last Tuesday (-4)    | minulý utorok    | 11.3.   |
+| Next Thursday (+12)  | budúci štvrtok   | 27.3.   |
+| Same year (+20)      | 4. apríla        | 4.4.    |
 | Different year       | 10. januára 2026 | 10.1.26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short | Compact |
-| --------------- | --------------- | ----- | ------- |
-| Midnight        | polnoc          | 0:00  | 0:00    |
-| 1:00 AM         | jedna hodín     | 1:00  | 1:00    |
-| 5 past 9        | päť po deväť    | 9:05  | 9:05    |
-| Quarter past 10 | štvrť po desať  | 10:15 | 10:15   |
-| Half past 11    | pol po jedenásť | 11:30 | 11:30   |
-| Noon            | poludnie        | 12:00 | 12:00   |
-| Quarter to 3    | štvrť do tri    | 14:45 | 14:45   |
-| 5 to 6          | päť do šesť     | 17:55 | 17:55   |
-| 8 o'clock PM    | osem hodín      | 20:00 | 20:00   |
-| 10:30 PM        | pol po desať    | 22:30 | 22:30   |
-| 11:58 PM        | polnoc          | 23:58 | 23:58   |
+| Time            | Normal              | Short | Compact |
+| --------------- | ------------------- | ----- | ------- |
+| Midnight        | polnoc              | 0:00  | 0:00    |
+| 1:00 AM         | jedna               | 1:00  | 1:00    |
+| 5 past 9        | deväť nula päť      | 9:05  | 9:05    |
+| Quarter past 10 | desať pätnásť       | 10:15 | 10:15   |
+| Half past 11    | jedenásť tridsať    | 11:30 | 11:30   |
+| Noon            | poludnie            | 12:00 | 12:00   |
+| Quarter to 3    | o pätnásť minút tri | 14:45 | 14:45   |
+| 5 to 6          | o päť minút šesť    | 17:55 | 17:55   |
+| 8 o'clock PM    | osem                | 20:00 | 20:00   |
+| 10:30 PM        | desať tridsať       | 22:30 | 22:30   |
+| 11:58 PM        | polnoc              | 23:58 | 23:58   |

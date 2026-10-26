@@ -24,7 +24,7 @@
     (list "douăsprezece" "unu" "două" "trei" "patru" "cinci" "șase" "șapte" "opt" "nouă" "zece" "unsprezece")
     "miezul nopții"
     "amiază"
-    (hash 0 "{h} ore" 5 "cinci peste {h}" 10 "zece peste {h}" 15 "un sfert peste {h}" 20 "douăzeci peste {h}" 25 "douăzeci și cinci peste {h}" 30 "jumătate peste {h}" 35 "douăzeci și cinci înainte de {next_h}" 40 "douăzeci înainte de {next_h}" 45 "un sfert înainte de {next_h}" 50 "zece înainte de {next_h}" 55 "cinci înainte de {next_h}"))
+    (hash 0 "ora {h}" 5 "{h} și cinci" 10 "{h} și zece" 15 "{h} și un sfert" 20 "{h} și douăzeci" 25 "{h} și douăzeci și cinci" 30 "{h} și jumătate" 35 "{next_h} fără douăzeci și cinci" 40 "{next_h} fără douăzeci" 45 "{next_h} fără un sfert" 50 "{next_h} fără zece" 55 "{next_h} fără cinci"))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
   ))

@@ -21,7 +21,7 @@ function locale_tk {
         month = '{n} aý'
         year = '{n} ýaş'
     }
-    $half = '{0}½'
+    $half = '{n} ýarym'
     $delimiter = ', '
     $justBorn = 'Täze doglan'
     $stages = @{
@@ -30,7 +30,7 @@ function locale_tk {
         toddler = 'Kiçijik'
         child = 'Çaga'
         teenager = 'Ýetginjek'
-        adult = 'Ulular'
+        adult = 'Uly adam'
     }
     $short = @{
         units = @{

@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_nso = {
     "nso",
     {
-        { "lesome pedi", "tee", "pedi", "tharo", "nne", "hlano", "tshela", "šupa", "seswai", "senyane", "lesome", "lesome tee" },
+        { "lesomepedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshela", "bošupa", "seswai", "senyane", "lesome", "lesometee" },
         "bošego gare",
         "mosegare",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "iri ya {h}", "iri ya {h} le metsotso ye mehlano", "iri ya {h} le metsotso ye lesome", "iri ya {h} le kotara", "iri ya {h} le metsotso ye masomepedi", "iri ya {h} le metsotso ye masomepedi-hlano", "iri ya {h} le seripagare", "iri ya {h} le metsotso ye masometharo-hlano", "iri ya {h} le metsotso ye masomenne", "iri ya {h} le metsotso ye masomenne-hlano", "iri ya {h} le metsotso ye masomehlano", "iri ya {h} le metsotso ye masomehlano-hlano" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

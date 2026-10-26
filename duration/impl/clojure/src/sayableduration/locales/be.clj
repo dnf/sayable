@@ -14,13 +14,13 @@
 (def locale
   {:code "be"
    :plural (fn [n] (cond (and (== (mod n 10) 1) (not= (mod n 100) 11)) :one (and (<= 2 (mod n 10) 4) (not (<= 12 (mod n 100) 14))) :few :else :many))
-   :second {:type :pluralized :forms {:one "{n} секунда" :few "{n} секунды" :many "{n} секунд" :other "{n} секунд"}}
-   :minute {:type :pluralized :forms {:one "{n} хвіліна" :few "{n} хвіліны" :many "{n} хвілін" :other "{n} хвілін"}}
-   :hour {:type :pluralized :forms {:one "{n} гадзіна" :few "{n} гадзіны" :many "{n} гадзін" :other "{n} гадзін"}}
-   :day {:type :pluralized :forms {:one "{n} дзень" :few "{n} дні" :many "{n} дзён" :other "{n} дзён"}}
-   :week {:type :pluralized :forms {:one "{n} тыдзень" :few "{n} тыдні" :many "{n} тыдняў" :other "{n} тыдняў"}}
-   :month {:type :pluralized :forms {:one "{n} месяц" :few "{n} месяцы" :many "{n} месяцаў" :other "{n} месяцаў"}}
-   :year {:type :pluralized :forms {:one "{n} год" :few "{n} гады" :many "{n} гадоў" :other "{n} гадоў"}}
+   :second {:type :pluralized :forms {:one "{n} секунда" :few "{n} секунды" :many "{n} секунд" :other "{n} секунды"}}
+   :minute {:type :pluralized :forms {:one "{n} хвіліна" :few "{n} хвіліны" :many "{n} хвілін" :other "{n} хвіліны"}}
+   :hour {:type :pluralized :forms {:one "{n} гадзіна" :few "{n} гадзіны" :many "{n} гадзін" :other "{n} гадзіны"}}
+   :day {:type :pluralized :forms {:one "{n} дзень" :few "{n} дні" :many "{n} дзён" :other "{n} дня"}}
+   :week {:type :pluralized :forms {:one "{n} тыдзень" :few "{n} тыдні" :many "{n} тыдняў" :other "{n} тыдня"}}
+   :month {:type :pluralized :forms {:one "{n} месяц" :few "{n} месяцы" :many "{n} месяцаў" :other "{n} месяца"}}
+   :year {:type :pluralized :forms {:one "{n} год" :few "{n} гады" :many "{n} гадоў" :other "{n} года"}}
    :half "{n} з паловай"
    :delimiter ", "
    :just-now "толькі што"

@@ -30,10 +30,10 @@
    "ມື້ອື່ນ"
    "ມື້ວານ"
    "ມື້ຮື"
-   "ມື້ກ່ອນ"
+   "ມື້ຊືນ"
    "{weekday}ນີ້"
    "{weekday}ໜ້າ"
-   "{weekday}ແລ້ວ"
+   "{weekday}ທີ່ແລ້ວ"
    #f
    (date-compactness-override (list "ມ.ກ." "ກ.ພ." "ມ.ນ." "ມ.ສ." "ພ.ພ." "ມ.ຖ." "ກ.ລ." "ສ.ຫ." "ກ.ຍ." "ຕ.ລ." "ພ.ຈ." "ທ.ວ.") #f (list "ອາທິດ" "ຈັນ" "ອັງຄານ" "ພຸດ" "ພະຫັດ" "ສຸກ" "ເສົາ") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)

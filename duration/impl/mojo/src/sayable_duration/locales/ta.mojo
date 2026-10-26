@@ -33,7 +33,7 @@ fn build_ta() -> DurationLocale:
     var day = plural_unit(one="{n} நாள்", other="{n} நாட்கள்")
     var week = plural_unit(one="{n} வாரம்", other="{n} வாரங்கள்")
     var month = plural_unit(one="{n} மாதம்", other="{n} மாதங்கள்")
-    var year = plural_unit(one="{n} வயது", other="{n} வயது")
+    var year = plural_unit(one="{n} ஆண்டு", other="{n} ஆண்டுகள்")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} விநாடி")
@@ -87,7 +87,7 @@ fn build_ta() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}ரை",
+        half="{n}½",
         delimiter=", ",
         just_now="இப்போதுதான்",
         ago="{0} முன்",

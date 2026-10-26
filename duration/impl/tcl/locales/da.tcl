@@ -28,7 +28,7 @@ proc locale_duration_da {} {
     set half "{n}½"
     set delimiter {, }
     set just_now {lige nu}
-    set ago "{0} siden"
+    set ago "for {0} siden"
     set in_future "om {0}"
     set short [dict create \
         units [dict create \

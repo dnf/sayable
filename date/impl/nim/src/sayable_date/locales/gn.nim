@@ -21,7 +21,7 @@ let GN* = DateLocale(
   dayFormatExceptions: initOrderedTable[string, string](),
   datePattern: "{day} {month}",
   datePatternWithYear: "{day} {month} {year}",
-  today: "ko'ágã",
+  today: "ko árape",
   tomorrow: "ko'ẽrõ",
   yesterday: "kuehe",
   dayAfterTomorrow: some("ko'ẽrõ rire"),

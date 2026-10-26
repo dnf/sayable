@@ -1,4 +1,5 @@
 with Ada.Text_IO;          use Ada.Text_IO;
+with Ada.Calendar;
 with Ada.Strings.Unbounded;
 with Ada.Strings.Fixed;
 with Sayableage_Types;     use Sayableage_Types;
@@ -739,6 +740,59 @@ procedure Test_Format_Age is
    ---------------------------------------------------------------------------
    --  formatStage --  Adult (216+ months)
    ---------------------------------------------------------------------------
+   --  Default asOf (15.1, 15.2, 23.1, 23.2, 23.3): dateOfBirth is derived
+   --  from the local current date because the library reads the clock.
+   ---------------------------------------------------------------------------
+
+   function Date_Offset (Years_Back : Natural; Days_Back : Natural)
+     return String
+   is
+      use Ada.Calendar;
+      Now   : constant Time := Clock;
+      Y     : Year_Number;
+      M     : Month_Number;
+      D     : Day_Number;
+      Secs  : Day_Duration;
+      Back  : Time;
+      function Pad (N : Integer; W : Positive) return String is
+         Img : constant String := Integer'Image (N);
+         Raw : constant String := Img (Img'First + 1 .. Img'Last);
+      begin
+         return (1 .. W - Raw'Length => '0') & Raw;
+      end Pad;
+   begin
+      Split (Now, Y, M, D, Secs);
+      Y := Y - Years_Back;
+      if M = 2 and then D = 29 and then Years_Back > 0 then
+         D := 28;
+      end if;
+      Back := Time_Of (Y, M, D, 43_200.0);
+      Back := Back - Duration (Days_Back) * 86_400.0;
+      Split (Back, Y, M, D, Secs);
+      return Pad (Y, 4) & "-" & Pad (M, 2) & "-" & Pad (D, 2);
+   end Date_Offset;
+
+   procedure Test_Default_As_Of is
+      Loc : constant Locale_Access := Sayableage_Locales.Get_Locale ("en");
+   begin
+      Assert_Eq ("default asOf 5 years",
+         Sayableage.Format_Age (Loc.all, Normal, Date_Offset (5, 0), ""),
+         "5 years");  --  15.1
+      Assert_Eq ("default asOf 5 days",
+         Sayableage.Format_Age (Loc.all, Normal, Date_Offset (0, 5), ""),
+         "5 days");  --  15.2
+      Assert_Eq ("default stage newborn",
+         Sayableage.Format_Stage (Loc.all, Date_Offset (0, 0), ""),
+         "Newborn");  --  23.1
+      Assert_Eq ("default stage child",
+         Sayableage.Format_Stage (Loc.all, Date_Offset (5, 0), ""),
+         "Child");  --  23.2
+      Assert_Eq ("default stage adult",
+         Sayableage.Format_Stage (Loc.all, Date_Offset (45, 0), ""),
+         "Adult");  --  23.3
+   end Test_Default_As_Of;
+
+   ---------------------------------------------------------------------------
    procedure Test_Stage_Adult is
       Loc : constant Locale_Access := Sayableage_Locales.Get_Locale ("en");
    begin
@@ -756,6 +810,7 @@ procedure Test_Format_Age is
       Assert_Eq ("stage 45 years",
          Sayableage.Format_Stage (Loc.all, "1980-01-01", "2025-06-15"),
          "Adult");
+
    end Test_Stage_Adult;
 
    ---------------------------------------------------------------------------
@@ -965,7 +1020,7 @@ procedure Test_Format_Age is
       --  25.10
       Assert_Eq ("ES half marker",
          Sayableage.Format_Age (Loc.all, Normal, "2022-06-15", "2025-12-15"),
-         "3 y medio a" & N_Tilde & "os");
+         "3 a" & N_Tilde & "os y medio");
 
       --  25.11
       Assert_Eq ("ES integer years",
@@ -1098,9 +1153,9 @@ procedure Test_Format_Age is
          Character'Val (16#D7#) & "");
 
       --  29.2 1 day one
-      Assert_Contains ("he 1 day one",
+      Assert_Eq ("he 1 day one",
          Sayableage.Format_Age (Loc.all, Normal, "2025-06-14", "2025-06-15"),
-         "1");
+         Character'Val (16#D7#) & Character'Val (16#99#) & Character'Val (16#D7#) & Character'Val (16#95#) & Character'Val (16#D7#) & Character'Val (16#9D#));
 
       --  29.3 3 days other
       Assert_Contains ("he 3 days other",
@@ -1127,8 +1182,9 @@ procedure Test_Format_Age is
          "3");
 
       --  29.8 2y dual + 1m one
-      Assert_True ("he 2y1m not empty",
-         Sayableage.Format_Age (Loc.all, Normal, "2023-06-15", "2025-07-15")'Length > 0);
+      Assert_Eq ("he 2y1m dual + one",
+         Sayableage.Format_Age (Loc.all, Normal, "2023-06-15", "2025-07-15"),
+         Character'Val (16#D7#) & Character'Val (16#A9#) & Character'Val (16#D7#) & Character'Val (16#A0#) & Character'Val (16#D7#) & Character'Val (16#AA#) & Character'Val (16#D7#) & Character'Val (16#99#) & Character'Val (16#D7#) & Character'Val (16#99#) & Character'Val (16#D7#) & Character'Val (16#9D#) & ", " & Character'Val (16#D7#) & Character'Val (16#97#) & Character'Val (16#D7#) & Character'Val (16#95#) & Character'Val (16#D7#) & Character'Val (16#93#) & Character'Val (16#D7#) & Character'Val (16#A9#));
 
       --  29.9 3.5 years half
       Assert_Contains ("he 3.5y half",
@@ -1264,7 +1320,7 @@ procedure Test_Format_Age is
       --  29.32 3.5y half
       Assert_Eq ("id 3.5y half",
          Sayableage.Format_Age (Loc.all, Normal, "2022-06-15", "2025-12-15"),
-         "3 tahun setengah");
+         "3 setengah tahun");
 
       --  29.33 7y
       Assert_Eq ("id 7y",
@@ -1389,7 +1445,48 @@ procedure Test_Format_Age is
       --  32.3
       Assert_Eq ("shi 6 years few",
          Sayableage.Format_Age (Shi.all, Normal, "2005-06-08", "2012-06-07"),
-         "6 iseggasen d uzgen");
+         "6 " &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#89#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#99#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B4#) &
+         Character'Val (16#B3#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B4#) &
+         Character'Val (16#B3#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#AF#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B4#) &
+         Character'Val (16#B0#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#99#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#8F#) &
+         " " &
+         Character'Val (16#E2#) &
+         Character'Val (16#B4#) &
+         Character'Val (16#B7#) &
+         " " &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#93#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#A3#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B4#) &
+         Character'Val (16#B3#) &
+         Character'Val (16#E2#) &
+         Character'Val (16#B5#) &
+         Character'Val (16#8F#));
    end Test_Half_Year_Plural;
 
    ---------------------------------------------------------------------------
@@ -1463,6 +1560,7 @@ begin
    Test_Stage_Child;
    Test_Stage_Teenager;
    Test_Stage_Adult;
+   Test_Default_As_Of;
    Test_Stage_Gender_Spanish;
    Test_Stage_Gender_Neutral;
    Test_Sayableage_English;

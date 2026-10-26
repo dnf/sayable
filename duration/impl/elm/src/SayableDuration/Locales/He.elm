@@ -24,32 +24,32 @@ locale =
     , units =
         Dict.fromList
             [ ( "second", Pluralized
-              [ ( One, "שנייה {n}" )
+              [ ( One, "שנייה" )
               , ( Two, "שתי שניות" )
               , ( Other, "{n} שניות" )
               ] )
             , ( "minute", Pluralized
-              [ ( One, "דקה {n}" )
+              [ ( One, "דקה" )
               , ( Two, "שתי דקות" )
               , ( Other, "{n} דקות" )
               ] )
             , ( "hour", Pluralized
-              [ ( One, "שעה {n}" )
+              [ ( One, "שעה" )
               , ( Two, "שעתיים" )
               , ( Other, "{n} שעות" )
               ] )
             , ( "day", Pluralized
-              [ ( One, "יום {n}" )
+              [ ( One, "יום" )
               , ( Two, "יומיים" )
               , ( Other, "{n} ימים" )
               ] )
             , ( "week", Pluralized
-              [ ( One, "שבוע {n}" )
+              [ ( One, "שבוע" )
               , ( Two, "שבועיים" )
               , ( Other, "{n} שבועות" )
               ] )
             , ( "month", Pluralized
-              [ ( One, "חודש {n}" )
+              [ ( One, "חודש" )
               , ( Two, "חודשיים" )
               , ( Other, "{n} חודשים" )
               ] )

@@ -26,7 +26,7 @@ var ZH = sd.DurationLocale{
 		Day:    sd.SimpleUnit("{n}天"),
 		Week:   sd.SimpleUnit("{n}周"),
 		Month:  sd.SimpleUnit("{n}个月"),
-		Year:   sd.SimpleUnit("{n}岁"),
+		Year:   sd.SimpleUnit("{n}年"),
 	},
 	Half:      "{0}半",
 	Delimiter: "",

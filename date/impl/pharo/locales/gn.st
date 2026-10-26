@@ -22,7 +22,7 @@ gn
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
 	locale datePatternWithYear: '{day} {month} {year}'.
-	locale today: 'ko''ágã'.
+	locale today: 'ko árape'.
 	locale tomorrow: 'ko''ẽrõ'.
 	locale yesterday: 'kuehe'.
 	locale dayAfterTomorrow: 'ko''ẽrõ rire'.

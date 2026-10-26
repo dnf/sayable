@@ -5,6 +5,35 @@ and difference calculations using integer arithmetic, following the
 same approach as the C implementation.
 """
 
+from memory import alloc
+from sys.ffi import external_call
+
+
+fn _zero_pad(n: Int, width: Int) -> String:
+    var digits = String(n)
+    while len(digits) < width:
+        digits = "0" + digits
+    return digits
+
+
+fn today() -> String:
+    """Return the local current date as YYYY-MM-DD.
+
+    Uses the C library's time() and localtime_r() (part of the platform, not a
+    dependency). struct tm begins with tm_sec, tm_min, tm_hour, tm_mday, tm_mon,
+    tm_year as 32-bit ints.
+    """
+    var now = alloc[Int64](1)
+    now[0] = external_call["time", Int64, Int](0)
+    var broken_down = alloc[Int32](16)
+    _ = external_call["localtime_r", Int, Int, Int](Int(now), Int(broken_down))
+    var year = Int(broken_down[5]) + 1900
+    var month = Int(broken_down[4]) + 1
+    var day = Int(broken_down[3])
+    now.free()
+    broken_down.free()
+    return _zero_pad(year, 4) + "-" + _zero_pad(month, 2) + "-" + _zero_pad(day, 2)
+
 
 fn is_leap_year(year: Int) -> Bool:
     """Return True if year is a leap year."""
@@ -148,10 +177,7 @@ fn parse_age(date_of_birth: String, as_of: String) -> ParsedAge:
     if not dob.valid:
         return result
 
-    if len(as_of) == 0:
-        return result
-
-    var ref_date = parse_date(as_of)
+    var ref_date = parse_date(as_of if len(as_of) > 0 else today())
     if not ref_date.valid:
         return result
 

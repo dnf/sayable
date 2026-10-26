@@ -28,7 +28,7 @@ proc locale_duration_th {} {
     set delimiter { }
     set just_now {เมื่อกี้}
     set ago "{0}ที่แล้ว"
-    set in_future "ใน{0}"
+    set in_future "ในอีก {0}"
     set short [dict create \
         units [dict create \
             second "{n} วิ" \
@@ -40,7 +40,7 @@ proc locale_duration_th {} {
             year "{n} ปี" \
         ] \
         ago "{0}ที่แล้ว" \
-        in_future "ใน{0}" \
+        in_future "ในอีก {0}" \
     ]
     set compact [dict create \
         units [dict create \
@@ -55,7 +55,7 @@ proc locale_duration_th {} {
         half "{n}½" \
         delimiter {} \
         ago "{0}ที่แล้ว" \
-        in_future "ใน{0}" \
+        in_future "ในอีก {0}" \
     ]
     return [dict create \
         code $code \

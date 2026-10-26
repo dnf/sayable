@@ -28,7 +28,7 @@ defmodule SayableDuration.Locales.MG do
       half: "{0} sy sasany",
       delimiter: ", ",
       just_now: "vao haingana",
-      ago: "{0} lasa",
+      ago: "{0} lasa izay",
       in_future: "ao anatin'ny {0}",
       short: %{
         units: %{
@@ -40,7 +40,7 @@ defmodule SayableDuration.Locales.MG do
           month: "{n} vol",
           year: "{n} tna"
         },
-        ago: "{0} lasa",
+        ago: "{0} lasa izay",
         in_future: "ao anatin'ny {0}"
       },
       compact: %{

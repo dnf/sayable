@@ -55,7 +55,7 @@ pub fn locale() -> DurationLocale {
         half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_now: "akkurat nå".to_string(),
-        ago: "{0} siden".to_string(),
+        ago: "for {0} siden".to_string(),
         in_future: "om {0}".to_string(),
         short: Some(CompactnessOverride {
             second: Some(UnitForms::simple("{n} sek")),
@@ -67,7 +67,7 @@ pub fn locale() -> DurationLocale {
             year: Some(UnitForms::simple("{n} år")),
             half: None,
             delimiter: None,
-            ago: Some("{0} siden".to_string()),
+            ago: Some("for {0} siden".to_string()),
             in_future: Some("om {0}".to_string()),
         }),
         compact: Some(CompactnessOverride {
@@ -80,7 +80,7 @@ pub fn locale() -> DurationLocale {
             year: Some(UnitForms::simple("{n}å")),
             half: None,
             delimiter: Some(String::new()),
-            ago: Some("{0} siden".to_string()),
+            ago: Some("for {0} siden".to_string()),
             in_future: Some("om {0}".to_string()),
         }),
         format_number: None,

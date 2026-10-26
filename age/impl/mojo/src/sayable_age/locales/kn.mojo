@@ -73,7 +73,7 @@ fn build_kn() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}ವರೆ",
+        half="{n}½",
         delimiter=", ",
         just_born="ನವಜಾತ ಶಿಶು",
         newborn=newborn,

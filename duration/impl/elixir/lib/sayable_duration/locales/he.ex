@@ -17,12 +17,12 @@ defmodule SayableDuration.Locales.HE do
       code: "he",
       plural: (fn 1 -> :one; 2 -> :two; _ -> :other end),
       units: %{
-        second: %{one: "שנייה {n}", two: "שתי שניות", other: "{n} שניות"},
-        minute: %{one: "דקה {n}", two: "שתי דקות", other: "{n} דקות"},
-        hour: %{one: "שעה {n}", two: "שעתיים", other: "{n} שעות"},
-        day: %{one: "יום {n}", two: "יומיים", other: "{n} ימים"},
-        week: %{one: "שבוע {n}", two: "שבועיים", other: "{n} שבועות"},
-        month: %{one: "חודש {n}", two: "חודשיים", other: "{n} חודשים"},
+        second: %{one: "שנייה", two: "שתי שניות", other: "{n} שניות"},
+        minute: %{one: "דקה", two: "שתי דקות", other: "{n} דקות"},
+        hour: %{one: "שעה", two: "שעתיים", other: "{n} שעות"},
+        day: %{one: "יום", two: "יומיים", other: "{n} ימים"},
+        week: %{one: "שבוע", two: "שבועיים", other: "{n} שבועות"},
+        month: %{one: "חודש", two: "חודשיים", other: "{n} חודשים"},
         year: %{one: "שנה", two: "שנתיים", other: "{n} שנים"}
       },
       half: "{0} וחצי",

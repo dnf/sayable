@@ -20,9 +20,9 @@ const SduDurationLocale sdu_locale_ny = {
     "ny",
     plural_ny,
     {
-        { "{n} sekondi", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} mphindi", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} ola", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "sekondi {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "mphindi {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "ola {n}", NULL, NULL, NULL, "maola {n}" } },
         { NULL, { NULL, "tsiku {n}", NULL, NULL, NULL, "masiku {n}" } },
         { NULL, { NULL, "sabata {n}", NULL, NULL, NULL, "masabata {n}" } },
         { NULL, { NULL, "mwezi {n}", NULL, NULL, NULL, "miyezi {n}" } },
@@ -31,6 +31,6 @@ const SduDurationLocale sdu_locale_ny = {
     "{n}½", ", ",
     "tsopano",
     "{0} zapitazo", "mu {0}",
-    true, { true, { "sek {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "mph {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ola {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "tsiku {n}", NULL, NULL, NULL, "mas {n}" } }, true, { NULL, { NULL, "sabata {n}", NULL, NULL, NULL, "masab {n}" } }, true, { NULL, { NULL, "mwezi {n}", NULL, NULL, NULL, "miyezi {n}" } }, true, { NULL, { NULL, "chaka {n}", NULL, NULL, NULL, "zaka {n}" } }, false, NULL, false, NULL, true, "{0} zapitazo", true, "mu {0}" },
+    true, { true, { "sek {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "mph {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "ola {n}", NULL, NULL, NULL, "maola {n}" } }, true, { NULL, { NULL, "tsiku {n}", NULL, NULL, NULL, "mas {n}" } }, true, { NULL, { NULL, "sabata {n}", NULL, NULL, NULL, "masab {n}" } }, true, { NULL, { NULL, "mwezi {n}", NULL, NULL, NULL, "miyezi {n}" } }, true, { NULL, { NULL, "chaka {n}", NULL, NULL, NULL, "zaka {n}" } }, false, NULL, false, NULL, true, "{0} zapitazo", true, "mu {0}" },
     true, { true, { "s {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "m {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "o {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "ts {n}", NULL, NULL, NULL, "mas {n}" } }, true, { NULL, { NULL, "sab {n}", NULL, NULL, NULL, "msb {n}" } }, true, { NULL, { NULL, "mw {n}", NULL, NULL, NULL, "miy {n}" } }, true, { NULL, { NULL, "ch {n}", NULL, NULL, NULL, "z {n}" } }, true, "{n}½", true, "", true, "{0} zapitazo", true, "mu {0}" }
 };

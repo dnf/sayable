@@ -25,14 +25,14 @@ const SaLocale sa_locale_tk = {
         { "{n} aý", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ýaş", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0}½", ", ", "Täze doglan",
+    "{n} ýarym", ", ", "Täze doglan",
     {
         { "Täze doglan", "" },
         { "Bäbek", "" },
         { "Kiçijik", "" },
         { "Çaga", "" },
         { "Ýetginjek", "" },
-        { "Ulular", "" }
+        { "Uly adam", "" }
     },
     true, { true, { "{n} g", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} a", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ý", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
     true, { true, { "{n}g", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}a", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}ý", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }

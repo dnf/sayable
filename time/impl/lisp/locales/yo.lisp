@@ -18,9 +18,9 @@
    :code "yo"
    :clock (make-clock-config
     :hours (list "méjìlá" "kan" "méjì" "mẹ́ta" "mẹ́rin" "márùn-ún" "mẹ́fà" "méje" "mẹ́jọ" "mẹ́sàn-án" "mẹ́wàá" "mọ́kànlá")
-    :midnight "àárọ̀ òru"
-    :noon "ọ̀sán"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :midnight "ọ̀gànjọ́ òru"
+    :noon "ọ̀sán gangan"
+    :patterns (list (cons 0 "aago {h}") (cons 5 "aago {h} kọjá ìṣẹ́jú márùn-ún") (cons 10 "aago {h} kọjá ìṣẹ́jú mẹ́wàá") (cons 15 "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún") (cons 20 "aago {h} kọjá ogún ìṣẹ́jú") (cons 25 "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n") (cons 30 "aago {h} àbọ̀") (cons 35 "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n") (cons 40 "aago {next_h} kù ogún ìṣẹ́jú") (cons 45 "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún") (cons 50 "aago {next_h} kù ìṣẹ́jú mẹ́wàá") (cons 55 "aago {next_h} kù ìṣẹ́jú márùn-ún")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

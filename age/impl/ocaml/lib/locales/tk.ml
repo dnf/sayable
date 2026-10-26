@@ -18,7 +18,7 @@ let locale : locale =
   ; week = Simple "{n} hepde"
   ; month = Simple "{n} aý"
   ; year = Simple "{n} ýaş"
-  ; half = "{0}½"
+  ; half = "{n} ýarym"
   ; delimiter = ", "
   ; just_born = "Täze doglan"
   ; stages =
@@ -27,7 +27,7 @@ let locale : locale =
     ; toddler = Neutral "Kiçijik"
     ; child = Neutral "Çaga"
     ; teenager = Neutral "Ýetginjek"
-    ; adult = Neutral "Ulular"
+    ; adult = Neutral "Uly adam"
     }
   ; short = Some
       { ovr_day = Some (Simple "{n} g")

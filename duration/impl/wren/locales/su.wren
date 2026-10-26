@@ -25,7 +25,7 @@ class SULocale {
   }
   static half { "{0} satengah" }
   static delimiter { ", " }
-  static justNow { "ayeuna" }
+  static justNow { "nembé" }
   static ago { "{0} kapengker" }
   static inFuture { "dina {0}" }
   static short {

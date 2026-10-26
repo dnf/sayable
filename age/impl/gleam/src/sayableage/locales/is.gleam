@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.PluralUnit([#(types.One, "{n} vika"), #(types.Other, "{n} vikur")]),
     month: types.PluralUnit([#(types.One, "{n} mánuður"), #(types.Other, "{n} mánuðir")]),
     year: types.PluralUnit([#(types.One, "{n} ár"), #(types.Other, "{n} ár")]),
-    half: "{0} og hálft",
+    half: "{n} og hálft",
     delimiter: ", ",
     just_born: "Nýfætt",
     newborn: types.NeutralStage("Nýfæðingur"),

@@ -22,7 +22,7 @@ proc locale_ceb {} {
         month "{n} ka bulan" \
         year "{n} ka tuig" \
     ]
-    set half "{n}½"
+    set half "{0} ug tunga"
     set delimiter {, }
     set just_born {Bag-ong natawo}
     set stages [dict create \

@@ -12,12 +12,12 @@
 local M = {}
 
 M.code = "kl"
-M.plural = function(_n) return "other" end
+M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
-    day = "ullut {n}",
-    week = "sapaatit {n}",
-    month = "qaammatit {n}",
-    year = "ukiut {n}",
+    day = { one = "ulloq {n}", other = "ullut {n}" },
+    week = { one = "sapaatip akunnera {n}", other = "sapaatip akunneri {n}" },
+    month = { one = "qaammat {n}", other = "qaammatit {n}" },
+    year = { one = "ukioq {n}", other = "ukiut {n}" },
 }
 M.half = "{0} affaa"
 M.delimiter = ", "
@@ -33,7 +33,7 @@ M.stages = {
 M.short = {
     units = {
         day = "ull. {n}",
-        week = "sap. {n}",
+        week = "sap. ak. {n}",
         month = "qaam. {n}",
         year = "uk. {n}",
     },
@@ -45,6 +45,7 @@ M.compact = {
         month = "{n}m",
         year = "{n}y",
     },
+    half = "{n}½",
     delimiter = "",
 }
 

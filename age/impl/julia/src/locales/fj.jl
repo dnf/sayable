@@ -20,7 +20,7 @@ const FJ = AgeLocale(
         "month" => "{n} na vula",
         "year" => "{n} na yabaki",
     ),
-    half = "{n} kei na levu ni wasei",
+    half = "{0} kei na veimama",
     delimiter = ", ",
     just_born = "Gone vou",
     stages = Dict(
@@ -46,6 +46,7 @@ const FJ = AgeLocale(
             "month" => "{n}m",
             "year" => "{n}y",
         ),
+        half = "{n}½",
         delimiter = "",
     ),
 )

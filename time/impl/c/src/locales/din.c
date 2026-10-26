@@ -17,7 +17,7 @@ const StTimeLocale st_locale_din = {
         { "thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök" },
         "wakɔ̈u",
         "akɔ̈l ciëŋ",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "thä {h}", "thä {h} ku minitö dhiëc", "thä {h} ku minitö thiäär", "thä {h} ku minitö thiäär ku dhiëc", "thä {h} ku minitö thiärou", "thä {h} ku minitö thiärou ku dhiëc", "thä {h} ku minitö thiärdiäk", "thä {h} ku minitö thiärdiäk ku dhiëc", "thä {h} ku minitö thiärŋuan", "thä {h} ku minitö thiärŋuan ku dhiëc", "thä {h} ku minitö thiärdhiëc", "thä {h} ku minitö thiärdhiëc ku dhiëc" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

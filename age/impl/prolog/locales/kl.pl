@@ -11,12 +11,17 @@
 
 % Kalaallisut locale.
 
+sa_plural('kl', 1, one) :- !.
 sa_plural('kl', _, other).
 
-sa_unit('kl', day, _, 'ullut {n}').
-sa_unit('kl', week, _, 'sapaatit {n}').
-sa_unit('kl', month, _, 'qaammatit {n}').
-sa_unit('kl', year, _, 'ukiut {n}').
+sa_unit('kl', day, one, 'ulloq {n}').
+sa_unit('kl', day, other, 'ullut {n}').
+sa_unit('kl', week, one, 'sapaatip akunnera {n}').
+sa_unit('kl', week, other, 'sapaatip akunneri {n}').
+sa_unit('kl', month, one, 'qaammat {n}').
+sa_unit('kl', month, other, 'qaammatit {n}').
+sa_unit('kl', year, one, 'ukioq {n}').
+sa_unit('kl', year, other, 'ukiut {n}').
 
 sa_half('kl', '{0} affaa').
 sa_delimiter('kl', ', ').
@@ -30,7 +35,7 @@ sa_stage('kl', teenager, _, 'Inuusuttuaq').
 sa_stage('kl', adult, _, 'Inuk').
 
 short_sa_unit('kl', day, _, 'ull. {n}').
-short_sa_unit('kl', week, _, 'sap. {n}').
+short_sa_unit('kl', week, _, 'sap. ak. {n}').
 short_sa_unit('kl', month, _, 'qaam. {n}').
 short_sa_unit('kl', year, _, 'uk. {n}').
 
@@ -38,4 +43,5 @@ compact_sa_unit('kl', day, _, '{n}d').
 compact_sa_unit('kl', week, _, '{n}w').
 compact_sa_unit('kl', month, _, '{n}m').
 compact_sa_unit('kl', year, _, '{n}y').
+compact_sa_half('kl', '{n}½').
 compact_sa_delimiter('kl', '').

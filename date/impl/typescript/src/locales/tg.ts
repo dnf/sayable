@@ -25,8 +25,8 @@ export const tg: DateLocale = {
   dayAfterTomorrow: 'пасфардо',
   dayBeforeYesterday: 'парирӯз',
   thisWeekday: 'ин {weekday}',
-  nextWeekday: '{weekday}-и оянда',
-  lastWeekday: '{weekday}-и гузашта',
+  nextWeekday: '{weekday}и оянда',
+  lastWeekday: '{weekday}и гузашта',
   short: {
     months: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
     weekdays: ['Яш', 'Дш', 'Сш', 'Чш', 'Пш', 'Ҷм', 'Шб'],

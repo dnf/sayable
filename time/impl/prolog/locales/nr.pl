@@ -11,22 +11,22 @@
 
 % Southern Ndebele locale.
 
-st_hours('nr', ['itshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyagalombili', 'isitshiyagalolunye', 'itshumi', 'itshumi lanye']).
+st_hours('nr', ['letjhumi nambili', 'lokuthoma', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithandathu', 'lekhomba', 'lobunane', 'lethoba', 'letjhumi', 'letjhumi nanye']).
 st_midnight('nr', 'phakathi kobusuku').
 st_noon('nr', 'emini').
 
-st_pattern('nr', 0, '{h}:00').
-st_pattern('nr', 5, '{h}:05').
-st_pattern('nr', 10, '{h}:10').
-st_pattern('nr', 15, '{h}:15').
-st_pattern('nr', 20, '{h}:20').
-st_pattern('nr', 25, '{h}:25').
-st_pattern('nr', 30, '{h}:30').
-st_pattern('nr', 35, '{h}:35').
-st_pattern('nr', 40, '{h}:40').
-st_pattern('nr', 45, '{h}:45').
-st_pattern('nr', 50, '{h}:50').
-st_pattern('nr', 55, '{h}:55').
+st_pattern('nr', 0, 'ihora {h}').
+st_pattern('nr', 5, 'ihora {h} nemizuzu emihlanu').
+st_pattern('nr', 10, 'ihora {h} nemizuzu elitjhumi').
+st_pattern('nr', 15, 'ihora {h} nemizuzu elitjhumi nanhlanu').
+st_pattern('nr', 20, 'ihora {h} nemizuzu engamatjhumi amabili').
+st_pattern('nr', 25, 'ihora {h} nemizuzu engamatjhumi amabili nanhlanu').
+st_pattern('nr', 30, 'ihora {h} nesiquntu').
+st_pattern('nr', 35, 'ihora {h} nemizuzu engamatjhumi amathathu nanhlanu').
+st_pattern('nr', 40, 'ihora {h} nemizuzu engamatjhumi amane').
+st_pattern('nr', 45, 'ihora {h} nemizuzu engamatjhumi amane nanhlanu').
+st_pattern('nr', 50, 'ihora {h} nemizuzu engamatjhumi amahlanu').
+st_pattern('nr', 55, 'ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu').
 
 short_st_use24h('nr', false).
 short_st_format('nr', '{h}:{mm} {ampm}').

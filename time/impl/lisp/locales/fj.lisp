@@ -20,7 +20,7 @@
     :hours (list "tini ka rua" "dua" "rua" "tolu" "vā" "lima" "ono" "vitu" "walu" "ciwa" "tini" "tini ka dua")
     :midnight "bogi levu"
     :noon "sigalevu"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} na kaloko") (cons 5 "{h} na kaloko ka lima na miniti") (cons 10 "{h} na kaloko ka tini na miniti") (cons 15 "{h} na kaloko ka tini ka lima na miniti") (cons 20 "{h} na kaloko ka ruasagavulu na miniti") (cons 25 "{h} na kaloko ka ruasagavulu ka lima na miniti") (cons 30 "{h} na kaloko ka tolusagavulu na miniti") (cons 35 "{h} na kaloko ka tolusagavulu ka lima na miniti") (cons 40 "{h} na kaloko ka vāsagavulu na miniti") (cons 45 "{h} na kaloko ka vāsagavulu ka lima na miniti") (cons 50 "{h} na kaloko ka limasagavulu na miniti") (cons 55 "{h} na kaloko ka limasagavulu ka lima na miniti")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

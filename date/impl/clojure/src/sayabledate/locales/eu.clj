@@ -15,10 +15,10 @@
   {:code "eu"
    :months ["urtarril" "otsail" "martxo" "apiril" "maiatz" "ekain" "uztail" "abuztu" "irail" "urri" "azaro" "abendu"]
    :weekdays ["igandea" "astelehena" "asteartea" "asteazkena" "osteguna" "ostirala" "larunbata"]
-   :day-format "{n}"
-   :day-format-exceptions {}
-   :date-pattern "{month}ren {day}"
-   :date-pattern-with-year "{year}ko {month}ren {day}"
+   :day-format "{n}a"
+   :day-format-exceptions {"11" "{n}" "31" "{n}"}
+   :date-pattern "{month} {day}"
+   :date-pattern-with-year "{year}ko {month} {day}"
    :today "gaur"
    :tomorrow "bihar"
    :yesterday "atzo"
@@ -27,6 +27,6 @@
    :this-weekday "{weekday} hau"
    :next-weekday "hurrengo {weekday}"
    :last-weekday "aurreko {weekday}"
-   :months-in-date nil
+   :months-in-date ["urtarrilaren" "otsailaren" "martxoaren" "apirilaren" "maiatzaren" "ekainaren" "uztailaren" "abuztuaren" "irailaren" "urriaren" "azaroaren" "abenduaren"]
    :short {:months ["urt" "ots" "mar" "api" "mai" "eka" "uzt" "abu" "ira" "urr" "aza" "abe"] :months-in-date nil :weekdays ["ig" "al" "ar" "az" "og" "or" "lr"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{month} {day}" :date-pattern-with-year "{year} {month} {day}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

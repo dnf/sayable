@@ -17,10 +17,10 @@
   (make-time-locale
    :code "nso"
    :clock (make-clock-config
-    :hours (list "lesome pedi" "tee" "pedi" "tharo" "nne" "hlano" "tshela" "šupa" "seswai" "senyane" "lesome" "lesome tee")
+    :hours (list "lesomepedi" "pele" "bobedi" "boraro" "bone" "bohlano" "botshela" "bošupa" "seswai" "senyane" "lesome" "lesometee")
     :midnight "bošego gare"
     :noon "mosegare"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "iri ya {h}") (cons 5 "iri ya {h} le metsotso ye mehlano") (cons 10 "iri ya {h} le metsotso ye lesome") (cons 15 "iri ya {h} le kotara") (cons 20 "iri ya {h} le metsotso ye masomepedi") (cons 25 "iri ya {h} le metsotso ye masomepedi-hlano") (cons 30 "iri ya {h} le seripagare") (cons 35 "iri ya {h} le metsotso ye masometharo-hlano") (cons 40 "iri ya {h} le metsotso ye masomenne") (cons 45 "iri ya {h} le metsotso ye masomenne-hlano") (cons 50 "iri ya {h} le metsotso ye masomehlano") (cons 55 "iri ya {h} le metsotso ye masomehlano-hlano")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

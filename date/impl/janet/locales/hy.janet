@@ -11,8 +11,8 @@
 
 (def locale
   {:code "hy"
-   :months @["Հունվար" "Փետրվար" "Մարտ" "Ապրիլ" "Մայիս" "Հունիս" "Հուլիս" "Օգոստոս" "Սեպտեմբեր" "Հոկտեմբեր" "Նոյեմբեր" "Դեկտեմբեր"]
-   :weekdays @["Կիրակի" "Երկուշաբթի" "Երեքշաբթի" "Չորեքշաբթի" "Հինգշաբթի" "Ուրբաթ" "Շաբաթ"]
+   :months @["հունվար" "փետրվար" "մարտ" "ապրիլ" "մայիս" "հունիս" "հուլիս" "օգոստոս" "սեպտեմբեր" "հոկտեմբեր" "նոյեմբեր" "դեկտեմբեր"]
+   :weekdays @["կիրակի" "երկուշաբթի" "երեքշաբթի" "չորեքշաբթի" "հինգշաբթի" "ուրբաթ" "շաբաթ"]
    :day-format "{n}"
    :day-format-exceptions {}
    :date-pattern "{day} {month}"
@@ -20,11 +20,12 @@
    :today "այսօր"
    :tomorrow "վաղը"
    :yesterday "երեկ"
-   :day-after-tomorrow "վաղը մյուս օրը"
-   :day-before-yesterday "երեկ մյուս օրը"
+   :day-after-tomorrow "վաղը չէ մյուս օրը"
+   :day-before-yesterday "երեկ չէ առաջի օրը"
    :this-weekday "այս {weekday}"
    :next-weekday "հաջորդ {weekday}"
    :last-weekday "անցած {weekday}"
-   :short {:months @["Հնվ" "Փտր" "Մրտ" "Ապր" "Մյս" "Հնս" "Հլս" "Օգս" "Սեպ" "Հկտ" "Նոյ" "Դեկ"] :weekdays @["Կիր" "Երկ" "Երք" "Չրք" "Հնգ" "Ուր" "Շբթ"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
+   :months-in-date @["հունվարի" "փետրվարի" "մարտի" "ապրիլի" "մայիսի" "հունիսի" "հուլիսի" "օգոստոսի" "սեպտեմբերի" "հոկտեմբերի" "նոյեմբերի" "դեկտեմբերի"]
+   :short {:months @["հնվ" "փտր" "մրտ" "ապր" "մյս" "հնս" "հլս" "օգս" "սեպ" "հկտ" "նոյ" "դեկ"] :weekdays @["կիր" "երկ" "երք" "չրք" "հնգ" "ուր" "շբթ"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
    :compact {:date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}"}
 })

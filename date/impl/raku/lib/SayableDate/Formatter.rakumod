@@ -6,6 +6,31 @@ unit class SayableDate::Formatter;
 
 our $VERSION = '0.5.0';
 
+# Placeholders are matched on code points, not graphemes. Raku strings are
+# graphemes, and a placeholder followed by a combining mark (Tamil "{h}" then
+# U+0BC1) is the single grapheme "}" + U+0BC1, which .subst and .contains never
+# match. Every occurrence is replaced, as in the other implementations.
+my sub replace-placeholder(Str $template, Str $placeholder, Str $value --> Str) {
+    my @text = $template.ords;
+    my @hole = $placeholder.ords;
+    my @out;
+    my $i = 0;
+    while $i < @text.elems {
+        if $i + @hole.elems <= @text.elems && @text[$i ..^ $i + @hole.elems] eqv @hole.List {
+            @out.append: $value.ords;
+            $i += @hole.elems;
+        }
+        else {
+            @out.push: @text[$i++];
+        }
+    }
+    @out.chrs
+}
+
+my sub has-placeholder(Str $template, Str $placeholder --> Bool) {
+    (',' ~ $template.ords.join(',') ~ ',').contains(',' ~ $placeholder.ords.join(',') ~ ',')
+}
+
 has %.locale;
 has @.months;
 has @.months-in-date;
@@ -121,21 +146,21 @@ method format-relative(Str $date?, Str :$as-of --> Str) {
     if 2 <= $diff <= 6 && (%.locale<this-weekday>:exists) && %.locale<this-weekday>.defined {
         my $dow = weekday($dy, $dm, $dd);
         my $weekday-name = @.weekdays[$dow];
-        return %.locale<this-weekday>.subst('{weekday}', $weekday-name);
+        return replace-placeholder(%.locale<this-weekday>, '{weekday}', $weekday-name);
     }
 
     # Last weekday (-6 to -2)
     if -6 <= $diff <= -2 && (%.locale<last-weekday>:exists) && %.locale<last-weekday>.defined {
         my $dow = weekday($dy, $dm, $dd);
         my $weekday-name = @.weekdays[$dow];
-        return %.locale<last-weekday>.subst('{weekday}', $weekday-name);
+        return replace-placeholder(%.locale<last-weekday>, '{weekday}', $weekday-name);
     }
 
     # Next weekday (+7 to +13)
     if 7 <= $diff <= 13 && (%.locale<next-weekday>:exists) && %.locale<next-weekday>.defined {
         my $dow = weekday($dy, $dm, $dd);
         my $weekday-name = @.weekdays[$dow];
-        return %.locale<next-weekday>.subst('{weekday}', $weekday-name);
+        return replace-placeholder(%.locale<next-weekday>, '{weekday}', $weekday-name);
     }
 
     # Calendar fallback
@@ -151,19 +176,19 @@ method !format-absolute(Int $year, Int $month, Int $day, Bool $include-year --> 
     } else {
         $fmt = $.day-format;
     }
-    my $formatted-day = $fmt.subst('{n}', $day-str);
+    my $formatted-day = replace-placeholder($fmt, '{n}', $day-str);
 
     my @month-names = @.months-in-date.elems > 0 ?? @.months-in-date !! @.months;
     my $month-name = @month-names[$month - 1];
 
     my $pattern = $include-year ?? $.date-pattern-with-year !! $.date-pattern;
-    my $result = $pattern.subst('{month}', $month-name);
-    $result = $result.subst('{day}', $formatted-day);
-    $result = $result.subst('{d}', ~$day);
-    $result = $result.subst('{m}', ~$month);
+    my $result = replace-placeholder($pattern, '{month}', $month-name);
+    $result = replace-placeholder($result, '{day}', $formatted-day);
+    $result = replace-placeholder($result, '{d}', ~$day);
+    $result = replace-placeholder($result, '{m}', ~$month);
     if $include-year {
-        $result = $result.subst('{year}', ~$year);
-        $result = $result.subst('{yy}', ($year mod 100).fmt('%02d'));
+        $result = replace-placeholder($result, '{year}', ~$year);
+        $result = replace-placeholder($result, '{yy}', ($year mod 100).fmt('%02d'));
     }
 
     return $result;

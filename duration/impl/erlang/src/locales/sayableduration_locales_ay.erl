@@ -17,18 +17,18 @@ locale() ->
     #duration_locale{
         code = "ay",
         plural = fun(_) -> other end,
-        second = {simple, "sikundu {n}"},
-        minute = {simple, "minutu {n}"},
-        hour = {simple, "ura {n}"},
-        day = {simple, "uru {n}"},
-        week = {simple, "simana {n}"},
-        month = {simple, "phaxsi {n}"},
-        year = {simple, "mara {n}"},
+        second = {simple, "{n} sikundu"},
+        minute = {simple, "{n} minutu"},
+        hour = {simple, "{n} ura"},
+        day = {simple, "{n} uru"},
+        week = {simple, "{n} simana"},
+        month = {simple, "{n} phaxsi"},
+        year = {simple, "{n} mara"},
         half = "{0} chika",
         delimiter = ", ",
         just_now = "jichha",
         ago = "{0} nayraqata",
         in_future = "{0} jutirïn",
-        short = {just, #duration_compactness_override{second = {just, {simple, "sik. {n}"}}, minute = {just, {simple, "min. {n}"}}, hour = {just, {simple, "ur. {n}"}}, day = {just, {simple, "{n} ur."}}, week = {just, {simple, "{n} sim."}}, month = {just, {simple, "{n} phx."}}, year = {just, {simple, "{n} mr."}}, half = nothing, delimiter = nothing, ago = {just, "{0} nayraqata"}, in_future = {just, "{0} jutirïn"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} nayraqata"}, in_future = {just, "{0} jutirïn"}}}
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} sik."}}, minute = {just, {simple, "{n} min."}}, hour = {just, {simple, "{n} ura"}}, day = {just, {simple, "{n} ur."}}, week = {just, {simple, "{n} sim."}}, month = {just, {simple, "{n} phx."}}, year = {just, {simple, "{n} mr."}}, half = nothing, delimiter = nothing, ago = {just, "{0} nayraqata"}, in_future = {just, "{0} jutirïn"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} nayraqata"}, in_future = {just, "{0} jutirïn"}}}
     }.

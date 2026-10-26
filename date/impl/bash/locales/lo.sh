@@ -19,10 +19,10 @@ _sayabledate_locale_lo() {
     _tomorrow='ມື້ອື່ນ'
     _yesterday='ມື້ວານ'
     _day_after_tomorrow='ມື້ຮື'
-    _day_before_yesterday='ມື້ກ່ອນ'
+    _day_before_yesterday='ມື້ຊືນ'
     _this_weekday='{weekday}ນີ້'
     _next_weekday='{weekday}ໜ້າ'
-    _last_weekday='{weekday}ແລ້ວ'
+    _last_weekday='{weekday}ທີ່ແລ້ວ'
     _short_months=('ມ.ກ.' 'ກ.ພ.' 'ມ.ນ.' 'ມ.ສ.' 'ພ.ພ.' 'ມ.ຖ.' 'ກ.ລ.' 'ສ.ຫ.' 'ກ.ຍ.' 'ຕ.ລ.' 'ພ.ຈ.' 'ທ.ວ.')
     _short_weekdays=('ອາທິດ' 'ຈັນ' 'ອັງຄານ' 'ພຸດ' 'ພະຫັດ' 'ສຸກ' 'ເສົາ')
     _short_day_format='{n}'

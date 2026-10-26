@@ -21,19 +21,19 @@
   (age-locale
    "wo"
    (lambda (n) "other")
-   (hash "day" (hash "type" "simple" "form" "bés {n}")
-         "week" (hash "type" "simple" "form" "ayubés {n}")
-         "month" (hash "type" "simple" "form" "weer {n}")
-         "year" (hash "type" "simple" "form" "at {n}"))
+   (hash "day" (hash "type" "simple" "form" "{n} fan")
+         "week" (hash "type" "simple" "form" "{n} ayubés")
+         "month" (hash "type" "simple" "form" "{n} weer")
+         "year" (hash "type" "simple" "form" "{n} at"))
    "{0} ak genn-wàll"
    ", "
    "Dees ko sax juddu"
    (hash "newborn" (stage-label "Dees ko sax juddu" #f #f)
-         "infant" (stage-label "Njàmbaar bu ndaw" #f #f)
+         "infant" (stage-label "Liir" #f #f)
          "toddler" (stage-label "Xale bu ndaw" #f #f)
          "child" (stage-label "Xale" #f #f)
          "teenager" (stage-label "Ndaw-ndaw" #f #f)
          "adult" (stage-label "Mag" #f #f))
-   (compactness-override (hash "type" "simple" "form" "bés {n}") (hash "type" "simple" "form" "ayub. {n}") (hash "type" "simple" "form" "weer {n}") (hash "type" "simple" "form" "at {n}") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "bés {n}") (hash "type" "simple" "form" "ayub {n}") (hash "type" "simple" "form" "weer {n}") (hash "type" "simple" "form" "at {n}") "{n}½" "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n} fan") (hash "type" "simple" "form" "{n} ayub.") (hash "type" "simple" "form" "{n} weer") (hash "type" "simple" "form" "{n} at") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "{n} fan") (hash "type" "simple" "form" "{n} ayub") (hash "type" "simple" "form" "{n} weer") (hash "type" "simple" "form" "{n} at") "{n}½" "" #f)
   ))

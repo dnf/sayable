@@ -27,8 +27,8 @@
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} vit" "other" "{n} vjet")))
    "{0} e gjysmë"
    ", "
-   "Sapolindur"
-   (hash "newborn" (stage-label #f "Sapolindur" "Sapolindure")
+   "I sapolindur"
+   (hash "newborn" (stage-label #f "I sapolindur" "E sapolindur")
          "infant" (stage-label "Foshnjë" #f #f)
          "toddler" (stage-label #f "Fëmijë i vogël" "Fëmijë e vogël")
          "child" (stage-label "Fëmijë" #f #f)

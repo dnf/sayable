@@ -28,7 +28,7 @@
    :delimiter ", "
    :just-now "sisan"
    :ago "{0} taata"
-   :in-future "ka {0}"
+   :in-future "{0} kɔnɔ"
    :short-units (list (cons :second "sɛk. {n}")
                        (cons :minute "min. {n}")
                        (cons :hour "waati {n}")
@@ -37,7 +37,7 @@
                        (cons :month "kalo {n}")
                        (cons :year "sanj. {n}"))
    :short-ago "{0} taata"
-   :short-in-future "ka {0}"
+   :short-in-future "{0} kɔnɔ"
    :compact-units (list (cons :second "sɛk {n}")
                        (cons :minute "min {n}")
                        (cons :hour "waa {n}")
@@ -48,5 +48,5 @@
    :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} taata"
-   :compact-in-future "ka {0}"
+   :compact-in-future "{0} kɔnɔ"
 ))

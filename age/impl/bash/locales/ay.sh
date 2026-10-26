@@ -14,10 +14,10 @@ _sayableage_plural_ay() {
 }
 
 _sayableage_locale_ay() {
-    _unit_day='uru {n}'
-    _unit_week='simana {n}'
-    _unit_month='phaxsi {n}'
-    _unit_year='mara {n}'
+    _unit_day='{n} uru'
+    _unit_week='{n} simana'
+    _unit_month='{n} phaxsi'
+    _unit_year='{n} mara'
     _half='{0} chika'
     _delimiter=', '
     _just_born='Wawa machaqa'
@@ -35,6 +35,7 @@ _sayableage_locale_ay() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_ay
 }

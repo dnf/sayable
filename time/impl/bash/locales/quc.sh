@@ -10,21 +10,21 @@
 # Source: locales/quc.json
 
 _sayabletime_locale_quc() {
-    _clock_hours=('kab'\''lajuj' 'jun' 'ka'\''i'\''' 'oxi'\''' 'kaji'\''' 'jo'\''' 'waqi'\''' 'wuqu'\''' 'wajxaqi'\''' 'b'\''eleji'\''' 'lajuj' 'julajuj')
+    _clock_hours=('kab'\''lajuj' 'jun' 'keb'\''' 'oxib'\''' 'kajib'\''' 'job'\''' 'waqib'\''' 'wuqub'\''' 'wajxaqib'\''' 'b'\''elejeb'\''' 'lajuj' 'julajuj')
     _clock_midnight='nik'\''aj aq'\''ab'\'''
     _clock_noon='nik'\''aj q'\''ij'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h} ramaj'
+    _clock_pattern_5='{h} ramaj job'\'''
+    _clock_pattern_10='{h} ramaj lajuj'
+    _clock_pattern_15='{h} ramaj olajuj'
+    _clock_pattern_20='{h} ramaj juwinaq'
+    _clock_pattern_25='{h} ramaj juwinaq job'\'''
+    _clock_pattern_30='{h} ramaj juwinaq lajuj'
+    _clock_pattern_35='{h} ramaj juwinaq olajuj'
+    _clock_pattern_40='{h} ramaj kawinaq'
+    _clock_pattern_45='{h} ramaj kawinaq job'\'''
+    _clock_pattern_50='{h} ramaj kawinaq lajuj'
+    _clock_pattern_55='{h} ramaj kawinaq olajuj'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

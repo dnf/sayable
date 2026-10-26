@@ -11,22 +11,22 @@
 
 % Dholuo locale.
 
-st_hours('luo', ['apar gi ariyo', 'achiel', 'ariyo', 'adek', 'ang\'wen', 'abich', 'auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gi achiel']).
+st_hours('luo', ['auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gachiel', 'apar gariyo', 'achiel', 'ariyo', 'adek', 'ang\'wen', 'abich']).
 st_midnight('luo', 'dier otieno').
 st_noon('luo', 'odiechieng\' tir').
 
-st_pattern('luo', 0, '{h}:00').
-st_pattern('luo', 5, '{h}:05').
-st_pattern('luo', 10, '{h}:10').
-st_pattern('luo', 15, '{h}:15').
-st_pattern('luo', 20, '{h}:20').
-st_pattern('luo', 25, '{h}:25').
-st_pattern('luo', 30, '{h}:30').
-st_pattern('luo', 35, '{h}:35').
-st_pattern('luo', 40, '{h}:40').
-st_pattern('luo', 45, '{h}:45').
-st_pattern('luo', 50, '{h}:50').
-st_pattern('luo', 55, '{h}:55').
+st_pattern('luo', 0, 'saa {h}').
+st_pattern('luo', 5, 'saa {h} gi dakika abich').
+st_pattern('luo', 10, 'saa {h} gi dakika apar').
+st_pattern('luo', 15, 'saa {h} gi dakika apar gabich').
+st_pattern('luo', 20, 'saa {h} gi dakika piero ariyo').
+st_pattern('luo', 25, 'saa {h} gi dakika piero ariyo gabich').
+st_pattern('luo', 30, 'saa {h} gi nus').
+st_pattern('luo', 35, 'saa {h} gi dakika piero adek gabich').
+st_pattern('luo', 40, 'saa {h} gi dakika piero ang\'wen').
+st_pattern('luo', 45, 'saa {h} gi dakika piero ang\'wen gabich').
+st_pattern('luo', 50, 'saa {h} gi dakika piero abich').
+st_pattern('luo', 55, 'saa {h} gi dakika piero abich gabich').
 
 short_st_use24h('luo', false).
 short_st_format('luo', '{h}:{mm} {ampm}').

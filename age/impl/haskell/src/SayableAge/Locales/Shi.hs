@@ -18,52 +18,68 @@ locale = Locale
     { localeCode = "shi"
     , localePlural = \n -> if n == 0 || n == 1 then One else if n >= 2 && n <= 10 then Few else Other
     , localeDay = Pluralized
-      [ (One, "{n} ass")
-      , (Few, "{n} ussan")
-      , (Other, "{n} ass")
+      [ (One, "{n} ⴰⵙⵙ")
+      , (Few, "{n} ⵓⵙⵙⴰⵏ")
+      , (Other, "{n} ⴰⵙⵙ")
       ]
     , localeWeek = Pluralized
-      [ (One, "{n} imalass")
-      , (Few, "{n} imalassn")
-      , (Other, "{n} imalass")
+      [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
+      , (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ")
+      , (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
       ]
     , localeMonth = Pluralized
-      [ (One, "{n} ayyur")
-      , (Few, "{n} ayyurn")
-      , (Other, "{n} ayyur")
+      [ (One, "{n} ⴰⵢⵢⵓⵔ")
+      , (Few, "{n} ⴰⵢⵢⵓⵔⵏ")
+      , (Other, "{n} ⴰⵢⵢⵓⵔ")
       ]
     , localeYear = Pluralized
-      [ (One, "{n} aseggas")
-      , (Few, "{n} iseggasen")
-      , (Other, "{n} aseggas")
+      [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
+      , (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ")
+      , (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
       ]
-    , localeHalf = "{0} d uzgen"
+    , localeHalf = "{0} ⴷ ⵓⵣⴳⵏ"
     , localeDelimiter = ", "
-    , localeJustBorn = "Iɣ d illul"
+    , localeJustBorn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
     , localeStages = Stages
-        { stageNewborn = Neutral "Iɣ d illul"
-        , stageInfant = Neutral "Agellid"
-        , stageToddler = Gendered "Aḥenjir" "Taḥenjirt"
-        , stageChild = Gendered "Afrux" "Tafruxṭ"
-        , stageTeenager = Gendered "Aɛrim" "Taɛrimt"
-        , stageAdult = Gendered "Argaz" "Tamṭṭuṭ"
+        { stageNewborn = Neutral "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+        , stageInfant = Neutral "ⵍⵍⵓⴼⴰⵏ"
+        , stageToddler = Gendered "ⴰⵃⵏⵊⵉⵔ" "ⵜⴰⵃⵏⵊⵉⵔⵜ"
+        , stageChild = Gendered "ⴰⴼⵔⵓⵅ" "ⵜⴰⴼⵔⵓⵅⵜ"
+        , stageTeenager = Gendered "ⴰⵄⵔⵉⵎ" "ⵜⴰⵄⵔⵉⵎⵜ"
+        , stageAdult = Gendered "ⴰⵔⴳⴰⵣ" "ⵜⴰⵎⵟⵟⵓⵟ"
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "{n} d")
-            , ovrWeek = Just (Simple "{n} wk")
-            , ovrMonth = Just (Simple "{n} mo")
-            , ovrYear = Just (Simple "{n} yr")
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} ⴰⵙⵙ")
+              , (Few, "{n} ⵓⵙⵙⴰⵏ")
+              , (Other, "{n} ⴰⵙⵙ")
+              ])
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
+              , (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ")
+              , (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ")
+              ])
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} ⴰⵢⵢⵓⵔ")
+              , (Few, "{n} ⴰⵢⵢⵓⵔⵏ")
+              , (Other, "{n} ⴰⵢⵢⵓⵔ")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
+              , (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ")
+              , (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ")
+              ])
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , localeCompact = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "{n}d")
-            , ovrWeek = Just (Simple "{n}w")
-            , ovrMonth = Just (Simple "{n}m")
-            , ovrYear = Just (Simple "{n}y")
+            { ovrDay = Just (Simple "{n} ⴰⵙⵙ")
+            , ovrWeek = Just (Simple "{n} ⵉⵎⵍ")
+            , ovrMonth = Just (Simple "{n} ⴰⵢⵔ")
+            , ovrYear = Just (Simple "{n} ⴰⵙⴳ")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

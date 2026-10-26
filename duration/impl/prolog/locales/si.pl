@@ -15,9 +15,9 @@ sd_plural('si', 0, one) :- !.
 sd_plural('si', 1, one) :- !.
 sd_plural('si', _, other).
 
-sd_unit('si', second, _, '{n} තත්පරය').
-sd_unit('si', minute, _, '{n} මිනිත්තුව').
-sd_unit('si', hour, _, '{n} පැය').
+sd_unit('si', second, _, 'තත්පර {n}').
+sd_unit('si', minute, _, 'මිනිත්තු {n}').
+sd_unit('si', hour, _, 'පැය {n}').
 sd_unit('si', day, one, 'දින {n}').
 sd_unit('si', day, other, 'දින {n}').
 sd_unit('si', week, one, 'සති {n}').
@@ -27,7 +27,7 @@ sd_unit('si', month, other, 'මාස {n}').
 sd_unit('si', year, one, 'වසර {n}').
 sd_unit('si', year, other, 'වසර {n}').
 
-sd_half('si', '{0}යි භාගයයි').
+sd_half('si', '{n}½').
 sd_delimiter('si', ', ').
 sd_just_now('si', 'දැන්').
 sd_ago('si', '{0}ට පෙර').

@@ -28,7 +28,7 @@ var TE = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} నెల", sa.Other: "{n} నెలలు"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} సంవత్సరం", sa.Other: "{n} సంవత్సరాలు"}),
 	},
-	Half:      "{0}న్నర",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustBorn:  "నవజాత శిశువు",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

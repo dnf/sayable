@@ -17,10 +17,10 @@
   (make-time-locale
    :code "bn"
    :clock (make-clock-config
-    :hours (list "বারো" "এক" "দুই" "তিন" "চার" "পাঁচ" "ছয়" "সাত" "আট" "নয়" "দশ" "এগারো")
+    :hours (list "বারোটা" "একটা" "দুটো" "তিনটে" "চারটে" "পাঁচটা" "ছটা" "সাতটা" "আটটা" "নটা" "দশটা" "এগারোটা")
     :midnight "মধ্যরাত"
-    :noon "দুপুর"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :noon "দুপুর বারোটা"
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} বেজে পাঁচ মিনিট") (cons 10 "{h} বেজে দশ মিনিট") (cons 15 "সোয়া {h}") (cons 20 "{h} বেজে বিশ মিনিট") (cons 25 "{h} বেজে পঁচিশ মিনিট") (cons 30 "{h} বেজে ত্রিশ মিনিট") (cons 35 "{next_h} বাজতে পঁচিশ মিনিট বাকি") (cons 40 "{next_h} বাজতে বিশ মিনিট বাকি") (cons 45 "পৌনে {next_h}") (cons 50 "{next_h} বাজতে দশ মিনিট বাকি") (cons 55 "{next_h} বাজতে পাঁচ মিনিট বাকি")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

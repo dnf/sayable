@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [gn.json](../../locales/gn.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Not a placeholder locale. Replaced only the dubious subtractive 35-55 patterns ('{next_h} mba'e ...', 'thing' as a minus word) with additive '{h} ha <minutes>' matching the existing 5-30 style. Left 0-30 as is, including '30': '{h} ha mbohapy pa' (literal thirty) rather than the audit's 'ha mbyte', which I could not confirm as the established form.
+
 ## Age
 
 ### Age formatting
@@ -65,54 +73,54 @@ Plural rule: `one_other` (categories: one, other)
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal              | Compact |
-| -------------------- | ------------------- | ------- |
-| Today                | ko'ágã              | ko'ágã  |
-| Tomorrow             | ko'ẽrõ              | ko'ẽrõ  |
-| Yesterday            | kuehe               | kuehe   |
-| Day after tomorrow   | ko'ẽrõ rire         | 17/3    |
-| Day before yesterday | kuehe ñepyrũme      | 13/3    |
-| This Thursday (+5)   | ko Arapo            | 20/3    |
-| Last Monday (-4)     | Araapy ohasava'ekue | 11/3    |
-| Next Wednesday (+12) | Arapo ou vave       | 27/3    |
-| Same month (+20)     | 4 Jasyrundy         | 4/4     |
-| Different year       | 10 Jasyteĩ 2026     | 10/1/26 |
+| Offset               | Normal              | Compact  |
+| -------------------- | ------------------- | -------- |
+| Today                | ko árape            | ko árape |
+| Tomorrow             | ko'ẽrõ              | ko'ẽrõ   |
+| Yesterday            | kuehe               | kuehe    |
+| Day after tomorrow   | ko'ẽrõ rire         | 17/3     |
+| Day before yesterday | kuehe ñepyrũme      | 13/3     |
+| This Thursday (+5)   | ko Arapo            | 20/3     |
+| Last Tuesday (-4)    | Araapy ohasava'ekue | 11/3     |
+| Next Thursday (+12)  | Arapo ou vave       | 27/3     |
+| Same year (+20)      | 4 Jasyrundy         | 4/4      |
+| Different year       | 10 Jasyteĩ 2026     | 10/1/26  |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal               | Short           | Compact |
-| --------------------- | -------------------- | --------------- | ------- |
-| 0 seconds             | ko'ágã               | ko'ágã          | ko'ágã  |
-| 1 second              | 1 aravo'i            | 1 ara'i         | 1s      |
-| 30 seconds            | 30 aravo'i           | 30 ara'i        | 30s     |
-| 1 minute              | 1 aravo              | 1 ara           | 1m      |
-| 2 minutes, 15 seconds | 2 aravo, 15 aravo'i  | 2 ara, 15 ara'i | 2m15s   |
-| 5 minutes             | 5 aravo              | 5 ara           | 5m      |
-| 45 minutes            | 45 aravo             | 45 ara          | 45m     |
-| 1 hour                | 1 aravo guasu        | 1 ara g         | 1h      |
-| 1½ hours              | 1½ aravo guasu       | 1½ ara g        | 1½h     |
-| 3 hours               | 3 aravo guasu        | 3 ara g         | 3h      |
-| 6 hours               | 6 aravo guasu        | 6 ara g         | 6h      |
-| 1 day                 | 1 ára                | 1 ára           | 1d      |
-| 1½ days               | 1½ ára               | 1½ ára          | 1½d     |
-| 3 days                | 3 ára                | 3 ára           | 3d      |
-| 1 week                | 1 arapokõindy        | 1 ara           | 1w      |
-| 2 weeks, 3 days       | 2 arapokõindy, 3 ára | 2 ara, 3 ára    | 2w3d    |
-| 1 month               | 1 jasy               | 1 jas           | 1m      |
-| 6 months              | 6 jasy               | 6 jas           | 6m      |
-| 1 year                | 1 ary                | 1 ary           | 1y      |
-| 2 years, 3 months     | 2 ary, 3 jasy        | 2 ary, 3 jas    | 2y3m    |
+| Duration              | Normal                  | Short                   | Compact |
+| --------------------- | ----------------------- | ----------------------- | ------- |
+| 0 seconds             | ko'ágã                  | ko'ágã                  | ko'ágã  |
+| 1 second              | 1 aravo'ive             | 1 aravo'ive             | 1s      |
+| 30 seconds            | 30 aravo'ive            | 30 aravo'ive            | 30s     |
+| 1 minute              | 1 aravo'i               | 1 aravo'i               | 1m      |
+| 2 minutes, 15 seconds | 2 aravo'i, 15 aravo'ive | 2 aravo'i, 15 aravo'ive | 2m15s   |
+| 5 minutes             | 5 aravo'i               | 5 aravo'i               | 5m      |
+| 45 minutes            | 45 aravo'i              | 45 aravo'i              | 45m     |
+| 1 hour                | 1 aravo                 | 1 aravo                 | 1h      |
+| 1½ hours              | 1½ aravo                | 1½ aravo                | 1½h     |
+| 3 hours               | 3 aravo                 | 3 aravo                 | 3h      |
+| 6 hours               | 6 aravo                 | 6 aravo                 | 6h      |
+| 1 day                 | 1 ára                   | 1 ára                   | 1d      |
+| 1½ days               | 1½ ára                  | 1½ ára                  | 1½d     |
+| 3 days                | 3 ára                   | 3 ára                   | 3d      |
+| 1 week                | 1 arapokõindy           | 1 ara                   | 1w      |
+| 2 weeks, 3 days       | 2 arapokõindy, 3 ára    | 2 ara, 3 ára            | 2w3d    |
+| 1 month               | 1 jasy                  | 1 jas                   | 1m      |
+| 6 months              | 6 jasy                  | 6 jas                   | 6m      |
+| 1 year                | 1 ary                   | 1 ary                   | 1y      |
+| 2 years, 3 months     | 2 ary, 3 jasy           | 2 ary, 3 jas            | 2y3m    |
 
 ### Relative time
 
-| Offset        | Normal                     | Compact         |
-| ------------- | -------------------------- | --------------- |
-| 5 minutes ago | 5 aravo ohasava'ekue       | 5m ohasava'ekue |
-| 2 hours ago   | 2 aravo guasu ohasava'ekue | 2h ohasava'ekue |
-| in 30 minutes | 30 aravo rire              | 30m rire        |
-| in 3 hours    | 3 aravo guasu rire         | 3h rire         |
+| Offset        | Normal                 | Compact         |
+| ------------- | ---------------------- | --------------- |
+| 5 minutes ago | 5 aravo'i ohasava'ekue | 5m ohasava'ekue |
+| 2 hours ago   | 2 aravo ohasava'ekue   | 2h ohasava'ekue |
+| in 30 minutes | 30 aravo'i rire        | 30m rire        |
+| in 3 hours    | 3 aravo rire           | 3h rire         |
 
 ## Time
 
@@ -120,14 +128,14 @@ Relative to Saturday, March 15, 2025.
 
 | Time            | Normal                 | Short    | Compact |
 | --------------- | ---------------------- | -------- | ------- |
-| Midnight        | pyhareve               | 12:00 AM | 12:00a  |
+| Midnight        | pyharepyte             | 12:00 AM | 12:00a  |
 | 1:00 AM         | peteĩ                  | 1:00 AM  | 1:00a   |
 | 5 past 9        | porundy ha po          | 9:05 AM  | 9:05a   |
 | Quarter past 10 | pa ha pa po            | 10:15 AM | 10:15a  |
 | Half past 11    | pa peteĩ ha mbohapy pa | 11:30 AM | 11:30a  |
 | Noon            | asaje                  | 12:00 PM | 12:00p  |
-| Quarter to 3    | mbohapy mba'e pa po    | 2:45 PM  | 2:45p   |
-| 5 to 6          | poteĩ mba'e po         | 5:55 PM  | 5:55p   |
+| Quarter to 3    | mokõi ha irundy pa po  | 2:45 PM  | 2:45p   |
+| 5 to 6          | po ha po pa po         | 5:55 PM  | 5:55p   |
 | 8 o'clock PM    | poapy                  | 8:00 PM  | 8:00p   |
 | 10:30 PM        | pa ha mbohapy pa       | 10:30 PM | 10:30p  |
-| 11:58 PM        | pyhareve               | 11:58 PM | 11:58p  |
+| 11:58 PM        | pyharepyte             | 11:58 PM | 11:58p  |

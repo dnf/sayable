@@ -28,7 +28,7 @@ var TK = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} aý"),
 		Year:  sa.SimpleUnit("{n} ýaş"),
 	},
-	Half:      "{0}½",
+	Half:      "{n} ýarym",
 	Delimiter: ", ",
 	JustBorn:  "Täze doglan",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
@@ -37,7 +37,7 @@ var TK = sa.AgeLocale{
 		Toddler:  sa.S("Kiçijik"),
 		Child:    sa.S("Çaga"),
 		Teenager: sa.S("Ýetginjek"),
-		Adult:    sa.S("Ulular"),
+		Adult:    sa.S("Uly adam"),
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} g"},

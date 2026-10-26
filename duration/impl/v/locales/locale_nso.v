@@ -22,8 +22,8 @@ fn plural_nso(n int) PluralCategory {
 pub const locale_nso = DurationLocale{
 	code: 'nso'
 	plural: plural_nso
-	second: plural_unit({PluralCategory.one: 'motsotswana {n}', PluralCategory.other: 'dimetsotswana {n}'})
-	minute: plural_unit({PluralCategory.one: 'metsotso {n}', PluralCategory.other: 'dimetsotso {n}'})
+	second: plural_unit({PluralCategory.one: 'motsotswana {n}', PluralCategory.other: 'metsotswana {n}'})
+	minute: plural_unit({PluralCategory.one: 'motsotso {n}', PluralCategory.other: 'metsotso {n}'})
 	hour: plural_unit({PluralCategory.one: 'iri {n}', PluralCategory.other: 'diiri {n}'})
 	day: plural_unit({PluralCategory.one: 'letšatši {n}', PluralCategory.other: 'matšatši {n}'})
 	week: plural_unit({PluralCategory.one: 'beke {n}', PluralCategory.other: 'dibeke {n}'})
@@ -36,9 +36,9 @@ pub const locale_nso = DurationLocale{
 	in_future: 'ka {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: plural_unit({PluralCategory.one: 'mots. {n}', PluralCategory.other: 'dimets. {n}'})
+		second: plural_unit({PluralCategory.one: 'motsotsw. {n}', PluralCategory.other: 'metsotsw. {n}'})
 		has_second: true
-		minute: plural_unit({PluralCategory.one: 'mets. {n}', PluralCategory.other: 'dimets. {n}'})
+		minute: plural_unit({PluralCategory.one: 'mots. {n}', PluralCategory.other: 'mets. {n}'})
 		has_minute: true
 		hour: plural_unit({PluralCategory.one: 'iri {n}', PluralCategory.other: 'diiri {n}'})
 		has_hour: true

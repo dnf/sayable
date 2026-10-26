@@ -16,7 +16,7 @@ export const mr: DurationLocale = {
   plural: (n) => (n === 1 ? 'one' : 'other'),
   units: {
     second: '{n} सेकंद',
-    minute: '{n} मिनिट',
+    minute: { one: '{n} मिनिट', other: '{n} मिनिटे' },
     hour:   '{n} तास',
     day:    { one: '{n} दिवस', other: '{n} दिवस' },
     week:   { one: '{n} आठवडा', other: '{n} आठवडे' },

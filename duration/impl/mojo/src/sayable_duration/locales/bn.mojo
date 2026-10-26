@@ -29,7 +29,7 @@ fn build_bn() -> DurationLocale:
 
     var second = simple_unit("{n} সেকেন্ড")
     var minute = simple_unit("{n} মিনিট")
-    var hour = simple_unit("{n} ঘন্টা")
+    var hour = simple_unit("{n} ঘণ্টা")
     var day = plural_unit(one="{n} দিন", other="{n} দিন")
     var week = plural_unit(one="{n} সপ্তাহ", other="{n} সপ্তাহ")
     var month = plural_unit(one="{n} মাস", other="{n} মাস")

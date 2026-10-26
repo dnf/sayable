@@ -18,7 +18,7 @@
    :week {:type :simple :form "བདུན་ཕྲག་ {n}"}
    :month {:type :simple :form "ཟླ་ {n}"}
    :year {:type :simple :form "ལོ་ {n}"}
-   :half "{0} ཕྱེད"
+   :half "{0} དང་ཕྱེད"
    :delimiter " "
    :just-born "གསར་སྐྱེས"
    :stages {:newborn {:type :neutral :label "གསར་སྐྱེས"} :infant {:type :neutral :label "ཕྲུ་གུ"} :toddler {:type :neutral :label "བྱིས་པ"} :child {:type :neutral :label "ཨ་ཅུང"} :teenager {:type :neutral :label "ན་གཞོན"} :adult {:type :neutral :label "མི་ལོན་ཚང"}}

@@ -22,7 +22,7 @@ locale =
     { code = "bm"
     , months =
         [ "Zanwuye"
-        , "Fewuriye"
+        , "Feburuye"
         , "Marisi"
         , "Awirili"
         , "Mɛ"
@@ -30,8 +30,8 @@ locale =
         , "Zuluye"
         , "Uti"
         , "Sɛtanburu"
-        , "ɔkutɔburu"
-        , "Nowanbudu"
+        , "Ɔkutɔburu"
+        , "Nowanburu"
         , "Desanburu"
         ]
     , weekdays =
@@ -60,7 +60,7 @@ locale =
         Just
             { ovrMonths = Just
                 [ "Zan"
-                , "Few"
+                , "Feb"
                 , "Mar"
                 , "Awi"
                 , "Mɛ"
@@ -68,7 +68,7 @@ locale =
                 , "Zul"
                 , "Uti"
                 , "Sɛt"
-                , "ɔku"
+                , "Ɔku"
                 , "Now"
                 , "Des"
                 ]

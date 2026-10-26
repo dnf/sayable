@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.CAK do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} k'o chi",
         in_future: "pa {0}"

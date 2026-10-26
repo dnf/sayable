@@ -26,7 +26,7 @@ class DALocale {
   static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "lige nu" }
-  static ago { "{0} siden" }
+  static ago { "for {0} siden" }
   static inFuture { "om {0}" }
   static short {
     return {

@@ -16,7 +16,7 @@
 (defparameter *locale-dyu*
   (make-date-locale
    :code "dyu"
-   :months (list "Zanwuyekalo" "Feburuyekalo" "Marisikalo" "Awirilikalo" "Mɛkalo" "Zuwɛnkalo" "Zuluyekalo" "Utikalo" "Sɛtanburukalo" "Ɔkutɔburukalo" "Nowanburdukalo" "Desanburukalo")
+   :months (list "Zanwuyekalo" "Feburuyekalo" "Marisikalo" "Awirilikalo" "Mɛkalo" "Zuwɛnkalo" "Zuluyekalo" "Utikalo" "Sɛtanburukalo" "Ɔkutɔburukalo" "Nowanburukalo" "Desanburukalo")
    :weekdays (list "Kari" "Ntɛnɛn" "Tarata" "Araba" "Alamisa" "Juma" "Sibiri")
    :day-format "{n}"
    :day-format-exceptions nil

@@ -20,22 +20,10 @@ locale : Locale
 locale =
     { code = "ee"
     , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "ŋkeke {n}" )
-      , ( Other, "ŋkekewo {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "kɔsiɖa {n}" )
-      , ( Other, "kɔsiɖawo {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ɣleti {n}" )
-      , ( Other, "ɣletiwo {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "ƒe {n}" )
-      , ( Other, "ƒewo {n}" )
-      ]
+    , day = Simple "ŋkeke {n}"
+    , week = Simple "kɔsiɖa {n}"
+    , month = Simple "ɣleti {n}"
+    , year = Simple "ƒe {n}"
     , half = "{0} kple afã"
     , delimiter = ", "
     , justBorn = "Evi yeye"
@@ -44,24 +32,15 @@ locale =
         , infant = Neutral "Ɖevi"
         , toddler = Neutral "Ɖevi sue"
         , child = Neutral "Ɖevi"
-        , teenager = Neutral "Ŋutsuviwo"
+        , teenager = Gendered "Ɖekakpui" "Ɖetugbi"
         , adult = Neutral "Ame tsitsi"
         }
     , short =
         Just
-            { ovrDay = Just (Simple "ŋkekewo {n}")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "kɔsiɖa {n}" )
-                  , ( Other, "kɔsiɖawo {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ɣleti {n}" )
-                  , ( Other, "ɣletiwo {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "ƒe {n}" )
-                  , ( Other, "ƒewo {n}" )
-                  ])
+            { ovrDay = Just (Simple "ŋkeke {n}")
+            , ovrWeek = Just (Simple "kɔsiɖa {n}")
+            , ovrMonth = Just (Simple "ɣleti {n}")
+            , ovrYear = Just (Simple "ƒe {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -24,7 +24,7 @@
    :half "{n}½"
    :delimiter ", "
    :just-now "just nu"
-   :ago "{0} sedan"
+   :ago "för {0} sedan"
    :in-future "om {0}"
-   :short {:second {:type :simple :form "{n} s"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} tim"} :day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} v"} :month {:type :simple :form "{n} mån"} :year {:type :simple :form "{n} år"} :half nil :delimiter nil :ago "{0} sedan" :in-future "om {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}v"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}å"} :half nil :delimiter "" :ago "{0} sedan" :in-future "om {0}"}})
+   :short {:second {:type :simple :form "{n} s"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} tim"} :day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} v"} :month {:type :simple :form "{n} mån"} :year {:type :simple :form "{n} år"} :half nil :delimiter nil :ago "för {0} sedan" :in-future "om {0}"}
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}v"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}å"} :half nil :delimiter "" :ago "för {0} sedan" :in-future "om {0}"}})

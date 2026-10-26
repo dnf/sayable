@@ -11,7 +11,7 @@
 
 proc locale_date_yue {} {
     set code {yue}
-    set months [list {一月} {二月} {三月} {四月} {五月} {六月} {七月} {八月} {九月} {十月} {十一月} {十二月}]
+    set months [list {1月} {2月} {3月} {4月} {5月} {6月} {7月} {8月} {9月} {10月} {11月} {12月}]
     set weekdays [list {星期日} {星期一} {星期二} {星期三} {星期四} {星期五} {星期六}]
     set day_format "{n}日"
     set day_format_exceptions [dict create]
@@ -27,7 +27,7 @@ proc locale_date_yue {} {
     set last_weekday "上個{weekday}"
     set months_in_date ""
     set short [dict create \
-        months [list {一月} {二月} {三月} {四月} {五月} {六月} {七月} {八月} {九月} {十月} {十一月} {十二月}] \
+        months [list {1月} {2月} {3月} {4月} {5月} {6月} {7月} {8月} {9月} {10月} {11月} {12月}] \
         weekdays [list {日} {一} {二} {三} {四} {五} {六}] \
         day_format "{n}日" \
         date_pattern "{month}{day}" \

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [st.json](../../locales/st.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Sesotho ordinal hours: 'hora ya boraro' = 3 o'clock, 'hora ya pele' = 1 o'clock, 'hora ya leshome' = 10. '... le halofo' (half, as in the file's duration data), '... le kotara' (quarter past), otherwise '... le metsotso e leshome / e mashome a mabedi / e mashome a mane a metso e mehlano'. Doubts: :45 is additive ('... le metsotso e mashome a mane a metso e mehlano') rather than a 'kotara to' form, which I could not verify; Lesotho vs South African orthography (no diacritics, matching the existing file).
+
 ## Age
 
 ### Age formatting
@@ -43,7 +51,7 @@ Plural rule: `one_other` (categories: one, other)
 | -------- | ---------------------- |
 | Newborn  | Lesea le sa tswa hlaha |
 | Infant   | Lesea                  |
-| Toddler  | Ngwanana               |
+| Toddler  | Ngwana e monyane       |
 | Child    | Ngwana                 |
 | Teenager | Mosha                  |
 | Adult    | Motho e moholo         |
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | hosanemane          | 17/3    |
 | Day before yesterday | maobanyane          | 13/3    |
 | This Thursday (+5)   | Labone ena          | 20/3    |
-| Last Monday (-4)     | Labobedi e fetileng | 11/3    |
-| Next Wednesday (+12) | Labone e tlang      | 27/3    |
-| Same month (+20)     | 4 Mmese             | 4/4     |
+| Last Tuesday (-4)    | Labobedi e fetileng | 11/3    |
+| Next Thursday (+12)  | Labone e tlang      | 27/3    |
+| Same year (+20)      | 4 Mmese             | 4/4     |
 | Different year       | 10 Pherekgong 2026  | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                         | Short                          | Compact    |
-| --------------------- | ------------------------------ | ------------------------------ | ---------- |
-| 0 seconds             | hona jwale                     | hona jwale                     | hona jwale |
-| 1 second              | motsotswana 1                  | motsotswana 1                  | 1s         |
-| 30 seconds            | dimetsotswana 30               | dimetsotswana 30               | 30s        |
-| 1 minute              | metsotso 1                     | metsotso 1                     | 1m         |
-| 2 minutes, 15 seconds | dimetsotso 2, dimetsotswana 15 | dimetsotso 2, dimetsotswana 15 | 2m15s      |
-| 5 minutes             | dimetsotso 5                   | dimetsotso 5                   | 5m         |
-| 45 minutes            | dimetsotso 45                  | dimetsotso 45                  | 45m        |
-| 1 hour                | hora 1                         | hora 1                         | 1h         |
-| 1½ hours              | dihora 1 le halofo             | dihora 1 le halofo             | 1½h        |
-| 3 hours               | dihora 3                       | dihora 3                       | 3h         |
-| 6 hours               | dihora 6                       | dihora 6                       | 6h         |
-| 1 day                 | letsatsi 1                     | letsatsi 1                     | 1d         |
-| 1½ days               | matsatsi 1 le halofo           | matsatsi 1 le halofo           | 1½d        |
-| 3 days                | matsatsi 3                     | matsatsi 3                     | 3d         |
-| 1 week                | beke 1                         | beke 1                         | 1w         |
-| 2 weeks, 3 days       | dibeke 2, matsatsi 3           | dibeke 2, matsatsi 3           | 2w3d       |
-| 1 month               | kgwedi 1                       | kgw. 1                         | 1m         |
-| 6 months              | dikgwedi 6                     | dikgw. 6                       | 6m         |
-| 1 year                | selemo 1                       | sel. 1                         | 1y         |
-| 2 years, 3 months     | dilemo 2, dikgwedi 3           | dil. 2, dikgw. 3               | 2y3m       |
+| Duration              | Normal                     | Short                      | Compact    |
+| --------------------- | -------------------------- | -------------------------- | ---------- |
+| 0 seconds             | hona jwale                 | hona jwale                 | hona jwale |
+| 1 second              | motsotswana 1              | motsotswana 1              | 1s         |
+| 30 seconds            | metsotswana 30             | metsotswana 30             | 30s        |
+| 1 minute              | motsotso 1                 | motsotso 1                 | 1m         |
+| 2 minutes, 15 seconds | metsotso 2, metsotswana 15 | metsotso 2, metsotswana 15 | 2m15s      |
+| 5 minutes             | metsotso 5                 | metsotso 5                 | 5m         |
+| 45 minutes            | metsotso 45                | metsotso 45                | 45m        |
+| 1 hour                | hora 1                     | hora 1                     | 1h         |
+| 1½ hours              | dihora 1 le halofo         | dihora 1 le halofo         | 1½h        |
+| 3 hours               | dihora 3                   | dihora 3                   | 3h         |
+| 6 hours               | dihora 6                   | dihora 6                   | 6h         |
+| 1 day                 | letsatsi 1                 | letsatsi 1                 | 1d         |
+| 1½ days               | matsatsi 1 le halofo       | matsatsi 1 le halofo       | 1½d        |
+| 3 days                | matsatsi 3                 | matsatsi 3                 | 3d         |
+| 1 week                | beke 1                     | beke 1                     | 1w         |
+| 2 weeks, 3 days       | dibeke 2, matsatsi 3       | dibeke 2, matsatsi 3       | 2w3d       |
+| 1 month               | kgwedi 1                   | kgw. 1                     | 1m         |
+| 6 months              | dikgwedi 6                 | dikgw. 6                   | 6m         |
+| 1 year                | selemo 1                   | sel. 1                     | 1y         |
+| 2 years, 3 months     | dilemo 2, dikgwedi 3       | dil. 2, dikgw. 3           | 2y3m       |
 
 ### Relative time
 
-| Offset        | Normal                  | Compact       |
-| ------------- | ----------------------- | ------------- |
-| 5 minutes ago | dimetsotso 5 e fetileng | 5m e fetileng |
-| 2 hours ago   | dihora 2 e fetileng     | 2h e fetileng |
-| in 30 minutes | ka dimetsotso 30        | ka 30m        |
-| in 3 hours    | ka dihora 3             | ka 3h         |
+| Offset        | Normal                | Compact       |
+| ------------- | --------------------- | ------------- |
+| 5 minutes ago | metsotso 5 e fetileng | 5m e fetileng |
+| 2 hours ago   | dihora 2 e fetileng   | 2h e fetileng |
+| in 30 minutes | ka metsotso 30        | ka 30m        |
+| in 3 hours    | ka dihora 3           | ka 3h         |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal                        | Short    | Compact |
-| --------------- | ----------------------------- | -------- | ------- |
-| Midnight        | hara bosiu                    | 12:00 AM | 12:00a  |
-| 1:00 AM         | e nngwe:00                    | 1:00 AM  | 1:00a   |
-| 5 past 9        | tse robong:05                 | 9:05 AM  | 9:05a   |
-| Quarter past 10 | leshome:15                    | 10:15 AM | 10:15a  |
-| Half past 11    | leshome le motso o le mong:30 | 11:30 AM | 11:30a  |
-| Noon            | motsheare                     | 12:00 PM | 12:00p  |
-| Quarter to 3    | tse pedi:45                   | 2:45 PM  | 2:45p   |
-| 5 to 6          | tse hlano:55                  | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | tse robedi:00                 | 8:00 PM  | 8:00p   |
-| 10:30 PM        | leshome:30                    | 10:30 PM | 10:30p  |
-| 11:58 PM        | hara bosiu                    | 11:58 PM | 11:58p  |
+| Time            | Normal                                                            | Short    | Compact |
+| --------------- | ----------------------------------------------------------------- | -------- | ------- |
+| Midnight        | hara bosiu                                                        | 12:00 AM | 12:00a  |
+| 1:00 AM         | hora ya pele                                                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | hora ya borobong le metsotso e mehlano                            | 9:05 AM  | 9:05a   |
+| Quarter past 10 | hora ya leshome le kotara                                         | 10:15 AM | 10:15a  |
+| Half past 11    | hora ya leshome le motso o le mong le halofo                      | 11:30 AM | 11:30a  |
+| Noon            | motsheare                                                         | 12:00 PM | 12:00p  |
+| Quarter to 3    | hora ya bobedi le metsotso e mashome a mane a metso e mehlano     | 2:45 PM  | 2:45p   |
+| 5 to 6          | hora ya bohlano le metsotso e mashome a mahlano a metso e mehlano | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | hora ya borobedi                                                  | 8:00 PM  | 8:00p   |
+| 10:30 PM        | hora ya leshome le halofo                                         | 10:30 PM | 10:30p  |
+| 11:58 PM        | hara bosiu                                                        | 11:58 PM | 11:58p  |

@@ -14,16 +14,16 @@ class SILocale {
   static plural { Fn.new {|n| (n == 0 || n == 1) ? "one" : "other" } }
   static units {
     return {
-      "second": "{n} තත්පරය",
-      "minute": "{n} මිනිත්තුව",
-      "hour": "{n} පැය",
+      "second": "තත්පර {n}",
+      "minute": "මිනිත්තු {n}",
+      "hour": "පැය {n}",
       "day": {"one": "දින {n}", "other": "දින {n}"},
       "week": {"one": "සති {n}", "other": "සති {n}"},
       "month": {"one": "මාස {n}", "other": "මාස {n}"},
       "year": {"one": "වසර {n}", "other": "වසර {n}"},
     }
   }
-  static half { "{0}යි භාගයයි" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "දැන්" }
   static ago { "{0}ට පෙර" }

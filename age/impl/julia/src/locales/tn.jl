@@ -28,7 +28,7 @@ const TN = AgeLocale(
         "infant" => StageLabel("Lesea"),
         "toddler" => StageLabel("Ngwana yo monnye"),
         "child" => StageLabel("Ngwana"),
-        "teenager" => StageLabel("Lekgarebe"),
+        "teenager" => StageLabel("Mosha"),
         "adult" => StageLabel("Motho yo mogolo"),
     ),
     short_override = CompactnessOverride(

@@ -18,9 +18,18 @@ locale = DurationLocale
     { localeCode = "sn"
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "{n} sekondi"
-        , unitMinute = Simple "{n} miniti"
-        , unitHour = Simple "{n} awa"
+        { unitSecond = Pluralized
+          [ (One, "sekondi {n}")
+          , (Other, "masekondi {n}")
+          ]
+        , unitMinute = Pluralized
+          [ (One, "miniti {n}")
+          , (Other, "maminitsi {n}")
+          ]
+        , unitHour = Pluralized
+          [ (One, "awa {n}")
+          , (Other, "maawa {n}")
+          ]
         , unitDay = Pluralized
           [ (One, "zuva {n}")
           , (Other, "mazuva {n}")

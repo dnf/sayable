@@ -16,15 +16,36 @@ import SayableDuration.Types
 locale :: DurationLocale
 locale = DurationLocale
     { localeCode = "kl"
-    , localePlural = \_ -> Other
+    , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "sekundit {n}"
-        , unitMinute = Simple "minutsit {n}"
-        , unitHour = Simple "nalunaaqutap akunnera {n}"
-        , unitDay = Simple "ullut {n}"
-        , unitWeek = Simple "sapaatit {n}"
-        , unitMonth = Simple "qaammatit {n}"
-        , unitYear = Simple "ukiut {n}"
+        { unitSecond = Pluralized
+          [ (One, "sekundi {n}")
+          , (Other, "sekundit {n}")
+          ]
+        , unitMinute = Pluralized
+          [ (One, "minutsi {n}")
+          , (Other, "minutsit {n}")
+          ]
+        , unitHour = Pluralized
+          [ (One, "nalunaaquttap akunnera {n}")
+          , (Other, "nalunaaquttap akunneri {n}")
+          ]
+        , unitDay = Pluralized
+          [ (One, "ulloq {n}")
+          , (Other, "ullut {n}")
+          ]
+        , unitWeek = Pluralized
+          [ (One, "sapaatip akunnera {n}")
+          , (Other, "sapaatip akunneri {n}")
+          ]
+        , unitMonth = Pluralized
+          [ (One, "qaammat {n}")
+          , (Other, "qaammatit {n}")
+          ]
+        , unitYear = Pluralized
+          [ (One, "ukioq {n}")
+          , (Other, "ukiut {n}")
+          ]
         }
     , localeHalf = "{0} affaa"
     , localeDelimiter = ", "
@@ -37,7 +58,7 @@ locale = DurationLocale
             , ovrMinute = Just (Simple "min. {n}")
             , ovrHour = Just (Simple "nal. {n}")
             , ovrDay = Just (Simple "ull. {n}")
-            , ovrWeek = Just (Simple "sap. {n}")
+            , ovrWeek = Just (Simple "sap. ak. {n}")
             , ovrMonth = Just (Simple "qaam. {n}")
             , ovrYear = Just (Simple "uk. {n}")
             , ovrHalf = Nothing
@@ -54,7 +75,7 @@ locale = DurationLocale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}mo")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} matuma siorna"
             , ovrInFuture = Just "{0} siunissami"

@@ -29,7 +29,7 @@ locale =
             , ( "day", Simple "{n}일" )
             , ( "week", Simple "{n}주" )
             , ( "month", Simple "{n}개월" )
-            , ( "year", Simple "{n}살" )
+            , ( "year", Simple "{n}년" )
             ]
     , half = "{0} 반"
     , delimiter = " "

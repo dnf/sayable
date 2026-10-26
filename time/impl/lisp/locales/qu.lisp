@@ -20,7 +20,7 @@
     :hours (list "chunka iskayniyuq" "huk" "iskay" "kimsa" "tawa" "pichqa" "suqta" "qanchis" "pusaq" "isqun" "chunka" "chunka hukniyuq")
     :midnight "chawpi tuta"
     :noon "chawpi p'unchaw"
-    :patterns (list (cons 0 "{h}") (cons 5 "{h} pichqa") (cons 10 "{h} chunka") (cons 15 "{h} chunka pichqayuq") (cons 20 "{h} iskay chunka") (cons 25 "{h} iskay chunka pichqayuq") (cons 30 "{h} kimsa chunka") (cons 35 "{next_h} mana iskay chunka pichqayuq") (cons 40 "{next_h} mana iskay chunka") (cons 45 "{next_h} mana chunka pichqayuq") (cons 50 "{next_h} mana chunka") (cons 55 "{next_h} mana pichqa")))
+    :patterns (list (cons 0 "{h} ura") (cons 5 "{h} ura pichqa") (cons 10 "{h} ura chunka") (cons 15 "{h} ura chunka pichqayuq") (cons 20 "{h} ura iskay chunka") (cons 25 "{h} ura iskay chunka pichqayuq") (cons 30 "{h} ura kimsa chunka") (cons 35 "{h} ura kimsa chunka pichqayuq") (cons 40 "{h} ura tawa chunka") (cons 45 "{h} ura tawa chunka pichqayuq") (cons 50 "{h} ura pichqa chunka") (cons 55 "{h} ura pichqa chunka pichqayuq")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

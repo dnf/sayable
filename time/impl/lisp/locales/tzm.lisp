@@ -17,10 +17,10 @@
   (make-time-locale
    :code "tzm"
    :clock (make-clock-config
-    :hours (list "12" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11")
-    :midnight "ⵏⵚ ⵏ ⵉⴹ"
-    :noon "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :hours (list "tis snat d mrawt" "tis yat" "tis snat" "tis kṛaṭṭ" "tis kkuẕt" "tis smmust" "tis sḍist" "tis sat" "tis tamt" "tis tẕat" "tis mrawt" "tis yat d mrawt")
+    :midnight "nṣ n iḍ"
+    :noon "tizwarnin"
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} d smmus tusdiqin") (cons 10 "{h} d mraw tusdiqin") (cons 15 "{h} d rrbɛ") (cons 20 "{h} d ɛcrin n tusdiqt") (cons 25 "{h} d xmsa u ɛcrin n tusdiqt") (cons 30 "{h} d uzgen") (cons 35 "{h} d xmsa u tlatin n tusdiqt") (cons 40 "{h} d ṛbɛin n tusdiqt") (cons 45 "{h} d xmsa u ṛbɛin n tusdiqt") (cons 50 "{h} d xmsin n tusdiqt") (cons 55 "{h} d xmsa u xmsin n tusdiqt")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

@@ -20,7 +20,7 @@
    :day {:type :simple :form "{n}天"}
    :week {:type :simple :form "{n}周"}
    :month {:type :simple :form "{n}个月"}
-   :year {:type :simple :form "{n}岁"}
+   :year {:type :simple :form "{n}年"}
    :half "{0}半"
    :delimiter ""
    :just-now "刚刚"

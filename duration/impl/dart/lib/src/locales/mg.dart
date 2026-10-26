@@ -30,7 +30,7 @@ final mg = DurationLocale(
   half: '{0} sy sasany',
   delimiter: ', ',
   justNow: 'vao haingana',
-  ago: '{0} lasa',
+  ago: '{0} lasa izay',
   inFuture: 'ao anatin\'ny {0}',
   short: CompactnessOverride(
     units: {
@@ -42,7 +42,7 @@ final mg = DurationLocale(
       'month': simpleUnit('{n} vol'),
       'year': simpleUnit('{n} tna'),
     },
-    ago: '{0} lasa',
+    ago: '{0} lasa izay',
     inFuture: 'ao anatin\'ny {0}',
   ),
   compact: CompactnessOverride(

@@ -23,7 +23,7 @@
             :infant "Vǐ"
             :toddler "Vǐ"
             :child "Vǐ"
-            :teenager "Nyɔ̌nu"
+            :teenager {:m "Dɔnkpɛvu" :f "Ɖyɔ̌vǐ"}
             :adult "Mɛ̌xo"
 }
    :short {:units {:day "azǎn {n}" :week "aklunɔ̌zán {n}" :month "sun {n}" :year "xwè {n}"}}

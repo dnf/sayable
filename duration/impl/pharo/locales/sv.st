@@ -29,7 +29,7 @@ sv
 	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'just nu'.
-	locale ago: '{0} sedan'.
+	locale ago: 'för {0} sedan'.
 	locale inFuture: 'om {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -41,7 +41,7 @@ sv
 			'month'. '{n} mån'.
 			'year'. '{n} år'.
 		}).
-		#ago. '{0} sedan'.
+		#ago. 'för {0} sedan'.
 		#inFuture. 'om {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
@@ -55,7 +55,7 @@ sv
 			'year'. '{n}å'.
 		}).
 		#delimiter. ''.
-		#ago. '{0} sedan'.
+		#ago. 'för {0} sedan'.
 		#inFuture. 'om {0}'.
 	}).
 	^ locale

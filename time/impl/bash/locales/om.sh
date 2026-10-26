@@ -10,21 +10,21 @@
 # Source: locales/om.json
 
 _sayabletime_locale_om() {
-    _clock_hours=('kudha lama' 'tokko' 'lama' 'sadii' 'afur' 'shan' 'jaha' 'torba' 'saddeet' 'sagal' 'kudhan' 'kudha tokko')
+    _clock_hours=('jaha' 'torba' 'saddeet' 'sagal' 'kudhan' 'kudha tokko' 'kudha lama' 'tokko' 'lama' 'sadii' 'afur' 'shan')
     _clock_midnight='walakkii halkan'
     _clock_noon='guyyaa walakkaa'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='sa'\''aatii {h}'
+    _clock_pattern_5='sa'\''aatii {h} fi daqiiqaa shan'
+    _clock_pattern_10='sa'\''aatii {h} fi daqiiqaa kudhan'
+    _clock_pattern_15='sa'\''aatii {h} fi daqiiqaa kudha shan'
+    _clock_pattern_20='sa'\''aatii {h} fi daqiiqaa digdama'
+    _clock_pattern_25='sa'\''aatii {h} fi daqiiqaa digdamii shan'
+    _clock_pattern_30='sa'\''aatii {h} fi walakkaa'
+    _clock_pattern_35='sa'\''aatii {h} fi daqiiqaa soddomii shan'
+    _clock_pattern_40='sa'\''aatii {h} fi daqiiqaa afurtama'
+    _clock_pattern_45='sa'\''aatii {h} fi daqiiqaa afurtamii shan'
+    _clock_pattern_50='sa'\''aatii {h} fi daqiiqaa shantama'
+    _clock_pattern_55='sa'\''aatii {h} fi daqiiqaa shantamii shan'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

@@ -27,20 +27,20 @@ fn build_gn() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = simple_unit("{n} aravo'i")
-    var minute = simple_unit("{n} aravo")
-    var hour = simple_unit("{n} aravo guasu")
+    var second = simple_unit("{n} aravo'ive")
+    var minute = simple_unit("{n} aravo'i")
+    var hour = simple_unit("{n} aravo")
     var day = simple_unit("{n} ára")
     var week = simple_unit("{n} arapokõindy")
     var month = simple_unit("{n} jasy")
     var year = simple_unit("{n} ary")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("{n} ara'i")
+    short_ovr.second = simple_unit("{n} aravo'ive")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("{n} ara")
+    short_ovr.minute = simple_unit("{n} aravo'i")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("{n} ara g")
+    short_ovr.hour = simple_unit("{n} aravo")
     short_ovr.has_hour = True
     short_ovr.day = simple_unit("{n} ára")
     short_ovr.has_day = True

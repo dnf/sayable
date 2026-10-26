@@ -18,7 +18,7 @@ let locale : locale =
   ; week = Simple "{n} wik"
   ; month = Simple "{n} mont"
   ; year = Simple "{n} ia"
-  ; half = "{n} na af"
+  ; half = "{0} ɛn af"
   ; delimiter = ", "
   ; just_born = "Nyubon bebi"
   ; stages =
@@ -43,7 +43,7 @@ let locale : locale =
       ; ovr_week = Some (Simple "{n}w")
       ; ovr_month = Some (Simple "{n}m")
       ; ovr_year = Some (Simple "{n}y")
-      ; ovr_half = None
+      ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_just_born = None
       }

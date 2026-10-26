@@ -38,11 +38,11 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::Other, "{n} nóiméad"),
             ]),
             hour: UnitForms::plural(&[
-                (PluralCategory::One, "{n} uair"),
-                (PluralCategory::Two, "{n} uair"),
-                (PluralCategory::Few, "{n} huaire"),
-                (PluralCategory::Many, "{n} n-uaire"),
-                (PluralCategory::Other, "{n} uair"),
+                (PluralCategory::One, "{n} uair an chloig"),
+                (PluralCategory::Two, "{n} uair an chloig"),
+                (PluralCategory::Few, "{n} huaire an chloig"),
+                (PluralCategory::Many, "{n} n-uaire an chloig"),
+                (PluralCategory::Other, "{n} uair an chloig"),
             ]),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "{n} lá"),

@@ -19,9 +19,9 @@ final ln = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': simpleUnit('{n} segɔnde'),
-    'minute': simpleUnit('{n} moniti'),
-    'hour': simpleUnit('{n} ngonga'),
+    'second': simpleUnit('segɔnde {n}'),
+    'minute': simpleUnit('miniti {n}'),
+    'hour': simpleUnit('ngonga {n}'),
     'day': pluralUnit({PluralCategory.one: 'mokolo {n}', PluralCategory.other: 'mikolo {n}'}),
     'week': pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'baposo {n}'}),
     'month': pluralUnit({PluralCategory.one: 'sanza {n}', PluralCategory.other: 'basanza {n}'}),

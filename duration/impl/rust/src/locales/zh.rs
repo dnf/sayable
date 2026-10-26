@@ -23,7 +23,7 @@ pub fn locale() -> DurationLocale {
             day: UnitForms::simple("{n}天"),
             week: UnitForms::simple("{n}周"),
             month: UnitForms::simple("{n}个月"),
-            year: UnitForms::simple("{n}岁"),
+            year: UnitForms::simple("{n}年"),
         },
         half: "{0}半".to_string(),
         delimiter: "".to_string(),

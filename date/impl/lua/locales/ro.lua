@@ -13,7 +13,7 @@ local M = {}
 
 M.code = "ro"
 M.months = { "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie" }
-M.weekdays = { "duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă" }
+M.weekdays = { "duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta" }
 M.day_format = "{n}"
 M.day_format_exceptions = {}
 M.date_pattern = "{day} {month}"
@@ -23,7 +23,7 @@ M.tomorrow = "mâine"
 M.yesterday = "ieri"
 M.day_after_tomorrow = "poimâine"
 M.day_before_yesterday = "alaltăieri"
-M.this_weekday = "această {weekday}"
+M.this_weekday = "{weekday} aceasta"
 M.next_weekday = "{weekday} viitoare"
 M.last_weekday = "{weekday} trecută"
 M.months_in_date = { "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie" }

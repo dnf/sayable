@@ -14,7 +14,7 @@ module locales
 
 pub const locale_bm = DateLocale{
 	code: 'bm'
-	months: ['Zanwuye', 'Fewuriye', 'Marisi', 'Awirili', 'Mɛ', 'Zuwɛn', 'Zuluye', 'Uti', 'Sɛtanburu', 'ɔkutɔburu', 'Nowanbudu', 'Desanburu']!
+	months: ['Zanwuye', 'Feburuye', 'Marisi', 'Awirili', 'Mɛ', 'Zuwɛn', 'Zuluye', 'Uti', 'Sɛtanburu', 'Ɔkutɔburu', 'Nowanburu', 'Desanburu']!
 	weekdays: ['Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
@@ -34,7 +34,7 @@ pub const locale_bm = DateLocale{
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{
-		months: ['Zan', 'Few', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'ɔku', 'Now', 'Des']!
+		months: ['Zan', 'Feb', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'Ɔku', 'Now', 'Des']!
 		has_months: true
 		weekdays: ['Kar', 'Ntɛ', 'Tar', 'Ara', 'Ala', 'Jum', 'Sib']!
 		has_weekdays: true

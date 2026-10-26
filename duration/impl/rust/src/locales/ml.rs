@@ -16,7 +16,11 @@ pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "ml".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[
@@ -48,7 +52,7 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::Other, "{n} വർഷങ്ങൾ"),
             ]),
         },
-        half: "{0} ര".to_string(),
+        half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_now: "ഇപ്പോൾ".to_string(),
         ago: "{0} മുമ്പ്".to_string(),

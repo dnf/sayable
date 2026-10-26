@@ -31,13 +31,13 @@ locale = DateLocale
         , "Арван хоёрдугаар сар"
         ]
     , localeWeekdays =
-        [ "Ням"
-        , "Даваа"
-        , "Мягмар"
-        , "Лхагва"
-        , "Пүрэв"
-        , "Баасан"
-        , "Бямба"
+        [ "ням"
+        , "даваа"
+        , "мягмар"
+        , "лхагва"
+        , "пүрэв"
+        , "баасан"
+        , "бямба"
         ]
     , localeDayFormat = "{n}"
     , localeDayFormatExceptions = []
@@ -51,7 +51,20 @@ locale = DateLocale
     , localeThisWeekday = Just "энэ {weekday}"
     , localeNextWeekday = Just "ирэх {weekday}"
     , localeLastWeekday = Just "өнгөрсөн {weekday}"
-    , localeMonthsInDate = Nothing
+    , localeMonthsInDate = Just $
+        [ "нэгдүгээр сарын"
+        , "хоёрдугаар сарын"
+        , "гуравдугаар сарын"
+        , "дөрөвдүгээр сарын"
+        , "тавдугаар сарын"
+        , "зургаадугаар сарын"
+        , "долоодугаар сарын"
+        , "наймдугаар сарын"
+        , "есдүгээр сарын"
+        , "аравдугаар сарын"
+        , "арван нэгдүгээр сарын"
+        , "арван хоёрдугаар сарын"
+        ]
     , localeShort = Just $
         CompactnessOverride
             { ovrMonths = Just $

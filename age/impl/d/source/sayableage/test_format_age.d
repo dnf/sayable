@@ -25,6 +25,20 @@ private void assertContains(string name, Nullable!string got, string substr) {
     assert(canFind(got.get, substr), name ~ ": got \"" ~ got.get ~ "\", want string containing \"" ~ substr ~ "\"");
 }
 
+/// A date `years` and `days` before today, as YYYY-MM-DD. SayableAge reads the
+/// real clock when asOf is omitted and has no override, so the default-date
+/// tests derive their input from today to keep the canonical expected output.
+private string dateAgo(int years, int days = 0) {
+    import std.datetime.date : Date;
+    import std.datetime.systime : Clock;
+    import std.datetime : AllowDayOverflow;
+    import core.time : dur;
+    auto date = cast(Date) Clock.currTime();
+    date.add!"years"(-years, AllowDayOverflow.no);
+    date -= dur!"days"(days);
+    return date.toISOExtString();
+}
+
 /// Create default English SayableAge.
 private SayableAge en() {
     return SayableAge(EN);
@@ -553,6 +567,21 @@ unittest {
 }
 
 // ================================================================
+// Section 15: Default asOf (current date)
+// ================================================================
+// 15.1
+unittest {
+    auto pt = en();
+    assertAge("15.1 default asOf 5 years", pt.formatAge(dateAgo(5)), "5 years");
+}
+
+// 15.2
+unittest {
+    auto pt = en();
+    assertAge("15.2 default asOf 5 days", pt.formatAge(dateAgo(0, 5)), "5 days");
+}
+
+// ================================================================
 // Section 16: formatStage -- null/edge cases
 // ================================================================
 // 16.1, 16.3
@@ -766,6 +795,27 @@ unittest {
 }
 
 // ================================================================
+// Section 23: formatStage -- default asOf (inputs derived from today)
+// ================================================================
+// 23.1
+unittest {
+    auto pt = en();
+    assertAge("23.1 default asOf born today", pt.formatStage(dateAgo(0)), "Newborn");
+}
+
+// 23.2
+unittest {
+    auto pt = en();
+    assertAge("23.2 default asOf 5 years", pt.formatStage(dateAgo(5)), "Child");
+}
+
+// 23.3
+unittest {
+    auto pt = en();
+    assertAge("23.3 default asOf 45 years", pt.formatStage(dateAgo(45)), "Adult");
+}
+
+// ================================================================
 // Section 24: SayableAge class -- English locale delegation
 // ================================================================
 // 24.1-24.7 (formatAge)
@@ -813,7 +863,7 @@ unittest {
     assertAge("25.7 months", pt.formatAge("2025-01-15", "2025-07-15"), "6 meses");
     assertAge("25.8 singular month", pt.formatAge("2023-06-15", "2025-07-15"), "2 a\u00f1os, 1 mes");
     assertAge("25.9 years+months", pt.formatAge("2023-06-15", "2025-12-15"), "2 a\u00f1os, 6 meses");
-    assertAge("25.10 half marker", pt.formatAge("2022-06-15", "2025-12-15"), "3 y medio a\u00f1os");
+    assertAge("25.10 half marker", pt.formatAge("2022-06-15", "2025-12-15"), "3 a\u00f1os y medio");
     assertAge("25.11 no half", pt.formatAge("2022-06-15", "2025-06-15"), "3 a\u00f1os");
     assertAge("25.12 7+ years", pt.formatAge("2018-06-15", "2025-06-15"), "7 a\u00f1os");
 }
@@ -942,13 +992,13 @@ unittest {
 unittest {
     auto pt = SayableAge(HE);
     assertAge("29.1 he justBorn", pt.formatAge("2025-06-15", "2025-06-15"), "\u05e8\u05e7 \u05e0\u05d5\u05dc\u05d3");
-    assertAge("29.2 he 1 day", pt.formatAge("2025-06-14", "2025-06-15"), "\u05d9\u05d5\u05dd 1");
+    assertAge("29.2 he 1 day", pt.formatAge("2025-06-14", "2025-06-15"), "\u05d9\u05d5\u05dd");
     assertAge("29.3 he 3 days", pt.formatAge("2025-06-12", "2025-06-15"), "3 \u05d9\u05de\u05d9\u05dd");
     assertAge("29.4 he 2 weeks dual", pt.formatAge("2025-06-01", "2025-06-15"), "\u05e9\u05d1\u05d5\u05e2\u05d9\u05d9\u05dd");
     assertAge("29.5 he 3 weeks", pt.formatAge("2025-05-25", "2025-06-15"), "3 \u05e9\u05d1\u05d5\u05e2\u05d5\u05ea");
     assertAge("29.6 he 6 months", pt.formatAge("2025-01-15", "2025-07-15"), "6 \u05d7\u05d5\u05d3\u05e9\u05d9\u05dd");
     assertAge("29.7 he 3 months", pt.formatAge("2025-03-15", "2025-06-15"), "3 \u05d7\u05d5\u05d3\u05e9\u05d9\u05dd");
-    assertAge("29.8 he 2y1m", pt.formatAge("2023-06-15", "2025-07-15"), "\u05e9\u05e0\u05ea\u05d9\u05d9\u05dd, \u05d7\u05d5\u05d3\u05e9 1");
+    assertAge("29.8 he 2y1m", pt.formatAge("2023-06-15", "2025-07-15"), "\u05e9\u05e0\u05ea\u05d9\u05d9\u05dd, \u05d7\u05d5\u05d3\u05e9");
     assertAge("29.9 he 3.5y", pt.formatAge("2022-06-15", "2025-12-15"), "3 \u05e9\u05e0\u05d9\u05dd \u05d5\u05d7\u05e6\u05d9");
     assertAge("29.10 he 7y", pt.formatAge("2018-06-15", "2025-06-15"), "7 \u05e9\u05e0\u05d9\u05dd");
     assertAge("29.11 he stage m newborn", pt.formatStage("2025-06-15", "2025-06-15", "m"), "\u05e8\u05e7 \u05e0\u05d5\u05dc\u05d3");
@@ -987,7 +1037,7 @@ unittest {
     assertAge("29.29 id 1 day", pt.formatAge("2025-06-14", "2025-06-15"), "1 hari");
     assertAge("29.30 id 3 days", pt.formatAge("2025-06-12", "2025-06-15"), "3 hari");
     assertAge("29.31 id 6 months", pt.formatAge("2025-01-15", "2025-07-15"), "6 bulan");
-    assertAge("29.32 id 3.5y", pt.formatAge("2022-06-15", "2025-12-15"), "3 tahun setengah");
+    assertAge("29.32 id 3.5y", pt.formatAge("2022-06-15", "2025-12-15"), "3 setengah tahun");
     assertAge("29.33 id 7y", pt.formatAge("2018-06-15", "2025-06-15"), "7 tahun");
 }
 
@@ -1089,7 +1139,7 @@ unittest {
 }
 // 32.3
 unittest {
-    assertAge("32.3 Tachelhit 6 is 'few'", SayableAge(SHI).formatAge("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen");
+    assertAge("32.3 Tachelhit 6 is 'few'", SayableAge(SHI).formatAge("2005-06-08", "2012-06-07"), "6 \u2d49\u2d59\u2d33\u2d33\u2d6f\u2d30\u2d59\u2d4f \u2d37 \u2d53\u2d63\u2d33\u2d4f");
 }
 
 // ================================================================

@@ -15,10 +15,10 @@ export const ay: AgeLocale = {
   code: 'ay',
   plural: () => 'other',
   units: {
-    day:   'uru {n}',
-    week:  'simana {n}',
-    month: 'phaxsi {n}',
-    year:  'mara {n}',
+    day:   '{n} uru',
+    week:  '{n} simana',
+    month: '{n} phaxsi',
+    year:  '{n} mara',
   },
   half: '{0} chika',
   delimiter: ', ',
@@ -46,6 +46,7 @@ export const ay: AgeLocale = {
       month: '{n}m',
       year:  '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
   },
 };

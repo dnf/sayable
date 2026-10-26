@@ -13,14 +13,35 @@ open Types
 
 let locale : duration_locale =
   { code = "kl"
-  ; plural = (fun _ -> Other)
-  ; second = Simple "sekundit {n}"
-  ; minute = Simple "minutsit {n}"
-  ; hour = Simple "nalunaaqutap akunnera {n}"
-  ; day = Simple "ullut {n}"
-  ; week = Simple "sapaatit {n}"
-  ; month = Simple "qaammatit {n}"
-  ; year = Simple "ukiut {n}"
+  ; plural = (fun n -> if n = 1 then One else Other)
+  ; second = Pluralized
+      [ (One, "sekundi {n}")
+      ; (Other, "sekundit {n}")
+      ]
+  ; minute = Pluralized
+      [ (One, "minutsi {n}")
+      ; (Other, "minutsit {n}")
+      ]
+  ; hour = Pluralized
+      [ (One, "nalunaaquttap akunnera {n}")
+      ; (Other, "nalunaaquttap akunneri {n}")
+      ]
+  ; day = Pluralized
+      [ (One, "ulloq {n}")
+      ; (Other, "ullut {n}")
+      ]
+  ; week = Pluralized
+      [ (One, "sapaatip akunnera {n}")
+      ; (Other, "sapaatip akunneri {n}")
+      ]
+  ; month = Pluralized
+      [ (One, "qaammat {n}")
+      ; (Other, "qaammatit {n}")
+      ]
+  ; year = Pluralized
+      [ (One, "ukioq {n}")
+      ; (Other, "ukiut {n}")
+      ]
   ; half = "{0} affaa"
   ; delimiter = ", "
   ; just_now = "maanna"
@@ -31,7 +52,7 @@ let locale : duration_locale =
       ; ovr_minute = Some (Simple "min. {n}")
       ; ovr_hour = Some (Simple "nal. {n}")
       ; ovr_day = Some (Simple "ull. {n}")
-      ; ovr_week = Some (Simple "sap. {n}")
+      ; ovr_week = Some (Simple "sap. ak. {n}")
       ; ovr_month = Some (Simple "qaam. {n}")
       ; ovr_year = Some (Simple "uk. {n}")
       ; ovr_half = None
@@ -47,7 +68,7 @@ let locale : duration_locale =
       ; ovr_week = Some (Simple "{n}w")
       ; ovr_month = Some (Simple "{n}mo")
       ; ovr_year = Some (Simple "{n}y")
-      ; ovr_half = None
+      ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_ago = Some "{0} matuma siorna"
       ; ovr_in_future = Some "{0} siunissami"

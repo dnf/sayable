@@ -18,10 +18,10 @@ eu
 	locale code: 'eu'.
 	locale months: (OrderedCollection withAll: { 'urtarril'. 'otsail'. 'martxo'. 'apiril'. 'maiatz'. 'ekain'. 'uztail'. 'abuztu'. 'irail'. 'urri'. 'azaro'. 'abendu' }).
 	locale weekdays: (OrderedCollection withAll: { 'igandea'. 'astelehena'. 'asteartea'. 'asteazkena'. 'osteguna'. 'ostirala'. 'larunbata' }).
-	locale dayFormat: '{n}'.
-	locale dayFormatExceptions: Dictionary new.
-	locale datePattern: '{month}ren {day}'.
-	locale datePatternWithYear: '{year}ko {month}ren {day}'.
+	locale dayFormat: '{n}a'.
+	locale dayFormatExceptions: (Dictionary newFromPairs: { '11'. '{n}'. '31'. '{n}' }).
+	locale datePattern: '{month} {day}'.
+	locale datePatternWithYear: '{year}ko {month} {day}'.
 	locale today: 'gaur'.
 	locale tomorrow: 'bihar'.
 	locale yesterday: 'atzo'.
@@ -30,7 +30,7 @@ eu
 	locale thisWeekday: '{weekday} hau'.
 	locale nextWeekday: 'hurrengo {weekday}'.
 	locale lastWeekday: 'aurreko {weekday}'.
-	locale monthsInDate: nil.
+	locale monthsInDate: (OrderedCollection withAll: { 'urtarrilaren'. 'otsailaren'. 'martxoaren'. 'apirilaren'. 'maiatzaren'. 'ekainaren'. 'uztailaren'. 'abuztuaren'. 'irailaren'. 'urriaren'. 'azaroaren'. 'abenduaren' }).
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'urt'. 'ots'. 'mar'. 'api'. 'mai'. 'eka'. 'uzt'. 'abu'. 'ira'. 'urr'. 'aza'. 'abe' }).
 		#weekdays. (OrderedCollection withAll: { 'ig'. 'al'. 'ar'. 'az'. 'og'. 'or'. 'lr' }).

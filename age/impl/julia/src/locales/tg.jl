@@ -20,7 +20,7 @@ const TG = AgeLocale(
         "month" => "{n} моҳ",
         "year" => "{n} сол",
     ),
-    half = "{0} ним",
+    half = "{0}у ним",
     delimiter = ", ",
     just_born = "Навзод",
     stages = Dict(

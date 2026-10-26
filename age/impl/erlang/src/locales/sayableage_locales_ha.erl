@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "ha",
         plural = fun(1) -> one; (_) -> other end,
-        day = {pluralized, [{one, "{n} kwana"}, {other, "{n} kwanaki"}]},
-        week = {pluralized, [{one, "{n} mako"}, {other, "{n} makonni"}]},
-        month = {pluralized, [{one, "{n} wata"}, {other, "{n} watanni"}]},
-        year = {pluralized, [{one, "{n} shekara"}, {other, "{n} shekaru"}]},
+        day = {pluralized, [{one, "kwana {n}"}, {other, "kwanaki {n}"}]},
+        week = {pluralized, [{one, "mako {n}"}, {other, "makonni {n}"}]},
+        month = {pluralized, [{one, "wata {n}"}, {other, "watanni {n}"}]},
+        year = {pluralized, [{one, "shekara {n}"}, {other, "shekaru {n}"}]},
         half = "{n}½",
         delimiter = ", ",
         just_born = "Sabon haihuwa",
-        stages = #stages{newborn = {neutral, "Jariri"}, infant = {neutral, "Jariri"}, toddler = {neutral, "Ƙaramin yaro"}, child = {neutral, "Yaro"}, teenager = {neutral, "Saurayi"}, adult = {neutral, "Babba"}},
-        short = {just, #compactness_override{day = {just, {simple, "{n} kw."}}, week = {just, {simple, "{n} mk."}}, month = {just, {simple, "{n} wt."}}, year = {just, {simple, "{n} shk."}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        stages = #stages{newborn = {neutral, "Jariri"}, infant = {neutral, "Jariri"}, toddler = {gendered, "Ƙaramin yaro", "Ƙaramar yarinya"}, child = {gendered, "Yaro", "Yarinya"}, teenager = {gendered, "Saurayi", "Budurwa"}, adult = {neutral, "Babba"}},
+        short = {just, #compactness_override{day = {just, {simple, "kw. {n}"}}, week = {just, {simple, "mk. {n}"}}, month = {just, {simple, "wt. {n}"}}, year = {just, {simple, "shk. {n}"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, just_born = nothing}}
     }.

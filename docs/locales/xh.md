@@ -71,11 +71,11 @@ Relative to Saturday, March 15, 2025.
 | Tomorrow             | ngomso                | ngomso    |
 | Yesterday            | izolo                 | izolo     |
 | Day after tomorrow   | ngomhlomunye          | 17/3      |
-| Day before yesterday | kutshanje             | 13/3      |
+| Day before yesterday | izolo elinye          | 13/3      |
 | This Thursday (+5)   | le ULwesine           | 20/3      |
-| Last Monday (-4)     | ULwesibini edlulileyo | 11/3      |
-| Next Wednesday (+12) | ULwesine ezayo        | 27/3      |
-| Same month (+20)     | 4 Epreli              | 4/4       |
+| Last Tuesday (-4)    | ULwesibini edlulileyo | 11/3      |
+| Next Thursday (+12)  | ULwesine ezayo        | 27/3      |
+| Same year (+20)      | 4 Epreli              | 4/4       |
 | Different year       | 10 Janyuwari 2026     | 10/1/26   |
 
 ## Duration
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal               | Short    | Compact |
-| --------------- | -------------------- | -------- | ------- |
-| Midnight        | ezinzulwini zobusuku | 12:00 AM | 12:00a  |
-| 1:00 AM         | inye:00              | 1:00 AM  | 1:00a   |
-| 5 past 9        | ethoba:05            | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ishumi:15            | 10:15 AM | 10:15a  |
-| Half past 11    | ishumi elinanye:30   | 11:30 AM | 11:30a  |
-| Noon            | emini                | 12:00 PM | 12:00p  |
-| Quarter to 3    | ezimbini:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | ezintlanu:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | ezisibhozo:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ishumi:30            | 10:30 PM | 10:30p  |
-| 11:58 PM        | ezinzulwini zobusuku | 11:58 PM | 11:58p  |
+| Time            | Normal                                          | Short    | Compact |
+| --------------- | ----------------------------------------------- | -------- | ------- |
+| Midnight        | ezinzulwini zobusuku                            | 12:00 AM | 12:00a  |
+| 1:00 AM         | intsimbi yokuqala                               | 1:00 AM  | 1:00a   |
+| 5 past 9        | imizuzu emihlanu emva kwentsimbi yethoba        | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ikota emva kwentsimbi yeshumi                   | 10:15 AM | 10:15a  |
+| Half past 11    | isiqingatha emva kwentsimbi yeshumi elinanye    | 11:30 AM | 11:30a  |
+| Noon            | emini                                           | 12:00 PM | 12:00p  |
+| Quarter to 3    | ikota ukuya kwintsimbi yesithathu               | 2:45 PM  | 2:45p   |
+| 5 to 6          | imizuzu emihlanu ukuya kwintsimbi yesithandathu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | intsimbi yesibhozo                              | 8:00 PM  | 8:00p   |
+| 10:30 PM        | isiqingatha emva kwentsimbi yeshumi             | 10:30 PM | 10:30p  |
+| 11:58 PM        | ezinzulwini zobusuku                            | 11:58 PM | 11:58p  |

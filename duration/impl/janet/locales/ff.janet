@@ -24,6 +24,6 @@
    :just-now "jooni"
    :ago "{0} ɓennuɗo"
    :in-future "nder {0}"
-   :short {:units {:second "majaango {n}" :minute "hojomaaje {n}" :hour {:one "waktu {n}" :other "waktuuji {n}"} :day "ñalɗe {n}" :week {:one "yontere {n}" :other "yontereeji {n}"} :month {:one "lewru {n}" :other "lebbi {n}"} :year {:one "hitaande {n}" :other "duuɓi {n}"}} :ago "{0} ɓennuɗo" :in-future "nder {0}"}
-   :compact {:units {:second "maj {n}" :minute "hoj {n}" :hour {:one "wak {n}" :other "wakji {n}"} :day "ñalɗe {n}" :week {:one "yont {n}" :other "yontji {n}"} :month {:one "lew {n}" :other "leb {n}"} :year {:one "hit {n}" :other "duuɓi {n}"}} :half "{n}½" :delimiter "" :ago "{0} ɓennuɗo" :in-future "nder {0}"}
+   :short {:units {:second "majaango {n}" :minute "hojomaaje {n}" :hour {:one "waktu {n}" :other "waktuuji {n}"} :day {:one "ñalawma {n}" :other "ñalɗe {n}"} :week {:one "yontere {n}" :other "yontereeji {n}"} :month {:one "lewru {n}" :other "lebbi {n}"} :year {:one "hitaande {n}" :other "duuɓi {n}"}} :ago "{0} ɓennuɗo" :in-future "nder {0}"}
+   :compact {:units {:second "maj {n}" :minute "hoj {n}" :hour {:one "wak {n}" :other "wakji {n}"} :day {:one "ñalawma {n}" :other "ñalɗe {n}"} :week {:one "yont {n}" :other "yontji {n}"} :month {:one "lew {n}" :other "leb {n}"} :year {:one "hit {n}" :other "duuɓi {n}"}} :half "{n}½" :delimiter "" :ago "{0} ɓennuɗo" :in-future "nder {0}"}
 })

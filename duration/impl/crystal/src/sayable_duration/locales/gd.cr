@@ -26,7 +26,7 @@ module SayableDuration
       units: {
         "second" => UnitForms.new(one: "{n} diog", two: "{n} dhiog", few: "{n} diogan", other: "{n} diog"),
         "minute" => UnitForms.new(one: "{n} mhionaid", two: "{n} mhionaid", few: "{n} mionaidean", other: "{n} mionaid"),
-        "hour" => UnitForms.new(one: "{n} uair", two: "{n} uair", few: "{n} uairean", other: "{n} uair"),
+        "hour" => UnitForms.new(one: "{n} uair a thìde", two: "{n} uair a thìde", few: "{n} uairean a thìde", other: "{n} uair a thìde"),
         "day" => UnitForms.new(one: "{n} latha", two: "{n} latha", few: "{n} làithean", other: "{n} latha"),
         "week" => UnitForms.new(one: "{n} sheachdain", two: "{n} sheachdain", few: "{n} seachdainean", other: "{n} seachdain"),
         "month" => UnitForms.new(one: "{n} mhìos", two: "{n} mhìos", few: "{n} mìosan", other: "{n} mìos"),

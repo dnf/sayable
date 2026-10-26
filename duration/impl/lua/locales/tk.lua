@@ -22,7 +22,7 @@ M.units = {
     month = "{n} aý",
     year = "{n} ýyl",
 }
-M.half = "{0}½"
+M.half = "{n} ýarym"
 M.delimiter = ", "
 M.just_now = "häzir"
 M.ago = "{0} öň"

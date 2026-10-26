@@ -36,7 +36,7 @@ locale =
       [ ( One, "{n} ವರ್ಷ" )
       , ( Other, "{n} ವರ್ಷಗಳು" )
       ]
-    , half = "{0}ವರೆ"
+    , half = "{n}½"
     , delimiter = ", "
     , justBorn = "ನವಜಾತ ಶಿಶು"
     , stages =

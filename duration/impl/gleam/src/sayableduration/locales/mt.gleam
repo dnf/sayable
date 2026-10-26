@@ -17,8 +17,8 @@ pub fn locale() -> types.DurationLocale {
     plural: fn(n) { case n { 1 -> types.One 2 -> types.Two _ -> case n == 0 || { n % 100 >= 3 && n % 100 <= 10 } { True -> types.Few _ -> case n % 100 >= 11 && n % 100 <= 19 { True -> types.Many _ -> types.Other } } } },
     units: [
       #("second", types.PluralUnit([#(types.One, "{n} sekonda"), #(types.Two, "{n} sekondi"), #(types.Few, "{n} sekondi"), #(types.Many, "{n}-il sekonda"), #(types.Other, "{n} sekonda")])),
-      #("minute", types.PluralUnit([#(types.One, "{n} minuta"), #(types.Two, "{n} minuti"), #(types.Few, "{n} minuti"), #(types.Many, "{n}-il minuta"), #(types.Other, "{n} minuta")])),
-      #("hour", types.PluralUnit([#(types.One, "{n} siegħa"), #(types.Two, "{n} sigħat"), #(types.Few, "{n} sigħat"), #(types.Many, "{n}-il siegħa"), #(types.Other, "{n} siegħa")])),
+      #("minute", types.PluralUnit([#(types.One, "{n} minuta"), #(types.Two, "minutejn"), #(types.Few, "{n} minuti"), #(types.Many, "{n}-il minuta"), #(types.Other, "{n} minuta")])),
+      #("hour", types.PluralUnit([#(types.One, "{n} siegħa"), #(types.Two, "sagħtejn"), #(types.Few, "{n} sigħat"), #(types.Many, "{n}-il siegħa"), #(types.Other, "{n} siegħa")])),
       #("day", types.PluralUnit([#(types.One, "ġurnata"), #(types.Two, "jumejn"), #(types.Few, "{n} ijiem"), #(types.Many, "{n}-il jum"), #(types.Other, "{n} jum")])),
       #("week", types.PluralUnit([#(types.One, "ġimgħa"), #(types.Two, "ġimgħatejn"), #(types.Few, "{n} ġimgħat"), #(types.Many, "{n}-il ġimgħa"), #(types.Other, "{n} ġimgħa")])),
       #("month", types.PluralUnit([#(types.One, "xahar"), #(types.Two, "xahrejn"), #(types.Few, "{n} xhur"), #(types.Many, "{n}-il xahar"), #(types.Other, "{n} xahar")])),

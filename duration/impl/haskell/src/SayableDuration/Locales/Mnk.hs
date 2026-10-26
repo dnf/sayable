@@ -30,7 +30,7 @@ locale = DurationLocale
     , localeDelimiter = ", "
     , localeJustNow = "sisan"
     , localeAgo = "{0} taata"
-    , localeInFuture = "ka {0}"
+    , localeInFuture = "{0} kɔnɔ"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Simple "sɛk. {n}")
@@ -43,7 +43,7 @@ locale = DurationLocale
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} taata"
-            , ovrInFuture = Just "ka {0}"
+            , ovrInFuture = Just "{0} kɔnɔ"
             }
     , localeCompact = Just $
         CompactnessOverride
@@ -57,6 +57,6 @@ locale = DurationLocale
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} taata"
-            , ovrInFuture = Just "ka {0}"
+            , ovrInFuture = Just "{0} kɔnɔ"
             }
     }

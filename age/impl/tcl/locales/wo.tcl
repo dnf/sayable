@@ -16,17 +16,17 @@ proc plural_wo {n} {
 proc locale_wo {} {
     set code {wo}
     set units [dict create \
-        day "bés {n}" \
-        week "ayubés {n}" \
-        month "weer {n}" \
-        year "at {n}" \
+        day "{n} fan" \
+        week "{n} ayubés" \
+        month "{n} weer" \
+        year "{n} at" \
     ]
     set half "{0} ak genn-wàll"
     set delimiter {, }
     set just_born {Dees ko sax juddu}
     set stages [dict create \
         newborn {Dees ko sax juddu} \
-        infant {Njàmbaar bu ndaw} \
+        infant {Liir} \
         toddler {Xale bu ndaw} \
         child {Xale} \
         teenager {Ndaw-ndaw} \
@@ -34,18 +34,18 @@ proc locale_wo {} {
     ]
     set short [dict create \
         units [dict create \
-            day "bés {n}" \
-            week "ayub. {n}" \
-            month "weer {n}" \
-            year "at {n}" \
+            day "{n} fan" \
+            week "{n} ayub." \
+            month "{n} weer" \
+            year "{n} at" \
         ] \
     ]
     set compact [dict create \
         units [dict create \
-            day "bés {n}" \
-            week "ayub {n}" \
-            month "weer {n}" \
-            year "at {n}" \
+            day "{n} fan" \
+            week "{n} ayub" \
+            month "{n} weer" \
+            year "{n} at" \
         ] \
         half "{n}½" \
         delimiter {} \

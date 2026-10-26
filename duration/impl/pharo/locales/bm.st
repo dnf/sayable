@@ -30,7 +30,7 @@ bm
 	locale delimiter: ', '.
 	locale justNow: 'sisan'.
 	locale ago: '{0} bɔlen'.
-	locale inFuture: 'ka {0}'.
+	locale inFuture: '{0} kɔnɔ'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. 'sek. {n}'.
@@ -42,7 +42,7 @@ bm
 			'year'. 'san {n}'.
 		}).
 		#ago. '{0} bɔlen'.
-		#inFuture. 'ka {0}'.
+		#inFuture. '{0} kɔnɔ'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -57,7 +57,7 @@ bm
 		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} bɔlen'.
-		#inFuture. 'ka {0}'.
+		#inFuture. '{0} kɔnɔ'.
 	}).
 	^ locale
 ! !

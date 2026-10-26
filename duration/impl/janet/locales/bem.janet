@@ -14,7 +14,7 @@
    :plural (fn [n] (if (= n 1) :one :other))
    :units {:second {:one "isekondi {n}" :other "amasekondi {n}"}
           :minute {:one "iminiti {n}" :other "amaminiti {n}"}
-          :hour {:one "insa {n}" :other "amanso {n}"}
+          :hour {:one "insa {n}" :other "insa {n}"}
           :day {:one "ubushiku {n}" :other "inshiku {n}"}
           :week {:one "umulungu {n}" :other "imilungu {n}"}
           :month {:one "umweshi {n}" :other "imyeshi {n}"}

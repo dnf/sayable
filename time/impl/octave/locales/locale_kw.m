@@ -11,10 +11,10 @@
 
 function loc = locale_kw()
   loc.code = 'kw';
-  loc.clock.hours = {'12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'};
+  loc.clock.hours = {'dewdhek', 'unn', 'diw', 'teyr', 'peder', 'pymp', 'hwegh', 'seyth', 'eth', 'naw', 'deg', 'unnek'};
   loc.clock.midnight = 'hanter nos';
   loc.clock.noon = 'hanter dydh';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h} eur', "p5", 'pymp mynysen wosa {h}', "p10", 'deg mynysen wosa {h}', "p15", 'kwarter wosa {h}', "p20", 'ugens mynysen wosa {h}', "p25", 'pymp mynysen warn ugens wosa {h}', "p30", 'hanter wosa {h}', "p35", 'pymp mynysen warn ugens dhe {next_h}', "p40", 'ugens mynysen dhe {next_h}', "p45", 'kwarter dhe {next_h}', "p50", 'deg mynysen dhe {next_h}', "p55", 'pymp mynysen dhe {next_h}');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

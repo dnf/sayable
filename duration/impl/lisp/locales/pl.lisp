@@ -28,13 +28,13 @@
   (make-duration-locale
    :code "pl"
    :plural #'plural-pl
-   :units (list (cons :second '((:one . "{n} sekunda") (:few . "{n} sekundy") (:many . "{n} sekund") (:other . "{n} sekund")))
-               (cons :minute '((:one . "{n} minuta") (:few . "{n} minuty") (:many . "{n} minut") (:other . "{n} minut")))
-               (cons :hour '((:one . "{n} godzina") (:few . "{n} godziny") (:many . "{n} godzin") (:other . "{n} godzin")))
-               (cons :day '((:one . "{n} dzień") (:few . "{n} dni") (:many . "{n} dni") (:other . "{n} dni")))
-               (cons :week '((:one . "{n} tydzień") (:few . "{n} tygodnie") (:many . "{n} tygodni") (:other . "{n} tygodni")))
-               (cons :month '((:one . "{n} miesiąc") (:few . "{n} miesiące") (:many . "{n} miesięcy") (:other . "{n} miesięcy")))
-               (cons :year '((:one . "{n} rok") (:few . "{n} lata") (:many . "{n} lat") (:other . "{n} lat"))))
+   :units (list (cons :second '((:one . "{n} sekunda") (:few . "{n} sekundy") (:many . "{n} sekund") (:other . "{n} sekundy")))
+               (cons :minute '((:one . "{n} minuta") (:few . "{n} minuty") (:many . "{n} minut") (:other . "{n} minuty")))
+               (cons :hour '((:one . "{n} godzina") (:few . "{n} godziny") (:many . "{n} godzin") (:other . "{n} godziny")))
+               (cons :day '((:one . "{n} dzień") (:few . "{n} dni") (:many . "{n} dni") (:other . "{n} dnia")))
+               (cons :week '((:one . "{n} tydzień") (:few . "{n} tygodnie") (:many . "{n} tygodni") (:other . "{n} tygodnia")))
+               (cons :month '((:one . "{n} miesiąc") (:few . "{n} miesiące") (:many . "{n} miesięcy") (:other . "{n} miesiąca")))
+               (cons :year '((:one . "{n} rok") (:few . "{n} lata") (:many . "{n} lat") (:other . "{n} roku"))))
    :half "{n} i pół"
    :delimiter ", "
    :just-now "właśnie teraz"

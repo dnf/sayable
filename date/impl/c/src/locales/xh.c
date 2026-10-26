@@ -31,7 +31,7 @@ const SdDateLocale sd_locale_xh = {
     "ngomso",
     "izolo",
     "ngomhlomunye",
-    "kutshanje",
+    "izolo elinye",
     "le {weekday}",
     "{weekday} ezayo",
     "{weekday} edlulileyo",

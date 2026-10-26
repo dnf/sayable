@@ -20,7 +20,7 @@ function locale_kri {
         month = '{n} mont'
         year = '{n} ia'
     }
-    $half = '{n} na af'
+    $half = '{0} ɛn af'
     $delimiter = ', '
     $justBorn = 'Nyubon bebi'
     $stages = @{
@@ -46,6 +46,7 @@ function locale_kri {
             month = '{n}m'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
     }
     return @{

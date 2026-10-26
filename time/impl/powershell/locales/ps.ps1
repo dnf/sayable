@@ -10,22 +10,22 @@
 # Source: locales/ps.json
 
 function locale_ps {
-    $hours = @('دولس', 'یو', 'دوه', 'درې', 'څلور', 'پنځه', 'شپږ', 'اووه', 'اته', 'نهه', 'لس', 'یوولس')
+    $hours = @('دولس بجې', 'یوه بجه', 'دوه بجې', 'درې بجې', 'څلور بجې', 'پنځه بجې', 'شپږ بجې', 'اووه بجې', 'اته بجې', 'نهه بجې', 'لس بجې', 'یوولس بجې')
     $midnight = 'نیمه شپه'
     $noon = 'غرمه'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} او پنځه دقیقې'
+    $patterns[10] = '{h} او لس دقیقې'
+    $patterns[15] = '{h} او پنځلس دقیقې'
+    $patterns[20] = '{h} او شل دقیقې'
+    $patterns[25] = '{h} او پنځه ویشت دقیقې'
+    $patterns[30] = '{h} او دېرش دقیقې'
+    $patterns[35] = '{h} او پنځه دېرش دقیقې'
+    $patterns[40] = '{h} او څلوېښت دقیقې'
+    $patterns[45] = '{h} او پنځه څلوېښت دقیقې'
+    $patterns[50] = '{h} او پنځوس دقیقې'
+    $patterns[55] = '{h} او پنځه پنځوس دقیقې'
     $clock = @{
         hours = $hours
         midnight = $midnight

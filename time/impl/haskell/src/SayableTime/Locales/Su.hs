@@ -22,18 +22,18 @@ locale = TimeLocale
             , clockMidnight = "tengah peuting"
             , clockNoon = "beurang"
             , clockPatterns =
-                [ (0, "{h}:00")
-                , (5, "{h}:05")
-                , (10, "{h}:10")
-                , (15, "{h}:15")
-                , (20, "{h}:20")
-                , (25, "{h}:25")
-                , (30, "{h}:30")
-                , (35, "{h}:35")
-                , (40, "{h}:40")
-                , (45, "{h}:45")
-                , (50, "{h}:50")
-                , (55, "{h}:55")
+                [ (0, "jam {h}")
+                , (5, "jam {h} leuwih lima menit")
+                , (10, "jam {h} leuwih sapuluh menit")
+                , (15, "jam {h} leuwih saparapat")
+                , (20, "jam {h} leuwih dua puluh menit")
+                , (25, "jam {h} leuwih dua puluh lima menit")
+                , (30, "satengah {next_h}")
+                , (35, "jam {next_h} kurang dua puluh lima menit")
+                , (40, "jam {next_h} kurang dua puluh menit")
+                , (45, "jam {next_h} kurang saparapat")
+                , (50, "jam {next_h} kurang sapuluh menit")
+                , (55, "jam {next_h} kurang lima menit")
                 ]
             }
     , localeShort = Just $ CompactnessOverride $ Just $

@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ht = {
     "ht",
     {
-        { "douz", "en", "de", "twa", "kat", "senk", "sis", "sèt", "uit", "nèf", "dis", "onz" },
-        "minui",
+        { "douzè", "inè", "dezè", "twazè", "katrè", "senkè", "sizè", "setè", "uitè", "nevè", "dizè", "onzè" },
+        "minwi",
         "midi",
-        { "{h} è", "{h} è senk", "{h} è dis", "{h} è ka", "{h} è ven", "{h} è vennsenk", "{h} è demi", "{next_h} mwen vennsenk", "{next_h} mwen ven", "{next_h} mwen ka", "{next_h} mwen dis", "{next_h} mwen senk" }
+        { "{h}", "{h} senk", "{h} dis", "{h} e ka", "{h} ven", "{h} vennsenk", "{h} edmi", "{next_h} mwen vennsenk", "{next_h} mwen ven", "{next_h} mwen ka", "{next_h} mwen dis", "{next_h} mwen senk" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

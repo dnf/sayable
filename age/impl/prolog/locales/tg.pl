@@ -18,7 +18,7 @@ sa_unit('tg', week, _, '{n} ҳафта').
 sa_unit('tg', month, _, '{n} моҳ').
 sa_unit('tg', year, _, '{n} сол').
 
-sa_half('tg', '{0} ним').
+sa_half('tg', '{0}у ним').
 sa_delimiter('tg', ', ').
 sa_just_born('tg', 'Навзод').
 

@@ -20,7 +20,7 @@ function locale_bi {
         month = '{n} manis'
         year = '{n} yia'
     }
-    $half = '{n} mo haf'
+    $half = '{0} mo haf'
     $delimiter = ', '
     $justBorn = 'Niufala bebe'
     $stages = @{
@@ -46,6 +46,7 @@ function locale_bi {
             month = '{n}m'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
     }
     return @{

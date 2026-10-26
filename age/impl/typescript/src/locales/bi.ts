@@ -20,7 +20,7 @@ export const bi: AgeLocale = {
     month: '{n} manis',
     year:  '{n} yia',
   },
-  half: '{n} mo haf',
+  half: '{0} mo haf',
   delimiter: ', ',
   justBorn: 'Niufala bebe',
   stages: {
@@ -46,6 +46,7 @@ export const bi: AgeLocale = {
       month: '{n}m',
       year:  '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
   },
 };

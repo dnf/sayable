@@ -14,7 +14,7 @@ import type { TimeLocale } from '../locale.js';
 export const nb: TimeLocale = {
   code: 'nb',
   clock: {
-    hours: ['tolv', 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve'],
+    hours: ['tolv', 'ett', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve'],
     midnight: 'midnatt',
     noon: 'middag',
     patterns: {

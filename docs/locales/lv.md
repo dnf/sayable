@@ -6,6 +6,14 @@
 
 Plural rule: `lv` (categories: zero, one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [lv.json](../../locales/lv.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Existing 'pieci pēc divi' / 'piecpadsmit līdz trīs' phrases are calques, but the audit lists the fix under schemaLimits (dative hours needed for past-buckets), so left alone.
+
 ## Age
 
 ### Age formatting
@@ -65,18 +73,18 @@ Plural rule: `lv` (categories: zero, one, other)
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal             | Compact |
-| -------------------- | ------------------ | ------- |
-| Today                | šodien             | šodien  |
-| Tomorrow             | rīt                | rīt     |
-| Yesterday            | vakar              | vakar   |
-| Day after tomorrow   | parīt              | 17.3.   |
-| Day before yesterday | aizvakar           | 13.3.   |
-| This Thursday (+5)   | šī ceturtdiena     | 20.3.   |
-| Last Monday (-4)     | pagājusī otrdiena  | 11.3.   |
-| Next Wednesday (+12) | nākamā ceturtdiena | 27.3.   |
-| Same month (+20)     | 4. aprīlis         | 4.4.    |
-| Different year       | 10. janvāris 2026  | 10.1.26 |
+| Offset               | Normal                  | Compact |
+| -------------------- | ----------------------- | ------- |
+| Today                | šodien                  | šodien  |
+| Tomorrow             | rīt                     | rīt     |
+| Yesterday            | vakar                   | vakar   |
+| Day after tomorrow   | parīt                   | 17.3.   |
+| Day before yesterday | aizvakar                | 13.3.   |
+| This Thursday (+5)   | šī ceturtdiena          | 20.3.   |
+| Last Tuesday (-4)    | pagājusī otrdiena       | 11.3.   |
+| Next Thursday (+12)  | nākamā ceturtdiena      | 27.3.   |
+| Same year (+20)      | 4. aprīlis              | 4.4.    |
+| Different year       | 2026. gada 10. janvāris | 10.1.26 |
 
 ## Duration
 

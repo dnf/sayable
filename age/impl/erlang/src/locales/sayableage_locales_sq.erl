@@ -23,8 +23,8 @@ locale() ->
         year = {pluralized, [{one, "{n} vit"}, {other, "{n} vjet"}]},
         half = "{0} e gjysmë",
         delimiter = ", ",
-        just_born = "Sapolindur",
-        stages = #stages{newborn = {gendered, "Sapolindur", "Sapolindure"}, infant = {neutral, "Foshnjë"}, toddler = {gendered, "Fëmijë i vogël", "Fëmijë e vogël"}, child = {neutral, "Fëmijë"}, teenager = {gendered, "Adoleshent", "Adoleshente"}, adult = {gendered, "I rritur", "E rritur"}},
+        just_born = "I sapolindur",
+        stages = #stages{newborn = {gendered, "I sapolindur", "E sapolindur"}, infant = {neutral, "Foshnjë"}, toddler = {gendered, "Fëmijë i vogël", "Fëmijë e vogël"}, child = {neutral, "Fëmijë"}, teenager = {gendered, "Adoleshent", "Adoleshente"}, adult = {gendered, "I rritur", "E rritur"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} ditë"}}, week = {just, {simple, "{n} javë"}}, month = {just, {simple, "{n} muaj"}}, year = {just, {pluralized, [{one, "{n} vit"}, {other, "{n} vjet"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n} ditë"}}, week = {just, {simple, "{n} javë"}}, month = {just, {simple, "{n} muaj"}}, year = {just, {pluralized, [{one, "{n} vit"}, {other, "{n} vjet"}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

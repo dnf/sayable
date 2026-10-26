@@ -51,10 +51,10 @@ locale =
     , tomorrow = "ມື້ອື່ນ"
     , yesterday = "ມື້ວານ"
     , dayAfterTomorrow = Just "ມື້ຮື"
-    , dayBeforeYesterday = Just "ມື້ກ່ອນ"
+    , dayBeforeYesterday = Just "ມື້ຊືນ"
     , thisWeekday = Just "{weekday}ນີ້"
     , nextWeekday = Just "{weekday}ໜ້າ"
-    , lastWeekday = Just "{weekday}ແລ້ວ"
+    , lastWeekday = Just "{weekday}ທີ່ແລ້ວ"
     , monthsInDate = Nothing
     , short =
         Just

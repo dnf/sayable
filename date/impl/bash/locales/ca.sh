@@ -13,8 +13,8 @@ _sayabledate_locale_ca() {
     _months=('gener' 'febrer' 'març' 'abril' 'maig' 'juny' 'juliol' 'agost' 'setembre' 'octubre' 'novembre' 'desembre')
     _weekdays=('diumenge' 'dilluns' 'dimarts' 'dimecres' 'dijous' 'divendres' 'dissabte')
     _day_format='{n}'
-    _date_pattern='{day} de {month}'
-    _date_pattern_with_year='{day} de {month} de {year}'
+    _date_pattern='{day} {month}'
+    _date_pattern_with_year='{day} {month} de {year}'
     _today='avui'
     _tomorrow='demà'
     _yesterday='ahir'
@@ -23,11 +23,12 @@ _sayabledate_locale_ca() {
     _this_weekday='aquest {weekday}'
     _next_weekday='{weekday} que ve'
     _last_weekday='{weekday} passat'
+    _months_in_date=('de gener' 'de febrer' 'de març' 'd'\''abril' 'de maig' 'de juny' 'de juliol' 'd'\''agost' 'de setembre' 'd'\''octubre' 'de novembre' 'de desembre')
     _short_months=('gen' 'feb' 'març' 'abr' 'maig' 'juny' 'jul' 'ag' 'set' 'oct' 'nov' 'des')
     _short_weekdays=('dg' 'dl' 'dt' 'dc' 'dj' 'dv' 'ds')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
-    _short_date_pattern_with_year='{day} {month} {year}'
+    _short_date_pattern_with_year='{day} {month} de {year}'
     _compact_date_pattern='{d}/{m}'
     _compact_date_pattern_with_year='{d}/{m}/{yy}'
 }

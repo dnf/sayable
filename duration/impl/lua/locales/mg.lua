@@ -25,7 +25,7 @@ M.units = {
 M.half = "{0} sy sasany"
 M.delimiter = ", "
 M.just_now = "vao haingana"
-M.ago = "{0} lasa"
+M.ago = "{0} lasa izay"
 M.in_future = "ao anatin'ny {0}"
 M.short = {
     units = {
@@ -37,7 +37,7 @@ M.short = {
         month = "{n} vol",
         year = "{n} tna",
     },
-    ago = "{0} lasa",
+    ago = "{0} lasa izay",
     in_future = "ao anatin'ny {0}",
 }
 M.compact = {

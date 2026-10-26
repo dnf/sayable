@@ -17,10 +17,10 @@
   (make-time-locale
    :code "shi"
    :clock (make-clock-config
-    :hours (list "12" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11")
+    :hours (list "ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ" "ⵜⵉⵙ ⵢⴰⵜ" "ⵜⵉⵙ ⵙⵏⴰⵜ" "ⵜⵉⵙ ⴽⵕⴰⵟⵟ" "ⵜⵉⵙ ⴽⴽⵓⵥⵜ" "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ" "ⵜⵉⵙ ⵙⴹⵉⵙⵜ" "ⵜⵉⵙ ⵙⴰⵜ" "ⵜⵉⵙ ⵜⴰⵎⵜ" "ⵜⵉⵙ ⵜⵥⴰⵜ" "ⵜⵉⵙ ⵎⵔⴰⵡⵜ" "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ")
     :midnight "ⵏⵚ ⵏ ⵉⴹ"
     :noon "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ") (cons 10 "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ") (cons 15 "{h} ⴷ ⵔⵔⴱⵄ") (cons 20 "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 25 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 30 "{h} ⴷ ⵓⵣⴳⵏ") (cons 35 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 40 "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 45 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 50 "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") (cons 55 "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [bn.json](../../locales/bn.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Hours now carry the classifier (একটা, দুটো, তিনটে, চারটে, পাঁচটা, ছটা, সাতটা, আটটা, নটা, দশটা, এগারোটা, বারোটা) in the standard chalit forms; Bangladesh speakers would more often say দুইটা/তিনটা/চারটা/ছয়টা/নয়টা (both are understood). Patterns: '{h}' on the hour, '{h} বেজে N মিনিট' additive, সোয়া {h}, পৌনে {next_h}, '{next_h} বাজতে N মিনিট বাকি' for :35/:40/:50/:55. Compromise: :30 uses '{h} বেজে ত্রিশ মিনিট' rather than 'সাড়ে {h}' because 1:30 and 2:30 must be দেড়টা / আড়াইটা and the schema cannot express per-hour overrides; সাড়ে একটা would be an outright error. noon changed to 'দুপুর বারোটা' (দুপুর alone means afternoon).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | পরশু              | 17/3     |
 | Day before yesterday | গত পরশু           | 13/3     |
 | This Thursday (+5)   | এই বৃহস্পতিবার    | 20/3     |
-| Last Monday (-4)     | গত মঙ্গলবার       | 11/3     |
-| Next Wednesday (+12) | আগামী বৃহস্পতিবার | 27/3     |
-| Same month (+20)     | 4 এপ্রিল          | 4/4      |
+| Last Tuesday (-4)    | গত মঙ্গলবার       | 11/3     |
+| Next Thursday (+12)  | আগামী বৃহস্পতিবার | 27/3     |
+| Same year (+20)      | 4 এপ্রিল          | 4/4      |
 | Different year       | 10 জানুয়ারি 2026 | 10/1/26  |
 
 ## Duration
@@ -91,10 +99,10 @@ Relative to Saturday, March 15, 2025.
 | 2 minutes, 15 seconds | 2 মিনিট, 15 সেকেন্ড | 2 মিনিট, 15 সেকেন্ড | 2 মিঃ15 সেঃ   |
 | 5 minutes             | 5 মিনিট             | 5 মিনিট             | 5 মিঃ         |
 | 45 minutes            | 45 মিনিট            | 45 মিনিট            | 45 মিঃ        |
-| 1 hour                | 1 ঘন্টা             | 1 ঘণ্টা             | 1 ঘঃ          |
-| 1½ hours              | সাড়ে 1 ঘন্টা       | সাড়ে 1 ঘণ্টা       | 1½ ঘঃ         |
-| 3 hours               | 3 ঘন্টা             | 3 ঘণ্টা             | 3 ঘঃ          |
-| 6 hours               | 6 ঘন্টা             | 6 ঘণ্টা             | 6 ঘঃ          |
+| 1 hour                | 1 ঘণ্টা             | 1 ঘণ্টা             | 1 ঘঃ          |
+| 1½ hours              | সাড়ে 1 ঘণ্টা       | সাড়ে 1 ঘণ্টা       | 1½ ঘঃ         |
+| 3 hours               | 3 ঘণ্টা             | 3 ঘণ্টা             | 3 ঘঃ          |
+| 6 hours               | 6 ঘণ্টা             | 6 ঘণ্টা             | 6 ঘঃ          |
 | 1 day                 | 1 দিন               | 1 দিন               | 1 দিন         |
 | 1½ days               | সাড়ে 1 দিন         | সাড়ে 1 দিন         | 1½ দিন        |
 | 3 days                | 3 দিন               | 3 দিন               | 3 দিন         |
@@ -110,24 +118,24 @@ Relative to Saturday, March 15, 2025.
 | Offset        | Normal       | Compact    |
 | ------------- | ------------ | ---------- |
 | 5 minutes ago | 5 মিনিট আগে  | 5 মিঃ আগে  |
-| 2 hours ago   | 2 ঘন্টা আগে  | 2 ঘঃ আগে   |
+| 2 hours ago   | 2 ঘণ্টা আগে  | 2 ঘঃ আগে   |
 | in 30 minutes | 30 মিনিট পরে | 30 মিঃ পরে |
-| in 3 hours    | 3 ঘন্টা পরে  | 3 ঘঃ পরে   |
+| in 3 hours    | 3 ঘণ্টা পরে  | 3 ঘঃ পরে   |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal   | Short    | Compact |
-| --------------- | -------- | -------- | ------- |
-| Midnight        | মধ্যরাত  | 12:00 AM | 12:00a  |
-| 1:00 AM         | এক:00    | 1:00 AM  | 1:00a   |
-| 5 past 9        | নয়:05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | দশ:15    | 10:15 AM | 10:15a  |
-| Half past 11    | এগারো:30 | 11:30 AM | 11:30a  |
-| Noon            | দুপুর    | 12:00 PM | 12:00p  |
-| Quarter to 3    | দুই:45   | 2:45 PM  | 2:45p   |
-| 5 to 6          | পাঁচ:55  | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | আট:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | দশ:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | মধ্যরাত  | 11:58 PM | 11:58p  |
+| Time            | Normal                    | Short    | Compact |
+| --------------- | ------------------------- | -------- | ------- |
+| Midnight        | মধ্যরাত                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | একটা                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | নটা বেজে পাঁচ মিনিট       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | সোয়া দশটা                | 10:15 AM | 10:15a  |
+| Half past 11    | এগারোটা বেজে ত্রিশ মিনিট  | 11:30 AM | 11:30a  |
+| Noon            | দুপুর বারোটা              | 12:00 PM | 12:00p  |
+| Quarter to 3    | পৌনে তিনটে                | 2:45 PM  | 2:45p   |
+| 5 to 6          | ছটা বাজতে পাঁচ মিনিট বাকি | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | আটটা                      | 8:00 PM  | 8:00p   |
+| 10:30 PM        | দশটা বেজে ত্রিশ মিনিট     | 10:30 PM | 10:30p  |
+| 11:58 PM        | মধ্যরাত                   | 11:58 PM | 11:58p  |

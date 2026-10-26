@@ -24,9 +24,9 @@ defmodule SayableAge.Locales.SQ do
       },
       half: "{0} e gjysmë",
       delimiter: ", ",
-      just_born: "Sapolindur",
+      just_born: "I sapolindur",
       stages: %{
-        newborn: %{m: "Sapolindur", f: "Sapolindure"},
+        newborn: %{m: "I sapolindur", f: "E sapolindur"},
         infant: "Foshnjë",
         toddler: %{m: "Fëmijë i vogël", f: "Fëmijë e vogël"},
         child: "Fëmijë",

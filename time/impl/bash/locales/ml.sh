@@ -10,21 +10,21 @@
 # Source: locales/ml.json
 
 _sayabletime_locale_ml() {
-    _clock_hours=('പന്ത്രണ്ട്' 'ഒന്ന്' 'രണ്ട്' 'മൂന്ന്' 'നാല്' 'അഞ്ച്' 'ആറ്' 'ഏഴ്' 'എട്ട്' 'ഒമ്പത്' 'പത്ത്' 'പതിനൊന്ന്')
+    _clock_hours=('പന്ത്രണ്ട' 'ഒന്ന' 'രണ്ട' 'മൂന്ന' 'നാല' 'അഞ്ച' 'ആറ' 'ഏഴ' 'എട്ട' 'ഒമ്പത' 'പത്ത' 'പതിനൊന്ന')
     _clock_midnight='അർദ്ധരാത്രി'
     _clock_noon='ഉച്ച'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}് മണി'
+    _clock_pattern_5='{h}് മണി അഞ്ച് മിനിറ്റ്'
+    _clock_pattern_10='{h}് മണി പത്ത് മിനിറ്റ്'
+    _clock_pattern_15='{h}േകാൽ'
+    _clock_pattern_20='{h}് മണി ഇരുപത് മിനിറ്റ്'
+    _clock_pattern_25='{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്'
+    _clock_pattern_30='{h}ര'
+    _clock_pattern_35='{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്'
+    _clock_pattern_40='{h}് മണി നാൽപ്പത് മിനിറ്റ്'
+    _clock_pattern_45='{h}േമുക്കാൽ'
+    _clock_pattern_50='{h}് മണി അമ്പത് മിനിറ്റ്'
+    _clock_pattern_55='{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

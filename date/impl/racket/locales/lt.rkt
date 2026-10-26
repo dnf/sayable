@@ -22,10 +22,10 @@
    "lt"
    (list "sausis" "vasaris" "kovas" "balandis" "gegužė" "birželis" "liepa" "rugpjūtis" "rugsėjis" "spalis" "lapkritis" "gruodis")
    (list "sekmadienis" "pirmadienis" "antradienis" "trečiadienis" "ketvirtadienis" "penktadienis" "šeštadienis")
-   "{n}."
+   "{n} d."
    (hash)
-   "{day} {month}"
-   "{day} {month} {year}"
+   "{month} {day}"
+   "{year} m. {month} {day}"
    "šiandien"
    "rytoj"
    "vakar"
@@ -35,6 +35,6 @@
    "kitą {weekday}"
    "praėjusį {weekday}"
    (list "sausio" "vasario" "kovo" "balandžio" "gegužės" "birželio" "liepos" "rugpjūčio" "rugsėjo" "spalio" "lapkričio" "gruodžio")
-   (date-compactness-override (list "saus" "vas" "kov" "bal" "geg" "birž" "liep" "rugp" "rugs" "spal" "lapkr" "gruod") #f (list "sk" "pr" "an" "tr" "kt" "pn" "št") "{n}." #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "saus" "vas" "kov" "bal" "geg" "birž" "liep" "rugp" "rugs" "spal" "lapkr" "gruod") #f (list "sk" "pr" "an" "tr" "kt" "pn" "št") "{n} d." #f "{month} {day}" "{year} m. {month} {day}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{m}-{d}" "{yy}-{m}-{d}" #f #f #f)
   ))

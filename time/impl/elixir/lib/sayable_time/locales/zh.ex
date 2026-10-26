@@ -19,7 +19,7 @@ defmodule SayableTime.Locales.ZH do
         hours: [
           "十二",
           "一",
-          "二",
+          "两",
           "三",
           "四",
           "五",
@@ -34,7 +34,7 @@ defmodule SayableTime.Locales.ZH do
         noon: "正午",
         patterns: %{
           0 => "{h}点整",
-          5 => "{h}点五分",
+          5 => "{h}点零五分",
           10 => "{h}点十分",
           15 => "{h}点十五分",
           20 => "{h}点二十分",

@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ku = {
         { "diwanzdeh", "yek", "du", "sê", "çar", "pênc", "şeş", "heft", "heşt", "neh", "deh", "yanzdeh" },
         "nîvê şevê",
         "nîvro",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "saet {h}", "{h} û pênc deqe", "{h} û deh deqe", "{h} û çaryek", "{h} û bîst deqe", "{h} û bîst û pênc deqe", "{h} û nîv", "{next_h} kêm bîst û pênc deqe", "{next_h} kêm bîst deqe", "{next_h} kêm çaryek", "{next_h} kêm deh deqe", "{next_h} kêm pênc deqe" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

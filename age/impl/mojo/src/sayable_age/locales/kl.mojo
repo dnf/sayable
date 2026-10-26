@@ -26,12 +26,14 @@ from ..locale import (
 fn build_kl() -> AgeLocale:
     """Build the Kalaallisut locale."""
     fn plural(n: Int) -> String:
+        if n == 1:
+            return "one"
         return "other"
 
-    var day = simple_unit("ullut {n}")
-    var week = simple_unit("sapaatit {n}")
-    var month = simple_unit("qaammatit {n}")
-    var year = simple_unit("ukiut {n}")
+    var day = plural_unit(one="ulloq {n}", other="ullut {n}")
+    var week = plural_unit(one="sapaatip akunnera {n}", other="sapaatip akunneri {n}")
+    var month = plural_unit(one="qaammat {n}", other="qaammatit {n}")
+    var year = plural_unit(one="ukioq {n}", other="ukiut {n}")
 
     var newborn = stage_neutral("Inuuneq nutaaq")
     var infant = stage_neutral("Naalunngiaatitaq")
@@ -43,7 +45,7 @@ fn build_kl() -> AgeLocale:
     var short_ovr = CompactnessOverride()
     short_ovr.day = simple_unit("ull. {n}")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("sap. {n}")
+    short_ovr.week = simple_unit("sap. ak. {n}")
     short_ovr.has_week = True
     short_ovr.month = simple_unit("qaam. {n}")
     short_ovr.has_month = True
@@ -59,6 +61,8 @@ fn build_kl() -> AgeLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 

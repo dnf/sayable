@@ -21,7 +21,7 @@ locale_bi <- list(
     month = "{n} manis",
     year = "{n} yia"
   ),
-  half = "{n} mo haf",
+  half = "{0} mo haf",
   delimiter = ", ",
   just_now = "jas nao",
   ago = "{0} bifo",
@@ -49,6 +49,7 @@ locale_bi <- list(
       month = "{n}mo",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} bifo",
     in_future = "long {0}"

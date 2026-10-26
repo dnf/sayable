@@ -14,14 +14,10 @@
 sa_plural('ee', 1, one) :- !.
 sa_plural('ee', _, other).
 
-sa_unit('ee', day, one, 'ŋkeke {n}').
-sa_unit('ee', day, other, 'ŋkekewo {n}').
-sa_unit('ee', week, one, 'kɔsiɖa {n}').
-sa_unit('ee', week, other, 'kɔsiɖawo {n}').
-sa_unit('ee', month, one, 'ɣleti {n}').
-sa_unit('ee', month, other, 'ɣletiwo {n}').
-sa_unit('ee', year, one, 'ƒe {n}').
-sa_unit('ee', year, other, 'ƒewo {n}').
+sa_unit('ee', day, _, 'ŋkeke {n}').
+sa_unit('ee', week, _, 'kɔsiɖa {n}').
+sa_unit('ee', month, _, 'ɣleti {n}').
+sa_unit('ee', year, _, 'ƒe {n}').
 
 sa_half('ee', '{0} kple afã').
 sa_delimiter('ee', ', ').
@@ -31,16 +27,15 @@ sa_stage('ee', newborn, _, 'Evi yeye').
 sa_stage('ee', infant, _, 'Ɖevi').
 sa_stage('ee', toddler, _, 'Ɖevi sue').
 sa_stage('ee', child, _, 'Ɖevi').
-sa_stage('ee', teenager, _, 'Ŋutsuviwo').
+sa_stage('ee', teenager, m, 'Ɖekakpui').
+sa_stage('ee', teenager, f, 'Ɖetugbi').
+sa_stage('ee', teenager, _, 'Ɖekakpui').
 sa_stage('ee', adult, _, 'Ame tsitsi').
 
-short_sa_unit('ee', day, _, 'ŋkekewo {n}').
-short_sa_unit('ee', week, one, 'kɔsiɖa {n}').
-short_sa_unit('ee', week, other, 'kɔsiɖawo {n}').
-short_sa_unit('ee', month, one, 'ɣleti {n}').
-short_sa_unit('ee', month, other, 'ɣletiwo {n}').
-short_sa_unit('ee', year, one, 'ƒe {n}').
-short_sa_unit('ee', year, other, 'ƒewo {n}').
+short_sa_unit('ee', day, _, 'ŋkeke {n}').
+short_sa_unit('ee', week, _, 'kɔsiɖa {n}').
+short_sa_unit('ee', month, _, 'ɣleti {n}').
+short_sa_unit('ee', year, _, 'ƒe {n}').
 
 compact_sa_unit('ee', day, _, '{n}d').
 compact_sa_unit('ee', week, _, '{n}w').

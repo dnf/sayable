@@ -35,7 +35,7 @@ defmodule SayableDuration.Locales.FF do
           second: "majaango {n}",
           minute: "hojomaaje {n}",
           hour: %{one: "waktu {n}", other: "waktuuji {n}"},
-          day: "ñalɗe {n}",
+          day: %{one: "ñalawma {n}", other: "ñalɗe {n}"},
           week: %{one: "yontere {n}", other: "yontereeji {n}"},
           month: %{one: "lewru {n}", other: "lebbi {n}"},
           year: %{one: "hitaande {n}", other: "duuɓi {n}"}
@@ -48,7 +48,7 @@ defmodule SayableDuration.Locales.FF do
           second: "maj {n}",
           minute: "hoj {n}",
           hour: %{one: "wak {n}", other: "wakji {n}"},
-          day: "ñalɗe {n}",
+          day: %{one: "ñalawma {n}", other: "ñalɗe {n}"},
           week: %{one: "yont {n}", other: "yontji {n}"},
           month: %{one: "lew {n}", other: "leb {n}"},
           year: %{one: "hit {n}", other: "duuɓi {n}"}

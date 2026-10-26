@@ -19,7 +19,7 @@ sub locale {{
   plural => sub { 'other' },
   units => {
     day => '{n} q\'ij',
-    week => '{n} xjaw',
+    week => '{n} seman',
     month => '{n} xjaw',
     year => '{n} ab\'q\'ii',
   },
@@ -37,7 +37,7 @@ sub locale {{
   short => {
     units => {
       day => '{n} q\'ij',
-      week => '{n} xjaw',
+      week => '{n} seman',
       month => '{n} xjaw',
       year => '{n} ab\'.',
     },
@@ -50,6 +50,7 @@ sub locale {{
       year => '{n}y',
     },
     delimiter => '',
+    half => '{n}½',
   },
 }}
 

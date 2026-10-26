@@ -20,7 +20,7 @@ bn
 	locale units: (Dictionary newFromPairs: {
 		'second'. '{n} সেকেন্ড'.
 		'minute'. '{n} মিনিট'.
-		'hour'. '{n} ঘন্টা'.
+		'hour'. '{n} ঘণ্টা'.
 		'day'. (Dictionary newFromPairs: { #one. '{n} দিন'. #other. '{n} দিন' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} সপ্তাহ'. #other. '{n} সপ্তাহ' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} মাস'. #other. '{n} মাস' }).

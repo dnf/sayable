@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_tzm = {
     "tzm",
     {
-        { "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" },
-        "ⵏⵚ ⵏ ⵉⴹ",
-        "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt" },
+        "nṣ n iḍ",
+        "tizwarnin",
+        { "{h}", "{h} d smmus tusdiqin", "{h} d mraw tusdiqin", "{h} d rrbɛ", "{h} d ɛcrin n tusdiqt", "{h} d xmsa u ɛcrin n tusdiqt", "{h} d uzgen", "{h} d xmsa u tlatin n tusdiqt", "{h} d ṛbɛin n tusdiqt", "{h} d xmsa u ṛbɛin n tusdiqt", "{h} d xmsin n tusdiqt", "{h} d xmsa u xmsin n tusdiqt" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

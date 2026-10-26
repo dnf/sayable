@@ -10,21 +10,21 @@
 # Source: locales/ve.json
 
 _sayabletime_locale_ve() {
-    _clock_hours=('fumimbili' 'thihi' 'mbili' 'raru' 'ina' 'thanu' 'rathi' 'sumbe' 'malo' 'tahe' 'fumi' 'fuminthihi')
+    _clock_hours=('ya fumi na mbili' 'ya u thoma' 'ya vhuvhili' 'ya vhuraru' 'ya vhuṋa' 'ya vhuṱanu' 'ya vhurathi' 'ya vhusumbe' 'ya vhumalo' 'ya vhuṱahe' 'ya fumi' 'ya fumi na nthihi')
     _clock_midnight='vhukati ha vhusiku'
     _clock_noon='vhukati ha masiari'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='awara {h}'
+    _clock_pattern_5='awara {h} na ṱhanu'
+    _clock_pattern_10='awara {h} na fumi'
+    _clock_pattern_15='awara {h} na kotara'
+    _clock_pattern_20='awara {h} na mahumi mavhili'
+    _clock_pattern_25='awara {h} na mahumi mavhili na ṱhanu'
+    _clock_pattern_30='awara {h} na hafu'
+    _clock_pattern_35='awara {h} na mahumi mararu na ṱhanu'
+    _clock_pattern_40='awara {h} na mahumi maṋa'
+    _clock_pattern_45='awara {h} na mahumi maṋa na ṱhanu'
+    _clock_pattern_50='awara {h} na mahumi maṱanu'
+    _clock_pattern_55='awara {h} na mahumi maṱanu na ṱhanu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

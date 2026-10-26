@@ -20,7 +20,7 @@ M.units = {
     day = "{n}日",
     week = "{n}週",
     month = "{n}ヶ月",
-    year = "{n}歳",
+    year = "{n}年",
 }
 M.half = "{0}半"
 M.delimiter = ""
@@ -50,6 +50,7 @@ M.compact = {
         month = "{n}m",
         year = "{n}y",
     },
+    half = "{n}½",
     delimiter = "",
     ago = "{0}前",
     in_future = "{0}後",

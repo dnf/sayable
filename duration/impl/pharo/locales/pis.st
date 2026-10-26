@@ -26,7 +26,7 @@ pis
 		'month'. '{n} manis'.
 		'year'. '{n} yia'.
 	}).
-	locale half: '{n} en haf'.
+	locale half: '{0} en haf'.
 	locale delimiter: ', '.
 	locale justNow: 'nomoa nao'.
 	locale ago: '{0} bifoa'.
@@ -54,6 +54,7 @@ pis
 			'month'. '{n}mo'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} bifoa'.
 		#inFuture. 'long {0}'.

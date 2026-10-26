@@ -68,6 +68,8 @@ fn build_fj() -> DurationLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} sa oti"
@@ -85,7 +87,7 @@ fn build_fj() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{n} kei na levu ni wasei",
+        half="{0} kei na veimama",
         delimiter=", ",
         just_now="edaidai ga",
         ago="{0} sa oti",

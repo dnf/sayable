@@ -34,7 +34,7 @@ var MG = sd.DurationLocale{
 	Half:      "{0} sy sasany",
 	Delimiter: ", ",
 	JustNow:   "vao haingana",
-	Ago:       "{0} lasa",
+	Ago:       "{0} lasa izay",
 	InFuture:  "ao anatin'ny {0}",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "{n} seg"},
@@ -44,7 +44,7 @@ var MG = sd.DurationLocale{
 		Week:     &sd.UnitForms{Simple: "{n} her"},
 		Month:    &sd.UnitForms{Simple: "{n} vol"},
 		Year:     &sd.UnitForms{Simple: "{n} tna"},
-		Ago:      strPtr("{0} lasa"),
+		Ago:      strPtr("{0} lasa izay"),
 		InFuture: strPtr("ao anatin'ny {0}"),
 	},
 	Compact: &sd.CompactnessOverride{

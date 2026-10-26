@@ -46,7 +46,7 @@ defmodule SayableDate.Locales.XH do
       tomorrow: "ngomso",
       yesterday: "izolo",
       day_after_tomorrow: "ngomhlomunye",
-      day_before_yesterday: "kutshanje",
+      day_before_yesterday: "izolo elinye",
       this_weekday: "le {weekday}",
       next_weekday: "{weekday} ezayo",
       last_weekday: "{weekday} edlulileyo",

@@ -53,6 +53,7 @@ var KEK = sd.DurationLocale{
 		Month:     &sd.UnitForms{Simple: "{n}mo"},
 		Year:      &sd.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0} qakab'"),
 		InFuture:  strPtr("chi {0}"),
 	},

@@ -17,10 +17,10 @@ defmodule SayableAge.Locales.AY do
       code: "ay",
       plural: (fn _ -> :other end),
       units: %{
-        day: "uru {n}",
-        week: "simana {n}",
-        month: "phaxsi {n}",
-        year: "mara {n}"
+        day: "{n} uru",
+        week: "{n} simana",
+        month: "{n} phaxsi",
+        year: "{n} mara"
       },
       half: "{0} chika",
       delimiter: ", ",
@@ -48,6 +48,7 @@ defmodule SayableAge.Locales.AY do
           month: "{n}m",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: ""
       }
     }

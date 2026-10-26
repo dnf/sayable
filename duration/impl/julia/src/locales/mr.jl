@@ -16,7 +16,7 @@ const MR = DurationLocale(
     plural = n -> n == 1 ? "one" : "other",
     units = Dict(
         "second" => "{n} सेकंद",
-        "minute" => "{n} मिनिट",
+        "minute" => Dict("one" => "{n} मिनिट", "other" => "{n} मिनिटे"),
         "hour" => "{n} तास",
         "day" => Dict("one" => "{n} दिवस", "other" => "{n} दिवस"),
         "week" => Dict("one" => "{n} आठवडा", "other" => "{n} आठवडे"),

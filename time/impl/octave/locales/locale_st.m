@@ -11,10 +11,10 @@
 
 function loc = locale_st()
   loc.code = 'st';
-  loc.clock.hours = {'leshome le metso e mmedi', 'e nngwe', 'tse pedi', 'tse tharo', 'tse nne', 'tse hlano', 'tse tshelela', 'tse supileng', 'tse robedi', 'tse robong', 'leshome', 'leshome le motso o le mong'};
+  loc.clock.hours = {'leshome le metso e mmedi', 'pele', 'bobedi', 'boraro', 'bone', 'bohlano', 'botshelela', 'bosupa', 'borobedi', 'borobong', 'leshome', 'leshome le motso o le mong'};
   loc.clock.midnight = 'hara bosiu';
   loc.clock.noon = 'motsheare';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'hora ya {h}', "p5", 'hora ya {h} le metsotso e mehlano', "p10", 'hora ya {h} le metsotso e leshome', "p15", 'hora ya {h} le kotara', "p20", 'hora ya {h} le metsotso e mashome a mabedi', "p25", 'hora ya {h} le metsotso e mashome a mabedi a metso e mehlano', "p30", 'hora ya {h} le halofo', "p35", 'hora ya {h} le metsotso e mashome a mararo a metso e mehlano', "p40", 'hora ya {h} le metsotso e mashome a mane', "p45", 'hora ya {h} le metsotso e mashome a mane a metso e mehlano', "p50", 'hora ya {h} le metsotso e mashome a mahlano', "p55", 'hora ya {h} le metsotso e mashome a mahlano a metso e mehlano');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

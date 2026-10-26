@@ -19,7 +19,7 @@ mam
 	locale plural: [ :n | #other ].
 	locale units: (Dictionary newFromPairs: {
 		'day'. '{n} q''ij'.
-		'week'. '{n} xjaw'.
+		'week'. '{n} seman'.
 		'month'. '{n} xjaw'.
 		'year'. '{n} ab''q''ii'.
 	}).
@@ -37,7 +37,7 @@ mam
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'day'. '{n} q''ij'.
-			'week'. '{n} xjaw'.
+			'week'. '{n} seman'.
 			'month'. '{n} xjaw'.
 			'year'. '{n} ab''.'.
 		}).
@@ -49,6 +49,7 @@ mam
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 	}).
 	^ locale

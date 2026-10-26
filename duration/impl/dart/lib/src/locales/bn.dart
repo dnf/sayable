@@ -21,7 +21,7 @@ final bn = DurationLocale(
   units: {
     'second': simpleUnit('{n} সেকেন্ড'),
     'minute': simpleUnit('{n} মিনিট'),
-    'hour': simpleUnit('{n} ঘন্টা'),
+    'hour': simpleUnit('{n} ঘণ্টা'),
     'day': pluralUnit({PluralCategory.one: '{n} দিন', PluralCategory.other: '{n} দিন'}),
     'week': pluralUnit({PluralCategory.one: '{n} সপ্তাহ', PluralCategory.other: '{n} সপ্তাহ'}),
     'month': pluralUnit({PluralCategory.one: '{n} মাস', PluralCategory.other: '{n} মাস'}),

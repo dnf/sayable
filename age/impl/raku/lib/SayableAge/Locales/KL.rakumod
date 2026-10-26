@@ -15,12 +15,12 @@ unit module SayableAge::Locales::KL;
 our sub locale() {
     {
         code => 'kl',
-        plural => -> $n { 'other' },
+        plural => -> $n { $n == 1 ?? 'one' !! 'other' },
         units => {
-            day => 'ullut {n}',
-            week => 'sapaatit {n}',
-            month => 'qaammatit {n}',
-            year => 'ukiut {n}',
+            day => { one => 'ulloq {n}', other => 'ullut {n}' },
+            week => { one => 'sapaatip akunnera {n}', other => 'sapaatip akunneri {n}' },
+            month => { one => 'qaammat {n}', other => 'qaammatit {n}' },
+            year => { one => 'ukioq {n}', other => 'ukiut {n}' },
         },
         half => '{0} affaa',
         delimiter => ', ',
@@ -36,7 +36,7 @@ our sub locale() {
         short => {
             units => {
                 day => 'ull. {n}',
-                week => 'sap. {n}',
+                week => 'sap. ak. {n}',
                 month => 'qaam. {n}',
                 year => 'uk. {n}',
             },
@@ -49,6 +49,7 @@ our sub locale() {
                 year => '{n}y',
             },
             delimiter => '',
+            half => '{n}½',
         },
     }
 }

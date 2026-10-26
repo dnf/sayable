@@ -26,7 +26,7 @@ jv
 	locale tomorrow: 'sesuk'.
 	locale yesterday: 'wingi'.
 	locale dayAfterTomorrow: 'embèn'.
-	locale dayBeforeYesterday: 'dhèk wingi'.
+	locale dayBeforeYesterday: 'wingenané'.
 	locale thisWeekday: '{weekday} iki'.
 	locale nextWeekday: '{weekday} ngarep'.
 	locale lastWeekday: '{weekday} wingi'.

@@ -21,6 +21,6 @@
    :half "{n}½"
    :delimiter ", "
    :just-born "Abofra foforo"
-   :stages {:newborn {:type :neutral :label "Abofra foforo"} :infant {:type :neutral :label "Akwadaa"} :toddler {:type :neutral :label "Abofra"} :child {:type :neutral :label "Abofra"} :teenager {:type :neutral :label "Abarimaa"} :adult {:type :neutral :label "Ɔpanyin"}}
-   :short {:day {:type :simple :form "nna {n}"} :week {:type :pluralized :forms {:one "dapɛn {n}" :other "nnapɛn {n}"}} :month {:type :pluralized :forms {:one "bosome {n}" :other "abosome {n}"}} :year {:type :pluralized :forms {:one "afe {n}" :other "mfe {n}"}} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "nna {n}"} :week {:type :pluralized :forms {:one "dapɛn {n}" :other "nnapɛn {n}"}} :month {:type :pluralized :forms {:one "bos {n}" :other "abos {n}"}} :year {:type :pluralized :forms {:one "afe {n}" :other "mfe {n}"}} :half "{n}½" :delimiter "" :just-born nil}})
+   :stages {:newborn {:type :neutral :label "Abofra foforo"} :infant {:type :neutral :label "Akwadaa"} :toddler {:type :neutral :label "Abofra"} :child {:type :neutral :label "Abofra"} :teenager {:type :gendered :m "Abarimaa" :f "Abaayewa"} :adult {:type :neutral :label "Ɔpanyin"}}
+   :short {:day {:type :pluralized :forms {:one "da {n}" :other "nna {n}"}} :week {:type :pluralized :forms {:one "dapɛn {n}" :other "nnapɛn {n}"}} :month {:type :pluralized :forms {:one "bosome {n}" :other "abosome {n}"}} :year {:type :pluralized :forms {:one "afe {n}" :other "mfe {n}"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :pluralized :forms {:one "da {n}" :other "nna {n}"}} :week {:type :pluralized :forms {:one "dapɛn {n}" :other "nnapɛn {n}"}} :month {:type :pluralized :forms {:one "bos {n}" :other "abos {n}"}} :year {:type :pluralized :forms {:one "afe {n}" :other "mfe {n}"}} :half "{n}½" :delimiter "" :just-born nil}})

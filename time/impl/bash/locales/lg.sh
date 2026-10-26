@@ -10,21 +10,21 @@
 # Source: locales/lg.json
 
 _sayabletime_locale_lg() {
-    _clock_hours=('kkumi na bbiri' 'emu' 'bbiri' 'ssatu' 'nnya' 'ttaano' 'mukaaga' 'musanvu' 'munaana' 'mwenda' 'kkumi' 'kkumi na emu')
+    _clock_hours=('mukaaga' 'musanvu' 'munaana' 'mwenda' 'kkumi' 'kkumi n'\''emu' 'kkumi n'\''ebbiri' 'emu' 'bbiri' 'ssatu' 'nnya' 'ttaano')
     _clock_midnight='ekiro eky'\''omu ttumbi'
     _clock_noon='ettuntu'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='essaawa {h}'
+    _clock_pattern_5='essaawa {h} n'\''eddakiika ttaano'
+    _clock_pattern_10='essaawa {h} n'\''eddakiika kkumi'
+    _clock_pattern_15='essaawa {h} n'\''eddakiika kkumi na ttaano'
+    _clock_pattern_20='essaawa {h} n'\''eddakiika abiri'
+    _clock_pattern_25='essaawa {h} n'\''eddakiika abiri mu ttaano'
+    _clock_pattern_30='essaawa {h} n'\''ekitundu'
+    _clock_pattern_35='essaawa {h} n'\''eddakiika asatu mu ttaano'
+    _clock_pattern_40='essaawa {h} n'\''eddakiika ana'
+    _clock_pattern_45='essaawa {h} n'\''eddakiika ana mu ttaano'
+    _clock_pattern_50='essaawa {h} n'\''eddakiika ataano'
+    _clock_pattern_55='essaawa {h} n'\''eddakiika ataano mu ttaano'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

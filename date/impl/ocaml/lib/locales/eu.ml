@@ -36,11 +36,13 @@ let locale : date_locale =
     ; "ostirala"
     ; "larunbata"
     ]
-  ; day_format = "{n}"
+  ; day_format = "{n}a"
   ; day_format_exceptions =
-    []
-  ; date_pattern = "{month}ren {day}"
-  ; date_pattern_with_year = "{year}ko {month}ren {day}"
+    [ ("11", "{n}")
+    ; ("31", "{n}")
+    ]
+  ; date_pattern = "{month} {day}"
+  ; date_pattern_with_year = "{year}ko {month} {day}"
   ; today = "gaur"
   ; tomorrow = "bihar"
   ; yesterday = "atzo"
@@ -49,7 +51,20 @@ let locale : date_locale =
   ; this_weekday = Some "{weekday} hau"
   ; next_weekday = Some "hurrengo {weekday}"
   ; last_weekday = Some "aurreko {weekday}"
-  ; months_in_date = None
+  ; months_in_date = Some
+    [ "urtarrilaren"
+    ; "otsailaren"
+    ; "martxoaren"
+    ; "apirilaren"
+    ; "maiatzaren"
+    ; "ekainaren"
+    ; "uztailaren"
+    ; "abuztuaren"
+    ; "irailaren"
+    ; "urriaren"
+    ; "azaroaren"
+    ; "abenduaren"
+    ]
   ; short = Some
       { ovr_months = Some
         [ "urt"

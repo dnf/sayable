@@ -30,7 +30,7 @@ const SdDateLocale sd_locale_sn = {
     "nhasi",
     "mangwana",
     "nezuro",
-    "mangwanani",
+    "kuswera mangwana",
     "nezuro rakapera",
     "{weekday} ino",
     "{weekday} inotevera",

@@ -31,10 +31,10 @@
    :units (list (cons :second '((:zero . "{n} eiliad") (:one . "{n} eiliad") (:two . "{n} eiliad") (:few . "{n} eiliad") (:many . "{n} eiliad") (:other . "{n} eiliad")))
                (cons :minute '((:zero . "{n} munud") (:one . "{n} munud") (:two . "{n} funud") (:few . "{n} munud") (:many . "{n} munud") (:other . "{n} munud")))
                (cons :hour '((:zero . "{n} awr") (:one . "{n} awr") (:two . "{n} awr") (:few . "{n} awr") (:many . "{n} awr") (:other . "{n} awr")))
-               (cons :day '((:zero . "{n} diwrnod") (:one . "{n} diwrnod") (:two . "{n} ddiwrnod") (:few . "{n} diwrnod") (:many . "{n} niwrnod") (:other . "{n} diwrnod")))
+               (cons :day '((:zero . "{n} diwrnod") (:one . "{n} diwrnod") (:two . "{n} ddiwrnod") (:few . "{n} diwrnod") (:many . "{n} diwrnod") (:other . "{n} diwrnod")))
                (cons :week '((:zero . "{n} wythnos") (:one . "{n} wythnos") (:two . "{n} wythnos") (:few . "{n} wythnos") (:many . "{n} wythnos") (:other . "{n} wythnos")))
                (cons :month '((:zero . "{n} mis") (:one . "{n} mis") (:two . "{n} fis") (:few . "{n} mis") (:many . "{n} mis") (:other . "{n} mis")))
-               (cons :year '((:zero . "{n} blwyddyn") (:one . "{n} blwyddyn") (:two . "{n} flynedd") (:few . "{n} blynedd") (:many . "{n} blynedd") (:other . "{n} blynedd"))))
+               (cons :year '((:zero . "{n} blwyddyn") (:one . "{n} flwyddyn") (:two . "{n} flynedd") (:few . "{n} blynedd") (:many . "{n} blynedd") (:other . "{n} blynedd"))))
    :half "{0} a hanner"
    :delimiter ", "
    :just-now "nawr"

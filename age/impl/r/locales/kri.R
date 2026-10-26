@@ -18,7 +18,7 @@ locale_kri <- list(
     month = "{n} mont",
     year = "{n} ia"
   ),
-  half = "{n} na af",
+  half = "{0} ɛn af",
   delimiter = ", ",
   just_born = "Nyubon bebi",
   stages = list(
@@ -44,6 +44,7 @@ locale_kri <- list(
       month = "{n}m",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = ""
   )
 )

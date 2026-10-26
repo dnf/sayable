@@ -12,7 +12,7 @@
 % Fon locale.
 
 sd_months('fon', ['Alɔfí', 'Alɔnyɔ', 'Ataɖaxɔ', 'Tlɛsún', 'Axɔsún', 'Ayɛsún', 'Nùxwásún', 'Ayidosún', 'Kɛnísún', 'Kanyásún', 'Abɔxwísún', 'Adɔxwísún']).
-sd_weekdays('fon', ['Sidégbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Abámɛ́ta']).
+sd_weekdays('fon', ['Aklunɔzángbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Sibigbe']).
 sd_day_format('fon', '{n}').
 
 sd_date_pattern('fon', '{day} {month}').
@@ -28,7 +28,7 @@ sd_next_weekday('fon', '{weekday} e ja').
 sd_last_weekday('fon', '{weekday} e wá yí').
 
 short_sd_months('fon', ['Alɔ', 'Any', 'Ata', 'Tlɛ', 'Axɔ', 'Ayɛ', 'Nùx', 'Ayi', 'Kɛn', 'Kan', 'Abɔ', 'Adɔ']).
-short_sd_weekdays('fon', ['Sid', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Abá']).
+short_sd_weekdays('fon', ['Akl', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Sib']).
 short_sd_day_format('fon', '{n}').
 short_sd_clear_exceptions('fon').
 short_sd_date_pattern('fon', '{day} {month}').

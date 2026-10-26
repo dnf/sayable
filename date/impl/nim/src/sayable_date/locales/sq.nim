@@ -16,7 +16,7 @@ import ../locale
 let SQ* = DateLocale(
   code: "sq",
   months: @["janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"],
-  weekdays: @["e diel", "e hënë", "e martë", "e mërkurë", "e enjte", "e premte", "e shtunë"],
+  weekdays: @["të dielën", "të hënën", "të martën", "të mërkurën", "të enjten", "të premten", "të shtunën"],
   dayFormat: "{n}",
   dayFormatExceptions: initOrderedTable[string, string](),
   datePattern: "{day} {month}",
@@ -26,8 +26,8 @@ let SQ* = DateLocale(
   yesterday: "dje",
   dayAfterTomorrow: some("pasnesër"),
   dayBeforeYesterday: some("pardje"),
-  thisWeekday: some("këtë {weekday}"),
-  nextWeekday: some("{weekday} tjetër"),
+  thisWeekday: some("{weekday}"),
+  nextWeekday: some("{weekday} e ardhshme"),
   lastWeekday: some("{weekday} e kaluar"),
   monthsInDate: none(seq[string]),
   short: some(CompactnessOverride(

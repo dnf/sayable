@@ -16,17 +16,17 @@ st_midnight('hu', 'éjfél').
 st_noon('hu', 'dél').
 
 st_pattern('hu', 0, '{h} óra').
-st_pattern('hu', 5, 'öt múlt {h}').
-st_pattern('hu', 10, 'tíz múlt {h}').
-st_pattern('hu', 15, 'negyed múlt {h}').
-st_pattern('hu', 20, 'húsz múlt {h}').
-st_pattern('hu', 25, 'huszonöt múlt {h}').
-st_pattern('hu', 30, 'fél múlt {h}').
-st_pattern('hu', 35, 'huszonöt múlva {next_h}').
-st_pattern('hu', 40, 'húsz múlva {next_h}').
-st_pattern('hu', 45, 'negyed múlva {next_h}').
-st_pattern('hu', 50, 'tíz múlva {next_h}').
-st_pattern('hu', 55, 'öt múlva {next_h}').
+st_pattern('hu', 5, 'öt perccel múlt {h}').
+st_pattern('hu', 10, 'tíz perccel múlt {h}').
+st_pattern('hu', 15, 'negyed {next_h}').
+st_pattern('hu', 20, 'húsz perccel múlt {h}').
+st_pattern('hu', 25, 'öt perc múlva fél {next_h}').
+st_pattern('hu', 30, 'fél {next_h}').
+st_pattern('hu', 35, 'öt perccel múlt fél {next_h}').
+st_pattern('hu', 40, 'húsz perc múlva {next_h}').
+st_pattern('hu', 45, 'háromnegyed {next_h}').
+st_pattern('hu', 50, 'tíz perc múlva {next_h}').
+st_pattern('hu', 55, 'öt perc múlva {next_h}').
 
 short_st_use24h('hu', true).
 short_st_format('hu', '{h}:{mm}').

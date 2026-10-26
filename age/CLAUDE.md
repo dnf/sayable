@@ -118,8 +118,8 @@ Both are available with a locale and one of three compactness levels: normal (de
 From the **project root**:
 
 ```
-just test              # every language's age suite in parallel, plus the codegen check
-just test go           # one language's age suite
+just test              # every language's suites (all four libraries) in parallel, plus the codegen check
+just test go           # one language's age, date, duration and time suites
 just build rust        # build one compiled language
 just lint python       # lint one language
 just test codegen      # codegen unit tests (locale groups)

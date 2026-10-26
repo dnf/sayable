@@ -22,7 +22,7 @@ proc locale_tk {} {
         month "{n} aý" \
         year "{n} ýaş" \
     ]
-    set half "{0}½"
+    set half "{n} ýarym"
     set delimiter {, }
     set just_born {Täze doglan}
     set stages [dict create \
@@ -31,7 +31,7 @@ proc locale_tk {} {
         toddler {Kiçijik} \
         child {Çaga} \
         teenager {Ýetginjek} \
-        adult {Ulular} \
+        adult {Uly adam} \
     ]
     set short [dict create \
         units [dict create \

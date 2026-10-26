@@ -39,7 +39,7 @@ fn build_tn() -> AgeLocale:
     var infant = stage_neutral("Lesea")
     var toddler = stage_neutral("Ngwana yo monnye")
     var child = stage_neutral("Ngwana")
-    var teenager = stage_neutral("Lekgarebe")
+    var teenager = stage_neutral("Mosha")
     var adult = stage_neutral("Motho yo mogolo")
 
     var short_ovr = CompactnessOverride()

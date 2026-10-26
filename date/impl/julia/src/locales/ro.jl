@@ -14,7 +14,7 @@
 const RO = DateLocale(
     code = "ro",
     months = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"],
-    weekdays = ["duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"],
+    weekdays = ["duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta"],
     day_format = "{n}",
     day_format_exceptions = Dict{String, String}(),
     date_pattern = "{day} {month}",
@@ -24,7 +24,7 @@ const RO = DateLocale(
     yesterday = "ieri",
     day_after_tomorrow = "poimâine",
     day_before_yesterday = "alaltăieri",
-    this_weekday = "această {weekday}",
+    this_weekday = "{weekday} aceasta",
     next_weekday = "{weekday} viitoare",
     last_weekday = "{weekday} trecută",
     months_in_date = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"],

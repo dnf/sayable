@@ -24,7 +24,7 @@ M.units = {
 }
 M.half = "{0} satengah"
 M.delimiter = ", "
-M.just_now = "ayeuna"
+M.just_now = "nembé"
 M.ago = "{0} kapengker"
 M.in_future = "dina {0}"
 M.short = {

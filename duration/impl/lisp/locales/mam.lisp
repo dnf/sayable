@@ -21,7 +21,7 @@
                (cons :minute "{n} minuto")
                (cons :hour "{n} hora")
                (cons :day "{n} q'ij")
-               (cons :week "{n} xjaw")
+               (cons :week "{n} seman")
                (cons :month "{n} xjaw")
                (cons :year "{n} ab'q'ii"))
    :half "{0} nik'"
@@ -33,7 +33,7 @@
                        (cons :minute "{n} min.")
                        (cons :hour "{n} hora")
                        (cons :day "{n} q'ij")
-                       (cons :week "{n} xjaw")
+                       (cons :week "{n} seman")
                        (cons :month "{n} xjaw")
                        (cons :year "{n} ab'."))
    :short-ago "{0} chi'j"
@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}mo")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} chi'j"
    :compact-in-future "tu'n {0}"

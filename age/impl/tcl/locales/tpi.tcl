@@ -21,7 +21,7 @@ proc locale_tpi {} {
         month "{n} mun" \
         year "{n} yia" \
     ]
-    set half "{n} na hap"
+    set half "{0} na hap"
     set delimiter {, }
     set just_born {Nupela pikinini}
     set stages [dict create \
@@ -47,6 +47,7 @@ proc locale_tpi {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

@@ -27,7 +27,7 @@
     "stages": {
       "newborn": "Lesea le sa tswa hlaha",
       "infant": "Lesea",
-      "toddler": "Ngwanana",
+      "toddler": "Ngwana e monyane",
       "child": "Ngwana",
       "teenager": "Mosha",
       "adult": "Motho e moholo"
@@ -135,11 +135,11 @@
     "units": {
       "second": {
         "one": "motsotswana {n}",
-        "other": "dimetsotswana {n}"
+        "other": "metsotswana {n}"
       },
       "minute": {
-        "one": "metsotso {n}",
-        "other": "dimetsotso {n}"
+        "one": "motsotso {n}",
+        "other": "metsotso {n}"
       },
       "hour": {
         "one": "hora {n}",
@@ -171,11 +171,11 @@
       "units": {
         "second": {
           "one": "motsotswana {n}",
-          "other": "dimetsotswana {n}"
+          "other": "metsotswana {n}"
         },
         "minute": {
-          "one": "metsotso {n}",
-          "other": "dimetsotso {n}"
+          "one": "motsotso {n}",
+          "other": "metsotso {n}"
         },
         "hour": {
           "one": "hora {n}",
@@ -237,33 +237,33 @@
     "clock": {
       "hours": [
         "leshome le metso e mmedi",
-        "e nngwe",
-        "tse pedi",
-        "tse tharo",
-        "tse nne",
-        "tse hlano",
-        "tse tshelela",
-        "tse supileng",
-        "tse robedi",
-        "tse robong",
+        "pele",
+        "bobedi",
+        "boraro",
+        "bone",
+        "bohlano",
+        "botshelela",
+        "bosupa",
+        "borobedi",
+        "borobong",
         "leshome",
         "leshome le motso o le mong"
       ],
       "midnight": "hara bosiu",
       "noon": "motsheare",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "hora ya {h}",
+        "5": "hora ya {h} le metsotso e mehlano",
+        "10": "hora ya {h} le metsotso e leshome",
+        "15": "hora ya {h} le kotara",
+        "20": "hora ya {h} le metsotso e mashome a mabedi",
+        "25": "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano",
+        "30": "hora ya {h} le halofo",
+        "35": "hora ya {h} le metsotso e mashome a mararo a metso e mehlano",
+        "40": "hora ya {h} le metsotso e mashome a mane",
+        "45": "hora ya {h} le metsotso e mashome a mane a metso e mehlano",
+        "50": "hora ya {h} le metsotso e mashome a mahlano",
+        "55": "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano"
       }
     },
     "short": {
@@ -286,5 +286,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Sesotho ordinal hours: 'hora ya boraro' = 3 o'clock, 'hora ya pele' = 1 o'clock, 'hora ya leshome' = 10. '... le halofo' (half, as in the file's duration data), '... le kotara' (quarter past), otherwise '... le metsotso e leshome / e mashome a mabedi / e mashome a mane a metso e mehlano'. Doubts: :45 is additive ('... le metsotso e mashome a mane a metso e mehlano') rather than a 'kotara to' form, which I could not verify; Lesotho vs South African orthography (no diacritics, matching the existing file)."
+    }
+  ]
 }

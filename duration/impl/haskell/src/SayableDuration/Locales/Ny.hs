@@ -18,9 +18,12 @@ locale = DurationLocale
     { localeCode = "ny"
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "{n} sekondi"
-        , unitMinute = Simple "{n} mphindi"
-        , unitHour = Simple "{n} ola"
+        { unitSecond = Simple "sekondi {n}"
+        , unitMinute = Simple "mphindi {n}"
+        , unitHour = Pluralized
+          [ (One, "ola {n}")
+          , (Other, "maola {n}")
+          ]
         , unitDay = Pluralized
           [ (One, "tsiku {n}")
           , (Other, "masiku {n}")
@@ -47,7 +50,10 @@ locale = DurationLocale
         CompactnessOverride
             { ovrSecond = Just (Simple "sek {n}")
             , ovrMinute = Just (Simple "mph {n}")
-            , ovrHour = Just (Simple "ola {n}")
+            , ovrHour = Just (Pluralized
+              [ (One, "ola {n}")
+              , (Other, "maola {n}")
+              ])
             , ovrDay = Just (Pluralized
               [ (One, "tsiku {n}")
               , (Other, "mas {n}")

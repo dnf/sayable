@@ -16,8 +16,8 @@ proc plural_qu {n} {
 proc locale_duration_qu {} {
     set code {qu}
     set units [dict create \
-        second "{n} ñiqin" \
-        minute "{n} chiniku" \
+        second "{n} sikundu" \
+        minute "{n} minutu" \
         hour "{n} ura" \
         day "{n} p'unchaw" \
         week "{n} simana" \
@@ -31,8 +31,8 @@ proc locale_duration_qu {} {
     set in_future "{0} qhipata"
     set short [dict create \
         units [dict create \
-            second "{n} ñiq" \
-            minute "{n} chi" \
+            second "{n} sik" \
+            minute "{n} min" \
             hour "{n} ura" \
             day "{n} p'un" \
             week "{n} sim" \

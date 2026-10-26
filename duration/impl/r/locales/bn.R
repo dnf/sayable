@@ -15,7 +15,7 @@ locale_bn <- list(
   units = list(
     second = "{n} সেকেন্ড",
     minute = "{n} মিনিট",
-    hour = "{n} ঘন্টা",
+    hour = "{n} ঘণ্টা",
     day = list(one = "{n} দিন", other = "{n} দিন"),
     week = list(one = "{n} সপ্তাহ", other = "{n} সপ্তাহ"),
     month = list(one = "{n} মাস", other = "{n} মাস"),

@@ -27,7 +27,7 @@ final tk = DurationLocale(
     'month': simpleUnit('{n} aý'),
     'year': simpleUnit('{n} ýyl'),
   },
-  half: '{0}½',
+  half: '{n} ýarym',
   delimiter: ', ',
   justNow: 'häzir',
   ago: '{0} öň',

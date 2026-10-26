@@ -16,24 +16,24 @@ ee
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'ee'.
-	locale months: (OrderedCollection withAll: { 'Dzove'. 'Dzodze'. 'Tedoxe'. 'Afɔfĩe'. 'Damɛ'. 'Masa'. 'Siamlɔm'. 'Dasiamime'. 'Anyɔnyɔ'. 'Kele'. 'Adeɛmekpɔxe'. 'Dzome' }).
-	locale weekdays: (OrderedCollection withAll: { 'Kɔsiɖa'. 'Dzoɖa'. 'Braɖa'. 'Kuɖa'. 'Yawoɖa'. 'Fiɖa'. 'Memleɖa' }).
+	locale months: (OrderedCollection withAll: { 'Dzove'. 'Dzodze'. 'Tedoxe'. 'Afɔfĩe'. 'Dama'. 'Masa'. 'Siamlɔm'. 'Deasiamime'. 'Anyɔnyɔ'. 'Kele'. 'Adeɛmekpɔxe'. 'Dzome' }).
+	locale weekdays: (OrderedCollection withAll: { 'Kɔsiɖa'. 'Dzoɖa'. 'Blaɖa'. 'Kuɖa'. 'Yawoɖa'. 'Fiɖa'. 'Memleɖa' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
 	locale datePatternWithYear: '{day} {month} {year}'.
 	locale today: 'egbe'.
-	locale tomorrow: 'etsɔ'.
-	locale yesterday: 'etso'.
-	locale dayAfterTomorrow: 'etsɔ megbe'.
-	locale dayBeforeYesterday: 'etso nyitsɔ'.
+	locale tomorrow: 'etsɔ si gbɔna'.
+	locale yesterday: 'etsɔ si va yi'.
+	locale dayAfterTomorrow: 'nyitsɔ si gbɔna'.
+	locale dayBeforeYesterday: 'nyitsɔ si va yi'.
 	locale thisWeekday: '{weekday} sia'.
 	locale nextWeekday: '{weekday} si gbɔna'.
 	locale lastWeekday: '{weekday} si va yi'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { 'Dzv'. 'Dzd'. 'Ted'. 'Afɔ'. 'Dam'. 'Mas'. 'Sia'. 'Das'. 'Any'. 'Kel'. 'Ade'. 'Dzm' }).
-		#weekdays. (OrderedCollection withAll: { 'Kɔs'. 'Dzo'. 'Bra'. 'Kuɖ'. 'Yaw'. 'Fiɖ'. 'Mem' }).
+		#months. (OrderedCollection withAll: { 'Dzv'. 'Dzd'. 'Ted'. 'Afɔ'. 'Dam'. 'Mas'. 'Sia'. 'Dea'. 'Any'. 'Kel'. 'Ade'. 'Dzm' }).
+		#weekdays. (OrderedCollection withAll: { 'Kɔs'. 'Dzo'. 'Bla'. 'Kuɖ'. 'Yaw'. 'Fiɖ'. 'Mem' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
 		#datePatternWithYear. '{day} {month} {year}'.

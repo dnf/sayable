@@ -14,9 +14,18 @@ open Types
 let locale : duration_locale =
   { code = "sn"
   ; plural = (fun n -> if n = 1 then One else Other)
-  ; second = Simple "{n} sekondi"
-  ; minute = Simple "{n} miniti"
-  ; hour = Simple "{n} awa"
+  ; second = Pluralized
+      [ (One, "sekondi {n}")
+      ; (Other, "masekondi {n}")
+      ]
+  ; minute = Pluralized
+      [ (One, "miniti {n}")
+      ; (Other, "maminitsi {n}")
+      ]
+  ; hour = Pluralized
+      [ (One, "awa {n}")
+      ; (Other, "maawa {n}")
+      ]
   ; day = Pluralized
       [ (One, "zuva {n}")
       ; (Other, "mazuva {n}")

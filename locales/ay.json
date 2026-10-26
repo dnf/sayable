@@ -4,10 +4,10 @@
   "pluralRule": "other_only",
   "age": {
     "units": {
-      "day": "uru {n}",
-      "week": "simana {n}",
-      "month": "phaxsi {n}",
-      "year": "mara {n}"
+      "day": "{n} uru",
+      "week": "{n} simana",
+      "month": "{n} phaxsi",
+      "year": "{n} mara"
     },
     "half": "{0} chika",
     "delimiter": ", ",
@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -106,13 +107,13 @@
   },
   "duration": {
     "units": {
-      "second": "sikundu {n}",
-      "minute": "minutu {n}",
-      "hour": "ura {n}",
-      "day": "uru {n}",
-      "week": "simana {n}",
-      "month": "phaxsi {n}",
-      "year": "mara {n}"
+      "second": "{n} sikundu",
+      "minute": "{n} minutu",
+      "hour": "{n} ura",
+      "day": "{n} uru",
+      "week": "{n} simana",
+      "month": "{n} phaxsi",
+      "year": "{n} mara"
     },
     "half": "{0} chika",
     "delimiter": ", ",
@@ -121,9 +122,9 @@
     "inFuture": "{0} jutirïn",
     "short": {
       "units": {
-        "second": "sik. {n}",
-        "minute": "min. {n}",
-        "hour": "ur. {n}",
+        "second": "{n} sik.",
+        "minute": "{n} min.",
+        "hour": "{n} ura",
         "day": "{n} ur.",
         "week": "{n} sim.",
         "month": "{n} phx.",
@@ -160,7 +161,8 @@
           "p"
         ],
         "format": "{h}:{mm}{ampm}"
-      }
+      },
+      "half": "{n}½"
     }
   },
   "time": {
@@ -175,25 +177,25 @@
         "suxta",
         "paqallqu",
         "kimsaqallqu",
-        "llantunka",
+        "llätunka",
         "tunka",
         "tunka mayani"
       ],
       "midnight": "aruma chika",
       "noon": "chika uru",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} ura",
+        "5": "{h} ura phisqa minutuni",
+        "10": "{h} ura tunka minutuni",
+        "15": "{h} ura tunka phisqani minutuni",
+        "20": "{h} ura pä tunka minutuni",
+        "25": "{h} ura pä tunka phisqani minutuni",
+        "30": "{h} ura chikani",
+        "35": "{h} ura kimsa tunka phisqani minutuni",
+        "40": "{h} ura pusi tunka minutuni",
+        "45": "{h} ura pusi tunka phisqani minutuni",
+        "50": "{h} ura phisqa tunka minutuni",
+        "55": "{h} ura phisqa tunka phisqani minutuni"
       }
     },
     "short": {
@@ -216,5 +218,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Aymara has no past/to system; used the additive '<hour> ura <minutes> minutuni' form (ura = hour, minutu = minute, -ni = 'with', mirroring 'tunka mayani'). :30 uses 'chikani' (chika = half). Minute numerals: phisqa, tunka, tunka phisqani, pä tunka, kimsa tunka, pusi tunka, phisqa tunka. Standard 12-hour count (no rotated hour list). The -ni compounding on 'minutu' is plausible but unverified by a native speaker. Specific doubts: (1) whether '-ni' attaches to 'minutu' in spoken time or speakers just juxtapose '{h} ura <n> minutu'; (2) whether 'chikani' or 'chika' is used for half past; (3) whether the hour phrase takes the declarative '-wa' ('kimsa urawa') even in isolation."
+    }
+  ]
 }

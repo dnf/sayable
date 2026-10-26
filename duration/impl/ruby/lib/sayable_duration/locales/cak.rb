@@ -53,6 +53,7 @@ module SayableDuration
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
         ago: '{0} k\'o chi',
         in_future: 'pa {0}',
       ),

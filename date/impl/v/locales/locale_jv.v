@@ -24,7 +24,7 @@ pub const locale_jv = DateLocale{
 	yesterday: 'wingi'
 	day_after_tomorrow: 'embèn'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'dhèk wingi'
+	day_before_yesterday: 'wingenané'
 	has_day_before_yesterday: true
 	this_weekday: '{weekday} iki'
 	has_this_weekday: true

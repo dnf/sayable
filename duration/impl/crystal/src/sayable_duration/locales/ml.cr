@@ -12,7 +12,7 @@ module SayableDuration
   module Locales
     ML = DurationLocale.new(
       code: "ml",
-      plural: ->(n : Int32) { (n == 0 || n == 1) ? PluralCategory::One : PluralCategory::Other },
+      plural: ->(n : Int32) { n == 1 ? PluralCategory::One : PluralCategory::Other },
       units: {
         "second" => UnitForms.new(one: "{n} സെക്കൻഡ്", other: "{n} സെക്കൻഡുകൾ"),
         "minute" => UnitForms.new(one: "{n} മിനിറ്റ്", other: "{n} മിനിറ്റുകൾ"),
@@ -22,7 +22,7 @@ module SayableDuration
         "month" => UnitForms.new(one: "{n} മാസം", other: "{n} മാസങ്ങൾ"),
         "year" => UnitForms.new(one: "{n} വർഷം", other: "{n} വർഷങ്ങൾ"),
       },
-      half: "{0} ര",
+      half: "{n}½",
       delimiter: ", ",
       just_now: "ഇപ്പോൾ",
       ago: "{0} മുമ്പ്",

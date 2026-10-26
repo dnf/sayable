@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ve.json](../../locales/ve.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Tshivenda ordinal hours ('awara ya u thoma', 'awara ya vhuvhili' …) with correct diacritics (vhuṋa, vhuṱanu, vhuṱahe, nthihi), 'na hafu', 'na kotara', other minutes additive with bare numerals ('na fumi', 'na mahumi mavhili na ṱhanu'). Rest of ve.json is written without diacritics, so spelling is now mixed. Doubts: whether speakers insert a minutes word (the locale's 'minidhi' looks unreliable so I left it out); exact ordinal for one o'clock.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | Musumbuluwo ino       | 17/3     |
 | Day before yesterday | mbamulovha            | 13/3     |
 | This Thursday (+5)   | Lavhuna ino           | 20/3     |
-| Last Monday (-4)     | Lavhuvhili yo fhiraho | 11/3     |
-| Next Wednesday (+12) | Lavhuna i daho        | 27/3     |
-| Same month (+20)     | 4 Lambamai            | 4/4      |
+| Last Tuesday (-4)    | Lavhuvhili yo fhiraho | 11/3     |
+| Next Thursday (+12)  | Lavhuna i daho        | 27/3     |
+| Same year (+20)      | 4 Lambamai            | 4/4      |
 | Different year       | 10 Phando 2026        | 10/1/26  |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal             | Short    | Compact |
-| --------------- | ------------------ | -------- | ------- |
-| Midnight        | vhukati ha vhusiku | 12:00 AM | 12:00a  |
-| 1:00 AM         | thihi:00           | 1:00 AM  | 1:00a   |
-| 5 past 9        | tahe:05            | 9:05 AM  | 9:05a   |
-| Quarter past 10 | fumi:15            | 10:15 AM | 10:15a  |
-| Half past 11    | fuminthihi:30      | 11:30 AM | 11:30a  |
-| Noon            | vhukati ha masiari | 12:00 PM | 12:00p  |
-| Quarter to 3    | mbili:45           | 2:45 PM  | 2:45p   |
-| 5 to 6          | thanu:55           | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | malo:00            | 8:00 PM  | 8:00p   |
-| 10:30 PM        | fumi:30            | 10:30 PM | 10:30p  |
-| 11:58 PM        | vhukati ha vhusiku | 11:58 PM | 11:58p  |
+| Time            | Normal                                     | Short    | Compact |
+| --------------- | ------------------------------------------ | -------- | ------- |
+| Midnight        | vhukati ha vhusiku                         | 12:00 AM | 12:00a  |
+| 1:00 AM         | awara ya u thoma                           | 1:00 AM  | 1:00a   |
+| 5 past 9        | awara ya vhuṱahe na ṱhanu                  | 9:05 AM  | 9:05a   |
+| Quarter past 10 | awara ya fumi na kotara                    | 10:15 AM | 10:15a  |
+| Half past 11    | awara ya fumi na nthihi na hafu            | 11:30 AM | 11:30a  |
+| Noon            | vhukati ha masiari                         | 12:00 PM | 12:00p  |
+| Quarter to 3    | awara ya vhuvhili na mahumi maṋa na ṱhanu  | 2:45 PM  | 2:45p   |
+| 5 to 6          | awara ya vhuṱanu na mahumi maṱanu na ṱhanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | awara ya vhumalo                           | 8:00 PM  | 8:00p   |
+| 10:30 PM        | awara ya fumi na hafu                      | 10:30 PM | 10:30p  |
+| 11:58 PM        | vhukati ha vhusiku                         | 11:58 PM | 11:58p  |

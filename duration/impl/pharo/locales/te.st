@@ -18,15 +18,15 @@ te
 	locale code: 'te'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} సెకను'.
-		'minute'. '{n} నిమిషం'.
-		'hour'. '{n} గంట'.
+		'second'. (Dictionary newFromPairs: { #one. '{n} సెకను'. #other. '{n} సెకన్లు' }).
+		'minute'. (Dictionary newFromPairs: { #one. '{n} నిమిషం'. #other. '{n} నిమిషాలు' }).
+		'hour'. (Dictionary newFromPairs: { #one. '{n} గంట'. #other. '{n} గంటలు' }).
 		'day'. (Dictionary newFromPairs: { #one. '{n} రోజు'. #other. '{n} రోజులు' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} వారం'. #other. '{n} వారాలు' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} నెల'. #other. '{n} నెలలు' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} సంవత్సరం'. #other. '{n} సంవత్సరాలు' }).
 	}).
-	locale half: '{0}న్నర'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'ఇప్పుడే'.
 	locale ago: '{0} క్రితం'.

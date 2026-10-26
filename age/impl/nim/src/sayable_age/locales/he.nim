@@ -22,9 +22,9 @@ let HE* = AgeLocale(
   code: "he",
   plural: plural,
   units: {
-    "day": pluralUnit(@[(pcOne, "יום {n}"), (pcTwo, "יומיים"), (pcOther, "{n} ימים")]),
-    "week": pluralUnit(@[(pcOne, "שבוע {n}"), (pcTwo, "שבועיים"), (pcOther, "{n} שבועות")]),
-    "month": pluralUnit(@[(pcOne, "חודש {n}"), (pcTwo, "חודשיים"), (pcOther, "{n} חודשים")]),
+    "day": pluralUnit(@[(pcOne, "יום"), (pcTwo, "יומיים"), (pcOther, "{n} ימים")]),
+    "week": pluralUnit(@[(pcOne, "שבוע"), (pcTwo, "שבועיים"), (pcOther, "{n} שבועות")]),
+    "month": pluralUnit(@[(pcOne, "חודש"), (pcTwo, "חודשיים"), (pcOther, "{n} חודשים")]),
     "year": pluralUnit(@[(pcOne, "שנה"), (pcTwo, "שנתיים"), (pcOther, "{n} שנים")]),
   }.toOrderedTable,
   half: "{0} וחצי",
@@ -32,8 +32,8 @@ let HE* = AgeLocale(
   justBorn: "רק נולד",
   stages: {
     "newborn": stageGendered("רק נולד", "רק נולדה"),
-    "infant": stageNeutral("תינוק"),
-    "toddler": stageNeutral("פעוט"),
+    "infant": stageGendered("תינוק", "תינוקת"),
+    "toddler": stageGendered("פעוט", "פעוטה"),
     "child": stageGendered("ילד", "ילדה"),
     "teenager": stageGendered("נער", "נערה"),
     "adult": stageGendered("מבוגר", "מבוגרת"),

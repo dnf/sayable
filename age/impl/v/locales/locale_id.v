@@ -23,7 +23,7 @@ pub const locale_id = AgeLocale{
 	week: simple_unit('{n} minggu')
 	month: simple_unit('{n} bulan')
 	year: simple_unit('{n} tahun')
-	half: '{0} setengah'
+	half: '{n} setengah'
 	delimiter: ', '
 	just_born: 'Baru lahir'
 	newborn: stage_neutral('Baru lahir')

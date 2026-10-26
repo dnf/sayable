@@ -186,18 +186,18 @@
       "midnight": "ɖoo hɛkʊ",
       "noon": "wɩsɩ taa",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "ñɩɣyʊʊ {h}",
+        "5": "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ",
+        "10": "ñɩɣyʊʊ {h} nɛ miniti hiu",
+        "15": "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ",
+        "20": "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ",
+        "25": "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ",
+        "30": "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ",
+        "35": "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ",
+        "40": "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza",
+        "45": "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ",
+        "50": "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa",
+        "55": "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Best effort per orchestrator instruction: 'ñɩɣyʊʊ {h}' (ñɩɣyʊʊ = hour, numeral follows noun) + additive 'nɛ miniti N' (nɛ = and, miniti = minute loan), 'nɛ hɔɔlʊʊ' (half) at 30. Doubts: (1) tens numerals nɩɩlɛ 20 / niidozo 30 / nɩɩnaza 40 / nɩɩnʊwa 50 are from memory and 50 in particular is unverified; (2) whether Kabiye speakers say clock time with ñɩɣyʊʊ + bare numeral or a different idiom (many would say it in French); (3) existing hour names 'naanaza' (4; standard 'naanza') and 'lɛɛtɛ' (8; standard 'lutozo') look doubtful but were left as is. Needs a Kabiye speaker."
+    }
+  ]
 }

@@ -14,13 +14,13 @@
 (def locale
   {:code "ee"
    :plural (fn [n] (if (== n 1) :one :other))
-   :day {:type :pluralized :forms {:one "ŋkeke {n}" :other "ŋkekewo {n}"}}
-   :week {:type :pluralized :forms {:one "kɔsiɖa {n}" :other "kɔsiɖawo {n}"}}
-   :month {:type :pluralized :forms {:one "ɣleti {n}" :other "ɣletiwo {n}"}}
-   :year {:type :pluralized :forms {:one "ƒe {n}" :other "ƒewo {n}"}}
+   :day {:type :simple :form "ŋkeke {n}"}
+   :week {:type :simple :form "kɔsiɖa {n}"}
+   :month {:type :simple :form "ɣleti {n}"}
+   :year {:type :simple :form "ƒe {n}"}
    :half "{0} kple afã"
    :delimiter ", "
    :just-born "Evi yeye"
-   :stages {:newborn {:type :neutral :label "Evi yeye"} :infant {:type :neutral :label "Ɖevi"} :toddler {:type :neutral :label "Ɖevi sue"} :child {:type :neutral :label "Ɖevi"} :teenager {:type :neutral :label "Ŋutsuviwo"} :adult {:type :neutral :label "Ame tsitsi"}}
-   :short {:day {:type :simple :form "ŋkekewo {n}"} :week {:type :pluralized :forms {:one "kɔsiɖa {n}" :other "kɔsiɖawo {n}"}} :month {:type :pluralized :forms {:one "ɣleti {n}" :other "ɣletiwo {n}"}} :year {:type :pluralized :forms {:one "ƒe {n}" :other "ƒewo {n}"}} :half nil :delimiter nil :just-born nil}
+   :stages {:newborn {:type :neutral :label "Evi yeye"} :infant {:type :neutral :label "Ɖevi"} :toddler {:type :neutral :label "Ɖevi sue"} :child {:type :neutral :label "Ɖevi"} :teenager {:type :gendered :m "Ɖekakpui" :f "Ɖetugbi"} :adult {:type :neutral :label "Ame tsitsi"}}
+   :short {:day {:type :simple :form "ŋkeke {n}"} :week {:type :simple :form "kɔsiɖa {n}"} :month {:type :simple :form "ɣleti {n}"} :year {:type :simple :form "ƒe {n}"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

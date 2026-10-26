@@ -20,7 +20,7 @@
     :hours (list "tan ni fila" "kelen" "fila" "saba" "naani" "duuru" "wɔɔrɔ" "wolonwula" "segin" "kɔnɔntɔn" "tan" "tan ni kelen")
     :midnight "dugutilama"
     :noon "tilgari"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "nɛgɛ kaɲɛ {h}") (cons 5 "nɛgɛ kaɲɛ {h} ni miniti duuru") (cons 10 "nɛgɛ kaɲɛ {h} ni miniti tan") (cons 15 "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru") (cons 20 "nɛgɛ kaɲɛ {h} ni miniti mugan") (cons 25 "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru") (cons 30 "nɛgɛ kaɲɛ {h} ni tilancɛ") (cons 35 "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru") (cons 40 "nɛgɛ kaɲɛ {h} ni miniti bi naani") (cons 45 "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru") (cons 50 "nɛgɛ kaɲɛ {h} ni miniti bi duuru") (cons 55 "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

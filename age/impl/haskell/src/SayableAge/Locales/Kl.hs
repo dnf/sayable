@@ -16,11 +16,23 @@ import SayableAge.Types
 locale :: Locale
 locale = Locale
     { localeCode = "kl"
-    , localePlural = \_ -> Other
-    , localeDay = Simple "ullut {n}"
-    , localeWeek = Simple "sapaatit {n}"
-    , localeMonth = Simple "qaammatit {n}"
-    , localeYear = Simple "ukiut {n}"
+    , localePlural = \n -> if n == 1 then One else Other
+    , localeDay = Pluralized
+      [ (One, "ulloq {n}")
+      , (Other, "ullut {n}")
+      ]
+    , localeWeek = Pluralized
+      [ (One, "sapaatip akunnera {n}")
+      , (Other, "sapaatip akunneri {n}")
+      ]
+    , localeMonth = Pluralized
+      [ (One, "qaammat {n}")
+      , (Other, "qaammatit {n}")
+      ]
+    , localeYear = Pluralized
+      [ (One, "ukioq {n}")
+      , (Other, "ukiut {n}")
+      ]
     , localeHalf = "{0} affaa"
     , localeDelimiter = ", "
     , localeJustBorn = "Inuuneq nutaaq"
@@ -35,7 +47,7 @@ locale = Locale
     , localeShort = Just $
         CompactnessOverride
             { ovrDay = Just (Simple "ull. {n}")
-            , ovrWeek = Just (Simple "sap. {n}")
+            , ovrWeek = Just (Simple "sap. ak. {n}")
             , ovrMonth = Just (Simple "qaam. {n}")
             , ovrYear = Just (Simple "uk. {n}")
             , ovrHalf = Nothing
@@ -48,7 +60,7 @@ locale = Locale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

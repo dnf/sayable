@@ -26,7 +26,7 @@ pub const locale_ceb = AgeLocale{
 	week: simple_unit('{n} ka semana')
 	month: simple_unit('{n} ka bulan')
 	year: simple_unit('{n} ka tuig')
-	half: '{n}½'
+	half: '{0} ug tunga'
 	delimiter: ', '
 	just_born: 'Bag-ong natawo'
 	newborn: stage_neutral('Bag-ong natawo')

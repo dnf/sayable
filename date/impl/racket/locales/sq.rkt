@@ -21,7 +21,7 @@
   (date-locale
    "sq"
    (list "janar" "shkurt" "mars" "prill" "maj" "qershor" "korrik" "gusht" "shtator" "tetor" "nëntor" "dhjetor")
-   (list "e diel" "e hënë" "e martë" "e mërkurë" "e enjte" "e premte" "e shtunë")
+   (list "të dielën" "të hënën" "të martën" "të mërkurën" "të enjten" "të premten" "të shtunën")
    "{n}"
    (hash)
    "{day} {month}"
@@ -31,8 +31,8 @@
    "dje"
    "pasnesër"
    "pardje"
-   "këtë {weekday}"
-   "{weekday} tjetër"
+   "{weekday}"
+   "{weekday} e ardhshme"
    "{weekday} e kaluar"
    #f
    (date-compactness-override (list "jan" "shk" "mar" "pri" "maj" "qer" "kor" "gush" "sht" "tet" "nën" "dhj") #f (list "Die" "Hën" "Mar" "Mër" "Enj" "Pre" "Sht") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)

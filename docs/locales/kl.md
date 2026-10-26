@@ -4,38 +4,46 @@
 
 [Edit source](../../locales/kl.json)
 
-Plural rule: `other_only` (categories: other)
+Plural rule: `one_other` (categories: one, other)
+
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [kl.json](../../locales/kl.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort within the schema. ':00' = 'nalunaaqutaq {h}' (clock {h}); past = '{h} qaangiullugu minutsit N' (N minutes having passed {h}); to = '{next_h} sioqqullugu minutsit N' (N minutes before {next_h}); half = '{h} affarlu' ({h} and a half). Minute numerals are native: tallimat 5, qulit 10, aqqaneq-tallimat 15, marlunnik qulillit 20, marlunnik qulillit tallimallu 25. Doubts: real speech inflects the hour ('marlunngorpoq', 'pingasunut') which the schema cannot express; Greenlanders usually say numbers above 12 in Danish, so the native 15/20/25 forms may sound archaic; 'affarlu' for half past may be read as Danish 'halv' (i.e. half to the NEXT hour) by some speakers. Needs a native check.
 
 ## Age
 
 ### Age formatting
 
-| Age               | Normal               | Short          | Compact        |
-| ----------------- | -------------------- | -------------- | -------------- |
-| Born today        | Inuuneq nutaaq       | Inuuneq nutaaq | Inuuneq nutaaq |
-| 1 day             | ullut 1              | ull. 1         | 1d             |
-| 3 days            | ullut 3              | ull. 3         | 3d             |
-| 6 days            | ullut 6              | ull. 6         | 6d             |
-| 1 week            | sapaatit 1           | sap. 1         | 1w             |
-| 1 week, 1 day     | sapaatit 1, ullut 1  | sap. 1, ull. 1 | 1w1d           |
-| 2 weeks           | sapaatit 2           | sap. 2         | 2w             |
-| 2 weeks, 3 days   | sapaatit 2, ullut 3  | sap. 2, ull. 3 | 2w3d           |
-| 3 months          | qaammatit 3          | qaam. 3        | 3m             |
-| 6 months          | qaammatit 6          | qaam. 6        | 6m             |
-| 11 months         | qaammatit 11         | qaam. 11       | 11m            |
-| 12 months         | qaammatit 12         | qaam. 12       | 12m            |
-| 23 months         | qaammatit 23         | qaam. 23       | 23m            |
-| 2 years           | ukiut 2              | uk. 2          | 2y             |
-| 2 years, 1 month  | ukiut 2, qaammatit 1 | uk. 2, qaam. 1 | 2y1m           |
-| 2 years, 6 months | ukiut 2, qaammatit 6 | uk. 2, qaam. 6 | 2y6m           |
-| 3 years           | ukiut 3              | uk. 3          | 3y             |
-| 3½ years          | ukiut 3 affaa        | uk. 3 affaa    | 3y affaa       |
-| 5 years           | ukiut 5              | uk. 5          | 5y             |
-| 5½ years          | ukiut 5 affaa        | uk. 5 affaa    | 5y affaa       |
-| 7 years           | ukiut 7              | uk. 7          | 7y             |
-| 10 years          | ukiut 10             | uk. 10         | 10y            |
-| 18 years          | ukiut 18             | uk. 18         | 18y            |
-| 45 years          | ukiut 45             | uk. 45         | 45y            |
+| Age               | Normal                       | Short              | Compact        |
+| ----------------- | ---------------------------- | ------------------ | -------------- |
+| Born today        | Inuuneq nutaaq               | Inuuneq nutaaq     | Inuuneq nutaaq |
+| 1 day             | ulloq 1                      | ull. 1             | 1d             |
+| 3 days            | ullut 3                      | ull. 3             | 3d             |
+| 6 days            | ullut 6                      | ull. 6             | 6d             |
+| 1 week            | sapaatip akunnera 1          | sap. ak. 1         | 1w             |
+| 1 week, 1 day     | sapaatip akunnera 1, ulloq 1 | sap. ak. 1, ull. 1 | 1w1d           |
+| 2 weeks           | sapaatip akunneri 2          | sap. ak. 2         | 2w             |
+| 2 weeks, 3 days   | sapaatip akunneri 2, ullut 3 | sap. ak. 2, ull. 3 | 2w3d           |
+| 3 months          | qaammatit 3                  | qaam. 3            | 3m             |
+| 6 months          | qaammatit 6                  | qaam. 6            | 6m             |
+| 11 months         | qaammatit 11                 | qaam. 11           | 11m            |
+| 12 months         | qaammatit 12                 | qaam. 12           | 12m            |
+| 23 months         | qaammatit 23                 | qaam. 23           | 23m            |
+| 2 years           | ukiut 2                      | uk. 2              | 2y             |
+| 2 years, 1 month  | ukiut 2, qaammat 1           | uk. 2, qaam. 1     | 2y1m           |
+| 2 years, 6 months | ukiut 2, qaammatit 6         | uk. 2, qaam. 6     | 2y6m           |
+| 3 years           | ukiut 3                      | uk. 3              | 3y             |
+| 3½ years          | ukiut 3 affaa                | uk. 3 affaa        | 3½y            |
+| 5 years           | ukiut 5                      | uk. 5              | 5y             |
+| 5½ years          | ukiut 5 affaa                | uk. 5 affaa        | 5½y            |
+| 7 years           | ukiut 7                      | uk. 7              | 7y             |
+| 10 years          | ukiut 10                     | uk. 10             | 10y            |
+| 18 years          | ukiut 18                     | uk. 18             | 18y            |
+| 45 years          | ukiut 45                     | uk. 45             | 45y            |
 
 ### Stages
 
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | aqaguagu                | 3-17      |
 | Day before yesterday | ippassaani              | 3-13      |
 | This Thursday (+5)   | sisamanngorneq manna    | 3-20      |
-| Last Monday (-4)     | marlunngorneq kingulleq | 3-11      |
-| Next Wednesday (+12) | sisamanngorneq tulleq   | 3-27      |
-| Same month (+20)     | apriilip 4.             | 4-4       |
-| Different year       | 10. januaarip 2026      | 2026-1-10 |
+| Last Tuesday (-4)    | marlunngorneq kingulleq | 3-11      |
+| Next Thursday (+12)  | sisamanngorneq tulleq   | 3-27      |
+| Same year (+20)      | apriilip 4.             | 4-4       |
+| Different year       | januaarip 10. 2026      | 2026-1-10 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                        | Short           | Compact  |
-| --------------------- | ----------------------------- | --------------- | -------- |
-| 0 seconds             | maanna                        | maanna          | maanna   |
-| 1 second              | sekundit 1                    | sek. 1          | 1s       |
-| 30 seconds            | sekundit 30                   | sek. 30         | 30s      |
-| 1 minute              | minutsit 1                    | min. 1          | 1m       |
-| 2 minutes, 15 seconds | minutsit 2, sekundit 15       | min. 2, sek. 15 | 2m15s    |
-| 5 minutes             | minutsit 5                    | min. 5          | 5m       |
-| 45 minutes            | minutsit 45                   | min. 45         | 45m      |
-| 1 hour                | nalunaaqutap akunnera 1       | nal. 1          | 1h       |
-| 1½ hours              | nalunaaqutap akunnera 1 affaa | nal. 1 affaa    | 1h affaa |
-| 3 hours               | nalunaaqutap akunnera 3       | nal. 3          | 3h       |
-| 6 hours               | nalunaaqutap akunnera 6       | nal. 6          | 6h       |
-| 1 day                 | ullut 1                       | ull. 1          | 1d       |
-| 1½ days               | ullut 1 affaa                 | ull. 1 affaa    | 1d affaa |
-| 3 days                | ullut 3                       | ull. 3          | 3d       |
-| 1 week                | sapaatit 1                    | sap. 1          | 1w       |
-| 2 weeks, 3 days       | sapaatit 2, ullut 3           | sap. 2, ull. 3  | 2w3d     |
-| 1 month               | qaammatit 1                   | qaam. 1         | 1mo      |
-| 6 months              | qaammatit 6                   | qaam. 6         | 6mo      |
-| 1 year                | ukiut 1                       | uk. 1           | 1y       |
-| 2 years, 3 months     | ukiut 2, qaammatit 3          | uk. 2, qaam. 3  | 2y3mo    |
+| Duration              | Normal                         | Short              | Compact |
+| --------------------- | ------------------------------ | ------------------ | ------- |
+| 0 seconds             | maanna                         | maanna             | maanna  |
+| 1 second              | sekundi 1                      | sek. 1             | 1s      |
+| 30 seconds            | sekundit 30                    | sek. 30            | 30s     |
+| 1 minute              | minutsi 1                      | min. 1             | 1m      |
+| 2 minutes, 15 seconds | minutsit 2, sekundit 15        | min. 2, sek. 15    | 2m15s   |
+| 5 minutes             | minutsit 5                     | min. 5             | 5m      |
+| 45 minutes            | minutsit 45                    | min. 45            | 45m     |
+| 1 hour                | nalunaaquttap akunnera 1       | nal. 1             | 1h      |
+| 1½ hours              | nalunaaquttap akunneri 1 affaa | nal. 1 affaa       | 1½h     |
+| 3 hours               | nalunaaquttap akunneri 3       | nal. 3             | 3h      |
+| 6 hours               | nalunaaquttap akunneri 6       | nal. 6             | 6h      |
+| 1 day                 | ulloq 1                        | ull. 1             | 1d      |
+| 1½ days               | ullut 1 affaa                  | ull. 1 affaa       | 1½d     |
+| 3 days                | ullut 3                        | ull. 3             | 3d      |
+| 1 week                | sapaatip akunnera 1            | sap. ak. 1         | 1w      |
+| 2 weeks, 3 days       | sapaatip akunneri 2, ullut 3   | sap. ak. 2, ull. 3 | 2w3d    |
+| 1 month               | qaammat 1                      | qaam. 1            | 1mo     |
+| 6 months              | qaammatit 6                    | qaam. 6            | 6mo     |
+| 1 year                | ukioq 1                        | uk. 1              | 1y      |
+| 2 years, 3 months     | ukiut 2, qaammatit 3           | uk. 2, qaam. 3     | 2y3mo   |
 
 ### Relative time
 
-| Offset        | Normal                                | Compact          |
-| ------------- | ------------------------------------- | ---------------- |
-| 5 minutes ago | minutsit 5 matuma siorna              | 5m matuma siorna |
-| 2 hours ago   | nalunaaqutap akunnera 2 matuma siorna | 2h matuma siorna |
-| in 30 minutes | minutsit 30 siunissami                | 30m siunissami   |
-| in 3 hours    | nalunaaqutap akunnera 3 siunissami    | 3h siunissami    |
+| Offset        | Normal                                 | Compact          |
+| ------------- | -------------------------------------- | ---------------- |
+| 5 minutes ago | minutsit 5 matuma siorna               | 5m matuma siorna |
+| 2 hours ago   | nalunaaquttap akunneri 2 matuma siorna | 2h matuma siorna |
+| in 30 minutes | minutsit 30 siunissami                 | 30m siunissami   |
+| in 3 hours    | nalunaaquttap akunneri 3 siunissami    | 3h siunissami    |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal              | Short | Compact |
-| --------------- | ------------------- | ----- | ------- |
-| Midnight        | unnuap qeqqa        | 0.00  | 0.00    |
-| 1:00 AM         | ataaseq:00          | 1.00  | 1.00    |
-| 5 past 9        | qulingiluat:05      | 9.05  | 9.05    |
-| Quarter past 10 | qulit:15            | 10.15 | 10.15   |
-| Half past 11    | akunneq ataaseq:30  | 11.30 | 11.30   |
-| Noon            | ulloqeqqap qeqqa    | 12.00 | 12.00   |
-| Quarter to 3    | marluk:45           | 14.45 | 14.45   |
-| 5 to 6          | tallimat:55         | 17.55 | 17.55   |
-| 8 o'clock PM    | arfineq-pingasut:00 | 20.00 | 20.00   |
-| 10:30 PM        | qulit:30            | 22.30 | 22.30   |
-| 11:58 PM        | unnuap qeqqa        | 23.58 | 23.58   |
+| Time            | Normal                                         | Short | Compact |
+| --------------- | ---------------------------------------------- | ----- | ------- |
+| Midnight        | unnuap qeqqa                                   | 0.00  | 0.00    |
+| 1:00 AM         | nalunaaqutaq ataaseq                           | 1.00  | 1.00    |
+| 5 past 9        | qulingiluat qaangiullugu minutsit tallimat     | 9.05  | 9.05    |
+| Quarter past 10 | qulit qaangiullugu minutsit aqqaneq-tallimat   | 10.15 | 10.15   |
+| Half past 11    | aqqaneq-ataaseq affarlu                        | 11.30 | 11.30   |
+| Noon            | ulloqeqqap qeqqa                               | 12.00 | 12.00   |
+| Quarter to 3    | pingasut sioqqullugu minutsit aqqaneq-tallimat | 14.45 | 14.45   |
+| 5 to 6          | arfinillit sioqqullugu minutsit tallimat       | 17.55 | 17.55   |
+| 8 o'clock PM    | nalunaaqutaq arfineq-pingasut                  | 20.00 | 20.00   |
+| 10:30 PM        | qulit affarlu                                  | 22.30 | 22.30   |
+| 11:58 PM        | unnuap qeqqa                                   | 23.58 | 23.58   |

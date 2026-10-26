@@ -19,25 +19,25 @@ sa_plural('kw', N, many) :- N =\= 1, Mod100 is N mod 100, member(Mod100, [1, 21,
 sa_plural('kw', _, other).
 
 sa_unit('kw', day, zero, '{n} dydh').
-sa_unit('kw', day, one, 'dydh').
+sa_unit('kw', day, one, '{n} dydh').
 sa_unit('kw', day, two, '{n} dhydh').
 sa_unit('kw', day, few, '{n} dydh').
 sa_unit('kw', day, many, '{n} dydh').
 sa_unit('kw', day, other, '{n} dydh').
 sa_unit('kw', week, zero, '{n} seythun').
-sa_unit('kw', week, one, 'seythun').
+sa_unit('kw', week, one, '{n} seythun').
 sa_unit('kw', week, two, '{n} seythun').
 sa_unit('kw', week, few, '{n} seythun').
 sa_unit('kw', week, many, '{n} seythun').
 sa_unit('kw', week, other, '{n} seythun').
 sa_unit('kw', month, zero, '{n} mis').
-sa_unit('kw', month, one, 'mis').
+sa_unit('kw', month, one, '{n} mis').
 sa_unit('kw', month, two, '{n} vis').
 sa_unit('kw', month, few, '{n} mis').
 sa_unit('kw', month, many, '{n} mis').
 sa_unit('kw', month, other, '{n} mis').
 sa_unit('kw', year, zero, '{n} blydhen').
-sa_unit('kw', year, one, 'blydhen').
+sa_unit('kw', year, one, '{n} blydhen').
 sa_unit('kw', year, two, '{n} vlydhen').
 sa_unit('kw', year, few, '{n} blydhen').
 sa_unit('kw', year, many, '{n} blydhen').

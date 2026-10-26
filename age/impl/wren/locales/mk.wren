@@ -39,7 +39,7 @@ class MKLocale {
       "toddler": "Мало дете",
       "child": "Дете",
       "teenager": "Тинејџер",
-      "adult": "Возрасен",
+      "adult": {"m": "Возрасен", "f": "Возрасна"},
     }
   }
   static short {

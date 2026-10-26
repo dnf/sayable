@@ -23,7 +23,7 @@ _sayableduration_locale_su() {
     _unit_year='{n} taun'
     _half='{0} satengah'
     _delimiter=', '
-    _just_now='ayeuna'
+    _just_now='nembé'
     _ago='{0} kapengker'
     _in_future='dina {0}'
     _short_unit_second='{n} dtk'

@@ -29,7 +29,7 @@
    ", "
    "Sơ sinh"
    (hash "newborn" (stage-label "Sơ sinh" #f #f)
-         "infant" (stage-label "Trẻ sơ sinh" #f #f)
+         "infant" (stage-label "Trẻ nhũ nhi" #f #f)
          "toddler" (stage-label "Trẻ mới biết đi" #f #f)
          "child" (stage-label "Trẻ em" #f #f)
          "teenager" (stage-label "Thiếu niên" #f #f)

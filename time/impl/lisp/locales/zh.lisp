@@ -17,10 +17,10 @@
   (make-time-locale
    :code "zh"
    :clock (make-clock-config
-    :hours (list "十二" "一" "二" "三" "四" "五" "六" "七" "八" "九" "十" "十一")
+    :hours (list "十二" "一" "两" "三" "四" "五" "六" "七" "八" "九" "十" "十一")
     :midnight "午夜"
     :noon "正午"
-    :patterns (list (cons 0 "{h}点整") (cons 5 "{h}点五分") (cons 10 "{h}点十分") (cons 15 "{h}点十五分") (cons 20 "{h}点二十分") (cons 25 "{h}点二十五分") (cons 30 "{h}点半") (cons 35 "{h}点三十五分") (cons 40 "{h}点四十分") (cons 45 "{h}点四十五分") (cons 50 "{h}点五十分") (cons 55 "{h}点五十五分")))
+    :patterns (list (cons 0 "{h}点整") (cons 5 "{h}点零五分") (cons 10 "{h}点十分") (cons 15 "{h}点十五分") (cons 20 "{h}点二十分") (cons 25 "{h}点二十五分") (cons 30 "{h}点半") (cons 35 "{h}点三十五分") (cons 40 "{h}点四十分") (cons 45 "{h}点四十五分") (cons 50 "{h}点五十分") (cons 55 "{h}点五十五分")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

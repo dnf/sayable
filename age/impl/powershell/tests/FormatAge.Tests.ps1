@@ -480,6 +480,47 @@ Describe 'Born-on-31st progression' {
 }
 
 # ================================================================
+# Default asOf (uses the current date)
+# There is no way to inject "today", so the dates are derived from the real
+# current date to keep the canonical outputs.
+# ================================================================
+Describe 'Default asOf' {
+    BeforeAll {
+        $script:today = [DateTime]::Today
+    }
+
+    # 15.1
+    It 'formats 5 years ago as 5 years' {
+        $dob = $script:today.AddYears(-5).ToString('yyyy-MM-dd')
+        Get-SayableAge -DateOfBirth $dob | Should -Be '5 years'
+    }
+
+    # 15.2
+    It 'formats 5 days ago as 5 days' {
+        $dob = $script:today.AddDays(-5).ToString('yyyy-MM-dd')
+        Get-SayableAge -DateOfBirth $dob | Should -Be '5 days'
+    }
+
+    # 23.1
+    It 'formatStage of today is Newborn' {
+        $dob = $script:today.ToString('yyyy-MM-dd')
+        Get-SayableAgeStage -DateOfBirth $dob | Should -Be 'Newborn'
+    }
+
+    # 23.2
+    It 'formatStage of 5 years ago is Child' {
+        $dob = $script:today.AddYears(-5).ToString('yyyy-MM-dd')
+        Get-SayableAgeStage -DateOfBirth $dob | Should -Be 'Child'
+    }
+
+    # 23.3
+    It 'formatStage of 45 years ago is Adult' {
+        $dob = $script:today.AddYears(-45).ToString('yyyy-MM-dd')
+        Get-SayableAgeStage -DateOfBirth $dob | Should -Be 'Adult'
+    }
+}
+
+# ================================================================
 # formatStage
 # ================================================================
 Describe 'formatStage - null / edge cases' {
@@ -763,7 +804,7 @@ Describe 'i18n - Spanish locale' {
         Format-SayableAge -Formatter $fmt -DateOfBirth '2023-06-15' -AsOf '2025-12-15' | Should -Be "2 a`u{00F1}os, 6 meses"
     }
     It '3 and half years' {
-        Format-SayableAge -Formatter $fmt -DateOfBirth '2022-06-15' -AsOf '2025-12-15' | Should -Be "3 y medio a`u{00F1}os"
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2022-06-15' -AsOf '2025-12-15' | Should -Be "3 a`u{00F1}os y medio"
     }
     It '3 years no half' {
         Format-SayableAge -Formatter $fmt -DateOfBirth '2022-06-15' -AsOf '2025-06-15' | Should -Be "3 a`u{00F1}os"
@@ -968,7 +1009,7 @@ Describe 'Locale-specific edge cases' {
     It '29.2 he one day' {
         $loc = Get-SayableAgeLocale -Code 'he'
         $fmt = New-SayableAgeFormatter -Locale $loc
-        Format-SayableAge -Formatter $fmt -DateOfBirth '2025-06-14' -AsOf '2025-06-15' | Should -Be 'יום 1'
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2025-06-14' -AsOf '2025-06-15' | Should -Be 'יום'
     }
     It '29.3 he three days' {
         $loc = Get-SayableAgeLocale -Code 'he'
@@ -998,7 +1039,7 @@ Describe 'Locale-specific edge cases' {
     It '29.8 he two years dual + one month' {
         $loc = Get-SayableAgeLocale -Code 'he'
         $fmt = New-SayableAgeFormatter -Locale $loc
-        Format-SayableAge -Formatter $fmt -DateOfBirth '2023-06-15' -AsOf '2025-07-15' | Should -Be 'שנתיים, חודש 1'
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2023-06-15' -AsOf '2025-07-15' | Should -Be 'שנתיים, חודש'
     }
     It '29.9 he half years' {
         $loc = Get-SayableAgeLocale -Code 'he'
@@ -1138,7 +1179,7 @@ Describe 'Locale-specific edge cases' {
     It '29.32 id half years' {
         $loc = Get-SayableAgeLocale -Code 'id'
         $fmt = New-SayableAgeFormatter -Locale $loc
-        Format-SayableAge -Formatter $fmt -DateOfBirth '2022-06-15' -AsOf '2025-12-15' | Should -Be '3 tahun setengah'
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2022-06-15' -AsOf '2025-12-15' | Should -Be '3 setengah tahun'
     }
     It '29.33 id seven years' {
         $loc = Get-SayableAgeLocale -Code 'id'
@@ -1259,7 +1300,7 @@ Describe 'Sections 31-33: weeks+days across month ends, half-year plurals, input
     # 32.3
     It '32.3 Tachelhit 6 is ''few''' {
         $fmt = New-SayableAgeFormatter -Locale (Get-SayableAgeLocale -Code 'shi')
-        Format-SayableAge -Formatter $fmt -DateOfBirth '2005-06-08' -AsOf '2012-06-07' | Should -BeExactly '6 iseggasen d uzgen'
+        Format-SayableAge -Formatter $fmt -DateOfBirth '2005-06-08' -AsOf '2012-06-07' | Should -BeExactly '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ'
     }
 
     # 33.1

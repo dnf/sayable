@@ -32,7 +32,7 @@
    ", "
    "sisan"
    "{0} tɛmɛnen"
-   "ka {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "sɛk. {n}") (hash "type" "simple" "form" "min. {n}") (hash "type" "simple" "form" "lɛr. {n}") (hash "type" "simple" "form" "don {n}") (hash "type" "simple" "form" "dɔgɔk. {n}") (hash "type" "simple" "form" "kalo {n}") (hash "type" "simple" "form" "san {n}") #f #f "{0} tɛmɛnen" "ka {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} tɛmɛnen" "ka {0}")
+   "{0} kɔnɔ"
+   (duration-compactness-override (hash "type" "simple" "form" "sɛk. {n}") (hash "type" "simple" "form" "min. {n}") (hash "type" "simple" "form" "lɛr. {n}") (hash "type" "simple" "form" "don {n}") (hash "type" "simple" "form" "dɔgɔk. {n}") (hash "type" "simple" "form" "kalo {n}") (hash "type" "simple" "form" "san {n}") #f #f "{0} tɛmɛnen" "{0} kɔnɔ")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} tɛmɛnen" "{0} kɔnɔ")
   ))

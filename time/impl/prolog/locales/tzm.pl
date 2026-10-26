@@ -11,22 +11,22 @@
 
 % Central Atlas Tamazight locale.
 
-st_hours('tzm', ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']).
-st_midnight('tzm', 'ⵏⵚ ⵏ ⵉⴹ').
-st_noon('tzm', 'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ').
+st_hours('tzm', ['tis snat d mrawt', 'tis yat', 'tis snat', 'tis kṛaṭṭ', 'tis kkuẕt', 'tis smmust', 'tis sḍist', 'tis sat', 'tis tamt', 'tis tẕat', 'tis mrawt', 'tis yat d mrawt']).
+st_midnight('tzm', 'nṣ n iḍ').
+st_noon('tzm', 'tizwarnin').
 
-st_pattern('tzm', 0, '{h}:00').
-st_pattern('tzm', 5, '{h}:05').
-st_pattern('tzm', 10, '{h}:10').
-st_pattern('tzm', 15, '{h}:15').
-st_pattern('tzm', 20, '{h}:20').
-st_pattern('tzm', 25, '{h}:25').
-st_pattern('tzm', 30, '{h}:30').
-st_pattern('tzm', 35, '{h}:35').
-st_pattern('tzm', 40, '{h}:40').
-st_pattern('tzm', 45, '{h}:45').
-st_pattern('tzm', 50, '{h}:50').
-st_pattern('tzm', 55, '{h}:55').
+st_pattern('tzm', 0, '{h}').
+st_pattern('tzm', 5, '{h} d smmus tusdiqin').
+st_pattern('tzm', 10, '{h} d mraw tusdiqin').
+st_pattern('tzm', 15, '{h} d rrbɛ').
+st_pattern('tzm', 20, '{h} d ɛcrin n tusdiqt').
+st_pattern('tzm', 25, '{h} d xmsa u ɛcrin n tusdiqt').
+st_pattern('tzm', 30, '{h} d uzgen').
+st_pattern('tzm', 35, '{h} d xmsa u tlatin n tusdiqt').
+st_pattern('tzm', 40, '{h} d ṛbɛin n tusdiqt').
+st_pattern('tzm', 45, '{h} d xmsa u ṛbɛin n tusdiqt').
+st_pattern('tzm', 50, '{h} d xmsin n tusdiqt').
+st_pattern('tzm', 55, '{h} d xmsa u xmsin n tusdiqt').
 
 short_st_use24h('tzm', true).
 short_st_format('tzm', '{h}:{mm}').

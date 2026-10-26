@@ -18,15 +18,15 @@ si
 	locale code: 'si'.
 	locale plural: [ :n | (n = 0 or: [ n = 1 ]) ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} තත්පරය'.
-		'minute'. '{n} මිනිත්තුව'.
-		'hour'. '{n} පැය'.
+		'second'. 'තත්පර {n}'.
+		'minute'. 'මිනිත්තු {n}'.
+		'hour'. 'පැය {n}'.
 		'day'. (Dictionary newFromPairs: { #one. 'දින {n}'. #other. 'දින {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'සති {n}'. #other. 'සති {n}' }).
 		'month'. (Dictionary newFromPairs: { #one. 'මාස {n}'. #other. 'මාස {n}' }).
 		'year'. (Dictionary newFromPairs: { #one. 'වසර {n}'. #other. 'වසර {n}' }).
 	}).
-	locale half: '{0}යි භාගයයි'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'දැන්'.
 	locale ago: '{0}ට පෙර'.

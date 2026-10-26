@@ -33,8 +33,8 @@ const SdDateLocale sd_locale_tg = {
     "пасфардо",
     "парирӯз",
     "ин {weekday}",
-    "{weekday}-и оянда",
-    "{weekday}-и гузашта",
+    "{weekday}и оянда",
+    "{weekday}и гузашта",
     (const char **)0,
     true, { sd_short_months_tg, (const char **)0, sd_short_weekdays_tg, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }

@@ -26,7 +26,7 @@ tpi
 		'month'. '{n} mun'.
 		'year'. '{n} yia'.
 	}).
-	locale half: '{n} na hap'.
+	locale half: '{0} na hap'.
 	locale delimiter: ', '.
 	locale justNow: 'nau tasol'.
 	locale ago: '{0} i go pinis'.
@@ -54,6 +54,7 @@ tpi
 			'month'. '{n}mo'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} i go pinis'.
 		#inFuture. 'long {0}'.

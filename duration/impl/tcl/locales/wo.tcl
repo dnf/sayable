@@ -16,46 +16,46 @@ proc plural_wo {n} {
 proc locale_duration_wo {} {
     set code {wo}
     set units [dict create \
-        second "saa-yépp {n}" \
-        minute "simili {n}" \
-        hour "waxtu {n}" \
-        day "bés {n}" \
-        week "ayubés {n}" \
-        month "weer {n}" \
-        year "at {n}" \
+        second "{n} saa" \
+        minute "{n} simili" \
+        hour "{n} waxtu" \
+        day "{n} fan" \
+        week "{n} ayubés" \
+        month "{n} weer" \
+        year "{n} at" \
     ]
     set half "{0} ak genn-wàll"
     set delimiter {, }
     set just_now {léegi}
     set ago "{0} ci ginaaw"
-    set in_future "ci {0}"
+    set in_future "fileek {0}"
     set short [dict create \
         units [dict create \
-            second "saa-y. {n}" \
-            minute "sim. {n}" \
-            hour "wax. {n}" \
-            day "bés {n}" \
-            week "ayub. {n}" \
-            month "weer {n}" \
-            year "at {n}" \
+            second "{n} saa" \
+            minute "{n} sim." \
+            hour "{n} wax." \
+            day "{n} fan" \
+            week "{n} ayub." \
+            month "{n} weer" \
+            year "{n} at" \
         ] \
         ago "{0} ci ginaaw" \
-        in_future "ci {0}" \
+        in_future "fileek {0}" \
     ]
     set compact [dict create \
         units [dict create \
-            second "saa {n}" \
-            minute "sim {n}" \
-            hour "wax {n}" \
-            day "bés {n}" \
-            week "ayub {n}" \
-            month "weer {n}" \
-            year "at {n}" \
+            second "{n} saa" \
+            minute "{n} sim" \
+            hour "{n} wax" \
+            day "{n} fan" \
+            week "{n} ayub" \
+            month "{n} weer" \
+            year "{n} at" \
         ] \
         half "{n}½" \
         delimiter {} \
         ago "{0} ci gin." \
-        in_future "ci {0}" \
+        in_future "fileek {0}" \
     ]
     return [dict create \
         code $code \

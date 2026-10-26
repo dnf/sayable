@@ -32,11 +32,11 @@
    ", "
    "Iɣ d illul"
    (hash "newborn" (stage-label "Iɣ d illul" #f #f)
-         "infant" (stage-label "Agellid" #f #f)
+         "infant" (stage-label "Llufan" #f #f)
          "toddler" (stage-label #f "Aḥenjir" "Taḥenjirt")
-         "child" (stage-label #f "Afrux" "Tafruxṭ")
+         "child" (stage-label #f "Afrux" "Tafruxt")
          "teenager" (stage-label #f "Aɛrim" "Taɛrimt")
          "adult" (stage-label #f "Argaz" "Tamṭṭuṭ"))
-   (compactness-override (hash "type" "simple" "form" "{n} d") (hash "type" "simple" "form" "{n} wk") (hash "type" "simple" "form" "{n} mo") (hash "type" "simple" "form" "{n} yr") #f #f #f)
+   (compactness-override (hash "type" "pluralized" "forms" (hash "one" "{n} ass" "other" "{n} ussan")) (hash "type" "pluralized" "forms" (hash "one" "{n} imalass" "other" "{n} imalassn")) (hash "type" "pluralized" "forms" (hash "one" "{n} ayyur" "other" "{n} ayyurn")) (hash "type" "pluralized" "forms" (hash "one" "{n} aseggas" "other" "{n} iseggasen")) #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

@@ -15,18 +15,18 @@ st_hours('mk', ['дванаесет', 'еден', 'два', 'три', 'чети�
 st_midnight('mk', 'полноќ').
 st_noon('mk', 'пладне').
 
-st_pattern('mk', 0, '{h} часа').
-st_pattern('mk', 5, 'пет po {h}').
-st_pattern('mk', 10, 'десет po {h}').
-st_pattern('mk', 15, 'петнаесет po {h}').
-st_pattern('mk', 20, 'дваесет po {h}').
-st_pattern('mk', 25, 'дваесет и пет po {h}').
-st_pattern('mk', 30, 'триесет po {h}').
-st_pattern('mk', 35, 'дваесет и пет do {next_h}').
-st_pattern('mk', 40, 'дваесет do {next_h}').
-st_pattern('mk', 45, 'петнаесет do {next_h}').
-st_pattern('mk', 50, 'десет do {next_h}').
-st_pattern('mk', 55, 'пет do {next_h}').
+st_pattern('mk', 0, '{h} часот').
+st_pattern('mk', 5, '{h} и пет').
+st_pattern('mk', 10, '{h} и десет').
+st_pattern('mk', 15, '{h} и петнаесет').
+st_pattern('mk', 20, '{h} и дваесет').
+st_pattern('mk', 25, '{h} и дваесет и пет').
+st_pattern('mk', 30, '{h} и пол').
+st_pattern('mk', 35, 'дваесет и пет до {next_h}').
+st_pattern('mk', 40, 'дваесет до {next_h}').
+st_pattern('mk', 45, 'петнаесет до {next_h}').
+st_pattern('mk', 50, 'десет до {next_h}').
+st_pattern('mk', 55, 'пет до {next_h}').
 
 short_st_use24h('mk', true).
 short_st_format('mk', '{h}:{mm}').

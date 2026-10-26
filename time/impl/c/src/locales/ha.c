@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ha = {
     "ha",
     {
-        { "sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "goma sha ɗaya" },
+        { "sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "sha ɗaya" },
         "tsakar dare",
         "tsakar rana",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ƙarfe {h}", "ƙarfe {h} da minti biyar", "ƙarfe {h} da minti goma", "ƙarfe {h} da kwata", "ƙarfe {h} da minti ashirin", "ƙarfe {h} da minti ashirin da biyar", "ƙarfe {h} da rabi", "ƙarfe {next_h} saura minti ashirin da biyar", "ƙarfe {next_h} saura minti ashirin", "ƙarfe {next_h} saura kwata", "ƙarfe {next_h} saura minti goma", "ƙarfe {next_h} saura minti biyar" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

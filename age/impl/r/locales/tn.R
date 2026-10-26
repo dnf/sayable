@@ -26,7 +26,7 @@ locale_tn <- list(
     infant = "Lesea",
     toddler = "Ngwana yo monnye",
     child = "Ngwana",
-    teenager = "Lekgarebe",
+    teenager = "Mosha",
     adult = "Motho yo mogolo"
   ),
   short = list(

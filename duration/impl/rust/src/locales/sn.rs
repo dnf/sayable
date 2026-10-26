@@ -23,9 +23,18 @@ pub fn locale() -> DurationLocale {
             }
         },
         units: Units {
-            second: UnitForms::simple("{n} sekondi"),
-            minute: UnitForms::simple("{n} miniti"),
-            hour: UnitForms::simple("{n} awa"),
+            second: UnitForms::plural(&[
+                (PluralCategory::One, "sekondi {n}"),
+                (PluralCategory::Other, "masekondi {n}"),
+            ]),
+            minute: UnitForms::plural(&[
+                (PluralCategory::One, "miniti {n}"),
+                (PluralCategory::Other, "maminitsi {n}"),
+            ]),
+            hour: UnitForms::plural(&[
+                (PluralCategory::One, "awa {n}"),
+                (PluralCategory::Other, "maawa {n}"),
+            ]),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "zuva {n}"),
                 (PluralCategory::Other, "mazuva {n}"),

@@ -48,7 +48,7 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::Other, "{n} ವರ್ಷಗಳು"),
             ]),
         },
-        half: "{0}ವರೆ".to_string(),
+        half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_now: "ಈಗಷ್ಟೇ".to_string(),
         ago: "{0} ಹಿಂದೆ".to_string(),

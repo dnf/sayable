@@ -32,7 +32,7 @@
          "infant" (stage-label "Vǐ" #f #f)
          "toddler" (stage-label "Vǐ" #f #f)
          "child" (stage-label "Vǐ" #f #f)
-         "teenager" (stage-label "Nyɔ̌nu" #f #f)
+         "teenager" (stage-label #f "Dɔnkpɛvu" "Ɖyɔ̌vǐ")
          "adult" (stage-label "Mɛ̌xo" #f #f))
    (compactness-override (hash "type" "simple" "form" "azǎn {n}") (hash "type" "simple" "form" "aklunɔ̌zán {n}") (hash "type" "simple" "form" "sun {n}") (hash "type" "simple" "form" "xwè {n}") #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)

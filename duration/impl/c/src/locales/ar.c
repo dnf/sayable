@@ -25,9 +25,9 @@ const SduDurationLocale sdu_locale_ar = {
     "ar",
     plural_ar,
     {
-        { NULL, { "{n} ثانية", "ثانية واحدة", "ثانيتان", "{n} ثوانٍ", "{n} ثانية", "{n} ثانية" } },
-        { NULL, { "{n} دقيقة", "دقيقة واحدة", "دقيقتان", "{n} دقائق", "{n} دقيقة", "{n} دقيقة" } },
-        { NULL, { "{n} ساعة", "ساعة واحدة", "ساعتان", "{n} ساعات", "{n} ساعة", "{n} ساعة" } },
+        { NULL, { "{n} ثانية", "ثانية", "ثانيتان", "{n} ثوانٍ", "{n} ثانية", "{n} ثانية" } },
+        { NULL, { "{n} دقيقة", "دقيقة", "دقيقتان", "{n} دقائق", "{n} دقيقة", "{n} دقيقة" } },
+        { NULL, { "{n} ساعة", "ساعة", "ساعتان", "{n} ساعات", "{n} ساعة", "{n} ساعة" } },
         { NULL, { "{n} يوم", "يوم", "يومان", "{n} أيام", "{n} يومًا", "{n} يوم" } },
         { NULL, { "{n} أسبوع", "أسبوع", "أسبوعان", "{n} أسابيع", "{n} أسبوعًا", "{n} أسبوع" } },
         { NULL, { "{n} شهر", "شهر", "شهران", "{n} أشهر", "{n} شهرًا", "{n} شهر" } },
@@ -37,5 +37,5 @@ const SduDurationLocale sdu_locale_ar = {
     "الآن",
     "منذ {0}", "بعد {0}",
     true, { true, { "{n} ث", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} د", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} س", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { "{n} يوم", "يوم", "يومان", "{n} أيام", "{n} يومًا", "{n} يوم" } }, true, { NULL, { "{n} أسبوع", "أسبوع", "أسبوعان", "{n} أسابيع", "{n} أسبوعًا", "{n} أسبوع" } }, true, { NULL, { "{n} شهر", "شهر", "شهران", "{n} أشهر", "{n} شهرًا", "{n} شهر" } }, true, { NULL, { "{n} سنة", "سنة واحدة", "سنتان", "{n} سنوات", "{n} سنة", "{n} سنة" } }, false, NULL, false, NULL, true, "منذ {0}", true, "بعد {0}" },
-    true, { true, { "{n} ث", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} د", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} س", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ي", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} أ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { "{n} شهر", "شهر", "شهران", "{n} أشهر", "{n} شهرًا", "{n} شهر" } }, true, { "{n} سنة", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "منذ {0}", true, "بعد {0}" }
+    true, { true, { "{n} ث", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} د", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} س", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ي", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} أ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} شهر", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} سنة", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "منذ {0}", true, "بعد {0}" }
 };

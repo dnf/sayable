@@ -10,22 +10,22 @@
 # Source: locales/mos.json
 
 function locale_mos {
-    $hours = @('piig la a yiibu', 'a yembre', 'a yiibu', 'a tãabo', 'a naase', 'a nu', 'a yoobe', 'a yopoe', 'a niini', 'a wae', 'piiga', 'piig la a yembre')
+    $hours = @('lɛɛr piig la a yiibu', 'lɛɛr a yembre', 'lɛɛr a yiibu', 'lɛɛr a tãabo', 'lɛɛr a naase', 'lɛɛr a nu', 'lɛɛr a yoobe', 'lɛɛr a yopoe', 'lɛɛr a nii', 'lɛɛr a wae', 'lɛɛr piiga', 'lɛɛr piig la a yembre')
     $midnight = 'yʋng-vɩɩse'
     $noon = 'wĩntoog zabre'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} la minit a nu'
+    $patterns[10] = '{h} la minit piiga'
+    $patterns[15] = '{h} la minit piig la a nu'
+    $patterns[20] = '{h} la minit pisi'
+    $patterns[25] = '{h} la minit pisi la a nu'
+    $patterns[30] = '{h} la pʋɩ-sʋka'
+    $patterns[35] = '{h} la minit pis-tã la a nu'
+    $patterns[40] = '{h} la minit pis-naase'
+    $patterns[45] = '{h} la minit pis-naase la a nu'
+    $patterns[50] = '{h} la minit pis-nu'
+    $patterns[55] = '{h} la minit pis-nu la a nu'
     $clock = @{
         hours = $hours
         midnight = $midnight

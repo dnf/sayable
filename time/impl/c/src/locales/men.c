@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_men = {
     "men",
     {
-        { "pu wɛlɛ", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila" },
+        { "pu mahu fele", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila" },
         "kpindi gbɔyɔŋ",
         "ndɔlei-ma",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "awa {h}", "awa {h} kɛ miniti lɔɔlu", "awa {h} kɛ miniti pu", "awa {h} kɛ miniti pu mahu lɔɔlu", "awa {h} kɛ miniti nuu yila gboyongo", "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu", "awa {h} kɛ miniti nuu yila gboyongo mahu pu", "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu", "awa {h} kɛ miniti nuu fele gboyongo", "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu", "awa {h} kɛ miniti nuu fele gboyongo mahu pu", "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -16,10 +16,10 @@ proc plural_ay {n} {
 proc locale_ay {} {
     set code {ay}
     set units [dict create \
-        day "uru {n}" \
-        week "simana {n}" \
-        month "phaxsi {n}" \
-        year "mara {n}" \
+        day "{n} uru" \
+        week "{n} simana" \
+        month "{n} phaxsi" \
+        year "{n} mara" \
     ]
     set half "{0} chika"
     set delimiter {, }
@@ -47,6 +47,7 @@ proc locale_ay {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

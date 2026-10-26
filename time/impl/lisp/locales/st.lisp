@@ -17,10 +17,10 @@
   (make-time-locale
    :code "st"
    :clock (make-clock-config
-    :hours (list "leshome le metso e mmedi" "e nngwe" "tse pedi" "tse tharo" "tse nne" "tse hlano" "tse tshelela" "tse supileng" "tse robedi" "tse robong" "leshome" "leshome le motso o le mong")
+    :hours (list "leshome le metso e mmedi" "pele" "bobedi" "boraro" "bone" "bohlano" "botshelela" "bosupa" "borobedi" "borobong" "leshome" "leshome le motso o le mong")
     :midnight "hara bosiu"
     :noon "motsheare"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "hora ya {h}") (cons 5 "hora ya {h} le metsotso e mehlano") (cons 10 "hora ya {h} le metsotso e leshome") (cons 15 "hora ya {h} le kotara") (cons 20 "hora ya {h} le metsotso e mashome a mabedi") (cons 25 "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano") (cons 30 "hora ya {h} le halofo") (cons 35 "hora ya {h} le metsotso e mashome a mararo a metso e mehlano") (cons 40 "hora ya {h} le metsotso e mashome a mane") (cons 45 "hora ya {h} le metsotso e mashome a mane a metso e mehlano") (cons 50 "hora ya {h} le metsotso e mashome a mahlano") (cons 55 "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -24,7 +24,7 @@ module SayableDuration
         'month' => '{n} моҳ',
         'year' => '{n} сол',
       },
-      half: '{0} ним',
+      half: '{0}у ним',
       delimiter: ', ',
       just_now: 'ҳамин ҳоло',
       ago: '{0} пеш',

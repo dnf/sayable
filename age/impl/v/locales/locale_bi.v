@@ -23,7 +23,7 @@ pub const locale_bi = AgeLocale{
 	week: simple_unit('{n} wik')
 	month: simple_unit('{n} manis')
 	year: simple_unit('{n} yia')
-	half: '{n} mo haf'
+	half: '{0} mo haf'
 	delimiter: ', '
 	just_born: 'Niufala bebe'
 	newborn: stage_neutral('Niufala bebe')
@@ -53,6 +53,8 @@ pub const locale_bi = AgeLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 	}

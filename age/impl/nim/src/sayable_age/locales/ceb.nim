@@ -22,7 +22,7 @@ let CEB* = AgeLocale(
     "month": simpleUnit("{n} ka bulan"),
     "year": simpleUnit("{n} ka tuig"),
   }.toOrderedTable,
-  half: "{n}½",
+  half: "{0} ug tunga",
   delimiter: ", ",
   justBorn: "Bag-ong natawo",
   stages: {

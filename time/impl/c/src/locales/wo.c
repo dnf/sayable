@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_wo = {
     "wo",
     {
-        { "fukki ñaar", "benn", "ñaar", "ñett", "ñeent", "juróom", "juróom-benn", "juróom-ñaar", "juróom-ñett", "juróom-ñeent", "fukk", "fukki benn" },
-        "bu guddi",
-        "ci àttaya",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "fukk ak ñaari waxtu", "benn waxtu", "ñaari waxtu", "ñetti waxtu", "ñeenti waxtu", "juróomi waxtu", "juróom-benni waxtu", "juróom-ñaari waxtu", "juróom-ñetti waxtu", "juróom-ñeenti waxtu", "fukki waxtu", "fukk ak benn waxtu" },
+        "digg-guddi",
+        "digg-bëccëg",
+        { "{h}", "{h} ak juróomi simili", "{h} ak fukki simili", "{h} ak fukk ak juróomi simili", "{h} ak ñaar-fukki simili", "{h} ak ñaar-fukk ak juróomi simili", "{h} ak genn-wàll", "{next_h} des na ñaar-fukk ak juróomi simili", "{next_h} des na ñaar-fukki simili", "{next_h} des na fukk ak juróomi simili", "{next_h} des na fukki simili", "{next_h} des na juróomi simili" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

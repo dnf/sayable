@@ -25,7 +25,7 @@ sd_half('mnk', '{0} ning tilinkiliŋo').
 sd_delimiter('mnk', ', ').
 sd_just_now('mnk', 'sisan').
 sd_ago('mnk', '{0} taata').
-sd_in_future('mnk', 'ka {0}').
+sd_in_future('mnk', '{0} kɔnɔ').
 
 short_sd_unit('mnk', second, _, 'sɛk. {n}').
 short_sd_unit('mnk', minute, _, 'min. {n}').
@@ -35,7 +35,7 @@ short_sd_unit('mnk', week, _, 'lɔkɔ {n}').
 short_sd_unit('mnk', month, _, 'kalo {n}').
 short_sd_unit('mnk', year, _, 'sanj. {n}').
 short_sd_ago('mnk', '{0} taata').
-short_sd_in_future('mnk', 'ka {0}').
+short_sd_in_future('mnk', '{0} kɔnɔ').
 
 compact_sd_unit('mnk', second, _, 'sɛk {n}').
 compact_sd_unit('mnk', minute, _, 'min {n}').
@@ -47,4 +47,4 @@ compact_sd_unit('mnk', year, _, 'sanj {n}').
 compact_sd_half('mnk', '{n}½').
 compact_sd_delimiter('mnk', '').
 compact_sd_ago('mnk', '{0} taata').
-compact_sd_in_future('mnk', 'ka {0}').
+compact_sd_in_future('mnk', '{0} kɔnɔ').

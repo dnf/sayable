@@ -20,7 +20,7 @@
     :hours (list "on iki" "bir" "iki" "üç" "dörd" "beş" "altı" "yeddi" "səkkiz" "doqquz" "on" "on bir")
     :midnight "gecə yarısı"
     :noon "günorta"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "beş keçir {h}") (cons 10 "on keçir {h}") (cons 15 "on beş keçir {h}") (cons 20 "iyirmi keçir {h}") (cons 25 "iyirmi beş keçir {h}") (cons 30 "otuz keçir {h}") (cons 35 "iyirmi beş qalmış {next_h}") (cons 40 "iyirmi qalmış {next_h}") (cons 45 "on beş qalmış {next_h}") (cons 50 "on qalmış {next_h}") (cons 55 "beş qalmış {next_h}")))
+    :patterns (list (cons 0 "saat {h}") (cons 5 "{h} sıfır beş") (cons 10 "{h} on") (cons 15 "{h} on beş") (cons 20 "{h} iyirmi") (cons 25 "{h} iyirmi beş") (cons 30 "{h} otuz") (cons 35 "{h} otuz beş") (cons 40 "{h} qırx") (cons 45 "{h} qırx beş") (cons 50 "{h} əlli") (cons 55 "{h} əlli beş")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

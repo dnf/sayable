@@ -195,7 +195,7 @@ test-suite sayable-age-test
   type:           exitcode-stdio-1.0
   main-is:        Main.hs
   hs-source-dirs: test
-  build-depends:  base >= 4.16 && < 5, sayable-age, hspec >= 2.0
+  build-depends:  base >= 4.16 && < 5, sayable-age, hspec >= 2.0, time
   default-language: Haskell2010
   ghc-options: -Wall -Werror
 """

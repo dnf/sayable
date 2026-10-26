@@ -13,10 +13,10 @@
 
 sd_months('lt', ['sausis', 'vasaris', 'kovas', 'balandis', 'gegužė', 'birželis', 'liepa', 'rugpjūtis', 'rugsėjis', 'spalis', 'lapkritis', 'gruodis']).
 sd_weekdays('lt', ['sekmadienis', 'pirmadienis', 'antradienis', 'trečiadienis', 'ketvirtadienis', 'penktadienis', 'šeštadienis']).
-sd_day_format('lt', '{n}.').
+sd_day_format('lt', '{n} d.').
 
-sd_date_pattern('lt', '{day} {month}').
-sd_date_pattern_with_year('lt', '{day} {month} {year}').
+sd_date_pattern('lt', '{month} {day}').
+sd_date_pattern_with_year('lt', '{year} m. {month} {day}').
 
 sd_today('lt', 'šiandien').
 sd_tomorrow('lt', 'rytoj').
@@ -30,10 +30,10 @@ sd_months_in_date('lt', ['sausio', 'vasario', 'kovo', 'balandžio', 'gegužės',
 
 short_sd_months('lt', ['saus', 'vas', 'kov', 'bal', 'geg', 'birž', 'liep', 'rugp', 'rugs', 'spal', 'lapkr', 'gruod']).
 short_sd_weekdays('lt', ['sk', 'pr', 'an', 'tr', 'kt', 'pn', 'št']).
-short_sd_day_format('lt', '{n}.').
+short_sd_day_format('lt', '{n} d.').
 short_sd_clear_exceptions('lt').
-short_sd_date_pattern('lt', '{day} {month}').
-short_sd_date_pattern_with_year('lt', '{day} {month} {year}').
+short_sd_date_pattern('lt', '{month} {day}').
+short_sd_date_pattern_with_year('lt', '{year} m. {month} {day}').
 
 compact_sd_date_pattern('lt', '{m}-{d}').
 compact_sd_date_pattern_with_year('lt', '{yy}-{m}-{d}').

@@ -24,7 +24,7 @@
     (list "kab'lajuj" "jun" "ka'i'" "oxi'" "kaji'" "wo'o'" "waqi'" "wuqu'" "waqxaqi'" "b'eleje'" "lajuj" "julajuj")
     "nik'aj aq'a'"
     "nik'aj q'ij"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (hash 0 "{h} ramaj" 5 "{h} ramaj rik'in wo'o'" 10 "{h} ramaj rik'in lajuj" 15 "{h} ramaj rik'in wolajuj" 20 "{h} ramaj rik'in juk'al" 25 "{h} ramaj rik'in juk'al wo'o'" 30 "{h} ramaj rik'in nik'aj" 35 "{h} ramaj rik'in juk'al wolajuj" 40 "{h} ramaj rik'in kak'al" 45 "{h} ramaj rik'in kak'al wo'o'" 50 "{h} ramaj rik'in kak'al lajuj" 55 "{h} ramaj rik'in kak'al wolajuj"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

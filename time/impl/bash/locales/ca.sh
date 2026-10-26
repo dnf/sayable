@@ -10,21 +10,21 @@
 # Source: locales/ca.json
 
 _sayabletime_locale_ca() {
-    _clock_hours=('dotze' 'una' 'dues' 'tres' 'quatre' 'cinc' 'sis' 'set' 'vuit' 'nou' 'deu' 'onze')
+    _clock_hours=('les dotze' 'la una' 'les dues' 'les tres' 'les quatre' 'les cinc' 'les sis' 'les set' 'les vuit' 'les nou' 'les deu' 'les onze')
     _clock_midnight='mitjanit'
     _clock_noon='migdia'
-    _clock_pattern_0='{h} o'\''clock'
-    _clock_pattern_5='cinc past {h}'
-    _clock_pattern_10='deu past {h}'
-    _clock_pattern_15='un quart past {h}'
-    _clock_pattern_20='vint past {h}'
-    _clock_pattern_25='vint-i-cinc past {h}'
-    _clock_pattern_30='mitja past {h}'
-    _clock_pattern_35='vint-i-cinc to {next_h}'
-    _clock_pattern_40='vint to {next_h}'
-    _clock_pattern_45='un quart to {next_h}'
-    _clock_pattern_50='deu to {next_h}'
-    _clock_pattern_55='cinc to {next_h}'
+    _clock_pattern_0='{h} en punt'
+    _clock_pattern_5='{h} i cinc'
+    _clock_pattern_10='{h} i deu'
+    _clock_pattern_15='{h} i quart'
+    _clock_pattern_20='{h} i vint'
+    _clock_pattern_25='{h} i vint-i-cinc'
+    _clock_pattern_30='{h} i mitja'
+    _clock_pattern_35='{next_h} menys vint-i-cinc'
+    _clock_pattern_40='{next_h} menys vint'
+    _clock_pattern_45='{next_h} menys quart'
+    _clock_pattern_50='{next_h} menys deu'
+    _clock_pattern_55='{next_h} menys cinc'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

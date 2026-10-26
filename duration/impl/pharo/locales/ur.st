@@ -20,7 +20,7 @@ ur
 	locale units: (Dictionary newFromPairs: {
 		'second'. '{n} سیکنڈ'.
 		'minute'. '{n} منٹ'.
-		'hour'. '{n} گھنٹہ'.
+		'hour'. (Dictionary newFromPairs: { #one. '{n} گھنٹہ'. #other. '{n} گھنٹے' }).
 		'day'. (Dictionary newFromPairs: { #one. '{n} دن'. #other. '{n} دن' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} ہفتہ'. #other. '{n} ہفتے' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} مہینہ'. #other. '{n} مہینے' }).

@@ -13,20 +13,20 @@
 
 st_hours('hi', ['बारह', 'एक', 'दो', 'तीन', 'चार', 'पाँच', 'छह', 'सात', 'आठ', 'नौ', 'दस', 'ग्यारह']).
 st_midnight('hi', 'आधी रात').
-st_noon('hi', 'दोपहर').
+st_noon('hi', 'दोपहर के बारह बजे').
 
-st_pattern('hi', 0, '{h}:00').
-st_pattern('hi', 5, '{h}:05').
-st_pattern('hi', 10, '{h}:10').
-st_pattern('hi', 15, '{h}:15').
-st_pattern('hi', 20, '{h}:20').
-st_pattern('hi', 25, '{h}:25').
-st_pattern('hi', 30, '{h}:30').
-st_pattern('hi', 35, '{h}:35').
-st_pattern('hi', 40, '{h}:40').
-st_pattern('hi', 45, '{h}:45').
-st_pattern('hi', 50, '{h}:50').
-st_pattern('hi', 55, '{h}:55').
+st_pattern('hi', 0, '{h} बजे').
+st_pattern('hi', 5, '{h} बजकर पाँच मिनट').
+st_pattern('hi', 10, '{h} बजकर दस मिनट').
+st_pattern('hi', 15, 'सवा {h} बजे').
+st_pattern('hi', 20, '{h} बजकर बीस मिनट').
+st_pattern('hi', 25, '{h} बजकर पच्चीस मिनट').
+st_pattern('hi', 30, '{h} बजकर तीस मिनट').
+st_pattern('hi', 35, '{h} बजकर पैंतीस मिनट').
+st_pattern('hi', 40, '{h} बजकर चालीस मिनट').
+st_pattern('hi', 45, 'पौने {next_h} बजे').
+st_pattern('hi', 50, '{next_h} बजने में दस मिनट').
+st_pattern('hi', 55, '{next_h} बजने में पाँच मिनट').
 
 short_st_use24h('hi', false).
 short_st_format('hi', '{h}:{mm} {ampm}').

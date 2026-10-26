@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ki.json](../../locales/ki.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Swahili-style reckoning adopted (standard in Kenyan vernaculars; 9:00 = 'thaa ithatũ'), hours rotated by 6. Additive '<hour> na ndagĩka <minutes in words>' form, 'na nuthu' for half; no past/to system used. Numerals: ithano, ikũmi, mĩrongo ĩĩrĩ/ĩtatũ/ĩna/ĩtano. Minute numerals in class-10 concord with ndagĩka are my best reading; quarter rendered as 'ndagĩka ikũmi na ithano'.
+
 ## Age
 
 ### Age formatting
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | Njumatatũ ĩno           | 17/3    |
 | Day before yesterday | Aramithi ĩrĩa ĩhĩtũkĩte | 13/3    |
 | This Thursday (+5)   | Aramithi ĩno            | 20/3    |
-| Last Monday (-4)     | Njumaine ĩrĩa ĩhĩtũkĩte | 11/3    |
-| Next Wednesday (+12) | Aramithi ĩyothe         | 27/3    |
-| Same month (+20)     | 4 Mwere wa kana         | 4/4     |
+| Last Tuesday (-4)    | Njumaine ĩrĩa ĩhĩtũkĩte | 11/3    |
+| Next Thursday (+12)  | Aramithi ĩyothe         | 27/3    |
+| Same year (+20)      | 4 Mwere wa kana         | 4/4     |
 | Different year       | 10 Njenuarĩ 2026        | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                | Short            | Compact    |
-| --------------------- | --------------------- | ---------------- | ---------- |
-| 0 seconds             | ũmũthĩ                | ũmũthĩ           | ũmũthĩ     |
-| 1 second              | sekunde 1             | sek. 1           | 1s         |
-| 30 seconds            | sekunde 30            | sek. 30          | 30s        |
-| 1 minute              | ndagĩka 1             | ndag. 1          | 1m         |
-| 2 minutes, 15 seconds | ndagĩka 2, sekunde 15 | ndag. 2, sek. 15 | 2m15s      |
-| 5 minutes             | ndagĩka 5             | ndag. 5          | 5m         |
-| 45 minutes            | ndagĩka 45            | ndag. 45         | 45m        |
-| 1 hour                | ithaa 1               | ithaa 1          | 1h         |
-| 1½ hours              | mathaa 1 na nusu      | mathaa 1 na nusu | 1h na nusu |
-| 3 hours               | mathaa 3              | mathaa 3         | 3h         |
-| 6 hours               | mathaa 6              | mathaa 6         | 6h         |
-| 1 day                 | mũthenya 1            | mũth. 1          | 1d         |
-| 1½ days               | mĩthenya 1 na nusu    | mĩth. 1 na nusu  | 1d na nusu |
-| 3 days                | mĩthenya 3            | mĩth. 3          | 3d         |
-| 1 week                | kiumia 1              | kiu. 1           | 1w         |
-| 2 weeks, 3 days       | kiumia 2, mĩthenya 3  | kiu. 2, mĩth. 3  | 2w3d       |
-| 1 month               | mwerĩ 1               | mwerĩ 1          | 1m         |
-| 6 months              | mĩerĩ 6               | mĩerĩ 6          | 6m         |
-| 1 year                | mwaka 1               | mwaka 1          | 1y         |
-| 2 years, 3 months     | mĩaka 2, mĩerĩ 3      | mĩaka 2, mĩerĩ 3 | 2y3m       |
+| Duration              | Normal                | Short             | Compact     |
+| --------------------- | --------------------- | ----------------- | ----------- |
+| 0 seconds             | rĩu                   | rĩu               | rĩu         |
+| 1 second              | sekunde 1             | sek. 1            | 1s          |
+| 30 seconds            | sekunde 30            | sek. 30           | 30s         |
+| 1 minute              | ndagĩka 1             | ndag. 1           | 1m          |
+| 2 minutes, 15 seconds | ndagĩka 2, sekunde 15 | ndag. 2, sek. 15  | 2m15s       |
+| 5 minutes             | ndagĩka 5             | ndag. 5           | 5m          |
+| 45 minutes            | ndagĩka 45            | ndag. 45          | 45m         |
+| 1 hour                | ithaa 1               | ithaa 1           | 1h          |
+| 1½ hours              | mathaa 1 na nuthu     | mathaa 1 na nuthu | 1h na nuthu |
+| 3 hours               | mathaa 3              | mathaa 3          | 3h          |
+| 6 hours               | mathaa 6              | mathaa 6          | 6h          |
+| 1 day                 | mũthenya 1            | mũth. 1           | 1d          |
+| 1½ days               | mĩthenya 1 na nuthu   | mĩth. 1 na nuthu  | 1d na nuthu |
+| 3 days                | mĩthenya 3            | mĩth. 3           | 3d          |
+| 1 week                | kiumia 1              | kiu. 1            | 1w          |
+| 2 weeks, 3 days       | kiumia 2, mĩthenya 3  | kiu. 2, mĩth. 3   | 2w3d        |
+| 1 month               | mwerĩ 1               | mwerĩ 1           | 1m          |
+| 6 months              | mĩerĩ 6               | mĩerĩ 6           | 6m          |
+| 1 year                | mwaka 1               | mwaka 1           | 1y          |
+| 2 years, 3 months     | mĩaka 2, mĩerĩ 3      | mĩaka 2, mĩerĩ 3  | 2y3m        |
 
 ### Relative time
 
-| Offset        | Normal              | Compact      |
-| ------------- | ------------------- | ------------ |
-| 5 minutes ago | ndagĩka 5 ĩhĩtũkĩte | 5m ĩhĩtũkĩte |
-| 2 hours ago   | mathaa 2 ĩhĩtũkĩte  | 2h ĩhĩtũkĩte |
-| in 30 minutes | ndagĩka 30 ĩyothe   | 30m ĩyothe   |
-| in 3 hours    | mathaa 3 ĩyothe     | 3h ĩyothe    |
+| Offset        | Normal               | Compact       |
+| ------------- | -------------------- | ------------- |
+| 5 minutes ago | ndagĩka 5 ĩhĩtũkĩte  | 5m ĩhĩtũkĩte  |
+| 2 hours ago   | mathaa 2 ĩhĩtũkĩte   | 2h ĩhĩtũkĩte  |
+| in 30 minutes | thutha wa ndagĩka 30 | thutha wa 30m |
+| in 3 hours    | thutha wa mathaa 3   | thutha wa 3h  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal            | Short | Compact |
-| --------------- | ----------------- | ----- | ------- |
-| Midnight        | ũtukũ gatagatĩ    | 0:00  | 0:00    |
-| 1:00 AM         | ĩmwe:00           | 1:00  | 1:00    |
-| 5 past 9        | kenda:05          | 9:05  | 9:05    |
-| Quarter past 10 | ikũmi:15          | 10:15 | 10:15   |
-| Half past 11    | ikũmi na ĩmwe:30  | 11:30 | 11:30   |
-| Noon            | mũthenya gatagatĩ | 12:00 | 12:00   |
-| Quarter to 3    | igĩrĩ:45          | 14:45 | 14:45   |
-| 5 to 6          | ithano:55         | 17:55 | 17:55   |
-| 8 o'clock PM    | inyanya:00        | 20:00 | 20:00   |
-| 10:30 PM        | ikũmi:30          | 22:30 | 22:30   |
-| 11:58 PM        | ũtukũ gatagatĩ    | 23:58 | 23:58   |
+| Time            | Normal                                                | Short | Compact |
+| --------------- | ----------------------------------------------------- | ----- | ------- |
+| Midnight        | ũtukũ gatagatĩ                                        | 0:00  | 0:00    |
+| 1:00 AM         | thaa mũgwanja                                         | 1:00  | 1:00    |
+| 5 past 9        | thaa ithatũ na ndagĩka ithano                         | 9:05  | 9:05    |
+| Quarter past 10 | thaa inya na ndagĩka ikũmi na ithano                  | 10:15 | 10:15   |
+| Half past 11    | thaa ithano na nuthu                                  | 11:30 | 11:30   |
+| Noon            | mũthenya gatagatĩ                                     | 12:00 | 12:00   |
+| Quarter to 3    | thaa inyanya na ndagĩka mĩrongo ĩna na ithano         | 14:45 | 14:45   |
+| 5 to 6          | thaa ikũmi na ĩmwe na ndagĩka mĩrongo ĩtano na ithano | 17:55 | 17:55   |
+| 8 o'clock PM    | thaa igĩrĩ                                            | 20:00 | 20:00   |
+| 10:30 PM        | thaa inya na nuthu                                    | 22:30 | 22:30   |
+| 11:58 PM        | ũtukũ gatagatĩ                                        | 23:58 | 23:58   |

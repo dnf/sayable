@@ -11,22 +11,22 @@
 
 % K'iche' locale.
 
-st_hours('quc', ['kab\'lajuj', 'jun', 'ka\'i\'', 'oxi\'', 'kaji\'', 'jo\'', 'waqi\'', 'wuqu\'', 'wajxaqi\'', 'b\'eleji\'', 'lajuj', 'julajuj']).
+st_hours('quc', ['kab\'lajuj', 'jun', 'keb\'', 'oxib\'', 'kajib\'', 'job\'', 'waqib\'', 'wuqub\'', 'wajxaqib\'', 'b\'elejeb\'', 'lajuj', 'julajuj']).
 st_midnight('quc', 'nik\'aj aq\'ab\'').
 st_noon('quc', 'nik\'aj q\'ij').
 
-st_pattern('quc', 0, '{h}:00').
-st_pattern('quc', 5, '{h}:05').
-st_pattern('quc', 10, '{h}:10').
-st_pattern('quc', 15, '{h}:15').
-st_pattern('quc', 20, '{h}:20').
-st_pattern('quc', 25, '{h}:25').
-st_pattern('quc', 30, '{h}:30').
-st_pattern('quc', 35, '{h}:35').
-st_pattern('quc', 40, '{h}:40').
-st_pattern('quc', 45, '{h}:45').
-st_pattern('quc', 50, '{h}:50').
-st_pattern('quc', 55, '{h}:55').
+st_pattern('quc', 0, '{h} ramaj').
+st_pattern('quc', 5, '{h} ramaj job\'').
+st_pattern('quc', 10, '{h} ramaj lajuj').
+st_pattern('quc', 15, '{h} ramaj olajuj').
+st_pattern('quc', 20, '{h} ramaj juwinaq').
+st_pattern('quc', 25, '{h} ramaj juwinaq job\'').
+st_pattern('quc', 30, '{h} ramaj juwinaq lajuj').
+st_pattern('quc', 35, '{h} ramaj juwinaq olajuj').
+st_pattern('quc', 40, '{h} ramaj kawinaq').
+st_pattern('quc', 45, '{h} ramaj kawinaq job\'').
+st_pattern('quc', 50, '{h} ramaj kawinaq lajuj').
+st_pattern('quc', 55, '{h} ramaj kawinaq olajuj').
 
 short_st_use24h('quc', false).
 short_st_format('quc', '{h}:{mm} {ampm}').

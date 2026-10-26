@@ -25,48 +25,48 @@ fn build_wo() -> DurationLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var second = simple_unit("saa-yépp {n}")
-    var minute = simple_unit("simili {n}")
-    var hour = simple_unit("waxtu {n}")
-    var day = simple_unit("bés {n}")
-    var week = simple_unit("ayubés {n}")
-    var month = simple_unit("weer {n}")
-    var year = simple_unit("at {n}")
+    var second = simple_unit("{n} saa")
+    var minute = simple_unit("{n} simili")
+    var hour = simple_unit("{n} waxtu")
+    var day = simple_unit("{n} fan")
+    var week = simple_unit("{n} ayubés")
+    var month = simple_unit("{n} weer")
+    var year = simple_unit("{n} at")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("saa-y. {n}")
+    short_ovr.second = simple_unit("{n} saa")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("sim. {n}")
+    short_ovr.minute = simple_unit("{n} sim.")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("wax. {n}")
+    short_ovr.hour = simple_unit("{n} wax.")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("bés {n}")
+    short_ovr.day = simple_unit("{n} fan")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("ayub. {n}")
+    short_ovr.week = simple_unit("{n} ayub.")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("weer {n}")
+    short_ovr.month = simple_unit("{n} weer")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("at {n}")
+    short_ovr.year = simple_unit("{n} at")
     short_ovr.has_year = True
     short_ovr.ago = "{0} ci ginaaw"
     short_ovr.has_ago = True
-    short_ovr.in_future = "ci {0}"
+    short_ovr.in_future = "fileek {0}"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
-    compact_ovr.second = simple_unit("saa {n}")
+    compact_ovr.second = simple_unit("{n} saa")
     compact_ovr.has_second = True
-    compact_ovr.minute = simple_unit("sim {n}")
+    compact_ovr.minute = simple_unit("{n} sim")
     compact_ovr.has_minute = True
-    compact_ovr.hour = simple_unit("wax {n}")
+    compact_ovr.hour = simple_unit("{n} wax")
     compact_ovr.has_hour = True
-    compact_ovr.day = simple_unit("bés {n}")
+    compact_ovr.day = simple_unit("{n} fan")
     compact_ovr.has_day = True
-    compact_ovr.week = simple_unit("ayub {n}")
+    compact_ovr.week = simple_unit("{n} ayub")
     compact_ovr.has_week = True
-    compact_ovr.month = simple_unit("weer {n}")
+    compact_ovr.month = simple_unit("{n} weer")
     compact_ovr.has_month = True
-    compact_ovr.year = simple_unit("at {n}")
+    compact_ovr.year = simple_unit("{n} at")
     compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
@@ -74,7 +74,7 @@ fn build_wo() -> DurationLocale:
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} ci gin."
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "ci {0}"
+    compact_ovr.in_future = "fileek {0}"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -91,7 +91,7 @@ fn build_wo() -> DurationLocale:
         delimiter=", ",
         just_now="léegi",
         ago="{0} ci ginaaw",
-        in_future="ci {0}",
+        in_future="fileek {0}",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

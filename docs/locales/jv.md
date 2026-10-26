@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [jv.json](../../locales/jv.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Indonesian-style system with Javanese numerals: 'jam loro luwih seprapat' (2:15), 'jam setengah telu' (2:30, half to three), 'jam telu kurang seprapat' (2:45). Minutes use native 'limang menit', 'rong puluh menit', 'selawé menit'. Also changed noon from 'awan' (just 'daytime') to 'tengah awan' (midday), parallel to 'tengah wengi'. Doubt: some speakers say 'setengah telu' without 'jam'; both are heard.
+
 ## Age
 
 ### Age formatting
@@ -71,11 +79,11 @@ Relative to Saturday, March 15, 2025.
 | Tomorrow             | sesuk           | sesuk    |
 | Yesterday            | wingi           | wingi    |
 | Day after tomorrow   | embèn           | 17/3     |
-| Day before yesterday | dhèk wingi      | 13/3     |
+| Day before yesterday | wingenané       | 13/3     |
 | This Thursday (+5)   | Kamis iki       | 20/3     |
-| Last Monday (-4)     | Selasa wingi    | 11/3     |
-| Next Wednesday (+12) | Kamis ngarep    | 27/3     |
-| Same month (+20)     | 4 April         | 4/4      |
+| Last Tuesday (-4)    | Selasa wingi    | 11/3     |
+| Next Thursday (+12)  | Kamis ngarep    | 27/3     |
+| Same year (+20)      | 4 April         | 4/4      |
 | Different year       | 10 Januari 2026 | 10/1/26  |
 
 ## Duration
@@ -84,7 +92,7 @@ Relative to Saturday, March 15, 2025.
 
 | Duration              | Normal            | Short           | Compact      |
 | --------------------- | ----------------- | --------------- | ------------ |
-| 0 seconds             | saiki             | saiki           | saiki        |
+| 0 seconds             | lagi waé          | lagi waé        | lagi waé     |
 | 1 second              | 1 detik           | 1 dtk           | 1 dtk        |
 | 30 seconds            | 30 detik          | 30 dtk          | 30 dtk       |
 | 1 minute              | 1 menit           | 1 mnt           | 1 mnt        |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal       | Short | Compact |
-| --------------- | ------------ | ----- | ------- |
-| Midnight        | tengah wengi | 0:00  | 0:00    |
-| 1:00 AM         | siji:00      | 1:00  | 1:00    |
-| 5 past 9        | sanga:05     | 9:05  | 9:05    |
-| Quarter past 10 | sepuluh:15   | 10:15 | 10:15   |
-| Half past 11    | sewelas:30   | 11:30 | 11:30   |
-| Noon            | awan         | 12:00 | 12:00   |
-| Quarter to 3    | loro:45      | 14:45 | 14:45   |
-| 5 to 6          | lima:55      | 17:55 | 17:55   |
-| 8 o'clock PM    | wolu:00      | 20:00 | 20:00   |
-| 10:30 PM        | sepuluh:30   | 22:30 | 22:30   |
-| 11:58 PM        | tengah wengi | 23:58 | 23:58   |
+| Time            | Normal                       | Short | Compact |
+| --------------- | ---------------------------- | ----- | ------- |
+| Midnight        | tengah wengi                 | 0:00  | 0:00    |
+| 1:00 AM         | jam siji                     | 1:00  | 1:00    |
+| 5 past 9        | jam sanga luwih limang menit | 9:05  | 9:05    |
+| Quarter past 10 | jam sepuluh luwih seprapat   | 10:15 | 10:15   |
+| Half past 11    | jam setengah rolas           | 11:30 | 11:30   |
+| Noon            | tengah awan                  | 12:00 | 12:00   |
+| Quarter to 3    | jam telu kurang seprapat     | 14:45 | 14:45   |
+| 5 to 6          | jam enem kurang limang menit | 17:55 | 17:55   |
+| 8 o'clock PM    | jam wolu                     | 20:00 | 20:00   |
+| 10:30 PM        | jam setengah sewelas         | 22:30 | 22:30   |
+| 11:58 PM        | tengah wengi                 | 23:58 | 23:58   |

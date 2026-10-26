@@ -15,18 +15,18 @@ st_hours('ng', ['omulongo nambali', 'imwe', 'mbali', 'ndatu', 'ne', 'ntano', 'ha
 st_midnight('ng', 'onguloshi pakati').
 st_noon('ng', 'omutenya').
 
-st_pattern('ng', 0, '{h}:00').
-st_pattern('ng', 5, '{h}:05').
-st_pattern('ng', 10, '{h}:10').
-st_pattern('ng', 15, '{h}:15').
-st_pattern('ng', 20, '{h}:20').
-st_pattern('ng', 25, '{h}:25').
-st_pattern('ng', 30, '{h}:30').
-st_pattern('ng', 35, '{h}:35').
-st_pattern('ng', 40, '{h}:40').
-st_pattern('ng', 45, '{h}:45').
-st_pattern('ng', 50, '{h}:50').
-st_pattern('ng', 55, '{h}:55').
+st_pattern('ng', 0, 'otundi {h}').
+st_pattern('ng', 5, 'otundi {h} noominute ntano').
+st_pattern('ng', 10, 'otundi {h} noominute omulongo').
+st_pattern('ng', 15, 'otundi {h} noominute omulongo nantano').
+st_pattern('ng', 20, 'otundi {h} noominute omilongo mbali').
+st_pattern('ng', 25, 'otundi {h} noominute omilongo mbali nantano').
+st_pattern('ng', 30, 'otundi {h} netata').
+st_pattern('ng', 35, 'otundi {h} noominute omilongo ndatu nantano').
+st_pattern('ng', 40, 'otundi {h} noominute omilongo ne').
+st_pattern('ng', 45, 'otundi {h} noominute omilongo ne nantano').
+st_pattern('ng', 50, 'otundi {h} noominute omilongo ntano').
+st_pattern('ng', 55, 'otundi {h} noominute omilongo ntano nantano').
 
 short_st_use24h('ng', false).
 short_st_format('ng', '{h}:{mm} {ampm}').

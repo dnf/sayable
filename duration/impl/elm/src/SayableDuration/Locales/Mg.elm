@@ -34,7 +34,7 @@ locale =
     , half = "{0} sy sasany"
     , delimiter = ", "
     , justNow = "vao haingana"
-    , ago = "{0} lasa"
+    , ago = "{0} lasa izay"
     , inFuture = "ao anatin'ny {0}"
     , short =
         Just
@@ -52,7 +52,7 @@ locale =
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "{0} lasa"
+            , ovrAgo = Just "{0} lasa izay"
             , ovrInFuture = Just "ao anatin'ny {0}"
             }
     , compact =

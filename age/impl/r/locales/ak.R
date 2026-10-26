@@ -26,12 +26,12 @@ locale_ak <- list(
     infant = "Akwadaa",
     toddler = "Abofra",
     child = "Abofra",
-    teenager = "Abarimaa",
+    teenager = list(m = "Abarimaa", f = "Abaayewa"),
     adult = "Ɔpanyin"
   ),
   short = list(
     units = list(
-      day = "nna {n}",
+      day = list(one = "da {n}", other = "nna {n}"),
       week = list(one = "dapɛn {n}", other = "nnapɛn {n}"),
       month = list(one = "bosome {n}", other = "abosome {n}"),
       year = list(one = "afe {n}", other = "mfe {n}")
@@ -39,7 +39,7 @@ locale_ak <- list(
   ),
   compact = list(
     units = list(
-      day = "nna {n}",
+      day = list(one = "da {n}", other = "nna {n}"),
       week = list(one = "dapɛn {n}", other = "nnapɛn {n}"),
       month = list(one = "bos {n}", other = "abos {n}"),
       year = list(one = "afe {n}", other = "mfe {n}")

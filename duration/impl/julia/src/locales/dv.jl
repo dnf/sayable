@@ -23,7 +23,7 @@ const DV = DurationLocale(
         "month" => "{n} މަސް",
         "year" => "{n} އަހަރު",
     ),
-    half = "{0} ބައި",
+    half = "{n}½",
     delimiter = "، ",
     just_now = "މިހާރު",
     ago = "މީގެ {0} ކުރިން",

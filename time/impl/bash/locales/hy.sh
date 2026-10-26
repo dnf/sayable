@@ -10,21 +10,21 @@
 # Source: locales/hy.json
 
 _sayabletime_locale_hy() {
-    _clock_hours=('տասներկու' 'մեկ' 'երկու' 'երեք' 'չորս' 'հինգ' 'վեց' 'յոթ' 'ութ' 'ինը' 'տաս' 'տասնմեկ')
+    _clock_hours=('տասներկուսն' 'մեկն' 'երկուսն' 'երեքն' 'չորսն' 'հինգն' 'վեցն' 'յոթն' 'ութն' 'ինն' 'տասն' 'տասնմեկն')
     _clock_midnight='կեսգիշեր'
     _clock_noon='կեսօր'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='ժամը {h} է'
+    _clock_pattern_5='{h} անց հինգ'
+    _clock_pattern_10='{h} անց տասը'
+    _clock_pattern_15='{h} անց տասնհինգ'
+    _clock_pattern_20='{h} անց քսան'
+    _clock_pattern_25='{h} անց քսանհինգ'
+    _clock_pattern_30='{h} անց կես'
+    _clock_pattern_35='{h} անց երեսունհինգ'
+    _clock_pattern_40='{h} անց քառասուն'
+    _clock_pattern_45='{h} անց քառասունհինգ'
+    _clock_pattern_50='{h} անց հիսուն'
+    _clock_pattern_55='{h} անց հիսունհինգ'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

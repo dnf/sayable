@@ -11,10 +11,10 @@
 
 function loc = locale_so()
   loc.code = 'so';
-  loc.clock.hours = {'laba iyo toban', 'kow', 'laba', 'saddex', 'afar', 'shan', 'lix', 'toddoba', 'siddeed', 'sagaal', 'toban', 'kow iyo toban'};
+  loc.clock.hours = {'laba iyo tobanka', 'kowda', 'labada', 'saddexda', 'afarta', 'shanta', 'lixda', 'toddobada', 'siddeedda', 'sagaasha', 'tobanka', 'kow iyo tobanka'};
   loc.clock.midnight = 'saqda dhexe';
   loc.clock.noon = 'duhur';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} iyo shan', "p10", '{h} iyo toban', "p15", '{h} iyo rubuc', "p20", '{h} iyo labaatan', "p25", '{h} iyo shan iyo labaatan', "p30", '{h} iyo bar', "p35", '{next_h} shan iyo labaatan la''', "p40", '{next_h} labaatan la''', "p45", '{next_h} rubuc la''', "p50", '{next_h} toban la''', "p55", '{next_h} shan la''');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

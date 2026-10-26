@@ -35,5 +35,5 @@
          "teenager" (stage-label "K'ajol" #f #f)
          "adult" (stage-label "Achi" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} q'ij") (hash "type" "simple" "form" "{n} wuqq'ij") (hash "type" "simple" "form" "{n} ik'") (hash "type" "simple" "form" "{n} jun.") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

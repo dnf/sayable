@@ -28,7 +28,7 @@ const SduDurationLocale sdu_locale_tg = {
         { "{n} моҳ", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} сол", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0} ним", ", ",
+    "{0}у ним", ", ",
     "ҳамин ҳоло",
     "{0} пеш", "баъди {0}",
     true, { true, { "{n} сон", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} дақ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} соат", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} р", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ҳ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} м", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} с", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} пеш", true, "баъди {0}" },

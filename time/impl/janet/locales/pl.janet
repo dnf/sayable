@@ -14,7 +14,7 @@
    :clock {:hours @["dwunasta" "pierwsza" "druga" "trzecia" "czwarta" "piąta" "szósta" "siódma" "ósma" "dziewiąta" "dziesiąta" "jedenasta"]
            :midnight "północ"
            :noon "południe"
-           :patterns {0 "{h}" 5 "pięć po {h}" 10 "dziesięć po {h}" 15 "piętnaście po {h}" 20 "dwadzieścia po {h}" 25 "dwadzieścia pięć po {h}" 30 "trzydzieści po {h}" 35 "dwadzieścia pięć do {next_h}" 40 "dwadzieścia do {next_h}" 45 "piętnaście do {next_h}" 50 "dziesięć do {next_h}" 55 "pięć do {next_h}"}}
+           :patterns {0 "{h}" 5 "{h} pięć" 10 "{h} dziesięć" 15 "{h} piętnaście" 20 "{h} dwadzieścia" 25 "{h} dwadzieścia pięć" 30 "{h} trzydzieści" 35 "za dwadzieścia pięć {next_h}" 40 "za dwadzieścia {next_h}" 45 "za kwadrans {next_h}" 50 "za dziesięć {next_h}" 55 "za pięć {next_h}"}}
    :short {:clock {:use24h true :format "{h}:{mm}"}}
    :compact {:clock {:use24h true :format "{h}:{mm}"}}
 })

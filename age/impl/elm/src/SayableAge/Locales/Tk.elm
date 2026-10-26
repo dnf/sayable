@@ -24,7 +24,7 @@ locale =
     , week = Simple "{n} hepde"
     , month = Simple "{n} aý"
     , year = Simple "{n} ýaş"
-    , half = "{0}½"
+    , half = "{n} ýarym"
     , delimiter = ", "
     , justBorn = "Täze doglan"
     , stages =
@@ -33,7 +33,7 @@ locale =
         , toddler = Neutral "Kiçijik"
         , child = Neutral "Çaga"
         , teenager = Neutral "Ýetginjek"
-        , adult = Neutral "Ulular"
+        , adult = Neutral "Uly adam"
         }
     , short =
         Just

@@ -27,14 +27,14 @@ locale = DurationLocale
           ]
         , unitMinute = Pluralized
           [ (One, "{n} minuta")
-          , (Two, "{n} minuti")
+          , (Two, "minutejn")
           , (Few, "{n} minuti")
           , (Many, "{n}-il minuta")
           , (Other, "{n} minuta")
           ]
         , unitHour = Pluralized
           [ (One, "{n} siegħa")
-          , (Two, "{n} sigħat")
+          , (Two, "sagħtejn")
           , (Few, "{n} sigħat")
           , (Many, "{n}-il siegħa")
           , (Other, "{n} siegħa")

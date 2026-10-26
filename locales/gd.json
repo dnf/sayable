@@ -89,6 +89,20 @@
       "An t-Samhain",
       "An Dùbhlachd"
     ],
+    "monthsInDate": [
+      "dhen Fhaoilleach",
+      "dhen Ghearran",
+      "dhen Mhàrt",
+      "dhen Ghiblean",
+      "dhen Chèitean",
+      "dhen Ògmhios",
+      "dhen Iuchar",
+      "dhen Lùnastal",
+      "dhen t-Sultain",
+      "dhen Dàmhair",
+      "dhen t-Samhain",
+      "dhen Dùbhlachd"
+    ],
     "weekdays": [
       "DiDòmhnaich",
       "DiLuain",
@@ -98,7 +112,7 @@
       "DihAoine",
       "DiSathairne"
     ],
-    "dayFormat": "{n}",
+    "dayFormat": "{n}mh",
     "datePattern": "{day} {month}",
     "datePatternWithYear": "{day} {month} {year}",
     "today": "an-diugh",
@@ -157,10 +171,10 @@
         "other": "{n} mionaid"
       },
       "hour": {
-        "one": "{n} uair",
-        "two": "{n} uair",
-        "few": "{n} uairean",
-        "other": "{n} uair"
+        "one": "{n} uair a thìde",
+        "two": "{n} uair a thìde",
+        "few": "{n} uairean a thìde",
+        "other": "{n} uair a thìde"
       },
       "day": {
         "one": "{n} latha",
@@ -265,34 +279,34 @@
   "time": {
     "clock": {
       "hours": [
-        "dà-dheug",
-        "aon",
-        "dà",
-        "trì",
-        "ceithir",
-        "còig",
-        "sia",
-        "seachd",
-        "ochd",
-        "naoi",
-        "deich",
-        "aon-deug"
+        "dà uair dheug",
+        "uair",
+        "dà uair",
+        "trì uairean",
+        "ceithir uairean",
+        "còig uairean",
+        "sia uairean",
+        "seachd uairean",
+        "ochd uairean",
+        "naoi uairean",
+        "deich uairean",
+        "aon uair deug"
       ],
       "midnight": "meadhan-oidhche",
       "noon": "meadhan-latha",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "còig mionaidean an dèidh {h}",
+        "10": "deich mionaidean an dèidh {h}",
+        "15": "cairteal an dèidh {h}",
+        "20": "fichead mionaid an dèidh {h}",
+        "25": "còig mionaidean fichead an dèidh {h}",
+        "30": "leth-uair an dèidh {h}",
+        "35": "còig mionaidean fichead gu {next_h}",
+        "40": "fichead mionaid gu {next_h}",
+        "45": "cairteal gu {next_h}",
+        "50": "deich mionaidean gu {next_h}",
+        "55": "còig mionaidean gu {next_h}"
       }
     },
     "short": {
@@ -307,5 +321,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Hours now carry the noun ('uair', 'dà uair', 'trì uairean', 'aon uair deug', 'dà uair dheug') so the o'clock bucket is right; minute buckets use 'còig mionaidean an dèidh {h}', 'cairteal an dèidh', 'leth-uair an dèidh', '... gu {next_h}'. COMPROMISE: after 'an dèidh'/'gu' speakers normally use the bare numeral ('cairteal gu trì', not 'cairteal gu trì uairean'); the schema's single hours list cannot serve both, so minute buckets carry the noun for hours 2-12 (hour 1 'uair' is correct in both). A native review is advisable."
+    }
+  ]
 }

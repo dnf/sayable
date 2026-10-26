@@ -17,7 +17,7 @@ shi
 	locale := SayableDateLocale new.
 	locale code: 'shi'.
 	locale months: (OrderedCollection withAll: { 'ⵉⵏⵏⴰⵢⵔ'. 'ⴱⵕⴰⵢⵕ'. 'ⵎⴰⵕⵚ'. 'ⵉⴱⵔⵉⵔ'. 'ⵎⴰⵢⵢⵓ'. 'ⵢⵓⵏⵢⵓ'. 'ⵢⵓⵍⵢⵓⵣ'. 'ⵖⵓⵛⵜ'. 'ⵛⵓⵜⴰⵏⴱⵉⵔ'. 'ⴽⵜⵓⴱⵔ'. 'ⵏⵓⵡⴰⵏⴱⵉⵔ'. 'ⴷⵓⵊⴰⵏⴱⵉⵔ' }).
-	locale weekdays: (OrderedCollection withAll: { 'ⴰⵙⴰⵎⴰⵙ'. 'ⴰⵢⵏⴰⵙ'. 'ⴰⵙⵉⵏⴰⵙ'. 'ⴰⴽⵕⴰⵙ'. 'ⴰⴽⵡⴰⵙ'. 'ⴰⵙⵉⵎⵡⴰⵙ'. 'ⴰⵙⵉⴹⵢⴰⵙ' }).
+	locale weekdays: (OrderedCollection withAll: { 'ⴰⵙⴰⵎⴰⵙ'. 'ⴰⵢⵏⴰⵙ'. 'ⴰⵙⵉⵏⴰⵙ'. 'ⴰⴽⵕⴰⵙ'. 'ⴰⴽⵡⴰⵙ'. 'ⵙⵉⵎⵡⴰⵙ'. 'ⴰⵙⵉⴹⵢⴰⵙ' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.

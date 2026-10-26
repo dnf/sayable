@@ -14,8 +14,8 @@ reference is added to any --langs selection. With --reference none, the
 implementations are compared only with each other (the majority answer
 is shown as a hint), which needs at least two of them.
 
-A language that answers a component probe with exit 2 does not
-implement that component and is left out of the comparison for it.
+Every CLI implements all four libraries (cli/SPEC.md), so every language
+answers every request.
 
 Usage:
     python3 cli/fuzz.py                       # every CLI vs python, 2000 requests
@@ -45,13 +45,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CLI_DIR = ROOT / "cli" / "impl"
-COMPONENT_OF = {
-    "age": "age", "stage": "age",
-    "date": "date", "relative": "date",
-    "time": "time",
-    "duration": "duration", "since": "duration", "until": "duration",
-}
-COMPONENTS = ("age", "date", "time", "duration")
 DEFAULT_REFERENCE = "python"
 INVALID_VALUES = ["null", "", "2025-13-01", "2025-02-30", "0000-00-00", "abcd", "2025-6-1", "99:99"]
 
@@ -199,8 +192,7 @@ def main() -> int:
 
     seed = args.seed if args.seed is not None else random.randrange(2**32)
     gen = RequestGenerator(random.Random(seed), locale_codes(), args.invalid_rate)
-    probes = [[component, "null"] for component in COMPONENTS]
-    requests = probes + [gen.request() for _ in range(args.requests)]
+    requests = [gen.request() for _ in range(args.requests)]
     against = f"against {reference}" if reference else "by consensus"
     print(f"Fuzzing {', '.join(lang for lang in clis if lang != reference)} {against} "
           f"with {args.requests} requests (seed {seed})")
@@ -212,8 +204,6 @@ def main() -> int:
 
     failed = {lang: err for lang, (resp, err) in results.items() if resp is None}
     answers = {lang: resp for lang, (resp, _) in results.items() if resp is not None}
-    supports = {lang: {c for c, resp in zip(COMPONENTS, answers[lang][:len(probes)]) if not resp.startswith("2\t")}
-                for lang in answers}
     for lang, err in sorted(failed.items()):
         print(f"CLI FAILED {lang}: {err}")
     if reference in failed:
@@ -223,9 +213,8 @@ def main() -> int:
     disagreements = []
     reference_outvoted = 0
     compared = 0
-    for i, request in enumerate(requests[len(probes):], start=len(probes)):
-        component = COMPONENT_OF[request[0]]
-        voters = {lang: answers[lang][i] for lang in answers if component in supports[lang]}
+    for i, request in enumerate(requests):
+        voters = {lang: answers[lang][i] for lang in answers}
         if len(voters) < 2:
             continue
         compared += 1

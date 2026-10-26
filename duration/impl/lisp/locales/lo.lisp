@@ -25,10 +25,10 @@
                (cons :month "{n} ເດືອນ")
                (cons :year "{n} ປີ"))
    :half "{0}ເຄິ່ງ"
-   :delimiter ""
+   :delimiter " "
    :just-now "ຫາກໍ"
    :ago "{0} ກ່ອນ"
-   :in-future "ໃນ {0}"
+   :in-future "ໃນອີກ {0}"
    :short-units (list (cons :second "{n} ວິ.")
                        (cons :minute "{n} ນທ.")
                        (cons :hour "{n} ຊມ.")
@@ -37,16 +37,16 @@
                        (cons :month "{n} ດ.")
                        (cons :year "{n} ປ."))
    :short-ago "{0} ກ່ອນ"
-   :short-in-future "ໃນ {0}"
+   :short-in-future "ໃນອີກ {0}"
    :compact-units (list (cons :second "{n}s")
                        (cons :minute "{n}m")
                        (cons :hour "{n}h")
                        (cons :day "{n}d")
                        (cons :week "{n}w")
-                       (cons :month "{n}m")
+                       (cons :month "{n}mo")
                        (cons :year "{n}y"))
    :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} ກ່ອນ"
-   :compact-in-future "ໃນ {0}"
+   :compact-in-future "ໃນອີກ {0}"
 ))

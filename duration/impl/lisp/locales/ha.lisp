@@ -17,25 +17,25 @@
   (make-duration-locale
    :code "ha"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second '((:one . "{n} daƙiƙa") (:other . "{n} daƙiƙoƙi")))
-               (cons :minute '((:one . "{n} minti") (:other . "{n} mintoci")))
-               (cons :hour '((:one . "{n} awa") (:other . "{n} awanni")))
-               (cons :day '((:one . "{n} kwana") (:other . "{n} kwanaki")))
-               (cons :week '((:one . "{n} mako") (:other . "{n} makonni")))
-               (cons :month '((:one . "{n} wata") (:other . "{n} watanni")))
-               (cons :year '((:one . "{n} shekara") (:other . "{n} shekaru"))))
+   :units (list (cons :second '((:one . "daƙiƙa {n}") (:other . "daƙiƙoƙi {n}")))
+               (cons :minute '((:one . "minti {n}") (:other . "mintoci {n}")))
+               (cons :hour '((:one . "awa {n}") (:other . "awanni {n}")))
+               (cons :day '((:one . "kwana {n}") (:other . "kwanaki {n}")))
+               (cons :week '((:one . "mako {n}") (:other . "makonni {n}")))
+               (cons :month '((:one . "wata {n}") (:other . "watanni {n}")))
+               (cons :year '((:one . "shekara {n}") (:other . "shekaru {n}"))))
    :half "{n}½"
    :delimiter ", "
    :just-now "yanzu"
    :ago "{0} da suka wuce"
    :in-future "cikin {0}"
-   :short-units (list (cons :second "{n} daƙ.")
-                       (cons :minute "{n} mnt.")
-                       (cons :hour "{n} awa")
-                       (cons :day "{n} kw.")
-                       (cons :week "{n} mk.")
-                       (cons :month "{n} wt.")
-                       (cons :year "{n} shk."))
+   :short-units (list (cons :second "daƙ. {n}")
+                       (cons :minute "mnt. {n}")
+                       (cons :hour "awa {n}")
+                       (cons :day "kw. {n}")
+                       (cons :week "mk. {n}")
+                       (cons :month "wt. {n}")
+                       (cons :year "shk. {n}"))
    :short-ago "{0} da suka wuce"
    :short-in-future "cikin {0}"
    :compact-units (list (cons :second "{n}s")

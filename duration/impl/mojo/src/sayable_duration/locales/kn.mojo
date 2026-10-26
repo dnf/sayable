@@ -89,7 +89,7 @@ fn build_kn() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}ವರೆ",
+        half="{n}½",
         delimiter=", ",
         just_now="ಈಗಷ್ಟೇ",
         ago="{0} ಹಿಂದೆ",

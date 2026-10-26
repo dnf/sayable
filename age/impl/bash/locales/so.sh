@@ -16,14 +16,12 @@ _sayableage_plural_so() {
 }
 
 _sayableage_locale_so() {
-    _unit_day_one='maalin {n}'
-    _unit_day_other='maalmood {n}'
-    _unit_week_one='toddobaad {n}'
-    _unit_week_other='toddobaadyo {n}'
-    _unit_month_one='bil {n}'
-    _unit_month_other='bilood {n}'
-    _unit_year_one='sano {n}'
-    _unit_year_other='sanooyin {n}'
+    _unit_day_one='{n} maalin'
+    _unit_day_other='{n} maalmood'
+    _unit_week='{n} toddobaad'
+    _unit_month_one='{n} bil'
+    _unit_month_other='{n} bilood'
+    _unit_year='{n} sano'
     _half='{n}½'
     _delimiter=', '
     _just_born='Dhashay cusub'

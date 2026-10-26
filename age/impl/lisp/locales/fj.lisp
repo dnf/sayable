@@ -21,7 +21,7 @@
                (cons :week "{n} na macawa")
                (cons :month "{n} na vula")
                (cons :year "{n} na yabaki"))
-   :half "{n} kei na levu ni wasei"
+   :half "{0} kei na veimama"
    :delimiter ", "
    :just-born "Gone vou"
    :stages (list (cons :newborn "Gone vou")
@@ -38,5 +38,6 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
 ))

@@ -11,12 +11,12 @@
 
 (def locale
   {:code "ky"
-   :months @["Январь" "Февраль" "Март" "Апрель" "Май" "Июнь" "Июль" "Август" "Сентябрь" "Октябрь" "Ноябрь" "Декабрь"]
-   :weekdays @["Жекшемби" "Дүйшөмбү" "Шейшемби" "Шаршемби" "Бейшемби" "Жума" "Ишемби"]
-   :day-format "{n}"
+   :months @["январь" "февраль" "март" "апрель" "май" "июнь" "июль" "август" "сентябрь" "октябрь" "ноябрь" "декабрь"]
+   :weekdays @["жекшемби" "дүйшөмбү" "шейшемби" "шаршемби" "бейшемби" "жума" "ишемби"]
+   :day-format "{n}-"
    :day-format-exceptions {}
-   :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern "{day}{month}"
+   :date-pattern-with-year "{year}-ж., {day}{month}"
    :today "бүгүн"
    :tomorrow "эртең"
    :yesterday "кечээ"
@@ -25,6 +25,6 @@
    :this-weekday "бул {weekday}"
    :next-weekday "кийинки {weekday}"
    :last-weekday "өткөн {weekday}"
-   :short {:months @["Янв" "Фев" "Мар" "Апр" "Май" "Июн" "Июл" "Авг" "Сен" "Окт" "Ноя" "Дек"] :weekdays @["Жек" "Дүй" "Шей" "Шар" "Бей" "Жум" "Ише"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
+   :short {:months @["янв" "фев" "мар" "апр" "май" "июн" "июл" "авг" "сен" "окт" "ноя" "дек"] :weekdays @["жек" "дүй" "шей" "шар" "бей" "жум" "ише"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
    :compact {:date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}"}
 })

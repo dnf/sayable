@@ -28,7 +28,7 @@ var SI = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "මාස {n}", sa.Other: "මාස {n}"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "වසර {n}", sa.Other: "වසර {n}"}),
 	},
-	Half:      "{0}යි භාගයයි",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustBorn:  "අලුත උපන්",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

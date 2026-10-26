@@ -19,10 +19,10 @@ fn plural_ay(n int) PluralCategory {
 pub const locale_ay = AgeLocale{
 	code: 'ay'
 	plural: plural_ay
-	day: simple_unit('uru {n}')
-	week: simple_unit('simana {n}')
-	month: simple_unit('phaxsi {n}')
-	year: simple_unit('mara {n}')
+	day: simple_unit('{n} uru')
+	week: simple_unit('{n} simana')
+	month: simple_unit('{n} phaxsi')
+	year: simple_unit('{n} mara')
 	half: '{0} chika'
 	delimiter: ', '
 	just_born: 'Wawa machaqa'
@@ -53,6 +53,8 @@ pub const locale_ay = AgeLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 	}

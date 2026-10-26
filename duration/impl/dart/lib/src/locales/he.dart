@@ -20,12 +20,12 @@ final he = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'שנייה {n}', PluralCategory.two: 'שתי שניות', PluralCategory.other: '{n} שניות'}),
-    'minute': pluralUnit({PluralCategory.one: 'דקה {n}', PluralCategory.two: 'שתי דקות', PluralCategory.other: '{n} דקות'}),
-    'hour': pluralUnit({PluralCategory.one: 'שעה {n}', PluralCategory.two: 'שעתיים', PluralCategory.other: '{n} שעות'}),
-    'day': pluralUnit({PluralCategory.one: 'יום {n}', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'}),
-    'week': pluralUnit({PluralCategory.one: 'שבוע {n}', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'}),
-    'month': pluralUnit({PluralCategory.one: 'חודש {n}', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'}),
+    'second': pluralUnit({PluralCategory.one: 'שנייה', PluralCategory.two: 'שתי שניות', PluralCategory.other: '{n} שניות'}),
+    'minute': pluralUnit({PluralCategory.one: 'דקה', PluralCategory.two: 'שתי דקות', PluralCategory.other: '{n} דקות'}),
+    'hour': pluralUnit({PluralCategory.one: 'שעה', PluralCategory.two: 'שעתיים', PluralCategory.other: '{n} שעות'}),
+    'day': pluralUnit({PluralCategory.one: 'יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'}),
+    'week': pluralUnit({PluralCategory.one: 'שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'}),
+    'month': pluralUnit({PluralCategory.one: 'חודש', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'}),
     'year': pluralUnit({PluralCategory.one: 'שנה', PluralCategory.two: 'שנתיים', PluralCategory.other: '{n} שנים'}),
   },
   half: '{0} וחצי',

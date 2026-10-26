@@ -21,10 +21,10 @@
   (time-locale
    "xh"
    (clock-config
-    (list "ishumi elinambini" "inye" "ezimbini" "ezintathu" "ezine" "ezintlanu" "ezintandathu" "ezisixhenxe" "ezisibhozo" "ethoba" "ishumi" "ishumi elinanye")
+    (list "yeshumi elinesibini" "yokuqala" "yesibini" "yesithathu" "yesine" "yesihlanu" "yesithandathu" "yesixhenxe" "yesibhozo" "yethoba" "yeshumi" "yeshumi elinanye")
     "ezinzulwini zobusuku"
     "emini"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (hash 0 "intsimbi {h}" 5 "imizuzu emihlanu emva kwentsimbi {h}" 10 "imizuzu elishumi emva kwentsimbi {h}" 15 "ikota emva kwentsimbi {h}" 20 "imizuzu engamashumi amabini emva kwentsimbi {h}" 25 "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}" 30 "isiqingatha emva kwentsimbi {h}" 35 "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}" 40 "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}" 45 "ikota ukuya kwintsimbi {next_h}" 50 "imizuzu elishumi ukuya kwintsimbi {next_h}" 55 "imizuzu emihlanu ukuya kwintsimbi {next_h}"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

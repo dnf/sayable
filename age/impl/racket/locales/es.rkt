@@ -25,7 +25,7 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} semana" "other" "{n} semanas"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} mes" "other" "{n} meses"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} año" "other" "{n} años")))
-   "{n} y medio"
+   "{0} y medio"
    ", "
    "Recién nacido"
    (hash "newborn" (stage-label #f "Recién nacido" "Recién nacida")

@@ -77,7 +77,7 @@ fn build_is_locale() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} og hálft",
+        half="{n} og hálft",
         delimiter=", ",
         just_born="Nýfætt",
         newborn=newborn,

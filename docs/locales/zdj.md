@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [zdj.json](../../locales/zdj.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Replaced the Swahili hour numerals with Shingazidja ones where they differ (ndraru 3, ntsanu 5, shenda 9); patterns additive 'saa {h} na <minutes>', tens as the Arabic-derived shirini/thalathini/arubaini/hamsini, half 'na nusu'. Doubts: exact Shingazidja forms of 1 (moja vs ndzima) and of the tens; whether Comorians count hours Swahili-style from 6 a.m. (kept Western); noon/midnight words left as they were (Swahili-looking, flagged by audit).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | kesho kutwa        | 17/3    |
 | Day before yesterday | juzi               | 13/3    |
 | This Thursday (+5)   | Alhamisi iyi       | 20/3    |
-| Last Monday (-4)     | Jumanne ya hupitsa | 11/3    |
-| Next Wednesday (+12) | Alhamisi ya udjayo | 27/3    |
-| Same month (+20)     | 4 Aprili           | 4/4     |
+| Last Tuesday (-4)    | Jumanne ya hupitsa | 11/3    |
+| Next Thursday (+12)  | Alhamisi ya udjayo | 27/3    |
+| Same year (+20)      | 4 Aprili           | 4/4     |
 | Different year       | 10 Januari 2026    | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | usiku wa manane | 12:00 AM | 12:00a  |
-| 1:00 AM         | moja:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | tisa:05         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | kumi:15         | 10:15 AM | 10:15a  |
-| Half past 11    | kumi na moja:30 | 11:30 AM | 11:30a  |
-| Noon            | adhuhuri        | 12:00 PM | 12:00p  |
-| Quarter to 3    | mbili:45        | 2:45 PM  | 2:45p   |
-| 5 to 6          | tano:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | nane:00         | 8:00 PM  | 8:00p   |
-| 10:30 PM        | kumi:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | usiku wa manane | 11:58 PM | 11:58p  |
+| Time            | Normal                          | Short    | Compact |
+| --------------- | ------------------------------- | -------- | ------- |
+| Midnight        | usiku wa manane                 | 12:00 AM | 12:00a  |
+| 1:00 AM         | saa moja                        | 1:00 AM  | 1:00a   |
+| 5 past 9        | saa shenda na ntsanu            | 9:05 AM  | 9:05a   |
+| Quarter past 10 | saa kumi na kumi na ntsanu      | 10:15 AM | 10:15a  |
+| Half past 11    | saa kumi na moja na nusu        | 11:30 AM | 11:30a  |
+| Noon            | adhuhuri                        | 12:00 PM | 12:00p  |
+| Quarter to 3    | saa mbili na arubaini na ntsanu | 2:45 PM  | 2:45p   |
+| 5 to 6          | saa ntsanu na hamsini na ntsanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | saa nane                        | 8:00 PM  | 8:00p   |
+| 10:30 PM        | saa kumi na nusu                | 10:30 PM | 10:30p  |
+| 11:58 PM        | usiku wa manane                 | 11:58 PM | 11:58p  |

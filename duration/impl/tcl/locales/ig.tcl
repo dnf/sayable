@@ -16,13 +16,13 @@ proc plural_ig {n} {
 proc locale_duration_ig {} {
     set code {ig}
     set units [dict create \
-        second "{n} sekọnd" \
-        minute "{n} nkeji" \
-        hour "{n} awa" \
-        day "{n} ụbọchị" \
-        week "{n} izu" \
-        month "{n} ọnwa" \
-        year "{n} afọ" \
+        second "sekọnd {n}" \
+        minute "nkeji {n}" \
+        hour "awa {n}" \
+        day "ụbọchị {n}" \
+        week "izu {n}" \
+        month "ọnwa {n}" \
+        year "afọ {n}" \
     ]
     set half "{0} na ọkara"
     set delimiter {, }
@@ -31,13 +31,13 @@ proc locale_duration_ig {} {
     set in_future "na {0}"
     set short [dict create \
         units [dict create \
-            second "{n} sek." \
-            minute "{n} nkeji" \
-            hour "{n} awa" \
-            day "{n} ụbọchị" \
-            week "{n} izu" \
-            month "{n} ọnwa" \
-            year "{n} afọ" \
+            second "sek. {n}" \
+            minute "nkeji {n}" \
+            hour "awa {n}" \
+            day "ụbọchị {n}" \
+            week "izu {n}" \
+            month "ọnwa {n}" \
+            year "afọ {n}" \
         ] \
         ago "{0} gara aga" \
         in_future "na {0}" \

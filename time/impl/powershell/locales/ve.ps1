@@ -10,22 +10,22 @@
 # Source: locales/ve.json
 
 function locale_ve {
-    $hours = @('fumimbili', 'thihi', 'mbili', 'raru', 'ina', 'thanu', 'rathi', 'sumbe', 'malo', 'tahe', 'fumi', 'fuminthihi')
+    $hours = @('ya fumi na mbili', 'ya u thoma', 'ya vhuvhili', 'ya vhuraru', 'ya vhuṋa', 'ya vhuṱanu', 'ya vhurathi', 'ya vhusumbe', 'ya vhumalo', 'ya vhuṱahe', 'ya fumi', 'ya fumi na nthihi')
     $midnight = 'vhukati ha vhusiku'
     $noon = 'vhukati ha masiari'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'awara {h}'
+    $patterns[5] = 'awara {h} na ṱhanu'
+    $patterns[10] = 'awara {h} na fumi'
+    $patterns[15] = 'awara {h} na kotara'
+    $patterns[20] = 'awara {h} na mahumi mavhili'
+    $patterns[25] = 'awara {h} na mahumi mavhili na ṱhanu'
+    $patterns[30] = 'awara {h} na hafu'
+    $patterns[35] = 'awara {h} na mahumi mararu na ṱhanu'
+    $patterns[40] = 'awara {h} na mahumi maṋa'
+    $patterns[45] = 'awara {h} na mahumi maṋa na ṱhanu'
+    $patterns[50] = 'awara {h} na mahumi maṱanu'
+    $patterns[55] = 'awara {h} na mahumi maṱanu na ṱhanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

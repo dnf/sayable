@@ -23,7 +23,7 @@ class TGLocale {
       "year": "{n} сол",
     }
   }
-  static half { "{0} ним" }
+  static half { "{0}у ним" }
   static delimiter { ", " }
   static justNow { "ҳамин ҳоло" }
   static ago { "{0} пеш" }

@@ -37,7 +37,7 @@ fn build_ga() -> DurationLocale:
 
     var second = plural_unit(one="{n} soicind", two="{n} shoicind", few="{n} shoicind", many="{n} soicind", other="{n} soicind")
     var minute = plural_unit(one="{n} nóiméad", two="{n} nóiméad", few="{n} nóiméad", many="{n} nóiméad", other="{n} nóiméad")
-    var hour = plural_unit(one="{n} uair", two="{n} uair", few="{n} huaire", many="{n} n-uaire", other="{n} uair")
+    var hour = plural_unit(one="{n} uair an chloig", two="{n} uair an chloig", few="{n} huaire an chloig", many="{n} n-uaire an chloig", other="{n} uair an chloig")
     var day = plural_unit(one="{n} lá", two="{n} lá", few="{n} lá", many="{n} lá", other="{n} lá")
     var week = plural_unit(one="{n} seachtain", two="{n} sheachtain", few="{n} seachtaine", many="{n} seachtaine", other="{n} seachtain")
     var month = plural_unit(one="{n} mhí", two="{n} mhí", few="{n} mhí", many="{n} mí", other="{n} mí")

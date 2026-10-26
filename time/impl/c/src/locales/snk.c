@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_snk = {
     "snk",
     {
-        { "tanmu fillo", "baane", "fillo", "sikko", "naaxato", "karago", "tunmu", "ñerru", "segu", "kaburu", "tanmu", "tanmu baane" },
+        { "waxati tanmu do fillo", "waxati baane", "waxati fillo", "waxati sikko", "waxati naaxato", "waxati karago", "waxati tunmu", "waxati ñerru", "waxati segu", "waxati kaburu", "waxati tanmu", "waxati tanmu do baane" },
         "sulen noxo",
         "tili seren",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} do miniti karago", "{h} do miniti tanmu", "{h} do miniti tanmu do karago", "{h} do miniti tanpille", "{h} do miniti tanpille do karago", "{h} do faabe", "{h} do miniti tanjikke do karago", "{h} do miniti tannaxate", "{h} do miniti tannaxate do karago", "{h} do miniti tankarage", "{h} do miniti tankarage do karago" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

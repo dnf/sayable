@@ -17,10 +17,10 @@
   (make-time-locale
    :code "sg"
    :clock (make-clock-config
-    :hours (list "bâlè-ûse" "ôko" "ûse" "otâ" "usïö" "okü" "ömënë" "mbïrïmbïrï" "mënâmbârâ" "gonambâlâ" "bâlè" "bâlè na ôko")
+    :hours (list "balë-ôko na ûse" "ôko" "ûse" "otâ" "usïö" "okü" "omanä" "mbâsâmbârâ" "miombe" "gümbâyä" "balë-ôko" "balë-ôko na ôko")
     :midnight "gï na lögö"
     :noon "lâ nzönï"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ngbonga {h}") (cons 5 "ngbonga {h} na minüti okü") (cons 10 "ngbonga {h} na minüti balë-ôko") (cons 15 "ngbonga {h} na minüti balë-ôko na okü") (cons 20 "ngbonga {h} na minüti balë-ûse") (cons 25 "ngbonga {h} na minüti balë-ûse na okü") (cons 30 "ngbonga {h} na ndâmbo") (cons 35 "ngbonga {h} na minüti balë-otâ na okü") (cons 40 "ngbonga {h} na minüti balë-usïö") (cons 45 "ngbonga {h} na minüti balë-usïö na okü") (cons 50 "ngbonga {h} na minüti balë-okü") (cons 55 "ngbonga {h} na minüti balë-okü na okü")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

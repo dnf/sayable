@@ -15,18 +15,18 @@ st_hours('din', ['thiäär ku rou', 'tök', 'rou', 'diäk', 'ŋuän', 'dhiëc', 
 st_midnight('din', 'wakɔ̈u').
 st_noon('din', 'akɔ̈l ciëŋ').
 
-st_pattern('din', 0, '{h}:00').
-st_pattern('din', 5, '{h}:05').
-st_pattern('din', 10, '{h}:10').
-st_pattern('din', 15, '{h}:15').
-st_pattern('din', 20, '{h}:20').
-st_pattern('din', 25, '{h}:25').
-st_pattern('din', 30, '{h}:30').
-st_pattern('din', 35, '{h}:35').
-st_pattern('din', 40, '{h}:40').
-st_pattern('din', 45, '{h}:45').
-st_pattern('din', 50, '{h}:50').
-st_pattern('din', 55, '{h}:55').
+st_pattern('din', 0, 'thä {h}').
+st_pattern('din', 5, 'thä {h} ku minitö dhiëc').
+st_pattern('din', 10, 'thä {h} ku minitö thiäär').
+st_pattern('din', 15, 'thä {h} ku minitö thiäär ku dhiëc').
+st_pattern('din', 20, 'thä {h} ku minitö thiärou').
+st_pattern('din', 25, 'thä {h} ku minitö thiärou ku dhiëc').
+st_pattern('din', 30, 'thä {h} ku minitö thiärdiäk').
+st_pattern('din', 35, 'thä {h} ku minitö thiärdiäk ku dhiëc').
+st_pattern('din', 40, 'thä {h} ku minitö thiärŋuan').
+st_pattern('din', 45, 'thä {h} ku minitö thiärŋuan ku dhiëc').
+st_pattern('din', 50, 'thä {h} ku minitö thiärdhiëc').
+st_pattern('din', 55, 'thä {h} ku minitö thiärdhiëc ku dhiëc').
 
 short_st_use24h('din', false).
 short_st_format('din', '{h}:{mm} {ampm}').

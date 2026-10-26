@@ -15,18 +15,18 @@ st_hours('tum', ['khumi na yibili', 'chimoza', 'vibili', 'vitatu', 'vinayi', 'vi
 st_midnight('tum', 'pakati pa usiku').
 st_noon('tum', 'muhanya').
 
-st_pattern('tum', 0, '{h}:00').
-st_pattern('tum', 5, '{h}:05').
-st_pattern('tum', 10, '{h}:10').
-st_pattern('tum', 15, '{h}:15').
-st_pattern('tum', 20, '{h}:20').
-st_pattern('tum', 25, '{h}:25').
-st_pattern('tum', 30, '{h}:30').
-st_pattern('tum', 35, '{h}:35').
-st_pattern('tum', 40, '{h}:40').
-st_pattern('tum', 45, '{h}:45').
-st_pattern('tum', 50, '{h}:50').
-st_pattern('tum', 55, '{h}:55').
+st_pattern('tum', 0, '{h} koloko').
+st_pattern('tum', 5, '{h} koloko na maminiti vinkhondi').
+st_pattern('tum', 10, '{h} koloko na maminiti khumi').
+st_pattern('tum', 15, '{h} koloko na maminiti khumi na vinkhondi').
+st_pattern('tum', 20, '{h} koloko na maminiti makhumi ghaŵiri').
+st_pattern('tum', 25, '{h} koloko na maminiti makhumi ghaŵiri na vinkhondi').
+st_pattern('tum', 30, '{h} koloko na hafu').
+st_pattern('tum', 35, '{h} koloko na maminiti makhumi ghatatu na vinkhondi').
+st_pattern('tum', 40, '{h} koloko na maminiti makhumi ghanayi').
+st_pattern('tum', 45, '{h} koloko na maminiti makhumi ghanayi na vinkhondi').
+st_pattern('tum', 50, '{h} koloko na maminiti makhumi ghankhondi').
+st_pattern('tum', 55, '{h} koloko na maminiti makhumi ghankhondi na vinkhondi').
 
 short_st_use24h('tum', false).
 short_st_format('tum', '{h}:{mm} {ampm}').

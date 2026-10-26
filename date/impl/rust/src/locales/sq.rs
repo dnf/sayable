@@ -18,7 +18,7 @@ pub fn locale() -> DateLocale {
     DateLocale {
         code: "sq".to_string(),
         months: ["janar".to_string(), "shkurt".to_string(), "mars".to_string(), "prill".to_string(), "maj".to_string(), "qershor".to_string(), "korrik".to_string(), "gusht".to_string(), "shtator".to_string(), "tetor".to_string(), "nëntor".to_string(), "dhjetor".to_string()],
-        weekdays: ["e diel".to_string(), "e hënë".to_string(), "e martë".to_string(), "e mërkurë".to_string(), "e enjte".to_string(), "e premte".to_string(), "e shtunë".to_string()],
+        weekdays: ["të dielën".to_string(), "të hënën".to_string(), "të martën".to_string(), "të mërkurën".to_string(), "të enjten".to_string(), "të premten".to_string(), "të shtunën".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),
@@ -28,8 +28,8 @@ pub fn locale() -> DateLocale {
         yesterday: "dje".to_string(),
         day_after_tomorrow: Some("pasnesër".to_string()),
         day_before_yesterday: Some("pardje".to_string()),
-        this_weekday: Some("këtë {weekday}".to_string()),
-        next_weekday: Some("{weekday} tjetër".to_string()),
+        this_weekday: Some("{weekday}".to_string()),
+        next_weekday: Some("{weekday} e ardhshme".to_string()),
         last_weekday: Some("{weekday} e kaluar".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {

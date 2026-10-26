@@ -14,13 +14,13 @@ local M = {}
 M.code = "ha"
 M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
-    second = { one = "{n} daƙiƙa", other = "{n} daƙiƙoƙi" },
-    minute = { one = "{n} minti", other = "{n} mintoci" },
-    hour = { one = "{n} awa", other = "{n} awanni" },
-    day = { one = "{n} kwana", other = "{n} kwanaki" },
-    week = { one = "{n} mako", other = "{n} makonni" },
-    month = { one = "{n} wata", other = "{n} watanni" },
-    year = { one = "{n} shekara", other = "{n} shekaru" },
+    second = { one = "daƙiƙa {n}", other = "daƙiƙoƙi {n}" },
+    minute = { one = "minti {n}", other = "mintoci {n}" },
+    hour = { one = "awa {n}", other = "awanni {n}" },
+    day = { one = "kwana {n}", other = "kwanaki {n}" },
+    week = { one = "mako {n}", other = "makonni {n}" },
+    month = { one = "wata {n}", other = "watanni {n}" },
+    year = { one = "shekara {n}", other = "shekaru {n}" },
 }
 M.half = "{n}½"
 M.delimiter = ", "
@@ -29,13 +29,13 @@ M.ago = "{0} da suka wuce"
 M.in_future = "cikin {0}"
 M.short = {
     units = {
-        second = "{n} daƙ.",
-        minute = "{n} mnt.",
-        hour = "{n} awa",
-        day = "{n} kw.",
-        week = "{n} mk.",
-        month = "{n} wt.",
-        year = "{n} shk.",
+        second = "daƙ. {n}",
+        minute = "mnt. {n}",
+        hour = "awa {n}",
+        day = "kw. {n}",
+        week = "mk. {n}",
+        month = "wt. {n}",
+        year = "shk. {n}",
     },
     ago = "{0} da suka wuce",
     in_future = "cikin {0}",

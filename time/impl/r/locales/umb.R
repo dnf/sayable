@@ -12,22 +12,22 @@
 locale_umb <- list(
   code = "umb",
   clock = list(
-    hours = c("olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi"),
+    hours = c("ekwi la vali", "mosi", "vali", "tatu", "kwãla", "tãlo", "epandu", "epanduvali", "ecelãla", "ecea", "ekwi", "ekwi la mosi"),
     midnight = "ocitapi",
     noon = "ocivali",
     patterns = list(
-      "0" = "{h}:00",
-      "5" = "{h}:05",
-      "10" = "{h}:10",
-      "15" = "{h}:15",
-      "20" = "{h}:20",
-      "25" = "{h}:25",
-      "30" = "{h}:30",
-      "35" = "{h}:35",
-      "40" = "{h}:40",
-      "45" = "{h}:45",
-      "50" = "{h}:50",
-      "55" = "{h}:55"
+      "0" = "ohola {h}",
+      "5" = "ohola {h} la tãlo",
+      "10" = "ohola {h} la ekwi",
+      "15" = "ohola {h} la ekwi la tãlo",
+      "20" = "ohola {h} la akũi avali",
+      "25" = "ohola {h} la akũi avali la tãlo",
+      "30" = "ohola {h} la oñali",
+      "35" = "ohola {h} la akũi atatu la tãlo",
+      "40" = "ohola {h} la akũi akwãla",
+      "45" = "ohola {h} la akũi akwãla la tãlo",
+      "50" = "ohola {h} la akũi atãlo",
+      "55" = "ohola {h} la akũi atãlo la tãlo"
     )
   ),
   short = list(

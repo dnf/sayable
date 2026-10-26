@@ -26,7 +26,7 @@ tg
 		'month'. '{n} моҳ'.
 		'year'. '{n} сол'.
 	}).
-	locale half: '{0} ним'.
+	locale half: '{0}у ним'.
 	locale delimiter: ', '.
 	locale justNow: 'ҳамин ҳоло'.
 	locale ago: '{0} пеш'.

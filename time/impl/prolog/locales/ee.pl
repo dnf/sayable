@@ -15,18 +15,18 @@ st_hours('ee', ['wuieve', 'ɖeka', 'eve', 'etɔ̃', 'ene', 'atɔ̃', 'ade', 'adr
 st_midnight('ee', 'zã titina').
 st_noon('ee', 'ŋdɔ').
 
-st_pattern('ee', 0, '{h}:00').
-st_pattern('ee', 5, '{h}:05').
-st_pattern('ee', 10, '{h}:10').
-st_pattern('ee', 15, '{h}:15').
-st_pattern('ee', 20, '{h}:20').
-st_pattern('ee', 25, '{h}:25').
-st_pattern('ee', 30, '{h}:30').
-st_pattern('ee', 35, '{h}:35').
-st_pattern('ee', 40, '{h}:40').
-st_pattern('ee', 45, '{h}:45').
-st_pattern('ee', 50, '{h}:50').
-st_pattern('ee', 55, '{h}:55').
+st_pattern('ee', 0, 'ga {h}').
+st_pattern('ee', 5, 'ga {h} kple aɖabaƒoƒo atɔ̃').
+st_pattern('ee', 10, 'ga {h} kple aɖabaƒoƒo ewo').
+st_pattern('ee', 15, 'ga {h} kple aɖabaƒoƒo wuiatɔ̃').
+st_pattern('ee', 20, 'ga {h} kple aɖabaƒoƒo blaeve').
+st_pattern('ee', 25, 'ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃').
+st_pattern('ee', 30, 'ga {h} kple afã').
+st_pattern('ee', 35, 'ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃').
+st_pattern('ee', 40, 'ga {h} kple aɖabaƒoƒo blaene').
+st_pattern('ee', 45, 'ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃').
+st_pattern('ee', 50, 'ga {h} kple aɖabaƒoƒo blaatɔ̃').
+st_pattern('ee', 55, 'ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃').
 
 short_st_use24h('ee', false).
 short_st_format('ee', '{h}:{mm} {ampm}').

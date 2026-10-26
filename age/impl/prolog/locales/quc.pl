@@ -38,4 +38,5 @@ compact_sa_unit('quc', day, _, '{n}d').
 compact_sa_unit('quc', week, _, '{n}w').
 compact_sa_unit('quc', month, _, '{n}m').
 compact_sa_unit('quc', year, _, '{n}y').
+compact_sa_half('quc', '{n}½').
 compact_sa_delimiter('quc', '').

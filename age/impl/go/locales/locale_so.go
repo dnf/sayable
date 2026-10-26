@@ -23,10 +23,10 @@ var SO = sa.AgeLocale{
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "maalin {n}", sa.Other: "maalmood {n}"}),
-		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "toddobaad {n}", sa.Other: "toddobaadyo {n}"}),
-		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "bil {n}", sa.Other: "bilood {n}"}),
-		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "sano {n}", sa.Other: "sanooyin {n}"}),
+		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} maalin", sa.Other: "{n} maalmood"}),
+		Week:  sa.SimpleUnit("{n} toddobaad"),
+		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} bil", sa.Other: "{n} bilood"}),
+		Year:  sa.SimpleUnit("{n} sano"),
 	},
 	Half:      "{n}½",
 	Delimiter: ", ",

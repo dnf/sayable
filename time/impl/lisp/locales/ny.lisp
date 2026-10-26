@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ny"
    :clock (make-clock-config
-    :hours (list "khumi ndi ziwiri" "imodzi" "ziwiri" "zitatu" "zinayi" "zisanu" "zisanu ndi chimodzi" "zisanu ndi ziwiri" "zisanu ndi zitatu" "zisanu ndi zinayi" "khumi" "khumi ndi chimodzi")
+    :hours (list "lakhumi ndi chiwiri" "loyamba" "lachiwiri" "lachitatu" "lachinayi" "lachisanu" "lachisanu ndi chimodzi" "lachisanu ndi chiwiri" "lachisanu ndi chitatu" "lachisanu ndi chinayi" "lakhumi" "lakhumi ndi chimodzi")
     :midnight "pakati pausiku"
     :noon "usana"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ola {h}") (cons 5 "ola {h} ndi mphindi zisanu") (cons 10 "ola {h} ndi mphindi khumi") (cons 15 "ola {h} ndi mphindi khumi ndi zisanu") (cons 20 "ola {h} ndi mphindi makumi awiri") (cons 25 "ola {h} ndi mphindi makumi awiri ndi zisanu") (cons 30 "ola {h} ndi theka") (cons 35 "ola {h} ndi mphindi makumi atatu ndi zisanu") (cons 40 "ola {h} ndi mphindi makumi anayi") (cons 45 "ola {h} ndi mphindi makumi anayi ndi zisanu") (cons 50 "ola {h} ndi mphindi makumi asanu") (cons 55 "ola {h} ndi mphindi makumi asanu ndi zisanu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

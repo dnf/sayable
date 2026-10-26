@@ -14,7 +14,7 @@ function loc = locale_bem()
   loc.plural = @(n) ifelse(n == 1, "one", "other");
   loc.units.second = struct("one", 'isekondi {n}', "other", 'amasekondi {n}');
   loc.units.minute = struct("one", 'iminiti {n}', "other", 'amaminiti {n}');
-  loc.units.hour = struct("one", 'insa {n}', "other", 'amanso {n}');
+  loc.units.hour = struct("one", 'insa {n}', "other", 'insa {n}');
   loc.units.day = struct("one", 'ubushiku {n}', "other", 'inshiku {n}');
   loc.units.week = struct("one", 'umulungu {n}', "other", 'imilungu {n}');
   loc.units.month = struct("one", 'umweshi {n}', "other", 'imyeshi {n}');

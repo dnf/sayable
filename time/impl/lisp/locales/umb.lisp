@@ -17,10 +17,10 @@
   (make-time-locale
    :code "umb"
    :clock (make-clock-config
-    :hours (list "olohola likumi na yivali" "yimosi" "yivali" "yitathu" "yinyali" "yitanu" "yitathu-va-yivali" "yisemba" "yinyali-va-yivali" "yitanu-va-yivali" "likumi" "likumi na yimosi")
+    :hours (list "ekwi la vali" "mosi" "vali" "tatu" "kwãla" "tãlo" "epandu" "epanduvali" "ecelãla" "ecea" "ekwi" "ekwi la mosi")
     :midnight "ocitapi"
     :noon "ocivali"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ohola {h}") (cons 5 "ohola {h} la tãlo") (cons 10 "ohola {h} la ekwi") (cons 15 "ohola {h} la ekwi la tãlo") (cons 20 "ohola {h} la akũi avali") (cons 25 "ohola {h} la akũi avali la tãlo") (cons 30 "ohola {h} la oñali") (cons 35 "ohola {h} la akũi atatu la tãlo") (cons 40 "ohola {h} la akũi akwãla") (cons 45 "ohola {h} la akũi akwãla la tãlo") (cons 50 "ohola {h} la akũi atãlo") (cons 55 "ohola {h} la akũi atãlo la tãlo")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -23,7 +23,7 @@
    :year {:type :simple :form "{n} taun"}
    :half "{0} satengah"
    :delimiter ", "
-   :just-now "ayeuna"
+   :just-now "nembé"
    :ago "{0} kapengker"
    :in-future "dina {0}"
    :short {:second {:type :simple :form "{n} dtk"} :minute {:type :simple :form "{n} mnt"} :hour {:type :simple :form "{n} jam"} :day {:type :simple :form "{n} dinten"} :week {:type :simple :form "{n} minggu"} :month {:type :simple :form "{n} sasih"} :year {:type :simple :form "{n} taun"} :half nil :delimiter nil :ago "{0} kapengker" :in-future "dina {0}"}

@@ -6,6 +6,14 @@
 
 Plural rule: `ru_uk` (categories: one, few, many)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [be.json](../../locales/be.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): hours[1] changed to "гадзіна" (as Russian "час": "роўна гадзіна", "гадзіна пятнаццаць", "без пяці гадзіна") and hours[2] to feminine "дзве" (гадзіна is feminine: "без чвэрці дзве"). :00 "роўна {h}", :05-:30 digital reading in words ("дзве нуль пяць", "дзве пятнаццаць", "дзве трыццаць"); :35-:55 kept ("без чвэрці тры"). Idiomatic "пяць хвілін трэцяй", "чвэрць трэцяй", "палова трэцяй" need a genitive-ordinal next-hour list (schema follow-up). Doubt: Russian-influenced speakers may say "два" rather than "дзве" for 2.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | паслязаўтра      | 17.3.   |
 | Day before yesterday | пазаўчора        | 13.3.   |
 | This Thursday (+5)   | гэту чацвер      | 20.3.   |
-| Last Monday (-4)     | мінулую аўторак  | 11.3.   |
-| Next Wednesday (+12) | наступную чацвер | 27.3.   |
-| Same month (+20)     | 4 красавіка      | 4.4.    |
+| Last Tuesday (-4)    | мінулую аўторак  | 11.3.   |
+| Next Thursday (+12)  | наступную чацвер | 27.3.   |
+| Same year (+20)      | 4 красавіка      | 4.4.    |
 | Different year       | 10 студзеня 2026 | 10.1.26 |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 хвілін             | 5 хв             | 5 хв       |
 | 45 minutes            | 45 хвілін            | 45 хв            | 45 хв      |
 | 1 hour                | 1 гадзіна            | 1 гадз           | 1 гадз     |
-| 1½ hours              | 1 з паловай гадзін   | 1 з паловай гадз | 1½ гадз    |
+| 1½ hours              | 1 з паловай гадзіны  | 1 з паловай гадз | 1½ гадз    |
 | 3 hours               | 3 гадзіны            | 3 гадз           | 3 гадз     |
 | 6 hours               | 6 гадзін             | 6 гадз           | 6 гадз     |
 | 1 day                 | 1 дзень              | 1 дн.            | 1 д.       |
-| 1½ days               | 1 з паловай дзён     | 1 з паловай дн.  | 1½ д.      |
+| 1½ days               | 1 з паловай дня      | 1 з паловай дн.  | 1½ д.      |
 | 3 days                | 3 дні                | 3 дн.            | 3 д.       |
 | 1 week                | 1 тыдзень            | 1 тыд.           | 1 т.       |
 | 2 weeks, 3 days       | 2 тыдні, 3 дні       | 2 тыд., 3 дн.    | 2 т.3 д.   |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                    | Short | Compact |
-| --------------- | ------------------------- | ----- | ------- |
-| Midnight        | поўнач                    | 0:00  | 0:00    |
-| 1:00 AM         | адзін гадзін              | 1:00  | 1:00    |
-| 5 past 9        | пяць хвілін пасля дзевяць | 9:05  | 9:05    |
-| Quarter past 10 | чвэрць пасля дзесяць      | 10:15 | 10:15   |
-| Half past 11    | палова да дванаццаць      | 11:30 | 11:30   |
-| Noon            | поўдзень                  | 12:00 | 12:00   |
-| Quarter to 3    | без чвэрці тры            | 14:45 | 14:45   |
-| 5 to 6          | без пяці шэсць            | 17:55 | 17:55   |
-| 8 o'clock PM    | восем гадзін              | 20:00 | 20:00   |
-| 10:30 PM        | палова да адзінаццаць     | 22:30 | 22:30   |
-| 11:58 PM        | поўнач                    | 23:58 | 23:58   |
+| Time            | Normal               | Short | Compact |
+| --------------- | -------------------- | ----- | ------- |
+| Midnight        | поўнач               | 0:00  | 0:00    |
+| 1:00 AM         | роўна гадзіна        | 1:00  | 1:00    |
+| 5 past 9        | дзевяць нуль пяць    | 9:05  | 9:05    |
+| Quarter past 10 | дзесяць пятнаццаць   | 10:15 | 10:15   |
+| Half past 11    | адзінаццаць трыццаць | 11:30 | 11:30   |
+| Noon            | поўдзень             | 12:00 | 12:00   |
+| Quarter to 3    | без чвэрці тры       | 14:45 | 14:45   |
+| 5 to 6          | без пяці шэсць       | 17:55 | 17:55   |
+| 8 o'clock PM    | роўна восем          | 20:00 | 20:00   |
+| 10:30 PM        | дзесяць трыццаць     | 22:30 | 22:30   |
+| 11:58 PM        | поўнач               | 23:58 | 23:58   |

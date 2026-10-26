@@ -10,21 +10,21 @@
 # Source: locales/shi.json
 
 _sayabletime_locale_shi() {
-    _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
+    _clock_hours=('ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ' 'ⵜⵉⵙ ⵢⴰⵜ' 'ⵜⵉⵙ ⵙⵏⴰⵜ' 'ⵜⵉⵙ ⴽⵕⴰⵟⵟ' 'ⵜⵉⵙ ⴽⴽⵓⵥⵜ' 'ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ' 'ⵜⵉⵙ ⵙⴹⵉⵙⵜ' 'ⵜⵉⵙ ⵙⴰⵜ' 'ⵜⵉⵙ ⵜⴰⵎⵜ' 'ⵜⵉⵙ ⵜⵥⴰⵜ' 'ⵜⵉⵙ ⵎⵔⴰⵡⵜ' 'ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ')
     _clock_midnight='ⵏⵚ ⵏ ⵉⴹ'
     _clock_noon='ⵜⵉⵣⵡⴰⵔⵏⵉⵏ'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ'
+    _clock_pattern_10='{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ'
+    _clock_pattern_15='{h} ⴷ ⵔⵔⴱⵄ'
+    _clock_pattern_20='{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    _clock_pattern_25='{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    _clock_pattern_30='{h} ⴷ ⵓⵣⴳⵏ'
+    _clock_pattern_35='{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    _clock_pattern_40='{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    _clock_pattern_45='{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    _clock_pattern_50='{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
+    _clock_pattern_55='{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

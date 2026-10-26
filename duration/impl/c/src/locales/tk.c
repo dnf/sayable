@@ -28,7 +28,7 @@ const SduDurationLocale sdu_locale_tk = {
         { "{n} aý", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ýyl", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0}½", ", ",
+    "{n} ýarym", ", ",
     "häzir",
     "{0} öň", "{0} soň",
     true, { true, { "{n} sek", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sag", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} g", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} a", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ý", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} öň", true, "{0} soň" },

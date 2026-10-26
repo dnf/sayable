@@ -14,7 +14,7 @@ private[sayableage] var timeNow: () => LocalDate = () => LocalDate.now()
 private[sayableage] case class AgeComponents(months: Int, diffDays: Int)
 
 private[sayableage] def parseAge(dateOfBirth: String, asOf: Option[String] = None): Option[AgeComponents] =
-    if (dateOfBirth.isEmpty) None
+    if (dateOfBirth == null || dateOfBirth.isEmpty) None
     else
         parseDateParts(dateOfBirth).flatMap { case (dobY, dobM, dobD) =>
             val refParts = asOf.filter(_.nonEmpty) match

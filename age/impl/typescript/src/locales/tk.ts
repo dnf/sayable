@@ -20,7 +20,7 @@ export const tk: AgeLocale = {
     month: '{n} aý',
     year:  '{n} ýaş',
   },
-  half: '{0}½',
+  half: '{n} ýarym',
   delimiter: ', ',
   justBorn: 'Täze doglan',
   stages: {
@@ -29,7 +29,7 @@ export const tk: AgeLocale = {
     toddler: 'Kiçijik',
     child: 'Çaga',
     teenager: 'Ýetginjek',
-    adult: 'Ulular',
+    adult: 'Uly adam',
   },
   short: {
     units: {

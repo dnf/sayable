@@ -28,36 +28,36 @@ fn build_wo() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var day = simple_unit("bés {n}")
-    var week = simple_unit("ayubés {n}")
-    var month = simple_unit("weer {n}")
-    var year = simple_unit("at {n}")
+    var day = simple_unit("{n} fan")
+    var week = simple_unit("{n} ayubés")
+    var month = simple_unit("{n} weer")
+    var year = simple_unit("{n} at")
 
     var newborn = stage_neutral("Dees ko sax juddu")
-    var infant = stage_neutral("Njàmbaar bu ndaw")
+    var infant = stage_neutral("Liir")
     var toddler = stage_neutral("Xale bu ndaw")
     var child = stage_neutral("Xale")
     var teenager = stage_neutral("Ndaw-ndaw")
     var adult = stage_neutral("Mag")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("bés {n}")
+    short_ovr.day = simple_unit("{n} fan")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("ayub. {n}")
+    short_ovr.week = simple_unit("{n} ayub.")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("weer {n}")
+    short_ovr.month = simple_unit("{n} weer")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("at {n}")
+    short_ovr.year = simple_unit("{n} at")
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    compact_ovr.day = simple_unit("bés {n}")
+    compact_ovr.day = simple_unit("{n} fan")
     compact_ovr.has_day = True
-    compact_ovr.week = simple_unit("ayub {n}")
+    compact_ovr.week = simple_unit("{n} ayub")
     compact_ovr.has_week = True
-    compact_ovr.month = simple_unit("weer {n}")
+    compact_ovr.month = simple_unit("{n} weer")
     compact_ovr.has_month = True
-    compact_ovr.year = simple_unit("at {n}")
+    compact_ovr.year = simple_unit("{n} at")
     compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True

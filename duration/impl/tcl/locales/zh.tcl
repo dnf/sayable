@@ -22,7 +22,7 @@ proc locale_duration_zh {} {
         day "{n}天" \
         week "{n}周" \
         month "{n}个月" \
-        year "{n}岁" \
+        year "{n}年" \
     ]
     set half "{0}半"
     set delimiter {}

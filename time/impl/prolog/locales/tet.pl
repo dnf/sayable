@@ -15,18 +15,18 @@ st_hours('tet', ['sanulu-resin-rua', 'ida', 'rua', 'tolu', 'haat', 'lima', 'neen
 st_midnight('tet', 'meiu-kalan').
 st_noon('tet', 'meiu-loron').
 
-st_pattern('tet', 0, '{h}:00').
-st_pattern('tet', 5, '{h}:05').
-st_pattern('tet', 10, '{h}:10').
-st_pattern('tet', 15, '{h}:15').
-st_pattern('tet', 20, '{h}:20').
-st_pattern('tet', 25, '{h}:25').
-st_pattern('tet', 30, '{h}:30').
-st_pattern('tet', 35, '{h}:35').
-st_pattern('tet', 40, '{h}:40').
-st_pattern('tet', 45, '{h}:45').
-st_pattern('tet', 50, '{h}:50').
-st_pattern('tet', 55, '{h}:55').
+st_pattern('tet', 0, 'tuku {h}').
+st_pattern('tet', 5, 'tuku {h} ho minutu lima').
+st_pattern('tet', 10, 'tuku {h} ho minutu sanulu').
+st_pattern('tet', 15, 'tuku {h} ho minutu sanulu-resin-lima').
+st_pattern('tet', 20, 'tuku {h} ho minutu ruanulu').
+st_pattern('tet', 25, 'tuku {h} ho minutu ruanulu-resin-lima').
+st_pattern('tet', 30, 'tuku {h} ho balun').
+st_pattern('tet', 35, 'tuku {h} ho minutu tolunulu-resin-lima').
+st_pattern('tet', 40, 'tuku {h} ho minutu haatnulu').
+st_pattern('tet', 45, 'tuku {h} ho minutu haatnulu-resin-lima').
+st_pattern('tet', 50, 'tuku {h} ho minutu limanulu').
+st_pattern('tet', 55, 'tuku {h} ho minutu limanulu-resin-lima').
 
 short_st_use24h('tet', false).
 short_st_format('tet', '{h}:{mm} {ampm}').

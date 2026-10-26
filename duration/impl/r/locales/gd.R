@@ -22,7 +22,7 @@ locale_gd <- list(
   units = list(
     second = list(one = "{n} diog", two = "{n} dhiog", few = "{n} diogan", other = "{n} diog"),
     minute = list(one = "{n} mhionaid", two = "{n} mhionaid", few = "{n} mionaidean", other = "{n} mionaid"),
-    hour = list(one = "{n} uair", two = "{n} uair", few = "{n} uairean", other = "{n} uair"),
+    hour = list(one = "{n} uair a thìde", two = "{n} uair a thìde", few = "{n} uairean a thìde", other = "{n} uair a thìde"),
     day = list(one = "{n} latha", two = "{n} latha", few = "{n} làithean", other = "{n} latha"),
     week = list(one = "{n} sheachdain", two = "{n} sheachdain", few = "{n} seachdainean", other = "{n} seachdain"),
     month = list(one = "{n} mhìos", two = "{n} mhìos", few = "{n} mìosan", other = "{n} mìos"),

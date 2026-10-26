@@ -14,7 +14,7 @@ function loc = locale_hi()
   loc.plural = @(n) ifelse(n == 0 || n == 1, "one", "other");
   loc.units.second = '{n} सेकंड';
   loc.units.minute = '{n} मिनट';
-  loc.units.hour = '{n} घंटा';
+  loc.units.hour = struct("one", '{n} घंटा', "other", '{n} घंटे');
   loc.units.day = struct("one", '{n} दिन', "other", '{n} दिन');
   loc.units.week = struct("one", '{n} सप्ताह', "other", '{n} सप्ताह');
   loc.units.month = struct("one", '{n} महीना', "other", '{n} महीने');

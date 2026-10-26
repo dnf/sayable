@@ -20,7 +20,7 @@ hi
 	locale units: (Dictionary newFromPairs: {
 		'second'. '{n} सेकंड'.
 		'minute'. '{n} मिनट'.
-		'hour'. '{n} घंटा'.
+		'hour'. (Dictionary newFromPairs: { #one. '{n} घंटा'. #other. '{n} घंटे' }).
 		'day'. (Dictionary newFromPairs: { #one. '{n} दिन'. #other. '{n} दिन' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} सप्ताह'. #other. '{n} सप्ताह' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} महीना'. #other. '{n} महीने' }).

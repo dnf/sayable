@@ -26,7 +26,7 @@ var LO = sa.AgeLocale{
 		Year:  sa.SimpleUnit("{n} ປີ"),
 	},
 	Half:      "{0}ເຄິ່ງ",
-	Delimiter: "",
+	Delimiter: " ",
 	JustBorn:  "ເກີດໃໝ່",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.S("ເດັກເກີດໃໝ່"),
@@ -47,5 +47,6 @@ var LO = sa.AgeLocale{
 		Week:  &sa.UnitForms{Simple: "{n}w"},
 		Month: &sa.UnitForms{Simple: "{n}m"},
 		Year:  &sa.UnitForms{Simple: "{n}y"},
+		Half:  strPtr("{n}½"),
 	},
 }

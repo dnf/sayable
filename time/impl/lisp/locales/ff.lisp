@@ -20,7 +20,7 @@
     :hours (list "sappo e ɗiɗi" "go'o" "ɗiɗi" "tati" "nay" "joy" "jeegom" "jeeɗiɗi" "jeetati" "jeenay" "sappo" "sappo e go'o")
     :midnight "jamma hejjere"
     :noon "zuhr"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "waktu {h}") (cons 5 "waktu {h} e hojomaaje joy") (cons 10 "waktu {h} e hojomaaje sappo") (cons 15 "waktu {h} e hojomaaje sappo e joy") (cons 20 "waktu {h} e hojomaaje noogas") (cons 25 "waktu {h} e hojomaaje noogas e joy") (cons 30 "waktu {h} e feccere") (cons 35 "waktu {h} e hojomaaje cappanɗe tati e joy") (cons 40 "waktu {h} e hojomaaje cappanɗe nay") (cons 45 "waktu {h} e hojomaaje cappanɗe nay e joy") (cons 50 "waktu {h} e hojomaaje cappanɗe joy") (cons 55 "waktu {h} e hojomaaje cappanɗe joy e joy")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

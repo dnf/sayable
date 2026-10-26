@@ -13,8 +13,8 @@ locale_qu <- list(
   code = "qu",
   plural = function(n) "other",
   units = list(
-    second = "{n} ñiqin",
-    minute = "{n} chiniku",
+    second = "{n} sikundu",
+    minute = "{n} minutu",
     hour = "{n} ura",
     day = "{n} p'unchaw",
     week = "{n} simana",
@@ -28,8 +28,8 @@ locale_qu <- list(
   in_future = "{0} qhipata",
   short = list(
     units = list(
-      second = "{n} ñiq",
-      minute = "{n} chi",
+      second = "{n} sik",
+      minute = "{n} min",
       hour = "{n} ura",
       day = "{n} p'un",
       week = "{n} sim",

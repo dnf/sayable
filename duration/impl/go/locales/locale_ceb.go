@@ -31,7 +31,7 @@ var CEB = sd.DurationLocale{
 		Month:  sd.SimpleUnit("{n} ka bulan"),
 		Year:   sd.SimpleUnit("{n} ka tuig"),
 	},
-	Half:      "{n}½",
+	Half:      "{0} ug tunga",
 	Delimiter: ", ",
 	JustNow:   "karon lang",
 	Ago:       "{0} ang milabay",

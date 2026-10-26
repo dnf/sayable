@@ -17,10 +17,10 @@
   (make-age-locale
    :code "ig"
    :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :day "{n} ụbọchị")
-               (cons :week "{n} izu")
-               (cons :month "{n} ọnwa")
-               (cons :year "{n} afọ"))
+   :units (list (cons :day "ụbọchị {n}")
+               (cons :week "izu {n}")
+               (cons :month "ọnwa {n}")
+               (cons :year "afọ {n}"))
    :half "{0} na ọkara"
    :delimiter ", "
    :just-born "Nwa ọhụrụ"
@@ -28,12 +28,12 @@
                  (cons :infant "Nwa ọhụrụ")
                  (cons :toddler "Nwa nta")
                  (cons :child "Nwa")
-                 (cons :teenager "Nwokorobịa")
+                 (cons :teenager '((:m . "Nwokorobịa") (:f . "Agbọghọbịa")))
                  (cons :adult "Okenye"))
-   :short-units (list (cons :day "{n} ụbọchị")
-                       (cons :week "{n} izu")
-                       (cons :month "{n} ọnwa")
-                       (cons :year "{n} afọ"))
+   :short-units (list (cons :day "ụbọchị {n}")
+                       (cons :week "izu {n}")
+                       (cons :month "ọnwa {n}")
+                       (cons :year "afọ {n}"))
    :compact-units (list (cons :day "{n}d")
                        (cons :week "{n}w")
                        (cons :month "{n}m")

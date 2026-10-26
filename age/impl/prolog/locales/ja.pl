@@ -38,3 +38,4 @@ compact_sa_unit('ja', day, _, '{n}d').
 compact_sa_unit('ja', week, _, '{n}w').
 compact_sa_unit('ja', month, _, '{n}m').
 compact_sa_unit('ja', year, _, '{n}y').
+compact_sa_half('ja', '{n}½').

@@ -69,7 +69,7 @@ fn build_dv() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} ބައި",
+        half="{n}½",
         delimiter="، ",
         just_born="އަލަށް އުފަންވި",
         newborn=newborn,

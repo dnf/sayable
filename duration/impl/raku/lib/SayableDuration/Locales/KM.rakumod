@@ -29,7 +29,7 @@ our sub locale() {
         delimiter => ', ',
         just-now => 'ឥឡូវនេះ',
         ago => '{0}មុន',
-        in-future => 'ក្នុង{0}',
+        in-future => '{0}ទៀត',
         short => {
             units => {
                 second => '{n} វិនាទី',
@@ -41,7 +41,7 @@ our sub locale() {
                 year => '{n} ឆ្នាំ',
             },
             ago => '{0}មុន',
-            in-future => 'ក្នុង{0}',
+            in-future => '{0}ទៀត',
         },
         compact => {
             units => {
@@ -56,7 +56,7 @@ our sub locale() {
             delimiter => '',
             half => '{n}½',
             ago => '{0}មុន',
-            in-future => 'ក្នុង{0}',
+            in-future => '{0}ទៀត',
         },
     }
 }

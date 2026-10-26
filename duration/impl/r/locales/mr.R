@@ -14,7 +14,7 @@ locale_mr <- list(
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
     second = "{n} सेकंद",
-    minute = "{n} मिनिट",
+    minute = list(one = "{n} मिनिट", other = "{n} मिनिटे"),
     hour = "{n} तास",
     day = list(one = "{n} दिवस", other = "{n} दिवस"),
     week = list(one = "{n} आठवडा", other = "{n} आठवडे"),

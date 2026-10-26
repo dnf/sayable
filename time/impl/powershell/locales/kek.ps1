@@ -10,22 +10,22 @@
 # Source: locales/kek.json
 
 function locale_kek {
-    $hours = @('kab''laju', 'jun', 'kab''', 'oxib''', 'kab''ib''', 'o''ib''', 'waqib''', 'uqub''', 'wajxaqib''', 'b''elejeb''', 'lajeb''', 'junlaju')
+    $hours = @('kab''laju', 'jun', 'kiib''', 'oxib''', 'kaahib''', 'oob''', 'waqib''', 'wuqub''', 'waqxaqib''', 'b''eleeb''', 'lajeeb''', 'junlaju')
     $midnight = 'chaq'' xkab'''
     $noon = 'chaq'' chaab''il'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h} hoonal'
+    $patterns[5] = '{h} hoonal rik''in oob'' minuut'
+    $patterns[10] = '{h} hoonal rik''in lajeeb'' minuut'
+    $patterns[15] = '{h} hoonal rik''in o''laju minuut'
+    $patterns[20] = '{h} hoonal rik''in junmay minuut'
+    $patterns[25] = '{h} hoonal rik''in oob'' xkak''aal minuut'
+    $patterns[30] = '{h} hoonal rik''in yijach'
+    $patterns[35] = '{h} hoonal rik''in o''laju xkak''aal minuut'
+    $patterns[40] = '{h} hoonal rik''in kaak''aal minuut'
+    $patterns[45] = '{h} hoonal rik''in oob'' roxk''aal minuut'
+    $patterns[50] = '{h} hoonal rik''in lajeeb'' roxk''aal minuut'
+    $patterns[55] = '{h} hoonal rik''in o''laju roxk''aal minuut'
     $clock = @{
         hours = $hours
         midnight = $midnight

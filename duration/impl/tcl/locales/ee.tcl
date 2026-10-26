@@ -17,30 +17,30 @@ proc plural_ee {n} {
 proc locale_duration_ee {} {
     set code {ee}
     set units [dict create \
-        second [dict create one "sekend {n}" other "sekendwo {n}"] \
-        minute [dict create one "aɖabaƒoƒo {n}" other "aɖabaƒoƒowo {n}"] \
-        hour [dict create one "gaƒoƒo {n}" other "gaƒoƒowo {n}"] \
-        day [dict create one "ŋkeke {n}" other "ŋkekewo {n}"] \
-        week [dict create one "kɔsiɖa {n}" other "kɔsiɖawo {n}"] \
-        month [dict create one "ɣleti {n}" other "ɣletiwo {n}"] \
-        year [dict create one "ƒe {n}" other "ƒewo {n}"] \
+        second "sekend {n}" \
+        minute "aɖabaƒoƒo {n}" \
+        hour "gaƒoƒo {n}" \
+        day "ŋkeke {n}" \
+        week "kɔsiɖa {n}" \
+        month "ɣleti {n}" \
+        year "ƒe {n}" \
     ]
     set half "{0} kple afã"
     set delimiter {, }
     set just_now {fifia}
-    set ago "ɖe {0} me"
+    set ago "{0} si va yi"
     set in_future "le {0} me"
     set short [dict create \
         units [dict create \
             second "sek. {n}" \
             minute "aɖaba. {n}" \
             hour "gaƒ. {n}" \
-            day "ŋkekewo {n}" \
-            week [dict create one "kɔsiɖa {n}" other "kɔsiɖawo {n}"] \
-            month [dict create one "ɣleti {n}" other "ɣletiwo {n}"] \
-            year [dict create one "ƒe {n}" other "ƒewo {n}"] \
+            day "ŋkeke {n}" \
+            week "kɔsiɖa {n}" \
+            month "ɣleti {n}" \
+            year "ƒe {n}" \
         ] \
-        ago "ɖe {0} me" \
+        ago "{0} si va yi" \
         in_future "le {0} me" \
     ]
     set compact [dict create \
@@ -55,7 +55,7 @@ proc locale_duration_ee {} {
         ] \
         half "{n}½" \
         delimiter {} \
-        ago "ɖe {0} me" \
+        ago "{0} si va yi" \
         in_future "le {0} me" \
     ]
     return [dict create \

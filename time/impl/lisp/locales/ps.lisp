@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ps"
    :clock (make-clock-config
-    :hours (list "دولس" "یو" "دوه" "درې" "څلور" "پنځه" "شپږ" "اووه" "اته" "نهه" "لس" "یوولس")
+    :hours (list "دولس بجې" "یوه بجه" "دوه بجې" "درې بجې" "څلور بجې" "پنځه بجې" "شپږ بجې" "اووه بجې" "اته بجې" "نهه بجې" "لس بجې" "یوولس بجې")
     :midnight "نیمه شپه"
     :noon "غرمه"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} او پنځه دقیقې") (cons 10 "{h} او لس دقیقې") (cons 15 "{h} او پنځلس دقیقې") (cons 20 "{h} او شل دقیقې") (cons 25 "{h} او پنځه ویشت دقیقې") (cons 30 "{h} او دېرش دقیقې") (cons 35 "{h} او پنځه دېرش دقیقې") (cons 40 "{h} او څلوېښت دقیقې") (cons 45 "{h} او پنځه څلوېښت دقیقې") (cons 50 "{h} او پنځوس دقیقې") (cons 55 "{h} او پنځه پنځوس دقیقې")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

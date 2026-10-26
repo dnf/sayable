@@ -56,6 +56,20 @@ Returns NIL on failure."
                  (<= 1 day (days-in-month year month)))
         (values year month day)))))
 
+;;; --- Default reference date ---
+
+(defun local-today-string ()
+  "Today's local date as YYYY-MM-DD."
+  (multiple-value-bind (sec min hour day month year) (get-decoded-time)
+    (declare (ignore sec min hour))
+    (format nil "~4,'0D-~2,'0D-~2,'0D" year month day)))
+
+(defun resolve-as-of (as-of-str)
+  "AS-OF-STR, or today's local date when it is NIL or empty."
+  (if (or (null as-of-str) (equal as-of-str ""))
+      (local-today-string)
+      as-of-str))
+
 ;;; --- Age computation ---
 
 (defun compute-age (dob-str as-of-str)
@@ -192,8 +206,7 @@ Returns NIL on failure."
             (zerop (length dob-str))
             (string= dob-str "undefined"))
     (return-from format-age nil))
-  (when (null as-of-str)
-    (return-from format-age nil))
+  (setf as-of-str (resolve-as-of as-of-str))
   (multiple-value-bind (months diff-days) (compute-age dob-str as-of-str)
     (unless months (return-from format-age nil))
     (let* ((loc (sayable-age-formatter-locale formatter))
@@ -245,8 +258,7 @@ Returns NIL on failure."
             (zerop (length dob-str))
             (string= dob-str "undefined"))
     (return-from format-stage nil))
-  (when (null as-of-str)
-    (return-from format-stage nil))
+  (setf as-of-str (resolve-as-of as-of-str))
   (multiple-value-bind (months diff-days) (compute-age dob-str as-of-str)
     (declare (ignore diff-days))
     (unless months (return-from format-stage nil))

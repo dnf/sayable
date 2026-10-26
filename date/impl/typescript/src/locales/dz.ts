@@ -24,7 +24,7 @@ export const dz: DateLocale = {
   yesterday: 'ཁ་ཙ',
   dayAfterTomorrow: 'གནངས་ཚེ',
   dayBeforeYesterday: 'ཁ་ཉིམ',
-  thisWeekday: 'འདི་ {weekday}',
+  thisWeekday: '{weekday} འདི',
   nextWeekday: '{weekday} ཤུལ་མ',
   lastWeekday: '{weekday} ཧེ་མ',
   short: {

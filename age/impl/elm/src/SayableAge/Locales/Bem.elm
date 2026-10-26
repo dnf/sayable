@@ -45,7 +45,7 @@ locale =
         , toddler = Neutral "Umwana"
         , child = Neutral "Umwana"
         , teenager = Neutral "Umunyamata"
-        , adult = Neutral "Umulumendo"
+        , adult = Neutral "Umukalamba"
         }
     , short =
         Just

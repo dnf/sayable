@@ -24,7 +24,7 @@ proc locale_duration_dv {} {
         month "{n} މަސް" \
         year "{n} އަހަރު" \
     ]
-    set half "{0} ބައި"
+    set half "{n}½"
     set delimiter {، }
     set just_now {މިހާރު}
     set ago "މީގެ {0} ކުރިން"

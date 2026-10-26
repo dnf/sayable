@@ -19,17 +19,15 @@ fi
 # Counters
 _pass=0
 _fail=0
-_skip=0
 _total=0
 
 # Color support
 if [[ -t 1 ]]; then
     _red="\033[31m"
     _green="\033[32m"
-    _yellow="\033[33m"
     _reset="\033[0m"
 else
-    _red="" _green="" _yellow="" _reset=""
+    _red="" _green="" _reset=""
 fi
 
 # Requests are queued, answered by a single `--repl` process, then checked.
@@ -53,11 +51,6 @@ _queue() {
 run_test() { local id="$1" expected="$2"; shift 2; _queue "${id}" test "${expected}" "$@"; }
 run_null() { local id="$1"; shift; _queue "${id}" null "" "$@"; }
 run_regex() { local id="$1" pattern="$2"; shift 2; _queue "${id}" regex "${pattern}" "$@"; }
-
-# A component is supported unless probing it is a usage error (exit 2).
-for _component in age date time duration; do
-    _queue "probe:${_component}" probe "" "${_component}" null
-done
 
 # ══════════════════════════════════════════════════════════════
 # AGE COMPONENT
@@ -250,7 +243,7 @@ run_test 'age:25.6' '2 semanas, 6 días' age 2025-05-26 -d 2025-06-15 -l es
 run_test 'age:25.7' '6 meses' age 2025-01-15 -d 2025-07-15 -l es
 run_test 'age:25.8' '2 años, 1 mes' age 2023-06-15 -d 2025-07-15 -l es
 run_test 'age:25.9' '2 años, 6 meses' age 2023-06-15 -d 2025-12-15 -l es
-run_test 'age:25.10' '3 y medio años' age 2022-06-15 -d 2025-12-15 -l es
+run_test 'age:25.10' '3 años y medio' age 2022-06-15 -d 2025-12-15 -l es
 run_test 'age:25.11' '3 años' age 2022-06-15 -d 2025-06-15 -l es
 run_test 'age:25.12' '7 años' age 2018-06-15 -d 2025-06-15 -l es
 run_test 'age:25.13' 'Recién nacido' stage 2025-06-15 -d 2025-06-15 -l es
@@ -285,13 +278,13 @@ run_test 'age:27.8' 'Newborn' age 2025-06-15 -d 2025-06-15 --compact
 
 # === Age 29: Locale-specific edge cases — plural rules ===
 run_test 'age:29.1' 'רק נולד' age 2025-06-15 -d 2025-06-15 -l he
-run_test 'age:29.2' 'יום 1' age 2025-06-14 -d 2025-06-15 -l he
+run_test 'age:29.2' 'יום' age 2025-06-14 -d 2025-06-15 -l he
 run_test 'age:29.3' '3 ימים' age 2025-06-12 -d 2025-06-15 -l he
 run_test 'age:29.4' 'שבועיים' age 2025-06-01 -d 2025-06-15 -l he
 run_test 'age:29.5' '3 שבועות' age 2025-05-25 -d 2025-06-15 -l he
 run_test 'age:29.6' '6 חודשים' age 2025-01-15 -d 2025-07-15 -l he
 run_test 'age:29.7' '3 חודשים' age 2025-03-15 -d 2025-06-15 -l he
-run_test 'age:29.8' 'שנתיים, חודש 1' age 2023-06-15 -d 2025-07-15 -l he
+run_test 'age:29.8' 'שנתיים, חודש' age 2023-06-15 -d 2025-07-15 -l he
 run_test 'age:29.9' '3 שנים וחצי' age 2022-06-15 -d 2025-12-15 -l he
 run_test 'age:29.10' '7 שנים' age 2018-06-15 -d 2025-06-15 -l he
 run_test 'age:29.11' 'רק נולד' stage 2025-06-15 -d 2025-06-15 -l he -g m
@@ -315,7 +308,7 @@ run_test 'age:29.28' 'Baru lahir' age 2025-06-15 -d 2025-06-15 -l id
 run_test 'age:29.29' '1 hari' age 2025-06-14 -d 2025-06-15 -l id
 run_test 'age:29.30' '3 hari' age 2025-06-12 -d 2025-06-15 -l id
 run_test 'age:29.31' '6 bulan' age 2025-01-15 -d 2025-07-15 -l id
-run_test 'age:29.32' '3 tahun setengah' age 2022-06-15 -d 2025-12-15 -l id
+run_test 'age:29.32' '3 setengah tahun' age 2022-06-15 -d 2025-12-15 -l id
 run_test 'age:29.33' '7 tahun' age 2018-06-15 -d 2025-06-15 -l id
 run_test 'age:29.34' 'አዲስ የተወለደ' age 2025-06-15 -d 2025-06-15 -l am
 run_test 'age:29.35' '1 ቀን' age 2025-06-14 -d 2025-06-15 -l am
@@ -334,7 +327,7 @@ run_test 'age:31.4' '12w4d' age 2016-12-31 -d 2017-03-29 --compact
 # === Age 32: Half years take their plural form from whole years ===
 run_test 'age:32.1' '3 i pół lata' age 2021-06-15 -d 2025-01-15 -l pl
 run_test 'age:32.2' '5 i pół lat' age 2020-06-15 -d 2025-12-15 -l pl --short
-run_test 'age:32.3' '6 iseggasen d uzgen' age 2005-06-08 -d 2012-06-07 -l shi
+run_test 'age:32.3' '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ' age 2005-06-08 -d 2012-06-07 -l shi
 
 # === Age 33: Input validation ===
 run_null 'age:33.1' age 2025-02-30 -d 2032-06-25
@@ -640,40 +633,14 @@ if [[ ${#_responses[@]} -ne ${#_ids[@]} ]]; then
     exit 1
 fi
 
-_has_age=true _has_date=true _has_time=true _has_duration=true
-for _i in "${!_ids[@]}"; do
-    if [[ "${_kinds[_i]}" == probe && "${_responses[_i]%%${_tab}*}" == 2 ]]; then
-        case "${_ids[_i]}" in
-            probe:age) _has_age=false ;;
-            probe:date) _has_date=false ;;
-            probe:time) _has_time=false ;;
-            probe:duration) _has_duration=false ;;
-        esac
-    fi
-done
-
+# Every CLI implements all four libraries (cli/SPEC.md), so nothing is
+# skipped: a missing library shows up as failing tests.
 echo "Testing: ${CLI}"
-echo "Components: age=${_has_age} date=${_has_date} time=${_has_time} duration=${_has_duration}"
-
-_supported() {
-    case "$1" in
-        age:*) ${_has_age} ;;
-        date:*) ${_has_date} ;;
-        time:*) ${_has_time} ;;
-        dur:*) ${_has_duration} ;;
-        *) false ;;
-    esac
-}
 
 for _i in "${!_ids[@]}"; do
     _id="${_ids[_i]}"
     _kind="${_kinds[_i]}"
     _expected="${_expects[_i]}"
-    [[ "${_kind}" == probe ]] && continue
-    if ! _supported "${_id}"; then
-        _skip=$((_skip + 1))
-        continue
-    fi
     _total=$((_total + 1))
     _response="${_responses[_i]}"
     _rc="${_response%%${_tab}*}"
@@ -699,9 +666,6 @@ done
 # SUMMARY
 # ══════════════════════════════════════════════════════════════
 echo
-if [[ ${_skip} -gt 0 ]]; then
-    printf "${_yellow}%d skipped${_reset} (unsupported components)\n" "${_skip}"
-fi
 if [[ ${_fail} -eq 0 ]]; then
     printf "${_green}All %d tests passed.${_reset}\n" "${_total}"
 else

@@ -18,10 +18,10 @@ locale() ->
         code = "lt",
         months = ["sausis", "vasaris", "kovas", "balandis", "gegužė", "birželis", "liepa", "rugpjūtis", "rugsėjis", "spalis", "lapkritis", "gruodis"],
         weekdays = ["sekmadienis", "pirmadienis", "antradienis", "trečiadienis", "ketvirtadienis", "penktadienis", "šeštadienis"],
-        day_format = "{n}.",
+        day_format = "{n} d.",
         day_format_exceptions = [],
-        date_pattern = "{day} {month}",
-        date_pattern_with_year = "{day} {month} {year}",
+        date_pattern = "{month} {day}",
+        date_pattern_with_year = "{year} m. {month} {day}",
         today = "šiandien",
         tomorrow = "rytoj",
         yesterday = "vakar",
@@ -31,6 +31,6 @@ locale() ->
         next_weekday = {just, "kitą {weekday}"},
         last_weekday = {just, "praėjusį {weekday}"},
         months_in_date = {just, ["sausio", "vasario", "kovo", "balandžio", "gegužės", "birželio", "liepos", "rugpjūčio", "rugsėjo", "spalio", "lapkričio", "gruodžio"]},
-        short = {just, #date_compactness_override{months = {just, ["saus", "vas", "kov", "bal", "geg", "birž", "liep", "rugp", "rugs", "spal", "lapkr", "gruod"]}, months_in_date = nothing, weekdays = {just, ["sk", "pr", "an", "tr", "kt", "pn", "št"]}, day_format = {just, "{n}."}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        short = {just, #date_compactness_override{months = {just, ["saus", "vas", "kov", "bal", "geg", "birž", "liep", "rugp", "rugs", "spal", "lapkr", "gruod"]}, months_in_date = nothing, weekdays = {just, ["sk", "pr", "an", "tr", "kt", "pn", "št"]}, day_format = {just, "{n} d."}, day_format_exceptions = nothing, date_pattern = {just, "{month} {day}"}, date_pattern_with_year = {just, "{year} m. {month} {day}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{m}-{d}"}, date_pattern_with_year = {just, "{yy}-{m}-{d}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

@@ -19,8 +19,8 @@
    :clock (make-clock-config
     :hours (list "iri na abụọ" "otu" "abụọ" "atọ" "anọ" "ise" "isii" "asaa" "asatọ" "itoolu" "iri" "iri na otu")
     :midnight "etiti abalị"
-    :noon "ehihie"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :noon "etiti ehihie"
+    :patterns (list (cons 0 "elekere {h}") (cons 5 "elekere {h} na nkeji ise") (cons 10 "elekere {h} na nkeji iri") (cons 15 "elekere {h} na nkeji iri na ise") (cons 20 "elekere {h} na nkeji iri abụọ") (cons 25 "elekere {h} na nkeji iri abụọ na ise") (cons 30 "elekere {h} na ọkara") (cons 35 "elekere {h} na nkeji iri atọ na ise") (cons 40 "elekere {h} na nkeji iri anọ") (cons 45 "elekere {h} na nkeji iri anọ na ise") (cons 50 "elekere {h} na nkeji iri ise") (cons 55 "elekere {h} na nkeji iri ise na ise")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

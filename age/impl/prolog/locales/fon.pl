@@ -26,7 +26,9 @@ sa_stage('fon', newborn, _, 'Vǐ yɔ̌yɔ́').
 sa_stage('fon', infant, _, 'Vǐ').
 sa_stage('fon', toddler, _, 'Vǐ').
 sa_stage('fon', child, _, 'Vǐ').
-sa_stage('fon', teenager, _, 'Nyɔ̌nu').
+sa_stage('fon', teenager, m, 'Dɔnkpɛvu').
+sa_stage('fon', teenager, f, 'Ɖyɔ̌vǐ').
+sa_stage('fon', teenager, _, 'Dɔnkpɛvu').
 sa_stage('fon', adult, _, 'Mɛ̌xo').
 
 short_sa_unit('fon', day, _, 'azǎn {n}').

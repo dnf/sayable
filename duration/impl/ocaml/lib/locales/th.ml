@@ -25,7 +25,7 @@ let locale : duration_locale =
   ; delimiter = " "
   ; just_now = "เมื่อกี้"
   ; ago = "{0}ที่แล้ว"
-  ; in_future = "ใน{0}"
+  ; in_future = "ในอีก {0}"
   ; short = Some
       { ovr_second = Some (Simple "{n} วิ")
       ; ovr_minute = Some (Simple "{n} นาที")
@@ -37,7 +37,7 @@ let locale : duration_locale =
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "{0}ที่แล้ว"
-      ; ovr_in_future = Some "ใน{0}"
+      ; ovr_in_future = Some "ในอีก {0}"
       }
   ; compact = Some
       { ovr_second = Some (Simple "{n}วิ")
@@ -50,6 +50,6 @@ let locale : duration_locale =
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_ago = Some "{0}ที่แล้ว"
-      ; ovr_in_future = Some "ใน{0}"
+      ; ovr_in_future = Some "ในอีก {0}"
       }
   }

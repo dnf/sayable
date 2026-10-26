@@ -16,7 +16,7 @@ yue
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'yue'.
-	locale months: (OrderedCollection withAll: { '一月'. '二月'. '三月'. '四月'. '五月'. '六月'. '七月'. '八月'. '九月'. '十月'. '十一月'. '十二月' }).
+	locale months: (OrderedCollection withAll: { '1月'. '2月'. '3月'. '4月'. '5月'. '6月'. '7月'. '8月'. '9月'. '10月'. '11月'. '12月' }).
 	locale weekdays: (OrderedCollection withAll: { '星期日'. '星期一'. '星期二'. '星期三'. '星期四'. '星期五'. '星期六' }).
 	locale dayFormat: '{n}日'.
 	locale dayFormatExceptions: Dictionary new.
@@ -32,7 +32,7 @@ yue
 	locale lastWeekday: '上個{weekday}'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { '一月'. '二月'. '三月'. '四月'. '五月'. '六月'. '七月'. '八月'. '九月'. '十月'. '十一月'. '十二月' }).
+		#months. (OrderedCollection withAll: { '1月'. '2月'. '3月'. '4月'. '5月'. '6月'. '7月'. '8月'. '9月'. '10月'. '11月'. '12月' }).
 		#weekdays. (OrderedCollection withAll: { '日'. '一'. '二'. '三'. '四'. '五'. '六' }).
 		#dayFormat. '{n}日'.
 		#datePattern. '{month}{day}'.

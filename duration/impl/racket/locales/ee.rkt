@@ -21,18 +21,18 @@
   (duration-locale
    "ee"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "sekend {n}" "other" "sekendwo {n}"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "aɖabaƒoƒo {n}" "other" "aɖabaƒoƒowo {n}"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "gaƒoƒo {n}" "other" "gaƒoƒowo {n}"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "ŋkeke {n}" "other" "ŋkekewo {n}"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "kɔsiɖa {n}" "other" "kɔsiɖawo {n}"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "ɣleti {n}" "other" "ɣletiwo {n}"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "ƒe {n}" "other" "ƒewo {n}")))
+   (hash "second" (hash "type" "simple" "form" "sekend {n}")
+         "minute" (hash "type" "simple" "form" "aɖabaƒoƒo {n}")
+         "hour" (hash "type" "simple" "form" "gaƒoƒo {n}")
+         "day" (hash "type" "simple" "form" "ŋkeke {n}")
+         "week" (hash "type" "simple" "form" "kɔsiɖa {n}")
+         "month" (hash "type" "simple" "form" "ɣleti {n}")
+         "year" (hash "type" "simple" "form" "ƒe {n}"))
    "{0} kple afã"
    ", "
    "fifia"
-   "ɖe {0} me"
+   "{0} si va yi"
    "le {0} me"
-   (duration-compactness-override (hash "type" "simple" "form" "sek. {n}") (hash "type" "simple" "form" "aɖaba. {n}") (hash "type" "simple" "form" "gaƒ. {n}") (hash "type" "simple" "form" "ŋkekewo {n}") (hash "type" "pluralized" "forms" (hash "one" "kɔsiɖa {n}" "other" "kɔsiɖawo {n}")) (hash "type" "pluralized" "forms" (hash "one" "ɣleti {n}" "other" "ɣletiwo {n}")) (hash "type" "pluralized" "forms" (hash "one" "ƒe {n}" "other" "ƒewo {n}")) #f #f "ɖe {0} me" "le {0} me")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "ɖe {0} me" "le {0} me")
+   (duration-compactness-override (hash "type" "simple" "form" "sek. {n}") (hash "type" "simple" "form" "aɖaba. {n}") (hash "type" "simple" "form" "gaƒ. {n}") (hash "type" "simple" "form" "ŋkeke {n}") (hash "type" "simple" "form" "kɔsiɖa {n}") (hash "type" "simple" "form" "ɣleti {n}") (hash "type" "simple" "form" "ƒe {n}") #f #f "{0} si va yi" "le {0} me")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} si va yi" "le {0} me")
   ))

@@ -17,7 +17,7 @@ const PA = DurationLocale(
     units = Dict(
         "second" => "{n} ਸਕਿੰਟ",
         "minute" => "{n} ਮਿੰਟ",
-        "hour" => "{n} ਘੰਟਾ",
+        "hour" => Dict("one" => "{n} ਘੰਟਾ", "other" => "{n} ਘੰਟੇ"),
         "day" => Dict("one" => "{n} ਦਿਨ", "other" => "{n} ਦਿਨ"),
         "week" => Dict("one" => "{n} ਹਫ਼ਤਾ", "other" => "{n} ਹਫ਼ਤੇ"),
         "month" => Dict("one" => "{n} ਮਹੀਨਾ", "other" => "{n} ਮਹੀਨੇ"),

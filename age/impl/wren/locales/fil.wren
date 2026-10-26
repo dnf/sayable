@@ -30,7 +30,7 @@ class FILLocale {
       "toddler": "Batang paslit",
       "child": "Bata",
       "teenager": "Tinedyer",
-      "adult": "Matanda",
+      "adult": "Adulto",
     }
   }
   static short {

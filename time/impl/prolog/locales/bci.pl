@@ -11,22 +11,22 @@
 
 % Baoulé locale.
 
-st_hours('bci', ['blu-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-kun']).
+st_hours('bci', ['blu-nin-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-nin-kun']).
 st_midnight('bci', 'kɔnguɛ afiɛn').
 st_noon('bci', 'nnɔsua').
 
-st_pattern('bci', 0, '{h}:00').
-st_pattern('bci', 5, '{h}:05').
-st_pattern('bci', 10, '{h}:10').
-st_pattern('bci', 15, '{h}:15').
-st_pattern('bci', 20, '{h}:20').
-st_pattern('bci', 25, '{h}:25').
-st_pattern('bci', 30, '{h}:30').
-st_pattern('bci', 35, '{h}:35').
-st_pattern('bci', 40, '{h}:40').
-st_pattern('bci', 45, '{h}:45').
-st_pattern('bci', 50, '{h}:50').
-st_pattern('bci', 55, '{h}:55').
+st_pattern('bci', 0, 'dɔ {h}').
+st_pattern('bci', 5, 'dɔ {h} nin miniti nnun').
+st_pattern('bci', 10, 'dɔ {h} nin miniti blu').
+st_pattern('bci', 15, 'dɔ {h} nin miniti blu-nin-nnun').
+st_pattern('bci', 20, 'dɔ {h} nin miniti ablaɔn').
+st_pattern('bci', 25, 'dɔ {h} nin miniti ablaɔn-nin-nnun').
+st_pattern('bci', 30, 'dɔ {h} nin miniti ablasan').
+st_pattern('bci', 35, 'dɔ {h} nin miniti ablasan-nin-nnun').
+st_pattern('bci', 40, 'dɔ {h} nin miniti ablanan').
+st_pattern('bci', 45, 'dɔ {h} nin miniti ablanan-nin-nnun').
+st_pattern('bci', 50, 'dɔ {h} nin miniti ablenun').
+st_pattern('bci', 55, 'dɔ {h} nin miniti ablenun-nin-nnun').
 
 short_st_use24h('bci', false).
 short_st_format('bci', '{h}:{mm} {ampm}').

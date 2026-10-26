@@ -47,7 +47,7 @@ locale = DurationLocale
           , (Other, "{n} ವರ್ಷಗಳು")
           ]
         }
-    , localeHalf = "{0}ವರೆ"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustNow = "ಈಗಷ್ಟೇ"
     , localeAgo = "{0} ಹಿಂದೆ"

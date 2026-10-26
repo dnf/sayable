@@ -30,7 +30,7 @@ pub fn locale() -> DateLocale {
         day_before_yesterday: Some("shekaranjiya".to_string()),
         this_weekday: Some("wannan {weekday}".to_string()),
         next_weekday: Some("{weekday} mai zuwa".to_string()),
-        last_weekday: Some("{weekday} da ya wuce".to_string()),
+        last_weekday: Some("{weekday} da ta wuce".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {
             months: Some(["Jan".to_string(), "Fab".to_string(), "Mar".to_string(), "Afr".to_string(), "May".to_string(), "Yun".to_string(), "Yul".to_string(), "Agu".to_string(), "Sat".to_string(), "Okt".to_string(), "Nuw".to_string(), "Dis".to_string()]),

@@ -31,7 +31,7 @@ fn build_vi() -> DurationLocale:
     var day = simple_unit("{n} ngày")
     var week = simple_unit("{n} tuần")
     var month = simple_unit("{n} tháng")
-    var year = simple_unit("{n} tuổi")
+    var year = simple_unit("{n} năm")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} giây")
@@ -50,7 +50,7 @@ fn build_vi() -> DurationLocale:
     short_ovr.has_year = True
     short_ovr.ago = "{0} trước"
     short_ovr.has_ago = True
-    short_ovr.in_future = "trong {0}"
+    short_ovr.in_future = "{0} nữa"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
@@ -74,7 +74,7 @@ fn build_vi() -> DurationLocale:
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} trước"
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "trong {0}"
+    compact_ovr.in_future = "{0} nữa"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -91,7 +91,7 @@ fn build_vi() -> DurationLocale:
         delimiter=", ",
         just_now="vừa xong",
         ago="{0} trước",
-        in_future="trong {0}",
+        in_future="{0} nữa",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

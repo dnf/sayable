@@ -31,7 +31,7 @@ fn build_ja() -> DurationLocale:
     var day = simple_unit("{n}日")
     var week = simple_unit("{n}週")
     var month = simple_unit("{n}ヶ月")
-    var year = simple_unit("{n}歳")
+    var year = simple_unit("{n}年")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} 秒")
@@ -68,6 +68,8 @@ fn build_ja() -> DurationLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0}前"

@@ -24,7 +24,7 @@ pub const locale_qu = DateLocale{
 	yesterday: 'qayna'
 	day_after_tomorrow: 'minchha'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'qayna p\'unchaw'
+	day_before_yesterday: 'qayninpa'
 	has_day_before_yesterday: true
 	this_weekday: 'kay {weekday}'
 	has_this_weekday: true

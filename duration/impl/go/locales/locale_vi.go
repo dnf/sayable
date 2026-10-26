@@ -26,13 +26,13 @@ var VI = sd.DurationLocale{
 		Day:    sd.SimpleUnit("{n} ngày"),
 		Week:   sd.SimpleUnit("{n} tuần"),
 		Month:  sd.SimpleUnit("{n} tháng"),
-		Year:   sd.SimpleUnit("{n} tuổi"),
+		Year:   sd.SimpleUnit("{n} năm"),
 	},
 	Half:      "{0} rưỡi",
 	Delimiter: ", ",
 	JustNow:   "vừa xong",
 	Ago:       "{0} trước",
-	InFuture:  "trong {0}",
+	InFuture:  "{0} nữa",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "{n} giây"},
 		Minute:   &sd.UnitForms{Simple: "{n} phút"},
@@ -42,7 +42,7 @@ var VI = sd.DurationLocale{
 		Month:    &sd.UnitForms{Simple: "{n} tháng"},
 		Year:     &sd.UnitForms{Simple: "{n} năm"},
 		Ago:      strPtr("{0} trước"),
-		InFuture: strPtr("trong {0}"),
+		InFuture: strPtr("{0} nữa"),
 	},
 	Compact: &sd.CompactnessOverride{
 		Second:    &sd.UnitForms{Simple: "{n} giây"},
@@ -55,6 +55,6 @@ var VI = sd.DurationLocale{
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0} trước"),
-		InFuture:  strPtr("trong {0}"),
+		InFuture:  strPtr("{0} nữa"),
 	},
 }

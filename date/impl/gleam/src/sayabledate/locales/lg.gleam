@@ -24,7 +24,7 @@ pub fn locale() -> types.DateLocale {
     tomorrow: "enkya",
     yesterday: "jjo",
     day_after_tomorrow: Ok("enkya ogwa"),
-    day_before_yesterday: Ok("jjo edda"),
+    day_before_yesterday: Ok("jjuuzi"),
     this_weekday: Ok("{weekday} eno"),
     next_weekday: Ok("{weekday} eddirira"),
     last_weekday: Ok("{weekday} eggudde"),

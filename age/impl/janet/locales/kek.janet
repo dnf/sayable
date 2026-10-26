@@ -27,5 +27,5 @@
             :adult "Winq"
 }
    :short {:units {:day "{n} q'e" :week "{n} sem." :month "{n} po" :year "{n} chih."}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

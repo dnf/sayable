@@ -31,7 +31,7 @@
    "inné"
    "arú amárach"
    "arú inné"
-   "an {weekday} seo"
+   "{weekday} seo"
    "{weekday} seo chugainn"
    "{weekday} seo caite"
    #f

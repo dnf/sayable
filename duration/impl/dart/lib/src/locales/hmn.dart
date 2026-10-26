@@ -54,6 +54,7 @@ final hmn = DurationLocale(
       'month': simpleUnit('{n}mo'),
       'year': simpleUnit('{n}y'),
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} dhau los',
     inFuture: 'hauv {0}',

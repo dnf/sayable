@@ -17,9 +17,9 @@ proc plural_ny {n} {
 proc locale_duration_ny {} {
     set code {ny}
     set units [dict create \
-        second "{n} sekondi" \
-        minute "{n} mphindi" \
-        hour "{n} ola" \
+        second "sekondi {n}" \
+        minute "mphindi {n}" \
+        hour [dict create one "ola {n}" other "maola {n}"] \
         day [dict create one "tsiku {n}" other "masiku {n}"] \
         week [dict create one "sabata {n}" other "masabata {n}"] \
         month [dict create one "mwezi {n}" other "miyezi {n}"] \
@@ -34,7 +34,7 @@ proc locale_duration_ny {} {
         units [dict create \
             second "sek {n}" \
             minute "mph {n}" \
-            hour "ola {n}" \
+            hour [dict create one "ola {n}" other "maola {n}"] \
             day [dict create one "tsiku {n}" other "mas {n}"] \
             week [dict create one "sabata {n}" other "masab {n}"] \
             month [dict create one "mwezi {n}" other "miyezi {n}"] \

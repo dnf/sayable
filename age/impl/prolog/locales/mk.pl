@@ -32,6 +32,8 @@ sa_stage('mk', infant, _, 'Бебе').
 sa_stage('mk', toddler, _, 'Мало дете').
 sa_stage('mk', child, _, 'Дете').
 sa_stage('mk', teenager, _, 'Тинејџер').
+sa_stage('mk', adult, m, 'Возрасен').
+sa_stage('mk', adult, f, 'Возрасна').
 sa_stage('mk', adult, _, 'Возрасен').
 
 short_sa_unit('mk', day, one, '{n} ден').

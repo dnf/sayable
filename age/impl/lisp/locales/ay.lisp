@@ -17,10 +17,10 @@
   (make-age-locale
    :code "ay"
    :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :day "uru {n}")
-               (cons :week "simana {n}")
-               (cons :month "phaxsi {n}")
-               (cons :year "mara {n}"))
+   :units (list (cons :day "{n} uru")
+               (cons :week "{n} simana")
+               (cons :month "{n} phaxsi")
+               (cons :year "{n} mara"))
    :half "{0} chika"
    :delimiter ", "
    :just-born "Wawa machaqa"
@@ -38,5 +38,6 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
 ))

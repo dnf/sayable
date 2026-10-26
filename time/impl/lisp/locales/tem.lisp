@@ -17,10 +17,10 @@
   (make-time-locale
    :code "tem"
    :clock (make-clock-config
-    :hours (list "pɛn pu" "kɩrɩŋ" "rɔŋ" "rasar" "rɔŋ-anat" "rɔman" "rɔmata" "rɔmbot" "rɔmɔntat" "rɔmɔntaŋka" "pɛn" "pɛn nɛ kɩrɩŋ")
+    :hours (list "awa pɛn nɛ rɔŋ" "awa kɩrɩŋ" "awa rɔŋ" "awa rasar" "awa rɔŋ-anat" "awa rɔman" "awa rɔmata" "awa rɔmbot" "awa rɔmɔntat" "awa rɔmɔntaŋka" "awa pɛn" "awa pɛn nɛ kɩrɩŋ")
     :midnight "rofɛt anpa"
     :noon "lən"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} nɛ minit rɔman") (cons 10 "{h} nɛ minit pɛn") (cons 15 "{h} nɛ minit pɛn nɛ rɔman") (cons 20 "{h} nɛ minit kɩgba") (cons 25 "{h} nɛ minit kɩgba nɛ rɔman") (cons 30 "{h} a gbankɛ") (cons 35 "{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman") (cons 40 "{h} nɛ minit tɔgba rɔŋ") (cons 45 "{h} nɛ minit tɔgba rɔŋ nɛ rɔman") (cons 50 "{h} nɛ minit tɔgba rɔŋ nɛ pɛn") (cons 55 "{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

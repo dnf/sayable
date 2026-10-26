@@ -17,10 +17,10 @@ package SayableTime::Locales::QUC;
 sub locale {{
   code => 'quc',
   clock => {
-    hours => ['kab\'lajuj', 'jun', 'ka\'i\'', 'oxi\'', 'kaji\'', 'jo\'', 'waqi\'', 'wuqu\'', 'wajxaqi\'', 'b\'eleji\'', 'lajuj', 'julajuj'],
+    hours => ['kab\'lajuj', 'jun', 'keb\'', 'oxib\'', 'kajib\'', 'job\'', 'waqib\'', 'wuqub\'', 'wajxaqib\'', 'b\'elejeb\'', 'lajuj', 'julajuj'],
     midnight => 'nik\'aj aq\'ab\'',
     noon => 'nik\'aj q\'ij',
-    patterns => { 0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55' },
+    patterns => { 0 => '{h} ramaj', 5 => '{h} ramaj job\'', 10 => '{h} ramaj lajuj', 15 => '{h} ramaj olajuj', 20 => '{h} ramaj juwinaq', 25 => '{h} ramaj juwinaq job\'', 30 => '{h} ramaj juwinaq lajuj', 35 => '{h} ramaj juwinaq olajuj', 40 => '{h} ramaj kawinaq', 45 => '{h} ramaj kawinaq job\'', 50 => '{h} ramaj kawinaq lajuj', 55 => '{h} ramaj kawinaq olajuj' },
   },
   short => {
     clock => {

@@ -14,7 +14,7 @@ function loc = locale_bn()
   loc.plural = @(n) ifelse(n == 0 || n == 1, "one", "other");
   loc.units.second = '{n} সেকেন্ড';
   loc.units.minute = '{n} মিনিট';
-  loc.units.hour = '{n} ঘন্টা';
+  loc.units.hour = '{n} ঘণ্টা';
   loc.units.day = struct("one", '{n} দিন', "other", '{n} দিন');
   loc.units.week = struct("one", '{n} সপ্তাহ', "other", '{n} সপ্তাহ');
   loc.units.month = struct("one", '{n} মাস', "other", '{n} মাস');

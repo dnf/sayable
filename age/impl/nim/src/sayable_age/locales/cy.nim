@@ -25,10 +25,10 @@ let CY* = AgeLocale(
   code: "cy",
   plural: plural,
   units: {
-    "day": pluralUnit(@[(pcZero, "{n} diwrnod"), (pcOne, "{n} diwrnod"), (pcTwo, "{n} ddiwrnod"), (pcFew, "{n} diwrnod"), (pcMany, "{n} niwrnod"), (pcOther, "{n} diwrnod")]),
+    "day": pluralUnit(@[(pcZero, "{n} diwrnod"), (pcOne, "{n} diwrnod"), (pcTwo, "{n} ddiwrnod"), (pcFew, "{n} diwrnod"), (pcMany, "{n} diwrnod"), (pcOther, "{n} diwrnod")]),
     "week": pluralUnit(@[(pcZero, "{n} wythnos"), (pcOne, "{n} wythnos"), (pcTwo, "{n} wythnos"), (pcFew, "{n} wythnos"), (pcMany, "{n} wythnos"), (pcOther, "{n} wythnos")]),
     "month": pluralUnit(@[(pcZero, "{n} mis"), (pcOne, "{n} mis"), (pcTwo, "{n} fis"), (pcFew, "{n} mis"), (pcMany, "{n} mis"), (pcOther, "{n} mis")]),
-    "year": pluralUnit(@[(pcZero, "{n} blwyddyn"), (pcOne, "{n} blwyddyn"), (pcTwo, "{n} flynedd"), (pcFew, "{n} blynedd"), (pcMany, "{n} blynedd"), (pcOther, "{n} blynedd")]),
+    "year": pluralUnit(@[(pcZero, "{n} blwyddyn"), (pcOne, "{n} flwyddyn"), (pcTwo, "{n} flynedd"), (pcFew, "{n} blynedd"), (pcMany, "{n} blynedd"), (pcOther, "{n} blynedd")]),
   }.toOrderedTable,
   half: "{0} a hanner",
   delimiter: ", ",

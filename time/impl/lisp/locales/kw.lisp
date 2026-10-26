@@ -17,10 +17,10 @@
   (make-time-locale
    :code "kw"
    :clock (make-clock-config
-    :hours (list "12" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11")
+    :hours (list "dewdhek" "unn" "diw" "teyr" "peder" "pymp" "hwegh" "seyth" "eth" "naw" "deg" "unnek")
     :midnight "hanter nos"
     :noon "hanter dydh"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} eur") (cons 5 "pymp mynysen wosa {h}") (cons 10 "deg mynysen wosa {h}") (cons 15 "kwarter wosa {h}") (cons 20 "ugens mynysen wosa {h}") (cons 25 "pymp mynysen warn ugens wosa {h}") (cons 30 "hanter wosa {h}") (cons 35 "pymp mynysen warn ugens dhe {next_h}") (cons 40 "ugens mynysen dhe {next_h}") (cons 45 "kwarter dhe {next_h}") (cons 50 "deg mynysen dhe {next_h}") (cons 55 "pymp mynysen dhe {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

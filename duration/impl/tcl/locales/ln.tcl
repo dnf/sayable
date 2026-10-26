@@ -17,9 +17,9 @@ proc plural_ln {n} {
 proc locale_duration_ln {} {
     set code {ln}
     set units [dict create \
-        second "{n} segɔnde" \
-        minute "{n} moniti" \
-        hour "{n} ngonga" \
+        second "segɔnde {n}" \
+        minute "miniti {n}" \
+        hour "ngonga {n}" \
         day [dict create one "mokolo {n}" other "mikolo {n}"] \
         week [dict create one "poso {n}" other "baposo {n}"] \
         month [dict create one "sanza {n}" other "basanza {n}"] \

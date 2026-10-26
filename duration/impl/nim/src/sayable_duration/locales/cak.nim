@@ -55,7 +55,7 @@ let CAK* = DurationLocale(
       "month": simpleUnit("{n}mo"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0} k'o chi"),
     inFuture: some("pa {0}"),

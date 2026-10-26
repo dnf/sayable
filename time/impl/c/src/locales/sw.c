@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_sw = {
     "sw",
     {
-        { "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja" },
-        "usiku wa manane",
-        "adhuhuri",
-        { "{h} o'clock", "tano kupita {h}", "kumi kupita {h}", "robo kupita {h}", "ishirini kupita {h}", "ishirini na tano kupita {h}", "nusu kupita {h}", "ishirini na tano kabla ya {next_h}", "ishirini kabla ya {next_h}", "robo kabla ya {next_h}", "kumi kabla ya {next_h}", "tano kabla ya {next_h}" }
+        { "sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano" },
+        "saa sita usiku",
+        "saa sita mchana",
+        { "saa {h}", "saa {h} na dakika tano", "saa {h} na dakika kumi", "saa {h} na robo", "saa {h} na dakika ishirini", "saa {h} na dakika ishirini na tano", "saa {h} na nusu", "saa {next_h} kasoro dakika ishirini na tano", "saa {next_h} kasoro dakika ishirini", "saa {next_h} kasoro robo", "saa {next_h} kasoro dakika kumi", "saa {next_h} kasoro dakika tano" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

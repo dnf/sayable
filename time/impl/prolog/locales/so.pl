@@ -11,22 +11,22 @@
 
 % Somali locale.
 
-st_hours('so', ['laba iyo toban', 'kow', 'laba', 'saddex', 'afar', 'shan', 'lix', 'toddoba', 'siddeed', 'sagaal', 'toban', 'kow iyo toban']).
+st_hours('so', ['laba iyo tobanka', 'kowda', 'labada', 'saddexda', 'afarta', 'shanta', 'lixda', 'toddobada', 'siddeedda', 'sagaasha', 'tobanka', 'kow iyo tobanka']).
 st_midnight('so', 'saqda dhexe').
 st_noon('so', 'duhur').
 
-st_pattern('so', 0, '{h}:00').
-st_pattern('so', 5, '{h}:05').
-st_pattern('so', 10, '{h}:10').
-st_pattern('so', 15, '{h}:15').
-st_pattern('so', 20, '{h}:20').
-st_pattern('so', 25, '{h}:25').
-st_pattern('so', 30, '{h}:30').
-st_pattern('so', 35, '{h}:35').
-st_pattern('so', 40, '{h}:40').
-st_pattern('so', 45, '{h}:45').
-st_pattern('so', 50, '{h}:50').
-st_pattern('so', 55, '{h}:55').
+st_pattern('so', 0, '{h}').
+st_pattern('so', 5, '{h} iyo shan').
+st_pattern('so', 10, '{h} iyo toban').
+st_pattern('so', 15, '{h} iyo rubuc').
+st_pattern('so', 20, '{h} iyo labaatan').
+st_pattern('so', 25, '{h} iyo shan iyo labaatan').
+st_pattern('so', 30, '{h} iyo bar').
+st_pattern('so', 35, '{next_h} shan iyo labaatan la\'').
+st_pattern('so', 40, '{next_h} labaatan la\'').
+st_pattern('so', 45, '{next_h} rubuc la\'').
+st_pattern('so', 50, '{next_h} toban la\'').
+st_pattern('so', 55, '{next_h} shan la\'').
 
 short_st_use24h('so', false).
 short_st_format('so', '{h}:{mm} {ampm}').

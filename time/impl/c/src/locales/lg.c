@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_lg = {
     "lg",
     {
-        { "kkumi na bbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano", "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi na emu" },
+        { "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi n'emu", "kkumi n'ebbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano" },
         "ekiro eky'omu ttumbi",
         "ettuntu",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "essaawa {h}", "essaawa {h} n'eddakiika ttaano", "essaawa {h} n'eddakiika kkumi", "essaawa {h} n'eddakiika kkumi na ttaano", "essaawa {h} n'eddakiika abiri", "essaawa {h} n'eddakiika abiri mu ttaano", "essaawa {h} n'ekitundu", "essaawa {h} n'eddakiika asatu mu ttaano", "essaawa {h} n'eddakiika ana", "essaawa {h} n'eddakiika ana mu ttaano", "essaawa {h} n'eddakiika ataano", "essaawa {h} n'eddakiika ataano mu ttaano" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

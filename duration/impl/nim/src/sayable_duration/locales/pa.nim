@@ -19,7 +19,7 @@ let PA* = DurationLocale(
   units: {
     "second": simpleUnit("{n} ਸਕਿੰਟ"),
     "minute": simpleUnit("{n} ਮਿੰਟ"),
-    "hour": simpleUnit("{n} ਘੰਟਾ"),
+    "hour": pluralUnit(@[(pcOne, "{n} ਘੰਟਾ"), (pcOther, "{n} ਘੰਟੇ")]),
     "day": pluralUnit(@[(pcOne, "{n} ਦਿਨ"), (pcOther, "{n} ਦਿਨ")]),
     "week": pluralUnit(@[(pcOne, "{n} ਹਫ਼ਤਾ"), (pcOther, "{n} ਹਫ਼ਤੇ")]),
     "month": pluralUnit(@[(pcOne, "{n} ਮਹੀਨਾ"), (pcOther, "{n} ਮਹੀਨੇ")]),

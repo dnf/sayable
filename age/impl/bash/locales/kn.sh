@@ -24,7 +24,7 @@ _sayableage_locale_kn() {
     _unit_month_other='{n} ತಿಂಗಳುಗಳು'
     _unit_year_one='{n} ವರ್ಷ'
     _unit_year_other='{n} ವರ್ಷಗಳು'
-    _half='{0}ವರೆ'
+    _half='{n}½'
     _delimiter=', '
     _just_born='ನವಜಾತ ಶಿಶು'
     _stage_newborn='ನವಜಾತ ಶಿಶು'

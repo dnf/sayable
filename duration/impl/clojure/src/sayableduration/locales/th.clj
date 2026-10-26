@@ -25,6 +25,6 @@
    :delimiter " "
    :just-now "เมื่อกี้"
    :ago "{0}ที่แล้ว"
-   :in-future "ใน{0}"
-   :short {:second {:type :simple :form "{n} วิ"} :minute {:type :simple :form "{n} นาที"} :hour {:type :simple :form "{n} ชม."} :day {:type :simple :form "{n} วัน"} :week {:type :simple :form "{n} สัปดาห์"} :month {:type :simple :form "{n} เดือน"} :year {:type :simple :form "{n} ปี"} :half nil :delimiter nil :ago "{0}ที่แล้ว" :in-future "ใน{0}"}
-   :compact {:second {:type :simple :form "{n}วิ"} :minute {:type :simple :form "{n}นาที"} :hour {:type :simple :form "{n}ชม."} :day {:type :simple :form "{n}วัน"} :week {:type :simple :form "{n}สัปดาห์"} :month {:type :simple :form "{n}เดือน"} :year {:type :simple :form "{n}ปี"} :half "{n}½" :delimiter "" :ago "{0}ที่แล้ว" :in-future "ใน{0}"}})
+   :in-future "ในอีก {0}"
+   :short {:second {:type :simple :form "{n} วิ"} :minute {:type :simple :form "{n} นาที"} :hour {:type :simple :form "{n} ชม."} :day {:type :simple :form "{n} วัน"} :week {:type :simple :form "{n} สัปดาห์"} :month {:type :simple :form "{n} เดือน"} :year {:type :simple :form "{n} ปี"} :half nil :delimiter nil :ago "{0}ที่แล้ว" :in-future "ในอีก {0}"}
+   :compact {:second {:type :simple :form "{n}วิ"} :minute {:type :simple :form "{n}นาที"} :hour {:type :simple :form "{n}ชม."} :day {:type :simple :form "{n}วัน"} :week {:type :simple :form "{n}สัปดาห์"} :month {:type :simple :form "{n}เดือน"} :year {:type :simple :form "{n}ปี"} :half "{n}½" :delimiter "" :ago "{0}ที่แล้ว" :in-future "ในอีก {0}"}})

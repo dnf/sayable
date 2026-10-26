@@ -17,9 +17,9 @@ locale() ->
     #duration_locale{
         code = "gn",
         plural = fun(1) -> one; (_) -> other end,
-        second = {simple, "{n} aravo'i"},
-        minute = {simple, "{n} aravo"},
-        hour = {simple, "{n} aravo guasu"},
+        second = {simple, "{n} aravo'ive"},
+        minute = {simple, "{n} aravo'i"},
+        hour = {simple, "{n} aravo"},
         day = {simple, "{n} ára"},
         week = {simple, "{n} arapokõindy"},
         month = {simple, "{n} jasy"},
@@ -29,6 +29,6 @@ locale() ->
         just_now = "ko'ágã",
         ago = "{0} ohasava'ekue",
         in_future = "{0} rire",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} ara'i"}}, minute = {just, {simple, "{n} ara"}}, hour = {just, {simple, "{n} ara g"}}, day = {just, {simple, "{n} ára"}}, week = {just, {simple, "{n} ara"}}, month = {just, {simple, "{n} jas"}}, year = {just, {simple, "{n} ary"}}, half = nothing, delimiter = nothing, ago = {just, "{0} ohasava'ekue"}, in_future = {just, "{0} rire"}}},
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} aravo'ive"}}, minute = {just, {simple, "{n} aravo'i"}}, hour = {just, {simple, "{n} aravo"}}, day = {just, {simple, "{n} ára"}}, week = {just, {simple, "{n} ara"}}, month = {just, {simple, "{n} jas"}}, year = {just, {simple, "{n} ary"}}, half = nothing, delimiter = nothing, ago = {just, "{0} ohasava'ekue"}, in_future = {just, "{0} rire"}}},
         compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} ohasava'ekue"}, in_future = {just, "{0} rire"}}}
     }.

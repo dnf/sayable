@@ -26,7 +26,7 @@ M.half = "{0} ni tilancɛ"
 M.delimiter = ", "
 M.just_now = "sisan"
 M.ago = "{0} tɛmɛnen"
-M.in_future = "ka {0}"
+M.in_future = "{0} kɔnɔ"
 M.short = {
     units = {
         second = "sɛk. {n}",
@@ -38,7 +38,7 @@ M.short = {
         year = "san {n}",
     },
     ago = "{0} tɛmɛnen",
-    in_future = "ka {0}",
+    in_future = "{0} kɔnɔ",
 }
 M.compact = {
     units = {
@@ -53,7 +53,7 @@ M.compact = {
     half = "{n}½",
     delimiter = "",
     ago = "{0} tɛmɛnen",
-    in_future = "ka {0}",
+    in_future = "{0} kɔnɔ",
 }
 
 return M

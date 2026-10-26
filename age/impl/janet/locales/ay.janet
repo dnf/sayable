@@ -12,10 +12,10 @@
 (def locale
   {:code "ay"
    :plural (fn [_n] :other)
-   :units {:day "uru {n}"
-          :week "simana {n}"
-          :month "phaxsi {n}"
-          :year "mara {n}"}
+   :units {:day "{n} uru"
+          :week "{n} simana"
+          :month "{n} phaxsi"
+          :year "{n} mara"}
    :half "{0} chika"
    :delimiter ", "
    :just-born "Wawa machaqa"
@@ -27,5 +27,5 @@
             :adult "Jaqi"
 }
    :short {:units {:day "{n} ur." :week "{n} sim." :month "{n} phx." :year "{n} mr."}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

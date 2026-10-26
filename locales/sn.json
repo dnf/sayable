@@ -99,7 +99,7 @@
     "today": "nhasi",
     "tomorrow": "mangwana",
     "yesterday": "nezuro",
-    "dayAfterTomorrow": "mangwanani",
+    "dayAfterTomorrow": "kuswera mangwana",
     "dayBeforeYesterday": "nezuro rakapera",
     "thisWeekday": "{weekday} ino",
     "nextWeekday": "{weekday} inotevera",
@@ -139,9 +139,18 @@
   },
   "duration": {
     "units": {
-      "second": "{n} sekondi",
-      "minute": "{n} miniti",
-      "hour": "{n} awa",
+      "second": {
+        "one": "sekondi {n}",
+        "other": "masekondi {n}"
+      },
+      "minute": {
+        "one": "miniti {n}",
+        "other": "maminitsi {n}"
+      },
+      "hour": {
+        "one": "awa {n}",
+        "other": "maawa {n}"
+      },
       "day": {
         "one": "zuva {n}",
         "other": "mazuva {n}"
@@ -230,34 +239,34 @@
   "time": {
     "clock": {
       "hours": [
-        "gumi nembiri",
-        "imwe",
-        "mbiri",
-        "nhatu",
-        "ina",
-        "shanu",
-        "nhanhatu",
-        "nomwe",
-        "sere",
-        "pfumbamwe",
-        "gumi",
-        "gumi neimwe"
+        "dzava gumi nembiri",
+        "yava imwe",
+        "dzava mbiri",
+        "dzava nhatu",
+        "dzava ina",
+        "dzava shanu",
+        "dzava nhanhatu",
+        "dzava nomwe",
+        "dzava sere",
+        "dzava pfumbamwe",
+        "dzava gumi",
+        "dzava gumi neimwe"
       ],
-      "midnight": "usiku hwepakati",
+      "midnight": "pakati peusiku",
       "noon": "masikati",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "{h} nemaminitsi mashanu",
+        "10": "{h} nemaminitsi gumi",
+        "15": "{h} nemaminitsi gumi nemashanu",
+        "20": "{h} nemaminitsi makumi maviri",
+        "25": "{h} nemaminitsi makumi maviri nemashanu",
+        "30": "{h} nehafu",
+        "35": "{h} nemaminitsi makumi matatu nemashanu",
+        "40": "{h} nemaminitsi makumi mana",
+        "45": "{h} nemaminitsi makumi mana nemashanu",
+        "50": "{h} nemaminitsi makumi mashanu",
+        "55": "{h} nemaminitsi makumi mashanu nemashanu"
       }
     },
     "short": {
@@ -280,5 +289,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Shona has no past/to system in common Shona-only speech (people code-switch to English). Used the idiomatic answer to 'Dzava nguvai?': hours carry the copula so 1 o'clock gets the class-9 singular ('yava imwe') and the rest class 10 ('dzava mbiri' ...). Minutes additive with class-6 numerals: '{h} nemaminitsi gumi', 'makumi maviri', 'makumi mana nemashanu' ...; '{h} nehafu' for half. Compromise: every phrase reads as 'it is now ...', which is natural as an answer to 'what time is it' but awkward inside a sentence ('at ...'). Also changed midnight 'usiku hwepakati' (unidiomatic) to 'pakati peusiku'. Doubts: whether 'nekota' would be preferred for :15/:45; the copula framing itself."
+    }
+  ]
 }

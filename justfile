@@ -21,7 +21,7 @@ test *target:
         printf '%s\n' \
             "Usage: just test [flags] [target]" \
             "" \
-            "Run all test suites in parallel, or a single target's tests." \
+            "Run every language's native suites (all four libraries) in parallel, or one target's." \
             ""
         _lang_grid "Languages" "$_ALL_LANGS"
         printf '%s\n' \
@@ -37,8 +37,8 @@ test *target:
             "" \
             "Examples:" \
             "  just test              Run all suites + codegen check in parallel" \
-            "  just test go           Run Go tests only" \
-            "  just test rs           Run Rust tests (abbreviation)" \
+            "  just test go           Run Go's age, date, duration and time suites" \
+            "  just test rs           Run Rust's suites (abbreviation)" \
             "  just test cli          Run CLI integration tests" \
             "  just test -j 4         Run all in parallel with 4 job slots" \
             "  just test -j 2 -s full Run with 2 slots, full-width visualization"
@@ -92,25 +92,7 @@ test *target:
         fi
         mkdir -p .logs/test
         (
-            if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-                cd age/impl/typescript && npx vitest run
-            elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
-                cd age/impl/python && uv run --extra dev pytest tests/
-            elif [ "$_target" = "go" ]; then
-                cd age/impl/go && go test ./...
-            elif [ "$_target" = "ruby" ] || [ "$_target" = "rb" ]; then
-                cd age/impl/ruby && ruby -Ilib test/test_formatter.rb
-            elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-                cd age/impl/rust && cargo test
-            elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
-                cd age/impl/kotlin && ./gradlew test
-            elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
-                just build cpp
-                cd age/impl/cpp/build && ctest --output-on-failure
-            elif [ "$_target" = "c" ]; then
-                just build c
-                cd age/impl/c/build && ctest --output-on-failure
-            elif [[ "$_target" = cli\ * ]]; then
+            if [[ "$_target" = cli\ * ]]; then
                 _cli_lang="${_target#cli }"
                 _cli_lang=$(_name "$_cli_lang")
                 _cli_bin="cli/impl/${_cli_lang}/sayable"
@@ -119,107 +101,11 @@ test *target:
                     exit 1
                 fi
                 bash cli/test-harness.sh "${_cli_bin}"
-            elif [ "$_target" = "php" ]; then
-                cd age/impl/php && php vendor/bin/phpunit tests/
-            elif [ "$_target" = "java" ]; then
-                cd age/impl/java && ./gradlew test
-            elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
-                cd age/impl/csharp && dotnet test
-            elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
-                cd age/impl/dart && dart test
-            elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
-                cd age/impl/fsharp && dotnet test
-            elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
-                cd age/impl/swift && swift test
-            elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
-                cd age/impl/haskell && cabal test
-            elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
-                cd age/impl/erlang && rebar3 eunit
-            elif [ "$_target" = "fortran" ] || [ "$_target" = "ft" ]; then
-                just build fortran
-                cd age/impl/fortran/build && ctest --output-on-failure
-            elif [ "$_target" = "groovy" ] || [ "$_target" = "gy" ]; then
-                cd age/impl/groovy && ./gradlew test
-            elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
-                cd age/impl/clojure && clojure -M:test
-            elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
-                just build cobol
-                cd age/impl/cobol/build && ctest --output-on-failure
-            elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
-                cd age/impl/scala && ./gradlew test
-            elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
-                cd age/impl/elixir && mix test
-            elif [ "$_target" = "gleam" ] || [ "$_target" = "gm" ]; then
-                cd age/impl/gleam && gleam test
-            elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
-                cd age/impl/elm && elm-test
-            elif [ "$_target" = "lua" ] || [ "$_target" = "lu" ]; then
-                cd age/impl/lua && busted test_sayableage.lua
-            elif [ "$_target" = "ocaml" ] || [ "$_target" = "ml" ]; then
-                cd age/impl/ocaml && eval "$(opam env 2>/dev/null)" && dune runtest
-            elif [ "$_target" = "perl" ] || [ "$_target" = "pl" ]; then
-                cd age/impl/perl && prove -Ilib t/
-            elif [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
-                _ada_env
-                _largs=""
-                if [ "$(uname -s)" = "Darwin" ]; then
-                    _sdk="$(xcrun --show-sdk-path 2>/dev/null)"
-                    [ -n "$_sdk" ] && _largs="-largs -L$_sdk/usr/lib"
-                fi
-                cd age/impl/ada && gprbuild -P sayableage.gpr -XBUILD_MODE=test $_largs && ./build/test_format_age
-            elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
-                for _c in age date duration time; do (cd "${_c}/impl/goose" && goose "tests/test_format_${_c}.goose"); done
-            elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
-                cd age/impl/zig && zig build test
-            elif [ "$_target" = "julia" ] || [ "$_target" = "jl" ]; then
-                cd age/impl/julia && julia --project -e 'using Pkg; Pkg.test()'
-            elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
-                just build pascal
-                cd age/impl/pascal && ./build/test_format_age
-            elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
-                cd age/impl/crystal && crystal spec
-            elif [ "$_target" = "d" ]; then
-                cd age/impl/d && ldc2 -unittest -main -I=source source/sayableage/locale.d source/sayableage/format_age.d source/sayableage/locales.d source/sayableage/test_format_age.d -of=test_runner && ./test_runner
-            elif [ "$_target" = "r" ]; then
-                cd age/impl/r && Rscript tests/testthat.R
-            elif [ "$_target" = "racket" ] || [ "$_target" = "rkt" ]; then
-                cd age/impl/racket && raco test test/
-            elif [ "$_target" = "prolog" ] || [ "$_target" = "swi" ]; then
-                cd age/impl/prolog && swipl -g run_tests -t halt test_format_age.pl
-            elif [ "$_target" = "raku" ] || [ "$_target" = "rk" ]; then
-                cd age/impl/raku && raku -Ilib t/01-formatter.rakutest
-            elif [ "$_target" = "v" ]; then
-                cd age/impl/v && v test .
-            elif [ "$_target" = "lisp" ] || [ "$_target" = "cl" ]; then
-                cd age/impl/lisp && sbcl --noinform --non-interactive --load package.lisp --load types.lisp --load formatter.lisp --load load-locales.lisp --load test/test-formatter.lisp --eval '(sayable-age-test:run-tests)'
-            elif [ "$_target" = "tcl" ]; then
-                cd age/impl/tcl && tclsh test_format_age.tcl
-            elif [ "$_target" = "wren" ]; then
-                cd age/impl/wren && wren_cli test_format_age.wren
-            elif [ "$_target" = "janet" ] || [ "$_target" = "jt" ]; then
-                cd age/impl/janet && janet test_format_age.janet
-            elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
-                cd age/impl/nim && nimble test -y
-            elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
-                cd age/impl/vbnet && dotnet test
-            elif [ "$_target" = "bash" ] || [ "$_target" = "sh" ]; then
-                cd age/impl/bash && bash test_format_age.sh
-            elif [ "$_target" = "odin" ] || [ "$_target" = "od" ]; then
-                cd age/impl/odin && odin test .
-            elif [ "$_target" = "octave" ] || [ "$_target" = "oct" ]; then
-                cd age/impl/octave && octave --no-gui --eval "test_format_age"
-            elif [ "$_target" = "pharo" ] || [ "$_target" = "ph" ]; then
-                cd age/impl/pharo
-                if [ ! -f Pharo.image ]; then
-                    curl -fsSL https://get.pharo.org/64/120 | bash
-                fi
-                pharo --headless Pharo.image st run_tests.st
-            elif [ "$_target" = "powershell" ] || [ "$_target" = "ps1" ]; then
-                cd age/impl/powershell && pwsh -NoProfile -Command "Invoke-Pester tests/ -EnableExit"
-            elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
-                cd age/impl/mojo && mojo run -I src tests/test_format_age.mojo
             elif [ "$_target" = "codegen" ]; then
                 cd age && {{python}} -m unittest codegen.test_locale_groups -v
+            elif printf '%s\n' ${_ALL_LANGS} | grep -qx "${name}"; then
+                # Every library's native suite (age, date, duration, time)
+                bash .hecatron/tools/language/test.sh "${name}"
             else
                 echo "Unknown target: $_target (try 'just test help')" >&2
                 exit 1
@@ -429,6 +315,7 @@ check:
     {{python}} .hecatron/tools/codegen/dockerfile.py --check
     {{python}} tools/generate_compatibility.py --check
     {{python}} tools/check_workflow_components.py
+    {{python}} tools/check_test_ids.py
     uv run --with geopandas --with matplotlib {{python}} tools/geography/generate.py --check
 
 # Generate Dockerfile from per-language snippets

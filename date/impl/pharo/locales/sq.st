@@ -17,7 +17,7 @@ sq
 	locale := SayableDateLocale new.
 	locale code: 'sq'.
 	locale months: (OrderedCollection withAll: { 'janar'. 'shkurt'. 'mars'. 'prill'. 'maj'. 'qershor'. 'korrik'. 'gusht'. 'shtator'. 'tetor'. 'nëntor'. 'dhjetor' }).
-	locale weekdays: (OrderedCollection withAll: { 'e diel'. 'e hënë'. 'e martë'. 'e mërkurë'. 'e enjte'. 'e premte'. 'e shtunë' }).
+	locale weekdays: (OrderedCollection withAll: { 'të dielën'. 'të hënën'. 'të martën'. 'të mërkurën'. 'të enjten'. 'të premten'. 'të shtunën' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
@@ -27,8 +27,8 @@ sq
 	locale yesterday: 'dje'.
 	locale dayAfterTomorrow: 'pasnesër'.
 	locale dayBeforeYesterday: 'pardje'.
-	locale thisWeekday: 'këtë {weekday}'.
-	locale nextWeekday: '{weekday} tjetër'.
+	locale thisWeekday: '{weekday}'.
+	locale nextWeekday: '{weekday} e ardhshme'.
 	locale lastWeekday: '{weekday} e kaluar'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {

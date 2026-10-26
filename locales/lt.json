@@ -93,9 +93,9 @@
       "penktadienis",
       "šeštadienis"
     ],
-    "dayFormat": "{n}.",
-    "datePattern": "{day} {month}",
-    "datePatternWithYear": "{day} {month} {year}",
+    "dayFormat": "{n} d.",
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{year} m. {month} {day}",
     "today": "šiandien",
     "tomorrow": "rytoj",
     "yesterday": "vakar",
@@ -142,9 +142,9 @@
         "pn",
         "št"
       ],
-      "dayFormat": "{n}.",
-      "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}"
+      "dayFormat": "{n} d.",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{year} m. {month} {day}"
     },
     "compact": {
       "datePattern": "{m}-{d}",
@@ -275,5 +275,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Existing clock phrases ('penkios minuta dvi', 'penkiolika iki trys') are poor Lithuanian, but the audit lists that under schemaLimits (needs genitive hour forms), so left alone."
+    }
+  ]
 }

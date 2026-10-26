@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ee = {
         { "wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka" },
         "zã titina",
         "ŋdɔ",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ga {h}", "ga {h} kple aɖabaƒoƒo atɔ̃", "ga {h} kple aɖabaƒoƒo ewo", "ga {h} kple aɖabaƒoƒo wuiatɔ̃", "ga {h} kple aɖabaƒoƒo blaeve", "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃", "ga {h} kple afã", "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃", "ga {h} kple aɖabaƒoƒo blaene", "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃", "ga {h} kple aɖabaƒoƒo blaatɔ̃", "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

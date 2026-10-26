@@ -18,7 +18,7 @@ pub fn locale() -> DateLocale {
     DateLocale {
         code: "fon".to_string(),
         months: ["Alɔfí".to_string(), "Alɔnyɔ".to_string(), "Ataɖaxɔ".to_string(), "Tlɛsún".to_string(), "Axɔsún".to_string(), "Ayɛsún".to_string(), "Nùxwásún".to_string(), "Ayidosún".to_string(), "Kɛnísún".to_string(), "Kanyásún".to_string(), "Abɔxwísún".to_string(), "Adɔxwísún".to_string()],
-        weekdays: ["Sidégbe".to_string(), "Tɛnígbe".to_string(), "Talɛtagbe".to_string(), "Azǎngagbe".to_string(), "Nyɔnúgbe".to_string(), "Axɔ́sùgbe".to_string(), "Abámɛ́ta".to_string()],
+        weekdays: ["Aklunɔzángbe".to_string(), "Tɛnígbe".to_string(), "Talɛtagbe".to_string(), "Azǎngagbe".to_string(), "Nyɔnúgbe".to_string(), "Axɔ́sùgbe".to_string(), "Sibigbe".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),
@@ -35,7 +35,7 @@ pub fn locale() -> DateLocale {
         short: Some(CompactnessOverride {
             months: Some(["Alɔ".to_string(), "Any".to_string(), "Ata".to_string(), "Tlɛ".to_string(), "Axɔ".to_string(), "Ayɛ".to_string(), "Nùx".to_string(), "Ayi".to_string(), "Kɛn".to_string(), "Kan".to_string(), "Abɔ".to_string(), "Adɔ".to_string()]),
             months_in_date: None,
-            weekdays: Some(["Sid".to_string(), "Tɛn".to_string(), "Tal".to_string(), "Azǎ".to_string(), "Nyɔ".to_string(), "Axɔ".to_string(), "Abá".to_string()]),
+            weekdays: Some(["Akl".to_string(), "Tɛn".to_string(), "Tal".to_string(), "Azǎ".to_string(), "Nyɔ".to_string(), "Axɔ".to_string(), "Sib".to_string()]),
             day_format: Some("{n}".to_string()),
             day_format_exceptions: None,
             date_pattern: Some("{day} {month}".to_string()),

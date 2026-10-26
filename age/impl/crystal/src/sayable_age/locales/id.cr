@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new("{n} bulan"),
         "year" => UnitForms.new("{n} tahun"),
       },
-      half: "{0} setengah",
+      half: "{n} setengah",
       delimiter: ", ",
       just_born: "Baru lahir",
       stages: {

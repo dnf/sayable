@@ -18,7 +18,7 @@ final lv = DateLocale(
   weekdays: ['svētdiena', 'pirmdiena', 'otrdiena', 'trešdiena', 'ceturtdiena', 'piektdiena', 'sestdiena'],
   dayFormat: '{n}.',
   datePattern: '{day} {month}',
-  datePatternWithYear: '{day} {month} {year}',
+  datePatternWithYear: '{year}. gada {day} {month}',
   today: 'šodien',
   tomorrow: 'rīt',
   yesterday: 'vakar',
@@ -32,7 +32,7 @@ final lv = DateLocale(
     weekdays: ['sv', 'pr', 'ot', 'tr', 'ce', 'pk', 'se'],
     dayFormat: '{n}.',
     datePattern: '{day} {month}',
-    datePatternWithYear: '{day} {month} {year}',
+    datePatternWithYear: '{year}. gada {day} {month}',
   ),
   compact: CompactnessOverride(
     datePattern: '{d}.{m}.',

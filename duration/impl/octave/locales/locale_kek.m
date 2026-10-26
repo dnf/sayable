@@ -40,6 +40,7 @@ function loc = locale_kek()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}mo';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
   loc.compact.ago = '{0} qakab''';
   loc.compact.in_future = 'chi {0}';

@@ -34,7 +34,7 @@ locale_mk <- list(
     toddler = "Мало дете",
     child = "Дете",
     teenager = "Тинејџер",
-    adult = "Возрасен"
+    adult = list(m = "Возрасен", f = "Возрасна")
   ),
   short = list(
     units = list(

@@ -30,7 +30,7 @@ locale = Locale
         , stageToddler = Neutral "Batang paslit"
         , stageChild = Neutral "Bata"
         , stageTeenager = Neutral "Tinedyer"
-        , stageAdult = Neutral "Matanda"
+        , stageAdult = Neutral "Adulto"
         }
     , localeShort = Just $
         CompactnessOverride

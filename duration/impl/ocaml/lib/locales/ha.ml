@@ -15,32 +15,32 @@ let locale : duration_locale =
   { code = "ha"
   ; plural = (fun n -> if n = 1 then One else Other)
   ; second = Pluralized
-      [ (One, "{n} daƙiƙa")
-      ; (Other, "{n} daƙiƙoƙi")
+      [ (One, "daƙiƙa {n}")
+      ; (Other, "daƙiƙoƙi {n}")
       ]
   ; minute = Pluralized
-      [ (One, "{n} minti")
-      ; (Other, "{n} mintoci")
+      [ (One, "minti {n}")
+      ; (Other, "mintoci {n}")
       ]
   ; hour = Pluralized
-      [ (One, "{n} awa")
-      ; (Other, "{n} awanni")
+      [ (One, "awa {n}")
+      ; (Other, "awanni {n}")
       ]
   ; day = Pluralized
-      [ (One, "{n} kwana")
-      ; (Other, "{n} kwanaki")
+      [ (One, "kwana {n}")
+      ; (Other, "kwanaki {n}")
       ]
   ; week = Pluralized
-      [ (One, "{n} mako")
-      ; (Other, "{n} makonni")
+      [ (One, "mako {n}")
+      ; (Other, "makonni {n}")
       ]
   ; month = Pluralized
-      [ (One, "{n} wata")
-      ; (Other, "{n} watanni")
+      [ (One, "wata {n}")
+      ; (Other, "watanni {n}")
       ]
   ; year = Pluralized
-      [ (One, "{n} shekara")
-      ; (Other, "{n} shekaru")
+      [ (One, "shekara {n}")
+      ; (Other, "shekaru {n}")
       ]
   ; half = "{n}½"
   ; delimiter = ", "
@@ -48,13 +48,13 @@ let locale : duration_locale =
   ; ago = "{0} da suka wuce"
   ; in_future = "cikin {0}"
   ; short = Some
-      { ovr_second = Some (Simple "{n} daƙ.")
-      ; ovr_minute = Some (Simple "{n} mnt.")
-      ; ovr_hour = Some (Simple "{n} awa")
-      ; ovr_day = Some (Simple "{n} kw.")
-      ; ovr_week = Some (Simple "{n} mk.")
-      ; ovr_month = Some (Simple "{n} wt.")
-      ; ovr_year = Some (Simple "{n} shk.")
+      { ovr_second = Some (Simple "daƙ. {n}")
+      ; ovr_minute = Some (Simple "mnt. {n}")
+      ; ovr_hour = Some (Simple "awa {n}")
+      ; ovr_day = Some (Simple "kw. {n}")
+      ; ovr_week = Some (Simple "mk. {n}")
+      ; ovr_month = Some (Simple "wt. {n}")
+      ; ovr_year = Some (Simple "shk. {n}")
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "{0} da suka wuce"

@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "lg",
-        clock = #clock_config{hours = ["kkumi na bbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano", "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi na emu"], midnight = "ekiro eky'omu ttumbi", noon = "ettuntu", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi n'emu", "kkumi n'ebbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano"], midnight = "ekiro eky'omu ttumbi", noon = "ettuntu", patterns = [{0, "essaawa {h}"}, {5, "essaawa {h} n'eddakiika ttaano"}, {10, "essaawa {h} n'eddakiika kkumi"}, {15, "essaawa {h} n'eddakiika kkumi na ttaano"}, {20, "essaawa {h} n'eddakiika abiri"}, {25, "essaawa {h} n'eddakiika abiri mu ttaano"}, {30, "essaawa {h} n'ekitundu"}, {35, "essaawa {h} n'eddakiika asatu mu ttaano"}, {40, "essaawa {h} n'eddakiika ana"}, {45, "essaawa {h} n'eddakiika ana mu ttaano"}, {50, "essaawa {h} n'eddakiika ataano"}, {55, "essaawa {h} n'eddakiika ataano mu ttaano"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

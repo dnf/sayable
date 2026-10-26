@@ -26,7 +26,7 @@ class NBLocale {
   static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "akkurat nå" }
-  static ago { "{0} siden" }
+  static ago { "for {0} siden" }
   static inFuture { "om {0}" }
   static short {
     return {
@@ -39,7 +39,7 @@ class NBLocale {
         "month": "{n} md.",
         "year": "{n} år",
       },
-      "ago": "{0} siden",
+      "ago": "for {0} siden",
       "inFuture": "om {0}",
     }
   }
@@ -55,7 +55,7 @@ class NBLocale {
         "year": "{n}å",
       },
       "delimiter": "",
-      "ago": "{0} siden",
+      "ago": "for {0} siden",
       "inFuture": "om {0}",
     }
   }

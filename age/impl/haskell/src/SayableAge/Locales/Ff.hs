@@ -41,12 +41,15 @@ locale = Locale
         , stageInfant = Neutral "Ɓinngel"
         , stageToddler = Neutral "Cukalel"
         , stageChild = Neutral "Suka"
-        , stageTeenager = Neutral "Suka debbo"
+        , stageTeenager = Gendered "Suka gorko" "Suka debbo"
         , stageAdult = Neutral "Mawɗo"
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "ñalɗe {n}")
+            { ovrDay = Just (Pluralized
+              [ (One, "ñalawma {n}")
+              , (Other, "ñalɗe {n}")
+              ])
             , ovrWeek = Just (Pluralized
               [ (One, "yontere {n}")
               , (Other, "yontereeji {n}")
@@ -65,7 +68,10 @@ locale = Locale
             }
     , localeCompact = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "ñalɗe {n}")
+            { ovrDay = Just (Pluralized
+              [ (One, "ñalawma {n}")
+              , (Other, "ñalɗe {n}")
+              ])
             , ovrWeek = Just (Pluralized
               [ (One, "yont {n}")
               , (Other, "yontji {n}")

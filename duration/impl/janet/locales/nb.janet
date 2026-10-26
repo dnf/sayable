@@ -22,8 +22,8 @@
    :half "{n}½"
    :delimiter ", "
    :just-now "akkurat nå"
-   :ago "{0} siden"
+   :ago "for {0} siden"
    :in-future "om {0}"
-   :short {:units {:second "{n} sek" :minute "{n} min" :hour "{n} t" :day "{n} d" :week "{n} u" :month "{n} md." :year "{n} år"} :ago "{0} siden" :in-future "om {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}t" :day "{n}d" :week "{n}u" :month "{n} m" :year "{n}å"} :delimiter "" :ago "{0} siden" :in-future "om {0}"}
+   :short {:units {:second "{n} sek" :minute "{n} min" :hour "{n} t" :day "{n} d" :week "{n} u" :month "{n} md." :year "{n} år"} :ago "for {0} siden" :in-future "om {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}t" :day "{n}d" :week "{n}u" :month "{n} m" :year "{n}å"} :delimiter "" :ago "for {0} siden" :in-future "om {0}"}
 })

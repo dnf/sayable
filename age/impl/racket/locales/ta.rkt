@@ -25,7 +25,7 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} வாரம்" "other" "{n} வாரங்கள்"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} மாதம்" "other" "{n} மாதங்கள்"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} வயது" "other" "{n} வயது")))
-   "{0}ரை"
+   "{n}½"
    ", "
    "பிறந்த குழந்தை"
    (hash "newborn" (stage-label "பிறந்த குழந்தை" #f #f)

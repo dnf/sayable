@@ -28,9 +28,9 @@ const SduDurationLocale sdu_locale_ki = {
         { NULL, { NULL, "mwerĩ {n}", NULL, NULL, NULL, "mĩerĩ {n}" } },
         { NULL, { NULL, "mwaka {n}", NULL, NULL, NULL, "mĩaka {n}" } }
     },
-    "{0} na nusu", ", ",
-    "ũmũthĩ",
-    "{0} ĩhĩtũkĩte", "{0} ĩyothe",
-    true, { true, { "sek. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ndag. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "ithaa {n}", NULL, NULL, NULL, "mathaa {n}" } }, true, { NULL, { NULL, "mũth. {n}", NULL, NULL, NULL, "mĩth. {n}" } }, true, { "kiu. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "mwerĩ {n}", NULL, NULL, NULL, "mĩerĩ {n}" } }, true, { NULL, { NULL, "mwaka {n}", NULL, NULL, NULL, "mĩaka {n}" } }, false, NULL, false, NULL, true, "{0} ĩhĩtũkĩte", true, "{0} ĩyothe" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} ĩhĩtũkĩte", true, "{0} ĩyothe" }
+    "{0} na nuthu", ", ",
+    "rĩu",
+    "{0} ĩhĩtũkĩte", "thutha wa {0}",
+    true, { true, { "sek. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ndag. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "ithaa {n}", NULL, NULL, NULL, "mathaa {n}" } }, true, { NULL, { NULL, "mũth. {n}", NULL, NULL, NULL, "mĩth. {n}" } }, true, { "kiu. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "mwerĩ {n}", NULL, NULL, NULL, "mĩerĩ {n}" } }, true, { NULL, { NULL, "mwaka {n}", NULL, NULL, NULL, "mĩaka {n}" } }, false, NULL, false, NULL, true, "{0} ĩhĩtũkĩte", true, "thutha wa {0}" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} ĩhĩtũkĩte", true, "thutha wa {0}" }
 };

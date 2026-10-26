@@ -17,7 +17,7 @@ use crate::types::{CompactnessOverride, DateLocale};
 pub fn locale() -> DateLocale {
     DateLocale {
         code: "dyu".to_string(),
-        months: ["Zanwuyekalo".to_string(), "Feburuyekalo".to_string(), "Marisikalo".to_string(), "Awirilikalo".to_string(), "Mɛkalo".to_string(), "Zuwɛnkalo".to_string(), "Zuluyekalo".to_string(), "Utikalo".to_string(), "Sɛtanburukalo".to_string(), "Ɔkutɔburukalo".to_string(), "Nowanburdukalo".to_string(), "Desanburukalo".to_string()],
+        months: ["Zanwuyekalo".to_string(), "Feburuyekalo".to_string(), "Marisikalo".to_string(), "Awirilikalo".to_string(), "Mɛkalo".to_string(), "Zuwɛnkalo".to_string(), "Zuluyekalo".to_string(), "Utikalo".to_string(), "Sɛtanburukalo".to_string(), "Ɔkutɔburukalo".to_string(), "Nowanburukalo".to_string(), "Desanburukalo".to_string()],
         weekdays: ["Kari".to_string(), "Ntɛnɛn".to_string(), "Tarata".to_string(), "Araba".to_string(), "Alamisa".to_string(), "Juma".to_string(), "Sibiri".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),

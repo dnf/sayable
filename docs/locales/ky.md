@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ky.json](../../locales/ky.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Placeholder replaced with words: "саат {h}" (:00), "{h} жарым" (:30, idiomatic "эки жарым"), and the spoken digital reading in words for other buckets ("эки он беш", "эки нөл беш", "эки кырк беш"), which is grammatical for every hour. The traditional system "экиден он беш мүнөт өттү" (ablative) / "үчкө он беш мүнөт калды" (dative) is not expressible without case lists — schema follow-up (lists in the audit entry). Doubts: whether "нөл беш" or bare "беш" is the more natural reading of :05; whether a speaker would prefer the ablative/dative system over the digital one.
+
 ## Age
 
 ### Age formatting
@@ -54,29 +62,29 @@ Plural rule: `one_other` (categories: one, other)
 
 | Date        | Normal     | Short  | Compact |
 | ----------- | ---------- | ------ | ------- |
-| January 1   | 1 Январь   | 1 Янв  | 1/1     |
-| February 14 | 14 Февраль | 14 Фев | 14/2    |
-| March 15    | 15 Март    | 15 Мар | 15/3    |
-| July 4      | 4 Июль     | 4 Июл  | 4/7     |
-| October 31  | 31 Октябрь | 31 Окт | 31/10   |
-| December 25 | 25 Декабрь | 25 Дек | 25/12   |
+| January 1   | 1-январь   | 1 янв  | 1/1     |
+| February 14 | 14-февраль | 14 фев | 14/2    |
+| March 15    | 15-март    | 15 мар | 15/3    |
+| July 4      | 4-июль     | 4 июл  | 4/7     |
+| October 31  | 31-октябрь | 31 окт | 31/10   |
+| December 25 | 25-декабрь | 25 дек | 25/12   |
 
 ### Relative dates
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal           | Compact |
-| -------------------- | ---------------- | ------- |
-| Today                | бүгүн            | бүгүн   |
-| Tomorrow             | эртең            | эртең   |
-| Yesterday            | кечээ            | кечээ   |
-| Day after tomorrow   | бүрсүгүнү        | 17/3    |
-| Day before yesterday | мурунку күнү     | 13/3    |
-| This Thursday (+5)   | бул Бейшемби     | 20/3    |
-| Last Monday (-4)     | өткөн Шейшемби   | 11/3    |
-| Next Wednesday (+12) | кийинки Бейшемби | 27/3    |
-| Same month (+20)     | 4 Апрель         | 4/4     |
-| Different year       | 10 Январь 2026   | 10/1/26 |
+| Offset               | Normal             | Compact |
+| -------------------- | ------------------ | ------- |
+| Today                | бүгүн              | бүгүн   |
+| Tomorrow             | эртең              | эртең   |
+| Yesterday            | кечээ              | кечээ   |
+| Day after tomorrow   | бүрсүгүнү          | 17/3    |
+| Day before yesterday | мурунку күнү       | 13/3    |
+| This Thursday (+5)   | бул бейшемби       | 20/3    |
+| Last Tuesday (-4)    | өткөн шейшемби     | 11/3    |
+| Next Thursday (+12)  | кийинки бейшемби   | 27/3    |
+| Same year (+20)      | 4-апрель           | 4/4     |
+| Different year       | 2026-ж., 10-январь | 10/1/26 |
 
 ## Duration
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short | Compact |
-| --------------- | ---------- | ----- | ------- |
-| Midnight        | түн ортосу | 0:00  | 0:00    |
-| 1:00 AM         | бир:00     | 1:00  | 1:00    |
-| 5 past 9        | тогуз:05   | 9:05  | 9:05    |
-| Quarter past 10 | он:15      | 10:15 | 10:15   |
-| Half past 11    | он бир:30  | 11:30 | 11:30   |
-| Noon            | түш        | 12:00 | 12:00   |
-| Quarter to 3    | эки:45     | 14:45 | 14:45   |
-| 5 to 6          | беш:55     | 17:55 | 17:55   |
-| 8 o'clock PM    | сегиз:00   | 20:00 | 20:00   |
-| 10:30 PM        | он:30      | 22:30 | 22:30   |
-| 11:58 PM        | түн ортосу | 23:58 | 23:58   |
+| Time            | Normal        | Short | Compact |
+| --------------- | ------------- | ----- | ------- |
+| Midnight        | түн ортосу    | 0:00  | 0:00    |
+| 1:00 AM         | саат бир      | 1:00  | 1:00    |
+| 5 past 9        | тогуз нөл беш | 9:05  | 9:05    |
+| Quarter past 10 | он он беш     | 10:15 | 10:15   |
+| Half past 11    | он бир жарым  | 11:30 | 11:30   |
+| Noon            | түш           | 12:00 | 12:00   |
+| Quarter to 3    | эки кырк беш  | 14:45 | 14:45   |
+| 5 to 6          | беш элүү беш  | 17:55 | 17:55   |
+| 8 o'clock PM    | саат сегиз    | 20:00 | 20:00   |
+| 10:30 PM        | он жарым      | 22:30 | 22:30   |
+| 11:58 PM        | түн ортосу    | 23:58 | 23:58   |

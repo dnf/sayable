@@ -18,7 +18,7 @@ pub fn locale() -> types.DurationLocale {
     units: [
       #("second", types.PluralUnit([#(types.One, "{n} soicind"), #(types.Two, "{n} shoicind"), #(types.Few, "{n} shoicind"), #(types.Many, "{n} soicind"), #(types.Other, "{n} soicind")])),
       #("minute", types.PluralUnit([#(types.One, "{n} nóiméad"), #(types.Two, "{n} nóiméad"), #(types.Few, "{n} nóiméad"), #(types.Many, "{n} nóiméad"), #(types.Other, "{n} nóiméad")])),
-      #("hour", types.PluralUnit([#(types.One, "{n} uair"), #(types.Two, "{n} uair"), #(types.Few, "{n} huaire"), #(types.Many, "{n} n-uaire"), #(types.Other, "{n} uair")])),
+      #("hour", types.PluralUnit([#(types.One, "{n} uair an chloig"), #(types.Two, "{n} uair an chloig"), #(types.Few, "{n} huaire an chloig"), #(types.Many, "{n} n-uaire an chloig"), #(types.Other, "{n} uair an chloig")])),
       #("day", types.PluralUnit([#(types.One, "{n} lá"), #(types.Two, "{n} lá"), #(types.Few, "{n} lá"), #(types.Many, "{n} lá"), #(types.Other, "{n} lá")])),
       #("week", types.PluralUnit([#(types.One, "{n} seachtain"), #(types.Two, "{n} sheachtain"), #(types.Few, "{n} seachtaine"), #(types.Many, "{n} seachtaine"), #(types.Other, "{n} seachtain")])),
       #("month", types.PluralUnit([#(types.One, "{n} mhí"), #(types.Two, "{n} mhí"), #(types.Few, "{n} mhí"), #(types.Many, "{n} mí"), #(types.Other, "{n} mí")])),

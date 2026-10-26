@@ -18,10 +18,10 @@ locale() ->
         code = "eu",
         months = ["urtarril", "otsail", "martxo", "apiril", "maiatz", "ekain", "uztail", "abuztu", "irail", "urri", "azaro", "abendu"],
         weekdays = ["igandea", "astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata"],
-        day_format = "{n}",
-        day_format_exceptions = [],
-        date_pattern = "{month}ren {day}",
-        date_pattern_with_year = "{year}ko {month}ren {day}",
+        day_format = "{n}a",
+        day_format_exceptions = [{"11", "{n}"}, {"31", "{n}"}],
+        date_pattern = "{month} {day}",
+        date_pattern_with_year = "{year}ko {month} {day}",
         today = "gaur",
         tomorrow = "bihar",
         yesterday = "atzo",
@@ -30,7 +30,7 @@ locale() ->
         this_weekday = {just, "{weekday} hau"},
         next_weekday = {just, "hurrengo {weekday}"},
         last_weekday = {just, "aurreko {weekday}"},
-        months_in_date = nothing,
+        months_in_date = {just, ["urtarrilaren", "otsailaren", "martxoaren", "apirilaren", "maiatzaren", "ekainaren", "uztailaren", "abuztuaren", "irailaren", "urriaren", "azaroaren", "abenduaren"]},
         short = {just, #date_compactness_override{months = {just, ["urt", "ots", "mar", "api", "mai", "eka", "uzt", "abu", "ira", "urr", "aza", "abe"]}, months_in_date = nothing, weekdays = {just, ["ig", "al", "ar", "az", "og", "or", "lr"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{month} {day}"}, date_pattern_with_year = {just, "{year} {month} {day}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

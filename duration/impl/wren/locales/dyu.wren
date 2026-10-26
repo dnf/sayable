@@ -27,7 +27,7 @@ class DYULocale {
   static delimiter { ", " }
   static justNow { "sisan" }
   static ago { "{0} tɛmɛnen" }
-  static inFuture { "ka {0}" }
+  static inFuture { "{0} kɔnɔ" }
   static short {
     return {
       "units": {
@@ -40,7 +40,7 @@ class DYULocale {
         "year": "san {n}",
       },
       "ago": "{0} tɛmɛnen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
     }
   }
   static compact {
@@ -57,7 +57,7 @@ class DYULocale {
       "half": "{n}½",
       "delimiter": "",
       "ago": "{0} tɛmɛnen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
     }
   }
 }

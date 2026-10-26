@@ -12,8 +12,8 @@
 (def locale
   {:code "qu"
    :plural (fn [_n] :other)
-   :units {:second "{n} ñiqin"
-          :minute "{n} chiniku"
+   :units {:second "{n} sikundu"
+          :minute "{n} minutu"
           :hour "{n} ura"
           :day "{n} p'unchaw"
           :week "{n} simana"
@@ -24,6 +24,6 @@
    :just-now "kunanlla"
    :ago "{0} ñawpaqta"
    :in-future "{0} qhipata"
-   :short {:units {:second "{n} ñiq" :minute "{n} chi" :hour "{n} ura" :day "{n} p'un" :week "{n} sim" :month "{n} kil" :year "{n} wat"} :ago "{0} ñawpaqta" :in-future "{0} qhipata"}
+   :short {:units {:second "{n} sik" :minute "{n} min" :hour "{n} ura" :day "{n} p'un" :week "{n} sim" :month "{n} kil" :year "{n} wat"} :ago "{0} ñawpaqta" :in-future "{0} qhipata"}
    :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ñawpaqta" :in-future "{0} qhipata"}
 })

@@ -19,7 +19,7 @@ M.units = {
     month = "ཟླ་ {n}",
     year = "ལོ་ {n}",
 }
-M.half = "{0} ཕྱེད"
+M.half = "{0} དང་ཕྱེད"
 M.delimiter = " "
 M.just_born = "གསར་སྐྱེས"
 M.stages = {

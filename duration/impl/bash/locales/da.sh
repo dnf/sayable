@@ -33,7 +33,7 @@ _sayableduration_locale_da() {
     _half='{n}½'
     _delimiter=', '
     _just_now='lige nu'
-    _ago='{0} siden'
+    _ago='for {0} siden'
     _in_future='om {0}'
     _short_unit_second='{n} sek.'
     _short_unit_minute='{n} min.'

@@ -23,7 +23,7 @@ locale() ->
         day = {simple, "{n}天"},
         week = {simple, "{n}周"},
         month = {simple, "{n}个月"},
-        year = {simple, "{n}岁"},
+        year = {simple, "{n}年"},
         half = "{0}半",
         delimiter = "",
         just_now = "刚刚",

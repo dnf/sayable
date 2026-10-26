@@ -10,21 +10,21 @@
 # Source: locales/so.json
 
 _sayabletime_locale_so() {
-    _clock_hours=('laba iyo toban' 'kow' 'laba' 'saddex' 'afar' 'shan' 'lix' 'toddoba' 'siddeed' 'sagaal' 'toban' 'kow iyo toban')
+    _clock_hours=('laba iyo tobanka' 'kowda' 'labada' 'saddexda' 'afarta' 'shanta' 'lixda' 'toddobada' 'siddeedda' 'sagaasha' 'tobanka' 'kow iyo tobanka')
     _clock_midnight='saqda dhexe'
     _clock_noon='duhur'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} iyo shan'
+    _clock_pattern_10='{h} iyo toban'
+    _clock_pattern_15='{h} iyo rubuc'
+    _clock_pattern_20='{h} iyo labaatan'
+    _clock_pattern_25='{h} iyo shan iyo labaatan'
+    _clock_pattern_30='{h} iyo bar'
+    _clock_pattern_35='{next_h} shan iyo labaatan la'\'''
+    _clock_pattern_40='{next_h} labaatan la'\'''
+    _clock_pattern_45='{next_h} rubuc la'\'''
+    _clock_pattern_50='{next_h} toban la'\'''
+    _clock_pattern_55='{next_h} shan la'\'''
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

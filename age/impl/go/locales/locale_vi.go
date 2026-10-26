@@ -30,7 +30,7 @@ var VI = sa.AgeLocale{
 	JustBorn:  "Sơ sinh",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.S("Sơ sinh"),
-		Infant:   sa.S("Trẻ sơ sinh"),
+		Infant:   sa.S("Trẻ nhũ nhi"),
 		Toddler:  sa.S("Trẻ mới biết đi"),
 		Child:    sa.S("Trẻ em"),
 		Teenager: sa.S("Thiếu niên"),

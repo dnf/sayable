@@ -22,13 +22,13 @@ pub fn locale() -> types.DurationLocale {
       #("day", types.SimpleUnit("{n} ngày")),
       #("week", types.SimpleUnit("{n} tuần")),
       #("month", types.SimpleUnit("{n} tháng")),
-      #("year", types.SimpleUnit("{n} tuổi")),
+      #("year", types.SimpleUnit("{n} năm")),
     ],
     half: "{0} rưỡi",
     delimiter: ", ",
     just_now: "vừa xong",
     ago: "{0} trước",
-    in_future: "trong {0}",
+    in_future: "{0} nữa",
     short: Ok(types.CompactnessOverride(
       units: Ok([
         #("second", types.SimpleUnit("{n} giây")),
@@ -42,7 +42,7 @@ pub fn locale() -> types.DurationLocale {
       half: Error(Nil),
       delimiter: Error(Nil),
       ago: Ok("{0} trước"),
-      in_future: Ok("trong {0}"),
+      in_future: Ok("{0} nữa"),
     )),
     compact: Ok(types.CompactnessOverride(
       units: Ok([
@@ -57,7 +57,7 @@ pub fn locale() -> types.DurationLocale {
       half: Ok("{n}½"),
       delimiter: Ok(""),
       ago: Ok("{0} trước"),
-      in_future: Ok("trong {0}"),
+      in_future: Ok("{0} nữa"),
     )),
   )
 }

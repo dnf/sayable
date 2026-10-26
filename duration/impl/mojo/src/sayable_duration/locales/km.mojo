@@ -50,7 +50,7 @@ fn build_km() -> DurationLocale:
     short_ovr.has_year = True
     short_ovr.ago = "{0}មុន"
     short_ovr.has_ago = True
-    short_ovr.in_future = "ក្នុង{0}"
+    short_ovr.in_future = "{0}ទៀត"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
@@ -74,7 +74,7 @@ fn build_km() -> DurationLocale:
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0}មុន"
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "ក្នុង{0}"
+    compact_ovr.in_future = "{0}ទៀត"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -91,7 +91,7 @@ fn build_km() -> DurationLocale:
         delimiter=", ",
         just_now="ឥឡូវនេះ",
         ago="{0}មុន",
-        in_future="ក្នុង{0}",
+        in_future="{0}ទៀត",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

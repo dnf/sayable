@@ -22,18 +22,18 @@ locale = TimeLocale
             , clockMidnight = "dugutilama"
             , clockNoon = "tilgari"
             , clockPatterns =
-                [ (0, "{h}:00")
-                , (5, "{h}:05")
-                , (10, "{h}:10")
-                , (15, "{h}:15")
-                , (20, "{h}:20")
-                , (25, "{h}:25")
-                , (30, "{h}:30")
-                , (35, "{h}:35")
-                , (40, "{h}:40")
-                , (45, "{h}:45")
-                , (50, "{h}:50")
-                , (55, "{h}:55")
+                [ (0, "lɛrɛ {h}")
+                , (5, "lɛrɛ {h} ni miniti duuru")
+                , (10, "lɛrɛ {h} ni miniti tan")
+                , (15, "lɛrɛ {h} ni miniti tan ni duuru")
+                , (20, "lɛrɛ {h} ni miniti mugan")
+                , (25, "lɛrɛ {h} ni miniti mugan ni duuru")
+                , (30, "lɛrɛ {h} ni tilancɛ")
+                , (35, "lɛrɛ {h} ni miniti bi saba ni duuru")
+                , (40, "lɛrɛ {h} ni miniti bi naani")
+                , (45, "lɛrɛ {h} ni miniti bi naani ni duuru")
+                , (50, "lɛrɛ {h} ni miniti bi duuru")
+                , (55, "lɛrɛ {h} ni miniti bi duuru ni duuru")
                 ]
             }
     , localeShort = Just $ CompactnessOverride $ Just $

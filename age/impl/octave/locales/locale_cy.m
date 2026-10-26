@@ -12,10 +12,10 @@
 function loc = locale_cy()
   loc.code = 'cy';
   loc.plural = @plural;
-  loc.units.day = struct("zero", '{n} diwrnod', "one", '{n} diwrnod', "two", '{n} ddiwrnod', "few", '{n} diwrnod', "many", '{n} niwrnod', "other", '{n} diwrnod');
+  loc.units.day = struct("zero", '{n} diwrnod', "one", '{n} diwrnod', "two", '{n} ddiwrnod', "few", '{n} diwrnod', "many", '{n} diwrnod', "other", '{n} diwrnod');
   loc.units.week = struct("zero", '{n} wythnos', "one", '{n} wythnos', "two", '{n} wythnos', "few", '{n} wythnos', "many", '{n} wythnos', "other", '{n} wythnos');
   loc.units.month = struct("zero", '{n} mis', "one", '{n} mis', "two", '{n} fis', "few", '{n} mis', "many", '{n} mis', "other", '{n} mis');
-  loc.units.year = struct("zero", '{n} blwyddyn', "one", '{n} blwyddyn', "two", '{n} flynedd', "few", '{n} blynedd', "many", '{n} blynedd', "other", '{n} blynedd');
+  loc.units.year = struct("zero", '{n} blwyddyn', "one", '{n} flwyddyn', "two", '{n} flynedd', "few", '{n} blynedd', "many", '{n} blynedd', "other", '{n} blynedd');
   loc.half = '{0} a hanner';
   loc.delimiter = ', ';
   loc.just_born = 'Newydd-anedig';

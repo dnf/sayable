@@ -42,7 +42,7 @@ fn build_ak() -> DurationLocale:
     short_ovr.has_minute = True
     short_ovr.hour = simple_unit("dɔnhwere {n}")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("nna {n}")
+    short_ovr.day = plural_unit(one="da {n}", other="nna {n}")
     short_ovr.has_day = True
     short_ovr.week = plural_unit(one="dapɛn {n}", other="nnapɛn {n}")
     short_ovr.has_week = True
@@ -62,7 +62,7 @@ fn build_ak() -> DurationLocale:
     compact_ovr.has_minute = True
     compact_ovr.hour = simple_unit("dɔn {n}")
     compact_ovr.has_hour = True
-    compact_ovr.day = simple_unit("nna {n}")
+    compact_ovr.day = plural_unit(one="da {n}", other="nna {n}")
     compact_ovr.has_day = True
     compact_ovr.week = plural_unit(one="dapɛn {n}", other="nnapɛn {n}")
     compact_ovr.has_week = True

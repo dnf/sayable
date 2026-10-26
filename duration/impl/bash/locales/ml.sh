@@ -11,7 +11,7 @@
 
 _sayableduration_plural_ml() {
     local n=$1
-    if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
+    if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
@@ -30,7 +30,7 @@ _sayableduration_locale_ml() {
     _unit_month_other='{n} മാസങ്ങൾ'
     _unit_year_one='{n} വർഷം'
     _unit_year_other='{n} വർഷങ്ങൾ'
-    _half='{0} ര'
+    _half='{n}½'
     _delimiter=', '
     _just_now='ഇപ്പോൾ'
     _ago='{0} മുമ്പ്'

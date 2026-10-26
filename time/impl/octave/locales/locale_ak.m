@@ -11,10 +11,10 @@
 
 function loc = locale_ak()
   loc.code = 'ak';
-  loc.clock.hours = {'dumien', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako'};
-  loc.clock.midnight = 'anadwo';
-  loc.clock.noon = 'awia';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.hours = {'dumienu', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako'};
+  loc.clock.midnight = 'ɔdasuom';
+  loc.clock.noon = 'owigyinae';
+  loc.clock.patterns = struct("p0", 'nnɔn {h}', "p5", 'nnɔn {h} ne sima anum', "p10", 'nnɔn {h} ne sima edu', "p15", 'nnɔn {h} ne sima dunum', "p20", 'nnɔn {h} ne sima aduonu', "p25", 'nnɔn {h} ne sima aduonu num', "p30", 'nnɔn {h} ne fa', "p35", 'aka sima aduonu num na abɔ nnɔn {next_h}', "p40", 'aka sima aduonu na abɔ nnɔn {next_h}', "p45", 'aka sima dunum na abɔ nnɔn {next_h}', "p50", 'aka sima edu na abɔ nnɔn {next_h}', "p55", 'aka sima anum na abɔ nnɔn {next_h}');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

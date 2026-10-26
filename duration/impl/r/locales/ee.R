@@ -13,30 +13,30 @@ locale_ee <- list(
   code = "ee",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = list(one = "sekend {n}", other = "sekendwo {n}"),
-    minute = list(one = "aɖabaƒoƒo {n}", other = "aɖabaƒoƒowo {n}"),
-    hour = list(one = "gaƒoƒo {n}", other = "gaƒoƒowo {n}"),
-    day = list(one = "ŋkeke {n}", other = "ŋkekewo {n}"),
-    week = list(one = "kɔsiɖa {n}", other = "kɔsiɖawo {n}"),
-    month = list(one = "ɣleti {n}", other = "ɣletiwo {n}"),
-    year = list(one = "ƒe {n}", other = "ƒewo {n}")
+    second = "sekend {n}",
+    minute = "aɖabaƒoƒo {n}",
+    hour = "gaƒoƒo {n}",
+    day = "ŋkeke {n}",
+    week = "kɔsiɖa {n}",
+    month = "ɣleti {n}",
+    year = "ƒe {n}"
   ),
   half = "{0} kple afã",
   delimiter = ", ",
   just_now = "fifia",
-  ago = "ɖe {0} me",
+  ago = "{0} si va yi",
   in_future = "le {0} me",
   short = list(
     units = list(
       second = "sek. {n}",
       minute = "aɖaba. {n}",
       hour = "gaƒ. {n}",
-      day = "ŋkekewo {n}",
-      week = list(one = "kɔsiɖa {n}", other = "kɔsiɖawo {n}"),
-      month = list(one = "ɣleti {n}", other = "ɣletiwo {n}"),
-      year = list(one = "ƒe {n}", other = "ƒewo {n}")
+      day = "ŋkeke {n}",
+      week = "kɔsiɖa {n}",
+      month = "ɣleti {n}",
+      year = "ƒe {n}"
     ),
-    ago = "ɖe {0} me",
+    ago = "{0} si va yi",
     in_future = "le {0} me"
   ),
   compact = list(
@@ -51,7 +51,7 @@ locale_ee <- list(
     ),
     half = "{n}½",
     delimiter = "",
-    ago = "ɖe {0} me",
+    ago = "{0} si va yi",
     in_future = "le {0} me"
   )
 )

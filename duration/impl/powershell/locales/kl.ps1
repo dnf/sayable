@@ -10,18 +10,19 @@
 # Source: locales/kl.json
 
 function plural_kl([int]$n) {
+    if ($n -eq 1) { return 'one' }
     return 'other'
 }
 
 function locale_kl {
     $units = @{
-        second = 'sekundit {n}'
-        minute = 'minutsit {n}'
-        hour = 'nalunaaqutap akunnera {n}'
-        day = 'ullut {n}'
-        week = 'sapaatit {n}'
-        month = 'qaammatit {n}'
-        year = 'ukiut {n}'
+        second = @{ one = 'sekundi {n}'; other = 'sekundit {n}' }
+        minute = @{ one = 'minutsi {n}'; other = 'minutsit {n}' }
+        hour = @{ one = 'nalunaaquttap akunnera {n}'; other = 'nalunaaquttap akunneri {n}' }
+        day = @{ one = 'ulloq {n}'; other = 'ullut {n}' }
+        week = @{ one = 'sapaatip akunnera {n}'; other = 'sapaatip akunneri {n}' }
+        month = @{ one = 'qaammat {n}'; other = 'qaammatit {n}' }
+        year = @{ one = 'ukioq {n}'; other = 'ukiut {n}' }
     }
     $half = '{0} affaa'
     $delimiter = ', '
@@ -34,7 +35,7 @@ function locale_kl {
             minute = 'min. {n}'
             hour = 'nal. {n}'
             day = 'ull. {n}'
-            week = 'sap. {n}'
+            week = 'sap. ak. {n}'
             month = 'qaam. {n}'
             year = 'uk. {n}'
         }
@@ -51,6 +52,7 @@ function locale_kl {
             month = '{n}mo'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
         ago = '{0} matuma siorna'
         inFuture = '{0} siunissami'

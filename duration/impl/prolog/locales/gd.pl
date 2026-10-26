@@ -24,10 +24,10 @@ sd_unit('gd', minute, one, '{n} mhionaid').
 sd_unit('gd', minute, two, '{n} mhionaid').
 sd_unit('gd', minute, few, '{n} mionaidean').
 sd_unit('gd', minute, other, '{n} mionaid').
-sd_unit('gd', hour, one, '{n} uair').
-sd_unit('gd', hour, two, '{n} uair').
-sd_unit('gd', hour, few, '{n} uairean').
-sd_unit('gd', hour, other, '{n} uair').
+sd_unit('gd', hour, one, '{n} uair a thìde').
+sd_unit('gd', hour, two, '{n} uair a thìde').
+sd_unit('gd', hour, few, '{n} uairean a thìde').
+sd_unit('gd', hour, other, '{n} uair a thìde').
 sd_unit('gd', day, one, '{n} latha').
 sd_unit('gd', day, two, '{n} latha').
 sd_unit('gd', day, few, '{n} làithean').

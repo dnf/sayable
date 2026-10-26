@@ -24,7 +24,10 @@ pub fn locale() -> DurationLocale {
         },
         units: Units {
             second: UnitForms::simple("{n} सेकंद"),
-            minute: UnitForms::simple("{n} मिनिट"),
+            minute: UnitForms::plural(&[
+                (PluralCategory::One, "{n} मिनिट"),
+                (PluralCategory::Other, "{n} मिनिटे"),
+            ]),
             hour: UnitForms::simple("{n} तास"),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "{n} दिवस"),

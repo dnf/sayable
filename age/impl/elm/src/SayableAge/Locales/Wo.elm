@@ -20,16 +20,16 @@ locale : Locale
 locale =
     { code = "wo"
     , plural = \n -> Other
-    , day = Simple "bés {n}"
-    , week = Simple "ayubés {n}"
-    , month = Simple "weer {n}"
-    , year = Simple "at {n}"
+    , day = Simple "{n} fan"
+    , week = Simple "{n} ayubés"
+    , month = Simple "{n} weer"
+    , year = Simple "{n} at"
     , half = "{0} ak genn-wàll"
     , delimiter = ", "
     , justBorn = "Dees ko sax juddu"
     , stages =
         { newborn = Neutral "Dees ko sax juddu"
-        , infant = Neutral "Njàmbaar bu ndaw"
+        , infant = Neutral "Liir"
         , toddler = Neutral "Xale bu ndaw"
         , child = Neutral "Xale"
         , teenager = Neutral "Ndaw-ndaw"
@@ -37,20 +37,20 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Simple "bés {n}")
-            , ovrWeek = Just (Simple "ayub. {n}")
-            , ovrMonth = Just (Simple "weer {n}")
-            , ovrYear = Just (Simple "at {n}")
+            { ovrDay = Just (Simple "{n} fan")
+            , ovrWeek = Just (Simple "{n} ayub.")
+            , ovrMonth = Just (Simple "{n} weer")
+            , ovrYear = Just (Simple "{n} at")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , compact =
         Just
-            { ovrDay = Just (Simple "bés {n}")
-            , ovrWeek = Just (Simple "ayub {n}")
-            , ovrMonth = Just (Simple "weer {n}")
-            , ovrYear = Just (Simple "at {n}")
+            { ovrDay = Just (Simple "{n} fan")
+            , ovrWeek = Just (Simple "{n} ayub")
+            , ovrMonth = Just (Simple "{n} weer")
+            , ovrYear = Just (Simple "{n} at")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

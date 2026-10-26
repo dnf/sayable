@@ -23,7 +23,7 @@ class FJLocale {
       "year": "{n} na yabaki",
     }
   }
-  static half { "{n} kei na levu ni wasei" }
+  static half { "{0} kei na veimama" }
   static delimiter { ", " }
   static justNow { "edaidai ga" }
   static ago { "{0} sa oti" }
@@ -54,6 +54,7 @@ class FJLocale {
         "month": "{n}mo",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
       "ago": "{0} sa oti",
       "inFuture": "ena {0}",

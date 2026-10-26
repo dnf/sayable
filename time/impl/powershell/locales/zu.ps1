@@ -10,22 +10,22 @@
 # Source: locales/zu.json
 
 function locale_zu {
-    $hours = @('ishumi nambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isishiyagalombili', 'isishiyagalolunye', 'ishumi', 'ishumi nanye')
+    $hours = @('leshumi nambili', 'lokuqala', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithupha', 'lesikhombisa', 'lesishiyagalombili', 'lesishiyagalolunye', 'leshumi', 'leshumi nanye')
     $midnight = 'phakathi kwamabili'
     $noon = 'emini'
     $patterns = @{}
-    $patterns[0] = '{h} o''clock'
-    $patterns[5] = 'emva kwemizuzu emihlanu ngo-{h}'
-    $patterns[10] = 'emva kwemizuzu eyishumi ngo-{h}'
-    $patterns[15] = 'ikota edlule ngo-{h}'
-    $patterns[20] = 'emva kwemizuzu engamashumi amabili ngo-{h}'
-    $patterns[25] = 'emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}'
-    $patterns[30] = 'uhhafu edlule ngo-{h}'
-    $patterns[35] = 'imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}'
-    $patterns[40] = 'imizuzu engamashumi amabili ngaphambi kuka-{next_h}'
-    $patterns[45] = 'ikota ngaphambi kuka-{next_h}'
-    $patterns[50] = 'imizuzu eyishumi ngaphambi kuka-{next_h}'
-    $patterns[55] = 'imizuzu emihlanu ngaphambi kuka-{next_h}'
+    $patterns[0] = 'ihora {h}'
+    $patterns[5] = 'imizuzu emihlanu emva kwehora {h}'
+    $patterns[10] = 'imizuzu eyishumi emva kwehora {h}'
+    $patterns[15] = 'ikota emva kwehora {h}'
+    $patterns[20] = 'imizuzu engamashumi amabili emva kwehora {h}'
+    $patterns[25] = 'imizuzu engamashumi amabili nanhlanu emva kwehora {h}'
+    $patterns[30] = 'uhhafu emva kwehora {h}'
+    $patterns[35] = 'imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}'
+    $patterns[40] = 'imizuzu engamashumi amabili ngaphambi kwehora {next_h}'
+    $patterns[45] = 'ikota ngaphambi kwehora {next_h}'
+    $patterns[50] = 'imizuzu eyishumi ngaphambi kwehora {next_h}'
+    $patterns[55] = 'imizuzu emihlanu ngaphambi kwehora {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

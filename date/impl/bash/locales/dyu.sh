@@ -10,7 +10,7 @@
 # Source: locales/dyu.json
 
 _sayabledate_locale_dyu() {
-    _months=('Zanwuyekalo' 'Feburuyekalo' 'Marisikalo' 'Awirilikalo' 'Mɛkalo' 'Zuwɛnkalo' 'Zuluyekalo' 'Utikalo' 'Sɛtanburukalo' 'Ɔkutɔburukalo' 'Nowanburdukalo' 'Desanburukalo')
+    _months=('Zanwuyekalo' 'Feburuyekalo' 'Marisikalo' 'Awirilikalo' 'Mɛkalo' 'Zuwɛnkalo' 'Zuluyekalo' 'Utikalo' 'Sɛtanburukalo' 'Ɔkutɔburukalo' 'Nowanburukalo' 'Desanburukalo')
     _weekdays=('Kari' 'Ntɛnɛn' 'Tarata' 'Araba' 'Alamisa' 'Juma' 'Sibiri')
     _day_format='{n}'
     _date_pattern='{day} {month}'

@@ -20,7 +20,7 @@
     :hours (list "ដប់ពីរ" "មួយ" "ពីរ" "បី" "បួន" "ប្រាំ" "ប្រាំមួយ" "ប្រាំពីរ" "ប្រាំបី" "ប្រាំបួន" "ដប់" "ដប់មួយ")
     :midnight "កណ្ដាលអធ្រាត្រ"
     :noon "ថ្ងៃត្រង់"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ម៉ោង{h}") (cons 5 "ម៉ោង{h} ប្រាំនាទី") (cons 10 "ម៉ោង{h} ដប់នាទី") (cons 15 "ម៉ោង{h} ដប់ប្រាំនាទី") (cons 20 "ម៉ោង{h} ម្ភៃនាទី") (cons 25 "ម៉ោង{h} ម្ភៃប្រាំនាទី") (cons 30 "ម៉ោង{h}កន្លះ") (cons 35 "ម៉ោង{h} សាមសិបប្រាំនាទី") (cons 40 "ម៉ោង{h} សែសិបនាទី") (cons 45 "ម៉ោង{h} សែសិបប្រាំនាទី") (cons 50 "ម៉ោង{h} ហាសិបនាទី") (cons 55 "ម៉ោង{h} ហាសិបប្រាំនាទី")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

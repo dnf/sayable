@@ -36,7 +36,7 @@ module SayableAge
         "toddler" => StageLabel.new("Мало дете"),
         "child" => StageLabel.new("Дете"),
         "teenager" => StageLabel.new("Тинејџер"),
-        "adult" => StageLabel.new("Возрасен"),
+        "adult" => StageLabel.new(m: "Возрасен", f: "Возрасна"),
       },
       short: CompactnessOverride.new(
         units: {

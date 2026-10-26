@@ -17,10 +17,10 @@
   (make-time-locale
    :code "hy"
    :clock (make-clock-config
-    :hours (list "տասներկու" "մեկ" "երկու" "երեք" "չորս" "հինգ" "վեց" "յոթ" "ութ" "ինը" "տաս" "տասնմեկ")
+    :hours (list "տասներկուսն" "մեկն" "երկուսն" "երեքն" "չորսն" "հինգն" "վեցն" "յոթն" "ութն" "ինն" "տասն" "տասնմեկն")
     :midnight "կեսգիշեր"
     :noon "կեսօր"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ժամը {h} է") (cons 5 "{h} անց հինգ") (cons 10 "{h} անց տասը") (cons 15 "{h} անց տասնհինգ") (cons 20 "{h} անց քսան") (cons 25 "{h} անց քսանհինգ") (cons 30 "{h} անց կես") (cons 35 "{h} անց երեսունհինգ") (cons 40 "{h} անց քառասուն") (cons 45 "{h} անց քառասունհինգ") (cons 50 "{h} անց հիսուն") (cons 55 "{h} անց հիսունհինգ")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

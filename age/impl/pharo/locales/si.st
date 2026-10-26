@@ -23,7 +23,7 @@ si
 		'month'. (Dictionary newFromPairs: { #one. 'මාස {n}'. #other. 'මාස {n}' }).
 		'year'. (Dictionary newFromPairs: { #one. 'වසර {n}'. #other. 'වසර {n}' }).
 	}).
-	locale half: '{0}යි භාගයයි'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justBorn: 'අලුත උපන්'.
 	locale stages: (Dictionary newFromPairs: {

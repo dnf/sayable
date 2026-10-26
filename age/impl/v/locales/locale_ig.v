@@ -19,10 +19,10 @@ fn plural_ig(n int) PluralCategory {
 pub const locale_ig = AgeLocale{
 	code: 'ig'
 	plural: plural_ig
-	day: simple_unit('{n} ụbọchị')
-	week: simple_unit('{n} izu')
-	month: simple_unit('{n} ọnwa')
-	year: simple_unit('{n} afọ')
+	day: simple_unit('ụbọchị {n}')
+	week: simple_unit('izu {n}')
+	month: simple_unit('ọnwa {n}')
+	year: simple_unit('afọ {n}')
 	half: '{0} na ọkara'
 	delimiter: ', '
 	just_born: 'Nwa ọhụrụ'
@@ -30,17 +30,17 @@ pub const locale_ig = AgeLocale{
 	infant: stage_neutral('Nwa ọhụrụ')
 	toddler: stage_neutral('Nwa nta')
 	child: stage_neutral('Nwa')
-	teenager: stage_neutral('Nwokorobịa')
+	teenager: stage_gendered('Nwokorobịa', 'Agbọghọbịa')
 	adult: stage_neutral('Okenye')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('{n} ụbọchị')
+		day: simple_unit('ụbọchị {n}')
 		has_day: true
-		week: simple_unit('{n} izu')
+		week: simple_unit('izu {n}')
 		has_week: true
-		month: simple_unit('{n} ọnwa')
+		month: simple_unit('ọnwa {n}')
 		has_month: true
-		year: simple_unit('{n} afọ')
+		year: simple_unit('afọ {n}')
 		has_year: true
 	}
 	has_compact: true

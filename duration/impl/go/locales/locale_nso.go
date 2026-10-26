@@ -23,8 +23,8 @@ var NSO = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "motsotswana {n}", sd.Other: "dimetsotswana {n}"}),
-		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "metsotso {n}", sd.Other: "dimetsotso {n}"}),
+		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "motsotswana {n}", sd.Other: "metsotswana {n}"}),
+		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "motsotso {n}", sd.Other: "metsotso {n}"}),
 		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "iri {n}", sd.Other: "diiri {n}"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "letšatši {n}", sd.Other: "matšatši {n}"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "beke {n}", sd.Other: "dibeke {n}"}),
@@ -37,8 +37,8 @@ var NSO = sd.DurationLocale{
 	Ago:       "{0} ye e fetilego",
 	InFuture:  "ka {0}",
 	Short: &sd.CompactnessOverride{
-		Second:   unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mots. {n}", sd.Other: "dimets. {n}"})),
-		Minute:   unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mets. {n}", sd.Other: "dimets. {n}"})),
+		Second:   unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "motsotsw. {n}", sd.Other: "metsotsw. {n}"})),
+		Minute:   unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mots. {n}", sd.Other: "mets. {n}"})),
 		Hour:     unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "iri {n}", sd.Other: "diiri {n}"})),
 		Day:      unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "letšatši {n}", sd.Other: "matšatši {n}"})),
 		Week:     unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "beke {n}", sd.Other: "dibeke {n}"})),

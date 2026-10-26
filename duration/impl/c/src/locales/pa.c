@@ -22,7 +22,7 @@ const SduDurationLocale sdu_locale_pa = {
     {
         { "{n} ਸਕਿੰਟ", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ਮਿੰਟ", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} ਘੰਟਾ", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "{n} ਘੰਟਾ", NULL, NULL, NULL, "{n} ਘੰਟੇ" } },
         { NULL, { NULL, "{n} ਦਿਨ", NULL, NULL, NULL, "{n} ਦਿਨ" } },
         { NULL, { NULL, "{n} ਹਫ਼ਤਾ", NULL, NULL, NULL, "{n} ਹਫ਼ਤੇ" } },
         { NULL, { NULL, "{n} ਮਹੀਨਾ", NULL, NULL, NULL, "{n} ਮਹੀਨੇ" } },

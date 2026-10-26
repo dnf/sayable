@@ -30,7 +30,7 @@ th
 	locale delimiter: ' '.
 	locale justNow: 'เมื่อกี้'.
 	locale ago: '{0}ที่แล้ว'.
-	locale inFuture: 'ใน{0}'.
+	locale inFuture: 'ในอีก {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. '{n} วิ'.
@@ -42,7 +42,7 @@ th
 			'year'. '{n} ปี'.
 		}).
 		#ago. '{0}ที่แล้ว'.
-		#inFuture. 'ใน{0}'.
+		#inFuture. 'ในอีก {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -57,7 +57,7 @@ th
 		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0}ที่แล้ว'.
-		#inFuture. 'ใน{0}'.
+		#inFuture. 'ในอีก {0}'.
 	}).
 	^ locale
 ! !

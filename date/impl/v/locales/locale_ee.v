@@ -14,17 +14,17 @@ module locales
 
 pub const locale_ee = DateLocale{
 	code: 'ee'
-	months: ['Dzove', 'Dzodze', 'Tedoxe', 'Afɔfĩe', 'Damɛ', 'Masa', 'Siamlɔm', 'Dasiamime', 'Anyɔnyɔ', 'Kele', 'Adeɛmekpɔxe', 'Dzome']!
-	weekdays: ['Kɔsiɖa', 'Dzoɖa', 'Braɖa', 'Kuɖa', 'Yawoɖa', 'Fiɖa', 'Memleɖa']!
+	months: ['Dzove', 'Dzodze', 'Tedoxe', 'Afɔfĩe', 'Dama', 'Masa', 'Siamlɔm', 'Deasiamime', 'Anyɔnyɔ', 'Kele', 'Adeɛmekpɔxe', 'Dzome']!
+	weekdays: ['Kɔsiɖa', 'Dzoɖa', 'Blaɖa', 'Kuɖa', 'Yawoɖa', 'Fiɖa', 'Memleɖa']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
 	today: 'egbe'
-	tomorrow: 'etsɔ'
-	yesterday: 'etso'
-	day_after_tomorrow: 'etsɔ megbe'
+	tomorrow: 'etsɔ si gbɔna'
+	yesterday: 'etsɔ si va yi'
+	day_after_tomorrow: 'nyitsɔ si gbɔna'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'etso nyitsɔ'
+	day_before_yesterday: 'nyitsɔ si va yi'
 	has_day_before_yesterday: true
 	this_weekday: '{weekday} sia'
 	has_this_weekday: true
@@ -34,9 +34,9 @@ pub const locale_ee = DateLocale{
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{
-		months: ['Dzv', 'Dzd', 'Ted', 'Afɔ', 'Dam', 'Mas', 'Sia', 'Das', 'Any', 'Kel', 'Ade', 'Dzm']!
+		months: ['Dzv', 'Dzd', 'Ted', 'Afɔ', 'Dam', 'Mas', 'Sia', 'Dea', 'Any', 'Kel', 'Ade', 'Dzm']!
 		has_months: true
-		weekdays: ['Kɔs', 'Dzo', 'Bra', 'Kuɖ', 'Yaw', 'Fiɖ', 'Mem']!
+		weekdays: ['Kɔs', 'Dzo', 'Bla', 'Kuɖ', 'Yaw', 'Fiɖ', 'Mem']!
 		has_weekdays: true
 		day_format: '{n}'
 		has_day_format: true

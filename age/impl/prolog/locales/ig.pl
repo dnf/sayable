@@ -13,10 +13,10 @@
 
 sa_plural('ig', _, other).
 
-sa_unit('ig', day, _, '{n} ụbọchị').
-sa_unit('ig', week, _, '{n} izu').
-sa_unit('ig', month, _, '{n} ọnwa').
-sa_unit('ig', year, _, '{n} afọ').
+sa_unit('ig', day, _, 'ụbọchị {n}').
+sa_unit('ig', week, _, 'izu {n}').
+sa_unit('ig', month, _, 'ọnwa {n}').
+sa_unit('ig', year, _, 'afọ {n}').
 
 sa_half('ig', '{0} na ọkara').
 sa_delimiter('ig', ', ').
@@ -26,13 +26,15 @@ sa_stage('ig', newborn, _, 'Nwa ọhụrụ').
 sa_stage('ig', infant, _, 'Nwa ọhụrụ').
 sa_stage('ig', toddler, _, 'Nwa nta').
 sa_stage('ig', child, _, 'Nwa').
+sa_stage('ig', teenager, m, 'Nwokorobịa').
+sa_stage('ig', teenager, f, 'Agbọghọbịa').
 sa_stage('ig', teenager, _, 'Nwokorobịa').
 sa_stage('ig', adult, _, 'Okenye').
 
-short_sa_unit('ig', day, _, '{n} ụbọchị').
-short_sa_unit('ig', week, _, '{n} izu').
-short_sa_unit('ig', month, _, '{n} ọnwa').
-short_sa_unit('ig', year, _, '{n} afọ').
+short_sa_unit('ig', day, _, 'ụbọchị {n}').
+short_sa_unit('ig', week, _, 'izu {n}').
+short_sa_unit('ig', month, _, 'ọnwa {n}').
+short_sa_unit('ig', year, _, 'afọ {n}').
 
 compact_sa_unit('ig', day, _, '{n}d').
 compact_sa_unit('ig', week, _, '{n}w').

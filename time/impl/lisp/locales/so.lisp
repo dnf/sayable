@@ -17,10 +17,10 @@
   (make-time-locale
    :code "so"
    :clock (make-clock-config
-    :hours (list "laba iyo toban" "kow" "laba" "saddex" "afar" "shan" "lix" "toddoba" "siddeed" "sagaal" "toban" "kow iyo toban")
+    :hours (list "laba iyo tobanka" "kowda" "labada" "saddexda" "afarta" "shanta" "lixda" "toddobada" "siddeedda" "sagaasha" "tobanka" "kow iyo tobanka")
     :midnight "saqda dhexe"
     :noon "duhur"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} iyo shan") (cons 10 "{h} iyo toban") (cons 15 "{h} iyo rubuc") (cons 20 "{h} iyo labaatan") (cons 25 "{h} iyo shan iyo labaatan") (cons 30 "{h} iyo bar") (cons 35 "{next_h} shan iyo labaatan la'") (cons 40 "{next_h} labaatan la'") (cons 45 "{next_h} rubuc la'") (cons 50 "{next_h} toban la'") (cons 55 "{next_h} shan la'")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

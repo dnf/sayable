@@ -18,7 +18,7 @@
    :week {:type :simple :form "{n} ka semana"}
    :month {:type :simple :form "{n} ka bulan"}
    :year {:type :simple :form "{n} ka tuig"}
-   :half "{n}½"
+   :half "{0} ug tunga"
    :delimiter ", "
    :just-born "Bag-ong natawo"
    :stages {:newborn {:type :neutral :label "Bag-ong natawo"} :infant {:type :neutral :label "Masuso"} :toddler {:type :neutral :label "Gamay nga bata"} :child {:type :neutral :label "Bata"} :teenager {:type :neutral :label "Tin-edyer"} :adult {:type :neutral :label "Hamtong"}}

@@ -22,7 +22,7 @@ sd_today('lg', 'leero').
 sd_tomorrow('lg', 'enkya').
 sd_yesterday('lg', 'jjo').
 sd_day_after_tomorrow('lg', 'enkya ogwa').
-sd_day_before_yesterday('lg', 'jjo edda').
+sd_day_before_yesterday('lg', 'jjuuzi').
 sd_this_weekday('lg', '{weekday} eno').
 sd_next_weekday('lg', '{weekday} eddirira').
 sd_last_weekday('lg', '{weekday} eggudde').

@@ -11,22 +11,22 @@
 
 % Central Atlas Tamazight locale.
 
-sd_months('tzm', ['ⵉⵏⵏⴰⵢⵔ', 'ⴱⵕⴰⵢⵕ', 'ⵎⴰⵕⵚ', 'ⵉⴱⵔⵉⵔ', 'ⵎⴰⵢⵢⵓ', 'ⵢⵓⵏⵢⵓ', 'ⵢⵓⵍⵢⵓⵣ', 'ⵖⵓⵛⵜ', 'ⵛⵓⵜⴰⵏⴱⵉⵔ', 'ⴽⵜⵓⴱⵔ', 'ⵏⵓⵡⴰⵏⴱⵉⵔ', 'ⴷⵓⵊⴰⵏⴱⵉⵔ']).
-sd_weekdays('tzm', ['ⴰⵙⴰⵎⴰⵙ', 'ⴰⵢⵏⴰⵙ', 'ⴰⵙⵉⵏⴰⵙ', 'ⴰⴽⵕⴰⵙ', 'ⴰⴽⵡⴰⵙ', 'ⴰⵙⵉⵎⵡⴰⵙ', 'ⴰⵙⵉⴹⵢⴰⵙ']).
+sd_months('tzm', ['Yennayer', 'Yebrayer', 'Mars', 'Ibrir', 'Mayyu', 'Yunyu', 'Yulyuz', 'Ɣuct', 'Cutanbir', 'Kṭuber', 'Nwanbir', 'Dujanbir']).
+sd_weekdays('tzm', ['Asamas', 'Aynas', 'Asinas', 'Akras', 'Akwas', 'Asimwas', 'Asiḍyas']).
 sd_day_format('tzm', '{n}').
 
 sd_date_pattern('tzm', '{day} {month}').
 sd_date_pattern_with_year('tzm', '{day} {month} {year}').
 
-sd_today('tzm', 'ⴰⵙⵙⴰ').
-sd_tomorrow('tzm', 'ⴰⵙⴽⴽⴰ').
-sd_yesterday('tzm', 'ⵉⴹⵍⵍⵉ').
-sd_this_weekday('tzm', '{weekday} ⴰⴷ').
-sd_next_weekday('tzm', '{weekday} ⴷ ⵉⴷⴷⴰⵏ').
-sd_last_weekday('tzm', '{weekday} ⵉⵣⵔⵉⵏ').
+sd_today('tzm', 'Assa').
+sd_tomorrow('tzm', 'Asekka').
+sd_yesterday('tzm', 'Assenaṭ').
+sd_this_weekday('tzm', '{weekday} ad').
+sd_next_weekday('tzm', '{weekday} d iddan').
+sd_last_weekday('tzm', '{weekday} izrin').
 
-short_sd_months('tzm', ['ⵉⵏⵏ', 'ⴱⵕⴰ', 'ⵎⴰⵕ', 'ⵉⴱⵔ', 'ⵎⴰⵢ', 'ⵢⵓⵏ', 'ⵢⵓⵍ', 'ⵖⵓⵛ', 'ⵛⵓⵜ', 'ⴽⵜⵓ', 'ⵏⵓⵡ', 'ⴷⵓⵊ']).
-short_sd_weekdays('tzm', ['ⴰⵙⴰ', 'ⴰⵢⵏ', 'ⴰⵙⵉ', 'ⴰⴽⵕ', 'ⴰⴽⵡ', 'ⴰⵙⵉⵎ', 'ⴰⵙⵉⴹ']).
+short_sd_months('tzm', ['Yen', 'Yeb', 'Mar', 'Ibr', 'May', 'Yun', 'Yul', 'Ɣuc', 'Cut', 'Kṭu', 'Nwa', 'Duj']).
+short_sd_weekdays('tzm', ['Asa', 'Ayn', 'Asn', 'Akr', 'Akw', 'Asm', 'Asḍ']).
 short_sd_day_format('tzm', '{n}').
 short_sd_clear_exceptions('tzm').
 short_sd_date_pattern('tzm', '{day} {month}').

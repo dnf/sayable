@@ -20,7 +20,7 @@ export const pis: AgeLocale = {
     month: '{n} manis',
     year:  '{n} yia',
   },
-  half: '{n} en haf',
+  half: '{0} en haf',
   delimiter: ', ',
   justBorn: 'Niufala bebi',
   stages: {
@@ -46,6 +46,7 @@ export const pis: AgeLocale = {
       month: '{n}m',
       year:  '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
   },
 };

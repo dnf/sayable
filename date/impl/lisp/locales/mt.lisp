@@ -17,7 +17,7 @@
   (make-date-locale
    :code "mt"
    :months (list "Jannar" "Frar" "Marzu" "April" "Mejju" "Ġunju" "Lulju" "Awwissu" "Settembru" "Ottubru" "Novembru" "Diċembru")
-   :weekdays (list "Il-Ħadd" "It-Tnejn" "It-Tlieta" "L-Erbgħa" "Il-Ħamis" "Il-Ġimgħa" "Is-Sibt")
+   :weekdays (list "il-Ħadd" "it-Tnejn" "it-Tlieta" "l-Erbgħa" "il-Ħamis" "il-Ġimgħa" "is-Sibt")
    :day-format "{n}"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"

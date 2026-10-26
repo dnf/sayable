@@ -20,8 +20,8 @@ proc locale_date_yo {} {
     set today {lónìí}
     set tomorrow {ọ̀la}
     set yesterday {àná}
-    set day_after_tomorrow {ọ̀tún ọ̀la}
-    set day_before_yesterday {ọ̀tún àná}
+    set day_after_tomorrow {ọ̀túnla}
+    set day_before_yesterday {íjẹta}
     set this_weekday "{weekday} yìí"
     set next_weekday "{weekday} tó ń bọ̀"
     set last_weekday "{weekday} tó kọjá"

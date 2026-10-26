@@ -23,7 +23,7 @@ class KNLocale {
       "year": {"one": "{n} ವರ್ಷ", "other": "{n} ವರ್ಷಗಳು"},
     }
   }
-  static half { "{0}ವರೆ" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "ಈಗಷ್ಟೇ" }
   static ago { "{0} ಹಿಂದೆ" }

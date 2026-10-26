@@ -27,7 +27,7 @@ class TPILocale {
   static tomorrow { "tumora" }
   static yesterday { "asde" }
   static dayAfterTomorrow { "haptumora" }
-  static dayBeforeYesterday { "asde bipo" }
+  static dayBeforeYesterday { "hapasde" }
   static thisWeekday { "dispela {weekday}" }
   static nextWeekday { "{weekday} bihain" }
   static lastWeekday { "{weekday} bipo" }

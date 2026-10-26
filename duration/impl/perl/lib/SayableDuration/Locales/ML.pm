@@ -16,10 +16,7 @@ package SayableDuration::Locales::ML;
 
 sub locale {{
   code => 'ml',
-  plural => sub {
-        my ($n) = @_;
-        ($n == 0 || $n == 1) ? 'one' : 'other'
-      },
+  plural => sub { my ($n) = @_; $n == 1 ? 'one' : 'other' },
   units => {
     second => { one => '{n} സെക്കൻഡ്', other => '{n} സെക്കൻഡുകൾ' },
     minute => { one => '{n} മിനിറ്റ്', other => '{n} മിനിറ്റുകൾ' },
@@ -29,7 +26,7 @@ sub locale {{
     month => { one => '{n} മാസം', other => '{n} മാസങ്ങൾ' },
     year => { one => '{n} വർഷം', other => '{n} വർഷങ്ങൾ' },
   },
-  half => '{0} ര',
+  half => '{n}½',
   delimiter => ', ',
   just_now => 'ഇപ്പോൾ',
   ago => '{0} മുമ്പ്',

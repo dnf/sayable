@@ -17,10 +17,10 @@
   (make-time-locale
    :code "yue"
    :clock (make-clock-config
-    :hours (list "十二" "一" "二" "三" "四" "五" "六" "七" "八" "九" "十" "十一")
+    :hours (list "十二" "一" "兩" "三" "四" "五" "六" "七" "八" "九" "十" "十一")
     :midnight "午夜"
     :noon "正午"
-    :patterns (list (cons 0 "{h}點整") (cons 5 "{h}點零五分") (cons 10 "{h}點十分") (cons 15 "{h}點十五分") (cons 20 "{h}點二十分") (cons 25 "{h}點二十五分") (cons 30 "{h}點半") (cons 35 "{h}點三十五分") (cons 40 "{h}點四十分") (cons 45 "{h}點四十五分") (cons 50 "{h}點五十分") (cons 55 "{h}點五十五分")))
+    :patterns (list (cons 0 "{h}點正") (cons 5 "{h}點一個字") (cons 10 "{h}點兩個字") (cons 15 "{h}點三個字") (cons 20 "{h}點四個字") (cons 25 "{h}點五個字") (cons 30 "{h}點半") (cons 35 "{h}點七個字") (cons 40 "{h}點八個字") (cons 45 "{h}點九個字") (cons 50 "{h}點十個字") (cons 55 "{h}點十一個字")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

@@ -10,22 +10,22 @@
 # Source: locales/ha.json
 
 function locale_ha {
-    $hours = @('sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'goma sha ɗaya')
+    $hours = @('sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'sha ɗaya')
     $midnight = 'tsakar dare'
     $noon = 'tsakar rana'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ƙarfe {h}'
+    $patterns[5] = 'ƙarfe {h} da minti biyar'
+    $patterns[10] = 'ƙarfe {h} da minti goma'
+    $patterns[15] = 'ƙarfe {h} da kwata'
+    $patterns[20] = 'ƙarfe {h} da minti ashirin'
+    $patterns[25] = 'ƙarfe {h} da minti ashirin da biyar'
+    $patterns[30] = 'ƙarfe {h} da rabi'
+    $patterns[35] = 'ƙarfe {next_h} saura minti ashirin da biyar'
+    $patterns[40] = 'ƙarfe {next_h} saura minti ashirin'
+    $patterns[45] = 'ƙarfe {next_h} saura kwata'
+    $patterns[50] = 'ƙarfe {next_h} saura minti goma'
+    $patterns[55] = 'ƙarfe {next_h} saura minti biyar'
     $clock = @{
         hours = $hours
         midnight = $midnight

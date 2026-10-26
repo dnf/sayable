@@ -11,22 +11,22 @@
 
 % Tachelhit locale.
 
-st_hours('shi', ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']).
+st_hours('shi', ['ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ', 'ⵜⵉⵙ ⵙⵏⴰⵜ', 'ⵜⵉⵙ ⴽⵕⴰⵟⵟ', 'ⵜⵉⵙ ⴽⴽⵓⵥⵜ', 'ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ', 'ⵜⵉⵙ ⵙⴹⵉⵙⵜ', 'ⵜⵉⵙ ⵙⴰⵜ', 'ⵜⵉⵙ ⵜⴰⵎⵜ', 'ⵜⵉⵙ ⵜⵥⴰⵜ', 'ⵜⵉⵙ ⵎⵔⴰⵡⵜ', 'ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ']).
 st_midnight('shi', 'ⵏⵚ ⵏ ⵉⴹ').
 st_noon('shi', 'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ').
 
-st_pattern('shi', 0, '{h}:00').
-st_pattern('shi', 5, '{h}:05').
-st_pattern('shi', 10, '{h}:10').
-st_pattern('shi', 15, '{h}:15').
-st_pattern('shi', 20, '{h}:20').
-st_pattern('shi', 25, '{h}:25').
-st_pattern('shi', 30, '{h}:30').
-st_pattern('shi', 35, '{h}:35').
-st_pattern('shi', 40, '{h}:40').
-st_pattern('shi', 45, '{h}:45').
-st_pattern('shi', 50, '{h}:50').
-st_pattern('shi', 55, '{h}:55').
+st_pattern('shi', 0, '{h}').
+st_pattern('shi', 5, '{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ').
+st_pattern('shi', 10, '{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ').
+st_pattern('shi', 15, '{h} ⴷ ⵔⵔⴱⵄ').
+st_pattern('shi', 20, '{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 25, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 30, '{h} ⴷ ⵓⵣⴳⵏ').
+st_pattern('shi', 35, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 40, '{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 45, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 50, '{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
+st_pattern('shi', 55, '{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ').
 
 short_st_use24h('shi', true).
 short_st_format('shi', '{h}:{mm}').

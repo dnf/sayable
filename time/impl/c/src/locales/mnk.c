@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_mnk = {
     "mnk",
     {
-        { "tan ning fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ ning kiliŋ" },
+        { "taŋ niŋ fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ niŋ kiliŋ" },
         "sutu-tili-laŋ",
         "tili-konto",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "talaŋ {h}", "talaŋ {h} aniŋ miniti luulu", "talaŋ {h} aniŋ miniti taŋ", "talaŋ {h} aniŋ miniti taŋ niŋ luulu", "talaŋ {h} aniŋ miniti muwaŋ", "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu", "talaŋ {h} aniŋ talantee", "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu", "talaŋ {h} aniŋ miniti taŋ naani", "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu", "talaŋ {h} aniŋ miniti taŋ luulu", "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

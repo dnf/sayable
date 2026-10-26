@@ -55,10 +55,10 @@ let AK: TimeLocale =
         Code = "ak"
         Clock =
             {
-                Hours = [| "dumien"; "baako"; "mmienu"; "mmiensa"; "anan"; "anum"; "nsia"; "nson"; "nwɔtwe"; "nkron"; "edu"; "dubaako" |]
-                Midnight = "anadwo"
-                Noon = "awia"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Hours = [| "dumienu"; "baako"; "mmienu"; "mmiensa"; "anan"; "anum"; "nsia"; "nson"; "nwɔtwe"; "nkron"; "edu"; "dubaako" |]
+                Midnight = "ɔdasuom"
+                Noon = "owigyinae"
+                Patterns = Map.ofList [ (0, "nnɔn {h}"); (5, "nnɔn {h} ne sima anum"); (10, "nnɔn {h} ne sima edu"); (15, "nnɔn {h} ne sima dunum"); (20, "nnɔn {h} ne sima aduonu"); (25, "nnɔn {h} ne sima aduonu num"); (30, "nnɔn {h} ne fa"); (35, "aka sima aduonu num na abɔ nnɔn {next_h}"); (40, "aka sima aduonu na abɔ nnɔn {next_h}"); (45, "aka sima dunum na abɔ nnɔn {next_h}"); (50, "aka sima edu na abɔ nnɔn {next_h}"); (55, "aka sima anum na abɔ nnɔn {next_h}") ]
             }
         ShortOverride =
             Some
@@ -87,10 +87,10 @@ let AM: TimeLocale =
         Code = "am"
         Clock =
             {
-                Hours = [| "አሥራ ሁለት"; "አንድ"; "ሁለት"; "ሦስት"; "አራት"; "አምስት"; "ስድስት"; "ሰባት"; "ስምንት"; "ዘጠኝ"; "አሥር"; "አሥራ አንድ" |]
+                Hours = [| "ስድስት"; "ሰባት"; "ስምንት"; "ዘጠኝ"; "አሥር"; "አሥራ አንድ"; "አሥራ ሁለት"; "አንድ"; "ሁለት"; "ሦስት"; "አራት"; "አምስት" |]
                 Midnight = "እኩለ ሌሊት"
                 Noon = "እኩለ ቀን"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} ሰዓት"); (5, "{h} ሰዓት ከአምስት ደቂቃ"); (10, "{h} ሰዓት ከአሥር ደቂቃ"); (15, "{h} ሰዓት ከሩብ"); (20, "{h} ሰዓት ከሃያ ደቂቃ"); (25, "{h} ሰዓት ከሃያ አምስት ደቂቃ"); (30, "{h} ሰዓት ተኩል"); (35, "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ"); (40, "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ"); (45, "ለ{next_h} ሰዓት ሩብ ጉዳይ"); (50, "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ"); (55, "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ") ]
             }
         ShortOverride =
             Some
@@ -122,7 +122,7 @@ let AR: TimeLocale =
                 Hours = [| "الثانية عشرة"; "الواحدة"; "الثانية"; "الثالثة"; "الرابعة"; "الخامسة"; "السادسة"; "السابعة"; "الثامنة"; "التاسعة"; "العاشرة"; "الحادية عشرة" |]
                 Midnight = "منتصف الليل"
                 Noon = "الظهر"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "الساعة {h}"); (5, "{h} وخمس دقائق"); (10, "{h} وعشر دقائق"); (15, "{h} والربع"); (20, "{h} والثلث"); (25, "{h} والنصف إلا خمس دقائق"); (30, "{h} والنصف"); (35, "{h} والنصف وخمس دقائق"); (40, "{next_h} إلا ثلثًا"); (45, "{next_h} إلا ربعًا"); (50, "{next_h} إلا عشر دقائق"); (55, "{next_h} إلا خمس دقائق") ]
             }
         ShortOverride =
             Some
@@ -151,10 +151,10 @@ let AY: TimeLocale =
         Code = "ay"
         Clock =
             {
-                Hours = [| "tunka payani"; "maya"; "paya"; "kimsa"; "pusi"; "phisqa"; "suxta"; "paqallqu"; "kimsaqallqu"; "llantunka"; "tunka"; "tunka mayani" |]
+                Hours = [| "tunka payani"; "maya"; "paya"; "kimsa"; "pusi"; "phisqa"; "suxta"; "paqallqu"; "kimsaqallqu"; "llätunka"; "tunka"; "tunka mayani" |]
                 Midnight = "aruma chika"
                 Noon = "chika uru"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} ura"); (5, "{h} ura phisqa minutuni"); (10, "{h} ura tunka minutuni"); (15, "{h} ura tunka phisqani minutuni"); (20, "{h} ura pä tunka minutuni"); (25, "{h} ura pä tunka phisqani minutuni"); (30, "{h} ura chikani"); (35, "{h} ura kimsa tunka phisqani minutuni"); (40, "{h} ura pusi tunka minutuni"); (45, "{h} ura pusi tunka phisqani minutuni"); (50, "{h} ura phisqa tunka minutuni"); (55, "{h} ura phisqa tunka phisqani minutuni") ]
             }
         ShortOverride =
             Some
@@ -186,7 +186,7 @@ let AZ: TimeLocale =
                 Hours = [| "on iki"; "bir"; "iki"; "üç"; "dörd"; "beş"; "altı"; "yeddi"; "səkkiz"; "doqquz"; "on"; "on bir" |]
                 Midnight = "gecə yarısı"
                 Noon = "günorta"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "beş keçir {h}"); (10, "on keçir {h}"); (15, "on beş keçir {h}"); (20, "iyirmi keçir {h}"); (25, "iyirmi beş keçir {h}"); (30, "otuz keçir {h}"); (35, "iyirmi beş qalmış {next_h}"); (40, "iyirmi qalmış {next_h}"); (45, "on beş qalmış {next_h}"); (50, "on qalmış {next_h}"); (55, "beş qalmış {next_h}") ]
+                Patterns = Map.ofList [ (0, "saat {h}"); (5, "{h} sıfır beş"); (10, "{h} on"); (15, "{h} on beş"); (20, "{h} iyirmi"); (25, "{h} iyirmi beş"); (30, "{h} otuz"); (35, "{h} otuz beş"); (40, "{h} qırx"); (45, "{h} qırx beş"); (50, "{h} əlli"); (55, "{h} əlli beş") ]
             }
         ShortOverride =
             Some
@@ -215,10 +215,10 @@ let BCI: TimeLocale =
         Code = "bci"
         Clock =
             {
-                Hours = [| "blu-nɲɔn"; "kun"; "nɲɔn"; "nsan"; "nan"; "nnun"; "nsiɛn"; "nso"; "mɔcuɛ"; "ngwlan"; "blu"; "blu-kun" |]
+                Hours = [| "blu-nin-nɲɔn"; "kun"; "nɲɔn"; "nsan"; "nan"; "nnun"; "nsiɛn"; "nso"; "mɔcuɛ"; "ngwlan"; "blu"; "blu-nin-kun" |]
                 Midnight = "kɔnguɛ afiɛn"
                 Noon = "nnɔsua"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "dɔ {h}"); (5, "dɔ {h} nin miniti nnun"); (10, "dɔ {h} nin miniti blu"); (15, "dɔ {h} nin miniti blu-nin-nnun"); (20, "dɔ {h} nin miniti ablaɔn"); (25, "dɔ {h} nin miniti ablaɔn-nin-nnun"); (30, "dɔ {h} nin miniti ablasan"); (35, "dɔ {h} nin miniti ablasan-nin-nnun"); (40, "dɔ {h} nin miniti ablanan"); (45, "dɔ {h} nin miniti ablanan-nin-nnun"); (50, "dɔ {h} nin miniti ablenun"); (55, "dɔ {h} nin miniti ablenun-nin-nnun") ]
             }
         ShortOverride =
             Some
@@ -247,10 +247,10 @@ let BE: TimeLocale =
         Code = "be"
         Clock =
             {
-                Hours = [| "дванаццаць"; "адзін"; "два"; "тры"; "чатыры"; "пяць"; "шэсць"; "сем"; "восем"; "дзевяць"; "дзесяць"; "адзінаццаць" |]
+                Hours = [| "дванаццаць"; "гадзіна"; "дзве"; "тры"; "чатыры"; "пяць"; "шэсць"; "сем"; "восем"; "дзевяць"; "дзесяць"; "адзінаццаць" |]
                 Midnight = "поўнач"
                 Noon = "поўдзень"
-                Patterns = Map.ofList [ (0, "{h} гадзін"); (5, "пяць хвілін пасля {h}"); (10, "дзесяць хвілін пасля {h}"); (15, "чвэрць пасля {h}"); (20, "дваццаць хвілін пасля {h}"); (25, "дваццаць пяць хвілін пасля {h}"); (30, "палова да {next_h}"); (35, "без дваццаці пяці {next_h}"); (40, "без дваццаці {next_h}"); (45, "без чвэрці {next_h}"); (50, "без дзесяці {next_h}"); (55, "без пяці {next_h}") ]
+                Patterns = Map.ofList [ (0, "роўна {h}"); (5, "{h} нуль пяць"); (10, "{h} дзесяць"); (15, "{h} пятнаццаць"); (20, "{h} дваццаць"); (25, "{h} дваццаць пяць"); (30, "{h} трыццаць"); (35, "без дваццаці пяці {next_h}"); (40, "без дваццаці {next_h}"); (45, "без чвэрці {next_h}"); (50, "без дзесяці {next_h}"); (55, "без пяці {next_h}") ]
             }
         ShortOverride =
             Some
@@ -279,10 +279,10 @@ let BEM: TimeLocale =
         Code = "bem"
         Clock =
             {
-                Hours = [| "ikumi na ibili"; "cimo"; "fibili"; "fitatu"; "fine"; "fisano"; "mutanda"; "cine lubali"; "cine konse konse"; "pabula"; "ikumi"; "ikumi na cimo" |]
+                Hours = [| "ikumi na shibili"; "imo"; "shibili"; "shitatu"; "shine"; "shisano"; "mutanda"; "cine lubali"; "cine konse konse"; "pabula"; "ikumi"; "ikumi na imo" |]
                 Midnight = "pakati ka bushiku"
                 Noon = "akasuba"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "insa {h}"); (5, "insa {h} na maminiti yasano"); (10, "insa {h} na maminiti ikumi"); (15, "insa {h} na maminiti ikumi na yasano"); (20, "insa {h} na maminiti amakumi yabili"); (25, "insa {h} na maminiti amakumi yabili na yasano"); (30, "insa {h} na hafu"); (35, "insa {h} na maminiti amakumi yatatu na yasano"); (40, "insa {h} na maminiti amakumi yane"); (45, "insa {h} na maminiti amakumi yane na yasano"); (50, "insa {h} na maminiti amakumi yasano"); (55, "insa {h} na maminiti amakumi yasano na yasano") ]
             }
         ShortOverride =
             Some
@@ -314,7 +314,7 @@ let BG: TimeLocale =
                 Hours = [| "дванадесет"; "един"; "два"; "три"; "четири"; "пет"; "шест"; "седем"; "осем"; "девет"; "десет"; "единадесет" |]
                 Midnight = "полунощ"
                 Noon = "обяд"
-                Patterns = Map.ofList [ (0, "{h} часа"); (5, "пет na {h}"); (10, "десет na {h}"); (15, "петнадесет na {h}"); (20, "двадесет na {h}"); (25, "двадесет и пет na {h}"); (30, "тридесет na {h}"); (35, "двадесет и пет do {next_h}"); (40, "двадесет do {next_h}"); (45, "петнадесет do {next_h}"); (50, "десет do {next_h}"); (55, "пет do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} часа"); (5, "{h} и пет"); (10, "{h} и десет"); (15, "{h} и петнадесет"); (20, "{h} и двадесет"); (25, "{h} и двадесет и пет"); (30, "{h} и половина"); (35, "{next_h} без двадесет и пет"); (40, "{next_h} без двадесет"); (45, "{next_h} без петнадесет"); (50, "{next_h} без десет"); (55, "{next_h} без пет") ]
             }
         ShortOverride =
             Some
@@ -346,7 +346,7 @@ let BI: TimeLocale =
                 Hours = [| "twelf"; "wan"; "tu"; "tri"; "fo"; "faef"; "sikis"; "seven"; "eit"; "naen"; "ten"; "eleven" |]
                 Midnight = "mednaet"
                 Noon = "medeldei"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} klok"); (5, "faef pas {h}"); (10, "ten pas {h}"); (15, "kwota pas {h}"); (20, "twenti pas {h}"); (25, "twenti faef pas {h}"); (30, "haf pas {h}"); (35, "twenti faef tu {next_h}"); (40, "twenti tu {next_h}"); (45, "kwota tu {next_h}"); (50, "ten tu {next_h}"); (55, "faef tu {next_h}") ]
             }
         ShortOverride =
             Some
@@ -378,7 +378,7 @@ let BM: TimeLocale =
                 Hours = [| "tan ni fila"; "kelen"; "fila"; "saba"; "naani"; "duuru"; "wɔɔrɔ"; "wolonwula"; "segin"; "kɔnɔntɔn"; "tan"; "tan ni kelen" |]
                 Midnight = "dugutilama"
                 Noon = "tilgari"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "nɛgɛ kaɲɛ {h}"); (5, "nɛgɛ kaɲɛ {h} ni miniti duuru"); (10, "nɛgɛ kaɲɛ {h} ni miniti tan"); (15, "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru"); (20, "nɛgɛ kaɲɛ {h} ni miniti mugan"); (25, "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru"); (30, "nɛgɛ kaɲɛ {h} ni tilancɛ"); (35, "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru"); (40, "nɛgɛ kaɲɛ {h} ni miniti bi naani"); (45, "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru"); (50, "nɛgɛ kaɲɛ {h} ni miniti bi duuru"); (55, "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru") ]
             }
         ShortOverride =
             Some
@@ -407,10 +407,10 @@ let BN: TimeLocale =
         Code = "bn"
         Clock =
             {
-                Hours = [| "বারো"; "এক"; "দুই"; "তিন"; "চার"; "পাঁচ"; "ছয়"; "সাত"; "আট"; "নয়"; "দশ"; "এগারো" |]
+                Hours = [| "বারোটা"; "একটা"; "দুটো"; "তিনটে"; "চারটে"; "পাঁচটা"; "ছটা"; "সাতটা"; "আটটা"; "নটা"; "দশটা"; "এগারোটা" |]
                 Midnight = "মধ্যরাত"
-                Noon = "দুপুর"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Noon = "দুপুর বারোটা"
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} বেজে পাঁচ মিনিট"); (10, "{h} বেজে দশ মিনিট"); (15, "সোয়া {h}"); (20, "{h} বেজে বিশ মিনিট"); (25, "{h} বেজে পঁচিশ মিনিট"); (30, "{h} বেজে ত্রিশ মিনিট"); (35, "{next_h} বাজতে পঁচিশ মিনিট বাকি"); (40, "{next_h} বাজতে বিশ মিনিট বাকি"); (45, "পৌনে {next_h}"); (50, "{next_h} বাজতে দশ মিনিট বাকি"); (55, "{next_h} বাজতে পাঁচ মিনিট বাকি") ]
             }
         ShortOverride =
             Some
@@ -439,10 +439,10 @@ let BR: TimeLocale =
         Code = "br"
         Clock =
             {
-                Hours = [| "12"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"; "10"; "11" |]
+                Hours = [| "daouzek eur"; "un eur"; "div eur"; "teir eur"; "peder eur"; "pemp eur"; "c'hwec'h eur"; "seizh eur"; "eizh eur"; "nav eur"; "dek eur"; "unnek eur" |]
                 Midnight = "hanternoz"
                 Noon = "kreisteiz"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} ha pemp"); (10, "{h} ha dek"); (15, "{h} ha kard"); (20, "{h} hag ugent"); (25, "{h} ha pemp warn-ugent"); (30, "{h} hanter"); (35, "{next_h} nemet pemp warn-ugent"); (40, "{next_h} nemet ugent"); (45, "{next_h} nemet kard"); (50, "{next_h} nemet dek"); (55, "{next_h} nemet pemp") ]
             }
         ShortOverride =
             Some
@@ -474,7 +474,7 @@ let BS: TimeLocale =
                 Hours = [| "dvanaest"; "jedan"; "dva"; "tri"; "četiri"; "pet"; "šest"; "sedam"; "osam"; "devet"; "deset"; "jedanaest" |]
                 Midnight = "ponoć"
                 Noon = "podne"
-                Patterns = Map.ofList [ (0, "{h} sati"); (5, "pet po {h}"); (10, "deset po {h}"); (15, "petnaest po {h}"); (20, "dvadeset po {h}"); (25, "dvadeset pet po {h}"); (30, "trideset po {h}"); (35, "dvadeset pet do {next_h}"); (40, "dvadeset do {next_h}"); (45, "petnaest do {next_h}"); (50, "deset do {next_h}"); (55, "pet do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} i pet"); (10, "{h} i deset"); (15, "{h} i petnaest"); (20, "{h} i dvadeset"); (25, "{h} i dvadeset pet"); (30, "pola {next_h}"); (35, "dvadeset pet do {next_h}"); (40, "dvadeset do {next_h}"); (45, "petnaest do {next_h}"); (50, "deset do {next_h}"); (55, "pet do {next_h}") ]
             }
         ShortOverride =
             Some
@@ -503,10 +503,10 @@ let CA: TimeLocale =
         Code = "ca"
         Clock =
             {
-                Hours = [| "dotze"; "una"; "dues"; "tres"; "quatre"; "cinc"; "sis"; "set"; "vuit"; "nou"; "deu"; "onze" |]
+                Hours = [| "les dotze"; "la una"; "les dues"; "les tres"; "les quatre"; "les cinc"; "les sis"; "les set"; "les vuit"; "les nou"; "les deu"; "les onze" |]
                 Midnight = "mitjanit"
                 Noon = "migdia"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "cinc past {h}"); (10, "deu past {h}"); (15, "un quart past {h}"); (20, "vint past {h}"); (25, "vint-i-cinc past {h}"); (30, "mitja past {h}"); (35, "vint-i-cinc to {next_h}"); (40, "vint to {next_h}"); (45, "un quart to {next_h}"); (50, "deu to {next_h}"); (55, "cinc to {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} en punt"); (5, "{h} i cinc"); (10, "{h} i deu"); (15, "{h} i quart"); (20, "{h} i vint"); (25, "{h} i vint-i-cinc"); (30, "{h} i mitja"); (35, "{next_h} menys vint-i-cinc"); (40, "{next_h} menys vint"); (45, "{next_h} menys quart"); (50, "{next_h} menys deu"); (55, "{next_h} menys cinc") ]
             }
         ShortOverride =
             Some
@@ -538,7 +538,7 @@ let CAK: TimeLocale =
                 Hours = [| "kab'lajuj"; "jun"; "ka'i'"; "oxi'"; "kaji'"; "wo'o'"; "waqi'"; "wuqu'"; "waqxaqi'"; "b'eleje'"; "lajuj"; "julajuj" |]
                 Midnight = "nik'aj aq'a'"
                 Noon = "nik'aj q'ij"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} ramaj"); (5, "{h} ramaj rik'in wo'o'"); (10, "{h} ramaj rik'in lajuj"); (15, "{h} ramaj rik'in wolajuj"); (20, "{h} ramaj rik'in juk'al"); (25, "{h} ramaj rik'in juk'al wo'o'"); (30, "{h} ramaj rik'in nik'aj"); (35, "{h} ramaj rik'in juk'al wolajuj"); (40, "{h} ramaj rik'in kak'al"); (45, "{h} ramaj rik'in kak'al wo'o'"); (50, "{h} ramaj rik'in kak'al lajuj"); (55, "{h} ramaj rik'in kak'al wolajuj") ]
             }
         ShortOverride =
             Some
@@ -567,10 +567,10 @@ let CEB: TimeLocale =
         Code = "ceb"
         Clock =
             {
-                Hours = [| "dose"; "uno"; "dos"; "tres"; "kwatro"; "singko"; "sais"; "siyete"; "otso"; "nuwebe"; "diyes"; "onse" |]
+                Hours = [| "alas dose"; "ala una"; "alas dos"; "alas tres"; "alas kwatro"; "alas singko"; "alas sais"; "alas siyete"; "alas otso"; "alas nuwebe"; "alas diyes"; "alas onse" |]
                 Midnight = "tungang gabii"
                 Noon = "udtong tutok"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} y singko"); (10, "{h} y diyes"); (15, "{h} y kinse"); (20, "{h} y beynte"); (25, "{h} y beynte singko"); (30, "{h} y medya"); (35, "menos beynte singko para {next_h}"); (40, "menos beynte para {next_h}"); (45, "menos kinse para {next_h}"); (50, "menos diyes para {next_h}"); (55, "menos singko para {next_h}") ]
             }
         ShortOverride =
             Some
@@ -602,7 +602,7 @@ let CS: TimeLocale =
                 Hours = [| "dvanáct"; "jedna"; "dvě"; "tři"; "čtyři"; "pět"; "šest"; "sedm"; "osm"; "devět"; "deset"; "jedenáct" |]
                 Midnight = "půlnoc"
                 Noon = "poledne"
-                Patterns = Map.ofList [ (0, "{h} hodin"); (5, "pět po {h}"); (10, "deset po {h}"); (15, "čtvrt po {h}"); (20, "dvacet po {h}"); (25, "dvacet pět po {h}"); (30, "půl po {h}"); (35, "dvacet pět do {next_h}"); (40, "dvacet do {next_h}"); (45, "čtvrt do {next_h}"); (50, "deset do {next_h}"); (55, "pět do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} nula pět"); (10, "{h} deset"); (15, "{h} patnáct"); (20, "{h} dvacet"); (25, "{h} dvacet pět"); (30, "{h} třicet"); (35, "za dvacet pět minut {next_h}"); (40, "za dvacet minut {next_h}"); (45, "za patnáct minut {next_h}"); (50, "za deset minut {next_h}"); (55, "za pět minut {next_h}") ]
             }
         ShortOverride =
             Some
@@ -634,7 +634,7 @@ let CY: TimeLocale =
                 Hours = [| "deuddeg"; "un"; "dau"; "tri"; "pedwar"; "pump"; "chwech"; "saith"; "wyth"; "naw"; "deg"; "un ar ddeg" |]
                 Midnight = "hanner nos"
                 Noon = "hanner dydd"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} o'r gloch"); (5, "pum munud wedi {h}"); (10, "deg munud wedi {h}"); (15, "chwarter wedi {h}"); (20, "ugain munud wedi {h}"); (25, "pum munud ar hugain wedi {h}"); (30, "hanner awr wedi {h}"); (35, "pum munud ar hugain i {next_h}"); (40, "ugain munud i {next_h}"); (45, "chwarter i {next_h}"); (50, "deg munud i {next_h}"); (55, "pum munud i {next_h}") ]
             }
         ShortOverride =
             Some
@@ -730,7 +730,7 @@ let DIN: TimeLocale =
                 Hours = [| "thiäär ku rou"; "tök"; "rou"; "diäk"; "ŋuän"; "dhiëc"; "dhetem"; "dhorou"; "bɛ̈t"; "dhoŋuan"; "thiäär"; "thiäär ku tök" |]
                 Midnight = "wakɔ̈u"
                 Noon = "akɔ̈l ciëŋ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "thä {h}"); (5, "thä {h} ku minitö dhiëc"); (10, "thä {h} ku minitö thiäär"); (15, "thä {h} ku minitö thiäär ku dhiëc"); (20, "thä {h} ku minitö thiärou"); (25, "thä {h} ku minitö thiärou ku dhiëc"); (30, "thä {h} ku minitö thiärdiäk"); (35, "thä {h} ku minitö thiärdiäk ku dhiëc"); (40, "thä {h} ku minitö thiärŋuan"); (45, "thä {h} ku minitö thiärŋuan ku dhiëc"); (50, "thä {h} ku minitö thiärdhiëc"); (55, "thä {h} ku minitö thiärdhiëc ku dhiëc") ]
             }
         ShortOverride =
             Some
@@ -759,10 +759,10 @@ let DJE: TimeLocale =
         Code = "dje"
         Clock =
             {
-                Hours = [| "way cindi"; "afoo"; "ihinka"; "ihinza"; "itaaci"; "igu"; "iddu"; "iyye"; "isahkay"; "iyegga"; "iwoy"; "iwoy cindi" |]
+                Hours = [| "iway cindi hinka"; "fo"; "hinka"; "hinza"; "taaci"; "gu"; "iddu"; "iyye"; "ahakku"; "yagga"; "iway"; "iway cindi fo" |]
                 Midnight = "cin beri"
                 Noon = "zaari gaaham"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "guuru {h}"); (5, "guuru {h} nda miniti gu"); (10, "guuru {h} nda miniti iway"); (15, "guuru {h} nda miniti iway cindi gu"); (20, "guuru {h} nda miniti waranka"); (25, "guuru {h} nda miniti waranka cindi gu"); (30, "guuru {h} nda jare"); (35, "guuru {h} nda miniti waranza cindi gu"); (40, "guuru {h} nda miniti waytaaci"); (45, "guuru {h} nda miniti waytaaci cindi gu"); (50, "guuru {h} nda miniti waygu"); (55, "guuru {h} nda miniti waygu cindi gu") ]
             }
         ShortOverride =
             Some
@@ -794,7 +794,7 @@ let DV: TimeLocale =
                 Hours = [| "ބާރަ"; "އެކެއް"; "ދޭއް"; "ތިނެއް"; "ހަތަރެއް"; "ފަހެއް"; "ހައެއް"; "ހަތެއް"; "އަށެއް"; "ނުވައެއް"; "ދިހައެއް"; "އެގާރަ" |]
                 Midnight = "މެންދަމު"
                 Noon = "މެންދުރު"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ގަޑިން {h}"); (5, "{h} ޖަހައި ފަސް މިނެޓު"); (10, "{h} ޖަހައި ދިހަ މިނެޓު"); (15, "{h} ޖަހައި ފަނަރަ މިނެޓު"); (20, "{h} ޖަހައި ވިހި މިނެޓު"); (25, "{h} ޖަހައި ފަންސަވީސް މިނެޓު"); (30, "{h} ޖަހައި ބައި"); (35, "{h} ޖަހައި ތިރީސްފަސް މިނެޓު"); (40, "{h} ޖަހައި ސާޅީސް މިނެޓު"); (45, "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު"); (50, "{h} ޖަހައި ފަންސާސް މިނެޓު"); (55, "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު") ]
             }
         ShortOverride =
             Some
@@ -826,7 +826,7 @@ let DYU: TimeLocale =
                 Hours = [| "tan ni fila"; "kelen"; "fila"; "saba"; "naani"; "duuru"; "wɔɔrɔ"; "wolonwula"; "segin"; "kɔnɔntɔn"; "tan"; "tan ni kelen" |]
                 Midnight = "dugutilama"
                 Noon = "tilgari"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "lɛrɛ {h}"); (5, "lɛrɛ {h} ni miniti duuru"); (10, "lɛrɛ {h} ni miniti tan"); (15, "lɛrɛ {h} ni miniti tan ni duuru"); (20, "lɛrɛ {h} ni miniti mugan"); (25, "lɛrɛ {h} ni miniti mugan ni duuru"); (30, "lɛrɛ {h} ni tilancɛ"); (35, "lɛrɛ {h} ni miniti bi saba ni duuru"); (40, "lɛrɛ {h} ni miniti bi naani"); (45, "lɛrɛ {h} ni miniti bi naani ni duuru"); (50, "lɛrɛ {h} ni miniti bi duuru"); (55, "lɛrɛ {h} ni miniti bi duuru ni duuru") ]
             }
         ShortOverride =
             Some
@@ -858,7 +858,7 @@ let DZ: TimeLocale =
                 Hours = [| "བཅུ་གཉིས"; "གཅིག"; "གཉིས"; "གསུམ"; "བཞི"; "ལྔ"; "དྲུག"; "བདུན"; "བརྒྱད"; "དགུ"; "བཅུ"; "བཅུ་གཅིག" |]
                 Midnight = "ནམ་ཕྱེད"
                 Noon = "ཉིན་གུང"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ཆུ་ཚོད་{h}"); (5, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ"); (10, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ"); (15, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ"); (20, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ"); (25, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ"); (30, "ཆུ་ཚོད་{h}་དང་ཕྱེད"); (35, "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ"); (40, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ"); (45, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ"); (50, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ"); (55, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ") ]
             }
         ShortOverride =
             Some
@@ -890,7 +890,7 @@ let EE: TimeLocale =
                 Hours = [| "wuieve"; "ɖeka"; "eve"; "etɔ̃"; "ene"; "atɔ̃"; "ade"; "adre"; "enyi"; "asieke"; "ewo"; "wuiɖeka" |]
                 Midnight = "zã titina"
                 Noon = "ŋdɔ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ga {h}"); (5, "ga {h} kple aɖabaƒoƒo atɔ̃"); (10, "ga {h} kple aɖabaƒoƒo ewo"); (15, "ga {h} kple aɖabaƒoƒo wuiatɔ̃"); (20, "ga {h} kple aɖabaƒoƒo blaeve"); (25, "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃"); (30, "ga {h} kple afã"); (35, "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃"); (40, "ga {h} kple aɖabaƒoƒo blaene"); (45, "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃"); (50, "ga {h} kple aɖabaƒoƒo blaatɔ̃"); (55, "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃") ]
             }
         ShortOverride =
             Some
@@ -1018,7 +1018,7 @@ let ET: TimeLocale =
                 Hours = [| "kaksteist"; "üks"; "kaks"; "kolm"; "neli"; "viis"; "kuus"; "seitse"; "kaheksa"; "üheksa"; "kümme"; "üksteist" |]
                 Midnight = "kesköö"
                 Noon = "keskpäev"
-                Patterns = Map.ofList [ (0, "{h}"); (5, "viis efter {h}"); (10, "kümme efter {h}"); (15, "veerand efter {h}"); (20, "kakskümmend efter {h}"); (25, "kakskümmend viis efter {h}"); (30, "pool efter {h}"); (35, "kakskümmend viis enne {next_h}"); (40, "kakskümmend enne {next_h}"); (45, "veerand enne {next_h}"); (50, "kümme enne {next_h}"); (55, "viis enne {next_h}") ]
+                Patterns = Map.ofList [ (0, "kell {h}"); (5, "viis minutit {h} läbi"); (10, "kümme minutit {h} läbi"); (15, "veerand {next_h}"); (20, "kakskümmend minutit {h} läbi"); (25, "kakskümmend viis minutit {h} läbi"); (30, "pool {next_h}"); (35, "kolmkümmend viis minutit {h} läbi"); (40, "kahekümne minuti pärast {next_h}"); (45, "kolmveerand {next_h}"); (50, "kümne minuti pärast {next_h}"); (55, "viie minuti pärast {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1047,10 +1047,10 @@ let EU: TimeLocale =
         Code = "eu"
         Clock =
             {
-                Hours = [| "hamabi"; "bat"; "bi"; "hiru"; "lau"; "bost"; "sei"; "zazpi"; "zortzi"; "bederatzi"; "hamar"; "hamaika" |]
+                Hours = [| "hamabiak"; "ordu bata"; "ordu biak"; "hirurak"; "laurak"; "bostak"; "seiak"; "zazpiak"; "zortziak"; "bederatziak"; "hamarrak"; "hamaikak" |]
                 Midnight = "gauerdia"
                 Noon = "eguerdia"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} eta bost"); (10, "{h} eta hamar"); (15, "{h} eta laurden"); (20, "{h} eta hogei"); (25, "{h} eta hogeita bost"); (30, "{h} eta erdiak"); (35, "{next_h} hogeita bost gutxi"); (40, "{next_h} hogei gutxi"); (45, "{next_h} laurden gutxi"); (50, "{next_h} hamar gutxi"); (55, "{next_h} bost gutxi") ]
             }
         ShortOverride =
             Some
@@ -1114,7 +1114,7 @@ let FAN: TimeLocale =
                 Hours = [| "awom mebú"; "fóg"; "abúi"; "aláa"; "anyin"; "atán"; "asaman"; "zamgbala"; "mwom"; "ebulú"; "awom"; "awom mefóg" |]
                 Midnight = "akiri alúk"
                 Noon = "ewaŋ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "awola {h}"); (5, "awola {h} ai minit tán"); (10, "awola {h} ai minit awom"); (15, "awola {h} ai minit awom ai tán"); (20, "awola {h} ai minit mewom mebú"); (25, "awola {h} ai minit mewom mebú ai tán"); (30, "awola {h} ai minit mewom melaa"); (35, "awola {h} ai minit mewom melaa ai tán"); (40, "awola {h} ai minit mewom menyin"); (45, "awola {h} ai minit mewom menyin ai tán"); (50, "awola {h} ai minit mewom metán"); (55, "awola {h} ai minit mewom metán ai tán") ]
             }
         ShortOverride =
             Some
@@ -1146,7 +1146,7 @@ let FF: TimeLocale =
                 Hours = [| "sappo e ɗiɗi"; "go'o"; "ɗiɗi"; "tati"; "nay"; "joy"; "jeegom"; "jeeɗiɗi"; "jeetati"; "jeenay"; "sappo"; "sappo e go'o" |]
                 Midnight = "jamma hejjere"
                 Noon = "zuhr"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "waktu {h}"); (5, "waktu {h} e hojomaaje joy"); (10, "waktu {h} e hojomaaje sappo"); (15, "waktu {h} e hojomaaje sappo e joy"); (20, "waktu {h} e hojomaaje noogas"); (25, "waktu {h} e hojomaaje noogas e joy"); (30, "waktu {h} e feccere"); (35, "waktu {h} e hojomaaje cappanɗe tati e joy"); (40, "waktu {h} e hojomaaje cappanɗe nay"); (45, "waktu {h} e hojomaaje cappanɗe nay e joy"); (50, "waktu {h} e hojomaaje cappanɗe joy"); (55, "waktu {h} e hojomaaje cappanɗe joy e joy") ]
             }
         ShortOverride =
             Some
@@ -1178,7 +1178,7 @@ let FI: TimeLocale =
                 Hours = [| "kaksitoista"; "yksi"; "kaksi"; "kolme"; "neljä"; "viisi"; "kuusi"; "seitsemän"; "kahdeksan"; "yhdeksän"; "kymmenen"; "yksitoista" |]
                 Midnight = "keskiyö"
                 Noon = "keskipäivä"
-                Patterns = Map.ofList [ (0, "{h}"); (5, "viisi yli {h}"); (10, "kymmenen yli {h}"); (15, "vartti yli {h}"); (20, "kaksikymmentä yli {h}"); (25, "kaksikymmentäviisi yli {h}"); (30, "puoli yli {h}"); (35, "kaksikymmentäviisi vaille {next_h}"); (40, "kaksikymmentä vaille {next_h}"); (45, "vartti vaille {next_h}"); (50, "kymmenen vaille {next_h}"); (55, "viisi vaille {next_h}") ]
+                Patterns = Map.ofList [ (0, "kello {h}"); (5, "viisi yli {h}"); (10, "kymmenen yli {h}"); (15, "vartti yli {h}"); (20, "kaksikymmentä yli {h}"); (25, "kaksikymmentäviisi yli {h}"); (30, "puoli {next_h}"); (35, "kaksikymmentäviisi vaille {next_h}"); (40, "kaksikymmentä vaille {next_h}"); (45, "vartti vaille {next_h}"); (50, "kymmenen vaille {next_h}"); (55, "viisi vaille {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1207,10 +1207,10 @@ let FIL: TimeLocale =
         Code = "fil"
         Clock =
             {
-                Hours = [| "dose"; "una"; "dos"; "tres"; "kwatro"; "singko"; "seis"; "syete"; "otso"; "nuwebe"; "diyes"; "onse" |]
+                Hours = [| "alas-dose"; "ala-una"; "alas-dos"; "alas-tres"; "alas-kuwatro"; "alas-singko"; "alas-sais"; "alas-siyete"; "alas-otso"; "alas-nuwebe"; "alas-diyes"; "alas-onse" |]
                 Midnight = "hatinggabi"
                 Noon = "tanghali"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "lima dan {h}"); (10, "sampu dan {h}"); (15, "labinlima dan {h}"); (20, "dalawampu dan {h}"); (25, "dalawampu't lima dan {h}"); (30, "tatlumpu dan {h}"); (35, "dalawampu't lima bago mag {next_h}"); (40, "dalawampu bago mag {next_h}"); (45, "labinlima bago mag {next_h}"); (50, "sampu bago mag {next_h}"); (55, "lima bago mag {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} y singko"); (10, "{h} y diyes"); (15, "{h} y kinse"); (20, "{h} y beynte"); (25, "{h} y beynte singko"); (30, "{h} y medya"); (35, "menos beynte singko para {next_h}"); (40, "menos beynte para {next_h}"); (45, "menos kinse para {next_h}"); (50, "menos diyes para {next_h}"); (55, "menos singko para {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1242,7 +1242,7 @@ let FJ: TimeLocale =
                 Hours = [| "tini ka rua"; "dua"; "rua"; "tolu"; "vā"; "lima"; "ono"; "vitu"; "walu"; "ciwa"; "tini"; "tini ka dua" |]
                 Midnight = "bogi levu"
                 Noon = "sigalevu"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} na kaloko"); (5, "{h} na kaloko ka lima na miniti"); (10, "{h} na kaloko ka tini na miniti"); (15, "{h} na kaloko ka tini ka lima na miniti"); (20, "{h} na kaloko ka ruasagavulu na miniti"); (25, "{h} na kaloko ka ruasagavulu ka lima na miniti"); (30, "{h} na kaloko ka tolusagavulu na miniti"); (35, "{h} na kaloko ka tolusagavulu ka lima na miniti"); (40, "{h} na kaloko ka vāsagavulu na miniti"); (45, "{h} na kaloko ka vāsagavulu ka lima na miniti"); (50, "{h} na kaloko ka limasagavulu na miniti"); (55, "{h} na kaloko ka limasagavulu ka lima na miniti") ]
             }
         ShortOverride =
             Some
@@ -1271,10 +1271,10 @@ let FON: TimeLocale =
         Code = "fon"
         Clock =
             {
-                Hours = [| "wěwè"; "ɖokpo"; "wè"; "atɔn"; "ɛnɛ"; "atɔ́ɔ́n"; "ayizɛ̀n"; "tɛnwè"; "tantɔn"; "tɛnɛnɛ"; "wǒ"; "ɖokpo-wǒ" |]
+                Hours = [| "wěwè"; "ɖokpo"; "wè"; "atɔn"; "ɛnɛ"; "atɔ́ɔ́n"; "ayizɛ̀n"; "tɛnwè"; "tantɔn"; "tɛnɛnɛ"; "wǒ"; "wěɖokpo" |]
                 Midnight = "zǎnmɛ"
                 Noon = "hwemɛnu"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "gan {h}"); (5, "gan {h} kpo cɛju atɔ́ɔ́n kpo"); (10, "gan {h} kpo cɛju wǒ kpo"); (15, "gan {h} kpo cɛju afɔtɔ́n kpo"); (20, "gan {h} kpo cɛju ko kpo"); (25, "gan {h} kpo cɛju koatɔ́ɔ́n kpo"); (30, "gan {h} kpo cɛju gban kpo"); (35, "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo"); (40, "gan {h} kpo cɛju kanɖé kpo"); (45, "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo"); (50, "gan {h} kpo cɛju kanɖéwǒ kpo"); (55, "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo") ]
             }
         ShortOverride =
             Some
@@ -1338,7 +1338,7 @@ let GA: TimeLocale =
                 Hours = [| "dó dhéag"; "haon"; "dó"; "trí"; "ceathair"; "cúig"; "sé"; "seacht"; "hocht"; "naoi"; "deich"; "haon déag" |]
                 Midnight = "meán oíche"
                 Noon = "meán lae"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "a {h} a chlog"); (5, "cúig tar éis a {h}"); (10, "deich tar éis a {h}"); (15, "ceathrú tar éis a {h}"); (20, "fiche tar éis a {h}"); (25, "fiche cúig tar éis a {h}"); (30, "leathuair tar éis a {h}"); (35, "fiche cúig chun a {next_h}"); (40, "fiche chun a {next_h}"); (45, "ceathrú chun a {next_h}"); (50, "deich chun a {next_h}"); (55, "cúig chun a {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1367,10 +1367,10 @@ let GD: TimeLocale =
         Code = "gd"
         Clock =
             {
-                Hours = [| "dà-dheug"; "aon"; "dà"; "trì"; "ceithir"; "còig"; "sia"; "seachd"; "ochd"; "naoi"; "deich"; "aon-deug" |]
+                Hours = [| "dà uair dheug"; "uair"; "dà uair"; "trì uairean"; "ceithir uairean"; "còig uairean"; "sia uairean"; "seachd uairean"; "ochd uairean"; "naoi uairean"; "deich uairean"; "aon uair deug" |]
                 Midnight = "meadhan-oidhche"
                 Noon = "meadhan-latha"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "còig mionaidean an dèidh {h}"); (10, "deich mionaidean an dèidh {h}"); (15, "cairteal an dèidh {h}"); (20, "fichead mionaid an dèidh {h}"); (25, "còig mionaidean fichead an dèidh {h}"); (30, "leth-uair an dèidh {h}"); (35, "còig mionaidean fichead gu {next_h}"); (40, "fichead mionaid gu {next_h}"); (45, "cairteal gu {next_h}"); (50, "deich mionaidean gu {next_h}"); (55, "còig mionaidean gu {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1432,9 +1432,9 @@ let GN: TimeLocale =
         Clock =
             {
                 Hours = [| "pa mokõi"; "peteĩ"; "mokõi"; "mbohapy"; "irundy"; "po"; "poteĩ"; "pokõi"; "poapy"; "porundy"; "pa"; "pa peteĩ" |]
-                Midnight = "pyhareve"
+                Midnight = "pyharepyte"
                 Noon = "asaje"
-                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} ha po"); (10, "{h} ha pa"); (15, "{h} ha pa po"); (20, "{h} ha mokõi pa"); (25, "{h} ha mokõi pa po"); (30, "{h} ha mbohapy pa"); (35, "{next_h} mba'e mokõi pa po"); (40, "{next_h} mba'e mokõi pa"); (45, "{next_h} mba'e pa po"); (50, "{next_h} mba'e pa"); (55, "{next_h} mba'e po") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} ha po"); (10, "{h} ha pa"); (15, "{h} ha pa po"); (20, "{h} ha mokõi pa"); (25, "{h} ha mokõi pa po"); (30, "{h} ha mbohapy pa"); (35, "{h} ha mbohapy pa po"); (40, "{h} ha irundy pa"); (45, "{h} ha irundy pa po"); (50, "{h} ha po pa"); (55, "{h} ha po pa po") ]
             }
         ShortOverride =
             Some
@@ -1465,8 +1465,8 @@ let GU: TimeLocale =
             {
                 Hours = [| "બાર"; "એક"; "બે"; "ત્રણ"; "ચાર"; "પાંચ"; "છ"; "સાત"; "આઠ"; "નવ"; "દસ"; "અગિયાર" |]
                 Midnight = "મધ્યરાત્રિ"
-                Noon = "બપોર"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Noon = "બપોરે બાર વાગ્યે"
+                Patterns = Map.ofList [ (0, "{h} વાગ્યે"); (5, "{h} વાગીને પાંચ મિનિટ"); (10, "{h} વાગીને દસ મિનિટ"); (15, "સવા {h}"); (20, "{h} વાગીને વીસ મિનિટ"); (25, "{h} વાગીને પચીસ મિનિટ"); (30, "{h} વાગીને ત્રીસ મિનિટ"); (35, "{h} વાગીને પાંત્રીસ મિનિટ"); (40, "{h} વાગીને ચાલીસ મિનિટ"); (45, "પોણા {next_h}"); (50, "{next_h} વાગવામાં દસ મિનિટ"); (55, "{next_h} વાગવામાં પાંચ મિનિટ") ]
             }
         ShortOverride =
             Some
@@ -1495,10 +1495,10 @@ let GV: TimeLocale =
         Code = "gv"
         Clock =
             {
-                Hours = [| "12"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"; "10"; "11" |]
+                Hours = [| "daa-yeig"; "nane"; "jees"; "tree"; "kiare"; "queig"; "shey"; "shiaght"; "hoght"; "nuy"; "jeih"; "nane-jeig" |]
                 Midnight = "mean oie"
                 Noon = "munlaa"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} er y chlag"); (5, "queig minnidyn lurg {h}"); (10, "jeih minnidyn lurg {h}"); (15, "kerroo lurg {h}"); (20, "feed minnid lurg {h}"); (25, "queig minnidyn as feed lurg {h}"); (30, "lieh-oor lurg {h}"); (35, "queig minnidyn as feed gys {next_h}"); (40, "feed minnid gys {next_h}"); (45, "kerroo gys {next_h}"); (50, "jeih minnidyn gys {next_h}"); (55, "queig minnidyn gys {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1527,10 +1527,10 @@ let HA: TimeLocale =
         Code = "ha"
         Clock =
             {
-                Hours = [| "sha biyu"; "ɗaya"; "biyu"; "uku"; "huɗu"; "biyar"; "shida"; "bakwai"; "takwas"; "tara"; "goma"; "goma sha ɗaya" |]
+                Hours = [| "sha biyu"; "ɗaya"; "biyu"; "uku"; "huɗu"; "biyar"; "shida"; "bakwai"; "takwas"; "tara"; "goma"; "sha ɗaya" |]
                 Midnight = "tsakar dare"
                 Noon = "tsakar rana"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ƙarfe {h}"); (5, "ƙarfe {h} da minti biyar"); (10, "ƙarfe {h} da minti goma"); (15, "ƙarfe {h} da kwata"); (20, "ƙarfe {h} da minti ashirin"); (25, "ƙarfe {h} da minti ashirin da biyar"); (30, "ƙarfe {h} da rabi"); (35, "ƙarfe {next_h} saura minti ashirin da biyar"); (40, "ƙarfe {next_h} saura minti ashirin"); (45, "ƙarfe {next_h} saura kwata"); (50, "ƙarfe {next_h} saura minti goma"); (55, "ƙarfe {next_h} saura minti biyar") ]
             }
         ShortOverride =
             Some
@@ -1593,8 +1593,8 @@ let HI: TimeLocale =
             {
                 Hours = [| "बारह"; "एक"; "दो"; "तीन"; "चार"; "पाँच"; "छह"; "सात"; "आठ"; "नौ"; "दस"; "ग्यारह" |]
                 Midnight = "आधी रात"
-                Noon = "दोपहर"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Noon = "दोपहर के बारह बजे"
+                Patterns = Map.ofList [ (0, "{h} बजे"); (5, "{h} बजकर पाँच मिनट"); (10, "{h} बजकर दस मिनट"); (15, "सवा {h} बजे"); (20, "{h} बजकर बीस मिनट"); (25, "{h} बजकर पच्चीस मिनट"); (30, "{h} बजकर तीस मिनट"); (35, "{h} बजकर पैंतीस मिनट"); (40, "{h} बजकर चालीस मिनट"); (45, "पौने {next_h} बजे"); (50, "{next_h} बजने में दस मिनट"); (55, "{next_h} बजने में पाँच मिनट") ]
             }
         ShortOverride =
             Some
@@ -1626,7 +1626,7 @@ let HMN: TimeLocale =
                 Hours = [| "kaum ob"; "ib"; "ob"; "peb"; "plaub"; "tsib"; "rau"; "xya"; "yim"; "cuaj"; "kaum"; "kaum ib" |]
                 Midnight = "ib tag hmo"
                 Noon = "tav su"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} teev"); (5, "{h} teev tsib feeb"); (10, "{h} teev kaum feeb"); (15, "{h} teev kaum tsib feeb"); (20, "{h} teev nees nkaum feeb"); (25, "{h} teev nees nkaum tsib feeb"); (30, "{h} teev ib nrab"); (35, "{h} teev peb caug tsib feeb"); (40, "{h} teev plaub caug feeb"); (45, "{h} teev plaub caug tsib feeb"); (50, "{h} teev tsib caug feeb"); (55, "{h} teev tsib caug tsib feeb") ]
             }
         ShortOverride =
             Some
@@ -1658,7 +1658,7 @@ let HR: TimeLocale =
                 Hours = [| "dvanaest"; "jedan"; "dva"; "tri"; "četiri"; "pet"; "šest"; "sedam"; "osam"; "devet"; "deset"; "jedanaest" |]
                 Midnight = "ponoć"
                 Noon = "podne"
-                Patterns = Map.ofList [ (0, "{h} sati"); (5, "pet po {h}"); (10, "deset po {h}"); (15, "petnaest po {h}"); (20, "dvadeset po {h}"); (25, "dvadeset pet po {h}"); (30, "trideset po {h}"); (35, "dvadeset pet do {next_h}"); (40, "dvadeset do {next_h}"); (45, "petnaest do {next_h}"); (50, "deset do {next_h}"); (55, "pet do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} i pet"); (10, "{h} i deset"); (15, "{h} i petnaest"); (20, "{h} i dvadeset"); (25, "{h} i dvadeset pet"); (30, "pola {next_h}"); (35, "dvadeset pet do {next_h}"); (40, "dvadeset do {next_h}"); (45, "petnaest do {next_h}"); (50, "deset do {next_h}"); (55, "pet do {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1687,10 +1687,10 @@ let HT: TimeLocale =
         Code = "ht"
         Clock =
             {
-                Hours = [| "douz"; "en"; "de"; "twa"; "kat"; "senk"; "sis"; "sèt"; "uit"; "nèf"; "dis"; "onz" |]
-                Midnight = "minui"
+                Hours = [| "douzè"; "inè"; "dezè"; "twazè"; "katrè"; "senkè"; "sizè"; "setè"; "uitè"; "nevè"; "dizè"; "onzè" |]
+                Midnight = "minwi"
                 Noon = "midi"
-                Patterns = Map.ofList [ (0, "{h} è"); (5, "{h} è senk"); (10, "{h} è dis"); (15, "{h} è ka"); (20, "{h} è ven"); (25, "{h} è vennsenk"); (30, "{h} è demi"); (35, "{next_h} mwen vennsenk"); (40, "{next_h} mwen ven"); (45, "{next_h} mwen ka"); (50, "{next_h} mwen dis"); (55, "{next_h} mwen senk") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} senk"); (10, "{h} dis"); (15, "{h} e ka"); (20, "{h} ven"); (25, "{h} vennsenk"); (30, "{h} edmi"); (35, "{next_h} mwen vennsenk"); (40, "{next_h} mwen ven"); (45, "{next_h} mwen ka"); (50, "{next_h} mwen dis"); (55, "{next_h} mwen senk") ]
             }
         ShortOverride =
             Some
@@ -1722,7 +1722,7 @@ let HU: TimeLocale =
                 Hours = [| "tizenkettő"; "egy"; "kettő"; "három"; "négy"; "öt"; "hat"; "hét"; "nyolc"; "kilenc"; "tíz"; "tizenegy" |]
                 Midnight = "éjfél"
                 Noon = "dél"
-                Patterns = Map.ofList [ (0, "{h} óra"); (5, "öt múlt {h}"); (10, "tíz múlt {h}"); (15, "negyed múlt {h}"); (20, "húsz múlt {h}"); (25, "huszonöt múlt {h}"); (30, "fél múlt {h}"); (35, "huszonöt múlva {next_h}"); (40, "húsz múlva {next_h}"); (45, "negyed múlva {next_h}"); (50, "tíz múlva {next_h}"); (55, "öt múlva {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} óra"); (5, "öt perccel múlt {h}"); (10, "tíz perccel múlt {h}"); (15, "negyed {next_h}"); (20, "húsz perccel múlt {h}"); (25, "öt perc múlva fél {next_h}"); (30, "fél {next_h}"); (35, "öt perccel múlt fél {next_h}"); (40, "húsz perc múlva {next_h}"); (45, "háromnegyed {next_h}"); (50, "tíz perc múlva {next_h}"); (55, "öt perc múlva {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1751,10 +1751,10 @@ let HY: TimeLocale =
         Code = "hy"
         Clock =
             {
-                Hours = [| "տասներկու"; "մեկ"; "երկու"; "երեք"; "չորս"; "հինգ"; "վեց"; "յոթ"; "ութ"; "ինը"; "տաս"; "տասնմեկ" |]
+                Hours = [| "տասներկուսն"; "մեկն"; "երկուսն"; "երեքն"; "չորսն"; "հինգն"; "վեցն"; "յոթն"; "ութն"; "ինն"; "տասն"; "տասնմեկն" |]
                 Midnight = "կեսգիշեր"
                 Noon = "կեսօր"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ժամը {h} է"); (5, "{h} անց հինգ"); (10, "{h} անց տասը"); (15, "{h} անց տասնհինգ"); (20, "{h} անց քսան"); (25, "{h} անց քսանհինգ"); (30, "{h} անց կես"); (35, "{h} անց երեսունհինգ"); (40, "{h} անց քառասուն"); (45, "{h} անց քառասունհինգ"); (50, "{h} անց հիսուն"); (55, "{h} անց հիսունհինգ") ]
             }
         ShortOverride =
             Some
@@ -1786,7 +1786,7 @@ let ID: TimeLocale =
                 Hours = [| "dua belas"; "satu"; "dua"; "tiga"; "empat"; "lima"; "enam"; "tujuh"; "delapan"; "sembilan"; "sepuluh"; "sebelas" |]
                 Midnight = "tengah malam"
                 Noon = "tengah hari"
-                Patterns = Map.ofList [ (0, "pukul {h}"); (5, "lima lewat {h}"); (10, "sepuluh lewat {h}"); (15, "seperempat lewat {h}"); (20, "dua puluh lewat {h}"); (25, "dua puluh lima lewat {h}"); (30, "setengah lewat {h}"); (35, "dua puluh lima menjelang {next_h}"); (40, "dua puluh menjelang {next_h}"); (45, "seperempat menjelang {next_h}"); (50, "sepuluh menjelang {next_h}"); (55, "lima menjelang {next_h}") ]
+                Patterns = Map.ofList [ (0, "pukul {h}"); (5, "pukul {h} lewat lima"); (10, "pukul {h} lewat sepuluh"); (15, "pukul {h} lewat seperempat"); (20, "pukul {h} lewat dua puluh"); (25, "pukul {h} lewat dua puluh lima"); (30, "pukul setengah {next_h}"); (35, "pukul {next_h} kurang dua puluh lima"); (40, "pukul {next_h} kurang dua puluh"); (45, "pukul {next_h} kurang seperempat"); (50, "pukul {next_h} kurang sepuluh"); (55, "pukul {next_h} kurang lima") ]
             }
         ShortOverride =
             Some
@@ -1817,8 +1817,8 @@ let IG: TimeLocale =
             {
                 Hours = [| "iri na abụọ"; "otu"; "abụọ"; "atọ"; "anọ"; "ise"; "isii"; "asaa"; "asatọ"; "itoolu"; "iri"; "iri na otu" |]
                 Midnight = "etiti abalị"
-                Noon = "ehihie"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Noon = "etiti ehihie"
+                Patterns = Map.ofList [ (0, "elekere {h}"); (5, "elekere {h} na nkeji ise"); (10, "elekere {h} na nkeji iri"); (15, "elekere {h} na nkeji iri na ise"); (20, "elekere {h} na nkeji iri abụọ"); (25, "elekere {h} na nkeji iri abụọ na ise"); (30, "elekere {h} na ọkara"); (35, "elekere {h} na nkeji iri atọ na ise"); (40, "elekere {h} na nkeji iri anọ"); (45, "elekere {h} na nkeji iri anọ na ise"); (50, "elekere {h} na nkeji iri ise"); (55, "elekere {h} na nkeji iri ise na ise") ]
             }
         ShortOverride =
             Some
@@ -1879,10 +1879,10 @@ let IT: TimeLocale =
         Code = "it"
         Clock =
             {
-                Hours = [| "dodici"; "una"; "due"; "tre"; "quattro"; "cinque"; "sei"; "sette"; "otto"; "nove"; "dieci"; "undici" |]
+                Hours = [| "le dodici"; "l'una"; "le due"; "le tre"; "le quattro"; "le cinque"; "le sei"; "le sette"; "le otto"; "le nove"; "le dieci"; "le undici" |]
                 Midnight = "mezzanotte"
                 Noon = "mezzogiorno"
-                Patterns = Map.ofList [ (0, "le {h}"); (5, "{h} e cinque"); (10, "{h} e dieci"); (15, "{h} e un quarto"); (20, "{h} e venti"); (25, "{h} e venticinque"); (30, "{h} e mezza"); (35, "{next_h} meno venticinque"); (40, "{next_h} meno venti"); (45, "{next_h} meno un quarto"); (50, "{next_h} meno dieci"); (55, "{next_h} meno cinque") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} e cinque"); (10, "{h} e dieci"); (15, "{h} e un quarto"); (20, "{h} e venti"); (25, "{h} e venticinque"); (30, "{h} e mezza"); (35, "{next_h} meno venticinque"); (40, "{next_h} meno venti"); (45, "{next_h} meno un quarto"); (50, "{next_h} meno dieci"); (55, "{next_h} meno cinque") ]
             }
         ShortOverride =
             Some
@@ -1945,8 +1945,8 @@ let JV: TimeLocale =
             {
                 Hours = [| "rolas"; "siji"; "loro"; "telu"; "papat"; "lima"; "enem"; "pitu"; "wolu"; "sanga"; "sepuluh"; "sewelas" |]
                 Midnight = "tengah wengi"
-                Noon = "awan"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Noon = "tengah awan"
+                Patterns = Map.ofList [ (0, "jam {h}"); (5, "jam {h} luwih limang menit"); (10, "jam {h} luwih sepuluh menit"); (15, "jam {h} luwih seprapat"); (20, "jam {h} luwih rong puluh menit"); (25, "jam {h} luwih selawé menit"); (30, "jam setengah {next_h}"); (35, "jam {next_h} kurang selawé menit"); (40, "jam {next_h} kurang rong puluh menit"); (45, "jam {next_h} kurang seprapat"); (50, "jam {next_h} kurang sepuluh menit"); (55, "jam {next_h} kurang limang menit") ]
             }
         ShortOverride =
             Some
@@ -1978,7 +1978,7 @@ let KA: TimeLocale =
                 Hours = [| "თორმეტი"; "ერთი"; "ორი"; "სამი"; "ოთხი"; "ხუთი"; "ექვსი"; "შვიდი"; "რვა"; "ცხრა"; "ათი"; "თერთმეტი" |]
                 Midnight = "შუაღამე"
                 Noon = "შუადღე"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "ხუთი past {h}"); (10, "ათი past {h}"); (15, "თხუთმეტი past {h}"); (20, "ოცი past {h}"); (25, "ოცდახუთი past {h}"); (30, "ოცდაათი past {h}"); (35, "ოცდახუთი to {next_h}"); (40, "ოცი to {next_h}"); (45, "თხუთმეტი to {next_h}"); (50, "ათი to {next_h}"); (55, "ხუთი to {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} საათი"); (5, "{h} საათი და ხუთი წუთი"); (10, "{h} საათი და ათი წუთი"); (15, "{h} საათი და თხუთმეტი წუთი"); (20, "{h} საათი და ოცი წუთი"); (25, "{h} საათი და ოცდახუთი წუთი"); (30, "{h} საათი და ოცდაათი წუთი"); (35, "{h} საათი და ოცდათხუთმეტი წუთი"); (40, "{h} საათი და ორმოცი წუთი"); (45, "{h} საათი და ორმოცდახუთი წუთი"); (50, "{h} საათი და ორმოცდაათი წუთი"); (55, "{h} საათი და ორმოცდათხუთმეტი წუთი") ]
             }
         ShortOverride =
             Some
@@ -2010,7 +2010,7 @@ let KBP: TimeLocale =
                 Hours = [| "hiu nɛ naalɛ"; "kʊɖʊm"; "naalɛ"; "naadozo"; "naanaza"; "kagbanzɩ"; "loɖo"; "lʊbɛ"; "lɛɛtɛ"; "nakʊ"; "hiu"; "hiu nɛ kʊɖʊm" |]
                 Midnight = "ɖoo hɛkʊ"
                 Noon = "wɩsɩ taa"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ñɩɣyʊʊ {h}"); (5, "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ"); (10, "ñɩɣyʊʊ {h} nɛ miniti hiu"); (15, "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ"); (20, "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ"); (25, "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ"); (30, "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ"); (35, "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ"); (40, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza"); (45, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ"); (50, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa"); (55, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ") ]
             }
         ShortOverride =
             Some
@@ -2039,10 +2039,10 @@ let KEK: TimeLocale =
         Code = "kek"
         Clock =
             {
-                Hours = [| "kab'laju"; "jun"; "kab'"; "oxib'"; "kab'ib'"; "o'ib'"; "waqib'"; "uqub'"; "wajxaqib'"; "b'elejeb'"; "lajeb'"; "junlaju" |]
+                Hours = [| "kab'laju"; "jun"; "kiib'"; "oxib'"; "kaahib'"; "oob'"; "waqib'"; "wuqub'"; "waqxaqib'"; "b'eleeb'"; "lajeeb'"; "junlaju" |]
                 Midnight = "chaq' xkab'"
                 Noon = "chaq' chaab'il"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} hoonal"); (5, "{h} hoonal rik'in oob' minuut"); (10, "{h} hoonal rik'in lajeeb' minuut"); (15, "{h} hoonal rik'in o'laju minuut"); (20, "{h} hoonal rik'in junmay minuut"); (25, "{h} hoonal rik'in oob' xkak'aal minuut"); (30, "{h} hoonal rik'in yijach"); (35, "{h} hoonal rik'in o'laju xkak'aal minuut"); (40, "{h} hoonal rik'in kaak'aal minuut"); (45, "{h} hoonal rik'in oob' roxk'aal minuut"); (50, "{h} hoonal rik'in lajeeb' roxk'aal minuut"); (55, "{h} hoonal rik'in o'laju roxk'aal minuut") ]
             }
         ShortOverride =
             Some
@@ -2071,10 +2071,10 @@ let KI: TimeLocale =
         Code = "ki"
         Clock =
             {
-                Hours = [| "ikũmi na igĩrĩ"; "ĩmwe"; "igĩrĩ"; "ithatũ"; "inya"; "ithano"; "ithathatũ"; "mũgwanja"; "inyanya"; "kenda"; "ikũmi"; "ikũmi na ĩmwe" |]
+                Hours = [| "ithathatũ"; "mũgwanja"; "inyanya"; "kenda"; "ikũmi"; "ikũmi na ĩmwe"; "ikũmi na igĩrĩ"; "ĩmwe"; "igĩrĩ"; "ithatũ"; "inya"; "ithano" |]
                 Midnight = "ũtukũ gatagatĩ"
                 Noon = "mũthenya gatagatĩ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "thaa {h}"); (5, "thaa {h} na ndagĩka ithano"); (10, "thaa {h} na ndagĩka ikũmi"); (15, "thaa {h} na ndagĩka ikũmi na ithano"); (20, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ"); (25, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano"); (30, "thaa {h} na nuthu"); (35, "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano"); (40, "thaa {h} na ndagĩka mĩrongo ĩna"); (45, "thaa {h} na ndagĩka mĩrongo ĩna na ithano"); (50, "thaa {h} na ndagĩka mĩrongo ĩtano"); (55, "thaa {h} na ndagĩka mĩrongo ĩtano na ithano") ]
             }
         ShortOverride =
             Some
@@ -2106,7 +2106,7 @@ let KK: TimeLocale =
                 Hours = [| "он екі"; "бір"; "екі"; "үш"; "төрт"; "бес"; "алты"; "жеті"; "сегіз"; "тоғыз"; "он"; "он бір" |]
                 Midnight = "түн ортасы"
                 Noon = "түс"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "бес past {h}"); (10, "он past {h}"); (15, "он бес past {h}"); (20, "жиырма past {h}"); (25, "жиырма бес past {h}"); (30, "отыз past {h}"); (35, "жиырма бес to {next_h}"); (40, "жиырма to {next_h}"); (45, "он бес to {next_h}"); (50, "он to {next_h}"); (55, "бес to {next_h}") ]
+                Patterns = Map.ofList [ (0, "сағат {h}"); (5, "{h} нөл бес"); (10, "{h} он"); (15, "{h} он бес"); (20, "{h} жиырма"); (25, "{h} жиырма бес"); (30, "{h} жарым"); (35, "{h} отыз бес"); (40, "{h} қырық"); (45, "{h} қырық бес"); (50, "{h} елу"); (55, "{h} елу бес") ]
             }
         ShortOverride =
             Some
@@ -2135,10 +2135,10 @@ let KL: TimeLocale =
         Code = "kl"
         Clock =
             {
-                Hours = [| "akunneq marluk"; "ataaseq"; "marluk"; "pingasut"; "sisamat"; "tallimat"; "arfinillit"; "arfineq-marluk"; "arfineq-pingasut"; "qulingiluat"; "qulit"; "akunneq ataaseq" |]
+                Hours = [| "aqqaneq-marluk"; "ataaseq"; "marluk"; "pingasut"; "sisamat"; "tallimat"; "arfinillit"; "arfineq-marluk"; "arfineq-pingasut"; "qulingiluat"; "qulit"; "aqqaneq-ataaseq" |]
                 Midnight = "unnuap qeqqa"
                 Noon = "ulloqeqqap qeqqa"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "nalunaaqutaq {h}"); (5, "{h} qaangiullugu minutsit tallimat"); (10, "{h} qaangiullugu minutsit qulit"); (15, "{h} qaangiullugu minutsit aqqaneq-tallimat"); (20, "{h} qaangiullugu minutsit marlunnik qulillit"); (25, "{h} qaangiullugu minutsit marlunnik qulillit tallimallu"); (30, "{h} affarlu"); (35, "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu"); (40, "{next_h} sioqqullugu minutsit marlunnik qulillit"); (45, "{next_h} sioqqullugu minutsit aqqaneq-tallimat"); (50, "{next_h} sioqqullugu minutsit qulit"); (55, "{next_h} sioqqullugu minutsit tallimat") ]
             }
         ShortOverride =
             Some
@@ -2170,7 +2170,7 @@ let KM: TimeLocale =
                 Hours = [| "ដប់ពីរ"; "មួយ"; "ពីរ"; "បី"; "បួន"; "ប្រាំ"; "ប្រាំមួយ"; "ប្រាំពីរ"; "ប្រាំបី"; "ប្រាំបួន"; "ដប់"; "ដប់មួយ" |]
                 Midnight = "កណ្ដាលអធ្រាត្រ"
                 Noon = "ថ្ងៃត្រង់"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ម៉ោង{h}"); (5, "ម៉ោង{h} ប្រាំនាទី"); (10, "ម៉ោង{h} ដប់នាទី"); (15, "ម៉ោង{h} ដប់ប្រាំនាទី"); (20, "ម៉ោង{h} ម្ភៃនាទី"); (25, "ម៉ោង{h} ម្ភៃប្រាំនាទី"); (30, "ម៉ោង{h}កន្លះ"); (35, "ម៉ោង{h} សាមសិបប្រាំនាទី"); (40, "ម៉ោង{h} សែសិបនាទី"); (45, "ម៉ោង{h} សែសិបប្រាំនាទី"); (50, "ម៉ោង{h} ហាសិបនាទី"); (55, "ម៉ោង{h} ហាសិបប្រាំនាទី") ]
             }
         ShortOverride =
             Some
@@ -2201,8 +2201,8 @@ let KN: TimeLocale =
             {
                 Hours = [| "ಹನ್ನೆರಡು"; "ಒಂದು"; "ಎರಡು"; "ಮೂರು"; "ನಾಲ್ಕು"; "ಐದು"; "ಆರು"; "ಏಳು"; "ಎಂಟು"; "ಒಂಬತ್ತು"; "ಹತ್ತು"; "ಹನ್ನೊಂದು" |]
                 Midnight = "ಮಧ್ಯರಾತ್ರಿ"
-                Noon = "ಮಧ್ಯಾಹ್ನ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Noon = "ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ"
+                Patterns = Map.ofList [ (0, "{h} ಗಂಟೆ"); (5, "{h} ಗಂಟೆ ಐದು ನಿಮಿಷ"); (10, "{h} ಗಂಟೆ ಹತ್ತು ನಿಮಿಷ"); (15, "{h} ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ"); (20, "{h} ಗಂಟೆ ಇಪ್ಪತ್ತು ನಿಮಿಷ"); (25, "{h} ಗಂಟೆ ಇಪ್ಪತ್ತೈದು ನಿಮಿಷ"); (30, "{h} ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ"); (35, "{h} ಗಂಟೆ ಮೂವತ್ತೈದು ನಿಮಿಷ"); (40, "{h} ಗಂಟೆ ನಲವತ್ತು ನಿಮಿಷ"); (45, "{h} ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ"); (50, "{h} ಗಂಟೆ ಐವತ್ತು ನಿಮಿಷ"); (55, "{h} ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ") ]
             }
         ShortOverride =
             Some
@@ -2263,10 +2263,10 @@ let KPE: TimeLocale =
         Code = "kpe"
         Clock =
             {
-                Hours = [| "puu lɔŋ"; "tɔŋ"; "feere"; "sawa"; "naŋ"; "lɔɔlu"; "mɛi da tɔŋ"; "mɛi da feere"; "mɛi da sawa"; "mɛi da naŋ"; "puu"; "puu da tɔŋ" |]
+                Hours = [| "puu da feere"; "tɔŋ"; "feere"; "sawa"; "naŋ"; "lɔɔlu"; "mɛi da tɔŋ"; "mɛi da feere"; "mɛi da sawa"; "mɛi da naŋ"; "puu"; "puu da tɔŋ" |]
                 Midnight = "kpindi kɔlɛ"
                 Noon = "tili-ma"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "awa {h}"); (5, "awa {h} da miniti lɔɔlu"); (10, "awa {h} da miniti puu"); (15, "awa {h} da miniti puu da lɔɔlu"); (20, "awa {h} da miniti puu feere"); (25, "awa {h} da miniti puu feere da lɔɔlu"); (30, "awa {h} da miniti puu sawa"); (35, "awa {h} da miniti puu sawa da lɔɔlu"); (40, "awa {h} da miniti puu naŋ"); (45, "awa {h} da miniti puu naŋ da lɔɔlu"); (50, "awa {h} da miniti puu lɔɔlu"); (55, "awa {h} da miniti puu lɔɔlu da lɔɔlu") ]
             }
         ShortOverride =
             Some
@@ -2330,7 +2330,7 @@ let KTU: TimeLocale =
                 Hours = [| "zomi na zole"; "mosi"; "zole"; "tatu"; "ya"; "tanu"; "sambanu"; "nsambwadi"; "nana"; "vwa"; "zomi"; "zomi na mosi" |]
                 Midnight = "midi ya butu"
                 Noon = "midi"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ngunga {h}"); (5, "ngunga {h} na miniti tanu"); (10, "ngunga {h} na miniti zomi"); (15, "ngunga {h} na miniti zomi na tanu"); (20, "ngunga {h} na miniti makumi zole"); (25, "ngunga {h} na miniti makumi zole na tanu"); (30, "ngunga {h} na ndambu"); (35, "ngunga {h} na miniti makumi tatu na tanu"); (40, "ngunga {h} na miniti makumi ya"); (45, "ngunga {h} na miniti makumi ya na tanu"); (50, "ngunga {h} na miniti makumi tanu"); (55, "ngunga {h} na miniti makumi tanu na tanu") ]
             }
         ShortOverride =
             Some
@@ -2362,7 +2362,7 @@ let KU: TimeLocale =
                 Hours = [| "diwanzdeh"; "yek"; "du"; "sê"; "çar"; "pênc"; "şeş"; "heft"; "heşt"; "neh"; "deh"; "yanzdeh" |]
                 Midnight = "nîvê şevê"
                 Noon = "nîvro"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "saet {h}"); (5, "{h} û pênc deqe"); (10, "{h} û deh deqe"); (15, "{h} û çaryek"); (20, "{h} û bîst deqe"); (25, "{h} û bîst û pênc deqe"); (30, "{h} û nîv"); (35, "{next_h} kêm bîst û pênc deqe"); (40, "{next_h} kêm bîst deqe"); (45, "{next_h} kêm çaryek"); (50, "{next_h} kêm deh deqe"); (55, "{next_h} kêm pênc deqe") ]
             }
         ShortOverride =
             Some
@@ -2391,10 +2391,10 @@ let KW: TimeLocale =
         Code = "kw"
         Clock =
             {
-                Hours = [| "12"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"; "10"; "11" |]
+                Hours = [| "dewdhek"; "unn"; "diw"; "teyr"; "peder"; "pymp"; "hwegh"; "seyth"; "eth"; "naw"; "deg"; "unnek" |]
                 Midnight = "hanter nos"
                 Noon = "hanter dydh"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} eur"); (5, "pymp mynysen wosa {h}"); (10, "deg mynysen wosa {h}"); (15, "kwarter wosa {h}"); (20, "ugens mynysen wosa {h}"); (25, "pymp mynysen warn ugens wosa {h}"); (30, "hanter wosa {h}"); (35, "pymp mynysen warn ugens dhe {next_h}"); (40, "ugens mynysen dhe {next_h}"); (45, "kwarter dhe {next_h}"); (50, "deg mynysen dhe {next_h}"); (55, "pymp mynysen dhe {next_h}") ]
             }
         ShortOverride =
             Some
@@ -2426,7 +2426,7 @@ let KY: TimeLocale =
                 Hours = [| "он эки"; "бир"; "эки"; "үч"; "төрт"; "беш"; "алты"; "жети"; "сегиз"; "тогуз"; "он"; "он бир" |]
                 Midnight = "түн ортосу"
                 Noon = "түш"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "саат {h}"); (5, "{h} нөл беш"); (10, "{h} он"); (15, "{h} он беш"); (20, "{h} жыйырма"); (25, "{h} жыйырма беш"); (30, "{h} жарым"); (35, "{h} отуз беш"); (40, "{h} кырк"); (45, "{h} кырк беш"); (50, "{h} элүү"); (55, "{h} элүү беш") ]
             }
         ShortOverride =
             Some
@@ -2487,10 +2487,10 @@ let LG: TimeLocale =
         Code = "lg"
         Clock =
             {
-                Hours = [| "kkumi na bbiri"; "emu"; "bbiri"; "ssatu"; "nnya"; "ttaano"; "mukaaga"; "musanvu"; "munaana"; "mwenda"; "kkumi"; "kkumi na emu" |]
+                Hours = [| "mukaaga"; "musanvu"; "munaana"; "mwenda"; "kkumi"; "kkumi n'emu"; "kkumi n'ebbiri"; "emu"; "bbiri"; "ssatu"; "nnya"; "ttaano" |]
                 Midnight = "ekiro eky'omu ttumbi"
                 Noon = "ettuntu"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "essaawa {h}"); (5, "essaawa {h} n'eddakiika ttaano"); (10, "essaawa {h} n'eddakiika kkumi"); (15, "essaawa {h} n'eddakiika kkumi na ttaano"); (20, "essaawa {h} n'eddakiika abiri"); (25, "essaawa {h} n'eddakiika abiri mu ttaano"); (30, "essaawa {h} n'ekitundu"); (35, "essaawa {h} n'eddakiika asatu mu ttaano"); (40, "essaawa {h} n'eddakiika ana"); (45, "essaawa {h} n'eddakiika ana mu ttaano"); (50, "essaawa {h} n'eddakiika ataano"); (55, "essaawa {h} n'eddakiika ataano mu ttaano") ]
             }
         ShortOverride =
             Some
@@ -2520,9 +2520,9 @@ let LN: TimeLocale =
         Clock =
             {
                 Hours = [| "zómi na míbalé"; "mɔ̌kɔ́"; "míbalé"; "mísáto"; "mínéi"; "mítáno"; "motóba"; "nsambo"; "mwambe"; "libwá"; "zómi"; "zómi na mɔ̌kɔ́" |]
-                Midnight = "mpɔ́kwa"
-                Noon = "ntɔ́ngɔ́"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Midnight = "midí ya butú"
+                Noon = "midí"
+                Patterns = Map.ofList [ (0, "ngonga ya {h}"); (5, "ngonga ya {h} na miniti mítáno"); (10, "ngonga ya {h} na miniti zómi"); (15, "ngonga ya {h} na miniti zómi na mítáno"); (20, "ngonga ya {h} na miniti ntúkú míbalé"); (25, "ngonga ya {h} na miniti ntúkú míbalé na mítáno"); (30, "ngonga ya {h} na ndámbo"); (35, "ngonga ya {h} na miniti ntúkú mísáto na mítáno"); (40, "ngonga ya {h} na miniti ntúkú mínéi"); (45, "ngonga ya {h} na miniti ntúkú mínéi na mítáno"); (50, "ngonga ya {h} na miniti ntúkú mítáno"); (55, "ngonga ya {h} na miniti ntúkú mítáno na mítáno") ]
             }
         ShortOverride =
             Some
@@ -2554,7 +2554,7 @@ let LO: TimeLocale =
                 Hours = [| "ສິບສອງ"; "ໜຶ່ງ"; "ສອງ"; "ສາມ"; "ສີ່"; "ຫ້າ"; "ຫົກ"; "ເຈັດ"; "ແປດ"; "ເກົ້າ"; "ສິບ"; "ສິບເອັດ" |]
                 Midnight = "ທ່ຽງຄືນ"
                 Noon = "ທ່ຽງ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}ໂມງ"); (5, "{h}ໂມງ ຫ້ານາທີ"); (10, "{h}ໂມງ ສິບນາທີ"); (15, "{h}ໂມງ ສິບຫ້ານາທີ"); (20, "{h}ໂມງ ຊາວນາທີ"); (25, "{h}ໂມງ ຊາວຫ້ານາທີ"); (30, "{h}ໂມງເຄິ່ງ"); (35, "{h}ໂມງ ສາມສິບຫ້ານາທີ"); (40, "{h}ໂມງ ສີ່ສິບນາທີ"); (45, "{h}ໂມງ ສີ່ສິບຫ້ານາທີ"); (50, "{h}ໂມງ ຫ້າສິບນາທີ"); (55, "{h}ໂມງ ຫ້າສິບຫ້ານາທີ") ]
             }
         ShortOverride =
             Some
@@ -2615,10 +2615,10 @@ let LUO: TimeLocale =
         Code = "luo"
         Clock =
             {
-                Hours = [| "apar gi ariyo"; "achiel"; "ariyo"; "adek"; "ang'wen"; "abich"; "auchiel"; "abiriyo"; "aboro"; "ochiko"; "apar"; "apar gi achiel" |]
+                Hours = [| "auchiel"; "abiriyo"; "aboro"; "ochiko"; "apar"; "apar gachiel"; "apar gariyo"; "achiel"; "ariyo"; "adek"; "ang'wen"; "abich" |]
                 Midnight = "dier otieno"
                 Noon = "odiechieng' tir"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "saa {h}"); (5, "saa {h} gi dakika abich"); (10, "saa {h} gi dakika apar"); (15, "saa {h} gi dakika apar gabich"); (20, "saa {h} gi dakika piero ariyo"); (25, "saa {h} gi dakika piero ariyo gabich"); (30, "saa {h} gi nus"); (35, "saa {h} gi dakika piero adek gabich"); (40, "saa {h} gi dakika piero ang'wen"); (45, "saa {h} gi dakika piero ang'wen gabich"); (50, "saa {h} gi dakika piero abich"); (55, "saa {h} gi dakika piero abich gabich") ]
             }
         ShortOverride =
             Some
@@ -2679,10 +2679,10 @@ let MAM: TimeLocale =
         Code = "mam"
         Clock =
             {
-                Hours = [| "kab'laj"; "jun"; "kab'"; "oxe"; "kyaje"; "jwe'"; "qaq"; "wuq"; "wajxaq"; "b'alaj"; "laj"; "junlaj" |]
+                Hours = [| "kab'laj"; "jun"; "kab'"; "oxe"; "kyaje"; "jwe'"; "qaq"; "wuq"; "wajxaq"; "b'elaj"; "laj"; "junlaj" |]
                 Midnight = "nik' aq'b'il"
                 Noon = "nik' q'ij"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} or"); (5, "{h} or tuk' jwe' minut"); (10, "{h} or tuk' laj minut"); (15, "{h} or tuk' o'laj minut"); (20, "{h} or tuk' winqan minut"); (25, "{h} or tuk' jwe' toj ka'wnaq minut"); (30, "{h} or tuk' nik'"); (35, "{h} or tuk' o'laj toj ka'wnaq minut"); (40, "{h} or tuk' ka'wnaq minut"); (45, "{h} or tuk' jwe' toj oxk'al minut"); (50, "{h} or tuk' laj toj oxk'al minut"); (55, "{h} or tuk' o'laj toj oxk'al minut") ]
             }
         ShortOverride =
             Some
@@ -2711,10 +2711,10 @@ let MEN: TimeLocale =
         Code = "men"
         Clock =
             {
-                Hours = [| "pu wɛlɛ"; "yila"; "fele"; "sawa"; "nani"; "lɔlu"; "wɛita"; "wɔfela"; "wayakpa"; "taawu"; "pu"; "pu mahu yila" |]
+                Hours = [| "pu mahu fele"; "yila"; "fele"; "sawa"; "nani"; "lɔlu"; "wɛita"; "wɔfela"; "wayakpa"; "taawu"; "pu"; "pu mahu yila" |]
                 Midnight = "kpindi gbɔyɔŋ"
                 Noon = "ndɔlei-ma"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "awa {h}"); (5, "awa {h} kɛ miniti lɔɔlu"); (10, "awa {h} kɛ miniti pu"); (15, "awa {h} kɛ miniti pu mahu lɔɔlu"); (20, "awa {h} kɛ miniti nuu yila gboyongo"); (25, "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu"); (30, "awa {h} kɛ miniti nuu yila gboyongo mahu pu"); (35, "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu"); (40, "awa {h} kɛ miniti nuu fele gboyongo"); (45, "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu"); (50, "awa {h} kɛ miniti nuu fele gboyongo mahu pu"); (55, "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu") ]
             }
         ShortOverride =
             Some
@@ -2743,10 +2743,10 @@ let MFE: TimeLocale =
         Code = "mfe"
         Clock =
             {
-                Hours = [| "douz"; "enn"; "de"; "trwa"; "kat"; "senk"; "sis"; "set"; "wit"; "nef"; "dis"; "onz" |]
+                Hours = [| "douzer"; "enn er"; "dezer"; "trwazer"; "katrer"; "senker"; "sizer"; "seter"; "witer"; "never"; "dizer"; "onzer" |]
                 Midnight = "minwi"
                 Noon = "midi"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} senk"); (10, "{h} dis"); (15, "{h} ekar"); (20, "{h} vin"); (25, "{h} vennsenk"); (30, "{h} edmi"); (35, "{next_h} mwin vennsenk"); (40, "{next_h} mwin vin"); (45, "{next_h} mwin kar"); (50, "{next_h} mwin dis"); (55, "{next_h} mwin senk") ]
             }
         ShortOverride =
             Some
@@ -2778,7 +2778,7 @@ let MG: TimeLocale =
                 Hours = [| "roa ambin'ny folo"; "iray"; "roa"; "telo"; "efatra"; "dimy"; "enina"; "fito"; "valo"; "sivy"; "folo"; "iraika ambin'ny folo" |]
                 Midnight = "misasakalina"
                 Noon = "atoandro"
-                Patterns = Map.ofList [ (0, "{h} ora"); (5, "{h} sy dimy minitra"); (10, "{h} sy folo minitra"); (15, "{h} sy fahefatra"); (20, "{h} sy roapolo minitra"); (25, "{h} sy dimy amby roapolo minitra"); (30, "{h} sy sasany"); (35, "dimy amby roapolo minitra alohan'ny {next_h}"); (40, "roapolo minitra alohan'ny {next_h}"); (45, "fahefatra alohan'ny {next_h}"); (50, "folo minitra alohan'ny {next_h}"); (55, "dimy minitra alohan'ny {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} ora"); (5, "{h} ora sy dimy minitra"); (10, "{h} ora sy folo minitra"); (15, "{h} ora sy fahefany"); (20, "{h} ora sy roapolo minitra"); (25, "{h} ora sy dimy amby roapolo minitra"); (30, "{h} ora sy sasany"); (35, "{next_h} ora latsaka dimy amby roapolo minitra"); (40, "{next_h} ora latsaka roapolo minitra"); (45, "{next_h} ora latsaka fahefany"); (50, "{next_h} ora latsaka folo minitra"); (55, "{next_h} ora latsaka dimy minitra") ]
             }
         ShortOverride =
             Some
@@ -2842,7 +2842,7 @@ let MK: TimeLocale =
                 Hours = [| "дванаесет"; "еден"; "два"; "три"; "четири"; "пет"; "шест"; "седум"; "осум"; "девет"; "десет"; "единаесет" |]
                 Midnight = "полноќ"
                 Noon = "пладне"
-                Patterns = Map.ofList [ (0, "{h} часа"); (5, "пет po {h}"); (10, "десет po {h}"); (15, "петнаесет po {h}"); (20, "дваесет po {h}"); (25, "дваесет и пет po {h}"); (30, "триесет po {h}"); (35, "дваесет и пет do {next_h}"); (40, "дваесет do {next_h}"); (45, "петнаесет do {next_h}"); (50, "десет do {next_h}"); (55, "пет do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} часот"); (5, "{h} и пет"); (10, "{h} и десет"); (15, "{h} и петнаесет"); (20, "{h} и дваесет"); (25, "{h} и дваесет и пет"); (30, "{h} и пол"); (35, "дваесет и пет до {next_h}"); (40, "дваесет до {next_h}"); (45, "петнаесет до {next_h}"); (50, "десет до {next_h}"); (55, "пет до {next_h}") ]
             }
         ShortOverride =
             Some
@@ -2871,10 +2871,10 @@ let ML: TimeLocale =
         Code = "ml"
         Clock =
             {
-                Hours = [| "പന്ത്രണ്ട്"; "ഒന്ന്"; "രണ്ട്"; "മൂന്ന്"; "നാല്"; "അഞ്ച്"; "ആറ്"; "ഏഴ്"; "എട്ട്"; "ഒമ്പത്"; "പത്ത്"; "പതിനൊന്ന്" |]
+                Hours = [| "പന്ത്രണ്ട"; "ഒന്ന"; "രണ്ട"; "മൂന്ന"; "നാല"; "അഞ്ച"; "ആറ"; "ഏഴ"; "എട്ട"; "ഒമ്പത"; "പത്ത"; "പതിനൊന്ന" |]
                 Midnight = "അർദ്ധരാത്രി"
                 Noon = "ഉച്ച"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}് മണി"); (5, "{h}് മണി അഞ്ച് മിനിറ്റ്"); (10, "{h}് മണി പത്ത് മിനിറ്റ്"); (15, "{h}േകാൽ"); (20, "{h}് മണി ഇരുപത് മിനിറ്റ്"); (25, "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്"); (30, "{h}ര"); (35, "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്"); (40, "{h}് മണി നാൽപ്പത് മിനിറ്റ്"); (45, "{h}േമുക്കാൽ"); (50, "{h}് മണി അമ്പത് മിനിറ്റ്"); (55, "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്") ]
             }
         ShortOverride =
             Some
@@ -2903,10 +2903,10 @@ let MN: TimeLocale =
         Code = "mn"
         Clock =
             {
-                Hours = [| "арван хоёр"; "нэг"; "хоёр"; "гурав"; "дөрөв"; "тав"; "зургаа"; "долоо"; "найм"; "ес"; "арав"; "арван нэг" |]
+                Hours = [| "арван хоёр"; "нэг"; "хоёр"; "гурван"; "дөрвөн"; "таван"; "зургаан"; "долоон"; "найман"; "есөн"; "арван"; "арван нэгэн" |]
                 Midnight = "шөнө дунд"
                 Noon = "үд дунд"
-                Patterns = Map.ofList [ (0, "{h} цаг"); (5, "{h} цаг {m} минут"); (10, "{h} цаг {m} минут"); (15, "{h} цаг {m} минут"); (20, "{h} цаг {m} минут"); (25, "{h} цаг {m} минут"); (30, "{h} цаг {m} минут"); (35, "{h} цаг {m} минут"); (40, "{h} цаг {m} минут"); (45, "{h} цаг {m} минут"); (50, "{h} цаг {m} минут"); (55, "{h} цаг {m} минут") ]
+                Patterns = Map.ofList [ (0, "{h} цаг"); (5, "{h} цаг таван минут"); (10, "{h} цаг арван минут"); (15, "{h} цаг арван таван минут"); (20, "{h} цаг хорин минут"); (25, "{h} цаг хорин таван минут"); (30, "{h} цаг хагас"); (35, "{h} цаг гучин таван минут"); (40, "{h} цаг дөчин минут"); (45, "{h} цаг дөчин таван минут"); (50, "{h} цаг тавин минут"); (55, "{h} цаг тавин таван минут") ]
             }
         ShortOverride =
             Some
@@ -2935,10 +2935,10 @@ let MNK: TimeLocale =
         Code = "mnk"
         Clock =
             {
-                Hours = [| "tan ning fula"; "kiliŋ"; "fula"; "saba"; "naani"; "luulu"; "wɔɔrɔ"; "wolonfila"; "sey"; "kɔnɔntɔ"; "taŋ"; "taŋ ning kiliŋ" |]
+                Hours = [| "taŋ niŋ fula"; "kiliŋ"; "fula"; "saba"; "naani"; "luulu"; "wɔɔrɔ"; "wolonfila"; "sey"; "kɔnɔntɔ"; "taŋ"; "taŋ niŋ kiliŋ" |]
                 Midnight = "sutu-tili-laŋ"
                 Noon = "tili-konto"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "talaŋ {h}"); (5, "talaŋ {h} aniŋ miniti luulu"); (10, "talaŋ {h} aniŋ miniti taŋ"); (15, "talaŋ {h} aniŋ miniti taŋ niŋ luulu"); (20, "talaŋ {h} aniŋ miniti muwaŋ"); (25, "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu"); (30, "talaŋ {h} aniŋ talantee"); (35, "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu"); (40, "talaŋ {h} aniŋ miniti taŋ naani"); (45, "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu"); (50, "talaŋ {h} aniŋ miniti taŋ luulu"); (55, "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu") ]
             }
         ShortOverride =
             Some
@@ -2967,10 +2967,10 @@ let MOS: TimeLocale =
         Code = "mos"
         Clock =
             {
-                Hours = [| "piig la a yiibu"; "a yembre"; "a yiibu"; "a tãabo"; "a naase"; "a nu"; "a yoobe"; "a yopoe"; "a niini"; "a wae"; "piiga"; "piig la a yembre" |]
+                Hours = [| "lɛɛr piig la a yiibu"; "lɛɛr a yembre"; "lɛɛr a yiibu"; "lɛɛr a tãabo"; "lɛɛr a naase"; "lɛɛr a nu"; "lɛɛr a yoobe"; "lɛɛr a yopoe"; "lɛɛr a nii"; "lɛɛr a wae"; "lɛɛr piiga"; "lɛɛr piig la a yembre" |]
                 Midnight = "yʋng-vɩɩse"
                 Noon = "wĩntoog zabre"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} la minit a nu"); (10, "{h} la minit piiga"); (15, "{h} la minit piig la a nu"); (20, "{h} la minit pisi"); (25, "{h} la minit pisi la a nu"); (30, "{h} la pʋɩ-sʋka"); (35, "{h} la minit pis-tã la a nu"); (40, "{h} la minit pis-naase"); (45, "{h} la minit pis-naase la a nu"); (50, "{h} la minit pis-nu"); (55, "{h} la minit pis-nu la a nu") ]
             }
         ShortOverride =
             Some
@@ -3002,7 +3002,7 @@ let MR: TimeLocale =
                 Hours = [| "बारा"; "एक"; "दोन"; "तीन"; "चार"; "पाच"; "सहा"; "सात"; "आठ"; "नऊ"; "दहा"; "अकरा" |]
                 Midnight = "मध्यरात्र"
                 Noon = "दुपार"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} वाजता"); (5, "{h} वाजून पाच मिनिटे"); (10, "{h} वाजून दहा मिनिटे"); (15, "सव्वा {h}"); (20, "{h} वाजून वीस मिनिटे"); (25, "{h} वाजून पंचवीस मिनिटे"); (30, "{h} वाजून तीस मिनिटे"); (35, "{next_h} वाजायला पंचवीस मिनिटे"); (40, "{next_h} वाजायला वीस मिनिटे"); (45, "पावणे {next_h}"); (50, "{next_h} वाजायला दहा मिनिटे"); (55, "{next_h} वाजायला पाच मिनिटे") ]
             }
         ShortOverride =
             Some
@@ -3034,7 +3034,7 @@ let MS: TimeLocale =
                 Hours = [| "dua belas"; "satu"; "dua"; "tiga"; "empat"; "lima"; "enam"; "tujuh"; "lapan"; "sembilan"; "sepuluh"; "sebelas" |]
                 Midnight = "tengah malam"
                 Noon = "tengah hari"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "lima lewat {h}"); (10, "sepuluh lewat {h}"); (15, "suku lewat {h}"); (20, "dua puluh lewat {h}"); (25, "dua puluh lima lewat {h}"); (30, "setengah lewat {h}"); (35, "dua puluh lima menjelang {next_h}"); (40, "dua puluh menjelang {next_h}"); (45, "suku menjelang {next_h}"); (50, "sepuluh menjelang {next_h}"); (55, "lima menjelang {next_h}") ]
+                Patterns = Map.ofList [ (0, "pukul {h}"); (5, "pukul {h} lima minit"); (10, "pukul {h} sepuluh minit"); (15, "pukul {h} suku"); (20, "pukul {h} dua puluh minit"); (25, "pukul {h} dua puluh lima minit"); (30, "pukul {h} setengah"); (35, "pukul {next_h} kurang dua puluh lima minit"); (40, "pukul {next_h} kurang dua puluh minit"); (45, "pukul {next_h} kurang suku"); (50, "pukul {next_h} kurang sepuluh minit"); (55, "pukul {next_h} kurang lima minit") ]
             }
         ShortOverride =
             Some
@@ -3063,10 +3063,10 @@ let MT: TimeLocale =
         Code = "mt"
         Clock =
             {
-                Hours = [| "tnax"; "waħda"; "tnejn"; "tlieta"; "erbgħa"; "ħamsa"; "sitta"; "sebgħa"; "tmienja"; "disgħa"; "għaxra"; "ħdax" |]
-                Midnight = "nofsinhar"
+                Hours = [| "it-tnax"; "is-siegħa"; "is-sagħtejn"; "it-tlieta"; "l-erbgħa"; "il-ħamsa"; "is-sitta"; "is-sebgħa"; "it-tmienja"; "id-disgħa"; "l-għaxra"; "il-ħdax" |]
+                Midnight = "nofsillejl"
                 Noon = "nofsinhar"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} u ħamsa"); (10, "{h} u għaxra"); (15, "{h} u kwart"); (20, "{h} u għoxrin"); (25, "{h} u ħamsa u għoxrin"); (30, "{h} u nofs"); (35, "{next_h} neqsin ħamsa u għoxrin"); (40, "{next_h} neqsin għoxrin"); (45, "{next_h} neqsin kwart"); (50, "{next_h} neqsin għaxra"); (55, "{next_h} neqsin ħamsa") ]
             }
         ShortOverride =
             Some
@@ -3098,7 +3098,7 @@ let MY: TimeLocale =
                 Hours = [| "ဆယ့်နှစ်"; "တစ်"; "နှစ်"; "သုံး"; "လေး"; "ငါး"; "ခြောက်"; "ခုနစ်"; "ရှစ်"; "ကိုး"; "ဆယ်"; "ဆယ့်တစ်" |]
                 Midnight = "သန်းခေါင်"
                 Noon = "မွန်းတည့်"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}နာရီ"); (5, "{h}နာရီ ငါးမိနစ်"); (10, "{h}နာရီ ဆယ်မိနစ်"); (15, "{h}နာရီ ဆယ့်ငါးမိနစ်"); (20, "{h}နာရီ နှစ်ဆယ်မိနစ်"); (25, "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်"); (30, "{h}နာရီခွဲ"); (35, "{h}နာရီ သုံးဆယ့်ငါးမိနစ်"); (40, "{h}နာရီ လေးဆယ်မိနစ်"); (45, "{h}နာရီ လေးဆယ့်ငါးမိနစ်"); (50, "{h}နာရီ ငါးဆယ်မိနစ်"); (55, "{h}နာရီ ငါးဆယ့်ငါးမိနစ်") ]
             }
         ShortOverride =
             Some
@@ -3127,7 +3127,7 @@ let NB: TimeLocale =
         Code = "nb"
         Clock =
             {
-                Hours = [| "tolv"; "en"; "to"; "tre"; "fire"; "fem"; "seks"; "sju"; "åtte"; "ni"; "ti"; "elleve" |]
+                Hours = [| "tolv"; "ett"; "to"; "tre"; "fire"; "fem"; "seks"; "sju"; "åtte"; "ni"; "ti"; "elleve" |]
                 Midnight = "midnatt"
                 Noon = "middag"
                 Patterns = Map.ofList [ (0, "klokka {h}"); (5, "fem over {h}"); (10, "ti over {h}"); (15, "kvart over {h}"); (20, "tjue over {h}"); (25, "fem på halv {next_h}"); (30, "halv {next_h}"); (35, "fem over halv {next_h}"); (40, "tjue på {next_h}"); (45, "kvart på {next_h}"); (50, "ti på {next_h}"); (55, "fem på {next_h}") ]
@@ -3159,10 +3159,10 @@ let ND: TimeLocale =
         Code = "nd"
         Clock =
             {
-                Hours = [| "litshumi lambili"; "kunye"; "kubili"; "kuthathu"; "kune"; "kuhlanu"; "isithupha"; "isikhombisa"; "isitshiyangalombili"; "isitshiyangalolunye"; "litshumi"; "litshumi lanye" |]
+                Hours = [| "letshumi lambili"; "lokuqala"; "lesibili"; "lesithathu"; "lesine"; "lesihlanu"; "lesithupha"; "lesikhombisa"; "lesitshiyangalombili"; "lesitshiyangalolunye"; "letshumi"; "letshumi lanye" |]
                 Midnight = "phakathi kobusuku"
                 Noon = "emini"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ihola {h}"); (5, "ihola {h} lemizuzu emihlanu"); (10, "ihola {h} lemizuzu elitshumi"); (15, "ihola {h} lemizuzu elitshumi lanhlanu"); (20, "ihola {h} lemizuzu engamatshumi amabili"); (25, "ihola {h} lemizuzu engamatshumi amabili lanhlanu"); (30, "ihola {h} lengxenye"); (35, "ihola {h} lemizuzu engamatshumi amathathu lanhlanu"); (40, "ihola {h} lemizuzu engamatshumi amane"); (45, "ihola {h} lemizuzu engamatshumi amane lanhlanu"); (50, "ihola {h} lemizuzu engamatshumi amahlanu"); (55, "ihola {h} lemizuzu engamatshumi amahlanu lanhlanu") ]
             }
         ShortOverride =
             Some
@@ -3194,7 +3194,7 @@ let NE: TimeLocale =
                 Hours = [| "बाह्र"; "एक"; "दुई"; "तीन"; "चार"; "पाँच"; "छ"; "सात"; "आठ"; "नौ"; "दश"; "एघार" |]
                 Midnight = "मध्यरात"
                 Noon = "मध्यान्ह"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} बजे"); (5, "{h} बजेर पाँच मिनेट"); (10, "{h} बजेर दश मिनेट"); (15, "सवा {h} बजे"); (20, "{h} बजेर बीस मिनेट"); (25, "{h} बजेर पच्चीस मिनेट"); (30, "{h} बजेर तीस मिनेट"); (35, "{next_h} बज्न पच्चीस मिनेट बाँकी"); (40, "{next_h} बज्न बीस मिनेट बाँकी"); (45, "पौने {next_h} बजे"); (50, "{next_h} बज्न दश मिनेट बाँकी"); (55, "{next_h} बज्न पाँच मिनेट बाँकी") ]
             }
         ShortOverride =
             Some
@@ -3226,7 +3226,7 @@ let NG: TimeLocale =
                 Hours = [| "omulongo nambali"; "imwe"; "mbali"; "ndatu"; "ne"; "ntano"; "hamano"; "heyali"; "hetatu"; "omugoyi"; "omulongo"; "omulongo nimwe" |]
                 Midnight = "onguloshi pakati"
                 Noon = "omutenya"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "otundi {h}"); (5, "otundi {h} noominute ntano"); (10, "otundi {h} noominute omulongo"); (15, "otundi {h} noominute omulongo nantano"); (20, "otundi {h} noominute omilongo mbali"); (25, "otundi {h} noominute omilongo mbali nantano"); (30, "otundi {h} netata"); (35, "otundi {h} noominute omilongo ndatu nantano"); (40, "otundi {h} noominute omilongo ne"); (45, "otundi {h} noominute omilongo ne nantano"); (50, "otundi {h} noominute omilongo ntano"); (55, "otundi {h} noominute omilongo ntano nantano") ]
             }
         ShortOverride =
             Some
@@ -3257,8 +3257,8 @@ let NL: TimeLocale =
             {
                 Hours = [| "twaalf"; "een"; "twee"; "drie"; "vier"; "vijf"; "zes"; "zeven"; "acht"; "negen"; "tien"; "elf" |]
                 Midnight = "middernacht"
-                Noon = "middag"
-                Patterns = Map.ofList [ (0, "{h} uur"); (5, "vijf over {h}"); (10, "tien over {h}"); (15, "kwart over {h}"); (20, "twintig over {h}"); (25, "vijf voor half {next_h}"); (30, "half {next_h}"); (35, "vijf over half {next_h}"); (40, "twintig voor {next_h}"); (45, "kwart voor {next_h}"); (50, "tien voor {next_h}"); (55, "vijf voor {next_h}") ]
+                Noon = "twaalf uur 's middags"
+                Patterns = Map.ofList [ (0, "{h} uur"); (5, "vijf over {h}"); (10, "tien over {h}"); (15, "kwart over {h}"); (20, "tien voor half {next_h}"); (25, "vijf voor half {next_h}"); (30, "half {next_h}"); (35, "vijf over half {next_h}"); (40, "tien over half {next_h}"); (45, "kwart voor {next_h}"); (50, "tien voor {next_h}"); (55, "vijf voor {next_h}") ]
             }
         ShortOverride =
             Some
@@ -3287,10 +3287,10 @@ let NR: TimeLocale =
         Code = "nr"
         Clock =
             {
-                Hours = [| "itshumi lambili"; "kunye"; "kubili"; "kuthathu"; "kune"; "kuhlanu"; "isithupha"; "isikhombisa"; "isitshiyagalombili"; "isitshiyagalolunye"; "itshumi"; "itshumi lanye" |]
+                Hours = [| "letjhumi nambili"; "lokuthoma"; "lesibili"; "lesithathu"; "lesine"; "lesihlanu"; "lesithandathu"; "lekhomba"; "lobunane"; "lethoba"; "letjhumi"; "letjhumi nanye" |]
                 Midnight = "phakathi kobusuku"
                 Noon = "emini"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ihora {h}"); (5, "ihora {h} nemizuzu emihlanu"); (10, "ihora {h} nemizuzu elitjhumi"); (15, "ihora {h} nemizuzu elitjhumi nanhlanu"); (20, "ihora {h} nemizuzu engamatjhumi amabili"); (25, "ihora {h} nemizuzu engamatjhumi amabili nanhlanu"); (30, "ihora {h} nesiquntu"); (35, "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu"); (40, "ihora {h} nemizuzu engamatjhumi amane"); (45, "ihora {h} nemizuzu engamatjhumi amane nanhlanu"); (50, "ihora {h} nemizuzu engamatjhumi amahlanu"); (55, "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu") ]
             }
         ShortOverride =
             Some
@@ -3319,10 +3319,10 @@ let NSO: TimeLocale =
         Code = "nso"
         Clock =
             {
-                Hours = [| "lesome pedi"; "tee"; "pedi"; "tharo"; "nne"; "hlano"; "tshela"; "šupa"; "seswai"; "senyane"; "lesome"; "lesome tee" |]
+                Hours = [| "lesomepedi"; "pele"; "bobedi"; "boraro"; "bone"; "bohlano"; "botshela"; "bošupa"; "seswai"; "senyane"; "lesome"; "lesometee" |]
                 Midnight = "bošego gare"
                 Noon = "mosegare"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "iri ya {h}"); (5, "iri ya {h} le metsotso ye mehlano"); (10, "iri ya {h} le metsotso ye lesome"); (15, "iri ya {h} le kotara"); (20, "iri ya {h} le metsotso ye masomepedi"); (25, "iri ya {h} le metsotso ye masomepedi-hlano"); (30, "iri ya {h} le seripagare"); (35, "iri ya {h} le metsotso ye masometharo-hlano"); (40, "iri ya {h} le metsotso ye masomenne"); (45, "iri ya {h} le metsotso ye masomenne-hlano"); (50, "iri ya {h} le metsotso ye masomehlano"); (55, "iri ya {h} le metsotso ye masomehlano-hlano") ]
             }
         ShortOverride =
             Some
@@ -3351,10 +3351,10 @@ let NUS: TimeLocale =
         Code = "nus"
         Clock =
             {
-                Hours = [| "thiäär ke rou"; "tök"; "rou"; "diäk"; "ŋuan"; "dhiëc"; "bäkɛl"; "dhorou"; "bät"; "kuɔn"; "thiäär"; "thiäär ku tök" |]
+                Hours = [| "wäl wi̱ rɛw"; "kɛl"; "rɛw"; "diɔk"; "ŋuaan"; "dhieec"; "bäkɛl"; "bäärɔw"; "bädäk"; "bäŋuan"; "wäl"; "wäl wi̱ kɛl" |]
                 Midnight = "wakɔ̈u"
                 Noon = "cäŋ kɔ̈k"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "thaar {h}"); (5, "thaar {h} kɛnɛ minit dhieec"); (10, "thaar {h} kɛnɛ minit wäl"); (15, "thaar {h} kɛnɛ minit wäl wi̱ dhieec"); (20, "thaar {h} kɛnɛ minit jiɛn rɛw"); (25, "thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec"); (30, "thaar {h} kɛnɛ minit jiɛn diɔk"); (35, "thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec"); (40, "thaar {h} kɛnɛ minit jiɛn ŋuaan"); (45, "thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec"); (50, "thaar {h} kɛnɛ minit jiɛn dhieec"); (55, "thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec") ]
             }
         ShortOverride =
             Some
@@ -3383,10 +3383,10 @@ let NY: TimeLocale =
         Code = "ny"
         Clock =
             {
-                Hours = [| "khumi ndi ziwiri"; "imodzi"; "ziwiri"; "zitatu"; "zinayi"; "zisanu"; "zisanu ndi chimodzi"; "zisanu ndi ziwiri"; "zisanu ndi zitatu"; "zisanu ndi zinayi"; "khumi"; "khumi ndi chimodzi" |]
+                Hours = [| "lakhumi ndi chiwiri"; "loyamba"; "lachiwiri"; "lachitatu"; "lachinayi"; "lachisanu"; "lachisanu ndi chimodzi"; "lachisanu ndi chiwiri"; "lachisanu ndi chitatu"; "lachisanu ndi chinayi"; "lakhumi"; "lakhumi ndi chimodzi" |]
                 Midnight = "pakati pausiku"
                 Noon = "usana"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ola {h}"); (5, "ola {h} ndi mphindi zisanu"); (10, "ola {h} ndi mphindi khumi"); (15, "ola {h} ndi mphindi khumi ndi zisanu"); (20, "ola {h} ndi mphindi makumi awiri"); (25, "ola {h} ndi mphindi makumi awiri ndi zisanu"); (30, "ola {h} ndi theka"); (35, "ola {h} ndi mphindi makumi atatu ndi zisanu"); (40, "ola {h} ndi mphindi makumi anayi"); (45, "ola {h} ndi mphindi makumi anayi ndi zisanu"); (50, "ola {h} ndi mphindi makumi asanu"); (55, "ola {h} ndi mphindi makumi asanu ndi zisanu") ]
             }
         ShortOverride =
             Some
@@ -3415,10 +3415,10 @@ let OM: TimeLocale =
         Code = "om"
         Clock =
             {
-                Hours = [| "kudha lama"; "tokko"; "lama"; "sadii"; "afur"; "shan"; "jaha"; "torba"; "saddeet"; "sagal"; "kudhan"; "kudha tokko" |]
+                Hours = [| "jaha"; "torba"; "saddeet"; "sagal"; "kudhan"; "kudha tokko"; "kudha lama"; "tokko"; "lama"; "sadii"; "afur"; "shan" |]
                 Midnight = "walakkii halkan"
                 Noon = "guyyaa walakkaa"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "sa'aatii {h}"); (5, "sa'aatii {h} fi daqiiqaa shan"); (10, "sa'aatii {h} fi daqiiqaa kudhan"); (15, "sa'aatii {h} fi daqiiqaa kudha shan"); (20, "sa'aatii {h} fi daqiiqaa digdama"); (25, "sa'aatii {h} fi daqiiqaa digdamii shan"); (30, "sa'aatii {h} fi walakkaa"); (35, "sa'aatii {h} fi daqiiqaa soddomii shan"); (40, "sa'aatii {h} fi daqiiqaa afurtama"); (45, "sa'aatii {h} fi daqiiqaa afurtamii shan"); (50, "sa'aatii {h} fi daqiiqaa shantama"); (55, "sa'aatii {h} fi daqiiqaa shantamii shan") ]
             }
         ShortOverride =
             Some
@@ -3450,7 +3450,7 @@ let OR: TimeLocale =
                 Hours = [| "ବାରଟା"; "ଗୋଟିଏ"; "ଦୁଇଟା"; "ତିନିଟା"; "ଚାରିଟା"; "ପାଞ୍ଚଟା"; "ଛଅଟା"; "ସାତଟା"; "ଆଠଟା"; "ନଅଟା"; "ଦଶଟା"; "ଏଗାରଟା" |]
                 Midnight = "ମଧ୍ୟରାତ୍ରି"
                 Noon = "ମଧ୍ୟାହ୍ନ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍"); (10, "{h} ବାଜି ଦଶ ମିନିଟ୍"); (15, "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍"); (20, "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍"); (25, "{h} ବାଜି ପଚିଶ ମିନିଟ୍"); (30, "{h} ବାଜି ତିରିଶ ମିନିଟ୍"); (35, "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍"); (40, "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍"); (45, "ପାଉଣେ {next_h}"); (50, "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍"); (55, "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍") ]
             }
         ShortOverride =
             Some
@@ -3482,7 +3482,7 @@ let PA: TimeLocale =
                 Hours = [| "ਬਾਰਾਂ"; "ਇੱਕ"; "ਦੋ"; "ਤਿੰਨ"; "ਚਾਰ"; "ਪੰਜ"; "ਛੇ"; "ਸੱਤ"; "ਅੱਠ"; "ਨੌਂ"; "ਦਸ"; "ਗਿਆਰਾਂ" |]
                 Midnight = "ਅੱਧੀ ਰਾਤ"
                 Noon = "ਦੁਪਹਿਰ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} ਵਜੇ"); (5, "{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ"); (10, "{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ"); (15, "ਸਵਾ {h} ਵਜੇ"); (20, "{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ"); (25, "{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ"); (30, "{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ"); (35, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ"); (40, "{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ"); (45, "ਪੌਣੇ {next_h} ਵਜੇ"); (50, "{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ"); (55, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ") ]
             }
         ShortOverride =
             Some
@@ -3514,7 +3514,7 @@ let PIS: TimeLocale =
                 Hours = [| "twelf"; "wan"; "tu"; "tri"; "foa"; "faev"; "sikis"; "seven"; "eit"; "naen"; "ten"; "eleven" |]
                 Midnight = "midonaet"
                 Noon = "midei"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} kilok"); (5, "faev minit pas {h}"); (10, "ten minit pas {h}"); (15, "kwata pas {h}"); (20, "twenti minit pas {h}"); (25, "twenti faev minit pas {h}"); (30, "haf pas {h}"); (35, "twenti faev minit tu {next_h}"); (40, "twenti minit tu {next_h}"); (45, "kwata tu {next_h}"); (50, "ten minit tu {next_h}"); (55, "faev minit tu {next_h}") ]
             }
         ShortOverride =
             Some
@@ -3546,7 +3546,7 @@ let PL: TimeLocale =
                 Hours = [| "dwunasta"; "pierwsza"; "druga"; "trzecia"; "czwarta"; "piąta"; "szósta"; "siódma"; "ósma"; "dziewiąta"; "dziesiąta"; "jedenasta" |]
                 Midnight = "północ"
                 Noon = "południe"
-                Patterns = Map.ofList [ (0, "{h}"); (5, "pięć po {h}"); (10, "dziesięć po {h}"); (15, "piętnaście po {h}"); (20, "dwadzieścia po {h}"); (25, "dwadzieścia pięć po {h}"); (30, "trzydzieści po {h}"); (35, "dwadzieścia pięć do {next_h}"); (40, "dwadzieścia do {next_h}"); (45, "piętnaście do {next_h}"); (50, "dziesięć do {next_h}"); (55, "pięć do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} pięć"); (10, "{h} dziesięć"); (15, "{h} piętnaście"); (20, "{h} dwadzieścia"); (25, "{h} dwadzieścia pięć"); (30, "{h} trzydzieści"); (35, "za dwadzieścia pięć {next_h}"); (40, "za dwadzieścia {next_h}"); (45, "za kwadrans {next_h}"); (50, "za dziesięć {next_h}"); (55, "za pięć {next_h}") ]
             }
         ShortOverride =
             Some
@@ -3575,10 +3575,10 @@ let POV: TimeLocale =
         Code = "pov"
         Clock =
             {
-                Hours = [| "dozi"; "un"; "dos"; "tres"; "kuatru"; "sinku"; "seis"; "seti"; "oitu"; "novi"; "des"; "onzi" |]
+                Hours = [| "dozi ora"; "un ora"; "dos ora"; "tres ora"; "kuatru ora"; "sinku ora"; "seis ora"; "seti ora"; "oitu ora"; "novi ora"; "des ora"; "onzi ora" |]
                 Midnight = "meia noti"
                 Noon = "meiu dia"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} i sinku"); (10, "{h} i des"); (15, "{h} i kinzi"); (20, "{h} i vinti"); (25, "{h} i vinti i sinku"); (30, "{h} i meiu"); (35, "{h} i trinta i sinku"); (40, "{h} i kuarenta"); (45, "{h} i kuarenta i sinku"); (50, "{h} i sinkuenta"); (55, "{h} i sinkuenta i sinku") ]
             }
         ShortOverride =
             Some
@@ -3607,10 +3607,10 @@ let PS: TimeLocale =
         Code = "ps"
         Clock =
             {
-                Hours = [| "دولس"; "یو"; "دوه"; "درې"; "څلور"; "پنځه"; "شپږ"; "اووه"; "اته"; "نهه"; "لس"; "یوولس" |]
+                Hours = [| "دولس بجې"; "یوه بجه"; "دوه بجې"; "درې بجې"; "څلور بجې"; "پنځه بجې"; "شپږ بجې"; "اووه بجې"; "اته بجې"; "نهه بجې"; "لس بجې"; "یوولس بجې" |]
                 Midnight = "نیمه شپه"
                 Noon = "غرمه"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} او پنځه دقیقې"); (10, "{h} او لس دقیقې"); (15, "{h} او پنځلس دقیقې"); (20, "{h} او شل دقیقې"); (25, "{h} او پنځه ویشت دقیقې"); (30, "{h} او دېرش دقیقې"); (35, "{h} او پنځه دېرش دقیقې"); (40, "{h} او څلوېښت دقیقې"); (45, "{h} او پنځه څلوېښت دقیقې"); (50, "{h} او پنځوس دقیقې"); (55, "{h} او پنځه پنځوس دقیقې") ]
             }
         ShortOverride =
             Some
@@ -3642,7 +3642,7 @@ let PT: TimeLocale =
                 Hours = [| "doze"; "uma"; "duas"; "três"; "quatro"; "cinco"; "seis"; "sete"; "oito"; "nove"; "dez"; "onze" |]
                 Midnight = "meia-noite"
                 Noon = "meio-dia"
-                Patterns = Map.ofList [ (0, "{h} horas"); (5, "{h} e cinco"); (10, "{h} e dez"); (15, "{h} e um quarto"); (20, "{h} e vinte"); (25, "{h} e vinte e cinco"); (30, "{h} e meia"); (35, "vinte e cinco para as {next_h}"); (40, "vinte para as {next_h}"); (45, "um quarto para as {next_h}"); (50, "dez para as {next_h}"); (55, "cinco para as {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} em ponto"); (5, "{h} e cinco"); (10, "{h} e dez"); (15, "{h} e um quarto"); (20, "{h} e vinte"); (25, "{h} e vinte e cinco"); (30, "{h} e meia"); (35, "vinte e cinco para as {next_h}"); (40, "vinte para as {next_h}"); (45, "um quarto para as {next_h}"); (50, "dez para as {next_h}"); (55, "cinco para as {next_h}") ]
             }
         ShortOverride =
             Some
@@ -3674,7 +3674,7 @@ let QU: TimeLocale =
                 Hours = [| "chunka iskayniyuq"; "huk"; "iskay"; "kimsa"; "tawa"; "pichqa"; "suqta"; "qanchis"; "pusaq"; "isqun"; "chunka"; "chunka hukniyuq" |]
                 Midnight = "chawpi tuta"
                 Noon = "chawpi p'unchaw"
-                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} pichqa"); (10, "{h} chunka"); (15, "{h} chunka pichqayuq"); (20, "{h} iskay chunka"); (25, "{h} iskay chunka pichqayuq"); (30, "{h} kimsa chunka"); (35, "{next_h} mana iskay chunka pichqayuq"); (40, "{next_h} mana iskay chunka"); (45, "{next_h} mana chunka pichqayuq"); (50, "{next_h} mana chunka"); (55, "{next_h} mana pichqa") ]
+                Patterns = Map.ofList [ (0, "{h} ura"); (5, "{h} ura pichqa"); (10, "{h} ura chunka"); (15, "{h} ura chunka pichqayuq"); (20, "{h} ura iskay chunka"); (25, "{h} ura iskay chunka pichqayuq"); (30, "{h} ura kimsa chunka"); (35, "{h} ura kimsa chunka pichqayuq"); (40, "{h} ura tawa chunka"); (45, "{h} ura tawa chunka pichqayuq"); (50, "{h} ura pichqa chunka"); (55, "{h} ura pichqa chunka pichqayuq") ]
             }
         ShortOverride =
             Some
@@ -3703,10 +3703,10 @@ let QUC: TimeLocale =
         Code = "quc"
         Clock =
             {
-                Hours = [| "kab'lajuj"; "jun"; "ka'i'"; "oxi'"; "kaji'"; "jo'"; "waqi'"; "wuqu'"; "wajxaqi'"; "b'eleji'"; "lajuj"; "julajuj" |]
+                Hours = [| "kab'lajuj"; "jun"; "keb'"; "oxib'"; "kajib'"; "job'"; "waqib'"; "wuqub'"; "wajxaqib'"; "b'elejeb'"; "lajuj"; "julajuj" |]
                 Midnight = "nik'aj aq'ab'"
                 Noon = "nik'aj q'ij"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} ramaj"); (5, "{h} ramaj job'"); (10, "{h} ramaj lajuj"); (15, "{h} ramaj olajuj"); (20, "{h} ramaj juwinaq"); (25, "{h} ramaj juwinaq job'"); (30, "{h} ramaj juwinaq lajuj"); (35, "{h} ramaj juwinaq olajuj"); (40, "{h} ramaj kawinaq"); (45, "{h} ramaj kawinaq job'"); (50, "{h} ramaj kawinaq lajuj"); (55, "{h} ramaj kawinaq olajuj") ]
             }
         ShortOverride =
             Some
@@ -3738,7 +3738,7 @@ let RO: TimeLocale =
                 Hours = [| "douăsprezece"; "unu"; "două"; "trei"; "patru"; "cinci"; "șase"; "șapte"; "opt"; "nouă"; "zece"; "unsprezece" |]
                 Midnight = "miezul nopții"
                 Noon = "amiază"
-                Patterns = Map.ofList [ (0, "{h} ore"); (5, "cinci peste {h}"); (10, "zece peste {h}"); (15, "un sfert peste {h}"); (20, "douăzeci peste {h}"); (25, "douăzeci și cinci peste {h}"); (30, "jumătate peste {h}"); (35, "douăzeci și cinci înainte de {next_h}"); (40, "douăzeci înainte de {next_h}"); (45, "un sfert înainte de {next_h}"); (50, "zece înainte de {next_h}"); (55, "cinci înainte de {next_h}") ]
+                Patterns = Map.ofList [ (0, "ora {h}"); (5, "{h} și cinci"); (10, "{h} și zece"); (15, "{h} și un sfert"); (20, "{h} și douăzeci"); (25, "{h} și douăzeci și cinci"); (30, "{h} și jumătate"); (35, "{next_h} fără douăzeci și cinci"); (40, "{next_h} fără douăzeci"); (45, "{next_h} fără un sfert"); (50, "{next_h} fără zece"); (55, "{next_h} fără cinci") ]
             }
         ShortOverride =
             Some
@@ -3770,7 +3770,7 @@ let RU: TimeLocale =
                 Hours = [| "двенадцать"; "час"; "два"; "три"; "четыре"; "пять"; "шесть"; "семь"; "восемь"; "девять"; "десять"; "одиннадцать" |]
                 Midnight = "полночь"
                 Noon = "полдень"
-                Patterns = Map.ofList [ (0, "{h} часа"); (5, "пять po {h}"); (10, "десять po {h}"); (15, "пятнадцать po {h}"); (20, "двадцать po {h}"); (25, "двадцать пять po {h}"); (30, "тридцать po {h}"); (35, "двадцать пять do {next_h}"); (40, "двадцать do {next_h}"); (45, "пятнадцать do {next_h}"); (50, "десять do {next_h}"); (55, "пять do {next_h}") ]
+                Patterns = Map.ofList [ (0, "ровно {h}"); (5, "{h} ноль пять"); (10, "{h} десять"); (15, "{h} пятнадцать"); (20, "{h} двадцать"); (25, "{h} двадцать пять"); (30, "{h} тридцать"); (35, "без двадцати пяти {next_h}"); (40, "без двадцати {next_h}"); (45, "без четверти {next_h}"); (50, "без десяти {next_h}"); (55, "без пяти {next_h}") ]
             }
         ShortOverride =
             Some
@@ -3799,10 +3799,10 @@ let RW: TimeLocale =
         Code = "rw"
         Clock =
             {
-                Hours = [| "cumi n'ebyiri"; "rimwe"; "ebyiri"; "eshatu"; "enye"; "eshanu"; "esheshatu"; "indwi"; "umunani"; "icyenda"; "icumi"; "cumi n'imwe" |]
-                Midnight = "igicuku"
-                Noon = "saa sita"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Hours = [| "sita"; "saba"; "munani"; "cyenda"; "kumi"; "kumi n'imwe"; "kumi n'ebyiri"; "moya"; "mbiri"; "tatu"; "ine"; "tanu" |]
+                Midnight = "saa sita z'ijoro"
+                Noon = "saa sita z'amanywa"
+                Patterns = Map.ofList [ (0, "saa {h}"); (5, "saa {h} n'iminota itanu"); (10, "saa {h} n'iminota icumi"); (15, "saa {h} n'iminota cumi n'itanu"); (20, "saa {h} n'iminota makumyabiri"); (25, "saa {h} n'iminota makumyabiri n'itanu"); (30, "saa {h} n'igice"); (35, "saa {h} n'iminota mirongo itatu n'itanu"); (40, "saa {h} n'iminota mirongo ine"); (45, "saa {h} n'iminota mirongo ine n'itanu"); (50, "saa {h} n'iminota mirongo itanu"); (55, "saa {h} n'iminota mirongo itanu n'itanu") ]
             }
         ShortOverride =
             Some
@@ -3831,10 +3831,10 @@ let SAR: TimeLocale =
         Code = "sar"
         Clock =
             {
-                Hours = [| "mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi"; "kɨ̀ndá"; "ɗìi"; "mùtá"; "sɔ̀"; "mɨ̀ndɨ̀"; "mɨ̀ndɨ̀ kɨ̀ndá"; "mɨ̀sá"; "mɨ̀ndɨ̀ mùtá"; "mɨ̀ndɨ̀ sɔ̀"; "mɔ̀ɔ́"; "mɔ̀ɔ́ kɨ̀ndá" |]
+                Hours = [| "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi"; "lɛɛr kɨ̀ndá"; "lɛɛr ɗìi"; "lɛɛr mùtá"; "lɛɛr sɔ̀"; "lɛɛr mɨ̀ndɨ̀"; "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá"; "lɛɛr mɨ̀sá"; "lɛɛr mɨ̀ndɨ̀ mùtá"; "lɛɛr mɨ̀ndɨ̀ sɔ̀"; "lɛɛr mɔ̀ɔ́"; "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá" |]
                 Midnight = "badɔ"
                 Noon = "mbɔr ndɔ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} kɨ̀ minít mɨ̀ndɨ̀"); (10, "{h} kɨ̀ minít mɔ̀ɔ́"); (15, "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"); (20, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi"); (25, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"); (30, "{h} kɩ̀ ndá̰ŋ"); (35, "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"); (40, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀"); (45, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"); (50, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀"); (55, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀") ]
             }
         ShortOverride =
             Some
@@ -3863,10 +3863,10 @@ let SD: TimeLocale =
         Code = "sd"
         Clock =
             {
-                Hours = [| "ٻارھ"; "ھڪ"; "ٻه"; "ٽي"; "چار"; "پنج"; "ڇھ"; "ست"; "اٺ"; "نائن"; "ڏھ"; "يارھ" |]
+                Hours = [| "ٻارهن"; "هڪ"; "ٻه"; "ٽي"; "چار"; "پنج"; "ڇهه"; "ست"; "اٺ"; "نوَ"; "ڏهه"; "يارهن" |]
                 Midnight = "اڌ رات"
                 Noon = "ٽپھر"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} وڳي"); (5, "{h} وڳي پنج منٽ"); (10, "{h} وڳي ڏهه منٽ"); (15, "سوا {h} وڳي"); (20, "{h} وڳي ويهه منٽ"); (25, "{h} وڳي پنجويهه منٽ"); (30, "{h} وڳي ٽيهه منٽ"); (35, "{next_h} وڳڻ ۾ پنجويهه منٽ"); (40, "{next_h} وڳڻ ۾ ويهه منٽ"); (45, "پوڻا {next_h} وڳي"); (50, "{next_h} وڳڻ ۾ ڏهه منٽ"); (55, "{next_h} وڳڻ ۾ پنج منٽ") ]
             }
         ShortOverride =
             Some
@@ -3895,10 +3895,10 @@ let SG: TimeLocale =
         Code = "sg"
         Clock =
             {
-                Hours = [| "bâlè-ûse"; "ôko"; "ûse"; "otâ"; "usïö"; "okü"; "ömënë"; "mbïrïmbïrï"; "mënâmbârâ"; "gonambâlâ"; "bâlè"; "bâlè na ôko" |]
+                Hours = [| "balë-ôko na ûse"; "ôko"; "ûse"; "otâ"; "usïö"; "okü"; "omanä"; "mbâsâmbârâ"; "miombe"; "gümbâyä"; "balë-ôko"; "balë-ôko na ôko" |]
                 Midnight = "gï na lögö"
                 Noon = "lâ nzönï"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ngbonga {h}"); (5, "ngbonga {h} na minüti okü"); (10, "ngbonga {h} na minüti balë-ôko"); (15, "ngbonga {h} na minüti balë-ôko na okü"); (20, "ngbonga {h} na minüti balë-ûse"); (25, "ngbonga {h} na minüti balë-ûse na okü"); (30, "ngbonga {h} na ndâmbo"); (35, "ngbonga {h} na minüti balë-otâ na okü"); (40, "ngbonga {h} na minüti balë-usïö"); (45, "ngbonga {h} na minüti balë-usïö na okü"); (50, "ngbonga {h} na minüti balë-okü"); (55, "ngbonga {h} na minüti balë-okü na okü") ]
             }
         ShortOverride =
             Some
@@ -3927,10 +3927,10 @@ let SHI: TimeLocale =
         Code = "shi"
         Clock =
             {
-                Hours = [| "12"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"; "10"; "11" |]
+                Hours = [| "ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"; "ⵜⵉⵙ ⵢⴰⵜ"; "ⵜⵉⵙ ⵙⵏⴰⵜ"; "ⵜⵉⵙ ⴽⵕⴰⵟⵟ"; "ⵜⵉⵙ ⴽⴽⵓⵥⵜ"; "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ"; "ⵜⵉⵙ ⵙⴹⵉⵙⵜ"; "ⵜⵉⵙ ⵙⴰⵜ"; "ⵜⵉⵙ ⵜⴰⵎⵜ"; "ⵜⵉⵙ ⵜⵥⴰⵜ"; "ⵜⵉⵙ ⵎⵔⴰⵡⵜ"; "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ" |]
                 Midnight = "ⵏⵚ ⵏ ⵉⴹ"
                 Noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ"); (10, "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ"); (15, "{h} ⴷ ⵔⵔⴱⵄ"); (20, "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"); (25, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"); (30, "{h} ⴷ ⵓⵣⴳⵏ"); (35, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"); (40, "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"); (45, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"); (50, "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"); (55, "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ") ]
             }
         ShortOverride =
             Some
@@ -3962,7 +3962,7 @@ let SHN: TimeLocale =
                 Hours = [| "သိပ်းသွင်"; "ၼိုင်ႈ"; "သွင်"; "သၢမ်"; "သီႇ"; "ႁႃႈ"; "ႁူၵ်း"; "ၸဵတ်း"; "ပႅတ်ႇ"; "ၵဝ်ႈ"; "သိပ်း"; "သိပ်းဢဵတ်း" |]
                 Midnight = "ၵၢင်ၶိုၼ်း"
                 Noon = "ၵၢင်ဝၼ်း"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}မူင်း"); (5, "{h}မူင်း ႁႃႈမိၼိတ်ႉ"); (10, "{h}မူင်း သိပ်းမိၼိတ်ႉ"); (15, "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ"); (20, "{h}မူင်း သၢဝ်းမိၼိတ်ႉ"); (25, "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ"); (30, "{h}မူင်းၶိုင်ႈ"); (35, "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ"); (40, "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ"); (45, "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ"); (50, "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ"); (55, "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ") ]
             }
         ShortOverride =
             Some
@@ -3994,7 +3994,7 @@ let SI: TimeLocale =
                 Hours = [| "දොළහ"; "එක"; "දෙක"; "තුන"; "හතර"; "පහ"; "හය"; "හත"; "අට"; "නවය"; "දහය"; "එකොළහ" |]
                 Midnight = "මධ්‍යම රාත්‍රිය"
                 Noon = "මධ්‍යාහ්නය"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}යි"); (5, "{h}යි විනාඩි පහයි"); (10, "{h}යි විනාඩි දහයයි"); (15, "{h}යි කාලයි"); (20, "{h}යි විනාඩි විස්සයි"); (25, "{h}යි විනාඩි විසිපහයි"); (30, "{h} හමාරයි"); (35, "{next_h}ට විනාඩි විසිපහයි"); (40, "{next_h}ට විනාඩි විස්සයි"); (45, "{next_h}ට කාලයි"); (50, "{next_h}ට විනාඩි දහයයි"); (55, "{next_h}ට විනාඩි පහයි") ]
             }
         ShortOverride =
             Some
@@ -4026,7 +4026,7 @@ let SK: TimeLocale =
                 Hours = [| "dvanásť"; "jedna"; "dve"; "tri"; "štyri"; "päť"; "šesť"; "sedem"; "osem"; "deväť"; "desať"; "jedenásť" |]
                 Midnight = "polnoc"
                 Noon = "poludnie"
-                Patterns = Map.ofList [ (0, "{h} hodín"); (5, "päť po {h}"); (10, "desať po {h}"); (15, "štvrť po {h}"); (20, "dvadsať po {h}"); (25, "dvadsať päť po {h}"); (30, "pol po {h}"); (35, "dvadsať päť do {next_h}"); (40, "dvadsať do {next_h}"); (45, "štvrť do {next_h}"); (50, "desať do {next_h}"); (55, "päť do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} nula päť"); (10, "{h} desať"); (15, "{h} pätnásť"); (20, "{h} dvadsať"); (25, "{h} dvadsaťpäť"); (30, "{h} tridsať"); (35, "o dvadsaťpäť minút {next_h}"); (40, "o dvadsať minút {next_h}"); (45, "o pätnásť minút {next_h}"); (50, "o desať minút {next_h}"); (55, "o päť minút {next_h}") ]
             }
         ShortOverride =
             Some
@@ -4058,7 +4058,7 @@ let SL: TimeLocale =
                 Hours = [| "dvanajst"; "ena"; "dve"; "tri"; "štiri"; "pet"; "šest"; "sedem"; "osem"; "devet"; "deset"; "enajst" |]
                 Midnight = "polnoč"
                 Noon = "poldne"
-                Patterns = Map.ofList [ (0, "{h} ura"); (5, "pet po {h}"); (10, "deset po {h}"); (15, "petnajst po {h}"); (20, "dvajset po {h}"); (25, "dvajset pet po {h}"); (30, "trideset po {h}"); (35, "dvajset pet do {next_h}"); (40, "dvajset do {next_h}"); (45, "petnajst do {next_h}"); (50, "deset do {next_h}"); (55, "pet do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "pet čez {h}"); (10, "deset čez {h}"); (15, "petnajst čez {h}"); (20, "dvajset čez {h}"); (25, "petindvajset čez {h}"); (30, "{h} trideset"); (35, "{h} petintrideset"); (40, "{h} štirideset"); (45, "{h} petinštirideset"); (50, "{h} petdeset"); (55, "{h} petinpetdeset") ]
             }
         ShortOverride =
             Some
@@ -4087,10 +4087,10 @@ let SN: TimeLocale =
         Code = "sn"
         Clock =
             {
-                Hours = [| "gumi nembiri"; "imwe"; "mbiri"; "nhatu"; "ina"; "shanu"; "nhanhatu"; "nomwe"; "sere"; "pfumbamwe"; "gumi"; "gumi neimwe" |]
-                Midnight = "usiku hwepakati"
+                Hours = [| "dzava gumi nembiri"; "yava imwe"; "dzava mbiri"; "dzava nhatu"; "dzava ina"; "dzava shanu"; "dzava nhanhatu"; "dzava nomwe"; "dzava sere"; "dzava pfumbamwe"; "dzava gumi"; "dzava gumi neimwe" |]
+                Midnight = "pakati peusiku"
                 Noon = "masikati"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} nemaminitsi mashanu"); (10, "{h} nemaminitsi gumi"); (15, "{h} nemaminitsi gumi nemashanu"); (20, "{h} nemaminitsi makumi maviri"); (25, "{h} nemaminitsi makumi maviri nemashanu"); (30, "{h} nehafu"); (35, "{h} nemaminitsi makumi matatu nemashanu"); (40, "{h} nemaminitsi makumi mana"); (45, "{h} nemaminitsi makumi mana nemashanu"); (50, "{h} nemaminitsi makumi mashanu"); (55, "{h} nemaminitsi makumi mashanu nemashanu") ]
             }
         ShortOverride =
             Some
@@ -4119,10 +4119,10 @@ let SNK: TimeLocale =
         Code = "snk"
         Clock =
             {
-                Hours = [| "tanmu fillo"; "baane"; "fillo"; "sikko"; "naaxato"; "karago"; "tunmu"; "ñerru"; "segu"; "kaburu"; "tanmu"; "tanmu baane" |]
+                Hours = [| "waxati tanmu do fillo"; "waxati baane"; "waxati fillo"; "waxati sikko"; "waxati naaxato"; "waxati karago"; "waxati tunmu"; "waxati ñerru"; "waxati segu"; "waxati kaburu"; "waxati tanmu"; "waxati tanmu do baane" |]
                 Midnight = "sulen noxo"
                 Noon = "tili seren"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} do miniti karago"); (10, "{h} do miniti tanmu"); (15, "{h} do miniti tanmu do karago"); (20, "{h} do miniti tanpille"); (25, "{h} do miniti tanpille do karago"); (30, "{h} do faabe"); (35, "{h} do miniti tanjikke do karago"); (40, "{h} do miniti tannaxate"); (45, "{h} do miniti tannaxate do karago"); (50, "{h} do miniti tankarage"); (55, "{h} do miniti tankarage do karago") ]
             }
         ShortOverride =
             Some
@@ -4151,10 +4151,10 @@ let SO: TimeLocale =
         Code = "so"
         Clock =
             {
-                Hours = [| "laba iyo toban"; "kow"; "laba"; "saddex"; "afar"; "shan"; "lix"; "toddoba"; "siddeed"; "sagaal"; "toban"; "kow iyo toban" |]
+                Hours = [| "laba iyo tobanka"; "kowda"; "labada"; "saddexda"; "afarta"; "shanta"; "lixda"; "toddobada"; "siddeedda"; "sagaasha"; "tobanka"; "kow iyo tobanka" |]
                 Midnight = "saqda dhexe"
                 Noon = "duhur"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} iyo shan"); (10, "{h} iyo toban"); (15, "{h} iyo rubuc"); (20, "{h} iyo labaatan"); (25, "{h} iyo shan iyo labaatan"); (30, "{h} iyo bar"); (35, "{next_h} shan iyo labaatan la'"); (40, "{next_h} labaatan la'"); (45, "{next_h} rubuc la'"); (50, "{next_h} toban la'"); (55, "{next_h} shan la'") ]
             }
         ShortOverride =
             Some
@@ -4186,7 +4186,7 @@ let SQ: TimeLocale =
                 Hours = [| "dymbëdhjetë"; "një"; "dy"; "tre"; "katër"; "pesë"; "gjashtë"; "shtatë"; "tetë"; "nëntë"; "dhjetë"; "njëmbëdhjetë" |]
                 Midnight = "mesnata"
                 Noon = "mesdita"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "pesë past {h}"); (10, "dhjetë past {h}"); (15, "një çerek past {h}"); (20, "njëzet past {h}"); (25, "njëzet e pesë past {h}"); (30, "gjysma past {h}"); (35, "njëzet e pesë to {next_h}"); (40, "njëzet to {next_h}"); (45, "një çerek to {next_h}"); (50, "dhjetë to {next_h}"); (55, "pesë to {next_h}") ]
+                Patterns = Map.ofList [ (0, "ora {h}"); (5, "{h} e pesë"); (10, "{h} e dhjetë"); (15, "{h} e një çerek"); (20, "{h} e njëzet"); (25, "{h} e njëzet e pesë"); (30, "{h} e gjysmë"); (35, "{next_h} pa njëzet e pesë"); (40, "{next_h} pa njëzet"); (45, "{next_h} pa një çerek"); (50, "{next_h} pa dhjetë"); (55, "{next_h} pa pesë") ]
             }
         ShortOverride =
             Some
@@ -4218,7 +4218,7 @@ let SR: TimeLocale =
                 Hours = [| "дванаест"; "један"; "два"; "три"; "четири"; "пет"; "шест"; "седам"; "осам"; "девет"; "десет"; "једанаест" |]
                 Midnight = "поноћ"
                 Noon = "подне"
-                Patterns = Map.ofList [ (0, "{h} часа"); (5, "пет po {h}"); (10, "десет po {h}"); (15, "петнаест po {h}"); (20, "двадесет po {h}"); (25, "двадесет пет po {h}"); (30, "тридесет po {h}"); (35, "двадесет пет do {next_h}"); (40, "двадесет do {next_h}"); (45, "петнаест do {next_h}"); (50, "десет do {next_h}"); (55, "пет do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} и пет"); (10, "{h} и десет"); (15, "{h} и петнаест"); (20, "{h} и двадесет"); (25, "{h} и двадесет пет"); (30, "пола {next_h}"); (35, "двадесет пет до {next_h}"); (40, "двадесет до {next_h}"); (45, "петнаест до {next_h}"); (50, "десет до {next_h}"); (55, "пет до {next_h}") ]
             }
         ShortOverride =
             Some
@@ -4247,10 +4247,10 @@ let SS: TimeLocale =
         Code = "ss"
         Clock =
             {
-                Hours = [| "lishumi nambili"; "kunye"; "kubili"; "kutsatfu"; "kune"; "kusihlanu"; "sitfupha"; "sikhombisa"; "siphohlongo"; "sifisagcina"; "lishumi"; "lishumi nakunye" |]
+                Hours = [| "lelishumi nakubili"; "lekucala"; "lesibili"; "lesitsatfu"; "lesine"; "lesihlanu"; "lesitfupha"; "lesikhombisa"; "lesiphohlongo"; "lemfica"; "lelishumi"; "lelishumi nakunye" |]
                 Midnight = "phakathi kwebusuku"
                 Noon = "emini"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "lihora {h}"); (5, "lihora {h} nemizuzu lemihlanu"); (10, "lihora {h} nemizuzu lelishumi"); (15, "lihora {h} nemizuzu lelishumi nesihlanu"); (20, "lihora {h} nemizuzu lemashumi lamabili"); (25, "lihora {h} nemizuzu lemashumi lamabili nesihlanu"); (30, "lihora {h} nenhafu"); (35, "lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu"); (40, "lihora {h} nemizuzu lemashumi lamane"); (45, "lihora {h} nemizuzu lemashumi lamane nesihlanu"); (50, "lihora {h} nemizuzu lemashumi lasihlanu"); (55, "lihora {h} nemizuzu lemashumi lasihlanu nesihlanu") ]
             }
         ShortOverride =
             Some
@@ -4279,10 +4279,10 @@ let ST: TimeLocale =
         Code = "st"
         Clock =
             {
-                Hours = [| "leshome le metso e mmedi"; "e nngwe"; "tse pedi"; "tse tharo"; "tse nne"; "tse hlano"; "tse tshelela"; "tse supileng"; "tse robedi"; "tse robong"; "leshome"; "leshome le motso o le mong" |]
+                Hours = [| "leshome le metso e mmedi"; "pele"; "bobedi"; "boraro"; "bone"; "bohlano"; "botshelela"; "bosupa"; "borobedi"; "borobong"; "leshome"; "leshome le motso o le mong" |]
                 Midnight = "hara bosiu"
                 Noon = "motsheare"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "hora ya {h}"); (5, "hora ya {h} le metsotso e mehlano"); (10, "hora ya {h} le metsotso e leshome"); (15, "hora ya {h} le kotara"); (20, "hora ya {h} le metsotso e mashome a mabedi"); (25, "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano"); (30, "hora ya {h} le halofo"); (35, "hora ya {h} le metsotso e mashome a mararo a metso e mehlano"); (40, "hora ya {h} le metsotso e mashome a mane"); (45, "hora ya {h} le metsotso e mashome a mane a metso e mehlano"); (50, "hora ya {h} le metsotso e mashome a mahlano"); (55, "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano") ]
             }
         ShortOverride =
             Some
@@ -4314,7 +4314,7 @@ let SU: TimeLocale =
                 Hours = [| "dua welas"; "hiji"; "dua"; "tilu"; "opat"; "lima"; "genep"; "tujuh"; "dalapan"; "salapan"; "sapuluh"; "sabelas" |]
                 Midnight = "tengah peuting"
                 Noon = "beurang"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "jam {h}"); (5, "jam {h} leuwih lima menit"); (10, "jam {h} leuwih sapuluh menit"); (15, "jam {h} leuwih saparapat"); (20, "jam {h} leuwih dua puluh menit"); (25, "jam {h} leuwih dua puluh lima menit"); (30, "satengah {next_h}"); (35, "jam {next_h} kurang dua puluh lima menit"); (40, "jam {next_h} kurang dua puluh menit"); (45, "jam {next_h} kurang saparapat"); (50, "jam {next_h} kurang sapuluh menit"); (55, "jam {next_h} kurang lima menit") ]
             }
         ShortOverride =
             Some
@@ -4343,10 +4343,10 @@ let SUK: TimeLocale =
         Code = "suk"
         Clock =
             {
-                Hours = [| "kumi na mbili"; "moja"; "mbili"; "tatu"; "nne"; "tano"; "sita"; "saba"; "nane"; "tisa"; "kumi"; "kumi na moja" |]
+                Hours = [| "sita"; "saba"; "nane"; "tisa"; "kumi"; "kumi na moja"; "kumi na mbili"; "moja"; "mbili"; "tatu"; "nne"; "tano" |]
                 Midnight = "usiku gati"
                 Noon = "adhuhuri"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "saa {h}"); (5, "saa {h} na dakika tano"); (10, "saa {h} na dakika kumi"); (15, "saa {h} na robo"); (20, "saa {h} na dakika ishirini"); (25, "saa {h} na dakika ishirini na tano"); (30, "saa {h} na nusu"); (35, "saa {next_h} kasoro dakika ishirini na tano"); (40, "saa {next_h} kasoro dakika ishirini"); (45, "saa {next_h} kasoro robo"); (50, "saa {next_h} kasoro dakika kumi"); (55, "saa {next_h} kasoro dakika tano") ]
             }
         ShortOverride =
             Some
@@ -4407,10 +4407,10 @@ let SW: TimeLocale =
         Code = "sw"
         Clock =
             {
-                Hours = [| "kumi na mbili"; "moja"; "mbili"; "tatu"; "nne"; "tano"; "sita"; "saba"; "nane"; "tisa"; "kumi"; "kumi na moja" |]
-                Midnight = "usiku wa manane"
-                Noon = "adhuhuri"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "tano kupita {h}"); (10, "kumi kupita {h}"); (15, "robo kupita {h}"); (20, "ishirini kupita {h}"); (25, "ishirini na tano kupita {h}"); (30, "nusu kupita {h}"); (35, "ishirini na tano kabla ya {next_h}"); (40, "ishirini kabla ya {next_h}"); (45, "robo kabla ya {next_h}"); (50, "kumi kabla ya {next_h}"); (55, "tano kabla ya {next_h}") ]
+                Hours = [| "sita"; "saba"; "nane"; "tisa"; "kumi"; "kumi na moja"; "kumi na mbili"; "moja"; "mbili"; "tatu"; "nne"; "tano" |]
+                Midnight = "saa sita usiku"
+                Noon = "saa sita mchana"
+                Patterns = Map.ofList [ (0, "saa {h}"); (5, "saa {h} na dakika tano"); (10, "saa {h} na dakika kumi"); (15, "saa {h} na robo"); (20, "saa {h} na dakika ishirini"); (25, "saa {h} na dakika ishirini na tano"); (30, "saa {h} na nusu"); (35, "saa {next_h} kasoro dakika ishirini na tano"); (40, "saa {next_h} kasoro dakika ishirini"); (45, "saa {next_h} kasoro robo"); (50, "saa {next_h} kasoro dakika kumi"); (55, "saa {next_h} kasoro dakika tano") ]
             }
         ShortOverride =
             Some
@@ -4439,10 +4439,10 @@ let TA: TimeLocale =
         Code = "ta"
         Clock =
             {
-                Hours = [| "பன்னிரண்டு"; "ஒன்று"; "இரண்டு"; "மூன்று"; "நான்கு"; "ஐந்து"; "ஆறு"; "ஏழு"; "எட்டு"; "ஒன்பது"; "பத்து"; "பதினொன்று" |]
+                Hours = [| "பன்னிரண்ட"; "ஒன்ற"; "இரண்ட"; "மூன்ற"; "நான்க"; "ஐந்த"; "ஆற"; "ஏழ"; "எட்ட"; "ஒன்பத"; "பத்த"; "பதினொன்ற" |]
                 Midnight = "நள்ளிரவு"
                 Noon = "நண்பகல்"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}ு மணி"); (5, "{h}ு மணி ஐந்து நிமிடம்"); (10, "{h}ு மணி பத்து நிமிடம்"); (15, "{h}ே கால்"); (20, "{h}ு மணி இருபது நிமிடம்"); (25, "{h}ு மணி இருபத்தைந்து நிமிடம்"); (30, "{h}ரை"); (35, "{h}ு மணி முப்பத்தைந்து நிமிடம்"); (40, "{h}ு மணி நாற்பது நிமிடம்"); (45, "{h}ே முக்கால்"); (50, "{h}ு மணி ஐம்பது நிமிடம்"); (55, "{h}ு மணி ஐம்பத்தைந்து நிமிடம்") ]
             }
         ShortOverride =
             Some
@@ -4474,7 +4474,7 @@ let TE: TimeLocale =
                 Hours = [| "పన్నెండు"; "ఒకటి"; "రెండు"; "మూడు"; "నాలుగు"; "ఐదు"; "ఆరు"; "ఏడు"; "ఎనిమిది"; "తొమ్మిది"; "పది"; "పదకొండు" |]
                 Midnight = "అర్ధరాత్రి"
                 Noon = "మధ్యాహ్నం"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} అయింది"); (5, "{h} దాటి ఐదు నిమిషాలు"); (10, "{h} దాటి పది నిమిషాలు"); (15, "{h}ంపావు"); (20, "{h} దాటి ఇరవై నిమిషాలు"); (25, "{h} దాటి ఇరవై ఐదు నిమిషాలు"); (30, "{h}న్నర"); (35, "{h} దాటి ముప్పై ఐదు నిమిషాలు"); (40, "{next_h} కావడానికి ఇరవై నిమిషాలు"); (45, "పావు తక్కువ {next_h}"); (50, "{next_h} కావడానికి పది నిమిషాలు"); (55, "{next_h} కావడానికి ఐదు నిమిషాలు") ]
             }
         ShortOverride =
             Some
@@ -4503,10 +4503,10 @@ let TEM: TimeLocale =
         Code = "tem"
         Clock =
             {
-                Hours = [| "pɛn pu"; "kɩrɩŋ"; "rɔŋ"; "rasar"; "rɔŋ-anat"; "rɔman"; "rɔmata"; "rɔmbot"; "rɔmɔntat"; "rɔmɔntaŋka"; "pɛn"; "pɛn nɛ kɩrɩŋ" |]
+                Hours = [| "awa pɛn nɛ rɔŋ"; "awa kɩrɩŋ"; "awa rɔŋ"; "awa rasar"; "awa rɔŋ-anat"; "awa rɔman"; "awa rɔmata"; "awa rɔmbot"; "awa rɔmɔntat"; "awa rɔmɔntaŋka"; "awa pɛn"; "awa pɛn nɛ kɩrɩŋ" |]
                 Midnight = "rofɛt anpa"
                 Noon = "lən"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} nɛ minit rɔman"); (10, "{h} nɛ minit pɛn"); (15, "{h} nɛ minit pɛn nɛ rɔman"); (20, "{h} nɛ minit kɩgba"); (25, "{h} nɛ minit kɩgba nɛ rɔman"); (30, "{h} a gbankɛ"); (35, "{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman"); (40, "{h} nɛ minit tɔgba rɔŋ"); (45, "{h} nɛ minit tɔgba rɔŋ nɛ rɔman"); (50, "{h} nɛ minit tɔgba rɔŋ nɛ pɛn"); (55, "{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman") ]
             }
         ShortOverride =
             Some
@@ -4538,7 +4538,7 @@ let TET: TimeLocale =
                 Hours = [| "sanulu-resin-rua"; "ida"; "rua"; "tolu"; "haat"; "lima"; "neen"; "hitu"; "ualu"; "sia"; "sanulu"; "sanulu-resin-ida" |]
                 Midnight = "meiu-kalan"
                 Noon = "meiu-loron"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "tuku {h}"); (5, "tuku {h} ho minutu lima"); (10, "tuku {h} ho minutu sanulu"); (15, "tuku {h} ho minutu sanulu-resin-lima"); (20, "tuku {h} ho minutu ruanulu"); (25, "tuku {h} ho minutu ruanulu-resin-lima"); (30, "tuku {h} ho balun"); (35, "tuku {h} ho minutu tolunulu-resin-lima"); (40, "tuku {h} ho minutu haatnulu"); (45, "tuku {h} ho minutu haatnulu-resin-lima"); (50, "tuku {h} ho minutu limanulu"); (55, "tuku {h} ho minutu limanulu-resin-lima") ]
             }
         ShortOverride =
             Some
@@ -4570,7 +4570,7 @@ let TG: TimeLocale =
                 Hours = [| "дувоздаҳ"; "як"; "ду"; "се"; "чор"; "панҷ"; "шаш"; "ҳафт"; "ҳашт"; "нӯҳ"; "даҳ"; "ёздаҳ" |]
                 Midnight = "нимишаб"
                 Noon = "нимирӯз"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "соати {h}"); (5, "соати {h} ва панҷ дақиқа"); (10, "соати {h} ва даҳ дақиқа"); (15, "соати {h} ва понздаҳ дақиқа"); (20, "соати {h} ва бист дақиқа"); (25, "соати {h} ва бисту панҷ дақиқа"); (30, "соати {h} ва ним"); (35, "соати {h} ва сию панҷ дақиқа"); (40, "соати {h} ва чил дақиқа"); (45, "соати {h} ва чилу панҷ дақиқа"); (50, "соати {h} ва панҷоҳ дақиқа"); (55, "соати {h} ва панҷоҳу панҷ дақиқа") ]
             }
         ShortOverride =
             Some
@@ -4634,7 +4634,7 @@ let TI: TimeLocale =
                 Hours = [| "ዓሰርተ ክልተ"; "ሓደ"; "ክልተ"; "ሰለስተ"; "ኣርባዕተ"; "ሓሙሽተ"; "ሽድሽተ"; "ሸውዓተ"; "ሸሞንተ"; "ትሽዓተ"; "ዓሰርተ"; "ዓሰርተ ሓደ" |]
                 Midnight = "ፍርቂ ለይቲ"
                 Noon = "ቀትሪ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} ሰዓት"); (5, "{h}ን ሓሙሽተን"); (10, "{h}ን ዓሰርተን"); (15, "{h}ን ርብዒን"); (20, "{h}ን ዕስራን"); (25, "{h}ን ዕስራን ሓሙሽተን"); (30, "{h}ን ፈረቓን"); (35, "{h}ን ሰላሳን ሓሙሽተን"); (40, "ዕስራ ጎደል {next_h}"); (45, "ርብዒ ጎደል {next_h}"); (50, "ዓሰርተ ጎደል {next_h}"); (55, "ሓሙሽተ ጎደል {next_h}") ]
             }
         ShortOverride =
             Some
@@ -4666,7 +4666,7 @@ let TIG: TimeLocale =
                 Hours = [| "ʿasərte wəkəlte"; "ḥante"; "kəlʾe"; "səleste"; "arbaʿte"; "ḥamməste"; "səste"; "sabʿate"; "səmmunte"; "təsʿate"; "ʿasərte"; "ʿasərte wəḥante" |]
                 Midnight = "nəs-leyla"
                 Noon = "qayḥ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "saʿa {h}"); (5, "saʿa {h} we ḥamməste"); (10, "saʿa {h} we ʿasərte"); (15, "saʿa {h} we ʿasərte we ḥamməste"); (20, "saʿa {h} we ʿəsra"); (25, "saʿa {h} we ʿəsra we ḥamməste"); (30, "saʿa {h} we nəs"); (35, "saʿa {h} we salasa we ḥamməste"); (40, "saʿa {h} we arbaʿa"); (45, "saʿa {h} we arbaʿa we ḥamməste"); (50, "saʿa {h} we ḥamsa"); (55, "saʿa {h} we ḥamsa we ḥamməste") ]
             }
         ShortOverride =
             Some
@@ -4698,7 +4698,7 @@ let TK: TimeLocale =
                 Hours = [| "on iki"; "bir"; "iki"; "üç"; "dört"; "bäş"; "alty"; "ýedi"; "sekiz"; "dokuz"; "on"; "on bir" |]
                 Midnight = "ýary gije"
                 Noon = "günorta"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "sagat {h}"); (5, "sagat {h} bäş minut"); (10, "sagat {h} on minut"); (15, "sagat {h} on bäş minut"); (20, "sagat {h} ýigrimi minut"); (25, "sagat {h} ýigrimi bäş minut"); (30, "sagat {h} ýarym"); (35, "sagat {h} otuz bäş minut"); (40, "sagat {h} kyrk minut"); (45, "sagat {h} kyrk bäş minut"); (50, "sagat {h} elli minut"); (55, "sagat {h} elli bäş minut") ]
             }
         ShortOverride =
             Some
@@ -4727,10 +4727,10 @@ let TN: TimeLocale =
         Code = "tn"
         Clock =
             {
-                Hours = [| "lesome le bobedi"; "nngwe"; "pedi"; "tharo"; "nne"; "tlhano"; "thataro"; "supa"; "robedi"; "robongwe"; "lesome"; "lesome le bongwe" |]
+                Hours = [| "ya lesome le bobedi"; "ya ntlha"; "ya bobedi"; "ya boraro"; "ya bone"; "ya botlhano"; "ya borataro"; "ya bosupa"; "ya borobedi"; "ya borobongwe"; "ya lesome"; "ya lesome le bongwe" |]
                 Midnight = "bosigo jwa magareng"
                 Noon = "motshegare"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ura {h}"); (5, "ura {h} le metsotso e metlhano"); (10, "ura {h} le metsotso e le lesome"); (15, "ura {h} le kotara"); (20, "ura {h} le metsotso e le masome a mabedi"); (25, "ura {h} le metsotso e le masome a mabedi le botlhano"); (30, "ura {h} le halofo"); (35, "ura {h} le metsotso e le masome a mararo le botlhano"); (40, "ura {h} le metsotso e le masome a mane"); (45, "ura {h} le metsotso e le masome a mane le botlhano"); (50, "ura {h} le metsotso e le masome a matlhano"); (55, "ura {h} le metsotso e le masome a matlhano le botlhano") ]
             }
         ShortOverride =
             Some
@@ -4762,7 +4762,7 @@ let TPI: TimeLocale =
                 Hours = [| "twelp"; "wan"; "tu"; "tri"; "foa"; "faiv"; "sikis"; "seven"; "et"; "nain"; "ten"; "eleven" |]
                 Midnight = "biknait"
                 Noon = "belo"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} kilok"); (5, "faiv minit pas {h}"); (10, "ten minit pas {h}"); (15, "kwata pas {h}"); (20, "twenti minit pas {h}"); (25, "twenti faiv minit pas {h}"); (30, "hap pas {h}"); (35, "teti faiv minit pas {h}"); (40, "foti minit pas {h}"); (45, "foti faiv minit pas {h}"); (50, "fifti minit pas {h}"); (55, "fifti faiv minit pas {h}") ]
             }
         ShortOverride =
             Some
@@ -4794,7 +4794,7 @@ let TR: TimeLocale =
                 Hours = [| "on iki"; "bir"; "iki"; "üç"; "dört"; "beş"; "altı"; "yedi"; "sekiz"; "dokuz"; "on"; "on bir" |]
                 Midnight = "gece yarısı"
                 Noon = "öğle"
-                Patterns = Map.ofList [ (0, "saat {h}"); (5, "{h}'i beş geçiyor"); (10, "{h}'i on geçiyor"); (15, "{h}'i çeyrek geçiyor"); (20, "{h}'i yirmi geçiyor"); (25, "{h}'i yirmi beş geçiyor"); (30, "{h} buçuk"); (35, "{next_h}'e yirmi beş var"); (40, "{next_h}'e yirmi var"); (45, "{next_h}'e çeyrek var"); (50, "{next_h}'e on var"); (55, "{next_h}'e beş var") ]
+                Patterns = Map.ofList [ (0, "saat {h}"); (5, "saat {h} sıfır beş"); (10, "saat {h} on"); (15, "saat {h} on beş"); (20, "saat {h} yirmi"); (25, "saat {h} yirmi beş"); (30, "saat {h} buçuk"); (35, "saat {h} otuz beş"); (40, "saat {h} kırk"); (45, "saat {h} kırk beş"); (50, "saat {h} elli"); (55, "saat {h} elli beş") ]
             }
         ShortOverride =
             Some
@@ -4823,10 +4823,10 @@ let TS: TimeLocale =
         Code = "ts"
         Clock =
             {
-                Hours = [| "khume mbiri"; "yin'we"; "mbirhi"; "nharhu"; "mune"; "ntlhanu"; "tsevu"; "nkombo"; "nhungu"; "kaye"; "khume"; "khume yin'we" |]
+                Hours = [| "ya khume mbirhi"; "yo sungula"; "ya vumbirhi"; "ya vunharhu"; "ya vumune"; "ya vuntlhanu"; "ya vutsevu"; "ya vunkombo"; "ya vunhungu"; "ya vukaye"; "ya khume"; "ya khume n'we" |]
                 Midnight = "vusiku exikarhi"
                 Noon = "nhlekanhi"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "awara {h}"); (5, "awara {h} na timinete ta ntlhanu"); (10, "awara {h} na timinete ta khume"); (15, "awara {h} na kotara"); (20, "awara {h} na timinete ta makume mambirhi"); (25, "awara {h} na timinete ta makume mambirhi na ntlhanu"); (30, "awara {h} na hafu"); (35, "awara {h} na timinete ta makume manharhu na ntlhanu"); (40, "awara {h} na timinete ta makume mune"); (45, "awara {h} na timinete ta makume mune na ntlhanu"); (50, "awara {h} na timinete ta makume ntlhanu"); (55, "awara {h} na timinete ta makume ntlhanu na ntlhanu") ]
             }
         ShortOverride =
             Some
@@ -4858,7 +4858,7 @@ let TUM: TimeLocale =
                 Hours = [| "khumi na yibili"; "chimoza"; "vibili"; "vitatu"; "vinayi"; "vikhondi"; "vikhondi na kamoza"; "vikhondi na tubili"; "vikhondi na tutatu"; "vikhondi na tunayi"; "khumi"; "khumi na kamoza" |]
                 Midnight = "pakati pa usiku"
                 Noon = "muhanya"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} koloko"); (5, "{h} koloko na maminiti vinkhondi"); (10, "{h} koloko na maminiti khumi"); (15, "{h} koloko na maminiti khumi na vinkhondi"); (20, "{h} koloko na maminiti makhumi ghaŵiri"); (25, "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi"); (30, "{h} koloko na hafu"); (35, "{h} koloko na maminiti makhumi ghatatu na vinkhondi"); (40, "{h} koloko na maminiti makhumi ghanayi"); (45, "{h} koloko na maminiti makhumi ghanayi na vinkhondi"); (50, "{h} koloko na maminiti makhumi ghankhondi"); (55, "{h} koloko na maminiti makhumi ghankhondi na vinkhondi") ]
             }
         ShortOverride =
             Some
@@ -4887,10 +4887,10 @@ let TZM: TimeLocale =
         Code = "tzm"
         Clock =
             {
-                Hours = [| "12"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"; "10"; "11" |]
-                Midnight = "ⵏⵚ ⵏ ⵉⴹ"
-                Noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Hours = [| "tis snat d mrawt"; "tis yat"; "tis snat"; "tis kṛaṭṭ"; "tis kkuẕt"; "tis smmust"; "tis sḍist"; "tis sat"; "tis tamt"; "tis tẕat"; "tis mrawt"; "tis yat d mrawt" |]
+                Midnight = "nṣ n iḍ"
+                Noon = "tizwarnin"
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} d smmus tusdiqin"); (10, "{h} d mraw tusdiqin"); (15, "{h} d rrbɛ"); (20, "{h} d ɛcrin n tusdiqt"); (25, "{h} d xmsa u ɛcrin n tusdiqt"); (30, "{h} d uzgen"); (35, "{h} d xmsa u tlatin n tusdiqt"); (40, "{h} d ṛbɛin n tusdiqt"); (45, "{h} d xmsa u ṛbɛin n tusdiqt"); (50, "{h} d xmsin n tusdiqt"); (55, "{h} d xmsa u xmsin n tusdiqt") ]
             }
         ShortOverride =
             Some
@@ -4922,7 +4922,7 @@ let UK: TimeLocale =
                 Hours = [| "дванадцята"; "перша"; "друга"; "третя"; "четверта"; "п'ята"; "шоста"; "сьома"; "восьма"; "дев'ята"; "десята"; "одинадцята" |]
                 Midnight = "опівніч"
                 Noon = "полудень"
-                Patterns = Map.ofList [ (0, "{h} часа"); (5, "п'ять po {h}"); (10, "десять po {h}"); (15, "п'ятнадцять po {h}"); (20, "двадцять po {h}"); (25, "двадцять п'ять po {h}"); (30, "тридцять po {h}"); (35, "двадцять п'ять do {next_h}"); (40, "двадцять do {next_h}"); (45, "п'ятнадцять do {next_h}"); (50, "десять do {next_h}"); (55, "п'ять do {next_h}") ]
+                Patterns = Map.ofList [ (0, "{h} година"); (5, "{h} нуль п'ять"); (10, "{h} десять"); (15, "{h} п'ятнадцять"); (20, "{h} двадцять"); (25, "{h} двадцять п'ять"); (30, "{h} тридцять"); (35, "за двадцять п'ять хвилин {next_h}"); (40, "за двадцять хвилин {next_h}"); (45, "за чверть {next_h}"); (50, "за десять хвилин {next_h}"); (55, "за п'ять хвилин {next_h}") ]
             }
         ShortOverride =
             Some
@@ -4951,10 +4951,10 @@ let UMB: TimeLocale =
         Code = "umb"
         Clock =
             {
-                Hours = [| "olohola likumi na yivali"; "yimosi"; "yivali"; "yitathu"; "yinyali"; "yitanu"; "yitathu-va-yivali"; "yisemba"; "yinyali-va-yivali"; "yitanu-va-yivali"; "likumi"; "likumi na yimosi" |]
+                Hours = [| "ekwi la vali"; "mosi"; "vali"; "tatu"; "kwãla"; "tãlo"; "epandu"; "epanduvali"; "ecelãla"; "ecea"; "ekwi"; "ekwi la mosi" |]
                 Midnight = "ocitapi"
                 Noon = "ocivali"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "ohola {h}"); (5, "ohola {h} la tãlo"); (10, "ohola {h} la ekwi"); (15, "ohola {h} la ekwi la tãlo"); (20, "ohola {h} la akũi avali"); (25, "ohola {h} la akũi avali la tãlo"); (30, "ohola {h} la oñali"); (35, "ohola {h} la akũi atatu la tãlo"); (40, "ohola {h} la akũi akwãla"); (45, "ohola {h} la akũi akwãla la tãlo"); (50, "ohola {h} la akũi atãlo"); (55, "ohola {h} la akũi atãlo la tãlo") ]
             }
         ShortOverride =
             Some
@@ -4986,7 +4986,7 @@ let UR: TimeLocale =
                 Hours = [| "بارہ"; "ایک"; "دو"; "تین"; "چار"; "پانچ"; "چھ"; "سات"; "آٹھ"; "نو"; "دس"; "گیارہ" |]
                 Midnight = "آدھی رات"
                 Noon = "دوپہر"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "{h} بجے"); (5, "{h} بج کر پانچ منٹ"); (10, "{h} بج کر دس منٹ"); (15, "سوا {h} بجے"); (20, "{h} بج کر بیس منٹ"); (25, "{h} بج کر پچیس منٹ"); (30, "{h} بج کر تیس منٹ"); (35, "{h} بج کر پینتیس منٹ"); (40, "{next_h} بجنے میں بیس منٹ"); (45, "پونے {next_h} بجے"); (50, "{next_h} بجنے میں دس منٹ"); (55, "{next_h} بجنے میں پانچ منٹ") ]
             }
         ShortOverride =
             Some
@@ -5018,7 +5018,7 @@ let UZ: TimeLocale =
                 Hours = [| "o'n ikki"; "bir"; "ikki"; "uch"; "to'rt"; "besh"; "olti"; "yetti"; "sakkiz"; "to'qqiz"; "o'n"; "o'n bir" |]
                 Midnight = "yarim tun"
                 Noon = "tush"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "besh past {h}"); (10, "o'n past {h}"); (15, "o'n besh past {h}"); (20, "yigirma past {h}"); (25, "yigirma besh past {h}"); (30, "o'ttiz past {h}"); (35, "yigirma besh to {next_h}"); (40, "yigirma to {next_h}"); (45, "o'n besh to {next_h}"); (50, "o'n to {next_h}"); (55, "besh to {next_h}") ]
+                Patterns = Map.ofList [ (0, "soat {h}"); (5, "soat {h} nol besh"); (10, "soat {h} o'n"); (15, "soat {h} o'n besh"); (20, "soat {h} yigirma"); (25, "soat {h} yigirma besh"); (30, "soat {h} yarim"); (35, "soat {h} o'ttiz besh"); (40, "soat {h} qirq"); (45, "soat {h} qirq besh"); (50, "soat {h} ellik"); (55, "soat {h} ellik besh") ]
             }
         ShortOverride =
             Some
@@ -5047,10 +5047,10 @@ let VE: TimeLocale =
         Code = "ve"
         Clock =
             {
-                Hours = [| "fumimbili"; "thihi"; "mbili"; "raru"; "ina"; "thanu"; "rathi"; "sumbe"; "malo"; "tahe"; "fumi"; "fuminthihi" |]
+                Hours = [| "ya fumi na mbili"; "ya u thoma"; "ya vhuvhili"; "ya vhuraru"; "ya vhuṋa"; "ya vhuṱanu"; "ya vhurathi"; "ya vhusumbe"; "ya vhumalo"; "ya vhuṱahe"; "ya fumi"; "ya fumi na nthihi" |]
                 Midnight = "vhukati ha vhusiku"
                 Noon = "vhukati ha masiari"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "awara {h}"); (5, "awara {h} na ṱhanu"); (10, "awara {h} na fumi"); (15, "awara {h} na kotara"); (20, "awara {h} na mahumi mavhili"); (25, "awara {h} na mahumi mavhili na ṱhanu"); (30, "awara {h} na hafu"); (35, "awara {h} na mahumi mararu na ṱhanu"); (40, "awara {h} na mahumi maṋa"); (45, "awara {h} na mahumi maṋa na ṱhanu"); (50, "awara {h} na mahumi maṱanu"); (55, "awara {h} na mahumi maṱanu na ṱhanu") ]
             }
         ShortOverride =
             Some
@@ -5081,8 +5081,8 @@ let VI: TimeLocale =
             {
                 Hours = [| "mười hai"; "một"; "hai"; "ba"; "bốn"; "năm"; "sáu"; "bảy"; "tám"; "chín"; "mười"; "mười một" |]
                 Midnight = "nửa đêm"
-                Noon = "trưa"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "năm qua {h}"); (10, "mười qua {h}"); (15, "mười lăm qua {h}"); (20, "hai mươi qua {h}"); (25, "hai mươi lăm qua {h}"); (30, "ba mươi qua {h}"); (35, "hai mươi lăm trước {next_h}"); (40, "hai mươi trước {next_h}"); (45, "mười lăm trước {next_h}"); (50, "mười trước {next_h}"); (55, "năm trước {next_h}") ]
+                Noon = "mười hai giờ trưa"
+                Patterns = Map.ofList [ (0, "{h} giờ"); (5, "{h} giờ năm phút"); (10, "{h} giờ mười phút"); (15, "{h} giờ mười lăm phút"); (20, "{h} giờ hai mươi phút"); (25, "{h} giờ hai mươi lăm phút"); (30, "{h} giờ rưỡi"); (35, "{next_h} giờ kém hai mươi lăm"); (40, "{next_h} giờ kém hai mươi"); (45, "{next_h} giờ kém mười lăm"); (50, "{next_h} giờ kém mười"); (55, "{next_h} giờ kém năm") ]
             }
         ShortOverride =
             Some
@@ -5114,7 +5114,7 @@ let VMW: TimeLocale =
                 Hours = [| "khumi na pili"; "mosa"; "pili"; "ttatthu"; "ncheche"; "thanu"; "thanu na mosa"; "thanu na pili"; "thanu na ttatthu"; "thanu na ncheche"; "khumi"; "khumi na mosa" |]
                 Midnight = "usiku wopakhala"
                 Noon = "muttana"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "hora {h}"); (5, "hora {h} na thanu"); (10, "hora {h} na khumi"); (15, "hora {h} na khumi na thanu"); (20, "hora {h} na makhumi mapili"); (25, "hora {h} na makhumi mapili na thanu"); (30, "hora {h} na mettenhe"); (35, "hora {h} na makhumi mararu na thanu"); (40, "hora {h} na makhumi mancheche"); (45, "hora {h} na makhumi mancheche na thanu"); (50, "hora {h} na makhumi mathanu"); (55, "hora {h} na makhumi mathanu na thanu") ]
             }
         ShortOverride =
             Some
@@ -5143,10 +5143,10 @@ let WO: TimeLocale =
         Code = "wo"
         Clock =
             {
-                Hours = [| "fukki ñaar"; "benn"; "ñaar"; "ñett"; "ñeent"; "juróom"; "juróom-benn"; "juróom-ñaar"; "juróom-ñett"; "juróom-ñeent"; "fukk"; "fukki benn" |]
-                Midnight = "bu guddi"
-                Noon = "ci àttaya"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Hours = [| "fukk ak ñaari waxtu"; "benn waxtu"; "ñaari waxtu"; "ñetti waxtu"; "ñeenti waxtu"; "juróomi waxtu"; "juróom-benni waxtu"; "juróom-ñaari waxtu"; "juróom-ñetti waxtu"; "juróom-ñeenti waxtu"; "fukki waxtu"; "fukk ak benn waxtu" |]
+                Midnight = "digg-guddi"
+                Noon = "digg-bëccëg"
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} ak juróomi simili"); (10, "{h} ak fukki simili"); (15, "{h} ak fukk ak juróomi simili"); (20, "{h} ak ñaar-fukki simili"); (25, "{h} ak ñaar-fukk ak juróomi simili"); (30, "{h} ak genn-wàll"); (35, "{next_h} des na ñaar-fukk ak juróomi simili"); (40, "{next_h} des na ñaar-fukki simili"); (45, "{next_h} des na fukk ak juróomi simili"); (50, "{next_h} des na fukki simili"); (55, "{next_h} des na juróomi simili") ]
             }
         ShortOverride =
             Some
@@ -5175,10 +5175,10 @@ let XH: TimeLocale =
         Code = "xh"
         Clock =
             {
-                Hours = [| "ishumi elinambini"; "inye"; "ezimbini"; "ezintathu"; "ezine"; "ezintlanu"; "ezintandathu"; "ezisixhenxe"; "ezisibhozo"; "ethoba"; "ishumi"; "ishumi elinanye" |]
+                Hours = [| "yeshumi elinesibini"; "yokuqala"; "yesibini"; "yesithathu"; "yesine"; "yesihlanu"; "yesithandathu"; "yesixhenxe"; "yesibhozo"; "yethoba"; "yeshumi"; "yeshumi elinanye" |]
                 Midnight = "ezinzulwini zobusuku"
                 Noon = "emini"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "intsimbi {h}"); (5, "imizuzu emihlanu emva kwentsimbi {h}"); (10, "imizuzu elishumi emva kwentsimbi {h}"); (15, "ikota emva kwentsimbi {h}"); (20, "imizuzu engamashumi amabini emva kwentsimbi {h}"); (25, "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}"); (30, "isiqingatha emva kwentsimbi {h}"); (35, "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}"); (40, "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}"); (45, "ikota ukuya kwintsimbi {next_h}"); (50, "imizuzu elishumi ukuya kwintsimbi {next_h}"); (55, "imizuzu emihlanu ukuya kwintsimbi {next_h}") ]
             }
         ShortOverride =
             Some
@@ -5210,7 +5210,7 @@ let YAO: TimeLocale =
                 Hours = [| "likumi na iwili"; "cimo"; "iwili"; "itatu"; "ncece"; "nsano"; "nsano nacimo"; "nsano nawili"; "nsano naitatu"; "nsano nancece"; "likumi"; "likumi nacimo" |]
                 Midnight = "pakati pa usiku"
                 Noon = "pakati pa lisiku"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "saa {h}"); (5, "saa {h} na nsano"); (10, "saa {h} na likumi"); (15, "saa {h} na likumi na nsano"); (20, "saa {h} na makumi gaŵili"); (25, "saa {h} na makumi gaŵili na nsano"); (30, "saa {h} na nusu"); (35, "saa {h} na makumi gatatu na nsano"); (40, "saa {h} na makumi ncece"); (45, "saa {h} na makumi ncece na nsano"); (50, "saa {h} na makumi nsano"); (55, "saa {h} na makumi nsano na nsano") ]
             }
         ShortOverride =
             Some
@@ -5240,9 +5240,9 @@ let YO: TimeLocale =
         Clock =
             {
                 Hours = [| "méjìlá"; "kan"; "méjì"; "mẹ́ta"; "mẹ́rin"; "márùn-ún"; "mẹ́fà"; "méje"; "mẹ́jọ"; "mẹ́sàn-án"; "mẹ́wàá"; "mọ́kànlá" |]
-                Midnight = "àárọ̀ òru"
-                Noon = "ọ̀sán"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Midnight = "ọ̀gànjọ́ òru"
+                Noon = "ọ̀sán gangan"
+                Patterns = Map.ofList [ (0, "aago {h}"); (5, "aago {h} kọjá ìṣẹ́jú márùn-ún"); (10, "aago {h} kọjá ìṣẹ́jú mẹ́wàá"); (15, "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"); (20, "aago {h} kọjá ogún ìṣẹ́jú"); (25, "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"); (30, "aago {h} àbọ̀"); (35, "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"); (40, "aago {next_h} kù ogún ìṣẹ́jú"); (45, "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"); (50, "aago {next_h} kù ìṣẹ́jú mẹ́wàá"); (55, "aago {next_h} kù ìṣẹ́jú márùn-ún") ]
             }
         ShortOverride =
             Some
@@ -5271,10 +5271,10 @@ let YUE: TimeLocale =
         Code = "yue"
         Clock =
             {
-                Hours = [| "十二"; "一"; "二"; "三"; "四"; "五"; "六"; "七"; "八"; "九"; "十"; "十一" |]
+                Hours = [| "十二"; "一"; "兩"; "三"; "四"; "五"; "六"; "七"; "八"; "九"; "十"; "十一" |]
                 Midnight = "午夜"
                 Noon = "正午"
-                Patterns = Map.ofList [ (0, "{h}點整"); (5, "{h}點零五分"); (10, "{h}點十分"); (15, "{h}點十五分"); (20, "{h}點二十分"); (25, "{h}點二十五分"); (30, "{h}點半"); (35, "{h}點三十五分"); (40, "{h}點四十分"); (45, "{h}點四十五分"); (50, "{h}點五十分"); (55, "{h}點五十五分") ]
+                Patterns = Map.ofList [ (0, "{h}點正"); (5, "{h}點一個字"); (10, "{h}點兩個字"); (15, "{h}點三個字"); (20, "{h}點四個字"); (25, "{h}點五個字"); (30, "{h}點半"); (35, "{h}點七個字"); (40, "{h}點八個字"); (45, "{h}點九個字"); (50, "{h}點十個字"); (55, "{h}點十一個字") ]
             }
         ShortOverride =
             Some
@@ -5303,10 +5303,10 @@ let ZDJ: TimeLocale =
         Code = "zdj"
         Clock =
             {
-                Hours = [| "kumi na mbili"; "moja"; "mbili"; "tatu"; "nne"; "tano"; "sita"; "saba"; "nane"; "tisa"; "kumi"; "kumi na moja" |]
+                Hours = [| "kumi na mbili"; "moja"; "mbili"; "ndraru"; "nne"; "ntsanu"; "sita"; "saba"; "nane"; "shenda"; "kumi"; "kumi na moja" |]
                 Midnight = "usiku wa manane"
                 Noon = "adhuhuri"
-                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+                Patterns = Map.ofList [ (0, "saa {h}"); (5, "saa {h} na ntsanu"); (10, "saa {h} na kumi"); (15, "saa {h} na kumi na ntsanu"); (20, "saa {h} na shirini"); (25, "saa {h} na shirini na ntsanu"); (30, "saa {h} na nusu"); (35, "saa {h} na thalathini na ntsanu"); (40, "saa {h} na arubaini"); (45, "saa {h} na arubaini na ntsanu"); (50, "saa {h} na hamsini"); (55, "saa {h} na hamsini na ntsanu") ]
             }
         ShortOverride =
             Some
@@ -5335,10 +5335,10 @@ let ZH: TimeLocale =
         Code = "zh"
         Clock =
             {
-                Hours = [| "十二"; "一"; "二"; "三"; "四"; "五"; "六"; "七"; "八"; "九"; "十"; "十一" |]
+                Hours = [| "十二"; "一"; "两"; "三"; "四"; "五"; "六"; "七"; "八"; "九"; "十"; "十一" |]
                 Midnight = "午夜"
                 Noon = "正午"
-                Patterns = Map.ofList [ (0, "{h}点整"); (5, "{h}点五分"); (10, "{h}点十分"); (15, "{h}点十五分"); (20, "{h}点二十分"); (25, "{h}点二十五分"); (30, "{h}点半"); (35, "{h}点三十五分"); (40, "{h}点四十分"); (45, "{h}点四十五分"); (50, "{h}点五十分"); (55, "{h}点五十五分") ]
+                Patterns = Map.ofList [ (0, "{h}点整"); (5, "{h}点零五分"); (10, "{h}点十分"); (15, "{h}点十五分"); (20, "{h}点二十分"); (25, "{h}点二十五分"); (30, "{h}点半"); (35, "{h}点三十五分"); (40, "{h}点四十分"); (45, "{h}点四十五分"); (50, "{h}点五十分"); (55, "{h}点五十五分") ]
             }
         ShortOverride =
             Some
@@ -5367,10 +5367,10 @@ let ZU: TimeLocale =
         Code = "zu"
         Clock =
             {
-                Hours = [| "ishumi nambili"; "kunye"; "kubili"; "kuthathu"; "kune"; "kuhlanu"; "isithupha"; "isikhombisa"; "isishiyagalombili"; "isishiyagalolunye"; "ishumi"; "ishumi nanye" |]
+                Hours = [| "leshumi nambili"; "lokuqala"; "lesibili"; "lesithathu"; "lesine"; "lesihlanu"; "lesithupha"; "lesikhombisa"; "lesishiyagalombili"; "lesishiyagalolunye"; "leshumi"; "leshumi nanye" |]
                 Midnight = "phakathi kwamabili"
                 Noon = "emini"
-                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "emva kwemizuzu emihlanu ngo-{h}"); (10, "emva kwemizuzu eyishumi ngo-{h}"); (15, "ikota edlule ngo-{h}"); (20, "emva kwemizuzu engamashumi amabili ngo-{h}"); (25, "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}"); (30, "uhhafu edlule ngo-{h}"); (35, "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}"); (40, "imizuzu engamashumi amabili ngaphambi kuka-{next_h}"); (45, "ikota ngaphambi kuka-{next_h}"); (50, "imizuzu eyishumi ngaphambi kuka-{next_h}"); (55, "imizuzu emihlanu ngaphambi kuka-{next_h}") ]
+                Patterns = Map.ofList [ (0, "ihora {h}"); (5, "imizuzu emihlanu emva kwehora {h}"); (10, "imizuzu eyishumi emva kwehora {h}"); (15, "ikota emva kwehora {h}"); (20, "imizuzu engamashumi amabili emva kwehora {h}"); (25, "imizuzu engamashumi amabili nanhlanu emva kwehora {h}"); (30, "uhhafu emva kwehora {h}"); (35, "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}"); (40, "imizuzu engamashumi amabili ngaphambi kwehora {next_h}"); (45, "ikota ngaphambi kwehora {next_h}"); (50, "imizuzu eyishumi ngaphambi kwehora {next_h}"); (55, "imizuzu emihlanu ngaphambi kwehora {next_h}") ]
             }
         ShortOverride =
             Some

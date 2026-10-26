@@ -26,8 +26,8 @@ class MILocale {
   static today { "i tēnei rā" }
   static tomorrow { "āpōpō" }
   static yesterday { "inanahi" }
-  static dayAfterTomorrow { "tērā āpōpō" }
-  static dayBeforeYesterday { "tērā inanahi" }
+  static dayAfterTomorrow { "ātahirā" }
+  static dayBeforeYesterday { "inātahirā" }
   static thisWeekday { "tēnei {weekday}" }
   static nextWeekday { "{weekday} e heke mai nei" }
   static lastWeekday { "{weekday} kua hori" }

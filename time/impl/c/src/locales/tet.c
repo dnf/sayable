@@ -17,7 +17,7 @@ const StTimeLocale st_locale_tet = {
         { "sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida" },
         "meiu-kalan",
         "meiu-loron",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "tuku {h}", "tuku {h} ho minutu lima", "tuku {h} ho minutu sanulu", "tuku {h} ho minutu sanulu-resin-lima", "tuku {h} ho minutu ruanulu", "tuku {h} ho minutu ruanulu-resin-lima", "tuku {h} ho balun", "tuku {h} ho minutu tolunulu-resin-lima", "tuku {h} ho minutu haatnulu", "tuku {h} ho minutu haatnulu-resin-lima", "tuku {h} ho minutu limanulu", "tuku {h} ho minutu limanulu-resin-lima" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

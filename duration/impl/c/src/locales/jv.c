@@ -29,7 +29,7 @@ const SduDurationLocale sdu_locale_jv = {
         { "{n} taun", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} setengah", ", ",
-    "saiki",
+    "lagi waé",
     "{0} kepungkur", "ing {0}",
     true, { true, { "{n} dtk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mnt", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} jam", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} dina", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} peken", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sasi", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} taun", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} kepungkur", true, "ing {0}" },
     true, { true, { "{n} dtk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mnt", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}j", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} peken", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sasi", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} taun", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} kepungkur", true, "ing {0}" }

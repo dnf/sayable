@@ -24,13 +24,13 @@ locale = DurationLocale
         , unitDay = Simple "{n} ngày"
         , unitWeek = Simple "{n} tuần"
         , unitMonth = Simple "{n} tháng"
-        , unitYear = Simple "{n} tuổi"
+        , unitYear = Simple "{n} năm"
         }
     , localeHalf = "{0} rưỡi"
     , localeDelimiter = ", "
     , localeJustNow = "vừa xong"
     , localeAgo = "{0} trước"
-    , localeInFuture = "trong {0}"
+    , localeInFuture = "{0} nữa"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Simple "{n} giây")
@@ -43,7 +43,7 @@ locale = DurationLocale
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} trước"
-            , ovrInFuture = Just "trong {0}"
+            , ovrInFuture = Just "{0} nữa"
             }
     , localeCompact = Just $
         CompactnessOverride
@@ -57,6 +57,6 @@ locale = DurationLocale
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} trước"
-            , ovrInFuture = Just "trong {0}"
+            , ovrInFuture = Just "{0} nữa"
             }
     }

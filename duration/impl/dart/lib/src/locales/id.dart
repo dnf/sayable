@@ -26,7 +26,7 @@ final id = DurationLocale(
     'month': simpleUnit('{n} bulan'),
     'year': simpleUnit('{n} tahun'),
   },
-  half: '{0} setengah',
+  half: '{n} setengah',
   delimiter: ', ',
   justNow: 'baru saja',
   ago: '{0} yang lalu',

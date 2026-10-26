@@ -16,17 +16,20 @@ import sd "github.com/dnf/sayable/duration/impl/go"
 // KL is the Kalaallisut locale.
 var KL = sd.DurationLocale{
 	Code: "kl",
-	Plural: func(_ int) sd.PluralCategory {
+	Plural: func(n int) sd.PluralCategory {
+		if n == 1 {
+			return sd.One
+		}
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.SimpleUnit("sekundit {n}"),
-		Minute: sd.SimpleUnit("minutsit {n}"),
-		Hour:   sd.SimpleUnit("nalunaaqutap akunnera {n}"),
-		Day:    sd.SimpleUnit("ullut {n}"),
-		Week:   sd.SimpleUnit("sapaatit {n}"),
-		Month:  sd.SimpleUnit("qaammatit {n}"),
-		Year:   sd.SimpleUnit("ukiut {n}"),
+		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "sekundi {n}", sd.Other: "sekundit {n}"}),
+		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "minutsi {n}", sd.Other: "minutsit {n}"}),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "nalunaaquttap akunnera {n}", sd.Other: "nalunaaquttap akunneri {n}"}),
+		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "ulloq {n}", sd.Other: "ullut {n}"}),
+		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "sapaatip akunnera {n}", sd.Other: "sapaatip akunneri {n}"}),
+		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "qaammat {n}", sd.Other: "qaammatit {n}"}),
+		Year:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "ukioq {n}", sd.Other: "ukiut {n}"}),
 	},
 	Half:      "{0} affaa",
 	Delimiter: ", ",
@@ -38,7 +41,7 @@ var KL = sd.DurationLocale{
 		Minute:   &sd.UnitForms{Simple: "min. {n}"},
 		Hour:     &sd.UnitForms{Simple: "nal. {n}"},
 		Day:      &sd.UnitForms{Simple: "ull. {n}"},
-		Week:     &sd.UnitForms{Simple: "sap. {n}"},
+		Week:     &sd.UnitForms{Simple: "sap. ak. {n}"},
 		Month:    &sd.UnitForms{Simple: "qaam. {n}"},
 		Year:     &sd.UnitForms{Simple: "uk. {n}"},
 		Ago:      strPtr("{0} matuma siorna"),
@@ -53,6 +56,7 @@ var KL = sd.DurationLocale{
 		Month:     &sd.UnitForms{Simple: "{n}mo"},
 		Year:      &sd.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0} matuma siorna"),
 		InFuture:  strPtr("{0} siunissami"),
 	},

@@ -15,7 +15,7 @@ locale_pa <- list(
   units = list(
     second = "{n} ਸਕਿੰਟ",
     minute = "{n} ਮਿੰਟ",
-    hour = "{n} ਘੰਟਾ",
+    hour = list(one = "{n} ਘੰਟਾ", other = "{n} ਘੰਟੇ"),
     day = list(one = "{n} ਦਿਨ", other = "{n} ਦਿਨ"),
     week = list(one = "{n} ਹਫ਼ਤਾ", other = "{n} ਹਫ਼ਤੇ"),
     month = list(one = "{n} ਮਹੀਨਾ", other = "{n} ਮਹੀਨੇ"),

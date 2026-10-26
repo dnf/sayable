@@ -28,7 +28,7 @@
    :plural #'plural-gd
    :units (list (cons :second '((:one . "{n} diog") (:two . "{n} dhiog") (:few . "{n} diogan") (:other . "{n} diog")))
                (cons :minute '((:one . "{n} mhionaid") (:two . "{n} mhionaid") (:few . "{n} mionaidean") (:other . "{n} mionaid")))
-               (cons :hour '((:one . "{n} uair") (:two . "{n} uair") (:few . "{n} uairean") (:other . "{n} uair")))
+               (cons :hour '((:one . "{n} uair a thìde") (:two . "{n} uair a thìde") (:few . "{n} uairean a thìde") (:other . "{n} uair a thìde")))
                (cons :day '((:one . "{n} latha") (:two . "{n} latha") (:few . "{n} làithean") (:other . "{n} latha")))
                (cons :week '((:one . "{n} sheachdain") (:two . "{n} sheachdain") (:few . "{n} seachdainean") (:other . "{n} seachdain")))
                (cons :month '((:one . "{n} mhìos") (:two . "{n} mhìos") (:few . "{n} mìosan") (:other . "{n} mìos")))

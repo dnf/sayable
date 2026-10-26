@@ -27,7 +27,7 @@ var DZ = sdate.DateLocale{
 	Yesterday: "ཁ་ཙ",
 	DayAfterTomorrow:  strPtr("གནངས་ཚེ"),
 	DayBeforeYesterday: strPtr("ཁ་ཉིམ"),
-	ThisWeekday:       strPtr("འདི་ {weekday}"),
+	ThisWeekday:       strPtr("{weekday} འདི"),
 	NextWeekday:       strPtr("{weekday} ཤུལ་མ"),
 	LastWeekday:       strPtr("{weekday} ཧེ་མ"),
 	MonthsInDate: nil,

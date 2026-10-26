@@ -23,4 +23,4 @@
    :just-born "Ch'ina al"
    :stages {:newborn {:type :neutral :label "Ch'ina al"} :infant {:type :neutral :label "Ch'ina al"} :toddler {:type :neutral :label "Ko'kal"} :child {:type :neutral :label "Ko'kal"} :teenager {:type :neutral :label "Xk'aalum"} :adult {:type :neutral :label "Winq"}}
    :short {:day {:type :simple :form "{n} q'e"} :week {:type :simple :form "{n} sem."} :month {:type :simple :form "{n} po"} :year {:type :simple :form "{n} chih."} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

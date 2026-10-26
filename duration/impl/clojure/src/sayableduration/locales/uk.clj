@@ -14,13 +14,13 @@
 (def locale
   {:code "uk"
    :plural (fn [n] (cond (and (== (mod n 10) 1) (not= (mod n 100) 11)) :one (and (<= 2 (mod n 10) 4) (not (<= 12 (mod n 100) 14))) :few :else :many))
-   :second {:type :pluralized :forms {:one "{n} секунда" :few "{n} секунди" :many "{n} секунд" :other "{n} секунд"}}
-   :minute {:type :pluralized :forms {:one "{n} хвилина" :few "{n} хвилини" :many "{n} хвилин" :other "{n} хвилин"}}
-   :hour {:type :pluralized :forms {:one "{n} година" :few "{n} години" :many "{n} годин" :other "{n} годин"}}
-   :day {:type :pluralized :forms {:one "{n} день" :few "{n} дні" :many "{n} днів" :other "{n} днів"}}
-   :week {:type :pluralized :forms {:one "{n} тиждень" :few "{n} тижні" :many "{n} тижнів" :other "{n} тижнів"}}
-   :month {:type :pluralized :forms {:one "{n} місяць" :few "{n} місяці" :many "{n} місяців" :other "{n} місяців"}}
-   :year {:type :pluralized :forms {:one "{n} рік" :few "{n} роки" :many "{n} років" :other "{n} років"}}
+   :second {:type :pluralized :forms {:one "{n} секунда" :few "{n} секунди" :many "{n} секунд" :other "{n} секунди"}}
+   :minute {:type :pluralized :forms {:one "{n} хвилина" :few "{n} хвилини" :many "{n} хвилин" :other "{n} хвилини"}}
+   :hour {:type :pluralized :forms {:one "{n} година" :few "{n} години" :many "{n} годин" :other "{n} години"}}
+   :day {:type :pluralized :forms {:one "{n} день" :few "{n} дні" :many "{n} днів" :other "{n} дня"}}
+   :week {:type :pluralized :forms {:one "{n} тиждень" :few "{n} тижні" :many "{n} тижнів" :other "{n} тижня"}}
+   :month {:type :pluralized :forms {:one "{n} місяць" :few "{n} місяці" :many "{n} місяців" :other "{n} місяця"}}
+   :year {:type :pluralized :forms {:one "{n} рік" :few "{n} роки" :many "{n} років" :other "{n} року"}}
    :half "{n} з половиною"
    :delimiter ", "
    :just-now "щойно"

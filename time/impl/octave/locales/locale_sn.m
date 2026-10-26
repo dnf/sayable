@@ -11,10 +11,10 @@
 
 function loc = locale_sn()
   loc.code = 'sn';
-  loc.clock.hours = {'gumi nembiri', 'imwe', 'mbiri', 'nhatu', 'ina', 'shanu', 'nhanhatu', 'nomwe', 'sere', 'pfumbamwe', 'gumi', 'gumi neimwe'};
-  loc.clock.midnight = 'usiku hwepakati';
+  loc.clock.hours = {'dzava gumi nembiri', 'yava imwe', 'dzava mbiri', 'dzava nhatu', 'dzava ina', 'dzava shanu', 'dzava nhanhatu', 'dzava nomwe', 'dzava sere', 'dzava pfumbamwe', 'dzava gumi', 'dzava gumi neimwe'};
+  loc.clock.midnight = 'pakati peusiku';
   loc.clock.noon = 'masikati';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} nemaminitsi mashanu', "p10", '{h} nemaminitsi gumi', "p15", '{h} nemaminitsi gumi nemashanu', "p20", '{h} nemaminitsi makumi maviri', "p25", '{h} nemaminitsi makumi maviri nemashanu', "p30", '{h} nehafu', "p35", '{h} nemaminitsi makumi matatu nemashanu', "p40", '{h} nemaminitsi makumi mana', "p45", '{h} nemaminitsi makumi mana nemashanu', "p50", '{h} nemaminitsi makumi mashanu', "p55", '{h} nemaminitsi makumi mashanu nemashanu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

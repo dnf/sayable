@@ -11,7 +11,7 @@
 
 proc locale_date_dyu {} {
     set code {dyu}
-    set months [list {Zanwuyekalo} {Feburuyekalo} {Marisikalo} {Awirilikalo} {Mɛkalo} {Zuwɛnkalo} {Zuluyekalo} {Utikalo} {Sɛtanburukalo} {Ɔkutɔburukalo} {Nowanburdukalo} {Desanburukalo}]
+    set months [list {Zanwuyekalo} {Feburuyekalo} {Marisikalo} {Awirilikalo} {Mɛkalo} {Zuwɛnkalo} {Zuluyekalo} {Utikalo} {Sɛtanburukalo} {Ɔkutɔburukalo} {Nowanburukalo} {Desanburukalo}]
     set weekdays [list {Kari} {Ntɛnɛn} {Tarata} {Araba} {Alamisa} {Juma} {Sibiri}]
     set day_format "{n}"
     set day_format_exceptions [dict create]

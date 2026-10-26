@@ -11,7 +11,7 @@
 
 function loc = locale_nb()
   loc.code = 'nb';
-  loc.clock.hours = {'tolv', 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve'};
+  loc.clock.hours = {'tolv', 'ett', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve'};
   loc.clock.midnight = 'midnatt';
   loc.clock.noon = 'middag';
   loc.clock.patterns = struct("p0", 'klokka {h}', "p5", 'fem over {h}', "p10", 'ti over {h}', "p15", 'kvart over {h}', "p20", 'tjue over {h}', "p25", 'fem på halv {next_h}', "p30", 'halv {next_h}', "p35", 'fem over halv {next_h}', "p40", 'tjue på {next_h}', "p45", 'kvart på {next_h}', "p50", 'ti på {next_h}', "p55", 'fem på {next_h}');

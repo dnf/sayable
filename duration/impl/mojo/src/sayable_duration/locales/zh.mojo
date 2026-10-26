@@ -31,7 +31,7 @@ fn build_zh() -> DurationLocale:
     var day = simple_unit("{n}天")
     var week = simple_unit("{n}周")
     var month = simple_unit("{n}个月")
-    var year = simple_unit("{n}岁")
+    var year = simple_unit("{n}年")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n}秒")

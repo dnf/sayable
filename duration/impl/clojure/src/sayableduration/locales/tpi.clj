@@ -21,10 +21,10 @@
    :week {:type :simple :form "{n} wik"}
    :month {:type :simple :form "{n} mun"}
    :year {:type :simple :form "{n} yia"}
-   :half "{n} na hap"
+   :half "{0} na hap"
    :delimiter ", "
    :just-now "nau tasol"
    :ago "{0} i go pinis"
    :in-future "long {0}"
    :short {:second {:type :simple :form "{n} sek"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} aua"} :day {:type :simple :form "{n} de"} :week {:type :simple :form "{n} wik"} :month {:type :simple :form "{n} mun"} :year {:type :simple :form "{n} yia"} :half nil :delimiter nil :ago "{0} i go pinis" :in-future "long {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} i go pinis" :in-future "long {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} i go pinis" :in-future "long {0}"}})

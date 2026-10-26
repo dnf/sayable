@@ -30,7 +30,7 @@ our sub locale() {
             infant => 'Vǐ',
             toddler => 'Vǐ',
             child => 'Vǐ',
-            teenager => 'Nyɔ̌nu',
+            teenager => { m => 'Dɔnkpɛvu', f => 'Ɖyɔ̌vǐ' },
             adult => 'Mɛ̌xo',
         },
         short => {

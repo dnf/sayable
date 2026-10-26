@@ -15,18 +15,18 @@ st_hours('si', ['දොළහ', 'එක', 'දෙක', 'තුන', 'හතර',
 st_midnight('si', 'මධ්‍යම රාත්‍රිය').
 st_noon('si', 'මධ්‍යාහ්නය').
 
-st_pattern('si', 0, '{h}:00').
-st_pattern('si', 5, '{h}:05').
-st_pattern('si', 10, '{h}:10').
-st_pattern('si', 15, '{h}:15').
-st_pattern('si', 20, '{h}:20').
-st_pattern('si', 25, '{h}:25').
-st_pattern('si', 30, '{h}:30').
-st_pattern('si', 35, '{h}:35').
-st_pattern('si', 40, '{h}:40').
-st_pattern('si', 45, '{h}:45').
-st_pattern('si', 50, '{h}:50').
-st_pattern('si', 55, '{h}:55').
+st_pattern('si', 0, '{h}යි').
+st_pattern('si', 5, '{h}යි විනාඩි පහයි').
+st_pattern('si', 10, '{h}යි විනාඩි දහයයි').
+st_pattern('si', 15, '{h}යි කාලයි').
+st_pattern('si', 20, '{h}යි විනාඩි විස්සයි').
+st_pattern('si', 25, '{h}යි විනාඩි විසිපහයි').
+st_pattern('si', 30, '{h} හමාරයි').
+st_pattern('si', 35, '{next_h}ට විනාඩි විසිපහයි').
+st_pattern('si', 40, '{next_h}ට විනාඩි විස්සයි').
+st_pattern('si', 45, '{next_h}ට කාලයි').
+st_pattern('si', 50, '{next_h}ට විනාඩි දහයයි').
+st_pattern('si', 55, '{next_h}ට විනාඩි පහයි').
 
 short_st_use24h('si', true).
 short_st_format('si', '{h}:{mm}').

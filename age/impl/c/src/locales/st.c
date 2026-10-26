@@ -29,7 +29,7 @@ const SaLocale sa_locale_st = {
     {
         { "Lesea le sa tswa hlaha", "" },
         { "Lesea", "" },
-        { "Ngwanana", "" },
+        { "Ngwana e monyane", "" },
         { "Ngwana", "" },
         { "Mosha", "" },
         { "Motho e moholo", "" }

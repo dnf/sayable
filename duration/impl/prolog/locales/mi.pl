@@ -17,12 +17,12 @@ sd_plural('mi', _, other).
 sd_unit('mi', second, _, '{n} hēkona').
 sd_unit('mi', minute, _, '{n} meneti').
 sd_unit('mi', hour, _, '{n} hāora').
-sd_unit('mi', day, _, 'rā {n}').
-sd_unit('mi', week, _, 'wiki {n}').
-sd_unit('mi', month, _, 'marama {n}').
-sd_unit('mi', year, _, 'tau {n}').
+sd_unit('mi', day, _, '{n} rā').
+sd_unit('mi', week, _, '{n} wiki').
+sd_unit('mi', month, _, '{n} marama').
+sd_unit('mi', year, _, '{n} tau').
 
-sd_half('mi', '{0}½').
+sd_half('mi', '{n}½').
 sd_delimiter('mi', ', ').
 sd_just_now('mi', 'ināianei').
 sd_ago('mi', '{0} i mua').
@@ -31,10 +31,10 @@ sd_in_future('mi', 'ā te {0}').
 short_sd_unit('mi', second, _, '{n} hēk').
 short_sd_unit('mi', minute, _, '{n} men').
 short_sd_unit('mi', hour, _, '{n} hāo').
-short_sd_unit('mi', day, _, 'rā {n}').
-short_sd_unit('mi', week, _, 'w {n}').
-short_sd_unit('mi', month, _, 'm {n}').
-short_sd_unit('mi', year, _, 't {n}').
+short_sd_unit('mi', day, _, '{n} rā').
+short_sd_unit('mi', week, _, '{n} w').
+short_sd_unit('mi', month, _, '{n} m').
+short_sd_unit('mi', year, _, '{n} t').
 short_sd_ago('mi', '{0} i mua').
 short_sd_in_future('mi', 'ā te {0}').
 

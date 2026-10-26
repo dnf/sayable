@@ -5,21 +5,15 @@
   "age": {
     "units": {
       "day": {
-        "one": "maalin {n}",
-        "other": "maalmood {n}"
+        "one": "{n} maalin",
+        "other": "{n} maalmood"
       },
-      "week": {
-        "one": "toddobaad {n}",
-        "other": "toddobaadyo {n}"
-      },
+      "week": "{n} toddobaad",
       "month": {
-        "one": "bil {n}",
-        "other": "bilood {n}"
+        "one": "{n} bil",
+        "other": "{n} bilood"
       },
-      "year": {
-        "one": "sano {n}",
-        "other": "sanooyin {n}"
-      }
+      "year": "{n} sano"
     },
     "half": "{n}½",
     "delimiter": ", ",
@@ -121,34 +115,25 @@
   },
   "duration": {
     "units": {
-      "second": {
-        "one": "ilbiriqsi {n}",
-        "other": "ilbiriqsiyaal {n}"
-      },
+      "second": "{n} ilbiriqsi",
       "minute": {
-        "one": "daqiiqad {n}",
-        "other": "daqiiqadood {n}"
+        "one": "{n} daqiiqad",
+        "other": "{n} daqiiqo"
       },
       "hour": {
-        "one": "saacad {n}",
-        "other": "saacadood {n}"
+        "one": "{n} saacad",
+        "other": "{n} saacadood"
       },
       "day": {
-        "one": "maalin {n}",
-        "other": "maalmood {n}"
+        "one": "{n} maalin",
+        "other": "{n} maalmood"
       },
-      "week": {
-        "one": "toddobaad {n}",
-        "other": "toddobaadyo {n}"
-      },
+      "week": "{n} toddobaad",
       "month": {
-        "one": "bil {n}",
-        "other": "bilood {n}"
+        "one": "{n} bil",
+        "other": "{n} bilood"
       },
-      "year": {
-        "one": "sano {n}",
-        "other": "sanooyin {n}"
-      }
+      "year": "{n} sano"
     },
     "half": "{n}½",
     "delimiter": ", ",
@@ -203,34 +188,34 @@
   "time": {
     "clock": {
       "hours": [
-        "laba iyo toban",
-        "kow",
-        "laba",
-        "saddex",
-        "afar",
-        "shan",
-        "lix",
-        "toddoba",
-        "siddeed",
-        "sagaal",
-        "toban",
-        "kow iyo toban"
+        "laba iyo tobanka",
+        "kowda",
+        "labada",
+        "saddexda",
+        "afarta",
+        "shanta",
+        "lixda",
+        "toddobada",
+        "siddeedda",
+        "sagaasha",
+        "tobanka",
+        "kow iyo tobanka"
       ],
       "midnight": "saqda dhexe",
       "noon": "duhur",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "{h} iyo shan",
+        "10": "{h} iyo toban",
+        "15": "{h} iyo rubuc",
+        "20": "{h} iyo labaatan",
+        "25": "{h} iyo shan iyo labaatan",
+        "30": "{h} iyo bar",
+        "35": "{next_h} shan iyo labaatan la'",
+        "40": "{next_h} labaatan la'",
+        "45": "{next_h} rubuc la'",
+        "50": "{next_h} toban la'",
+        "55": "{next_h} shan la'"
       }
     },
     "short": {
@@ -253,5 +238,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Definite hour forms as used for clock time (kowda, labada, saddexda, afarta, shanta, lixda, toddobada, siddeedda, sagaasha, tobanka, kow iyo tobanka, laba iyo tobanka). Past: '{h} iyo shan/toban/rubuc/labaatan/shan iyo labaatan/bar'. To: '{next_h} rubuc la'' etc. ('la'' = lacking). Doubts: the exact 'to' construction (some speakers say 'rubuc ka dhiman' or put 'la'' differently); 'siddeedda' gemination spelling."
+    }
+  ]
 }

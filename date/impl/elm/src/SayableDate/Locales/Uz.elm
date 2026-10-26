@@ -43,15 +43,15 @@ locale =
         , "juma"
         , "shanba"
         ]
-    , dayFormat = "{n}"
+    , dayFormat = "{n}-"
     , dayFormatExceptions = Dict.empty
-    , datePattern = "{day} {month}"
-    , datePatternWithYear = "{day} {month} {year}"
+    , datePattern = "{day}{month}"
+    , datePatternWithYear = "{day}{month}, {year}"
     , today = "bugun"
     , tomorrow = "ertaga"
     , yesterday = "kecha"
     , dayAfterTomorrow = Just "indinga"
-    , dayBeforeYesterday = Just "kechagina"
+    , dayBeforeYesterday = Just "o'tgan kuni"
     , thisWeekday = Just "bu {weekday}"
     , nextWeekday = Just "keyingi {weekday}"
     , lastWeekday = Just "o'tgan {weekday}"
@@ -82,10 +82,10 @@ locale =
                 , "jum"
                 , "shan"
                 ]
-            , ovrDayFormat = Just "{n}"
+            , ovrDayFormat = Just "{n}-"
             , ovrDayFormatExceptions = Just Dict.empty
-            , ovrDatePattern = Just "{day} {month}"
-            , ovrDatePatternWithYear = Just "{day} {month} {year}"
+            , ovrDatePattern = Just "{day}{month}"
+            , ovrDatePatternWithYear = Just "{day}{month}, {year}"
             , ovrToday = Nothing
             , ovrTomorrow = Nothing
             , ovrYesterday = Nothing

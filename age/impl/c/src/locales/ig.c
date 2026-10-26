@@ -20,10 +20,10 @@ const SaLocale sa_locale_ig = {
     "ig",
     plural_ig,
     {
-        { "{n} ụbọchị", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} izu", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} ọnwa", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} afọ", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "ụbọchị {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "izu {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "ọnwa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "afọ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} na ọkara", ", ", "Nwa ọhụrụ",
     {
@@ -31,9 +31,9 @@ const SaLocale sa_locale_ig = {
         { "Nwa ọhụrụ", "" },
         { "Nwa nta", "" },
         { "Nwa", "" },
-        { "Nwokorobịa", "" },
+        { "Nwokorobịa", "Agbọghọbịa" },
         { "Okenye", "" }
     },
-    true, { true, { "{n} ụbọchị", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} izu", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ọnwa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} afọ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "ụbọchị {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "izu {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ọnwa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "afọ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
     true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

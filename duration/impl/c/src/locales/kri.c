@@ -28,9 +28,9 @@ const SduDurationLocale sdu_locale_kri = {
         { "{n} mont", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ia", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n} na af", ", ",
+    "{0} ɛn af", ", ",
     "jos naw",
     "{0} bak", "na {0}",
     true, { true, { "{n} sek.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} awa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} de", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wik", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mont", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ia", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} bak", true, "na {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} bak", true, "na {0}" }
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} bak", true, "na {0}" }
 };

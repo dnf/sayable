@@ -16,10 +16,10 @@ function plural_ha([int]$n) {
 
 function locale_ha {
     $units = @{
-        day = @{ one = '{n} kwana'; other = '{n} kwanaki' }
-        week = @{ one = '{n} mako'; other = '{n} makonni' }
-        month = @{ one = '{n} wata'; other = '{n} watanni' }
-        year = @{ one = '{n} shekara'; other = '{n} shekaru' }
+        day = @{ one = 'kwana {n}'; other = 'kwanaki {n}' }
+        week = @{ one = 'mako {n}'; other = 'makonni {n}' }
+        month = @{ one = 'wata {n}'; other = 'watanni {n}' }
+        year = @{ one = 'shekara {n}'; other = 'shekaru {n}' }
     }
     $half = '{n}½'
     $delimiter = ', '
@@ -27,17 +27,17 @@ function locale_ha {
     $stages = @{
         newborn = 'Jariri'
         infant = 'Jariri'
-        toddler = 'Ƙaramin yaro'
-        child = 'Yaro'
-        teenager = 'Saurayi'
+        toddler = @{ m = 'Ƙaramin yaro'; f = 'Ƙaramar yarinya' }
+        child = @{ m = 'Yaro'; f = 'Yarinya' }
+        teenager = @{ m = 'Saurayi'; f = 'Budurwa' }
         adult = 'Babba'
     }
     $short = @{
         units = @{
-            day = '{n} kw.'
-            week = '{n} mk.'
-            month = '{n} wt.'
-            year = '{n} shk.'
+            day = 'kw. {n}'
+            week = 'mk. {n}'
+            month = 'wt. {n}'
+            year = 'shk. {n}'
         }
     }
     $compact = @{

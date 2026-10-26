@@ -16,10 +16,10 @@ proc plural_ig {n} {
 proc locale_ig {} {
     set code {ig}
     set units [dict create \
-        day "{n} ụbọchị" \
-        week "{n} izu" \
-        month "{n} ọnwa" \
-        year "{n} afọ" \
+        day "ụbọchị {n}" \
+        week "izu {n}" \
+        month "ọnwa {n}" \
+        year "afọ {n}" \
     ]
     set half "{0} na ọkara"
     set delimiter {, }
@@ -29,15 +29,15 @@ proc locale_ig {} {
         infant {Nwa ọhụrụ} \
         toddler {Nwa nta} \
         child {Nwa} \
-        teenager {Nwokorobịa} \
+        teenager [dict create m {Nwokorobịa} f {Agbọghọbịa}] \
         adult {Okenye} \
     ]
     set short [dict create \
         units [dict create \
-            day "{n} ụbọchị" \
-            week "{n} izu" \
-            month "{n} ọnwa" \
-            year "{n} afọ" \
+            day "ụbọchị {n}" \
+            week "izu {n}" \
+            month "ọnwa {n}" \
+            year "afọ {n}" \
         ] \
     ]
     set compact [dict create \

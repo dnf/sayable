@@ -23,9 +23,9 @@ var GN = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.SimpleUnit("{n} aravo'i"),
-		Minute: sd.SimpleUnit("{n} aravo"),
-		Hour:   sd.SimpleUnit("{n} aravo guasu"),
+		Second: sd.SimpleUnit("{n} aravo'ive"),
+		Minute: sd.SimpleUnit("{n} aravo'i"),
+		Hour:   sd.SimpleUnit("{n} aravo"),
 		Day:    sd.SimpleUnit("{n} ára"),
 		Week:   sd.SimpleUnit("{n} arapokõindy"),
 		Month:  sd.SimpleUnit("{n} jasy"),
@@ -37,9 +37,9 @@ var GN = sd.DurationLocale{
 	Ago:       "{0} ohasava'ekue",
 	InFuture:  "{0} rire",
 	Short: &sd.CompactnessOverride{
-		Second:   &sd.UnitForms{Simple: "{n} ara'i"},
-		Minute:   &sd.UnitForms{Simple: "{n} ara"},
-		Hour:     &sd.UnitForms{Simple: "{n} ara g"},
+		Second:   &sd.UnitForms{Simple: "{n} aravo'ive"},
+		Minute:   &sd.UnitForms{Simple: "{n} aravo'i"},
+		Hour:     &sd.UnitForms{Simple: "{n} aravo"},
 		Day:      &sd.UnitForms{Simple: "{n} ára"},
 		Week:     &sd.UnitForms{Simple: "{n} ara"},
 		Month:    &sd.UnitForms{Simple: "{n} jas"},

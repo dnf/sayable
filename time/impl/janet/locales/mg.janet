@@ -14,7 +14,7 @@
    :clock {:hours @["roa ambin'ny folo" "iray" "roa" "telo" "efatra" "dimy" "enina" "fito" "valo" "sivy" "folo" "iraika ambin'ny folo"]
            :midnight "misasakalina"
            :noon "atoandro"
-           :patterns {0 "{h} ora" 5 "{h} sy dimy minitra" 10 "{h} sy folo minitra" 15 "{h} sy fahefatra" 20 "{h} sy roapolo minitra" 25 "{h} sy dimy amby roapolo minitra" 30 "{h} sy sasany" 35 "dimy amby roapolo minitra alohan'ny {next_h}" 40 "roapolo minitra alohan'ny {next_h}" 45 "fahefatra alohan'ny {next_h}" 50 "folo minitra alohan'ny {next_h}" 55 "dimy minitra alohan'ny {next_h}"}}
+           :patterns {0 "{h} ora" 5 "{h} ora sy dimy minitra" 10 "{h} ora sy folo minitra" 15 "{h} ora sy fahefany" 20 "{h} ora sy roapolo minitra" 25 "{h} ora sy dimy amby roapolo minitra" 30 "{h} ora sy sasany" 35 "{next_h} ora latsaka dimy amby roapolo minitra" 40 "{next_h} ora latsaka roapolo minitra" 45 "{next_h} ora latsaka fahefany" 50 "{next_h} ora latsaka folo minitra" 55 "{next_h} ora latsaka dimy minitra"}}
    :short {:clock {:use24h false :format "{h}:{mm} {ampm}" :am-pm ["AM" "PM"]}}
    :compact {:clock {:use24h false :format "{h}:{mm}{ampm}" :am-pm ["a" "p"]}}
 })

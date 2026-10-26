@@ -19,7 +19,7 @@ sd_unit('bem', second, other, 'amasekondi {n}').
 sd_unit('bem', minute, one, 'iminiti {n}').
 sd_unit('bem', minute, other, 'amaminiti {n}').
 sd_unit('bem', hour, one, 'insa {n}').
-sd_unit('bem', hour, other, 'amanso {n}').
+sd_unit('bem', hour, other, 'insa {n}').
 sd_unit('bem', day, one, 'ubushiku {n}').
 sd_unit('bem', day, other, 'inshiku {n}').
 sd_unit('bem', week, one, 'umulungu {n}').

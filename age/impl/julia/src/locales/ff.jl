@@ -28,12 +28,12 @@ const FF = AgeLocale(
         "infant" => StageLabel("Ɓinngel"),
         "toddler" => StageLabel("Cukalel"),
         "child" => StageLabel("Suka"),
-        "teenager" => StageLabel("Suka debbo"),
+        "teenager" => GenderedStage("Suka gorko", "Suka debbo"),
         "adult" => StageLabel("Mawɗo"),
     ),
     short_override = CompactnessOverride(
         units = Dict(
-            "day" => "ñalɗe {n}",
+            "day" => Dict("one" => "ñalawma {n}", "other" => "ñalɗe {n}"),
             "week" => Dict("one" => "yontere {n}", "other" => "yontereeji {n}"),
             "month" => Dict("one" => "lewru {n}", "other" => "lebbi {n}"),
             "year" => Dict("one" => "hitaande {n}", "other" => "duuɓi {n}"),
@@ -41,7 +41,7 @@ const FF = AgeLocale(
     ),
     compact_override = CompactnessOverride(
         units = Dict(
-            "day" => "ñalɗe {n}",
+            "day" => Dict("one" => "ñalawma {n}", "other" => "ñalɗe {n}"),
             "week" => Dict("one" => "yont {n}", "other" => "yontji {n}"),
             "month" => Dict("one" => "lew {n}", "other" => "leb {n}"),
             "year" => Dict("one" => "hit {n}", "other" => "duuɓi {n}"),

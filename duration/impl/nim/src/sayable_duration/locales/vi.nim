@@ -23,13 +23,13 @@ let VI* = DurationLocale(
     "day": simpleUnit("{n} ngày"),
     "week": simpleUnit("{n} tuần"),
     "month": simpleUnit("{n} tháng"),
-    "year": simpleUnit("{n} tuổi"),
+    "year": simpleUnit("{n} năm"),
   }.toOrderedTable,
   half: "{0} rưỡi",
   delimiter: ", ",
   justNow: "vừa xong",
   ago: "{0} trước",
-  inFuture: "trong {0}",
+  inFuture: "{0} nữa",
   short: some(CompactnessOverride(
     units: some({
       "second": simpleUnit("{n} giây"),
@@ -43,7 +43,7 @@ let VI* = DurationLocale(
     half: none(string),
     delimiter: none(string),
     ago: some("{0} trước"),
-    inFuture: some("trong {0}"),
+    inFuture: some("{0} nữa"),
   )),
   compact: some(CompactnessOverride(
     units: some({
@@ -58,6 +58,6 @@ let VI* = DurationLocale(
     half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0} trước"),
-    inFuture: some("trong {0}"),
+    inFuture: some("{0} nữa"),
   )),
 )

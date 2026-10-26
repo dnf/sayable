@@ -14,12 +14,12 @@
 sa_plural('mi', 1, one) :- !.
 sa_plural('mi', _, other).
 
-sa_unit('mi', day, _, 'rā {n}').
-sa_unit('mi', week, _, 'wiki {n}').
-sa_unit('mi', month, _, 'marama {n}').
-sa_unit('mi', year, _, 'tau {n}').
+sa_unit('mi', day, _, '{n} rā').
+sa_unit('mi', week, _, '{n} wiki').
+sa_unit('mi', month, _, '{n} marama').
+sa_unit('mi', year, _, '{n} tau').
 
-sa_half('mi', '{0}½').
+sa_half('mi', '{n}½').
 sa_delimiter('mi', ', ').
 sa_just_born('mi', 'Pēpi hou').
 
@@ -30,10 +30,10 @@ sa_stage('mi', child, _, 'Tamariki').
 sa_stage('mi', teenager, _, 'Rangatahi').
 sa_stage('mi', adult, _, 'Pakeke').
 
-short_sa_unit('mi', day, _, 'rā {n}').
-short_sa_unit('mi', week, _, 'w {n}').
-short_sa_unit('mi', month, _, 'm {n}').
-short_sa_unit('mi', year, _, 't {n}').
+short_sa_unit('mi', day, _, '{n} rā').
+short_sa_unit('mi', week, _, '{n} w').
+short_sa_unit('mi', month, _, '{n} m').
+short_sa_unit('mi', year, _, '{n} t').
 
 compact_sa_unit('mi', day, _, '{n}r').
 compact_sa_unit('mi', week, _, '{n}w').

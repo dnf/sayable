@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ve"
    :clock (make-clock-config
-    :hours (list "fumimbili" "thihi" "mbili" "raru" "ina" "thanu" "rathi" "sumbe" "malo" "tahe" "fumi" "fuminthihi")
+    :hours (list "ya fumi na mbili" "ya u thoma" "ya vhuvhili" "ya vhuraru" "ya vhuṋa" "ya vhuṱanu" "ya vhurathi" "ya vhusumbe" "ya vhumalo" "ya vhuṱahe" "ya fumi" "ya fumi na nthihi")
     :midnight "vhukati ha vhusiku"
     :noon "vhukati ha masiari"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "awara {h}") (cons 5 "awara {h} na ṱhanu") (cons 10 "awara {h} na fumi") (cons 15 "awara {h} na kotara") (cons 20 "awara {h} na mahumi mavhili") (cons 25 "awara {h} na mahumi mavhili na ṱhanu") (cons 30 "awara {h} na hafu") (cons 35 "awara {h} na mahumi mararu na ṱhanu") (cons 40 "awara {h} na mahumi maṋa") (cons 45 "awara {h} na mahumi maṋa na ṱhanu") (cons 50 "awara {h} na mahumi maṱanu") (cons 55 "awara {h} na mahumi maṱanu na ṱhanu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

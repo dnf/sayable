@@ -14,10 +14,10 @@ local M = {}
 M.code = "ig"
 M.plural = function(_n) return "other" end
 M.units = {
-    day = "{n} ụbọchị",
-    week = "{n} izu",
-    month = "{n} ọnwa",
-    year = "{n} afọ",
+    day = "ụbọchị {n}",
+    week = "izu {n}",
+    month = "ọnwa {n}",
+    year = "afọ {n}",
 }
 M.half = "{0} na ọkara"
 M.delimiter = ", "
@@ -27,15 +27,15 @@ M.stages = {
     infant = "Nwa ọhụrụ",
     toddler = "Nwa nta",
     child = "Nwa",
-    teenager = "Nwokorobịa",
+    teenager = { m = "Nwokorobịa", f = "Agbọghọbịa" },
     adult = "Okenye",
 }
 M.short = {
     units = {
-        day = "{n} ụbọchị",
-        week = "{n} izu",
-        month = "{n} ọnwa",
-        year = "{n} afọ",
+        day = "ụbọchị {n}",
+        week = "izu {n}",
+        month = "ọnwa {n}",
+        year = "afọ {n}",
     },
 }
 M.compact = {

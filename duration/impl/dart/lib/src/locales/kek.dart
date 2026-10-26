@@ -54,6 +54,7 @@ final kek = DurationLocale(
       'month': simpleUnit('{n}mo'),
       'year': simpleUnit('{n}y'),
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} qakab\'',
     inFuture: 'chi {0}',

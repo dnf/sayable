@@ -22,7 +22,7 @@ pub fn locale() -> AgeLocale {
             month: UnitForms::simple("ཟླ་ {n}"),
             year: UnitForms::simple("ལོ་ {n}"),
         },
-        half: "{0} ཕྱེད".to_string(),
+        half: "{0} དང་ཕྱེད".to_string(),
         delimiter: " ".to_string(),
         just_born: "གསར་སྐྱེས".to_string(),
         stages: Stages {

@@ -12,7 +12,7 @@
 #include "sayableage/sayableage.h"
 
 static SaPluralCategory plural_ml(int n) {
-    if (n == 0 || n == 1) return SA_ONE;
+    if (n == 1) return SA_ONE;
     return SA_OTHER;
 }
 
@@ -25,7 +25,7 @@ const SaLocale sa_locale_ml = {
         { NULL, { NULL, "{n} മാസം", NULL, NULL, NULL, "{n} മാസങ്ങൾ" } },
         { NULL, { NULL, "{n} വയസ്സ്", NULL, NULL, NULL, "{n} വയസ്സ്" } }
     },
-    "{0} ര", ", ", "നവജാതശിശു",
+    "{n}½", ", ", "നവജാതശിശു",
     {
         { "നവജാതശിശു", "" },
         { "ശിശു", "" },

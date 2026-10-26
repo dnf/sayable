@@ -23,7 +23,7 @@ pub const locale_tg = AgeLocale{
 	week: simple_unit('{n} ҳафта')
 	month: simple_unit('{n} моҳ')
 	year: simple_unit('{n} сол')
-	half: '{0} ним'
+	half: '{0}у ним'
 	delimiter: ', '
 	just_born: 'Навзод'
 	newborn: stage_neutral('Навзод')

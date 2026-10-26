@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ng = {
         { "omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe" },
         "onguloshi pakati",
         "omutenya",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "otundi {h}", "otundi {h} noominute ntano", "otundi {h} noominute omulongo", "otundi {h} noominute omulongo nantano", "otundi {h} noominute omilongo mbali", "otundi {h} noominute omilongo mbali nantano", "otundi {h} netata", "otundi {h} noominute omilongo ndatu nantano", "otundi {h} noominute omilongo ne", "otundi {h} noominute omilongo ne nantano", "otundi {h} noominute omilongo ntano", "otundi {h} noominute omilongo ntano nantano" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

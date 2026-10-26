@@ -20,8 +20,8 @@ ca
 	locale weekdays: (OrderedCollection withAll: { 'diumenge'. 'dilluns'. 'dimarts'. 'dimecres'. 'dijous'. 'divendres'. 'dissabte' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
-	locale datePattern: '{day} de {month}'.
-	locale datePatternWithYear: '{day} de {month} de {year}'.
+	locale datePattern: '{day} {month}'.
+	locale datePatternWithYear: '{day} {month} de {year}'.
 	locale today: 'avui'.
 	locale tomorrow: 'demà'.
 	locale yesterday: 'ahir'.
@@ -30,13 +30,13 @@ ca
 	locale thisWeekday: 'aquest {weekday}'.
 	locale nextWeekday: '{weekday} que ve'.
 	locale lastWeekday: '{weekday} passat'.
-	locale monthsInDate: nil.
+	locale monthsInDate: (OrderedCollection withAll: { 'de gener'. 'de febrer'. 'de març'. 'd''abril'. 'de maig'. 'de juny'. 'de juliol'. 'd''agost'. 'de setembre'. 'd''octubre'. 'de novembre'. 'de desembre' }).
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'gen'. 'feb'. 'març'. 'abr'. 'maig'. 'juny'. 'jul'. 'ag'. 'set'. 'oct'. 'nov'. 'des' }).
 		#weekdays. (OrderedCollection withAll: { 'dg'. 'dl'. 'dt'. 'dc'. 'dj'. 'dv'. 'ds' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
-		#datePatternWithYear. '{day} {month} {year}'.
+		#datePatternWithYear. '{day} {month} de {year}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#datePattern. '{d}/{m}'.

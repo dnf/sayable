@@ -23,9 +23,9 @@ pub fn locale() -> DurationLocale {
             }
         },
         units: Units {
-            second: UnitForms::simple("{n} sekunde"),
-            minute: UnitForms::simple("{n} dakika"),
-            hour: UnitForms::simple("{n} saa"),
+            second: UnitForms::simple("sekunde {n}"),
+            minute: UnitForms::simple("dakika {n}"),
+            hour: UnitForms::simple("saa {n}"),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "siku {n}"),
                 (PluralCategory::Other, "siku {n}"),

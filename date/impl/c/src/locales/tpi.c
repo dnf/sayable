@@ -31,7 +31,7 @@ const SdDateLocale sd_locale_tpi = {
     "tumora",
     "asde",
     "haptumora",
-    "asde bipo",
+    "hapasde",
     "dispela {weekday}",
     "{weekday} bihain",
     "{weekday} bipo",

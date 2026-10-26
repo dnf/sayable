@@ -20,7 +20,7 @@
     :hours (list "awom mebú" "fóg" "abúi" "aláa" "anyin" "atán" "asaman" "zamgbala" "mwom" "ebulú" "awom" "awom mefóg")
     :midnight "akiri alúk"
     :noon "ewaŋ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "awola {h}") (cons 5 "awola {h} ai minit tán") (cons 10 "awola {h} ai minit awom") (cons 15 "awola {h} ai minit awom ai tán") (cons 20 "awola {h} ai minit mewom mebú") (cons 25 "awola {h} ai minit mewom mebú ai tán") (cons 30 "awola {h} ai minit mewom melaa") (cons 35 "awola {h} ai minit mewom melaa ai tán") (cons 40 "awola {h} ai minit mewom menyin") (cons 45 "awola {h} ai minit mewom menyin ai tán") (cons 50 "awola {h} ai minit mewom metán") (cons 55 "awola {h} ai minit mewom metán ai tán")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

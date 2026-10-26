@@ -11,8 +11,8 @@
 
 function loc = locale_tk()
   loc.code = 'tk';
-  loc.months = {'Ýanwar', 'Fewral', 'Mart', 'Aprel', 'Maý', 'Iýun', 'Iýul', 'Awgust', 'Sentýabr', 'Oktýabr', 'Noýabr', 'Dekabr'};
-  loc.weekdays = {'Ýekşenbe', 'Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe'};
+  loc.months = {'ýanwar', 'fewral', 'mart', 'aprel', 'maý', 'iýun', 'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr'};
+  loc.weekdays = {'ýekşenbe', 'duşenbe', 'sişenbe', 'çarşenbe', 'penşenbe', 'anna', 'şenbe'};
   loc.day_format = '{n}';
   loc.day_format_exceptions = struct();
   loc.date_pattern = '{day} {month}';
@@ -26,8 +26,8 @@ function loc = locale_tk()
   loc.next_weekday = 'indiki {weekday}';
   loc.last_weekday = 'geçen {weekday}';
   loc.months_in_date = {};
-  loc.short.months = {'Ýan', 'Few', 'Mar', 'Apr', 'Maý', 'Iýn', 'Iýl', 'Awg', 'Sen', 'Okt', 'Noý', 'Dek'};
-  loc.short.weekdays = {'Ýek', 'Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen'};
+  loc.short.months = {'ýan', 'few', 'mar', 'apr', 'maý', 'iýn', 'iýl', 'awg', 'sen', 'okt', 'noý', 'dek'};
+  loc.short.weekdays = {'ýek', 'duş', 'siş', 'çar', 'pen', 'ann', 'şen'};
   loc.short.day_format = '{n}';
   loc.short.date_pattern = '{day} {month}';
   loc.short.date_pattern_with_year = '{day} {month} {year}';

@@ -34,11 +34,11 @@ locale = DurationLocale
           , (Other, "{n} மாதங்கள்")
           ]
         , unitYear = Pluralized
-          [ (One, "{n} வயது")
-          , (Other, "{n} வயது")
+          [ (One, "{n} ஆண்டு")
+          , (Other, "{n} ஆண்டுகள்")
           ]
         }
-    , localeHalf = "{0}ரை"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustNow = "இப்போதுதான்"
     , localeAgo = "{0} முன்"

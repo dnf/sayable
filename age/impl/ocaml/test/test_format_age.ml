@@ -22,6 +22,20 @@ let contains_weeks result =
     if not (Formatter.string_contains ~needle:"week" s) then
       Alcotest.failf "expected 'week' in %S" s
 
+(* The default-date path reads the system clock and there is no way to inject
+   one, so the dates below are derived from today to keep the canonical outputs. *)
+let iso_days_ago n =
+  let tm = Unix.gmtime (Unix.gettimeofday () -. float_of_int (n * 86400)) in
+  Printf.sprintf "%04d-%02d-%02d" (tm.Unix.tm_year + 1900) (tm.Unix.tm_mon + 1) tm.Unix.tm_mday
+
+let iso_years_ago n =
+  let tm = Unix.gmtime (Unix.gettimeofday ()) in
+  Printf.sprintf "%04d-%02d-%02d" (tm.Unix.tm_year + 1900 - n) (tm.Unix.tm_mon + 1)
+    (min tm.Unix.tm_mday 28)
+
+let age_default dob = Formatter.format_age en Types.Normal dob None
+let stage_default dob = Formatter.format_stage en dob None None
+
 (* 1. Null / edge cases *)
 let test_1_1 () = check_none (age "" "2025-06-15")        (* 1.1 null dateOfBirth *)
 let test_1_3 () = check_none (age "" "2025-06-15")        (* 1.3 empty string *)
@@ -131,6 +145,15 @@ let test_14_3 () = check_some "5 months" (age "2025-01-31" "2025-06-30")  (* 14.
 let test_14_4 () = check_some "5 months" (age "2025-01-31" "2025-07-01")  (* 14.4 Jan31->Jul1 *)
 let test_14_5 () = check_some "6 months" (age "2025-01-31" "2025-07-31")  (* 14.5 Jan31->Jul31 *)
 
+(* 15. Default date *)
+let test_15_1 () = check_some "5 years" (age_default (iso_years_ago 5))  (* 15.1 default asOf, 5 years *)
+let test_15_2 () = check_some "5 days" (age_default (iso_days_ago 5))    (* 15.2 default asOf, 5 days *)
+
+(* 23. formatStage default date *)
+let test_23_1 () = check_some "Newborn" (stage_default (iso_days_ago 0))   (* 23.1 *)
+let test_23_2 () = check_some "Child" (stage_default (iso_years_ago 5))    (* 23.2 *)
+let test_23_3 () = check_some "Adult" (stage_default (iso_years_ago 45))   (* 23.3 *)
+
 (* 16. formatStage - null / edge cases *)
 let test_16_1 () = check_none (stage "" "2025-06-15")                  (* 16.1/16.3 empty string *)
 let test_16_4 () = check_none (stage "2025-07-01" "2025-06-15")       (* 16.4 future DOB *)
@@ -204,7 +227,7 @@ let test_25_6 () = check_some "2 semanas, 6 d\xc3\xadas" (age_s Es.locale "2025-
 let test_25_7 () = check_some "6 meses" (age_s Es.locale "2025-01-15" "2025-07-15")
 let test_25_8 () = check_some "2 a\xc3\xb1os, 1 mes" (age_s Es.locale "2023-06-15" "2025-07-15")
 let test_25_9 () = check_some "2 a\xc3\xb1os, 6 meses" (age_s Es.locale "2023-06-15" "2025-12-15")
-let test_25_10 () = check_some "3 y medio a\xc3\xb1os" (age_s Es.locale "2022-06-15" "2025-12-15")
+let test_25_10 () = check_some "3 a\xc3\xb1os y medio" (age_s Es.locale "2022-06-15" "2025-12-15")
 let test_25_11 () = check_some "3 a\xc3\xb1os" (age_s Es.locale "2022-06-15" "2025-06-15")
 let test_25_12 () = check_some "7 a\xc3\xb1os" (age_s Es.locale "2018-06-15" "2025-06-15")
 let test_25_13 () = check_some "Reci\xc3\xa9n nacido" (Formatter.format_stage_pure Es.locale "2025-06-15" "2025-06-15" None)
@@ -240,13 +263,13 @@ let test_27_8 () = check_some "Newborn" (age_compact "2025-06-15" "2025-06-15") 
 (* 29.1 Hebrew dual forms *)
 let he = He.locale
 let test_29_1 () = check_some "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93" (age_s he "2025-06-15" "2025-06-15")
-let test_29_2 () = check_some "\xd7\x99\xd7\x95\xd7\x9d 1" (age_s he "2025-06-14" "2025-06-15")
+let test_29_2 () = check_some "\xd7\x99\xd7\x95\xd7\x9d" (age_s he "2025-06-14" "2025-06-15")
 let test_29_3 () = check_some "3 \xd7\x99\xd7\x9e\xd7\x99\xd7\x9d" (age_s he "2025-06-12" "2025-06-15")
 let test_29_4 () = check_some "\xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x99\xd7\x99\xd7\x9d" (age_s he "2025-06-01" "2025-06-15")
 let test_29_5 () = check_some "3 \xd7\xa9\xd7\x91\xd7\x95\xd7\xa2\xd7\x95\xd7\xaa" (age_s he "2025-05-25" "2025-06-15")
 let test_29_6 () = check_some "6 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d" (age_s he "2025-01-15" "2025-07-15")
 let test_29_7 () = check_some "3 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d" (age_s he "2025-03-15" "2025-06-15")
-let test_29_8 () = check_some "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9 1" (age_s he "2023-06-15" "2025-07-15")
+let test_29_8 () = check_some "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9" (age_s he "2023-06-15" "2025-07-15")
 let test_29_9 () = check_some "3 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d \xd7\x95\xd7\x97\xd7\xa6\xd7\x99" (age_s he "2022-06-15" "2025-12-15")
 let test_29_10 () = check_some "7 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d" (age_s he "2018-06-15" "2025-06-15")
 let test_29_11 () = check_some "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93" (stage_g he "2025-06-15" "2025-06-15" (Some Types.M))
@@ -279,7 +302,7 @@ let test_29_28 () = check_some "Baru lahir" (age_s id' "2025-06-15" "2025-06-15"
 let test_29_29 () = check_some "1 hari" (age_s id' "2025-06-14" "2025-06-15")
 let test_29_30 () = check_some "3 hari" (age_s id' "2025-06-12" "2025-06-15")
 let test_29_31 () = check_some "6 bulan" (age_s id' "2025-01-15" "2025-07-15")
-let test_29_32 () = check_some "3 tahun setengah" (age_s id' "2022-06-15" "2025-12-15")
+let test_29_32 () = check_some "3 setengah tahun" (age_s id' "2022-06-15" "2025-12-15")
 let test_29_33 () = check_some "7 tahun" (age_s id' "2018-06-15" "2025-06-15")
 
 (* 29.5 Amharic *)
@@ -312,7 +335,7 @@ let test_31_4 () = expect_canonical (Some "12w4d") (with_locale "en" (fun l -> F
 (* 32. Half years take their plural form from whole years *)
 let test_32_1 () = expect_canonical (Some "3 i pół lata") (with_locale "pl" (fun l -> Formatter.format_age_pure l Types.Normal "2021-06-15" "2025-01-15"))  (* 32.1 *)
 let test_32_2 () = expect_canonical (Some "5 i pół lat") (with_locale "pl" (fun l -> Formatter.format_age_pure l Types.Short "2020-06-15" "2025-12-15"))  (* 32.2 *)
-let test_32_3 () = expect_canonical (Some "6 iseggasen d uzgen") (with_locale "shi" (fun l -> Formatter.format_age_pure l Types.Normal "2005-06-08" "2012-06-07"))  (* 32.3 *)
+let test_32_3 () = expect_canonical (Some "6 \xe2\xb5\x89\xe2\xb5\x99\xe2\xb4\xb3\xe2\xb4\xb3\xe2\xb5\xaf\xe2\xb4\xb0\xe2\xb5\x99\xe2\xb5\x8f \xe2\xb4\xb7 \xe2\xb5\x93\xe2\xb5\xa3\xe2\xb4\xb3\xe2\xb5\x8f") (with_locale "shi" (fun l -> Formatter.format_age_pure l Types.Normal "2005-06-08" "2012-06-07"))  (* 32.3 *)
 (* 33. Input validation *)
 let test_33_1 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-02-30" "2032-06-25"))  (* 33.1 *)
 let test_33_2 () = expect_canonical None (with_locale "en" (fun l -> Formatter.format_age_pure l Types.Normal "2025-13-01" "2027-01-31"))  (* 33.2 *)
@@ -436,6 +459,10 @@ let () =
         ; Alcotest.test_case "14.4 Jan31->Jul1 = 5 months" `Quick test_14_4
         ; Alcotest.test_case "14.5 Jan31->Jul31 = 6 months" `Quick test_14_5
         ] )
+    ; ( "15. Default date"
+      , [ Alcotest.test_case "15.1 default asOf 5 years" `Quick test_15_1
+        ; Alcotest.test_case "15.2 default asOf 5 days" `Quick test_15_2
+        ] )
     ; ( "16. formatStage null/edge"
       , [ Alcotest.test_case "16.1/16.3 empty string" `Quick test_16_1
         ; Alcotest.test_case "16.4 future DOB" `Quick test_16_4
@@ -481,6 +508,11 @@ let () =
       , [ Alcotest.test_case "22.1 18 years" `Quick test_22_1
         ; Alcotest.test_case "22.2 25 years" `Quick test_22_2
         ; Alcotest.test_case "22.3 45 years" `Quick test_22_3
+        ] )
+    ; ( "23. formatStage default date"
+      , [ Alcotest.test_case "23.1 born today" `Quick test_23_1
+        ; Alcotest.test_case "23.2 5 years old" `Quick test_23_2
+        ; Alcotest.test_case "23.3 45 years old" `Quick test_23_3
         ] )
     ; ( "24. English locale delegation"
       , [ Alcotest.test_case "24.1 Newborn" `Quick test_24_1

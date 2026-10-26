@@ -22,7 +22,7 @@ proc locale_si {} {
         month [dict create one "මාස {n}" other "මාස {n}"] \
         year [dict create one "වසර {n}" other "වසර {n}"] \
     ]
-    set half "{0}යි භාගයයි"
+    set half "{n}½"
     set delimiter {, }
     set just_born {අලුත උපන්}
     set stages [dict create \

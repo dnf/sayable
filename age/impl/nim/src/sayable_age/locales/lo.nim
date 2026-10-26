@@ -23,7 +23,7 @@ let LO* = AgeLocale(
     "year": simpleUnit("{n} ປີ"),
   }.toOrderedTable,
   half: "{0}ເຄິ່ງ",
-  delimiter: "",
+  delimiter: " ",
   justBorn: "ເກີດໃໝ່",
   stages: {
     "newborn": stageNeutral("ເດັກເກີດໃໝ່"),
@@ -51,7 +51,7 @@ let LO* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: none(string),
     justBorn: none(string),
   )),

@@ -51,6 +51,7 @@ module SayableDuration
           "year" => UnitForms.new("{n}y"),
         },
         delimiter: "",
+        half: "{n}½",
         ago: "{0} dhau los",
         in_future: "hauv {0}",
       ),

@@ -23,8 +23,8 @@ const MT = DurationLocale(
     end,
     units = Dict(
         "second" => Dict("one" => "{n} sekonda", "two" => "{n} sekondi", "few" => "{n} sekondi", "many" => "{n}-il sekonda", "other" => "{n} sekonda"),
-        "minute" => Dict("one" => "{n} minuta", "two" => "{n} minuti", "few" => "{n} minuti", "many" => "{n}-il minuta", "other" => "{n} minuta"),
-        "hour" => Dict("one" => "{n} siegħa", "two" => "{n} sigħat", "few" => "{n} sigħat", "many" => "{n}-il siegħa", "other" => "{n} siegħa"),
+        "minute" => Dict("one" => "{n} minuta", "two" => "minutejn", "few" => "{n} minuti", "many" => "{n}-il minuta", "other" => "{n} minuta"),
+        "hour" => Dict("one" => "{n} siegħa", "two" => "sagħtejn", "few" => "{n} sigħat", "many" => "{n}-il siegħa", "other" => "{n} siegħa"),
         "day" => Dict("one" => "ġurnata", "two" => "jumejn", "few" => "{n} ijiem", "many" => "{n}-il jum", "other" => "{n} jum"),
         "week" => Dict("one" => "ġimgħa", "two" => "ġimgħatejn", "few" => "{n} ġimgħat", "many" => "{n}-il ġimgħa", "other" => "{n} ġimgħa"),
         "month" => Dict("one" => "xahar", "two" => "xahrejn", "few" => "{n} xhur", "many" => "{n}-il xahar", "other" => "{n} xahar"),

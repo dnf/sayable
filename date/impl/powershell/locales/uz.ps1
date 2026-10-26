@@ -12,15 +12,15 @@
 function locale_uz {
     $months = @('yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avgust', 'sentabr', 'oktabr', 'noyabr', 'dekabr')
     $weekdays = @('yakshanba', 'dushanba', 'seshanba', 'chorshanba', 'payshanba', 'juma', 'shanba')
-    $dayFormat = '{n}'
+    $dayFormat = '{n}-'
     $dayFormatExceptions = @{}
-    $datePattern = '{day} {month}'
-    $datePatternWithYear = '{day} {month} {year}'
+    $datePattern = '{day}{month}'
+    $datePatternWithYear = '{day}{month}, {year}'
     $today = 'bugun'
     $tomorrow = 'ertaga'
     $yesterday = 'kecha'
     $dayAfterTomorrow = 'indinga'
-    $dayBeforeYesterday = 'kechagina'
+    $dayBeforeYesterday = 'o''tgan kuni'
     $thisWeekday = 'bu {weekday}'
     $nextWeekday = 'keyingi {weekday}'
     $lastWeekday = 'o''tgan {weekday}'
@@ -28,9 +28,9 @@ function locale_uz {
     $short = @{
         months = @('yan', 'fev', 'mar', 'apr', 'may', 'iyn', 'iyl', 'avg', 'sen', 'okt', 'noy', 'dek')
         weekdays = @('yak', 'dush', 'sesh', 'chor', 'pay', 'jum', 'shan')
-        dayFormat = '{n}'
-        datePattern = '{day} {month}'
-        datePatternWithYear = '{day} {month} {year}'
+        dayFormat = '{n}-'
+        datePattern = '{day}{month}'
+        datePatternWithYear = '{day}{month}, {year}'
     }
     $compact = @{
         datePattern = '{d}/{m}'

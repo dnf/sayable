@@ -26,7 +26,7 @@ pub const locale_dz = DateLocale{
 	has_day_after_tomorrow: true
 	day_before_yesterday: 'ཁ་ཉིམ'
 	has_day_before_yesterday: true
-	this_weekday: 'འདི་ {weekday}'
+	this_weekday: '{weekday} འདི'
 	has_this_weekday: true
 	next_weekday: '{weekday} ཤུལ་མ'
 	has_next_weekday: true

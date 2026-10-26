@@ -15,18 +15,18 @@ st_hours('ru', ['двенадцать', 'час', 'два', 'три', 'четы�
 st_midnight('ru', 'полночь').
 st_noon('ru', 'полдень').
 
-st_pattern('ru', 0, '{h} часа').
-st_pattern('ru', 5, 'пять po {h}').
-st_pattern('ru', 10, 'десять po {h}').
-st_pattern('ru', 15, 'пятнадцать po {h}').
-st_pattern('ru', 20, 'двадцать po {h}').
-st_pattern('ru', 25, 'двадцать пять po {h}').
-st_pattern('ru', 30, 'тридцать po {h}').
-st_pattern('ru', 35, 'двадцать пять do {next_h}').
-st_pattern('ru', 40, 'двадцать do {next_h}').
-st_pattern('ru', 45, 'пятнадцать do {next_h}').
-st_pattern('ru', 50, 'десять do {next_h}').
-st_pattern('ru', 55, 'пять do {next_h}').
+st_pattern('ru', 0, 'ровно {h}').
+st_pattern('ru', 5, '{h} ноль пять').
+st_pattern('ru', 10, '{h} десять').
+st_pattern('ru', 15, '{h} пятнадцать').
+st_pattern('ru', 20, '{h} двадцать').
+st_pattern('ru', 25, '{h} двадцать пять').
+st_pattern('ru', 30, '{h} тридцать').
+st_pattern('ru', 35, 'без двадцати пяти {next_h}').
+st_pattern('ru', 40, 'без двадцати {next_h}').
+st_pattern('ru', 45, 'без четверти {next_h}').
+st_pattern('ru', 50, 'без десяти {next_h}').
+st_pattern('ru', 55, 'без пяти {next_h}').
 
 short_st_use24h('ru', true).
 short_st_format('ru', '{h}:{mm}').

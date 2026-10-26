@@ -23,22 +23,10 @@ pub fn locale() -> AgeLocale {
             }
         },
         units: Units {
-            day: UnitForms::plural(&[
-                (PluralCategory::One, "ŋkeke {n}"),
-                (PluralCategory::Other, "ŋkekewo {n}"),
-            ]),
-            week: UnitForms::plural(&[
-                (PluralCategory::One, "kɔsiɖa {n}"),
-                (PluralCategory::Other, "kɔsiɖawo {n}"),
-            ]),
-            month: UnitForms::plural(&[
-                (PluralCategory::One, "ɣleti {n}"),
-                (PluralCategory::Other, "ɣletiwo {n}"),
-            ]),
-            year: UnitForms::plural(&[
-                (PluralCategory::One, "ƒe {n}"),
-                (PluralCategory::Other, "ƒewo {n}"),
-            ]),
+            day: UnitForms::simple("ŋkeke {n}"),
+            week: UnitForms::simple("kɔsiɖa {n}"),
+            month: UnitForms::simple("ɣleti {n}"),
+            year: UnitForms::simple("ƒe {n}"),
         },
         half: "{0} kple afã".to_string(),
         delimiter: ", ".to_string(),
@@ -48,23 +36,14 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Ɖevi".to_string()),
             toddler: StageLabel::Neutral("Ɖevi sue".to_string()),
             child: StageLabel::Neutral("Ɖevi".to_string()),
-            teenager: StageLabel::Neutral("Ŋutsuviwo".to_string()),
+            teenager: StageLabel::Gendered { m: "Ɖekakpui".to_string(), f: "Ɖetugbi".to_string() },
             adult: StageLabel::Neutral("Ame tsitsi".to_string()),
         },
         short: Some(CompactnessOverride {
-            day: Some(UnitForms::simple("ŋkekewo {n}")),
-            week: Some(UnitForms::plural(&[
-                (PluralCategory::One, "kɔsiɖa {n}"),
-                (PluralCategory::Other, "kɔsiɖawo {n}"),
-            ])),
-            month: Some(UnitForms::plural(&[
-                (PluralCategory::One, "ɣleti {n}"),
-                (PluralCategory::Other, "ɣletiwo {n}"),
-            ])),
-            year: Some(UnitForms::plural(&[
-                (PluralCategory::One, "ƒe {n}"),
-                (PluralCategory::Other, "ƒewo {n}"),
-            ])),
+            day: Some(UnitForms::simple("ŋkeke {n}")),
+            week: Some(UnitForms::simple("kɔsiɖa {n}")),
+            month: Some(UnitForms::simple("ɣleti {n}")),
+            year: Some(UnitForms::simple("ƒe {n}")),
             half: None,
             delimiter: None,
             just_born: None,

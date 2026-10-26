@@ -16,7 +16,7 @@ locale_kl <- list(
   day_format = "{n}.",
   day_format_exceptions = list(),
   date_pattern = "{month} {day}",
-  date_pattern_with_year = "{day} {month} {year}",
+  date_pattern_with_year = "{month} {day} {year}",
   today = "ullumi",
   tomorrow = "aqagu",
   yesterday = "ippassaq",
@@ -30,7 +30,7 @@ locale_kl <- list(
     weekdays = c("sap", "ata", "mar", "pin", "sis", "tal", "arf"),
     day_format = "{n}.",
     date_pattern = "{month} {day}",
-    date_pattern_with_year = "{day} {month} {year}"
+    date_pattern_with_year = "{month} {day} {year}"
   ),
   compact = list(
     date_pattern = "{m}-{d}",

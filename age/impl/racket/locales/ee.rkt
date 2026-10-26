@@ -21,10 +21,10 @@
   (age-locale
    "ee"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "ŋkeke {n}" "other" "ŋkekewo {n}"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "kɔsiɖa {n}" "other" "kɔsiɖawo {n}"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "ɣleti {n}" "other" "ɣletiwo {n}"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "ƒe {n}" "other" "ƒewo {n}")))
+   (hash "day" (hash "type" "simple" "form" "ŋkeke {n}")
+         "week" (hash "type" "simple" "form" "kɔsiɖa {n}")
+         "month" (hash "type" "simple" "form" "ɣleti {n}")
+         "year" (hash "type" "simple" "form" "ƒe {n}"))
    "{0} kple afã"
    ", "
    "Evi yeye"
@@ -32,8 +32,8 @@
          "infant" (stage-label "Ɖevi" #f #f)
          "toddler" (stage-label "Ɖevi sue" #f #f)
          "child" (stage-label "Ɖevi" #f #f)
-         "teenager" (stage-label "Ŋutsuviwo" #f #f)
+         "teenager" (stage-label #f "Ɖekakpui" "Ɖetugbi")
          "adult" (stage-label "Ame tsitsi" #f #f))
-   (compactness-override (hash "type" "simple" "form" "ŋkekewo {n}") (hash "type" "pluralized" "forms" (hash "one" "kɔsiɖa {n}" "other" "kɔsiɖawo {n}")) (hash "type" "pluralized" "forms" (hash "one" "ɣleti {n}" "other" "ɣletiwo {n}")) (hash "type" "pluralized" "forms" (hash "one" "ƒe {n}" "other" "ƒewo {n}")) #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "ŋkeke {n}") (hash "type" "simple" "form" "kɔsiɖa {n}") (hash "type" "simple" "form" "ɣleti {n}") (hash "type" "simple" "form" "ƒe {n}") #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

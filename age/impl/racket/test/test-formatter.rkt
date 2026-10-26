@@ -341,7 +341,7 @@
 ;; 25.9
 (check-equal? (format-age (get-locale "es") "2023-06-15" "2025-12-15") "2 años, 6 meses")
 ;; 25.10
-(check-equal? (format-age (get-locale "es") "2022-06-15" "2025-12-15") "3 y medio años")
+(check-equal? (format-age (get-locale "es") "2022-06-15" "2025-12-15") "3 años y medio")
 ;; 25.11
 (check-equal? (format-age (get-locale "es") "2022-06-15" "2025-06-15") "3 años")
 ;; 25.12
@@ -402,7 +402,7 @@
 ;; 29.1
 (check-equal? (format-age (get-locale "he") "2025-06-15" "2025-06-15") "רק נולד")
 ;; 29.2
-(check-equal? (format-age (get-locale "he") "2025-06-14" "2025-06-15") "יום 1")
+(check-equal? (format-age (get-locale "he") "2025-06-14" "2025-06-15") "יום")
 ;; 29.3
 (check-equal? (format-age (get-locale "he") "2025-06-12" "2025-06-15") "3 ימים")
 ;; 29.4
@@ -414,7 +414,7 @@
 ;; 29.7
 (check-equal? (format-age (get-locale "he") "2025-03-15" "2025-06-15") "3 חודשים")
 ;; 29.8
-(check-equal? (format-age (get-locale "he") "2023-06-15" "2025-07-15") "שנתיים, חודש 1")
+(check-equal? (format-age (get-locale "he") "2023-06-15" "2025-07-15") "שנתיים, חודש")
 ;; 29.9
 (check-equal? (format-age (get-locale "he") "2022-06-15" "2025-12-15") "3 שנים וחצי")
 ;; 29.10
@@ -462,7 +462,7 @@
 ;; 29.31
 (check-equal? (format-age (get-locale "id") "2025-01-15" "2025-07-15") "6 bulan")
 ;; 29.32
-(check-equal? (format-age (get-locale "id") "2022-06-15" "2025-12-15") "3 tahun setengah")
+(check-equal? (format-age (get-locale "id") "2022-06-15" "2025-12-15") "3 setengah tahun")
 ;; 29.33
 (check-equal? (format-age (get-locale "id") "2018-06-15" "2025-06-15") "7 tahun")
 ;; 29.34
@@ -508,7 +508,7 @@
 ;; 32.2
 (check-equal? (format-age (get-locale "pl") "2020-06-15" "2025-12-15" #:compactness 'short) "5 i pół lat")
 ;; 32.3
-(check-equal? (format-age (get-locale "shi") "2005-06-08" "2012-06-07") "6 iseggasen d uzgen")
+(check-equal? (format-age (get-locale "shi") "2005-06-08" "2012-06-07") "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")
 ;; Section 33: Input validation
 ;; 33.1
 (check-false (format-age (get-locale "en") "2025-02-30" "2032-06-25"))

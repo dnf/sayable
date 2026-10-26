@@ -11,10 +11,10 @@
 
 function loc = locale_mnk()
   loc.code = 'mnk';
-  loc.clock.hours = {'tan ning fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ ning kiliŋ'};
+  loc.clock.hours = {'taŋ niŋ fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ niŋ kiliŋ'};
   loc.clock.midnight = 'sutu-tili-laŋ';
   loc.clock.noon = 'tili-konto';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'talaŋ {h}', "p5", 'talaŋ {h} aniŋ miniti luulu', "p10", 'talaŋ {h} aniŋ miniti taŋ', "p15", 'talaŋ {h} aniŋ miniti taŋ niŋ luulu', "p20", 'talaŋ {h} aniŋ miniti muwaŋ', "p25", 'talaŋ {h} aniŋ miniti muwaŋ niŋ luulu', "p30", 'talaŋ {h} aniŋ talantee', "p35", 'talaŋ {h} aniŋ miniti taŋ saba niŋ luulu', "p40", 'talaŋ {h} aniŋ miniti taŋ naani', "p45", 'talaŋ {h} aniŋ miniti taŋ naani niŋ luulu', "p50", 'talaŋ {h} aniŋ miniti taŋ luulu', "p55", 'talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

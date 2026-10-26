@@ -27,8 +27,8 @@ fn build_nso() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = plural_unit(one="motsotswana {n}", other="dimetsotswana {n}")
-    var minute = plural_unit(one="metsotso {n}", other="dimetsotso {n}")
+    var second = plural_unit(one="motsotswana {n}", other="metsotswana {n}")
+    var minute = plural_unit(one="motsotso {n}", other="metsotso {n}")
     var hour = plural_unit(one="iri {n}", other="diiri {n}")
     var day = plural_unit(one="letšatši {n}", other="matšatši {n}")
     var week = plural_unit(one="beke {n}", other="dibeke {n}")
@@ -36,9 +36,9 @@ fn build_nso() -> DurationLocale:
     var year = plural_unit(one="ngwaga {n}", other="mengwaga {n}")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = plural_unit(one="mots. {n}", other="dimets. {n}")
+    short_ovr.second = plural_unit(one="motsotsw. {n}", other="metsotsw. {n}")
     short_ovr.has_second = True
-    short_ovr.minute = plural_unit(one="mets. {n}", other="dimets. {n}")
+    short_ovr.minute = plural_unit(one="mots. {n}", other="mets. {n}")
     short_ovr.has_minute = True
     short_ovr.hour = plural_unit(one="iri {n}", other="diiri {n}")
     short_ovr.has_hour = True

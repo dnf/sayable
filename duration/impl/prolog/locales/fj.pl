@@ -21,7 +21,7 @@ sd_unit('fj', week, _, '{n} na macawa').
 sd_unit('fj', month, _, '{n} na vula').
 sd_unit('fj', year, _, '{n} na yabaki').
 
-sd_half('fj', '{n} kei na levu ni wasei').
+sd_half('fj', '{0} kei na veimama').
 sd_delimiter('fj', ', ').
 sd_just_now('fj', 'edaidai ga').
 sd_ago('fj', '{0} sa oti').
@@ -44,6 +44,7 @@ compact_sd_unit('fj', day, _, '{n}d').
 compact_sd_unit('fj', week, _, '{n}w').
 compact_sd_unit('fj', month, _, '{n}mo').
 compact_sd_unit('fj', year, _, '{n}y').
+compact_sd_half('fj', '{n}½').
 compact_sd_delimiter('fj', '').
 compact_sd_ago('fj', '{0} sa oti').
 compact_sd_in_future('fj', 'ena {0}').

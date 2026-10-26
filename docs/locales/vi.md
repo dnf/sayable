@@ -42,7 +42,7 @@ Plural rule: `other_only` (categories: other)
 | Stage    | Label           |
 | -------- | --------------- |
 | Newborn  | Sơ sinh         |
-| Infant   | Trẻ sơ sinh     |
+| Infant   | Trẻ nhũ nhi     |
 | Toddler  | Trẻ mới biết đi |
 | Child    | Trẻ em          |
 | Teenager | Thiếu niên      |
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ngày kia        | 17/3     |
 | Day before yesterday | hôm kia         | 13/3     |
 | This Thursday (+5)   | Thứ Năm này     | 20/3     |
-| Last Monday (-4)     | Thứ Ba trước    | 11/3     |
-| Next Wednesday (+12) | Thứ Năm tới     | 27/3     |
-| Same month (+20)     | 4 tháng 4       | 4/4      |
+| Last Tuesday (-4)    | Thứ Ba trước    | 11/3     |
+| Next Thursday (+12)  | Thứ Năm tới     | 27/3     |
+| Same year (+20)      | 4 tháng 4       | 4/4      |
 | Different year       | 10 tháng 1 2026 | 10/1/26  |
 
 ## Duration
@@ -102,32 +102,32 @@ Relative to Saturday, March 15, 2025.
 | 2 weeks, 3 days       | 2 tuần, 3 ngày  | 2 tuần, 3 ngày  | 2 tuần3 ngày  |
 | 1 month               | 1 tháng         | 1 tháng         | 1 tháng       |
 | 6 months              | 6 tháng         | 6 tháng         | 6 tháng       |
-| 1 year                | 1 tuổi          | 1 năm           | 1 năm         |
-| 2 years, 3 months     | 2 tuổi, 3 tháng | 2 năm, 3 tháng  | 2 năm3 tháng  |
+| 1 year                | 1 năm           | 1 năm           | 1 năm         |
+| 2 years, 3 months     | 2 năm, 3 tháng  | 2 năm, 3 tháng  | 2 năm3 tháng  |
 
 ### Relative time
 
-| Offset        | Normal        | Compact       |
-| ------------- | ------------- | ------------- |
-| 5 minutes ago | 5 phút trước  | 5 phút trước  |
-| 2 hours ago   | 2 giờ trước   | 2 giờ trước   |
-| in 30 minutes | trong 30 phút | trong 30 phút |
-| in 3 hours    | trong 3 giờ   | trong 3 giờ   |
+| Offset        | Normal       | Compact      |
+| ------------- | ------------ | ------------ |
+| 5 minutes ago | 5 phút trước | 5 phút trước |
+| 2 hours ago   | 2 giờ trước  | 2 giờ trước  |
+| in 30 minutes | 30 phút nữa  | 30 phút nữa  |
+| in 3 hours    | 3 giờ nữa    | 3 giờ nữa    |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal               | Short | Compact |
-| --------------- | -------------------- | ----- | ------- |
-| Midnight        | nửa đêm              | 0:00  | 0:00    |
-| 1:00 AM         | một o'clock          | 1:00  | 1:00    |
-| 5 past 9        | năm qua chín         | 9:05  | 9:05    |
-| Quarter past 10 | mười lăm qua mười    | 10:15 | 10:15   |
-| Half past 11    | ba mươi qua mười một | 11:30 | 11:30   |
-| Noon            | trưa                 | 12:00 | 12:00   |
-| Quarter to 3    | mười lăm trước ba    | 14:45 | 14:45   |
-| 5 to 6          | năm trước sáu        | 17:55 | 17:55   |
-| 8 o'clock PM    | tám o'clock          | 20:00 | 20:00   |
-| 10:30 PM        | ba mươi qua mười     | 22:30 | 22:30   |
-| 11:58 PM        | nửa đêm              | 23:58 | 23:58   |
+| Time            | Normal                 | Short | Compact |
+| --------------- | ---------------------- | ----- | ------- |
+| Midnight        | nửa đêm                | 0:00  | 0:00    |
+| 1:00 AM         | một giờ                | 1:00  | 1:00    |
+| 5 past 9        | chín giờ năm phút      | 9:05  | 9:05    |
+| Quarter past 10 | mười giờ mười lăm phút | 10:15 | 10:15   |
+| Half past 11    | mười một giờ rưỡi      | 11:30 | 11:30   |
+| Noon            | mười hai giờ trưa      | 12:00 | 12:00   |
+| Quarter to 3    | ba giờ kém mười lăm    | 14:45 | 14:45   |
+| 5 to 6          | sáu giờ kém năm        | 17:55 | 17:55   |
+| 8 o'clock PM    | tám giờ                | 20:00 | 20:00   |
+| 10:30 PM        | mười giờ rưỡi          | 22:30 | 22:30   |
+| 11:58 PM        | nửa đêm                | 23:58 | 23:58   |

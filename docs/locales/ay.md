@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ay.json](../../locales/ay.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Aymara has no past/to system; used the additive '<hour> ura <minutes> minutuni' form (ura = hour, minutu = minute, -ni = 'with', mirroring 'tunka mayani'). :30 uses 'chikani' (chika = half). Minute numerals: phisqa, tunka, tunka phisqani, pä tunka, kimsa tunka, pusi tunka, phisqa tunka. Standard 12-hour count (no rotated hour list). The -ni compounding on 'minutu' is plausible but unverified by a native speaker. Specific doubts: (1) whether '-ni' attaches to 'minutu' in spoken time or speakers just juxtapose '{h} ura <n> minutu'; (2) whether 'chikani' or 'chika' is used for half past; (3) whether the hour phrase takes the declarative '-wa' ('kimsa urawa') even in isolation.
+
 ## Age
 
 ### Age formatting
@@ -13,29 +21,29 @@ Plural rule: `other_only` (categories: other)
 | Age               | Normal           | Short         | Compact      |
 | ----------------- | ---------------- | ------------- | ------------ |
 | Born today        | Wawa machaqa     | Wawa machaqa  | Wawa machaqa |
-| 1 day             | uru 1            | 1 ur.         | 1d           |
-| 3 days            | uru 3            | 3 ur.         | 3d           |
-| 6 days            | uru 6            | 6 ur.         | 6d           |
-| 1 week            | simana 1         | 1 sim.        | 1w           |
-| 1 week, 1 day     | simana 1, uru 1  | 1 sim., 1 ur. | 1w1d         |
-| 2 weeks           | simana 2         | 2 sim.        | 2w           |
-| 2 weeks, 3 days   | simana 2, uru 3  | 2 sim., 3 ur. | 2w3d         |
-| 3 months          | phaxsi 3         | 3 phx.        | 3m           |
-| 6 months          | phaxsi 6         | 6 phx.        | 6m           |
-| 11 months         | phaxsi 11        | 11 phx.       | 11m          |
-| 12 months         | phaxsi 12        | 12 phx.       | 12m          |
-| 23 months         | phaxsi 23        | 23 phx.       | 23m          |
-| 2 years           | mara 2           | 2 mr.         | 2y           |
-| 2 years, 1 month  | mara 2, phaxsi 1 | 2 mr., 1 phx. | 2y1m         |
-| 2 years, 6 months | mara 2, phaxsi 6 | 2 mr., 6 phx. | 2y6m         |
-| 3 years           | mara 3           | 3 mr.         | 3y           |
-| 3½ years          | mara 3 chika     | 3 mr. chika   | 3y chika     |
-| 5 years           | mara 5           | 5 mr.         | 5y           |
-| 5½ years          | mara 5 chika     | 5 mr. chika   | 5y chika     |
-| 7 years           | mara 7           | 7 mr.         | 7y           |
-| 10 years          | mara 10          | 10 mr.        | 10y          |
-| 18 years          | mara 18          | 18 mr.        | 18y          |
-| 45 years          | mara 45          | 45 mr.        | 45y          |
+| 1 day             | 1 uru            | 1 ur.         | 1d           |
+| 3 days            | 3 uru            | 3 ur.         | 3d           |
+| 6 days            | 6 uru            | 6 ur.         | 6d           |
+| 1 week            | 1 simana         | 1 sim.        | 1w           |
+| 1 week, 1 day     | 1 simana, 1 uru  | 1 sim., 1 ur. | 1w1d         |
+| 2 weeks           | 2 simana         | 2 sim.        | 2w           |
+| 2 weeks, 3 days   | 2 simana, 3 uru  | 2 sim., 3 ur. | 2w3d         |
+| 3 months          | 3 phaxsi         | 3 phx.        | 3m           |
+| 6 months          | 6 phaxsi         | 6 phx.        | 6m           |
+| 11 months         | 11 phaxsi        | 11 phx.       | 11m          |
+| 12 months         | 12 phaxsi        | 12 phx.       | 12m          |
+| 23 months         | 23 phaxsi        | 23 phx.       | 23m          |
+| 2 years           | 2 mara           | 2 mr.         | 2y           |
+| 2 years, 1 month  | 2 mara, 1 phaxsi | 2 mr., 1 phx. | 2y1m         |
+| 2 years, 6 months | 2 mara, 6 phaxsi | 2 mr., 6 phx. | 2y6m         |
+| 3 years           | 3 mara           | 3 mr.         | 3y           |
+| 3½ years          | 3 mara chika     | 3 mr. chika   | 3½y          |
+| 5 years           | 5 mara           | 5 mr.         | 5y           |
+| 5½ years          | 5 mara chika     | 5 mr. chika   | 5½y          |
+| 7 years           | 7 mara           | 7 mr.         | 7y           |
+| 10 years          | 10 mara          | 10 mr.        | 10y          |
+| 18 years          | 18 mara          | 18 mr.        | 18y          |
+| 45 years          | 45 mara          | 45 mr.        | 45y          |
 
 ### Stages
 
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | aka Maytita     | 17/3       |
 | Day before yesterday | nayra Yunkita   | 13/3       |
 | This Thursday (+5)   | aka Yunkita     | 20/3       |
-| Last Monday (-4)     | nayra Paytita   | 11/3       |
-| Next Wednesday (+12) | jutir Yunkita   | 27/3       |
-| Same month (+20)     | 4 Qasiwi        | 4/4        |
+| Last Tuesday (-4)    | nayra Paytita   | 11/3       |
+| Next Thursday (+12)  | jutir Yunkita   | 27/3       |
+| Same year (+20)      | 4 Qasiwi        | 4/4        |
 | Different year       | 10 Chinuqa 2026 | 10/1/26    |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal               | Short           | Compact  |
-| --------------------- | -------------------- | --------------- | -------- |
-| 0 seconds             | jichha               | jichha          | jichha   |
-| 1 second              | sikundu 1            | sik. 1          | 1s       |
-| 30 seconds            | sikundu 30           | sik. 30         | 30s      |
-| 1 minute              | minutu 1             | min. 1          | 1m       |
-| 2 minutes, 15 seconds | minutu 2, sikundu 15 | min. 2, sik. 15 | 2m15s    |
-| 5 minutes             | minutu 5             | min. 5          | 5m       |
-| 45 minutes            | minutu 45            | min. 45         | 45m      |
-| 1 hour                | ura 1                | ur. 1           | 1h       |
-| 1½ hours              | ura 1 chika          | ur. 1 chika     | 1h chika |
-| 3 hours               | ura 3                | ur. 3           | 3h       |
-| 6 hours               | ura 6                | ur. 6           | 6h       |
-| 1 day                 | uru 1                | 1 ur.           | 1d       |
-| 1½ days               | uru 1 chika          | 1 ur. chika     | 1d chika |
-| 3 days                | uru 3                | 3 ur.           | 3d       |
-| 1 week                | simana 1             | 1 sim.          | 1w       |
-| 2 weeks, 3 days       | simana 2, uru 3      | 2 sim., 3 ur.   | 2w3d     |
-| 1 month               | phaxsi 1             | 1 phx.          | 1m       |
-| 6 months              | phaxsi 6             | 6 phx.          | 6m       |
-| 1 year                | mara 1               | 1 mr.           | 1y       |
-| 2 years, 3 months     | mara 2, phaxsi 3     | 2 mr., 3 phx.   | 2y3m     |
+| Duration              | Normal               | Short           | Compact |
+| --------------------- | -------------------- | --------------- | ------- |
+| 0 seconds             | jichha               | jichha          | jichha  |
+| 1 second              | 1 sikundu            | 1 sik.          | 1s      |
+| 30 seconds            | 30 sikundu           | 30 sik.         | 30s     |
+| 1 minute              | 1 minutu             | 1 min.          | 1m      |
+| 2 minutes, 15 seconds | 2 minutu, 15 sikundu | 2 min., 15 sik. | 2m15s   |
+| 5 minutes             | 5 minutu             | 5 min.          | 5m      |
+| 45 minutes            | 45 minutu            | 45 min.         | 45m     |
+| 1 hour                | 1 ura                | 1 ura           | 1h      |
+| 1½ hours              | 1 ura chika          | 1 ura chika     | 1½h     |
+| 3 hours               | 3 ura                | 3 ura           | 3h      |
+| 6 hours               | 6 ura                | 6 ura           | 6h      |
+| 1 day                 | 1 uru                | 1 ur.           | 1d      |
+| 1½ days               | 1 uru chika          | 1 ur. chika     | 1½d     |
+| 3 days                | 3 uru                | 3 ur.           | 3d      |
+| 1 week                | 1 simana             | 1 sim.          | 1w      |
+| 2 weeks, 3 days       | 2 simana, 3 uru      | 2 sim., 3 ur.   | 2w3d    |
+| 1 month               | 1 phaxsi             | 1 phx.          | 1m      |
+| 6 months              | 6 phaxsi             | 6 phx.          | 6m      |
+| 1 year                | 1 mara               | 1 mr.           | 1y      |
+| 2 years, 3 months     | 2 mara, 3 phaxsi     | 2 mr., 3 phx.   | 2y3m    |
 
 ### Relative time
 
 | Offset        | Normal             | Compact      |
 | ------------- | ------------------ | ------------ |
-| 5 minutes ago | minutu 5 nayraqata | 5m nayraqata |
-| 2 hours ago   | ura 2 nayraqata    | 2h nayraqata |
-| in 30 minutes | minutu 30 jutirïn  | 30m jutirïn  |
-| in 3 hours    | ura 3 jutirïn      | 3h jutirïn   |
+| 5 minutes ago | 5 minutu nayraqata | 5m nayraqata |
+| 2 hours ago   | 2 ura nayraqata    | 2h nayraqata |
+| in 30 minutes | 30 minutu jutirïn  | 30m jutirïn  |
+| in 3 hours    | 3 ura jutirïn      | 3h jutirïn   |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | aruma chika     | 12:00 AM | 12:00a  |
-| 1:00 AM         | maya:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | llantunka:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | tunka:15        | 10:15 AM | 10:15a  |
-| Half past 11    | tunka mayani:30 | 11:30 AM | 11:30a  |
-| Noon            | chika uru       | 12:00 PM | 12:00p  |
-| Quarter to 3    | paya:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | phisqa:55       | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | kimsaqallqu:00  | 8:00 PM  | 8:00p   |
-| 10:30 PM        | tunka:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | aruma chika     | 11:58 PM | 11:58p  |
+| Time            | Normal                                    | Short    | Compact |
+| --------------- | ----------------------------------------- | -------- | ------- |
+| Midnight        | aruma chika                               | 12:00 AM | 12:00a  |
+| 1:00 AM         | maya ura                                  | 1:00 AM  | 1:00a   |
+| 5 past 9        | llätunka ura phisqa minutuni              | 9:05 AM  | 9:05a   |
+| Quarter past 10 | tunka ura tunka phisqani minutuni         | 10:15 AM | 10:15a  |
+| Half past 11    | tunka mayani ura chikani                  | 11:30 AM | 11:30a  |
+| Noon            | chika uru                                 | 12:00 PM | 12:00p  |
+| Quarter to 3    | paya ura pusi tunka phisqani minutuni     | 2:45 PM  | 2:45p   |
+| 5 to 6          | phisqa ura phisqa tunka phisqani minutuni | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | kimsaqallqu ura                           | 8:00 PM  | 8:00p   |
+| 10:30 PM        | tunka ura chikani                         | 10:30 PM | 10:30p  |
+| 11:58 PM        | aruma chika                               | 11:58 PM | 11:58p  |

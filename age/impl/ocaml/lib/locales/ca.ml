@@ -30,7 +30,7 @@ let locale : locale =
       [ (One, "{n} any")
       ; (Other, "{n} anys")
       ]
-  ; half = "{n} i mig"
+  ; half = "{0} i mig"
   ; delimiter = ", "
   ; just_born = "Nounat"
   ; stages =

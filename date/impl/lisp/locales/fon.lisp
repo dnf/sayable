@@ -17,7 +17,7 @@
   (make-date-locale
    :code "fon"
    :months (list "Alɔfí" "Alɔnyɔ" "Ataɖaxɔ" "Tlɛsún" "Axɔsún" "Ayɛsún" "Nùxwásún" "Ayidosún" "Kɛnísún" "Kanyásún" "Abɔxwísún" "Adɔxwísún")
-   :weekdays (list "Sidégbe" "Tɛnígbe" "Talɛtagbe" "Azǎngagbe" "Nyɔnúgbe" "Axɔ́sùgbe" "Abámɛ́ta")
+   :weekdays (list "Aklunɔzángbe" "Tɛnígbe" "Talɛtagbe" "Azǎngagbe" "Nyɔnúgbe" "Axɔ́sùgbe" "Sibigbe")
    :day-format "{n}"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
@@ -31,7 +31,7 @@
    :next-weekday "{weekday} e ja"
    :last-weekday "{weekday} e wá yí"
    :short-months (list "Alɔ" "Any" "Ata" "Tlɛ" "Axɔ" "Ayɛ" "Nùx" "Ayi" "Kɛn" "Kan" "Abɔ" "Adɔ")
-   :short-weekdays (list "Sid" "Tɛn" "Tal" "Azǎ" "Nyɔ" "Axɔ" "Abá")
+   :short-weekdays (list "Akl" "Tɛn" "Tal" "Azǎ" "Nyɔ" "Axɔ" "Sib")
    :short-day-format "{n}"
    :short-date-pattern "{day} {month}"
    :short-date-pattern-with-year "{day} {month} {year}"

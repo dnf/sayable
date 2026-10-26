@@ -26,10 +26,10 @@ sub locale {{
   tomorrow => 'ມື້ອື່ນ',
   yesterday => 'ມື້ວານ',
   day_after_tomorrow => 'ມື້ຮື',
-  day_before_yesterday => 'ມື້ກ່ອນ',
+  day_before_yesterday => 'ມື້ຊືນ',
   this_weekday => '{weekday}ນີ້',
   next_weekday => '{weekday}ໜ້າ',
-  last_weekday => '{weekday}ແລ້ວ',
+  last_weekday => '{weekday}ທີ່ແລ້ວ',
   short => {
     months => ['ມ.ກ.', 'ກ.ພ.', 'ມ.ນ.', 'ມ.ສ.', 'ພ.ພ.', 'ມ.ຖ.', 'ກ.ລ.', 'ສ.ຫ.', 'ກ.ຍ.', 'ຕ.ລ.', 'ພ.ຈ.', 'ທ.ວ.'],
     weekdays => ['ອາທິດ', 'ຈັນ', 'ອັງຄານ', 'ພຸດ', 'ພະຫັດ', 'ສຸກ', 'ເສົາ'],

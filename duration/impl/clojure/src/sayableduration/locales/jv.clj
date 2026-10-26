@@ -23,7 +23,7 @@
    :year {:type :simple :form "{n} taun"}
    :half "{0} setengah"
    :delimiter ", "
-   :just-now "saiki"
+   :just-now "lagi waé"
    :ago "{0} kepungkur"
    :in-future "ing {0}"
    :short {:second {:type :simple :form "{n} dtk"} :minute {:type :simple :form "{n} mnt"} :hour {:type :simple :form "{n} jam"} :day {:type :simple :form "{n} dina"} :week {:type :simple :form "{n} peken"} :month {:type :simple :form "{n} sasi"} :year {:type :simple :form "{n} taun"} :half nil :delimiter nil :ago "{0} kepungkur" :in-future "ing {0}"}

@@ -28,9 +28,9 @@ const SduDurationLocale sdu_locale_fj = {
         { "{n} na vula", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} na yabaki", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n} kei na levu ni wasei", ", ",
+    "{0} kei na veimama", ", ",
     "edaidai ga",
     "{0} sa oti", "ena {0}",
     true, { true, { "{n} sek", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} aua", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} siga", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mac", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} vul", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yab", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} sa oti", true, "ena {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} sa oti", true, "ena {0}" }
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} sa oti", true, "ena {0}" }
 };

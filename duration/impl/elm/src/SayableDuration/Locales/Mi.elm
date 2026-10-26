@@ -26,12 +26,12 @@ locale =
             [ ( "second", Simple "{n} hēkona" )
             , ( "minute", Simple "{n} meneti" )
             , ( "hour", Simple "{n} hāora" )
-            , ( "day", Simple "rā {n}" )
-            , ( "week", Simple "wiki {n}" )
-            , ( "month", Simple "marama {n}" )
-            , ( "year", Simple "tau {n}" )
+            , ( "day", Simple "{n} rā" )
+            , ( "week", Simple "{n} wiki" )
+            , ( "month", Simple "{n} marama" )
+            , ( "year", Simple "{n} tau" )
             ]
-    , half = "{0}½"
+    , half = "{n}½"
     , delimiter = ", "
     , justNow = "ināianei"
     , ago = "{0} i mua"
@@ -44,10 +44,10 @@ locale =
                         [ ( "second", Simple "{n} hēk" )
                         , ( "minute", Simple "{n} men" )
                         , ( "hour", Simple "{n} hāo" )
-                        , ( "day", Simple "rā {n}" )
-                        , ( "week", Simple "w {n}" )
-                        , ( "month", Simple "m {n}" )
-                        , ( "year", Simple "t {n}" )
+                        , ( "day", Simple "{n} rā" )
+                        , ( "week", Simple "{n} w" )
+                        , ( "month", Simple "{n} m" )
+                        , ( "year", Simple "{n} t" )
                         ]
                     )
             , ovrHalf = Nothing

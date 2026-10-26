@@ -27,4 +27,4 @@
    :ago "{0} dhau los"
    :in-future "hauv {0}"
    :short {:second {:type :simple :form "{n} chib"} :minute {:type :simple :form "{n} feeb"} :hour {:type :simple :form "{n} teev"} :day {:type :simple :form "{n} hnub"} :week {:type :simple :form "{n} lim tiam"} :month {:type :simple :form "{n} hlis"} :year {:type :simple :form "{n} xyoo"} :half nil :delimiter nil :ago "{0} dhau los" :in-future "hauv {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} dhau los" :in-future "hauv {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} dhau los" :in-future "hauv {0}"}})

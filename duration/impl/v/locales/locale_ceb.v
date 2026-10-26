@@ -29,7 +29,7 @@ pub const locale_ceb = DurationLocale{
 	week: simple_unit('{n} ka semana')
 	month: simple_unit('{n} ka bulan')
 	year: simple_unit('{n} ka tuig')
-	half: '{n}½'
+	half: '{0} ug tunga'
 	delimiter: ', '
 	just_now: 'karon lang'
 	ago: '{0} ang milabay'

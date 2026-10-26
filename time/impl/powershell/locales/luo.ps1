@@ -10,22 +10,22 @@
 # Source: locales/luo.json
 
 function locale_luo {
-    $hours = @('apar gi ariyo', 'achiel', 'ariyo', 'adek', 'ang''wen', 'abich', 'auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gi achiel')
+    $hours = @('auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gachiel', 'apar gariyo', 'achiel', 'ariyo', 'adek', 'ang''wen', 'abich')
     $midnight = 'dier otieno'
     $noon = 'odiechieng'' tir'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'saa {h}'
+    $patterns[5] = 'saa {h} gi dakika abich'
+    $patterns[10] = 'saa {h} gi dakika apar'
+    $patterns[15] = 'saa {h} gi dakika apar gabich'
+    $patterns[20] = 'saa {h} gi dakika piero ariyo'
+    $patterns[25] = 'saa {h} gi dakika piero ariyo gabich'
+    $patterns[30] = 'saa {h} gi nus'
+    $patterns[35] = 'saa {h} gi dakika piero adek gabich'
+    $patterns[40] = 'saa {h} gi dakika piero ang''wen'
+    $patterns[45] = 'saa {h} gi dakika piero ang''wen gabich'
+    $patterns[50] = 'saa {h} gi dakika piero abich'
+    $patterns[55] = 'saa {h} gi dakika piero abich gabich'
     $clock = @{
         hours = $hours
         midnight = $midnight

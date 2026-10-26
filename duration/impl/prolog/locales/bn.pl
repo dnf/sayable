@@ -17,7 +17,7 @@ sd_plural('bn', _, other).
 
 sd_unit('bn', second, _, '{n} সেকেন্ড').
 sd_unit('bn', minute, _, '{n} মিনিট').
-sd_unit('bn', hour, _, '{n} ঘন্টা').
+sd_unit('bn', hour, _, '{n} ঘণ্টা').
 sd_unit('bn', day, one, '{n} দিন').
 sd_unit('bn', day, other, '{n} দিন').
 sd_unit('bn', week, one, '{n} সপ্তাহ').

@@ -18,7 +18,7 @@
    :week {:type :pluralized :forms {:one "{n} வாரம்" :other "{n} வாரங்கள்"}}
    :month {:type :pluralized :forms {:one "{n} மாதம்" :other "{n} மாதங்கள்"}}
    :year {:type :pluralized :forms {:one "{n} வயது" :other "{n} வயது"}}
-   :half "{0}ரை"
+   :half "{n}½"
    :delimiter ", "
    :just-born "பிறந்த குழந்தை"
    :stages {:newborn {:type :neutral :label "பிறந்த குழந்தை"} :infant {:type :neutral :label "குழந்தை"} :toddler {:type :neutral :label "சிறு குழந்தை"} :child {:type :neutral :label "சிறார்"} :teenager {:type :neutral :label "இளம்பருவம்"} :adult {:type :neutral :label "பெரியவர்"}}

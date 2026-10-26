@@ -34,7 +34,7 @@ var DA = sd.DurationLocale{
 	Half:      "{n}½",
 	Delimiter: ", ",
 	JustNow:   "lige nu",
-	Ago:       "{0} siden",
+	Ago:       "for {0} siden",
 	InFuture:  "om {0}",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "{n} sek."},

@@ -24,7 +24,7 @@
     (list "он екі" "бір" "екі" "үш" "төрт" "бес" "алты" "жеті" "сегіз" "тоғыз" "он" "он бір")
     "түн ортасы"
     "түс"
-    (hash 0 "{h} o'clock" 5 "бес past {h}" 10 "он past {h}" 15 "он бес past {h}" 20 "жиырма past {h}" 25 "жиырма бес past {h}" 30 "отыз past {h}" 35 "жиырма бес to {next_h}" 40 "жиырма to {next_h}" 45 "он бес to {next_h}" 50 "он to {next_h}" 55 "бес to {next_h}"))
+    (hash 0 "сағат {h}" 5 "{h} нөл бес" 10 "{h} он" 15 "{h} он бес" 20 "{h} жиырма" 25 "{h} жиырма бес" 30 "{h} жарым" 35 "{h} отыз бес" 40 "{h} қырық" 45 "{h} қырық бес" 50 "{h} елу" 55 "{h} елу бес"))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
   ))

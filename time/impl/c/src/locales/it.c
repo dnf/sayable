@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_it = {
     "it",
     {
-        { "dodici", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici" },
+        { "le dodici", "l'una", "le due", "le tre", "le quattro", "le cinque", "le sei", "le sette", "le otto", "le nove", "le dieci", "le undici" },
         "mezzanotte",
         "mezzogiorno",
-        { "le {h}", "{h} e cinque", "{h} e dieci", "{h} e un quarto", "{h} e venti", "{h} e venticinque", "{h} e mezza", "{next_h} meno venticinque", "{next_h} meno venti", "{next_h} meno un quarto", "{next_h} meno dieci", "{next_h} meno cinque" }
+        { "{h}", "{h} e cinque", "{h} e dieci", "{h} e un quarto", "{h} e venti", "{h} e venticinque", "{h} e mezza", "{next_h} meno venticinque", "{next_h} meno venti", "{next_h} meno un quarto", "{next_h} meno dieci", "{next_h} meno cinque" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

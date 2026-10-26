@@ -6,36 +6,44 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [shn.json](../../locales/shn.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Tai-style hour+minute reading: '{h}မူင်း' (mong = clock hour, cf. Thai โมง; the locale's hour unit is ၸူဝ်ႈမူင်း), '{h}မူင်းၶိုင်ႈ' for half (locale's half word), '{h}မူင်း <N>မိၼိတ်ႉ' counting up with Shan numerals (သၢဝ်း = 20). Shan writing joins words within a phrase; a space separates hour and minute phrases. No day-period word possible in the schema.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal         | Short          | Compact  |
-| ----------------- | -------------- | -------------- | -------- |
-| Born today        | ၶဝ်ႈမႃး        | ၶဝ်ႈမႃး        | ၶဝ်ႈမႃး  |
-| 1 day             | 1 ဝၼ်း         | 1 ဝၼ်း         | 1d       |
-| 3 days            | 3 ဝၼ်း         | 3 ဝၼ်း         | 3d       |
-| 6 days            | 6 ဝၼ်း         | 6 ဝၼ်း         | 6d       |
-| 1 week            | 1 ဝူင်ႈ        | 1 ဝူင်ႈ        | 1w       |
-| 1 week, 1 day     | 1 ဝူင်ႈ 1 ဝၼ်း | 1 ဝူင်ႈ 1 ဝၼ်း | 1w1d     |
-| 2 weeks           | 2 ဝူင်ႈ        | 2 ဝူင်ႈ        | 2w       |
-| 2 weeks, 3 days   | 2 ဝူင်ႈ 3 ဝၼ်း | 2 ဝူင်ႈ 3 ဝၼ်း | 2w3d     |
-| 3 months          | 3 လိူၼ်        | 3 လိူၼ်        | 3m       |
-| 6 months          | 6 လိူၼ်        | 6 လိူၼ်        | 6m       |
-| 11 months         | 11 လိူၼ်       | 11 လိူၼ်       | 11m      |
-| 12 months         | 12 လိူၼ်       | 12 လိူၼ်       | 12m      |
-| 23 months         | 23 လိူၼ်       | 23 လိူၼ်       | 23m      |
-| 2 years           | 2 ပီ           | 2 ပီ           | 2y       |
-| 2 years, 1 month  | 2 ပီ 1 လိူၼ်   | 2 ပီ 1 လိူၼ်   | 2y1m     |
-| 2 years, 6 months | 2 ပီ 6 လိူၼ်   | 2 ပီ 6 လိူၼ်   | 2y6m     |
-| 3 years           | 3 ပီ           | 3 ပီ           | 3y       |
-| 3½ years          | 3 ပီၶိုင်ႈ     | 3 ပီၶိုင်ႈ     | 3yၶိုင်ႈ |
-| 5 years           | 5 ပီ           | 5 ပီ           | 5y       |
-| 5½ years          | 5 ပီၶိုင်ႈ     | 5 ပီၶိုင်ႈ     | 5yၶိုင်ႈ |
-| 7 years           | 7 ပီ           | 7 ပီ           | 7y       |
-| 10 years          | 10 ပီ          | 10 ပီ          | 10y      |
-| 18 years          | 18 ပီ          | 18 ပီ          | 18y      |
-| 45 years          | 45 ပီ          | 45 ပီ          | 45y      |
+| Age               | Normal         | Short          | Compact |
+| ----------------- | -------------- | -------------- | ------- |
+| Born today        | ၶဝ်ႈမႃး        | ၶဝ်ႈမႃး        | ၶဝ်ႈမႃး |
+| 1 day             | 1 ဝၼ်း         | 1 ဝၼ်း         | 1d      |
+| 3 days            | 3 ဝၼ်း         | 3 ဝၼ်း         | 3d      |
+| 6 days            | 6 ဝၼ်း         | 6 ဝၼ်း         | 6d      |
+| 1 week            | 1 ဝူင်ႈ        | 1 ဝူင်ႈ        | 1w      |
+| 1 week, 1 day     | 1 ဝူင်ႈ 1 ဝၼ်း | 1 ဝူင်ႈ 1 ဝၼ်း | 1w1d    |
+| 2 weeks           | 2 ဝူင်ႈ        | 2 ဝူင်ႈ        | 2w      |
+| 2 weeks, 3 days   | 2 ဝူင်ႈ 3 ဝၼ်း | 2 ဝူင်ႈ 3 ဝၼ်း | 2w3d    |
+| 3 months          | 3 လိူၼ်        | 3 လိူၼ်        | 3m      |
+| 6 months          | 6 လိူၼ်        | 6 လိူၼ်        | 6m      |
+| 11 months         | 11 လိူၼ်       | 11 လိူၼ်       | 11m     |
+| 12 months         | 12 လိူၼ်       | 12 လိူၼ်       | 12m     |
+| 23 months         | 23 လိူၼ်       | 23 လိူၼ်       | 23m     |
+| 2 years           | 2 ပီ           | 2 ပီ           | 2y      |
+| 2 years, 1 month  | 2 ပီ 1 လိူၼ်   | 2 ပီ 1 လိူၼ်   | 2y1m    |
+| 2 years, 6 months | 2 ပီ 6 လိူၼ်   | 2 ပီ 6 လိူၼ်   | 2y6m    |
+| 3 years           | 3 ပီ           | 3 ပီ           | 3y      |
+| 3½ years          | 3 ပီၶိုင်ႈ     | 3 ပီၶိုင်ႈ     | 3½y     |
+| 5 years           | 5 ပီ           | 5 ပီ           | 5y      |
+| 5½ years          | 5 ပီၶိုင်ႈ     | 5 ပီၶိုင်ႈ     | 5½y     |
+| 7 years           | 7 ပီ           | 7 ပီ           | 7y      |
+| 10 years          | 10 ပီ          | 10 ပီ          | 10y     |
+| 18 years          | 18 ပီ          | 18 ပီ          | 18y     |
+| 45 years          | 45 ပီ          | 45 ပီ          | 45y     |
 
 ### Stages
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | မိူဝ်ႈႁိုဝ်          | 17/3          |
 | Day before yesterday | မိူဝ်ႈသိုၼ်း         | 13/3          |
 | This Thursday (+5)   | ဝၼ်းၽတ်း ၼႆႉ         | 20/3          |
-| Last Monday (-4)     | ဝၼ်းဢၢင်းၵၢၼ်း ပူၼ်ႉ | 11/3          |
-| Next Wednesday (+12) | ဝၼ်းၽတ်း ၼႃႈ         | 27/3          |
-| Same month (+20)     | 4 ဢေႇပရႄႇ            | 4/4           |
+| Last Tuesday (-4)    | ဝၼ်းဢၢင်းၵၢၼ်း ပူၼ်ႉ | 11/3          |
+| Next Thursday (+12)  | ဝၼ်းၽတ်း ၼႃႈ         | 27/3          |
+| Same year (+20)      | 4 ဢေႇပရႄႇ            | 4/4           |
 | Different year       | 10 ၸၼ်ႇဝႃႇရီႇ 2026   | 10/1/26       |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 မိၼိတ်ႉ             | 5 မိၼိတ်ႉ          | 5m        |
 | 45 minutes            | 45 မိၼိတ်ႉ            | 45 မိၼိတ်ႉ         | 45m       |
 | 1 hour                | 1 ၸူဝ်ႈမူင်း          | 1 ၸူဝ်ႈ            | 1h        |
-| 1½ hours              | 1 ၸူဝ်ႈမူင်းၶိုင်ႈ    | 1 ၸူဝ်ႈၶိုင်ႈ      | 1hၶိုင်ႈ  |
+| 1½ hours              | 1 ၸူဝ်ႈမူင်းၶိုင်ႈ    | 1 ၸူဝ်ႈၶိုင်ႈ      | 1½h       |
 | 3 hours               | 3 ၸူဝ်ႈမူင်း          | 3 ၸူဝ်ႈ            | 3h        |
 | 6 hours               | 6 ၸူဝ်ႈမူင်း          | 6 ၸူဝ်ႈ            | 6h        |
 | 1 day                 | 1 ဝၼ်း                | 1 ဝၼ်း             | 1d        |
-| 1½ days               | 1 ဝၼ်းၶိုင်ႈ          | 1 ဝၼ်းၶိုင်ႈ       | 1dၶိုင်ႈ  |
+| 1½ days               | 1 ဝၼ်းၶိုင်ႈ          | 1 ဝၼ်းၶိုင်ႈ       | 1½d       |
 | 3 days                | 3 ဝၼ်း                | 3 ဝၼ်း             | 3d        |
 | 1 week                | 1 ဝူင်ႈ               | 1 ဝူင်ႈ            | 1w        |
 | 2 weeks, 3 days       | 2 ဝူင်ႈ 3 ဝၼ်း        | 2 ဝူင်ႈ 3 ဝၼ်း     | 2w3d      |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal        | Short    | Compact |
-| --------------- | ------------- | -------- | ------- |
-| Midnight        | ၵၢင်ၶိုၼ်း    | 12:00 AM | 12:00a  |
-| 1:00 AM         | ၼိုင်ႈ:00     | 1:00 AM  | 1:00a   |
-| 5 past 9        | ၵဝ်ႈ:05       | 9:05 AM  | 9:05a   |
-| Quarter past 10 | သိပ်း:15      | 10:15 AM | 10:15a  |
-| Half past 11    | သိပ်းဢဵတ်း:30 | 11:30 AM | 11:30a  |
-| Noon            | ၵၢင်ဝၼ်း      | 12:00 PM | 12:00p  |
-| Quarter to 3    | သွင်:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | ႁႃႈ:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | ပႅတ်ႇ:00      | 8:00 PM  | 8:00p   |
-| 10:30 PM        | သိပ်း:30      | 10:30 PM | 10:30p  |
-| 11:58 PM        | ၵၢင်ၶိုၼ်း    | 11:58 PM | 11:58p  |
+| Time            | Normal                       | Short    | Compact |
+| --------------- | ---------------------------- | -------- | ------- |
+| Midnight        | ၵၢင်ၶိုၼ်း                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | ၼိုင်ႈမူင်း                  | 1:00 AM  | 1:00a   |
+| 5 past 9        | ၵဝ်ႈမူင်း ႁႃႈမိၼိတ်ႉ         | 9:05 AM  | 9:05a   |
+| Quarter past 10 | သိပ်းမူင်း သိပ်းႁႃႈမိၼိတ်ႉ   | 10:15 AM | 10:15a  |
+| Half past 11    | သိပ်းဢဵတ်းမူင်းၶိုင်ႈ        | 11:30 AM | 11:30a  |
+| Noon            | ၵၢင်ဝၼ်း                     | 12:00 PM | 12:00p  |
+| Quarter to 3    | သွင်မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ | 2:45 PM  | 2:45p   |
+| 5 to 6          | ႁႃႈမူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ပႅတ်ႇမူင်း                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | သိပ်းမူင်းၶိုင်ႈ             | 10:30 PM | 10:30p  |
+| 11:58 PM        | ၵၢင်ၶိုၼ်း                   | 11:58 PM | 11:58p  |

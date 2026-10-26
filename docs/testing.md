@@ -65,7 +65,6 @@ Every run prints its seed, and a failing run prints the exact command to reprodu
 ## Coverage limits
 
 - Layers 3 and 4 only see languages that have a CLI (`cli/impl/<lang>/sayable`). A language with no CLI is covered only by its native suite. Add a CLI as part of adding a language.
-- A component a CLI doesn't implement (it answers exit 2) is skipped for that language by both the harness and the fuzzer.
 - Default-asOf ("today") behaviour can't be compared across processes deterministically. It is covered by the native suites only.
 
 ## License

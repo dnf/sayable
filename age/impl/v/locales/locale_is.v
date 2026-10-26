@@ -28,7 +28,7 @@ pub const locale_is = AgeLocale{
 	week: plural_unit({PluralCategory.one: '{n} vika', PluralCategory.other: '{n} vikur'})
 	month: plural_unit({PluralCategory.one: '{n} mánuður', PluralCategory.other: '{n} mánuðir'})
 	year: plural_unit({PluralCategory.one: '{n} ár', PluralCategory.other: '{n} ár'})
-	half: '{0} og hálft'
+	half: '{n} og hálft'
 	delimiter: ', '
 	just_born: 'Nýfætt'
 	newborn: stage_neutral('Nýfæðingur')

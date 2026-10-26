@@ -26,5 +26,5 @@ locale() ->
         just_born = "ၶဝ်ႈမႃး",
         stages = #stages{newborn = {neutral, "ၶဝ်ႈမႃး"}, infant = {neutral, "လုၵ်ႈဢွၼ်ႇ"}, toddler = {neutral, "လုၵ်ႈဢွၼ်ႇ"}, child = {neutral, "လုၵ်ႈဢွၼ်ႇ"}, teenager = {neutral, "ၵူၼ်းၼုမ်ႇ"}, adult = {neutral, "ၵူၼ်းလူင်"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} ဝၼ်း"}}, week = {just, {simple, "{n} ဝူင်ႈ"}}, month = {just, {simple, "{n} လိူၼ်"}}, year = {just, {simple, "{n} ပီ"}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, just_born = nothing}}
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

@@ -14,8 +14,8 @@ _sayableduration_plural_qu() {
 }
 
 _sayableduration_locale_qu() {
-    _unit_second='{n} ñiqin'
-    _unit_minute='{n} chiniku'
+    _unit_second='{n} sikundu'
+    _unit_minute='{n} minutu'
     _unit_hour='{n} ura'
     _unit_day='{n} p'\''unchaw'
     _unit_week='{n} simana'
@@ -26,8 +26,8 @@ _sayableduration_locale_qu() {
     _just_now='kunanlla'
     _ago='{0} ñawpaqta'
     _in_future='{0} qhipata'
-    _short_unit_second='{n} ñiq'
-    _short_unit_minute='{n} chi'
+    _short_unit_second='{n} sik'
+    _short_unit_minute='{n} min'
     _short_unit_hour='{n} ura'
     _short_unit_day='{n} p'\''un'
     _short_unit_week='{n} sim'

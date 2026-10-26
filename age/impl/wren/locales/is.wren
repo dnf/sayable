@@ -29,7 +29,7 @@ class ISLocale {
       "year": {"one": "{n} ár", "other": "{n} ár"},
     }
   }
-  static half { "{0} og hálft" }
+  static half { "{n} og hálft" }
   static delimiter { ", " }
   static justBorn { "Nýfætt" }
   static stages {

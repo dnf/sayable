@@ -6,36 +6,44 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [so.json](../../locales/so.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Definite hour forms as used for clock time (kowda, labada, saddexda, afarta, shanta, lixda, toddobada, siddeedda, sagaasha, tobanka, kow iyo tobanka, laba iyo tobanka). Past: '{h} iyo shan/toban/rubuc/labaatan/shan iyo labaatan/bar'. To: '{next_h} rubuc la'' etc. ('la'' = lacking). Doubts: the exact 'to' construction (some speakers say 'rubuc ka dhiman' or put 'la'' differently); 'siddeedda' gemination spelling.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal                    | Short         | Compact       |
-| ----------------- | ------------------------- | ------------- | ------------- |
-| Born today        | Dhashay cusub             | Dhashay cusub | Dhashay cusub |
-| 1 day             | maalin 1                  | mln 1         | 1m            |
-| 3 days            | maalmood 3                | mln 3         | 3m            |
-| 6 days            | maalmood 6                | mln 6         | 6m            |
-| 1 week            | toddobaad 1               | tdb 1         | 1t            |
-| 1 week, 1 day     | toddobaad 1, maalin 1     | tdb 1, mln 1  | 1t1m          |
-| 2 weeks           | toddobaadyo 2             | tdb 2         | 2t            |
-| 2 weeks, 3 days   | toddobaadyo 2, maalmood 3 | tdb 2, mln 3  | 2t3m          |
-| 3 months          | bilood 3                  | bil 3         | 3b            |
-| 6 months          | bilood 6                  | bil 6         | 6b            |
-| 11 months         | bilood 11                 | bil 11        | 11b           |
-| 12 months         | bilood 12                 | bil 12        | 12b           |
-| 23 months         | bilood 23                 | bil 23        | 23b           |
-| 2 years           | sanooyin 2                | sno 2         | 2s            |
-| 2 years, 1 month  | sanooyin 2, bil 1         | sno 2, bil 1  | 2s1b          |
-| 2 years, 6 months | sanooyin 2, bilood 6      | sno 2, bil 6  | 2s6b          |
-| 3 years           | sanooyin 3                | sno 3         | 3s            |
-| 3½ years          | sanooyin 3½               | sno 3½        | 3½s           |
-| 5 years           | sanooyin 5                | sno 5         | 5s            |
-| 5½ years          | sanooyin 5½               | sno 5½        | 5½s           |
-| 7 years           | sanooyin 7                | sno 7         | 7s            |
-| 10 years          | sanooyin 10               | sno 10        | 10s           |
-| 18 years          | sanooyin 18               | sno 18        | 18s           |
-| 45 years          | sanooyin 45               | sno 45        | 45s           |
+| Age               | Normal                  | Short         | Compact       |
+| ----------------- | ----------------------- | ------------- | ------------- |
+| Born today        | Dhashay cusub           | Dhashay cusub | Dhashay cusub |
+| 1 day             | 1 maalin                | mln 1         | 1m            |
+| 3 days            | 3 maalmood              | mln 3         | 3m            |
+| 6 days            | 6 maalmood              | mln 6         | 6m            |
+| 1 week            | 1 toddobaad             | tdb 1         | 1t            |
+| 1 week, 1 day     | 1 toddobaad, 1 maalin   | tdb 1, mln 1  | 1t1m          |
+| 2 weeks           | 2 toddobaad             | tdb 2         | 2t            |
+| 2 weeks, 3 days   | 2 toddobaad, 3 maalmood | tdb 2, mln 3  | 2t3m          |
+| 3 months          | 3 bilood                | bil 3         | 3b            |
+| 6 months          | 6 bilood                | bil 6         | 6b            |
+| 11 months         | 11 bilood               | bil 11        | 11b           |
+| 12 months         | 12 bilood               | bil 12        | 12b           |
+| 23 months         | 23 bilood               | bil 23        | 23b           |
+| 2 years           | 2 sano                  | sno 2         | 2s            |
+| 2 years, 1 month  | 2 sano, 1 bil           | sno 2, bil 1  | 2s1b          |
+| 2 years, 6 months | 2 sano, 6 bilood        | sno 2, bil 6  | 2s6b          |
+| 3 years           | 3 sano                  | sno 3         | 3s            |
+| 3½ years          | 3½ sano                 | sno 3½        | 3½s           |
+| 5 years           | 5 sano                  | sno 5         | 5s            |
+| 5½ years          | 5½ sano                 | sno 5½        | 5½s           |
+| 7 years           | 7 sano                  | sno 7         | 7s            |
+| 10 years          | 10 sano                 | sno 10        | 10s           |
+| 18 years          | 18 sano                 | sno 18        | 18s           |
+| 45 years          | 45 sano                 | sno 45        | 45s           |
 
 ### Stages
 
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | saadamin        | 17/3    |
 | Day before yesterday | doraato         | 13/3    |
 | This Thursday (+5)   | Khamiistan      | 20/3    |
-| Last Monday (-4)     | Talaadotii hore | 11/3    |
-| Next Wednesday (+12) | Khamiista xigta | 27/3    |
-| Same month (+20)     | 4 Abriil        | 4/4     |
+| Last Tuesday (-4)    | Talaadotii hore | 11/3    |
+| Next Thursday (+12)  | Khamiista xigta | 27/3    |
+| Same year (+20)      | 4 Abriil        | 4/4     |
 | Different year       | 10 Janaayo 2026 | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                          | Short         | Compact     |
-| --------------------- | ------------------------------- | ------------- | ----------- |
-| 0 seconds             | hadda                           | hadda         | hadda       |
-| 1 second              | ilbiriqsi 1                     | ilb 1         | ilb 1       |
-| 30 seconds            | ilbiriqsiyaal 30                | ilb 30        | ilb 30      |
-| 1 minute              | daqiiqad 1                      | daq 1         | daq 1       |
-| 2 minutes, 15 seconds | daqiiqadood 2, ilbiriqsiyaal 15 | daq 2, ilb 15 | daq 2ilb 15 |
-| 5 minutes             | daqiiqadood 5                   | daq 5         | daq 5       |
-| 45 minutes            | daqiiqadood 45                  | daq 45        | daq 45      |
-| 1 hour                | saacad 1                        | scd 1         | scd 1       |
-| 1½ hours              | saacadood 1½                    | scd 1½        | scd 1½      |
-| 3 hours               | saacadood 3                     | scd 3         | scd 3       |
-| 6 hours               | saacadood 6                     | scd 6         | scd 6       |
-| 1 day                 | maalin 1                        | mln 1         | 1m          |
-| 1½ days               | maalmood 1½                     | mln 1½        | 1½m         |
-| 3 days                | maalmood 3                      | mln 3         | 3m          |
-| 1 week                | toddobaad 1                     | tdb 1         | 1t          |
-| 2 weeks, 3 days       | toddobaadyo 2, maalmood 3       | tdb 2, mln 3  | 2t3m        |
-| 1 month               | bil 1                           | bil 1         | 1b          |
-| 6 months              | bilood 6                        | bil 6         | 6b          |
-| 1 year                | sano 1                          | sno 1         | 1s          |
-| 2 years, 3 months     | sanooyin 2, bilood 3            | sno 2, bil 3  | 2s3b        |
+| Duration              | Normal                  | Short         | Compact     |
+| --------------------- | ----------------------- | ------------- | ----------- |
+| 0 seconds             | hadda                   | hadda         | hadda       |
+| 1 second              | 1 ilbiriqsi             | ilb 1         | ilb 1       |
+| 30 seconds            | 30 ilbiriqsi            | ilb 30        | ilb 30      |
+| 1 minute              | 1 daqiiqad              | daq 1         | daq 1       |
+| 2 minutes, 15 seconds | 2 daqiiqo, 15 ilbiriqsi | daq 2, ilb 15 | daq 2ilb 15 |
+| 5 minutes             | 5 daqiiqo               | daq 5         | daq 5       |
+| 45 minutes            | 45 daqiiqo              | daq 45        | daq 45      |
+| 1 hour                | 1 saacad                | scd 1         | scd 1       |
+| 1½ hours              | 1½ saacadood            | scd 1½        | scd 1½      |
+| 3 hours               | 3 saacadood             | scd 3         | scd 3       |
+| 6 hours               | 6 saacadood             | scd 6         | scd 6       |
+| 1 day                 | 1 maalin                | mln 1         | 1m          |
+| 1½ days               | 1½ maalmood             | mln 1½        | 1½m         |
+| 3 days                | 3 maalmood              | mln 3         | 3m          |
+| 1 week                | 1 toddobaad             | tdb 1         | 1t          |
+| 2 weeks, 3 days       | 2 toddobaad, 3 maalmood | tdb 2, mln 3  | 2t3m        |
+| 1 month               | 1 bil                   | bil 1         | 1b          |
+| 6 months              | 6 bilood                | bil 6         | 6b          |
+| 1 year                | 1 sano                  | sno 1         | 1s          |
+| 2 years, 3 months     | 2 sano, 3 bilood        | sno 2, bil 3  | 2s3b        |
 
 ### Relative time
 
-| Offset        | Normal                  | Compact         |
-| ------------- | ----------------------- | --------------- |
-| 5 minutes ago | daqiiqadood 5 ka hor    | daq 5 ka hor    |
-| 2 hours ago   | saacadood 2 ka hor      | scd 2 ka hor    |
-| in 30 minutes | daqiiqadood 30 gudahood | daq 30 gudahood |
-| in 3 hours    | saacadood 3 gudahood    | scd 3 gudahood  |
+| Offset        | Normal               | Compact         |
+| ------------- | -------------------- | --------------- |
+| 5 minutes ago | 5 daqiiqo ka hor     | daq 5 ka hor    |
+| 2 hours ago   | 2 saacadood ka hor   | scd 2 ka hor    |
+| in 30 minutes | 30 daqiiqo gudahood  | daq 30 gudahood |
+| in 3 hours    | 3 saacadood gudahood | scd 3 gudahood  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal           | Short    | Compact |
-| --------------- | ---------------- | -------- | ------- |
-| Midnight        | saqda dhexe      | 12:00 AM | 12:00a  |
-| 1:00 AM         | kow:00           | 1:00 AM  | 1:00a   |
-| 5 past 9        | sagaal:05        | 9:05 AM  | 9:05a   |
-| Quarter past 10 | toban:15         | 10:15 AM | 10:15a  |
-| Half past 11    | kow iyo toban:30 | 11:30 AM | 11:30a  |
-| Noon            | duhur            | 12:00 PM | 12:00p  |
-| Quarter to 3    | laba:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | shan:55          | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | siddeed:00       | 8:00 PM  | 8:00p   |
-| 10:30 PM        | toban:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | saqda dhexe      | 11:58 PM | 11:58p  |
+| Time            | Normal                  | Short    | Compact |
+| --------------- | ----------------------- | -------- | ------- |
+| Midnight        | saqda dhexe             | 12:00 AM | 12:00a  |
+| 1:00 AM         | kowda                   | 1:00 AM  | 1:00a   |
+| 5 past 9        | sagaasha iyo shan       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | tobanka iyo rubuc       | 10:15 AM | 10:15a  |
+| Half past 11    | kow iyo tobanka iyo bar | 11:30 AM | 11:30a  |
+| Noon            | duhur                   | 12:00 PM | 12:00p  |
+| Quarter to 3    | saddexda rubuc la'      | 2:45 PM  | 2:45p   |
+| 5 to 6          | lixda shan la'          | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | siddeedda               | 8:00 PM  | 8:00p   |
+| 10:30 PM        | tobanka iyo bar         | 10:30 PM | 10:30p  |
+| 11:58 PM        | saqda dhexe             | 11:58 PM | 11:58p  |

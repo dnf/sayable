@@ -12,7 +12,7 @@
 function loc = locale_fon()
   loc.code = 'fon';
   loc.months = {'Alɔfí', 'Alɔnyɔ', 'Ataɖaxɔ', 'Tlɛsún', 'Axɔsún', 'Ayɛsún', 'Nùxwásún', 'Ayidosún', 'Kɛnísún', 'Kanyásún', 'Abɔxwísún', 'Adɔxwísún'};
-  loc.weekdays = {'Sidégbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Abámɛ́ta'};
+  loc.weekdays = {'Aklunɔzángbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Sibigbe'};
   loc.day_format = '{n}';
   loc.day_format_exceptions = struct();
   loc.date_pattern = '{day} {month}';
@@ -27,7 +27,7 @@ function loc = locale_fon()
   loc.last_weekday = '{weekday} e wá yí';
   loc.months_in_date = {};
   loc.short.months = {'Alɔ', 'Any', 'Ata', 'Tlɛ', 'Axɔ', 'Ayɛ', 'Nùx', 'Ayi', 'Kɛn', 'Kan', 'Abɔ', 'Adɔ'};
-  loc.short.weekdays = {'Sid', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Abá'};
+  loc.short.weekdays = {'Akl', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Sib'};
   loc.short.day_format = '{n}';
   loc.short.date_pattern = '{day} {month}';
   loc.short.date_pattern_with_year = '{day} {month} {year}';

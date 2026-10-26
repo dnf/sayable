@@ -30,7 +30,7 @@
    "Recén nacido"
    (hash "newborn" (stage-label #f "Recén nacido" "Recén nacida")
          "infant" (stage-label "Bebé" #f #f)
-         "toddler" (stage-label "Neno" #f #f)
+         "toddler" (stage-label #f "Neno pequeno" "Nena pequena")
          "child" (stage-label #f "Neno" "Nena")
          "teenager" (stage-label "Adolescente" #f #f)
          "adult" (stage-label #f "Adulto" "Adulta"))

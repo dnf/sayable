@@ -23,12 +23,12 @@ var MI = sa.AgeLocale{
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.SimpleUnit("rā {n}"),
-		Week:  sa.SimpleUnit("wiki {n}"),
-		Month: sa.SimpleUnit("marama {n}"),
-		Year:  sa.SimpleUnit("tau {n}"),
+		Day:   sa.SimpleUnit("{n} rā"),
+		Week:  sa.SimpleUnit("{n} wiki"),
+		Month: sa.SimpleUnit("{n} marama"),
+		Year:  sa.SimpleUnit("{n} tau"),
 	},
-	Half:      "{0}½",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustBorn:  "Pēpi hou",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
@@ -40,10 +40,10 @@ var MI = sa.AgeLocale{
 		Adult:    sa.S("Pakeke"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.UnitForms{Simple: "rā {n}"},
-		Week:  &sa.UnitForms{Simple: "w {n}"},
-		Month: &sa.UnitForms{Simple: "m {n}"},
-		Year:  &sa.UnitForms{Simple: "t {n}"},
+		Day:   &sa.UnitForms{Simple: "{n} rā"},
+		Week:  &sa.UnitForms{Simple: "{n} w"},
+		Month: &sa.UnitForms{Simple: "{n} m"},
+		Year:  &sa.UnitForms{Simple: "{n} t"},
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n}r"},

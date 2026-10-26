@@ -28,8 +28,8 @@ var TG = sdate.DateLocale{
 	DayAfterTomorrow:  strPtr("пасфардо"),
 	DayBeforeYesterday: strPtr("парирӯз"),
 	ThisWeekday:       strPtr("ин {weekday}"),
-	NextWeekday:       strPtr("{weekday}-и оянда"),
-	LastWeekday:       strPtr("{weekday}-и гузашта"),
+	NextWeekday:       strPtr("{weekday}и оянда"),
+	LastWeekday:       strPtr("{weekday}и гузашта"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
 		Months:   &[12]string{"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"},

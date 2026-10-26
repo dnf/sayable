@@ -48,7 +48,10 @@ let locale : duration_locale =
         [ (One, "waktu {n}")
         ; (Other, "waktuuji {n}")
         ])
-      ; ovr_day = Some (Simple "ñalɗe {n}")
+      ; ovr_day = Some (Pluralized
+        [ (One, "ñalawma {n}")
+        ; (Other, "ñalɗe {n}")
+        ])
       ; ovr_week = Some (Pluralized
         [ (One, "yontere {n}")
         ; (Other, "yontereeji {n}")
@@ -73,7 +76,10 @@ let locale : duration_locale =
         [ (One, "wak {n}")
         ; (Other, "wakji {n}")
         ])
-      ; ovr_day = Some (Simple "ñalɗe {n}")
+      ; ovr_day = Some (Pluralized
+        [ (One, "ñalawma {n}")
+        ; (Other, "ñalɗe {n}")
+        ])
       ; ovr_week = Some (Pluralized
         [ (One, "yont {n}")
         ; (Other, "yontji {n}")

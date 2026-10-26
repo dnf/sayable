@@ -10,22 +10,22 @@
 # Source: locales/am.json
 
 function locale_am {
-    $hours = @('አሥራ ሁለት', 'አንድ', 'ሁለት', 'ሦስት', 'አራት', 'አምስት', 'ስድስት', 'ሰባት', 'ስምንት', 'ዘጠኝ', 'አሥር', 'አሥራ አንድ')
+    $hours = @('ስድስት', 'ሰባት', 'ስምንት', 'ዘጠኝ', 'አሥር', 'አሥራ አንድ', 'አሥራ ሁለት', 'አንድ', 'ሁለት', 'ሦስት', 'አራት', 'አምስት')
     $midnight = 'እኩለ ሌሊት'
     $noon = 'እኩለ ቀን'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h} ሰዓት'
+    $patterns[5] = '{h} ሰዓት ከአምስት ደቂቃ'
+    $patterns[10] = '{h} ሰዓት ከአሥር ደቂቃ'
+    $patterns[15] = '{h} ሰዓት ከሩብ'
+    $patterns[20] = '{h} ሰዓት ከሃያ ደቂቃ'
+    $patterns[25] = '{h} ሰዓት ከሃያ አምስት ደቂቃ'
+    $patterns[30] = '{h} ሰዓት ተኩል'
+    $patterns[35] = 'ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ'
+    $patterns[40] = 'ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ'
+    $patterns[45] = 'ለ{next_h} ሰዓት ሩብ ጉዳይ'
+    $patterns[50] = 'ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ'
+    $patterns[55] = 'ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ'
     $clock = @{
         hours = $hours
         midnight = $midnight

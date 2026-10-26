@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ms.json](../../locales/ms.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Malaysian hour-first system: 'pukul dua lima minit', 'pukul dua suku', 'pukul dua setengah' (current hour, unlike Indonesian), 'pukul tiga kurang suku'. Doubt: for :35/:40 many Malaysians say the additive 'pukul dua tiga puluh lima minit' rather than 'pukul tiga kurang dua puluh lima minit'; both are grammatical.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | lusa            | 17/3     |
 | Day before yesterday | kelmarin        | 13/3     |
 | This Thursday (+5)   | Khamis ini      | 20/3     |
-| Last Monday (-4)     | Selasa lepas    | 11/3     |
-| Next Wednesday (+12) | Khamis depan    | 27/3     |
-| Same month (+20)     | 4 April         | 4/4      |
+| Last Tuesday (-4)    | Selasa lepas    | 11/3     |
+| Next Thursday (+12)  | Khamis depan    | 27/3     |
+| Same year (+20)      | 4 April         | 4/4      |
 | Different year       | 10 Januari 2026 | 10/1/26  |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                 | Short | Compact |
-| --------------- | ---------------------- | ----- | ------- |
-| Midnight        | tengah malam           | 0:00  | 0:00    |
-| 1:00 AM         | satu o'clock           | 1:00  | 1:00    |
-| 5 past 9        | lima lewat sembilan    | 9:05  | 9:05    |
-| Quarter past 10 | suku lewat sepuluh     | 10:15 | 10:15   |
-| Half past 11    | setengah lewat sebelas | 11:30 | 11:30   |
-| Noon            | tengah hari            | 12:00 | 12:00   |
-| Quarter to 3    | suku menjelang tiga    | 14:45 | 14:45   |
-| 5 to 6          | lima menjelang enam    | 17:55 | 17:55   |
-| 8 o'clock PM    | lapan o'clock          | 20:00 | 20:00   |
-| 10:30 PM        | setengah lewat sepuluh | 22:30 | 22:30   |
-| 11:58 PM        | tengah malam           | 23:58 | 23:58   |
+| Time            | Normal                       | Short | Compact |
+| --------------- | ---------------------------- | ----- | ------- |
+| Midnight        | tengah malam                 | 0:00  | 0:00    |
+| 1:00 AM         | pukul satu                   | 1:00  | 1:00    |
+| 5 past 9        | pukul sembilan lima minit    | 9:05  | 9:05    |
+| Quarter past 10 | pukul sepuluh suku           | 10:15 | 10:15   |
+| Half past 11    | pukul sebelas setengah       | 11:30 | 11:30   |
+| Noon            | tengah hari                  | 12:00 | 12:00   |
+| Quarter to 3    | pukul tiga kurang suku       | 14:45 | 14:45   |
+| 5 to 6          | pukul enam kurang lima minit | 17:55 | 17:55   |
+| 8 o'clock PM    | pukul lapan                  | 20:00 | 20:00   |
+| 10:30 PM        | pukul sepuluh setengah       | 22:30 | 22:30   |
+| 11:58 PM        | tengah malam                 | 23:58 | 23:58   |

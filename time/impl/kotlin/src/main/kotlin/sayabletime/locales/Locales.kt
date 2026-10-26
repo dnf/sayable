@@ -48,10 +48,10 @@ public object Locales {
     private fun buildAk(): TimeLocale = TimeLocale(
         code = "ak",
         clock = ClockConfig(
-            hours = listOf("dumien", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"),
-            midnight = "anadwo",
-            noon = "awia",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            hours = listOf("dumienu", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"),
+            midnight = "ɔdasuom",
+            noon = "owigyinae",
+            patterns = mapOf(0 to "nnɔn {h}", 5 to "nnɔn {h} ne sima anum", 10 to "nnɔn {h} ne sima edu", 15 to "nnɔn {h} ne sima dunum", 20 to "nnɔn {h} ne sima aduonu", 25 to "nnɔn {h} ne sima aduonu num", 30 to "nnɔn {h} ne fa", 35 to "aka sima aduonu num na abɔ nnɔn {next_h}", 40 to "aka sima aduonu na abɔ nnɔn {next_h}", 45 to "aka sima dunum na abɔ nnɔn {next_h}", 50 to "aka sima edu na abɔ nnɔn {next_h}", 55 to "aka sima anum na abɔ nnɔn {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -70,10 +70,10 @@ public object Locales {
     private fun buildAm(): TimeLocale = TimeLocale(
         code = "am",
         clock = ClockConfig(
-            hours = listOf("አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት", "ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ"),
+            hours = listOf("ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ", "አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት"),
             midnight = "እኩለ ሌሊት",
             noon = "እኩለ ቀን",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} ሰዓት", 5 to "{h} ሰዓት ከአምስት ደቂቃ", 10 to "{h} ሰዓት ከአሥር ደቂቃ", 15 to "{h} ሰዓት ከሩብ", 20 to "{h} ሰዓት ከሃያ ደቂቃ", 25 to "{h} ሰዓት ከሃያ አምስት ደቂቃ", 30 to "{h} ሰዓት ተኩል", 35 to "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ", 40 to "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ", 45 to "ለ{next_h} ሰዓት ሩብ ጉዳይ", 50 to "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ", 55 to "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -95,7 +95,7 @@ public object Locales {
             hours = listOf("الثانية عشرة", "الواحدة", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة", "الثامنة", "التاسعة", "العاشرة", "الحادية عشرة"),
             midnight = "منتصف الليل",
             noon = "الظهر",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "الساعة {h}", 5 to "{h} وخمس دقائق", 10 to "{h} وعشر دقائق", 15 to "{h} والربع", 20 to "{h} والثلث", 25 to "{h} والنصف إلا خمس دقائق", 30 to "{h} والنصف", 35 to "{h} والنصف وخمس دقائق", 40 to "{next_h} إلا ثلثًا", 45 to "{next_h} إلا ربعًا", 50 to "{next_h} إلا عشر دقائق", 55 to "{next_h} إلا خمس دقائق"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -114,10 +114,10 @@ public object Locales {
     private fun buildAy(): TimeLocale = TimeLocale(
         code = "ay",
         clock = ClockConfig(
-            hours = listOf("tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani"),
+            hours = listOf("tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llätunka", "tunka", "tunka mayani"),
             midnight = "aruma chika",
             noon = "chika uru",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} ura", 5 to "{h} ura phisqa minutuni", 10 to "{h} ura tunka minutuni", 15 to "{h} ura tunka phisqani minutuni", 20 to "{h} ura pä tunka minutuni", 25 to "{h} ura pä tunka phisqani minutuni", 30 to "{h} ura chikani", 35 to "{h} ura kimsa tunka phisqani minutuni", 40 to "{h} ura pusi tunka minutuni", 45 to "{h} ura pusi tunka phisqani minutuni", 50 to "{h} ura phisqa tunka minutuni", 55 to "{h} ura phisqa tunka phisqani minutuni"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -139,7 +139,7 @@ public object Locales {
             hours = listOf("on iki", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz", "on", "on bir"),
             midnight = "gecə yarısı",
             noon = "günorta",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "beş keçir {h}", 10 to "on keçir {h}", 15 to "on beş keçir {h}", 20 to "iyirmi keçir {h}", 25 to "iyirmi beş keçir {h}", 30 to "otuz keçir {h}", 35 to "iyirmi beş qalmış {next_h}", 40 to "iyirmi qalmış {next_h}", 45 to "on beş qalmış {next_h}", 50 to "on qalmış {next_h}", 55 to "beş qalmış {next_h}"),
+            patterns = mapOf(0 to "saat {h}", 5 to "{h} sıfır beş", 10 to "{h} on", 15 to "{h} on beş", 20 to "{h} iyirmi", 25 to "{h} iyirmi beş", 30 to "{h} otuz", 35 to "{h} otuz beş", 40 to "{h} qırx", 45 to "{h} qırx beş", 50 to "{h} əlli", 55 to "{h} əlli beş"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -158,10 +158,10 @@ public object Locales {
     private fun buildBci(): TimeLocale = TimeLocale(
         code = "bci",
         clock = ClockConfig(
-            hours = listOf("blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"),
+            hours = listOf("blu-nin-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-nin-kun"),
             midnight = "kɔnguɛ afiɛn",
             noon = "nnɔsua",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "dɔ {h}", 5 to "dɔ {h} nin miniti nnun", 10 to "dɔ {h} nin miniti blu", 15 to "dɔ {h} nin miniti blu-nin-nnun", 20 to "dɔ {h} nin miniti ablaɔn", 25 to "dɔ {h} nin miniti ablaɔn-nin-nnun", 30 to "dɔ {h} nin miniti ablasan", 35 to "dɔ {h} nin miniti ablasan-nin-nnun", 40 to "dɔ {h} nin miniti ablanan", 45 to "dɔ {h} nin miniti ablanan-nin-nnun", 50 to "dɔ {h} nin miniti ablenun", 55 to "dɔ {h} nin miniti ablenun-nin-nnun"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -180,10 +180,10 @@ public object Locales {
     private fun buildBe(): TimeLocale = TimeLocale(
         code = "be",
         clock = ClockConfig(
-            hours = listOf("дванаццаць", "адзін", "два", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"),
+            hours = listOf("дванаццаць", "гадзіна", "дзве", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"),
             midnight = "поўнач",
             noon = "поўдзень",
-            patterns = mapOf(0 to "{h} гадзін", 5 to "пяць хвілін пасля {h}", 10 to "дзесяць хвілін пасля {h}", 15 to "чвэрць пасля {h}", 20 to "дваццаць хвілін пасля {h}", 25 to "дваццаць пяць хвілін пасля {h}", 30 to "палова да {next_h}", 35 to "без дваццаці пяці {next_h}", 40 to "без дваццаці {next_h}", 45 to "без чвэрці {next_h}", 50 to "без дзесяці {next_h}", 55 to "без пяці {next_h}"),
+            patterns = mapOf(0 to "роўна {h}", 5 to "{h} нуль пяць", 10 to "{h} дзесяць", 15 to "{h} пятнаццаць", 20 to "{h} дваццаць", 25 to "{h} дваццаць пяць", 30 to "{h} трыццаць", 35 to "без дваццаці пяці {next_h}", 40 to "без дваццаці {next_h}", 45 to "без чвэрці {next_h}", 50 to "без дзесяці {next_h}", 55 to "без пяці {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -202,10 +202,10 @@ public object Locales {
     private fun buildBem(): TimeLocale = TimeLocale(
         code = "bem",
         clock = ClockConfig(
-            hours = listOf("ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo"),
+            hours = listOf("ikumi na shibili", "imo", "shibili", "shitatu", "shine", "shisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na imo"),
             midnight = "pakati ka bushiku",
             noon = "akasuba",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "insa {h}", 5 to "insa {h} na maminiti yasano", 10 to "insa {h} na maminiti ikumi", 15 to "insa {h} na maminiti ikumi na yasano", 20 to "insa {h} na maminiti amakumi yabili", 25 to "insa {h} na maminiti amakumi yabili na yasano", 30 to "insa {h} na hafu", 35 to "insa {h} na maminiti amakumi yatatu na yasano", 40 to "insa {h} na maminiti amakumi yane", 45 to "insa {h} na maminiti amakumi yane na yasano", 50 to "insa {h} na maminiti amakumi yasano", 55 to "insa {h} na maminiti amakumi yasano na yasano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -227,7 +227,7 @@ public object Locales {
             hours = listOf("дванадесет", "един", "два", "три", "четири", "пет", "шест", "седем", "осем", "девет", "десет", "единадесет"),
             midnight = "полунощ",
             noon = "обяд",
-            patterns = mapOf(0 to "{h} часа", 5 to "пет na {h}", 10 to "десет na {h}", 15 to "петнадесет na {h}", 20 to "двадесет na {h}", 25 to "двадесет и пет na {h}", 30 to "тридесет na {h}", 35 to "двадесет и пет do {next_h}", 40 to "двадесет do {next_h}", 45 to "петнадесет do {next_h}", 50 to "десет do {next_h}", 55 to "пет do {next_h}"),
+            patterns = mapOf(0 to "{h} часа", 5 to "{h} и пет", 10 to "{h} и десет", 15 to "{h} и петнадесет", 20 to "{h} и двадесет", 25 to "{h} и двадесет и пет", 30 to "{h} и половина", 35 to "{next_h} без двадесет и пет", 40 to "{next_h} без двадесет", 45 to "{next_h} без петнадесет", 50 to "{next_h} без десет", 55 to "{next_h} без пет"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -249,7 +249,7 @@ public object Locales {
             hours = listOf("twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"),
             midnight = "mednaet",
             noon = "medeldei",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} klok", 5 to "faef pas {h}", 10 to "ten pas {h}", 15 to "kwota pas {h}", 20 to "twenti pas {h}", 25 to "twenti faef pas {h}", 30 to "haf pas {h}", 35 to "twenti faef tu {next_h}", 40 to "twenti tu {next_h}", 45 to "kwota tu {next_h}", 50 to "ten tu {next_h}", 55 to "faef tu {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -271,7 +271,7 @@ public object Locales {
             hours = listOf("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
             midnight = "dugutilama",
             noon = "tilgari",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "nɛgɛ kaɲɛ {h}", 5 to "nɛgɛ kaɲɛ {h} ni miniti duuru", 10 to "nɛgɛ kaɲɛ {h} ni miniti tan", 15 to "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru", 20 to "nɛgɛ kaɲɛ {h} ni miniti mugan", 25 to "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru", 30 to "nɛgɛ kaɲɛ {h} ni tilancɛ", 35 to "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru", 40 to "nɛgɛ kaɲɛ {h} ni miniti bi naani", 45 to "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru", 50 to "nɛgɛ kaɲɛ {h} ni miniti bi duuru", 55 to "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -290,10 +290,10 @@ public object Locales {
     private fun buildBn(): TimeLocale = TimeLocale(
         code = "bn",
         clock = ClockConfig(
-            hours = listOf("বারো", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়", "দশ", "এগারো"),
+            hours = listOf("বারোটা", "একটা", "দুটো", "তিনটে", "চারটে", "পাঁচটা", "ছটা", "সাতটা", "আটটা", "নটা", "দশটা", "এগারোটা"),
             midnight = "মধ্যরাত",
-            noon = "দুপুর",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            noon = "দুপুর বারোটা",
+            patterns = mapOf(0 to "{h}", 5 to "{h} বেজে পাঁচ মিনিট", 10 to "{h} বেজে দশ মিনিট", 15 to "সোয়া {h}", 20 to "{h} বেজে বিশ মিনিট", 25 to "{h} বেজে পঁচিশ মিনিট", 30 to "{h} বেজে ত্রিশ মিনিট", 35 to "{next_h} বাজতে পঁচিশ মিনিট বাকি", 40 to "{next_h} বাজতে বিশ মিনিট বাকি", 45 to "পৌনে {next_h}", 50 to "{next_h} বাজতে দশ মিনিট বাকি", 55 to "{next_h} বাজতে পাঁচ মিনিট বাকি"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -312,10 +312,10 @@ public object Locales {
     private fun buildBr(): TimeLocale = TimeLocale(
         code = "br",
         clock = ClockConfig(
-            hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            hours = listOf("daouzek eur", "un eur", "div eur", "teir eur", "peder eur", "pemp eur", "c'hwec'h eur", "seizh eur", "eizh eur", "nav eur", "dek eur", "unnek eur"),
             midnight = "hanternoz",
             noon = "kreisteiz",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} ha pemp", 10 to "{h} ha dek", 15 to "{h} ha kard", 20 to "{h} hag ugent", 25 to "{h} ha pemp warn-ugent", 30 to "{h} hanter", 35 to "{next_h} nemet pemp warn-ugent", 40 to "{next_h} nemet ugent", 45 to "{next_h} nemet kard", 50 to "{next_h} nemet dek", 55 to "{next_h} nemet pemp"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -337,7 +337,7 @@ public object Locales {
             hours = listOf("dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"),
             midnight = "ponoć",
             noon = "podne",
-            patterns = mapOf(0 to "{h} sati", 5 to "pet po {h}", 10 to "deset po {h}", 15 to "petnaest po {h}", 20 to "dvadeset po {h}", 25 to "dvadeset pet po {h}", 30 to "trideset po {h}", 35 to "dvadeset pet do {next_h}", 40 to "dvadeset do {next_h}", 45 to "petnaest do {next_h}", 50 to "deset do {next_h}", 55 to "pet do {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} i pet", 10 to "{h} i deset", 15 to "{h} i petnaest", 20 to "{h} i dvadeset", 25 to "{h} i dvadeset pet", 30 to "pola {next_h}", 35 to "dvadeset pet do {next_h}", 40 to "dvadeset do {next_h}", 45 to "petnaest do {next_h}", 50 to "deset do {next_h}", 55 to "pet do {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -356,10 +356,10 @@ public object Locales {
     private fun buildCa(): TimeLocale = TimeLocale(
         code = "ca",
         clock = ClockConfig(
-            hours = listOf("dotze", "una", "dues", "tres", "quatre", "cinc", "sis", "set", "vuit", "nou", "deu", "onze"),
+            hours = listOf("les dotze", "la una", "les dues", "les tres", "les quatre", "les cinc", "les sis", "les set", "les vuit", "les nou", "les deu", "les onze"),
             midnight = "mitjanit",
             noon = "migdia",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "cinc past {h}", 10 to "deu past {h}", 15 to "un quart past {h}", 20 to "vint past {h}", 25 to "vint-i-cinc past {h}", 30 to "mitja past {h}", 35 to "vint-i-cinc to {next_h}", 40 to "vint to {next_h}", 45 to "un quart to {next_h}", 50 to "deu to {next_h}", 55 to "cinc to {next_h}"),
+            patterns = mapOf(0 to "{h} en punt", 5 to "{h} i cinc", 10 to "{h} i deu", 15 to "{h} i quart", 20 to "{h} i vint", 25 to "{h} i vint-i-cinc", 30 to "{h} i mitja", 35 to "{next_h} menys vint-i-cinc", 40 to "{next_h} menys vint", 45 to "{next_h} menys quart", 50 to "{next_h} menys deu", 55 to "{next_h} menys cinc"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -381,7 +381,7 @@ public object Locales {
             hours = listOf("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"),
             midnight = "nik'aj aq'a'",
             noon = "nik'aj q'ij",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} ramaj", 5 to "{h} ramaj rik'in wo'o'", 10 to "{h} ramaj rik'in lajuj", 15 to "{h} ramaj rik'in wolajuj", 20 to "{h} ramaj rik'in juk'al", 25 to "{h} ramaj rik'in juk'al wo'o'", 30 to "{h} ramaj rik'in nik'aj", 35 to "{h} ramaj rik'in juk'al wolajuj", 40 to "{h} ramaj rik'in kak'al", 45 to "{h} ramaj rik'in kak'al wo'o'", 50 to "{h} ramaj rik'in kak'al lajuj", 55 to "{h} ramaj rik'in kak'al wolajuj"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -400,10 +400,10 @@ public object Locales {
     private fun buildCeb(): TimeLocale = TimeLocale(
         code = "ceb",
         clock = ClockConfig(
-            hours = listOf("dose", "uno", "dos", "tres", "kwatro", "singko", "sais", "siyete", "otso", "nuwebe", "diyes", "onse"),
+            hours = listOf("alas dose", "ala una", "alas dos", "alas tres", "alas kwatro", "alas singko", "alas sais", "alas siyete", "alas otso", "alas nuwebe", "alas diyes", "alas onse"),
             midnight = "tungang gabii",
             noon = "udtong tutok",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} y singko", 10 to "{h} y diyes", 15 to "{h} y kinse", 20 to "{h} y beynte", 25 to "{h} y beynte singko", 30 to "{h} y medya", 35 to "menos beynte singko para {next_h}", 40 to "menos beynte para {next_h}", 45 to "menos kinse para {next_h}", 50 to "menos diyes para {next_h}", 55 to "menos singko para {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -425,7 +425,7 @@ public object Locales {
             hours = listOf("dvanáct", "jedna", "dvě", "tři", "čtyři", "pět", "šest", "sedm", "osm", "devět", "deset", "jedenáct"),
             midnight = "půlnoc",
             noon = "poledne",
-            patterns = mapOf(0 to "{h} hodin", 5 to "pět po {h}", 10 to "deset po {h}", 15 to "čtvrt po {h}", 20 to "dvacet po {h}", 25 to "dvacet pět po {h}", 30 to "půl po {h}", 35 to "dvacet pět do {next_h}", 40 to "dvacet do {next_h}", 45 to "čtvrt do {next_h}", 50 to "deset do {next_h}", 55 to "pět do {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} nula pět", 10 to "{h} deset", 15 to "{h} patnáct", 20 to "{h} dvacet", 25 to "{h} dvacet pět", 30 to "{h} třicet", 35 to "za dvacet pět minut {next_h}", 40 to "za dvacet minut {next_h}", 45 to "za patnáct minut {next_h}", 50 to "za deset minut {next_h}", 55 to "za pět minut {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -447,7 +447,7 @@ public object Locales {
             hours = listOf("deuddeg", "un", "dau", "tri", "pedwar", "pump", "chwech", "saith", "wyth", "naw", "deg", "un ar ddeg"),
             midnight = "hanner nos",
             noon = "hanner dydd",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} o'r gloch", 5 to "pum munud wedi {h}", 10 to "deg munud wedi {h}", 15 to "chwarter wedi {h}", 20 to "ugain munud wedi {h}", 25 to "pum munud ar hugain wedi {h}", 30 to "hanner awr wedi {h}", 35 to "pum munud ar hugain i {next_h}", 40 to "ugain munud i {next_h}", 45 to "chwarter i {next_h}", 50 to "deg munud i {next_h}", 55 to "pum munud i {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -513,7 +513,7 @@ public object Locales {
             hours = listOf("thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök"),
             midnight = "wakɔ̈u",
             noon = "akɔ̈l ciëŋ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "thä {h}", 5 to "thä {h} ku minitö dhiëc", 10 to "thä {h} ku minitö thiäär", 15 to "thä {h} ku minitö thiäär ku dhiëc", 20 to "thä {h} ku minitö thiärou", 25 to "thä {h} ku minitö thiärou ku dhiëc", 30 to "thä {h} ku minitö thiärdiäk", 35 to "thä {h} ku minitö thiärdiäk ku dhiëc", 40 to "thä {h} ku minitö thiärŋuan", 45 to "thä {h} ku minitö thiärŋuan ku dhiëc", 50 to "thä {h} ku minitö thiärdhiëc", 55 to "thä {h} ku minitö thiärdhiëc ku dhiëc"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -532,10 +532,10 @@ public object Locales {
     private fun buildDje(): TimeLocale = TimeLocale(
         code = "dje",
         clock = ClockConfig(
-            hours = listOf("way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi"),
+            hours = listOf("iway cindi hinka", "fo", "hinka", "hinza", "taaci", "gu", "iddu", "iyye", "ahakku", "yagga", "iway", "iway cindi fo"),
             midnight = "cin beri",
             noon = "zaari gaaham",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "guuru {h}", 5 to "guuru {h} nda miniti gu", 10 to "guuru {h} nda miniti iway", 15 to "guuru {h} nda miniti iway cindi gu", 20 to "guuru {h} nda miniti waranka", 25 to "guuru {h} nda miniti waranka cindi gu", 30 to "guuru {h} nda jare", 35 to "guuru {h} nda miniti waranza cindi gu", 40 to "guuru {h} nda miniti waytaaci", 45 to "guuru {h} nda miniti waytaaci cindi gu", 50 to "guuru {h} nda miniti waygu", 55 to "guuru {h} nda miniti waygu cindi gu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -557,7 +557,7 @@ public object Locales {
             hours = listOf("ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"),
             midnight = "މެންދަމު",
             noon = "މެންދުރު",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ގަޑިން {h}", 5 to "{h} ޖަހައި ފަސް މިނެޓު", 10 to "{h} ޖަހައި ދިހަ މިނެޓު", 15 to "{h} ޖަހައި ފަނަރަ މިނެޓު", 20 to "{h} ޖަހައި ވިހި މިނެޓު", 25 to "{h} ޖަހައި ފަންސަވީސް މިނެޓު", 30 to "{h} ޖަހައި ބައި", 35 to "{h} ޖަހައި ތިރީސްފަސް މިނެޓު", 40 to "{h} ޖަހައި ސާޅީސް މިނެޓު", 45 to "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު", 50 to "{h} ޖަހައި ފަންސާސް މިނެޓު", 55 to "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -579,7 +579,7 @@ public object Locales {
             hours = listOf("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
             midnight = "dugutilama",
             noon = "tilgari",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "lɛrɛ {h}", 5 to "lɛrɛ {h} ni miniti duuru", 10 to "lɛrɛ {h} ni miniti tan", 15 to "lɛrɛ {h} ni miniti tan ni duuru", 20 to "lɛrɛ {h} ni miniti mugan", 25 to "lɛrɛ {h} ni miniti mugan ni duuru", 30 to "lɛrɛ {h} ni tilancɛ", 35 to "lɛrɛ {h} ni miniti bi saba ni duuru", 40 to "lɛrɛ {h} ni miniti bi naani", 45 to "lɛrɛ {h} ni miniti bi naani ni duuru", 50 to "lɛrɛ {h} ni miniti bi duuru", 55 to "lɛrɛ {h} ni miniti bi duuru ni duuru"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -601,7 +601,7 @@ public object Locales {
             hours = listOf("བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"),
             midnight = "ནམ་ཕྱེད",
             noon = "ཉིན་གུང",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ཆུ་ཚོད་{h}", 5 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ", 10 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ", 15 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ", 20 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ", 25 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ", 30 to "ཆུ་ཚོད་{h}་དང་ཕྱེད", 35 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ", 40 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ", 45 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ", 50 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ", 55 to "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -623,7 +623,7 @@ public object Locales {
             hours = listOf("wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"),
             midnight = "zã titina",
             noon = "ŋdɔ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ga {h}", 5 to "ga {h} kple aɖabaƒoƒo atɔ̃", 10 to "ga {h} kple aɖabaƒoƒo ewo", 15 to "ga {h} kple aɖabaƒoƒo wuiatɔ̃", 20 to "ga {h} kple aɖabaƒoƒo blaeve", 25 to "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃", 30 to "ga {h} kple afã", 35 to "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃", 40 to "ga {h} kple aɖabaƒoƒo blaene", 45 to "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃", 50 to "ga {h} kple aɖabaƒoƒo blaatɔ̃", 55 to "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -711,7 +711,7 @@ public object Locales {
             hours = listOf("kaksteist", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist"),
             midnight = "kesköö",
             noon = "keskpäev",
-            patterns = mapOf(0 to "{h}", 5 to "viis efter {h}", 10 to "kümme efter {h}", 15 to "veerand efter {h}", 20 to "kakskümmend efter {h}", 25 to "kakskümmend viis efter {h}", 30 to "pool efter {h}", 35 to "kakskümmend viis enne {next_h}", 40 to "kakskümmend enne {next_h}", 45 to "veerand enne {next_h}", 50 to "kümme enne {next_h}", 55 to "viis enne {next_h}"),
+            patterns = mapOf(0 to "kell {h}", 5 to "viis minutit {h} läbi", 10 to "kümme minutit {h} läbi", 15 to "veerand {next_h}", 20 to "kakskümmend minutit {h} läbi", 25 to "kakskümmend viis minutit {h} läbi", 30 to "pool {next_h}", 35 to "kolmkümmend viis minutit {h} läbi", 40 to "kahekümne minuti pärast {next_h}", 45 to "kolmveerand {next_h}", 50 to "kümne minuti pärast {next_h}", 55 to "viie minuti pärast {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -730,10 +730,10 @@ public object Locales {
     private fun buildEu(): TimeLocale = TimeLocale(
         code = "eu",
         clock = ClockConfig(
-            hours = listOf("hamabi", "bat", "bi", "hiru", "lau", "bost", "sei", "zazpi", "zortzi", "bederatzi", "hamar", "hamaika"),
+            hours = listOf("hamabiak", "ordu bata", "ordu biak", "hirurak", "laurak", "bostak", "seiak", "zazpiak", "zortziak", "bederatziak", "hamarrak", "hamaikak"),
             midnight = "gauerdia",
             noon = "eguerdia",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} eta bost", 10 to "{h} eta hamar", 15 to "{h} eta laurden", 20 to "{h} eta hogei", 25 to "{h} eta hogeita bost", 30 to "{h} eta erdiak", 35 to "{next_h} hogeita bost gutxi", 40 to "{next_h} hogei gutxi", 45 to "{next_h} laurden gutxi", 50 to "{next_h} hamar gutxi", 55 to "{next_h} bost gutxi"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -777,7 +777,7 @@ public object Locales {
             hours = listOf("awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"),
             midnight = "akiri alúk",
             noon = "ewaŋ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "awola {h}", 5 to "awola {h} ai minit tán", 10 to "awola {h} ai minit awom", 15 to "awola {h} ai minit awom ai tán", 20 to "awola {h} ai minit mewom mebú", 25 to "awola {h} ai minit mewom mebú ai tán", 30 to "awola {h} ai minit mewom melaa", 35 to "awola {h} ai minit mewom melaa ai tán", 40 to "awola {h} ai minit mewom menyin", 45 to "awola {h} ai minit mewom menyin ai tán", 50 to "awola {h} ai minit mewom metán", 55 to "awola {h} ai minit mewom metán ai tán"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -799,7 +799,7 @@ public object Locales {
             hours = listOf("sappo e ɗiɗi", "go'o", "ɗiɗi", "tati", "nay", "joy", "jeegom", "jeeɗiɗi", "jeetati", "jeenay", "sappo", "sappo e go'o"),
             midnight = "jamma hejjere",
             noon = "zuhr",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "waktu {h}", 5 to "waktu {h} e hojomaaje joy", 10 to "waktu {h} e hojomaaje sappo", 15 to "waktu {h} e hojomaaje sappo e joy", 20 to "waktu {h} e hojomaaje noogas", 25 to "waktu {h} e hojomaaje noogas e joy", 30 to "waktu {h} e feccere", 35 to "waktu {h} e hojomaaje cappanɗe tati e joy", 40 to "waktu {h} e hojomaaje cappanɗe nay", 45 to "waktu {h} e hojomaaje cappanɗe nay e joy", 50 to "waktu {h} e hojomaaje cappanɗe joy", 55 to "waktu {h} e hojomaaje cappanɗe joy e joy"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -821,7 +821,7 @@ public object Locales {
             hours = listOf("kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista"),
             midnight = "keskiyö",
             noon = "keskipäivä",
-            patterns = mapOf(0 to "{h}", 5 to "viisi yli {h}", 10 to "kymmenen yli {h}", 15 to "vartti yli {h}", 20 to "kaksikymmentä yli {h}", 25 to "kaksikymmentäviisi yli {h}", 30 to "puoli yli {h}", 35 to "kaksikymmentäviisi vaille {next_h}", 40 to "kaksikymmentä vaille {next_h}", 45 to "vartti vaille {next_h}", 50 to "kymmenen vaille {next_h}", 55 to "viisi vaille {next_h}"),
+            patterns = mapOf(0 to "kello {h}", 5 to "viisi yli {h}", 10 to "kymmenen yli {h}", 15 to "vartti yli {h}", 20 to "kaksikymmentä yli {h}", 25 to "kaksikymmentäviisi yli {h}", 30 to "puoli {next_h}", 35 to "kaksikymmentäviisi vaille {next_h}", 40 to "kaksikymmentä vaille {next_h}", 45 to "vartti vaille {next_h}", 50 to "kymmenen vaille {next_h}", 55 to "viisi vaille {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
@@ -840,10 +840,10 @@ public object Locales {
     private fun buildFil(): TimeLocale = TimeLocale(
         code = "fil",
         clock = ClockConfig(
-            hours = listOf("dose", "una", "dos", "tres", "kwatro", "singko", "seis", "syete", "otso", "nuwebe", "diyes", "onse"),
+            hours = listOf("alas-dose", "ala-una", "alas-dos", "alas-tres", "alas-kuwatro", "alas-singko", "alas-sais", "alas-siyete", "alas-otso", "alas-nuwebe", "alas-diyes", "alas-onse"),
             midnight = "hatinggabi",
             noon = "tanghali",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "lima dan {h}", 10 to "sampu dan {h}", 15 to "labinlima dan {h}", 20 to "dalawampu dan {h}", 25 to "dalawampu't lima dan {h}", 30 to "tatlumpu dan {h}", 35 to "dalawampu't lima bago mag {next_h}", 40 to "dalawampu bago mag {next_h}", 45 to "labinlima bago mag {next_h}", 50 to "sampu bago mag {next_h}", 55 to "lima bago mag {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} y singko", 10 to "{h} y diyes", 15 to "{h} y kinse", 20 to "{h} y beynte", 25 to "{h} y beynte singko", 30 to "{h} y medya", 35 to "menos beynte singko para {next_h}", 40 to "menos beynte para {next_h}", 45 to "menos kinse para {next_h}", 50 to "menos diyes para {next_h}", 55 to "menos singko para {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -865,7 +865,7 @@ public object Locales {
             hours = listOf("tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"),
             midnight = "bogi levu",
             noon = "sigalevu",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} na kaloko", 5 to "{h} na kaloko ka lima na miniti", 10 to "{h} na kaloko ka tini na miniti", 15 to "{h} na kaloko ka tini ka lima na miniti", 20 to "{h} na kaloko ka ruasagavulu na miniti", 25 to "{h} na kaloko ka ruasagavulu ka lima na miniti", 30 to "{h} na kaloko ka tolusagavulu na miniti", 35 to "{h} na kaloko ka tolusagavulu ka lima na miniti", 40 to "{h} na kaloko ka vāsagavulu na miniti", 45 to "{h} na kaloko ka vāsagavulu ka lima na miniti", 50 to "{h} na kaloko ka limasagavulu na miniti", 55 to "{h} na kaloko ka limasagavulu ka lima na miniti"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -884,10 +884,10 @@ public object Locales {
     private fun buildFon(): TimeLocale = TimeLocale(
         code = "fon",
         clock = ClockConfig(
-            hours = listOf("wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ"),
+            hours = listOf("wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "wěɖokpo"),
             midnight = "zǎnmɛ",
             noon = "hwemɛnu",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "gan {h}", 5 to "gan {h} kpo cɛju atɔ́ɔ́n kpo", 10 to "gan {h} kpo cɛju wǒ kpo", 15 to "gan {h} kpo cɛju afɔtɔ́n kpo", 20 to "gan {h} kpo cɛju ko kpo", 25 to "gan {h} kpo cɛju koatɔ́ɔ́n kpo", 30 to "gan {h} kpo cɛju gban kpo", 35 to "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo", 40 to "gan {h} kpo cɛju kanɖé kpo", 45 to "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo", 50 to "gan {h} kpo cɛju kanɖéwǒ kpo", 55 to "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -931,7 +931,7 @@ public object Locales {
             hours = listOf("dó dhéag", "haon", "dó", "trí", "ceathair", "cúig", "sé", "seacht", "hocht", "naoi", "deich", "haon déag"),
             midnight = "meán oíche",
             noon = "meán lae",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "a {h} a chlog", 5 to "cúig tar éis a {h}", 10 to "deich tar éis a {h}", 15 to "ceathrú tar éis a {h}", 20 to "fiche tar éis a {h}", 25 to "fiche cúig tar éis a {h}", 30 to "leathuair tar éis a {h}", 35 to "fiche cúig chun a {next_h}", 40 to "fiche chun a {next_h}", 45 to "ceathrú chun a {next_h}", 50 to "deich chun a {next_h}", 55 to "cúig chun a {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -950,10 +950,10 @@ public object Locales {
     private fun buildGd(): TimeLocale = TimeLocale(
         code = "gd",
         clock = ClockConfig(
-            hours = listOf("dà-dheug", "aon", "dà", "trì", "ceithir", "còig", "sia", "seachd", "ochd", "naoi", "deich", "aon-deug"),
+            hours = listOf("dà uair dheug", "uair", "dà uair", "trì uairean", "ceithir uairean", "còig uairean", "sia uairean", "seachd uairean", "ochd uairean", "naoi uairean", "deich uairean", "aon uair deug"),
             midnight = "meadhan-oidhche",
             noon = "meadhan-latha",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "còig mionaidean an dèidh {h}", 10 to "deich mionaidean an dèidh {h}", 15 to "cairteal an dèidh {h}", 20 to "fichead mionaid an dèidh {h}", 25 to "còig mionaidean fichead an dèidh {h}", 30 to "leth-uair an dèidh {h}", 35 to "còig mionaidean fichead gu {next_h}", 40 to "fichead mionaid gu {next_h}", 45 to "cairteal gu {next_h}", 50 to "deich mionaidean gu {next_h}", 55 to "còig mionaidean gu {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -995,9 +995,9 @@ public object Locales {
         code = "gn",
         clock = ClockConfig(
             hours = listOf("pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"),
-            midnight = "pyhareve",
+            midnight = "pyharepyte",
             noon = "asaje",
-            patterns = mapOf(0 to "{h}", 5 to "{h} ha po", 10 to "{h} ha pa", 15 to "{h} ha pa po", 20 to "{h} ha mokõi pa", 25 to "{h} ha mokõi pa po", 30 to "{h} ha mbohapy pa", 35 to "{next_h} mba'e mokõi pa po", 40 to "{next_h} mba'e mokõi pa", 45 to "{next_h} mba'e pa po", 50 to "{next_h} mba'e pa", 55 to "{next_h} mba'e po"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} ha po", 10 to "{h} ha pa", 15 to "{h} ha pa po", 20 to "{h} ha mokõi pa", 25 to "{h} ha mokõi pa po", 30 to "{h} ha mbohapy pa", 35 to "{h} ha mbohapy pa po", 40 to "{h} ha irundy pa", 45 to "{h} ha irundy pa po", 50 to "{h} ha po pa", 55 to "{h} ha po pa po"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1018,8 +1018,8 @@ public object Locales {
         clock = ClockConfig(
             hours = listOf("બાર", "એક", "બે", "ત્રણ", "ચાર", "પાંચ", "છ", "સાત", "આઠ", "નવ", "દસ", "અગિયાર"),
             midnight = "મધ્યરાત્રિ",
-            noon = "બપોર",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            noon = "બપોરે બાર વાગ્યે",
+            patterns = mapOf(0 to "{h} વાગ્યે", 5 to "{h} વાગીને પાંચ મિનિટ", 10 to "{h} વાગીને દસ મિનિટ", 15 to "સવા {h}", 20 to "{h} વાગીને વીસ મિનિટ", 25 to "{h} વાગીને પચીસ મિનિટ", 30 to "{h} વાગીને ત્રીસ મિનિટ", 35 to "{h} વાગીને પાંત્રીસ મિનિટ", 40 to "{h} વાગીને ચાલીસ મિનિટ", 45 to "પોણા {next_h}", 50 to "{next_h} વાગવામાં દસ મિનિટ", 55 to "{next_h} વાગવામાં પાંચ મિનિટ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1038,10 +1038,10 @@ public object Locales {
     private fun buildGv(): TimeLocale = TimeLocale(
         code = "gv",
         clock = ClockConfig(
-            hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            hours = listOf("daa-yeig", "nane", "jees", "tree", "kiare", "queig", "shey", "shiaght", "hoght", "nuy", "jeih", "nane-jeig"),
             midnight = "mean oie",
             noon = "munlaa",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} er y chlag", 5 to "queig minnidyn lurg {h}", 10 to "jeih minnidyn lurg {h}", 15 to "kerroo lurg {h}", 20 to "feed minnid lurg {h}", 25 to "queig minnidyn as feed lurg {h}", 30 to "lieh-oor lurg {h}", 35 to "queig minnidyn as feed gys {next_h}", 40 to "feed minnid gys {next_h}", 45 to "kerroo gys {next_h}", 50 to "jeih minnidyn gys {next_h}", 55 to "queig minnidyn gys {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1060,10 +1060,10 @@ public object Locales {
     private fun buildHa(): TimeLocale = TimeLocale(
         code = "ha",
         clock = ClockConfig(
-            hours = listOf("sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "goma sha ɗaya"),
+            hours = listOf("sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "sha ɗaya"),
             midnight = "tsakar dare",
             noon = "tsakar rana",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ƙarfe {h}", 5 to "ƙarfe {h} da minti biyar", 10 to "ƙarfe {h} da minti goma", 15 to "ƙarfe {h} da kwata", 20 to "ƙarfe {h} da minti ashirin", 25 to "ƙarfe {h} da minti ashirin da biyar", 30 to "ƙarfe {h} da rabi", 35 to "ƙarfe {next_h} saura minti ashirin da biyar", 40 to "ƙarfe {next_h} saura minti ashirin", 45 to "ƙarfe {next_h} saura kwata", 50 to "ƙarfe {next_h} saura minti goma", 55 to "ƙarfe {next_h} saura minti biyar"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1106,8 +1106,8 @@ public object Locales {
         clock = ClockConfig(
             hours = listOf("बारह", "एक", "दो", "तीन", "चार", "पाँच", "छह", "सात", "आठ", "नौ", "दस", "ग्यारह"),
             midnight = "आधी रात",
-            noon = "दोपहर",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            noon = "दोपहर के बारह बजे",
+            patterns = mapOf(0 to "{h} बजे", 5 to "{h} बजकर पाँच मिनट", 10 to "{h} बजकर दस मिनट", 15 to "सवा {h} बजे", 20 to "{h} बजकर बीस मिनट", 25 to "{h} बजकर पच्चीस मिनट", 30 to "{h} बजकर तीस मिनट", 35 to "{h} बजकर पैंतीस मिनट", 40 to "{h} बजकर चालीस मिनट", 45 to "पौने {next_h} बजे", 50 to "{next_h} बजने में दस मिनट", 55 to "{next_h} बजने में पाँच मिनट"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1129,7 +1129,7 @@ public object Locales {
             hours = listOf("kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"),
             midnight = "ib tag hmo",
             noon = "tav su",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} teev", 5 to "{h} teev tsib feeb", 10 to "{h} teev kaum feeb", 15 to "{h} teev kaum tsib feeb", 20 to "{h} teev nees nkaum feeb", 25 to "{h} teev nees nkaum tsib feeb", 30 to "{h} teev ib nrab", 35 to "{h} teev peb caug tsib feeb", 40 to "{h} teev plaub caug feeb", 45 to "{h} teev plaub caug tsib feeb", 50 to "{h} teev tsib caug feeb", 55 to "{h} teev tsib caug tsib feeb"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1151,7 +1151,7 @@ public object Locales {
             hours = listOf("dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"),
             midnight = "ponoć",
             noon = "podne",
-            patterns = mapOf(0 to "{h} sati", 5 to "pet po {h}", 10 to "deset po {h}", 15 to "petnaest po {h}", 20 to "dvadeset po {h}", 25 to "dvadeset pet po {h}", 30 to "trideset po {h}", 35 to "dvadeset pet do {next_h}", 40 to "dvadeset do {next_h}", 45 to "petnaest do {next_h}", 50 to "deset do {next_h}", 55 to "pet do {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} i pet", 10 to "{h} i deset", 15 to "{h} i petnaest", 20 to "{h} i dvadeset", 25 to "{h} i dvadeset pet", 30 to "pola {next_h}", 35 to "dvadeset pet do {next_h}", 40 to "dvadeset do {next_h}", 45 to "petnaest do {next_h}", 50 to "deset do {next_h}", 55 to "pet do {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1170,10 +1170,10 @@ public object Locales {
     private fun buildHt(): TimeLocale = TimeLocale(
         code = "ht",
         clock = ClockConfig(
-            hours = listOf("douz", "en", "de", "twa", "kat", "senk", "sis", "sèt", "uit", "nèf", "dis", "onz"),
-            midnight = "minui",
+            hours = listOf("douzè", "inè", "dezè", "twazè", "katrè", "senkè", "sizè", "setè", "uitè", "nevè", "dizè", "onzè"),
+            midnight = "minwi",
             noon = "midi",
-            patterns = mapOf(0 to "{h} è", 5 to "{h} è senk", 10 to "{h} è dis", 15 to "{h} è ka", 20 to "{h} è ven", 25 to "{h} è vennsenk", 30 to "{h} è demi", 35 to "{next_h} mwen vennsenk", 40 to "{next_h} mwen ven", 45 to "{next_h} mwen ka", 50 to "{next_h} mwen dis", 55 to "{next_h} mwen senk"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} senk", 10 to "{h} dis", 15 to "{h} e ka", 20 to "{h} ven", 25 to "{h} vennsenk", 30 to "{h} edmi", 35 to "{next_h} mwen vennsenk", 40 to "{next_h} mwen ven", 45 to "{next_h} mwen ka", 50 to "{next_h} mwen dis", 55 to "{next_h} mwen senk"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1195,7 +1195,7 @@ public object Locales {
             hours = listOf("tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy"),
             midnight = "éjfél",
             noon = "dél",
-            patterns = mapOf(0 to "{h} óra", 5 to "öt múlt {h}", 10 to "tíz múlt {h}", 15 to "negyed múlt {h}", 20 to "húsz múlt {h}", 25 to "huszonöt múlt {h}", 30 to "fél múlt {h}", 35 to "huszonöt múlva {next_h}", 40 to "húsz múlva {next_h}", 45 to "negyed múlva {next_h}", 50 to "tíz múlva {next_h}", 55 to "öt múlva {next_h}"),
+            patterns = mapOf(0 to "{h} óra", 5 to "öt perccel múlt {h}", 10 to "tíz perccel múlt {h}", 15 to "negyed {next_h}", 20 to "húsz perccel múlt {h}", 25 to "öt perc múlva fél {next_h}", 30 to "fél {next_h}", 35 to "öt perccel múlt fél {next_h}", 40 to "húsz perc múlva {next_h}", 45 to "háromnegyed {next_h}", 50 to "tíz perc múlva {next_h}", 55 to "öt perc múlva {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1214,10 +1214,10 @@ public object Locales {
     private fun buildHy(): TimeLocale = TimeLocale(
         code = "hy",
         clock = ClockConfig(
-            hours = listOf("տասներկու", "մեկ", "երկու", "երեք", "չորս", "հինգ", "վեց", "յոթ", "ութ", "ինը", "տաս", "տասնմեկ"),
+            hours = listOf("տասներկուսն", "մեկն", "երկուսն", "երեքն", "չորսն", "հինգն", "վեցն", "յոթն", "ութն", "ինն", "տասն", "տասնմեկն"),
             midnight = "կեսգիշեր",
             noon = "կեսօր",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ժամը {h} է", 5 to "{h} անց հինգ", 10 to "{h} անց տասը", 15 to "{h} անց տասնհինգ", 20 to "{h} անց քսան", 25 to "{h} անց քսանհինգ", 30 to "{h} անց կես", 35 to "{h} անց երեսունհինգ", 40 to "{h} անց քառասուն", 45 to "{h} անց քառասունհինգ", 50 to "{h} անց հիսուն", 55 to "{h} անց հիսունհինգ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1239,7 +1239,7 @@ public object Locales {
             hours = listOf("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"),
             midnight = "tengah malam",
             noon = "tengah hari",
-            patterns = mapOf(0 to "pukul {h}", 5 to "lima lewat {h}", 10 to "sepuluh lewat {h}", 15 to "seperempat lewat {h}", 20 to "dua puluh lewat {h}", 25 to "dua puluh lima lewat {h}", 30 to "setengah lewat {h}", 35 to "dua puluh lima menjelang {next_h}", 40 to "dua puluh menjelang {next_h}", 45 to "seperempat menjelang {next_h}", 50 to "sepuluh menjelang {next_h}", 55 to "lima menjelang {next_h}"),
+            patterns = mapOf(0 to "pukul {h}", 5 to "pukul {h} lewat lima", 10 to "pukul {h} lewat sepuluh", 15 to "pukul {h} lewat seperempat", 20 to "pukul {h} lewat dua puluh", 25 to "pukul {h} lewat dua puluh lima", 30 to "pukul setengah {next_h}", 35 to "pukul {next_h} kurang dua puluh lima", 40 to "pukul {next_h} kurang dua puluh", 45 to "pukul {next_h} kurang seperempat", 50 to "pukul {next_h} kurang sepuluh", 55 to "pukul {next_h} kurang lima"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
@@ -1260,8 +1260,8 @@ public object Locales {
         clock = ClockConfig(
             hours = listOf("iri na abụọ", "otu", "abụọ", "atọ", "anọ", "ise", "isii", "asaa", "asatọ", "itoolu", "iri", "iri na otu"),
             midnight = "etiti abalị",
-            noon = "ehihie",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            noon = "etiti ehihie",
+            patterns = mapOf(0 to "elekere {h}", 5 to "elekere {h} na nkeji ise", 10 to "elekere {h} na nkeji iri", 15 to "elekere {h} na nkeji iri na ise", 20 to "elekere {h} na nkeji iri abụọ", 25 to "elekere {h} na nkeji iri abụọ na ise", 30 to "elekere {h} na ọkara", 35 to "elekere {h} na nkeji iri atọ na ise", 40 to "elekere {h} na nkeji iri anọ", 45 to "elekere {h} na nkeji iri anọ na ise", 50 to "elekere {h} na nkeji iri ise", 55 to "elekere {h} na nkeji iri ise na ise"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1302,10 +1302,10 @@ public object Locales {
     private fun buildIt(): TimeLocale = TimeLocale(
         code = "it",
         clock = ClockConfig(
-            hours = listOf("dodici", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici"),
+            hours = listOf("le dodici", "l'una", "le due", "le tre", "le quattro", "le cinque", "le sei", "le sette", "le otto", "le nove", "le dieci", "le undici"),
             midnight = "mezzanotte",
             noon = "mezzogiorno",
-            patterns = mapOf(0 to "le {h}", 5 to "{h} e cinque", 10 to "{h} e dieci", 15 to "{h} e un quarto", 20 to "{h} e venti", 25 to "{h} e venticinque", 30 to "{h} e mezza", 35 to "{next_h} meno venticinque", 40 to "{next_h} meno venti", 45 to "{next_h} meno un quarto", 50 to "{next_h} meno dieci", 55 to "{next_h} meno cinque"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} e cinque", 10 to "{h} e dieci", 15 to "{h} e un quarto", 20 to "{h} e venti", 25 to "{h} e venticinque", 30 to "{h} e mezza", 35 to "{next_h} meno venticinque", 40 to "{next_h} meno venti", 45 to "{next_h} meno un quarto", 50 to "{next_h} meno dieci", 55 to "{next_h} meno cinque"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1348,8 +1348,8 @@ public object Locales {
         clock = ClockConfig(
             hours = listOf("rolas", "siji", "loro", "telu", "papat", "lima", "enem", "pitu", "wolu", "sanga", "sepuluh", "sewelas"),
             midnight = "tengah wengi",
-            noon = "awan",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            noon = "tengah awan",
+            patterns = mapOf(0 to "jam {h}", 5 to "jam {h} luwih limang menit", 10 to "jam {h} luwih sepuluh menit", 15 to "jam {h} luwih seprapat", 20 to "jam {h} luwih rong puluh menit", 25 to "jam {h} luwih selawé menit", 30 to "jam setengah {next_h}", 35 to "jam {next_h} kurang selawé menit", 40 to "jam {next_h} kurang rong puluh menit", 45 to "jam {next_h} kurang seprapat", 50 to "jam {next_h} kurang sepuluh menit", 55 to "jam {next_h} kurang limang menit"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1371,7 +1371,7 @@ public object Locales {
             hours = listOf("თორმეტი", "ერთი", "ორი", "სამი", "ოთხი", "ხუთი", "ექვსი", "შვიდი", "რვა", "ცხრა", "ათი", "თერთმეტი"),
             midnight = "შუაღამე",
             noon = "შუადღე",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "ხუთი past {h}", 10 to "ათი past {h}", 15 to "თხუთმეტი past {h}", 20 to "ოცი past {h}", 25 to "ოცდახუთი past {h}", 30 to "ოცდაათი past {h}", 35 to "ოცდახუთი to {next_h}", 40 to "ოცი to {next_h}", 45 to "თხუთმეტი to {next_h}", 50 to "ათი to {next_h}", 55 to "ხუთი to {next_h}"),
+            patterns = mapOf(0 to "{h} საათი", 5 to "{h} საათი და ხუთი წუთი", 10 to "{h} საათი და ათი წუთი", 15 to "{h} საათი და თხუთმეტი წუთი", 20 to "{h} საათი და ოცი წუთი", 25 to "{h} საათი და ოცდახუთი წუთი", 30 to "{h} საათი და ოცდაათი წუთი", 35 to "{h} საათი და ოცდათხუთმეტი წუთი", 40 to "{h} საათი და ორმოცი წუთი", 45 to "{h} საათი და ორმოცდახუთი წუთი", 50 to "{h} საათი და ორმოცდაათი წუთი", 55 to "{h} საათი და ორმოცდათხუთმეტი წუთი"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1393,7 +1393,7 @@ public object Locales {
             hours = listOf("hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"),
             midnight = "ɖoo hɛkʊ",
             noon = "wɩsɩ taa",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ñɩɣyʊʊ {h}", 5 to "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ", 10 to "ñɩɣyʊʊ {h} nɛ miniti hiu", 15 to "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ", 20 to "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ", 25 to "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ", 30 to "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ", 35 to "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ", 40 to "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza", 45 to "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ", 50 to "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa", 55 to "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1412,10 +1412,10 @@ public object Locales {
     private fun buildKek(): TimeLocale = TimeLocale(
         code = "kek",
         clock = ClockConfig(
-            hours = listOf("kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"),
+            hours = listOf("kab'laju", "jun", "kiib'", "oxib'", "kaahib'", "oob'", "waqib'", "wuqub'", "waqxaqib'", "b'eleeb'", "lajeeb'", "junlaju"),
             midnight = "chaq' xkab'",
             noon = "chaq' chaab'il",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} hoonal", 5 to "{h} hoonal rik'in oob' minuut", 10 to "{h} hoonal rik'in lajeeb' minuut", 15 to "{h} hoonal rik'in o'laju minuut", 20 to "{h} hoonal rik'in junmay minuut", 25 to "{h} hoonal rik'in oob' xkak'aal minuut", 30 to "{h} hoonal rik'in yijach", 35 to "{h} hoonal rik'in o'laju xkak'aal minuut", 40 to "{h} hoonal rik'in kaak'aal minuut", 45 to "{h} hoonal rik'in oob' roxk'aal minuut", 50 to "{h} hoonal rik'in lajeeb' roxk'aal minuut", 55 to "{h} hoonal rik'in o'laju roxk'aal minuut"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1434,10 +1434,10 @@ public object Locales {
     private fun buildKi(): TimeLocale = TimeLocale(
         code = "ki",
         clock = ClockConfig(
-            hours = listOf("ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe"),
+            hours = listOf("ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe", "ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano"),
             midnight = "ũtukũ gatagatĩ",
             noon = "mũthenya gatagatĩ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "thaa {h}", 5 to "thaa {h} na ndagĩka ithano", 10 to "thaa {h} na ndagĩka ikũmi", 15 to "thaa {h} na ndagĩka ikũmi na ithano", 20 to "thaa {h} na ndagĩka mĩrongo ĩĩrĩ", 25 to "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano", 30 to "thaa {h} na nuthu", 35 to "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano", 40 to "thaa {h} na ndagĩka mĩrongo ĩna", 45 to "thaa {h} na ndagĩka mĩrongo ĩna na ithano", 50 to "thaa {h} na ndagĩka mĩrongo ĩtano", 55 to "thaa {h} na ndagĩka mĩrongo ĩtano na ithano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, amPm = Pair("Kiroko", "Hwaĩ-inĩ"), format = "{h}:{mm}"),
@@ -1459,7 +1459,7 @@ public object Locales {
             hours = listOf("он екі", "бір", "екі", "үш", "төрт", "бес", "алты", "жеті", "сегіз", "тоғыз", "он", "он бір"),
             midnight = "түн ортасы",
             noon = "түс",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "бес past {h}", 10 to "он past {h}", 15 to "он бес past {h}", 20 to "жиырма past {h}", 25 to "жиырма бес past {h}", 30 to "отыз past {h}", 35 to "жиырма бес to {next_h}", 40 to "жиырма to {next_h}", 45 to "он бес to {next_h}", 50 to "он to {next_h}", 55 to "бес to {next_h}"),
+            patterns = mapOf(0 to "сағат {h}", 5 to "{h} нөл бес", 10 to "{h} он", 15 to "{h} он бес", 20 to "{h} жиырма", 25 to "{h} жиырма бес", 30 to "{h} жарым", 35 to "{h} отыз бес", 40 to "{h} қырық", 45 to "{h} қырық бес", 50 to "{h} елу", 55 to "{h} елу бес"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1478,10 +1478,10 @@ public object Locales {
     private fun buildKl(): TimeLocale = TimeLocale(
         code = "kl",
         clock = ClockConfig(
-            hours = listOf("akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"),
+            hours = listOf("aqqaneq-marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "aqqaneq-ataaseq"),
             midnight = "unnuap qeqqa",
             noon = "ulloqeqqap qeqqa",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "nalunaaqutaq {h}", 5 to "{h} qaangiullugu minutsit tallimat", 10 to "{h} qaangiullugu minutsit qulit", 15 to "{h} qaangiullugu minutsit aqqaneq-tallimat", 20 to "{h} qaangiullugu minutsit marlunnik qulillit", 25 to "{h} qaangiullugu minutsit marlunnik qulillit tallimallu", 30 to "{h} affarlu", 35 to "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu", 40 to "{next_h} sioqqullugu minutsit marlunnik qulillit", 45 to "{next_h} sioqqullugu minutsit aqqaneq-tallimat", 50 to "{next_h} sioqqullugu minutsit qulit", 55 to "{next_h} sioqqullugu minutsit tallimat"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
@@ -1503,7 +1503,7 @@ public object Locales {
             hours = listOf("ដប់ពីរ", "មួយ", "ពីរ", "បី", "បួន", "ប្រាំ", "ប្រាំមួយ", "ប្រាំពីរ", "ប្រាំបី", "ប្រាំបួន", "ដប់", "ដប់មួយ"),
             midnight = "កណ្ដាលអធ្រាត្រ",
             noon = "ថ្ងៃត្រង់",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ម៉ោង{h}", 5 to "ម៉ោង{h} ប្រាំនាទី", 10 to "ម៉ោង{h} ដប់នាទី", 15 to "ម៉ោង{h} ដប់ប្រាំនាទី", 20 to "ម៉ោង{h} ម្ភៃនាទី", 25 to "ម៉ោង{h} ម្ភៃប្រាំនាទី", 30 to "ម៉ោង{h}កន្លះ", 35 to "ម៉ោង{h} សាមសិបប្រាំនាទី", 40 to "ម៉ោង{h} សែសិបនាទី", 45 to "ម៉ោង{h} សែសិបប្រាំនាទី", 50 to "ម៉ោង{h} ហាសិបនាទី", 55 to "ម៉ោង{h} ហាសិបប្រាំនាទី"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1524,8 +1524,8 @@ public object Locales {
         clock = ClockConfig(
             hours = listOf("ಹನ್ನೆರಡು", "ಒಂದು", "ಎರಡು", "ಮೂರು", "ನಾಲ್ಕು", "ಐದು", "ಆರು", "ಏಳು", "ಎಂಟು", "ಒಂಬತ್ತು", "ಹತ್ತು", "ಹನ್ನೊಂದು"),
             midnight = "ಮಧ್ಯರಾತ್ರಿ",
-            noon = "ಮಧ್ಯಾಹ್ನ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            noon = "ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ",
+            patterns = mapOf(0 to "{h} ಗಂಟೆ", 5 to "{h} ಗಂಟೆ ಐದು ನಿಮಿಷ", 10 to "{h} ಗಂಟೆ ಹತ್ತು ನಿಮಿಷ", 15 to "{h} ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ", 20 to "{h} ಗಂಟೆ ಇಪ್ಪತ್ತು ನಿಮಿಷ", 25 to "{h} ಗಂಟೆ ಇಪ್ಪತ್ತೈದು ನಿಮಿಷ", 30 to "{h} ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ", 35 to "{h} ಗಂಟೆ ಮೂವತ್ತೈದು ನಿಮಿಷ", 40 to "{h} ಗಂಟೆ ನಲವತ್ತು ನಿಮಿಷ", 45 to "{h} ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ", 50 to "{h} ಗಂಟೆ ಐವತ್ತು ನಿಮಿಷ", 55 to "{h} ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1566,10 +1566,10 @@ public object Locales {
     private fun buildKpe(): TimeLocale = TimeLocale(
         code = "kpe",
         clock = ClockConfig(
-            hours = listOf("puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"),
+            hours = listOf("puu da feere", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"),
             midnight = "kpindi kɔlɛ",
             noon = "tili-ma",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "awa {h}", 5 to "awa {h} da miniti lɔɔlu", 10 to "awa {h} da miniti puu", 15 to "awa {h} da miniti puu da lɔɔlu", 20 to "awa {h} da miniti puu feere", 25 to "awa {h} da miniti puu feere da lɔɔlu", 30 to "awa {h} da miniti puu sawa", 35 to "awa {h} da miniti puu sawa da lɔɔlu", 40 to "awa {h} da miniti puu naŋ", 45 to "awa {h} da miniti puu naŋ da lɔɔlu", 50 to "awa {h} da miniti puu lɔɔlu", 55 to "awa {h} da miniti puu lɔɔlu da lɔɔlu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1613,7 +1613,7 @@ public object Locales {
             hours = listOf("zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"),
             midnight = "midi ya butu",
             noon = "midi",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ngunga {h}", 5 to "ngunga {h} na miniti tanu", 10 to "ngunga {h} na miniti zomi", 15 to "ngunga {h} na miniti zomi na tanu", 20 to "ngunga {h} na miniti makumi zole", 25 to "ngunga {h} na miniti makumi zole na tanu", 30 to "ngunga {h} na ndambu", 35 to "ngunga {h} na miniti makumi tatu na tanu", 40 to "ngunga {h} na miniti makumi ya", 45 to "ngunga {h} na miniti makumi ya na tanu", 50 to "ngunga {h} na miniti makumi tanu", 55 to "ngunga {h} na miniti makumi tanu na tanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1635,7 +1635,7 @@ public object Locales {
             hours = listOf("diwanzdeh", "yek", "du", "sê", "çar", "pênc", "şeş", "heft", "heşt", "neh", "deh", "yanzdeh"),
             midnight = "nîvê şevê",
             noon = "nîvro",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "saet {h}", 5 to "{h} û pênc deqe", 10 to "{h} û deh deqe", 15 to "{h} û çaryek", 20 to "{h} û bîst deqe", 25 to "{h} û bîst û pênc deqe", 30 to "{h} û nîv", 35 to "{next_h} kêm bîst û pênc deqe", 40 to "{next_h} kêm bîst deqe", 45 to "{next_h} kêm çaryek", 50 to "{next_h} kêm deh deqe", 55 to "{next_h} kêm pênc deqe"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1654,10 +1654,10 @@ public object Locales {
     private fun buildKw(): TimeLocale = TimeLocale(
         code = "kw",
         clock = ClockConfig(
-            hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            hours = listOf("dewdhek", "unn", "diw", "teyr", "peder", "pymp", "hwegh", "seyth", "eth", "naw", "deg", "unnek"),
             midnight = "hanter nos",
             noon = "hanter dydh",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} eur", 5 to "pymp mynysen wosa {h}", 10 to "deg mynysen wosa {h}", 15 to "kwarter wosa {h}", 20 to "ugens mynysen wosa {h}", 25 to "pymp mynysen warn ugens wosa {h}", 30 to "hanter wosa {h}", 35 to "pymp mynysen warn ugens dhe {next_h}", 40 to "ugens mynysen dhe {next_h}", 45 to "kwarter dhe {next_h}", 50 to "deg mynysen dhe {next_h}", 55 to "pymp mynysen dhe {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1679,7 +1679,7 @@ public object Locales {
             hours = listOf("он эки", "бир", "эки", "үч", "төрт", "беш", "алты", "жети", "сегиз", "тогуз", "он", "он бир"),
             midnight = "түн ортосу",
             noon = "түш",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "саат {h}", 5 to "{h} нөл беш", 10 to "{h} он", 15 to "{h} он беш", 20 to "{h} жыйырма", 25 to "{h} жыйырма беш", 30 to "{h} жарым", 35 to "{h} отуз беш", 40 to "{h} кырк", 45 to "{h} кырк беш", 50 to "{h} элүү", 55 to "{h} элүү беш"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1720,10 +1720,10 @@ public object Locales {
     private fun buildLg(): TimeLocale = TimeLocale(
         code = "lg",
         clock = ClockConfig(
-            hours = listOf("kkumi na bbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano", "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi na emu"),
+            hours = listOf("mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi n'emu", "kkumi n'ebbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano"),
             midnight = "ekiro eky'omu ttumbi",
             noon = "ettuntu",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "essaawa {h}", 5 to "essaawa {h} n'eddakiika ttaano", 10 to "essaawa {h} n'eddakiika kkumi", 15 to "essaawa {h} n'eddakiika kkumi na ttaano", 20 to "essaawa {h} n'eddakiika abiri", 25 to "essaawa {h} n'eddakiika abiri mu ttaano", 30 to "essaawa {h} n'ekitundu", 35 to "essaawa {h} n'eddakiika asatu mu ttaano", 40 to "essaawa {h} n'eddakiika ana", 45 to "essaawa {h} n'eddakiika ana mu ttaano", 50 to "essaawa {h} n'eddakiika ataano", 55 to "essaawa {h} n'eddakiika ataano mu ttaano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1743,9 +1743,9 @@ public object Locales {
         code = "ln",
         clock = ClockConfig(
             hours = listOf("zómi na míbalé", "mɔ̌kɔ́", "míbalé", "mísáto", "mínéi", "mítáno", "motóba", "nsambo", "mwambe", "libwá", "zómi", "zómi na mɔ̌kɔ́"),
-            midnight = "mpɔ́kwa",
-            noon = "ntɔ́ngɔ́",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            midnight = "midí ya butú",
+            noon = "midí",
+            patterns = mapOf(0 to "ngonga ya {h}", 5 to "ngonga ya {h} na miniti mítáno", 10 to "ngonga ya {h} na miniti zómi", 15 to "ngonga ya {h} na miniti zómi na mítáno", 20 to "ngonga ya {h} na miniti ntúkú míbalé", 25 to "ngonga ya {h} na miniti ntúkú míbalé na mítáno", 30 to "ngonga ya {h} na ndámbo", 35 to "ngonga ya {h} na miniti ntúkú mísáto na mítáno", 40 to "ngonga ya {h} na miniti ntúkú mínéi", 45 to "ngonga ya {h} na miniti ntúkú mínéi na mítáno", 50 to "ngonga ya {h} na miniti ntúkú mítáno", 55 to "ngonga ya {h} na miniti ntúkú mítáno na mítáno"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1767,7 +1767,7 @@ public object Locales {
             hours = listOf("ສິບສອງ", "ໜຶ່ງ", "ສອງ", "ສາມ", "ສີ່", "ຫ້າ", "ຫົກ", "ເຈັດ", "ແປດ", "ເກົ້າ", "ສິບ", "ສິບເອັດ"),
             midnight = "ທ່ຽງຄືນ",
             noon = "ທ່ຽງ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}ໂມງ", 5 to "{h}ໂມງ ຫ້ານາທີ", 10 to "{h}ໂມງ ສິບນາທີ", 15 to "{h}ໂມງ ສິບຫ້ານາທີ", 20 to "{h}ໂມງ ຊາວນາທີ", 25 to "{h}ໂມງ ຊາວຫ້ານາທີ", 30 to "{h}ໂມງເຄິ່ງ", 35 to "{h}ໂມງ ສາມສິບຫ້ານາທີ", 40 to "{h}ໂມງ ສີ່ສິບນາທີ", 45 to "{h}ໂມງ ສີ່ສິບຫ້ານາທີ", 50 to "{h}ໂມງ ຫ້າສິບນາທີ", 55 to "{h}ໂມງ ຫ້າສິບຫ້ານາທີ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1808,10 +1808,10 @@ public object Locales {
     private fun buildLuo(): TimeLocale = TimeLocale(
         code = "luo",
         clock = ClockConfig(
-            hours = listOf("apar gi ariyo", "achiel", "ariyo", "adek", "ang'wen", "abich", "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gi achiel"),
+            hours = listOf("auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gachiel", "apar gariyo", "achiel", "ariyo", "adek", "ang'wen", "abich"),
             midnight = "dier otieno",
             noon = "odiechieng' tir",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "saa {h}", 5 to "saa {h} gi dakika abich", 10 to "saa {h} gi dakika apar", 15 to "saa {h} gi dakika apar gabich", 20 to "saa {h} gi dakika piero ariyo", 25 to "saa {h} gi dakika piero ariyo gabich", 30 to "saa {h} gi nus", 35 to "saa {h} gi dakika piero adek gabich", 40 to "saa {h} gi dakika piero ang'wen", 45 to "saa {h} gi dakika piero ang'wen gabich", 50 to "saa {h} gi dakika piero abich", 55 to "saa {h} gi dakika piero abich gabich"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1852,10 +1852,10 @@ public object Locales {
     private fun buildMam(): TimeLocale = TimeLocale(
         code = "mam",
         clock = ClockConfig(
-            hours = listOf("kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"),
+            hours = listOf("kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'elaj", "laj", "junlaj"),
             midnight = "nik' aq'b'il",
             noon = "nik' q'ij",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} or", 5 to "{h} or tuk' jwe' minut", 10 to "{h} or tuk' laj minut", 15 to "{h} or tuk' o'laj minut", 20 to "{h} or tuk' winqan minut", 25 to "{h} or tuk' jwe' toj ka'wnaq minut", 30 to "{h} or tuk' nik'", 35 to "{h} or tuk' o'laj toj ka'wnaq minut", 40 to "{h} or tuk' ka'wnaq minut", 45 to "{h} or tuk' jwe' toj oxk'al minut", 50 to "{h} or tuk' laj toj oxk'al minut", 55 to "{h} or tuk' o'laj toj oxk'al minut"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1874,10 +1874,10 @@ public object Locales {
     private fun buildMen(): TimeLocale = TimeLocale(
         code = "men",
         clock = ClockConfig(
-            hours = listOf("pu wɛlɛ", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"),
+            hours = listOf("pu mahu fele", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"),
             midnight = "kpindi gbɔyɔŋ",
             noon = "ndɔlei-ma",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "awa {h}", 5 to "awa {h} kɛ miniti lɔɔlu", 10 to "awa {h} kɛ miniti pu", 15 to "awa {h} kɛ miniti pu mahu lɔɔlu", 20 to "awa {h} kɛ miniti nuu yila gboyongo", 25 to "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu", 30 to "awa {h} kɛ miniti nuu yila gboyongo mahu pu", 35 to "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu", 40 to "awa {h} kɛ miniti nuu fele gboyongo", 45 to "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu", 50 to "awa {h} kɛ miniti nuu fele gboyongo mahu pu", 55 to "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1896,10 +1896,10 @@ public object Locales {
     private fun buildMfe(): TimeLocale = TimeLocale(
         code = "mfe",
         clock = ClockConfig(
-            hours = listOf("douz", "enn", "de", "trwa", "kat", "senk", "sis", "set", "wit", "nef", "dis", "onz"),
+            hours = listOf("douzer", "enn er", "dezer", "trwazer", "katrer", "senker", "sizer", "seter", "witer", "never", "dizer", "onzer"),
             midnight = "minwi",
             noon = "midi",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} senk", 10 to "{h} dis", 15 to "{h} ekar", 20 to "{h} vin", 25 to "{h} vennsenk", 30 to "{h} edmi", 35 to "{next_h} mwin vennsenk", 40 to "{next_h} mwin vin", 45 to "{next_h} mwin kar", 50 to "{next_h} mwin dis", 55 to "{next_h} mwin senk"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1921,7 +1921,7 @@ public object Locales {
             hours = listOf("roa ambin'ny folo", "iray", "roa", "telo", "efatra", "dimy", "enina", "fito", "valo", "sivy", "folo", "iraika ambin'ny folo"),
             midnight = "misasakalina",
             noon = "atoandro",
-            patterns = mapOf(0 to "{h} ora", 5 to "{h} sy dimy minitra", 10 to "{h} sy folo minitra", 15 to "{h} sy fahefatra", 20 to "{h} sy roapolo minitra", 25 to "{h} sy dimy amby roapolo minitra", 30 to "{h} sy sasany", 35 to "dimy amby roapolo minitra alohan'ny {next_h}", 40 to "roapolo minitra alohan'ny {next_h}", 45 to "fahefatra alohan'ny {next_h}", 50 to "folo minitra alohan'ny {next_h}", 55 to "dimy minitra alohan'ny {next_h}"),
+            patterns = mapOf(0 to "{h} ora", 5 to "{h} ora sy dimy minitra", 10 to "{h} ora sy folo minitra", 15 to "{h} ora sy fahefany", 20 to "{h} ora sy roapolo minitra", 25 to "{h} ora sy dimy amby roapolo minitra", 30 to "{h} ora sy sasany", 35 to "{next_h} ora latsaka dimy amby roapolo minitra", 40 to "{next_h} ora latsaka roapolo minitra", 45 to "{next_h} ora latsaka fahefany", 50 to "{next_h} ora latsaka folo minitra", 55 to "{next_h} ora latsaka dimy minitra"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -1965,7 +1965,7 @@ public object Locales {
             hours = listOf("дванаесет", "еден", "два", "три", "четири", "пет", "шест", "седум", "осум", "девет", "десет", "единаесет"),
             midnight = "полноќ",
             noon = "пладне",
-            patterns = mapOf(0 to "{h} часа", 5 to "пет po {h}", 10 to "десет po {h}", 15 to "петнаесет po {h}", 20 to "дваесет po {h}", 25 to "дваесет и пет po {h}", 30 to "триесет po {h}", 35 to "дваесет и пет do {next_h}", 40 to "дваесет do {next_h}", 45 to "петнаесет do {next_h}", 50 to "десет do {next_h}", 55 to "пет do {next_h}"),
+            patterns = mapOf(0 to "{h} часот", 5 to "{h} и пет", 10 to "{h} и десет", 15 to "{h} и петнаесет", 20 to "{h} и дваесет", 25 to "{h} и дваесет и пет", 30 to "{h} и пол", 35 to "дваесет и пет до {next_h}", 40 to "дваесет до {next_h}", 45 to "петнаесет до {next_h}", 50 to "десет до {next_h}", 55 to "пет до {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -1984,10 +1984,10 @@ public object Locales {
     private fun buildMl(): TimeLocale = TimeLocale(
         code = "ml",
         clock = ClockConfig(
-            hours = listOf("പന്ത്രണ്ട്", "ഒന്ന്", "രണ്ട്", "മൂന്ന്", "നാല്", "അഞ്ച്", "ആറ്", "ഏഴ്", "എട്ട്", "ഒമ്പത്", "പത്ത്", "പതിനൊന്ന്"),
+            hours = listOf("പന്ത്രണ്ട", "ഒന്ന", "രണ്ട", "മൂന്ന", "നാല", "അഞ്ച", "ആറ", "ഏഴ", "എട്ട", "ഒമ്പത", "പത്ത", "പതിനൊന്ന"),
             midnight = "അർദ്ധരാത്രി",
             noon = "ഉച്ച",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}് മണി", 5 to "{h}് മണി അഞ്ച് മിനിറ്റ്", 10 to "{h}് മണി പത്ത് മിനിറ്റ്", 15 to "{h}േകാൽ", 20 to "{h}് മണി ഇരുപത് മിനിറ്റ്", 25 to "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്", 30 to "{h}ര", 35 to "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്", 40 to "{h}് മണി നാൽപ്പത് മിനിറ്റ്", 45 to "{h}േമുക്കാൽ", 50 to "{h}് മണി അമ്പത് മിനിറ്റ്", 55 to "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2006,10 +2006,10 @@ public object Locales {
     private fun buildMn(): TimeLocale = TimeLocale(
         code = "mn",
         clock = ClockConfig(
-            hours = listOf("арван хоёр", "нэг", "хоёр", "гурав", "дөрөв", "тав", "зургаа", "долоо", "найм", "ес", "арав", "арван нэг"),
+            hours = listOf("арван хоёр", "нэг", "хоёр", "гурван", "дөрвөн", "таван", "зургаан", "долоон", "найман", "есөн", "арван", "арван нэгэн"),
             midnight = "шөнө дунд",
             noon = "үд дунд",
-            patterns = mapOf(0 to "{h} цаг", 5 to "{h} цаг {m} минут", 10 to "{h} цаг {m} минут", 15 to "{h} цаг {m} минут", 20 to "{h} цаг {m} минут", 25 to "{h} цаг {m} минут", 30 to "{h} цаг {m} минут", 35 to "{h} цаг {m} минут", 40 to "{h} цаг {m} минут", 45 to "{h} цаг {m} минут", 50 to "{h} цаг {m} минут", 55 to "{h} цаг {m} минут"),
+            patterns = mapOf(0 to "{h} цаг", 5 to "{h} цаг таван минут", 10 to "{h} цаг арван минут", 15 to "{h} цаг арван таван минут", 20 to "{h} цаг хорин минут", 25 to "{h} цаг хорин таван минут", 30 to "{h} цаг хагас", 35 to "{h} цаг гучин таван минут", 40 to "{h} цаг дөчин минут", 45 to "{h} цаг дөчин таван минут", 50 to "{h} цаг тавин минут", 55 to "{h} цаг тавин таван минут"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2028,10 +2028,10 @@ public object Locales {
     private fun buildMnk(): TimeLocale = TimeLocale(
         code = "mnk",
         clock = ClockConfig(
-            hours = listOf("tan ning fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ ning kiliŋ"),
+            hours = listOf("taŋ niŋ fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ niŋ kiliŋ"),
             midnight = "sutu-tili-laŋ",
             noon = "tili-konto",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "talaŋ {h}", 5 to "talaŋ {h} aniŋ miniti luulu", 10 to "talaŋ {h} aniŋ miniti taŋ", 15 to "talaŋ {h} aniŋ miniti taŋ niŋ luulu", 20 to "talaŋ {h} aniŋ miniti muwaŋ", 25 to "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu", 30 to "talaŋ {h} aniŋ talantee", 35 to "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu", 40 to "talaŋ {h} aniŋ miniti taŋ naani", 45 to "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu", 50 to "talaŋ {h} aniŋ miniti taŋ luulu", 55 to "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2050,10 +2050,10 @@ public object Locales {
     private fun buildMos(): TimeLocale = TimeLocale(
         code = "mos",
         clock = ClockConfig(
-            hours = listOf("piig la a yiibu", "a yembre", "a yiibu", "a tãabo", "a naase", "a nu", "a yoobe", "a yopoe", "a niini", "a wae", "piiga", "piig la a yembre"),
+            hours = listOf("lɛɛr piig la a yiibu", "lɛɛr a yembre", "lɛɛr a yiibu", "lɛɛr a tãabo", "lɛɛr a naase", "lɛɛr a nu", "lɛɛr a yoobe", "lɛɛr a yopoe", "lɛɛr a nii", "lɛɛr a wae", "lɛɛr piiga", "lɛɛr piig la a yembre"),
             midnight = "yʋng-vɩɩse",
             noon = "wĩntoog zabre",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} la minit a nu", 10 to "{h} la minit piiga", 15 to "{h} la minit piig la a nu", 20 to "{h} la minit pisi", 25 to "{h} la minit pisi la a nu", 30 to "{h} la pʋɩ-sʋka", 35 to "{h} la minit pis-tã la a nu", 40 to "{h} la minit pis-naase", 45 to "{h} la minit pis-naase la a nu", 50 to "{h} la minit pis-nu", 55 to "{h} la minit pis-nu la a nu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2075,7 +2075,7 @@ public object Locales {
             hours = listOf("बारा", "एक", "दोन", "तीन", "चार", "पाच", "सहा", "सात", "आठ", "नऊ", "दहा", "अकरा"),
             midnight = "मध्यरात्र",
             noon = "दुपार",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} वाजता", 5 to "{h} वाजून पाच मिनिटे", 10 to "{h} वाजून दहा मिनिटे", 15 to "सव्वा {h}", 20 to "{h} वाजून वीस मिनिटे", 25 to "{h} वाजून पंचवीस मिनिटे", 30 to "{h} वाजून तीस मिनिटे", 35 to "{next_h} वाजायला पंचवीस मिनिटे", 40 to "{next_h} वाजायला वीस मिनिटे", 45 to "पावणे {next_h}", 50 to "{next_h} वाजायला दहा मिनिटे", 55 to "{next_h} वाजायला पाच मिनिटे"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2097,7 +2097,7 @@ public object Locales {
             hours = listOf("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "lapan", "sembilan", "sepuluh", "sebelas"),
             midnight = "tengah malam",
             noon = "tengah hari",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "lima lewat {h}", 10 to "sepuluh lewat {h}", 15 to "suku lewat {h}", 20 to "dua puluh lewat {h}", 25 to "dua puluh lima lewat {h}", 30 to "setengah lewat {h}", 35 to "dua puluh lima menjelang {next_h}", 40 to "dua puluh menjelang {next_h}", 45 to "suku menjelang {next_h}", 50 to "sepuluh menjelang {next_h}", 55 to "lima menjelang {next_h}"),
+            patterns = mapOf(0 to "pukul {h}", 5 to "pukul {h} lima minit", 10 to "pukul {h} sepuluh minit", 15 to "pukul {h} suku", 20 to "pukul {h} dua puluh minit", 25 to "pukul {h} dua puluh lima minit", 30 to "pukul {h} setengah", 35 to "pukul {next_h} kurang dua puluh lima minit", 40 to "pukul {next_h} kurang dua puluh minit", 45 to "pukul {next_h} kurang suku", 50 to "pukul {next_h} kurang sepuluh minit", 55 to "pukul {next_h} kurang lima minit"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2116,10 +2116,10 @@ public object Locales {
     private fun buildMt(): TimeLocale = TimeLocale(
         code = "mt",
         clock = ClockConfig(
-            hours = listOf("tnax", "waħda", "tnejn", "tlieta", "erbgħa", "ħamsa", "sitta", "sebgħa", "tmienja", "disgħa", "għaxra", "ħdax"),
-            midnight = "nofsinhar",
+            hours = listOf("it-tnax", "is-siegħa", "is-sagħtejn", "it-tlieta", "l-erbgħa", "il-ħamsa", "is-sitta", "is-sebgħa", "it-tmienja", "id-disgħa", "l-għaxra", "il-ħdax"),
+            midnight = "nofsillejl",
             noon = "nofsinhar",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} u ħamsa", 10 to "{h} u għaxra", 15 to "{h} u kwart", 20 to "{h} u għoxrin", 25 to "{h} u ħamsa u għoxrin", 30 to "{h} u nofs", 35 to "{next_h} neqsin ħamsa u għoxrin", 40 to "{next_h} neqsin għoxrin", 45 to "{next_h} neqsin kwart", 50 to "{next_h} neqsin għaxra", 55 to "{next_h} neqsin ħamsa"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2141,7 +2141,7 @@ public object Locales {
             hours = listOf("ဆယ့်နှစ်", "တစ်", "နှစ်", "သုံး", "လေး", "ငါး", "ခြောက်", "ခုနစ်", "ရှစ်", "ကိုး", "ဆယ်", "ဆယ့်တစ်"),
             midnight = "သန်းခေါင်",
             noon = "မွန်းတည့်",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}နာရီ", 5 to "{h}နာရီ ငါးမိနစ်", 10 to "{h}နာရီ ဆယ်မိနစ်", 15 to "{h}နာရီ ဆယ့်ငါးမိနစ်", 20 to "{h}နာရီ နှစ်ဆယ်မိနစ်", 25 to "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်", 30 to "{h}နာရီခွဲ", 35 to "{h}နာရီ သုံးဆယ့်ငါးမိနစ်", 40 to "{h}နာရီ လေးဆယ်မိနစ်", 45 to "{h}နာရီ လေးဆယ့်ငါးမိနစ်", 50 to "{h}နာရီ ငါးဆယ်မိနစ်", 55 to "{h}နာရီ ငါးဆယ့်ငါးမိနစ်"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2160,7 +2160,7 @@ public object Locales {
     private fun buildNb(): TimeLocale = TimeLocale(
         code = "nb",
         clock = ClockConfig(
-            hours = listOf("tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"),
+            hours = listOf("tolv", "ett", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"),
             midnight = "midnatt",
             noon = "middag",
             patterns = mapOf(0 to "klokka {h}", 5 to "fem over {h}", 10 to "ti over {h}", 15 to "kvart over {h}", 20 to "tjue over {h}", 25 to "fem på halv {next_h}", 30 to "halv {next_h}", 35 to "fem over halv {next_h}", 40 to "tjue på {next_h}", 45 to "kvart på {next_h}", 50 to "ti på {next_h}", 55 to "fem på {next_h}"),
@@ -2182,10 +2182,10 @@ public object Locales {
     private fun buildNd(): TimeLocale = TimeLocale(
         code = "nd",
         clock = ClockConfig(
-            hours = listOf("litshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyangalombili", "isitshiyangalolunye", "litshumi", "litshumi lanye"),
+            hours = listOf("letshumi lambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesitshiyangalombili", "lesitshiyangalolunye", "letshumi", "letshumi lanye"),
             midnight = "phakathi kobusuku",
             noon = "emini",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ihola {h}", 5 to "ihola {h} lemizuzu emihlanu", 10 to "ihola {h} lemizuzu elitshumi", 15 to "ihola {h} lemizuzu elitshumi lanhlanu", 20 to "ihola {h} lemizuzu engamatshumi amabili", 25 to "ihola {h} lemizuzu engamatshumi amabili lanhlanu", 30 to "ihola {h} lengxenye", 35 to "ihola {h} lemizuzu engamatshumi amathathu lanhlanu", 40 to "ihola {h} lemizuzu engamatshumi amane", 45 to "ihola {h} lemizuzu engamatshumi amane lanhlanu", 50 to "ihola {h} lemizuzu engamatshumi amahlanu", 55 to "ihola {h} lemizuzu engamatshumi amahlanu lanhlanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2207,7 +2207,7 @@ public object Locales {
             hours = listOf("बाह्र", "एक", "दुई", "तीन", "चार", "पाँच", "छ", "सात", "आठ", "नौ", "दश", "एघार"),
             midnight = "मध्यरात",
             noon = "मध्यान्ह",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} बजे", 5 to "{h} बजेर पाँच मिनेट", 10 to "{h} बजेर दश मिनेट", 15 to "सवा {h} बजे", 20 to "{h} बजेर बीस मिनेट", 25 to "{h} बजेर पच्चीस मिनेट", 30 to "{h} बजेर तीस मिनेट", 35 to "{next_h} बज्न पच्चीस मिनेट बाँकी", 40 to "{next_h} बज्न बीस मिनेट बाँकी", 45 to "पौने {next_h} बजे", 50 to "{next_h} बज्न दश मिनेट बाँकी", 55 to "{next_h} बज्न पाँच मिनेट बाँकी"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2229,7 +2229,7 @@ public object Locales {
             hours = listOf("omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe"),
             midnight = "onguloshi pakati",
             noon = "omutenya",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "otundi {h}", 5 to "otundi {h} noominute ntano", 10 to "otundi {h} noominute omulongo", 15 to "otundi {h} noominute omulongo nantano", 20 to "otundi {h} noominute omilongo mbali", 25 to "otundi {h} noominute omilongo mbali nantano", 30 to "otundi {h} netata", 35 to "otundi {h} noominute omilongo ndatu nantano", 40 to "otundi {h} noominute omilongo ne", 45 to "otundi {h} noominute omilongo ne nantano", 50 to "otundi {h} noominute omilongo ntano", 55 to "otundi {h} noominute omilongo ntano nantano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2250,8 +2250,8 @@ public object Locales {
         clock = ClockConfig(
             hours = listOf("twaalf", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf"),
             midnight = "middernacht",
-            noon = "middag",
-            patterns = mapOf(0 to "{h} uur", 5 to "vijf over {h}", 10 to "tien over {h}", 15 to "kwart over {h}", 20 to "twintig over {h}", 25 to "vijf voor half {next_h}", 30 to "half {next_h}", 35 to "vijf over half {next_h}", 40 to "twintig voor {next_h}", 45 to "kwart voor {next_h}", 50 to "tien voor {next_h}", 55 to "vijf voor {next_h}"),
+            noon = "twaalf uur 's middags",
+            patterns = mapOf(0 to "{h} uur", 5 to "vijf over {h}", 10 to "tien over {h}", 15 to "kwart over {h}", 20 to "tien voor half {next_h}", 25 to "vijf voor half {next_h}", 30 to "half {next_h}", 35 to "vijf over half {next_h}", 40 to "tien over half {next_h}", 45 to "kwart voor {next_h}", 50 to "tien voor {next_h}", 55 to "vijf voor {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2270,10 +2270,10 @@ public object Locales {
     private fun buildNr(): TimeLocale = TimeLocale(
         code = "nr",
         clock = ClockConfig(
-            hours = listOf("itshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyagalombili", "isitshiyagalolunye", "itshumi", "itshumi lanye"),
+            hours = listOf("letjhumi nambili", "lokuthoma", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithandathu", "lekhomba", "lobunane", "lethoba", "letjhumi", "letjhumi nanye"),
             midnight = "phakathi kobusuku",
             noon = "emini",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ihora {h}", 5 to "ihora {h} nemizuzu emihlanu", 10 to "ihora {h} nemizuzu elitjhumi", 15 to "ihora {h} nemizuzu elitjhumi nanhlanu", 20 to "ihora {h} nemizuzu engamatjhumi amabili", 25 to "ihora {h} nemizuzu engamatjhumi amabili nanhlanu", 30 to "ihora {h} nesiquntu", 35 to "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu", 40 to "ihora {h} nemizuzu engamatjhumi amane", 45 to "ihora {h} nemizuzu engamatjhumi amane nanhlanu", 50 to "ihora {h} nemizuzu engamatjhumi amahlanu", 55 to "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2292,10 +2292,10 @@ public object Locales {
     private fun buildNso(): TimeLocale = TimeLocale(
         code = "nso",
         clock = ClockConfig(
-            hours = listOf("lesome pedi", "tee", "pedi", "tharo", "nne", "hlano", "tshela", "šupa", "seswai", "senyane", "lesome", "lesome tee"),
+            hours = listOf("lesomepedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshela", "bošupa", "seswai", "senyane", "lesome", "lesometee"),
             midnight = "bošego gare",
             noon = "mosegare",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "iri ya {h}", 5 to "iri ya {h} le metsotso ye mehlano", 10 to "iri ya {h} le metsotso ye lesome", 15 to "iri ya {h} le kotara", 20 to "iri ya {h} le metsotso ye masomepedi", 25 to "iri ya {h} le metsotso ye masomepedi-hlano", 30 to "iri ya {h} le seripagare", 35 to "iri ya {h} le metsotso ye masometharo-hlano", 40 to "iri ya {h} le metsotso ye masomenne", 45 to "iri ya {h} le metsotso ye masomenne-hlano", 50 to "iri ya {h} le metsotso ye masomehlano", 55 to "iri ya {h} le metsotso ye masomehlano-hlano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2314,10 +2314,10 @@ public object Locales {
     private fun buildNus(): TimeLocale = TimeLocale(
         code = "nus",
         clock = ClockConfig(
-            hours = listOf("thiäär ke rou", "tök", "rou", "diäk", "ŋuan", "dhiëc", "bäkɛl", "dhorou", "bät", "kuɔn", "thiäär", "thiäär ku tök"),
+            hours = listOf("wäl wi̱ rɛw", "kɛl", "rɛw", "diɔk", "ŋuaan", "dhieec", "bäkɛl", "bäärɔw", "bädäk", "bäŋuan", "wäl", "wäl wi̱ kɛl"),
             midnight = "wakɔ̈u",
             noon = "cäŋ kɔ̈k",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "thaar {h}", 5 to "thaar {h} kɛnɛ minit dhieec", 10 to "thaar {h} kɛnɛ minit wäl", 15 to "thaar {h} kɛnɛ minit wäl wi̱ dhieec", 20 to "thaar {h} kɛnɛ minit jiɛn rɛw", 25 to "thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec", 30 to "thaar {h} kɛnɛ minit jiɛn diɔk", 35 to "thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec", 40 to "thaar {h} kɛnɛ minit jiɛn ŋuaan", 45 to "thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec", 50 to "thaar {h} kɛnɛ minit jiɛn dhieec", 55 to "thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2336,10 +2336,10 @@ public object Locales {
     private fun buildNy(): TimeLocale = TimeLocale(
         code = "ny",
         clock = ClockConfig(
-            hours = listOf("khumi ndi ziwiri", "imodzi", "ziwiri", "zitatu", "zinayi", "zisanu", "zisanu ndi chimodzi", "zisanu ndi ziwiri", "zisanu ndi zitatu", "zisanu ndi zinayi", "khumi", "khumi ndi chimodzi"),
+            hours = listOf("lakhumi ndi chiwiri", "loyamba", "lachiwiri", "lachitatu", "lachinayi", "lachisanu", "lachisanu ndi chimodzi", "lachisanu ndi chiwiri", "lachisanu ndi chitatu", "lachisanu ndi chinayi", "lakhumi", "lakhumi ndi chimodzi"),
             midnight = "pakati pausiku",
             noon = "usana",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ola {h}", 5 to "ola {h} ndi mphindi zisanu", 10 to "ola {h} ndi mphindi khumi", 15 to "ola {h} ndi mphindi khumi ndi zisanu", 20 to "ola {h} ndi mphindi makumi awiri", 25 to "ola {h} ndi mphindi makumi awiri ndi zisanu", 30 to "ola {h} ndi theka", 35 to "ola {h} ndi mphindi makumi atatu ndi zisanu", 40 to "ola {h} ndi mphindi makumi anayi", 45 to "ola {h} ndi mphindi makumi anayi ndi zisanu", 50 to "ola {h} ndi mphindi makumi asanu", 55 to "ola {h} ndi mphindi makumi asanu ndi zisanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2358,10 +2358,10 @@ public object Locales {
     private fun buildOm(): TimeLocale = TimeLocale(
         code = "om",
         clock = ClockConfig(
-            hours = listOf("kudha lama", "tokko", "lama", "sadii", "afur", "shan", "jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko"),
+            hours = listOf("jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko", "kudha lama", "tokko", "lama", "sadii", "afur", "shan"),
             midnight = "walakkii halkan",
             noon = "guyyaa walakkaa",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "sa'aatii {h}", 5 to "sa'aatii {h} fi daqiiqaa shan", 10 to "sa'aatii {h} fi daqiiqaa kudhan", 15 to "sa'aatii {h} fi daqiiqaa kudha shan", 20 to "sa'aatii {h} fi daqiiqaa digdama", 25 to "sa'aatii {h} fi daqiiqaa digdamii shan", 30 to "sa'aatii {h} fi walakkaa", 35 to "sa'aatii {h} fi daqiiqaa soddomii shan", 40 to "sa'aatii {h} fi daqiiqaa afurtama", 45 to "sa'aatii {h} fi daqiiqaa afurtamii shan", 50 to "sa'aatii {h} fi daqiiqaa shantama", 55 to "sa'aatii {h} fi daqiiqaa shantamii shan"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2383,7 +2383,7 @@ public object Locales {
             hours = listOf("ବାରଟା", "ଗୋଟିଏ", "ଦୁଇଟା", "ତିନିଟା", "ଚାରିଟା", "ପାଞ୍ଚଟା", "ଛଅଟା", "ସାତଟା", "ଆଠଟା", "ନଅଟା", "ଦଶଟା", "ଏଗାରଟା"),
             midnight = "ମଧ୍ୟରାତ୍ରି",
             noon = "ମଧ୍ୟାହ୍ନ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍", 10 to "{h} ବାଜି ଦଶ ମିନିଟ୍", 15 to "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍", 20 to "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍", 25 to "{h} ବାଜି ପଚିଶ ମିନିଟ୍", 30 to "{h} ବାଜି ତିରିଶ ମିନିଟ୍", 35 to "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍", 40 to "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍", 45 to "ପାଉଣେ {next_h}", 50 to "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍", 55 to "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2405,7 +2405,7 @@ public object Locales {
             hours = listOf("ਬਾਰਾਂ", "ਇੱਕ", "ਦੋ", "ਤਿੰਨ", "ਚਾਰ", "ਪੰਜ", "ਛੇ", "ਸੱਤ", "ਅੱਠ", "ਨੌਂ", "ਦਸ", "ਗਿਆਰਾਂ"),
             midnight = "ਅੱਧੀ ਰਾਤ",
             noon = "ਦੁਪਹਿਰ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} ਵਜੇ", 5 to "{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ", 10 to "{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ", 15 to "ਸਵਾ {h} ਵਜੇ", 20 to "{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ", 25 to "{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ", 30 to "{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ", 35 to "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ", 40 to "{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ", 45 to "ਪੌਣੇ {next_h} ਵਜੇ", 50 to "{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ", 55 to "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2427,7 +2427,7 @@ public object Locales {
             hours = listOf("twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"),
             midnight = "midonaet",
             noon = "midei",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} kilok", 5 to "faev minit pas {h}", 10 to "ten minit pas {h}", 15 to "kwata pas {h}", 20 to "twenti minit pas {h}", 25 to "twenti faev minit pas {h}", 30 to "haf pas {h}", 35 to "twenti faev minit tu {next_h}", 40 to "twenti minit tu {next_h}", 45 to "kwata tu {next_h}", 50 to "ten minit tu {next_h}", 55 to "faev minit tu {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2449,7 +2449,7 @@ public object Locales {
             hours = listOf("dwunasta", "pierwsza", "druga", "trzecia", "czwarta", "piąta", "szósta", "siódma", "ósma", "dziewiąta", "dziesiąta", "jedenasta"),
             midnight = "północ",
             noon = "południe",
-            patterns = mapOf(0 to "{h}", 5 to "pięć po {h}", 10 to "dziesięć po {h}", 15 to "piętnaście po {h}", 20 to "dwadzieścia po {h}", 25 to "dwadzieścia pięć po {h}", 30 to "trzydzieści po {h}", 35 to "dwadzieścia pięć do {next_h}", 40 to "dwadzieścia do {next_h}", 45 to "piętnaście do {next_h}", 50 to "dziesięć do {next_h}", 55 to "pięć do {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} pięć", 10 to "{h} dziesięć", 15 to "{h} piętnaście", 20 to "{h} dwadzieścia", 25 to "{h} dwadzieścia pięć", 30 to "{h} trzydzieści", 35 to "za dwadzieścia pięć {next_h}", 40 to "za dwadzieścia {next_h}", 45 to "za kwadrans {next_h}", 50 to "za dziesięć {next_h}", 55 to "za pięć {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2468,10 +2468,10 @@ public object Locales {
     private fun buildPov(): TimeLocale = TimeLocale(
         code = "pov",
         clock = ClockConfig(
-            hours = listOf("dozi", "un", "dos", "tres", "kuatru", "sinku", "seis", "seti", "oitu", "novi", "des", "onzi"),
+            hours = listOf("dozi ora", "un ora", "dos ora", "tres ora", "kuatru ora", "sinku ora", "seis ora", "seti ora", "oitu ora", "novi ora", "des ora", "onzi ora"),
             midnight = "meia noti",
             noon = "meiu dia",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} i sinku", 10 to "{h} i des", 15 to "{h} i kinzi", 20 to "{h} i vinti", 25 to "{h} i vinti i sinku", 30 to "{h} i meiu", 35 to "{h} i trinta i sinku", 40 to "{h} i kuarenta", 45 to "{h} i kuarenta i sinku", 50 to "{h} i sinkuenta", 55 to "{h} i sinkuenta i sinku"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2490,10 +2490,10 @@ public object Locales {
     private fun buildPs(): TimeLocale = TimeLocale(
         code = "ps",
         clock = ClockConfig(
-            hours = listOf("دولس", "یو", "دوه", "درې", "څلور", "پنځه", "شپږ", "اووه", "اته", "نهه", "لس", "یوولس"),
+            hours = listOf("دولس بجې", "یوه بجه", "دوه بجې", "درې بجې", "څلور بجې", "پنځه بجې", "شپږ بجې", "اووه بجې", "اته بجې", "نهه بجې", "لس بجې", "یوولس بجې"),
             midnight = "نیمه شپه",
             noon = "غرمه",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} او پنځه دقیقې", 10 to "{h} او لس دقیقې", 15 to "{h} او پنځلس دقیقې", 20 to "{h} او شل دقیقې", 25 to "{h} او پنځه ویشت دقیقې", 30 to "{h} او دېرش دقیقې", 35 to "{h} او پنځه دېرش دقیقې", 40 to "{h} او څلوېښت دقیقې", 45 to "{h} او پنځه څلوېښت دقیقې", 50 to "{h} او پنځوس دقیقې", 55 to "{h} او پنځه پنځوس دقیقې"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2515,7 +2515,7 @@ public object Locales {
             hours = listOf("doze", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze"),
             midnight = "meia-noite",
             noon = "meio-dia",
-            patterns = mapOf(0 to "{h} horas", 5 to "{h} e cinco", 10 to "{h} e dez", 15 to "{h} e um quarto", 20 to "{h} e vinte", 25 to "{h} e vinte e cinco", 30 to "{h} e meia", 35 to "vinte e cinco para as {next_h}", 40 to "vinte para as {next_h}", 45 to "um quarto para as {next_h}", 50 to "dez para as {next_h}", 55 to "cinco para as {next_h}"),
+            patterns = mapOf(0 to "{h} em ponto", 5 to "{h} e cinco", 10 to "{h} e dez", 15 to "{h} e um quarto", 20 to "{h} e vinte", 25 to "{h} e vinte e cinco", 30 to "{h} e meia", 35 to "vinte e cinco para as {next_h}", 40 to "vinte para as {next_h}", 45 to "um quarto para as {next_h}", 50 to "dez para as {next_h}", 55 to "cinco para as {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2537,7 +2537,7 @@ public object Locales {
             hours = listOf("chunka iskayniyuq", "huk", "iskay", "kimsa", "tawa", "pichqa", "suqta", "qanchis", "pusaq", "isqun", "chunka", "chunka hukniyuq"),
             midnight = "chawpi tuta",
             noon = "chawpi p'unchaw",
-            patterns = mapOf(0 to "{h}", 5 to "{h} pichqa", 10 to "{h} chunka", 15 to "{h} chunka pichqayuq", 20 to "{h} iskay chunka", 25 to "{h} iskay chunka pichqayuq", 30 to "{h} kimsa chunka", 35 to "{next_h} mana iskay chunka pichqayuq", 40 to "{next_h} mana iskay chunka", 45 to "{next_h} mana chunka pichqayuq", 50 to "{next_h} mana chunka", 55 to "{next_h} mana pichqa"),
+            patterns = mapOf(0 to "{h} ura", 5 to "{h} ura pichqa", 10 to "{h} ura chunka", 15 to "{h} ura chunka pichqayuq", 20 to "{h} ura iskay chunka", 25 to "{h} ura iskay chunka pichqayuq", 30 to "{h} ura kimsa chunka", 35 to "{h} ura kimsa chunka pichqayuq", 40 to "{h} ura tawa chunka", 45 to "{h} ura tawa chunka pichqayuq", 50 to "{h} ura pichqa chunka", 55 to "{h} ura pichqa chunka pichqayuq"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2556,10 +2556,10 @@ public object Locales {
     private fun buildQuc(): TimeLocale = TimeLocale(
         code = "quc",
         clock = ClockConfig(
-            hours = listOf("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"),
+            hours = listOf("kab'lajuj", "jun", "keb'", "oxib'", "kajib'", "job'", "waqib'", "wuqub'", "wajxaqib'", "b'elejeb'", "lajuj", "julajuj"),
             midnight = "nik'aj aq'ab'",
             noon = "nik'aj q'ij",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} ramaj", 5 to "{h} ramaj job'", 10 to "{h} ramaj lajuj", 15 to "{h} ramaj olajuj", 20 to "{h} ramaj juwinaq", 25 to "{h} ramaj juwinaq job'", 30 to "{h} ramaj juwinaq lajuj", 35 to "{h} ramaj juwinaq olajuj", 40 to "{h} ramaj kawinaq", 45 to "{h} ramaj kawinaq job'", 50 to "{h} ramaj kawinaq lajuj", 55 to "{h} ramaj kawinaq olajuj"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2581,7 +2581,7 @@ public object Locales {
             hours = listOf("douăsprezece", "unu", "două", "trei", "patru", "cinci", "șase", "șapte", "opt", "nouă", "zece", "unsprezece"),
             midnight = "miezul nopții",
             noon = "amiază",
-            patterns = mapOf(0 to "{h} ore", 5 to "cinci peste {h}", 10 to "zece peste {h}", 15 to "un sfert peste {h}", 20 to "douăzeci peste {h}", 25 to "douăzeci și cinci peste {h}", 30 to "jumătate peste {h}", 35 to "douăzeci și cinci înainte de {next_h}", 40 to "douăzeci înainte de {next_h}", 45 to "un sfert înainte de {next_h}", 50 to "zece înainte de {next_h}", 55 to "cinci înainte de {next_h}"),
+            patterns = mapOf(0 to "ora {h}", 5 to "{h} și cinci", 10 to "{h} și zece", 15 to "{h} și un sfert", 20 to "{h} și douăzeci", 25 to "{h} și douăzeci și cinci", 30 to "{h} și jumătate", 35 to "{next_h} fără douăzeci și cinci", 40 to "{next_h} fără douăzeci", 45 to "{next_h} fără un sfert", 50 to "{next_h} fără zece", 55 to "{next_h} fără cinci"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2603,7 +2603,7 @@ public object Locales {
             hours = listOf("двенадцать", "час", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать"),
             midnight = "полночь",
             noon = "полдень",
-            patterns = mapOf(0 to "{h} часа", 5 to "пять po {h}", 10 to "десять po {h}", 15 to "пятнадцать po {h}", 20 to "двадцать po {h}", 25 to "двадцать пять po {h}", 30 to "тридцать po {h}", 35 to "двадцать пять do {next_h}", 40 to "двадцать do {next_h}", 45 to "пятнадцать do {next_h}", 50 to "десять do {next_h}", 55 to "пять do {next_h}"),
+            patterns = mapOf(0 to "ровно {h}", 5 to "{h} ноль пять", 10 to "{h} десять", 15 to "{h} пятнадцать", 20 to "{h} двадцать", 25 to "{h} двадцать пять", 30 to "{h} тридцать", 35 to "без двадцати пяти {next_h}", 40 to "без двадцати {next_h}", 45 to "без четверти {next_h}", 50 to "без десяти {next_h}", 55 to "без пяти {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2622,10 +2622,10 @@ public object Locales {
     private fun buildRw(): TimeLocale = TimeLocale(
         code = "rw",
         clock = ClockConfig(
-            hours = listOf("cumi n'ebyiri", "rimwe", "ebyiri", "eshatu", "enye", "eshanu", "esheshatu", "indwi", "umunani", "icyenda", "icumi", "cumi n'imwe"),
-            midnight = "igicuku",
-            noon = "saa sita",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            hours = listOf("sita", "saba", "munani", "cyenda", "kumi", "kumi n'imwe", "kumi n'ebyiri", "moya", "mbiri", "tatu", "ine", "tanu"),
+            midnight = "saa sita z'ijoro",
+            noon = "saa sita z'amanywa",
+            patterns = mapOf(0 to "saa {h}", 5 to "saa {h} n'iminota itanu", 10 to "saa {h} n'iminota icumi", 15 to "saa {h} n'iminota cumi n'itanu", 20 to "saa {h} n'iminota makumyabiri", 25 to "saa {h} n'iminota makumyabiri n'itanu", 30 to "saa {h} n'igice", 35 to "saa {h} n'iminota mirongo itatu n'itanu", 40 to "saa {h} n'iminota mirongo ine", 45 to "saa {h} n'iminota mirongo ine n'itanu", 50 to "saa {h} n'iminota mirongo itanu", 55 to "saa {h} n'iminota mirongo itanu n'itanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2644,10 +2644,10 @@ public object Locales {
     private fun buildSar(): TimeLocale = TimeLocale(
         code = "sar",
         clock = ClockConfig(
-            hours = listOf("mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "kɨ̀ndá", "ɗìi", "mùtá", "sɔ̀", "mɨ̀ndɨ̀", "mɨ̀ndɨ̀ kɨ̀ndá", "mɨ̀sá", "mɨ̀ndɨ̀ mùtá", "mɨ̀ndɨ̀ sɔ̀", "mɔ̀ɔ́", "mɔ̀ɔ́ kɨ̀ndá"),
+            hours = listOf("lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "lɛɛr kɨ̀ndá", "lɛɛr ɗìi", "lɛɛr mùtá", "lɛɛr sɔ̀", "lɛɛr mɨ̀ndɨ̀", "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá", "lɛɛr mɨ̀sá", "lɛɛr mɨ̀ndɨ̀ mùtá", "lɛɛr mɨ̀ndɨ̀ sɔ̀", "lɛɛr mɔ̀ɔ́", "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá"),
             midnight = "badɔ",
             noon = "mbɔr ndɔ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} kɨ̀ minít mɨ̀ndɨ̀", 10 to "{h} kɨ̀ minít mɔ̀ɔ́", 15 to "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", 20 to "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi", 25 to "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", 30 to "{h} kɩ̀ ndá̰ŋ", 35 to "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", 40 to "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀", 45 to "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", 50 to "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀", 55 to "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2666,10 +2666,10 @@ public object Locales {
     private fun buildSd(): TimeLocale = TimeLocale(
         code = "sd",
         clock = ClockConfig(
-            hours = listOf("ٻارھ", "ھڪ", "ٻه", "ٽي", "چار", "پنج", "ڇھ", "ست", "اٺ", "نائن", "ڏھ", "يارھ"),
+            hours = listOf("ٻارهن", "هڪ", "ٻه", "ٽي", "چار", "پنج", "ڇهه", "ست", "اٺ", "نوَ", "ڏهه", "يارهن"),
             midnight = "اڌ رات",
             noon = "ٽپھر",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} وڳي", 5 to "{h} وڳي پنج منٽ", 10 to "{h} وڳي ڏهه منٽ", 15 to "سوا {h} وڳي", 20 to "{h} وڳي ويهه منٽ", 25 to "{h} وڳي پنجويهه منٽ", 30 to "{h} وڳي ٽيهه منٽ", 35 to "{next_h} وڳڻ ۾ پنجويهه منٽ", 40 to "{next_h} وڳڻ ۾ ويهه منٽ", 45 to "پوڻا {next_h} وڳي", 50 to "{next_h} وڳڻ ۾ ڏهه منٽ", 55 to "{next_h} وڳڻ ۾ پنج منٽ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2688,10 +2688,10 @@ public object Locales {
     private fun buildSg(): TimeLocale = TimeLocale(
         code = "sg",
         clock = ClockConfig(
-            hours = listOf("bâlè-ûse", "ôko", "ûse", "otâ", "usïö", "okü", "ömënë", "mbïrïmbïrï", "mënâmbârâ", "gonambâlâ", "bâlè", "bâlè na ôko"),
+            hours = listOf("balë-ôko na ûse", "ôko", "ûse", "otâ", "usïö", "okü", "omanä", "mbâsâmbârâ", "miombe", "gümbâyä", "balë-ôko", "balë-ôko na ôko"),
             midnight = "gï na lögö",
             noon = "lâ nzönï",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ngbonga {h}", 5 to "ngbonga {h} na minüti okü", 10 to "ngbonga {h} na minüti balë-ôko", 15 to "ngbonga {h} na minüti balë-ôko na okü", 20 to "ngbonga {h} na minüti balë-ûse", 25 to "ngbonga {h} na minüti balë-ûse na okü", 30 to "ngbonga {h} na ndâmbo", 35 to "ngbonga {h} na minüti balë-otâ na okü", 40 to "ngbonga {h} na minüti balë-usïö", 45 to "ngbonga {h} na minüti balë-usïö na okü", 50 to "ngbonga {h} na minüti balë-okü", 55 to "ngbonga {h} na minüti balë-okü na okü"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2710,10 +2710,10 @@ public object Locales {
     private fun buildShi(): TimeLocale = TimeLocale(
         code = "shi",
         clock = ClockConfig(
-            hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
+            hours = listOf("ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ", "ⵜⵉⵙ ⵙⵏⴰⵜ", "ⵜⵉⵙ ⴽⵕⴰⵟⵟ", "ⵜⵉⵙ ⴽⴽⵓⵥⵜ", "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ", "ⵜⵉⵙ ⵙⴹⵉⵙⵜ", "ⵜⵉⵙ ⵙⴰⵜ", "ⵜⵉⵙ ⵜⴰⵎⵜ", "ⵜⵉⵙ ⵜⵥⴰⵜ", "ⵜⵉⵙ ⵎⵔⴰⵡⵜ", "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"),
             midnight = "ⵏⵚ ⵏ ⵉⴹ",
             noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ", 10 to "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ", 15 to "{h} ⴷ ⵔⵔⴱⵄ", 20 to "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 25 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 30 to "{h} ⴷ ⵓⵣⴳⵏ", 35 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 40 to "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 45 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 50 to "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ", 55 to "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2735,7 +2735,7 @@ public object Locales {
             hours = listOf("သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း"),
             midnight = "ၵၢင်ၶိုၼ်း",
             noon = "ၵၢင်ဝၼ်း",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}မူင်း", 5 to "{h}မူင်း ႁႃႈမိၼိတ်ႉ", 10 to "{h}မူင်း သိပ်းမိၼိတ်ႉ", 15 to "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ", 20 to "{h}မူင်း သၢဝ်းမိၼိတ်ႉ", 25 to "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ", 30 to "{h}မူင်းၶိုင်ႈ", 35 to "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ", 40 to "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ", 45 to "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ", 50 to "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ", 55 to "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2757,7 +2757,7 @@ public object Locales {
             hours = listOf("දොළහ", "එක", "දෙක", "තුන", "හතර", "පහ", "හය", "හත", "අට", "නවය", "දහය", "එකොළහ"),
             midnight = "මධ්‍යම රාත්‍රිය",
             noon = "මධ්‍යාහ්නය",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}යි", 5 to "{h}යි විනාඩි පහයි", 10 to "{h}යි විනාඩි දහයයි", 15 to "{h}යි කාලයි", 20 to "{h}යි විනාඩි විස්සයි", 25 to "{h}යි විනාඩි විසිපහයි", 30 to "{h} හමාරයි", 35 to "{next_h}ට විනාඩි විසිපහයි", 40 to "{next_h}ට විනාඩි විස්සයි", 45 to "{next_h}ට කාලයි", 50 to "{next_h}ට විනාඩි දහයයි", 55 to "{next_h}ට විනාඩි පහයි"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2779,7 +2779,7 @@ public object Locales {
             hours = listOf("dvanásť", "jedna", "dve", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť", "desať", "jedenásť"),
             midnight = "polnoc",
             noon = "poludnie",
-            patterns = mapOf(0 to "{h} hodín", 5 to "päť po {h}", 10 to "desať po {h}", 15 to "štvrť po {h}", 20 to "dvadsať po {h}", 25 to "dvadsať päť po {h}", 30 to "pol po {h}", 35 to "dvadsať päť do {next_h}", 40 to "dvadsať do {next_h}", 45 to "štvrť do {next_h}", 50 to "desať do {next_h}", 55 to "päť do {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} nula päť", 10 to "{h} desať", 15 to "{h} pätnásť", 20 to "{h} dvadsať", 25 to "{h} dvadsaťpäť", 30 to "{h} tridsať", 35 to "o dvadsaťpäť minút {next_h}", 40 to "o dvadsať minút {next_h}", 45 to "o pätnásť minút {next_h}", 50 to "o desať minút {next_h}", 55 to "o päť minút {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2801,7 +2801,7 @@ public object Locales {
             hours = listOf("dvanajst", "ena", "dve", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet", "deset", "enajst"),
             midnight = "polnoč",
             noon = "poldne",
-            patterns = mapOf(0 to "{h} ura", 5 to "pet po {h}", 10 to "deset po {h}", 15 to "petnajst po {h}", 20 to "dvajset po {h}", 25 to "dvajset pet po {h}", 30 to "trideset po {h}", 35 to "dvajset pet do {next_h}", 40 to "dvajset do {next_h}", 45 to "petnajst do {next_h}", 50 to "deset do {next_h}", 55 to "pet do {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "pet čez {h}", 10 to "deset čez {h}", 15 to "petnajst čez {h}", 20 to "dvajset čez {h}", 25 to "petindvajset čez {h}", 30 to "{h} trideset", 35 to "{h} petintrideset", 40 to "{h} štirideset", 45 to "{h} petinštirideset", 50 to "{h} petdeset", 55 to "{h} petinpetdeset"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2820,10 +2820,10 @@ public object Locales {
     private fun buildSn(): TimeLocale = TimeLocale(
         code = "sn",
         clock = ClockConfig(
-            hours = listOf("gumi nembiri", "imwe", "mbiri", "nhatu", "ina", "shanu", "nhanhatu", "nomwe", "sere", "pfumbamwe", "gumi", "gumi neimwe"),
-            midnight = "usiku hwepakati",
+            hours = listOf("dzava gumi nembiri", "yava imwe", "dzava mbiri", "dzava nhatu", "dzava ina", "dzava shanu", "dzava nhanhatu", "dzava nomwe", "dzava sere", "dzava pfumbamwe", "dzava gumi", "dzava gumi neimwe"),
+            midnight = "pakati peusiku",
             noon = "masikati",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} nemaminitsi mashanu", 10 to "{h} nemaminitsi gumi", 15 to "{h} nemaminitsi gumi nemashanu", 20 to "{h} nemaminitsi makumi maviri", 25 to "{h} nemaminitsi makumi maviri nemashanu", 30 to "{h} nehafu", 35 to "{h} nemaminitsi makumi matatu nemashanu", 40 to "{h} nemaminitsi makumi mana", 45 to "{h} nemaminitsi makumi mana nemashanu", 50 to "{h} nemaminitsi makumi mashanu", 55 to "{h} nemaminitsi makumi mashanu nemashanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2842,10 +2842,10 @@ public object Locales {
     private fun buildSnk(): TimeLocale = TimeLocale(
         code = "snk",
         clock = ClockConfig(
-            hours = listOf("tanmu fillo", "baane", "fillo", "sikko", "naaxato", "karago", "tunmu", "ñerru", "segu", "kaburu", "tanmu", "tanmu baane"),
+            hours = listOf("waxati tanmu do fillo", "waxati baane", "waxati fillo", "waxati sikko", "waxati naaxato", "waxati karago", "waxati tunmu", "waxati ñerru", "waxati segu", "waxati kaburu", "waxati tanmu", "waxati tanmu do baane"),
             midnight = "sulen noxo",
             noon = "tili seren",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} do miniti karago", 10 to "{h} do miniti tanmu", 15 to "{h} do miniti tanmu do karago", 20 to "{h} do miniti tanpille", 25 to "{h} do miniti tanpille do karago", 30 to "{h} do faabe", 35 to "{h} do miniti tanjikke do karago", 40 to "{h} do miniti tannaxate", 45 to "{h} do miniti tannaxate do karago", 50 to "{h} do miniti tankarage", 55 to "{h} do miniti tankarage do karago"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2864,10 +2864,10 @@ public object Locales {
     private fun buildSo(): TimeLocale = TimeLocale(
         code = "so",
         clock = ClockConfig(
-            hours = listOf("laba iyo toban", "kow", "laba", "saddex", "afar", "shan", "lix", "toddoba", "siddeed", "sagaal", "toban", "kow iyo toban"),
+            hours = listOf("laba iyo tobanka", "kowda", "labada", "saddexda", "afarta", "shanta", "lixda", "toddobada", "siddeedda", "sagaasha", "tobanka", "kow iyo tobanka"),
             midnight = "saqda dhexe",
             noon = "duhur",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} iyo shan", 10 to "{h} iyo toban", 15 to "{h} iyo rubuc", 20 to "{h} iyo labaatan", 25 to "{h} iyo shan iyo labaatan", 30 to "{h} iyo bar", 35 to "{next_h} shan iyo labaatan la'", 40 to "{next_h} labaatan la'", 45 to "{next_h} rubuc la'", 50 to "{next_h} toban la'", 55 to "{next_h} shan la'"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2889,7 +2889,7 @@ public object Locales {
             hours = listOf("dymbëdhjetë", "një", "dy", "tre", "katër", "pesë", "gjashtë", "shtatë", "tetë", "nëntë", "dhjetë", "njëmbëdhjetë"),
             midnight = "mesnata",
             noon = "mesdita",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "pesë past {h}", 10 to "dhjetë past {h}", 15 to "një çerek past {h}", 20 to "njëzet past {h}", 25 to "njëzet e pesë past {h}", 30 to "gjysma past {h}", 35 to "njëzet e pesë to {next_h}", 40 to "njëzet to {next_h}", 45 to "një çerek to {next_h}", 50 to "dhjetë to {next_h}", 55 to "pesë to {next_h}"),
+            patterns = mapOf(0 to "ora {h}", 5 to "{h} e pesë", 10 to "{h} e dhjetë", 15 to "{h} e një çerek", 20 to "{h} e njëzet", 25 to "{h} e njëzet e pesë", 30 to "{h} e gjysmë", 35 to "{next_h} pa njëzet e pesë", 40 to "{next_h} pa njëzet", 45 to "{next_h} pa një çerek", 50 to "{next_h} pa dhjetë", 55 to "{next_h} pa pesë"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2911,7 +2911,7 @@ public object Locales {
             hours = listOf("дванаест", "један", "два", "три", "четири", "пет", "шест", "седам", "осам", "девет", "десет", "једанаест"),
             midnight = "поноћ",
             noon = "подне",
-            patterns = mapOf(0 to "{h} часа", 5 to "пет po {h}", 10 to "десет po {h}", 15 to "петнаест po {h}", 20 to "двадесет po {h}", 25 to "двадесет пет po {h}", 30 to "тридесет po {h}", 35 to "двадесет пет do {next_h}", 40 to "двадесет do {next_h}", 45 to "петнаест do {next_h}", 50 to "десет do {next_h}", 55 to "пет do {next_h}"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} и пет", 10 to "{h} и десет", 15 to "{h} и петнаест", 20 to "{h} и двадесет", 25 to "{h} и двадесет пет", 30 to "пола {next_h}", 35 to "двадесет пет до {next_h}", 40 to "двадесет до {next_h}", 45 to "петнаест до {next_h}", 50 to "десет до {next_h}", 55 to "пет до {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -2930,10 +2930,10 @@ public object Locales {
     private fun buildSs(): TimeLocale = TimeLocale(
         code = "ss",
         clock = ClockConfig(
-            hours = listOf("lishumi nambili", "kunye", "kubili", "kutsatfu", "kune", "kusihlanu", "sitfupha", "sikhombisa", "siphohlongo", "sifisagcina", "lishumi", "lishumi nakunye"),
+            hours = listOf("lelishumi nakubili", "lekucala", "lesibili", "lesitsatfu", "lesine", "lesihlanu", "lesitfupha", "lesikhombisa", "lesiphohlongo", "lemfica", "lelishumi", "lelishumi nakunye"),
             midnight = "phakathi kwebusuku",
             noon = "emini",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "lihora {h}", 5 to "lihora {h} nemizuzu lemihlanu", 10 to "lihora {h} nemizuzu lelishumi", 15 to "lihora {h} nemizuzu lelishumi nesihlanu", 20 to "lihora {h} nemizuzu lemashumi lamabili", 25 to "lihora {h} nemizuzu lemashumi lamabili nesihlanu", 30 to "lihora {h} nenhafu", 35 to "lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu", 40 to "lihora {h} nemizuzu lemashumi lamane", 45 to "lihora {h} nemizuzu lemashumi lamane nesihlanu", 50 to "lihora {h} nemizuzu lemashumi lasihlanu", 55 to "lihora {h} nemizuzu lemashumi lasihlanu nesihlanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2952,10 +2952,10 @@ public object Locales {
     private fun buildSt(): TimeLocale = TimeLocale(
         code = "st",
         clock = ClockConfig(
-            hours = listOf("leshome le metso e mmedi", "e nngwe", "tse pedi", "tse tharo", "tse nne", "tse hlano", "tse tshelela", "tse supileng", "tse robedi", "tse robong", "leshome", "leshome le motso o le mong"),
+            hours = listOf("leshome le metso e mmedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshelela", "bosupa", "borobedi", "borobong", "leshome", "leshome le motso o le mong"),
             midnight = "hara bosiu",
             noon = "motsheare",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "hora ya {h}", 5 to "hora ya {h} le metsotso e mehlano", 10 to "hora ya {h} le metsotso e leshome", 15 to "hora ya {h} le kotara", 20 to "hora ya {h} le metsotso e mashome a mabedi", 25 to "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano", 30 to "hora ya {h} le halofo", 35 to "hora ya {h} le metsotso e mashome a mararo a metso e mehlano", 40 to "hora ya {h} le metsotso e mashome a mane", 45 to "hora ya {h} le metsotso e mashome a mane a metso e mehlano", 50 to "hora ya {h} le metsotso e mashome a mahlano", 55 to "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2977,7 +2977,7 @@ public object Locales {
             hours = listOf("dua welas", "hiji", "dua", "tilu", "opat", "lima", "genep", "tujuh", "dalapan", "salapan", "sapuluh", "sabelas"),
             midnight = "tengah peuting",
             noon = "beurang",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "jam {h}", 5 to "jam {h} leuwih lima menit", 10 to "jam {h} leuwih sapuluh menit", 15 to "jam {h} leuwih saparapat", 20 to "jam {h} leuwih dua puluh menit", 25 to "jam {h} leuwih dua puluh lima menit", 30 to "satengah {next_h}", 35 to "jam {next_h} kurang dua puluh lima menit", 40 to "jam {next_h} kurang dua puluh menit", 45 to "jam {next_h} kurang saparapat", 50 to "jam {next_h} kurang sapuluh menit", 55 to "jam {next_h} kurang lima menit"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2996,10 +2996,10 @@ public object Locales {
     private fun buildSuk(): TimeLocale = TimeLocale(
         code = "suk",
         clock = ClockConfig(
-            hours = listOf("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
+            hours = listOf("sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"),
             midnight = "usiku gati",
             noon = "adhuhuri",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "saa {h}", 5 to "saa {h} na dakika tano", 10 to "saa {h} na dakika kumi", 15 to "saa {h} na robo", 20 to "saa {h} na dakika ishirini", 25 to "saa {h} na dakika ishirini na tano", 30 to "saa {h} na nusu", 35 to "saa {next_h} kasoro dakika ishirini na tano", 40 to "saa {next_h} kasoro dakika ishirini", 45 to "saa {next_h} kasoro robo", 50 to "saa {next_h} kasoro dakika kumi", 55 to "saa {next_h} kasoro dakika tano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3040,10 +3040,10 @@ public object Locales {
     private fun buildSw(): TimeLocale = TimeLocale(
         code = "sw",
         clock = ClockConfig(
-            hours = listOf("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
-            midnight = "usiku wa manane",
-            noon = "adhuhuri",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "tano kupita {h}", 10 to "kumi kupita {h}", 15 to "robo kupita {h}", 20 to "ishirini kupita {h}", 25 to "ishirini na tano kupita {h}", 30 to "nusu kupita {h}", 35 to "ishirini na tano kabla ya {next_h}", 40 to "ishirini kabla ya {next_h}", 45 to "robo kabla ya {next_h}", 50 to "kumi kabla ya {next_h}", 55 to "tano kabla ya {next_h}"),
+            hours = listOf("sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"),
+            midnight = "saa sita usiku",
+            noon = "saa sita mchana",
+            patterns = mapOf(0 to "saa {h}", 5 to "saa {h} na dakika tano", 10 to "saa {h} na dakika kumi", 15 to "saa {h} na robo", 20 to "saa {h} na dakika ishirini", 25 to "saa {h} na dakika ishirini na tano", 30 to "saa {h} na nusu", 35 to "saa {next_h} kasoro dakika ishirini na tano", 40 to "saa {next_h} kasoro dakika ishirini", 45 to "saa {next_h} kasoro robo", 50 to "saa {next_h} kasoro dakika kumi", 55 to "saa {next_h} kasoro dakika tano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3062,10 +3062,10 @@ public object Locales {
     private fun buildTa(): TimeLocale = TimeLocale(
         code = "ta",
         clock = ClockConfig(
-            hours = listOf("பன்னிரண்டு", "ஒன்று", "இரண்டு", "மூன்று", "நான்கு", "ஐந்து", "ஆறு", "ஏழு", "எட்டு", "ஒன்பது", "பத்து", "பதினொன்று"),
+            hours = listOf("பன்னிரண்ட", "ஒன்ற", "இரண்ட", "மூன்ற", "நான்க", "ஐந்த", "ஆற", "ஏழ", "எட்ட", "ஒன்பத", "பத்த", "பதினொன்ற"),
             midnight = "நள்ளிரவு",
             noon = "நண்பகல்",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}ு மணி", 5 to "{h}ு மணி ஐந்து நிமிடம்", 10 to "{h}ு மணி பத்து நிமிடம்", 15 to "{h}ே கால்", 20 to "{h}ு மணி இருபது நிமிடம்", 25 to "{h}ு மணி இருபத்தைந்து நிமிடம்", 30 to "{h}ரை", 35 to "{h}ு மணி முப்பத்தைந்து நிமிடம்", 40 to "{h}ு மணி நாற்பது நிமிடம்", 45 to "{h}ே முக்கால்", 50 to "{h}ு மணி ஐம்பது நிமிடம்", 55 to "{h}ு மணி ஐம்பத்தைந்து நிமிடம்"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3087,7 +3087,7 @@ public object Locales {
             hours = listOf("పన్నెండు", "ఒకటి", "రెండు", "మూడు", "నాలుగు", "ఐదు", "ఆరు", "ఏడు", "ఎనిమిది", "తొమ్మిది", "పది", "పదకొండు"),
             midnight = "అర్ధరాత్రి",
             noon = "మధ్యాహ్నం",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} అయింది", 5 to "{h} దాటి ఐదు నిమిషాలు", 10 to "{h} దాటి పది నిమిషాలు", 15 to "{h}ంపావు", 20 to "{h} దాటి ఇరవై నిమిషాలు", 25 to "{h} దాటి ఇరవై ఐదు నిమిషాలు", 30 to "{h}న్నర", 35 to "{h} దాటి ముప్పై ఐదు నిమిషాలు", 40 to "{next_h} కావడానికి ఇరవై నిమిషాలు", 45 to "పావు తక్కువ {next_h}", 50 to "{next_h} కావడానికి పది నిమిషాలు", 55 to "{next_h} కావడానికి ఐదు నిమిషాలు"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3106,10 +3106,10 @@ public object Locales {
     private fun buildTem(): TimeLocale = TimeLocale(
         code = "tem",
         clock = ClockConfig(
-            hours = listOf("pɛn pu", "kɩrɩŋ", "rɔŋ", "rasar", "rɔŋ-anat", "rɔman", "rɔmata", "rɔmbot", "rɔmɔntat", "rɔmɔntaŋka", "pɛn", "pɛn nɛ kɩrɩŋ"),
+            hours = listOf("awa pɛn nɛ rɔŋ", "awa kɩrɩŋ", "awa rɔŋ", "awa rasar", "awa rɔŋ-anat", "awa rɔman", "awa rɔmata", "awa rɔmbot", "awa rɔmɔntat", "awa rɔmɔntaŋka", "awa pɛn", "awa pɛn nɛ kɩrɩŋ"),
             midnight = "rofɛt anpa",
             noon = "lən",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h}", 5 to "{h} nɛ minit rɔman", 10 to "{h} nɛ minit pɛn", 15 to "{h} nɛ minit pɛn nɛ rɔman", 20 to "{h} nɛ minit kɩgba", 25 to "{h} nɛ minit kɩgba nɛ rɔman", 30 to "{h} a gbankɛ", 35 to "{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman", 40 to "{h} nɛ minit tɔgba rɔŋ", 45 to "{h} nɛ minit tɔgba rɔŋ nɛ rɔman", 50 to "{h} nɛ minit tɔgba rɔŋ nɛ pɛn", 55 to "{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3131,7 +3131,7 @@ public object Locales {
             hours = listOf("sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"),
             midnight = "meiu-kalan",
             noon = "meiu-loron",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "tuku {h}", 5 to "tuku {h} ho minutu lima", 10 to "tuku {h} ho minutu sanulu", 15 to "tuku {h} ho minutu sanulu-resin-lima", 20 to "tuku {h} ho minutu ruanulu", 25 to "tuku {h} ho minutu ruanulu-resin-lima", 30 to "tuku {h} ho balun", 35 to "tuku {h} ho minutu tolunulu-resin-lima", 40 to "tuku {h} ho minutu haatnulu", 45 to "tuku {h} ho minutu haatnulu-resin-lima", 50 to "tuku {h} ho minutu limanulu", 55 to "tuku {h} ho minutu limanulu-resin-lima"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3153,7 +3153,7 @@ public object Locales {
             hours = listOf("дувоздаҳ", "як", "ду", "се", "чор", "панҷ", "шаш", "ҳафт", "ҳашт", "нӯҳ", "даҳ", "ёздаҳ"),
             midnight = "нимишаб",
             noon = "нимирӯз",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "соати {h}", 5 to "соати {h} ва панҷ дақиқа", 10 to "соати {h} ва даҳ дақиқа", 15 to "соати {h} ва понздаҳ дақиқа", 20 to "соати {h} ва бист дақиқа", 25 to "соати {h} ва бисту панҷ дақиқа", 30 to "соати {h} ва ним", 35 to "соати {h} ва сию панҷ дақиқа", 40 to "соати {h} ва чил дақиқа", 45 to "соати {h} ва чилу панҷ дақиқа", 50 to "соати {h} ва панҷоҳ дақиқа", 55 to "соати {h} ва панҷоҳу панҷ дақиқа"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3197,7 +3197,7 @@ public object Locales {
             hours = listOf("ዓሰርተ ክልተ", "ሓደ", "ክልተ", "ሰለስተ", "ኣርባዕተ", "ሓሙሽተ", "ሽድሽተ", "ሸውዓተ", "ሸሞንተ", "ትሽዓተ", "ዓሰርተ", "ዓሰርተ ሓደ"),
             midnight = "ፍርቂ ለይቲ",
             noon = "ቀትሪ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} ሰዓት", 5 to "{h}ን ሓሙሽተን", 10 to "{h}ን ዓሰርተን", 15 to "{h}ን ርብዒን", 20 to "{h}ን ዕስራን", 25 to "{h}ን ዕስራን ሓሙሽተን", 30 to "{h}ን ፈረቓን", 35 to "{h}ን ሰላሳን ሓሙሽተን", 40 to "ዕስራ ጎደል {next_h}", 45 to "ርብዒ ጎደል {next_h}", 50 to "ዓሰርተ ጎደል {next_h}", 55 to "ሓሙሽተ ጎደል {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3219,7 +3219,7 @@ public object Locales {
             hours = listOf("ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante"),
             midnight = "nəs-leyla",
             noon = "qayḥ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "saʿa {h}", 5 to "saʿa {h} we ḥamməste", 10 to "saʿa {h} we ʿasərte", 15 to "saʿa {h} we ʿasərte we ḥamməste", 20 to "saʿa {h} we ʿəsra", 25 to "saʿa {h} we ʿəsra we ḥamməste", 30 to "saʿa {h} we nəs", 35 to "saʿa {h} we salasa we ḥamməste", 40 to "saʿa {h} we arbaʿa", 45 to "saʿa {h} we arbaʿa we ḥamməste", 50 to "saʿa {h} we ḥamsa", 55 to "saʿa {h} we ḥamsa we ḥamməste"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3241,7 +3241,7 @@ public object Locales {
             hours = listOf("on iki", "bir", "iki", "üç", "dört", "bäş", "alty", "ýedi", "sekiz", "dokuz", "on", "on bir"),
             midnight = "ýary gije",
             noon = "günorta",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "sagat {h}", 5 to "sagat {h} bäş minut", 10 to "sagat {h} on minut", 15 to "sagat {h} on bäş minut", 20 to "sagat {h} ýigrimi minut", 25 to "sagat {h} ýigrimi bäş minut", 30 to "sagat {h} ýarym", 35 to "sagat {h} otuz bäş minut", 40 to "sagat {h} kyrk minut", 45 to "sagat {h} kyrk bäş minut", 50 to "sagat {h} elli minut", 55 to "sagat {h} elli bäş minut"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3260,10 +3260,10 @@ public object Locales {
     private fun buildTn(): TimeLocale = TimeLocale(
         code = "tn",
         clock = ClockConfig(
-            hours = listOf("lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"),
+            hours = listOf("ya lesome le bobedi", "ya ntlha", "ya bobedi", "ya boraro", "ya bone", "ya botlhano", "ya borataro", "ya bosupa", "ya borobedi", "ya borobongwe", "ya lesome", "ya lesome le bongwe"),
             midnight = "bosigo jwa magareng",
             noon = "motshegare",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ura {h}", 5 to "ura {h} le metsotso e metlhano", 10 to "ura {h} le metsotso e le lesome", 15 to "ura {h} le kotara", 20 to "ura {h} le metsotso e le masome a mabedi", 25 to "ura {h} le metsotso e le masome a mabedi le botlhano", 30 to "ura {h} le halofo", 35 to "ura {h} le metsotso e le masome a mararo le botlhano", 40 to "ura {h} le metsotso e le masome a mane", 45 to "ura {h} le metsotso e le masome a mane le botlhano", 50 to "ura {h} le metsotso e le masome a matlhano", 55 to "ura {h} le metsotso e le masome a matlhano le botlhano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3285,7 +3285,7 @@ public object Locales {
             hours = listOf("twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"),
             midnight = "biknait",
             noon = "belo",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} kilok", 5 to "faiv minit pas {h}", 10 to "ten minit pas {h}", 15 to "kwata pas {h}", 20 to "twenti minit pas {h}", 25 to "twenti faiv minit pas {h}", 30 to "hap pas {h}", 35 to "teti faiv minit pas {h}", 40 to "foti minit pas {h}", 45 to "foti faiv minit pas {h}", 50 to "fifti minit pas {h}", 55 to "fifti faiv minit pas {h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3307,7 +3307,7 @@ public object Locales {
             hours = listOf("on iki", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on", "on bir"),
             midnight = "gece yarısı",
             noon = "öğle",
-            patterns = mapOf(0 to "saat {h}", 5 to "{h}'i beş geçiyor", 10 to "{h}'i on geçiyor", 15 to "{h}'i çeyrek geçiyor", 20 to "{h}'i yirmi geçiyor", 25 to "{h}'i yirmi beş geçiyor", 30 to "{h} buçuk", 35 to "{next_h}'e yirmi beş var", 40 to "{next_h}'e yirmi var", 45 to "{next_h}'e çeyrek var", 50 to "{next_h}'e on var", 55 to "{next_h}'e beş var"),
+            patterns = mapOf(0 to "saat {h}", 5 to "saat {h} sıfır beş", 10 to "saat {h} on", 15 to "saat {h} on beş", 20 to "saat {h} yirmi", 25 to "saat {h} yirmi beş", 30 to "saat {h} buçuk", 35 to "saat {h} otuz beş", 40 to "saat {h} kırk", 45 to "saat {h} kırk beş", 50 to "saat {h} elli", 55 to "saat {h} elli beş"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3326,10 +3326,10 @@ public object Locales {
     private fun buildTs(): TimeLocale = TimeLocale(
         code = "ts",
         clock = ClockConfig(
-            hours = listOf("khume mbiri", "yin'we", "mbirhi", "nharhu", "mune", "ntlhanu", "tsevu", "nkombo", "nhungu", "kaye", "khume", "khume yin'we"),
+            hours = listOf("ya khume mbirhi", "yo sungula", "ya vumbirhi", "ya vunharhu", "ya vumune", "ya vuntlhanu", "ya vutsevu", "ya vunkombo", "ya vunhungu", "ya vukaye", "ya khume", "ya khume n'we"),
             midnight = "vusiku exikarhi",
             noon = "nhlekanhi",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "awara {h}", 5 to "awara {h} na timinete ta ntlhanu", 10 to "awara {h} na timinete ta khume", 15 to "awara {h} na kotara", 20 to "awara {h} na timinete ta makume mambirhi", 25 to "awara {h} na timinete ta makume mambirhi na ntlhanu", 30 to "awara {h} na hafu", 35 to "awara {h} na timinete ta makume manharhu na ntlhanu", 40 to "awara {h} na timinete ta makume mune", 45 to "awara {h} na timinete ta makume mune na ntlhanu", 50 to "awara {h} na timinete ta makume ntlhanu", 55 to "awara {h} na timinete ta makume ntlhanu na ntlhanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3351,7 +3351,7 @@ public object Locales {
             hours = listOf("khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza"),
             midnight = "pakati pa usiku",
             noon = "muhanya",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} koloko", 5 to "{h} koloko na maminiti vinkhondi", 10 to "{h} koloko na maminiti khumi", 15 to "{h} koloko na maminiti khumi na vinkhondi", 20 to "{h} koloko na maminiti makhumi ghaŵiri", 25 to "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi", 30 to "{h} koloko na hafu", 35 to "{h} koloko na maminiti makhumi ghatatu na vinkhondi", 40 to "{h} koloko na maminiti makhumi ghanayi", 45 to "{h} koloko na maminiti makhumi ghanayi na vinkhondi", 50 to "{h} koloko na maminiti makhumi ghankhondi", 55 to "{h} koloko na maminiti makhumi ghankhondi na vinkhondi"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3370,10 +3370,10 @@ public object Locales {
     private fun buildTzm(): TimeLocale = TimeLocale(
         code = "tzm",
         clock = ClockConfig(
-            hours = listOf("12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"),
-            midnight = "ⵏⵚ ⵏ ⵉⴹ",
-            noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            hours = listOf("tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"),
+            midnight = "nṣ n iḍ",
+            noon = "tizwarnin",
+            patterns = mapOf(0 to "{h}", 5 to "{h} d smmus tusdiqin", 10 to "{h} d mraw tusdiqin", 15 to "{h} d rrbɛ", 20 to "{h} d ɛcrin n tusdiqt", 25 to "{h} d xmsa u ɛcrin n tusdiqt", 30 to "{h} d uzgen", 35 to "{h} d xmsa u tlatin n tusdiqt", 40 to "{h} d ṛbɛin n tusdiqt", 45 to "{h} d xmsa u ṛbɛin n tusdiqt", 50 to "{h} d xmsin n tusdiqt", 55 to "{h} d xmsa u xmsin n tusdiqt"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3395,7 +3395,7 @@ public object Locales {
             hours = listOf("дванадцята", "перша", "друга", "третя", "четверта", "п'ята", "шоста", "сьома", "восьма", "дев'ята", "десята", "одинадцята"),
             midnight = "опівніч",
             noon = "полудень",
-            patterns = mapOf(0 to "{h} часа", 5 to "п'ять po {h}", 10 to "десять po {h}", 15 to "п'ятнадцять po {h}", 20 to "двадцять po {h}", 25 to "двадцять п'ять po {h}", 30 to "тридцять po {h}", 35 to "двадцять п'ять do {next_h}", 40 to "двадцять do {next_h}", 45 to "п'ятнадцять do {next_h}", 50 to "десять do {next_h}", 55 to "п'ять do {next_h}"),
+            patterns = mapOf(0 to "{h} година", 5 to "{h} нуль п'ять", 10 to "{h} десять", 15 to "{h} п'ятнадцять", 20 to "{h} двадцять", 25 to "{h} двадцять п'ять", 30 to "{h} тридцять", 35 to "за двадцять п'ять хвилин {next_h}", 40 to "за двадцять хвилин {next_h}", 45 to "за чверть {next_h}", 50 to "за десять хвилин {next_h}", 55 to "за п'ять хвилин {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3414,10 +3414,10 @@ public object Locales {
     private fun buildUmb(): TimeLocale = TimeLocale(
         code = "umb",
         clock = ClockConfig(
-            hours = listOf("olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi"),
+            hours = listOf("ekwi la vali", "mosi", "vali", "tatu", "kwãla", "tãlo", "epandu", "epanduvali", "ecelãla", "ecea", "ekwi", "ekwi la mosi"),
             midnight = "ocitapi",
             noon = "ocivali",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "ohola {h}", 5 to "ohola {h} la tãlo", 10 to "ohola {h} la ekwi", 15 to "ohola {h} la ekwi la tãlo", 20 to "ohola {h} la akũi avali", 25 to "ohola {h} la akũi avali la tãlo", 30 to "ohola {h} la oñali", 35 to "ohola {h} la akũi atatu la tãlo", 40 to "ohola {h} la akũi akwãla", 45 to "ohola {h} la akũi akwãla la tãlo", 50 to "ohola {h} la akũi atãlo", 55 to "ohola {h} la akũi atãlo la tãlo"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3439,7 +3439,7 @@ public object Locales {
             hours = listOf("بارہ", "ایک", "دو", "تین", "چار", "پانچ", "چھ", "سات", "آٹھ", "نو", "دس", "گیارہ"),
             midnight = "آدھی رات",
             noon = "دوپہر",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "{h} بجے", 5 to "{h} بج کر پانچ منٹ", 10 to "{h} بج کر دس منٹ", 15 to "سوا {h} بجے", 20 to "{h} بج کر بیس منٹ", 25 to "{h} بج کر پچیس منٹ", 30 to "{h} بج کر تیس منٹ", 35 to "{h} بج کر پینتیس منٹ", 40 to "{next_h} بجنے میں بیس منٹ", 45 to "پونے {next_h} بجے", 50 to "{next_h} بجنے میں دس منٹ", 55 to "{next_h} بجنے میں پانچ منٹ"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3461,7 +3461,7 @@ public object Locales {
             hours = listOf("o'n ikki", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz", "o'n", "o'n bir"),
             midnight = "yarim tun",
             noon = "tush",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "besh past {h}", 10 to "o'n past {h}", 15 to "o'n besh past {h}", 20 to "yigirma past {h}", 25 to "yigirma besh past {h}", 30 to "o'ttiz past {h}", 35 to "yigirma besh to {next_h}", 40 to "yigirma to {next_h}", 45 to "o'n besh to {next_h}", 50 to "o'n to {next_h}", 55 to "besh to {next_h}"),
+            patterns = mapOf(0 to "soat {h}", 5 to "soat {h} nol besh", 10 to "soat {h} o'n", 15 to "soat {h} o'n besh", 20 to "soat {h} yigirma", 25 to "soat {h} yigirma besh", 30 to "soat {h} yarim", 35 to "soat {h} o'ttiz besh", 40 to "soat {h} qirq", 45 to "soat {h} qirq besh", 50 to "soat {h} ellik", 55 to "soat {h} ellik besh"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3480,10 +3480,10 @@ public object Locales {
     private fun buildVe(): TimeLocale = TimeLocale(
         code = "ve",
         clock = ClockConfig(
-            hours = listOf("fumimbili", "thihi", "mbili", "raru", "ina", "thanu", "rathi", "sumbe", "malo", "tahe", "fumi", "fuminthihi"),
+            hours = listOf("ya fumi na mbili", "ya u thoma", "ya vhuvhili", "ya vhuraru", "ya vhuṋa", "ya vhuṱanu", "ya vhurathi", "ya vhusumbe", "ya vhumalo", "ya vhuṱahe", "ya fumi", "ya fumi na nthihi"),
             midnight = "vhukati ha vhusiku",
             noon = "vhukati ha masiari",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "awara {h}", 5 to "awara {h} na ṱhanu", 10 to "awara {h} na fumi", 15 to "awara {h} na kotara", 20 to "awara {h} na mahumi mavhili", 25 to "awara {h} na mahumi mavhili na ṱhanu", 30 to "awara {h} na hafu", 35 to "awara {h} na mahumi mararu na ṱhanu", 40 to "awara {h} na mahumi maṋa", 45 to "awara {h} na mahumi maṋa na ṱhanu", 50 to "awara {h} na mahumi maṱanu", 55 to "awara {h} na mahumi maṱanu na ṱhanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3504,8 +3504,8 @@ public object Locales {
         clock = ClockConfig(
             hours = listOf("mười hai", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "mười một"),
             midnight = "nửa đêm",
-            noon = "trưa",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "năm qua {h}", 10 to "mười qua {h}", 15 to "mười lăm qua {h}", 20 to "hai mươi qua {h}", 25 to "hai mươi lăm qua {h}", 30 to "ba mươi qua {h}", 35 to "hai mươi lăm trước {next_h}", 40 to "hai mươi trước {next_h}", 45 to "mười lăm trước {next_h}", 50 to "mười trước {next_h}", 55 to "năm trước {next_h}"),
+            noon = "mười hai giờ trưa",
+            patterns = mapOf(0 to "{h} giờ", 5 to "{h} giờ năm phút", 10 to "{h} giờ mười phút", 15 to "{h} giờ mười lăm phút", 20 to "{h} giờ hai mươi phút", 25 to "{h} giờ hai mươi lăm phút", 30 to "{h} giờ rưỡi", 35 to "{next_h} giờ kém hai mươi lăm", 40 to "{next_h} giờ kém hai mươi", 45 to "{next_h} giờ kém mười lăm", 50 to "{next_h} giờ kém mười", 55 to "{next_h} giờ kém năm"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3527,7 +3527,7 @@ public object Locales {
             hours = listOf("khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa"),
             midnight = "usiku wopakhala",
             noon = "muttana",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "hora {h}", 5 to "hora {h} na thanu", 10 to "hora {h} na khumi", 15 to "hora {h} na khumi na thanu", 20 to "hora {h} na makhumi mapili", 25 to "hora {h} na makhumi mapili na thanu", 30 to "hora {h} na mettenhe", 35 to "hora {h} na makhumi mararu na thanu", 40 to "hora {h} na makhumi mancheche", 45 to "hora {h} na makhumi mancheche na thanu", 50 to "hora {h} na makhumi mathanu", 55 to "hora {h} na makhumi mathanu na thanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3546,10 +3546,10 @@ public object Locales {
     private fun buildWo(): TimeLocale = TimeLocale(
         code = "wo",
         clock = ClockConfig(
-            hours = listOf("fukki ñaar", "benn", "ñaar", "ñett", "ñeent", "juróom", "juróom-benn", "juróom-ñaar", "juróom-ñett", "juróom-ñeent", "fukk", "fukki benn"),
-            midnight = "bu guddi",
-            noon = "ci àttaya",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            hours = listOf("fukk ak ñaari waxtu", "benn waxtu", "ñaari waxtu", "ñetti waxtu", "ñeenti waxtu", "juróomi waxtu", "juróom-benni waxtu", "juróom-ñaari waxtu", "juróom-ñetti waxtu", "juróom-ñeenti waxtu", "fukki waxtu", "fukk ak benn waxtu"),
+            midnight = "digg-guddi",
+            noon = "digg-bëccëg",
+            patterns = mapOf(0 to "{h}", 5 to "{h} ak juróomi simili", 10 to "{h} ak fukki simili", 15 to "{h} ak fukk ak juróomi simili", 20 to "{h} ak ñaar-fukki simili", 25 to "{h} ak ñaar-fukk ak juróomi simili", 30 to "{h} ak genn-wàll", 35 to "{next_h} des na ñaar-fukk ak juróomi simili", 40 to "{next_h} des na ñaar-fukki simili", 45 to "{next_h} des na fukk ak juróomi simili", 50 to "{next_h} des na fukki simili", 55 to "{next_h} des na juróomi simili"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3568,10 +3568,10 @@ public object Locales {
     private fun buildXh(): TimeLocale = TimeLocale(
         code = "xh",
         clock = ClockConfig(
-            hours = listOf("ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye"),
+            hours = listOf("yeshumi elinesibini", "yokuqala", "yesibini", "yesithathu", "yesine", "yesihlanu", "yesithandathu", "yesixhenxe", "yesibhozo", "yethoba", "yeshumi", "yeshumi elinanye"),
             midnight = "ezinzulwini zobusuku",
             noon = "emini",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "intsimbi {h}", 5 to "imizuzu emihlanu emva kwentsimbi {h}", 10 to "imizuzu elishumi emva kwentsimbi {h}", 15 to "ikota emva kwentsimbi {h}", 20 to "imizuzu engamashumi amabini emva kwentsimbi {h}", 25 to "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}", 30 to "isiqingatha emva kwentsimbi {h}", 35 to "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}", 40 to "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}", 45 to "ikota ukuya kwintsimbi {next_h}", 50 to "imizuzu elishumi ukuya kwintsimbi {next_h}", 55 to "imizuzu emihlanu ukuya kwintsimbi {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3593,7 +3593,7 @@ public object Locales {
             hours = listOf("likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo"),
             midnight = "pakati pa usiku",
             noon = "pakati pa lisiku",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "saa {h}", 5 to "saa {h} na nsano", 10 to "saa {h} na likumi", 15 to "saa {h} na likumi na nsano", 20 to "saa {h} na makumi gaŵili", 25 to "saa {h} na makumi gaŵili na nsano", 30 to "saa {h} na nusu", 35 to "saa {h} na makumi gatatu na nsano", 40 to "saa {h} na makumi ncece", 45 to "saa {h} na makumi ncece na nsano", 50 to "saa {h} na makumi nsano", 55 to "saa {h} na makumi nsano na nsano"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3613,9 +3613,9 @@ public object Locales {
         code = "yo",
         clock = ClockConfig(
             hours = listOf("méjìlá", "kan", "méjì", "mẹ́ta", "mẹ́rin", "márùn-ún", "mẹ́fà", "méje", "mẹ́jọ", "mẹ́sàn-án", "mẹ́wàá", "mọ́kànlá"),
-            midnight = "àárọ̀ òru",
-            noon = "ọ̀sán",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            midnight = "ọ̀gànjọ́ òru",
+            noon = "ọ̀sán gangan",
+            patterns = mapOf(0 to "aago {h}", 5 to "aago {h} kọjá ìṣẹ́jú márùn-ún", 10 to "aago {h} kọjá ìṣẹ́jú mẹ́wàá", 15 to "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún", 20 to "aago {h} kọjá ogún ìṣẹ́jú", 25 to "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n", 30 to "aago {h} àbọ̀", 35 to "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n", 40 to "aago {next_h} kù ogún ìṣẹ́jú", 45 to "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún", 50 to "aago {next_h} kù ìṣẹ́jú mẹ́wàá", 55 to "aago {next_h} kù ìṣẹ́jú márùn-ún"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3634,10 +3634,10 @@ public object Locales {
     private fun buildYue(): TimeLocale = TimeLocale(
         code = "yue",
         clock = ClockConfig(
-            hours = listOf("十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
+            hours = listOf("十二", "一", "兩", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
             midnight = "午夜",
             noon = "正午",
-            patterns = mapOf(0 to "{h}點整", 5 to "{h}點零五分", 10 to "{h}點十分", 15 to "{h}點十五分", 20 to "{h}點二十分", 25 to "{h}點二十五分", 30 to "{h}點半", 35 to "{h}點三十五分", 40 to "{h}點四十分", 45 to "{h}點四十五分", 50 to "{h}點五十分", 55 to "{h}點五十五分"),
+            patterns = mapOf(0 to "{h}點正", 5 to "{h}點一個字", 10 to "{h}點兩個字", 15 to "{h}點三個字", 20 to "{h}點四個字", 25 to "{h}點五個字", 30 to "{h}點半", 35 to "{h}點七個字", 40 to "{h}點八個字", 45 to "{h}點九個字", 50 to "{h}點十個字", 55 to "{h}點十一個字"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3656,10 +3656,10 @@ public object Locales {
     private fun buildZdj(): TimeLocale = TimeLocale(
         code = "zdj",
         clock = ClockConfig(
-            hours = listOf("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
+            hours = listOf("kumi na mbili", "moja", "mbili", "ndraru", "nne", "ntsanu", "sita", "saba", "nane", "shenda", "kumi", "kumi na moja"),
             midnight = "usiku wa manane",
             noon = "adhuhuri",
-            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+            patterns = mapOf(0 to "saa {h}", 5 to "saa {h} na ntsanu", 10 to "saa {h} na kumi", 15 to "saa {h} na kumi na ntsanu", 20 to "saa {h} na shirini", 25 to "saa {h} na shirini na ntsanu", 30 to "saa {h} na nusu", 35 to "saa {h} na thalathini na ntsanu", 40 to "saa {h} na arubaini", 45 to "saa {h} na arubaini na ntsanu", 50 to "saa {h} na hamsini", 55 to "saa {h} na hamsini na ntsanu"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -3678,10 +3678,10 @@ public object Locales {
     private fun buildZh(): TimeLocale = TimeLocale(
         code = "zh",
         clock = ClockConfig(
-            hours = listOf("十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
+            hours = listOf("十二", "一", "两", "三", "四", "五", "六", "七", "八", "九", "十", "十一"),
             midnight = "午夜",
             noon = "正午",
-            patterns = mapOf(0 to "{h}点整", 5 to "{h}点五分", 10 to "{h}点十分", 15 to "{h}点十五分", 20 to "{h}点二十分", 25 to "{h}点二十五分", 30 to "{h}点半", 35 to "{h}点三十五分", 40 to "{h}点四十分", 45 to "{h}点四十五分", 50 to "{h}点五十分", 55 to "{h}点五十五分"),
+            patterns = mapOf(0 to "{h}点整", 5 to "{h}点零五分", 10 to "{h}点十分", 15 to "{h}点十五分", 20 to "{h}点二十分", 25 to "{h}点二十五分", 30 to "{h}点半", 35 to "{h}点三十五分", 40 to "{h}点四十分", 45 to "{h}点四十五分", 50 to "{h}点五十分", 55 to "{h}点五十五分"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
@@ -3700,10 +3700,10 @@ public object Locales {
     private fun buildZu(): TimeLocale = TimeLocale(
         code = "zu",
         clock = ClockConfig(
-            hours = listOf("ishumi nambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isishiyagalombili", "isishiyagalolunye", "ishumi", "ishumi nanye"),
+            hours = listOf("leshumi nambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesishiyagalombili", "lesishiyagalolunye", "leshumi", "leshumi nanye"),
             midnight = "phakathi kwamabili",
             noon = "emini",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "emva kwemizuzu emihlanu ngo-{h}", 10 to "emva kwemizuzu eyishumi ngo-{h}", 15 to "ikota edlule ngo-{h}", 20 to "emva kwemizuzu engamashumi amabili ngo-{h}", 25 to "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}", 30 to "uhhafu edlule ngo-{h}", 35 to "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}", 40 to "imizuzu engamashumi amabili ngaphambi kuka-{next_h}", 45 to "ikota ngaphambi kuka-{next_h}", 50 to "imizuzu eyishumi ngaphambi kuka-{next_h}", 55 to "imizuzu emihlanu ngaphambi kuka-{next_h}"),
+            patterns = mapOf(0 to "ihora {h}", 5 to "imizuzu emihlanu emva kwehora {h}", 10 to "imizuzu eyishumi emva kwehora {h}", 15 to "ikota emva kwehora {h}", 20 to "imizuzu engamashumi amabili emva kwehora {h}", 25 to "imizuzu engamashumi amabili nanhlanu emva kwehora {h}", 30 to "uhhafu emva kwehora {h}", 35 to "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}", 40 to "imizuzu engamashumi amabili ngaphambi kwehora {next_h}", 45 to "ikota ngaphambi kwehora {next_h}", 50 to "imizuzu eyishumi ngaphambi kwehora {next_h}", 55 to "imizuzu emihlanu ngaphambi kwehora {next_h}"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),

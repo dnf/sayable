@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_mfe = {
     "mfe",
     {
-        { "douz", "enn", "de", "trwa", "kat", "senk", "sis", "set", "wit", "nef", "dis", "onz" },
+        { "douzer", "enn er", "dezer", "trwazer", "katrer", "senker", "sizer", "seter", "witer", "never", "dizer", "onzer" },
         "minwi",
         "midi",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} senk", "{h} dis", "{h} ekar", "{h} vin", "{h} vennsenk", "{h} edmi", "{next_h} mwin vennsenk", "{next_h} mwin vin", "{next_h} mwin kar", "{next_h} mwin dis", "{next_h} mwin senk" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -16,7 +16,7 @@
 (defparameter *locale-ml*
   (make-duration-locale
    :code "ml"
-   :plural (lambda (n) (if (<= n 1) :one :other))
+   :plural (lambda (n) (if (= n 1) :one :other))
    :units (list (cons :second '((:one . "{n} സെക്കൻഡ്") (:other . "{n} സെക്കൻഡുകൾ")))
                (cons :minute '((:one . "{n} മിനിറ്റ്") (:other . "{n} മിനിറ്റുകൾ")))
                (cons :hour '((:one . "{n} മണിക്കൂർ") (:other . "{n} മണിക്കൂറുകൾ")))
@@ -24,7 +24,7 @@
                (cons :week '((:one . "{n} ആഴ്ച") (:other . "{n} ആഴ്ചകൾ")))
                (cons :month '((:one . "{n} മാസം") (:other . "{n} മാസങ്ങൾ")))
                (cons :year '((:one . "{n} വർഷം") (:other . "{n} വർഷങ്ങൾ"))))
-   :half "{0} ര"
+   :half "{n}½"
    :delimiter ", "
    :just-now "ഇപ്പോൾ"
    :ago "{0} മുമ്പ്"

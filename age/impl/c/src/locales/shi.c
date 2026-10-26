@@ -21,20 +21,20 @@ const SaLocale sa_locale_shi = {
     "shi",
     plural_shi,
     {
-        { NULL, { NULL, "{n} ass", NULL, "{n} ussan", NULL, "{n} ass" } },
-        { NULL, { NULL, "{n} imalass", NULL, "{n} imalassn", NULL, "{n} imalass" } },
-        { NULL, { NULL, "{n} ayyur", NULL, "{n} ayyurn", NULL, "{n} ayyur" } },
-        { NULL, { NULL, "{n} aseggas", NULL, "{n} iseggasen", NULL, "{n} aseggas" } }
+        { NULL, { NULL, "{n} ⴰⵙⵙ", NULL, "{n} ⵓⵙⵙⴰⵏ", NULL, "{n} ⴰⵙⵙ" } },
+        { NULL, { NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } },
+        { NULL, { NULL, "{n} ⴰⵢⵢⵓⵔ", NULL, "{n} ⴰⵢⵢⵓⵔⵏ", NULL, "{n} ⴰⵢⵢⵓⵔ" } },
+        { NULL, { NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ", NULL, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } }
     },
-    "{0} d uzgen", ", ", "Iɣ d illul",
+    "{0} ⴷ ⵓⵣⴳⵏ", ", ", "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
     {
-        { "Iɣ d illul", "" },
-        { "Agellid", "" },
-        { "Aḥenjir", "Taḥenjirt" },
-        { "Afrux", "Tafruxṭ" },
-        { "Aɛrim", "Taɛrimt" },
-        { "Argaz", "Tamṭṭuṭ" }
+        { "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ", "" },
+        { "ⵍⵍⵓⴼⴰⵏ", "" },
+        { "ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ" },
+        { "ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ" },
+        { "ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ" },
+        { "ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ" }
     },
-    true, { true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yr", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
+    true, { true, { NULL, { NULL, "{n} ⴰⵙⵙ", NULL, "{n} ⵓⵙⵙⴰⵏ", NULL, "{n} ⴰⵙⵙ" } }, true, { NULL, { NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } }, true, { NULL, { NULL, "{n} ⴰⵢⵢⵓⵔ", NULL, "{n} ⴰⵢⵢⵓⵔⵏ", NULL, "{n} ⴰⵢⵢⵓⵔ" } }, true, { NULL, { NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ", NULL, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} ⴰⵙⵙ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⵉⵎⵍ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⴰⵢⵔ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⴰⵙⴳ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

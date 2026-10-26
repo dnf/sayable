@@ -15,18 +15,18 @@ st_hours('sk', ['dvanásť', 'jedna', 'dve', 'tri', 'štyri', 'päť', 'šesť',
 st_midnight('sk', 'polnoc').
 st_noon('sk', 'poludnie').
 
-st_pattern('sk', 0, '{h} hodín').
-st_pattern('sk', 5, 'päť po {h}').
-st_pattern('sk', 10, 'desať po {h}').
-st_pattern('sk', 15, 'štvrť po {h}').
-st_pattern('sk', 20, 'dvadsať po {h}').
-st_pattern('sk', 25, 'dvadsať päť po {h}').
-st_pattern('sk', 30, 'pol po {h}').
-st_pattern('sk', 35, 'dvadsať päť do {next_h}').
-st_pattern('sk', 40, 'dvadsať do {next_h}').
-st_pattern('sk', 45, 'štvrť do {next_h}').
-st_pattern('sk', 50, 'desať do {next_h}').
-st_pattern('sk', 55, 'päť do {next_h}').
+st_pattern('sk', 0, '{h}').
+st_pattern('sk', 5, '{h} nula päť').
+st_pattern('sk', 10, '{h} desať').
+st_pattern('sk', 15, '{h} pätnásť').
+st_pattern('sk', 20, '{h} dvadsať').
+st_pattern('sk', 25, '{h} dvadsaťpäť').
+st_pattern('sk', 30, '{h} tridsať').
+st_pattern('sk', 35, 'o dvadsaťpäť minút {next_h}').
+st_pattern('sk', 40, 'o dvadsať minút {next_h}').
+st_pattern('sk', 45, 'o pätnásť minút {next_h}').
+st_pattern('sk', 50, 'o desať minút {next_h}').
+st_pattern('sk', 55, 'o päť minút {next_h}').
 
 short_st_use24h('sk', true).
 short_st_format('sk', '{h}:{mm}').

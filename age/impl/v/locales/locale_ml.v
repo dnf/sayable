@@ -13,7 +13,7 @@
 module locales
 
 fn plural_ml(n int) PluralCategory {
-	if n == 0 || n == 1 {
+	if n == 1 {
 		return .one
 	}
 	return .other
@@ -26,7 +26,7 @@ pub const locale_ml = AgeLocale{
 	week: plural_unit({PluralCategory.one: '{n} ആഴ്ച', PluralCategory.other: '{n} ആഴ്ചകൾ'})
 	month: plural_unit({PluralCategory.one: '{n} മാസം', PluralCategory.other: '{n} മാസങ്ങൾ'})
 	year: plural_unit({PluralCategory.one: '{n} വയസ്സ്', PluralCategory.other: '{n} വയസ്സ്'})
-	half: '{0} ര'
+	half: '{n}½'
 	delimiter: ', '
 	just_born: 'നവജാതശിശു'
 	newborn: stage_neutral('നവജാതശിശു')

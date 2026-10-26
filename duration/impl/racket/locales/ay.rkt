@@ -21,18 +21,18 @@
   (duration-locale
    "ay"
    (lambda (n) "other")
-   (hash "second" (hash "type" "simple" "form" "sikundu {n}")
-         "minute" (hash "type" "simple" "form" "minutu {n}")
-         "hour" (hash "type" "simple" "form" "ura {n}")
-         "day" (hash "type" "simple" "form" "uru {n}")
-         "week" (hash "type" "simple" "form" "simana {n}")
-         "month" (hash "type" "simple" "form" "phaxsi {n}")
-         "year" (hash "type" "simple" "form" "mara {n}"))
+   (hash "second" (hash "type" "simple" "form" "{n} sikundu")
+         "minute" (hash "type" "simple" "form" "{n} minutu")
+         "hour" (hash "type" "simple" "form" "{n} ura")
+         "day" (hash "type" "simple" "form" "{n} uru")
+         "week" (hash "type" "simple" "form" "{n} simana")
+         "month" (hash "type" "simple" "form" "{n} phaxsi")
+         "year" (hash "type" "simple" "form" "{n} mara"))
    "{0} chika"
    ", "
    "jichha"
    "{0} nayraqata"
    "{0} jutirïn"
-   (duration-compactness-override (hash "type" "simple" "form" "sik. {n}") (hash "type" "simple" "form" "min. {n}") (hash "type" "simple" "form" "ur. {n}") (hash "type" "simple" "form" "{n} ur.") (hash "type" "simple" "form" "{n} sim.") (hash "type" "simple" "form" "{n} phx.") (hash "type" "simple" "form" "{n} mr.") #f #f "{0} nayraqata" "{0} jutirïn")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" "{0} nayraqata" "{0} jutirïn")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} sik.") (hash "type" "simple" "form" "{n} min.") (hash "type" "simple" "form" "{n} ura") (hash "type" "simple" "form" "{n} ur.") (hash "type" "simple" "form" "{n} sim.") (hash "type" "simple" "form" "{n} phx.") (hash "type" "simple" "form" "{n} mr.") #f #f "{0} nayraqata" "{0} jutirïn")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} nayraqata" "{0} jutirïn")
   ))

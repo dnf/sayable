@@ -22,9 +22,9 @@ fn plural_sw(n int) PluralCategory {
 pub const locale_sw = DurationLocale{
 	code: 'sw'
 	plural: plural_sw
-	second: simple_unit('{n} sekunde')
-	minute: simple_unit('{n} dakika')
-	hour: simple_unit('{n} saa')
+	second: simple_unit('sekunde {n}')
+	minute: simple_unit('dakika {n}')
+	hour: simple_unit('saa {n}')
 	day: plural_unit({PluralCategory.one: 'siku {n}', PluralCategory.other: 'siku {n}'})
 	week: plural_unit({PluralCategory.one: 'wiki {n}', PluralCategory.other: 'wiki {n}'})
 	month: plural_unit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miezi {n}'})

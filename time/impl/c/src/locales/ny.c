@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ny = {
     "ny",
     {
-        { "khumi ndi ziwiri", "imodzi", "ziwiri", "zitatu", "zinayi", "zisanu", "zisanu ndi chimodzi", "zisanu ndi ziwiri", "zisanu ndi zitatu", "zisanu ndi zinayi", "khumi", "khumi ndi chimodzi" },
+        { "lakhumi ndi chiwiri", "loyamba", "lachiwiri", "lachitatu", "lachinayi", "lachisanu", "lachisanu ndi chimodzi", "lachisanu ndi chiwiri", "lachisanu ndi chitatu", "lachisanu ndi chinayi", "lakhumi", "lakhumi ndi chimodzi" },
         "pakati pausiku",
         "usana",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ola {h}", "ola {h} ndi mphindi zisanu", "ola {h} ndi mphindi khumi", "ola {h} ndi mphindi khumi ndi zisanu", "ola {h} ndi mphindi makumi awiri", "ola {h} ndi mphindi makumi awiri ndi zisanu", "ola {h} ndi theka", "ola {h} ndi mphindi makumi atatu ndi zisanu", "ola {h} ndi mphindi makumi anayi", "ola {h} ndi mphindi makumi anayi ndi zisanu", "ola {h} ndi mphindi makumi asanu", "ola {h} ndi mphindi makumi asanu ndi zisanu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

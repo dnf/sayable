@@ -19,13 +19,13 @@ locale_vi <- list(
     day = "{n} ngày",
     week = "{n} tuần",
     month = "{n} tháng",
-    year = "{n} tuổi"
+    year = "{n} năm"
   ),
   half = "{0} rưỡi",
   delimiter = ", ",
   just_now = "vừa xong",
   ago = "{0} trước",
-  in_future = "trong {0}",
+  in_future = "{0} nữa",
   short = list(
     units = list(
       second = "{n} giây",
@@ -37,7 +37,7 @@ locale_vi <- list(
       year = "{n} năm"
     ),
     ago = "{0} trước",
-    in_future = "trong {0}"
+    in_future = "{0} nữa"
   ),
   compact = list(
     units = list(
@@ -52,6 +52,6 @@ locale_vi <- list(
     half = "{n}½",
     delimiter = "",
     ago = "{0} trước",
-    in_future = "trong {0}"
+    in_future = "{0} nữa"
   )
 )

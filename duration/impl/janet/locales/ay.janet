@@ -12,18 +12,18 @@
 (def locale
   {:code "ay"
    :plural (fn [_n] :other)
-   :units {:second "sikundu {n}"
-          :minute "minutu {n}"
-          :hour "ura {n}"
-          :day "uru {n}"
-          :week "simana {n}"
-          :month "phaxsi {n}"
-          :year "mara {n}"}
+   :units {:second "{n} sikundu"
+          :minute "{n} minutu"
+          :hour "{n} ura"
+          :day "{n} uru"
+          :week "{n} simana"
+          :month "{n} phaxsi"
+          :year "{n} mara"}
    :half "{0} chika"
    :delimiter ", "
    :just-now "jichha"
    :ago "{0} nayraqata"
    :in-future "{0} jutirïn"
-   :short {:units {:second "sik. {n}" :minute "min. {n}" :hour "ur. {n}" :day "{n} ur." :week "{n} sim." :month "{n} phx." :year "{n} mr."} :ago "{0} nayraqata" :in-future "{0} jutirïn"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter "" :ago "{0} nayraqata" :in-future "{0} jutirïn"}
+   :short {:units {:second "{n} sik." :minute "{n} min." :hour "{n} ura" :day "{n} ur." :week "{n} sim." :month "{n} phx." :year "{n} mr."} :ago "{0} nayraqata" :in-future "{0} jutirïn"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} nayraqata" :in-future "{0} jutirïn"}
 })

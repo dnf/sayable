@@ -212,11 +212,11 @@ let AK: AgeLocale =
                 Infant = Neutral "Akwadaa"
                 Toddler = Neutral "Abofra"
                 Child = Neutral "Abofra"
-                Teenager = Neutral "Abarimaa"
+                Teenager = Gendered("Abarimaa", "Abaayewa")
                 Adult = Neutral "Ɔpanyin"
             }
         ShortOverride = Some {
-            Day = Some (Simple "nna {n}")
+            Day = Some (Plural (Map.ofList [ (One, "da {n}"); (Other, "nna {n}") ]))
             Week = Some (Plural (Map.ofList [ (One, "dapɛn {n}"); (Other, "nnapɛn {n}") ]))
             Month = Some (Plural (Map.ofList [ (One, "bosome {n}"); (Other, "abosome {n}") ]))
             Year = Some (Plural (Map.ofList [ (One, "afe {n}"); (Other, "mfe {n}") ]))
@@ -225,7 +225,7 @@ let AK: AgeLocale =
             JustBorn = None
             }
         CompactOverride = Some {
-            Day = Some (Simple "nna {n}")
+            Day = Some (Plural (Map.ofList [ (One, "da {n}"); (Other, "nna {n}") ]))
             Week = Some (Plural (Map.ofList [ (One, "dapɛn {n}"); (Other, "nnapɛn {n}") ]))
             Month = Some (Plural (Map.ofList [ (One, "bos {n}"); (Other, "abos {n}") ]))
             Year = Some (Plural (Map.ofList [ (One, "afe {n}"); (Other, "mfe {n}") ]))
@@ -325,7 +325,7 @@ let AR: AgeLocale =
         CompactOverride = Some {
             Day = Some (Simple "{n} ي")
             Week = Some (Simple "{n} أ")
-            Month = Some (Plural (Map.ofList [ (Zero, "{n} شهر"); (One, "شهر"); (Two, "شهران"); (Few, "{n} أشهر"); (Many, "{n} شهرًا"); (Other, "{n} شهر") ]))
+            Month = Some (Simple "{n} شهر")
             Year = Some (Simple "{n} سنة")
             Half = Some "{n}½"
             Delimiter = Some ""
@@ -345,10 +345,10 @@ let AY: AgeLocale =
         Plural = (fun _ -> Other)
         Units =
             {
-                Day = Simple "uru {n}"
-                Week = Simple "simana {n}"
-                Month = Simple "phaxsi {n}"
-                Year = Simple "mara {n}"
+                Day = Simple "{n} uru"
+                Week = Simple "{n} simana"
+                Month = Simple "{n} phaxsi"
+                Year = Simple "{n} mara"
             }
         Half = "{0} chika"
         Delimiter = ", "
@@ -376,7 +376,7 @@ let AY: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -556,7 +556,7 @@ let BEM: AgeLocale =
                 Toddler = Neutral "Umwana"
                 Child = Neutral "Umwana"
                 Teenager = Neutral "Umunyamata"
-                Adult = Neutral "Umulumendo"
+                Adult = Neutral "Umukalamba"
             }
         ShortOverride = Some {
             Day = Some (Plural (Map.ofList [ (One, "ubushiku {n}"); (Other, "inshiku {n}") ]))
@@ -644,7 +644,7 @@ let BI: AgeLocale =
                 Month = Simple "{n} manis"
                 Year = Simple "{n} yia"
             }
-        Half = "{n} mo haf"
+        Half = "{0} mo haf"
         Delimiter = ", "
         JustBorn = "Niufala bebe"
         Stages =
@@ -670,7 +670,7 @@ let BI: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -889,7 +889,7 @@ let CA: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "{n} mes"); (Other, "{n} mesos") ])
                 Year = Plural (Map.ofList [ (One, "{n} any"); (Other, "{n} anys") ])
             }
-        Half = "{n} i mig"
+        Half = "{0} i mig"
         Delimiter = ", "
         JustBorn = "Nounat"
         Stages =
@@ -964,7 +964,7 @@ let CAK: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -987,7 +987,7 @@ let CEB: AgeLocale =
                 Month = Simple "{n} ka bulan"
                 Year = Simple "{n} ka tuig"
             }
-        Half = "{n}½"
+        Half = "{0} ug tunga"
         Delimiter = ", "
         JustBorn = "Bag-ong natawo"
         Stages =
@@ -1080,10 +1080,10 @@ let CY: AgeLocale =
         Plural = pluralCy
         Units =
             {
-                Day = Plural (Map.ofList [ (Zero, "{n} diwrnod"); (One, "{n} diwrnod"); (Two, "{n} ddiwrnod"); (Few, "{n} diwrnod"); (Many, "{n} niwrnod"); (Other, "{n} diwrnod") ])
+                Day = Plural (Map.ofList [ (Zero, "{n} diwrnod"); (One, "{n} diwrnod"); (Two, "{n} ddiwrnod"); (Few, "{n} diwrnod"); (Many, "{n} diwrnod"); (Other, "{n} diwrnod") ])
                 Week = Plural (Map.ofList [ (Zero, "{n} wythnos"); (One, "{n} wythnos"); (Two, "{n} wythnos"); (Few, "{n} wythnos"); (Many, "{n} wythnos"); (Other, "{n} wythnos") ])
                 Month = Plural (Map.ofList [ (Zero, "{n} mis"); (One, "{n} mis"); (Two, "{n} fis"); (Few, "{n} mis"); (Many, "{n} mis"); (Other, "{n} mis") ])
-                Year = Plural (Map.ofList [ (Zero, "{n} blwyddyn"); (One, "{n} blwyddyn"); (Two, "{n} flynedd"); (Few, "{n} blynedd"); (Many, "{n} blynedd"); (Other, "{n} blynedd") ])
+                Year = Plural (Map.ofList [ (Zero, "{n} blwyddyn"); (One, "{n} flwyddyn"); (Two, "{n} flynedd"); (Few, "{n} blynedd"); (Many, "{n} blynedd"); (Other, "{n} blynedd") ])
             }
         Half = "{0} a hanner"
         Delimiter = ", "
@@ -1330,7 +1330,7 @@ let DV: AgeLocale =
                 Month = Simple "{n} މަސް"
                 Year = Simple "{n} އަހަރު"
             }
-        Half = "{0} ބައި"
+        Half = "{n}½"
         Delimiter = "، "
         JustBorn = "އަލަށް އުފަންވި"
         Stages =
@@ -1428,7 +1428,7 @@ let DZ: AgeLocale =
                 Month = Simple "ཟླ་ {n}"
                 Year = Simple "ལོ་ {n}"
             }
-        Half = "{0} ཕྱེད"
+        Half = "{0} དང་ཕྱེད"
         Delimiter = " "
         JustBorn = "གསར་སྐྱེས"
         Stages =
@@ -1472,10 +1472,10 @@ let EE: AgeLocale =
         Plural = (fun n -> if n = 1 then One else Other)
         Units =
             {
-                Day = Plural (Map.ofList [ (One, "ŋkeke {n}"); (Other, "ŋkekewo {n}") ])
-                Week = Plural (Map.ofList [ (One, "kɔsiɖa {n}"); (Other, "kɔsiɖawo {n}") ])
-                Month = Plural (Map.ofList [ (One, "ɣleti {n}"); (Other, "ɣletiwo {n}") ])
-                Year = Plural (Map.ofList [ (One, "ƒe {n}"); (Other, "ƒewo {n}") ])
+                Day = Simple "ŋkeke {n}"
+                Week = Simple "kɔsiɖa {n}"
+                Month = Simple "ɣleti {n}"
+                Year = Simple "ƒe {n}"
             }
         Half = "{0} kple afã"
         Delimiter = ", "
@@ -1486,14 +1486,14 @@ let EE: AgeLocale =
                 Infant = Neutral "Ɖevi"
                 Toddler = Neutral "Ɖevi sue"
                 Child = Neutral "Ɖevi"
-                Teenager = Neutral "Ŋutsuviwo"
+                Teenager = Gendered("Ɖekakpui", "Ɖetugbi")
                 Adult = Neutral "Ame tsitsi"
             }
         ShortOverride = Some {
-            Day = Some (Simple "ŋkekewo {n}")
-            Week = Some (Plural (Map.ofList [ (One, "kɔsiɖa {n}"); (Other, "kɔsiɖawo {n}") ]))
-            Month = Some (Plural (Map.ofList [ (One, "ɣleti {n}"); (Other, "ɣletiwo {n}") ]))
-            Year = Some (Plural (Map.ofList [ (One, "ƒe {n}"); (Other, "ƒewo {n}") ]))
+            Day = Some (Simple "ŋkeke {n}")
+            Week = Some (Simple "kɔsiɖa {n}")
+            Month = Some (Simple "ɣleti {n}")
+            Year = Some (Simple "ƒe {n}")
             Half = None
             Delimiter = None
             JustBorn = None
@@ -1624,7 +1624,7 @@ let ES: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "{n} mes"); (Other, "{n} meses") ])
                 Year = Plural (Map.ofList [ (One, "{n} año"); (Other, "{n} años") ])
             }
-        Half = "{n} y medio"
+        Half = "{0} y medio"
         Delimiter = ", "
         JustBorn = "Recién nacido"
         Stages =
@@ -1878,11 +1878,11 @@ let FF: AgeLocale =
                 Infant = Neutral "Ɓinngel"
                 Toddler = Neutral "Cukalel"
                 Child = Neutral "Suka"
-                Teenager = Neutral "Suka debbo"
+                Teenager = Gendered("Suka gorko", "Suka debbo")
                 Adult = Neutral "Mawɗo"
             }
         ShortOverride = Some {
-            Day = Some (Simple "ñalɗe {n}")
+            Day = Some (Plural (Map.ofList [ (One, "ñalawma {n}"); (Other, "ñalɗe {n}") ]))
             Week = Some (Plural (Map.ofList [ (One, "yontere {n}"); (Other, "yontereeji {n}") ]))
             Month = Some (Plural (Map.ofList [ (One, "lewru {n}"); (Other, "lebbi {n}") ]))
             Year = Some (Plural (Map.ofList [ (One, "hitaande {n}"); (Other, "duuɓi {n}") ]))
@@ -1891,7 +1891,7 @@ let FF: AgeLocale =
             JustBorn = None
             }
         CompactOverride = Some {
-            Day = Some (Simple "ñalɗe {n}")
+            Day = Some (Plural (Map.ofList [ (One, "ñalawma {n}"); (Other, "ñalɗe {n}") ]))
             Week = Some (Plural (Map.ofList [ (One, "yont {n}"); (Other, "yontji {n}") ]))
             Month = Some (Plural (Map.ofList [ (One, "lew {n}"); (Other, "leb {n}") ]))
             Year = Some (Plural (Map.ofList [ (One, "hit {n}"); (Other, "duuɓi {n}") ]))
@@ -1977,7 +1977,7 @@ let FIL: AgeLocale =
                 Toddler = Neutral "Batang paslit"
                 Child = Neutral "Bata"
                 Teenager = Neutral "Tinedyer"
-                Adult = Neutral "Matanda"
+                Adult = Neutral "Adulto"
             }
         ShortOverride = Some {
             Day = Some (Simple "{n} araw")
@@ -2016,7 +2016,7 @@ let FJ: AgeLocale =
                 Month = Simple "{n} na vula"
                 Year = Simple "{n} na yabaki"
             }
-        Half = "{n} kei na levu ni wasei"
+        Half = "{0} kei na veimama"
         Delimiter = ", "
         JustBorn = "Gone vou"
         Stages =
@@ -2042,7 +2042,7 @@ let FJ: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -2074,7 +2074,7 @@ let FON: AgeLocale =
                 Infant = Neutral "Vǐ"
                 Toddler = Neutral "Vǐ"
                 Child = Neutral "Vǐ"
-                Teenager = Neutral "Nyɔ̌nu"
+                Teenager = Gendered("Dɔnkpɛvu", "Ɖyɔ̌vǐ")
                 Adult = Neutral "Mɛ̌xo"
             }
         ShortOverride = Some {
@@ -2268,7 +2268,7 @@ let GL: AgeLocale =
             {
                 Newborn = Gendered("Recén nacido", "Recén nacida")
                 Infant = Neutral "Bebé"
-                Toddler = Neutral "Neno"
+                Toddler = Gendered("Neno pequeno", "Nena pequena")
                 Child = Gendered("Neno", "Nena")
                 Teenager = Neutral "Adolescente"
                 Adult = Gendered("Adulto", "Adulta")
@@ -2452,10 +2452,10 @@ let HA: AgeLocale =
         Plural = (fun n -> if n = 1 then One else Other)
         Units =
             {
-                Day = Plural (Map.ofList [ (One, "{n} kwana"); (Other, "{n} kwanaki") ])
-                Week = Plural (Map.ofList [ (One, "{n} mako"); (Other, "{n} makonni") ])
-                Month = Plural (Map.ofList [ (One, "{n} wata"); (Other, "{n} watanni") ])
-                Year = Plural (Map.ofList [ (One, "{n} shekara"); (Other, "{n} shekaru") ])
+                Day = Plural (Map.ofList [ (One, "kwana {n}"); (Other, "kwanaki {n}") ])
+                Week = Plural (Map.ofList [ (One, "mako {n}"); (Other, "makonni {n}") ])
+                Month = Plural (Map.ofList [ (One, "wata {n}"); (Other, "watanni {n}") ])
+                Year = Plural (Map.ofList [ (One, "shekara {n}"); (Other, "shekaru {n}") ])
             }
         Half = "{n}½"
         Delimiter = ", "
@@ -2464,16 +2464,16 @@ let HA: AgeLocale =
             {
                 Newborn = Neutral "Jariri"
                 Infant = Neutral "Jariri"
-                Toddler = Neutral "Ƙaramin yaro"
-                Child = Neutral "Yaro"
-                Teenager = Neutral "Saurayi"
+                Toddler = Gendered("Ƙaramin yaro", "Ƙaramar yarinya")
+                Child = Gendered("Yaro", "Yarinya")
+                Teenager = Gendered("Saurayi", "Budurwa")
                 Adult = Neutral "Babba"
             }
         ShortOverride = Some {
-            Day = Some (Simple "{n} kw.")
-            Week = Some (Simple "{n} mk.")
-            Month = Some (Simple "{n} wt.")
-            Year = Some (Simple "{n} shk.")
+            Day = Some (Simple "kw. {n}")
+            Week = Some (Simple "mk. {n}")
+            Month = Some (Simple "wt. {n}")
+            Year = Some (Simple "shk. {n}")
             Half = None
             Delimiter = None
             JustBorn = None
@@ -2501,9 +2501,9 @@ let HE: AgeLocale =
         Plural = (fun n -> if n = 1 then One elif n = 2 then Two else Other)
         Units =
             {
-                Day = Plural (Map.ofList [ (One, "יום {n}"); (Two, "יומיים"); (Other, "{n} ימים") ])
-                Week = Plural (Map.ofList [ (One, "שבוע {n}"); (Two, "שבועיים"); (Other, "{n} שבועות") ])
-                Month = Plural (Map.ofList [ (One, "חודש {n}"); (Two, "חודשיים"); (Other, "{n} חודשים") ])
+                Day = Plural (Map.ofList [ (One, "יום"); (Two, "יומיים"); (Other, "{n} ימים") ])
+                Week = Plural (Map.ofList [ (One, "שבוע"); (Two, "שבועיים"); (Other, "{n} שבועות") ])
+                Month = Plural (Map.ofList [ (One, "חודש"); (Two, "חודשיים"); (Other, "{n} חודשים") ])
                 Year = Plural (Map.ofList [ (One, "שנה"); (Two, "שנתיים"); (Other, "{n} שנים") ])
             }
         Half = "{0} וחצי"
@@ -2512,8 +2512,8 @@ let HE: AgeLocale =
         Stages =
             {
                 Newborn = Gendered("רק נולד", "רק נולדה")
-                Infant = Neutral "תינוק"
-                Toddler = Neutral "פעוט"
+                Infant = Gendered("תינוק", "תינוקת")
+                Toddler = Gendered("פעוט", "פעוטה")
                 Child = Gendered("ילד", "ילדה")
                 Teenager = Gendered("נער", "נערה")
                 Adult = Gendered("מבוגר", "מבוגרת")
@@ -2630,7 +2630,7 @@ let HMN: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -2849,7 +2849,7 @@ let ID: AgeLocale =
                 Month = Simple "{n} bulan"
                 Year = Simple "{n} tahun"
             }
-        Half = "{0} setengah"
+        Half = "{n} setengah"
         Delimiter = ", "
         JustBorn = "Baru lahir"
         Stages =
@@ -2893,10 +2893,10 @@ let IG: AgeLocale =
         Plural = (fun _ -> Other)
         Units =
             {
-                Day = Simple "{n} ụbọchị"
-                Week = Simple "{n} izu"
-                Month = Simple "{n} ọnwa"
-                Year = Simple "{n} afọ"
+                Day = Simple "ụbọchị {n}"
+                Week = Simple "izu {n}"
+                Month = Simple "ọnwa {n}"
+                Year = Simple "afọ {n}"
             }
         Half = "{0} na ọkara"
         Delimiter = ", "
@@ -2907,14 +2907,14 @@ let IG: AgeLocale =
                 Infant = Neutral "Nwa ọhụrụ"
                 Toddler = Neutral "Nwa nta"
                 Child = Neutral "Nwa"
-                Teenager = Neutral "Nwokorobịa"
+                Teenager = Gendered("Nwokorobịa", "Agbọghọbịa")
                 Adult = Neutral "Okenye"
             }
         ShortOverride = Some {
-            Day = Some (Simple "{n} ụbọchị")
-            Week = Some (Simple "{n} izu")
-            Month = Some (Simple "{n} ọnwa")
-            Year = Some (Simple "{n} afọ")
+            Day = Some (Simple "ụbọchị {n}")
+            Week = Some (Simple "izu {n}")
+            Month = Some (Simple "ọnwa {n}")
+            Year = Some (Simple "afọ {n}")
             Half = None
             Delimiter = None
             JustBorn = None
@@ -2947,7 +2947,7 @@ let IS: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "{n} mánuður"); (Other, "{n} mánuðir") ])
                 Year = Plural (Map.ofList [ (One, "{n} ár"); (Other, "{n} ár") ])
             }
-        Half = "{0} og hálft"
+        Half = "{n} og hálft"
         Delimiter = ", "
         JustBorn = "Nýfætt"
         Stages =
@@ -3071,7 +3071,7 @@ let JA: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = None
             JustBorn = None
             }
@@ -3267,7 +3267,7 @@ let KEK: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -3380,13 +3380,13 @@ let KK: AgeLocale =
 let KL: AgeLocale =
     {
         Code = "kl"
-        Plural = (fun _ -> Other)
+        Plural = (fun n -> if n = 1 then One else Other)
         Units =
             {
-                Day = Simple "ullut {n}"
-                Week = Simple "sapaatit {n}"
-                Month = Simple "qaammatit {n}"
-                Year = Simple "ukiut {n}"
+                Day = Plural (Map.ofList [ (One, "ulloq {n}"); (Other, "ullut {n}") ])
+                Week = Plural (Map.ofList [ (One, "sapaatip akunnera {n}"); (Other, "sapaatip akunneri {n}") ])
+                Month = Plural (Map.ofList [ (One, "qaammat {n}"); (Other, "qaammatit {n}") ])
+                Year = Plural (Map.ofList [ (One, "ukioq {n}"); (Other, "ukiut {n}") ])
             }
         Half = "{0} affaa"
         Delimiter = ", "
@@ -3402,7 +3402,7 @@ let KL: AgeLocale =
             }
         ShortOverride = Some {
             Day = Some (Simple "ull. {n}")
-            Week = Some (Simple "sap. {n}")
+            Week = Some (Simple "sap. ak. {n}")
             Month = Some (Simple "qaam. {n}")
             Year = Some (Simple "uk. {n}")
             Half = None
@@ -3414,7 +3414,7 @@ let KL: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -3486,7 +3486,7 @@ let KN: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "{n} ತಿಂಗಳು"); (Other, "{n} ತಿಂಗಳುಗಳು") ])
                 Year = Plural (Map.ofList [ (One, "{n} ವರ್ಷ"); (Other, "{n} ವರ್ಷಗಳು") ])
             }
-        Half = "{0}ವರೆ"
+        Half = "{n}½"
         Delimiter = ", "
         JustBorn = "ನವಜಾತ ಶಿಶು"
         Stages =
@@ -3633,7 +3633,7 @@ let KRI: AgeLocale =
                 Month = Simple "{n} mont"
                 Year = Simple "{n} ia"
             }
-        Half = "{n} na af"
+        Half = "{0} ɛn af"
         Delimiter = ", "
         JustBorn = "Nyubon bebi"
         Stages =
@@ -3659,7 +3659,7 @@ let KRI: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -3775,10 +3775,10 @@ let KW: AgeLocale =
         Plural = pluralKw
         Units =
             {
-                Day = Plural (Map.ofList [ (Zero, "{n} dydh"); (One, "dydh"); (Two, "{n} dhydh"); (Few, "{n} dydh"); (Many, "{n} dydh"); (Other, "{n} dydh") ])
-                Week = Plural (Map.ofList [ (Zero, "{n} seythun"); (One, "seythun"); (Two, "{n} seythun"); (Few, "{n} seythun"); (Many, "{n} seythun"); (Other, "{n} seythun") ])
-                Month = Plural (Map.ofList [ (Zero, "{n} mis"); (One, "mis"); (Two, "{n} vis"); (Few, "{n} mis"); (Many, "{n} mis"); (Other, "{n} mis") ])
-                Year = Plural (Map.ofList [ (Zero, "{n} blydhen"); (One, "blydhen"); (Two, "{n} vlydhen"); (Few, "{n} blydhen"); (Many, "{n} blydhen"); (Other, "{n} blydhen") ])
+                Day = Plural (Map.ofList [ (Zero, "{n} dydh"); (One, "{n} dydh"); (Two, "{n} dhydh"); (Few, "{n} dydh"); (Many, "{n} dydh"); (Other, "{n} dydh") ])
+                Week = Plural (Map.ofList [ (Zero, "{n} seythun"); (One, "{n} seythun"); (Two, "{n} seythun"); (Few, "{n} seythun"); (Many, "{n} seythun"); (Other, "{n} seythun") ])
+                Month = Plural (Map.ofList [ (Zero, "{n} mis"); (One, "{n} mis"); (Two, "{n} vis"); (Few, "{n} mis"); (Many, "{n} mis"); (Other, "{n} mis") ])
+                Year = Plural (Map.ofList [ (Zero, "{n} blydhen"); (One, "{n} blydhen"); (Two, "{n} vlydhen"); (Few, "{n} blydhen"); (Many, "{n} blydhen"); (Other, "{n} blydhen") ])
             }
         Half = "{0} hag hanter"
         Delimiter = ", "
@@ -4026,7 +4026,7 @@ let LO: AgeLocale =
                 Year = Simple "{n} ປີ"
             }
         Half = "{0}ເຄິ່ງ"
-        Delimiter = ""
+        Delimiter = " "
         JustBorn = "ເກີດໃໝ່"
         Stages =
             {
@@ -4051,7 +4051,7 @@ let LO: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = None
             JustBorn = None
             }
@@ -4217,7 +4217,7 @@ let MAM: AgeLocale =
         Units =
             {
                 Day = Simple "{n} q'ij"
-                Week = Simple "{n} xjaw"
+                Week = Simple "{n} seman"
                 Month = Simple "{n} xjaw"
                 Year = Simple "{n} ab'q'ii"
             }
@@ -4235,7 +4235,7 @@ let MAM: AgeLocale =
             }
         ShortOverride = Some {
             Day = Some (Simple "{n} q'ij")
-            Week = Some (Simple "{n} xjaw")
+            Week = Some (Simple "{n} seman")
             Month = Some (Simple "{n} xjaw")
             Year = Some (Simple "{n} ab'.")
             Half = None
@@ -4247,7 +4247,7 @@ let MAM: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -4412,12 +4412,12 @@ let MI: AgeLocale =
         Plural = (fun n -> if n = 1 then One else Other)
         Units =
             {
-                Day = Simple "rā {n}"
-                Week = Simple "wiki {n}"
-                Month = Simple "marama {n}"
-                Year = Simple "tau {n}"
+                Day = Simple "{n} rā"
+                Week = Simple "{n} wiki"
+                Month = Simple "{n} marama"
+                Year = Simple "{n} tau"
             }
-        Half = "{0}½"
+        Half = "{n}½"
         Delimiter = ", "
         JustBorn = "Pēpi hou"
         Stages =
@@ -4430,10 +4430,10 @@ let MI: AgeLocale =
                 Adult = Neutral "Pakeke"
             }
         ShortOverride = Some {
-            Day = Some (Simple "rā {n}")
-            Week = Some (Simple "w {n}")
-            Month = Some (Simple "m {n}")
-            Year = Some (Simple "t {n}")
+            Day = Some (Simple "{n} rā")
+            Week = Some (Simple "{n} w")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} t")
             Half = None
             Delimiter = None
             JustBorn = None
@@ -4476,7 +4476,7 @@ let MK: AgeLocale =
                 Toddler = Neutral "Мало дете"
                 Child = Neutral "Дете"
                 Teenager = Neutral "Тинејџер"
-                Adult = Neutral "Возрасен"
+                Adult = Gendered("Возрасен", "Возрасна")
             }
         ShortOverride = Some {
             Day = Some (Plural (Map.ofList [ (One, "{n} ден"); (Other, "{n} дена") ]))
@@ -4507,7 +4507,7 @@ let MK: AgeLocale =
 let ML: AgeLocale =
     {
         Code = "ml"
-        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Plural = (fun n -> if n = 1 then One else Other)
         Units =
             {
                 Day = Plural (Map.ofList [ (One, "{n} ദിവസം"); (Other, "{n} ദിവസങ്ങൾ") ])
@@ -4515,7 +4515,7 @@ let ML: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "{n} മാസം"); (Other, "{n} മാസങ്ങൾ") ])
                 Year = Plural (Map.ofList [ (One, "{n} വയസ്സ്"); (Other, "{n} വയസ്സ്") ])
             }
-        Half = "{0} ര"
+        Half = "{n}½"
         Delimiter = ", "
         JustBorn = "നവജാതശിശു"
         Stages =
@@ -5012,7 +5012,7 @@ let NE: AgeLocale =
             {
                 Newborn = Neutral "नवजात शिशु"
                 Infant = Neutral "शिशु"
-                Toddler = Neutral "बाल्यकाल"
+                Toddler = Neutral "सानो बच्चा"
                 Child = Neutral "बालक"
                 Teenager = Neutral "किशोर"
                 Adult = Neutral "वयस्क"
@@ -5495,7 +5495,7 @@ let PIS: AgeLocale =
                 Month = Simple "{n} manis"
                 Year = Simple "{n} yia"
             }
-        Half = "{n} en haf"
+        Half = "{0} en haf"
         Delimiter = ", "
         JustBorn = "Niufala bebi"
         Stages =
@@ -5521,7 +5521,7 @@ let PIS: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -5815,7 +5815,7 @@ let QUC: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -6127,37 +6127,37 @@ let SHI: AgeLocale =
         Plural = pluralShi
         Units =
             {
-                Day = Plural (Map.ofList [ (One, "{n} ass"); (Few, "{n} ussan"); (Other, "{n} ass") ])
-                Week = Plural (Map.ofList [ (One, "{n} imalass"); (Few, "{n} imalassn"); (Other, "{n} imalass") ])
-                Month = Plural (Map.ofList [ (One, "{n} ayyur"); (Few, "{n} ayyurn"); (Other, "{n} ayyur") ])
-                Year = Plural (Map.ofList [ (One, "{n} aseggas"); (Few, "{n} iseggasen"); (Other, "{n} aseggas") ])
+                Day = Plural (Map.ofList [ (One, "{n} ⴰⵙⵙ"); (Few, "{n} ⵓⵙⵙⴰⵏ"); (Other, "{n} ⴰⵙⵙ") ])
+                Week = Plural (Map.ofList [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"); (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"); (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ") ])
+                Month = Plural (Map.ofList [ (One, "{n} ⴰⵢⵢⵓⵔ"); (Few, "{n} ⴰⵢⵢⵓⵔⵏ"); (Other, "{n} ⴰⵢⵢⵓⵔ") ])
+                Year = Plural (Map.ofList [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"); (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"); (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ") ])
             }
-        Half = "{0} d uzgen"
+        Half = "{0} ⴷ ⵓⵣⴳⵏ"
         Delimiter = ", "
-        JustBorn = "Iɣ d illul"
+        JustBorn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
         Stages =
             {
-                Newborn = Neutral "Iɣ d illul"
-                Infant = Neutral "Agellid"
-                Toddler = Gendered("Aḥenjir", "Taḥenjirt")
-                Child = Gendered("Afrux", "Tafruxṭ")
-                Teenager = Gendered("Aɛrim", "Taɛrimt")
-                Adult = Gendered("Argaz", "Tamṭṭuṭ")
+                Newborn = Neutral "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+                Infant = Neutral "ⵍⵍⵓⴼⴰⵏ"
+                Toddler = Gendered("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ")
+                Child = Gendered("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ")
+                Teenager = Gendered("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ")
+                Adult = Gendered("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
             }
         ShortOverride = Some {
-            Day = Some (Simple "{n} d")
-            Week = Some (Simple "{n} wk")
-            Month = Some (Simple "{n} mo")
-            Year = Some (Simple "{n} yr")
+            Day = Some (Plural (Map.ofList [ (One, "{n} ⴰⵙⵙ"); (Few, "{n} ⵓⵙⵙⴰⵏ"); (Other, "{n} ⴰⵙⵙ") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"); (Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"); (Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} ⴰⵢⵢⵓⵔ"); (Few, "{n} ⴰⵢⵢⵓⵔⵏ"); (Other, "{n} ⴰⵢⵢⵓⵔ") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"); (Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"); (Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ") ]))
             Half = None
             Delimiter = None
             JustBorn = None
             }
         CompactOverride = Some {
-            Day = Some (Simple "{n}d")
-            Week = Some (Simple "{n}w")
-            Month = Some (Simple "{n}m")
-            Year = Some (Simple "{n}y")
+            Day = Some (Simple "{n} ⴰⵙⵙ")
+            Week = Some (Simple "{n} ⵉⵎⵍ")
+            Month = Some (Simple "{n} ⴰⵢⵔ")
+            Year = Some (Simple "{n} ⴰⵙⴳ")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -6207,7 +6207,7 @@ let SHN: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -6230,7 +6230,7 @@ let SI: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "මාස {n}"); (Other, "මාස {n}") ])
                 Year = Plural (Map.ofList [ (One, "වසර {n}"); (Other, "වසර {n}") ])
             }
-        Half = "{0}යි භාගයයි"
+        Half = "{n}½"
         Delimiter = ", "
         JustBorn = "අලුත උපන්"
         Stages =
@@ -6470,10 +6470,10 @@ let SO: AgeLocale =
         Plural = (fun n -> if n = 1 then One else Other)
         Units =
             {
-                Day = Plural (Map.ofList [ (One, "maalin {n}"); (Other, "maalmood {n}") ])
-                Week = Plural (Map.ofList [ (One, "toddobaad {n}"); (Other, "toddobaadyo {n}") ])
-                Month = Plural (Map.ofList [ (One, "bil {n}"); (Other, "bilood {n}") ])
-                Year = Plural (Map.ofList [ (One, "sano {n}"); (Other, "sanooyin {n}") ])
+                Day = Plural (Map.ofList [ (One, "{n} maalin"); (Other, "{n} maalmood") ])
+                Week = Simple "{n} toddobaad"
+                Month = Plural (Map.ofList [ (One, "{n} bil"); (Other, "{n} bilood") ])
+                Year = Simple "{n} sano"
             }
         Half = "{n}½"
         Delimiter = ", "
@@ -6526,10 +6526,10 @@ let SQ: AgeLocale =
             }
         Half = "{0} e gjysmë"
         Delimiter = ", "
-        JustBorn = "Sapolindur"
+        JustBorn = "I sapolindur"
         Stages =
             {
-                Newborn = Gendered("Sapolindur", "Sapolindure")
+                Newborn = Gendered("I sapolindur", "E sapolindur")
                 Infant = Neutral "Foshnjë"
                 Toddler = Gendered("Fëmijë i vogël", "Fëmijë e vogël")
                 Child = Neutral "Fëmijë"
@@ -6678,7 +6678,7 @@ let ST: AgeLocale =
             {
                 Newborn = Neutral "Lesea le sa tswa hlaha"
                 Infant = Neutral "Lesea"
-                Toddler = Neutral "Ngwanana"
+                Toddler = Neutral "Ngwana e monyane"
                 Child = Neutral "Ngwana"
                 Teenager = Neutral "Mosha"
                 Adult = Neutral "Motho e moholo"
@@ -6916,7 +6916,7 @@ let TA: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "{n} மாதம்"); (Other, "{n} மாதங்கள்") ])
                 Year = Plural (Map.ofList [ (One, "{n} வயது"); (Other, "{n} வயது") ])
             }
-        Half = "{0}ரை"
+        Half = "{n}½"
         Delimiter = ", "
         JustBorn = "பிறந்த குழந்தை"
         Stages =
@@ -6965,7 +6965,7 @@ let TE: AgeLocale =
                 Month = Plural (Map.ofList [ (One, "{n} నెల"); (Other, "{n} నెలలు") ])
                 Year = Plural (Map.ofList [ (One, "{n} సంవత్సరం"); (Other, "{n} సంవత్సరాలు") ])
             }
-        Half = "{0}న్నర"
+        Half = "{n}½"
         Delimiter = ", "
         JustBorn = "నవజాత శిశువు"
         Stages =
@@ -7089,7 +7089,7 @@ let TET: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -7112,7 +7112,7 @@ let TG: AgeLocale =
                 Month = Simple "{n} моҳ"
                 Year = Simple "{n} сол"
             }
-        Half = "{0} ним"
+        Half = "{0}у ним"
         Delimiter = ", "
         JustBorn = "Навзод"
         Stages =
@@ -7308,7 +7308,7 @@ let TK: AgeLocale =
                 Month = Simple "{n} aý"
                 Year = Simple "{n} ýaş"
             }
-        Half = "{0}½"
+        Half = "{n} ýarym"
         Delimiter = ", "
         JustBorn = "Täze doglan"
         Stages =
@@ -7318,7 +7318,7 @@ let TK: AgeLocale =
                 Toddler = Neutral "Kiçijik"
                 Child = Neutral "Çaga"
                 Teenager = Neutral "Ýetginjek"
-                Adult = Neutral "Ulular"
+                Adult = Neutral "Uly adam"
             }
         ShortOverride = Some {
             Day = Some (Simple "{n} g")
@@ -7366,7 +7366,7 @@ let TN: AgeLocale =
                 Infant = Neutral "Lesea"
                 Toddler = Neutral "Ngwana yo monnye"
                 Child = Neutral "Ngwana"
-                Teenager = Neutral "Lekgarebe"
+                Teenager = Neutral "Mosha"
                 Adult = Neutral "Motho yo mogolo"
             }
         ShortOverride = Some {
@@ -7406,7 +7406,7 @@ let TPI: AgeLocale =
                 Month = Simple "{n} mun"
                 Year = Simple "{n} yia"
             }
-        Half = "{n} na hap"
+        Half = "{0} na hap"
         Delimiter = ", "
         JustBorn = "Nupela pikinini"
         Stages =
@@ -7432,7 +7432,7 @@ let TPI: AgeLocale =
             Week = Some (Simple "{n}w")
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
-            Half = None
+            Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
             }
@@ -7608,17 +7608,17 @@ let TZM: AgeLocale =
         Stages =
             {
                 Newborn = Neutral "Iɣ d illul"
-                Infant = Neutral "Agellid"
+                Infant = Neutral "Llufan"
                 Toddler = Gendered("Aḥenjir", "Taḥenjirt")
-                Child = Gendered("Afrux", "Tafruxṭ")
+                Child = Gendered("Afrux", "Tafruxt")
                 Teenager = Gendered("Aɛrim", "Taɛrimt")
                 Adult = Gendered("Argaz", "Tamṭṭuṭ")
             }
         ShortOverride = Some {
-            Day = Some (Simple "{n} d")
-            Week = Some (Simple "{n} wk")
-            Month = Some (Simple "{n} mo")
-            Year = Some (Simple "{n} yr")
+            Day = Some (Plural (Map.ofList [ (One, "{n} ass"); (Other, "{n} ussan") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} imalass"); (Other, "{n} imalassn") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} ayyur"); (Other, "{n} ayyurn") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} aseggas"); (Other, "{n} iseggasen") ]))
             Half = None
             Delimiter = None
             JustBorn = None
@@ -7902,7 +7902,7 @@ let VI: AgeLocale =
         Stages =
             {
                 Newborn = Neutral "Sơ sinh"
-                Infant = Neutral "Trẻ sơ sinh"
+                Infant = Neutral "Trẻ nhũ nhi"
                 Toddler = Neutral "Trẻ mới biết đi"
                 Child = Neutral "Trẻ em"
                 Teenager = Neutral "Thiếu niên"
@@ -7989,10 +7989,10 @@ let WO: AgeLocale =
         Plural = (fun _ -> Other)
         Units =
             {
-                Day = Simple "bés {n}"
-                Week = Simple "ayubés {n}"
-                Month = Simple "weer {n}"
-                Year = Simple "at {n}"
+                Day = Simple "{n} fan"
+                Week = Simple "{n} ayubés"
+                Month = Simple "{n} weer"
+                Year = Simple "{n} at"
             }
         Half = "{0} ak genn-wàll"
         Delimiter = ", "
@@ -8000,26 +8000,26 @@ let WO: AgeLocale =
         Stages =
             {
                 Newborn = Neutral "Dees ko sax juddu"
-                Infant = Neutral "Njàmbaar bu ndaw"
+                Infant = Neutral "Liir"
                 Toddler = Neutral "Xale bu ndaw"
                 Child = Neutral "Xale"
                 Teenager = Neutral "Ndaw-ndaw"
                 Adult = Neutral "Mag"
             }
         ShortOverride = Some {
-            Day = Some (Simple "bés {n}")
-            Week = Some (Simple "ayub. {n}")
-            Month = Some (Simple "weer {n}")
-            Year = Some (Simple "at {n}")
+            Day = Some (Simple "{n} fan")
+            Week = Some (Simple "{n} ayub.")
+            Month = Some (Simple "{n} weer")
+            Year = Some (Simple "{n} at")
             Half = None
             Delimiter = None
             JustBorn = None
             }
         CompactOverride = Some {
-            Day = Some (Simple "bés {n}")
-            Week = Some (Simple "ayub {n}")
-            Month = Some (Simple "weer {n}")
-            Year = Some (Simple "at {n}")
+            Day = Some (Simple "{n} fan")
+            Week = Some (Simple "{n} ayub")
+            Month = Some (Simple "{n} weer")
+            Year = Some (Simple "{n} at")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None

@@ -26,7 +26,7 @@ tk
 		'month'. '{n} aý'.
 		'year'. '{n} ýyl'.
 	}).
-	locale half: '{0}½'.
+	locale half: '{n} ýarym'.
 	locale delimiter: ', '.
 	locale justNow: 'häzir'.
 	locale ago: '{0} öň'.

@@ -25,7 +25,7 @@ let ZU* = DateLocale(
   tomorrow: "kusasa",
   yesterday: "izolo",
   dayAfterTomorrow: some("ngomhlomunye"),
-  dayBeforeYesterday: some("usuku olwedlule izolo"),
+  dayBeforeYesterday: some("kuthangi"),
   thisWeekday: some("leli {weekday}"),
   nextWeekday: some("{weekday} elizayo"),
   lastWeekday: some("{weekday} eledlule"),

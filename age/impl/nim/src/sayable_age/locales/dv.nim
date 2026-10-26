@@ -22,7 +22,7 @@ let DV* = AgeLocale(
     "month": simpleUnit("{n} މަސް"),
     "year": simpleUnit("{n} އަހަރު"),
   }.toOrderedTable,
-  half: "{0} ބައި",
+  half: "{n}½",
   delimiter: "، ",
   justBorn: "އަލަށް އުފަންވި",
   stages: {

@@ -19,8 +19,8 @@
    :clock (make-clock-config
     :hours (list "बारह" "एक" "दो" "तीन" "चार" "पाँच" "छह" "सात" "आठ" "नौ" "दस" "ग्यारह")
     :midnight "आधी रात"
-    :noon "दोपहर"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :noon "दोपहर के बारह बजे"
+    :patterns (list (cons 0 "{h} बजे") (cons 5 "{h} बजकर पाँच मिनट") (cons 10 "{h} बजकर दस मिनट") (cons 15 "सवा {h} बजे") (cons 20 "{h} बजकर बीस मिनट") (cons 25 "{h} बजकर पच्चीस मिनट") (cons 30 "{h} बजकर तीस मिनट") (cons 35 "{h} बजकर पैंतीस मिनट") (cons 40 "{h} बजकर चालीस मिनट") (cons 45 "पौने {next_h} बजे") (cons 50 "{next_h} बजने में दस मिनट") (cons 55 "{next_h} बजने में पाँच मिनट")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

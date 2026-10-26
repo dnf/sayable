@@ -51,7 +51,7 @@ fn build_ti() -> DateLocale:
     var yesterday = "ትማሊ"
     var day_after_tomorrow = "ድሕሪ ጽባሕ"
     var day_before_yesterday = "ቅድሚ ትማሊ"
-    var this_weekday = "እዛ {weekday}"
+    var this_weekday = "እዚ {weekday}"
     var next_weekday = "ዝመጽእ {weekday}"
     var last_weekday = "ዝሓለፈ {weekday}"
     var has_months_in_date = False

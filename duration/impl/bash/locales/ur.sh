@@ -18,7 +18,8 @@ _sayableduration_plural_ur() {
 _sayableduration_locale_ur() {
     _unit_second='{n} سیکنڈ'
     _unit_minute='{n} منٹ'
-    _unit_hour='{n} گھنٹہ'
+    _unit_hour_one='{n} گھنٹہ'
+    _unit_hour_other='{n} گھنٹے'
     _unit_day_one='{n} دن'
     _unit_day_other='{n} دن'
     _unit_week_one='{n} ہفتہ'

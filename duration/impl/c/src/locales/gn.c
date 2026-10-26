@@ -20,9 +20,9 @@ const SduDurationLocale sdu_locale_gn = {
     "gn",
     plural_gn,
     {
+        { "{n} aravo'ive", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} aravo'i", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} aravo", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} aravo guasu", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ára", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} arapokõindy", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} jasy", { NULL, NULL, NULL, NULL, NULL, NULL } },
@@ -31,6 +31,6 @@ const SduDurationLocale sdu_locale_gn = {
     "{n}½", ", ",
     "ko'ágã",
     "{0} ohasava'ekue", "{0} rire",
-    true, { true, { "{n} ara'i", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ara", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ara g", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ára", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ara", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} jas", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ary", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ohasava'ekue", true, "{0} rire" },
+    true, { true, { "{n} aravo'ive", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} aravo'i", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} aravo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ára", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ara", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} jas", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ary", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ohasava'ekue", true, "{0} rire" },
     true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} ohasava'ekue", true, "{0} rire" }
 };

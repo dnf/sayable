@@ -25,7 +25,7 @@ const SaLocale sa_locale_dv = {
         { "{n} މަސް", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} އަހަރު", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0} ބައި", "، ", "އަލަށް އުފަންވި",
+    "{n}½", "، ", "އަލަށް އުފަންވި",
     {
         { "އަލަށް އުފަންވި", "" },
         { "ތުއްތު ކުއްޖާ", "" },

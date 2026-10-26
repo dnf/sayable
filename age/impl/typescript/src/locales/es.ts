@@ -20,7 +20,7 @@ export const es: AgeLocale = {
     month: { one: '{n} mes', other: '{n} meses' },
     year:  { one: '{n} año', other: '{n} años' },
   },
-  half: '{n} y medio',
+  half: '{0} y medio',
   delimiter: ', ',
   justBorn: 'Recién nacido',
   stages: {

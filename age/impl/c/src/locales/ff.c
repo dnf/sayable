@@ -31,9 +31,9 @@ const SaLocale sa_locale_ff = {
         { "Ɓinngel", "" },
         { "Cukalel", "" },
         { "Suka", "" },
-        { "Suka debbo", "" },
+        { "Suka gorko", "Suka debbo" },
         { "Mawɗo", "" }
     },
-    true, { true, { "ñalɗe {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "yontere {n}", NULL, NULL, NULL, "yontereeji {n}" } }, true, { NULL, { NULL, "lewru {n}", NULL, NULL, NULL, "lebbi {n}" } }, true, { NULL, { NULL, "hitaande {n}", NULL, NULL, NULL, "duuɓi {n}" } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "ñalɗe {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "yont {n}", NULL, NULL, NULL, "yontji {n}" } }, true, { NULL, { NULL, "lew {n}", NULL, NULL, NULL, "leb {n}" } }, true, { NULL, { NULL, "hit {n}", NULL, NULL, NULL, "duuɓi {n}" } }, true, "{n}½", true, "", false, NULL }
+    true, { true, { NULL, { NULL, "ñalawma {n}", NULL, NULL, NULL, "ñalɗe {n}" } }, true, { NULL, { NULL, "yontere {n}", NULL, NULL, NULL, "yontereeji {n}" } }, true, { NULL, { NULL, "lewru {n}", NULL, NULL, NULL, "lebbi {n}" } }, true, { NULL, { NULL, "hitaande {n}", NULL, NULL, NULL, "duuɓi {n}" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { NULL, { NULL, "ñalawma {n}", NULL, NULL, NULL, "ñalɗe {n}" } }, true, { NULL, { NULL, "yont {n}", NULL, NULL, NULL, "yontji {n}" } }, true, { NULL, { NULL, "lew {n}", NULL, NULL, NULL, "leb {n}" } }, true, { NULL, { NULL, "hit {n}", NULL, NULL, NULL, "duuɓi {n}" } }, true, "{n}½", true, "", false, NULL }
 };

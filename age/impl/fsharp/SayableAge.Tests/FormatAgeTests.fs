@@ -9,15 +9,15 @@ open SayableAgeLib.Locales
 let private formatAge dob asOf =
     formatAgeDefault (Some dob) (Some asOf)
 
+let private assertWeeksPattern (result: string option) =
+    Assert.NotNull(result)
+    Assert.Contains("week", result.Value)
+
 let private formatStage dob asOf =
     formatStageDefault (Some dob) (Some asOf) None
 
 let private formatStageGender dob asOf gender =
     formatStageDefault (Some dob) (Some asOf) (Some gender)
-
-let private assertWeeksPattern (result: string option) =
-    Assert.NotNull(result)
-    Assert.Contains("week", result.Value)
 
 // ================================================================
 // formatAge -- null/edge cases
@@ -887,7 +887,7 @@ let ``Spanish 2 years 6 months`` () =
 [<Fact>]
 let ``Spanish 3.5 years`` () =
     let pt = SayableAgeFormatter(ES)
-    Assert.Equal(Some "3 y medio a\u00F1os", pt.FormatAge(Some "2022-06-15", Some "2025-12-15"))
+    Assert.Equal(Some "3 a\u00F1os y medio", pt.FormatAge(Some "2022-06-15", Some "2025-12-15"))
 
 // 25.11
 [<Fact>]
@@ -1073,7 +1073,7 @@ let ``Hebrew justBorn`` () =
 [<Fact>]
 let ``Hebrew 1 day`` () =
     let pt = SayableAgeFormatter(HE)
-    Assert.Equal(Some "\u05D9\u05D5\u05DD 1", pt.FormatAge(Some "2025-06-14", Some "2025-06-15"))
+    Assert.Equal(Some "\u05D9\u05D5\u05DD", pt.FormatAge(Some "2025-06-14", Some "2025-06-15"))
 
 // 29.3
 [<Fact>]
@@ -1109,7 +1109,7 @@ let ``Hebrew 3 months`` () =
 [<Fact>]
 let ``Hebrew 2 years dual 1 month`` () =
     let pt = SayableAgeFormatter(HE)
-    Assert.Equal(Some "\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9 1", pt.FormatAge(Some "2023-06-15", Some "2025-07-15"))
+    Assert.Equal(Some "\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9", pt.FormatAge(Some "2023-06-15", Some "2025-07-15"))
 
 // 29.9
 [<Fact>]
@@ -1265,7 +1265,7 @@ let ``Indonesian 6 months`` () =
 [<Fact>]
 let ``Indonesian 3.5 years`` () =
     let pt = SayableAgeFormatter(ID)
-    Assert.Equal(Some "3 tahun setengah", pt.FormatAge(Some "2022-06-15", Some "2025-12-15"))
+    Assert.Equal(Some "3 setengah tahun", pt.FormatAge(Some "2022-06-15", Some "2025-12-15"))
 
 // 29.33
 [<Fact>]
@@ -1394,7 +1394,7 @@ let ``polish 5 is many`` () =
 [<Fact>]
 let ``tachelhit 6 is few`` () =
     let f = SayableAgeFormatter(SHI)
-    Assert.Equal(Some "6 iseggasen d uzgen", f.FormatAge(Some "2005-06-08", Some "2012-06-07"))
+    Assert.Equal(Some "6 \u2D49\u2D59\u2D33\u2D33\u2D6F\u2D30\u2D59\u2D4F \u2D37 \u2D53\u2D63\u2D33\u2D4F", f.FormatAge(Some "2005-06-08", Some "2012-06-07"))
 
 // ================================================================
 // Input validation

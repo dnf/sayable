@@ -17,10 +17,10 @@
   (make-time-locale
    :code "nd"
    :clock (make-clock-config
-    :hours (list "litshumi lambili" "kunye" "kubili" "kuthathu" "kune" "kuhlanu" "isithupha" "isikhombisa" "isitshiyangalombili" "isitshiyangalolunye" "litshumi" "litshumi lanye")
+    :hours (list "letshumi lambili" "lokuqala" "lesibili" "lesithathu" "lesine" "lesihlanu" "lesithupha" "lesikhombisa" "lesitshiyangalombili" "lesitshiyangalolunye" "letshumi" "letshumi lanye")
     :midnight "phakathi kobusuku"
     :noon "emini"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ihola {h}") (cons 5 "ihola {h} lemizuzu emihlanu") (cons 10 "ihola {h} lemizuzu elitshumi") (cons 15 "ihola {h} lemizuzu elitshumi lanhlanu") (cons 20 "ihola {h} lemizuzu engamatshumi amabili") (cons 25 "ihola {h} lemizuzu engamatshumi amabili lanhlanu") (cons 30 "ihola {h} lengxenye") (cons 35 "ihola {h} lemizuzu engamatshumi amathathu lanhlanu") (cons 40 "ihola {h} lemizuzu engamatshumi amane") (cons 45 "ihola {h} lemizuzu engamatshumi amane lanhlanu") (cons 50 "ihola {h} lemizuzu engamatshumi amahlanu") (cons 55 "ihola {h} lemizuzu engamatshumi amahlanu lanhlanu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -20,7 +20,7 @@
     :hours (list "thiäär ku rou" "tök" "rou" "diäk" "ŋuän" "dhiëc" "dhetem" "dhorou" "bɛ̈t" "dhoŋuan" "thiäär" "thiäär ku tök")
     :midnight "wakɔ̈u"
     :noon "akɔ̈l ciëŋ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "thä {h}") (cons 5 "thä {h} ku minitö dhiëc") (cons 10 "thä {h} ku minitö thiäär") (cons 15 "thä {h} ku minitö thiäär ku dhiëc") (cons 20 "thä {h} ku minitö thiärou") (cons 25 "thä {h} ku minitö thiärou ku dhiëc") (cons 30 "thä {h} ku minitö thiärdiäk") (cons 35 "thä {h} ku minitö thiärdiäk ku dhiëc") (cons 40 "thä {h} ku minitö thiärŋuan") (cons 45 "thä {h} ku minitö thiärŋuan ku dhiëc") (cons 50 "thä {h} ku minitö thiärdhiëc") (cons 55 "thä {h} ku minitö thiärdhiëc ku dhiëc")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

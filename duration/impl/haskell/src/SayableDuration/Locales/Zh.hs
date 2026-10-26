@@ -24,7 +24,7 @@ locale = DurationLocale
         , unitDay = Simple "{n}天"
         , unitWeek = Simple "{n}周"
         , unitMonth = Simple "{n}个月"
-        , unitYear = Simple "{n}岁"
+        , unitYear = Simple "{n}年"
         }
     , localeHalf = "{0}半"
     , localeDelimiter = ""

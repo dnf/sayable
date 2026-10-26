@@ -17,17 +17,17 @@ ht
 	locale := SayableTimeLocale new.
 	locale code: 'ht'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'douz'. 'en'. 'de'. 'twa'. 'kat'. 'senk'. 'sis'. 'sèt'. 'uit'. 'nèf'. 'dis'. 'onz' }).
-	clock at: #midnight put: 'minui'.
+	clock at: #hours put: (OrderedCollection withAll: { 'douzè'. 'inè'. 'dezè'. 'twazè'. 'katrè'. 'senkè'. 'sizè'. 'setè'. 'uitè'. 'nevè'. 'dizè'. 'onzè' }).
+	clock at: #midnight put: 'minwi'.
 	clock at: #noon put: 'midi'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h} è'.
-		5. '{h} è senk'.
-		10. '{h} è dis'.
-		15. '{h} è ka'.
-		20. '{h} è ven'.
-		25. '{h} è vennsenk'.
-		30. '{h} è demi'.
+		0. '{h}'.
+		5. '{h} senk'.
+		10. '{h} dis'.
+		15. '{h} e ka'.
+		20. '{h} ven'.
+		25. '{h} vennsenk'.
+		30. '{h} edmi'.
 		35. '{next_h} mwen vennsenk'.
 		40. '{next_h} mwen ven'.
 		45. '{next_h} mwen ka'.

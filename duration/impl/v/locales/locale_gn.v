@@ -22,9 +22,9 @@ fn plural_gn(n int) PluralCategory {
 pub const locale_gn = DurationLocale{
 	code: 'gn'
 	plural: plural_gn
-	second: simple_unit('{n} aravo\'i')
-	minute: simple_unit('{n} aravo')
-	hour: simple_unit('{n} aravo guasu')
+	second: simple_unit('{n} aravo\'ive')
+	minute: simple_unit('{n} aravo\'i')
+	hour: simple_unit('{n} aravo')
 	day: simple_unit('{n} ára')
 	week: simple_unit('{n} arapokõindy')
 	month: simple_unit('{n} jasy')
@@ -36,11 +36,11 @@ pub const locale_gn = DurationLocale{
 	in_future: '{0} rire'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('{n} ara\'i')
+		second: simple_unit('{n} aravo\'ive')
 		has_second: true
-		minute: simple_unit('{n} ara')
+		minute: simple_unit('{n} aravo\'i')
 		has_minute: true
-		hour: simple_unit('{n} ara g')
+		hour: simple_unit('{n} aravo')
 		has_hour: true
 		day: simple_unit('{n} ára')
 		has_day: true

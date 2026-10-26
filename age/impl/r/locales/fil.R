@@ -27,7 +27,7 @@ locale_fil <- list(
     toddler = "Batang paslit",
     child = "Bata",
     teenager = "Tinedyer",
-    adult = "Matanda"
+    adult = "Adulto"
   ),
   short = list(
     units = list(

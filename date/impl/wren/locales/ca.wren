@@ -21,8 +21,8 @@ class CALocale {
   static dayFormatExceptions {
     return {}
   }
-  static datePattern { "{day} de {month}" }
-  static datePatternWithYear { "{day} de {month} de {year}" }
+  static datePattern { "{day} {month}" }
+  static datePatternWithYear { "{day} {month} de {year}" }
   static today { "avui" }
   static tomorrow { "demà" }
   static yesterday { "ahir" }
@@ -31,14 +31,16 @@ class CALocale {
   static thisWeekday { "aquest {weekday}" }
   static nextWeekday { "{weekday} que ve" }
   static lastWeekday { "{weekday} passat" }
-  static monthsInDate { null }
+  static monthsInDate {
+    return ["de gener", "de febrer", "de març", "d'abril", "de maig", "de juny", "de juliol", "d'agost", "de setembre", "d'octubre", "de novembre", "de desembre"]
+  }
   static short {
     return {
       "months": ["gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des"],
       "weekdays": ["dg", "dl", "dt", "dc", "dj", "dv", "ds"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}",
+      "datePatternWithYear": "{day} {month} de {year}",
     }
   }
   static compact {

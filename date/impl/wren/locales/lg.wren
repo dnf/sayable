@@ -27,7 +27,7 @@ class LGLocale {
   static tomorrow { "enkya" }
   static yesterday { "jjo" }
   static dayAfterTomorrow { "enkya ogwa" }
-  static dayBeforeYesterday { "jjo edda" }
+  static dayBeforeYesterday { "jjuuzi" }
   static thisWeekday { "{weekday} eno" }
   static nextWeekday { "{weekday} eddirira" }
   static lastWeekday { "{weekday} eggudde" }

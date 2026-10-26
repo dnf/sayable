@@ -27,7 +27,7 @@ class THLocale {
   static delimiter { " " }
   static justNow { "เมื่อกี้" }
   static ago { "{0}ที่แล้ว" }
-  static inFuture { "ใน{0}" }
+  static inFuture { "ในอีก {0}" }
   static short {
     return {
       "units": {
@@ -40,7 +40,7 @@ class THLocale {
         "year": "{n} ปี",
       },
       "ago": "{0}ที่แล้ว",
-      "inFuture": "ใน{0}",
+      "inFuture": "ในอีก {0}",
     }
   }
   static compact {
@@ -57,7 +57,7 @@ class THLocale {
       "half": "{n}½",
       "delimiter": "",
       "ago": "{0}ที่แล้ว",
-      "inFuture": "ใน{0}",
+      "inFuture": "ในอีก {0}",
     }
   }
 }

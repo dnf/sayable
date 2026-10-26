@@ -21,7 +21,7 @@ var LV = sdate.DateLocale{
 	DayFormat: "{n}.",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",
-	DatePatternWithYear: "{day} {month} {year}",
+	DatePatternWithYear: "{year}. gada {day} {month}",
 	Today:     "šodien",
 	Tomorrow:  "rīt",
 	Yesterday: "vakar",
@@ -36,7 +36,7 @@ var LV = sdate.DateLocale{
 		Weekdays: &[7]string{"sv", "pr", "ot", "tr", "ce", "pk", "se"},
 		DayFormat:            strPtr("{n}."),
 		DatePattern:          strPtr("{day} {month}"),
-		DatePatternWithYear:  strPtr("{day} {month} {year}"),
+		DatePatternWithYear:  strPtr("{year}. gada {day} {month}"),
 	},
 	Compact: &sdate.CompactnessOverride{
 		DatePattern:         strPtr("{d}.{m}."),

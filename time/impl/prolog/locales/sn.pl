@@ -11,22 +11,22 @@
 
 % Shona locale.
 
-st_hours('sn', ['gumi nembiri', 'imwe', 'mbiri', 'nhatu', 'ina', 'shanu', 'nhanhatu', 'nomwe', 'sere', 'pfumbamwe', 'gumi', 'gumi neimwe']).
-st_midnight('sn', 'usiku hwepakati').
+st_hours('sn', ['dzava gumi nembiri', 'yava imwe', 'dzava mbiri', 'dzava nhatu', 'dzava ina', 'dzava shanu', 'dzava nhanhatu', 'dzava nomwe', 'dzava sere', 'dzava pfumbamwe', 'dzava gumi', 'dzava gumi neimwe']).
+st_midnight('sn', 'pakati peusiku').
 st_noon('sn', 'masikati').
 
-st_pattern('sn', 0, '{h}:00').
-st_pattern('sn', 5, '{h}:05').
-st_pattern('sn', 10, '{h}:10').
-st_pattern('sn', 15, '{h}:15').
-st_pattern('sn', 20, '{h}:20').
-st_pattern('sn', 25, '{h}:25').
-st_pattern('sn', 30, '{h}:30').
-st_pattern('sn', 35, '{h}:35').
-st_pattern('sn', 40, '{h}:40').
-st_pattern('sn', 45, '{h}:45').
-st_pattern('sn', 50, '{h}:50').
-st_pattern('sn', 55, '{h}:55').
+st_pattern('sn', 0, '{h}').
+st_pattern('sn', 5, '{h} nemaminitsi mashanu').
+st_pattern('sn', 10, '{h} nemaminitsi gumi').
+st_pattern('sn', 15, '{h} nemaminitsi gumi nemashanu').
+st_pattern('sn', 20, '{h} nemaminitsi makumi maviri').
+st_pattern('sn', 25, '{h} nemaminitsi makumi maviri nemashanu').
+st_pattern('sn', 30, '{h} nehafu').
+st_pattern('sn', 35, '{h} nemaminitsi makumi matatu nemashanu').
+st_pattern('sn', 40, '{h} nemaminitsi makumi mana').
+st_pattern('sn', 45, '{h} nemaminitsi makumi mana nemashanu').
+st_pattern('sn', 50, '{h} nemaminitsi makumi mashanu').
+st_pattern('sn', 55, '{h} nemaminitsi makumi mashanu nemashanu').
 
 short_st_use24h('sn', false).
 short_st_format('sn', '{h}:{mm} {ampm}').

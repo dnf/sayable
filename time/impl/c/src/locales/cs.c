@@ -17,7 +17,7 @@ const StTimeLocale st_locale_cs = {
         { "dvanáct", "jedna", "dvě", "tři", "čtyři", "pět", "šest", "sedm", "osm", "devět", "deset", "jedenáct" },
         "půlnoc",
         "poledne",
-        { "{h} hodin", "pět po {h}", "deset po {h}", "čtvrt po {h}", "dvacet po {h}", "dvacet pět po {h}", "půl po {h}", "dvacet pět do {next_h}", "dvacet do {next_h}", "čtvrt do {next_h}", "deset do {next_h}", "pět do {next_h}" }
+        { "{h}", "{h} nula pět", "{h} deset", "{h} patnáct", "{h} dvacet", "{h} dvacet pět", "{h} třicet", "za dvacet pět minut {next_h}", "za dvacet minut {next_h}", "za patnáct minut {next_h}", "za deset minut {next_h}", "za pět minut {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

@@ -39,18 +39,18 @@ locale =
         , noon = "mesdita"
         , patterns =
             Dict.fromList
-                [ ( 0, "{h} o'clock" )
-                , ( 5, "pesë past {h}" )
-                , ( 10, "dhjetë past {h}" )
-                , ( 15, "një çerek past {h}" )
-                , ( 20, "njëzet past {h}" )
-                , ( 25, "njëzet e pesë past {h}" )
-                , ( 30, "gjysma past {h}" )
-                , ( 35, "njëzet e pesë to {next_h}" )
-                , ( 40, "njëzet to {next_h}" )
-                , ( 45, "një çerek to {next_h}" )
-                , ( 50, "dhjetë to {next_h}" )
-                , ( 55, "pesë to {next_h}" )
+                [ ( 0, "ora {h}" )
+                , ( 5, "{h} e pesë" )
+                , ( 10, "{h} e dhjetë" )
+                , ( 15, "{h} e një çerek" )
+                , ( 20, "{h} e njëzet" )
+                , ( 25, "{h} e njëzet e pesë" )
+                , ( 30, "{h} e gjysmë" )
+                , ( 35, "{next_h} pa njëzet e pesë" )
+                , ( 40, "{next_h} pa njëzet" )
+                , ( 45, "{next_h} pa një çerek" )
+                , ( 50, "{next_h} pa dhjetë" )
+                , ( 55, "{next_h} pa pesë" )
                 ]
         }
     , short =

@@ -24,7 +24,7 @@ pub const locale_pa = DurationLocale{
 	plural: plural_pa
 	second: simple_unit('{n} ਸਕਿੰਟ')
 	minute: simple_unit('{n} ਮਿੰਟ')
-	hour: simple_unit('{n} ਘੰਟਾ')
+	hour: plural_unit({PluralCategory.one: '{n} ਘੰਟਾ', PluralCategory.other: '{n} ਘੰਟੇ'})
 	day: plural_unit({PluralCategory.one: '{n} ਦਿਨ', PluralCategory.other: '{n} ਦਿਨ'})
 	week: plural_unit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'})
 	month: plural_unit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'})

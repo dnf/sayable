@@ -22,7 +22,7 @@
    :half "{n}½"
    :delimiter ", "
    :just-now "lige nu"
-   :ago "{0} siden"
+   :ago "for {0} siden"
    :in-future "om {0}"
    :short {:units {:second "{n} sek." :minute "{n} min." :hour "{n} t." :day {:one "{n} dag" :other "{n} dage"} :week {:one "{n} uge" :other "{n} uger"} :month {:one "{n} md." :other "{n} mdr."} :year "{n} år"} :ago "{0} siden" :in-future "om {0}"}
    :compact {:units {:second "{n} s" :minute "{n} m" :hour "{n} t" :day "{n} d" :week "{n} u" :month "{n} m" :year "{n} år"} :delimiter "" :ago "{0} siden" :in-future "om {0}"}

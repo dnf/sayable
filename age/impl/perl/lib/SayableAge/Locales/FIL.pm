@@ -32,7 +32,7 @@ sub locale {{
     toddler => 'Batang paslit',
     child => 'Bata',
     teenager => 'Tinedyer',
-    adult => 'Matanda',
+    adult => 'Adulto',
   },
   short => {
     units => {

@@ -32,8 +32,8 @@
    "пасфардо"
    "парирӯз"
    "ин {weekday}"
-   "{weekday}-и оянда"
-   "{weekday}-и гузашта"
+   "{weekday}и оянда"
+   "{weekday}и гузашта"
    #f
    (date-compactness-override (list "Янв" "Фев" "Мар" "Апр" "Май" "Июн" "Июл" "Авг" "Сен" "Окт" "Ноя" "Дек") #f (list "Яш" "Дш" "Сш" "Чш" "Пш" "Ҷм" "Шб") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)

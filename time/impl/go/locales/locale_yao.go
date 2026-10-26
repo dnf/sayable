@@ -20,7 +20,7 @@ var YAO = st.TimeLocale{
 		Hours:    [12]string{"likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo"},
 		Midnight: "pakati pa usiku",
 		Noon:     "pakati pa lisiku",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "saa {h}", 5: "saa {h} na nsano", 10: "saa {h} na likumi", 15: "saa {h} na likumi na nsano", 20: "saa {h} na makumi gaŵili", 25: "saa {h} na makumi gaŵili na nsano", 30: "saa {h} na nusu", 35: "saa {h} na makumi gatatu na nsano", 40: "saa {h} na makumi ncece", 45: "saa {h} na makumi ncece na nsano", 50: "saa {h} na makumi nsano", 55: "saa {h} na makumi nsano na nsano"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

@@ -22,7 +22,7 @@ final si = AgeLocale(
   week: pluralUnit({PluralCategory.one: 'සති {n}', PluralCategory.other: 'සති {n}'}),
   month: pluralUnit({PluralCategory.one: 'මාස {n}', PluralCategory.other: 'මාස {n}'}),
   year: pluralUnit({PluralCategory.one: 'වසර {n}', PluralCategory.other: 'වසර {n}'}),
-  half: '{0}යි භාගයයි',
+  half: '{n}½',
   delimiter: ', ',
   justBorn: 'අලුත උපන්',
   newborn: stageNeutral('අලුත උපන්'),

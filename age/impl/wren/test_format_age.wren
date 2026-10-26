@@ -386,6 +386,11 @@ t.assert("14.5", fmt.formatAge("2025-01-31", "2025-07-31"), "6 months")
 // ================================================================
 // Sections 15 and 23 skipped (require system date mocking)
 // ================================================================
+// 15.1: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 15.2: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 23.1: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 23.2: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
+// 23.3: not applicable — wren_cli 0.4.0 has no calendar clock (System.clock is CPU time), so the default "today" path cannot run
 
 // ================================================================
 // 16. formatStage — null / edge cases
@@ -605,7 +610,7 @@ t.assert("25.8", esFmt.formatAge("2023-06-15", "2025-07-15"), "2 años, 1 mes")
 t.assert("25.9", esFmt.formatAge("2023-06-15", "2025-12-15"), "2 años, 6 meses")
 
 // 25.10
-t.assert("25.10", esFmt.formatAge("2022-06-15", "2025-12-15"), "3 y medio años")
+t.assert("25.10", esFmt.formatAge("2022-06-15", "2025-12-15"), "3 años y medio")
 
 // 25.11
 t.assert("25.11", esFmt.formatAge("2022-06-15", "2025-06-15"), "3 años")
@@ -710,7 +715,7 @@ var heFmt = SayableAge.new(HELocale)
 t.assert("29.1", heFmt.formatAge("2025-06-15", "2025-06-15"), "רק נולד")
 
 // 29.2
-t.assert("29.2", heFmt.formatAge("2025-06-14", "2025-06-15"), "יום 1")
+t.assert("29.2", heFmt.formatAge("2025-06-14", "2025-06-15"), "יום")
 
 // 29.3
 t.assert("29.3", heFmt.formatAge("2025-06-12", "2025-06-15"), "3 ימים")
@@ -728,7 +733,7 @@ t.assert("29.6", heFmt.formatAge("2025-01-15", "2025-07-15"), "6 חודשים")
 t.assert("29.7", heFmt.formatAge("2025-03-15", "2025-06-15"), "3 חודשים")
 
 // 29.8
-t.assert("29.8", heFmt.formatAge("2023-06-15", "2025-07-15"), "שנתיים, חודש 1")
+t.assert("29.8", heFmt.formatAge("2023-06-15", "2025-07-15"), "שנתיים, חודש")
 
 // 29.9
 t.assert("29.9", heFmt.formatAge("2022-06-15", "2025-12-15"), "3 שנים וחצי")
@@ -809,7 +814,7 @@ t.assert("29.30", idFmt.formatAge("2025-06-12", "2025-06-15"), "3 hari")
 t.assert("29.31", idFmt.formatAge("2025-01-15", "2025-07-15"), "6 bulan")
 
 // 29.32
-t.assert("29.32", idFmt.formatAge("2022-06-15", "2025-12-15"), "3 tahun setengah")
+t.assert("29.32", idFmt.formatAge("2022-06-15", "2025-12-15"), "3 setengah tahun")
 
 // 29.33
 t.assert("29.33", idFmt.formatAge("2018-06-15", "2025-06-15"), "7 tahun")
@@ -892,7 +897,7 @@ t.assert("32.1", plFmt.formatAge("2021-06-15", "2025-01-15"), "3 i pół lata")
 t.assert("32.2", plShortFmt.formatAge("2020-06-15", "2025-12-15"), "5 i pół lat")
 
 // 32.3
-t.assert("32.3", shiFmt.formatAge("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen")
+t.assert("32.3", shiFmt.formatAge("2005-06-08", "2012-06-07"), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")
 
 // ================================================================
 // 33. Input validation

@@ -10,22 +10,22 @@
 # Source: locales/ts.json
 
 function locale_ts {
-    $hours = @('khume mbiri', 'yin''we', 'mbirhi', 'nharhu', 'mune', 'ntlhanu', 'tsevu', 'nkombo', 'nhungu', 'kaye', 'khume', 'khume yin''we')
+    $hours = @('ya khume mbirhi', 'yo sungula', 'ya vumbirhi', 'ya vunharhu', 'ya vumune', 'ya vuntlhanu', 'ya vutsevu', 'ya vunkombo', 'ya vunhungu', 'ya vukaye', 'ya khume', 'ya khume n''we')
     $midnight = 'vusiku exikarhi'
     $noon = 'nhlekanhi'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'awara {h}'
+    $patterns[5] = 'awara {h} na timinete ta ntlhanu'
+    $patterns[10] = 'awara {h} na timinete ta khume'
+    $patterns[15] = 'awara {h} na kotara'
+    $patterns[20] = 'awara {h} na timinete ta makume mambirhi'
+    $patterns[25] = 'awara {h} na timinete ta makume mambirhi na ntlhanu'
+    $patterns[30] = 'awara {h} na hafu'
+    $patterns[35] = 'awara {h} na timinete ta makume manharhu na ntlhanu'
+    $patterns[40] = 'awara {h} na timinete ta makume mune'
+    $patterns[45] = 'awara {h} na timinete ta makume mune na ntlhanu'
+    $patterns[50] = 'awara {h} na timinete ta makume ntlhanu'
+    $patterns[55] = 'awara {h} na timinete ta makume ntlhanu na ntlhanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

@@ -1,15 +1,20 @@
 /// Core formatting logic for sayable-duration.
-
 import gleam/bit_array
 import gleam/int
 import gleam/list
 import gleam/result
-import gleam/string
 import sayableduration/types.{
-  type Compactness, type DurationLocale,
-  type PluralCategory, type UnitForms, Compact, Normal, Other, PluralUnit,
-  Short, SimpleUnit,
+  type Compactness, type DurationLocale, type PluralCategory, type UnitForms,
+  Compact, Normal, Other, PluralUnit, Short, SimpleUnit,
 }
+
+/// Replace every occurrence of a placeholder, matching code points rather
+/// than graphemes (see sayableduration_ffi.erl).
+@external(erlang, "sayableduration_ffi", "replace_all")
+fn replace_placeholder(in: String, pattern: String, with: String) -> String
+
+@external(erlang, "sayableduration_ffi", "contains")
+fn contains_placeholder(in: String, pattern: String) -> Bool
 
 pub const version = "0.5.0"
 
@@ -69,8 +74,12 @@ pub fn format_since(
           case diff == 0 {
             True -> Ok(resolved.just_now)
             False -> {
-              use dur <- result.map(format_within_ceiling(locale, resolved, diff))
-              string.replace(resolved.ago, "{0}", dur)
+              use dur <- result.map(format_within_ceiling(
+                locale,
+                resolved,
+                diff,
+              ))
+              replace_placeholder(resolved.ago, "{0}", dur)
             }
           }
         }
@@ -98,8 +107,12 @@ pub fn format_until(
           case diff == 0 {
             True -> Ok(resolved.just_now)
             False -> {
-              use dur <- result.map(format_within_ceiling(locale, resolved, diff))
-              string.replace(resolved.in_future, "{0}", dur)
+              use dur <- result.map(format_within_ceiling(
+                locale,
+                resolved,
+                diff,
+              ))
+              replace_placeholder(resolved.in_future, "{0}", dur)
             }
           }
         }
@@ -121,7 +134,10 @@ type ResolvedLocale {
   )
 }
 
-fn resolve_locale(locale: DurationLocale, compactness: Compactness) -> ResolvedLocale {
+fn resolve_locale(
+  locale: DurationLocale,
+  compactness: Compactness,
+) -> ResolvedLocale {
   let ovr = case compactness {
     Normal -> Error(Nil)
     Short -> locale.short
@@ -225,23 +241,49 @@ fn do_format_duration(
     False ->
       // 1-59 seconds
       case total < 60 {
-        True -> resolve_unit(total, get_unit(resolved.units, "second"), locale.plural, "")
+        True ->
+          resolve_unit(
+            total,
+            get_unit(resolved.units, "second"),
+            locale.plural,
+            "",
+          )
         False -> {
           let total_minutes = total / 60
           let remainder_seconds = total % 60
           // 1-4 minutes: minutes + seconds
           case total_minutes < 5 {
             True -> {
-              let result = resolve_unit(total_minutes, get_unit(resolved.units, "minute"), locale.plural, "")
+              let result =
+                resolve_unit(
+                  total_minutes,
+                  get_unit(resolved.units, "minute"),
+                  locale.plural,
+                  "",
+                )
               case remainder_seconds > 0 {
-                True -> result <> resolved.delimiter <> resolve_unit(remainder_seconds, get_unit(resolved.units, "second"), locale.plural, "")
+                True ->
+                  result
+                  <> resolved.delimiter
+                  <> resolve_unit(
+                    remainder_seconds,
+                    get_unit(resolved.units, "second"),
+                    locale.plural,
+                    "",
+                  )
                 False -> result
               }
             }
             False ->
               // 5-59 minutes
               case total_minutes < 60 {
-                True -> resolve_unit(total_minutes, get_unit(resolved.units, "minute"), locale.plural, "")
+                True ->
+                  resolve_unit(
+                    total_minutes,
+                    get_unit(resolved.units, "minute"),
+                    locale.plural,
+                    "",
+                  )
                 False -> {
                   let total_hours = total / 3600
                   let remainder_minutes = { total % 3600 } / 60
@@ -249,11 +291,31 @@ fn do_format_duration(
                   case total_hours <= 5 {
                     True ->
                       case remainder_minutes == 30 {
-                        True -> resolve_unit(total_hours, get_unit(resolved.units, "hour"), locale.plural, resolved.half)
+                        True ->
+                          resolve_unit(
+                            total_hours,
+                            get_unit(resolved.units, "hour"),
+                            locale.plural,
+                            resolved.half,
+                          )
                         False -> {
-                          let result = resolve_unit(total_hours, get_unit(resolved.units, "hour"), locale.plural, "")
+                          let result =
+                            resolve_unit(
+                              total_hours,
+                              get_unit(resolved.units, "hour"),
+                              locale.plural,
+                              "",
+                            )
                           case remainder_minutes > 0 {
-                            True -> result <> resolved.delimiter <> resolve_unit(remainder_minutes, get_unit(resolved.units, "minute"), locale.plural, "")
+                            True ->
+                              result
+                              <> resolved.delimiter
+                              <> resolve_unit(
+                                remainder_minutes,
+                                get_unit(resolved.units, "minute"),
+                                locale.plural,
+                                "",
+                              )
                             False -> result
                           }
                         }
@@ -261,7 +323,13 @@ fn do_format_duration(
                     False ->
                       // 6-23 hours
                       case total_hours < 24 {
-                        True -> resolve_unit(total_hours, get_unit(resolved.units, "hour"), locale.plural, "")
+                        True ->
+                          resolve_unit(
+                            total_hours,
+                            get_unit(resolved.units, "hour"),
+                            locale.plural,
+                            "",
+                          )
                         False -> {
                           let total_days = total / 86_400
                           let remainder_hours = { total % 86_400 } / 3600
@@ -269,11 +337,31 @@ fn do_format_duration(
                           case total_days <= 2 {
                             True ->
                               case remainder_hours == 12 {
-                                True -> resolve_unit(total_days, get_unit(resolved.units, "day"), locale.plural, resolved.half)
+                                True ->
+                                  resolve_unit(
+                                    total_days,
+                                    get_unit(resolved.units, "day"),
+                                    locale.plural,
+                                    resolved.half,
+                                  )
                                 False -> {
-                                  let result = resolve_unit(total_days, get_unit(resolved.units, "day"), locale.plural, "")
+                                  let result =
+                                    resolve_unit(
+                                      total_days,
+                                      get_unit(resolved.units, "day"),
+                                      locale.plural,
+                                      "",
+                                    )
                                   case remainder_hours > 0 {
-                                    True -> result <> resolved.delimiter <> resolve_unit(remainder_hours, get_unit(resolved.units, "hour"), locale.plural, "")
+                                    True ->
+                                      result
+                                      <> resolved.delimiter
+                                      <> resolve_unit(
+                                        remainder_hours,
+                                        get_unit(resolved.units, "hour"),
+                                        locale.plural,
+                                        "",
+                                      )
                                     False -> result
                                   }
                                 }
@@ -281,33 +369,80 @@ fn do_format_duration(
                             False ->
                               // 3-6 days
                               case total_days < 7 {
-                                True -> resolve_unit(total_days, get_unit(resolved.units, "day"), locale.plural, "")
+                                True ->
+                                  resolve_unit(
+                                    total_days,
+                                    get_unit(resolved.units, "day"),
+                                    locale.plural,
+                                    "",
+                                  )
                                 False -> {
                                   let total_weeks = total_days / 7
                                   let remainder_days = total_days % 7
                                   // 1-4 weeks (up to 29 days)
                                   case total_days < 30 {
                                     True -> {
-                                      let result = resolve_unit(total_weeks, get_unit(resolved.units, "week"), locale.plural, "")
+                                      let result =
+                                        resolve_unit(
+                                          total_weeks,
+                                          get_unit(resolved.units, "week"),
+                                          locale.plural,
+                                          "",
+                                        )
                                       case remainder_days > 0 {
-                                        True -> result <> resolved.delimiter <> resolve_unit(remainder_days, get_unit(resolved.units, "day"), locale.plural, "")
+                                        True ->
+                                          result
+                                          <> resolved.delimiter
+                                          <> resolve_unit(
+                                            remainder_days,
+                                            get_unit(resolved.units, "day"),
+                                            locale.plural,
+                                            "",
+                                          )
                                         False -> result
                                       }
                                     }
                                     False -> {
-                                      let total_months = approximate_months(total_days)
-                                      let clamped_months = case total_months < 1 {
+                                      let total_months =
+                                        approximate_months(total_days)
+                                      let clamped_months = case
+                                        total_months < 1
+                                      {
                                         True -> 1
                                         False -> total_months
                                       }
                                       case clamped_months < 12 {
-                                        True -> resolve_unit(clamped_months, get_unit(resolved.units, "month"), locale.plural, "")
+                                        True ->
+                                          resolve_unit(
+                                            clamped_months,
+                                            get_unit(resolved.units, "month"),
+                                            locale.plural,
+                                            "",
+                                          )
                                         False -> {
                                           let total_years = clamped_months / 12
-                                          let remainder_months = clamped_months % 12
-                                          let result = resolve_unit(total_years, get_unit(resolved.units, "year"), locale.plural, "")
+                                          let remainder_months =
+                                            clamped_months % 12
+                                          let result =
+                                            resolve_unit(
+                                              total_years,
+                                              get_unit(resolved.units, "year"),
+                                              locale.plural,
+                                              "",
+                                            )
                                           case remainder_months > 0 {
-                                            True -> result <> resolved.delimiter <> resolve_unit(remainder_months, get_unit(resolved.units, "month"), locale.plural, "")
+                                            True ->
+                                              result
+                                              <> resolved.delimiter
+                                              <> resolve_unit(
+                                                remainder_months,
+                                                get_unit(
+                                                  resolved.units,
+                                                  "month",
+                                                ),
+                                                locale.plural,
+                                                "",
+                                              )
                                             False -> result
                                           }
                                         }
@@ -337,8 +472,8 @@ fn resolve_unit(
   half: String,
 ) -> String {
   let base_n = int.to_string(count)
-  let n = case half != "" && string.contains(half, "{n}") {
-    True -> string.replace(half, "{n}", base_n)
+  let n = case half != "" && contains_placeholder(half, "{n}") {
+    True -> replace_placeholder(half, "{n}", base_n)
     False -> base_n
   }
   let template = case unit_forms {
@@ -351,9 +486,9 @@ fn resolve_unit(
       lookup_form(category, forms)
     }
   }
-  let result = string.replace(template, "{n}", n)
-  case half != "" && string.contains(half, "{0}") {
-    True -> string.replace(half, "{0}", result)
+  let result = replace_placeholder(template, "{n}", n)
+  case half != "" && contains_placeholder(half, "{0}") {
+    True -> replace_placeholder(half, "{0}", result)
     False -> result
   }
 }
@@ -418,7 +553,12 @@ fn parse_iso_to_seconds(iso_str: String) -> Result(Int, Nil) {
       use month <- result.try(digits_value([m1, m2]))
       use day <- result.try(digits_value([d1, d2]))
       use #(hour, minute, second) <- result.try(parse_clock(clock))
-      case month >= 1 && month <= 12 && day >= 1 && day <= days_in_month(year, month) {
+      case
+        month >= 1
+        && month <= 12
+        && day >= 1
+        && day <= days_in_month(year, month)
+      {
         True -> {
           let days = days_since_epoch(year, month, day)
           Ok(days * 86_400 + hour * 3600 + minute * 60 + second)
@@ -484,8 +624,7 @@ fn skip_fraction(rest: BitArray) -> Result(BitArray, Nil) {
 
 fn skip_digits(rest: BitArray) -> BitArray {
   case rest {
-    <<digit, after:bits>> if digit >= 0x30 && digit <= 0x39 ->
-      skip_digits(after)
+    <<digit, after:bits>> if digit >= 0x30 && digit <= 0x39 -> skip_digits(after)
     _ -> rest
   }
 }
@@ -558,10 +697,21 @@ fn count_month_days(year: Int, month: Int) -> Int {
   count_month_days_loop(year, 1, month, 0)
 }
 
-fn count_month_days_loop(year: Int, current: Int, target: Int, acc: Int) -> Int {
+fn count_month_days_loop(
+  year: Int,
+  current: Int,
+  target: Int,
+  acc: Int,
+) -> Int {
   case current >= target {
     True -> acc
-    False -> count_month_days_loop(year, current + 1, target, acc + days_in_month(year, current))
+    False ->
+      count_month_days_loop(
+        year,
+        current + 1,
+        target,
+        acc + days_in_month(year, current),
+      )
   }
 }
 

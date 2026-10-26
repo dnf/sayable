@@ -11,22 +11,22 @@
 
 % Scottish Gaelic locale.
 
-st_hours('gd', ['dà-dheug', 'aon', 'dà', 'trì', 'ceithir', 'còig', 'sia', 'seachd', 'ochd', 'naoi', 'deich', 'aon-deug']).
+st_hours('gd', ['dà uair dheug', 'uair', 'dà uair', 'trì uairean', 'ceithir uairean', 'còig uairean', 'sia uairean', 'seachd uairean', 'ochd uairean', 'naoi uairean', 'deich uairean', 'aon uair deug']).
 st_midnight('gd', 'meadhan-oidhche').
 st_noon('gd', 'meadhan-latha').
 
-st_pattern('gd', 0, '{h}:00').
-st_pattern('gd', 5, '{h}:05').
-st_pattern('gd', 10, '{h}:10').
-st_pattern('gd', 15, '{h}:15').
-st_pattern('gd', 20, '{h}:20').
-st_pattern('gd', 25, '{h}:25').
-st_pattern('gd', 30, '{h}:30').
-st_pattern('gd', 35, '{h}:35').
-st_pattern('gd', 40, '{h}:40').
-st_pattern('gd', 45, '{h}:45').
-st_pattern('gd', 50, '{h}:50').
-st_pattern('gd', 55, '{h}:55').
+st_pattern('gd', 0, '{h}').
+st_pattern('gd', 5, 'còig mionaidean an dèidh {h}').
+st_pattern('gd', 10, 'deich mionaidean an dèidh {h}').
+st_pattern('gd', 15, 'cairteal an dèidh {h}').
+st_pattern('gd', 20, 'fichead mionaid an dèidh {h}').
+st_pattern('gd', 25, 'còig mionaidean fichead an dèidh {h}').
+st_pattern('gd', 30, 'leth-uair an dèidh {h}').
+st_pattern('gd', 35, 'còig mionaidean fichead gu {next_h}').
+st_pattern('gd', 40, 'fichead mionaid gu {next_h}').
+st_pattern('gd', 45, 'cairteal gu {next_h}').
+st_pattern('gd', 50, 'deich mionaidean gu {next_h}').
+st_pattern('gd', 55, 'còig mionaidean gu {next_h}').
 
 short_st_use24h('gd', true).
 short_st_format('gd', '{h}:{mm}').

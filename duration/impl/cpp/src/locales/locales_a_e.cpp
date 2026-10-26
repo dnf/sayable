@@ -88,7 +88,7 @@ const DurationLocale& AK() {
             UnitForms::Simple("sɛkɛnd {n}"),
             UnitForms::Simple("sema {n}"),
             UnitForms::Simple("dɔnhwere {n}"),
-            UnitForms::Simple("nna {n}"),
+            UnitForms::Plural({{PluralCategory::One, "da {n}"}, {PluralCategory::Other, "nna {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "dapɛn {n}"}, {PluralCategory::Other, "nnapɛn {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "bosome {n}"}, {PluralCategory::Other, "abosome {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "afe {n}"}, {PluralCategory::Other, "mfe {n}"}}),
@@ -101,7 +101,7 @@ const DurationLocale& AK() {
             UnitForms::Simple("sɛk {n}"),
             UnitForms::Simple("sem {n}"),
             UnitForms::Simple("dɔn {n}"),
-            UnitForms::Simple("nna {n}"),
+            UnitForms::Plural({{PluralCategory::One, "da {n}"}, {PluralCategory::Other, "nna {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "dapɛn {n}"}, {PluralCategory::Other, "nnapɛn {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "bos {n}"}, {PluralCategory::Other, "abos {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "afe {n}"}, {PluralCategory::Other, "mfe {n}"}}),
@@ -180,9 +180,9 @@ const DurationLocale& AR() {
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Plural({{PluralCategory::Zero, "{n} ثانية"}, {PluralCategory::One, "ثانية واحدة"}, {PluralCategory::Two, "ثانيتان"}, {PluralCategory::Few, "{n} ثوانٍ"}, {PluralCategory::Many, "{n} ثانية"}, {PluralCategory::Other, "{n} ثانية"}}),
-            UnitForms::Plural({{PluralCategory::Zero, "{n} دقيقة"}, {PluralCategory::One, "دقيقة واحدة"}, {PluralCategory::Two, "دقيقتان"}, {PluralCategory::Few, "{n} دقائق"}, {PluralCategory::Many, "{n} دقيقة"}, {PluralCategory::Other, "{n} دقيقة"}}),
-            UnitForms::Plural({{PluralCategory::Zero, "{n} ساعة"}, {PluralCategory::One, "ساعة واحدة"}, {PluralCategory::Two, "ساعتان"}, {PluralCategory::Few, "{n} ساعات"}, {PluralCategory::Many, "{n} ساعة"}, {PluralCategory::Other, "{n} ساعة"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} ثانية"}, {PluralCategory::One, "ثانية"}, {PluralCategory::Two, "ثانيتان"}, {PluralCategory::Few, "{n} ثوانٍ"}, {PluralCategory::Many, "{n} ثانية"}, {PluralCategory::Other, "{n} ثانية"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} دقيقة"}, {PluralCategory::One, "دقيقة"}, {PluralCategory::Two, "دقيقتان"}, {PluralCategory::Few, "{n} دقائق"}, {PluralCategory::Many, "{n} دقيقة"}, {PluralCategory::Other, "{n} دقيقة"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} ساعة"}, {PluralCategory::One, "ساعة"}, {PluralCategory::Two, "ساعتان"}, {PluralCategory::Few, "{n} ساعات"}, {PluralCategory::Many, "{n} ساعة"}, {PluralCategory::Other, "{n} ساعة"}}),
             UnitForms::Plural({{PluralCategory::Zero, "{n} يوم"}, {PluralCategory::One, "يوم"}, {PluralCategory::Two, "يومان"}, {PluralCategory::Few, "{n} أيام"}, {PluralCategory::Many, "{n} يومًا"}, {PluralCategory::Other, "{n} يوم"}}),
             UnitForms::Plural({{PluralCategory::Zero, "{n} أسبوع"}, {PluralCategory::One, "أسبوع"}, {PluralCategory::Two, "أسبوعان"}, {PluralCategory::Few, "{n} أسابيع"}, {PluralCategory::Many, "{n} أسبوعًا"}, {PluralCategory::Other, "{n} أسبوع"}}),
             UnitForms::Plural({{PluralCategory::Zero, "{n} شهر"}, {PluralCategory::One, "شهر"}, {PluralCategory::Two, "شهران"}, {PluralCategory::Few, "{n} أشهر"}, {PluralCategory::Many, "{n} شهرًا"}, {PluralCategory::Other, "{n} شهر"}}),
@@ -210,7 +210,7 @@ const DurationLocale& AR() {
             UnitForms::Simple("{n} س"),
             UnitForms::Simple("{n} ي"),
             UnitForms::Simple("{n} أ"),
-            UnitForms::Plural({{PluralCategory::Zero, "{n} شهر"}, {PluralCategory::One, "شهر"}, {PluralCategory::Two, "شهران"}, {PluralCategory::Few, "{n} أشهر"}, {PluralCategory::Many, "{n} شهرًا"}, {PluralCategory::Other, "{n} شهر"}}),
+            UnitForms::Simple("{n} شهر"),
             UnitForms::Simple("{n} سنة"),
             std::string("{n}½"),
             std::string(""),
@@ -230,21 +230,21 @@ const DurationLocale& AY() {
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Simple("sikundu {n}"),
-            UnitForms::Simple("minutu {n}"),
-            UnitForms::Simple("ura {n}"),
-            UnitForms::Simple("uru {n}"),
-            UnitForms::Simple("simana {n}"),
-            UnitForms::Simple("phaxsi {n}"),
-            UnitForms::Simple("mara {n}")
+            UnitForms::Simple("{n} sikundu"),
+            UnitForms::Simple("{n} minutu"),
+            UnitForms::Simple("{n} ura"),
+            UnitForms::Simple("{n} uru"),
+            UnitForms::Simple("{n} simana"),
+            UnitForms::Simple("{n} phaxsi"),
+            UnitForms::Simple("{n} mara")
         },
         "jichha",
         "{0} chika", ", ",
         "{0} nayraqata", "{0} jutirïn",
         CompactnessOverride{
-            UnitForms::Simple("sik. {n}"),
-            UnitForms::Simple("min. {n}"),
-            UnitForms::Simple("ur. {n}"),
+            UnitForms::Simple("{n} sik."),
+            UnitForms::Simple("{n} min."),
+            UnitForms::Simple("{n} ura"),
             UnitForms::Simple("{n} ur."),
             UnitForms::Simple("{n} sim."),
             UnitForms::Simple("{n} phx."),
@@ -262,7 +262,7 @@ const DurationLocale& AY() {
             UnitForms::Simple("{n}w"),
             UnitForms::Simple("{n}m"),
             UnitForms::Simple("{n}y"),
-            std::nullopt,
+            std::string("{n}½"),
             std::string(""),
             std::string("{0} nayraqata"),
             std::string("{0} jutirïn")
@@ -385,13 +385,13 @@ const DurationLocale& BE() {
             return PluralCategory::Many;
         },
         UnitSet{
-            UnitForms::Plural({{PluralCategory::One, "{n} секунда"}, {PluralCategory::Few, "{n} секунды"}, {PluralCategory::Many, "{n} секунд"}, {PluralCategory::Other, "{n} секунд"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} хвіліна"}, {PluralCategory::Few, "{n} хвіліны"}, {PluralCategory::Many, "{n} хвілін"}, {PluralCategory::Other, "{n} хвілін"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} гадзіна"}, {PluralCategory::Few, "{n} гадзіны"}, {PluralCategory::Many, "{n} гадзін"}, {PluralCategory::Other, "{n} гадзін"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} дзень"}, {PluralCategory::Few, "{n} дні"}, {PluralCategory::Many, "{n} дзён"}, {PluralCategory::Other, "{n} дзён"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} тыдзень"}, {PluralCategory::Few, "{n} тыдні"}, {PluralCategory::Many, "{n} тыдняў"}, {PluralCategory::Other, "{n} тыдняў"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} месяц"}, {PluralCategory::Few, "{n} месяцы"}, {PluralCategory::Many, "{n} месяцаў"}, {PluralCategory::Other, "{n} месяцаў"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} год"}, {PluralCategory::Few, "{n} гады"}, {PluralCategory::Many, "{n} гадоў"}, {PluralCategory::Other, "{n} гадоў"}})
+            UnitForms::Plural({{PluralCategory::One, "{n} секунда"}, {PluralCategory::Few, "{n} секунды"}, {PluralCategory::Many, "{n} секунд"}, {PluralCategory::Other, "{n} секунды"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} хвіліна"}, {PluralCategory::Few, "{n} хвіліны"}, {PluralCategory::Many, "{n} хвілін"}, {PluralCategory::Other, "{n} хвіліны"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} гадзіна"}, {PluralCategory::Few, "{n} гадзіны"}, {PluralCategory::Many, "{n} гадзін"}, {PluralCategory::Other, "{n} гадзіны"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} дзень"}, {PluralCategory::Few, "{n} дні"}, {PluralCategory::Many, "{n} дзён"}, {PluralCategory::Other, "{n} дня"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} тыдзень"}, {PluralCategory::Few, "{n} тыдні"}, {PluralCategory::Many, "{n} тыдняў"}, {PluralCategory::Other, "{n} тыдня"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} месяц"}, {PluralCategory::Few, "{n} месяцы"}, {PluralCategory::Many, "{n} месяцаў"}, {PluralCategory::Other, "{n} месяца"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} год"}, {PluralCategory::Few, "{n} гады"}, {PluralCategory::Many, "{n} гадоў"}, {PluralCategory::Other, "{n} года"}})
         },
         "толькі што",
         "{n} з паловай", ", ",
@@ -438,7 +438,7 @@ const DurationLocale& BEM() {
         UnitSet{
             UnitForms::Plural({{PluralCategory::One, "isekondi {n}"}, {PluralCategory::Other, "amasekondi {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "iminiti {n}"}, {PluralCategory::Other, "amaminiti {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "insa {n}"}, {PluralCategory::Other, "amanso {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "insa {n}"}, {PluralCategory::Other, "insa {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "ubushiku {n}"}, {PluralCategory::Other, "inshiku {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "umulungu {n}"}, {PluralCategory::Other, "imilungu {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "umweshi {n}"}, {PluralCategory::Other, "imyeshi {n}"}}),
@@ -546,7 +546,7 @@ const DurationLocale& BI() {
             UnitForms::Simple("{n} yia")
         },
         "jas nao",
-        "{n} mo haf", ", ",
+        "{0} mo haf", ", ",
         "{0} bifo", "long {0}",
         CompactnessOverride{
             UnitForms::Simple("{n} sek"),
@@ -569,7 +569,7 @@ const DurationLocale& BI() {
             UnitForms::Simple("{n}w"),
             UnitForms::Simple("{n}mo"),
             UnitForms::Simple("{n}y"),
-            std::nullopt,
+            std::string("{n}½"),
             std::string(""),
             std::string("{0} bifo"),
             std::string("long {0}")
@@ -597,7 +597,7 @@ const DurationLocale& BM() {
         },
         "sisan",
         "{0} ni tilancɛ", ", ",
-        "{0} bɔlen", "ka {0}",
+        "{0} bɔlen", "{0} kɔnɔ",
         CompactnessOverride{
             UnitForms::Simple("sek. {n}"),
             UnitForms::Simple("min. {n}"),
@@ -609,7 +609,7 @@ const DurationLocale& BM() {
             std::nullopt,
             std::nullopt,
             std::string("{0} bɔlen"),
-            std::string("ka {0}")
+            std::string("{0} kɔnɔ")
         },
         CompactnessOverride{
             UnitForms::Simple("sek {n}"),
@@ -622,7 +622,7 @@ const DurationLocale& BM() {
             std::string("{n}½"),
             std::string(""),
             std::string("{0} bɔlen"),
-            std::string("ka {0}")
+            std::string("{0} kɔnɔ")
         },
         nullptr, nullptr
     };
@@ -640,7 +640,7 @@ const DurationLocale& BN() {
         UnitSet{
             UnitForms::Simple("{n} সেকেন্ড"),
             UnitForms::Simple("{n} মিনিট"),
-            UnitForms::Simple("{n} ঘন্টা"),
+            UnitForms::Simple("{n} ঘণ্টা"),
             UnitForms::Plural({{PluralCategory::One, "{n} দিন"}, {PluralCategory::Other, "{n} দিন"}}),
             UnitForms::Plural({{PluralCategory::One, "{n} সপ্তাহ"}, {PluralCategory::Other, "{n} সপ্তাহ"}}),
             UnitForms::Plural({{PluralCategory::One, "{n} মাস"}, {PluralCategory::Other, "{n} মাস"}}),
@@ -881,7 +881,7 @@ const DurationLocale& CAK() {
             UnitForms::Simple("{n}w"),
             UnitForms::Simple("{n}mo"),
             UnitForms::Simple("{n}y"),
-            std::nullopt,
+            std::string("{n}½"),
             std::string(""),
             std::string("{0} k'o chi"),
             std::string("pa {0}")
@@ -909,7 +909,7 @@ const DurationLocale& CEB() {
             UnitForms::Simple("{n} ka tuig")
         },
         "karon lang",
-        "{n}½", ", ",
+        "{0} ug tunga", ", ",
         "{0} ang milabay", "sulod sa {0}",
         CompactnessOverride{
             UnitForms::Simple("{n} seg"),
@@ -1010,10 +1010,10 @@ const DurationLocale& CY() {
             UnitForms::Plural({{PluralCategory::Zero, "{n} eiliad"}, {PluralCategory::One, "{n} eiliad"}, {PluralCategory::Two, "{n} eiliad"}, {PluralCategory::Few, "{n} eiliad"}, {PluralCategory::Many, "{n} eiliad"}, {PluralCategory::Other, "{n} eiliad"}}),
             UnitForms::Plural({{PluralCategory::Zero, "{n} munud"}, {PluralCategory::One, "{n} munud"}, {PluralCategory::Two, "{n} funud"}, {PluralCategory::Few, "{n} munud"}, {PluralCategory::Many, "{n} munud"}, {PluralCategory::Other, "{n} munud"}}),
             UnitForms::Plural({{PluralCategory::Zero, "{n} awr"}, {PluralCategory::One, "{n} awr"}, {PluralCategory::Two, "{n} awr"}, {PluralCategory::Few, "{n} awr"}, {PluralCategory::Many, "{n} awr"}, {PluralCategory::Other, "{n} awr"}}),
-            UnitForms::Plural({{PluralCategory::Zero, "{n} diwrnod"}, {PluralCategory::One, "{n} diwrnod"}, {PluralCategory::Two, "{n} ddiwrnod"}, {PluralCategory::Few, "{n} diwrnod"}, {PluralCategory::Many, "{n} niwrnod"}, {PluralCategory::Other, "{n} diwrnod"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} diwrnod"}, {PluralCategory::One, "{n} diwrnod"}, {PluralCategory::Two, "{n} ddiwrnod"}, {PluralCategory::Few, "{n} diwrnod"}, {PluralCategory::Many, "{n} diwrnod"}, {PluralCategory::Other, "{n} diwrnod"}}),
             UnitForms::Plural({{PluralCategory::Zero, "{n} wythnos"}, {PluralCategory::One, "{n} wythnos"}, {PluralCategory::Two, "{n} wythnos"}, {PluralCategory::Few, "{n} wythnos"}, {PluralCategory::Many, "{n} wythnos"}, {PluralCategory::Other, "{n} wythnos"}}),
             UnitForms::Plural({{PluralCategory::Zero, "{n} mis"}, {PluralCategory::One, "{n} mis"}, {PluralCategory::Two, "{n} fis"}, {PluralCategory::Few, "{n} mis"}, {PluralCategory::Many, "{n} mis"}, {PluralCategory::Other, "{n} mis"}}),
-            UnitForms::Plural({{PluralCategory::Zero, "{n} blwyddyn"}, {PluralCategory::One, "{n} blwyddyn"}, {PluralCategory::Two, "{n} flynedd"}, {PluralCategory::Few, "{n} blynedd"}, {PluralCategory::Many, "{n} blynedd"}, {PluralCategory::Other, "{n} blynedd"}})
+            UnitForms::Plural({{PluralCategory::Zero, "{n} blwyddyn"}, {PluralCategory::One, "{n} flwyddyn"}, {PluralCategory::Two, "{n} flynedd"}, {PluralCategory::Few, "{n} blynedd"}, {PluralCategory::Many, "{n} blynedd"}, {PluralCategory::Other, "{n} blynedd"}})
         },
         "nawr",
         "{0} a hanner", ", ",
@@ -1068,7 +1068,7 @@ const DurationLocale& DA() {
         },
         "lige nu",
         "{n}½", ", ",
-        "{0} siden", "om {0}",
+        "for {0} siden", "om {0}",
         CompactnessOverride{
             UnitForms::Simple("{n} sek."),
             UnitForms::Simple("{n} min."),
@@ -1269,7 +1269,7 @@ const DurationLocale& DV() {
             UnitForms::Simple("{n} އަހަރު")
         },
         "މިހާރު",
-        "{0} ބައި", "، ",
+        "{n}½", "، ",
         "މީގެ {0} ކުރިން", "{0} ފަހުން",
         CompactnessOverride{
             UnitForms::Simple("{n} ސިކު"),
@@ -1320,7 +1320,7 @@ const DurationLocale& DYU() {
         },
         "sisan",
         "{0} ni tilancɛ", ", ",
-        "{0} tɛmɛnen", "ka {0}",
+        "{0} tɛmɛnen", "{0} kɔnɔ",
         CompactnessOverride{
             UnitForms::Simple("sɛk. {n}"),
             UnitForms::Simple("min. {n}"),
@@ -1332,7 +1332,7 @@ const DurationLocale& DYU() {
             std::nullopt,
             std::nullopt,
             std::string("{0} tɛmɛnen"),
-            std::string("ka {0}")
+            std::string("{0} kɔnɔ")
         },
         CompactnessOverride{
             UnitForms::Simple("{n}s"),
@@ -1345,7 +1345,7 @@ const DurationLocale& DYU() {
             std::string("{n}½"),
             std::string(""),
             std::string("{0} tɛmɛnen"),
-            std::string("ka {0}")
+            std::string("{0} kɔnɔ")
         },
         nullptr, nullptr
     };
@@ -1369,7 +1369,7 @@ const DurationLocale& DZ() {
             UnitForms::Simple("ལོ་ {n}")
         },
         "ད་ལྟ",
-        "{0} ཕྱེད", " ",
+        "{0} དང་ཕྱེད", " ",
         "{0} ཧེ་མ", "{0} ཤུལ་ལས",
         CompactnessOverride{
             UnitForms::Simple("སྐར་ཆ་ {n}"),
@@ -1411,28 +1411,28 @@ const DurationLocale& EE() {
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Plural({{PluralCategory::One, "sekend {n}"}, {PluralCategory::Other, "sekendwo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "aɖabaƒoƒo {n}"}, {PluralCategory::Other, "aɖabaƒoƒowo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "gaƒoƒo {n}"}, {PluralCategory::Other, "gaƒoƒowo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "ŋkeke {n}"}, {PluralCategory::Other, "ŋkekewo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "kɔsiɖa {n}"}, {PluralCategory::Other, "kɔsiɖawo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "ɣleti {n}"}, {PluralCategory::Other, "ɣletiwo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "ƒe {n}"}, {PluralCategory::Other, "ƒewo {n}"}})
+            UnitForms::Simple("sekend {n}"),
+            UnitForms::Simple("aɖabaƒoƒo {n}"),
+            UnitForms::Simple("gaƒoƒo {n}"),
+            UnitForms::Simple("ŋkeke {n}"),
+            UnitForms::Simple("kɔsiɖa {n}"),
+            UnitForms::Simple("ɣleti {n}"),
+            UnitForms::Simple("ƒe {n}")
         },
         "fifia",
         "{0} kple afã", ", ",
-        "ɖe {0} me", "le {0} me",
+        "{0} si va yi", "le {0} me",
         CompactnessOverride{
             UnitForms::Simple("sek. {n}"),
             UnitForms::Simple("aɖaba. {n}"),
             UnitForms::Simple("gaƒ. {n}"),
-            UnitForms::Simple("ŋkekewo {n}"),
-            UnitForms::Plural({{PluralCategory::One, "kɔsiɖa {n}"}, {PluralCategory::Other, "kɔsiɖawo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "ɣleti {n}"}, {PluralCategory::Other, "ɣletiwo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "ƒe {n}"}, {PluralCategory::Other, "ƒewo {n}"}}),
+            UnitForms::Simple("ŋkeke {n}"),
+            UnitForms::Simple("kɔsiɖa {n}"),
+            UnitForms::Simple("ɣleti {n}"),
+            UnitForms::Simple("ƒe {n}"),
             std::nullopt,
             std::nullopt,
-            std::string("ɖe {0} me"),
+            std::string("{0} si va yi"),
             std::string("le {0} me")
         },
         CompactnessOverride{
@@ -1445,7 +1445,7 @@ const DurationLocale& EE() {
             UnitForms::Simple("{n}y"),
             std::string("{n}½"),
             std::string(""),
-            std::string("ɖe {0} me"),
+            std::string("{0} si va yi"),
             std::string("le {0} me")
         },
         nullptr, nullptr

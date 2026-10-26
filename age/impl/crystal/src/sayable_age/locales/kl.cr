@@ -12,12 +12,12 @@ module SayableAge
   module Locales
     KL = AgeLocale.new(
       code: "kl",
-      plural: ->(n : Int32) { PluralCategory::Other },
+      plural: ->(n : Int32) { n == 1 ? PluralCategory::One : PluralCategory::Other },
       units: {
-        "day" => UnitForms.new("ullut {n}"),
-        "week" => UnitForms.new("sapaatit {n}"),
-        "month" => UnitForms.new("qaammatit {n}"),
-        "year" => UnitForms.new("ukiut {n}"),
+        "day" => UnitForms.new(one: "ulloq {n}", other: "ullut {n}"),
+        "week" => UnitForms.new(one: "sapaatip akunnera {n}", other: "sapaatip akunneri {n}"),
+        "month" => UnitForms.new(one: "qaammat {n}", other: "qaammatit {n}"),
+        "year" => UnitForms.new(one: "ukioq {n}", other: "ukiut {n}"),
       },
       half: "{0} affaa",
       delimiter: ", ",
@@ -33,7 +33,7 @@ module SayableAge
       short: CompactnessOverride.new(
         units: {
           "day" => UnitForms.new("ull. {n}"),
-          "week" => UnitForms.new("sap. {n}"),
+          "week" => UnitForms.new("sap. ak. {n}"),
           "month" => UnitForms.new("qaam. {n}"),
           "year" => UnitForms.new("uk. {n}"),
         },
@@ -46,6 +46,7 @@ module SayableAge
           "year" => UnitForms.new("{n}y"),
         },
         delimiter: "",
+        half: "{n}½",
       ),
     )
   end

@@ -27,13 +27,13 @@ fn plural_be(n int) PluralCategory {
 pub const locale_be = DurationLocale{
 	code: 'be'
 	plural: plural_be
-	second: plural_unit({PluralCategory.one: '{n} секунда', PluralCategory.few: '{n} секунды', PluralCategory.many: '{n} секунд', PluralCategory.other: '{n} секунд'})
-	minute: plural_unit({PluralCategory.one: '{n} хвіліна', PluralCategory.few: '{n} хвіліны', PluralCategory.many: '{n} хвілін', PluralCategory.other: '{n} хвілін'})
-	hour: plural_unit({PluralCategory.one: '{n} гадзіна', PluralCategory.few: '{n} гадзіны', PluralCategory.many: '{n} гадзін', PluralCategory.other: '{n} гадзін'})
-	day: plural_unit({PluralCategory.one: '{n} дзень', PluralCategory.few: '{n} дні', PluralCategory.many: '{n} дзён', PluralCategory.other: '{n} дзён'})
-	week: plural_unit({PluralCategory.one: '{n} тыдзень', PluralCategory.few: '{n} тыдні', PluralCategory.many: '{n} тыдняў', PluralCategory.other: '{n} тыдняў'})
-	month: plural_unit({PluralCategory.one: '{n} месяц', PluralCategory.few: '{n} месяцы', PluralCategory.many: '{n} месяцаў', PluralCategory.other: '{n} месяцаў'})
-	year: plural_unit({PluralCategory.one: '{n} год', PluralCategory.few: '{n} гады', PluralCategory.many: '{n} гадоў', PluralCategory.other: '{n} гадоў'})
+	second: plural_unit({PluralCategory.one: '{n} секунда', PluralCategory.few: '{n} секунды', PluralCategory.many: '{n} секунд', PluralCategory.other: '{n} секунды'})
+	minute: plural_unit({PluralCategory.one: '{n} хвіліна', PluralCategory.few: '{n} хвіліны', PluralCategory.many: '{n} хвілін', PluralCategory.other: '{n} хвіліны'})
+	hour: plural_unit({PluralCategory.one: '{n} гадзіна', PluralCategory.few: '{n} гадзіны', PluralCategory.many: '{n} гадзін', PluralCategory.other: '{n} гадзіны'})
+	day: plural_unit({PluralCategory.one: '{n} дзень', PluralCategory.few: '{n} дні', PluralCategory.many: '{n} дзён', PluralCategory.other: '{n} дня'})
+	week: plural_unit({PluralCategory.one: '{n} тыдзень', PluralCategory.few: '{n} тыдні', PluralCategory.many: '{n} тыдняў', PluralCategory.other: '{n} тыдня'})
+	month: plural_unit({PluralCategory.one: '{n} месяц', PluralCategory.few: '{n} месяцы', PluralCategory.many: '{n} месяцаў', PluralCategory.other: '{n} месяца'})
+	year: plural_unit({PluralCategory.one: '{n} год', PluralCategory.few: '{n} гады', PluralCategory.many: '{n} гадоў', PluralCategory.other: '{n} года'})
 	half: '{n} з паловай'
 	delimiter: ', '
 	just_now: 'толькі што'

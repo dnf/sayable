@@ -23,7 +23,7 @@ sd_tomorrow('dz', 'ནངས་པ').
 sd_yesterday('dz', 'ཁ་ཙ').
 sd_day_after_tomorrow('dz', 'གནངས་ཚེ').
 sd_day_before_yesterday('dz', 'ཁ་ཉིམ').
-sd_this_weekday('dz', 'འདི་ {weekday}').
+sd_this_weekday('dz', '{weekday} འདི').
 sd_next_weekday('dz', '{weekday} ཤུལ་མ').
 sd_last_weekday('dz', '{weekday} ཧེ་མ').
 

@@ -17,10 +17,10 @@
   (make-time-locale
    :code "mos"
    :clock (make-clock-config
-    :hours (list "piig la a yiibu" "a yembre" "a yiibu" "a tãabo" "a naase" "a nu" "a yoobe" "a yopoe" "a niini" "a wae" "piiga" "piig la a yembre")
+    :hours (list "lɛɛr piig la a yiibu" "lɛɛr a yembre" "lɛɛr a yiibu" "lɛɛr a tãabo" "lɛɛr a naase" "lɛɛr a nu" "lɛɛr a yoobe" "lɛɛr a yopoe" "lɛɛr a nii" "lɛɛr a wae" "lɛɛr piiga" "lɛɛr piig la a yembre")
     :midnight "yʋng-vɩɩse"
     :noon "wĩntoog zabre"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} la minit a nu") (cons 10 "{h} la minit piiga") (cons 15 "{h} la minit piig la a nu") (cons 20 "{h} la minit pisi") (cons 25 "{h} la minit pisi la a nu") (cons 30 "{h} la pʋɩ-sʋka") (cons 35 "{h} la minit pis-tã la a nu") (cons 40 "{h} la minit pis-naase") (cons 45 "{h} la minit pis-naase la a nu") (cons 50 "{h} la minit pis-nu") (cons 55 "{h} la minit pis-nu la a nu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

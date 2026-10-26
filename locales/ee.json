@@ -4,22 +4,10 @@
   "pluralRule": "one_other",
   "age": {
     "units": {
-      "day": {
-        "one": "ŋkeke {n}",
-        "other": "ŋkekewo {n}"
-      },
-      "week": {
-        "one": "kɔsiɖa {n}",
-        "other": "kɔsiɖawo {n}"
-      },
-      "month": {
-        "one": "ɣleti {n}",
-        "other": "ɣletiwo {n}"
-      },
-      "year": {
-        "one": "ƒe {n}",
-        "other": "ƒewo {n}"
-      }
+      "day": "ŋkeke {n}",
+      "week": "kɔsiɖa {n}",
+      "month": "ɣleti {n}",
+      "year": "ƒe {n}"
     },
     "half": "{0} kple afã",
     "delimiter": ", ",
@@ -29,24 +17,18 @@
       "infant": "Ɖevi",
       "toddler": "Ɖevi sue",
       "child": "Ɖevi",
-      "teenager": "Ŋutsuviwo",
+      "teenager": {
+        "m": "Ɖekakpui",
+        "f": "Ɖetugbi"
+      },
       "adult": "Ame tsitsi"
     },
     "short": {
       "units": {
-        "day": "ŋkekewo {n}",
-        "week": {
-          "one": "kɔsiɖa {n}",
-          "other": "kɔsiɖawo {n}"
-        },
-        "month": {
-          "one": "ɣleti {n}",
-          "other": "ɣletiwo {n}"
-        },
-        "year": {
-          "one": "ƒe {n}",
-          "other": "ƒewo {n}"
-        }
+        "day": "ŋkeke {n}",
+        "week": "kɔsiɖa {n}",
+        "month": "ɣleti {n}",
+        "year": "ƒe {n}"
       }
     },
     "compact": {
@@ -66,10 +48,10 @@
       "Dzodze",
       "Tedoxe",
       "Afɔfĩe",
-      "Damɛ",
+      "Dama",
       "Masa",
       "Siamlɔm",
-      "Dasiamime",
+      "Deasiamime",
       "Anyɔnyɔ",
       "Kele",
       "Adeɛmekpɔxe",
@@ -78,7 +60,7 @@
     "weekdays": [
       "Kɔsiɖa",
       "Dzoɖa",
-      "Braɖa",
+      "Blaɖa",
       "Kuɖa",
       "Yawoɖa",
       "Fiɖa",
@@ -88,10 +70,10 @@
     "datePattern": "{day} {month}",
     "datePatternWithYear": "{day} {month} {year}",
     "today": "egbe",
-    "tomorrow": "etsɔ",
-    "yesterday": "etso",
-    "dayAfterTomorrow": "etsɔ megbe",
-    "dayBeforeYesterday": "etso nyitsɔ",
+    "tomorrow": "etsɔ si gbɔna",
+    "yesterday": "etsɔ si va yi",
+    "dayAfterTomorrow": "nyitsɔ si gbɔna",
+    "dayBeforeYesterday": "nyitsɔ si va yi",
     "thisWeekday": "{weekday} sia",
     "nextWeekday": "{weekday} si gbɔna",
     "lastWeekday": "{weekday} si va yi",
@@ -104,7 +86,7 @@
         "Dam",
         "Mas",
         "Sia",
-        "Das",
+        "Dea",
         "Any",
         "Kel",
         "Ade",
@@ -113,7 +95,7 @@
       "weekdays": [
         "Kɔs",
         "Dzo",
-        "Bra",
+        "Bla",
         "Kuɖ",
         "Yaw",
         "Fiɖ",
@@ -130,60 +112,30 @@
   },
   "duration": {
     "units": {
-      "second": {
-        "one": "sekend {n}",
-        "other": "sekendwo {n}"
-      },
-      "minute": {
-        "one": "aɖabaƒoƒo {n}",
-        "other": "aɖabaƒoƒowo {n}"
-      },
-      "hour": {
-        "one": "gaƒoƒo {n}",
-        "other": "gaƒoƒowo {n}"
-      },
-      "day": {
-        "one": "ŋkeke {n}",
-        "other": "ŋkekewo {n}"
-      },
-      "week": {
-        "one": "kɔsiɖa {n}",
-        "other": "kɔsiɖawo {n}"
-      },
-      "month": {
-        "one": "ɣleti {n}",
-        "other": "ɣletiwo {n}"
-      },
-      "year": {
-        "one": "ƒe {n}",
-        "other": "ƒewo {n}"
-      }
+      "second": "sekend {n}",
+      "minute": "aɖabaƒoƒo {n}",
+      "hour": "gaƒoƒo {n}",
+      "day": "ŋkeke {n}",
+      "week": "kɔsiɖa {n}",
+      "month": "ɣleti {n}",
+      "year": "ƒe {n}"
     },
     "half": "{0} kple afã",
     "delimiter": ", ",
     "justNow": "fifia",
-    "ago": "ɖe {0} me",
+    "ago": "{0} si va yi",
     "inFuture": "le {0} me",
     "short": {
       "units": {
         "second": "sek. {n}",
         "minute": "aɖaba. {n}",
         "hour": "gaƒ. {n}",
-        "day": "ŋkekewo {n}",
-        "week": {
-          "one": "kɔsiɖa {n}",
-          "other": "kɔsiɖawo {n}"
-        },
-        "month": {
-          "one": "ɣleti {n}",
-          "other": "ɣletiwo {n}"
-        },
-        "year": {
-          "one": "ƒe {n}",
-          "other": "ƒewo {n}"
-        }
+        "day": "ŋkeke {n}",
+        "week": "kɔsiɖa {n}",
+        "month": "ɣleti {n}",
+        "year": "ƒe {n}"
       },
-      "ago": "ɖe {0} me",
+      "ago": "{0} si va yi",
       "inFuture": "le {0} me",
       "clock": {
         "use24h": false,
@@ -206,7 +158,7 @@
       },
       "delimiter": "",
       "half": "{n}½",
-      "ago": "ɖe {0} me",
+      "ago": "{0} si va yi",
       "inFuture": "le {0} me",
       "clock": {
         "use24h": false,
@@ -237,18 +189,18 @@
       "midnight": "zã titina",
       "noon": "ŋdɔ",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "ga {h}",
+        "5": "ga {h} kple aɖabaƒoƒo atɔ̃",
+        "10": "ga {h} kple aɖabaƒoƒo ewo",
+        "15": "ga {h} kple aɖabaƒoƒo wuiatɔ̃",
+        "20": "ga {h} kple aɖabaƒoƒo blaeve",
+        "25": "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃",
+        "30": "ga {h} kple afã",
+        "35": "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃",
+        "40": "ga {h} kple aɖabaƒoƒo blaene",
+        "45": "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃",
+        "50": "ga {h} kple aɖabaƒoƒo blaatɔ̃",
+        "55": "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃"
       }
     },
     "short": {
@@ -271,5 +223,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Ewe 'ga {h}' (ga = o'clock, from gaƒoƒo 'bell strike'), additive 'ga {h} kple aɖabaƒoƒo N' (aɖabaƒoƒo = minute, already used by this locale) and 'ga {h} kple afã' (half). Ewe numerals: atɔ̃, ewo, wuiatɔ̃, blaeve, blaetɔ̃, blaene, blaatɔ̃ with 'vɔ' for the units. Standard 12-hour count. No subtractive form: Ewe speakers mostly state hour + minutes."
+    }
+  ]
 }

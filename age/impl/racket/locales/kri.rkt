@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} wik")
          "month" (hash "type" "simple" "form" "{n} mont")
          "year" (hash "type" "simple" "form" "{n} ia"))
-   "{n} na af"
+   "{0} ɛn af"
    ", "
    "Nyubon bebi"
    (hash "newborn" (stage-label "Nyubon bebi" #f #f)
@@ -35,5 +35,5 @@
          "teenager" (stage-label "Yong posin" #f #f)
          "adult" (stage-label "Big posin" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} de") (hash "type" "simple" "form" "{n} wik") (hash "type" "simple" "form" "{n} mont") (hash "type" "simple" "form" "{n} ia") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

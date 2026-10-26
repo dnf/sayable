@@ -24,7 +24,7 @@ final is_ = AgeLocale(
   week: pluralUnit({PluralCategory.one: '{n} vika', PluralCategory.other: '{n} vikur'}),
   month: pluralUnit({PluralCategory.one: '{n} mánuður', PluralCategory.other: '{n} mánuðir'}),
   year: pluralUnit({PluralCategory.one: '{n} ár', PluralCategory.other: '{n} ár'}),
-  half: '{0} og hálft',
+  half: '{n} og hálft',
   delimiter: ', ',
   justBorn: 'Nýfætt',
   newborn: stageNeutral('Nýfæðingur'),

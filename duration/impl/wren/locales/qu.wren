@@ -14,8 +14,8 @@ class QULocale {
   static plural { Fn.new {|n| "other" } }
   static units {
     return {
-      "second": "{n} ñiqin",
-      "minute": "{n} chiniku",
+      "second": "{n} sikundu",
+      "minute": "{n} minutu",
       "hour": "{n} ura",
       "day": "{n} p'unchaw",
       "week": "{n} simana",
@@ -31,8 +31,8 @@ class QULocale {
   static short {
     return {
       "units": {
-        "second": "{n} ñiq",
-        "minute": "{n} chi",
+        "second": "{n} sik",
+        "minute": "{n} min",
         "hour": "{n} ura",
         "day": "{n} p'un",
         "week": "{n} sim",

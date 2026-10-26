@@ -54,7 +54,7 @@ locale =
     , dayBeforeYesterday = Just "shekaranjiya"
     , thisWeekday = Just "wannan {weekday}"
     , nextWeekday = Just "{weekday} mai zuwa"
-    , lastWeekday = Just "{weekday} da ya wuce"
+    , lastWeekday = Just "{weekday} da ta wuce"
     , monthsInDate = Nothing
     , short =
         Just

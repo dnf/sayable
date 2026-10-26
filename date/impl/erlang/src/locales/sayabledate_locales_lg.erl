@@ -26,7 +26,7 @@ locale() ->
         tomorrow = "enkya",
         yesterday = "jjo",
         day_after_tomorrow = {just, "enkya ogwa"},
-        day_before_yesterday = {just, "jjo edda"},
+        day_before_yesterday = {just, "jjuuzi"},
         this_weekday = {just, "{weekday} eno"},
         next_weekday = {just, "{weekday} eddirira"},
         last_weekday = {just, "{weekday} eggudde"},

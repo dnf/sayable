@@ -10,7 +10,7 @@
 # Source: locales/ml.json
 
 proc plural_ml {n} {
-    if {$n == 0 || $n == 1} { return "one" }
+    if {$n == 1} { return "one" }
     return "other"
 }
 
@@ -22,7 +22,7 @@ proc locale_ml {} {
         month [dict create one "{n} മാസം" other "{n} മാസങ്ങൾ"] \
         year [dict create one "{n} വയസ്സ്" other "{n} വയസ്സ്"] \
     ]
-    set half "{0} ര"
+    set half "{n}½"
     set delimiter {, }
     set just_born {നവജാതശിശു}
     set stages [dict create \

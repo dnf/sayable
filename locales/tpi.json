@@ -9,7 +9,7 @@
       "month": "{n} mun",
       "year": "{n} yia"
     },
-    "half": "{n} na hap",
+    "half": "{0} na hap",
     "delimiter": ", ",
     "justBorn": "Nupela pikinini",
     "stages": {
@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -69,7 +70,7 @@
     "tomorrow": "tumora",
     "yesterday": "asde",
     "dayAfterTomorrow": "haptumora",
-    "dayBeforeYesterday": "asde bipo",
+    "dayBeforeYesterday": "hapasde",
     "thisWeekday": "dispela {weekday}",
     "nextWeekday": "{weekday} bihain",
     "lastWeekday": "{weekday} bipo",
@@ -116,7 +117,7 @@
       "month": "{n} mun",
       "year": "{n} yia"
     },
-    "half": "{n} na hap",
+    "half": "{0} na hap",
     "delimiter": ", ",
     "justNow": "nau tasol",
     "ago": "{0} i go pinis",
@@ -145,6 +146,7 @@
         "year": "{n}y"
       },
       "delimiter": "",
+      "half": "{n}½",
       "ago": "{0} i go pinis",
       "inFuture": "long {0}"
     }
@@ -168,18 +170,18 @@
       "midnight": "biknait",
       "noon": "belo",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} kilok",
+        "5": "faiv minit pas {h}",
+        "10": "ten minit pas {h}",
+        "15": "kwata pas {h}",
+        "20": "twenti minit pas {h}",
+        "25": "twenti faiv minit pas {h}",
+        "30": "hap pas {h}",
+        "35": "teti faiv minit pas {h}",
+        "40": "foti minit pas {h}",
+        "45": "foti faiv minit pas {h}",
+        "50": "fifti minit pas {h}",
+        "55": "fifti faiv minit pas {h}"
       }
     },
     "short": {
@@ -202,5 +204,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "'{h} kilok', 'kwata pas {h}', 'hap pas {h}', '<N> minit pas {h}' are well attested Tok Pisin. For :35-:55 I kept counting up ('foti faiv minit pas tri') because I could not confirm a Tok Pisin 'to' construction; it is grammatical but plainer than 'kwata tu foa' if that is in fact used. Spellings teti/foti/fifti follow the standard orthography."
+    }
+  ]
 }

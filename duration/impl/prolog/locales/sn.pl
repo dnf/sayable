@@ -14,9 +14,12 @@
 sd_plural('sn', 1, one) :- !.
 sd_plural('sn', _, other).
 
-sd_unit('sn', second, _, '{n} sekondi').
-sd_unit('sn', minute, _, '{n} miniti').
-sd_unit('sn', hour, _, '{n} awa').
+sd_unit('sn', second, one, 'sekondi {n}').
+sd_unit('sn', second, other, 'masekondi {n}').
+sd_unit('sn', minute, one, 'miniti {n}').
+sd_unit('sn', minute, other, 'maminitsi {n}').
+sd_unit('sn', hour, one, 'awa {n}').
+sd_unit('sn', hour, other, 'maawa {n}').
 sd_unit('sn', day, one, 'zuva {n}').
 sd_unit('sn', day, other, 'mazuva {n}').
 sd_unit('sn', week, one, 'vhiki {n}').

@@ -29,7 +29,7 @@ nb
 	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'akkurat nå'.
-	locale ago: '{0} siden'.
+	locale ago: 'for {0} siden'.
 	locale inFuture: 'om {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -41,7 +41,7 @@ nb
 			'month'. '{n} md.'.
 			'year'. '{n} år'.
 		}).
-		#ago. '{0} siden'.
+		#ago. 'for {0} siden'.
 		#inFuture. 'om {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
@@ -55,7 +55,7 @@ nb
 			'year'. '{n}å'.
 		}).
 		#delimiter. ''.
-		#ago. '{0} siden'.
+		#ago. 'for {0} siden'.
 		#inFuture. 'om {0}'.
 	}).
 	^ locale

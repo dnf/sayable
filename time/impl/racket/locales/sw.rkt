@@ -21,10 +21,10 @@
   (time-locale
    "sw"
    (clock-config
-    (list "kumi na mbili" "moja" "mbili" "tatu" "nne" "tano" "sita" "saba" "nane" "tisa" "kumi" "kumi na moja")
-    "usiku wa manane"
-    "adhuhuri"
-    (hash 0 "{h} o'clock" 5 "tano kupita {h}" 10 "kumi kupita {h}" 15 "robo kupita {h}" 20 "ishirini kupita {h}" 25 "ishirini na tano kupita {h}" 30 "nusu kupita {h}" 35 "ishirini na tano kabla ya {next_h}" 40 "ishirini kabla ya {next_h}" 45 "robo kabla ya {next_h}" 50 "kumi kabla ya {next_h}" 55 "tano kabla ya {next_h}"))
+    (list "sita" "saba" "nane" "tisa" "kumi" "kumi na moja" "kumi na mbili" "moja" "mbili" "tatu" "nne" "tano")
+    "saa sita usiku"
+    "saa sita mchana"
+    (hash 0 "saa {h}" 5 "saa {h} na dakika tano" 10 "saa {h} na dakika kumi" 15 "saa {h} na robo" 20 "saa {h} na dakika ishirini" 25 "saa {h} na dakika ishirini na tano" 30 "saa {h} na nusu" 35 "saa {next_h} kasoro dakika ishirini na tano" 40 "saa {next_h} kasoro dakika ishirini" 45 "saa {next_h} kasoro robo" 50 "saa {next_h} kasoro dakika kumi" 55 "saa {next_h} kasoro dakika tano"))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
   ))

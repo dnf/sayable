@@ -10,21 +10,21 @@
 # Source: locales/st.json
 
 _sayabletime_locale_st() {
-    _clock_hours=('leshome le metso e mmedi' 'e nngwe' 'tse pedi' 'tse tharo' 'tse nne' 'tse hlano' 'tse tshelela' 'tse supileng' 'tse robedi' 'tse robong' 'leshome' 'leshome le motso o le mong')
+    _clock_hours=('leshome le metso e mmedi' 'pele' 'bobedi' 'boraro' 'bone' 'bohlano' 'botshelela' 'bosupa' 'borobedi' 'borobong' 'leshome' 'leshome le motso o le mong')
     _clock_midnight='hara bosiu'
     _clock_noon='motsheare'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='hora ya {h}'
+    _clock_pattern_5='hora ya {h} le metsotso e mehlano'
+    _clock_pattern_10='hora ya {h} le metsotso e leshome'
+    _clock_pattern_15='hora ya {h} le kotara'
+    _clock_pattern_20='hora ya {h} le metsotso e mashome a mabedi'
+    _clock_pattern_25='hora ya {h} le metsotso e mashome a mabedi a metso e mehlano'
+    _clock_pattern_30='hora ya {h} le halofo'
+    _clock_pattern_35='hora ya {h} le metsotso e mashome a mararo a metso e mehlano'
+    _clock_pattern_40='hora ya {h} le metsotso e mashome a mane'
+    _clock_pattern_45='hora ya {h} le metsotso e mashome a mane a metso e mehlano'
+    _clock_pattern_50='hora ya {h} le metsotso e mashome a mahlano'
+    _clock_pattern_55='hora ya {h} le metsotso e mashome a mahlano a metso e mehlano'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

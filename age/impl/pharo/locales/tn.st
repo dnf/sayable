@@ -31,7 +31,7 @@ tn
 		#infant. 'Lesea'.
 		#toddler. 'Ngwana yo monnye'.
 		#child. 'Ngwana'.
-		#teenager. 'Lekgarebe'.
+		#teenager. 'Mosha'.
 		#adult. 'Motho yo mogolo'.
 	}).
 	locale short: (Dictionary newFromPairs: {

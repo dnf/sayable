@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [am.json](../../locales/am.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Ethiopian reckoning adopted (everyday convention: hour 1 = 7:00), encoded by rotating hours by 6 so 9:00 -> 'ሦስት ሰዓት', 14:00 -> 'ስምንት ሰዓት'. Past/to system: '{h} ሰዓት ከሩብ' (quarter past), '{h} ሰዓት ተኩል' (half past), 'ለ{next_h} ሰዓት ሩብ ጉዳይ' (quarter to); 5/10/20/25-minute buckets spelled with ደቂቃ. noon/midnight kept (እኩለ ቀን / እኩለ ሌሊት). Spelling choices ሃያ/አሥር are standard variants.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ከነገ ወዲያ      | 17/3    |
 | Day before yesterday | ከትናንት በፊት    | 13/3    |
 | This Thursday (+5)   | ይህ ሐሙስ       | 20/3    |
-| Last Monday (-4)     | ያለፈው ማክሰኞ    | 11/3    |
-| Next Wednesday (+12) | ቀጣይ ሐሙስ      | 27/3    |
-| Same month (+20)     | 4 ኤፕሪል       | 4/4     |
+| Last Tuesday (-4)    | ያለፈው ማክሰኞ    | 11/3    |
+| Next Thursday (+12)  | ቀጣይ ሐሙስ      | 27/3    |
+| Same year (+20)      | 4 ኤፕሪል       | 4/4     |
 | Different year       | 10 ጃንዋሪ 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short | Compact |
-| --------------- | ---------- | ----- | ------- |
-| Midnight        | እኩለ ሌሊት    | 0:00  | 0:00    |
-| 1:00 AM         | አንድ:00     | 1:00  | 1:00    |
-| 5 past 9        | ዘጠኝ:05     | 9:05  | 9:05    |
-| Quarter past 10 | አሥር:15     | 10:15 | 10:15   |
-| Half past 11    | አሥራ አንድ:30 | 11:30 | 11:30   |
-| Noon            | እኩለ ቀን     | 12:00 | 12:00   |
-| Quarter to 3    | ሁለት:45     | 14:45 | 14:45   |
-| 5 to 6          | አምስት:55    | 17:55 | 17:55   |
-| 8 o'clock PM    | ስምንት:00    | 20:00 | 20:00   |
-| 10:30 PM        | አሥር:30     | 22:30 | 22:30   |
-| 11:58 PM        | እኩለ ሌሊት    | 23:58 | 23:58   |
+| Time            | Normal                    | Short | Compact |
+| --------------- | ------------------------- | ----- | ------- |
+| Midnight        | እኩለ ሌሊት                   | 0:00  | 0:00    |
+| 1:00 AM         | ሰባት ሰዓት                   | 1:00  | 1:00    |
+| 5 past 9        | ሦስት ሰዓት ከአምስት ደቂቃ         | 9:05  | 9:05    |
+| Quarter past 10 | አራት ሰዓት ከሩብ               | 10:15 | 10:15   |
+| Half past 11    | አምስት ሰዓት ተኩል              | 11:30 | 11:30   |
+| Noon            | እኩለ ቀን                    | 12:00 | 12:00   |
+| Quarter to 3    | ለዘጠኝ ሰዓት ሩብ ጉዳይ           | 14:45 | 14:45   |
+| 5 to 6          | ለአሥራ ሁለት ሰዓት አምስት ደቂቃ ጉዳይ | 17:55 | 17:55   |
+| 8 o'clock PM    | ሁለት ሰዓት                   | 20:00 | 20:00   |
+| 10:30 PM        | አራት ሰዓት ተኩል               | 22:30 | 22:30   |
+| 11:58 PM        | እኩለ ሌሊት                   | 23:58 | 23:58   |

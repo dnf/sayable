@@ -23,7 +23,7 @@ function locale_tpi {
         month = '{n} mun'
         year = '{n} yia'
     }
-    $half = '{n} na hap'
+    $half = '{0} na hap'
     $delimiter = ', '
     $justNow = 'nau tasol'
     $ago = '{0} i go pinis'
@@ -51,6 +51,7 @@ function locale_tpi {
             month = '{n}mo'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
         ago = '{0} i go pinis'
         inFuture = 'long {0}'

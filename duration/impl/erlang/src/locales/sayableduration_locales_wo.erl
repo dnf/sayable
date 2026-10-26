@@ -17,18 +17,18 @@ locale() ->
     #duration_locale{
         code = "wo",
         plural = fun(_) -> other end,
-        second = {simple, "saa-yépp {n}"},
-        minute = {simple, "simili {n}"},
-        hour = {simple, "waxtu {n}"},
-        day = {simple, "bés {n}"},
-        week = {simple, "ayubés {n}"},
-        month = {simple, "weer {n}"},
-        year = {simple, "at {n}"},
+        second = {simple, "{n} saa"},
+        minute = {simple, "{n} simili"},
+        hour = {simple, "{n} waxtu"},
+        day = {simple, "{n} fan"},
+        week = {simple, "{n} ayubés"},
+        month = {simple, "{n} weer"},
+        year = {simple, "{n} at"},
         half = "{0} ak genn-wàll",
         delimiter = ", ",
         just_now = "léegi",
         ago = "{0} ci ginaaw",
-        in_future = "ci {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "saa-y. {n}"}}, minute = {just, {simple, "sim. {n}"}}, hour = {just, {simple, "wax. {n}"}}, day = {just, {simple, "bés {n}"}}, week = {just, {simple, "ayub. {n}"}}, month = {just, {simple, "weer {n}"}}, year = {just, {simple, "at {n}"}}, half = nothing, delimiter = nothing, ago = {just, "{0} ci ginaaw"}, in_future = {just, "ci {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "saa {n}"}}, minute = {just, {simple, "sim {n}"}}, hour = {just, {simple, "wax {n}"}}, day = {just, {simple, "bés {n}"}}, week = {just, {simple, "ayub {n}"}}, month = {just, {simple, "weer {n}"}}, year = {just, {simple, "at {n}"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} ci gin."}, in_future = {just, "ci {0}"}}}
+        in_future = "fileek {0}",
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} saa"}}, minute = {just, {simple, "{n} sim."}}, hour = {just, {simple, "{n} wax."}}, day = {just, {simple, "{n} fan"}}, week = {just, {simple, "{n} ayub."}}, month = {just, {simple, "{n} weer"}}, year = {just, {simple, "{n} at"}}, half = nothing, delimiter = nothing, ago = {just, "{0} ci ginaaw"}, in_future = {just, "fileek {0}"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n} saa"}}, minute = {just, {simple, "{n} sim"}}, hour = {just, {simple, "{n} wax"}}, day = {just, {simple, "{n} fan"}}, week = {just, {simple, "{n} ayub"}}, month = {just, {simple, "{n} weer"}}, year = {just, {simple, "{n} at"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} ci gin."}, in_future = {just, "fileek {0}"}}}
     }.

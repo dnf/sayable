@@ -11,22 +11,22 @@
 
 % Kinyarwanda locale.
 
-st_hours('rw', ['cumi n\'ebyiri', 'rimwe', 'ebyiri', 'eshatu', 'enye', 'eshanu', 'esheshatu', 'indwi', 'umunani', 'icyenda', 'icumi', 'cumi n\'imwe']).
-st_midnight('rw', 'igicuku').
-st_noon('rw', 'saa sita').
+st_hours('rw', ['sita', 'saba', 'munani', 'cyenda', 'kumi', 'kumi n\'imwe', 'kumi n\'ebyiri', 'moya', 'mbiri', 'tatu', 'ine', 'tanu']).
+st_midnight('rw', 'saa sita z\'ijoro').
+st_noon('rw', 'saa sita z\'amanywa').
 
-st_pattern('rw', 0, '{h}:00').
-st_pattern('rw', 5, '{h}:05').
-st_pattern('rw', 10, '{h}:10').
-st_pattern('rw', 15, '{h}:15').
-st_pattern('rw', 20, '{h}:20').
-st_pattern('rw', 25, '{h}:25').
-st_pattern('rw', 30, '{h}:30').
-st_pattern('rw', 35, '{h}:35').
-st_pattern('rw', 40, '{h}:40').
-st_pattern('rw', 45, '{h}:45').
-st_pattern('rw', 50, '{h}:50').
-st_pattern('rw', 55, '{h}:55').
+st_pattern('rw', 0, 'saa {h}').
+st_pattern('rw', 5, 'saa {h} n\'iminota itanu').
+st_pattern('rw', 10, 'saa {h} n\'iminota icumi').
+st_pattern('rw', 15, 'saa {h} n\'iminota cumi n\'itanu').
+st_pattern('rw', 20, 'saa {h} n\'iminota makumyabiri').
+st_pattern('rw', 25, 'saa {h} n\'iminota makumyabiri n\'itanu').
+st_pattern('rw', 30, 'saa {h} n\'igice').
+st_pattern('rw', 35, 'saa {h} n\'iminota mirongo itatu n\'itanu').
+st_pattern('rw', 40, 'saa {h} n\'iminota mirongo ine').
+st_pattern('rw', 45, 'saa {h} n\'iminota mirongo ine n\'itanu').
+st_pattern('rw', 50, 'saa {h} n\'iminota mirongo itanu').
+st_pattern('rw', 55, 'saa {h} n\'iminota mirongo itanu n\'itanu').
 
 short_st_use24h('rw', false).
 short_st_format('rw', '{h}:{mm} {ampm}').

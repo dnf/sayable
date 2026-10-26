@@ -24,7 +24,7 @@
                (cons :week "{n} wik")
                (cons :month "{n} mun")
                (cons :year "{n} yia"))
-   :half "{n} na hap"
+   :half "{0} na hap"
    :delimiter ", "
    :just-now "nau tasol"
    :ago "{0} i go pinis"
@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}mo")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} i go pinis"
    :compact-in-future "long {0}"

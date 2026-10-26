@@ -16,8 +16,8 @@ const StTimeLocale st_locale_vi = {
     {
         { "mười hai", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "mười một" },
         "nửa đêm",
-        "trưa",
-        { "{h} o'clock", "năm qua {h}", "mười qua {h}", "mười lăm qua {h}", "hai mươi qua {h}", "hai mươi lăm qua {h}", "ba mươi qua {h}", "hai mươi lăm trước {next_h}", "hai mươi trước {next_h}", "mười lăm trước {next_h}", "mười trước {next_h}", "năm trước {next_h}" }
+        "mười hai giờ trưa",
+        { "{h} giờ", "{h} giờ năm phút", "{h} giờ mười phút", "{h} giờ mười lăm phút", "{h} giờ hai mươi phút", "{h} giờ hai mươi lăm phút", "{h} giờ rưỡi", "{next_h} giờ kém hai mươi lăm", "{next_h} giờ kém hai mươi", "{next_h} giờ kém mười lăm", "{next_h} giờ kém mười", "{next_h} giờ kém năm" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

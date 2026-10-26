@@ -18,11 +18,11 @@ final mi = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: simpleUnit('rā {n}'),
-  week: simpleUnit('wiki {n}'),
-  month: simpleUnit('marama {n}'),
-  year: simpleUnit('tau {n}'),
-  half: '{0}½',
+  day: simpleUnit('{n} rā'),
+  week: simpleUnit('{n} wiki'),
+  month: simpleUnit('{n} marama'),
+  year: simpleUnit('{n} tau'),
+  half: '{n}½',
   delimiter: ', ',
   justBorn: 'Pēpi hou',
   newborn: stageNeutral('Pēpi hou'),
@@ -32,10 +32,10 @@ final mi = AgeLocale(
   teenager: stageNeutral('Rangatahi'),
   adult: stageNeutral('Pakeke'),
   short: CompactnessOverride(
-    day: simpleUnit('rā {n}'),
-    week: simpleUnit('w {n}'),
-    month: simpleUnit('m {n}'),
-    year: simpleUnit('t {n}'),
+    day: simpleUnit('{n} rā'),
+    week: simpleUnit('{n} w'),
+    month: simpleUnit('{n} m'),
+    year: simpleUnit('{n} t'),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}r'),

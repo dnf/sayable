@@ -13,7 +13,7 @@
   {:code "mam"
    :plural (fn [_n] :other)
    :units {:day "{n} q'ij"
-          :week "{n} xjaw"
+          :week "{n} seman"
           :month "{n} xjaw"
           :year "{n} ab'q'ii"}
    :half "{0} nik'"
@@ -26,6 +26,6 @@
             :teenager "Q'a"
             :adult "Xjal"
 }
-   :short {:units {:day "{n} q'ij" :week "{n} xjaw" :month "{n} xjaw" :year "{n} ab'."}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :short {:units {:day "{n} q'ij" :week "{n} seman" :month "{n} xjaw" :year "{n} ab'."}}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

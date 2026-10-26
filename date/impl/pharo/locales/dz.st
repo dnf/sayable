@@ -27,7 +27,7 @@ dz
 	locale yesterday: 'ཁ་ཙ'.
 	locale dayAfterTomorrow: 'གནངས་ཚེ'.
 	locale dayBeforeYesterday: 'ཁ་ཉིམ'.
-	locale thisWeekday: 'འདི་ {weekday}'.
+	locale thisWeekday: '{weekday} འདི'.
 	locale nextWeekday: '{weekday} ཤུལ་མ'.
 	locale lastWeekday: '{weekday} ཧེ་མ'.
 	locale monthsInDate: nil.

@@ -16,7 +16,7 @@
           :week {:one "{n} setmana" :other "{n} setmanes"}
           :month {:one "{n} mes" :other "{n} mesos"}
           :year {:one "{n} any" :other "{n} anys"}}
-   :half "{n} i mig"
+   :half "{0} i mig"
    :delimiter ", "
    :just-born "Nounat"
    :stages {:newborn {:m "Nounat" :f "Nounada"}

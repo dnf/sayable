@@ -21,7 +21,7 @@ var KL = sdate.DateLocale{
 	DayFormat: "{n}.",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{month} {day}",
-	DatePatternWithYear: "{day} {month} {year}",
+	DatePatternWithYear: "{month} {day} {year}",
 	Today:     "ullumi",
 	Tomorrow:  "aqagu",
 	Yesterday: "ippassaq",
@@ -36,7 +36,7 @@ var KL = sdate.DateLocale{
 		Weekdays: &[7]string{"sap", "ata", "mar", "pin", "sis", "tal", "arf"},
 		DayFormat:            strPtr("{n}."),
 		DatePattern:          strPtr("{month} {day}"),
-		DatePatternWithYear:  strPtr("{day} {month} {year}"),
+		DatePatternWithYear:  strPtr("{month} {day} {year}"),
 	},
 	Compact: &sdate.CompactnessOverride{
 		DatePattern:         strPtr("{m}-{d}"),

@@ -135,11 +135,11 @@
     "units": {
       "second": {
         "one": "motsotswana {n}",
-        "other": "dimetsotswana {n}"
+        "other": "metsotswana {n}"
       },
       "minute": {
-        "one": "metsotso {n}",
-        "other": "dimetsotso {n}"
+        "one": "motsotso {n}",
+        "other": "metsotso {n}"
       },
       "hour": {
         "one": "iri {n}",
@@ -170,12 +170,12 @@
     "short": {
       "units": {
         "second": {
-          "one": "mots. {n}",
-          "other": "dimets. {n}"
+          "one": "motsotsw. {n}",
+          "other": "metsotsw. {n}"
         },
         "minute": {
-          "one": "mets. {n}",
-          "other": "dimets. {n}"
+          "one": "mots. {n}",
+          "other": "mets. {n}"
         },
         "hour": {
           "one": "iri {n}",
@@ -236,34 +236,34 @@
   "time": {
     "clock": {
       "hours": [
-        "lesome pedi",
-        "tee",
-        "pedi",
-        "tharo",
-        "nne",
-        "hlano",
-        "tshela",
-        "šupa",
+        "lesomepedi",
+        "pele",
+        "bobedi",
+        "boraro",
+        "bone",
+        "bohlano",
+        "botshela",
+        "bošupa",
         "seswai",
         "senyane",
         "lesome",
-        "lesome tee"
+        "lesometee"
       ],
       "midnight": "bošego gare",
       "noon": "mosegare",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "iri ya {h}",
+        "5": "iri ya {h} le metsotso ye mehlano",
+        "10": "iri ya {h} le metsotso ye lesome",
+        "15": "iri ya {h} le kotara",
+        "20": "iri ya {h} le metsotso ye masomepedi",
+        "25": "iri ya {h} le metsotso ye masomepedi-hlano",
+        "30": "iri ya {h} le seripagare",
+        "35": "iri ya {h} le metsotso ye masometharo-hlano",
+        "40": "iri ya {h} le metsotso ye masomenne",
+        "45": "iri ya {h} le metsotso ye masomenne-hlano",
+        "50": "iri ya {h} le metsotso ye masomehlano",
+        "55": "iri ya {h} le metsotso ye masomehlano-hlano"
       }
     },
     "short": {
@@ -286,5 +286,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Sotho 'iri ya <ordinal>' ('iri ya bobedi' = 2 o'clock, 'iri ya pele' = 1 o'clock), ordinals match the file's weekday names (Labobedi, Laboraro, Labone, Labohlano). Minutes additive: 'le metsotso ye mehlano/ye lesome/ye masomepedi...', :15 = 'le kotara', :30 = 'le seripagare' (the file's half word). Additive forms for :35-:55 rather than a 'to' construction."
+    }
+  ]
 }

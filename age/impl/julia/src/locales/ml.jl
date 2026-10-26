@@ -13,14 +13,14 @@
 
 const ML = AgeLocale(
     code = "ml",
-    plural = n -> n in (0, 1) ? "one" : "other",
+    plural = n -> n == 1 ? "one" : "other",
     units = Dict(
         "day" => Dict("one" => "{n} ദിവസം", "other" => "{n} ദിവസങ്ങൾ"),
         "week" => Dict("one" => "{n} ആഴ്ച", "other" => "{n} ആഴ്ചകൾ"),
         "month" => Dict("one" => "{n} മാസം", "other" => "{n} മാസങ്ങൾ"),
         "year" => Dict("one" => "{n} വയസ്സ്", "other" => "{n} വയസ്സ്"),
     ),
-    half = "{0} ര",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "നവജാതശിശു",
     stages = Dict(

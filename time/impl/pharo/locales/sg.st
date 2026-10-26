@@ -17,22 +17,22 @@ sg
 	locale := SayableTimeLocale new.
 	locale code: 'sg'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'bâlè-ûse'. 'ôko'. 'ûse'. 'otâ'. 'usïö'. 'okü'. 'ömënë'. 'mbïrïmbïrï'. 'mënâmbârâ'. 'gonambâlâ'. 'bâlè'. 'bâlè na ôko' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'balë-ôko na ûse'. 'ôko'. 'ûse'. 'otâ'. 'usïö'. 'okü'. 'omanä'. 'mbâsâmbârâ'. 'miombe'. 'gümbâyä'. 'balë-ôko'. 'balë-ôko na ôko' }).
 	clock at: #midnight put: 'gï na lögö'.
 	clock at: #noon put: 'lâ nzönï'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'ngbonga {h}'.
+		5. 'ngbonga {h} na minüti okü'.
+		10. 'ngbonga {h} na minüti balë-ôko'.
+		15. 'ngbonga {h} na minüti balë-ôko na okü'.
+		20. 'ngbonga {h} na minüti balë-ûse'.
+		25. 'ngbonga {h} na minüti balë-ûse na okü'.
+		30. 'ngbonga {h} na ndâmbo'.
+		35. 'ngbonga {h} na minüti balë-otâ na okü'.
+		40. 'ngbonga {h} na minüti balë-usïö'.
+		45. 'ngbonga {h} na minüti balë-usïö na okü'.
+		50. 'ngbonga {h} na minüti balë-okü'.
+		55. 'ngbonga {h} na minüti balë-okü na okü'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

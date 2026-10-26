@@ -53,7 +53,7 @@ fn build_ha() -> DateLocale:
     var day_before_yesterday = "shekaranjiya"
     var this_weekday = "wannan {weekday}"
     var next_weekday = "{weekday} mai zuwa"
-    var last_weekday = "{weekday} da ya wuce"
+    var last_weekday = "{weekday} da ta wuce"
     var has_months_in_date = False
 
     var short_ovr = build_compactness_override()

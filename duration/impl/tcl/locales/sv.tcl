@@ -28,7 +28,7 @@ proc locale_duration_sv {} {
     set half "{n}½"
     set delimiter {, }
     set just_now {just nu}
-    set ago "{0} sedan"
+    set ago "för {0} sedan"
     set in_future "om {0}"
     set short [dict create \
         units [dict create \
@@ -40,7 +40,7 @@ proc locale_duration_sv {} {
             month "{n} mån" \
             year "{n} år" \
         ] \
-        ago "{0} sedan" \
+        ago "för {0} sedan" \
         in_future "om {0}" \
     ]
     set compact [dict create \
@@ -54,7 +54,7 @@ proc locale_duration_sv {} {
             year "{n}å" \
         ] \
         delimiter {} \
-        ago "{0} sedan" \
+        ago "för {0} sedan" \
         in_future "om {0}" \
     ]
     return [dict create \

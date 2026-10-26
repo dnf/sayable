@@ -13,10 +13,10 @@ locale_ee <- list(
   code = "ee",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    day = list(one = "ŋkeke {n}", other = "ŋkekewo {n}"),
-    week = list(one = "kɔsiɖa {n}", other = "kɔsiɖawo {n}"),
-    month = list(one = "ɣleti {n}", other = "ɣletiwo {n}"),
-    year = list(one = "ƒe {n}", other = "ƒewo {n}")
+    day = "ŋkeke {n}",
+    week = "kɔsiɖa {n}",
+    month = "ɣleti {n}",
+    year = "ƒe {n}"
   ),
   half = "{0} kple afã",
   delimiter = ", ",
@@ -26,15 +26,15 @@ locale_ee <- list(
     infant = "Ɖevi",
     toddler = "Ɖevi sue",
     child = "Ɖevi",
-    teenager = "Ŋutsuviwo",
+    teenager = list(m = "Ɖekakpui", f = "Ɖetugbi"),
     adult = "Ame tsitsi"
   ),
   short = list(
     units = list(
-      day = "ŋkekewo {n}",
-      week = list(one = "kɔsiɖa {n}", other = "kɔsiɖawo {n}"),
-      month = list(one = "ɣleti {n}", other = "ɣletiwo {n}"),
-      year = list(one = "ƒe {n}", other = "ƒewo {n}")
+      day = "ŋkeke {n}",
+      week = "kɔsiɖa {n}",
+      month = "ɣleti {n}",
+      year = "ƒe {n}"
     )
   ),
   compact = list(

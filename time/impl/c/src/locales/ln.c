@@ -15,9 +15,9 @@ const StTimeLocale st_locale_ln = {
     "ln",
     {
         { "zómi na míbalé", "mɔ̌kɔ́", "míbalé", "mísáto", "mínéi", "mítáno", "motóba", "nsambo", "mwambe", "libwá", "zómi", "zómi na mɔ̌kɔ́" },
-        "mpɔ́kwa",
-        "ntɔ́ngɔ́",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        "midí ya butú",
+        "midí",
+        { "ngonga ya {h}", "ngonga ya {h} na miniti mítáno", "ngonga ya {h} na miniti zómi", "ngonga ya {h} na miniti zómi na mítáno", "ngonga ya {h} na miniti ntúkú míbalé", "ngonga ya {h} na miniti ntúkú míbalé na mítáno", "ngonga ya {h} na ndámbo", "ngonga ya {h} na miniti ntúkú mísáto na mítáno", "ngonga ya {h} na miniti ntúkú mínéi", "ngonga ya {h} na miniti ntúkú mínéi na mítáno", "ngonga ya {h} na miniti ntúkú mítáno", "ngonga ya {h} na miniti ntúkú mítáno na mítáno" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

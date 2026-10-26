@@ -18,7 +18,7 @@ pub fn locale() -> DateLocale {
     DateLocale {
         code: "ka".to_string(),
         months: ["იანვარი".to_string(), "თებერვალი".to_string(), "მარტი".to_string(), "აპრილი".to_string(), "მაისი".to_string(), "ივნისი".to_string(), "ივლისი".to_string(), "აგვისტო".to_string(), "სექტემბერი".to_string(), "ოქტომბერი".to_string(), "ნოემბერი".to_string(), "დეკემბერი".to_string()],
-        weekdays: ["კვირა".to_string(), "ორშაბათი".to_string(), "სამშაბათი".to_string(), "ოთხშაბათი".to_string(), "ხუთშაბათი".to_string(), "პარასკევი".to_string(), "შაბათი".to_string()],
+        weekdays: ["კვირას".to_string(), "ორშაბათს".to_string(), "სამშაბათს".to_string(), "ოთხშაბათს".to_string(), "ხუთშაბათს".to_string(), "პარასკევს".to_string(), "შაბათს".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),

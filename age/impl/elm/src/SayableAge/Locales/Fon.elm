@@ -32,7 +32,7 @@ locale =
         , infant = Neutral "Vǐ"
         , toddler = Neutral "Vǐ"
         , child = Neutral "Vǐ"
-        , teenager = Neutral "Nyɔ̌nu"
+        , teenager = Gendered "Dɔnkpɛvu" "Ɖyɔ̌vǐ"
         , adult = Neutral "Mɛ̌xo"
         }
     , short =

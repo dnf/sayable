@@ -17,10 +17,10 @@
   (make-time-locale
    :code "mt"
    :clock (make-clock-config
-    :hours (list "tnax" "waħda" "tnejn" "tlieta" "erbgħa" "ħamsa" "sitta" "sebgħa" "tmienja" "disgħa" "għaxra" "ħdax")
-    :midnight "nofsinhar"
+    :hours (list "it-tnax" "is-siegħa" "is-sagħtejn" "it-tlieta" "l-erbgħa" "il-ħamsa" "is-sitta" "is-sebgħa" "it-tmienja" "id-disgħa" "l-għaxra" "il-ħdax")
+    :midnight "nofsillejl"
     :noon "nofsinhar"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} u ħamsa") (cons 10 "{h} u għaxra") (cons 15 "{h} u kwart") (cons 20 "{h} u għoxrin") (cons 25 "{h} u ħamsa u għoxrin") (cons 30 "{h} u nofs") (cons 35 "{next_h} neqsin ħamsa u għoxrin") (cons 40 "{next_h} neqsin għoxrin") (cons 45 "{next_h} neqsin kwart") (cons 50 "{next_h} neqsin għaxra") (cons 55 "{next_h} neqsin ħamsa")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

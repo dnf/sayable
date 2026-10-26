@@ -28,8 +28,8 @@
         [(and (>= (remainder n 100) 11) (<= (remainder n 100) 19)) "many"]
         [else "other"]))
    (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} sekonda" "two" "{n} sekondi" "few" "{n} sekondi" "many" "{n}-il sekonda" "other" "{n} sekonda"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} minuta" "two" "{n} minuti" "few" "{n} minuti" "many" "{n}-il minuta" "other" "{n} minuta"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} siegħa" "two" "{n} sigħat" "few" "{n} sigħat" "many" "{n}-il siegħa" "other" "{n} siegħa"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} minuta" "two" "minutejn" "few" "{n} minuti" "many" "{n}-il minuta" "other" "{n} minuta"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} siegħa" "two" "sagħtejn" "few" "{n} sigħat" "many" "{n}-il siegħa" "other" "{n} siegħa"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "ġurnata" "two" "jumejn" "few" "{n} ijiem" "many" "{n}-il jum" "other" "{n} jum"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "ġimgħa" "two" "ġimgħatejn" "few" "{n} ġimgħat" "many" "{n}-il ġimgħa" "other" "{n} ġimgħa"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "xahar" "two" "xahrejn" "few" "{n} xhur" "many" "{n}-il xahar" "other" "{n} xahar"))

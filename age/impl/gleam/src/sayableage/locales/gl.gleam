@@ -24,7 +24,7 @@ pub fn locale() -> types.AgeLocale {
     just_born: "Recén nacido",
     newborn: types.GenderedStage("Recén nacido", "Recén nacida"),
     infant: types.NeutralStage("Bebé"),
-    toddler: types.NeutralStage("Neno"),
+    toddler: types.GenderedStage("Neno pequeno", "Nena pequena"),
     child: types.GenderedStage("Neno", "Nena"),
     teenager: types.NeutralStage("Adolescente"),
     adult: types.GenderedStage("Adulto", "Adulta"),

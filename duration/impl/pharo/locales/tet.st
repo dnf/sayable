@@ -54,6 +54,7 @@ tet
 			'month'. '{n}mo'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} liu ba'.
 		#inFuture. 'iha {0}'.

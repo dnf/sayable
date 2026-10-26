@@ -39,11 +39,11 @@ fn build_ff() -> AgeLocale:
     var infant = stage_neutral("Ɓinngel")
     var toddler = stage_neutral("Cukalel")
     var child = stage_neutral("Suka")
-    var teenager = stage_neutral("Suka debbo")
+    var teenager = stage_gendered("Suka gorko", "Suka debbo")
     var adult = stage_neutral("Mawɗo")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("ñalɗe {n}")
+    short_ovr.day = plural_unit(one="ñalawma {n}", other="ñalɗe {n}")
     short_ovr.has_day = True
     short_ovr.week = plural_unit(one="yontere {n}", other="yontereeji {n}")
     short_ovr.has_week = True
@@ -53,7 +53,7 @@ fn build_ff() -> AgeLocale:
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    compact_ovr.day = simple_unit("ñalɗe {n}")
+    compact_ovr.day = plural_unit(one="ñalawma {n}", other="ñalɗe {n}")
     compact_ovr.has_day = True
     compact_ovr.week = plural_unit(one="yont {n}", other="yontji {n}")
     compact_ovr.has_week = True

@@ -17,7 +17,7 @@ proc locale_mam {} {
     set code {mam}
     set units [dict create \
         day "{n} q'ij" \
-        week "{n} xjaw" \
+        week "{n} seman" \
         month "{n} xjaw" \
         year "{n} ab'q'ii" \
     ]
@@ -35,7 +35,7 @@ proc locale_mam {} {
     set short [dict create \
         units [dict create \
             day "{n} q'ij" \
-            week "{n} xjaw" \
+            week "{n} seman" \
             month "{n} xjaw" \
             year "{n} ab'." \
         ] \
@@ -47,6 +47,7 @@ proc locale_mam {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

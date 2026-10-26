@@ -10,22 +10,22 @@
 # Source: locales/tem.json
 
 function locale_tem {
-    $hours = @('pɛn pu', 'kɩrɩŋ', 'rɔŋ', 'rasar', 'rɔŋ-anat', 'rɔman', 'rɔmata', 'rɔmbot', 'rɔmɔntat', 'rɔmɔntaŋka', 'pɛn', 'pɛn nɛ kɩrɩŋ')
+    $hours = @('awa pɛn nɛ rɔŋ', 'awa kɩrɩŋ', 'awa rɔŋ', 'awa rasar', 'awa rɔŋ-anat', 'awa rɔman', 'awa rɔmata', 'awa rɔmbot', 'awa rɔmɔntat', 'awa rɔmɔntaŋka', 'awa pɛn', 'awa pɛn nɛ kɩrɩŋ')
     $midnight = 'rofɛt anpa'
     $noon = 'lən'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} nɛ minit rɔman'
+    $patterns[10] = '{h} nɛ minit pɛn'
+    $patterns[15] = '{h} nɛ minit pɛn nɛ rɔman'
+    $patterns[20] = '{h} nɛ minit kɩgba'
+    $patterns[25] = '{h} nɛ minit kɩgba nɛ rɔman'
+    $patterns[30] = '{h} a gbankɛ'
+    $patterns[35] = '{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman'
+    $patterns[40] = '{h} nɛ minit tɔgba rɔŋ'
+    $patterns[45] = '{h} nɛ minit tɔgba rɔŋ nɛ rɔman'
+    $patterns[50] = '{h} nɛ minit tɔgba rɔŋ nɛ pɛn'
+    $patterns[55] = '{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman'
     $clock = @{
         hours = $hours
         midnight = $midnight

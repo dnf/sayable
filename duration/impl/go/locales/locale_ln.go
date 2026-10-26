@@ -23,9 +23,9 @@ var LN = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.SimpleUnit("{n} segɔnde"),
-		Minute: sd.SimpleUnit("{n} moniti"),
-		Hour:   sd.SimpleUnit("{n} ngonga"),
+		Second: sd.SimpleUnit("segɔnde {n}"),
+		Minute: sd.SimpleUnit("miniti {n}"),
+		Hour:   sd.SimpleUnit("ngonga {n}"),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mokolo {n}", sd.Other: "mikolo {n}"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "poso {n}", sd.Other: "baposo {n}"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "sanza {n}", sd.Other: "basanza {n}"}),

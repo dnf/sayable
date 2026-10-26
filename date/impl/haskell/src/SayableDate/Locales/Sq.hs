@@ -31,13 +31,13 @@ locale = DateLocale
         , "dhjetor"
         ]
     , localeWeekdays =
-        [ "e diel"
-        , "e hënë"
-        , "e martë"
-        , "e mërkurë"
-        , "e enjte"
-        , "e premte"
-        , "e shtunë"
+        [ "të dielën"
+        , "të hënën"
+        , "të martën"
+        , "të mërkurën"
+        , "të enjten"
+        , "të premten"
+        , "të shtunën"
         ]
     , localeDayFormat = "{n}"
     , localeDayFormatExceptions = []
@@ -48,8 +48,8 @@ locale = DateLocale
     , localeYesterday = "dje"
     , localeDayAfterTomorrow = Just "pasnesër"
     , localeDayBeforeYesterday = Just "pardje"
-    , localeThisWeekday = Just "këtë {weekday}"
-    , localeNextWeekday = Just "{weekday} tjetër"
+    , localeThisWeekday = Just "{weekday}"
+    , localeNextWeekday = Just "{weekday} e ardhshme"
     , localeLastWeekday = Just "{weekday} e kaluar"
     , localeMonthsInDate = Nothing
     , localeShort = Just $

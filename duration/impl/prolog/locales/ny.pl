@@ -14,9 +14,10 @@
 sd_plural('ny', 1, one) :- !.
 sd_plural('ny', _, other).
 
-sd_unit('ny', second, _, '{n} sekondi').
-sd_unit('ny', minute, _, '{n} mphindi').
-sd_unit('ny', hour, _, '{n} ola').
+sd_unit('ny', second, _, 'sekondi {n}').
+sd_unit('ny', minute, _, 'mphindi {n}').
+sd_unit('ny', hour, one, 'ola {n}').
+sd_unit('ny', hour, other, 'maola {n}').
 sd_unit('ny', day, one, 'tsiku {n}').
 sd_unit('ny', day, other, 'masiku {n}').
 sd_unit('ny', week, one, 'sabata {n}').
@@ -34,7 +35,8 @@ sd_in_future('ny', 'mu {0}').
 
 short_sd_unit('ny', second, _, 'sek {n}').
 short_sd_unit('ny', minute, _, 'mph {n}').
-short_sd_unit('ny', hour, _, 'ola {n}').
+short_sd_unit('ny', hour, one, 'ola {n}').
+short_sd_unit('ny', hour, other, 'maola {n}').
 short_sd_unit('ny', day, one, 'tsiku {n}').
 short_sd_unit('ny', day, other, 'mas {n}').
 short_sd_unit('ny', week, one, 'sabata {n}').

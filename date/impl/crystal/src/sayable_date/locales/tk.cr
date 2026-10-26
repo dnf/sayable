@@ -12,8 +12,8 @@ module SayableDate
   module Locales
     TK = DateLocale.new(
       code: "tk",
-      months: ["Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"],
-      weekdays: ["Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"],
+      months: ["ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"],
+      weekdays: ["ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"],
       day_format: "{n}",
       day_format_exceptions: {} of String => String,
       date_pattern: "{day} {month}",
@@ -27,8 +27,8 @@ module SayableDate
       next_weekday: "indiki {weekday}",
       last_weekday: "geçen {weekday}",
       short: CompactnessOverride.new(
-        months: ["Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"],
-        weekdays: ["Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"],
+        months: ["ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek"],
+        weekdays: ["ýek", "duş", "siş", "çar", "pen", "ann", "şen"],
         day_format: "{n}",
         date_pattern: "{day} {month}",
         date_pattern_with_year: "{day} {month} {year}",

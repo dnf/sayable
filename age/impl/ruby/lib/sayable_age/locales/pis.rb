@@ -21,7 +21,7 @@ module SayableAge
         'month' => '{n} manis',
         'year' => '{n} yia',
       },
-      half: '{n} en haf',
+      half: '{0} en haf',
       delimiter: ', ',
       just_born: 'Niufala bebi',
       stages: {
@@ -48,6 +48,7 @@ module SayableAge
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
       ),
     )
   end

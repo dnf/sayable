@@ -21,7 +21,7 @@ function locale_lo {
         year = '{n} ປີ'
     }
     $half = '{0}ເຄິ່ງ'
-    $delimiter = ''
+    $delimiter = ' '
     $justBorn = 'ເກີດໃໝ່'
     $stages = @{
         newborn = 'ເດັກເກີດໃໝ່'
@@ -46,6 +46,7 @@ function locale_lo {
             month = '{n}m'
             year = '{n}y'
         }
+        half = '{n}½'
     }
     return @{
         code = 'lo'

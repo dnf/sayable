@@ -19,11 +19,11 @@
           :week "{n} wik"
           :month "{n} mont"
           :year "{n} ia"}
-   :half "{n} na af"
+   :half "{0} ɛn af"
    :delimiter ", "
    :just-now "jos naw"
    :ago "{0} bak"
    :in-future "na {0}"
    :short {:units {:second "{n} sek." :minute "{n} min." :hour "{n} awa" :day "{n} de" :week "{n} wik" :month "{n} mont" :year "{n} ia"} :ago "{0} bak" :in-future "na {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter "" :ago "{0} bak" :in-future "na {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} bak" :in-future "na {0}"}
 })

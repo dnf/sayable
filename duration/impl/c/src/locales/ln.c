@@ -20,9 +20,9 @@ const SduDurationLocale sdu_locale_ln = {
     "ln",
     plural_ln,
     {
-        { "{n} segɔnde", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} moniti", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} ngonga", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "segɔnde {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "miniti {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "ngonga {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { NULL, { NULL, "mokolo {n}", NULL, NULL, NULL, "mikolo {n}" } },
         { NULL, { NULL, "poso {n}", NULL, NULL, NULL, "baposo {n}" } },
         { NULL, { NULL, "sanza {n}", NULL, NULL, NULL, "basanza {n}" } },

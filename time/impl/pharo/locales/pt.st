@@ -21,7 +21,7 @@ pt
 	clock at: #midnight put: 'meia-noite'.
 	clock at: #noon put: 'meio-dia'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h} horas'.
+		0. '{h} em ponto'.
 		5. '{h} e cinco'.
 		10. '{h} e dez'.
 		15. '{h} e um quarto'.

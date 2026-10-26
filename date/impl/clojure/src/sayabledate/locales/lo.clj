@@ -23,10 +23,10 @@
    :tomorrow "ມື້ອື່ນ"
    :yesterday "ມື້ວານ"
    :day-after-tomorrow "ມື້ຮື"
-   :day-before-yesterday "ມື້ກ່ອນ"
+   :day-before-yesterday "ມື້ຊືນ"
    :this-weekday "{weekday}ນີ້"
    :next-weekday "{weekday}ໜ້າ"
-   :last-weekday "{weekday}ແລ້ວ"
+   :last-weekday "{weekday}ທີ່ແລ້ວ"
    :months-in-date nil
    :short {:months ["ມ.ກ." "ກ.ພ." "ມ.ນ." "ມ.ສ." "ພ.ພ." "ມ.ຖ." "ກ.ລ." "ສ.ຫ." "ກ.ຍ." "ຕ.ລ." "ພ.ຈ." "ທ.ວ."] :months-in-date nil :weekdays ["ອາທິດ" "ຈັນ" "ອັງຄານ" "ພຸດ" "ພະຫັດ" "ສຸກ" "ເສົາ"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

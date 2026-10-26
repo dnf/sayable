@@ -19,8 +19,8 @@
    :clock (make-clock-config
     :hours (list "mười hai" "một" "hai" "ba" "bốn" "năm" "sáu" "bảy" "tám" "chín" "mười" "mười một")
     :midnight "nửa đêm"
-    :noon "trưa"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "năm qua {h}") (cons 10 "mười qua {h}") (cons 15 "mười lăm qua {h}") (cons 20 "hai mươi qua {h}") (cons 25 "hai mươi lăm qua {h}") (cons 30 "ba mươi qua {h}") (cons 35 "hai mươi lăm trước {next_h}") (cons 40 "hai mươi trước {next_h}") (cons 45 "mười lăm trước {next_h}") (cons 50 "mười trước {next_h}") (cons 55 "năm trước {next_h}")))
+    :noon "mười hai giờ trưa"
+    :patterns (list (cons 0 "{h} giờ") (cons 5 "{h} giờ năm phút") (cons 10 "{h} giờ mười phút") (cons 15 "{h} giờ mười lăm phút") (cons 20 "{h} giờ hai mươi phút") (cons 25 "{h} giờ hai mươi lăm phút") (cons 30 "{h} giờ rưỡi") (cons 35 "{next_h} giờ kém hai mươi lăm") (cons 40 "{next_h} giờ kém hai mươi") (cons 45 "{next_h} giờ kém mười lăm") (cons 50 "{next_h} giờ kém mười") (cons 55 "{next_h} giờ kém năm")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

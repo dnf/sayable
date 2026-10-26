@@ -751,8 +751,15 @@ package body Sayableduration_Locales is
       Locale_Ak.Short_Override.Hour.Has_Simple := True;
       Locale_Ak.Short_Override.Hour.Simple := To_Unbounded_String ("dɔnhwere {n}");
       Locale_Ak.Short_Override.Has_Day := True;
-      Locale_Ak.Short_Override.Day.Has_Simple := True;
-      Locale_Ak.Short_Override.Day.Simple := To_Unbounded_String ("nna {n}");
+      Locale_Ak.Short_Override.Day.Has_Simple := False;
+      Locale_Ak.Short_Override.Day.Has_Form (Zero) := False;
+      Locale_Ak.Short_Override.Day.Has_Form (One) := True;
+      Locale_Ak.Short_Override.Day.Forms (One) := To_Unbounded_String ("da {n}");
+      Locale_Ak.Short_Override.Day.Has_Form (Two) := False;
+      Locale_Ak.Short_Override.Day.Has_Form (Few) := False;
+      Locale_Ak.Short_Override.Day.Has_Form (Many) := False;
+      Locale_Ak.Short_Override.Day.Has_Form (Other) := True;
+      Locale_Ak.Short_Override.Day.Forms (Other) := To_Unbounded_String ("nna {n}");
       Locale_Ak.Short_Override.Has_Week := True;
       Locale_Ak.Short_Override.Week.Has_Simple := False;
       Locale_Ak.Short_Override.Week.Has_Form (Zero) := False;
@@ -802,8 +809,15 @@ package body Sayableduration_Locales is
       Locale_Ak.Compact_Override.Hour.Has_Simple := True;
       Locale_Ak.Compact_Override.Hour.Simple := To_Unbounded_String ("dɔn {n}");
       Locale_Ak.Compact_Override.Has_Day := True;
-      Locale_Ak.Compact_Override.Day.Has_Simple := True;
-      Locale_Ak.Compact_Override.Day.Simple := To_Unbounded_String ("nna {n}");
+      Locale_Ak.Compact_Override.Day.Has_Simple := False;
+      Locale_Ak.Compact_Override.Day.Has_Form (Zero) := False;
+      Locale_Ak.Compact_Override.Day.Has_Form (One) := True;
+      Locale_Ak.Compact_Override.Day.Forms (One) := To_Unbounded_String ("da {n}");
+      Locale_Ak.Compact_Override.Day.Has_Form (Two) := False;
+      Locale_Ak.Compact_Override.Day.Has_Form (Few) := False;
+      Locale_Ak.Compact_Override.Day.Has_Form (Many) := False;
+      Locale_Ak.Compact_Override.Day.Has_Form (Other) := True;
+      Locale_Ak.Compact_Override.Day.Forms (Other) := To_Unbounded_String ("nna {n}");
       Locale_Ak.Compact_Override.Has_Week := True;
       Locale_Ak.Compact_Override.Week.Has_Simple := False;
       Locale_Ak.Compact_Override.Week.Has_Form (Zero) := False;
@@ -1023,7 +1037,7 @@ package body Sayableduration_Locales is
       Locale_Ar.Units.Second.Has_Form (Zero) := True;
       Locale_Ar.Units.Second.Forms (Zero) := To_Unbounded_String ("{n} ثانية");
       Locale_Ar.Units.Second.Has_Form (One) := True;
-      Locale_Ar.Units.Second.Forms (One) := To_Unbounded_String ("ثانية واحدة");
+      Locale_Ar.Units.Second.Forms (One) := To_Unbounded_String ("ثانية");
       Locale_Ar.Units.Second.Has_Form (Two) := True;
       Locale_Ar.Units.Second.Forms (Two) := To_Unbounded_String ("ثانيتان");
       Locale_Ar.Units.Second.Has_Form (Few) := True;
@@ -1036,7 +1050,7 @@ package body Sayableduration_Locales is
       Locale_Ar.Units.Minute.Has_Form (Zero) := True;
       Locale_Ar.Units.Minute.Forms (Zero) := To_Unbounded_String ("{n} دقيقة");
       Locale_Ar.Units.Minute.Has_Form (One) := True;
-      Locale_Ar.Units.Minute.Forms (One) := To_Unbounded_String ("دقيقة واحدة");
+      Locale_Ar.Units.Minute.Forms (One) := To_Unbounded_String ("دقيقة");
       Locale_Ar.Units.Minute.Has_Form (Two) := True;
       Locale_Ar.Units.Minute.Forms (Two) := To_Unbounded_String ("دقيقتان");
       Locale_Ar.Units.Minute.Has_Form (Few) := True;
@@ -1049,7 +1063,7 @@ package body Sayableduration_Locales is
       Locale_Ar.Units.Hour.Has_Form (Zero) := True;
       Locale_Ar.Units.Hour.Forms (Zero) := To_Unbounded_String ("{n} ساعة");
       Locale_Ar.Units.Hour.Has_Form (One) := True;
-      Locale_Ar.Units.Hour.Forms (One) := To_Unbounded_String ("ساعة واحدة");
+      Locale_Ar.Units.Hour.Forms (One) := To_Unbounded_String ("ساعة");
       Locale_Ar.Units.Hour.Has_Form (Two) := True;
       Locale_Ar.Units.Hour.Forms (Two) := To_Unbounded_String ("ساعتان");
       Locale_Ar.Units.Hour.Has_Form (Few) := True;
@@ -1209,19 +1223,8 @@ package body Sayableduration_Locales is
       Locale_Ar.Compact_Override.Week.Has_Simple := True;
       Locale_Ar.Compact_Override.Week.Simple := To_Unbounded_String ("{n} أ");
       Locale_Ar.Compact_Override.Has_Month := True;
-      Locale_Ar.Compact_Override.Month.Has_Simple := False;
-      Locale_Ar.Compact_Override.Month.Has_Form (Zero) := True;
-      Locale_Ar.Compact_Override.Month.Forms (Zero) := To_Unbounded_String ("{n} شهر");
-      Locale_Ar.Compact_Override.Month.Has_Form (One) := True;
-      Locale_Ar.Compact_Override.Month.Forms (One) := To_Unbounded_String ("شهر");
-      Locale_Ar.Compact_Override.Month.Has_Form (Two) := True;
-      Locale_Ar.Compact_Override.Month.Forms (Two) := To_Unbounded_String ("شهران");
-      Locale_Ar.Compact_Override.Month.Has_Form (Few) := True;
-      Locale_Ar.Compact_Override.Month.Forms (Few) := To_Unbounded_String ("{n} أشهر");
-      Locale_Ar.Compact_Override.Month.Has_Form (Many) := True;
-      Locale_Ar.Compact_Override.Month.Forms (Many) := To_Unbounded_String ("{n} شهرًا");
-      Locale_Ar.Compact_Override.Month.Has_Form (Other) := True;
-      Locale_Ar.Compact_Override.Month.Forms (Other) := To_Unbounded_String ("{n} شهر");
+      Locale_Ar.Compact_Override.Month.Has_Simple := True;
+      Locale_Ar.Compact_Override.Month.Simple := To_Unbounded_String ("{n} شهر");
       Locale_Ar.Compact_Override.Has_Year := True;
       Locale_Ar.Compact_Override.Year.Has_Simple := True;
       Locale_Ar.Compact_Override.Year.Simple := To_Unbounded_String ("{n} سنة");
@@ -1243,19 +1246,19 @@ package body Sayableduration_Locales is
       Locale_Ay.Plural := Plural_other_only'Access;
 
       Locale_Ay.Units.Second.Has_Simple := True;
-      Locale_Ay.Units.Second.Simple := To_Unbounded_String ("sikundu {n}");
+      Locale_Ay.Units.Second.Simple := To_Unbounded_String ("{n} sikundu");
       Locale_Ay.Units.Minute.Has_Simple := True;
-      Locale_Ay.Units.Minute.Simple := To_Unbounded_String ("minutu {n}");
+      Locale_Ay.Units.Minute.Simple := To_Unbounded_String ("{n} minutu");
       Locale_Ay.Units.Hour.Has_Simple := True;
-      Locale_Ay.Units.Hour.Simple := To_Unbounded_String ("ura {n}");
+      Locale_Ay.Units.Hour.Simple := To_Unbounded_String ("{n} ura");
       Locale_Ay.Units.Day.Has_Simple := True;
-      Locale_Ay.Units.Day.Simple := To_Unbounded_String ("uru {n}");
+      Locale_Ay.Units.Day.Simple := To_Unbounded_String ("{n} uru");
       Locale_Ay.Units.Week.Has_Simple := True;
-      Locale_Ay.Units.Week.Simple := To_Unbounded_String ("simana {n}");
+      Locale_Ay.Units.Week.Simple := To_Unbounded_String ("{n} simana");
       Locale_Ay.Units.Month.Has_Simple := True;
-      Locale_Ay.Units.Month.Simple := To_Unbounded_String ("phaxsi {n}");
+      Locale_Ay.Units.Month.Simple := To_Unbounded_String ("{n} phaxsi");
       Locale_Ay.Units.Year.Has_Simple := True;
-      Locale_Ay.Units.Year.Simple := To_Unbounded_String ("mara {n}");
+      Locale_Ay.Units.Year.Simple := To_Unbounded_String ("{n} mara");
 
       Locale_Ay.Half := To_Unbounded_String ("{0} chika");
       Locale_Ay.Delimiter := To_Unbounded_String (", ");
@@ -1267,13 +1270,13 @@ package body Sayableduration_Locales is
       Locale_Ay.Short_Override.Has_Units := True;
       Locale_Ay.Short_Override.Has_Second := True;
       Locale_Ay.Short_Override.Second.Has_Simple := True;
-      Locale_Ay.Short_Override.Second.Simple := To_Unbounded_String ("sik. {n}");
+      Locale_Ay.Short_Override.Second.Simple := To_Unbounded_String ("{n} sik.");
       Locale_Ay.Short_Override.Has_Minute := True;
       Locale_Ay.Short_Override.Minute.Has_Simple := True;
-      Locale_Ay.Short_Override.Minute.Simple := To_Unbounded_String ("min. {n}");
+      Locale_Ay.Short_Override.Minute.Simple := To_Unbounded_String ("{n} min.");
       Locale_Ay.Short_Override.Has_Hour := True;
       Locale_Ay.Short_Override.Hour.Has_Simple := True;
-      Locale_Ay.Short_Override.Hour.Simple := To_Unbounded_String ("ur. {n}");
+      Locale_Ay.Short_Override.Hour.Simple := To_Unbounded_String ("{n} ura");
       Locale_Ay.Short_Override.Has_Day := True;
       Locale_Ay.Short_Override.Day.Has_Simple := True;
       Locale_Ay.Short_Override.Day.Simple := To_Unbounded_String ("{n} ur.");
@@ -1316,7 +1319,8 @@ package body Sayableduration_Locales is
       Locale_Ay.Compact_Override.Has_Year := True;
       Locale_Ay.Compact_Override.Year.Has_Simple := True;
       Locale_Ay.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Ay.Compact_Override.Has_Half := False;
+      Locale_Ay.Compact_Override.Has_Half := True;
+      Locale_Ay.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Ay.Compact_Override.Has_Delimiter := True;
       Locale_Ay.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Ay.Compact_Override.Has_Ago := True;
@@ -1552,7 +1556,7 @@ package body Sayableduration_Locales is
       Locale_Be.Units.Second.Has_Form (Many) := True;
       Locale_Be.Units.Second.Forms (Many) := To_Unbounded_String ("{n} секунд");
       Locale_Be.Units.Second.Has_Form (Other) := True;
-      Locale_Be.Units.Second.Forms (Other) := To_Unbounded_String ("{n} секунд");
+      Locale_Be.Units.Second.Forms (Other) := To_Unbounded_String ("{n} секунды");
       Locale_Be.Units.Minute.Has_Simple := False;
       Locale_Be.Units.Minute.Has_Form (Zero) := False;
       Locale_Be.Units.Minute.Has_Form (One) := True;
@@ -1563,7 +1567,7 @@ package body Sayableduration_Locales is
       Locale_Be.Units.Minute.Has_Form (Many) := True;
       Locale_Be.Units.Minute.Forms (Many) := To_Unbounded_String ("{n} хвілін");
       Locale_Be.Units.Minute.Has_Form (Other) := True;
-      Locale_Be.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} хвілін");
+      Locale_Be.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} хвіліны");
       Locale_Be.Units.Hour.Has_Simple := False;
       Locale_Be.Units.Hour.Has_Form (Zero) := False;
       Locale_Be.Units.Hour.Has_Form (One) := True;
@@ -1574,7 +1578,7 @@ package body Sayableduration_Locales is
       Locale_Be.Units.Hour.Has_Form (Many) := True;
       Locale_Be.Units.Hour.Forms (Many) := To_Unbounded_String ("{n} гадзін");
       Locale_Be.Units.Hour.Has_Form (Other) := True;
-      Locale_Be.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} гадзін");
+      Locale_Be.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} гадзіны");
       Locale_Be.Units.Day.Has_Simple := False;
       Locale_Be.Units.Day.Has_Form (Zero) := False;
       Locale_Be.Units.Day.Has_Form (One) := True;
@@ -1585,7 +1589,7 @@ package body Sayableduration_Locales is
       Locale_Be.Units.Day.Has_Form (Many) := True;
       Locale_Be.Units.Day.Forms (Many) := To_Unbounded_String ("{n} дзён");
       Locale_Be.Units.Day.Has_Form (Other) := True;
-      Locale_Be.Units.Day.Forms (Other) := To_Unbounded_String ("{n} дзён");
+      Locale_Be.Units.Day.Forms (Other) := To_Unbounded_String ("{n} дня");
       Locale_Be.Units.Week.Has_Simple := False;
       Locale_Be.Units.Week.Has_Form (Zero) := False;
       Locale_Be.Units.Week.Has_Form (One) := True;
@@ -1596,7 +1600,7 @@ package body Sayableduration_Locales is
       Locale_Be.Units.Week.Has_Form (Many) := True;
       Locale_Be.Units.Week.Forms (Many) := To_Unbounded_String ("{n} тыдняў");
       Locale_Be.Units.Week.Has_Form (Other) := True;
-      Locale_Be.Units.Week.Forms (Other) := To_Unbounded_String ("{n} тыдняў");
+      Locale_Be.Units.Week.Forms (Other) := To_Unbounded_String ("{n} тыдня");
       Locale_Be.Units.Month.Has_Simple := False;
       Locale_Be.Units.Month.Has_Form (Zero) := False;
       Locale_Be.Units.Month.Has_Form (One) := True;
@@ -1607,7 +1611,7 @@ package body Sayableduration_Locales is
       Locale_Be.Units.Month.Has_Form (Many) := True;
       Locale_Be.Units.Month.Forms (Many) := To_Unbounded_String ("{n} месяцаў");
       Locale_Be.Units.Month.Has_Form (Other) := True;
-      Locale_Be.Units.Month.Forms (Other) := To_Unbounded_String ("{n} месяцаў");
+      Locale_Be.Units.Month.Forms (Other) := To_Unbounded_String ("{n} месяца");
       Locale_Be.Units.Year.Has_Simple := False;
       Locale_Be.Units.Year.Has_Form (Zero) := False;
       Locale_Be.Units.Year.Has_Form (One) := True;
@@ -1618,7 +1622,7 @@ package body Sayableduration_Locales is
       Locale_Be.Units.Year.Has_Form (Many) := True;
       Locale_Be.Units.Year.Forms (Many) := To_Unbounded_String ("{n} гадоў");
       Locale_Be.Units.Year.Has_Form (Other) := True;
-      Locale_Be.Units.Year.Forms (Other) := To_Unbounded_String ("{n} гадоў");
+      Locale_Be.Units.Year.Forms (Other) := To_Unbounded_String ("{n} года");
 
       Locale_Be.Half := To_Unbounded_String ("{n} з паловай");
       Locale_Be.Delimiter := To_Unbounded_String (", ");
@@ -1740,7 +1744,7 @@ package body Sayableduration_Locales is
       Locale_Bem.Units.Hour.Has_Form (Few) := False;
       Locale_Bem.Units.Hour.Has_Form (Many) := False;
       Locale_Bem.Units.Hour.Has_Form (Other) := True;
-      Locale_Bem.Units.Hour.Forms (Other) := To_Unbounded_String ("amanso {n}");
+      Locale_Bem.Units.Hour.Forms (Other) := To_Unbounded_String ("insa {n}");
       Locale_Bem.Units.Day.Has_Simple := False;
       Locale_Bem.Units.Day.Has_Form (Zero) := False;
       Locale_Bem.Units.Day.Has_Form (One) := True;
@@ -2037,7 +2041,7 @@ package body Sayableduration_Locales is
       Locale_Bi.Units.Year.Has_Simple := True;
       Locale_Bi.Units.Year.Simple := To_Unbounded_String ("{n} yia");
 
-      Locale_Bi.Half := To_Unbounded_String ("{n} mo haf");
+      Locale_Bi.Half := To_Unbounded_String ("{0} mo haf");
       Locale_Bi.Delimiter := To_Unbounded_String (", ");
       Locale_Bi.Just_Now := To_Unbounded_String ("jas nao");
       Locale_Bi.Ago := To_Unbounded_String ("{0} bifo");
@@ -2096,7 +2100,8 @@ package body Sayableduration_Locales is
       Locale_Bi.Compact_Override.Has_Year := True;
       Locale_Bi.Compact_Override.Year.Has_Simple := True;
       Locale_Bi.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Bi.Compact_Override.Has_Half := False;
+      Locale_Bi.Compact_Override.Has_Half := True;
+      Locale_Bi.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Bi.Compact_Override.Has_Delimiter := True;
       Locale_Bi.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Bi.Compact_Override.Has_Ago := True;
@@ -2131,7 +2136,7 @@ package body Sayableduration_Locales is
       Locale_Bm.Delimiter := To_Unbounded_String (", ");
       Locale_Bm.Just_Now := To_Unbounded_String ("sisan");
       Locale_Bm.Ago := To_Unbounded_String ("{0} bɔlen");
-      Locale_Bm.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Bm.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
       Locale_Bm.Has_Short := True;
       Locale_Bm.Short_Override.Has_Units := True;
@@ -2161,7 +2166,7 @@ package body Sayableduration_Locales is
       Locale_Bm.Short_Override.Has_Ago := True;
       Locale_Bm.Short_Override.Ago := To_Unbounded_String ("{0} bɔlen");
       Locale_Bm.Short_Override.Has_In_Future := True;
-      Locale_Bm.Short_Override.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Bm.Short_Override.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
       Locale_Bm.Has_Compact := True;
       Locale_Bm.Compact_Override.Has_Units := True;
@@ -2193,7 +2198,7 @@ package body Sayableduration_Locales is
       Locale_Bm.Compact_Override.Has_Ago := True;
       Locale_Bm.Compact_Override.Ago := To_Unbounded_String ("{0} bɔlen");
       Locale_Bm.Compact_Override.Has_In_Future := True;
-      Locale_Bm.Compact_Override.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Bm.Compact_Override.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
    end Init_bm;
 
@@ -2208,7 +2213,7 @@ package body Sayableduration_Locales is
       Locale_Bn.Units.Minute.Has_Simple := True;
       Locale_Bn.Units.Minute.Simple := To_Unbounded_String ("{n} মিনিট");
       Locale_Bn.Units.Hour.Has_Simple := True;
-      Locale_Bn.Units.Hour.Simple := To_Unbounded_String ("{n} ঘন্টা");
+      Locale_Bn.Units.Hour.Simple := To_Unbounded_String ("{n} ঘণ্টা");
       Locale_Bn.Units.Day.Has_Simple := False;
       Locale_Bn.Units.Day.Has_Form (Zero) := False;
       Locale_Bn.Units.Day.Has_Form (One) := True;
@@ -2884,7 +2889,8 @@ package body Sayableduration_Locales is
       Locale_Cak.Compact_Override.Has_Year := True;
       Locale_Cak.Compact_Override.Year.Has_Simple := True;
       Locale_Cak.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Cak.Compact_Override.Has_Half := False;
+      Locale_Cak.Compact_Override.Has_Half := True;
+      Locale_Cak.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Cak.Compact_Override.Has_Delimiter := True;
       Locale_Cak.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Cak.Compact_Override.Has_Ago := True;
@@ -2915,7 +2921,7 @@ package body Sayableduration_Locales is
       Locale_Ceb.Units.Year.Has_Simple := True;
       Locale_Ceb.Units.Year.Simple := To_Unbounded_String ("{n} ka tuig");
 
-      Locale_Ceb.Half := To_Unbounded_String ("{n}½");
+      Locale_Ceb.Half := To_Unbounded_String ("{0} ug tunga");
       Locale_Ceb.Delimiter := To_Unbounded_String (", ");
       Locale_Ceb.Just_Now := To_Unbounded_String ("karon lang");
       Locale_Ceb.Ago := To_Unbounded_String ("{0} ang milabay");
@@ -3213,7 +3219,7 @@ package body Sayableduration_Locales is
       Locale_Cy.Units.Day.Has_Form (Few) := True;
       Locale_Cy.Units.Day.Forms (Few) := To_Unbounded_String ("{n} diwrnod");
       Locale_Cy.Units.Day.Has_Form (Many) := True;
-      Locale_Cy.Units.Day.Forms (Many) := To_Unbounded_String ("{n} niwrnod");
+      Locale_Cy.Units.Day.Forms (Many) := To_Unbounded_String ("{n} diwrnod");
       Locale_Cy.Units.Day.Has_Form (Other) := True;
       Locale_Cy.Units.Day.Forms (Other) := To_Unbounded_String ("{n} diwrnod");
       Locale_Cy.Units.Week.Has_Simple := False;
@@ -3246,7 +3252,7 @@ package body Sayableduration_Locales is
       Locale_Cy.Units.Year.Has_Form (Zero) := True;
       Locale_Cy.Units.Year.Forms (Zero) := To_Unbounded_String ("{n} blwyddyn");
       Locale_Cy.Units.Year.Has_Form (One) := True;
-      Locale_Cy.Units.Year.Forms (One) := To_Unbounded_String ("{n} blwyddyn");
+      Locale_Cy.Units.Year.Forms (One) := To_Unbounded_String ("{n} flwyddyn");
       Locale_Cy.Units.Year.Has_Form (Two) := True;
       Locale_Cy.Units.Year.Forms (Two) := To_Unbounded_String ("{n} flynedd");
       Locale_Cy.Units.Year.Has_Form (Few) := True;
@@ -3432,7 +3438,7 @@ package body Sayableduration_Locales is
       Locale_Da.Half := To_Unbounded_String ("{n}½");
       Locale_Da.Delimiter := To_Unbounded_String (", ");
       Locale_Da.Just_Now := To_Unbounded_String ("lige nu");
-      Locale_Da.Ago := To_Unbounded_String ("{0} siden");
+      Locale_Da.Ago := To_Unbounded_String ("for {0} siden");
       Locale_Da.In_Future := To_Unbounded_String ("om {0}");
 
       Locale_Da.Has_Short := True;
@@ -3917,7 +3923,7 @@ package body Sayableduration_Locales is
       Locale_Dv.Units.Year.Has_Simple := True;
       Locale_Dv.Units.Year.Simple := To_Unbounded_String ("{n} އަހަރު");
 
-      Locale_Dv.Half := To_Unbounded_String ("{0} ބައި");
+      Locale_Dv.Half := To_Unbounded_String ("{n}½");
       Locale_Dv.Delimiter := To_Unbounded_String ("، ");
       Locale_Dv.Just_Now := To_Unbounded_String ("މިހާރު");
       Locale_Dv.Ago := To_Unbounded_String ("މީގެ {0} ކުރިން");
@@ -4011,7 +4017,7 @@ package body Sayableduration_Locales is
       Locale_Dyu.Delimiter := To_Unbounded_String (", ");
       Locale_Dyu.Just_Now := To_Unbounded_String ("sisan");
       Locale_Dyu.Ago := To_Unbounded_String ("{0} tɛmɛnen");
-      Locale_Dyu.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Dyu.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
       Locale_Dyu.Has_Short := True;
       Locale_Dyu.Short_Override.Has_Units := True;
@@ -4041,7 +4047,7 @@ package body Sayableduration_Locales is
       Locale_Dyu.Short_Override.Has_Ago := True;
       Locale_Dyu.Short_Override.Ago := To_Unbounded_String ("{0} tɛmɛnen");
       Locale_Dyu.Short_Override.Has_In_Future := True;
-      Locale_Dyu.Short_Override.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Dyu.Short_Override.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
       Locale_Dyu.Has_Compact := True;
       Locale_Dyu.Compact_Override.Has_Units := True;
@@ -4073,7 +4079,7 @@ package body Sayableduration_Locales is
       Locale_Dyu.Compact_Override.Has_Ago := True;
       Locale_Dyu.Compact_Override.Ago := To_Unbounded_String ("{0} tɛmɛnen");
       Locale_Dyu.Compact_Override.Has_In_Future := True;
-      Locale_Dyu.Compact_Override.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Dyu.Compact_Override.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
    end Init_dyu;
 
@@ -4098,7 +4104,7 @@ package body Sayableduration_Locales is
       Locale_Dz.Units.Year.Has_Simple := True;
       Locale_Dz.Units.Year.Simple := To_Unbounded_String ("ལོ་ {n}");
 
-      Locale_Dz.Half := To_Unbounded_String ("{0} ཕྱེད");
+      Locale_Dz.Half := To_Unbounded_String ("{0} དང་ཕྱེད");
       Locale_Dz.Delimiter := To_Unbounded_String (" ");
       Locale_Dz.Just_Now := To_Unbounded_String ("ད་ལྟ");
       Locale_Dz.Ago := To_Unbounded_String ("{0} ཧེ་མ");
@@ -4173,74 +4179,25 @@ package body Sayableduration_Locales is
       Locale_Ee.Code := To_Unbounded_String ("ee");
       Locale_Ee.Plural := Plural_one_other'Access;
 
-      Locale_Ee.Units.Second.Has_Simple := False;
-      Locale_Ee.Units.Second.Has_Form (Zero) := False;
-      Locale_Ee.Units.Second.Has_Form (One) := True;
-      Locale_Ee.Units.Second.Forms (One) := To_Unbounded_String ("sekend {n}");
-      Locale_Ee.Units.Second.Has_Form (Two) := False;
-      Locale_Ee.Units.Second.Has_Form (Few) := False;
-      Locale_Ee.Units.Second.Has_Form (Many) := False;
-      Locale_Ee.Units.Second.Has_Form (Other) := True;
-      Locale_Ee.Units.Second.Forms (Other) := To_Unbounded_String ("sekendwo {n}");
-      Locale_Ee.Units.Minute.Has_Simple := False;
-      Locale_Ee.Units.Minute.Has_Form (Zero) := False;
-      Locale_Ee.Units.Minute.Has_Form (One) := True;
-      Locale_Ee.Units.Minute.Forms (One) := To_Unbounded_String ("aɖabaƒoƒo {n}");
-      Locale_Ee.Units.Minute.Has_Form (Two) := False;
-      Locale_Ee.Units.Minute.Has_Form (Few) := False;
-      Locale_Ee.Units.Minute.Has_Form (Many) := False;
-      Locale_Ee.Units.Minute.Has_Form (Other) := True;
-      Locale_Ee.Units.Minute.Forms (Other) := To_Unbounded_String ("aɖabaƒoƒowo {n}");
-      Locale_Ee.Units.Hour.Has_Simple := False;
-      Locale_Ee.Units.Hour.Has_Form (Zero) := False;
-      Locale_Ee.Units.Hour.Has_Form (One) := True;
-      Locale_Ee.Units.Hour.Forms (One) := To_Unbounded_String ("gaƒoƒo {n}");
-      Locale_Ee.Units.Hour.Has_Form (Two) := False;
-      Locale_Ee.Units.Hour.Has_Form (Few) := False;
-      Locale_Ee.Units.Hour.Has_Form (Many) := False;
-      Locale_Ee.Units.Hour.Has_Form (Other) := True;
-      Locale_Ee.Units.Hour.Forms (Other) := To_Unbounded_String ("gaƒoƒowo {n}");
-      Locale_Ee.Units.Day.Has_Simple := False;
-      Locale_Ee.Units.Day.Has_Form (Zero) := False;
-      Locale_Ee.Units.Day.Has_Form (One) := True;
-      Locale_Ee.Units.Day.Forms (One) := To_Unbounded_String ("ŋkeke {n}");
-      Locale_Ee.Units.Day.Has_Form (Two) := False;
-      Locale_Ee.Units.Day.Has_Form (Few) := False;
-      Locale_Ee.Units.Day.Has_Form (Many) := False;
-      Locale_Ee.Units.Day.Has_Form (Other) := True;
-      Locale_Ee.Units.Day.Forms (Other) := To_Unbounded_String ("ŋkekewo {n}");
-      Locale_Ee.Units.Week.Has_Simple := False;
-      Locale_Ee.Units.Week.Has_Form (Zero) := False;
-      Locale_Ee.Units.Week.Has_Form (One) := True;
-      Locale_Ee.Units.Week.Forms (One) := To_Unbounded_String ("kɔsiɖa {n}");
-      Locale_Ee.Units.Week.Has_Form (Two) := False;
-      Locale_Ee.Units.Week.Has_Form (Few) := False;
-      Locale_Ee.Units.Week.Has_Form (Many) := False;
-      Locale_Ee.Units.Week.Has_Form (Other) := True;
-      Locale_Ee.Units.Week.Forms (Other) := To_Unbounded_String ("kɔsiɖawo {n}");
-      Locale_Ee.Units.Month.Has_Simple := False;
-      Locale_Ee.Units.Month.Has_Form (Zero) := False;
-      Locale_Ee.Units.Month.Has_Form (One) := True;
-      Locale_Ee.Units.Month.Forms (One) := To_Unbounded_String ("ɣleti {n}");
-      Locale_Ee.Units.Month.Has_Form (Two) := False;
-      Locale_Ee.Units.Month.Has_Form (Few) := False;
-      Locale_Ee.Units.Month.Has_Form (Many) := False;
-      Locale_Ee.Units.Month.Has_Form (Other) := True;
-      Locale_Ee.Units.Month.Forms (Other) := To_Unbounded_String ("ɣletiwo {n}");
-      Locale_Ee.Units.Year.Has_Simple := False;
-      Locale_Ee.Units.Year.Has_Form (Zero) := False;
-      Locale_Ee.Units.Year.Has_Form (One) := True;
-      Locale_Ee.Units.Year.Forms (One) := To_Unbounded_String ("ƒe {n}");
-      Locale_Ee.Units.Year.Has_Form (Two) := False;
-      Locale_Ee.Units.Year.Has_Form (Few) := False;
-      Locale_Ee.Units.Year.Has_Form (Many) := False;
-      Locale_Ee.Units.Year.Has_Form (Other) := True;
-      Locale_Ee.Units.Year.Forms (Other) := To_Unbounded_String ("ƒewo {n}");
+      Locale_Ee.Units.Second.Has_Simple := True;
+      Locale_Ee.Units.Second.Simple := To_Unbounded_String ("sekend {n}");
+      Locale_Ee.Units.Minute.Has_Simple := True;
+      Locale_Ee.Units.Minute.Simple := To_Unbounded_String ("aɖabaƒoƒo {n}");
+      Locale_Ee.Units.Hour.Has_Simple := True;
+      Locale_Ee.Units.Hour.Simple := To_Unbounded_String ("gaƒoƒo {n}");
+      Locale_Ee.Units.Day.Has_Simple := True;
+      Locale_Ee.Units.Day.Simple := To_Unbounded_String ("ŋkeke {n}");
+      Locale_Ee.Units.Week.Has_Simple := True;
+      Locale_Ee.Units.Week.Simple := To_Unbounded_String ("kɔsiɖa {n}");
+      Locale_Ee.Units.Month.Has_Simple := True;
+      Locale_Ee.Units.Month.Simple := To_Unbounded_String ("ɣleti {n}");
+      Locale_Ee.Units.Year.Has_Simple := True;
+      Locale_Ee.Units.Year.Simple := To_Unbounded_String ("ƒe {n}");
 
       Locale_Ee.Half := To_Unbounded_String ("{0} kple afã");
       Locale_Ee.Delimiter := To_Unbounded_String (", ");
       Locale_Ee.Just_Now := To_Unbounded_String ("fifia");
-      Locale_Ee.Ago := To_Unbounded_String ("ɖe {0} me");
+      Locale_Ee.Ago := To_Unbounded_String ("{0} si va yi");
       Locale_Ee.In_Future := To_Unbounded_String ("le {0} me");
 
       Locale_Ee.Has_Short := True;
@@ -4256,41 +4213,20 @@ package body Sayableduration_Locales is
       Locale_Ee.Short_Override.Hour.Simple := To_Unbounded_String ("gaƒ. {n}");
       Locale_Ee.Short_Override.Has_Day := True;
       Locale_Ee.Short_Override.Day.Has_Simple := True;
-      Locale_Ee.Short_Override.Day.Simple := To_Unbounded_String ("ŋkekewo {n}");
+      Locale_Ee.Short_Override.Day.Simple := To_Unbounded_String ("ŋkeke {n}");
       Locale_Ee.Short_Override.Has_Week := True;
-      Locale_Ee.Short_Override.Week.Has_Simple := False;
-      Locale_Ee.Short_Override.Week.Has_Form (Zero) := False;
-      Locale_Ee.Short_Override.Week.Has_Form (One) := True;
-      Locale_Ee.Short_Override.Week.Forms (One) := To_Unbounded_String ("kɔsiɖa {n}");
-      Locale_Ee.Short_Override.Week.Has_Form (Two) := False;
-      Locale_Ee.Short_Override.Week.Has_Form (Few) := False;
-      Locale_Ee.Short_Override.Week.Has_Form (Many) := False;
-      Locale_Ee.Short_Override.Week.Has_Form (Other) := True;
-      Locale_Ee.Short_Override.Week.Forms (Other) := To_Unbounded_String ("kɔsiɖawo {n}");
+      Locale_Ee.Short_Override.Week.Has_Simple := True;
+      Locale_Ee.Short_Override.Week.Simple := To_Unbounded_String ("kɔsiɖa {n}");
       Locale_Ee.Short_Override.Has_Month := True;
-      Locale_Ee.Short_Override.Month.Has_Simple := False;
-      Locale_Ee.Short_Override.Month.Has_Form (Zero) := False;
-      Locale_Ee.Short_Override.Month.Has_Form (One) := True;
-      Locale_Ee.Short_Override.Month.Forms (One) := To_Unbounded_String ("ɣleti {n}");
-      Locale_Ee.Short_Override.Month.Has_Form (Two) := False;
-      Locale_Ee.Short_Override.Month.Has_Form (Few) := False;
-      Locale_Ee.Short_Override.Month.Has_Form (Many) := False;
-      Locale_Ee.Short_Override.Month.Has_Form (Other) := True;
-      Locale_Ee.Short_Override.Month.Forms (Other) := To_Unbounded_String ("ɣletiwo {n}");
+      Locale_Ee.Short_Override.Month.Has_Simple := True;
+      Locale_Ee.Short_Override.Month.Simple := To_Unbounded_String ("ɣleti {n}");
       Locale_Ee.Short_Override.Has_Year := True;
-      Locale_Ee.Short_Override.Year.Has_Simple := False;
-      Locale_Ee.Short_Override.Year.Has_Form (Zero) := False;
-      Locale_Ee.Short_Override.Year.Has_Form (One) := True;
-      Locale_Ee.Short_Override.Year.Forms (One) := To_Unbounded_String ("ƒe {n}");
-      Locale_Ee.Short_Override.Year.Has_Form (Two) := False;
-      Locale_Ee.Short_Override.Year.Has_Form (Few) := False;
-      Locale_Ee.Short_Override.Year.Has_Form (Many) := False;
-      Locale_Ee.Short_Override.Year.Has_Form (Other) := True;
-      Locale_Ee.Short_Override.Year.Forms (Other) := To_Unbounded_String ("ƒewo {n}");
+      Locale_Ee.Short_Override.Year.Has_Simple := True;
+      Locale_Ee.Short_Override.Year.Simple := To_Unbounded_String ("ƒe {n}");
       Locale_Ee.Short_Override.Has_Half := False;
       Locale_Ee.Short_Override.Has_Delimiter := False;
       Locale_Ee.Short_Override.Has_Ago := True;
-      Locale_Ee.Short_Override.Ago := To_Unbounded_String ("ɖe {0} me");
+      Locale_Ee.Short_Override.Ago := To_Unbounded_String ("{0} si va yi");
       Locale_Ee.Short_Override.Has_In_Future := True;
       Locale_Ee.Short_Override.In_Future := To_Unbounded_String ("le {0} me");
 
@@ -4322,7 +4258,7 @@ package body Sayableduration_Locales is
       Locale_Ee.Compact_Override.Has_Delimiter := True;
       Locale_Ee.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Ee.Compact_Override.Has_Ago := True;
-      Locale_Ee.Compact_Override.Ago := To_Unbounded_String ("ɖe {0} me");
+      Locale_Ee.Compact_Override.Ago := To_Unbounded_String ("{0} si va yi");
       Locale_Ee.Compact_Override.Has_In_Future := True;
       Locale_Ee.Compact_Override.In_Future := To_Unbounded_String ("le {0} me");
 
@@ -5366,8 +5302,15 @@ package body Sayableduration_Locales is
       Locale_Ff.Short_Override.Hour.Has_Form (Other) := True;
       Locale_Ff.Short_Override.Hour.Forms (Other) := To_Unbounded_String ("waktuuji {n}");
       Locale_Ff.Short_Override.Has_Day := True;
-      Locale_Ff.Short_Override.Day.Has_Simple := True;
-      Locale_Ff.Short_Override.Day.Simple := To_Unbounded_String ("ñalɗe {n}");
+      Locale_Ff.Short_Override.Day.Has_Simple := False;
+      Locale_Ff.Short_Override.Day.Has_Form (Zero) := False;
+      Locale_Ff.Short_Override.Day.Has_Form (One) := True;
+      Locale_Ff.Short_Override.Day.Forms (One) := To_Unbounded_String ("ñalawma {n}");
+      Locale_Ff.Short_Override.Day.Has_Form (Two) := False;
+      Locale_Ff.Short_Override.Day.Has_Form (Few) := False;
+      Locale_Ff.Short_Override.Day.Has_Form (Many) := False;
+      Locale_Ff.Short_Override.Day.Has_Form (Other) := True;
+      Locale_Ff.Short_Override.Day.Forms (Other) := To_Unbounded_String ("ñalɗe {n}");
       Locale_Ff.Short_Override.Has_Week := True;
       Locale_Ff.Short_Override.Week.Has_Simple := False;
       Locale_Ff.Short_Override.Week.Has_Form (Zero) := False;
@@ -5424,8 +5367,15 @@ package body Sayableduration_Locales is
       Locale_Ff.Compact_Override.Hour.Has_Form (Other) := True;
       Locale_Ff.Compact_Override.Hour.Forms (Other) := To_Unbounded_String ("wakji {n}");
       Locale_Ff.Compact_Override.Has_Day := True;
-      Locale_Ff.Compact_Override.Day.Has_Simple := True;
-      Locale_Ff.Compact_Override.Day.Simple := To_Unbounded_String ("ñalɗe {n}");
+      Locale_Ff.Compact_Override.Day.Has_Simple := False;
+      Locale_Ff.Compact_Override.Day.Has_Form (Zero) := False;
+      Locale_Ff.Compact_Override.Day.Has_Form (One) := True;
+      Locale_Ff.Compact_Override.Day.Forms (One) := To_Unbounded_String ("ñalawma {n}");
+      Locale_Ff.Compact_Override.Day.Has_Form (Two) := False;
+      Locale_Ff.Compact_Override.Day.Has_Form (Few) := False;
+      Locale_Ff.Compact_Override.Day.Has_Form (Many) := False;
+      Locale_Ff.Compact_Override.Day.Has_Form (Other) := True;
+      Locale_Ff.Compact_Override.Day.Forms (Other) := To_Unbounded_String ("ñalɗe {n}");
       Locale_Ff.Compact_Override.Has_Week := True;
       Locale_Ff.Compact_Override.Week.Has_Simple := False;
       Locale_Ff.Compact_Override.Week.Has_Form (Zero) := False;
@@ -5747,7 +5697,7 @@ package body Sayableduration_Locales is
       Locale_Fj.Units.Year.Has_Simple := True;
       Locale_Fj.Units.Year.Simple := To_Unbounded_String ("{n} na yabaki");
 
-      Locale_Fj.Half := To_Unbounded_String ("{n} kei na levu ni wasei");
+      Locale_Fj.Half := To_Unbounded_String ("{0} kei na veimama");
       Locale_Fj.Delimiter := To_Unbounded_String (", ");
       Locale_Fj.Just_Now := To_Unbounded_String ("edaidai ga");
       Locale_Fj.Ago := To_Unbounded_String ("{0} sa oti");
@@ -5806,7 +5756,8 @@ package body Sayableduration_Locales is
       Locale_Fj.Compact_Override.Has_Year := True;
       Locale_Fj.Compact_Override.Year.Has_Simple := True;
       Locale_Fj.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Fj.Compact_Override.Has_Half := False;
+      Locale_Fj.Compact_Override.Has_Half := True;
+      Locale_Fj.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Fj.Compact_Override.Has_Delimiter := True;
       Locale_Fj.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Fj.Compact_Override.Has_Ago := True;
@@ -6080,15 +6031,15 @@ package body Sayableduration_Locales is
       Locale_Ga.Units.Hour.Has_Simple := False;
       Locale_Ga.Units.Hour.Has_Form (Zero) := False;
       Locale_Ga.Units.Hour.Has_Form (One) := True;
-      Locale_Ga.Units.Hour.Forms (One) := To_Unbounded_String ("{n} uair");
+      Locale_Ga.Units.Hour.Forms (One) := To_Unbounded_String ("{n} uair an chloig");
       Locale_Ga.Units.Hour.Has_Form (Two) := True;
-      Locale_Ga.Units.Hour.Forms (Two) := To_Unbounded_String ("{n} uair");
+      Locale_Ga.Units.Hour.Forms (Two) := To_Unbounded_String ("{n} uair an chloig");
       Locale_Ga.Units.Hour.Has_Form (Few) := True;
-      Locale_Ga.Units.Hour.Forms (Few) := To_Unbounded_String ("{n} huaire");
+      Locale_Ga.Units.Hour.Forms (Few) := To_Unbounded_String ("{n} huaire an chloig");
       Locale_Ga.Units.Hour.Has_Form (Many) := True;
-      Locale_Ga.Units.Hour.Forms (Many) := To_Unbounded_String ("{n} n-uaire");
+      Locale_Ga.Units.Hour.Forms (Many) := To_Unbounded_String ("{n} n-uaire an chloig");
       Locale_Ga.Units.Hour.Has_Form (Other) := True;
-      Locale_Ga.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} uair");
+      Locale_Ga.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} uair an chloig");
       Locale_Ga.Units.Day.Has_Simple := False;
       Locale_Ga.Units.Day.Has_Form (Zero) := False;
       Locale_Ga.Units.Day.Has_Form (One) := True;
@@ -6269,14 +6220,14 @@ package body Sayableduration_Locales is
       Locale_Gd.Units.Hour.Has_Simple := False;
       Locale_Gd.Units.Hour.Has_Form (Zero) := False;
       Locale_Gd.Units.Hour.Has_Form (One) := True;
-      Locale_Gd.Units.Hour.Forms (One) := To_Unbounded_String ("{n} uair");
+      Locale_Gd.Units.Hour.Forms (One) := To_Unbounded_String ("{n} uair a thìde");
       Locale_Gd.Units.Hour.Has_Form (Two) := True;
-      Locale_Gd.Units.Hour.Forms (Two) := To_Unbounded_String ("{n} uair");
+      Locale_Gd.Units.Hour.Forms (Two) := To_Unbounded_String ("{n} uair a thìde");
       Locale_Gd.Units.Hour.Has_Form (Few) := True;
-      Locale_Gd.Units.Hour.Forms (Few) := To_Unbounded_String ("{n} uairean");
+      Locale_Gd.Units.Hour.Forms (Few) := To_Unbounded_String ("{n} uairean a thìde");
       Locale_Gd.Units.Hour.Has_Form (Many) := False;
       Locale_Gd.Units.Hour.Has_Form (Other) := True;
-      Locale_Gd.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} uair");
+      Locale_Gd.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} uair a thìde");
       Locale_Gd.Units.Day.Has_Simple := False;
       Locale_Gd.Units.Day.Has_Form (Zero) := False;
       Locale_Gd.Units.Day.Has_Form (One) := True;
@@ -6584,11 +6535,11 @@ package body Sayableduration_Locales is
       Locale_Gn.Plural := Plural_one_other'Access;
 
       Locale_Gn.Units.Second.Has_Simple := True;
-      Locale_Gn.Units.Second.Simple := To_Unbounded_String ("{n} aravo'i");
+      Locale_Gn.Units.Second.Simple := To_Unbounded_String ("{n} aravo'ive");
       Locale_Gn.Units.Minute.Has_Simple := True;
-      Locale_Gn.Units.Minute.Simple := To_Unbounded_String ("{n} aravo");
+      Locale_Gn.Units.Minute.Simple := To_Unbounded_String ("{n} aravo'i");
       Locale_Gn.Units.Hour.Has_Simple := True;
-      Locale_Gn.Units.Hour.Simple := To_Unbounded_String ("{n} aravo guasu");
+      Locale_Gn.Units.Hour.Simple := To_Unbounded_String ("{n} aravo");
       Locale_Gn.Units.Day.Has_Simple := True;
       Locale_Gn.Units.Day.Simple := To_Unbounded_String ("{n} ára");
       Locale_Gn.Units.Week.Has_Simple := True;
@@ -6608,13 +6559,13 @@ package body Sayableduration_Locales is
       Locale_Gn.Short_Override.Has_Units := True;
       Locale_Gn.Short_Override.Has_Second := True;
       Locale_Gn.Short_Override.Second.Has_Simple := True;
-      Locale_Gn.Short_Override.Second.Simple := To_Unbounded_String ("{n} ara'i");
+      Locale_Gn.Short_Override.Second.Simple := To_Unbounded_String ("{n} aravo'ive");
       Locale_Gn.Short_Override.Has_Minute := True;
       Locale_Gn.Short_Override.Minute.Has_Simple := True;
-      Locale_Gn.Short_Override.Minute.Simple := To_Unbounded_String ("{n} ara");
+      Locale_Gn.Short_Override.Minute.Simple := To_Unbounded_String ("{n} aravo'i");
       Locale_Gn.Short_Override.Has_Hour := True;
       Locale_Gn.Short_Override.Hour.Has_Simple := True;
-      Locale_Gn.Short_Override.Hour.Simple := To_Unbounded_String ("{n} ara g");
+      Locale_Gn.Short_Override.Hour.Simple := To_Unbounded_String ("{n} aravo");
       Locale_Gn.Short_Override.Has_Day := True;
       Locale_Gn.Short_Override.Day.Has_Simple := True;
       Locale_Gn.Short_Override.Day.Simple := To_Unbounded_String ("{n} ára");
@@ -6957,66 +6908,66 @@ package body Sayableduration_Locales is
       Locale_Ha.Units.Second.Has_Simple := False;
       Locale_Ha.Units.Second.Has_Form (Zero) := False;
       Locale_Ha.Units.Second.Has_Form (One) := True;
-      Locale_Ha.Units.Second.Forms (One) := To_Unbounded_String ("{n} daƙiƙa");
+      Locale_Ha.Units.Second.Forms (One) := To_Unbounded_String ("daƙiƙa {n}");
       Locale_Ha.Units.Second.Has_Form (Two) := False;
       Locale_Ha.Units.Second.Has_Form (Few) := False;
       Locale_Ha.Units.Second.Has_Form (Many) := False;
       Locale_Ha.Units.Second.Has_Form (Other) := True;
-      Locale_Ha.Units.Second.Forms (Other) := To_Unbounded_String ("{n} daƙiƙoƙi");
+      Locale_Ha.Units.Second.Forms (Other) := To_Unbounded_String ("daƙiƙoƙi {n}");
       Locale_Ha.Units.Minute.Has_Simple := False;
       Locale_Ha.Units.Minute.Has_Form (Zero) := False;
       Locale_Ha.Units.Minute.Has_Form (One) := True;
-      Locale_Ha.Units.Minute.Forms (One) := To_Unbounded_String ("{n} minti");
+      Locale_Ha.Units.Minute.Forms (One) := To_Unbounded_String ("minti {n}");
       Locale_Ha.Units.Minute.Has_Form (Two) := False;
       Locale_Ha.Units.Minute.Has_Form (Few) := False;
       Locale_Ha.Units.Minute.Has_Form (Many) := False;
       Locale_Ha.Units.Minute.Has_Form (Other) := True;
-      Locale_Ha.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} mintoci");
+      Locale_Ha.Units.Minute.Forms (Other) := To_Unbounded_String ("mintoci {n}");
       Locale_Ha.Units.Hour.Has_Simple := False;
       Locale_Ha.Units.Hour.Has_Form (Zero) := False;
       Locale_Ha.Units.Hour.Has_Form (One) := True;
-      Locale_Ha.Units.Hour.Forms (One) := To_Unbounded_String ("{n} awa");
+      Locale_Ha.Units.Hour.Forms (One) := To_Unbounded_String ("awa {n}");
       Locale_Ha.Units.Hour.Has_Form (Two) := False;
       Locale_Ha.Units.Hour.Has_Form (Few) := False;
       Locale_Ha.Units.Hour.Has_Form (Many) := False;
       Locale_Ha.Units.Hour.Has_Form (Other) := True;
-      Locale_Ha.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} awanni");
+      Locale_Ha.Units.Hour.Forms (Other) := To_Unbounded_String ("awanni {n}");
       Locale_Ha.Units.Day.Has_Simple := False;
       Locale_Ha.Units.Day.Has_Form (Zero) := False;
       Locale_Ha.Units.Day.Has_Form (One) := True;
-      Locale_Ha.Units.Day.Forms (One) := To_Unbounded_String ("{n} kwana");
+      Locale_Ha.Units.Day.Forms (One) := To_Unbounded_String ("kwana {n}");
       Locale_Ha.Units.Day.Has_Form (Two) := False;
       Locale_Ha.Units.Day.Has_Form (Few) := False;
       Locale_Ha.Units.Day.Has_Form (Many) := False;
       Locale_Ha.Units.Day.Has_Form (Other) := True;
-      Locale_Ha.Units.Day.Forms (Other) := To_Unbounded_String ("{n} kwanaki");
+      Locale_Ha.Units.Day.Forms (Other) := To_Unbounded_String ("kwanaki {n}");
       Locale_Ha.Units.Week.Has_Simple := False;
       Locale_Ha.Units.Week.Has_Form (Zero) := False;
       Locale_Ha.Units.Week.Has_Form (One) := True;
-      Locale_Ha.Units.Week.Forms (One) := To_Unbounded_String ("{n} mako");
+      Locale_Ha.Units.Week.Forms (One) := To_Unbounded_String ("mako {n}");
       Locale_Ha.Units.Week.Has_Form (Two) := False;
       Locale_Ha.Units.Week.Has_Form (Few) := False;
       Locale_Ha.Units.Week.Has_Form (Many) := False;
       Locale_Ha.Units.Week.Has_Form (Other) := True;
-      Locale_Ha.Units.Week.Forms (Other) := To_Unbounded_String ("{n} makonni");
+      Locale_Ha.Units.Week.Forms (Other) := To_Unbounded_String ("makonni {n}");
       Locale_Ha.Units.Month.Has_Simple := False;
       Locale_Ha.Units.Month.Has_Form (Zero) := False;
       Locale_Ha.Units.Month.Has_Form (One) := True;
-      Locale_Ha.Units.Month.Forms (One) := To_Unbounded_String ("{n} wata");
+      Locale_Ha.Units.Month.Forms (One) := To_Unbounded_String ("wata {n}");
       Locale_Ha.Units.Month.Has_Form (Two) := False;
       Locale_Ha.Units.Month.Has_Form (Few) := False;
       Locale_Ha.Units.Month.Has_Form (Many) := False;
       Locale_Ha.Units.Month.Has_Form (Other) := True;
-      Locale_Ha.Units.Month.Forms (Other) := To_Unbounded_String ("{n} watanni");
+      Locale_Ha.Units.Month.Forms (Other) := To_Unbounded_String ("watanni {n}");
       Locale_Ha.Units.Year.Has_Simple := False;
       Locale_Ha.Units.Year.Has_Form (Zero) := False;
       Locale_Ha.Units.Year.Has_Form (One) := True;
-      Locale_Ha.Units.Year.Forms (One) := To_Unbounded_String ("{n} shekara");
+      Locale_Ha.Units.Year.Forms (One) := To_Unbounded_String ("shekara {n}");
       Locale_Ha.Units.Year.Has_Form (Two) := False;
       Locale_Ha.Units.Year.Has_Form (Few) := False;
       Locale_Ha.Units.Year.Has_Form (Many) := False;
       Locale_Ha.Units.Year.Has_Form (Other) := True;
-      Locale_Ha.Units.Year.Forms (Other) := To_Unbounded_String ("{n} shekaru");
+      Locale_Ha.Units.Year.Forms (Other) := To_Unbounded_String ("shekaru {n}");
 
       Locale_Ha.Half := To_Unbounded_String ("{n}½");
       Locale_Ha.Delimiter := To_Unbounded_String (", ");
@@ -7028,25 +6979,25 @@ package body Sayableduration_Locales is
       Locale_Ha.Short_Override.Has_Units := True;
       Locale_Ha.Short_Override.Has_Second := True;
       Locale_Ha.Short_Override.Second.Has_Simple := True;
-      Locale_Ha.Short_Override.Second.Simple := To_Unbounded_String ("{n} daƙ.");
+      Locale_Ha.Short_Override.Second.Simple := To_Unbounded_String ("daƙ. {n}");
       Locale_Ha.Short_Override.Has_Minute := True;
       Locale_Ha.Short_Override.Minute.Has_Simple := True;
-      Locale_Ha.Short_Override.Minute.Simple := To_Unbounded_String ("{n} mnt.");
+      Locale_Ha.Short_Override.Minute.Simple := To_Unbounded_String ("mnt. {n}");
       Locale_Ha.Short_Override.Has_Hour := True;
       Locale_Ha.Short_Override.Hour.Has_Simple := True;
-      Locale_Ha.Short_Override.Hour.Simple := To_Unbounded_String ("{n} awa");
+      Locale_Ha.Short_Override.Hour.Simple := To_Unbounded_String ("awa {n}");
       Locale_Ha.Short_Override.Has_Day := True;
       Locale_Ha.Short_Override.Day.Has_Simple := True;
-      Locale_Ha.Short_Override.Day.Simple := To_Unbounded_String ("{n} kw.");
+      Locale_Ha.Short_Override.Day.Simple := To_Unbounded_String ("kw. {n}");
       Locale_Ha.Short_Override.Has_Week := True;
       Locale_Ha.Short_Override.Week.Has_Simple := True;
-      Locale_Ha.Short_Override.Week.Simple := To_Unbounded_String ("{n} mk.");
+      Locale_Ha.Short_Override.Week.Simple := To_Unbounded_String ("mk. {n}");
       Locale_Ha.Short_Override.Has_Month := True;
       Locale_Ha.Short_Override.Month.Has_Simple := True;
-      Locale_Ha.Short_Override.Month.Simple := To_Unbounded_String ("{n} wt.");
+      Locale_Ha.Short_Override.Month.Simple := To_Unbounded_String ("wt. {n}");
       Locale_Ha.Short_Override.Has_Year := True;
       Locale_Ha.Short_Override.Year.Has_Simple := True;
-      Locale_Ha.Short_Override.Year.Simple := To_Unbounded_String ("{n} shk.");
+      Locale_Ha.Short_Override.Year.Simple := To_Unbounded_String ("shk. {n}");
       Locale_Ha.Short_Override.Has_Half := False;
       Locale_Ha.Short_Override.Has_Delimiter := False;
       Locale_Ha.Short_Override.Has_Ago := True;
@@ -7097,7 +7048,7 @@ package body Sayableduration_Locales is
       Locale_He.Units.Second.Has_Simple := False;
       Locale_He.Units.Second.Has_Form (Zero) := False;
       Locale_He.Units.Second.Has_Form (One) := True;
-      Locale_He.Units.Second.Forms (One) := To_Unbounded_String ("שנייה {n}");
+      Locale_He.Units.Second.Forms (One) := To_Unbounded_String ("שנייה");
       Locale_He.Units.Second.Has_Form (Two) := True;
       Locale_He.Units.Second.Forms (Two) := To_Unbounded_String ("שתי שניות");
       Locale_He.Units.Second.Has_Form (Few) := False;
@@ -7107,7 +7058,7 @@ package body Sayableduration_Locales is
       Locale_He.Units.Minute.Has_Simple := False;
       Locale_He.Units.Minute.Has_Form (Zero) := False;
       Locale_He.Units.Minute.Has_Form (One) := True;
-      Locale_He.Units.Minute.Forms (One) := To_Unbounded_String ("דקה {n}");
+      Locale_He.Units.Minute.Forms (One) := To_Unbounded_String ("דקה");
       Locale_He.Units.Minute.Has_Form (Two) := True;
       Locale_He.Units.Minute.Forms (Two) := To_Unbounded_String ("שתי דקות");
       Locale_He.Units.Minute.Has_Form (Few) := False;
@@ -7117,7 +7068,7 @@ package body Sayableduration_Locales is
       Locale_He.Units.Hour.Has_Simple := False;
       Locale_He.Units.Hour.Has_Form (Zero) := False;
       Locale_He.Units.Hour.Has_Form (One) := True;
-      Locale_He.Units.Hour.Forms (One) := To_Unbounded_String ("שעה {n}");
+      Locale_He.Units.Hour.Forms (One) := To_Unbounded_String ("שעה");
       Locale_He.Units.Hour.Has_Form (Two) := True;
       Locale_He.Units.Hour.Forms (Two) := To_Unbounded_String ("שעתיים");
       Locale_He.Units.Hour.Has_Form (Few) := False;
@@ -7127,7 +7078,7 @@ package body Sayableduration_Locales is
       Locale_He.Units.Day.Has_Simple := False;
       Locale_He.Units.Day.Has_Form (Zero) := False;
       Locale_He.Units.Day.Has_Form (One) := True;
-      Locale_He.Units.Day.Forms (One) := To_Unbounded_String ("יום {n}");
+      Locale_He.Units.Day.Forms (One) := To_Unbounded_String ("יום");
       Locale_He.Units.Day.Has_Form (Two) := True;
       Locale_He.Units.Day.Forms (Two) := To_Unbounded_String ("יומיים");
       Locale_He.Units.Day.Has_Form (Few) := False;
@@ -7137,7 +7088,7 @@ package body Sayableduration_Locales is
       Locale_He.Units.Week.Has_Simple := False;
       Locale_He.Units.Week.Has_Form (Zero) := False;
       Locale_He.Units.Week.Has_Form (One) := True;
-      Locale_He.Units.Week.Forms (One) := To_Unbounded_String ("שבוע {n}");
+      Locale_He.Units.Week.Forms (One) := To_Unbounded_String ("שבוע");
       Locale_He.Units.Week.Has_Form (Two) := True;
       Locale_He.Units.Week.Forms (Two) := To_Unbounded_String ("שבועיים");
       Locale_He.Units.Week.Has_Form (Few) := False;
@@ -7147,7 +7098,7 @@ package body Sayableduration_Locales is
       Locale_He.Units.Month.Has_Simple := False;
       Locale_He.Units.Month.Has_Form (Zero) := False;
       Locale_He.Units.Month.Has_Form (One) := True;
-      Locale_He.Units.Month.Forms (One) := To_Unbounded_String ("חודש {n}");
+      Locale_He.Units.Month.Forms (One) := To_Unbounded_String ("חודש");
       Locale_He.Units.Month.Has_Form (Two) := True;
       Locale_He.Units.Month.Forms (Two) := To_Unbounded_String ("חודשיים");
       Locale_He.Units.Month.Has_Form (Few) := False;
@@ -7277,8 +7228,15 @@ package body Sayableduration_Locales is
       Locale_Hi.Units.Second.Simple := To_Unbounded_String ("{n} सेकंड");
       Locale_Hi.Units.Minute.Has_Simple := True;
       Locale_Hi.Units.Minute.Simple := To_Unbounded_String ("{n} मिनट");
-      Locale_Hi.Units.Hour.Has_Simple := True;
-      Locale_Hi.Units.Hour.Simple := To_Unbounded_String ("{n} घंटा");
+      Locale_Hi.Units.Hour.Has_Simple := False;
+      Locale_Hi.Units.Hour.Has_Form (Zero) := False;
+      Locale_Hi.Units.Hour.Has_Form (One) := True;
+      Locale_Hi.Units.Hour.Forms (One) := To_Unbounded_String ("{n} घंटा");
+      Locale_Hi.Units.Hour.Has_Form (Two) := False;
+      Locale_Hi.Units.Hour.Has_Form (Few) := False;
+      Locale_Hi.Units.Hour.Has_Form (Many) := False;
+      Locale_Hi.Units.Hour.Has_Form (Other) := True;
+      Locale_Hi.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} घंटे");
       Locale_Hi.Units.Day.Has_Simple := False;
       Locale_Hi.Units.Day.Has_Form (Zero) := False;
       Locale_Hi.Units.Day.Has_Form (One) := True;
@@ -7466,7 +7424,8 @@ package body Sayableduration_Locales is
       Locale_Hmn.Compact_Override.Has_Year := True;
       Locale_Hmn.Compact_Override.Year.Has_Simple := True;
       Locale_Hmn.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Hmn.Compact_Override.Has_Half := False;
+      Locale_Hmn.Compact_Override.Has_Half := True;
+      Locale_Hmn.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Hmn.Compact_Override.Has_Delimiter := True;
       Locale_Hmn.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Hmn.Compact_Override.Has_Ago := True;
@@ -7978,7 +7937,7 @@ package body Sayableduration_Locales is
       Locale_Id.Units.Year.Has_Simple := True;
       Locale_Id.Units.Year.Simple := To_Unbounded_String ("{n} tahun");
 
-      Locale_Id.Half := To_Unbounded_String ("{0} setengah");
+      Locale_Id.Half := To_Unbounded_String ("{n} setengah");
       Locale_Id.Delimiter := To_Unbounded_String (", ");
       Locale_Id.Just_Now := To_Unbounded_String ("baru saja");
       Locale_Id.Ago := To_Unbounded_String ("{0} yang lalu");
@@ -8055,19 +8014,19 @@ package body Sayableduration_Locales is
       Locale_Ig.Plural := Plural_other_only'Access;
 
       Locale_Ig.Units.Second.Has_Simple := True;
-      Locale_Ig.Units.Second.Simple := To_Unbounded_String ("{n} sekọnd");
+      Locale_Ig.Units.Second.Simple := To_Unbounded_String ("sekọnd {n}");
       Locale_Ig.Units.Minute.Has_Simple := True;
-      Locale_Ig.Units.Minute.Simple := To_Unbounded_String ("{n} nkeji");
+      Locale_Ig.Units.Minute.Simple := To_Unbounded_String ("nkeji {n}");
       Locale_Ig.Units.Hour.Has_Simple := True;
-      Locale_Ig.Units.Hour.Simple := To_Unbounded_String ("{n} awa");
+      Locale_Ig.Units.Hour.Simple := To_Unbounded_String ("awa {n}");
       Locale_Ig.Units.Day.Has_Simple := True;
-      Locale_Ig.Units.Day.Simple := To_Unbounded_String ("{n} ụbọchị");
+      Locale_Ig.Units.Day.Simple := To_Unbounded_String ("ụbọchị {n}");
       Locale_Ig.Units.Week.Has_Simple := True;
-      Locale_Ig.Units.Week.Simple := To_Unbounded_String ("{n} izu");
+      Locale_Ig.Units.Week.Simple := To_Unbounded_String ("izu {n}");
       Locale_Ig.Units.Month.Has_Simple := True;
-      Locale_Ig.Units.Month.Simple := To_Unbounded_String ("{n} ọnwa");
+      Locale_Ig.Units.Month.Simple := To_Unbounded_String ("ọnwa {n}");
       Locale_Ig.Units.Year.Has_Simple := True;
-      Locale_Ig.Units.Year.Simple := To_Unbounded_String ("{n} afọ");
+      Locale_Ig.Units.Year.Simple := To_Unbounded_String ("afọ {n}");
 
       Locale_Ig.Half := To_Unbounded_String ("{0} na ọkara");
       Locale_Ig.Delimiter := To_Unbounded_String (", ");
@@ -8079,25 +8038,25 @@ package body Sayableduration_Locales is
       Locale_Ig.Short_Override.Has_Units := True;
       Locale_Ig.Short_Override.Has_Second := True;
       Locale_Ig.Short_Override.Second.Has_Simple := True;
-      Locale_Ig.Short_Override.Second.Simple := To_Unbounded_String ("{n} sek.");
+      Locale_Ig.Short_Override.Second.Simple := To_Unbounded_String ("sek. {n}");
       Locale_Ig.Short_Override.Has_Minute := True;
       Locale_Ig.Short_Override.Minute.Has_Simple := True;
-      Locale_Ig.Short_Override.Minute.Simple := To_Unbounded_String ("{n} nkeji");
+      Locale_Ig.Short_Override.Minute.Simple := To_Unbounded_String ("nkeji {n}");
       Locale_Ig.Short_Override.Has_Hour := True;
       Locale_Ig.Short_Override.Hour.Has_Simple := True;
-      Locale_Ig.Short_Override.Hour.Simple := To_Unbounded_String ("{n} awa");
+      Locale_Ig.Short_Override.Hour.Simple := To_Unbounded_String ("awa {n}");
       Locale_Ig.Short_Override.Has_Day := True;
       Locale_Ig.Short_Override.Day.Has_Simple := True;
-      Locale_Ig.Short_Override.Day.Simple := To_Unbounded_String ("{n} ụbọchị");
+      Locale_Ig.Short_Override.Day.Simple := To_Unbounded_String ("ụbọchị {n}");
       Locale_Ig.Short_Override.Has_Week := True;
       Locale_Ig.Short_Override.Week.Has_Simple := True;
-      Locale_Ig.Short_Override.Week.Simple := To_Unbounded_String ("{n} izu");
+      Locale_Ig.Short_Override.Week.Simple := To_Unbounded_String ("izu {n}");
       Locale_Ig.Short_Override.Has_Month := True;
       Locale_Ig.Short_Override.Month.Has_Simple := True;
-      Locale_Ig.Short_Override.Month.Simple := To_Unbounded_String ("{n} ọnwa");
+      Locale_Ig.Short_Override.Month.Simple := To_Unbounded_String ("ọnwa {n}");
       Locale_Ig.Short_Override.Has_Year := True;
       Locale_Ig.Short_Override.Year.Has_Simple := True;
-      Locale_Ig.Short_Override.Year.Simple := To_Unbounded_String ("{n} afọ");
+      Locale_Ig.Short_Override.Year.Simple := To_Unbounded_String ("afọ {n}");
       Locale_Ig.Short_Override.Has_Half := False;
       Locale_Ig.Short_Override.Has_Delimiter := False;
       Locale_Ig.Short_Override.Has_Ago := True;
@@ -8480,7 +8439,7 @@ package body Sayableduration_Locales is
       Locale_Ja.Units.Month.Has_Simple := True;
       Locale_Ja.Units.Month.Simple := To_Unbounded_String ("{n}ヶ月");
       Locale_Ja.Units.Year.Has_Simple := True;
-      Locale_Ja.Units.Year.Simple := To_Unbounded_String ("{n}歳");
+      Locale_Ja.Units.Year.Simple := To_Unbounded_String ("{n}年");
 
       Locale_Ja.Half := To_Unbounded_String ("{0}半");
       Locale_Ja.Delimiter := To_Unbounded_String ("");
@@ -8541,7 +8500,8 @@ package body Sayableduration_Locales is
       Locale_Ja.Compact_Override.Has_Year := True;
       Locale_Ja.Compact_Override.Year.Has_Simple := True;
       Locale_Ja.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Ja.Compact_Override.Has_Half := False;
+      Locale_Ja.Compact_Override.Has_Half := True;
+      Locale_Ja.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Ja.Compact_Override.Has_Delimiter := True;
       Locale_Ja.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Ja.Compact_Override.Has_Ago := True;
@@ -8574,7 +8534,7 @@ package body Sayableduration_Locales is
 
       Locale_Jv.Half := To_Unbounded_String ("{0} setengah");
       Locale_Jv.Delimiter := To_Unbounded_String (", ");
-      Locale_Jv.Just_Now := To_Unbounded_String ("saiki");
+      Locale_Jv.Just_Now := To_Unbounded_String ("lagi waé");
       Locale_Jv.Ago := To_Unbounded_String ("{0} kepungkur");
       Locale_Jv.In_Future := To_Unbounded_String ("ing {0}");
 
@@ -8932,7 +8892,8 @@ package body Sayableduration_Locales is
       Locale_Kek.Compact_Override.Has_Year := True;
       Locale_Kek.Compact_Override.Year.Has_Simple := True;
       Locale_Kek.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Kek.Compact_Override.Has_Half := False;
+      Locale_Kek.Compact_Override.Has_Half := True;
+      Locale_Kek.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Kek.Compact_Override.Has_Delimiter := True;
       Locale_Kek.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Kek.Compact_Override.Has_Ago := True;
@@ -9012,11 +8973,11 @@ package body Sayableduration_Locales is
       Locale_Ki.Units.Year.Has_Form (Other) := True;
       Locale_Ki.Units.Year.Forms (Other) := To_Unbounded_String ("mĩaka {n}");
 
-      Locale_Ki.Half := To_Unbounded_String ("{0} na nusu");
+      Locale_Ki.Half := To_Unbounded_String ("{0} na nuthu");
       Locale_Ki.Delimiter := To_Unbounded_String (", ");
-      Locale_Ki.Just_Now := To_Unbounded_String ("ũmũthĩ");
+      Locale_Ki.Just_Now := To_Unbounded_String ("rĩu");
       Locale_Ki.Ago := To_Unbounded_String ("{0} ĩhĩtũkĩte");
-      Locale_Ki.In_Future := To_Unbounded_String ("{0} ĩyothe");
+      Locale_Ki.In_Future := To_Unbounded_String ("thutha wa {0}");
 
       Locale_Ki.Has_Short := True;
       Locale_Ki.Short_Override.Has_Units := True;
@@ -9074,7 +9035,7 @@ package body Sayableduration_Locales is
       Locale_Ki.Short_Override.Has_Ago := True;
       Locale_Ki.Short_Override.Ago := To_Unbounded_String ("{0} ĩhĩtũkĩte");
       Locale_Ki.Short_Override.Has_In_Future := True;
-      Locale_Ki.Short_Override.In_Future := To_Unbounded_String ("{0} ĩyothe");
+      Locale_Ki.Short_Override.In_Future := To_Unbounded_String ("thutha wa {0}");
 
       Locale_Ki.Has_Compact := True;
       Locale_Ki.Compact_Override.Has_Units := True;
@@ -9105,7 +9066,7 @@ package body Sayableduration_Locales is
       Locale_Ki.Compact_Override.Has_Ago := True;
       Locale_Ki.Compact_Override.Ago := To_Unbounded_String ("{0} ĩhĩtũkĩte");
       Locale_Ki.Compact_Override.Has_In_Future := True;
-      Locale_Ki.Compact_Override.In_Future := To_Unbounded_String ("{0} ĩyothe");
+      Locale_Ki.Compact_Override.In_Future := To_Unbounded_String ("thutha wa {0}");
 
    end Init_ki;
 
@@ -9232,22 +9193,71 @@ package body Sayableduration_Locales is
    procedure Init_kl is
    begin
       Locale_Kl.Code := To_Unbounded_String ("kl");
-      Locale_Kl.Plural := Plural_other_only'Access;
+      Locale_Kl.Plural := Plural_one_other'Access;
 
-      Locale_Kl.Units.Second.Has_Simple := True;
-      Locale_Kl.Units.Second.Simple := To_Unbounded_String ("sekundit {n}");
-      Locale_Kl.Units.Minute.Has_Simple := True;
-      Locale_Kl.Units.Minute.Simple := To_Unbounded_String ("minutsit {n}");
-      Locale_Kl.Units.Hour.Has_Simple := True;
-      Locale_Kl.Units.Hour.Simple := To_Unbounded_String ("nalunaaqutap akunnera {n}");
-      Locale_Kl.Units.Day.Has_Simple := True;
-      Locale_Kl.Units.Day.Simple := To_Unbounded_String ("ullut {n}");
-      Locale_Kl.Units.Week.Has_Simple := True;
-      Locale_Kl.Units.Week.Simple := To_Unbounded_String ("sapaatit {n}");
-      Locale_Kl.Units.Month.Has_Simple := True;
-      Locale_Kl.Units.Month.Simple := To_Unbounded_String ("qaammatit {n}");
-      Locale_Kl.Units.Year.Has_Simple := True;
-      Locale_Kl.Units.Year.Simple := To_Unbounded_String ("ukiut {n}");
+      Locale_Kl.Units.Second.Has_Simple := False;
+      Locale_Kl.Units.Second.Has_Form (Zero) := False;
+      Locale_Kl.Units.Second.Has_Form (One) := True;
+      Locale_Kl.Units.Second.Forms (One) := To_Unbounded_String ("sekundi {n}");
+      Locale_Kl.Units.Second.Has_Form (Two) := False;
+      Locale_Kl.Units.Second.Has_Form (Few) := False;
+      Locale_Kl.Units.Second.Has_Form (Many) := False;
+      Locale_Kl.Units.Second.Has_Form (Other) := True;
+      Locale_Kl.Units.Second.Forms (Other) := To_Unbounded_String ("sekundit {n}");
+      Locale_Kl.Units.Minute.Has_Simple := False;
+      Locale_Kl.Units.Minute.Has_Form (Zero) := False;
+      Locale_Kl.Units.Minute.Has_Form (One) := True;
+      Locale_Kl.Units.Minute.Forms (One) := To_Unbounded_String ("minutsi {n}");
+      Locale_Kl.Units.Minute.Has_Form (Two) := False;
+      Locale_Kl.Units.Minute.Has_Form (Few) := False;
+      Locale_Kl.Units.Minute.Has_Form (Many) := False;
+      Locale_Kl.Units.Minute.Has_Form (Other) := True;
+      Locale_Kl.Units.Minute.Forms (Other) := To_Unbounded_String ("minutsit {n}");
+      Locale_Kl.Units.Hour.Has_Simple := False;
+      Locale_Kl.Units.Hour.Has_Form (Zero) := False;
+      Locale_Kl.Units.Hour.Has_Form (One) := True;
+      Locale_Kl.Units.Hour.Forms (One) := To_Unbounded_String ("nalunaaquttap akunnera {n}");
+      Locale_Kl.Units.Hour.Has_Form (Two) := False;
+      Locale_Kl.Units.Hour.Has_Form (Few) := False;
+      Locale_Kl.Units.Hour.Has_Form (Many) := False;
+      Locale_Kl.Units.Hour.Has_Form (Other) := True;
+      Locale_Kl.Units.Hour.Forms (Other) := To_Unbounded_String ("nalunaaquttap akunneri {n}");
+      Locale_Kl.Units.Day.Has_Simple := False;
+      Locale_Kl.Units.Day.Has_Form (Zero) := False;
+      Locale_Kl.Units.Day.Has_Form (One) := True;
+      Locale_Kl.Units.Day.Forms (One) := To_Unbounded_String ("ulloq {n}");
+      Locale_Kl.Units.Day.Has_Form (Two) := False;
+      Locale_Kl.Units.Day.Has_Form (Few) := False;
+      Locale_Kl.Units.Day.Has_Form (Many) := False;
+      Locale_Kl.Units.Day.Has_Form (Other) := True;
+      Locale_Kl.Units.Day.Forms (Other) := To_Unbounded_String ("ullut {n}");
+      Locale_Kl.Units.Week.Has_Simple := False;
+      Locale_Kl.Units.Week.Has_Form (Zero) := False;
+      Locale_Kl.Units.Week.Has_Form (One) := True;
+      Locale_Kl.Units.Week.Forms (One) := To_Unbounded_String ("sapaatip akunnera {n}");
+      Locale_Kl.Units.Week.Has_Form (Two) := False;
+      Locale_Kl.Units.Week.Has_Form (Few) := False;
+      Locale_Kl.Units.Week.Has_Form (Many) := False;
+      Locale_Kl.Units.Week.Has_Form (Other) := True;
+      Locale_Kl.Units.Week.Forms (Other) := To_Unbounded_String ("sapaatip akunneri {n}");
+      Locale_Kl.Units.Month.Has_Simple := False;
+      Locale_Kl.Units.Month.Has_Form (Zero) := False;
+      Locale_Kl.Units.Month.Has_Form (One) := True;
+      Locale_Kl.Units.Month.Forms (One) := To_Unbounded_String ("qaammat {n}");
+      Locale_Kl.Units.Month.Has_Form (Two) := False;
+      Locale_Kl.Units.Month.Has_Form (Few) := False;
+      Locale_Kl.Units.Month.Has_Form (Many) := False;
+      Locale_Kl.Units.Month.Has_Form (Other) := True;
+      Locale_Kl.Units.Month.Forms (Other) := To_Unbounded_String ("qaammatit {n}");
+      Locale_Kl.Units.Year.Has_Simple := False;
+      Locale_Kl.Units.Year.Has_Form (Zero) := False;
+      Locale_Kl.Units.Year.Has_Form (One) := True;
+      Locale_Kl.Units.Year.Forms (One) := To_Unbounded_String ("ukioq {n}");
+      Locale_Kl.Units.Year.Has_Form (Two) := False;
+      Locale_Kl.Units.Year.Has_Form (Few) := False;
+      Locale_Kl.Units.Year.Has_Form (Many) := False;
+      Locale_Kl.Units.Year.Has_Form (Other) := True;
+      Locale_Kl.Units.Year.Forms (Other) := To_Unbounded_String ("ukiut {n}");
 
       Locale_Kl.Half := To_Unbounded_String ("{0} affaa");
       Locale_Kl.Delimiter := To_Unbounded_String (", ");
@@ -9271,7 +9281,7 @@ package body Sayableduration_Locales is
       Locale_Kl.Short_Override.Day.Simple := To_Unbounded_String ("ull. {n}");
       Locale_Kl.Short_Override.Has_Week := True;
       Locale_Kl.Short_Override.Week.Has_Simple := True;
-      Locale_Kl.Short_Override.Week.Simple := To_Unbounded_String ("sap. {n}");
+      Locale_Kl.Short_Override.Week.Simple := To_Unbounded_String ("sap. ak. {n}");
       Locale_Kl.Short_Override.Has_Month := True;
       Locale_Kl.Short_Override.Month.Has_Simple := True;
       Locale_Kl.Short_Override.Month.Simple := To_Unbounded_String ("qaam. {n}");
@@ -9308,7 +9318,8 @@ package body Sayableduration_Locales is
       Locale_Kl.Compact_Override.Has_Year := True;
       Locale_Kl.Compact_Override.Year.Has_Simple := True;
       Locale_Kl.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Kl.Compact_Override.Has_Half := False;
+      Locale_Kl.Compact_Override.Has_Half := True;
+      Locale_Kl.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Kl.Compact_Override.Has_Delimiter := True;
       Locale_Kl.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Kl.Compact_Override.Has_Ago := True;
@@ -9343,7 +9354,7 @@ package body Sayableduration_Locales is
       Locale_Km.Delimiter := To_Unbounded_String (", ");
       Locale_Km.Just_Now := To_Unbounded_String ("ឥឡូវនេះ");
       Locale_Km.Ago := To_Unbounded_String ("{0}មុន");
-      Locale_Km.In_Future := To_Unbounded_String ("ក្នុង{0}");
+      Locale_Km.In_Future := To_Unbounded_String ("{0}ទៀត");
 
       Locale_Km.Has_Short := True;
       Locale_Km.Short_Override.Has_Units := True;
@@ -9373,7 +9384,7 @@ package body Sayableduration_Locales is
       Locale_Km.Short_Override.Has_Ago := True;
       Locale_Km.Short_Override.Ago := To_Unbounded_String ("{0}មុន");
       Locale_Km.Short_Override.Has_In_Future := True;
-      Locale_Km.Short_Override.In_Future := To_Unbounded_String ("ក្នុង{0}");
+      Locale_Km.Short_Override.In_Future := To_Unbounded_String ("{0}ទៀត");
 
       Locale_Km.Has_Compact := True;
       Locale_Km.Compact_Override.Has_Units := True;
@@ -9405,7 +9416,7 @@ package body Sayableduration_Locales is
       Locale_Km.Compact_Override.Has_Ago := True;
       Locale_Km.Compact_Override.Ago := To_Unbounded_String ("{0}មុន");
       Locale_Km.Compact_Override.Has_In_Future := True;
-      Locale_Km.Compact_Override.In_Future := To_Unbounded_String ("ក្នុង{0}");
+      Locale_Km.Compact_Override.In_Future := To_Unbounded_String ("{0}ទៀត");
 
    end Init_km;
 
@@ -9479,7 +9490,7 @@ package body Sayableduration_Locales is
       Locale_Kn.Units.Year.Has_Form (Other) := True;
       Locale_Kn.Units.Year.Forms (Other) := To_Unbounded_String ("{n} ವರ್ಷಗಳು");
 
-      Locale_Kn.Half := To_Unbounded_String ("{0}ವರೆ");
+      Locale_Kn.Half := To_Unbounded_String ("{n}½");
       Locale_Kn.Delimiter := To_Unbounded_String (", ");
       Locale_Kn.Just_Now := To_Unbounded_String ("ಈಗಷ್ಟೇ");
       Locale_Kn.Ago := To_Unbounded_String ("{0} ಹಿಂದೆ");
@@ -9568,7 +9579,7 @@ package body Sayableduration_Locales is
       Locale_Ko.Units.Month.Has_Simple := True;
       Locale_Ko.Units.Month.Simple := To_Unbounded_String ("{n}개월");
       Locale_Ko.Units.Year.Has_Simple := True;
-      Locale_Ko.Units.Year.Simple := To_Unbounded_String ("{n}살");
+      Locale_Ko.Units.Year.Simple := To_Unbounded_String ("{n}년");
 
       Locale_Ko.Half := To_Unbounded_String ("{0} 반");
       Locale_Ko.Delimiter := To_Unbounded_String (" ");
@@ -9751,7 +9762,7 @@ package body Sayableduration_Locales is
       Locale_Kri.Units.Year.Has_Simple := True;
       Locale_Kri.Units.Year.Simple := To_Unbounded_String ("{n} ia");
 
-      Locale_Kri.Half := To_Unbounded_String ("{n} na af");
+      Locale_Kri.Half := To_Unbounded_String ("{0} ɛn af");
       Locale_Kri.Delimiter := To_Unbounded_String (", ");
       Locale_Kri.Just_Now := To_Unbounded_String ("jos naw");
       Locale_Kri.Ago := To_Unbounded_String ("{0} bak");
@@ -9810,7 +9821,8 @@ package body Sayableduration_Locales is
       Locale_Kri.Compact_Override.Has_Year := True;
       Locale_Kri.Compact_Override.Year.Has_Simple := True;
       Locale_Kri.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Kri.Compact_Override.Has_Half := False;
+      Locale_Kri.Compact_Override.Has_Half := True;
+      Locale_Kri.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Kri.Compact_Override.Has_Delimiter := True;
       Locale_Kri.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Kri.Compact_Override.Has_Ago := True;
@@ -10205,7 +10217,7 @@ package body Sayableduration_Locales is
       Locale_Kw.Units.Day.Has_Form (Zero) := True;
       Locale_Kw.Units.Day.Forms (Zero) := To_Unbounded_String ("{n} dydh");
       Locale_Kw.Units.Day.Has_Form (One) := True;
-      Locale_Kw.Units.Day.Forms (One) := To_Unbounded_String ("dydh");
+      Locale_Kw.Units.Day.Forms (One) := To_Unbounded_String ("{n} dydh");
       Locale_Kw.Units.Day.Has_Form (Two) := True;
       Locale_Kw.Units.Day.Forms (Two) := To_Unbounded_String ("{n} dhydh");
       Locale_Kw.Units.Day.Has_Form (Few) := True;
@@ -10218,7 +10230,7 @@ package body Sayableduration_Locales is
       Locale_Kw.Units.Week.Has_Form (Zero) := True;
       Locale_Kw.Units.Week.Forms (Zero) := To_Unbounded_String ("{n} seythun");
       Locale_Kw.Units.Week.Has_Form (One) := True;
-      Locale_Kw.Units.Week.Forms (One) := To_Unbounded_String ("seythun");
+      Locale_Kw.Units.Week.Forms (One) := To_Unbounded_String ("{n} seythun");
       Locale_Kw.Units.Week.Has_Form (Two) := True;
       Locale_Kw.Units.Week.Forms (Two) := To_Unbounded_String ("{n} seythun");
       Locale_Kw.Units.Week.Has_Form (Few) := True;
@@ -10231,7 +10243,7 @@ package body Sayableduration_Locales is
       Locale_Kw.Units.Month.Has_Form (Zero) := True;
       Locale_Kw.Units.Month.Forms (Zero) := To_Unbounded_String ("{n} mis");
       Locale_Kw.Units.Month.Has_Form (One) := True;
-      Locale_Kw.Units.Month.Forms (One) := To_Unbounded_String ("mis");
+      Locale_Kw.Units.Month.Forms (One) := To_Unbounded_String ("{n} mis");
       Locale_Kw.Units.Month.Has_Form (Two) := True;
       Locale_Kw.Units.Month.Forms (Two) := To_Unbounded_String ("{n} vis");
       Locale_Kw.Units.Month.Has_Form (Few) := True;
@@ -10244,7 +10256,7 @@ package body Sayableduration_Locales is
       Locale_Kw.Units.Year.Has_Form (Zero) := True;
       Locale_Kw.Units.Year.Forms (Zero) := To_Unbounded_String ("{n} blydhen");
       Locale_Kw.Units.Year.Has_Form (One) := True;
-      Locale_Kw.Units.Year.Forms (One) := To_Unbounded_String ("blydhen");
+      Locale_Kw.Units.Year.Forms (One) := To_Unbounded_String ("{n} blydhen");
       Locale_Kw.Units.Year.Has_Form (Two) := True;
       Locale_Kw.Units.Year.Forms (Two) := To_Unbounded_String ("{n} vlydhen");
       Locale_Kw.Units.Year.Has_Form (Few) := True;
@@ -10722,11 +10734,11 @@ package body Sayableduration_Locales is
       Locale_Ln.Plural := Plural_one_other_zero_one'Access;
 
       Locale_Ln.Units.Second.Has_Simple := True;
-      Locale_Ln.Units.Second.Simple := To_Unbounded_String ("{n} segɔnde");
+      Locale_Ln.Units.Second.Simple := To_Unbounded_String ("segɔnde {n}");
       Locale_Ln.Units.Minute.Has_Simple := True;
-      Locale_Ln.Units.Minute.Simple := To_Unbounded_String ("{n} moniti");
+      Locale_Ln.Units.Minute.Simple := To_Unbounded_String ("miniti {n}");
       Locale_Ln.Units.Hour.Has_Simple := True;
-      Locale_Ln.Units.Hour.Simple := To_Unbounded_String ("{n} ngonga");
+      Locale_Ln.Units.Hour.Simple := To_Unbounded_String ("ngonga {n}");
       Locale_Ln.Units.Day.Has_Simple := False;
       Locale_Ln.Units.Day.Has_Form (Zero) := False;
       Locale_Ln.Units.Day.Has_Form (One) := True;
@@ -10912,10 +10924,10 @@ package body Sayableduration_Locales is
       Locale_Lo.Units.Year.Simple := To_Unbounded_String ("{n} ປີ");
 
       Locale_Lo.Half := To_Unbounded_String ("{0}ເຄິ່ງ");
-      Locale_Lo.Delimiter := To_Unbounded_String ("");
+      Locale_Lo.Delimiter := To_Unbounded_String (" ");
       Locale_Lo.Just_Now := To_Unbounded_String ("ຫາກໍ");
       Locale_Lo.Ago := To_Unbounded_String ("{0} ກ່ອນ");
-      Locale_Lo.In_Future := To_Unbounded_String ("ໃນ {0}");
+      Locale_Lo.In_Future := To_Unbounded_String ("ໃນອີກ {0}");
 
       Locale_Lo.Has_Short := True;
       Locale_Lo.Short_Override.Has_Units := True;
@@ -10945,7 +10957,7 @@ package body Sayableduration_Locales is
       Locale_Lo.Short_Override.Has_Ago := True;
       Locale_Lo.Short_Override.Ago := To_Unbounded_String ("{0} ກ່ອນ");
       Locale_Lo.Short_Override.Has_In_Future := True;
-      Locale_Lo.Short_Override.In_Future := To_Unbounded_String ("ໃນ {0}");
+      Locale_Lo.Short_Override.In_Future := To_Unbounded_String ("ໃນອີກ {0}");
 
       Locale_Lo.Has_Compact := True;
       Locale_Lo.Compact_Override.Has_Units := True;
@@ -10966,7 +10978,7 @@ package body Sayableduration_Locales is
       Locale_Lo.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
       Locale_Lo.Compact_Override.Has_Month := True;
       Locale_Lo.Compact_Override.Month.Has_Simple := True;
-      Locale_Lo.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Lo.Compact_Override.Month.Simple := To_Unbounded_String ("{n}mo");
       Locale_Lo.Compact_Override.Has_Year := True;
       Locale_Lo.Compact_Override.Year.Has_Simple := True;
       Locale_Lo.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
@@ -10977,7 +10989,7 @@ package body Sayableduration_Locales is
       Locale_Lo.Compact_Override.Has_Ago := True;
       Locale_Lo.Compact_Override.Ago := To_Unbounded_String ("{0} ກ່ອນ");
       Locale_Lo.Compact_Override.Has_In_Future := True;
-      Locale_Lo.Compact_Override.In_Future := To_Unbounded_String ("ໃນ {0}");
+      Locale_Lo.Compact_Override.In_Future := To_Unbounded_String ("ໃນອີກ {0}");
 
    end Init_lo;
 
@@ -11434,7 +11446,7 @@ package body Sayableduration_Locales is
       Locale_Mam.Units.Day.Has_Simple := True;
       Locale_Mam.Units.Day.Simple := To_Unbounded_String ("{n} q'ij");
       Locale_Mam.Units.Week.Has_Simple := True;
-      Locale_Mam.Units.Week.Simple := To_Unbounded_String ("{n} xjaw");
+      Locale_Mam.Units.Week.Simple := To_Unbounded_String ("{n} seman");
       Locale_Mam.Units.Month.Has_Simple := True;
       Locale_Mam.Units.Month.Simple := To_Unbounded_String ("{n} xjaw");
       Locale_Mam.Units.Year.Has_Simple := True;
@@ -11462,7 +11474,7 @@ package body Sayableduration_Locales is
       Locale_Mam.Short_Override.Day.Simple := To_Unbounded_String ("{n} q'ij");
       Locale_Mam.Short_Override.Has_Week := True;
       Locale_Mam.Short_Override.Week.Has_Simple := True;
-      Locale_Mam.Short_Override.Week.Simple := To_Unbounded_String ("{n} xjaw");
+      Locale_Mam.Short_Override.Week.Simple := To_Unbounded_String ("{n} seman");
       Locale_Mam.Short_Override.Has_Month := True;
       Locale_Mam.Short_Override.Month.Has_Simple := True;
       Locale_Mam.Short_Override.Month.Simple := To_Unbounded_String ("{n} xjaw");
@@ -11499,7 +11511,8 @@ package body Sayableduration_Locales is
       Locale_Mam.Compact_Override.Has_Year := True;
       Locale_Mam.Compact_Override.Year.Has_Simple := True;
       Locale_Mam.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Mam.Compact_Override.Has_Half := False;
+      Locale_Mam.Compact_Override.Has_Half := True;
+      Locale_Mam.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Mam.Compact_Override.Has_Delimiter := True;
       Locale_Mam.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Mam.Compact_Override.Has_Ago := True;
@@ -11785,7 +11798,7 @@ package body Sayableduration_Locales is
       Locale_Mg.Half := To_Unbounded_String ("{0} sy sasany");
       Locale_Mg.Delimiter := To_Unbounded_String (", ");
       Locale_Mg.Just_Now := To_Unbounded_String ("vao haingana");
-      Locale_Mg.Ago := To_Unbounded_String ("{0} lasa");
+      Locale_Mg.Ago := To_Unbounded_String ("{0} lasa izay");
       Locale_Mg.In_Future := To_Unbounded_String ("ao anatin'ny {0}");
 
       Locale_Mg.Has_Short := True;
@@ -11814,7 +11827,7 @@ package body Sayableduration_Locales is
       Locale_Mg.Short_Override.Has_Half := False;
       Locale_Mg.Short_Override.Has_Delimiter := False;
       Locale_Mg.Short_Override.Has_Ago := True;
-      Locale_Mg.Short_Override.Ago := To_Unbounded_String ("{0} lasa");
+      Locale_Mg.Short_Override.Ago := To_Unbounded_String ("{0} lasa izay");
       Locale_Mg.Short_Override.Has_In_Future := True;
       Locale_Mg.Short_Override.In_Future := To_Unbounded_String ("ao anatin'ny {0}");
 
@@ -11865,15 +11878,15 @@ package body Sayableduration_Locales is
       Locale_Mi.Units.Hour.Has_Simple := True;
       Locale_Mi.Units.Hour.Simple := To_Unbounded_String ("{n} hāora");
       Locale_Mi.Units.Day.Has_Simple := True;
-      Locale_Mi.Units.Day.Simple := To_Unbounded_String ("rā {n}");
+      Locale_Mi.Units.Day.Simple := To_Unbounded_String ("{n} rā");
       Locale_Mi.Units.Week.Has_Simple := True;
-      Locale_Mi.Units.Week.Simple := To_Unbounded_String ("wiki {n}");
+      Locale_Mi.Units.Week.Simple := To_Unbounded_String ("{n} wiki");
       Locale_Mi.Units.Month.Has_Simple := True;
-      Locale_Mi.Units.Month.Simple := To_Unbounded_String ("marama {n}");
+      Locale_Mi.Units.Month.Simple := To_Unbounded_String ("{n} marama");
       Locale_Mi.Units.Year.Has_Simple := True;
-      Locale_Mi.Units.Year.Simple := To_Unbounded_String ("tau {n}");
+      Locale_Mi.Units.Year.Simple := To_Unbounded_String ("{n} tau");
 
-      Locale_Mi.Half := To_Unbounded_String ("{0}½");
+      Locale_Mi.Half := To_Unbounded_String ("{n}½");
       Locale_Mi.Delimiter := To_Unbounded_String (", ");
       Locale_Mi.Just_Now := To_Unbounded_String ("ināianei");
       Locale_Mi.Ago := To_Unbounded_String ("{0} i mua");
@@ -11892,16 +11905,16 @@ package body Sayableduration_Locales is
       Locale_Mi.Short_Override.Hour.Simple := To_Unbounded_String ("{n} hāo");
       Locale_Mi.Short_Override.Has_Day := True;
       Locale_Mi.Short_Override.Day.Has_Simple := True;
-      Locale_Mi.Short_Override.Day.Simple := To_Unbounded_String ("rā {n}");
+      Locale_Mi.Short_Override.Day.Simple := To_Unbounded_String ("{n} rā");
       Locale_Mi.Short_Override.Has_Week := True;
       Locale_Mi.Short_Override.Week.Has_Simple := True;
-      Locale_Mi.Short_Override.Week.Simple := To_Unbounded_String ("w {n}");
+      Locale_Mi.Short_Override.Week.Simple := To_Unbounded_String ("{n} w");
       Locale_Mi.Short_Override.Has_Month := True;
       Locale_Mi.Short_Override.Month.Has_Simple := True;
-      Locale_Mi.Short_Override.Month.Simple := To_Unbounded_String ("m {n}");
+      Locale_Mi.Short_Override.Month.Simple := To_Unbounded_String ("{n} m");
       Locale_Mi.Short_Override.Has_Year := True;
       Locale_Mi.Short_Override.Year.Has_Simple := True;
-      Locale_Mi.Short_Override.Year.Simple := To_Unbounded_String ("t {n}");
+      Locale_Mi.Short_Override.Year.Simple := To_Unbounded_String ("{n} t");
       Locale_Mi.Short_Override.Has_Half := False;
       Locale_Mi.Short_Override.Has_Delimiter := False;
       Locale_Mi.Short_Override.Has_Ago := True;
@@ -12094,7 +12107,7 @@ package body Sayableduration_Locales is
    procedure Init_ml is
    begin
       Locale_Ml.Code := To_Unbounded_String ("ml");
-      Locale_Ml.Plural := Plural_one_other_zero_one'Access;
+      Locale_Ml.Plural := Plural_one_other'Access;
 
       Locale_Ml.Units.Second.Has_Simple := False;
       Locale_Ml.Units.Second.Has_Form (Zero) := False;
@@ -12160,7 +12173,7 @@ package body Sayableduration_Locales is
       Locale_Ml.Units.Year.Has_Form (Other) := True;
       Locale_Ml.Units.Year.Forms (Other) := To_Unbounded_String ("{n} വർഷങ്ങൾ");
 
-      Locale_Ml.Half := To_Unbounded_String ("{0} ര");
+      Locale_Ml.Half := To_Unbounded_String ("{n}½");
       Locale_Ml.Delimiter := To_Unbounded_String (", ");
       Locale_Ml.Just_Now := To_Unbounded_String ("ഇപ്പോൾ");
       Locale_Ml.Ago := To_Unbounded_String ("{0} മുമ്പ്");
@@ -12346,7 +12359,7 @@ package body Sayableduration_Locales is
       Locale_Mnk.Delimiter := To_Unbounded_String (", ");
       Locale_Mnk.Just_Now := To_Unbounded_String ("sisan");
       Locale_Mnk.Ago := To_Unbounded_String ("{0} taata");
-      Locale_Mnk.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Mnk.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
       Locale_Mnk.Has_Short := True;
       Locale_Mnk.Short_Override.Has_Units := True;
@@ -12376,7 +12389,7 @@ package body Sayableduration_Locales is
       Locale_Mnk.Short_Override.Has_Ago := True;
       Locale_Mnk.Short_Override.Ago := To_Unbounded_String ("{0} taata");
       Locale_Mnk.Short_Override.Has_In_Future := True;
-      Locale_Mnk.Short_Override.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Mnk.Short_Override.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
       Locale_Mnk.Has_Compact := True;
       Locale_Mnk.Compact_Override.Has_Units := True;
@@ -12408,7 +12421,7 @@ package body Sayableduration_Locales is
       Locale_Mnk.Compact_Override.Has_Ago := True;
       Locale_Mnk.Compact_Override.Ago := To_Unbounded_String ("{0} taata");
       Locale_Mnk.Compact_Override.Has_In_Future := True;
-      Locale_Mnk.Compact_Override.In_Future := To_Unbounded_String ("ka {0}");
+      Locale_Mnk.Compact_Override.In_Future := To_Unbounded_String ("{0} kɔnɔ");
 
    end Init_mnk;
 
@@ -12511,8 +12524,15 @@ package body Sayableduration_Locales is
 
       Locale_Mr.Units.Second.Has_Simple := True;
       Locale_Mr.Units.Second.Simple := To_Unbounded_String ("{n} सेकंद");
-      Locale_Mr.Units.Minute.Has_Simple := True;
-      Locale_Mr.Units.Minute.Simple := To_Unbounded_String ("{n} मिनिट");
+      Locale_Mr.Units.Minute.Has_Simple := False;
+      Locale_Mr.Units.Minute.Has_Form (Zero) := False;
+      Locale_Mr.Units.Minute.Has_Form (One) := True;
+      Locale_Mr.Units.Minute.Forms (One) := To_Unbounded_String ("{n} मिनिट");
+      Locale_Mr.Units.Minute.Has_Form (Two) := False;
+      Locale_Mr.Units.Minute.Has_Form (Few) := False;
+      Locale_Mr.Units.Minute.Has_Form (Many) := False;
+      Locale_Mr.Units.Minute.Has_Form (Other) := True;
+      Locale_Mr.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} मिनिटे");
       Locale_Mr.Units.Hour.Has_Simple := True;
       Locale_Mr.Units.Hour.Simple := To_Unbounded_String ("{n} तास");
       Locale_Mr.Units.Day.Has_Simple := False;
@@ -12750,7 +12770,7 @@ package body Sayableduration_Locales is
       Locale_Mt.Units.Minute.Has_Form (One) := True;
       Locale_Mt.Units.Minute.Forms (One) := To_Unbounded_String ("{n} minuta");
       Locale_Mt.Units.Minute.Has_Form (Two) := True;
-      Locale_Mt.Units.Minute.Forms (Two) := To_Unbounded_String ("{n} minuti");
+      Locale_Mt.Units.Minute.Forms (Two) := To_Unbounded_String ("minutejn");
       Locale_Mt.Units.Minute.Has_Form (Few) := True;
       Locale_Mt.Units.Minute.Forms (Few) := To_Unbounded_String ("{n} minuti");
       Locale_Mt.Units.Minute.Has_Form (Many) := True;
@@ -12762,7 +12782,7 @@ package body Sayableduration_Locales is
       Locale_Mt.Units.Hour.Has_Form (One) := True;
       Locale_Mt.Units.Hour.Forms (One) := To_Unbounded_String ("{n} siegħa");
       Locale_Mt.Units.Hour.Has_Form (Two) := True;
-      Locale_Mt.Units.Hour.Forms (Two) := To_Unbounded_String ("{n} sigħat");
+      Locale_Mt.Units.Hour.Forms (Two) := To_Unbounded_String ("sagħtejn");
       Locale_Mt.Units.Hour.Has_Form (Few) := True;
       Locale_Mt.Units.Hour.Forms (Few) := To_Unbounded_String ("{n} sigħat");
       Locale_Mt.Units.Hour.Has_Form (Many) := True;
@@ -13052,7 +13072,7 @@ package body Sayableduration_Locales is
       Locale_Nb.Half := To_Unbounded_String ("{n}½");
       Locale_Nb.Delimiter := To_Unbounded_String (", ");
       Locale_Nb.Just_Now := To_Unbounded_String ("akkurat nå");
-      Locale_Nb.Ago := To_Unbounded_String ("{0} siden");
+      Locale_Nb.Ago := To_Unbounded_String ("for {0} siden");
       Locale_Nb.In_Future := To_Unbounded_String ("om {0}");
 
       Locale_Nb.Has_Short := True;
@@ -13081,7 +13101,7 @@ package body Sayableduration_Locales is
       Locale_Nb.Short_Override.Has_Half := False;
       Locale_Nb.Short_Override.Has_Delimiter := False;
       Locale_Nb.Short_Override.Has_Ago := True;
-      Locale_Nb.Short_Override.Ago := To_Unbounded_String ("{0} siden");
+      Locale_Nb.Short_Override.Ago := To_Unbounded_String ("for {0} siden");
       Locale_Nb.Short_Override.Has_In_Future := True;
       Locale_Nb.Short_Override.In_Future := To_Unbounded_String ("om {0}");
 
@@ -13112,7 +13132,7 @@ package body Sayableduration_Locales is
       Locale_Nb.Compact_Override.Has_Delimiter := True;
       Locale_Nb.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Nb.Compact_Override.Has_Ago := True;
-      Locale_Nb.Compact_Override.Ago := To_Unbounded_String ("{0} siden");
+      Locale_Nb.Compact_Override.Ago := To_Unbounded_String ("for {0} siden");
       Locale_Nb.Compact_Override.Has_In_Future := True;
       Locale_Nb.Compact_Override.In_Future := To_Unbounded_String ("om {0}");
 
@@ -13963,16 +13983,16 @@ package body Sayableduration_Locales is
       Locale_Nso.Units.Second.Has_Form (Few) := False;
       Locale_Nso.Units.Second.Has_Form (Many) := False;
       Locale_Nso.Units.Second.Has_Form (Other) := True;
-      Locale_Nso.Units.Second.Forms (Other) := To_Unbounded_String ("dimetsotswana {n}");
+      Locale_Nso.Units.Second.Forms (Other) := To_Unbounded_String ("metsotswana {n}");
       Locale_Nso.Units.Minute.Has_Simple := False;
       Locale_Nso.Units.Minute.Has_Form (Zero) := False;
       Locale_Nso.Units.Minute.Has_Form (One) := True;
-      Locale_Nso.Units.Minute.Forms (One) := To_Unbounded_String ("metsotso {n}");
+      Locale_Nso.Units.Minute.Forms (One) := To_Unbounded_String ("motsotso {n}");
       Locale_Nso.Units.Minute.Has_Form (Two) := False;
       Locale_Nso.Units.Minute.Has_Form (Few) := False;
       Locale_Nso.Units.Minute.Has_Form (Many) := False;
       Locale_Nso.Units.Minute.Has_Form (Other) := True;
-      Locale_Nso.Units.Minute.Forms (Other) := To_Unbounded_String ("dimetsotso {n}");
+      Locale_Nso.Units.Minute.Forms (Other) := To_Unbounded_String ("metsotso {n}");
       Locale_Nso.Units.Hour.Has_Simple := False;
       Locale_Nso.Units.Hour.Has_Form (Zero) := False;
       Locale_Nso.Units.Hour.Has_Form (One) := True;
@@ -14031,22 +14051,22 @@ package body Sayableduration_Locales is
       Locale_Nso.Short_Override.Second.Has_Simple := False;
       Locale_Nso.Short_Override.Second.Has_Form (Zero) := False;
       Locale_Nso.Short_Override.Second.Has_Form (One) := True;
-      Locale_Nso.Short_Override.Second.Forms (One) := To_Unbounded_String ("mots. {n}");
+      Locale_Nso.Short_Override.Second.Forms (One) := To_Unbounded_String ("motsotsw. {n}");
       Locale_Nso.Short_Override.Second.Has_Form (Two) := False;
       Locale_Nso.Short_Override.Second.Has_Form (Few) := False;
       Locale_Nso.Short_Override.Second.Has_Form (Many) := False;
       Locale_Nso.Short_Override.Second.Has_Form (Other) := True;
-      Locale_Nso.Short_Override.Second.Forms (Other) := To_Unbounded_String ("dimets. {n}");
+      Locale_Nso.Short_Override.Second.Forms (Other) := To_Unbounded_String ("metsotsw. {n}");
       Locale_Nso.Short_Override.Has_Minute := True;
       Locale_Nso.Short_Override.Minute.Has_Simple := False;
       Locale_Nso.Short_Override.Minute.Has_Form (Zero) := False;
       Locale_Nso.Short_Override.Minute.Has_Form (One) := True;
-      Locale_Nso.Short_Override.Minute.Forms (One) := To_Unbounded_String ("mets. {n}");
+      Locale_Nso.Short_Override.Minute.Forms (One) := To_Unbounded_String ("mots. {n}");
       Locale_Nso.Short_Override.Minute.Has_Form (Two) := False;
       Locale_Nso.Short_Override.Minute.Has_Form (Few) := False;
       Locale_Nso.Short_Override.Minute.Has_Form (Many) := False;
       Locale_Nso.Short_Override.Minute.Has_Form (Other) := True;
-      Locale_Nso.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("dimets. {n}");
+      Locale_Nso.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("mets. {n}");
       Locale_Nso.Short_Override.Has_Hour := True;
       Locale_Nso.Short_Override.Hour.Has_Simple := False;
       Locale_Nso.Short_Override.Hour.Has_Form (Zero) := False;
@@ -14334,11 +14354,18 @@ package body Sayableduration_Locales is
       Locale_Ny.Plural := Plural_one_other'Access;
 
       Locale_Ny.Units.Second.Has_Simple := True;
-      Locale_Ny.Units.Second.Simple := To_Unbounded_String ("{n} sekondi");
+      Locale_Ny.Units.Second.Simple := To_Unbounded_String ("sekondi {n}");
       Locale_Ny.Units.Minute.Has_Simple := True;
-      Locale_Ny.Units.Minute.Simple := To_Unbounded_String ("{n} mphindi");
-      Locale_Ny.Units.Hour.Has_Simple := True;
-      Locale_Ny.Units.Hour.Simple := To_Unbounded_String ("{n} ola");
+      Locale_Ny.Units.Minute.Simple := To_Unbounded_String ("mphindi {n}");
+      Locale_Ny.Units.Hour.Has_Simple := False;
+      Locale_Ny.Units.Hour.Has_Form (Zero) := False;
+      Locale_Ny.Units.Hour.Has_Form (One) := True;
+      Locale_Ny.Units.Hour.Forms (One) := To_Unbounded_String ("ola {n}");
+      Locale_Ny.Units.Hour.Has_Form (Two) := False;
+      Locale_Ny.Units.Hour.Has_Form (Few) := False;
+      Locale_Ny.Units.Hour.Has_Form (Many) := False;
+      Locale_Ny.Units.Hour.Has_Form (Other) := True;
+      Locale_Ny.Units.Hour.Forms (Other) := To_Unbounded_String ("maola {n}");
       Locale_Ny.Units.Day.Has_Simple := False;
       Locale_Ny.Units.Day.Has_Form (Zero) := False;
       Locale_Ny.Units.Day.Has_Form (One) := True;
@@ -14391,8 +14418,15 @@ package body Sayableduration_Locales is
       Locale_Ny.Short_Override.Minute.Has_Simple := True;
       Locale_Ny.Short_Override.Minute.Simple := To_Unbounded_String ("mph {n}");
       Locale_Ny.Short_Override.Has_Hour := True;
-      Locale_Ny.Short_Override.Hour.Has_Simple := True;
-      Locale_Ny.Short_Override.Hour.Simple := To_Unbounded_String ("ola {n}");
+      Locale_Ny.Short_Override.Hour.Has_Simple := False;
+      Locale_Ny.Short_Override.Hour.Has_Form (Zero) := False;
+      Locale_Ny.Short_Override.Hour.Has_Form (One) := True;
+      Locale_Ny.Short_Override.Hour.Forms (One) := To_Unbounded_String ("ola {n}");
+      Locale_Ny.Short_Override.Hour.Has_Form (Two) := False;
+      Locale_Ny.Short_Override.Hour.Has_Form (Few) := False;
+      Locale_Ny.Short_Override.Hour.Has_Form (Many) := False;
+      Locale_Ny.Short_Override.Hour.Has_Form (Other) := True;
+      Locale_Ny.Short_Override.Hour.Forms (Other) := To_Unbounded_String ("maola {n}");
       Locale_Ny.Short_Override.Has_Day := True;
       Locale_Ny.Short_Override.Day.Has_Simple := False;
       Locale_Ny.Short_Override.Day.Has_Form (Zero) := False;
@@ -14792,8 +14826,15 @@ package body Sayableduration_Locales is
       Locale_Pa.Units.Second.Simple := To_Unbounded_String ("{n} ਸਕਿੰਟ");
       Locale_Pa.Units.Minute.Has_Simple := True;
       Locale_Pa.Units.Minute.Simple := To_Unbounded_String ("{n} ਮਿੰਟ");
-      Locale_Pa.Units.Hour.Has_Simple := True;
-      Locale_Pa.Units.Hour.Simple := To_Unbounded_String ("{n} ਘੰਟਾ");
+      Locale_Pa.Units.Hour.Has_Simple := False;
+      Locale_Pa.Units.Hour.Has_Form (Zero) := False;
+      Locale_Pa.Units.Hour.Has_Form (One) := True;
+      Locale_Pa.Units.Hour.Forms (One) := To_Unbounded_String ("{n} ਘੰਟਾ");
+      Locale_Pa.Units.Hour.Has_Form (Two) := False;
+      Locale_Pa.Units.Hour.Has_Form (Few) := False;
+      Locale_Pa.Units.Hour.Has_Form (Many) := False;
+      Locale_Pa.Units.Hour.Has_Form (Other) := True;
+      Locale_Pa.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} ਘੰਟੇ");
       Locale_Pa.Units.Day.Has_Simple := False;
       Locale_Pa.Units.Day.Has_Form (Zero) := False;
       Locale_Pa.Units.Day.Has_Form (One) := True;
@@ -14964,7 +15005,7 @@ package body Sayableduration_Locales is
       Locale_Pis.Units.Year.Has_Simple := True;
       Locale_Pis.Units.Year.Simple := To_Unbounded_String ("{n} yia");
 
-      Locale_Pis.Half := To_Unbounded_String ("{n} en haf");
+      Locale_Pis.Half := To_Unbounded_String ("{0} en haf");
       Locale_Pis.Delimiter := To_Unbounded_String (", ");
       Locale_Pis.Just_Now := To_Unbounded_String ("nomoa nao");
       Locale_Pis.Ago := To_Unbounded_String ("{0} bifoa");
@@ -15023,7 +15064,8 @@ package body Sayableduration_Locales is
       Locale_Pis.Compact_Override.Has_Year := True;
       Locale_Pis.Compact_Override.Year.Has_Simple := True;
       Locale_Pis.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Pis.Compact_Override.Has_Half := False;
+      Locale_Pis.Compact_Override.Has_Half := True;
+      Locale_Pis.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Pis.Compact_Override.Has_Delimiter := True;
       Locale_Pis.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Pis.Compact_Override.Has_Ago := True;
@@ -15049,7 +15091,7 @@ package body Sayableduration_Locales is
       Locale_Pl.Units.Second.Has_Form (Many) := True;
       Locale_Pl.Units.Second.Forms (Many) := To_Unbounded_String ("{n} sekund");
       Locale_Pl.Units.Second.Has_Form (Other) := True;
-      Locale_Pl.Units.Second.Forms (Other) := To_Unbounded_String ("{n} sekund");
+      Locale_Pl.Units.Second.Forms (Other) := To_Unbounded_String ("{n} sekundy");
       Locale_Pl.Units.Minute.Has_Simple := False;
       Locale_Pl.Units.Minute.Has_Form (Zero) := False;
       Locale_Pl.Units.Minute.Has_Form (One) := True;
@@ -15060,7 +15102,7 @@ package body Sayableduration_Locales is
       Locale_Pl.Units.Minute.Has_Form (Many) := True;
       Locale_Pl.Units.Minute.Forms (Many) := To_Unbounded_String ("{n} minut");
       Locale_Pl.Units.Minute.Has_Form (Other) := True;
-      Locale_Pl.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} minut");
+      Locale_Pl.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} minuty");
       Locale_Pl.Units.Hour.Has_Simple := False;
       Locale_Pl.Units.Hour.Has_Form (Zero) := False;
       Locale_Pl.Units.Hour.Has_Form (One) := True;
@@ -15071,7 +15113,7 @@ package body Sayableduration_Locales is
       Locale_Pl.Units.Hour.Has_Form (Many) := True;
       Locale_Pl.Units.Hour.Forms (Many) := To_Unbounded_String ("{n} godzin");
       Locale_Pl.Units.Hour.Has_Form (Other) := True;
-      Locale_Pl.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} godzin");
+      Locale_Pl.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} godziny");
       Locale_Pl.Units.Day.Has_Simple := False;
       Locale_Pl.Units.Day.Has_Form (Zero) := False;
       Locale_Pl.Units.Day.Has_Form (One) := True;
@@ -15082,7 +15124,7 @@ package body Sayableduration_Locales is
       Locale_Pl.Units.Day.Has_Form (Many) := True;
       Locale_Pl.Units.Day.Forms (Many) := To_Unbounded_String ("{n} dni");
       Locale_Pl.Units.Day.Has_Form (Other) := True;
-      Locale_Pl.Units.Day.Forms (Other) := To_Unbounded_String ("{n} dni");
+      Locale_Pl.Units.Day.Forms (Other) := To_Unbounded_String ("{n} dnia");
       Locale_Pl.Units.Week.Has_Simple := False;
       Locale_Pl.Units.Week.Has_Form (Zero) := False;
       Locale_Pl.Units.Week.Has_Form (One) := True;
@@ -15093,7 +15135,7 @@ package body Sayableduration_Locales is
       Locale_Pl.Units.Week.Has_Form (Many) := True;
       Locale_Pl.Units.Week.Forms (Many) := To_Unbounded_String ("{n} tygodni");
       Locale_Pl.Units.Week.Has_Form (Other) := True;
-      Locale_Pl.Units.Week.Forms (Other) := To_Unbounded_String ("{n} tygodni");
+      Locale_Pl.Units.Week.Forms (Other) := To_Unbounded_String ("{n} tygodnia");
       Locale_Pl.Units.Month.Has_Simple := False;
       Locale_Pl.Units.Month.Has_Form (Zero) := False;
       Locale_Pl.Units.Month.Has_Form (One) := True;
@@ -15104,7 +15146,7 @@ package body Sayableduration_Locales is
       Locale_Pl.Units.Month.Has_Form (Many) := True;
       Locale_Pl.Units.Month.Forms (Many) := To_Unbounded_String ("{n} miesięcy");
       Locale_Pl.Units.Month.Has_Form (Other) := True;
-      Locale_Pl.Units.Month.Forms (Other) := To_Unbounded_String ("{n} miesięcy");
+      Locale_Pl.Units.Month.Forms (Other) := To_Unbounded_String ("{n} miesiąca");
       Locale_Pl.Units.Year.Has_Simple := False;
       Locale_Pl.Units.Year.Has_Form (Zero) := False;
       Locale_Pl.Units.Year.Has_Form (One) := True;
@@ -15115,7 +15157,7 @@ package body Sayableduration_Locales is
       Locale_Pl.Units.Year.Has_Form (Many) := True;
       Locale_Pl.Units.Year.Forms (Many) := To_Unbounded_String ("{n} lat");
       Locale_Pl.Units.Year.Has_Form (Other) := True;
-      Locale_Pl.Units.Year.Forms (Other) := To_Unbounded_String ("{n} lat");
+      Locale_Pl.Units.Year.Forms (Other) := To_Unbounded_String ("{n} roku");
 
       Locale_Pl.Half := To_Unbounded_String ("{n} i pół");
       Locale_Pl.Delimiter := To_Unbounded_String (", ");
@@ -15687,9 +15729,9 @@ package body Sayableduration_Locales is
       Locale_Qu.Plural := Plural_other_only'Access;
 
       Locale_Qu.Units.Second.Has_Simple := True;
-      Locale_Qu.Units.Second.Simple := To_Unbounded_String ("{n} ñiqin");
+      Locale_Qu.Units.Second.Simple := To_Unbounded_String ("{n} sikundu");
       Locale_Qu.Units.Minute.Has_Simple := True;
-      Locale_Qu.Units.Minute.Simple := To_Unbounded_String ("{n} chiniku");
+      Locale_Qu.Units.Minute.Simple := To_Unbounded_String ("{n} minutu");
       Locale_Qu.Units.Hour.Has_Simple := True;
       Locale_Qu.Units.Hour.Simple := To_Unbounded_String ("{n} ura");
       Locale_Qu.Units.Day.Has_Simple := True;
@@ -15711,10 +15753,10 @@ package body Sayableduration_Locales is
       Locale_Qu.Short_Override.Has_Units := True;
       Locale_Qu.Short_Override.Has_Second := True;
       Locale_Qu.Short_Override.Second.Has_Simple := True;
-      Locale_Qu.Short_Override.Second.Simple := To_Unbounded_String ("{n} ñiq");
+      Locale_Qu.Short_Override.Second.Simple := To_Unbounded_String ("{n} sik");
       Locale_Qu.Short_Override.Has_Minute := True;
       Locale_Qu.Short_Override.Minute.Has_Simple := True;
-      Locale_Qu.Short_Override.Minute.Simple := To_Unbounded_String ("{n} chi");
+      Locale_Qu.Short_Override.Minute.Simple := To_Unbounded_String ("{n} min");
       Locale_Qu.Short_Override.Has_Hour := True;
       Locale_Qu.Short_Override.Hour.Has_Simple := True;
       Locale_Qu.Short_Override.Hour.Simple := To_Unbounded_String ("{n} ura");
@@ -15851,7 +15893,8 @@ package body Sayableduration_Locales is
       Locale_Quc.Compact_Override.Has_Year := True;
       Locale_Quc.Compact_Override.Year.Has_Simple := True;
       Locale_Quc.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Quc.Compact_Override.Has_Half := False;
+      Locale_Quc.Compact_Override.Has_Half := True;
+      Locale_Quc.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Quc.Compact_Override.Has_Delimiter := True;
       Locale_Quc.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Quc.Compact_Override.Has_Ago := True;
@@ -16056,7 +16099,7 @@ package body Sayableduration_Locales is
       Locale_Ru.Units.Second.Has_Form (Many) := True;
       Locale_Ru.Units.Second.Forms (Many) := To_Unbounded_String ("{n} секунд");
       Locale_Ru.Units.Second.Has_Form (Other) := True;
-      Locale_Ru.Units.Second.Forms (Other) := To_Unbounded_String ("{n} секунд");
+      Locale_Ru.Units.Second.Forms (Other) := To_Unbounded_String ("{n} секунды");
       Locale_Ru.Units.Minute.Has_Simple := False;
       Locale_Ru.Units.Minute.Has_Form (Zero) := False;
       Locale_Ru.Units.Minute.Has_Form (One) := True;
@@ -16067,7 +16110,7 @@ package body Sayableduration_Locales is
       Locale_Ru.Units.Minute.Has_Form (Many) := True;
       Locale_Ru.Units.Minute.Forms (Many) := To_Unbounded_String ("{n} минут");
       Locale_Ru.Units.Minute.Has_Form (Other) := True;
-      Locale_Ru.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} минут");
+      Locale_Ru.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} минуты");
       Locale_Ru.Units.Hour.Has_Simple := False;
       Locale_Ru.Units.Hour.Has_Form (Zero) := False;
       Locale_Ru.Units.Hour.Has_Form (One) := True;
@@ -16078,7 +16121,7 @@ package body Sayableduration_Locales is
       Locale_Ru.Units.Hour.Has_Form (Many) := True;
       Locale_Ru.Units.Hour.Forms (Many) := To_Unbounded_String ("{n} часов");
       Locale_Ru.Units.Hour.Has_Form (Other) := True;
-      Locale_Ru.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} часов");
+      Locale_Ru.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} часа");
       Locale_Ru.Units.Day.Has_Simple := False;
       Locale_Ru.Units.Day.Has_Form (Zero) := False;
       Locale_Ru.Units.Day.Has_Form (One) := True;
@@ -16089,7 +16132,7 @@ package body Sayableduration_Locales is
       Locale_Ru.Units.Day.Has_Form (Many) := True;
       Locale_Ru.Units.Day.Forms (Many) := To_Unbounded_String ("{n} дней");
       Locale_Ru.Units.Day.Has_Form (Other) := True;
-      Locale_Ru.Units.Day.Forms (Other) := To_Unbounded_String ("{n} дней");
+      Locale_Ru.Units.Day.Forms (Other) := To_Unbounded_String ("{n} дня");
       Locale_Ru.Units.Week.Has_Simple := False;
       Locale_Ru.Units.Week.Has_Form (Zero) := False;
       Locale_Ru.Units.Week.Has_Form (One) := True;
@@ -16100,7 +16143,7 @@ package body Sayableduration_Locales is
       Locale_Ru.Units.Week.Has_Form (Many) := True;
       Locale_Ru.Units.Week.Forms (Many) := To_Unbounded_String ("{n} недель");
       Locale_Ru.Units.Week.Has_Form (Other) := True;
-      Locale_Ru.Units.Week.Forms (Other) := To_Unbounded_String ("{n} недель");
+      Locale_Ru.Units.Week.Forms (Other) := To_Unbounded_String ("{n} недели");
       Locale_Ru.Units.Month.Has_Simple := False;
       Locale_Ru.Units.Month.Has_Form (Zero) := False;
       Locale_Ru.Units.Month.Has_Form (One) := True;
@@ -16111,7 +16154,7 @@ package body Sayableduration_Locales is
       Locale_Ru.Units.Month.Has_Form (Many) := True;
       Locale_Ru.Units.Month.Forms (Many) := To_Unbounded_String ("{n} месяцев");
       Locale_Ru.Units.Month.Has_Form (Other) := True;
-      Locale_Ru.Units.Month.Forms (Other) := To_Unbounded_String ("{n} месяцев");
+      Locale_Ru.Units.Month.Forms (Other) := To_Unbounded_String ("{n} месяца");
       Locale_Ru.Units.Year.Has_Simple := False;
       Locale_Ru.Units.Year.Has_Form (Zero) := False;
       Locale_Ru.Units.Year.Has_Form (One) := True;
@@ -16122,7 +16165,7 @@ package body Sayableduration_Locales is
       Locale_Ru.Units.Year.Has_Form (Many) := True;
       Locale_Ru.Units.Year.Forms (Many) := To_Unbounded_String ("{n} лет");
       Locale_Ru.Units.Year.Has_Form (Other) := True;
-      Locale_Ru.Units.Year.Forms (Other) := To_Unbounded_String ("{n} лет");
+      Locale_Ru.Units.Year.Forms (Other) := To_Unbounded_String ("{n} года");
 
       Locale_Ru.Half := To_Unbounded_String ("{n} с половиной");
       Locale_Ru.Delimiter := To_Unbounded_String (", ");
@@ -16662,141 +16705,197 @@ package body Sayableduration_Locales is
       Locale_Shi.Units.Second.Has_Simple := False;
       Locale_Shi.Units.Second.Has_Form (Zero) := False;
       Locale_Shi.Units.Second.Has_Form (One) := True;
-      Locale_Shi.Units.Second.Forms (One) := To_Unbounded_String ("{n} tasint");
+      Locale_Shi.Units.Second.Forms (One) := To_Unbounded_String ("{n} ⵜⴰⵙⵉⵏⵜ");
       Locale_Shi.Units.Second.Has_Form (Two) := False;
       Locale_Shi.Units.Second.Has_Form (Few) := True;
-      Locale_Shi.Units.Second.Forms (Few) := To_Unbounded_String ("{n} tasinin");
+      Locale_Shi.Units.Second.Forms (Few) := To_Unbounded_String ("{n} ⵜⵉⵙⵉⵏⵉⵏ");
       Locale_Shi.Units.Second.Has_Form (Many) := False;
       Locale_Shi.Units.Second.Has_Form (Other) := True;
-      Locale_Shi.Units.Second.Forms (Other) := To_Unbounded_String ("{n} tasinin");
+      Locale_Shi.Units.Second.Forms (Other) := To_Unbounded_String ("{n} ⵜⵉⵙⵉⵏⵉⵏ");
       Locale_Shi.Units.Minute.Has_Simple := False;
       Locale_Shi.Units.Minute.Has_Form (Zero) := False;
       Locale_Shi.Units.Minute.Has_Form (One) := True;
-      Locale_Shi.Units.Minute.Forms (One) := To_Unbounded_String ("{n} tusdiqt");
+      Locale_Shi.Units.Minute.Forms (One) := To_Unbounded_String ("{n} ⵜⵓⵙⴷⵉⵇⵜ");
       Locale_Shi.Units.Minute.Has_Form (Two) := False;
       Locale_Shi.Units.Minute.Has_Form (Few) := True;
-      Locale_Shi.Units.Minute.Forms (Few) := To_Unbounded_String ("{n} tusdiqin");
+      Locale_Shi.Units.Minute.Forms (Few) := To_Unbounded_String ("{n} ⵜⵓⵙⴷⵉⵇⵉⵏ");
       Locale_Shi.Units.Minute.Has_Form (Many) := False;
       Locale_Shi.Units.Minute.Has_Form (Other) := True;
-      Locale_Shi.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} tusdiqin");
+      Locale_Shi.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} ⵜⵓⵙⴷⵉⵇⵉⵏ");
       Locale_Shi.Units.Hour.Has_Simple := False;
       Locale_Shi.Units.Hour.Has_Form (Zero) := False;
       Locale_Shi.Units.Hour.Has_Form (One) := True;
-      Locale_Shi.Units.Hour.Forms (One) := To_Unbounded_String ("{n} tasragt");
+      Locale_Shi.Units.Hour.Forms (One) := To_Unbounded_String ("{n} ⵜⴰⵙⵔⴰⴳⵜ");
       Locale_Shi.Units.Hour.Has_Form (Two) := False;
       Locale_Shi.Units.Hour.Has_Form (Few) := True;
-      Locale_Shi.Units.Hour.Forms (Few) := To_Unbounded_String ("{n} tisragin");
+      Locale_Shi.Units.Hour.Forms (Few) := To_Unbounded_String ("{n} ⵜⵉⵙⵔⴰⴳⵉⵏ");
       Locale_Shi.Units.Hour.Has_Form (Many) := False;
       Locale_Shi.Units.Hour.Has_Form (Other) := True;
-      Locale_Shi.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} tisragin");
+      Locale_Shi.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} ⵜⵉⵙⵔⴰⴳⵉⵏ");
       Locale_Shi.Units.Day.Has_Simple := False;
       Locale_Shi.Units.Day.Has_Form (Zero) := False;
       Locale_Shi.Units.Day.Has_Form (One) := True;
-      Locale_Shi.Units.Day.Forms (One) := To_Unbounded_String ("{n} ass");
+      Locale_Shi.Units.Day.Forms (One) := To_Unbounded_String ("{n} ⴰⵙⵙ");
       Locale_Shi.Units.Day.Has_Form (Two) := False;
       Locale_Shi.Units.Day.Has_Form (Few) := True;
-      Locale_Shi.Units.Day.Forms (Few) := To_Unbounded_String ("{n} ussan");
+      Locale_Shi.Units.Day.Forms (Few) := To_Unbounded_String ("{n} ⵓⵙⵙⴰⵏ");
       Locale_Shi.Units.Day.Has_Form (Many) := False;
       Locale_Shi.Units.Day.Has_Form (Other) := True;
-      Locale_Shi.Units.Day.Forms (Other) := To_Unbounded_String ("{n} ass");
+      Locale_Shi.Units.Day.Forms (Other) := To_Unbounded_String ("{n} ⴰⵙⵙ");
       Locale_Shi.Units.Week.Has_Simple := False;
       Locale_Shi.Units.Week.Has_Form (Zero) := False;
       Locale_Shi.Units.Week.Has_Form (One) := True;
-      Locale_Shi.Units.Week.Forms (One) := To_Unbounded_String ("{n} imalass");
+      Locale_Shi.Units.Week.Forms (One) := To_Unbounded_String ("{n} ⵉⵎⴰⵍⴰⵙⵙ");
       Locale_Shi.Units.Week.Has_Form (Two) := False;
       Locale_Shi.Units.Week.Has_Form (Few) := True;
-      Locale_Shi.Units.Week.Forms (Few) := To_Unbounded_String ("{n} imalassn");
+      Locale_Shi.Units.Week.Forms (Few) := To_Unbounded_String ("{n} ⵉⵎⴰⵍⴰⵙⵙⵏ");
       Locale_Shi.Units.Week.Has_Form (Many) := False;
       Locale_Shi.Units.Week.Has_Form (Other) := True;
-      Locale_Shi.Units.Week.Forms (Other) := To_Unbounded_String ("{n} imalass");
+      Locale_Shi.Units.Week.Forms (Other) := To_Unbounded_String ("{n} ⵉⵎⴰⵍⴰⵙⵙ");
       Locale_Shi.Units.Month.Has_Simple := False;
       Locale_Shi.Units.Month.Has_Form (Zero) := False;
       Locale_Shi.Units.Month.Has_Form (One) := True;
-      Locale_Shi.Units.Month.Forms (One) := To_Unbounded_String ("{n} ayyur");
+      Locale_Shi.Units.Month.Forms (One) := To_Unbounded_String ("{n} ⴰⵢⵢⵓⵔ");
       Locale_Shi.Units.Month.Has_Form (Two) := False;
       Locale_Shi.Units.Month.Has_Form (Few) := True;
-      Locale_Shi.Units.Month.Forms (Few) := To_Unbounded_String ("{n} ayyurn");
+      Locale_Shi.Units.Month.Forms (Few) := To_Unbounded_String ("{n} ⴰⵢⵢⵓⵔⵏ");
       Locale_Shi.Units.Month.Has_Form (Many) := False;
       Locale_Shi.Units.Month.Has_Form (Other) := True;
-      Locale_Shi.Units.Month.Forms (Other) := To_Unbounded_String ("{n} ayyur");
+      Locale_Shi.Units.Month.Forms (Other) := To_Unbounded_String ("{n} ⴰⵢⵢⵓⵔ");
       Locale_Shi.Units.Year.Has_Simple := False;
       Locale_Shi.Units.Year.Has_Form (Zero) := False;
       Locale_Shi.Units.Year.Has_Form (One) := True;
-      Locale_Shi.Units.Year.Forms (One) := To_Unbounded_String ("{n} aseggas");
+      Locale_Shi.Units.Year.Forms (One) := To_Unbounded_String ("{n} ⴰⵙⴳⴳⵯⴰⵙ");
       Locale_Shi.Units.Year.Has_Form (Two) := False;
       Locale_Shi.Units.Year.Has_Form (Few) := True;
-      Locale_Shi.Units.Year.Forms (Few) := To_Unbounded_String ("{n} iseggasen");
+      Locale_Shi.Units.Year.Forms (Few) := To_Unbounded_String ("{n} ⵉⵙⴳⴳⵯⴰⵙⵏ");
       Locale_Shi.Units.Year.Has_Form (Many) := False;
       Locale_Shi.Units.Year.Has_Form (Other) := True;
-      Locale_Shi.Units.Year.Forms (Other) := To_Unbounded_String ("{n} aseggas");
+      Locale_Shi.Units.Year.Forms (Other) := To_Unbounded_String ("{n} ⴰⵙⴳⴳⵯⴰⵙ");
 
-      Locale_Shi.Half := To_Unbounded_String ("{0} d uzgen");
+      Locale_Shi.Half := To_Unbounded_String ("{0} ⴷ ⵓⵣⴳⵏ");
       Locale_Shi.Delimiter := To_Unbounded_String (", ");
-      Locale_Shi.Just_Now := To_Unbounded_String ("ɣilad");
-      Locale_Shi.Ago := To_Unbounded_String ("ɣ {0} zzrin");
-      Locale_Shi.In_Future := To_Unbounded_String ("ɣ {0}");
+      Locale_Shi.Just_Now := To_Unbounded_String ("ⵖⵉⵍⴰⴷ");
+      Locale_Shi.Ago := To_Unbounded_String ("ⵖ {0} ⵣⵣⵔⵉⵏ");
+      Locale_Shi.In_Future := To_Unbounded_String ("ⵖ {0}");
 
       Locale_Shi.Has_Short := True;
       Locale_Shi.Short_Override.Has_Units := True;
       Locale_Shi.Short_Override.Has_Second := True;
-      Locale_Shi.Short_Override.Second.Has_Simple := True;
-      Locale_Shi.Short_Override.Second.Simple := To_Unbounded_String ("{n}s");
+      Locale_Shi.Short_Override.Second.Has_Simple := False;
+      Locale_Shi.Short_Override.Second.Has_Form (Zero) := False;
+      Locale_Shi.Short_Override.Second.Has_Form (One) := True;
+      Locale_Shi.Short_Override.Second.Forms (One) := To_Unbounded_String ("{n} ⵜⴰⵙⵉⵏⵜ");
+      Locale_Shi.Short_Override.Second.Has_Form (Two) := False;
+      Locale_Shi.Short_Override.Second.Has_Form (Few) := True;
+      Locale_Shi.Short_Override.Second.Forms (Few) := To_Unbounded_String ("{n} ⵜⵉⵙⵉⵏⵉⵏ");
+      Locale_Shi.Short_Override.Second.Has_Form (Many) := False;
+      Locale_Shi.Short_Override.Second.Has_Form (Other) := True;
+      Locale_Shi.Short_Override.Second.Forms (Other) := To_Unbounded_String ("{n} ⵜⵉⵙⵉⵏⵉⵏ");
       Locale_Shi.Short_Override.Has_Minute := True;
-      Locale_Shi.Short_Override.Minute.Has_Simple := True;
-      Locale_Shi.Short_Override.Minute.Simple := To_Unbounded_String ("{n}m");
+      Locale_Shi.Short_Override.Minute.Has_Simple := False;
+      Locale_Shi.Short_Override.Minute.Has_Form (Zero) := False;
+      Locale_Shi.Short_Override.Minute.Has_Form (One) := True;
+      Locale_Shi.Short_Override.Minute.Forms (One) := To_Unbounded_String ("{n} ⵜⵓⵙⴷⵉⵇⵜ");
+      Locale_Shi.Short_Override.Minute.Has_Form (Two) := False;
+      Locale_Shi.Short_Override.Minute.Has_Form (Few) := True;
+      Locale_Shi.Short_Override.Minute.Forms (Few) := To_Unbounded_String ("{n} ⵜⵓⵙⴷⵉⵇⵉⵏ");
+      Locale_Shi.Short_Override.Minute.Has_Form (Many) := False;
+      Locale_Shi.Short_Override.Minute.Has_Form (Other) := True;
+      Locale_Shi.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("{n} ⵜⵓⵙⴷⵉⵇⵉⵏ");
       Locale_Shi.Short_Override.Has_Hour := True;
-      Locale_Shi.Short_Override.Hour.Has_Simple := True;
-      Locale_Shi.Short_Override.Hour.Simple := To_Unbounded_String ("{n}h");
+      Locale_Shi.Short_Override.Hour.Has_Simple := False;
+      Locale_Shi.Short_Override.Hour.Has_Form (Zero) := False;
+      Locale_Shi.Short_Override.Hour.Has_Form (One) := True;
+      Locale_Shi.Short_Override.Hour.Forms (One) := To_Unbounded_String ("{n} ⵜⴰⵙⵔⴰⴳⵜ");
+      Locale_Shi.Short_Override.Hour.Has_Form (Two) := False;
+      Locale_Shi.Short_Override.Hour.Has_Form (Few) := True;
+      Locale_Shi.Short_Override.Hour.Forms (Few) := To_Unbounded_String ("{n} ⵜⵉⵙⵔⴰⴳⵉⵏ");
+      Locale_Shi.Short_Override.Hour.Has_Form (Many) := False;
+      Locale_Shi.Short_Override.Hour.Has_Form (Other) := True;
+      Locale_Shi.Short_Override.Hour.Forms (Other) := To_Unbounded_String ("{n} ⵜⵉⵙⵔⴰⴳⵉⵏ");
       Locale_Shi.Short_Override.Has_Day := True;
-      Locale_Shi.Short_Override.Day.Has_Simple := True;
-      Locale_Shi.Short_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Shi.Short_Override.Day.Has_Simple := False;
+      Locale_Shi.Short_Override.Day.Has_Form (Zero) := False;
+      Locale_Shi.Short_Override.Day.Has_Form (One) := True;
+      Locale_Shi.Short_Override.Day.Forms (One) := To_Unbounded_String ("{n} ⴰⵙⵙ");
+      Locale_Shi.Short_Override.Day.Has_Form (Two) := False;
+      Locale_Shi.Short_Override.Day.Has_Form (Few) := True;
+      Locale_Shi.Short_Override.Day.Forms (Few) := To_Unbounded_String ("{n} ⵓⵙⵙⴰⵏ");
+      Locale_Shi.Short_Override.Day.Has_Form (Many) := False;
+      Locale_Shi.Short_Override.Day.Has_Form (Other) := True;
+      Locale_Shi.Short_Override.Day.Forms (Other) := To_Unbounded_String ("{n} ⴰⵙⵙ");
       Locale_Shi.Short_Override.Has_Week := True;
-      Locale_Shi.Short_Override.Week.Has_Simple := True;
-      Locale_Shi.Short_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Shi.Short_Override.Week.Has_Simple := False;
+      Locale_Shi.Short_Override.Week.Has_Form (Zero) := False;
+      Locale_Shi.Short_Override.Week.Has_Form (One) := True;
+      Locale_Shi.Short_Override.Week.Forms (One) := To_Unbounded_String ("{n} ⵉⵎⴰⵍⴰⵙⵙ");
+      Locale_Shi.Short_Override.Week.Has_Form (Two) := False;
+      Locale_Shi.Short_Override.Week.Has_Form (Few) := True;
+      Locale_Shi.Short_Override.Week.Forms (Few) := To_Unbounded_String ("{n} ⵉⵎⴰⵍⴰⵙⵙⵏ");
+      Locale_Shi.Short_Override.Week.Has_Form (Many) := False;
+      Locale_Shi.Short_Override.Week.Has_Form (Other) := True;
+      Locale_Shi.Short_Override.Week.Forms (Other) := To_Unbounded_String ("{n} ⵉⵎⴰⵍⴰⵙⵙ");
       Locale_Shi.Short_Override.Has_Month := True;
-      Locale_Shi.Short_Override.Month.Has_Simple := True;
-      Locale_Shi.Short_Override.Month.Simple := To_Unbounded_String ("{n}mo");
+      Locale_Shi.Short_Override.Month.Has_Simple := False;
+      Locale_Shi.Short_Override.Month.Has_Form (Zero) := False;
+      Locale_Shi.Short_Override.Month.Has_Form (One) := True;
+      Locale_Shi.Short_Override.Month.Forms (One) := To_Unbounded_String ("{n} ⴰⵢⵢⵓⵔ");
+      Locale_Shi.Short_Override.Month.Has_Form (Two) := False;
+      Locale_Shi.Short_Override.Month.Has_Form (Few) := True;
+      Locale_Shi.Short_Override.Month.Forms (Few) := To_Unbounded_String ("{n} ⴰⵢⵢⵓⵔⵏ");
+      Locale_Shi.Short_Override.Month.Has_Form (Many) := False;
+      Locale_Shi.Short_Override.Month.Has_Form (Other) := True;
+      Locale_Shi.Short_Override.Month.Forms (Other) := To_Unbounded_String ("{n} ⴰⵢⵢⵓⵔ");
       Locale_Shi.Short_Override.Has_Year := True;
-      Locale_Shi.Short_Override.Year.Has_Simple := True;
-      Locale_Shi.Short_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Shi.Short_Override.Year.Has_Simple := False;
+      Locale_Shi.Short_Override.Year.Has_Form (Zero) := False;
+      Locale_Shi.Short_Override.Year.Has_Form (One) := True;
+      Locale_Shi.Short_Override.Year.Forms (One) := To_Unbounded_String ("{n} ⴰⵙⴳⴳⵯⴰⵙ");
+      Locale_Shi.Short_Override.Year.Has_Form (Two) := False;
+      Locale_Shi.Short_Override.Year.Has_Form (Few) := True;
+      Locale_Shi.Short_Override.Year.Forms (Few) := To_Unbounded_String ("{n} ⵉⵙⴳⴳⵯⴰⵙⵏ");
+      Locale_Shi.Short_Override.Year.Has_Form (Many) := False;
+      Locale_Shi.Short_Override.Year.Has_Form (Other) := True;
+      Locale_Shi.Short_Override.Year.Forms (Other) := To_Unbounded_String ("{n} ⴰⵙⴳⴳⵯⴰⵙ");
       Locale_Shi.Short_Override.Has_Half := False;
       Locale_Shi.Short_Override.Has_Delimiter := False;
       Locale_Shi.Short_Override.Has_Ago := True;
-      Locale_Shi.Short_Override.Ago := To_Unbounded_String ("ɣ {0} zzrin");
+      Locale_Shi.Short_Override.Ago := To_Unbounded_String ("ⵖ {0} ⵣⵣⵔⵉⵏ");
       Locale_Shi.Short_Override.Has_In_Future := True;
-      Locale_Shi.Short_Override.In_Future := To_Unbounded_String ("ɣ {0}");
+      Locale_Shi.Short_Override.In_Future := To_Unbounded_String ("ⵖ {0}");
 
       Locale_Shi.Has_Compact := True;
       Locale_Shi.Compact_Override.Has_Units := True;
       Locale_Shi.Compact_Override.Has_Second := True;
       Locale_Shi.Compact_Override.Second.Has_Simple := True;
-      Locale_Shi.Compact_Override.Second.Simple := To_Unbounded_String ("{n}s");
+      Locale_Shi.Compact_Override.Second.Simple := To_Unbounded_String ("{n} ⵜⵙⵏ");
       Locale_Shi.Compact_Override.Has_Minute := True;
       Locale_Shi.Compact_Override.Minute.Has_Simple := True;
-      Locale_Shi.Compact_Override.Minute.Simple := To_Unbounded_String ("{n}m");
+      Locale_Shi.Compact_Override.Minute.Simple := To_Unbounded_String ("{n} ⵜⵙⴷ");
       Locale_Shi.Compact_Override.Has_Hour := True;
       Locale_Shi.Compact_Override.Hour.Has_Simple := True;
-      Locale_Shi.Compact_Override.Hour.Simple := To_Unbounded_String ("{n}h");
+      Locale_Shi.Compact_Override.Hour.Simple := To_Unbounded_String ("{n} ⵜⵙⵔ");
       Locale_Shi.Compact_Override.Has_Day := True;
       Locale_Shi.Compact_Override.Day.Has_Simple := True;
-      Locale_Shi.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Shi.Compact_Override.Day.Simple := To_Unbounded_String ("{n} ⴰⵙⵙ");
       Locale_Shi.Compact_Override.Has_Week := True;
       Locale_Shi.Compact_Override.Week.Has_Simple := True;
-      Locale_Shi.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Shi.Compact_Override.Week.Simple := To_Unbounded_String ("{n} ⵉⵎⵍ");
       Locale_Shi.Compact_Override.Has_Month := True;
       Locale_Shi.Compact_Override.Month.Has_Simple := True;
-      Locale_Shi.Compact_Override.Month.Simple := To_Unbounded_String ("{n}mo");
+      Locale_Shi.Compact_Override.Month.Simple := To_Unbounded_String ("{n} ⴰⵢⵔ");
       Locale_Shi.Compact_Override.Has_Year := True;
       Locale_Shi.Compact_Override.Year.Has_Simple := True;
-      Locale_Shi.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Shi.Compact_Override.Year.Simple := To_Unbounded_String ("{n} ⴰⵙⴳ");
       Locale_Shi.Compact_Override.Has_Half := True;
       Locale_Shi.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Shi.Compact_Override.Has_Delimiter := True;
       Locale_Shi.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Shi.Compact_Override.Has_Ago := True;
-      Locale_Shi.Compact_Override.Ago := To_Unbounded_String ("ɣ {0} zzrin");
+      Locale_Shi.Compact_Override.Ago := To_Unbounded_String ("ⵖ {0} ⵣⵣⵔⵉⵏ");
       Locale_Shi.Compact_Override.Has_In_Future := True;
-      Locale_Shi.Compact_Override.In_Future := To_Unbounded_String ("ɣ {0}");
+      Locale_Shi.Compact_Override.In_Future := To_Unbounded_String ("ⵖ {0}");
 
    end Init_shi;
 
@@ -16880,7 +16979,8 @@ package body Sayableduration_Locales is
       Locale_Shn.Compact_Override.Has_Year := True;
       Locale_Shn.Compact_Override.Year.Has_Simple := True;
       Locale_Shn.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Shn.Compact_Override.Has_Half := False;
+      Locale_Shn.Compact_Override.Has_Half := True;
+      Locale_Shn.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Shn.Compact_Override.Has_Delimiter := True;
       Locale_Shn.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Shn.Compact_Override.Has_Ago := True;
@@ -16897,11 +16997,11 @@ package body Sayableduration_Locales is
       Locale_Si.Plural := Plural_one_other_zero_one'Access;
 
       Locale_Si.Units.Second.Has_Simple := True;
-      Locale_Si.Units.Second.Simple := To_Unbounded_String ("{n} තත්පරය");
+      Locale_Si.Units.Second.Simple := To_Unbounded_String ("තත්පර {n}");
       Locale_Si.Units.Minute.Has_Simple := True;
-      Locale_Si.Units.Minute.Simple := To_Unbounded_String ("{n} මිනිත්තුව");
+      Locale_Si.Units.Minute.Simple := To_Unbounded_String ("මිනිත්තු {n}");
       Locale_Si.Units.Hour.Has_Simple := True;
-      Locale_Si.Units.Hour.Simple := To_Unbounded_String ("{n} පැය");
+      Locale_Si.Units.Hour.Simple := To_Unbounded_String ("පැය {n}");
       Locale_Si.Units.Day.Has_Simple := False;
       Locale_Si.Units.Day.Has_Form (Zero) := False;
       Locale_Si.Units.Day.Has_Form (One) := True;
@@ -16939,7 +17039,7 @@ package body Sayableduration_Locales is
       Locale_Si.Units.Year.Has_Form (Other) := True;
       Locale_Si.Units.Year.Forms (Other) := To_Unbounded_String ("වසර {n}");
 
-      Locale_Si.Half := To_Unbounded_String ("{0}යි භාගයයි");
+      Locale_Si.Half := To_Unbounded_String ("{n}½");
       Locale_Si.Delimiter := To_Unbounded_String (", ");
       Locale_Si.Just_Now := To_Unbounded_String ("දැන්");
       Locale_Si.Ago := To_Unbounded_String ("{0}ට පෙර");
@@ -17324,12 +17424,33 @@ package body Sayableduration_Locales is
       Locale_Sn.Code := To_Unbounded_String ("sn");
       Locale_Sn.Plural := Plural_one_other'Access;
 
-      Locale_Sn.Units.Second.Has_Simple := True;
-      Locale_Sn.Units.Second.Simple := To_Unbounded_String ("{n} sekondi");
-      Locale_Sn.Units.Minute.Has_Simple := True;
-      Locale_Sn.Units.Minute.Simple := To_Unbounded_String ("{n} miniti");
-      Locale_Sn.Units.Hour.Has_Simple := True;
-      Locale_Sn.Units.Hour.Simple := To_Unbounded_String ("{n} awa");
+      Locale_Sn.Units.Second.Has_Simple := False;
+      Locale_Sn.Units.Second.Has_Form (Zero) := False;
+      Locale_Sn.Units.Second.Has_Form (One) := True;
+      Locale_Sn.Units.Second.Forms (One) := To_Unbounded_String ("sekondi {n}");
+      Locale_Sn.Units.Second.Has_Form (Two) := False;
+      Locale_Sn.Units.Second.Has_Form (Few) := False;
+      Locale_Sn.Units.Second.Has_Form (Many) := False;
+      Locale_Sn.Units.Second.Has_Form (Other) := True;
+      Locale_Sn.Units.Second.Forms (Other) := To_Unbounded_String ("masekondi {n}");
+      Locale_Sn.Units.Minute.Has_Simple := False;
+      Locale_Sn.Units.Minute.Has_Form (Zero) := False;
+      Locale_Sn.Units.Minute.Has_Form (One) := True;
+      Locale_Sn.Units.Minute.Forms (One) := To_Unbounded_String ("miniti {n}");
+      Locale_Sn.Units.Minute.Has_Form (Two) := False;
+      Locale_Sn.Units.Minute.Has_Form (Few) := False;
+      Locale_Sn.Units.Minute.Has_Form (Many) := False;
+      Locale_Sn.Units.Minute.Has_Form (Other) := True;
+      Locale_Sn.Units.Minute.Forms (Other) := To_Unbounded_String ("maminitsi {n}");
+      Locale_Sn.Units.Hour.Has_Simple := False;
+      Locale_Sn.Units.Hour.Has_Form (Zero) := False;
+      Locale_Sn.Units.Hour.Has_Form (One) := True;
+      Locale_Sn.Units.Hour.Forms (One) := To_Unbounded_String ("awa {n}");
+      Locale_Sn.Units.Hour.Has_Form (Two) := False;
+      Locale_Sn.Units.Hour.Has_Form (Few) := False;
+      Locale_Sn.Units.Hour.Has_Form (Many) := False;
+      Locale_Sn.Units.Hour.Has_Form (Other) := True;
+      Locale_Sn.Units.Hour.Forms (Other) := To_Unbounded_String ("maawa {n}");
       Locale_Sn.Units.Day.Has_Simple := False;
       Locale_Sn.Units.Day.Has_Form (Zero) := False;
       Locale_Sn.Units.Day.Has_Form (One) := True;
@@ -17576,69 +17697,48 @@ package body Sayableduration_Locales is
       Locale_So.Code := To_Unbounded_String ("so");
       Locale_So.Plural := Plural_one_other'Access;
 
-      Locale_So.Units.Second.Has_Simple := False;
-      Locale_So.Units.Second.Has_Form (Zero) := False;
-      Locale_So.Units.Second.Has_Form (One) := True;
-      Locale_So.Units.Second.Forms (One) := To_Unbounded_String ("ilbiriqsi {n}");
-      Locale_So.Units.Second.Has_Form (Two) := False;
-      Locale_So.Units.Second.Has_Form (Few) := False;
-      Locale_So.Units.Second.Has_Form (Many) := False;
-      Locale_So.Units.Second.Has_Form (Other) := True;
-      Locale_So.Units.Second.Forms (Other) := To_Unbounded_String ("ilbiriqsiyaal {n}");
+      Locale_So.Units.Second.Has_Simple := True;
+      Locale_So.Units.Second.Simple := To_Unbounded_String ("{n} ilbiriqsi");
       Locale_So.Units.Minute.Has_Simple := False;
       Locale_So.Units.Minute.Has_Form (Zero) := False;
       Locale_So.Units.Minute.Has_Form (One) := True;
-      Locale_So.Units.Minute.Forms (One) := To_Unbounded_String ("daqiiqad {n}");
+      Locale_So.Units.Minute.Forms (One) := To_Unbounded_String ("{n} daqiiqad");
       Locale_So.Units.Minute.Has_Form (Two) := False;
       Locale_So.Units.Minute.Has_Form (Few) := False;
       Locale_So.Units.Minute.Has_Form (Many) := False;
       Locale_So.Units.Minute.Has_Form (Other) := True;
-      Locale_So.Units.Minute.Forms (Other) := To_Unbounded_String ("daqiiqadood {n}");
+      Locale_So.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} daqiiqo");
       Locale_So.Units.Hour.Has_Simple := False;
       Locale_So.Units.Hour.Has_Form (Zero) := False;
       Locale_So.Units.Hour.Has_Form (One) := True;
-      Locale_So.Units.Hour.Forms (One) := To_Unbounded_String ("saacad {n}");
+      Locale_So.Units.Hour.Forms (One) := To_Unbounded_String ("{n} saacad");
       Locale_So.Units.Hour.Has_Form (Two) := False;
       Locale_So.Units.Hour.Has_Form (Few) := False;
       Locale_So.Units.Hour.Has_Form (Many) := False;
       Locale_So.Units.Hour.Has_Form (Other) := True;
-      Locale_So.Units.Hour.Forms (Other) := To_Unbounded_String ("saacadood {n}");
+      Locale_So.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} saacadood");
       Locale_So.Units.Day.Has_Simple := False;
       Locale_So.Units.Day.Has_Form (Zero) := False;
       Locale_So.Units.Day.Has_Form (One) := True;
-      Locale_So.Units.Day.Forms (One) := To_Unbounded_String ("maalin {n}");
+      Locale_So.Units.Day.Forms (One) := To_Unbounded_String ("{n} maalin");
       Locale_So.Units.Day.Has_Form (Two) := False;
       Locale_So.Units.Day.Has_Form (Few) := False;
       Locale_So.Units.Day.Has_Form (Many) := False;
       Locale_So.Units.Day.Has_Form (Other) := True;
-      Locale_So.Units.Day.Forms (Other) := To_Unbounded_String ("maalmood {n}");
-      Locale_So.Units.Week.Has_Simple := False;
-      Locale_So.Units.Week.Has_Form (Zero) := False;
-      Locale_So.Units.Week.Has_Form (One) := True;
-      Locale_So.Units.Week.Forms (One) := To_Unbounded_String ("toddobaad {n}");
-      Locale_So.Units.Week.Has_Form (Two) := False;
-      Locale_So.Units.Week.Has_Form (Few) := False;
-      Locale_So.Units.Week.Has_Form (Many) := False;
-      Locale_So.Units.Week.Has_Form (Other) := True;
-      Locale_So.Units.Week.Forms (Other) := To_Unbounded_String ("toddobaadyo {n}");
+      Locale_So.Units.Day.Forms (Other) := To_Unbounded_String ("{n} maalmood");
+      Locale_So.Units.Week.Has_Simple := True;
+      Locale_So.Units.Week.Simple := To_Unbounded_String ("{n} toddobaad");
       Locale_So.Units.Month.Has_Simple := False;
       Locale_So.Units.Month.Has_Form (Zero) := False;
       Locale_So.Units.Month.Has_Form (One) := True;
-      Locale_So.Units.Month.Forms (One) := To_Unbounded_String ("bil {n}");
+      Locale_So.Units.Month.Forms (One) := To_Unbounded_String ("{n} bil");
       Locale_So.Units.Month.Has_Form (Two) := False;
       Locale_So.Units.Month.Has_Form (Few) := False;
       Locale_So.Units.Month.Has_Form (Many) := False;
       Locale_So.Units.Month.Has_Form (Other) := True;
-      Locale_So.Units.Month.Forms (Other) := To_Unbounded_String ("bilood {n}");
-      Locale_So.Units.Year.Has_Simple := False;
-      Locale_So.Units.Year.Has_Form (Zero) := False;
-      Locale_So.Units.Year.Has_Form (One) := True;
-      Locale_So.Units.Year.Forms (One) := To_Unbounded_String ("sano {n}");
-      Locale_So.Units.Year.Has_Form (Two) := False;
-      Locale_So.Units.Year.Has_Form (Few) := False;
-      Locale_So.Units.Year.Has_Form (Many) := False;
-      Locale_So.Units.Year.Has_Form (Other) := True;
-      Locale_So.Units.Year.Forms (Other) := To_Unbounded_String ("sanooyin {n}");
+      Locale_So.Units.Month.Forms (Other) := To_Unbounded_String ("{n} bilood");
+      Locale_So.Units.Year.Has_Simple := True;
+      Locale_So.Units.Year.Simple := To_Unbounded_String ("{n} sano");
 
       Locale_So.Half := To_Unbounded_String ("{n}½");
       Locale_So.Delimiter := To_Unbounded_String (", ");
@@ -18242,16 +18342,16 @@ package body Sayableduration_Locales is
       Locale_St.Units.Second.Has_Form (Few) := False;
       Locale_St.Units.Second.Has_Form (Many) := False;
       Locale_St.Units.Second.Has_Form (Other) := True;
-      Locale_St.Units.Second.Forms (Other) := To_Unbounded_String ("dimetsotswana {n}");
+      Locale_St.Units.Second.Forms (Other) := To_Unbounded_String ("metsotswana {n}");
       Locale_St.Units.Minute.Has_Simple := False;
       Locale_St.Units.Minute.Has_Form (Zero) := False;
       Locale_St.Units.Minute.Has_Form (One) := True;
-      Locale_St.Units.Minute.Forms (One) := To_Unbounded_String ("metsotso {n}");
+      Locale_St.Units.Minute.Forms (One) := To_Unbounded_String ("motsotso {n}");
       Locale_St.Units.Minute.Has_Form (Two) := False;
       Locale_St.Units.Minute.Has_Form (Few) := False;
       Locale_St.Units.Minute.Has_Form (Many) := False;
       Locale_St.Units.Minute.Has_Form (Other) := True;
-      Locale_St.Units.Minute.Forms (Other) := To_Unbounded_String ("dimetsotso {n}");
+      Locale_St.Units.Minute.Forms (Other) := To_Unbounded_String ("metsotso {n}");
       Locale_St.Units.Hour.Has_Simple := False;
       Locale_St.Units.Hour.Has_Form (Zero) := False;
       Locale_St.Units.Hour.Has_Form (One) := True;
@@ -18315,17 +18415,17 @@ package body Sayableduration_Locales is
       Locale_St.Short_Override.Second.Has_Form (Few) := False;
       Locale_St.Short_Override.Second.Has_Form (Many) := False;
       Locale_St.Short_Override.Second.Has_Form (Other) := True;
-      Locale_St.Short_Override.Second.Forms (Other) := To_Unbounded_String ("dimetsotswana {n}");
+      Locale_St.Short_Override.Second.Forms (Other) := To_Unbounded_String ("metsotswana {n}");
       Locale_St.Short_Override.Has_Minute := True;
       Locale_St.Short_Override.Minute.Has_Simple := False;
       Locale_St.Short_Override.Minute.Has_Form (Zero) := False;
       Locale_St.Short_Override.Minute.Has_Form (One) := True;
-      Locale_St.Short_Override.Minute.Forms (One) := To_Unbounded_String ("metsotso {n}");
+      Locale_St.Short_Override.Minute.Forms (One) := To_Unbounded_String ("motsotso {n}");
       Locale_St.Short_Override.Minute.Has_Form (Two) := False;
       Locale_St.Short_Override.Minute.Has_Form (Few) := False;
       Locale_St.Short_Override.Minute.Has_Form (Many) := False;
       Locale_St.Short_Override.Minute.Has_Form (Other) := True;
-      Locale_St.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("dimetsotso {n}");
+      Locale_St.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("metsotso {n}");
       Locale_St.Short_Override.Has_Hour := True;
       Locale_St.Short_Override.Hour.Has_Simple := False;
       Locale_St.Short_Override.Hour.Has_Form (Zero) := False;
@@ -18440,7 +18540,7 @@ package body Sayableduration_Locales is
 
       Locale_Su.Half := To_Unbounded_String ("{0} satengah");
       Locale_Su.Delimiter := To_Unbounded_String (", ");
-      Locale_Su.Just_Now := To_Unbounded_String ("ayeuna");
+      Locale_Su.Just_Now := To_Unbounded_String ("nembé");
       Locale_Su.Ago := To_Unbounded_String ("{0} kapengker");
       Locale_Su.In_Future := To_Unbounded_String ("dina {0}");
 
@@ -18770,7 +18870,7 @@ package body Sayableduration_Locales is
       Locale_Sv.Half := To_Unbounded_String ("{n}½");
       Locale_Sv.Delimiter := To_Unbounded_String (", ");
       Locale_Sv.Just_Now := To_Unbounded_String ("just nu");
-      Locale_Sv.Ago := To_Unbounded_String ("{0} sedan");
+      Locale_Sv.Ago := To_Unbounded_String ("för {0} sedan");
       Locale_Sv.In_Future := To_Unbounded_String ("om {0}");
 
       Locale_Sv.Has_Short := True;
@@ -18799,7 +18899,7 @@ package body Sayableduration_Locales is
       Locale_Sv.Short_Override.Has_Half := False;
       Locale_Sv.Short_Override.Has_Delimiter := False;
       Locale_Sv.Short_Override.Has_Ago := True;
-      Locale_Sv.Short_Override.Ago := To_Unbounded_String ("{0} sedan");
+      Locale_Sv.Short_Override.Ago := To_Unbounded_String ("för {0} sedan");
       Locale_Sv.Short_Override.Has_In_Future := True;
       Locale_Sv.Short_Override.In_Future := To_Unbounded_String ("om {0}");
 
@@ -18830,7 +18930,7 @@ package body Sayableduration_Locales is
       Locale_Sv.Compact_Override.Has_Delimiter := True;
       Locale_Sv.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Sv.Compact_Override.Has_Ago := True;
-      Locale_Sv.Compact_Override.Ago := To_Unbounded_String ("{0} sedan");
+      Locale_Sv.Compact_Override.Ago := To_Unbounded_String ("för {0} sedan");
       Locale_Sv.Compact_Override.Has_In_Future := True;
       Locale_Sv.Compact_Override.In_Future := To_Unbounded_String ("om {0}");
 
@@ -18843,11 +18943,11 @@ package body Sayableduration_Locales is
       Locale_Sw.Plural := Plural_one_other'Access;
 
       Locale_Sw.Units.Second.Has_Simple := True;
-      Locale_Sw.Units.Second.Simple := To_Unbounded_String ("{n} sekunde");
+      Locale_Sw.Units.Second.Simple := To_Unbounded_String ("sekunde {n}");
       Locale_Sw.Units.Minute.Has_Simple := True;
-      Locale_Sw.Units.Minute.Simple := To_Unbounded_String ("{n} dakika");
+      Locale_Sw.Units.Minute.Simple := To_Unbounded_String ("dakika {n}");
       Locale_Sw.Units.Hour.Has_Simple := True;
-      Locale_Sw.Units.Hour.Simple := To_Unbounded_String ("{n} saa");
+      Locale_Sw.Units.Hour.Simple := To_Unbounded_String ("saa {n}");
       Locale_Sw.Units.Day.Has_Simple := False;
       Locale_Sw.Units.Day.Has_Form (Zero) := False;
       Locale_Sw.Units.Day.Has_Form (One) := True;
@@ -19025,14 +19125,14 @@ package body Sayableduration_Locales is
       Locale_Ta.Units.Year.Has_Simple := False;
       Locale_Ta.Units.Year.Has_Form (Zero) := False;
       Locale_Ta.Units.Year.Has_Form (One) := True;
-      Locale_Ta.Units.Year.Forms (One) := To_Unbounded_String ("{n} வயது");
+      Locale_Ta.Units.Year.Forms (One) := To_Unbounded_String ("{n} ஆண்டு");
       Locale_Ta.Units.Year.Has_Form (Two) := False;
       Locale_Ta.Units.Year.Has_Form (Few) := False;
       Locale_Ta.Units.Year.Has_Form (Many) := False;
       Locale_Ta.Units.Year.Has_Form (Other) := True;
-      Locale_Ta.Units.Year.Forms (Other) := To_Unbounded_String ("{n} வயது");
+      Locale_Ta.Units.Year.Forms (Other) := To_Unbounded_String ("{n} ஆண்டுகள்");
 
-      Locale_Ta.Half := To_Unbounded_String ("{0}ரை");
+      Locale_Ta.Half := To_Unbounded_String ("{n}½");
       Locale_Ta.Delimiter := To_Unbounded_String (", ");
       Locale_Ta.Just_Now := To_Unbounded_String ("இப்போதுதான்");
       Locale_Ta.Ago := To_Unbounded_String ("{0} முன்");
@@ -19135,12 +19235,33 @@ package body Sayableduration_Locales is
       Locale_Te.Code := To_Unbounded_String ("te");
       Locale_Te.Plural := Plural_one_other'Access;
 
-      Locale_Te.Units.Second.Has_Simple := True;
-      Locale_Te.Units.Second.Simple := To_Unbounded_String ("{n} సెకను");
-      Locale_Te.Units.Minute.Has_Simple := True;
-      Locale_Te.Units.Minute.Simple := To_Unbounded_String ("{n} నిమిషం");
-      Locale_Te.Units.Hour.Has_Simple := True;
-      Locale_Te.Units.Hour.Simple := To_Unbounded_String ("{n} గంట");
+      Locale_Te.Units.Second.Has_Simple := False;
+      Locale_Te.Units.Second.Has_Form (Zero) := False;
+      Locale_Te.Units.Second.Has_Form (One) := True;
+      Locale_Te.Units.Second.Forms (One) := To_Unbounded_String ("{n} సెకను");
+      Locale_Te.Units.Second.Has_Form (Two) := False;
+      Locale_Te.Units.Second.Has_Form (Few) := False;
+      Locale_Te.Units.Second.Has_Form (Many) := False;
+      Locale_Te.Units.Second.Has_Form (Other) := True;
+      Locale_Te.Units.Second.Forms (Other) := To_Unbounded_String ("{n} సెకన్లు");
+      Locale_Te.Units.Minute.Has_Simple := False;
+      Locale_Te.Units.Minute.Has_Form (Zero) := False;
+      Locale_Te.Units.Minute.Has_Form (One) := True;
+      Locale_Te.Units.Minute.Forms (One) := To_Unbounded_String ("{n} నిమిషం");
+      Locale_Te.Units.Minute.Has_Form (Two) := False;
+      Locale_Te.Units.Minute.Has_Form (Few) := False;
+      Locale_Te.Units.Minute.Has_Form (Many) := False;
+      Locale_Te.Units.Minute.Has_Form (Other) := True;
+      Locale_Te.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} నిమిషాలు");
+      Locale_Te.Units.Hour.Has_Simple := False;
+      Locale_Te.Units.Hour.Has_Form (Zero) := False;
+      Locale_Te.Units.Hour.Has_Form (One) := True;
+      Locale_Te.Units.Hour.Forms (One) := To_Unbounded_String ("{n} గంట");
+      Locale_Te.Units.Hour.Has_Form (Two) := False;
+      Locale_Te.Units.Hour.Has_Form (Few) := False;
+      Locale_Te.Units.Hour.Has_Form (Many) := False;
+      Locale_Te.Units.Hour.Has_Form (Other) := True;
+      Locale_Te.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} గంటలు");
       Locale_Te.Units.Day.Has_Simple := False;
       Locale_Te.Units.Day.Has_Form (Zero) := False;
       Locale_Te.Units.Day.Has_Form (One) := True;
@@ -19178,7 +19299,7 @@ package body Sayableduration_Locales is
       Locale_Te.Units.Year.Has_Form (Other) := True;
       Locale_Te.Units.Year.Forms (Other) := To_Unbounded_String ("{n} సంవత్సరాలు");
 
-      Locale_Te.Half := To_Unbounded_String ("{0}న్నర");
+      Locale_Te.Half := To_Unbounded_String ("{n}½");
       Locale_Te.Delimiter := To_Unbounded_String (", ");
       Locale_Te.Just_Now := To_Unbounded_String ("ఇప్పుడే");
       Locale_Te.Ago := To_Unbounded_String ("{0} క్రితం");
@@ -19503,7 +19624,8 @@ package body Sayableduration_Locales is
       Locale_Tet.Compact_Override.Has_Year := True;
       Locale_Tet.Compact_Override.Year.Has_Simple := True;
       Locale_Tet.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Tet.Compact_Override.Has_Half := False;
+      Locale_Tet.Compact_Override.Has_Half := True;
+      Locale_Tet.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Tet.Compact_Override.Has_Delimiter := True;
       Locale_Tet.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Tet.Compact_Override.Has_Ago := True;
@@ -19534,7 +19656,7 @@ package body Sayableduration_Locales is
       Locale_Tg.Units.Year.Has_Simple := True;
       Locale_Tg.Units.Year.Simple := To_Unbounded_String ("{n} сол");
 
-      Locale_Tg.Half := To_Unbounded_String ("{0} ним");
+      Locale_Tg.Half := To_Unbounded_String ("{0}у ним");
       Locale_Tg.Delimiter := To_Unbounded_String (", ");
       Locale_Tg.Just_Now := To_Unbounded_String ("ҳамин ҳоло");
       Locale_Tg.Ago := To_Unbounded_String ("{0} пеш");
@@ -19629,7 +19751,7 @@ package body Sayableduration_Locales is
       Locale_Th.Delimiter := To_Unbounded_String (" ");
       Locale_Th.Just_Now := To_Unbounded_String ("เมื่อกี้");
       Locale_Th.Ago := To_Unbounded_String ("{0}ที่แล้ว");
-      Locale_Th.In_Future := To_Unbounded_String ("ใน{0}");
+      Locale_Th.In_Future := To_Unbounded_String ("ในอีก {0}");
 
       Locale_Th.Has_Short := True;
       Locale_Th.Short_Override.Has_Units := True;
@@ -19659,7 +19781,7 @@ package body Sayableduration_Locales is
       Locale_Th.Short_Override.Has_Ago := True;
       Locale_Th.Short_Override.Ago := To_Unbounded_String ("{0}ที่แล้ว");
       Locale_Th.Short_Override.Has_In_Future := True;
-      Locale_Th.Short_Override.In_Future := To_Unbounded_String ("ใน{0}");
+      Locale_Th.Short_Override.In_Future := To_Unbounded_String ("ในอีก {0}");
 
       Locale_Th.Has_Compact := True;
       Locale_Th.Compact_Override.Has_Units := True;
@@ -19691,7 +19813,7 @@ package body Sayableduration_Locales is
       Locale_Th.Compact_Override.Has_Ago := True;
       Locale_Th.Compact_Override.Ago := To_Unbounded_String ("{0}ที่แล้ว");
       Locale_Th.Compact_Override.Has_In_Future := True;
-      Locale_Th.Compact_Override.In_Future := To_Unbounded_String ("ใน{0}");
+      Locale_Th.Compact_Override.In_Future := To_Unbounded_String ("ในอีก {0}");
 
    end Init_th;
 
@@ -20052,7 +20174,7 @@ package body Sayableduration_Locales is
       Locale_Tk.Units.Year.Has_Simple := True;
       Locale_Tk.Units.Year.Simple := To_Unbounded_String ("{n} ýyl");
 
-      Locale_Tk.Half := To_Unbounded_String ("{0}½");
+      Locale_Tk.Half := To_Unbounded_String ("{n} ýarym");
       Locale_Tk.Delimiter := To_Unbounded_String (", ");
       Locale_Tk.Just_Now := To_Unbounded_String ("häzir");
       Locale_Tk.Ago := To_Unbounded_String ("{0} öň");
@@ -20136,16 +20258,16 @@ package body Sayableduration_Locales is
       Locale_Tn.Units.Second.Has_Form (Few) := False;
       Locale_Tn.Units.Second.Has_Form (Many) := False;
       Locale_Tn.Units.Second.Has_Form (Other) := True;
-      Locale_Tn.Units.Second.Forms (Other) := To_Unbounded_String ("dimetsotswana {n}");
+      Locale_Tn.Units.Second.Forms (Other) := To_Unbounded_String ("metsotswana {n}");
       Locale_Tn.Units.Minute.Has_Simple := False;
       Locale_Tn.Units.Minute.Has_Form (Zero) := False;
       Locale_Tn.Units.Minute.Has_Form (One) := True;
-      Locale_Tn.Units.Minute.Forms (One) := To_Unbounded_String ("metsotso {n}");
+      Locale_Tn.Units.Minute.Forms (One) := To_Unbounded_String ("motsotso {n}");
       Locale_Tn.Units.Minute.Has_Form (Two) := False;
       Locale_Tn.Units.Minute.Has_Form (Few) := False;
       Locale_Tn.Units.Minute.Has_Form (Many) := False;
       Locale_Tn.Units.Minute.Has_Form (Other) := True;
-      Locale_Tn.Units.Minute.Forms (Other) := To_Unbounded_String ("dimetsotso {n}");
+      Locale_Tn.Units.Minute.Forms (Other) := To_Unbounded_String ("metsotso {n}");
       Locale_Tn.Units.Hour.Has_Simple := False;
       Locale_Tn.Units.Hour.Has_Form (Zero) := False;
       Locale_Tn.Units.Hour.Has_Form (One) := True;
@@ -20209,17 +20331,17 @@ package body Sayableduration_Locales is
       Locale_Tn.Short_Override.Second.Has_Form (Few) := False;
       Locale_Tn.Short_Override.Second.Has_Form (Many) := False;
       Locale_Tn.Short_Override.Second.Has_Form (Other) := True;
-      Locale_Tn.Short_Override.Second.Forms (Other) := To_Unbounded_String ("dimetsotswana {n}");
+      Locale_Tn.Short_Override.Second.Forms (Other) := To_Unbounded_String ("metsotswana {n}");
       Locale_Tn.Short_Override.Has_Minute := True;
       Locale_Tn.Short_Override.Minute.Has_Simple := False;
       Locale_Tn.Short_Override.Minute.Has_Form (Zero) := False;
       Locale_Tn.Short_Override.Minute.Has_Form (One) := True;
-      Locale_Tn.Short_Override.Minute.Forms (One) := To_Unbounded_String ("metsotso {n}");
+      Locale_Tn.Short_Override.Minute.Forms (One) := To_Unbounded_String ("motsotso {n}");
       Locale_Tn.Short_Override.Minute.Has_Form (Two) := False;
       Locale_Tn.Short_Override.Minute.Has_Form (Few) := False;
       Locale_Tn.Short_Override.Minute.Has_Form (Many) := False;
       Locale_Tn.Short_Override.Minute.Has_Form (Other) := True;
-      Locale_Tn.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("dimetsotso {n}");
+      Locale_Tn.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("metsotso {n}");
       Locale_Tn.Short_Override.Has_Hour := True;
       Locale_Tn.Short_Override.Hour.Has_Simple := False;
       Locale_Tn.Short_Override.Hour.Has_Form (Zero) := False;
@@ -20332,7 +20454,7 @@ package body Sayableduration_Locales is
       Locale_Tpi.Units.Year.Has_Simple := True;
       Locale_Tpi.Units.Year.Simple := To_Unbounded_String ("{n} yia");
 
-      Locale_Tpi.Half := To_Unbounded_String ("{n} na hap");
+      Locale_Tpi.Half := To_Unbounded_String ("{0} na hap");
       Locale_Tpi.Delimiter := To_Unbounded_String (", ");
       Locale_Tpi.Just_Now := To_Unbounded_String ("nau tasol");
       Locale_Tpi.Ago := To_Unbounded_String ("{0} i go pinis");
@@ -20391,7 +20513,8 @@ package body Sayableduration_Locales is
       Locale_Tpi.Compact_Override.Has_Year := True;
       Locale_Tpi.Compact_Override.Year.Has_Simple := True;
       Locale_Tpi.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
-      Locale_Tpi.Compact_Override.Has_Half := False;
+      Locale_Tpi.Compact_Override.Has_Half := True;
+      Locale_Tpi.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Tpi.Compact_Override.Has_Delimiter := True;
       Locale_Tpi.Compact_Override.Delimiter := To_Unbounded_String ("");
       Locale_Tpi.Compact_Override.Has_Ago := True;
@@ -20969,26 +21092,75 @@ package body Sayableduration_Locales is
       Locale_Tzm.Has_Short := True;
       Locale_Tzm.Short_Override.Has_Units := True;
       Locale_Tzm.Short_Override.Has_Second := True;
-      Locale_Tzm.Short_Override.Second.Has_Simple := True;
-      Locale_Tzm.Short_Override.Second.Simple := To_Unbounded_String ("{n}s");
+      Locale_Tzm.Short_Override.Second.Has_Simple := False;
+      Locale_Tzm.Short_Override.Second.Has_Form (Zero) := False;
+      Locale_Tzm.Short_Override.Second.Has_Form (One) := True;
+      Locale_Tzm.Short_Override.Second.Forms (One) := To_Unbounded_String ("{n} tasint");
+      Locale_Tzm.Short_Override.Second.Has_Form (Two) := False;
+      Locale_Tzm.Short_Override.Second.Has_Form (Few) := False;
+      Locale_Tzm.Short_Override.Second.Has_Form (Many) := False;
+      Locale_Tzm.Short_Override.Second.Has_Form (Other) := True;
+      Locale_Tzm.Short_Override.Second.Forms (Other) := To_Unbounded_String ("{n} tisinin");
       Locale_Tzm.Short_Override.Has_Minute := True;
-      Locale_Tzm.Short_Override.Minute.Has_Simple := True;
-      Locale_Tzm.Short_Override.Minute.Simple := To_Unbounded_String ("{n}m");
+      Locale_Tzm.Short_Override.Minute.Has_Simple := False;
+      Locale_Tzm.Short_Override.Minute.Has_Form (Zero) := False;
+      Locale_Tzm.Short_Override.Minute.Has_Form (One) := True;
+      Locale_Tzm.Short_Override.Minute.Forms (One) := To_Unbounded_String ("{n} tusdiqt");
+      Locale_Tzm.Short_Override.Minute.Has_Form (Two) := False;
+      Locale_Tzm.Short_Override.Minute.Has_Form (Few) := False;
+      Locale_Tzm.Short_Override.Minute.Has_Form (Many) := False;
+      Locale_Tzm.Short_Override.Minute.Has_Form (Other) := True;
+      Locale_Tzm.Short_Override.Minute.Forms (Other) := To_Unbounded_String ("{n} tusdiqin");
       Locale_Tzm.Short_Override.Has_Hour := True;
-      Locale_Tzm.Short_Override.Hour.Has_Simple := True;
-      Locale_Tzm.Short_Override.Hour.Simple := To_Unbounded_String ("{n}h");
+      Locale_Tzm.Short_Override.Hour.Has_Simple := False;
+      Locale_Tzm.Short_Override.Hour.Has_Form (Zero) := False;
+      Locale_Tzm.Short_Override.Hour.Has_Form (One) := True;
+      Locale_Tzm.Short_Override.Hour.Forms (One) := To_Unbounded_String ("{n} tasragt");
+      Locale_Tzm.Short_Override.Hour.Has_Form (Two) := False;
+      Locale_Tzm.Short_Override.Hour.Has_Form (Few) := False;
+      Locale_Tzm.Short_Override.Hour.Has_Form (Many) := False;
+      Locale_Tzm.Short_Override.Hour.Has_Form (Other) := True;
+      Locale_Tzm.Short_Override.Hour.Forms (Other) := To_Unbounded_String ("{n} tisragin");
       Locale_Tzm.Short_Override.Has_Day := True;
-      Locale_Tzm.Short_Override.Day.Has_Simple := True;
-      Locale_Tzm.Short_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Tzm.Short_Override.Day.Has_Simple := False;
+      Locale_Tzm.Short_Override.Day.Has_Form (Zero) := False;
+      Locale_Tzm.Short_Override.Day.Has_Form (One) := True;
+      Locale_Tzm.Short_Override.Day.Forms (One) := To_Unbounded_String ("{n} ass");
+      Locale_Tzm.Short_Override.Day.Has_Form (Two) := False;
+      Locale_Tzm.Short_Override.Day.Has_Form (Few) := False;
+      Locale_Tzm.Short_Override.Day.Has_Form (Many) := False;
+      Locale_Tzm.Short_Override.Day.Has_Form (Other) := True;
+      Locale_Tzm.Short_Override.Day.Forms (Other) := To_Unbounded_String ("{n} ussan");
       Locale_Tzm.Short_Override.Has_Week := True;
-      Locale_Tzm.Short_Override.Week.Has_Simple := True;
-      Locale_Tzm.Short_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Tzm.Short_Override.Week.Has_Simple := False;
+      Locale_Tzm.Short_Override.Week.Has_Form (Zero) := False;
+      Locale_Tzm.Short_Override.Week.Has_Form (One) := True;
+      Locale_Tzm.Short_Override.Week.Forms (One) := To_Unbounded_String ("{n} imalass");
+      Locale_Tzm.Short_Override.Week.Has_Form (Two) := False;
+      Locale_Tzm.Short_Override.Week.Has_Form (Few) := False;
+      Locale_Tzm.Short_Override.Week.Has_Form (Many) := False;
+      Locale_Tzm.Short_Override.Week.Has_Form (Other) := True;
+      Locale_Tzm.Short_Override.Week.Forms (Other) := To_Unbounded_String ("{n} imalassn");
       Locale_Tzm.Short_Override.Has_Month := True;
-      Locale_Tzm.Short_Override.Month.Has_Simple := True;
-      Locale_Tzm.Short_Override.Month.Simple := To_Unbounded_String ("{n}mo");
+      Locale_Tzm.Short_Override.Month.Has_Simple := False;
+      Locale_Tzm.Short_Override.Month.Has_Form (Zero) := False;
+      Locale_Tzm.Short_Override.Month.Has_Form (One) := True;
+      Locale_Tzm.Short_Override.Month.Forms (One) := To_Unbounded_String ("{n} ayyur");
+      Locale_Tzm.Short_Override.Month.Has_Form (Two) := False;
+      Locale_Tzm.Short_Override.Month.Has_Form (Few) := False;
+      Locale_Tzm.Short_Override.Month.Has_Form (Many) := False;
+      Locale_Tzm.Short_Override.Month.Has_Form (Other) := True;
+      Locale_Tzm.Short_Override.Month.Forms (Other) := To_Unbounded_String ("{n} ayyurn");
       Locale_Tzm.Short_Override.Has_Year := True;
-      Locale_Tzm.Short_Override.Year.Has_Simple := True;
-      Locale_Tzm.Short_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Tzm.Short_Override.Year.Has_Simple := False;
+      Locale_Tzm.Short_Override.Year.Has_Form (Zero) := False;
+      Locale_Tzm.Short_Override.Year.Has_Form (One) := True;
+      Locale_Tzm.Short_Override.Year.Forms (One) := To_Unbounded_String ("{n} aseggas");
+      Locale_Tzm.Short_Override.Year.Has_Form (Two) := False;
+      Locale_Tzm.Short_Override.Year.Has_Form (Few) := False;
+      Locale_Tzm.Short_Override.Year.Has_Form (Many) := False;
+      Locale_Tzm.Short_Override.Year.Has_Form (Other) := True;
+      Locale_Tzm.Short_Override.Year.Forms (Other) := To_Unbounded_String ("{n} iseggasen");
       Locale_Tzm.Short_Override.Has_Half := False;
       Locale_Tzm.Short_Override.Has_Delimiter := False;
       Locale_Tzm.Short_Override.Has_Ago := True;
@@ -21046,7 +21218,7 @@ package body Sayableduration_Locales is
       Locale_Uk.Units.Second.Has_Form (Many) := True;
       Locale_Uk.Units.Second.Forms (Many) := To_Unbounded_String ("{n} секунд");
       Locale_Uk.Units.Second.Has_Form (Other) := True;
-      Locale_Uk.Units.Second.Forms (Other) := To_Unbounded_String ("{n} секунд");
+      Locale_Uk.Units.Second.Forms (Other) := To_Unbounded_String ("{n} секунди");
       Locale_Uk.Units.Minute.Has_Simple := False;
       Locale_Uk.Units.Minute.Has_Form (Zero) := False;
       Locale_Uk.Units.Minute.Has_Form (One) := True;
@@ -21057,7 +21229,7 @@ package body Sayableduration_Locales is
       Locale_Uk.Units.Minute.Has_Form (Many) := True;
       Locale_Uk.Units.Minute.Forms (Many) := To_Unbounded_String ("{n} хвилин");
       Locale_Uk.Units.Minute.Has_Form (Other) := True;
-      Locale_Uk.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} хвилин");
+      Locale_Uk.Units.Minute.Forms (Other) := To_Unbounded_String ("{n} хвилини");
       Locale_Uk.Units.Hour.Has_Simple := False;
       Locale_Uk.Units.Hour.Has_Form (Zero) := False;
       Locale_Uk.Units.Hour.Has_Form (One) := True;
@@ -21068,7 +21240,7 @@ package body Sayableduration_Locales is
       Locale_Uk.Units.Hour.Has_Form (Many) := True;
       Locale_Uk.Units.Hour.Forms (Many) := To_Unbounded_String ("{n} годин");
       Locale_Uk.Units.Hour.Has_Form (Other) := True;
-      Locale_Uk.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} годин");
+      Locale_Uk.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} години");
       Locale_Uk.Units.Day.Has_Simple := False;
       Locale_Uk.Units.Day.Has_Form (Zero) := False;
       Locale_Uk.Units.Day.Has_Form (One) := True;
@@ -21079,7 +21251,7 @@ package body Sayableduration_Locales is
       Locale_Uk.Units.Day.Has_Form (Many) := True;
       Locale_Uk.Units.Day.Forms (Many) := To_Unbounded_String ("{n} днів");
       Locale_Uk.Units.Day.Has_Form (Other) := True;
-      Locale_Uk.Units.Day.Forms (Other) := To_Unbounded_String ("{n} днів");
+      Locale_Uk.Units.Day.Forms (Other) := To_Unbounded_String ("{n} дня");
       Locale_Uk.Units.Week.Has_Simple := False;
       Locale_Uk.Units.Week.Has_Form (Zero) := False;
       Locale_Uk.Units.Week.Has_Form (One) := True;
@@ -21090,7 +21262,7 @@ package body Sayableduration_Locales is
       Locale_Uk.Units.Week.Has_Form (Many) := True;
       Locale_Uk.Units.Week.Forms (Many) := To_Unbounded_String ("{n} тижнів");
       Locale_Uk.Units.Week.Has_Form (Other) := True;
-      Locale_Uk.Units.Week.Forms (Other) := To_Unbounded_String ("{n} тижнів");
+      Locale_Uk.Units.Week.Forms (Other) := To_Unbounded_String ("{n} тижня");
       Locale_Uk.Units.Month.Has_Simple := False;
       Locale_Uk.Units.Month.Has_Form (Zero) := False;
       Locale_Uk.Units.Month.Has_Form (One) := True;
@@ -21101,7 +21273,7 @@ package body Sayableduration_Locales is
       Locale_Uk.Units.Month.Has_Form (Many) := True;
       Locale_Uk.Units.Month.Forms (Many) := To_Unbounded_String ("{n} місяців");
       Locale_Uk.Units.Month.Has_Form (Other) := True;
-      Locale_Uk.Units.Month.Forms (Other) := To_Unbounded_String ("{n} місяців");
+      Locale_Uk.Units.Month.Forms (Other) := To_Unbounded_String ("{n} місяця");
       Locale_Uk.Units.Year.Has_Simple := False;
       Locale_Uk.Units.Year.Has_Form (Zero) := False;
       Locale_Uk.Units.Year.Has_Form (One) := True;
@@ -21112,7 +21284,7 @@ package body Sayableduration_Locales is
       Locale_Uk.Units.Year.Has_Form (Many) := True;
       Locale_Uk.Units.Year.Forms (Many) := To_Unbounded_String ("{n} років");
       Locale_Uk.Units.Year.Has_Form (Other) := True;
-      Locale_Uk.Units.Year.Forms (Other) := To_Unbounded_String ("{n} років");
+      Locale_Uk.Units.Year.Forms (Other) := To_Unbounded_String ("{n} року");
 
       Locale_Uk.Half := To_Unbounded_String ("{n} з половиною");
       Locale_Uk.Delimiter := To_Unbounded_String (", ");
@@ -21383,8 +21555,15 @@ package body Sayableduration_Locales is
       Locale_Ur.Units.Second.Simple := To_Unbounded_String ("{n} سیکنڈ");
       Locale_Ur.Units.Minute.Has_Simple := True;
       Locale_Ur.Units.Minute.Simple := To_Unbounded_String ("{n} منٹ");
-      Locale_Ur.Units.Hour.Has_Simple := True;
-      Locale_Ur.Units.Hour.Simple := To_Unbounded_String ("{n} گھنٹہ");
+      Locale_Ur.Units.Hour.Has_Simple := False;
+      Locale_Ur.Units.Hour.Has_Form (Zero) := False;
+      Locale_Ur.Units.Hour.Has_Form (One) := True;
+      Locale_Ur.Units.Hour.Forms (One) := To_Unbounded_String ("{n} گھنٹہ");
+      Locale_Ur.Units.Hour.Has_Form (Two) := False;
+      Locale_Ur.Units.Hour.Has_Form (Few) := False;
+      Locale_Ur.Units.Hour.Has_Form (Many) := False;
+      Locale_Ur.Units.Hour.Has_Form (Other) := True;
+      Locale_Ur.Units.Hour.Forms (Other) := To_Unbounded_String ("{n} گھنٹے");
       Locale_Ur.Units.Day.Has_Simple := False;
       Locale_Ur.Units.Day.Has_Form (Zero) := False;
       Locale_Ur.Units.Day.Has_Form (One) := True;
@@ -21846,13 +22025,13 @@ package body Sayableduration_Locales is
       Locale_Vi.Units.Month.Has_Simple := True;
       Locale_Vi.Units.Month.Simple := To_Unbounded_String ("{n} tháng");
       Locale_Vi.Units.Year.Has_Simple := True;
-      Locale_Vi.Units.Year.Simple := To_Unbounded_String ("{n} tuổi");
+      Locale_Vi.Units.Year.Simple := To_Unbounded_String ("{n} năm");
 
       Locale_Vi.Half := To_Unbounded_String ("{0} rưỡi");
       Locale_Vi.Delimiter := To_Unbounded_String (", ");
       Locale_Vi.Just_Now := To_Unbounded_String ("vừa xong");
       Locale_Vi.Ago := To_Unbounded_String ("{0} trước");
-      Locale_Vi.In_Future := To_Unbounded_String ("trong {0}");
+      Locale_Vi.In_Future := To_Unbounded_String ("{0} nữa");
 
       Locale_Vi.Has_Short := True;
       Locale_Vi.Short_Override.Has_Units := True;
@@ -21882,7 +22061,7 @@ package body Sayableduration_Locales is
       Locale_Vi.Short_Override.Has_Ago := True;
       Locale_Vi.Short_Override.Ago := To_Unbounded_String ("{0} trước");
       Locale_Vi.Short_Override.Has_In_Future := True;
-      Locale_Vi.Short_Override.In_Future := To_Unbounded_String ("trong {0}");
+      Locale_Vi.Short_Override.In_Future := To_Unbounded_String ("{0} nữa");
 
       Locale_Vi.Has_Compact := True;
       Locale_Vi.Compact_Override.Has_Units := True;
@@ -21914,7 +22093,7 @@ package body Sayableduration_Locales is
       Locale_Vi.Compact_Override.Has_Ago := True;
       Locale_Vi.Compact_Override.Ago := To_Unbounded_String ("{0} trước");
       Locale_Vi.Compact_Override.Has_In_Future := True;
-      Locale_Vi.Compact_Override.In_Future := To_Unbounded_String ("trong {0}");
+      Locale_Vi.Compact_Override.In_Future := To_Unbounded_String ("{0} nữa");
 
    end Init_vi;
 
@@ -22093,79 +22272,79 @@ package body Sayableduration_Locales is
       Locale_Wo.Plural := Plural_other_only'Access;
 
       Locale_Wo.Units.Second.Has_Simple := True;
-      Locale_Wo.Units.Second.Simple := To_Unbounded_String ("saa-yépp {n}");
+      Locale_Wo.Units.Second.Simple := To_Unbounded_String ("{n} saa");
       Locale_Wo.Units.Minute.Has_Simple := True;
-      Locale_Wo.Units.Minute.Simple := To_Unbounded_String ("simili {n}");
+      Locale_Wo.Units.Minute.Simple := To_Unbounded_String ("{n} simili");
       Locale_Wo.Units.Hour.Has_Simple := True;
-      Locale_Wo.Units.Hour.Simple := To_Unbounded_String ("waxtu {n}");
+      Locale_Wo.Units.Hour.Simple := To_Unbounded_String ("{n} waxtu");
       Locale_Wo.Units.Day.Has_Simple := True;
-      Locale_Wo.Units.Day.Simple := To_Unbounded_String ("bés {n}");
+      Locale_Wo.Units.Day.Simple := To_Unbounded_String ("{n} fan");
       Locale_Wo.Units.Week.Has_Simple := True;
-      Locale_Wo.Units.Week.Simple := To_Unbounded_String ("ayubés {n}");
+      Locale_Wo.Units.Week.Simple := To_Unbounded_String ("{n} ayubés");
       Locale_Wo.Units.Month.Has_Simple := True;
-      Locale_Wo.Units.Month.Simple := To_Unbounded_String ("weer {n}");
+      Locale_Wo.Units.Month.Simple := To_Unbounded_String ("{n} weer");
       Locale_Wo.Units.Year.Has_Simple := True;
-      Locale_Wo.Units.Year.Simple := To_Unbounded_String ("at {n}");
+      Locale_Wo.Units.Year.Simple := To_Unbounded_String ("{n} at");
 
       Locale_Wo.Half := To_Unbounded_String ("{0} ak genn-wàll");
       Locale_Wo.Delimiter := To_Unbounded_String (", ");
       Locale_Wo.Just_Now := To_Unbounded_String ("léegi");
       Locale_Wo.Ago := To_Unbounded_String ("{0} ci ginaaw");
-      Locale_Wo.In_Future := To_Unbounded_String ("ci {0}");
+      Locale_Wo.In_Future := To_Unbounded_String ("fileek {0}");
 
       Locale_Wo.Has_Short := True;
       Locale_Wo.Short_Override.Has_Units := True;
       Locale_Wo.Short_Override.Has_Second := True;
       Locale_Wo.Short_Override.Second.Has_Simple := True;
-      Locale_Wo.Short_Override.Second.Simple := To_Unbounded_String ("saa-y. {n}");
+      Locale_Wo.Short_Override.Second.Simple := To_Unbounded_String ("{n} saa");
       Locale_Wo.Short_Override.Has_Minute := True;
       Locale_Wo.Short_Override.Minute.Has_Simple := True;
-      Locale_Wo.Short_Override.Minute.Simple := To_Unbounded_String ("sim. {n}");
+      Locale_Wo.Short_Override.Minute.Simple := To_Unbounded_String ("{n} sim.");
       Locale_Wo.Short_Override.Has_Hour := True;
       Locale_Wo.Short_Override.Hour.Has_Simple := True;
-      Locale_Wo.Short_Override.Hour.Simple := To_Unbounded_String ("wax. {n}");
+      Locale_Wo.Short_Override.Hour.Simple := To_Unbounded_String ("{n} wax.");
       Locale_Wo.Short_Override.Has_Day := True;
       Locale_Wo.Short_Override.Day.Has_Simple := True;
-      Locale_Wo.Short_Override.Day.Simple := To_Unbounded_String ("bés {n}");
+      Locale_Wo.Short_Override.Day.Simple := To_Unbounded_String ("{n} fan");
       Locale_Wo.Short_Override.Has_Week := True;
       Locale_Wo.Short_Override.Week.Has_Simple := True;
-      Locale_Wo.Short_Override.Week.Simple := To_Unbounded_String ("ayub. {n}");
+      Locale_Wo.Short_Override.Week.Simple := To_Unbounded_String ("{n} ayub.");
       Locale_Wo.Short_Override.Has_Month := True;
       Locale_Wo.Short_Override.Month.Has_Simple := True;
-      Locale_Wo.Short_Override.Month.Simple := To_Unbounded_String ("weer {n}");
+      Locale_Wo.Short_Override.Month.Simple := To_Unbounded_String ("{n} weer");
       Locale_Wo.Short_Override.Has_Year := True;
       Locale_Wo.Short_Override.Year.Has_Simple := True;
-      Locale_Wo.Short_Override.Year.Simple := To_Unbounded_String ("at {n}");
+      Locale_Wo.Short_Override.Year.Simple := To_Unbounded_String ("{n} at");
       Locale_Wo.Short_Override.Has_Half := False;
       Locale_Wo.Short_Override.Has_Delimiter := False;
       Locale_Wo.Short_Override.Has_Ago := True;
       Locale_Wo.Short_Override.Ago := To_Unbounded_String ("{0} ci ginaaw");
       Locale_Wo.Short_Override.Has_In_Future := True;
-      Locale_Wo.Short_Override.In_Future := To_Unbounded_String ("ci {0}");
+      Locale_Wo.Short_Override.In_Future := To_Unbounded_String ("fileek {0}");
 
       Locale_Wo.Has_Compact := True;
       Locale_Wo.Compact_Override.Has_Units := True;
       Locale_Wo.Compact_Override.Has_Second := True;
       Locale_Wo.Compact_Override.Second.Has_Simple := True;
-      Locale_Wo.Compact_Override.Second.Simple := To_Unbounded_String ("saa {n}");
+      Locale_Wo.Compact_Override.Second.Simple := To_Unbounded_String ("{n} saa");
       Locale_Wo.Compact_Override.Has_Minute := True;
       Locale_Wo.Compact_Override.Minute.Has_Simple := True;
-      Locale_Wo.Compact_Override.Minute.Simple := To_Unbounded_String ("sim {n}");
+      Locale_Wo.Compact_Override.Minute.Simple := To_Unbounded_String ("{n} sim");
       Locale_Wo.Compact_Override.Has_Hour := True;
       Locale_Wo.Compact_Override.Hour.Has_Simple := True;
-      Locale_Wo.Compact_Override.Hour.Simple := To_Unbounded_String ("wax {n}");
+      Locale_Wo.Compact_Override.Hour.Simple := To_Unbounded_String ("{n} wax");
       Locale_Wo.Compact_Override.Has_Day := True;
       Locale_Wo.Compact_Override.Day.Has_Simple := True;
-      Locale_Wo.Compact_Override.Day.Simple := To_Unbounded_String ("bés {n}");
+      Locale_Wo.Compact_Override.Day.Simple := To_Unbounded_String ("{n} fan");
       Locale_Wo.Compact_Override.Has_Week := True;
       Locale_Wo.Compact_Override.Week.Has_Simple := True;
-      Locale_Wo.Compact_Override.Week.Simple := To_Unbounded_String ("ayub {n}");
+      Locale_Wo.Compact_Override.Week.Simple := To_Unbounded_String ("{n} ayub");
       Locale_Wo.Compact_Override.Has_Month := True;
       Locale_Wo.Compact_Override.Month.Has_Simple := True;
-      Locale_Wo.Compact_Override.Month.Simple := To_Unbounded_String ("weer {n}");
+      Locale_Wo.Compact_Override.Month.Simple := To_Unbounded_String ("{n} weer");
       Locale_Wo.Compact_Override.Has_Year := True;
       Locale_Wo.Compact_Override.Year.Has_Simple := True;
-      Locale_Wo.Compact_Override.Year.Simple := To_Unbounded_String ("at {n}");
+      Locale_Wo.Compact_Override.Year.Simple := To_Unbounded_String ("{n} at");
       Locale_Wo.Compact_Override.Has_Half := True;
       Locale_Wo.Compact_Override.Half := To_Unbounded_String ("{n}½");
       Locale_Wo.Compact_Override.Has_Delimiter := True;
@@ -22173,7 +22352,7 @@ package body Sayableduration_Locales is
       Locale_Wo.Compact_Override.Has_Ago := True;
       Locale_Wo.Compact_Override.Ago := To_Unbounded_String ("{0} ci gin.");
       Locale_Wo.Compact_Override.Has_In_Future := True;
-      Locale_Wo.Compact_Override.In_Future := To_Unbounded_String ("ci {0}");
+      Locale_Wo.Compact_Override.In_Future := To_Unbounded_String ("fileek {0}");
 
    end Init_wo;
 
@@ -22832,7 +23011,7 @@ package body Sayableduration_Locales is
       Locale_Zh.Units.Month.Has_Simple := True;
       Locale_Zh.Units.Month.Simple := To_Unbounded_String ("{n}个月");
       Locale_Zh.Units.Year.Has_Simple := True;
-      Locale_Zh.Units.Year.Simple := To_Unbounded_String ("{n}岁");
+      Locale_Zh.Units.Year.Simple := To_Unbounded_String ("{n}年");
 
       Locale_Zh.Half := To_Unbounded_String ("{0}半");
       Locale_Zh.Delimiter := To_Unbounded_String ("");

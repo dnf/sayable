@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tr.json](../../locales/tr.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Replaced the ungrammatical apostrophe forms ('iki'i beş geçiyor', 'üç'e çeyrek var') with the normal spoken digital reading, all words: 'saat iki' (2:00), 'saat iki sıfır beş' (2:05), 'saat iki on beş', 'saat iki buçuk' (2:30), 'saat iki kırk beş', 'saat on iki buçuk' (12:30). Every output is correct Turkish. Schema follow-up: the more idiomatic 'ikiyi çeyrek geçiyor' / 'üçe çeyrek var' (or 'üçe çeyrek kala') need accusative ('on ikiyi, biri, ikiyi, üçü, dördü, beşi, altıyı, yediyi, sekizi, dokuzu, onu, on biri') and dative ('on ikiye, bire, ikiye, üçe, dörde, beşe, altıya, yediye, sekize, dokuza, ona, on bire') hour lists.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | öbür gün         | 17.3.   |
 | Day before yesterday | evvelsi gün      | 13.3.   |
 | This Thursday (+5)   | bu Perşembe      | 20.3.   |
-| Last Monday (-4)     | geçen Salı       | 11.3.   |
-| Next Wednesday (+12) | gelecek Perşembe | 27.3.   |
-| Same month (+20)     | 4 Nisan          | 4.4.    |
+| Last Tuesday (-4)    | geçen Salı       | 11.3.   |
+| Next Thursday (+12)  | gelecek Perşembe | 27.3.   |
+| Same year (+20)      | 4 Nisan          | 4.4.    |
 | Different year       | 10 Ocak 2026     | 10.1.26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal              | Short | Compact |
-| --------------- | ------------------- | ----- | ------- |
-| Midnight        | gece yarısı         | 0:00  | 0:00    |
-| 1:00 AM         | saat bir            | 1:00  | 1:00    |
-| 5 past 9        | dokuz'i beş geçiyor | 9:05  | 9:05    |
-| Quarter past 10 | on'i çeyrek geçiyor | 10:15 | 10:15   |
-| Half past 11    | on bir buçuk        | 11:30 | 11:30   |
-| Noon            | öğle                | 12:00 | 12:00   |
-| Quarter to 3    | üç'e çeyrek var     | 14:45 | 14:45   |
-| 5 to 6          | altı'e beş var      | 17:55 | 17:55   |
-| 8 o'clock PM    | saat sekiz          | 20:00 | 20:00   |
-| 10:30 PM        | on buçuk            | 22:30 | 22:30   |
-| 11:58 PM        | gece yarısı         | 23:58 | 23:58   |
+| Time            | Normal               | Short | Compact |
+| --------------- | -------------------- | ----- | ------- |
+| Midnight        | gece yarısı          | 0:00  | 0:00    |
+| 1:00 AM         | saat bir             | 1:00  | 1:00    |
+| 5 past 9        | saat dokuz sıfır beş | 9:05  | 9:05    |
+| Quarter past 10 | saat on on beş       | 10:15 | 10:15   |
+| Half past 11    | saat on bir buçuk    | 11:30 | 11:30   |
+| Noon            | öğle                 | 12:00 | 12:00   |
+| Quarter to 3    | saat iki kırk beş    | 14:45 | 14:45   |
+| 5 to 6          | saat beş elli beş    | 17:55 | 17:55   |
+| 8 o'clock PM    | saat sekiz           | 20:00 | 20:00   |
+| 10:30 PM        | saat on buçuk        | 22:30 | 22:30   |
+| 11:58 PM        | gece yarısı          | 23:58 | 23:58   |

@@ -16,12 +16,12 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 // KY is the Kyrgyz locale.
 var KY = sdate.DateLocale{
 	Code: "ky",
-	Months:   [12]string{"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"},
-	Weekdays: [7]string{"Жекшемби", "Дүйшөмбү", "Шейшемби", "Шаршемби", "Бейшемби", "Жума", "Ишемби"},
-	DayFormat: "{n}",
+	Months:   [12]string{"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"},
+	Weekdays: [7]string{"жекшемби", "дүйшөмбү", "шейшемби", "шаршемби", "бейшемби", "жума", "ишемби"},
+	DayFormat: "{n}-",
 	DayFormatExceptions: map[string]string{},
-	DatePattern:         "{day} {month}",
-	DatePatternWithYear: "{day} {month} {year}",
+	DatePattern:         "{day}{month}",
+	DatePatternWithYear: "{year}-ж., {day}{month}",
 	Today:     "бүгүн",
 	Tomorrow:  "эртең",
 	Yesterday: "кечээ",
@@ -32,8 +32,8 @@ var KY = sdate.DateLocale{
 	LastWeekday:       strPtr("өткөн {weekday}"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
-		Months:   &[12]string{"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"},
-		Weekdays: &[7]string{"Жек", "Дүй", "Шей", "Шар", "Бей", "Жум", "Ише"},
+		Months:   &[12]string{"янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"},
+		Weekdays: &[7]string{"жек", "дүй", "шей", "шар", "бей", "жум", "ише"},
 		DayFormat:            strPtr("{n}"),
 		DatePattern:          strPtr("{day} {month}"),
 		DatePatternWithYear:  strPtr("{day} {month} {year}"),

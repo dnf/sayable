@@ -15,7 +15,7 @@ function locale_lv {
     $dayFormat = '{n}.'
     $dayFormatExceptions = @{}
     $datePattern = '{day} {month}'
-    $datePatternWithYear = '{day} {month} {year}'
+    $datePatternWithYear = '{year}. gada {day} {month}'
     $today = 'šodien'
     $tomorrow = 'rīt'
     $yesterday = 'vakar'
@@ -30,7 +30,7 @@ function locale_lv {
         weekdays = @('sv', 'pr', 'ot', 'tr', 'ce', 'pk', 'se')
         dayFormat = '{n}.'
         datePattern = '{day} {month}'
-        datePatternWithYear = '{day} {month} {year}'
+        datePatternWithYear = '{year}. gada {day} {month}'
     }
     $compact = @{
         datePattern = '{d}.{m}.'

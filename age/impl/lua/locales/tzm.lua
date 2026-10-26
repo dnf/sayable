@@ -29,18 +29,18 @@ M.delimiter = ", "
 M.just_born = "Iɣ d illul"
 M.stages = {
     newborn = "Iɣ d illul",
-    infant = "Agellid",
+    infant = "Llufan",
     toddler = { m = "Aḥenjir", f = "Taḥenjirt" },
-    child = { m = "Afrux", f = "Tafruxṭ" },
+    child = { m = "Afrux", f = "Tafruxt" },
     teenager = { m = "Aɛrim", f = "Taɛrimt" },
     adult = { m = "Argaz", f = "Tamṭṭuṭ" },
 }
 M.short = {
     units = {
-        day = "{n} d",
-        week = "{n} wk",
-        month = "{n} mo",
-        year = "{n} yr",
+        day = { one = "{n} ass", other = "{n} ussan" },
+        week = { one = "{n} imalass", other = "{n} imalassn" },
+        month = { one = "{n} ayyur", other = "{n} ayyurn" },
+        year = { one = "{n} aseggas", other = "{n} iseggasen" },
     },
 }
 M.compact = {

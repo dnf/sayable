@@ -22,9 +22,9 @@ const SQ = AgeLocale(
     ),
     half = "{0} e gjysmë",
     delimiter = ", ",
-    just_born = "Sapolindur",
+    just_born = "I sapolindur",
     stages = Dict(
-        "newborn" => GenderedStage("Sapolindur", "Sapolindure"),
+        "newborn" => GenderedStage("I sapolindur", "E sapolindur"),
         "infant" => StageLabel("Foshnjë"),
         "toddler" => GenderedStage("Fëmijë i vogël", "Fëmijë e vogël"),
         "child" => StageLabel("Fëmijë"),

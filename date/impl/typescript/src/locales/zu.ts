@@ -23,7 +23,7 @@ export const zu: DateLocale = {
   tomorrow: 'kusasa',
   yesterday: 'izolo',
   dayAfterTomorrow: 'ngomhlomunye',
-  dayBeforeYesterday: 'usuku olwedlule izolo',
+  dayBeforeYesterday: 'kuthangi',
   thisWeekday: 'leli {weekday}',
   nextWeekday: '{weekday} elizayo',
   lastWeekday: '{weekday} eledlule',

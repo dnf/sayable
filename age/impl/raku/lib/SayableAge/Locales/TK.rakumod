@@ -22,7 +22,7 @@ our sub locale() {
             month => '{n} aý',
             year => '{n} ýaş',
         },
-        half => '{0}½',
+        half => '{n} ýarym',
         delimiter => ', ',
         just-born => 'Täze doglan',
         stages => {
@@ -31,7 +31,7 @@ our sub locale() {
             toddler => 'Kiçijik',
             child => 'Çaga',
             teenager => 'Ýetginjek',
-            adult => 'Ulular',
+            adult => 'Uly adam',
         },
         short => {
             units => {

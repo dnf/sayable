@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ps.json](../../locales/ps.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Hours now carry the noun ('یوه بجه', 'دوه بجې', ...) so 1 o'clock gets the correct feminine singular 'یوه بجه' instead of 'یو بجې'. All minutes are additive: 'درې بجې او لس دقیقې'. Compromises: :30 is 'درې بجې او دېرش دقیقې' rather than the idiomatic 'درې نیمې بجې' (نیمې must sit between hour and بجې, impossible with the noun inside {h}); no subtractive 'to' phrases because they require the oblique hour ('څلورو بجو ته'), which the schema cannot produce. Doubts: whether 'دقیقې' or the colloquial 'منټه' is preferred; overall Pashto phrasing is best effort.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | بل سبا           | 17/3    |
 | Day before yesterday | بل پرون          | 13/3    |
 | This Thursday (+5)   | دا پنجشنبه       | 20/3    |
-| Last Monday (-4)     | تېره سه‌شنبه     | 11/3    |
-| Next Wednesday (+12) | راتلونکې پنجشنبه | 27/3    |
-| Same month (+20)     | 4 اپریل          | 4/4     |
+| Last Tuesday (-4)    | تېره سه‌شنبه     | 11/3    |
+| Next Thursday (+12)  | راتلونکې پنجشنبه | 27/3    |
+| Same year (+20)      | 4 اپریل          | 4/4     |
 | Different year       | 10 جنوري 2026    | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal   | Short    | Compact |
-| --------------- | -------- | -------- | ------- |
-| Midnight        | نیمه شپه | 12:00 AM | 12:00a  |
-| 1:00 AM         | یو:00    | 1:00 AM  | 1:00a   |
-| 5 past 9        | نهه:05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | لس:15    | 10:15 AM | 10:15a  |
-| Half past 11    | یوولس:30 | 11:30 AM | 11:30a  |
-| Noon            | غرمه     | 12:00 PM | 12:00p  |
-| Quarter to 3    | دوه:45   | 2:45 PM  | 2:45p   |
-| 5 to 6          | پنځه:55  | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | اته:00   | 8:00 PM  | 8:00p   |
-| 10:30 PM        | لس:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | نیمه شپه | 11:58 PM | 11:58p  |
+| Time            | Normal                       | Short    | Compact |
+| --------------- | ---------------------------- | -------- | ------- |
+| Midnight        | نیمه شپه                     | 12:00 AM | 12:00a  |
+| 1:00 AM         | یوه بجه                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | نهه بجې او پنځه دقیقې        | 9:05 AM  | 9:05a   |
+| Quarter past 10 | لس بجې او پنځلس دقیقې        | 10:15 AM | 10:15a  |
+| Half past 11    | یوولس بجې او دېرش دقیقې      | 11:30 AM | 11:30a  |
+| Noon            | غرمه                         | 12:00 PM | 12:00p  |
+| Quarter to 3    | دوه بجې او پنځه څلوېښت دقیقې | 2:45 PM  | 2:45p   |
+| 5 to 6          | پنځه بجې او پنځه پنځوس دقیقې | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | اته بجې                      | 8:00 PM  | 8:00p   |
+| 10:30 PM        | لس بجې او دېرش دقیقې         | 10:30 PM | 10:30p  |
+| 11:58 PM        | نیمه شپه                     | 11:58 PM | 11:58p  |

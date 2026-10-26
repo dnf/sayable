@@ -11,22 +11,22 @@
 
 % Fon locale.
 
-st_hours('fon', ['wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'ɖokpo-wǒ']).
+st_hours('fon', ['wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'wěɖokpo']).
 st_midnight('fon', 'zǎnmɛ').
 st_noon('fon', 'hwemɛnu').
 
-st_pattern('fon', 0, '{h}:00').
-st_pattern('fon', 5, '{h}:05').
-st_pattern('fon', 10, '{h}:10').
-st_pattern('fon', 15, '{h}:15').
-st_pattern('fon', 20, '{h}:20').
-st_pattern('fon', 25, '{h}:25').
-st_pattern('fon', 30, '{h}:30').
-st_pattern('fon', 35, '{h}:35').
-st_pattern('fon', 40, '{h}:40').
-st_pattern('fon', 45, '{h}:45').
-st_pattern('fon', 50, '{h}:50').
-st_pattern('fon', 55, '{h}:55').
+st_pattern('fon', 0, 'gan {h}').
+st_pattern('fon', 5, 'gan {h} kpo cɛju atɔ́ɔ́n kpo').
+st_pattern('fon', 10, 'gan {h} kpo cɛju wǒ kpo').
+st_pattern('fon', 15, 'gan {h} kpo cɛju afɔtɔ́n kpo').
+st_pattern('fon', 20, 'gan {h} kpo cɛju ko kpo').
+st_pattern('fon', 25, 'gan {h} kpo cɛju koatɔ́ɔ́n kpo').
+st_pattern('fon', 30, 'gan {h} kpo cɛju gban kpo').
+st_pattern('fon', 35, 'gan {h} kpo cɛju gbanatɔ́ɔ́n kpo').
+st_pattern('fon', 40, 'gan {h} kpo cɛju kanɖé kpo').
+st_pattern('fon', 45, 'gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo').
+st_pattern('fon', 50, 'gan {h} kpo cɛju kanɖéwǒ kpo').
+st_pattern('fon', 55, 'gan {h} kpo cɛju kanɖéafɔtɔ́n kpo').
 
 short_st_use24h('fon', false).
 short_st_format('fon', '{h}:{mm} {ampm}').

@@ -12,17 +12,17 @@
 function locale_nl {
     $hours = @('twaalf', 'een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf')
     $midnight = 'middernacht'
-    $noon = 'middag'
+    $noon = 'twaalf uur ''s middags'
     $patterns = @{}
     $patterns[0] = '{h} uur'
     $patterns[5] = 'vijf over {h}'
     $patterns[10] = 'tien over {h}'
     $patterns[15] = 'kwart over {h}'
-    $patterns[20] = 'twintig over {h}'
+    $patterns[20] = 'tien voor half {next_h}'
     $patterns[25] = 'vijf voor half {next_h}'
     $patterns[30] = 'half {next_h}'
     $patterns[35] = 'vijf over half {next_h}'
-    $patterns[40] = 'twintig voor {next_h}'
+    $patterns[40] = 'tien over half {next_h}'
     $patterns[45] = 'kwart voor {next_h}'
     $patterns[50] = 'tien voor {next_h}'
     $patterns[55] = 'vijf voor {next_h}'

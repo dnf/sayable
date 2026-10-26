@@ -27,9 +27,9 @@ fn build_sn() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = simple_unit("{n} sekondi")
-    var minute = simple_unit("{n} miniti")
-    var hour = simple_unit("{n} awa")
+    var second = plural_unit(one="sekondi {n}", other="masekondi {n}")
+    var minute = plural_unit(one="miniti {n}", other="maminitsi {n}")
+    var hour = plural_unit(one="awa {n}", other="maawa {n}")
     var day = plural_unit(one="zuva {n}", other="mazuva {n}")
     var week = plural_unit(one="vhiki {n}", other="mavhiki {n}")
     var month = plural_unit(one="mwedzi {n}", other="mwedzi {n}")

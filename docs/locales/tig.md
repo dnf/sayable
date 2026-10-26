@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tig.json](../../locales/tig.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort, additive only: 'saʿa {h}' (hour word from the locale's own duration data) + 'we <minutes>' using the locale's conjunction ('we nəs' = and a half, already in duration.half). Tens ʿəsra/salasa/arbaʿa/ḥamsa are the Semitic series I believe Tigre uses; 15 written as 'ʿasərte we ḥamməste'. Doubts: whether Tigre uses an Arabic-style 'rubʿ'/'illa' quarter/to idiom instead; whether the existing hour numerals are genuine Tigre (some look Tigrinya-like); romanization kept to match the file. Hour count: Western (Eritrea).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | gədam gədam       | 17/3    |
 | Day before yesterday | timali timali     | 13/3    |
 | This Thursday (+5)   | Ḥamus ʾənta       | 20/3    |
-| Last Monday (-4)     | Sələs qədmi       | 11/3    |
-| Next Wednesday (+12) | Ḥamus ba          | 27/3    |
-| Same month (+20)     | 4 Abriil          | 4/4     |
+| Last Tuesday (-4)    | Sələs qədmi       | 11/3    |
+| Next Thursday (+12)  | Ḥamus ba          | 27/3    |
+| Same year (+20)      | 4 Abriil          | 4/4     |
 | Different year       | 10 Yannaayer 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal             | Short    | Compact |
-| --------------- | ------------------ | -------- | ------- |
-| Midnight        | nəs-leyla          | 12:00 AM | 12:00a  |
-| 1:00 AM         | ḥante:00           | 1:00 AM  | 1:00a   |
-| 5 past 9        | təsʿate:05         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ʿasərte:15         | 10:15 AM | 10:15a  |
-| Half past 11    | ʿasərte wəḥante:30 | 11:30 AM | 11:30a  |
-| Noon            | qayḥ               | 12:00 PM | 12:00p  |
-| Quarter to 3    | kəlʾe:45           | 2:45 PM  | 2:45p   |
-| 5 to 6          | ḥamməste:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | səmmunte:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ʿasərte:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | nəs-leyla          | 11:58 PM | 11:58p  |
+| Time            | Normal                              | Short    | Compact |
+| --------------- | ----------------------------------- | -------- | ------- |
+| Midnight        | nəs-leyla                           | 12:00 AM | 12:00a  |
+| 1:00 AM         | saʿa ḥante                          | 1:00 AM  | 1:00a   |
+| 5 past 9        | saʿa təsʿate we ḥamməste            | 9:05 AM  | 9:05a   |
+| Quarter past 10 | saʿa ʿasərte we ʿasərte we ḥamməste | 10:15 AM | 10:15a  |
+| Half past 11    | saʿa ʿasərte wəḥante we nəs         | 11:30 AM | 11:30a  |
+| Noon            | qayḥ                                | 12:00 PM | 12:00p  |
+| Quarter to 3    | saʿa kəlʾe we arbaʿa we ḥamməste    | 2:45 PM  | 2:45p   |
+| 5 to 6          | saʿa ḥamməste we ḥamsa we ḥamməste  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | saʿa səmmunte                       | 8:00 PM  | 8:00p   |
+| 10:30 PM        | saʿa ʿasərte we nəs                 | 10:30 PM | 10:30p  |
+| 11:58 PM        | nəs-leyla                           | 11:58 PM | 11:58p  |

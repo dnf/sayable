@@ -12,9 +12,9 @@
 (def locale
   {:code "ln"
    :plural (fn [n] (if (or (= n 0) (= n 1)) :one :other))
-   :units {:second "{n} segɔnde"
-          :minute "{n} moniti"
-          :hour "{n} ngonga"
+   :units {:second "segɔnde {n}"
+          :minute "miniti {n}"
+          :hour "ngonga {n}"
           :day {:one "mokolo {n}" :other "mikolo {n}"}
           :week {:one "poso {n}" :other "baposo {n}"}
           :month {:one "sanza {n}" :other "basanza {n}"}

@@ -27,4 +27,4 @@
    :ago "{0} ပူၼ်ႉမႃး"
    :in-future "ထႅင်ႈ {0}"
    :short {:second {:type :simple :form "{n} ဝိၼႃး"} :minute {:type :simple :form "{n} မိၼိတ်ႉ"} :hour {:type :simple :form "{n} ၸူဝ်ႈ"} :day {:type :simple :form "{n} ဝၼ်း"} :week {:type :simple :form "{n} ဝူင်ႈ"} :month {:type :simple :form "{n} လိူၼ်"} :year {:type :simple :form "{n} ပီ"} :half nil :delimiter nil :ago "{0} ပူၼ်ႉမႃး" :in-future "ထႅင်ႈ {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} ပူၼ်ႉမႃး" :in-future "ထႅင်ႈ {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ပူၼ်ႉမႃး" :in-future "ထႅင်ႈ {0}"}})

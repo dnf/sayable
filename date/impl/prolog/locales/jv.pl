@@ -22,7 +22,7 @@ sd_today('jv', 'dina iki').
 sd_tomorrow('jv', 'sesuk').
 sd_yesterday('jv', 'wingi').
 sd_day_after_tomorrow('jv', 'embèn').
-sd_day_before_yesterday('jv', 'dhèk wingi').
+sd_day_before_yesterday('jv', 'wingenané').
 sd_this_weekday('jv', '{weekday} iki').
 sd_next_weekday('jv', '{weekday} ngarep').
 sd_last_weekday('jv', '{weekday} wingi').

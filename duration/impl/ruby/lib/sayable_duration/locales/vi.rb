@@ -22,13 +22,13 @@ module SayableDuration
         'day' => '{n} ngày',
         'week' => '{n} tuần',
         'month' => '{n} tháng',
-        'year' => '{n} tuổi',
+        'year' => '{n} năm',
       },
       half: '{0} rưỡi',
       delimiter: ', ',
       just_now: 'vừa xong',
       ago: '{0} trước',
-      in_future: 'trong {0}',
+      in_future: '{0} nữa',
       short: CompactnessOverride.new(
         units: {
           'second' => '{n} giây',
@@ -40,7 +40,7 @@ module SayableDuration
           'year' => '{n} năm',
         },
         ago: '{0} trước',
-        in_future: 'trong {0}',
+        in_future: '{0} nữa',
       ),
       compact: CompactnessOverride.new(
         units: {
@@ -55,7 +55,7 @@ module SayableDuration
         delimiter: '',
         half: '{n}½',
         ago: '{0} trước',
-        in_future: 'trong {0}',
+        in_future: '{0} nữa',
       ),
     )
   end

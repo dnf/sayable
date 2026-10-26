@@ -31,7 +31,7 @@ locale =
             , ( "month", Simple "ཟླ་ {n}" )
             , ( "year", Simple "ལོ་ {n}" )
             ]
-    , half = "{0} ཕྱེད"
+    , half = "{0} དང་ཕྱེད"
     , delimiter = " "
     , justNow = "ད་ལྟ"
     , ago = "{0} ཧེ་མ"

@@ -17,7 +17,7 @@ sd_unit('mam', second, _, '{n} segundo').
 sd_unit('mam', minute, _, '{n} minuto').
 sd_unit('mam', hour, _, '{n} hora').
 sd_unit('mam', day, _, '{n} q\'ij').
-sd_unit('mam', week, _, '{n} xjaw').
+sd_unit('mam', week, _, '{n} seman').
 sd_unit('mam', month, _, '{n} xjaw').
 sd_unit('mam', year, _, '{n} ab\'q\'ii').
 
@@ -31,7 +31,7 @@ short_sd_unit('mam', second, _, '{n} seg.').
 short_sd_unit('mam', minute, _, '{n} min.').
 short_sd_unit('mam', hour, _, '{n} hora').
 short_sd_unit('mam', day, _, '{n} q\'ij').
-short_sd_unit('mam', week, _, '{n} xjaw').
+short_sd_unit('mam', week, _, '{n} seman').
 short_sd_unit('mam', month, _, '{n} xjaw').
 short_sd_unit('mam', year, _, '{n} ab\'.').
 short_sd_ago('mam', '{0} chi\'j').
@@ -44,6 +44,7 @@ compact_sd_unit('mam', day, _, '{n}d').
 compact_sd_unit('mam', week, _, '{n}w').
 compact_sd_unit('mam', month, _, '{n}mo').
 compact_sd_unit('mam', year, _, '{n}y').
+compact_sd_half('mam', '{n}½').
 compact_sd_delimiter('mam', '').
 compact_sd_ago('mam', '{0} chi\'j').
 compact_sd_in_future('mam', 'tu\'n {0}').

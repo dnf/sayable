@@ -25,10 +25,10 @@ module SayableDuration
         'year' => '{n} ປີ',
       },
       half: '{0}ເຄິ່ງ',
-      delimiter: '',
+      delimiter: ' ',
       just_now: 'ຫາກໍ',
       ago: '{0} ກ່ອນ',
-      in_future: 'ໃນ {0}',
+      in_future: 'ໃນອີກ {0}',
       short: CompactnessOverride.new(
         units: {
           'second' => '{n} ວິ.',
@@ -40,7 +40,7 @@ module SayableDuration
           'year' => '{n} ປ.',
         },
         ago: '{0} ກ່ອນ',
-        in_future: 'ໃນ {0}',
+        in_future: 'ໃນອີກ {0}',
       ),
       compact: CompactnessOverride.new(
         units: {
@@ -49,13 +49,13 @@ module SayableDuration
           'hour' => '{n}h',
           'day' => '{n}d',
           'week' => '{n}w',
-          'month' => '{n}m',
+          'month' => '{n}mo',
           'year' => '{n}y',
         },
         delimiter: '',
         half: '{n}½',
         ago: '{0} ກ່ອນ',
-        in_future: 'ໃນ {0}',
+        in_future: 'ໃນອີກ {0}',
       ),
     )
   end

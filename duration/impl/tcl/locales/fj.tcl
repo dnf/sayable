@@ -24,7 +24,7 @@ proc locale_duration_fj {} {
         month "{n} na vula" \
         year "{n} na yabaki" \
     ]
-    set half "{n} kei na levu ni wasei"
+    set half "{0} kei na veimama"
     set delimiter {, }
     set just_now {edaidai ga}
     set ago "{0} sa oti"
@@ -52,6 +52,7 @@ proc locale_duration_fj {} {
             month "{n}mo" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
         ago "{0} sa oti" \
         in_future "ena {0}" \

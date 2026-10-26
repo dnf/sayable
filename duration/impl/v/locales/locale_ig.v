@@ -19,13 +19,13 @@ fn plural_ig(n int) PluralCategory {
 pub const locale_ig = DurationLocale{
 	code: 'ig'
 	plural: plural_ig
-	second: simple_unit('{n} sekọnd')
-	minute: simple_unit('{n} nkeji')
-	hour: simple_unit('{n} awa')
-	day: simple_unit('{n} ụbọchị')
-	week: simple_unit('{n} izu')
-	month: simple_unit('{n} ọnwa')
-	year: simple_unit('{n} afọ')
+	second: simple_unit('sekọnd {n}')
+	minute: simple_unit('nkeji {n}')
+	hour: simple_unit('awa {n}')
+	day: simple_unit('ụbọchị {n}')
+	week: simple_unit('izu {n}')
+	month: simple_unit('ọnwa {n}')
+	year: simple_unit('afọ {n}')
 	half: '{0} na ọkara'
 	delimiter: ', '
 	just_now: 'ugbu a'
@@ -33,19 +33,19 @@ pub const locale_ig = DurationLocale{
 	in_future: 'na {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('{n} sek.')
+		second: simple_unit('sek. {n}')
 		has_second: true
-		minute: simple_unit('{n} nkeji')
+		minute: simple_unit('nkeji {n}')
 		has_minute: true
-		hour: simple_unit('{n} awa')
+		hour: simple_unit('awa {n}')
 		has_hour: true
-		day: simple_unit('{n} ụbọchị')
+		day: simple_unit('ụbọchị {n}')
 		has_day: true
-		week: simple_unit('{n} izu')
+		week: simple_unit('izu {n}')
 		has_week: true
-		month: simple_unit('{n} ọnwa')
+		month: simple_unit('ọnwa {n}')
 		has_month: true
-		year: simple_unit('{n} afọ')
+		year: simple_unit('afọ {n}')
 		has_year: true
 		ago: '{0} gara aga'
 		has_ago: true

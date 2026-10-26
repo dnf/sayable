@@ -21,7 +21,7 @@ locale_kri <- list(
     month = "{n} mont",
     year = "{n} ia"
   ),
-  half = "{n} na af",
+  half = "{0} ɛn af",
   delimiter = ", ",
   just_now = "jos naw",
   ago = "{0} bak",
@@ -49,6 +49,7 @@ locale_kri <- list(
       month = "{n}m",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} bak",
     in_future = "na {0}"

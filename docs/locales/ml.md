@@ -4,7 +4,15 @@
 
 [Edit source](../../locales/ml.json)
 
-Plural rule: `one_other_zero_one` (categories: one, other)
+Plural rule: `one_other` (categories: one, other)
+
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ml.json](../../locales/ml.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): To get the fused Malayalam forms (മൂന്നര 3:30, മൂന്നേകാൽ 3:15, മൂന്നേമുക്കാൽ 3:45) the hours list now holds the combining stems without the final chandrakkala (മൂന്ന instead of മൂന്ന്) and the patterns add it back ('{h}് മണി' -> 'മൂന്ന് മണി'). Output is correct Malayalam, but the hours entries are stems, not standalone words (precedent: ko uses attributive '한/두/세'). Other minutes are additive 'മൂന്ന് മണി പത്ത് മിനിറ്റ്' (no subtractive forms; digital-style additive reading is the common spoken form). Compromise: 1:00 renders 'ഒന്ന് മണി' rather than the more idiomatic 'ഒരു മണി', because 1:30 needs the ഒന്ന stem for 'ഒന്നര'.
 
 ## Age
 
@@ -29,9 +37,9 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 | 2 years, 1 month  | 2 വയസ്സ്, 1 മാസം     | 2 വർഷം, 1 മാസം  | 2 വ1 മാ   |
 | 2 years, 6 months | 2 വയസ്സ്, 6 മാസങ്ങൾ  | 2 വർഷം, 6 മാസം  | 2 വ6 മാ   |
 | 3 years           | 3 വയസ്സ്             | 3 വർഷം          | 3 വ       |
-| 3½ years          | 3 വയസ്സ് ര           | 3 വർഷം ര        | 3½ വ      |
+| 3½ years          | 3½ വയസ്സ്            | 3½ വർഷം         | 3½ വ      |
 | 5 years           | 5 വയസ്സ്             | 5 വർഷം          | 5 വ       |
-| 5½ years          | 5 വയസ്സ് ര           | 5 വർഷം ര        | 5½ വ      |
+| 5½ years          | 5½ വയസ്സ്            | 5½ വർഷം         | 5½ വ      |
 | 7 years           | 7 വയസ്സ്             | 7 വർഷം          | 7 വ       |
 | 10 years          | 10 വയസ്സ്            | 10 വർഷം         | 10 വ      |
 | 18 years          | 18 വയസ്സ്            | 18 വർഷം         | 18 വ      |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | മറ്റന്നാൾ        | 17/3    |
 | Day before yesterday | മിനിഞ്ഞാന്ന്     | 13/3    |
 | This Thursday (+5)   | ഈ വ്യാഴാഴ്ച      | 20/3    |
-| Last Monday (-4)     | കഴിഞ്ഞ ചൊവ്വാഴ്ച | 11/3    |
-| Next Wednesday (+12) | അടുത്ത വ്യാഴാഴ്ച | 27/3    |
-| Same month (+20)     | 4 ഏപ്രിൽ         | 4/4     |
+| Last Tuesday (-4)    | കഴിഞ്ഞ ചൊവ്വാഴ്ച | 11/3    |
+| Next Thursday (+12)  | അടുത്ത വ്യാഴാഴ്ച | 27/3    |
+| Same year (+20)      | 4 ഏപ്രിൽ         | 4/4     |
 | Different year       | 10 ജനുവരി 2026   | 10/1/26 |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 മിനിറ്റുകൾ                | 5 മി॰           | 5 മി      |
 | 45 minutes            | 45 മിനിറ്റുകൾ               | 45 മി॰          | 45 മി     |
 | 1 hour                | 1 മണിക്കൂർ                  | 1 മ॰            | 1 മ       |
-| 1½ hours              | 1 മണിക്കൂറുകൾ ര             | 1 മ॰ ര          | 1½ മ      |
+| 1½ hours              | 1½ മണിക്കൂറുകൾ              | 1½ മ॰           | 1½ മ      |
 | 3 hours               | 3 മണിക്കൂറുകൾ               | 3 മ॰            | 3 മ       |
 | 6 hours               | 6 മണിക്കൂറുകൾ               | 6 മ॰            | 6 മ       |
 | 1 day                 | 1 ദിവസം                     | 1 ദിവസം         | 1 ദി      |
-| 1½ days               | 1 ദിവസങ്ങൾ ര                | 1 ദിവസം ര       | 1½ ദി     |
+| 1½ days               | 1½ ദിവസങ്ങൾ                 | 1½ ദിവസം        | 1½ ദി     |
 | 3 days                | 3 ദിവസങ്ങൾ                  | 3 ദിവസം         | 3 ദി      |
 | 1 week                | 1 ആഴ്ച                      | 1 ആഴ്ച          | 1 ആ       |
 | 2 weeks, 3 days       | 2 ആഴ്ചകൾ, 3 ദിവസങ്ങൾ        | 2 ആഴ്ച, 3 ദിവസം | 2 ആ3 ദി   |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal       | Short    | Compact |
-| --------------- | ------------ | -------- | ------- |
-| Midnight        | അർദ്ധരാത്രി  | 12:00 AM | 12:00a  |
-| 1:00 AM         | ഒന്ന്:00     | 1:00 AM  | 1:00a   |
-| 5 past 9        | ഒമ്പത്:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | പത്ത്:15     | 10:15 AM | 10:15a  |
-| Half past 11    | പതിനൊന്ന്:30 | 11:30 AM | 11:30a  |
-| Noon            | ഉച്ച         | 12:00 PM | 12:00p  |
-| Quarter to 3    | രണ്ട്:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | അഞ്ച്:55     | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | എട്ട്:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | പത്ത്:30     | 10:30 PM | 10:30p  |
-| 11:58 PM        | അർദ്ധരാത്രി  | 11:58 PM | 11:58p  |
+| Time            | Normal                         | Short    | Compact |
+| --------------- | ------------------------------ | -------- | ------- |
+| Midnight        | അർദ്ധരാത്രി                    | 12:00 AM | 12:00a  |
+| 1:00 AM         | ഒന്ന് മണി                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | ഒമ്പത് മണി അഞ്ച് മിനിറ്റ്      | 9:05 AM  | 9:05a   |
+| Quarter past 10 | പത്തേകാൽ                       | 10:15 AM | 10:15a  |
+| Half past 11    | പതിനൊന്നര                      | 11:30 AM | 11:30a  |
+| Noon            | ഉച്ച                           | 12:00 PM | 12:00p  |
+| Quarter to 3    | രണ്ടേമുക്കാൽ                   | 2:45 PM  | 2:45p   |
+| 5 to 6          | അഞ്ച് മണി അമ്പത്തഞ്ച് മിനിറ്റ് | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | എട്ട് മണി                      | 8:00 PM  | 8:00p   |
+| 10:30 PM        | പത്തര                          | 10:30 PM | 10:30p  |
+| 11:58 PM        | അർദ്ധരാത്രി                    | 11:58 PM | 11:58p  |

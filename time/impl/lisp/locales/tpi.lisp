@@ -20,7 +20,7 @@
     :hours (list "twelp" "wan" "tu" "tri" "foa" "faiv" "sikis" "seven" "et" "nain" "ten" "eleven")
     :midnight "biknait"
     :noon "belo"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} kilok") (cons 5 "faiv minit pas {h}") (cons 10 "ten minit pas {h}") (cons 15 "kwata pas {h}") (cons 20 "twenti minit pas {h}") (cons 25 "twenti faiv minit pas {h}") (cons 30 "hap pas {h}") (cons 35 "teti faiv minit pas {h}") (cons 40 "foti minit pas {h}") (cons 45 "foti faiv minit pas {h}") (cons 50 "fifti minit pas {h}") (cons 55 "fifti faiv minit pas {h}")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

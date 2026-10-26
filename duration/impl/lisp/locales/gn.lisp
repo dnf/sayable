@@ -17,9 +17,9 @@
   (make-duration-locale
    :code "gn"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second "{n} aravo'i")
-               (cons :minute "{n} aravo")
-               (cons :hour "{n} aravo guasu")
+   :units (list (cons :second "{n} aravo'ive")
+               (cons :minute "{n} aravo'i")
+               (cons :hour "{n} aravo")
                (cons :day "{n} ára")
                (cons :week "{n} arapokõindy")
                (cons :month "{n} jasy")
@@ -29,9 +29,9 @@
    :just-now "ko'ágã"
    :ago "{0} ohasava'ekue"
    :in-future "{0} rire"
-   :short-units (list (cons :second "{n} ara'i")
-                       (cons :minute "{n} ara")
-                       (cons :hour "{n} ara g")
+   :short-units (list (cons :second "{n} aravo'ive")
+                       (cons :minute "{n} aravo'i")
+                       (cons :hour "{n} aravo")
                        (cons :day "{n} ára")
                        (cons :week "{n} ara")
                        (cons :month "{n} jas")

@@ -15,7 +15,7 @@ st_hours('pt', ['doze', 'uma', 'duas', 'três', 'quatro', 'cinco', 'seis', 'sete
 st_midnight('pt', 'meia-noite').
 st_noon('pt', 'meio-dia').
 
-st_pattern('pt', 0, '{h} horas').
+st_pattern('pt', 0, '{h} em ponto').
 st_pattern('pt', 5, '{h} e cinco').
 st_pattern('pt', 10, '{h} e dez').
 st_pattern('pt', 15, '{h} e um quarto').

@@ -16,7 +16,7 @@
    :plural (fn [n] (if (== n 1) :one :other))
    :second {:type :simple :form "{n} سیکنڈ"}
    :minute {:type :simple :form "{n} منٹ"}
-   :hour {:type :simple :form "{n} گھنٹہ"}
+   :hour {:type :pluralized :forms {:one "{n} گھنٹہ" :other "{n} گھنٹے"}}
    :day {:type :pluralized :forms {:one "{n} دن" :other "{n} دن"}}
    :week {:type :pluralized :forms {:one "{n} ہفتہ" :other "{n} ہفتے"}}
    :month {:type :pluralized :forms {:one "{n} مہینہ" :other "{n} مہینے"}}

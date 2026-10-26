@@ -20,7 +20,7 @@ bem
 	locale units: (Dictionary newFromPairs: {
 		'second'. (Dictionary newFromPairs: { #one. 'isekondi {n}'. #other. 'amasekondi {n}' }).
 		'minute'. (Dictionary newFromPairs: { #one. 'iminiti {n}'. #other. 'amaminiti {n}' }).
-		'hour'. (Dictionary newFromPairs: { #one. 'insa {n}'. #other. 'amanso {n}' }).
+		'hour'. (Dictionary newFromPairs: { #one. 'insa {n}'. #other. 'insa {n}' }).
 		'day'. (Dictionary newFromPairs: { #one. 'ubushiku {n}'. #other. 'inshiku {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'umulungu {n}'. #other. 'imilungu {n}' }).
 		'month'. (Dictionary newFromPairs: { #one. 'umweshi {n}'. #other. 'imyeshi {n}' }).

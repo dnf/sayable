@@ -21,7 +21,7 @@
    :week {:type :simple :form "{n} ka semana"}
    :month {:type :simple :form "{n} ka bulan"}
    :year {:type :simple :form "{n} ka tuig"}
-   :half "{n}½"
+   :half "{0} ug tunga"
    :delimiter ", "
    :just-now "karon lang"
    :ago "{0} ang milabay"

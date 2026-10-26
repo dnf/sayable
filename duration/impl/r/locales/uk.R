@@ -21,13 +21,13 @@ locale_uk <- list(
   code = "uk",
   plural = plural,
   units = list(
-    second = list(one = "{n} секунда", few = "{n} секунди", many = "{n} секунд", other = "{n} секунд"),
-    minute = list(one = "{n} хвилина", few = "{n} хвилини", many = "{n} хвилин", other = "{n} хвилин"),
-    hour = list(one = "{n} година", few = "{n} години", many = "{n} годин", other = "{n} годин"),
-    day = list(one = "{n} день", few = "{n} дні", many = "{n} днів", other = "{n} днів"),
-    week = list(one = "{n} тиждень", few = "{n} тижні", many = "{n} тижнів", other = "{n} тижнів"),
-    month = list(one = "{n} місяць", few = "{n} місяці", many = "{n} місяців", other = "{n} місяців"),
-    year = list(one = "{n} рік", few = "{n} роки", many = "{n} років", other = "{n} років")
+    second = list(one = "{n} секунда", few = "{n} секунди", many = "{n} секунд", other = "{n} секунди"),
+    minute = list(one = "{n} хвилина", few = "{n} хвилини", many = "{n} хвилин", other = "{n} хвилини"),
+    hour = list(one = "{n} година", few = "{n} години", many = "{n} годин", other = "{n} години"),
+    day = list(one = "{n} день", few = "{n} дні", many = "{n} днів", other = "{n} дня"),
+    week = list(one = "{n} тиждень", few = "{n} тижні", many = "{n} тижнів", other = "{n} тижня"),
+    month = list(one = "{n} місяць", few = "{n} місяці", many = "{n} місяців", other = "{n} місяця"),
+    year = list(one = "{n} рік", few = "{n} роки", many = "{n} років", other = "{n} року")
   ),
   half = "{n} з половиною",
   delimiter = ", ",

@@ -11,10 +11,10 @@
 
 function loc = locale_kpe()
   loc.code = 'kpe';
-  loc.clock.hours = {'puu lɔŋ', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ'};
+  loc.clock.hours = {'puu da feere', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ'};
   loc.clock.midnight = 'kpindi kɔlɛ';
   loc.clock.noon = 'tili-ma';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'awa {h}', "p5", 'awa {h} da miniti lɔɔlu', "p10", 'awa {h} da miniti puu', "p15", 'awa {h} da miniti puu da lɔɔlu', "p20", 'awa {h} da miniti puu feere', "p25", 'awa {h} da miniti puu feere da lɔɔlu', "p30", 'awa {h} da miniti puu sawa', "p35", 'awa {h} da miniti puu sawa da lɔɔlu', "p40", 'awa {h} da miniti puu naŋ', "p45", 'awa {h} da miniti puu naŋ da lɔɔlu', "p50", 'awa {h} da miniti puu lɔɔlu', "p55", 'awa {h} da miniti puu lɔɔlu da lɔɔlu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

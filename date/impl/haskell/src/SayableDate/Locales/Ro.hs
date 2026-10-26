@@ -31,13 +31,13 @@ locale = DateLocale
         , "decembrie"
         ]
     , localeWeekdays =
-        [ "duminică"
-        , "luni"
-        , "marți"
-        , "miercuri"
-        , "joi"
-        , "vineri"
-        , "sâmbătă"
+        [ "duminica"
+        , "lunea"
+        , "marțea"
+        , "miercurea"
+        , "joia"
+        , "vinerea"
+        , "sâmbăta"
         ]
     , localeDayFormat = "{n}"
     , localeDayFormatExceptions = []
@@ -48,7 +48,7 @@ locale = DateLocale
     , localeYesterday = "ieri"
     , localeDayAfterTomorrow = Just "poimâine"
     , localeDayBeforeYesterday = Just "alaltăieri"
-    , localeThisWeekday = Just "această {weekday}"
+    , localeThisWeekday = Just "{weekday} aceasta"
     , localeNextWeekday = Just "{weekday} viitoare"
     , localeLastWeekday = Just "{weekday} trecută"
     , localeMonthsInDate = Just $

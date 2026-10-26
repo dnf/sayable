@@ -31,7 +31,7 @@ locale_ak <- list(
       second = "sɛkɛnd {n}",
       minute = "sema {n}",
       hour = "dɔnhwere {n}",
-      day = "nna {n}",
+      day = list(one = "da {n}", other = "nna {n}"),
       week = list(one = "dapɛn {n}", other = "nnapɛn {n}"),
       month = list(one = "bosome {n}", other = "abosome {n}"),
       year = list(one = "afe {n}", other = "mfe {n}")
@@ -44,7 +44,7 @@ locale_ak <- list(
       second = "sɛk {n}",
       minute = "sem {n}",
       hour = "dɔn {n}",
-      day = "nna {n}",
+      day = list(one = "da {n}", other = "nna {n}"),
       week = list(one = "dapɛn {n}", other = "nnapɛn {n}"),
       month = list(one = "bos {n}", other = "abos {n}"),
       year = list(one = "afe {n}", other = "mfe {n}")

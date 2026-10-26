@@ -33,7 +33,7 @@ locale = Locale
       [ (One, "{n} any")
       , (Other, "{n} anys")
       ]
-    , localeHalf = "{n} i mig"
+    , localeHalf = "{0} i mig"
     , localeDelimiter = ", "
     , localeJustBorn = "Nounat"
     , localeStages = Stages

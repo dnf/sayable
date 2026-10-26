@@ -17,7 +17,7 @@ const StTimeLocale st_locale_yao = {
         { "likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo" },
         "pakati pa usiku",
         "pakati pa lisiku",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "saa {h}", "saa {h} na nsano", "saa {h} na likumi", "saa {h} na likumi na nsano", "saa {h} na makumi gaŵili", "saa {h} na makumi gaŵili na nsano", "saa {h} na nusu", "saa {h} na makumi gatatu na nsano", "saa {h} na makumi ncece", "saa {h} na makumi ncece na nsano", "saa {h} na makumi nsano", "saa {h} na makumi nsano na nsano" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

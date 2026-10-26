@@ -25,6 +25,6 @@
    :delimiter ", "
    :just-now "sisan"
    :ago "{0} bɔlen"
-   :in-future "ka {0}"
-   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "min. {n}"} :hour {:type :simple :form "lɛr. {n}"} :day {:type :simple :form "don {n}"} :week {:type :simple :form "dɔgɔk. {n}"} :month {:type :simple :form "kalo {n}"} :year {:type :simple :form "san {n}"} :half nil :delimiter nil :ago "{0} bɔlen" :in-future "ka {0}"}
-   :compact {:second {:type :simple :form "sek {n}"} :minute {:type :simple :form "min {n}"} :hour {:type :simple :form "lɛr {n}"} :day {:type :simple :form "don {n}"} :week {:type :simple :form "dɔgɔk {n}"} :month {:type :simple :form "kalo {n}"} :year {:type :simple :form "san {n}"} :half "{n}½" :delimiter "" :ago "{0} bɔlen" :in-future "ka {0}"}})
+   :in-future "{0} kɔnɔ"
+   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "min. {n}"} :hour {:type :simple :form "lɛr. {n}"} :day {:type :simple :form "don {n}"} :week {:type :simple :form "dɔgɔk. {n}"} :month {:type :simple :form "kalo {n}"} :year {:type :simple :form "san {n}"} :half nil :delimiter nil :ago "{0} bɔlen" :in-future "{0} kɔnɔ"}
+   :compact {:second {:type :simple :form "sek {n}"} :minute {:type :simple :form "min {n}"} :hour {:type :simple :form "lɛr {n}"} :day {:type :simple :form "don {n}"} :week {:type :simple :form "dɔgɔk {n}"} :month {:type :simple :form "kalo {n}"} :year {:type :simple :form "san {n}"} :half "{n}½" :delimiter "" :ago "{0} bɔlen" :in-future "{0} kɔnɔ"}})

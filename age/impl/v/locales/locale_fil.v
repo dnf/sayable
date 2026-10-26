@@ -31,7 +31,7 @@ pub const locale_fil = AgeLocale{
 	toddler: stage_neutral('Batang paslit')
 	child: stage_neutral('Bata')
 	teenager: stage_neutral('Tinedyer')
-	adult: stage_neutral('Matanda')
+	adult: stage_neutral('Adulto')
 	has_short: true
 	short_override: CompactnessOverride{
 		day: simple_unit('{n} araw')

@@ -28,7 +28,7 @@ const FON = AgeLocale(
         "infant" => StageLabel("Vǐ"),
         "toddler" => StageLabel("Vǐ"),
         "child" => StageLabel("Vǐ"),
-        "teenager" => StageLabel("Nyɔ̌nu"),
+        "teenager" => GenderedStage("Dɔnkpɛvu", "Ɖyɔ̌vǐ"),
         "adult" => StageLabel("Mɛ̌xo"),
     ),
     short_override = CompactnessOverride(

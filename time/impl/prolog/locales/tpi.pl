@@ -15,18 +15,18 @@ st_hours('tpi', ['twelp', 'wan', 'tu', 'tri', 'foa', 'faiv', 'sikis', 'seven', '
 st_midnight('tpi', 'biknait').
 st_noon('tpi', 'belo').
 
-st_pattern('tpi', 0, '{h}:00').
-st_pattern('tpi', 5, '{h}:05').
-st_pattern('tpi', 10, '{h}:10').
-st_pattern('tpi', 15, '{h}:15').
-st_pattern('tpi', 20, '{h}:20').
-st_pattern('tpi', 25, '{h}:25').
-st_pattern('tpi', 30, '{h}:30').
-st_pattern('tpi', 35, '{h}:35').
-st_pattern('tpi', 40, '{h}:40').
-st_pattern('tpi', 45, '{h}:45').
-st_pattern('tpi', 50, '{h}:50').
-st_pattern('tpi', 55, '{h}:55').
+st_pattern('tpi', 0, '{h} kilok').
+st_pattern('tpi', 5, 'faiv minit pas {h}').
+st_pattern('tpi', 10, 'ten minit pas {h}').
+st_pattern('tpi', 15, 'kwata pas {h}').
+st_pattern('tpi', 20, 'twenti minit pas {h}').
+st_pattern('tpi', 25, 'twenti faiv minit pas {h}').
+st_pattern('tpi', 30, 'hap pas {h}').
+st_pattern('tpi', 35, 'teti faiv minit pas {h}').
+st_pattern('tpi', 40, 'foti minit pas {h}').
+st_pattern('tpi', 45, 'foti faiv minit pas {h}').
+st_pattern('tpi', 50, 'fifti minit pas {h}').
+st_pattern('tpi', 55, 'fifti faiv minit pas {h}').
 
 short_st_use24h('tpi', false).
 short_st_format('tpi', '{h}:{mm} {ampm}').

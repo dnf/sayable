@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.SimpleUnit("{n} ހަފްތާ"),
     month: types.SimpleUnit("{n} މަސް"),
     year: types.SimpleUnit("{n} އަހަރު"),
-    half: "{0} ބައި",
+    half: "{n}½",
     delimiter: "، ",
     just_born: "އަލަށް އުފަންވި",
     newborn: types.NeutralStage("އަލަށް އުފަންވި"),

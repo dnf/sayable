@@ -17,10 +17,10 @@
   (make-time-locale
    :code "br"
    :clock (make-clock-config
-    :hours (list "12" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11")
+    :hours (list "daouzek eur" "un eur" "div eur" "teir eur" "peder eur" "pemp eur" "c'hwec'h eur" "seizh eur" "eizh eur" "nav eur" "dek eur" "unnek eur")
     :midnight "hanternoz"
     :noon "kreisteiz"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} ha pemp") (cons 10 "{h} ha dek") (cons 15 "{h} ha kard") (cons 20 "{h} hag ugent") (cons 25 "{h} ha pemp warn-ugent") (cons 30 "{h} hanter") (cons 35 "{next_h} nemet pemp warn-ugent") (cons 40 "{next_h} nemet ugent") (cons 45 "{next_h} nemet kard") (cons 50 "{next_h} nemet dek") (cons 55 "{next_h} nemet pemp")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

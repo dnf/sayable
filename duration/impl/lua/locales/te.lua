@@ -14,15 +14,15 @@ local M = {}
 M.code = "te"
 M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
-    second = "{n} సెకను",
-    minute = "{n} నిమిషం",
-    hour = "{n} గంట",
+    second = { one = "{n} సెకను", other = "{n} సెకన్లు" },
+    minute = { one = "{n} నిమిషం", other = "{n} నిమిషాలు" },
+    hour = { one = "{n} గంట", other = "{n} గంటలు" },
     day = { one = "{n} రోజు", other = "{n} రోజులు" },
     week = { one = "{n} వారం", other = "{n} వారాలు" },
     month = { one = "{n} నెల", other = "{n} నెలలు" },
     year = { one = "{n} సంవత్సరం", other = "{n} సంవత్సరాలు" },
 }
-M.half = "{0}న్నర"
+M.half = "{n}½"
 M.delimiter = ", "
 M.just_now = "ఇప్పుడే"
 M.ago = "{0} క్రితం"

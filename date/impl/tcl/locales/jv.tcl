@@ -21,7 +21,7 @@ proc locale_date_jv {} {
     set tomorrow {sesuk}
     set yesterday {wingi}
     set day_after_tomorrow {embèn}
-    set day_before_yesterday {dhèk wingi}
+    set day_before_yesterday {wingenané}
     set this_weekday "{weekday} iki"
     set next_weekday "{weekday} ngarep"
     set last_weekday "{weekday} wingi"

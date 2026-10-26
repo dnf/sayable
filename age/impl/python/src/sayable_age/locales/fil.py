@@ -31,7 +31,7 @@ FIL = AgeLocale(
         "toddler": "Batang paslit",
         "child": "Bata",
         "teenager": "Tinedyer",
-        "adult": "Matanda",
+        "adult": "Adulto",
     },
     short=CompactnessOverride(
         units={

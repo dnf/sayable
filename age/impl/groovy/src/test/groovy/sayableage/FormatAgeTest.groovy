@@ -20,6 +20,12 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.1
+    @Test
+    void 'null dob returns null'() {
+        assertNull(SayableAge.formatAgeDefault(null, '2025-06-15'))
+    }
+
     // 1.3
     @Test
     void 'empty string returns null'() {
@@ -575,6 +581,12 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- null/edge cases
     // ================================================================
+    // 16.1
+    @Test
+    void 'stage null dob returns null'() {
+        assertNull(SayableAge.formatStageDefault(null, '2025-06-15'))
+    }
+
     // 16.3
     @Test
     void 'stage empty string returns null'() {
@@ -838,7 +850,7 @@ class FormatAgeTest {
                 UnitForms.pluralUnit([(PluralCategory.ONE): "{n} mes", (PluralCategory.OTHER): "{n} meses"]),
                 UnitForms.pluralUnit([(PluralCategory.ONE): "{n} a\u00F1o", (PluralCategory.OTHER): "{n} a\u00F1os"])
             ),
-            '{n} y medio',
+            '{0} y medio',
             ', ',
             "Reci\u00E9n nacido",
             new Stages(
@@ -862,7 +874,7 @@ class FormatAgeTest {
         assertEquals('6 meses', pt.formatAge('2025-01-15', '2025-07-15'))
         assertEquals("2 a\u00F1os, 1 mes", pt.formatAge('2023-06-15', '2025-07-15'))
         assertEquals("2 a\u00F1os, 6 meses", pt.formatAge('2023-06-15', '2025-12-15'))
-        assertEquals("3 y medio a\u00F1os", pt.formatAge('2022-06-15', '2025-12-15'))
+        assertEquals("3 a\u00F1os y medio", pt.formatAge('2022-06-15', '2025-12-15'))
         assertEquals("3 a\u00F1os", pt.formatAge('2022-06-15', '2025-06-15'))
         assertEquals("7 a\u00F1os", pt.formatAge('2018-06-15', '2025-06-15'))
 
@@ -1105,13 +1117,13 @@ class FormatAgeTest {
     void 'Hebrew locale -- dual forms'() {
         def pt = new SayableAge(Locales.HE)
         assertEquals('\u05E8\u05E7 \u05E0\u05D5\u05DC\u05D3', pt.formatAge('2025-06-15', '2025-06-15'))
-        assertEquals('\u05D9\u05D5\u05DD 1', pt.formatAge('2025-06-14', '2025-06-15'))
+        assertEquals('\u05D9\u05D5\u05DD', pt.formatAge('2025-06-14', '2025-06-15'))
         assertEquals('3 \u05D9\u05DE\u05D9\u05DD', pt.formatAge('2025-06-12', '2025-06-15'))
         assertEquals('\u05E9\u05D1\u05D5\u05E2\u05D9\u05D9\u05DD', pt.formatAge('2025-06-01', '2025-06-15'))
         assertEquals('3 \u05E9\u05D1\u05D5\u05E2\u05D5\u05EA', pt.formatAge('2025-05-25', '2025-06-15'))
         assertEquals('6 \u05D7\u05D5\u05D3\u05E9\u05D9\u05DD', pt.formatAge('2025-01-15', '2025-07-15'))
         assertEquals('3 \u05D7\u05D5\u05D3\u05E9\u05D9\u05DD', pt.formatAge('2025-03-15', '2025-06-15'))
-        assertEquals('\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9 1', pt.formatAge('2023-06-15', '2025-07-15'))
+        assertEquals('\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9', pt.formatAge('2023-06-15', '2025-07-15'))
         assertEquals('3 \u05E9\u05E0\u05D9\u05DD \u05D5\u05D7\u05E6\u05D9', pt.formatAge('2022-06-15', '2025-12-15'))
         assertEquals('7 \u05E9\u05E0\u05D9\u05DD', pt.formatAge('2018-06-15', '2025-06-15'))
         assertEquals('\u05E8\u05E7 \u05E0\u05D5\u05DC\u05D3', pt.formatStage('2025-06-15', '2025-06-15', 'm'))
@@ -1153,7 +1165,7 @@ class FormatAgeTest {
         assertEquals('1 hari', pt.formatAge('2025-06-14', '2025-06-15'))
         assertEquals('3 hari', pt.formatAge('2025-06-12', '2025-06-15'))
         assertEquals('6 bulan', pt.formatAge('2025-01-15', '2025-07-15'))
-        assertEquals('3 tahun setengah', pt.formatAge('2022-06-15', '2025-12-15'))
+        assertEquals('3 setengah tahun', pt.formatAge('2022-06-15', '2025-12-15'))
         assertEquals('7 tahun', pt.formatAge('2018-06-15', '2025-06-15'))
     }
 
@@ -1261,7 +1273,7 @@ class FormatAgeTest {
     @Test
     void 'tachelhit 6 is few'() {
         SayableAge f = new SayableAge(Locales.SHI)
-        assertEquals('6 iseggasen d uzgen', f.formatAge('2005-06-08', '2012-06-07'))
+        assertEquals('6 \u2D49\u2D59\u2D33\u2D33\u2D6F\u2D30\u2D59\u2D4F \u2D37 \u2D53\u2D63\u2D33\u2D4F', f.formatAge('2005-06-08', '2012-06-07'))
     }
 
     // ================================================================

@@ -19,7 +19,7 @@ export const gn: DateLocale = {
   dayFormatExceptions: {},
   datePattern: '{day} {month}',
   datePatternWithYear: '{day} {month} {year}',
-  today: 'ko\'ágã',
+  today: 'ko árape',
   tomorrow: 'ko\'ẽrõ',
   yesterday: 'kuehe',
   dayAfterTomorrow: 'ko\'ẽrõ rire',

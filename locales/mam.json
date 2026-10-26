@@ -5,7 +5,7 @@
   "age": {
     "units": {
       "day": "{n} q'ij",
-      "week": "{n} xjaw",
+      "week": "{n} seman",
       "month": "{n} xjaw",
       "year": "{n} ab'q'ii"
     },
@@ -23,7 +23,7 @@
     "short": {
       "units": {
         "day": "{n} q'ij",
-        "week": "{n} xjaw",
+        "week": "{n} seman",
         "month": "{n} xjaw",
         "year": "{n} ab'."
       }
@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -110,7 +111,7 @@
       "minute": "{n} minuto",
       "hour": "{n} hora",
       "day": "{n} q'ij",
-      "week": "{n} xjaw",
+      "week": "{n} seman",
       "month": "{n} xjaw",
       "year": "{n} ab'q'ii"
     },
@@ -125,7 +126,7 @@
         "minute": "{n} min.",
         "hour": "{n} hora",
         "day": "{n} q'ij",
-        "week": "{n} xjaw",
+        "week": "{n} seman",
         "month": "{n} xjaw",
         "year": "{n} ab'."
       },
@@ -144,7 +145,8 @@
       },
       "delimiter": "",
       "ago": "{0} chi'j",
-      "inFuture": "tu'n {0}"
+      "inFuture": "tu'n {0}",
+      "half": "{n}½"
     }
   },
   "time": {
@@ -159,25 +161,25 @@
         "qaq",
         "wuq",
         "wajxaq",
-        "b'alaj",
+        "b'elaj",
         "laj",
         "junlaj"
       ],
       "midnight": "nik' aq'b'il",
       "noon": "nik' q'ij",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} or",
+        "5": "{h} or tuk' jwe' minut",
+        "10": "{h} or tuk' laj minut",
+        "15": "{h} or tuk' o'laj minut",
+        "20": "{h} or tuk' winqan minut",
+        "25": "{h} or tuk' jwe' toj ka'wnaq minut",
+        "30": "{h} or tuk' nik'",
+        "35": "{h} or tuk' o'laj toj ka'wnaq minut",
+        "40": "{h} or tuk' ka'wnaq minut",
+        "45": "{h} or tuk' jwe' toj oxk'al minut",
+        "50": "{h} or tuk' laj toj oxk'al minut",
+        "55": "{h} or tuk' o'laj toj oxk'al minut"
       }
     },
     "short": {
@@ -200,5 +202,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "No past/to idiom known to me, so used '<hour> or tuk' <minutes> minut' (or = hour, from Spanish hora; tuk' = with; minut = minute loan), '{h} or tuk' nik'' for half (reusing the locale's existing half word). Minutes use Mam vigesimal numerals (o'laj 15, winqan 20, jwe' toj ka'wnaq 25, laj toj ka'wnaq 30 unused, o'laj toj ka'wnaq 35, ka'wnaq 40, jwe' toj oxk'al 45, laj toj oxk'al 50, o'laj toj oxk'al 55). Doubts: the hour word 'or', the connective 'tuk'', whether 'nik'' really means half (vs 'nikyjin'/'mij'), and whether speakers use these numerals rather than Spanish ones. Needs a native check."
+    }
+  ]
 }

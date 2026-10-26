@@ -15,8 +15,8 @@ locale_ca <- list(
   weekdays = c("diumenge", "dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte"),
   day_format = "{n}",
   day_format_exceptions = list(),
-  date_pattern = "{day} de {month}",
-  date_pattern_with_year = "{day} de {month} de {year}",
+  date_pattern = "{day} {month}",
+  date_pattern_with_year = "{day} {month} de {year}",
   today = "avui",
   tomorrow = "demà",
   yesterday = "ahir",
@@ -25,12 +25,13 @@ locale_ca <- list(
   this_weekday = "aquest {weekday}",
   next_weekday = "{weekday} que ve",
   last_weekday = "{weekday} passat",
+  months_in_date = c("de gener", "de febrer", "de març", "d'abril", "de maig", "de juny", "de juliol", "d'agost", "de setembre", "d'octubre", "de novembre", "de desembre"),
   short = list(
     months = c("gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des"),
     weekdays = c("dg", "dl", "dt", "dc", "dj", "dv", "ds"),
     day_format = "{n}",
     date_pattern = "{day} {month}",
-    date_pattern_with_year = "{day} {month} {year}"
+    date_pattern_with_year = "{day} {month} de {year}"
   ),
   compact = list(
     date_pattern = "{d}/{m}",

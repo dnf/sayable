@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "ru",
-        clock = #clock_config{hours = ["двенадцать", "час", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать"], midnight = "полночь", noon = "полдень", patterns = [{0, "{h} часа"}, {5, "пять po {h}"}, {10, "десять po {h}"}, {15, "пятнадцать po {h}"}, {20, "двадцать po {h}"}, {25, "двадцать пять po {h}"}, {30, "тридцать po {h}"}, {35, "двадцать пять do {next_h}"}, {40, "двадцать do {next_h}"}, {45, "пятнадцать do {next_h}"}, {50, "десять do {next_h}"}, {55, "пять do {next_h}"}]},
+        clock = #clock_config{hours = ["двенадцать", "час", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать"], midnight = "полночь", noon = "полдень", patterns = [{0, "ровно {h}"}, {5, "{h} ноль пять"}, {10, "{h} десять"}, {15, "{h} пятнадцать"}, {20, "{h} двадцать"}, {25, "{h} двадцать пять"}, {30, "{h} тридцать"}, {35, "без двадцати пяти {next_h}"}, {40, "без двадцати {next_h}"}, {45, "без четверти {next_h}"}, {50, "без десяти {next_h}"}, {55, "без пяти {next_h}"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
     }.

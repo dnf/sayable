@@ -25,7 +25,7 @@ M.just_born = "Recén nacido"
 M.stages = {
     newborn = { m = "Recén nacido", f = "Recén nacida" },
     infant = "Bebé",
-    toddler = "Neno",
+    toddler = { m = "Neno pequeno", f = "Nena pequena" },
     child = { m = "Neno", f = "Nena" },
     teenager = "Adolescente",
     adult = { m = "Adulto", f = "Adulta" },

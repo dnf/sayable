@@ -22,7 +22,7 @@ final ca = AgeLocale(
   week: pluralUnit({PluralCategory.one: '{n} setmana', PluralCategory.other: '{n} setmanes'}),
   month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} mesos'}),
   year: pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
-  half: '{n} i mig',
+  half: '{0} i mig',
   delimiter: ', ',
   justBorn: 'Nounat',
   newborn: stageGendered('Nounat', 'Nounada'),

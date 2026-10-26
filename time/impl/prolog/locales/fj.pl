@@ -15,18 +15,18 @@ st_hours('fj', ['tini ka rua', 'dua', 'rua', 'tolu', 'vā', 'lima', 'ono', 'vitu
 st_midnight('fj', 'bogi levu').
 st_noon('fj', 'sigalevu').
 
-st_pattern('fj', 0, '{h}:00').
-st_pattern('fj', 5, '{h}:05').
-st_pattern('fj', 10, '{h}:10').
-st_pattern('fj', 15, '{h}:15').
-st_pattern('fj', 20, '{h}:20').
-st_pattern('fj', 25, '{h}:25').
-st_pattern('fj', 30, '{h}:30').
-st_pattern('fj', 35, '{h}:35').
-st_pattern('fj', 40, '{h}:40').
-st_pattern('fj', 45, '{h}:45').
-st_pattern('fj', 50, '{h}:50').
-st_pattern('fj', 55, '{h}:55').
+st_pattern('fj', 0, '{h} na kaloko').
+st_pattern('fj', 5, '{h} na kaloko ka lima na miniti').
+st_pattern('fj', 10, '{h} na kaloko ka tini na miniti').
+st_pattern('fj', 15, '{h} na kaloko ka tini ka lima na miniti').
+st_pattern('fj', 20, '{h} na kaloko ka ruasagavulu na miniti').
+st_pattern('fj', 25, '{h} na kaloko ka ruasagavulu ka lima na miniti').
+st_pattern('fj', 30, '{h} na kaloko ka tolusagavulu na miniti').
+st_pattern('fj', 35, '{h} na kaloko ka tolusagavulu ka lima na miniti').
+st_pattern('fj', 40, '{h} na kaloko ka vāsagavulu na miniti').
+st_pattern('fj', 45, '{h} na kaloko ka vāsagavulu ka lima na miniti').
+st_pattern('fj', 50, '{h} na kaloko ka limasagavulu na miniti').
+st_pattern('fj', 55, '{h} na kaloko ka limasagavulu ka lima na miniti').
 
 short_st_use24h('fj', false).
 short_st_format('fj', '{h}:{mm} {ampm}').

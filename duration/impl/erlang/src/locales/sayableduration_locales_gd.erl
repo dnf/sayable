@@ -19,7 +19,7 @@ locale() ->
         plural = fun(N) when N =:= 1; N =:= 11 -> one; (N) when N =:= 2; N =:= 12 -> two; (N) when N >= 3, N =< 10 -> few; (N) when N >= 13, N =< 19 -> few; (_) -> other end,
         second = {pluralized, [{one, "{n} diog"}, {two, "{n} dhiog"}, {few, "{n} diogan"}, {other, "{n} diog"}]},
         minute = {pluralized, [{one, "{n} mhionaid"}, {two, "{n} mhionaid"}, {few, "{n} mionaidean"}, {other, "{n} mionaid"}]},
-        hour = {pluralized, [{one, "{n} uair"}, {two, "{n} uair"}, {few, "{n} uairean"}, {other, "{n} uair"}]},
+        hour = {pluralized, [{one, "{n} uair a thìde"}, {two, "{n} uair a thìde"}, {few, "{n} uairean a thìde"}, {other, "{n} uair a thìde"}]},
         day = {pluralized, [{one, "{n} latha"}, {two, "{n} latha"}, {few, "{n} làithean"}, {other, "{n} latha"}]},
         week = {pluralized, [{one, "{n} sheachdain"}, {two, "{n} sheachdain"}, {few, "{n} seachdainean"}, {other, "{n} seachdain"}]},
         month = {pluralized, [{one, "{n} mhìos"}, {two, "{n} mhìos"}, {few, "{n} mìosan"}, {other, "{n} mìos"}]},

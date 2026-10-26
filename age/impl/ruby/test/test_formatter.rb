@@ -701,7 +701,7 @@ class TestFormatter < Minitest::Test
         'month' => { one: '{n} mes', other: '{n} meses' },
         'year' => { one: '{n} año', other: '{n} años' }
       },
-      half: '{n} y medio',
+      half: '{0} y medio',
       delimiter: ', ',
       just_born: 'Recién nacido',
       stages: {
@@ -725,7 +725,7 @@ class TestFormatter < Minitest::Test
     assert_equal '6 meses', pt.format_age('2025-01-15', '2025-07-15')
     assert_equal '2 años, 1 mes', pt.format_age('2023-06-15', '2025-07-15')
     assert_equal '2 años, 6 meses', pt.format_age('2023-06-15', '2025-12-15')
-    assert_equal '3 y medio años', pt.format_age('2022-06-15', '2025-12-15')
+    assert_equal '3 años y medio', pt.format_age('2022-06-15', '2025-12-15')
     assert_equal '3 años', pt.format_age('2022-06-15', '2025-06-15')
     assert_equal '7 años', pt.format_age('2018-06-15', '2025-06-15')
 
@@ -893,7 +893,7 @@ class TestFormatter < Minitest::Test
   # 29.2
   def test_29_2_he_one_day
     pt = SayableAge::Formatter.new(SayableAge::Locales::HE)
-    assert_equal 'יום 1', pt.format_age('2025-06-14', '2025-06-15')
+    assert_equal 'יום', pt.format_age('2025-06-14', '2025-06-15')
   end
 
   # 29.3
@@ -929,7 +929,7 @@ class TestFormatter < Minitest::Test
   # 29.8
   def test_29_8_he_two_years_dual_one_month
     pt = SayableAge::Formatter.new(SayableAge::Locales::HE)
-    assert_equal 'שנתיים, חודש 1', pt.format_age('2023-06-15', '2025-07-15')
+    assert_equal 'שנתיים, חודש', pt.format_age('2023-06-15', '2025-07-15')
   end
 
   # 29.9
@@ -1072,7 +1072,7 @@ class TestFormatter < Minitest::Test
 
   def test_29_32_id_half_years
     pt = SayableAge::Formatter.new(SayableAge::Locales::ID)
-    assert_equal '3 tahun setengah', pt.format_age('2022-06-15', '2025-12-15')
+    assert_equal '3 setengah tahun', pt.format_age('2022-06-15', '2025-12-15')
   end
 
   def test_29_33_id_seven_years
@@ -1183,7 +1183,7 @@ class TestFormatter < Minitest::Test
   # 32.3
   def test_32_3_shi_six_few
     pt = SayableAge::Formatter.new(SayableAge::Locales::SHI)
-    assert_equal '6 iseggasen d uzgen', pt.format_age('2005-06-08', '2012-06-07')
+    assert_equal '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', pt.format_age('2005-06-08', '2012-06-07')
   end
 
   # ================================================================

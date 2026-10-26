@@ -54,6 +54,7 @@ final shn = DurationLocale(
       'month': simpleUnit('{n}mo'),
       'year': simpleUnit('{n}y'),
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} ပူၼ်ႉမႃး',
     inFuture: 'ထႅင်ႈ {0}',

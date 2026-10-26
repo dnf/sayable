@@ -15,10 +15,10 @@ function plural_ay([int]$n) {
 
 function locale_ay {
     $units = @{
-        day = 'uru {n}'
-        week = 'simana {n}'
-        month = 'phaxsi {n}'
-        year = 'mara {n}'
+        day = '{n} uru'
+        week = '{n} simana'
+        month = '{n} phaxsi'
+        year = '{n} mara'
     }
     $half = '{0} chika'
     $delimiter = ', '
@@ -46,6 +46,7 @@ function locale_ay {
             month = '{n}m'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
     }
     return @{

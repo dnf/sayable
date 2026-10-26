@@ -25,9 +25,9 @@ sq
 	}).
 	locale half: '{0} e gjysmë'.
 	locale delimiter: ', '.
-	locale justBorn: 'Sapolindur'.
+	locale justBorn: 'I sapolindur'.
 	locale stages: (Dictionary newFromPairs: {
-		#newborn. (Dictionary newFromPairs: { #m. 'Sapolindur'. #f. 'Sapolindure' }).
+		#newborn. (Dictionary newFromPairs: { #m. 'I sapolindur'. #f. 'E sapolindur' }).
 		#infant. 'Foshnjë'.
 		#toddler. (Dictionary newFromPairs: { #m. 'Fëmijë i vogël'. #f. 'Fëmijë e vogël' }).
 		#child. 'Fëmijë'.

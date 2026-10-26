@@ -26,7 +26,7 @@ pub const locale_ti = DateLocale{
 	has_day_after_tomorrow: true
 	day_before_yesterday: 'ቅድሚ ትማሊ'
 	has_day_before_yesterday: true
-	this_weekday: 'እዛ {weekday}'
+	this_weekday: 'እዚ {weekday}'
 	has_this_weekday: true
 	next_weekday: 'ዝመጽእ {weekday}'
 	has_next_weekday: true

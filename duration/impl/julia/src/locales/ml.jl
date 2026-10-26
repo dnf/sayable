@@ -13,7 +13,7 @@
 
 const ML = DurationLocale(
     code = "ml",
-    plural = n -> n in (0, 1) ? "one" : "other",
+    plural = n -> n == 1 ? "one" : "other",
     units = Dict(
         "second" => Dict("one" => "{n} സെക്കൻഡ്", "other" => "{n} സെക്കൻഡുകൾ"),
         "minute" => Dict("one" => "{n} മിനിറ്റ്", "other" => "{n} മിനിറ്റുകൾ"),
@@ -23,7 +23,7 @@ const ML = DurationLocale(
         "month" => Dict("one" => "{n} മാസം", "other" => "{n} മാസങ്ങൾ"),
         "year" => Dict("one" => "{n} വർഷം", "other" => "{n} വർഷങ്ങൾ"),
     ),
-    half = "{0} ര",
+    half = "{n}½",
     delimiter = ", ",
     just_now = "ഇപ്പോൾ",
     ago = "{0} മുമ്പ്",

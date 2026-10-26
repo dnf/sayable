@@ -30,7 +30,7 @@ const SduDurationLocale sdu_locale_sv = {
     },
     "{n}½", ", ",
     "just nu",
-    "{0} sedan", "om {0}",
-    true, { true, { "{n} s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tim", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} v", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mån", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} år", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} sedan", true, "om {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}v", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}å", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} sedan", true, "om {0}" }
+    "för {0} sedan", "om {0}",
+    true, { true, { "{n} s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tim", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} v", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mån", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} år", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "för {0} sedan", true, "om {0}" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}v", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}å", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "för {0} sedan", true, "om {0}" }
 };

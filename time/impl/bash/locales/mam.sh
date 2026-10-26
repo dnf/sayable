@@ -10,21 +10,21 @@
 # Source: locales/mam.json
 
 _sayabletime_locale_mam() {
-    _clock_hours=('kab'\''laj' 'jun' 'kab'\''' 'oxe' 'kyaje' 'jwe'\''' 'qaq' 'wuq' 'wajxaq' 'b'\''alaj' 'laj' 'junlaj')
+    _clock_hours=('kab'\''laj' 'jun' 'kab'\''' 'oxe' 'kyaje' 'jwe'\''' 'qaq' 'wuq' 'wajxaq' 'b'\''elaj' 'laj' 'junlaj')
     _clock_midnight='nik'\'' aq'\''b'\''il'
     _clock_noon='nik'\'' q'\''ij'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h} or'
+    _clock_pattern_5='{h} or tuk'\'' jwe'\'' minut'
+    _clock_pattern_10='{h} or tuk'\'' laj minut'
+    _clock_pattern_15='{h} or tuk'\'' o'\''laj minut'
+    _clock_pattern_20='{h} or tuk'\'' winqan minut'
+    _clock_pattern_25='{h} or tuk'\'' jwe'\'' toj ka'\''wnaq minut'
+    _clock_pattern_30='{h} or tuk'\'' nik'\'''
+    _clock_pattern_35='{h} or tuk'\'' o'\''laj toj ka'\''wnaq minut'
+    _clock_pattern_40='{h} or tuk'\'' ka'\''wnaq minut'
+    _clock_pattern_45='{h} or tuk'\'' jwe'\'' toj oxk'\''al minut'
+    _clock_pattern_50='{h} or tuk'\'' laj toj oxk'\''al minut'
+    _clock_pattern_55='{h} or tuk'\'' o'\''laj toj oxk'\''al minut'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

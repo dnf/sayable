@@ -20,7 +20,7 @@
     :hours (list "doze" "uma" "duas" "três" "quatro" "cinco" "seis" "sete" "oito" "nove" "dez" "onze")
     :midnight "meia-noite"
     :noon "meio-dia"
-    :patterns (list (cons 0 "{h} horas") (cons 5 "{h} e cinco") (cons 10 "{h} e dez") (cons 15 "{h} e um quarto") (cons 20 "{h} e vinte") (cons 25 "{h} e vinte e cinco") (cons 30 "{h} e meia") (cons 35 "vinte e cinco para as {next_h}") (cons 40 "vinte para as {next_h}") (cons 45 "um quarto para as {next_h}") (cons 50 "dez para as {next_h}") (cons 55 "cinco para as {next_h}")))
+    :patterns (list (cons 0 "{h} em ponto") (cons 5 "{h} e cinco") (cons 10 "{h} e dez") (cons 15 "{h} e um quarto") (cons 20 "{h} e vinte") (cons 25 "{h} e vinte e cinco") (cons 30 "{h} e meia") (cons 35 "vinte e cinco para as {next_h}") (cons 40 "vinte para as {next_h}") (cons 45 "um quarto para as {next_h}") (cons 50 "dez para as {next_h}") (cons 55 "cinco para as {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

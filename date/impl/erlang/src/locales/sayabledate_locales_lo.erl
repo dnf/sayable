@@ -26,10 +26,10 @@ locale() ->
         tomorrow = "ມື້ອື່ນ",
         yesterday = "ມື້ວານ",
         day_after_tomorrow = {just, "ມື້ຮື"},
-        day_before_yesterday = {just, "ມື້ກ່ອນ"},
+        day_before_yesterday = {just, "ມື້ຊືນ"},
         this_weekday = {just, "{weekday}ນີ້"},
         next_weekday = {just, "{weekday}ໜ້າ"},
-        last_weekday = {just, "{weekday}ແລ້ວ"},
+        last_weekday = {just, "{weekday}ທີ່ແລ້ວ"},
         months_in_date = nothing,
         short = {just, #date_compactness_override{months = {just, ["ມ.ກ.", "ກ.ພ.", "ມ.ນ.", "ມ.ສ.", "ພ.ພ.", "ມ.ຖ.", "ກ.ລ.", "ສ.ຫ.", "ກ.ຍ.", "ຕ.ລ.", "ພ.ຈ.", "ທ.ວ."]}, months_in_date = nothing, weekdays = {just, ["ອາທິດ", "ຈັນ", "ອັງຄານ", "ພຸດ", "ພະຫັດ", "ສຸກ", "ເສົາ"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}

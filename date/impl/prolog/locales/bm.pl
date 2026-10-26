@@ -11,7 +11,7 @@
 
 % Bambara locale.
 
-sd_months('bm', ['Zanwuye', 'Fewuriye', 'Marisi', 'Awirili', 'Mɛ', 'Zuwɛn', 'Zuluye', 'Uti', 'Sɛtanburu', 'ɔkutɔburu', 'Nowanbudu', 'Desanburu']).
+sd_months('bm', ['Zanwuye', 'Feburuye', 'Marisi', 'Awirili', 'Mɛ', 'Zuwɛn', 'Zuluye', 'Uti', 'Sɛtanburu', 'Ɔkutɔburu', 'Nowanburu', 'Desanburu']).
 sd_weekdays('bm', ['Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri']).
 sd_day_format('bm', '{n}').
 
@@ -27,7 +27,7 @@ sd_this_weekday('bm', '{weekday} nin').
 sd_next_weekday('bm', '{weekday} nata').
 sd_last_weekday('bm', '{weekday} tɛmɛnen').
 
-short_sd_months('bm', ['Zan', 'Few', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'ɔku', 'Now', 'Des']).
+short_sd_months('bm', ['Zan', 'Feb', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'Ɔku', 'Now', 'Des']).
 short_sd_weekdays('bm', ['Kar', 'Ntɛ', 'Tar', 'Ara', 'Ala', 'Jum', 'Sib']).
 short_sd_day_format('bm', '{n}').
 short_sd_clear_exceptions('bm').

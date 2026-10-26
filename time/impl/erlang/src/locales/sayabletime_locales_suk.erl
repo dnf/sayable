@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "suk",
-        clock = #clock_config{hours = ["kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"], midnight = "usiku gati", noon = "adhuhuri", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"], midnight = "usiku gati", noon = "adhuhuri", patterns = [{0, "saa {h}"}, {5, "saa {h} na dakika tano"}, {10, "saa {h} na dakika kumi"}, {15, "saa {h} na robo"}, {20, "saa {h} na dakika ishirini"}, {25, "saa {h} na dakika ishirini na tano"}, {30, "saa {h} na nusu"}, {35, "saa {next_h} kasoro dakika ishirini na tano"}, {40, "saa {next_h} kasoro dakika ishirini"}, {45, "saa {next_h} kasoro robo"}, {50, "saa {next_h} kasoro dakika kumi"}, {55, "saa {next_h} kasoro dakika tano"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

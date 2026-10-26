@@ -33,7 +33,7 @@ pub const locale_tn = AgeLocale{
 	infant: stage_neutral('Lesea')
 	toddler: stage_neutral('Ngwana yo monnye')
 	child: stage_neutral('Ngwana')
-	teenager: stage_neutral('Lekgarebe')
+	teenager: stage_neutral('Mosha')
 	adult: stage_neutral('Motho yo mogolo')
 	has_short: true
 	short_override: CompactnessOverride{

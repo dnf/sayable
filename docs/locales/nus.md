@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [nus.json](../../locales/nus.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort in words. The previous hours list was Dinka numerals (tök, rou, diäk, dhorou, thiäär), not Nuer; replaced with Nuer numerals (kɛl, rɛw, diɔk, ŋuaan, dhieec, bäkɛl, bäärɔw, bädäk, bäŋuan, wäl, wäl wi̱ kɛl, wäl wi̱ rɛw). Patterns 'thaar {h}' (the file's own hour word) + 'kɛnɛ minit <n>' (kɛnɛ = and/with; minit from the file), tens as jiɛn rɛw/diɔk/ŋuaan/dhieec with 'wi̱ dhieec' for +5; :30 written as thirty minutes because I do not trust the file's half word 'ku kel' (looks Dinka). Specific doubts: whether 'thaar' or 'thaak' is the Nuer clock word, the exact tens forms (jiɛn + n), the 11/12 forms with 'wi̱', and whether a quarter/half idiom exists. Much of the nus file (cäŋ, ruɔ̈n, thiäär, 'ku kel') looks Dinka-derived and deserves native review beyond this batch.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | riak kɛnɛ           | 17/3    |
 | Day before yesterday | dhorou kɛnɛ         | 13/3    |
 | This Thursday (+5)   | Ŋuaan la̱t ɛn       | 20/3    |
-| Last Monday (-4)     | Rɛw la̱t cï kuɔ̈ɔ̈t | 11/3    |
-| Next Wednesday (+12) | Ŋuaan la̱t tɛ bɛ̈n  | 27/3    |
-| Same month (+20)     | 4 Guak              | 4/4     |
+| Last Tuesday (-4)    | Rɛw la̱t cï kuɔ̈ɔ̈t | 11/3    |
+| Next Thursday (+12)  | Ŋuaan la̱t tɛ bɛ̈n  | 27/3    |
+| Same year (+20)      | 4 Guak              | 4/4     |
 | Different year       | 10 Tiɔp thar 2026   | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal           | Short    | Compact |
-| --------------- | ---------------- | -------- | ------- |
-| Midnight        | wakɔ̈u           | 12:00 AM | 12:00a  |
-| 1:00 AM         | tök:00           | 1:00 AM  | 1:00a   |
-| 5 past 9        | kuɔn:05          | 9:05 AM  | 9:05a   |
-| Quarter past 10 | thiäär:15        | 10:15 AM | 10:15a  |
-| Half past 11    | thiäär ku tök:30 | 11:30 AM | 11:30a  |
-| Noon            | cäŋ kɔ̈k         | 12:00 PM | 12:00p  |
-| Quarter to 3    | rou:45           | 2:45 PM  | 2:45p   |
-| 5 to 6          | dhiëc:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | bät:00           | 8:00 PM  | 8:00p   |
-| 10:30 PM        | thiäär:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | wakɔ̈u           | 11:58 PM | 11:58p  |
+| Time            | Normal                                         | Short    | Compact |
+| --------------- | ---------------------------------------------- | -------- | ------- |
+| Midnight        | wakɔ̈u                                         | 12:00 AM | 12:00a  |
+| 1:00 AM         | thaar kɛl                                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | thaar bäŋuan kɛnɛ minit dhieec                 | 9:05 AM  | 9:05a   |
+| Quarter past 10 | thaar wäl kɛnɛ minit wäl wi̱ dhieec            | 10:15 AM | 10:15a  |
+| Half past 11    | thaar wäl wi̱ kɛl kɛnɛ minit jiɛn diɔk         | 11:30 AM | 11:30a  |
+| Noon            | cäŋ kɔ̈k                                       | 12:00 PM | 12:00p  |
+| Quarter to 3    | thaar rɛw kɛnɛ minit jiɛn ŋuaan wi̱ dhieec     | 2:45 PM  | 2:45p   |
+| 5 to 6          | thaar dhieec kɛnɛ minit jiɛn dhieec wi̱ dhieec | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | thaar bädäk                                    | 8:00 PM  | 8:00p   |
+| 10:30 PM        | thaar wäl kɛnɛ minit jiɛn diɔk                 | 10:30 PM | 10:30p  |
+| 11:58 PM        | wakɔ̈u                                         | 11:58 PM | 11:58p  |

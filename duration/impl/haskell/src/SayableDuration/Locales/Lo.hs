@@ -27,10 +27,10 @@ locale = DurationLocale
         , unitYear = Simple "{n} ປີ"
         }
     , localeHalf = "{0}ເຄິ່ງ"
-    , localeDelimiter = ""
+    , localeDelimiter = " "
     , localeJustNow = "ຫາກໍ"
     , localeAgo = "{0} ກ່ອນ"
-    , localeInFuture = "ໃນ {0}"
+    , localeInFuture = "ໃນອີກ {0}"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Simple "{n} ວິ.")
@@ -43,7 +43,7 @@ locale = DurationLocale
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} ກ່ອນ"
-            , ovrInFuture = Just "ໃນ {0}"
+            , ovrInFuture = Just "ໃນອີກ {0}"
             }
     , localeCompact = Just $
         CompactnessOverride
@@ -52,11 +52,11 @@ locale = DurationLocale
             , ovrHour = Just (Simple "{n}h")
             , ovrDay = Just (Simple "{n}d")
             , ovrWeek = Just (Simple "{n}w")
-            , ovrMonth = Just (Simple "{n}m")
+            , ovrMonth = Just (Simple "{n}mo")
             , ovrYear = Just (Simple "{n}y")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} ກ່ອນ"
-            , ovrInFuture = Just "ໃນ {0}"
+            , ovrInFuture = Just "ໃນອີກ {0}"
             }
     }

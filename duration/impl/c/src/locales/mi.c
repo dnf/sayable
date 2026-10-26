@@ -23,14 +23,14 @@ const SduDurationLocale sdu_locale_mi = {
         { "{n} hēkona", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} meneti", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} hāora", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "rā {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "wiki {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "marama {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "tau {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n} rā", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} wiki", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} marama", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} tau", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0}½", ", ",
+    "{n}½", ", ",
     "ināianei",
     "{0} i mua", "ā te {0}",
-    true, { true, { "{n} hēk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} men", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hāo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "rā {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "w {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "m {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "t {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} i mua", true, "ā te {0}" },
+    true, { true, { "{n} hēk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} men", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hāo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} rā", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} i mua", true, "ā te {0}" },
     true, { true, { "{n}hēk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}men", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}hāo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}r", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} i mua", true, "ā te {0}" }
 };

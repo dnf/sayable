@@ -11,12 +11,12 @@
 
 % Chinese locale.
 
-st_hours('zh', ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一']).
+st_hours('zh', ['十二', '一', '两', '三', '四', '五', '六', '七', '八', '九', '十', '十一']).
 st_midnight('zh', '午夜').
 st_noon('zh', '正午').
 
 st_pattern('zh', 0, '{h}点整').
-st_pattern('zh', 5, '{h}点五分').
+st_pattern('zh', 5, '{h}点零五分').
 st_pattern('zh', 10, '{h}点十分').
 st_pattern('zh', 15, '{h}点十五分').
 st_pattern('zh', 20, '{h}点二十分').

@@ -69,8 +69,8 @@
     "today": "lónìí",
     "tomorrow": "ọ̀la",
     "yesterday": "àná",
-    "dayAfterTomorrow": "ọ̀tún ọ̀la",
-    "dayBeforeYesterday": "ọ̀tún àná",
+    "dayAfterTomorrow": "ọ̀túnla",
+    "dayBeforeYesterday": "íjẹta",
     "thisWeekday": "{weekday} yìí",
     "nextWeekday": "{weekday} tó ń bọ̀",
     "lastWeekday": "{weekday} tó kọjá",
@@ -183,21 +183,21 @@
         "mẹ́wàá",
         "mọ́kànlá"
       ],
-      "midnight": "àárọ̀ òru",
-      "noon": "ọ̀sán",
+      "midnight": "ọ̀gànjọ́ òru",
+      "noon": "ọ̀sán gangan",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "aago {h}",
+        "5": "aago {h} kọjá ìṣẹ́jú márùn-ún",
+        "10": "aago {h} kọjá ìṣẹ́jú mẹ́wàá",
+        "15": "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún",
+        "20": "aago {h} kọjá ogún ìṣẹ́jú",
+        "25": "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n",
+        "30": "aago {h} àbọ̀",
+        "35": "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n",
+        "40": "aago {next_h} kù ogún ìṣẹ́jú",
+        "45": "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún",
+        "50": "aago {next_h} kù ìṣẹ́jú mẹ́wàá",
+        "55": "aago {next_h} kù ìṣẹ́jú márùn-ún"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Standard modern aago reading: 'aago méjì' (2:00), 'aago méjì kọjá ìṣẹ́jú mẹ́wàá' (2:10), 'aago méjì àbọ̀' (2:30), 'aago mẹ́ta kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún' (2:45, counting down to the next hour). For 20 minutes I used 'ogún ìṣẹ́jú' (round numerals like ogún precede the noun in Yoruba) rather than the audit's 'ìṣẹ́jú ogún'; a speaker should confirm that and the tone marks on mẹ́ẹ̀ẹ́dógún / mẹ́ẹ̀ẹ́dọ́gbọ̀n."
+    }
+  ]
 }

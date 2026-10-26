@@ -26,11 +26,11 @@ ki
 		'month'. (Dictionary newFromPairs: { #one. 'mwerĩ {n}'. #other. 'mĩerĩ {n}' }).
 		'year'. (Dictionary newFromPairs: { #one. 'mwaka {n}'. #other. 'mĩaka {n}' }).
 	}).
-	locale half: '{0} na nusu'.
+	locale half: '{0} na nuthu'.
 	locale delimiter: ', '.
-	locale justNow: 'ũmũthĩ'.
+	locale justNow: 'rĩu'.
 	locale ago: '{0} ĩhĩtũkĩte'.
-	locale inFuture: '{0} ĩyothe'.
+	locale inFuture: 'thutha wa {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. 'sek. {n}'.
@@ -42,7 +42,7 @@ ki
 			'year'. (Dictionary newFromPairs: { #one. 'mwaka {n}'. #other. 'mĩaka {n}' }).
 		}).
 		#ago. '{0} ĩhĩtũkĩte'.
-		#inFuture. '{0} ĩyothe'.
+		#inFuture. 'thutha wa {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -56,7 +56,7 @@ ki
 		}).
 		#delimiter. ''.
 		#ago. '{0} ĩhĩtũkĩte'.
-		#inFuture. '{0} ĩyothe'.
+		#inFuture. 'thutha wa {0}'.
 	}).
 	^ locale
 ! !

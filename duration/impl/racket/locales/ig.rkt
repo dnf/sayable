@@ -21,18 +21,18 @@
   (duration-locale
    "ig"
    (lambda (n) "other")
-   (hash "second" (hash "type" "simple" "form" "{n} sekọnd")
-         "minute" (hash "type" "simple" "form" "{n} nkeji")
-         "hour" (hash "type" "simple" "form" "{n} awa")
-         "day" (hash "type" "simple" "form" "{n} ụbọchị")
-         "week" (hash "type" "simple" "form" "{n} izu")
-         "month" (hash "type" "simple" "form" "{n} ọnwa")
-         "year" (hash "type" "simple" "form" "{n} afọ"))
+   (hash "second" (hash "type" "simple" "form" "sekọnd {n}")
+         "minute" (hash "type" "simple" "form" "nkeji {n}")
+         "hour" (hash "type" "simple" "form" "awa {n}")
+         "day" (hash "type" "simple" "form" "ụbọchị {n}")
+         "week" (hash "type" "simple" "form" "izu {n}")
+         "month" (hash "type" "simple" "form" "ọnwa {n}")
+         "year" (hash "type" "simple" "form" "afọ {n}"))
    "{0} na ọkara"
    ", "
    "ugbu a"
    "{0} gara aga"
    "na {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} sek.") (hash "type" "simple" "form" "{n} nkeji") (hash "type" "simple" "form" "{n} awa") (hash "type" "simple" "form" "{n} ụbọchị") (hash "type" "simple" "form" "{n} izu") (hash "type" "simple" "form" "{n} ọnwa") (hash "type" "simple" "form" "{n} afọ") #f #f "{0} gara aga" "na {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "sek. {n}") (hash "type" "simple" "form" "nkeji {n}") (hash "type" "simple" "form" "awa {n}") (hash "type" "simple" "form" "ụbọchị {n}") (hash "type" "simple" "form" "izu {n}") (hash "type" "simple" "form" "ọnwa {n}") (hash "type" "simple" "form" "afọ {n}") #f #f "{0} gara aga" "na {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} gara aga" "na {0}")
   ))

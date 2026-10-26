@@ -23,7 +23,7 @@ te
 		'month'. (Dictionary newFromPairs: { #one. '{n} నెల'. #other. '{n} నెలలు' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} సంవత్సరం'. #other. '{n} సంవత్సరాలు' }).
 	}).
-	locale half: '{0}న్నర'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justBorn: 'నవజాత శిశువు'.
 	locale stages: (Dictionary newFromPairs: {

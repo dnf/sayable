@@ -18,7 +18,7 @@ _sayableage_locale_bi() {
     _unit_week='{n} wik'
     _unit_month='{n} manis'
     _unit_year='{n} yia'
-    _half='{n} mo haf'
+    _half='{0} mo haf'
     _delimiter=', '
     _just_born='Niufala bebe'
     _stage_newborn='Niufala bebe'
@@ -35,6 +35,7 @@ _sayableage_locale_bi() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_bi
 }

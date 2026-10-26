@@ -14,13 +14,13 @@ local M = {}
 M.code = "so"
 M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
-    second = { one = "ilbiriqsi {n}", other = "ilbiriqsiyaal {n}" },
-    minute = { one = "daqiiqad {n}", other = "daqiiqadood {n}" },
-    hour = { one = "saacad {n}", other = "saacadood {n}" },
-    day = { one = "maalin {n}", other = "maalmood {n}" },
-    week = { one = "toddobaad {n}", other = "toddobaadyo {n}" },
-    month = { one = "bil {n}", other = "bilood {n}" },
-    year = { one = "sano {n}", other = "sanooyin {n}" },
+    second = "{n} ilbiriqsi",
+    minute = { one = "{n} daqiiqad", other = "{n} daqiiqo" },
+    hour = { one = "{n} saacad", other = "{n} saacadood" },
+    day = { one = "{n} maalin", other = "{n} maalmood" },
+    week = "{n} toddobaad",
+    month = { one = "{n} bil", other = "{n} bilood" },
+    year = "{n} sano",
 }
 M.half = "{n}½"
 M.delimiter = ", "

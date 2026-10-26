@@ -23,7 +23,7 @@ pis
 		'month'. '{n} manis'.
 		'year'. '{n} yia'.
 	}).
-	locale half: '{n} en haf'.
+	locale half: '{0} en haf'.
 	locale delimiter: ', '.
 	locale justBorn: 'Niufala bebi'.
 	locale stages: (Dictionary newFromPairs: {
@@ -49,6 +49,7 @@ pis
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 	}).
 	^ locale

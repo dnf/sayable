@@ -20,7 +20,7 @@
     :hours (list "дувоздаҳ" "як" "ду" "се" "чор" "панҷ" "шаш" "ҳафт" "ҳашт" "нӯҳ" "даҳ" "ёздаҳ")
     :midnight "нимишаб"
     :noon "нимирӯз"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "соати {h}") (cons 5 "соати {h} ва панҷ дақиқа") (cons 10 "соати {h} ва даҳ дақиқа") (cons 15 "соати {h} ва понздаҳ дақиқа") (cons 20 "соати {h} ва бист дақиқа") (cons 25 "соати {h} ва бисту панҷ дақиқа") (cons 30 "соати {h} ва ним") (cons 35 "соати {h} ва сию панҷ дақиқа") (cons 40 "соати {h} ва чил дақиқа") (cons 45 "соати {h} ва чилу панҷ дақиқа") (cons 50 "соати {h} ва панҷоҳ дақиқа") (cons 55 "соати {h} ва панҷоҳу панҷ дақиқа")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

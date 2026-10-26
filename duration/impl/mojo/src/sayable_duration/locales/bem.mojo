@@ -29,7 +29,7 @@ fn build_bem() -> DurationLocale:
 
     var second = plural_unit(one="isekondi {n}", other="amasekondi {n}")
     var minute = plural_unit(one="iminiti {n}", other="amaminiti {n}")
-    var hour = plural_unit(one="insa {n}", other="amanso {n}")
+    var hour = plural_unit(one="insa {n}", other="insa {n}")
     var day = plural_unit(one="ubushiku {n}", other="inshiku {n}")
     var week = plural_unit(one="umulungu {n}", other="imilungu {n}")
     var month = plural_unit(one="umweshi {n}", other="imyeshi {n}")

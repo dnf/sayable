@@ -100,21 +100,18 @@ The choice of 12h vs 24h follows CLDR `timeFormatShort` patterns:
 
 See: [CLDR Date/Time Symbols](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
 
-## Numeric clock pattern fallback
+## Spoken phrases in every locale
 
-Languages without established spoken clock conventions use numeric patterns for
-normal compactness instead of inventing spoken expressions. This applies to pidgin
-and creole languages that historically haven't developed formal clock-reading
-vocabulary:
+Normal compactness is always words, never digits, in every locale. Where a
+language has no "past/to" idiom (many pidgins, creoles and languages that
+borrowed clock time), the patterns use the plain spoken "hour and minutes" form
+with the minutes spelled out, e.g. Tok Pisin "tupela kilok" and "kwata pas
+tupela".
 
-- **Tok Pisin** (`tpi`) — Papua New Guinea
-- **Pijin** (`pis`) — Solomon Islands
-- **Bislama** (`bi`) — Vanuatu
-
-These locales use patterns like `"{h}:05"`, `"{h}:15"`, `"{h}:30"` for the
-minute buckets. The `hours` array still uses native-language number words, and
-midnight/noon get native terms. This approach respects the language by not
-fabricating conventions that don't exist in practice.
+Phrases nobody has checked with a native speaker carry a `review` note in the
+locale file (see [adding a locale](../../docs/adding-a-locale.md#review-notes)).
+They appear at the top of that locale's page in `docs/locales/`, and all of them
+are listed in [`docs/locales/README.md`](../../docs/locales/README.md).
 
 ## Adding or modifying locale data
 

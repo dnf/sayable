@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tpi.json](../../locales/tpi.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): '{h} kilok', 'kwata pas {h}', 'hap pas {h}', '<N> minit pas {h}' are well attested Tok Pisin. For :35-:55 I kept counting up ('foti faiv minit pas tri') because I could not confirm a Tok Pisin 'to' construction; it is grammatical but plainer than 'kwata tu foa' if that is in fact used. Spellings teti/foti/fifti follow the standard orthography.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 yia, 1 mun    | 2 yia, 1 mun    | 2y1m            |
 | 2 years, 6 months | 2 yia, 6 mun    | 2 yia, 6 mun    | 2y6m            |
 | 3 years           | 3 yia           | 3 yia           | 3y              |
-| 3½ years          | 3 na hap yia    | 3 na hap yia    | 3 na hapy       |
+| 3½ years          | 3 yia na hap    | 3 yia na hap    | 3½y             |
 | 5 years           | 5 yia           | 5 yia           | 5y              |
-| 5½ years          | 5 na hap yia    | 5 na hap yia    | 5 na hapy       |
+| 5½ years          | 5 yia na hap    | 5 yia na hap    | 5½y             |
 | 7 years           | 7 yia           | 7 yia           | 7y              |
 | 10 years          | 10 yia          | 10 yia          | 10y             |
 | 18 years          | 18 yia          | 18 yia          | 18y             |
@@ -71,11 +79,11 @@ Relative to Saturday, March 15, 2025.
 | Tomorrow             | tumora          | tumora  |
 | Yesterday            | asde            | asde    |
 | Day after tomorrow   | haptumora       | 17/3    |
-| Day before yesterday | asde bipo       | 13/3    |
+| Day before yesterday | hapasde         | 13/3    |
 | This Thursday (+5)   | dispela Fonde   | 20/3    |
-| Last Monday (-4)     | Tunde bipo      | 11/3    |
-| Next Wednesday (+12) | Fonde bihain    | 27/3    |
-| Same month (+20)     | 4 Epril         | 4/4     |
+| Last Tuesday (-4)    | Tunde bipo      | 11/3    |
+| Next Thursday (+12)  | Fonde bihain    | 27/3    |
+| Same year (+20)      | 4 Epril         | 4/4     |
 | Different year       | 10 Janueri 2026 | 10/1/26 |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 minit           | 5 min         | 5m        |
 | 45 minutes            | 45 minit          | 45 min        | 45m       |
 | 1 hour                | 1 aua             | 1 aua         | 1h        |
-| 1½ hours              | 1 na hap aua      | 1 na hap aua  | 1 na haph |
+| 1½ hours              | 1 aua na hap      | 1 aua na hap  | 1½h       |
 | 3 hours               | 3 aua             | 3 aua         | 3h        |
 | 6 hours               | 6 aua             | 6 aua         | 6h        |
 | 1 day                 | 1 de              | 1 de          | 1d        |
-| 1½ days               | 1 na hap de       | 1 na hap de   | 1 na hapd |
+| 1½ days               | 1 de na hap       | 1 de na hap   | 1½d       |
 | 3 days                | 3 de              | 3 de          | 3d        |
 | 1 week                | 1 wik             | 1 wik         | 1w        |
 | 2 weeks, 3 days       | 2 wik, 3 de       | 2 wik, 3 de   | 2w3d      |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal    | Short    | Compact |
-| --------------- | --------- | -------- | ------- |
-| Midnight        | biknait   | 12:00 AM | 12:00a  |
-| 1:00 AM         | wan:00    | 1:00 AM  | 1:00a   |
-| 5 past 9        | nain:05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ten:15    | 10:15 AM | 10:15a  |
-| Half past 11    | eleven:30 | 11:30 AM | 11:30a  |
-| Noon            | belo      | 12:00 PM | 12:00p  |
-| Quarter to 3    | tu:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | faiv:55   | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | et:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ten:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | biknait   | 11:58 PM | 11:58p  |
+| Time            | Normal                    | Short    | Compact |
+| --------------- | ------------------------- | -------- | ------- |
+| Midnight        | biknait                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | wan kilok                 | 1:00 AM  | 1:00a   |
+| 5 past 9        | faiv minit pas nain       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | kwata pas ten             | 10:15 AM | 10:15a  |
+| Half past 11    | hap pas eleven            | 11:30 AM | 11:30a  |
+| Noon            | belo                      | 12:00 PM | 12:00p  |
+| Quarter to 3    | foti faiv minit pas tu    | 2:45 PM  | 2:45p   |
+| 5 to 6          | fifti faiv minit pas faiv | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | et kilok                  | 8:00 PM  | 8:00p   |
+| 10:30 PM        | hap pas ten               | 10:30 PM | 10:30p  |
+| 11:58 PM        | biknait                   | 11:58 PM | 11:58p  |

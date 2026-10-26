@@ -23,8 +23,8 @@ locale =
     , plural = \n -> Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "{n} ñiqin" )
-            , ( "minute", Simple "{n} chiniku" )
+            [ ( "second", Simple "{n} sikundu" )
+            , ( "minute", Simple "{n} minutu" )
             , ( "hour", Simple "{n} ura" )
             , ( "day", Simple "{n} p'unchaw" )
             , ( "week", Simple "{n} simana" )
@@ -41,8 +41,8 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n} ñiq" )
-                        , ( "minute", Simple "{n} chi" )
+                        [ ( "second", Simple "{n} sik" )
+                        , ( "minute", Simple "{n} min" )
                         , ( "hour", Simple "{n} ura" )
                         , ( "day", Simple "{n} p'un" )
                         , ( "week", Simple "{n} sim" )

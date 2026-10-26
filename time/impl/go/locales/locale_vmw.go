@@ -20,7 +20,7 @@ var VMW = st.TimeLocale{
 		Hours:    [12]string{"khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa"},
 		Midnight: "usiku wopakhala",
 		Noon:     "muttana",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "hora {h}", 5: "hora {h} na thanu", 10: "hora {h} na khumi", 15: "hora {h} na khumi na thanu", 20: "hora {h} na makhumi mapili", 25: "hora {h} na makhumi mapili na thanu", 30: "hora {h} na mettenhe", 35: "hora {h} na makhumi mararu na thanu", 40: "hora {h} na makhumi mancheche", 45: "hora {h} na makhumi mancheche na thanu", 50: "hora {h} na makhumi mathanu", 55: "hora {h} na makhumi mathanu na thanu"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

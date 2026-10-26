@@ -30,10 +30,10 @@ fn build_so() -> AgeLocale:
             return "one"
         return "other"
 
-    var day = plural_unit(one="maalin {n}", other="maalmood {n}")
-    var week = plural_unit(one="toddobaad {n}", other="toddobaadyo {n}")
-    var month = plural_unit(one="bil {n}", other="bilood {n}")
-    var year = plural_unit(one="sano {n}", other="sanooyin {n}")
+    var day = plural_unit(one="{n} maalin", other="{n} maalmood")
+    var week = simple_unit("{n} toddobaad")
+    var month = plural_unit(one="{n} bil", other="{n} bilood")
+    var year = simple_unit("{n} sano")
 
     var newborn = stage_neutral("Dhashay cusub")
     var infant = stage_neutral("Naaso-nuug")

@@ -12,10 +12,10 @@
 function loc = locale_kw()
   loc.code = 'kw';
   loc.plural = @plural;
-  loc.units.day = struct("zero", '{n} dydh', "one", 'dydh', "two", '{n} dhydh', "few", '{n} dydh', "many", '{n} dydh', "other", '{n} dydh');
-  loc.units.week = struct("zero", '{n} seythun', "one", 'seythun', "two", '{n} seythun', "few", '{n} seythun', "many", '{n} seythun', "other", '{n} seythun');
-  loc.units.month = struct("zero", '{n} mis', "one", 'mis', "two", '{n} vis', "few", '{n} mis', "many", '{n} mis', "other", '{n} mis');
-  loc.units.year = struct("zero", '{n} blydhen', "one", 'blydhen', "two", '{n} vlydhen', "few", '{n} blydhen', "many", '{n} blydhen', "other", '{n} blydhen');
+  loc.units.day = struct("zero", '{n} dydh', "one", '{n} dydh', "two", '{n} dhydh', "few", '{n} dydh', "many", '{n} dydh', "other", '{n} dydh');
+  loc.units.week = struct("zero", '{n} seythun', "one", '{n} seythun', "two", '{n} seythun', "few", '{n} seythun', "many", '{n} seythun', "other", '{n} seythun');
+  loc.units.month = struct("zero", '{n} mis', "one", '{n} mis', "two", '{n} vis', "few", '{n} mis', "many", '{n} mis', "other", '{n} mis');
+  loc.units.year = struct("zero", '{n} blydhen', "one", '{n} blydhen', "two", '{n} vlydhen', "few", '{n} blydhen', "many", '{n} blydhen', "other", '{n} blydhen');
   loc.half = '{0} hag hanter';
   loc.delimiter = ', ';
   loc.just_born = 'Nowyth genys';

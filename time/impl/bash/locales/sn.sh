@@ -10,21 +10,21 @@
 # Source: locales/sn.json
 
 _sayabletime_locale_sn() {
-    _clock_hours=('gumi nembiri' 'imwe' 'mbiri' 'nhatu' 'ina' 'shanu' 'nhanhatu' 'nomwe' 'sere' 'pfumbamwe' 'gumi' 'gumi neimwe')
-    _clock_midnight='usiku hwepakati'
+    _clock_hours=('dzava gumi nembiri' 'yava imwe' 'dzava mbiri' 'dzava nhatu' 'dzava ina' 'dzava shanu' 'dzava nhanhatu' 'dzava nomwe' 'dzava sere' 'dzava pfumbamwe' 'dzava gumi' 'dzava gumi neimwe')
+    _clock_midnight='pakati peusiku'
     _clock_noon='masikati'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} nemaminitsi mashanu'
+    _clock_pattern_10='{h} nemaminitsi gumi'
+    _clock_pattern_15='{h} nemaminitsi gumi nemashanu'
+    _clock_pattern_20='{h} nemaminitsi makumi maviri'
+    _clock_pattern_25='{h} nemaminitsi makumi maviri nemashanu'
+    _clock_pattern_30='{h} nehafu'
+    _clock_pattern_35='{h} nemaminitsi makumi matatu nemashanu'
+    _clock_pattern_40='{h} nemaminitsi makumi mana'
+    _clock_pattern_45='{h} nemaminitsi makumi mana nemashanu'
+    _clock_pattern_50='{h} nemaminitsi makumi mashanu'
+    _clock_pattern_55='{h} nemaminitsi makumi mashanu nemashanu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

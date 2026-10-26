@@ -35,13 +35,13 @@ locale =
         , "dhjetor"
         ]
     , weekdays =
-        [ "e diel"
-        , "e hënë"
-        , "e martë"
-        , "e mërkurë"
-        , "e enjte"
-        , "e premte"
-        , "e shtunë"
+        [ "të dielën"
+        , "të hënën"
+        , "të martën"
+        , "të mërkurën"
+        , "të enjten"
+        , "të premten"
+        , "të shtunën"
         ]
     , dayFormat = "{n}"
     , dayFormatExceptions = Dict.empty
@@ -52,8 +52,8 @@ locale =
     , yesterday = "dje"
     , dayAfterTomorrow = Just "pasnesër"
     , dayBeforeYesterday = Just "pardje"
-    , thisWeekday = Just "këtë {weekday}"
-    , nextWeekday = Just "{weekday} tjetër"
+    , thisWeekday = Just "{weekday}"
+    , nextWeekday = Just "{weekday} e ardhshme"
     , lastWeekday = Just "{weekday} e kaluar"
     , monthsInDate = Nothing
     , short =

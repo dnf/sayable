@@ -31,7 +31,7 @@ locale =
             , ( "month", Simple "{n} ka bulan" )
             , ( "year", Simple "{n} ka tuig" )
             ]
-    , half = "{n}½"
+    , half = "{0} ug tunga"
     , delimiter = ", "
     , justNow = "karon lang"
     , ago = "{0} ang milabay"

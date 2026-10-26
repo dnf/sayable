@@ -28,13 +28,13 @@ let locale : date_locale =
     ; "dhjetor"
     ]
   ; weekdays =
-    [ "e diel"
-    ; "e hënë"
-    ; "e martë"
-    ; "e mërkurë"
-    ; "e enjte"
-    ; "e premte"
-    ; "e shtunë"
+    [ "të dielën"
+    ; "të hënën"
+    ; "të martën"
+    ; "të mërkurën"
+    ; "të enjten"
+    ; "të premten"
+    ; "të shtunën"
     ]
   ; day_format = "{n}"
   ; day_format_exceptions =
@@ -46,8 +46,8 @@ let locale : date_locale =
   ; yesterday = "dje"
   ; day_after_tomorrow = Some "pasnesër"
   ; day_before_yesterday = Some "pardje"
-  ; this_weekday = Some "këtë {weekday}"
-  ; next_weekday = Some "{weekday} tjetër"
+  ; this_weekday = Some "{weekday}"
+  ; next_weekday = Some "{weekday} e ardhshme"
   ; last_weekday = Some "{weekday} e kaluar"
   ; months_in_date = None
   ; short = Some

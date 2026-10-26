@@ -17,10 +17,10 @@
   (make-time-locale
    :code "mfe"
    :clock (make-clock-config
-    :hours (list "douz" "enn" "de" "trwa" "kat" "senk" "sis" "set" "wit" "nef" "dis" "onz")
+    :hours (list "douzer" "enn er" "dezer" "trwazer" "katrer" "senker" "sizer" "seter" "witer" "never" "dizer" "onzer")
     :midnight "minwi"
     :noon "midi"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} senk") (cons 10 "{h} dis") (cons 15 "{h} ekar") (cons 20 "{h} vin") (cons 25 "{h} vennsenk") (cons 30 "{h} edmi") (cons 35 "{next_h} mwin vennsenk") (cons 40 "{next_h} mwin vin") (cons 45 "{next_h} mwin kar") (cons 50 "{next_h} mwin dis") (cons 55 "{next_h} mwin senk")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -25,7 +25,7 @@ function locale_jv {
     }
     $half = '{0} setengah'
     $delimiter = ', '
-    $justNow = 'saiki'
+    $justNow = 'lagi waé'
     $ago = '{0} kepungkur'
     $inFuture = 'ing {0}'
     $short = @{

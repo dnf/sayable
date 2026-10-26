@@ -17,7 +17,7 @@ class GDLocale {
   static weekdays {
     return ["DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"]
   }
-  static dayFormat { "{n}" }
+  static dayFormat { "{n}mh" }
   static dayFormatExceptions {
     return {}
   }
@@ -31,7 +31,9 @@ class GDLocale {
   static thisWeekday { "{weekday} seo" }
   static nextWeekday { "{weekday} sa tighinn" }
   static lastWeekday { "{weekday} seo chaidh" }
-  static monthsInDate { null }
+  static monthsInDate {
+    return ["dhen Fhaoilleach", "dhen Ghearran", "dhen Mhàrt", "dhen Ghiblean", "dhen Chèitean", "dhen Ògmhios", "dhen Iuchar", "dhen Lùnastal", "dhen t-Sultain", "dhen Dàmhair", "dhen t-Samhain", "dhen Dùbhlachd"]
+  }
   static short {
     return {
       "months": ["Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"],

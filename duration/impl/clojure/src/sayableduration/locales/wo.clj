@@ -14,17 +14,17 @@
 (def locale
   {:code "wo"
    :plural (fn [_] :other)
-   :second {:type :simple :form "saa-yépp {n}"}
-   :minute {:type :simple :form "simili {n}"}
-   :hour {:type :simple :form "waxtu {n}"}
-   :day {:type :simple :form "bés {n}"}
-   :week {:type :simple :form "ayubés {n}"}
-   :month {:type :simple :form "weer {n}"}
-   :year {:type :simple :form "at {n}"}
+   :second {:type :simple :form "{n} saa"}
+   :minute {:type :simple :form "{n} simili"}
+   :hour {:type :simple :form "{n} waxtu"}
+   :day {:type :simple :form "{n} fan"}
+   :week {:type :simple :form "{n} ayubés"}
+   :month {:type :simple :form "{n} weer"}
+   :year {:type :simple :form "{n} at"}
    :half "{0} ak genn-wàll"
    :delimiter ", "
    :just-now "léegi"
    :ago "{0} ci ginaaw"
-   :in-future "ci {0}"
-   :short {:second {:type :simple :form "saa-y. {n}"} :minute {:type :simple :form "sim. {n}"} :hour {:type :simple :form "wax. {n}"} :day {:type :simple :form "bés {n}"} :week {:type :simple :form "ayub. {n}"} :month {:type :simple :form "weer {n}"} :year {:type :simple :form "at {n}"} :half nil :delimiter nil :ago "{0} ci ginaaw" :in-future "ci {0}"}
-   :compact {:second {:type :simple :form "saa {n}"} :minute {:type :simple :form "sim {n}"} :hour {:type :simple :form "wax {n}"} :day {:type :simple :form "bés {n}"} :week {:type :simple :form "ayub {n}"} :month {:type :simple :form "weer {n}"} :year {:type :simple :form "at {n}"} :half "{n}½" :delimiter "" :ago "{0} ci gin." :in-future "ci {0}"}})
+   :in-future "fileek {0}"
+   :short {:second {:type :simple :form "{n} saa"} :minute {:type :simple :form "{n} sim."} :hour {:type :simple :form "{n} wax."} :day {:type :simple :form "{n} fan"} :week {:type :simple :form "{n} ayub."} :month {:type :simple :form "{n} weer"} :year {:type :simple :form "{n} at"} :half nil :delimiter nil :ago "{0} ci ginaaw" :in-future "fileek {0}"}
+   :compact {:second {:type :simple :form "{n} saa"} :minute {:type :simple :form "{n} sim"} :hour {:type :simple :form "{n} wax"} :day {:type :simple :form "{n} fan"} :week {:type :simple :form "{n} ayub"} :month {:type :simple :form "{n} weer"} :year {:type :simple :form "{n} at"} :half "{n}½" :delimiter "" :ago "{0} ci gin." :in-future "fileek {0}"}})

@@ -26,7 +26,7 @@ locale = DurationLocale
         , unitMonth = Simple "ཟླ་ {n}"
         , unitYear = Simple "ལོ་ {n}"
         }
-    , localeHalf = "{0} ཕྱེད"
+    , localeHalf = "{0} དང་ཕྱེད"
     , localeDelimiter = " "
     , localeJustNow = "ད་ལྟ"
     , localeAgo = "{0} ཧེ་མ"

@@ -14,10 +14,10 @@ open Types
 let locale : locale =
   { code = "ay"
   ; plural = (fun _ -> Other)
-  ; day = Simple "uru {n}"
-  ; week = Simple "simana {n}"
-  ; month = Simple "phaxsi {n}"
-  ; year = Simple "mara {n}"
+  ; day = Simple "{n} uru"
+  ; week = Simple "{n} simana"
+  ; month = Simple "{n} phaxsi"
+  ; year = Simple "{n} mara"
   ; half = "{0} chika"
   ; delimiter = ", "
   ; just_born = "Wawa machaqa"
@@ -43,7 +43,7 @@ let locale : locale =
       ; ovr_week = Some (Simple "{n}w")
       ; ovr_month = Some (Simple "{n}m")
       ; ovr_year = Some (Simple "{n}y")
-      ; ovr_half = None
+      ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_just_born = None
       }

@@ -21,7 +21,7 @@ proc locale_duration_gd {} {
     set units [dict create \
         second [dict create one "{n} diog" two "{n} dhiog" few "{n} diogan" other "{n} diog"] \
         minute [dict create one "{n} mhionaid" two "{n} mhionaid" few "{n} mionaidean" other "{n} mionaid"] \
-        hour [dict create one "{n} uair" two "{n} uair" few "{n} uairean" other "{n} uair"] \
+        hour [dict create one "{n} uair a thìde" two "{n} uair a thìde" few "{n} uairean a thìde" other "{n} uair a thìde"] \
         day [dict create one "{n} latha" two "{n} latha" few "{n} làithean" other "{n} latha"] \
         week [dict create one "{n} sheachdain" two "{n} sheachdain" few "{n} seachdainean" other "{n} seachdain"] \
         month [dict create one "{n} mhìos" two "{n} mhìos" few "{n} mìosan" other "{n} mìos"] \

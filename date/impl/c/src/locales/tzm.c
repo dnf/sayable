@@ -12,29 +12,29 @@
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_tzm[12] = {
-    "ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ"
+    "Yen", "Yeb", "Mar", "Ibr", "May", "Yun", "Yul", "Ɣuc", "Cut", "Kṭu", "Nwa", "Duj"
 };
 
 static const char *sd_short_weekdays_tzm[7] = {
-    "ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"
+    "Asa", "Ayn", "Asn", "Akr", "Akw", "Asm", "Asḍ"
 };
 
 const SdDateLocale sd_locale_tzm = {
     "tzm",
-    { "ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ" },
-    { "ⴰⵙⴰⵎⴰⵙ", "ⴰⵢⵏⴰⵙ", "ⴰⵙⵉⵏⴰⵙ", "ⴰⴽⵕⴰⵙ", "ⴰⴽⵡⴰⵙ", "ⴰⵙⵉⵎⵡⴰⵙ", "ⴰⵙⵉⴹⵢⴰⵙ" },
+    { "Yennayer", "Yebrayer", "Mars", "Ibrir", "Mayyu", "Yunyu", "Yulyuz", "Ɣuct", "Cutanbir", "Kṭuber", "Nwanbir", "Dujanbir" },
+    { "Asamas", "Aynas", "Asinas", "Akras", "Akwas", "Asimwas", "Asiḍyas" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",
     "{day} {month} {year}",
-    "ⴰⵙⵙⴰ",
-    "ⴰⵙⴽⴽⴰ",
-    "ⵉⴹⵍⵍⵉ",
+    "Assa",
+    "Asekka",
+    "Assenaṭ",
     NULL,
     NULL,
-    "{weekday} ⴰⴷ",
-    "{weekday} ⴷ ⵉⴷⴷⴰⵏ",
-    "{weekday} ⵉⵣⵔⵉⵏ",
+    "{weekday} ad",
+    "{weekday} d iddan",
+    "{weekday} izrin",
     (const char **)0,
     true, { sd_short_months_tzm, (const char **)0, sd_short_weekdays_tzm, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }

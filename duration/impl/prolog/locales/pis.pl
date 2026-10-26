@@ -21,7 +21,7 @@ sd_unit('pis', week, _, '{n} wik').
 sd_unit('pis', month, _, '{n} manis').
 sd_unit('pis', year, _, '{n} yia').
 
-sd_half('pis', '{n} en haf').
+sd_half('pis', '{0} en haf').
 sd_delimiter('pis', ', ').
 sd_just_now('pis', 'nomoa nao').
 sd_ago('pis', '{0} bifoa').
@@ -44,6 +44,7 @@ compact_sd_unit('pis', day, _, '{n}d').
 compact_sd_unit('pis', week, _, '{n}w').
 compact_sd_unit('pis', month, _, '{n}mo').
 compact_sd_unit('pis', year, _, '{n}y').
+compact_sd_half('pis', '{n}½').
 compact_sd_delimiter('pis', '').
 compact_sd_ago('pis', '{0} bifoa').
 compact_sd_in_future('pis', 'long {0}').

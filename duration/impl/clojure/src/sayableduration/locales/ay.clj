@@ -14,17 +14,17 @@
 (def locale
   {:code "ay"
    :plural (fn [_] :other)
-   :second {:type :simple :form "sikundu {n}"}
-   :minute {:type :simple :form "minutu {n}"}
-   :hour {:type :simple :form "ura {n}"}
-   :day {:type :simple :form "uru {n}"}
-   :week {:type :simple :form "simana {n}"}
-   :month {:type :simple :form "phaxsi {n}"}
-   :year {:type :simple :form "mara {n}"}
+   :second {:type :simple :form "{n} sikundu"}
+   :minute {:type :simple :form "{n} minutu"}
+   :hour {:type :simple :form "{n} ura"}
+   :day {:type :simple :form "{n} uru"}
+   :week {:type :simple :form "{n} simana"}
+   :month {:type :simple :form "{n} phaxsi"}
+   :year {:type :simple :form "{n} mara"}
    :half "{0} chika"
    :delimiter ", "
    :just-now "jichha"
    :ago "{0} nayraqata"
    :in-future "{0} jutirïn"
-   :short {:second {:type :simple :form "sik. {n}"} :minute {:type :simple :form "min. {n}"} :hour {:type :simple :form "ur. {n}"} :day {:type :simple :form "{n} ur."} :week {:type :simple :form "{n} sim."} :month {:type :simple :form "{n} phx."} :year {:type :simple :form "{n} mr."} :half nil :delimiter nil :ago "{0} nayraqata" :in-future "{0} jutirïn"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} nayraqata" :in-future "{0} jutirïn"}})
+   :short {:second {:type :simple :form "{n} sik."} :minute {:type :simple :form "{n} min."} :hour {:type :simple :form "{n} ura"} :day {:type :simple :form "{n} ur."} :week {:type :simple :form "{n} sim."} :month {:type :simple :form "{n} phx."} :year {:type :simple :form "{n} mr."} :half nil :delimiter nil :ago "{0} nayraqata" :in-future "{0} jutirïn"}
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} nayraqata" :in-future "{0} jutirïn"}})

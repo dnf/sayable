@@ -31,7 +31,7 @@ pub const locale_gl = AgeLocale{
 	just_born: 'Recén nacido'
 	newborn: stage_gendered('Recén nacido', 'Recén nacida')
 	infant: stage_neutral('Bebé')
-	toddler: stage_neutral('Neno')
+	toddler: stage_gendered('Neno pequeno', 'Nena pequena')
 	child: stage_gendered('Neno', 'Nena')
 	teenager: stage_neutral('Adolescente')
 	adult: stage_gendered('Adulto', 'Adulta')

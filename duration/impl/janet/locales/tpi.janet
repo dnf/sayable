@@ -19,11 +19,11 @@
           :week "{n} wik"
           :month "{n} mun"
           :year "{n} yia"}
-   :half "{n} na hap"
+   :half "{0} na hap"
    :delimiter ", "
    :just-now "nau tasol"
    :ago "{0} i go pinis"
    :in-future "long {0}"
    :short {:units {:second "{n} sek" :minute "{n} min" :hour "{n} aua" :day "{n} de" :week "{n} wik" :month "{n} mun" :year "{n} yia"} :ago "{0} i go pinis" :in-future "long {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :delimiter "" :ago "{0} i go pinis" :in-future "long {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} i go pinis" :in-future "long {0}"}
 })

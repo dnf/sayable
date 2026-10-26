@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_eu = {
     "eu",
     {
-        { "hamabi", "bat", "bi", "hiru", "lau", "bost", "sei", "zazpi", "zortzi", "bederatzi", "hamar", "hamaika" },
+        { "hamabiak", "ordu bata", "ordu biak", "hirurak", "laurak", "bostak", "seiak", "zazpiak", "zortziak", "bederatziak", "hamarrak", "hamaikak" },
         "gauerdia",
         "eguerdia",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} eta bost", "{h} eta hamar", "{h} eta laurden", "{h} eta hogei", "{h} eta hogeita bost", "{h} eta erdiak", "{next_h} hogeita bost gutxi", "{next_h} hogei gutxi", "{next_h} laurden gutxi", "{next_h} hamar gutxi", "{next_h} bost gutxi" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

@@ -29,7 +29,7 @@ defmodule SayableDuration.Locales.KM do
       delimiter: ", ",
       just_now: "ឥឡូវនេះ",
       ago: "{0}មុន",
-      in_future: "ក្នុង{0}",
+      in_future: "{0}ទៀត",
       short: %{
         units: %{
           second: "{n} វិនាទី",
@@ -41,7 +41,7 @@ defmodule SayableDuration.Locales.KM do
           year: "{n} ឆ្នាំ"
         },
         ago: "{0}មុន",
-        in_future: "ក្នុង{0}"
+        in_future: "{0}ទៀត"
       },
       compact: %{
         units: %{
@@ -56,7 +56,7 @@ defmodule SayableDuration.Locales.KM do
         half: "{n}½",
         delimiter: "",
         ago: "{0}មុន",
-        in_future: "ក្នុង{0}"
+        in_future: "{0}ទៀត"
       }
     }
   end

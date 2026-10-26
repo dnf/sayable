@@ -14,10 +14,10 @@
 (def locale
   {:code "kw"
    :plural (fn [n] (cond (== n 0) :zero (== n 1) :one (or (== (mod n 100) 2) (== (mod n 100) 22) (== (mod n 100) 42) (== (mod n 100) 62) (== (mod n 100) 82)) :two (or (== (mod n 100) 3) (== (mod n 100) 23) (== (mod n 100) 43) (== (mod n 100) 63) (== (mod n 100) 83)) :few (and (not= n 1) (or (== (mod n 100) 1) (== (mod n 100) 21) (== (mod n 100) 41) (== (mod n 100) 61) (== (mod n 100) 81))) :many :else :other))
-   :day {:type :pluralized :forms {:zero "{n} dydh" :one "dydh" :two "{n} dhydh" :few "{n} dydh" :many "{n} dydh" :other "{n} dydh"}}
-   :week {:type :pluralized :forms {:zero "{n} seythun" :one "seythun" :two "{n} seythun" :few "{n} seythun" :many "{n} seythun" :other "{n} seythun"}}
-   :month {:type :pluralized :forms {:zero "{n} mis" :one "mis" :two "{n} vis" :few "{n} mis" :many "{n} mis" :other "{n} mis"}}
-   :year {:type :pluralized :forms {:zero "{n} blydhen" :one "blydhen" :two "{n} vlydhen" :few "{n} blydhen" :many "{n} blydhen" :other "{n} blydhen"}}
+   :day {:type :pluralized :forms {:zero "{n} dydh" :one "{n} dydh" :two "{n} dhydh" :few "{n} dydh" :many "{n} dydh" :other "{n} dydh"}}
+   :week {:type :pluralized :forms {:zero "{n} seythun" :one "{n} seythun" :two "{n} seythun" :few "{n} seythun" :many "{n} seythun" :other "{n} seythun"}}
+   :month {:type :pluralized :forms {:zero "{n} mis" :one "{n} mis" :two "{n} vis" :few "{n} mis" :many "{n} mis" :other "{n} mis"}}
+   :year {:type :pluralized :forms {:zero "{n} blydhen" :one "{n} blydhen" :two "{n} vlydhen" :few "{n} blydhen" :many "{n} blydhen" :other "{n} blydhen"}}
    :half "{0} hag hanter"
    :delimiter ", "
    :just-born "Nowyth genys"

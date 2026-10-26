@@ -11,10 +11,10 @@
 
 function loc = locale_tem()
   loc.code = 'tem';
-  loc.clock.hours = {'pɛn pu', 'kɩrɩŋ', 'rɔŋ', 'rasar', 'rɔŋ-anat', 'rɔman', 'rɔmata', 'rɔmbot', 'rɔmɔntat', 'rɔmɔntaŋka', 'pɛn', 'pɛn nɛ kɩrɩŋ'};
+  loc.clock.hours = {'awa pɛn nɛ rɔŋ', 'awa kɩrɩŋ', 'awa rɔŋ', 'awa rasar', 'awa rɔŋ-anat', 'awa rɔman', 'awa rɔmata', 'awa rɔmbot', 'awa rɔmɔntat', 'awa rɔmɔntaŋka', 'awa pɛn', 'awa pɛn nɛ kɩrɩŋ'};
   loc.clock.midnight = 'rofɛt anpa';
   loc.clock.noon = 'lən';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} nɛ minit rɔman', "p10", '{h} nɛ minit pɛn', "p15", '{h} nɛ minit pɛn nɛ rɔman', "p20", '{h} nɛ minit kɩgba', "p25", '{h} nɛ minit kɩgba nɛ rɔman', "p30", '{h} a gbankɛ', "p35", '{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman', "p40", '{h} nɛ minit tɔgba rɔŋ', "p45", '{h} nɛ minit tɔgba rɔŋ nɛ rɔman', "p50", '{h} nɛ minit tɔgba rɔŋ nɛ pɛn', "p55", '{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

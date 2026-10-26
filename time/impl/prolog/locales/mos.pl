@@ -11,22 +11,22 @@
 
 % Moore locale.
 
-st_hours('mos', ['piig la a yiibu', 'a yembre', 'a yiibu', 'a tãabo', 'a naase', 'a nu', 'a yoobe', 'a yopoe', 'a niini', 'a wae', 'piiga', 'piig la a yembre']).
+st_hours('mos', ['lɛɛr piig la a yiibu', 'lɛɛr a yembre', 'lɛɛr a yiibu', 'lɛɛr a tãabo', 'lɛɛr a naase', 'lɛɛr a nu', 'lɛɛr a yoobe', 'lɛɛr a yopoe', 'lɛɛr a nii', 'lɛɛr a wae', 'lɛɛr piiga', 'lɛɛr piig la a yembre']).
 st_midnight('mos', 'yʋng-vɩɩse').
 st_noon('mos', 'wĩntoog zabre').
 
-st_pattern('mos', 0, '{h}:00').
-st_pattern('mos', 5, '{h}:05').
-st_pattern('mos', 10, '{h}:10').
-st_pattern('mos', 15, '{h}:15').
-st_pattern('mos', 20, '{h}:20').
-st_pattern('mos', 25, '{h}:25').
-st_pattern('mos', 30, '{h}:30').
-st_pattern('mos', 35, '{h}:35').
-st_pattern('mos', 40, '{h}:40').
-st_pattern('mos', 45, '{h}:45').
-st_pattern('mos', 50, '{h}:50').
-st_pattern('mos', 55, '{h}:55').
+st_pattern('mos', 0, '{h}').
+st_pattern('mos', 5, '{h} la minit a nu').
+st_pattern('mos', 10, '{h} la minit piiga').
+st_pattern('mos', 15, '{h} la minit piig la a nu').
+st_pattern('mos', 20, '{h} la minit pisi').
+st_pattern('mos', 25, '{h} la minit pisi la a nu').
+st_pattern('mos', 30, '{h} la pʋɩ-sʋka').
+st_pattern('mos', 35, '{h} la minit pis-tã la a nu').
+st_pattern('mos', 40, '{h} la minit pis-naase').
+st_pattern('mos', 45, '{h} la minit pis-naase la a nu').
+st_pattern('mos', 50, '{h} la minit pis-nu').
+st_pattern('mos', 55, '{h} la minit pis-nu la a nu').
 
 short_st_use24h('mos', false).
 short_st_format('mos', '{h}:{mm} {ampm}').

@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_om = {
     "om",
     {
-        { "kudha lama", "tokko", "lama", "sadii", "afur", "shan", "jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko" },
+        { "jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko", "kudha lama", "tokko", "lama", "sadii", "afur", "shan" },
         "walakkii halkan",
         "guyyaa walakkaa",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "sa'aatii {h}", "sa'aatii {h} fi daqiiqaa shan", "sa'aatii {h} fi daqiiqaa kudhan", "sa'aatii {h} fi daqiiqaa kudha shan", "sa'aatii {h} fi daqiiqaa digdama", "sa'aatii {h} fi daqiiqaa digdamii shan", "sa'aatii {h} fi walakkaa", "sa'aatii {h} fi daqiiqaa soddomii shan", "sa'aatii {h} fi daqiiqaa afurtama", "sa'aatii {h} fi daqiiqaa afurtamii shan", "sa'aatii {h} fi daqiiqaa shantama", "sa'aatii {h} fi daqiiqaa shantamii shan" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

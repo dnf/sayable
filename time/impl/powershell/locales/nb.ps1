@@ -10,7 +10,7 @@
 # Source: locales/nb.json
 
 function locale_nb {
-    $hours = @('tolv', 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve')
+    $hours = @('tolv', 'ett', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve')
     $midnight = 'midnatt'
     $noon = 'middag'
     $patterns = @{}

@@ -24,7 +24,7 @@ pub fn locale() -> types.DurationLocale {
       #("month", types.SimpleUnit("{n} ka bulan")),
       #("year", types.SimpleUnit("{n} ka tuig")),
     ],
-    half: "{n}½",
+    half: "{0} ug tunga",
     delimiter: ", ",
     just_now: "karon lang",
     ago: "{0} ang milabay",

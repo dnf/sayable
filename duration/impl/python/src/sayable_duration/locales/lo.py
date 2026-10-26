@@ -26,10 +26,10 @@ LO = DurationLocale(
         "year": "{n} ປີ",
     },
     half="{0}ເຄິ່ງ",
-    delimiter="",
+    delimiter=" ",
     just_now="ຫາກໍ",
     ago="{0} ກ່ອນ",
-    in_future="ໃນ {0}",
+    in_future="ໃນອີກ {0}",
     short=CompactnessOverride(
         units={
             "second": "{n} ວິ.",
@@ -41,7 +41,7 @@ LO = DurationLocale(
             "year": "{n} ປ.",
         },
         ago="{0} ກ່ອນ",
-        in_future="ໃນ {0}",
+        in_future="ໃນອີກ {0}",
     ),
     compact=CompactnessOverride(
         units={
@@ -50,12 +50,12 @@ LO = DurationLocale(
             "hour": "{n}h",
             "day": "{n}d",
             "week": "{n}w",
-            "month": "{n}m",
+            "month": "{n}mo",
             "year": "{n}y",
         },
         half="{n}½",
         delimiter="",
         ago="{0} ກ່ອນ",
-        in_future="ໃນ {0}",
+        in_future="ໃນອີກ {0}",
     ),
 )

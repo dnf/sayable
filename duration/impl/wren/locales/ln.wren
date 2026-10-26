@@ -14,9 +14,9 @@ class LNLocale {
   static plural { Fn.new {|n| (n == 0 || n == 1) ? "one" : "other" } }
   static units {
     return {
-      "second": "{n} segɔnde",
-      "minute": "{n} moniti",
-      "hour": "{n} ngonga",
+      "second": "segɔnde {n}",
+      "minute": "miniti {n}",
+      "hour": "ngonga {n}",
       "day": {"one": "mokolo {n}", "other": "mikolo {n}"},
       "week": {"one": "poso {n}", "other": "baposo {n}"},
       "month": {"one": "sanza {n}", "other": "basanza {n}"},

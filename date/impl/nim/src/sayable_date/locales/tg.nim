@@ -27,8 +27,8 @@ let TG* = DateLocale(
   dayAfterTomorrow: some("пасфардо"),
   dayBeforeYesterday: some("парирӯз"),
   thisWeekday: some("ин {weekday}"),
-  nextWeekday: some("{weekday}-и оянда"),
-  lastWeekday: some("{weekday}-и гузашта"),
+  nextWeekday: some("{weekday}и оянда"),
+  lastWeekday: some("{weekday}и гузашта"),
   monthsInDate: none(seq[string]),
   short: some(CompactnessOverride(
     months: some(@["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]),

@@ -24,7 +24,7 @@ _sayableage_locale_si() {
     _unit_month_other='මාස {n}'
     _unit_year_one='වසර {n}'
     _unit_year_other='වසර {n}'
-    _half='{0}යි භාගයයි'
+    _half='{n}½'
     _delimiter=', '
     _just_born='අලුත උපන්'
     _stage_newborn='අලුත උපන්'

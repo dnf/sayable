@@ -44,8 +44,8 @@ fn build_ca() -> DateLocale:
     var weekday6 = "dissabte"
     var day_format = "{n}"
     var num_exceptions = 0
-    var date_pattern = "{day} de {month}"
-    var date_pattern_with_year = "{day} de {month} de {year}"
+    var date_pattern = "{day} {month}"
+    var date_pattern_with_year = "{day} {month} de {year}"
     var today = "avui"
     var tomorrow = "demà"
     var yesterday = "ahir"
@@ -54,7 +54,19 @@ fn build_ca() -> DateLocale:
     var this_weekday = "aquest {weekday}"
     var next_weekday = "{weekday} que ve"
     var last_weekday = "{weekday} passat"
-    var has_months_in_date = False
+    var month_in_date0 = "de gener"
+    var month_in_date1 = "de febrer"
+    var month_in_date2 = "de març"
+    var month_in_date3 = "d'abril"
+    var month_in_date4 = "de maig"
+    var month_in_date5 = "de juny"
+    var month_in_date6 = "de juliol"
+    var month_in_date7 = "d'agost"
+    var month_in_date8 = "de setembre"
+    var month_in_date9 = "d'octubre"
+    var month_in_date10 = "de novembre"
+    var month_in_date11 = "de desembre"
+    var has_months_in_date = True
 
     var short_ovr = build_compactness_override()
     short_ovr.month0 = "gen"
@@ -82,7 +94,7 @@ fn build_ca() -> DateLocale:
     short_ovr.has_day_format = True
     short_ovr.date_pattern = "{day} {month}"
     short_ovr.has_date_pattern = True
-    short_ovr.date_pattern_with_year = "{day} {month} {year}"
+    short_ovr.date_pattern_with_year = "{day} {month} de {year}"
     short_ovr.has_date_pattern_with_year = True
 
     var compact_ovr = build_compactness_override()
@@ -124,6 +136,18 @@ fn build_ca() -> DateLocale:
         this_weekday=this_weekday,
         next_weekday=next_weekday,
         last_weekday=last_weekday,
+        month_in_date0=month_in_date0,
+        month_in_date1=month_in_date1,
+        month_in_date2=month_in_date2,
+        month_in_date3=month_in_date3,
+        month_in_date4=month_in_date4,
+        month_in_date5=month_in_date5,
+        month_in_date6=month_in_date6,
+        month_in_date7=month_in_date7,
+        month_in_date8=month_in_date8,
+        month_in_date9=month_in_date9,
+        month_in_date10=month_in_date10,
+        month_in_date11=month_in_date11,
         has_months_in_date=has_months_in_date,
         short_override=short_ovr,
         has_short=True,

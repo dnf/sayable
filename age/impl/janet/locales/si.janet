@@ -16,7 +16,7 @@
           :week {:one "සති {n}" :other "සති {n}"}
           :month {:one "මාස {n}" :other "මාස {n}"}
           :year {:one "වසර {n}" :other "වසර {n}"}}
-   :half "{0}යි භාගයයි"
+   :half "{n}½"
    :delimiter ", "
    :just-born "අලුත උපන්"
    :stages {:newborn "අලුත උපන්"

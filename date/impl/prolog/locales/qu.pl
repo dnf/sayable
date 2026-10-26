@@ -22,7 +22,7 @@ sd_today('qu', 'kunan').
 sd_tomorrow('qu', 'paqarin').
 sd_yesterday('qu', 'qayna').
 sd_day_after_tomorrow('qu', 'minchha').
-sd_day_before_yesterday('qu', 'qayna p\'unchaw').
+sd_day_before_yesterday('qu', 'qayninpa').
 sd_this_weekday('qu', 'kay {weekday}').
 sd_next_weekday('qu', 'hamuq {weekday}').
 sd_last_weekday('qu', 'qayna {weekday}').

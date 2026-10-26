@@ -25,7 +25,7 @@ const SaLocale sa_locale_id = {
         { "{n} bulan", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} tahun", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0} setengah", ", ", "Baru lahir",
+    "{n} setengah", ", ", "Baru lahir",
     {
         { "Baru lahir", "" },
         { "Bayi", "" },

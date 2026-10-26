@@ -1,7 +1,7 @@
 {
   "code": "ml",
   "name": "Malayalam",
-  "pluralRule": "one_other_zero_one",
+  "pluralRule": "one_other",
   "age": {
     "units": {
       "day": {
@@ -21,7 +21,7 @@
         "other": "{n} വയസ്സ്"
       }
     },
-    "half": "{0} ര",
+    "half": "{n}½",
     "delimiter": ", ",
     "justBorn": "നവജാതശിശു",
     "stages": {
@@ -150,7 +150,7 @@
         "other": "{n} വർഷങ്ങൾ"
       }
     },
-    "half": "{0} ര",
+    "half": "{n}½",
     "delimiter": ", ",
     "justNow": "ഇപ്പോൾ",
     "ago": "{0} മുമ്പ്",
@@ -203,34 +203,34 @@
   "time": {
     "clock": {
       "hours": [
-        "പന്ത്രണ്ട്",
-        "ഒന്ന്",
-        "രണ്ട്",
-        "മൂന്ന്",
-        "നാല്",
-        "അഞ്ച്",
-        "ആറ്",
-        "ഏഴ്",
-        "എട്ട്",
-        "ഒമ്പത്",
-        "പത്ത്",
-        "പതിനൊന്ന്"
+        "പന്ത്രണ്ട",
+        "ഒന്ന",
+        "രണ്ട",
+        "മൂന്ന",
+        "നാല",
+        "അഞ്ച",
+        "ആറ",
+        "ഏഴ",
+        "എട്ട",
+        "ഒമ്പത",
+        "പത്ത",
+        "പതിനൊന്ന"
       ],
       "midnight": "അർദ്ധരാത്രി",
       "noon": "ഉച്ച",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}് മണി",
+        "5": "{h}് മണി അഞ്ച് മിനിറ്റ്",
+        "10": "{h}് മണി പത്ത് മിനിറ്റ്",
+        "15": "{h}േകാൽ",
+        "20": "{h}് മണി ഇരുപത് മിനിറ്റ്",
+        "25": "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്",
+        "30": "{h}ര",
+        "35": "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്",
+        "40": "{h}് മണി നാൽപ്പത് മിനിറ്റ്",
+        "45": "{h}േമുക്കാൽ",
+        "50": "{h}് മണി അമ്പത് മിനിറ്റ്",
+        "55": "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്"
       }
     },
     "short": {
@@ -253,5 +253,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "To get the fused Malayalam forms (മൂന്നര 3:30, മൂന്നേകാൽ 3:15, മൂന്നേമുക്കാൽ 3:45) the hours list now holds the combining stems without the final chandrakkala (മൂന്ന instead of മൂന്ന്) and the patterns add it back ('{h}് മണി' -> 'മൂന്ന് മണി'). Output is correct Malayalam, but the hours entries are stems, not standalone words (precedent: ko uses attributive '한/두/세'). Other minutes are additive 'മൂന്ന് മണി പത്ത് മിനിറ്റ്' (no subtractive forms; digital-style additive reading is the common spoken form). Compromise: 1:00 renders 'ഒന്ന് മണി' rather than the more idiomatic 'ഒരു മണി', because 1:30 needs the ഒന്ന stem for 'ഒന്നര'."
+    }
+  ]
 }

@@ -29,7 +29,7 @@ DYU = DurationLocale(
     delimiter=", ",
     just_now="sisan",
     ago="{0} tɛmɛnen",
-    in_future="ka {0}",
+    in_future="{0} kɔnɔ",
     short=CompactnessOverride(
         units={
             "second": "sɛk. {n}",
@@ -41,7 +41,7 @@ DYU = DurationLocale(
             "year": "san {n}",
         },
         ago="{0} tɛmɛnen",
-        in_future="ka {0}",
+        in_future="{0} kɔnɔ",
     ),
     compact=CompactnessOverride(
         units={
@@ -56,6 +56,6 @@ DYU = DurationLocale(
         half="{n}½",
         delimiter="",
         ago="{0} tɛmɛnen",
-        in_future="ka {0}",
+        in_future="{0} kɔnɔ",
     ),
 )

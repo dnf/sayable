@@ -16,7 +16,7 @@ import SayableDuration.Types
 locale :: DurationLocale
 locale = DurationLocale
     { localeCode = "ml"
-    , localePlural = \n -> if n == 0 || n == 1 then One else Other
+    , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
         { unitSecond = Pluralized
           [ (One, "{n} സെക്കൻഡ്")
@@ -47,7 +47,7 @@ locale = DurationLocale
           , (Other, "{n} വർഷങ്ങൾ")
           ]
         }
-    , localeHalf = "{0} ര"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustNow = "ഇപ്പോൾ"
     , localeAgo = "{0} മുമ്പ്"

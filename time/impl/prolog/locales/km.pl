@@ -15,18 +15,18 @@ st_hours('km', ['ដប់ពីរ', 'មួយ', 'ពីរ', 'បី', 'ប�
 st_midnight('km', 'កណ្ដាលអធ្រាត្រ').
 st_noon('km', 'ថ្ងៃត្រង់').
 
-st_pattern('km', 0, '{h}:00').
-st_pattern('km', 5, '{h}:05').
-st_pattern('km', 10, '{h}:10').
-st_pattern('km', 15, '{h}:15').
-st_pattern('km', 20, '{h}:20').
-st_pattern('km', 25, '{h}:25').
-st_pattern('km', 30, '{h}:30').
-st_pattern('km', 35, '{h}:35').
-st_pattern('km', 40, '{h}:40').
-st_pattern('km', 45, '{h}:45').
-st_pattern('km', 50, '{h}:50').
-st_pattern('km', 55, '{h}:55').
+st_pattern('km', 0, 'ម៉ោង{h}').
+st_pattern('km', 5, 'ម៉ោង{h} ប្រាំនាទី').
+st_pattern('km', 10, 'ម៉ោង{h} ដប់នាទី').
+st_pattern('km', 15, 'ម៉ោង{h} ដប់ប្រាំនាទី').
+st_pattern('km', 20, 'ម៉ោង{h} ម្ភៃនាទី').
+st_pattern('km', 25, 'ម៉ោង{h} ម្ភៃប្រាំនាទី').
+st_pattern('km', 30, 'ម៉ោង{h}កន្លះ').
+st_pattern('km', 35, 'ម៉ោង{h} សាមសិបប្រាំនាទី').
+st_pattern('km', 40, 'ម៉ោង{h} សែសិបនាទី').
+st_pattern('km', 45, 'ម៉ោង{h} សែសិបប្រាំនាទី').
+st_pattern('km', 50, 'ម៉ោង{h} ហាសិបនាទី').
+st_pattern('km', 55, 'ម៉ោង{h} ហាសិបប្រាំនាទី').
 
 short_st_use24h('km', true).
 short_st_format('km', '{h}:{mm}').

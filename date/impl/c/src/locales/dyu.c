@@ -21,7 +21,7 @@ static const char *sd_short_weekdays_dyu[7] = {
 
 const SdDateLocale sd_locale_dyu = {
     "dyu",
-    { "Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburdukalo", "Desanburukalo" },
+    { "Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburukalo", "Desanburukalo" },
     { "Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri" },
     "{n}",
     (const SdDayFormatException *)0, 0,

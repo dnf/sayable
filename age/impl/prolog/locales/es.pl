@@ -23,7 +23,7 @@ sa_unit('es', month, other, '{n} meses').
 sa_unit('es', year, one, '{n} año').
 sa_unit('es', year, other, '{n} años').
 
-sa_half('es', '{n} y medio').
+sa_half('es', '{0} y medio').
 sa_delimiter('es', ', ').
 sa_just_born('es', 'Recién nacido').
 

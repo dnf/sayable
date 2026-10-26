@@ -46,10 +46,10 @@ defmodule SayableDate.Locales.LO do
       tomorrow: "ມື້ອື່ນ",
       yesterday: "ມື້ວານ",
       day_after_tomorrow: "ມື້ຮື",
-      day_before_yesterday: "ມື້ກ່ອນ",
+      day_before_yesterday: "ມື້ຊືນ",
       this_weekday: "{weekday}ນີ້",
       next_weekday: "{weekday}ໜ້າ",
-      last_weekday: "{weekday}ແລ້ວ",
+      last_weekday: "{weekday}ທີ່ແລ້ວ",
       months_in_date: nil,
       short: %{
         months: [

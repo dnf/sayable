@@ -26,7 +26,7 @@ M.units = {
     month = { one = "{n} mánuður", other = "{n} mánuðir" },
     year = { one = "{n} ár", other = "{n} ár" },
 }
-M.half = "{0} og hálft"
+M.half = "{n} og hálft"
 M.delimiter = ", "
 M.just_born = "Nýfætt"
 M.stages = {

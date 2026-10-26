@@ -54,7 +54,10 @@ locale = DurationLocale
               [ (One, "waktu {n}")
               , (Other, "waktuuji {n}")
               ])
-            , ovrDay = Just (Simple "ñalɗe {n}")
+            , ovrDay = Just (Pluralized
+              [ (One, "ñalawma {n}")
+              , (Other, "ñalɗe {n}")
+              ])
             , ovrWeek = Just (Pluralized
               [ (One, "yontere {n}")
               , (Other, "yontereeji {n}")
@@ -80,7 +83,10 @@ locale = DurationLocale
               [ (One, "wak {n}")
               , (Other, "wakji {n}")
               ])
-            , ovrDay = Just (Simple "ñalɗe {n}")
+            , ovrDay = Just (Pluralized
+              [ (One, "ñalawma {n}")
+              , (Other, "ñalɗe {n}")
+              ])
             , ovrWeek = Just (Pluralized
               [ (One, "yont {n}")
               , (Other, "yontji {n}")

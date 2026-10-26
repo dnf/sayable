@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.PluralUnit([#(types.One, "{n} semana"), #(types.Other, "{n} semanas")]),
     month: types.PluralUnit([#(types.One, "{n} mes"), #(types.Other, "{n} meses")]),
     year: types.PluralUnit([#(types.One, "{n} año"), #(types.Other, "{n} años")]),
-    half: "{n} y medio",
+    half: "{0} y medio",
     delimiter: ", ",
     just_born: "Recién nacido",
     newborn: types.GenderedStage("Recién nacido", "Recién nacida"),

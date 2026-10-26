@@ -51,7 +51,7 @@ let JA* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: none(string),
     justBorn: none(string),
   )),

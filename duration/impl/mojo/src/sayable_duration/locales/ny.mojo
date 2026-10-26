@@ -27,9 +27,9 @@ fn build_ny() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = simple_unit("{n} sekondi")
-    var minute = simple_unit("{n} mphindi")
-    var hour = simple_unit("{n} ola")
+    var second = simple_unit("sekondi {n}")
+    var minute = simple_unit("mphindi {n}")
+    var hour = plural_unit(one="ola {n}", other="maola {n}")
     var day = plural_unit(one="tsiku {n}", other="masiku {n}")
     var week = plural_unit(one="sabata {n}", other="masabata {n}")
     var month = plural_unit(one="mwezi {n}", other="miyezi {n}")
@@ -40,7 +40,7 @@ fn build_ny() -> DurationLocale:
     short_ovr.has_second = True
     short_ovr.minute = simple_unit("mph {n}")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("ola {n}")
+    short_ovr.hour = plural_unit(one="ola {n}", other="maola {n}")
     short_ovr.has_hour = True
     short_ovr.day = plural_unit(one="tsiku {n}", other="mas {n}")
     short_ovr.has_day = True

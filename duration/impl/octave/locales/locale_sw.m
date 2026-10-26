@@ -12,9 +12,9 @@
 function loc = locale_sw()
   loc.code = 'sw';
   loc.plural = @(n) ifelse(n == 1, "one", "other");
-  loc.units.second = '{n} sekunde';
-  loc.units.minute = '{n} dakika';
-  loc.units.hour = '{n} saa';
+  loc.units.second = 'sekunde {n}';
+  loc.units.minute = 'dakika {n}';
+  loc.units.hour = 'saa {n}';
   loc.units.day = struct("one", 'siku {n}', "other", 'siku {n}');
   loc.units.week = struct("one", 'wiki {n}', "other", 'wiki {n}');
   loc.units.month = struct("one", 'mwezi {n}', "other", 'miezi {n}');

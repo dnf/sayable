@@ -10,22 +10,22 @@
 # Source: locales/om.json
 
 function locale_om {
-    $hours = @('kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan', 'jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko')
+    $hours = @('jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko', 'kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan')
     $midnight = 'walakkii halkan'
     $noon = 'guyyaa walakkaa'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'sa''aatii {h}'
+    $patterns[5] = 'sa''aatii {h} fi daqiiqaa shan'
+    $patterns[10] = 'sa''aatii {h} fi daqiiqaa kudhan'
+    $patterns[15] = 'sa''aatii {h} fi daqiiqaa kudha shan'
+    $patterns[20] = 'sa''aatii {h} fi daqiiqaa digdama'
+    $patterns[25] = 'sa''aatii {h} fi daqiiqaa digdamii shan'
+    $patterns[30] = 'sa''aatii {h} fi walakkaa'
+    $patterns[35] = 'sa''aatii {h} fi daqiiqaa soddomii shan'
+    $patterns[40] = 'sa''aatii {h} fi daqiiqaa afurtama'
+    $patterns[45] = 'sa''aatii {h} fi daqiiqaa afurtamii shan'
+    $patterns[50] = 'sa''aatii {h} fi daqiiqaa shantama'
+    $patterns[55] = 'sa''aatii {h} fi daqiiqaa shantamii shan'
     $clock = @{
         hours = $hours
         midnight = $midnight

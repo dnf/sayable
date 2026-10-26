@@ -24,7 +24,7 @@ const SduDurationLocale sdu_locale_gd = {
     {
         { NULL, { NULL, "{n} diog", "{n} dhiog", "{n} diogan", NULL, "{n} diog" } },
         { NULL, { NULL, "{n} mhionaid", "{n} mhionaid", "{n} mionaidean", NULL, "{n} mionaid" } },
-        { NULL, { NULL, "{n} uair", "{n} uair", "{n} uairean", NULL, "{n} uair" } },
+        { NULL, { NULL, "{n} uair a thìde", "{n} uair a thìde", "{n} uairean a thìde", NULL, "{n} uair a thìde" } },
         { NULL, { NULL, "{n} latha", "{n} latha", "{n} làithean", NULL, "{n} latha" } },
         { NULL, { NULL, "{n} sheachdain", "{n} sheachdain", "{n} seachdainean", NULL, "{n} seachdain" } },
         { NULL, { NULL, "{n} mhìos", "{n} mhìos", "{n} mìosan", NULL, "{n} mìos" } },

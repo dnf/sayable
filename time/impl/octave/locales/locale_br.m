@@ -11,10 +11,10 @@
 
 function loc = locale_br()
   loc.code = 'br';
-  loc.clock.hours = {'12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'};
+  loc.clock.hours = {'daouzek eur', 'un eur', 'div eur', 'teir eur', 'peder eur', 'pemp eur', 'c''hwec''h eur', 'seizh eur', 'eizh eur', 'nav eur', 'dek eur', 'unnek eur'};
   loc.clock.midnight = 'hanternoz';
   loc.clock.noon = 'kreisteiz';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} ha pemp', "p10", '{h} ha dek', "p15", '{h} ha kard', "p20", '{h} hag ugent', "p25", '{h} ha pemp warn-ugent', "p30", '{h} hanter', "p35", '{next_h} nemet pemp warn-ugent', "p40", '{next_h} nemet ugent', "p45", '{next_h} nemet kard', "p50", '{next_h} nemet dek', "p55", '{next_h} nemet pemp');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

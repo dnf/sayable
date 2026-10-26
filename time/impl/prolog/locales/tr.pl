@@ -16,17 +16,17 @@ st_midnight('tr', 'gece yarısı').
 st_noon('tr', 'öğle').
 
 st_pattern('tr', 0, 'saat {h}').
-st_pattern('tr', 5, '{h}\'i beş geçiyor').
-st_pattern('tr', 10, '{h}\'i on geçiyor').
-st_pattern('tr', 15, '{h}\'i çeyrek geçiyor').
-st_pattern('tr', 20, '{h}\'i yirmi geçiyor').
-st_pattern('tr', 25, '{h}\'i yirmi beş geçiyor').
-st_pattern('tr', 30, '{h} buçuk').
-st_pattern('tr', 35, '{next_h}\'e yirmi beş var').
-st_pattern('tr', 40, '{next_h}\'e yirmi var').
-st_pattern('tr', 45, '{next_h}\'e çeyrek var').
-st_pattern('tr', 50, '{next_h}\'e on var').
-st_pattern('tr', 55, '{next_h}\'e beş var').
+st_pattern('tr', 5, 'saat {h} sıfır beş').
+st_pattern('tr', 10, 'saat {h} on').
+st_pattern('tr', 15, 'saat {h} on beş').
+st_pattern('tr', 20, 'saat {h} yirmi').
+st_pattern('tr', 25, 'saat {h} yirmi beş').
+st_pattern('tr', 30, 'saat {h} buçuk').
+st_pattern('tr', 35, 'saat {h} otuz beş').
+st_pattern('tr', 40, 'saat {h} kırk').
+st_pattern('tr', 45, 'saat {h} kırk beş').
+st_pattern('tr', 50, 'saat {h} elli').
+st_pattern('tr', 55, 'saat {h} elli beş').
 
 short_st_use24h('tr', true).
 short_st_format('tr', '{h}:{mm}').

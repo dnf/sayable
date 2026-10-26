@@ -20,7 +20,7 @@
     :hours (list "बाह्र" "एक" "दुई" "तीन" "चार" "पाँच" "छ" "सात" "आठ" "नौ" "दश" "एघार")
     :midnight "मध्यरात"
     :noon "मध्यान्ह"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} बजे") (cons 5 "{h} बजेर पाँच मिनेट") (cons 10 "{h} बजेर दश मिनेट") (cons 15 "सवा {h} बजे") (cons 20 "{h} बजेर बीस मिनेट") (cons 25 "{h} बजेर पच्चीस मिनेट") (cons 30 "{h} बजेर तीस मिनेट") (cons 35 "{next_h} बज्न पच्चीस मिनेट बाँकी") (cons 40 "{next_h} बज्न बीस मिनेट बाँकी") (cons 45 "पौने {next_h} बजे") (cons 50 "{next_h} बज्न दश मिनेट बाँकी") (cons 55 "{next_h} बज्न पाँच मिनेट बाँकी")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

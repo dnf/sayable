@@ -12,26 +12,26 @@
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_ee[12] = {
-    "Dzv", "Dzd", "Ted", "Afɔ", "Dam", "Mas", "Sia", "Das", "Any", "Kel", "Ade", "Dzm"
+    "Dzv", "Dzd", "Ted", "Afɔ", "Dam", "Mas", "Sia", "Dea", "Any", "Kel", "Ade", "Dzm"
 };
 
 static const char *sd_short_weekdays_ee[7] = {
-    "Kɔs", "Dzo", "Bra", "Kuɖ", "Yaw", "Fiɖ", "Mem"
+    "Kɔs", "Dzo", "Bla", "Kuɖ", "Yaw", "Fiɖ", "Mem"
 };
 
 const SdDateLocale sd_locale_ee = {
     "ee",
-    { "Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Damɛ", "Masa", "Siamlɔm", "Dasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome" },
-    { "Kɔsiɖa", "Dzoɖa", "Braɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa" },
+    { "Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Dama", "Masa", "Siamlɔm", "Deasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome" },
+    { "Kɔsiɖa", "Dzoɖa", "Blaɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",
     "{day} {month} {year}",
     "egbe",
-    "etsɔ",
-    "etso",
-    "etsɔ megbe",
-    "etso nyitsɔ",
+    "etsɔ si gbɔna",
+    "etsɔ si va yi",
+    "nyitsɔ si gbɔna",
+    "nyitsɔ si va yi",
     "{weekday} sia",
     "{weekday} si gbɔna",
     "{weekday} si va yi",

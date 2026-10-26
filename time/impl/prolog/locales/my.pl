@@ -15,18 +15,18 @@ st_hours('my', ['ဆယ့်နှစ်', 'တစ်', 'နှစ်', 'သု
 st_midnight('my', 'သန်းခေါင်').
 st_noon('my', 'မွန်းတည့်').
 
-st_pattern('my', 0, '{h}:00').
-st_pattern('my', 5, '{h}:05').
-st_pattern('my', 10, '{h}:10').
-st_pattern('my', 15, '{h}:15').
-st_pattern('my', 20, '{h}:20').
-st_pattern('my', 25, '{h}:25').
-st_pattern('my', 30, '{h}:30').
-st_pattern('my', 35, '{h}:35').
-st_pattern('my', 40, '{h}:40').
-st_pattern('my', 45, '{h}:45').
-st_pattern('my', 50, '{h}:50').
-st_pattern('my', 55, '{h}:55').
+st_pattern('my', 0, '{h}နာရီ').
+st_pattern('my', 5, '{h}နာရီ ငါးမိနစ်').
+st_pattern('my', 10, '{h}နာရီ ဆယ်မိနစ်').
+st_pattern('my', 15, '{h}နာရီ ဆယ့်ငါးမိနစ်').
+st_pattern('my', 20, '{h}နာရီ နှစ်ဆယ်မိနစ်').
+st_pattern('my', 25, '{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်').
+st_pattern('my', 30, '{h}နာရီခွဲ').
+st_pattern('my', 35, '{h}နာရီ သုံးဆယ့်ငါးမိနစ်').
+st_pattern('my', 40, '{h}နာရီ လေးဆယ်မိနစ်').
+st_pattern('my', 45, '{h}နာရီ လေးဆယ့်ငါးမိနစ်').
+st_pattern('my', 50, '{h}နာရီ ငါးဆယ်မိနစ်').
+st_pattern('my', 55, '{h}နာရီ ငါးဆယ့်ငါးမိနစ်').
 
 short_st_use24h('my', true).
 short_st_format('my', '{h}:{mm}').

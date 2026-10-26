@@ -14,9 +14,9 @@
 (def locale
   {:code "ln"
    :plural (fn [n] (if (or (== n 0) (== n 1)) :one :other))
-   :second {:type :simple :form "{n} segɔnde"}
-   :minute {:type :simple :form "{n} moniti"}
-   :hour {:type :simple :form "{n} ngonga"}
+   :second {:type :simple :form "segɔnde {n}"}
+   :minute {:type :simple :form "miniti {n}"}
+   :hour {:type :simple :form "ngonga {n}"}
    :day {:type :pluralized :forms {:one "mokolo {n}" :other "mikolo {n}"}}
    :week {:type :pluralized :forms {:one "poso {n}" :other "baposo {n}"}}
    :month {:type :pluralized :forms {:one "sanza {n}" :other "basanza {n}"}}

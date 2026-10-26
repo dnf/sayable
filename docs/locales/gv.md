@@ -6,6 +6,14 @@
 
 Plural rule: `gv` (categories: one, two, few, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [gv.json](../../locales/gv.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Manx from memory of learner materials: '{h} er y chlag' (o'clock), 'queig minnidyn lurg {h}', 'kerroo lurg', 'lieh-oor lurg', 'feed minnid lurg', 'queig minnidyn as feed lurg/gys', 'kerroo gys {next_h}'; hours nane, jees, tree, kiare, queig, shey, shiaght, hoght, nuy, jeih, nane-jeig, daa-yeig. The audit could not verify Manx; I am moderately confident in the structure (lurg/gys/kerroo/lieh-oor/er y chlag) but not in details such as 'nane' vs 'un' before 'er y chlag'. Revert to placeholders if a conservative stance is preferred.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | y Jelhein shoh        | 17/3    |
 | Day before yesterday | Jerdein shaghey       | 13/3    |
 | This Thursday (+5)   | y Jerdein shoh        | 20/3    |
-| Last Monday (-4)     | Jemayrt shaghey       | 11/3    |
-| Next Wednesday (+12) | Jerdein cheet         | 27/3    |
-| Same month (+20)     | 4 Averil              | 4/4     |
+| Last Tuesday (-4)    | Jemayrt shaghey       | 11/3    |
+| Next Thursday (+12)  | Jerdein cheet         | 27/3    |
+| Same year (+20)      | 4 Averil              | 4/4     |
 | Different year       | 10 Jerrey Geuree 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal   | Short | Compact |
-| --------------- | -------- | ----- | ------- |
-| Midnight        | mean oie | 0:00  | 0:00    |
-| 1:00 AM         | 1:00     | 1:00  | 1:00    |
-| 5 past 9        | 9:05     | 9:05  | 9:05    |
-| Quarter past 10 | 10:15    | 10:15 | 10:15   |
-| Half past 11    | 11:30    | 11:30 | 11:30   |
-| Noon            | munlaa   | 12:00 | 12:00   |
-| Quarter to 3    | 2:45     | 14:45 | 14:45   |
-| 5 to 6          | 5:55     | 17:55 | 17:55   |
-| 8 o'clock PM    | 8:00     | 20:00 | 20:00   |
-| 10:30 PM        | 10:30    | 22:30 | 22:30   |
-| 11:58 PM        | mean oie | 23:58 | 23:58   |
+| Time            | Normal                  | Short | Compact |
+| --------------- | ----------------------- | ----- | ------- |
+| Midnight        | mean oie                | 0:00  | 0:00    |
+| 1:00 AM         | nane er y chlag         | 1:00  | 1:00    |
+| 5 past 9        | queig minnidyn lurg nuy | 9:05  | 9:05    |
+| Quarter past 10 | kerroo lurg jeih        | 10:15 | 10:15   |
+| Half past 11    | lieh-oor lurg nane-jeig | 11:30 | 11:30   |
+| Noon            | munlaa                  | 12:00 | 12:00   |
+| Quarter to 3    | kerroo gys tree         | 14:45 | 14:45   |
+| 5 to 6          | queig minnidyn gys shey | 17:55 | 17:55   |
+| 8 o'clock PM    | hoght er y chlag        | 20:00 | 20:00   |
+| 10:30 PM        | lieh-oor lurg jeih      | 22:30 | 22:30   |
+| 11:58 PM        | mean oie                | 23:58 | 23:58   |

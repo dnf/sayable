@@ -13,12 +13,12 @@
 
 (def locale
   {:code "ml"
-   :plural (fn [n] (if (or (== n 0) (== n 1)) :one :other))
+   :plural (fn [n] (if (== n 1) :one :other))
    :day {:type :pluralized :forms {:one "{n} ദിവസം" :other "{n} ദിവസങ്ങൾ"}}
    :week {:type :pluralized :forms {:one "{n} ആഴ്ച" :other "{n} ആഴ്ചകൾ"}}
    :month {:type :pluralized :forms {:one "{n} മാസം" :other "{n} മാസങ്ങൾ"}}
    :year {:type :pluralized :forms {:one "{n} വയസ്സ്" :other "{n} വയസ്സ്"}}
-   :half "{0} ര"
+   :half "{n}½"
    :delimiter ", "
    :just-born "നവജാതശിശു"
    :stages {:newborn {:type :neutral :label "നവജാതശിശു"} :infant {:type :neutral :label "ശിശു"} :toddler {:type :neutral :label "കുഞ്ഞ്"} :child {:type :neutral :label "കുട്ടി"} :teenager {:type :neutral :label "കൗമാരക്കാരൻ"} :adult {:type :neutral :label "മുതിർന്നയാൾ"}}

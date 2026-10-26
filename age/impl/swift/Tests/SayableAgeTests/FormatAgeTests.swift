@@ -145,9 +145,7 @@ import Testing
 
     // 4.2
     @Test func jan1ToMar31StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2025-01-01", "2025-03-31")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2025-01-01", "2025-03-31") == "12 weeks, 5 days")
     }
 
     // 4.3
@@ -157,9 +155,7 @@ import Testing
 
     // 4.4
     @Test func jun15ToSep14StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2025-06-15", "2025-09-14")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2025-06-15", "2025-09-14") == "13 weeks")
     }
 
     // 4.5
@@ -182,9 +178,7 @@ import Testing
 
     // 5.3
     @Test func jan31ToApr29StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2025-01-31", "2025-04-29")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2025-01-31", "2025-04-29") == "12 weeks, 4 days")
     }
 
     // 5.4
@@ -194,9 +188,7 @@ import Testing
 
     // 5.5
     @Test func feb1ToApr30StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2025-02-01", "2025-04-30")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2025-02-01", "2025-04-30") == "12 weeks, 4 days")
     }
 
     // ================================================================
@@ -219,16 +211,12 @@ import Testing
 
     // 6.4
     @Test func jan30ToFeb29LeapStillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2024-01-30", "2024-02-29")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2024-01-30", "2024-02-29") == "4 weeks, 2 days")
     }
 
     // 6.5
     @Test func jan30ToFeb28LeapStillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2024-01-30", "2024-02-28")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2024-01-30", "2024-02-28") == "4 weeks, 1 day")
     }
 
     // ================================================================
@@ -241,9 +229,7 @@ import Testing
 
     // 7.2
     @Test func mar31ToJun29StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2025-03-31", "2025-06-29")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2025-03-31", "2025-06-29") == "12 weeks, 6 days")
     }
 
     // 7.3
@@ -253,9 +239,7 @@ import Testing
 
     // 7.4
     @Test func aug31ToNov29StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2025-08-31", "2025-11-29")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2025-08-31", "2025-11-29") == "12 weeks, 6 days")
     }
 
     // ================================================================
@@ -268,9 +252,7 @@ import Testing
 
     // 8.2
     @Test func feb29ToMay28StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2024-02-29", "2024-05-28")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2024-02-29", "2024-05-28") == "12 weeks, 5 days")
     }
 
     // 8.3
@@ -435,9 +417,7 @@ import Testing
 
     // 13.2
     @Test func dec31ToMar30StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2024-12-31", "2025-03-30")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2024-12-31", "2025-03-30") == "12 weeks, 5 days")
     }
 
     // 13.3
@@ -447,9 +427,7 @@ import Testing
 
     // 13.4
     @Test func nov30ToFeb27StillWeeks() {
-        let result = SayableAgeFormatter.formatAgeDefault("2024-11-30", "2025-02-27")
-        #expect(result != nil)
-        #expect(result!.contains("weeks"))
+        #expect(SayableAgeFormatter.formatAgeDefault("2024-11-30", "2025-02-27") == "12 weeks, 5 days")
     }
 
     // ================================================================
@@ -488,6 +466,15 @@ import Testing
         SayableAgeFormatter._timeNow = { (2025, 6, 15) }
         #expect(SayableAgeFormatter.formatAgeDefault("2020-01-01") == "5 years") // 15.1
         #expect(SayableAgeFormatter.formatAgeDefault("2025-06-10") == "5 days") // 15.2
+    }
+
+    // 23.1, 23.2, 23.3
+    @Test func defaultAsOfStageUsesMockedToday() {
+        SayableAgeFormatter._timeNow = { (2025, 6, 15) }
+        let en = SayableAgeFormatter(Locales.EN)
+        #expect(en.formatStage("2025-06-15") == "Newborn") // 23.1
+        #expect(en.formatStage("2020-01-01") == "Child") // 23.2
+        #expect(en.formatStage("1980-01-01") == "Adult") // 23.3
     }
 
     // ================================================================
@@ -674,7 +661,7 @@ import Testing
                 month: .plural([.one: "{n} mes", .other: "{n} meses"]),
                 year: .plural([.one: "{n} a\u{00F1}o", .other: "{n} a\u{00F1}os"])
             ),
-            half: "{n} y medio",
+            half: "{0} y medio",
             delimiter: ", ",
             justBorn: "Reci\u{00E9}n nacido",
             stages: Stages(
@@ -698,7 +685,7 @@ import Testing
         #expect(pt.formatAge("2025-01-15", "2025-07-15") == "6 meses")
         #expect(pt.formatAge("2023-06-15", "2025-07-15") == "2 a\u{00F1}os, 1 mes")
         #expect(pt.formatAge("2023-06-15", "2025-12-15") == "2 a\u{00F1}os, 6 meses")
-        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 y medio a\u{00F1}os")
+        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 a\u{00F1}os y medio")
         #expect(pt.formatAge("2022-06-15", "2025-06-15") == "3 a\u{00F1}os")
         #expect(pt.formatAge("2018-06-15", "2025-06-15") == "7 a\u{00F1}os")
 
@@ -890,7 +877,7 @@ import Testing
     @Test func hebrewLocaleDualForms() {
         let pt = SayableAgeFormatter(Locales.HE)
         #expect(pt.formatAge("2025-06-15", "2025-06-15") == "\u{05E8}\u{05E7} \u{05E0}\u{05D5}\u{05DC}\u{05D3}")
-        #expect(pt.formatAge("2025-06-14", "2025-06-15") == "\u{05D9}\u{05D5}\u{05DD} 1")
+        #expect(pt.formatAge("2025-06-14", "2025-06-15") == "\u{05D9}\u{05D5}\u{05DD}")
         #expect(pt.formatAge("2025-06-12", "2025-06-15") == "3 \u{05D9}\u{05DE}\u{05D9}\u{05DD}")
         #expect(pt.formatAge("2025-06-01", "2025-06-15") == "\u{05E9}\u{05D1}\u{05D5}\u{05E2}\u{05D9}\u{05D9}\u{05DD}")
         #expect(pt.formatAge("2025-05-25", "2025-06-15") == "3 \u{05E9}\u{05D1}\u{05D5}\u{05E2}\u{05D5}\u{05EA}")
@@ -925,7 +912,7 @@ import Testing
         #expect(pt.formatAge("2025-06-14", "2025-06-15") == "1 hari")
         #expect(pt.formatAge("2025-06-12", "2025-06-15") == "3 hari")
         #expect(pt.formatAge("2025-01-15", "2025-07-15") == "6 bulan")
-        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 tahun setengah")
+        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 setengah tahun")
         #expect(pt.formatAge("2018-06-15", "2025-06-15") == "7 tahun")
     }
 
@@ -1005,7 +992,7 @@ import Testing
 
     // 32.3
     @Test func canonical32_3() {
-        #expect(SayableAgeFormatter(Locales.get("shi")!).formatAge("2005-06-08", "2012-06-07") == "6 iseggasen d uzgen")
+        #expect(SayableAgeFormatter(Locales.get("shi")!).formatAge("2005-06-08", "2012-06-07") == "6 \u{2D49}\u{2D59}\u{2D33}\u{2D33}\u{2D6F}\u{2D30}\u{2D59}\u{2D4F} \u{2D37} \u{2D53}\u{2D63}\u{2D33}\u{2D4F}")
     }
 
 

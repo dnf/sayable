@@ -20,11 +20,11 @@ proc locale_date_wo {} {
     set today {tey}
     set tomorrow {suba}
     set yesterday {démb}
-    set day_after_tomorrow {suba-suba}
-    set day_before_yesterday {démb-démb}
-    set this_weekday "{weekday} bi"
-    set next_weekday "{weekday} bi ñëw"
-    set last_weekday "{weekday} bi weex"
+    set day_after_tomorrow {gannaaw-suba}
+    set day_before_yesterday {bërki-démb}
+    set this_weekday "{weekday} jii"
+    set next_weekday "{weekday} jiy ñëw"
+    set last_weekday "{weekday} ji weesu"
     set months_in_date ""
     set short [dict create \
         months [list {Sam} {Few} {Maa} {Awr} {Mee} {Suw} {Sul} {Ut} {Sep} {Okt} {Now} {Des}] \

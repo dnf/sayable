@@ -29,7 +29,7 @@ defmodule SayableDuration.Locales.DYU do
       delimiter: ", ",
       just_now: "sisan",
       ago: "{0} tɛmɛnen",
-      in_future: "ka {0}",
+      in_future: "{0} kɔnɔ",
       short: %{
         units: %{
           second: "sɛk. {n}",
@@ -41,7 +41,7 @@ defmodule SayableDuration.Locales.DYU do
           year: "san {n}"
         },
         ago: "{0} tɛmɛnen",
-        in_future: "ka {0}"
+        in_future: "{0} kɔnɔ"
       },
       compact: %{
         units: %{
@@ -56,7 +56,7 @@ defmodule SayableDuration.Locales.DYU do
         half: "{n}½",
         delimiter: "",
         ago: "{0} tɛmɛnen",
-        in_future: "ka {0}"
+        in_future: "{0} kɔnɔ"
       }
     }
   end

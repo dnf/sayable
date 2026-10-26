@@ -16,8 +16,8 @@ hy
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'hy'.
-	locale months: (OrderedCollection withAll: { 'Հունվար'. 'Փետրվար'. 'Մարտ'. 'Ապրիլ'. 'Մայիս'. 'Հունիս'. 'Հուլիս'. 'Օգոստոս'. 'Սեպտեմբեր'. 'Հոկտեմբեր'. 'Նոյեմբեր'. 'Դեկտեմբեր' }).
-	locale weekdays: (OrderedCollection withAll: { 'Կիրակի'. 'Երկուշաբթի'. 'Երեքշաբթի'. 'Չորեքշաբթի'. 'Հինգշաբթի'. 'Ուրբաթ'. 'Շաբաթ' }).
+	locale months: (OrderedCollection withAll: { 'հունվար'. 'փետրվար'. 'մարտ'. 'ապրիլ'. 'մայիս'. 'հունիս'. 'հուլիս'. 'օգոստոս'. 'սեպտեմբեր'. 'հոկտեմբեր'. 'նոյեմբեր'. 'դեկտեմբեր' }).
+	locale weekdays: (OrderedCollection withAll: { 'կիրակի'. 'երկուշաբթի'. 'երեքշաբթի'. 'չորեքշաբթի'. 'հինգշաբթի'. 'ուրբաթ'. 'շաբաթ' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
@@ -25,15 +25,15 @@ hy
 	locale today: 'այսօր'.
 	locale tomorrow: 'վաղը'.
 	locale yesterday: 'երեկ'.
-	locale dayAfterTomorrow: 'վաղը մյուս օրը'.
-	locale dayBeforeYesterday: 'երեկ մյուս օրը'.
+	locale dayAfterTomorrow: 'վաղը չէ մյուս օրը'.
+	locale dayBeforeYesterday: 'երեկ չէ առաջի օրը'.
 	locale thisWeekday: 'այս {weekday}'.
 	locale nextWeekday: 'հաջորդ {weekday}'.
 	locale lastWeekday: 'անցած {weekday}'.
-	locale monthsInDate: nil.
+	locale monthsInDate: (OrderedCollection withAll: { 'հունվարի'. 'փետրվարի'. 'մարտի'. 'ապրիլի'. 'մայիսի'. 'հունիսի'. 'հուլիսի'. 'օգոստոսի'. 'սեպտեմբերի'. 'հոկտեմբերի'. 'նոյեմբերի'. 'դեկտեմբերի' }).
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { 'Հնվ'. 'Փտր'. 'Մրտ'. 'Ապր'. 'Մյս'. 'Հնս'. 'Հլս'. 'Օգս'. 'Սեպ'. 'Հկտ'. 'Նոյ'. 'Դեկ' }).
-		#weekdays. (OrderedCollection withAll: { 'Կիր'. 'Երկ'. 'Երք'. 'Չրք'. 'Հնգ'. 'Ուր'. 'Շբթ' }).
+		#months. (OrderedCollection withAll: { 'հնվ'. 'փտր'. 'մրտ'. 'ապր'. 'մյս'. 'հնս'. 'հլս'. 'օգս'. 'սեպ'. 'հկտ'. 'նոյ'. 'դեկ' }).
+		#weekdays. (OrderedCollection withAll: { 'կիր'. 'երկ'. 'երք'. 'չրք'. 'հնգ'. 'ուր'. 'շբթ' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
 		#datePatternWithYear. '{day} {month} {year}'.

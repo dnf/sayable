@@ -12,7 +12,7 @@
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_yue[12] = {
-    "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"
+    "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"
 };
 
 static const char *sd_short_weekdays_yue[7] = {
@@ -21,7 +21,7 @@ static const char *sd_short_weekdays_yue[7] = {
 
 const SdDateLocale sd_locale_yue = {
     "yue",
-    { "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" },
+    { "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" },
     { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" },
     "{n}日",
     (const SdDayFormatException *)0, 0,

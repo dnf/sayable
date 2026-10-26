@@ -18,10 +18,10 @@ ig
 	locale code: 'ig'.
 	locale plural: [ :n | #other ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. '{n} ụbọchị'.
-		'week'. '{n} izu'.
-		'month'. '{n} ọnwa'.
-		'year'. '{n} afọ'.
+		'day'. 'ụbọchị {n}'.
+		'week'. 'izu {n}'.
+		'month'. 'ọnwa {n}'.
+		'year'. 'afọ {n}'.
 	}).
 	locale half: '{0} na ọkara'.
 	locale delimiter: ', '.
@@ -31,15 +31,15 @@ ig
 		#infant. 'Nwa ọhụrụ'.
 		#toddler. 'Nwa nta'.
 		#child. 'Nwa'.
-		#teenager. 'Nwokorobịa'.
+		#teenager. (Dictionary newFromPairs: { #m. 'Nwokorobịa'. #f. 'Agbọghọbịa' }).
 		#adult. 'Okenye'.
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. '{n} ụbọchị'.
-			'week'. '{n} izu'.
-			'month'. '{n} ọnwa'.
-			'year'. '{n} afọ'.
+			'day'. 'ụbọchị {n}'.
+			'week'. 'izu {n}'.
+			'month'. 'ọnwa {n}'.
+			'year'. 'afọ {n}'.
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {

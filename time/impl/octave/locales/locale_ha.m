@@ -11,10 +11,10 @@
 
 function loc = locale_ha()
   loc.code = 'ha';
-  loc.clock.hours = {'sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'goma sha ɗaya'};
+  loc.clock.hours = {'sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'sha ɗaya'};
   loc.clock.midnight = 'tsakar dare';
   loc.clock.noon = 'tsakar rana';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'ƙarfe {h}', "p5", 'ƙarfe {h} da minti biyar', "p10", 'ƙarfe {h} da minti goma', "p15", 'ƙarfe {h} da kwata', "p20", 'ƙarfe {h} da minti ashirin', "p25", 'ƙarfe {h} da minti ashirin da biyar', "p30", 'ƙarfe {h} da rabi', "p35", 'ƙarfe {next_h} saura minti ashirin da biyar', "p40", 'ƙarfe {next_h} saura minti ashirin', "p45", 'ƙarfe {next_h} saura kwata', "p50", 'ƙarfe {next_h} saura minti goma', "p55", 'ƙarfe {next_h} saura minti biyar');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

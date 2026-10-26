@@ -17,7 +17,7 @@ locale() ->
     #date_locale{
         code = "fon",
         months = ["Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"],
-        weekdays = ["Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"],
+        weekdays = ["Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe"],
         day_format = "{n}",
         day_format_exceptions = [],
         date_pattern = "{day} {month}",
@@ -31,6 +31,6 @@ locale() ->
         next_weekday = {just, "{weekday} e ja"},
         last_weekday = {just, "{weekday} e wá yí"},
         months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"]}, months_in_date = nothing, weekdays = {just, ["Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        short = {just, #date_compactness_override{months = {just, ["Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"]}, months_in_date = nothing, weekdays = {just, ["Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

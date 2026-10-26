@@ -54,7 +54,10 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::One, "waktu {n}"),
                 (PluralCategory::Other, "waktuuji {n}"),
             ])),
-            day: Some(UnitForms::simple("ñalɗe {n}")),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "ñalawma {n}"),
+                (PluralCategory::Other, "ñalɗe {n}"),
+            ])),
             week: Some(UnitForms::plural(&[
                 (PluralCategory::One, "yontere {n}"),
                 (PluralCategory::Other, "yontereeji {n}"),
@@ -79,7 +82,10 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::One, "wak {n}"),
                 (PluralCategory::Other, "wakji {n}"),
             ])),
-            day: Some(UnitForms::simple("ñalɗe {n}")),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "ñalawma {n}"),
+                (PluralCategory::Other, "ñalɗe {n}"),
+            ])),
             week: Some(UnitForms::plural(&[
                 (PluralCategory::One, "yont {n}"),
                 (PluralCategory::Other, "yontji {n}"),

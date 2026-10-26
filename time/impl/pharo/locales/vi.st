@@ -19,20 +19,20 @@ vi
 	clock := Dictionary new.
 	clock at: #hours put: (OrderedCollection withAll: { 'mười hai'. 'một'. 'hai'. 'ba'. 'bốn'. 'năm'. 'sáu'. 'bảy'. 'tám'. 'chín'. 'mười'. 'mười một' }).
 	clock at: #midnight put: 'nửa đêm'.
-	clock at: #noon put: 'trưa'.
+	clock at: #noon put: 'mười hai giờ trưa'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h} o''clock'.
-		5. 'năm qua {h}'.
-		10. 'mười qua {h}'.
-		15. 'mười lăm qua {h}'.
-		20. 'hai mươi qua {h}'.
-		25. 'hai mươi lăm qua {h}'.
-		30. 'ba mươi qua {h}'.
-		35. 'hai mươi lăm trước {next_h}'.
-		40. 'hai mươi trước {next_h}'.
-		45. 'mười lăm trước {next_h}'.
-		50. 'mười trước {next_h}'.
-		55. 'năm trước {next_h}'.
+		0. '{h} giờ'.
+		5. '{h} giờ năm phút'.
+		10. '{h} giờ mười phút'.
+		15. '{h} giờ mười lăm phút'.
+		20. '{h} giờ hai mươi phút'.
+		25. '{h} giờ hai mươi lăm phút'.
+		30. '{h} giờ rưỡi'.
+		35. '{next_h} giờ kém hai mươi lăm'.
+		40. '{next_h} giờ kém hai mươi'.
+		45. '{next_h} giờ kém mười lăm'.
+		50. '{next_h} giờ kém mười'.
+		55. '{next_h} giờ kém năm'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

@@ -17,7 +17,7 @@ ro
 	locale := SayableDateLocale new.
 	locale code: 'ro'.
 	locale months: (OrderedCollection withAll: { 'ianuarie'. 'februarie'. 'martie'. 'aprilie'. 'mai'. 'iunie'. 'iulie'. 'august'. 'septembrie'. 'octombrie'. 'noiembrie'. 'decembrie' }).
-	locale weekdays: (OrderedCollection withAll: { 'duminică'. 'luni'. 'marți'. 'miercuri'. 'joi'. 'vineri'. 'sâmbătă' }).
+	locale weekdays: (OrderedCollection withAll: { 'duminica'. 'lunea'. 'marțea'. 'miercurea'. 'joia'. 'vinerea'. 'sâmbăta' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
@@ -27,7 +27,7 @@ ro
 	locale yesterday: 'ieri'.
 	locale dayAfterTomorrow: 'poimâine'.
 	locale dayBeforeYesterday: 'alaltăieri'.
-	locale thisWeekday: 'această {weekday}'.
+	locale thisWeekday: '{weekday} aceasta'.
 	locale nextWeekday: '{weekday} viitoare'.
 	locale lastWeekday: '{weekday} trecută'.
 	locale monthsInDate: (OrderedCollection withAll: { 'ianuarie'. 'februarie'. 'martie'. 'aprilie'. 'mai'. 'iunie'. 'iulie'. 'august'. 'septembrie'. 'octombrie'. 'noiembrie'. 'decembrie' }).

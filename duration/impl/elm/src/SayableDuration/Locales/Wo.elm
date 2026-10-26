@@ -23,55 +23,55 @@ locale =
     , plural = \n -> Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "saa-yépp {n}" )
-            , ( "minute", Simple "simili {n}" )
-            , ( "hour", Simple "waxtu {n}" )
-            , ( "day", Simple "bés {n}" )
-            , ( "week", Simple "ayubés {n}" )
-            , ( "month", Simple "weer {n}" )
-            , ( "year", Simple "at {n}" )
+            [ ( "second", Simple "{n} saa" )
+            , ( "minute", Simple "{n} simili" )
+            , ( "hour", Simple "{n} waxtu" )
+            , ( "day", Simple "{n} fan" )
+            , ( "week", Simple "{n} ayubés" )
+            , ( "month", Simple "{n} weer" )
+            , ( "year", Simple "{n} at" )
             ]
     , half = "{0} ak genn-wàll"
     , delimiter = ", "
     , justNow = "léegi"
     , ago = "{0} ci ginaaw"
-    , inFuture = "ci {0}"
+    , inFuture = "fileek {0}"
     , short =
         Just
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "saa-y. {n}" )
-                        , ( "minute", Simple "sim. {n}" )
-                        , ( "hour", Simple "wax. {n}" )
-                        , ( "day", Simple "bés {n}" )
-                        , ( "week", Simple "ayub. {n}" )
-                        , ( "month", Simple "weer {n}" )
-                        , ( "year", Simple "at {n}" )
+                        [ ( "second", Simple "{n} saa" )
+                        , ( "minute", Simple "{n} sim." )
+                        , ( "hour", Simple "{n} wax." )
+                        , ( "day", Simple "{n} fan" )
+                        , ( "week", Simple "{n} ayub." )
+                        , ( "month", Simple "{n} weer" )
+                        , ( "year", Simple "{n} at" )
                         ]
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} ci ginaaw"
-            , ovrInFuture = Just "ci {0}"
+            , ovrInFuture = Just "fileek {0}"
             }
     , compact =
         Just
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "saa {n}" )
-                        , ( "minute", Simple "sim {n}" )
-                        , ( "hour", Simple "wax {n}" )
-                        , ( "day", Simple "bés {n}" )
-                        , ( "week", Simple "ayub {n}" )
-                        , ( "month", Simple "weer {n}" )
-                        , ( "year", Simple "at {n}" )
+                        [ ( "second", Simple "{n} saa" )
+                        , ( "minute", Simple "{n} sim" )
+                        , ( "hour", Simple "{n} wax" )
+                        , ( "day", Simple "{n} fan" )
+                        , ( "week", Simple "{n} ayub" )
+                        , ( "month", Simple "{n} weer" )
+                        , ( "year", Simple "{n} at" )
                         ]
                     )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} ci gin."
-            , ovrInFuture = Just "ci {0}"
+            , ovrInFuture = Just "fileek {0}"
             }
     }

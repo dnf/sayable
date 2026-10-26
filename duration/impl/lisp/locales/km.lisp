@@ -28,7 +28,7 @@
    :delimiter ", "
    :just-now "ឥឡូវនេះ"
    :ago "{0}មុន"
-   :in-future "ក្នុង{0}"
+   :in-future "{0}ទៀត"
    :short-units (list (cons :second "{n} វិនាទី")
                        (cons :minute "{n} នាទី")
                        (cons :hour "{n} ម៉ោង")
@@ -37,7 +37,7 @@
                        (cons :month "{n} ខែ")
                        (cons :year "{n} ឆ្នាំ"))
    :short-ago "{0}មុន"
-   :short-in-future "ក្នុង{0}"
+   :short-in-future "{0}ទៀត"
    :compact-units (list (cons :second "{n} វិនាទី")
                        (cons :minute "{n} នាទី")
                        (cons :hour "{n} ម៉ោង")
@@ -48,5 +48,5 @@
    :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0}មុន"
-   :compact-in-future "ក្នុង{0}"
+   :compact-in-future "{0}ទៀត"
 ))

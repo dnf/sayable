@@ -9,7 +9,7 @@
       "month": "{n} mont",
       "year": "{n} ia"
     },
-    "half": "{n} na af",
+    "half": "{0} ɛn af",
     "delimiter": ", ",
     "justBorn": "Nyubon bebi",
     "stages": {
@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -116,7 +117,7 @@
       "month": "{n} mont",
       "year": "{n} ia"
     },
-    "half": "{n} na af",
+    "half": "{0} ɛn af",
     "delimiter": ", ",
     "justNow": "jos naw",
     "ago": "{0} bak",
@@ -153,6 +154,7 @@
         "year": "{n}y"
       },
       "delimiter": "",
+      "half": "{n}½",
       "ago": "{0} bak",
       "inFuture": "na {0}",
       "clock": {

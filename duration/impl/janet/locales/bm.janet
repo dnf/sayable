@@ -23,7 +23,7 @@
    :delimiter ", "
    :just-now "sisan"
    :ago "{0} bɔlen"
-   :in-future "ka {0}"
-   :short {:units {:second "sek. {n}" :minute "min. {n}" :hour "lɛr. {n}" :day "don {n}" :week "dɔgɔk. {n}" :month "kalo {n}" :year "san {n}"} :ago "{0} bɔlen" :in-future "ka {0}"}
-   :compact {:units {:second "sek {n}" :minute "min {n}" :hour "lɛr {n}" :day "don {n}" :week "dɔgɔk {n}" :month "kalo {n}" :year "san {n}"} :half "{n}½" :delimiter "" :ago "{0} bɔlen" :in-future "ka {0}"}
+   :in-future "{0} kɔnɔ"
+   :short {:units {:second "sek. {n}" :minute "min. {n}" :hour "lɛr. {n}" :day "don {n}" :week "dɔgɔk. {n}" :month "kalo {n}" :year "san {n}"} :ago "{0} bɔlen" :in-future "{0} kɔnɔ"}
+   :compact {:units {:second "sek {n}" :minute "min {n}" :hour "lɛr {n}" :day "don {n}" :week "dɔgɔk {n}" :month "kalo {n}" :year "san {n}"} :half "{n}½" :delimiter "" :ago "{0} bɔlen" :in-future "{0} kɔnɔ"}
 })

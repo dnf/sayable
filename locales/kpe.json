@@ -170,7 +170,7 @@
   "time": {
     "clock": {
       "hours": [
-        "puu lɔŋ",
+        "puu da feere",
         "tɔŋ",
         "feere",
         "sawa",
@@ -186,18 +186,18 @@
       "midnight": "kpindi kɔlɛ",
       "noon": "tili-ma",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "awa {h}",
+        "5": "awa {h} da miniti lɔɔlu",
+        "10": "awa {h} da miniti puu",
+        "15": "awa {h} da miniti puu da lɔɔlu",
+        "20": "awa {h} da miniti puu feere",
+        "25": "awa {h} da miniti puu feere da lɔɔlu",
+        "30": "awa {h} da miniti puu sawa",
+        "35": "awa {h} da miniti puu sawa da lɔɔlu",
+        "40": "awa {h} da miniti puu naŋ",
+        "45": "awa {h} da miniti puu naŋ da lɔɔlu",
+        "50": "awa {h} da miniti puu lɔɔlu",
+        "55": "awa {h} da miniti puu lɔɔlu da lɔɔlu"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Best effort per orchestrator instruction: 'awa {h}' (awa = hour, as the file's duration unit) + additive 'da miniti N' (da = and, as in the file's own numerals 'mɛi da tɔŋ'); 30 written as 'miniti puu sawa' rather than a half word because the file's 'da kɔlɛ' (half) could not be verified. Tens built as puu + multiplier (puu feere 20, puu sawa 30, puu naŋ 40, puu lɔɔlu 50) and 15 as 'puu da lɔɔlu'. Doubts: the hour noun ('awa' is a loan; Kpelle may use a native word), the 'da' linker for minutes, and the file's numeral spellings (standard Kpelle: tɔnɔ, feerɛ, saaɓa, náaŋ, 'puu kau tɔnɔ' for 11). Needs a Kpelle speaker."
+    }
+  ]
 }

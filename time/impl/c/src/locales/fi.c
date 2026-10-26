@@ -17,7 +17,7 @@ const StTimeLocale st_locale_fi = {
         { "kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista" },
         "keskiyö",
         "keskipäivä",
-        { "{h}", "viisi yli {h}", "kymmenen yli {h}", "vartti yli {h}", "kaksikymmentä yli {h}", "kaksikymmentäviisi yli {h}", "puoli yli {h}", "kaksikymmentäviisi vaille {next_h}", "kaksikymmentä vaille {next_h}", "vartti vaille {next_h}", "kymmenen vaille {next_h}", "viisi vaille {next_h}" }
+        { "kello {h}", "viisi yli {h}", "kymmenen yli {h}", "vartti yli {h}", "kaksikymmentä yli {h}", "kaksikymmentäviisi yli {h}", "puoli {next_h}", "kaksikymmentäviisi vaille {next_h}", "kaksikymmentä vaille {next_h}", "vartti vaille {next_h}", "kymmenen vaille {next_h}", "viisi vaille {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}.{mm}" },
     true, { true, { NULL, NULL }, "{h}.{mm}" }

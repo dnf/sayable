@@ -28,7 +28,7 @@ var CEB = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} ka bulan"),
 		Year:  sa.SimpleUnit("{n} ka tuig"),
 	},
-	Half:      "{n}½",
+	Half:      "{0} ug tunga",
 	Delimiter: ", ",
 	JustBorn:  "Bag-ong natawo",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

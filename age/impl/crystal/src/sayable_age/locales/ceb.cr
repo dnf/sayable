@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new("{n} ka bulan"),
         "year" => UnitForms.new("{n} ka tuig"),
       },
-      half: "{n}½",
+      half: "{0} ug tunga",
       delimiter: ", ",
       just_born: "Bag-ong natawo",
       stages: {

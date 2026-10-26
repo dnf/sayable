@@ -29,7 +29,7 @@ locale = DurationLocale
     , localeHalf = "{0} sy sasany"
     , localeDelimiter = ", "
     , localeJustNow = "vao haingana"
-    , localeAgo = "{0} lasa"
+    , localeAgo = "{0} lasa izay"
     , localeInFuture = "ao anatin'ny {0}"
     , localeShort = Just $
         CompactnessOverride
@@ -42,7 +42,7 @@ locale = DurationLocale
             , ovrYear = Just (Simple "{n} tna")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "{0} lasa"
+            , ovrAgo = Just "{0} lasa izay"
             , ovrInFuture = Just "ao anatin'ny {0}"
             }
     , localeCompact = Just $

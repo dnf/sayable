@@ -17,22 +17,22 @@ tem
 	locale := SayableTimeLocale new.
 	locale code: 'tem'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'pɛn pu'. 'kɩrɩŋ'. 'rɔŋ'. 'rasar'. 'rɔŋ-anat'. 'rɔman'. 'rɔmata'. 'rɔmbot'. 'rɔmɔntat'. 'rɔmɔntaŋka'. 'pɛn'. 'pɛn nɛ kɩrɩŋ' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'awa pɛn nɛ rɔŋ'. 'awa kɩrɩŋ'. 'awa rɔŋ'. 'awa rasar'. 'awa rɔŋ-anat'. 'awa rɔman'. 'awa rɔmata'. 'awa rɔmbot'. 'awa rɔmɔntat'. 'awa rɔmɔntaŋka'. 'awa pɛn'. 'awa pɛn nɛ kɩrɩŋ' }).
 	clock at: #midnight put: 'rofɛt anpa'.
 	clock at: #noon put: 'lən'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h}'.
+		5. '{h} nɛ minit rɔman'.
+		10. '{h} nɛ minit pɛn'.
+		15. '{h} nɛ minit pɛn nɛ rɔman'.
+		20. '{h} nɛ minit kɩgba'.
+		25. '{h} nɛ minit kɩgba nɛ rɔman'.
+		30. '{h} a gbankɛ'.
+		35. '{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman'.
+		40. '{h} nɛ minit tɔgba rɔŋ'.
+		45. '{h} nɛ minit tɔgba rɔŋ nɛ rɔman'.
+		50. '{h} nɛ minit tɔgba rɔŋ nɛ pɛn'.
+		55. '{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

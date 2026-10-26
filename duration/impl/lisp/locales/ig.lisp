@@ -17,25 +17,25 @@
   (make-duration-locale
    :code "ig"
    :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :second "{n} sekọnd")
-               (cons :minute "{n} nkeji")
-               (cons :hour "{n} awa")
-               (cons :day "{n} ụbọchị")
-               (cons :week "{n} izu")
-               (cons :month "{n} ọnwa")
-               (cons :year "{n} afọ"))
+   :units (list (cons :second "sekọnd {n}")
+               (cons :minute "nkeji {n}")
+               (cons :hour "awa {n}")
+               (cons :day "ụbọchị {n}")
+               (cons :week "izu {n}")
+               (cons :month "ọnwa {n}")
+               (cons :year "afọ {n}"))
    :half "{0} na ọkara"
    :delimiter ", "
    :just-now "ugbu a"
    :ago "{0} gara aga"
    :in-future "na {0}"
-   :short-units (list (cons :second "{n} sek.")
-                       (cons :minute "{n} nkeji")
-                       (cons :hour "{n} awa")
-                       (cons :day "{n} ụbọchị")
-                       (cons :week "{n} izu")
-                       (cons :month "{n} ọnwa")
-                       (cons :year "{n} afọ"))
+   :short-units (list (cons :second "sek. {n}")
+                       (cons :minute "nkeji {n}")
+                       (cons :hour "awa {n}")
+                       (cons :day "ụbọchị {n}")
+                       (cons :week "izu {n}")
+                       (cons :month "ọnwa {n}")
+                       (cons :year "afọ {n}"))
    :short-ago "{0} gara aga"
    :short-in-future "na {0}"
    :compact-units (list (cons :second "{n}s")

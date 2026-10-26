@@ -28,7 +28,7 @@ module SayableDuration
       delimiter: ' ',
       just_now: 'เมื่อกี้',
       ago: '{0}ที่แล้ว',
-      in_future: 'ใน{0}',
+      in_future: 'ในอีก {0}',
       short: CompactnessOverride.new(
         units: {
           'second' => '{n} วิ',
@@ -40,7 +40,7 @@ module SayableDuration
           'year' => '{n} ปี',
         },
         ago: '{0}ที่แล้ว',
-        in_future: 'ใน{0}',
+        in_future: 'ในอีก {0}',
       ),
       compact: CompactnessOverride.new(
         units: {
@@ -55,7 +55,7 @@ module SayableDuration
         delimiter: '',
         half: '{n}½',
         ago: '{0}ที่แล้ว',
-        in_future: 'ใน{0}',
+        in_future: 'ในอีก {0}',
       ),
     )
   end

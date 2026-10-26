@@ -11,22 +11,22 @@
 
 % Umbundu locale.
 
-st_hours('umb', ['olohola likumi na yivali', 'yimosi', 'yivali', 'yitathu', 'yinyali', 'yitanu', 'yitathu-va-yivali', 'yisemba', 'yinyali-va-yivali', 'yitanu-va-yivali', 'likumi', 'likumi na yimosi']).
+st_hours('umb', ['ekwi la vali', 'mosi', 'vali', 'tatu', 'kwãla', 'tãlo', 'epandu', 'epanduvali', 'ecelãla', 'ecea', 'ekwi', 'ekwi la mosi']).
 st_midnight('umb', 'ocitapi').
 st_noon('umb', 'ocivali').
 
-st_pattern('umb', 0, '{h}:00').
-st_pattern('umb', 5, '{h}:05').
-st_pattern('umb', 10, '{h}:10').
-st_pattern('umb', 15, '{h}:15').
-st_pattern('umb', 20, '{h}:20').
-st_pattern('umb', 25, '{h}:25').
-st_pattern('umb', 30, '{h}:30').
-st_pattern('umb', 35, '{h}:35').
-st_pattern('umb', 40, '{h}:40').
-st_pattern('umb', 45, '{h}:45').
-st_pattern('umb', 50, '{h}:50').
-st_pattern('umb', 55, '{h}:55').
+st_pattern('umb', 0, 'ohola {h}').
+st_pattern('umb', 5, 'ohola {h} la tãlo').
+st_pattern('umb', 10, 'ohola {h} la ekwi').
+st_pattern('umb', 15, 'ohola {h} la ekwi la tãlo').
+st_pattern('umb', 20, 'ohola {h} la akũi avali').
+st_pattern('umb', 25, 'ohola {h} la akũi avali la tãlo').
+st_pattern('umb', 30, 'ohola {h} la oñali').
+st_pattern('umb', 35, 'ohola {h} la akũi atatu la tãlo').
+st_pattern('umb', 40, 'ohola {h} la akũi akwãla').
+st_pattern('umb', 45, 'ohola {h} la akũi akwãla la tãlo').
+st_pattern('umb', 50, 'ohola {h} la akũi atãlo').
+st_pattern('umb', 55, 'ohola {h} la akũi atãlo la tãlo').
 
 short_st_use24h('umb', false).
 short_st_format('umb', '{h}:{mm} {ampm}').

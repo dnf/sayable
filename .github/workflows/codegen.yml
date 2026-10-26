@@ -18,3 +18,5 @@ jobs:
         working-directory: age
       - name: Every language workflow tests every component it implements
         run: python tools/check_workflow_components.py
+      - name: Every native suite implements every canonical test
+        run: python tools/check_test_ids.py

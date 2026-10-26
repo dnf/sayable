@@ -10,22 +10,22 @@
 # Source: locales/bci.json
 
 function locale_bci {
-    $hours = @('blu-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-kun')
+    $hours = @('blu-nin-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-nin-kun')
     $midnight = 'kɔnguɛ afiɛn'
     $noon = 'nnɔsua'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'dɔ {h}'
+    $patterns[5] = 'dɔ {h} nin miniti nnun'
+    $patterns[10] = 'dɔ {h} nin miniti blu'
+    $patterns[15] = 'dɔ {h} nin miniti blu-nin-nnun'
+    $patterns[20] = 'dɔ {h} nin miniti ablaɔn'
+    $patterns[25] = 'dɔ {h} nin miniti ablaɔn-nin-nnun'
+    $patterns[30] = 'dɔ {h} nin miniti ablasan'
+    $patterns[35] = 'dɔ {h} nin miniti ablasan-nin-nnun'
+    $patterns[40] = 'dɔ {h} nin miniti ablanan'
+    $patterns[45] = 'dɔ {h} nin miniti ablanan-nin-nnun'
+    $patterns[50] = 'dɔ {h} nin miniti ablenun'
+    $patterns[55] = 'dɔ {h} nin miniti ablenun-nin-nnun'
     $clock = @{
         hours = $hours
         midnight = $midnight

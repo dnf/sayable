@@ -23,7 +23,7 @@ tpi
 		'month'. '{n} mun'.
 		'year'. '{n} yia'.
 	}).
-	locale half: '{n} na hap'.
+	locale half: '{0} na hap'.
 	locale delimiter: ', '.
 	locale justBorn: 'Nupela pikinini'.
 	locale stages: (Dictionary newFromPairs: {
@@ -49,6 +49,7 @@ tpi
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 	}).
 	^ locale

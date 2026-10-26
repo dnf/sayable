@@ -20,7 +20,7 @@ var HU = st.TimeLocale{
 		Hours:    [12]string{"tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy"},
 		Midnight: "éjfél",
 		Noon:     "dél",
-		Patterns: map[int]string{0: "{h} óra", 5: "öt múlt {h}", 10: "tíz múlt {h}", 15: "negyed múlt {h}", 20: "húsz múlt {h}", 25: "huszonöt múlt {h}", 30: "fél múlt {h}", 35: "huszonöt múlva {next_h}", 40: "húsz múlva {next_h}", 45: "negyed múlva {next_h}", 50: "tíz múlva {next_h}", 55: "öt múlva {next_h}"},
+		Patterns: map[int]string{0: "{h} óra", 5: "öt perccel múlt {h}", 10: "tíz perccel múlt {h}", 15: "negyed {next_h}", 20: "húsz perccel múlt {h}", 25: "öt perc múlva fél {next_h}", 30: "fél {next_h}", 35: "öt perccel múlt fél {next_h}", 40: "húsz perc múlva {next_h}", 45: "háromnegyed {next_h}", 50: "tíz perc múlva {next_h}", 55: "öt perc múlva {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

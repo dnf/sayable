@@ -29,7 +29,7 @@ let KM* = DurationLocale(
   delimiter: ", ",
   justNow: "ឥឡូវនេះ",
   ago: "{0}មុន",
-  inFuture: "ក្នុង{0}",
+  inFuture: "{0}ទៀត",
   short: some(CompactnessOverride(
     units: some({
       "second": simpleUnit("{n} វិនាទី"),
@@ -43,7 +43,7 @@ let KM* = DurationLocale(
     half: none(string),
     delimiter: none(string),
     ago: some("{0}មុន"),
-    inFuture: some("ក្នុង{0}"),
+    inFuture: some("{0}ទៀត"),
   )),
   compact: some(CompactnessOverride(
     units: some({
@@ -58,6 +58,6 @@ let KM* = DurationLocale(
     half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0}មុន"),
-    inFuture: some("ក្នុង{0}"),
+    inFuture: some("{0}ទៀត"),
   )),
 )

@@ -170,34 +170,34 @@
   "time": {
     "clock": {
       "hours": [
-        "bâlè-ûse",
+        "balë-ôko na ûse",
         "ôko",
         "ûse",
         "otâ",
         "usïö",
         "okü",
-        "ömënë",
-        "mbïrïmbïrï",
-        "mënâmbârâ",
-        "gonambâlâ",
-        "bâlè",
-        "bâlè na ôko"
+        "omanä",
+        "mbâsâmbârâ",
+        "miombe",
+        "gümbâyä",
+        "balë-ôko",
+        "balë-ôko na ôko"
       ],
       "midnight": "gï na lögö",
       "noon": "lâ nzönï",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "ngbonga {h}",
+        "5": "ngbonga {h} na minüti okü",
+        "10": "ngbonga {h} na minüti balë-ôko",
+        "15": "ngbonga {h} na minüti balë-ôko na okü",
+        "20": "ngbonga {h} na minüti balë-ûse",
+        "25": "ngbonga {h} na minüti balë-ûse na okü",
+        "30": "ngbonga {h} na ndâmbo",
+        "35": "ngbonga {h} na minüti balë-otâ na okü",
+        "40": "ngbonga {h} na minüti balë-usïö",
+        "45": "ngbonga {h} na minüti balë-usïö na okü",
+        "50": "ngbonga {h} na minüti balë-okü",
+        "55": "ngbonga {h} na minüti balë-okü na okü"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Western hour count (CAR). Frame 'ngbonga {h}' (ngbonga = hour/o'clock), 'ngbonga {h} na ndâmbo' for half, 'ngbonga {h} na minüti <N>' otherwise, with Sango numerals (okü, balë-ôko, balë-ôko na okü, balë-ûse, balë-otâ na okü, balë-usïö, balë-okü ...). Replaced the hour numerals 6-10, which were not standard Sango ('ömënë','mbïrïmbïrï','mënâmbârâ','gonambâlâ','bâlè'), with omanä, mbâsâmbârâ, miombe, gümbâyä, balë-ôko. Doubts: spelling/diacritics of the loan 'minüti' (minute); whether 'na ndâmbo' is the usual way to say half past; noon 'lâ nzönï' and midnight 'gï na lögö' were left untouched but look doubtful ('lâ nzönï' reads like 'good day'). Needs a native speaker."
+    }
+  ]
 }

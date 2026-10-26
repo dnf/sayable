@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | μεθαύριο           | 17/3    |
 | Day before yesterday | προχθές            | 13/3    |
 | This Thursday (+5)   | αυτή την Πέμπτη    | 20/3    |
-| Last Monday (-4)     | περασμένη Τρίτη    | 11/3    |
-| Next Wednesday (+12) | επόμενη Πέμπτη     | 27/3    |
-| Same month (+20)     | 4 Απριλίου         | 4/4     |
+| Last Tuesday (-4)    | περασμένη Τρίτη    | 11/3    |
+| Next Thursday (+12)  | επόμενη Πέμπτη     | 27/3    |
+| Same year (+20)      | 4 Απριλίου         | 4/4     |
 | Different year       | 10 Ιανουαρίου 2026 | 10/1/26 |
 
 ## Duration

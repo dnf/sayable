@@ -17,10 +17,10 @@
   (make-time-locale
    :code "am"
    :clock (make-clock-config
-    :hours (list "አሥራ ሁለት" "አንድ" "ሁለት" "ሦስት" "አራት" "አምስት" "ስድስት" "ሰባት" "ስምንት" "ዘጠኝ" "አሥር" "አሥራ አንድ")
+    :hours (list "ስድስት" "ሰባት" "ስምንት" "ዘጠኝ" "አሥር" "አሥራ አንድ" "አሥራ ሁለት" "አንድ" "ሁለት" "ሦስት" "አራት" "አምስት")
     :midnight "እኩለ ሌሊት"
     :noon "እኩለ ቀን"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} ሰዓት") (cons 5 "{h} ሰዓት ከአምስት ደቂቃ") (cons 10 "{h} ሰዓት ከአሥር ደቂቃ") (cons 15 "{h} ሰዓት ከሩብ") (cons 20 "{h} ሰዓት ከሃያ ደቂቃ") (cons 25 "{h} ሰዓት ከሃያ አምስት ደቂቃ") (cons 30 "{h} ሰዓት ተኩል") (cons 35 "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ") (cons 40 "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ") (cons 45 "ለ{next_h} ሰዓት ሩብ ጉዳይ") (cons 50 "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ") (cons 55 "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

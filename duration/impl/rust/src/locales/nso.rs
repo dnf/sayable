@@ -25,11 +25,11 @@ pub fn locale() -> DurationLocale {
         units: Units {
             second: UnitForms::plural(&[
                 (PluralCategory::One, "motsotswana {n}"),
-                (PluralCategory::Other, "dimetsotswana {n}"),
+                (PluralCategory::Other, "metsotswana {n}"),
             ]),
             minute: UnitForms::plural(&[
-                (PluralCategory::One, "metsotso {n}"),
-                (PluralCategory::Other, "dimetsotso {n}"),
+                (PluralCategory::One, "motsotso {n}"),
+                (PluralCategory::Other, "metsotso {n}"),
             ]),
             hour: UnitForms::plural(&[
                 (PluralCategory::One, "iri {n}"),
@@ -59,12 +59,12 @@ pub fn locale() -> DurationLocale {
         in_future: "ka {0}".to_string(),
         short: Some(CompactnessOverride {
             second: Some(UnitForms::plural(&[
-                (PluralCategory::One, "mots. {n}"),
-                (PluralCategory::Other, "dimets. {n}"),
+                (PluralCategory::One, "motsotsw. {n}"),
+                (PluralCategory::Other, "metsotsw. {n}"),
             ])),
             minute: Some(UnitForms::plural(&[
-                (PluralCategory::One, "mets. {n}"),
-                (PluralCategory::Other, "dimets. {n}"),
+                (PluralCategory::One, "mots. {n}"),
+                (PluralCategory::Other, "mets. {n}"),
             ])),
             hour: Some(UnitForms::plural(&[
                 (PluralCategory::One, "iri {n}"),

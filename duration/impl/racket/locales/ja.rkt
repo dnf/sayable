@@ -27,12 +27,12 @@
          "day" (hash "type" "simple" "form" "{n}日")
          "week" (hash "type" "simple" "form" "{n}週")
          "month" (hash "type" "simple" "form" "{n}ヶ月")
-         "year" (hash "type" "simple" "form" "{n}歳"))
+         "year" (hash "type" "simple" "form" "{n}年"))
    "{0}半"
    ""
    "たった今"
    "{0}前"
    "{0}後"
    (duration-compactness-override (hash "type" "simple" "form" "{n} 秒") (hash "type" "simple" "form" "{n} 分") (hash "type" "simple" "form" "{n} 時間") (hash "type" "simple" "form" "{n} 日") (hash "type" "simple" "form" "{n} 週間") (hash "type" "simple" "form" "{n} か月") (hash "type" "simple" "form" "{n} 年") #f #f "{0}前" "{0}後")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" "{0}前" "{0}後")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0}前" "{0}後")
   ))

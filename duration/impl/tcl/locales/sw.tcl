@@ -17,9 +17,9 @@ proc plural_sw {n} {
 proc locale_duration_sw {} {
     set code {sw}
     set units [dict create \
-        second "{n} sekunde" \
-        minute "{n} dakika" \
-        hour "{n} saa" \
+        second "sekunde {n}" \
+        minute "dakika {n}" \
+        hour "saa {n}" \
         day [dict create one "siku {n}" other "siku {n}"] \
         week [dict create one "wiki {n}" other "wiki {n}"] \
         month [dict create one "mwezi {n}" other "miezi {n}"] \

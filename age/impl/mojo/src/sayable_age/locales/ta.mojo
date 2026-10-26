@@ -71,7 +71,7 @@ fn build_ta() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}ரை",
+        half="{n}½",
         delimiter=", ",
         just_born="பிறந்த குழந்தை",
         newborn=newborn,

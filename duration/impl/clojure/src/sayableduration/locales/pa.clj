@@ -16,7 +16,7 @@
    :plural (fn [n] (if (or (== n 0) (== n 1)) :one :other))
    :second {:type :simple :form "{n} ਸਕਿੰਟ"}
    :minute {:type :simple :form "{n} ਮਿੰਟ"}
-   :hour {:type :simple :form "{n} ਘੰਟਾ"}
+   :hour {:type :pluralized :forms {:one "{n} ਘੰਟਾ" :other "{n} ਘੰਟੇ"}}
    :day {:type :pluralized :forms {:one "{n} ਦਿਨ" :other "{n} ਦਿਨ"}}
    :week {:type :pluralized :forms {:one "{n} ਹਫ਼ਤਾ" :other "{n} ਹਫ਼ਤੇ"}}
    :month {:type :pluralized :forms {:one "{n} ਮਹੀਨਾ" :other "{n} ਮਹੀਨੇ"}}

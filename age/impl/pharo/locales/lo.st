@@ -24,7 +24,7 @@ lo
 		'year'. '{n} ປີ'.
 	}).
 	locale half: '{0}ເຄິ່ງ'.
-	locale delimiter: ''.
+	locale delimiter: ' '.
 	locale justBorn: 'ເກີດໃໝ່'.
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. 'ເດັກເກີດໃໝ່'.
@@ -49,6 +49,7 @@ lo
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 	}).
 	^ locale
 ! !

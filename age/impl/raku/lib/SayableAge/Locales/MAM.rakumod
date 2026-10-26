@@ -18,7 +18,7 @@ our sub locale() {
         plural => -> $n { 'other' },
         units => {
             day => '{n} q\'ij',
-            week => '{n} xjaw',
+            week => '{n} seman',
             month => '{n} xjaw',
             year => '{n} ab\'q\'ii',
         },
@@ -36,7 +36,7 @@ our sub locale() {
         short => {
             units => {
                 day => '{n} q\'ij',
-                week => '{n} xjaw',
+                week => '{n} seman',
                 month => '{n} xjaw',
                 year => '{n} ab\'.',
             },
@@ -49,6 +49,7 @@ our sub locale() {
                 year => '{n}y',
             },
             delimiter => '',
+            half => '{n}½',
         },
     }
 }

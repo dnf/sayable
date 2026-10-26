@@ -15,8 +15,8 @@ sd_months('ca', ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 
 sd_weekdays('ca', ['diumenge', 'dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte']).
 sd_day_format('ca', '{n}').
 
-sd_date_pattern('ca', '{day} de {month}').
-sd_date_pattern_with_year('ca', '{day} de {month} de {year}').
+sd_date_pattern('ca', '{day} {month}').
+sd_date_pattern_with_year('ca', '{day} {month} de {year}').
 
 sd_today('ca', 'avui').
 sd_tomorrow('ca', 'demà').
@@ -26,13 +26,14 @@ sd_day_before_yesterday('ca', 'abans-d\'ahir').
 sd_this_weekday('ca', 'aquest {weekday}').
 sd_next_weekday('ca', '{weekday} que ve').
 sd_last_weekday('ca', '{weekday} passat').
+sd_months_in_date('ca', ['de gener', 'de febrer', 'de març', 'd\'abril', 'de maig', 'de juny', 'de juliol', 'd\'agost', 'de setembre', 'd\'octubre', 'de novembre', 'de desembre']).
 
 short_sd_months('ca', ['gen', 'feb', 'març', 'abr', 'maig', 'juny', 'jul', 'ag', 'set', 'oct', 'nov', 'des']).
 short_sd_weekdays('ca', ['dg', 'dl', 'dt', 'dc', 'dj', 'dv', 'ds']).
 short_sd_day_format('ca', '{n}').
 short_sd_clear_exceptions('ca').
 short_sd_date_pattern('ca', '{day} {month}').
-short_sd_date_pattern_with_year('ca', '{day} {month} {year}').
+short_sd_date_pattern_with_year('ca', '{day} {month} de {year}').
 
 compact_sd_date_pattern('ca', '{d}/{m}').
 compact_sd_date_pattern_with_year('ca', '{d}/{m}/{yy}').

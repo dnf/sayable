@@ -18,9 +18,9 @@ proc plural_he {n} {
 proc locale_he {} {
     set code {he}
     set units [dict create \
-        day [dict create one "יום {n}" two {יומיים} other "{n} ימים"] \
-        week [dict create one "שבוע {n}" two {שבועיים} other "{n} שבועות"] \
-        month [dict create one "חודש {n}" two {חודשיים} other "{n} חודשים"] \
+        day [dict create one {יום} two {יומיים} other "{n} ימים"] \
+        week [dict create one {שבוע} two {שבועיים} other "{n} שבועות"] \
+        month [dict create one {חודש} two {חודשיים} other "{n} חודשים"] \
         year [dict create one {שנה} two {שנתיים} other "{n} שנים"] \
     ]
     set half "{0} וחצי"
@@ -28,8 +28,8 @@ proc locale_he {} {
     set just_born {רק נולד}
     set stages [dict create \
         newborn [dict create m {רק נולד} f {רק נולדה}] \
-        infant {תינוק} \
-        toddler {פעוט} \
+        infant [dict create m {תינוק} f {תינוקת}] \
+        toddler [dict create m {פעוט} f {פעוטה}] \
         child [dict create m {ילד} f {ילדה}] \
         teenager [dict create m {נער} f {נערה}] \
         adult [dict create m {מבוגר} f {מבוגרת}] \

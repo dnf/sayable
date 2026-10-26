@@ -40,7 +40,7 @@ sd_unit('cy', day, zero, '{n} diwrnod').
 sd_unit('cy', day, one, '{n} diwrnod').
 sd_unit('cy', day, two, '{n} ddiwrnod').
 sd_unit('cy', day, few, '{n} diwrnod').
-sd_unit('cy', day, many, '{n} niwrnod').
+sd_unit('cy', day, many, '{n} diwrnod').
 sd_unit('cy', day, other, '{n} diwrnod').
 sd_unit('cy', week, zero, '{n} wythnos').
 sd_unit('cy', week, one, '{n} wythnos').
@@ -55,7 +55,7 @@ sd_unit('cy', month, few, '{n} mis').
 sd_unit('cy', month, many, '{n} mis').
 sd_unit('cy', month, other, '{n} mis').
 sd_unit('cy', year, zero, '{n} blwyddyn').
-sd_unit('cy', year, one, '{n} blwyddyn').
+sd_unit('cy', year, one, '{n} flwyddyn').
 sd_unit('cy', year, two, '{n} flynedd').
 sd_unit('cy', year, few, '{n} blynedd').
 sd_unit('cy', year, many, '{n} blynedd').

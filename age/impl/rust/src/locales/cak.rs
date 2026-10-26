@@ -47,7 +47,7 @@ pub fn locale() -> AgeLocale {
             week: Some(UnitForms::simple("{n}w")),
             month: Some(UnitForms::simple("{n}m")),
             year: Some(UnitForms::simple("{n}y")),
-            half: None,
+            half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             just_born: None,
         }),

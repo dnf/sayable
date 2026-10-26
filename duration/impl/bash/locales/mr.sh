@@ -17,7 +17,8 @@ _sayableduration_plural_mr() {
 
 _sayableduration_locale_mr() {
     _unit_second='{n} सेकंद'
-    _unit_minute='{n} मिनिट'
+    _unit_minute_one='{n} मिनिट'
+    _unit_minute_other='{n} मिनिटे'
     _unit_hour='{n} तास'
     _unit_day_one='{n} दिवस'
     _unit_day_other='{n} दिवस'

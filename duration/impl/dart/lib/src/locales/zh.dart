@@ -24,7 +24,7 @@ final zh = DurationLocale(
     'day': simpleUnit('{n}天'),
     'week': simpleUnit('{n}周'),
     'month': simpleUnit('{n}个月'),
-    'year': simpleUnit('{n}岁'),
+    'year': simpleUnit('{n}年'),
   },
   half: '{0}半',
   delimiter: '',

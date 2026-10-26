@@ -26,7 +26,7 @@ var ZU = sdate.DateLocale{
 	Tomorrow:  "kusasa",
 	Yesterday: "izolo",
 	DayAfterTomorrow:  strPtr("ngomhlomunye"),
-	DayBeforeYesterday: strPtr("usuku olwedlule izolo"),
+	DayBeforeYesterday: strPtr("kuthangi"),
 	ThisWeekday:       strPtr("leli {weekday}"),
 	NextWeekday:       strPtr("{weekday} elizayo"),
 	LastWeekday:       strPtr("{weekday} eledlule"),

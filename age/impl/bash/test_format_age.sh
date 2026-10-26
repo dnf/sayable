@@ -344,8 +344,32 @@ assert_eq "$(sayableage_format_age "en" "2025-01-31" "2025-07-01")" "5 months" "
 assert_eq "$(sayableage_format_age "en" "2025-01-31" "2025-07-31")" "6 months" "14.5"
 
 # ================================================================
-# Section 15: Skipped (requires system date mocking)
+# Section 15: Default system date
+# The library reads the real clock when as-of is empty and has no way to
+# override it, so each input is derived from today to keep the canonical
+# expected output.
 # ================================================================
+echo "Section 15: Default system date"
+
+_today_y="$(date +%Y)"
+_today_m="$(date +%m)"
+_today_d="$(date +%d)"
+
+_years_ago() {
+    local day="${_today_d}"
+    if [ "${_today_m}-${day}" = "02-29" ]; then day="28"; fi
+    echo "$(( _today_y - $1 ))-${_today_m}-${day}"
+}
+
+_days_ago() {
+    date -v-"$1"d +%Y-%m-%d 2>/dev/null || date -d "$1 days ago" +%Y-%m-%d
+}
+
+# 15.1 — born 5 years ago today
+assert_eq "$(sayableage_format_age "en" "$(_years_ago 5)" "")" "5 years" "15.1"
+
+# 15.2 — born 5 days ago
+assert_eq "$(sayableage_format_age "en" "$(_days_ago 5)" "")" "5 days" "15.2"
 
 # ================================================================
 # Section 16: formatStage — null / edge cases
@@ -482,8 +506,19 @@ assert_eq "$(sayableage_format_stage "en" "2000-06-15" "2025-06-15")" "Adult" "2
 assert_eq "$(sayableage_format_stage "en" "1980-01-01" "2025-06-15")" "Adult" "22.3"
 
 # ================================================================
-# Section 23: Skipped (requires system date mocking)
+# Section 23: formatStage — default system date
+# Inputs derived from today (see Section 15).
 # ================================================================
+echo "Section 23: formatStage — default system date"
+
+# 23.1 — born today
+assert_eq "$(sayableage_format_stage "en" "$(_days_ago 0)" "")" "Newborn" "23.1"
+
+# 23.2 — born 5 years ago
+assert_eq "$(sayableage_format_stage "en" "$(_years_ago 5)" "")" "Child" "23.2"
+
+# 23.3 — born 45 years ago
+assert_eq "$(sayableage_format_stage "en" "$(_years_ago 45)" "")" "Adult" "23.3"
 
 # ================================================================
 # Section 24: SayableAge class — English locale delegation
@@ -568,7 +603,7 @@ assert_eq "$(sayableage_format_age "es" "2023-06-15" "2025-07-15")" "2 años, 1 
 assert_eq "$(sayableage_format_age "es" "2023-06-15" "2025-12-15")" "2 años, 6 meses" "25.9"
 
 # 25.10
-assert_eq "$(sayableage_format_age "es" "2022-06-15" "2025-12-15")" "3 y medio años" "25.10"
+assert_eq "$(sayableage_format_age "es" "2022-06-15" "2025-12-15")" "3 años y medio" "25.10"
 
 # 25.11
 assert_eq "$(sayableage_format_age "es" "2022-06-15" "2025-06-15")" "3 años" "25.11"
@@ -672,7 +707,7 @@ echo "Section 29: Locale-specific edge cases"
 assert_eq "$(sayableage_format_age "he" "2025-06-15" "2025-06-15")" "רק נולד" "29.1"
 
 # 29.2
-assert_eq "$(sayableage_format_age "he" "2025-06-14" "2025-06-15")" "יום 1" "29.2"
+assert_eq "$(sayableage_format_age "he" "2025-06-14" "2025-06-15")" "יום" "29.2"
 
 # 29.3
 assert_eq "$(sayableage_format_age "he" "2025-06-12" "2025-06-15")" "3 ימים" "29.3"
@@ -690,7 +725,7 @@ assert_eq "$(sayableage_format_age "he" "2025-01-15" "2025-07-15")" "6 חודש�
 assert_eq "$(sayableage_format_age "he" "2025-03-15" "2025-06-15")" "3 חודשים" "29.7"
 
 # 29.8
-assert_eq "$(sayableage_format_age "he" "2023-06-15" "2025-07-15")" "שנתיים, חודש 1" "29.8"
+assert_eq "$(sayableage_format_age "he" "2023-06-15" "2025-07-15")" "שנתיים, חודש" "29.8"
 
 # 29.9
 assert_eq "$(sayableage_format_age "he" "2022-06-15" "2025-12-15")" "3 שנים וחצי" "29.9"
@@ -768,7 +803,7 @@ assert_eq "$(sayableage_format_age "id" "2025-06-12" "2025-06-15")" "3 hari" "29
 assert_eq "$(sayableage_format_age "id" "2025-01-15" "2025-07-15")" "6 bulan" "29.31"
 
 # 29.32
-assert_eq "$(sayableage_format_age "id" "2022-06-15" "2025-12-15")" "3 tahun setengah" "29.32"
+assert_eq "$(sayableage_format_age "id" "2022-06-15" "2025-12-15")" "3 setengah tahun" "29.32"
 
 # 29.33
 assert_eq "$(sayableage_format_age "id" "2018-06-15" "2025-06-15")" "7 tahun" "29.33"
@@ -857,7 +892,7 @@ assert_eq "$(sayableage_format_age "pl" "2021-06-15" "2025-01-15" "normal")" "3 
 assert_eq "$(sayableage_format_age "pl" "2020-06-15" "2025-12-15" "short")" "5 i pół lat" "32.2"
 
 # 32.3 — Tachelhit 6 is 'few'
-assert_eq "$(sayableage_format_age "shi" "2005-06-08" "2012-06-07" "normal")" "6 iseggasen d uzgen" "32.3"
+assert_eq "$(sayableage_format_age "shi" "2005-06-08" "2012-06-07" "normal")" "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ" "32.3"
 
 # 33.1 — February 30 doesn't exist
 assert_eq "$(sayableage_format_age "en" "2025-02-30" "2032-06-25" "normal")" "" "33.1"

@@ -29,7 +29,7 @@ defmodule SayableDuration.Locales.BM do
       delimiter: ", ",
       just_now: "sisan",
       ago: "{0} bɔlen",
-      in_future: "ka {0}",
+      in_future: "{0} kɔnɔ",
       short: %{
         units: %{
           second: "sek. {n}",
@@ -41,7 +41,7 @@ defmodule SayableDuration.Locales.BM do
           year: "san {n}"
         },
         ago: "{0} bɔlen",
-        in_future: "ka {0}"
+        in_future: "{0} kɔnɔ"
       },
       compact: %{
         units: %{
@@ -56,7 +56,7 @@ defmodule SayableDuration.Locales.BM do
         half: "{n}½",
         delimiter: "",
         ago: "{0} bɔlen",
-        in_future: "ka {0}"
+        in_future: "{0} kɔnɔ"
       }
     }
   end

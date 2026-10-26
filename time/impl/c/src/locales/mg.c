@@ -17,7 +17,7 @@ const StTimeLocale st_locale_mg = {
         { "roa ambin'ny folo", "iray", "roa", "telo", "efatra", "dimy", "enina", "fito", "valo", "sivy", "folo", "iraika ambin'ny folo" },
         "misasakalina",
         "atoandro",
-        { "{h} ora", "{h} sy dimy minitra", "{h} sy folo minitra", "{h} sy fahefatra", "{h} sy roapolo minitra", "{h} sy dimy amby roapolo minitra", "{h} sy sasany", "dimy amby roapolo minitra alohan'ny {next_h}", "roapolo minitra alohan'ny {next_h}", "fahefatra alohan'ny {next_h}", "folo minitra alohan'ny {next_h}", "dimy minitra alohan'ny {next_h}" }
+        { "{h} ora", "{h} ora sy dimy minitra", "{h} ora sy folo minitra", "{h} ora sy fahefany", "{h} ora sy roapolo minitra", "{h} ora sy dimy amby roapolo minitra", "{h} ora sy sasany", "{next_h} ora latsaka dimy amby roapolo minitra", "{next_h} ora latsaka roapolo minitra", "{next_h} ora latsaka fahefany", "{next_h} ora latsaka folo minitra", "{next_h} ora latsaka dimy minitra" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

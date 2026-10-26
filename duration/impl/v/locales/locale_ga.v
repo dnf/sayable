@@ -33,7 +33,7 @@ pub const locale_ga = DurationLocale{
 	plural: plural_ga
 	second: plural_unit({PluralCategory.one: '{n} soicind', PluralCategory.two: '{n} shoicind', PluralCategory.few: '{n} shoicind', PluralCategory.many: '{n} soicind', PluralCategory.other: '{n} soicind'})
 	minute: plural_unit({PluralCategory.one: '{n} nóiméad', PluralCategory.two: '{n} nóiméad', PluralCategory.few: '{n} nóiméad', PluralCategory.many: '{n} nóiméad', PluralCategory.other: '{n} nóiméad'})
-	hour: plural_unit({PluralCategory.one: '{n} uair', PluralCategory.two: '{n} uair', PluralCategory.few: '{n} huaire', PluralCategory.many: '{n} n-uaire', PluralCategory.other: '{n} uair'})
+	hour: plural_unit({PluralCategory.one: '{n} uair an chloig', PluralCategory.two: '{n} uair an chloig', PluralCategory.few: '{n} huaire an chloig', PluralCategory.many: '{n} n-uaire an chloig', PluralCategory.other: '{n} uair an chloig'})
 	day: plural_unit({PluralCategory.one: '{n} lá', PluralCategory.two: '{n} lá', PluralCategory.few: '{n} lá', PluralCategory.many: '{n} lá', PluralCategory.other: '{n} lá'})
 	week: plural_unit({PluralCategory.one: '{n} seachtain', PluralCategory.two: '{n} sheachtain', PluralCategory.few: '{n} seachtaine', PluralCategory.many: '{n} seachtaine', PluralCategory.other: '{n} seachtain'})
 	month: plural_unit({PluralCategory.one: '{n} mhí', PluralCategory.two: '{n} mhí', PluralCategory.few: '{n} mhí', PluralCategory.many: '{n} mí', PluralCategory.other: '{n} mí'})

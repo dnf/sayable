@@ -12,7 +12,7 @@
 % Maltese locale.
 
 sd_months('mt', ['Jannar', 'Frar', 'Marzu', 'April', 'Mejju', 'Ġunju', 'Lulju', 'Awwissu', 'Settembru', 'Ottubru', 'Novembru', 'Diċembru']).
-sd_weekdays('mt', ['Il-Ħadd', 'It-Tnejn', 'It-Tlieta', 'L-Erbgħa', 'Il-Ħamis', 'Il-Ġimgħa', 'Is-Sibt']).
+sd_weekdays('mt', ['il-Ħadd', 'it-Tnejn', 'it-Tlieta', 'l-Erbgħa', 'il-Ħamis', 'il-Ġimgħa', 'is-Sibt']).
 sd_day_format('mt', '{n}').
 
 sd_date_pattern('mt', '{day} {month}').

@@ -11,22 +11,22 @@
 
 % Akan locale.
 
-st_hours('ak', ['dumien', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako']).
-st_midnight('ak', 'anadwo').
-st_noon('ak', 'awia').
+st_hours('ak', ['dumienu', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako']).
+st_midnight('ak', 'ɔdasuom').
+st_noon('ak', 'owigyinae').
 
-st_pattern('ak', 0, '{h}:00').
-st_pattern('ak', 5, '{h}:05').
-st_pattern('ak', 10, '{h}:10').
-st_pattern('ak', 15, '{h}:15').
-st_pattern('ak', 20, '{h}:20').
-st_pattern('ak', 25, '{h}:25').
-st_pattern('ak', 30, '{h}:30').
-st_pattern('ak', 35, '{h}:35').
-st_pattern('ak', 40, '{h}:40').
-st_pattern('ak', 45, '{h}:45').
-st_pattern('ak', 50, '{h}:50').
-st_pattern('ak', 55, '{h}:55').
+st_pattern('ak', 0, 'nnɔn {h}').
+st_pattern('ak', 5, 'nnɔn {h} ne sima anum').
+st_pattern('ak', 10, 'nnɔn {h} ne sima edu').
+st_pattern('ak', 15, 'nnɔn {h} ne sima dunum').
+st_pattern('ak', 20, 'nnɔn {h} ne sima aduonu').
+st_pattern('ak', 25, 'nnɔn {h} ne sima aduonu num').
+st_pattern('ak', 30, 'nnɔn {h} ne fa').
+st_pattern('ak', 35, 'aka sima aduonu num na abɔ nnɔn {next_h}').
+st_pattern('ak', 40, 'aka sima aduonu na abɔ nnɔn {next_h}').
+st_pattern('ak', 45, 'aka sima dunum na abɔ nnɔn {next_h}').
+st_pattern('ak', 50, 'aka sima edu na abɔ nnɔn {next_h}').
+st_pattern('ak', 55, 'aka sima anum na abɔ nnɔn {next_h}').
 
 short_st_use24h('ak', false).
 short_st_format('ak', '{h}:{mm} {ampm}').

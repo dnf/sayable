@@ -28,9 +28,9 @@ const SduDurationLocale sdu_locale_lo = {
         { "{n} ເດືອນ", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ປີ", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0}ເຄິ່ງ", "",
+    "{0}ເຄິ່ງ", " ",
     "ຫາກໍ",
-    "{0} ກ່ອນ", "ໃນ {0}",
-    true, { true, { "{n} ວິ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ນທ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ຊມ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ມ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ອທ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ດ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ປ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ກ່ອນ", true, "ໃນ {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} ກ່ອນ", true, "ໃນ {0}" }
+    "{0} ກ່ອນ", "ໃນອີກ {0}",
+    true, { true, { "{n} ວິ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ນທ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ຊມ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ມ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ອທ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ດ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ປ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ກ່ອນ", true, "ໃນອີກ {0}" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} ກ່ອນ", true, "ໃນອີກ {0}" }
 };

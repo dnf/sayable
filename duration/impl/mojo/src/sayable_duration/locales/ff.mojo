@@ -42,7 +42,7 @@ fn build_ff() -> DurationLocale:
     short_ovr.has_minute = True
     short_ovr.hour = plural_unit(one="waktu {n}", other="waktuuji {n}")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("ñalɗe {n}")
+    short_ovr.day = plural_unit(one="ñalawma {n}", other="ñalɗe {n}")
     short_ovr.has_day = True
     short_ovr.week = plural_unit(one="yontere {n}", other="yontereeji {n}")
     short_ovr.has_week = True
@@ -62,7 +62,7 @@ fn build_ff() -> DurationLocale:
     compact_ovr.has_minute = True
     compact_ovr.hour = plural_unit(one="wak {n}", other="wakji {n}")
     compact_ovr.has_hour = True
-    compact_ovr.day = simple_unit("ñalɗe {n}")
+    compact_ovr.day = plural_unit(one="ñalawma {n}", other="ñalɗe {n}")
     compact_ovr.has_day = True
     compact_ovr.week = plural_unit(one="yont {n}", other="yontji {n}")
     compact_ovr.has_week = True

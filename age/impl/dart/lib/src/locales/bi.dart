@@ -21,7 +21,7 @@ final bi = AgeLocale(
   week: simpleUnit('{n} wik'),
   month: simpleUnit('{n} manis'),
   year: simpleUnit('{n} yia'),
-  half: '{n} mo haf',
+  half: '{0} mo haf',
   delimiter: ', ',
   justBorn: 'Niufala bebe',
   newborn: stageNeutral('Niufala bebe'),
@@ -42,5 +42,6 @@ final bi = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

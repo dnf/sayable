@@ -39,15 +39,15 @@ locale = DateLocale
         , "juma"
         , "shanba"
         ]
-    , localeDayFormat = "{n}"
+    , localeDayFormat = "{n}-"
     , localeDayFormatExceptions = []
-    , localeDatePattern = "{day} {month}"
-    , localeDatePatternWithYear = "{day} {month} {year}"
+    , localeDatePattern = "{day}{month}"
+    , localeDatePatternWithYear = "{day}{month}, {year}"
     , localeToday = "bugun"
     , localeTomorrow = "ertaga"
     , localeYesterday = "kecha"
     , localeDayAfterTomorrow = Just "indinga"
-    , localeDayBeforeYesterday = Just "kechagina"
+    , localeDayBeforeYesterday = Just "o'tgan kuni"
     , localeThisWeekday = Just "bu {weekday}"
     , localeNextWeekday = Just "keyingi {weekday}"
     , localeLastWeekday = Just "o'tgan {weekday}"
@@ -78,10 +78,10 @@ locale = DateLocale
                 , "jum"
                 , "shan"
                 ]
-            , ovrDayFormat = Just "{n}"
+            , ovrDayFormat = Just "{n}-"
             , ovrDayFormatExceptions = Nothing
-            , ovrDatePattern = Just "{day} {month}"
-            , ovrDatePatternWithYear = Just "{day} {month} {year}"
+            , ovrDatePattern = Just "{day}{month}"
+            , ovrDatePatternWithYear = Just "{day}{month}, {year}"
             , ovrToday = Nothing
             , ovrTomorrow = Nothing
             , ovrYesterday = Nothing

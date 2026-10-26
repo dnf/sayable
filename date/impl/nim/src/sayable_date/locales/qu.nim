@@ -25,7 +25,7 @@ let QU* = DateLocale(
   tomorrow: "paqarin",
   yesterday: "qayna",
   dayAfterTomorrow: some("minchha"),
-  dayBeforeYesterday: some("qayna p'unchaw"),
+  dayBeforeYesterday: some("qayninpa"),
   thisWeekday: some("kay {weekday}"),
   nextWeekday: some("hamuq {weekday}"),
   lastWeekday: some("qayna {weekday}"),

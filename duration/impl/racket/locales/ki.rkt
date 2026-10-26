@@ -28,11 +28,11 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "kiumia {n}" "other" "kiumia {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "mwerĩ {n}" "other" "mĩerĩ {n}"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "mwaka {n}" "other" "mĩaka {n}")))
-   "{0} na nusu"
+   "{0} na nuthu"
    ", "
-   "ũmũthĩ"
+   "rĩu"
    "{0} ĩhĩtũkĩte"
-   "{0} ĩyothe"
-   (duration-compactness-override (hash "type" "simple" "form" "sek. {n}") (hash "type" "simple" "form" "ndag. {n}") (hash "type" "pluralized" "forms" (hash "one" "ithaa {n}" "other" "mathaa {n}")) (hash "type" "pluralized" "forms" (hash "one" "mũth. {n}" "other" "mĩth. {n}")) (hash "type" "simple" "form" "kiu. {n}") (hash "type" "pluralized" "forms" (hash "one" "mwerĩ {n}" "other" "mĩerĩ {n}")) (hash "type" "pluralized" "forms" (hash "one" "mwaka {n}" "other" "mĩaka {n}")) #f #f "{0} ĩhĩtũkĩte" "{0} ĩyothe")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" "{0} ĩhĩtũkĩte" "{0} ĩyothe")
+   "thutha wa {0}"
+   (duration-compactness-override (hash "type" "simple" "form" "sek. {n}") (hash "type" "simple" "form" "ndag. {n}") (hash "type" "pluralized" "forms" (hash "one" "ithaa {n}" "other" "mathaa {n}")) (hash "type" "pluralized" "forms" (hash "one" "mũth. {n}" "other" "mĩth. {n}")) (hash "type" "simple" "form" "kiu. {n}") (hash "type" "pluralized" "forms" (hash "one" "mwerĩ {n}" "other" "mĩerĩ {n}")) (hash "type" "pluralized" "forms" (hash "one" "mwaka {n}" "other" "mĩaka {n}")) #f #f "{0} ĩhĩtũkĩte" "thutha wa {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" "{0} ĩhĩtũkĩte" "thutha wa {0}")
   ))

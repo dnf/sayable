@@ -16,6 +16,6 @@
    :clock {:hours ["ʿasərte wəkəlte" "ḥante" "kəlʾe" "səleste" "arbaʿte" "ḥamməste" "səste" "sabʿate" "səmmunte" "təsʿate" "ʿasərte" "ʿasərte wəḥante"]
            :midnight "nəs-leyla"
            :noon "qayḥ"
-           :patterns {0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"}}
+           :patterns {0 "saʿa {h}" 5 "saʿa {h} we ḥamməste" 10 "saʿa {h} we ʿasərte" 15 "saʿa {h} we ʿasərte we ḥamməste" 20 "saʿa {h} we ʿəsra" 25 "saʿa {h} we ʿəsra we ḥamməste" 30 "saʿa {h} we nəs" 35 "saʿa {h} we salasa we ḥamməste" 40 "saʿa {h} we arbaʿa" 45 "saʿa {h} we arbaʿa we ḥamməste" 50 "saʿa {h} we ḥamsa" 55 "saʿa {h} we ḥamsa we ḥamməste"}}
    :short {:clock {:use-24h false :am-pm ["AM" "PM"] :format "{h}:{mm} {ampm}"}}
    :compact {:clock {:use-24h false :am-pm ["a" "p"] :format "{h}:{mm}{ampm}"}}})

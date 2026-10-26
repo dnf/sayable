@@ -26,7 +26,7 @@ locale() ->
         tomorrow = "kusasa",
         yesterday = "izolo",
         day_after_tomorrow = {just, "ngomhlomunye"},
-        day_before_yesterday = {just, "usuku olwedlule izolo"},
+        day_before_yesterday = {just, "kuthangi"},
         this_weekday = {just, "leli {weekday}"},
         next_weekday = {just, "{weekday} elizayo"},
         last_weekday = {just, "{weekday} eledlule"},

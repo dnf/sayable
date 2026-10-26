@@ -23,7 +23,7 @@ our sub locale() {
             year => '{n} ປີ',
         },
         half => '{0}ເຄິ່ງ',
-        delimiter => '',
+        delimiter => ' ',
         just-born => 'ເກີດໃໝ່',
         stages => {
             newborn => 'ເດັກເກີດໃໝ່',
@@ -48,6 +48,7 @@ our sub locale() {
                 month => '{n}m',
                 year => '{n}y',
             },
+            half => '{n}½',
         },
     }
 }

@@ -22,9 +22,9 @@ pub const locale_yo = DateLocale{
 	today: 'lónìí'
 	tomorrow: 'ọ̀la'
 	yesterday: 'àná'
-	day_after_tomorrow: 'ọ̀tún ọ̀la'
+	day_after_tomorrow: 'ọ̀túnla'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'ọ̀tún àná'
+	day_before_yesterday: 'íjẹta'
 	has_day_before_yesterday: true
 	this_weekday: '{weekday} yìí'
 	has_this_weekday: true

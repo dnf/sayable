@@ -15,18 +15,18 @@ st_hours('pa', ['ਬਾਰਾਂ', 'ਇੱਕ', 'ਦੋ', 'ਤਿੰਨ', 'ਚ�
 st_midnight('pa', 'ਅੱਧੀ ਰਾਤ').
 st_noon('pa', 'ਦੁਪਹਿਰ').
 
-st_pattern('pa', 0, '{h}:00').
-st_pattern('pa', 5, '{h}:05').
-st_pattern('pa', 10, '{h}:10').
-st_pattern('pa', 15, '{h}:15').
-st_pattern('pa', 20, '{h}:20').
-st_pattern('pa', 25, '{h}:25').
-st_pattern('pa', 30, '{h}:30').
-st_pattern('pa', 35, '{h}:35').
-st_pattern('pa', 40, '{h}:40').
-st_pattern('pa', 45, '{h}:45').
-st_pattern('pa', 50, '{h}:50').
-st_pattern('pa', 55, '{h}:55').
+st_pattern('pa', 0, '{h} ਵਜੇ').
+st_pattern('pa', 5, '{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ').
+st_pattern('pa', 10, '{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ').
+st_pattern('pa', 15, 'ਸਵਾ {h} ਵਜੇ').
+st_pattern('pa', 20, '{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ').
+st_pattern('pa', 25, '{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ').
+st_pattern('pa', 30, '{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ').
+st_pattern('pa', 35, '{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ').
+st_pattern('pa', 40, '{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ').
+st_pattern('pa', 45, 'ਪੌਣੇ {next_h} ਵਜੇ').
+st_pattern('pa', 50, '{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ').
+st_pattern('pa', 55, '{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ').
 
 short_st_use24h('pa', false).
 short_st_format('pa', '{h}:{mm} {ampm}').

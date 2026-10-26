@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_nd = {
     "nd",
     {
-        { "litshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyangalombili", "isitshiyangalolunye", "litshumi", "litshumi lanye" },
+        { "letshumi lambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesitshiyangalombili", "lesitshiyangalolunye", "letshumi", "letshumi lanye" },
         "phakathi kobusuku",
         "emini",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ihola {h}", "ihola {h} lemizuzu emihlanu", "ihola {h} lemizuzu elitshumi", "ihola {h} lemizuzu elitshumi lanhlanu", "ihola {h} lemizuzu engamatshumi amabili", "ihola {h} lemizuzu engamatshumi amabili lanhlanu", "ihola {h} lengxenye", "ihola {h} lemizuzu engamatshumi amathathu lanhlanu", "ihola {h} lemizuzu engamatshumi amane", "ihola {h} lemizuzu engamatshumi amane lanhlanu", "ihola {h} lemizuzu engamatshumi amahlanu", "ihola {h} lemizuzu engamatshumi amahlanu lanhlanu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -24,7 +24,7 @@ locale_gl <- list(
   stages = list(
     newborn = list(m = "Recén nacido", f = "Recén nacida"),
     infant = "Bebé",
-    toddler = "Neno",
+    toddler = list(m = "Neno pequeno", f = "Nena pequena"),
     child = list(m = "Neno", f = "Nena"),
     teenager = "Adolescente",
     adult = list(m = "Adulto", f = "Adulta")

@@ -17,7 +17,7 @@ const StTimeLocale st_locale_sk = {
         { "dvanásť", "jedna", "dve", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť", "desať", "jedenásť" },
         "polnoc",
         "poludnie",
-        { "{h} hodín", "päť po {h}", "desať po {h}", "štvrť po {h}", "dvadsať po {h}", "dvadsať päť po {h}", "pol po {h}", "dvadsať päť do {next_h}", "dvadsať do {next_h}", "štvrť do {next_h}", "desať do {next_h}", "päť do {next_h}" }
+        { "{h}", "{h} nula päť", "{h} desať", "{h} pätnásť", "{h} dvadsať", "{h} dvadsaťpäť", "{h} tridsať", "o dvadsaťpäť minút {next_h}", "o dvadsať minút {next_h}", "o pätnásť minút {next_h}", "o desať minút {next_h}", "o päť minút {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

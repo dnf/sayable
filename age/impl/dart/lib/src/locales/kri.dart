@@ -21,7 +21,7 @@ final kri = AgeLocale(
   week: simpleUnit('{n} wik'),
   month: simpleUnit('{n} mont'),
   year: simpleUnit('{n} ia'),
-  half: '{n} na af',
+  half: '{0} ɛn af',
   delimiter: ', ',
   justBorn: 'Nyubon bebi',
   newborn: stageNeutral('Nyubon bebi'),
@@ -42,5 +42,6 @@ final kri = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

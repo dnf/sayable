@@ -54,6 +54,7 @@ hmn
 			'month'. '{n}mo'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} dhau los'.
 		#inFuture. 'hauv {0}'.

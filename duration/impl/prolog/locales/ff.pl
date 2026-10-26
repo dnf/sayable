@@ -38,7 +38,8 @@ short_sd_unit('ff', second, _, 'majaango {n}').
 short_sd_unit('ff', minute, _, 'hojomaaje {n}').
 short_sd_unit('ff', hour, one, 'waktu {n}').
 short_sd_unit('ff', hour, other, 'waktuuji {n}').
-short_sd_unit('ff', day, _, 'ñalɗe {n}').
+short_sd_unit('ff', day, one, 'ñalawma {n}').
+short_sd_unit('ff', day, other, 'ñalɗe {n}').
 short_sd_unit('ff', week, one, 'yontere {n}').
 short_sd_unit('ff', week, other, 'yontereeji {n}').
 short_sd_unit('ff', month, one, 'lewru {n}').
@@ -52,7 +53,8 @@ compact_sd_unit('ff', second, _, 'maj {n}').
 compact_sd_unit('ff', minute, _, 'hoj {n}').
 compact_sd_unit('ff', hour, one, 'wak {n}').
 compact_sd_unit('ff', hour, other, 'wakji {n}').
-compact_sd_unit('ff', day, _, 'ñalɗe {n}').
+compact_sd_unit('ff', day, one, 'ñalawma {n}').
+compact_sd_unit('ff', day, other, 'ñalɗe {n}').
 compact_sd_unit('ff', week, one, 'yont {n}').
 compact_sd_unit('ff', week, other, 'yontji {n}').
 compact_sd_unit('ff', month, one, 'lew {n}').

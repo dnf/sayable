@@ -12,7 +12,7 @@
 proc locale_date_ro {} {
     set code {ro}
     set months [list {ianuarie} {februarie} {martie} {aprilie} {mai} {iunie} {iulie} {august} {septembrie} {octombrie} {noiembrie} {decembrie}]
-    set weekdays [list {duminică} {luni} {marți} {miercuri} {joi} {vineri} {sâmbătă}]
+    set weekdays [list {duminica} {lunea} {marțea} {miercurea} {joia} {vinerea} {sâmbăta}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
@@ -22,7 +22,7 @@ proc locale_date_ro {} {
     set yesterday {ieri}
     set day_after_tomorrow {poimâine}
     set day_before_yesterday {alaltăieri}
-    set this_weekday "această {weekday}"
+    set this_weekday "{weekday} aceasta"
     set next_weekday "{weekday} viitoare"
     set last_weekday "{weekday} trecută"
     set months_in_date [list {ianuarie} {februarie} {martie} {aprilie} {mai} {iunie} {iulie} {august} {septembrie} {octombrie} {noiembrie} {decembrie}]

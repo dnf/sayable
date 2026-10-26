@@ -10,22 +10,22 @@
 # Source: locales/umb.json
 
 function locale_umb {
-    $hours = @('olohola likumi na yivali', 'yimosi', 'yivali', 'yitathu', 'yinyali', 'yitanu', 'yitathu-va-yivali', 'yisemba', 'yinyali-va-yivali', 'yitanu-va-yivali', 'likumi', 'likumi na yimosi')
+    $hours = @('ekwi la vali', 'mosi', 'vali', 'tatu', 'kwãla', 'tãlo', 'epandu', 'epanduvali', 'ecelãla', 'ecea', 'ekwi', 'ekwi la mosi')
     $midnight = 'ocitapi'
     $noon = 'ocivali'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ohola {h}'
+    $patterns[5] = 'ohola {h} la tãlo'
+    $patterns[10] = 'ohola {h} la ekwi'
+    $patterns[15] = 'ohola {h} la ekwi la tãlo'
+    $patterns[20] = 'ohola {h} la akũi avali'
+    $patterns[25] = 'ohola {h} la akũi avali la tãlo'
+    $patterns[30] = 'ohola {h} la oñali'
+    $patterns[35] = 'ohola {h} la akũi atatu la tãlo'
+    $patterns[40] = 'ohola {h} la akũi akwãla'
+    $patterns[45] = 'ohola {h} la akũi akwãla la tãlo'
+    $patterns[50] = 'ohola {h} la akũi atãlo'
+    $patterns[55] = 'ohola {h} la akũi atãlo la tãlo'
     $clock = @{
         hours = $hours
         midnight = $midnight

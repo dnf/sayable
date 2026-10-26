@@ -15,18 +15,18 @@ st_hours('et', ['kaksteist', 'üks', 'kaks', 'kolm', 'neli', 'viis', 'kuus', 'se
 st_midnight('et', 'kesköö').
 st_noon('et', 'keskpäev').
 
-st_pattern('et', 0, '{h}').
-st_pattern('et', 5, 'viis efter {h}').
-st_pattern('et', 10, 'kümme efter {h}').
-st_pattern('et', 15, 'veerand efter {h}').
-st_pattern('et', 20, 'kakskümmend efter {h}').
-st_pattern('et', 25, 'kakskümmend viis efter {h}').
-st_pattern('et', 30, 'pool efter {h}').
-st_pattern('et', 35, 'kakskümmend viis enne {next_h}').
-st_pattern('et', 40, 'kakskümmend enne {next_h}').
-st_pattern('et', 45, 'veerand enne {next_h}').
-st_pattern('et', 50, 'kümme enne {next_h}').
-st_pattern('et', 55, 'viis enne {next_h}').
+st_pattern('et', 0, 'kell {h}').
+st_pattern('et', 5, 'viis minutit {h} läbi').
+st_pattern('et', 10, 'kümme minutit {h} läbi').
+st_pattern('et', 15, 'veerand {next_h}').
+st_pattern('et', 20, 'kakskümmend minutit {h} läbi').
+st_pattern('et', 25, 'kakskümmend viis minutit {h} läbi').
+st_pattern('et', 30, 'pool {next_h}').
+st_pattern('et', 35, 'kolmkümmend viis minutit {h} läbi').
+st_pattern('et', 40, 'kahekümne minuti pärast {next_h}').
+st_pattern('et', 45, 'kolmveerand {next_h}').
+st_pattern('et', 50, 'kümne minuti pärast {next_h}').
+st_pattern('et', 55, 'viie minuti pärast {next_h}').
 
 short_st_use24h('et', true).
 short_st_format('et', '{h}:{mm}').

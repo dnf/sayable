@@ -1,11 +1,31 @@
 # Test suite for sayable-age Janet implementation.
 # Implements all canonical test cases from age/config/tests.json.
-# Sections 15 and 23 are skipped (require system date mocking).
+# Sections 15 and 23 use the real current date (the default path cannot be
+# injected), so their inputs are derived from it.
 
 (import ./sayableage :as sa)
 
 (var pass-count 0)
 (var fail-count 0)
+
+# Local calendar date, the day the library's default-date path uses.
+(defn- local-today []
+  (def t (os/date (os/time) true))
+  [(t :year) (+ (t :month) 1) (+ (t :month-day) 1)])
+
+(defn- iso [y m d] (string/format "%04d-%02d-%02d" y m d))
+
+# The date `years` before today; Feb 29 clamps to Feb 28 (still the same age).
+(defn- years-ago [years]
+  (def [y m d] (local-today))
+  (iso (- y years) m (if (and (= m 2) (= d 29)) 28 d)))
+
+# The date `days` before today, counted from local noon so DST cannot shift it.
+(defn- days-ago [days]
+  (def [y m d] (local-today))
+  (def noon (os/mktime {:year y :month (- m 1) :month-day (- d 1) :hours 12 :minutes 0 :seconds 0} true))
+  (def t (os/date (- noon (* days 86400)) true))
+  (iso (t :year) (+ (t :month) 1) (+ (t :month-day) 1)))
 
 (defn assert-eq [test-id actual expected]
   (if (= actual expected)
@@ -563,7 +583,7 @@
 (assert-eq "25.9" ((pt-es :format-age) "2023-06-15" "2025-12-15") "2 años, 6 meses")
 
 # 25.10
-(assert-eq "25.10" ((pt-es :format-age) "2022-06-15" "2025-12-15") "3 y medio años")
+(assert-eq "25.10" ((pt-es :format-age) "2022-06-15" "2025-12-15") "3 años y medio")
 
 # 25.11
 (assert-eq "25.11" ((pt-es :format-age) "2022-06-15" "2025-06-15") "3 años")
@@ -670,7 +690,7 @@
 (assert-eq "29.1" ((pt-he :format-age) "2025-06-15" "2025-06-15") "רק נולד")
 
 # 29.2
-(assert-eq "29.2" ((pt-he :format-age) "2025-06-14" "2025-06-15") "יום 1")
+(assert-eq "29.2" ((pt-he :format-age) "2025-06-14" "2025-06-15") "יום")
 
 # 29.3
 (assert-eq "29.3" ((pt-he :format-age) "2025-06-12" "2025-06-15") "3 ימים")
@@ -688,7 +708,7 @@
 (assert-eq "29.7" ((pt-he :format-age) "2025-03-15" "2025-06-15") "3 חודשים")
 
 # 29.8
-(assert-eq "29.8" ((pt-he :format-age) "2023-06-15" "2025-07-15") "שנתיים, חודש 1")
+(assert-eq "29.8" ((pt-he :format-age) "2023-06-15" "2025-07-15") "שנתיים, חודש")
 
 # 29.9
 (assert-eq "29.9" ((pt-he :format-age) "2022-06-15" "2025-12-15") "3 שנים וחצי")
@@ -772,7 +792,7 @@
 (assert-eq "29.31" ((pt-id :format-age) "2025-01-15" "2025-07-15") "6 bulan")
 
 # 29.32
-(assert-eq "29.32" ((pt-id :format-age) "2022-06-15" "2025-12-15") "3 tahun setengah")
+(assert-eq "29.32" ((pt-id :format-age) "2022-06-15" "2025-12-15") "3 setengah tahun")
 
 # 29.33
 (assert-eq "29.33" ((pt-id :format-age) "2018-06-15" "2025-06-15") "7 tahun")
@@ -853,7 +873,7 @@
 
 # 32.3
 (def pt-shi-32 (sa/make-formatter (sa/get-locale "shi")))
-(assert-eq "32.3" ((pt-shi-32 :format-age) "2005-06-08" "2012-06-07") "6 iseggasen d uzgen")
+(assert-eq "32.3" ((pt-shi-32 :format-age) "2005-06-08" "2012-06-07") "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ")
 
 # =============================================================================
 # Section 33: Input validation
@@ -888,6 +908,25 @@
 
 # 33.10
 (assert-eq "33.10" (sa/format-age "2024-02-29" "2026-03-01") "2 years")
+
+# =============================================================================
+# Sections 15 and 23: default date (real current date)
+# =============================================================================
+
+# 15.1
+(assert-eq "15.1" (sa/format-age (years-ago 5)) "5 years")
+
+# 15.2
+(assert-eq "15.2" (sa/format-age (days-ago 5)) "5 days")
+
+# 23.1
+(assert-eq "23.1" (sa/format-stage (days-ago 0)) "Newborn")
+
+# 23.2
+(assert-eq "23.2" (sa/format-stage (years-ago 5)) "Child")
+
+# 23.3
+(assert-eq "23.3" (sa/format-stage (years-ago 45)) "Adult")
 
 # =============================================================================
 # Results

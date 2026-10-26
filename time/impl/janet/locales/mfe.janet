@@ -11,10 +11,10 @@
 
 (def locale
   {:code "mfe"
-   :clock {:hours @["douz" "enn" "de" "trwa" "kat" "senk" "sis" "set" "wit" "nef" "dis" "onz"]
+   :clock {:hours @["douzer" "enn er" "dezer" "trwazer" "katrer" "senker" "sizer" "seter" "witer" "never" "dizer" "onzer"]
            :midnight "minwi"
            :noon "midi"
-           :patterns {0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"}}
+           :patterns {0 "{h}" 5 "{h} senk" 10 "{h} dis" 15 "{h} ekar" 20 "{h} vin" 25 "{h} vennsenk" 30 "{h} edmi" 35 "{next_h} mwin vennsenk" 40 "{next_h} mwin vin" 45 "{next_h} mwin kar" 50 "{next_h} mwin dis" 55 "{next_h} mwin senk"}}
    :short {:clock {:use24h false :format "{h}:{mm} {ampm}" :am-pm ["AM" "PM"]}}
    :compact {:clock {:use24h false :format "{h}:{mm}{ampm}" :am-pm ["a" "p"]}}
 })

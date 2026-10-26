@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -145,6 +146,7 @@
         "year": "{n}y"
       },
       "delimiter": "",
+      "half": "{n}½",
       "ago": "{0} k'o chi",
       "inFuture": "pa {0}"
     }
@@ -154,32 +156,32 @@
       "hours": [
         "kab'lajuj",
         "jun",
-        "ka'i'",
-        "oxi'",
-        "kaji'",
-        "jo'",
-        "waqi'",
-        "wuqu'",
-        "wajxaqi'",
-        "b'eleji'",
+        "keb'",
+        "oxib'",
+        "kajib'",
+        "job'",
+        "waqib'",
+        "wuqub'",
+        "wajxaqib'",
+        "b'elejeb'",
         "lajuj",
         "julajuj"
       ],
       "midnight": "nik'aj aq'ab'",
       "noon": "nik'aj q'ij",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} ramaj",
+        "5": "{h} ramaj job'",
+        "10": "{h} ramaj lajuj",
+        "15": "{h} ramaj olajuj",
+        "20": "{h} ramaj juwinaq",
+        "25": "{h} ramaj juwinaq job'",
+        "30": "{h} ramaj juwinaq lajuj",
+        "35": "{h} ramaj juwinaq olajuj",
+        "40": "{h} ramaj kawinaq",
+        "45": "{h} ramaj kawinaq job'",
+        "50": "{h} ramaj kawinaq lajuj",
+        "55": "{h} ramaj kawinaq olajuj"
       }
     },
     "short": {
@@ -202,5 +204,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "'{h} ramaj' (ramaj = hour, as the locale's duration unit) followed by minutes in K'iche' vigesimal numerals (olajuj 15, juwinaq 20, kawinaq 40). Structurally plausible but K'iche' speakers very often tell time in Spanish; the exact idiom (and whether :30 should use nik'aj) needs a native check."
+    }
+  ]
 }

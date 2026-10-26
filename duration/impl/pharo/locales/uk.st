@@ -26,13 +26,13 @@ uk
 					ifTrue: [ #few ]
 					ifFalse: [ #many ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. '{n} секунда'. #few. '{n} секунди'. #many. '{n} секунд'. #other. '{n} секунд' }).
-		'minute'. (Dictionary newFromPairs: { #one. '{n} хвилина'. #few. '{n} хвилини'. #many. '{n} хвилин'. #other. '{n} хвилин' }).
-		'hour'. (Dictionary newFromPairs: { #one. '{n} година'. #few. '{n} години'. #many. '{n} годин'. #other. '{n} годин' }).
-		'day'. (Dictionary newFromPairs: { #one. '{n} день'. #few. '{n} дні'. #many. '{n} днів'. #other. '{n} днів' }).
-		'week'. (Dictionary newFromPairs: { #one. '{n} тиждень'. #few. '{n} тижні'. #many. '{n} тижнів'. #other. '{n} тижнів' }).
-		'month'. (Dictionary newFromPairs: { #one. '{n} місяць'. #few. '{n} місяці'. #many. '{n} місяців'. #other. '{n} місяців' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} рік'. #few. '{n} роки'. #many. '{n} років'. #other. '{n} років' }).
+		'second'. (Dictionary newFromPairs: { #one. '{n} секунда'. #few. '{n} секунди'. #many. '{n} секунд'. #other. '{n} секунди' }).
+		'minute'. (Dictionary newFromPairs: { #one. '{n} хвилина'. #few. '{n} хвилини'. #many. '{n} хвилин'. #other. '{n} хвилини' }).
+		'hour'. (Dictionary newFromPairs: { #one. '{n} година'. #few. '{n} години'. #many. '{n} годин'. #other. '{n} години' }).
+		'day'. (Dictionary newFromPairs: { #one. '{n} день'. #few. '{n} дні'. #many. '{n} днів'. #other. '{n} дня' }).
+		'week'. (Dictionary newFromPairs: { #one. '{n} тиждень'. #few. '{n} тижні'. #many. '{n} тижнів'. #other. '{n} тижня' }).
+		'month'. (Dictionary newFromPairs: { #one. '{n} місяць'. #few. '{n} місяці'. #many. '{n} місяців'. #other. '{n} місяця' }).
+		'year'. (Dictionary newFromPairs: { #one. '{n} рік'. #few. '{n} роки'. #many. '{n} років'. #other. '{n} року' }).
 	}).
 	locale half: '{n} з половиною'.
 	locale delimiter: ', '.

@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tg.json](../../locales/tg.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Formal additive spoken form with izofat: 'соати ду' (2:00), 'соати ду ва понздаҳ дақиқа' (2:15), 'соати ду ва ним' (2:30), 'соати ду ва чилу панҷ дақиқа' (2:45); compound minutes with -у ('бисту панҷ', 'сию панҷ', 'чилу панҷ', 'панҷоҳу панҷ'). Doubts: colloquial Tajik prefers 'дую ним' (hour + -ю + ним) over 'ду ва ним', but the -у/-ю spelling depends on whether the hour ends in a vowel, so it cannot be a single template; a subtractive 'понздаҳ дақиқа кам се' (2:45) may exist colloquially but I am not confident enough to use it. 'соати' vs bare 'соат' both occur; izofat form chosen as the grammatical standard.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 сол, 1 моҳ   | 2 с, 1 м | 2с1м    |
 | 2 years, 6 months | 2 сол, 6 моҳ   | 2 с, 6 м | 2с6м    |
 | 3 years           | 3 сол          | 3 с      | 3с      |
-| 3½ years          | 3 сол ним      | 3 с ним  | 3½с     |
+| 3½ years          | 3 солу ним     | 3 су ним | 3½с     |
 | 5 years           | 5 сол          | 5 с      | 5с      |
-| 5½ years          | 5 сол ним      | 5 с ним  | 5½с     |
+| 5½ years          | 5 солу ним     | 5 су ним | 5½с     |
 | 7 years           | 7 сол          | 7 с      | 7с      |
 | 10 years          | 10 сол         | 10 с     | 10с     |
 | 18 years          | 18 сол         | 18 с     | 18с     |
@@ -65,18 +73,18 @@ Plural rule: `other_only` (categories: other)
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal            | Compact |
-| -------------------- | ----------------- | ------- |
-| Today                | имрӯз             | имрӯз   |
-| Tomorrow             | фардо             | фардо   |
-| Yesterday            | дирӯз             | дирӯз   |
-| Day after tomorrow   | пасфардо          | 17/3    |
-| Day before yesterday | парирӯз           | 13/3    |
-| This Thursday (+5)   | ин Панҷшанбе      | 20/3    |
-| Last Monday (-4)     | Сешанбе-и гузашта | 11/3    |
-| Next Wednesday (+12) | Панҷшанбе-и оянда | 27/3    |
-| Same month (+20)     | 4 Апрел           | 4/4     |
-| Different year       | 10 Январ 2026     | 10/1/26 |
+| Offset               | Normal           | Compact |
+| -------------------- | ---------------- | ------- |
+| Today                | имрӯз            | имрӯз   |
+| Tomorrow             | фардо            | фардо   |
+| Yesterday            | дирӯз            | дирӯз   |
+| Day after tomorrow   | пасфардо         | 17/3    |
+| Day before yesterday | парирӯз          | 13/3    |
+| This Thursday (+5)   | ин Панҷшанбе     | 20/3    |
+| Last Tuesday (-4)    | Сешанбеи гузашта | 11/3    |
+| Next Thursday (+12)  | Панҷшанбеи оянда | 27/3    |
+| Same year (+20)      | 4 Апрел          | 4/4     |
+| Different year       | 10 Январ 2026    | 10/1/26 |
 
 ## Duration
 
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 дақиқа           | 5 дақ         | 5дақ       |
 | 45 minutes            | 45 дақиқа          | 45 дақ        | 45дақ      |
 | 1 hour                | 1 соат             | 1 соат        | 1соат      |
-| 1½ hours              | 1 соат ним         | 1 соат ним    | 1½соат     |
+| 1½ hours              | 1 соату ним        | 1 соату ним   | 1½соат     |
 | 3 hours               | 3 соат             | 3 соат        | 3соат      |
 | 6 hours               | 6 соат             | 6 соат        | 6соат      |
 | 1 day                 | 1 рӯз              | 1 р           | 1р         |
-| 1½ days               | 1 рӯз ним          | 1 р ним       | 1½р        |
+| 1½ days               | 1 рӯзу ним         | 1 ру ним      | 1½р        |
 | 3 days                | 3 рӯз              | 3 р           | 3р         |
 | 1 week                | 1 ҳафта            | 1 ҳ           | 1ҳ         |
 | 2 weeks, 3 days       | 2 ҳафта, 3 рӯз     | 2 ҳ, 3 р      | 2ҳ3р       |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal   | Short | Compact |
-| --------------- | -------- | ----- | ------- |
-| Midnight        | нимишаб  | 0:00  | 0:00    |
-| 1:00 AM         | як:00    | 1:00  | 1:00    |
-| 5 past 9        | нӯҳ:05   | 9:05  | 9:05    |
-| Quarter past 10 | даҳ:15   | 10:15 | 10:15   |
-| Half past 11    | ёздаҳ:30 | 11:30 | 11:30   |
-| Noon            | нимирӯз  | 12:00 | 12:00   |
-| Quarter to 3    | ду:45    | 14:45 | 14:45   |
-| 5 to 6          | панҷ:55  | 17:55 | 17:55   |
-| 8 o'clock PM    | ҳашт:00  | 20:00 | 20:00   |
-| 10:30 PM        | даҳ:30   | 22:30 | 22:30   |
-| 11:58 PM        | нимишаб  | 23:58 | 23:58   |
+| Time            | Normal                            | Short | Compact |
+| --------------- | --------------------------------- | ----- | ------- |
+| Midnight        | нимишаб                           | 0:00  | 0:00    |
+| 1:00 AM         | соати як                          | 1:00  | 1:00    |
+| 5 past 9        | соати нӯҳ ва панҷ дақиқа          | 9:05  | 9:05    |
+| Quarter past 10 | соати даҳ ва понздаҳ дақиқа       | 10:15 | 10:15   |
+| Half past 11    | соати ёздаҳ ва ним                | 11:30 | 11:30   |
+| Noon            | нимирӯз                           | 12:00 | 12:00   |
+| Quarter to 3    | соати ду ва чилу панҷ дақиқа      | 14:45 | 14:45   |
+| 5 to 6          | соати панҷ ва панҷоҳу панҷ дақиқа | 17:55 | 17:55   |
+| 8 o'clock PM    | соати ҳашт                        | 20:00 | 20:00   |
+| 10:30 PM        | соати даҳ ва ним                  | 22:30 | 22:30   |
+| 11:58 PM        | нимишаб                           | 23:58 | 23:58   |

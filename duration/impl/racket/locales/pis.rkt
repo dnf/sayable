@@ -28,11 +28,11 @@
          "week" (hash "type" "simple" "form" "{n} wik")
          "month" (hash "type" "simple" "form" "{n} manis")
          "year" (hash "type" "simple" "form" "{n} yia"))
-   "{n} en haf"
+   "{0} en haf"
    ", "
    "nomoa nao"
    "{0} bifoa"
    "long {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} sek") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} aoa") (hash "type" "simple" "form" "{n} dei") (hash "type" "simple" "form" "{n} wik") (hash "type" "simple" "form" "{n} man") (hash "type" "simple" "form" "{n} yia") #f #f "{0} bifoa" "long {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} bifoa" "long {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} bifoa" "long {0}")
   ))

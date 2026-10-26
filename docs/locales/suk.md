@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [suk.json](../../locales/suk.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): The file's hour names are Swahili numerals, not Sukuma; Sukuma speakers in Tanzania tell clock time with the Swahili loan system (saa tatu = 9:00), so I rotated the hours to East African reckoning and used the Swahili 'saa {h} na dakika ... / na nusu / kasoro robo' patterns. Result is correct for how time is actually said in Sukuma-land but it is Swahili, not Sukuma vocabulary. Noon 'adhuhuri' / midnight 'usiku gati' left as-is. Native Sukuma review needed.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | milau ya pili     | 17/3    |
 | Day before yesterday | igolo ya pili     | 13/3    |
 | This Thursday (+5)   | Alhamisi iyi      | 20/3    |
-| Last Monday (-4)     | Jumanne iliyopita | 11/3    |
-| Next Wednesday (+12) | Alhamisi ya kuja  | 27/3    |
-| Same month (+20)     | 4 Aprili          | 4/4     |
+| Last Tuesday (-4)    | Jumanne iliyopita | 11/3    |
+| Next Thursday (+12)  | Alhamisi ya kuja  | 27/3    |
+| Same year (+20)      | 4 Aprili          | 4/4     |
 | Different year       | 10 Januari 2026   | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | usiku gati      | 12:00 AM | 12:00a  |
-| 1:00 AM         | moja:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | tisa:05         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | kumi:15         | 10:15 AM | 10:15a  |
-| Half past 11    | kumi na moja:30 | 11:30 AM | 11:30a  |
-| Noon            | adhuhuri        | 12:00 PM | 12:00p  |
-| Quarter to 3    | mbili:45        | 2:45 PM  | 2:45p   |
-| 5 to 6          | tano:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | nane:00         | 8:00 PM  | 8:00p   |
-| 10:30 PM        | kumi:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | usiku gati      | 11:58 PM | 11:58p  |
+| Time            | Normal                               | Short    | Compact |
+| --------------- | ------------------------------------ | -------- | ------- |
+| Midnight        | usiku gati                           | 12:00 AM | 12:00a  |
+| 1:00 AM         | saa saba                             | 1:00 AM  | 1:00a   |
+| 5 past 9        | saa tatu na dakika tano              | 9:05 AM  | 9:05a   |
+| Quarter past 10 | saa nne na robo                      | 10:15 AM | 10:15a  |
+| Half past 11    | saa tano na nusu                     | 11:30 AM | 11:30a  |
+| Noon            | adhuhuri                             | 12:00 PM | 12:00p  |
+| Quarter to 3    | saa tisa kasoro robo                 | 2:45 PM  | 2:45p   |
+| 5 to 6          | saa kumi na mbili kasoro dakika tano | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | saa mbili                            | 8:00 PM  | 8:00p   |
+| 10:30 PM        | saa nne na nusu                      | 10:30 PM | 10:30p  |
+| 11:58 PM        | usiku gati                           | 11:58 PM | 11:58p  |

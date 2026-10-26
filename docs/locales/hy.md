@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [hy.json](../../locales/hy.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Hours now carry the definite article ("երկուսն", "մեկն", "ինն", "տասն"), which is the form used in "X անց Y" and "ժամը X է". :00 "ժամը {h} է" (it is X o'clock), :05-:30 "{h} անց հինգ/տասը/տասնհինգ/քսան/քսանհինգ/կես" ("երկուսն անց կես" = half past two). :35-:55 continue additively ("երկուսն անց քառասունհինգ"), which is grammatical and used but less common than the subtractive "երեքին քառորդ պակաս" / "երեքին տասնհինգ պակաս", which needs a dative next-hour list (schema follow-up). "ժամը {h} է" is a full sentence while the other buckets are fragments — minor register mismatch.
+
 ## Age
 
 ### Age formatting
@@ -52,31 +60,31 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 
 ### Date formatting
 
-| Date        | Normal       | Short  | Compact |
-| ----------- | ------------ | ------ | ------- |
-| January 1   | 1 Հունվար    | 1 Հնվ  | 1/1     |
-| February 14 | 14 Փետրվար   | 14 Փտր | 14/2    |
-| March 15    | 15 Մարտ      | 15 Մրտ | 15/3    |
-| July 4      | 4 Հուլիս     | 4 Հլս  | 4/7     |
-| October 31  | 31 Հոկտեմբեր | 31 Հկտ | 31/10   |
-| December 25 | 25 Դեկտեմբեր | 25 Դեկ | 25/12   |
+| Date        | Normal        | Short         | Compact |
+| ----------- | ------------- | ------------- | ------- |
+| January 1   | 1 հունվարի    | 1 հունվարի    | 1/1     |
+| February 14 | 14 փետրվարի   | 14 փետրվարի   | 14/2    |
+| March 15    | 15 մարտի      | 15 մարտի      | 15/3    |
+| July 4      | 4 հուլիսի     | 4 հուլիսի     | 4/7     |
+| October 31  | 31 հոկտեմբերի | 31 հոկտեմբերի | 31/10   |
+| December 25 | 25 դեկտեմբերի | 25 դեկտեմբերի | 25/12   |
 
 ### Relative dates
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal           | Compact |
-| -------------------- | ---------------- | ------- |
-| Today                | այսօր            | այսօր   |
-| Tomorrow             | վաղը             | վաղը    |
-| Yesterday            | երեկ             | երեկ    |
-| Day after tomorrow   | վաղը մյուս օրը   | 17/3    |
-| Day before yesterday | երեկ մյուս օրը   | 13/3    |
-| This Thursday (+5)   | այս Հինգշաբթի    | 20/3    |
-| Last Monday (-4)     | անցած Երեքշաբթի  | 11/3    |
-| Next Wednesday (+12) | հաջորդ Հինգշաբթի | 27/3    |
-| Same month (+20)     | 4 Ապրիլ          | 4/4     |
-| Different year       | 10 Հունվար 2026  | 10/1/26 |
+| Offset               | Normal            | Compact |
+| -------------------- | ----------------- | ------- |
+| Today                | այսօր             | այսօր   |
+| Tomorrow             | վաղը              | վաղը    |
+| Yesterday            | երեկ              | երեկ    |
+| Day after tomorrow   | վաղը չէ մյուս օրը | 17/3    |
+| Day before yesterday | երեկ չէ առաջի օրը | 13/3    |
+| This Thursday (+5)   | այս հինգշաբթի     | 20/3    |
+| Last Tuesday (-4)    | անցած երեքշաբթի   | 11/3    |
+| Next Thursday (+12)  | հաջորդ հինգշաբթի  | 27/3    |
+| Same year (+20)      | 4 ապրիլի          | 4/4     |
+| Different year       | 10 հունվարի 2026  | 10/1/26 |
 
 ## Duration
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short | Compact |
-| --------------- | ---------- | ----- | ------- |
-| Midnight        | կեսգիշեր   | 0:00  | 0:00    |
-| 1:00 AM         | մեկ:00     | 1:00  | 1:00    |
-| 5 past 9        | ինը:05     | 9:05  | 9:05    |
-| Quarter past 10 | տաս:15     | 10:15 | 10:15   |
-| Half past 11    | տասնմեկ:30 | 11:30 | 11:30   |
-| Noon            | կեսօր      | 12:00 | 12:00   |
-| Quarter to 3    | երկու:45   | 14:45 | 14:45   |
-| 5 to 6          | հինգ:55    | 17:55 | 17:55   |
-| 8 o'clock PM    | ութ:00     | 20:00 | 20:00   |
-| 10:30 PM        | տաս:30     | 22:30 | 22:30   |
-| 11:58 PM        | կեսգիշեր   | 23:58 | 23:58   |
+| Time            | Normal                   | Short | Compact |
+| --------------- | ------------------------ | ----- | ------- |
+| Midnight        | կեսգիշեր                 | 0:00  | 0:00    |
+| 1:00 AM         | ժամը մեկն է              | 1:00  | 1:00    |
+| 5 past 9        | ինն անց հինգ             | 9:05  | 9:05    |
+| Quarter past 10 | տասն անց տասնհինգ        | 10:15 | 10:15   |
+| Half past 11    | տասնմեկն անց կես         | 11:30 | 11:30   |
+| Noon            | կեսօր                    | 12:00 | 12:00   |
+| Quarter to 3    | երկուսն անց քառասունհինգ | 14:45 | 14:45   |
+| 5 to 6          | հինգն անց հիսունհինգ     | 17:55 | 17:55   |
+| 8 o'clock PM    | ժամը ութն է              | 20:00 | 20:00   |
+| 10:30 PM        | տասն անց կես             | 22:30 | 22:30   |
+| 11:58 PM        | կեսգիշեր                 | 23:58 | 23:58   |

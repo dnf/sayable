@@ -16,7 +16,7 @@ function loc = locale_tpi()
   loc.units.week = '{n} wik';
   loc.units.month = '{n} mun';
   loc.units.year = '{n} yia';
-  loc.half = '{n} na hap';
+  loc.half = '{0} na hap';
   loc.delimiter = ', ';
   loc.just_born = 'Nupela pikinini';
   loc.stages.newborn = 'Nupela pikinini';
@@ -33,5 +33,6 @@ function loc = locale_tpi()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
 endfunction

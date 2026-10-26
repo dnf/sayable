@@ -25,7 +25,7 @@ proc locale_duration_tk {} {
         month "{n} aý" \
         year "{n} ýyl" \
     ]
-    set half "{0}½"
+    set half "{n} ýarym"
     set delimiter {, }
     set just_now {häzir}
     set ago "{0} öň"

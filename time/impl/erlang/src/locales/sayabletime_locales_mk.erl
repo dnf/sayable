@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "mk",
-        clock = #clock_config{hours = ["дванаесет", "еден", "два", "три", "четири", "пет", "шест", "седум", "осум", "девет", "десет", "единаесет"], midnight = "полноќ", noon = "пладне", patterns = [{0, "{h} часа"}, {5, "пет po {h}"}, {10, "десет po {h}"}, {15, "петнаесет po {h}"}, {20, "дваесет po {h}"}, {25, "дваесет и пет po {h}"}, {30, "триесет po {h}"}, {35, "дваесет и пет do {next_h}"}, {40, "дваесет do {next_h}"}, {45, "петнаесет do {next_h}"}, {50, "десет do {next_h}"}, {55, "пет do {next_h}"}]},
+        clock = #clock_config{hours = ["дванаесет", "еден", "два", "три", "четири", "пет", "шест", "седум", "осум", "девет", "десет", "единаесет"], midnight = "полноќ", noon = "пладне", patterns = [{0, "{h} часот"}, {5, "{h} и пет"}, {10, "{h} и десет"}, {15, "{h} и петнаесет"}, {20, "{h} и дваесет"}, {25, "{h} и дваесет и пет"}, {30, "{h} и пол"}, {35, "дваесет и пет до {next_h}"}, {40, "дваесет до {next_h}"}, {45, "петнаесет до {next_h}"}, {50, "десет до {next_h}"}, {55, "пет до {next_h}"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
     }.

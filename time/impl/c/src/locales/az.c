@@ -17,7 +17,7 @@ const StTimeLocale st_locale_az = {
         { "on iki", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz", "on", "on bir" },
         "gecə yarısı",
         "günorta",
-        { "{h} o'clock", "beş keçir {h}", "on keçir {h}", "on beş keçir {h}", "iyirmi keçir {h}", "iyirmi beş keçir {h}", "otuz keçir {h}", "iyirmi beş qalmış {next_h}", "iyirmi qalmış {next_h}", "on beş qalmış {next_h}", "on qalmış {next_h}", "beş qalmış {next_h}" }
+        { "saat {h}", "{h} sıfır beş", "{h} on", "{h} on beş", "{h} iyirmi", "{h} iyirmi beş", "{h} otuz", "{h} otuz beş", "{h} qırx", "{h} qırx beş", "{h} əlli", "{h} əlli beş" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

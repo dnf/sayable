@@ -31,7 +31,7 @@ let FIL* = AgeLocale(
     "toddler": stageNeutral("Batang paslit"),
     "child": stageNeutral("Bata"),
     "teenager": stageNeutral("Tinedyer"),
-    "adult": stageNeutral("Matanda"),
+    "adult": stageNeutral("Adulto"),
   }.toOrderedTable,
   short: some(CompactnessOverride(
     units: some({

@@ -18,7 +18,7 @@ function locale_hi {
     $units = @{
         second = '{n} सेकंड'
         minute = '{n} मिनट'
-        hour = '{n} घंटा'
+        hour = @{ one = '{n} घंटा'; other = '{n} घंटे' }
         day = @{ one = '{n} दिन'; other = '{n} दिन' }
         week = @{ one = '{n} सप्ताह'; other = '{n} सप्ताह' }
         month = @{ one = '{n} महीना'; other = '{n} महीने' }

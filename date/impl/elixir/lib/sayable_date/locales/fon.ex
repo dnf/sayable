@@ -30,13 +30,13 @@ defmodule SayableDate.Locales.FON do
         "Adɔxwísún"
       ],
       weekdays: [
-        "Sidégbe",
+        "Aklunɔzángbe",
         "Tɛnígbe",
         "Talɛtagbe",
         "Azǎngagbe",
         "Nyɔnúgbe",
         "Axɔ́sùgbe",
-        "Abámɛ́ta"
+        "Sibigbe"
       ],
       day_format: "{n}",
       day_format_exceptions: %{},
@@ -67,13 +67,13 @@ defmodule SayableDate.Locales.FON do
           "Adɔ"
         ],
         weekdays: [
-          "Sid",
+          "Akl",
           "Tɛn",
           "Tal",
           "Azǎ",
           "Nyɔ",
           "Axɔ",
-          "Abá"
+          "Sib"
         ],
         day_format: "{n}",
         date_pattern: "{day} {month}",

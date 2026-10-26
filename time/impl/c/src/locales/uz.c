@@ -17,7 +17,7 @@ const StTimeLocale st_locale_uz = {
         { "o'n ikki", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz", "o'n", "o'n bir" },
         "yarim tun",
         "tush",
-        { "{h} o'clock", "besh past {h}", "o'n past {h}", "o'n besh past {h}", "yigirma past {h}", "yigirma besh past {h}", "o'ttiz past {h}", "yigirma besh to {next_h}", "yigirma to {next_h}", "o'n besh to {next_h}", "o'n to {next_h}", "besh to {next_h}" }
+        { "soat {h}", "soat {h} nol besh", "soat {h} o'n", "soat {h} o'n besh", "soat {h} yigirma", "soat {h} yigirma besh", "soat {h} yarim", "soat {h} o'ttiz besh", "soat {h} qirq", "soat {h} qirq besh", "soat {h} ellik", "soat {h} ellik besh" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

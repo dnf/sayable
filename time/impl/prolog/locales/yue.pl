@@ -11,22 +11,22 @@
 
 % Cantonese locale.
 
-st_hours('yue', ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一']).
+st_hours('yue', ['十二', '一', '兩', '三', '四', '五', '六', '七', '八', '九', '十', '十一']).
 st_midnight('yue', '午夜').
 st_noon('yue', '正午').
 
-st_pattern('yue', 0, '{h}點整').
-st_pattern('yue', 5, '{h}點零五分').
-st_pattern('yue', 10, '{h}點十分').
-st_pattern('yue', 15, '{h}點十五分').
-st_pattern('yue', 20, '{h}點二十分').
-st_pattern('yue', 25, '{h}點二十五分').
+st_pattern('yue', 0, '{h}點正').
+st_pattern('yue', 5, '{h}點一個字').
+st_pattern('yue', 10, '{h}點兩個字').
+st_pattern('yue', 15, '{h}點三個字').
+st_pattern('yue', 20, '{h}點四個字').
+st_pattern('yue', 25, '{h}點五個字').
 st_pattern('yue', 30, '{h}點半').
-st_pattern('yue', 35, '{h}點三十五分').
-st_pattern('yue', 40, '{h}點四十分').
-st_pattern('yue', 45, '{h}點四十五分').
-st_pattern('yue', 50, '{h}點五十分').
-st_pattern('yue', 55, '{h}點五十五分').
+st_pattern('yue', 35, '{h}點七個字').
+st_pattern('yue', 40, '{h}點八個字').
+st_pattern('yue', 45, '{h}點九個字').
+st_pattern('yue', 50, '{h}點十個字').
+st_pattern('yue', 55, '{h}點十一個字').
 
 short_st_use24h('yue', true).
 short_st_format('yue', '{h}:{mm}').

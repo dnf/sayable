@@ -19,8 +19,8 @@
    :month {:type :simple :form "{n} ເດືອນ"}
    :year {:type :simple :form "{n} ປີ"}
    :half "{0}ເຄິ່ງ"
-   :delimiter ""
+   :delimiter " "
    :just-born "ເກີດໃໝ່"
    :stages {:newborn {:type :neutral :label "ເດັກເກີດໃໝ່"} :infant {:type :neutral :label "ເດັກນ້ອຍ"} :toddler {:type :neutral :label "ເດັກນ້ອຍ"} :child {:type :neutral :label "ເດັກ"} :teenager {:type :neutral :label "ໄວລຸ້ນ"} :adult {:type :neutral :label "ຜູ້ໃຫຍ່"}}
    :short {:day {:type :simple :form "{n} ມ."} :week {:type :simple :form "{n} ອທ."} :month {:type :simple :form "{n} ດ."} :year {:type :simple :form "{n} ປ."} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter nil :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter nil :just-born nil}})

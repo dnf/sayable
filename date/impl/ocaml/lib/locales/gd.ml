@@ -36,7 +36,7 @@ let locale : date_locale =
     ; "DihAoine"
     ; "DiSathairne"
     ]
-  ; day_format = "{n}"
+  ; day_format = "{n}mh"
   ; day_format_exceptions =
     []
   ; date_pattern = "{day} {month}"
@@ -49,7 +49,20 @@ let locale : date_locale =
   ; this_weekday = Some "{weekday} seo"
   ; next_weekday = Some "{weekday} sa tighinn"
   ; last_weekday = Some "{weekday} seo chaidh"
-  ; months_in_date = None
+  ; months_in_date = Some
+    [ "dhen Fhaoilleach"
+    ; "dhen Ghearran"
+    ; "dhen Mhàrt"
+    ; "dhen Ghiblean"
+    ; "dhen Chèitean"
+    ; "dhen Ògmhios"
+    ; "dhen Iuchar"
+    ; "dhen Lùnastal"
+    ; "dhen t-Sultain"
+    ; "dhen Dàmhair"
+    ; "dhen t-Samhain"
+    ; "dhen Dùbhlachd"
+    ]
   ; short = Some
       { ovr_months = Some
         [ "Faoi"

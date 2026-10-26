@@ -17,12 +17,12 @@ zh
 	locale := SayableTimeLocale new.
 	locale code: 'zh'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { '十二'. '一'. '二'. '三'. '四'. '五'. '六'. '七'. '八'. '九'. '十'. '十一' }).
+	clock at: #hours put: (OrderedCollection withAll: { '十二'. '一'. '两'. '三'. '四'. '五'. '六'. '七'. '八'. '九'. '十'. '十一' }).
 	clock at: #midnight put: '午夜'.
 	clock at: #noon put: '正午'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
 		0. '{h}点整'.
-		5. '{h}点五分'.
+		5. '{h}点零五分'.
 		10. '{h}点十分'.
 		15. '{h}点十五分'.
 		20. '{h}点二十分'.

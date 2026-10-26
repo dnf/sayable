@@ -14,8 +14,8 @@
 (def locale
   {:code "nso"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :pluralized :forms {:one "motsotswana {n}" :other "dimetsotswana {n}"}}
-   :minute {:type :pluralized :forms {:one "metsotso {n}" :other "dimetsotso {n}"}}
+   :second {:type :pluralized :forms {:one "motsotswana {n}" :other "metsotswana {n}"}}
+   :minute {:type :pluralized :forms {:one "motsotso {n}" :other "metsotso {n}"}}
    :hour {:type :pluralized :forms {:one "iri {n}" :other "diiri {n}"}}
    :day {:type :pluralized :forms {:one "letšatši {n}" :other "matšatši {n}"}}
    :week {:type :pluralized :forms {:one "beke {n}" :other "dibeke {n}"}}
@@ -26,5 +26,5 @@
    :just-now "bjale"
    :ago "{0} ye e fetilego"
    :in-future "ka {0}"
-   :short {:second {:type :pluralized :forms {:one "mots. {n}" :other "dimets. {n}"}} :minute {:type :pluralized :forms {:one "mets. {n}" :other "dimets. {n}"}} :hour {:type :pluralized :forms {:one "iri {n}" :other "diiri {n}"}} :day {:type :pluralized :forms {:one "letšatši {n}" :other "matšatši {n}"}} :week {:type :pluralized :forms {:one "beke {n}" :other "dibeke {n}"}} :month {:type :pluralized :forms {:one "kgw. {n}" :other "dikgw. {n}"}} :year {:type :pluralized :forms {:one "ngw. {n}" :other "mengw. {n}"}} :half nil :delimiter nil :ago "{0} ye e fetilego" :in-future "ka {0}"}
+   :short {:second {:type :pluralized :forms {:one "motsotsw. {n}" :other "metsotsw. {n}"}} :minute {:type :pluralized :forms {:one "mots. {n}" :other "mets. {n}"}} :hour {:type :pluralized :forms {:one "iri {n}" :other "diiri {n}"}} :day {:type :pluralized :forms {:one "letšatši {n}" :other "matšatši {n}"}} :week {:type :pluralized :forms {:one "beke {n}" :other "dibeke {n}"}} :month {:type :pluralized :forms {:one "kgw. {n}" :other "dikgw. {n}"}} :year {:type :pluralized :forms {:one "ngw. {n}" :other "mengw. {n}"}} :half nil :delimiter nil :ago "{0} ye e fetilego" :in-future "ka {0}"}
    :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} fetilego" :in-future "ka {0}"}})

@@ -21,9 +21,9 @@ M.units = {
 }
 M.half = "{0} e gjysmë"
 M.delimiter = ", "
-M.just_born = "Sapolindur"
+M.just_born = "I sapolindur"
 M.stages = {
-    newborn = { m = "Sapolindur", f = "Sapolindure" },
+    newborn = { m = "I sapolindur", f = "E sapolindur" },
     infant = "Foshnjë",
     toddler = { m = "Fëmijë i vogël", f = "Fëmijë e vogël" },
     child = "Fëmijë",

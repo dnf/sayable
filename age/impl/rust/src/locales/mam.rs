@@ -18,7 +18,7 @@ pub fn locale() -> AgeLocale {
         plural: |_n| PluralCategory::Other,
         units: Units {
             day: UnitForms::simple("{n} q'ij"),
-            week: UnitForms::simple("{n} xjaw"),
+            week: UnitForms::simple("{n} seman"),
             month: UnitForms::simple("{n} xjaw"),
             year: UnitForms::simple("{n} ab'q'ii"),
         },
@@ -35,7 +35,7 @@ pub fn locale() -> AgeLocale {
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} q'ij")),
-            week: Some(UnitForms::simple("{n} xjaw")),
+            week: Some(UnitForms::simple("{n} seman")),
             month: Some(UnitForms::simple("{n} xjaw")),
             year: Some(UnitForms::simple("{n} ab'.")),
             half: None,
@@ -47,7 +47,7 @@ pub fn locale() -> AgeLocale {
             week: Some(UnitForms::simple("{n}w")),
             month: Some(UnitForms::simple("{n}m")),
             year: Some(UnitForms::simple("{n}y")),
-            half: None,
+            half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             just_born: None,
         }),

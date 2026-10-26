@@ -17,10 +17,10 @@
   (make-time-locale
    :code "zu"
    :clock (make-clock-config
-    :hours (list "ishumi nambili" "kunye" "kubili" "kuthathu" "kune" "kuhlanu" "isithupha" "isikhombisa" "isishiyagalombili" "isishiyagalolunye" "ishumi" "ishumi nanye")
+    :hours (list "leshumi nambili" "lokuqala" "lesibili" "lesithathu" "lesine" "lesihlanu" "lesithupha" "lesikhombisa" "lesishiyagalombili" "lesishiyagalolunye" "leshumi" "leshumi nanye")
     :midnight "phakathi kwamabili"
     :noon "emini"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "emva kwemizuzu emihlanu ngo-{h}") (cons 10 "emva kwemizuzu eyishumi ngo-{h}") (cons 15 "ikota edlule ngo-{h}") (cons 20 "emva kwemizuzu engamashumi amabili ngo-{h}") (cons 25 "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}") (cons 30 "uhhafu edlule ngo-{h}") (cons 35 "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}") (cons 40 "imizuzu engamashumi amabili ngaphambi kuka-{next_h}") (cons 45 "ikota ngaphambi kuka-{next_h}") (cons 50 "imizuzu eyishumi ngaphambi kuka-{next_h}") (cons 55 "imizuzu emihlanu ngaphambi kuka-{next_h}")))
+    :patterns (list (cons 0 "ihora {h}") (cons 5 "imizuzu emihlanu emva kwehora {h}") (cons 10 "imizuzu eyishumi emva kwehora {h}") (cons 15 "ikota emva kwehora {h}") (cons 20 "imizuzu engamashumi amabili emva kwehora {h}") (cons 25 "imizuzu engamashumi amabili nanhlanu emva kwehora {h}") (cons 30 "uhhafu emva kwehora {h}") (cons 35 "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}") (cons 40 "imizuzu engamashumi amabili ngaphambi kwehora {next_h}") (cons 45 "ikota ngaphambi kwehora {next_h}") (cons 50 "imizuzu eyishumi ngaphambi kwehora {next_h}") (cons 55 "imizuzu emihlanu ngaphambi kwehora {next_h}")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

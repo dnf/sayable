@@ -22,50 +22,50 @@ class SHILocale {
   static plural { Fn.new {|n| Plural.call(n) } }
   static units {
     return {
-      "second": {"one": "{n} tasint", "few": "{n} tasinin", "other": "{n} tasinin"},
-      "minute": {"one": "{n} tusdiqt", "few": "{n} tusdiqin", "other": "{n} tusdiqin"},
-      "hour": {"one": "{n} tasragt", "few": "{n} tisragin", "other": "{n} tisragin"},
-      "day": {"one": "{n} ass", "few": "{n} ussan", "other": "{n} ass"},
-      "week": {"one": "{n} imalass", "few": "{n} imalassn", "other": "{n} imalass"},
-      "month": {"one": "{n} ayyur", "few": "{n} ayyurn", "other": "{n} ayyur"},
-      "year": {"one": "{n} aseggas", "few": "{n} iseggasen", "other": "{n} aseggas"},
+      "second": {"one": "{n} ⵜⴰⵙⵉⵏⵜ", "few": "{n} ⵜⵉⵙⵉⵏⵉⵏ", "other": "{n} ⵜⵉⵙⵉⵏⵉⵏ"},
+      "minute": {"one": "{n} ⵜⵓⵙⴷⵉⵇⵜ", "few": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", "other": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"},
+      "hour": {"one": "{n} ⵜⴰⵙⵔⴰⴳⵜ", "few": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", "other": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"},
+      "day": {"one": "{n} ⴰⵙⵙ", "few": "{n} ⵓⵙⵙⴰⵏ", "other": "{n} ⴰⵙⵙ"},
+      "week": {"one": "{n} ⵉⵎⴰⵍⴰⵙⵙ", "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"},
+      "month": {"one": "{n} ⴰⵢⵢⵓⵔ", "few": "{n} ⴰⵢⵢⵓⵔⵏ", "other": "{n} ⴰⵢⵢⵓⵔ"},
+      "year": {"one": "{n} ⴰⵙⴳⴳⵯⴰⵙ", "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"},
     }
   }
-  static half { "{0} d uzgen" }
+  static half { "{0} ⴷ ⵓⵣⴳⵏ" }
   static delimiter { ", " }
-  static justNow { "ɣilad" }
-  static ago { "ɣ {0} zzrin" }
-  static inFuture { "ɣ {0}" }
+  static justNow { "ⵖⵉⵍⴰⴷ" }
+  static ago { "ⵖ {0} ⵣⵣⵔⵉⵏ" }
+  static inFuture { "ⵖ {0}" }
   static short {
     return {
       "units": {
-        "second": "{n}s",
-        "minute": "{n}m",
-        "hour": "{n}h",
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}mo",
-        "year": "{n}y",
+        "second": {"one": "{n} ⵜⴰⵙⵉⵏⵜ", "few": "{n} ⵜⵉⵙⵉⵏⵉⵏ", "other": "{n} ⵜⵉⵙⵉⵏⵉⵏ"},
+        "minute": {"one": "{n} ⵜⵓⵙⴷⵉⵇⵜ", "few": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", "other": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"},
+        "hour": {"one": "{n} ⵜⴰⵙⵔⴰⴳⵜ", "few": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", "other": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"},
+        "day": {"one": "{n} ⴰⵙⵙ", "few": "{n} ⵓⵙⵙⴰⵏ", "other": "{n} ⴰⵙⵙ"},
+        "week": {"one": "{n} ⵉⵎⴰⵍⴰⵙⵙ", "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"},
+        "month": {"one": "{n} ⴰⵢⵢⵓⵔ", "few": "{n} ⴰⵢⵢⵓⵔⵏ", "other": "{n} ⴰⵢⵢⵓⵔ"},
+        "year": {"one": "{n} ⴰⵙⴳⴳⵯⴰⵙ", "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"},
       },
-      "ago": "ɣ {0} zzrin",
-      "inFuture": "ɣ {0}",
+      "ago": "ⵖ {0} ⵣⵣⵔⵉⵏ",
+      "inFuture": "ⵖ {0}",
     }
   }
   static compact {
     return {
       "units": {
-        "second": "{n}s",
-        "minute": "{n}m",
-        "hour": "{n}h",
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}mo",
-        "year": "{n}y",
+        "second": "{n} ⵜⵙⵏ",
+        "minute": "{n} ⵜⵙⴷ",
+        "hour": "{n} ⵜⵙⵔ",
+        "day": "{n} ⴰⵙⵙ",
+        "week": "{n} ⵉⵎⵍ",
+        "month": "{n} ⴰⵢⵔ",
+        "year": "{n} ⴰⵙⴳ",
       },
       "half": "{n}½",
       "delimiter": "",
-      "ago": "ɣ {0} zzrin",
-      "inFuture": "ɣ {0}",
+      "ago": "ⵖ {0} ⵣⵣⵔⵉⵏ",
+      "inFuture": "ⵖ {0}",
     }
   }
 }

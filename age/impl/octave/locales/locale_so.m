@@ -12,10 +12,10 @@
 function loc = locale_so()
   loc.code = 'so';
   loc.plural = @(n) ifelse(n == 1, "one", "other");
-  loc.units.day = struct("one", 'maalin {n}', "other", 'maalmood {n}');
-  loc.units.week = struct("one", 'toddobaad {n}', "other", 'toddobaadyo {n}');
-  loc.units.month = struct("one", 'bil {n}', "other", 'bilood {n}');
-  loc.units.year = struct("one", 'sano {n}', "other", 'sanooyin {n}');
+  loc.units.day = struct("one", '{n} maalin', "other", '{n} maalmood');
+  loc.units.week = '{n} toddobaad';
+  loc.units.month = struct("one", '{n} bil', "other", '{n} bilood');
+  loc.units.year = '{n} sano';
   loc.half = '{n}½';
   loc.delimiter = ', ';
   loc.just_born = 'Dhashay cusub';

@@ -18,9 +18,9 @@
    :code "gn"
    :clock (make-clock-config
     :hours (list "pa mokõi" "peteĩ" "mokõi" "mbohapy" "irundy" "po" "poteĩ" "pokõi" "poapy" "porundy" "pa" "pa peteĩ")
-    :midnight "pyhareve"
+    :midnight "pyharepyte"
     :noon "asaje"
-    :patterns (list (cons 0 "{h}") (cons 5 "{h} ha po") (cons 10 "{h} ha pa") (cons 15 "{h} ha pa po") (cons 20 "{h} ha mokõi pa") (cons 25 "{h} ha mokõi pa po") (cons 30 "{h} ha mbohapy pa") (cons 35 "{next_h} mba'e mokõi pa po") (cons 40 "{next_h} mba'e mokõi pa") (cons 45 "{next_h} mba'e pa po") (cons 50 "{next_h} mba'e pa") (cons 55 "{next_h} mba'e po")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} ha po") (cons 10 "{h} ha pa") (cons 15 "{h} ha pa po") (cons 20 "{h} ha mokõi pa") (cons 25 "{h} ha mokõi pa po") (cons 30 "{h} ha mbohapy pa") (cons 35 "{h} ha mbohapy pa po") (cons 40 "{h} ha irundy pa") (cons 45 "{h} ha irundy pa po") (cons 50 "{h} ha po pa") (cons 55 "{h} ha po pa po")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

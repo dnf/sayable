@@ -18,7 +18,7 @@ sa_unit('dv', week, _, '{n} ހަފްތާ').
 sa_unit('dv', month, _, '{n} މަސް').
 sa_unit('dv', year, _, '{n} އަހަރު').
 
-sa_half('dv', '{0} ބައި').
+sa_half('dv', '{n}½').
 sa_delimiter('dv', '، ').
 sa_just_born('dv', 'އަލަށް އުފަންވި').
 

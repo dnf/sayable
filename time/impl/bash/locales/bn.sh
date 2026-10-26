@@ -10,21 +10,21 @@
 # Source: locales/bn.json
 
 _sayabletime_locale_bn() {
-    _clock_hours=('বারো' 'এক' 'দুই' 'তিন' 'চার' 'পাঁচ' 'ছয়' 'সাত' 'আট' 'নয়' 'দশ' 'এগারো')
+    _clock_hours=('বারোটা' 'একটা' 'দুটো' 'তিনটে' 'চারটে' 'পাঁচটা' 'ছটা' 'সাতটা' 'আটটা' 'নটা' 'দশটা' 'এগারোটা')
     _clock_midnight='মধ্যরাত'
-    _clock_noon='দুপুর'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_noon='দুপুর বারোটা'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} বেজে পাঁচ মিনিট'
+    _clock_pattern_10='{h} বেজে দশ মিনিট'
+    _clock_pattern_15='সোয়া {h}'
+    _clock_pattern_20='{h} বেজে বিশ মিনিট'
+    _clock_pattern_25='{h} বেজে পঁচিশ মিনিট'
+    _clock_pattern_30='{h} বেজে ত্রিশ মিনিট'
+    _clock_pattern_35='{next_h} বাজতে পঁচিশ মিনিট বাকি'
+    _clock_pattern_40='{next_h} বাজতে বিশ মিনিট বাকি'
+    _clock_pattern_45='পৌনে {next_h}'
+    _clock_pattern_50='{next_h} বাজতে দশ মিনিট বাকি'
+    _clock_pattern_55='{next_h} বাজতে পাঁচ মিনিট বাকি'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

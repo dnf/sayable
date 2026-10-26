@@ -26,7 +26,7 @@ zu
 	locale tomorrow: 'kusasa'.
 	locale yesterday: 'izolo'.
 	locale dayAfterTomorrow: 'ngomhlomunye'.
-	locale dayBeforeYesterday: 'usuku olwedlule izolo'.
+	locale dayBeforeYesterday: 'kuthangi'.
 	locale thisWeekday: 'leli {weekday}'.
 	locale nextWeekday: '{weekday} elizayo'.
 	locale lastWeekday: '{weekday} eledlule'.

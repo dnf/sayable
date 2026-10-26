@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | 모레           | 3/17    |
 | Day before yesterday | 그저께          | 3/13    |
 | This Thursday (+5)   | 이번 목요일       | 3/20    |
-| Last Monday (-4)     | 지난 화요일       | 3/11    |
-| Next Wednesday (+12) | 다음 목요일       | 3/27    |
-| Same month (+20)     | 4월 4일        | 4/4     |
+| Last Tuesday (-4)    | 지난 화요일       | 3/11    |
+| Next Thursday (+12)  | 다음 목요일       | 3/27    |
+| Same year (+20)      | 4월 4일        | 4/4     |
 | Different year       | 2026년 1월 10일 | 26/1/10 |
 
 ## Duration
@@ -102,8 +102,8 @@ Relative to Saturday, March 15, 2025.
 | 2 weeks, 3 days       | 2주 3일  | 2주 3일  | 2주3일    |
 | 1 month               | 1개월    | 1개월    | 1개월     |
 | 6 months              | 6개월    | 6개월    | 6개월     |
-| 1 year                | 1살     | 1년     | 1년      |
-| 2 years, 3 months     | 2살 3개월 | 2년 3개월 | 2년3개월   |
+| 1 year                | 1년     | 1년     | 1년      |
+| 2 years, 3 months     | 2년 3개월 | 2년 3개월 | 2년3개월   |
 
 ### Relative time
 

@@ -19,7 +19,7 @@ let TPI* = TimeLocale(
     hours: @["twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"],
     midnight: "biknait",
     noon: "belo",
-    patterns: @[(0, "{h}:00"), (5, "{h}:05"), (10, "{h}:10"), (15, "{h}:15"), (20, "{h}:20"), (25, "{h}:25"), (30, "{h}:30"), (35, "{h}:35"), (40, "{h}:40"), (45, "{h}:45"), (50, "{h}:50"), (55, "{h}:55")].toOrderedTable,
+    patterns: @[(0, "{h} kilok"), (5, "faiv minit pas {h}"), (10, "ten minit pas {h}"), (15, "kwata pas {h}"), (20, "twenti minit pas {h}"), (25, "twenti faiv minit pas {h}"), (30, "hap pas {h}"), (35, "teti faiv minit pas {h}"), (40, "foti minit pas {h}"), (45, "foti faiv minit pas {h}"), (50, "fifti minit pas {h}"), (55, "fifti faiv minit pas {h}")].toOrderedTable,
   ),
   short: some(CompactnessOverride(
     clock: some(ShortClockConfig(

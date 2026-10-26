@@ -32,7 +32,7 @@ sd_unit('sv', year, other, '{n} år').
 sd_half('sv', '{n}½').
 sd_delimiter('sv', ', ').
 sd_just_now('sv', 'just nu').
-sd_ago('sv', '{0} sedan').
+sd_ago('sv', 'för {0} sedan').
 sd_in_future('sv', 'om {0}').
 
 short_sd_unit('sv', second, _, '{n} s').
@@ -42,7 +42,7 @@ short_sd_unit('sv', day, _, '{n} d').
 short_sd_unit('sv', week, _, '{n} v').
 short_sd_unit('sv', month, _, '{n} mån').
 short_sd_unit('sv', year, _, '{n} år').
-short_sd_ago('sv', '{0} sedan').
+short_sd_ago('sv', 'för {0} sedan').
 short_sd_in_future('sv', 'om {0}').
 
 compact_sd_unit('sv', second, _, '{n}s').
@@ -53,5 +53,5 @@ compact_sd_unit('sv', week, _, '{n}v').
 compact_sd_unit('sv', month, _, '{n}m').
 compact_sd_unit('sv', year, _, '{n}å').
 compact_sd_delimiter('sv', '').
-compact_sd_ago('sv', '{0} sedan').
+compact_sd_ago('sv', 'för {0} sedan').
 compact_sd_in_future('sv', 'om {0}').

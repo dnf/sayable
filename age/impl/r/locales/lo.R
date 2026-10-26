@@ -19,7 +19,7 @@ locale_lo <- list(
     year = "{n} ປີ"
   ),
   half = "{0}ເຄິ່ງ",
-  delimiter = "",
+  delimiter = " ",
   just_born = "ເກີດໃໝ່",
   stages = list(
     newborn = "ເດັກເກີດໃໝ່",
@@ -43,6 +43,7 @@ locale_lo <- list(
       week = "{n}w",
       month = "{n}m",
       year = "{n}y"
-    )
+    ),
+    half = "{n}½"
   )
 )

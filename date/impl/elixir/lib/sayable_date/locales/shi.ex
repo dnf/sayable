@@ -35,7 +35,7 @@ defmodule SayableDate.Locales.SHI do
         "ⴰⵙⵉⵏⴰⵙ",
         "ⴰⴽⵕⴰⵙ",
         "ⴰⴽⵡⴰⵙ",
-        "ⴰⵙⵉⵎⵡⴰⵙ",
+        "ⵙⵉⵎⵡⴰⵙ",
         "ⴰⵙⵉⴹⵢⴰⵙ"
       ],
       day_format: "{n}",

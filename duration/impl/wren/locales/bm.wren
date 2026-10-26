@@ -27,7 +27,7 @@ class BMLocale {
   static delimiter { ", " }
   static justNow { "sisan" }
   static ago { "{0} bɔlen" }
-  static inFuture { "ka {0}" }
+  static inFuture { "{0} kɔnɔ" }
   static short {
     return {
       "units": {
@@ -40,7 +40,7 @@ class BMLocale {
         "year": "san {n}",
       },
       "ago": "{0} bɔlen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
     }
   }
   static compact {
@@ -57,7 +57,7 @@ class BMLocale {
       "half": "{n}½",
       "delimiter": "",
       "ago": "{0} bɔlen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
     }
   }
 }

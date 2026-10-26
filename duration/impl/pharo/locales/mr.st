@@ -19,7 +19,7 @@ mr
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
 		'second'. '{n} सेकंद'.
-		'minute'. '{n} मिनिट'.
+		'minute'. (Dictionary newFromPairs: { #one. '{n} मिनिट'. #other. '{n} मिनिटे' }).
 		'hour'. '{n} तास'.
 		'day'. (Dictionary newFromPairs: { #one. '{n} दिवस'. #other. '{n} दिवस' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} आठवडा'. #other. '{n} आठवडे' }).

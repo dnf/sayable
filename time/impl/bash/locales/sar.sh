@@ -10,21 +10,21 @@
 # Source: locales/sar.json
 
 _sayabletime_locale_sar() {
-    _clock_hours=('mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi' 'kɨ̀ndá' 'ɗìi' 'mùtá' 'sɔ̀' 'mɨ̀ndɨ̀' 'mɨ̀ndɨ̀ kɨ̀ndá' 'mɨ̀sá' 'mɨ̀ndɨ̀ mùtá' 'mɨ̀ndɨ̀ sɔ̀' 'mɔ̀ɔ́' 'mɔ̀ɔ́ kɨ̀ndá')
+    _clock_hours=('lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi' 'lɛɛr kɨ̀ndá' 'lɛɛr ɗìi' 'lɛɛr mùtá' 'lɛɛr sɔ̀' 'lɛɛr mɨ̀ndɨ̀' 'lɛɛr mɨ̀ndɨ̀ kɨ̀ndá' 'lɛɛr mɨ̀sá' 'lɛɛr mɨ̀ndɨ̀ mùtá' 'lɛɛr mɨ̀ndɨ̀ sɔ̀' 'lɛɛr mɔ̀ɔ́' 'lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá')
     _clock_midnight='badɔ'
     _clock_noon='mbɔr ndɔ'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} kɨ̀ minít mɨ̀ndɨ̀'
+    _clock_pattern_10='{h} kɨ̀ minít mɔ̀ɔ́'
+    _clock_pattern_15='{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    _clock_pattern_20='{h} kɨ̀ minít mɔ̀ɔ́ ɗìi'
+    _clock_pattern_25='{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    _clock_pattern_30='{h} kɩ̀ ndá̰ŋ'
+    _clock_pattern_35='{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    _clock_pattern_40='{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀'
+    _clock_pattern_45='{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    _clock_pattern_50='{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀'
+    _clock_pattern_55='{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

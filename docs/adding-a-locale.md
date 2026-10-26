@@ -93,6 +93,28 @@ is required: a locale exists in all four libraries or in none.
 | `code`       | Locale code; must match the file name                               |
 | `name`       | English name of the language, as shown in the docs                  |
 | `pluralRule` | One of the 23 rule names above (used by age and duration)           |
+| `review`     | Optional. Notes on data you are not sure of (see below)             |
+
+### Review notes
+
+If you are not confident in part of the data, say so in a `review` list instead
+of leaving it silent. Each note names the section, a confidence (`low` or
+`medium`) and what a native speaker should check:
+
+```json
+"review": [
+  {
+    "section": "time.clock",
+    "confidence": "low",
+    "note": "Additive '<hour> and <minutes>' form; unsure whether speakers use a 'to' idiom after :30."
+  }
+]
+```
+
+No library reads `review`. The docs generator shows the notes at the top of
+`docs/locales/<code>.md` and collects them all in
+[`docs/locales/README.md`](locales/README.md), where linguists look for work.
+When the data has been checked and fixed, delete the note.
 
 Each library's codegen sees the shared fields plus its own section
 (`load_component_locales()` in `.hecatron/tools/codegen/util.py`), so within a
@@ -374,12 +396,16 @@ Minutes round to the nearest 5, so 14:58 reads as three o'clock. Use
 {next_h}", Polish "piętnaście do {next_h}"); `{h}` is always the current hour,
 so a "to" pattern written with `{h}` names the wrong hour. If the language counts
 upward only, use `{h}` throughout. Hour names take whatever form the patterns need: Polish
-uses ordinals ("trzecia"), French cardinals ("trois").
+uses ordinals ("trzecia"), and French puts the noun in each name ("une heure", "deux
+heures") so hour one gets the singular.
 
 The digital `format` follows CLDR's short time format: `"{h}:{mm}"` for most
-24-hour locales, `"{h}.{mm}"` for Danish, Finnish and Indonesian. Where a
-language has no established spoken clock (some pidgins and creoles), use
-numeric patterns such as `"{h}:15"` rather than inventing phrases; see
+24-hour locales, `"{h}.{mm}"` for Danish, Finnish and Indonesian.
+
+Normal-mode patterns are always words, never digits. Where a language has no
+"past/to" idiom, use the plain spoken "hour and minutes" form with the minutes
+spelled out. If you aren't sure the phrasing is what speakers say, write your
+best version and add a `review` note saying what to check. See
 [`time/docs/time-formatting-conventions.md`](../time/docs/time-formatting-conventions.md).
 
 French `time` section (hour list shortened here):
@@ -387,14 +413,14 @@ French `time` section (hour list shortened here):
 ```json
 "time": {
   "clock": {
-    "hours": ["douze", "une", "deux", "trois", ..., "onze"],
+    "hours": ["douze heures", "une heure", "deux heures", ..., "onze heures"],
     "midnight": "minuit",
     "noon": "midi",
     "patterns": {
-      "0": "{h} heures", "5": "{h} heures cinq", "10": "{h} heures dix",
-      "15": "{h} heures et quart", "20": "{h} heures vingt", "25": "{h} heures vingt-cinq",
-      "30": "{h} heures et demie", "35": "{h} heures trente-cinq", "40": "{h} heures quarante",
-      "45": "{h} heures moins le quart", "50": "{h} heures cinquante", "55": "{h} heures cinquante-cinq"
+      "0": "{h}", "5": "{h} cinq", "10": "{h} dix",
+      "15": "{h} et quart", "20": "{h} vingt", "25": "{h} vingt-cinq",
+      "30": "{h} et demie", "35": "{next_h} moins vingt-cinq", "40": "{next_h} moins vingt",
+      "45": "{next_h} moins le quart", "50": "{next_h} moins dix", "55": "{next_h} moins cinq"
     }
   },
   "short": { "clock": { "use24h": true, "format": "{h}:{mm}" } },

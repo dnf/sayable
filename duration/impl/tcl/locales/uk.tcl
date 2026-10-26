@@ -20,13 +20,13 @@ proc plural_uk {n} {
 proc locale_duration_uk {} {
     set code {uk}
     set units [dict create \
-        second [dict create one "{n} секунда" few "{n} секунди" many "{n} секунд" other "{n} секунд"] \
-        minute [dict create one "{n} хвилина" few "{n} хвилини" many "{n} хвилин" other "{n} хвилин"] \
-        hour [dict create one "{n} година" few "{n} години" many "{n} годин" other "{n} годин"] \
-        day [dict create one "{n} день" few "{n} дні" many "{n} днів" other "{n} днів"] \
-        week [dict create one "{n} тиждень" few "{n} тижні" many "{n} тижнів" other "{n} тижнів"] \
-        month [dict create one "{n} місяць" few "{n} місяці" many "{n} місяців" other "{n} місяців"] \
-        year [dict create one "{n} рік" few "{n} роки" many "{n} років" other "{n} років"] \
+        second [dict create one "{n} секунда" few "{n} секунди" many "{n} секунд" other "{n} секунди"] \
+        minute [dict create one "{n} хвилина" few "{n} хвилини" many "{n} хвилин" other "{n} хвилини"] \
+        hour [dict create one "{n} година" few "{n} години" many "{n} годин" other "{n} години"] \
+        day [dict create one "{n} день" few "{n} дні" many "{n} днів" other "{n} дня"] \
+        week [dict create one "{n} тиждень" few "{n} тижні" many "{n} тижнів" other "{n} тижня"] \
+        month [dict create one "{n} місяць" few "{n} місяці" many "{n} місяців" other "{n} місяця"] \
+        year [dict create one "{n} рік" few "{n} роки" many "{n} років" other "{n} року"] \
     ]
     set half "{n} з половиною"
     set delimiter {, }

@@ -10,22 +10,22 @@
 # Source: locales/ki.json
 
 function locale_ki {
-    $hours = @('ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano', 'ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe')
+    $hours = @('ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe', 'ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano')
     $midnight = 'ũtukũ gatagatĩ'
     $noon = 'mũthenya gatagatĩ'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'thaa {h}'
+    $patterns[5] = 'thaa {h} na ndagĩka ithano'
+    $patterns[10] = 'thaa {h} na ndagĩka ikũmi'
+    $patterns[15] = 'thaa {h} na ndagĩka ikũmi na ithano'
+    $patterns[20] = 'thaa {h} na ndagĩka mĩrongo ĩĩrĩ'
+    $patterns[25] = 'thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano'
+    $patterns[30] = 'thaa {h} na nuthu'
+    $patterns[35] = 'thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano'
+    $patterns[40] = 'thaa {h} na ndagĩka mĩrongo ĩna'
+    $patterns[45] = 'thaa {h} na ndagĩka mĩrongo ĩna na ithano'
+    $patterns[50] = 'thaa {h} na ndagĩka mĩrongo ĩtano'
+    $patterns[55] = 'thaa {h} na ndagĩka mĩrongo ĩtano na ithano'
     $clock = @{
         hours = $hours
         midnight = $midnight

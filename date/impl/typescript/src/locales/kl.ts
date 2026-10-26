@@ -18,7 +18,7 @@ export const kl: DateLocale = {
   dayFormat: '{n}.',
   dayFormatExceptions: {},
   datePattern: '{month} {day}',
-  datePatternWithYear: '{day} {month} {year}',
+  datePatternWithYear: '{month} {day} {year}',
   today: 'ullumi',
   tomorrow: 'aqagu',
   yesterday: 'ippassaq',
@@ -32,7 +32,7 @@ export const kl: DateLocale = {
     weekdays: ['sap', 'ata', 'mar', 'pin', 'sis', 'tal', 'arf'],
     dayFormat: '{n}.',
     datePattern: '{month} {day}',
-    datePatternWithYear: '{day} {month} {year}',
+    datePatternWithYear: '{month} {day} {year}',
   },
   compact: {
     datePattern: '{m}-{d}',

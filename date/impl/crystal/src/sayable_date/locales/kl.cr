@@ -17,7 +17,7 @@ module SayableDate
       day_format: "{n}.",
       day_format_exceptions: {} of String => String,
       date_pattern: "{month} {day}",
-      date_pattern_with_year: "{day} {month} {year}",
+      date_pattern_with_year: "{month} {day} {year}",
       today: "ullumi",
       tomorrow: "aqagu",
       yesterday: "ippassaq",
@@ -31,7 +31,7 @@ module SayableDate
         weekdays: ["sap", "ata", "mar", "pin", "sis", "tal", "arf"],
         day_format: "{n}.",
         date_pattern: "{month} {day}",
-        date_pattern_with_year: "{day} {month} {year}",
+        date_pattern_with_year: "{month} {day} {year}",
       ),
       compact: CompactnessOverride.new(
         date_pattern: "{m}-{d}",

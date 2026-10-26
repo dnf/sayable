@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new("{n} mun"),
         "year" => UnitForms.new("{n} yia"),
       },
-      half: "{n} na hap",
+      half: "{0} na hap",
       delimiter: ", ",
       just_born: "Nupela pikinini",
       stages: {
@@ -46,6 +46,7 @@ module SayableAge
           "year" => UnitForms.new("{n}y"),
         },
         delimiter: "",
+        half: "{n}½",
       ),
     )
   end

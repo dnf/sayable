@@ -23,11 +23,11 @@ class KILocale {
       "year": {"one": "mwaka {n}", "other": "mĩaka {n}"},
     }
   }
-  static half { "{0} na nusu" }
+  static half { "{0} na nuthu" }
   static delimiter { ", " }
-  static justNow { "ũmũthĩ" }
+  static justNow { "rĩu" }
   static ago { "{0} ĩhĩtũkĩte" }
-  static inFuture { "{0} ĩyothe" }
+  static inFuture { "thutha wa {0}" }
   static short {
     return {
       "units": {
@@ -40,7 +40,7 @@ class KILocale {
         "year": {"one": "mwaka {n}", "other": "mĩaka {n}"},
       },
       "ago": "{0} ĩhĩtũkĩte",
-      "inFuture": "{0} ĩyothe",
+      "inFuture": "thutha wa {0}",
     }
   }
   static compact {
@@ -56,7 +56,7 @@ class KILocale {
       },
       "delimiter": "",
       "ago": "{0} ĩhĩtũkĩte",
-      "inFuture": "{0} ĩyothe",
+      "inFuture": "thutha wa {0}",
     }
   }
 }

@@ -42,7 +42,7 @@ pub fn locale() -> types.AgeLocale {
       week: Ok(types.SimpleUnit("{n}w")),
       month: Ok(types.SimpleUnit("{n}m")),
       year: Ok(types.SimpleUnit("{n}y")),
-      half: Error(Nil),
+      half: Ok("{n}½"),
       delimiter: Error(Nil),
       just_born: Error(Nil),
     )),

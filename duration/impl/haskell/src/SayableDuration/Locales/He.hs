@@ -19,32 +19,32 @@ locale = DurationLocale
     , localePlural = \n -> if n == 1 then One else if n == 2 then Two else Other
     , localeUnits = Units
         { unitSecond = Pluralized
-          [ (One, "שנייה {n}")
+          [ (One, "שנייה")
           , (Two, "שתי שניות")
           , (Other, "{n} שניות")
           ]
         , unitMinute = Pluralized
-          [ (One, "דקה {n}")
+          [ (One, "דקה")
           , (Two, "שתי דקות")
           , (Other, "{n} דקות")
           ]
         , unitHour = Pluralized
-          [ (One, "שעה {n}")
+          [ (One, "שעה")
           , (Two, "שעתיים")
           , (Other, "{n} שעות")
           ]
         , unitDay = Pluralized
-          [ (One, "יום {n}")
+          [ (One, "יום")
           , (Two, "יומיים")
           , (Other, "{n} ימים")
           ]
         , unitWeek = Pluralized
-          [ (One, "שבוע {n}")
+          [ (One, "שבוע")
           , (Two, "שבועיים")
           , (Other, "{n} שבועות")
           ]
         , unitMonth = Pluralized
-          [ (One, "חודש {n}")
+          [ (One, "חודש")
           , (Two, "חודשיים")
           , (Other, "{n} חודשים")
           ]

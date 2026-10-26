@@ -16,12 +16,12 @@ locale_mi <- list(
     second = "{n} hēkona",
     minute = "{n} meneti",
     hour = "{n} hāora",
-    day = "rā {n}",
-    week = "wiki {n}",
-    month = "marama {n}",
-    year = "tau {n}"
+    day = "{n} rā",
+    week = "{n} wiki",
+    month = "{n} marama",
+    year = "{n} tau"
   ),
-  half = "{0}½",
+  half = "{n}½",
   delimiter = ", ",
   just_now = "ināianei",
   ago = "{0} i mua",
@@ -31,10 +31,10 @@ locale_mi <- list(
       second = "{n} hēk",
       minute = "{n} men",
       hour = "{n} hāo",
-      day = "rā {n}",
-      week = "w {n}",
-      month = "m {n}",
-      year = "t {n}"
+      day = "{n} rā",
+      week = "{n} w",
+      month = "{n} m",
+      year = "{n} t"
     ),
     ago = "{0} i mua",
     in_future = "ā te {0}"

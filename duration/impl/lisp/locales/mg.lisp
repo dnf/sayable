@@ -27,7 +27,7 @@
    :half "{0} sy sasany"
    :delimiter ", "
    :just-now "vao haingana"
-   :ago "{0} lasa"
+   :ago "{0} lasa izay"
    :in-future "ao anatin'ny {0}"
    :short-units (list (cons :second "{n} seg")
                        (cons :minute "{n} min")
@@ -36,7 +36,7 @@
                        (cons :week "{n} her")
                        (cons :month "{n} vol")
                        (cons :year "{n} tna"))
-   :short-ago "{0} lasa"
+   :short-ago "{0} lasa izay"
    :short-in-future "ao anatin'ny {0}"
    :compact-units (list (cons :second "{n} s")
                        (cons :minute "{n} m")

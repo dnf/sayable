@@ -21,7 +21,7 @@ module SayableAge
         'month' => { one: '{n} mes', other: '{n} mesos' },
         'year' => { one: '{n} any', other: '{n} anys' },
       },
-      half: '{n} i mig',
+      half: '{0} i mig',
       delimiter: ', ',
       just_born: 'Nounat',
       stages: {

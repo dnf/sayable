@@ -22,7 +22,7 @@ let ID* = AgeLocale(
     "month": simpleUnit("{n} bulan"),
     "year": simpleUnit("{n} tahun"),
   }.toOrderedTable,
-  half: "{0} setengah",
+  half: "{n} setengah",
   delimiter: ", ",
   justBorn: "Baru lahir",
   stages: {

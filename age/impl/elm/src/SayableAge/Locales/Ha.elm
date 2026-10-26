@@ -21,20 +21,20 @@ locale =
     { code = "ha"
     , plural = \n -> if n == 1 then One else Other
     , day = Pluralized
-      [ ( One, "{n} kwana" )
-      , ( Other, "{n} kwanaki" )
+      [ ( One, "kwana {n}" )
+      , ( Other, "kwanaki {n}" )
       ]
     , week = Pluralized
-      [ ( One, "{n} mako" )
-      , ( Other, "{n} makonni" )
+      [ ( One, "mako {n}" )
+      , ( Other, "makonni {n}" )
       ]
     , month = Pluralized
-      [ ( One, "{n} wata" )
-      , ( Other, "{n} watanni" )
+      [ ( One, "wata {n}" )
+      , ( Other, "watanni {n}" )
       ]
     , year = Pluralized
-      [ ( One, "{n} shekara" )
-      , ( Other, "{n} shekaru" )
+      [ ( One, "shekara {n}" )
+      , ( Other, "shekaru {n}" )
       ]
     , half = "{n}½"
     , delimiter = ", "
@@ -42,17 +42,17 @@ locale =
     , stages =
         { newborn = Neutral "Jariri"
         , infant = Neutral "Jariri"
-        , toddler = Neutral "Ƙaramin yaro"
-        , child = Neutral "Yaro"
-        , teenager = Neutral "Saurayi"
+        , toddler = Gendered "Ƙaramin yaro" "Ƙaramar yarinya"
+        , child = Gendered "Yaro" "Yarinya"
+        , teenager = Gendered "Saurayi" "Budurwa"
         , adult = Neutral "Babba"
         }
     , short =
         Just
-            { ovrDay = Just (Simple "{n} kw.")
-            , ovrWeek = Just (Simple "{n} mk.")
-            , ovrMonth = Just (Simple "{n} wt.")
-            , ovrYear = Just (Simple "{n} shk.")
+            { ovrDay = Just (Simple "kw. {n}")
+            , ovrWeek = Just (Simple "mk. {n}")
+            , ovrMonth = Just (Simple "wt. {n}")
+            , ovrYear = Just (Simple "shk. {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

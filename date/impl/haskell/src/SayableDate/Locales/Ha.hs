@@ -50,7 +50,7 @@ locale = DateLocale
     , localeDayBeforeYesterday = Just "shekaranjiya"
     , localeThisWeekday = Just "wannan {weekday}"
     , localeNextWeekday = Just "{weekday} mai zuwa"
-    , localeLastWeekday = Just "{weekday} da ya wuce"
+    , localeLastWeekday = Just "{weekday} da ta wuce"
     , localeMonthsInDate = Nothing
     , localeShort = Just $
         CompactnessOverride

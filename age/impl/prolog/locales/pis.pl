@@ -18,7 +18,7 @@ sa_unit('pis', week, _, '{n} wik').
 sa_unit('pis', month, _, '{n} manis').
 sa_unit('pis', year, _, '{n} yia').
 
-sa_half('pis', '{n} en haf').
+sa_half('pis', '{0} en haf').
 sa_delimiter('pis', ', ').
 sa_just_born('pis', 'Niufala bebi').
 
@@ -38,4 +38,5 @@ compact_sa_unit('pis', day, _, '{n}d').
 compact_sa_unit('pis', week, _, '{n}w').
 compact_sa_unit('pis', month, _, '{n}m').
 compact_sa_unit('pis', year, _, '{n}y').
+compact_sa_half('pis', '{n}½').
 compact_sa_delimiter('pis', '').

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [yao.json](../../locales/yao.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Swahili-type 'saa {h} na <minutes>' using the locale's own 'saa' and 'nusu'; tens 'makumi gaŵili/gatatu/ncece/nsano' (class-6 ga- concord on 2 and 3 only). Western hour count kept: Malawian Yao speakers use the Western clock; Tanzanian Yao may expect the Swahili 6-o'clock count. Doubts: ŵ in 'gaŵili' vs the file's ŵ-less 'iwili'; whether 'robo' (quarter) is used.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | Lisiku lya kwanda lino   | 17/3    |
 | Day before yesterday | Lisiku lya ncece lyapite | 13/3    |
 | This Thursday (+5)   | Lisiku lya ncece lino    | 20/3    |
-| Last Monday (-4)     | Lisiku lya wili lyapite  | 11/3    |
-| Next Wednesday (+12) | Lisiku lya ncece likwisa | 27/3    |
-| Same month (+20)     | 4 Epireli                | 4/4     |
+| Last Tuesday (-4)    | Lisiku lya wili lyapite  | 11/3    |
+| Next Thursday (+12)  | Lisiku lya ncece likwisa | 27/3    |
+| Same year (+20)      | 4 Epireli                | 4/4     |
 | Different year       | 10 Janyuwale 2026        | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal           | Short    | Compact |
-| --------------- | ---------------- | -------- | ------- |
-| Midnight        | pakati pa usiku  | 12:00 AM | 12:00a  |
-| 1:00 AM         | cimo:00          | 1:00 AM  | 1:00a   |
-| 5 past 9        | nsano nancece:05 | 9:05 AM  | 9:05a   |
-| Quarter past 10 | likumi:15        | 10:15 AM | 10:15a  |
-| Half past 11    | likumi nacimo:30 | 11:30 AM | 11:30a  |
-| Noon            | pakati pa lisiku | 12:00 PM | 12:00p  |
-| Quarter to 3    | iwili:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | nsano:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | nsano naitatu:00 | 8:00 PM  | 8:00p   |
-| 10:30 PM        | likumi:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | pakati pa usiku  | 11:58 PM | 11:58p  |
+| Time            | Normal                             | Short    | Compact |
+| --------------- | ---------------------------------- | -------- | ------- |
+| Midnight        | pakati pa usiku                    | 12:00 AM | 12:00a  |
+| 1:00 AM         | saa cimo                           | 1:00 AM  | 1:00a   |
+| 5 past 9        | saa nsano nancece na nsano         | 9:05 AM  | 9:05a   |
+| Quarter past 10 | saa likumi na likumi na nsano      | 10:15 AM | 10:15a  |
+| Half past 11    | saa likumi nacimo na nusu          | 11:30 AM | 11:30a  |
+| Noon            | pakati pa lisiku                   | 12:00 PM | 12:00p  |
+| Quarter to 3    | saa iwili na makumi ncece na nsano | 2:45 PM  | 2:45p   |
+| 5 to 6          | saa nsano na makumi nsano na nsano | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | saa nsano naitatu                  | 8:00 PM  | 8:00p   |
+| 10:30 PM        | saa likumi na nusu                 | 10:30 PM | 10:30p  |
+| 11:58 PM        | pakati pa usiku                    | 11:58 PM | 11:58p  |

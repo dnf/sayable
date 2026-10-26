@@ -15,18 +15,18 @@ st_hours('cak', ['kab\'lajuj', 'jun', 'ka\'i\'', 'oxi\'', 'kaji\'', 'wo\'o\'', '
 st_midnight('cak', 'nik\'aj aq\'a\'').
 st_noon('cak', 'nik\'aj q\'ij').
 
-st_pattern('cak', 0, '{h}:00').
-st_pattern('cak', 5, '{h}:05').
-st_pattern('cak', 10, '{h}:10').
-st_pattern('cak', 15, '{h}:15').
-st_pattern('cak', 20, '{h}:20').
-st_pattern('cak', 25, '{h}:25').
-st_pattern('cak', 30, '{h}:30').
-st_pattern('cak', 35, '{h}:35').
-st_pattern('cak', 40, '{h}:40').
-st_pattern('cak', 45, '{h}:45').
-st_pattern('cak', 50, '{h}:50').
-st_pattern('cak', 55, '{h}:55').
+st_pattern('cak', 0, '{h} ramaj').
+st_pattern('cak', 5, '{h} ramaj rik\'in wo\'o\'').
+st_pattern('cak', 10, '{h} ramaj rik\'in lajuj').
+st_pattern('cak', 15, '{h} ramaj rik\'in wolajuj').
+st_pattern('cak', 20, '{h} ramaj rik\'in juk\'al').
+st_pattern('cak', 25, '{h} ramaj rik\'in juk\'al wo\'o\'').
+st_pattern('cak', 30, '{h} ramaj rik\'in nik\'aj').
+st_pattern('cak', 35, '{h} ramaj rik\'in juk\'al wolajuj').
+st_pattern('cak', 40, '{h} ramaj rik\'in kak\'al').
+st_pattern('cak', 45, '{h} ramaj rik\'in kak\'al wo\'o\'').
+st_pattern('cak', 50, '{h} ramaj rik\'in kak\'al lajuj').
+st_pattern('cak', 55, '{h} ramaj rik\'in kak\'al wolajuj').
 
 short_st_use24h('cak', false).
 short_st_format('cak', '{h}:{mm} {ampm}').

@@ -93,7 +93,7 @@ class LocalesAD {
             UnitForms.simpleUnit('sɛkɛnd {n}'),
             UnitForms.simpleUnit('sema {n}'),
             UnitForms.simpleUnit('dɔnhwere {n}'),
-            UnitForms.simpleUnit('nna {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'da {n}', (PluralCategory.OTHER): 'nna {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'bosome {n}', (PluralCategory.OTHER): 'abosome {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
@@ -106,7 +106,7 @@ class LocalesAD {
             UnitForms.simpleUnit('sɛk {n}'),
             UnitForms.simpleUnit('sem {n}'),
             UnitForms.simpleUnit('dɔn {n}'),
-            UnitForms.simpleUnit('nna {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'da {n}', (PluralCategory.OTHER): 'nna {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'bos {n}', (PluralCategory.OTHER): 'abos {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
@@ -185,9 +185,9 @@ class LocalesAD {
             return PluralCategory.OTHER
         },
         new Units(
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} ثانية', (PluralCategory.ONE): 'ثانية واحدة', (PluralCategory.TWO): 'ثانيتان', (PluralCategory.FEW): '{n} ثوانٍ', (PluralCategory.MANY): '{n} ثانية', (PluralCategory.OTHER): '{n} ثانية']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} دقيقة', (PluralCategory.ONE): 'دقيقة واحدة', (PluralCategory.TWO): 'دقيقتان', (PluralCategory.FEW): '{n} دقائق', (PluralCategory.MANY): '{n} دقيقة', (PluralCategory.OTHER): '{n} دقيقة']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} ساعة', (PluralCategory.ONE): 'ساعة واحدة', (PluralCategory.TWO): 'ساعتان', (PluralCategory.FEW): '{n} ساعات', (PluralCategory.MANY): '{n} ساعة', (PluralCategory.OTHER): '{n} ساعة']),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} ثانية', (PluralCategory.ONE): 'ثانية', (PluralCategory.TWO): 'ثانيتان', (PluralCategory.FEW): '{n} ثوانٍ', (PluralCategory.MANY): '{n} ثانية', (PluralCategory.OTHER): '{n} ثانية']),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} دقيقة', (PluralCategory.ONE): 'دقيقة', (PluralCategory.TWO): 'دقيقتان', (PluralCategory.FEW): '{n} دقائق', (PluralCategory.MANY): '{n} دقيقة', (PluralCategory.OTHER): '{n} دقيقة']),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} ساعة', (PluralCategory.ONE): 'ساعة', (PluralCategory.TWO): 'ساعتان', (PluralCategory.FEW): '{n} ساعات', (PluralCategory.MANY): '{n} ساعة', (PluralCategory.OTHER): '{n} ساعة']),
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} يوم', (PluralCategory.ONE): 'يوم', (PluralCategory.TWO): 'يومان', (PluralCategory.FEW): '{n} أيام', (PluralCategory.MANY): '{n} يومًا', (PluralCategory.OTHER): '{n} يوم']),
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} أسبوع', (PluralCategory.ONE): 'أسبوع', (PluralCategory.TWO): 'أسبوعان', (PluralCategory.FEW): '{n} أسابيع', (PluralCategory.MANY): '{n} أسبوعًا', (PluralCategory.OTHER): '{n} أسبوع']),
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
@@ -217,7 +217,7 @@ class LocalesAD {
             UnitForms.simpleUnit('{n} س'),
             UnitForms.simpleUnit('{n} ي'),
             UnitForms.simpleUnit('{n} أ'),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
+            UnitForms.simpleUnit('{n} شهر'),
             UnitForms.simpleUnit('{n} سنة'),
             '{n}½',
             '',
@@ -236,13 +236,13 @@ class LocalesAD {
         'ay',
         { int n -> PluralCategory.OTHER },
         new Units(
-            UnitForms.simpleUnit('sikundu {n}'),
-            UnitForms.simpleUnit('minutu {n}'),
-            UnitForms.simpleUnit('ura {n}'),
-            UnitForms.simpleUnit('uru {n}'),
-            UnitForms.simpleUnit('simana {n}'),
-            UnitForms.simpleUnit('phaxsi {n}'),
-            UnitForms.simpleUnit('mara {n}')
+            UnitForms.simpleUnit('{n} sikundu'),
+            UnitForms.simpleUnit('{n} minutu'),
+            UnitForms.simpleUnit('{n} ura'),
+            UnitForms.simpleUnit('{n} uru'),
+            UnitForms.simpleUnit('{n} simana'),
+            UnitForms.simpleUnit('{n} phaxsi'),
+            UnitForms.simpleUnit('{n} mara')
         ),
         '{0} chika',
         ', ',
@@ -250,9 +250,9 @@ class LocalesAD {
         '{0} nayraqata',
         '{0} jutirïn',
         new CompactnessOverride(
-            UnitForms.simpleUnit('sik. {n}'),
-            UnitForms.simpleUnit('min. {n}'),
-            UnitForms.simpleUnit('ur. {n}'),
+            UnitForms.simpleUnit('{n} sik.'),
+            UnitForms.simpleUnit('{n} min.'),
+            UnitForms.simpleUnit('{n} ura'),
             UnitForms.simpleUnit('{n} ur.'),
             UnitForms.simpleUnit('{n} sim.'),
             UnitForms.simpleUnit('{n} phx.'),
@@ -270,7 +270,7 @@ class LocalesAD {
             UnitForms.simpleUnit('{n}w'),
             UnitForms.simpleUnit('{n}m'),
             UnitForms.simpleUnit('{n}y'),
-            null,
+            '{n}½',
             '',
             '{0} nayraqata',
             '{0} jutirïn'
@@ -395,13 +395,13 @@ class LocalesAD {
             return PluralCategory.MANY
         },
         new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} секунда', (PluralCategory.FEW): '{n} секунды', (PluralCategory.MANY): '{n} секунд', (PluralCategory.OTHER): '{n} секунд']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} хвіліна', (PluralCategory.FEW): '{n} хвіліны', (PluralCategory.MANY): '{n} хвілін', (PluralCategory.OTHER): '{n} хвілін']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} гадзіна', (PluralCategory.FEW): '{n} гадзіны', (PluralCategory.MANY): '{n} гадзін', (PluralCategory.OTHER): '{n} гадзін']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дзень', (PluralCategory.FEW): '{n} дні', (PluralCategory.MANY): '{n} дзён', (PluralCategory.OTHER): '{n} дзён']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} тыдзень', (PluralCategory.FEW): '{n} тыдні', (PluralCategory.MANY): '{n} тыдняў', (PluralCategory.OTHER): '{n} тыдняў']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месяц', (PluralCategory.FEW): '{n} месяцы', (PluralCategory.MANY): '{n} месяцаў', (PluralCategory.OTHER): '{n} месяцаў']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} гады', (PluralCategory.MANY): '{n} гадоў', (PluralCategory.OTHER): '{n} гадоў'])
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} секунда', (PluralCategory.FEW): '{n} секунды', (PluralCategory.MANY): '{n} секунд', (PluralCategory.OTHER): '{n} секунды']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} хвіліна', (PluralCategory.FEW): '{n} хвіліны', (PluralCategory.MANY): '{n} хвілін', (PluralCategory.OTHER): '{n} хвіліны']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} гадзіна', (PluralCategory.FEW): '{n} гадзіны', (PluralCategory.MANY): '{n} гадзін', (PluralCategory.OTHER): '{n} гадзіны']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дзень', (PluralCategory.FEW): '{n} дні', (PluralCategory.MANY): '{n} дзён', (PluralCategory.OTHER): '{n} дня']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} тыдзень', (PluralCategory.FEW): '{n} тыдні', (PluralCategory.MANY): '{n} тыдняў', (PluralCategory.OTHER): '{n} тыдня']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месяц', (PluralCategory.FEW): '{n} месяцы', (PluralCategory.MANY): '{n} месяцаў', (PluralCategory.OTHER): '{n} месяца']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} гады', (PluralCategory.MANY): '{n} гадоў', (PluralCategory.OTHER): '{n} года'])
         ),
         '{n} з паловай',
         ', ',
@@ -448,7 +448,7 @@ class LocalesAD {
         new Units(
             UnitForms.pluralUnit([(PluralCategory.ONE): 'isekondi {n}', (PluralCategory.OTHER): 'amasekondi {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'iminiti {n}', (PluralCategory.OTHER): 'amaminiti {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'insa {n}', (PluralCategory.OTHER): 'amanso {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'insa {n}', (PluralCategory.OTHER): 'insa {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'ubushiku {n}', (PluralCategory.OTHER): 'inshiku {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'umulungu {n}', (PluralCategory.OTHER): 'imilungu {n}']),
             UnitForms.pluralUnit([(PluralCategory.ONE): 'umweshi {n}', (PluralCategory.OTHER): 'imyeshi {n}']),
@@ -556,7 +556,7 @@ class LocalesAD {
             UnitForms.simpleUnit('{n} manis'),
             UnitForms.simpleUnit('{n} yia')
         ),
-        '{n} mo haf',
+        '{0} mo haf',
         ', ',
         'jas nao',
         '{0} bifo',
@@ -582,7 +582,7 @@ class LocalesAD {
             UnitForms.simpleUnit('{n}w'),
             UnitForms.simpleUnit('{n}mo'),
             UnitForms.simpleUnit('{n}y'),
-            null,
+            '{n}½',
             '',
             '{0} bifo',
             'long {0}'
@@ -611,7 +611,7 @@ class LocalesAD {
         ', ',
         'sisan',
         '{0} bɔlen',
-        'ka {0}',
+        '{0} kɔnɔ',
         new CompactnessOverride(
             UnitForms.simpleUnit('sek. {n}'),
             UnitForms.simpleUnit('min. {n}'),
@@ -623,7 +623,7 @@ class LocalesAD {
             null,
             null,
             '{0} bɔlen',
-            'ka {0}'
+            '{0} kɔnɔ'
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit('sek {n}'),
@@ -636,7 +636,7 @@ class LocalesAD {
             '{n}½',
             '',
             '{0} bɔlen',
-            'ka {0}'
+            '{0} kɔnɔ'
         ),
         null,
         null
@@ -652,7 +652,7 @@ class LocalesAD {
         new Units(
             UnitForms.simpleUnit('{n} সেকেন্ড'),
             UnitForms.simpleUnit('{n} মিনিট'),
-            UnitForms.simpleUnit('{n} ঘন্টা'),
+            UnitForms.simpleUnit('{n} ঘণ্টা'),
             UnitForms.pluralUnit([(PluralCategory.ONE): '{n} দিন', (PluralCategory.OTHER): '{n} দিন']),
             UnitForms.pluralUnit([(PluralCategory.ONE): '{n} সপ্তাহ', (PluralCategory.OTHER): '{n} সপ্তাহ']),
             UnitForms.pluralUnit([(PluralCategory.ONE): '{n} মাস', (PluralCategory.OTHER): '{n} মাস']),
@@ -902,7 +902,7 @@ class LocalesAD {
             UnitForms.simpleUnit('{n}w'),
             UnitForms.simpleUnit('{n}mo'),
             UnitForms.simpleUnit('{n}y'),
-            null,
+            '{n}½',
             '',
             '{0} k\'o chi',
             'pa {0}'
@@ -927,7 +927,7 @@ class LocalesAD {
             UnitForms.simpleUnit('{n} ka bulan'),
             UnitForms.simpleUnit('{n} ka tuig')
         ),
-        '{n}½',
+        '{0} ug tunga',
         ', ',
         'karon lang',
         '{0} ang milabay',
@@ -1037,10 +1037,10 @@ class LocalesAD {
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} eiliad', (PluralCategory.ONE): '{n} eiliad', (PluralCategory.TWO): '{n} eiliad', (PluralCategory.FEW): '{n} eiliad', (PluralCategory.MANY): '{n} eiliad', (PluralCategory.OTHER): '{n} eiliad']),
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} munud', (PluralCategory.ONE): '{n} munud', (PluralCategory.TWO): '{n} funud', (PluralCategory.FEW): '{n} munud', (PluralCategory.MANY): '{n} munud', (PluralCategory.OTHER): '{n} munud']),
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} awr', (PluralCategory.ONE): '{n} awr', (PluralCategory.TWO): '{n} awr', (PluralCategory.FEW): '{n} awr', (PluralCategory.MANY): '{n} awr', (PluralCategory.OTHER): '{n} awr']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} diwrnod', (PluralCategory.ONE): '{n} diwrnod', (PluralCategory.TWO): '{n} ddiwrnod', (PluralCategory.FEW): '{n} diwrnod', (PluralCategory.MANY): '{n} niwrnod', (PluralCategory.OTHER): '{n} diwrnod']),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} diwrnod', (PluralCategory.ONE): '{n} diwrnod', (PluralCategory.TWO): '{n} ddiwrnod', (PluralCategory.FEW): '{n} diwrnod', (PluralCategory.MANY): '{n} diwrnod', (PluralCategory.OTHER): '{n} diwrnod']),
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} wythnos', (PluralCategory.ONE): '{n} wythnos', (PluralCategory.TWO): '{n} wythnos', (PluralCategory.FEW): '{n} wythnos', (PluralCategory.MANY): '{n} wythnos', (PluralCategory.OTHER): '{n} wythnos']),
             UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): '{n} mis', (PluralCategory.TWO): '{n} fis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} blwyddyn', (PluralCategory.ONE): '{n} blwyddyn', (PluralCategory.TWO): '{n} flynedd', (PluralCategory.FEW): '{n} blynedd', (PluralCategory.MANY): '{n} blynedd', (PluralCategory.OTHER): '{n} blynedd'])
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} blwyddyn', (PluralCategory.ONE): '{n} flwyddyn', (PluralCategory.TWO): '{n} flynedd', (PluralCategory.FEW): '{n} blynedd', (PluralCategory.MANY): '{n} blynedd', (PluralCategory.OTHER): '{n} blynedd'])
         ),
         '{0} a hanner',
         ', ',
@@ -1096,7 +1096,7 @@ class LocalesAD {
         '{n}½',
         ', ',
         'lige nu',
-        '{0} siden',
+        'for {0} siden',
         'om {0}',
         new CompactnessOverride(
             UnitForms.simpleUnit('{n} sek.'),
@@ -1297,7 +1297,7 @@ class LocalesAD {
             UnitForms.simpleUnit('{n} މަސް'),
             UnitForms.simpleUnit('{n} އަހަރު')
         ),
-        '{0} ބައި',
+        '{n}½',
         '، ',
         'މިހާރު',
         'މީގެ {0} ކުރިން',
@@ -1352,7 +1352,7 @@ class LocalesAD {
         ', ',
         'sisan',
         '{0} tɛmɛnen',
-        'ka {0}',
+        '{0} kɔnɔ',
         new CompactnessOverride(
             UnitForms.simpleUnit('sɛk. {n}'),
             UnitForms.simpleUnit('min. {n}'),
@@ -1364,7 +1364,7 @@ class LocalesAD {
             null,
             null,
             '{0} tɛmɛnen',
-            'ka {0}'
+            '{0} kɔnɔ'
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit('{n}s'),
@@ -1377,7 +1377,7 @@ class LocalesAD {
             '{n}½',
             '',
             '{0} tɛmɛnen',
-            'ka {0}'
+            '{0} kɔnɔ'
         ),
         null,
         null
@@ -1399,7 +1399,7 @@ class LocalesAD {
             UnitForms.simpleUnit('ཟླ་ {n}'),
             UnitForms.simpleUnit('ལོ་ {n}')
         ),
-        '{0} ཕྱེད',
+        '{0} དང་ཕྱེད',
         ' ',
         'ད་ལྟ',
         '{0} ཧེ་མ',

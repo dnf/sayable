@@ -16,14 +16,14 @@ ml
 	| locale |
 	locale := SayableAgeLocale new.
 	locale code: 'ml'.
-	locale plural: [ :n | (n = 0 or: [ n = 1 ]) ifTrue: [ #one ] ifFalse: [ #other ] ].
+	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
 		'day'. (Dictionary newFromPairs: { #one. '{n} ദിവസം'. #other. '{n} ദിവസങ്ങൾ' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} ആഴ്ച'. #other. '{n} ആഴ്ചകൾ' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} മാസം'. #other. '{n} മാസങ്ങൾ' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} വയസ്സ്'. #other. '{n} വയസ്സ്' }).
 	}).
-	locale half: '{0} ര'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justBorn: 'നവജാതശിശു'.
 	locale stages: (Dictionary newFromPairs: {

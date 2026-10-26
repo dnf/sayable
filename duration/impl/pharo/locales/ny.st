@@ -18,9 +18,9 @@ ny
 	locale code: 'ny'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} sekondi'.
-		'minute'. '{n} mphindi'.
-		'hour'. '{n} ola'.
+		'second'. 'sekondi {n}'.
+		'minute'. 'mphindi {n}'.
+		'hour'. (Dictionary newFromPairs: { #one. 'ola {n}'. #other. 'maola {n}' }).
 		'day'. (Dictionary newFromPairs: { #one. 'tsiku {n}'. #other. 'masiku {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'sabata {n}'. #other. 'masabata {n}' }).
 		'month'. (Dictionary newFromPairs: { #one. 'mwezi {n}'. #other. 'miyezi {n}' }).
@@ -35,7 +35,7 @@ ny
 		#units. (Dictionary newFromPairs: {
 			'second'. 'sek {n}'.
 			'minute'. 'mph {n}'.
-			'hour'. 'ola {n}'.
+			'hour'. (Dictionary newFromPairs: { #one. 'ola {n}'. #other. 'maola {n}' }).
 			'day'. (Dictionary newFromPairs: { #one. 'tsiku {n}'. #other. 'mas {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'sabata {n}'. #other. 'masab {n}' }).
 			'month'. (Dictionary newFromPairs: { #one. 'mwezi {n}'. #other. 'miyezi {n}' }).

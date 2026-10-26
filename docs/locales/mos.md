@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [mos.json](../../locales/mos.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort, additive only: 'lɛɛr a yiibu' (2:00), 'lɛɛr a yiibu la minit piiga' (2:10), 'lɛɛr a yiibu la pʋɩ-sʋka' (2:30), 'lɛɛr a yiibu la minit pis-naase la a nu' (2:45). lɛɛre/minit/'la pʋɩ-sʋka' are the locale's own hour/minute/half words; existing numeral names kept (8 corrected 'a niini' -> 'a nii'). Doubts: whether Mooré elides 'lɛɛre' to 'lɛɛr' before 'a'; whether 'la' or 'ne' joins hour and minutes; tens spellings pisi / pis-tã / pis-naase / pis-nu; no subtractive 'to' form attempted.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | beoog sẽn wat     | 17/3    |
 | Day before yesterday | zaame sẽn loog    | 13/3    |
 | This Thursday (+5)   | Alkamisa kãnga    | 20/3    |
-| Last Monday (-4)     | Atalaata sẽn loog | 11/3    |
-| Next Wednesday (+12) | Alkamisa sẽn wat  | 27/3    |
-| Same month (+20)     | 4 Kãn-saglem      | 4/4     |
+| Last Tuesday (-4)    | Atalaata sẽn loog | 11/3    |
+| Next Thursday (+12)  | Alkamisa sẽn wat  | 27/3    |
+| Same year (+20)      | 4 Kãn-saglem      | 4/4     |
 | Different year       | 10 Zãn-naabu 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal              | Short    | Compact |
-| --------------- | ------------------- | -------- | ------- |
-| Midnight        | yʋng-vɩɩse          | 12:00 AM | 12:00a  |
-| 1:00 AM         | a yembre:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | a wae:05            | 9:05 AM  | 9:05a   |
-| Quarter past 10 | piiga:15            | 10:15 AM | 10:15a  |
-| Half past 11    | piig la a yembre:30 | 11:30 AM | 11:30a  |
-| Noon            | wĩntoog zabre       | 12:00 PM | 12:00p  |
-| Quarter to 3    | a yiibu:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | a nu:55             | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | a niini:00          | 8:00 PM  | 8:00p   |
-| 10:30 PM        | piiga:30            | 10:30 PM | 10:30p  |
-| 11:58 PM        | yʋng-vɩɩse          | 11:58 PM | 11:58p  |
+| Time            | Normal                                  | Short    | Compact |
+| --------------- | --------------------------------------- | -------- | ------- |
+| Midnight        | yʋng-vɩɩse                              | 12:00 AM | 12:00a  |
+| 1:00 AM         | lɛɛr a yembre                           | 1:00 AM  | 1:00a   |
+| 5 past 9        | lɛɛr a wae la minit a nu                | 9:05 AM  | 9:05a   |
+| Quarter past 10 | lɛɛr piiga la minit piig la a nu        | 10:15 AM | 10:15a  |
+| Half past 11    | lɛɛr piig la a yembre la pʋɩ-sʋka       | 11:30 AM | 11:30a  |
+| Noon            | wĩntoog zabre                           | 12:00 PM | 12:00p  |
+| Quarter to 3    | lɛɛr a yiibu la minit pis-naase la a nu | 2:45 PM  | 2:45p   |
+| 5 to 6          | lɛɛr a nu la minit pis-nu la a nu       | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | lɛɛr a nii                              | 8:00 PM  | 8:00p   |
+| 10:30 PM        | lɛɛr piiga la pʋɩ-sʋka                  | 10:30 PM | 10:30p  |
+| 11:58 PM        | yʋng-vɩɩse                              | 11:58 PM | 11:58p  |

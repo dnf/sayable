@@ -27,13 +27,13 @@
                [mod100 (remainder n 100)])
            (and (>= mod10 2) (<= mod10 4) (or (< mod100 12) (> mod100 14)))) "few"]
         [else "many"]))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} sekunda" "few" "{n} sekundy" "many" "{n} sekund" "other" "{n} sekund"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} minuta" "few" "{n} minuty" "many" "{n} minut" "other" "{n} minut"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} godzina" "few" "{n} godziny" "many" "{n} godzin" "other" "{n} godzin"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} dzień" "few" "{n} dni" "many" "{n} dni" "other" "{n} dni"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} tydzień" "few" "{n} tygodnie" "many" "{n} tygodni" "other" "{n} tygodni"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} miesiąc" "few" "{n} miesiące" "many" "{n} miesięcy" "other" "{n} miesięcy"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} rok" "few" "{n} lata" "many" "{n} lat" "other" "{n} lat")))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} sekunda" "few" "{n} sekundy" "many" "{n} sekund" "other" "{n} sekundy"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} minuta" "few" "{n} minuty" "many" "{n} minut" "other" "{n} minuty"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} godzina" "few" "{n} godziny" "many" "{n} godzin" "other" "{n} godziny"))
+         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} dzień" "few" "{n} dni" "many" "{n} dni" "other" "{n} dnia"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} tydzień" "few" "{n} tygodnie" "many" "{n} tygodni" "other" "{n} tygodnia"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} miesiąc" "few" "{n} miesiące" "many" "{n} miesięcy" "other" "{n} miesiąca"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} rok" "few" "{n} lata" "many" "{n} lat" "other" "{n} roku")))
    "{n} i pół"
    ", "
    "właśnie teraz"

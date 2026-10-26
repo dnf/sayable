@@ -15,18 +15,18 @@ st_hours('dz', ['བཅུ་གཉིས', 'གཅིག', 'གཉིས', 'ག
 st_midnight('dz', 'ནམ་ཕྱེད').
 st_noon('dz', 'ཉིན་གུང').
 
-st_pattern('dz', 0, '{h}:00').
-st_pattern('dz', 5, '{h}:05').
-st_pattern('dz', 10, '{h}:10').
-st_pattern('dz', 15, '{h}:15').
-st_pattern('dz', 20, '{h}:20').
-st_pattern('dz', 25, '{h}:25').
-st_pattern('dz', 30, '{h}:30').
-st_pattern('dz', 35, '{h}:35').
-st_pattern('dz', 40, '{h}:40').
-st_pattern('dz', 45, '{h}:45').
-st_pattern('dz', 50, '{h}:50').
-st_pattern('dz', 55, '{h}:55').
+st_pattern('dz', 0, 'ཆུ་ཚོད་{h}').
+st_pattern('dz', 5, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ').
+st_pattern('dz', 10, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ').
+st_pattern('dz', 15, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ').
+st_pattern('dz', 20, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ').
+st_pattern('dz', 25, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ').
+st_pattern('dz', 30, 'ཆུ་ཚོད་{h}་དང་ཕྱེད').
+st_pattern('dz', 35, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ').
+st_pattern('dz', 40, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ').
+st_pattern('dz', 45, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ').
+st_pattern('dz', 50, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ').
+st_pattern('dz', 55, 'ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ').
 
 short_st_use24h('dz', false).
 short_st_format('dz', '{h}:{mm} {ampm}').

@@ -18,7 +18,7 @@ sa_unit('id', week, _, '{n} minggu').
 sa_unit('id', month, _, '{n} bulan').
 sa_unit('id', year, _, '{n} tahun').
 
-sa_half('id', '{0} setengah').
+sa_half('id', '{n} setengah').
 sa_delimiter('id', ', ').
 sa_just_born('id', 'Baru lahir').
 

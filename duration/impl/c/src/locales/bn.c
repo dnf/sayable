@@ -22,7 +22,7 @@ const SduDurationLocale sdu_locale_bn = {
     {
         { "{n} সেকেন্ড", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} মিনিট", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} ঘন্টা", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} ঘণ্টা", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { NULL, { NULL, "{n} দিন", NULL, NULL, NULL, "{n} দিন" } },
         { NULL, { NULL, "{n} সপ্তাহ", NULL, NULL, NULL, "{n} সপ্তাহ" } },
         { NULL, { NULL, "{n} মাস", NULL, NULL, NULL, "{n} মাস" } },

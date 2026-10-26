@@ -42,7 +42,7 @@ pub const locale_ff = DurationLocale{
 		has_minute: true
 		hour: plural_unit({PluralCategory.one: 'waktu {n}', PluralCategory.other: 'waktuuji {n}'})
 		has_hour: true
-		day: simple_unit('ñalɗe {n}')
+		day: plural_unit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'})
 		has_day: true
 		week: plural_unit({PluralCategory.one: 'yontere {n}', PluralCategory.other: 'yontereeji {n}'})
 		has_week: true
@@ -63,7 +63,7 @@ pub const locale_ff = DurationLocale{
 		has_minute: true
 		hour: plural_unit({PluralCategory.one: 'wak {n}', PluralCategory.other: 'wakji {n}'})
 		has_hour: true
-		day: simple_unit('ñalɗe {n}')
+		day: plural_unit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'})
 		has_day: true
 		week: plural_unit({PluralCategory.one: 'yont {n}', PluralCategory.other: 'yontji {n}'})
 		has_week: true

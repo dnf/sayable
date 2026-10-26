@@ -1,14 +1,18 @@
 /// Core formatting logic for sayable-time.
-
 import gleam/bit_array
 import gleam/int
 import gleam/list
 import gleam/result
 import gleam/string
 import sayabletime/types.{
-  type Compactness, type ShortClockConfig,
-  type TimeLocale, Compact, Normal, Short,
+  type Compactness, type ShortClockConfig, type TimeLocale, Compact, Normal,
+  Short,
 }
+
+/// Replace every occurrence of a placeholder, matching code points rather
+/// than graphemes (see sayabletime_ffi.erl).
+@external(erlang, "sayabletime_ffi", "replace_all")
+fn replace_placeholder(in: String, pattern: String, with: String) -> String
 
 pub const version = "0.5.0"
 
@@ -71,7 +75,7 @@ fn format_natural(locale: TimeLocale, hour: Int, minute: Int) -> String {
           let h12 = h % 12
           let h_name = list_at(clock.hours, h12)
           let pattern = find_pattern(clock.patterns, rounded2)
-          string.replace(pattern, "{h}", h_name)
+          replace_placeholder(pattern, "{h}", h_name)
         }
       }
     False -> {
@@ -81,8 +85,8 @@ fn format_natural(locale: TimeLocale, hour: Int, minute: Int) -> String {
       let next_h_name = list_at(clock.hours, next_h12)
       let pattern = find_pattern(clock.patterns, rounded2)
       pattern
-      |> string.replace("{h}", h_name)
-      |> string.replace("{next_h}", next_h_name)
+      |> replace_placeholder("{h}", h_name)
+      |> replace_placeholder("{next_h}", next_h_name)
     }
   }
 }
@@ -93,8 +97,8 @@ fn format_digital(sc: ShortClockConfig, hour: Int, minute: Int) -> String {
   case sc.use24h {
     True ->
       sc.format
-      |> string.replace("{h}", int.to_string(hour))
-      |> string.replace("{mm}", pad2(minute))
+      |> replace_placeholder("{h}", int.to_string(hour))
+      |> replace_placeholder("{mm}", pad2(minute))
     False -> {
       let h12 = case hour % 12 {
         0 -> 12
@@ -113,9 +117,9 @@ fn format_digital(sc: ShortClockConfig, hour: Int, minute: Int) -> String {
           }
       }
       sc.format
-      |> string.replace("{h}", int.to_string(h12))
-      |> string.replace("{mm}", pad2(minute))
-      |> string.replace("{ampm}", am_pm)
+      |> replace_placeholder("{h}", int.to_string(h12))
+      |> replace_placeholder("{mm}", pad2(minute))
+      |> replace_placeholder("{ampm}", am_pm)
     }
   }
 }
@@ -230,8 +234,7 @@ fn skip_fraction(rest: BitArray) -> Result(BitArray, Nil) {
 
 fn skip_digits(rest: BitArray) -> BitArray {
   case rest {
-    <<digit, after:bits>> if digit >= 0x30 && digit <= 0x39 ->
-      skip_digits(after)
+    <<digit, after:bits>> if digit >= 0x30 && digit <= 0x39 -> skip_digits(after)
     _ -> rest
   }
 }
@@ -255,7 +258,8 @@ fn is_real_date(s: String) -> Bool {
         digits_value([m1, m2]),
         digits_value([d1, d2])
       {
-        Ok(y), Ok(m), Ok(d) -> m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m)
+        Ok(y), Ok(m), Ok(d) ->
+          m >= 1 && m <= 12 && d >= 1 && d <= days_in_month(y, m)
         _, _, _ -> False
       }
     _ -> False

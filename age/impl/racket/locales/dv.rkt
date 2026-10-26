@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} ހަފްތާ")
          "month" (hash "type" "simple" "form" "{n} މަސް")
          "year" (hash "type" "simple" "form" "{n} އަހަރު"))
-   "{0} ބައި"
+   "{n}½"
    "، "
    "އަލަށް އުފަންވި"
    (hash "newborn" (stage-label "އަލަށް އުފަންވި" #f #f)

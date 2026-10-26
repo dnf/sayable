@@ -14,7 +14,7 @@ import sayabledate/types
 pub fn locale() -> types.DateLocale {
   types.DateLocale(
     code: "bm",
-    months: ["Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"],
+    months: ["Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu"],
     weekdays: ["Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"],
     day_format: "{n}",
     day_format_exceptions: [],
@@ -30,7 +30,7 @@ pub fn locale() -> types.DateLocale {
     last_weekday: Ok("{weekday} tɛmɛnen"),
     months_in_date: Error(Nil),
     short: Ok(types.CompactnessOverride(
-      months: Ok(["Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"]),
+      months: Ok(["Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"]),
       months_in_date: Error(Nil),
       weekdays: Ok(["Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"]),
       day_format: Ok("{n}"),

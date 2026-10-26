@@ -25,7 +25,7 @@ var UR = sd.DurationLocale{
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.SimpleUnit("{n} سیکنڈ"),
 		Minute: sd.SimpleUnit("{n} منٹ"),
-		Hour:   sd.SimpleUnit("{n} گھنٹہ"),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} گھنٹہ", sd.Other: "{n} گھنٹے"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} دن", sd.Other: "{n} دن"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} ہفتہ", sd.Other: "{n} ہفتے"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} مہینہ", sd.Other: "{n} مہینے"}),

@@ -15,18 +15,18 @@ st_hours('qu', ['chunka iskayniyuq', 'huk', 'iskay', 'kimsa', 'tawa', 'pichqa', 
 st_midnight('qu', 'chawpi tuta').
 st_noon('qu', 'chawpi p\'unchaw').
 
-st_pattern('qu', 0, '{h}').
-st_pattern('qu', 5, '{h} pichqa').
-st_pattern('qu', 10, '{h} chunka').
-st_pattern('qu', 15, '{h} chunka pichqayuq').
-st_pattern('qu', 20, '{h} iskay chunka').
-st_pattern('qu', 25, '{h} iskay chunka pichqayuq').
-st_pattern('qu', 30, '{h} kimsa chunka').
-st_pattern('qu', 35, '{next_h} mana iskay chunka pichqayuq').
-st_pattern('qu', 40, '{next_h} mana iskay chunka').
-st_pattern('qu', 45, '{next_h} mana chunka pichqayuq').
-st_pattern('qu', 50, '{next_h} mana chunka').
-st_pattern('qu', 55, '{next_h} mana pichqa').
+st_pattern('qu', 0, '{h} ura').
+st_pattern('qu', 5, '{h} ura pichqa').
+st_pattern('qu', 10, '{h} ura chunka').
+st_pattern('qu', 15, '{h} ura chunka pichqayuq').
+st_pattern('qu', 20, '{h} ura iskay chunka').
+st_pattern('qu', 25, '{h} ura iskay chunka pichqayuq').
+st_pattern('qu', 30, '{h} ura kimsa chunka').
+st_pattern('qu', 35, '{h} ura kimsa chunka pichqayuq').
+st_pattern('qu', 40, '{h} ura tawa chunka').
+st_pattern('qu', 45, '{h} ura tawa chunka pichqayuq').
+st_pattern('qu', 50, '{h} ura pichqa chunka').
+st_pattern('qu', 55, '{h} ura pichqa chunka pichqayuq').
 
 short_st_use24h('qu', false).
 short_st_format('qu', '{h}:{mm} {ampm}').

@@ -25,7 +25,7 @@ defmodule SayableDuration.Locales.BI do
         month: "{n} manis",
         year: "{n} yia"
       },
-      half: "{n} mo haf",
+      half: "{0} mo haf",
       delimiter: ", ",
       just_now: "jas nao",
       ago: "{0} bifo",
@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.BI do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} bifo",
         in_future: "long {0}"

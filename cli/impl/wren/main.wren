@@ -1,8 +1,10 @@
 // Sayable CLI — unified command-line interface to all four Sayable components.
 // See cli/SPEC.md for the full specification.
 //
-// Note: wren_cli 0.4.0 has no Process.exit() or stderr support.
-// Exit codes and stderr are handled by the shell wrapper (sayable).
+// Note: wren_cli 0.4.0 has no Process.exit(), stderr or clock.
+// Exit codes, stderr and today's date are handled by the shell wrapper
+// (sayable): it passes the date as `--today YYYY-MM-DD` in one-shot mode and
+// as the first field of every request line in --repl mode.
 // A one-shot run uses special output prefixes:
 //   __EXIT_1__ = null result
 //   __EXIT_2__<message> = usage error with message
@@ -72,6 +74,16 @@ class RunResult {
 
 class Cli {
   static errorExit(msg) { Fiber.abort(UsageError.new(msg)) }
+
+  // Today's date (YYYY-MM-DD), supplied by the wrapper.
+  static today { __today }
+  static today=(value) { __today = value }
+
+  // age and stage default to today when -d is absent, null or empty.
+  static referenceDate(asOf) {
+    if (asOf == null || asOf == "null" || asOf == "") return today
+    return asOf
+  }
 
   static nullify(value) {
     if (value == "null") return null
@@ -162,8 +174,7 @@ class Cli {
     var loc = AgeLocaleRegistry.getLocale(localeCode)
     if (loc == null) errorExit("unknown locale '%(localeCode)'")
 
-    if (asOf == null) errorExit("age requires --as-of / -d option in Wren (no system date)")
-    asOf = nullify(asOf)
+    asOf = referenceDate(asOf)
 
     var fmt = SayableAge.new(loc, compactness)
     var result = fmt.formatAge(dob, asOf)
@@ -177,8 +188,7 @@ class Cli {
     var loc = AgeLocaleRegistry.getLocale(localeCode)
     if (loc == null) errorExit("unknown locale '%(localeCode)'")
 
-    if (asOf == null) errorExit("stage requires --as-of / -d option in Wren (no system date)")
-    asOf = nullify(asOf)
+    asOf = referenceDate(asOf)
 
     var fmt = SayableAge.new(loc, compactness)
     var result
@@ -345,15 +355,14 @@ class Repl {
 
   static run() {
     while (true) {
+      // Every line is "<today>\t<request>"; the end marker comes on its own line.
       var line = Stdin.readLine()
-      var isLast = line.endsWith(endOfRequests)
-      if (isLast) line = withoutLastByte(line)
+      if (line.endsWith(endOfRequests)) return
       if (line.endsWith("\r")) line = withoutLastByte(line)
-      if (!isLast || !line.isEmpty) {
-        System.print(respond(line.split("\t")))
-        Stdout.flush()
-      }
-      if (isLast) return
+      var fields = line.split("\t")
+      Cli.today = fields[0]
+      System.print(respond(fields[1..-1]))
+      Stdout.flush()
     }
   }
 
@@ -398,6 +407,11 @@ var idx = 2
 while (idx < allArgs.count) {
   userArgs.add(allArgs[idx])
   idx = idx + 1
+}
+
+if (userArgs.count >= 2 && userArgs[0] == "--today") {
+  Cli.today = userArgs[1]
+  userArgs = userArgs[2..-1]
 }
 
 if (userArgs.count == 1 && userArgs[0] == "--repl") {

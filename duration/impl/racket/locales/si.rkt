@@ -21,14 +21,14 @@
   (duration-locale
    "si"
    (lambda (n) (if (or (= n 0) (= n 1)) "one" "other"))
-   (hash "second" (hash "type" "simple" "form" "{n} තත්පරය")
-         "minute" (hash "type" "simple" "form" "{n} මිනිත්තුව")
-         "hour" (hash "type" "simple" "form" "{n} පැය")
+   (hash "second" (hash "type" "simple" "form" "තත්පර {n}")
+         "minute" (hash "type" "simple" "form" "මිනිත්තු {n}")
+         "hour" (hash "type" "simple" "form" "පැය {n}")
          "day" (hash "type" "pluralized" "forms" (hash "one" "දින {n}" "other" "දින {n}"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "සති {n}" "other" "සති {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "මාස {n}" "other" "මාස {n}"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "වසර {n}" "other" "වසර {n}")))
-   "{0}යි භාගයයි"
+   "{n}½"
    ", "
    "දැන්"
    "{0}ට පෙර"

@@ -41,31 +41,31 @@
   },
   "date": {
     "months": [
-      "Январь",
-      "Февраль",
-      "Март",
-      "Апрель",
-      "Май",
-      "Июнь",
-      "Июль",
-      "Август",
-      "Сентябрь",
-      "Октябрь",
-      "Ноябрь",
-      "Декабрь"
+      "январь",
+      "февраль",
+      "март",
+      "апрель",
+      "май",
+      "июнь",
+      "июль",
+      "август",
+      "сентябрь",
+      "октябрь",
+      "ноябрь",
+      "декабрь"
     ],
     "weekdays": [
-      "Жекшемби",
-      "Дүйшөмбү",
-      "Шейшемби",
-      "Шаршемби",
-      "Бейшемби",
-      "Жума",
-      "Ишемби"
+      "жекшемби",
+      "дүйшөмбү",
+      "шейшемби",
+      "шаршемби",
+      "бейшемби",
+      "жума",
+      "ишемби"
     ],
-    "dayFormat": "{n}",
-    "datePattern": "{day} {month}",
-    "datePatternWithYear": "{day} {month} {year}",
+    "dayFormat": "{n}-",
+    "datePattern": "{day}{month}",
+    "datePatternWithYear": "{year}-ж., {day}{month}",
     "today": "бүгүн",
     "tomorrow": "эртең",
     "yesterday": "кечээ",
@@ -76,27 +76,27 @@
     "lastWeekday": "өткөн {weekday}",
     "short": {
       "months": [
-        "Янв",
-        "Фев",
-        "Мар",
-        "Апр",
-        "Май",
-        "Июн",
-        "Июл",
-        "Авг",
-        "Сен",
-        "Окт",
-        "Ноя",
-        "Дек"
+        "янв",
+        "фев",
+        "мар",
+        "апр",
+        "май",
+        "июн",
+        "июл",
+        "авг",
+        "сен",
+        "окт",
+        "ноя",
+        "дек"
       ],
       "weekdays": [
-        "Жек",
-        "Дүй",
-        "Шей",
-        "Шар",
-        "Бей",
-        "Жум",
-        "Ише"
+        "жек",
+        "дүй",
+        "шей",
+        "шар",
+        "бей",
+        "жум",
+        "ише"
       ],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
@@ -178,18 +178,18 @@
       "midnight": "түн ортосу",
       "noon": "түш",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "саат {h}",
+        "5": "{h} нөл беш",
+        "10": "{h} он",
+        "15": "{h} он беш",
+        "20": "{h} жыйырма",
+        "25": "{h} жыйырма беш",
+        "30": "{h} жарым",
+        "35": "{h} отуз беш",
+        "40": "{h} кырк",
+        "45": "{h} кырк беш",
+        "50": "{h} элүү",
+        "55": "{h} элүү беш"
       }
     },
     "short": {
@@ -204,5 +204,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Placeholder replaced with words: \"саат {h}\" (:00), \"{h} жарым\" (:30, idiomatic \"эки жарым\"), and the spoken digital reading in words for other buckets (\"эки он беш\", \"эки нөл беш\", \"эки кырк беш\"), which is grammatical for every hour. The traditional system \"экиден он беш мүнөт өттү\" (ablative) / \"үчкө он беш мүнөт калды\" (dative) is not expressible without case lists — schema follow-up (lists in the audit entry). Doubts: whether \"нөл беш\" or bare \"беш\" is the more natural reading of :05; whether a speaker would prefer the ablative/dative system over the digital one."
+    }
+  ]
 }

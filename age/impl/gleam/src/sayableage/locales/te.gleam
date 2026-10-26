@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.PluralUnit([#(types.One, "{n} వారం"), #(types.Other, "{n} వారాలు")]),
     month: types.PluralUnit([#(types.One, "{n} నెల"), #(types.Other, "{n} నెలలు")]),
     year: types.PluralUnit([#(types.One, "{n} సంవత్సరం"), #(types.Other, "{n} సంవత్సరాలు")]),
-    half: "{0}న్నర",
+    half: "{n}½",
     delimiter: ", ",
     just_born: "నవజాత శిశువు",
     newborn: types.NeutralStage("నవజాత శిశువు"),

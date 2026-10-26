@@ -20,11 +20,11 @@ locale : Locale
 locale =
     { code = "mi"
     , plural = \n -> if n == 1 then One else Other
-    , day = Simple "rā {n}"
-    , week = Simple "wiki {n}"
-    , month = Simple "marama {n}"
-    , year = Simple "tau {n}"
-    , half = "{0}½"
+    , day = Simple "{n} rā"
+    , week = Simple "{n} wiki"
+    , month = Simple "{n} marama"
+    , year = Simple "{n} tau"
+    , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Pēpi hou"
     , stages =
@@ -37,10 +37,10 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Simple "rā {n}")
-            , ovrWeek = Just (Simple "w {n}")
-            , ovrMonth = Just (Simple "m {n}")
-            , ovrYear = Just (Simple "t {n}")
+            { ovrDay = Just (Simple "{n} rā")
+            , ovrWeek = Just (Simple "{n} w")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} t")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "ig",
         plural = fun(_) -> other end,
-        day = {simple, "{n} ụbọchị"},
-        week = {simple, "{n} izu"},
-        month = {simple, "{n} ọnwa"},
-        year = {simple, "{n} afọ"},
+        day = {simple, "ụbọchị {n}"},
+        week = {simple, "izu {n}"},
+        month = {simple, "ọnwa {n}"},
+        year = {simple, "afọ {n}"},
         half = "{0} na ọkara",
         delimiter = ", ",
         just_born = "Nwa ọhụrụ",
-        stages = #stages{newborn = {neutral, "Nwa ọhụrụ"}, infant = {neutral, "Nwa ọhụrụ"}, toddler = {neutral, "Nwa nta"}, child = {neutral, "Nwa"}, teenager = {neutral, "Nwokorobịa"}, adult = {neutral, "Okenye"}},
-        short = {just, #compactness_override{day = {just, {simple, "{n} ụbọchị"}}, week = {just, {simple, "{n} izu"}}, month = {just, {simple, "{n} ọnwa"}}, year = {just, {simple, "{n} afọ"}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        stages = #stages{newborn = {neutral, "Nwa ọhụrụ"}, infant = {neutral, "Nwa ọhụrụ"}, toddler = {neutral, "Nwa nta"}, child = {neutral, "Nwa"}, teenager = {gendered, "Nwokorobịa", "Agbọghọbịa"}, adult = {neutral, "Okenye"}},
+        short = {just, #compactness_override{day = {just, {simple, "ụbọchị {n}"}}, week = {just, {simple, "izu {n}"}}, month = {just, {simple, "ọnwa {n}"}}, year = {just, {simple, "afọ {n}"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

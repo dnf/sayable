@@ -16,12 +16,12 @@ package SayableAge::Locales::KL;
 
 sub locale {{
   code => 'kl',
-  plural => sub { 'other' },
+  plural => sub { my ($n) = @_; $n == 1 ? 'one' : 'other' },
   units => {
-    day => 'ullut {n}',
-    week => 'sapaatit {n}',
-    month => 'qaammatit {n}',
-    year => 'ukiut {n}',
+    day => { one => 'ulloq {n}', other => 'ullut {n}' },
+    week => { one => 'sapaatip akunnera {n}', other => 'sapaatip akunneri {n}' },
+    month => { one => 'qaammat {n}', other => 'qaammatit {n}' },
+    year => { one => 'ukioq {n}', other => 'ukiut {n}' },
   },
   half => '{0} affaa',
   delimiter => ', ',
@@ -37,7 +37,7 @@ sub locale {{
   short => {
     units => {
       day => 'ull. {n}',
-      week => 'sap. {n}',
+      week => 'sap. ak. {n}',
       month => 'qaam. {n}',
       year => 'uk. {n}',
     },
@@ -50,6 +50,7 @@ sub locale {{
       year => '{n}y',
     },
     delimiter => '',
+    half => '{n}½',
   },
 }}
 

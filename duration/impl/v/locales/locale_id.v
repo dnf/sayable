@@ -26,7 +26,7 @@ pub const locale_id = DurationLocale{
 	week: simple_unit('{n} minggu')
 	month: simple_unit('{n} bulan')
 	year: simple_unit('{n} tahun')
-	half: '{0} setengah'
+	half: '{n} setengah'
 	delimiter: ', '
 	just_now: 'baru saja'
 	ago: '{0} yang lalu'

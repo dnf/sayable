@@ -21,7 +21,7 @@ final pa = DurationLocale(
   units: {
     'second': simpleUnit('{n} ਸਕਿੰਟ'),
     'minute': simpleUnit('{n} ਮਿੰਟ'),
-    'hour': simpleUnit('{n} ਘੰਟਾ'),
+    'hour': pluralUnit({PluralCategory.one: '{n} ਘੰਟਾ', PluralCategory.other: '{n} ਘੰਟੇ'}),
     'day': pluralUnit({PluralCategory.one: '{n} ਦਿਨ', PluralCategory.other: '{n} ਦਿਨ'}),
     'week': pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
     'month': pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),

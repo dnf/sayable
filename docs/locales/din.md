@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [din.json](../../locales/din.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Western time (South Sudan). 'thä {h} ku minitö <numeral>' additive form using the file's existing hour/minute words (thä, minitö) and Dinka tens thiärou/thiärdiäk/thiärŋuan/thiärdhiëc with 'ku' for compounds. :30 written as 'ku minitö thiärdiäk' rather than a half word because I could not verify the file's 'abɛ̈c'. CHECK: the hour word (thä vs thaa/thää), whether a half-word is normal, spelling of 'ŋuän' vs 'ŋuan' in the tens, and whether numerals follow the noun in this context.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | riak cök            | 17/3    |
 | Day before yesterday | aköl cök            | 13/3    |
 | This Thursday (+5)   | Kɔl ŋuän kënë       | 20/3    |
-| Last Monday (-4)     | Kɔl rou cï wëëŋ     | 11/3    |
-| Next Wednesday (+12) | Kɔl ŋuän bɛ̈n       | 27/3    |
-| Same month (+20)     | 4 Guak              | 4/4     |
+| Last Tuesday (-4)    | Kɔl rou cï wëëŋ     | 11/3    |
+| Next Thursday (+12)  | Kɔl ŋuän bɛ̈n       | 27/3    |
+| Same year (+20)      | 4 Guak              | 4/4     |
 | Different year       | 10 Tiɔp in dit 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal           | Short    | Compact |
-| --------------- | ---------------- | -------- | ------- |
-| Midnight        | wakɔ̈u           | 12:00 AM | 12:00a  |
-| 1:00 AM         | tök:00           | 1:00 AM  | 1:00a   |
-| 5 past 9        | dhoŋuan:05       | 9:05 AM  | 9:05a   |
-| Quarter past 10 | thiäär:15        | 10:15 AM | 10:15a  |
-| Half past 11    | thiäär ku tök:30 | 11:30 AM | 11:30a  |
-| Noon            | akɔ̈l ciëŋ       | 12:00 PM | 12:00p  |
-| Quarter to 3    | rou:45           | 2:45 PM  | 2:45p   |
-| 5 to 6          | dhiëc:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | bɛ̈t:00          | 8:00 PM  | 8:00p   |
-| 10:30 PM        | thiäär:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | wakɔ̈u           | 11:58 PM | 11:58p  |
+| Time            | Normal                                  | Short    | Compact |
+| --------------- | --------------------------------------- | -------- | ------- |
+| Midnight        | wakɔ̈u                                  | 12:00 AM | 12:00a  |
+| 1:00 AM         | thä tök                                 | 1:00 AM  | 1:00a   |
+| 5 past 9        | thä dhoŋuan ku minitö dhiëc             | 9:05 AM  | 9:05a   |
+| Quarter past 10 | thä thiäär ku minitö thiäär ku dhiëc    | 10:15 AM | 10:15a  |
+| Half past 11    | thä thiäär ku tök ku minitö thiärdiäk   | 11:30 AM | 11:30a  |
+| Noon            | akɔ̈l ciëŋ                              | 12:00 PM | 12:00p  |
+| Quarter to 3    | thä rou ku minitö thiärŋuan ku dhiëc    | 2:45 PM  | 2:45p   |
+| 5 to 6          | thä dhiëc ku minitö thiärdhiëc ku dhiëc | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | thä bɛ̈t                                | 8:00 PM  | 8:00p   |
+| 10:30 PM        | thä thiäär ku minitö thiärdiäk          | 10:30 PM | 10:30p  |
+| 11:58 PM        | wakɔ̈u                                  | 11:58 PM | 11:58p  |

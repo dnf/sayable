@@ -20,7 +20,7 @@ locale = DurationLocale
     , localeUnits = Units
         { unitSecond = Pluralized
           [ (Zero, "{n} ثانية")
-          , (One, "ثانية واحدة")
+          , (One, "ثانية")
           , (Two, "ثانيتان")
           , (Few, "{n} ثوانٍ")
           , (Many, "{n} ثانية")
@@ -28,7 +28,7 @@ locale = DurationLocale
           ]
         , unitMinute = Pluralized
           [ (Zero, "{n} دقيقة")
-          , (One, "دقيقة واحدة")
+          , (One, "دقيقة")
           , (Two, "دقيقتان")
           , (Few, "{n} دقائق")
           , (Many, "{n} دقيقة")
@@ -36,7 +36,7 @@ locale = DurationLocale
           ]
         , unitHour = Pluralized
           [ (Zero, "{n} ساعة")
-          , (One, "ساعة واحدة")
+          , (One, "ساعة")
           , (Two, "ساعتان")
           , (Few, "{n} ساعات")
           , (Many, "{n} ساعة")
@@ -129,14 +129,7 @@ locale = DurationLocale
             , ovrHour = Just (Simple "{n} س")
             , ovrDay = Just (Simple "{n} ي")
             , ovrWeek = Just (Simple "{n} أ")
-            , ovrMonth = Just (Pluralized
-              [ (Zero, "{n} شهر")
-              , (One, "شهر")
-              , (Two, "شهران")
-              , (Few, "{n} أشهر")
-              , (Many, "{n} شهرًا")
-              , (Other, "{n} شهر")
-              ])
+            , ovrMonth = Just (Simple "{n} شهر")
             , ovrYear = Just (Simple "{n} سنة")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""

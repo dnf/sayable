@@ -26,7 +26,7 @@ _sayableage_locale_fil() {
     _stage_toddler='Batang paslit'
     _stage_child='Bata'
     _stage_teenager='Tinedyer'
-    _stage_adult='Matanda'
+    _stage_adult='Adulto'
     _short_unit_day='{n} araw'
     _short_unit_week_one='{n} linggo'
     _short_unit_week_other='{n} na linggo'

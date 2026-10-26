@@ -17,12 +17,12 @@ class LTLocale {
   static weekdays {
     return ["sekmadienis", "pirmadienis", "antradienis", "trečiadienis", "ketvirtadienis", "penktadienis", "šeštadienis"]
   }
-  static dayFormat { "{n}." }
+  static dayFormat { "{n} d." }
   static dayFormatExceptions {
     return {}
   }
-  static datePattern { "{day} {month}" }
-  static datePatternWithYear { "{day} {month} {year}" }
+  static datePattern { "{month} {day}" }
+  static datePatternWithYear { "{year} m. {month} {day}" }
   static today { "šiandien" }
   static tomorrow { "rytoj" }
   static yesterday { "vakar" }
@@ -38,9 +38,9 @@ class LTLocale {
     return {
       "months": ["saus", "vas", "kov", "bal", "geg", "birž", "liep", "rugp", "rugs", "spal", "lapkr", "gruod"],
       "weekdays": ["sk", "pr", "an", "tr", "kt", "pn", "št"],
-      "dayFormat": "{n}.",
-      "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}",
+      "dayFormat": "{n} d.",
+      "datePattern": "{month} {day}",
+      "datePatternWithYear": "{year} m. {month} {day}",
     }
   }
   static compact {

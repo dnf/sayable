@@ -23,7 +23,7 @@ pub fn locale() -> DateLocale {
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),
         date_pattern_with_year: "{day} {month} {year}".to_string(),
-        today: "ko'ágã".to_string(),
+        today: "ko árape".to_string(),
         tomorrow: "ko'ẽrõ".to_string(),
         yesterday: "kuehe".to_string(),
         day_after_tomorrow: Some("ko'ẽrõ rire".to_string()),

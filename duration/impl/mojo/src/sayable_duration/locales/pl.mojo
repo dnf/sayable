@@ -33,13 +33,13 @@ fn _plural(n: Int) -> String:
 fn build_pl() -> DurationLocale:
     """Build the Polish locale."""
 
-    var second = plural_unit(one="{n} sekunda", few="{n} sekundy", many="{n} sekund", other="{n} sekund")
-    var minute = plural_unit(one="{n} minuta", few="{n} minuty", many="{n} minut", other="{n} minut")
-    var hour = plural_unit(one="{n} godzina", few="{n} godziny", many="{n} godzin", other="{n} godzin")
-    var day = plural_unit(one="{n} dzień", few="{n} dni", many="{n} dni", other="{n} dni")
-    var week = plural_unit(one="{n} tydzień", few="{n} tygodnie", many="{n} tygodni", other="{n} tygodni")
-    var month = plural_unit(one="{n} miesiąc", few="{n} miesiące", many="{n} miesięcy", other="{n} miesięcy")
-    var year = plural_unit(one="{n} rok", few="{n} lata", many="{n} lat", other="{n} lat")
+    var second = plural_unit(one="{n} sekunda", few="{n} sekundy", many="{n} sekund", other="{n} sekundy")
+    var minute = plural_unit(one="{n} minuta", few="{n} minuty", many="{n} minut", other="{n} minuty")
+    var hour = plural_unit(one="{n} godzina", few="{n} godziny", many="{n} godzin", other="{n} godziny")
+    var day = plural_unit(one="{n} dzień", few="{n} dni", many="{n} dni", other="{n} dnia")
+    var week = plural_unit(one="{n} tydzień", few="{n} tygodnie", many="{n} tygodni", other="{n} tygodnia")
+    var month = plural_unit(one="{n} miesiąc", few="{n} miesiące", many="{n} miesięcy", other="{n} miesiąca")
+    var year = plural_unit(one="{n} rok", few="{n} lata", many="{n} lat", other="{n} roku")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} sek.")

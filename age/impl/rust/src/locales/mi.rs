@@ -23,12 +23,12 @@ pub fn locale() -> AgeLocale {
             }
         },
         units: Units {
-            day: UnitForms::simple("rā {n}"),
-            week: UnitForms::simple("wiki {n}"),
-            month: UnitForms::simple("marama {n}"),
-            year: UnitForms::simple("tau {n}"),
+            day: UnitForms::simple("{n} rā"),
+            week: UnitForms::simple("{n} wiki"),
+            month: UnitForms::simple("{n} marama"),
+            year: UnitForms::simple("{n} tau"),
         },
-        half: "{0}½".to_string(),
+        half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Pēpi hou".to_string(),
         stages: Stages {
@@ -40,10 +40,10 @@ pub fn locale() -> AgeLocale {
             adult: StageLabel::Neutral("Pakeke".to_string()),
         },
         short: Some(CompactnessOverride {
-            day: Some(UnitForms::simple("rā {n}")),
-            week: Some(UnitForms::simple("w {n}")),
-            month: Some(UnitForms::simple("m {n}")),
-            year: Some(UnitForms::simple("t {n}")),
+            day: Some(UnitForms::simple("{n} rā")),
+            week: Some(UnitForms::simple("{n} w")),
+            month: Some(UnitForms::simple("{n} m")),
+            year: Some(UnitForms::simple("{n} t")),
             half: None,
             delimiter: None,
             just_born: None,

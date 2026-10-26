@@ -22,11 +22,11 @@ M.units = {
     month = { one = "mwerĩ {n}", other = "mĩerĩ {n}" },
     year = { one = "mwaka {n}", other = "mĩaka {n}" },
 }
-M.half = "{0} na nusu"
+M.half = "{0} na nuthu"
 M.delimiter = ", "
-M.just_now = "ũmũthĩ"
+M.just_now = "rĩu"
 M.ago = "{0} ĩhĩtũkĩte"
-M.in_future = "{0} ĩyothe"
+M.in_future = "thutha wa {0}"
 M.short = {
     units = {
         second = "sek. {n}",
@@ -38,7 +38,7 @@ M.short = {
         year = { one = "mwaka {n}", other = "mĩaka {n}" },
     },
     ago = "{0} ĩhĩtũkĩte",
-    in_future = "{0} ĩyothe",
+    in_future = "thutha wa {0}",
 }
 M.compact = {
     units = {
@@ -52,7 +52,7 @@ M.compact = {
     },
     delimiter = "",
     ago = "{0} ĩhĩtũkĩte",
-    in_future = "{0} ĩyothe",
+    in_future = "thutha wa {0}",
 }
 
 return M

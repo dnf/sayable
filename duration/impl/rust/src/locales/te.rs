@@ -23,9 +23,18 @@ pub fn locale() -> DurationLocale {
             }
         },
         units: Units {
-            second: UnitForms::simple("{n} సెకను"),
-            minute: UnitForms::simple("{n} నిమిషం"),
-            hour: UnitForms::simple("{n} గంట"),
+            second: UnitForms::plural(&[
+                (PluralCategory::One, "{n} సెకను"),
+                (PluralCategory::Other, "{n} సెకన్లు"),
+            ]),
+            minute: UnitForms::plural(&[
+                (PluralCategory::One, "{n} నిమిషం"),
+                (PluralCategory::Other, "{n} నిమిషాలు"),
+            ]),
+            hour: UnitForms::plural(&[
+                (PluralCategory::One, "{n} గంట"),
+                (PluralCategory::Other, "{n} గంటలు"),
+            ]),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "{n} రోజు"),
                 (PluralCategory::Other, "{n} రోజులు"),
@@ -43,7 +52,7 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::Other, "{n} సంవత్సరాలు"),
             ]),
         },
-        half: "{0}న్నర".to_string(),
+        half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_now: "ఇప్పుడే".to_string(),
         ago: "{0} క్రితం".to_string(),

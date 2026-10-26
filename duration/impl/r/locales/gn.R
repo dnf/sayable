@@ -13,9 +13,9 @@ locale_gn <- list(
   code = "gn",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = "{n} aravo'i",
-    minute = "{n} aravo",
-    hour = "{n} aravo guasu",
+    second = "{n} aravo'ive",
+    minute = "{n} aravo'i",
+    hour = "{n} aravo",
     day = "{n} ára",
     week = "{n} arapokõindy",
     month = "{n} jasy",
@@ -28,9 +28,9 @@ locale_gn <- list(
   in_future = "{0} rire",
   short = list(
     units = list(
-      second = "{n} ara'i",
-      minute = "{n} ara",
-      hour = "{n} ara g",
+      second = "{n} aravo'ive",
+      minute = "{n} aravo'i",
+      hour = "{n} aravo",
       day = "{n} ára",
       week = "{n} ara",
       month = "{n} jas",

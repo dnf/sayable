@@ -30,7 +30,7 @@
    "नवजात शिशु"
    (hash "newborn" (stage-label "नवजात शिशु" #f #f)
          "infant" (stage-label "शिशु" #f #f)
-         "toddler" (stage-label "बाल्यकाल" #f #f)
+         "toddler" (stage-label "सानो बच्चा" #f #f)
          "child" (stage-label "बालक" #f #f)
          "teenager" (stage-label "किशोर" #f #f)
          "adult" (stage-label "वयस्क" #f #f))

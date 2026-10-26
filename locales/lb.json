@@ -238,5 +238,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "No dataFixes for this locale; the 'eent Auer'/'zwee Auer' gender issue is listed as a schema limit and was left alone as instructed."
+    }
+  ]
 }

@@ -21,7 +21,7 @@ kl
 	locale dayFormat: '{n}.'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{month} {day}'.
-	locale datePatternWithYear: '{day} {month} {year}'.
+	locale datePatternWithYear: '{month} {day} {year}'.
 	locale today: 'ullumi'.
 	locale tomorrow: 'aqagu'.
 	locale yesterday: 'ippassaq'.
@@ -36,7 +36,7 @@ kl
 		#weekdays. (OrderedCollection withAll: { 'sap'. 'ata'. 'mar'. 'pin'. 'sis'. 'tal'. 'arf' }).
 		#dayFormat. '{n}.'.
 		#datePattern. '{month} {day}'.
-		#datePatternWithYear. '{day} {month} {year}'.
+		#datePatternWithYear. '{month} {day} {year}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#datePattern. '{m}-{d}'.

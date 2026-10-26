@@ -18,10 +18,10 @@ ha
 	locale code: 'ha'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. (Dictionary newFromPairs: { #one. '{n} kwana'. #other. '{n} kwanaki' }).
-		'week'. (Dictionary newFromPairs: { #one. '{n} mako'. #other. '{n} makonni' }).
-		'month'. (Dictionary newFromPairs: { #one. '{n} wata'. #other. '{n} watanni' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} shekara'. #other. '{n} shekaru' }).
+		'day'. (Dictionary newFromPairs: { #one. 'kwana {n}'. #other. 'kwanaki {n}' }).
+		'week'. (Dictionary newFromPairs: { #one. 'mako {n}'. #other. 'makonni {n}' }).
+		'month'. (Dictionary newFromPairs: { #one. 'wata {n}'. #other. 'watanni {n}' }).
+		'year'. (Dictionary newFromPairs: { #one. 'shekara {n}'. #other. 'shekaru {n}' }).
 	}).
 	locale half: '{n}½'.
 	locale delimiter: ', '.
@@ -29,17 +29,17 @@ ha
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. 'Jariri'.
 		#infant. 'Jariri'.
-		#toddler. 'Ƙaramin yaro'.
-		#child. 'Yaro'.
-		#teenager. 'Saurayi'.
+		#toddler. (Dictionary newFromPairs: { #m. 'Ƙaramin yaro'. #f. 'Ƙaramar yarinya' }).
+		#child. (Dictionary newFromPairs: { #m. 'Yaro'. #f. 'Yarinya' }).
+		#teenager. (Dictionary newFromPairs: { #m. 'Saurayi'. #f. 'Budurwa' }).
 		#adult. 'Babba'.
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. '{n} kw.'.
-			'week'. '{n} mk.'.
-			'month'. '{n} wt.'.
-			'year'. '{n} shk.'.
+			'day'. 'kw. {n}'.
+			'week'. 'mk. {n}'.
+			'month'. 'wt. {n}'.
+			'year'. 'shk. {n}'.
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {

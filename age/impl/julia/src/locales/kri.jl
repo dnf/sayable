@@ -20,7 +20,7 @@ const KRI = AgeLocale(
         "month" => "{n} mont",
         "year" => "{n} ia",
     ),
-    half = "{n} na af",
+    half = "{0} ɛn af",
     delimiter = ", ",
     just_born = "Nyubon bebi",
     stages = Dict(
@@ -46,6 +46,7 @@ const KRI = AgeLocale(
             "month" => "{n}m",
             "year" => "{n}y",
         ),
+        half = "{n}½",
         delimiter = "",
     ),
 )

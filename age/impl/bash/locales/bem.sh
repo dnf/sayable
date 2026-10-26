@@ -32,7 +32,7 @@ _sayableage_locale_bem() {
     _stage_toddler='Umwana'
     _stage_child='Umwana'
     _stage_teenager='Umunyamata'
-    _stage_adult='Umulumendo'
+    _stage_adult='Umukalamba'
     _short_unit_day_one='ubushiku {n}'
     _short_unit_day_other='inshiku {n}'
     _short_unit_week_one='umulungu {n}'

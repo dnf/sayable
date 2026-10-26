@@ -26,7 +26,7 @@ _sayableage_locale_is() {
     _unit_month_other='{n} mánuðir'
     _unit_year_one='{n} ár'
     _unit_year_other='{n} ár'
-    _half='{0} og hálft'
+    _half='{n} og hálft'
     _delimiter=', '
     _just_born='Nýfætt'
     _stage_newborn='Nýfæðingur'

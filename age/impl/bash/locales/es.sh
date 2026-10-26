@@ -24,7 +24,7 @@ _sayableage_locale_es() {
     _unit_month_other='{n} meses'
     _unit_year_one='{n} año'
     _unit_year_other='{n} años'
-    _half='{n} y medio'
+    _half='{0} y medio'
     _delimiter=', '
     _just_born='Recién nacido'
     _stage_newborn_m='Recién nacido'

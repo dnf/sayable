@@ -11,22 +11,22 @@
 
 % Temne locale.
 
-st_hours('tem', ['pɛn pu', 'kɩrɩŋ', 'rɔŋ', 'rasar', 'rɔŋ-anat', 'rɔman', 'rɔmata', 'rɔmbot', 'rɔmɔntat', 'rɔmɔntaŋka', 'pɛn', 'pɛn nɛ kɩrɩŋ']).
+st_hours('tem', ['awa pɛn nɛ rɔŋ', 'awa kɩrɩŋ', 'awa rɔŋ', 'awa rasar', 'awa rɔŋ-anat', 'awa rɔman', 'awa rɔmata', 'awa rɔmbot', 'awa rɔmɔntat', 'awa rɔmɔntaŋka', 'awa pɛn', 'awa pɛn nɛ kɩrɩŋ']).
 st_midnight('tem', 'rofɛt anpa').
 st_noon('tem', 'lən').
 
-st_pattern('tem', 0, '{h}:00').
-st_pattern('tem', 5, '{h}:05').
-st_pattern('tem', 10, '{h}:10').
-st_pattern('tem', 15, '{h}:15').
-st_pattern('tem', 20, '{h}:20').
-st_pattern('tem', 25, '{h}:25').
-st_pattern('tem', 30, '{h}:30').
-st_pattern('tem', 35, '{h}:35').
-st_pattern('tem', 40, '{h}:40').
-st_pattern('tem', 45, '{h}:45').
-st_pattern('tem', 50, '{h}:50').
-st_pattern('tem', 55, '{h}:55').
+st_pattern('tem', 0, '{h}').
+st_pattern('tem', 5, '{h} nɛ minit rɔman').
+st_pattern('tem', 10, '{h} nɛ minit pɛn').
+st_pattern('tem', 15, '{h} nɛ minit pɛn nɛ rɔman').
+st_pattern('tem', 20, '{h} nɛ minit kɩgba').
+st_pattern('tem', 25, '{h} nɛ minit kɩgba nɛ rɔman').
+st_pattern('tem', 30, '{h} a gbankɛ').
+st_pattern('tem', 35, '{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman').
+st_pattern('tem', 40, '{h} nɛ minit tɔgba rɔŋ').
+st_pattern('tem', 45, '{h} nɛ minit tɔgba rɔŋ nɛ rɔman').
+st_pattern('tem', 50, '{h} nɛ minit tɔgba rɔŋ nɛ pɛn').
+st_pattern('tem', 55, '{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman').
 
 short_st_use24h('tem', false).
 short_st_format('tem', '{h}:{mm} {ampm}').

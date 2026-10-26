@@ -11,11 +11,11 @@
 
 proc locale_time_it {} {
     set code {it}
-    set hours [list {dodici} {una} {due} {tre} {quattro} {cinque} {sei} {sette} {otto} {nove} {dieci} {undici}]
+    set hours [list {le dodici} {l'una} {le due} {le tre} {le quattro} {le cinque} {le sei} {le sette} {le otto} {le nove} {le dieci} {le undici}]
     set midnight {mezzanotte}
     set noon {mezzogiorno}
     set patterns [dict create \
-        0 "le {h}" \
+        0 "{h}" \
         5 "{h} e cinque" \
         10 "{h} e dieci" \
         15 "{h} e un quarto" \

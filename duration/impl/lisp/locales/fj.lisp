@@ -24,7 +24,7 @@
                (cons :week "{n} na macawa")
                (cons :month "{n} na vula")
                (cons :year "{n} na yabaki"))
-   :half "{n} kei na levu ni wasei"
+   :half "{0} kei na veimama"
    :delimiter ", "
    :just-now "edaidai ga"
    :ago "{0} sa oti"
@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}mo")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} sa oti"
    :compact-in-future "ena {0}"

@@ -17,10 +17,10 @@ package SayableTime::Locales::BEM;
 sub locale {{
   code => 'bem',
   clock => {
-    hours => ['ikumi na ibili', 'cimo', 'fibili', 'fitatu', 'fine', 'fisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na cimo'],
+    hours => ['ikumi na shibili', 'imo', 'shibili', 'shitatu', 'shine', 'shisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na imo'],
     midnight => 'pakati ka bushiku',
     noon => 'akasuba',
-    patterns => { 0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55' },
+    patterns => { 0 => 'insa {h}', 5 => 'insa {h} na maminiti yasano', 10 => 'insa {h} na maminiti ikumi', 15 => 'insa {h} na maminiti ikumi na yasano', 20 => 'insa {h} na maminiti amakumi yabili', 25 => 'insa {h} na maminiti amakumi yabili na yasano', 30 => 'insa {h} na hafu', 35 => 'insa {h} na maminiti amakumi yatatu na yasano', 40 => 'insa {h} na maminiti amakumi yane', 45 => 'insa {h} na maminiti amakumi yane na yasano', 50 => 'insa {h} na maminiti amakumi yasano', 55 => 'insa {h} na maminiti amakumi yasano na yasano' },
   },
   short => {
     clock => {

@@ -21,7 +21,7 @@ locale() ->
         day_format = "{n}.",
         day_format_exceptions = [],
         date_pattern = "{month} {day}",
-        date_pattern_with_year = "{day} {month} {year}",
+        date_pattern_with_year = "{month} {day} {year}",
         today = "ullumi",
         tomorrow = "aqagu",
         yesterday = "ippassaq",
@@ -31,6 +31,6 @@ locale() ->
         next_weekday = {just, "{weekday} tulleq"},
         last_weekday = {just, "{weekday} kingulleq"},
         months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec"]}, months_in_date = nothing, weekdays = {just, ["sap", "ata", "mar", "pin", "sis", "tal", "arf"]}, day_format = {just, "{n}."}, day_format_exceptions = nothing, date_pattern = {just, "{month} {day}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        short = {just, #date_compactness_override{months = {just, ["jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec"]}, months_in_date = nothing, weekdays = {just, ["sap", "ata", "mar", "pin", "sis", "tal", "arf"]}, day_format = {just, "{n}."}, day_format_exceptions = nothing, date_pattern = {just, "{month} {day}"}, date_pattern_with_year = {just, "{month} {day} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{m}-{d}"}, date_pattern_with_year = {just, "{year}-{m}-{d}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

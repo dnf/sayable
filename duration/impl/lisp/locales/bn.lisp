@@ -19,7 +19,7 @@
    :plural (lambda (n) (if (<= n 1) :one :other))
    :units (list (cons :second "{n} সেকেন্ড")
                (cons :minute "{n} মিনিট")
-               (cons :hour "{n} ঘন্টা")
+               (cons :hour "{n} ঘণ্টা")
                (cons :day '((:one . "{n} দিন") (:other . "{n} দিন")))
                (cons :week '((:one . "{n} সপ্তাহ") (:other . "{n} সপ্তাহ")))
                (cons :month '((:one . "{n} মাস") (:other . "{n} মাস")))

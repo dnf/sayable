@@ -28,7 +28,7 @@ module SayableDuration
       delimiter: ', ',
       just_now: 'sisan',
       ago: '{0} bɔlen',
-      in_future: 'ka {0}',
+      in_future: '{0} kɔnɔ',
       short: CompactnessOverride.new(
         units: {
           'second' => 'sek. {n}',
@@ -40,7 +40,7 @@ module SayableDuration
           'year' => 'san {n}',
         },
         ago: '{0} bɔlen',
-        in_future: 'ka {0}',
+        in_future: '{0} kɔnɔ',
       ),
       compact: CompactnessOverride.new(
         units: {
@@ -55,7 +55,7 @@ module SayableDuration
         delimiter: '',
         half: '{n}½',
         ago: '{0} bɔlen',
-        in_future: 'ka {0}',
+        in_future: '{0} kɔnɔ',
       ),
     )
   end

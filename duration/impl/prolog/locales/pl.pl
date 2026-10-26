@@ -18,31 +18,31 @@ sd_plural('pl', _, many).
 sd_unit('pl', second, one, '{n} sekunda').
 sd_unit('pl', second, few, '{n} sekundy').
 sd_unit('pl', second, many, '{n} sekund').
-sd_unit('pl', second, other, '{n} sekund').
+sd_unit('pl', second, other, '{n} sekundy').
 sd_unit('pl', minute, one, '{n} minuta').
 sd_unit('pl', minute, few, '{n} minuty').
 sd_unit('pl', minute, many, '{n} minut').
-sd_unit('pl', minute, other, '{n} minut').
+sd_unit('pl', minute, other, '{n} minuty').
 sd_unit('pl', hour, one, '{n} godzina').
 sd_unit('pl', hour, few, '{n} godziny').
 sd_unit('pl', hour, many, '{n} godzin').
-sd_unit('pl', hour, other, '{n} godzin').
+sd_unit('pl', hour, other, '{n} godziny').
 sd_unit('pl', day, one, '{n} dzień').
 sd_unit('pl', day, few, '{n} dni').
 sd_unit('pl', day, many, '{n} dni').
-sd_unit('pl', day, other, '{n} dni').
+sd_unit('pl', day, other, '{n} dnia').
 sd_unit('pl', week, one, '{n} tydzień').
 sd_unit('pl', week, few, '{n} tygodnie').
 sd_unit('pl', week, many, '{n} tygodni').
-sd_unit('pl', week, other, '{n} tygodni').
+sd_unit('pl', week, other, '{n} tygodnia').
 sd_unit('pl', month, one, '{n} miesiąc').
 sd_unit('pl', month, few, '{n} miesiące').
 sd_unit('pl', month, many, '{n} miesięcy').
-sd_unit('pl', month, other, '{n} miesięcy').
+sd_unit('pl', month, other, '{n} miesiąca').
 sd_unit('pl', year, one, '{n} rok').
 sd_unit('pl', year, few, '{n} lata').
 sd_unit('pl', year, many, '{n} lat').
-sd_unit('pl', year, other, '{n} lat').
+sd_unit('pl', year, other, '{n} roku').
 
 sd_half('pl', '{n} i pół').
 sd_delimiter('pl', ', ').

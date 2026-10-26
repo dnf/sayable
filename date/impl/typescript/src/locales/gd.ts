@@ -15,7 +15,7 @@ export const gd: DateLocale = {
   code: 'gd',
   months: ['Am Faoilleach', 'An Gearran', 'Am Màrt', 'An Giblean', 'An Cèitean', 'An t-Ògmhios', 'An t-Iuchar', 'An Lùnastal', 'An t-Sultain', 'An Dàmhair', 'An t-Samhain', 'An Dùbhlachd'],
   weekdays: ['DiDòmhnaich', 'DiLuain', 'DiMàirt', 'DiCiadain', 'DiarDaoin', 'DihAoine', 'DiSathairne'],
-  dayFormat: '{n}',
+  dayFormat: '{n}mh',
   dayFormatExceptions: {},
   datePattern: '{day} {month}',
   datePatternWithYear: '{day} {month} {year}',
@@ -27,6 +27,7 @@ export const gd: DateLocale = {
   thisWeekday: '{weekday} seo',
   nextWeekday: '{weekday} sa tighinn',
   lastWeekday: '{weekday} seo chaidh',
+  monthsInDate: ['dhen Fhaoilleach', 'dhen Ghearran', 'dhen Mhàrt', 'dhen Ghiblean', 'dhen Chèitean', 'dhen Ògmhios', 'dhen Iuchar', 'dhen Lùnastal', 'dhen t-Sultain', 'dhen Dàmhair', 'dhen t-Samhain', 'dhen Dùbhlachd'],
   short: {
     months: ['Faoi', 'Gearr', 'Màrt', 'Gibl', 'Cèit', 'Ògmh', 'Iuch', 'Lùna', 'Sult', 'Dàmh', 'Samh', 'Dùbh'],
     weekdays: ['DiD', 'DiL', 'DiM', 'DiC', 'Dia', 'Dih', 'DiS'],

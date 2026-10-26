@@ -18,9 +18,9 @@ ln
 	locale code: 'ln'.
 	locale plural: [ :n | (n = 0 or: [ n = 1 ]) ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} segɔnde'.
-		'minute'. '{n} moniti'.
-		'hour'. '{n} ngonga'.
+		'second'. 'segɔnde {n}'.
+		'minute'. 'miniti {n}'.
+		'hour'. 'ngonga {n}'.
 		'day'. (Dictionary newFromPairs: { #one. 'mokolo {n}'. #other. 'mikolo {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'poso {n}'. #other. 'baposo {n}' }).
 		'month'. (Dictionary newFromPairs: { #one. 'sanza {n}'. #other. 'basanza {n}' }).

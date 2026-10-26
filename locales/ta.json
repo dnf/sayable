@@ -21,7 +21,7 @@
         "other": "{n} வயது"
       }
     },
-    "half": "{0}ரை",
+    "half": "{n}½",
     "delimiter": ", ",
     "justBorn": "பிறந்த குழந்தை",
     "stages": {
@@ -148,11 +148,11 @@
         "other": "{n} மாதங்கள்"
       },
       "year": {
-        "one": "{n} வயது",
-        "other": "{n} வயது"
+        "one": "{n} ஆண்டு",
+        "other": "{n} ஆண்டுகள்"
       }
     },
-    "half": "{0}ரை",
+    "half": "{n}½",
     "delimiter": ", ",
     "justNow": "இப்போதுதான்",
     "ago": "{0} முன்",
@@ -216,34 +216,34 @@
   "time": {
     "clock": {
       "hours": [
-        "பன்னிரண்டு",
-        "ஒன்று",
-        "இரண்டு",
-        "மூன்று",
-        "நான்கு",
-        "ஐந்து",
-        "ஆறு",
-        "ஏழு",
-        "எட்டு",
-        "ஒன்பது",
-        "பத்து",
-        "பதினொன்று"
+        "பன்னிரண்ட",
+        "ஒன்ற",
+        "இரண்ட",
+        "மூன்ற",
+        "நான்க",
+        "ஐந்த",
+        "ஆற",
+        "ஏழ",
+        "எட்ட",
+        "ஒன்பத",
+        "பத்த",
+        "பதினொன்ற"
       ],
       "midnight": "நள்ளிரவு",
       "noon": "நண்பகல்",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}ு மணி",
+        "5": "{h}ு மணி ஐந்து நிமிடம்",
+        "10": "{h}ு மணி பத்து நிமிடம்",
+        "15": "{h}ே கால்",
+        "20": "{h}ு மணி இருபது நிமிடம்",
+        "25": "{h}ு மணி இருபத்தைந்து நிமிடம்",
+        "30": "{h}ரை",
+        "35": "{h}ு மணி முப்பத்தைந்து நிமிடம்",
+        "40": "{h}ு மணி நாற்பது நிமிடம்",
+        "45": "{h}ே முக்கால்",
+        "50": "{h}ு மணி ஐம்பது நிமிடம்",
+        "55": "{h}ு மணி ஐம்பத்தைந்து நிமிடம்"
       }
     },
     "short": {
@@ -266,5 +266,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Tamil tells time additively with fused fractions: மூன்றே கால் (3:15), மூன்றரை (3:30), மூன்றே முக்கால் (3:45). These endings replace the final vowel of the numeral, so the hours list now holds the numeral stems with inherent -a (மூன்ற, ஐந்த, ...) and the patterns add the ending: '{h}ு மணி' -> மூன்று மணி, '{h}ரை' -> மூன்றரை, '{h}ே கால்' -> மூன்றே கால். Verified orthographically for all 12 hours (ஒன்றரை, இரண்டே கால், நான்கரை, பன்னிரண்டே முக்கால், ...). Other minutes use '{h}ு மணி <minutes in words> நிமிடம்' (மூன்று மணி ஐந்து நிமிடம்); 35-55 are additive, as Tamil has no common 'to' idiom. Compromise: 1:00 and 11:00 come out as 'ஒன்று மணி' / 'பதினொன்று மணி' instead of the preferred adjectival 'ஒரு மணி' / 'பதினொரு மணி' (both forms are attested in print, the ஒரு form is more usual); using the adjectival form would break the fractions for those hours. Fractions are given bare (மூன்றரை) without a trailing மணி, which is how the time is normally answered."
+    }
+  ]
 }

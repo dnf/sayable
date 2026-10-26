@@ -32,10 +32,10 @@ cy
 		'second'. (Dictionary newFromPairs: { #zero. '{n} eiliad'. #one. '{n} eiliad'. #two. '{n} eiliad'. #few. '{n} eiliad'. #many. '{n} eiliad'. #other. '{n} eiliad' }).
 		'minute'. (Dictionary newFromPairs: { #zero. '{n} munud'. #one. '{n} munud'. #two. '{n} funud'. #few. '{n} munud'. #many. '{n} munud'. #other. '{n} munud' }).
 		'hour'. (Dictionary newFromPairs: { #zero. '{n} awr'. #one. '{n} awr'. #two. '{n} awr'. #few. '{n} awr'. #many. '{n} awr'. #other. '{n} awr' }).
-		'day'. (Dictionary newFromPairs: { #zero. '{n} diwrnod'. #one. '{n} diwrnod'. #two. '{n} ddiwrnod'. #few. '{n} diwrnod'. #many. '{n} niwrnod'. #other. '{n} diwrnod' }).
+		'day'. (Dictionary newFromPairs: { #zero. '{n} diwrnod'. #one. '{n} diwrnod'. #two. '{n} ddiwrnod'. #few. '{n} diwrnod'. #many. '{n} diwrnod'. #other. '{n} diwrnod' }).
 		'week'. (Dictionary newFromPairs: { #zero. '{n} wythnos'. #one. '{n} wythnos'. #two. '{n} wythnos'. #few. '{n} wythnos'. #many. '{n} wythnos'. #other. '{n} wythnos' }).
 		'month'. (Dictionary newFromPairs: { #zero. '{n} mis'. #one. '{n} mis'. #two. '{n} fis'. #few. '{n} mis'. #many. '{n} mis'. #other. '{n} mis' }).
-		'year'. (Dictionary newFromPairs: { #zero. '{n} blwyddyn'. #one. '{n} blwyddyn'. #two. '{n} flynedd'. #few. '{n} blynedd'. #many. '{n} blynedd'. #other. '{n} blynedd' }).
+		'year'. (Dictionary newFromPairs: { #zero. '{n} blwyddyn'. #one. '{n} flwyddyn'. #two. '{n} flynedd'. #few. '{n} blynedd'. #many. '{n} blynedd'. #other. '{n} blynedd' }).
 	}).
 	locale half: '{0} a hanner'.
 	locale delimiter: ', '.

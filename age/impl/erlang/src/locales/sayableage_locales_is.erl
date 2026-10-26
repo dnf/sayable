@@ -21,7 +21,7 @@ locale() ->
         week = {pluralized, [{one, "{n} vika"}, {other, "{n} vikur"}]},
         month = {pluralized, [{one, "{n} mánuður"}, {other, "{n} mánuðir"}]},
         year = {pluralized, [{one, "{n} ár"}, {other, "{n} ár"}]},
-        half = "{0} og hálft",
+        half = "{n} og hálft",
         delimiter = ", ",
         just_born = "Nýfætt",
         stages = #stages{newborn = {neutral, "Nýfæðingur"}, infant = {neutral, "Ungbarn"}, toddler = {neutral, "Smábarn"}, child = {neutral, "Barn"}, teenager = {neutral, "Unglingur"}, adult = {neutral, "Fullorðinn"}},

@@ -26,7 +26,7 @@ M.half = "{0}កន្លះ"
 M.delimiter = ", "
 M.just_now = "ឥឡូវនេះ"
 M.ago = "{0}មុន"
-M.in_future = "ក្នុង{0}"
+M.in_future = "{0}ទៀត"
 M.short = {
     units = {
         second = "{n} វិនាទី",
@@ -38,7 +38,7 @@ M.short = {
         year = "{n} ឆ្នាំ",
     },
     ago = "{0}មុន",
-    in_future = "ក្នុង{0}",
+    in_future = "{0}ទៀត",
 }
 M.compact = {
     units = {
@@ -53,7 +53,7 @@ M.compact = {
     half = "{n}½",
     delimiter = "",
     ago = "{0}មុន",
-    in_future = "ក្នុង{0}",
+    in_future = "{0}ទៀត",
 }
 
 return M

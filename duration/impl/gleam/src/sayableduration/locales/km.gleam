@@ -28,7 +28,7 @@ pub fn locale() -> types.DurationLocale {
     delimiter: ", ",
     just_now: "ឥឡូវនេះ",
     ago: "{0}មុន",
-    in_future: "ក្នុង{0}",
+    in_future: "{0}ទៀត",
     short: Ok(types.CompactnessOverride(
       units: Ok([
         #("second", types.SimpleUnit("{n} វិនាទី")),
@@ -42,7 +42,7 @@ pub fn locale() -> types.DurationLocale {
       half: Error(Nil),
       delimiter: Error(Nil),
       ago: Ok("{0}មុន"),
-      in_future: Ok("ក្នុង{0}"),
+      in_future: Ok("{0}ទៀត"),
     )),
     compact: Ok(types.CompactnessOverride(
       units: Ok([
@@ -57,7 +57,7 @@ pub fn locale() -> types.DurationLocale {
       half: Ok("{n}½"),
       delimiter: Ok(""),
       ago: Ok("{0}មុន"),
-      in_future: Ok("ក្នុង{0}"),
+      in_future: Ok("{0}ទៀត"),
     )),
   )
 }

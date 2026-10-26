@@ -24,13 +24,13 @@ vi
 		'day'. '{n} ngày'.
 		'week'. '{n} tuần'.
 		'month'. '{n} tháng'.
-		'year'. '{n} tuổi'.
+		'year'. '{n} năm'.
 	}).
 	locale half: '{0} rưỡi'.
 	locale delimiter: ', '.
 	locale justNow: 'vừa xong'.
 	locale ago: '{0} trước'.
-	locale inFuture: 'trong {0}'.
+	locale inFuture: '{0} nữa'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. '{n} giây'.
@@ -42,7 +42,7 @@ vi
 			'year'. '{n} năm'.
 		}).
 		#ago. '{0} trước'.
-		#inFuture. 'trong {0}'.
+		#inFuture. '{0} nữa'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -57,7 +57,7 @@ vi
 		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} trước'.
-		#inFuture. 'trong {0}'.
+		#inFuture. '{0} nữa'.
 	}).
 	^ locale
 ! !

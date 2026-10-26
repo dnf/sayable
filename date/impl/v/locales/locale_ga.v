@@ -26,7 +26,7 @@ pub const locale_ga = DateLocale{
 	has_day_after_tomorrow: true
 	day_before_yesterday: 'arú inné'
 	has_day_before_yesterday: true
-	this_weekday: 'an {weekday} seo'
+	this_weekday: '{weekday} seo'
 	has_this_weekday: true
 	next_weekday: '{weekday} seo chugainn'
 	has_next_weekday: true

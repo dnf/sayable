@@ -11,22 +11,22 @@
 
 % Breton locale.
 
-st_hours('br', ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']).
+st_hours('br', ['daouzek eur', 'un eur', 'div eur', 'teir eur', 'peder eur', 'pemp eur', 'c\'hwec\'h eur', 'seizh eur', 'eizh eur', 'nav eur', 'dek eur', 'unnek eur']).
 st_midnight('br', 'hanternoz').
 st_noon('br', 'kreisteiz').
 
-st_pattern('br', 0, '{h}:00').
-st_pattern('br', 5, '{h}:05').
-st_pattern('br', 10, '{h}:10').
-st_pattern('br', 15, '{h}:15').
-st_pattern('br', 20, '{h}:20').
-st_pattern('br', 25, '{h}:25').
-st_pattern('br', 30, '{h}:30').
-st_pattern('br', 35, '{h}:35').
-st_pattern('br', 40, '{h}:40').
-st_pattern('br', 45, '{h}:45').
-st_pattern('br', 50, '{h}:50').
-st_pattern('br', 55, '{h}:55').
+st_pattern('br', 0, '{h}').
+st_pattern('br', 5, '{h} ha pemp').
+st_pattern('br', 10, '{h} ha dek').
+st_pattern('br', 15, '{h} ha kard').
+st_pattern('br', 20, '{h} hag ugent').
+st_pattern('br', 25, '{h} ha pemp warn-ugent').
+st_pattern('br', 30, '{h} hanter').
+st_pattern('br', 35, '{next_h} nemet pemp warn-ugent').
+st_pattern('br', 40, '{next_h} nemet ugent').
+st_pattern('br', 45, '{next_h} nemet kard').
+st_pattern('br', 50, '{next_h} nemet dek').
+st_pattern('br', 55, '{next_h} nemet pemp').
 
 short_st_use24h('br', true).
 short_st_format('br', '{h}:{mm}').

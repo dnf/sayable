@@ -39,7 +39,7 @@ var MK = sa.AgeLocale{
 		Toddler:  sa.S("Мало дете"),
 		Child:    sa.S("Дете"),
 		Teenager: sa.S("Тинејџер"),
-		Adult:    sa.S("Возрасен"),
+		Adult:    sa.G("Возрасен", "Возрасна"),
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ден", sa.Other: "{n} дена"}),

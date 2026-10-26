@@ -11,10 +11,10 @@
 
 function loc = locale_ay()
   loc.code = 'ay';
-  loc.clock.hours = {'tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llantunka', 'tunka', 'tunka mayani'};
+  loc.clock.hours = {'tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llätunka', 'tunka', 'tunka mayani'};
   loc.clock.midnight = 'aruma chika';
   loc.clock.noon = 'chika uru';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h} ura', "p5", '{h} ura phisqa minutuni', "p10", '{h} ura tunka minutuni', "p15", '{h} ura tunka phisqani minutuni', "p20", '{h} ura pä tunka minutuni', "p25", '{h} ura pä tunka phisqani minutuni', "p30", '{h} ura chikani', "p35", '{h} ura kimsa tunka phisqani minutuni', "p40", '{h} ura pusi tunka minutuni', "p45", '{h} ura pusi tunka phisqani minutuni', "p50", '{h} ura phisqa tunka minutuni', "p55", '{h} ura phisqa tunka phisqani minutuni');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

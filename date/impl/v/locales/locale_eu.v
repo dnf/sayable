@@ -16,9 +16,13 @@ pub const locale_eu = DateLocale{
 	code: 'eu'
 	months: ['urtarril', 'otsail', 'martxo', 'apiril', 'maiatz', 'ekain', 'uztail', 'abuztu', 'irail', 'urri', 'azaro', 'abendu']!
 	weekdays: ['igandea', 'astelehena', 'asteartea', 'asteazkena', 'osteguna', 'ostirala', 'larunbata']!
-	day_format: '{n}'
-	date_pattern: '{month}ren {day}'
-	date_pattern_with_year: '{year}ko {month}ren {day}'
+	day_format: '{n}a'
+	day_format_exceptions: {
+		'11': '{n}'
+		'31': '{n}'
+	}
+	date_pattern: '{month} {day}'
+	date_pattern_with_year: '{year}ko {month} {day}'
 	today: 'gaur'
 	tomorrow: 'bihar'
 	yesterday: 'atzo'
@@ -32,6 +36,8 @@ pub const locale_eu = DateLocale{
 	has_next_weekday: true
 	last_weekday: 'aurreko {weekday}'
 	has_last_weekday: true
+	months_in_date: ['urtarrilaren', 'otsailaren', 'martxoaren', 'apirilaren', 'maiatzaren', 'ekainaren', 'uztailaren', 'abuztuaren', 'irailaren', 'urriaren', 'azaroaren', 'abenduaren']!
+	has_months_in_date: true
 	has_short: true
 	short_override: DateCompactnessOverride{
 		months: ['urt', 'ots', 'mar', 'api', 'mai', 'eka', 'uzt', 'abu', 'ira', 'urr', 'aza', 'abe']!

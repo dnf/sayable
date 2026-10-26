@@ -23,7 +23,7 @@ final jv = DateLocale(
   tomorrow: 'sesuk',
   yesterday: 'wingi',
   dayAfterTomorrow: 'embèn',
-  dayBeforeYesterday: 'dhèk wingi',
+  dayBeforeYesterday: 'wingenané',
   thisWeekday: '{weekday} iki',
   nextWeekday: '{weekday} ngarep',
   lastWeekday: '{weekday} wingi',

@@ -17,7 +17,7 @@ ka
 	locale := SayableDateLocale new.
 	locale code: 'ka'.
 	locale months: (OrderedCollection withAll: { 'იანვარი'. 'თებერვალი'. 'მარტი'. 'აპრილი'. 'მაისი'. 'ივნისი'. 'ივლისი'. 'აგვისტო'. 'სექტემბერი'. 'ოქტომბერი'. 'ნოემბერი'. 'დეკემბერი' }).
-	locale weekdays: (OrderedCollection withAll: { 'კვირა'. 'ორშაბათი'. 'სამშაბათი'. 'ოთხშაბათი'. 'ხუთშაბათი'. 'პარასკევი'. 'შაბათი' }).
+	locale weekdays: (OrderedCollection withAll: { 'კვირას'. 'ორშაბათს'. 'სამშაბათს'. 'ოთხშაბათს'. 'ხუთშაბათს'. 'პარასკევს'. 'შაბათს' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.

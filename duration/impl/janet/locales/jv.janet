@@ -21,7 +21,7 @@
           :year "{n} taun"}
    :half "{0} setengah"
    :delimiter ", "
-   :just-now "saiki"
+   :just-now "lagi waé"
    :ago "{0} kepungkur"
    :in-future "ing {0}"
    :short {:units {:second "{n} dtk" :minute "{n} mnt" :hour "{n} jam" :day "{n} dina" :week "{n} peken" :month "{n} sasi" :year "{n} taun"} :ago "{0} kepungkur" :in-future "ing {0}"}

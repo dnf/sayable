@@ -29,7 +29,7 @@ pub const locale_kn = DurationLocale{
 	week: plural_unit({PluralCategory.one: '{n} ವಾರ', PluralCategory.other: '{n} ವಾರಗಳು'})
 	month: plural_unit({PluralCategory.one: '{n} ತಿಂಗಳು', PluralCategory.other: '{n} ತಿಂಗಳುಗಳು'})
 	year: plural_unit({PluralCategory.one: '{n} ವರ್ಷ', PluralCategory.other: '{n} ವರ್ಷಗಳು'})
-	half: '{0}ವರೆ'
+	half: '{n}½'
 	delimiter: ', '
 	just_now: 'ಈಗಷ್ಟೇ'
 	ago: '{0} ಹಿಂದೆ'

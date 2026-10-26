@@ -12,9 +12,9 @@
 function loc = locale_gn()
   loc.code = 'gn';
   loc.clock.hours = {'pa mokõi', 'peteĩ', 'mokõi', 'mbohapy', 'irundy', 'po', 'poteĩ', 'pokõi', 'poapy', 'porundy', 'pa', 'pa peteĩ'};
-  loc.clock.midnight = 'pyhareve';
+  loc.clock.midnight = 'pyharepyte';
   loc.clock.noon = 'asaje';
-  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} ha po', "p10", '{h} ha pa', "p15", '{h} ha pa po', "p20", '{h} ha mokõi pa', "p25", '{h} ha mokõi pa po', "p30", '{h} ha mbohapy pa', "p35", '{next_h} mba''e mokõi pa po', "p40", '{next_h} mba''e mokõi pa', "p45", '{next_h} mba''e pa po', "p50", '{next_h} mba''e pa', "p55", '{next_h} mba''e po');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} ha po', "p10", '{h} ha pa', "p15", '{h} ha pa po', "p20", '{h} ha mokõi pa', "p25", '{h} ha mokõi pa po', "p30", '{h} ha mbohapy pa', "p35", '{h} ha mbohapy pa po', "p40", '{h} ha irundy pa', "p45", '{h} ha irundy pa po', "p50", '{h} ha po pa', "p55", '{h} ha po pa po');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

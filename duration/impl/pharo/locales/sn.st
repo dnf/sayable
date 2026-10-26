@@ -18,9 +18,9 @@ sn
 	locale code: 'sn'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} sekondi'.
-		'minute'. '{n} miniti'.
-		'hour'. '{n} awa'.
+		'second'. (Dictionary newFromPairs: { #one. 'sekondi {n}'. #other. 'masekondi {n}' }).
+		'minute'. (Dictionary newFromPairs: { #one. 'miniti {n}'. #other. 'maminitsi {n}' }).
+		'hour'. (Dictionary newFromPairs: { #one. 'awa {n}'. #other. 'maawa {n}' }).
 		'day'. (Dictionary newFromPairs: { #one. 'zuva {n}'. #other. 'mazuva {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'vhiki {n}'. #other. 'mavhiki {n}' }).
 		'month'. (Dictionary newFromPairs: { #one. 'mwedzi {n}'. #other. 'mwedzi {n}' }).

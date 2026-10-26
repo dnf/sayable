@@ -21,7 +21,7 @@ locale() ->
         week = {simple, "{n} minggu"},
         month = {simple, "{n} bulan"},
         year = {simple, "{n} tahun"},
-        half = "{0} setengah",
+        half = "{n} setengah",
         delimiter = ", ",
         just_born = "Baru lahir",
         stages = #stages{newborn = {neutral, "Baru lahir"}, infant = {neutral, "Bayi"}, toddler = {neutral, "Balita"}, child = {neutral, "Anak-anak"}, teenager = {neutral, "Remaja"}, adult = {neutral, "Dewasa"}},

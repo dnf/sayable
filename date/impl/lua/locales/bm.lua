@@ -12,7 +12,7 @@
 local M = {}
 
 M.code = "bm"
-M.months = { "Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu" }
+M.months = { "Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu" }
 M.weekdays = { "Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri" }
 M.day_format = "{n}"
 M.day_format_exceptions = {}
@@ -27,7 +27,7 @@ M.this_weekday = "{weekday} nin"
 M.next_weekday = "{weekday} nata"
 M.last_weekday = "{weekday} tɛmɛnen"
 M.short = {
-    months = { "Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des" },
+    months = { "Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des" },
     weekdays = { "Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib" },
     day_format = "{n}",
     date_pattern = "{day} {month}",

@@ -55,7 +55,7 @@ pub fn locale() -> DurationLocale {
         half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_now: "lige nu".to_string(),
-        ago: "{0} siden".to_string(),
+        ago: "for {0} siden".to_string(),
         in_future: "om {0}".to_string(),
         short: Some(CompactnessOverride {
             second: Some(UnitForms::simple("{n} sek.")),

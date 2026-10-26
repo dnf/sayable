@@ -51,7 +51,7 @@ pub fn locale() -> DurationLocale {
             week: Some(UnitForms::simple("{n}w")),
             month: Some(UnitForms::simple("{n}mo")),
             year: Some(UnitForms::simple("{n}y")),
-            half: None,
+            half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             ago: Some("{0} liu ba".to_string()),
             in_future: Some("iha {0}".to_string()),

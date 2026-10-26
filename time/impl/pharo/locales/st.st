@@ -17,22 +17,22 @@ st
 	locale := SayableTimeLocale new.
 	locale code: 'st'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'leshome le metso e mmedi'. 'e nngwe'. 'tse pedi'. 'tse tharo'. 'tse nne'. 'tse hlano'. 'tse tshelela'. 'tse supileng'. 'tse robedi'. 'tse robong'. 'leshome'. 'leshome le motso o le mong' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'leshome le metso e mmedi'. 'pele'. 'bobedi'. 'boraro'. 'bone'. 'bohlano'. 'botshelela'. 'bosupa'. 'borobedi'. 'borobong'. 'leshome'. 'leshome le motso o le mong' }).
 	clock at: #midnight put: 'hara bosiu'.
 	clock at: #noon put: 'motsheare'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'hora ya {h}'.
+		5. 'hora ya {h} le metsotso e mehlano'.
+		10. 'hora ya {h} le metsotso e leshome'.
+		15. 'hora ya {h} le kotara'.
+		20. 'hora ya {h} le metsotso e mashome a mabedi'.
+		25. 'hora ya {h} le metsotso e mashome a mabedi a metso e mehlano'.
+		30. 'hora ya {h} le halofo'.
+		35. 'hora ya {h} le metsotso e mashome a mararo a metso e mehlano'.
+		40. 'hora ya {h} le metsotso e mashome a mane'.
+		45. 'hora ya {h} le metsotso e mashome a mane a metso e mehlano'.
+		50. 'hora ya {h} le metsotso e mashome a mahlano'.
+		55. 'hora ya {h} le metsotso e mashome a mahlano a metso e mehlano'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

@@ -11,22 +11,22 @@
 
 % Xhosa locale.
 
-st_hours('xh', ['ishumi elinambini', 'inye', 'ezimbini', 'ezintathu', 'ezine', 'ezintlanu', 'ezintandathu', 'ezisixhenxe', 'ezisibhozo', 'ethoba', 'ishumi', 'ishumi elinanye']).
+st_hours('xh', ['yeshumi elinesibini', 'yokuqala', 'yesibini', 'yesithathu', 'yesine', 'yesihlanu', 'yesithandathu', 'yesixhenxe', 'yesibhozo', 'yethoba', 'yeshumi', 'yeshumi elinanye']).
 st_midnight('xh', 'ezinzulwini zobusuku').
 st_noon('xh', 'emini').
 
-st_pattern('xh', 0, '{h}:00').
-st_pattern('xh', 5, '{h}:05').
-st_pattern('xh', 10, '{h}:10').
-st_pattern('xh', 15, '{h}:15').
-st_pattern('xh', 20, '{h}:20').
-st_pattern('xh', 25, '{h}:25').
-st_pattern('xh', 30, '{h}:30').
-st_pattern('xh', 35, '{h}:35').
-st_pattern('xh', 40, '{h}:40').
-st_pattern('xh', 45, '{h}:45').
-st_pattern('xh', 50, '{h}:50').
-st_pattern('xh', 55, '{h}:55').
+st_pattern('xh', 0, 'intsimbi {h}').
+st_pattern('xh', 5, 'imizuzu emihlanu emva kwentsimbi {h}').
+st_pattern('xh', 10, 'imizuzu elishumi emva kwentsimbi {h}').
+st_pattern('xh', 15, 'ikota emva kwentsimbi {h}').
+st_pattern('xh', 20, 'imizuzu engamashumi amabini emva kwentsimbi {h}').
+st_pattern('xh', 25, 'imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}').
+st_pattern('xh', 30, 'isiqingatha emva kwentsimbi {h}').
+st_pattern('xh', 35, 'imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}').
+st_pattern('xh', 40, 'imizuzu engamashumi amabini ukuya kwintsimbi {next_h}').
+st_pattern('xh', 45, 'ikota ukuya kwintsimbi {next_h}').
+st_pattern('xh', 50, 'imizuzu elishumi ukuya kwintsimbi {next_h}').
+st_pattern('xh', 55, 'imizuzu emihlanu ukuya kwintsimbi {next_h}').
 
 short_st_use24h('xh', false).
 short_st_format('xh', '{h}:{mm} {ampm}').

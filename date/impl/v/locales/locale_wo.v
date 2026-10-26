@@ -22,15 +22,15 @@ pub const locale_wo = DateLocale{
 	today: 'tey'
 	tomorrow: 'suba'
 	yesterday: 'démb'
-	day_after_tomorrow: 'suba-suba'
+	day_after_tomorrow: 'gannaaw-suba'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'démb-démb'
+	day_before_yesterday: 'bërki-démb'
 	has_day_before_yesterday: true
-	this_weekday: '{weekday} bi'
+	this_weekday: '{weekday} jii'
 	has_this_weekday: true
-	next_weekday: '{weekday} bi ñëw'
+	next_weekday: '{weekday} jiy ñëw'
 	has_next_weekday: true
-	last_weekday: '{weekday} bi weex'
+	last_weekday: '{weekday} ji weesu'
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{

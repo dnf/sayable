@@ -12,14 +12,14 @@
 function loc = locale_si()
   loc.code = 'si';
   loc.plural = @(n) ifelse(n == 0 || n == 1, "one", "other");
-  loc.units.second = '{n} තත්පරය';
-  loc.units.minute = '{n} මිනිත්තුව';
-  loc.units.hour = '{n} පැය';
+  loc.units.second = 'තත්පර {n}';
+  loc.units.minute = 'මිනිත්තු {n}';
+  loc.units.hour = 'පැය {n}';
   loc.units.day = struct("one", 'දින {n}', "other", 'දින {n}');
   loc.units.week = struct("one", 'සති {n}', "other", 'සති {n}');
   loc.units.month = struct("one", 'මාස {n}', "other", 'මාස {n}');
   loc.units.year = struct("one", 'වසර {n}', "other", 'වසර {n}');
-  loc.half = '{0}යි භාගයයි';
+  loc.half = '{n}½';
   loc.delimiter = ', ';
   loc.just_now = 'දැන්';
   loc.ago = '{0}ට පෙර';

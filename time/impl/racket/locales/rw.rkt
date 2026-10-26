@@ -21,10 +21,10 @@
   (time-locale
    "rw"
    (clock-config
-    (list "cumi n'ebyiri" "rimwe" "ebyiri" "eshatu" "enye" "eshanu" "esheshatu" "indwi" "umunani" "icyenda" "icumi" "cumi n'imwe")
-    "igicuku"
-    "saa sita"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (list "sita" "saba" "munani" "cyenda" "kumi" "kumi n'imwe" "kumi n'ebyiri" "moya" "mbiri" "tatu" "ine" "tanu")
+    "saa sita z'ijoro"
+    "saa sita z'amanywa"
+    (hash 0 "saa {h}" 5 "saa {h} n'iminota itanu" 10 "saa {h} n'iminota icumi" 15 "saa {h} n'iminota cumi n'itanu" 20 "saa {h} n'iminota makumyabiri" 25 "saa {h} n'iminota makumyabiri n'itanu" 30 "saa {h} n'igice" 35 "saa {h} n'iminota mirongo itatu n'itanu" 40 "saa {h} n'iminota mirongo ine" 45 "saa {h} n'iminota mirongo ine n'itanu" 50 "saa {h} n'iminota mirongo itanu" 55 "saa {h} n'iminota mirongo itanu n'itanu"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

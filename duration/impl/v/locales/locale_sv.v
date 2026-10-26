@@ -32,7 +32,7 @@ pub const locale_sv = DurationLocale{
 	half: '{n}½'
 	delimiter: ', '
 	just_now: 'just nu'
-	ago: '{0} sedan'
+	ago: 'för {0} sedan'
 	in_future: 'om {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
@@ -50,7 +50,7 @@ pub const locale_sv = DurationLocale{
 		has_month: true
 		year: simple_unit('{n} år')
 		has_year: true
-		ago: '{0} sedan'
+		ago: 'för {0} sedan'
 		has_ago: true
 		in_future: 'om {0}'
 		has_in_future: true
@@ -73,7 +73,7 @@ pub const locale_sv = DurationLocale{
 		has_year: true
 		delimiter: ''
 		has_delimiter: true
-		ago: '{0} sedan'
+		ago: 'för {0} sedan'
 		has_ago: true
 		in_future: 'om {0}'
 		has_in_future: true

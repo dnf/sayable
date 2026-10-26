@@ -10,21 +10,21 @@
 # Source: locales/ss.json
 
 _sayabletime_locale_ss() {
-    _clock_hours=('lishumi nambili' 'kunye' 'kubili' 'kutsatfu' 'kune' 'kusihlanu' 'sitfupha' 'sikhombisa' 'siphohlongo' 'sifisagcina' 'lishumi' 'lishumi nakunye')
+    _clock_hours=('lelishumi nakubili' 'lekucala' 'lesibili' 'lesitsatfu' 'lesine' 'lesihlanu' 'lesitfupha' 'lesikhombisa' 'lesiphohlongo' 'lemfica' 'lelishumi' 'lelishumi nakunye')
     _clock_midnight='phakathi kwebusuku'
     _clock_noon='emini'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='lihora {h}'
+    _clock_pattern_5='lihora {h} nemizuzu lemihlanu'
+    _clock_pattern_10='lihora {h} nemizuzu lelishumi'
+    _clock_pattern_15='lihora {h} nemizuzu lelishumi nesihlanu'
+    _clock_pattern_20='lihora {h} nemizuzu lemashumi lamabili'
+    _clock_pattern_25='lihora {h} nemizuzu lemashumi lamabili nesihlanu'
+    _clock_pattern_30='lihora {h} nenhafu'
+    _clock_pattern_35='lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu'
+    _clock_pattern_40='lihora {h} nemizuzu lemashumi lamane'
+    _clock_pattern_45='lihora {h} nemizuzu lemashumi lamane nesihlanu'
+    _clock_pattern_50='lihora {h} nemizuzu lemashumi lasihlanu'
+    _clock_pattern_55='lihora {h} nemizuzu lemashumi lasihlanu nesihlanu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

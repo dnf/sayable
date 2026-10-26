@@ -15,18 +15,18 @@ st_hours('bi', ['twelf', 'wan', 'tu', 'tri', 'fo', 'faef', 'sikis', 'seven', 'ei
 st_midnight('bi', 'mednaet').
 st_noon('bi', 'medeldei').
 
-st_pattern('bi', 0, '{h}:00').
-st_pattern('bi', 5, '{h}:05').
-st_pattern('bi', 10, '{h}:10').
-st_pattern('bi', 15, '{h}:15').
-st_pattern('bi', 20, '{h}:20').
-st_pattern('bi', 25, '{h}:25').
-st_pattern('bi', 30, '{h}:30').
-st_pattern('bi', 35, '{h}:35').
-st_pattern('bi', 40, '{h}:40').
-st_pattern('bi', 45, '{h}:45').
-st_pattern('bi', 50, '{h}:50').
-st_pattern('bi', 55, '{h}:55').
+st_pattern('bi', 0, '{h} klok').
+st_pattern('bi', 5, 'faef pas {h}').
+st_pattern('bi', 10, 'ten pas {h}').
+st_pattern('bi', 15, 'kwota pas {h}').
+st_pattern('bi', 20, 'twenti pas {h}').
+st_pattern('bi', 25, 'twenti faef pas {h}').
+st_pattern('bi', 30, 'haf pas {h}').
+st_pattern('bi', 35, 'twenti faef tu {next_h}').
+st_pattern('bi', 40, 'twenti tu {next_h}').
+st_pattern('bi', 45, 'kwota tu {next_h}').
+st_pattern('bi', 50, 'ten tu {next_h}').
+st_pattern('bi', 55, 'faef tu {next_h}').
 
 short_st_use24h('bi', false).
 short_st_format('bi', '{h}:{mm} {ampm}').

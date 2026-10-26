@@ -30,10 +30,10 @@ fn build_mi() -> DurationLocale:
     var second = simple_unit("{n} hēkona")
     var minute = simple_unit("{n} meneti")
     var hour = simple_unit("{n} hāora")
-    var day = simple_unit("rā {n}")
-    var week = simple_unit("wiki {n}")
-    var month = simple_unit("marama {n}")
-    var year = simple_unit("tau {n}")
+    var day = simple_unit("{n} rā")
+    var week = simple_unit("{n} wiki")
+    var month = simple_unit("{n} marama")
+    var year = simple_unit("{n} tau")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} hēk")
@@ -42,13 +42,13 @@ fn build_mi() -> DurationLocale:
     short_ovr.has_minute = True
     short_ovr.hour = simple_unit("{n} hāo")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("rā {n}")
+    short_ovr.day = simple_unit("{n} rā")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("w {n}")
+    short_ovr.week = simple_unit("{n} w")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("m {n}")
+    short_ovr.month = simple_unit("{n} m")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("t {n}")
+    short_ovr.year = simple_unit("{n} t")
     short_ovr.has_year = True
     short_ovr.ago = "{0} i mua"
     short_ovr.has_ago = True
@@ -89,7 +89,7 @@ fn build_mi() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}½",
+        half="{n}½",
         delimiter=", ",
         just_now="ināianei",
         ago="{0} i mua",

@@ -20,7 +20,7 @@ sa_unit('ceb', week, _, '{n} ka semana').
 sa_unit('ceb', month, _, '{n} ka bulan').
 sa_unit('ceb', year, _, '{n} ka tuig').
 
-sa_half('ceb', '{n}½').
+sa_half('ceb', '{0} ug tunga').
 sa_delimiter('ceb', ', ').
 sa_just_born('ceb', 'Bag-ong natawo').
 

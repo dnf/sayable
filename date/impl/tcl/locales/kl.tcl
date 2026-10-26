@@ -16,7 +16,7 @@ proc locale_date_kl {} {
     set day_format "{n}."
     set day_format_exceptions [dict create]
     set date_pattern "{month} {day}"
-    set date_pattern_with_year "{day} {month} {year}"
+    set date_pattern_with_year "{month} {day} {year}"
     set today {ullumi}
     set tomorrow {aqagu}
     set yesterday {ippassaq}
@@ -31,7 +31,7 @@ proc locale_date_kl {} {
         weekdays [list {sap} {ata} {mar} {pin} {sis} {tal} {arf}] \
         day_format "{n}." \
         date_pattern "{month} {day}" \
-        date_pattern_with_year "{day} {month} {year}" \
+        date_pattern_with_year "{month} {day} {year}" \
     ]
     set compact [dict create \
         date_pattern "{m}-{d}" \

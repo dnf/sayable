@@ -15,18 +15,18 @@ st_hours('uk', ['дванадцята', 'перша', 'друга', 'третя'
 st_midnight('uk', 'опівніч').
 st_noon('uk', 'полудень').
 
-st_pattern('uk', 0, '{h} часа').
-st_pattern('uk', 5, 'п\'ять po {h}').
-st_pattern('uk', 10, 'десять po {h}').
-st_pattern('uk', 15, 'п\'ятнадцять po {h}').
-st_pattern('uk', 20, 'двадцять po {h}').
-st_pattern('uk', 25, 'двадцять п\'ять po {h}').
-st_pattern('uk', 30, 'тридцять po {h}').
-st_pattern('uk', 35, 'двадцять п\'ять do {next_h}').
-st_pattern('uk', 40, 'двадцять do {next_h}').
-st_pattern('uk', 45, 'п\'ятнадцять do {next_h}').
-st_pattern('uk', 50, 'десять do {next_h}').
-st_pattern('uk', 55, 'п\'ять do {next_h}').
+st_pattern('uk', 0, '{h} година').
+st_pattern('uk', 5, '{h} нуль п\'ять').
+st_pattern('uk', 10, '{h} десять').
+st_pattern('uk', 15, '{h} п\'ятнадцять').
+st_pattern('uk', 20, '{h} двадцять').
+st_pattern('uk', 25, '{h} двадцять п\'ять').
+st_pattern('uk', 30, '{h} тридцять').
+st_pattern('uk', 35, 'за двадцять п\'ять хвилин {next_h}').
+st_pattern('uk', 40, 'за двадцять хвилин {next_h}').
+st_pattern('uk', 45, 'за чверть {next_h}').
+st_pattern('uk', 50, 'за десять хвилин {next_h}').
+st_pattern('uk', 55, 'за п\'ять хвилин {next_h}').
 
 short_st_use24h('uk', true).
 short_st_format('uk', '{h}:{mm}').

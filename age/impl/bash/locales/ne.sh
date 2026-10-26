@@ -29,7 +29,7 @@ _sayableage_locale_ne() {
     _just_born='नवजात शिशु'
     _stage_newborn='नवजात शिशु'
     _stage_infant='शिशु'
-    _stage_toddler='बाल्यकाल'
+    _stage_toddler='सानो बच्चा'
     _stage_child='बालक'
     _stage_teenager='किशोर'
     _stage_adult='वयस्क'

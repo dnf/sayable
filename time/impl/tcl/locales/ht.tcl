@@ -11,17 +11,17 @@
 
 proc locale_time_ht {} {
     set code {ht}
-    set hours [list {douz} {en} {de} {twa} {kat} {senk} {sis} {sèt} {uit} {nèf} {dis} {onz}]
-    set midnight {minui}
+    set hours [list {douzè} {inè} {dezè} {twazè} {katrè} {senkè} {sizè} {setè} {uitè} {nevè} {dizè} {onzè}]
+    set midnight {minwi}
     set noon {midi}
     set patterns [dict create \
-        0 "{h} è" \
-        5 "{h} è senk" \
-        10 "{h} è dis" \
-        15 "{h} è ka" \
-        20 "{h} è ven" \
-        25 "{h} è vennsenk" \
-        30 "{h} è demi" \
+        0 "{h}" \
+        5 "{h} senk" \
+        10 "{h} dis" \
+        15 "{h} e ka" \
+        20 "{h} ven" \
+        25 "{h} vennsenk" \
+        30 "{h} edmi" \
         35 "{next_h} mwen vennsenk" \
         40 "{next_h} mwen ven" \
         45 "{next_h} mwen ka" \

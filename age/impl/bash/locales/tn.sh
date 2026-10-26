@@ -31,7 +31,7 @@ _sayableage_locale_tn() {
     _stage_infant='Lesea'
     _stage_toddler='Ngwana yo monnye'
     _stage_child='Ngwana'
-    _stage_teenager='Lekgarebe'
+    _stage_teenager='Mosha'
     _stage_adult='Motho yo mogolo'
     _short_unit_day_one='letsatsi {n}'
     _short_unit_day_other='malatsi {n}'

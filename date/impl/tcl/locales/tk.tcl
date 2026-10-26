@@ -11,8 +11,8 @@
 
 proc locale_date_tk {} {
     set code {tk}
-    set months [list {Ýanwar} {Fewral} {Mart} {Aprel} {Maý} {Iýun} {Iýul} {Awgust} {Sentýabr} {Oktýabr} {Noýabr} {Dekabr}]
-    set weekdays [list {Ýekşenbe} {Duşenbe} {Sişenbe} {Çarşenbe} {Penşenbe} {Anna} {Şenbe}]
+    set months [list {ýanwar} {fewral} {mart} {aprel} {maý} {iýun} {iýul} {awgust} {sentýabr} {oktýabr} {noýabr} {dekabr}]
+    set weekdays [list {ýekşenbe} {duşenbe} {sişenbe} {çarşenbe} {penşenbe} {anna} {şenbe}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
@@ -27,8 +27,8 @@ proc locale_date_tk {} {
     set last_weekday "geçen {weekday}"
     set months_in_date ""
     set short [dict create \
-        months [list {Ýan} {Few} {Mar} {Apr} {Maý} {Iýn} {Iýl} {Awg} {Sen} {Okt} {Noý} {Dek}] \
-        weekdays [list {Ýek} {Duş} {Siş} {Çar} {Pen} {Ann} {Şen}] \
+        months [list {ýan} {few} {mar} {apr} {maý} {iýn} {iýl} {awg} {sen} {okt} {noý} {dek}] \
+        weekdays [list {ýek} {duş} {siş} {çar} {pen} {ann} {şen}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \
         date_pattern_with_year "{day} {month} {year}" \

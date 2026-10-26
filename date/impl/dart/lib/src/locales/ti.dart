@@ -24,7 +24,7 @@ final ti = DateLocale(
   yesterday: 'ትማሊ',
   dayAfterTomorrow: 'ድሕሪ ጽባሕ',
   dayBeforeYesterday: 'ቅድሚ ትማሊ',
-  thisWeekday: 'እዛ {weekday}',
+  thisWeekday: 'እዚ {weekday}',
   nextWeekday: 'ዝመጽእ {weekday}',
   lastWeekday: 'ዝሓለፈ {weekday}',
   short: CompactnessOverride(

@@ -47,9 +47,9 @@ defmodule SayableDate.Locales.NY do
       yesterday: "dzulo",
       day_after_tomorrow: "mkucha",
       day_before_yesterday: "dzana",
-      this_weekday: "{weekday} ino",
-      next_weekday: "{weekday} yotsatira",
-      last_weekday: "{weekday} yatha",
+      this_weekday: "{weekday} lino",
+      next_weekday: "{weekday} lotsatira",
+      last_weekday: "{weekday} latha",
       months_in_date: nil,
       short: %{
         months: [

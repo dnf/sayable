@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ca.json](../../locales/ca.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Listed as a schemaLimit, but the patterns were English ('cinc past dues'), so I replaced them with the no-schema minute system: hours carry the article ('la una', 'les dues'), patterns '{h} en punt', '{h} i cinc', '{h} i quart', '{h} i mitja', '{next_h} menys quart' etc. -> 'la una en punt', 'les dues i quart', 'les tres menys quart'. This is standard Valencian/Balearic and understood everywhere; the Central-Catalan bell system ('un quart de quatre') still needs schema support, as the audit says. Overwrite freely if a schema change lands.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `one_other` (categories: one, other)
 | 2 years, 1 month  | 2 anys, 1 mes      | 2 anys, 1 mes   | 2 anys1 m  |
 | 2 years, 6 months | 2 anys, 6 mesos    | 2 anys, 6 m     | 2 anys6 m  |
 | 3 years           | 3 anys             | 3 anys          | 3 anys     |
-| 3½ years          | 3 i mig anys       | 3 i mig anys    | 3½ anys    |
+| 3½ years          | 3 anys i mig       | 3 anys i mig    | 3½ anys    |
 | 5 years           | 5 anys             | 5 anys          | 5 anys     |
-| 5½ years          | 5 i mig anys       | 5 i mig anys    | 5½ anys    |
+| 5½ years          | 5 anys i mig       | 5 anys i mig    | 5½ anys    |
 | 7 years           | 7 anys             | 7 anys          | 7 anys     |
 | 10 years          | 10 anys            | 10 anys         | 10 anys    |
 | 18 years          | 18 anys            | 18 anys         | 18 anys    |
@@ -52,14 +60,14 @@ Plural rule: `one_other` (categories: one, other)
 
 ### Date formatting
 
-| Date        | Normal         | Short   | Compact |
-| ----------- | -------------- | ------- | ------- |
-| January 1   | 1 de gener     | 1 gen   | 1/1     |
-| February 14 | 14 de febrer   | 14 feb  | 14/2    |
-| March 15    | 15 de març     | 15 març | 15/3    |
-| July 4      | 4 de juliol    | 4 jul   | 4/7     |
-| October 31  | 31 de octubre  | 31 oct  | 31/10   |
-| December 25 | 25 de desembre | 25 des  | 25/12   |
+| Date        | Normal         | Short          | Compact |
+| ----------- | -------------- | -------------- | ------- |
+| January 1   | 1 de gener     | 1 de gener     | 1/1     |
+| February 14 | 14 de febrer   | 14 de febrer   | 14/2    |
+| March 15    | 15 de març     | 15 de març     | 15/3    |
+| July 4      | 4 de juliol    | 4 de juliol    | 4/7     |
+| October 31  | 31 d'octubre   | 31 d'octubre   | 31/10   |
+| December 25 | 25 de desembre | 25 de desembre | 25/12   |
 
 ### Relative dates
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | demà passat         | 17/3    |
 | Day before yesterday | abans-d'ahir        | 13/3    |
 | This Thursday (+5)   | aquest dijous       | 20/3    |
-| Last Monday (-4)     | dimarts passat      | 11/3    |
-| Next Wednesday (+12) | dijous que ve       | 27/3    |
-| Same month (+20)     | 4 de abril          | 4/4     |
+| Last Tuesday (-4)    | dimarts passat      | 11/3    |
+| Next Thursday (+12)  | dijous que ve       | 27/3    |
+| Same year (+20)      | 4 d'abril           | 4/4     |
 | Different year       | 10 de gener de 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal            | Short | Compact |
-| --------------- | ----------------- | ----- | ------- |
-| Midnight        | mitjanit          | 0:00  | 0:00    |
-| 1:00 AM         | una o'clock       | 1:00  | 1:00    |
-| 5 past 9        | cinc past nou     | 9:05  | 9:05    |
-| Quarter past 10 | un quart past deu | 10:15 | 10:15   |
-| Half past 11    | mitja past onze   | 11:30 | 11:30   |
-| Noon            | migdia            | 12:00 | 12:00   |
-| Quarter to 3    | un quart to tres  | 14:45 | 14:45   |
-| 5 to 6          | cinc to sis       | 17:55 | 17:55   |
-| 8 o'clock PM    | vuit o'clock      | 20:00 | 20:00   |
-| 10:30 PM        | mitja past deu    | 22:30 | 22:30   |
-| 11:58 PM        | mitjanit          | 23:58 | 23:58   |
+| Time            | Normal               | Short | Compact |
+| --------------- | -------------------- | ----- | ------- |
+| Midnight        | mitjanit             | 0:00  | 0:00    |
+| 1:00 AM         | la una en punt       | 1:00  | 1:00    |
+| 5 past 9        | les nou i cinc       | 9:05  | 9:05    |
+| Quarter past 10 | les deu i quart      | 10:15 | 10:15   |
+| Half past 11    | les onze i mitja     | 11:30 | 11:30   |
+| Noon            | migdia               | 12:00 | 12:00   |
+| Quarter to 3    | les tres menys quart | 14:45 | 14:45   |
+| 5 to 6          | les sis menys cinc   | 17:55 | 17:55   |
+| 8 o'clock PM    | les vuit en punt     | 20:00 | 20:00   |
+| 10:30 PM        | les deu i mitja      | 22:30 | 22:30   |
+| 11:58 PM        | mitjanit             | 23:58 | 23:58   |

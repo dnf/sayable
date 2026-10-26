@@ -12,7 +12,7 @@
 proc locale_date_ka {} {
     set code {ka}
     set months [list {იანვარი} {თებერვალი} {მარტი} {აპრილი} {მაისი} {ივნისი} {ივლისი} {აგვისტო} {სექტემბერი} {ოქტომბერი} {ნოემბერი} {დეკემბერი}]
-    set weekdays [list {კვირა} {ორშაბათი} {სამშაბათი} {ოთხშაბათი} {ხუთშაბათი} {პარასკევი} {შაბათი}]
+    set weekdays [list {კვირას} {ორშაბათს} {სამშაბათს} {ოთხშაბათს} {ხუთშაბათს} {პარასკევს} {შაბათს}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"

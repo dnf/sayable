@@ -28,11 +28,11 @@
          "week" (hash "type" "simple" "form" "{n} wik")
          "month" (hash "type" "simple" "form" "{n} mun")
          "year" (hash "type" "simple" "form" "{n} yia"))
-   "{n} na hap"
+   "{0} na hap"
    ", "
    "nau tasol"
    "{0} i go pinis"
    "long {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} sek") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} aua") (hash "type" "simple" "form" "{n} de") (hash "type" "simple" "form" "{n} wik") (hash "type" "simple" "form" "{n} mun") (hash "type" "simple" "form" "{n} yia") #f #f "{0} i go pinis" "long {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} i go pinis" "long {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} i go pinis" "long {0}")
   ))

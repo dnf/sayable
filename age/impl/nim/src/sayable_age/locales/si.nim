@@ -22,7 +22,7 @@ let SI* = AgeLocale(
     "month": pluralUnit(@[(pcOne, "මාස {n}"), (pcOther, "මාස {n}")]),
     "year": pluralUnit(@[(pcOne, "වසර {n}"), (pcOther, "වසර {n}")]),
   }.toOrderedTable,
-  half: "{0}යි භාගයයි",
+  half: "{n}½",
   delimiter: ", ",
   justBorn: "අලුත උපන්",
   stages: {

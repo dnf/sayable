@@ -20,12 +20,12 @@ let locale : duration_locale =
   ; day = Simple "{n} ngày"
   ; week = Simple "{n} tuần"
   ; month = Simple "{n} tháng"
-  ; year = Simple "{n} tuổi"
+  ; year = Simple "{n} năm"
   ; half = "{0} rưỡi"
   ; delimiter = ", "
   ; just_now = "vừa xong"
   ; ago = "{0} trước"
-  ; in_future = "trong {0}"
+  ; in_future = "{0} nữa"
   ; short = Some
       { ovr_second = Some (Simple "{n} giây")
       ; ovr_minute = Some (Simple "{n} phút")
@@ -37,7 +37,7 @@ let locale : duration_locale =
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "{0} trước"
-      ; ovr_in_future = Some "trong {0}"
+      ; ovr_in_future = Some "{0} nữa"
       }
   ; compact = Some
       { ovr_second = Some (Simple "{n} giây")
@@ -50,6 +50,6 @@ let locale : duration_locale =
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_ago = Some "{0} trước"
-      ; ovr_in_future = Some "trong {0}"
+      ; ovr_in_future = Some "{0} nữa"
       }
   }

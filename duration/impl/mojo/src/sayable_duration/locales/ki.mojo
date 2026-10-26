@@ -52,7 +52,7 @@ fn build_ki() -> DurationLocale:
     short_ovr.has_year = True
     short_ovr.ago = "{0} ĩhĩtũkĩte"
     short_ovr.has_ago = True
-    short_ovr.in_future = "{0} ĩyothe"
+    short_ovr.in_future = "thutha wa {0}"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
@@ -74,7 +74,7 @@ fn build_ki() -> DurationLocale:
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} ĩhĩtũkĩte"
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "{0} ĩyothe"
+    compact_ovr.in_future = "thutha wa {0}"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -87,11 +87,11 @@ fn build_ki() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} na nusu",
+        half="{0} na nuthu",
         delimiter=", ",
-        just_now="ũmũthĩ",
+        just_now="rĩu",
         ago="{0} ĩhĩtũkĩte",
-        in_future="{0} ĩyothe",
+        in_future="thutha wa {0}",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

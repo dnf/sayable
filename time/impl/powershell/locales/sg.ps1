@@ -10,22 +10,22 @@
 # Source: locales/sg.json
 
 function locale_sg {
-    $hours = @('bâlè-ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'ömënë', 'mbïrïmbïrï', 'mënâmbârâ', 'gonambâlâ', 'bâlè', 'bâlè na ôko')
+    $hours = @('balë-ôko na ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'omanä', 'mbâsâmbârâ', 'miombe', 'gümbâyä', 'balë-ôko', 'balë-ôko na ôko')
     $midnight = 'gï na lögö'
     $noon = 'lâ nzönï'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ngbonga {h}'
+    $patterns[5] = 'ngbonga {h} na minüti okü'
+    $patterns[10] = 'ngbonga {h} na minüti balë-ôko'
+    $patterns[15] = 'ngbonga {h} na minüti balë-ôko na okü'
+    $patterns[20] = 'ngbonga {h} na minüti balë-ûse'
+    $patterns[25] = 'ngbonga {h} na minüti balë-ûse na okü'
+    $patterns[30] = 'ngbonga {h} na ndâmbo'
+    $patterns[35] = 'ngbonga {h} na minüti balë-otâ na okü'
+    $patterns[40] = 'ngbonga {h} na minüti balë-usïö'
+    $patterns[45] = 'ngbonga {h} na minüti balë-usïö na okü'
+    $patterns[50] = 'ngbonga {h} na minüti balë-okü'
+    $patterns[55] = 'ngbonga {h} na minüti balë-okü na okü'
     $clock = @{
         hours = $hours
         midnight = $midnight

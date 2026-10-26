@@ -17,9 +17,9 @@ LN = DurationLocale(
     code="ln",
     plural=lambda n: "one" if n in (0, 1) else "other",
     units={
-        "second": "{n} segɔnde",
-        "minute": "{n} moniti",
-        "hour": "{n} ngonga",
+        "second": "segɔnde {n}",
+        "minute": "miniti {n}",
+        "hour": "ngonga {n}",
         "day": {"one": "mokolo {n}", "other": "mikolo {n}"},
         "week": {"one": "poso {n}", "other": "baposo {n}"},
         "month": {"one": "sanza {n}", "other": "basanza {n}"},

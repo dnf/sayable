@@ -21,7 +21,7 @@ final tg = AgeLocale(
   week: simpleUnit('{n} ҳафта'),
   month: simpleUnit('{n} моҳ'),
   year: simpleUnit('{n} сол'),
-  half: '{0} ним',
+  half: '{0}у ним',
   delimiter: ', ',
   justBorn: 'Навзод',
   newborn: stageNeutral('Навзод'),

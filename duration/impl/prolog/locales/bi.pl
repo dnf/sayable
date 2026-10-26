@@ -21,7 +21,7 @@ sd_unit('bi', week, _, '{n} wik').
 sd_unit('bi', month, _, '{n} manis').
 sd_unit('bi', year, _, '{n} yia').
 
-sd_half('bi', '{n} mo haf').
+sd_half('bi', '{0} mo haf').
 sd_delimiter('bi', ', ').
 sd_just_now('bi', 'jas nao').
 sd_ago('bi', '{0} bifo').
@@ -44,6 +44,7 @@ compact_sd_unit('bi', day, _, '{n}d').
 compact_sd_unit('bi', week, _, '{n}w').
 compact_sd_unit('bi', month, _, '{n}mo').
 compact_sd_unit('bi', year, _, '{n}y').
+compact_sd_half('bi', '{n}½').
 compact_sd_delimiter('bi', '').
 compact_sd_ago('bi', '{0} bifo').
 compact_sd_in_future('bi', 'long {0}').

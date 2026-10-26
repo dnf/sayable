@@ -21,7 +21,7 @@ module SayableAge
         'month' => '{n} mont',
         'year' => '{n} ia',
       },
-      half: '{n} na af',
+      half: '{0} ɛn af',
       delimiter: ', ',
       just_born: 'Nyubon bebi',
       stages: {
@@ -48,6 +48,7 @@ module SayableAge
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
       ),
     )
   end

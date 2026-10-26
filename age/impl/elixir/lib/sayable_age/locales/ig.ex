@@ -17,10 +17,10 @@ defmodule SayableAge.Locales.IG do
       code: "ig",
       plural: (fn _ -> :other end),
       units: %{
-        day: "{n} ụbọchị",
-        week: "{n} izu",
-        month: "{n} ọnwa",
-        year: "{n} afọ"
+        day: "ụbọchị {n}",
+        week: "izu {n}",
+        month: "ọnwa {n}",
+        year: "afọ {n}"
       },
       half: "{0} na ọkara",
       delimiter: ", ",
@@ -30,15 +30,15 @@ defmodule SayableAge.Locales.IG do
         infant: "Nwa ọhụrụ",
         toddler: "Nwa nta",
         child: "Nwa",
-        teenager: "Nwokorobịa",
+        teenager: %{m: "Nwokorobịa", f: "Agbọghọbịa"},
         adult: "Okenye"
       },
       short: %{
         units: %{
-          day: "{n} ụbọchị",
-          week: "{n} izu",
-          month: "{n} ọnwa",
-          year: "{n} afọ"
+          day: "ụbọchị {n}",
+          week: "izu {n}",
+          month: "ọnwa {n}",
+          year: "afọ {n}"
         }
       },
       compact: %{

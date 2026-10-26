@@ -13,9 +13,9 @@ locale_sw <- list(
   code = "sw",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = "{n} sekunde",
-    minute = "{n} dakika",
-    hour = "{n} saa",
+    second = "sekunde {n}",
+    minute = "dakika {n}",
+    hour = "saa {n}",
     day = list(one = "siku {n}", other = "siku {n}"),
     week = list(one = "wiki {n}", other = "wiki {n}"),
     month = list(one = "mwezi {n}", other = "miezi {n}"),

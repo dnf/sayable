@@ -17,7 +17,7 @@ const StTimeLocale st_locale_sl = {
         { "dvanajst", "ena", "dve", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet", "deset", "enajst" },
         "polnoč",
         "poldne",
-        { "{h} ura", "pet po {h}", "deset po {h}", "petnajst po {h}", "dvajset po {h}", "dvajset pet po {h}", "trideset po {h}", "dvajset pet do {next_h}", "dvajset do {next_h}", "petnajst do {next_h}", "deset do {next_h}", "pet do {next_h}" }
+        { "{h}", "pet čez {h}", "deset čez {h}", "petnajst čez {h}", "dvajset čez {h}", "petindvajset čez {h}", "{h} trideset", "{h} petintrideset", "{h} štirideset", "{h} petinštirideset", "{h} petdeset", "{h} petinpetdeset" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

@@ -27,13 +27,13 @@
   (make-duration-locale
    :code "ru"
    :plural #'plural-ru-uk
-   :units (list (cons :second '((:one . "{n} секунда") (:few . "{n} секунды") (:many . "{n} секунд") (:other . "{n} секунд")))
-               (cons :minute '((:one . "{n} минута") (:few . "{n} минуты") (:many . "{n} минут") (:other . "{n} минут")))
-               (cons :hour '((:one . "{n} час") (:few . "{n} часа") (:many . "{n} часов") (:other . "{n} часов")))
-               (cons :day '((:one . "{n} день") (:few . "{n} дня") (:many . "{n} дней") (:other . "{n} дней")))
-               (cons :week '((:one . "{n} неделя") (:few . "{n} недели") (:many . "{n} недель") (:other . "{n} недель")))
-               (cons :month '((:one . "{n} месяц") (:few . "{n} месяца") (:many . "{n} месяцев") (:other . "{n} месяцев")))
-               (cons :year '((:one . "{n} год") (:few . "{n} года") (:many . "{n} лет") (:other . "{n} лет"))))
+   :units (list (cons :second '((:one . "{n} секунда") (:few . "{n} секунды") (:many . "{n} секунд") (:other . "{n} секунды")))
+               (cons :minute '((:one . "{n} минута") (:few . "{n} минуты") (:many . "{n} минут") (:other . "{n} минуты")))
+               (cons :hour '((:one . "{n} час") (:few . "{n} часа") (:many . "{n} часов") (:other . "{n} часа")))
+               (cons :day '((:one . "{n} день") (:few . "{n} дня") (:many . "{n} дней") (:other . "{n} дня")))
+               (cons :week '((:one . "{n} неделя") (:few . "{n} недели") (:many . "{n} недель") (:other . "{n} недели")))
+               (cons :month '((:one . "{n} месяц") (:few . "{n} месяца") (:many . "{n} месяцев") (:other . "{n} месяца")))
+               (cons :year '((:one . "{n} год") (:few . "{n} года") (:many . "{n} лет") (:other . "{n} года"))))
    :half "{n} с половиной"
    :delimiter ", "
    :just-now "только что"

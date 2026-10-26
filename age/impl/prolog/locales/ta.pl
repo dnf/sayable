@@ -23,7 +23,7 @@ sa_unit('ta', month, other, '{n} மாதங்கள்').
 sa_unit('ta', year, one, '{n} வயது').
 sa_unit('ta', year, other, '{n} வயது').
 
-sa_half('ta', '{0}ரை').
+sa_half('ta', '{n}½').
 sa_delimiter('ta', ', ').
 sa_just_born('ta', 'பிறந்த குழந்தை').
 

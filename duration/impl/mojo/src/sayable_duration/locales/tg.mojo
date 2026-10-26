@@ -87,7 +87,7 @@ fn build_tg() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} ним",
+        half="{0}у ним",
         delimiter=", ",
         just_now="ҳамин ҳоло",
         ago="{0} пеш",

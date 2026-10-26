@@ -23,11 +23,11 @@ export const ki: DurationLocale = {
     month:  { one: 'mwerĩ {n}', other: 'mĩerĩ {n}' },
     year:   { one: 'mwaka {n}', other: 'mĩaka {n}' },
   },
-  half: '{0} na nusu',
+  half: '{0} na nuthu',
   delimiter: ', ',
-  justNow: 'ũmũthĩ',
+  justNow: 'rĩu',
   ago: '{0} ĩhĩtũkĩte',
-  inFuture: '{0} ĩyothe',
+  inFuture: 'thutha wa {0}',
   short: {
     units: {
       second: 'sek. {n}',
@@ -39,7 +39,7 @@ export const ki: DurationLocale = {
       year:   { one: 'mwaka {n}', other: 'mĩaka {n}' },
     },
     ago: '{0} ĩhĩtũkĩte',
-    inFuture: '{0} ĩyothe',
+    inFuture: 'thutha wa {0}',
   },
   compact: {
     units: {
@@ -53,6 +53,6 @@ export const ki: DurationLocale = {
     },
     delimiter: '',
     ago: '{0} ĩhĩtũkĩte',
-    inFuture: '{0} ĩyothe',
+    inFuture: 'thutha wa {0}',
   },
 };

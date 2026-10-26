@@ -381,7 +381,7 @@ void test_sayableage_spanish() {
     ASSERT_EQ("ES months", pt.format_age("2025-01-15", "2025-07-15"), "6 meses"); // 25.7
     ASSERT_EQ("ES singular month compound", pt.format_age("2023-06-15", "2025-07-15"), "2 años, 1 mes"); // 25.8
     ASSERT_EQ("ES years+months", pt.format_age("2023-06-15", "2025-12-15"), "2 años, 6 meses"); // 25.9
-    ASSERT_EQ("ES half marker", pt.format_age("2022-06-15", "2025-12-15"), "3 y medio años"); // 25.10
+    ASSERT_EQ("ES half marker", pt.format_age("2022-06-15", "2025-12-15"), "3 años y medio"); // 25.10
     ASSERT_EQ("ES integer years", pt.format_age("2022-06-15", "2025-06-15"), "3 años"); // 25.11
     ASSERT_EQ("ES 7+ years", pt.format_age("2018-06-15", "2025-06-15"), "7 años"); // 25.12
 
@@ -458,13 +458,13 @@ void test_locale_hebrew() {
     SayableAge pt(locales::HE());
 
     ASSERT_EQ("he justBorn", pt.format_age("2025-06-15", "2025-06-15"), "רק נולד"); // 29.1
-    ASSERT_EQ("he 1 day one", pt.format_age("2025-06-14", "2025-06-15"), "יום 1"); // 29.2
+    ASSERT_EQ("he 1 day one", pt.format_age("2025-06-14", "2025-06-15"), "יום"); // 29.2
     ASSERT_EQ("he 3 days other", pt.format_age("2025-06-12", "2025-06-15"), "3 ימים"); // 29.3
     ASSERT_EQ("he 2 weeks dual", pt.format_age("2025-06-01", "2025-06-15"), "שבועיים"); // 29.4
     ASSERT_EQ("he 3 weeks other", pt.format_age("2025-05-25", "2025-06-15"), "3 שבועות"); // 29.5
     ASSERT_EQ("he 6 months", pt.format_age("2025-01-15", "2025-07-15"), "6 חודשים"); // 29.6
     ASSERT_EQ("he 3 months", pt.format_age("2025-03-15", "2025-06-15"), "3 חודשים"); // 29.7
-    ASSERT_EQ("he 2y dual 1m one", pt.format_age("2023-06-15", "2025-07-15"), "שנתיים, חודש 1"); // 29.8
+    ASSERT_EQ("he 2y dual 1m one", pt.format_age("2023-06-15", "2025-07-15"), "שנתיים, חודש"); // 29.8
     ASSERT_EQ("he 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 שנים וחצי"); // 29.9
     ASSERT_EQ("he 7y other", pt.format_age("2018-06-15", "2025-06-15"), "7 שנים"); // 29.10
     ASSERT_EQ("he stage m newborn", pt.format_stage("2025-06-15", "2025-06-15", "m"), "רק נולד"); // 29.11
@@ -503,7 +503,7 @@ void test_locale_indonesian() {
     ASSERT_EQ("id 1 day", pt.format_age("2025-06-14", "2025-06-15"), "1 hari"); // 29.29
     ASSERT_EQ("id 3 days", pt.format_age("2025-06-12", "2025-06-15"), "3 hari"); // 29.30
     ASSERT_EQ("id 6 months", pt.format_age("2025-01-15", "2025-07-15"), "6 bulan"); // 29.31
-    ASSERT_EQ("id 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 tahun setengah"); // 29.32
+    ASSERT_EQ("id 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 setengah tahun"); // 29.32
     ASSERT_EQ("id 7y", pt.format_age("2018-06-15", "2025-06-15"), "7 tahun"); // 29.33
 }
 
@@ -558,7 +558,7 @@ void test_section_31_weeks_and_days_across_month_ends() {
 void test_section_32_half_years_take_their_plural_form_from_whole_years() {
     ASSERT_EQ("32.1 Polish 3 is 'few'", SayableAge(locales::PL(), Compactness::Normal).format_age("2021-06-15", "2025-01-15"), "3 i p\303\263\305\202 lata"); // 32.1
     ASSERT_EQ("32.2 Polish 5 is 'many'", SayableAge(locales::PL(), Compactness::Short).format_age("2020-06-15", "2025-12-15"), "5 i p\303\263\305\202 lat"); // 32.2
-    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", SayableAge(locales::SHI(), Compactness::Normal).format_age("2005-06-08", "2012-06-07"), "6 iseggasen d uzgen"); // 32.3
+    ASSERT_EQ("32.3 Tachelhit 6 is 'few'", SayableAge(locales::SHI(), Compactness::Normal).format_age("2005-06-08", "2012-06-07"), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ"); // 32.3
 }
 
 // ================================================================

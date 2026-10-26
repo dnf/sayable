@@ -23,7 +23,7 @@ class CEBLocale {
       "year": "{n} ka tuig",
     }
   }
-  static half { "{n}½" }
+  static half { "{0} ug tunga" }
   static delimiter { ", " }
   static justNow { "karon lang" }
   static ago { "{0} ang milabay" }

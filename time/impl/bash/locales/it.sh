@@ -10,10 +10,10 @@
 # Source: locales/it.json
 
 _sayabletime_locale_it() {
-    _clock_hours=('dodici' 'una' 'due' 'tre' 'quattro' 'cinque' 'sei' 'sette' 'otto' 'nove' 'dieci' 'undici')
+    _clock_hours=('le dodici' 'l'\''una' 'le due' 'le tre' 'le quattro' 'le cinque' 'le sei' 'le sette' 'le otto' 'le nove' 'le dieci' 'le undici')
     _clock_midnight='mezzanotte'
     _clock_noon='mezzogiorno'
-    _clock_pattern_0='le {h}'
+    _clock_pattern_0='{h}'
     _clock_pattern_5='{h} e cinque'
     _clock_pattern_10='{h} e dieci'
     _clock_pattern_15='{h} e un quarto'

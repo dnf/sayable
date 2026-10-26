@@ -25,11 +25,11 @@ let KI* = DurationLocale(
     "month": pluralUnit(@[(pcOne, "mwerĩ {n}"), (pcOther, "mĩerĩ {n}")]),
     "year": pluralUnit(@[(pcOne, "mwaka {n}"), (pcOther, "mĩaka {n}")]),
   }.toOrderedTable,
-  half: "{0} na nusu",
+  half: "{0} na nuthu",
   delimiter: ", ",
-  justNow: "ũmũthĩ",
+  justNow: "rĩu",
   ago: "{0} ĩhĩtũkĩte",
-  inFuture: "{0} ĩyothe",
+  inFuture: "thutha wa {0}",
   short: some(CompactnessOverride(
     units: some({
       "second": simpleUnit("sek. {n}"),
@@ -43,7 +43,7 @@ let KI* = DurationLocale(
     half: none(string),
     delimiter: none(string),
     ago: some("{0} ĩhĩtũkĩte"),
-    inFuture: some("{0} ĩyothe"),
+    inFuture: some("thutha wa {0}"),
   )),
   compact: some(CompactnessOverride(
     units: some({
@@ -58,6 +58,6 @@ let KI* = DurationLocale(
     half: none(string),
     delimiter: some(""),
     ago: some("{0} ĩhĩtũkĩte"),
-    inFuture: some("{0} ĩyothe"),
+    inFuture: some("thutha wa {0}"),
   )),
 )

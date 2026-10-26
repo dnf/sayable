@@ -20,12 +20,12 @@ proc locale_duration_mi {} {
         second "{n} hēkona" \
         minute "{n} meneti" \
         hour "{n} hāora" \
-        day "rā {n}" \
-        week "wiki {n}" \
-        month "marama {n}" \
-        year "tau {n}" \
+        day "{n} rā" \
+        week "{n} wiki" \
+        month "{n} marama" \
+        year "{n} tau" \
     ]
-    set half "{0}½"
+    set half "{n}½"
     set delimiter {, }
     set just_now {ināianei}
     set ago "{0} i mua"
@@ -35,10 +35,10 @@ proc locale_duration_mi {} {
             second "{n} hēk" \
             minute "{n} men" \
             hour "{n} hāo" \
-            day "rā {n}" \
-            week "w {n}" \
-            month "m {n}" \
-            year "t {n}" \
+            day "{n} rā" \
+            week "{n} w" \
+            month "{n} m" \
+            year "{n} t" \
         ] \
         ago "{0} i mua" \
         in_future "ā te {0}" \

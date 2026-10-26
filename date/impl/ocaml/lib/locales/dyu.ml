@@ -24,7 +24,7 @@ let locale : date_locale =
     ; "Utikalo"
     ; "Sɛtanburukalo"
     ; "Ɔkutɔburukalo"
-    ; "Nowanburdukalo"
+    ; "Nowanburukalo"
     ; "Desanburukalo"
     ]
   ; weekdays =

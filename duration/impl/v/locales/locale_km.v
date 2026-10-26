@@ -30,7 +30,7 @@ pub const locale_km = DurationLocale{
 	delimiter: ', '
 	just_now: 'ឥឡូវនេះ'
 	ago: '{0}មុន'
-	in_future: 'ក្នុង{0}'
+	in_future: '{0}ទៀត'
 	has_short: true
 	short_override: DurationCompactnessOverride{
 		second: simple_unit('{n} វិនាទី')
@@ -49,7 +49,7 @@ pub const locale_km = DurationLocale{
 		has_year: true
 		ago: '{0}មុន'
 		has_ago: true
-		in_future: 'ក្នុង{0}'
+		in_future: '{0}ទៀត'
 		has_in_future: true
 	}
 	has_compact: true
@@ -74,7 +74,7 @@ pub const locale_km = DurationLocale{
 		has_delimiter: true
 		ago: '{0}មុន'
 		has_ago: true
-		in_future: 'ក្នុង{0}'
+		in_future: '{0}ទៀត'
 		has_in_future: true
 	}
 }

@@ -10,21 +10,21 @@
 # Source: locales/ki.json
 
 _sayabletime_locale_ki() {
-    _clock_hours=('ikũmi na igĩrĩ' 'ĩmwe' 'igĩrĩ' 'ithatũ' 'inya' 'ithano' 'ithathatũ' 'mũgwanja' 'inyanya' 'kenda' 'ikũmi' 'ikũmi na ĩmwe')
+    _clock_hours=('ithathatũ' 'mũgwanja' 'inyanya' 'kenda' 'ikũmi' 'ikũmi na ĩmwe' 'ikũmi na igĩrĩ' 'ĩmwe' 'igĩrĩ' 'ithatũ' 'inya' 'ithano')
     _clock_midnight='ũtukũ gatagatĩ'
     _clock_noon='mũthenya gatagatĩ'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='thaa {h}'
+    _clock_pattern_5='thaa {h} na ndagĩka ithano'
+    _clock_pattern_10='thaa {h} na ndagĩka ikũmi'
+    _clock_pattern_15='thaa {h} na ndagĩka ikũmi na ithano'
+    _clock_pattern_20='thaa {h} na ndagĩka mĩrongo ĩĩrĩ'
+    _clock_pattern_25='thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano'
+    _clock_pattern_30='thaa {h} na nuthu'
+    _clock_pattern_35='thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano'
+    _clock_pattern_40='thaa {h} na ndagĩka mĩrongo ĩna'
+    _clock_pattern_45='thaa {h} na ndagĩka mĩrongo ĩna na ithano'
+    _clock_pattern_50='thaa {h} na ndagĩka mĩrongo ĩtano'
+    _clock_pattern_55='thaa {h} na ndagĩka mĩrongo ĩtano na ithano'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _short_clock_am='Kiroko'

@@ -35,7 +35,7 @@ proc locale_duration_ak {} {
             second "sɛkɛnd {n}" \
             minute "sema {n}" \
             hour "dɔnhwere {n}" \
-            day "nna {n}" \
+            day [dict create one "da {n}" other "nna {n}"] \
             week [dict create one "dapɛn {n}" other "nnapɛn {n}"] \
             month [dict create one "bosome {n}" other "abosome {n}"] \
             year [dict create one "afe {n}" other "mfe {n}"] \
@@ -48,7 +48,7 @@ proc locale_duration_ak {} {
             second "sɛk {n}" \
             minute "sem {n}" \
             hour "dɔn {n}" \
-            day "nna {n}" \
+            day [dict create one "da {n}" other "nna {n}"] \
             week [dict create one "dapɛn {n}" other "nnapɛn {n}"] \
             month [dict create one "bos {n}" other "abos {n}"] \
             year [dict create one "afe {n}" other "mfe {n}"] \

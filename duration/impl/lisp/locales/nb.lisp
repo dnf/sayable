@@ -27,7 +27,7 @@
    :half "{n}½"
    :delimiter ", "
    :just-now "akkurat nå"
-   :ago "{0} siden"
+   :ago "for {0} siden"
    :in-future "om {0}"
    :short-units (list (cons :second "{n} sek")
                        (cons :minute "{n} min")
@@ -36,7 +36,7 @@
                        (cons :week "{n} u")
                        (cons :month "{n} md.")
                        (cons :year "{n} år"))
-   :short-ago "{0} siden"
+   :short-ago "for {0} siden"
    :short-in-future "om {0}"
    :compact-units (list (cons :second "{n}s")
                        (cons :minute "{n}m")
@@ -46,6 +46,6 @@
                        (cons :month "{n} m")
                        (cons :year "{n}å"))
    :compact-delimiter ""
-   :compact-ago "{0} siden"
+   :compact-ago "for {0} siden"
    :compact-in-future "om {0}"
 ))

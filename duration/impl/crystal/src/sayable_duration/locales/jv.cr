@@ -24,7 +24,7 @@ module SayableDuration
       },
       half: "{0} setengah",
       delimiter: ", ",
-      just_now: "saiki",
+      just_now: "lagi waé",
       ago: "{0} kepungkur",
       in_future: "ing {0}",
       short: CompactnessOverride.new(

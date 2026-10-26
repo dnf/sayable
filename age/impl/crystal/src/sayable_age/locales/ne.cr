@@ -25,7 +25,7 @@ module SayableAge
       stages: {
         "newborn" => StageLabel.new("नवजात शिशु"),
         "infant" => StageLabel.new("शिशु"),
-        "toddler" => StageLabel.new("बाल्यकाल"),
+        "toddler" => StageLabel.new("सानो बच्चा"),
         "child" => StageLabel.new("बालक"),
         "teenager" => StageLabel.new("किशोर"),
         "adult" => StageLabel.new("वयस्क"),

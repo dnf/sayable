@@ -25,7 +25,7 @@ pub const locale_ko = DurationLocale{
 	day: simple_unit('{n}일')
 	week: simple_unit('{n}주')
 	month: simple_unit('{n}개월')
-	year: simple_unit('{n}살')
+	year: simple_unit('{n}년')
 	half: '{0} 반'
 	delimiter: ' '
 	just_now: '방금'

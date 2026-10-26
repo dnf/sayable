@@ -27,13 +27,13 @@ pl
 						ifTrue: [ #few ]
 						ifFalse: [ #many ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. '{n} sekunda'. #few. '{n} sekundy'. #many. '{n} sekund'. #other. '{n} sekund' }).
-		'minute'. (Dictionary newFromPairs: { #one. '{n} minuta'. #few. '{n} minuty'. #many. '{n} minut'. #other. '{n} minut' }).
-		'hour'. (Dictionary newFromPairs: { #one. '{n} godzina'. #few. '{n} godziny'. #many. '{n} godzin'. #other. '{n} godzin' }).
-		'day'. (Dictionary newFromPairs: { #one. '{n} dzień'. #few. '{n} dni'. #many. '{n} dni'. #other. '{n} dni' }).
-		'week'. (Dictionary newFromPairs: { #one. '{n} tydzień'. #few. '{n} tygodnie'. #many. '{n} tygodni'. #other. '{n} tygodni' }).
-		'month'. (Dictionary newFromPairs: { #one. '{n} miesiąc'. #few. '{n} miesiące'. #many. '{n} miesięcy'. #other. '{n} miesięcy' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} rok'. #few. '{n} lata'. #many. '{n} lat'. #other. '{n} lat' }).
+		'second'. (Dictionary newFromPairs: { #one. '{n} sekunda'. #few. '{n} sekundy'. #many. '{n} sekund'. #other. '{n} sekundy' }).
+		'minute'. (Dictionary newFromPairs: { #one. '{n} minuta'. #few. '{n} minuty'. #many. '{n} minut'. #other. '{n} minuty' }).
+		'hour'. (Dictionary newFromPairs: { #one. '{n} godzina'. #few. '{n} godziny'. #many. '{n} godzin'. #other. '{n} godziny' }).
+		'day'. (Dictionary newFromPairs: { #one. '{n} dzień'. #few. '{n} dni'. #many. '{n} dni'. #other. '{n} dnia' }).
+		'week'. (Dictionary newFromPairs: { #one. '{n} tydzień'. #few. '{n} tygodnie'. #many. '{n} tygodni'. #other. '{n} tygodnia' }).
+		'month'. (Dictionary newFromPairs: { #one. '{n} miesiąc'. #few. '{n} miesiące'. #many. '{n} miesięcy'. #other. '{n} miesiąca' }).
+		'year'. (Dictionary newFromPairs: { #one. '{n} rok'. #few. '{n} lata'. #many. '{n} lat'. #other. '{n} roku' }).
 	}).
 	locale half: '{n} i pół'.
 	locale delimiter: ', '.

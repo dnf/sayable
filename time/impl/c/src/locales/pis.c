@@ -17,7 +17,7 @@ const StTimeLocale st_locale_pis = {
         { "twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven" },
         "midonaet",
         "midei",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} kilok", "faev minit pas {h}", "ten minit pas {h}", "kwata pas {h}", "twenti minit pas {h}", "twenti faev minit pas {h}", "haf pas {h}", "twenti faev minit tu {next_h}", "twenti minit tu {next_h}", "kwata tu {next_h}", "ten minit tu {next_h}", "faev minit tu {next_h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

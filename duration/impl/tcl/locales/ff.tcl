@@ -35,7 +35,7 @@ proc locale_duration_ff {} {
             second "majaango {n}" \
             minute "hojomaaje {n}" \
             hour [dict create one "waktu {n}" other "waktuuji {n}"] \
-            day "ñalɗe {n}" \
+            day [dict create one "ñalawma {n}" other "ñalɗe {n}"] \
             week [dict create one "yontere {n}" other "yontereeji {n}"] \
             month [dict create one "lewru {n}" other "lebbi {n}"] \
             year [dict create one "hitaande {n}" other "duuɓi {n}"] \
@@ -48,7 +48,7 @@ proc locale_duration_ff {} {
             second "maj {n}" \
             minute "hoj {n}" \
             hour [dict create one "wak {n}" other "wakji {n}"] \
-            day "ñalɗe {n}" \
+            day [dict create one "ñalawma {n}" other "ñalɗe {n}"] \
             week [dict create one "yont {n}" other "yontji {n}"] \
             month [dict create one "lew {n}" other "leb {n}"] \
             year [dict create one "hit {n}" other "duuɓi {n}"] \

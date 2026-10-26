@@ -26,7 +26,7 @@ kri
 		'month'. '{n} mont'.
 		'year'. '{n} ia'.
 	}).
-	locale half: '{n} na af'.
+	locale half: '{0} ɛn af'.
 	locale delimiter: ', '.
 	locale justNow: 'jos naw'.
 	locale ago: '{0} bak'.
@@ -54,6 +54,7 @@ kri
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} bak'.
 		#inFuture. 'na {0}'.

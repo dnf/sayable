@@ -16,9 +16,12 @@ _sayableduration_plural_te() {
 }
 
 _sayableduration_locale_te() {
-    _unit_second='{n} సెకను'
-    _unit_minute='{n} నిమిషం'
-    _unit_hour='{n} గంట'
+    _unit_second_one='{n} సెకను'
+    _unit_second_other='{n} సెకన్లు'
+    _unit_minute_one='{n} నిమిషం'
+    _unit_minute_other='{n} నిమిషాలు'
+    _unit_hour_one='{n} గంట'
+    _unit_hour_other='{n} గంటలు'
     _unit_day_one='{n} రోజు'
     _unit_day_other='{n} రోజులు'
     _unit_week_one='{n} వారం'
@@ -27,7 +30,7 @@ _sayableduration_locale_te() {
     _unit_month_other='{n} నెలలు'
     _unit_year_one='{n} సంవత్సరం'
     _unit_year_other='{n} సంవత్సరాలు'
-    _half='{0}న్నర'
+    _half='{n}½'
     _delimiter=', '
     _just_now='ఇప్పుడే'
     _ago='{0} క్రితం'

@@ -25,7 +25,10 @@ locale =
         Dict.fromList
             [ ( "second", Simple "{n} सेकंड" )
             , ( "minute", Simple "{n} मिनट" )
-            , ( "hour", Simple "{n} घंटा" )
+            , ( "hour", Pluralized
+              [ ( One, "{n} घंटा" )
+              , ( Other, "{n} घंटे" )
+              ] )
             , ( "day", Pluralized
               [ ( One, "{n} दिन" )
               , ( Other, "{n} दिन" )

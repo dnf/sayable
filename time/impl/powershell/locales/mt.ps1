@@ -10,22 +10,22 @@
 # Source: locales/mt.json
 
 function locale_mt {
-    $hours = @('tnax', 'waħda', 'tnejn', 'tlieta', 'erbgħa', 'ħamsa', 'sitta', 'sebgħa', 'tmienja', 'disgħa', 'għaxra', 'ħdax')
-    $midnight = 'nofsinhar'
+    $hours = @('it-tnax', 'is-siegħa', 'is-sagħtejn', 'it-tlieta', 'l-erbgħa', 'il-ħamsa', 'is-sitta', 'is-sebgħa', 'it-tmienja', 'id-disgħa', 'l-għaxra', 'il-ħdax')
+    $midnight = 'nofsillejl'
     $noon = 'nofsinhar'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} u ħamsa'
+    $patterns[10] = '{h} u għaxra'
+    $patterns[15] = '{h} u kwart'
+    $patterns[20] = '{h} u għoxrin'
+    $patterns[25] = '{h} u ħamsa u għoxrin'
+    $patterns[30] = '{h} u nofs'
+    $patterns[35] = '{next_h} neqsin ħamsa u għoxrin'
+    $patterns[40] = '{next_h} neqsin għoxrin'
+    $patterns[45] = '{next_h} neqsin kwart'
+    $patterns[50] = '{next_h} neqsin għaxra'
+    $patterns[55] = '{next_h} neqsin ħamsa'
     $clock = @{
         hours = $hours
         midnight = $midnight

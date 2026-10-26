@@ -89,7 +89,7 @@ fn build_tk() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}½",
+        half="{n} ýarym",
         delimiter=", ",
         just_now="häzir",
         ago="{0} öň",

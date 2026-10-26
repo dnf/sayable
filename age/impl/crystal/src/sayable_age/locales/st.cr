@@ -25,7 +25,7 @@ module SayableAge
       stages: {
         "newborn" => StageLabel.new("Lesea le sa tswa hlaha"),
         "infant" => StageLabel.new("Lesea"),
-        "toddler" => StageLabel.new("Ngwanana"),
+        "toddler" => StageLabel.new("Ngwana e monyane"),
         "child" => StageLabel.new("Ngwana"),
         "teenager" => StageLabel.new("Mosha"),
         "adult" => StageLabel.new("Motho e moholo"),

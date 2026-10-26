@@ -11,7 +11,7 @@
 
 _sayabledate_locale_fon() {
     _months=('Alɔfí' 'Alɔnyɔ' 'Ataɖaxɔ' 'Tlɛsún' 'Axɔsún' 'Ayɛsún' 'Nùxwásún' 'Ayidosún' 'Kɛnísún' 'Kanyásún' 'Abɔxwísún' 'Adɔxwísún')
-    _weekdays=('Sidégbe' 'Tɛnígbe' 'Talɛtagbe' 'Azǎngagbe' 'Nyɔnúgbe' 'Axɔ́sùgbe' 'Abámɛ́ta')
+    _weekdays=('Aklunɔzángbe' 'Tɛnígbe' 'Talɛtagbe' 'Azǎngagbe' 'Nyɔnúgbe' 'Axɔ́sùgbe' 'Sibigbe')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
@@ -24,7 +24,7 @@ _sayabledate_locale_fon() {
     _next_weekday='{weekday} e ja'
     _last_weekday='{weekday} e wá yí'
     _short_months=('Alɔ' 'Any' 'Ata' 'Tlɛ' 'Axɔ' 'Ayɛ' 'Nùx' 'Ayi' 'Kɛn' 'Kan' 'Abɔ' 'Adɔ')
-    _short_weekdays=('Sid' 'Tɛn' 'Tal' 'Azǎ' 'Nyɔ' 'Axɔ' 'Abá')
+    _short_weekdays=('Akl' 'Tɛn' 'Tal' 'Azǎ' 'Nyɔ' 'Axɔ' 'Sib')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
     _short_date_pattern_with_year='{day} {month} {year}'

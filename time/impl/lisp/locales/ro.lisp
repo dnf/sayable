@@ -20,7 +20,7 @@
     :hours (list "douăsprezece" "unu" "două" "trei" "patru" "cinci" "șase" "șapte" "opt" "nouă" "zece" "unsprezece")
     :midnight "miezul nopții"
     :noon "amiază"
-    :patterns (list (cons 0 "{h} ore") (cons 5 "cinci peste {h}") (cons 10 "zece peste {h}") (cons 15 "un sfert peste {h}") (cons 20 "douăzeci peste {h}") (cons 25 "douăzeci și cinci peste {h}") (cons 30 "jumătate peste {h}") (cons 35 "douăzeci și cinci înainte de {next_h}") (cons 40 "douăzeci înainte de {next_h}") (cons 45 "un sfert înainte de {next_h}") (cons 50 "zece înainte de {next_h}") (cons 55 "cinci înainte de {next_h}")))
+    :patterns (list (cons 0 "ora {h}") (cons 5 "{h} și cinci") (cons 10 "{h} și zece") (cons 15 "{h} și un sfert") (cons 20 "{h} și douăzeci") (cons 25 "{h} și douăzeci și cinci") (cons 30 "{h} și jumătate") (cons 35 "{next_h} fără douăzeci și cinci") (cons 40 "{next_h} fără douăzeci") (cons 45 "{next_h} fără un sfert") (cons 50 "{next_h} fără zece") (cons 55 "{next_h} fără cinci")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

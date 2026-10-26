@@ -19,45 +19,45 @@ locale_shi <- list(
   code = "shi",
   plural = plural,
   units = list(
-    second = list(one = "{n} tasint", few = "{n} tasinin", other = "{n} tasinin"),
-    minute = list(one = "{n} tusdiqt", few = "{n} tusdiqin", other = "{n} tusdiqin"),
-    hour = list(one = "{n} tasragt", few = "{n} tisragin", other = "{n} tisragin"),
-    day = list(one = "{n} ass", few = "{n} ussan", other = "{n} ass"),
-    week = list(one = "{n} imalass", few = "{n} imalassn", other = "{n} imalass"),
-    month = list(one = "{n} ayyur", few = "{n} ayyurn", other = "{n} ayyur"),
-    year = list(one = "{n} aseggas", few = "{n} iseggasen", other = "{n} aseggas")
+    second = list(one = "{n} ⵜⴰⵙⵉⵏⵜ", few = "{n} ⵜⵉⵙⵉⵏⵉⵏ", other = "{n} ⵜⵉⵙⵉⵏⵉⵏ"),
+    minute = list(one = "{n} ⵜⵓⵙⴷⵉⵇⵜ", few = "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", other = "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"),
+    hour = list(one = "{n} ⵜⴰⵙⵔⴰⴳⵜ", few = "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", other = "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"),
+    day = list(one = "{n} ⴰⵙⵙ", few = "{n} ⵓⵙⵙⴰⵏ", other = "{n} ⴰⵙⵙ"),
+    week = list(one = "{n} ⵉⵎⴰⵍⴰⵙⵙ", few = "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other = "{n} ⵉⵎⴰⵍⴰⵙⵙ"),
+    month = list(one = "{n} ⴰⵢⵢⵓⵔ", few = "{n} ⴰⵢⵢⵓⵔⵏ", other = "{n} ⴰⵢⵢⵓⵔ"),
+    year = list(one = "{n} ⴰⵙⴳⴳⵯⴰⵙ", few = "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other = "{n} ⴰⵙⴳⴳⵯⴰⵙ")
   ),
-  half = "{0} d uzgen",
+  half = "{0} ⴷ ⵓⵣⴳⵏ",
   delimiter = ", ",
-  just_now = "ɣilad",
-  ago = "ɣ {0} zzrin",
-  in_future = "ɣ {0}",
+  just_now = "ⵖⵉⵍⴰⴷ",
+  ago = "ⵖ {0} ⵣⵣⵔⵉⵏ",
+  in_future = "ⵖ {0}",
   short = list(
     units = list(
-      second = "{n}s",
-      minute = "{n}m",
-      hour = "{n}h",
-      day = "{n}d",
-      week = "{n}w",
-      month = "{n}mo",
-      year = "{n}y"
+      second = list(one = "{n} ⵜⴰⵙⵉⵏⵜ", few = "{n} ⵜⵉⵙⵉⵏⵉⵏ", other = "{n} ⵜⵉⵙⵉⵏⵉⵏ"),
+      minute = list(one = "{n} ⵜⵓⵙⴷⵉⵇⵜ", few = "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", other = "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"),
+      hour = list(one = "{n} ⵜⴰⵙⵔⴰⴳⵜ", few = "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", other = "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"),
+      day = list(one = "{n} ⴰⵙⵙ", few = "{n} ⵓⵙⵙⴰⵏ", other = "{n} ⴰⵙⵙ"),
+      week = list(one = "{n} ⵉⵎⴰⵍⴰⵙⵙ", few = "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", other = "{n} ⵉⵎⴰⵍⴰⵙⵙ"),
+      month = list(one = "{n} ⴰⵢⵢⵓⵔ", few = "{n} ⴰⵢⵢⵓⵔⵏ", other = "{n} ⴰⵢⵢⵓⵔ"),
+      year = list(one = "{n} ⴰⵙⴳⴳⵯⴰⵙ", few = "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", other = "{n} ⴰⵙⴳⴳⵯⴰⵙ")
     ),
-    ago = "ɣ {0} zzrin",
-    in_future = "ɣ {0}"
+    ago = "ⵖ {0} ⵣⵣⵔⵉⵏ",
+    in_future = "ⵖ {0}"
   ),
   compact = list(
     units = list(
-      second = "{n}s",
-      minute = "{n}m",
-      hour = "{n}h",
-      day = "{n}d",
-      week = "{n}w",
-      month = "{n}mo",
-      year = "{n}y"
+      second = "{n} ⵜⵙⵏ",
+      minute = "{n} ⵜⵙⴷ",
+      hour = "{n} ⵜⵙⵔ",
+      day = "{n} ⴰⵙⵙ",
+      week = "{n} ⵉⵎⵍ",
+      month = "{n} ⴰⵢⵔ",
+      year = "{n} ⴰⵙⴳ"
     ),
     half = "{n}½",
     delimiter = "",
-    ago = "ɣ {0} zzrin",
-    in_future = "ɣ {0}"
+    ago = "ⵖ {0} ⵣⵣⵔⵉⵏ",
+    in_future = "ⵖ {0}"
   )
 )

@@ -31,10 +31,10 @@ locale = DurationLocale
           , (Other, "{n} mionaid")
           ]
         , unitHour = Pluralized
-          [ (One, "{n} uair")
-          , (Two, "{n} uair")
-          , (Few, "{n} uairean")
-          , (Other, "{n} uair")
+          [ (One, "{n} uair a thìde")
+          , (Two, "{n} uair a thìde")
+          , (Few, "{n} uairean a thìde")
+          , (Other, "{n} uair a thìde")
           ]
         , unitDay = Pluralized
           [ (One, "{n} latha")

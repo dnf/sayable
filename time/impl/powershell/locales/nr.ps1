@@ -10,22 +10,22 @@
 # Source: locales/nr.json
 
 function locale_nr {
-    $hours = @('itshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyagalombili', 'isitshiyagalolunye', 'itshumi', 'itshumi lanye')
+    $hours = @('letjhumi nambili', 'lokuthoma', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithandathu', 'lekhomba', 'lobunane', 'lethoba', 'letjhumi', 'letjhumi nanye')
     $midnight = 'phakathi kobusuku'
     $noon = 'emini'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ihora {h}'
+    $patterns[5] = 'ihora {h} nemizuzu emihlanu'
+    $patterns[10] = 'ihora {h} nemizuzu elitjhumi'
+    $patterns[15] = 'ihora {h} nemizuzu elitjhumi nanhlanu'
+    $patterns[20] = 'ihora {h} nemizuzu engamatjhumi amabili'
+    $patterns[25] = 'ihora {h} nemizuzu engamatjhumi amabili nanhlanu'
+    $patterns[30] = 'ihora {h} nesiquntu'
+    $patterns[35] = 'ihora {h} nemizuzu engamatjhumi amathathu nanhlanu'
+    $patterns[40] = 'ihora {h} nemizuzu engamatjhumi amane'
+    $patterns[45] = 'ihora {h} nemizuzu engamatjhumi amane nanhlanu'
+    $patterns[50] = 'ihora {h} nemizuzu engamatjhumi amahlanu'
+    $patterns[55] = 'ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

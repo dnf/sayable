@@ -11,22 +11,22 @@
 
 % Kikuyu locale.
 
-st_hours('ki', ['ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano', 'ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe']).
+st_hours('ki', ['ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe', 'ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano']).
 st_midnight('ki', 'ũtukũ gatagatĩ').
 st_noon('ki', 'mũthenya gatagatĩ').
 
-st_pattern('ki', 0, '{h}:00').
-st_pattern('ki', 5, '{h}:05').
-st_pattern('ki', 10, '{h}:10').
-st_pattern('ki', 15, '{h}:15').
-st_pattern('ki', 20, '{h}:20').
-st_pattern('ki', 25, '{h}:25').
-st_pattern('ki', 30, '{h}:30').
-st_pattern('ki', 35, '{h}:35').
-st_pattern('ki', 40, '{h}:40').
-st_pattern('ki', 45, '{h}:45').
-st_pattern('ki', 50, '{h}:50').
-st_pattern('ki', 55, '{h}:55').
+st_pattern('ki', 0, 'thaa {h}').
+st_pattern('ki', 5, 'thaa {h} na ndagĩka ithano').
+st_pattern('ki', 10, 'thaa {h} na ndagĩka ikũmi').
+st_pattern('ki', 15, 'thaa {h} na ndagĩka ikũmi na ithano').
+st_pattern('ki', 20, 'thaa {h} na ndagĩka mĩrongo ĩĩrĩ').
+st_pattern('ki', 25, 'thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano').
+st_pattern('ki', 30, 'thaa {h} na nuthu').
+st_pattern('ki', 35, 'thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano').
+st_pattern('ki', 40, 'thaa {h} na ndagĩka mĩrongo ĩna').
+st_pattern('ki', 45, 'thaa {h} na ndagĩka mĩrongo ĩna na ithano').
+st_pattern('ki', 50, 'thaa {h} na ndagĩka mĩrongo ĩtano').
+st_pattern('ki', 55, 'thaa {h} na ndagĩka mĩrongo ĩtano na ithano').
 
 short_st_use24h('ki', true).
 short_st_format('ki', '{h}:{mm}').

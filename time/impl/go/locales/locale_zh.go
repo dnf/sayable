@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var ZH = st.TimeLocale{
 	Code: "zh",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"},
+		Hours:    [12]string{"十二", "一", "两", "三", "四", "五", "六", "七", "八", "九", "十", "十一"},
 		Midnight: "午夜",
 		Noon:     "正午",
-		Patterns: map[int]string{0: "{h}点整", 5: "{h}点五分", 10: "{h}点十分", 15: "{h}点十五分", 20: "{h}点二十分", 25: "{h}点二十五分", 30: "{h}点半", 35: "{h}点三十五分", 40: "{h}点四十分", 45: "{h}点四十五分", 50: "{h}点五十分", 55: "{h}点五十五分"},
+		Patterns: map[int]string{0: "{h}点整", 5: "{h}点零五分", 10: "{h}点十分", 15: "{h}点十五分", 20: "{h}点二十分", 25: "{h}点二十五分", 30: "{h}点半", 35: "{h}点三十五分", 40: "{h}点四十分", 45: "{h}点四十五分", 50: "{h}点五十分", 55: "{h}点五十五分"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

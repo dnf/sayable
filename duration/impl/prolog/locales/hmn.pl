@@ -44,6 +44,7 @@ compact_sd_unit('hmn', day, _, '{n}d').
 compact_sd_unit('hmn', week, _, '{n}w').
 compact_sd_unit('hmn', month, _, '{n}mo').
 compact_sd_unit('hmn', year, _, '{n}y').
+compact_sd_half('hmn', '{n}½').
 compact_sd_delimiter('hmn', '').
 compact_sd_ago('hmn', '{0} dhau los').
 compact_sd_in_future('hmn', 'hauv {0}').

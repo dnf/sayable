@@ -309,10 +309,6 @@ run_test() { local id="$1" expected="$2"; shift 2; _queue "${id}" test "${expect
 run_null() { local id="$1"; shift; _queue "${id}" null "" "$@"; }
 run_regex() { local id="$1" pattern="$2"; shift 2; _queue "${id}" regex "${pattern}" "$@"; }
 
-# A component is supported unless probing it is a usage error (exit 2).
-for _component in age date time duration; do
-    _queue "probe:${_component}" probe "" "${_component}" null
-done
 """
 
 HARNESS_CHECK = r"""
@@ -329,40 +325,14 @@ if [[ ${#_responses[@]} -ne ${#_ids[@]} ]]; then
     exit 1
 fi
 
-_has_age=true _has_date=true _has_time=true _has_duration=true
-for _i in "${!_ids[@]}"; do
-    if [[ "${_kinds[_i]}" == probe && "${_responses[_i]%%${_tab}*}" == 2 ]]; then
-        case "${_ids[_i]}" in
-            probe:age) _has_age=false ;;
-            probe:date) _has_date=false ;;
-            probe:time) _has_time=false ;;
-            probe:duration) _has_duration=false ;;
-        esac
-    fi
-done
-
+# Every CLI implements all four libraries (cli/SPEC.md), so nothing is
+# skipped: a missing library shows up as failing tests.
 echo "Testing: ${CLI}"
-echo "Components: age=${_has_age} date=${_has_date} time=${_has_time} duration=${_has_duration}"
-
-_supported() {
-    case "$1" in
-        age:*) ${_has_age} ;;
-        date:*) ${_has_date} ;;
-        time:*) ${_has_time} ;;
-        dur:*) ${_has_duration} ;;
-        *) false ;;
-    esac
-}
 
 for _i in "${!_ids[@]}"; do
     _id="${_ids[_i]}"
     _kind="${_kinds[_i]}"
     _expected="${_expects[_i]}"
-    [[ "${_kind}" == probe ]] && continue
-    if ! _supported "${_id}"; then
-        _skip=$((_skip + 1))
-        continue
-    fi
     _total=$((_total + 1))
     _response="${_responses[_i]}"
     _rc="${_response%%${_tab}*}"
@@ -388,9 +358,6 @@ done
 # SUMMARY
 # ══════════════════════════════════════════════════════════════
 echo
-if [[ ${_skip} -gt 0 ]]; then
-    printf "${_yellow}%d skipped${_reset} (unsupported components)\n" "${_skip}"
-fi
 if [[ ${_fail} -eq 0 ]]; then
     printf "${_green}All %d tests passed.${_reset}\n" "${_total}"
 else
@@ -426,17 +393,15 @@ def generate():
     out.append("# Counters")
     out.append("_pass=0")
     out.append("_fail=0")
-    out.append("_skip=0")
     out.append("_total=0")
     out.append("")
     out.append("# Color support")
     out.append('if [[ -t 1 ]]; then')
     out.append('    _red="\\033[31m"')
     out.append('    _green="\\033[32m"')
-    out.append('    _yellow="\\033[33m"')
     out.append('    _reset="\\033[0m"')
     out.append("else")
-    out.append('    _red="" _green="" _yellow="" _reset=""')
+    out.append('    _red="" _green="" _reset=""')
     out.append("fi")
     out.extend(HARNESS_RUNTIME.rstrip("\n").split("\n"))
 

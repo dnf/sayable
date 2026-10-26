@@ -50,11 +50,11 @@ locale =
     , today = "tey"
     , tomorrow = "suba"
     , yesterday = "démb"
-    , dayAfterTomorrow = Just "suba-suba"
-    , dayBeforeYesterday = Just "démb-démb"
-    , thisWeekday = Just "{weekday} bi"
-    , nextWeekday = Just "{weekday} bi ñëw"
-    , lastWeekday = Just "{weekday} bi weex"
+    , dayAfterTomorrow = Just "gannaaw-suba"
+    , dayBeforeYesterday = Just "bërki-démb"
+    , thisWeekday = Just "{weekday} jii"
+    , nextWeekday = Just "{weekday} jiy ñëw"
+    , lastWeekday = Just "{weekday} ji weesu"
     , monthsInDate = Nothing
     , short =
         Just

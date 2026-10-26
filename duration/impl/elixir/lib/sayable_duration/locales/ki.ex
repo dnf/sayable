@@ -25,11 +25,11 @@ defmodule SayableDuration.Locales.KI do
         month: %{one: "mwerĩ {n}", other: "mĩerĩ {n}"},
         year: %{one: "mwaka {n}", other: "mĩaka {n}"}
       },
-      half: "{0} na nusu",
+      half: "{0} na nuthu",
       delimiter: ", ",
-      just_now: "ũmũthĩ",
+      just_now: "rĩu",
       ago: "{0} ĩhĩtũkĩte",
-      in_future: "{0} ĩyothe",
+      in_future: "thutha wa {0}",
       short: %{
         units: %{
           second: "sek. {n}",
@@ -41,7 +41,7 @@ defmodule SayableDuration.Locales.KI do
           year: %{one: "mwaka {n}", other: "mĩaka {n}"}
         },
         ago: "{0} ĩhĩtũkĩte",
-        in_future: "{0} ĩyothe"
+        in_future: "thutha wa {0}"
       },
       compact: %{
         units: %{
@@ -55,7 +55,7 @@ defmodule SayableDuration.Locales.KI do
         },
         delimiter: "",
         ago: "{0} ĩhĩtũkĩte",
-        in_future: "{0} ĩyothe"
+        in_future: "thutha wa {0}"
       }
     }
   end

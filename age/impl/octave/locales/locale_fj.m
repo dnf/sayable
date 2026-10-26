@@ -16,7 +16,7 @@ function loc = locale_fj()
   loc.units.week = '{n} na macawa';
   loc.units.month = '{n} na vula';
   loc.units.year = '{n} na yabaki';
-  loc.half = '{n} kei na levu ni wasei';
+  loc.half = '{0} kei na veimama';
   loc.delimiter = ', ';
   loc.just_born = 'Gone vou';
   loc.stages.newborn = 'Gone vou';
@@ -33,5 +33,6 @@ function loc = locale_fj()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
 endfunction

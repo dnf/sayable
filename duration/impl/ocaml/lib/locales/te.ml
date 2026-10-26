@@ -14,9 +14,18 @@ open Types
 let locale : duration_locale =
   { code = "te"
   ; plural = (fun n -> if n = 1 then One else Other)
-  ; second = Simple "{n} సెకను"
-  ; minute = Simple "{n} నిమిషం"
-  ; hour = Simple "{n} గంట"
+  ; second = Pluralized
+      [ (One, "{n} సెకను")
+      ; (Other, "{n} సెకన్లు")
+      ]
+  ; minute = Pluralized
+      [ (One, "{n} నిమిషం")
+      ; (Other, "{n} నిమిషాలు")
+      ]
+  ; hour = Pluralized
+      [ (One, "{n} గంట")
+      ; (Other, "{n} గంటలు")
+      ]
   ; day = Pluralized
       [ (One, "{n} రోజు")
       ; (Other, "{n} రోజులు")
@@ -33,7 +42,7 @@ let locale : duration_locale =
       [ (One, "{n} సంవత్సరం")
       ; (Other, "{n} సంవత్సరాలు")
       ]
-  ; half = "{0}న్నర"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_now = "ఇప్పుడే"
   ; ago = "{0} క్రితం"

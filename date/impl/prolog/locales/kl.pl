@@ -16,7 +16,7 @@ sd_weekdays('kl', ['sapaat', 'ataasinngorneq', 'marlunngorneq', 'pingasunngorneq
 sd_day_format('kl', '{n}.').
 
 sd_date_pattern('kl', '{month} {day}').
-sd_date_pattern_with_year('kl', '{day} {month} {year}').
+sd_date_pattern_with_year('kl', '{month} {day} {year}').
 
 sd_today('kl', 'ullumi').
 sd_tomorrow('kl', 'aqagu').
@@ -32,7 +32,7 @@ short_sd_weekdays('kl', ['sap', 'ata', 'mar', 'pin', 'sis', 'tal', 'arf']).
 short_sd_day_format('kl', '{n}.').
 short_sd_clear_exceptions('kl').
 short_sd_date_pattern('kl', '{month} {day}').
-short_sd_date_pattern_with_year('kl', '{day} {month} {year}').
+short_sd_date_pattern_with_year('kl', '{month} {day} {year}').
 
 compact_sd_date_pattern('kl', '{m}-{d}').
 compact_sd_date_pattern_with_year('kl', '{year}-{m}-{d}').

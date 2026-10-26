@@ -16,7 +16,7 @@
           :week "{n} wik"
           :month "{n} manis"
           :year "{n} yia"}
-   :half "{n} en haf"
+   :half "{0} en haf"
    :delimiter ", "
    :just-born "Niufala bebi"
    :stages {:newborn "Niufala bebi"
@@ -27,5 +27,5 @@
             :adult "Bigfala"
 }
    :short {:units {:day "{n} dei" :week "{n} wik" :month "{n} man" :year "{n} yia"}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

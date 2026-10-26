@@ -11,22 +11,22 @@
 
 % Northern Sotho locale.
 
-st_hours('nso', ['lesome pedi', 'tee', 'pedi', 'tharo', 'nne', 'hlano', 'tshela', 'šupa', 'seswai', 'senyane', 'lesome', 'lesome tee']).
+st_hours('nso', ['lesomepedi', 'pele', 'bobedi', 'boraro', 'bone', 'bohlano', 'botshela', 'bošupa', 'seswai', 'senyane', 'lesome', 'lesometee']).
 st_midnight('nso', 'bošego gare').
 st_noon('nso', 'mosegare').
 
-st_pattern('nso', 0, '{h}:00').
-st_pattern('nso', 5, '{h}:05').
-st_pattern('nso', 10, '{h}:10').
-st_pattern('nso', 15, '{h}:15').
-st_pattern('nso', 20, '{h}:20').
-st_pattern('nso', 25, '{h}:25').
-st_pattern('nso', 30, '{h}:30').
-st_pattern('nso', 35, '{h}:35').
-st_pattern('nso', 40, '{h}:40').
-st_pattern('nso', 45, '{h}:45').
-st_pattern('nso', 50, '{h}:50').
-st_pattern('nso', 55, '{h}:55').
+st_pattern('nso', 0, 'iri ya {h}').
+st_pattern('nso', 5, 'iri ya {h} le metsotso ye mehlano').
+st_pattern('nso', 10, 'iri ya {h} le metsotso ye lesome').
+st_pattern('nso', 15, 'iri ya {h} le kotara').
+st_pattern('nso', 20, 'iri ya {h} le metsotso ye masomepedi').
+st_pattern('nso', 25, 'iri ya {h} le metsotso ye masomepedi-hlano').
+st_pattern('nso', 30, 'iri ya {h} le seripagare').
+st_pattern('nso', 35, 'iri ya {h} le metsotso ye masometharo-hlano').
+st_pattern('nso', 40, 'iri ya {h} le metsotso ye masomenne').
+st_pattern('nso', 45, 'iri ya {h} le metsotso ye masomenne-hlano').
+st_pattern('nso', 50, 'iri ya {h} le metsotso ye masomehlano').
+st_pattern('nso', 55, 'iri ya {h} le metsotso ye masomehlano-hlano').
 
 short_st_use24h('nso', false).
 short_st_format('nso', '{h}:{mm} {ampm}').

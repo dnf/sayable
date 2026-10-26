@@ -24,9 +24,9 @@ ta
 		'day'. (Dictionary newFromPairs: { #one. '{n} நாள்'. #other. '{n} நாட்கள்' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} வாரம்'. #other. '{n} வாரங்கள்' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} மாதம்'. #other. '{n} மாதங்கள்' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} வயது'. #other. '{n} வயது' }).
+		'year'. (Dictionary newFromPairs: { #one. '{n} ஆண்டு'. #other. '{n} ஆண்டுகள்' }).
 	}).
-	locale half: '{0}ரை'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'இப்போதுதான்'.
 	locale ago: '{0} முன்'.

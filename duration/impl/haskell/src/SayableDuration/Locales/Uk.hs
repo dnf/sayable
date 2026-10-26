@@ -22,43 +22,43 @@ locale = DurationLocale
           [ (One, "{n} секунда")
           , (Few, "{n} секунди")
           , (Many, "{n} секунд")
-          , (Other, "{n} секунд")
+          , (Other, "{n} секунди")
           ]
         , unitMinute = Pluralized
           [ (One, "{n} хвилина")
           , (Few, "{n} хвилини")
           , (Many, "{n} хвилин")
-          , (Other, "{n} хвилин")
+          , (Other, "{n} хвилини")
           ]
         , unitHour = Pluralized
           [ (One, "{n} година")
           , (Few, "{n} години")
           , (Many, "{n} годин")
-          , (Other, "{n} годин")
+          , (Other, "{n} години")
           ]
         , unitDay = Pluralized
           [ (One, "{n} день")
           , (Few, "{n} дні")
           , (Many, "{n} днів")
-          , (Other, "{n} днів")
+          , (Other, "{n} дня")
           ]
         , unitWeek = Pluralized
           [ (One, "{n} тиждень")
           , (Few, "{n} тижні")
           , (Many, "{n} тижнів")
-          , (Other, "{n} тижнів")
+          , (Other, "{n} тижня")
           ]
         , unitMonth = Pluralized
           [ (One, "{n} місяць")
           , (Few, "{n} місяці")
           , (Many, "{n} місяців")
-          , (Other, "{n} місяців")
+          , (Other, "{n} місяця")
           ]
         , unitYear = Pluralized
           [ (One, "{n} рік")
           , (Few, "{n} роки")
           , (Many, "{n} років")
-          , (Other, "{n} років")
+          , (Other, "{n} року")
           ]
         }
     , localeHalf = "{n} з половиною"

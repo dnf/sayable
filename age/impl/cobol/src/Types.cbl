@@ -266,6 +266,7 @@
  01 WS-FMT-DOB-LEN          PIC 9(4) VALUE 0.
  01 WS-FMT-AS-OF            PIC X(256).
  01 WS-FMT-AS-OF-LEN        PIC 9(4) VALUE 0.
+ 01 WS-NOW-STAMP            PIC X(21).
  01 WS-FMT-GENDER           PIC X(1).
 
 *> Loop index

@@ -32,7 +32,7 @@ final mk = AgeLocale(
   toddler: stageNeutral('Мало дете'),
   child: stageNeutral('Дете'),
   teenager: stageNeutral('Тинејџер'),
-  adult: stageNeutral('Возрасен'),
+  adult: stageGendered('Возрасен', 'Возрасна'),
   short: CompactnessOverride(
     day: pluralUnit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дена'}),
     week: simpleUnit('{n} сед.'),

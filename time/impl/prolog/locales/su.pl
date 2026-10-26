@@ -15,18 +15,18 @@ st_hours('su', ['dua welas', 'hiji', 'dua', 'tilu', 'opat', 'lima', 'genep', 'tu
 st_midnight('su', 'tengah peuting').
 st_noon('su', 'beurang').
 
-st_pattern('su', 0, '{h}:00').
-st_pattern('su', 5, '{h}:05').
-st_pattern('su', 10, '{h}:10').
-st_pattern('su', 15, '{h}:15').
-st_pattern('su', 20, '{h}:20').
-st_pattern('su', 25, '{h}:25').
-st_pattern('su', 30, '{h}:30').
-st_pattern('su', 35, '{h}:35').
-st_pattern('su', 40, '{h}:40').
-st_pattern('su', 45, '{h}:45').
-st_pattern('su', 50, '{h}:50').
-st_pattern('su', 55, '{h}:55').
+st_pattern('su', 0, 'jam {h}').
+st_pattern('su', 5, 'jam {h} leuwih lima menit').
+st_pattern('su', 10, 'jam {h} leuwih sapuluh menit').
+st_pattern('su', 15, 'jam {h} leuwih saparapat').
+st_pattern('su', 20, 'jam {h} leuwih dua puluh menit').
+st_pattern('su', 25, 'jam {h} leuwih dua puluh lima menit').
+st_pattern('su', 30, 'satengah {next_h}').
+st_pattern('su', 35, 'jam {next_h} kurang dua puluh lima menit').
+st_pattern('su', 40, 'jam {next_h} kurang dua puluh menit').
+st_pattern('su', 45, 'jam {next_h} kurang saparapat').
+st_pattern('su', 50, 'jam {next_h} kurang sapuluh menit').
+st_pattern('su', 55, 'jam {next_h} kurang lima menit').
 
 short_st_use24h('su', false).
 short_st_format('su', '{h}:{mm} {ampm}').

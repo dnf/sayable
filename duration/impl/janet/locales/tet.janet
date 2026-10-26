@@ -25,5 +25,5 @@
    :ago "{0} liu ba"
    :in-future "iha {0}"
    :short {:units {:second "seg. {n}" :minute "min. {n}" :hour "oras {n}" :day "loron {n}" :week "sem. {n}" :month "fulan {n}" :year "tinan {n}"} :ago "{0} liu ba" :in-future "iha {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :delimiter "" :ago "{0} liu ba" :in-future "iha {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} liu ba" :in-future "iha {0}"}
 })

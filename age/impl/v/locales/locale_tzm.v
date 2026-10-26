@@ -30,20 +30,20 @@ pub const locale_tzm = AgeLocale{
 	delimiter: ', '
 	just_born: 'Iɣ d illul'
 	newborn: stage_neutral('Iɣ d illul')
-	infant: stage_neutral('Agellid')
+	infant: stage_neutral('Llufan')
 	toddler: stage_gendered('Aḥenjir', 'Taḥenjirt')
-	child: stage_gendered('Afrux', 'Tafruxṭ')
+	child: stage_gendered('Afrux', 'Tafruxt')
 	teenager: stage_gendered('Aɛrim', 'Taɛrimt')
 	adult: stage_gendered('Argaz', 'Tamṭṭuṭ')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('{n} d')
+		day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.other: '{n} ussan'})
 		has_day: true
-		week: simple_unit('{n} wk')
+		week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.other: '{n} imalassn'})
 		has_week: true
-		month: simple_unit('{n} mo')
+		month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.other: '{n} ayyurn'})
 		has_month: true
-		year: simple_unit('{n} yr')
+		year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.other: '{n} iseggasen'})
 		has_year: true
 	}
 	has_compact: true

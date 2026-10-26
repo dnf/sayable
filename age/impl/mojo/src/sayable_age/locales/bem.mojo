@@ -40,7 +40,7 @@ fn build_bem() -> AgeLocale:
     var toddler = stage_neutral("Umwana")
     var child = stage_neutral("Umwana")
     var teenager = stage_neutral("Umunyamata")
-    var adult = stage_neutral("Umulumendo")
+    var adult = stage_neutral("Umukalamba")
 
     var short_ovr = CompactnessOverride()
     short_ovr.day = plural_unit(one="ubushiku {n}", other="inshiku {n}")

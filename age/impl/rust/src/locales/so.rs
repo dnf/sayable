@@ -24,21 +24,15 @@ pub fn locale() -> AgeLocale {
         },
         units: Units {
             day: UnitForms::plural(&[
-                (PluralCategory::One, "maalin {n}"),
-                (PluralCategory::Other, "maalmood {n}"),
+                (PluralCategory::One, "{n} maalin"),
+                (PluralCategory::Other, "{n} maalmood"),
             ]),
-            week: UnitForms::plural(&[
-                (PluralCategory::One, "toddobaad {n}"),
-                (PluralCategory::Other, "toddobaadyo {n}"),
-            ]),
+            week: UnitForms::simple("{n} toddobaad"),
             month: UnitForms::plural(&[
-                (PluralCategory::One, "bil {n}"),
-                (PluralCategory::Other, "bilood {n}"),
+                (PluralCategory::One, "{n} bil"),
+                (PluralCategory::Other, "{n} bilood"),
             ]),
-            year: UnitForms::plural(&[
-                (PluralCategory::One, "sano {n}"),
-                (PluralCategory::Other, "sanooyin {n}"),
-            ]),
+            year: UnitForms::simple("{n} sano"),
         },
         half: "{n}½".to_string(),
         delimiter: ", ".to_string(),

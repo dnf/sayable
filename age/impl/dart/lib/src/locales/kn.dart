@@ -22,7 +22,7 @@ final kn = AgeLocale(
   week: pluralUnit({PluralCategory.one: '{n} ವಾರ', PluralCategory.other: '{n} ವಾರಗಳು'}),
   month: pluralUnit({PluralCategory.one: '{n} ತಿಂಗಳು', PluralCategory.other: '{n} ತಿಂಗಳುಗಳು'}),
   year: pluralUnit({PluralCategory.one: '{n} ವರ್ಷ', PluralCategory.other: '{n} ವರ್ಷಗಳು'}),
-  half: '{0}ವರೆ',
+  half: '{n}½',
   delimiter: ', ',
   justBorn: 'ನವಜಾತ ಶಿಶು',
   newborn: stageNeutral('ನವಜಾತ ಶಿಶು'),

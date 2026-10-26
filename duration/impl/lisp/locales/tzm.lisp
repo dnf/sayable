@@ -36,13 +36,13 @@
    :just-now "ɣilad"
    :ago "ɣ {0} zzrin"
    :in-future "ɣ {0}"
-   :short-units (list (cons :second "{n}s")
-                       (cons :minute "{n}m")
-                       (cons :hour "{n}h")
-                       (cons :day "{n}d")
-                       (cons :week "{n}w")
-                       (cons :month "{n}mo")
-                       (cons :year "{n}y"))
+   :short-units (list (cons :second '((:one . "{n} tasint") (:other . "{n} tisinin")))
+                       (cons :minute '((:one . "{n} tusdiqt") (:other . "{n} tusdiqin")))
+                       (cons :hour '((:one . "{n} tasragt") (:other . "{n} tisragin")))
+                       (cons :day '((:one . "{n} ass") (:other . "{n} ussan")))
+                       (cons :week '((:one . "{n} imalass") (:other . "{n} imalassn")))
+                       (cons :month '((:one . "{n} ayyur") (:other . "{n} ayyurn")))
+                       (cons :year '((:one . "{n} aseggas") (:other . "{n} iseggasen"))))
    :short-ago "ɣ {0} zzrin"
    :short-in-future "ɣ {0}"
    :compact-units (list (cons :second "{n}s")

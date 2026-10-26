@@ -18,8 +18,8 @@ final qu = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': simpleUnit('{n} ñiqin'),
-    'minute': simpleUnit('{n} chiniku'),
+    'second': simpleUnit('{n} sikundu'),
+    'minute': simpleUnit('{n} minutu'),
     'hour': simpleUnit('{n} ura'),
     'day': simpleUnit('{n} p\'unchaw'),
     'week': simpleUnit('{n} simana'),
@@ -33,8 +33,8 @@ final qu = DurationLocale(
   inFuture: '{0} qhipata',
   short: CompactnessOverride(
     units: {
-      'second': simpleUnit('{n} ñiq'),
-      'minute': simpleUnit('{n} chi'),
+      'second': simpleUnit('{n} sik'),
+      'minute': simpleUnit('{n} min'),
       'hour': simpleUnit('{n} ura'),
       'day': simpleUnit('{n} p\'un'),
       'week': simpleUnit('{n} sim'),

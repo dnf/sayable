@@ -32,7 +32,7 @@
          "infant" (stage-label "Lesea" #f #f)
          "toddler" (stage-label "Ngwana yo monnye" #f #f)
          "child" (stage-label "Ngwana" #f #f)
-         "teenager" (stage-label "Lekgarebe" #f #f)
+         "teenager" (stage-label "Mosha" #f #f)
          "adult" (stage-label "Motho yo mogolo" #f #f))
    (compactness-override (hash "type" "pluralized" "forms" (hash "one" "letsatsi {n}" "other" "malatsi {n}")) (hash "type" "pluralized" "forms" (hash "one" "beke {n}" "other" "dibeke {n}")) (hash "type" "pluralized" "forms" (hash "one" "kgw. {n}" "other" "dikgw. {n}")) (hash "type" "pluralized" "forms" (hash "one" "ngw. {n}" "other" "dingw. {n}")) #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)

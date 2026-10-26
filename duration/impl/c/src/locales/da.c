@@ -30,7 +30,7 @@ const SduDurationLocale sdu_locale_da = {
     },
     "{n}½", ", ",
     "lige nu",
-    "{0} siden", "om {0}",
+    "for {0} siden", "om {0}",
     true, { true, { "{n} sek.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} dag", NULL, NULL, NULL, "{n} dage" } }, true, { NULL, { NULL, "{n} uge", NULL, NULL, NULL, "{n} uger" } }, true, { NULL, { NULL, "{n} md.", NULL, NULL, NULL, "{n} mdr." } }, true, { "{n} år", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} siden", true, "om {0}" },
     true, { true, { "{n} s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} u", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} år", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} siden", true, "om {0}" }
 };

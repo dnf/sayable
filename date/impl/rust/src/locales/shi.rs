@@ -18,7 +18,7 @@ pub fn locale() -> DateLocale {
     DateLocale {
         code: "shi".to_string(),
         months: ["ⵉⵏⵏⴰⵢⵔ".to_string(), "ⴱⵕⴰⵢⵕ".to_string(), "ⵎⴰⵕⵚ".to_string(), "ⵉⴱⵔⵉⵔ".to_string(), "ⵎⴰⵢⵢⵓ".to_string(), "ⵢⵓⵏⵢⵓ".to_string(), "ⵢⵓⵍⵢⵓⵣ".to_string(), "ⵖⵓⵛⵜ".to_string(), "ⵛⵓⵜⴰⵏⴱⵉⵔ".to_string(), "ⴽⵜⵓⴱⵔ".to_string(), "ⵏⵓⵡⴰⵏⴱⵉⵔ".to_string(), "ⴷⵓⵊⴰⵏⴱⵉⵔ".to_string()],
-        weekdays: ["ⴰⵙⴰⵎⴰⵙ".to_string(), "ⴰⵢⵏⴰⵙ".to_string(), "ⴰⵙⵉⵏⴰⵙ".to_string(), "ⴰⴽⵕⴰⵙ".to_string(), "ⴰⴽⵡⴰⵙ".to_string(), "ⴰⵙⵉⵎⵡⴰⵙ".to_string(), "ⴰⵙⵉⴹⵢⴰⵙ".to_string()],
+        weekdays: ["ⴰⵙⴰⵎⴰⵙ".to_string(), "ⴰⵢⵏⴰⵙ".to_string(), "ⴰⵙⵉⵏⴰⵙ".to_string(), "ⴰⴽⵕⴰⵙ".to_string(), "ⴰⴽⵡⴰⵙ".to_string(), "ⵙⵉⵎⵡⴰⵙ".to_string(), "ⴰⵙⵉⴹⵢⴰⵙ".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),

@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ig.json](../../locales/ig.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): 'elekere {h}' + additive 'na nkeji N' (and N minutes) with Igbo numerals (ise, iri, iri na ise, iri abụọ ...), 'na ọkara' for half past. Chose additive for 35-55 over the subtractive 'ọ fọrọ nkeji iri ka ọ kụọ elekere atọ', which is longer and whose exact wording I am less sure of. Also changed noon 'ehihie' (afternoon/daytime) to 'etiti ehihie' (midday).
+
 ## Age
 
 ### Age formatting
@@ -13,40 +21,40 @@ Plural rule: `other_only` (categories: other)
 | Age               | Normal          | Short           | Compact   |
 | ----------------- | --------------- | --------------- | --------- |
 | Born today        | Nwa ọhụrụ       | Nwa ọhụrụ       | Nwa ọhụrụ |
-| 1 day             | 1 ụbọchị        | 1 ụbọchị        | 1d        |
-| 3 days            | 3 ụbọchị        | 3 ụbọchị        | 3d        |
-| 6 days            | 6 ụbọchị        | 6 ụbọchị        | 6d        |
-| 1 week            | 1 izu           | 1 izu           | 1w        |
-| 1 week, 1 day     | 1 izu, 1 ụbọchị | 1 izu, 1 ụbọchị | 1w1d      |
-| 2 weeks           | 2 izu           | 2 izu           | 2w        |
-| 2 weeks, 3 days   | 2 izu, 3 ụbọchị | 2 izu, 3 ụbọchị | 2w3d      |
-| 3 months          | 3 ọnwa          | 3 ọnwa          | 3m        |
-| 6 months          | 6 ọnwa          | 6 ọnwa          | 6m        |
-| 11 months         | 11 ọnwa         | 11 ọnwa         | 11m       |
-| 12 months         | 12 ọnwa         | 12 ọnwa         | 12m       |
-| 23 months         | 23 ọnwa         | 23 ọnwa         | 23m       |
-| 2 years           | 2 afọ           | 2 afọ           | 2y        |
-| 2 years, 1 month  | 2 afọ, 1 ọnwa   | 2 afọ, 1 ọnwa   | 2y1m      |
-| 2 years, 6 months | 2 afọ, 6 ọnwa   | 2 afọ, 6 ọnwa   | 2y6m      |
-| 3 years           | 3 afọ           | 3 afọ           | 3y        |
-| 3½ years          | 3 afọ na ọkara  | 3 afọ na ọkara  | 3½y       |
-| 5 years           | 5 afọ           | 5 afọ           | 5y        |
-| 5½ years          | 5 afọ na ọkara  | 5 afọ na ọkara  | 5½y       |
-| 7 years           | 7 afọ           | 7 afọ           | 7y        |
-| 10 years          | 10 afọ          | 10 afọ          | 10y       |
-| 18 years          | 18 afọ          | 18 afọ          | 18y       |
-| 45 years          | 45 afọ          | 45 afọ          | 45y       |
+| 1 day             | ụbọchị 1        | ụbọchị 1        | 1d        |
+| 3 days            | ụbọchị 3        | ụbọchị 3        | 3d        |
+| 6 days            | ụbọchị 6        | ụbọchị 6        | 6d        |
+| 1 week            | izu 1           | izu 1           | 1w        |
+| 1 week, 1 day     | izu 1, ụbọchị 1 | izu 1, ụbọchị 1 | 1w1d      |
+| 2 weeks           | izu 2           | izu 2           | 2w        |
+| 2 weeks, 3 days   | izu 2, ụbọchị 3 | izu 2, ụbọchị 3 | 2w3d      |
+| 3 months          | ọnwa 3          | ọnwa 3          | 3m        |
+| 6 months          | ọnwa 6          | ọnwa 6          | 6m        |
+| 11 months         | ọnwa 11         | ọnwa 11         | 11m       |
+| 12 months         | ọnwa 12         | ọnwa 12         | 12m       |
+| 23 months         | ọnwa 23         | ọnwa 23         | 23m       |
+| 2 years           | afọ 2           | afọ 2           | 2y        |
+| 2 years, 1 month  | afọ 2, ọnwa 1   | afọ 2, ọnwa 1   | 2y1m      |
+| 2 years, 6 months | afọ 2, ọnwa 6   | afọ 2, ọnwa 6   | 2y6m      |
+| 3 years           | afọ 3           | afọ 3           | 3y        |
+| 3½ years          | afọ 3 na ọkara  | afọ 3 na ọkara  | 3½y       |
+| 5 years           | afọ 5           | afọ 5           | 5y        |
+| 5½ years          | afọ 5 na ọkara  | afọ 5 na ọkara  | 5½y       |
+| 7 years           | afọ 7           | afọ 7           | 7y        |
+| 10 years          | afọ 10          | afọ 10          | 10y       |
+| 18 years          | afọ 18          | afọ 18          | 18y       |
+| 45 years          | afọ 45          | afọ 45          | 45y       |
 
 ### Stages
 
-| Stage    | Label      |
-| -------- | ---------- |
-| Newborn  | Nwa ọhụrụ  |
-| Infant   | Nwa ọhụrụ  |
-| Toddler  | Nwa nta    |
-| Child    | Nwa        |
-| Teenager | Nwokorobịa |
-| Adult    | Okenye     |
+| Stage    | Label                   |
+| -------- | ----------------------- |
+| Newborn  | Nwa ọhụrụ               |
+| Infant   | Nwa ọhụrụ               |
+| Toddler  | Nwa nta                 |
+| Child    | Nwa                     |
+| Teenager | Nwokorobịa / Agbọghọbịa |
+| Adult    | Okenye                  |
 
 ## Date
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | mbọ echi             | 17/3    |
 | Day before yesterday | ụnyaahụ nke gara aga | 13/3    |
 | This Thursday (+5)   | Tọọzdee a            | 20/3    |
-| Last Monday (-4)     | Tụụzdee gara aga     | 11/3    |
-| Next Wednesday (+12) | Tọọzdee na-abịa      | 27/3    |
-| Same month (+20)     | 4 Epreel             | 4/4     |
+| Last Tuesday (-4)    | Tụụzdee gara aga     | 11/3    |
+| Next Thursday (+12)  | Tọọzdee na-abịa      | 27/3    |
+| Same year (+20)      | 4 Epreel             | 4/4     |
 | Different year       | 10 Jenụwarị 2026     | 10/1/26 |
 
 ## Duration
@@ -85,49 +93,49 @@ Relative to Saturday, March 15, 2025.
 | Duration              | Normal             | Short             | Compact |
 | --------------------- | ------------------ | ----------------- | ------- |
 | 0 seconds             | ugbu a             | ugbu a            | ugbu a  |
-| 1 second              | 1 sekọnd           | 1 sek.            | 1s      |
-| 30 seconds            | 30 sekọnd          | 30 sek.           | 30s     |
-| 1 minute              | 1 nkeji            | 1 nkeji           | 1m      |
-| 2 minutes, 15 seconds | 2 nkeji, 15 sekọnd | 2 nkeji, 15 sek.  | 2m15s   |
-| 5 minutes             | 5 nkeji            | 5 nkeji           | 5m      |
-| 45 minutes            | 45 nkeji           | 45 nkeji          | 45m     |
-| 1 hour                | 1 awa              | 1 awa             | 1h      |
-| 1½ hours              | 1 awa na ọkara     | 1 awa na ọkara    | 1½h     |
-| 3 hours               | 3 awa              | 3 awa             | 3h      |
-| 6 hours               | 6 awa              | 6 awa             | 6h      |
-| 1 day                 | 1 ụbọchị           | 1 ụbọchị          | 1d      |
-| 1½ days               | 1 ụbọchị na ọkara  | 1 ụbọchị na ọkara | 1½d     |
-| 3 days                | 3 ụbọchị           | 3 ụbọchị          | 3d      |
-| 1 week                | 1 izu              | 1 izu             | 1w      |
-| 2 weeks, 3 days       | 2 izu, 3 ụbọchị    | 2 izu, 3 ụbọchị   | 2w3d    |
-| 1 month               | 1 ọnwa             | 1 ọnwa            | 1m      |
-| 6 months              | 6 ọnwa             | 6 ọnwa            | 6m      |
-| 1 year                | 1 afọ              | 1 afọ             | 1y      |
-| 2 years, 3 months     | 2 afọ, 3 ọnwa      | 2 afọ, 3 ọnwa     | 2y3m    |
+| 1 second              | sekọnd 1           | sek. 1            | 1s      |
+| 30 seconds            | sekọnd 30          | sek. 30           | 30s     |
+| 1 minute              | nkeji 1            | nkeji 1           | 1m      |
+| 2 minutes, 15 seconds | nkeji 2, sekọnd 15 | nkeji 2, sek. 15  | 2m15s   |
+| 5 minutes             | nkeji 5            | nkeji 5           | 5m      |
+| 45 minutes            | nkeji 45           | nkeji 45          | 45m     |
+| 1 hour                | awa 1              | awa 1             | 1h      |
+| 1½ hours              | awa 1 na ọkara     | awa 1 na ọkara    | 1½h     |
+| 3 hours               | awa 3              | awa 3             | 3h      |
+| 6 hours               | awa 6              | awa 6             | 6h      |
+| 1 day                 | ụbọchị 1           | ụbọchị 1          | 1d      |
+| 1½ days               | ụbọchị 1 na ọkara  | ụbọchị 1 na ọkara | 1½d     |
+| 3 days                | ụbọchị 3           | ụbọchị 3          | 3d      |
+| 1 week                | izu 1              | izu 1             | 1w      |
+| 2 weeks, 3 days       | izu 2, ụbọchị 3    | izu 2, ụbọchị 3   | 2w3d    |
+| 1 month               | ọnwa 1             | ọnwa 1            | 1m      |
+| 6 months              | ọnwa 6             | ọnwa 6            | 6m      |
+| 1 year                | afọ 1              | afọ 1             | 1y      |
+| 2 years, 3 months     | afọ 2, ọnwa 3      | afọ 2, ọnwa 3     | 2y3m    |
 
 ### Relative time
 
 | Offset        | Normal           | Compact     |
 | ------------- | ---------------- | ----------- |
-| 5 minutes ago | 5 nkeji gara aga | 5m gara aga |
-| 2 hours ago   | 2 awa gara aga   | 2h gara aga |
-| in 30 minutes | na 30 nkeji      | na 30m      |
-| in 3 hours    | na 3 awa         | na 3h       |
+| 5 minutes ago | nkeji 5 gara aga | 5m gara aga |
+| 2 hours ago   | awa 2 gara aga   | 2h gara aga |
+| in 30 minutes | na nkeji 30      | na 30m      |
+| in 3 hours    | na awa 3         | na 3h       |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal        | Short    | Compact |
-| --------------- | ------------- | -------- | ------- |
-| Midnight        | etiti abalị   | 12:00 AM | 12:00a  |
-| 1:00 AM         | otu:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | itoolu:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | iri:15        | 10:15 AM | 10:15a  |
-| Half past 11    | iri na otu:30 | 11:30 AM | 11:30a  |
-| Noon            | ehihie        | 12:00 PM | 12:00p  |
-| Quarter to 3    | abụọ:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | ise:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | asatọ:00      | 8:00 PM  | 8:00p   |
-| 10:30 PM        | iri:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | etiti abalị   | 11:58 PM | 11:58p  |
+| Time            | Normal                               | Short    | Compact |
+| --------------- | ------------------------------------ | -------- | ------- |
+| Midnight        | etiti abalị                          | 12:00 AM | 12:00a  |
+| 1:00 AM         | elekere otu                          | 1:00 AM  | 1:00a   |
+| 5 past 9        | elekere itoolu na nkeji ise          | 9:05 AM  | 9:05a   |
+| Quarter past 10 | elekere iri na nkeji iri na ise      | 10:15 AM | 10:15a  |
+| Half past 11    | elekere iri na otu na ọkara          | 11:30 AM | 11:30a  |
+| Noon            | etiti ehihie                         | 12:00 PM | 12:00p  |
+| Quarter to 3    | elekere abụọ na nkeji iri anọ na ise | 2:45 PM  | 2:45p   |
+| 5 to 6          | elekere ise na nkeji iri ise na ise  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | elekere asatọ                        | 8:00 PM  | 8:00p   |
+| 10:30 PM        | elekere iri na ọkara                 | 10:30 PM | 10:30p  |
+| 11:58 PM        | etiti abalị                          | 11:58 PM | 11:58p  |

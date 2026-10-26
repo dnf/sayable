@@ -17,7 +17,7 @@ function loc = locale_lo()
   loc.units.month = '{n} ເດືອນ';
   loc.units.year = '{n} ປີ';
   loc.half = '{0}ເຄິ່ງ';
-  loc.delimiter = '';
+  loc.delimiter = ' ';
   loc.just_born = 'ເກີດໃໝ່';
   loc.stages.newborn = 'ເດັກເກີດໃໝ່';
   loc.stages.infant = 'ເດັກນ້ອຍ';
@@ -33,4 +33,5 @@ function loc = locale_lo()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
 endfunction

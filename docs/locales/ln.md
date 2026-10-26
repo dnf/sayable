@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ln.json](../../locales/ln.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Western hours (DRC/Congo). 'ngonga ya {h}' plus additive 'na miniti <words>' (zómi, ntúkú míbalé/mísáto/mínéi/mítáno), 'na ndámbo' for half. Could not confirm the 'ezángí' (lacking) 'to' idiom, so stayed additive.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | lóbi na nsima              | 17/3       |
 | Day before yesterday | lóbi elékí mpenza          | 13/3       |
 | This Thursday (+5)   | Mokɔlɔ ya mínéi oyo        | 20/3       |
-| Last Monday (-4)     | Mokɔlɔ ya míbalé elékí     | 11/3       |
-| Next Wednesday (+12) | Mokɔlɔ ya mínéi ezalí koya | 27/3       |
-| Same month (+20)     | 4 Apríli                   | 4/4        |
+| Last Tuesday (-4)    | Mokɔlɔ ya míbalé elékí     | 11/3       |
+| Next Thursday (+12)  | Mokɔlɔ ya mínéi ezalí koya | 27/3       |
+| Same year (+20)      | 4 Apríli                   | 4/4        |
 | Different year       | 10 Yanwáli 2026            | 10/1/26    |
 
 ## Duration
@@ -85,16 +93,16 @@ Relative to Saturday, March 15, 2025.
 | Duration              | Normal               | Short             | Compact     |
 | --------------------- | -------------------- | ----------------- | ----------- |
 | 0 seconds             | sikoyo               | sikoyo            | sikoyo      |
-| 1 second              | 1 segɔnde            | seg 1             | s 1         |
-| 30 seconds            | 30 segɔnde           | seg 30            | s 30        |
-| 1 minute              | 1 moniti             | mon 1             | m 1         |
-| 2 minutes, 15 seconds | 2 moniti, 15 segɔnde | mon 2, seg 15     | m 2s 15     |
-| 5 minutes             | 5 moniti             | mon 5             | m 5         |
-| 45 minutes            | 45 moniti            | mon 45            | m 45        |
-| 1 hour                | 1 ngonga             | ng 1              | ng 1        |
-| 1½ hours              | 1½ ngonga            | ng 1½             | ng 1½       |
-| 3 hours               | 3 ngonga             | ng 3              | ng 3        |
-| 6 hours               | 6 ngonga             | ng 6              | ng 6        |
+| 1 second              | segɔnde 1            | seg 1             | s 1         |
+| 30 seconds            | segɔnde 30           | seg 30            | s 30        |
+| 1 minute              | miniti 1             | mon 1             | m 1         |
+| 2 minutes, 15 seconds | miniti 2, segɔnde 15 | mon 2, seg 15     | m 2s 15     |
+| 5 minutes             | miniti 5             | mon 5             | m 5         |
+| 45 minutes            | miniti 45            | mon 45            | m 45        |
+| 1 hour                | ngonga 1             | ng 1              | ng 1        |
+| 1½ hours              | ngonga 1½            | ng 1½             | ng 1½       |
+| 3 hours               | ngonga 3             | ng 3              | ng 3        |
+| 6 hours               | ngonga 6             | ng 6              | ng 6        |
 | 1 day                 | mokolo 1             | mokolo 1          | mok 1       |
 | 1½ days               | mikolo 1½            | mik 1½            | mik 1½      |
 | 3 days                | mikolo 3             | mik 3             | mik 3       |
@@ -109,25 +117,25 @@ Relative to Saturday, March 15, 2025.
 
 | Offset        | Normal         | Compact    |
 | ------------- | -------------- | ---------- |
-| 5 minutes ago | 5 moniti elékí | m 5 elékí  |
-| 2 hours ago   | 2 ngonga elékí | ng 2 elékí |
-| in 30 minutes | na 30 moniti   | na m 30    |
-| in 3 hours    | na 3 ngonga    | na ng 3    |
+| 5 minutes ago | miniti 5 elékí | m 5 elékí  |
+| 2 hours ago   | ngonga 2 elékí | ng 2 elékí |
+| in 30 minutes | na miniti 30   | na m 30    |
+| in 3 hours    | na ngonga 3    | na ng 3    |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal            | Short    | Compact |
-| --------------- | ----------------- | -------- | ------- |
-| Midnight        | mpɔ́kwa           | 12:00 AM | 12:00a  |
-| 1:00 AM         | mɔ̌kɔ́:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | libwá:05          | 9:05 AM  | 9:05a   |
-| Quarter past 10 | zómi:15           | 10:15 AM | 10:15a  |
-| Half past 11    | zómi na mɔ̌kɔ́:30 | 11:30 AM | 11:30a  |
-| Noon            | ntɔ́ngɔ́          | 12:00 PM | 12:00p  |
-| Quarter to 3    | míbalé:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | mítáno:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | mwambe:00         | 8:00 PM  | 8:00p   |
-| 10:30 PM        | zómi:30           | 10:30 PM | 10:30p  |
-| 11:58 PM        | mpɔ́kwa           | 11:58 PM | 11:58p  |
+| Time            | Normal                                            | Short    | Compact |
+| --------------- | ------------------------------------------------- | -------- | ------- |
+| Midnight        | midí ya butú                                      | 12:00 AM | 12:00a  |
+| 1:00 AM         | ngonga ya mɔ̌kɔ́                                  | 1:00 AM  | 1:00a   |
+| 5 past 9        | ngonga ya libwá na miniti mítáno                  | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ngonga ya zómi na miniti zómi na mítáno           | 10:15 AM | 10:15a  |
+| Half past 11    | ngonga ya zómi na mɔ̌kɔ́ na ndámbo                | 11:30 AM | 11:30a  |
+| Noon            | midí                                              | 12:00 PM | 12:00p  |
+| Quarter to 3    | ngonga ya míbalé na miniti ntúkú mínéi na mítáno  | 2:45 PM  | 2:45p   |
+| 5 to 6          | ngonga ya mítáno na miniti ntúkú mítáno na mítáno | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ngonga ya mwambe                                  | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ngonga ya zómi na ndámbo                          | 10:30 PM | 10:30p  |
+| 11:58 PM        | midí ya butú                                      | 11:58 PM | 11:58p  |

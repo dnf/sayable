@@ -28,7 +28,7 @@
    :delimiter " "
    :just-now "เมื่อกี้"
    :ago "{0}ที่แล้ว"
-   :in-future "ใน{0}"
+   :in-future "ในอีก {0}"
    :short-units (list (cons :second "{n} วิ")
                        (cons :minute "{n} นาที")
                        (cons :hour "{n} ชม.")
@@ -37,7 +37,7 @@
                        (cons :month "{n} เดือน")
                        (cons :year "{n} ปี"))
    :short-ago "{0}ที่แล้ว"
-   :short-in-future "ใน{0}"
+   :short-in-future "ในอีก {0}"
    :compact-units (list (cons :second "{n}วิ")
                        (cons :minute "{n}นาที")
                        (cons :hour "{n}ชม.")
@@ -48,5 +48,5 @@
    :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0}ที่แล้ว"
-   :compact-in-future "ใน{0}"
+   :compact-in-future "ในอีก {0}"
 ))

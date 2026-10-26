@@ -27,8 +27,8 @@ fn build_st() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = plural_unit(one="motsotswana {n}", other="dimetsotswana {n}")
-    var minute = plural_unit(one="metsotso {n}", other="dimetsotso {n}")
+    var second = plural_unit(one="motsotswana {n}", other="metsotswana {n}")
+    var minute = plural_unit(one="motsotso {n}", other="metsotso {n}")
     var hour = plural_unit(one="hora {n}", other="dihora {n}")
     var day = plural_unit(one="letsatsi {n}", other="matsatsi {n}")
     var week = plural_unit(one="beke {n}", other="dibeke {n}")
@@ -36,9 +36,9 @@ fn build_st() -> DurationLocale:
     var year = plural_unit(one="selemo {n}", other="dilemo {n}")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = plural_unit(one="motsotswana {n}", other="dimetsotswana {n}")
+    short_ovr.second = plural_unit(one="motsotswana {n}", other="metsotswana {n}")
     short_ovr.has_second = True
-    short_ovr.minute = plural_unit(one="metsotso {n}", other="dimetsotso {n}")
+    short_ovr.minute = plural_unit(one="motsotso {n}", other="metsotso {n}")
     short_ovr.has_minute = True
     short_ovr.hour = plural_unit(one="hora {n}", other="dihora {n}")
     short_ovr.has_hour = True

@@ -17,9 +17,9 @@ let GN* = DurationLocale(
   code: "gn",
   plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
-    "second": simpleUnit("{n} aravo'i"),
-    "minute": simpleUnit("{n} aravo"),
-    "hour": simpleUnit("{n} aravo guasu"),
+    "second": simpleUnit("{n} aravo'ive"),
+    "minute": simpleUnit("{n} aravo'i"),
+    "hour": simpleUnit("{n} aravo"),
     "day": simpleUnit("{n} ára"),
     "week": simpleUnit("{n} arapokõindy"),
     "month": simpleUnit("{n} jasy"),
@@ -32,9 +32,9 @@ let GN* = DurationLocale(
   inFuture: "{0} rire",
   short: some(CompactnessOverride(
     units: some({
-      "second": simpleUnit("{n} ara'i"),
-      "minute": simpleUnit("{n} ara"),
-      "hour": simpleUnit("{n} ara g"),
+      "second": simpleUnit("{n} aravo'ive"),
+      "minute": simpleUnit("{n} aravo'i"),
+      "hour": simpleUnit("{n} aravo"),
       "day": simpleUnit("{n} ára"),
       "week": simpleUnit("{n} ara"),
       "month": simpleUnit("{n} jas"),

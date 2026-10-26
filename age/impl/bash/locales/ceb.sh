@@ -20,7 +20,7 @@ _sayableage_locale_ceb() {
     _unit_week='{n} ka semana'
     _unit_month='{n} ka bulan'
     _unit_year='{n} ka tuig'
-    _half='{n}½'
+    _half='{0} ug tunga'
     _delimiter=', '
     _just_born='Bag-ong natawo'
     _stage_newborn='Bag-ong natawo'

@@ -27,13 +27,13 @@
   (make-duration-locale
    :code "uk"
    :plural #'plural-ru-uk
-   :units (list (cons :second '((:one . "{n} секунда") (:few . "{n} секунди") (:many . "{n} секунд") (:other . "{n} секунд")))
-               (cons :minute '((:one . "{n} хвилина") (:few . "{n} хвилини") (:many . "{n} хвилин") (:other . "{n} хвилин")))
-               (cons :hour '((:one . "{n} година") (:few . "{n} години") (:many . "{n} годин") (:other . "{n} годин")))
-               (cons :day '((:one . "{n} день") (:few . "{n} дні") (:many . "{n} днів") (:other . "{n} днів")))
-               (cons :week '((:one . "{n} тиждень") (:few . "{n} тижні") (:many . "{n} тижнів") (:other . "{n} тижнів")))
-               (cons :month '((:one . "{n} місяць") (:few . "{n} місяці") (:many . "{n} місяців") (:other . "{n} місяців")))
-               (cons :year '((:one . "{n} рік") (:few . "{n} роки") (:many . "{n} років") (:other . "{n} років"))))
+   :units (list (cons :second '((:one . "{n} секунда") (:few . "{n} секунди") (:many . "{n} секунд") (:other . "{n} секунди")))
+               (cons :minute '((:one . "{n} хвилина") (:few . "{n} хвилини") (:many . "{n} хвилин") (:other . "{n} хвилини")))
+               (cons :hour '((:one . "{n} година") (:few . "{n} години") (:many . "{n} годин") (:other . "{n} години")))
+               (cons :day '((:one . "{n} день") (:few . "{n} дні") (:many . "{n} днів") (:other . "{n} дня")))
+               (cons :week '((:one . "{n} тиждень") (:few . "{n} тижні") (:many . "{n} тижнів") (:other . "{n} тижня")))
+               (cons :month '((:one . "{n} місяць") (:few . "{n} місяці") (:many . "{n} місяців") (:other . "{n} місяця")))
+               (cons :year '((:one . "{n} рік") (:few . "{n} роки") (:many . "{n} років") (:other . "{n} року"))))
    :half "{n} з половиною"
    :delimiter ", "
    :just-now "щойно"

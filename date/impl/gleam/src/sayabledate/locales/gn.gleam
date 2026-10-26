@@ -20,7 +20,7 @@ pub fn locale() -> types.DateLocale {
     day_format_exceptions: [],
     date_pattern: "{day} {month}",
     date_pattern_with_year: "{day} {month} {year}",
-    today: "ko'ágã",
+    today: "ko árape",
     tomorrow: "ko'ẽrõ",
     yesterday: "kuehe",
     day_after_tomorrow: Ok("ko'ẽrõ rire"),

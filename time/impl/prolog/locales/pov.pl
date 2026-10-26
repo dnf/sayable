@@ -11,22 +11,22 @@
 
 % Guinea-Bissau Creole locale.
 
-st_hours('pov', ['dozi', 'un', 'dos', 'tres', 'kuatru', 'sinku', 'seis', 'seti', 'oitu', 'novi', 'des', 'onzi']).
+st_hours('pov', ['dozi ora', 'un ora', 'dos ora', 'tres ora', 'kuatru ora', 'sinku ora', 'seis ora', 'seti ora', 'oitu ora', 'novi ora', 'des ora', 'onzi ora']).
 st_midnight('pov', 'meia noti').
 st_noon('pov', 'meiu dia').
 
-st_pattern('pov', 0, '{h}:00').
-st_pattern('pov', 5, '{h}:05').
-st_pattern('pov', 10, '{h}:10').
-st_pattern('pov', 15, '{h}:15').
-st_pattern('pov', 20, '{h}:20').
-st_pattern('pov', 25, '{h}:25').
-st_pattern('pov', 30, '{h}:30').
-st_pattern('pov', 35, '{h}:35').
-st_pattern('pov', 40, '{h}:40').
-st_pattern('pov', 45, '{h}:45').
-st_pattern('pov', 50, '{h}:50').
-st_pattern('pov', 55, '{h}:55').
+st_pattern('pov', 0, '{h}').
+st_pattern('pov', 5, '{h} i sinku').
+st_pattern('pov', 10, '{h} i des').
+st_pattern('pov', 15, '{h} i kinzi').
+st_pattern('pov', 20, '{h} i vinti').
+st_pattern('pov', 25, '{h} i vinti i sinku').
+st_pattern('pov', 30, '{h} i meiu').
+st_pattern('pov', 35, '{h} i trinta i sinku').
+st_pattern('pov', 40, '{h} i kuarenta').
+st_pattern('pov', 45, '{h} i kuarenta i sinku').
+st_pattern('pov', 50, '{h} i sinkuenta').
+st_pattern('pov', 55, '{h} i sinkuenta i sinku').
 
 short_st_use24h('pov', false).
 short_st_format('pov', '{h}:{mm} {ampm}').

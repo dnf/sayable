@@ -34,7 +34,7 @@ var GL = sa.AgeLocale{
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.G("Recén nacido", "Recén nacida"),
 		Infant:   sa.S("Bebé"),
-		Toddler:  sa.S("Neno"),
+		Toddler:  sa.G("Neno pequeno", "Nena pequena"),
 		Child:    sa.G("Neno", "Nena"),
 		Teenager: sa.S("Adolescente"),
 		Adult:    sa.G("Adulto", "Adulta"),

@@ -11,7 +11,7 @@
 
 class MLLocale {
   static code { "ml" }
-  static plural { Fn.new {|n| (n == 0 || n == 1) ? "one" : "other" } }
+  static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
       "second": {"one": "{n} സെക്കൻഡ്", "other": "{n} സെക്കൻഡുകൾ"},
@@ -23,7 +23,7 @@ class MLLocale {
       "year": {"one": "{n} വർഷം", "other": "{n} വർഷങ്ങൾ"},
     }
   }
-  static half { "{0} ര" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "ഇപ്പോൾ" }
   static ago { "{0} മുമ്പ്" }

@@ -14,14 +14,12 @@
 sa_plural('so', 1, one) :- !.
 sa_plural('so', _, other).
 
-sa_unit('so', day, one, 'maalin {n}').
-sa_unit('so', day, other, 'maalmood {n}').
-sa_unit('so', week, one, 'toddobaad {n}').
-sa_unit('so', week, other, 'toddobaadyo {n}').
-sa_unit('so', month, one, 'bil {n}').
-sa_unit('so', month, other, 'bilood {n}').
-sa_unit('so', year, one, 'sano {n}').
-sa_unit('so', year, other, 'sanooyin {n}').
+sa_unit('so', day, one, '{n} maalin').
+sa_unit('so', day, other, '{n} maalmood').
+sa_unit('so', week, _, '{n} toddobaad').
+sa_unit('so', month, one, '{n} bil').
+sa_unit('so', month, other, '{n} bilood').
+sa_unit('so', year, _, '{n} sano').
 
 sa_half('so', '{n}½').
 sa_delimiter('so', ', ').

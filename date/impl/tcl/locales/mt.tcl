@@ -12,7 +12,7 @@
 proc locale_date_mt {} {
     set code {mt}
     set months [list {Jannar} {Frar} {Marzu} {April} {Mejju} {Ġunju} {Lulju} {Awwissu} {Settembru} {Ottubru} {Novembru} {Diċembru}]
-    set weekdays [list {Il-Ħadd} {It-Tnejn} {It-Tlieta} {L-Erbgħa} {Il-Ħamis} {Il-Ġimgħa} {Is-Sibt}]
+    set weekdays [list {il-Ħadd} {it-Tnejn} {it-Tlieta} {l-Erbgħa} {il-Ħamis} {il-Ġimgħa} {is-Sibt}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"

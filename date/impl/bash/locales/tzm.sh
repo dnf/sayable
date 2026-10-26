@@ -10,19 +10,19 @@
 # Source: locales/tzm.json
 
 _sayabledate_locale_tzm() {
-    _months=('ⵉⵏⵏⴰⵢⵔ' 'ⴱⵕⴰⵢⵕ' 'ⵎⴰⵕⵚ' 'ⵉⴱⵔⵉⵔ' 'ⵎⴰⵢⵢⵓ' 'ⵢⵓⵏⵢⵓ' 'ⵢⵓⵍⵢⵓⵣ' 'ⵖⵓⵛⵜ' 'ⵛⵓⵜⴰⵏⴱⵉⵔ' 'ⴽⵜⵓⴱⵔ' 'ⵏⵓⵡⴰⵏⴱⵉⵔ' 'ⴷⵓⵊⴰⵏⴱⵉⵔ')
-    _weekdays=('ⴰⵙⴰⵎⴰⵙ' 'ⴰⵢⵏⴰⵙ' 'ⴰⵙⵉⵏⴰⵙ' 'ⴰⴽⵕⴰⵙ' 'ⴰⴽⵡⴰⵙ' 'ⴰⵙⵉⵎⵡⴰⵙ' 'ⴰⵙⵉⴹⵢⴰⵙ')
+    _months=('Yennayer' 'Yebrayer' 'Mars' 'Ibrir' 'Mayyu' 'Yunyu' 'Yulyuz' 'Ɣuct' 'Cutanbir' 'Kṭuber' 'Nwanbir' 'Dujanbir')
+    _weekdays=('Asamas' 'Aynas' 'Asinas' 'Akras' 'Akwas' 'Asimwas' 'Asiḍyas')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
-    _today='ⴰⵙⵙⴰ'
-    _tomorrow='ⴰⵙⴽⴽⴰ'
-    _yesterday='ⵉⴹⵍⵍⵉ'
-    _this_weekday='{weekday} ⴰⴷ'
-    _next_weekday='{weekday} ⴷ ⵉⴷⴷⴰⵏ'
-    _last_weekday='{weekday} ⵉⵣⵔⵉⵏ'
-    _short_months=('ⵉⵏⵏ' 'ⴱⵕⴰ' 'ⵎⴰⵕ' 'ⵉⴱⵔ' 'ⵎⴰⵢ' 'ⵢⵓⵏ' 'ⵢⵓⵍ' 'ⵖⵓⵛ' 'ⵛⵓⵜ' 'ⴽⵜⵓ' 'ⵏⵓⵡ' 'ⴷⵓⵊ')
-    _short_weekdays=('ⴰⵙⴰ' 'ⴰⵢⵏ' 'ⴰⵙⵉ' 'ⴰⴽⵕ' 'ⴰⴽⵡ' 'ⴰⵙⵉⵎ' 'ⴰⵙⵉⴹ')
+    _today='Assa'
+    _tomorrow='Asekka'
+    _yesterday='Assenaṭ'
+    _this_weekday='{weekday} ad'
+    _next_weekday='{weekday} d iddan'
+    _last_weekday='{weekday} izrin'
+    _short_months=('Yen' 'Yeb' 'Mar' 'Ibr' 'May' 'Yun' 'Yul' 'Ɣuc' 'Cut' 'Kṭu' 'Nwa' 'Duj')
+    _short_weekdays=('Asa' 'Ayn' 'Asn' 'Akr' 'Akw' 'Asm' 'Asḍ')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
     _short_date_pattern_with_year='{day} {month} {year}'

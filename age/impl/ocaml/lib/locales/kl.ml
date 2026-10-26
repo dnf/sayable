@@ -13,11 +13,23 @@ open Types
 
 let locale : locale =
   { code = "kl"
-  ; plural = (fun _ -> Other)
-  ; day = Simple "ullut {n}"
-  ; week = Simple "sapaatit {n}"
-  ; month = Simple "qaammatit {n}"
-  ; year = Simple "ukiut {n}"
+  ; plural = (fun n -> if n = 1 then One else Other)
+  ; day = Pluralized
+      [ (One, "ulloq {n}")
+      ; (Other, "ullut {n}")
+      ]
+  ; week = Pluralized
+      [ (One, "sapaatip akunnera {n}")
+      ; (Other, "sapaatip akunneri {n}")
+      ]
+  ; month = Pluralized
+      [ (One, "qaammat {n}")
+      ; (Other, "qaammatit {n}")
+      ]
+  ; year = Pluralized
+      [ (One, "ukioq {n}")
+      ; (Other, "ukiut {n}")
+      ]
   ; half = "{0} affaa"
   ; delimiter = ", "
   ; just_born = "Inuuneq nutaaq"
@@ -31,7 +43,7 @@ let locale : locale =
     }
   ; short = Some
       { ovr_day = Some (Simple "ull. {n}")
-      ; ovr_week = Some (Simple "sap. {n}")
+      ; ovr_week = Some (Simple "sap. ak. {n}")
       ; ovr_month = Some (Simple "qaam. {n}")
       ; ovr_year = Some (Simple "uk. {n}")
       ; ovr_half = None
@@ -43,7 +55,7 @@ let locale : locale =
       ; ovr_week = Some (Simple "{n}w")
       ; ovr_month = Some (Simple "{n}m")
       ; ovr_year = Some (Simple "{n}y")
-      ; ovr_half = None
+      ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_just_born = None
       }

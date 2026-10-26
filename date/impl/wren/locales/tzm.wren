@@ -12,10 +12,10 @@
 class TZMLocale {
   static code { "tzm" }
   static months {
-    return ["ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"]
+    return ["Yennayer", "Yebrayer", "Mars", "Ibrir", "Mayyu", "Yunyu", "Yulyuz", "Ɣuct", "Cutanbir", "Kṭuber", "Nwanbir", "Dujanbir"]
   }
   static weekdays {
-    return ["ⴰⵙⴰⵎⴰⵙ", "ⴰⵢⵏⴰⵙ", "ⴰⵙⵉⵏⴰⵙ", "ⴰⴽⵕⴰⵙ", "ⴰⴽⵡⴰⵙ", "ⴰⵙⵉⵎⵡⴰⵙ", "ⴰⵙⵉⴹⵢⴰⵙ"]
+    return ["Asamas", "Aynas", "Asinas", "Akras", "Akwas", "Asimwas", "Asiḍyas"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {
@@ -23,19 +23,19 @@ class TZMLocale {
   }
   static datePattern { "{day} {month}" }
   static datePatternWithYear { "{day} {month} {year}" }
-  static today { "ⴰⵙⵙⴰ" }
-  static tomorrow { "ⴰⵙⴽⴽⴰ" }
-  static yesterday { "ⵉⴹⵍⵍⵉ" }
+  static today { "Assa" }
+  static tomorrow { "Asekka" }
+  static yesterday { "Assenaṭ" }
   static dayAfterTomorrow { null }
   static dayBeforeYesterday { null }
-  static thisWeekday { "{weekday} ⴰⴷ" }
-  static nextWeekday { "{weekday} ⴷ ⵉⴷⴷⴰⵏ" }
-  static lastWeekday { "{weekday} ⵉⵣⵔⵉⵏ" }
+  static thisWeekday { "{weekday} ad" }
+  static nextWeekday { "{weekday} d iddan" }
+  static lastWeekday { "{weekday} izrin" }
   static monthsInDate { null }
   static short {
     return {
-      "months": ["ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ"],
-      "weekdays": ["ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"],
+      "months": ["Yen", "Yeb", "Mar", "Ibr", "May", "Yun", "Yul", "Ɣuc", "Cut", "Kṭu", "Nwa", "Duj"],
+      "weekdays": ["Asa", "Ayn", "Asn", "Akr", "Akw", "Asm", "Asḍ"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
       "datePatternWithYear": "{day} {month} {year}",

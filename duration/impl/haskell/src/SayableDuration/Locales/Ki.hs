@@ -47,11 +47,11 @@ locale = DurationLocale
           , (Other, "mĩaka {n}")
           ]
         }
-    , localeHalf = "{0} na nusu"
+    , localeHalf = "{0} na nuthu"
     , localeDelimiter = ", "
-    , localeJustNow = "ũmũthĩ"
+    , localeJustNow = "rĩu"
     , localeAgo = "{0} ĩhĩtũkĩte"
-    , localeInFuture = "{0} ĩyothe"
+    , localeInFuture = "thutha wa {0}"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Simple "sek. {n}")
@@ -76,7 +76,7 @@ locale = DurationLocale
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} ĩhĩtũkĩte"
-            , ovrInFuture = Just "{0} ĩyothe"
+            , ovrInFuture = Just "thutha wa {0}"
             }
     , localeCompact = Just $
         CompactnessOverride
@@ -90,6 +90,6 @@ locale = DurationLocale
             , ovrHalf = Nothing
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} ĩhĩtũkĩte"
-            , ovrInFuture = Just "{0} ĩyothe"
+            , ovrInFuture = Just "thutha wa {0}"
             }
     }

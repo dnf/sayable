@@ -32,7 +32,7 @@ const SaLocale sa_locale_bem = {
         { "Umwana", "" },
         { "Umwana", "" },
         { "Umunyamata", "" },
-        { "Umulumendo", "" }
+        { "Umukalamba", "" }
     },
     true, { true, { NULL, { NULL, "ubushiku {n}", NULL, NULL, NULL, "inshiku {n}" } }, true, { NULL, { NULL, "umulungu {n}", NULL, NULL, NULL, "imilungu {n}" } }, true, { NULL, { NULL, "umweshi {n}", NULL, NULL, NULL, "imyeshi {n}" } }, true, { NULL, { NULL, "umwaka {n}", NULL, NULL, NULL, "imyaka {n}" } }, false, NULL, false, NULL, false, NULL },
     true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }

@@ -16,14 +16,14 @@
 (defparameter *locale-kl*
   (make-duration-locale
    :code "kl"
-   :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :second "sekundit {n}")
-               (cons :minute "minutsit {n}")
-               (cons :hour "nalunaaqutap akunnera {n}")
-               (cons :day "ullut {n}")
-               (cons :week "sapaatit {n}")
-               (cons :month "qaammatit {n}")
-               (cons :year "ukiut {n}"))
+   :plural (lambda (n) (if (= n 1) :one :other))
+   :units (list (cons :second '((:one . "sekundi {n}") (:other . "sekundit {n}")))
+               (cons :minute '((:one . "minutsi {n}") (:other . "minutsit {n}")))
+               (cons :hour '((:one . "nalunaaquttap akunnera {n}") (:other . "nalunaaquttap akunneri {n}")))
+               (cons :day '((:one . "ulloq {n}") (:other . "ullut {n}")))
+               (cons :week '((:one . "sapaatip akunnera {n}") (:other . "sapaatip akunneri {n}")))
+               (cons :month '((:one . "qaammat {n}") (:other . "qaammatit {n}")))
+               (cons :year '((:one . "ukioq {n}") (:other . "ukiut {n}"))))
    :half "{0} affaa"
    :delimiter ", "
    :just-now "maanna"
@@ -33,7 +33,7 @@
                        (cons :minute "min. {n}")
                        (cons :hour "nal. {n}")
                        (cons :day "ull. {n}")
-                       (cons :week "sap. {n}")
+                       (cons :week "sap. ak. {n}")
                        (cons :month "qaam. {n}")
                        (cons :year "uk. {n}"))
    :short-ago "{0} matuma siorna"
@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}mo")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} matuma siorna"
    :compact-in-future "{0} siunissami"

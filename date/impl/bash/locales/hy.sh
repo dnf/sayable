@@ -10,21 +10,22 @@
 # Source: locales/hy.json
 
 _sayabledate_locale_hy() {
-    _months=('Հունվար' 'Փետրվար' 'Մարտ' 'Ապրիլ' 'Մայիս' 'Հունիս' 'Հուլիս' 'Օգոստոս' 'Սեպտեմբեր' 'Հոկտեմբեր' 'Նոյեմբեր' 'Դեկտեմբեր')
-    _weekdays=('Կիրակի' 'Երկուշաբթի' 'Երեքշաբթի' 'Չորեքշաբթի' 'Հինգշաբթի' 'Ուրբաթ' 'Շաբաթ')
+    _months=('հունվար' 'փետրվար' 'մարտ' 'ապրիլ' 'մայիս' 'հունիս' 'հուլիս' 'օգոստոս' 'սեպտեմբեր' 'հոկտեմբեր' 'նոյեմբեր' 'դեկտեմբեր')
+    _weekdays=('կիրակի' 'երկուշաբթի' 'երեքշաբթի' 'չորեքշաբթի' 'հինգշաբթի' 'ուրբաթ' 'շաբաթ')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
     _today='այսօր'
     _tomorrow='վաղը'
     _yesterday='երեկ'
-    _day_after_tomorrow='վաղը մյուս օրը'
-    _day_before_yesterday='երեկ մյուս օրը'
+    _day_after_tomorrow='վաղը չէ մյուս օրը'
+    _day_before_yesterday='երեկ չէ առաջի օրը'
     _this_weekday='այս {weekday}'
     _next_weekday='հաջորդ {weekday}'
     _last_weekday='անցած {weekday}'
-    _short_months=('Հնվ' 'Փտր' 'Մրտ' 'Ապր' 'Մյս' 'Հնս' 'Հլս' 'Օգս' 'Սեպ' 'Հկտ' 'Նոյ' 'Դեկ')
-    _short_weekdays=('Կիր' 'Երկ' 'Երք' 'Չրք' 'Հնգ' 'Ուր' 'Շբթ')
+    _months_in_date=('հունվարի' 'փետրվարի' 'մարտի' 'ապրիլի' 'մայիսի' 'հունիսի' 'հուլիսի' 'օգոստոսի' 'սեպտեմբերի' 'հոկտեմբերի' 'նոյեմբերի' 'դեկտեմբերի')
+    _short_months=('հնվ' 'փտր' 'մրտ' 'ապր' 'մյս' 'հնս' 'հլս' 'օգս' 'սեպ' 'հկտ' 'նոյ' 'դեկ')
+    _short_weekdays=('կիր' 'երկ' 'երք' 'չրք' 'հնգ' 'ուր' 'շբթ')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
     _short_date_pattern_with_year='{day} {month} {year}'

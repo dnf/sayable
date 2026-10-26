@@ -257,6 +257,8 @@ suite =
             , test "14.5 Jan31 -> Jul31 = 6 months" <|
                 \_ -> Expect.equal (Just "6 months") (fmt "2025-01-31" "2025-07-31")
             ]
+        -- 15.1: not applicable — Elm has no default asOf, and pure code cannot read the system clock (Time.now is a Task)
+        -- 15.2: not applicable — same reason as 15.1
         , describe "16. formatStage null/edge"
             [ test "16.1/16.3 empty string" <|
                 \_ -> Expect.equal Nothing (stg "" "2025-06-15")
@@ -335,6 +337,9 @@ suite =
             , test "22.3 45 years" <|
                 \_ -> Expect.equal (Just "Adult") (stg "1980-01-01" "2025-06-15")
             ]
+        -- 23.1: not applicable — Elm has no default asOf, and pure code cannot read the system clock (Time.now is a Task)
+        -- 23.2: not applicable — same reason as 23.1
+        -- 23.3: not applicable — same reason as 23.1
         , describe "24. English locale delegation"
             [ test "24.1 Newborn" <|
                 \_ -> Expect.equal (Just "Newborn") (fmt "2025-06-15" "2025-06-15")
@@ -387,7 +392,7 @@ suite =
             , test "25.9 years+months" <|
                 \_ -> Expect.equal (Just "2 a\u{00F1}os, 6 meses") (fmtLoc Es.locale "2023-06-15" "2025-12-15")
             , test "25.10 half marker" <|
-                \_ -> Expect.equal (Just "3 y medio a\u{00F1}os") (fmtLoc Es.locale "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3 a\u{00F1}os y medio") (fmtLoc Es.locale "2022-06-15" "2025-12-15")
             , test "25.11 no half" <|
                 \_ -> Expect.equal (Just "3 a\u{00F1}os") (fmtLoc Es.locale "2022-06-15" "2025-06-15")
             , test "25.12 7+ years" <|
@@ -451,7 +456,7 @@ suite =
             [ test "29.1 justBorn" <|
                 \_ -> Expect.equal (Just "\u{05E8}\u{05E7} \u{05E0}\u{05D5}\u{05DC}\u{05D3}") (fmtLoc He.locale "2025-06-15" "2025-06-15")
             , test "29.2 1 day" <|
-                \_ -> Expect.equal (Just "\u{05D9}\u{05D5}\u{05DD} 1") (fmtLoc He.locale "2025-06-14" "2025-06-15")
+                \_ -> Expect.equal (Just "\u{05D9}\u{05D5}\u{05DD}") (fmtLoc He.locale "2025-06-14" "2025-06-15")
             , test "29.3 3 days" <|
                 \_ -> Expect.equal (Just "3 \u{05D9}\u{05DE}\u{05D9}\u{05DD}") (fmtLoc He.locale "2025-06-12" "2025-06-15")
             , test "29.4 2 weeks dual" <|
@@ -463,7 +468,7 @@ suite =
             , test "29.7 3 months" <|
                 \_ -> Expect.equal (Just "3 \u{05D7}\u{05D5}\u{05D3}\u{05E9}\u{05D9}\u{05DD}") (fmtLoc He.locale "2025-03-15" "2025-06-15")
             , test "29.8 2y dual + 1m" <|
-                \_ -> Expect.equal (Just "\u{05E9}\u{05E0}\u{05EA}\u{05D9}\u{05D9}\u{05DD}, \u{05D7}\u{05D5}\u{05D3}\u{05E9} 1") (fmtLoc He.locale "2023-06-15" "2025-07-15")
+                \_ -> Expect.equal (Just "\u{05E9}\u{05E0}\u{05EA}\u{05D9}\u{05D9}\u{05DD}, \u{05D7}\u{05D5}\u{05D3}\u{05E9}") (fmtLoc He.locale "2023-06-15" "2025-07-15")
             , test "29.9 3.5 years" <|
                 \_ -> Expect.equal (Just "3 \u{05E9}\u{05E0}\u{05D9}\u{05DD} \u{05D5}\u{05D7}\u{05E6}\u{05D9}") (fmtLoc He.locale "2022-06-15" "2025-12-15")
             , test "29.10 7 years" <|
@@ -517,7 +522,7 @@ suite =
             , test "29.31 6 months" <|
                 \_ -> Expect.equal (Just "6 bulan") (fmtLoc Id.locale "2025-01-15" "2025-07-15")
             , test "29.32 3.5 years" <|
-                \_ -> Expect.equal (Just "3 tahun setengah") (fmtLoc Id.locale "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3 setengah tahun") (fmtLoc Id.locale "2022-06-15" "2025-12-15")
             , test "29.33 7 years" <|
                 \_ -> Expect.equal (Just "7 tahun") (fmtLoc Id.locale "2018-06-15" "2025-06-15")
             ]
@@ -563,7 +568,7 @@ suite =
             , test "32.2 Polish 5 is many" <|
                 \_ -> Expect.equal (Just "5 i pół lat") (fmtCode "pl" Short "2020-06-15" "2025-12-15")
             , test "32.3 Tachelhit 6 is few" <|
-                \_ -> Expect.equal (Just "6 iseggasen d uzgen") (fmtCode "shi" Normal "2005-06-08" "2012-06-07")
+                \_ -> Expect.equal (Just "6 \u{2D49}\u{2D59}\u{2D33}\u{2D33}\u{2D6F}\u{2D30}\u{2D59}\u{2D4F} \u{2D37} \u{2D53}\u{2D63}\u{2D33}\u{2D4F}") (fmtCode "shi" Normal "2005-06-08" "2012-06-07")
             ]
         , describe "33. Input validation"
             [ test "33.1 February 30" <|

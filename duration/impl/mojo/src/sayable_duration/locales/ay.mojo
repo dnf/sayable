@@ -25,20 +25,20 @@ fn build_ay() -> DurationLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var second = simple_unit("sikundu {n}")
-    var minute = simple_unit("minutu {n}")
-    var hour = simple_unit("ura {n}")
-    var day = simple_unit("uru {n}")
-    var week = simple_unit("simana {n}")
-    var month = simple_unit("phaxsi {n}")
-    var year = simple_unit("mara {n}")
+    var second = simple_unit("{n} sikundu")
+    var minute = simple_unit("{n} minutu")
+    var hour = simple_unit("{n} ura")
+    var day = simple_unit("{n} uru")
+    var week = simple_unit("{n} simana")
+    var month = simple_unit("{n} phaxsi")
+    var year = simple_unit("{n} mara")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("sik. {n}")
+    short_ovr.second = simple_unit("{n} sik.")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("min. {n}")
+    short_ovr.minute = simple_unit("{n} min.")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("ur. {n}")
+    short_ovr.hour = simple_unit("{n} ura")
     short_ovr.has_hour = True
     short_ovr.day = simple_unit("{n} ur.")
     short_ovr.has_day = True
@@ -68,6 +68,8 @@ fn build_ay() -> DurationLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} nayraqata"

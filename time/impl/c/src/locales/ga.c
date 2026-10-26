@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ga = {
         { "dó dhéag", "haon", "dó", "trí", "ceathair", "cúig", "sé", "seacht", "hocht", "naoi", "deich", "haon déag" },
         "meán oíche",
         "meán lae",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "a {h} a chlog", "cúig tar éis a {h}", "deich tar éis a {h}", "ceathrú tar éis a {h}", "fiche tar éis a {h}", "fiche cúig tar éis a {h}", "leathuair tar éis a {h}", "fiche cúig chun a {next_h}", "fiche chun a {next_h}", "ceathrú chun a {next_h}", "deich chun a {next_h}", "cúig chun a {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

@@ -15,14 +15,14 @@ from sayable_age.locale import AgeLocale, CompactnessOverride
 
 ML = AgeLocale(
     code="ml",
-    plural=lambda n: "one" if n in (0, 1) else "other",
+    plural=lambda n: "one" if n == 1 else "other",
     units={
         "day": {"one": "{n} ദിവസം", "other": "{n} ദിവസങ്ങൾ"},
         "week": {"one": "{n} ആഴ്ച", "other": "{n} ആഴ്ചകൾ"},
         "month": {"one": "{n} മാസം", "other": "{n} മാസങ്ങൾ"},
         "year": {"one": "{n} വയസ്സ്", "other": "{n} വയസ്സ്"},
     },
-    half="{0} ര",
+    half="{n}½",
     delimiter=", ",
     just_born="നവജാതശിശു",
     stages={

@@ -13,7 +13,7 @@ open Types
 
 let locale : duration_locale =
   { code = "ml"
-  ; plural = (fun n -> if n = 0 || n = 1 then One else Other)
+  ; plural = (fun n -> if n = 1 then One else Other)
   ; second = Pluralized
       [ (One, "{n} സെക്കൻഡ്")
       ; (Other, "{n} സെക്കൻഡുകൾ")
@@ -42,7 +42,7 @@ let locale : duration_locale =
       [ (One, "{n} വർഷം")
       ; (Other, "{n} വർഷങ്ങൾ")
       ]
-  ; half = "{0} ര"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_now = "ഇപ്പോൾ"
   ; ago = "{0} മുമ്പ്"

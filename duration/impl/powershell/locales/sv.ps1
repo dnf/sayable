@@ -27,7 +27,7 @@ function locale_sv {
     $half = '{n}½'
     $delimiter = ', '
     $justNow = 'just nu'
-    $ago = '{0} sedan'
+    $ago = 'för {0} sedan'
     $inFuture = 'om {0}'
     $short = @{
         units = @{
@@ -39,7 +39,7 @@ function locale_sv {
             month = '{n} mån'
             year = '{n} år'
         }
-        ago = '{0} sedan'
+        ago = 'för {0} sedan'
         inFuture = 'om {0}'
     }
     $compact = @{
@@ -53,7 +53,7 @@ function locale_sv {
             year = '{n}å'
         }
         delimiter = ''
-        ago = '{0} sedan'
+        ago = 'för {0} sedan'
         inFuture = 'om {0}'
     }
     return @{

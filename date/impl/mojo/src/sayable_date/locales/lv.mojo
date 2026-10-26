@@ -45,7 +45,7 @@ fn build_lv() -> DateLocale:
     var day_format = "{n}."
     var num_exceptions = 0
     var date_pattern = "{day} {month}"
-    var date_pattern_with_year = "{day} {month} {year}"
+    var date_pattern_with_year = "{year}. gada {day} {month}"
     var today = "šodien"
     var tomorrow = "rīt"
     var yesterday = "vakar"
@@ -82,7 +82,7 @@ fn build_lv() -> DateLocale:
     short_ovr.has_day_format = True
     short_ovr.date_pattern = "{day} {month}"
     short_ovr.has_date_pattern = True
-    short_ovr.date_pattern_with_year = "{day} {month} {year}"
+    short_ovr.date_pattern_with_year = "{year}. gada {day} {month}"
     short_ovr.has_date_pattern_with_year = True
 
     var compact_ovr = build_compactness_override()

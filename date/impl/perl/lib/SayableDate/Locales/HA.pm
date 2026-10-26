@@ -29,7 +29,7 @@ sub locale {{
   day_before_yesterday => 'shekaranjiya',
   this_weekday => 'wannan {weekday}',
   next_weekday => '{weekday} mai zuwa',
-  last_weekday => '{weekday} da ya wuce',
+  last_weekday => '{weekday} da ta wuce',
   short => {
     months => ['Jan', 'Fab', 'Mar', 'Afr', 'May', 'Yun', 'Yul', 'Agu', 'Sat', 'Okt', 'Nuw', 'Dis'],
     weekdays => ['Lah', 'Lit', 'Tal', 'Lar', 'Alh', 'Jum', 'Asa'],

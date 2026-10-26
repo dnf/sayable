@@ -20,7 +20,7 @@
     :hours (list "dvanásť" "jedna" "dve" "tri" "štyri" "päť" "šesť" "sedem" "osem" "deväť" "desať" "jedenásť")
     :midnight "polnoc"
     :noon "poludnie"
-    :patterns (list (cons 0 "{h} hodín") (cons 5 "päť po {h}") (cons 10 "desať po {h}") (cons 15 "štvrť po {h}") (cons 20 "dvadsať po {h}") (cons 25 "dvadsať päť po {h}") (cons 30 "pol po {h}") (cons 35 "dvadsať päť do {next_h}") (cons 40 "dvadsať do {next_h}") (cons 45 "štvrť do {next_h}") (cons 50 "desať do {next_h}") (cons 55 "päť do {next_h}")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} nula päť") (cons 10 "{h} desať") (cons 15 "{h} pätnásť") (cons 20 "{h} dvadsať") (cons 25 "{h} dvadsaťpäť") (cons 30 "{h} tridsať") (cons 35 "o dvadsaťpäť minút {next_h}") (cons 40 "o dvadsať minút {next_h}") (cons 45 "o pätnásť minút {next_h}") (cons 50 "o desať minút {next_h}") (cons 55 "o päť minút {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

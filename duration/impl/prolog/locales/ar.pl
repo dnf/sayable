@@ -19,19 +19,19 @@ sd_plural('ar', N, many) :- Mod100 is N mod 100, Mod100 >= 11, Mod100 =< 99, !.
 sd_plural('ar', _, other).
 
 sd_unit('ar', second, zero, '{n} ثانية').
-sd_unit('ar', second, one, 'ثانية واحدة').
+sd_unit('ar', second, one, 'ثانية').
 sd_unit('ar', second, two, 'ثانيتان').
 sd_unit('ar', second, few, '{n} ثوانٍ').
 sd_unit('ar', second, many, '{n} ثانية').
 sd_unit('ar', second, other, '{n} ثانية').
 sd_unit('ar', minute, zero, '{n} دقيقة').
-sd_unit('ar', minute, one, 'دقيقة واحدة').
+sd_unit('ar', minute, one, 'دقيقة').
 sd_unit('ar', minute, two, 'دقيقتان').
 sd_unit('ar', minute, few, '{n} دقائق').
 sd_unit('ar', minute, many, '{n} دقيقة').
 sd_unit('ar', minute, other, '{n} دقيقة').
 sd_unit('ar', hour, zero, '{n} ساعة').
-sd_unit('ar', hour, one, 'ساعة واحدة').
+sd_unit('ar', hour, one, 'ساعة').
 sd_unit('ar', hour, two, 'ساعتان').
 sd_unit('ar', hour, few, '{n} ساعات').
 sd_unit('ar', hour, many, '{n} ساعة').
@@ -102,12 +102,7 @@ compact_sd_unit('ar', minute, _, '{n} د').
 compact_sd_unit('ar', hour, _, '{n} س').
 compact_sd_unit('ar', day, _, '{n} ي').
 compact_sd_unit('ar', week, _, '{n} أ').
-compact_sd_unit('ar', month, zero, '{n} شهر').
-compact_sd_unit('ar', month, one, 'شهر').
-compact_sd_unit('ar', month, two, 'شهران').
-compact_sd_unit('ar', month, few, '{n} أشهر').
-compact_sd_unit('ar', month, many, '{n} شهرًا').
-compact_sd_unit('ar', month, other, '{n} شهر').
+compact_sd_unit('ar', month, _, '{n} شهر').
 compact_sd_unit('ar', year, _, '{n} سنة').
 compact_sd_half('ar', '{n}½').
 compact_sd_delimiter('ar', '').

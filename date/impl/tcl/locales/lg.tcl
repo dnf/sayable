@@ -21,7 +21,7 @@ proc locale_date_lg {} {
     set tomorrow {enkya}
     set yesterday {jjo}
     set day_after_tomorrow {enkya ogwa}
-    set day_before_yesterday {jjo edda}
+    set day_before_yesterday {jjuuzi}
     set this_weekday "{weekday} eno"
     set next_weekday "{weekday} eddirira"
     set last_weekday "{weekday} eggudde"

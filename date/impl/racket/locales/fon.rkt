@@ -21,7 +21,7 @@
   (date-locale
    "fon"
    (list "Alɔfí" "Alɔnyɔ" "Ataɖaxɔ" "Tlɛsún" "Axɔsún" "Ayɛsún" "Nùxwásún" "Ayidosún" "Kɛnísún" "Kanyásún" "Abɔxwísún" "Adɔxwísún")
-   (list "Sidégbe" "Tɛnígbe" "Talɛtagbe" "Azǎngagbe" "Nyɔnúgbe" "Axɔ́sùgbe" "Abámɛ́ta")
+   (list "Aklunɔzángbe" "Tɛnígbe" "Talɛtagbe" "Azǎngagbe" "Nyɔnúgbe" "Axɔ́sùgbe" "Sibigbe")
    "{n}"
    (hash)
    "{day} {month}"
@@ -35,6 +35,6 @@
    "{weekday} e ja"
    "{weekday} e wá yí"
    #f
-   (date-compactness-override (list "Alɔ" "Any" "Ata" "Tlɛ" "Axɔ" "Ayɛ" "Nùx" "Ayi" "Kɛn" "Kan" "Abɔ" "Adɔ") #f (list "Sid" "Tɛn" "Tal" "Azǎ" "Nyɔ" "Axɔ" "Abá") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "Alɔ" "Any" "Ata" "Tlɛ" "Axɔ" "Ayɛ" "Nùx" "Ayi" "Kɛn" "Kan" "Abɔ" "Adɔ") #f (list "Akl" "Tɛn" "Tal" "Azǎ" "Nyɔ" "Axɔ" "Sib") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

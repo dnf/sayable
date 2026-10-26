@@ -11,7 +11,7 @@
 
 % Norwegian Bokmål locale.
 
-st_hours('nb', ['tolv', 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve']).
+st_hours('nb', ['tolv', 'ett', 'to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve']).
 st_midnight('nb', 'midnatt').
 st_noon('nb', 'middag').
 

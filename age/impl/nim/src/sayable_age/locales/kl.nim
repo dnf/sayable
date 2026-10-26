@@ -15,12 +15,12 @@ import ../locale
 
 let KL* = AgeLocale(
   code: "kl",
-  plural: proc(n: int): PluralCategory = pcOther,
+  plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
-    "day": simpleUnit("ullut {n}"),
-    "week": simpleUnit("sapaatit {n}"),
-    "month": simpleUnit("qaammatit {n}"),
-    "year": simpleUnit("ukiut {n}"),
+    "day": pluralUnit(@[(pcOne, "ulloq {n}"), (pcOther, "ullut {n}")]),
+    "week": pluralUnit(@[(pcOne, "sapaatip akunnera {n}"), (pcOther, "sapaatip akunneri {n}")]),
+    "month": pluralUnit(@[(pcOne, "qaammat {n}"), (pcOther, "qaammatit {n}")]),
+    "year": pluralUnit(@[(pcOne, "ukioq {n}"), (pcOther, "ukiut {n}")]),
   }.toOrderedTable,
   half: "{0} affaa",
   delimiter: ", ",
@@ -36,7 +36,7 @@ let KL* = AgeLocale(
   short: some(CompactnessOverride(
     units: some({
       "day": simpleUnit("ull. {n}"),
-      "week": simpleUnit("sap. {n}"),
+      "week": simpleUnit("sap. ak. {n}"),
       "month": simpleUnit("qaam. {n}"),
       "year": simpleUnit("uk. {n}"),
     }.toOrderedTable),
@@ -51,7 +51,7 @@ let KL* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     justBorn: none(string),
   )),

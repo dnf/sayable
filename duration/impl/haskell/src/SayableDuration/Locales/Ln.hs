@@ -18,9 +18,9 @@ locale = DurationLocale
     { localeCode = "ln"
     , localePlural = \n -> if n == 0 || n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "{n} segɔnde"
-        , unitMinute = Simple "{n} moniti"
-        , unitHour = Simple "{n} ngonga"
+        { unitSecond = Simple "segɔnde {n}"
+        , unitMinute = Simple "miniti {n}"
+        , unitHour = Simple "ngonga {n}"
         , unitDay = Pluralized
           [ (One, "mokolo {n}")
           , (Other, "mikolo {n}")

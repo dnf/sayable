@@ -30,7 +30,7 @@ let locale : locale =
       [ (One, "{n} வயது")
       ; (Other, "{n} வயது")
       ]
-  ; half = "{0}ரை"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_born = "பிறந்த குழந்தை"
   ; stages =

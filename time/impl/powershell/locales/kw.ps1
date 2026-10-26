@@ -10,22 +10,22 @@
 # Source: locales/kw.json
 
 function locale_kw {
-    $hours = @('12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11')
+    $hours = @('dewdhek', 'unn', 'diw', 'teyr', 'peder', 'pymp', 'hwegh', 'seyth', 'eth', 'naw', 'deg', 'unnek')
     $midnight = 'hanter nos'
     $noon = 'hanter dydh'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h} eur'
+    $patterns[5] = 'pymp mynysen wosa {h}'
+    $patterns[10] = 'deg mynysen wosa {h}'
+    $patterns[15] = 'kwarter wosa {h}'
+    $patterns[20] = 'ugens mynysen wosa {h}'
+    $patterns[25] = 'pymp mynysen warn ugens wosa {h}'
+    $patterns[30] = 'hanter wosa {h}'
+    $patterns[35] = 'pymp mynysen warn ugens dhe {next_h}'
+    $patterns[40] = 'ugens mynysen dhe {next_h}'
+    $patterns[45] = 'kwarter dhe {next_h}'
+    $patterns[50] = 'deg mynysen dhe {next_h}'
+    $patterns[55] = 'pymp mynysen dhe {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

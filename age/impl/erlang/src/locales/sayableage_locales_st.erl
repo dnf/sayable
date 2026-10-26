@@ -24,7 +24,7 @@ locale() ->
         half = "{0} le halofo",
         delimiter = ", ",
         just_born = "O sa tswa hlaha",
-        stages = #stages{newborn = {neutral, "Lesea le sa tswa hlaha"}, infant = {neutral, "Lesea"}, toddler = {neutral, "Ngwanana"}, child = {neutral, "Ngwana"}, teenager = {neutral, "Mosha"}, adult = {neutral, "Motho e moholo"}},
+        stages = #stages{newborn = {neutral, "Lesea le sa tswa hlaha"}, infant = {neutral, "Lesea"}, toddler = {neutral, "Ngwana e monyane"}, child = {neutral, "Ngwana"}, teenager = {neutral, "Mosha"}, adult = {neutral, "Motho e moholo"}},
         short = {just, #compactness_override{day = {just, {pluralized, [{one, "letsatsi {n}"}, {other, "matsatsi {n}"}]}}, week = {just, {pluralized, [{one, "beke {n}"}, {other, "dibeke {n}"}]}}, month = {just, {pluralized, [{one, "kgw. {n}"}, {other, "dikgw. {n}"}]}}, year = {just, {pluralized, [{one, "sel. {n}"}, {other, "dil. {n}"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

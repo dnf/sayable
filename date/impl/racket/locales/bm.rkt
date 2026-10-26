@@ -20,7 +20,7 @@
 (define bm
   (date-locale
    "bm"
-   (list "Zanwuye" "Fewuriye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "ɔkutɔburu" "Nowanbudu" "Desanburu")
+   (list "Zanwuye" "Feburuye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "Ɔkutɔburu" "Nowanburu" "Desanburu")
    (list "Kari" "Ntɛnɛn" "Tarata" "Araba" "Alamisa" "Juma" "Sibiri")
    "{n}"
    (hash)
@@ -35,6 +35,6 @@
    "{weekday} nata"
    "{weekday} tɛmɛnen"
    #f
-   (date-compactness-override (list "Zan" "Few" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "ɔku" "Now" "Des") #f (list "Kar" "Ntɛ" "Tar" "Ara" "Ala" "Jum" "Sib") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "Zan" "Feb" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "Ɔku" "Now" "Des") #f (list "Kar" "Ntɛ" "Tar" "Ara" "Ala" "Jum" "Sib") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

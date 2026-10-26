@@ -22,7 +22,7 @@ sd_unit('tk', week, _, '{n} hepde').
 sd_unit('tk', month, _, '{n} aý').
 sd_unit('tk', year, _, '{n} ýyl').
 
-sd_half('tk', '{0}½').
+sd_half('tk', '{n} ýarym').
 sd_delimiter('tk', ', ').
 sd_just_now('tk', 'häzir').
 sd_ago('tk', '{0} öň').

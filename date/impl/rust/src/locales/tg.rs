@@ -29,8 +29,8 @@ pub fn locale() -> DateLocale {
         day_after_tomorrow: Some("пасфардо".to_string()),
         day_before_yesterday: Some("парирӯз".to_string()),
         this_weekday: Some("ин {weekday}".to_string()),
-        next_weekday: Some("{weekday}-и оянда".to_string()),
-        last_weekday: Some("{weekday}-и гузашта".to_string()),
+        next_weekday: Some("{weekday}и оянда".to_string()),
+        last_weekday: Some("{weekday}и гузашта".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {
             months: Some(["Янв".to_string(), "Фев".to_string(), "Мар".to_string(), "Апр".to_string(), "Май".to_string(), "Июн".to_string(), "Июл".to_string(), "Авг".to_string(), "Сен".to_string(), "Окт".to_string(), "Ноя".to_string(), "Дек".to_string()]),

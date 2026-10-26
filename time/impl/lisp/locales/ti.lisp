@@ -20,7 +20,7 @@
     :hours (list "ዓሰርተ ክልተ" "ሓደ" "ክልተ" "ሰለስተ" "ኣርባዕተ" "ሓሙሽተ" "ሽድሽተ" "ሸውዓተ" "ሸሞንተ" "ትሽዓተ" "ዓሰርተ" "ዓሰርተ ሓደ")
     :midnight "ፍርቂ ለይቲ"
     :noon "ቀትሪ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} ሰዓት") (cons 5 "{h}ን ሓሙሽተን") (cons 10 "{h}ን ዓሰርተን") (cons 15 "{h}ን ርብዒን") (cons 20 "{h}ን ዕስራን") (cons 25 "{h}ን ዕስራን ሓሙሽተን") (cons 30 "{h}ን ፈረቓን") (cons 35 "{h}ን ሰላሳን ሓሙሽተን") (cons 40 "ዕስራ ጎደል {next_h}") (cons 45 "ርብዒ ጎደል {next_h}") (cons 50 "ዓሰርተ ጎደል {next_h}") (cons 55 "ሓሙሽተ ጎደል {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

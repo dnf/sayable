@@ -24,7 +24,7 @@
     (list "kaksitoista" "yksi" "kaksi" "kolme" "neljä" "viisi" "kuusi" "seitsemän" "kahdeksan" "yhdeksän" "kymmenen" "yksitoista")
     "keskiyö"
     "keskipäivä"
-    (hash 0 "{h}" 5 "viisi yli {h}" 10 "kymmenen yli {h}" 15 "vartti yli {h}" 20 "kaksikymmentä yli {h}" 25 "kaksikymmentäviisi yli {h}" 30 "puoli yli {h}" 35 "kaksikymmentäviisi vaille {next_h}" 40 "kaksikymmentä vaille {next_h}" 45 "vartti vaille {next_h}" 50 "kymmenen vaille {next_h}" 55 "viisi vaille {next_h}"))
+    (hash 0 "kello {h}" 5 "viisi yli {h}" 10 "kymmenen yli {h}" 15 "vartti yli {h}" 20 "kaksikymmentä yli {h}" 25 "kaksikymmentäviisi yli {h}" 30 "puoli {next_h}" 35 "kaksikymmentäviisi vaille {next_h}" 40 "kaksikymmentä vaille {next_h}" 45 "vartti vaille {next_h}" 50 "kymmenen vaille {next_h}" 55 "viisi vaille {next_h}"))
    (time-compactness-override (short-clock-config #t "{h}.{mm}" #f))
    (time-compactness-override (short-clock-config #t "{h}.{mm}" #f))
   ))

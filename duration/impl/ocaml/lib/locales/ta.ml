@@ -30,10 +30,10 @@ let locale : duration_locale =
       ; (Other, "{n} மாதங்கள்")
       ]
   ; year = Pluralized
-      [ (One, "{n} வயது")
-      ; (Other, "{n} வயது")
+      [ (One, "{n} ஆண்டு")
+      ; (Other, "{n} ஆண்டுகள்")
       ]
-  ; half = "{0}ரை"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_now = "இப்போதுதான்"
   ; ago = "{0} முன்"

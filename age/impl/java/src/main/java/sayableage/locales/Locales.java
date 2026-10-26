@@ -232,11 +232,11 @@ public final class Locales {
             StageLabel.neutral("Akwadaa"),
             StageLabel.neutral("Abofra"),
             StageLabel.neutral("Abofra"),
-            StageLabel.neutral("Abarimaa"),
+            StageLabel.gendered("Abarimaa", "Abaayewa"),
             StageLabel.neutral("Ɔpanyin")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("nna {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "da {n}", PluralCategory.OTHER, "nna {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dapɛn {n}", PluralCategory.OTHER, "nnapɛn {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bosome {n}", PluralCategory.OTHER, "abosome {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "afe {n}", PluralCategory.OTHER, "mfe {n}")),
@@ -245,7 +245,7 @@ public final class Locales {
             null
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("nna {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "da {n}", PluralCategory.OTHER, "nna {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dapɛn {n}", PluralCategory.OTHER, "nnapɛn {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bos {n}", PluralCategory.OTHER, "abos {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "afe {n}", PluralCategory.OTHER, "mfe {n}")),
@@ -339,7 +339,7 @@ public final class Locales {
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} ي"),
             UnitForms.simpleUnit("{n} أ"),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} شهر", PluralCategory.ONE, "شهر", PluralCategory.TWO, "شهران", PluralCategory.FEW, "{n} أشهر", PluralCategory.MANY, "{n} شهرًا", PluralCategory.OTHER, "{n} شهر")),
+            UnitForms.simpleUnit("{n} شهر"),
             UnitForms.simpleUnit("{n} سنة"),
             "{n}½",
             "",
@@ -357,10 +357,10 @@ public final class Locales {
         "ay",
         n -> PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("uru {n}"),
-            UnitForms.simpleUnit("simana {n}"),
-            UnitForms.simpleUnit("phaxsi {n}"),
-            UnitForms.simpleUnit("mara {n}")
+            UnitForms.simpleUnit("{n} uru"),
+            UnitForms.simpleUnit("{n} simana"),
+            UnitForms.simpleUnit("{n} phaxsi"),
+            UnitForms.simpleUnit("{n} mara")
         ),
         "{0} chika",
         ", ",
@@ -387,7 +387,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -555,7 +555,7 @@ public final class Locales {
             StageLabel.neutral("Umwana"),
             StageLabel.neutral("Umwana"),
             StageLabel.neutral("Umunyamata"),
-            StageLabel.neutral("Umulumendo")
+            StageLabel.neutral("Umukalamba")
         ),
         new CompactnessOverride(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ubushiku {n}", PluralCategory.OTHER, "inshiku {n}")),
@@ -638,7 +638,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} manis"),
             UnitForms.simpleUnit("{n} yia")
         ),
-        "{n} mo haf",
+        "{0} mo haf",
         ", ",
         "Niufala bebe",
         new Stages(
@@ -663,7 +663,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -868,7 +868,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mes", PluralCategory.OTHER, "{n} mesos")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} any", PluralCategory.OTHER, "{n} anys"))
         ),
-        "{n} i mig",
+        "{0} i mig",
         ", ",
         "Nounat",
         new Stages(
@@ -939,7 +939,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -960,7 +960,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} ka bulan"),
             UnitForms.simpleUnit("{n} ka tuig")
         ),
-        "{n}½",
+        "{0} ug tunga",
         ", ",
         "Bag-ong natawo",
         new Stages(
@@ -1047,10 +1047,10 @@ public final class Locales {
         "cy",
         Locales::pluralCy,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} diwrnod", PluralCategory.ONE, "{n} diwrnod", PluralCategory.TWO, "{n} ddiwrnod", PluralCategory.FEW, "{n} diwrnod", PluralCategory.MANY, "{n} niwrnod", PluralCategory.OTHER, "{n} diwrnod")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} diwrnod", PluralCategory.ONE, "{n} diwrnod", PluralCategory.TWO, "{n} ddiwrnod", PluralCategory.FEW, "{n} diwrnod", PluralCategory.MANY, "{n} diwrnod", PluralCategory.OTHER, "{n} diwrnod")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} wythnos", PluralCategory.ONE, "{n} wythnos", PluralCategory.TWO, "{n} wythnos", PluralCategory.FEW, "{n} wythnos", PluralCategory.MANY, "{n} wythnos", PluralCategory.OTHER, "{n} wythnos")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} mis", PluralCategory.ONE, "{n} mis", PluralCategory.TWO, "{n} fis", PluralCategory.FEW, "{n} mis", PluralCategory.MANY, "{n} mis", PluralCategory.OTHER, "{n} mis")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blwyddyn", PluralCategory.ONE, "{n} blwyddyn", PluralCategory.TWO, "{n} flynedd", PluralCategory.FEW, "{n} blynedd", PluralCategory.MANY, "{n} blynedd", PluralCategory.OTHER, "{n} blynedd"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blwyddyn", PluralCategory.ONE, "{n} flwyddyn", PluralCategory.TWO, "{n} flynedd", PluralCategory.FEW, "{n} blynedd", PluralCategory.MANY, "{n} blynedd", PluralCategory.OTHER, "{n} blynedd"))
         ),
         "{0} a hanner",
         ", ",
@@ -1282,7 +1282,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} މަސް"),
             UnitForms.simpleUnit("{n} އަހަރު")
         ),
-        "{0} ބައި",
+        "{n}½",
         "، ",
         "އަލަށް އުފަންވި",
         new Stages(
@@ -1374,7 +1374,7 @@ public final class Locales {
             UnitForms.simpleUnit("ཟླ་ {n}"),
             UnitForms.simpleUnit("ལོ་ {n}")
         ),
-        "{0} ཕྱེད",
+        "{0} དང་ཕྱེད",
         " ",
         "གསར་སྐྱེས",
         new Stages(
@@ -1415,10 +1415,10 @@ public final class Locales {
         "ee",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ŋkeke {n}", PluralCategory.OTHER, "ŋkekewo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "kɔsiɖa {n}", PluralCategory.OTHER, "kɔsiɖawo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ɣleti {n}", PluralCategory.OTHER, "ɣletiwo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ƒe {n}", PluralCategory.OTHER, "ƒewo {n}"))
+            UnitForms.simpleUnit("ŋkeke {n}"),
+            UnitForms.simpleUnit("kɔsiɖa {n}"),
+            UnitForms.simpleUnit("ɣleti {n}"),
+            UnitForms.simpleUnit("ƒe {n}")
         ),
         "{0} kple afã",
         ", ",
@@ -1428,14 +1428,14 @@ public final class Locales {
             StageLabel.neutral("Ɖevi"),
             StageLabel.neutral("Ɖevi sue"),
             StageLabel.neutral("Ɖevi"),
-            StageLabel.neutral("Ŋutsuviwo"),
+            StageLabel.gendered("Ɖekakpui", "Ɖetugbi"),
             StageLabel.neutral("Ame tsitsi")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("ŋkekewo {n}"),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "kɔsiɖa {n}", PluralCategory.OTHER, "kɔsiɖawo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ɣleti {n}", PluralCategory.OTHER, "ɣletiwo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ƒe {n}", PluralCategory.OTHER, "ƒewo {n}")),
+            UnitForms.simpleUnit("ŋkeke {n}"),
+            UnitForms.simpleUnit("kɔsiɖa {n}"),
+            UnitForms.simpleUnit("ɣleti {n}"),
+            UnitForms.simpleUnit("ƒe {n}"),
             null,
             null,
             null
@@ -1558,7 +1558,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mes", PluralCategory.OTHER, "{n} meses")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} año", PluralCategory.OTHER, "{n} años"))
         ),
-        "{n} y medio",
+        "{0} y medio",
         ", ",
         "Recién nacido",
         new Stages(
@@ -1796,11 +1796,11 @@ public final class Locales {
             StageLabel.neutral("Ɓinngel"),
             StageLabel.neutral("Cukalel"),
             StageLabel.neutral("Suka"),
-            StageLabel.neutral("Suka debbo"),
+            StageLabel.gendered("Suka gorko", "Suka debbo"),
             StageLabel.neutral("Mawɗo")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("ñalɗe {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ñalawma {n}", PluralCategory.OTHER, "ñalɗe {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "yontere {n}", PluralCategory.OTHER, "yontereeji {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lewru {n}", PluralCategory.OTHER, "lebbi {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hitaande {n}", PluralCategory.OTHER, "duuɓi {n}")),
@@ -1809,7 +1809,7 @@ public final class Locales {
             null
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("ñalɗe {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ñalawma {n}", PluralCategory.OTHER, "ñalɗe {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "yont {n}", PluralCategory.OTHER, "yontji {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lew {n}", PluralCategory.OTHER, "leb {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hit {n}", PluralCategory.OTHER, "duuɓi {n}")),
@@ -1889,7 +1889,7 @@ public final class Locales {
             StageLabel.neutral("Batang paslit"),
             StageLabel.neutral("Bata"),
             StageLabel.neutral("Tinedyer"),
-            StageLabel.neutral("Matanda")
+            StageLabel.neutral("Adulto")
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} araw"),
@@ -1926,7 +1926,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} na vula"),
             UnitForms.simpleUnit("{n} na yabaki")
         ),
-        "{n} kei na levu ni wasei",
+        "{0} kei na veimama",
         ", ",
         "Gone vou",
         new Stages(
@@ -1951,7 +1951,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -1980,7 +1980,7 @@ public final class Locales {
             StageLabel.neutral("Vǐ"),
             StageLabel.neutral("Vǐ"),
             StageLabel.neutral("Vǐ"),
-            StageLabel.neutral("Nyɔ̌nu"),
+            StageLabel.gendered("Dɔnkpɛvu", "Ɖyɔ̌vǐ"),
             StageLabel.neutral("Mɛ̌xo")
         ),
         new CompactnessOverride(
@@ -2162,7 +2162,7 @@ public final class Locales {
         new Stages(
             StageLabel.gendered("Recén nacido", "Recén nacida"),
             StageLabel.neutral("Bebé"),
-            StageLabel.neutral("Neno"),
+            StageLabel.gendered("Neno pequeno", "Nena pequena"),
             StageLabel.gendered("Neno", "Nena"),
             StageLabel.neutral("Adolescente"),
             StageLabel.gendered("Adulto", "Adulta")
@@ -2335,10 +2335,10 @@ public final class Locales {
         "ha",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} kwana", PluralCategory.OTHER, "{n} kwanaki")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mako", PluralCategory.OTHER, "{n} makonni")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} wata", PluralCategory.OTHER, "{n} watanni")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} shekara", PluralCategory.OTHER, "{n} shekaru"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "kwana {n}", PluralCategory.OTHER, "kwanaki {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mako {n}", PluralCategory.OTHER, "makonni {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "wata {n}", PluralCategory.OTHER, "watanni {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "shekara {n}", PluralCategory.OTHER, "shekaru {n}"))
         ),
         "{n}½",
         ", ",
@@ -2346,16 +2346,16 @@ public final class Locales {
         new Stages(
             StageLabel.neutral("Jariri"),
             StageLabel.neutral("Jariri"),
-            StageLabel.neutral("Ƙaramin yaro"),
-            StageLabel.neutral("Yaro"),
-            StageLabel.neutral("Saurayi"),
+            StageLabel.gendered("Ƙaramin yaro", "Ƙaramar yarinya"),
+            StageLabel.gendered("Yaro", "Yarinya"),
+            StageLabel.gendered("Saurayi", "Budurwa"),
             StageLabel.neutral("Babba")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} kw."),
-            UnitForms.simpleUnit("{n} mk."),
-            UnitForms.simpleUnit("{n} wt."),
-            UnitForms.simpleUnit("{n} shk."),
+            UnitForms.simpleUnit("kw. {n}"),
+            UnitForms.simpleUnit("mk. {n}"),
+            UnitForms.simpleUnit("wt. {n}"),
+            UnitForms.simpleUnit("shk. {n}"),
             null,
             null,
             null
@@ -2381,9 +2381,9 @@ public final class Locales {
         "he",
         n -> n == 1 ? PluralCategory.ONE : n == 2 ? PluralCategory.TWO : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "יום {n}", PluralCategory.TWO, "יומיים", PluralCategory.OTHER, "{n} ימים")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שבוע {n}", PluralCategory.TWO, "שבועיים", PluralCategory.OTHER, "{n} שבועות")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "חודש {n}", PluralCategory.TWO, "חודשיים", PluralCategory.OTHER, "{n} חודשים")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "יום", PluralCategory.TWO, "יומיים", PluralCategory.OTHER, "{n} ימים")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שבוע", PluralCategory.TWO, "שבועיים", PluralCategory.OTHER, "{n} שבועות")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "חודש", PluralCategory.TWO, "חודשיים", PluralCategory.OTHER, "{n} חודשים")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שנה", PluralCategory.TWO, "שנתיים", PluralCategory.OTHER, "{n} שנים"))
         ),
         "{0} וחצי",
@@ -2391,8 +2391,8 @@ public final class Locales {
         "רק נולד",
         new Stages(
             StageLabel.gendered("רק נולד", "רק נולדה"),
-            StageLabel.neutral("תינוק"),
-            StageLabel.neutral("פעוט"),
+            StageLabel.gendered("תינוק", "תינוקת"),
+            StageLabel.gendered("פעוט", "פעוטה"),
             StageLabel.gendered("ילד", "ילדה"),
             StageLabel.gendered("נער", "נערה"),
             StageLabel.gendered("מבוגר", "מבוגרת")
@@ -2503,7 +2503,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -2708,7 +2708,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} bulan"),
             UnitForms.simpleUnit("{n} tahun")
         ),
-        "{0} setengah",
+        "{n} setengah",
         ", ",
         "Baru lahir",
         new Stages(
@@ -2749,10 +2749,10 @@ public final class Locales {
         "ig",
         n -> PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} ụbọchị"),
-            UnitForms.simpleUnit("{n} izu"),
-            UnitForms.simpleUnit("{n} ọnwa"),
-            UnitForms.simpleUnit("{n} afọ")
+            UnitForms.simpleUnit("ụbọchị {n}"),
+            UnitForms.simpleUnit("izu {n}"),
+            UnitForms.simpleUnit("ọnwa {n}"),
+            UnitForms.simpleUnit("afọ {n}")
         ),
         "{0} na ọkara",
         ", ",
@@ -2762,14 +2762,14 @@ public final class Locales {
             StageLabel.neutral("Nwa ọhụrụ"),
             StageLabel.neutral("Nwa nta"),
             StageLabel.neutral("Nwa"),
-            StageLabel.neutral("Nwokorobịa"),
+            StageLabel.gendered("Nwokorobịa", "Agbọghọbịa"),
             StageLabel.neutral("Okenye")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} ụbọchị"),
-            UnitForms.simpleUnit("{n} izu"),
-            UnitForms.simpleUnit("{n} ọnwa"),
-            UnitForms.simpleUnit("{n} afọ"),
+            UnitForms.simpleUnit("ụbọchị {n}"),
+            UnitForms.simpleUnit("izu {n}"),
+            UnitForms.simpleUnit("ọnwa {n}"),
+            UnitForms.simpleUnit("afọ {n}"),
             null,
             null,
             null
@@ -2800,7 +2800,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mánuður", PluralCategory.OTHER, "{n} mánuðir")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ár", PluralCategory.OTHER, "{n} ár"))
         ),
-        "{0} og hálft",
+        "{n} og hálft",
         ", ",
         "Nýfætt",
         new Stages(
@@ -2917,7 +2917,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             null,
             null
         ),
@@ -3101,7 +3101,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -3207,12 +3207,12 @@ public final class Locales {
     // ================================================================
     public static final AgeLocale KL = new AgeLocale(
         "kl",
-        n -> PluralCategory.OTHER,
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("ullut {n}"),
-            UnitForms.simpleUnit("sapaatit {n}"),
-            UnitForms.simpleUnit("qaammatit {n}"),
-            UnitForms.simpleUnit("ukiut {n}")
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ulloq {n}", PluralCategory.OTHER, "ullut {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sapaatip akunnera {n}", PluralCategory.OTHER, "sapaatip akunneri {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "qaammat {n}", PluralCategory.OTHER, "qaammatit {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ukioq {n}", PluralCategory.OTHER, "ukiut {n}"))
         ),
         "{0} affaa",
         ", ",
@@ -3227,7 +3227,7 @@ public final class Locales {
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("ull. {n}"),
-            UnitForms.simpleUnit("sap. {n}"),
+            UnitForms.simpleUnit("sap. ak. {n}"),
             UnitForms.simpleUnit("qaam. {n}"),
             UnitForms.simpleUnit("uk. {n}"),
             null,
@@ -3239,7 +3239,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -3306,7 +3306,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ತಿಂಗಳು", PluralCategory.OTHER, "{n} ತಿಂಗಳುಗಳು")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ವರ್ಷ", PluralCategory.OTHER, "{n} ವರ್ಷಗಳು"))
         ),
-        "{0}ವರೆ",
+        "{n}½",
         ", ",
         "ನವಜಾತ ಶಿಶು",
         new Stages(
@@ -3444,7 +3444,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} mont"),
             UnitForms.simpleUnit("{n} ia")
         ),
-        "{n} na af",
+        "{0} ɛn af",
         ", ",
         "Nyubon bebi",
         new Stages(
@@ -3469,7 +3469,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -3577,10 +3577,10 @@ public final class Locales {
         "kw",
         Locales::pluralKw,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} dydh", PluralCategory.ONE, "dydh", PluralCategory.TWO, "{n} dhydh", PluralCategory.FEW, "{n} dydh", PluralCategory.MANY, "{n} dydh", PluralCategory.OTHER, "{n} dydh")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} seythun", PluralCategory.ONE, "seythun", PluralCategory.TWO, "{n} seythun", PluralCategory.FEW, "{n} seythun", PluralCategory.MANY, "{n} seythun", PluralCategory.OTHER, "{n} seythun")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} mis", PluralCategory.ONE, "mis", PluralCategory.TWO, "{n} vis", PluralCategory.FEW, "{n} mis", PluralCategory.MANY, "{n} mis", PluralCategory.OTHER, "{n} mis")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blydhen", PluralCategory.ONE, "blydhen", PluralCategory.TWO, "{n} vlydhen", PluralCategory.FEW, "{n} blydhen", PluralCategory.MANY, "{n} blydhen", PluralCategory.OTHER, "{n} blydhen"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} dydh", PluralCategory.ONE, "{n} dydh", PluralCategory.TWO, "{n} dhydh", PluralCategory.FEW, "{n} dydh", PluralCategory.MANY, "{n} dydh", PluralCategory.OTHER, "{n} dydh")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} seythun", PluralCategory.ONE, "{n} seythun", PluralCategory.TWO, "{n} seythun", PluralCategory.FEW, "{n} seythun", PluralCategory.MANY, "{n} seythun", PluralCategory.OTHER, "{n} seythun")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} mis", PluralCategory.ONE, "{n} mis", PluralCategory.TWO, "{n} vis", PluralCategory.FEW, "{n} mis", PluralCategory.MANY, "{n} mis", PluralCategory.OTHER, "{n} mis")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blydhen", PluralCategory.ONE, "{n} blydhen", PluralCategory.TWO, "{n} vlydhen", PluralCategory.FEW, "{n} blydhen", PluralCategory.MANY, "{n} blydhen", PluralCategory.OTHER, "{n} blydhen"))
         ),
         "{0} hag hanter",
         ", ",
@@ -3813,7 +3813,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} ປີ")
         ),
         "{0}ເຄິ່ງ",
-        "",
+        " ",
         "ເກີດໃໝ່",
         new Stages(
             StageLabel.neutral("ເດັກເກີດໃໝ່"),
@@ -3837,7 +3837,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             null,
             null
         ),
@@ -3992,7 +3992,7 @@ public final class Locales {
         n -> PluralCategory.OTHER,
         new Units(
             UnitForms.simpleUnit("{n} q'ij"),
-            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} seman"),
             UnitForms.simpleUnit("{n} xjaw"),
             UnitForms.simpleUnit("{n} ab'q'ii")
         ),
@@ -4009,7 +4009,7 @@ public final class Locales {
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} q'ij"),
-            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} seman"),
             UnitForms.simpleUnit("{n} xjaw"),
             UnitForms.simpleUnit("{n} ab'."),
             null,
@@ -4021,7 +4021,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -4175,12 +4175,12 @@ public final class Locales {
         "mi",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("rā {n}"),
-            UnitForms.simpleUnit("wiki {n}"),
-            UnitForms.simpleUnit("marama {n}"),
-            UnitForms.simpleUnit("tau {n}")
+            UnitForms.simpleUnit("{n} rā"),
+            UnitForms.simpleUnit("{n} wiki"),
+            UnitForms.simpleUnit("{n} marama"),
+            UnitForms.simpleUnit("{n} tau")
         ),
-        "{0}½",
+        "{n}½",
         ", ",
         "Pēpi hou",
         new Stages(
@@ -4192,10 +4192,10 @@ public final class Locales {
             StageLabel.neutral("Pakeke")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("rā {n}"),
-            UnitForms.simpleUnit("w {n}"),
-            UnitForms.simpleUnit("m {n}"),
-            UnitForms.simpleUnit("t {n}"),
+            UnitForms.simpleUnit("{n} rā"),
+            UnitForms.simpleUnit("{n} w"),
+            UnitForms.simpleUnit("{n} m"),
+            UnitForms.simpleUnit("{n} t"),
             null,
             null,
             null
@@ -4235,7 +4235,7 @@ public final class Locales {
             StageLabel.neutral("Мало дете"),
             StageLabel.neutral("Дете"),
             StageLabel.neutral("Тинејџер"),
-            StageLabel.neutral("Возрасен")
+            StageLabel.gendered("Возрасен", "Возрасна")
         ),
         new CompactnessOverride(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ден", PluralCategory.OTHER, "{n} дена")),
@@ -4265,14 +4265,14 @@ public final class Locales {
     // ================================================================
     public static final AgeLocale ML = new AgeLocale(
         "ml",
-        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ദിവസം", PluralCategory.OTHER, "{n} ദിവസങ്ങൾ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ആഴ്ച", PluralCategory.OTHER, "{n} ആഴ്ചകൾ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} മാസം", PluralCategory.OTHER, "{n} മാസങ്ങൾ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} വയസ്സ്", PluralCategory.OTHER, "{n} വയസ്സ്"))
         ),
-        "{0} ര",
+        "{n}½",
         ", ",
         "നവജാതശിശു",
         new Stages(
@@ -4738,7 +4738,7 @@ public final class Locales {
         new Stages(
             StageLabel.neutral("नवजात शिशु"),
             StageLabel.neutral("शिशु"),
-            StageLabel.neutral("बाल्यकाल"),
+            StageLabel.neutral("सानो बच्चा"),
             StageLabel.neutral("बालक"),
             StageLabel.neutral("किशोर"),
             StageLabel.neutral("वयस्क")
@@ -5192,7 +5192,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} manis"),
             UnitForms.simpleUnit("{n} yia")
         ),
-        "{n} en haf",
+        "{0} en haf",
         ", ",
         "Niufala bebi",
         new Stages(
@@ -5217,7 +5217,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -5493,7 +5493,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -5785,36 +5785,36 @@ public final class Locales {
         "shi",
         Locales::pluralShi,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ass", PluralCategory.FEW, "{n} ussan", PluralCategory.OTHER, "{n} ass")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} imalass", PluralCategory.FEW, "{n} imalassn", PluralCategory.OTHER, "{n} imalass")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ayyur", PluralCategory.FEW, "{n} ayyurn", PluralCategory.OTHER, "{n} ayyur")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} aseggas", PluralCategory.FEW, "{n} iseggasen", PluralCategory.OTHER, "{n} aseggas"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⵙ", PluralCategory.FEW, "{n} ⵓⵙⵙⴰⵏ", PluralCategory.OTHER, "{n} ⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⵉⵎⴰⵍⴰⵙⵙ", PluralCategory.FEW, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", PluralCategory.OTHER, "{n} ⵉⵎⴰⵍⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵢⵢⵓⵔ", PluralCategory.FEW, "{n} ⴰⵢⵢⵓⵔⵏ", PluralCategory.OTHER, "{n} ⴰⵢⵢⵓⵔ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⴳⴳⵯⴰⵙ", PluralCategory.FEW, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", PluralCategory.OTHER, "{n} ⴰⵙⴳⴳⵯⴰⵙ"))
         ),
-        "{0} d uzgen",
+        "{0} ⴷ ⵓⵣⴳⵏ",
         ", ",
-        "Iɣ d illul",
+        "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
         new Stages(
-            StageLabel.neutral("Iɣ d illul"),
-            StageLabel.neutral("Agellid"),
-            StageLabel.gendered("Aḥenjir", "Taḥenjirt"),
-            StageLabel.gendered("Afrux", "Tafruxṭ"),
-            StageLabel.gendered("Aɛrim", "Taɛrimt"),
-            StageLabel.gendered("Argaz", "Tamṭṭuṭ")
+            StageLabel.neutral("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"),
+            StageLabel.neutral("ⵍⵍⵓⴼⴰⵏ"),
+            StageLabel.gendered("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"),
+            StageLabel.gendered("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"),
+            StageLabel.gendered("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"),
+            StageLabel.gendered("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} d"),
-            UnitForms.simpleUnit("{n} wk"),
-            UnitForms.simpleUnit("{n} mo"),
-            UnitForms.simpleUnit("{n} yr"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⵙ", PluralCategory.FEW, "{n} ⵓⵙⵙⴰⵏ", PluralCategory.OTHER, "{n} ⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⵉⵎⴰⵍⴰⵙⵙ", PluralCategory.FEW, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", PluralCategory.OTHER, "{n} ⵉⵎⴰⵍⴰⵙⵙ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵢⵢⵓⵔ", PluralCategory.FEW, "{n} ⴰⵢⵢⵓⵔⵏ", PluralCategory.OTHER, "{n} ⴰⵢⵢⵓⵔ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ⴰⵙⴳⴳⵯⴰⵙ", PluralCategory.FEW, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", PluralCategory.OTHER, "{n} ⴰⵙⴳⴳⵯⴰⵙ")),
             null,
             null,
             null
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n}d"),
-            UnitForms.simpleUnit("{n}w"),
-            UnitForms.simpleUnit("{n}m"),
-            UnitForms.simpleUnit("{n}y"),
+            UnitForms.simpleUnit("{n} ⴰⵙⵙ"),
+            UnitForms.simpleUnit("{n} ⵉⵎⵍ"),
+            UnitForms.simpleUnit("{n} ⴰⵢⵔ"),
+            UnitForms.simpleUnit("{n} ⴰⵙⴳ"),
             "{n}½",
             "",
             null
@@ -5861,7 +5861,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -5882,7 +5882,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "මාස {n}", PluralCategory.OTHER, "මාස {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "වසර {n}", PluralCategory.OTHER, "වසර {n}"))
         ),
-        "{0}යි භාගයයි",
+        "{n}½",
         ", ",
         "අලුත උපන්",
         new Stages(
@@ -6107,10 +6107,10 @@ public final class Locales {
         "so",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "maalin {n}", PluralCategory.OTHER, "maalmood {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "toddobaad {n}", PluralCategory.OTHER, "toddobaadyo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bil {n}", PluralCategory.OTHER, "bilood {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sano {n}", PluralCategory.OTHER, "sanooyin {n}"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} maalin", PluralCategory.OTHER, "{n} maalmood")),
+            UnitForms.simpleUnit("{n} toddobaad"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} bil", PluralCategory.OTHER, "{n} bilood")),
+            UnitForms.simpleUnit("{n} sano")
         ),
         "{n}½",
         ", ",
@@ -6160,9 +6160,9 @@ public final class Locales {
         ),
         "{0} e gjysmë",
         ", ",
-        "Sapolindur",
+        "I sapolindur",
         new Stages(
-            StageLabel.gendered("Sapolindur", "Sapolindure"),
+            StageLabel.gendered("I sapolindur", "E sapolindur"),
             StageLabel.neutral("Foshnjë"),
             StageLabel.gendered("Fëmijë i vogël", "Fëmijë e vogël"),
             StageLabel.neutral("Fëmijë"),
@@ -6302,7 +6302,7 @@ public final class Locales {
         new Stages(
             StageLabel.neutral("Lesea le sa tswa hlaha"),
             StageLabel.neutral("Lesea"),
-            StageLabel.neutral("Ngwanana"),
+            StageLabel.neutral("Ngwana e monyane"),
             StageLabel.neutral("Ngwana"),
             StageLabel.neutral("Mosha"),
             StageLabel.neutral("Motho e moholo")
@@ -6526,7 +6526,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} மாதம்", PluralCategory.OTHER, "{n} மாதங்கள்")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} வயது", PluralCategory.OTHER, "{n} வயது"))
         ),
-        "{0}ரை",
+        "{n}½",
         ", ",
         "பிறந்த குழந்தை",
         new Stages(
@@ -6572,7 +6572,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} నెల", PluralCategory.OTHER, "{n} నెలలు")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} సంవత్సరం", PluralCategory.OTHER, "{n} సంవత్సరాలు"))
         ),
-        "{0}న్నర",
+        "{n}½",
         ", ",
         "నవజాత శిశువు",
         new Stages(
@@ -6689,7 +6689,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -6710,7 +6710,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} моҳ"),
             UnitForms.simpleUnit("{n} сол")
         ),
-        "{0} ним",
+        "{0}у ним",
         ", ",
         "Навзод",
         new Stages(
@@ -6894,7 +6894,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} aý"),
             UnitForms.simpleUnit("{n} ýaş")
         ),
-        "{0}½",
+        "{n} ýarym",
         ", ",
         "Täze doglan",
         new Stages(
@@ -6903,7 +6903,7 @@ public final class Locales {
             StageLabel.neutral("Kiçijik"),
             StageLabel.neutral("Çaga"),
             StageLabel.neutral("Ýetginjek"),
-            StageLabel.neutral("Ulular")
+            StageLabel.neutral("Uly adam")
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} g"),
@@ -6948,7 +6948,7 @@ public final class Locales {
             StageLabel.neutral("Lesea"),
             StageLabel.neutral("Ngwana yo monnye"),
             StageLabel.neutral("Ngwana"),
-            StageLabel.neutral("Lekgarebe"),
+            StageLabel.neutral("Mosha"),
             StageLabel.neutral("Motho yo mogolo")
         ),
         new CompactnessOverride(
@@ -6986,7 +6986,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} mun"),
             UnitForms.simpleUnit("{n} yia")
         ),
-        "{n} na hap",
+        "{0} na hap",
         ", ",
         "Nupela pikinini",
         new Stages(
@@ -7011,7 +7011,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         ),
@@ -7175,17 +7175,17 @@ public final class Locales {
         "Iɣ d illul",
         new Stages(
             StageLabel.neutral("Iɣ d illul"),
-            StageLabel.neutral("Agellid"),
+            StageLabel.neutral("Llufan"),
             StageLabel.gendered("Aḥenjir", "Taḥenjirt"),
-            StageLabel.gendered("Afrux", "Tafruxṭ"),
+            StageLabel.gendered("Afrux", "Tafruxt"),
             StageLabel.gendered("Aɛrim", "Taɛrimt"),
             StageLabel.gendered("Argaz", "Tamṭṭuṭ")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} d"),
-            UnitForms.simpleUnit("{n} wk"),
-            UnitForms.simpleUnit("{n} mo"),
-            UnitForms.simpleUnit("{n} yr"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ass", PluralCategory.OTHER, "{n} ussan")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} imalass", PluralCategory.OTHER, "{n} imalassn")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ayyur", PluralCategory.OTHER, "{n} ayyurn")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} aseggas", PluralCategory.OTHER, "{n} iseggasen")),
             null,
             null,
             null
@@ -7451,7 +7451,7 @@ public final class Locales {
         "Sơ sinh",
         new Stages(
             StageLabel.neutral("Sơ sinh"),
-            StageLabel.neutral("Trẻ sơ sinh"),
+            StageLabel.neutral("Trẻ nhũ nhi"),
             StageLabel.neutral("Trẻ mới biết đi"),
             StageLabel.neutral("Trẻ em"),
             StageLabel.neutral("Thiếu niên"),
@@ -7533,36 +7533,36 @@ public final class Locales {
         "wo",
         n -> PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("bés {n}"),
-            UnitForms.simpleUnit("ayubés {n}"),
-            UnitForms.simpleUnit("weer {n}"),
-            UnitForms.simpleUnit("at {n}")
+            UnitForms.simpleUnit("{n} fan"),
+            UnitForms.simpleUnit("{n} ayubés"),
+            UnitForms.simpleUnit("{n} weer"),
+            UnitForms.simpleUnit("{n} at")
         ),
         "{0} ak genn-wàll",
         ", ",
         "Dees ko sax juddu",
         new Stages(
             StageLabel.neutral("Dees ko sax juddu"),
-            StageLabel.neutral("Njàmbaar bu ndaw"),
+            StageLabel.neutral("Liir"),
             StageLabel.neutral("Xale bu ndaw"),
             StageLabel.neutral("Xale"),
             StageLabel.neutral("Ndaw-ndaw"),
             StageLabel.neutral("Mag")
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("bés {n}"),
-            UnitForms.simpleUnit("ayub. {n}"),
-            UnitForms.simpleUnit("weer {n}"),
-            UnitForms.simpleUnit("at {n}"),
+            UnitForms.simpleUnit("{n} fan"),
+            UnitForms.simpleUnit("{n} ayub."),
+            UnitForms.simpleUnit("{n} weer"),
+            UnitForms.simpleUnit("{n} at"),
             null,
             null,
             null
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("bés {n}"),
-            UnitForms.simpleUnit("ayub {n}"),
-            UnitForms.simpleUnit("weer {n}"),
-            UnitForms.simpleUnit("at {n}"),
+            UnitForms.simpleUnit("{n} fan"),
+            UnitForms.simpleUnit("{n} ayub"),
+            UnitForms.simpleUnit("{n} weer"),
+            UnitForms.simpleUnit("{n} at"),
             "{n}½",
             "",
             null

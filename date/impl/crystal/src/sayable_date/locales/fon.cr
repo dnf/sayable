@@ -13,7 +13,7 @@ module SayableDate
     FON = DateLocale.new(
       code: "fon",
       months: ["Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"],
-      weekdays: ["Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"],
+      weekdays: ["Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe"],
       day_format: "{n}",
       day_format_exceptions: {} of String => String,
       date_pattern: "{day} {month}",
@@ -28,7 +28,7 @@ module SayableDate
       last_weekday: "{weekday} e wá yí",
       short: CompactnessOverride.new(
         months: ["Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"],
-        weekdays: ["Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"],
+        weekdays: ["Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib"],
         day_format: "{n}",
         date_pattern: "{day} {month}",
         date_pattern_with_year: "{day} {month} {year}",

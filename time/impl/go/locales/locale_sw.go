@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var SW = st.TimeLocale{
 	Code: "sw",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"},
-		Midnight: "usiku wa manane",
-		Noon:     "adhuhuri",
-		Patterns: map[int]string{0: "{h} o'clock", 5: "tano kupita {h}", 10: "kumi kupita {h}", 15: "robo kupita {h}", 20: "ishirini kupita {h}", 25: "ishirini na tano kupita {h}", 30: "nusu kupita {h}", 35: "ishirini na tano kabla ya {next_h}", 40: "ishirini kabla ya {next_h}", 45: "robo kabla ya {next_h}", 50: "kumi kabla ya {next_h}", 55: "tano kabla ya {next_h}"},
+		Hours:    [12]string{"sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"},
+		Midnight: "saa sita usiku",
+		Noon:     "saa sita mchana",
+		Patterns: map[int]string{0: "saa {h}", 5: "saa {h} na dakika tano", 10: "saa {h} na dakika kumi", 15: "saa {h} na robo", 20: "saa {h} na dakika ishirini", 25: "saa {h} na dakika ishirini na tano", 30: "saa {h} na nusu", 35: "saa {next_h} kasoro dakika ishirini na tano", 40: "saa {next_h} kasoro dakika ishirini", 45: "saa {next_h} kasoro robo", 50: "saa {next_h} kasoro dakika kumi", 55: "saa {next_h} kasoro dakika tano"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

@@ -11,7 +11,7 @@
 
 (def locale
   {:code "bm"
-   :months @["Zanwuye" "Fewuriye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "ɔkutɔburu" "Nowanbudu" "Desanburu"]
+   :months @["Zanwuye" "Feburuye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "Ɔkutɔburu" "Nowanburu" "Desanburu"]
    :weekdays @["Kari" "Ntɛnɛn" "Tarata" "Araba" "Alamisa" "Juma" "Sibiri"]
    :day-format "{n}"
    :day-format-exceptions {}
@@ -25,6 +25,6 @@
    :this-weekday "{weekday} nin"
    :next-weekday "{weekday} nata"
    :last-weekday "{weekday} tɛmɛnen"
-   :short {:months @["Zan" "Few" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "ɔku" "Now" "Des"] :weekdays @["Kar" "Ntɛ" "Tar" "Ara" "Ala" "Jum" "Sib"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
+   :short {:months @["Zan" "Feb" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "Ɔku" "Now" "Des"] :weekdays @["Kar" "Ntɛ" "Tar" "Ara" "Ala" "Jum" "Sib"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
    :compact {:date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}"}
 })

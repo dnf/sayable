@@ -11,22 +11,22 @@
 
 % Maltese locale.
 
-st_hours('mt', ['tnax', 'waħda', 'tnejn', 'tlieta', 'erbgħa', 'ħamsa', 'sitta', 'sebgħa', 'tmienja', 'disgħa', 'għaxra', 'ħdax']).
-st_midnight('mt', 'nofsinhar').
+st_hours('mt', ['it-tnax', 'is-siegħa', 'is-sagħtejn', 'it-tlieta', 'l-erbgħa', 'il-ħamsa', 'is-sitta', 'is-sebgħa', 'it-tmienja', 'id-disgħa', 'l-għaxra', 'il-ħdax']).
+st_midnight('mt', 'nofsillejl').
 st_noon('mt', 'nofsinhar').
 
-st_pattern('mt', 0, '{h}:00').
-st_pattern('mt', 5, '{h}:05').
-st_pattern('mt', 10, '{h}:10').
-st_pattern('mt', 15, '{h}:15').
-st_pattern('mt', 20, '{h}:20').
-st_pattern('mt', 25, '{h}:25').
-st_pattern('mt', 30, '{h}:30').
-st_pattern('mt', 35, '{h}:35').
-st_pattern('mt', 40, '{h}:40').
-st_pattern('mt', 45, '{h}:45').
-st_pattern('mt', 50, '{h}:50').
-st_pattern('mt', 55, '{h}:55').
+st_pattern('mt', 0, '{h}').
+st_pattern('mt', 5, '{h} u ħamsa').
+st_pattern('mt', 10, '{h} u għaxra').
+st_pattern('mt', 15, '{h} u kwart').
+st_pattern('mt', 20, '{h} u għoxrin').
+st_pattern('mt', 25, '{h} u ħamsa u għoxrin').
+st_pattern('mt', 30, '{h} u nofs').
+st_pattern('mt', 35, '{next_h} neqsin ħamsa u għoxrin').
+st_pattern('mt', 40, '{next_h} neqsin għoxrin').
+st_pattern('mt', 45, '{next_h} neqsin kwart').
+st_pattern('mt', 50, '{next_h} neqsin għaxra').
+st_pattern('mt', 55, '{next_h} neqsin ħamsa').
 
 short_st_use24h('mt', true).
 short_st_format('mt', '{h}:{mm}').

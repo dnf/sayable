@@ -1,5 +1,4 @@
 /// Formats ages the way parents talk -- "6 weeks", "14 months", "3 1/2 years".
-
 import sayableage/formatter
 import sayableage/locales/locales
 import sayableage/types.{type AgeLocale, type Compactness, type Gender}

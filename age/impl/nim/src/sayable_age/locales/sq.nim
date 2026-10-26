@@ -24,9 +24,9 @@ let SQ* = AgeLocale(
   }.toOrderedTable,
   half: "{0} e gjysmë",
   delimiter: ", ",
-  justBorn: "Sapolindur",
+  justBorn: "I sapolindur",
   stages: {
-    "newborn": stageGendered("Sapolindur", "Sapolindure"),
+    "newborn": stageGendered("I sapolindur", "E sapolindur"),
     "infant": stageNeutral("Foshnjë"),
     "toddler": stageGendered("Fëmijë i vogël", "Fëmijë e vogël"),
     "child": stageNeutral("Fëmijë"),

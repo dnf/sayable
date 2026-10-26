@@ -14,13 +14,13 @@ class AYLocale {
   static plural { Fn.new {|n| "other" } }
   static units {
     return {
-      "second": "sikundu {n}",
-      "minute": "minutu {n}",
-      "hour": "ura {n}",
-      "day": "uru {n}",
-      "week": "simana {n}",
-      "month": "phaxsi {n}",
-      "year": "mara {n}",
+      "second": "{n} sikundu",
+      "minute": "{n} minutu",
+      "hour": "{n} ura",
+      "day": "{n} uru",
+      "week": "{n} simana",
+      "month": "{n} phaxsi",
+      "year": "{n} mara",
     }
   }
   static half { "{0} chika" }
@@ -31,9 +31,9 @@ class AYLocale {
   static short {
     return {
       "units": {
-        "second": "sik. {n}",
-        "minute": "min. {n}",
-        "hour": "ur. {n}",
+        "second": "{n} sik.",
+        "minute": "{n} min.",
+        "hour": "{n} ura",
         "day": "{n} ur.",
         "week": "{n} sim.",
         "month": "{n} phx.",
@@ -54,6 +54,7 @@ class AYLocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
       "ago": "{0} nayraqata",
       "inFuture": "{0} jutirïn",

@@ -16,7 +16,7 @@
    :plural (fn [n] (if (== n 1) :one :other))
    :second {:type :pluralized :forms {:one "isekondi {n}" :other "amasekondi {n}"}}
    :minute {:type :pluralized :forms {:one "iminiti {n}" :other "amaminiti {n}"}}
-   :hour {:type :pluralized :forms {:one "insa {n}" :other "amanso {n}"}}
+   :hour {:type :pluralized :forms {:one "insa {n}" :other "insa {n}"}}
    :day {:type :pluralized :forms {:one "ubushiku {n}" :other "inshiku {n}"}}
    :week {:type :pluralized :forms {:one "umulungu {n}" :other "imilungu {n}"}}
    :month {:type :pluralized :forms {:one "umweshi {n}" :other "imyeshi {n}"}}

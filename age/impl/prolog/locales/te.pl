@@ -23,7 +23,7 @@ sa_unit('te', month, other, '{n} నెలలు').
 sa_unit('te', year, one, '{n} సంవత్సరం').
 sa_unit('te', year, other, '{n} సంవత్సరాలు').
 
-sa_half('te', '{0}న్నర').
+sa_half('te', '{n}½').
 sa_delimiter('te', ', ').
 sa_just_born('te', 'నవజాత శిశువు').
 

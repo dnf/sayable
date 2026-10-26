@@ -26,5 +26,5 @@ locale() ->
         just_born = "新生児",
         stages = #stages{newborn = {neutral, "新生児"}, infant = {neutral, "乳児"}, toddler = {neutral, "幼児"}, child = {neutral, "児童"}, teenager = {neutral, "青少年"}, adult = {neutral, "成人"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} 日"}}, week = {just, {simple, "{n} 週間"}}, month = {just, {simple, "{n} か月"}}, year = {just, {simple, "{n} 年"}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = nothing, just_born = nothing}}
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = nothing, just_born = nothing}}
     }.

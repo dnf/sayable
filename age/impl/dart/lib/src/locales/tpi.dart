@@ -21,7 +21,7 @@ final tpi = AgeLocale(
   week: simpleUnit('{n} wik'),
   month: simpleUnit('{n} mun'),
   year: simpleUnit('{n} yia'),
-  half: '{n} na hap',
+  half: '{0} na hap',
   delimiter: ', ',
   justBorn: 'Nupela pikinini',
   newborn: stageNeutral('Nupela pikinini'),
@@ -42,5 +42,6 @@ final tpi = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

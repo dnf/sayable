@@ -25,8 +25,8 @@ mi
 	locale today: 'i tēnei rā'.
 	locale tomorrow: 'āpōpō'.
 	locale yesterday: 'inanahi'.
-	locale dayAfterTomorrow: 'tērā āpōpō'.
-	locale dayBeforeYesterday: 'tērā inanahi'.
+	locale dayAfterTomorrow: 'ātahirā'.
+	locale dayBeforeYesterday: 'inātahirā'.
 	locale thisWeekday: 'tēnei {weekday}'.
 	locale nextWeekday: '{weekday} e heke mai nei'.
 	locale lastWeekday: '{weekday} kua hori'.

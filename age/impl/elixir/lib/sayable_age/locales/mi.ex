@@ -17,12 +17,12 @@ defmodule SayableAge.Locales.MI do
       code: "mi",
       plural: (fn 1 -> :one; _ -> :other end),
       units: %{
-        day: "rā {n}",
-        week: "wiki {n}",
-        month: "marama {n}",
-        year: "tau {n}"
+        day: "{n} rā",
+        week: "{n} wiki",
+        month: "{n} marama",
+        year: "{n} tau"
       },
-      half: "{0}½",
+      half: "{n}½",
       delimiter: ", ",
       just_born: "Pēpi hou",
       stages: %{
@@ -35,10 +35,10 @@ defmodule SayableAge.Locales.MI do
       },
       short: %{
         units: %{
-          day: "rā {n}",
-          week: "w {n}",
-          month: "m {n}",
-          year: "t {n}"
+          day: "{n} rā",
+          week: "{n} w",
+          month: "{n} m",
+          year: "{n} t"
         }
       },
       compact: %{

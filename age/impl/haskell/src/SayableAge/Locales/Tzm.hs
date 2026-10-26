@@ -38,18 +38,30 @@ locale = Locale
     , localeJustBorn = "Iɣ d illul"
     , localeStages = Stages
         { stageNewborn = Neutral "Iɣ d illul"
-        , stageInfant = Neutral "Agellid"
+        , stageInfant = Neutral "Llufan"
         , stageToddler = Gendered "Aḥenjir" "Taḥenjirt"
-        , stageChild = Gendered "Afrux" "Tafruxṭ"
+        , stageChild = Gendered "Afrux" "Tafruxt"
         , stageTeenager = Gendered "Aɛrim" "Taɛrimt"
         , stageAdult = Gendered "Argaz" "Tamṭṭuṭ"
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "{n} d")
-            , ovrWeek = Just (Simple "{n} wk")
-            , ovrMonth = Just (Simple "{n} mo")
-            , ovrYear = Just (Simple "{n} yr")
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} ass")
+              , (Other, "{n} ussan")
+              ])
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} imalass")
+              , (Other, "{n} imalassn")
+              ])
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} ayyur")
+              , (Other, "{n} ayyurn")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} aseggas")
+              , (Other, "{n} iseggasen")
+              ])
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -33,7 +33,7 @@ locale = Locale
       [ (One, "{n} வயது")
       , (Other, "{n} வயது")
       ]
-    , localeHalf = "{0}ரை"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustBorn = "பிறந்த குழந்தை"
     , localeStages = Stages

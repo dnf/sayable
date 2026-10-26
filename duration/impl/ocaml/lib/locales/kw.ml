@@ -40,7 +40,7 @@ let locale : duration_locale =
       ]
   ; day = Pluralized
       [ (Zero, "{n} dydh")
-      ; (One, "dydh")
+      ; (One, "{n} dydh")
       ; (Two, "{n} dhydh")
       ; (Few, "{n} dydh")
       ; (Many, "{n} dydh")
@@ -48,7 +48,7 @@ let locale : duration_locale =
       ]
   ; week = Pluralized
       [ (Zero, "{n} seythun")
-      ; (One, "seythun")
+      ; (One, "{n} seythun")
       ; (Two, "{n} seythun")
       ; (Few, "{n} seythun")
       ; (Many, "{n} seythun")
@@ -56,7 +56,7 @@ let locale : duration_locale =
       ]
   ; month = Pluralized
       [ (Zero, "{n} mis")
-      ; (One, "mis")
+      ; (One, "{n} mis")
       ; (Two, "{n} vis")
       ; (Few, "{n} mis")
       ; (Many, "{n} mis")
@@ -64,7 +64,7 @@ let locale : duration_locale =
       ]
   ; year = Pluralized
       [ (Zero, "{n} blydhen")
-      ; (One, "blydhen")
+      ; (One, "{n} blydhen")
       ; (Two, "{n} vlydhen")
       ; (Few, "{n} blydhen")
       ; (Many, "{n} blydhen")

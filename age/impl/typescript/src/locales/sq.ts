@@ -22,9 +22,9 @@ export const sq: AgeLocale = {
   },
   half: '{0} e gjysmë',
   delimiter: ', ',
-  justBorn: 'Sapolindur',
+  justBorn: 'I sapolindur',
   stages: {
-    newborn: { m: 'Sapolindur', f: 'Sapolindure' },
+    newborn: { m: 'I sapolindur', f: 'E sapolindur' },
     infant: 'Foshnjë',
     toddler: { m: 'Fëmijë i vogël', f: 'Fëmijë e vogël' },
     child: 'Fëmijë',

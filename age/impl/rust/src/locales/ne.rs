@@ -46,7 +46,7 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Neutral("नवजात शिशु".to_string()),
             infant: StageLabel::Neutral("शिशु".to_string()),
-            toddler: StageLabel::Neutral("बाल्यकाल".to_string()),
+            toddler: StageLabel::Neutral("सानो बच्चा".to_string()),
             child: StageLabel::Neutral("बालक".to_string()),
             teenager: StageLabel::Neutral("किशोर".to_string()),
             adult: StageLabel::Neutral("वयस्क".to_string()),

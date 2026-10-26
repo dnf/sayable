@@ -10,7 +10,7 @@
 # Source: locales/ml.json
 
 function plural_ml([int]$n) {
-    if ($n -eq 0 -or $n -eq 1) { return 'one' }
+    if ($n -eq 1) { return 'one' }
     return 'other'
 }
 
@@ -21,7 +21,7 @@ function locale_ml {
         month = @{ one = '{n} മാസം'; other = '{n} മാസങ്ങൾ' }
         year = @{ one = '{n} വയസ്സ്'; other = '{n} വയസ്സ്' }
     }
-    $half = '{0} ര'
+    $half = '{n}½'
     $delimiter = ', '
     $justBorn = 'നവജാതശിശു'
     $stages = @{

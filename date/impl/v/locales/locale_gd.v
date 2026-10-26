@@ -16,7 +16,7 @@ pub const locale_gd = DateLocale{
 	code: 'gd'
 	months: ['Am Faoilleach', 'An Gearran', 'Am Màrt', 'An Giblean', 'An Cèitean', 'An t-Ògmhios', 'An t-Iuchar', 'An Lùnastal', 'An t-Sultain', 'An Dàmhair', 'An t-Samhain', 'An Dùbhlachd']!
 	weekdays: ['DiDòmhnaich', 'DiLuain', 'DiMàirt', 'DiCiadain', 'DiarDaoin', 'DihAoine', 'DiSathairne']!
-	day_format: '{n}'
+	day_format: '{n}mh'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
 	today: 'an-diugh'
@@ -32,6 +32,8 @@ pub const locale_gd = DateLocale{
 	has_next_weekday: true
 	last_weekday: '{weekday} seo chaidh'
 	has_last_weekday: true
+	months_in_date: ['dhen Fhaoilleach', 'dhen Ghearran', 'dhen Mhàrt', 'dhen Ghiblean', 'dhen Chèitean', 'dhen Ògmhios', 'dhen Iuchar', 'dhen Lùnastal', 'dhen t-Sultain', 'dhen Dàmhair', 'dhen t-Samhain', 'dhen Dùbhlachd']!
+	has_months_in_date: true
 	has_short: true
 	short_override: DateCompactnessOverride{
 		months: ['Faoi', 'Gearr', 'Màrt', 'Gibl', 'Cèit', 'Ògmh', 'Iuch', 'Lùna', 'Sult', 'Dàmh', 'Samh', 'Dùbh']!

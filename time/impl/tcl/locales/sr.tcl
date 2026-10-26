@@ -15,18 +15,18 @@ proc locale_time_sr {} {
     set midnight {поноћ}
     set noon {подне}
     set patterns [dict create \
-        0 "{h} часа" \
-        5 "пет po {h}" \
-        10 "десет po {h}" \
-        15 "петнаест po {h}" \
-        20 "двадесет po {h}" \
-        25 "двадесет пет po {h}" \
-        30 "тридесет po {h}" \
-        35 "двадесет пет do {next_h}" \
-        40 "двадесет do {next_h}" \
-        45 "петнаест do {next_h}" \
-        50 "десет do {next_h}" \
-        55 "пет do {next_h}" \
+        0 "{h}" \
+        5 "{h} и пет" \
+        10 "{h} и десет" \
+        15 "{h} и петнаест" \
+        20 "{h} и двадесет" \
+        25 "{h} и двадесет пет" \
+        30 "пола {next_h}" \
+        35 "двадесет пет до {next_h}" \
+        40 "двадесет до {next_h}" \
+        45 "петнаест до {next_h}" \
+        50 "десет до {next_h}" \
+        55 "пет до {next_h}" \
     ]
     set clock_config [dict create \
         hours $hours \

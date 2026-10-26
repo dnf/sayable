@@ -20,21 +20,21 @@
 (define tzm
   (date-locale
    "tzm"
-   (list "ⵉⵏⵏⴰⵢⵔ" "ⴱⵕⴰⵢⵕ" "ⵎⴰⵕⵚ" "ⵉⴱⵔⵉⵔ" "ⵎⴰⵢⵢⵓ" "ⵢⵓⵏⵢⵓ" "ⵢⵓⵍⵢⵓⵣ" "ⵖⵓⵛⵜ" "ⵛⵓⵜⴰⵏⴱⵉⵔ" "ⴽⵜⵓⴱⵔ" "ⵏⵓⵡⴰⵏⴱⵉⵔ" "ⴷⵓⵊⴰⵏⴱⵉⵔ")
-   (list "ⴰⵙⴰⵎⴰⵙ" "ⴰⵢⵏⴰⵙ" "ⴰⵙⵉⵏⴰⵙ" "ⴰⴽⵕⴰⵙ" "ⴰⴽⵡⴰⵙ" "ⴰⵙⵉⵎⵡⴰⵙ" "ⴰⵙⵉⴹⵢⴰⵙ")
+   (list "Yennayer" "Yebrayer" "Mars" "Ibrir" "Mayyu" "Yunyu" "Yulyuz" "Ɣuct" "Cutanbir" "Kṭuber" "Nwanbir" "Dujanbir")
+   (list "Asamas" "Aynas" "Asinas" "Akras" "Akwas" "Asimwas" "Asiḍyas")
    "{n}"
    (hash)
    "{day} {month}"
    "{day} {month} {year}"
-   "ⴰⵙⵙⴰ"
-   "ⴰⵙⴽⴽⴰ"
-   "ⵉⴹⵍⵍⵉ"
+   "Assa"
+   "Asekka"
+   "Assenaṭ"
    #f
    #f
-   "{weekday} ⴰⴷ"
-   "{weekday} ⴷ ⵉⴷⴷⴰⵏ"
-   "{weekday} ⵉⵣⵔⵉⵏ"
+   "{weekday} ad"
+   "{weekday} d iddan"
+   "{weekday} izrin"
    #f
-   (date-compactness-override (list "ⵉⵏⵏ" "ⴱⵕⴰ" "ⵎⴰⵕ" "ⵉⴱⵔ" "ⵎⴰⵢ" "ⵢⵓⵏ" "ⵢⵓⵍ" "ⵖⵓⵛ" "ⵛⵓⵜ" "ⴽⵜⵓ" "ⵏⵓⵡ" "ⴷⵓⵊ") #f (list "ⴰⵙⴰ" "ⴰⵢⵏ" "ⴰⵙⵉ" "ⴰⴽⵕ" "ⴰⴽⵡ" "ⴰⵙⵉⵎ" "ⴰⵙⵉⴹ") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "Yen" "Yeb" "Mar" "Ibr" "May" "Yun" "Yul" "Ɣuc" "Cut" "Kṭu" "Nwa" "Duj") #f (list "Asa" "Ayn" "Asn" "Akr" "Akw" "Asm" "Asḍ") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

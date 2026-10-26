@@ -23,7 +23,7 @@ locale() ->
         day = {simple, "{n}일"},
         week = {simple, "{n}주"},
         month = {simple, "{n}개월"},
-        year = {simple, "{n}살"},
+        year = {simple, "{n}년"},
         half = "{0} 반",
         delimiter = " ",
         just_now = "방금",

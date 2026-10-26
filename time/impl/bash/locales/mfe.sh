@@ -10,21 +10,21 @@
 # Source: locales/mfe.json
 
 _sayabletime_locale_mfe() {
-    _clock_hours=('douz' 'enn' 'de' 'trwa' 'kat' 'senk' 'sis' 'set' 'wit' 'nef' 'dis' 'onz')
+    _clock_hours=('douzer' 'enn er' 'dezer' 'trwazer' 'katrer' 'senker' 'sizer' 'seter' 'witer' 'never' 'dizer' 'onzer')
     _clock_midnight='minwi'
     _clock_noon='midi'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} senk'
+    _clock_pattern_10='{h} dis'
+    _clock_pattern_15='{h} ekar'
+    _clock_pattern_20='{h} vin'
+    _clock_pattern_25='{h} vennsenk'
+    _clock_pattern_30='{h} edmi'
+    _clock_pattern_35='{next_h} mwin vennsenk'
+    _clock_pattern_40='{next_h} mwin vin'
+    _clock_pattern_45='{next_h} mwin kar'
+    _clock_pattern_50='{next_h} mwin dis'
+    _clock_pattern_55='{next_h} mwin senk'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

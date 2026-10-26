@@ -12,17 +12,17 @@
 class KYLocale {
   static code { "ky" }
   static months {
-    return ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+    return ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
   }
   static weekdays {
-    return ["Жекшемби", "Дүйшөмбү", "Шейшемби", "Шаршемби", "Бейшемби", "Жума", "Ишемби"]
+    return ["жекшемби", "дүйшөмбү", "шейшемби", "шаршемби", "бейшемби", "жума", "ишемби"]
   }
-  static dayFormat { "{n}" }
+  static dayFormat { "{n}-" }
   static dayFormatExceptions {
     return {}
   }
-  static datePattern { "{day} {month}" }
-  static datePatternWithYear { "{day} {month} {year}" }
+  static datePattern { "{day}{month}" }
+  static datePatternWithYear { "{year}-ж., {day}{month}" }
   static today { "бүгүн" }
   static tomorrow { "эртең" }
   static yesterday { "кечээ" }
@@ -34,8 +34,8 @@ class KYLocale {
   static monthsInDate { null }
   static short {
     return {
-      "months": ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
-      "weekdays": ["Жек", "Дүй", "Шей", "Шар", "Бей", "Жум", "Ише"],
+      "months": ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"],
+      "weekdays": ["жек", "дүй", "шей", "шар", "бей", "жум", "ише"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
       "datePatternWithYear": "{day} {month} {year}",

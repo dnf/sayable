@@ -6,36 +6,44 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [dz.json](../../locales/dz.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): 'ཆུ་ཚོད་{h}' on the hour; 'ཆུ་ཚོད་{h}་དང་སྐར་མ་<minutes>' additive (Tibetan-family 'hour X and minute N'); 'ཆུ་ཚོད་{h}་དང་ཕྱེད' for half past. Minute numerals use the written decimal forms (བཅོ་ལྔ, ཉི་ཤུ, ཉེར་ལྔ, སོ་ལྔ, བཞི་བཅུ, ཞེ་ལྔ, ལྔ་བཅུ, ང་ལྔ). Doubts: Dzongkha colloquial may prefer a subtractive 'to' form for :45–:55 and the vigesimal (ཁལ) counting in speech; tsheg-joined spelling chosen over the space-separated style used elsewhere in the file for digits.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal             | Short              | Compact   |
-| ----------------- | ------------------ | ------------------ | --------- |
-| Born today        | གསར་སྐྱེས          | གསར་སྐྱེས          | གསར་སྐྱེས |
-| 1 day             | ཉིན་ 1             | ཉིན་ 1             | 1d        |
-| 3 days            | ཉིན་ 3             | ཉིན་ 3             | 3d        |
-| 6 days            | ཉིན་ 6             | ཉིན་ 6             | 6d        |
-| 1 week            | བདུན་ཕྲག་ 1        | བདུན་ཕྲག་ 1        | 1w        |
-| 1 week, 1 day     | བདུན་ཕྲག་ 1 ཉིན་ 1 | བདུན་ཕྲག་ 1 ཉིན་ 1 | 1w1d      |
-| 2 weeks           | བདུན་ཕྲག་ 2        | བདུན་ཕྲག་ 2        | 2w        |
-| 2 weeks, 3 days   | བདུན་ཕྲག་ 2 ཉིན་ 3 | བདུན་ཕྲག་ 2 ཉིན་ 3 | 2w3d      |
-| 3 months          | ཟླ་ 3              | ཟླ་ 3              | 3m        |
-| 6 months          | ཟླ་ 6              | ཟླ་ 6              | 6m        |
-| 11 months         | ཟླ་ 11             | ཟླ་ 11             | 11m       |
-| 12 months         | ཟླ་ 12             | ཟླ་ 12             | 12m       |
-| 23 months         | ཟླ་ 23             | ཟླ་ 23             | 23m       |
-| 2 years           | ལོ་ 2              | ལོ་ 2              | 2y        |
-| 2 years, 1 month  | ལོ་ 2 ཟླ་ 1        | ལོ་ 2 ཟླ་ 1        | 2y1m      |
-| 2 years, 6 months | ལོ་ 2 ཟླ་ 6        | ལོ་ 2 ཟླ་ 6        | 2y6m      |
-| 3 years           | ལོ་ 3              | ལོ་ 3              | 3y        |
-| 3½ years          | ལོ་ 3 ཕྱེད         | ལོ་ 3 ཕྱེད         | 3y ཕྱེད   |
-| 5 years           | ལོ་ 5              | ལོ་ 5              | 5y        |
-| 5½ years          | ལོ་ 5 ཕྱེད         | ལོ་ 5 ཕྱེད         | 5y ཕྱེད   |
-| 7 years           | ལོ་ 7              | ལོ་ 7              | 7y        |
-| 10 years          | ལོ་ 10             | ལོ་ 10             | 10y       |
-| 18 years          | ལོ་ 18             | ལོ་ 18             | 18y       |
-| 45 years          | ལོ་ 45             | ལོ་ 45             | 45y       |
+| Age               | Normal             | Short              | Compact    |
+| ----------------- | ------------------ | ------------------ | ---------- |
+| Born today        | གསར་སྐྱེས          | གསར་སྐྱེས          | གསར་སྐྱེས  |
+| 1 day             | ཉིན་ 1             | ཉིན་ 1             | 1d         |
+| 3 days            | ཉིན་ 3             | ཉིན་ 3             | 3d         |
+| 6 days            | ཉིན་ 6             | ཉིན་ 6             | 6d         |
+| 1 week            | བདུན་ཕྲག་ 1        | བདུན་ཕྲག་ 1        | 1w         |
+| 1 week, 1 day     | བདུན་ཕྲག་ 1 ཉིན་ 1 | བདུན་ཕྲག་ 1 ཉིན་ 1 | 1w1d       |
+| 2 weeks           | བདུན་ཕྲག་ 2        | བདུན་ཕྲག་ 2        | 2w         |
+| 2 weeks, 3 days   | བདུན་ཕྲག་ 2 ཉིན་ 3 | བདུན་ཕྲག་ 2 ཉིན་ 3 | 2w3d       |
+| 3 months          | ཟླ་ 3              | ཟླ་ 3              | 3m         |
+| 6 months          | ཟླ་ 6              | ཟླ་ 6              | 6m         |
+| 11 months         | ཟླ་ 11             | ཟླ་ 11             | 11m        |
+| 12 months         | ཟླ་ 12             | ཟླ་ 12             | 12m        |
+| 23 months         | ཟླ་ 23             | ཟླ་ 23             | 23m        |
+| 2 years           | ལོ་ 2              | ལོ་ 2              | 2y         |
+| 2 years, 1 month  | ལོ་ 2 ཟླ་ 1        | ལོ་ 2 ཟླ་ 1        | 2y1m       |
+| 2 years, 6 months | ལོ་ 2 ཟླ་ 6        | ལོ་ 2 ཟླ་ 6        | 2y6m       |
+| 3 years           | ལོ་ 3              | ལོ་ 3              | 3y         |
+| 3½ years          | ལོ་ 3 དང་ཕྱེད      | ལོ་ 3 དང་ཕྱེད      | 3y དང་ཕྱེད |
+| 5 years           | ལོ་ 5              | ལོ་ 5              | 5y         |
+| 5½ years          | ལོ་ 5 དང་ཕྱེད      | ལོ་ 5 དང་ཕྱེད      | 5y དང་ཕྱེད |
+| 7 years           | ལོ་ 7              | ལོ་ 7              | 7y         |
+| 10 years          | ལོ་ 10             | ལོ་ 10             | 10y        |
+| 18 years          | ལོ་ 18             | ལོ་ 18             | 18y        |
+| 45 years          | ལོ་ 45             | ལོ་ 45             | 45y        |
 
 ### Stages
 
@@ -72,38 +80,38 @@ Relative to Saturday, March 15, 2025.
 | Yesterday            | ཁ་ཙ              | ཁ་ཙ       |
 | Day after tomorrow   | གནངས་ཚེ          | {yy}/3/17 |
 | Day before yesterday | ཁ་ཉིམ            | {yy}/3/13 |
-| This Thursday (+5)   | འདི་ གཟའ་ཕུར་བུ  | {yy}/3/20 |
-| Last Monday (-4)     | གཟའ་མིག་དམར ཧེ་མ | {yy}/3/11 |
-| Next Wednesday (+12) | གཟའ་ཕུར་བུ ཤུལ་མ | {yy}/3/27 |
-| Same month (+20)     | ཟླ་བཞི་པ 4       | {yy}/4/4  |
+| This Thursday (+5)   | གཟའ་ཕུར་བུ འདི   | {yy}/3/20 |
+| Last Tuesday (-4)    | གཟའ་མིག་དམར ཧེ་མ | {yy}/3/11 |
+| Next Thursday (+12)  | གཟའ་ཕུར་བུ ཤུལ་མ | {yy}/3/27 |
+| Same year (+20)      | ཟླ་བཞི་པ 4       | {yy}/4/4  |
 | Different year       | 2026 ཟླ་དངཔ 10   | 26/1/10   |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal             | Short              | Compact |
-| --------------------- | ------------------ | ------------------ | ------- |
-| 0 seconds             | ད་ལྟ               | ད་ལྟ               | ད་ལྟ    |
-| 1 second              | སྐར་ཆ་ 1           | སྐར་ཆ་ 1           | 1s      |
-| 30 seconds            | སྐར་ཆ་ 30          | སྐར་ཆ་ 30          | 30s     |
-| 1 minute              | སྐར་མ་ 1           | སྐར་མ་ 1           | 1m      |
-| 2 minutes, 15 seconds | སྐར་མ་ 2 སྐར་ཆ་ 15 | སྐར་མ་ 2 སྐར་ཆ་ 15 | 2m15s   |
-| 5 minutes             | སྐར་མ་ 5           | སྐར་མ་ 5           | 5m      |
-| 45 minutes            | སྐར་མ་ 45          | སྐར་མ་ 45          | 45m     |
-| 1 hour                | ཆུ་ཚོད་ 1          | ཆུ་ཚོད་ 1          | 1h      |
-| 1½ hours              | ཆུ་ཚོད་ 1 ཕྱེད     | ཆུ་ཚོད་ 1 ཕྱེད     | 1h ཕྱེད |
-| 3 hours               | ཆུ་ཚོད་ 3          | ཆུ་ཚོད་ 3          | 3h      |
-| 6 hours               | ཆུ་ཚོད་ 6          | ཆུ་ཚོད་ 6          | 6h      |
-| 1 day                 | ཉིན་ 1             | ཉིན་ 1             | 1d      |
-| 1½ days               | ཉིན་ 1 ཕྱེད        | ཉིན་ 1 ཕྱེད        | 1d ཕྱེད |
-| 3 days                | ཉིན་ 3             | ཉིན་ 3             | 3d      |
-| 1 week                | བདུན་ཕྲག་ 1        | བདུན་ཕྲག་ 1        | 1w      |
-| 2 weeks, 3 days       | བདུན་ཕྲག་ 2 ཉིན་ 3 | བདུན་ཕྲག་ 2 ཉིན་ 3 | 2w3d    |
-| 1 month               | ཟླ་ 1              | ཟླ་ 1              | 1mo     |
-| 6 months              | ཟླ་ 6              | ཟླ་ 6              | 6mo     |
-| 1 year                | ལོ་ 1              | ལོ་ 1              | 1y      |
-| 2 years, 3 months     | ལོ་ 2 ཟླ་ 3        | ལོ་ 2 ཟླ་ 3        | 2y3mo   |
+| Duration              | Normal             | Short              | Compact    |
+| --------------------- | ------------------ | ------------------ | ---------- |
+| 0 seconds             | ད་ལྟ               | ད་ལྟ               | ད་ལྟ       |
+| 1 second              | སྐར་ཆ་ 1           | སྐར་ཆ་ 1           | 1s         |
+| 30 seconds            | སྐར་ཆ་ 30          | སྐར་ཆ་ 30          | 30s        |
+| 1 minute              | སྐར་མ་ 1           | སྐར་མ་ 1           | 1m         |
+| 2 minutes, 15 seconds | སྐར་མ་ 2 སྐར་ཆ་ 15 | སྐར་མ་ 2 སྐར་ཆ་ 15 | 2m15s      |
+| 5 minutes             | སྐར་མ་ 5           | སྐར་མ་ 5           | 5m         |
+| 45 minutes            | སྐར་མ་ 45          | སྐར་མ་ 45          | 45m        |
+| 1 hour                | ཆུ་ཚོད་ 1          | ཆུ་ཚོད་ 1          | 1h         |
+| 1½ hours              | ཆུ་ཚོད་ 1 དང་ཕྱེད  | ཆུ་ཚོད་ 1 དང་ཕྱེད  | 1h དང་ཕྱེད |
+| 3 hours               | ཆུ་ཚོད་ 3          | ཆུ་ཚོད་ 3          | 3h         |
+| 6 hours               | ཆུ་ཚོད་ 6          | ཆུ་ཚོད་ 6          | 6h         |
+| 1 day                 | ཉིན་ 1             | ཉིན་ 1             | 1d         |
+| 1½ days               | ཉིན་ 1 དང་ཕྱེད     | ཉིན་ 1 དང་ཕྱེད     | 1d དང་ཕྱེད |
+| 3 days                | ཉིན་ 3             | ཉིན་ 3             | 3d         |
+| 1 week                | བདུན་ཕྲག་ 1        | བདུན་ཕྲག་ 1        | 1w         |
+| 2 weeks, 3 days       | བདུན་ཕྲག་ 2 ཉིན་ 3 | བདུན་ཕྲག་ 2 ཉིན་ 3 | 2w3d       |
+| 1 month               | ཟླ་ 1              | ཟླ་ 1              | 1mo        |
+| 6 months              | ཟླ་ 6              | ཟླ་ 6              | 6mo        |
+| 1 year                | ལོ་ 1              | ལོ་ 1              | 1y         |
+| 2 years, 3 months     | ལོ་ 2 ཟླ་ 3        | ལོ་ 2 ཟླ་ 3        | 2y3mo      |
 
 ### Relative time
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal      | Short    | Compact |
-| --------------- | ----------- | -------- | ------- |
-| Midnight        | ནམ་ཕྱེད     | 12:00 AM | 12:00a  |
-| 1:00 AM         | གཅིག:00     | 1:00 AM  | 1:00a   |
-| 5 past 9        | དགུ:05      | 9:05 AM  | 9:05a   |
-| Quarter past 10 | བཅུ:15      | 10:15 AM | 10:15a  |
-| Half past 11    | བཅུ་གཅིག:30 | 11:30 AM | 11:30a  |
-| Noon            | ཉིན་གུང     | 12:00 PM | 12:00p  |
-| Quarter to 3    | གཉིས:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | ལྔ:55       | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | བརྒྱད:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | བཅུ:30      | 10:30 PM | 10:30p  |
-| 11:58 PM        | ནམ་ཕྱེད     | 11:58 PM | 11:58p  |
+| Time            | Normal                     | Short    | Compact |
+| --------------- | -------------------------- | -------- | ------- |
+| Midnight        | ནམ་ཕྱེད                    | 12:00 AM | 12:00a  |
+| 1:00 AM         | ཆུ་ཚོད་གཅིག                | 1:00 AM  | 1:00a   |
+| 5 past 9        | ཆུ་ཚོད་དགུ་དང་སྐར་མ་ལྔ     | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ཆུ་ཚོད་བཅུ་དང་སྐར་མ་བཅོ་ལྔ | 10:15 AM | 10:15a  |
+| Half past 11    | ཆུ་ཚོད་བཅུ་གཅིག་དང་ཕྱེད    | 11:30 AM | 11:30a  |
+| Noon            | ཉིན་གུང                    | 12:00 PM | 12:00p  |
+| Quarter to 3    | ཆུ་ཚོད་གཉིས་དང་སྐར་མ་ཞེ་ལྔ | 2:45 PM  | 2:45p   |
+| 5 to 6          | ཆུ་ཚོད་ལྔ་དང་སྐར་མ་ང་ལྔ    | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ཆུ་ཚོད་བརྒྱད               | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ཆུ་ཚོད་བཅུ་དང་ཕྱེད         | 10:30 PM | 10:30p  |
+| 11:58 PM        | ནམ་ཕྱེད                    | 11:58 PM | 11:58p  |

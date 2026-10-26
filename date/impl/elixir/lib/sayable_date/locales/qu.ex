@@ -46,7 +46,7 @@ defmodule SayableDate.Locales.QU do
       tomorrow: "paqarin",
       yesterday: "qayna",
       day_after_tomorrow: "minchha",
-      day_before_yesterday: "qayna p'unchaw",
+      day_before_yesterday: "qayninpa",
       this_weekday: "kay {weekday}",
       next_weekday: "hamuq {weekday}",
       last_weekday: "qayna {weekday}",

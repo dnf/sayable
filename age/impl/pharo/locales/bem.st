@@ -32,7 +32,7 @@ bem
 		#toddler. 'Umwana'.
 		#child. 'Umwana'.
 		#teenager. 'Umunyamata'.
-		#adult. 'Umulumendo'.
+		#adult. 'Umukalamba'.
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {

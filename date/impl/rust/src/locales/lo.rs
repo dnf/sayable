@@ -27,10 +27,10 @@ pub fn locale() -> DateLocale {
         tomorrow: "ມື້ອື່ນ".to_string(),
         yesterday: "ມື້ວານ".to_string(),
         day_after_tomorrow: Some("ມື້ຮື".to_string()),
-        day_before_yesterday: Some("ມື້ກ່ອນ".to_string()),
+        day_before_yesterday: Some("ມື້ຊືນ".to_string()),
         this_weekday: Some("{weekday}ນີ້".to_string()),
         next_weekday: Some("{weekday}ໜ້າ".to_string()),
-        last_weekday: Some("{weekday}ແລ້ວ".to_string()),
+        last_weekday: Some("{weekday}ທີ່ແລ້ວ".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {
             months: Some(["ມ.ກ.".to_string(), "ກ.ພ.".to_string(), "ມ.ນ.".to_string(), "ມ.ສ.".to_string(), "ພ.ພ.".to_string(), "ມ.ຖ.".to_string(), "ກ.ລ.".to_string(), "ສ.ຫ.".to_string(), "ກ.ຍ.".to_string(), "ຕ.ລ.".to_string(), "ພ.ຈ.".to_string(), "ທ.ວ.".to_string()]),

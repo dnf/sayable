@@ -17,14 +17,14 @@
   (make-duration-locale
    :code "si"
    :plural (lambda (n) (if (<= n 1) :one :other))
-   :units (list (cons :second "{n} තත්පරය")
-               (cons :minute "{n} මිනිත්තුව")
-               (cons :hour "{n} පැය")
+   :units (list (cons :second "තත්පර {n}")
+               (cons :minute "මිනිත්තු {n}")
+               (cons :hour "පැය {n}")
                (cons :day '((:one . "දින {n}") (:other . "දින {n}")))
                (cons :week '((:one . "සති {n}") (:other . "සති {n}")))
                (cons :month '((:one . "මාස {n}") (:other . "මාස {n}")))
                (cons :year '((:one . "වසර {n}") (:other . "වසර {n}"))))
-   :half "{0}යි භාගයයි"
+   :half "{n}½"
    :delimiter ", "
    :just-now "දැන්"
    :ago "{0}ට පෙර"

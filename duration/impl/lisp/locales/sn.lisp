@@ -17,9 +17,9 @@
   (make-duration-locale
    :code "sn"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second "{n} sekondi")
-               (cons :minute "{n} miniti")
-               (cons :hour "{n} awa")
+   :units (list (cons :second '((:one . "sekondi {n}") (:other . "masekondi {n}")))
+               (cons :minute '((:one . "miniti {n}") (:other . "maminitsi {n}")))
+               (cons :hour '((:one . "awa {n}") (:other . "maawa {n}")))
                (cons :day '((:one . "zuva {n}") (:other . "mazuva {n}")))
                (cons :week '((:one . "vhiki {n}") (:other . "mavhiki {n}")))
                (cons :month '((:one . "mwedzi {n}") (:other . "mwedzi {n}")))

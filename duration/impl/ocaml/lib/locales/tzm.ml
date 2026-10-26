@@ -48,13 +48,34 @@ let locale : duration_locale =
   ; ago = "ɣ {0} zzrin"
   ; in_future = "ɣ {0}"
   ; short = Some
-      { ovr_second = Some (Simple "{n}s")
-      ; ovr_minute = Some (Simple "{n}m")
-      ; ovr_hour = Some (Simple "{n}h")
-      ; ovr_day = Some (Simple "{n}d")
-      ; ovr_week = Some (Simple "{n}w")
-      ; ovr_month = Some (Simple "{n}mo")
-      ; ovr_year = Some (Simple "{n}y")
+      { ovr_second = Some (Pluralized
+        [ (One, "{n} tasint")
+        ; (Other, "{n} tisinin")
+        ])
+      ; ovr_minute = Some (Pluralized
+        [ (One, "{n} tusdiqt")
+        ; (Other, "{n} tusdiqin")
+        ])
+      ; ovr_hour = Some (Pluralized
+        [ (One, "{n} tasragt")
+        ; (Other, "{n} tisragin")
+        ])
+      ; ovr_day = Some (Pluralized
+        [ (One, "{n} ass")
+        ; (Other, "{n} ussan")
+        ])
+      ; ovr_week = Some (Pluralized
+        [ (One, "{n} imalass")
+        ; (Other, "{n} imalassn")
+        ])
+      ; ovr_month = Some (Pluralized
+        [ (One, "{n} ayyur")
+        ; (Other, "{n} ayyurn")
+        ])
+      ; ovr_year = Some (Pluralized
+        [ (One, "{n} aseggas")
+        ; (Other, "{n} iseggasen")
+        ])
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "ɣ {0} zzrin"

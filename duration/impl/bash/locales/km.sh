@@ -25,7 +25,7 @@ _sayableduration_locale_km() {
     _delimiter=', '
     _just_now='ឥឡូវនេះ'
     _ago='{0}មុន'
-    _in_future='ក្នុង{0}'
+    _in_future='{0}ទៀត'
     _short_unit_second='{n} វិនាទី'
     _short_unit_minute='{n} នាទី'
     _short_unit_hour='{n} ម៉ោង'
@@ -34,7 +34,7 @@ _sayableduration_locale_km() {
     _short_unit_month='{n} ខែ'
     _short_unit_year='{n} ឆ្នាំ'
     _short_ago='{0}មុន'
-    _short_in_future='ក្នុង{0}'
+    _short_in_future='{0}ទៀត'
     _compact_unit_second='{n} វិនាទី'
     _compact_unit_minute='{n} នាទី'
     _compact_unit_hour='{n} ម៉ោង'
@@ -45,6 +45,6 @@ _sayableduration_locale_km() {
     _compact_half='{n}½'
     _compact_delimiter=''
     _compact_ago='{0}មុន'
-    _compact_in_future='ក្នុង{0}'
+    _compact_in_future='{0}ទៀត'
     _plural_func=_sayableduration_plural_km
 }

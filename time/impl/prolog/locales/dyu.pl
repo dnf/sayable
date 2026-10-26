@@ -15,18 +15,18 @@ st_hours('dyu', ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔ�
 st_midnight('dyu', 'dugutilama').
 st_noon('dyu', 'tilgari').
 
-st_pattern('dyu', 0, '{h}:00').
-st_pattern('dyu', 5, '{h}:05').
-st_pattern('dyu', 10, '{h}:10').
-st_pattern('dyu', 15, '{h}:15').
-st_pattern('dyu', 20, '{h}:20').
-st_pattern('dyu', 25, '{h}:25').
-st_pattern('dyu', 30, '{h}:30').
-st_pattern('dyu', 35, '{h}:35').
-st_pattern('dyu', 40, '{h}:40').
-st_pattern('dyu', 45, '{h}:45').
-st_pattern('dyu', 50, '{h}:50').
-st_pattern('dyu', 55, '{h}:55').
+st_pattern('dyu', 0, 'lɛrɛ {h}').
+st_pattern('dyu', 5, 'lɛrɛ {h} ni miniti duuru').
+st_pattern('dyu', 10, 'lɛrɛ {h} ni miniti tan').
+st_pattern('dyu', 15, 'lɛrɛ {h} ni miniti tan ni duuru').
+st_pattern('dyu', 20, 'lɛrɛ {h} ni miniti mugan').
+st_pattern('dyu', 25, 'lɛrɛ {h} ni miniti mugan ni duuru').
+st_pattern('dyu', 30, 'lɛrɛ {h} ni tilancɛ').
+st_pattern('dyu', 35, 'lɛrɛ {h} ni miniti bi saba ni duuru').
+st_pattern('dyu', 40, 'lɛrɛ {h} ni miniti bi naani').
+st_pattern('dyu', 45, 'lɛrɛ {h} ni miniti bi naani ni duuru').
+st_pattern('dyu', 50, 'lɛrɛ {h} ni miniti bi duuru').
+st_pattern('dyu', 55, 'lɛrɛ {h} ni miniti bi duuru ni duuru').
 
 short_st_use24h('dyu', false).
 short_st_format('dyu', '{h}:{mm} {ampm}').

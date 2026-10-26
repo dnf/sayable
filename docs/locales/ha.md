@@ -13,40 +13,40 @@ Plural rule: `one_other` (categories: one, other)
 | Age               | Normal               | Short         | Compact       |
 | ----------------- | -------------------- | ------------- | ------------- |
 | Born today        | Sabon haihuwa        | Sabon haihuwa | Sabon haihuwa |
-| 1 day             | 1 kwana              | 1 kw.         | 1d            |
-| 3 days            | 3 kwanaki            | 3 kw.         | 3d            |
-| 6 days            | 6 kwanaki            | 6 kw.         | 6d            |
-| 1 week            | 1 mako               | 1 mk.         | 1w            |
-| 1 week, 1 day     | 1 mako, 1 kwana      | 1 mk., 1 kw.  | 1w1d          |
-| 2 weeks           | 2 makonni            | 2 mk.         | 2w            |
-| 2 weeks, 3 days   | 2 makonni, 3 kwanaki | 2 mk., 3 kw.  | 2w3d          |
-| 3 months          | 3 watanni            | 3 wt.         | 3m            |
-| 6 months          | 6 watanni            | 6 wt.         | 6m            |
-| 11 months         | 11 watanni           | 11 wt.        | 11m           |
-| 12 months         | 12 watanni           | 12 wt.        | 12m           |
-| 23 months         | 23 watanni           | 23 wt.        | 23m           |
-| 2 years           | 2 shekaru            | 2 shk.        | 2y            |
-| 2 years, 1 month  | 2 shekaru, 1 wata    | 2 shk., 1 wt. | 2y1m          |
-| 2 years, 6 months | 2 shekaru, 6 watanni | 2 shk., 6 wt. | 2y6m          |
-| 3 years           | 3 shekaru            | 3 shk.        | 3y            |
-| 3½ years          | 3½ shekaru           | 3½ shk.       | 3½y           |
-| 5 years           | 5 shekaru            | 5 shk.        | 5y            |
-| 5½ years          | 5½ shekaru           | 5½ shk.       | 5½y           |
-| 7 years           | 7 shekaru            | 7 shk.        | 7y            |
-| 10 years          | 10 shekaru           | 10 shk.       | 10y           |
-| 18 years          | 18 shekaru           | 18 shk.       | 18y           |
-| 45 years          | 45 shekaru           | 45 shk.       | 45y           |
+| 1 day             | kwana 1              | kw. 1         | 1d            |
+| 3 days            | kwanaki 3            | kw. 3         | 3d            |
+| 6 days            | kwanaki 6            | kw. 6         | 6d            |
+| 1 week            | mako 1               | mk. 1         | 1w            |
+| 1 week, 1 day     | mako 1, kwana 1      | mk. 1, kw. 1  | 1w1d          |
+| 2 weeks           | makonni 2            | mk. 2         | 2w            |
+| 2 weeks, 3 days   | makonni 2, kwanaki 3 | mk. 2, kw. 3  | 2w3d          |
+| 3 months          | watanni 3            | wt. 3         | 3m            |
+| 6 months          | watanni 6            | wt. 6         | 6m            |
+| 11 months         | watanni 11           | wt. 11        | 11m           |
+| 12 months         | watanni 12           | wt. 12        | 12m           |
+| 23 months         | watanni 23           | wt. 23        | 23m           |
+| 2 years           | shekaru 2            | shk. 2        | 2y            |
+| 2 years, 1 month  | shekaru 2, wata 1    | shk. 2, wt. 1 | 2y1m          |
+| 2 years, 6 months | shekaru 2, watanni 6 | shk. 2, wt. 6 | 2y6m          |
+| 3 years           | shekaru 3            | shk. 3        | 3y            |
+| 3½ years          | shekaru 3½           | shk. 3½       | 3½y           |
+| 5 years           | shekaru 5            | shk. 5        | 5y            |
+| 5½ years          | shekaru 5½           | shk. 5½       | 5½y           |
+| 7 years           | shekaru 7            | shk. 7        | 7y            |
+| 10 years          | shekaru 10           | shk. 10       | 10y           |
+| 18 years          | shekaru 18           | shk. 18       | 18y           |
+| 45 years          | shekaru 45           | shk. 45       | 45y           |
 
 ### Stages
 
-| Stage    | Label        |
-| -------- | ------------ |
-| Newborn  | Jariri       |
-| Infant   | Jariri       |
-| Toddler  | Ƙaramin yaro |
-| Child    | Yaro         |
-| Teenager | Saurayi      |
-| Adult    | Babba        |
+| Stage    | Label                          |
+| -------- | ------------------------------ |
+| Newborn  | Jariri                         |
+| Infant   | Jariri                         |
+| Toddler  | Ƙaramin yaro / Ƙaramar yarinya |
+| Child    | Yaro / Yarinya                 |
+| Teenager | Saurayi / Budurwa              |
+| Adult    | Babba                          |
 
 ## Date
 
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | jibi              | 17/3    |
 | Day before yesterday | shekaranjiya      | 13/3    |
 | This Thursday (+5)   | wannan Alhamis    | 20/3    |
-| Last Monday (-4)     | Talata da ya wuce | 11/3    |
-| Next Wednesday (+12) | Alhamis mai zuwa  | 27/3    |
-| Same month (+20)     | 4 Afrilu          | 4/4     |
+| Last Tuesday (-4)    | Talata da ta wuce | 11/3    |
+| Next Thursday (+12)  | Alhamis mai zuwa  | 27/3    |
+| Same year (+20)      | 4 Afrilu          | 4/4     |
 | Different year       | 10 Janairu 2026   | 10/1/26 |
 
 ## Duration
@@ -85,49 +85,49 @@ Relative to Saturday, March 15, 2025.
 | Duration              | Normal                 | Short           | Compact |
 | --------------------- | ---------------------- | --------------- | ------- |
 | 0 seconds             | yanzu                  | yanzu           | yanzu   |
-| 1 second              | 1 daƙiƙa               | 1 daƙ.          | 1s      |
-| 30 seconds            | 30 daƙiƙoƙi            | 30 daƙ.         | 30s     |
-| 1 minute              | 1 minti                | 1 mnt.          | 1min    |
-| 2 minutes, 15 seconds | 2 mintoci, 15 daƙiƙoƙi | 2 mnt., 15 daƙ. | 2min15s |
-| 5 minutes             | 5 mintoci              | 5 mnt.          | 5min    |
-| 45 minutes            | 45 mintoci             | 45 mnt.         | 45min   |
-| 1 hour                | 1 awa                  | 1 awa           | 1h      |
-| 1½ hours              | 1½ awanni              | 1½ awa          | 1½h     |
-| 3 hours               | 3 awanni               | 3 awa           | 3h      |
-| 6 hours               | 6 awanni               | 6 awa           | 6h      |
-| 1 day                 | 1 kwana                | 1 kw.           | 1d      |
-| 1½ days               | 1½ kwanaki             | 1½ kw.          | 1½d     |
-| 3 days                | 3 kwanaki              | 3 kw.           | 3d      |
-| 1 week                | 1 mako                 | 1 mk.           | 1w      |
-| 2 weeks, 3 days       | 2 makonni, 3 kwanaki   | 2 mk., 3 kw.    | 2w3d    |
-| 1 month               | 1 wata                 | 1 wt.           | 1m      |
-| 6 months              | 6 watanni              | 6 wt.           | 6m      |
-| 1 year                | 1 shekara              | 1 shk.          | 1y      |
-| 2 years, 3 months     | 2 shekaru, 3 watanni   | 2 shk., 3 wt.   | 2y3m    |
+| 1 second              | daƙiƙa 1               | daƙ. 1          | 1s      |
+| 30 seconds            | daƙiƙoƙi 30            | daƙ. 30         | 30s     |
+| 1 minute              | minti 1                | mnt. 1          | 1min    |
+| 2 minutes, 15 seconds | mintoci 2, daƙiƙoƙi 15 | mnt. 2, daƙ. 15 | 2min15s |
+| 5 minutes             | mintoci 5              | mnt. 5          | 5min    |
+| 45 minutes            | mintoci 45             | mnt. 45         | 45min   |
+| 1 hour                | awa 1                  | awa 1           | 1h      |
+| 1½ hours              | awanni 1½              | awa 1½          | 1½h     |
+| 3 hours               | awanni 3               | awa 3           | 3h      |
+| 6 hours               | awanni 6               | awa 6           | 6h      |
+| 1 day                 | kwana 1                | kw. 1           | 1d      |
+| 1½ days               | kwanaki 1½             | kw. 1½          | 1½d     |
+| 3 days                | kwanaki 3              | kw. 3           | 3d      |
+| 1 week                | mako 1                 | mk. 1           | 1w      |
+| 2 weeks, 3 days       | makonni 2, kwanaki 3   | mk. 2, kw. 3    | 2w3d    |
+| 1 month               | wata 1                 | wt. 1           | 1m      |
+| 6 months              | watanni 6              | wt. 6           | 6m      |
+| 1 year                | shekara 1              | shk. 1          | 1y      |
+| 2 years, 3 months     | shekaru 2, watanni 3   | shk. 2, wt. 3   | 2y3m    |
 
 ### Relative time
 
 | Offset        | Normal                 | Compact           |
 | ------------- | ---------------------- | ----------------- |
-| 5 minutes ago | 5 mintoci da suka wuce | 5min da suka wuce |
-| 2 hours ago   | 2 awanni da suka wuce  | 2h da suka wuce   |
-| in 30 minutes | cikin 30 mintoci       | cikin 30min       |
-| in 3 hours    | cikin 3 awanni         | cikin 3h          |
+| 5 minutes ago | mintoci 5 da suka wuce | 5min da suka wuce |
+| 2 hours ago   | awanni 2 da suka wuce  | 2h da suka wuce   |
+| in 30 minutes | cikin mintoci 30       | cikin 30min       |
+| in 3 hours    | cikin awanni 3         | cikin 3h          |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal           | Short    | Compact |
-| --------------- | ---------------- | -------- | ------- |
-| Midnight        | tsakar dare      | 12:00 AM | 12:00a  |
-| 1:00 AM         | ɗaya:00          | 1:00 AM  | 1:00a   |
-| 5 past 9        | tara:05          | 9:05 AM  | 9:05a   |
-| Quarter past 10 | goma:15          | 10:15 AM | 10:15a  |
-| Half past 11    | goma sha ɗaya:30 | 11:30 AM | 11:30a  |
-| Noon            | tsakar rana      | 12:00 PM | 12:00p  |
-| Quarter to 3    | biyu:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | biyar:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | takwas:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | goma:30          | 10:30 PM | 10:30p  |
-| 11:58 PM        | tsakar dare      | 11:58 PM | 11:58p  |
+| Time            | Normal                        | Short    | Compact |
+| --------------- | ----------------------------- | -------- | ------- |
+| Midnight        | tsakar dare                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | ƙarfe ɗaya                    | 1:00 AM  | 1:00a   |
+| 5 past 9        | ƙarfe tara da minti biyar     | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ƙarfe goma da kwata           | 10:15 AM | 10:15a  |
+| Half past 11    | ƙarfe sha ɗaya da rabi        | 11:30 AM | 11:30a  |
+| Noon            | tsakar rana                   | 12:00 PM | 12:00p  |
+| Quarter to 3    | ƙarfe uku saura kwata         | 2:45 PM  | 2:45p   |
+| 5 to 6          | ƙarfe shida saura minti biyar | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ƙarfe takwas                  | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ƙarfe goma da rabi            | 10:30 PM | 10:30p  |
+| 11:58 PM        | tsakar dare                   | 11:58 PM | 11:58p  |

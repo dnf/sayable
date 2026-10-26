@@ -20,7 +20,7 @@ var AZ = st.TimeLocale{
 		Hours:    [12]string{"on iki", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz", "on", "on bir"},
 		Midnight: "gecə yarısı",
 		Noon:     "günorta",
-		Patterns: map[int]string{0: "{h} o'clock", 5: "beş keçir {h}", 10: "on keçir {h}", 15: "on beş keçir {h}", 20: "iyirmi keçir {h}", 25: "iyirmi beş keçir {h}", 30: "otuz keçir {h}", 35: "iyirmi beş qalmış {next_h}", 40: "iyirmi qalmış {next_h}", 45: "on beş qalmış {next_h}", 50: "on qalmış {next_h}", 55: "beş qalmış {next_h}"},
+		Patterns: map[int]string{0: "saat {h}", 5: "{h} sıfır beş", 10: "{h} on", 15: "{h} on beş", 20: "{h} iyirmi", 25: "{h} iyirmi beş", 30: "{h} otuz", 35: "{h} otuz beş", 40: "{h} qırx", 45: "{h} qırx beş", 50: "{h} əlli", 55: "{h} əlli beş"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

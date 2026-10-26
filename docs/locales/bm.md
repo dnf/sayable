@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [bm.json](../../locales/bm.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Bambara 'nɛgɛ kaɲɛ {h}' (the classic 'o'clock' expression), additive 'nɛgɛ kaɲɛ {h} ni miniti N' with Bambara numerals (duuru, tan, tan ni duuru, mugan, bi saba, bi naani, bi duuru) and 'ni tilancɛ' for half (tilancɛ already used by this locale). Standard 12-hour count. No subtractive 'to' form used because I could not confirm the idiom.
+
 ## Age
 
 ### Age formatting
@@ -55,10 +63,10 @@ Plural rule: `other_only` (categories: other)
 | Date        | Normal       | Short  | Compact |
 | ----------- | ------------ | ------ | ------- |
 | January 1   | 1 Zanwuye    | 1 Zan  | 1/1     |
-| February 14 | 14 Fewuriye  | 14 Few | 14/2    |
+| February 14 | 14 Feburuye  | 14 Feb | 14/2    |
 | March 15    | 15 Marisi    | 15 Mar | 15/3    |
 | July 4      | 4 Zuluye     | 4 Zul  | 4/7     |
-| October 31  | 31 ɔkutɔburu | 31 ɔku | 31/10   |
+| October 31  | 31 Ɔkutɔburu | 31 Ɔku | 31/10   |
 | December 25 | 25 Desanburu | 25 Des | 25/12   |
 
 ### Relative dates
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | sini kɔfɛ       | 17/3    |
 | Day before yesterday | kunu kɔfɛ       | 13/3    |
 | This Thursday (+5)   | Alamisa nin     | 20/3    |
-| Last Monday (-4)     | Tarata tɛmɛnen  | 11/3    |
-| Next Wednesday (+12) | Alamisa nata    | 27/3    |
-| Same month (+20)     | 4 Awirili       | 4/4     |
+| Last Tuesday (-4)    | Tarata tɛmɛnen  | 11/3    |
+| Next Thursday (+12)  | Alamisa nata    | 27/3    |
+| Same year (+20)      | 4 Awirili       | 4/4     |
 | Different year       | 10 Zanwuye 2026 | 10/1/26 |
 
 ## Duration
@@ -111,23 +119,23 @@ Relative to Saturday, March 15, 2025.
 | ------------- | -------------- | ----------- |
 | 5 minutes ago | miniti 5 bɔlen | min 5 bɔlen |
 | 2 hours ago   | lɛrɛ 2 bɔlen   | lɛr 2 bɔlen |
-| in 30 minutes | ka miniti 30   | ka min 30   |
-| in 3 hours    | ka lɛrɛ 3      | ka lɛr 3    |
+| in 30 minutes | miniti 30 kɔnɔ | min 30 kɔnɔ |
+| in 3 hours    | lɛrɛ 3 kɔnɔ    | lɛr 3 kɔnɔ  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | dugutilama      | 12:00 AM | 12:00a  |
-| 1:00 AM         | kelen:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | kɔnɔntɔn:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | tan:15          | 10:15 AM | 10:15a  |
-| Half past 11    | tan ni kelen:30 | 11:30 AM | 11:30a  |
-| Noon            | tilgari         | 12:00 PM | 12:00p  |
-| Quarter to 3    | fila:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | duuru:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | segin:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | tan:30          | 10:30 PM | 10:30p  |
-| 11:58 PM        | dugutilama      | 11:58 PM | 11:58p  |
+| Time            | Normal                                      | Short    | Compact |
+| --------------- | ------------------------------------------- | -------- | ------- |
+| Midnight        | dugutilama                                  | 12:00 AM | 12:00a  |
+| 1:00 AM         | nɛgɛ kaɲɛ kelen                             | 1:00 AM  | 1:00a   |
+| 5 past 9        | nɛgɛ kaɲɛ kɔnɔntɔn ni miniti duuru          | 9:05 AM  | 9:05a   |
+| Quarter past 10 | nɛgɛ kaɲɛ tan ni miniti tan ni duuru        | 10:15 AM | 10:15a  |
+| Half past 11    | nɛgɛ kaɲɛ tan ni kelen ni tilancɛ           | 11:30 AM | 11:30a  |
+| Noon            | tilgari                                     | 12:00 PM | 12:00p  |
+| Quarter to 3    | nɛgɛ kaɲɛ fila ni miniti bi naani ni duuru  | 2:45 PM  | 2:45p   |
+| 5 to 6          | nɛgɛ kaɲɛ duuru ni miniti bi duuru ni duuru | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | nɛgɛ kaɲɛ segin                             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | nɛgɛ kaɲɛ tan ni tilancɛ                    | 10:30 PM | 10:30p  |
+| 11:58 PM        | dugutilama                                  | 11:58 PM | 11:58p  |

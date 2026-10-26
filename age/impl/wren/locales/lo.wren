@@ -21,7 +21,7 @@ class LOLocale {
     }
   }
   static half { "{0}ເຄິ່ງ" }
-  static delimiter { "" }
+  static delimiter { " " }
   static justBorn { "ເກີດໃໝ່" }
   static stages {
     return {
@@ -51,6 +51,7 @@ class LOLocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
     }
   }
 }

@@ -23,7 +23,7 @@
             :infant "Lesea"
             :toddler "Ngwana yo monnye"
             :child "Ngwana"
-            :teenager "Lekgarebe"
+            :teenager "Mosha"
             :adult "Motho yo mogolo"
 }
    :short {:units {:day {:one "letsatsi {n}" :other "malatsi {n}"} :week {:one "beke {n}" :other "dibeke {n}"} :month {:one "kgw. {n}" :other "dikgw. {n}"} :year {:one "ngw. {n}" :other "dingw. {n}"}}}

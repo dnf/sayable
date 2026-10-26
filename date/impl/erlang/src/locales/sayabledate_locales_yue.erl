@@ -16,7 +16,7 @@
 locale() ->
     #date_locale{
         code = "yue",
-        months = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+        months = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
         weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
         day_format = "{n}日",
         day_format_exceptions = [],
@@ -31,6 +31,6 @@ locale() ->
         next_weekday = {just, "下個{weekday}"},
         last_weekday = {just, "上個{weekday}"},
         months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]}, months_in_date = nothing, weekdays = {just, ["日", "一", "二", "三", "四", "五", "六"]}, day_format = {just, "{n}日"}, day_format_exceptions = nothing, date_pattern = {just, "{month}{day}"}, date_pattern_with_year = {just, "{year}年{month}{day}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        short = {just, #date_compactness_override{months = {just, ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]}, months_in_date = nothing, weekdays = {just, ["日", "一", "二", "三", "四", "五", "六"]}, day_format = {just, "{n}日"}, day_format_exceptions = nothing, date_pattern = {just, "{month}{day}"}, date_pattern_with_year = {just, "{year}年{month}{day}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{m}/{d}"}, date_pattern_with_year = {just, "{yy}/{m}/{d}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

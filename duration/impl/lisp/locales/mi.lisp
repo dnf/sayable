@@ -20,11 +20,11 @@
    :units (list (cons :second "{n} hēkona")
                (cons :minute "{n} meneti")
                (cons :hour "{n} hāora")
-               (cons :day "rā {n}")
-               (cons :week "wiki {n}")
-               (cons :month "marama {n}")
-               (cons :year "tau {n}"))
-   :half "{0}½"
+               (cons :day "{n} rā")
+               (cons :week "{n} wiki")
+               (cons :month "{n} marama")
+               (cons :year "{n} tau"))
+   :half "{n}½"
    :delimiter ", "
    :just-now "ināianei"
    :ago "{0} i mua"
@@ -32,10 +32,10 @@
    :short-units (list (cons :second "{n} hēk")
                        (cons :minute "{n} men")
                        (cons :hour "{n} hāo")
-                       (cons :day "rā {n}")
-                       (cons :week "w {n}")
-                       (cons :month "m {n}")
-                       (cons :year "t {n}"))
+                       (cons :day "{n} rā")
+                       (cons :week "{n} w")
+                       (cons :month "{n} m")
+                       (cons :year "{n} t"))
    :short-ago "{0} i mua"
    :short-in-future "ā te {0}"
    :compact-units (list (cons :second "{n}hēk")

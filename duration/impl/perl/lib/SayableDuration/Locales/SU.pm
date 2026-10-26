@@ -28,7 +28,7 @@ sub locale {{
   },
   half => '{0} satengah',
   delimiter => ', ',
-  just_now => 'ayeuna',
+  just_now => 'nembé',
   ago => '{0} kapengker',
   in_future => 'dina {0}',
   short => {

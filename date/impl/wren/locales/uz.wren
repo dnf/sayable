@@ -17,17 +17,17 @@ class UZLocale {
   static weekdays {
     return ["yakshanba", "dushanba", "seshanba", "chorshanba", "payshanba", "juma", "shanba"]
   }
-  static dayFormat { "{n}" }
+  static dayFormat { "{n}-" }
   static dayFormatExceptions {
     return {}
   }
-  static datePattern { "{day} {month}" }
-  static datePatternWithYear { "{day} {month} {year}" }
+  static datePattern { "{day}{month}" }
+  static datePatternWithYear { "{day}{month}, {year}" }
   static today { "bugun" }
   static tomorrow { "ertaga" }
   static yesterday { "kecha" }
   static dayAfterTomorrow { "indinga" }
-  static dayBeforeYesterday { "kechagina" }
+  static dayBeforeYesterday { "o'tgan kuni" }
   static thisWeekday { "bu {weekday}" }
   static nextWeekday { "keyingi {weekday}" }
   static lastWeekday { "o'tgan {weekday}" }
@@ -36,9 +36,9 @@ class UZLocale {
     return {
       "months": ["yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avg", "sen", "okt", "noy", "dek"],
       "weekdays": ["yak", "dush", "sesh", "chor", "pay", "jum", "shan"],
-      "dayFormat": "{n}",
-      "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}",
+      "dayFormat": "{n}-",
+      "datePattern": "{day}{month}",
+      "datePatternWithYear": "{day}{month}, {year}",
     }
   }
   static compact {

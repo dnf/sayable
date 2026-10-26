@@ -13,22 +13,22 @@ class KPELocale {
   static code { "kpe" }
   static clock {
     return {
-      "hours": ["puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"],
+      "hours": ["puu da feere", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"],
       "midnight": "kpindi kɔlɛ",
       "noon": "tili-ma",
       "patterns": {
-        0: "{h}:00",
-        5: "{h}:05",
-        10: "{h}:10",
-        15: "{h}:15",
-        20: "{h}:20",
-        25: "{h}:25",
-        30: "{h}:30",
-        35: "{h}:35",
-        40: "{h}:40",
-        45: "{h}:45",
-        50: "{h}:50",
-        55: "{h}:55",
+        0: "awa {h}",
+        5: "awa {h} da miniti lɔɔlu",
+        10: "awa {h} da miniti puu",
+        15: "awa {h} da miniti puu da lɔɔlu",
+        20: "awa {h} da miniti puu feere",
+        25: "awa {h} da miniti puu feere da lɔɔlu",
+        30: "awa {h} da miniti puu sawa",
+        35: "awa {h} da miniti puu sawa da lɔɔlu",
+        40: "awa {h} da miniti puu naŋ",
+        45: "awa {h} da miniti puu naŋ da lɔɔlu",
+        50: "awa {h} da miniti puu lɔɔlu",
+        55: "awa {h} da miniti puu lɔɔlu da lɔɔlu",
       },
     }
   }

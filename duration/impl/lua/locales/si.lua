@@ -14,15 +14,15 @@ local M = {}
 M.code = "si"
 M.plural = function(n) return (n == 0 or n == 1) and "one" or "other" end
 M.units = {
-    second = "{n} තත්පරය",
-    minute = "{n} මිනිත්තුව",
-    hour = "{n} පැය",
+    second = "තත්පර {n}",
+    minute = "මිනිත්තු {n}",
+    hour = "පැය {n}",
     day = { one = "දින {n}", other = "දින {n}" },
     week = { one = "සති {n}", other = "සති {n}" },
     month = { one = "මාස {n}", other = "මාස {n}" },
     year = { one = "වසර {n}", other = "වසර {n}" },
 }
-M.half = "{0}යි භාගයයි"
+M.half = "{n}½"
 M.delimiter = ", "
 M.just_now = "දැන්"
 M.ago = "{0}ට පෙර"

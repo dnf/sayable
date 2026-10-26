@@ -22,7 +22,7 @@ let TA* = AgeLocale(
     "month": pluralUnit(@[(pcOne, "{n} மாதம்"), (pcOther, "{n} மாதங்கள்")]),
     "year": pluralUnit(@[(pcOne, "{n} வயது"), (pcOther, "{n} வயது")]),
   }.toOrderedTable,
-  half: "{0}ரை",
+  half: "{n}½",
   delimiter: ", ",
   justBorn: "பிறந்த குழந்தை",
   stages: {

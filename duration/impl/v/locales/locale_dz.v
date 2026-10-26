@@ -26,7 +26,7 @@ pub const locale_dz = DurationLocale{
 	week: simple_unit('བདུན་ཕྲག་ {n}')
 	month: simple_unit('ཟླ་ {n}')
 	year: simple_unit('ལོ་ {n}')
-	half: '{0} ཕྱེད'
+	half: '{0} དང་ཕྱེད'
 	delimiter: ' '
 	just_now: 'ད་ལྟ'
 	ago: '{0} ཧེ་མ'

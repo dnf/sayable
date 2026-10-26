@@ -13,38 +13,38 @@
 
 sd_plural('wo', _, other).
 
-sd_unit('wo', second, _, 'saa-yépp {n}').
-sd_unit('wo', minute, _, 'simili {n}').
-sd_unit('wo', hour, _, 'waxtu {n}').
-sd_unit('wo', day, _, 'bés {n}').
-sd_unit('wo', week, _, 'ayubés {n}').
-sd_unit('wo', month, _, 'weer {n}').
-sd_unit('wo', year, _, 'at {n}').
+sd_unit('wo', second, _, '{n} saa').
+sd_unit('wo', minute, _, '{n} simili').
+sd_unit('wo', hour, _, '{n} waxtu').
+sd_unit('wo', day, _, '{n} fan').
+sd_unit('wo', week, _, '{n} ayubés').
+sd_unit('wo', month, _, '{n} weer').
+sd_unit('wo', year, _, '{n} at').
 
 sd_half('wo', '{0} ak genn-wàll').
 sd_delimiter('wo', ', ').
 sd_just_now('wo', 'léegi').
 sd_ago('wo', '{0} ci ginaaw').
-sd_in_future('wo', 'ci {0}').
+sd_in_future('wo', 'fileek {0}').
 
-short_sd_unit('wo', second, _, 'saa-y. {n}').
-short_sd_unit('wo', minute, _, 'sim. {n}').
-short_sd_unit('wo', hour, _, 'wax. {n}').
-short_sd_unit('wo', day, _, 'bés {n}').
-short_sd_unit('wo', week, _, 'ayub. {n}').
-short_sd_unit('wo', month, _, 'weer {n}').
-short_sd_unit('wo', year, _, 'at {n}').
+short_sd_unit('wo', second, _, '{n} saa').
+short_sd_unit('wo', minute, _, '{n} sim.').
+short_sd_unit('wo', hour, _, '{n} wax.').
+short_sd_unit('wo', day, _, '{n} fan').
+short_sd_unit('wo', week, _, '{n} ayub.').
+short_sd_unit('wo', month, _, '{n} weer').
+short_sd_unit('wo', year, _, '{n} at').
 short_sd_ago('wo', '{0} ci ginaaw').
-short_sd_in_future('wo', 'ci {0}').
+short_sd_in_future('wo', 'fileek {0}').
 
-compact_sd_unit('wo', second, _, 'saa {n}').
-compact_sd_unit('wo', minute, _, 'sim {n}').
-compact_sd_unit('wo', hour, _, 'wax {n}').
-compact_sd_unit('wo', day, _, 'bés {n}').
-compact_sd_unit('wo', week, _, 'ayub {n}').
-compact_sd_unit('wo', month, _, 'weer {n}').
-compact_sd_unit('wo', year, _, 'at {n}').
+compact_sd_unit('wo', second, _, '{n} saa').
+compact_sd_unit('wo', minute, _, '{n} sim').
+compact_sd_unit('wo', hour, _, '{n} wax').
+compact_sd_unit('wo', day, _, '{n} fan').
+compact_sd_unit('wo', week, _, '{n} ayub').
+compact_sd_unit('wo', month, _, '{n} weer').
+compact_sd_unit('wo', year, _, '{n} at').
 compact_sd_half('wo', '{n}½').
 compact_sd_delimiter('wo', '').
 compact_sd_ago('wo', '{0} ci gin.').
-compact_sd_in_future('wo', 'ci {0}').
+compact_sd_in_future('wo', 'fileek {0}').

@@ -29,7 +29,7 @@ var HA = sdate.DateLocale{
 	DayBeforeYesterday: strPtr("shekaranjiya"),
 	ThisWeekday:       strPtr("wannan {weekday}"),
 	NextWeekday:       strPtr("{weekday} mai zuwa"),
-	LastWeekday:       strPtr("{weekday} da ya wuce"),
+	LastWeekday:       strPtr("{weekday} da ta wuce"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
 		Months:   &[12]string{"Jan", "Fab", "Mar", "Afr", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis"},

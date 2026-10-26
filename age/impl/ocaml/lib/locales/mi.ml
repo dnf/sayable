@@ -14,11 +14,11 @@ open Types
 let locale : locale =
   { code = "mi"
   ; plural = (fun n -> if n = 1 then One else Other)
-  ; day = Simple "rā {n}"
-  ; week = Simple "wiki {n}"
-  ; month = Simple "marama {n}"
-  ; year = Simple "tau {n}"
-  ; half = "{0}½"
+  ; day = Simple "{n} rā"
+  ; week = Simple "{n} wiki"
+  ; month = Simple "{n} marama"
+  ; year = Simple "{n} tau"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_born = "Pēpi hou"
   ; stages =
@@ -30,10 +30,10 @@ let locale : locale =
     ; adult = Neutral "Pakeke"
     }
   ; short = Some
-      { ovr_day = Some (Simple "rā {n}")
-      ; ovr_week = Some (Simple "w {n}")
-      ; ovr_month = Some (Simple "m {n}")
-      ; ovr_year = Some (Simple "t {n}")
+      { ovr_day = Some (Simple "{n} rā")
+      ; ovr_week = Some (Simple "{n} w")
+      ; ovr_month = Some (Simple "{n} m")
+      ; ovr_year = Some (Simple "{n} t")
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_just_born = None

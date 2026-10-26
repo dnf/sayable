@@ -10,21 +10,21 @@
 # Source: locales/men.json
 
 _sayabletime_locale_men() {
-    _clock_hours=('pu wɛlɛ' 'yila' 'fele' 'sawa' 'nani' 'lɔlu' 'wɛita' 'wɔfela' 'wayakpa' 'taawu' 'pu' 'pu mahu yila')
+    _clock_hours=('pu mahu fele' 'yila' 'fele' 'sawa' 'nani' 'lɔlu' 'wɛita' 'wɔfela' 'wayakpa' 'taawu' 'pu' 'pu mahu yila')
     _clock_midnight='kpindi gbɔyɔŋ'
     _clock_noon='ndɔlei-ma'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='awa {h}'
+    _clock_pattern_5='awa {h} kɛ miniti lɔɔlu'
+    _clock_pattern_10='awa {h} kɛ miniti pu'
+    _clock_pattern_15='awa {h} kɛ miniti pu mahu lɔɔlu'
+    _clock_pattern_20='awa {h} kɛ miniti nuu yila gboyongo'
+    _clock_pattern_25='awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu'
+    _clock_pattern_30='awa {h} kɛ miniti nuu yila gboyongo mahu pu'
+    _clock_pattern_35='awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu'
+    _clock_pattern_40='awa {h} kɛ miniti nuu fele gboyongo'
+    _clock_pattern_45='awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu'
+    _clock_pattern_50='awa {h} kɛ miniti nuu fele gboyongo mahu pu'
+    _clock_pattern_55='awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

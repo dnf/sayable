@@ -28,7 +28,7 @@ locale() ->
         delimiter = ", ",
         just_now = "sisan",
         ago = "{0} taata",
-        in_future = "ka {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "sɛk. {n}"}}, minute = {just, {simple, "min. {n}"}}, hour = {just, {simple, "waati {n}"}}, day = {just, {simple, "tili {n}"}}, week = {just, {simple, "lɔkɔ {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "sanj. {n}"}}, half = nothing, delimiter = nothing, ago = {just, "{0} taata"}, in_future = {just, "ka {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "sɛk {n}"}}, minute = {just, {simple, "min {n}"}}, hour = {just, {simple, "waa {n}"}}, day = {just, {simple, "tili {n}"}}, week = {just, {simple, "lɔkɔ {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "sanj {n}"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} taata"}, in_future = {just, "ka {0}"}}}
+        in_future = "{0} kɔnɔ",
+        short = {just, #duration_compactness_override{second = {just, {simple, "sɛk. {n}"}}, minute = {just, {simple, "min. {n}"}}, hour = {just, {simple, "waati {n}"}}, day = {just, {simple, "tili {n}"}}, week = {just, {simple, "lɔkɔ {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "sanj. {n}"}}, half = nothing, delimiter = nothing, ago = {just, "{0} taata"}, in_future = {just, "{0} kɔnɔ"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "sɛk {n}"}}, minute = {just, {simple, "min {n}"}}, hour = {just, {simple, "waa {n}"}}, day = {just, {simple, "tili {n}"}}, week = {just, {simple, "lɔkɔ {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "sanj {n}"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} taata"}, in_future = {just, "{0} kɔnɔ"}}}
     }.

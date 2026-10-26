@@ -14,12 +14,12 @@ import sayableage/types
 pub fn locale() -> types.AgeLocale {
   types.AgeLocale(
     code: "ml",
-    plural: fn(n) { case n { 0 | 1 -> types.One _ -> types.Other } },
+    plural: fn(n) { case n { 1 -> types.One _ -> types.Other } },
     day: types.PluralUnit([#(types.One, "{n} ദിവസം"), #(types.Other, "{n} ദിവസങ്ങൾ")]),
     week: types.PluralUnit([#(types.One, "{n} ആഴ്ച"), #(types.Other, "{n} ആഴ്ചകൾ")]),
     month: types.PluralUnit([#(types.One, "{n} മാസം"), #(types.Other, "{n} മാസങ്ങൾ")]),
     year: types.PluralUnit([#(types.One, "{n} വയസ്സ്"), #(types.Other, "{n} വയസ്സ്")]),
-    half: "{0} ര",
+    half: "{n}½",
     delimiter: ", ",
     just_born: "നവജാതശിശു",
     newborn: types.NeutralStage("നവജാതശിശു"),

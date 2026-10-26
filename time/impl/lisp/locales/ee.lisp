@@ -20,7 +20,7 @@
     :hours (list "wuieve" "ɖeka" "eve" "etɔ̃" "ene" "atɔ̃" "ade" "adre" "enyi" "asieke" "ewo" "wuiɖeka")
     :midnight "zã titina"
     :noon "ŋdɔ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ga {h}") (cons 5 "ga {h} kple aɖabaƒoƒo atɔ̃") (cons 10 "ga {h} kple aɖabaƒoƒo ewo") (cons 15 "ga {h} kple aɖabaƒoƒo wuiatɔ̃") (cons 20 "ga {h} kple aɖabaƒoƒo blaeve") (cons 25 "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃") (cons 30 "ga {h} kple afã") (cons 35 "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃") (cons 40 "ga {h} kple aɖabaƒoƒo blaene") (cons 45 "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃") (cons 50 "ga {h} kple aɖabaƒoƒo blaatɔ̃") (cons 55 "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

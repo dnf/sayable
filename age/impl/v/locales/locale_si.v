@@ -26,7 +26,7 @@ pub const locale_si = AgeLocale{
 	week: plural_unit({PluralCategory.one: 'සති {n}', PluralCategory.other: 'සති {n}'})
 	month: plural_unit({PluralCategory.one: 'මාස {n}', PluralCategory.other: 'මාස {n}'})
 	year: plural_unit({PluralCategory.one: 'වසර {n}', PluralCategory.other: 'වසර {n}'})
-	half: '{0}යි භාගයයි'
+	half: '{n}½'
 	delimiter: ', '
 	just_born: 'අලුත උපන්'
 	newborn: stage_neutral('අලුත උපන්')

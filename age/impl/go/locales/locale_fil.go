@@ -34,7 +34,7 @@ var FIL = sa.AgeLocale{
 		Toddler:  sa.S("Batang paslit"),
 		Child:    sa.S("Bata"),
 		Teenager: sa.S("Tinedyer"),
-		Adult:    sa.S("Matanda"),
+		Adult:    sa.S("Adulto"),
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} araw"},

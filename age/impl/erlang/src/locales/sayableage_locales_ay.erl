@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "ay",
         plural = fun(_) -> other end,
-        day = {simple, "uru {n}"},
-        week = {simple, "simana {n}"},
-        month = {simple, "phaxsi {n}"},
-        year = {simple, "mara {n}"},
+        day = {simple, "{n} uru"},
+        week = {simple, "{n} simana"},
+        month = {simple, "{n} phaxsi"},
+        year = {simple, "{n} mara"},
         half = "{0} chika",
         delimiter = ", ",
         just_born = "Wawa machaqa",
         stages = #stages{newborn = {neutral, "Wawa machaqa"}, infant = {neutral, "Wawa"}, toddler = {neutral, "Jisk'a wawa"}, child = {neutral, "Yuqalla"}, teenager = {neutral, "Wayna"}, adult = {neutral, "Jaqi"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} ur."}}, week = {just, {simple, "{n} sim."}}, month = {just, {simple, "{n} phx."}}, year = {just, {simple, "{n} mr."}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, just_born = nothing}}
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

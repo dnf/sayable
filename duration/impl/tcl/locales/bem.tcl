@@ -19,7 +19,7 @@ proc locale_duration_bem {} {
     set units [dict create \
         second [dict create one "isekondi {n}" other "amasekondi {n}"] \
         minute [dict create one "iminiti {n}" other "amaminiti {n}"] \
-        hour [dict create one "insa {n}" other "amanso {n}"] \
+        hour [dict create one "insa {n}" other "insa {n}"] \
         day [dict create one "ubushiku {n}" other "inshiku {n}"] \
         week [dict create one "umulungu {n}" other "imilungu {n}"] \
         month [dict create one "umweshi {n}" other "imyeshi {n}"] \

@@ -19,7 +19,7 @@ let locale : locale =
   ; month = Simple "{n} ເດືອນ"
   ; year = Simple "{n} ປີ"
   ; half = "{0}ເຄິ່ງ"
-  ; delimiter = ""
+  ; delimiter = " "
   ; just_born = "ເກີດໃໝ່"
   ; stages =
     { newborn = Neutral "ເດັກເກີດໃໝ່"
@@ -43,7 +43,7 @@ let locale : locale =
       ; ovr_week = Some (Simple "{n}w")
       ; ovr_month = Some (Simple "{n}m")
       ; ovr_year = Some (Simple "{n}y")
-      ; ovr_half = None
+      ; ovr_half = Some "{n}½"
       ; ovr_delimiter = None
       ; ovr_just_born = None
       }

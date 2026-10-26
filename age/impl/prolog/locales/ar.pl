@@ -93,12 +93,7 @@ short_sa_unit('ar', year, other, '{n} سنة').
 
 compact_sa_unit('ar', day, _, '{n} ي').
 compact_sa_unit('ar', week, _, '{n} أ').
-compact_sa_unit('ar', month, zero, '{n} شهر').
-compact_sa_unit('ar', month, one, 'شهر').
-compact_sa_unit('ar', month, two, 'شهران').
-compact_sa_unit('ar', month, few, '{n} أشهر').
-compact_sa_unit('ar', month, many, '{n} شهرًا').
-compact_sa_unit('ar', month, other, '{n} شهر').
+compact_sa_unit('ar', month, _, '{n} شهر').
 compact_sa_unit('ar', year, _, '{n} سنة').
 compact_sa_half('ar', '{n}½').
 compact_sa_delimiter('ar', '').

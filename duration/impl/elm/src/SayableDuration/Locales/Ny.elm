@@ -23,9 +23,12 @@ locale =
     , plural = \n -> if n == 1 then One else Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "{n} sekondi" )
-            , ( "minute", Simple "{n} mphindi" )
-            , ( "hour", Simple "{n} ola" )
+            [ ( "second", Simple "sekondi {n}" )
+            , ( "minute", Simple "mphindi {n}" )
+            , ( "hour", Pluralized
+              [ ( One, "ola {n}" )
+              , ( Other, "maola {n}" )
+              ] )
             , ( "day", Pluralized
               [ ( One, "tsiku {n}" )
               , ( Other, "masiku {n}" )
@@ -55,7 +58,10 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "sek {n}" )
                         , ( "minute", Simple "mph {n}" )
-                        , ( "hour", Simple "ola {n}" )
+                        , ( "hour", Pluralized
+                          [ ( One, "ola {n}" )
+                          , ( Other, "maola {n}" )
+                          ] )
                         , ( "day", Pluralized
                           [ ( One, "tsiku {n}" )
                           , ( Other, "mas {n}" )

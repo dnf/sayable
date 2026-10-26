@@ -23,7 +23,7 @@ class BILocale {
       "year": "{n} yia",
     }
   }
-  static half { "{n} mo haf" }
+  static half { "{0} mo haf" }
   static delimiter { ", " }
   static justNow { "jas nao" }
   static ago { "{0} bifo" }
@@ -54,6 +54,7 @@ class BILocale {
         "month": "{n}mo",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
       "ago": "{0} bifo",
       "inFuture": "long {0}",

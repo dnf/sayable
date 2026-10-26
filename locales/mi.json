@@ -4,12 +4,12 @@
   "pluralRule": "one_other",
   "age": {
     "units": {
-      "day": "rā {n}",
-      "week": "wiki {n}",
-      "month": "marama {n}",
-      "year": "tau {n}"
+      "day": "{n} rā",
+      "week": "{n} wiki",
+      "month": "{n} marama",
+      "year": "{n} tau"
     },
-    "half": "{0}½",
+    "half": "{n}½",
     "delimiter": ", ",
     "justBorn": "Pēpi hou",
     "stages": {
@@ -22,10 +22,10 @@
     },
     "short": {
       "units": {
-        "day": "rā {n}",
-        "week": "w {n}",
-        "month": "m {n}",
-        "year": "t {n}"
+        "day": "{n} rā",
+        "week": "{n} w",
+        "month": "{n} m",
+        "year": "{n} t"
       }
     },
     "compact": {
@@ -69,8 +69,8 @@
     "today": "i tēnei rā",
     "tomorrow": "āpōpō",
     "yesterday": "inanahi",
-    "dayAfterTomorrow": "tērā āpōpō",
-    "dayBeforeYesterday": "tērā inanahi",
+    "dayAfterTomorrow": "ātahirā",
+    "dayBeforeYesterday": "inātahirā",
     "thisWeekday": "tēnei {weekday}",
     "nextWeekday": "{weekday} e heke mai nei",
     "lastWeekday": "{weekday} kua hori",
@@ -112,12 +112,12 @@
       "second": "{n} hēkona",
       "minute": "{n} meneti",
       "hour": "{n} hāora",
-      "day": "rā {n}",
-      "week": "wiki {n}",
-      "month": "marama {n}",
-      "year": "tau {n}"
+      "day": "{n} rā",
+      "week": "{n} wiki",
+      "month": "{n} marama",
+      "year": "{n} tau"
     },
-    "half": "{0}½",
+    "half": "{n}½",
     "delimiter": ", ",
     "justNow": "ināianei",
     "ago": "{0} i mua",
@@ -127,10 +127,10 @@
         "second": "{n} hēk",
         "minute": "{n} men",
         "hour": "{n} hāo",
-        "day": "rā {n}",
-        "week": "w {n}",
-        "month": "m {n}",
-        "year": "t {n}"
+        "day": "{n} rā",
+        "week": "{n} w",
+        "month": "{n} m",
+        "year": "{n} t"
       },
       "ago": "{0} i mua",
       "inFuture": "ā te {0}",
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Existing patterns untouched. Note (not in audit): 'i muri i te {h}' for 'past' is understandable, but 'mai i te {h}' and 'haurua' (rather than 'hāwhe') are more usual Māori clock idioms."
+    }
+  ]
 }

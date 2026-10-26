@@ -31,12 +31,12 @@ fn _plural(n: Int) -> String:
 fn build_he() -> DurationLocale:
     """Build the Hebrew locale."""
 
-    var second = plural_unit(one="שנייה {n}", two="שתי שניות", other="{n} שניות")
-    var minute = plural_unit(one="דקה {n}", two="שתי דקות", other="{n} דקות")
-    var hour = plural_unit(one="שעה {n}", two="שעתיים", other="{n} שעות")
-    var day = plural_unit(one="יום {n}", two="יומיים", other="{n} ימים")
-    var week = plural_unit(one="שבוע {n}", two="שבועיים", other="{n} שבועות")
-    var month = plural_unit(one="חודש {n}", two="חודשיים", other="{n} חודשים")
+    var second = plural_unit(one="שנייה", two="שתי שניות", other="{n} שניות")
+    var minute = plural_unit(one="דקה", two="שתי דקות", other="{n} דקות")
+    var hour = plural_unit(one="שעה", two="שעתיים", other="{n} שעות")
+    var day = plural_unit(one="יום", two="יומיים", other="{n} ימים")
+    var week = plural_unit(one="שבוע", two="שבועיים", other="{n} שבועות")
+    var month = plural_unit(one="חודש", two="חודשיים", other="{n} חודשים")
     var year = plural_unit(one="שנה", two="שנתיים", other="{n} שנים")
 
     var short_ovr = CompactnessOverride()

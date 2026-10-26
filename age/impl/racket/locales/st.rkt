@@ -30,7 +30,7 @@
    "O sa tswa hlaha"
    (hash "newborn" (stage-label "Lesea le sa tswa hlaha" #f #f)
          "infant" (stage-label "Lesea" #f #f)
-         "toddler" (stage-label "Ngwanana" #f #f)
+         "toddler" (stage-label "Ngwana e monyane" #f #f)
          "child" (stage-label "Ngwana" #f #f)
          "teenager" (stage-label "Mosha" #f #f)
          "adult" (stage-label "Motho e moholo" #f #f))

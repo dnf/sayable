@@ -18,7 +18,7 @@ sd_day_format('gn', '{n}').
 sd_date_pattern('gn', '{day} {month}').
 sd_date_pattern_with_year('gn', '{day} {month} {year}').
 
-sd_today('gn', 'ko\'ágã').
+sd_today('gn', 'ko árape').
 sd_tomorrow('gn', 'ko\'ẽrõ').
 sd_yesterday('gn', 'kuehe').
 sd_day_after_tomorrow('gn', 'ko\'ẽrõ rire').

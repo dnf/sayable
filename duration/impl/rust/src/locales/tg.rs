@@ -25,7 +25,7 @@ pub fn locale() -> DurationLocale {
             month: UnitForms::simple("{n} моҳ"),
             year: UnitForms::simple("{n} сол"),
         },
-        half: "{0} ним".to_string(),
+        half: "{0}у ним".to_string(),
         delimiter: ", ".to_string(),
         just_now: "ҳамин ҳоло".to_string(),
         ago: "{0} пеш".to_string(),

@@ -16,7 +16,7 @@
    :plural (fn [n] (cond (or (== n 1) (== n 11)) :one (or (== n 2) (== n 12)) :two (or (<= 3 n 10) (<= 13 n 19)) :few :else :other))
    :second {:type :pluralized :forms {:one "{n} diog" :two "{n} dhiog" :few "{n} diogan" :other "{n} diog"}}
    :minute {:type :pluralized :forms {:one "{n} mhionaid" :two "{n} mhionaid" :few "{n} mionaidean" :other "{n} mionaid"}}
-   :hour {:type :pluralized :forms {:one "{n} uair" :two "{n} uair" :few "{n} uairean" :other "{n} uair"}}
+   :hour {:type :pluralized :forms {:one "{n} uair a thìde" :two "{n} uair a thìde" :few "{n} uairean a thìde" :other "{n} uair a thìde"}}
    :day {:type :pluralized :forms {:one "{n} latha" :two "{n} latha" :few "{n} làithean" :other "{n} latha"}}
    :week {:type :pluralized :forms {:one "{n} sheachdain" :two "{n} sheachdain" :few "{n} seachdainean" :other "{n} seachdain"}}
    :month {:type :pluralized :forms {:one "{n} mhìos" :two "{n} mhìos" :few "{n} mìosan" :other "{n} mìos"}}

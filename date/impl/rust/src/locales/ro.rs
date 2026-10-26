@@ -18,7 +18,7 @@ pub fn locale() -> DateLocale {
     DateLocale {
         code: "ro".to_string(),
         months: ["ianuarie".to_string(), "februarie".to_string(), "martie".to_string(), "aprilie".to_string(), "mai".to_string(), "iunie".to_string(), "iulie".to_string(), "august".to_string(), "septembrie".to_string(), "octombrie".to_string(), "noiembrie".to_string(), "decembrie".to_string()],
-        weekdays: ["duminică".to_string(), "luni".to_string(), "marți".to_string(), "miercuri".to_string(), "joi".to_string(), "vineri".to_string(), "sâmbătă".to_string()],
+        weekdays: ["duminica".to_string(), "lunea".to_string(), "marțea".to_string(), "miercurea".to_string(), "joia".to_string(), "vinerea".to_string(), "sâmbăta".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),
@@ -28,7 +28,7 @@ pub fn locale() -> DateLocale {
         yesterday: "ieri".to_string(),
         day_after_tomorrow: Some("poimâine".to_string()),
         day_before_yesterday: Some("alaltăieri".to_string()),
-        this_weekday: Some("această {weekday}".to_string()),
+        this_weekday: Some("{weekday} aceasta".to_string()),
         next_weekday: Some("{weekday} viitoare".to_string()),
         last_weekday: Some("{weekday} trecută".to_string()),
         months_in_date: Some(["ianuarie".to_string(), "februarie".to_string(), "martie".to_string(), "aprilie".to_string(), "mai".to_string(), "iunie".to_string(), "iulie".to_string(), "august".to_string(), "septembrie".to_string(), "octombrie".to_string(), "noiembrie".to_string(), "decembrie".to_string()]),

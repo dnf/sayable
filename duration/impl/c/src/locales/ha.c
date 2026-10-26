@@ -20,17 +20,17 @@ const SduDurationLocale sdu_locale_ha = {
     "ha",
     plural_ha,
     {
-        { NULL, { NULL, "{n} daƙiƙa", NULL, NULL, NULL, "{n} daƙiƙoƙi" } },
-        { NULL, { NULL, "{n} minti", NULL, NULL, NULL, "{n} mintoci" } },
-        { NULL, { NULL, "{n} awa", NULL, NULL, NULL, "{n} awanni" } },
-        { NULL, { NULL, "{n} kwana", NULL, NULL, NULL, "{n} kwanaki" } },
-        { NULL, { NULL, "{n} mako", NULL, NULL, NULL, "{n} makonni" } },
-        { NULL, { NULL, "{n} wata", NULL, NULL, NULL, "{n} watanni" } },
-        { NULL, { NULL, "{n} shekara", NULL, NULL, NULL, "{n} shekaru" } }
+        { NULL, { NULL, "daƙiƙa {n}", NULL, NULL, NULL, "daƙiƙoƙi {n}" } },
+        { NULL, { NULL, "minti {n}", NULL, NULL, NULL, "mintoci {n}" } },
+        { NULL, { NULL, "awa {n}", NULL, NULL, NULL, "awanni {n}" } },
+        { NULL, { NULL, "kwana {n}", NULL, NULL, NULL, "kwanaki {n}" } },
+        { NULL, { NULL, "mako {n}", NULL, NULL, NULL, "makonni {n}" } },
+        { NULL, { NULL, "wata {n}", NULL, NULL, NULL, "watanni {n}" } },
+        { NULL, { NULL, "shekara {n}", NULL, NULL, NULL, "shekaru {n}" } }
     },
     "{n}½", ", ",
     "yanzu",
     "{0} da suka wuce", "cikin {0}",
-    true, { true, { "{n} daƙ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mnt.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} awa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} kw.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mk.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wt.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} shk.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} da suka wuce", true, "cikin {0}" },
+    true, { true, { "daƙ. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "mnt. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "awa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "kw. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "mk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "wt. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "shk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} da suka wuce", true, "cikin {0}" },
     true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} da suka wuce", true, "cikin {0}" }
 };

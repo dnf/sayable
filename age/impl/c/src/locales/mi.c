@@ -20,12 +20,12 @@ const SaLocale sa_locale_mi = {
     "mi",
     plural_mi,
     {
-        { "rā {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "wiki {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "marama {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "tau {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n} rā", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} wiki", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} marama", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} tau", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0}½", ", ", "Pēpi hou",
+    "{n}½", ", ", "Pēpi hou",
     {
         { "Pēpi hou", "" },
         { "Pēpi", "" },
@@ -34,6 +34,6 @@ const SaLocale sa_locale_mi = {
         { "Rangatahi", "" },
         { "Pakeke", "" }
     },
-    true, { true, { "rā {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "w {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "m {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "t {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} rā", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
     true, { true, { "{n}r", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

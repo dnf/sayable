@@ -20,11 +20,11 @@
 (define kl
   (age-locale
    "kl"
-   (lambda (n) "other")
-   (hash "day" (hash "type" "simple" "form" "ullut {n}")
-         "week" (hash "type" "simple" "form" "sapaatit {n}")
-         "month" (hash "type" "simple" "form" "qaammatit {n}")
-         "year" (hash "type" "simple" "form" "ukiut {n}"))
+   (lambda (n) (if (= n 1) "one" "other"))
+   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "ulloq {n}" "other" "ullut {n}"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "sapaatip akunnera {n}" "other" "sapaatip akunneri {n}"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "qaammat {n}" "other" "qaammatit {n}"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "ukioq {n}" "other" "ukiut {n}")))
    "{0} affaa"
    ", "
    "Inuuneq nutaaq"
@@ -34,6 +34,6 @@
          "child" (stage-label "Meeraq" #f #f)
          "teenager" (stage-label "Inuusuttuaq" #f #f)
          "adult" (stage-label "Inuk" #f #f))
-   (compactness-override (hash "type" "simple" "form" "ull. {n}") (hash "type" "simple" "form" "sap. {n}") (hash "type" "simple" "form" "qaam. {n}") (hash "type" "simple" "form" "uk. {n}") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "ull. {n}") (hash "type" "simple" "form" "sap. ak. {n}") (hash "type" "simple" "form" "qaam. {n}") (hash "type" "simple" "form" "uk. {n}") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

@@ -23,4 +23,4 @@
    :just-born "ၶဝ်ႈမႃး"
    :stages {:newborn {:type :neutral :label "ၶဝ်ႈမႃး"} :infant {:type :neutral :label "လုၵ်ႈဢွၼ်ႇ"} :toddler {:type :neutral :label "လုၵ်ႈဢွၼ်ႇ"} :child {:type :neutral :label "လုၵ်ႈဢွၼ်ႇ"} :teenager {:type :neutral :label "ၵူၼ်းၼုမ်ႇ"} :adult {:type :neutral :label "ၵူၼ်းလူင်"}}
    :short {:day {:type :simple :form "{n} ဝၼ်း"} :week {:type :simple :form "{n} ဝူင်ႈ"} :month {:type :simple :form "{n} လိူၼ်"} :year {:type :simple :form "{n} ပီ"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

@@ -14,17 +14,17 @@ module locales
 
 pub const locale_hy = DateLocale{
 	code: 'hy'
-	months: ['Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր']!
-	weekdays: ['Կիրակի', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ']!
+	months: ['հունվար', 'փետրվար', 'մարտ', 'ապրիլ', 'մայիս', 'հունիս', 'հուլիս', 'օգոստոս', 'սեպտեմբեր', 'հոկտեմբեր', 'նոյեմբեր', 'դեկտեմբեր']!
+	weekdays: ['կիրակի', 'երկուշաբթի', 'երեքշաբթի', 'չորեքշաբթի', 'հինգշաբթի', 'ուրբաթ', 'շաբաթ']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
 	today: 'այսօր'
 	tomorrow: 'վաղը'
 	yesterday: 'երեկ'
-	day_after_tomorrow: 'վաղը մյուս օրը'
+	day_after_tomorrow: 'վաղը չէ մյուս օրը'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'երեկ մյուս օրը'
+	day_before_yesterday: 'երեկ չէ առաջի օրը'
 	has_day_before_yesterday: true
 	this_weekday: 'այս {weekday}'
 	has_this_weekday: true
@@ -32,11 +32,13 @@ pub const locale_hy = DateLocale{
 	has_next_weekday: true
 	last_weekday: 'անցած {weekday}'
 	has_last_weekday: true
+	months_in_date: ['հունվարի', 'փետրվարի', 'մարտի', 'ապրիլի', 'մայիսի', 'հունիսի', 'հուլիսի', 'օգոստոսի', 'սեպտեմբերի', 'հոկտեմբերի', 'նոյեմբերի', 'դեկտեմբերի']!
+	has_months_in_date: true
 	has_short: true
 	short_override: DateCompactnessOverride{
-		months: ['Հնվ', 'Փտր', 'Մրտ', 'Ապր', 'Մյս', 'Հնս', 'Հլս', 'Օգս', 'Սեպ', 'Հկտ', 'Նոյ', 'Դեկ']!
+		months: ['հնվ', 'փտր', 'մրտ', 'ապր', 'մյս', 'հնս', 'հլս', 'օգս', 'սեպ', 'հկտ', 'նոյ', 'դեկ']!
 		has_months: true
-		weekdays: ['Կիր', 'Երկ', 'Երք', 'Չրք', 'Հնգ', 'Ուր', 'Շբթ']!
+		weekdays: ['կիր', 'երկ', 'երք', 'չրք', 'հնգ', 'ուր', 'շբթ']!
 		has_weekdays: true
 		day_format: '{n}'
 		has_day_format: true

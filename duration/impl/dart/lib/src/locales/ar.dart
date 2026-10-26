@@ -24,9 +24,9 @@ final ar = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.zero: '{n} ثانية', PluralCategory.one: 'ثانية واحدة', PluralCategory.two: 'ثانيتان', PluralCategory.few: '{n} ثوانٍ', PluralCategory.many: '{n} ثانية', PluralCategory.other: '{n} ثانية'}),
-    'minute': pluralUnit({PluralCategory.zero: '{n} دقيقة', PluralCategory.one: 'دقيقة واحدة', PluralCategory.two: 'دقيقتان', PluralCategory.few: '{n} دقائق', PluralCategory.many: '{n} دقيقة', PluralCategory.other: '{n} دقيقة'}),
-    'hour': pluralUnit({PluralCategory.zero: '{n} ساعة', PluralCategory.one: 'ساعة واحدة', PluralCategory.two: 'ساعتان', PluralCategory.few: '{n} ساعات', PluralCategory.many: '{n} ساعة', PluralCategory.other: '{n} ساعة'}),
+    'second': pluralUnit({PluralCategory.zero: '{n} ثانية', PluralCategory.one: 'ثانية', PluralCategory.two: 'ثانيتان', PluralCategory.few: '{n} ثوانٍ', PluralCategory.many: '{n} ثانية', PluralCategory.other: '{n} ثانية'}),
+    'minute': pluralUnit({PluralCategory.zero: '{n} دقيقة', PluralCategory.one: 'دقيقة', PluralCategory.two: 'دقيقتان', PluralCategory.few: '{n} دقائق', PluralCategory.many: '{n} دقيقة', PluralCategory.other: '{n} دقيقة'}),
+    'hour': pluralUnit({PluralCategory.zero: '{n} ساعة', PluralCategory.one: 'ساعة', PluralCategory.two: 'ساعتان', PluralCategory.few: '{n} ساعات', PluralCategory.many: '{n} ساعة', PluralCategory.other: '{n} ساعة'}),
     'day': pluralUnit({PluralCategory.zero: '{n} يوم', PluralCategory.one: 'يوم', PluralCategory.two: 'يومان', PluralCategory.few: '{n} أيام', PluralCategory.many: '{n} يومًا', PluralCategory.other: '{n} يوم'}),
     'week': pluralUnit({PluralCategory.zero: '{n} أسبوع', PluralCategory.one: 'أسبوع', PluralCategory.two: 'أسبوعان', PluralCategory.few: '{n} أسابيع', PluralCategory.many: '{n} أسبوعًا', PluralCategory.other: '{n} أسبوع'}),
     'month': pluralUnit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'}),
@@ -57,7 +57,7 @@ final ar = DurationLocale(
       'hour': simpleUnit('{n} س'),
       'day': simpleUnit('{n} ي'),
       'week': simpleUnit('{n} أ'),
-      'month': pluralUnit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'}),
+      'month': simpleUnit('{n} شهر'),
       'year': simpleUnit('{n} سنة'),
     },
     half: '{n}½',

@@ -30,7 +30,7 @@ mnk
 	locale delimiter: ', '.
 	locale justNow: 'sisan'.
 	locale ago: '{0} taata'.
-	locale inFuture: 'ka {0}'.
+	locale inFuture: '{0} kɔnɔ'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. 'sɛk. {n}'.
@@ -42,7 +42,7 @@ mnk
 			'year'. 'sanj. {n}'.
 		}).
 		#ago. '{0} taata'.
-		#inFuture. 'ka {0}'.
+		#inFuture. '{0} kɔnɔ'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -57,7 +57,7 @@ mnk
 		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} taata'.
-		#inFuture. 'ka {0}'.
+		#inFuture. '{0} kɔnɔ'.
 	}).
 	^ locale
 ! !

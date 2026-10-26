@@ -11,22 +11,22 @@
 
 % Malayalam locale.
 
-st_hours('ml', ['പന്ത്രണ്ട്', 'ഒന്ന്', 'രണ്ട്', 'മൂന്ന്', 'നാല്', 'അഞ്ച്', 'ആറ്', 'ഏഴ്', 'എട്ട്', 'ഒമ്പത്', 'പത്ത്', 'പതിനൊന്ന്']).
+st_hours('ml', ['പന്ത്രണ്ട', 'ഒന്ന', 'രണ്ട', 'മൂന്ന', 'നാല', 'അഞ്ച', 'ആറ', 'ഏഴ', 'എട്ട', 'ഒമ്പത', 'പത്ത', 'പതിനൊന്ന']).
 st_midnight('ml', 'അർദ്ധരാത്രി').
 st_noon('ml', 'ഉച്ച').
 
-st_pattern('ml', 0, '{h}:00').
-st_pattern('ml', 5, '{h}:05').
-st_pattern('ml', 10, '{h}:10').
-st_pattern('ml', 15, '{h}:15').
-st_pattern('ml', 20, '{h}:20').
-st_pattern('ml', 25, '{h}:25').
-st_pattern('ml', 30, '{h}:30').
-st_pattern('ml', 35, '{h}:35').
-st_pattern('ml', 40, '{h}:40').
-st_pattern('ml', 45, '{h}:45').
-st_pattern('ml', 50, '{h}:50').
-st_pattern('ml', 55, '{h}:55').
+st_pattern('ml', 0, '{h}് മണി').
+st_pattern('ml', 5, '{h}് മണി അഞ്ച് മിനിറ്റ്').
+st_pattern('ml', 10, '{h}് മണി പത്ത് മിനിറ്റ്').
+st_pattern('ml', 15, '{h}േകാൽ').
+st_pattern('ml', 20, '{h}് മണി ഇരുപത് മിനിറ്റ്').
+st_pattern('ml', 25, '{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്').
+st_pattern('ml', 30, '{h}ര').
+st_pattern('ml', 35, '{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്').
+st_pattern('ml', 40, '{h}് മണി നാൽപ്പത് മിനിറ്റ്').
+st_pattern('ml', 45, '{h}േമുക്കാൽ').
+st_pattern('ml', 50, '{h}് മണി അമ്പത് മിനിറ്റ്').
+st_pattern('ml', 55, '{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്').
 
 short_st_use24h('ml', false).
 short_st_format('ml', '{h}:{mm} {ampm}').

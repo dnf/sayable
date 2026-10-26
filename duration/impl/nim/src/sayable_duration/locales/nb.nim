@@ -28,7 +28,7 @@ let NB* = DurationLocale(
   half: "{n}½",
   delimiter: ", ",
   justNow: "akkurat nå",
-  ago: "{0} siden",
+  ago: "for {0} siden",
   inFuture: "om {0}",
   short: some(CompactnessOverride(
     units: some({
@@ -42,7 +42,7 @@ let NB* = DurationLocale(
     }.toOrderedTable),
     half: none(string),
     delimiter: none(string),
-    ago: some("{0} siden"),
+    ago: some("for {0} siden"),
     inFuture: some("om {0}"),
   )),
   compact: some(CompactnessOverride(
@@ -57,7 +57,7 @@ let NB* = DurationLocale(
     }.toOrderedTable),
     half: none(string),
     delimiter: some(""),
-    ago: some("{0} siden"),
+    ago: some("for {0} siden"),
     inFuture: some("om {0}"),
   )),
 )

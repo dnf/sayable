@@ -22,7 +22,7 @@ TPI = AgeLocale(
         "month": "{n} mun",
         "year": "{n} yia",
     },
-    half="{n} na hap",
+    half="{0} na hap",
     delimiter=", ",
     just_born="Nupela pikinini",
     stages={
@@ -48,6 +48,7 @@ TPI = AgeLocale(
             "month": "{n}m",
             "year": "{n}y",
         },
+        half="{n}½",
         delimiter="",
     ),
 )

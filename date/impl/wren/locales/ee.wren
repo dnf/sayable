@@ -12,10 +12,10 @@
 class EELocale {
   static code { "ee" }
   static months {
-    return ["Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Damɛ", "Masa", "Siamlɔm", "Dasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome"]
+    return ["Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Dama", "Masa", "Siamlɔm", "Deasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome"]
   }
   static weekdays {
-    return ["Kɔsiɖa", "Dzoɖa", "Braɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa"]
+    return ["Kɔsiɖa", "Dzoɖa", "Blaɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {
@@ -24,18 +24,18 @@ class EELocale {
   static datePattern { "{day} {month}" }
   static datePatternWithYear { "{day} {month} {year}" }
   static today { "egbe" }
-  static tomorrow { "etsɔ" }
-  static yesterday { "etso" }
-  static dayAfterTomorrow { "etsɔ megbe" }
-  static dayBeforeYesterday { "etso nyitsɔ" }
+  static tomorrow { "etsɔ si gbɔna" }
+  static yesterday { "etsɔ si va yi" }
+  static dayAfterTomorrow { "nyitsɔ si gbɔna" }
+  static dayBeforeYesterday { "nyitsɔ si va yi" }
   static thisWeekday { "{weekday} sia" }
   static nextWeekday { "{weekday} si gbɔna" }
   static lastWeekday { "{weekday} si va yi" }
   static monthsInDate { null }
   static short {
     return {
-      "months": ["Dzv", "Dzd", "Ted", "Afɔ", "Dam", "Mas", "Sia", "Das", "Any", "Kel", "Ade", "Dzm"],
-      "weekdays": ["Kɔs", "Dzo", "Bra", "Kuɖ", "Yaw", "Fiɖ", "Mem"],
+      "months": ["Dzv", "Dzd", "Ted", "Afɔ", "Dam", "Mas", "Sia", "Dea", "Any", "Kel", "Ade", "Dzm"],
+      "weekdays": ["Kɔs", "Dzo", "Bla", "Kuɖ", "Yaw", "Fiɖ", "Mem"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
       "datePatternWithYear": "{day} {month} {year}",

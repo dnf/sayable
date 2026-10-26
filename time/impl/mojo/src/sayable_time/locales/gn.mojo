@@ -33,7 +33,7 @@ fn build_gn() -> TimeLocale:
     var hour9 = "porundy"
     var hour10 = "pa"
     var hour11 = "pa peteĩ"
-    var midnight = "pyhareve"
+    var midnight = "pyharepyte"
     var noon = "asaje"
     var pattern0 = "{h}"
     var pattern5 = "{h} ha po"
@@ -42,11 +42,11 @@ fn build_gn() -> TimeLocale:
     var pattern20 = "{h} ha mokõi pa"
     var pattern25 = "{h} ha mokõi pa po"
     var pattern30 = "{h} ha mbohapy pa"
-    var pattern35 = "{next_h} mba'e mokõi pa po"
-    var pattern40 = "{next_h} mba'e mokõi pa"
-    var pattern45 = "{next_h} mba'e pa po"
-    var pattern50 = "{next_h} mba'e pa"
-    var pattern55 = "{next_h} mba'e po"
+    var pattern35 = "{h} ha mbohapy pa po"
+    var pattern40 = "{h} ha irundy pa"
+    var pattern45 = "{h} ha irundy pa po"
+    var pattern50 = "{h} ha po pa"
+    var pattern55 = "{h} ha po pa po"
 
     var clock = ClockConfig(
         hour0=hour0,

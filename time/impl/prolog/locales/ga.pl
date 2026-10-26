@@ -15,18 +15,18 @@ st_hours('ga', ['dó dhéag', 'haon', 'dó', 'trí', 'ceathair', 'cúig', 'sé',
 st_midnight('ga', 'meán oíche').
 st_noon('ga', 'meán lae').
 
-st_pattern('ga', 0, '{h}:00').
-st_pattern('ga', 5, '{h}:05').
-st_pattern('ga', 10, '{h}:10').
-st_pattern('ga', 15, '{h}:15').
-st_pattern('ga', 20, '{h}:20').
-st_pattern('ga', 25, '{h}:25').
-st_pattern('ga', 30, '{h}:30').
-st_pattern('ga', 35, '{h}:35').
-st_pattern('ga', 40, '{h}:40').
-st_pattern('ga', 45, '{h}:45').
-st_pattern('ga', 50, '{h}:50').
-st_pattern('ga', 55, '{h}:55').
+st_pattern('ga', 0, 'a {h} a chlog').
+st_pattern('ga', 5, 'cúig tar éis a {h}').
+st_pattern('ga', 10, 'deich tar éis a {h}').
+st_pattern('ga', 15, 'ceathrú tar éis a {h}').
+st_pattern('ga', 20, 'fiche tar éis a {h}').
+st_pattern('ga', 25, 'fiche cúig tar éis a {h}').
+st_pattern('ga', 30, 'leathuair tar éis a {h}').
+st_pattern('ga', 35, 'fiche cúig chun a {next_h}').
+st_pattern('ga', 40, 'fiche chun a {next_h}').
+st_pattern('ga', 45, 'ceathrú chun a {next_h}').
+st_pattern('ga', 50, 'deich chun a {next_h}').
+st_pattern('ga', 55, 'cúig chun a {next_h}').
 
 short_st_use24h('ga', true).
 short_st_format('ga', '{h}:{mm}').

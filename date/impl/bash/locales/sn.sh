@@ -18,7 +18,7 @@ _sayabledate_locale_sn() {
     _today='nhasi'
     _tomorrow='mangwana'
     _yesterday='nezuro'
-    _day_after_tomorrow='mangwanani'
+    _day_after_tomorrow='kuswera mangwana'
     _day_before_yesterday='nezuro rakapera'
     _this_weekday='{weekday} ino'
     _next_weekday='{weekday} inotevera'

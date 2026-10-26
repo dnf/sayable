@@ -25,7 +25,7 @@ let LG* = DateLocale(
   tomorrow: "enkya",
   yesterday: "jjo",
   dayAfterTomorrow: some("enkya ogwa"),
-  dayBeforeYesterday: some("jjo edda"),
+  dayBeforeYesterday: some("jjuuzi"),
   thisWeekday: some("{weekday} eno"),
   nextWeekday: some("{weekday} eddirira"),
   lastWeekday: some("{weekday} eggudde"),

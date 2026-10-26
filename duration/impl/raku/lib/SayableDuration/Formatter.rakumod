@@ -187,7 +187,7 @@ method format-since(Str $start?, Str $as-of? --> Str) {
     return $.just-now if $diff == 0;
     my $dur = self!format-duration-seconds($diff);
     return Nil unless $dur.defined;
-    return $.ago.subst('{0}', $dur);
+    return SayableDuration::Locale::replace-placeholder($.ago, '{0}', $dur);
 }
 
 method format-until(Str $target?, Str $as-of? --> Str) {
@@ -201,7 +201,7 @@ method format-until(Str $target?, Str $as-of? --> Str) {
     return $.just-now if $diff == 0;
     my $dur = self!format-duration-seconds($diff);
     return Nil unless $dur.defined;
-    return $.in-future.subst('{0}', $dur);
+    return SayableDuration::Locale::replace-placeholder($.in-future, '{0}', $dur);
 }
 
 #| YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).

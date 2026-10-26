@@ -14,8 +14,8 @@
 (def locale
   {:code "qu"
    :plural (fn [_] :other)
-   :second {:type :simple :form "{n} ñiqin"}
-   :minute {:type :simple :form "{n} chiniku"}
+   :second {:type :simple :form "{n} sikundu"}
+   :minute {:type :simple :form "{n} minutu"}
    :hour {:type :simple :form "{n} ura"}
    :day {:type :simple :form "{n} p'unchaw"}
    :week {:type :simple :form "{n} simana"}
@@ -26,5 +26,5 @@
    :just-now "kunanlla"
    :ago "{0} ñawpaqta"
    :in-future "{0} qhipata"
-   :short {:second {:type :simple :form "{n} ñiq"} :minute {:type :simple :form "{n} chi"} :hour {:type :simple :form "{n} ura"} :day {:type :simple :form "{n} p'un"} :week {:type :simple :form "{n} sim"} :month {:type :simple :form "{n} kil"} :year {:type :simple :form "{n} wat"} :half nil :delimiter nil :ago "{0} ñawpaqta" :in-future "{0} qhipata"}
+   :short {:second {:type :simple :form "{n} sik"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} ura"} :day {:type :simple :form "{n} p'un"} :week {:type :simple :form "{n} sim"} :month {:type :simple :form "{n} kil"} :year {:type :simple :form "{n} wat"} :half nil :delimiter nil :ago "{0} ñawpaqta" :in-future "{0} qhipata"}
    :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ñawpaqta" :in-future "{0} qhipata"}})

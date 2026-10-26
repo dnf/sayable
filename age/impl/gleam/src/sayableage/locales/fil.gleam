@@ -27,7 +27,7 @@ pub fn locale() -> types.AgeLocale {
     toddler: types.NeutralStage("Batang paslit"),
     child: types.NeutralStage("Bata"),
     teenager: types.NeutralStage("Tinedyer"),
-    adult: types.NeutralStage("Matanda"),
+    adult: types.NeutralStage("Adulto"),
     short: Ok(types.CompactnessOverride(
       day: Ok(types.SimpleUnit("{n} araw")),
       week: Ok(types.PluralUnit([#(types.One, "{n} linggo"), #(types.Other, "{n} na linggo")])),

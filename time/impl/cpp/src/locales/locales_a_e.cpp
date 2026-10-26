@@ -34,10 +34,10 @@ const TimeLocale& AK() {
     static const TimeLocale loc{
         "ak",
         ClockConfig{
-            {"dumien", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"},
-            "anadwo",
-            "awia",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {"dumienu", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"},
+            "ɔdasuom",
+            "owigyinae",
+            {{0, "nnɔn {h}"}, {5, "nnɔn {h} ne sima anum"}, {10, "nnɔn {h} ne sima edu"}, {15, "nnɔn {h} ne sima dunum"}, {20, "nnɔn {h} ne sima aduonu"}, {25, "nnɔn {h} ne sima aduonu num"}, {30, "nnɔn {h} ne fa"}, {35, "aka sima aduonu num na abɔ nnɔn {next_h}"}, {40, "aka sima aduonu na abɔ nnɔn {next_h}"}, {45, "aka sima dunum na abɔ nnɔn {next_h}"}, {50, "aka sima edu na abɔ nnɔn {next_h}"}, {55, "aka sima anum na abɔ nnɔn {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -50,10 +50,10 @@ const TimeLocale& AM() {
     static const TimeLocale loc{
         "am",
         ClockConfig{
-            {"አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት", "ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ"},
+            {"ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ", "አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት"},
             "እኩለ ሌሊት",
             "እኩለ ቀን",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h} ሰዓት"}, {5, "{h} ሰዓት ከአምስት ደቂቃ"}, {10, "{h} ሰዓት ከአሥር ደቂቃ"}, {15, "{h} ሰዓት ከሩብ"}, {20, "{h} ሰዓት ከሃያ ደቂቃ"}, {25, "{h} ሰዓት ከሃያ አምስት ደቂቃ"}, {30, "{h} ሰዓት ተኩል"}, {35, "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ"}, {40, "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ"}, {45, "ለ{next_h} ሰዓት ሩብ ጉዳይ"}, {50, "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ"}, {55, "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -69,7 +69,7 @@ const TimeLocale& AR() {
             {"الثانية عشرة", "الواحدة", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة", "الثامنة", "التاسعة", "العاشرة", "الحادية عشرة"},
             "منتصف الليل",
             "الظهر",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "الساعة {h}"}, {5, "{h} وخمس دقائق"}, {10, "{h} وعشر دقائق"}, {15, "{h} والربع"}, {20, "{h} والثلث"}, {25, "{h} والنصف إلا خمس دقائق"}, {30, "{h} والنصف"}, {35, "{h} والنصف وخمس دقائق"}, {40, "{next_h} إلا ثلثًا"}, {45, "{next_h} إلا ربعًا"}, {50, "{next_h} إلا عشر دقائق"}, {55, "{next_h} إلا خمس دقائق"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -82,10 +82,10 @@ const TimeLocale& AY() {
     static const TimeLocale loc{
         "ay",
         ClockConfig{
-            {"tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani"},
+            {"tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llätunka", "tunka", "tunka mayani"},
             "aruma chika",
             "chika uru",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h} ura"}, {5, "{h} ura phisqa minutuni"}, {10, "{h} ura tunka minutuni"}, {15, "{h} ura tunka phisqani minutuni"}, {20, "{h} ura pä tunka minutuni"}, {25, "{h} ura pä tunka phisqani minutuni"}, {30, "{h} ura chikani"}, {35, "{h} ura kimsa tunka phisqani minutuni"}, {40, "{h} ura pusi tunka minutuni"}, {45, "{h} ura pusi tunka phisqani minutuni"}, {50, "{h} ura phisqa tunka minutuni"}, {55, "{h} ura phisqa tunka phisqani minutuni"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -101,7 +101,7 @@ const TimeLocale& AZ() {
             {"on iki", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz", "on", "on bir"},
             "gecə yarısı",
             "günorta",
-            {{0, "{h} o'clock"}, {5, "beş keçir {h}"}, {10, "on keçir {h}"}, {15, "on beş keçir {h}"}, {20, "iyirmi keçir {h}"}, {25, "iyirmi beş keçir {h}"}, {30, "otuz keçir {h}"}, {35, "iyirmi beş qalmış {next_h}"}, {40, "iyirmi qalmış {next_h}"}, {45, "on beş qalmış {next_h}"}, {50, "on qalmış {next_h}"}, {55, "beş qalmış {next_h}"}}
+            {{0, "saat {h}"}, {5, "{h} sıfır beş"}, {10, "{h} on"}, {15, "{h} on beş"}, {20, "{h} iyirmi"}, {25, "{h} iyirmi beş"}, {30, "{h} otuz"}, {35, "{h} otuz beş"}, {40, "{h} qırx"}, {45, "{h} qırx beş"}, {50, "{h} əlli"}, {55, "{h} əlli beş"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -114,10 +114,10 @@ const TimeLocale& BCI() {
     static const TimeLocale loc{
         "bci",
         ClockConfig{
-            {"blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"},
+            {"blu-nin-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-nin-kun"},
             "kɔnguɛ afiɛn",
             "nnɔsua",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "dɔ {h}"}, {5, "dɔ {h} nin miniti nnun"}, {10, "dɔ {h} nin miniti blu"}, {15, "dɔ {h} nin miniti blu-nin-nnun"}, {20, "dɔ {h} nin miniti ablaɔn"}, {25, "dɔ {h} nin miniti ablaɔn-nin-nnun"}, {30, "dɔ {h} nin miniti ablasan"}, {35, "dɔ {h} nin miniti ablasan-nin-nnun"}, {40, "dɔ {h} nin miniti ablanan"}, {45, "dɔ {h} nin miniti ablanan-nin-nnun"}, {50, "dɔ {h} nin miniti ablenun"}, {55, "dɔ {h} nin miniti ablenun-nin-nnun"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -130,10 +130,10 @@ const TimeLocale& BE() {
     static const TimeLocale loc{
         "be",
         ClockConfig{
-            {"дванаццаць", "адзін", "два", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"},
+            {"дванаццаць", "гадзіна", "дзве", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"},
             "поўнач",
             "поўдзень",
-            {{0, "{h} гадзін"}, {5, "пяць хвілін пасля {h}"}, {10, "дзесяць хвілін пасля {h}"}, {15, "чвэрць пасля {h}"}, {20, "дваццаць хвілін пасля {h}"}, {25, "дваццаць пяць хвілін пасля {h}"}, {30, "палова да {next_h}"}, {35, "без дваццаці пяці {next_h}"}, {40, "без дваццаці {next_h}"}, {45, "без чвэрці {next_h}"}, {50, "без дзесяці {next_h}"}, {55, "без пяці {next_h}"}}
+            {{0, "роўна {h}"}, {5, "{h} нуль пяць"}, {10, "{h} дзесяць"}, {15, "{h} пятнаццаць"}, {20, "{h} дваццаць"}, {25, "{h} дваццаць пяць"}, {30, "{h} трыццаць"}, {35, "без дваццаці пяці {next_h}"}, {40, "без дваццаці {next_h}"}, {45, "без чвэрці {next_h}"}, {50, "без дзесяці {next_h}"}, {55, "без пяці {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -146,10 +146,10 @@ const TimeLocale& BEM() {
     static const TimeLocale loc{
         "bem",
         ClockConfig{
-            {"ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo"},
+            {"ikumi na shibili", "imo", "shibili", "shitatu", "shine", "shisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na imo"},
             "pakati ka bushiku",
             "akasuba",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "insa {h}"}, {5, "insa {h} na maminiti yasano"}, {10, "insa {h} na maminiti ikumi"}, {15, "insa {h} na maminiti ikumi na yasano"}, {20, "insa {h} na maminiti amakumi yabili"}, {25, "insa {h} na maminiti amakumi yabili na yasano"}, {30, "insa {h} na hafu"}, {35, "insa {h} na maminiti amakumi yatatu na yasano"}, {40, "insa {h} na maminiti amakumi yane"}, {45, "insa {h} na maminiti amakumi yane na yasano"}, {50, "insa {h} na maminiti amakumi yasano"}, {55, "insa {h} na maminiti amakumi yasano na yasano"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -165,7 +165,7 @@ const TimeLocale& BG() {
             {"дванадесет", "един", "два", "три", "четири", "пет", "шест", "седем", "осем", "девет", "десет", "единадесет"},
             "полунощ",
             "обяд",
-            {{0, "{h} часа"}, {5, "пет na {h}"}, {10, "десет na {h}"}, {15, "петнадесет na {h}"}, {20, "двадесет na {h}"}, {25, "двадесет и пет na {h}"}, {30, "тридесет na {h}"}, {35, "двадесет и пет do {next_h}"}, {40, "двадесет do {next_h}"}, {45, "петнадесет do {next_h}"}, {50, "десет do {next_h}"}, {55, "пет do {next_h}"}}
+            {{0, "{h} часа"}, {5, "{h} и пет"}, {10, "{h} и десет"}, {15, "{h} и петнадесет"}, {20, "{h} и двадесет"}, {25, "{h} и двадесет и пет"}, {30, "{h} и половина"}, {35, "{next_h} без двадесет и пет"}, {40, "{next_h} без двадесет"}, {45, "{next_h} без петнадесет"}, {50, "{next_h} без десет"}, {55, "{next_h} без пет"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -181,7 +181,7 @@ const TimeLocale& BI() {
             {"twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"},
             "mednaet",
             "medeldei",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h} klok"}, {5, "faef pas {h}"}, {10, "ten pas {h}"}, {15, "kwota pas {h}"}, {20, "twenti pas {h}"}, {25, "twenti faef pas {h}"}, {30, "haf pas {h}"}, {35, "twenti faef tu {next_h}"}, {40, "twenti tu {next_h}"}, {45, "kwota tu {next_h}"}, {50, "ten tu {next_h}"}, {55, "faef tu {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -197,7 +197,7 @@ const TimeLocale& BM() {
             {"tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"},
             "dugutilama",
             "tilgari",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "nɛgɛ kaɲɛ {h}"}, {5, "nɛgɛ kaɲɛ {h} ni miniti duuru"}, {10, "nɛgɛ kaɲɛ {h} ni miniti tan"}, {15, "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru"}, {20, "nɛgɛ kaɲɛ {h} ni miniti mugan"}, {25, "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru"}, {30, "nɛgɛ kaɲɛ {h} ni tilancɛ"}, {35, "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru"}, {40, "nɛgɛ kaɲɛ {h} ni miniti bi naani"}, {45, "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru"}, {50, "nɛgɛ kaɲɛ {h} ni miniti bi duuru"}, {55, "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -210,10 +210,10 @@ const TimeLocale& BN() {
     static const TimeLocale loc{
         "bn",
         ClockConfig{
-            {"বারো", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়", "দশ", "এগারো"},
+            {"বারোটা", "একটা", "দুটো", "তিনটে", "চারটে", "পাঁচটা", "ছটা", "সাতটা", "আটটা", "নটা", "দশটা", "এগারোটা"},
             "মধ্যরাত",
-            "দুপুর",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            "দুপুর বারোটা",
+            {{0, "{h}"}, {5, "{h} বেজে পাঁচ মিনিট"}, {10, "{h} বেজে দশ মিনিট"}, {15, "সোয়া {h}"}, {20, "{h} বেজে বিশ মিনিট"}, {25, "{h} বেজে পঁচিশ মিনিট"}, {30, "{h} বেজে ত্রিশ মিনিট"}, {35, "{next_h} বাজতে পঁচিশ মিনিট বাকি"}, {40, "{next_h} বাজতে বিশ মিনিট বাকি"}, {45, "পৌনে {next_h}"}, {50, "{next_h} বাজতে দশ মিনিট বাকি"}, {55, "{next_h} বাজতে পাঁচ মিনিট বাকি"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -226,10 +226,10 @@ const TimeLocale& BR() {
     static const TimeLocale loc{
         "br",
         ClockConfig{
-            {"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
+            {"daouzek eur", "un eur", "div eur", "teir eur", "peder eur", "pemp eur", "c'hwec'h eur", "seizh eur", "eizh eur", "nav eur", "dek eur", "unnek eur"},
             "hanternoz",
             "kreisteiz",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h}"}, {5, "{h} ha pemp"}, {10, "{h} ha dek"}, {15, "{h} ha kard"}, {20, "{h} hag ugent"}, {25, "{h} ha pemp warn-ugent"}, {30, "{h} hanter"}, {35, "{next_h} nemet pemp warn-ugent"}, {40, "{next_h} nemet ugent"}, {45, "{next_h} nemet kard"}, {50, "{next_h} nemet dek"}, {55, "{next_h} nemet pemp"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -245,7 +245,7 @@ const TimeLocale& BS() {
             {"dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"},
             "ponoć",
             "podne",
-            {{0, "{h} sati"}, {5, "pet po {h}"}, {10, "deset po {h}"}, {15, "petnaest po {h}"}, {20, "dvadeset po {h}"}, {25, "dvadeset pet po {h}"}, {30, "trideset po {h}"}, {35, "dvadeset pet do {next_h}"}, {40, "dvadeset do {next_h}"}, {45, "petnaest do {next_h}"}, {50, "deset do {next_h}"}, {55, "pet do {next_h}"}}
+            {{0, "{h}"}, {5, "{h} i pet"}, {10, "{h} i deset"}, {15, "{h} i petnaest"}, {20, "{h} i dvadeset"}, {25, "{h} i dvadeset pet"}, {30, "pola {next_h}"}, {35, "dvadeset pet do {next_h}"}, {40, "dvadeset do {next_h}"}, {45, "petnaest do {next_h}"}, {50, "deset do {next_h}"}, {55, "pet do {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -258,10 +258,10 @@ const TimeLocale& CA() {
     static const TimeLocale loc{
         "ca",
         ClockConfig{
-            {"dotze", "una", "dues", "tres", "quatre", "cinc", "sis", "set", "vuit", "nou", "deu", "onze"},
+            {"les dotze", "la una", "les dues", "les tres", "les quatre", "les cinc", "les sis", "les set", "les vuit", "les nou", "les deu", "les onze"},
             "mitjanit",
             "migdia",
-            {{0, "{h} o'clock"}, {5, "cinc past {h}"}, {10, "deu past {h}"}, {15, "un quart past {h}"}, {20, "vint past {h}"}, {25, "vint-i-cinc past {h}"}, {30, "mitja past {h}"}, {35, "vint-i-cinc to {next_h}"}, {40, "vint to {next_h}"}, {45, "un quart to {next_h}"}, {50, "deu to {next_h}"}, {55, "cinc to {next_h}"}}
+            {{0, "{h} en punt"}, {5, "{h} i cinc"}, {10, "{h} i deu"}, {15, "{h} i quart"}, {20, "{h} i vint"}, {25, "{h} i vint-i-cinc"}, {30, "{h} i mitja"}, {35, "{next_h} menys vint-i-cinc"}, {40, "{next_h} menys vint"}, {45, "{next_h} menys quart"}, {50, "{next_h} menys deu"}, {55, "{next_h} menys cinc"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -277,7 +277,7 @@ const TimeLocale& CAK() {
             {"kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"},
             "nik'aj aq'a'",
             "nik'aj q'ij",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h} ramaj"}, {5, "{h} ramaj rik'in wo'o'"}, {10, "{h} ramaj rik'in lajuj"}, {15, "{h} ramaj rik'in wolajuj"}, {20, "{h} ramaj rik'in juk'al"}, {25, "{h} ramaj rik'in juk'al wo'o'"}, {30, "{h} ramaj rik'in nik'aj"}, {35, "{h} ramaj rik'in juk'al wolajuj"}, {40, "{h} ramaj rik'in kak'al"}, {45, "{h} ramaj rik'in kak'al wo'o'"}, {50, "{h} ramaj rik'in kak'al lajuj"}, {55, "{h} ramaj rik'in kak'al wolajuj"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -290,10 +290,10 @@ const TimeLocale& CEB() {
     static const TimeLocale loc{
         "ceb",
         ClockConfig{
-            {"dose", "uno", "dos", "tres", "kwatro", "singko", "sais", "siyete", "otso", "nuwebe", "diyes", "onse"},
+            {"alas dose", "ala una", "alas dos", "alas tres", "alas kwatro", "alas singko", "alas sais", "alas siyete", "alas otso", "alas nuwebe", "alas diyes", "alas onse"},
             "tungang gabii",
             "udtong tutok",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h}"}, {5, "{h} y singko"}, {10, "{h} y diyes"}, {15, "{h} y kinse"}, {20, "{h} y beynte"}, {25, "{h} y beynte singko"}, {30, "{h} y medya"}, {35, "menos beynte singko para {next_h}"}, {40, "menos beynte para {next_h}"}, {45, "menos kinse para {next_h}"}, {50, "menos diyes para {next_h}"}, {55, "menos singko para {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -309,7 +309,7 @@ const TimeLocale& CS() {
             {"dvanáct", "jedna", "dvě", "tři", "čtyři", "pět", "šest", "sedm", "osm", "devět", "deset", "jedenáct"},
             "půlnoc",
             "poledne",
-            {{0, "{h} hodin"}, {5, "pět po {h}"}, {10, "deset po {h}"}, {15, "čtvrt po {h}"}, {20, "dvacet po {h}"}, {25, "dvacet pět po {h}"}, {30, "půl po {h}"}, {35, "dvacet pět do {next_h}"}, {40, "dvacet do {next_h}"}, {45, "čtvrt do {next_h}"}, {50, "deset do {next_h}"}, {55, "pět do {next_h}"}}
+            {{0, "{h}"}, {5, "{h} nula pět"}, {10, "{h} deset"}, {15, "{h} patnáct"}, {20, "{h} dvacet"}, {25, "{h} dvacet pět"}, {30, "{h} třicet"}, {35, "za dvacet pět minut {next_h}"}, {40, "za dvacet minut {next_h}"}, {45, "za patnáct minut {next_h}"}, {50, "za deset minut {next_h}"}, {55, "za pět minut {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -325,7 +325,7 @@ const TimeLocale& CY() {
             {"deuddeg", "un", "dau", "tri", "pedwar", "pump", "chwech", "saith", "wyth", "naw", "deg", "un ar ddeg"},
             "hanner nos",
             "hanner dydd",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h} o'r gloch"}, {5, "pum munud wedi {h}"}, {10, "deg munud wedi {h}"}, {15, "chwarter wedi {h}"}, {20, "ugain munud wedi {h}"}, {25, "pum munud ar hugain wedi {h}"}, {30, "hanner awr wedi {h}"}, {35, "pum munud ar hugain i {next_h}"}, {40, "ugain munud i {next_h}"}, {45, "chwarter i {next_h}"}, {50, "deg munud i {next_h}"}, {55, "pum munud i {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -373,7 +373,7 @@ const TimeLocale& DIN() {
             {"thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök"},
             "wakɔ̈u",
             "akɔ̈l ciëŋ",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "thä {h}"}, {5, "thä {h} ku minitö dhiëc"}, {10, "thä {h} ku minitö thiäär"}, {15, "thä {h} ku minitö thiäär ku dhiëc"}, {20, "thä {h} ku minitö thiärou"}, {25, "thä {h} ku minitö thiärou ku dhiëc"}, {30, "thä {h} ku minitö thiärdiäk"}, {35, "thä {h} ku minitö thiärdiäk ku dhiëc"}, {40, "thä {h} ku minitö thiärŋuan"}, {45, "thä {h} ku minitö thiärŋuan ku dhiëc"}, {50, "thä {h} ku minitö thiärdhiëc"}, {55, "thä {h} ku minitö thiärdhiëc ku dhiëc"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -386,10 +386,10 @@ const TimeLocale& DJE() {
     static const TimeLocale loc{
         "dje",
         ClockConfig{
-            {"way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi"},
+            {"iway cindi hinka", "fo", "hinka", "hinza", "taaci", "gu", "iddu", "iyye", "ahakku", "yagga", "iway", "iway cindi fo"},
             "cin beri",
             "zaari gaaham",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "guuru {h}"}, {5, "guuru {h} nda miniti gu"}, {10, "guuru {h} nda miniti iway"}, {15, "guuru {h} nda miniti iway cindi gu"}, {20, "guuru {h} nda miniti waranka"}, {25, "guuru {h} nda miniti waranka cindi gu"}, {30, "guuru {h} nda jare"}, {35, "guuru {h} nda miniti waranza cindi gu"}, {40, "guuru {h} nda miniti waytaaci"}, {45, "guuru {h} nda miniti waytaaci cindi gu"}, {50, "guuru {h} nda miniti waygu"}, {55, "guuru {h} nda miniti waygu cindi gu"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -405,7 +405,7 @@ const TimeLocale& DV() {
             {"ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"},
             "މެންދަމު",
             "މެންދުރު",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "ގަޑިން {h}"}, {5, "{h} ޖަހައި ފަސް މިނެޓު"}, {10, "{h} ޖަހައި ދިހަ މިނެޓު"}, {15, "{h} ޖަހައި ފަނަރަ މިނެޓު"}, {20, "{h} ޖަހައި ވިހި މިނެޓު"}, {25, "{h} ޖަހައި ފަންސަވީސް މިނެޓު"}, {30, "{h} ޖަހައި ބައި"}, {35, "{h} ޖަހައި ތިރީސްފަސް މިނެޓު"}, {40, "{h} ޖަހައި ސާޅީސް މިނެޓު"}, {45, "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު"}, {50, "{h} ޖަހައި ފަންސާސް މިނެޓު"}, {55, "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -421,7 +421,7 @@ const TimeLocale& DYU() {
             {"tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"},
             "dugutilama",
             "tilgari",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "lɛrɛ {h}"}, {5, "lɛrɛ {h} ni miniti duuru"}, {10, "lɛrɛ {h} ni miniti tan"}, {15, "lɛrɛ {h} ni miniti tan ni duuru"}, {20, "lɛrɛ {h} ni miniti mugan"}, {25, "lɛrɛ {h} ni miniti mugan ni duuru"}, {30, "lɛrɛ {h} ni tilancɛ"}, {35, "lɛrɛ {h} ni miniti bi saba ni duuru"}, {40, "lɛrɛ {h} ni miniti bi naani"}, {45, "lɛrɛ {h} ni miniti bi naani ni duuru"}, {50, "lɛrɛ {h} ni miniti bi duuru"}, {55, "lɛrɛ {h} ni miniti bi duuru ni duuru"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -437,7 +437,7 @@ const TimeLocale& DZ() {
             {"བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"},
             "ནམ་ཕྱེད",
             "ཉིན་གུང",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "ཆུ་ཚོད་{h}"}, {5, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ"}, {10, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ"}, {15, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ"}, {20, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ"}, {25, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ"}, {30, "ཆུ་ཚོད་{h}་དང་ཕྱེད"}, {35, "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ"}, {40, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ"}, {45, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ"}, {50, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ"}, {55, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -453,7 +453,7 @@ const TimeLocale& EE() {
             {"wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"},
             "zã titina",
             "ŋdɔ",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "ga {h}"}, {5, "ga {h} kple aɖabaƒoƒo atɔ̃"}, {10, "ga {h} kple aɖabaƒoƒo ewo"}, {15, "ga {h} kple aɖabaƒoƒo wuiatɔ̃"}, {20, "ga {h} kple aɖabaƒoƒo blaeve"}, {25, "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃"}, {30, "ga {h} kple afã"}, {35, "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃"}, {40, "ga {h} kple aɖabaƒoƒo blaene"}, {45, "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃"}, {50, "ga {h} kple aɖabaƒoƒo blaatɔ̃"}, {55, "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -517,7 +517,7 @@ const TimeLocale& ET() {
             {"kaksteist", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist"},
             "kesköö",
             "keskpäev",
-            {{0, "{h}"}, {5, "viis efter {h}"}, {10, "kümme efter {h}"}, {15, "veerand efter {h}"}, {20, "kakskümmend efter {h}"}, {25, "kakskümmend viis efter {h}"}, {30, "pool efter {h}"}, {35, "kakskümmend viis enne {next_h}"}, {40, "kakskümmend enne {next_h}"}, {45, "veerand enne {next_h}"}, {50, "kümme enne {next_h}"}, {55, "viis enne {next_h}"}}
+            {{0, "kell {h}"}, {5, "viis minutit {h} läbi"}, {10, "kümme minutit {h} läbi"}, {15, "veerand {next_h}"}, {20, "kakskümmend minutit {h} läbi"}, {25, "kakskümmend viis minutit {h} läbi"}, {30, "pool {next_h}"}, {35, "kolmkümmend viis minutit {h} läbi"}, {40, "kahekümne minuti pärast {next_h}"}, {45, "kolmveerand {next_h}"}, {50, "kümne minuti pärast {next_h}"}, {55, "viie minuti pärast {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -530,10 +530,10 @@ const TimeLocale& EU() {
     static const TimeLocale loc{
         "eu",
         ClockConfig{
-            {"hamabi", "bat", "bi", "hiru", "lau", "bost", "sei", "zazpi", "zortzi", "bederatzi", "hamar", "hamaika"},
+            {"hamabiak", "ordu bata", "ordu biak", "hirurak", "laurak", "bostak", "seiak", "zazpiak", "zortziak", "bederatziak", "hamarrak", "hamaikak"},
             "gauerdia",
             "eguerdia",
-            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+            {{0, "{h}"}, {5, "{h} eta bost"}, {10, "{h} eta hamar"}, {15, "{h} eta laurden"}, {20, "{h} eta hogei"}, {25, "{h} eta hogeita bost"}, {30, "{h} eta erdiak"}, {35, "{next_h} hogeita bost gutxi"}, {40, "{next_h} hogei gutxi"}, {45, "{next_h} laurden gutxi"}, {50, "{next_h} hamar gutxi"}, {55, "{next_h} bost gutxi"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},

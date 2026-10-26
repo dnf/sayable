@@ -10,22 +10,22 @@
 # Source: locales/kpe.json
 
 function locale_kpe {
-    $hours = @('puu lɔŋ', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ')
+    $hours = @('puu da feere', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ')
     $midnight = 'kpindi kɔlɛ'
     $noon = 'tili-ma'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'awa {h}'
+    $patterns[5] = 'awa {h} da miniti lɔɔlu'
+    $patterns[10] = 'awa {h} da miniti puu'
+    $patterns[15] = 'awa {h} da miniti puu da lɔɔlu'
+    $patterns[20] = 'awa {h} da miniti puu feere'
+    $patterns[25] = 'awa {h} da miniti puu feere da lɔɔlu'
+    $patterns[30] = 'awa {h} da miniti puu sawa'
+    $patterns[35] = 'awa {h} da miniti puu sawa da lɔɔlu'
+    $patterns[40] = 'awa {h} da miniti puu naŋ'
+    $patterns[45] = 'awa {h} da miniti puu naŋ da lɔɔlu'
+    $patterns[50] = 'awa {h} da miniti puu lɔɔlu'
+    $patterns[55] = 'awa {h} da miniti puu lɔɔlu da lɔɔlu'
     $clock = @{
         hours = $hours
         midnight = $midnight

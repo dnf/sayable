@@ -21,7 +21,7 @@ const SduDurationLocale sdu_locale_mr = {
     plural_mr,
     {
         { "{n} सेकंद", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} मिनिट", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "{n} मिनिट", NULL, NULL, NULL, "{n} मिनिटे" } },
         { "{n} तास", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { NULL, { NULL, "{n} दिवस", NULL, NULL, NULL, "{n} दिवस" } },
         { NULL, { NULL, "{n} आठवडा", NULL, NULL, NULL, "{n} आठवडे" } },

@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new(one: "මාස {n}", other: "මාස {n}"),
         "year" => UnitForms.new(one: "වසර {n}", other: "වසර {n}"),
       },
-      half: "{0}යි භාගයයි",
+      half: "{n}½",
       delimiter: ", ",
       just_born: "අලුත උපන්",
       stages: {

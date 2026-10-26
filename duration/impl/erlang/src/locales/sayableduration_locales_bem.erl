@@ -19,7 +19,7 @@ locale() ->
         plural = fun(1) -> one; (_) -> other end,
         second = {pluralized, [{one, "isekondi {n}"}, {other, "amasekondi {n}"}]},
         minute = {pluralized, [{one, "iminiti {n}"}, {other, "amaminiti {n}"}]},
-        hour = {pluralized, [{one, "insa {n}"}, {other, "amanso {n}"}]},
+        hour = {pluralized, [{one, "insa {n}"}, {other, "insa {n}"}]},
         day = {pluralized, [{one, "ubushiku {n}"}, {other, "inshiku {n}"}]},
         week = {pluralized, [{one, "umulungu {n}"}, {other, "imilungu {n}"}]},
         month = {pluralized, [{one, "umweshi {n}"}, {other, "imyeshi {n}"}]},

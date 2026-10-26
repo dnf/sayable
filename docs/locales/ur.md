@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ur.json](../../locales/ur.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Standard Hindustani system: '{h} بجے', '{h} بج کر پانچ منٹ', 'سوا {h} بجے' (quarter past), 'پونے {next_h} بجے' (quarter to, next hour), '{next_h} بجنے میں دس منٹ' (ten to) for 40/50/55; 35 is additive ('{h} بج کر پینتیس منٹ'). Half past uses '{h} بج کر تیس منٹ', which is correct for every hour but less idiomatic than the usual forms. Schema follow-up (per-hour override): half past is idiomatically 'ساڑھے {h} بجے' for 3-12 but obligatorily 'ڈیڑھ بجے' at 1:30 and 'ڈھائی بجے' at 2:30; 'ساڑھے ایک/دو' is never said, so ساڑھے cannot be used without an override.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | پرسوں         | 17/3    |
 | Day before yesterday | پرسوں         | 13/3    |
 | This Thursday (+5)   | اس جمعرات     | 20/3    |
-| Last Monday (-4)     | پچھلے منگل    | 11/3    |
-| Next Wednesday (+12) | اگلے جمعرات   | 27/3    |
-| Same month (+20)     | 4 اپریل       | 4/4     |
+| Last Tuesday (-4)    | پچھلے منگل    | 11/3    |
+| Next Thursday (+12)  | اگلے جمعرات   | 27/3    |
+| Same year (+20)      | 4 اپریل       | 4/4     |
 | Different year       | 10 جنوری 2026 | 10/1/26 |
 
 ## Duration
@@ -92,9 +100,9 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 منٹ           | 5 منٹ           | 5 منٹ         |
 | 45 minutes            | 45 منٹ          | 45 منٹ          | 45 منٹ        |
 | 1 hour                | 1 گھنٹہ         | 1 گھنٹہ         | 1 گھنٹہ       |
-| 1½ hours              | ساڑھے 1 گھنٹہ   | ساڑھے 1 گھنٹے   | 1½ گھنٹے      |
-| 3 hours               | 3 گھنٹہ         | 3 گھنٹے         | 3 گھنٹے       |
-| 6 hours               | 6 گھنٹہ         | 6 گھنٹے         | 6 گھنٹے       |
+| 1½ hours              | ساڑھے 1 گھنٹے   | ساڑھے 1 گھنٹے   | 1½ گھنٹے      |
+| 3 hours               | 3 گھنٹے         | 3 گھنٹے         | 3 گھنٹے       |
+| 6 hours               | 6 گھنٹے         | 6 گھنٹے         | 6 گھنٹے       |
 | 1 day                 | 1 دن            | 1 دن            | 1 دن          |
 | 1½ days               | ساڑھے 1 دن      | ساڑھے 1 دن      | 1½ دن         |
 | 3 days                | 3 دن            | 3 دن            | 3 دن          |
@@ -110,24 +118,24 @@ Relative to Saturday, March 15, 2025.
 | Offset        | Normal       | Compact      |
 | ------------- | ------------ | ------------ |
 | 5 minutes ago | 5 منٹ پہلے   | 5 منٹ پہلے   |
-| 2 hours ago   | 2 گھنٹہ پہلے | 2 گھنٹے پہلے |
+| 2 hours ago   | 2 گھنٹے پہلے | 2 گھنٹے پہلے |
 | in 30 minutes | 30 منٹ میں   | 30 منٹ میں   |
-| in 3 hours    | 3 گھنٹہ میں  | 3 گھنٹے میں  |
+| in 3 hours    | 3 گھنٹے میں  | 3 گھنٹے میں  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal   | Short    | Compact |
-| --------------- | -------- | -------- | ------- |
-| Midnight        | آدھی رات | 12:00 AM | 12:00a  |
-| 1:00 AM         | ایک:00   | 1:00 AM  | 1:00a   |
-| 5 past 9        | نو:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | دس:15    | 10:15 AM | 10:15a  |
-| Half past 11    | گیارہ:30 | 11:30 AM | 11:30a  |
-| Noon            | دوپہر    | 12:00 PM | 12:00p  |
-| Quarter to 3    | دو:45    | 2:45 PM  | 2:45p   |
-| 5 to 6          | پانچ:55  | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | آٹھ:00   | 8:00 PM  | 8:00p   |
-| 10:30 PM        | دس:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | آدھی رات | 11:58 PM | 11:58p  |
+| Time            | Normal               | Short    | Compact |
+| --------------- | -------------------- | -------- | ------- |
+| Midnight        | آدھی رات             | 12:00 AM | 12:00a  |
+| 1:00 AM         | ایک بجے              | 1:00 AM  | 1:00a   |
+| 5 past 9        | نو بج کر پانچ منٹ    | 9:05 AM  | 9:05a   |
+| Quarter past 10 | سوا دس بجے           | 10:15 AM | 10:15a  |
+| Half past 11    | گیارہ بج کر تیس منٹ  | 11:30 AM | 11:30a  |
+| Noon            | دوپہر                | 12:00 PM | 12:00p  |
+| Quarter to 3    | پونے تین بجے         | 2:45 PM  | 2:45p   |
+| 5 to 6          | چھ بجنے میں پانچ منٹ | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | آٹھ بجے              | 8:00 PM  | 8:00p   |
+| 10:30 PM        | دس بج کر تیس منٹ     | 10:30 PM | 10:30p  |
+| 11:58 PM        | آدھی رات             | 11:58 PM | 11:58p  |

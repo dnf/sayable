@@ -15,15 +15,42 @@ use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, Compactness
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "kl".to_string(),
-        plural: |_n| PluralCategory::Other,
+        plural: |n| {
+            if n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
+        },
         units: Units {
-            second: UnitForms::simple("sekundit {n}"),
-            minute: UnitForms::simple("minutsit {n}"),
-            hour: UnitForms::simple("nalunaaqutap akunnera {n}"),
-            day: UnitForms::simple("ullut {n}"),
-            week: UnitForms::simple("sapaatit {n}"),
-            month: UnitForms::simple("qaammatit {n}"),
-            year: UnitForms::simple("ukiut {n}"),
+            second: UnitForms::plural(&[
+                (PluralCategory::One, "sekundi {n}"),
+                (PluralCategory::Other, "sekundit {n}"),
+            ]),
+            minute: UnitForms::plural(&[
+                (PluralCategory::One, "minutsi {n}"),
+                (PluralCategory::Other, "minutsit {n}"),
+            ]),
+            hour: UnitForms::plural(&[
+                (PluralCategory::One, "nalunaaquttap akunnera {n}"),
+                (PluralCategory::Other, "nalunaaquttap akunneri {n}"),
+            ]),
+            day: UnitForms::plural(&[
+                (PluralCategory::One, "ulloq {n}"),
+                (PluralCategory::Other, "ullut {n}"),
+            ]),
+            week: UnitForms::plural(&[
+                (PluralCategory::One, "sapaatip akunnera {n}"),
+                (PluralCategory::Other, "sapaatip akunneri {n}"),
+            ]),
+            month: UnitForms::plural(&[
+                (PluralCategory::One, "qaammat {n}"),
+                (PluralCategory::Other, "qaammatit {n}"),
+            ]),
+            year: UnitForms::plural(&[
+                (PluralCategory::One, "ukioq {n}"),
+                (PluralCategory::Other, "ukiut {n}"),
+            ]),
         },
         half: "{0} affaa".to_string(),
         delimiter: ", ".to_string(),
@@ -35,7 +62,7 @@ pub fn locale() -> DurationLocale {
             minute: Some(UnitForms::simple("min. {n}")),
             hour: Some(UnitForms::simple("nal. {n}")),
             day: Some(UnitForms::simple("ull. {n}")),
-            week: Some(UnitForms::simple("sap. {n}")),
+            week: Some(UnitForms::simple("sap. ak. {n}")),
             month: Some(UnitForms::simple("qaam. {n}")),
             year: Some(UnitForms::simple("uk. {n}")),
             half: None,
@@ -51,7 +78,7 @@ pub fn locale() -> DurationLocale {
             week: Some(UnitForms::simple("{n}w")),
             month: Some(UnitForms::simple("{n}mo")),
             year: Some(UnitForms::simple("{n}y")),
-            half: None,
+            half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             ago: Some("{0} matuma siorna".to_string()),
             in_future: Some("{0} siunissami".to_string()),

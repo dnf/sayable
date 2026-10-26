@@ -77,17 +77,17 @@ object Locales {
             infant = s("Akwadaa"),
             toddler = s("Abofra"),
             child = s("Abofra"),
-            teenager = s("Abarimaa"),
+            teenager = g("Abarimaa", "Abaayewa"),
             adult = s("Ɔpanyin"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("nna {n}")),
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "da {n}", PluralCategory.OTHER -> "nna {n}"))),
             week = Some(pluralUnit(Map(PluralCategory.ONE -> "dapɛn {n}", PluralCategory.OTHER -> "nnapɛn {n}"))),
             month = Some(pluralUnit(Map(PluralCategory.ONE -> "bosome {n}", PluralCategory.OTHER -> "abosome {n}"))),
             year = Some(pluralUnit(Map(PluralCategory.ONE -> "afe {n}", PluralCategory.OTHER -> "mfe {n}"))),
         )),
         compact = Some(CompactnessOverride(
-            day = Some(simpleUnit("nna {n}")),
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "da {n}", PluralCategory.OTHER -> "nna {n}"))),
             week = Some(pluralUnit(Map(PluralCategory.ONE -> "dapɛn {n}", PluralCategory.OTHER -> "nnapɛn {n}"))),
             month = Some(pluralUnit(Map(PluralCategory.ONE -> "bos {n}", PluralCategory.OTHER -> "abos {n}"))),
             year = Some(pluralUnit(Map(PluralCategory.ONE -> "afe {n}", PluralCategory.OTHER -> "mfe {n}"))),
@@ -176,7 +176,7 @@ object Locales {
         compact = Some(CompactnessOverride(
             day = Some(simpleUnit("{n} ي")),
             week = Some(simpleUnit("{n} أ")),
-            month = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} شهر", PluralCategory.ONE -> "شهر", PluralCategory.TWO -> "شهران", PluralCategory.FEW -> "{n} أشهر", PluralCategory.MANY -> "{n} شهرًا", PluralCategory.OTHER -> "{n} شهر"))),
+            month = Some(simpleUnit("{n} شهر")),
             year = Some(simpleUnit("{n} سنة")),
             delimiter = Some(""),
             half = Some("{n}½"),
@@ -191,10 +191,10 @@ object Locales {
         code = "ay",
         plural = _ => PluralCategory.OTHER,
         units = Units(
-            day = simpleUnit("uru {n}"),
-            week = simpleUnit("simana {n}"),
-            month = simpleUnit("phaxsi {n}"),
-            year = simpleUnit("mara {n}"),
+            day = simpleUnit("{n} uru"),
+            week = simpleUnit("{n} simana"),
+            month = simpleUnit("{n} phaxsi"),
+            year = simpleUnit("{n} mara"),
         ),
         half = "{0} chika",
         delimiter = ", ",
@@ -219,6 +219,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -370,7 +371,7 @@ object Locales {
             toddler = s("Umwana"),
             child = s("Umwana"),
             teenager = s("Umunyamata"),
-            adult = s("Umulumendo"),
+            adult = s("Umukalamba"),
         ),
         short = Some(CompactnessOverride(
             day = Some(pluralUnit(Map(PluralCategory.ONE -> "ubushiku {n}", PluralCategory.OTHER -> "inshiku {n}"))),
@@ -441,7 +442,7 @@ object Locales {
             month = simpleUnit("{n} manis"),
             year = simpleUnit("{n} yia"),
         ),
-        half = "{n} mo haf",
+        half = "{0} mo haf",
         delimiter = ", ",
         justBorn = "Niufala bebe",
         stages = Stages(
@@ -464,6 +465,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -654,7 +656,7 @@ object Locales {
             month = pluralUnit(Map(PluralCategory.ONE -> "{n} mes", PluralCategory.OTHER -> "{n} mesos")),
             year = pluralUnit(Map(PluralCategory.ONE -> "{n} any", PluralCategory.OTHER -> "{n} anys")),
         ),
-        half = "{n} i mig",
+        half = "{0} i mig",
         delimiter = ", ",
         justBorn = "Nounat",
         stages = Stages(
@@ -717,6 +719,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -733,7 +736,7 @@ object Locales {
             month = simpleUnit("{n} ka bulan"),
             year = simpleUnit("{n} ka tuig"),
         ),
-        half = "{n}½",
+        half = "{0} ug tunga",
         delimiter = ", ",
         justBorn = "Bag-ong natawo",
         stages = Stages(
@@ -818,10 +821,10 @@ object Locales {
             case _ => PluralCategory.OTHER
         },
         units = Units(
-            day = pluralUnit(Map(PluralCategory.ZERO -> "{n} diwrnod", PluralCategory.ONE -> "{n} diwrnod", PluralCategory.TWO -> "{n} ddiwrnod", PluralCategory.FEW -> "{n} diwrnod", PluralCategory.MANY -> "{n} niwrnod", PluralCategory.OTHER -> "{n} diwrnod")),
+            day = pluralUnit(Map(PluralCategory.ZERO -> "{n} diwrnod", PluralCategory.ONE -> "{n} diwrnod", PluralCategory.TWO -> "{n} ddiwrnod", PluralCategory.FEW -> "{n} diwrnod", PluralCategory.MANY -> "{n} diwrnod", PluralCategory.OTHER -> "{n} diwrnod")),
             week = pluralUnit(Map(PluralCategory.ZERO -> "{n} wythnos", PluralCategory.ONE -> "{n} wythnos", PluralCategory.TWO -> "{n} wythnos", PluralCategory.FEW -> "{n} wythnos", PluralCategory.MANY -> "{n} wythnos", PluralCategory.OTHER -> "{n} wythnos")),
             month = pluralUnit(Map(PluralCategory.ZERO -> "{n} mis", PluralCategory.ONE -> "{n} mis", PluralCategory.TWO -> "{n} fis", PluralCategory.FEW -> "{n} mis", PluralCategory.MANY -> "{n} mis", PluralCategory.OTHER -> "{n} mis")),
-            year = pluralUnit(Map(PluralCategory.ZERO -> "{n} blwyddyn", PluralCategory.ONE -> "{n} blwyddyn", PluralCategory.TWO -> "{n} flynedd", PluralCategory.FEW -> "{n} blynedd", PluralCategory.MANY -> "{n} blynedd", PluralCategory.OTHER -> "{n} blynedd")),
+            year = pluralUnit(Map(PluralCategory.ZERO -> "{n} blwyddyn", PluralCategory.ONE -> "{n} flwyddyn", PluralCategory.TWO -> "{n} flynedd", PluralCategory.FEW -> "{n} blynedd", PluralCategory.MANY -> "{n} blynedd", PluralCategory.OTHER -> "{n} blynedd")),
         ),
         half = "{0} a hanner",
         delimiter = ", ",
@@ -1021,7 +1024,7 @@ object Locales {
             month = simpleUnit("{n} މަސް"),
             year = simpleUnit("{n} އަހަރު"),
         ),
-        half = "{0} ބައި",
+        half = "{n}½",
         delimiter = "، ",
         justBorn = "އަލަށް އުފަންވި",
         stages = Stages(
@@ -1100,7 +1103,7 @@ object Locales {
             month = simpleUnit("ཟླ་ {n}"),
             year = simpleUnit("ལོ་ {n}"),
         ),
-        half = "{0} ཕྱེད",
+        half = "{0} དང་ཕྱེད",
         delimiter = " ",
         justBorn = "གསར་སྐྱེས",
         stages = Stages(
@@ -1134,10 +1137,10 @@ object Locales {
         code = "ee",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
-            day = pluralUnit(Map(PluralCategory.ONE -> "ŋkeke {n}", PluralCategory.OTHER -> "ŋkekewo {n}")),
-            week = pluralUnit(Map(PluralCategory.ONE -> "kɔsiɖa {n}", PluralCategory.OTHER -> "kɔsiɖawo {n}")),
-            month = pluralUnit(Map(PluralCategory.ONE -> "ɣleti {n}", PluralCategory.OTHER -> "ɣletiwo {n}")),
-            year = pluralUnit(Map(PluralCategory.ONE -> "ƒe {n}", PluralCategory.OTHER -> "ƒewo {n}")),
+            day = simpleUnit("ŋkeke {n}"),
+            week = simpleUnit("kɔsiɖa {n}"),
+            month = simpleUnit("ɣleti {n}"),
+            year = simpleUnit("ƒe {n}"),
         ),
         half = "{0} kple afã",
         delimiter = ", ",
@@ -1147,14 +1150,14 @@ object Locales {
             infant = s("Ɖevi"),
             toddler = s("Ɖevi sue"),
             child = s("Ɖevi"),
-            teenager = s("Ŋutsuviwo"),
+            teenager = g("Ɖekakpui", "Ɖetugbi"),
             adult = s("Ame tsitsi"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("ŋkekewo {n}")),
-            week = Some(pluralUnit(Map(PluralCategory.ONE -> "kɔsiɖa {n}", PluralCategory.OTHER -> "kɔsiɖawo {n}"))),
-            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ɣleti {n}", PluralCategory.OTHER -> "ɣletiwo {n}"))),
-            year = Some(pluralUnit(Map(PluralCategory.ONE -> "ƒe {n}", PluralCategory.OTHER -> "ƒewo {n}"))),
+            day = Some(simpleUnit("ŋkeke {n}")),
+            week = Some(simpleUnit("kɔsiɖa {n}")),
+            month = Some(simpleUnit("ɣleti {n}")),
+            year = Some(simpleUnit("ƒe {n}")),
         )),
         compact = Some(CompactnessOverride(
             day = Some(simpleUnit("{n}d")),
@@ -1258,7 +1261,7 @@ object Locales {
             month = pluralUnit(Map(PluralCategory.ONE -> "{n} mes", PluralCategory.OTHER -> "{n} meses")),
             year = pluralUnit(Map(PluralCategory.ONE -> "{n} año", PluralCategory.OTHER -> "{n} años")),
         ),
-        half = "{n} y medio",
+        half = "{0} y medio",
         delimiter = ", ",
         justBorn = "Recién nacido",
         stages = Stages(
@@ -1465,17 +1468,17 @@ object Locales {
             infant = s("Ɓinngel"),
             toddler = s("Cukalel"),
             child = s("Suka"),
-            teenager = s("Suka debbo"),
+            teenager = g("Suka gorko", "Suka debbo"),
             adult = s("Mawɗo"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("ñalɗe {n}")),
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "ñalawma {n}", PluralCategory.OTHER -> "ñalɗe {n}"))),
             week = Some(pluralUnit(Map(PluralCategory.ONE -> "yontere {n}", PluralCategory.OTHER -> "yontereeji {n}"))),
             month = Some(pluralUnit(Map(PluralCategory.ONE -> "lewru {n}", PluralCategory.OTHER -> "lebbi {n}"))),
             year = Some(pluralUnit(Map(PluralCategory.ONE -> "hitaande {n}", PluralCategory.OTHER -> "duuɓi {n}"))),
         )),
         compact = Some(CompactnessOverride(
-            day = Some(simpleUnit("ñalɗe {n}")),
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "ñalawma {n}", PluralCategory.OTHER -> "ñalɗe {n}"))),
             week = Some(pluralUnit(Map(PluralCategory.ONE -> "yont {n}", PluralCategory.OTHER -> "yontji {n}"))),
             month = Some(pluralUnit(Map(PluralCategory.ONE -> "lew {n}", PluralCategory.OTHER -> "leb {n}"))),
             year = Some(pluralUnit(Map(PluralCategory.ONE -> "hit {n}", PluralCategory.OTHER -> "duuɓi {n}"))),
@@ -1546,7 +1549,7 @@ object Locales {
             toddler = s("Batang paslit"),
             child = s("Bata"),
             teenager = s("Tinedyer"),
-            adult = s("Matanda"),
+            adult = s("Adulto"),
         ),
         short = Some(CompactnessOverride(
             day = Some(simpleUnit("{n} araw")),
@@ -1577,7 +1580,7 @@ object Locales {
             month = simpleUnit("{n} na vula"),
             year = simpleUnit("{n} na yabaki"),
         ),
-        half = "{n} kei na levu ni wasei",
+        half = "{0} kei na veimama",
         delimiter = ", ",
         justBorn = "Gone vou",
         stages = Stages(
@@ -1600,6 +1603,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -1624,7 +1628,7 @@ object Locales {
             infant = s("Vǐ"),
             toddler = s("Vǐ"),
             child = s("Vǐ"),
-            teenager = s("Nyɔ̌nu"),
+            teenager = g("Dɔnkpɛvu", "Ɖyɔ̌vǐ"),
             adult = s("Mɛ̌xo"),
         ),
         short = Some(CompactnessOverride(
@@ -1793,7 +1797,7 @@ object Locales {
         stages = Stages(
             newborn = g("Recén nacido", "Recén nacida"),
             infant = s("Bebé"),
-            toddler = s("Neno"),
+            toddler = g("Neno pequeno", "Nena pequena"),
             child = g("Neno", "Nena"),
             teenager = s("Adolescente"),
             adult = g("Adulto", "Adulta"),
@@ -1949,10 +1953,10 @@ object Locales {
         code = "ha",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
-            day = pluralUnit(Map(PluralCategory.ONE -> "{n} kwana", PluralCategory.OTHER -> "{n} kwanaki")),
-            week = pluralUnit(Map(PluralCategory.ONE -> "{n} mako", PluralCategory.OTHER -> "{n} makonni")),
-            month = pluralUnit(Map(PluralCategory.ONE -> "{n} wata", PluralCategory.OTHER -> "{n} watanni")),
-            year = pluralUnit(Map(PluralCategory.ONE -> "{n} shekara", PluralCategory.OTHER -> "{n} shekaru")),
+            day = pluralUnit(Map(PluralCategory.ONE -> "kwana {n}", PluralCategory.OTHER -> "kwanaki {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "mako {n}", PluralCategory.OTHER -> "makonni {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "wata {n}", PluralCategory.OTHER -> "watanni {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "shekara {n}", PluralCategory.OTHER -> "shekaru {n}")),
         ),
         half = "{n}½",
         delimiter = ", ",
@@ -1960,16 +1964,16 @@ object Locales {
         stages = Stages(
             newborn = s("Jariri"),
             infant = s("Jariri"),
-            toddler = s("Ƙaramin yaro"),
-            child = s("Yaro"),
-            teenager = s("Saurayi"),
+            toddler = g("Ƙaramin yaro", "Ƙaramar yarinya"),
+            child = g("Yaro", "Yarinya"),
+            teenager = g("Saurayi", "Budurwa"),
             adult = s("Babba"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("{n} kw.")),
-            week = Some(simpleUnit("{n} mk.")),
-            month = Some(simpleUnit("{n} wt.")),
-            year = Some(simpleUnit("{n} shk.")),
+            day = Some(simpleUnit("kw. {n}")),
+            week = Some(simpleUnit("mk. {n}")),
+            month = Some(simpleUnit("wt. {n}")),
+            year = Some(simpleUnit("shk. {n}")),
         )),
         compact = Some(CompactnessOverride(
             day = Some(simpleUnit("{n}d")),
@@ -1992,9 +1996,9 @@ object Locales {
             case _ => PluralCategory.OTHER
         },
         units = Units(
-            day = pluralUnit(Map(PluralCategory.ONE -> "יום {n}", PluralCategory.TWO -> "יומיים", PluralCategory.OTHER -> "{n} ימים")),
-            week = pluralUnit(Map(PluralCategory.ONE -> "שבוע {n}", PluralCategory.TWO -> "שבועיים", PluralCategory.OTHER -> "{n} שבועות")),
-            month = pluralUnit(Map(PluralCategory.ONE -> "חודש {n}", PluralCategory.TWO -> "חודשיים", PluralCategory.OTHER -> "{n} חודשים")),
+            day = pluralUnit(Map(PluralCategory.ONE -> "יום", PluralCategory.TWO -> "יומיים", PluralCategory.OTHER -> "{n} ימים")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "שבוע", PluralCategory.TWO -> "שבועיים", PluralCategory.OTHER -> "{n} שבועות")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "חודש", PluralCategory.TWO -> "חודשיים", PluralCategory.OTHER -> "{n} חודשים")),
             year = pluralUnit(Map(PluralCategory.ONE -> "שנה", PluralCategory.TWO -> "שנתיים", PluralCategory.OTHER -> "{n} שנים")),
         ),
         half = "{0} וחצי",
@@ -2002,8 +2006,8 @@ object Locales {
         justBorn = "רק נולד",
         stages = Stages(
             newborn = g("רק נולד", "רק נולדה"),
-            infant = s("תינוק"),
-            toddler = s("פעוט"),
+            infant = g("תינוק", "תינוקת"),
+            toddler = g("פעוט", "פעוטה"),
             child = g("ילד", "ילדה"),
             teenager = g("נער", "נערה"),
             adult = g("מבוגר", "מבוגרת"),
@@ -2100,6 +2104,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -2282,7 +2287,7 @@ object Locales {
             month = simpleUnit("{n} bulan"),
             year = simpleUnit("{n} tahun"),
         ),
-        half = "{0} setengah",
+        half = "{n} setengah",
         delimiter = ", ",
         justBorn = "Baru lahir",
         stages = Stages(
@@ -2317,10 +2322,10 @@ object Locales {
         code = "ig",
         plural = _ => PluralCategory.OTHER,
         units = Units(
-            day = simpleUnit("{n} ụbọchị"),
-            week = simpleUnit("{n} izu"),
-            month = simpleUnit("{n} ọnwa"),
-            year = simpleUnit("{n} afọ"),
+            day = simpleUnit("ụbọchị {n}"),
+            week = simpleUnit("izu {n}"),
+            month = simpleUnit("ọnwa {n}"),
+            year = simpleUnit("afọ {n}"),
         ),
         half = "{0} na ọkara",
         delimiter = ", ",
@@ -2330,14 +2335,14 @@ object Locales {
             infant = s("Nwa ọhụrụ"),
             toddler = s("Nwa nta"),
             child = s("Nwa"),
-            teenager = s("Nwokorobịa"),
+            teenager = g("Nwokorobịa", "Agbọghọbịa"),
             adult = s("Okenye"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("{n} ụbọchị")),
-            week = Some(simpleUnit("{n} izu")),
-            month = Some(simpleUnit("{n} ọnwa")),
-            year = Some(simpleUnit("{n} afọ")),
+            day = Some(simpleUnit("ụbọchị {n}")),
+            week = Some(simpleUnit("izu {n}")),
+            month = Some(simpleUnit("ọnwa {n}")),
+            year = Some(simpleUnit("afọ {n}")),
         )),
         compact = Some(CompactnessOverride(
             day = Some(simpleUnit("{n}d")),
@@ -2366,7 +2371,7 @@ object Locales {
             month = pluralUnit(Map(PluralCategory.ONE -> "{n} mánuður", PluralCategory.OTHER -> "{n} mánuðir")),
             year = pluralUnit(Map(PluralCategory.ONE -> "{n} ár", PluralCategory.OTHER -> "{n} ár")),
         ),
-        half = "{0} og hálft",
+        half = "{n} og hálft",
         delimiter = ", ",
         justBorn = "Nýfætt",
         stages = Stages(
@@ -2468,6 +2473,7 @@ object Locales {
             week = Some(simpleUnit("{n}w")),
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
+            half = Some("{n}½"),
         )),
     )
 
@@ -2627,6 +2633,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -2715,12 +2722,12 @@ object Locales {
     // ================================================================
     lazy val KL: AgeLocale = AgeLocale(
         code = "kl",
-        plural = _ => PluralCategory.OTHER,
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
-            day = simpleUnit("ullut {n}"),
-            week = simpleUnit("sapaatit {n}"),
-            month = simpleUnit("qaammatit {n}"),
-            year = simpleUnit("ukiut {n}"),
+            day = pluralUnit(Map(PluralCategory.ONE -> "ulloq {n}", PluralCategory.OTHER -> "ullut {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "sapaatip akunnera {n}", PluralCategory.OTHER -> "sapaatip akunneri {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "qaammat {n}", PluralCategory.OTHER -> "qaammatit {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ukioq {n}", PluralCategory.OTHER -> "ukiut {n}")),
         ),
         half = "{0} affaa",
         delimiter = ", ",
@@ -2735,7 +2742,7 @@ object Locales {
         ),
         short = Some(CompactnessOverride(
             day = Some(simpleUnit("ull. {n}")),
-            week = Some(simpleUnit("sap. {n}")),
+            week = Some(simpleUnit("sap. ak. {n}")),
             month = Some(simpleUnit("qaam. {n}")),
             year = Some(simpleUnit("uk. {n}")),
         )),
@@ -2745,6 +2752,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -2801,7 +2809,7 @@ object Locales {
             month = pluralUnit(Map(PluralCategory.ONE -> "{n} ತಿಂಗಳು", PluralCategory.OTHER -> "{n} ತಿಂಗಳುಗಳು")),
             year = pluralUnit(Map(PluralCategory.ONE -> "{n} ವರ್ಷ", PluralCategory.OTHER -> "{n} ವರ್ಷಗಳು")),
         ),
-        half = "{0}ವರೆ",
+        half = "{n}½",
         delimiter = ", ",
         justBorn = "ನವಜಾತ ಶಿಶು",
         stages = Stages(
@@ -2920,7 +2928,7 @@ object Locales {
             month = simpleUnit("{n} mont"),
             year = simpleUnit("{n} ia"),
         ),
-        half = "{n} na af",
+        half = "{0} ɛn af",
         delimiter = ", ",
         justBorn = "Nyubon bebi",
         stages = Stages(
@@ -2943,6 +2951,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -3043,10 +3052,10 @@ object Locales {
             }
         },
         units = Units(
-            day = pluralUnit(Map(PluralCategory.ZERO -> "{n} dydh", PluralCategory.ONE -> "dydh", PluralCategory.TWO -> "{n} dhydh", PluralCategory.FEW -> "{n} dydh", PluralCategory.MANY -> "{n} dydh", PluralCategory.OTHER -> "{n} dydh")),
-            week = pluralUnit(Map(PluralCategory.ZERO -> "{n} seythun", PluralCategory.ONE -> "seythun", PluralCategory.TWO -> "{n} seythun", PluralCategory.FEW -> "{n} seythun", PluralCategory.MANY -> "{n} seythun", PluralCategory.OTHER -> "{n} seythun")),
-            month = pluralUnit(Map(PluralCategory.ZERO -> "{n} mis", PluralCategory.ONE -> "mis", PluralCategory.TWO -> "{n} vis", PluralCategory.FEW -> "{n} mis", PluralCategory.MANY -> "{n} mis", PluralCategory.OTHER -> "{n} mis")),
-            year = pluralUnit(Map(PluralCategory.ZERO -> "{n} blydhen", PluralCategory.ONE -> "blydhen", PluralCategory.TWO -> "{n} vlydhen", PluralCategory.FEW -> "{n} blydhen", PluralCategory.MANY -> "{n} blydhen", PluralCategory.OTHER -> "{n} blydhen")),
+            day = pluralUnit(Map(PluralCategory.ZERO -> "{n} dydh", PluralCategory.ONE -> "{n} dydh", PluralCategory.TWO -> "{n} dhydh", PluralCategory.FEW -> "{n} dydh", PluralCategory.MANY -> "{n} dydh", PluralCategory.OTHER -> "{n} dydh")),
+            week = pluralUnit(Map(PluralCategory.ZERO -> "{n} seythun", PluralCategory.ONE -> "{n} seythun", PluralCategory.TWO -> "{n} seythun", PluralCategory.FEW -> "{n} seythun", PluralCategory.MANY -> "{n} seythun", PluralCategory.OTHER -> "{n} seythun")),
+            month = pluralUnit(Map(PluralCategory.ZERO -> "{n} mis", PluralCategory.ONE -> "{n} mis", PluralCategory.TWO -> "{n} vis", PluralCategory.FEW -> "{n} mis", PluralCategory.MANY -> "{n} mis", PluralCategory.OTHER -> "{n} mis")),
+            year = pluralUnit(Map(PluralCategory.ZERO -> "{n} blydhen", PluralCategory.ONE -> "{n} blydhen", PluralCategory.TWO -> "{n} vlydhen", PluralCategory.FEW -> "{n} blydhen", PluralCategory.MANY -> "{n} blydhen", PluralCategory.OTHER -> "{n} blydhen")),
         ),
         half = "{0} hag hanter",
         delimiter = ", ",
@@ -3248,7 +3257,7 @@ object Locales {
             year = simpleUnit("{n} ປີ"),
         ),
         half = "{0}ເຄິ່ງ",
-        delimiter = "",
+        delimiter = " ",
         justBorn = "ເກີດໃໝ່",
         stages = Stages(
             newborn = s("ເດັກເກີດໃໝ່"),
@@ -3269,6 +3278,7 @@ object Locales {
             week = Some(simpleUnit("{n}w")),
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
+            half = Some("{n}½"),
         )),
     )
 
@@ -3410,7 +3420,7 @@ object Locales {
         plural = _ => PluralCategory.OTHER,
         units = Units(
             day = simpleUnit("{n} q'ij"),
-            week = simpleUnit("{n} xjaw"),
+            week = simpleUnit("{n} seman"),
             month = simpleUnit("{n} xjaw"),
             year = simpleUnit("{n} ab'q'ii"),
         ),
@@ -3427,7 +3437,7 @@ object Locales {
         ),
         short = Some(CompactnessOverride(
             day = Some(simpleUnit("{n} q'ij")),
-            week = Some(simpleUnit("{n} xjaw")),
+            week = Some(simpleUnit("{n} seman")),
             month = Some(simpleUnit("{n} xjaw")),
             year = Some(simpleUnit("{n} ab'.")),
         )),
@@ -3437,6 +3447,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -3568,12 +3579,12 @@ object Locales {
         code = "mi",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
-            day = simpleUnit("rā {n}"),
-            week = simpleUnit("wiki {n}"),
-            month = simpleUnit("marama {n}"),
-            year = simpleUnit("tau {n}"),
+            day = simpleUnit("{n} rā"),
+            week = simpleUnit("{n} wiki"),
+            month = simpleUnit("{n} marama"),
+            year = simpleUnit("{n} tau"),
         ),
-        half = "{0}½",
+        half = "{n}½",
         delimiter = ", ",
         justBorn = "Pēpi hou",
         stages = Stages(
@@ -3585,10 +3596,10 @@ object Locales {
             adult = s("Pakeke"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("rā {n}")),
-            week = Some(simpleUnit("w {n}")),
-            month = Some(simpleUnit("m {n}")),
-            year = Some(simpleUnit("t {n}")),
+            day = Some(simpleUnit("{n} rā")),
+            week = Some(simpleUnit("{n} w")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n} t")),
         )),
         compact = Some(CompactnessOverride(
             day = Some(simpleUnit("{n}r")),
@@ -3626,7 +3637,7 @@ object Locales {
             toddler = s("Мало дете"),
             child = s("Дете"),
             teenager = s("Тинејџер"),
-            adult = s("Возрасен"),
+            adult = g("Возрасен", "Возрасна"),
         ),
         short = Some(CompactnessOverride(
             day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ден", PluralCategory.OTHER -> "{n} дена"))),
@@ -3650,14 +3661,14 @@ object Locales {
     // ================================================================
     lazy val ML: AgeLocale = AgeLocale(
         code = "ml",
-        plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
             day = pluralUnit(Map(PluralCategory.ONE -> "{n} ദിവസം", PluralCategory.OTHER -> "{n} ദിവസങ്ങൾ")),
             week = pluralUnit(Map(PluralCategory.ONE -> "{n} ആഴ്ച", PluralCategory.OTHER -> "{n} ആഴ്ചകൾ")),
             month = pluralUnit(Map(PluralCategory.ONE -> "{n} മാസം", PluralCategory.OTHER -> "{n} മാസങ്ങൾ")),
             year = pluralUnit(Map(PluralCategory.ONE -> "{n} വയസ്സ്", PluralCategory.OTHER -> "{n} വയസ്സ്")),
         ),
-        half = "{0} ര",
+        half = "{n}½",
         delimiter = ", ",
         justBorn = "നവജാതശിശു",
         stages = Stages(
@@ -4068,7 +4079,7 @@ object Locales {
         stages = Stages(
             newborn = s("नवजात शिशु"),
             infant = s("शिशु"),
-            toddler = s("बाल्यकाल"),
+            toddler = s("सानो बच्चा"),
             child = s("बालक"),
             teenager = s("किशोर"),
             adult = s("वयस्क"),
@@ -4460,7 +4471,7 @@ object Locales {
             month = simpleUnit("{n} manis"),
             year = simpleUnit("{n} yia"),
         ),
-        half = "{n} en haf",
+        half = "{0} en haf",
         delimiter = ", ",
         justBorn = "Niufala bebi",
         stages = Stages(
@@ -4483,6 +4494,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -4730,6 +4742,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -4995,33 +5008,33 @@ object Locales {
             else PluralCategory.OTHER
         },
         units = Units(
-            day = pluralUnit(Map(PluralCategory.ONE -> "{n} ass", PluralCategory.FEW -> "{n} ussan", PluralCategory.OTHER -> "{n} ass")),
-            week = pluralUnit(Map(PluralCategory.ONE -> "{n} imalass", PluralCategory.FEW -> "{n} imalassn", PluralCategory.OTHER -> "{n} imalass")),
-            month = pluralUnit(Map(PluralCategory.ONE -> "{n} ayyur", PluralCategory.FEW -> "{n} ayyurn", PluralCategory.OTHER -> "{n} ayyur")),
-            year = pluralUnit(Map(PluralCategory.ONE -> "{n} aseggas", PluralCategory.FEW -> "{n} iseggasen", PluralCategory.OTHER -> "{n} aseggas")),
+            day = pluralUnit(Map(PluralCategory.ONE -> "{n} ⴰⵙⵙ", PluralCategory.FEW -> "{n} ⵓⵙⵙⴰⵏ", PluralCategory.OTHER -> "{n} ⴰⵙⵙ")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "{n} ⵉⵎⴰⵍⴰⵙⵙ", PluralCategory.FEW -> "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", PluralCategory.OTHER -> "{n} ⵉⵎⴰⵍⴰⵙⵙ")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "{n} ⴰⵢⵢⵓⵔ", PluralCategory.FEW -> "{n} ⴰⵢⵢⵓⵔⵏ", PluralCategory.OTHER -> "{n} ⴰⵢⵢⵓⵔ")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "{n} ⴰⵙⴳⴳⵯⴰⵙ", PluralCategory.FEW -> "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", PluralCategory.OTHER -> "{n} ⴰⵙⴳⴳⵯⴰⵙ")),
         ),
-        half = "{0} d uzgen",
+        half = "{0} ⴷ ⵓⵣⴳⵏ",
         delimiter = ", ",
-        justBorn = "Iɣ d illul",
+        justBorn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
         stages = Stages(
-            newborn = s("Iɣ d illul"),
-            infant = s("Agellid"),
-            toddler = g("Aḥenjir", "Taḥenjirt"),
-            child = g("Afrux", "Tafruxṭ"),
-            teenager = g("Aɛrim", "Taɛrimt"),
-            adult = g("Argaz", "Tamṭṭuṭ"),
+            newborn = s("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"),
+            infant = s("ⵍⵍⵓⴼⴰⵏ"),
+            toddler = g("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"),
+            child = g("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"),
+            teenager = g("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"),
+            adult = g("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("{n} d")),
-            week = Some(simpleUnit("{n} wk")),
-            month = Some(simpleUnit("{n} mo")),
-            year = Some(simpleUnit("{n} yr")),
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ⴰⵙⵙ", PluralCategory.FEW -> "{n} ⵓⵙⵙⴰⵏ", PluralCategory.OTHER -> "{n} ⴰⵙⵙ"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ⵉⵎⴰⵍⴰⵙⵙ", PluralCategory.FEW -> "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", PluralCategory.OTHER -> "{n} ⵉⵎⴰⵍⴰⵙⵙ"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ⴰⵢⵢⵓⵔ", PluralCategory.FEW -> "{n} ⴰⵢⵢⵓⵔⵏ", PluralCategory.OTHER -> "{n} ⴰⵢⵢⵓⵔ"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ⴰⵙⴳⴳⵯⴰⵙ", PluralCategory.FEW -> "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", PluralCategory.OTHER -> "{n} ⴰⵙⴳⴳⵯⴰⵙ"))),
         )),
         compact = Some(CompactnessOverride(
-            day = Some(simpleUnit("{n}d")),
-            week = Some(simpleUnit("{n}w")),
-            month = Some(simpleUnit("{n}m")),
-            year = Some(simpleUnit("{n}y")),
+            day = Some(simpleUnit("{n} ⴰⵙⵙ")),
+            week = Some(simpleUnit("{n} ⵉⵎⵍ")),
+            month = Some(simpleUnit("{n} ⴰⵢⵔ")),
+            year = Some(simpleUnit("{n} ⴰⵙⴳ")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -5063,6 +5076,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -5079,7 +5093,7 @@ object Locales {
             month = pluralUnit(Map(PluralCategory.ONE -> "මාස {n}", PluralCategory.OTHER -> "මාස {n}")),
             year = pluralUnit(Map(PluralCategory.ONE -> "වසර {n}", PluralCategory.OTHER -> "වසර {n}")),
         ),
-        half = "{0}යි භාගයයි",
+        half = "{n}½",
         delimiter = ", ",
         justBorn = "අලුත උපන්",
         stages = Stages(
@@ -5283,10 +5297,10 @@ object Locales {
         code = "so",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
-            day = pluralUnit(Map(PluralCategory.ONE -> "maalin {n}", PluralCategory.OTHER -> "maalmood {n}")),
-            week = pluralUnit(Map(PluralCategory.ONE -> "toddobaad {n}", PluralCategory.OTHER -> "toddobaadyo {n}")),
-            month = pluralUnit(Map(PluralCategory.ONE -> "bil {n}", PluralCategory.OTHER -> "bilood {n}")),
-            year = pluralUnit(Map(PluralCategory.ONE -> "sano {n}", PluralCategory.OTHER -> "sanooyin {n}")),
+            day = pluralUnit(Map(PluralCategory.ONE -> "{n} maalin", PluralCategory.OTHER -> "{n} maalmood")),
+            week = simpleUnit("{n} toddobaad"),
+            month = pluralUnit(Map(PluralCategory.ONE -> "{n} bil", PluralCategory.OTHER -> "{n} bilood")),
+            year = simpleUnit("{n} sano"),
         ),
         half = "{n}½",
         delimiter = ", ",
@@ -5330,9 +5344,9 @@ object Locales {
         ),
         half = "{0} e gjysmë",
         delimiter = ", ",
-        justBorn = "Sapolindur",
+        justBorn = "I sapolindur",
         stages = Stages(
-            newborn = g("Sapolindur", "Sapolindure"),
+            newborn = g("I sapolindur", "E sapolindur"),
             infant = s("Foshnjë"),
             toddler = g("Fëmijë i vogël", "Fëmijë e vogël"),
             child = s("Fëmijë"),
@@ -5460,7 +5474,7 @@ object Locales {
         stages = Stages(
             newborn = s("Lesea le sa tswa hlaha"),
             infant = s("Lesea"),
-            toddler = s("Ngwanana"),
+            toddler = s("Ngwana e monyane"),
             child = s("Ngwana"),
             teenager = s("Mosha"),
             adult = s("Motho e moholo"),
@@ -5653,7 +5667,7 @@ object Locales {
             month = pluralUnit(Map(PluralCategory.ONE -> "{n} மாதம்", PluralCategory.OTHER -> "{n} மாதங்கள்")),
             year = pluralUnit(Map(PluralCategory.ONE -> "{n} வயது", PluralCategory.OTHER -> "{n} வயது")),
         ),
-        half = "{0}ரை",
+        half = "{n}½",
         delimiter = ", ",
         justBorn = "பிறந்த குழந்தை",
         stages = Stages(
@@ -5692,7 +5706,7 @@ object Locales {
             month = pluralUnit(Map(PluralCategory.ONE -> "{n} నెల", PluralCategory.OTHER -> "{n} నెలలు")),
             year = pluralUnit(Map(PluralCategory.ONE -> "{n} సంవత్సరం", PluralCategory.OTHER -> "{n} సంవత్సరాలు")),
         ),
-        half = "{0}న్నర",
+        half = "{n}½",
         delimiter = ", ",
         justBorn = "నవజాత శిశువు",
         stages = Stages(
@@ -5795,6 +5809,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -5811,7 +5826,7 @@ object Locales {
             month = simpleUnit("{n} моҳ"),
             year = simpleUnit("{n} сол"),
         ),
-        half = "{0} ним",
+        half = "{0}у ним",
         delimiter = ", ",
         justBorn = "Навзод",
         stages = Stages(
@@ -5971,7 +5986,7 @@ object Locales {
             month = simpleUnit("{n} aý"),
             year = simpleUnit("{n} ýaş"),
         ),
-        half = "{0}½",
+        half = "{n} ýarym",
         delimiter = ", ",
         justBorn = "Täze doglan",
         stages = Stages(
@@ -5980,7 +5995,7 @@ object Locales {
             toddler = s("Kiçijik"),
             child = s("Çaga"),
             teenager = s("Ýetginjek"),
-            adult = s("Ulular"),
+            adult = s("Uly adam"),
         ),
         short = Some(CompactnessOverride(
             day = Some(simpleUnit("{n} g")),
@@ -6019,7 +6034,7 @@ object Locales {
             infant = s("Lesea"),
             toddler = s("Ngwana yo monnye"),
             child = s("Ngwana"),
-            teenager = s("Lekgarebe"),
+            teenager = s("Mosha"),
             adult = s("Motho yo mogolo"),
         ),
         short = Some(CompactnessOverride(
@@ -6051,7 +6066,7 @@ object Locales {
             month = simpleUnit("{n} mun"),
             year = simpleUnit("{n} yia"),
         ),
-        half = "{n} na hap",
+        half = "{0} na hap",
         delimiter = ", ",
         justBorn = "Nupela pikinini",
         stages = Stages(
@@ -6074,6 +6089,7 @@ object Locales {
             month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -6217,17 +6233,17 @@ object Locales {
         justBorn = "Iɣ d illul",
         stages = Stages(
             newborn = s("Iɣ d illul"),
-            infant = s("Agellid"),
+            infant = s("Llufan"),
             toddler = g("Aḥenjir", "Taḥenjirt"),
-            child = g("Afrux", "Tafruxṭ"),
+            child = g("Afrux", "Tafruxt"),
             teenager = g("Aɛrim", "Taɛrimt"),
             adult = g("Argaz", "Tamṭṭuṭ"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("{n} d")),
-            week = Some(simpleUnit("{n} wk")),
-            month = Some(simpleUnit("{n} mo")),
-            year = Some(simpleUnit("{n} yr")),
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ass", PluralCategory.OTHER -> "{n} ussan"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} imalass", PluralCategory.OTHER -> "{n} imalassn"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ayyur", PluralCategory.OTHER -> "{n} ayyurn"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} aseggas", PluralCategory.OTHER -> "{n} iseggasen"))),
         )),
         compact = Some(CompactnessOverride(
             day = Some(simpleUnit("{n}d")),
@@ -6462,7 +6478,7 @@ object Locales {
         justBorn = "Sơ sinh",
         stages = Stages(
             newborn = s("Sơ sinh"),
-            infant = s("Trẻ sơ sinh"),
+            infant = s("Trẻ nhũ nhi"),
             toddler = s("Trẻ mới biết đi"),
             child = s("Trẻ em"),
             teenager = s("Thiếu niên"),
@@ -6532,33 +6548,33 @@ object Locales {
         code = "wo",
         plural = _ => PluralCategory.OTHER,
         units = Units(
-            day = simpleUnit("bés {n}"),
-            week = simpleUnit("ayubés {n}"),
-            month = simpleUnit("weer {n}"),
-            year = simpleUnit("at {n}"),
+            day = simpleUnit("{n} fan"),
+            week = simpleUnit("{n} ayubés"),
+            month = simpleUnit("{n} weer"),
+            year = simpleUnit("{n} at"),
         ),
         half = "{0} ak genn-wàll",
         delimiter = ", ",
         justBorn = "Dees ko sax juddu",
         stages = Stages(
             newborn = s("Dees ko sax juddu"),
-            infant = s("Njàmbaar bu ndaw"),
+            infant = s("Liir"),
             toddler = s("Xale bu ndaw"),
             child = s("Xale"),
             teenager = s("Ndaw-ndaw"),
             adult = s("Mag"),
         ),
         short = Some(CompactnessOverride(
-            day = Some(simpleUnit("bés {n}")),
-            week = Some(simpleUnit("ayub. {n}")),
-            month = Some(simpleUnit("weer {n}")),
-            year = Some(simpleUnit("at {n}")),
+            day = Some(simpleUnit("{n} fan")),
+            week = Some(simpleUnit("{n} ayub.")),
+            month = Some(simpleUnit("{n} weer")),
+            year = Some(simpleUnit("{n} at")),
         )),
         compact = Some(CompactnessOverride(
-            day = Some(simpleUnit("bés {n}")),
-            week = Some(simpleUnit("ayub {n}")),
-            month = Some(simpleUnit("weer {n}")),
-            year = Some(simpleUnit("at {n}")),
+            day = Some(simpleUnit("{n} fan")),
+            week = Some(simpleUnit("{n} ayub")),
+            month = Some(simpleUnit("{n} weer")),
+            year = Some(simpleUnit("{n} at")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),

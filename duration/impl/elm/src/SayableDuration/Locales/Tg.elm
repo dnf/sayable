@@ -31,7 +31,7 @@ locale =
             , ( "month", Simple "{n} моҳ" )
             , ( "year", Simple "{n} сол" )
             ]
-    , half = "{0} ним"
+    , half = "{0}у ним"
     , delimiter = ", "
     , justNow = "ҳамин ҳоло"
     , ago = "{0} пеш"

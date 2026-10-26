@@ -40,10 +40,10 @@ fn _plural(n: Int) -> String:
 fn build_cy() -> AgeLocale:
     """Build the Welsh locale."""
 
-    var day = plural_unit(zero="{n} diwrnod", one="{n} diwrnod", two="{n} ddiwrnod", few="{n} diwrnod", many="{n} niwrnod", other="{n} diwrnod")
+    var day = plural_unit(zero="{n} diwrnod", one="{n} diwrnod", two="{n} ddiwrnod", few="{n} diwrnod", many="{n} diwrnod", other="{n} diwrnod")
     var week = plural_unit(zero="{n} wythnos", one="{n} wythnos", two="{n} wythnos", few="{n} wythnos", many="{n} wythnos", other="{n} wythnos")
     var month = plural_unit(zero="{n} mis", one="{n} mis", two="{n} fis", few="{n} mis", many="{n} mis", other="{n} mis")
-    var year = plural_unit(zero="{n} blwyddyn", one="{n} blwyddyn", two="{n} flynedd", few="{n} blynedd", many="{n} blynedd", other="{n} blynedd")
+    var year = plural_unit(zero="{n} blwyddyn", one="{n} flwyddyn", two="{n} flynedd", few="{n} blynedd", many="{n} blynedd", other="{n} blynedd")
 
     var newborn = stage_neutral("Newydd-anedig")
     var infant = stage_neutral("Baban")

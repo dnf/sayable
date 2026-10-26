@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "kl",
-        clock = #clock_config{hours = ["akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"], midnight = "unnuap qeqqa", noon = "ulloqeqqap qeqqa", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["aqqaneq-marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "aqqaneq-ataaseq"], midnight = "unnuap qeqqa", noon = "ulloqeqqap qeqqa", patterns = [{0, "nalunaaqutaq {h}"}, {5, "{h} qaangiullugu minutsit tallimat"}, {10, "{h} qaangiullugu minutsit qulit"}, {15, "{h} qaangiullugu minutsit aqqaneq-tallimat"}, {20, "{h} qaangiullugu minutsit marlunnik qulillit"}, {25, "{h} qaangiullugu minutsit marlunnik qulillit tallimallu"}, {30, "{h} affarlu"}, {35, "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu"}, {40, "{next_h} sioqqullugu minutsit marlunnik qulillit"}, {45, "{next_h} sioqqullugu minutsit aqqaneq-tallimat"}, {50, "{next_h} sioqqullugu minutsit qulit"}, {55, "{next_h} sioqqullugu minutsit tallimat"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}.{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}.{mm}", am_pm = nothing}}}}
     }.

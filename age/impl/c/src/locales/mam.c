@@ -21,7 +21,7 @@ const SaLocale sa_locale_mam = {
     plural_mam,
     {
         { "{n} q'ij", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} seman", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ab'q'ii", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
@@ -34,6 +34,6 @@ const SaLocale sa_locale_mam = {
         { "Q'a", "" },
         { "Xjal", "" }
     },
-    true, { true, { "{n} q'ij", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ab'.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n} q'ij", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} seman", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ab'.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

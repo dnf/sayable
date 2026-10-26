@@ -31,7 +31,7 @@ pub const locale_ne = AgeLocale{
 	just_born: 'नवजात शिशु'
 	newborn: stage_neutral('नवजात शिशु')
 	infant: stage_neutral('शिशु')
-	toddler: stage_neutral('बाल्यकाल')
+	toddler: stage_neutral('सानो बच्चा')
 	child: stage_neutral('बालक')
 	teenager: stage_neutral('किशोर')
 	adult: stage_neutral('वयस्क')

@@ -243,18 +243,18 @@
       "midnight": "nəs-leyla",
       "noon": "qayḥ",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "saʿa {h}",
+        "5": "saʿa {h} we ḥamməste",
+        "10": "saʿa {h} we ʿasərte",
+        "15": "saʿa {h} we ʿasərte we ḥamməste",
+        "20": "saʿa {h} we ʿəsra",
+        "25": "saʿa {h} we ʿəsra we ḥamməste",
+        "30": "saʿa {h} we nəs",
+        "35": "saʿa {h} we salasa we ḥamməste",
+        "40": "saʿa {h} we arbaʿa",
+        "45": "saʿa {h} we arbaʿa we ḥamməste",
+        "50": "saʿa {h} we ḥamsa",
+        "55": "saʿa {h} we ḥamsa we ḥamməste"
       }
     },
     "short": {
@@ -277,5 +277,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Best effort, additive only: 'saʿa {h}' (hour word from the locale's own duration data) + 'we <minutes>' using the locale's conjunction ('we nəs' = and a half, already in duration.half). Tens ʿəsra/salasa/arbaʿa/ḥamsa are the Semitic series I believe Tigre uses; 15 written as 'ʿasərte we ḥamməste'. Doubts: whether Tigre uses an Arabic-style 'rubʿ'/'illa' quarter/to idiom instead; whether the existing hour numerals are genuine Tigre (some look Tigrinya-like); romanization kept to match the file. Hour count: Western (Eritrea)."
+    }
+  ]
 }

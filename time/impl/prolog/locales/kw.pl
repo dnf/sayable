@@ -11,22 +11,22 @@
 
 % Cornish locale.
 
-st_hours('kw', ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']).
+st_hours('kw', ['dewdhek', 'unn', 'diw', 'teyr', 'peder', 'pymp', 'hwegh', 'seyth', 'eth', 'naw', 'deg', 'unnek']).
 st_midnight('kw', 'hanter nos').
 st_noon('kw', 'hanter dydh').
 
-st_pattern('kw', 0, '{h}:00').
-st_pattern('kw', 5, '{h}:05').
-st_pattern('kw', 10, '{h}:10').
-st_pattern('kw', 15, '{h}:15').
-st_pattern('kw', 20, '{h}:20').
-st_pattern('kw', 25, '{h}:25').
-st_pattern('kw', 30, '{h}:30').
-st_pattern('kw', 35, '{h}:35').
-st_pattern('kw', 40, '{h}:40').
-st_pattern('kw', 45, '{h}:45').
-st_pattern('kw', 50, '{h}:50').
-st_pattern('kw', 55, '{h}:55').
+st_pattern('kw', 0, '{h} eur').
+st_pattern('kw', 5, 'pymp mynysen wosa {h}').
+st_pattern('kw', 10, 'deg mynysen wosa {h}').
+st_pattern('kw', 15, 'kwarter wosa {h}').
+st_pattern('kw', 20, 'ugens mynysen wosa {h}').
+st_pattern('kw', 25, 'pymp mynysen warn ugens wosa {h}').
+st_pattern('kw', 30, 'hanter wosa {h}').
+st_pattern('kw', 35, 'pymp mynysen warn ugens dhe {next_h}').
+st_pattern('kw', 40, 'ugens mynysen dhe {next_h}').
+st_pattern('kw', 45, 'kwarter dhe {next_h}').
+st_pattern('kw', 50, 'deg mynysen dhe {next_h}').
+st_pattern('kw', 55, 'pymp mynysen dhe {next_h}').
 
 short_st_use24h('kw', true).
 short_st_format('kw', '{h}:{mm}').

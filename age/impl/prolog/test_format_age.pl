@@ -5,6 +5,31 @@
 
 :- discontiguous test_case/1.
 
+% Helpers for the default-date tests (15.x, 23.x): dates relative to the real today.
+today_ymd(Y, M, D) :-
+    get_time(Now),
+    stamp_date_time(Now, date(Y, M, D, _, _, _, _, _, _), local).
+
+iso_atom(Y, M, D, Atom) :-
+    format(atom(Atom), '~|~`0t~d~4+-~|~`0t~d~2+-~|~`0t~d~2+', [Y, M, D]).
+
+iso_today(Atom) :-
+    today_ymd(Y, M, D),
+    iso_atom(Y, M, D, Atom).
+
+iso_days_ago(N, Atom) :-
+    today_ymd(Y, M, D),
+    date_time_stamp(date(Y, M, D, 12, 0, 0, 0, -, -), Noon),
+    Then is Noon - N * 86400,
+    stamp_date_time(Then, date(Y1, M1, D1, _, _, _, _, _, _), 0),
+    iso_atom(Y1, M1, D1, Atom).
+
+iso_years_ago(N, Atom) :-
+    today_ymd(Y, M, D),
+    Y1 is Y - N,
+    D1 is min(D, 28),
+    iso_atom(Y1, M, D1, Atom).
+
 % Section 1: Null / edge cases
 % 1.1: 
 test_case(test_1_1) :-
@@ -435,8 +460,19 @@ test_case(test_14_5) :-
     Result == '6 months'.
 
 % Section 15: Default asOf (current date)
-% 15.1: Skipped (requires system date mocking)
-% 15.2: Skipped (requires system date mocking)
+% An empty AsOf means today, so the birth date is derived from the real date.
+% 15.1: default asOf, 5 years
+test_case(test_15_1) :-
+    iso_years_ago(5, Dob),
+    format_age('en', Dob, '', normal, Result),
+    Result == '5 years'.
+
+% 15.2: default asOf, 5 days
+test_case(test_15_2) :-
+    iso_days_ago(5, Dob),
+    format_age('en', Dob, null, normal, Result),
+    Result == '5 days'.
+
 % Section 16: formatStage — null / edge cases
 % 16.1: 
 test_case(test_16_1) :-
@@ -610,9 +646,24 @@ test_case(test_22_3) :-
     Result == 'Adult'.
 
 % Section 23: formatStage — default asOf
-% 23.1: Skipped (requires system date mocking)
-% 23.2: Skipped (requires system date mocking)
-% 23.3: Skipped (requires system date mocking)
+% 23.1: default asOf, born today 
+test_case(test_23_1) :-
+    iso_today(Today),
+    format_stage('en', Today, '', none, Result),
+    Result == 'Newborn'.
+
+% 23.2: default asOf, 5 years old
+test_case(test_23_2) :-
+    iso_years_ago(5, Dob),
+    format_stage('en', Dob, '', none, Result),
+    Result == 'Child'.
+
+% 23.3: default asOf, 45 years old
+test_case(test_23_3) :-
+    iso_years_ago(45, Dob),
+    format_stage('en', Dob, null, none, Result),
+    Result == 'Adult'.
+
 % Section 24: SayableAge class — English locale delegation
 % 24.1: 
 test_case(test_24_1) :-
@@ -736,7 +787,7 @@ test_case(test_25_9) :-
 % 25.10: Half marker
 test_case(test_25_10) :-
     format_age('es', '2022-06-15', '2025-12-15', normal, Result),
-    Result == '3 y medio años'.
+    Result == '3 años y medio'.
 
 % 25.11: No half
 test_case(test_25_11) :-
@@ -882,7 +933,7 @@ test_case(test_29_1) :-
 % 29.2: 1 day — one form
 test_case(test_29_2) :-
     format_age('he', '2025-06-14', '2025-06-15', normal, Result),
-    Result == 'יום 1'.
+    Result == 'יום'.
 
 % 29.3: 3 days — other form
 test_case(test_29_3) :-
@@ -912,7 +963,7 @@ test_case(test_29_7) :-
 % 29.8: 2y dual + 1m one
 test_case(test_29_8) :-
     format_age('he', '2023-06-15', '2025-07-15', normal, Result),
-    Result == 'שנתיים, חודש 1'.
+    Result == 'שנתיים, חודש'.
 
 % 29.9: 3½ years — half marker
 test_case(test_29_9) :-
@@ -1032,7 +1083,7 @@ test_case(test_29_31) :-
 % 29.32: 3½ years — half marker
 test_case(test_29_32) :-
     format_age('id', '2022-06-15', '2025-12-15', normal, Result),
-    Result == '3 tahun setengah'.
+    Result == '3 setengah tahun'.
 
 % 29.33: 7+ years
 test_case(test_29_33) :-
@@ -1125,7 +1176,7 @@ test_case(test_32_2) :-
 % 32.3: Tachelhit 6 is 'few'
 test_case(test_32_3) :-
     format_age('shi', '2005-06-08', '2012-06-07', normal, Result),
-    Result == '6 iseggasen d uzgen'.
+    Result == '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ'.
 
 % Section 33: Input validation
 % 33.1: February 30 doesn't exist
@@ -1259,6 +1310,8 @@ test_case_name(test_14_2).
 test_case_name(test_14_3).
 test_case_name(test_14_4).
 test_case_name(test_14_5).
+test_case_name(test_15_1).
+test_case_name(test_15_2).
 test_case_name(test_16_1).
 test_case_name(test_16_2).
 test_case_name(test_16_3).
@@ -1293,6 +1346,9 @@ test_case_name(test_21_4).
 test_case_name(test_22_1).
 test_case_name(test_22_2).
 test_case_name(test_22_3).
+test_case_name(test_23_1).
+test_case_name(test_23_2).
+test_case_name(test_23_3).
 test_case_name(test_24_1).
 test_case_name(test_24_2).
 test_case_name(test_24_3).

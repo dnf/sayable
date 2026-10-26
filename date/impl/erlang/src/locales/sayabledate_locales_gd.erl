@@ -18,7 +18,7 @@ locale() ->
         code = "gd",
         months = ["Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd"],
         weekdays = ["DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"],
-        day_format = "{n}",
+        day_format = "{n}mh",
         day_format_exceptions = [],
         date_pattern = "{day} {month}",
         date_pattern_with_year = "{day} {month} {year}",
@@ -30,7 +30,7 @@ locale() ->
         this_weekday = {just, "{weekday} seo"},
         next_weekday = {just, "{weekday} sa tighinn"},
         last_weekday = {just, "{weekday} seo chaidh"},
-        months_in_date = nothing,
+        months_in_date = {just, ["dhen Fhaoilleach", "dhen Ghearran", "dhen Mhàrt", "dhen Ghiblean", "dhen Chèitean", "dhen Ògmhios", "dhen Iuchar", "dhen Lùnastal", "dhen t-Sultain", "dhen Dàmhair", "dhen t-Samhain", "dhen Dùbhlachd"]},
         short = {just, #date_compactness_override{months = {just, ["Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"]}, months_in_date = nothing, weekdays = {just, ["DiD", "DiL", "DiM", "DiC", "Dia", "Dih", "DiS"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

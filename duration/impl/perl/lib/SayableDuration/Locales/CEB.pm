@@ -29,7 +29,7 @@ sub locale {{
     month => '{n} ka bulan',
     year => '{n} ka tuig',
   },
-  half => '{n}½',
+  half => '{0} ug tunga',
   delimiter => ', ',
   just_now => 'karon lang',
   ago => '{0} ang milabay',

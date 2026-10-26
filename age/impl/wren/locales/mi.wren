@@ -14,13 +14,13 @@ class MILocale {
   static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "day": "rā {n}",
-      "week": "wiki {n}",
-      "month": "marama {n}",
-      "year": "tau {n}",
+      "day": "{n} rā",
+      "week": "{n} wiki",
+      "month": "{n} marama",
+      "year": "{n} tau",
     }
   }
-  static half { "{0}½" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justBorn { "Pēpi hou" }
   static stages {
@@ -36,10 +36,10 @@ class MILocale {
   static short {
     return {
       "units": {
-        "day": "rā {n}",
-        "week": "w {n}",
-        "month": "m {n}",
-        "year": "t {n}",
+        "day": "{n} rā",
+        "week": "{n} w",
+        "month": "{n} m",
+        "year": "{n} t",
       },
     }
   }

@@ -14,10 +14,10 @@ module SayableAge
       code: "ay",
       plural: ->(n : Int32) { PluralCategory::Other },
       units: {
-        "day" => UnitForms.new("uru {n}"),
-        "week" => UnitForms.new("simana {n}"),
-        "month" => UnitForms.new("phaxsi {n}"),
-        "year" => UnitForms.new("mara {n}"),
+        "day" => UnitForms.new("{n} uru"),
+        "week" => UnitForms.new("{n} simana"),
+        "month" => UnitForms.new("{n} phaxsi"),
+        "year" => UnitForms.new("{n} mara"),
       },
       half: "{0} chika",
       delimiter: ", ",
@@ -46,6 +46,7 @@ module SayableAge
           "year" => UnitForms.new("{n}y"),
         },
         delimiter: "",
+        half: "{n}½",
       ),
     )
   end

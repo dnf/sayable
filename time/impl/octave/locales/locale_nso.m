@@ -11,10 +11,10 @@
 
 function loc = locale_nso()
   loc.code = 'nso';
-  loc.clock.hours = {'lesome pedi', 'tee', 'pedi', 'tharo', 'nne', 'hlano', 'tshela', 'šupa', 'seswai', 'senyane', 'lesome', 'lesome tee'};
+  loc.clock.hours = {'lesomepedi', 'pele', 'bobedi', 'boraro', 'bone', 'bohlano', 'botshela', 'bošupa', 'seswai', 'senyane', 'lesome', 'lesometee'};
   loc.clock.midnight = 'bošego gare';
   loc.clock.noon = 'mosegare';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'iri ya {h}', "p5", 'iri ya {h} le metsotso ye mehlano', "p10", 'iri ya {h} le metsotso ye lesome', "p15", 'iri ya {h} le kotara', "p20", 'iri ya {h} le metsotso ye masomepedi', "p25", 'iri ya {h} le metsotso ye masomepedi-hlano', "p30", 'iri ya {h} le seripagare', "p35", 'iri ya {h} le metsotso ye masometharo-hlano', "p40", 'iri ya {h} le metsotso ye masomenne', "p45", 'iri ya {h} le metsotso ye masomenne-hlano', "p50", 'iri ya {h} le metsotso ye masomehlano', "p55", 'iri ya {h} le metsotso ye masomehlano-hlano');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

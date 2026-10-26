@@ -23,7 +23,7 @@ sa_unit('ca', month, other, '{n} mesos').
 sa_unit('ca', year, one, '{n} any').
 sa_unit('ca', year, other, '{n} anys').
 
-sa_half('ca', '{n} i mig').
+sa_half('ca', '{0} i mig').
 sa_delimiter('ca', ', ').
 sa_just_born('ca', 'Nounat').
 

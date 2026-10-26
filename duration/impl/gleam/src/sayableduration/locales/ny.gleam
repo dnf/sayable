@@ -16,9 +16,9 @@ pub fn locale() -> types.DurationLocale {
     code: "ny",
     plural: fn(n) { case n { 1 -> types.One _ -> types.Other } },
     units: [
-      #("second", types.SimpleUnit("{n} sekondi")),
-      #("minute", types.SimpleUnit("{n} mphindi")),
-      #("hour", types.SimpleUnit("{n} ola")),
+      #("second", types.SimpleUnit("sekondi {n}")),
+      #("minute", types.SimpleUnit("mphindi {n}")),
+      #("hour", types.PluralUnit([#(types.One, "ola {n}"), #(types.Other, "maola {n}")])),
       #("day", types.PluralUnit([#(types.One, "tsiku {n}"), #(types.Other, "masiku {n}")])),
       #("week", types.PluralUnit([#(types.One, "sabata {n}"), #(types.Other, "masabata {n}")])),
       #("month", types.PluralUnit([#(types.One, "mwezi {n}"), #(types.Other, "miyezi {n}")])),
@@ -33,7 +33,7 @@ pub fn locale() -> types.DurationLocale {
       units: Ok([
         #("second", types.SimpleUnit("sek {n}")),
         #("minute", types.SimpleUnit("mph {n}")),
-        #("hour", types.SimpleUnit("ola {n}")),
+        #("hour", types.PluralUnit([#(types.One, "ola {n}"), #(types.Other, "maola {n}")])),
         #("day", types.PluralUnit([#(types.One, "tsiku {n}"), #(types.Other, "mas {n}")])),
         #("week", types.PluralUnit([#(types.One, "sabata {n}"), #(types.Other, "masab {n}")])),
         #("month", types.PluralUnit([#(types.One, "mwezi {n}"), #(types.Other, "miyezi {n}")])),

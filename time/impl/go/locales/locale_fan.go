@@ -20,7 +20,7 @@ var FAN = st.TimeLocale{
 		Hours:    [12]string{"awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"},
 		Midnight: "akiri alúk",
 		Noon:     "ewaŋ",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "awola {h}", 5: "awola {h} ai minit tán", 10: "awola {h} ai minit awom", 15: "awola {h} ai minit awom ai tán", 20: "awola {h} ai minit mewom mebú", 25: "awola {h} ai minit mewom mebú ai tán", 30: "awola {h} ai minit mewom melaa", 35: "awola {h} ai minit mewom melaa ai tán", 40: "awola {h} ai minit mewom menyin", 45: "awola {h} ai minit mewom menyin ai tán", 50: "awola {h} ai minit mewom metán", 55: "awola {h} ai minit mewom metán ai tán"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

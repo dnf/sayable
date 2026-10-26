@@ -11,21 +11,21 @@
 
 function locale_ln {
     $hours = @('zómi na míbalé', 'mɔ̌kɔ́', 'míbalé', 'mísáto', 'mínéi', 'mítáno', 'motóba', 'nsambo', 'mwambe', 'libwá', 'zómi', 'zómi na mɔ̌kɔ́')
-    $midnight = 'mpɔ́kwa'
-    $noon = 'ntɔ́ngɔ́'
+    $midnight = 'midí ya butú'
+    $noon = 'midí'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ngonga ya {h}'
+    $patterns[5] = 'ngonga ya {h} na miniti mítáno'
+    $patterns[10] = 'ngonga ya {h} na miniti zómi'
+    $patterns[15] = 'ngonga ya {h} na miniti zómi na mítáno'
+    $patterns[20] = 'ngonga ya {h} na miniti ntúkú míbalé'
+    $patterns[25] = 'ngonga ya {h} na miniti ntúkú míbalé na mítáno'
+    $patterns[30] = 'ngonga ya {h} na ndámbo'
+    $patterns[35] = 'ngonga ya {h} na miniti ntúkú mísáto na mítáno'
+    $patterns[40] = 'ngonga ya {h} na miniti ntúkú mínéi'
+    $patterns[45] = 'ngonga ya {h} na miniti ntúkú mínéi na mítáno'
+    $patterns[50] = 'ngonga ya {h} na miniti ntúkú mítáno'
+    $patterns[55] = 'ngonga ya {h} na miniti ntúkú mítáno na mítáno'
     $clock = @{
         hours = $hours
         midnight = $midnight

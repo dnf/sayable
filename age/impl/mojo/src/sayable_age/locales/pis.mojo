@@ -59,6 +59,8 @@ fn build_pis() -> AgeLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
@@ -69,7 +71,7 @@ fn build_pis() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{n} en haf",
+        half="{0} en haf",
         delimiter=", ",
         just_born="Niufala bebi",
         newborn=newborn,

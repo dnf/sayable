@@ -21,7 +21,7 @@ final ur = DurationLocale(
   units: {
     'second': simpleUnit('{n} سیکنڈ'),
     'minute': simpleUnit('{n} منٹ'),
-    'hour': simpleUnit('{n} گھنٹہ'),
+    'hour': pluralUnit({PluralCategory.one: '{n} گھنٹہ', PluralCategory.other: '{n} گھنٹے'}),
     'day': pluralUnit({PluralCategory.one: '{n} دن', PluralCategory.other: '{n} دن'}),
     'week': pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
     'month': pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),

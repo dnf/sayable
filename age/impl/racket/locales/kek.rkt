@@ -35,5 +35,5 @@
          "teenager" (stage-label "Xk'aalum" #f #f)
          "adult" (stage-label "Winq" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} q'e") (hash "type" "simple" "form" "{n} sem.") (hash "type" "simple" "form" "{n} po") (hash "type" "simple" "form" "{n} chih.") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

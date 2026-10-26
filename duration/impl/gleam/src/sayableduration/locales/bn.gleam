@@ -18,7 +18,7 @@ pub fn locale() -> types.DurationLocale {
     units: [
       #("second", types.SimpleUnit("{n} সেকেন্ড")),
       #("minute", types.SimpleUnit("{n} মিনিট")),
-      #("hour", types.SimpleUnit("{n} ঘন্টা")),
+      #("hour", types.SimpleUnit("{n} ঘণ্টা")),
       #("day", types.PluralUnit([#(types.One, "{n} দিন"), #(types.Other, "{n} দিন")])),
       #("week", types.PluralUnit([#(types.One, "{n} সপ্তাহ"), #(types.Other, "{n} সপ্তাহ")])),
       #("month", types.PluralUnit([#(types.One, "{n} মাস"), #(types.Other, "{n} মাস")])),

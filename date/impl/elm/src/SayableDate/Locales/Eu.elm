@@ -43,10 +43,14 @@ locale =
         , "ostirala"
         , "larunbata"
         ]
-    , dayFormat = "{n}"
-    , dayFormatExceptions = Dict.empty
-    , datePattern = "{month}ren {day}"
-    , datePatternWithYear = "{year}ko {month}ren {day}"
+    , dayFormat = "{n}a"
+    , dayFormatExceptions =
+        Dict.fromList
+            [ ( "11", "{n}" )
+            , ( "31", "{n}" )
+            ]
+    , datePattern = "{month} {day}"
+    , datePatternWithYear = "{year}ko {month} {day}"
     , today = "gaur"
     , tomorrow = "bihar"
     , yesterday = "atzo"
@@ -55,7 +59,21 @@ locale =
     , thisWeekday = Just "{weekday} hau"
     , nextWeekday = Just "hurrengo {weekday}"
     , lastWeekday = Just "aurreko {weekday}"
-    , monthsInDate = Nothing
+    , monthsInDate =
+        Just
+            [ "urtarrilaren"
+            , "otsailaren"
+            , "martxoaren"
+            , "apirilaren"
+            , "maiatzaren"
+            , "ekainaren"
+            , "uztailaren"
+            , "abuztuaren"
+            , "irailaren"
+            , "urriaren"
+            , "azaroaren"
+            , "abenduaren"
+            ]
     , short =
         Just
             { ovrMonths = Just

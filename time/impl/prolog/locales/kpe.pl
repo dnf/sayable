@@ -11,22 +11,22 @@
 
 % Kpelle locale.
 
-st_hours('kpe', ['puu lɔŋ', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ']).
+st_hours('kpe', ['puu da feere', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ']).
 st_midnight('kpe', 'kpindi kɔlɛ').
 st_noon('kpe', 'tili-ma').
 
-st_pattern('kpe', 0, '{h}:00').
-st_pattern('kpe', 5, '{h}:05').
-st_pattern('kpe', 10, '{h}:10').
-st_pattern('kpe', 15, '{h}:15').
-st_pattern('kpe', 20, '{h}:20').
-st_pattern('kpe', 25, '{h}:25').
-st_pattern('kpe', 30, '{h}:30').
-st_pattern('kpe', 35, '{h}:35').
-st_pattern('kpe', 40, '{h}:40').
-st_pattern('kpe', 45, '{h}:45').
-st_pattern('kpe', 50, '{h}:50').
-st_pattern('kpe', 55, '{h}:55').
+st_pattern('kpe', 0, 'awa {h}').
+st_pattern('kpe', 5, 'awa {h} da miniti lɔɔlu').
+st_pattern('kpe', 10, 'awa {h} da miniti puu').
+st_pattern('kpe', 15, 'awa {h} da miniti puu da lɔɔlu').
+st_pattern('kpe', 20, 'awa {h} da miniti puu feere').
+st_pattern('kpe', 25, 'awa {h} da miniti puu feere da lɔɔlu').
+st_pattern('kpe', 30, 'awa {h} da miniti puu sawa').
+st_pattern('kpe', 35, 'awa {h} da miniti puu sawa da lɔɔlu').
+st_pattern('kpe', 40, 'awa {h} da miniti puu naŋ').
+st_pattern('kpe', 45, 'awa {h} da miniti puu naŋ da lɔɔlu').
+st_pattern('kpe', 50, 'awa {h} da miniti puu lɔɔlu').
+st_pattern('kpe', 55, 'awa {h} da miniti puu lɔɔlu da lɔɔlu').
 
 short_st_use24h('kpe', false).
 short_st_format('kpe', '{h}:{mm} {ampm}').

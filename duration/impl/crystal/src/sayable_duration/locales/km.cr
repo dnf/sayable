@@ -26,7 +26,7 @@ module SayableDuration
       delimiter: ", ",
       just_now: "ឥឡូវនេះ",
       ago: "{0}មុន",
-      in_future: "ក្នុង{0}",
+      in_future: "{0}ទៀត",
       short: CompactnessOverride.new(
         units: {
           "second" => UnitForms.new("{n} វិនាទី"),
@@ -38,7 +38,7 @@ module SayableDuration
           "year" => UnitForms.new("{n} ឆ្នាំ"),
         },
         ago: "{0}មុន",
-        in_future: "ក្នុង{0}",
+        in_future: "{0}ទៀត",
       ),
       compact: CompactnessOverride.new(
         units: {
@@ -53,7 +53,7 @@ module SayableDuration
         delimiter: "",
         half: "{n}½",
         ago: "{0}មុន",
-        in_future: "ក្នុង{0}",
+        in_future: "{0}ទៀត",
       ),
     )
   end

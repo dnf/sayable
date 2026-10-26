@@ -13,22 +13,22 @@ local M = {}
 
 M.code = "tn"
 M.clock = {
-    hours = { "lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe" },
+    hours = { "ya lesome le bobedi", "ya ntlha", "ya bobedi", "ya boraro", "ya bone", "ya botlhano", "ya borataro", "ya bosupa", "ya borobedi", "ya borobongwe", "ya lesome", "ya lesome le bongwe" },
     midnight = "bosigo jwa magareng",
     noon = "motshegare",
     patterns = {
-        [0] = "{h}:00",
-        [5] = "{h}:05",
-        [10] = "{h}:10",
-        [15] = "{h}:15",
-        [20] = "{h}:20",
-        [25] = "{h}:25",
-        [30] = "{h}:30",
-        [35] = "{h}:35",
-        [40] = "{h}:40",
-        [45] = "{h}:45",
-        [50] = "{h}:50",
-        [55] = "{h}:55",
+        [0] = "ura {h}",
+        [5] = "ura {h} le metsotso e metlhano",
+        [10] = "ura {h} le metsotso e le lesome",
+        [15] = "ura {h} le kotara",
+        [20] = "ura {h} le metsotso e le masome a mabedi",
+        [25] = "ura {h} le metsotso e le masome a mabedi le botlhano",
+        [30] = "ura {h} le halofo",
+        [35] = "ura {h} le metsotso e le masome a mararo le botlhano",
+        [40] = "ura {h} le metsotso e le masome a mane",
+        [45] = "ura {h} le metsotso e le masome a mane le botlhano",
+        [50] = "ura {h} le metsotso e le masome a matlhano",
+        [55] = "ura {h} le metsotso e le masome a matlhano le botlhano",
     },
 }
 M.short = {

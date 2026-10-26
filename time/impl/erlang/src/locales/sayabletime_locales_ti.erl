@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "ti",
-        clock = #clock_config{hours = ["ዓሰርተ ክልተ", "ሓደ", "ክልተ", "ሰለስተ", "ኣርባዕተ", "ሓሙሽተ", "ሽድሽተ", "ሸውዓተ", "ሸሞንተ", "ትሽዓተ", "ዓሰርተ", "ዓሰርተ ሓደ"], midnight = "ፍርቂ ለይቲ", noon = "ቀትሪ", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["ዓሰርተ ክልተ", "ሓደ", "ክልተ", "ሰለስተ", "ኣርባዕተ", "ሓሙሽተ", "ሽድሽተ", "ሸውዓተ", "ሸሞንተ", "ትሽዓተ", "ዓሰርተ", "ዓሰርተ ሓደ"], midnight = "ፍርቂ ለይቲ", noon = "ቀትሪ", patterns = [{0, "{h} ሰዓት"}, {5, "{h}ን ሓሙሽተን"}, {10, "{h}ን ዓሰርተን"}, {15, "{h}ን ርብዒን"}, {20, "{h}ን ዕስራን"}, {25, "{h}ን ዕስራን ሓሙሽተን"}, {30, "{h}ን ፈረቓን"}, {35, "{h}ን ሰላሳን ሓሙሽተን"}, {40, "ዕስራ ጎደል {next_h}"}, {45, "ርብዒ ጎደል {next_h}"}, {50, "ዓሰርተ ጎደል {next_h}"}, {55, "ሓሙሽተ ጎደል {next_h}"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
     }.

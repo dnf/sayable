@@ -28,7 +28,7 @@ const SaLocale sa_locale_vi = {
     "{0} rưỡi", ", ", "Sơ sinh",
     {
         { "Sơ sinh", "" },
-        { "Trẻ sơ sinh", "" },
+        { "Trẻ nhũ nhi", "" },
         { "Trẻ mới biết đi", "" },
         { "Trẻ em", "" },
         { "Thiếu niên", "" },

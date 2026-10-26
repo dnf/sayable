@@ -25,7 +25,7 @@ var PA = sd.DurationLocale{
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.SimpleUnit("{n} ਸਕਿੰਟ"),
 		Minute: sd.SimpleUnit("{n} ਮਿੰਟ"),
-		Hour:   sd.SimpleUnit("{n} ਘੰਟਾ"),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} ਘੰਟਾ", sd.Other: "{n} ਘੰਟੇ"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} ਦਿਨ", sd.Other: "{n} ਦਿਨ"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} ਹਫ਼ਤਾ", sd.Other: "{n} ਹਫ਼ਤੇ"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} ਮਹੀਨਾ", sd.Other: "{n} ਮਹੀਨੇ"}),

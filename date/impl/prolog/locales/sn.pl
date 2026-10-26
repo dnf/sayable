@@ -21,7 +21,7 @@ sd_date_pattern_with_year('sn', '{day} {month} {year}').
 sd_today('sn', 'nhasi').
 sd_tomorrow('sn', 'mangwana').
 sd_yesterday('sn', 'nezuro').
-sd_day_after_tomorrow('sn', 'mangwanani').
+sd_day_after_tomorrow('sn', 'kuswera mangwana').
 sd_day_before_yesterday('sn', 'nezuro rakapera').
 sd_this_weekday('sn', '{weekday} ino').
 sd_next_weekday('sn', '{weekday} inotevera').

@@ -15,18 +15,18 @@ st_hours('bm', ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔ
 st_midnight('bm', 'dugutilama').
 st_noon('bm', 'tilgari').
 
-st_pattern('bm', 0, '{h}:00').
-st_pattern('bm', 5, '{h}:05').
-st_pattern('bm', 10, '{h}:10').
-st_pattern('bm', 15, '{h}:15').
-st_pattern('bm', 20, '{h}:20').
-st_pattern('bm', 25, '{h}:25').
-st_pattern('bm', 30, '{h}:30').
-st_pattern('bm', 35, '{h}:35').
-st_pattern('bm', 40, '{h}:40').
-st_pattern('bm', 45, '{h}:45').
-st_pattern('bm', 50, '{h}:50').
-st_pattern('bm', 55, '{h}:55').
+st_pattern('bm', 0, 'nɛgɛ kaɲɛ {h}').
+st_pattern('bm', 5, 'nɛgɛ kaɲɛ {h} ni miniti duuru').
+st_pattern('bm', 10, 'nɛgɛ kaɲɛ {h} ni miniti tan').
+st_pattern('bm', 15, 'nɛgɛ kaɲɛ {h} ni miniti tan ni duuru').
+st_pattern('bm', 20, 'nɛgɛ kaɲɛ {h} ni miniti mugan').
+st_pattern('bm', 25, 'nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru').
+st_pattern('bm', 30, 'nɛgɛ kaɲɛ {h} ni tilancɛ').
+st_pattern('bm', 35, 'nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru').
+st_pattern('bm', 40, 'nɛgɛ kaɲɛ {h} ni miniti bi naani').
+st_pattern('bm', 45, 'nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru').
+st_pattern('bm', 50, 'nɛgɛ kaɲɛ {h} ni miniti bi duuru').
+st_pattern('bm', 55, 'nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru').
 
 short_st_use24h('bm', false).
 short_st_format('bm', '{h}:{mm} {ampm}').

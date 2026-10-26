@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [mi.json](../../locales/mi.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Existing patterns untouched. Note (not in audit): 'i muri i te {h}' for 'past' is understandable, but 'mai i te {h}' and 'haurua' (rather than 'hāwhe') are more usual Māori clock idioms.
+
 ## Age
 
 ### Age formatting
@@ -13,29 +21,29 @@ Plural rule: `one_other` (categories: one, other)
 | Age               | Normal          | Short     | Compact  |
 | ----------------- | --------------- | --------- | -------- |
 | Born today        | Pēpi hou        | Pēpi hou  | Pēpi hou |
-| 1 day             | rā 1            | rā 1      | 1r       |
-| 3 days            | rā 3            | rā 3      | 3r       |
-| 6 days            | rā 6            | rā 6      | 6r       |
-| 1 week            | wiki 1          | w 1       | 1w       |
-| 1 week, 1 day     | wiki 1, rā 1    | w 1, rā 1 | 1w1r     |
-| 2 weeks           | wiki 2          | w 2       | 2w       |
-| 2 weeks, 3 days   | wiki 2, rā 3    | w 2, rā 3 | 2w3r     |
-| 3 months          | marama 3        | m 3       | 3m       |
-| 6 months          | marama 6        | m 6       | 6m       |
-| 11 months         | marama 11       | m 11      | 11m      |
-| 12 months         | marama 12       | m 12      | 12m      |
-| 23 months         | marama 23       | m 23      | 23m      |
-| 2 years           | tau 2           | t 2       | 2t       |
-| 2 years, 1 month  | tau 2, marama 1 | t 2, m 1  | 2t1m     |
-| 2 years, 6 months | tau 2, marama 6 | t 2, m 6  | 2t6m     |
-| 3 years           | tau 3           | t 3       | 3t       |
-| 3½ years          | tau 3½          | t 3½      | 3½t      |
-| 5 years           | tau 5           | t 5       | 5t       |
-| 5½ years          | tau 5½          | t 5½      | 5½t      |
-| 7 years           | tau 7           | t 7       | 7t       |
-| 10 years          | tau 10          | t 10      | 10t      |
-| 18 years          | tau 18          | t 18      | 18t      |
-| 45 years          | tau 45          | t 45      | 45t      |
+| 1 day             | 1 rā            | 1 rā      | 1r       |
+| 3 days            | 3 rā            | 3 rā      | 3r       |
+| 6 days            | 6 rā            | 6 rā      | 6r       |
+| 1 week            | 1 wiki          | 1 w       | 1w       |
+| 1 week, 1 day     | 1 wiki, 1 rā    | 1 w, 1 rā | 1w1r     |
+| 2 weeks           | 2 wiki          | 2 w       | 2w       |
+| 2 weeks, 3 days   | 2 wiki, 3 rā    | 2 w, 3 rā | 2w3r     |
+| 3 months          | 3 marama        | 3 m       | 3m       |
+| 6 months          | 6 marama        | 6 m       | 6m       |
+| 11 months         | 11 marama       | 11 m      | 11m      |
+| 12 months         | 12 marama       | 12 m      | 12m      |
+| 23 months         | 23 marama       | 23 m      | 23m      |
+| 2 years           | 2 tau           | 2 t       | 2t       |
+| 2 years, 1 month  | 2 tau, 1 marama | 2 t, 1 m  | 2t1m     |
+| 2 years, 6 months | 2 tau, 6 marama | 2 t, 6 m  | 2t6m     |
+| 3 years           | 3 tau           | 3 t       | 3t       |
+| 3½ years          | 3½ tau          | 3½ t      | 3½t      |
+| 5 years           | 5 tau           | 5 t       | 5t       |
+| 5½ years          | 5½ tau          | 5½ t      | 5½t      |
+| 7 years           | 7 tau           | 7 t       | 7t       |
+| 10 years          | 10 tau          | 10 t      | 10t      |
+| 18 years          | 18 tau          | 18 t      | 18t      |
+| 45 years          | 45 tau          | 45 t      | 45t      |
 
 ### Stages
 
@@ -70,12 +78,12 @@ Relative to Saturday, March 15, 2025.
 | Today                | i tēnei rā            | i tēnei rā |
 | Tomorrow             | āpōpō                 | āpōpō      |
 | Yesterday            | inanahi               | inanahi    |
-| Day after tomorrow   | tērā āpōpō            | 17/3       |
-| Day before yesterday | tērā inanahi          | 13/3       |
+| Day after tomorrow   | ātahirā               | 17/3       |
+| Day before yesterday | inātahirā             | 13/3       |
 | This Thursday (+5)   | tēnei Rāpare          | 20/3       |
-| Last Monday (-4)     | Rātū kua hori         | 11/3       |
-| Next Wednesday (+12) | Rāpare e heke mai nei | 27/3       |
-| Same month (+20)     | 4 Paenga-whāwhā       | 4/4        |
+| Last Tuesday (-4)    | Rātū kua hori         | 11/3       |
+| Next Thursday (+12)  | Rāpare e heke mai nei | 27/3       |
+| Same year (+20)      | 4 Paenga-whāwhā       | 4/4        |
 | Different year       | 10 Kohi-tātea 2026    | 10/1/26    |
 
 ## Duration
@@ -92,18 +100,18 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 meneti            | 5 men         | 5men      |
 | 45 minutes            | 45 meneti           | 45 men        | 45men     |
 | 1 hour                | 1 hāora             | 1 hāo         | 1hāo      |
-| 1½ hours              | 1 hāora½            | 1 hāo½        | 1½hāo     |
+| 1½ hours              | 1½ hāora            | 1½ hāo        | 1½hāo     |
 | 3 hours               | 3 hāora             | 3 hāo         | 3hāo      |
 | 6 hours               | 6 hāora             | 6 hāo         | 6hāo      |
-| 1 day                 | rā 1                | rā 1          | 1r        |
-| 1½ days               | rā 1½               | rā 1½         | 1½r       |
-| 3 days                | rā 3                | rā 3          | 3r        |
-| 1 week                | wiki 1              | w 1           | 1w        |
-| 2 weeks, 3 days       | wiki 2, rā 3        | w 2, rā 3     | 2w3r      |
-| 1 month               | marama 1            | m 1           | 1m        |
-| 6 months              | marama 6            | m 6           | 6m        |
-| 1 year                | tau 1               | t 1           | 1t        |
-| 2 years, 3 months     | tau 2, marama 3     | t 2, m 3      | 2t3m      |
+| 1 day                 | 1 rā                | 1 rā          | 1r        |
+| 1½ days               | 1½ rā               | 1½ rā         | 1½r       |
+| 3 days                | 3 rā                | 3 rā          | 3r        |
+| 1 week                | 1 wiki              | 1 w           | 1w        |
+| 2 weeks, 3 days       | 2 wiki, 3 rā        | 2 w, 3 rā     | 2w3r      |
+| 1 month               | 1 marama            | 1 m           | 1m        |
+| 6 months              | 6 marama            | 6 m           | 6m        |
+| 1 year                | 1 tau               | 1 t           | 1t        |
+| 2 years, 3 months     | 2 tau, 3 marama     | 2 t, 3 m      | 2t3m      |
 
 ### Relative time
 

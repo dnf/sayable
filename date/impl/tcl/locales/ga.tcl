@@ -22,7 +22,7 @@ proc locale_date_ga {} {
     set yesterday {inné}
     set day_after_tomorrow {arú amárach}
     set day_before_yesterday {arú inné}
-    set this_weekday "an {weekday} seo"
+    set this_weekday "{weekday} seo"
     set next_weekday "{weekday} seo chugainn"
     set last_weekday "{weekday} seo caite"
     set months_in_date ""

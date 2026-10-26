@@ -35,9 +35,9 @@ fn plural_ar(n int) PluralCategory {
 pub const locale_ar = DurationLocale{
 	code: 'ar'
 	plural: plural_ar
-	second: plural_unit({PluralCategory.zero: '{n} ثانية', PluralCategory.one: 'ثانية واحدة', PluralCategory.two: 'ثانيتان', PluralCategory.few: '{n} ثوانٍ', PluralCategory.many: '{n} ثانية', PluralCategory.other: '{n} ثانية'})
-	minute: plural_unit({PluralCategory.zero: '{n} دقيقة', PluralCategory.one: 'دقيقة واحدة', PluralCategory.two: 'دقيقتان', PluralCategory.few: '{n} دقائق', PluralCategory.many: '{n} دقيقة', PluralCategory.other: '{n} دقيقة'})
-	hour: plural_unit({PluralCategory.zero: '{n} ساعة', PluralCategory.one: 'ساعة واحدة', PluralCategory.two: 'ساعتان', PluralCategory.few: '{n} ساعات', PluralCategory.many: '{n} ساعة', PluralCategory.other: '{n} ساعة'})
+	second: plural_unit({PluralCategory.zero: '{n} ثانية', PluralCategory.one: 'ثانية', PluralCategory.two: 'ثانيتان', PluralCategory.few: '{n} ثوانٍ', PluralCategory.many: '{n} ثانية', PluralCategory.other: '{n} ثانية'})
+	minute: plural_unit({PluralCategory.zero: '{n} دقيقة', PluralCategory.one: 'دقيقة', PluralCategory.two: 'دقيقتان', PluralCategory.few: '{n} دقائق', PluralCategory.many: '{n} دقيقة', PluralCategory.other: '{n} دقيقة'})
+	hour: plural_unit({PluralCategory.zero: '{n} ساعة', PluralCategory.one: 'ساعة', PluralCategory.two: 'ساعتان', PluralCategory.few: '{n} ساعات', PluralCategory.many: '{n} ساعة', PluralCategory.other: '{n} ساعة'})
 	day: plural_unit({PluralCategory.zero: '{n} يوم', PluralCategory.one: 'يوم', PluralCategory.two: 'يومان', PluralCategory.few: '{n} أيام', PluralCategory.many: '{n} يومًا', PluralCategory.other: '{n} يوم'})
 	week: plural_unit({PluralCategory.zero: '{n} أسبوع', PluralCategory.one: 'أسبوع', PluralCategory.two: 'أسبوعان', PluralCategory.few: '{n} أسابيع', PluralCategory.many: '{n} أسبوعًا', PluralCategory.other: '{n} أسبوع'})
 	month: plural_unit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'})
@@ -80,7 +80,7 @@ pub const locale_ar = DurationLocale{
 		has_day: true
 		week: simple_unit('{n} أ')
 		has_week: true
-		month: plural_unit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'})
+		month: simple_unit('{n} شهر')
 		has_month: true
 		year: simple_unit('{n} سنة')
 		has_year: true

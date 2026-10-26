@@ -52,11 +52,11 @@ locale =
               , ( Other, "mĩaka {n}" )
               ] )
             ]
-    , half = "{0} na nusu"
+    , half = "{0} na nuthu"
     , delimiter = ", "
-    , justNow = "ũmũthĩ"
+    , justNow = "rĩu"
     , ago = "{0} ĩhĩtũkĩte"
-    , inFuture = "{0} ĩyothe"
+    , inFuture = "thutha wa {0}"
     , short =
         Just
             { ovrUnits =
@@ -86,7 +86,7 @@ locale =
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} ĩhĩtũkĩte"
-            , ovrInFuture = Just "{0} ĩyothe"
+            , ovrInFuture = Just "thutha wa {0}"
             }
     , compact =
         Just
@@ -105,6 +105,6 @@ locale =
             , ovrHalf = Nothing
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} ĩhĩtũkĩte"
-            , ovrInFuture = Just "{0} ĩyothe"
+            , ovrInFuture = Just "thutha wa {0}"
             }
     }

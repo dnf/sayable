@@ -17,9 +17,9 @@ proc plural_gn {n} {
 proc locale_duration_gn {} {
     set code {gn}
     set units [dict create \
-        second "{n} aravo'i" \
-        minute "{n} aravo" \
-        hour "{n} aravo guasu" \
+        second "{n} aravo'ive" \
+        minute "{n} aravo'i" \
+        hour "{n} aravo" \
         day "{n} ára" \
         week "{n} arapokõindy" \
         month "{n} jasy" \
@@ -32,9 +32,9 @@ proc locale_duration_gn {} {
     set in_future "{0} rire"
     set short [dict create \
         units [dict create \
-            second "{n} ara'i" \
-            minute "{n} ara" \
-            hour "{n} ara g" \
+            second "{n} aravo'ive" \
+            minute "{n} aravo'i" \
+            hour "{n} aravo" \
             day "{n} ára" \
             week "{n} ara" \
             month "{n} jas" \

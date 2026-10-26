@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [om.json](../../locales/om.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Decided to encode Ethiopian 12-hour counting (hours start at 6 a.m./6 p.m.), since that is the everyday convention for Oromo speakers in Ethiopia: hours rotated so 13:00 -> 'sa'aatii torba', 9:00 -> 'sa'aatii sadii', 12:30 -> 'sa'aatii jaha fi walakkaa'. Patterns 'sa'aatii {h}' + 'fi daqiiqaa <n>' (shan, kudhan, kudha shan, digdama, digdamii shan, soddomii shan, afurtama, afurtamii shan, shantama, shantamii shan), :30 = 'fi walakkaa'. Used 'daqiiqaa kudha shan' for :15 rather than the loan 'ruubii'. Additive forms for :35-:55. Compromise: Oromo speakers outside Ethiopia (Kenya) use Western hours; the schema cannot distinguish.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | iftaan            | 17/3     |
 | Day before yesterday | kalee dheengaddaa | 13/3     |
 | This Thursday (+5)   | Kamiisa kana      | 20/3     |
-| Last Monday (-4)     | Qibxata darbe     | 11/3     |
-| Next Wednesday (+12) | Kamiisa itti aanu | 27/3     |
-| Same month (+20)     | 4 Elba            | 4/4      |
+| Last Tuesday (-4)    | Qibxata darbe     | 11/3     |
+| Next Thursday (+12)  | Kamiisa itti aanu | 27/3     |
+| Same year (+20)      | 4 Elba            | 4/4      |
 | Different year       | 10 Amajjii 2026   | 10/1/26  |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | walakkii halkan | 12:00 AM | 12:00a  |
-| 1:00 AM         | tokko:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | sagal:05        | 9:05 AM  | 9:05a   |
-| Quarter past 10 | kudhan:15       | 10:15 AM | 10:15a  |
-| Half past 11    | kudha tokko:30  | 11:30 AM | 11:30a  |
-| Noon            | guyyaa walakkaa | 12:00 PM | 12:00p  |
-| Quarter to 3    | lama:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | shan:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | saddeet:00      | 8:00 PM  | 8:00p   |
-| 10:30 PM        | kudhan:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | walakkii halkan | 11:58 PM | 11:58p  |
+| Time            | Normal                                          | Short    | Compact |
+| --------------- | ----------------------------------------------- | -------- | ------- |
+| Midnight        | walakkii halkan                                 | 12:00 AM | 12:00a  |
+| 1:00 AM         | sa'aatii torba                                  | 1:00 AM  | 1:00a   |
+| 5 past 9        | sa'aatii sadii fi daqiiqaa shan                 | 9:05 AM  | 9:05a   |
+| Quarter past 10 | sa'aatii afur fi daqiiqaa kudha shan            | 10:15 AM | 10:15a  |
+| Half past 11    | sa'aatii shan fi walakkaa                       | 11:30 AM | 11:30a  |
+| Noon            | guyyaa walakkaa                                 | 12:00 PM | 12:00p  |
+| Quarter to 3    | sa'aatii saddeet fi daqiiqaa afurtamii shan     | 2:45 PM  | 2:45p   |
+| 5 to 6          | sa'aatii kudha tokko fi daqiiqaa shantamii shan | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | sa'aatii lama                                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | sa'aatii afur fi walakkaa                       | 10:30 PM | 10:30p  |
+| 11:58 PM        | walakkii halkan                                 | 11:58 PM | 11:58p  |

@@ -20,11 +20,11 @@
    :day {:type :simple :form "{n}日"}
    :week {:type :simple :form "{n}週"}
    :month {:type :simple :form "{n}ヶ月"}
-   :year {:type :simple :form "{n}歳"}
+   :year {:type :simple :form "{n}年"}
    :half "{0}半"
    :delimiter ""
    :just-now "たった今"
    :ago "{0}前"
    :in-future "{0}後"
    :short {:second {:type :simple :form "{n} 秒"} :minute {:type :simple :form "{n} 分"} :hour {:type :simple :form "{n} 時間"} :day {:type :simple :form "{n} 日"} :week {:type :simple :form "{n} 週間"} :month {:type :simple :form "{n} か月"} :year {:type :simple :form "{n} 年"} :half nil :delimiter nil :ago "{0}前" :in-future "{0}後"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0}前" :in-future "{0}後"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0}前" :in-future "{0}後"}})

@@ -11,15 +11,23 @@
 
 % Kalaallisut locale.
 
+sd_plural('kl', 1, one) :- !.
 sd_plural('kl', _, other).
 
-sd_unit('kl', second, _, 'sekundit {n}').
-sd_unit('kl', minute, _, 'minutsit {n}').
-sd_unit('kl', hour, _, 'nalunaaqutap akunnera {n}').
-sd_unit('kl', day, _, 'ullut {n}').
-sd_unit('kl', week, _, 'sapaatit {n}').
-sd_unit('kl', month, _, 'qaammatit {n}').
-sd_unit('kl', year, _, 'ukiut {n}').
+sd_unit('kl', second, one, 'sekundi {n}').
+sd_unit('kl', second, other, 'sekundit {n}').
+sd_unit('kl', minute, one, 'minutsi {n}').
+sd_unit('kl', minute, other, 'minutsit {n}').
+sd_unit('kl', hour, one, 'nalunaaquttap akunnera {n}').
+sd_unit('kl', hour, other, 'nalunaaquttap akunneri {n}').
+sd_unit('kl', day, one, 'ulloq {n}').
+sd_unit('kl', day, other, 'ullut {n}').
+sd_unit('kl', week, one, 'sapaatip akunnera {n}').
+sd_unit('kl', week, other, 'sapaatip akunneri {n}').
+sd_unit('kl', month, one, 'qaammat {n}').
+sd_unit('kl', month, other, 'qaammatit {n}').
+sd_unit('kl', year, one, 'ukioq {n}').
+sd_unit('kl', year, other, 'ukiut {n}').
 
 sd_half('kl', '{0} affaa').
 sd_delimiter('kl', ', ').
@@ -31,7 +39,7 @@ short_sd_unit('kl', second, _, 'sek. {n}').
 short_sd_unit('kl', minute, _, 'min. {n}').
 short_sd_unit('kl', hour, _, 'nal. {n}').
 short_sd_unit('kl', day, _, 'ull. {n}').
-short_sd_unit('kl', week, _, 'sap. {n}').
+short_sd_unit('kl', week, _, 'sap. ak. {n}').
 short_sd_unit('kl', month, _, 'qaam. {n}').
 short_sd_unit('kl', year, _, 'uk. {n}').
 short_sd_ago('kl', '{0} matuma siorna').
@@ -44,6 +52,7 @@ compact_sd_unit('kl', day, _, '{n}d').
 compact_sd_unit('kl', week, _, '{n}w').
 compact_sd_unit('kl', month, _, '{n}mo').
 compact_sd_unit('kl', year, _, '{n}y').
+compact_sd_half('kl', '{n}½').
 compact_sd_delimiter('kl', '').
 compact_sd_ago('kl', '{0} matuma siorna').
 compact_sd_in_future('kl', '{0} siunissami').

@@ -21,18 +21,18 @@ ga
 	clock at: #midnight put: 'meán oíche'.
 	clock at: #noon put: 'meán lae'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'a {h} a chlog'.
+		5. 'cúig tar éis a {h}'.
+		10. 'deich tar éis a {h}'.
+		15. 'ceathrú tar éis a {h}'.
+		20. 'fiche tar éis a {h}'.
+		25. 'fiche cúig tar éis a {h}'.
+		30. 'leathuair tar éis a {h}'.
+		35. 'fiche cúig chun a {next_h}'.
+		40. 'fiche chun a {next_h}'.
+		45. 'ceathrú chun a {next_h}'.
+		50. 'deich chun a {next_h}'.
+		55. 'cúig chun a {next_h}'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

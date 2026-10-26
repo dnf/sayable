@@ -17,9 +17,9 @@ let NY* = DurationLocale(
   code: "ny",
   plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
-    "second": simpleUnit("{n} sekondi"),
-    "minute": simpleUnit("{n} mphindi"),
-    "hour": simpleUnit("{n} ola"),
+    "second": simpleUnit("sekondi {n}"),
+    "minute": simpleUnit("mphindi {n}"),
+    "hour": pluralUnit(@[(pcOne, "ola {n}"), (pcOther, "maola {n}")]),
     "day": pluralUnit(@[(pcOne, "tsiku {n}"), (pcOther, "masiku {n}")]),
     "week": pluralUnit(@[(pcOne, "sabata {n}"), (pcOther, "masabata {n}")]),
     "month": pluralUnit(@[(pcOne, "mwezi {n}"), (pcOther, "miyezi {n}")]),
@@ -34,7 +34,7 @@ let NY* = DurationLocale(
     units: some({
       "second": simpleUnit("sek {n}"),
       "minute": simpleUnit("mph {n}"),
-      "hour": simpleUnit("ola {n}"),
+      "hour": pluralUnit(@[(pcOne, "ola {n}"), (pcOther, "maola {n}")]),
       "day": pluralUnit(@[(pcOne, "tsiku {n}"), (pcOther, "mas {n}")]),
       "week": pluralUnit(@[(pcOne, "sabata {n}"), (pcOther, "masab {n}")]),
       "month": pluralUnit(@[(pcOne, "mwezi {n}"), (pcOther, "miyezi {n}")]),

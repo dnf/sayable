@@ -18,9 +18,18 @@ locale = DurationLocale
     { localeCode = "te"
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "{n} సెకను"
-        , unitMinute = Simple "{n} నిమిషం"
-        , unitHour = Simple "{n} గంట"
+        { unitSecond = Pluralized
+          [ (One, "{n} సెకను")
+          , (Other, "{n} సెకన్లు")
+          ]
+        , unitMinute = Pluralized
+          [ (One, "{n} నిమిషం")
+          , (Other, "{n} నిమిషాలు")
+          ]
+        , unitHour = Pluralized
+          [ (One, "{n} గంట")
+          , (Other, "{n} గంటలు")
+          ]
         , unitDay = Pluralized
           [ (One, "{n} రోజు")
           , (Other, "{n} రోజులు")
@@ -38,7 +47,7 @@ locale = DurationLocale
           , (Other, "{n} సంవత్సరాలు")
           ]
         }
-    , localeHalf = "{0}న్నర"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustNow = "ఇప్పుడే"
     , localeAgo = "{0} క్రితం"

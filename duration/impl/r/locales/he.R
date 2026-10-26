@@ -19,12 +19,12 @@ locale_he <- list(
   code = "he",
   plural = plural,
   units = list(
-    second = list(one = "שנייה {n}", two = "שתי שניות", other = "{n} שניות"),
-    minute = list(one = "דקה {n}", two = "שתי דקות", other = "{n} דקות"),
-    hour = list(one = "שעה {n}", two = "שעתיים", other = "{n} שעות"),
-    day = list(one = "יום {n}", two = "יומיים", other = "{n} ימים"),
-    week = list(one = "שבוע {n}", two = "שבועיים", other = "{n} שבועות"),
-    month = list(one = "חודש {n}", two = "חודשיים", other = "{n} חודשים"),
+    second = list(one = "שנייה", two = "שתי שניות", other = "{n} שניות"),
+    minute = list(one = "דקה", two = "שתי דקות", other = "{n} דקות"),
+    hour = list(one = "שעה", two = "שעתיים", other = "{n} שעות"),
+    day = list(one = "יום", two = "יומיים", other = "{n} ימים"),
+    week = list(one = "שבוע", two = "שבועיים", other = "{n} שבועות"),
+    month = list(one = "חודש", two = "חודשיים", other = "{n} חודשים"),
     year = list(one = "שנה", two = "שנתיים", other = "{n} שנים")
   ),
   half = "{0} וחצי",

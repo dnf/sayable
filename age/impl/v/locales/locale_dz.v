@@ -23,7 +23,7 @@ pub const locale_dz = AgeLocale{
 	week: simple_unit('བདུན་ཕྲག་ {n}')
 	month: simple_unit('ཟླ་ {n}')
 	year: simple_unit('ལོ་ {n}')
-	half: '{0} ཕྱེད'
+	half: '{0} དང་ཕྱེད'
 	delimiter: ' '
 	just_born: 'གསར་སྐྱེས'
 	newborn: stage_neutral('གསར་སྐྱེས')

@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ülehomme           | 17.3.   |
 | Day before yesterday | üleeile            | 13.3.   |
 | This Thursday (+5)   | see neljapäev      | 20.3.   |
-| Last Monday (-4)     | eelmine teisipäev  | 11.3.   |
-| Next Wednesday (+12) | järgmine neljapäev | 27.3.   |
-| Same month (+20)     | 4. aprill          | 4.4.    |
+| Last Tuesday (-4)    | eelmine teisipäev  | 11.3.   |
+| Next Thursday (+12)  | järgmine neljapäev | 27.3.   |
+| Same year (+20)      | 4. aprill          | 4.4.    |
 | Different year       | 10. jaanuar 2026   | 10.1.26 |
 
 ## Duration
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal              | Short | Compact |
-| --------------- | ------------------- | ----- | ------- |
-| Midnight        | kesköö              | 0:00  | 0:00    |
-| 1:00 AM         | üks                 | 1:00  | 1:00    |
-| 5 past 9        | viis efter üheksa   | 9:05  | 9:05    |
-| Quarter past 10 | veerand efter kümme | 10:15 | 10:15   |
-| Half past 11    | pool efter üksteist | 11:30 | 11:30   |
-| Noon            | keskpäev            | 12:00 | 12:00   |
-| Quarter to 3    | veerand enne kolm   | 14:45 | 14:45   |
-| 5 to 6          | viis enne kuus      | 17:55 | 17:55   |
-| 8 o'clock PM    | kaheksa             | 20:00 | 20:00   |
-| 10:30 PM        | pool efter kümme    | 22:30 | 22:30   |
-| 11:58 PM        | kesköö              | 23:58 | 23:58   |
+| Time            | Normal                   | Short | Compact |
+| --------------- | ------------------------ | ----- | ------- |
+| Midnight        | kesköö                   | 0:00  | 0:00    |
+| 1:00 AM         | kell üks                 | 1:00  | 1:00    |
+| 5 past 9        | viis minutit üheksa läbi | 9:05  | 9:05    |
+| Quarter past 10 | veerand üksteist         | 10:15 | 10:15   |
+| Half past 11    | pool kaksteist           | 11:30 | 11:30   |
+| Noon            | keskpäev                 | 12:00 | 12:00   |
+| Quarter to 3    | kolmveerand kolm         | 14:45 | 14:45   |
+| 5 to 6          | viie minuti pärast kuus  | 17:55 | 17:55   |
+| 8 o'clock PM    | kell kaheksa             | 20:00 | 20:00   |
+| 10:30 PM        | pool üksteist            | 22:30 | 22:30   |
+| 11:58 PM        | kesköö                   | 23:58 | 23:58   |

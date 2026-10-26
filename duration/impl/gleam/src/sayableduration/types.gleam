@@ -1,5 +1,4 @@
 /// Types for the sayable-duration locale system.
-
 pub type PluralCategory {
   Zero
   One

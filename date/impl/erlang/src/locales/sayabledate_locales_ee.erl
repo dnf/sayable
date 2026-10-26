@@ -16,21 +16,21 @@
 locale() ->
     #date_locale{
         code = "ee",
-        months = ["Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Damɛ", "Masa", "Siamlɔm", "Dasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome"],
-        weekdays = ["Kɔsiɖa", "Dzoɖa", "Braɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa"],
+        months = ["Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Dama", "Masa", "Siamlɔm", "Deasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome"],
+        weekdays = ["Kɔsiɖa", "Dzoɖa", "Blaɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa"],
         day_format = "{n}",
         day_format_exceptions = [],
         date_pattern = "{day} {month}",
         date_pattern_with_year = "{day} {month} {year}",
         today = "egbe",
-        tomorrow = "etsɔ",
-        yesterday = "etso",
-        day_after_tomorrow = {just, "etsɔ megbe"},
-        day_before_yesterday = {just, "etso nyitsɔ"},
+        tomorrow = "etsɔ si gbɔna",
+        yesterday = "etsɔ si va yi",
+        day_after_tomorrow = {just, "nyitsɔ si gbɔna"},
+        day_before_yesterday = {just, "nyitsɔ si va yi"},
         this_weekday = {just, "{weekday} sia"},
         next_weekday = {just, "{weekday} si gbɔna"},
         last_weekday = {just, "{weekday} si va yi"},
         months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["Dzv", "Dzd", "Ted", "Afɔ", "Dam", "Mas", "Sia", "Das", "Any", "Kel", "Ade", "Dzm"]}, months_in_date = nothing, weekdays = {just, ["Kɔs", "Dzo", "Bra", "Kuɖ", "Yaw", "Fiɖ", "Mem"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        short = {just, #date_compactness_override{months = {just, ["Dzv", "Dzd", "Ted", "Afɔ", "Dam", "Mas", "Sia", "Dea", "Any", "Kel", "Ade", "Dzm"]}, months_in_date = nothing, weekdays = {just, ["Kɔs", "Dzo", "Bla", "Kuɖ", "Yaw", "Fiɖ", "Mem"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

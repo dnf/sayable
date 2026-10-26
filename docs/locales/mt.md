@@ -6,6 +6,14 @@
 
 Plural rule: `mt` (categories: one, two, few, many, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [mt.json](../../locales/mt.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Hours with article and dual: 'is-siegħa' (1), 'is-sagħtejn' (2), 'it-tlieta' ... 'il-ħdax', 'it-tnax'; '{h} u ħamsa/għaxra/kwart/għoxrin/ħamsa u għoxrin/nofs'; count-down with 'neqsin' ('it-tlieta neqsin kwart'). Doubt: 'neqsin' (plural participle, what I believe is the idiomatic time-telling form) vs singular 'nieqes'; both are heard. 12:xx uses 'it-tnax' rather than nofsinhar/nofsillejl (schema).
+
 ## Age
 
 ### Age formatting
@@ -72,10 +80,10 @@ Relative to Saturday, March 15, 2025.
 | Yesterday            | ilbieraħ            | ilbieraħ |
 | Day after tomorrow   | pitgħada            | 17/3     |
 | Day before yesterday | il-bieraħ l-ieħor   | 13/3     |
-| This Thursday (+5)   | dan Il-Ħamis        | 20/3     |
-| Last Monday (-4)     | It-Tlieta li għadda | 11/3     |
-| Next Wednesday (+12) | Il-Ħamis li ġej     | 27/3     |
-| Same month (+20)     | 4 April             | 4/4      |
+| This Thursday (+5)   | dan il-Ħamis        | 20/3     |
+| Last Tuesday (-4)    | it-Tlieta li għadda | 11/3     |
+| Next Thursday (+12)  | il-Ħamis li ġej     | 27/3     |
+| Same year (+20)      | 4 April             | 4/4      |
 | Different year       | 10 Jannar 2026      | 10/1/26  |
 
 ## Duration
@@ -88,7 +96,7 @@ Relative to Saturday, March 15, 2025.
 | 1 second              | 1 sekonda                | 1 s          | 1 s       |
 | 30 seconds            | 30 sekonda               | 30 s         | 30 s      |
 | 1 minute              | 1 minuta                 | 1 min        | 1 min     |
-| 2 minutes, 15 seconds | 2 minuti u 15-il sekonda | 2 min u 15 s | 2 min15 s |
+| 2 minutes, 15 seconds | minutejn u 15-il sekonda | 2 min u 15 s | 2 min15 s |
 | 5 minutes             | 5 minuti                 | 5 min        | 5 min     |
 | 45 minutes            | 45 minuta                | 45 min       | 45 min    |
 | 1 hour                | 1 siegħa                 | 1 h          | 1 h       |
@@ -110,7 +118,7 @@ Relative to Saturday, March 15, 2025.
 | Offset        | Normal       | Compact   |
 | ------------- | ------------ | --------- |
 | 5 minutes ago | 5 minuti ilu | 5 min ilu |
-| 2 hours ago   | 2 sigħat ilu | 2 h ilu   |
+| 2 hours ago   | sagħtejn ilu | 2 h ilu   |
 | in 30 minutes | fi 30 minuta | fi 30 min |
 | in 3 hours    | fi 3 sigħat  | fi 3 h    |
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short | Compact |
-| --------------- | ---------- | ----- | ------- |
-| Midnight        | nofsinhar  | 0:00  | 0:00    |
-| 1:00 AM         | waħda:00   | 1:00  | 1:00    |
-| 5 past 9        | disgħa:05  | 9:05  | 9:05    |
-| Quarter past 10 | għaxra:15  | 10:15 | 10:15   |
-| Half past 11    | ħdax:30    | 11:30 | 11:30   |
-| Noon            | nofsinhar  | 12:00 | 12:00   |
-| Quarter to 3    | tnejn:45   | 14:45 | 14:45   |
-| 5 to 6          | ħamsa:55   | 17:55 | 17:55   |
-| 8 o'clock PM    | tmienja:00 | 20:00 | 20:00   |
-| 10:30 PM        | għaxra:30  | 22:30 | 22:30   |
-| 11:58 PM        | nofsinhar  | 23:58 | 23:58   |
+| Time            | Normal                 | Short | Compact |
+| --------------- | ---------------------- | ----- | ------- |
+| Midnight        | nofsillejl             | 0:00  | 0:00    |
+| 1:00 AM         | is-siegħa              | 1:00  | 1:00    |
+| 5 past 9        | id-disgħa u ħamsa      | 9:05  | 9:05    |
+| Quarter past 10 | l-għaxra u kwart       | 10:15 | 10:15   |
+| Half past 11    | il-ħdax u nofs         | 11:30 | 11:30   |
+| Noon            | nofsinhar              | 12:00 | 12:00   |
+| Quarter to 3    | it-tlieta neqsin kwart | 14:45 | 14:45   |
+| 5 to 6          | is-sitta neqsin ħamsa  | 17:55 | 17:55   |
+| 8 o'clock PM    | it-tmienja             | 20:00 | 20:00   |
+| 10:30 PM        | l-għaxra u nofs        | 22:30 | 22:30   |
+| 11:58 PM        | nofsillejl             | 23:58 | 23:58   |

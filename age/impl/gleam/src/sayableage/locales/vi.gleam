@@ -23,7 +23,7 @@ pub fn locale() -> types.AgeLocale {
     delimiter: ", ",
     just_born: "Sơ sinh",
     newborn: types.NeutralStage("Sơ sinh"),
-    infant: types.NeutralStage("Trẻ sơ sinh"),
+    infant: types.NeutralStage("Trẻ nhũ nhi"),
     toddler: types.NeutralStage("Trẻ mới biết đi"),
     child: types.NeutralStage("Trẻ em"),
     teenager: types.NeutralStage("Thiếu niên"),

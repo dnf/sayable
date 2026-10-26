@@ -17,22 +17,22 @@ ts
 	locale := SayableTimeLocale new.
 	locale code: 'ts'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'khume mbiri'. 'yin''we'. 'mbirhi'. 'nharhu'. 'mune'. 'ntlhanu'. 'tsevu'. 'nkombo'. 'nhungu'. 'kaye'. 'khume'. 'khume yin''we' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'ya khume mbirhi'. 'yo sungula'. 'ya vumbirhi'. 'ya vunharhu'. 'ya vumune'. 'ya vuntlhanu'. 'ya vutsevu'. 'ya vunkombo'. 'ya vunhungu'. 'ya vukaye'. 'ya khume'. 'ya khume n''we' }).
 	clock at: #midnight put: 'vusiku exikarhi'.
 	clock at: #noon put: 'nhlekanhi'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'awara {h}'.
+		5. 'awara {h} na timinete ta ntlhanu'.
+		10. 'awara {h} na timinete ta khume'.
+		15. 'awara {h} na kotara'.
+		20. 'awara {h} na timinete ta makume mambirhi'.
+		25. 'awara {h} na timinete ta makume mambirhi na ntlhanu'.
+		30. 'awara {h} na hafu'.
+		35. 'awara {h} na timinete ta makume manharhu na ntlhanu'.
+		40. 'awara {h} na timinete ta makume mune'.
+		45. 'awara {h} na timinete ta makume mune na ntlhanu'.
+		50. 'awara {h} na timinete ta makume ntlhanu'.
+		55. 'awara {h} na timinete ta makume ntlhanu na ntlhanu'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

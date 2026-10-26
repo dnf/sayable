@@ -27,7 +27,7 @@ ti
 	locale yesterday: 'ትማሊ'.
 	locale dayAfterTomorrow: 'ድሕሪ ጽባሕ'.
 	locale dayBeforeYesterday: 'ቅድሚ ትማሊ'.
-	locale thisWeekday: 'እዛ {weekday}'.
+	locale thisWeekday: 'እዚ {weekday}'.
 	locale nextWeekday: 'ዝመጽእ {weekday}'.
 	locale lastWeekday: 'ዝሓለፈ {weekday}'.
 	locale monthsInDate: nil.

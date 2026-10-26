@@ -33,13 +33,13 @@ fn _plural(n: Int) -> String:
 fn build_ru() -> DurationLocale:
     """Build the Russian locale."""
 
-    var second = plural_unit(one="{n} секунда", few="{n} секунды", many="{n} секунд", other="{n} секунд")
-    var minute = plural_unit(one="{n} минута", few="{n} минуты", many="{n} минут", other="{n} минут")
-    var hour = plural_unit(one="{n} час", few="{n} часа", many="{n} часов", other="{n} часов")
-    var day = plural_unit(one="{n} день", few="{n} дня", many="{n} дней", other="{n} дней")
-    var week = plural_unit(one="{n} неделя", few="{n} недели", many="{n} недель", other="{n} недель")
-    var month = plural_unit(one="{n} месяц", few="{n} месяца", many="{n} месяцев", other="{n} месяцев")
-    var year = plural_unit(one="{n} год", few="{n} года", many="{n} лет", other="{n} лет")
+    var second = plural_unit(one="{n} секунда", few="{n} секунды", many="{n} секунд", other="{n} секунды")
+    var minute = plural_unit(one="{n} минута", few="{n} минуты", many="{n} минут", other="{n} минуты")
+    var hour = plural_unit(one="{n} час", few="{n} часа", many="{n} часов", other="{n} часа")
+    var day = plural_unit(one="{n} день", few="{n} дня", many="{n} дней", other="{n} дня")
+    var week = plural_unit(one="{n} неделя", few="{n} недели", many="{n} недель", other="{n} недели")
+    var month = plural_unit(one="{n} месяц", few="{n} месяца", many="{n} месяцев", other="{n} месяца")
+    var year = plural_unit(one="{n} год", few="{n} года", many="{n} лет", other="{n} года")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} с")

@@ -9,7 +9,7 @@
       "month": "{n} aý",
       "year": "{n} ýaş"
     },
-    "half": "{0}½",
+    "half": "{n} ýarym",
     "delimiter": ", ",
     "justBorn": "Täze doglan",
     "stages": {
@@ -18,7 +18,7 @@
       "toddler": "Kiçijik",
       "child": "Çaga",
       "teenager": "Ýetginjek",
-      "adult": "Ulular"
+      "adult": "Uly adam"
     },
     "short": {
       "units": {
@@ -41,27 +41,27 @@
   },
   "date": {
     "months": [
-      "Ýanwar",
-      "Fewral",
-      "Mart",
-      "Aprel",
-      "Maý",
-      "Iýun",
-      "Iýul",
-      "Awgust",
-      "Sentýabr",
-      "Oktýabr",
-      "Noýabr",
-      "Dekabr"
+      "ýanwar",
+      "fewral",
+      "mart",
+      "aprel",
+      "maý",
+      "iýun",
+      "iýul",
+      "awgust",
+      "sentýabr",
+      "oktýabr",
+      "noýabr",
+      "dekabr"
     ],
     "weekdays": [
-      "Ýekşenbe",
-      "Duşenbe",
-      "Sişenbe",
-      "Çarşenbe",
-      "Penşenbe",
-      "Anna",
-      "Şenbe"
+      "ýekşenbe",
+      "duşenbe",
+      "sişenbe",
+      "çarşenbe",
+      "penşenbe",
+      "anna",
+      "şenbe"
     ],
     "dayFormat": "{n}",
     "datePattern": "{day} {month}",
@@ -76,27 +76,27 @@
     "lastWeekday": "geçen {weekday}",
     "short": {
       "months": [
-        "Ýan",
-        "Few",
-        "Mar",
-        "Apr",
-        "Maý",
-        "Iýn",
-        "Iýl",
-        "Awg",
-        "Sen",
-        "Okt",
-        "Noý",
-        "Dek"
+        "ýan",
+        "few",
+        "mar",
+        "apr",
+        "maý",
+        "iýn",
+        "iýl",
+        "awg",
+        "sen",
+        "okt",
+        "noý",
+        "dek"
       ],
       "weekdays": [
-        "Ýek",
-        "Duş",
-        "Siş",
-        "Çar",
-        "Pen",
-        "Ann",
-        "Şen"
+        "ýek",
+        "duş",
+        "siş",
+        "çar",
+        "pen",
+        "ann",
+        "şen"
       ],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
@@ -117,7 +117,7 @@
       "month": "{n} aý",
       "year": "{n} ýyl"
     },
-    "half": "{0}½",
+    "half": "{n} ýarym",
     "delimiter": ", ",
     "justNow": "häzir",
     "ago": "{0} öň",
@@ -210,18 +210,18 @@
       "midnight": "ýary gije",
       "noon": "günorta",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "sagat {h}",
+        "5": "sagat {h} bäş minut",
+        "10": "sagat {h} on minut",
+        "15": "sagat {h} on bäş minut",
+        "20": "sagat {h} ýigrimi minut",
+        "25": "sagat {h} ýigrimi bäş minut",
+        "30": "sagat {h} ýarym",
+        "35": "sagat {h} otuz bäş minut",
+        "40": "sagat {h} kyrk minut",
+        "45": "sagat {h} kyrk bäş minut",
+        "50": "sagat {h} elli minut",
+        "55": "sagat {h} elli bäş minut"
       }
     },
     "short": {
@@ -236,5 +236,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Words only: 'sagat iki' (2:00), 'sagat iki on bäş minut' (2:15), 'sagat iki ýarym' (2:30), 'sagat iki kyrk bäş minut' (2:45). The idiomatic Turkmen forms ('ikiden on bäş minut geçdi', 'üçe on bäş minut galdy') need ablative/dative hour lists with vowel harmony and are impossible with one hours list (already in schemaLimits). Doubts: whether 'sagat iki ýarym' or 'ikiniň ýarysy' is the usual half-past form; whether speakers include 'minut' in the additive reading ('sagat iki on bäş' vs 'sagat iki on bäş minut'); Turkmen is low-resource and I could not verify against native material. Numerals ýigrimi/otuz/kyrk/elli are standard."
+    }
+  ]
 }

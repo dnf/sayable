@@ -51,7 +51,7 @@ pub fn locale() -> DurationLocale {
             ]),
             day: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} dydh"),
-                (PluralCategory::One, "dydh"),
+                (PluralCategory::One, "{n} dydh"),
                 (PluralCategory::Two, "{n} dhydh"),
                 (PluralCategory::Few, "{n} dydh"),
                 (PluralCategory::Many, "{n} dydh"),
@@ -59,7 +59,7 @@ pub fn locale() -> DurationLocale {
             ]),
             week: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} seythun"),
-                (PluralCategory::One, "seythun"),
+                (PluralCategory::One, "{n} seythun"),
                 (PluralCategory::Two, "{n} seythun"),
                 (PluralCategory::Few, "{n} seythun"),
                 (PluralCategory::Many, "{n} seythun"),
@@ -67,7 +67,7 @@ pub fn locale() -> DurationLocale {
             ]),
             month: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} mis"),
-                (PluralCategory::One, "mis"),
+                (PluralCategory::One, "{n} mis"),
                 (PluralCategory::Two, "{n} vis"),
                 (PluralCategory::Few, "{n} mis"),
                 (PluralCategory::Many, "{n} mis"),
@@ -75,7 +75,7 @@ pub fn locale() -> DurationLocale {
             ]),
             year: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} blydhen"),
-                (PluralCategory::One, "blydhen"),
+                (PluralCategory::One, "{n} blydhen"),
                 (PluralCategory::Two, "{n} vlydhen"),
                 (PluralCategory::Few, "{n} blydhen"),
                 (PluralCategory::Many, "{n} blydhen"),

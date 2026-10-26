@@ -27,7 +27,7 @@ export const is: AgeLocale = {
     month: { one: '{n} mánuður', other: '{n} mánuðir' },
     year:  { one: '{n} ár', other: '{n} ár' },
   },
-  half: '{0} og hálft',
+  half: '{n} og hálft',
   delimiter: ', ',
   justBorn: 'Nýfætt',
   stages: {

@@ -28,7 +28,7 @@
          "week" (hash "type" "simple" "form" "{n} minggu")
          "month" (hash "type" "simple" "form" "{n} bulan")
          "year" (hash "type" "simple" "form" "{n} tahun"))
-   "{0} setengah"
+   "{n} setengah"
    ", "
    "baru saja"
    "{0} yang lalu"

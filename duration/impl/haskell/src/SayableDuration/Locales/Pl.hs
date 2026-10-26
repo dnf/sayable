@@ -22,43 +22,43 @@ locale = DurationLocale
           [ (One, "{n} sekunda")
           , (Few, "{n} sekundy")
           , (Many, "{n} sekund")
-          , (Other, "{n} sekund")
+          , (Other, "{n} sekundy")
           ]
         , unitMinute = Pluralized
           [ (One, "{n} minuta")
           , (Few, "{n} minuty")
           , (Many, "{n} minut")
-          , (Other, "{n} minut")
+          , (Other, "{n} minuty")
           ]
         , unitHour = Pluralized
           [ (One, "{n} godzina")
           , (Few, "{n} godziny")
           , (Many, "{n} godzin")
-          , (Other, "{n} godzin")
+          , (Other, "{n} godziny")
           ]
         , unitDay = Pluralized
           [ (One, "{n} dzień")
           , (Few, "{n} dni")
           , (Many, "{n} dni")
-          , (Other, "{n} dni")
+          , (Other, "{n} dnia")
           ]
         , unitWeek = Pluralized
           [ (One, "{n} tydzień")
           , (Few, "{n} tygodnie")
           , (Many, "{n} tygodni")
-          , (Other, "{n} tygodni")
+          , (Other, "{n} tygodnia")
           ]
         , unitMonth = Pluralized
           [ (One, "{n} miesiąc")
           , (Few, "{n} miesiące")
           , (Many, "{n} miesięcy")
-          , (Other, "{n} miesięcy")
+          , (Other, "{n} miesiąca")
           ]
         , unitYear = Pluralized
           [ (One, "{n} rok")
           , (Few, "{n} lata")
           , (Many, "{n} lat")
-          , (Other, "{n} lat")
+          , (Other, "{n} roku")
           ]
         }
     , localeHalf = "{n} i pół"

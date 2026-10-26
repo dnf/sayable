@@ -31,7 +31,7 @@
    "ትማሊ"
    "ድሕሪ ጽባሕ"
    "ቅድሚ ትማሊ"
-   "እዛ {weekday}"
+   "እዚ {weekday}"
    "ዝመጽእ {weekday}"
    "ዝሓለፈ {weekday}"
    #f

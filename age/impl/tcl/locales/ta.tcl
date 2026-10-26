@@ -22,7 +22,7 @@ proc locale_ta {} {
         month [dict create one "{n} மாதம்" other "{n} மாதங்கள்"] \
         year [dict create one "{n} வயது" other "{n} வயது"] \
     ]
-    set half "{0}ரை"
+    set half "{n}½"
     set delimiter {, }
     set just_born {பிறந்த குழந்தை}
     set stages [dict create \

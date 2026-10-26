@@ -11,22 +11,22 @@
 
 % Basque locale.
 
-st_hours('eu', ['hamabi', 'bat', 'bi', 'hiru', 'lau', 'bost', 'sei', 'zazpi', 'zortzi', 'bederatzi', 'hamar', 'hamaika']).
+st_hours('eu', ['hamabiak', 'ordu bata', 'ordu biak', 'hirurak', 'laurak', 'bostak', 'seiak', 'zazpiak', 'zortziak', 'bederatziak', 'hamarrak', 'hamaikak']).
 st_midnight('eu', 'gauerdia').
 st_noon('eu', 'eguerdia').
 
-st_pattern('eu', 0, '{h}:00').
-st_pattern('eu', 5, '{h}:05').
-st_pattern('eu', 10, '{h}:10').
-st_pattern('eu', 15, '{h}:15').
-st_pattern('eu', 20, '{h}:20').
-st_pattern('eu', 25, '{h}:25').
-st_pattern('eu', 30, '{h}:30').
-st_pattern('eu', 35, '{h}:35').
-st_pattern('eu', 40, '{h}:40').
-st_pattern('eu', 45, '{h}:45').
-st_pattern('eu', 50, '{h}:50').
-st_pattern('eu', 55, '{h}:55').
+st_pattern('eu', 0, '{h}').
+st_pattern('eu', 5, '{h} eta bost').
+st_pattern('eu', 10, '{h} eta hamar').
+st_pattern('eu', 15, '{h} eta laurden').
+st_pattern('eu', 20, '{h} eta hogei').
+st_pattern('eu', 25, '{h} eta hogeita bost').
+st_pattern('eu', 30, '{h} eta erdiak').
+st_pattern('eu', 35, '{next_h} hogeita bost gutxi').
+st_pattern('eu', 40, '{next_h} hogei gutxi').
+st_pattern('eu', 45, '{next_h} laurden gutxi').
+st_pattern('eu', 50, '{next_h} hamar gutxi').
+st_pattern('eu', 55, '{next_h} bost gutxi').
 
 short_st_use24h('eu', true).
 short_st_format('eu', '{h}:{mm}').

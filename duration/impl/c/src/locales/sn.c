@@ -20,9 +20,9 @@ const SduDurationLocale sdu_locale_sn = {
     "sn",
     plural_sn,
     {
-        { "{n} sekondi", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} miniti", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} awa", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "sekondi {n}", NULL, NULL, NULL, "masekondi {n}" } },
+        { NULL, { NULL, "miniti {n}", NULL, NULL, NULL, "maminitsi {n}" } },
+        { NULL, { NULL, "awa {n}", NULL, NULL, NULL, "maawa {n}" } },
         { NULL, { NULL, "zuva {n}", NULL, NULL, NULL, "mazuva {n}" } },
         { NULL, { NULL, "vhiki {n}", NULL, NULL, NULL, "mavhiki {n}" } },
         { NULL, { NULL, "mwedzi {n}", NULL, NULL, NULL, "mwedzi {n}" } },

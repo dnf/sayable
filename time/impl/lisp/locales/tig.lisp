@@ -20,7 +20,7 @@
     :hours (list "ʿasərte wəkəlte" "ḥante" "kəlʾe" "səleste" "arbaʿte" "ḥamməste" "səste" "sabʿate" "səmmunte" "təsʿate" "ʿasərte" "ʿasərte wəḥante")
     :midnight "nəs-leyla"
     :noon "qayḥ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "saʿa {h}") (cons 5 "saʿa {h} we ḥamməste") (cons 10 "saʿa {h} we ʿasərte") (cons 15 "saʿa {h} we ʿasərte we ḥamməste") (cons 20 "saʿa {h} we ʿəsra") (cons 25 "saʿa {h} we ʿəsra we ḥamməste") (cons 30 "saʿa {h} we nəs") (cons 35 "saʿa {h} we salasa we ḥamməste") (cons 40 "saʿa {h} we arbaʿa") (cons 45 "saʿa {h} we arbaʿa we ḥamməste") (cons 50 "saʿa {h} we ḥamsa") (cons 55 "saʿa {h} we ḥamsa we ḥamməste")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

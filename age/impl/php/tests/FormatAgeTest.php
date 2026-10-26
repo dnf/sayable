@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SayableAge\Tests;
 
+use PHPUnit\Framework\TestCase;
 use SayableAge\Compactness;
 
 use function SayableAge\formatAge;
@@ -11,7 +12,6 @@ use function SayableAge\formatStage;
 
 use SayableAge\Locales\Locales;
 use SayableAge\SayableAge;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Canonical test suite — test cases from config/tests.json.
@@ -923,7 +923,7 @@ final class FormatAgeTest extends TestCase
     public function test_25_10_es_half_marker(): void
     {
         $pt = new SayableAge(Locales::ES());
-        $this->assertSame('3 y medio años', $pt->formatAge('2022-06-15', '2025-12-15'));
+        $this->assertSame('3 años y medio', $pt->formatAge('2022-06-15', '2025-12-15'));
     }
 
     public function test_25_11_es_no_half(): void
@@ -1266,7 +1266,7 @@ final class FormatAgeTest extends TestCase
     public function test_29_2_he_one_day(): void
     {
         $pt = new SayableAge(Locales::HE());
-        $this->assertSame('יום 1', $pt->formatAge('2025-06-14', '2025-06-15'));
+        $this->assertSame('יום', $pt->formatAge('2025-06-14', '2025-06-15'));
     }
 
     public function test_29_3_he_three_days(): void
@@ -1302,7 +1302,7 @@ final class FormatAgeTest extends TestCase
     public function test_29_8_he_two_years_dual_one_month(): void
     {
         $pt = new SayableAge(Locales::HE());
-        $this->assertSame('שנתיים, חודש 1', $pt->formatAge('2023-06-15', '2025-07-15'));
+        $this->assertSame('שנתיים, חודש', $pt->formatAge('2023-06-15', '2025-07-15'));
     }
 
     public function test_29_9_he_half_years(): void
@@ -1449,7 +1449,7 @@ final class FormatAgeTest extends TestCase
     public function test_29_32_id_half_years(): void
     {
         $pt = new SayableAge(Locales::ID());
-        $this->assertSame('3 tahun setengah', $pt->formatAge('2022-06-15', '2025-12-15'));
+        $this->assertSame('3 setengah tahun', $pt->formatAge('2022-06-15', '2025-12-15'));
     }
 
     public function test_29_33_id_seven_years(): void
@@ -1578,7 +1578,7 @@ final class FormatAgeTest extends TestCase
     public function test_32_3_tachelhit_6_is_few(): void
     {
         $fmt = new SayableAge(Locales::SHI());
-        $this->assertSame('6 iseggasen d uzgen', $fmt->formatAge('2005-06-08', '2012-06-07'));
+        $this->assertSame('6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ', $fmt->formatAge('2005-06-08', '2012-06-07'));
     }
 
     // 33.1

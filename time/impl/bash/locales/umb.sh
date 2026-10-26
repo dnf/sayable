@@ -10,21 +10,21 @@
 # Source: locales/umb.json
 
 _sayabletime_locale_umb() {
-    _clock_hours=('olohola likumi na yivali' 'yimosi' 'yivali' 'yitathu' 'yinyali' 'yitanu' 'yitathu-va-yivali' 'yisemba' 'yinyali-va-yivali' 'yitanu-va-yivali' 'likumi' 'likumi na yimosi')
+    _clock_hours=('ekwi la vali' 'mosi' 'vali' 'tatu' 'kwãla' 'tãlo' 'epandu' 'epanduvali' 'ecelãla' 'ecea' 'ekwi' 'ekwi la mosi')
     _clock_midnight='ocitapi'
     _clock_noon='ocivali'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='ohola {h}'
+    _clock_pattern_5='ohola {h} la tãlo'
+    _clock_pattern_10='ohola {h} la ekwi'
+    _clock_pattern_15='ohola {h} la ekwi la tãlo'
+    _clock_pattern_20='ohola {h} la akũi avali'
+    _clock_pattern_25='ohola {h} la akũi avali la tãlo'
+    _clock_pattern_30='ohola {h} la oñali'
+    _clock_pattern_35='ohola {h} la akũi atatu la tãlo'
+    _clock_pattern_40='ohola {h} la akũi akwãla'
+    _clock_pattern_45='ohola {h} la akũi akwãla la tãlo'
+    _clock_pattern_50='ohola {h} la akũi atãlo'
+    _clock_pattern_55='ohola {h} la akũi atãlo la tãlo'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

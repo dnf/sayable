@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ff = {
         { "sappo e ɗiɗi", "go'o", "ɗiɗi", "tati", "nay", "joy", "jeegom", "jeeɗiɗi", "jeetati", "jeenay", "sappo", "sappo e go'o" },
         "jamma hejjere",
         "zuhr",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "waktu {h}", "waktu {h} e hojomaaje joy", "waktu {h} e hojomaaje sappo", "waktu {h} e hojomaaje sappo e joy", "waktu {h} e hojomaaje noogas", "waktu {h} e hojomaaje noogas e joy", "waktu {h} e feccere", "waktu {h} e hojomaaje cappanɗe tati e joy", "waktu {h} e hojomaaje cappanɗe nay", "waktu {h} e hojomaaje cappanɗe nay e joy", "waktu {h} e hojomaaje cappanɗe joy", "waktu {h} e hojomaaje cappanɗe joy e joy" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

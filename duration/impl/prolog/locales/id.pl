@@ -21,7 +21,7 @@ sd_unit('id', week, _, '{n} minggu').
 sd_unit('id', month, _, '{n} bulan').
 sd_unit('id', year, _, '{n} tahun').
 
-sd_half('id', '{0} setengah').
+sd_half('id', '{n} setengah').
 sd_delimiter('id', ', ').
 sd_just_now('id', 'baru saja').
 sd_ago('id', '{0} yang lalu').

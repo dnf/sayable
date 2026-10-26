@@ -22,7 +22,7 @@ sd_today('xh', 'namhlanje').
 sd_tomorrow('xh', 'ngomso').
 sd_yesterday('xh', 'izolo').
 sd_day_after_tomorrow('xh', 'ngomhlomunye').
-sd_day_before_yesterday('xh', 'kutshanje').
+sd_day_before_yesterday('xh', 'izolo elinye').
 sd_this_weekday('xh', 'le {weekday}').
 sd_next_weekday('xh', '{weekday} ezayo').
 sd_last_weekday('xh', '{weekday} edlulileyo').

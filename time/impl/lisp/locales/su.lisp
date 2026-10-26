@@ -20,7 +20,7 @@
     :hours (list "dua welas" "hiji" "dua" "tilu" "opat" "lima" "genep" "tujuh" "dalapan" "salapan" "sapuluh" "sabelas")
     :midnight "tengah peuting"
     :noon "beurang"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "jam {h}") (cons 5 "jam {h} leuwih lima menit") (cons 10 "jam {h} leuwih sapuluh menit") (cons 15 "jam {h} leuwih saparapat") (cons 20 "jam {h} leuwih dua puluh menit") (cons 25 "jam {h} leuwih dua puluh lima menit") (cons 30 "satengah {next_h}") (cons 35 "jam {next_h} kurang dua puluh lima menit") (cons 40 "jam {next_h} kurang dua puluh menit") (cons 45 "jam {next_h} kurang saparapat") (cons 50 "jam {next_h} kurang sapuluh menit") (cons 55 "jam {next_h} kurang lima menit")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

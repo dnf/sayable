@@ -85,7 +85,7 @@ fn build_dz() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} ཕྱེད",
+        half="{0} དང་ཕྱེད",
         delimiter=" ",
         just_now="ད་ལྟ",
         ago="{0} ཧེ་མ",

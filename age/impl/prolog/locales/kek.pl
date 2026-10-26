@@ -38,4 +38,5 @@ compact_sa_unit('kek', day, _, '{n}d').
 compact_sa_unit('kek', week, _, '{n}w').
 compact_sa_unit('kek', month, _, '{n}m').
 compact_sa_unit('kek', year, _, '{n}y').
+compact_sa_half('kek', '{n}½').
 compact_sa_delimiter('kek', '').

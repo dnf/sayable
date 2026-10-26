@@ -11,12 +11,12 @@
 
 locale_ky <- list(
   code = "ky",
-  months = c("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"),
-  weekdays = c("Жекшемби", "Дүйшөмбү", "Шейшемби", "Шаршемби", "Бейшемби", "Жума", "Ишемби"),
-  day_format = "{n}",
+  months = c("январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"),
+  weekdays = c("жекшемби", "дүйшөмбү", "шейшемби", "шаршемби", "бейшемби", "жума", "ишемби"),
+  day_format = "{n}-",
   day_format_exceptions = list(),
-  date_pattern = "{day} {month}",
-  date_pattern_with_year = "{day} {month} {year}",
+  date_pattern = "{day}{month}",
+  date_pattern_with_year = "{year}-ж., {day}{month}",
   today = "бүгүн",
   tomorrow = "эртең",
   yesterday = "кечээ",
@@ -26,8 +26,8 @@ locale_ky <- list(
   next_weekday = "кийинки {weekday}",
   last_weekday = "өткөн {weekday}",
   short = list(
-    months = c("Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"),
-    weekdays = c("Жек", "Дүй", "Шей", "Шар", "Бей", "Жум", "Ише"),
+    months = c("янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"),
+    weekdays = c("жек", "дүй", "шей", "шар", "бей", "жум", "ише"),
     day_format = "{n}",
     date_pattern = "{day} {month}",
     date_pattern_with_year = "{day} {month} {year}"

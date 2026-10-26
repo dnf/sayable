@@ -21,13 +21,13 @@
   (duration-locale
    "so"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "ilbiriqsi {n}" "other" "ilbiriqsiyaal {n}"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "daqiiqad {n}" "other" "daqiiqadood {n}"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "saacad {n}" "other" "saacadood {n}"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "maalin {n}" "other" "maalmood {n}"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "toddobaad {n}" "other" "toddobaadyo {n}"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "bil {n}" "other" "bilood {n}"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "sano {n}" "other" "sanooyin {n}")))
+   (hash "second" (hash "type" "simple" "form" "{n} ilbiriqsi")
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} daqiiqad" "other" "{n} daqiiqo"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} saacad" "other" "{n} saacadood"))
+         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} maalin" "other" "{n} maalmood"))
+         "week" (hash "type" "simple" "form" "{n} toddobaad")
+         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} bil" "other" "{n} bilood"))
+         "year" (hash "type" "simple" "form" "{n} sano"))
    "{n}½"
    ", "
    "hadda"

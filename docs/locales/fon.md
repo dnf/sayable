@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [fon.json](../../locales/fon.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Used 'gan {h}' (gan = hour/o'clock, numeral follows noun as elsewhere in Fon) and additive minutes with the comitative 'kpo ... kpo' and 'cɛju' (minute): 'gan wè kpo cɛju wǒ kpo' = 2:10. Minute numerals use Fon vigesimal forms (ko 20, gban 30, kanɖé 40, kanɖéwǒ 50, afɔtɔ́n 15, koatɔ́ɔ́n 25, gbanatɔ́ɔ́n 35, kanɖéatɔ́ɔ́n 45, kanɖéafɔtɔ́n 55); compound spelling and tone marks are best-effort. No half-hour word used (30 = 'cɛju gban') because I could not verify a Fon 'half' word for clock time. Also corrected hours[11] from 'ɖokpo-wǒ' to 'wěɖokpo' (Fon 11; 12 = wěwè, already correct). Needs a native-speaker check.
+
 ## Age
 
 ### Age formatting
@@ -39,14 +47,14 @@ Plural rule: `other_only` (categories: other)
 
 ### Stages
 
-| Stage    | Label     |
-| -------- | --------- |
-| Newborn  | Vǐ yɔ̌yɔ́ |
-| Infant   | Vǐ        |
-| Toddler  | Vǐ        |
-| Child    | Vǐ        |
-| Teenager | Nyɔ̌nu    |
-| Adult    | Mɛ̌xo     |
+| Stage    | Label             |
+| -------- | ----------------- |
+| Newborn  | Vǐ yɔ̌yɔ́         |
+| Infant   | Vǐ                |
+| Toddler  | Vǐ                |
+| Child    | Vǐ                |
+| Teenager | Dɔnkpɛvu / Ɖyɔ̌vǐ |
+| Adult    | Mɛ̌xo             |
 
 ## Date
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | sɔ gudo           | 17/3    |
 | Day before yesterday | sá gudo           | 13/3    |
 | This Thursday (+5)   | Nyɔnúgbe elɔ      | 20/3    |
-| Last Monday (-4)     | Talɛtagbe e wá yí | 11/3    |
-| Next Wednesday (+12) | Nyɔnúgbe e ja     | 27/3    |
-| Same month (+20)     | 4 Tlɛsún          | 4/4     |
+| Last Tuesday (-4)    | Talɛtagbe e wá yí | 11/3    |
+| Next Thursday (+12)  | Nyɔnúgbe e ja     | 27/3    |
+| Same year (+20)      | 4 Tlɛsún          | 4/4     |
 | Different year       | 10 Alɔfí 2026     | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal      | Short    | Compact |
-| --------------- | ----------- | -------- | ------- |
-| Midnight        | zǎnmɛ       | 12:00 AM | 12:00a  |
-| 1:00 AM         | ɖokpo:00    | 1:00 AM  | 1:00a   |
-| 5 past 9        | tɛnɛnɛ:05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | wǒ:15       | 10:15 AM | 10:15a  |
-| Half past 11    | ɖokpo-wǒ:30 | 11:30 AM | 11:30a  |
-| Noon            | hwemɛnu     | 12:00 PM | 12:00p  |
-| Quarter to 3    | wè:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | atɔ́ɔ́n:55  | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | tantɔn:00   | 8:00 PM  | 8:00p   |
-| 10:30 PM        | wǒ:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | zǎnmɛ       | 11:58 PM | 11:58p  |
+| Time            | Normal                                | Short    | Compact |
+| --------------- | ------------------------------------- | -------- | ------- |
+| Midnight        | zǎnmɛ                                 | 12:00 AM | 12:00a  |
+| 1:00 AM         | gan ɖokpo                             | 1:00 AM  | 1:00a   |
+| 5 past 9        | gan tɛnɛnɛ kpo cɛju atɔ́ɔ́n kpo       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | gan wǒ kpo cɛju afɔtɔ́n kpo           | 10:15 AM | 10:15a  |
+| Half past 11    | gan wěɖokpo kpo cɛju gban kpo         | 11:30 AM | 11:30a  |
+| Noon            | hwemɛnu                               | 12:00 PM | 12:00p  |
+| Quarter to 3    | gan wè kpo cɛju kanɖéatɔ́ɔ́n kpo      | 2:45 PM  | 2:45p   |
+| 5 to 6          | gan atɔ́ɔ́n kpo cɛju kanɖéafɔtɔ́n kpo | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | gan tantɔn                            | 8:00 PM  | 8:00p   |
+| 10:30 PM        | gan wǒ kpo cɛju gban kpo              | 10:30 PM | 10:30p  |
+| 11:58 PM        | zǎnmɛ                                 | 11:58 PM | 11:58p  |

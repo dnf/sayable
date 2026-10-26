@@ -14,13 +14,13 @@
 (def locale
   {:code "ha"
    :plural (fn [n] (if (== n 1) :one :other))
-   :day {:type :pluralized :forms {:one "{n} kwana" :other "{n} kwanaki"}}
-   :week {:type :pluralized :forms {:one "{n} mako" :other "{n} makonni"}}
-   :month {:type :pluralized :forms {:one "{n} wata" :other "{n} watanni"}}
-   :year {:type :pluralized :forms {:one "{n} shekara" :other "{n} shekaru"}}
+   :day {:type :pluralized :forms {:one "kwana {n}" :other "kwanaki {n}"}}
+   :week {:type :pluralized :forms {:one "mako {n}" :other "makonni {n}"}}
+   :month {:type :pluralized :forms {:one "wata {n}" :other "watanni {n}"}}
+   :year {:type :pluralized :forms {:one "shekara {n}" :other "shekaru {n}"}}
    :half "{n}½"
    :delimiter ", "
    :just-born "Sabon haihuwa"
-   :stages {:newborn {:type :neutral :label "Jariri"} :infant {:type :neutral :label "Jariri"} :toddler {:type :neutral :label "Ƙaramin yaro"} :child {:type :neutral :label "Yaro"} :teenager {:type :neutral :label "Saurayi"} :adult {:type :neutral :label "Babba"}}
-   :short {:day {:type :simple :form "{n} kw."} :week {:type :simple :form "{n} mk."} :month {:type :simple :form "{n} wt."} :year {:type :simple :form "{n} shk."} :half nil :delimiter nil :just-born nil}
+   :stages {:newborn {:type :neutral :label "Jariri"} :infant {:type :neutral :label "Jariri"} :toddler {:type :gendered :m "Ƙaramin yaro" :f "Ƙaramar yarinya"} :child {:type :gendered :m "Yaro" :f "Yarinya"} :teenager {:type :gendered :m "Saurayi" :f "Budurwa"} :adult {:type :neutral :label "Babba"}}
+   :short {:day {:type :simple :form "kw. {n}"} :week {:type :simple :form "mk. {n}"} :month {:type :simple :form "wt. {n}"} :year {:type :simple :form "shk. {n}"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})

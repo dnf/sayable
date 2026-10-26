@@ -42,7 +42,7 @@ locale = Locale
         , stageToddler = Neutral "Мало дете"
         , stageChild = Neutral "Дете"
         , stageTeenager = Neutral "Тинејџер"
-        , stageAdult = Neutral "Возрасен"
+        , stageAdult = Gendered "Возрасен" "Возрасна"
         }
     , localeShort = Just $
         CompactnessOverride

@@ -15,13 +15,13 @@ function plural_ig([int]$n) {
 
 function locale_ig {
     $units = @{
-        second = '{n} sekọnd'
-        minute = '{n} nkeji'
-        hour = '{n} awa'
-        day = '{n} ụbọchị'
-        week = '{n} izu'
-        month = '{n} ọnwa'
-        year = '{n} afọ'
+        second = 'sekọnd {n}'
+        minute = 'nkeji {n}'
+        hour = 'awa {n}'
+        day = 'ụbọchị {n}'
+        week = 'izu {n}'
+        month = 'ọnwa {n}'
+        year = 'afọ {n}'
     }
     $half = '{0} na ọkara'
     $delimiter = ', '
@@ -30,13 +30,13 @@ function locale_ig {
     $inFuture = 'na {0}'
     $short = @{
         units = @{
-            second = '{n} sek.'
-            minute = '{n} nkeji'
-            hour = '{n} awa'
-            day = '{n} ụbọchị'
-            week = '{n} izu'
-            month = '{n} ọnwa'
-            year = '{n} afọ'
+            second = 'sek. {n}'
+            minute = 'nkeji {n}'
+            hour = 'awa {n}'
+            day = 'ụbọchị {n}'
+            week = 'izu {n}'
+            month = 'ọnwa {n}'
+            year = 'afọ {n}'
         }
         ago = '{0} gara aga'
         inFuture = 'na {0}'

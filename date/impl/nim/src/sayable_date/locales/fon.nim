@@ -16,7 +16,7 @@ import ../locale
 let FON* = DateLocale(
   code: "fon",
   months: @["Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"],
-  weekdays: @["Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"],
+  weekdays: @["Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe"],
   dayFormat: "{n}",
   dayFormatExceptions: initOrderedTable[string, string](),
   datePattern: "{day} {month}",
@@ -33,7 +33,7 @@ let FON* = DateLocale(
   short: some(CompactnessOverride(
     months: some(@["Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"]),
     monthsInDate: none(seq[string]),
-    weekdays: some(@["Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"]),
+    weekdays: some(@["Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib"]),
     dayFormat: some("{n}"),
     datePattern: some("{day} {month}"),
     datePatternWithYear: some("{day} {month} {year}"),

@@ -17,9 +17,9 @@ locale() ->
     #duration_locale{
         code = "sw",
         plural = fun(1) -> one; (_) -> other end,
-        second = {simple, "{n} sekunde"},
-        minute = {simple, "{n} dakika"},
-        hour = {simple, "{n} saa"},
+        second = {simple, "sekunde {n}"},
+        minute = {simple, "dakika {n}"},
+        hour = {simple, "saa {n}"},
         day = {pluralized, [{one, "siku {n}"}, {other, "siku {n}"}]},
         week = {pluralized, [{one, "wiki {n}"}, {other, "wiki {n}"}]},
         month = {pluralized, [{one, "mwezi {n}"}, {other, "miezi {n}"}]},

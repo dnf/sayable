@@ -17,11 +17,11 @@ locale :: Locale
 locale = Locale
     { localeCode = "mi"
     , localePlural = \n -> if n == 1 then One else Other
-    , localeDay = Simple "rā {n}"
-    , localeWeek = Simple "wiki {n}"
-    , localeMonth = Simple "marama {n}"
-    , localeYear = Simple "tau {n}"
-    , localeHalf = "{0}½"
+    , localeDay = Simple "{n} rā"
+    , localeWeek = Simple "{n} wiki"
+    , localeMonth = Simple "{n} marama"
+    , localeYear = Simple "{n} tau"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustBorn = "Pēpi hou"
     , localeStages = Stages
@@ -34,10 +34,10 @@ locale = Locale
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "rā {n}")
-            , ovrWeek = Just (Simple "w {n}")
-            , ovrMonth = Just (Simple "m {n}")
-            , ovrYear = Just (Simple "t {n}")
+            { ovrDay = Just (Simple "{n} rā")
+            , ovrWeek = Just (Simple "{n} w")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} t")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -145,6 +146,7 @@
         "year": "{n}y"
       },
       "delimiter": "",
+      "half": "{n}½",
       "ago": "{0} liu ba",
       "inFuture": "iha {0}"
     }
@@ -168,18 +170,18 @@
       "midnight": "meiu-kalan",
       "noon": "meiu-loron",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "tuku {h}",
+        "5": "tuku {h} ho minutu lima",
+        "10": "tuku {h} ho minutu sanulu",
+        "15": "tuku {h} ho minutu sanulu-resin-lima",
+        "20": "tuku {h} ho minutu ruanulu",
+        "25": "tuku {h} ho minutu ruanulu-resin-lima",
+        "30": "tuku {h} ho balun",
+        "35": "tuku {h} ho minutu tolunulu-resin-lima",
+        "40": "tuku {h} ho minutu haatnulu",
+        "45": "tuku {h} ho minutu haatnulu-resin-lima",
+        "50": "tuku {h} ho minutu limanulu",
+        "55": "tuku {h} ho minutu limanulu-resin-lima"
       }
     },
     "short": {
@@ -202,5 +204,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "'tuku {h}' (tuku = o'clock strike), 'tuku {h} ho balun' for half, and 'tuku {h} ho minutu <N>' counting up with Tetum numerals (numeral after noun, as in the locale's 'minutu {n}'). Portuguese-style 'menus kuartu' subtraction exists in Tetun Prasa but was not used because I could not verify it; the counting-up form is safe but may feel long at :45."
+    }
+  ]
 }

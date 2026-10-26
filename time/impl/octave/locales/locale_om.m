@@ -11,10 +11,10 @@
 
 function loc = locale_om()
   loc.code = 'om';
-  loc.clock.hours = {'kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan', 'jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko'};
+  loc.clock.hours = {'jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko', 'kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan'};
   loc.clock.midnight = 'walakkii halkan';
   loc.clock.noon = 'guyyaa walakkaa';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'sa''aatii {h}', "p5", 'sa''aatii {h} fi daqiiqaa shan', "p10", 'sa''aatii {h} fi daqiiqaa kudhan', "p15", 'sa''aatii {h} fi daqiiqaa kudha shan', "p20", 'sa''aatii {h} fi daqiiqaa digdama', "p25", 'sa''aatii {h} fi daqiiqaa digdamii shan', "p30", 'sa''aatii {h} fi walakkaa', "p35", 'sa''aatii {h} fi daqiiqaa soddomii shan', "p40", 'sa''aatii {h} fi daqiiqaa afurtama', "p45", 'sa''aatii {h} fi daqiiqaa afurtamii shan', "p50", 'sa''aatii {h} fi daqiiqaa shantama', "p55", 'sa''aatii {h} fi daqiiqaa shantamii shan');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

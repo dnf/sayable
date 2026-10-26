@@ -15,13 +15,13 @@ sa_plural('he', 1, one) :- !.
 sa_plural('he', 2, two) :- !.
 sa_plural('he', _, other).
 
-sa_unit('he', day, one, 'יום {n}').
+sa_unit('he', day, one, 'יום').
 sa_unit('he', day, two, 'יומיים').
 sa_unit('he', day, other, '{n} ימים').
-sa_unit('he', week, one, 'שבוע {n}').
+sa_unit('he', week, one, 'שבוע').
 sa_unit('he', week, two, 'שבועיים').
 sa_unit('he', week, other, '{n} שבועות').
-sa_unit('he', month, one, 'חודש {n}').
+sa_unit('he', month, one, 'חודש').
 sa_unit('he', month, two, 'חודשיים').
 sa_unit('he', month, other, '{n} חודשים').
 sa_unit('he', year, one, 'שנה').
@@ -35,7 +35,11 @@ sa_just_born('he', 'רק נולד').
 sa_stage('he', newborn, m, 'רק נולד').
 sa_stage('he', newborn, f, 'רק נולדה').
 sa_stage('he', newborn, _, 'רק נולד').
+sa_stage('he', infant, m, 'תינוק').
+sa_stage('he', infant, f, 'תינוקת').
 sa_stage('he', infant, _, 'תינוק').
+sa_stage('he', toddler, m, 'פעוט').
+sa_stage('he', toddler, f, 'פעוטה').
 sa_stage('he', toddler, _, 'פעוט').
 sa_stage('he', child, m, 'ילד').
 sa_stage('he', child, f, 'ילדה').

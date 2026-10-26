@@ -6,6 +6,14 @@
 
 Plural rule: `gd` (categories: one, two, few, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [gd.json](../../locales/gd.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Hours now carry the noun ('uair', 'dà uair', 'trì uairean', 'aon uair deug', 'dà uair dheug') so the o'clock bucket is right; minute buckets use 'còig mionaidean an dèidh {h}', 'cairteal an dèidh', 'leth-uair an dèidh', '... gu {next_h}'. COMPROMISE: after 'an dèidh'/'gu' speakers normally use the bare numeral ('cairteal gu trì', not 'cairteal gu trì uairean'); the schema's single hours list cannot serve both, so minute buckets carry the noun for hours 2-12 (hour 1 'uair' is correct in both). A native review is advisable.
+
 ## Age
 
 ### Age formatting
@@ -52,31 +60,31 @@ Plural rule: `gd` (categories: one, two, few, other)
 
 ### Date formatting
 
-| Date        | Normal          | Short    | Compact |
-| ----------- | --------------- | -------- | ------- |
-| January 1   | 1 Am Faoilleach | 1 Faoi   | 1/1     |
-| February 14 | 14 An Gearran   | 14 Gearr | 14/2    |
-| March 15    | 15 Am Màrt      | 15 Màrt  | 15/3    |
-| July 4      | 4 An t-Iuchar   | 4 Iuch   | 4/7     |
-| October 31  | 31 An Dàmhair   | 31 Dàmh  | 31/10   |
-| December 25 | 25 An Dùbhlachd | 25 Dùbh  | 25/12   |
+| Date        | Normal               | Short              | Compact |
+| ----------- | -------------------- | ------------------ | ------- |
+| January 1   | 1mh dhen Fhaoilleach | 1 dhen Fhaoilleach | 1/1     |
+| February 14 | 14mh dhen Ghearran   | 14 dhen Ghearran   | 14/2    |
+| March 15    | 15mh dhen Mhàrt      | 15 dhen Mhàrt      | 15/3    |
+| July 4      | 4mh dhen Iuchar      | 4 dhen Iuchar      | 4/7     |
+| October 31  | 31mh dhen Dàmhair    | 31 dhen Dàmhair    | 31/10   |
+| December 25 | 25mh dhen Dùbhlachd  | 25 dhen Dùbhlachd  | 25/12   |
 
 ### Relative dates
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal                | Compact    |
-| -------------------- | --------------------- | ---------- |
-| Today                | an-diugh              | an-diugh   |
-| Tomorrow             | a-màireach            | a-màireach |
-| Yesterday            | an-dè                 | an-dè      |
-| Day after tomorrow   | an-earar              | 17/3       |
-| Day before yesterday | a-bhòin-dè            | 13/3       |
-| This Thursday (+5)   | DiarDaoin seo         | 20/3       |
-| Last Monday (-4)     | DiMàirt seo chaidh    | 11/3       |
-| Next Wednesday (+12) | DiarDaoin sa tighinn  | 27/3       |
-| Same month (+20)     | 4 An Giblean          | 4/4        |
-| Different year       | 10 Am Faoilleach 2026 | 10/1/26    |
+| Offset               | Normal                     | Compact    |
+| -------------------- | -------------------------- | ---------- |
+| Today                | an-diugh                   | an-diugh   |
+| Tomorrow             | a-màireach                 | a-màireach |
+| Yesterday            | an-dè                      | an-dè      |
+| Day after tomorrow   | an-earar                   | 17/3       |
+| Day before yesterday | a-bhòin-dè                 | 13/3       |
+| This Thursday (+5)   | DiarDaoin seo              | 20/3       |
+| Last Tuesday (-4)    | DiMàirt seo chaidh         | 11/3       |
+| Next Thursday (+12)  | DiarDaoin sa tighinn       | 27/3       |
+| Same year (+20)      | 4mh dhen Ghiblean          | 4/4        |
+| Different year       | 10mh dhen Fhaoilleach 2026 | 10/1/26    |
 
 ## Duration
 
@@ -91,10 +99,10 @@ Relative to Saturday, March 15, 2025.
 | 2 minutes, 15 seconds | 2 mhionaid, 15 diogan    | 2 mhion, 15 diog | 2m15d     |
 | 5 minutes             | 5 mionaidean             | 5 mion           | 5m        |
 | 45 minutes            | 45 mionaid               | 45 mion          | 45m       |
-| 1 hour                | 1 uair                   | 1 uair           | 1u        |
-| 1½ hours              | 1 uair gu leth           | 1 uair gu leth   | 1½u       |
-| 3 hours               | 3 uairean                | 3 uair           | 3u        |
-| 6 hours               | 6 uairean                | 6 uair           | 6u        |
+| 1 hour                | 1 uair a thìde           | 1 uair           | 1u        |
+| 1½ hours              | 1 uair a thìde gu leth   | 1 uair gu leth   | 1½u       |
+| 3 hours               | 3 uairean a thìde        | 3 uair           | 3u        |
+| 6 hours               | 6 uairean a thìde        | 6 uair           | 6u        |
 | 1 day                 | 1 latha                  | 1 là             | 1là       |
 | 1½ days               | 1 latha gu leth          | 1 là gu leth     | 1½là      |
 | 3 days                | 3 làithean               | 3 là             | 3là       |
@@ -107,27 +115,27 @@ Relative to Saturday, March 15, 2025.
 
 ### Relative time
 
-| Offset        | Normal                | Compact      |
-| ------------- | --------------------- | ------------ |
-| 5 minutes ago | o chionn 5 mionaidean | o chionn 5m  |
-| 2 hours ago   | o chionn 2 uair       | o chionn 2u  |
-| in 30 minutes | an ceann 30 mionaid   | an ceann 30m |
-| in 3 hours    | an ceann 3 uairean    | an ceann 3u  |
+| Offset        | Normal                     | Compact      |
+| ------------- | -------------------------- | ------------ |
+| 5 minutes ago | o chionn 5 mionaidean      | o chionn 5m  |
+| 2 hours ago   | o chionn 2 uair a thìde    | o chionn 2u  |
+| in 30 minutes | an ceann 30 mionaid        | an ceann 30m |
+| in 3 hours    | an ceann 3 uairean a thìde | an ceann 3u  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal          | Short | Compact |
-| --------------- | --------------- | ----- | ------- |
-| Midnight        | meadhan-oidhche | 0:00  | 0:00    |
-| 1:00 AM         | aon:00          | 1:00  | 1:00    |
-| 5 past 9        | naoi:05         | 9:05  | 9:05    |
-| Quarter past 10 | deich:15        | 10:15 | 10:15   |
-| Half past 11    | aon-deug:30     | 11:30 | 11:30   |
-| Noon            | meadhan-latha   | 12:00 | 12:00   |
-| Quarter to 3    | dà:45           | 14:45 | 14:45   |
-| 5 to 6          | còig:55         | 17:55 | 17:55   |
-| 8 o'clock PM    | ochd:00         | 20:00 | 20:00   |
-| 10:30 PM        | deich:30        | 22:30 | 22:30   |
-| 11:58 PM        | meadhan-oidhche | 23:58 | 23:58   |
+| Time            | Normal                                | Short | Compact |
+| --------------- | ------------------------------------- | ----- | ------- |
+| Midnight        | meadhan-oidhche                       | 0:00  | 0:00    |
+| 1:00 AM         | uair                                  | 1:00  | 1:00    |
+| 5 past 9        | còig mionaidean an dèidh naoi uairean | 9:05  | 9:05    |
+| Quarter past 10 | cairteal an dèidh deich uairean       | 10:15 | 10:15   |
+| Half past 11    | leth-uair an dèidh aon uair deug      | 11:30 | 11:30   |
+| Noon            | meadhan-latha                         | 12:00 | 12:00   |
+| Quarter to 3    | cairteal gu trì uairean               | 14:45 | 14:45   |
+| 5 to 6          | còig mionaidean gu sia uairean        | 17:55 | 17:55   |
+| 8 o'clock PM    | ochd uairean                          | 20:00 | 20:00   |
+| 10:30 PM        | leth-uair an dèidh deich uairean      | 22:30 | 22:30   |
+| 11:58 PM        | meadhan-oidhche                       | 23:58 | 23:58   |

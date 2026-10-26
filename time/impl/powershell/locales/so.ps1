@@ -10,22 +10,22 @@
 # Source: locales/so.json
 
 function locale_so {
-    $hours = @('laba iyo toban', 'kow', 'laba', 'saddex', 'afar', 'shan', 'lix', 'toddoba', 'siddeed', 'sagaal', 'toban', 'kow iyo toban')
+    $hours = @('laba iyo tobanka', 'kowda', 'labada', 'saddexda', 'afarta', 'shanta', 'lixda', 'toddobada', 'siddeedda', 'sagaasha', 'tobanka', 'kow iyo tobanka')
     $midnight = 'saqda dhexe'
     $noon = 'duhur'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} iyo shan'
+    $patterns[10] = '{h} iyo toban'
+    $patterns[15] = '{h} iyo rubuc'
+    $patterns[20] = '{h} iyo labaatan'
+    $patterns[25] = '{h} iyo shan iyo labaatan'
+    $patterns[30] = '{h} iyo bar'
+    $patterns[35] = '{next_h} shan iyo labaatan la'''
+    $patterns[40] = '{next_h} labaatan la'''
+    $patterns[45] = '{next_h} rubuc la'''
+    $patterns[50] = '{next_h} toban la'''
+    $patterns[55] = '{next_h} shan la'''
     $clock = @{
         hours = $hours
         midnight = $midnight

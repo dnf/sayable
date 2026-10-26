@@ -16,11 +16,11 @@ let locale : duration_locale =
   ; plural = (fun n -> if n = 1 then One else Other)
   ; second = Pluralized
       [ (One, "motsotswana {n}")
-      ; (Other, "dimetsotswana {n}")
+      ; (Other, "metsotswana {n}")
       ]
   ; minute = Pluralized
-      [ (One, "metsotso {n}")
-      ; (Other, "dimetsotso {n}")
+      [ (One, "motsotso {n}")
+      ; (Other, "metsotso {n}")
       ]
   ; hour = Pluralized
       [ (One, "hora {n}")
@@ -50,11 +50,11 @@ let locale : duration_locale =
   ; short = Some
       { ovr_second = Some (Pluralized
         [ (One, "motsotswana {n}")
-        ; (Other, "dimetsotswana {n}")
+        ; (Other, "metsotswana {n}")
         ])
       ; ovr_minute = Some (Pluralized
-        [ (One, "metsotso {n}")
-        ; (Other, "dimetsotso {n}")
+        [ (One, "motsotso {n}")
+        ; (Other, "metsotso {n}")
         ])
       ; ovr_hour = Some (Pluralized
         [ (One, "hora {n}")

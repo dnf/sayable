@@ -23,7 +23,7 @@ pub const locale_pis = AgeLocale{
 	week: simple_unit('{n} wik')
 	month: simple_unit('{n} manis')
 	year: simple_unit('{n} yia')
-	half: '{n} en haf'
+	half: '{0} en haf'
 	delimiter: ', '
 	just_born: 'Niufala bebi'
 	newborn: stage_neutral('Niufala bebi')
@@ -53,6 +53,8 @@ pub const locale_pis = AgeLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 	}

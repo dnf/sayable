@@ -20,10 +20,10 @@ const SaLocale sa_locale_so = {
     "so",
     plural_so,
     {
-        { NULL, { NULL, "maalin {n}", NULL, NULL, NULL, "maalmood {n}" } },
-        { NULL, { NULL, "toddobaad {n}", NULL, NULL, NULL, "toddobaadyo {n}" } },
-        { NULL, { NULL, "bil {n}", NULL, NULL, NULL, "bilood {n}" } },
-        { NULL, { NULL, "sano {n}", NULL, NULL, NULL, "sanooyin {n}" } }
+        { NULL, { NULL, "{n} maalin", NULL, NULL, NULL, "{n} maalmood" } },
+        { "{n} toddobaad", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "{n} bil", NULL, NULL, NULL, "{n} bilood" } },
+        { "{n} sano", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{n}½", ", ", "Dhashay cusub",
     {

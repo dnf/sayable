@@ -23,9 +23,18 @@ locale =
     , plural = \n -> if n == 1 then One else Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "{n} సెకను" )
-            , ( "minute", Simple "{n} నిమిషం" )
-            , ( "hour", Simple "{n} గంట" )
+            [ ( "second", Pluralized
+              [ ( One, "{n} సెకను" )
+              , ( Other, "{n} సెకన్లు" )
+              ] )
+            , ( "minute", Pluralized
+              [ ( One, "{n} నిమిషం" )
+              , ( Other, "{n} నిమిషాలు" )
+              ] )
+            , ( "hour", Pluralized
+              [ ( One, "{n} గంట" )
+              , ( Other, "{n} గంటలు" )
+              ] )
             , ( "day", Pluralized
               [ ( One, "{n} రోజు" )
               , ( Other, "{n} రోజులు" )
@@ -43,7 +52,7 @@ locale =
               , ( Other, "{n} సంవత్సరాలు" )
               ] )
             ]
-    , half = "{0}న్నర"
+    , half = "{n}½"
     , delimiter = ", "
     , justNow = "ఇప్పుడే"
     , ago = "{0} క్రితం"

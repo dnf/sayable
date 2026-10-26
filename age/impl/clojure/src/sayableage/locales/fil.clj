@@ -21,6 +21,6 @@
    :half "{0} at kalahati"
    :delimiter ", "
    :just-born "Bagong silang"
-   :stages {:newborn {:type :neutral :label "Bagong silang"} :infant {:type :neutral :label "Sanggol"} :toddler {:type :neutral :label "Batang paslit"} :child {:type :neutral :label "Bata"} :teenager {:type :neutral :label "Tinedyer"} :adult {:type :neutral :label "Matanda"}}
+   :stages {:newborn {:type :neutral :label "Bagong silang"} :infant {:type :neutral :label "Sanggol"} :toddler {:type :neutral :label "Batang paslit"} :child {:type :neutral :label "Bata"} :teenager {:type :neutral :label "Tinedyer"} :adult {:type :neutral :label "Adulto"}}
    :short {:day {:type :simple :form "{n} araw"} :week {:type :pluralized :forms {:one "{n} linggo" :other "{n} na linggo"}} :month {:type :simple :form "{n} buwan"} :year {:type :simple :form "{n} taon"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :pluralized :forms {:one "{n} araw" :other "{n} na araw"}} :week {:type :simple :form "{n}linggo"} :month {:type :pluralized :forms {:one "{n}buwan" :other "{n} buwan"}} :year {:type :simple :form "{n}taon"} :half "{n}½" :delimiter "" :just-born nil}})

@@ -15,13 +15,13 @@ st_hours('fi', ['kaksitoista', 'yksi', 'kaksi', 'kolme', 'neljä', 'viisi', 'kuu
 st_midnight('fi', 'keskiyö').
 st_noon('fi', 'keskipäivä').
 
-st_pattern('fi', 0, '{h}').
+st_pattern('fi', 0, 'kello {h}').
 st_pattern('fi', 5, 'viisi yli {h}').
 st_pattern('fi', 10, 'kymmenen yli {h}').
 st_pattern('fi', 15, 'vartti yli {h}').
 st_pattern('fi', 20, 'kaksikymmentä yli {h}').
 st_pattern('fi', 25, 'kaksikymmentäviisi yli {h}').
-st_pattern('fi', 30, 'puoli yli {h}').
+st_pattern('fi', 30, 'puoli {next_h}').
 st_pattern('fi', 35, 'kaksikymmentäviisi vaille {next_h}').
 st_pattern('fi', 40, 'kaksikymmentä vaille {next_h}').
 st_pattern('fi', 45, 'vartti vaille {next_h}').

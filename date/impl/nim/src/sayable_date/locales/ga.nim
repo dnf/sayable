@@ -26,7 +26,7 @@ let GA* = DateLocale(
   yesterday: "inné",
   dayAfterTomorrow: some("arú amárach"),
   dayBeforeYesterday: some("arú inné"),
-  thisWeekday: some("an {weekday} seo"),
+  thisWeekday: some("{weekday} seo"),
   nextWeekday: some("{weekday} seo chugainn"),
   lastWeekday: some("{weekday} seo caite"),
   monthsInDate: none(seq[string]),

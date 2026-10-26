@@ -1,7 +1,33 @@
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Fixed;
+with Ada.Calendar;
 
 package body Sayableage is
+
+   function Local_Today return String is
+      Y    : Ada.Calendar.Year_Number;
+      M    : Ada.Calendar.Month_Number;
+      D    : Ada.Calendar.Day_Number;
+      Secs : Ada.Calendar.Day_Duration;
+      function Pad (N : Integer; W : Positive) return String is
+         Img : constant String := Integer'Image (N);
+         Raw : constant String := Img (Img'First + 1 .. Img'Last);
+      begin
+         return (1 .. W - Raw'Length => '0') & Raw;
+      end Pad;
+   begin
+      --  Ada.Calendar.Clock is local time (unlike Formatting.Image's UTC).
+      Ada.Calendar.Split (Ada.Calendar.Clock, Y, M, D, Secs);
+      return Pad (Y, 4) & "-" & Pad (M, 2) & "-" & Pad (D, 2);
+   end Local_Today;
+
+   function Effective_As_Of (As_Of : String) return String is
+   begin
+      if As_Of'Length = 0 then
+         return Local_Today;
+      end if;
+      return As_Of;
+   end Effective_As_Of;
 
    function Is_Leap_Year (Year : Integer) return Boolean is
    begin
@@ -176,10 +202,7 @@ package body Sayableage is
       if not DOB_P.OK then
          return "";
       end if;
-      if As_Of'Length = 0 then
-         return "";
-      end if;
-      Ref_P := Parse_Date (As_Of);
+      Ref_P := Parse_Date (Effective_As_Of (As_Of));
       if not Ref_P.OK then
          return "";
       end if;
@@ -342,10 +365,7 @@ package body Sayableage is
       if not DOB_P.OK then
          return "";
       end if;
-      if As_Of'Length = 0 then
-         return "";
-      end if;
-      Ref_P := Parse_Date (As_Of);
+      Ref_P := Parse_Date (Effective_As_Of (As_Of));
       if not Ref_P.OK then
          return "";
       end if;

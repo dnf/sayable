@@ -38,4 +38,5 @@ compact_sa_unit('shn', day, _, '{n}d').
 compact_sa_unit('shn', week, _, '{n}w').
 compact_sa_unit('shn', month, _, '{n}m').
 compact_sa_unit('shn', year, _, '{n}y').
+compact_sa_half('shn', '{n}½').
 compact_sa_delimiter('shn', '').

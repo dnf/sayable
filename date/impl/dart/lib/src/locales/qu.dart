@@ -23,7 +23,7 @@ final qu = DateLocale(
   tomorrow: 'paqarin',
   yesterday: 'qayna',
   dayAfterTomorrow: 'minchha',
-  dayBeforeYesterday: 'qayna p\'unchaw',
+  dayBeforeYesterday: 'qayninpa',
   thisWeekday: 'kay {weekday}',
   nextWeekday: 'hamuq {weekday}',
   lastWeekday: 'qayna {weekday}',

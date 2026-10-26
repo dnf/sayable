@@ -10,22 +10,22 @@
 # Source: locales/ny.json
 
 function locale_ny {
-    $hours = @('khumi ndi ziwiri', 'imodzi', 'ziwiri', 'zitatu', 'zinayi', 'zisanu', 'zisanu ndi chimodzi', 'zisanu ndi ziwiri', 'zisanu ndi zitatu', 'zisanu ndi zinayi', 'khumi', 'khumi ndi chimodzi')
+    $hours = @('lakhumi ndi chiwiri', 'loyamba', 'lachiwiri', 'lachitatu', 'lachinayi', 'lachisanu', 'lachisanu ndi chimodzi', 'lachisanu ndi chiwiri', 'lachisanu ndi chitatu', 'lachisanu ndi chinayi', 'lakhumi', 'lakhumi ndi chimodzi')
     $midnight = 'pakati pausiku'
     $noon = 'usana'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ola {h}'
+    $patterns[5] = 'ola {h} ndi mphindi zisanu'
+    $patterns[10] = 'ola {h} ndi mphindi khumi'
+    $patterns[15] = 'ola {h} ndi mphindi khumi ndi zisanu'
+    $patterns[20] = 'ola {h} ndi mphindi makumi awiri'
+    $patterns[25] = 'ola {h} ndi mphindi makumi awiri ndi zisanu'
+    $patterns[30] = 'ola {h} ndi theka'
+    $patterns[35] = 'ola {h} ndi mphindi makumi atatu ndi zisanu'
+    $patterns[40] = 'ola {h} ndi mphindi makumi anayi'
+    $patterns[45] = 'ola {h} ndi mphindi makumi anayi ndi zisanu'
+    $patterns[50] = 'ola {h} ndi mphindi makumi asanu'
+    $patterns[55] = 'ola {h} ndi mphindi makumi asanu ndi zisanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

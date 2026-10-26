@@ -18,7 +18,8 @@ _sayableduration_plural_pa() {
 _sayableduration_locale_pa() {
     _unit_second='{n} ਸਕਿੰਟ'
     _unit_minute='{n} ਮਿੰਟ'
-    _unit_hour='{n} ਘੰਟਾ'
+    _unit_hour_one='{n} ਘੰਟਾ'
+    _unit_hour_other='{n} ਘੰਟੇ'
     _unit_day_one='{n} ਦਿਨ'
     _unit_day_other='{n} ਦਿਨ'
     _unit_week_one='{n} ਹਫ਼ਤਾ'

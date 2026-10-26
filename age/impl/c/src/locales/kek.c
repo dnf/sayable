@@ -35,5 +35,5 @@ const SaLocale sa_locale_kek = {
         { "Winq", "" }
     },
     true, { true, { "{n} q'e", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sem.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} po", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} chih.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

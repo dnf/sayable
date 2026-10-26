@@ -15,22 +15,22 @@ sd_plural('he', 1, one) :- !.
 sd_plural('he', 2, two) :- !.
 sd_plural('he', _, other).
 
-sd_unit('he', second, one, 'שנייה {n}').
+sd_unit('he', second, one, 'שנייה').
 sd_unit('he', second, two, 'שתי שניות').
 sd_unit('he', second, other, '{n} שניות').
-sd_unit('he', minute, one, 'דקה {n}').
+sd_unit('he', minute, one, 'דקה').
 sd_unit('he', minute, two, 'שתי דקות').
 sd_unit('he', minute, other, '{n} דקות').
-sd_unit('he', hour, one, 'שעה {n}').
+sd_unit('he', hour, one, 'שעה').
 sd_unit('he', hour, two, 'שעתיים').
 sd_unit('he', hour, other, '{n} שעות').
-sd_unit('he', day, one, 'יום {n}').
+sd_unit('he', day, one, 'יום').
 sd_unit('he', day, two, 'יומיים').
 sd_unit('he', day, other, '{n} ימים').
-sd_unit('he', week, one, 'שבוע {n}').
+sd_unit('he', week, one, 'שבוע').
 sd_unit('he', week, two, 'שבועיים').
 sd_unit('he', week, other, '{n} שבועות').
-sd_unit('he', month, one, 'חודש {n}').
+sd_unit('he', month, one, 'חודש').
 sd_unit('he', month, two, 'חודשיים').
 sd_unit('he', month, other, '{n} חודשים').
 sd_unit('he', year, one, 'שנה').

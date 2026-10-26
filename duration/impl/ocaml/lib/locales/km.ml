@@ -25,7 +25,7 @@ let locale : duration_locale =
   ; delimiter = ", "
   ; just_now = "ឥឡូវនេះ"
   ; ago = "{0}មុន"
-  ; in_future = "ក្នុង{0}"
+  ; in_future = "{0}ទៀត"
   ; short = Some
       { ovr_second = Some (Simple "{n} វិនាទី")
       ; ovr_minute = Some (Simple "{n} នាទី")
@@ -37,7 +37,7 @@ let locale : duration_locale =
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "{0}មុន"
-      ; ovr_in_future = Some "ក្នុង{0}"
+      ; ovr_in_future = Some "{0}ទៀត"
       }
   ; compact = Some
       { ovr_second = Some (Simple "{n} វិនាទី")
@@ -50,6 +50,6 @@ let locale : duration_locale =
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_ago = Some "{0}មុន"
-      ; ovr_in_future = Some "ក្នុង{0}"
+      ; ovr_in_future = Some "{0}ទៀត"
       }
   }

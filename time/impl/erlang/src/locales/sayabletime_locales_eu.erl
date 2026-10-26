@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "eu",
-        clock = #clock_config{hours = ["hamabi", "bat", "bi", "hiru", "lau", "bost", "sei", "zazpi", "zortzi", "bederatzi", "hamar", "hamaika"], midnight = "gauerdia", noon = "eguerdia", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["hamabiak", "ordu bata", "ordu biak", "hirurak", "laurak", "bostak", "seiak", "zazpiak", "zortziak", "bederatziak", "hamarrak", "hamaikak"], midnight = "gauerdia", noon = "eguerdia", patterns = [{0, "{h}"}, {5, "{h} eta bost"}, {10, "{h} eta hamar"}, {15, "{h} eta laurden"}, {20, "{h} eta hogei"}, {25, "{h} eta hogeita bost"}, {30, "{h} eta erdiak"}, {35, "{next_h} hogeita bost gutxi"}, {40, "{next_h} hogei gutxi"}, {45, "{next_h} laurden gutxi"}, {50, "{next_h} hamar gutxi"}, {55, "{next_h} bost gutxi"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
     }.

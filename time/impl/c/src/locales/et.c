@@ -17,7 +17,7 @@ const StTimeLocale st_locale_et = {
         { "kaksteist", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist" },
         "kesköö",
         "keskpäev",
-        { "{h}", "viis efter {h}", "kümme efter {h}", "veerand efter {h}", "kakskümmend efter {h}", "kakskümmend viis efter {h}", "pool efter {h}", "kakskümmend viis enne {next_h}", "kakskümmend enne {next_h}", "veerand enne {next_h}", "kümme enne {next_h}", "viis enne {next_h}" }
+        { "kell {h}", "viis minutit {h} läbi", "kümme minutit {h} läbi", "veerand {next_h}", "kakskümmend minutit {h} läbi", "kakskümmend viis minutit {h} läbi", "pool {next_h}", "kolmkümmend viis minutit {h} läbi", "kahekümne minuti pärast {next_h}", "kolmveerand {next_h}", "kümne minuti pärast {next_h}", "viie minuti pärast {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

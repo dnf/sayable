@@ -14,14 +14,14 @@
 sa_plural('ha', 1, one) :- !.
 sa_plural('ha', _, other).
 
-sa_unit('ha', day, one, '{n} kwana').
-sa_unit('ha', day, other, '{n} kwanaki').
-sa_unit('ha', week, one, '{n} mako').
-sa_unit('ha', week, other, '{n} makonni').
-sa_unit('ha', month, one, '{n} wata').
-sa_unit('ha', month, other, '{n} watanni').
-sa_unit('ha', year, one, '{n} shekara').
-sa_unit('ha', year, other, '{n} shekaru').
+sa_unit('ha', day, one, 'kwana {n}').
+sa_unit('ha', day, other, 'kwanaki {n}').
+sa_unit('ha', week, one, 'mako {n}').
+sa_unit('ha', week, other, 'makonni {n}').
+sa_unit('ha', month, one, 'wata {n}').
+sa_unit('ha', month, other, 'watanni {n}').
+sa_unit('ha', year, one, 'shekara {n}').
+sa_unit('ha', year, other, 'shekaru {n}').
 
 sa_half('ha', '{n}½').
 sa_delimiter('ha', ', ').
@@ -29,15 +29,21 @@ sa_just_born('ha', 'Sabon haihuwa').
 
 sa_stage('ha', newborn, _, 'Jariri').
 sa_stage('ha', infant, _, 'Jariri').
+sa_stage('ha', toddler, m, 'Ƙaramin yaro').
+sa_stage('ha', toddler, f, 'Ƙaramar yarinya').
 sa_stage('ha', toddler, _, 'Ƙaramin yaro').
+sa_stage('ha', child, m, 'Yaro').
+sa_stage('ha', child, f, 'Yarinya').
 sa_stage('ha', child, _, 'Yaro').
+sa_stage('ha', teenager, m, 'Saurayi').
+sa_stage('ha', teenager, f, 'Budurwa').
 sa_stage('ha', teenager, _, 'Saurayi').
 sa_stage('ha', adult, _, 'Babba').
 
-short_sa_unit('ha', day, _, '{n} kw.').
-short_sa_unit('ha', week, _, '{n} mk.').
-short_sa_unit('ha', month, _, '{n} wt.').
-short_sa_unit('ha', year, _, '{n} shk.').
+short_sa_unit('ha', day, _, 'kw. {n}').
+short_sa_unit('ha', week, _, 'mk. {n}').
+short_sa_unit('ha', month, _, 'wt. {n}').
+short_sa_unit('ha', year, _, 'shk. {n}').
 
 compact_sa_unit('ha', day, _, '{n}d').
 compact_sa_unit('ha', week, _, '{n}w').

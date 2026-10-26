@@ -20,7 +20,7 @@ class KNLocale {
       "year": {"one": "{n} ವರ್ಷ", "other": "{n} ವರ್ಷಗಳು"},
     }
   }
-  static half { "{0}ವರೆ" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justBorn { "ನವಜಾತ ಶಿಶು" }
   static stages {

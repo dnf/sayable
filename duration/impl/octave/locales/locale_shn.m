@@ -40,6 +40,7 @@ function loc = locale_shn()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}mo';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
   loc.compact.ago = '{0} ပူၼ်ႉမႃး';
   loc.compact.in_future = 'ထႅင်ႈ {0}';

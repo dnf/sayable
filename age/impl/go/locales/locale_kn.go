@@ -28,7 +28,7 @@ var KN = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ತಿಂಗಳು", sa.Other: "{n} ತಿಂಗಳುಗಳು"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ವರ್ಷ", sa.Other: "{n} ವರ್ಷಗಳು"}),
 	},
-	Half:      "{0}ವರೆ",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustBorn:  "ನವಜಾತ ಶಿಶು",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

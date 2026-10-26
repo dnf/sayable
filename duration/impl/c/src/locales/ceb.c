@@ -28,7 +28,7 @@ const SduDurationLocale sdu_locale_ceb = {
         { "{n} ka bulan", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ka tuig", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n}½", ", ",
+    "{0} ug tunga", ", ",
     "karon lang",
     "{0} ang milabay", "sulod sa {0}",
     true, { true, { "{n} seg", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} oras", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ka adlaw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ka semana", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ka bulan", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ka tuig", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ang milabay", true, "sulod sa {0}" },

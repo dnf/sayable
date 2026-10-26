@@ -29,7 +29,7 @@ final tn = AgeLocale(
   infant: stageNeutral('Lesea'),
   toddler: stageNeutral('Ngwana yo monnye'),
   child: stageNeutral('Ngwana'),
-  teenager: stageNeutral('Lekgarebe'),
+  teenager: stageNeutral('Mosha'),
   adult: stageNeutral('Motho yo mogolo'),
   short: CompactnessOverride(
     day: pluralUnit({PluralCategory.one: 'letsatsi {n}', PluralCategory.other: 'malatsi {n}'}),

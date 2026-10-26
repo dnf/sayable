@@ -14,12 +14,12 @@
 (def locale
   {:code "he"
    :plural (fn [n] (cond (== n 1) :one (== n 2) :two :else :other))
-   :second {:type :pluralized :forms {:one "שנייה {n}" :two "שתי שניות" :other "{n} שניות"}}
-   :minute {:type :pluralized :forms {:one "דקה {n}" :two "שתי דקות" :other "{n} דקות"}}
-   :hour {:type :pluralized :forms {:one "שעה {n}" :two "שעתיים" :other "{n} שעות"}}
-   :day {:type :pluralized :forms {:one "יום {n}" :two "יומיים" :other "{n} ימים"}}
-   :week {:type :pluralized :forms {:one "שבוע {n}" :two "שבועיים" :other "{n} שבועות"}}
-   :month {:type :pluralized :forms {:one "חודש {n}" :two "חודשיים" :other "{n} חודשים"}}
+   :second {:type :pluralized :forms {:one "שנייה" :two "שתי שניות" :other "{n} שניות"}}
+   :minute {:type :pluralized :forms {:one "דקה" :two "שתי דקות" :other "{n} דקות"}}
+   :hour {:type :pluralized :forms {:one "שעה" :two "שעתיים" :other "{n} שעות"}}
+   :day {:type :pluralized :forms {:one "יום" :two "יומיים" :other "{n} ימים"}}
+   :week {:type :pluralized :forms {:one "שבוע" :two "שבועיים" :other "{n} שבועות"}}
+   :month {:type :pluralized :forms {:one "חודש" :two "חודשיים" :other "{n} חודשים"}}
    :year {:type :pluralized :forms {:one "שנה" :two "שנתיים" :other "{n} שנים"}}
    :half "{0} וחצי"
    :delimiter ", "

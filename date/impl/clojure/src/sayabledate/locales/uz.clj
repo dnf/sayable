@@ -15,18 +15,18 @@
   {:code "uz"
    :months ["yanvar" "fevral" "mart" "aprel" "may" "iyun" "iyul" "avgust" "sentabr" "oktabr" "noyabr" "dekabr"]
    :weekdays ["yakshanba" "dushanba" "seshanba" "chorshanba" "payshanba" "juma" "shanba"]
-   :day-format "{n}"
+   :day-format "{n}-"
    :day-format-exceptions {}
-   :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern "{day}{month}"
+   :date-pattern-with-year "{day}{month}, {year}"
    :today "bugun"
    :tomorrow "ertaga"
    :yesterday "kecha"
    :day-after-tomorrow "indinga"
-   :day-before-yesterday "kechagina"
+   :day-before-yesterday "o'tgan kuni"
    :this-weekday "bu {weekday}"
    :next-weekday "keyingi {weekday}"
    :last-weekday "o'tgan {weekday}"
    :months-in-date nil
-   :short {:months ["yan" "fev" "mar" "apr" "may" "iyn" "iyl" "avg" "sen" "okt" "noy" "dek"] :months-in-date nil :weekdays ["yak" "dush" "sesh" "chor" "pay" "jum" "shan"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["yan" "fev" "mar" "apr" "may" "iyn" "iyl" "avg" "sen" "okt" "noy" "dek"] :months-in-date nil :weekdays ["yak" "dush" "sesh" "chor" "pay" "jum" "shan"] :day-format "{n}-" :day-format-exceptions nil :date-pattern "{day}{month}" :date-pattern-with-year "{day}{month}, {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

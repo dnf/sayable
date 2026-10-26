@@ -20,7 +20,7 @@ export const dv: AgeLocale = {
     month: '{n} މަސް',
     year:  '{n} އަހަރު',
   },
-  half: '{0} ބައި',
+  half: '{n}½',
   delimiter: '، ',
   justBorn: 'އަލަށް އުފަންވި',
   stages: {

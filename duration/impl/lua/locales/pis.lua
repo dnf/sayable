@@ -22,7 +22,7 @@ M.units = {
     month = "{n} manis",
     year = "{n} yia",
 }
-M.half = "{n} en haf"
+M.half = "{0} en haf"
 M.delimiter = ", "
 M.just_now = "nomoa nao"
 M.ago = "{0} bifoa"
@@ -50,6 +50,7 @@ M.compact = {
         month = "{n}mo",
         year = "{n}y",
     },
+    half = "{n}½",
     delimiter = "",
     ago = "{0} bifoa",
     in_future = "long {0}",

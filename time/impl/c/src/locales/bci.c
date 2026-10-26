@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_bci = {
     "bci",
     {
-        { "blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun" },
+        { "blu-nin-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-nin-kun" },
         "kɔnguɛ afiɛn",
         "nnɔsua",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "dɔ {h}", "dɔ {h} nin miniti nnun", "dɔ {h} nin miniti blu", "dɔ {h} nin miniti blu-nin-nnun", "dɔ {h} nin miniti ablaɔn", "dɔ {h} nin miniti ablaɔn-nin-nnun", "dɔ {h} nin miniti ablasan", "dɔ {h} nin miniti ablasan-nin-nnun", "dɔ {h} nin miniti ablanan", "dɔ {h} nin miniti ablanan-nin-nnun", "dɔ {h} nin miniti ablenun", "dɔ {h} nin miniti ablenun-nin-nnun" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

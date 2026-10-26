@@ -27,13 +27,13 @@
   (make-duration-locale
    :code "be"
    :plural #'plural-ru-uk
-   :units (list (cons :second '((:one . "{n} секунда") (:few . "{n} секунды") (:many . "{n} секунд") (:other . "{n} секунд")))
-               (cons :minute '((:one . "{n} хвіліна") (:few . "{n} хвіліны") (:many . "{n} хвілін") (:other . "{n} хвілін")))
-               (cons :hour '((:one . "{n} гадзіна") (:few . "{n} гадзіны") (:many . "{n} гадзін") (:other . "{n} гадзін")))
-               (cons :day '((:one . "{n} дзень") (:few . "{n} дні") (:many . "{n} дзён") (:other . "{n} дзён")))
-               (cons :week '((:one . "{n} тыдзень") (:few . "{n} тыдні") (:many . "{n} тыдняў") (:other . "{n} тыдняў")))
-               (cons :month '((:one . "{n} месяц") (:few . "{n} месяцы") (:many . "{n} месяцаў") (:other . "{n} месяцаў")))
-               (cons :year '((:one . "{n} год") (:few . "{n} гады") (:many . "{n} гадоў") (:other . "{n} гадоў"))))
+   :units (list (cons :second '((:one . "{n} секунда") (:few . "{n} секунды") (:many . "{n} секунд") (:other . "{n} секунды")))
+               (cons :minute '((:one . "{n} хвіліна") (:few . "{n} хвіліны") (:many . "{n} хвілін") (:other . "{n} хвіліны")))
+               (cons :hour '((:one . "{n} гадзіна") (:few . "{n} гадзіны") (:many . "{n} гадзін") (:other . "{n} гадзіны")))
+               (cons :day '((:one . "{n} дзень") (:few . "{n} дні") (:many . "{n} дзён") (:other . "{n} дня")))
+               (cons :week '((:one . "{n} тыдзень") (:few . "{n} тыдні") (:many . "{n} тыдняў") (:other . "{n} тыдня")))
+               (cons :month '((:one . "{n} месяц") (:few . "{n} месяцы") (:many . "{n} месяцаў") (:other . "{n} месяца")))
+               (cons :year '((:one . "{n} год") (:few . "{n} гады") (:many . "{n} гадоў") (:other . "{n} года"))))
    :half "{n} з паловай"
    :delimiter ", "
    :just-now "толькі што"

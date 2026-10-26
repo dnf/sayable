@@ -25,16 +25,16 @@ fn plural_he(n int) PluralCategory {
 pub const locale_he = AgeLocale{
 	code: 'he'
 	plural: plural_he
-	day: plural_unit({PluralCategory.one: 'יום {n}', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'})
-	week: plural_unit({PluralCategory.one: 'שבוע {n}', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'})
-	month: plural_unit({PluralCategory.one: 'חודש {n}', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'})
+	day: plural_unit({PluralCategory.one: 'יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'})
+	week: plural_unit({PluralCategory.one: 'שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'})
+	month: plural_unit({PluralCategory.one: 'חודש', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'})
 	year: plural_unit({PluralCategory.one: 'שנה', PluralCategory.two: 'שנתיים', PluralCategory.other: '{n} שנים'})
 	half: '{0} וחצי'
 	delimiter: ', '
 	just_born: 'רק נולד'
 	newborn: stage_gendered('רק נולד', 'רק נולדה')
-	infant: stage_neutral('תינוק')
-	toddler: stage_neutral('פעוט')
+	infant: stage_gendered('תינוק', 'תינוקת')
+	toddler: stage_gendered('פעוט', 'פעוטה')
 	child: stage_gendered('ילד', 'ילדה')
 	teenager: stage_gendered('נער', 'נערה')
 	adult: stage_gendered('מבוגר', 'מבוגרת')

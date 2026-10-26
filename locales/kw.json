@@ -6,7 +6,7 @@
     "units": {
       "day": {
         "zero": "{n} dydh",
-        "one": "dydh",
+        "one": "{n} dydh",
         "two": "{n} dhydh",
         "few": "{n} dydh",
         "many": "{n} dydh",
@@ -14,7 +14,7 @@
       },
       "week": {
         "zero": "{n} seythun",
-        "one": "seythun",
+        "one": "{n} seythun",
         "two": "{n} seythun",
         "few": "{n} seythun",
         "many": "{n} seythun",
@@ -22,7 +22,7 @@
       },
       "month": {
         "zero": "{n} mis",
-        "one": "mis",
+        "one": "{n} mis",
         "two": "{n} vis",
         "few": "{n} mis",
         "many": "{n} mis",
@@ -30,7 +30,7 @@
       },
       "year": {
         "zero": "{n} blydhen",
-        "one": "blydhen",
+        "one": "{n} blydhen",
         "two": "{n} vlydhen",
         "few": "{n} blydhen",
         "many": "{n} blydhen",
@@ -161,7 +161,7 @@
       },
       "day": {
         "zero": "{n} dydh",
-        "one": "dydh",
+        "one": "{n} dydh",
         "two": "{n} dhydh",
         "few": "{n} dydh",
         "many": "{n} dydh",
@@ -169,7 +169,7 @@
       },
       "week": {
         "zero": "{n} seythun",
-        "one": "seythun",
+        "one": "{n} seythun",
         "two": "{n} seythun",
         "few": "{n} seythun",
         "many": "{n} seythun",
@@ -177,7 +177,7 @@
       },
       "month": {
         "zero": "{n} mis",
-        "one": "mis",
+        "one": "{n} mis",
         "two": "{n} vis",
         "few": "{n} mis",
         "many": "{n} mis",
@@ -185,7 +185,7 @@
       },
       "year": {
         "zero": "{n} blydhen",
-        "one": "blydhen",
+        "one": "{n} blydhen",
         "two": "{n} vlydhen",
         "few": "{n} blydhen",
         "many": "{n} blydhen",
@@ -245,34 +245,34 @@
   "time": {
     "clock": {
       "hours": [
-        "12",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11"
+        "dewdhek",
+        "unn",
+        "diw",
+        "teyr",
+        "peder",
+        "pymp",
+        "hwegh",
+        "seyth",
+        "eth",
+        "naw",
+        "deg",
+        "unnek"
       ],
       "midnight": "hanter nos",
       "noon": "hanter dydh",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} eur",
+        "5": "pymp mynysen wosa {h}",
+        "10": "deg mynysen wosa {h}",
+        "15": "kwarter wosa {h}",
+        "20": "ugens mynysen wosa {h}",
+        "25": "pymp mynysen warn ugens wosa {h}",
+        "30": "hanter wosa {h}",
+        "35": "pymp mynysen warn ugens dhe {next_h}",
+        "40": "ugens mynysen dhe {next_h}",
+        "45": "kwarter dhe {next_h}",
+        "50": "deg mynysen dhe {next_h}",
+        "55": "pymp mynysen dhe {next_h}"
       }
     },
     "short": {
@@ -287,5 +287,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Replaced digit placeholders with the standard learner-course Cornish (SWF): feminine hour numerals agreeing with 'eur' (unn, diw, teyr, peder, pymp, hwegh, seyth, eth, naw, deg, unnek, dewdhek); '{h} eur' on the hour; 'X mynysen wosa {h}' / 'kwarter wosa' / 'hanter wosa' for past; 'X mynysen dhe {next_h}' / 'kwarter dhe' for to; 25 minutes as 'pymp mynysen warn ugens'. Compromise: 'dhe' triggers soft mutation of the following numeral (dhe dhiw, dhe deyr, dhe beder, dhe bymp, dhe dheg, dhe dhewdhek), which the single hours list cannot express, so the to-phrases use unmutated numerals. Not checked against a native source, so a Cornish reviewer should confirm."
+    }
+  ]
 }

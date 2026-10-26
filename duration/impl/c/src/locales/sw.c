@@ -20,9 +20,9 @@ const SduDurationLocale sdu_locale_sw = {
     "sw",
     plural_sw,
     {
-        { "{n} sekunde", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} dakika", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} saa", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "sekunde {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "dakika {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "saa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { NULL, { NULL, "siku {n}", NULL, NULL, NULL, "siku {n}" } },
         { NULL, { NULL, "wiki {n}", NULL, NULL, NULL, "wiki {n}" } },
         { NULL, { NULL, "mwezi {n}", NULL, NULL, NULL, "miezi {n}" } },

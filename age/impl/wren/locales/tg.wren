@@ -20,7 +20,7 @@ class TGLocale {
       "year": "{n} сол",
     }
   }
-  static half { "{0} ним" }
+  static half { "{0}у ним" }
   static delimiter { ", " }
   static justBorn { "Навзод" }
   static stages {

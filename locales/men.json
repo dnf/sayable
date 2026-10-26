@@ -221,7 +221,7 @@
   "time": {
     "clock": {
       "hours": [
-        "pu wɛlɛ",
+        "pu mahu fele",
         "yila",
         "fele",
         "sawa",
@@ -237,18 +237,18 @@
       "midnight": "kpindi gbɔyɔŋ",
       "noon": "ndɔlei-ma",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "awa {h}",
+        "5": "awa {h} kɛ miniti lɔɔlu",
+        "10": "awa {h} kɛ miniti pu",
+        "15": "awa {h} kɛ miniti pu mahu lɔɔlu",
+        "20": "awa {h} kɛ miniti nuu yila gboyongo",
+        "25": "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu",
+        "30": "awa {h} kɛ miniti nuu yila gboyongo mahu pu",
+        "35": "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu",
+        "40": "awa {h} kɛ miniti nuu fele gboyongo",
+        "45": "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu",
+        "50": "awa {h} kɛ miniti nuu fele gboyongo mahu pu",
+        "55": "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu"
       }
     },
     "short": {
@@ -271,5 +271,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Best effort per orchestrator instruction: 'awa {h}' (awa = hour, as the file's duration unit) + additive 'kɛ miniti N' (kɛ = and, miniti = minute). Minute numerals use the Mende vigesimal system: pu 10, pu mahu lɔɔlu 15, nuu yila gboyongo 20 ('one whole person'), ... nuu fele gboyongo 40, so 2:55 is long ('awa fele kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu'). No half word used at 30 because the file's 'ta fele' could not be verified. Doubts: hour noun, the 'kɛ' linker, and whether speakers would really say such long minute counts rather than switch to Krio/English. Needs a Mende speaker."
+    }
+  ]
 }

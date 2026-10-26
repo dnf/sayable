@@ -18,8 +18,8 @@ sub locale {{
   code => 'qu',
   plural => sub { 'other' },
   units => {
-    second => '{n} ñiqin',
-    minute => '{n} chiniku',
+    second => '{n} sikundu',
+    minute => '{n} minutu',
     hour => '{n} ura',
     day => '{n} p\'unchaw',
     week => '{n} simana',
@@ -33,8 +33,8 @@ sub locale {{
   in_future => '{0} qhipata',
   short => {
     units => {
-      second => '{n} ñiq',
-      minute => '{n} chi',
+      second => '{n} sik',
+      minute => '{n} min',
       hour => '{n} ura',
       day => '{n} p\'un',
       week => '{n} sim',

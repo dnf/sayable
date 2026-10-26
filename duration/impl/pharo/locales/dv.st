@@ -26,7 +26,7 @@ dv
 		'month'. '{n} މަސް'.
 		'year'. '{n} އަހަރު'.
 	}).
-	locale half: '{0} ބައި'.
+	locale half: '{n}½'.
 	locale delimiter: '، '.
 	locale justNow: 'މިހާރު'.
 	locale ago: 'މީގެ {0} ކުރިން'.

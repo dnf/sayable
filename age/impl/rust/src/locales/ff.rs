@@ -44,11 +44,14 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Ɓinngel".to_string()),
             toddler: StageLabel::Neutral("Cukalel".to_string()),
             child: StageLabel::Neutral("Suka".to_string()),
-            teenager: StageLabel::Neutral("Suka debbo".to_string()),
+            teenager: StageLabel::Gendered { m: "Suka gorko".to_string(), f: "Suka debbo".to_string() },
             adult: StageLabel::Neutral("Mawɗo".to_string()),
         },
         short: Some(CompactnessOverride {
-            day: Some(UnitForms::simple("ñalɗe {n}")),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "ñalawma {n}"),
+                (PluralCategory::Other, "ñalɗe {n}"),
+            ])),
             week: Some(UnitForms::plural(&[
                 (PluralCategory::One, "yontere {n}"),
                 (PluralCategory::Other, "yontereeji {n}"),
@@ -66,7 +69,10 @@ pub fn locale() -> AgeLocale {
             just_born: None,
         }),
         compact: Some(CompactnessOverride {
-            day: Some(UnitForms::simple("ñalɗe {n}")),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "ñalawma {n}"),
+                (PluralCategory::Other, "ñalɗe {n}"),
+            ])),
             week: Some(UnitForms::plural(&[
                 (PluralCategory::One, "yont {n}"),
                 (PluralCategory::Other, "yontji {n}"),

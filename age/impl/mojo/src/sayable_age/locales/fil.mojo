@@ -38,7 +38,7 @@ fn build_fil() -> AgeLocale:
     var toddler = stage_neutral("Batang paslit")
     var child = stage_neutral("Bata")
     var teenager = stage_neutral("Tinedyer")
-    var adult = stage_neutral("Matanda")
+    var adult = stage_neutral("Adulto")
 
     var short_ovr = CompactnessOverride()
     short_ovr.day = simple_unit("{n} araw")

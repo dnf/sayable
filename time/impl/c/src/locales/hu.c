@@ -17,7 +17,7 @@ const StTimeLocale st_locale_hu = {
         { "tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy" },
         "éjfél",
         "dél",
-        { "{h} óra", "öt múlt {h}", "tíz múlt {h}", "negyed múlt {h}", "húsz múlt {h}", "huszonöt múlt {h}", "fél múlt {h}", "huszonöt múlva {next_h}", "húsz múlva {next_h}", "negyed múlva {next_h}", "tíz múlva {next_h}", "öt múlva {next_h}" }
+        { "{h} óra", "öt perccel múlt {h}", "tíz perccel múlt {h}", "negyed {next_h}", "húsz perccel múlt {h}", "öt perc múlva fél {next_h}", "fél {next_h}", "öt perccel múlt fél {next_h}", "húsz perc múlva {next_h}", "háromnegyed {next_h}", "tíz perc múlva {next_h}", "öt perc múlva {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

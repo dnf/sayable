@@ -15,12 +15,30 @@ use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLab
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "kl".to_string(),
-        plural: |_n| PluralCategory::Other,
+        plural: |n| {
+            if n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
+        },
         units: Units {
-            day: UnitForms::simple("ullut {n}"),
-            week: UnitForms::simple("sapaatit {n}"),
-            month: UnitForms::simple("qaammatit {n}"),
-            year: UnitForms::simple("ukiut {n}"),
+            day: UnitForms::plural(&[
+                (PluralCategory::One, "ulloq {n}"),
+                (PluralCategory::Other, "ullut {n}"),
+            ]),
+            week: UnitForms::plural(&[
+                (PluralCategory::One, "sapaatip akunnera {n}"),
+                (PluralCategory::Other, "sapaatip akunneri {n}"),
+            ]),
+            month: UnitForms::plural(&[
+                (PluralCategory::One, "qaammat {n}"),
+                (PluralCategory::Other, "qaammatit {n}"),
+            ]),
+            year: UnitForms::plural(&[
+                (PluralCategory::One, "ukioq {n}"),
+                (PluralCategory::Other, "ukiut {n}"),
+            ]),
         },
         half: "{0} affaa".to_string(),
         delimiter: ", ".to_string(),
@@ -35,7 +53,7 @@ pub fn locale() -> AgeLocale {
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("ull. {n}")),
-            week: Some(UnitForms::simple("sap. {n}")),
+            week: Some(UnitForms::simple("sap. ak. {n}")),
             month: Some(UnitForms::simple("qaam. {n}")),
             year: Some(UnitForms::simple("uk. {n}")),
             half: None,
@@ -47,7 +65,7 @@ pub fn locale() -> AgeLocale {
             week: Some(UnitForms::simple("{n}w")),
             month: Some(UnitForms::simple("{n}m")),
             year: Some(UnitForms::simple("{n}y")),
-            half: None,
+            half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             just_born: None,
         }),

@@ -16,9 +16,9 @@ function plural_sw([int]$n) {
 
 function locale_sw {
     $units = @{
-        second = '{n} sekunde'
-        minute = '{n} dakika'
-        hour = '{n} saa'
+        second = 'sekunde {n}'
+        minute = 'dakika {n}'
+        hour = 'saa {n}'
         day = @{ one = 'siku {n}'; other = 'siku {n}' }
         week = @{ one = 'wiki {n}'; other = 'wiki {n}' }
         month = @{ one = 'mwezi {n}'; other = 'miezi {n}' }

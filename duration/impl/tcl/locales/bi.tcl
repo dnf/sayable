@@ -24,7 +24,7 @@ proc locale_duration_bi {} {
         month "{n} manis" \
         year "{n} yia" \
     ]
-    set half "{n} mo haf"
+    set half "{0} mo haf"
     set delimiter {, }
     set just_now {jas nao}
     set ago "{0} bifo"
@@ -52,6 +52,7 @@ proc locale_duration_bi {} {
             month "{n}mo" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
         ago "{0} bifo" \
         in_future "long {0}" \

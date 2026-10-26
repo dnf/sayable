@@ -28,7 +28,7 @@ vi
 	locale justBorn: 'Sơ sinh'.
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. 'Sơ sinh'.
-		#infant. 'Trẻ sơ sinh'.
+		#infant. 'Trẻ nhũ nhi'.
 		#toddler. 'Trẻ mới biết đi'.
 		#child. 'Trẻ em'.
 		#teenager. 'Thiếu niên'.

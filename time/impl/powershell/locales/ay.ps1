@@ -10,22 +10,22 @@
 # Source: locales/ay.json
 
 function locale_ay {
-    $hours = @('tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llantunka', 'tunka', 'tunka mayani')
+    $hours = @('tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llätunka', 'tunka', 'tunka mayani')
     $midnight = 'aruma chika'
     $noon = 'chika uru'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h} ura'
+    $patterns[5] = '{h} ura phisqa minutuni'
+    $patterns[10] = '{h} ura tunka minutuni'
+    $patterns[15] = '{h} ura tunka phisqani minutuni'
+    $patterns[20] = '{h} ura pä tunka minutuni'
+    $patterns[25] = '{h} ura pä tunka phisqani minutuni'
+    $patterns[30] = '{h} ura chikani'
+    $patterns[35] = '{h} ura kimsa tunka phisqani minutuni'
+    $patterns[40] = '{h} ura pusi tunka minutuni'
+    $patterns[45] = '{h} ura pusi tunka phisqani minutuni'
+    $patterns[50] = '{h} ura phisqa tunka minutuni'
+    $patterns[55] = '{h} ura phisqa tunka phisqani minutuni'
     $clock = @{
         hours = $hours
         midnight = $midnight

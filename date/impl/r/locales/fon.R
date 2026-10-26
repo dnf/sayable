@@ -12,7 +12,7 @@
 locale_fon <- list(
   code = "fon",
   months = c("Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"),
-  weekdays = c("Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"),
+  weekdays = c("Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe"),
   day_format = "{n}",
   day_format_exceptions = list(),
   date_pattern = "{day} {month}",
@@ -27,7 +27,7 @@ locale_fon <- list(
   last_weekday = "{weekday} e wá yí",
   short = list(
     months = c("Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"),
-    weekdays = c("Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"),
+    weekdays = c("Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib"),
     day_format = "{n}",
     date_pattern = "{day} {month}",
     date_pattern_with_year = "{day} {month} {year}"

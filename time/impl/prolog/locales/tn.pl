@@ -11,22 +11,22 @@
 
 % Tswana locale.
 
-st_hours('tn', ['lesome le bobedi', 'nngwe', 'pedi', 'tharo', 'nne', 'tlhano', 'thataro', 'supa', 'robedi', 'robongwe', 'lesome', 'lesome le bongwe']).
+st_hours('tn', ['ya lesome le bobedi', 'ya ntlha', 'ya bobedi', 'ya boraro', 'ya bone', 'ya botlhano', 'ya borataro', 'ya bosupa', 'ya borobedi', 'ya borobongwe', 'ya lesome', 'ya lesome le bongwe']).
 st_midnight('tn', 'bosigo jwa magareng').
 st_noon('tn', 'motshegare').
 
-st_pattern('tn', 0, '{h}:00').
-st_pattern('tn', 5, '{h}:05').
-st_pattern('tn', 10, '{h}:10').
-st_pattern('tn', 15, '{h}:15').
-st_pattern('tn', 20, '{h}:20').
-st_pattern('tn', 25, '{h}:25').
-st_pattern('tn', 30, '{h}:30').
-st_pattern('tn', 35, '{h}:35').
-st_pattern('tn', 40, '{h}:40').
-st_pattern('tn', 45, '{h}:45').
-st_pattern('tn', 50, '{h}:50').
-st_pattern('tn', 55, '{h}:55').
+st_pattern('tn', 0, 'ura {h}').
+st_pattern('tn', 5, 'ura {h} le metsotso e metlhano').
+st_pattern('tn', 10, 'ura {h} le metsotso e le lesome').
+st_pattern('tn', 15, 'ura {h} le kotara').
+st_pattern('tn', 20, 'ura {h} le metsotso e le masome a mabedi').
+st_pattern('tn', 25, 'ura {h} le metsotso e le masome a mabedi le botlhano').
+st_pattern('tn', 30, 'ura {h} le halofo').
+st_pattern('tn', 35, 'ura {h} le metsotso e le masome a mararo le botlhano').
+st_pattern('tn', 40, 'ura {h} le metsotso e le masome a mane').
+st_pattern('tn', 45, 'ura {h} le metsotso e le masome a mane le botlhano').
+st_pattern('tn', 50, 'ura {h} le metsotso e le masome a matlhano').
+st_pattern('tn', 55, 'ura {h} le metsotso e le masome a matlhano le botlhano').
 
 short_st_use24h('tn', false).
 short_st_format('tn', '{h}:{mm} {ampm}').

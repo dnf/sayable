@@ -13,15 +13,15 @@ proc locale_date_uz {} {
     set code {uz}
     set months [list {yanvar} {fevral} {mart} {aprel} {may} {iyun} {iyul} {avgust} {sentabr} {oktabr} {noyabr} {dekabr}]
     set weekdays [list {yakshanba} {dushanba} {seshanba} {chorshanba} {payshanba} {juma} {shanba}]
-    set day_format "{n}"
+    set day_format "{n}-"
     set day_format_exceptions [dict create]
-    set date_pattern "{day} {month}"
-    set date_pattern_with_year "{day} {month} {year}"
+    set date_pattern "{day}{month}"
+    set date_pattern_with_year "{day}{month}, {year}"
     set today {bugun}
     set tomorrow {ertaga}
     set yesterday {kecha}
     set day_after_tomorrow {indinga}
-    set day_before_yesterday {kechagina}
+    set day_before_yesterday {o'tgan kuni}
     set this_weekday "bu {weekday}"
     set next_weekday "keyingi {weekday}"
     set last_weekday "o'tgan {weekday}"
@@ -29,9 +29,9 @@ proc locale_date_uz {} {
     set short [dict create \
         months [list {yan} {fev} {mar} {apr} {may} {iyn} {iyl} {avg} {sen} {okt} {noy} {dek}] \
         weekdays [list {yak} {dush} {sesh} {chor} {pay} {jum} {shan}] \
-        day_format "{n}" \
-        date_pattern "{day} {month}" \
-        date_pattern_with_year "{day} {month} {year}" \
+        day_format "{n}-" \
+        date_pattern "{day}{month}" \
+        date_pattern_with_year "{day}{month}, {year}" \
     ]
     set compact [dict create \
         date_pattern "{d}/{m}" \

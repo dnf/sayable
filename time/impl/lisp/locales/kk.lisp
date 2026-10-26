@@ -20,7 +20,7 @@
     :hours (list "он екі" "бір" "екі" "үш" "төрт" "бес" "алты" "жеті" "сегіз" "тоғыз" "он" "он бір")
     :midnight "түн ортасы"
     :noon "түс"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "бес past {h}") (cons 10 "он past {h}") (cons 15 "он бес past {h}") (cons 20 "жиырма past {h}") (cons 25 "жиырма бес past {h}") (cons 30 "отыз past {h}") (cons 35 "жиырма бес to {next_h}") (cons 40 "жиырма to {next_h}") (cons 45 "он бес to {next_h}") (cons 50 "он to {next_h}") (cons 55 "бес to {next_h}")))
+    :patterns (list (cons 0 "сағат {h}") (cons 5 "{h} нөл бес") (cons 10 "{h} он") (cons 15 "{h} он бес") (cons 20 "{h} жиырма") (cons 25 "{h} жиырма бес") (cons 30 "{h} жарым") (cons 35 "{h} отыз бес") (cons 40 "{h} қырық") (cons 45 "{h} қырық бес") (cons 50 "{h} елу") (cons 55 "{h} елу бес")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

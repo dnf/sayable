@@ -11,22 +11,22 @@
 
 % Sukuma locale.
 
-st_hours('suk', ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja']).
+st_hours('suk', ['sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja', 'kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano']).
 st_midnight('suk', 'usiku gati').
 st_noon('suk', 'adhuhuri').
 
-st_pattern('suk', 0, '{h}:00').
-st_pattern('suk', 5, '{h}:05').
-st_pattern('suk', 10, '{h}:10').
-st_pattern('suk', 15, '{h}:15').
-st_pattern('suk', 20, '{h}:20').
-st_pattern('suk', 25, '{h}:25').
-st_pattern('suk', 30, '{h}:30').
-st_pattern('suk', 35, '{h}:35').
-st_pattern('suk', 40, '{h}:40').
-st_pattern('suk', 45, '{h}:45').
-st_pattern('suk', 50, '{h}:50').
-st_pattern('suk', 55, '{h}:55').
+st_pattern('suk', 0, 'saa {h}').
+st_pattern('suk', 5, 'saa {h} na dakika tano').
+st_pattern('suk', 10, 'saa {h} na dakika kumi').
+st_pattern('suk', 15, 'saa {h} na robo').
+st_pattern('suk', 20, 'saa {h} na dakika ishirini').
+st_pattern('suk', 25, 'saa {h} na dakika ishirini na tano').
+st_pattern('suk', 30, 'saa {h} na nusu').
+st_pattern('suk', 35, 'saa {next_h} kasoro dakika ishirini na tano').
+st_pattern('suk', 40, 'saa {next_h} kasoro dakika ishirini').
+st_pattern('suk', 45, 'saa {next_h} kasoro robo').
+st_pattern('suk', 50, 'saa {next_h} kasoro dakika kumi').
+st_pattern('suk', 55, 'saa {next_h} kasoro dakika tano').
 
 short_st_use24h('suk', false).
 short_st_format('suk', '{h}:{mm} {ampm}').

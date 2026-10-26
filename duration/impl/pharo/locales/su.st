@@ -28,7 +28,7 @@ su
 	}).
 	locale half: '{0} satengah'.
 	locale delimiter: ', '.
-	locale justNow: 'ayeuna'.
+	locale justNow: 'nembé'.
 	locale ago: '{0} kapengker'.
 	locale inFuture: 'dina {0}'.
 	locale short: (Dictionary newFromPairs: {

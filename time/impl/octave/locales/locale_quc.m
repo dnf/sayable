@@ -11,10 +11,10 @@
 
 function loc = locale_quc()
   loc.code = 'quc';
-  loc.clock.hours = {'kab''lajuj', 'jun', 'ka''i''', 'oxi''', 'kaji''', 'jo''', 'waqi''', 'wuqu''', 'wajxaqi''', 'b''eleji''', 'lajuj', 'julajuj'};
+  loc.clock.hours = {'kab''lajuj', 'jun', 'keb''', 'oxib''', 'kajib''', 'job''', 'waqib''', 'wuqub''', 'wajxaqib''', 'b''elejeb''', 'lajuj', 'julajuj'};
   loc.clock.midnight = 'nik''aj aq''ab''';
   loc.clock.noon = 'nik''aj q''ij';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h} ramaj', "p5", '{h} ramaj job''', "p10", '{h} ramaj lajuj', "p15", '{h} ramaj olajuj', "p20", '{h} ramaj juwinaq', "p25", '{h} ramaj juwinaq job''', "p30", '{h} ramaj juwinaq lajuj', "p35", '{h} ramaj juwinaq olajuj', "p40", '{h} ramaj kawinaq', "p45", '{h} ramaj kawinaq job''', "p50", '{h} ramaj kawinaq lajuj', "p55", '{h} ramaj kawinaq olajuj');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

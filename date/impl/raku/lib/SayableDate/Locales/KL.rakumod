@@ -20,7 +20,7 @@ our sub locale() {
         day-format => '{n}.',
         day-format-exceptions => {},
         date-pattern => '{month} {day}',
-        date-pattern-with-year => '{day} {month} {year}',
+        date-pattern-with-year => '{month} {day} {year}',
         today => 'ullumi',
         tomorrow => 'aqagu',
         yesterday => 'ippassaq',
@@ -34,7 +34,7 @@ our sub locale() {
             weekdays => ('sap', 'ata', 'mar', 'pin', 'sis', 'tal', 'arf'),
             day-format => '{n}.',
             date-pattern => '{month} {day}',
-            date-pattern-with-year => '{day} {month} {year}',
+            date-pattern-with-year => '{month} {day} {year}',
         },
         compact => {
             date-pattern => '{m}-{d}',

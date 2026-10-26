@@ -20,7 +20,7 @@
     :hours (list "o'n ikki" "bir" "ikki" "uch" "to'rt" "besh" "olti" "yetti" "sakkiz" "to'qqiz" "o'n" "o'n bir")
     :midnight "yarim tun"
     :noon "tush"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "besh past {h}") (cons 10 "o'n past {h}") (cons 15 "o'n besh past {h}") (cons 20 "yigirma past {h}") (cons 25 "yigirma besh past {h}") (cons 30 "o'ttiz past {h}") (cons 35 "yigirma besh to {next_h}") (cons 40 "yigirma to {next_h}") (cons 45 "o'n besh to {next_h}") (cons 50 "o'n to {next_h}") (cons 55 "besh to {next_h}")))
+    :patterns (list (cons 0 "soat {h}") (cons 5 "soat {h} nol besh") (cons 10 "soat {h} o'n") (cons 15 "soat {h} o'n besh") (cons 20 "soat {h} yigirma") (cons 25 "soat {h} yigirma besh") (cons 30 "soat {h} yarim") (cons 35 "soat {h} o'ttiz besh") (cons 40 "soat {h} qirq") (cons 45 "soat {h} qirq besh") (cons 50 "soat {h} ellik") (cons 55 "soat {h} ellik besh")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

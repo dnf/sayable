@@ -14,10 +14,10 @@
 (def locale
   {:code "so"
    :plural (fn [n] (if (== n 1) :one :other))
-   :day {:type :pluralized :forms {:one "maalin {n}" :other "maalmood {n}"}}
-   :week {:type :pluralized :forms {:one "toddobaad {n}" :other "toddobaadyo {n}"}}
-   :month {:type :pluralized :forms {:one "bil {n}" :other "bilood {n}"}}
-   :year {:type :pluralized :forms {:one "sano {n}" :other "sanooyin {n}"}}
+   :day {:type :pluralized :forms {:one "{n} maalin" :other "{n} maalmood"}}
+   :week {:type :simple :form "{n} toddobaad"}
+   :month {:type :pluralized :forms {:one "{n} bil" :other "{n} bilood"}}
+   :year {:type :simple :form "{n} sano"}
    :half "{n}½"
    :delimiter ", "
    :just-born "Dhashay cusub"

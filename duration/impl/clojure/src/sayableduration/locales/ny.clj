@@ -14,9 +14,9 @@
 (def locale
   {:code "ny"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :simple :form "{n} sekondi"}
-   :minute {:type :simple :form "{n} mphindi"}
-   :hour {:type :simple :form "{n} ola"}
+   :second {:type :simple :form "sekondi {n}"}
+   :minute {:type :simple :form "mphindi {n}"}
+   :hour {:type :pluralized :forms {:one "ola {n}" :other "maola {n}"}}
    :day {:type :pluralized :forms {:one "tsiku {n}" :other "masiku {n}"}}
    :week {:type :pluralized :forms {:one "sabata {n}" :other "masabata {n}"}}
    :month {:type :pluralized :forms {:one "mwezi {n}" :other "miyezi {n}"}}
@@ -26,5 +26,5 @@
    :just-now "tsopano"
    :ago "{0} zapitazo"
    :in-future "mu {0}"
-   :short {:second {:type :simple :form "sek {n}"} :minute {:type :simple :form "mph {n}"} :hour {:type :simple :form "ola {n}"} :day {:type :pluralized :forms {:one "tsiku {n}" :other "mas {n}"}} :week {:type :pluralized :forms {:one "sabata {n}" :other "masab {n}"}} :month {:type :pluralized :forms {:one "mwezi {n}" :other "miyezi {n}"}} :year {:type :pluralized :forms {:one "chaka {n}" :other "zaka {n}"}} :half nil :delimiter nil :ago "{0} zapitazo" :in-future "mu {0}"}
+   :short {:second {:type :simple :form "sek {n}"} :minute {:type :simple :form "mph {n}"} :hour {:type :pluralized :forms {:one "ola {n}" :other "maola {n}"}} :day {:type :pluralized :forms {:one "tsiku {n}" :other "mas {n}"}} :week {:type :pluralized :forms {:one "sabata {n}" :other "masab {n}"}} :month {:type :pluralized :forms {:one "mwezi {n}" :other "miyezi {n}"}} :year {:type :pluralized :forms {:one "chaka {n}" :other "zaka {n}"}} :half nil :delimiter nil :ago "{0} zapitazo" :in-future "mu {0}"}
    :compact {:second {:type :simple :form "s {n}"} :minute {:type :simple :form "m {n}"} :hour {:type :simple :form "o {n}"} :day {:type :pluralized :forms {:one "ts {n}" :other "mas {n}"}} :week {:type :pluralized :forms {:one "sab {n}" :other "msb {n}"}} :month {:type :pluralized :forms {:one "mw {n}" :other "miy {n}"}} :year {:type :pluralized :forms {:one "ch {n}" :other "z {n}"}} :half "{n}½" :delimiter "" :ago "{0} zapitazo" :in-future "mu {0}"}})

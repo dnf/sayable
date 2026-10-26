@@ -22,7 +22,7 @@ const GD = DurationLocale(
     units = Dict(
         "second" => Dict("one" => "{n} diog", "two" => "{n} dhiog", "few" => "{n} diogan", "other" => "{n} diog"),
         "minute" => Dict("one" => "{n} mhionaid", "two" => "{n} mhionaid", "few" => "{n} mionaidean", "other" => "{n} mionaid"),
-        "hour" => Dict("one" => "{n} uair", "two" => "{n} uair", "few" => "{n} uairean", "other" => "{n} uair"),
+        "hour" => Dict("one" => "{n} uair a thìde", "two" => "{n} uair a thìde", "few" => "{n} uairean a thìde", "other" => "{n} uair a thìde"),
         "day" => Dict("one" => "{n} latha", "two" => "{n} latha", "few" => "{n} làithean", "other" => "{n} latha"),
         "week" => Dict("one" => "{n} sheachdain", "two" => "{n} sheachdain", "few" => "{n} seachdainean", "other" => "{n} seachdain"),
         "month" => Dict("one" => "{n} mhìos", "two" => "{n} mhìos", "few" => "{n} mìosan", "other" => "{n} mìos"),

@@ -1,9 +1,8 @@
 // sayable-age Goose implementation — canonical tests.
 //
 // Every test is annotated with its ID from age/config/tests.json. The
-// default-asOf tests (15.1, 15.2, 23.1-23.3) are skipped: like the other
-// compiled implementations, the API always takes an explicit asOf. Null
-// and undefined inputs are passed as "".
+// default-asOf tests (15.x, 23.x) derive dateOfBirth from the real current
+// date (UTC, Goose's only clock) and pass an empty asOf. Null and undefined inputs are passed as "".
 
 import sayableage from "../sayableage";
 import std;
@@ -26,6 +25,58 @@ fn expect(id: const u8[:], got: u8[:], ok: bool, want: u8[:]) {
 fn expect_none(id: const u8[:], got: u8[:], ok: bool) {
     if !ok { passed += 1; return; }
     fail(id, str("got '", got, "', want none"));
+}
+
+fn is_leap_year(year: i64) -> bool {
+    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+}
+
+fn days_in_month(year: i64, month: i64) -> i64 {
+    match month {
+        2 => if is_leap_year(year) { 29 } else { 28 },
+        4, 6, 9, 11 => 30,
+        _ => 31,
+    }
+}
+
+// Year, month and day of the date `days_back` days before today (UTC).
+fn date_parts(days_back: i64) -> i64, i64, i64 {
+    var days = (time() / 86400.0) as i64 - days_back;
+    var year = 1970;
+    loop {
+        let year_days = if is_leap_year(year) { 366 } else { 365 };
+        if days < year_days { break; }
+        days -= year_days;
+        year += 1;
+    }
+    var month = 1;
+    while days >= days_in_month(year, month) {
+        days -= days_in_month(year, month);
+        month += 1;
+    }
+    return year, month, days + 1;
+}
+
+fn iso_date(year: i64, month: i64, day: i64) -> u8[>..] {
+    var out: u8[>..] = [];
+    format_int(out, year, 10, 4, '0');
+    out.push('-');
+    format_int(out, month, 10, 2, '0');
+    out.push('-');
+    format_int(out, day, 10, 2, '0');
+    return out;
+}
+
+fn days_ago(days_back: i64) -> u8[>..] {
+    let year, month, day = date_parts(days_back);
+    return iso_date(year, month, day);
+}
+
+// Same calendar day `years` years before today; Feb 29 clamps to Feb 28.
+fn years_ago(years: i64) -> u8[>..] {
+    let year, month, day = date_parts(0);
+    let clamped = if month == 2 && day == 29 { 28 } else { day };
+    return iso_date(year - years, month, clamped);
 }
 
 fn locale_for(code: const u8[:]) -> sayableage::Locale {
@@ -272,6 +323,10 @@ fn main() {
     check_age("14.5", "en", sayableage::Compactness.Normal, "2025-01-31", "2025-07-31", "6 months");
 
     // ---- 15. Default asOf (current date) ----
+    // 15.1
+    check_age("15.1", "en", sayableage::Compactness.Normal, years_ago(5), "", "5 years");
+    // 15.2
+    check_age("15.2", "en", sayableage::Compactness.Normal, days_ago(5), "", "5 days");
 
     // ---- 16. formatStage — null / edge cases ----
     // 16.1
@@ -356,6 +411,12 @@ fn main() {
     check_stage("22.3", "en", "1980-01-01", "2025-06-15", "", "Adult");
 
     // ---- 23. formatStage — default asOf ----
+    // 23.1
+    check_stage("23.1", "en", days_ago(0), "", "", "Newborn");
+    // 23.2
+    check_stage("23.2", "en", years_ago(5), "", "", "Child");
+    // 23.3
+    check_stage("23.3", "en", years_ago(45), "", "", "Adult");
 
     // ---- 24. SayableAge class — English locale delegation ----
     // 24.1
@@ -409,7 +470,7 @@ fn main() {
     // 25.9
     check_age("25.9", "es", sayableage::Compactness.Normal, "2023-06-15", "2025-12-15", "2 años, 6 meses");
     // 25.10
-    check_age("25.10", "es", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 y medio años");
+    check_age("25.10", "es", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 años y medio");
     // 25.11
     check_age("25.11", "es", sayableage::Compactness.Normal, "2022-06-15", "2025-06-15", "3 años");
     // 25.12
@@ -473,7 +534,7 @@ fn main() {
     // 29.1
     check_age("29.1", "he", sayableage::Compactness.Normal, "2025-06-15", "2025-06-15", "רק נולד");
     // 29.2
-    check_age("29.2", "he", sayableage::Compactness.Normal, "2025-06-14", "2025-06-15", "יום 1");
+    check_age("29.2", "he", sayableage::Compactness.Normal, "2025-06-14", "2025-06-15", "יום");
     // 29.3
     check_age("29.3", "he", sayableage::Compactness.Normal, "2025-06-12", "2025-06-15", "3 ימים");
     // 29.4
@@ -485,7 +546,7 @@ fn main() {
     // 29.7
     check_age("29.7", "he", sayableage::Compactness.Normal, "2025-03-15", "2025-06-15", "3 חודשים");
     // 29.8
-    check_age("29.8", "he", sayableage::Compactness.Normal, "2023-06-15", "2025-07-15", "שנתיים, חודש 1");
+    check_age("29.8", "he", sayableage::Compactness.Normal, "2023-06-15", "2025-07-15", "שנתיים, חודש");
     // 29.9
     check_age("29.9", "he", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 שנים וחצי");
     // 29.10
@@ -533,7 +594,7 @@ fn main() {
     // 29.31
     check_age("29.31", "id", sayableage::Compactness.Normal, "2025-01-15", "2025-07-15", "6 bulan");
     // 29.32
-    check_age("29.32", "id", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 tahun setengah");
+    check_age("29.32", "id", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 setengah tahun");
     // 29.33
     check_age("29.33", "id", sayableage::Compactness.Normal, "2018-06-15", "2025-06-15", "7 tahun");
     // 29.34
@@ -577,7 +638,7 @@ fn main() {
     // 32.2
     check_age("32.2", "pl", sayableage::Compactness.Short, "2020-06-15", "2025-12-15", "5 i pół lat");
     // 32.3
-    check_age("32.3", "shi", sayableage::Compactness.Normal, "2005-06-08", "2012-06-07", "6 iseggasen d uzgen");
+    check_age("32.3", "shi", sayableage::Compactness.Normal, "2005-06-08", "2012-06-07", "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ");
 
     // ---- 33. Input validation ----
     // 33.1

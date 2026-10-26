@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | overmorgen         | 17/3     |
 | Day before yesterday | eergisteren        | 13/3     |
 | This Thursday (+5)   | deze donderdag     | 20/3     |
-| Last Monday (-4)     | afgelopen dinsdag  | 11/3     |
-| Next Wednesday (+12) | volgende donderdag | 27/3     |
-| Same month (+20)     | 4 april            | 4/4      |
+| Last Tuesday (-4)    | afgelopen dinsdag  | 11/3     |
+| Next Thursday (+12)  | volgende donderdag | 27/3     |
+| Same year (+20)      | 4 april            | 4/4      |
 | Different year       | 10 januari 2026    | 10/1/26  |
 
 ## Duration
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short | Compact |
-| --------------- | --------------- | ----- | ------- |
-| Midnight        | middernacht     | 0:00  | 0:00    |
-| 1:00 AM         | een uur         | 1:00  | 1:00    |
-| 5 past 9        | vijf over negen | 9:05  | 9:05    |
-| Quarter past 10 | kwart over tien | 10:15 | 10:15   |
-| Half past 11    | half twaalf     | 11:30 | 11:30   |
-| Noon            | middag          | 12:00 | 12:00   |
-| Quarter to 3    | kwart voor drie | 14:45 | 14:45   |
-| 5 to 6          | vijf voor zes   | 17:55 | 17:55   |
-| 8 o'clock PM    | acht uur        | 20:00 | 20:00   |
-| 10:30 PM        | half elf        | 22:30 | 22:30   |
-| 11:58 PM        | middernacht     | 23:58 | 23:58   |
+| Time            | Normal                | Short | Compact |
+| --------------- | --------------------- | ----- | ------- |
+| Midnight        | middernacht           | 0:00  | 0:00    |
+| 1:00 AM         | een uur               | 1:00  | 1:00    |
+| 5 past 9        | vijf over negen       | 9:05  | 9:05    |
+| Quarter past 10 | kwart over tien       | 10:15 | 10:15   |
+| Half past 11    | half twaalf           | 11:30 | 11:30   |
+| Noon            | twaalf uur 's middags | 12:00 | 12:00   |
+| Quarter to 3    | kwart voor drie       | 14:45 | 14:45   |
+| 5 to 6          | vijf voor zes         | 17:55 | 17:55   |
+| 8 o'clock PM    | acht uur              | 20:00 | 20:00   |
+| 10:30 PM        | half elf              | 22:30 | 22:30   |
+| 11:58 PM        | middernacht           | 23:58 | 23:58   |

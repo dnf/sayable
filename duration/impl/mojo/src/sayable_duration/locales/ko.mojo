@@ -31,7 +31,7 @@ fn build_ko() -> DurationLocale:
     var day = simple_unit("{n}일")
     var week = simple_unit("{n}주")
     var month = simple_unit("{n}개월")
-    var year = simple_unit("{n}살")
+    var year = simple_unit("{n}년")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n}초")

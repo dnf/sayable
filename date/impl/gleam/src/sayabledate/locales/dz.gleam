@@ -25,7 +25,7 @@ pub fn locale() -> types.DateLocale {
     yesterday: "ཁ་ཙ",
     day_after_tomorrow: Ok("གནངས་ཚེ"),
     day_before_yesterday: Ok("ཁ་ཉིམ"),
-    this_weekday: Ok("འདི་ {weekday}"),
+    this_weekday: Ok("{weekday} འདི"),
     next_weekday: Ok("{weekday} ཤུལ་མ"),
     last_weekday: Ok("{weekday} ཧེ་མ"),
     months_in_date: Error(Nil),

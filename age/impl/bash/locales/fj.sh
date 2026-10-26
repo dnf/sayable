@@ -18,7 +18,7 @@ _sayableage_locale_fj() {
     _unit_week='{n} na macawa'
     _unit_month='{n} na vula'
     _unit_year='{n} na yabaki'
-    _half='{n} kei na levu ni wasei'
+    _half='{0} kei na veimama'
     _delimiter=', '
     _just_born='Gone vou'
     _stage_newborn='Gone vou'
@@ -35,6 +35,7 @@ _sayableage_locale_fj() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_fj
 }

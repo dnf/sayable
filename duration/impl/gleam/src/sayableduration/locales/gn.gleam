@@ -16,9 +16,9 @@ pub fn locale() -> types.DurationLocale {
     code: "gn",
     plural: fn(n) { case n { 1 -> types.One _ -> types.Other } },
     units: [
-      #("second", types.SimpleUnit("{n} aravo'i")),
-      #("minute", types.SimpleUnit("{n} aravo")),
-      #("hour", types.SimpleUnit("{n} aravo guasu")),
+      #("second", types.SimpleUnit("{n} aravo'ive")),
+      #("minute", types.SimpleUnit("{n} aravo'i")),
+      #("hour", types.SimpleUnit("{n} aravo")),
       #("day", types.SimpleUnit("{n} ára")),
       #("week", types.SimpleUnit("{n} arapokõindy")),
       #("month", types.SimpleUnit("{n} jasy")),
@@ -31,9 +31,9 @@ pub fn locale() -> types.DurationLocale {
     in_future: "{0} rire",
     short: Ok(types.CompactnessOverride(
       units: Ok([
-        #("second", types.SimpleUnit("{n} ara'i")),
-        #("minute", types.SimpleUnit("{n} ara")),
-        #("hour", types.SimpleUnit("{n} ara g")),
+        #("second", types.SimpleUnit("{n} aravo'ive")),
+        #("minute", types.SimpleUnit("{n} aravo'i")),
+        #("hour", types.SimpleUnit("{n} aravo")),
         #("day", types.SimpleUnit("{n} ára")),
         #("week", types.SimpleUnit("{n} ara")),
         #("month", types.SimpleUnit("{n} jas")),

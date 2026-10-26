@@ -27,7 +27,7 @@
          "day" (hash "type" "simple" "form" "{n}일")
          "week" (hash "type" "simple" "form" "{n}주")
          "month" (hash "type" "simple" "form" "{n}개월")
-         "year" (hash "type" "simple" "form" "{n}살"))
+         "year" (hash "type" "simple" "form" "{n}년"))
    "{0} 반"
    " "
    "방금"

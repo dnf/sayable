@@ -45,7 +45,7 @@ static int fmt(char *buf, size_t sz, int seconds) {
 /* ================================================================ */
 static void test_null_edge_cases(void) {
     char buf[256];
-    ASSERT_NULL("1.1 null (negative as proxy)", sdu_format_duration_secs(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, -999)); // 1.1
+    /* 1.1: not applicable — seconds is a C integer, which can't be null; 1.2 covers the negative case. */
     ASSERT_NULL("1.2 negative", fmt(buf, sizeof(buf), -1)); // 1.2
     ASSERT_NULL("1.3 since null start", sdu_format_since(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, (const char *)0, "2025-01-15T10:00:00")); // 1.3
     ASSERT_NULL("1.4 until null target", sdu_format_until(buf, sizeof(buf), &sdu_locale_en, SDU_NORMAL, (const char *)0, "2025-01-15T10:00:00")); // 1.4

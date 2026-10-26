@@ -31,11 +31,11 @@ var KI = sd.DurationLocale{
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mwerĩ {n}", sd.Other: "mĩerĩ {n}"}),
 		Year:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mwaka {n}", sd.Other: "mĩaka {n}"}),
 	},
-	Half:      "{0} na nusu",
+	Half:      "{0} na nuthu",
 	Delimiter: ", ",
-	JustNow:   "ũmũthĩ",
+	JustNow:   "rĩu",
 	Ago:       "{0} ĩhĩtũkĩte",
-	InFuture:  "{0} ĩyothe",
+	InFuture:  "thutha wa {0}",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "sek. {n}"},
 		Minute:   &sd.UnitForms{Simple: "ndag. {n}"},
@@ -45,7 +45,7 @@ var KI = sd.DurationLocale{
 		Month:    unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mwerĩ {n}", sd.Other: "mĩerĩ {n}"})),
 		Year:     unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mwaka {n}", sd.Other: "mĩaka {n}"})),
 		Ago:      strPtr("{0} ĩhĩtũkĩte"),
-		InFuture: strPtr("{0} ĩyothe"),
+		InFuture: strPtr("thutha wa {0}"),
 	},
 	Compact: &sd.CompactnessOverride{
 		Second:    &sd.UnitForms{Simple: "{n}s"},
@@ -57,6 +57,6 @@ var KI = sd.DurationLocale{
 		Year:      &sd.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
 		Ago:       strPtr("{0} ĩhĩtũkĩte"),
-		InFuture:  strPtr("{0} ĩyothe"),
+		InFuture:  strPtr("thutha wa {0}"),
 	},
 }

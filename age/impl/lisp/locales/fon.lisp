@@ -28,7 +28,7 @@
                  (cons :infant "Vǐ")
                  (cons :toddler "Vǐ")
                  (cons :child "Vǐ")
-                 (cons :teenager "Nyɔ̌nu")
+                 (cons :teenager '((:m . "Dɔnkpɛvu") (:f . "Ɖyɔ̌vǐ")))
                  (cons :adult "Mɛ̌xo"))
    :short-units (list (cons :day "azǎn {n}")
                        (cons :week "aklunɔ̌zán {n}")

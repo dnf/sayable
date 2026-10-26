@@ -25,7 +25,7 @@ pub const locale_zh = DurationLocale{
 	day: simple_unit('{n}天')
 	week: simple_unit('{n}周')
 	month: simple_unit('{n}个月')
-	year: simple_unit('{n}岁')
+	year: simple_unit('{n}年')
 	half: '{0}半'
 	delimiter: ''
 	just_now: '刚刚'

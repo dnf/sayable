@@ -14,8 +14,8 @@ function locale_ca {
     $weekdays = @('diumenge', 'dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte')
     $dayFormat = '{n}'
     $dayFormatExceptions = @{}
-    $datePattern = '{day} de {month}'
-    $datePatternWithYear = '{day} de {month} de {year}'
+    $datePattern = '{day} {month}'
+    $datePatternWithYear = '{day} {month} de {year}'
     $today = 'avui'
     $tomorrow = 'demà'
     $yesterday = 'ahir'
@@ -24,13 +24,13 @@ function locale_ca {
     $thisWeekday = 'aquest {weekday}'
     $nextWeekday = '{weekday} que ve'
     $lastWeekday = '{weekday} passat'
-    $monthsInDate = $null
+    $monthsInDate = @('de gener', 'de febrer', 'de març', 'd''abril', 'de maig', 'de juny', 'de juliol', 'd''agost', 'de setembre', 'd''octubre', 'de novembre', 'de desembre')
     $short = @{
         months = @('gen', 'feb', 'març', 'abr', 'maig', 'juny', 'jul', 'ag', 'set', 'oct', 'nov', 'des')
         weekdays = @('dg', 'dl', 'dt', 'dc', 'dj', 'dv', 'ds')
         dayFormat = '{n}'
         datePattern = '{day} {month}'
-        datePatternWithYear = '{day} {month} {year}'
+        datePatternWithYear = '{day} {month} de {year}'
     }
     $compact = @{
         datePattern = '{d}/{m}'

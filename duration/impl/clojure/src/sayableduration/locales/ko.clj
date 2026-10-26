@@ -20,7 +20,7 @@
    :day {:type :simple :form "{n}일"}
    :week {:type :simple :form "{n}주"}
    :month {:type :simple :form "{n}개월"}
-   :year {:type :simple :form "{n}살"}
+   :year {:type :simple :form "{n}년"}
    :half "{0} 반"
    :delimiter " "
    :just-now "방금"

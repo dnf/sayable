@@ -10,11 +10,11 @@
 # Source: locales/zh.json
 
 _sayabletime_locale_zh() {
-    _clock_hours=('十二' '一' '二' '三' '四' '五' '六' '七' '八' '九' '十' '十一')
+    _clock_hours=('十二' '一' '两' '三' '四' '五' '六' '七' '八' '九' '十' '十一')
     _clock_midnight='午夜'
     _clock_noon='正午'
     _clock_pattern_0='{h}点整'
-    _clock_pattern_5='{h}点五分'
+    _clock_pattern_5='{h}点零五分'
     _clock_pattern_10='{h}点十分'
     _clock_pattern_15='{h}点十五分'
     _clock_pattern_20='{h}点二十分'

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ss.json](../../locales/ss.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Nguni-style ordinal hours: 'lihora lesitsatfu' (the third hour) = 3 o'clock, 'lihora lekucala' = 1 o'clock, 'lihora lelishumi nakubili' = 12. Minutes: 'lihora {h} nemizuzu lelishumi' (class-4 concords: lemihlanu, lelishumi, lelishumi nesihlanu, lemashumi lamabili ...); half 'nenhafu' (as the file's duration data). Doubts: siSwati class-4/class-6 concord forms for the minute numerals are modelled on isiZulu and may be off; speakers often say 'hafu pasi' colloquially. Hours 9 in the old data ('sifisagcina') replaced with 'lemfica'. Needs native review.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ngemhlomunye         | 17/3    |
 | Day before yesterday | kutolo lokwengca     | 13/3    |
 | This Thursday (+5)   | leli Lesine          | 20/3    |
-| Last Monday (-4)     | Lesibili leledlule   | 11/3    |
-| Next Wednesday (+12) | Lesine letako        | 27/3    |
-| Same month (+20)     | 4 Mabasa             | 4/4     |
+| Last Tuesday (-4)    | Lesibili leledlule   | 11/3    |
+| Next Thursday (+12)  | Lesine letako        | 27/3    |
+| Same year (+20)      | 4 Mabasa             | 4/4     |
 | Different year       | 10 Bhimbidvwane 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal             | Short    | Compact |
-| --------------- | ------------------ | -------- | ------- |
-| Midnight        | phakathi kwebusuku | 12:00 AM | 12:00a  |
-| 1:00 AM         | kunye:00           | 1:00 AM  | 1:00a   |
-| 5 past 9        | sifisagcina:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | lishumi:15         | 10:15 AM | 10:15a  |
-| Half past 11    | lishumi nakunye:30 | 11:30 AM | 11:30a  |
-| Noon            | emini              | 12:00 PM | 12:00p  |
-| Quarter to 3    | kubili:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | kusihlanu:55       | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | siphohlongo:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | lishumi:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | phakathi kwebusuku | 11:58 PM | 11:58p  |
+| Time            | Normal                                                  | Short    | Compact |
+| --------------- | ------------------------------------------------------- | -------- | ------- |
+| Midnight        | phakathi kwebusuku                                      | 12:00 AM | 12:00a  |
+| 1:00 AM         | lihora lekucala                                         | 1:00 AM  | 1:00a   |
+| 5 past 9        | lihora lemfica nemizuzu lemihlanu                       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | lihora lelishumi nemizuzu lelishumi nesihlanu           | 10:15 AM | 10:15a  |
+| Half past 11    | lihora lelishumi nakunye nenhafu                        | 11:30 AM | 11:30a  |
+| Noon            | emini                                                   | 12:00 PM | 12:00p  |
+| Quarter to 3    | lihora lesibili nemizuzu lemashumi lamane nesihlanu     | 2:45 PM  | 2:45p   |
+| 5 to 6          | lihora lesihlanu nemizuzu lemashumi lasihlanu nesihlanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | lihora lesiphohlongo                                    | 8:00 PM  | 8:00p   |
+| 10:30 PM        | lihora lelishumi nenhafu                                | 10:30 PM | 10:30p  |
+| 11:58 PM        | phakathi kwebusuku                                      | 11:58 PM | 11:58p  |

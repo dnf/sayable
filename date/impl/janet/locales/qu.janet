@@ -21,7 +21,7 @@
    :tomorrow "paqarin"
    :yesterday "qayna"
    :day-after-tomorrow "minchha"
-   :day-before-yesterday "qayna p'unchaw"
+   :day-before-yesterday "qayninpa"
    :this-weekday "kay {weekday}"
    :next-weekday "hamuq {weekday}"
    :last-weekday "qayna {weekday}"

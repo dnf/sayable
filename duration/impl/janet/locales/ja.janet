@@ -18,12 +18,12 @@
           :day "{n}日"
           :week "{n}週"
           :month "{n}ヶ月"
-          :year "{n}歳"}
+          :year "{n}年"}
    :half "{0}半"
    :delimiter ""
    :just-now "たった今"
    :ago "{0}前"
    :in-future "{0}後"
    :short {:units {:second "{n} 秒" :minute "{n} 分" :hour "{n} 時間" :day "{n} 日" :week "{n} 週間" :month "{n} か月" :year "{n} 年"} :ago "{0}前" :in-future "{0}後"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter "" :ago "{0}前" :in-future "{0}後"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0}前" :in-future "{0}後"}
 })

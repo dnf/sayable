@@ -22,14 +22,14 @@ fn plural_te(n int) PluralCategory {
 pub const locale_te = DurationLocale{
 	code: 'te'
 	plural: plural_te
-	second: simple_unit('{n} సెకను')
-	minute: simple_unit('{n} నిమిషం')
-	hour: simple_unit('{n} గంట')
+	second: plural_unit({PluralCategory.one: '{n} సెకను', PluralCategory.other: '{n} సెకన్లు'})
+	minute: plural_unit({PluralCategory.one: '{n} నిమిషం', PluralCategory.other: '{n} నిమిషాలు'})
+	hour: plural_unit({PluralCategory.one: '{n} గంట', PluralCategory.other: '{n} గంటలు'})
 	day: plural_unit({PluralCategory.one: '{n} రోజు', PluralCategory.other: '{n} రోజులు'})
 	week: plural_unit({PluralCategory.one: '{n} వారం', PluralCategory.other: '{n} వారాలు'})
 	month: plural_unit({PluralCategory.one: '{n} నెల', PluralCategory.other: '{n} నెలలు'})
 	year: plural_unit({PluralCategory.one: '{n} సంవత్సరం', PluralCategory.other: '{n} సంవత్సరాలు'})
-	half: '{0}న్నర'
+	half: '{n}½'
 	delimiter: ', '
 	just_now: 'ఇప్పుడే'
 	ago: '{0} క్రితం'

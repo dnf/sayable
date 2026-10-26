@@ -33,7 +33,7 @@
    "shekaranjiya"
    "wannan {weekday}"
    "{weekday} mai zuwa"
-   "{weekday} da ya wuce"
+   "{weekday} da ta wuce"
    #f
    (date-compactness-override (list "Jan" "Fab" "Mar" "Afr" "May" "Yun" "Yul" "Agu" "Sat" "Okt" "Nuw" "Dis") #f (list "Lah" "Lit" "Tal" "Lar" "Alh" "Jum" "Asa") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)

@@ -22,10 +22,10 @@ const CY = AgeLocale(
         return "other"
     end,
     units = Dict(
-        "day" => Dict("zero" => "{n} diwrnod", "one" => "{n} diwrnod", "two" => "{n} ddiwrnod", "few" => "{n} diwrnod", "many" => "{n} niwrnod", "other" => "{n} diwrnod"),
+        "day" => Dict("zero" => "{n} diwrnod", "one" => "{n} diwrnod", "two" => "{n} ddiwrnod", "few" => "{n} diwrnod", "many" => "{n} diwrnod", "other" => "{n} diwrnod"),
         "week" => Dict("zero" => "{n} wythnos", "one" => "{n} wythnos", "two" => "{n} wythnos", "few" => "{n} wythnos", "many" => "{n} wythnos", "other" => "{n} wythnos"),
         "month" => Dict("zero" => "{n} mis", "one" => "{n} mis", "two" => "{n} fis", "few" => "{n} mis", "many" => "{n} mis", "other" => "{n} mis"),
-        "year" => Dict("zero" => "{n} blwyddyn", "one" => "{n} blwyddyn", "two" => "{n} flynedd", "few" => "{n} blynedd", "many" => "{n} blynedd", "other" => "{n} blynedd"),
+        "year" => Dict("zero" => "{n} blwyddyn", "one" => "{n} flwyddyn", "two" => "{n} flynedd", "few" => "{n} blynedd", "many" => "{n} blynedd", "other" => "{n} blynedd"),
     ),
     half = "{0} a hanner",
     delimiter = ", ",

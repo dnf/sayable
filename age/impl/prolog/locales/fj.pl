@@ -18,7 +18,7 @@ sa_unit('fj', week, _, '{n} na macawa').
 sa_unit('fj', month, _, '{n} na vula').
 sa_unit('fj', year, _, '{n} na yabaki').
 
-sa_half('fj', '{n} kei na levu ni wasei').
+sa_half('fj', '{0} kei na veimama').
 sa_delimiter('fj', ', ').
 sa_just_born('fj', 'Gone vou').
 
@@ -38,4 +38,5 @@ compact_sa_unit('fj', day, _, '{n}d').
 compact_sa_unit('fj', week, _, '{n}w').
 compact_sa_unit('fj', month, _, '{n}m').
 compact_sa_unit('fj', year, _, '{n}y').
+compact_sa_half('fj', '{n}½').
 compact_sa_delimiter('fj', '').

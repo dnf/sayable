@@ -22,7 +22,7 @@ final es = AgeLocale(
   week: pluralUnit({PluralCategory.one: '{n} semana', PluralCategory.other: '{n} semanas'}),
   month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} meses'}),
   year: pluralUnit({PluralCategory.one: '{n} año', PluralCategory.other: '{n} años'}),
-  half: '{n} y medio',
+  half: '{0} y medio',
   delimiter: ', ',
   justBorn: 'Recién nacido',
   newborn: stageGendered('Recién nacido', 'Recién nacida'),

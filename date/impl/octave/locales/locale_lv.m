@@ -16,7 +16,7 @@ function loc = locale_lv()
   loc.day_format = '{n}.';
   loc.day_format_exceptions = struct();
   loc.date_pattern = '{day} {month}';
-  loc.date_pattern_with_year = '{day} {month} {year}';
+  loc.date_pattern_with_year = '{year}. gada {day} {month}';
   loc.today = 'šodien';
   loc.tomorrow = 'rīt';
   loc.yesterday = 'vakar';
@@ -30,7 +30,7 @@ function loc = locale_lv()
   loc.short.weekdays = {'sv', 'pr', 'ot', 'tr', 'ce', 'pk', 'se'};
   loc.short.day_format = '{n}.';
   loc.short.date_pattern = '{day} {month}';
-  loc.short.date_pattern_with_year = '{day} {month} {year}';
+  loc.short.date_pattern_with_year = '{year}. gada {day} {month}';
   loc.compact.date_pattern = '{d}.{m}.';
   loc.compact.date_pattern_with_year = '{d}.{m}.{yy}';
 endfunction

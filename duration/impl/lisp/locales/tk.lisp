@@ -24,7 +24,7 @@
                (cons :week "{n} hepde")
                (cons :month "{n} aý")
                (cons :year "{n} ýyl"))
-   :half "{0}½"
+   :half "{n} ýarym"
    :delimiter ", "
    :just-now "häzir"
    :ago "{0} öň"

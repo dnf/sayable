@@ -21,18 +21,18 @@ bi
 	clock at: #midnight put: 'mednaet'.
 	clock at: #noon put: 'medeldei'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h} klok'.
+		5. 'faef pas {h}'.
+		10. 'ten pas {h}'.
+		15. 'kwota pas {h}'.
+		20. 'twenti pas {h}'.
+		25. 'twenti faef pas {h}'.
+		30. 'haf pas {h}'.
+		35. 'twenti faef tu {next_h}'.
+		40. 'twenti tu {next_h}'.
+		45. 'kwota tu {next_h}'.
+		50. 'ten tu {next_h}'.
+		55. 'faef tu {next_h}'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

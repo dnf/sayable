@@ -19,7 +19,7 @@ locale() ->
         plural = fun(N) when N =:= 0; N =:= 1 -> one; (_) -> other end,
         second = {simple, "{n} সেকেন্ড"},
         minute = {simple, "{n} মিনিট"},
-        hour = {simple, "{n} ঘন্টা"},
+        hour = {simple, "{n} ঘণ্টা"},
         day = {pluralized, [{one, "{n} দিন"}, {other, "{n} দিন"}]},
         week = {pluralized, [{one, "{n} সপ্তাহ"}, {other, "{n} সপ্তাহ"}]},
         month = {pluralized, [{one, "{n} মাস"}, {other, "{n} মাস"}]},

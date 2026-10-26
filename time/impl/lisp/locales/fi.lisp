@@ -20,7 +20,7 @@
     :hours (list "kaksitoista" "yksi" "kaksi" "kolme" "neljä" "viisi" "kuusi" "seitsemän" "kahdeksan" "yhdeksän" "kymmenen" "yksitoista")
     :midnight "keskiyö"
     :noon "keskipäivä"
-    :patterns (list (cons 0 "{h}") (cons 5 "viisi yli {h}") (cons 10 "kymmenen yli {h}") (cons 15 "vartti yli {h}") (cons 20 "kaksikymmentä yli {h}") (cons 25 "kaksikymmentäviisi yli {h}") (cons 30 "puoli yli {h}") (cons 35 "kaksikymmentäviisi vaille {next_h}") (cons 40 "kaksikymmentä vaille {next_h}") (cons 45 "vartti vaille {next_h}") (cons 50 "kymmenen vaille {next_h}") (cons 55 "viisi vaille {next_h}")))
+    :patterns (list (cons 0 "kello {h}") (cons 5 "viisi yli {h}") (cons 10 "kymmenen yli {h}") (cons 15 "vartti yli {h}") (cons 20 "kaksikymmentä yli {h}") (cons 25 "kaksikymmentäviisi yli {h}") (cons 30 "puoli {next_h}") (cons 35 "kaksikymmentäviisi vaille {next_h}") (cons 40 "kaksikymmentä vaille {next_h}") (cons 45 "vartti vaille {next_h}") (cons 50 "kymmenen vaille {next_h}") (cons 55 "viisi vaille {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}.{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}.{mm}")
 ))

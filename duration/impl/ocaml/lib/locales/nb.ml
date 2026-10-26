@@ -45,7 +45,7 @@ let locale : duration_locale =
   ; half = "{n}½"
   ; delimiter = ", "
   ; just_now = "akkurat nå"
-  ; ago = "{0} siden"
+  ; ago = "for {0} siden"
   ; in_future = "om {0}"
   ; short = Some
       { ovr_second = Some (Simple "{n} sek")
@@ -57,7 +57,7 @@ let locale : duration_locale =
       ; ovr_year = Some (Simple "{n} år")
       ; ovr_half = None
       ; ovr_delimiter = None
-      ; ovr_ago = Some "{0} siden"
+      ; ovr_ago = Some "for {0} siden"
       ; ovr_in_future = Some "om {0}"
       }
   ; compact = Some
@@ -70,7 +70,7 @@ let locale : duration_locale =
       ; ovr_year = Some (Simple "{n}å")
       ; ovr_half = None
       ; ovr_delimiter = Some ""
-      ; ovr_ago = Some "{0} siden"
+      ; ovr_ago = Some "for {0} siden"
       ; ovr_in_future = Some "om {0}"
       }
   }

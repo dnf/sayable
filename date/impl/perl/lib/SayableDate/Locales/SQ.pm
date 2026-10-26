@@ -17,7 +17,7 @@ package SayableDate::Locales::SQ;
 sub locale {{
   code => 'sq',
   months => ['janar', 'shkurt', 'mars', 'prill', 'maj', 'qershor', 'korrik', 'gusht', 'shtator', 'tetor', 'nëntor', 'dhjetor'],
-  weekdays => ['e diel', 'e hënë', 'e martë', 'e mërkurë', 'e enjte', 'e premte', 'e shtunë'],
+  weekdays => ['të dielën', 'të hënën', 'të martën', 'të mërkurën', 'të enjten', 'të premten', 'të shtunën'],
   day_format => '{n}',
   day_format_exceptions => {},
   date_pattern => '{day} {month}',
@@ -27,8 +27,8 @@ sub locale {{
   yesterday => 'dje',
   day_after_tomorrow => 'pasnesër',
   day_before_yesterday => 'pardje',
-  this_weekday => 'këtë {weekday}',
-  next_weekday => '{weekday} tjetër',
+  this_weekday => '{weekday}',
+  next_weekday => '{weekday} e ardhshme',
   last_weekday => '{weekday} e kaluar',
   short => {
     months => ['jan', 'shk', 'mar', 'pri', 'maj', 'qer', 'kor', 'gush', 'sht', 'tet', 'nën', 'dhj'],

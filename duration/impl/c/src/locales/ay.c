@@ -20,17 +20,17 @@ const SduDurationLocale sdu_locale_ay = {
     "ay",
     plural_ay,
     {
-        { "sikundu {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "minutu {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "ura {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "uru {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "simana {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "phaxsi {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "mara {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n} sikundu", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} minutu", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} ura", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} uru", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} simana", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} phaxsi", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} mara", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} chika", ", ",
     "jichha",
     "{0} nayraqata", "{0} jutirïn",
-    true, { true, { "sik. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "min. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ur. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ur.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sim.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} phx.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mr.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} nayraqata", true, "{0} jutirïn" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} nayraqata", true, "{0} jutirïn" }
+    true, { true, { "{n} sik.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ura", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ur.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sim.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} phx.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mr.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} nayraqata", true, "{0} jutirïn" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} nayraqata", true, "{0} jutirïn" }
 };

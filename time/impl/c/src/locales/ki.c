@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ki = {
     "ki",
     {
-        { "ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe" },
+        { "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe", "ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano" },
         "ũtukũ gatagatĩ",
         "mũthenya gatagatĩ",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "thaa {h}", "thaa {h} na ndagĩka ithano", "thaa {h} na ndagĩka ikũmi", "thaa {h} na ndagĩka ikũmi na ithano", "thaa {h} na ndagĩka mĩrongo ĩĩrĩ", "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano", "thaa {h} na nuthu", "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano", "thaa {h} na ndagĩka mĩrongo ĩna", "thaa {h} na ndagĩka mĩrongo ĩna na ithano", "thaa {h} na ndagĩka mĩrongo ĩtano", "thaa {h} na ndagĩka mĩrongo ĩtano na ithano" }
     },
     true, { true, { "Kiroko", "Hwaĩ-inĩ" }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

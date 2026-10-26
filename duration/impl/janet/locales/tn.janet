@@ -12,8 +12,8 @@
 (def locale
   {:code "tn"
    :plural (fn [n] (if (= n 1) :one :other))
-   :units {:second {:one "motsotswana {n}" :other "dimetsotswana {n}"}
-          :minute {:one "metsotso {n}" :other "dimetsotso {n}"}
+   :units {:second {:one "motsotswana {n}" :other "metsotswana {n}"}
+          :minute {:one "motsotso {n}" :other "metsotso {n}"}
           :hour {:one "ura {n}" :other "diura {n}"}
           :day {:one "letsatsi {n}" :other "malatsi {n}"}
           :week {:one "beke {n}" :other "dibeke {n}"}
@@ -24,6 +24,6 @@
    :just-now "jaanong fela"
    :ago "{0} e e fetileng"
    :in-future "ka {0}"
-   :short {:units {:second {:one "motsotswana {n}" :other "dimetsotswana {n}"} :minute {:one "metsotso {n}" :other "dimetsotso {n}"} :hour {:one "ura {n}" :other "diura {n}"} :day {:one "letsatsi {n}" :other "malatsi {n}"} :week {:one "beke {n}" :other "dibeke {n}"} :month {:one "kgw. {n}" :other "dikgw. {n}"} :year {:one "ngw. {n}" :other "dingw. {n}"}} :ago "{0} e e fetileng" :in-future "ka {0}"}
+   :short {:units {:second {:one "motsotswana {n}" :other "metsotswana {n}"} :minute {:one "motsotso {n}" :other "metsotso {n}"} :hour {:one "ura {n}" :other "diura {n}"} :day {:one "letsatsi {n}" :other "malatsi {n}"} :week {:one "beke {n}" :other "dibeke {n}"} :month {:one "kgw. {n}" :other "dikgw. {n}"} :year {:one "ngw. {n}" :other "dingw. {n}"}} :ago "{0} e e fetileng" :in-future "ka {0}"}
    :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} e e fetileng" :in-future "ka {0}"}
 })

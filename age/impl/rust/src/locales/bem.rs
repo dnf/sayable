@@ -49,7 +49,7 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Umwana".to_string()),
             child: StageLabel::Neutral("Umwana".to_string()),
             teenager: StageLabel::Neutral("Umunyamata".to_string()),
-            adult: StageLabel::Neutral("Umulumendo".to_string()),
+            adult: StageLabel::Neutral("Umukalamba".to_string()),
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

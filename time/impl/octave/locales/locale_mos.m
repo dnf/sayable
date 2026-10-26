@@ -11,10 +11,10 @@
 
 function loc = locale_mos()
   loc.code = 'mos';
-  loc.clock.hours = {'piig la a yiibu', 'a yembre', 'a yiibu', 'a tãabo', 'a naase', 'a nu', 'a yoobe', 'a yopoe', 'a niini', 'a wae', 'piiga', 'piig la a yembre'};
+  loc.clock.hours = {'lɛɛr piig la a yiibu', 'lɛɛr a yembre', 'lɛɛr a yiibu', 'lɛɛr a tãabo', 'lɛɛr a naase', 'lɛɛr a nu', 'lɛɛr a yoobe', 'lɛɛr a yopoe', 'lɛɛr a nii', 'lɛɛr a wae', 'lɛɛr piiga', 'lɛɛr piig la a yembre'};
   loc.clock.midnight = 'yʋng-vɩɩse';
   loc.clock.noon = 'wĩntoog zabre';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} la minit a nu', "p10", '{h} la minit piiga', "p15", '{h} la minit piig la a nu', "p20", '{h} la minit pisi', "p25", '{h} la minit pisi la a nu', "p30", '{h} la pʋɩ-sʋka', "p35", '{h} la minit pis-tã la a nu', "p40", '{h} la minit pis-naase', "p45", '{h} la minit pis-naase la a nu', "p50", '{h} la minit pis-nu', "p55", '{h} la minit pis-nu la a nu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

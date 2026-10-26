@@ -16,7 +16,7 @@
 locale() ->
     #duration_locale{
         code = "ml",
-        plural = fun(N) when N =:= 0; N =:= 1 -> one; (_) -> other end,
+        plural = fun(1) -> one; (_) -> other end,
         second = {pluralized, [{one, "{n} സെക്കൻഡ്"}, {other, "{n} സെക്കൻഡുകൾ"}]},
         minute = {pluralized, [{one, "{n} മിനിറ്റ്"}, {other, "{n} മിനിറ്റുകൾ"}]},
         hour = {pluralized, [{one, "{n} മണിക്കൂർ"}, {other, "{n} മണിക്കൂറുകൾ"}]},
@@ -24,7 +24,7 @@ locale() ->
         week = {pluralized, [{one, "{n} ആഴ്ച"}, {other, "{n} ആഴ്ചകൾ"}]},
         month = {pluralized, [{one, "{n} മാസം"}, {other, "{n} മാസങ്ങൾ"}]},
         year = {pluralized, [{one, "{n} വർഷം"}, {other, "{n} വർഷങ്ങൾ"}]},
-        half = "{0} ര",
+        half = "{n}½",
         delimiter = ", ",
         just_now = "ഇപ്പോൾ",
         ago = "{0} മുമ്പ്",

@@ -29,7 +29,7 @@ is
 		'month'. (Dictionary newFromPairs: { #one. '{n} mánuður'. #other. '{n} mánuðir' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} ár'. #other. '{n} ár' }).
 	}).
-	locale half: '{0} og hálft'.
+	locale half: '{n} og hálft'.
 	locale delimiter: ', '.
 	locale justBorn: 'Nýfætt'.
 	locale stages: (Dictionary newFromPairs: {

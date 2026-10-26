@@ -17,10 +17,10 @@
   (make-time-locale
    :code "wo"
    :clock (make-clock-config
-    :hours (list "fukki ñaar" "benn" "ñaar" "ñett" "ñeent" "juróom" "juróom-benn" "juróom-ñaar" "juróom-ñett" "juróom-ñeent" "fukk" "fukki benn")
-    :midnight "bu guddi"
-    :noon "ci àttaya"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :hours (list "fukk ak ñaari waxtu" "benn waxtu" "ñaari waxtu" "ñetti waxtu" "ñeenti waxtu" "juróomi waxtu" "juróom-benni waxtu" "juróom-ñaari waxtu" "juróom-ñetti waxtu" "juróom-ñeenti waxtu" "fukki waxtu" "fukk ak benn waxtu")
+    :midnight "digg-guddi"
+    :noon "digg-bëccëg"
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} ak juróomi simili") (cons 10 "{h} ak fukki simili") (cons 15 "{h} ak fukk ak juróomi simili") (cons 20 "{h} ak ñaar-fukki simili") (cons 25 "{h} ak ñaar-fukk ak juróomi simili") (cons 30 "{h} ak genn-wàll") (cons 35 "{next_h} des na ñaar-fukk ak juróomi simili") (cons 40 "{next_h} des na ñaar-fukki simili") (cons 45 "{next_h} des na fukk ak juróomi simili") (cons 50 "{next_h} des na fukki simili") (cons 55 "{next_h} des na juróomi simili")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -52,8 +52,8 @@ fn build_tg() -> DateLocale:
     var day_after_tomorrow = "пасфардо"
     var day_before_yesterday = "парирӯз"
     var this_weekday = "ин {weekday}"
-    var next_weekday = "{weekday}-и оянда"
-    var last_weekday = "{weekday}-и гузашта"
+    var next_weekday = "{weekday}и оянда"
+    var last_weekday = "{weekday}и гузашта"
     var has_months_in_date = False
 
     var short_ovr = build_compactness_override()

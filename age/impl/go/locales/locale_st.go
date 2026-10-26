@@ -34,7 +34,7 @@ var ST = sa.AgeLocale{
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.S("Lesea le sa tswa hlaha"),
 		Infant:   sa.S("Lesea"),
-		Toddler:  sa.S("Ngwanana"),
+		Toddler:  sa.S("Ngwana e monyane"),
 		Child:    sa.S("Ngwana"),
 		Teenager: sa.S("Mosha"),
 		Adult:    sa.S("Motho e moholo"),

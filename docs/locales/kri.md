@@ -29,9 +29,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 ia, 1 mont | 2 ia, 1 mont | 2y1m        |
 | 2 years, 6 months | 2 ia, 6 mont | 2 ia, 6 mont | 2y6m        |
 | 3 years           | 3 ia         | 3 ia         | 3y          |
-| 3½ years          | 3 na af ia   | 3 na af ia   | 3 na afy    |
+| 3½ years          | 3 ia ɛn af   | 3 ia ɛn af   | 3½y         |
 | 5 years           | 5 ia         | 5 ia         | 5y          |
-| 5½ years          | 5 na af ia   | 5 na af ia   | 5 na afy    |
+| 5½ years          | 5 ia ɛn af   | 5 ia ɛn af   | 5½y         |
 | 7 years           | 7 ia         | 7 ia         | 7y          |
 | 10 years          | 10 ia        | 10 ia        | 10y         |
 | 18 years          | 18 ia        | 18 ia        | 18y         |
@@ -73,37 +73,37 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | afta tumara      | 17/3    |
 | Day before yesterday | bifo yestade     | 13/3    |
 | This Thursday (+5)   | dis Tosde        | 20/3    |
-| Last Monday (-4)     | las Tyusde       | 11/3    |
-| Next Wednesday (+12) | neks Tosde       | 27/3    |
-| Same month (+20)     | 4 Epril          | 4/4     |
+| Last Tuesday (-4)    | las Tyusde       | 11/3    |
+| Next Thursday (+12)  | neks Tosde       | 27/3    |
+| Same year (+20)      | 4 Epril          | 4/4     |
 | Different year       | 10 Jenyuari 2026 | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal            | Short           | Compact  |
-| --------------------- | ----------------- | --------------- | -------- |
-| 0 seconds             | jos naw           | jos naw         | jos naw  |
-| 1 second              | 1 sekon           | 1 sek.          | 1s       |
-| 30 seconds            | 30 sekon          | 30 sek.         | 30s      |
-| 1 minute              | 1 minit           | 1 min.          | 1m       |
-| 2 minutes, 15 seconds | 2 minit, 15 sekon | 2 min., 15 sek. | 2m15s    |
-| 5 minutes             | 5 minit           | 5 min.          | 5m       |
-| 45 minutes            | 45 minit          | 45 min.         | 45m      |
-| 1 hour                | 1 awa             | 1 awa           | 1h       |
-| 1½ hours              | 1 na af awa       | 1 na af awa     | 1 na afh |
-| 3 hours               | 3 awa             | 3 awa           | 3h       |
-| 6 hours               | 6 awa             | 6 awa           | 6h       |
-| 1 day                 | 1 de              | 1 de            | 1d       |
-| 1½ days               | 1 na af de        | 1 na af de      | 1 na afd |
-| 3 days                | 3 de              | 3 de            | 3d       |
-| 1 week                | 1 wik             | 1 wik           | 1w       |
-| 2 weeks, 3 days       | 2 wik, 3 de       | 2 wik, 3 de     | 2w3d     |
-| 1 month               | 1 mont            | 1 mont          | 1m       |
-| 6 months              | 6 mont            | 6 mont          | 6m       |
-| 1 year                | 1 ia              | 1 ia            | 1y       |
-| 2 years, 3 months     | 2 ia, 3 mont      | 2 ia, 3 mont    | 2y3m     |
+| Duration              | Normal            | Short           | Compact |
+| --------------------- | ----------------- | --------------- | ------- |
+| 0 seconds             | jos naw           | jos naw         | jos naw |
+| 1 second              | 1 sekon           | 1 sek.          | 1s      |
+| 30 seconds            | 30 sekon          | 30 sek.         | 30s     |
+| 1 minute              | 1 minit           | 1 min.          | 1m      |
+| 2 minutes, 15 seconds | 2 minit, 15 sekon | 2 min., 15 sek. | 2m15s   |
+| 5 minutes             | 5 minit           | 5 min.          | 5m      |
+| 45 minutes            | 45 minit          | 45 min.         | 45m     |
+| 1 hour                | 1 awa             | 1 awa           | 1h      |
+| 1½ hours              | 1 awa ɛn af       | 1 awa ɛn af     | 1½h     |
+| 3 hours               | 3 awa             | 3 awa           | 3h      |
+| 6 hours               | 6 awa             | 6 awa           | 6h      |
+| 1 day                 | 1 de              | 1 de            | 1d      |
+| 1½ days               | 1 de ɛn af        | 1 de ɛn af      | 1½d     |
+| 3 days                | 3 de              | 3 de            | 3d      |
+| 1 week                | 1 wik             | 1 wik           | 1w      |
+| 2 weeks, 3 days       | 2 wik, 3 de       | 2 wik, 3 de     | 2w3d    |
+| 1 month               | 1 mont            | 1 mont          | 1m      |
+| 6 months              | 6 mont            | 6 mont          | 6m      |
+| 1 year                | 1 ia              | 1 ia            | 1y      |
+| 2 years, 3 months     | 2 ia, 3 mont      | 2 ia, 3 mont    | 2y3m    |
 
 ### Relative time
 

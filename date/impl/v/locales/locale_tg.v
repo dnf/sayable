@@ -28,9 +28,9 @@ pub const locale_tg = DateLocale{
 	has_day_before_yesterday: true
 	this_weekday: 'ин {weekday}'
 	has_this_weekday: true
-	next_weekday: '{weekday}-и оянда'
+	next_weekday: '{weekday}и оянда'
 	has_next_weekday: true
-	last_weekday: '{weekday}-и гузашта'
+	last_weekday: '{weekday}и гузашта'
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{

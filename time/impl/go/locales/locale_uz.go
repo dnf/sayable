@@ -20,7 +20,7 @@ var UZ = st.TimeLocale{
 		Hours:    [12]string{"o'n ikki", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz", "o'n", "o'n bir"},
 		Midnight: "yarim tun",
 		Noon:     "tush",
-		Patterns: map[int]string{0: "{h} o'clock", 5: "besh past {h}", 10: "o'n past {h}", 15: "o'n besh past {h}", 20: "yigirma past {h}", 25: "yigirma besh past {h}", 30: "o'ttiz past {h}", 35: "yigirma besh to {next_h}", 40: "yigirma to {next_h}", 45: "o'n besh to {next_h}", 50: "o'n to {next_h}", 55: "besh to {next_h}"},
+		Patterns: map[int]string{0: "soat {h}", 5: "soat {h} nol besh", 10: "soat {h} o'n", 15: "soat {h} o'n besh", 20: "soat {h} yigirma", 25: "soat {h} yigirma besh", 30: "soat {h} yarim", 35: "soat {h} o'ttiz besh", 40: "soat {h} qirq", 45: "soat {h} qirq besh", 50: "soat {h} ellik", 55: "soat {h} ellik besh"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

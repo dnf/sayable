@@ -6,6 +6,14 @@
 
 Plural rule: `ru_uk` (categories: one, few, many)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [uk.json](../../locales/uk.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Hours stay feminine ordinals. 'друга година' (2:00); :05-:30 use the common ordinal + minutes reading ('друга нуль п'ять', 'друга п'ятнадцять', 'друга тридцять'); :35-:55 use idiomatic 'за X хвилин <next hour>' with nominative ordinal ('за чверть третя' = 2:45, 'за п'ять хвилин третя' = 2:55), which is correct. Idiomatic 'чверть на третю' / 'пів на третю' need an accusative list (schema limit). Removed Latin 'po'/'do' and the Russian word 'часа'.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | післязавтра      | 17/3     |
 | Day before yesterday | позавчора        | 13/3     |
 | This Thursday (+5)   | цієї четвер      | 20/3     |
-| Last Monday (-4)     | минулої вівторок | 11/3     |
-| Next Wednesday (+12) | наступної четвер | 27/3     |
-| Same month (+20)     | 4 квітня         | 4/4      |
+| Last Tuesday (-4)    | минулої вівторок | 11/3     |
+| Next Thursday (+12)  | наступної четвер | 27/3     |
+| Same year (+20)      | 4 квітня         | 4/4      |
 | Different year       | 10 січня 2026    | 10/1/26  |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 хвилин             | 5 хв              | 5х      |
 | 45 minutes            | 45 хвилин            | 45 хв             | 45х     |
 | 1 hour                | 1 година             | 1 год             | 1г      |
-| 1½ hours              | 1 з половиною годин  | 1 з половиною год | 1½г     |
+| 1½ hours              | 1 з половиною години | 1 з половиною год | 1½г     |
 | 3 hours               | 3 години             | 3 год             | 3г      |
 | 6 hours               | 6 годин              | 6 год             | 6г      |
 | 1 day                 | 1 день               | 1 дн.             | 1д      |
-| 1½ days               | 1 з половиною днів   | 1 з половиною дн. | 1½д     |
+| 1½ days               | 1 з половиною дня    | 1 з половиною дн. | 1½д     |
 | 3 days                | 3 дні                | 3 дн.             | 3д      |
 | 1 week                | 1 тиждень            | 1 тиж.            | 1т      |
 | 2 weeks, 3 days       | 2 тижні, 3 дні       | 2 тиж., 3 дн.     | 2т3д    |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                 | Short | Compact |
-| --------------- | ---------------------- | ----- | ------- |
-| Midnight        | опівніч                | 0:00  | 0:00    |
-| 1:00 AM         | перша часа             | 1:00  | 1:00    |
-| 5 past 9        | п'ять po дев'ята       | 9:05  | 9:05    |
-| Quarter past 10 | п'ятнадцять po десята  | 10:15 | 10:15   |
-| Half past 11    | тридцять po одинадцята | 11:30 | 11:30   |
-| Noon            | полудень               | 12:00 | 12:00   |
-| Quarter to 3    | п'ятнадцять do третя   | 14:45 | 14:45   |
-| 5 to 6          | п'ять do шоста         | 17:55 | 17:55   |
-| 8 o'clock PM    | восьма часа            | 20:00 | 20:00   |
-| 10:30 PM        | тридцять po десята     | 22:30 | 22:30   |
-| 11:58 PM        | опівніч                | 23:58 | 23:58   |
+| Time            | Normal                | Short | Compact |
+| --------------- | --------------------- | ----- | ------- |
+| Midnight        | опівніч               | 0:00  | 0:00    |
+| 1:00 AM         | перша година          | 1:00  | 1:00    |
+| 5 past 9        | дев'ята нуль п'ять    | 9:05  | 9:05    |
+| Quarter past 10 | десята п'ятнадцять    | 10:15 | 10:15   |
+| Half past 11    | одинадцята тридцять   | 11:30 | 11:30   |
+| Noon            | полудень              | 12:00 | 12:00   |
+| Quarter to 3    | за чверть третя       | 14:45 | 14:45   |
+| 5 to 6          | за п'ять хвилин шоста | 17:55 | 17:55   |
+| 8 o'clock PM    | восьма година         | 20:00 | 20:00   |
+| 10:30 PM        | десята тридцять       | 22:30 | 22:30   |
+| 11:58 PM        | опівніч               | 23:58 | 23:58   |

@@ -15,7 +15,7 @@ let locale : locale =
   { code = "mam"
   ; plural = (fun _ -> Other)
   ; day = Simple "{n} q'ij"
-  ; week = Simple "{n} xjaw"
+  ; week = Simple "{n} seman"
   ; month = Simple "{n} xjaw"
   ; year = Simple "{n} ab'q'ii"
   ; half = "{0} nik'"
@@ -31,7 +31,7 @@ let locale : locale =
     }
   ; short = Some
       { ovr_day = Some (Simple "{n} q'ij")
-      ; ovr_week = Some (Simple "{n} xjaw")
+      ; ovr_week = Some (Simple "{n} seman")
       ; ovr_month = Some (Simple "{n} xjaw")
       ; ovr_year = Some (Simple "{n} ab'.")
       ; ovr_half = None
@@ -43,7 +43,7 @@ let locale : locale =
       ; ovr_week = Some (Simple "{n}w")
       ; ovr_month = Some (Simple "{n}m")
       ; ovr_year = Some (Simple "{n}y")
-      ; ovr_half = None
+      ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_just_born = None
       }

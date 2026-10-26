@@ -17,27 +17,27 @@
   (make-age-locale
    :code "wo"
    :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :day "bés {n}")
-               (cons :week "ayubés {n}")
-               (cons :month "weer {n}")
-               (cons :year "at {n}"))
+   :units (list (cons :day "{n} fan")
+               (cons :week "{n} ayubés")
+               (cons :month "{n} weer")
+               (cons :year "{n} at"))
    :half "{0} ak genn-wàll"
    :delimiter ", "
    :just-born "Dees ko sax juddu"
    :stages (list (cons :newborn "Dees ko sax juddu")
-                 (cons :infant "Njàmbaar bu ndaw")
+                 (cons :infant "Liir")
                  (cons :toddler "Xale bu ndaw")
                  (cons :child "Xale")
                  (cons :teenager "Ndaw-ndaw")
                  (cons :adult "Mag"))
-   :short-units (list (cons :day "bés {n}")
-                       (cons :week "ayub. {n}")
-                       (cons :month "weer {n}")
-                       (cons :year "at {n}"))
-   :compact-units (list (cons :day "bés {n}")
-                       (cons :week "ayub {n}")
-                       (cons :month "weer {n}")
-                       (cons :year "at {n}"))
+   :short-units (list (cons :day "{n} fan")
+                       (cons :week "{n} ayub.")
+                       (cons :month "{n} weer")
+                       (cons :year "{n} at"))
+   :compact-units (list (cons :day "{n} fan")
+                       (cons :week "{n} ayub")
+                       (cons :month "{n} weer")
+                       (cons :year "{n} at"))
    :compact-half "{n}½"
    :compact-delimiter ""
 ))

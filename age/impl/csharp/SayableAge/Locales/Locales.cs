@@ -242,11 +242,11 @@ public static class Locales
             StageLabel.Neutral("Akwadaa"),
             StageLabel.Neutral("Abofra"),
             StageLabel.Neutral("Abofra"),
-            StageLabel.Neutral("Abarimaa"),
+            StageLabel.Gendered("Abarimaa", "Abaayewa"),
             StageLabel.Neutral("Ɔpanyin")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("nna {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "da {n}" }, { PluralCategory.Other, "nna {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bosome {n}" }, { PluralCategory.Other, "abosome {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } }),
@@ -255,7 +255,7 @@ public static class Locales
             null
         ),
         new CompactnessOverride(
-            UnitForms.Simple("nna {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "da {n}" }, { PluralCategory.Other, "nna {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bos {n}" }, { PluralCategory.Other, "abos {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } }),
@@ -345,7 +345,7 @@ public static class Locales
         new CompactnessOverride(
             UnitForms.Simple("{n} ي"),
             UnitForms.Simple("{n} أ"),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} شهر" }, { PluralCategory.One, "شهر" }, { PluralCategory.Two, "شهران" }, { PluralCategory.Few, "{n} أشهر" }, { PluralCategory.Many, "{n} شهرًا" }, { PluralCategory.Other, "{n} شهر" } }),
+            UnitForms.Simple("{n} شهر"),
             UnitForms.Simple("{n} سنة"),
             "{n}½",
             "",
@@ -361,10 +361,10 @@ public static class Locales
         "ay",
         n => PluralCategory.Other,
         new Units(
-            UnitForms.Simple("uru {n}"),
-            UnitForms.Simple("simana {n}"),
-            UnitForms.Simple("phaxsi {n}"),
-            UnitForms.Simple("mara {n}")
+            UnitForms.Simple("{n} uru"),
+            UnitForms.Simple("{n} simana"),
+            UnitForms.Simple("{n} phaxsi"),
+            UnitForms.Simple("{n} mara")
         ),
         "{0} chika",
         ", ",
@@ -391,7 +391,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -551,7 +551,7 @@ public static class Locales
             StageLabel.Neutral("Umwana"),
             StageLabel.Neutral("Umwana"),
             StageLabel.Neutral("Umunyamata"),
-            StageLabel.Neutral("Umulumendo")
+            StageLabel.Neutral("Umukalamba")
         ),
         new CompactnessOverride(
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ubushiku {n}" }, { PluralCategory.Other, "inshiku {n}" } }),
@@ -630,7 +630,7 @@ public static class Locales
             UnitForms.Simple("{n} manis"),
             UnitForms.Simple("{n} yia")
         ),
-        "{n} mo haf",
+        "{0} mo haf",
         ", ",
         "Niufala bebe",
         new Stages(
@@ -655,7 +655,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -850,7 +850,7 @@ public static class Locales
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mes" }, { PluralCategory.Other, "{n} mesos" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} any" }, { PluralCategory.Other, "{n} anys" } })
         ),
-        "{n} i mig",
+        "{0} i mig",
         ", ",
         "Nounat",
         new Stages(
@@ -919,7 +919,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -938,7 +938,7 @@ public static class Locales
             UnitForms.Simple("{n} ka bulan"),
             UnitForms.Simple("{n} ka tuig")
         ),
-        "{n}½",
+        "{0} ug tunga",
         ", ",
         "Bag-ong natawo",
         new Stages(
@@ -1021,10 +1021,10 @@ public static class Locales
         "cy",
         PluralCy,
         new Units(
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} diwrnod" }, { PluralCategory.One, "{n} diwrnod" }, { PluralCategory.Two, "{n} ddiwrnod" }, { PluralCategory.Few, "{n} diwrnod" }, { PluralCategory.Many, "{n} niwrnod" }, { PluralCategory.Other, "{n} diwrnod" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} diwrnod" }, { PluralCategory.One, "{n} diwrnod" }, { PluralCategory.Two, "{n} ddiwrnod" }, { PluralCategory.Few, "{n} diwrnod" }, { PluralCategory.Many, "{n} diwrnod" }, { PluralCategory.Other, "{n} diwrnod" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} wythnos" }, { PluralCategory.One, "{n} wythnos" }, { PluralCategory.Two, "{n} wythnos" }, { PluralCategory.Few, "{n} wythnos" }, { PluralCategory.Many, "{n} wythnos" }, { PluralCategory.Other, "{n} wythnos" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} mis" }, { PluralCategory.One, "{n} mis" }, { PluralCategory.Two, "{n} fis" }, { PluralCategory.Few, "{n} mis" }, { PluralCategory.Many, "{n} mis" }, { PluralCategory.Other, "{n} mis" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} blwyddyn" }, { PluralCategory.One, "{n} blwyddyn" }, { PluralCategory.Two, "{n} flynedd" }, { PluralCategory.Few, "{n} blynedd" }, { PluralCategory.Many, "{n} blynedd" }, { PluralCategory.Other, "{n} blynedd" } })
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} blwyddyn" }, { PluralCategory.One, "{n} flwyddyn" }, { PluralCategory.Two, "{n} flynedd" }, { PluralCategory.Few, "{n} blynedd" }, { PluralCategory.Many, "{n} blynedd" }, { PluralCategory.Other, "{n} blynedd" } })
         ),
         "{0} a hanner",
         ", ",
@@ -1246,7 +1246,7 @@ public static class Locales
             UnitForms.Simple("{n} މަސް"),
             UnitForms.Simple("{n} އަހަރު")
         ),
-        "{0} ބައި",
+        "{n}½",
         "، ",
         "އަލަށް އުފަންވި",
         new Stages(
@@ -1334,7 +1334,7 @@ public static class Locales
             UnitForms.Simple("ཟླ་ {n}"),
             UnitForms.Simple("ལོ་ {n}")
         ),
-        "{0} ཕྱེད",
+        "{0} དང་ཕྱེད",
         " ",
         "གསར་སྐྱེས",
         new Stages(
@@ -1373,10 +1373,10 @@ public static class Locales
         "ee",
         n => n == 1 ? PluralCategory.One : PluralCategory.Other,
         new Units(
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ŋkeke {n}" }, { PluralCategory.Other, "ŋkekewo {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "kɔsiɖa {n}" }, { PluralCategory.Other, "kɔsiɖawo {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ɣleti {n}" }, { PluralCategory.Other, "ɣletiwo {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ƒe {n}" }, { PluralCategory.Other, "ƒewo {n}" } })
+            UnitForms.Simple("ŋkeke {n}"),
+            UnitForms.Simple("kɔsiɖa {n}"),
+            UnitForms.Simple("ɣleti {n}"),
+            UnitForms.Simple("ƒe {n}")
         ),
         "{0} kple afã",
         ", ",
@@ -1386,14 +1386,14 @@ public static class Locales
             StageLabel.Neutral("Ɖevi"),
             StageLabel.Neutral("Ɖevi sue"),
             StageLabel.Neutral("Ɖevi"),
-            StageLabel.Neutral("Ŋutsuviwo"),
+            StageLabel.Gendered("Ɖekakpui", "Ɖetugbi"),
             StageLabel.Neutral("Ame tsitsi")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("ŋkekewo {n}"),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "kɔsiɖa {n}" }, { PluralCategory.Other, "kɔsiɖawo {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ɣleti {n}" }, { PluralCategory.Other, "ɣletiwo {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ƒe {n}" }, { PluralCategory.Other, "ƒewo {n}" } }),
+            UnitForms.Simple("ŋkeke {n}"),
+            UnitForms.Simple("kɔsiɖa {n}"),
+            UnitForms.Simple("ɣleti {n}"),
+            UnitForms.Simple("ƒe {n}"),
             null,
             null,
             null
@@ -1510,7 +1510,7 @@ public static class Locales
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mes" }, { PluralCategory.Other, "{n} meses" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} año" }, { PluralCategory.Other, "{n} años" } })
         ),
-        "{n} y medio",
+        "{0} y medio",
         ", ",
         "Recién nacido",
         new Stages(
@@ -1738,11 +1738,11 @@ public static class Locales
             StageLabel.Neutral("Ɓinngel"),
             StageLabel.Neutral("Cukalel"),
             StageLabel.Neutral("Suka"),
-            StageLabel.Neutral("Suka debbo"),
+            StageLabel.Gendered("Suka gorko", "Suka debbo"),
             StageLabel.Neutral("Mawɗo")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("ñalɗe {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ñalawma {n}" }, { PluralCategory.Other, "ñalɗe {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yontere {n}" }, { PluralCategory.Other, "yontereeji {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lewru {n}" }, { PluralCategory.Other, "lebbi {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hitaande {n}" }, { PluralCategory.Other, "duuɓi {n}" } }),
@@ -1751,7 +1751,7 @@ public static class Locales
             null
         ),
         new CompactnessOverride(
-            UnitForms.Simple("ñalɗe {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ñalawma {n}" }, { PluralCategory.Other, "ñalɗe {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yont {n}" }, { PluralCategory.Other, "yontji {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lew {n}" }, { PluralCategory.Other, "leb {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hit {n}" }, { PluralCategory.Other, "duuɓi {n}" } }),
@@ -1827,7 +1827,7 @@ public static class Locales
             StageLabel.Neutral("Batang paslit"),
             StageLabel.Neutral("Bata"),
             StageLabel.Neutral("Tinedyer"),
-            StageLabel.Neutral("Matanda")
+            StageLabel.Neutral("Adulto")
         ),
         new CompactnessOverride(
             UnitForms.Simple("{n} araw"),
@@ -1862,7 +1862,7 @@ public static class Locales
             UnitForms.Simple("{n} na vula"),
             UnitForms.Simple("{n} na yabaki")
         ),
-        "{n} kei na levu ni wasei",
+        "{0} kei na veimama",
         ", ",
         "Gone vou",
         new Stages(
@@ -1887,7 +1887,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -1914,7 +1914,7 @@ public static class Locales
             StageLabel.Neutral("Vǐ"),
             StageLabel.Neutral("Vǐ"),
             StageLabel.Neutral("Vǐ"),
-            StageLabel.Neutral("Nyɔ̌nu"),
+            StageLabel.Gendered("Dɔnkpɛvu", "Ɖyɔ̌vǐ"),
             StageLabel.Neutral("Mɛ̌xo")
         ),
         new CompactnessOverride(
@@ -2088,7 +2088,7 @@ public static class Locales
         new Stages(
             StageLabel.Gendered("Recén nacido", "Recén nacida"),
             StageLabel.Neutral("Bebé"),
-            StageLabel.Neutral("Neno"),
+            StageLabel.Gendered("Neno pequeno", "Nena pequena"),
             StageLabel.Gendered("Neno", "Nena"),
             StageLabel.Neutral("Adolescente"),
             StageLabel.Gendered("Adulto", "Adulta")
@@ -2253,10 +2253,10 @@ public static class Locales
         "ha",
         n => n == 1 ? PluralCategory.One : PluralCategory.Other,
         new Units(
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} kwana" }, { PluralCategory.Other, "{n} kwanaki" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mako" }, { PluralCategory.Other, "{n} makonni" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} wata" }, { PluralCategory.Other, "{n} watanni" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} shekara" }, { PluralCategory.Other, "{n} shekaru" } })
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "kwana {n}" }, { PluralCategory.Other, "kwanaki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mako {n}" }, { PluralCategory.Other, "makonni {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "wata {n}" }, { PluralCategory.Other, "watanni {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "shekara {n}" }, { PluralCategory.Other, "shekaru {n}" } })
         ),
         "{n}½",
         ", ",
@@ -2264,16 +2264,16 @@ public static class Locales
         new Stages(
             StageLabel.Neutral("Jariri"),
             StageLabel.Neutral("Jariri"),
-            StageLabel.Neutral("Ƙaramin yaro"),
-            StageLabel.Neutral("Yaro"),
-            StageLabel.Neutral("Saurayi"),
+            StageLabel.Gendered("Ƙaramin yaro", "Ƙaramar yarinya"),
+            StageLabel.Gendered("Yaro", "Yarinya"),
+            StageLabel.Gendered("Saurayi", "Budurwa"),
             StageLabel.Neutral("Babba")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("{n} kw."),
-            UnitForms.Simple("{n} mk."),
-            UnitForms.Simple("{n} wt."),
-            UnitForms.Simple("{n} shk."),
+            UnitForms.Simple("kw. {n}"),
+            UnitForms.Simple("mk. {n}"),
+            UnitForms.Simple("wt. {n}"),
+            UnitForms.Simple("shk. {n}"),
             null,
             null,
             null
@@ -2297,9 +2297,9 @@ public static class Locales
         "he",
         n => n == 1 ? PluralCategory.One : n == 2 ? PluralCategory.Two : PluralCategory.Other,
         new Units(
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "יום {n}" }, { PluralCategory.Two, "יומיים" }, { PluralCategory.Other, "{n} ימים" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "שבוע {n}" }, { PluralCategory.Two, "שבועיים" }, { PluralCategory.Other, "{n} שבועות" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "חודש {n}" }, { PluralCategory.Two, "חודשיים" }, { PluralCategory.Other, "{n} חודשים" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "יום" }, { PluralCategory.Two, "יומיים" }, { PluralCategory.Other, "{n} ימים" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "שבוע" }, { PluralCategory.Two, "שבועיים" }, { PluralCategory.Other, "{n} שבועות" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "חודש" }, { PluralCategory.Two, "חודשיים" }, { PluralCategory.Other, "{n} חודשים" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "שנה" }, { PluralCategory.Two, "שנתיים" }, { PluralCategory.Other, "{n} שנים" } })
         ),
         "{0} וחצי",
@@ -2307,8 +2307,8 @@ public static class Locales
         "רק נולד",
         new Stages(
             StageLabel.Gendered("רק נולד", "רק נולדה"),
-            StageLabel.Neutral("תינוק"),
-            StageLabel.Neutral("פעוט"),
+            StageLabel.Gendered("תינוק", "תינוקת"),
+            StageLabel.Gendered("פעוט", "פעוטה"),
             StageLabel.Gendered("ילד", "ילדה"),
             StageLabel.Gendered("נער", "נערה"),
             StageLabel.Gendered("מבוגר", "מבוגרת")
@@ -2415,7 +2415,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -2610,7 +2610,7 @@ public static class Locales
             UnitForms.Simple("{n} bulan"),
             UnitForms.Simple("{n} tahun")
         ),
-        "{0} setengah",
+        "{n} setengah",
         ", ",
         "Baru lahir",
         new Stages(
@@ -2649,10 +2649,10 @@ public static class Locales
         "ig",
         n => PluralCategory.Other,
         new Units(
-            UnitForms.Simple("{n} ụbọchị"),
-            UnitForms.Simple("{n} izu"),
-            UnitForms.Simple("{n} ọnwa"),
-            UnitForms.Simple("{n} afọ")
+            UnitForms.Simple("ụbọchị {n}"),
+            UnitForms.Simple("izu {n}"),
+            UnitForms.Simple("ọnwa {n}"),
+            UnitForms.Simple("afọ {n}")
         ),
         "{0} na ọkara",
         ", ",
@@ -2662,14 +2662,14 @@ public static class Locales
             StageLabel.Neutral("Nwa ọhụrụ"),
             StageLabel.Neutral("Nwa nta"),
             StageLabel.Neutral("Nwa"),
-            StageLabel.Neutral("Nwokorobịa"),
+            StageLabel.Gendered("Nwokorobịa", "Agbọghọbịa"),
             StageLabel.Neutral("Okenye")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("{n} ụbọchị"),
-            UnitForms.Simple("{n} izu"),
-            UnitForms.Simple("{n} ọnwa"),
-            UnitForms.Simple("{n} afọ"),
+            UnitForms.Simple("ụbọchị {n}"),
+            UnitForms.Simple("izu {n}"),
+            UnitForms.Simple("ọnwa {n}"),
+            UnitForms.Simple("afọ {n}"),
             null,
             null,
             null
@@ -2698,7 +2698,7 @@ public static class Locales
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mánuður" }, { PluralCategory.Other, "{n} mánuðir" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ár" }, { PluralCategory.Other, "{n} ár" } })
         ),
-        "{0} og hálft",
+        "{n} og hálft",
         ", ",
         "Nýfætt",
         new Stages(
@@ -2811,7 +2811,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             null,
             null
         )
@@ -2987,7 +2987,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -3087,12 +3087,12 @@ public static class Locales
     // ================================================================
     public static readonly AgeLocale KL = new(
         "kl",
-        n => PluralCategory.Other,
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
         new Units(
-            UnitForms.Simple("ullut {n}"),
-            UnitForms.Simple("sapaatit {n}"),
-            UnitForms.Simple("qaammatit {n}"),
-            UnitForms.Simple("ukiut {n}")
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ulloq {n}" }, { PluralCategory.Other, "ullut {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sapaatip akunnera {n}" }, { PluralCategory.Other, "sapaatip akunneri {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "qaammat {n}" }, { PluralCategory.Other, "qaammatit {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ukioq {n}" }, { PluralCategory.Other, "ukiut {n}" } })
         ),
         "{0} affaa",
         ", ",
@@ -3107,7 +3107,7 @@ public static class Locales
         ),
         new CompactnessOverride(
             UnitForms.Simple("ull. {n}"),
-            UnitForms.Simple("sap. {n}"),
+            UnitForms.Simple("sap. ak. {n}"),
             UnitForms.Simple("qaam. {n}"),
             UnitForms.Simple("uk. {n}"),
             null,
@@ -3119,7 +3119,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -3182,7 +3182,7 @@ public static class Locales
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ತಿಂಗಳು" }, { PluralCategory.Other, "{n} ತಿಂಗಳುಗಳು" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ವರ್ಷ" }, { PluralCategory.Other, "{n} ವರ್ಷಗಳು" } })
         ),
-        "{0}ವರೆ",
+        "{n}½",
         ", ",
         "ನವಜಾತ ಶಿಶು",
         new Stages(
@@ -3314,7 +3314,7 @@ public static class Locales
             UnitForms.Simple("{n} mont"),
             UnitForms.Simple("{n} ia")
         ),
-        "{n} na af",
+        "{0} ɛn af",
         ", ",
         "Nyubon bebi",
         new Stages(
@@ -3339,7 +3339,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -3441,10 +3441,10 @@ public static class Locales
         "kw",
         PluralKw,
         new Units(
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} dydh" }, { PluralCategory.One, "dydh" }, { PluralCategory.Two, "{n} dhydh" }, { PluralCategory.Few, "{n} dydh" }, { PluralCategory.Many, "{n} dydh" }, { PluralCategory.Other, "{n} dydh" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} seythun" }, { PluralCategory.One, "seythun" }, { PluralCategory.Two, "{n} seythun" }, { PluralCategory.Few, "{n} seythun" }, { PluralCategory.Many, "{n} seythun" }, { PluralCategory.Other, "{n} seythun" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} mis" }, { PluralCategory.One, "mis" }, { PluralCategory.Two, "{n} vis" }, { PluralCategory.Few, "{n} mis" }, { PluralCategory.Many, "{n} mis" }, { PluralCategory.Other, "{n} mis" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} blydhen" }, { PluralCategory.One, "blydhen" }, { PluralCategory.Two, "{n} vlydhen" }, { PluralCategory.Few, "{n} blydhen" }, { PluralCategory.Many, "{n} blydhen" }, { PluralCategory.Other, "{n} blydhen" } })
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} dydh" }, { PluralCategory.One, "{n} dydh" }, { PluralCategory.Two, "{n} dhydh" }, { PluralCategory.Few, "{n} dydh" }, { PluralCategory.Many, "{n} dydh" }, { PluralCategory.Other, "{n} dydh" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} seythun" }, { PluralCategory.One, "{n} seythun" }, { PluralCategory.Two, "{n} seythun" }, { PluralCategory.Few, "{n} seythun" }, { PluralCategory.Many, "{n} seythun" }, { PluralCategory.Other, "{n} seythun" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} mis" }, { PluralCategory.One, "{n} mis" }, { PluralCategory.Two, "{n} vis" }, { PluralCategory.Few, "{n} mis" }, { PluralCategory.Many, "{n} mis" }, { PluralCategory.Other, "{n} mis" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} blydhen" }, { PluralCategory.One, "{n} blydhen" }, { PluralCategory.Two, "{n} vlydhen" }, { PluralCategory.Few, "{n} blydhen" }, { PluralCategory.Many, "{n} blydhen" }, { PluralCategory.Other, "{n} blydhen" } })
         ),
         "{0} hag hanter",
         ", ",
@@ -3667,7 +3667,7 @@ public static class Locales
             UnitForms.Simple("{n} ປີ")
         ),
         "{0}ເຄິ່ງ",
-        "",
+        " ",
         "ເກີດໃໝ່",
         new Stages(
             StageLabel.Neutral("ເດັກເກີດໃໝ່"),
@@ -3691,7 +3691,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             null,
             null
         )
@@ -3838,7 +3838,7 @@ public static class Locales
         n => PluralCategory.Other,
         new Units(
             UnitForms.Simple("{n} q'ij"),
-            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} seman"),
             UnitForms.Simple("{n} xjaw"),
             UnitForms.Simple("{n} ab'q'ii")
         ),
@@ -3855,7 +3855,7 @@ public static class Locales
         ),
         new CompactnessOverride(
             UnitForms.Simple("{n} q'ij"),
-            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} seman"),
             UnitForms.Simple("{n} xjaw"),
             UnitForms.Simple("{n} ab'."),
             null,
@@ -3867,7 +3867,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -4013,12 +4013,12 @@ public static class Locales
         "mi",
         n => n == 1 ? PluralCategory.One : PluralCategory.Other,
         new Units(
-            UnitForms.Simple("rā {n}"),
-            UnitForms.Simple("wiki {n}"),
-            UnitForms.Simple("marama {n}"),
-            UnitForms.Simple("tau {n}")
+            UnitForms.Simple("{n} rā"),
+            UnitForms.Simple("{n} wiki"),
+            UnitForms.Simple("{n} marama"),
+            UnitForms.Simple("{n} tau")
         ),
-        "{0}½",
+        "{n}½",
         ", ",
         "Pēpi hou",
         new Stages(
@@ -4030,10 +4030,10 @@ public static class Locales
             StageLabel.Neutral("Pakeke")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("rā {n}"),
-            UnitForms.Simple("w {n}"),
-            UnitForms.Simple("m {n}"),
-            UnitForms.Simple("t {n}"),
+            UnitForms.Simple("{n} rā"),
+            UnitForms.Simple("{n} w"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} t"),
             null,
             null,
             null
@@ -4071,7 +4071,7 @@ public static class Locales
             StageLabel.Neutral("Мало дете"),
             StageLabel.Neutral("Дете"),
             StageLabel.Neutral("Тинејџер"),
-            StageLabel.Neutral("Возрасен")
+            StageLabel.Gendered("Возрасен", "Возрасна")
         ),
         new CompactnessOverride(
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ден" }, { PluralCategory.Other, "{n} дена" } }),
@@ -4099,14 +4099,14 @@ public static class Locales
     // ================================================================
     public static readonly AgeLocale ML = new(
         "ml",
-        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
         new Units(
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ദിവസം" }, { PluralCategory.Other, "{n} ദിവസങ്ങൾ" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ആഴ്ച" }, { PluralCategory.Other, "{n} ആഴ്ചകൾ" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} മാസം" }, { PluralCategory.Other, "{n} മാസങ്ങൾ" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} വയസ്സ്" }, { PluralCategory.Other, "{n} വയസ്സ്" } })
         ),
-        "{0} ര",
+        "{n}½",
         ", ",
         "നവജാതശിശു",
         new Stages(
@@ -4552,7 +4552,7 @@ public static class Locales
         new Stages(
             StageLabel.Neutral("नवजात शिशु"),
             StageLabel.Neutral("शिशु"),
-            StageLabel.Neutral("बाल्यकाल"),
+            StageLabel.Neutral("सानो बच्चा"),
             StageLabel.Neutral("बालक"),
             StageLabel.Neutral("किशोर"),
             StageLabel.Neutral("वयस्क")
@@ -4986,7 +4986,7 @@ public static class Locales
             UnitForms.Simple("{n} manis"),
             UnitForms.Simple("{n} yia")
         ),
-        "{n} en haf",
+        "{0} en haf",
         ", ",
         "Niufala bebi",
         new Stages(
@@ -5011,7 +5011,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -5275,7 +5275,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -5553,36 +5553,36 @@ public static class Locales
         "shi",
         PluralShi,
         new Units(
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ass" }, { PluralCategory.Few, "{n} ussan" }, { PluralCategory.Other, "{n} ass" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} imalass" }, { PluralCategory.Few, "{n} imalassn" }, { PluralCategory.Other, "{n} imalass" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ayyur" }, { PluralCategory.Few, "{n} ayyurn" }, { PluralCategory.Other, "{n} ayyur" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} aseggas" }, { PluralCategory.Few, "{n} iseggasen" }, { PluralCategory.Other, "{n} aseggas" } })
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵓⵙⵙⴰⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⵙ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" }, { PluralCategory.Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⴰⵢⵢⵓⵔ" }, { PluralCategory.Few, "{n} ⴰⵢⵢⵓⵔⵏ" }, { PluralCategory.Other, "{n} ⴰⵢⵢⵓⵔ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" }, { PluralCategory.Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } })
         ),
-        "{0} d uzgen",
+        "{0} ⴷ ⵓⵣⴳⵏ",
         ", ",
-        "Iɣ d illul",
+        "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
         new Stages(
-            StageLabel.Neutral("Iɣ d illul"),
-            StageLabel.Neutral("Agellid"),
-            StageLabel.Gendered("Aḥenjir", "Taḥenjirt"),
-            StageLabel.Gendered("Afrux", "Tafruxṭ"),
-            StageLabel.Gendered("Aɛrim", "Taɛrimt"),
-            StageLabel.Gendered("Argaz", "Tamṭṭuṭ")
+            StageLabel.Neutral("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"),
+            StageLabel.Neutral("ⵍⵍⵓⴼⴰⵏ"),
+            StageLabel.Gendered("ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"),
+            StageLabel.Gendered("ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"),
+            StageLabel.Gendered("ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"),
+            StageLabel.Gendered("ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("{n} d"),
-            UnitForms.Simple("{n} wk"),
-            UnitForms.Simple("{n} mo"),
-            UnitForms.Simple("{n} yr"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵓⵙⵙⴰⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⵙ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" }, { PluralCategory.Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" }, { PluralCategory.Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⴰⵢⵢⵓⵔ" }, { PluralCategory.Few, "{n} ⴰⵢⵢⵓⵔⵏ" }, { PluralCategory.Other, "{n} ⴰⵢⵢⵓⵔ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" }, { PluralCategory.Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" }, { PluralCategory.Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } }),
             null,
             null,
             null
         ),
         new CompactnessOverride(
-            UnitForms.Simple("{n}d"),
-            UnitForms.Simple("{n}w"),
-            UnitForms.Simple("{n}m"),
-            UnitForms.Simple("{n}y"),
+            UnitForms.Simple("{n} ⴰⵙⵙ"),
+            UnitForms.Simple("{n} ⵉⵎⵍ"),
+            UnitForms.Simple("{n} ⴰⵢⵔ"),
+            UnitForms.Simple("{n} ⴰⵙⴳ"),
             "{n}½",
             "",
             null
@@ -5627,7 +5627,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -5646,7 +5646,7 @@ public static class Locales
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "මාස {n}" }, { PluralCategory.Other, "මාස {n}" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "වසර {n}" }, { PluralCategory.Other, "වසර {n}" } })
         ),
-        "{0}යි භාගයයි",
+        "{n}½",
         ", ",
         "අලුත උපන්",
         new Stages(
@@ -5861,10 +5861,10 @@ public static class Locales
         "so",
         n => n == 1 ? PluralCategory.One : PluralCategory.Other,
         new Units(
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "maalin {n}" }, { PluralCategory.Other, "maalmood {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "toddobaad {n}" }, { PluralCategory.Other, "toddobaadyo {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bil {n}" }, { PluralCategory.Other, "bilood {n}" } }),
-            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sano {n}" }, { PluralCategory.Other, "sanooyin {n}" } })
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} maalin" }, { PluralCategory.Other, "{n} maalmood" } }),
+            UnitForms.Simple("{n} toddobaad"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} bil" }, { PluralCategory.Other, "{n} bilood" } }),
+            UnitForms.Simple("{n} sano")
         ),
         "{n}½",
         ", ",
@@ -5912,9 +5912,9 @@ public static class Locales
         ),
         "{0} e gjysmë",
         ", ",
-        "Sapolindur",
+        "I sapolindur",
         new Stages(
-            StageLabel.Gendered("Sapolindur", "Sapolindure"),
+            StageLabel.Gendered("I sapolindur", "E sapolindur"),
             StageLabel.Neutral("Foshnjë"),
             StageLabel.Gendered("Fëmijë i vogël", "Fëmijë e vogël"),
             StageLabel.Neutral("Fëmijë"),
@@ -6048,7 +6048,7 @@ public static class Locales
         new Stages(
             StageLabel.Neutral("Lesea le sa tswa hlaha"),
             StageLabel.Neutral("Lesea"),
-            StageLabel.Neutral("Ngwanana"),
+            StageLabel.Neutral("Ngwana e monyane"),
             StageLabel.Neutral("Ngwana"),
             StageLabel.Neutral("Mosha"),
             StageLabel.Neutral("Motho e moholo")
@@ -6262,7 +6262,7 @@ public static class Locales
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} மாதம்" }, { PluralCategory.Other, "{n} மாதங்கள்" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} வயது" }, { PluralCategory.Other, "{n} வயது" } })
         ),
-        "{0}ரை",
+        "{n}½",
         ", ",
         "பிறந்த குழந்தை",
         new Stages(
@@ -6306,7 +6306,7 @@ public static class Locales
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} నెల" }, { PluralCategory.Other, "{n} నెలలు" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} సంవత్సరం" }, { PluralCategory.Other, "{n} సంవత్సరాలు" } })
         ),
-        "{0}న్నర",
+        "{n}½",
         ", ",
         "నవజాత శిశువు",
         new Stages(
@@ -6419,7 +6419,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -6438,7 +6438,7 @@ public static class Locales
             UnitForms.Simple("{n} моҳ"),
             UnitForms.Simple("{n} сол")
         ),
-        "{0} ним",
+        "{0}у ним",
         ", ",
         "Навзод",
         new Stages(
@@ -6614,7 +6614,7 @@ public static class Locales
             UnitForms.Simple("{n} aý"),
             UnitForms.Simple("{n} ýaş")
         ),
-        "{0}½",
+        "{n} ýarym",
         ", ",
         "Täze doglan",
         new Stages(
@@ -6623,7 +6623,7 @@ public static class Locales
             StageLabel.Neutral("Kiçijik"),
             StageLabel.Neutral("Çaga"),
             StageLabel.Neutral("Ýetginjek"),
-            StageLabel.Neutral("Ulular")
+            StageLabel.Neutral("Uly adam")
         ),
         new CompactnessOverride(
             UnitForms.Simple("{n} g"),
@@ -6666,7 +6666,7 @@ public static class Locales
             StageLabel.Neutral("Lesea"),
             StageLabel.Neutral("Ngwana yo monnye"),
             StageLabel.Neutral("Ngwana"),
-            StageLabel.Neutral("Lekgarebe"),
+            StageLabel.Neutral("Mosha"),
             StageLabel.Neutral("Motho yo mogolo")
         ),
         new CompactnessOverride(
@@ -6702,7 +6702,7 @@ public static class Locales
             UnitForms.Simple("{n} mun"),
             UnitForms.Simple("{n} yia")
         ),
-        "{n} na hap",
+        "{0} na hap",
         ", ",
         "Nupela pikinini",
         new Stages(
@@ -6727,7 +6727,7 @@ public static class Locales
             UnitForms.Simple("{n}w"),
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
-            null,
+            "{n}½",
             "",
             null
         )
@@ -6883,17 +6883,17 @@ public static class Locales
         "Iɣ d illul",
         new Stages(
             StageLabel.Neutral("Iɣ d illul"),
-            StageLabel.Neutral("Agellid"),
+            StageLabel.Neutral("Llufan"),
             StageLabel.Gendered("Aḥenjir", "Taḥenjirt"),
-            StageLabel.Gendered("Afrux", "Tafruxṭ"),
+            StageLabel.Gendered("Afrux", "Tafruxt"),
             StageLabel.Gendered("Aɛrim", "Taɛrimt"),
             StageLabel.Gendered("Argaz", "Tamṭṭuṭ")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("{n} d"),
-            UnitForms.Simple("{n} wk"),
-            UnitForms.Simple("{n} mo"),
-            UnitForms.Simple("{n} yr"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ass" }, { PluralCategory.Other, "{n} ussan" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} imalass" }, { PluralCategory.Other, "{n} imalassn" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ayyur" }, { PluralCategory.Other, "{n} ayyurn" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} aseggas" }, { PluralCategory.Other, "{n} iseggasen" } }),
             null,
             null,
             null
@@ -7147,7 +7147,7 @@ public static class Locales
         "Sơ sinh",
         new Stages(
             StageLabel.Neutral("Sơ sinh"),
-            StageLabel.Neutral("Trẻ sơ sinh"),
+            StageLabel.Neutral("Trẻ nhũ nhi"),
             StageLabel.Neutral("Trẻ mới biết đi"),
             StageLabel.Neutral("Trẻ em"),
             StageLabel.Neutral("Thiếu niên"),
@@ -7225,36 +7225,36 @@ public static class Locales
         "wo",
         n => PluralCategory.Other,
         new Units(
-            UnitForms.Simple("bés {n}"),
-            UnitForms.Simple("ayubés {n}"),
-            UnitForms.Simple("weer {n}"),
-            UnitForms.Simple("at {n}")
+            UnitForms.Simple("{n} fan"),
+            UnitForms.Simple("{n} ayubés"),
+            UnitForms.Simple("{n} weer"),
+            UnitForms.Simple("{n} at")
         ),
         "{0} ak genn-wàll",
         ", ",
         "Dees ko sax juddu",
         new Stages(
             StageLabel.Neutral("Dees ko sax juddu"),
-            StageLabel.Neutral("Njàmbaar bu ndaw"),
+            StageLabel.Neutral("Liir"),
             StageLabel.Neutral("Xale bu ndaw"),
             StageLabel.Neutral("Xale"),
             StageLabel.Neutral("Ndaw-ndaw"),
             StageLabel.Neutral("Mag")
         ),
         new CompactnessOverride(
-            UnitForms.Simple("bés {n}"),
-            UnitForms.Simple("ayub. {n}"),
-            UnitForms.Simple("weer {n}"),
-            UnitForms.Simple("at {n}"),
+            UnitForms.Simple("{n} fan"),
+            UnitForms.Simple("{n} ayub."),
+            UnitForms.Simple("{n} weer"),
+            UnitForms.Simple("{n} at"),
             null,
             null,
             null
         ),
         new CompactnessOverride(
-            UnitForms.Simple("bés {n}"),
-            UnitForms.Simple("ayub {n}"),
-            UnitForms.Simple("weer {n}"),
-            UnitForms.Simple("at {n}"),
+            UnitForms.Simple("{n} fan"),
+            UnitForms.Simple("{n} ayub"),
+            UnitForms.Simple("{n} weer"),
+            UnitForms.Simple("{n} at"),
             "{n}½",
             "",
             null

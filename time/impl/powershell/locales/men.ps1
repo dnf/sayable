@@ -10,22 +10,22 @@
 # Source: locales/men.json
 
 function locale_men {
-    $hours = @('pu wɛlɛ', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila')
+    $hours = @('pu mahu fele', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila')
     $midnight = 'kpindi gbɔyɔŋ'
     $noon = 'ndɔlei-ma'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'awa {h}'
+    $patterns[5] = 'awa {h} kɛ miniti lɔɔlu'
+    $patterns[10] = 'awa {h} kɛ miniti pu'
+    $patterns[15] = 'awa {h} kɛ miniti pu mahu lɔɔlu'
+    $patterns[20] = 'awa {h} kɛ miniti nuu yila gboyongo'
+    $patterns[25] = 'awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu'
+    $patterns[30] = 'awa {h} kɛ miniti nuu yila gboyongo mahu pu'
+    $patterns[35] = 'awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu'
+    $patterns[40] = 'awa {h} kɛ miniti nuu fele gboyongo'
+    $patterns[45] = 'awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu'
+    $patterns[50] = 'awa {h} kɛ miniti nuu fele gboyongo mahu pu'
+    $patterns[55] = 'awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu'
     $clock = @{
         hours = $hours
         midnight = $midnight

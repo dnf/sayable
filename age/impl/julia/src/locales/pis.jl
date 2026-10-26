@@ -20,7 +20,7 @@ const PIS = AgeLocale(
         "month" => "{n} manis",
         "year" => "{n} yia",
     ),
-    half = "{n} en haf",
+    half = "{0} en haf",
     delimiter = ", ",
     just_born = "Niufala bebi",
     stages = Dict(
@@ -46,6 +46,7 @@ const PIS = AgeLocale(
             "month" => "{n}m",
             "year" => "{n}y",
         ),
+        half = "{n}½",
         delimiter = "",
     ),
 )

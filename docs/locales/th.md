@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [th.json](../../locales/th.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Not touched: the audit's finding that 12 hour names cannot express Thai's hour-of-day-specific systems (นาฬิกา 24h, or ตี/โมงเช้า/บ่าย/ทุ่ม) is a schema limit, left as context.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | มะรืน            | 17/3     |
 | Day before yesterday | เมื่อวานซืน      | 13/3     |
 | This Thursday (+5)   | วันพฤหัสบดีนี้   | 20/3     |
-| Last Monday (-4)     | วันอังคารที่แล้ว | 11/3     |
-| Next Wednesday (+12) | วันพฤหัสบดีหน้า  | 27/3     |
-| Same month (+20)     | 4 เมษายน         | 4/4      |
+| Last Tuesday (-4)    | วันอังคารที่แล้ว | 11/3     |
+| Next Thursday (+12)  | วันพฤหัสบดีหน้า  | 27/3     |
+| Same year (+20)      | 4 เมษายน         | 4/4      |
 | Different year       | 10 มกราคม 2026   | 10/1/26  |
 
 ## Duration
@@ -111,8 +119,8 @@ Relative to Saturday, March 15, 2025.
 | ------------- | ---------------- | ------------ |
 | 5 minutes ago | 5 นาทีที่แล้ว    | 5นาทีที่แล้ว |
 | 2 hours ago   | 2 ชั่วโมงที่แล้ว | 2ชม.ที่แล้ว  |
-| in 30 minutes | ใน30 นาที        | ใน30นาที     |
-| in 3 hours    | ใน3 ชั่วโมง      | ใน3ชม.       |
+| in 30 minutes | ในอีก 30 นาที    | ในอีก 30นาที |
+| in 3 hours    | ในอีก 3 ชั่วโมง  | ในอีก 3ชม.   |
 
 ## Time
 

@@ -16,9 +16,9 @@ _sayableduration_plural_sw() {
 }
 
 _sayableduration_locale_sw() {
-    _unit_second='{n} sekunde'
-    _unit_minute='{n} dakika'
-    _unit_hour='{n} saa'
+    _unit_second='sekunde {n}'
+    _unit_minute='dakika {n}'
+    _unit_hour='saa {n}'
     _unit_day_one='siku {n}'
     _unit_day_other='siku {n}'
     _unit_week_one='wiki {n}'

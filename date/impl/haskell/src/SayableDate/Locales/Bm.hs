@@ -18,7 +18,7 @@ locale = DateLocale
     { localeCode = "bm"
     , localeMonths =
         [ "Zanwuye"
-        , "Fewuriye"
+        , "Feburuye"
         , "Marisi"
         , "Awirili"
         , "Mɛ"
@@ -26,8 +26,8 @@ locale = DateLocale
         , "Zuluye"
         , "Uti"
         , "Sɛtanburu"
-        , "ɔkutɔburu"
-        , "Nowanbudu"
+        , "Ɔkutɔburu"
+        , "Nowanburu"
         , "Desanburu"
         ]
     , localeWeekdays =
@@ -56,7 +56,7 @@ locale = DateLocale
         CompactnessOverride
             { ovrMonths = Just $
                 [ "Zan"
-                , "Few"
+                , "Feb"
                 , "Mar"
                 , "Awi"
                 , "Mɛ"
@@ -64,7 +64,7 @@ locale = DateLocale
                 , "Zul"
                 , "Uti"
                 , "Sɛt"
-                , "ɔku"
+                , "Ɔku"
                 , "Now"
                 , "Des"
                 ]

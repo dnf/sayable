@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [lb.json](../../locales/lb.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): No dataFixes for this locale; the 'eent Auer'/'zwee Auer' gender issue is listed as a schema limit and was left alone as instructed.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | iwwermuer            | 17.3.    |
 | Day before yesterday | virgëschter          | 13.3.    |
 | This Thursday (+5)   | dësen Donneschdeg    | 20.3.    |
-| Last Monday (-4)     | leschten Dënschdeg   | 11.3.    |
-| Next Wednesday (+12) | nächsten Donneschdeg | 27.3.    |
-| Same month (+20)     | 4. Abrëll            | 4.4.     |
+| Last Tuesday (-4)    | leschten Dënschdeg   | 11.3.    |
+| Next Thursday (+12)  | nächsten Donneschdeg | 27.3.    |
+| Same year (+20)      | 4. Abrëll            | 4.4.     |
 | Different year       | 10. Januar 2026      | 10.1.26  |
 
 ## Duration

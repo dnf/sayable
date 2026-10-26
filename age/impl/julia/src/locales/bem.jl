@@ -29,7 +29,7 @@ const BEM = AgeLocale(
         "toddler" => StageLabel("Umwana"),
         "child" => StageLabel("Umwana"),
         "teenager" => StageLabel("Umunyamata"),
-        "adult" => StageLabel("Umulumendo"),
+        "adult" => StageLabel("Umukalamba"),
     ),
     short_override = CompactnessOverride(
         units = Dict(

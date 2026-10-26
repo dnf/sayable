@@ -72,62 +72,62 @@ Relative to Saturday, March 15, 2025.
 | Yesterday            | inné                   | inné    |
 | Day after tomorrow   | arú amárach            | 17/3    |
 | Day before yesterday | arú inné               | 13/3    |
-| This Thursday (+5)   | an Déardaoin seo       | 20/3    |
-| Last Monday (-4)     | Dé Máirt seo caite     | 11/3    |
-| Next Wednesday (+12) | Déardaoin seo chugainn | 27/3    |
-| Same month (+20)     | 4 Aibreán              | 4/4     |
+| This Thursday (+5)   | Déardaoin seo          | 20/3    |
+| Last Tuesday (-4)    | Dé Máirt seo caite     | 11/3    |
+| Next Thursday (+12)  | Déardaoin seo chugainn | 27/3    |
+| Same year (+20)      | 4 Aibreán              | 4/4     |
 | Different year       | 10 Eanáir 2026         | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                | Short           | Compact       |
-| --------------------- | --------------------- | --------------- | ------------- |
-| 0 seconds             | díreach anois         | díreach anois   | díreach anois |
-| 1 second              | 1 soicind             | 1 soic          | 1 soic        |
-| 30 seconds            | 30 soicind            | 30 soic         | 30 soic       |
-| 1 minute              | 1 nóiméad             | 1 nóim          | 1 nóim        |
-| 2 minutes, 15 seconds | 2 nóiméad, 15 soicind | 2 nóim, 15 soic | 2 nóim15 soic |
-| 5 minutes             | 5 nóiméad             | 5 nóim          | 5 nóim        |
-| 45 minutes            | 45 nóiméad            | 45 nóim         | 45 nóim       |
-| 1 hour                | 1 uair                | 1 u             | 1 u           |
-| 1½ hours              | 1 uair go leith       | 1 u go leith    | 1½ u          |
-| 3 hours               | 3 huaire              | 3 u             | 3 u           |
-| 6 hours               | 6 huaire              | 6 u             | 6 u           |
-| 1 day                 | 1 lá                  | 1 lá            | 1 lá          |
-| 1½ days               | 1 lá go leith         | 1 lá go leith   | 1½ lá         |
-| 3 days                | 3 lá                  | 3 lá            | 3 lá          |
-| 1 week                | 1 seachtain           | 1 scht          | 1 scht        |
-| 2 weeks, 3 days       | 2 sheachtain, 3 lá    | 2 scht, 3 lá    | 2 scht3 lá    |
-| 1 month               | 1 mhí                 | 1 mí            | 1m            |
-| 6 months              | 6 mhí                 | 6 mí            | 6m            |
-| 1 year                | 1 bhliain             | 1 bl            | 1 bl          |
-| 2 years, 3 months     | 2 bhliain, 3 mhí      | 2 bl, 3 mí      | 2 bl3m        |
+| Duration              | Normal                    | Short           | Compact       |
+| --------------------- | ------------------------- | --------------- | ------------- |
+| 0 seconds             | díreach anois             | díreach anois   | díreach anois |
+| 1 second              | 1 soicind                 | 1 soic          | 1 soic        |
+| 30 seconds            | 30 soicind                | 30 soic         | 30 soic       |
+| 1 minute              | 1 nóiméad                 | 1 nóim          | 1 nóim        |
+| 2 minutes, 15 seconds | 2 nóiméad, 15 soicind     | 2 nóim, 15 soic | 2 nóim15 soic |
+| 5 minutes             | 5 nóiméad                 | 5 nóim          | 5 nóim        |
+| 45 minutes            | 45 nóiméad                | 45 nóim         | 45 nóim       |
+| 1 hour                | 1 uair an chloig          | 1 u             | 1 u           |
+| 1½ hours              | 1 uair an chloig go leith | 1 u go leith    | 1½ u          |
+| 3 hours               | 3 huaire an chloig        | 3 u             | 3 u           |
+| 6 hours               | 6 huaire an chloig        | 6 u             | 6 u           |
+| 1 day                 | 1 lá                      | 1 lá            | 1 lá          |
+| 1½ days               | 1 lá go leith             | 1 lá go leith   | 1½ lá         |
+| 3 days                | 3 lá                      | 3 lá            | 3 lá          |
+| 1 week                | 1 seachtain               | 1 scht          | 1 scht        |
+| 2 weeks, 3 days       | 2 sheachtain, 3 lá        | 2 scht, 3 lá    | 2 scht3 lá    |
+| 1 month               | 1 mhí                     | 1 mí            | 1m            |
+| 6 months              | 6 mhí                     | 6 mí            | 6m            |
+| 1 year                | 1 bhliain                 | 1 bl            | 1 bl          |
+| 2 years, 3 months     | 2 bhliain, 3 mhí          | 2 bl, 3 mí      | 2 bl3m        |
 
 ### Relative time
 
-| Offset        | Normal              | Compact          |
-| ------------- | ------------------- | ---------------- |
-| 5 minutes ago | 5 nóiméad ó shin    | 5 nóim ó shin    |
-| 2 hours ago   | 2 uair ó shin       | 2 u ó shin       |
-| in 30 minutes | i gceann 30 nóiméad | i gceann 30 nóim |
-| in 3 hours    | i gceann 3 huaire   | i gceann 3 u     |
+| Offset        | Normal                      | Compact          |
+| ------------- | --------------------------- | ---------------- |
+| 5 minutes ago | 5 nóiméad ó shin            | 5 nóim ó shin    |
+| 2 hours ago   | 2 uair an chloig ó shin     | 2 u ó shin       |
+| in 30 minutes | i gceann 30 nóiméad         | i gceann 30 nóim |
+| in 3 hours    | i gceann 3 huaire an chloig | i gceann 3 u     |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal       | Short | Compact |
-| --------------- | ------------ | ----- | ------- |
-| Midnight        | meán oíche   | 0:00  | 0:00    |
-| 1:00 AM         | haon:00      | 1:00  | 1:00    |
-| 5 past 9        | naoi:05      | 9:05  | 9:05    |
-| Quarter past 10 | deich:15     | 10:15 | 10:15   |
-| Half past 11    | haon déag:30 | 11:30 | 11:30   |
-| Noon            | meán lae     | 12:00 | 12:00   |
-| Quarter to 3    | dó:45        | 14:45 | 14:45   |
-| 5 to 6          | cúig:55      | 17:55 | 17:55   |
-| 8 o'clock PM    | hocht:00     | 20:00 | 20:00   |
-| 10:30 PM        | deich:30     | 22:30 | 22:30   |
-| 11:58 PM        | meán oíche   | 23:58 | 23:58   |
+| Time            | Normal                        | Short | Compact |
+| --------------- | ----------------------------- | ----- | ------- |
+| Midnight        | meán oíche                    | 0:00  | 0:00    |
+| 1:00 AM         | a haon a chlog                | 1:00  | 1:00    |
+| 5 past 9        | cúig tar éis a naoi           | 9:05  | 9:05    |
+| Quarter past 10 | ceathrú tar éis a deich       | 10:15 | 10:15   |
+| Half past 11    | leathuair tar éis a haon déag | 11:30 | 11:30   |
+| Noon            | meán lae                      | 12:00 | 12:00   |
+| Quarter to 3    | ceathrú chun a trí            | 14:45 | 14:45   |
+| 5 to 6          | cúig chun a sé                | 17:55 | 17:55   |
+| 8 o'clock PM    | a hocht a chlog               | 20:00 | 20:00   |
+| 10:30 PM        | leathuair tar éis a deich     | 22:30 | 22:30   |
+| 11:58 PM        | meán oíche                    | 23:58 | 23:58   |

@@ -11,8 +11,8 @@
 
 locale_tk <- list(
   code = "tk",
-  months = c("Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"),
-  weekdays = c("Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"),
+  months = c("ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"),
+  weekdays = c("ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"),
   day_format = "{n}",
   day_format_exceptions = list(),
   date_pattern = "{day} {month}",
@@ -26,8 +26,8 @@ locale_tk <- list(
   next_weekday = "indiki {weekday}",
   last_weekday = "geçen {weekday}",
   short = list(
-    months = c("Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"),
-    weekdays = c("Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"),
+    months = c("ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek"),
+    weekdays = c("ýek", "duş", "siş", "çar", "pen", "ann", "şen"),
     day_format = "{n}",
     date_pattern = "{day} {month}",
     date_pattern_with_year = "{day} {month} {year}"

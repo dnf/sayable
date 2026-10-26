@@ -25,7 +25,7 @@
    "{n}."
    (hash)
    "{day} {month}"
-   "{day} {month} {year}"
+   "{year}. gada {day} {month}"
    "šodien"
    "rīt"
    "vakar"
@@ -35,6 +35,6 @@
    "nākamā {weekday}"
    "pagājusī {weekday}"
    #f
-   (date-compactness-override (list "janv" "febr" "marts" "apr" "maijs" "jūn" "jūl" "aug" "sept" "okt" "nov" "dec") #f (list "sv" "pr" "ot" "tr" "ce" "pk" "se") "{n}." #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "janv" "febr" "marts" "apr" "maijs" "jūn" "jūl" "aug" "sept" "okt" "nov" "dec") #f (list "sv" "pr" "ot" "tr" "ce" "pk" "se") "{n}." #f "{day} {month}" "{year}. gada {day} {month}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}.{m}." "{d}.{m}.{yy}" #f #f #f)
   ))

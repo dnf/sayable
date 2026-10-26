@@ -10,21 +10,21 @@
 # Source: locales/bci.json
 
 _sayabletime_locale_bci() {
-    _clock_hours=('blu-nɲɔn' 'kun' 'nɲɔn' 'nsan' 'nan' 'nnun' 'nsiɛn' 'nso' 'mɔcuɛ' 'ngwlan' 'blu' 'blu-kun')
+    _clock_hours=('blu-nin-nɲɔn' 'kun' 'nɲɔn' 'nsan' 'nan' 'nnun' 'nsiɛn' 'nso' 'mɔcuɛ' 'ngwlan' 'blu' 'blu-nin-kun')
     _clock_midnight='kɔnguɛ afiɛn'
     _clock_noon='nnɔsua'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='dɔ {h}'
+    _clock_pattern_5='dɔ {h} nin miniti nnun'
+    _clock_pattern_10='dɔ {h} nin miniti blu'
+    _clock_pattern_15='dɔ {h} nin miniti blu-nin-nnun'
+    _clock_pattern_20='dɔ {h} nin miniti ablaɔn'
+    _clock_pattern_25='dɔ {h} nin miniti ablaɔn-nin-nnun'
+    _clock_pattern_30='dɔ {h} nin miniti ablasan'
+    _clock_pattern_35='dɔ {h} nin miniti ablasan-nin-nnun'
+    _clock_pattern_40='dɔ {h} nin miniti ablanan'
+    _clock_pattern_45='dɔ {h} nin miniti ablanan-nin-nnun'
+    _clock_pattern_50='dɔ {h} nin miniti ablenun'
+    _clock_pattern_55='dɔ {h} nin miniti ablenun-nin-nnun'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

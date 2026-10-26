@@ -24,7 +24,7 @@
     (list "sappo e ɗiɗi" "go'o" "ɗiɗi" "tati" "nay" "joy" "jeegom" "jeeɗiɗi" "jeetati" "jeenay" "sappo" "sappo e go'o")
     "jamma hejjere"
     "zuhr"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (hash 0 "waktu {h}" 5 "waktu {h} e hojomaaje joy" 10 "waktu {h} e hojomaaje sappo" 15 "waktu {h} e hojomaaje sappo e joy" 20 "waktu {h} e hojomaaje noogas" 25 "waktu {h} e hojomaaje noogas e joy" 30 "waktu {h} e feccere" 35 "waktu {h} e hojomaaje cappanɗe tati e joy" 40 "waktu {h} e hojomaaje cappanɗe nay" 45 "waktu {h} e hojomaaje cappanɗe nay e joy" 50 "waktu {h} e hojomaaje cappanɗe joy" 55 "waktu {h} e hojomaaje cappanɗe joy e joy"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

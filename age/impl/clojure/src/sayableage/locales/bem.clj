@@ -21,6 +21,6 @@
    :half "{0} na hafu"
    :delimiter ", "
    :just-born "Umwana uwafyalwa fye"
-   :stages {:newborn {:type :neutral :label "Umwana uwafyalwa fye"} :infant {:type :neutral :label "Akamwana"} :toddler {:type :neutral :label "Umwana"} :child {:type :neutral :label "Umwana"} :teenager {:type :neutral :label "Umunyamata"} :adult {:type :neutral :label "Umulumendo"}}
+   :stages {:newborn {:type :neutral :label "Umwana uwafyalwa fye"} :infant {:type :neutral :label "Akamwana"} :toddler {:type :neutral :label "Umwana"} :child {:type :neutral :label "Umwana"} :teenager {:type :neutral :label "Umunyamata"} :adult {:type :neutral :label "Umukalamba"}}
    :short {:day {:type :pluralized :forms {:one "ubushiku {n}" :other "inshiku {n}"}} :week {:type :pluralized :forms {:one "umulungu {n}" :other "imilungu {n}"}} :month {:type :pluralized :forms {:one "umweshi {n}" :other "imyeshi {n}"}} :year {:type :pluralized :forms {:one "umwaka {n}" :other "imyaka {n}"}} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

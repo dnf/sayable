@@ -21,6 +21,6 @@
    :half "{0} kpo vlavo kpo"
    :delimiter ", "
    :just-born "Vǐ yɔ̌yɔ́"
-   :stages {:newborn {:type :neutral :label "Vǐ yɔ̌yɔ́"} :infant {:type :neutral :label "Vǐ"} :toddler {:type :neutral :label "Vǐ"} :child {:type :neutral :label "Vǐ"} :teenager {:type :neutral :label "Nyɔ̌nu"} :adult {:type :neutral :label "Mɛ̌xo"}}
+   :stages {:newborn {:type :neutral :label "Vǐ yɔ̌yɔ́"} :infant {:type :neutral :label "Vǐ"} :toddler {:type :neutral :label "Vǐ"} :child {:type :neutral :label "Vǐ"} :teenager {:type :gendered :m "Dɔnkpɛvu" :f "Ɖyɔ̌vǐ"} :adult {:type :neutral :label "Mɛ̌xo"}}
    :short {:day {:type :simple :form "azǎn {n}"} :week {:type :simple :form "aklunɔ̌zán {n}"} :month {:type :simple :form "sun {n}"} :year {:type :simple :form "xwè {n}"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

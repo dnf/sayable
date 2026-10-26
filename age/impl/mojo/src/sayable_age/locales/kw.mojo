@@ -41,10 +41,10 @@ fn _plural(n: Int) -> String:
 fn build_kw() -> AgeLocale:
     """Build the Cornish locale."""
 
-    var day = plural_unit(zero="{n} dydh", one="dydh", two="{n} dhydh", few="{n} dydh", many="{n} dydh", other="{n} dydh")
-    var week = plural_unit(zero="{n} seythun", one="seythun", two="{n} seythun", few="{n} seythun", many="{n} seythun", other="{n} seythun")
-    var month = plural_unit(zero="{n} mis", one="mis", two="{n} vis", few="{n} mis", many="{n} mis", other="{n} mis")
-    var year = plural_unit(zero="{n} blydhen", one="blydhen", two="{n} vlydhen", few="{n} blydhen", many="{n} blydhen", other="{n} blydhen")
+    var day = plural_unit(zero="{n} dydh", one="{n} dydh", two="{n} dhydh", few="{n} dydh", many="{n} dydh", other="{n} dydh")
+    var week = plural_unit(zero="{n} seythun", one="{n} seythun", two="{n} seythun", few="{n} seythun", many="{n} seythun", other="{n} seythun")
+    var month = plural_unit(zero="{n} mis", one="{n} mis", two="{n} vis", few="{n} mis", many="{n} mis", other="{n} mis")
+    var year = plural_unit(zero="{n} blydhen", one="{n} blydhen", two="{n} vlydhen", few="{n} blydhen", many="{n} blydhen", other="{n} blydhen")
 
     var newborn = stage_neutral("Nowyth genys")
     var infant = stage_neutral("Babi")

@@ -10,21 +10,21 @@
 # Source: locales/ta.json
 
 _sayabletime_locale_ta() {
-    _clock_hours=('பன்னிரண்டு' 'ஒன்று' 'இரண்டு' 'மூன்று' 'நான்கு' 'ஐந்து' 'ஆறு' 'ஏழு' 'எட்டு' 'ஒன்பது' 'பத்து' 'பதினொன்று')
+    _clock_hours=('பன்னிரண்ட' 'ஒன்ற' 'இரண்ட' 'மூன்ற' 'நான்க' 'ஐந்த' 'ஆற' 'ஏழ' 'எட்ட' 'ஒன்பத' 'பத்த' 'பதினொன்ற')
     _clock_midnight='நள்ளிரவு'
     _clock_noon='நண்பகல்'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}ு மணி'
+    _clock_pattern_5='{h}ு மணி ஐந்து நிமிடம்'
+    _clock_pattern_10='{h}ு மணி பத்து நிமிடம்'
+    _clock_pattern_15='{h}ே கால்'
+    _clock_pattern_20='{h}ு மணி இருபது நிமிடம்'
+    _clock_pattern_25='{h}ு மணி இருபத்தைந்து நிமிடம்'
+    _clock_pattern_30='{h}ரை'
+    _clock_pattern_35='{h}ு மணி முப்பத்தைந்து நிமிடம்'
+    _clock_pattern_40='{h}ு மணி நாற்பது நிமிடம்'
+    _clock_pattern_45='{h}ே முக்கால்'
+    _clock_pattern_50='{h}ு மணி ஐம்பது நிமிடம்'
+    _clock_pattern_55='{h}ு மணி ஐம்பத்தைந்து நிமிடம்'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

@@ -14,14 +14,14 @@
 (def locale
   {:code "te"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :simple :form "{n} సెకను"}
-   :minute {:type :simple :form "{n} నిమిషం"}
-   :hour {:type :simple :form "{n} గంట"}
+   :second {:type :pluralized :forms {:one "{n} సెకను" :other "{n} సెకన్లు"}}
+   :minute {:type :pluralized :forms {:one "{n} నిమిషం" :other "{n} నిమిషాలు"}}
+   :hour {:type :pluralized :forms {:one "{n} గంట" :other "{n} గంటలు"}}
    :day {:type :pluralized :forms {:one "{n} రోజు" :other "{n} రోజులు"}}
    :week {:type :pluralized :forms {:one "{n} వారం" :other "{n} వారాలు"}}
    :month {:type :pluralized :forms {:one "{n} నెల" :other "{n} నెలలు"}}
    :year {:type :pluralized :forms {:one "{n} సంవత్సరం" :other "{n} సంవత్సరాలు"}}
-   :half "{0}న్నర"
+   :half "{n}½"
    :delimiter ", "
    :just-now "ఇప్పుడే"
    :ago "{0} క్రితం"

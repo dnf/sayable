@@ -34,5 +34,5 @@
    "{0} ပူၼ်ႉမႃး"
    "ထႅင်ႈ {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} ဝိၼႃး") (hash "type" "simple" "form" "{n} မိၼိတ်ႉ") (hash "type" "simple" "form" "{n} ၸူဝ်ႈ") (hash "type" "simple" "form" "{n} ဝၼ်း") (hash "type" "simple" "form" "{n} ဝူင်ႈ") (hash "type" "simple" "form" "{n} လိူၼ်") (hash "type" "simple" "form" "{n} ပီ") #f #f "{0} ပူၼ်ႉမႃး" "ထႅင်ႈ {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} ပူၼ်ႉမႃး" "ထႅင်ႈ {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} ပူၼ်ႉမႃး" "ထႅင်ႈ {0}")
   ))

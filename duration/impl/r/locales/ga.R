@@ -23,7 +23,7 @@ locale_ga <- list(
   units = list(
     second = list(one = "{n} soicind", two = "{n} shoicind", few = "{n} shoicind", many = "{n} soicind", other = "{n} soicind"),
     minute = list(one = "{n} nóiméad", two = "{n} nóiméad", few = "{n} nóiméad", many = "{n} nóiméad", other = "{n} nóiméad"),
-    hour = list(one = "{n} uair", two = "{n} uair", few = "{n} huaire", many = "{n} n-uaire", other = "{n} uair"),
+    hour = list(one = "{n} uair an chloig", two = "{n} uair an chloig", few = "{n} huaire an chloig", many = "{n} n-uaire an chloig", other = "{n} uair an chloig"),
     day = list(one = "{n} lá", two = "{n} lá", few = "{n} lá", many = "{n} lá", other = "{n} lá"),
     week = list(one = "{n} seachtain", two = "{n} sheachtain", few = "{n} seachtaine", many = "{n} seachtaine", other = "{n} seachtain"),
     month = list(one = "{n} mhí", two = "{n} mhí", few = "{n} mhí", many = "{n} mí", other = "{n} mí"),

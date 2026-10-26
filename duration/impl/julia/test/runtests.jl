@@ -3,6 +3,7 @@ using SayableDuration
 
 # Section 1: Null / edge cases
 @testset "Null / edge cases" begin
+    # 1.1: not applicable — format_duration takes an Int, so a null (nothing) input has no method to call
     @test format_duration(SayableDurationFormatter(get_locale("en")), -1) === nothing  # 1.2
     @test format_since(SayableDurationFormatter(get_locale("en")), "", "2025-01-15T10:00:00") === nothing  # 1.3
     @test format_until(SayableDurationFormatter(get_locale("en")), "", "2025-01-15T10:00:00") === nothing  # 1.4

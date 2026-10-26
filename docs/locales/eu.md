@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [eu.json](../../locales/eu.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Euskaltzaindia (Araua 35) system: hours 'ordu bata', 'ordu biak', 'hirurak' ... 'hamabiak'; '{h} eta bost/hamar/laurden/hogei/hogeita bost', '{next_h} ... gutxi' for 35-55 ('laurak laurden gutxi'). Compromise at :30: the standard form uses the bare numeral ('hiru eta erdiak', 'ordu bat eta erdiak'), which the shared hours list cannot express; I used '{h} eta erdiak' ('hirurak eta erdiak'), a widespread colloquial form that Euskaltzaindia considers non-preferred. Hour 0 with minutes gives 'hamabiak eta laurden' (fine for both noon and midnight).
+
 ## Age
 
 ### Age formatting
@@ -52,31 +60,31 @@ Plural rule: `other_only` (categories: other)
 
 ### Date formatting
 
-| Date        | Normal        | Short  | Compact |
-| ----------- | ------------- | ------ | ------- |
-| January 1   | urtarrilren 1 | urt 1  | 1/1     |
-| February 14 | otsailren 14  | ots 14 | 14/2    |
-| March 15    | martxoren 15  | mar 15 | 15/3    |
-| July 4      | uztailren 4   | uzt 4  | 4/7     |
-| October 31  | urriren 31    | urr 31 | 31/10   |
-| December 25 | abenduren 25  | abe 25 | 25/12   |
+| Date        | Normal          | Short          | Compact |
+| ----------- | --------------- | -------------- | ------- |
+| January 1   | urtarrilaren 1a | urtarrilaren 1 | 1/1     |
+| February 14 | otsailaren 14a  | otsailaren 14  | 14/2    |
+| March 15    | martxoaren 15a  | martxoaren 15  | 15/3    |
+| July 4      | uztailaren 4a   | uztailaren 4   | 4/7     |
+| October 31  | urriaren 31     | urriaren 31    | 31/10   |
+| December 25 | abenduaren 25a  | abenduaren 25  | 25/12   |
 
 ### Relative dates
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal                | Compact |
-| -------------------- | --------------------- | ------- |
-| Today                | gaur                  | gaur    |
-| Tomorrow             | bihar                 | bihar   |
-| Yesterday            | atzo                  | atzo    |
-| Day after tomorrow   | etzi                  | 17/3    |
-| Day before yesterday | herenegun             | 13/3    |
-| This Thursday (+5)   | osteguna hau          | 20/3    |
-| Last Monday (-4)     | aurreko asteartea     | 11/3    |
-| Next Wednesday (+12) | hurrengo osteguna     | 27/3    |
-| Same month (+20)     | apirilren 4           | 4/4     |
-| Different year       | 2026ko urtarrilren 10 | 10/1/26 |
+| Offset               | Normal                  | Compact |
+| -------------------- | ----------------------- | ------- |
+| Today                | gaur                    | gaur    |
+| Tomorrow             | bihar                   | bihar   |
+| Yesterday            | atzo                    | atzo    |
+| Day after tomorrow   | etzi                    | 17/3    |
+| Day before yesterday | herenegun               | 13/3    |
+| This Thursday (+5)   | osteguna hau            | 20/3    |
+| Last Tuesday (-4)    | aurreko asteartea       | 11/3    |
+| Next Thursday (+12)  | hurrengo osteguna       | 27/3    |
+| Same year (+20)      | apirilaren 4a           | 4/4     |
+| Different year       | 2026ko urtarrilaren 10a | 10/1/26 |
 
 ## Duration
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal       | Short | Compact |
-| --------------- | ------------ | ----- | ------- |
-| Midnight        | gauerdia     | 0:00  | 0:00    |
-| 1:00 AM         | bat:00       | 1:00  | 1:00    |
-| 5 past 9        | bederatzi:05 | 9:05  | 9:05    |
-| Quarter past 10 | hamar:15     | 10:15 | 10:15   |
-| Half past 11    | hamaika:30   | 11:30 | 11:30   |
-| Noon            | eguerdia     | 12:00 | 12:00   |
-| Quarter to 3    | bi:45        | 14:45 | 14:45   |
-| 5 to 6          | bost:55      | 17:55 | 17:55   |
-| 8 o'clock PM    | zortzi:00    | 20:00 | 20:00   |
-| 10:30 PM        | hamar:30     | 22:30 | 22:30   |
-| 11:58 PM        | gauerdia     | 23:58 | 23:58   |
+| Time            | Normal                | Short | Compact |
+| --------------- | --------------------- | ----- | ------- |
+| Midnight        | gauerdia              | 0:00  | 0:00    |
+| 1:00 AM         | ordu bata             | 1:00  | 1:00    |
+| 5 past 9        | bederatziak eta bost  | 9:05  | 9:05    |
+| Quarter past 10 | hamarrak eta laurden  | 10:15 | 10:15   |
+| Half past 11    | hamaikak eta erdiak   | 11:30 | 11:30   |
+| Noon            | eguerdia              | 12:00 | 12:00   |
+| Quarter to 3    | hirurak laurden gutxi | 14:45 | 14:45   |
+| 5 to 6          | seiak bost gutxi      | 17:55 | 17:55   |
+| 8 o'clock PM    | zortziak              | 20:00 | 20:00   |
+| 10:30 PM        | hamarrak eta erdiak   | 22:30 | 22:30   |
+| 11:58 PM        | gauerdia              | 23:58 | 23:58   |

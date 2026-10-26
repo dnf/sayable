@@ -26,10 +26,10 @@ pub fn locale() -> types.AgeLocale {
     infant: types.NeutralStage("Ɓinngel"),
     toddler: types.NeutralStage("Cukalel"),
     child: types.NeutralStage("Suka"),
-    teenager: types.NeutralStage("Suka debbo"),
+    teenager: types.GenderedStage("Suka gorko", "Suka debbo"),
     adult: types.NeutralStage("Mawɗo"),
     short: Ok(types.CompactnessOverride(
-      day: Ok(types.SimpleUnit("ñalɗe {n}")),
+      day: Ok(types.PluralUnit([#(types.One, "ñalawma {n}"), #(types.Other, "ñalɗe {n}")])),
       week: Ok(types.PluralUnit([#(types.One, "yontere {n}"), #(types.Other, "yontereeji {n}")])),
       month: Ok(types.PluralUnit([#(types.One, "lewru {n}"), #(types.Other, "lebbi {n}")])),
       year: Ok(types.PluralUnit([#(types.One, "hitaande {n}"), #(types.Other, "duuɓi {n}")])),
@@ -38,7 +38,7 @@ pub fn locale() -> types.AgeLocale {
       just_born: Error(Nil),
     )),
     compact: Ok(types.CompactnessOverride(
-      day: Ok(types.SimpleUnit("ñalɗe {n}")),
+      day: Ok(types.PluralUnit([#(types.One, "ñalawma {n}"), #(types.Other, "ñalɗe {n}")])),
       week: Ok(types.PluralUnit([#(types.One, "yont {n}"), #(types.Other, "yontji {n}")])),
       month: Ok(types.PluralUnit([#(types.One, "lew {n}"), #(types.Other, "leb {n}")])),
       year: Ok(types.PluralUnit([#(types.One, "hit {n}"), #(types.Other, "duuɓi {n}")])),

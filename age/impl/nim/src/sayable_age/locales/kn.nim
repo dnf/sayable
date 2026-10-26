@@ -22,7 +22,7 @@ let KN* = AgeLocale(
     "month": pluralUnit(@[(pcOne, "{n} ತಿಂಗಳು"), (pcOther, "{n} ತಿಂಗಳುಗಳು")]),
     "year": pluralUnit(@[(pcOne, "{n} ವರ್ಷ"), (pcOther, "{n} ವರ್ಷಗಳು")]),
   }.toOrderedTable,
-  half: "{0}ವರೆ",
+  half: "{n}½",
   delimiter: ", ",
   justBorn: "ನವಜಾತ ಶಿಶು",
   stages: {

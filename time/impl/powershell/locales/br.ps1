@@ -10,22 +10,22 @@
 # Source: locales/br.json
 
 function locale_br {
-    $hours = @('12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11')
+    $hours = @('daouzek eur', 'un eur', 'div eur', 'teir eur', 'peder eur', 'pemp eur', 'c''hwec''h eur', 'seizh eur', 'eizh eur', 'nav eur', 'dek eur', 'unnek eur')
     $midnight = 'hanternoz'
     $noon = 'kreisteiz'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} ha pemp'
+    $patterns[10] = '{h} ha dek'
+    $patterns[15] = '{h} ha kard'
+    $patterns[20] = '{h} hag ugent'
+    $patterns[25] = '{h} ha pemp warn-ugent'
+    $patterns[30] = '{h} hanter'
+    $patterns[35] = '{next_h} nemet pemp warn-ugent'
+    $patterns[40] = '{next_h} nemet ugent'
+    $patterns[45] = '{next_h} nemet kard'
+    $patterns[50] = '{next_h} nemet dek'
+    $patterns[55] = '{next_h} nemet pemp'
     $clock = @{
         hours = $hours
         midnight = $midnight

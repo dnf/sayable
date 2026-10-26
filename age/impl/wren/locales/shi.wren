@@ -22,42 +22,42 @@ class SHILocale {
   static plural { Fn.new {|n| Plural.call(n) } }
   static units {
     return {
-      "day": {"one": "{n} ass", "few": "{n} ussan", "other": "{n} ass"},
-      "week": {"one": "{n} imalass", "few": "{n} imalassn", "other": "{n} imalass"},
-      "month": {"one": "{n} ayyur", "few": "{n} ayyurn", "other": "{n} ayyur"},
-      "year": {"one": "{n} aseggas", "few": "{n} iseggasen", "other": "{n} aseggas"},
+      "day": {"one": "{n} ⴰⵙⵙ", "few": "{n} ⵓⵙⵙⴰⵏ", "other": "{n} ⴰⵙⵙ"},
+      "week": {"one": "{n} ⵉⵎⴰⵍⴰⵙⵙ", "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"},
+      "month": {"one": "{n} ⴰⵢⵢⵓⵔ", "few": "{n} ⴰⵢⵢⵓⵔⵏ", "other": "{n} ⴰⵢⵢⵓⵔ"},
+      "year": {"one": "{n} ⴰⵙⴳⴳⵯⴰⵙ", "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"},
     }
   }
-  static half { "{0} d uzgen" }
+  static half { "{0} ⴷ ⵓⵣⴳⵏ" }
   static delimiter { ", " }
-  static justBorn { "Iɣ d illul" }
+  static justBorn { "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ" }
   static stages {
     return {
-      "newborn": "Iɣ d illul",
-      "infant": "Agellid",
-      "toddler": {"m": "Aḥenjir", "f": "Taḥenjirt"},
-      "child": {"m": "Afrux", "f": "Tafruxṭ"},
-      "teenager": {"m": "Aɛrim", "f": "Taɛrimt"},
-      "adult": {"m": "Argaz", "f": "Tamṭṭuṭ"},
+      "newborn": "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+      "infant": "ⵍⵍⵓⴼⴰⵏ",
+      "toddler": {"m": "ⴰⵃⵏⵊⵉⵔ", "f": "ⵜⴰⵃⵏⵊⵉⵔⵜ"},
+      "child": {"m": "ⴰⴼⵔⵓⵅ", "f": "ⵜⴰⴼⵔⵓⵅⵜ"},
+      "teenager": {"m": "ⴰⵄⵔⵉⵎ", "f": "ⵜⴰⵄⵔⵉⵎⵜ"},
+      "adult": {"m": "ⴰⵔⴳⴰⵣ", "f": "ⵜⴰⵎⵟⵟⵓⵟ"},
     }
   }
   static short {
     return {
       "units": {
-        "day": "{n} d",
-        "week": "{n} wk",
-        "month": "{n} mo",
-        "year": "{n} yr",
+        "day": {"one": "{n} ⴰⵙⵙ", "few": "{n} ⵓⵙⵙⴰⵏ", "other": "{n} ⴰⵙⵙ"},
+        "week": {"one": "{n} ⵉⵎⴰⵍⴰⵙⵙ", "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"},
+        "month": {"one": "{n} ⴰⵢⵢⵓⵔ", "few": "{n} ⴰⵢⵢⵓⵔⵏ", "other": "{n} ⴰⵢⵢⵓⵔ"},
+        "year": {"one": "{n} ⴰⵙⴳⴳⵯⴰⵙ", "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"},
       },
     }
   }
   static compact {
     return {
       "units": {
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}m",
-        "year": "{n}y",
+        "day": "{n} ⴰⵙⵙ",
+        "week": "{n} ⵉⵎⵍ",
+        "month": "{n} ⴰⵢⵔ",
+        "year": "{n} ⴰⵙⴳ",
       },
       "half": "{n}½",
       "delimiter": "",

@@ -22,7 +22,7 @@ TK = AgeLocale(
         "month": "{n} aý",
         "year": "{n} ýaş",
     },
-    half="{0}½",
+    half="{n} ýarym",
     delimiter=", ",
     just_born="Täze doglan",
     stages={
@@ -31,7 +31,7 @@ TK = AgeLocale(
         "toddler": "Kiçijik",
         "child": "Çaga",
         "teenager": "Ýetginjek",
-        "adult": "Ulular",
+        "adult": "Uly adam",
     },
     short=CompactnessOverride(
         units={

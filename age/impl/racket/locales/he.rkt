@@ -25,16 +25,16 @@
         [(= n 1) "one"]
         [(= n 2) "two"]
         [else "other"]))
-   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "יום {n}" "two" "יומיים" "other" "{n} ימים"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "שבוע {n}" "two" "שבועיים" "other" "{n} שבועות"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "חודש {n}" "two" "חודשיים" "other" "{n} חודשים"))
+   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "יום" "two" "יומיים" "other" "{n} ימים"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "שבוע" "two" "שבועיים" "other" "{n} שבועות"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "חודש" "two" "חודשיים" "other" "{n} חודשים"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "שנה" "two" "שנתיים" "other" "{n} שנים")))
    "{0} וחצי"
    ", "
    "רק נולד"
    (hash "newborn" (stage-label #f "רק נולד" "רק נולדה")
-         "infant" (stage-label "תינוק" #f #f)
-         "toddler" (stage-label "פעוט" #f #f)
+         "infant" (stage-label #f "תינוק" "תינוקת")
+         "toddler" (stage-label #f "פעוט" "פעוטה")
          "child" (stage-label #f "ילד" "ילדה")
          "teenager" (stage-label #f "נער" "נערה")
          "adult" (stage-label #f "מבוגר" "מבוגרת"))

@@ -138,27 +138,27 @@ const AgeLocale& SHI() {
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Plural({{PluralCategory::One, "{n} ass"}, {PluralCategory::Few, "{n} ussan"}, {PluralCategory::Other, "{n} ass"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} imalass"}, {PluralCategory::Few, "{n} imalassn"}, {PluralCategory::Other, "{n} imalass"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} ayyur"}, {PluralCategory::Few, "{n} ayyurn"}, {PluralCategory::Other, "{n} ayyur"}}),
-            UnitForms::Plural({{PluralCategory::One, "{n} aseggas"}, {PluralCategory::Few, "{n} iseggasen"}, {PluralCategory::Other, "{n} aseggas"}})
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵓⵙⵙⴰⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"}, {PluralCategory::Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵢⵢⵓⵔ"}, {PluralCategory::Few, "{n} ⴰⵢⵢⵓⵔⵏ"}, {PluralCategory::Other, "{n} ⴰⵢⵢⵓⵔ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}, {PluralCategory::Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}})
         },
-        "{0} d uzgen", ", ", "Iɣ d illul",
-        StageLabels{{"Iɣ d illul", ""}, {"Agellid", ""}, {"Aḥenjir", "Taḥenjirt"}, {"Afrux", "Tafruxṭ"}, {"Aɛrim", "Taɛrimt"}, {"Argaz", "Tamṭṭuṭ"}},
+        "{0} ⴷ ⵓⵣⴳⵏ", ", ", "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+        StageLabels{{"ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ", ""}, {"ⵍⵍⵓⴼⴰⵏ", ""}, {"ⴰⵃⵏⵊⵉⵔ", "ⵜⴰⵃⵏⵊⵉⵔⵜ"}, {"ⴰⴼⵔⵓⵅ", "ⵜⴰⴼⵔⵓⵅⵜ"}, {"ⴰⵄⵔⵉⵎ", "ⵜⴰⵄⵔⵉⵎⵜ"}, {"ⴰⵔⴳⴰⵣ", "ⵜⴰⵎⵟⵟⵓⵟ"}},
         CompactnessOverride{
-            UnitForms::Simple("{n} d"),
-            UnitForms::Simple("{n} wk"),
-            UnitForms::Simple("{n} mo"),
-            UnitForms::Simple("{n} yr"),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵓⵙⵙⴰⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}, {PluralCategory::Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ"}, {PluralCategory::Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵢⵢⵓⵔ"}, {PluralCategory::Few, "{n} ⴰⵢⵢⵓⵔⵏ"}, {PluralCategory::Other, "{n} ⴰⵢⵢⵓⵔ"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}, {PluralCategory::Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ"}, {PluralCategory::Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ"}}),
             std::nullopt,
             std::nullopt,
             std::nullopt
         },
         CompactnessOverride{
-            UnitForms::Simple("{n}d"),
-            UnitForms::Simple("{n}w"),
-            UnitForms::Simple("{n}m"),
-            UnitForms::Simple("{n}y"),
+            UnitForms::Simple("{n} ⴰⵙⵙ"),
+            UnitForms::Simple("{n} ⵉⵎⵍ"),
+            UnitForms::Simple("{n} ⴰⵢⵔ"),
+            UnitForms::Simple("{n} ⴰⵙⴳ"),
             std::string("{n}½"),
             std::string(""),
             std::nullopt
@@ -197,7 +197,7 @@ const AgeLocale& SHN() {
             UnitForms::Simple("{n}w"),
             UnitForms::Simple("{n}m"),
             UnitForms::Simple("{n}y"),
-            std::nullopt,
+            std::string("{n}½"),
             std::string(""),
             std::nullopt
         },
@@ -220,7 +220,7 @@ const AgeLocale& SI() {
             UnitForms::Plural({{PluralCategory::One, "මාස {n}"}, {PluralCategory::Other, "මාස {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "වසර {n}"}, {PluralCategory::Other, "වසර {n}"}})
         },
-        "{0}යි භාගයයි", ", ", "අලුත උපන්",
+        "{n}½", ", ", "අලුත උපන්",
         StageLabels{{"අලුත උපන්", ""}, {"බිළිඳා", ""}, {"ගමන් යන දරුවා", ""}, {"ළමයා", ""}, {"නව යොවුන්", ""}, {"වැඩිහිටි", ""}},
         CompactnessOverride{
             UnitForms::Simple("දින {n}"),
@@ -413,10 +413,10 @@ const AgeLocale& SO() {
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Plural({{PluralCategory::One, "maalin {n}"}, {PluralCategory::Other, "maalmood {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "toddobaad {n}"}, {PluralCategory::Other, "toddobaadyo {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "bil {n}"}, {PluralCategory::Other, "bilood {n}"}}),
-            UnitForms::Plural({{PluralCategory::One, "sano {n}"}, {PluralCategory::Other, "sanooyin {n}"}})
+            UnitForms::Plural({{PluralCategory::One, "{n} maalin"}, {PluralCategory::Other, "{n} maalmood"}}),
+            UnitForms::Simple("{n} toddobaad"),
+            UnitForms::Plural({{PluralCategory::One, "{n} bil"}, {PluralCategory::Other, "{n} bilood"}}),
+            UnitForms::Simple("{n} sano")
         },
         "{n}½", ", ", "Dhashay cusub",
         StageLabels{{"Dhashay cusub", ""}, {"Naaso-nuug", ""}, {"Cunug yar", ""}, {"Cunug", ""}, {"Dhallinyaro", ""}, {"Qaangaar", ""}},
@@ -457,8 +457,8 @@ const AgeLocale& SQ() {
             UnitForms::Plural({{PluralCategory::One, "{n} muaj"}, {PluralCategory::Other, "{n} muaj"}}),
             UnitForms::Plural({{PluralCategory::One, "{n} vit"}, {PluralCategory::Other, "{n} vjet"}})
         },
-        "{0} e gjysmë", ", ", "Sapolindur",
-        StageLabels{{"Sapolindur", "Sapolindure"}, {"Foshnjë", ""}, {"Fëmijë i vogël", "Fëmijë e vogël"}, {"Fëmijë", ""}, {"Adoleshent", "Adoleshente"}, {"I rritur", "E rritur"}},
+        "{0} e gjysmë", ", ", "I sapolindur",
+        StageLabels{{"I sapolindur", "E sapolindur"}, {"Foshnjë", ""}, {"Fëmijë i vogël", "Fëmijë e vogël"}, {"Fëmijë", ""}, {"Adoleshent", "Adoleshente"}, {"I rritur", "E rritur"}},
         CompactnessOverride{
             UnitForms::Simple("{n} ditë"),
             UnitForms::Simple("{n} javë"),
@@ -578,7 +578,7 @@ const AgeLocale& ST() {
             UnitForms::Plural({{PluralCategory::One, "selemo {n}"}, {PluralCategory::Other, "dilemo {n}"}})
         },
         "{0} le halofo", ", ", "O sa tswa hlaha",
-        StageLabels{{"Lesea le sa tswa hlaha", ""}, {"Lesea", ""}, {"Ngwanana", ""}, {"Ngwana", ""}, {"Mosha", ""}, {"Motho e moholo", ""}},
+        StageLabels{{"Lesea le sa tswa hlaha", ""}, {"Lesea", ""}, {"Ngwana e monyane", ""}, {"Ngwana", ""}, {"Mosha", ""}, {"Motho e moholo", ""}},
         CompactnessOverride{
             UnitForms::Plural({{PluralCategory::One, "letsatsi {n}"}, {PluralCategory::Other, "matsatsi {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "beke {n}"}, {PluralCategory::Other, "dibeke {n}"}}),
@@ -771,7 +771,7 @@ const AgeLocale& TA() {
             UnitForms::Plural({{PluralCategory::One, "{n} மாதம்"}, {PluralCategory::Other, "{n} மாதங்கள்"}}),
             UnitForms::Plural({{PluralCategory::One, "{n} வயது"}, {PluralCategory::Other, "{n} வயது"}})
         },
-        "{0}ரை", ", ", "பிறந்த குழந்தை",
+        "{n}½", ", ", "பிறந்த குழந்தை",
         StageLabels{{"பிறந்த குழந்தை", ""}, {"குழந்தை", ""}, {"சிறு குழந்தை", ""}, {"சிறார்", ""}, {"இளம்பருவம்", ""}, {"பெரியவர்", ""}},
         CompactnessOverride{
             UnitForms::Plural({{PluralCategory::One, "{n} நாள்"}, {PluralCategory::Other, "{n} நாட்கள்"}}),
@@ -810,7 +810,7 @@ const AgeLocale& TE() {
             UnitForms::Plural({{PluralCategory::One, "{n} నెల"}, {PluralCategory::Other, "{n} నెలలు"}}),
             UnitForms::Plural({{PluralCategory::One, "{n} సంవత్సరం"}, {PluralCategory::Other, "{n} సంవత్సరాలు"}})
         },
-        "{0}న్నర", ", ", "నవజాత శిశువు",
+        "{n}½", ", ", "నవజాత శిశువు",
         StageLabels{{"నవజాత శిశువు", ""}, {"శిశువు", ""}, {"చిన్న బిడ్డ", ""}, {"బిడ్డ", ""}, {"కౌమారదశ", ""}, {"వయోజనులు", ""}},
         CompactnessOverride{
             UnitForms::Plural({{PluralCategory::One, "{n} రోజు"}, {PluralCategory::Other, "{n} రోజులు"}}),
@@ -903,7 +903,7 @@ const AgeLocale& TET() {
             UnitForms::Simple("{n}w"),
             UnitForms::Simple("{n}m"),
             UnitForms::Simple("{n}y"),
-            std::nullopt,
+            std::string("{n}½"),
             std::string(""),
             std::nullopt
         },
@@ -925,7 +925,7 @@ const AgeLocale& TG() {
             UnitForms::Simple("{n} моҳ"),
             UnitForms::Simple("{n} сол")
         },
-        "{0} ним", ", ", "Навзод",
+        "{0}у ним", ", ", "Навзод",
         StageLabels{{"Навзод", ""}, {"Тифл", ""}, {"Кӯдак", ""}, {"Кӯдак", ""}, {"Наврас", ""}, {"Калонсол", ""}},
         CompactnessOverride{
             UnitForms::Simple("{n} р"),
@@ -1080,8 +1080,8 @@ const AgeLocale& TK() {
             UnitForms::Simple("{n} aý"),
             UnitForms::Simple("{n} ýaş")
         },
-        "{0}½", ", ", "Täze doglan",
-        StageLabels{{"Täze doglan", ""}, {"Bäbek", ""}, {"Kiçijik", ""}, {"Çaga", ""}, {"Ýetginjek", ""}, {"Ulular", ""}},
+        "{n} ýarym", ", ", "Täze doglan",
+        StageLabels{{"Täze doglan", ""}, {"Bäbek", ""}, {"Kiçijik", ""}, {"Çaga", ""}, {"Ýetginjek", ""}, {"Uly adam", ""}},
         CompactnessOverride{
             UnitForms::Simple("{n} g"),
             UnitForms::Simple("{n} h"),
@@ -1120,7 +1120,7 @@ const AgeLocale& TN() {
             UnitForms::Plural({{PluralCategory::One, "ngwaga {n}"}, {PluralCategory::Other, "dingwaga {n}"}})
         },
         "{0} le halofo", ", ", "O sa tswa tsalwa",
-        StageLabels{{"Lesea le sa tswa tsalwa", ""}, {"Lesea", ""}, {"Ngwana yo monnye", ""}, {"Ngwana", ""}, {"Lekgarebe", ""}, {"Motho yo mogolo", ""}},
+        StageLabels{{"Lesea le sa tswa tsalwa", ""}, {"Lesea", ""}, {"Ngwana yo monnye", ""}, {"Ngwana", ""}, {"Mosha", ""}, {"Motho yo mogolo", ""}},
         CompactnessOverride{
             UnitForms::Plural({{PluralCategory::One, "letsatsi {n}"}, {PluralCategory::Other, "malatsi {n}"}}),
             UnitForms::Plural({{PluralCategory::One, "beke {n}"}, {PluralCategory::Other, "dibeke {n}"}}),
@@ -1157,7 +1157,7 @@ const AgeLocale& TPI() {
             UnitForms::Simple("{n} mun"),
             UnitForms::Simple("{n} yia")
         },
-        "{n} na hap", ", ", "Nupela pikinini",
+        "{0} na hap", ", ", "Nupela pikinini",
         StageLabels{{"Nupela pikinini", ""}, {"Pikinini", ""}, {"Liklik pikinini", ""}, {"Pikinini", ""}, {"Yangpela", ""}, {"Bikpela man", ""}},
         CompactnessOverride{
             UnitForms::Simple("{n} de"),
@@ -1173,7 +1173,7 @@ const AgeLocale& TPI() {
             UnitForms::Simple("{n}w"),
             UnitForms::Simple("{n}m"),
             UnitForms::Simple("{n}y"),
-            std::nullopt,
+            std::string("{n}½"),
             std::string(""),
             std::nullopt
         },
@@ -1314,12 +1314,12 @@ const AgeLocale& TZM() {
             UnitForms::Plural({{PluralCategory::One, "{n} aseggas"}, {PluralCategory::Other, "{n} iseggasen"}})
         },
         "{0} d uzgen", ", ", "Iɣ d illul",
-        StageLabels{{"Iɣ d illul", ""}, {"Agellid", ""}, {"Aḥenjir", "Taḥenjirt"}, {"Afrux", "Tafruxṭ"}, {"Aɛrim", "Taɛrimt"}, {"Argaz", "Tamṭṭuṭ"}},
+        StageLabels{{"Iɣ d illul", ""}, {"Llufan", ""}, {"Aḥenjir", "Taḥenjirt"}, {"Afrux", "Tafruxt"}, {"Aɛrim", "Taɛrimt"}, {"Argaz", "Tamṭṭuṭ"}},
         CompactnessOverride{
-            UnitForms::Simple("{n} d"),
-            UnitForms::Simple("{n} wk"),
-            UnitForms::Simple("{n} mo"),
-            UnitForms::Simple("{n} yr"),
+            UnitForms::Plural({{PluralCategory::One, "{n} ass"}, {PluralCategory::Other, "{n} ussan"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} imalass"}, {PluralCategory::Other, "{n} imalassn"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ayyur"}, {PluralCategory::Other, "{n} ayyurn"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} aseggas"}, {PluralCategory::Other, "{n} iseggasen"}}),
             std::nullopt,
             std::nullopt,
             std::nullopt
@@ -1550,7 +1550,7 @@ const AgeLocale& VI() {
             UnitForms::Simple("{n} tuổi")
         },
         "{0} rưỡi", ", ", "Sơ sinh",
-        StageLabels{{"Sơ sinh", ""}, {"Trẻ sơ sinh", ""}, {"Trẻ mới biết đi", ""}, {"Trẻ em", ""}, {"Thiếu niên", ""}, {"Người lớn", ""}},
+        StageLabels{{"Sơ sinh", ""}, {"Trẻ nhũ nhi", ""}, {"Trẻ mới biết đi", ""}, {"Trẻ em", ""}, {"Thiếu niên", ""}, {"Người lớn", ""}},
         CompactnessOverride{
             UnitForms::Simple("{n} ngày"),
             UnitForms::Simple("{n} tuần"),
@@ -1621,27 +1621,27 @@ const AgeLocale& WO() {
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Simple("bés {n}"),
-            UnitForms::Simple("ayubés {n}"),
-            UnitForms::Simple("weer {n}"),
-            UnitForms::Simple("at {n}")
+            UnitForms::Simple("{n} fan"),
+            UnitForms::Simple("{n} ayubés"),
+            UnitForms::Simple("{n} weer"),
+            UnitForms::Simple("{n} at")
         },
         "{0} ak genn-wàll", ", ", "Dees ko sax juddu",
-        StageLabels{{"Dees ko sax juddu", ""}, {"Njàmbaar bu ndaw", ""}, {"Xale bu ndaw", ""}, {"Xale", ""}, {"Ndaw-ndaw", ""}, {"Mag", ""}},
+        StageLabels{{"Dees ko sax juddu", ""}, {"Liir", ""}, {"Xale bu ndaw", ""}, {"Xale", ""}, {"Ndaw-ndaw", ""}, {"Mag", ""}},
         CompactnessOverride{
-            UnitForms::Simple("bés {n}"),
-            UnitForms::Simple("ayub. {n}"),
-            UnitForms::Simple("weer {n}"),
-            UnitForms::Simple("at {n}"),
+            UnitForms::Simple("{n} fan"),
+            UnitForms::Simple("{n} ayub."),
+            UnitForms::Simple("{n} weer"),
+            UnitForms::Simple("{n} at"),
             std::nullopt,
             std::nullopt,
             std::nullopt
         },
         CompactnessOverride{
-            UnitForms::Simple("bés {n}"),
-            UnitForms::Simple("ayub {n}"),
-            UnitForms::Simple("weer {n}"),
-            UnitForms::Simple("at {n}"),
+            UnitForms::Simple("{n} fan"),
+            UnitForms::Simple("{n} ayub"),
+            UnitForms::Simple("{n} weer"),
+            UnitForms::Simple("{n} at"),
             std::string("{n}½"),
             std::string(""),
             std::nullopt

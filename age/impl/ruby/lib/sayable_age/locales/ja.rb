@@ -47,6 +47,7 @@ module SayableAge
           'month' => '{n}m',
           'year' => '{n}y',
         },
+        half: '{n}½',
       ),
     )
   end

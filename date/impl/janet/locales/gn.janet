@@ -17,7 +17,7 @@
    :day-format-exceptions {}
    :date-pattern "{day} {month}"
    :date-pattern-with-year "{day} {month} {year}"
-   :today "ko'ágã"
+   :today "ko árape"
    :tomorrow "ko'ẽrõ"
    :yesterday "kuehe"
    :day-after-tomorrow "ko'ẽrõ rire"

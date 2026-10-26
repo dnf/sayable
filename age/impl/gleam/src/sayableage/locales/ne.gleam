@@ -24,7 +24,7 @@ pub fn locale() -> types.AgeLocale {
     just_born: "नवजात शिशु",
     newborn: types.NeutralStage("नवजात शिशु"),
     infant: types.NeutralStage("शिशु"),
-    toddler: types.NeutralStage("बाल्यकाल"),
+    toddler: types.NeutralStage("सानो बच्चा"),
     child: types.NeutralStage("बालक"),
     teenager: types.NeutralStage("किशोर"),
     adult: types.NeutralStage("वयस्क"),

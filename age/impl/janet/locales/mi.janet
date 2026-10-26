@@ -12,11 +12,11 @@
 (def locale
   {:code "mi"
    :plural (fn [n] (if (= n 1) :one :other))
-   :units {:day "rā {n}"
-          :week "wiki {n}"
-          :month "marama {n}"
-          :year "tau {n}"}
-   :half "{0}½"
+   :units {:day "{n} rā"
+          :week "{n} wiki"
+          :month "{n} marama"
+          :year "{n} tau"}
+   :half "{n}½"
    :delimiter ", "
    :just-born "Pēpi hou"
    :stages {:newborn "Pēpi hou"
@@ -26,6 +26,6 @@
             :teenager "Rangatahi"
             :adult "Pakeke"
 }
-   :short {:units {:day "rā {n}" :week "w {n}" :month "m {n}" :year "t {n}"}}
+   :short {:units {:day "{n} rā" :week "{n} w" :month "{n} m" :year "{n} t"}}
    :compact {:units {:day "{n}r" :week "{n}w" :month "{n}m" :year "{n}t"} :half "{n}½" :delimiter ""}
 })

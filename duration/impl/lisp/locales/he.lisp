@@ -25,12 +25,12 @@
   (make-duration-locale
    :code "he"
    :plural #'plural-he
-   :units (list (cons :second '((:one . "שנייה {n}") (:two . "שתי שניות") (:other . "{n} שניות")))
-               (cons :minute '((:one . "דקה {n}") (:two . "שתי דקות") (:other . "{n} דקות")))
-               (cons :hour '((:one . "שעה {n}") (:two . "שעתיים") (:other . "{n} שעות")))
-               (cons :day '((:one . "יום {n}") (:two . "יומיים") (:other . "{n} ימים")))
-               (cons :week '((:one . "שבוע {n}") (:two . "שבועיים") (:other . "{n} שבועות")))
-               (cons :month '((:one . "חודש {n}") (:two . "חודשיים") (:other . "{n} חודשים")))
+   :units (list (cons :second '((:one . "שנייה") (:two . "שתי שניות") (:other . "{n} שניות")))
+               (cons :minute '((:one . "דקה") (:two . "שתי דקות") (:other . "{n} דקות")))
+               (cons :hour '((:one . "שעה") (:two . "שעתיים") (:other . "{n} שעות")))
+               (cons :day '((:one . "יום") (:two . "יומיים") (:other . "{n} ימים")))
+               (cons :week '((:one . "שבוע") (:two . "שבועיים") (:other . "{n} שבועות")))
+               (cons :month '((:one . "חודש") (:two . "חודשיים") (:other . "{n} חודשים")))
                (cons :year '((:one . "שנה") (:two . "שנתיים") (:other . "{n} שנים"))))
    :half "{0} וחצי"
    :delimiter ", "

@@ -14,9 +14,9 @@ class SWLocale {
   static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "second": "{n} sekunde",
-      "minute": "{n} dakika",
-      "hour": "{n} saa",
+      "second": "sekunde {n}",
+      "minute": "dakika {n}",
+      "hour": "saa {n}",
       "day": {"one": "siku {n}", "other": "siku {n}"},
       "week": {"one": "wiki {n}", "other": "wiki {n}"},
       "month": {"one": "mwezi {n}", "other": "miezi {n}"},

@@ -14,14 +14,14 @@
 (def locale
   {:code "si"
    :plural (fn [n] (if (or (== n 0) (== n 1)) :one :other))
-   :second {:type :simple :form "{n} තත්පරය"}
-   :minute {:type :simple :form "{n} මිනිත්තුව"}
-   :hour {:type :simple :form "{n} පැය"}
+   :second {:type :simple :form "තත්පර {n}"}
+   :minute {:type :simple :form "මිනිත්තු {n}"}
+   :hour {:type :simple :form "පැය {n}"}
    :day {:type :pluralized :forms {:one "දින {n}" :other "දින {n}"}}
    :week {:type :pluralized :forms {:one "සති {n}" :other "සති {n}"}}
    :month {:type :pluralized :forms {:one "මාස {n}" :other "මාස {n}"}}
    :year {:type :pluralized :forms {:one "වසර {n}" :other "වසර {n}"}}
-   :half "{0}යි භාගයයි"
+   :half "{n}½"
    :delimiter ", "
    :just-now "දැන්"
    :ago "{0}ට පෙර"

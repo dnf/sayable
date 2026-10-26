@@ -38,11 +38,11 @@ locale =
               , ( Other, "{n} nóiméad" )
               ] )
             , ( "hour", Pluralized
-              [ ( One, "{n} uair" )
-              , ( Two, "{n} uair" )
-              , ( Few, "{n} huaire" )
-              , ( Many, "{n} n-uaire" )
-              , ( Other, "{n} uair" )
+              [ ( One, "{n} uair an chloig" )
+              , ( Two, "{n} uair an chloig" )
+              , ( Few, "{n} huaire an chloig" )
+              , ( Many, "{n} n-uaire an chloig" )
+              , ( Other, "{n} uair an chloig" )
               ] )
             , ( "day", Pluralized
               [ ( One, "{n} lá" )

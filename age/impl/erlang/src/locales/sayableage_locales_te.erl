@@ -21,7 +21,7 @@ locale() ->
         week = {pluralized, [{one, "{n} వారం"}, {other, "{n} వారాలు"}]},
         month = {pluralized, [{one, "{n} నెల"}, {other, "{n} నెలలు"}]},
         year = {pluralized, [{one, "{n} సంవత్సరం"}, {other, "{n} సంవత్సరాలు"}]},
-        half = "{0}న్నర",
+        half = "{n}½",
         delimiter = ", ",
         just_born = "నవజాత శిశువు",
         stages = #stages{newborn = {neutral, "నవజాత శిశువు"}, infant = {neutral, "శిశువు"}, toddler = {neutral, "చిన్న బిడ్డ"}, child = {neutral, "బిడ్డ"}, teenager = {neutral, "కౌమారదశ"}, adult = {neutral, "వయోజనులు"}},

@@ -28,9 +28,9 @@
         [(and (>= (remainder n 100) 3) (<= (remainder n 100) 10)) "few"]
         [(and (>= (remainder n 100) 11) (<= (remainder n 100) 99)) "many"]
         [else "other"]))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "zero" "{n} ثانية" "one" "ثانية واحدة" "two" "ثانيتان" "few" "{n} ثوانٍ" "many" "{n} ثانية" "other" "{n} ثانية"))
-         "minute" (hash "type" "pluralized" "forms" (hash "zero" "{n} دقيقة" "one" "دقيقة واحدة" "two" "دقيقتان" "few" "{n} دقائق" "many" "{n} دقيقة" "other" "{n} دقيقة"))
-         "hour" (hash "type" "pluralized" "forms" (hash "zero" "{n} ساعة" "one" "ساعة واحدة" "two" "ساعتان" "few" "{n} ساعات" "many" "{n} ساعة" "other" "{n} ساعة"))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "zero" "{n} ثانية" "one" "ثانية" "two" "ثانيتان" "few" "{n} ثوانٍ" "many" "{n} ثانية" "other" "{n} ثانية"))
+         "minute" (hash "type" "pluralized" "forms" (hash "zero" "{n} دقيقة" "one" "دقيقة" "two" "دقيقتان" "few" "{n} دقائق" "many" "{n} دقيقة" "other" "{n} دقيقة"))
+         "hour" (hash "type" "pluralized" "forms" (hash "zero" "{n} ساعة" "one" "ساعة" "two" "ساعتان" "few" "{n} ساعات" "many" "{n} ساعة" "other" "{n} ساعة"))
          "day" (hash "type" "pluralized" "forms" (hash "zero" "{n} يوم" "one" "يوم" "two" "يومان" "few" "{n} أيام" "many" "{n} يومًا" "other" "{n} يوم"))
          "week" (hash "type" "pluralized" "forms" (hash "zero" "{n} أسبوع" "one" "أسبوع" "two" "أسبوعان" "few" "{n} أسابيع" "many" "{n} أسبوعًا" "other" "{n} أسبوع"))
          "month" (hash "type" "pluralized" "forms" (hash "zero" "{n} شهر" "one" "شهر" "two" "شهران" "few" "{n} أشهر" "many" "{n} شهرًا" "other" "{n} شهر"))
@@ -41,5 +41,5 @@
    "منذ {0}"
    "بعد {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} ث") (hash "type" "simple" "form" "{n} د") (hash "type" "simple" "form" "{n} س") (hash "type" "pluralized" "forms" (hash "zero" "{n} يوم" "one" "يوم" "two" "يومان" "few" "{n} أيام" "many" "{n} يومًا" "other" "{n} يوم")) (hash "type" "pluralized" "forms" (hash "zero" "{n} أسبوع" "one" "أسبوع" "two" "أسبوعان" "few" "{n} أسابيع" "many" "{n} أسبوعًا" "other" "{n} أسبوع")) (hash "type" "pluralized" "forms" (hash "zero" "{n} شهر" "one" "شهر" "two" "شهران" "few" "{n} أشهر" "many" "{n} شهرًا" "other" "{n} شهر")) (hash "type" "pluralized" "forms" (hash "zero" "{n} سنة" "one" "سنة واحدة" "two" "سنتان" "few" "{n} سنوات" "many" "{n} سنة" "other" "{n} سنة")) #f #f "منذ {0}" "بعد {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n} ث") (hash "type" "simple" "form" "{n} د") (hash "type" "simple" "form" "{n} س") (hash "type" "simple" "form" "{n} ي") (hash "type" "simple" "form" "{n} أ") (hash "type" "pluralized" "forms" (hash "zero" "{n} شهر" "one" "شهر" "two" "شهران" "few" "{n} أشهر" "many" "{n} شهرًا" "other" "{n} شهر")) (hash "type" "simple" "form" "{n} سنة") "{n}½" "" "منذ {0}" "بعد {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} ث") (hash "type" "simple" "form" "{n} د") (hash "type" "simple" "form" "{n} س") (hash "type" "simple" "form" "{n} ي") (hash "type" "simple" "form" "{n} أ") (hash "type" "simple" "form" "{n} شهر") (hash "type" "simple" "form" "{n} سنة") "{n}½" "" "منذ {0}" "بعد {0}")
   ))

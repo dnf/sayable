@@ -18,7 +18,7 @@ sa_unit('tpi', week, _, '{n} wik').
 sa_unit('tpi', month, _, '{n} mun').
 sa_unit('tpi', year, _, '{n} yia').
 
-sa_half('tpi', '{n} na hap').
+sa_half('tpi', '{0} na hap').
 sa_delimiter('tpi', ', ').
 sa_just_born('tpi', 'Nupela pikinini').
 
@@ -38,4 +38,5 @@ compact_sa_unit('tpi', day, _, '{n}d').
 compact_sa_unit('tpi', week, _, '{n}w').
 compact_sa_unit('tpi', month, _, '{n}m').
 compact_sa_unit('tpi', year, _, '{n}y').
+compact_sa_half('tpi', '{n}½').
 compact_sa_delimiter('tpi', '').

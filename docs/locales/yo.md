@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [yo.json](../../locales/yo.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Standard modern aago reading: 'aago méjì' (2:00), 'aago méjì kọjá ìṣẹ́jú mẹ́wàá' (2:10), 'aago méjì àbọ̀' (2:30), 'aago mẹ́ta kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún' (2:45, counting down to the next hour). For 20 minutes I used 'ogún ìṣẹ́jú' (round numerals like ogún precede the noun in Yoruba) rather than the audit's 'ìṣẹ́jú ogún'; a speaker should confirm that and the tone marks on mẹ́ẹ̀ẹ́dógún / mẹ́ẹ̀ẹ́dọ́gbọ̀n.
+
 ## Age
 
 ### Age formatting
@@ -70,12 +78,12 @@ Relative to Saturday, March 15, 2025.
 | Today                | lónìí                | lónìí   |
 | Tomorrow             | ọ̀la                 | ọ̀la    |
 | Yesterday            | àná                  | àná     |
-| Day after tomorrow   | ọ̀tún ọ̀la           | 17/3    |
-| Day before yesterday | ọ̀tún àná            | 13/3    |
+| Day after tomorrow   | ọ̀túnla              | 17/3    |
+| Day before yesterday | íjẹta                | 13/3    |
 | This Thursday (+5)   | Ọjọ́bọ̀ yìí          | 20/3    |
-| Last Monday (-4)     | Ọjọ́ Ìṣẹ́gun tó kọjá | 11/3    |
-| Next Wednesday (+12) | Ọjọ́bọ̀ tó ń bọ̀     | 27/3    |
-| Same month (+20)     | 4 Oṣù Ìgbé           | 4/4     |
+| Last Tuesday (-4)    | Ọjọ́ Ìṣẹ́gun tó kọjá | 11/3    |
+| Next Thursday (+12)  | Ọjọ́bọ̀ tó ń bọ̀     | 27/3    |
+| Same year (+20)      | 4 Oṣù Ìgbé           | 4/4     |
 | Different year       | 10 Oṣù Ṣẹ́rẹ́ 2026   | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal       | Short    | Compact |
-| --------------- | ------------ | -------- | ------- |
-| Midnight        | àárọ̀ òru    | 12:00 AM | 12:00a  |
-| 1:00 AM         | kan:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | mẹ́sàn-án:05 | 9:05 AM  | 9:05a   |
-| Quarter past 10 | mẹ́wàá:15    | 10:15 AM | 10:15a  |
-| Half past 11    | mọ́kànlá:30  | 11:30 AM | 11:30a  |
-| Noon            | ọ̀sán        | 12:00 PM | 12:00p  |
-| Quarter to 3    | méjì:45      | 2:45 PM  | 2:45p   |
-| 5 to 6          | márùn-ún:55  | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | mẹ́jọ:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | mẹ́wàá:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | àárọ̀ òru    | 11:58 PM | 11:58p  |
+| Time            | Normal                               | Short    | Compact |
+| --------------- | ------------------------------------ | -------- | ------- |
+| Midnight        | ọ̀gànjọ́ òru                         | 12:00 AM | 12:00a  |
+| 1:00 AM         | aago kan                             | 1:00 AM  | 1:00a   |
+| 5 past 9        | aago mẹ́sàn-án kọjá ìṣẹ́jú márùn-ún  | 9:05 AM  | 9:05a   |
+| Quarter past 10 | aago mẹ́wàá kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún | 10:15 AM | 10:15a  |
+| Half past 11    | aago mọ́kànlá àbọ̀                   | 11:30 AM | 11:30a  |
+| Noon            | ọ̀sán gangan                         | 12:00 PM | 12:00p  |
+| Quarter to 3    | aago mẹ́ta kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún    | 2:45 PM  | 2:45p   |
+| 5 to 6          | aago mẹ́fà kù ìṣẹ́jú márùn-ún        | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | aago mẹ́jọ                           | 8:00 PM  | 8:00p   |
+| 10:30 PM        | aago mẹ́wàá àbọ̀                     | 10:30 PM | 10:30p  |
+| 11:58 PM        | ọ̀gànjọ́ òru                         | 11:58 PM | 11:58p  |

@@ -5,63 +5,79 @@
   "age": {
     "units": {
       "day": {
-        "one": "{n} ass",
-        "few": "{n} ussan",
-        "other": "{n} ass"
+        "one": "{n} ⴰⵙⵙ",
+        "few": "{n} ⵓⵙⵙⴰⵏ",
+        "other": "{n} ⴰⵙⵙ"
       },
       "week": {
-        "one": "{n} imalass",
-        "few": "{n} imalassn",
-        "other": "{n} imalass"
+        "one": "{n} ⵉⵎⴰⵍⴰⵙⵙ",
+        "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ",
+        "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"
       },
       "month": {
-        "one": "{n} ayyur",
-        "few": "{n} ayyurn",
-        "other": "{n} ayyur"
+        "one": "{n} ⴰⵢⵢⵓⵔ",
+        "few": "{n} ⴰⵢⵢⵓⵔⵏ",
+        "other": "{n} ⴰⵢⵢⵓⵔ"
       },
       "year": {
-        "one": "{n} aseggas",
-        "few": "{n} iseggasen",
-        "other": "{n} aseggas"
+        "one": "{n} ⴰⵙⴳⴳⵯⴰⵙ",
+        "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ",
+        "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"
       }
     },
-    "half": "{0} d uzgen",
+    "half": "{0} ⴷ ⵓⵣⴳⵏ",
     "delimiter": ", ",
-    "justBorn": "Iɣ d illul",
+    "justBorn": "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
     "stages": {
-      "newborn": "Iɣ d illul",
-      "infant": "Agellid",
+      "newborn": "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ",
+      "infant": "ⵍⵍⵓⴼⴰⵏ",
       "toddler": {
-        "m": "Aḥenjir",
-        "f": "Taḥenjirt"
+        "m": "ⴰⵃⵏⵊⵉⵔ",
+        "f": "ⵜⴰⵃⵏⵊⵉⵔⵜ"
       },
       "child": {
-        "m": "Afrux",
-        "f": "Tafruxṭ"
+        "m": "ⴰⴼⵔⵓⵅ",
+        "f": "ⵜⴰⴼⵔⵓⵅⵜ"
       },
       "teenager": {
-        "m": "Aɛrim",
-        "f": "Taɛrimt"
+        "m": "ⴰⵄⵔⵉⵎ",
+        "f": "ⵜⴰⵄⵔⵉⵎⵜ"
       },
       "adult": {
-        "m": "Argaz",
-        "f": "Tamṭṭuṭ"
+        "m": "ⴰⵔⴳⴰⵣ",
+        "f": "ⵜⴰⵎⵟⵟⵓⵟ"
       }
     },
     "short": {
       "units": {
-        "day": "{n} d",
-        "week": "{n} wk",
-        "month": "{n} mo",
-        "year": "{n} yr"
+        "day": {
+          "one": "{n} ⴰⵙⵙ",
+          "few": "{n} ⵓⵙⵙⴰⵏ",
+          "other": "{n} ⴰⵙⵙ"
+        },
+        "week": {
+          "one": "{n} ⵉⵎⴰⵍⴰⵙⵙ",
+          "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ",
+          "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"
+        },
+        "month": {
+          "one": "{n} ⴰⵢⵢⵓⵔ",
+          "few": "{n} ⴰⵢⵢⵓⵔⵏ",
+          "other": "{n} ⴰⵢⵢⵓⵔ"
+        },
+        "year": {
+          "one": "{n} ⴰⵙⴳⴳⵯⴰⵙ",
+          "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ",
+          "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"
+        }
       }
     },
     "compact": {
       "units": {
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}m",
-        "year": "{n}y"
+        "day": "{n} ⴰⵙⵙ",
+        "week": "{n} ⵉⵎⵍ",
+        "month": "{n} ⴰⵢⵔ",
+        "year": "{n} ⴰⵙⴳ"
       },
       "delimiter": "",
       "half": "{n}½"
@@ -88,7 +104,7 @@
       "ⴰⵙⵉⵏⴰⵙ",
       "ⴰⴽⵕⴰⵙ",
       "ⴰⴽⵡⴰⵙ",
-      "ⴰⵙⵉⵎⵡⴰⵙ",
+      "ⵙⵉⵎⵡⴰⵙ",
       "ⴰⵙⵉⴹⵢⴰⵙ"
     ],
     "dayFormat": "{n}",
@@ -136,58 +152,86 @@
   "duration": {
     "units": {
       "second": {
-        "one": "{n} tasint",
-        "few": "{n} tasinin",
-        "other": "{n} tasinin"
+        "one": "{n} ⵜⴰⵙⵉⵏⵜ",
+        "few": "{n} ⵜⵉⵙⵉⵏⵉⵏ",
+        "other": "{n} ⵜⵉⵙⵉⵏⵉⵏ"
       },
       "minute": {
-        "one": "{n} tusdiqt",
-        "few": "{n} tusdiqin",
-        "other": "{n} tusdiqin"
+        "one": "{n} ⵜⵓⵙⴷⵉⵇⵜ",
+        "few": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ",
+        "other": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"
       },
       "hour": {
-        "one": "{n} tasragt",
-        "few": "{n} tisragin",
-        "other": "{n} tisragin"
+        "one": "{n} ⵜⴰⵙⵔⴰⴳⵜ",
+        "few": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ",
+        "other": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"
       },
       "day": {
-        "one": "{n} ass",
-        "few": "{n} ussan",
-        "other": "{n} ass"
+        "one": "{n} ⴰⵙⵙ",
+        "few": "{n} ⵓⵙⵙⴰⵏ",
+        "other": "{n} ⴰⵙⵙ"
       },
       "week": {
-        "one": "{n} imalass",
-        "few": "{n} imalassn",
-        "other": "{n} imalass"
+        "one": "{n} ⵉⵎⴰⵍⴰⵙⵙ",
+        "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ",
+        "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"
       },
       "month": {
-        "one": "{n} ayyur",
-        "few": "{n} ayyurn",
-        "other": "{n} ayyur"
+        "one": "{n} ⴰⵢⵢⵓⵔ",
+        "few": "{n} ⴰⵢⵢⵓⵔⵏ",
+        "other": "{n} ⴰⵢⵢⵓⵔ"
       },
       "year": {
-        "one": "{n} aseggas",
-        "few": "{n} iseggasen",
-        "other": "{n} aseggas"
+        "one": "{n} ⴰⵙⴳⴳⵯⴰⵙ",
+        "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ",
+        "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"
       }
     },
-    "half": "{0} d uzgen",
+    "half": "{0} ⴷ ⵓⵣⴳⵏ",
     "delimiter": ", ",
-    "justNow": "ɣilad",
-    "ago": "ɣ {0} zzrin",
-    "inFuture": "ɣ {0}",
+    "justNow": "ⵖⵉⵍⴰⴷ",
+    "ago": "ⵖ {0} ⵣⵣⵔⵉⵏ",
+    "inFuture": "ⵖ {0}",
     "short": {
       "units": {
-        "second": "{n}s",
-        "minute": "{n}m",
-        "hour": "{n}h",
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}mo",
-        "year": "{n}y"
+        "second": {
+          "one": "{n} ⵜⴰⵙⵉⵏⵜ",
+          "few": "{n} ⵜⵉⵙⵉⵏⵉⵏ",
+          "other": "{n} ⵜⵉⵙⵉⵏⵉⵏ"
+        },
+        "minute": {
+          "one": "{n} ⵜⵓⵙⴷⵉⵇⵜ",
+          "few": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ",
+          "other": "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"
+        },
+        "hour": {
+          "one": "{n} ⵜⴰⵙⵔⴰⴳⵜ",
+          "few": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ",
+          "other": "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"
+        },
+        "day": {
+          "one": "{n} ⴰⵙⵙ",
+          "few": "{n} ⵓⵙⵙⴰⵏ",
+          "other": "{n} ⴰⵙⵙ"
+        },
+        "week": {
+          "one": "{n} ⵉⵎⴰⵍⴰⵙⵙ",
+          "few": "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ",
+          "other": "{n} ⵉⵎⴰⵍⴰⵙⵙ"
+        },
+        "month": {
+          "one": "{n} ⴰⵢⵢⵓⵔ",
+          "few": "{n} ⴰⵢⵢⵓⵔⵏ",
+          "other": "{n} ⴰⵢⵢⵓⵔ"
+        },
+        "year": {
+          "one": "{n} ⴰⵙⴳⴳⵯⴰⵙ",
+          "few": "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ",
+          "other": "{n} ⴰⵙⴳⴳⵯⴰⵙ"
+        }
       },
-      "ago": "ɣ {0} zzrin",
-      "inFuture": "ɣ {0}",
+      "ago": "ⵖ {0} ⵣⵣⵔⵉⵏ",
+      "inFuture": "ⵖ {0}",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -199,18 +243,18 @@
     },
     "compact": {
       "units": {
-        "second": "{n}s",
-        "minute": "{n}m",
-        "hour": "{n}h",
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}mo",
-        "year": "{n}y"
+        "second": "{n} ⵜⵙⵏ",
+        "minute": "{n} ⵜⵙⴷ",
+        "hour": "{n} ⵜⵙⵔ",
+        "day": "{n} ⴰⵙⵙ",
+        "week": "{n} ⵉⵎⵍ",
+        "month": "{n} ⴰⵢⵔ",
+        "year": "{n} ⴰⵙⴳ"
       },
       "delimiter": "",
       "half": "{n}½",
-      "ago": "ɣ {0} zzrin",
-      "inFuture": "ɣ {0}",
+      "ago": "ⵖ {0} ⵣⵣⵔⵉⵏ",
+      "inFuture": "ⵖ {0}",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -224,34 +268,34 @@
   "time": {
     "clock": {
       "hours": [
-        "12",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11"
+        "ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ",
+        "ⵜⵉⵙ ⵢⴰⵜ",
+        "ⵜⵉⵙ ⵙⵏⴰⵜ",
+        "ⵜⵉⵙ ⴽⵕⴰⵟⵟ",
+        "ⵜⵉⵙ ⴽⴽⵓⵥⵜ",
+        "ⵜⵉⵙ ⵙⵎⵎⵓⵙⵜ",
+        "ⵜⵉⵙ ⵙⴹⵉⵙⵜ",
+        "ⵜⵉⵙ ⵙⴰⵜ",
+        "ⵜⵉⵙ ⵜⴰⵎⵜ",
+        "ⵜⵉⵙ ⵜⵥⴰⵜ",
+        "ⵜⵉⵙ ⵎⵔⴰⵡⵜ",
+        "ⵜⵉⵙ ⵢⴰⵜ ⴷ ⵎⵔⴰⵡⵜ"
       ],
       "midnight": "ⵏⵚ ⵏ ⵉⴹ",
       "noon": "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "{h} ⴷ ⵙⵎⵎⵓⵙ ⵜⵓⵙⴷⵉⵇⵉⵏ",
+        "10": "{h} ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ",
+        "15": "{h} ⴷ ⵔⵔⴱⵄ",
+        "20": "{h} ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ",
+        "25": "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ",
+        "30": "{h} ⴷ ⵓⵣⴳⵏ",
+        "35": "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵜⵍⴰⵜⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ",
+        "40": "{h} ⴷ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ",
+        "45": "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ",
+        "50": "{h} ⴷ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ",
+        "55": "{h} ⴷ ⵅⵎⵙⴰ ⵓ ⵅⵎⵙⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ"
       }
     },
     "short": {
@@ -266,5 +310,22 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Best effort, written in Tifinagh (CLDR's default script for shi): hours as the feminine ordinal 'ⵜⵉⵙ' (tis) + numeral ('ⵜⵉⵙ ⵙⵏⴰⵜ' 2:00, 'ⵜⵉⵙ ⵢⴰⵜ' 1:00, 'ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡⵜ' 12:xx), 'ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵓⵣⴳⵏ' (2:30), 'ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵔⵔⴱⵄ' (2:15), 'ⵜⵉⵙ ⵙⵏⴰⵜ ⴷ ⵎⵔⴰⵡ ⵜⵓⵙⴷⵉⵇⵉⵏ' (2:10), 20+ minutes with the everyday Arabic-loan numerals and 'ⵏ' + singular ('ⴷ ⵄⵛⵔⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ', 'ⴷ ⵅⵎⵙⴰ ⵓ ⵕⴱⵄⵉⵏ ⵏ ⵜⵓⵙⴷⵉⵇⵜ'). Doubts: whether 'ⵜⵉⵙ ⵢⴰⵜ' is used for one o'clock (vs 'ⵜⴰⵎⵣⵡⴰⵔⵓⵜ'); whether speakers prefer a subtractive 'quarter to' form (not attempted); the locale's minute word 'ⵜⵓⵙⴷⵉⵇⵜ' (CLDR/IRCAM use ⵜⵓⵙⴷⵉⴷⵜ); in practice many Moroccan Amazigh speakers tell time in Darija. The phrases were composed in Latin and transliterated letter by letter, so the spelling needs a native check. tzm keeps the same phrases in Latin; Central Atlas forms may differ. noon/midnight as before (ⵜⵉⵣⵡⴰⵔⵏⵉⵏ = midday prayer time, ⵏⵚ ⵏ ⵉⴹ = half of night)."
+    },
+    {
+      "section": "age, duration",
+      "confidence": "medium",
+      "note": "Everything outside the CLDR date names was transliterated from the earlier Latin-script strings with the standard Tachelhit correspondence and needs a native check: unit words and plurals (ⴰⵙⵙ/ⵓⵙⵙⴰⵏ, ⵉⵎⴰⵍⴰⵙⵙ/ⵉⵎⴰⵍⴰⵙⵙⵏ, ⴰⵢⵢⵓⵔ/ⴰⵢⵢⵓⵔⵏ, ⵜⴰⵙⵉⵏⵜ/ⵜⵉⵙⵉⵏⵉⵏ, ⵜⵓⵙⴷⵉⵇⵜ/ⵜⵓⵙⴷⵉⵇⵉⵏ, ⵜⴰⵙⵔⴰⴳⵜ/ⵜⵉⵙⵔⴰⴳⵉⵏ), the stages (ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ, ⵍⵍⵓⴼⴰⵏ, ⴰⵃⵏⵊⵉⵔ/ⵜⴰⵃⵏⵊⵉⵔⵜ, ⴰⴼⵔⵓⵅ/ⵜⴰⴼⵔⵓⵅⵜ, ⴰⵄⵔⵉⵎ/ⵜⴰⵄⵔⵉⵎⵜ, ⴰⵔⴳⴰⵣ/ⵜⴰⵎⵟⵟⵓⵟ), the half marker '{0} ⴷ ⵓⵣⴳⵏ' and the relative wrappers 'ⵖ {0} ⵣⵣⵔⵉⵏ' / 'ⵖ {0}' / 'ⵖⵉⵍⴰⴷ'. Following IRCAM practice the epenthetic schwa of the Latin spellings (aḥenjir, uzgen) is not written. The year word uses CLDR's spelling ⴰⵙⴳⴳⵯⴰⵙ (plural ⵉⵙⴳⴳⵯⴰⵙⵏ) in place of the earlier 'aseggas/iseggasen'. Compact units (ⴰⵙⵙ, ⵉⵎⵍ, ⴰⵢⵔ, ⴰⵙⴳ, ⵜⵙⵏ, ⵜⵙⴷ, ⵜⵙⵔ) are invented consonant-skeleton abbreviations, as Tifinagh has no established unit abbreviations; swap for whatever a native reader prefers."
+    },
+    {
+      "section": "date.weekdays",
+      "confidence": "medium",
+      "note": "Date names come from CLDR shi (Tifinagh). CLDR's wide Friday is 'ⵙⵉⵎⵡⴰⵙ' while its abbreviation is 'ⴰⵙⵉⵎ' and shi_Latn has 'asimwas'; the CLDR value is kept as is. If the a-initial 'ⴰⵙⵉⵎⵡⴰⵙ' is preferred, change only that entry."
+    }
+  ]
 }

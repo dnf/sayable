@@ -30,7 +30,7 @@
    "enkya"
    "jjo"
    "enkya ogwa"
-   "jjo edda"
+   "jjuuzi"
    "{weekday} eno"
    "{weekday} eddirira"
    "{weekday} eggudde"

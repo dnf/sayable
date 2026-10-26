@@ -17,22 +17,22 @@ ny
 	locale := SayableTimeLocale new.
 	locale code: 'ny'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'khumi ndi ziwiri'. 'imodzi'. 'ziwiri'. 'zitatu'. 'zinayi'. 'zisanu'. 'zisanu ndi chimodzi'. 'zisanu ndi ziwiri'. 'zisanu ndi zitatu'. 'zisanu ndi zinayi'. 'khumi'. 'khumi ndi chimodzi' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'lakhumi ndi chiwiri'. 'loyamba'. 'lachiwiri'. 'lachitatu'. 'lachinayi'. 'lachisanu'. 'lachisanu ndi chimodzi'. 'lachisanu ndi chiwiri'. 'lachisanu ndi chitatu'. 'lachisanu ndi chinayi'. 'lakhumi'. 'lakhumi ndi chimodzi' }).
 	clock at: #midnight put: 'pakati pausiku'.
 	clock at: #noon put: 'usana'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'ola {h}'.
+		5. 'ola {h} ndi mphindi zisanu'.
+		10. 'ola {h} ndi mphindi khumi'.
+		15. 'ola {h} ndi mphindi khumi ndi zisanu'.
+		20. 'ola {h} ndi mphindi makumi awiri'.
+		25. 'ola {h} ndi mphindi makumi awiri ndi zisanu'.
+		30. 'ola {h} ndi theka'.
+		35. 'ola {h} ndi mphindi makumi atatu ndi zisanu'.
+		40. 'ola {h} ndi mphindi makumi anayi'.
+		45. 'ola {h} ndi mphindi makumi anayi ndi zisanu'.
+		50. 'ola {h} ndi mphindi makumi asanu'.
+		55. 'ola {h} ndi mphindi makumi asanu ndi zisanu'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

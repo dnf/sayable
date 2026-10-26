@@ -71,7 +71,7 @@ fn build_id() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} setengah",
+        half="{n} setengah",
         delimiter=", ",
         just_born="Baru lahir",
         newborn=newborn,

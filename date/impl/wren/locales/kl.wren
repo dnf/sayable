@@ -22,7 +22,7 @@ class KLLocale {
     return {}
   }
   static datePattern { "{month} {day}" }
-  static datePatternWithYear { "{day} {month} {year}" }
+  static datePatternWithYear { "{month} {day} {year}" }
   static today { "ullumi" }
   static tomorrow { "aqagu" }
   static yesterday { "ippassaq" }
@@ -38,7 +38,7 @@ class KLLocale {
       "weekdays": ["sap", "ata", "mar", "pin", "sis", "tal", "arf"],
       "dayFormat": "{n}.",
       "datePattern": "{month} {day}",
-      "datePatternWithYear": "{day} {month} {year}",
+      "datePatternWithYear": "{month} {day} {year}",
     }
   }
   static compact {

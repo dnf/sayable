@@ -24,7 +24,7 @@
     (list "kaum ob" "ib" "ob" "peb" "plaub" "tsib" "rau" "xya" "yim" "cuaj" "kaum" "kaum ib")
     "ib tag hmo"
     "tav su"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (hash 0 "{h} teev" 5 "{h} teev tsib feeb" 10 "{h} teev kaum feeb" 15 "{h} teev kaum tsib feeb" 20 "{h} teev nees nkaum feeb" 25 "{h} teev nees nkaum tsib feeb" 30 "{h} teev ib nrab" 35 "{h} teev peb caug tsib feeb" 40 "{h} teev plaub caug feeb" 45 "{h} teev plaub caug tsib feeb" 50 "{h} teev tsib caug feeb" 55 "{h} teev tsib caug tsib feeb"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

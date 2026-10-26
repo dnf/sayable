@@ -12,10 +12,10 @@
 function loc = locale_ay()
   loc.code = 'ay';
   loc.plural = @(n) "other";
-  loc.units.day = 'uru {n}';
-  loc.units.week = 'simana {n}';
-  loc.units.month = 'phaxsi {n}';
-  loc.units.year = 'mara {n}';
+  loc.units.day = '{n} uru';
+  loc.units.week = '{n} simana';
+  loc.units.month = '{n} phaxsi';
+  loc.units.year = '{n} mara';
   loc.half = '{0} chika';
   loc.delimiter = ', ';
   loc.just_born = 'Wawa machaqa';
@@ -33,5 +33,6 @@ function loc = locale_ay()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
 endfunction

@@ -24,7 +24,7 @@ from ..locale import (
 fn build_bm() -> DateLocale:
     """Build the Bambara locale."""
     var month0 = "Zanwuye"
-    var month1 = "Fewuriye"
+    var month1 = "Feburuye"
     var month2 = "Marisi"
     var month3 = "Awirili"
     var month4 = "Mɛ"
@@ -32,8 +32,8 @@ fn build_bm() -> DateLocale:
     var month6 = "Zuluye"
     var month7 = "Uti"
     var month8 = "Sɛtanburu"
-    var month9 = "ɔkutɔburu"
-    var month10 = "Nowanbudu"
+    var month9 = "Ɔkutɔburu"
+    var month10 = "Nowanburu"
     var month11 = "Desanburu"
     var weekday0 = "Kari"
     var weekday1 = "Ntɛnɛn"
@@ -58,7 +58,7 @@ fn build_bm() -> DateLocale:
 
     var short_ovr = build_compactness_override()
     short_ovr.month0 = "Zan"
-    short_ovr.month1 = "Few"
+    short_ovr.month1 = "Feb"
     short_ovr.month2 = "Mar"
     short_ovr.month3 = "Awi"
     short_ovr.month4 = "Mɛ"
@@ -66,7 +66,7 @@ fn build_bm() -> DateLocale:
     short_ovr.month6 = "Zul"
     short_ovr.month7 = "Uti"
     short_ovr.month8 = "Sɛt"
-    short_ovr.month9 = "ɔku"
+    short_ovr.month9 = "Ɔku"
     short_ovr.month10 = "Now"
     short_ovr.month11 = "Des"
     short_ovr.has_months = True

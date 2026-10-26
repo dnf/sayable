@@ -1,5 +1,4 @@
 /// Types for the sayable-date locale system.
-
 pub type Compactness {
   Normal
   Short

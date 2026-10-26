@@ -24,11 +24,11 @@ locale() ->
         week = {pluralized, [{one, "kiumia {n}"}, {other, "kiumia {n}"}]},
         month = {pluralized, [{one, "mwerĩ {n}"}, {other, "mĩerĩ {n}"}]},
         year = {pluralized, [{one, "mwaka {n}"}, {other, "mĩaka {n}"}]},
-        half = "{0} na nusu",
+        half = "{0} na nuthu",
         delimiter = ", ",
-        just_now = "ũmũthĩ",
+        just_now = "rĩu",
         ago = "{0} ĩhĩtũkĩte",
-        in_future = "{0} ĩyothe",
-        short = {just, #duration_compactness_override{second = {just, {simple, "sek. {n}"}}, minute = {just, {simple, "ndag. {n}"}}, hour = {just, {pluralized, [{one, "ithaa {n}"}, {other, "mathaa {n}"}]}}, day = {just, {pluralized, [{one, "mũth. {n}"}, {other, "mĩth. {n}"}]}}, week = {just, {simple, "kiu. {n}"}}, month = {just, {pluralized, [{one, "mwerĩ {n}"}, {other, "mĩerĩ {n}"}]}}, year = {just, {pluralized, [{one, "mwaka {n}"}, {other, "mĩaka {n}"}]}}, half = nothing, delimiter = nothing, ago = {just, "{0} ĩhĩtũkĩte"}, in_future = {just, "{0} ĩyothe"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} ĩhĩtũkĩte"}, in_future = {just, "{0} ĩyothe"}}}
+        in_future = "thutha wa {0}",
+        short = {just, #duration_compactness_override{second = {just, {simple, "sek. {n}"}}, minute = {just, {simple, "ndag. {n}"}}, hour = {just, {pluralized, [{one, "ithaa {n}"}, {other, "mathaa {n}"}]}}, day = {just, {pluralized, [{one, "mũth. {n}"}, {other, "mĩth. {n}"}]}}, week = {just, {simple, "kiu. {n}"}}, month = {just, {pluralized, [{one, "mwerĩ {n}"}, {other, "mĩerĩ {n}"}]}}, year = {just, {pluralized, [{one, "mwaka {n}"}, {other, "mĩaka {n}"}]}}, half = nothing, delimiter = nothing, ago = {just, "{0} ĩhĩtũkĩte"}, in_future = {just, "thutha wa {0}"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} ĩhĩtũkĩte"}, in_future = {just, "thutha wa {0}"}}}
     }.

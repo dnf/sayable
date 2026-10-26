@@ -21,10 +21,10 @@
   (age-locale
    "ig"
    (lambda (n) "other")
-   (hash "day" (hash "type" "simple" "form" "{n} ụbọchị")
-         "week" (hash "type" "simple" "form" "{n} izu")
-         "month" (hash "type" "simple" "form" "{n} ọnwa")
-         "year" (hash "type" "simple" "form" "{n} afọ"))
+   (hash "day" (hash "type" "simple" "form" "ụbọchị {n}")
+         "week" (hash "type" "simple" "form" "izu {n}")
+         "month" (hash "type" "simple" "form" "ọnwa {n}")
+         "year" (hash "type" "simple" "form" "afọ {n}"))
    "{0} na ọkara"
    ", "
    "Nwa ọhụrụ"
@@ -32,8 +32,8 @@
          "infant" (stage-label "Nwa ọhụrụ" #f #f)
          "toddler" (stage-label "Nwa nta" #f #f)
          "child" (stage-label "Nwa" #f #f)
-         "teenager" (stage-label "Nwokorobịa" #f #f)
+         "teenager" (stage-label #f "Nwokorobịa" "Agbọghọbịa")
          "adult" (stage-label "Okenye" #f #f))
-   (compactness-override (hash "type" "simple" "form" "{n} ụbọchị") (hash "type" "simple" "form" "{n} izu") (hash "type" "simple" "form" "{n} ọnwa") (hash "type" "simple" "form" "{n} afọ") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "ụbọchị {n}") (hash "type" "simple" "form" "izu {n}") (hash "type" "simple" "form" "ọnwa {n}") (hash "type" "simple" "form" "afọ {n}") #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

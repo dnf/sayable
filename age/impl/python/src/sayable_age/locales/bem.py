@@ -31,7 +31,7 @@ BEM = AgeLocale(
         "toddler": "Umwana",
         "child": "Umwana",
         "teenager": "Umunyamata",
-        "adult": "Umulumendo",
+        "adult": "Umukalamba",
     },
     short=CompactnessOverride(
         units={

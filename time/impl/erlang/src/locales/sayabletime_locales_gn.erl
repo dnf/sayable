@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "gn",
-        clock = #clock_config{hours = ["pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"], midnight = "pyhareve", noon = "asaje", patterns = [{0, "{h}"}, {5, "{h} ha po"}, {10, "{h} ha pa"}, {15, "{h} ha pa po"}, {20, "{h} ha mokõi pa"}, {25, "{h} ha mokõi pa po"}, {30, "{h} ha mbohapy pa"}, {35, "{next_h} mba'e mokõi pa po"}, {40, "{next_h} mba'e mokõi pa"}, {45, "{next_h} mba'e pa po"}, {50, "{next_h} mba'e pa"}, {55, "{next_h} mba'e po"}]},
+        clock = #clock_config{hours = ["pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"], midnight = "pyharepyte", noon = "asaje", patterns = [{0, "{h}"}, {5, "{h} ha po"}, {10, "{h} ha pa"}, {15, "{h} ha pa po"}, {20, "{h} ha mokõi pa"}, {25, "{h} ha mokõi pa po"}, {30, "{h} ha mbohapy pa"}, {35, "{h} ha mbohapy pa po"}, {40, "{h} ha irundy pa"}, {45, "{h} ha irundy pa po"}, {50, "{h} ha po pa"}, {55, "{h} ha po pa po"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

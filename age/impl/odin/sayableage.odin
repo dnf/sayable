@@ -1,6 +1,10 @@
 // sayable-age Odin implementation — types and formatter.
 package sayableage
 
+import "core:time"
+import "core:time/datetime"
+import "core:time/timezone"
+
 VERSION :: "0.5.0"
 
 MAX_AGE_MONTHS :: 6000
@@ -279,12 +283,39 @@ stage_key :: proc(months: int) -> string {
     return "adult"
 }
 
-// Compute age components from two dates. Returns (months, diff_days, ok).
-compute_age :: proc(dob, as_of: string) -> (int, int, bool) {
+// Today's date as YYYY-MM-DD in the system's local time zone. Falls back to UTC
+// when the local zone cannot be loaded.
+today_string :: proc(out: []u8) -> string {
+    now := time.now()
+    y, mon, d := time.date(now)
+    if region, ok := timezone.region_load("local"); ok {
+        defer timezone.region_destroy(region)
+        if local, converted := timezone.datetime_to_tz(time.time_to_datetime(now) or_else datetime.DateTime{}, region); converted {
+            y, mon, d = int(local.year), time.Month(local.month), int(local.day)
+        }
+    }
+    digits :: proc(out: []u8, offset, width, value: int) {
+        v := value
+        for i := width - 1; i >= 0; i -= 1 {
+            out[offset + i] = u8('0' + v % 10)
+            v /= 10
+        }
+    }
+    digits(out, 0, 4, y)
+    out[4] = '-'
+    digits(out, 5, 2, int(mon))
+    out[7] = '-'
+    digits(out, 8, 2, d)
+    return string(out[:10])
+}
+
+// Compute age components from two dates. An empty as_of means today. Returns (months, diff_days, ok).
+compute_age :: proc(dob, given_as_of: string) -> (int, int, bool) {
+    today_buf: [10]u8
+    as_of := len(given_as_of) == 0 ? today_string(today_buf[:]) : given_as_of
     if len(dob) == 0 do return 0, 0, false
     dob_date, dob_ok := parse_date(dob)
     if !dob_ok do return 0, 0, false
-    if len(as_of) == 0 do return 0, 0, false
     ref_date, ref_ok := parse_date(as_of)
     if !ref_ok do return 0, 0, false
 

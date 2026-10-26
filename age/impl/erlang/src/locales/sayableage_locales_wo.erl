@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "wo",
         plural = fun(_) -> other end,
-        day = {simple, "bés {n}"},
-        week = {simple, "ayubés {n}"},
-        month = {simple, "weer {n}"},
-        year = {simple, "at {n}"},
+        day = {simple, "{n} fan"},
+        week = {simple, "{n} ayubés"},
+        month = {simple, "{n} weer"},
+        year = {simple, "{n} at"},
         half = "{0} ak genn-wàll",
         delimiter = ", ",
         just_born = "Dees ko sax juddu",
-        stages = #stages{newborn = {neutral, "Dees ko sax juddu"}, infant = {neutral, "Njàmbaar bu ndaw"}, toddler = {neutral, "Xale bu ndaw"}, child = {neutral, "Xale"}, teenager = {neutral, "Ndaw-ndaw"}, adult = {neutral, "Mag"}},
-        short = {just, #compactness_override{day = {just, {simple, "bés {n}"}}, week = {just, {simple, "ayub. {n}"}}, month = {just, {simple, "weer {n}"}}, year = {just, {simple, "at {n}"}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "bés {n}"}}, week = {just, {simple, "ayub {n}"}}, month = {just, {simple, "weer {n}"}}, year = {just, {simple, "at {n}"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
+        stages = #stages{newborn = {neutral, "Dees ko sax juddu"}, infant = {neutral, "Liir"}, toddler = {neutral, "Xale bu ndaw"}, child = {neutral, "Xale"}, teenager = {neutral, "Ndaw-ndaw"}, adult = {neutral, "Mag"}},
+        short = {just, #compactness_override{day = {just, {simple, "{n} fan"}}, week = {just, {simple, "{n} ayub."}}, month = {just, {simple, "{n} weer"}}, year = {just, {simple, "{n} at"}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n} fan"}}, week = {just, {simple, "{n} ayub"}}, month = {just, {simple, "{n} weer"}}, year = {just, {simple, "{n} at"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

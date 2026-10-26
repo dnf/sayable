@@ -14,12 +14,12 @@ module SayableAge
       code: "mi",
       plural: ->(n : Int32) { n == 1 ? PluralCategory::One : PluralCategory::Other },
       units: {
-        "day" => UnitForms.new("rā {n}"),
-        "week" => UnitForms.new("wiki {n}"),
-        "month" => UnitForms.new("marama {n}"),
-        "year" => UnitForms.new("tau {n}"),
+        "day" => UnitForms.new("{n} rā"),
+        "week" => UnitForms.new("{n} wiki"),
+        "month" => UnitForms.new("{n} marama"),
+        "year" => UnitForms.new("{n} tau"),
       },
-      half: "{0}½",
+      half: "{n}½",
       delimiter: ", ",
       just_born: "Pēpi hou",
       stages: {
@@ -32,10 +32,10 @@ module SayableAge
       },
       short: CompactnessOverride.new(
         units: {
-          "day" => UnitForms.new("rā {n}"),
-          "week" => UnitForms.new("w {n}"),
-          "month" => UnitForms.new("m {n}"),
-          "year" => UnitForms.new("t {n}"),
+          "day" => UnitForms.new("{n} rā"),
+          "week" => UnitForms.new("{n} w"),
+          "month" => UnitForms.new("{n} m"),
+          "year" => UnitForms.new("{n} t"),
         },
       ),
       compact: CompactnessOverride.new(

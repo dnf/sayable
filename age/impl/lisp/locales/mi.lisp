@@ -17,11 +17,11 @@
   (make-age-locale
    :code "mi"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :day "rā {n}")
-               (cons :week "wiki {n}")
-               (cons :month "marama {n}")
-               (cons :year "tau {n}"))
-   :half "{0}½"
+   :units (list (cons :day "{n} rā")
+               (cons :week "{n} wiki")
+               (cons :month "{n} marama")
+               (cons :year "{n} tau"))
+   :half "{n}½"
    :delimiter ", "
    :just-born "Pēpi hou"
    :stages (list (cons :newborn "Pēpi hou")
@@ -30,10 +30,10 @@
                  (cons :child "Tamariki")
                  (cons :teenager "Rangatahi")
                  (cons :adult "Pakeke"))
-   :short-units (list (cons :day "rā {n}")
-                       (cons :week "w {n}")
-                       (cons :month "m {n}")
-                       (cons :year "t {n}"))
+   :short-units (list (cons :day "{n} rā")
+                       (cons :week "{n} w")
+                       (cons :month "{n} m")
+                       (cons :year "{n} t"))
    :compact-units (list (cons :day "{n}r")
                        (cons :week "{n}w")
                        (cons :month "{n}m")

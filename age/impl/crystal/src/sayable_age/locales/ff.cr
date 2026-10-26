@@ -27,12 +27,12 @@ module SayableAge
         "infant" => StageLabel.new("Ɓinngel"),
         "toddler" => StageLabel.new("Cukalel"),
         "child" => StageLabel.new("Suka"),
-        "teenager" => StageLabel.new("Suka debbo"),
+        "teenager" => StageLabel.new(m: "Suka gorko", f: "Suka debbo"),
         "adult" => StageLabel.new("Mawɗo"),
       },
       short: CompactnessOverride.new(
         units: {
-          "day" => UnitForms.new("ñalɗe {n}"),
+          "day" => UnitForms.new(one: "ñalawma {n}", other: "ñalɗe {n}"),
           "week" => UnitForms.new(one: "yontere {n}", other: "yontereeji {n}"),
           "month" => UnitForms.new(one: "lewru {n}", other: "lebbi {n}"),
           "year" => UnitForms.new(one: "hitaande {n}", other: "duuɓi {n}"),
@@ -40,7 +40,7 @@ module SayableAge
       ),
       compact: CompactnessOverride.new(
         units: {
-          "day" => UnitForms.new("ñalɗe {n}"),
+          "day" => UnitForms.new(one: "ñalawma {n}", other: "ñalɗe {n}"),
           "week" => UnitForms.new(one: "yont {n}", other: "yontji {n}"),
           "month" => UnitForms.new(one: "lew {n}", other: "leb {n}"),
           "year" => UnitForms.new(one: "hit {n}", other: "duuɓi {n}"),

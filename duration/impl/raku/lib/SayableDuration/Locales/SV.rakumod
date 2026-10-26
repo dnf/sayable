@@ -28,7 +28,7 @@ our sub locale() {
         half => '{n}½',
         delimiter => ', ',
         just-now => 'just nu',
-        ago => '{0} sedan',
+        ago => 'för {0} sedan',
         in-future => 'om {0}',
         short => {
             units => {
@@ -40,7 +40,7 @@ our sub locale() {
                 month => '{n} mån',
                 year => '{n} år',
             },
-            ago => '{0} sedan',
+            ago => 'för {0} sedan',
             in-future => 'om {0}',
         },
         compact => {
@@ -54,7 +54,7 @@ our sub locale() {
                 year => '{n}å',
             },
             delimiter => '',
-            ago => '{0} sedan',
+            ago => 'för {0} sedan',
             in-future => 'om {0}',
         },
     }

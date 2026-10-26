@@ -19,7 +19,7 @@ _sayabledate_locale_qu() {
     _tomorrow='paqarin'
     _yesterday='qayna'
     _day_after_tomorrow='minchha'
-    _day_before_yesterday='qayna p'\''unchaw'
+    _day_before_yesterday='qayninpa'
     _this_weekday='kay {weekday}'
     _next_weekday='hamuq {weekday}'
     _last_weekday='qayna {weekday}'

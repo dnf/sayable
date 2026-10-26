@@ -24,7 +24,7 @@
             :toddler "Umwana"
             :child "Umwana"
             :teenager "Umunyamata"
-            :adult "Umulumendo"
+            :adult "Umukalamba"
 }
    :short {:units {:day {:one "ubushiku {n}" :other "inshiku {n}"} :week {:one "umulungu {n}" :other "imilungu {n}"} :month {:one "umweshi {n}" :other "imyeshi {n}"} :year {:one "umwaka {n}" :other "imyaka {n}"}}}
    :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}

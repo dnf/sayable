@@ -26,7 +26,7 @@ pub const locale_tpi = DurationLocale{
 	week: simple_unit('{n} wik')
 	month: simple_unit('{n} mun')
 	year: simple_unit('{n} yia')
-	half: '{n} na hap'
+	half: '{0} na hap'
 	delimiter: ', '
 	just_now: 'nau tasol'
 	ago: '{0} i go pinis'
@@ -68,6 +68,8 @@ pub const locale_tpi = DurationLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 		ago: '{0} i go pinis'

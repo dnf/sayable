@@ -25,7 +25,7 @@ pub const locale_ja = DurationLocale{
 	day: simple_unit('{n}日')
 	week: simple_unit('{n}週')
 	month: simple_unit('{n}ヶ月')
-	year: simple_unit('{n}歳')
+	year: simple_unit('{n}年')
 	half: '{0}半'
 	delimiter: ''
 	just_now: 'たった今'
@@ -68,6 +68,8 @@ pub const locale_ja = DurationLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 		ago: '{0}前'

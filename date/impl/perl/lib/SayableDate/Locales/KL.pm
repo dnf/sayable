@@ -21,7 +21,7 @@ sub locale {{
   day_format => '{n}.',
   day_format_exceptions => {},
   date_pattern => '{month} {day}',
-  date_pattern_with_year => '{day} {month} {year}',
+  date_pattern_with_year => '{month} {day} {year}',
   today => 'ullumi',
   tomorrow => 'aqagu',
   yesterday => 'ippassaq',
@@ -35,7 +35,7 @@ sub locale {{
     weekdays => ['sap', 'ata', 'mar', 'pin', 'sis', 'tal', 'arf'],
     day_format => '{n}.',
     date_pattern => '{month} {day}',
-    date_pattern_with_year => '{day} {month} {year}',
+    date_pattern_with_year => '{month} {day} {year}',
   },
   compact => {
     date_pattern => '{m}-{d}',

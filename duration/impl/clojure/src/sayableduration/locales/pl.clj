@@ -14,13 +14,13 @@
 (def locale
   {:code "pl"
    :plural (fn [n] (cond (== n 1) :one (and (<= 2 (mod n 10) 4) (not (<= 12 (mod n 100) 14))) :few :else :many))
-   :second {:type :pluralized :forms {:one "{n} sekunda" :few "{n} sekundy" :many "{n} sekund" :other "{n} sekund"}}
-   :minute {:type :pluralized :forms {:one "{n} minuta" :few "{n} minuty" :many "{n} minut" :other "{n} minut"}}
-   :hour {:type :pluralized :forms {:one "{n} godzina" :few "{n} godziny" :many "{n} godzin" :other "{n} godzin"}}
-   :day {:type :pluralized :forms {:one "{n} dzień" :few "{n} dni" :many "{n} dni" :other "{n} dni"}}
-   :week {:type :pluralized :forms {:one "{n} tydzień" :few "{n} tygodnie" :many "{n} tygodni" :other "{n} tygodni"}}
-   :month {:type :pluralized :forms {:one "{n} miesiąc" :few "{n} miesiące" :many "{n} miesięcy" :other "{n} miesięcy"}}
-   :year {:type :pluralized :forms {:one "{n} rok" :few "{n} lata" :many "{n} lat" :other "{n} lat"}}
+   :second {:type :pluralized :forms {:one "{n} sekunda" :few "{n} sekundy" :many "{n} sekund" :other "{n} sekundy"}}
+   :minute {:type :pluralized :forms {:one "{n} minuta" :few "{n} minuty" :many "{n} minut" :other "{n} minuty"}}
+   :hour {:type :pluralized :forms {:one "{n} godzina" :few "{n} godziny" :many "{n} godzin" :other "{n} godziny"}}
+   :day {:type :pluralized :forms {:one "{n} dzień" :few "{n} dni" :many "{n} dni" :other "{n} dnia"}}
+   :week {:type :pluralized :forms {:one "{n} tydzień" :few "{n} tygodnie" :many "{n} tygodni" :other "{n} tygodnia"}}
+   :month {:type :pluralized :forms {:one "{n} miesiąc" :few "{n} miesiące" :many "{n} miesięcy" :other "{n} miesiąca"}}
+   :year {:type :pluralized :forms {:one "{n} rok" :few "{n} lata" :many "{n} lat" :other "{n} roku"}}
    :half "{n} i pół"
    :delimiter ", "
    :just-now "właśnie teraz"

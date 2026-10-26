@@ -18,43 +18,43 @@ let locale : duration_locale =
       [ (One, "{n} sekunda")
       ; (Few, "{n} sekundy")
       ; (Many, "{n} sekund")
-      ; (Other, "{n} sekund")
+      ; (Other, "{n} sekundy")
       ]
   ; minute = Pluralized
       [ (One, "{n} minuta")
       ; (Few, "{n} minuty")
       ; (Many, "{n} minut")
-      ; (Other, "{n} minut")
+      ; (Other, "{n} minuty")
       ]
   ; hour = Pluralized
       [ (One, "{n} godzina")
       ; (Few, "{n} godziny")
       ; (Many, "{n} godzin")
-      ; (Other, "{n} godzin")
+      ; (Other, "{n} godziny")
       ]
   ; day = Pluralized
       [ (One, "{n} dzień")
       ; (Few, "{n} dni")
       ; (Many, "{n} dni")
-      ; (Other, "{n} dni")
+      ; (Other, "{n} dnia")
       ]
   ; week = Pluralized
       [ (One, "{n} tydzień")
       ; (Few, "{n} tygodnie")
       ; (Many, "{n} tygodni")
-      ; (Other, "{n} tygodni")
+      ; (Other, "{n} tygodnia")
       ]
   ; month = Pluralized
       [ (One, "{n} miesiąc")
       ; (Few, "{n} miesiące")
       ; (Many, "{n} miesięcy")
-      ; (Other, "{n} miesięcy")
+      ; (Other, "{n} miesiąca")
       ]
   ; year = Pluralized
       [ (One, "{n} rok")
       ; (Few, "{n} lata")
       ; (Many, "{n} lat")
-      ; (Other, "{n} lat")
+      ; (Other, "{n} roku")
       ]
   ; half = "{n} i pół"
   ; delimiter = ", "

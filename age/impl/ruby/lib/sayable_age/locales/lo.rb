@@ -22,7 +22,7 @@ module SayableAge
         'year' => '{n} ປີ',
       },
       half: '{0}ເຄິ່ງ',
-      delimiter: '',
+      delimiter: ' ',
       just_born: 'ເກີດໃໝ່',
       stages: {
         newborn: 'ເດັກເກີດໃໝ່',
@@ -47,6 +47,7 @@ module SayableAge
           'month' => '{n}m',
           'year' => '{n}y',
         },
+        half: '{n}½',
       ),
     )
   end

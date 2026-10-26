@@ -16,13 +16,13 @@ static const char *sd_short_months_fon[12] = {
 };
 
 static const char *sd_short_weekdays_fon[7] = {
-    "Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"
+    "Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib"
 };
 
 const SdDateLocale sd_locale_fon = {
     "fon",
     { "Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún" },
-    { "Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta" },
+    { "Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",

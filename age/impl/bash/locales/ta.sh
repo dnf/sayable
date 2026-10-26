@@ -24,7 +24,7 @@ _sayableage_locale_ta() {
     _unit_month_other='{n} மாதங்கள்'
     _unit_year_one='{n} வயது'
     _unit_year_other='{n} வயது'
-    _half='{0}ரை'
+    _half='{n}½'
     _delimiter=', '
     _just_born='பிறந்த குழந்தை'
     _stage_newborn='பிறந்த குழந்தை'

@@ -97,14 +97,7 @@ let locale : locale =
   ; compact = Some
       { ovr_day = Some (Simple "{n} ي")
       ; ovr_week = Some (Simple "{n} أ")
-      ; ovr_month = Some (Pluralized
-          [ (Zero, "{n} شهر")
-          ; (One, "شهر")
-          ; (Two, "شهران")
-          ; (Few, "{n} أشهر")
-          ; (Many, "{n} شهرًا")
-          ; (Other, "{n} شهر")
-          ])
+      ; ovr_month = Some (Simple "{n} شهر")
       ; ovr_year = Some (Simple "{n} سنة")
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""

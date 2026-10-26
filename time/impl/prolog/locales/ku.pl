@@ -15,18 +15,18 @@ st_hours('ku', ['diwanzdeh', 'yek', 'du', 'sê', 'çar', 'pênc', 'şeş', 'heft
 st_midnight('ku', 'nîvê şevê').
 st_noon('ku', 'nîvro').
 
-st_pattern('ku', 0, '{h}:00').
-st_pattern('ku', 5, '{h}:05').
-st_pattern('ku', 10, '{h}:10').
-st_pattern('ku', 15, '{h}:15').
-st_pattern('ku', 20, '{h}:20').
-st_pattern('ku', 25, '{h}:25').
-st_pattern('ku', 30, '{h}:30').
-st_pattern('ku', 35, '{h}:35').
-st_pattern('ku', 40, '{h}:40').
-st_pattern('ku', 45, '{h}:45').
-st_pattern('ku', 50, '{h}:50').
-st_pattern('ku', 55, '{h}:55').
+st_pattern('ku', 0, 'saet {h}').
+st_pattern('ku', 5, '{h} û pênc deqe').
+st_pattern('ku', 10, '{h} û deh deqe').
+st_pattern('ku', 15, '{h} û çaryek').
+st_pattern('ku', 20, '{h} û bîst deqe').
+st_pattern('ku', 25, '{h} û bîst û pênc deqe').
+st_pattern('ku', 30, '{h} û nîv').
+st_pattern('ku', 35, '{next_h} kêm bîst û pênc deqe').
+st_pattern('ku', 40, '{next_h} kêm bîst deqe').
+st_pattern('ku', 45, '{next_h} kêm çaryek').
+st_pattern('ku', 50, '{next_h} kêm deh deqe').
+st_pattern('ku', 55, '{next_h} kêm pênc deqe').
 
 short_st_use24h('ku', true).
 short_st_format('ku', '{h}:{mm}').

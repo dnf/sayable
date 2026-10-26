@@ -23,7 +23,7 @@ function locale_bi {
         month = '{n} manis'
         year = '{n} yia'
     }
-    $half = '{n} mo haf'
+    $half = '{0} mo haf'
     $delimiter = ', '
     $justNow = 'jas nao'
     $ago = '{0} bifo'
@@ -51,6 +51,7 @@ function locale_bi {
             month = '{n}mo'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
         ago = '{0} bifo'
         inFuture = 'long {0}'

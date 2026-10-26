@@ -18,10 +18,10 @@ lt
 	locale code: 'lt'.
 	locale months: (OrderedCollection withAll: { 'sausis'. 'vasaris'. 'kovas'. 'balandis'. 'gegužė'. 'birželis'. 'liepa'. 'rugpjūtis'. 'rugsėjis'. 'spalis'. 'lapkritis'. 'gruodis' }).
 	locale weekdays: (OrderedCollection withAll: { 'sekmadienis'. 'pirmadienis'. 'antradienis'. 'trečiadienis'. 'ketvirtadienis'. 'penktadienis'. 'šeštadienis' }).
-	locale dayFormat: '{n}.'.
+	locale dayFormat: '{n} d.'.
 	locale dayFormatExceptions: Dictionary new.
-	locale datePattern: '{day} {month}'.
-	locale datePatternWithYear: '{day} {month} {year}'.
+	locale datePattern: '{month} {day}'.
+	locale datePatternWithYear: '{year} m. {month} {day}'.
 	locale today: 'šiandien'.
 	locale tomorrow: 'rytoj'.
 	locale yesterday: 'vakar'.
@@ -34,9 +34,9 @@ lt
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'saus'. 'vas'. 'kov'. 'bal'. 'geg'. 'birž'. 'liep'. 'rugp'. 'rugs'. 'spal'. 'lapkr'. 'gruod' }).
 		#weekdays. (OrderedCollection withAll: { 'sk'. 'pr'. 'an'. 'tr'. 'kt'. 'pn'. 'št' }).
-		#dayFormat. '{n}.'.
-		#datePattern. '{day} {month}'.
-		#datePatternWithYear. '{day} {month} {year}'.
+		#dayFormat. '{n} d.'.
+		#datePattern. '{month} {day}'.
+		#datePatternWithYear. '{year} m. {month} {day}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#datePattern. '{m}-{d}'.

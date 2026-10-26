@@ -73,7 +73,7 @@ fn build_es() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{n} y medio",
+        half="{0} y medio",
         delimiter=", ",
         just_born="Recién nacido",
         newborn=newborn,

@@ -20,7 +20,7 @@ class KOLocale {
       "day": "{n}일",
       "week": "{n}주",
       "month": "{n}개월",
-      "year": "{n}살",
+      "year": "{n}년",
     }
   }
   static half { "{0} 반" }

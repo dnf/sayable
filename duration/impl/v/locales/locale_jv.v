@@ -28,7 +28,7 @@ pub const locale_jv = DurationLocale{
 	year: simple_unit('{n} taun')
 	half: '{0} setengah'
 	delimiter: ', '
-	just_now: 'saiki'
+	just_now: 'lagi waé'
 	ago: '{0} kepungkur'
 	in_future: 'ing {0}'
 	has_short: true

@@ -20,7 +20,7 @@ class IDLocale {
       "year": "{n} tahun",
     }
   }
-  static half { "{0} setengah" }
+  static half { "{n} setengah" }
   static delimiter { ", " }
   static justBorn { "Baru lahir" }
   static stages {

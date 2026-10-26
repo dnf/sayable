@@ -14,7 +14,7 @@ function locale_pt {
     $midnight = 'meia-noite'
     $noon = 'meio-dia'
     $patterns = @{}
-    $patterns[0] = '{h} horas'
+    $patterns[0] = '{h} em ponto'
     $patterns[5] = '{h} e cinco'
     $patterns[10] = '{h} e dez'
     $patterns[15] = '{h} e um quarto'

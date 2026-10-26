@@ -31,7 +31,7 @@ locale =
         Dict.fromList
             [ ( "second", Pluralized
               [ ( Zero, "{n} ثانية" )
-              , ( One, "ثانية واحدة" )
+              , ( One, "ثانية" )
               , ( Two, "ثانيتان" )
               , ( Few, "{n} ثوانٍ" )
               , ( Many, "{n} ثانية" )
@@ -39,7 +39,7 @@ locale =
               ] )
             , ( "minute", Pluralized
               [ ( Zero, "{n} دقيقة" )
-              , ( One, "دقيقة واحدة" )
+              , ( One, "دقيقة" )
               , ( Two, "دقيقتان" )
               , ( Few, "{n} دقائق" )
               , ( Many, "{n} دقيقة" )
@@ -47,7 +47,7 @@ locale =
               ] )
             , ( "hour", Pluralized
               [ ( Zero, "{n} ساعة" )
-              , ( One, "ساعة واحدة" )
+              , ( One, "ساعة" )
               , ( Two, "ساعتان" )
               , ( Few, "{n} ساعات" )
               , ( Many, "{n} ساعة" )
@@ -148,14 +148,7 @@ locale =
                         , ( "hour", Simple "{n} س" )
                         , ( "day", Simple "{n} ي" )
                         , ( "week", Simple "{n} أ" )
-                        , ( "month", Pluralized
-                          [ ( Zero, "{n} شهر" )
-                          , ( One, "شهر" )
-                          , ( Two, "شهران" )
-                          , ( Few, "{n} أشهر" )
-                          , ( Many, "{n} شهرًا" )
-                          , ( Other, "{n} شهر" )
-                          ] )
+                        , ( "month", Simple "{n} شهر" )
                         , ( "year", Simple "{n} سنة" )
                         ]
                     )

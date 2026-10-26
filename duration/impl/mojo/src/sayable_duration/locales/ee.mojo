@@ -27,13 +27,13 @@ fn build_ee() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = plural_unit(one="sekend {n}", other="sekendwo {n}")
-    var minute = plural_unit(one="aɖabaƒoƒo {n}", other="aɖabaƒoƒowo {n}")
-    var hour = plural_unit(one="gaƒoƒo {n}", other="gaƒoƒowo {n}")
-    var day = plural_unit(one="ŋkeke {n}", other="ŋkekewo {n}")
-    var week = plural_unit(one="kɔsiɖa {n}", other="kɔsiɖawo {n}")
-    var month = plural_unit(one="ɣleti {n}", other="ɣletiwo {n}")
-    var year = plural_unit(one="ƒe {n}", other="ƒewo {n}")
+    var second = simple_unit("sekend {n}")
+    var minute = simple_unit("aɖabaƒoƒo {n}")
+    var hour = simple_unit("gaƒoƒo {n}")
+    var day = simple_unit("ŋkeke {n}")
+    var week = simple_unit("kɔsiɖa {n}")
+    var month = simple_unit("ɣleti {n}")
+    var year = simple_unit("ƒe {n}")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("sek. {n}")
@@ -42,15 +42,15 @@ fn build_ee() -> DurationLocale:
     short_ovr.has_minute = True
     short_ovr.hour = simple_unit("gaƒ. {n}")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("ŋkekewo {n}")
+    short_ovr.day = simple_unit("ŋkeke {n}")
     short_ovr.has_day = True
-    short_ovr.week = plural_unit(one="kɔsiɖa {n}", other="kɔsiɖawo {n}")
+    short_ovr.week = simple_unit("kɔsiɖa {n}")
     short_ovr.has_week = True
-    short_ovr.month = plural_unit(one="ɣleti {n}", other="ɣletiwo {n}")
+    short_ovr.month = simple_unit("ɣleti {n}")
     short_ovr.has_month = True
-    short_ovr.year = plural_unit(one="ƒe {n}", other="ƒewo {n}")
+    short_ovr.year = simple_unit("ƒe {n}")
     short_ovr.has_year = True
-    short_ovr.ago = "ɖe {0} me"
+    short_ovr.ago = "{0} si va yi"
     short_ovr.has_ago = True
     short_ovr.in_future = "le {0} me"
     short_ovr.has_in_future = True
@@ -74,7 +74,7 @@ fn build_ee() -> DurationLocale:
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
-    compact_ovr.ago = "ɖe {0} me"
+    compact_ovr.ago = "{0} si va yi"
     compact_ovr.has_ago = True
     compact_ovr.in_future = "le {0} me"
     compact_ovr.has_in_future = True
@@ -92,7 +92,7 @@ fn build_ee() -> DurationLocale:
         half="{0} kple afã",
         delimiter=", ",
         just_now="fifia",
-        ago="ɖe {0} me",
+        ago="{0} si va yi",
         in_future="le {0} me",
         short_override=short_ovr,
         has_short=True,

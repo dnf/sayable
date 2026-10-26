@@ -10,21 +10,21 @@
 # Source: locales/zdj.json
 
 _sayabletime_locale_zdj() {
-    _clock_hours=('kumi na mbili' 'moja' 'mbili' 'tatu' 'nne' 'tano' 'sita' 'saba' 'nane' 'tisa' 'kumi' 'kumi na moja')
+    _clock_hours=('kumi na mbili' 'moja' 'mbili' 'ndraru' 'nne' 'ntsanu' 'sita' 'saba' 'nane' 'shenda' 'kumi' 'kumi na moja')
     _clock_midnight='usiku wa manane'
     _clock_noon='adhuhuri'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='saa {h}'
+    _clock_pattern_5='saa {h} na ntsanu'
+    _clock_pattern_10='saa {h} na kumi'
+    _clock_pattern_15='saa {h} na kumi na ntsanu'
+    _clock_pattern_20='saa {h} na shirini'
+    _clock_pattern_25='saa {h} na shirini na ntsanu'
+    _clock_pattern_30='saa {h} na nusu'
+    _clock_pattern_35='saa {h} na thalathini na ntsanu'
+    _clock_pattern_40='saa {h} na arubaini'
+    _clock_pattern_45='saa {h} na arubaini na ntsanu'
+    _clock_pattern_50='saa {h} na hamsini'
+    _clock_pattern_55='saa {h} na hamsini na ntsanu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

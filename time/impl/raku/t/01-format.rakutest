@@ -6,6 +6,75 @@ use SayableTime::Locales::Registry;
 
 # Canonical cases from time/config/tests.json. All tests use explicit inputs for determinism.
 
+# Null / edge cases
+# 1.1
+ok !defined(SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time(Str)), '1.1 Null / edge cases';
+# 1.2
+ok !defined(SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('')), '1.2 Null / edge cases';
+# 1.3
+ok !defined(SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('invalid')), '1.3 Null / edge cases';
+# 1.4
+ok !defined(SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('25:00')), '1.4 Null / edge cases';
+# Clock time (normal compactness)
+# 2.1
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('00:00'), 'midnight', '2.1 Clock time (normal compactness)';
+# 2.2
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('12:00'), 'noon', '2.2 Clock time (normal compactness)';
+# 2.3
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('15:00'), 'three o\'clock', '2.3 Clock time (normal compactness)';
+# 2.4
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('14:15'), 'a quarter past two', '2.4 Clock time (normal compactness)';
+# 2.5
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('09:30'), 'half past nine', '2.5 Clock time (normal compactness)';
+# 2.6
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('10:45'), 'a quarter to eleven', '2.6 Clock time (normal compactness)';
+# 2.7
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('08:05'), 'five past eight', '2.7 Clock time (normal compactness)';
+# 2.8
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('16:55'), 'five to five', '2.8 Clock time (normal compactness)';
+# 2.9
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('23:58'), 'midnight', '2.9 rounds to 0:00 of next day';
+# 2.10
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('07:22'), 'twenty past seven', '2.10 22 rounds to 20';
+# 2.11
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en')).format-time('2025-01-15T14:15:00'), 'a quarter past two', '2.11 ISO datetime input';
+# Clock time (short compactness)
+# 3.1
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en'), compactness => 'short').format-time('14:15'), '2:15 PM', '3.1 Clock time (short compactness)';
+# 3.2
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en'), compactness => 'short').format-time('09:30'), '9:30 AM', '3.2 Clock time (short compactness)';
+# 3.3
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en'), compactness => 'short').format-time('00:00'), '12:00 AM', '3.3 Clock time (short compactness)';
+# 3.4
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en'), compactness => 'short').format-time('12:00'), '12:00 PM', '3.4 Clock time (short compactness)';
+# Clock time (compact)
+# 4.1
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en'), compactness => 'compact').format-time('14:15'), '2:15p', '4.1 Clock time (compact)';
+# 4.2
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('en'), compactness => 'compact').format-time('09:30'), '9:30a', '4.2 Clock time (compact)';
+# Locale — German
+# 5.1
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('de')).format-time('15:30'), 'halb vier', '5.1 German half-to pattern';
+# Locale — French
+# 6.1
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('fr')).format-time('15:15'), 'trois heures et quart', '6.1 Locale — French';
+# 6.2
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('fr')).format-time('13:00'), 'une heure', '6.2 singular: une heure, not une heures';
+# 6.3
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('fr')).format-time('13:30'), 'une heure et demie', '6.3 singular hour with et demie';
+# 6.4
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('fr')).format-time('14:45'), 'trois heures moins le quart', '6.4 counts down to the next hour';
+# 6.5
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('fr')).format-time('14:50'), 'trois heures moins dix', '6.5 after the half hour, French counts down to the next hour';
+# Locale — Japanese
+# 7.1
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('ja')).format-time('15:30'), '三時半', '7.1 Locale — Japanese';
+# Locale — Finnish (dot separator, short)
+# 8.1
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('fi'), compactness => 'short').format-time('14:15'), '14.15', '8.1 dot separator per CLDR Finnish time format';
+# 8.2
+is SayableTime::Formatter.new(SayableTime::Locales::Registry::get-locale('fi'), compactness => 'short').format-time('00:00'), '0.00', '8.2 midnight in 24h dot format';
+
 # ================================================================
 # Sections 9-10: minutes in short/compact, input validation
 # ================================================================

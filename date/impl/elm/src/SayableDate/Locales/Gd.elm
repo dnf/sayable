@@ -43,7 +43,7 @@ locale =
         , "DihAoine"
         , "DiSathairne"
         ]
-    , dayFormat = "{n}"
+    , dayFormat = "{n}mh"
     , dayFormatExceptions = Dict.empty
     , datePattern = "{day} {month}"
     , datePatternWithYear = "{day} {month} {year}"
@@ -55,7 +55,21 @@ locale =
     , thisWeekday = Just "{weekday} seo"
     , nextWeekday = Just "{weekday} sa tighinn"
     , lastWeekday = Just "{weekday} seo chaidh"
-    , monthsInDate = Nothing
+    , monthsInDate =
+        Just
+            [ "dhen Fhaoilleach"
+            , "dhen Ghearran"
+            , "dhen Mhàrt"
+            , "dhen Ghiblean"
+            , "dhen Chèitean"
+            , "dhen Ògmhios"
+            , "dhen Iuchar"
+            , "dhen Lùnastal"
+            , "dhen t-Sultain"
+            , "dhen Dàmhair"
+            , "dhen t-Samhain"
+            , "dhen Dùbhlachd"
+            ]
     , short =
         Just
             { ovrMonths = Just

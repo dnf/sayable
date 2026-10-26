@@ -10,21 +10,21 @@
 # Source: locales/xh.json
 
 _sayabletime_locale_xh() {
-    _clock_hours=('ishumi elinambini' 'inye' 'ezimbini' 'ezintathu' 'ezine' 'ezintlanu' 'ezintandathu' 'ezisixhenxe' 'ezisibhozo' 'ethoba' 'ishumi' 'ishumi elinanye')
+    _clock_hours=('yeshumi elinesibini' 'yokuqala' 'yesibini' 'yesithathu' 'yesine' 'yesihlanu' 'yesithandathu' 'yesixhenxe' 'yesibhozo' 'yethoba' 'yeshumi' 'yeshumi elinanye')
     _clock_midnight='ezinzulwini zobusuku'
     _clock_noon='emini'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='intsimbi {h}'
+    _clock_pattern_5='imizuzu emihlanu emva kwentsimbi {h}'
+    _clock_pattern_10='imizuzu elishumi emva kwentsimbi {h}'
+    _clock_pattern_15='ikota emva kwentsimbi {h}'
+    _clock_pattern_20='imizuzu engamashumi amabini emva kwentsimbi {h}'
+    _clock_pattern_25='imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}'
+    _clock_pattern_30='isiqingatha emva kwentsimbi {h}'
+    _clock_pattern_35='imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}'
+    _clock_pattern_40='imizuzu engamashumi amabini ukuya kwintsimbi {next_h}'
+    _clock_pattern_45='ikota ukuya kwintsimbi {next_h}'
+    _clock_pattern_50='imizuzu elishumi ukuya kwintsimbi {next_h}'
+    _clock_pattern_55='imizuzu emihlanu ukuya kwintsimbi {next_h}'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

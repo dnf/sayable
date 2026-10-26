@@ -16,8 +16,8 @@ const StTimeLocale st_locale_jv = {
     {
         { "rolas", "siji", "loro", "telu", "papat", "lima", "enem", "pitu", "wolu", "sanga", "sepuluh", "sewelas" },
         "tengah wengi",
-        "awan",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        "tengah awan",
+        { "jam {h}", "jam {h} luwih limang menit", "jam {h} luwih sepuluh menit", "jam {h} luwih seprapat", "jam {h} luwih rong puluh menit", "jam {h} luwih selawé menit", "jam setengah {next_h}", "jam {next_h} kurang selawé menit", "jam {next_h} kurang rong puluh menit", "jam {next_h} kurang seprapat", "jam {next_h} kurang sepuluh menit", "jam {next_h} kurang limang menit" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

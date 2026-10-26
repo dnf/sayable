@@ -28,7 +28,7 @@ class DZLocale {
   static yesterday { "ཁ་ཙ" }
   static dayAfterTomorrow { "གནངས་ཚེ" }
   static dayBeforeYesterday { "ཁ་ཉིམ" }
-  static thisWeekday { "འདི་ {weekday}" }
+  static thisWeekday { "{weekday} འདི" }
   static nextWeekday { "{weekday} ཤུལ་མ" }
   static lastWeekday { "{weekday} ཧེ་མ" }
   static monthsInDate { null }

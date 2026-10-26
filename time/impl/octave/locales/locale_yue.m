@@ -11,10 +11,10 @@
 
 function loc = locale_yue()
   loc.code = 'yue';
-  loc.clock.hours = {'十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'};
+  loc.clock.hours = {'十二', '一', '兩', '三', '四', '五', '六', '七', '八', '九', '十', '十一'};
   loc.clock.midnight = '午夜';
   loc.clock.noon = '正午';
-  loc.clock.patterns = struct("p0", '{h}點整', "p5", '{h}點零五分', "p10", '{h}點十分', "p15", '{h}點十五分', "p20", '{h}點二十分', "p25", '{h}點二十五分', "p30", '{h}點半', "p35", '{h}點三十五分', "p40", '{h}點四十分', "p45", '{h}點四十五分', "p50", '{h}點五十分', "p55", '{h}點五十五分');
+  loc.clock.patterns = struct("p0", '{h}點正', "p5", '{h}點一個字', "p10", '{h}點兩個字', "p15", '{h}點三個字', "p20", '{h}點四個字', "p25", '{h}點五個字', "p30", '{h}點半', "p35", '{h}點七個字', "p40", '{h}點八個字', "p45", '{h}點九個字', "p50", '{h}點十個字', "p55", '{h}點十一個字');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

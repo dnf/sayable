@@ -32,7 +32,7 @@ const SdDateLocale sd_locale_ti = {
     "ትማሊ",
     "ድሕሪ ጽባሕ",
     "ቅድሚ ትማሊ",
-    "እዛ {weekday}",
+    "እዚ {weekday}",
     "ዝመጽእ {weekday}",
     "ዝሓለፈ {weekday}",
     (const char **)0,

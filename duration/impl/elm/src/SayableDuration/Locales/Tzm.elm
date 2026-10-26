@@ -62,13 +62,34 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n}s" )
-                        , ( "minute", Simple "{n}m" )
-                        , ( "hour", Simple "{n}h" )
-                        , ( "day", Simple "{n}d" )
-                        , ( "week", Simple "{n}w" )
-                        , ( "month", Simple "{n}mo" )
-                        , ( "year", Simple "{n}y" )
+                        [ ( "second", Pluralized
+                          [ ( One, "{n} tasint" )
+                          , ( Other, "{n} tisinin" )
+                          ] )
+                        , ( "minute", Pluralized
+                          [ ( One, "{n} tusdiqt" )
+                          , ( Other, "{n} tusdiqin" )
+                          ] )
+                        , ( "hour", Pluralized
+                          [ ( One, "{n} tasragt" )
+                          , ( Other, "{n} tisragin" )
+                          ] )
+                        , ( "day", Pluralized
+                          [ ( One, "{n} ass" )
+                          , ( Other, "{n} ussan" )
+                          ] )
+                        , ( "week", Pluralized
+                          [ ( One, "{n} imalass" )
+                          , ( Other, "{n} imalassn" )
+                          ] )
+                        , ( "month", Pluralized
+                          [ ( One, "{n} ayyur" )
+                          , ( Other, "{n} ayyurn" )
+                          ] )
+                        , ( "year", Pluralized
+                          [ ( One, "{n} aseggas" )
+                          , ( Other, "{n} iseggasen" )
+                          ] )
                         ]
                     )
             , ovrHalf = Nothing

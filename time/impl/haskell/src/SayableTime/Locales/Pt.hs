@@ -22,7 +22,7 @@ locale = TimeLocale
             , clockMidnight = "meia-noite"
             , clockNoon = "meio-dia"
             , clockPatterns =
-                [ (0, "{h} horas")
+                [ (0, "{h} em ponto")
                 , (5, "{h} e cinco")
                 , (10, "{h} e dez")
                 , (15, "{h} e um quarto")

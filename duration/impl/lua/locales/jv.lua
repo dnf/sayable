@@ -24,7 +24,7 @@ M.units = {
 }
 M.half = "{0} setengah"
 M.delimiter = ", "
-M.just_now = "saiki"
+M.just_now = "lagi waé"
 M.ago = "{0} kepungkur"
 M.in_future = "ing {0}"
 M.short = {

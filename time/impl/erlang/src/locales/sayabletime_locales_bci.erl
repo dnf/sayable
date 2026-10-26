@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "bci",
-        clock = #clock_config{hours = ["blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"], midnight = "kɔnguɛ afiɛn", noon = "nnɔsua", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["blu-nin-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-nin-kun"], midnight = "kɔnguɛ afiɛn", noon = "nnɔsua", patterns = [{0, "dɔ {h}"}, {5, "dɔ {h} nin miniti nnun"}, {10, "dɔ {h} nin miniti blu"}, {15, "dɔ {h} nin miniti blu-nin-nnun"}, {20, "dɔ {h} nin miniti ablaɔn"}, {25, "dɔ {h} nin miniti ablaɔn-nin-nnun"}, {30, "dɔ {h} nin miniti ablasan"}, {35, "dɔ {h} nin miniti ablasan-nin-nnun"}, {40, "dɔ {h} nin miniti ablanan"}, {45, "dɔ {h} nin miniti ablanan-nin-nnun"}, {50, "dɔ {h} nin miniti ablenun"}, {55, "dɔ {h} nin miniti ablenun-nin-nnun"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

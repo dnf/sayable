@@ -19,32 +19,32 @@ locale = DurationLocale
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
         { unitSecond = Pluralized
-          [ (One, "{n} daƙiƙa")
-          , (Other, "{n} daƙiƙoƙi")
+          [ (One, "daƙiƙa {n}")
+          , (Other, "daƙiƙoƙi {n}")
           ]
         , unitMinute = Pluralized
-          [ (One, "{n} minti")
-          , (Other, "{n} mintoci")
+          [ (One, "minti {n}")
+          , (Other, "mintoci {n}")
           ]
         , unitHour = Pluralized
-          [ (One, "{n} awa")
-          , (Other, "{n} awanni")
+          [ (One, "awa {n}")
+          , (Other, "awanni {n}")
           ]
         , unitDay = Pluralized
-          [ (One, "{n} kwana")
-          , (Other, "{n} kwanaki")
+          [ (One, "kwana {n}")
+          , (Other, "kwanaki {n}")
           ]
         , unitWeek = Pluralized
-          [ (One, "{n} mako")
-          , (Other, "{n} makonni")
+          [ (One, "mako {n}")
+          , (Other, "makonni {n}")
           ]
         , unitMonth = Pluralized
-          [ (One, "{n} wata")
-          , (Other, "{n} watanni")
+          [ (One, "wata {n}")
+          , (Other, "watanni {n}")
           ]
         , unitYear = Pluralized
-          [ (One, "{n} shekara")
-          , (Other, "{n} shekaru")
+          [ (One, "shekara {n}")
+          , (Other, "shekaru {n}")
           ]
         }
     , localeHalf = "{n}½"
@@ -54,13 +54,13 @@ locale = DurationLocale
     , localeInFuture = "cikin {0}"
     , localeShort = Just $
         CompactnessOverride
-            { ovrSecond = Just (Simple "{n} daƙ.")
-            , ovrMinute = Just (Simple "{n} mnt.")
-            , ovrHour = Just (Simple "{n} awa")
-            , ovrDay = Just (Simple "{n} kw.")
-            , ovrWeek = Just (Simple "{n} mk.")
-            , ovrMonth = Just (Simple "{n} wt.")
-            , ovrYear = Just (Simple "{n} shk.")
+            { ovrSecond = Just (Simple "daƙ. {n}")
+            , ovrMinute = Just (Simple "mnt. {n}")
+            , ovrHour = Just (Simple "awa {n}")
+            , ovrDay = Just (Simple "kw. {n}")
+            , ovrWeek = Just (Simple "mk. {n}")
+            , ovrMonth = Just (Simple "wt. {n}")
+            , ovrYear = Just (Simple "shk. {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} da suka wuce"

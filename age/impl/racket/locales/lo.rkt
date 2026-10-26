@@ -26,7 +26,7 @@
          "month" (hash "type" "simple" "form" "{n} ເດືອນ")
          "year" (hash "type" "simple" "form" "{n} ປີ"))
    "{0}ເຄິ່ງ"
-   ""
+   " "
    "ເກີດໃໝ່"
    (hash "newborn" (stage-label "ເດັກເກີດໃໝ່" #f #f)
          "infant" (stage-label "ເດັກນ້ອຍ" #f #f)
@@ -35,5 +35,5 @@
          "teenager" (stage-label "ໄວລຸ້ນ" #f #f)
          "adult" (stage-label "ຜູ້ໃຫຍ່" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} ມ.") (hash "type" "simple" "form" "{n} ອທ.") (hash "type" "simple" "form" "{n} ດ.") (hash "type" "simple" "form" "{n} ປ.") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" #f #f)
   ))

@@ -29,11 +29,11 @@
    "tey"
    "suba"
    "démb"
-   "suba-suba"
-   "démb-démb"
-   "{weekday} bi"
-   "{weekday} bi ñëw"
-   "{weekday} bi weex"
+   "gannaaw-suba"
+   "bërki-démb"
+   "{weekday} jii"
+   "{weekday} jiy ñëw"
+   "{weekday} ji weesu"
    #f
    (date-compactness-override (list "Sam" "Few" "Maa" "Awr" "Mee" "Suw" "Sul" "Ut" "Sep" "Okt" "Now" "Des") #f (list "Dib" "Alt" "Tal" "Àll" "Alx" "Àjj" "Gaa") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)

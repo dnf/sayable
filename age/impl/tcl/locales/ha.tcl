@@ -17,10 +17,10 @@ proc plural_ha {n} {
 proc locale_ha {} {
     set code {ha}
     set units [dict create \
-        day [dict create one "{n} kwana" other "{n} kwanaki"] \
-        week [dict create one "{n} mako" other "{n} makonni"] \
-        month [dict create one "{n} wata" other "{n} watanni"] \
-        year [dict create one "{n} shekara" other "{n} shekaru"] \
+        day [dict create one "kwana {n}" other "kwanaki {n}"] \
+        week [dict create one "mako {n}" other "makonni {n}"] \
+        month [dict create one "wata {n}" other "watanni {n}"] \
+        year [dict create one "shekara {n}" other "shekaru {n}"] \
     ]
     set half "{n}½"
     set delimiter {, }
@@ -28,17 +28,17 @@ proc locale_ha {} {
     set stages [dict create \
         newborn {Jariri} \
         infant {Jariri} \
-        toddler {Ƙaramin yaro} \
-        child {Yaro} \
-        teenager {Saurayi} \
+        toddler [dict create m {Ƙaramin yaro} f {Ƙaramar yarinya}] \
+        child [dict create m {Yaro} f {Yarinya}] \
+        teenager [dict create m {Saurayi} f {Budurwa}] \
         adult {Babba} \
     ]
     set short [dict create \
         units [dict create \
-            day "{n} kw." \
-            week "{n} mk." \
-            month "{n} wt." \
-            year "{n} shk." \
+            day "kw. {n}" \
+            week "mk. {n}" \
+            month "wt. {n}" \
+            year "shk. {n}" \
         ] \
     ]
     set compact [dict create \

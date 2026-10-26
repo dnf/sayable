@@ -19,9 +19,9 @@ pub fn locale() -> DurationLocale {
             if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
         },
         units: Units {
-            second: UnitForms::simple("{n} segɔnde"),
-            minute: UnitForms::simple("{n} moniti"),
-            hour: UnitForms::simple("{n} ngonga"),
+            second: UnitForms::simple("segɔnde {n}"),
+            minute: UnitForms::simple("miniti {n}"),
+            hour: UnitForms::simple("ngonga {n}"),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "mokolo {n}"),
                 (PluralCategory::Other, "mikolo {n}"),

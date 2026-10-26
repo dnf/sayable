@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [dje.json](../../locales/dje.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Zarma 'guuru {h}' (guuru = hour, already used by this locale), additive 'guuru {h} nda miniti N' and 'guuru {h} nda jare' (half). Hours rewritten in post-noun modifier form (guuru fo, guuru hinka, guuru hinza ... rather than standalone afo/ihinka/ihinza), 11/12 completed to 'iway cindi fo' / 'iway cindi hinka', and 8/9 corrected from unrecognisable 'isahkay'/'iyegga' to 'ahakku'/'yagga'. Standard 12-hour count. Noon/midnight left as they were.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | suba cine       | 17/3    |
 | Day before yesterday | bi fo           | 13/3    |
 | This Thursday (+5)   | Alhamisi wo     | 20/3    |
-| Last Monday (-4)     | Atalaata ka ban | 11/3    |
-| Next Wednesday (+12) | Alhamisi ka kaa | 27/3    |
-| Same month (+20)     | 4 Awiril        | 4/4     |
+| Last Tuesday (-4)    | Atalaata ka ban | 11/3    |
+| Next Thursday (+12)  | Alhamisi ka kaa | 27/3    |
+| Same year (+20)      | 4 Awiril        | 4/4     |
 | Different year       | 10 Žanwiye 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal        | Short    | Compact |
-| --------------- | ------------- | -------- | ------- |
-| Midnight        | cin beri      | 12:00 AM | 12:00a  |
-| 1:00 AM         | afoo:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | iyegga:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | iwoy:15       | 10:15 AM | 10:15a  |
-| Half past 11    | iwoy cindi:30 | 11:30 AM | 11:30a  |
-| Noon            | zaari gaaham  | 12:00 PM | 12:00p  |
-| Quarter to 3    | ihinka:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | igu:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | isahkay:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | iwoy:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | cin beri      | 11:58 PM | 11:58p  |
+| Time            | Normal                                   | Short    | Compact |
+| --------------- | ---------------------------------------- | -------- | ------- |
+| Midnight        | cin beri                                 | 12:00 AM | 12:00a  |
+| 1:00 AM         | guuru fo                                 | 1:00 AM  | 1:00a   |
+| 5 past 9        | guuru yagga nda miniti gu                | 9:05 AM  | 9:05a   |
+| Quarter past 10 | guuru iway nda miniti iway cindi gu      | 10:15 AM | 10:15a  |
+| Half past 11    | guuru iway cindi fo nda jare             | 11:30 AM | 11:30a  |
+| Noon            | zaari gaaham                             | 12:00 PM | 12:00p  |
+| Quarter to 3    | guuru hinka nda miniti waytaaci cindi gu | 2:45 PM  | 2:45p   |
+| 5 to 6          | guuru gu nda miniti waygu cindi gu       | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | guuru ahakku                             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | guuru iway nda jare                      | 10:30 PM | 10:30p  |
+| 11:58 PM        | cin beri                                 | 11:58 PM | 11:58p  |

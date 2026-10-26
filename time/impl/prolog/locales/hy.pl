@@ -11,22 +11,22 @@
 
 % Armenian locale.
 
-st_hours('hy', ['տասներկու', 'մեկ', 'երկու', 'երեք', 'չորս', 'հինգ', 'վեց', 'յոթ', 'ութ', 'ինը', 'տաս', 'տասնմեկ']).
+st_hours('hy', ['տասներկուսն', 'մեկն', 'երկուսն', 'երեքն', 'չորսն', 'հինգն', 'վեցն', 'յոթն', 'ութն', 'ինն', 'տասն', 'տասնմեկն']).
 st_midnight('hy', 'կեսգիշեր').
 st_noon('hy', 'կեսօր').
 
-st_pattern('hy', 0, '{h}:00').
-st_pattern('hy', 5, '{h}:05').
-st_pattern('hy', 10, '{h}:10').
-st_pattern('hy', 15, '{h}:15').
-st_pattern('hy', 20, '{h}:20').
-st_pattern('hy', 25, '{h}:25').
-st_pattern('hy', 30, '{h}:30').
-st_pattern('hy', 35, '{h}:35').
-st_pattern('hy', 40, '{h}:40').
-st_pattern('hy', 45, '{h}:45').
-st_pattern('hy', 50, '{h}:50').
-st_pattern('hy', 55, '{h}:55').
+st_pattern('hy', 0, 'ժամը {h} է').
+st_pattern('hy', 5, '{h} անց հինգ').
+st_pattern('hy', 10, '{h} անց տասը').
+st_pattern('hy', 15, '{h} անց տասնհինգ').
+st_pattern('hy', 20, '{h} անց քսան').
+st_pattern('hy', 25, '{h} անց քսանհինգ').
+st_pattern('hy', 30, '{h} անց կես').
+st_pattern('hy', 35, '{h} անց երեսունհինգ').
+st_pattern('hy', 40, '{h} անց քառասուն').
+st_pattern('hy', 45, '{h} անց քառասունհինգ').
+st_pattern('hy', 50, '{h} անց հիսուն').
+st_pattern('hy', 55, '{h} անց հիսունհինգ').
 
 short_st_use24h('hy', true).
 short_st_format('hy', '{h}:{mm}').

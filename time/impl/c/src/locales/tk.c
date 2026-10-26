@@ -17,7 +17,7 @@ const StTimeLocale st_locale_tk = {
         { "on iki", "bir", "iki", "üç", "dört", "bäş", "alty", "ýedi", "sekiz", "dokuz", "on", "on bir" },
         "ýary gije",
         "günorta",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "sagat {h}", "sagat {h} bäş minut", "sagat {h} on minut", "sagat {h} on bäş minut", "sagat {h} ýigrimi minut", "sagat {h} ýigrimi bäş minut", "sagat {h} ýarym", "sagat {h} otuz bäş minut", "sagat {h} kyrk minut", "sagat {h} kyrk bäş minut", "sagat {h} elli minut", "sagat {h} elli bäş minut" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

@@ -26,5 +26,5 @@
    :just-now "ɣilad"
    :ago "ɣ {0} zzrin"
    :in-future "ɣ {0}"
-   :short {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter nil :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
+   :short {:second {:type :pluralized :forms {:one "{n} tasint" :other "{n} tisinin"}} :minute {:type :pluralized :forms {:one "{n} tusdiqt" :other "{n} tusdiqin"}} :hour {:type :pluralized :forms {:one "{n} tasragt" :other "{n} tisragin"}} :day {:type :pluralized :forms {:one "{n} ass" :other "{n} ussan"}} :week {:type :pluralized :forms {:one "{n} imalass" :other "{n} imalassn"}} :month {:type :pluralized :forms {:one "{n} ayyur" :other "{n} ayyurn"}} :year {:type :pluralized :forms {:one "{n} aseggas" :other "{n} iseggasen"}} :half nil :delimiter nil :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
    :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}})

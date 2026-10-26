@@ -18,9 +18,9 @@
    :week {:type :simple :form "{n} wik"}
    :month {:type :simple :form "{n} mont"}
    :year {:type :simple :form "{n} ia"}
-   :half "{n} na af"
+   :half "{0} ɛn af"
    :delimiter ", "
    :just-born "Nyubon bebi"
    :stages {:newborn {:type :neutral :label "Nyubon bebi"} :infant {:type :neutral :label "Smol pikin"} :toddler {:type :neutral :label "Smol pikin"} :child {:type :neutral :label "Pikin"} :teenager {:type :neutral :label "Yong posin"} :adult {:type :neutral :label "Big posin"}}
    :short {:day {:type :simple :form "{n} de"} :week {:type :simple :form "{n} wik"} :month {:type :simple :form "{n} mont"} :year {:type :simple :form "{n} ia"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

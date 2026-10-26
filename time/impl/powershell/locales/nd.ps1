@@ -10,22 +10,22 @@
 # Source: locales/nd.json
 
 function locale_nd {
-    $hours = @('litshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyangalombili', 'isitshiyangalolunye', 'litshumi', 'litshumi lanye')
+    $hours = @('letshumi lambili', 'lokuqala', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithupha', 'lesikhombisa', 'lesitshiyangalombili', 'lesitshiyangalolunye', 'letshumi', 'letshumi lanye')
     $midnight = 'phakathi kobusuku'
     $noon = 'emini'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ihola {h}'
+    $patterns[5] = 'ihola {h} lemizuzu emihlanu'
+    $patterns[10] = 'ihola {h} lemizuzu elitshumi'
+    $patterns[15] = 'ihola {h} lemizuzu elitshumi lanhlanu'
+    $patterns[20] = 'ihola {h} lemizuzu engamatshumi amabili'
+    $patterns[25] = 'ihola {h} lemizuzu engamatshumi amabili lanhlanu'
+    $patterns[30] = 'ihola {h} lengxenye'
+    $patterns[35] = 'ihola {h} lemizuzu engamatshumi amathathu lanhlanu'
+    $patterns[40] = 'ihola {h} lemizuzu engamatshumi amane'
+    $patterns[45] = 'ihola {h} lemizuzu engamatshumi amane lanhlanu'
+    $patterns[50] = 'ihola {h} lemizuzu engamatshumi amahlanu'
+    $patterns[55] = 'ihola {h} lemizuzu engamatshumi amahlanu lanhlanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

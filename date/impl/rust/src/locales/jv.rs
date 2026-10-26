@@ -27,7 +27,7 @@ pub fn locale() -> DateLocale {
         tomorrow: "sesuk".to_string(),
         yesterday: "wingi".to_string(),
         day_after_tomorrow: Some("embèn".to_string()),
-        day_before_yesterday: Some("dhèk wingi".to_string()),
+        day_before_yesterday: Some("wingenané".to_string()),
         this_weekday: Some("{weekday} iki".to_string()),
         next_weekday: Some("{weekday} ngarep".to_string()),
         last_weekday: Some("{weekday} wingi".to_string()),

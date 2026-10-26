@@ -11,10 +11,10 @@
 
 function loc = locale_snk()
   loc.code = 'snk';
-  loc.clock.hours = {'tanmu fillo', 'baane', 'fillo', 'sikko', 'naaxato', 'karago', 'tunmu', 'ñerru', 'segu', 'kaburu', 'tanmu', 'tanmu baane'};
+  loc.clock.hours = {'waxati tanmu do fillo', 'waxati baane', 'waxati fillo', 'waxati sikko', 'waxati naaxato', 'waxati karago', 'waxati tunmu', 'waxati ñerru', 'waxati segu', 'waxati kaburu', 'waxati tanmu', 'waxati tanmu do baane'};
   loc.clock.midnight = 'sulen noxo';
   loc.clock.noon = 'tili seren';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} do miniti karago', "p10", '{h} do miniti tanmu', "p15", '{h} do miniti tanmu do karago', "p20", '{h} do miniti tanpille', "p25", '{h} do miniti tanpille do karago', "p30", '{h} do faabe', "p35", '{h} do miniti tanjikke do karago', "p40", '{h} do miniti tannaxate', "p45", '{h} do miniti tannaxate do karago', "p50", '{h} do miniti tankarage', "p55", '{h} do miniti tankarage do karago');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

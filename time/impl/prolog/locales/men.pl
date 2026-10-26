@@ -11,22 +11,22 @@
 
 % Mende locale.
 
-st_hours('men', ['pu wɛlɛ', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila']).
+st_hours('men', ['pu mahu fele', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila']).
 st_midnight('men', 'kpindi gbɔyɔŋ').
 st_noon('men', 'ndɔlei-ma').
 
-st_pattern('men', 0, '{h}:00').
-st_pattern('men', 5, '{h}:05').
-st_pattern('men', 10, '{h}:10').
-st_pattern('men', 15, '{h}:15').
-st_pattern('men', 20, '{h}:20').
-st_pattern('men', 25, '{h}:25').
-st_pattern('men', 30, '{h}:30').
-st_pattern('men', 35, '{h}:35').
-st_pattern('men', 40, '{h}:40').
-st_pattern('men', 45, '{h}:45').
-st_pattern('men', 50, '{h}:50').
-st_pattern('men', 55, '{h}:55').
+st_pattern('men', 0, 'awa {h}').
+st_pattern('men', 5, 'awa {h} kɛ miniti lɔɔlu').
+st_pattern('men', 10, 'awa {h} kɛ miniti pu').
+st_pattern('men', 15, 'awa {h} kɛ miniti pu mahu lɔɔlu').
+st_pattern('men', 20, 'awa {h} kɛ miniti nuu yila gboyongo').
+st_pattern('men', 25, 'awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu').
+st_pattern('men', 30, 'awa {h} kɛ miniti nuu yila gboyongo mahu pu').
+st_pattern('men', 35, 'awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu').
+st_pattern('men', 40, 'awa {h} kɛ miniti nuu fele gboyongo').
+st_pattern('men', 45, 'awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu').
+st_pattern('men', 50, 'awa {h} kɛ miniti nuu fele gboyongo mahu pu').
+st_pattern('men', 55, 'awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu').
 
 short_st_use24h('men', false).
 short_st_format('men', '{h}:{mm} {ampm}').

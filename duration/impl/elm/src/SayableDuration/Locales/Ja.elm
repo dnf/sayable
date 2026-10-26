@@ -29,7 +29,7 @@ locale =
             , ( "day", Simple "{n}日" )
             , ( "week", Simple "{n}週" )
             , ( "month", Simple "{n}ヶ月" )
-            , ( "year", Simple "{n}歳" )
+            , ( "year", Simple "{n}年" )
             ]
     , half = "{0}半"
     , delimiter = ""
@@ -69,7 +69,7 @@ locale =
                         , ( "year", Simple "{n}y" )
                         ]
                     )
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0}前"
             , ovrInFuture = Just "{0}後"

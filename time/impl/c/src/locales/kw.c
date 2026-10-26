@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_kw = {
     "kw",
     {
-        { "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" },
+        { "dewdhek", "unn", "diw", "teyr", "peder", "pymp", "hwegh", "seyth", "eth", "naw", "deg", "unnek" },
         "hanter nos",
         "hanter dydh",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} eur", "pymp mynysen wosa {h}", "deg mynysen wosa {h}", "kwarter wosa {h}", "ugens mynysen wosa {h}", "pymp mynysen warn ugens wosa {h}", "hanter wosa {h}", "pymp mynysen warn ugens dhe {next_h}", "ugens mynysen dhe {next_h}", "kwarter dhe {next_h}", "deg mynysen dhe {next_h}", "pymp mynysen dhe {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

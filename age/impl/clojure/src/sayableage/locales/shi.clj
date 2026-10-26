@@ -14,13 +14,13 @@
 (def locale
   {:code "shi"
    :plural (fn [n] (if (or (== n 0) (== n 1)) :one (if (<= 2 n 10) :few :other)))
-   :day {:type :pluralized :forms {:one "{n} ass" :few "{n} ussan" :other "{n} ass"}}
-   :week {:type :pluralized :forms {:one "{n} imalass" :few "{n} imalassn" :other "{n} imalass"}}
-   :month {:type :pluralized :forms {:one "{n} ayyur" :few "{n} ayyurn" :other "{n} ayyur"}}
-   :year {:type :pluralized :forms {:one "{n} aseggas" :few "{n} iseggasen" :other "{n} aseggas"}}
-   :half "{0} d uzgen"
+   :day {:type :pluralized :forms {:one "{n} ⴰⵙⵙ" :few "{n} ⵓⵙⵙⴰⵏ" :other "{n} ⴰⵙⵙ"}}
+   :week {:type :pluralized :forms {:one "{n} ⵉⵎⴰⵍⴰⵙⵙ" :few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" :other "{n} ⵉⵎⴰⵍⴰⵙⵙ"}}
+   :month {:type :pluralized :forms {:one "{n} ⴰⵢⵢⵓⵔ" :few "{n} ⴰⵢⵢⵓⵔⵏ" :other "{n} ⴰⵢⵢⵓⵔ"}}
+   :year {:type :pluralized :forms {:one "{n} ⴰⵙⴳⴳⵯⴰⵙ" :few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" :other "{n} ⴰⵙⴳⴳⵯⴰⵙ"}}
+   :half "{0} ⴷ ⵓⵣⴳⵏ"
    :delimiter ", "
-   :just-born "Iɣ d illul"
-   :stages {:newborn {:type :neutral :label "Iɣ d illul"} :infant {:type :neutral :label "Agellid"} :toddler {:type :gendered :m "Aḥenjir" :f "Taḥenjirt"} :child {:type :gendered :m "Afrux" :f "Tafruxṭ"} :teenager {:type :gendered :m "Aɛrim" :f "Taɛrimt"} :adult {:type :gendered :m "Argaz" :f "Tamṭṭuṭ"}}
-   :short {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} wk"} :month {:type :simple :form "{n} mo"} :year {:type :simple :form "{n} yr"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})
+   :just-born "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+   :stages {:newborn {:type :neutral :label "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"} :infant {:type :neutral :label "ⵍⵍⵓⴼⴰⵏ"} :toddler {:type :gendered :m "ⴰⵃⵏⵊⵉⵔ" :f "ⵜⴰⵃⵏⵊⵉⵔⵜ"} :child {:type :gendered :m "ⴰⴼⵔⵓⵅ" :f "ⵜⴰⴼⵔⵓⵅⵜ"} :teenager {:type :gendered :m "ⴰⵄⵔⵉⵎ" :f "ⵜⴰⵄⵔⵉⵎⵜ"} :adult {:type :gendered :m "ⴰⵔⴳⴰⵣ" :f "ⵜⴰⵎⵟⵟⵓⵟ"}}
+   :short {:day {:type :pluralized :forms {:one "{n} ⴰⵙⵙ" :few "{n} ⵓⵙⵙⴰⵏ" :other "{n} ⴰⵙⵙ"}} :week {:type :pluralized :forms {:one "{n} ⵉⵎⴰⵍⴰⵙⵙ" :few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" :other "{n} ⵉⵎⴰⵍⴰⵙⵙ"}} :month {:type :pluralized :forms {:one "{n} ⴰⵢⵢⵓⵔ" :few "{n} ⴰⵢⵢⵓⵔⵏ" :other "{n} ⴰⵢⵢⵓⵔ"}} :year {:type :pluralized :forms {:one "{n} ⴰⵙⴳⴳⵯⴰⵙ" :few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" :other "{n} ⴰⵙⴳⴳⵯⴰⵙ"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} ⴰⵙⵙ"} :week {:type :simple :form "{n} ⵉⵎⵍ"} :month {:type :simple :form "{n} ⴰⵢⵔ"} :year {:type :simple :form "{n} ⴰⵙⴳ"} :half "{n}½" :delimiter "" :just-born nil}})

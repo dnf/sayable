@@ -21,7 +21,7 @@ locale() ->
         week = {pluralized, [{one, "{n} வாரம்"}, {other, "{n} வாரங்கள்"}]},
         month = {pluralized, [{one, "{n} மாதம்"}, {other, "{n} மாதங்கள்"}]},
         year = {pluralized, [{one, "{n} வயது"}, {other, "{n} வயது"}]},
-        half = "{0}ரை",
+        half = "{n}½",
         delimiter = ", ",
         just_born = "பிறந்த குழந்தை",
         stages = #stages{newborn = {neutral, "பிறந்த குழந்தை"}, infant = {neutral, "குழந்தை"}, toddler = {neutral, "சிறு குழந்தை"}, child = {neutral, "சிறார்"}, teenager = {neutral, "இளம்பருவம்"}, adult = {neutral, "பெரியவர்"}},

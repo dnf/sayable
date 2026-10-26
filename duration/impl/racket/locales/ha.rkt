@@ -21,18 +21,18 @@
   (duration-locale
    "ha"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} daƙiƙa" "other" "{n} daƙiƙoƙi"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} minti" "other" "{n} mintoci"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} awa" "other" "{n} awanni"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} kwana" "other" "{n} kwanaki"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} mako" "other" "{n} makonni"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} wata" "other" "{n} watanni"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} shekara" "other" "{n} shekaru")))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "daƙiƙa {n}" "other" "daƙiƙoƙi {n}"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "minti {n}" "other" "mintoci {n}"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "awa {n}" "other" "awanni {n}"))
+         "day" (hash "type" "pluralized" "forms" (hash "one" "kwana {n}" "other" "kwanaki {n}"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "mako {n}" "other" "makonni {n}"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "wata {n}" "other" "watanni {n}"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "shekara {n}" "other" "shekaru {n}")))
    "{n}½"
    ", "
    "yanzu"
    "{0} da suka wuce"
    "cikin {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} daƙ.") (hash "type" "simple" "form" "{n} mnt.") (hash "type" "simple" "form" "{n} awa") (hash "type" "simple" "form" "{n} kw.") (hash "type" "simple" "form" "{n} mk.") (hash "type" "simple" "form" "{n} wt.") (hash "type" "simple" "form" "{n} shk.") #f #f "{0} da suka wuce" "cikin {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "daƙ. {n}") (hash "type" "simple" "form" "mnt. {n}") (hash "type" "simple" "form" "awa {n}") (hash "type" "simple" "form" "kw. {n}") (hash "type" "simple" "form" "mk. {n}") (hash "type" "simple" "form" "wt. {n}") (hash "type" "simple" "form" "shk. {n}") #f #f "{0} da suka wuce" "cikin {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}min") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} da suka wuce" "cikin {0}")
   ))

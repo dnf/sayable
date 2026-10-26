@@ -11,22 +11,22 @@
 
 % Nuer locale.
 
-st_hours('nus', ['thiäär ke rou', 'tök', 'rou', 'diäk', 'ŋuan', 'dhiëc', 'bäkɛl', 'dhorou', 'bät', 'kuɔn', 'thiäär', 'thiäär ku tök']).
+st_hours('nus', ['wäl wi̱ rɛw', 'kɛl', 'rɛw', 'diɔk', 'ŋuaan', 'dhieec', 'bäkɛl', 'bäärɔw', 'bädäk', 'bäŋuan', 'wäl', 'wäl wi̱ kɛl']).
 st_midnight('nus', 'wakɔ̈u').
 st_noon('nus', 'cäŋ kɔ̈k').
 
-st_pattern('nus', 0, '{h}:00').
-st_pattern('nus', 5, '{h}:05').
-st_pattern('nus', 10, '{h}:10').
-st_pattern('nus', 15, '{h}:15').
-st_pattern('nus', 20, '{h}:20').
-st_pattern('nus', 25, '{h}:25').
-st_pattern('nus', 30, '{h}:30').
-st_pattern('nus', 35, '{h}:35').
-st_pattern('nus', 40, '{h}:40').
-st_pattern('nus', 45, '{h}:45').
-st_pattern('nus', 50, '{h}:50').
-st_pattern('nus', 55, '{h}:55').
+st_pattern('nus', 0, 'thaar {h}').
+st_pattern('nus', 5, 'thaar {h} kɛnɛ minit dhieec').
+st_pattern('nus', 10, 'thaar {h} kɛnɛ minit wäl').
+st_pattern('nus', 15, 'thaar {h} kɛnɛ minit wäl wi̱ dhieec').
+st_pattern('nus', 20, 'thaar {h} kɛnɛ minit jiɛn rɛw').
+st_pattern('nus', 25, 'thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec').
+st_pattern('nus', 30, 'thaar {h} kɛnɛ minit jiɛn diɔk').
+st_pattern('nus', 35, 'thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec').
+st_pattern('nus', 40, 'thaar {h} kɛnɛ minit jiɛn ŋuaan').
+st_pattern('nus', 45, 'thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec').
+st_pattern('nus', 50, 'thaar {h} kɛnɛ minit jiɛn dhieec').
+st_pattern('nus', 55, 'thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec').
 
 short_st_use24h('nus', false).
 short_st_format('nus', '{h}:{mm} {ampm}').

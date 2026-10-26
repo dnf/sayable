@@ -20,7 +20,7 @@ function locale_tpi {
         month = '{n} mun'
         year = '{n} yia'
     }
-    $half = '{n} na hap'
+    $half = '{0} na hap'
     $delimiter = ', '
     $justBorn = 'Nupela pikinini'
     $stages = @{
@@ -46,6 +46,7 @@ function locale_tpi {
             month = '{n}m'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
     }
     return @{

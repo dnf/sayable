@@ -18,7 +18,7 @@ _sayableduration_plural_bn() {
 _sayableduration_locale_bn() {
     _unit_second='{n} সেকেন্ড'
     _unit_minute='{n} মিনিট'
-    _unit_hour='{n} ঘন্টা'
+    _unit_hour='{n} ঘণ্টা'
     _unit_day_one='{n} দিন'
     _unit_day_other='{n} দিন'
     _unit_week_one='{n} সপ্তাহ'

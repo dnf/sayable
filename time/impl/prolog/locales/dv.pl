@@ -15,18 +15,18 @@ st_hours('dv', ['ބާރަ', 'އެކެއް', 'ދޭއް', 'ތިނެއް', 'ހަތ�
 st_midnight('dv', 'މެންދަމު').
 st_noon('dv', 'މެންދުރު').
 
-st_pattern('dv', 0, '{h}:00').
-st_pattern('dv', 5, '{h}:05').
-st_pattern('dv', 10, '{h}:10').
-st_pattern('dv', 15, '{h}:15').
-st_pattern('dv', 20, '{h}:20').
-st_pattern('dv', 25, '{h}:25').
-st_pattern('dv', 30, '{h}:30').
-st_pattern('dv', 35, '{h}:35').
-st_pattern('dv', 40, '{h}:40').
-st_pattern('dv', 45, '{h}:45').
-st_pattern('dv', 50, '{h}:50').
-st_pattern('dv', 55, '{h}:55').
+st_pattern('dv', 0, 'ގަޑިން {h}').
+st_pattern('dv', 5, '{h} ޖަހައި ފަސް މިނެޓު').
+st_pattern('dv', 10, '{h} ޖަހައި ދިހަ މިނެޓު').
+st_pattern('dv', 15, '{h} ޖަހައި ފަނަރަ މިނެޓު').
+st_pattern('dv', 20, '{h} ޖަހައި ވިހި މިނެޓު').
+st_pattern('dv', 25, '{h} ޖަހައި ފަންސަވީސް މިނެޓު').
+st_pattern('dv', 30, '{h} ޖަހައި ބައި').
+st_pattern('dv', 35, '{h} ޖަހައި ތިރީސްފަސް މިނެޓު').
+st_pattern('dv', 40, '{h} ޖަހައި ސާޅީސް މިނެޓު').
+st_pattern('dv', 45, '{h} ޖަހައި ސާޅީސްފަސް މިނެޓު').
+st_pattern('dv', 50, '{h} ޖަހައި ފަންސާސް މިނެޓު').
+st_pattern('dv', 55, '{h} ޖަހައި ފަންސާސްފަސް މިނެޓު').
 
 short_st_use24h('dv', false).
 short_st_format('dv', '{h}:{mm} {ampm}').

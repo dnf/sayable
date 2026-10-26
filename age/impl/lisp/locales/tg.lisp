@@ -21,7 +21,7 @@
                (cons :week "{n} ҳафта")
                (cons :month "{n} моҳ")
                (cons :year "{n} сол"))
-   :half "{0} ним"
+   :half "{0}у ним"
    :delimiter ", "
    :just-born "Навзод"
    :stages (list (cons :newborn "Навзод")

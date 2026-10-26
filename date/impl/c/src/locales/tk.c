@@ -12,17 +12,17 @@
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_tk[12] = {
-    "Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"
+    "ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek"
 };
 
 static const char *sd_short_weekdays_tk[7] = {
-    "Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"
+    "ýek", "duş", "siş", "çar", "pen", "ann", "şen"
 };
 
 const SdDateLocale sd_locale_tk = {
     "tk",
-    { "Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr" },
-    { "Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe" },
+    { "ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr" },
+    { "ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",

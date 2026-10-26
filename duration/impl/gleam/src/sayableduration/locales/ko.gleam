@@ -22,7 +22,7 @@ pub fn locale() -> types.DurationLocale {
       #("day", types.SimpleUnit("{n}일")),
       #("week", types.SimpleUnit("{n}주")),
       #("month", types.SimpleUnit("{n}개월")),
-      #("year", types.SimpleUnit("{n}살")),
+      #("year", types.SimpleUnit("{n}년")),
     ],
     half: "{0} 반",
     delimiter: " ",

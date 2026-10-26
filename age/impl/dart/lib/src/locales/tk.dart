@@ -22,7 +22,7 @@ final tk = AgeLocale(
   week: simpleUnit('{n} hepde'),
   month: simpleUnit('{n} aý'),
   year: simpleUnit('{n} ýaş'),
-  half: '{0}½',
+  half: '{n} ýarym',
   delimiter: ', ',
   justBorn: 'Täze doglan',
   newborn: stageNeutral('Täze doglan'),
@@ -30,7 +30,7 @@ final tk = AgeLocale(
   toddler: stageNeutral('Kiçijik'),
   child: stageNeutral('Çaga'),
   teenager: stageNeutral('Ýetginjek'),
-  adult: stageNeutral('Ulular'),
+  adult: stageNeutral('Uly adam'),
   short: CompactnessOverride(
     day: simpleUnit('{n} g'),
     week: simpleUnit('{n} h'),

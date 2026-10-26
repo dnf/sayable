@@ -17,10 +17,10 @@ package SayableTime::Locales::SN;
 sub locale {{
   code => 'sn',
   clock => {
-    hours => ['gumi nembiri', 'imwe', 'mbiri', 'nhatu', 'ina', 'shanu', 'nhanhatu', 'nomwe', 'sere', 'pfumbamwe', 'gumi', 'gumi neimwe'],
-    midnight => 'usiku hwepakati',
+    hours => ['dzava gumi nembiri', 'yava imwe', 'dzava mbiri', 'dzava nhatu', 'dzava ina', 'dzava shanu', 'dzava nhanhatu', 'dzava nomwe', 'dzava sere', 'dzava pfumbamwe', 'dzava gumi', 'dzava gumi neimwe'],
+    midnight => 'pakati peusiku',
     noon => 'masikati',
-    patterns => { 0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55' },
+    patterns => { 0 => '{h}', 5 => '{h} nemaminitsi mashanu', 10 => '{h} nemaminitsi gumi', 15 => '{h} nemaminitsi gumi nemashanu', 20 => '{h} nemaminitsi makumi maviri', 25 => '{h} nemaminitsi makumi maviri nemashanu', 30 => '{h} nehafu', 35 => '{h} nemaminitsi makumi matatu nemashanu', 40 => '{h} nemaminitsi makumi mana', 45 => '{h} nemaminitsi makumi mana nemashanu', 50 => '{h} nemaminitsi makumi mashanu', 55 => '{h} nemaminitsi makumi mashanu nemashanu' },
   },
   short => {
     clock => {

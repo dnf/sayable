@@ -27,7 +27,7 @@ class JVLocale {
   static tomorrow { "sesuk" }
   static yesterday { "wingi" }
   static dayAfterTomorrow { "embèn" }
-  static dayBeforeYesterday { "dhèk wingi" }
+  static dayBeforeYesterday { "wingenané" }
   static thisWeekday { "{weekday} iki" }
   static nextWeekday { "{weekday} ngarep" }
   static lastWeekday { "{weekday} wingi" }

@@ -24,7 +24,7 @@ locale() ->
         week = {simple, "{n} minggu"},
         month = {simple, "{n} bulan"},
         year = {simple, "{n} tahun"},
-        half = "{0} setengah",
+        half = "{n} setengah",
         delimiter = ", ",
         just_now = "baru saja",
         ago = "{0} yang lalu",

@@ -13,7 +13,7 @@ proc locale_date_gd {} {
     set code {gd}
     set months [list {Am Faoilleach} {An Gearran} {Am Màrt} {An Giblean} {An Cèitean} {An t-Ògmhios} {An t-Iuchar} {An Lùnastal} {An t-Sultain} {An Dàmhair} {An t-Samhain} {An Dùbhlachd}]
     set weekdays [list {DiDòmhnaich} {DiLuain} {DiMàirt} {DiCiadain} {DiarDaoin} {DihAoine} {DiSathairne}]
-    set day_format "{n}"
+    set day_format "{n}mh"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
     set date_pattern_with_year "{day} {month} {year}"
@@ -25,7 +25,7 @@ proc locale_date_gd {} {
     set this_weekday "{weekday} seo"
     set next_weekday "{weekday} sa tighinn"
     set last_weekday "{weekday} seo chaidh"
-    set months_in_date ""
+    set months_in_date [list {dhen Fhaoilleach} {dhen Ghearran} {dhen Mhàrt} {dhen Ghiblean} {dhen Chèitean} {dhen Ògmhios} {dhen Iuchar} {dhen Lùnastal} {dhen t-Sultain} {dhen Dàmhair} {dhen t-Samhain} {dhen Dùbhlachd}]
     set short [dict create \
         months [list {Faoi} {Gearr} {Màrt} {Gibl} {Cèit} {Ògmh} {Iuch} {Lùna} {Sult} {Dàmh} {Samh} {Dùbh}] \
         weekdays [list {DiD} {DiL} {DiM} {DiC} {Dia} {Dih} {DiS}] \

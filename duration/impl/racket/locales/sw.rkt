@@ -21,9 +21,9 @@
   (duration-locale
    "sw"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "simple" "form" "{n} sekunde")
-         "minute" (hash "type" "simple" "form" "{n} dakika")
-         "hour" (hash "type" "simple" "form" "{n} saa")
+   (hash "second" (hash "type" "simple" "form" "sekunde {n}")
+         "minute" (hash "type" "simple" "form" "dakika {n}")
+         "hour" (hash "type" "simple" "form" "saa {n}")
          "day" (hash "type" "pluralized" "forms" (hash "one" "siku {n}" "other" "siku {n}"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "wiki {n}" "other" "wiki {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "mwezi {n}" "other" "miezi {n}"))

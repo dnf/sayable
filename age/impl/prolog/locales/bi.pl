@@ -18,7 +18,7 @@ sa_unit('bi', week, _, '{n} wik').
 sa_unit('bi', month, _, '{n} manis').
 sa_unit('bi', year, _, '{n} yia').
 
-sa_half('bi', '{n} mo haf').
+sa_half('bi', '{0} mo haf').
 sa_delimiter('bi', ', ').
 sa_just_born('bi', 'Niufala bebe').
 
@@ -38,4 +38,5 @@ compact_sa_unit('bi', day, _, '{n}d').
 compact_sa_unit('bi', week, _, '{n}w').
 compact_sa_unit('bi', month, _, '{n}m').
 compact_sa_unit('bi', year, _, '{n}y').
+compact_sa_half('bi', '{n}½').
 compact_sa_delimiter('bi', '').

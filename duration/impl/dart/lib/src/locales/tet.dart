@@ -54,6 +54,7 @@ final tet = DurationLocale(
       'month': simpleUnit('{n}mo'),
       'year': simpleUnit('{n}y'),
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} liu ba',
     inFuture: 'iha {0}',

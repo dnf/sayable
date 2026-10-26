@@ -14,46 +14,46 @@ local M = {}
 M.code = "wo"
 M.plural = function(_n) return "other" end
 M.units = {
-    second = "saa-yépp {n}",
-    minute = "simili {n}",
-    hour = "waxtu {n}",
-    day = "bés {n}",
-    week = "ayubés {n}",
-    month = "weer {n}",
-    year = "at {n}",
+    second = "{n} saa",
+    minute = "{n} simili",
+    hour = "{n} waxtu",
+    day = "{n} fan",
+    week = "{n} ayubés",
+    month = "{n} weer",
+    year = "{n} at",
 }
 M.half = "{0} ak genn-wàll"
 M.delimiter = ", "
 M.just_now = "léegi"
 M.ago = "{0} ci ginaaw"
-M.in_future = "ci {0}"
+M.in_future = "fileek {0}"
 M.short = {
     units = {
-        second = "saa-y. {n}",
-        minute = "sim. {n}",
-        hour = "wax. {n}",
-        day = "bés {n}",
-        week = "ayub. {n}",
-        month = "weer {n}",
-        year = "at {n}",
+        second = "{n} saa",
+        minute = "{n} sim.",
+        hour = "{n} wax.",
+        day = "{n} fan",
+        week = "{n} ayub.",
+        month = "{n} weer",
+        year = "{n} at",
     },
     ago = "{0} ci ginaaw",
-    in_future = "ci {0}",
+    in_future = "fileek {0}",
 }
 M.compact = {
     units = {
-        second = "saa {n}",
-        minute = "sim {n}",
-        hour = "wax {n}",
-        day = "bés {n}",
-        week = "ayub {n}",
-        month = "weer {n}",
-        year = "at {n}",
+        second = "{n} saa",
+        minute = "{n} sim",
+        hour = "{n} wax",
+        day = "{n} fan",
+        week = "{n} ayub",
+        month = "{n} weer",
+        year = "{n} at",
     },
     half = "{n}½",
     delimiter = "",
     ago = "{0} ci gin.",
-    in_future = "ci {0}",
+    in_future = "fileek {0}",
 }
 
 return M

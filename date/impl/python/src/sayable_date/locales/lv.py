@@ -20,7 +20,7 @@ LV = DateLocale(
     day_format="{n}.",
     day_format_exceptions={},
     date_pattern="{day} {month}",
-    date_pattern_with_year="{day} {month} {year}",
+    date_pattern_with_year="{year}. gada {day} {month}",
     today="šodien",
     tomorrow="rīt",
     yesterday="vakar",
@@ -34,7 +34,7 @@ LV = DateLocale(
         weekdays=["sv", "pr", "ot", "tr", "ce", "pk", "se"],
         day_format="{n}.",
         date_pattern="{day} {month}",
-        date_pattern_with_year="{day} {month} {year}",
+        date_pattern_with_year="{year}. gada {day} {month}",
     ),
     compact=CompactnessOverride(
         date_pattern="{d}.{m}.",

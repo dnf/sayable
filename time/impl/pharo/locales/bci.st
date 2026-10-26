@@ -17,22 +17,22 @@ bci
 	locale := SayableTimeLocale new.
 	locale code: 'bci'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'blu-nɲɔn'. 'kun'. 'nɲɔn'. 'nsan'. 'nan'. 'nnun'. 'nsiɛn'. 'nso'. 'mɔcuɛ'. 'ngwlan'. 'blu'. 'blu-kun' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'blu-nin-nɲɔn'. 'kun'. 'nɲɔn'. 'nsan'. 'nan'. 'nnun'. 'nsiɛn'. 'nso'. 'mɔcuɛ'. 'ngwlan'. 'blu'. 'blu-nin-kun' }).
 	clock at: #midnight put: 'kɔnguɛ afiɛn'.
 	clock at: #noon put: 'nnɔsua'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'dɔ {h}'.
+		5. 'dɔ {h} nin miniti nnun'.
+		10. 'dɔ {h} nin miniti blu'.
+		15. 'dɔ {h} nin miniti blu-nin-nnun'.
+		20. 'dɔ {h} nin miniti ablaɔn'.
+		25. 'dɔ {h} nin miniti ablaɔn-nin-nnun'.
+		30. 'dɔ {h} nin miniti ablasan'.
+		35. 'dɔ {h} nin miniti ablasan-nin-nnun'.
+		40. 'dɔ {h} nin miniti ablanan'.
+		45. 'dɔ {h} nin miniti ablanan-nin-nnun'.
+		50. 'dɔ {h} nin miniti ablenun'.
+		55. 'dɔ {h} nin miniti ablenun-nin-nnun'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

@@ -10,21 +10,21 @@
 # Source: locales/mnk.json
 
 _sayabletime_locale_mnk() {
-    _clock_hours=('tan ning fula' 'kiliŋ' 'fula' 'saba' 'naani' 'luulu' 'wɔɔrɔ' 'wolonfila' 'sey' 'kɔnɔntɔ' 'taŋ' 'taŋ ning kiliŋ')
+    _clock_hours=('taŋ niŋ fula' 'kiliŋ' 'fula' 'saba' 'naani' 'luulu' 'wɔɔrɔ' 'wolonfila' 'sey' 'kɔnɔntɔ' 'taŋ' 'taŋ niŋ kiliŋ')
     _clock_midnight='sutu-tili-laŋ'
     _clock_noon='tili-konto'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='talaŋ {h}'
+    _clock_pattern_5='talaŋ {h} aniŋ miniti luulu'
+    _clock_pattern_10='talaŋ {h} aniŋ miniti taŋ'
+    _clock_pattern_15='talaŋ {h} aniŋ miniti taŋ niŋ luulu'
+    _clock_pattern_20='talaŋ {h} aniŋ miniti muwaŋ'
+    _clock_pattern_25='talaŋ {h} aniŋ miniti muwaŋ niŋ luulu'
+    _clock_pattern_30='talaŋ {h} aniŋ talantee'
+    _clock_pattern_35='talaŋ {h} aniŋ miniti taŋ saba niŋ luulu'
+    _clock_pattern_40='talaŋ {h} aniŋ miniti taŋ naani'
+    _clock_pattern_45='talaŋ {h} aniŋ miniti taŋ naani niŋ luulu'
+    _clock_pattern_50='talaŋ {h} aniŋ miniti taŋ luulu'
+    _clock_pattern_55='talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

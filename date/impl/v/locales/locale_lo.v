@@ -24,13 +24,13 @@ pub const locale_lo = DateLocale{
 	yesterday: 'ມື້ວານ'
 	day_after_tomorrow: 'ມື້ຮື'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'ມື້ກ່ອນ'
+	day_before_yesterday: 'ມື້ຊືນ'
 	has_day_before_yesterday: true
 	this_weekday: '{weekday}ນີ້'
 	has_this_weekday: true
 	next_weekday: '{weekday}ໜ້າ'
 	has_next_weekday: true
-	last_weekday: '{weekday}ແລ້ວ'
+	last_weekday: '{weekday}ທີ່ແລ້ວ'
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{

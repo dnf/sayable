@@ -50,7 +50,7 @@ fn build_bm() -> DurationLocale:
     short_ovr.has_year = True
     short_ovr.ago = "{0} bɔlen"
     short_ovr.has_ago = True
-    short_ovr.in_future = "ka {0}"
+    short_ovr.in_future = "{0} kɔnɔ"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
@@ -74,7 +74,7 @@ fn build_bm() -> DurationLocale:
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} bɔlen"
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "ka {0}"
+    compact_ovr.in_future = "{0} kɔnɔ"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -91,7 +91,7 @@ fn build_bm() -> DurationLocale:
         delimiter=", ",
         just_now="sisan",
         ago="{0} bɔlen",
-        in_future="ka {0}",
+        in_future="{0} kɔnɔ",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

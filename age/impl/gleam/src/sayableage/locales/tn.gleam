@@ -26,7 +26,7 @@ pub fn locale() -> types.AgeLocale {
     infant: types.NeutralStage("Lesea"),
     toddler: types.NeutralStage("Ngwana yo monnye"),
     child: types.NeutralStage("Ngwana"),
-    teenager: types.NeutralStage("Lekgarebe"),
+    teenager: types.NeutralStage("Mosha"),
     adult: types.NeutralStage("Motho yo mogolo"),
     short: Ok(types.CompactnessOverride(
       day: Ok(types.PluralUnit([#(types.One, "letsatsi {n}"), #(types.Other, "malatsi {n}")])),

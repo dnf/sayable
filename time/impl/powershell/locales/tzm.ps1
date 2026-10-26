@@ -10,22 +10,22 @@
 # Source: locales/tzm.json
 
 function locale_tzm {
-    $hours = @('12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11')
-    $midnight = 'ⵏⵚ ⵏ ⵉⴹ'
-    $noon = 'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ'
+    $hours = @('tis snat d mrawt', 'tis yat', 'tis snat', 'tis kṛaṭṭ', 'tis kkuẕt', 'tis smmust', 'tis sḍist', 'tis sat', 'tis tamt', 'tis tẕat', 'tis mrawt', 'tis yat d mrawt')
+    $midnight = 'nṣ n iḍ'
+    $noon = 'tizwarnin'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} d smmus tusdiqin'
+    $patterns[10] = '{h} d mraw tusdiqin'
+    $patterns[15] = '{h} d rrbɛ'
+    $patterns[20] = '{h} d ɛcrin n tusdiqt'
+    $patterns[25] = '{h} d xmsa u ɛcrin n tusdiqt'
+    $patterns[30] = '{h} d uzgen'
+    $patterns[35] = '{h} d xmsa u tlatin n tusdiqt'
+    $patterns[40] = '{h} d ṛbɛin n tusdiqt'
+    $patterns[45] = '{h} d xmsa u ṛbɛin n tusdiqt'
+    $patterns[50] = '{h} d xmsin n tusdiqt'
+    $patterns[55] = '{h} d xmsa u xmsin n tusdiqt'
     $clock = @{
         hours = $hours
         midnight = $midnight

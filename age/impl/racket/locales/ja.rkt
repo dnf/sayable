@@ -35,5 +35,5 @@
          "teenager" (stage-label "青少年" #f #f)
          "adult" (stage-label "成人" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} 日") (hash "type" "simple" "form" "{n} 週間") (hash "type" "simple" "form" "{n} か月") (hash "type" "simple" "form" "{n} 年") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" #f #f)
   ))

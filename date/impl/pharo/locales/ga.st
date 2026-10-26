@@ -27,7 +27,7 @@ ga
 	locale yesterday: 'inné'.
 	locale dayAfterTomorrow: 'arú amárach'.
 	locale dayBeforeYesterday: 'arú inné'.
-	locale thisWeekday: 'an {weekday} seo'.
+	locale thisWeekday: '{weekday} seo'.
 	locale nextWeekday: '{weekday} seo chugainn'.
 	locale lastWeekday: '{weekday} seo caite'.
 	locale monthsInDate: nil.

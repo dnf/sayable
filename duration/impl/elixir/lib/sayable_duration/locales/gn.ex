@@ -17,9 +17,9 @@ defmodule SayableDuration.Locales.GN do
       code: "gn",
       plural: (fn 1 -> :one; _ -> :other end),
       units: %{
-        second: "{n} aravo'i",
-        minute: "{n} aravo",
-        hour: "{n} aravo guasu",
+        second: "{n} aravo'ive",
+        minute: "{n} aravo'i",
+        hour: "{n} aravo",
         day: "{n} ára",
         week: "{n} arapokõindy",
         month: "{n} jasy",
@@ -32,9 +32,9 @@ defmodule SayableDuration.Locales.GN do
       in_future: "{0} rire",
       short: %{
         units: %{
-          second: "{n} ara'i",
-          minute: "{n} ara",
-          hour: "{n} ara g",
+          second: "{n} aravo'ive",
+          minute: "{n} aravo'i",
+          hour: "{n} aravo",
           day: "{n} ára",
           week: "{n} ara",
           month: "{n} jas",

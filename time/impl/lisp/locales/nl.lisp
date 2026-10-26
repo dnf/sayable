@@ -19,8 +19,8 @@
    :clock (make-clock-config
     :hours (list "twaalf" "een" "twee" "drie" "vier" "vijf" "zes" "zeven" "acht" "negen" "tien" "elf")
     :midnight "middernacht"
-    :noon "middag"
-    :patterns (list (cons 0 "{h} uur") (cons 5 "vijf over {h}") (cons 10 "tien over {h}") (cons 15 "kwart over {h}") (cons 20 "twintig over {h}") (cons 25 "vijf voor half {next_h}") (cons 30 "half {next_h}") (cons 35 "vijf over half {next_h}") (cons 40 "twintig voor {next_h}") (cons 45 "kwart voor {next_h}") (cons 50 "tien voor {next_h}") (cons 55 "vijf voor {next_h}")))
+    :noon "twaalf uur 's middags"
+    :patterns (list (cons 0 "{h} uur") (cons 5 "vijf over {h}") (cons 10 "tien over {h}") (cons 15 "kwart over {h}") (cons 20 "tien voor half {next_h}") (cons 25 "vijf voor half {next_h}") (cons 30 "half {next_h}") (cons 35 "vijf over half {next_h}") (cons 40 "tien over half {next_h}") (cons 45 "kwart voor {next_h}") (cons 50 "tien voor {next_h}") (cons 55 "vijf voor {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

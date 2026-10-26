@@ -39,7 +39,8 @@ format_age(Code, Dob, AsOf, Result) :-
 format_age(Code, Dob, AsOf, Compactness, Result) :-
     atom(Dob), Dob \== '',
     parse_date(Dob, DobY, DobM, DobD),
-    parse_date(AsOf, AsOfY, AsOfM, AsOfD),
+    resolve_as_of(AsOf, ResolvedAsOf),
+    parse_date(ResolvedAsOf, AsOfY, AsOfM, AsOfD),
     parse_age(DobY, DobM, DobD, AsOfY, AsOfM, AsOfD, Months, DiffDays),
     format_age_from_components(Code, Months, DiffDays, Compactness, Result).
 
@@ -52,10 +53,21 @@ format_stage(Code, Dob, AsOf, Result) :-
 format_stage(Code, Dob, AsOf, Gender, Result) :-
     atom(Dob), Dob \== '',
     parse_date(Dob, DobY, DobM, DobD),
-    parse_date(AsOf, AsOfY, AsOfM, AsOfD),
+    resolve_as_of(AsOf, ResolvedAsOf),
+    parse_date(ResolvedAsOf, AsOfY, AsOfM, AsOfD),
     parse_age(DobY, DobM, DobD, AsOfY, AsOfM, AsOfD, Months, _DiffDays),
     stage_key(Months, StageKey),
     sa_stage(Code, StageKey, Gender, Result).
+
+%% resolve_as_of(+AsOf, -Date) — an absent AsOf ('' or the atom null) means
+%% today's local date; anything else is passed through for parsing.
+resolve_as_of(AsOf, Date) :-
+    (   ( AsOf == '' ; AsOf == null )
+    ->  get_time(Now),
+        stamp_date_time(Now, date(Y, M, D, _, _, _, _, _, _), local),
+        format(atom(Date), '~|~`0t~d~4+-~|~`0t~d~2+-~|~`0t~d~2+', [Y, M, D])
+    ;   Date = AsOf
+    ).
 
 %% parse_date(+Atom, -Y, -M, -D) — parse exactly YYYY-MM-DD naming a real
 %% calendar day (docs/input-formats.md). Fails for anything else.

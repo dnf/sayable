@@ -11,22 +11,22 @@
 
 % Swahili locale.
 
-st_hours('sw', ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja']).
-st_midnight('sw', 'usiku wa manane').
-st_noon('sw', 'adhuhuri').
+st_hours('sw', ['sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja', 'kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano']).
+st_midnight('sw', 'saa sita usiku').
+st_noon('sw', 'saa sita mchana').
 
-st_pattern('sw', 0, '{h} o\'clock').
-st_pattern('sw', 5, 'tano kupita {h}').
-st_pattern('sw', 10, 'kumi kupita {h}').
-st_pattern('sw', 15, 'robo kupita {h}').
-st_pattern('sw', 20, 'ishirini kupita {h}').
-st_pattern('sw', 25, 'ishirini na tano kupita {h}').
-st_pattern('sw', 30, 'nusu kupita {h}').
-st_pattern('sw', 35, 'ishirini na tano kabla ya {next_h}').
-st_pattern('sw', 40, 'ishirini kabla ya {next_h}').
-st_pattern('sw', 45, 'robo kabla ya {next_h}').
-st_pattern('sw', 50, 'kumi kabla ya {next_h}').
-st_pattern('sw', 55, 'tano kabla ya {next_h}').
+st_pattern('sw', 0, 'saa {h}').
+st_pattern('sw', 5, 'saa {h} na dakika tano').
+st_pattern('sw', 10, 'saa {h} na dakika kumi').
+st_pattern('sw', 15, 'saa {h} na robo').
+st_pattern('sw', 20, 'saa {h} na dakika ishirini').
+st_pattern('sw', 25, 'saa {h} na dakika ishirini na tano').
+st_pattern('sw', 30, 'saa {h} na nusu').
+st_pattern('sw', 35, 'saa {next_h} kasoro dakika ishirini na tano').
+st_pattern('sw', 40, 'saa {next_h} kasoro dakika ishirini').
+st_pattern('sw', 45, 'saa {next_h} kasoro robo').
+st_pattern('sw', 50, 'saa {next_h} kasoro dakika kumi').
+st_pattern('sw', 55, 'saa {next_h} kasoro dakika tano').
 
 short_st_use24h('sw', true).
 short_st_format('sw', '{h}:{mm}').

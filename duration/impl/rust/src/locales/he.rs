@@ -22,32 +22,32 @@ pub fn locale() -> DurationLocale {
         },
         units: Units {
             second: UnitForms::plural(&[
-                (PluralCategory::One, "שנייה {n}"),
+                (PluralCategory::One, "שנייה"),
                 (PluralCategory::Two, "שתי שניות"),
                 (PluralCategory::Other, "{n} שניות"),
             ]),
             minute: UnitForms::plural(&[
-                (PluralCategory::One, "דקה {n}"),
+                (PluralCategory::One, "דקה"),
                 (PluralCategory::Two, "שתי דקות"),
                 (PluralCategory::Other, "{n} דקות"),
             ]),
             hour: UnitForms::plural(&[
-                (PluralCategory::One, "שעה {n}"),
+                (PluralCategory::One, "שעה"),
                 (PluralCategory::Two, "שעתיים"),
                 (PluralCategory::Other, "{n} שעות"),
             ]),
             day: UnitForms::plural(&[
-                (PluralCategory::One, "יום {n}"),
+                (PluralCategory::One, "יום"),
                 (PluralCategory::Two, "יומיים"),
                 (PluralCategory::Other, "{n} ימים"),
             ]),
             week: UnitForms::plural(&[
-                (PluralCategory::One, "שבוע {n}"),
+                (PluralCategory::One, "שבוע"),
                 (PluralCategory::Two, "שבועיים"),
                 (PluralCategory::Other, "{n} שבועות"),
             ]),
             month: UnitForms::plural(&[
-                (PluralCategory::One, "חודש {n}"),
+                (PluralCategory::One, "חודש"),
                 (PluralCategory::Two, "חודשיים"),
                 (PluralCategory::Other, "{n} חודשים"),
             ]),

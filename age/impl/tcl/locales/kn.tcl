@@ -22,7 +22,7 @@ proc locale_kn {} {
         month [dict create one "{n} ತಿಂಗಳು" other "{n} ತಿಂಗಳುಗಳು"] \
         year [dict create one "{n} ವರ್ಷ" other "{n} ವರ್ಷಗಳು"] \
     ]
-    set half "{0}ವರೆ"
+    set half "{n}½"
     set delimiter {, }
     set just_born {ನವಜಾತ ಶಿಶು}
     set stages [dict create \

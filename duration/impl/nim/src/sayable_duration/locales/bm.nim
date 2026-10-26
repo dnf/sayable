@@ -29,7 +29,7 @@ let BM* = DurationLocale(
   delimiter: ", ",
   justNow: "sisan",
   ago: "{0} bɔlen",
-  inFuture: "ka {0}",
+  inFuture: "{0} kɔnɔ",
   short: some(CompactnessOverride(
     units: some({
       "second": simpleUnit("sek. {n}"),
@@ -43,7 +43,7 @@ let BM* = DurationLocale(
     half: none(string),
     delimiter: none(string),
     ago: some("{0} bɔlen"),
-    inFuture: some("ka {0}"),
+    inFuture: some("{0} kɔnɔ"),
   )),
   compact: some(CompactnessOverride(
     units: some({
@@ -58,6 +58,6 @@ let BM* = DurationLocale(
     half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0} bɔlen"),
-    inFuture: some("ka {0}"),
+    inFuture: some("{0} kɔnɔ"),
   )),
 )

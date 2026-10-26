@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} ka semana")
          "month" (hash "type" "simple" "form" "{n} ka bulan")
          "year" (hash "type" "simple" "form" "{n} ka tuig"))
-   "{n}½"
+   "{0} ug tunga"
    ", "
    "Bag-ong natawo"
    (hash "newborn" (stage-label "Bag-ong natawo" #f #f)

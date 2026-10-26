@@ -22,9 +22,9 @@ module SayableAge
         end
       },
       units: {
-        "day" => UnitForms.new(one: "יום {n}", two: "יומיים", other: "{n} ימים"),
-        "week" => UnitForms.new(one: "שבוע {n}", two: "שבועיים", other: "{n} שבועות"),
-        "month" => UnitForms.new(one: "חודש {n}", two: "חודשיים", other: "{n} חודשים"),
+        "day" => UnitForms.new(one: "יום", two: "יומיים", other: "{n} ימים"),
+        "week" => UnitForms.new(one: "שבוע", two: "שבועיים", other: "{n} שבועות"),
+        "month" => UnitForms.new(one: "חודש", two: "חודשיים", other: "{n} חודשים"),
         "year" => UnitForms.new(one: "שנה", two: "שנתיים", other: "{n} שנים"),
       },
       half: "{0} וחצי",
@@ -32,8 +32,8 @@ module SayableAge
       just_born: "רק נולד",
       stages: {
         "newborn" => StageLabel.new(m: "רק נולד", f: "רק נולדה"),
-        "infant" => StageLabel.new("תינוק"),
-        "toddler" => StageLabel.new("פעוט"),
+        "infant" => StageLabel.new(m: "תינוק", f: "תינוקת"),
+        "toddler" => StageLabel.new(m: "פעוט", f: "פעוטה"),
         "child" => StageLabel.new(m: "ילד", f: "ילדה"),
         "teenager" => StageLabel.new(m: "נער", f: "נערה"),
         "adult" => StageLabel.new(m: "מבוגר", f: "מבוגרת"),

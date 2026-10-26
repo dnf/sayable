@@ -28,18 +28,18 @@ const TZM = AgeLocale(
     just_born = "Iɣ d illul",
     stages = Dict(
         "newborn" => StageLabel("Iɣ d illul"),
-        "infant" => StageLabel("Agellid"),
+        "infant" => StageLabel("Llufan"),
         "toddler" => GenderedStage("Aḥenjir", "Taḥenjirt"),
-        "child" => GenderedStage("Afrux", "Tafruxṭ"),
+        "child" => GenderedStage("Afrux", "Tafruxt"),
         "teenager" => GenderedStage("Aɛrim", "Taɛrimt"),
         "adult" => GenderedStage("Argaz", "Tamṭṭuṭ"),
     ),
     short_override = CompactnessOverride(
         units = Dict(
-            "day" => "{n} d",
-            "week" => "{n} wk",
-            "month" => "{n} mo",
-            "year" => "{n} yr",
+            "day" => Dict("one" => "{n} ass", "other" => "{n} ussan"),
+            "week" => Dict("one" => "{n} imalass", "other" => "{n} imalassn"),
+            "month" => Dict("one" => "{n} ayyur", "other" => "{n} ayyurn"),
+            "year" => Dict("one" => "{n} aseggas", "other" => "{n} iseggasen"),
         ),
     ),
     compact_override = CompactnessOverride(

@@ -32,9 +32,9 @@ ar
 									ifTrue: [ #many ]
 									ifFalse: [ #other ] ] ] ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #zero. '{n} ثانية'. #one. 'ثانية واحدة'. #two. 'ثانيتان'. #few. '{n} ثوانٍ'. #many. '{n} ثانية'. #other. '{n} ثانية' }).
-		'minute'. (Dictionary newFromPairs: { #zero. '{n} دقيقة'. #one. 'دقيقة واحدة'. #two. 'دقيقتان'. #few. '{n} دقائق'. #many. '{n} دقيقة'. #other. '{n} دقيقة' }).
-		'hour'. (Dictionary newFromPairs: { #zero. '{n} ساعة'. #one. 'ساعة واحدة'. #two. 'ساعتان'. #few. '{n} ساعات'. #many. '{n} ساعة'. #other. '{n} ساعة' }).
+		'second'. (Dictionary newFromPairs: { #zero. '{n} ثانية'. #one. 'ثانية'. #two. 'ثانيتان'. #few. '{n} ثوانٍ'. #many. '{n} ثانية'. #other. '{n} ثانية' }).
+		'minute'. (Dictionary newFromPairs: { #zero. '{n} دقيقة'. #one. 'دقيقة'. #two. 'دقيقتان'. #few. '{n} دقائق'. #many. '{n} دقيقة'. #other. '{n} دقيقة' }).
+		'hour'. (Dictionary newFromPairs: { #zero. '{n} ساعة'. #one. 'ساعة'. #two. 'ساعتان'. #few. '{n} ساعات'. #many. '{n} ساعة'. #other. '{n} ساعة' }).
 		'day'. (Dictionary newFromPairs: { #zero. '{n} يوم'. #one. 'يوم'. #two. 'يومان'. #few. '{n} أيام'. #many. '{n} يومًا'. #other. '{n} يوم' }).
 		'week'. (Dictionary newFromPairs: { #zero. '{n} أسبوع'. #one. 'أسبوع'. #two. 'أسبوعان'. #few. '{n} أسابيع'. #many. '{n} أسبوعًا'. #other. '{n} أسبوع' }).
 		'month'. (Dictionary newFromPairs: { #zero. '{n} شهر'. #one. 'شهر'. #two. 'شهران'. #few. '{n} أشهر'. #many. '{n} شهرًا'. #other. '{n} شهر' }).
@@ -65,7 +65,7 @@ ar
 			'hour'. '{n} س'.
 			'day'. '{n} ي'.
 			'week'. '{n} أ'.
-			'month'. (Dictionary newFromPairs: { #zero. '{n} شهر'. #one. 'شهر'. #two. 'شهران'. #few. '{n} أشهر'. #many. '{n} شهرًا'. #other. '{n} شهر' }).
+			'month'. '{n} شهر'.
 			'year'. '{n} سنة'.
 		}).
 		#half. '{n}½'.

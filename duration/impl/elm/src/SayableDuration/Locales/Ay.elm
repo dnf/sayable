@@ -23,13 +23,13 @@ locale =
     , plural = \n -> Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "sikundu {n}" )
-            , ( "minute", Simple "minutu {n}" )
-            , ( "hour", Simple "ura {n}" )
-            , ( "day", Simple "uru {n}" )
-            , ( "week", Simple "simana {n}" )
-            , ( "month", Simple "phaxsi {n}" )
-            , ( "year", Simple "mara {n}" )
+            [ ( "second", Simple "{n} sikundu" )
+            , ( "minute", Simple "{n} minutu" )
+            , ( "hour", Simple "{n} ura" )
+            , ( "day", Simple "{n} uru" )
+            , ( "week", Simple "{n} simana" )
+            , ( "month", Simple "{n} phaxsi" )
+            , ( "year", Simple "{n} mara" )
             ]
     , half = "{0} chika"
     , delimiter = ", "
@@ -41,9 +41,9 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "sik. {n}" )
-                        , ( "minute", Simple "min. {n}" )
-                        , ( "hour", Simple "ur. {n}" )
+                        [ ( "second", Simple "{n} sik." )
+                        , ( "minute", Simple "{n} min." )
+                        , ( "hour", Simple "{n} ura" )
                         , ( "day", Simple "{n} ur." )
                         , ( "week", Simple "{n} sim." )
                         , ( "month", Simple "{n} phx." )
@@ -69,7 +69,7 @@ locale =
                         , ( "year", Simple "{n}y" )
                         ]
                     )
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} nayraqata"
             , ovrInFuture = Just "{0} jutirïn"

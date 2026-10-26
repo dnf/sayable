@@ -30,10 +30,10 @@ fn build_mi() -> AgeLocale:
             return "one"
         return "other"
 
-    var day = simple_unit("rā {n}")
-    var week = simple_unit("wiki {n}")
-    var month = simple_unit("marama {n}")
-    var year = simple_unit("tau {n}")
+    var day = simple_unit("{n} rā")
+    var week = simple_unit("{n} wiki")
+    var month = simple_unit("{n} marama")
+    var year = simple_unit("{n} tau")
 
     var newborn = stage_neutral("Pēpi hou")
     var infant = stage_neutral("Pēpi")
@@ -43,13 +43,13 @@ fn build_mi() -> AgeLocale:
     var adult = stage_neutral("Pakeke")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("rā {n}")
+    short_ovr.day = simple_unit("{n} rā")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("w {n}")
+    short_ovr.week = simple_unit("{n} w")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("m {n}")
+    short_ovr.month = simple_unit("{n} m")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("t {n}")
+    short_ovr.year = simple_unit("{n} t")
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
@@ -73,7 +73,7 @@ fn build_mi() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}½",
+        half="{n}½",
         delimiter=", ",
         just_born="Pēpi hou",
         newborn=newborn,

@@ -15,7 +15,7 @@ module locales
 pub const locale_ro = DateLocale{
 	code: 'ro'
 	months: ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie']!
-	weekdays: ['duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbătă']!
+	weekdays: ['duminica', 'lunea', 'marțea', 'miercurea', 'joia', 'vinerea', 'sâmbăta']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
@@ -26,7 +26,7 @@ pub const locale_ro = DateLocale{
 	has_day_after_tomorrow: true
 	day_before_yesterday: 'alaltăieri'
 	has_day_before_yesterday: true
-	this_weekday: 'această {weekday}'
+	this_weekday: '{weekday} aceasta'
 	has_this_weekday: true
 	next_weekday: '{weekday} viitoare'
 	has_next_weekday: true

@@ -28,7 +28,7 @@ const SduDurationLocale sdu_locale_kn = {
         { NULL, { NULL, "{n} ತಿಂಗಳು", NULL, NULL, NULL, "{n} ತಿಂಗಳುಗಳು" } },
         { NULL, { NULL, "{n} ವರ್ಷ", NULL, NULL, NULL, "{n} ವರ್ಷಗಳು" } }
     },
-    "{0}ವರೆ", ", ",
+    "{n}½", ", ",
     "ಈಗಷ್ಟೇ",
     "{0} ಹಿಂದೆ", "{0} ನಂತರ",
     true, { true, { "{n} ಸೆ॰", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ನಿ॰", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ಗಂ॰", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ದಿನ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ವಾರ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ತಿಂಗಳು", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ವರ್ಷ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ಹಿಂದೆ", true, "{0} ನಂತರ" },

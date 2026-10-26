@@ -31,7 +31,7 @@ locale =
             , ( "month", Simple "{n} na vula" )
             , ( "year", Simple "{n} na yabaki" )
             ]
-    , half = "{n} kei na levu ni wasei"
+    , half = "{0} kei na veimama"
     , delimiter = ", "
     , justNow = "edaidai ga"
     , ago = "{0} sa oti"
@@ -69,7 +69,7 @@ locale =
                         , ( "year", Simple "{n}y" )
                         ]
                     )
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} sa oti"
             , ovrInFuture = Just "ena {0}"

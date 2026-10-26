@@ -17,7 +17,7 @@ just lint          # all linters, in parallel
 Single-language commands stream to terminal and save to a log file:
 
 ```
-just test go       # run one suite   → .logs/test/go.log
+just test go       # one language, all four libraries → .logs/test/go.log
 just build rust    # build one       → .logs/build/rust.log
 just lint python   # lint one        → .logs/lint/python.log
 ```
@@ -48,7 +48,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Spec-first testing.** New test cases go in the library's `<library>/config/tests.json` first, then get implemented in all languages. Every test uses explicit inputs and reference dates — never "today."
 - **Don't trust per-language test suites alone.** The generated CLI harness (`cli/test-harness.sh`, from `cli/generate-test-harness.py`) runs the canonical tests against every language's CLI through a single `sayable --repl` process, and `just fuzz` (`cli/fuzz.py`) sends random requests to every CLI and fails on any disagreement. Regenerate the harness after changing a `tests.json`. Every CLI must implement the REPL protocol in `cli/SPEC.md`. See [`docs/testing.md`](docs/testing.md).
 - **Strict input parsing.** Dates, clock times and timestamps follow the exact grammar in [`docs/input-formats.md`](docs/input-formats.md) (real calendar days only, no unpadded or whitespace-padded input), and durations over 500 years have no value. Lenient parsing in one language is a cross-language divergence.
-- **Canonical test IDs.** Every test must be annotated with the ID(s) from its library's `tests.json` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
+- **Canonical test IDs.** Every test must be annotated with the ID(s) from its library's `tests.json` that it implements — as a comment above the test or inline. `tools/check_test_ids.py` (part of `just check`) fails when a native suite never mentions a canonical ID. A test a language truly can't express gets a `<ID>: not applicable — <reason>` comment instead.
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `locales/<code>.json`, one file per language.** Each file holds the shared `code`, `name` and `pluralRule`, then a section per library (`age`, `date`, `duration`, `time`). It is the single source of truth for that language in every library and every programming language. To change a locale, edit its JSON file and run `just generate locales`. Never edit generated locale files by hand.
 - **Generated locale files must be in their own subdirectory.** Every implementation (`<library>/impl/<lang>/`) places generated locale files in a dedicated `locales/` (or language-idiomatic equivalent) subdirectory, separate from hand-written source files.
@@ -139,8 +139,8 @@ See [`.hecatron/docs/adding-a-language.md`](.hecatron/docs/adding-a-language.md)
 
 Then, once for the language:
 
-5. Create `.hecatron/languages/<lang>/`: `config.json`, `install.sh`, `uninstall.sh`, `version.sh` (optionally `metadata.sh`), a `dockerfile` snippet, and `workflow.yml` testing every library (`tools/check_workflow_components.py` enforces this)
-6. Add justfile arms for test, build, lint and clean; configure the language's linter with zero warnings
+5. Create `.hecatron/languages/<lang>/`: `config.json`, `test.sh` (runs one library's native suite), `install.sh`, `uninstall.sh`, `version.sh` (optionally `metadata.sh`), a `dockerfile` snippet, and `workflow.yml` testing every library (`tools/check_workflow_components.py` enforces this)
+6. Add justfile arms for build, lint and clean (`just test <lang>` uses `test.sh`); configure the language's linter with zero warnings
 7. Add a CLI in `cli/impl/<lang>/` implementing `--repl` (`cli/SPEC.md`)
 8. Run `just add <lang>` (registers it, copies the workflow, regenerates `age/Dockerfile`) and `python3 tools/generate_compatibility.py`
 9. Update the language counts and lists (keep rows sorted alphabetically)

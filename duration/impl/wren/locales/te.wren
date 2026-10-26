@@ -14,16 +14,16 @@ class TELocale {
   static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "second": "{n} సెకను",
-      "minute": "{n} నిమిషం",
-      "hour": "{n} గంట",
+      "second": {"one": "{n} సెకను", "other": "{n} సెకన్లు"},
+      "minute": {"one": "{n} నిమిషం", "other": "{n} నిమిషాలు"},
+      "hour": {"one": "{n} గంట", "other": "{n} గంటలు"},
       "day": {"one": "{n} రోజు", "other": "{n} రోజులు"},
       "week": {"one": "{n} వారం", "other": "{n} వారాలు"},
       "month": {"one": "{n} నెల", "other": "{n} నెలలు"},
       "year": {"one": "{n} సంవత్సరం", "other": "{n} సంవత్సరాలు"},
     }
   }
-  static half { "{0}న్నర" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "ఇప్పుడే" }
   static ago { "{0} క్రితం" }

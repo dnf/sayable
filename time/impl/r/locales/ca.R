@@ -12,22 +12,22 @@
 locale_ca <- list(
   code = "ca",
   clock = list(
-    hours = c("dotze", "una", "dues", "tres", "quatre", "cinc", "sis", "set", "vuit", "nou", "deu", "onze"),
+    hours = c("les dotze", "la una", "les dues", "les tres", "les quatre", "les cinc", "les sis", "les set", "les vuit", "les nou", "les deu", "les onze"),
     midnight = "mitjanit",
     noon = "migdia",
     patterns = list(
-      "0" = "{h} o'clock",
-      "5" = "cinc past {h}",
-      "10" = "deu past {h}",
-      "15" = "un quart past {h}",
-      "20" = "vint past {h}",
-      "25" = "vint-i-cinc past {h}",
-      "30" = "mitja past {h}",
-      "35" = "vint-i-cinc to {next_h}",
-      "40" = "vint to {next_h}",
-      "45" = "un quart to {next_h}",
-      "50" = "deu to {next_h}",
-      "55" = "cinc to {next_h}"
+      "0" = "{h} en punt",
+      "5" = "{h} i cinc",
+      "10" = "{h} i deu",
+      "15" = "{h} i quart",
+      "20" = "{h} i vint",
+      "25" = "{h} i vint-i-cinc",
+      "30" = "{h} i mitja",
+      "35" = "{next_h} menys vint-i-cinc",
+      "40" = "{next_h} menys vint",
+      "45" = "{next_h} menys quart",
+      "50" = "{next_h} menys deu",
+      "55" = "{next_h} menys cinc"
     )
   ),
   short = list(

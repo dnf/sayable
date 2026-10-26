@@ -62,7 +62,10 @@ locale =
                           [ ( One, "waktu {n}" )
                           , ( Other, "waktuuji {n}" )
                           ] )
-                        , ( "day", Simple "ñalɗe {n}" )
+                        , ( "day", Pluralized
+                          [ ( One, "ñalawma {n}" )
+                          , ( Other, "ñalɗe {n}" )
+                          ] )
                         , ( "week", Pluralized
                           [ ( One, "yontere {n}" )
                           , ( Other, "yontereeji {n}" )
@@ -93,7 +96,10 @@ locale =
                           [ ( One, "wak {n}" )
                           , ( Other, "wakji {n}" )
                           ] )
-                        , ( "day", Simple "ñalɗe {n}" )
+                        , ( "day", Pluralized
+                          [ ( One, "ñalawma {n}" )
+                          , ( Other, "ñalɗe {n}" )
+                          ] )
                         , ( "week", Pluralized
                           [ ( One, "yont {n}" )
                           , ( Other, "yontji {n}" )

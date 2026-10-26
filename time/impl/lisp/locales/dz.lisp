@@ -20,7 +20,7 @@
     :hours (list "བཅུ་གཉིས" "གཅིག" "གཉིས" "གསུམ" "བཞི" "ལྔ" "དྲུག" "བདུན" "བརྒྱད" "དགུ" "བཅུ" "བཅུ་གཅིག")
     :midnight "ནམ་ཕྱེད"
     :noon "ཉིན་གུང"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ཆུ་ཚོད་{h}") (cons 5 "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ") (cons 10 "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ") (cons 15 "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ") (cons 20 "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ") (cons 25 "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ") (cons 30 "ཆུ་ཚོད་{h}་དང་ཕྱེད") (cons 35 "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ") (cons 40 "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ") (cons 45 "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ") (cons 50 "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ") (cons 55 "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -17,7 +17,7 @@ use crate::types::{CompactnessOverride, DateLocale};
 pub fn locale() -> DateLocale {
     DateLocale {
         code: "bm".to_string(),
-        months: ["Zanwuye".to_string(), "Fewuriye".to_string(), "Marisi".to_string(), "Awirili".to_string(), "Mɛ".to_string(), "Zuwɛn".to_string(), "Zuluye".to_string(), "Uti".to_string(), "Sɛtanburu".to_string(), "ɔkutɔburu".to_string(), "Nowanbudu".to_string(), "Desanburu".to_string()],
+        months: ["Zanwuye".to_string(), "Feburuye".to_string(), "Marisi".to_string(), "Awirili".to_string(), "Mɛ".to_string(), "Zuwɛn".to_string(), "Zuluye".to_string(), "Uti".to_string(), "Sɛtanburu".to_string(), "Ɔkutɔburu".to_string(), "Nowanburu".to_string(), "Desanburu".to_string()],
         weekdays: ["Kari".to_string(), "Ntɛnɛn".to_string(), "Tarata".to_string(), "Araba".to_string(), "Alamisa".to_string(), "Juma".to_string(), "Sibiri".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
@@ -33,7 +33,7 @@ pub fn locale() -> DateLocale {
         last_weekday: Some("{weekday} tɛmɛnen".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {
-            months: Some(["Zan".to_string(), "Few".to_string(), "Mar".to_string(), "Awi".to_string(), "Mɛ".to_string(), "Zuw".to_string(), "Zul".to_string(), "Uti".to_string(), "Sɛt".to_string(), "ɔku".to_string(), "Now".to_string(), "Des".to_string()]),
+            months: Some(["Zan".to_string(), "Feb".to_string(), "Mar".to_string(), "Awi".to_string(), "Mɛ".to_string(), "Zuw".to_string(), "Zul".to_string(), "Uti".to_string(), "Sɛt".to_string(), "Ɔku".to_string(), "Now".to_string(), "Des".to_string()]),
             months_in_date: None,
             weekdays: Some(["Kar".to_string(), "Ntɛ".to_string(), "Tar".to_string(), "Ara".to_string(), "Ala".to_string(), "Jum".to_string(), "Sib".to_string()]),
             day_format: Some("{n}".to_string()),

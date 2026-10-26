@@ -22,10 +22,10 @@ fn plural_ee(n int) PluralCategory {
 pub const locale_ee = AgeLocale{
 	code: 'ee'
 	plural: plural_ee
-	day: plural_unit({PluralCategory.one: 'ŋkeke {n}', PluralCategory.other: 'ŋkekewo {n}'})
-	week: plural_unit({PluralCategory.one: 'kɔsiɖa {n}', PluralCategory.other: 'kɔsiɖawo {n}'})
-	month: plural_unit({PluralCategory.one: 'ɣleti {n}', PluralCategory.other: 'ɣletiwo {n}'})
-	year: plural_unit({PluralCategory.one: 'ƒe {n}', PluralCategory.other: 'ƒewo {n}'})
+	day: simple_unit('ŋkeke {n}')
+	week: simple_unit('kɔsiɖa {n}')
+	month: simple_unit('ɣleti {n}')
+	year: simple_unit('ƒe {n}')
 	half: '{0} kple afã'
 	delimiter: ', '
 	just_born: 'Evi yeye'
@@ -33,17 +33,17 @@ pub const locale_ee = AgeLocale{
 	infant: stage_neutral('Ɖevi')
 	toddler: stage_neutral('Ɖevi sue')
 	child: stage_neutral('Ɖevi')
-	teenager: stage_neutral('Ŋutsuviwo')
+	teenager: stage_gendered('Ɖekakpui', 'Ɖetugbi')
 	adult: stage_neutral('Ame tsitsi')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('ŋkekewo {n}')
+		day: simple_unit('ŋkeke {n}')
 		has_day: true
-		week: plural_unit({PluralCategory.one: 'kɔsiɖa {n}', PluralCategory.other: 'kɔsiɖawo {n}'})
+		week: simple_unit('kɔsiɖa {n}')
 		has_week: true
-		month: plural_unit({PluralCategory.one: 'ɣleti {n}', PluralCategory.other: 'ɣletiwo {n}'})
+		month: simple_unit('ɣleti {n}')
 		has_month: true
-		year: plural_unit({PluralCategory.one: 'ƒe {n}', PluralCategory.other: 'ƒewo {n}'})
+		year: simple_unit('ƒe {n}')
 		has_year: true
 	}
 	has_compact: true

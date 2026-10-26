@@ -36,13 +36,13 @@ tzm
 	locale inFuture: 'ɣ {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. '{n}s'.
-			'minute'. '{n}m'.
-			'hour'. '{n}h'.
-			'day'. '{n}d'.
-			'week'. '{n}w'.
-			'month'. '{n}mo'.
-			'year'. '{n}y'.
+			'second'. (Dictionary newFromPairs: { #one. '{n} tasint'. #other. '{n} tisinin' }).
+			'minute'. (Dictionary newFromPairs: { #one. '{n} tusdiqt'. #other. '{n} tusdiqin' }).
+			'hour'. (Dictionary newFromPairs: { #one. '{n} tasragt'. #other. '{n} tisragin' }).
+			'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #other. '{n} ussan' }).
+			'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #other. '{n} imalassn' }).
+			'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #other. '{n} ayyurn' }).
+			'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #other. '{n} iseggasen' }).
 		}).
 		#ago. 'ɣ {0} zzrin'.
 		#inFuture. 'ɣ {0}'.

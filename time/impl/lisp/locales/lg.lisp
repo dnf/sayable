@@ -17,10 +17,10 @@
   (make-time-locale
    :code "lg"
    :clock (make-clock-config
-    :hours (list "kkumi na bbiri" "emu" "bbiri" "ssatu" "nnya" "ttaano" "mukaaga" "musanvu" "munaana" "mwenda" "kkumi" "kkumi na emu")
+    :hours (list "mukaaga" "musanvu" "munaana" "mwenda" "kkumi" "kkumi n'emu" "kkumi n'ebbiri" "emu" "bbiri" "ssatu" "nnya" "ttaano")
     :midnight "ekiro eky'omu ttumbi"
     :noon "ettuntu"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "essaawa {h}") (cons 5 "essaawa {h} n'eddakiika ttaano") (cons 10 "essaawa {h} n'eddakiika kkumi") (cons 15 "essaawa {h} n'eddakiika kkumi na ttaano") (cons 20 "essaawa {h} n'eddakiika abiri") (cons 25 "essaawa {h} n'eddakiika abiri mu ttaano") (cons 30 "essaawa {h} n'ekitundu") (cons 35 "essaawa {h} n'eddakiika asatu mu ttaano") (cons 40 "essaawa {h} n'eddakiika ana") (cons 45 "essaawa {h} n'eddakiika ana mu ttaano") (cons 50 "essaawa {h} n'eddakiika ataano") (cons 55 "essaawa {h} n'eddakiika ataano mu ttaano")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

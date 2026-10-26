@@ -29,7 +29,7 @@ sa_just_born('st', 'O sa tswa hlaha').
 
 sa_stage('st', newborn, _, 'Lesea le sa tswa hlaha').
 sa_stage('st', infant, _, 'Lesea').
-sa_stage('st', toddler, _, 'Ngwanana').
+sa_stage('st', toddler, _, 'Ngwana e monyane').
 sa_stage('st', child, _, 'Ngwana').
 sa_stage('st', teenager, _, 'Mosha').
 sa_stage('st', adult, _, 'Motho e moholo').

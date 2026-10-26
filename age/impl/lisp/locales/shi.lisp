@@ -25,27 +25,27 @@
   (make-age-locale
    :code "shi"
    :plural #'plural-shi
-   :units (list (cons :day '((:one . "{n} ass") (:few . "{n} ussan") (:other . "{n} ass")))
-               (cons :week '((:one . "{n} imalass") (:few . "{n} imalassn") (:other . "{n} imalass")))
-               (cons :month '((:one . "{n} ayyur") (:few . "{n} ayyurn") (:other . "{n} ayyur")))
-               (cons :year '((:one . "{n} aseggas") (:few . "{n} iseggasen") (:other . "{n} aseggas"))))
-   :half "{0} d uzgen"
+   :units (list (cons :day '((:one . "{n} ⴰⵙⵙ") (:few . "{n} ⵓⵙⵙⴰⵏ") (:other . "{n} ⴰⵙⵙ")))
+               (cons :week '((:one . "{n} ⵉⵎⴰⵍⴰⵙⵙ") (:few . "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ") (:other . "{n} ⵉⵎⴰⵍⴰⵙⵙ")))
+               (cons :month '((:one . "{n} ⴰⵢⵢⵓⵔ") (:few . "{n} ⴰⵢⵢⵓⵔⵏ") (:other . "{n} ⴰⵢⵢⵓⵔ")))
+               (cons :year '((:one . "{n} ⴰⵙⴳⴳⵯⴰⵙ") (:few . "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ") (:other . "{n} ⴰⵙⴳⴳⵯⴰⵙ"))))
+   :half "{0} ⴷ ⵓⵣⴳⵏ"
    :delimiter ", "
-   :just-born "Iɣ d illul"
-   :stages (list (cons :newborn "Iɣ d illul")
-                 (cons :infant "Agellid")
-                 (cons :toddler '((:m . "Aḥenjir") (:f . "Taḥenjirt")))
-                 (cons :child '((:m . "Afrux") (:f . "Tafruxṭ")))
-                 (cons :teenager '((:m . "Aɛrim") (:f . "Taɛrimt")))
-                 (cons :adult '((:m . "Argaz") (:f . "Tamṭṭuṭ"))))
-   :short-units (list (cons :day "{n} d")
-                       (cons :week "{n} wk")
-                       (cons :month "{n} mo")
-                       (cons :year "{n} yr"))
-   :compact-units (list (cons :day "{n}d")
-                       (cons :week "{n}w")
-                       (cons :month "{n}m")
-                       (cons :year "{n}y"))
+   :just-born "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+   :stages (list (cons :newborn "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ")
+                 (cons :infant "ⵍⵍⵓⴼⴰⵏ")
+                 (cons :toddler '((:m . "ⴰⵃⵏⵊⵉⵔ") (:f . "ⵜⴰⵃⵏⵊⵉⵔⵜ")))
+                 (cons :child '((:m . "ⴰⴼⵔⵓⵅ") (:f . "ⵜⴰⴼⵔⵓⵅⵜ")))
+                 (cons :teenager '((:m . "ⴰⵄⵔⵉⵎ") (:f . "ⵜⴰⵄⵔⵉⵎⵜ")))
+                 (cons :adult '((:m . "ⴰⵔⴳⴰⵣ") (:f . "ⵜⴰⵎⵟⵟⵓⵟ"))))
+   :short-units (list (cons :day '((:one . "{n} ⴰⵙⵙ") (:few . "{n} ⵓⵙⵙⴰⵏ") (:other . "{n} ⴰⵙⵙ")))
+                       (cons :week '((:one . "{n} ⵉⵎⴰⵍⴰⵙⵙ") (:few . "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ") (:other . "{n} ⵉⵎⴰⵍⴰⵙⵙ")))
+                       (cons :month '((:one . "{n} ⴰⵢⵢⵓⵔ") (:few . "{n} ⴰⵢⵢⵓⵔⵏ") (:other . "{n} ⴰⵢⵢⵓⵔ")))
+                       (cons :year '((:one . "{n} ⴰⵙⴳⴳⵯⴰⵙ") (:few . "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ") (:other . "{n} ⴰⵙⴳⴳⵯⴰⵙ"))))
+   :compact-units (list (cons :day "{n} ⴰⵙⵙ")
+                       (cons :week "{n} ⵉⵎⵍ")
+                       (cons :month "{n} ⴰⵢⵔ")
+                       (cons :year "{n} ⴰⵙⴳ"))
    :compact-half "{n}½"
    :compact-delimiter ""
 ))

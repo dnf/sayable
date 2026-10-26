@@ -24,7 +24,7 @@ pub const locale_zu = DateLocale{
 	yesterday: 'izolo'
 	day_after_tomorrow: 'ngomhlomunye'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'usuku olwedlule izolo'
+	day_before_yesterday: 'kuthangi'
 	has_day_before_yesterday: true
 	this_weekday: 'leli {weekday}'
 	has_this_weekday: true

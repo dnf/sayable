@@ -15,18 +15,18 @@ st_hours('hmn', ['kaum ob', 'ib', 'ob', 'peb', 'plaub', 'tsib', 'rau', 'xya', 'y
 st_midnight('hmn', 'ib tag hmo').
 st_noon('hmn', 'tav su').
 
-st_pattern('hmn', 0, '{h}:00').
-st_pattern('hmn', 5, '{h}:05').
-st_pattern('hmn', 10, '{h}:10').
-st_pattern('hmn', 15, '{h}:15').
-st_pattern('hmn', 20, '{h}:20').
-st_pattern('hmn', 25, '{h}:25').
-st_pattern('hmn', 30, '{h}:30').
-st_pattern('hmn', 35, '{h}:35').
-st_pattern('hmn', 40, '{h}:40').
-st_pattern('hmn', 45, '{h}:45').
-st_pattern('hmn', 50, '{h}:50').
-st_pattern('hmn', 55, '{h}:55').
+st_pattern('hmn', 0, '{h} teev').
+st_pattern('hmn', 5, '{h} teev tsib feeb').
+st_pattern('hmn', 10, '{h} teev kaum feeb').
+st_pattern('hmn', 15, '{h} teev kaum tsib feeb').
+st_pattern('hmn', 20, '{h} teev nees nkaum feeb').
+st_pattern('hmn', 25, '{h} teev nees nkaum tsib feeb').
+st_pattern('hmn', 30, '{h} teev ib nrab').
+st_pattern('hmn', 35, '{h} teev peb caug tsib feeb').
+st_pattern('hmn', 40, '{h} teev plaub caug feeb').
+st_pattern('hmn', 45, '{h} teev plaub caug tsib feeb').
+st_pattern('hmn', 50, '{h} teev tsib caug feeb').
+st_pattern('hmn', 55, '{h} teev tsib caug tsib feeb').
 
 short_st_use24h('hmn', false).
 short_st_format('hmn', '{h}:{mm} {ampm}').

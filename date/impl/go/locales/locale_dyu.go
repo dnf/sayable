@@ -16,7 +16,7 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 // DYU is the Dyula locale.
 var DYU = sdate.DateLocale{
 	Code: "dyu",
-	Months:   [12]string{"Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburdukalo", "Desanburukalo"},
+	Months:   [12]string{"Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburukalo", "Desanburukalo"},
 	Weekdays: [7]string{"Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"},
 	DayFormat: "{n}",
 	DayFormatExceptions: map[string]string{},

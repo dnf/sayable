@@ -20,17 +20,17 @@ const SduDurationLocale sdu_locale_ig = {
     "ig",
     plural_ig,
     {
-        { "{n} sekọnd", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} nkeji", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} awa", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} ụbọchị", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} izu", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} ọnwa", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} afọ", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "sekọnd {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "nkeji {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "awa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "ụbọchị {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "izu {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "ọnwa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "afọ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} na ọkara", ", ",
     "ugbu a",
     "{0} gara aga", "na {0}",
-    true, { true, { "{n} sek.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} nkeji", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} awa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ụbọchị", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} izu", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ọnwa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} afọ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} gara aga", true, "na {0}" },
+    true, { true, { "sek. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "nkeji {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "awa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ụbọchị {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "izu {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ọnwa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "afọ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} gara aga", true, "na {0}" },
     true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} gara aga", true, "na {0}" }
 };

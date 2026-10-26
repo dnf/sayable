@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [men.json](../../locales/men.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort per orchestrator instruction: 'awa {h}' (awa = hour, as the file's duration unit) + additive 'kɛ miniti N' (kɛ = and, miniti = minute). Minute numerals use the Mende vigesimal system: pu 10, pu mahu lɔɔlu 15, nuu yila gboyongo 20 ('one whole person'), ... nuu fele gboyongo 40, so 2:55 is long ('awa fele kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu'). No half word used at 30 because the file's 'ta fele' could not be verified. Doubts: hour noun, the 'kɛ' linker, and whether speakers would really say such long minute counts rather than switch to Krio/English. Needs a Mende speaker.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | sina gɔlɔ        | 17/3    |
 | Day before yesterday | bii gɔlɔ         | 13/3    |
 | This Thursday (+5)   | Aimisa yɛ        | 20/3    |
-| Last Monday (-4)     | Talata taa gbɔyɔ | 11/3    |
-| Next Wednesday (+12) | Aimisa yɛ gbɔyɔ  | 27/3    |
-| Same month (+20)     | 4 Epuli          | 4/4     |
+| Last Tuesday (-4)    | Talata taa gbɔyɔ | 11/3    |
+| Next Thursday (+12)  | Aimisa yɛ gbɔyɔ  | 27/3    |
+| Same year (+20)      | 4 Epuli          | 4/4     |
 | Different year       | 10 Januwali 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | kpindi gbɔyɔŋ   | 12:00 AM | 12:00a  |
-| 1:00 AM         | yila:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | taawu:05        | 9:05 AM  | 9:05a   |
-| Quarter past 10 | pu:15           | 10:15 AM | 10:15a  |
-| Half past 11    | pu mahu yila:30 | 11:30 AM | 11:30a  |
-| Noon            | ndɔlei-ma       | 12:00 PM | 12:00p  |
-| Quarter to 3    | fele:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | lɔlu:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | wayakpa:00      | 8:00 PM  | 8:00p   |
-| 10:30 PM        | pu:30           | 10:30 PM | 10:30p  |
-| 11:58 PM        | kpindi gbɔyɔŋ   | 11:58 PM | 11:58p  |
+| Time            | Normal                                                  | Short    | Compact |
+| --------------- | ------------------------------------------------------- | -------- | ------- |
+| Midnight        | kpindi gbɔyɔŋ                                           | 12:00 AM | 12:00a  |
+| 1:00 AM         | awa yila                                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | awa taawu kɛ miniti lɔɔlu                               | 9:05 AM  | 9:05a   |
+| Quarter past 10 | awa pu kɛ miniti pu mahu lɔɔlu                          | 10:15 AM | 10:15a  |
+| Half past 11    | awa pu mahu yila kɛ miniti nuu yila gboyongo mahu pu    | 11:30 AM | 11:30a  |
+| Noon            | ndɔlei-ma                                               | 12:00 PM | 12:00p  |
+| Quarter to 3    | awa fele kɛ miniti nuu fele gboyongo mahu lɔɔlu         | 2:45 PM  | 2:45p   |
+| 5 to 6          | awa lɔlu kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | awa wayakpa                                             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | awa pu kɛ miniti nuu yila gboyongo mahu pu              | 10:30 PM | 10:30p  |
+| 11:58 PM        | kpindi gbɔyɔŋ                                           | 11:58 PM | 11:58p  |

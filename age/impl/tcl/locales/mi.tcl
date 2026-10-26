@@ -17,12 +17,12 @@ proc plural_mi {n} {
 proc locale_mi {} {
     set code {mi}
     set units [dict create \
-        day "rā {n}" \
-        week "wiki {n}" \
-        month "marama {n}" \
-        year "tau {n}" \
+        day "{n} rā" \
+        week "{n} wiki" \
+        month "{n} marama" \
+        year "{n} tau" \
     ]
-    set half "{0}½"
+    set half "{n}½"
     set delimiter {, }
     set just_born {Pēpi hou}
     set stages [dict create \
@@ -35,10 +35,10 @@ proc locale_mi {} {
     ]
     set short [dict create \
         units [dict create \
-            day "rā {n}" \
-            week "w {n}" \
-            month "m {n}" \
-            year "t {n}" \
+            day "{n} rā" \
+            week "{n} w" \
+            month "{n} m" \
+            year "{n} t" \
         ] \
     ]
     set compact [dict create \

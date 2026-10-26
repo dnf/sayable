@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [snk.json](../../locales/snk.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort: 'waxati fillo' (2:00), 'waxati fillo do miniti tanmu' (2:10), 'waxati fillo do faabe' (2:30), 'waxati fillo do miniti tannaxate do karago' (2:45). waxati/miniti/'do faabe' are the locale's own hour/minute/half words; numeral follows the noun as elsewhere in the locale; 11/12 given the connective 'do' ('tanmu do baane'). Doubts: tens spellings tanpille/tanjikke/tannaxate/tankarage; whether speakers use a subtractive form; not speaker-verified.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | kinni xenqa          | 17/3    |
 | Day before yesterday | noxone xenqa         | 13/3    |
 | This Thursday (+5)   | Alxamiisa yi         | 20/3    |
-| Last Monday (-4)     | Ataalaata toxo kille | 11/3    |
-| Next Wednesday (+12) | Alxamiisa na tage    | 27/3    |
-| Same month (+20)     | 4 Abirili            | 4/4     |
+| Last Tuesday (-4)    | Ataalaata toxo kille | 11/3    |
+| Next Thursday (+12)  | Alxamiisa na tage    | 27/3    |
+| Same year (+20)      | 4 Abirili            | 4/4     |
 | Different year       | 10 Janwiye 2026      | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal         | Short    | Compact |
-| --------------- | -------------- | -------- | ------- |
-| Midnight        | sulen noxo     | 12:00 AM | 12:00a  |
-| 1:00 AM         | baane:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | kaburu:05      | 9:05 AM  | 9:05a   |
-| Quarter past 10 | tanmu:15       | 10:15 AM | 10:15a  |
-| Half past 11    | tanmu baane:30 | 11:30 AM | 11:30a  |
-| Noon            | tili seren     | 12:00 PM | 12:00p  |
-| Quarter to 3    | fillo:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | karago:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | segu:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | tanmu:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | sulen noxo     | 11:58 PM | 11:58p  |
+| Time            | Normal                                      | Short    | Compact |
+| --------------- | ------------------------------------------- | -------- | ------- |
+| Midnight        | sulen noxo                                  | 12:00 AM | 12:00a  |
+| 1:00 AM         | waxati baane                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | waxati kaburu do miniti karago              | 9:05 AM  | 9:05a   |
+| Quarter past 10 | waxati tanmu do miniti tanmu do karago      | 10:15 AM | 10:15a  |
+| Half past 11    | waxati tanmu do baane do faabe              | 11:30 AM | 11:30a  |
+| Noon            | tili seren                                  | 12:00 PM | 12:00p  |
+| Quarter to 3    | waxati fillo do miniti tannaxate do karago  | 2:45 PM  | 2:45p   |
+| 5 to 6          | waxati karago do miniti tankarage do karago | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | waxati segu                                 | 8:00 PM  | 8:00p   |
+| 10:30 PM        | waxati tanmu do faabe                       | 10:30 PM | 10:30p  |
+| 11:58 PM        | sulen noxo                                  | 11:58 PM | 11:58p  |

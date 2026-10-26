@@ -28,12 +28,12 @@ const SaLocale sa_locale_tzm = {
     "{0} d uzgen", ", ", "Iɣ d illul",
     {
         { "Iɣ d illul", "" },
-        { "Agellid", "" },
+        { "Llufan", "" },
         { "Aḥenjir", "Taḥenjirt" },
-        { "Afrux", "Tafruxṭ" },
+        { "Afrux", "Tafruxt" },
         { "Aɛrim", "Taɛrimt" },
         { "Argaz", "Tamṭṭuṭ" }
     },
-    true, { true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yr", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { NULL, { NULL, "{n} ass", NULL, NULL, NULL, "{n} ussan" } }, true, { NULL, { NULL, "{n} imalass", NULL, NULL, NULL, "{n} imalassn" } }, true, { NULL, { NULL, "{n} ayyur", NULL, NULL, NULL, "{n} ayyurn" } }, true, { NULL, { NULL, "{n} aseggas", NULL, NULL, NULL, "{n} iseggasen" } }, false, NULL, false, NULL, false, NULL },
     true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

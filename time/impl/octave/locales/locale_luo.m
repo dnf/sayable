@@ -11,10 +11,10 @@
 
 function loc = locale_luo()
   loc.code = 'luo';
-  loc.clock.hours = {'apar gi ariyo', 'achiel', 'ariyo', 'adek', 'ang''wen', 'abich', 'auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gi achiel'};
+  loc.clock.hours = {'auchiel', 'abiriyo', 'aboro', 'ochiko', 'apar', 'apar gachiel', 'apar gariyo', 'achiel', 'ariyo', 'adek', 'ang''wen', 'abich'};
   loc.clock.midnight = 'dier otieno';
   loc.clock.noon = 'odiechieng'' tir';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'saa {h}', "p5", 'saa {h} gi dakika abich', "p10", 'saa {h} gi dakika apar', "p15", 'saa {h} gi dakika apar gabich', "p20", 'saa {h} gi dakika piero ariyo', "p25", 'saa {h} gi dakika piero ariyo gabich', "p30", 'saa {h} gi nus', "p35", 'saa {h} gi dakika piero adek gabich', "p40", 'saa {h} gi dakika piero ang''wen', "p45", 'saa {h} gi dakika piero ang''wen gabich', "p50", 'saa {h} gi dakika piero abich', "p55", 'saa {h} gi dakika piero abich gabich');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

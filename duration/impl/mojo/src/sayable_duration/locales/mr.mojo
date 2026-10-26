@@ -28,7 +28,7 @@ fn build_mr() -> DurationLocale:
         return "other"
 
     var second = simple_unit("{n} सेकंद")
-    var minute = simple_unit("{n} मिनिट")
+    var minute = plural_unit(one="{n} मिनिट", other="{n} मिनिटे")
     var hour = simple_unit("{n} तास")
     var day = plural_unit(one="{n} दिवस", other="{n} दिवस")
     var week = plural_unit(one="{n} आठवडा", other="{n} आठवडे")

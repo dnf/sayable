@@ -26,7 +26,7 @@ locale() ->
         tomorrow = "sesuk",
         yesterday = "wingi",
         day_after_tomorrow = {just, "embèn"},
-        day_before_yesterday = {just, "dhèk wingi"},
+        day_before_yesterday = {just, "wingenané"},
         this_weekday = {just, "{weekday} iki"},
         next_weekday = {just, "{weekday} ngarep"},
         last_weekday = {just, "{weekday} wingi"},

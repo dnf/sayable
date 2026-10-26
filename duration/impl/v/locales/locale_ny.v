@@ -22,9 +22,9 @@ fn plural_ny(n int) PluralCategory {
 pub const locale_ny = DurationLocale{
 	code: 'ny'
 	plural: plural_ny
-	second: simple_unit('{n} sekondi')
-	minute: simple_unit('{n} mphindi')
-	hour: simple_unit('{n} ola')
+	second: simple_unit('sekondi {n}')
+	minute: simple_unit('mphindi {n}')
+	hour: plural_unit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'})
 	day: plural_unit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'masiku {n}'})
 	week: plural_unit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masabata {n}'})
 	month: plural_unit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'})
@@ -40,7 +40,7 @@ pub const locale_ny = DurationLocale{
 		has_second: true
 		minute: simple_unit('mph {n}')
 		has_minute: true
-		hour: simple_unit('ola {n}')
+		hour: plural_unit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'})
 		has_hour: true
 		day: plural_unit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'mas {n}'})
 		has_day: true

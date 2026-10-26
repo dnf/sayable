@@ -17,9 +17,9 @@ locale() ->
     #duration_locale{
         code = "sn",
         plural = fun(1) -> one; (_) -> other end,
-        second = {simple, "{n} sekondi"},
-        minute = {simple, "{n} miniti"},
-        hour = {simple, "{n} awa"},
+        second = {pluralized, [{one, "sekondi {n}"}, {other, "masekondi {n}"}]},
+        minute = {pluralized, [{one, "miniti {n}"}, {other, "maminitsi {n}"}]},
+        hour = {pluralized, [{one, "awa {n}"}, {other, "maawa {n}"}]},
         day = {pluralized, [{one, "zuva {n}"}, {other, "mazuva {n}"}]},
         week = {pluralized, [{one, "vhiki {n}"}, {other, "mavhiki {n}"}]},
         month = {pluralized, [{one, "mwedzi {n}"}, {other, "mwedzi {n}"}]},

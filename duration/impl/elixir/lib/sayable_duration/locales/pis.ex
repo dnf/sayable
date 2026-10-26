@@ -25,7 +25,7 @@ defmodule SayableDuration.Locales.PIS do
         month: "{n} manis",
         year: "{n} yia"
       },
-      half: "{n} en haf",
+      half: "{0} en haf",
       delimiter: ", ",
       just_now: "nomoa nao",
       ago: "{0} bifoa",
@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.PIS do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} bifoa",
         in_future: "long {0}"

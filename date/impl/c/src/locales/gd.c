@@ -11,6 +11,10 @@
 /* Source: locales/gd.json */
 #include "sayabledate/sayabledate.h"
 
+static const char *sd_months_in_date_gd[12] = {
+    "dhen Fhaoilleach", "dhen Ghearran", "dhen Mhàrt", "dhen Ghiblean", "dhen Chèitean", "dhen Ògmhios", "dhen Iuchar", "dhen Lùnastal", "dhen t-Sultain", "dhen Dàmhair", "dhen t-Samhain", "dhen Dùbhlachd"
+};
+
 static const char *sd_short_months_gd[12] = {
     "Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"
 };
@@ -23,7 +27,7 @@ const SdDateLocale sd_locale_gd = {
     "gd",
     { "Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd" },
     { "DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne" },
-    "{n}",
+    "{n}mh",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",
     "{day} {month} {year}",
@@ -35,7 +39,7 @@ const SdDateLocale sd_locale_gd = {
     "{weekday} seo",
     "{weekday} sa tighinn",
     "{weekday} seo chaidh",
-    (const char **)0,
+    sd_months_in_date_gd,
     true, { sd_short_months_gd, (const char **)0, sd_short_weekdays_gd, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }
 };

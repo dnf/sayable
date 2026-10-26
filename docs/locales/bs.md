@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | prekosutra        | 17.3.   |
 | Day before yesterday | prekjučer         | 13.3.   |
 | This Thursday (+5)   | ovaj četvrtak     | 20.3.   |
-| Last Monday (-4)     | prošli utorak     | 11.3.   |
-| Next Wednesday (+12) | sljedeći četvrtak | 27.3.   |
-| Same month (+20)     | 4. april          | 4.4.    |
+| Last Tuesday (-4)    | prošli utorak     | 11.3.   |
+| Next Thursday (+12)  | sljedeći četvrtak | 27.3.   |
+| Same year (+20)      | 4. april          | 4.4.    |
 | Different year       | 10. januar 2026   | 10.1.26 |
 
 ## Duration
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                | Short | Compact |
-| --------------- | --------------------- | ----- | ------- |
-| Midnight        | ponoć                 | 0:00  | 0:00    |
-| 1:00 AM         | jedan sati            | 1:00  | 1:00    |
-| 5 past 9        | pet po devet          | 9:05  | 9:05    |
-| Quarter past 10 | petnaest po deset     | 10:15 | 10:15   |
-| Half past 11    | trideset po jedanaest | 11:30 | 11:30   |
-| Noon            | podne                 | 12:00 | 12:00   |
-| Quarter to 3    | petnaest do tri       | 14:45 | 14:45   |
-| 5 to 6          | pet do šest           | 17:55 | 17:55   |
-| 8 o'clock PM    | osam sati             | 20:00 | 20:00   |
-| 10:30 PM        | trideset po deset     | 22:30 | 22:30   |
-| 11:58 PM        | ponoć                 | 23:58 | 23:58   |
+| Time            | Normal           | Short | Compact |
+| --------------- | ---------------- | ----- | ------- |
+| Midnight        | ponoć            | 0:00  | 0:00    |
+| 1:00 AM         | jedan            | 1:00  | 1:00    |
+| 5 past 9        | devet i pet      | 9:05  | 9:05    |
+| Quarter past 10 | deset i petnaest | 10:15 | 10:15   |
+| Half past 11    | pola dvanaest    | 11:30 | 11:30   |
+| Noon            | podne            | 12:00 | 12:00   |
+| Quarter to 3    | petnaest do tri  | 14:45 | 14:45   |
+| 5 to 6          | pet do šest      | 17:55 | 17:55   |
+| 8 o'clock PM    | osam             | 20:00 | 20:00   |
+| 10:30 PM        | pola jedanaest   | 22:30 | 22:30   |
+| 11:58 PM        | ponoć            | 23:58 | 23:58   |

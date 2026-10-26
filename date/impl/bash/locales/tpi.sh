@@ -19,7 +19,7 @@ _sayabledate_locale_tpi() {
     _tomorrow='tumora'
     _yesterday='asde'
     _day_after_tomorrow='haptumora'
-    _day_before_yesterday='asde bipo'
+    _day_before_yesterday='hapasde'
     _this_weekday='dispela {weekday}'
     _next_weekday='{weekday} bihain'
     _last_weekday='{weekday} bipo'

@@ -27,7 +27,7 @@ locale = DateLocale
         , "Utikalo"
         , "Sɛtanburukalo"
         , "Ɔkutɔburukalo"
-        , "Nowanburdukalo"
+        , "Nowanburukalo"
         , "Desanburukalo"
         ]
     , localeWeekdays =

@@ -31,8 +31,8 @@
    "{0} sy sasany"
    ", "
    "vao haingana"
-   "{0} lasa"
+   "{0} lasa izay"
    "ao anatin'ny {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} seg") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} ora") (hash "type" "simple" "form" "{n} and") (hash "type" "simple" "form" "{n} her") (hash "type" "simple" "form" "{n} vol") (hash "type" "simple" "form" "{n} tna") #f #f "{0} lasa" "ao anatin'ny {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} seg") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} ora") (hash "type" "simple" "form" "{n} and") (hash "type" "simple" "form" "{n} her") (hash "type" "simple" "form" "{n} vol") (hash "type" "simple" "form" "{n} tna") #f #f "{0} lasa izay" "ao anatin'ny {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n} s") (hash "type" "simple" "form" "{n} m") (hash "type" "simple" "form" "{n} o") (hash "type" "simple" "form" "{n} a") (hash "type" "simple" "form" "{n} h") (hash "type" "simple" "form" "{n} v") (hash "type" "simple" "form" "{n} t") "{n}½" "" "{0} lasa" "ao anatin'ny {0}")
   ))

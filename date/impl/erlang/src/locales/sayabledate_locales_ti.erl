@@ -27,7 +27,7 @@ locale() ->
         yesterday = "ትማሊ",
         day_after_tomorrow = {just, "ድሕሪ ጽባሕ"},
         day_before_yesterday = {just, "ቅድሚ ትማሊ"},
-        this_weekday = {just, "እዛ {weekday}"},
+        this_weekday = {just, "እዚ {weekday}"},
         next_weekday = {just, "ዝመጽእ {weekday}"},
         last_weekday = {just, "ዝሓለፈ {weekday}"},
         months_in_date = nothing,

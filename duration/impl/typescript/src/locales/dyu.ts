@@ -27,7 +27,7 @@ export const dyu: DurationLocale = {
   delimiter: ', ',
   justNow: 'sisan',
   ago: '{0} tɛmɛnen',
-  inFuture: 'ka {0}',
+  inFuture: '{0} kɔnɔ',
   short: {
     units: {
       second: 'sɛk. {n}',
@@ -39,7 +39,7 @@ export const dyu: DurationLocale = {
       year:   'san {n}',
     },
     ago: '{0} tɛmɛnen',
-    inFuture: 'ka {0}',
+    inFuture: '{0} kɔnɔ',
   },
   compact: {
     units: {
@@ -54,6 +54,6 @@ export const dyu: DurationLocale = {
     half: '{n}½',
     delimiter: '',
     ago: '{0} tɛmɛnen',
-    inFuture: 'ka {0}',
+    inFuture: '{0} kɔnɔ',
   },
 };

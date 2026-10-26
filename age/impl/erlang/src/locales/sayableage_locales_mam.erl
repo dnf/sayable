@@ -18,13 +18,13 @@ locale() ->
         code = "mam",
         plural = fun(_) -> other end,
         day = {simple, "{n} q'ij"},
-        week = {simple, "{n} xjaw"},
+        week = {simple, "{n} seman"},
         month = {simple, "{n} xjaw"},
         year = {simple, "{n} ab'q'ii"},
         half = "{0} nik'",
         delimiter = ", ",
         just_born = "Yal xjal",
         stages = #stages{newborn = {neutral, "Yal xjal"}, infant = {neutral, "Xkub'"}, toddler = {neutral, "K'wal"}, child = {neutral, "K'wal"}, teenager = {neutral, "Q'a"}, adult = {neutral, "Xjal"}},
-        short = {just, #compactness_override{day = {just, {simple, "{n} q'ij"}}, week = {just, {simple, "{n} xjaw"}}, month = {just, {simple, "{n} xjaw"}}, year = {just, {simple, "{n} ab'."}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, just_born = nothing}}
+        short = {just, #compactness_override{day = {just, {simple, "{n} q'ij"}}, week = {just, {simple, "{n} seman"}}, month = {just, {simple, "{n} xjaw"}}, year = {just, {simple, "{n} ab'."}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

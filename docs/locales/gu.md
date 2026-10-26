@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [gu.json](../../locales/gu.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): '{h} વાગ્યે' on the hour (invariant locative, avoids the એક વાગ્યો / બે વાગ્યા agreement problem), '{h} વાગીને N મિનિટ' additive through :40, સવા {h}, પોણા {next_h}, '{next_h} વાગવામાં દસ/પાંચ મિનિટ' for :50/:55. Compromise: :30 is '{h} વાગીને ત્રીસ મિનિટ' instead of 'સાડા {h}' because 1:30/2:30 must be દોઢ/અઢી and the schema has no per-hour override. noon changed to 'બપોરે બાર વાગ્યે' (બપોર alone means afternoon).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | પરમદિવસે          | 17/3     |
 | Day before yesterday | ગયા પરમદિવસે      | 13/3     |
 | This Thursday (+5)   | આ ગુરુવાર         | 20/3     |
-| Last Monday (-4)     | ગયા મંગળવાર       | 11/3     |
-| Next Wednesday (+12) | આવતા ગુરુવાર      | 27/3     |
-| Same month (+20)     | 4 એપ્રિલ          | 4/4      |
+| Last Tuesday (-4)    | ગયા મંગળવાર       | 11/3     |
+| Next Thursday (+12)  | આવતા ગુરુવાર      | 27/3     |
+| Same year (+20)      | 4 એપ્રિલ          | 4/4      |
 | Different year       | 10 જાન્યુઆરી 2026 | 10/1/26  |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short    | Compact |
-| --------------- | ---------- | -------- | ------- |
-| Midnight        | મધ્યરાત્રિ | 12:00 AM | 12:00a  |
-| 1:00 AM         | એક:00      | 1:00 AM  | 1:00a   |
-| 5 past 9        | નવ:05      | 9:05 AM  | 9:05a   |
-| Quarter past 10 | દસ:15      | 10:15 AM | 10:15a  |
-| Half past 11    | અગિયાર:30  | 11:30 AM | 11:30a  |
-| Noon            | બપોર       | 12:00 PM | 12:00p  |
-| Quarter to 3    | બે:45      | 2:45 PM  | 2:45p   |
-| 5 to 6          | પાંચ:55    | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | આઠ:00      | 8:00 PM  | 8:00p   |
-| 10:30 PM        | દસ:30      | 10:30 PM | 10:30p  |
-| 11:58 PM        | મધ્યરાત્રિ | 11:58 PM | 11:58p  |
+| Time            | Normal                    | Short    | Compact |
+| --------------- | ------------------------- | -------- | ------- |
+| Midnight        | મધ્યરાત્રિ                | 12:00 AM | 12:00a  |
+| 1:00 AM         | એક વાગ્યે                 | 1:00 AM  | 1:00a   |
+| 5 past 9        | નવ વાગીને પાંચ મિનિટ      | 9:05 AM  | 9:05a   |
+| Quarter past 10 | સવા દસ                    | 10:15 AM | 10:15a  |
+| Half past 11    | અગિયાર વાગીને ત્રીસ મિનિટ | 11:30 AM | 11:30a  |
+| Noon            | બપોરે બાર વાગ્યે          | 12:00 PM | 12:00p  |
+| Quarter to 3    | પોણા ત્રણ                 | 2:45 PM  | 2:45p   |
+| 5 to 6          | છ વાગવામાં પાંચ મિનિટ     | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | આઠ વાગ્યે                 | 8:00 PM  | 8:00p   |
+| 10:30 PM        | દસ વાગીને ત્રીસ મિનિટ     | 10:30 PM | 10:30p  |
+| 11:58 PM        | મધ્યરાત્રિ                | 11:58 PM | 11:58p  |

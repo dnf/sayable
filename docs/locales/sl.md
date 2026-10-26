@@ -6,6 +6,14 @@
 
 Plural rule: `sl` (categories: one, two, few, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [sl.json](../../locales/sl.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): :00 bare hour ('dve', 'ena'); :05-:25 'X čez <hour>' ('pet čez dve'), which is the normal Slovene past-the-hour phrase; :30-:55 use the spoken digital reading ('dve trideset', 'dve petinštirideset') because 'pol treh' and 'deset do treh' need a genitive next-hour list. I deliberately did NOT use the audit's '{h} in trideset': spoken 'dve in trideset' is indistinguishable from the numeral 32 (dvaintrideset). 25 written as one word 'petindvajset'.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | pojutrišnjem      | 17.3.   |
 | Day before yesterday | predvčerajšnjim   | 13.3.   |
 | This Thursday (+5)   | ta četrtek        | 20.3.   |
-| Last Monday (-4)     | prejšnji torek    | 11.3.   |
-| Next Wednesday (+12) | naslednji četrtek | 27.3.   |
-| Same month (+20)     | 4. aprila         | 4.4.    |
+| Last Tuesday (-4)    | prejšnji torek    | 11.3.   |
+| Next Thursday (+12)  | naslednji četrtek | 27.3.   |
+| Same year (+20)      | 4. aprila         | 4.4.    |
 | Different year       | 10. januarja 2026 | 10.1.26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal             | Short | Compact |
-| --------------- | ------------------ | ----- | ------- |
-| Midnight        | polnoč             | 0:00  | 0:00    |
-| 1:00 AM         | ena ura            | 1:00  | 1:00    |
-| 5 past 9        | pet po devet       | 9:05  | 9:05    |
-| Quarter past 10 | petnajst po deset  | 10:15 | 10:15   |
-| Half past 11    | trideset po enajst | 11:30 | 11:30   |
-| Noon            | poldne             | 12:00 | 12:00   |
-| Quarter to 3    | petnajst do tri    | 14:45 | 14:45   |
-| 5 to 6          | pet do šest        | 17:55 | 17:55   |
-| 8 o'clock PM    | osem ura           | 20:00 | 20:00   |
-| 10:30 PM        | trideset po deset  | 22:30 | 22:30   |
-| 11:58 PM        | polnoč             | 23:58 | 23:58   |
+| Time            | Normal              | Short | Compact |
+| --------------- | ------------------- | ----- | ------- |
+| Midnight        | polnoč              | 0:00  | 0:00    |
+| 1:00 AM         | ena                 | 1:00  | 1:00    |
+| 5 past 9        | pet čez devet       | 9:05  | 9:05    |
+| Quarter past 10 | petnajst čez deset  | 10:15 | 10:15   |
+| Half past 11    | enajst trideset     | 11:30 | 11:30   |
+| Noon            | poldne              | 12:00 | 12:00   |
+| Quarter to 3    | dve petinštirideset | 14:45 | 14:45   |
+| 5 to 6          | pet petinpetdeset   | 17:55 | 17:55   |
+| 8 o'clock PM    | osem                | 20:00 | 20:00   |
+| 10:30 PM        | deset trideset      | 22:30 | 22:30   |
+| 11:58 PM        | polnoč              | 23:58 | 23:58   |

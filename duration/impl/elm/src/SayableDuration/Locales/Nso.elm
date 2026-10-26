@@ -25,11 +25,11 @@ locale =
         Dict.fromList
             [ ( "second", Pluralized
               [ ( One, "motsotswana {n}" )
-              , ( Other, "dimetsotswana {n}" )
+              , ( Other, "metsotswana {n}" )
               ] )
             , ( "minute", Pluralized
-              [ ( One, "metsotso {n}" )
-              , ( Other, "dimetsotso {n}" )
+              [ ( One, "motsotso {n}" )
+              , ( Other, "metsotso {n}" )
               ] )
             , ( "hour", Pluralized
               [ ( One, "iri {n}" )
@@ -63,12 +63,12 @@ locale =
                 Just
                     (Dict.fromList
                         [ ( "second", Pluralized
-                          [ ( One, "mots. {n}" )
-                          , ( Other, "dimets. {n}" )
+                          [ ( One, "motsotsw. {n}" )
+                          , ( Other, "metsotsw. {n}" )
                           ] )
                         , ( "minute", Pluralized
-                          [ ( One, "mets. {n}" )
-                          , ( Other, "dimets. {n}" )
+                          [ ( One, "mots. {n}" )
+                          , ( Other, "mets. {n}" )
                           ] )
                         , ( "hour", Pluralized
                           [ ( One, "iri {n}" )

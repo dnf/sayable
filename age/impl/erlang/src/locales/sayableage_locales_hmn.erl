@@ -26,5 +26,5 @@ locale() ->
         just_born = "Nyuam qhuav yug",
         stages = #stages{newborn = {neutral, "Nyuam qhuav yug"}, infant = {neutral, "Me nyuam mos"}, toddler = {neutral, "Me nyuam tseem taug kev"}, child = {neutral, "Me nyuam"}, teenager = {neutral, "Tub ntxhais hluas"}, adult = {neutral, "Neeg laus"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} hnub"}}, week = {just, {simple, "{n} lim tiam"}}, month = {just, {simple, "{n} hlis"}}, year = {just, {simple, "{n} xyoo"}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, just_born = nothing}}
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

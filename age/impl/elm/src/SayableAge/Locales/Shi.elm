@@ -21,52 +21,68 @@ locale =
     { code = "shi"
     , plural = \n -> if n == 0 || n == 1 then One else if n >= 2 && n <= 10 then Few else Other
     , day = Pluralized
-      [ ( One, "{n} ass" )
-      , ( Few, "{n} ussan" )
-      , ( Other, "{n} ass" )
+      [ ( One, "{n} ⴰⵙⵙ" )
+      , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+      , ( Other, "{n} ⴰⵙⵙ" )
       ]
     , week = Pluralized
-      [ ( One, "{n} imalass" )
-      , ( Few, "{n} imalassn" )
-      , ( Other, "{n} imalass" )
+      [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+      , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+      , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
       ]
     , month = Pluralized
-      [ ( One, "{n} ayyur" )
-      , ( Few, "{n} ayyurn" )
-      , ( Other, "{n} ayyur" )
+      [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+      , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+      , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
       ]
     , year = Pluralized
-      [ ( One, "{n} aseggas" )
-      , ( Few, "{n} iseggasen" )
-      , ( Other, "{n} aseggas" )
+      [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+      , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+      , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
       ]
-    , half = "{0} d uzgen"
+    , half = "{0} ⴷ ⵓⵣⴳⵏ"
     , delimiter = ", "
-    , justBorn = "Iɣ d illul"
+    , justBorn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
     , stages =
-        { newborn = Neutral "Iɣ d illul"
-        , infant = Neutral "Agellid"
-        , toddler = Gendered "Aḥenjir" "Taḥenjirt"
-        , child = Gendered "Afrux" "Tafruxṭ"
-        , teenager = Gendered "Aɛrim" "Taɛrimt"
-        , adult = Gendered "Argaz" "Tamṭṭuṭ"
+        { newborn = Neutral "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
+        , infant = Neutral "ⵍⵍⵓⴼⴰⵏ"
+        , toddler = Gendered "ⴰⵃⵏⵊⵉⵔ" "ⵜⴰⵃⵏⵊⵉⵔⵜ"
+        , child = Gendered "ⴰⴼⵔⵓⵅ" "ⵜⴰⴼⵔⵓⵅⵜ"
+        , teenager = Gendered "ⴰⵄⵔⵉⵎ" "ⵜⴰⵄⵔⵉⵎⵜ"
+        , adult = Gendered "ⴰⵔⴳⴰⵣ" "ⵜⴰⵎⵟⵟⵓⵟ"
         }
     , short =
         Just
-            { ovrDay = Just (Simple "{n} d")
-            , ovrWeek = Just (Simple "{n} wk")
-            , ovrMonth = Just (Simple "{n} mo")
-            , ovrYear = Just (Simple "{n} yr")
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} ⴰⵙⵙ" )
+                  , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+                  , ( Other, "{n} ⴰⵙⵙ" )
+                  ])
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                  , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+                  , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+                  , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+                  , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                  , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+                  , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                  ])
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , compact =
         Just
-            { ovrDay = Just (Simple "{n}d")
-            , ovrWeek = Just (Simple "{n}w")
-            , ovrMonth = Just (Simple "{n}m")
-            , ovrYear = Just (Simple "{n}y")
+            { ovrDay = Just (Simple "{n} ⴰⵙⵙ")
+            , ovrWeek = Just (Simple "{n} ⵉⵎⵍ")
+            , ovrMonth = Just (Simple "{n} ⴰⵢⵔ")
+            , ovrYear = Just (Simple "{n} ⴰⵙⴳ")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

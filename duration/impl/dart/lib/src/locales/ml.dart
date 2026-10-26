@@ -15,7 +15,7 @@ import '../types.dart';
 final ml = DurationLocale(
   code: 'ml',
   plural: (int n) {
-    if (n == 0 || n == 1) return PluralCategory.one;
+    if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
   units: {
@@ -27,7 +27,7 @@ final ml = DurationLocale(
     'month': pluralUnit({PluralCategory.one: '{n} മാസം', PluralCategory.other: '{n} മാസങ്ങൾ'}),
     'year': pluralUnit({PluralCategory.one: '{n} വർഷം', PluralCategory.other: '{n} വർഷങ്ങൾ'}),
   },
-  half: '{0} ര',
+  half: '{n}½',
   delimiter: ', ',
   justNow: 'ഇപ്പോൾ',
   ago: '{0} മുമ്പ്',

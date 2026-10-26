@@ -28,7 +28,7 @@ class GALocale {
   static yesterday { "inné" }
   static dayAfterTomorrow { "arú amárach" }
   static dayBeforeYesterday { "arú inné" }
-  static thisWeekday { "an {weekday} seo" }
+  static thisWeekday { "{weekday} seo" }
   static nextWeekday { "{weekday} seo chugainn" }
   static lastWeekday { "{weekday} seo caite" }
   static monthsInDate { null }

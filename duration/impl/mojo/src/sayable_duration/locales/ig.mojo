@@ -25,28 +25,28 @@ fn build_ig() -> DurationLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var second = simple_unit("{n} sekọnd")
-    var minute = simple_unit("{n} nkeji")
-    var hour = simple_unit("{n} awa")
-    var day = simple_unit("{n} ụbọchị")
-    var week = simple_unit("{n} izu")
-    var month = simple_unit("{n} ọnwa")
-    var year = simple_unit("{n} afọ")
+    var second = simple_unit("sekọnd {n}")
+    var minute = simple_unit("nkeji {n}")
+    var hour = simple_unit("awa {n}")
+    var day = simple_unit("ụbọchị {n}")
+    var week = simple_unit("izu {n}")
+    var month = simple_unit("ọnwa {n}")
+    var year = simple_unit("afọ {n}")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("{n} sek.")
+    short_ovr.second = simple_unit("sek. {n}")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("{n} nkeji")
+    short_ovr.minute = simple_unit("nkeji {n}")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("{n} awa")
+    short_ovr.hour = simple_unit("awa {n}")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("{n} ụbọchị")
+    short_ovr.day = simple_unit("ụbọchị {n}")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n} izu")
+    short_ovr.week = simple_unit("izu {n}")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("{n} ọnwa")
+    short_ovr.month = simple_unit("ọnwa {n}")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("{n} afọ")
+    short_ovr.year = simple_unit("afọ {n}")
     short_ovr.has_year = True
     short_ovr.ago = "{0} gara aga"
     short_ovr.has_ago = True

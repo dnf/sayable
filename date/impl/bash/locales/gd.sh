@@ -12,7 +12,7 @@
 _sayabledate_locale_gd() {
     _months=('Am Faoilleach' 'An Gearran' 'Am Màrt' 'An Giblean' 'An Cèitean' 'An t-Ògmhios' 'An t-Iuchar' 'An Lùnastal' 'An t-Sultain' 'An Dàmhair' 'An t-Samhain' 'An Dùbhlachd')
     _weekdays=('DiDòmhnaich' 'DiLuain' 'DiMàirt' 'DiCiadain' 'DiarDaoin' 'DihAoine' 'DiSathairne')
-    _day_format='{n}'
+    _day_format='{n}mh'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
     _today='an-diugh'
@@ -23,6 +23,7 @@ _sayabledate_locale_gd() {
     _this_weekday='{weekday} seo'
     _next_weekday='{weekday} sa tighinn'
     _last_weekday='{weekday} seo chaidh'
+    _months_in_date=('dhen Fhaoilleach' 'dhen Ghearran' 'dhen Mhàrt' 'dhen Ghiblean' 'dhen Chèitean' 'dhen Ògmhios' 'dhen Iuchar' 'dhen Lùnastal' 'dhen t-Sultain' 'dhen Dàmhair' 'dhen t-Samhain' 'dhen Dùbhlachd')
     _short_months=('Faoi' 'Gearr' 'Màrt' 'Gibl' 'Cèit' 'Ògmh' 'Iuch' 'Lùna' 'Sult' 'Dàmh' 'Samh' 'Dùbh')
     _short_weekdays=('DiD' 'DiL' 'DiM' 'DiC' 'Dia' 'Dih' 'DiS')
     _short_day_format='{n}'

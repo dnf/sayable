@@ -47,6 +47,7 @@ proc locale_ja {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
     ]
     return [dict create \
         code $code \

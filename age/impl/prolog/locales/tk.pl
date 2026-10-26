@@ -19,7 +19,7 @@ sa_unit('tk', week, _, '{n} hepde').
 sa_unit('tk', month, _, '{n} aý').
 sa_unit('tk', year, _, '{n} ýaş').
 
-sa_half('tk', '{0}½').
+sa_half('tk', '{n} ýarym').
 sa_delimiter('tk', ', ').
 sa_just_born('tk', 'Täze doglan').
 
@@ -28,7 +28,7 @@ sa_stage('tk', infant, _, 'Bäbek').
 sa_stage('tk', toddler, _, 'Kiçijik').
 sa_stage('tk', child, _, 'Çaga').
 sa_stage('tk', teenager, _, 'Ýetginjek').
-sa_stage('tk', adult, _, 'Ulular').
+sa_stage('tk', adult, _, 'Uly adam').
 
 short_sa_unit('tk', day, _, '{n} g').
 short_sa_unit('tk', week, _, '{n} h').

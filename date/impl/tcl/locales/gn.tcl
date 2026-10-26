@@ -17,7 +17,7 @@ proc locale_date_gn {} {
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
     set date_pattern_with_year "{day} {month} {year}"
-    set today {ko'ágã}
+    set today {ko árape}
     set tomorrow {ko'ẽrõ}
     set yesterday {kuehe}
     set day_after_tomorrow {ko'ẽrõ rire}

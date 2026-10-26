@@ -19,9 +19,9 @@ locale_he <- list(
   code = "he",
   plural = plural,
   units = list(
-    day = list(one = "יום {n}", two = "יומיים", other = "{n} ימים"),
-    week = list(one = "שבוע {n}", two = "שבועיים", other = "{n} שבועות"),
-    month = list(one = "חודש {n}", two = "חודשיים", other = "{n} חודשים"),
+    day = list(one = "יום", two = "יומיים", other = "{n} ימים"),
+    week = list(one = "שבוע", two = "שבועיים", other = "{n} שבועות"),
+    month = list(one = "חודש", two = "חודשיים", other = "{n} חודשים"),
     year = list(one = "שנה", two = "שנתיים", other = "{n} שנים")
   ),
   half = "{0} וחצי",
@@ -29,8 +29,8 @@ locale_he <- list(
   just_born = "רק נולד",
   stages = list(
     newborn = list(m = "רק נולד", f = "רק נולדה"),
-    infant = "תינוק",
-    toddler = "פעוט",
+    infant = list(m = "תינוק", f = "תינוקת"),
+    toddler = list(m = "פעוט", f = "פעוטה"),
     child = list(m = "ילד", f = "ילדה"),
     teenager = list(m = "נער", f = "נערה"),
     adult = list(m = "מבוגר", f = "מבוגרת")

@@ -16,9 +16,9 @@ _sayableduration_plural_ln() {
 }
 
 _sayableduration_locale_ln() {
-    _unit_second='{n} segɔnde'
-    _unit_minute='{n} moniti'
-    _unit_hour='{n} ngonga'
+    _unit_second='segɔnde {n}'
+    _unit_minute='miniti {n}'
+    _unit_hour='ngonga {n}'
     _unit_day_one='mokolo {n}'
     _unit_day_other='mikolo {n}'
     _unit_week_one='poso {n}'

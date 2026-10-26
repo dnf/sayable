@@ -11,22 +11,22 @@
 
 % Bemba locale.
 
-st_hours('bem', ['ikumi na ibili', 'cimo', 'fibili', 'fitatu', 'fine', 'fisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na cimo']).
+st_hours('bem', ['ikumi na shibili', 'imo', 'shibili', 'shitatu', 'shine', 'shisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na imo']).
 st_midnight('bem', 'pakati ka bushiku').
 st_noon('bem', 'akasuba').
 
-st_pattern('bem', 0, '{h}:00').
-st_pattern('bem', 5, '{h}:05').
-st_pattern('bem', 10, '{h}:10').
-st_pattern('bem', 15, '{h}:15').
-st_pattern('bem', 20, '{h}:20').
-st_pattern('bem', 25, '{h}:25').
-st_pattern('bem', 30, '{h}:30').
-st_pattern('bem', 35, '{h}:35').
-st_pattern('bem', 40, '{h}:40').
-st_pattern('bem', 45, '{h}:45').
-st_pattern('bem', 50, '{h}:50').
-st_pattern('bem', 55, '{h}:55').
+st_pattern('bem', 0, 'insa {h}').
+st_pattern('bem', 5, 'insa {h} na maminiti yasano').
+st_pattern('bem', 10, 'insa {h} na maminiti ikumi').
+st_pattern('bem', 15, 'insa {h} na maminiti ikumi na yasano').
+st_pattern('bem', 20, 'insa {h} na maminiti amakumi yabili').
+st_pattern('bem', 25, 'insa {h} na maminiti amakumi yabili na yasano').
+st_pattern('bem', 30, 'insa {h} na hafu').
+st_pattern('bem', 35, 'insa {h} na maminiti amakumi yatatu na yasano').
+st_pattern('bem', 40, 'insa {h} na maminiti amakumi yane').
+st_pattern('bem', 45, 'insa {h} na maminiti amakumi yane na yasano').
+st_pattern('bem', 50, 'insa {h} na maminiti amakumi yasano').
+st_pattern('bem', 55, 'insa {h} na maminiti amakumi yasano na yasano').
 
 short_st_use24h('bem', false).
 short_st_format('bem', '{h}:{mm} {ampm}').

@@ -24,7 +24,7 @@ locale = DurationLocale
         , unitDay = Simple "{n}일"
         , unitWeek = Simple "{n}주"
         , unitMonth = Simple "{n}개월"
-        , unitYear = Simple "{n}살"
+        , unitYear = Simple "{n}년"
         }
     , localeHalf = "{0} 반"
     , localeDelimiter = " "

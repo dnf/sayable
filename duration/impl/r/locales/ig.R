@@ -13,13 +13,13 @@ locale_ig <- list(
   code = "ig",
   plural = function(n) "other",
   units = list(
-    second = "{n} sekọnd",
-    minute = "{n} nkeji",
-    hour = "{n} awa",
-    day = "{n} ụbọchị",
-    week = "{n} izu",
-    month = "{n} ọnwa",
-    year = "{n} afọ"
+    second = "sekọnd {n}",
+    minute = "nkeji {n}",
+    hour = "awa {n}",
+    day = "ụbọchị {n}",
+    week = "izu {n}",
+    month = "ọnwa {n}",
+    year = "afọ {n}"
   ),
   half = "{0} na ọkara",
   delimiter = ", ",
@@ -28,13 +28,13 @@ locale_ig <- list(
   in_future = "na {0}",
   short = list(
     units = list(
-      second = "{n} sek.",
-      minute = "{n} nkeji",
-      hour = "{n} awa",
-      day = "{n} ụbọchị",
-      week = "{n} izu",
-      month = "{n} ọnwa",
-      year = "{n} afọ"
+      second = "sek. {n}",
+      minute = "nkeji {n}",
+      hour = "awa {n}",
+      day = "ụbọchị {n}",
+      week = "izu {n}",
+      month = "ọnwa {n}",
+      year = "afọ {n}"
     ),
     ago = "{0} gara aga",
     in_future = "na {0}"

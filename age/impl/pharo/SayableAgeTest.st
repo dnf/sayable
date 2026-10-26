@@ -651,7 +651,7 @@ testNullHandling
 ! !
 
 !SayableAgeFormatterTest methodsFor: 'tests-spanish'!
-"25.1 through 25.20"
+"25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 25.10, 25.11, 25.12, 25.13, 25.14, 25.15, 25.16, 25.17, 25.18, 25.19, 25.20"
 testSpanishLocale
 	| es pt |
 	es := SayableAgeLocale new.
@@ -663,7 +663,7 @@ testSpanishLocale
 		'month'. (Dictionary newFromPairs: { #one. '{n} mes'. #other. '{n} meses' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} año'. #other. '{n} años' }).
 	}).
-	es half: '{n} y medio'.
+	es half: '{0} y medio'.
 	es delimiter: ', '.
 	es justBorn: 'Recién nacido'.
 	es stages: (Dictionary newFromPairs: {
@@ -682,7 +682,7 @@ testSpanishLocale
 	self assert: (pt formatAge: '2025-01-15' asOf: '2025-07-15') equals: '6 meses'.
 	self assert: (pt formatAge: '2023-06-15' asOf: '2025-07-15') equals: '2 años, 1 mes'.
 	self assert: (pt formatAge: '2023-06-15' asOf: '2025-12-15') equals: '2 años, 6 meses'.
-	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 y medio años'.
+	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 años y medio'.
 	self assert: (pt formatAge: '2022-06-15' asOf: '2025-06-15') equals: '3 años'.
 	self assert: (pt formatAge: '2018-06-15' asOf: '2025-06-15') equals: '7 años'.
 	self assert: (pt formatStage: '2025-06-15' asOf: '2025-06-15') equals: 'Recién nacido'.
@@ -696,7 +696,7 @@ testSpanishLocale
 ! !
 
 !SayableAgeFormatterTest methodsFor: 'tests-compactness'!
-"26.1 through 26.9"
+"26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9"
 testCompactnessShort
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'en') compactness: #short.
@@ -711,7 +711,7 @@ testCompactnessShort
 	self assert: (pt formatStage: '2025-01-15' asOf: '2025-06-15') equals: 'Infant'.
 !
 
-"27.1 through 27.8"
+"27.1, 27.2, 27.3, 27.4, 27.5, 27.6, 27.7, 27.8"
 testCompactnessCompact
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'en') compactness: #compact.
@@ -812,7 +812,7 @@ test29_1HeJustBorn
 test29_2HeOneDay
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'he').
-	self assert: (pt formatAge: '2025-06-14' asOf: '2025-06-15') equals: 'יום 1'
+	self assert: (pt formatAge: '2025-06-14' asOf: '2025-06-15') equals: 'יום'
 !
 
 "29.3"
@@ -854,7 +854,7 @@ test29_7HeThreeMonths
 test29_8HeTwoYearsDualOneMonth
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'he').
-	self assert: (pt formatAge: '2023-06-15' asOf: '2025-07-15') equals: 'שנתיים, חודש 1'
+	self assert: (pt formatAge: '2023-06-15' asOf: '2025-07-15') equals: 'שנתיים, חודש'
 !
 
 "29.9"
@@ -1022,7 +1022,7 @@ test29_31IdSixMonths
 test29_32IdHalfYears
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'id').
-	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 tahun setengah'
+	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 setengah tahun'
 !
 
 "29.33"
@@ -1153,7 +1153,7 @@ test32_2Polish5IsMany
 test32_3Tachelhit6IsFew
 	| sa |
 	sa := SayableAge withLocale: (SayableAgeLocales get: 'shi').
-	self assert: (sa formatAge: '2005-06-08' asOf: '2012-06-07') equals: '6 iseggasen d uzgen'
+	self assert: (sa formatAge: '2005-06-08' asOf: '2012-06-07') equals: '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ'
 !
 
 "33.1"
@@ -1224,4 +1224,49 @@ test33_10February29InALeapYearIsValid
 	| sa |
 	sa := SayableAge withLocale: (SayableAgeLocales get: 'en').
 	self assert: (sa formatAge: '2024-02-29' asOf: '2026-03-01') equals: '2 years'
+! !
+
+!SayableAgeFormatAgeTest methodsFor: 'tests-default-as-of'!
+"The library takes today from the system clock and cannot be told otherwise, so the inputs
+are derived from the real date instead of the canonical fixed dates."
+dateYearsBeforeToday: years
+	| today day |
+	today := Date today.
+	day := (today monthIndex = 2 and: [ today dayOfMonth = 29 ]) ifTrue: [ 28 ] ifFalse: [ today dayOfMonth ].
+	^ (Date newDay: day month: today monthIndex year: today year - years) yyyymmdd
+!
+
+"15.1"
+testDefaultAsOfFiveYearsBeforeToday
+	self assert: (SayableAge formatAge: (self dateYearsBeforeToday: 5)) equals: '5 years'
+!
+
+"15.2"
+testDefaultAsOfFiveDaysBeforeToday
+	self assert: (SayableAge formatAge: (Date today subtractDays: 5) yyyymmdd) equals: '5 days'
+! !
+
+!SayableAgeFormatStageTest methodsFor: 'tests-default-as-of'!
+"The library takes today from the system clock and cannot be told otherwise, so the inputs
+are derived from the real date instead of the canonical fixed dates."
+dateYearsBeforeToday: years
+	| today day |
+	today := Date today.
+	day := (today monthIndex = 2 and: [ today dayOfMonth = 29 ]) ifTrue: [ 28 ] ifFalse: [ today dayOfMonth ].
+	^ (Date newDay: day month: today monthIndex year: today year - years) yyyymmdd
+!
+
+"23.1"
+testDefaultAsOfBornTodayNewborn
+	self assert: (SayableAge formatStage: Date today yyyymmdd) equals: 'Newborn'
+!
+
+"23.2"
+testDefaultAsOfFiveYearsBeforeTodayChild
+	self assert: (SayableAge formatStage: (self dateYearsBeforeToday: 5)) equals: 'Child'
+!
+
+"23.3"
+testDefaultAsOfFortyFiveYearsBeforeTodayAdult
+	self assert: (SayableAge formatStage: (self dateYearsBeforeToday: 45)) equals: 'Adult'
 ! !

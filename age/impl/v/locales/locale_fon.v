@@ -30,7 +30,7 @@ pub const locale_fon = AgeLocale{
 	infant: stage_neutral('Vǐ')
 	toddler: stage_neutral('Vǐ')
 	child: stage_neutral('Vǐ')
-	teenager: stage_neutral('Nyɔ̌nu')
+	teenager: stage_gendered('Dɔnkpɛvu', 'Ɖyɔ̌vǐ')
 	adult: stage_neutral('Mɛ̌xo')
 	has_short: true
 	short_override: CompactnessOverride{

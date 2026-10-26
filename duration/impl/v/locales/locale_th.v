@@ -30,7 +30,7 @@ pub const locale_th = DurationLocale{
 	delimiter: ' '
 	just_now: 'เมื่อกี้'
 	ago: '{0}ที่แล้ว'
-	in_future: 'ใน{0}'
+	in_future: 'ในอีก {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
 		second: simple_unit('{n} วิ')
@@ -49,7 +49,7 @@ pub const locale_th = DurationLocale{
 		has_year: true
 		ago: '{0}ที่แล้ว'
 		has_ago: true
-		in_future: 'ใน{0}'
+		in_future: 'ในอีก {0}'
 		has_in_future: true
 	}
 	has_compact: true
@@ -74,7 +74,7 @@ pub const locale_th = DurationLocale{
 		has_delimiter: true
 		ago: '{0}ที่แล้ว'
 		has_ago: true
-		in_future: 'ใน{0}'
+		in_future: 'ในอีก {0}'
 		has_in_future: true
 	}
 }

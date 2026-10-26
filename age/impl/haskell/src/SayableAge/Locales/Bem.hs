@@ -42,7 +42,7 @@ locale = Locale
         , stageToddler = Neutral "Umwana"
         , stageChild = Neutral "Umwana"
         , stageTeenager = Neutral "Umunyamata"
-        , stageAdult = Neutral "Umulumendo"
+        , stageAdult = Neutral "Umukalamba"
         }
     , localeShort = Just $
         CompactnessOverride

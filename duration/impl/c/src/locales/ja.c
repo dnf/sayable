@@ -26,11 +26,11 @@ const SduDurationLocale sdu_locale_ja = {
         { "{n}日", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n}週", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n}ヶ月", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n}歳", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n}年", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0}半", "",
     "たった今",
     "{0}前", "{0}後",
     true, { true, { "{n} 秒", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} 分", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} 時間", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} 日", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} 週間", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} か月", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} 年", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0}前", true, "{0}後" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0}前", true, "{0}後" }
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0}前", true, "{0}後" }
 };

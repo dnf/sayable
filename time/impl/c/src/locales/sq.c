@@ -17,7 +17,7 @@ const StTimeLocale st_locale_sq = {
         { "dymbëdhjetë", "një", "dy", "tre", "katër", "pesë", "gjashtë", "shtatë", "tetë", "nëntë", "dhjetë", "njëmbëdhjetë" },
         "mesnata",
         "mesdita",
-        { "{h} o'clock", "pesë past {h}", "dhjetë past {h}", "një çerek past {h}", "njëzet past {h}", "njëzet e pesë past {h}", "gjysma past {h}", "njëzet e pesë to {next_h}", "njëzet to {next_h}", "një çerek to {next_h}", "dhjetë to {next_h}", "pesë to {next_h}" }
+        { "ora {h}", "{h} e pesë", "{h} e dhjetë", "{h} e një çerek", "{h} e njëzet", "{h} e njëzet e pesë", "{h} e gjysmë", "{next_h} pa njëzet e pesë", "{next_h} pa njëzet", "{next_h} pa një çerek", "{next_h} pa dhjetë", "{next_h} pa pesë" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

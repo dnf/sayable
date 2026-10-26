@@ -20,13 +20,13 @@ proc plural_be {n} {
 proc locale_duration_be {} {
     set code {be}
     set units [dict create \
-        second [dict create one "{n} секунда" few "{n} секунды" many "{n} секунд" other "{n} секунд"] \
-        minute [dict create one "{n} хвіліна" few "{n} хвіліны" many "{n} хвілін" other "{n} хвілін"] \
-        hour [dict create one "{n} гадзіна" few "{n} гадзіны" many "{n} гадзін" other "{n} гадзін"] \
-        day [dict create one "{n} дзень" few "{n} дні" many "{n} дзён" other "{n} дзён"] \
-        week [dict create one "{n} тыдзень" few "{n} тыдні" many "{n} тыдняў" other "{n} тыдняў"] \
-        month [dict create one "{n} месяц" few "{n} месяцы" many "{n} месяцаў" other "{n} месяцаў"] \
-        year [dict create one "{n} год" few "{n} гады" many "{n} гадоў" other "{n} гадоў"] \
+        second [dict create one "{n} секунда" few "{n} секунды" many "{n} секунд" other "{n} секунды"] \
+        minute [dict create one "{n} хвіліна" few "{n} хвіліны" many "{n} хвілін" other "{n} хвіліны"] \
+        hour [dict create one "{n} гадзіна" few "{n} гадзіны" many "{n} гадзін" other "{n} гадзіны"] \
+        day [dict create one "{n} дзень" few "{n} дні" many "{n} дзён" other "{n} дня"] \
+        week [dict create one "{n} тыдзень" few "{n} тыдні" many "{n} тыдняў" other "{n} тыдня"] \
+        month [dict create one "{n} месяц" few "{n} месяцы" many "{n} месяцаў" other "{n} месяца"] \
+        year [dict create one "{n} год" few "{n} гады" many "{n} гадоў" other "{n} года"] \
     ]
     set half "{n} з паловай"
     set delimiter {, }

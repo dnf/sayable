@@ -29,12 +29,18 @@
       "infant": "Akwadaa",
       "toddler": "Abofra",
       "child": "Abofra",
-      "teenager": "Abarimaa",
+      "teenager": {
+        "m": "Abarimaa",
+        "f": "Abaayewa"
+      },
       "adult": "Ɔpanyin"
     },
     "short": {
       "units": {
-        "day": "nna {n}",
+        "day": {
+          "one": "da {n}",
+          "other": "nna {n}"
+        },
         "week": {
           "one": "dapɛn {n}",
           "other": "nnapɛn {n}"
@@ -51,7 +57,10 @@
     },
     "compact": {
       "units": {
-        "day": "nna {n}",
+        "day": {
+          "one": "da {n}",
+          "other": "nna {n}"
+        },
         "week": {
           "one": "dapɛn {n}",
           "other": "nnapɛn {n}"
@@ -169,7 +178,10 @@
         "second": "sɛkɛnd {n}",
         "minute": "sema {n}",
         "hour": "dɔnhwere {n}",
-        "day": "nna {n}",
+        "day": {
+          "one": "da {n}",
+          "other": "nna {n}"
+        },
         "week": {
           "one": "dapɛn {n}",
           "other": "nnapɛn {n}"
@@ -199,7 +211,10 @@
         "second": "sɛk {n}",
         "minute": "sem {n}",
         "hour": "dɔn {n}",
-        "day": "nna {n}",
+        "day": {
+          "one": "da {n}",
+          "other": "nna {n}"
+        },
         "week": {
           "one": "dapɛn {n}",
           "other": "nnapɛn {n}"
@@ -230,7 +245,7 @@
   "time": {
     "clock": {
       "hours": [
-        "dumien",
+        "dumienu",
         "baako",
         "mmienu",
         "mmiensa",
@@ -243,21 +258,21 @@
         "edu",
         "dubaako"
       ],
-      "midnight": "anadwo",
-      "noon": "awia",
+      "midnight": "ɔdasuom",
+      "noon": "owigyinae",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "nnɔn {h}",
+        "5": "nnɔn {h} ne sima anum",
+        "10": "nnɔn {h} ne sima edu",
+        "15": "nnɔn {h} ne sima dunum",
+        "20": "nnɔn {h} ne sima aduonu",
+        "25": "nnɔn {h} ne sima aduonu num",
+        "30": "nnɔn {h} ne fa",
+        "35": "aka sima aduonu num na abɔ nnɔn {next_h}",
+        "40": "aka sima aduonu na abɔ nnɔn {next_h}",
+        "45": "aka sima dunum na abɔ nnɔn {next_h}",
+        "50": "aka sima edu na abɔ nnɔn {next_h}",
+        "55": "aka sima anum na abɔ nnɔn {next_h}"
       }
     },
     "short": {
@@ -280,5 +295,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Twi 'nnɔn {h}' (o'clock), additive 'nnɔn {h} ne sima N' for :05-:25, 'nnɔn {h} ne fa' (half), and the subtractive idiom 'aka sima N na abɔ nnɔn {next_h}' (N minutes remain before it strikes next hour) for :35-:55. Hour 12 fixed from truncated 'dumien' to 'dumienu'. Standard 12-hour count (Ghana does not use a 6 a.m.-based count). Minutes word 'sima' (variant 'simma'); 'ne' (and) chosen over the idiom 'apa ho' because it is unambiguous either way."
+    }
+  ]
 }

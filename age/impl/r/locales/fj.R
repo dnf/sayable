@@ -18,7 +18,7 @@ locale_fj <- list(
     month = "{n} na vula",
     year = "{n} na yabaki"
   ),
-  half = "{n} kei na levu ni wasei",
+  half = "{0} kei na veimama",
   delimiter = ", ",
   just_born = "Gone vou",
   stages = list(
@@ -44,6 +44,7 @@ locale_fj <- list(
       month = "{n}m",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = ""
   )
 )

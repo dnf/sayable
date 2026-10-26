@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ff.json](../../locales/ff.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Pulaar 'waktu {h}' (waktu = hour, already used by this locale), additive 'waktu {h} e hojomaaje N' and 'waktu {h} e feccere' (half). Fula numerals: joy, sappo, sappo e joy, noogas, cappanɗe tati/nay/joy. 'hojomaaje' reused from the locale's own minute unit; if it is the plural (as the audit suspects) it is still right after numerals >1. Standard 12-hour count. Noon 'zuhr' left as is (not in my batch's data fixes).
+
 ## Age
 
 ### Age formatting
@@ -13,11 +21,11 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 | Age               | Normal                | Short                 | Compact         |
 | ----------------- | --------------------- | --------------------- | --------------- |
 | Born today        | Ɓinngel kesol         | Ɓinngel kesol         | Ɓinngel kesol   |
-| 1 day             | ñalawma 1             | ñalɗe 1               | ñalɗe 1         |
+| 1 day             | ñalawma 1             | ñalawma 1             | ñalawma 1       |
 | 3 days            | ñalɗe 3               | ñalɗe 3               | ñalɗe 3         |
 | 6 days            | ñalɗe 6               | ñalɗe 6               | ñalɗe 6         |
 | 1 week            | yontere 1             | yontere 1             | yont 1          |
-| 1 week, 1 day     | yontere 1, ñalawma 1  | yontere 1, ñalɗe 1    | yont 1ñalɗe 1   |
+| 1 week, 1 day     | yontere 1, ñalawma 1  | yontere 1, ñalawma 1  | yont 1ñalawma 1 |
 | 2 weeks           | yontereeji 2          | yontereeji 2          | yontji 2        |
 | 2 weeks, 3 days   | yontereeji 2, ñalɗe 3 | yontereeji 2, ñalɗe 3 | yontji 2ñalɗe 3 |
 | 3 months          | lebbi 3               | lebbi 3               | leb 3           |
@@ -39,14 +47,14 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 
 ### Stages
 
-| Stage    | Label         |
-| -------- | ------------- |
-| Newborn  | Ɓinngel kesol |
-| Infant   | Ɓinngel       |
-| Toddler  | Cukalel       |
-| Child    | Suka          |
-| Teenager | Suka debbo    |
-| Adult    | Mawɗo         |
+| Stage    | Label                   |
+| -------- | ----------------------- |
+| Newborn  | Ɓinngel kesol           |
+| Infant   | Ɓinngel                 |
+| Toddler  | Cukalel                 |
+| Child    | Suka                    |
+| Teenager | Suka gorko / Suka debbo |
+| Adult    | Mawɗo                   |
 
 ## Date
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ɗoɓi             | 17/3    |
 | Day before yesterday | haŋki-haŋki      | 13/3    |
 | This Thursday (+5)   | Naasaande oo     | 20/3    |
-| Last Monday (-4)     | Mawbaare ɓennuɗo | 11/3    |
-| Next Wednesday (+12) | Naasaande aroowo | 27/3    |
-| Same month (+20)     | 4 Seeɗto         | 4/4     |
+| Last Tuesday (-4)    | Mawbaare ɓennuɗo | 11/3    |
+| Next Thursday (+12)  | Naasaande aroowo | 27/3    |
+| Same year (+20)      | 4 Seeɗto         | 4/4     |
 | Different year       | 10 Siilo 2026    | 10/1/26 |
 
 ## Duration
@@ -95,7 +103,7 @@ Relative to Saturday, March 15, 2025.
 | 1½ hours              | waktuuji 1½              | waktuuji 1½              | wakji 1½        |
 | 3 hours               | waktuuji 3               | waktuuji 3               | wakji 3         |
 | 6 hours               | waktuuji 6               | waktuuji 6               | wakji 6         |
-| 1 day                 | ñalawma 1                | ñalɗe 1                  | ñalɗe 1         |
+| 1 day                 | ñalawma 1                | ñalawma 1                | ñalawma 1       |
 | 1½ days               | ñalɗe 1½                 | ñalɗe 1½                 | ñalɗe 1½        |
 | 3 days                | ñalɗe 3                  | ñalɗe 3                  | ñalɗe 3         |
 | 1 week                | yontere 1                | yontere 1                | yont 1          |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | jamma hejjere   | 12:00 AM | 12:00a  |
-| 1:00 AM         | go'o:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | jeenay:05       | 9:05 AM  | 9:05a   |
-| Quarter past 10 | sappo:15        | 10:15 AM | 10:15a  |
-| Half past 11    | sappo e go'o:30 | 11:30 AM | 11:30a  |
-| Noon            | zuhr            | 12:00 PM | 12:00p  |
-| Quarter to 3    | ɗiɗi:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | joy:55          | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | jeetati:00      | 8:00 PM  | 8:00p   |
-| 10:30 PM        | sappo:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | jamma hejjere   | 11:58 PM | 11:58p  |
+| Time            | Normal                                    | Short    | Compact |
+| --------------- | ----------------------------------------- | -------- | ------- |
+| Midnight        | jamma hejjere                             | 12:00 AM | 12:00a  |
+| 1:00 AM         | waktu go'o                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | waktu jeenay e hojomaaje joy              | 9:05 AM  | 9:05a   |
+| Quarter past 10 | waktu sappo e hojomaaje sappo e joy       | 10:15 AM | 10:15a  |
+| Half past 11    | waktu sappo e go'o e feccere              | 11:30 AM | 11:30a  |
+| Noon            | zuhr                                      | 12:00 PM | 12:00p  |
+| Quarter to 3    | waktu ɗiɗi e hojomaaje cappanɗe nay e joy | 2:45 PM  | 2:45p   |
+| 5 to 6          | waktu joy e hojomaaje cappanɗe joy e joy  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | waktu jeetati                             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | waktu sappo e feccere                     | 10:30 PM | 10:30p  |
+| 11:58 PM        | jamma hejjere                             | 11:58 PM | 11:58p  |

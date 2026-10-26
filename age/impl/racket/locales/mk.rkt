@@ -38,7 +38,7 @@
          "toddler" (stage-label "Мало дете" #f #f)
          "child" (stage-label "Дете" #f #f)
          "teenager" (stage-label "Тинејџер" #f #f)
-         "adult" (stage-label "Возрасен" #f #f))
+         "adult" (stage-label #f "Возрасен" "Возрасна"))
    (compactness-override (hash "type" "pluralized" "forms" (hash "one" "{n} ден" "other" "{n} дена")) (hash "type" "simple" "form" "{n} сед.") (hash "type" "simple" "form" "{n} мес.") (hash "type" "simple" "form" "{n} год.") #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n} д.") (hash "type" "simple" "form" "{n} с.") (hash "type" "simple" "form" "{n} м.") (hash "type" "simple" "form" "{n} г.") "{n}½" "" #f)
   ))

@@ -26,7 +26,7 @@ locale() ->
         tomorrow = "paqarin",
         yesterday = "qayna",
         day_after_tomorrow = {just, "minchha"},
-        day_before_yesterday = {just, "qayna p'unchaw"},
+        day_before_yesterday = {just, "qayninpa"},
         this_weekday = {just, "kay {weekday}"},
         next_weekday = {just, "hamuq {weekday}"},
         last_weekday = {just, "qayna {weekday}"},

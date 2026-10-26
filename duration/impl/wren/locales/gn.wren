@@ -14,9 +14,9 @@ class GNLocale {
   static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "second": "{n} aravo'i",
-      "minute": "{n} aravo",
-      "hour": "{n} aravo guasu",
+      "second": "{n} aravo'ive",
+      "minute": "{n} aravo'i",
+      "hour": "{n} aravo",
       "day": "{n} ára",
       "week": "{n} arapokõindy",
       "month": "{n} jasy",
@@ -31,9 +31,9 @@ class GNLocale {
   static short {
     return {
       "units": {
-        "second": "{n} ara'i",
-        "minute": "{n} ara",
-        "hour": "{n} ara g",
+        "second": "{n} aravo'ive",
+        "minute": "{n} aravo'i",
+        "hour": "{n} aravo",
         "day": "{n} ára",
         "week": "{n} ara",
         "month": "{n} jas",

@@ -16,17 +16,17 @@ st_midnight('id', 'tengah malam').
 st_noon('id', 'tengah hari').
 
 st_pattern('id', 0, 'pukul {h}').
-st_pattern('id', 5, 'lima lewat {h}').
-st_pattern('id', 10, 'sepuluh lewat {h}').
-st_pattern('id', 15, 'seperempat lewat {h}').
-st_pattern('id', 20, 'dua puluh lewat {h}').
-st_pattern('id', 25, 'dua puluh lima lewat {h}').
-st_pattern('id', 30, 'setengah lewat {h}').
-st_pattern('id', 35, 'dua puluh lima menjelang {next_h}').
-st_pattern('id', 40, 'dua puluh menjelang {next_h}').
-st_pattern('id', 45, 'seperempat menjelang {next_h}').
-st_pattern('id', 50, 'sepuluh menjelang {next_h}').
-st_pattern('id', 55, 'lima menjelang {next_h}').
+st_pattern('id', 5, 'pukul {h} lewat lima').
+st_pattern('id', 10, 'pukul {h} lewat sepuluh').
+st_pattern('id', 15, 'pukul {h} lewat seperempat').
+st_pattern('id', 20, 'pukul {h} lewat dua puluh').
+st_pattern('id', 25, 'pukul {h} lewat dua puluh lima').
+st_pattern('id', 30, 'pukul setengah {next_h}').
+st_pattern('id', 35, 'pukul {next_h} kurang dua puluh lima').
+st_pattern('id', 40, 'pukul {next_h} kurang dua puluh').
+st_pattern('id', 45, 'pukul {next_h} kurang seperempat').
+st_pattern('id', 50, 'pukul {next_h} kurang sepuluh').
+st_pattern('id', 55, 'pukul {next_h} kurang lima').
 
 short_st_use24h('id', true).
 short_st_format('id', '{h}.{mm}').

@@ -14,13 +14,13 @@
 (def locale
   {:code "mi"
    :plural (fn [n] (if (== n 1) :one :other))
-   :day {:type :simple :form "rā {n}"}
-   :week {:type :simple :form "wiki {n}"}
-   :month {:type :simple :form "marama {n}"}
-   :year {:type :simple :form "tau {n}"}
-   :half "{0}½"
+   :day {:type :simple :form "{n} rā"}
+   :week {:type :simple :form "{n} wiki"}
+   :month {:type :simple :form "{n} marama"}
+   :year {:type :simple :form "{n} tau"}
+   :half "{n}½"
    :delimiter ", "
    :just-born "Pēpi hou"
    :stages {:newborn {:type :neutral :label "Pēpi hou"} :infant {:type :neutral :label "Pēpi"} :toddler {:type :neutral :label "Kōhungahunga"} :child {:type :neutral :label "Tamariki"} :teenager {:type :neutral :label "Rangatahi"} :adult {:type :neutral :label "Pakeke"}}
-   :short {:day {:type :simple :form "rā {n}"} :week {:type :simple :form "w {n}"} :month {:type :simple :form "m {n}"} :year {:type :simple :form "t {n}"} :half nil :delimiter nil :just-born nil}
+   :short {:day {:type :simple :form "{n} rā"} :week {:type :simple :form "{n} w"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} t"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}r"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}t"} :half "{n}½" :delimiter "" :just-born nil}})

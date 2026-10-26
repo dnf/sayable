@@ -36,7 +36,7 @@ pub fn locale() -> AgeLocale {
                 (PluralCategory::Other, "{n} ವರ್ಷಗಳು"),
             ]),
         },
-        half: "{0}ವರೆ".to_string(),
+        half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_born: "ನವಜಾತ ಶಿಶು".to_string(),
         stages: Stages {

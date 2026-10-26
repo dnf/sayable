@@ -25,7 +25,7 @@ var SN = sdate.DateLocale{
 	Today:     "nhasi",
 	Tomorrow:  "mangwana",
 	Yesterday: "nezuro",
-	DayAfterTomorrow:  strPtr("mangwanani"),
+	DayAfterTomorrow:  strPtr("kuswera mangwana"),
 	DayBeforeYesterday: strPtr("nezuro rakapera"),
 	ThisWeekday:       strPtr("{weekday} ino"),
 	NextWeekday:       strPtr("{weekday} inotevera"),

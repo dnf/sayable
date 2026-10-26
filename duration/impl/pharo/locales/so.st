@@ -18,13 +18,13 @@ so
 	locale code: 'so'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. 'ilbiriqsi {n}'. #other. 'ilbiriqsiyaal {n}' }).
-		'minute'. (Dictionary newFromPairs: { #one. 'daqiiqad {n}'. #other. 'daqiiqadood {n}' }).
-		'hour'. (Dictionary newFromPairs: { #one. 'saacad {n}'. #other. 'saacadood {n}' }).
-		'day'. (Dictionary newFromPairs: { #one. 'maalin {n}'. #other. 'maalmood {n}' }).
-		'week'. (Dictionary newFromPairs: { #one. 'toddobaad {n}'. #other. 'toddobaadyo {n}' }).
-		'month'. (Dictionary newFromPairs: { #one. 'bil {n}'. #other. 'bilood {n}' }).
-		'year'. (Dictionary newFromPairs: { #one. 'sano {n}'. #other. 'sanooyin {n}' }).
+		'second'. '{n} ilbiriqsi'.
+		'minute'. (Dictionary newFromPairs: { #one. '{n} daqiiqad'. #other. '{n} daqiiqo' }).
+		'hour'. (Dictionary newFromPairs: { #one. '{n} saacad'. #other. '{n} saacadood' }).
+		'day'. (Dictionary newFromPairs: { #one. '{n} maalin'. #other. '{n} maalmood' }).
+		'week'. '{n} toddobaad'.
+		'month'. (Dictionary newFromPairs: { #one. '{n} bil'. #other. '{n} bilood' }).
+		'year'. '{n} sano'.
 	}).
 	locale half: '{n}½'.
 	locale delimiter: ', '.

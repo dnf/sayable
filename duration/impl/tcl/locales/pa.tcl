@@ -19,7 +19,7 @@ proc locale_duration_pa {} {
     set units [dict create \
         second "{n} ਸਕਿੰਟ" \
         minute "{n} ਮਿੰਟ" \
-        hour "{n} ਘੰਟਾ" \
+        hour [dict create one "{n} ਘੰਟਾ" other "{n} ਘੰਟੇ"] \
         day [dict create one "{n} ਦਿਨ" other "{n} ਦਿਨ"] \
         week [dict create one "{n} ਹਫ਼ਤਾ" other "{n} ਹਫ਼ਤੇ"] \
         month [dict create one "{n} ਮਹੀਨਾ" other "{n} ਮਹੀਨੇ"] \

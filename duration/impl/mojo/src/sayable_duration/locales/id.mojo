@@ -87,7 +87,7 @@ fn build_id() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} setengah",
+        half="{n} setengah",
         delimiter=", ",
         just_now="baru saja",
         ago="{0} yang lalu",

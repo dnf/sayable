@@ -21,7 +21,7 @@ proc locale_pis {} {
         month "{n} manis" \
         year "{n} yia" \
     ]
-    set half "{n} en haf"
+    set half "{0} en haf"
     set delimiter {, }
     set just_born {Niufala bebi}
     set stages [dict create \
@@ -47,6 +47,7 @@ proc locale_pis {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

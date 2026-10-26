@@ -26,7 +26,7 @@ const SdDateLocale sd_locale_kl = {
     "{n}.",
     (const SdDayFormatException *)0, 0,
     "{month} {day}",
-    "{day} {month} {year}",
+    "{month} {day} {year}",
     "ullumi",
     "aqagu",
     "ippassaq",
@@ -36,6 +36,6 @@ const SdDateLocale sd_locale_kl = {
     "{weekday} tulleq",
     "{weekday} kingulleq",
     (const char **)0,
-    true, { sd_short_months_kl, (const char **)0, sd_short_weekdays_kl, "{n}.", (const SdDayFormatException *)0, 0, true, "{month} {day}", "{day} {month} {year}", NULL, NULL, NULL },
+    true, { sd_short_months_kl, (const char **)0, sd_short_weekdays_kl, "{n}.", (const SdDayFormatException *)0, 0, true, "{month} {day}", "{month} {day} {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{m}-{d}", "{year}-{m}-{d}", NULL, NULL, NULL }
 };

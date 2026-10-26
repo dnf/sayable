@@ -15,18 +15,18 @@ st_hours('cs', ['dvanáct', 'jedna', 'dvě', 'tři', 'čtyři', 'pět', 'šest',
 st_midnight('cs', 'půlnoc').
 st_noon('cs', 'poledne').
 
-st_pattern('cs', 0, '{h} hodin').
-st_pattern('cs', 5, 'pět po {h}').
-st_pattern('cs', 10, 'deset po {h}').
-st_pattern('cs', 15, 'čtvrt po {h}').
-st_pattern('cs', 20, 'dvacet po {h}').
-st_pattern('cs', 25, 'dvacet pět po {h}').
-st_pattern('cs', 30, 'půl po {h}').
-st_pattern('cs', 35, 'dvacet pět do {next_h}').
-st_pattern('cs', 40, 'dvacet do {next_h}').
-st_pattern('cs', 45, 'čtvrt do {next_h}').
-st_pattern('cs', 50, 'deset do {next_h}').
-st_pattern('cs', 55, 'pět do {next_h}').
+st_pattern('cs', 0, '{h}').
+st_pattern('cs', 5, '{h} nula pět').
+st_pattern('cs', 10, '{h} deset').
+st_pattern('cs', 15, '{h} patnáct').
+st_pattern('cs', 20, '{h} dvacet').
+st_pattern('cs', 25, '{h} dvacet pět').
+st_pattern('cs', 30, '{h} třicet').
+st_pattern('cs', 35, 'za dvacet pět minut {next_h}').
+st_pattern('cs', 40, 'za dvacet minut {next_h}').
+st_pattern('cs', 45, 'za patnáct minut {next_h}').
+st_pattern('cs', 50, 'za deset minut {next_h}').
+st_pattern('cs', 55, 'za pět minut {next_h}').
 
 short_st_use24h('cs', true).
 short_st_format('cs', '{h}:{mm}').

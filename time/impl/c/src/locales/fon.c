@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_fon = {
     "fon",
     {
-        { "wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ" },
+        { "wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "wěɖokpo" },
         "zǎnmɛ",
         "hwemɛnu",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "gan {h}", "gan {h} kpo cɛju atɔ́ɔ́n kpo", "gan {h} kpo cɛju wǒ kpo", "gan {h} kpo cɛju afɔtɔ́n kpo", "gan {h} kpo cɛju ko kpo", "gan {h} kpo cɛju koatɔ́ɔ́n kpo", "gan {h} kpo cɛju gban kpo", "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo", "gan {h} kpo cɛju kanɖé kpo", "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo", "gan {h} kpo cɛju kanɖéwǒ kpo", "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

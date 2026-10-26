@@ -6,7 +6,7 @@ One of four peer libraries (age, date, duration, time) built the same way. See t
 
 ## Status
 
-v0.5.0, 51 languages, 168 locales, 37 canonical tests.
+v0.5.0, 51 languages, 168 locales, 41 canonical tests.
 
 ## Directory structure
 
@@ -15,7 +15,7 @@ time/
   config/
     version.json           # Single source of truth for version (0.5.0)
     metadata.json          # Package metadata
-    tests.json             # 37 canonical test cases
+    tests.json             # 41 canonical test cases
   codegen/
     generate.py            # Codegen orchestrator: locales/*.json (time section) -> all 51 languages
     docgen.py              # `--sections`: each locale's Time section for docs/locales/<code>.md
@@ -96,9 +96,9 @@ Some languages (Norwegian Bokmål `nb`, Swedish `sv`) have dot format as a CLDR 
 
 The formatter's `_format_digital` does string replacement on the `format` template, so `{h}.{mm}` works without any code changes. Test coverage for this is in Section 8 of `config/tests.json`.
 
-### Numeric clock pattern fallback
+### Spoken phrases in every locale
 
-Languages without established spoken clock conventions (e.g., pidgin and creole languages like Tok Pisin, Pijin, Bislama) use a numeric pattern for normal compactness: `"{h}:05"`, `"{h}:15"`, etc. This avoids inventing spoken time expressions that don't exist in the language. The hours array still uses native-language number words, and midnight/noon get native terms. Short and compact modes use the standard digital format.
+Normal compactness is always spoken words in every locale, never digits. Languages without a "past/to" idiom use the plain "hour and minutes" form with the minutes spelled out. Unverified phrasing carries a `review` note in `locales/<code>.json`, shown on `docs/locales/<code>.md` and collected in `docs/locales/README.md`.
 
 ## API functions
 
@@ -128,7 +128,7 @@ just clean             # remove build artifacts
 python3 -m codegen.generate [--lang <lang>] [--check]   # this library's locale code only
 ```
 
-For any other language, run the time step of its CI workflow (`.hecatron/languages/<lang>/workflow.yml`), which tests every library.
+For any language, `just test <lang>` from the project root runs its time suite along with the other three libraries' (via `.hecatron/languages/<lang>/test.sh`).
 
 ## Codegen emitter strategies
 
@@ -142,7 +142,7 @@ No `plural_rules.py` needed — time formatting doesn't use plural forms.
 
 ## Test structure
 
-37 tests across 10 sections in `config/tests.json`:
+41 tests across 10 sections in `config/tests.json`:
 - Null/edge cases and input validation
 - Clock time (normal, short, compact compactness), minutes in short and compact modes
 - Locale-specific: German, French, Japanese, Finnish (dot separator)

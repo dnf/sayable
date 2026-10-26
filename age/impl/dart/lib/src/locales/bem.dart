@@ -30,7 +30,7 @@ final bem = AgeLocale(
   toddler: stageNeutral('Umwana'),
   child: stageNeutral('Umwana'),
   teenager: stageNeutral('Umunyamata'),
-  adult: stageNeutral('Umulumendo'),
+  adult: stageNeutral('Umukalamba'),
   short: CompactnessOverride(
     day: pluralUnit({PluralCategory.one: 'ubushiku {n}', PluralCategory.other: 'inshiku {n}'}),
     week: pluralUnit({PluralCategory.one: 'umulungu {n}', PluralCategory.other: 'imilungu {n}'}),

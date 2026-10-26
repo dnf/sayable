@@ -37,7 +37,7 @@ fn build_fon() -> AgeLocale:
     var infant = stage_neutral("Vǐ")
     var toddler = stage_neutral("Vǐ")
     var child = stage_neutral("Vǐ")
-    var teenager = stage_neutral("Nyɔ̌nu")
+    var teenager = stage_gendered("Dɔnkpɛvu", "Ɖyɔ̌vǐ")
     var adult = stage_neutral("Mɛ̌xo")
 
     var short_ovr = CompactnessOverride()

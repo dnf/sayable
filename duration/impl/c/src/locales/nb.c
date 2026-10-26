@@ -30,7 +30,7 @@ const SduDurationLocale sdu_locale_nb = {
     },
     "{n}½", ", ",
     "akkurat nå",
-    "{0} siden", "om {0}",
-    true, { true, { "{n} sek", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} u", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} md.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} år", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} siden", true, "om {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}u", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}å", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} siden", true, "om {0}" }
+    "for {0} siden", "om {0}",
+    true, { true, { "{n} sek", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} u", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} md.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} år", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "for {0} siden", true, "om {0}" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}u", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}å", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "for {0} siden", true, "om {0}" }
 };

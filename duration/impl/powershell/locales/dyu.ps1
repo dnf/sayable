@@ -27,7 +27,7 @@ function locale_dyu {
     $delimiter = ', '
     $justNow = 'sisan'
     $ago = '{0} tɛmɛnen'
-    $inFuture = 'ka {0}'
+    $inFuture = '{0} kɔnɔ'
     $short = @{
         units = @{
             second = 'sɛk. {n}'
@@ -39,7 +39,7 @@ function locale_dyu {
             year = 'san {n}'
         }
         ago = '{0} tɛmɛnen'
-        inFuture = 'ka {0}'
+        inFuture = '{0} kɔnɔ'
     }
     $compact = @{
         units = @{
@@ -54,7 +54,7 @@ function locale_dyu {
         half = '{n}½'
         delimiter = ''
         ago = '{0} tɛmɛnen'
-        inFuture = 'ka {0}'
+        inFuture = '{0} kɔnɔ'
     }
     return @{
         code = 'dyu'

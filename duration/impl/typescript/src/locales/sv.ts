@@ -26,7 +26,7 @@ export const sv: DurationLocale = {
   half: '{n}½',
   delimiter: ', ',
   justNow: 'just nu',
-  ago: '{0} sedan',
+  ago: 'för {0} sedan',
   inFuture: 'om {0}',
   short: {
     units: {
@@ -38,7 +38,7 @@ export const sv: DurationLocale = {
       month:  '{n} mån',
       year:   '{n} år',
     },
-    ago: '{0} sedan',
+    ago: 'för {0} sedan',
     inFuture: 'om {0}',
   },
   compact: {
@@ -52,7 +52,7 @@ export const sv: DurationLocale = {
       year:   '{n}å',
     },
     delimiter: '',
-    ago: '{0} sedan',
+    ago: 'för {0} sedan',
     inFuture: 'om {0}',
   },
 };

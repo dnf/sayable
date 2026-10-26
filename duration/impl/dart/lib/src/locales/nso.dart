@@ -19,8 +19,8 @@ final nso = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'motsotswana {n}', PluralCategory.other: 'dimetsotswana {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'metsotso {n}', PluralCategory.other: 'dimetsotso {n}'}),
+    'second': pluralUnit({PluralCategory.one: 'motsotswana {n}', PluralCategory.other: 'metsotswana {n}'}),
+    'minute': pluralUnit({PluralCategory.one: 'motsotso {n}', PluralCategory.other: 'metsotso {n}'}),
     'hour': pluralUnit({PluralCategory.one: 'iri {n}', PluralCategory.other: 'diiri {n}'}),
     'day': pluralUnit({PluralCategory.one: 'letšatši {n}', PluralCategory.other: 'matšatši {n}'}),
     'week': pluralUnit({PluralCategory.one: 'beke {n}', PluralCategory.other: 'dibeke {n}'}),
@@ -34,8 +34,8 @@ final nso = DurationLocale(
   inFuture: 'ka {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: 'mots. {n}', PluralCategory.other: 'dimets. {n}'}),
-      'minute': pluralUnit({PluralCategory.one: 'mets. {n}', PluralCategory.other: 'dimets. {n}'}),
+      'second': pluralUnit({PluralCategory.one: 'motsotsw. {n}', PluralCategory.other: 'metsotsw. {n}'}),
+      'minute': pluralUnit({PluralCategory.one: 'mots. {n}', PluralCategory.other: 'mets. {n}'}),
       'hour': pluralUnit({PluralCategory.one: 'iri {n}', PluralCategory.other: 'diiri {n}'}),
       'day': pluralUnit({PluralCategory.one: 'letšatši {n}', PluralCategory.other: 'matšatši {n}'}),
       'week': pluralUnit({PluralCategory.one: 'beke {n}', PluralCategory.other: 'dibeke {n}'}),

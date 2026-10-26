@@ -17,9 +17,9 @@
   (make-duration-locale
    :code "ny"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second "{n} sekondi")
-               (cons :minute "{n} mphindi")
-               (cons :hour "{n} ola")
+   :units (list (cons :second "sekondi {n}")
+               (cons :minute "mphindi {n}")
+               (cons :hour '((:one . "ola {n}") (:other . "maola {n}")))
                (cons :day '((:one . "tsiku {n}") (:other . "masiku {n}")))
                (cons :week '((:one . "sabata {n}") (:other . "masabata {n}")))
                (cons :month '((:one . "mwezi {n}") (:other . "miyezi {n}")))
@@ -31,7 +31,7 @@
    :in-future "mu {0}"
    :short-units (list (cons :second "sek {n}")
                        (cons :minute "mph {n}")
-                       (cons :hour "ola {n}")
+                       (cons :hour '((:one . "ola {n}") (:other . "maola {n}")))
                        (cons :day '((:one . "tsiku {n}") (:other . "mas {n}")))
                        (cons :week '((:one . "sabata {n}") (:other . "masab {n}")))
                        (cons :month '((:one . "mwezi {n}") (:other . "miyezi {n}")))

@@ -26,13 +26,13 @@ ru
 					ifTrue: [ #few ]
 					ifFalse: [ #many ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. '{n} секунда'. #few. '{n} секунды'. #many. '{n} секунд'. #other. '{n} секунд' }).
-		'minute'. (Dictionary newFromPairs: { #one. '{n} минута'. #few. '{n} минуты'. #many. '{n} минут'. #other. '{n} минут' }).
-		'hour'. (Dictionary newFromPairs: { #one. '{n} час'. #few. '{n} часа'. #many. '{n} часов'. #other. '{n} часов' }).
-		'day'. (Dictionary newFromPairs: { #one. '{n} день'. #few. '{n} дня'. #many. '{n} дней'. #other. '{n} дней' }).
-		'week'. (Dictionary newFromPairs: { #one. '{n} неделя'. #few. '{n} недели'. #many. '{n} недель'. #other. '{n} недель' }).
-		'month'. (Dictionary newFromPairs: { #one. '{n} месяц'. #few. '{n} месяца'. #many. '{n} месяцев'. #other. '{n} месяцев' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} год'. #few. '{n} года'. #many. '{n} лет'. #other. '{n} лет' }).
+		'second'. (Dictionary newFromPairs: { #one. '{n} секунда'. #few. '{n} секунды'. #many. '{n} секунд'. #other. '{n} секунды' }).
+		'minute'. (Dictionary newFromPairs: { #one. '{n} минута'. #few. '{n} минуты'. #many. '{n} минут'. #other. '{n} минуты' }).
+		'hour'. (Dictionary newFromPairs: { #one. '{n} час'. #few. '{n} часа'. #many. '{n} часов'. #other. '{n} часа' }).
+		'day'. (Dictionary newFromPairs: { #one. '{n} день'. #few. '{n} дня'. #many. '{n} дней'. #other. '{n} дня' }).
+		'week'. (Dictionary newFromPairs: { #one. '{n} неделя'. #few. '{n} недели'. #many. '{n} недель'. #other. '{n} недели' }).
+		'month'. (Dictionary newFromPairs: { #one. '{n} месяц'. #few. '{n} месяца'. #many. '{n} месяцев'. #other. '{n} месяца' }).
+		'year'. (Dictionary newFromPairs: { #one. '{n} год'. #few. '{n} года'. #many. '{n} лет'. #other. '{n} года' }).
 	}).
 	locale half: '{n} с половиной'.
 	locale delimiter: ', '.

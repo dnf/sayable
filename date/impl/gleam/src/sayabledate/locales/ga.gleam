@@ -25,7 +25,7 @@ pub fn locale() -> types.DateLocale {
     yesterday: "inné",
     day_after_tomorrow: Ok("arú amárach"),
     day_before_yesterday: Ok("arú inné"),
-    this_weekday: Ok("an {weekday} seo"),
+    this_weekday: Ok("{weekday} seo"),
     next_weekday: Ok("{weekday} seo chugainn"),
     last_weekday: Ok("{weekday} seo caite"),
     months_in_date: Error(Nil),

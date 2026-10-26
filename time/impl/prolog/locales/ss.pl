@@ -11,22 +11,22 @@
 
 % siSwati locale.
 
-st_hours('ss', ['lishumi nambili', 'kunye', 'kubili', 'kutsatfu', 'kune', 'kusihlanu', 'sitfupha', 'sikhombisa', 'siphohlongo', 'sifisagcina', 'lishumi', 'lishumi nakunye']).
+st_hours('ss', ['lelishumi nakubili', 'lekucala', 'lesibili', 'lesitsatfu', 'lesine', 'lesihlanu', 'lesitfupha', 'lesikhombisa', 'lesiphohlongo', 'lemfica', 'lelishumi', 'lelishumi nakunye']).
 st_midnight('ss', 'phakathi kwebusuku').
 st_noon('ss', 'emini').
 
-st_pattern('ss', 0, '{h}:00').
-st_pattern('ss', 5, '{h}:05').
-st_pattern('ss', 10, '{h}:10').
-st_pattern('ss', 15, '{h}:15').
-st_pattern('ss', 20, '{h}:20').
-st_pattern('ss', 25, '{h}:25').
-st_pattern('ss', 30, '{h}:30').
-st_pattern('ss', 35, '{h}:35').
-st_pattern('ss', 40, '{h}:40').
-st_pattern('ss', 45, '{h}:45').
-st_pattern('ss', 50, '{h}:50').
-st_pattern('ss', 55, '{h}:55').
+st_pattern('ss', 0, 'lihora {h}').
+st_pattern('ss', 5, 'lihora {h} nemizuzu lemihlanu').
+st_pattern('ss', 10, 'lihora {h} nemizuzu lelishumi').
+st_pattern('ss', 15, 'lihora {h} nemizuzu lelishumi nesihlanu').
+st_pattern('ss', 20, 'lihora {h} nemizuzu lemashumi lamabili').
+st_pattern('ss', 25, 'lihora {h} nemizuzu lemashumi lamabili nesihlanu').
+st_pattern('ss', 30, 'lihora {h} nenhafu').
+st_pattern('ss', 35, 'lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu').
+st_pattern('ss', 40, 'lihora {h} nemizuzu lemashumi lamane').
+st_pattern('ss', 45, 'lihora {h} nemizuzu lemashumi lamane nesihlanu').
+st_pattern('ss', 50, 'lihora {h} nemizuzu lemashumi lasihlanu').
+st_pattern('ss', 55, 'lihora {h} nemizuzu lemashumi lasihlanu nesihlanu').
 
 short_st_use24h('ss', false).
 short_st_format('ss', '{h}:{mm} {ampm}').

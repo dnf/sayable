@@ -26,7 +26,7 @@ proc locale_duration_jv {} {
     ]
     set half "{0} setengah"
     set delimiter {, }
-    set just_now {saiki}
+    set just_now {lagi waé}
     set ago "{0} kepungkur"
     set in_future "ing {0}"
     set short [dict create \

@@ -37,7 +37,7 @@ fn build_gl() -> AgeLocale:
 
     var newborn = stage_gendered("Recén nacido", "Recén nacida")
     var infant = stage_neutral("Bebé")
-    var toddler = stage_neutral("Neno")
+    var toddler = stage_gendered("Neno pequeno", "Nena pequena")
     var child = stage_gendered("Neno", "Nena")
     var teenager = stage_neutral("Adolescente")
     var adult = stage_gendered("Adulto", "Adulta")

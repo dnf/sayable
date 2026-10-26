@@ -28,7 +28,7 @@ pub fn locale() -> AgeLocale {
             month: UnitForms::simple("{n} aý"),
             year: UnitForms::simple("{n} ýaş"),
         },
-        half: "{0}½".to_string(),
+        half: "{n} ýarym".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Täze doglan".to_string(),
         stages: Stages {
@@ -37,7 +37,7 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Kiçijik".to_string()),
             child: StageLabel::Neutral("Çaga".to_string()),
             teenager: StageLabel::Neutral("Ýetginjek".to_string()),
-            adult: StageLabel::Neutral("Ulular".to_string()),
+            adult: StageLabel::Neutral("Uly adam".to_string()),
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} g")),

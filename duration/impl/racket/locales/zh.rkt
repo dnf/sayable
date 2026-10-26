@@ -27,7 +27,7 @@
          "day" (hash "type" "simple" "form" "{n}天")
          "week" (hash "type" "simple" "form" "{n}周")
          "month" (hash "type" "simple" "form" "{n}个月")
-         "year" (hash "type" "simple" "form" "{n}岁"))
+         "year" (hash "type" "simple" "form" "{n}年"))
    "{0}半"
    ""
    "刚刚"

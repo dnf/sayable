@@ -20,7 +20,7 @@ class TALocale {
       "year": {"one": "{n} வயது", "other": "{n} வயது"},
     }
   }
-  static half { "{0}ரை" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justBorn { "பிறந்த குழந்தை" }
   static stages {

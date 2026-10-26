@@ -29,7 +29,7 @@ locale =
             , ( "day", Simple "{n}天" )
             , ( "week", Simple "{n}周" )
             , ( "month", Simple "{n}个月" )
-            , ( "year", Simple "{n}岁" )
+            , ( "year", Simple "{n}年" )
             ]
     , half = "{0}半"
     , delimiter = ""

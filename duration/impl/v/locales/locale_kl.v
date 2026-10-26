@@ -13,19 +13,22 @@
 module locales
 
 fn plural_kl(n int) PluralCategory {
+	if n == 1 {
+		return .one
+	}
 	return .other
 }
 
 pub const locale_kl = DurationLocale{
 	code: 'kl'
 	plural: plural_kl
-	second: simple_unit('sekundit {n}')
-	minute: simple_unit('minutsit {n}')
-	hour: simple_unit('nalunaaqutap akunnera {n}')
-	day: simple_unit('ullut {n}')
-	week: simple_unit('sapaatit {n}')
-	month: simple_unit('qaammatit {n}')
-	year: simple_unit('ukiut {n}')
+	second: plural_unit({PluralCategory.one: 'sekundi {n}', PluralCategory.other: 'sekundit {n}'})
+	minute: plural_unit({PluralCategory.one: 'minutsi {n}', PluralCategory.other: 'minutsit {n}'})
+	hour: plural_unit({PluralCategory.one: 'nalunaaquttap akunnera {n}', PluralCategory.other: 'nalunaaquttap akunneri {n}'})
+	day: plural_unit({PluralCategory.one: 'ulloq {n}', PluralCategory.other: 'ullut {n}'})
+	week: plural_unit({PluralCategory.one: 'sapaatip akunnera {n}', PluralCategory.other: 'sapaatip akunneri {n}'})
+	month: plural_unit({PluralCategory.one: 'qaammat {n}', PluralCategory.other: 'qaammatit {n}'})
+	year: plural_unit({PluralCategory.one: 'ukioq {n}', PluralCategory.other: 'ukiut {n}'})
 	half: '{0} affaa'
 	delimiter: ', '
 	just_now: 'maanna'
@@ -41,7 +44,7 @@ pub const locale_kl = DurationLocale{
 		has_hour: true
 		day: simple_unit('ull. {n}')
 		has_day: true
-		week: simple_unit('sap. {n}')
+		week: simple_unit('sap. ak. {n}')
 		has_week: true
 		month: simple_unit('qaam. {n}')
 		has_month: true
@@ -68,6 +71,8 @@ pub const locale_kl = DurationLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 		ago: '{0} matuma siorna'

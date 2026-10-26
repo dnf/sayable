@@ -37,7 +37,7 @@ fn build_st() -> AgeLocale:
 
     var newborn = stage_neutral("Lesea le sa tswa hlaha")
     var infant = stage_neutral("Lesea")
-    var toddler = stage_neutral("Ngwanana")
+    var toddler = stage_neutral("Ngwana e monyane")
     var child = stage_neutral("Ngwana")
     var teenager = stage_neutral("Mosha")
     var adult = stage_neutral("Motho e moholo")

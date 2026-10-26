@@ -15,7 +15,7 @@ import '../types.dart';
 final fon = DateLocale(
   code: 'fon',
   months: ['Alɔfí', 'Alɔnyɔ', 'Ataɖaxɔ', 'Tlɛsún', 'Axɔsún', 'Ayɛsún', 'Nùxwásún', 'Ayidosún', 'Kɛnísún', 'Kanyásún', 'Abɔxwísún', 'Adɔxwísún'],
-  weekdays: ['Sidégbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Abámɛ́ta'],
+  weekdays: ['Aklunɔzángbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Sibigbe'],
   dayFormat: '{n}',
   datePattern: '{day} {month}',
   datePatternWithYear: '{day} {month} {year}',
@@ -29,7 +29,7 @@ final fon = DateLocale(
   lastWeekday: '{weekday} e wá yí',
   short: CompactnessOverride(
     months: ['Alɔ', 'Any', 'Ata', 'Tlɛ', 'Axɔ', 'Ayɛ', 'Nùx', 'Ayi', 'Kɛn', 'Kan', 'Abɔ', 'Adɔ'],
-    weekdays: ['Sid', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Abá'],
+    weekdays: ['Akl', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Sib'],
     dayFormat: '{n}',
     datePattern: '{day} {month}',
     datePatternWithYear: '{day} {month} {year}',

@@ -22,17 +22,17 @@ fn plural_ee(n int) PluralCategory {
 pub const locale_ee = DurationLocale{
 	code: 'ee'
 	plural: plural_ee
-	second: plural_unit({PluralCategory.one: 'sekend {n}', PluralCategory.other: 'sekendwo {n}'})
-	minute: plural_unit({PluralCategory.one: 'aɖabaƒoƒo {n}', PluralCategory.other: 'aɖabaƒoƒowo {n}'})
-	hour: plural_unit({PluralCategory.one: 'gaƒoƒo {n}', PluralCategory.other: 'gaƒoƒowo {n}'})
-	day: plural_unit({PluralCategory.one: 'ŋkeke {n}', PluralCategory.other: 'ŋkekewo {n}'})
-	week: plural_unit({PluralCategory.one: 'kɔsiɖa {n}', PluralCategory.other: 'kɔsiɖawo {n}'})
-	month: plural_unit({PluralCategory.one: 'ɣleti {n}', PluralCategory.other: 'ɣletiwo {n}'})
-	year: plural_unit({PluralCategory.one: 'ƒe {n}', PluralCategory.other: 'ƒewo {n}'})
+	second: simple_unit('sekend {n}')
+	minute: simple_unit('aɖabaƒoƒo {n}')
+	hour: simple_unit('gaƒoƒo {n}')
+	day: simple_unit('ŋkeke {n}')
+	week: simple_unit('kɔsiɖa {n}')
+	month: simple_unit('ɣleti {n}')
+	year: simple_unit('ƒe {n}')
 	half: '{0} kple afã'
 	delimiter: ', '
 	just_now: 'fifia'
-	ago: 'ɖe {0} me'
+	ago: '{0} si va yi'
 	in_future: 'le {0} me'
 	has_short: true
 	short_override: DurationCompactnessOverride{
@@ -42,15 +42,15 @@ pub const locale_ee = DurationLocale{
 		has_minute: true
 		hour: simple_unit('gaƒ. {n}')
 		has_hour: true
-		day: simple_unit('ŋkekewo {n}')
+		day: simple_unit('ŋkeke {n}')
 		has_day: true
-		week: plural_unit({PluralCategory.one: 'kɔsiɖa {n}', PluralCategory.other: 'kɔsiɖawo {n}'})
+		week: simple_unit('kɔsiɖa {n}')
 		has_week: true
-		month: plural_unit({PluralCategory.one: 'ɣleti {n}', PluralCategory.other: 'ɣletiwo {n}'})
+		month: simple_unit('ɣleti {n}')
 		has_month: true
-		year: plural_unit({PluralCategory.one: 'ƒe {n}', PluralCategory.other: 'ƒewo {n}'})
+		year: simple_unit('ƒe {n}')
 		has_year: true
-		ago: 'ɖe {0} me'
+		ago: '{0} si va yi'
 		has_ago: true
 		in_future: 'le {0} me'
 		has_in_future: true
@@ -75,7 +75,7 @@ pub const locale_ee = DurationLocale{
 		has_half: true
 		delimiter: ''
 		has_delimiter: true
-		ago: 'ɖe {0} me'
+		ago: '{0} si va yi'
 		has_ago: true
 		in_future: 'le {0} me'
 		has_in_future: true

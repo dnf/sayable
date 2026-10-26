@@ -10,7 +10,7 @@
 # Source: locales/bm.json
 
 _sayabledate_locale_bm() {
-    _months=('Zanwuye' 'Fewuriye' 'Marisi' 'Awirili' 'Mɛ' 'Zuwɛn' 'Zuluye' 'Uti' 'Sɛtanburu' 'ɔkutɔburu' 'Nowanbudu' 'Desanburu')
+    _months=('Zanwuye' 'Feburuye' 'Marisi' 'Awirili' 'Mɛ' 'Zuwɛn' 'Zuluye' 'Uti' 'Sɛtanburu' 'Ɔkutɔburu' 'Nowanburu' 'Desanburu')
     _weekdays=('Kari' 'Ntɛnɛn' 'Tarata' 'Araba' 'Alamisa' 'Juma' 'Sibiri')
     _day_format='{n}'
     _date_pattern='{day} {month}'
@@ -23,7 +23,7 @@ _sayabledate_locale_bm() {
     _this_weekday='{weekday} nin'
     _next_weekday='{weekday} nata'
     _last_weekday='{weekday} tɛmɛnen'
-    _short_months=('Zan' 'Few' 'Mar' 'Awi' 'Mɛ' 'Zuw' 'Zul' 'Uti' 'Sɛt' 'ɔku' 'Now' 'Des')
+    _short_months=('Zan' 'Feb' 'Mar' 'Awi' 'Mɛ' 'Zuw' 'Zul' 'Uti' 'Sɛt' 'Ɔku' 'Now' 'Des')
     _short_weekdays=('Kar' 'Ntɛ' 'Tar' 'Ara' 'Ala' 'Jum' 'Sib')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'

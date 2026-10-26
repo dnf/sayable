@@ -26,7 +26,7 @@ pub const locale_tk = AgeLocale{
 	week: simple_unit('{n} hepde')
 	month: simple_unit('{n} aý')
 	year: simple_unit('{n} ýaş')
-	half: '{0}½'
+	half: '{n} ýarym'
 	delimiter: ', '
 	just_born: 'Täze doglan'
 	newborn: stage_neutral('Täze doglan')
@@ -34,7 +34,7 @@ pub const locale_tk = AgeLocale{
 	toddler: stage_neutral('Kiçijik')
 	child: stage_neutral('Çaga')
 	teenager: stage_neutral('Ýetginjek')
-	adult: stage_neutral('Ulular')
+	adult: stage_neutral('Uly adam')
 	has_short: true
 	short_override: CompactnessOverride{
 		day: simple_unit('{n} g')

@@ -26,7 +26,7 @@ export const ha: DateLocale = {
   dayBeforeYesterday: 'shekaranjiya',
   thisWeekday: 'wannan {weekday}',
   nextWeekday: '{weekday} mai zuwa',
-  lastWeekday: '{weekday} da ya wuce',
+  lastWeekday: '{weekday} da ta wuce',
   short: {
     months: ['Jan', 'Fab', 'Mar', 'Afr', 'May', 'Yun', 'Yul', 'Agu', 'Sat', 'Okt', 'Nuw', 'Dis'],
     weekdays: ['Lah', 'Lit', 'Tal', 'Lar', 'Alh', 'Jum', 'Asa'],

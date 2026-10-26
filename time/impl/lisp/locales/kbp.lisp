@@ -20,7 +20,7 @@
     :hours (list "hiu nɛ naalɛ" "kʊɖʊm" "naalɛ" "naadozo" "naanaza" "kagbanzɩ" "loɖo" "lʊbɛ" "lɛɛtɛ" "nakʊ" "hiu" "hiu nɛ kʊɖʊm")
     :midnight "ɖoo hɛkʊ"
     :noon "wɩsɩ taa"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "ñɩɣyʊʊ {h}") (cons 5 "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ") (cons 10 "ñɩɣyʊʊ {h} nɛ miniti hiu") (cons 15 "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ") (cons 20 "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ") (cons 25 "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ") (cons 30 "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ") (cons 35 "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ") (cons 40 "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza") (cons 45 "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ") (cons 50 "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa") (cons 55 "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

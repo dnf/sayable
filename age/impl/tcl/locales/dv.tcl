@@ -21,7 +21,7 @@ proc locale_dv {} {
         month "{n} މަސް" \
         year "{n} އަހަރު" \
     ]
-    set half "{0} ބައި"
+    set half "{n}½"
     set delimiter {، }
     set just_born {އަލަށް އުފަންވި}
     set stages [dict create \

@@ -31,7 +31,7 @@ var KN = sd.DurationLocale{
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} ತಿಂಗಳು", sd.Other: "{n} ತಿಂಗಳುಗಳು"}),
 		Year:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} ವರ್ಷ", sd.Other: "{n} ವರ್ಷಗಳು"}),
 	},
-	Half:      "{0}ವರೆ",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustNow:   "ಈಗಷ್ಟೇ",
 	Ago:       "{0} ಹಿಂದೆ",

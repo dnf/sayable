@@ -18,23 +18,23 @@
    :code "uz"
    :months (list "yanvar" "fevral" "mart" "aprel" "may" "iyun" "iyul" "avgust" "sentabr" "oktabr" "noyabr" "dekabr")
    :weekdays (list "yakshanba" "dushanba" "seshanba" "chorshanba" "payshanba" "juma" "shanba")
-   :day-format "{n}"
+   :day-format "{n}-"
    :day-format-exceptions nil
-   :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern "{day}{month}"
+   :date-pattern-with-year "{day}{month}, {year}"
    :today "bugun"
    :tomorrow "ertaga"
    :yesterday "kecha"
    :day-after-tomorrow "indinga"
-   :day-before-yesterday "kechagina"
+   :day-before-yesterday "o'tgan kuni"
    :this-weekday "bu {weekday}"
    :next-weekday "keyingi {weekday}"
    :last-weekday "o'tgan {weekday}"
    :short-months (list "yan" "fev" "mar" "apr" "may" "iyn" "iyl" "avg" "sen" "okt" "noy" "dek")
    :short-weekdays (list "yak" "dush" "sesh" "chor" "pay" "jum" "shan")
-   :short-day-format "{n}"
-   :short-date-pattern "{day} {month}"
-   :short-date-pattern-with-year "{day} {month} {year}"
+   :short-day-format "{n}-"
+   :short-date-pattern "{day}{month}"
+   :short-date-pattern-with-year "{day}{month}, {year}"
    :compact-date-pattern "{d}/{m}"
    :compact-date-pattern-with-year "{d}/{m}/{yy}"
 ))

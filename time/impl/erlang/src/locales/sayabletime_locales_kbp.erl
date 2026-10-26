@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "kbp",
-        clock = #clock_config{hours = ["hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"], midnight = "ɖoo hɛkʊ", noon = "wɩsɩ taa", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"], midnight = "ɖoo hɛkʊ", noon = "wɩsɩ taa", patterns = [{0, "ñɩɣyʊʊ {h}"}, {5, "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ"}, {10, "ñɩɣyʊʊ {h} nɛ miniti hiu"}, {15, "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ"}, {20, "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ"}, {25, "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ"}, {30, "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ"}, {35, "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ"}, {40, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza"}, {45, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ"}, {50, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa"}, {55, "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

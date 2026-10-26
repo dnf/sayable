@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [fan.json](../../locales/fan.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort per orchestrator instruction. Additive 'awola {h}' (awola = hour/time, Bulu-Fang-Ewondo loan from 'hora') and 'awola {h} ai minit N' (ai = and/with; minit = minute loan). Minute numerals use the Fang tens pattern mewom + agreeing numeral (mewom mebú 20, mewom melaa 30, mewom menyin 40, mewom metán 50) with 'ai tán' for the fives, spelled to match the existing hours list ('awom mebú', 'aláa'). Specific doubts: (1) whether speakers say 'awola bè' or a plural 'mewola mebè' for hours >1; (2) 'minit' vs another loan or native word; (3) no half-word used, :30 is 'thirty minutes'; (4) the existing hours list itself is suspect ('abúi' normally means 'many'; Fang 2 is 'bɛ̀/bè') and was left untouched. Needs a Fang speaker's review.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | kie okúa            | 17/3     |
 | Day before yesterday | angogomé okúa       | 13/3     |
 | This Thursday (+5)   | Amvus-anyin ane     | 20/3     |
-| Last Monday (-4)     | Amvus-abé a ja      | 11/3     |
-| Next Wednesday (+12) | Amvus-anyin a bé za | 27/3     |
-| Same month (+20)     | 4 Nzas Angón        | 4/4      |
+| Last Tuesday (-4)    | Amvus-abé a ja      | 11/3     |
+| Next Thursday (+12)  | Amvus-anyin a bé za | 27/3     |
+| Same year (+20)      | 4 Nzas Angón        | 4/4      |
 | Different year       | 10 Nzas Ngon 2026   | 10/1/26  |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal        | Short    | Compact |
-| --------------- | ------------- | -------- | ------- |
-| Midnight        | akiri alúk    | 12:00 AM | 12:00a  |
-| 1:00 AM         | fóg:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | ebulú:05      | 9:05 AM  | 9:05a   |
-| Quarter past 10 | awom:15       | 10:15 AM | 10:15a  |
-| Half past 11    | awom mefóg:30 | 11:30 AM | 11:30a  |
-| Noon            | ewaŋ          | 12:00 PM | 12:00p  |
-| Quarter to 3    | abúi:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | atán:55       | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | mwom:00       | 8:00 PM  | 8:00p   |
-| 10:30 PM        | awom:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | akiri alúk    | 11:58 PM | 11:58p  |
+| Time            | Normal                                  | Short    | Compact |
+| --------------- | --------------------------------------- | -------- | ------- |
+| Midnight        | akiri alúk                              | 12:00 AM | 12:00a  |
+| 1:00 AM         | awola fóg                               | 1:00 AM  | 1:00a   |
+| 5 past 9        | awola ebulú ai minit tán                | 9:05 AM  | 9:05a   |
+| Quarter past 10 | awola awom ai minit awom ai tán         | 10:15 AM | 10:15a  |
+| Half past 11    | awola awom mefóg ai minit mewom melaa   | 11:30 AM | 11:30a  |
+| Noon            | ewaŋ                                    | 12:00 PM | 12:00p  |
+| Quarter to 3    | awola abúi ai minit mewom menyin ai tán | 2:45 PM  | 2:45p   |
+| 5 to 6          | awola atán ai minit mewom metán ai tán  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | awola mwom                              | 8:00 PM  | 8:00p   |
+| 10:30 PM        | awola awom ai minit mewom melaa         | 10:30 PM | 10:30p  |
+| 11:58 PM        | akiri alúk                              | 11:58 PM | 11:58p  |

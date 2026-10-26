@@ -1,15 +1,55 @@
 ## Tests for formatAge and formatStage — all canonical test cases from age/config/tests.json.
 
-import std/[unittest, options]
+import std/[unittest, options, times]
 import ../src/sayable_age/locale
 import ../src/sayable_age/formatter
 import ../src/sayable_age/locales/registry
 import ../src/sayable_age/locales/en
+import ../src/sayable_age/locales/es
 import ../src/sayable_age/locales/he
 import ../src/sayable_age/locales/mk
 import ../src/sayable_age/locales/sw
 import ../src/sayable_age/locales/id
 import ../src/sayable_age/locales/am
+
+
+# ================================================================
+# Default asOf (current date)
+# ================================================================
+# The library has no way to override "today", so these derive the input
+# from the real current date (UTC, as the library reads it).
+proc isoDate(d: DateTime): string =
+  d.format("yyyy-MM-dd")
+
+proc yearsAgo(years: int): string =
+  ## Same month and day `years` ago, clamped so Feb 29 stays a real date.
+  let today = now().utc
+  let year = today.year - years
+  let day = min(today.monthday, getDaysInMonth(today.month, year))
+  isoDate(dateTime(year, today.month, day, zone = utc()))
+
+suite "Default asOf (current date)":
+  let sa = newSayableAge(EN)
+
+  # 15.1
+  test "five years ago is 5 years":
+    check sa.formatAge(yearsAgo(5)) == some("5 years")
+
+  # 15.2
+  test "five days ago is 5 days":
+    check sa.formatAge(isoDate(now().utc - 5.days)) == some("5 days")
+
+  # 23.1
+  test "stage of today is Newborn":
+    check sa.formatStage(isoDate(now().utc)) == some("Newborn")
+
+  # 23.2
+  test "stage of five years ago is Child":
+    check sa.formatStage(yearsAgo(5)) == some("Child")
+
+  # 23.3
+  test "stage of forty-five years ago is Adult":
+    check sa.formatStage(yearsAgo(45)) == some("Adult")
 
 
 # ================================================================
@@ -622,7 +662,7 @@ suite "SayableAge English":
     check sa.formatAge("2022-06-15", "2025-12-15") == some("3\xC2\xBD years")
     check sa.formatAge("2018-06-15", "2025-06-15") == some("7 years")
 
-  # 24.8-24.13
+  # 24.8, 24.9, 24.10, 24.11, 24.12, 24.13
   test "formatStage delegates":
     let sa = newSayableAge(EN)
     check sa.formatStage("2025-06-15", "2025-06-15") == some("Newborn")
@@ -794,6 +834,172 @@ suite "Locale Amharic":
 
 
 # ================================================================
+# Section 25: i18n — locale with all plural features
+# ================================================================
+suite "Section 25: i18n — locale with all plural features":
+  # 25.1
+  test "25.1 es justBorn":
+    check newSayableAge(ES).formatAge("2025-06-15", "2025-06-15") == some("Reci\xC3\xA9n nacido")
+  # 25.2
+  test "25.2 es Singular day":
+    check newSayableAge(ES).formatAge("2025-06-14", "2025-06-15") == some("1 d\xC3\xADa")
+  # 25.3
+  test "25.3 es Plural days":
+    check newSayableAge(ES).formatAge("2025-06-12", "2025-06-15") == some("3 d\xC3\xADas")
+  # 25.4
+  test "25.4 es Singular week":
+    check newSayableAge(ES).formatAge("2025-06-08", "2025-06-15") == some("1 semana")
+  # 25.5
+  test "25.5 es Compound":
+    check newSayableAge(ES).formatAge("2025-06-07", "2025-06-15") == some("1 semana, 1 d\xC3\xADa")
+  # 25.6
+  test "25.6 es Plural compound":
+    check newSayableAge(ES).formatAge("2025-05-26", "2025-06-15") == some("2 semanas, 6 d\xC3\xADas")
+  # 25.7
+  test "25.7 es Months":
+    check newSayableAge(ES).formatAge("2025-01-15", "2025-07-15") == some("6 meses")
+  # 25.8
+  test "25.8 es Singular month":
+    check newSayableAge(ES).formatAge("2023-06-15", "2025-07-15") == some("2 a\xC3\xB1os, 1 mes")
+  # 25.9
+  test "25.9 es Years+months":
+    check newSayableAge(ES).formatAge("2023-06-15", "2025-12-15") == some("2 a\xC3\xB1os, 6 meses")
+  # 25.10
+  test "25.10 es Half marker":
+    check newSayableAge(ES).formatAge("2022-06-15", "2025-12-15") == some("3 a\xC3\xB1os y medio")
+  # 25.11
+  test "25.11 es No half":
+    check newSayableAge(ES).formatAge("2022-06-15", "2025-06-15") == some("3 a\xC3\xB1os")
+  # 25.12
+  test "25.12 es 7+ years":
+    check newSayableAge(ES).formatAge("2018-06-15", "2025-06-15") == some("7 a\xC3\xB1os")
+  # 25.13
+  test "25.13 es Stage label":
+    check newSayableAge(ES).formatStage("2025-06-15", "2025-06-15") == some("Reci\xC3\xA9n nacido")
+  # 25.14
+  test "25.14 es ":
+    check newSayableAge(ES).formatStage("2025-01-15", "2025-06-15") == some("Beb\xC3\xA9")
+  # 25.15
+  test "25.15 es ":
+    check newSayableAge(ES).formatStage("2024-06-15", "2025-06-15") == some("Ni\xC3\xB1o peque\xC3\xB1o")
+  # 25.16
+  test "25.16 es ":
+    check newSayableAge(ES).formatStage("2022-06-15", "2025-06-15") == some("Ni\xC3\xB1o")
+  # 25.17
+  test "25.17 es ":
+    check newSayableAge(ES).formatStage("2012-06-15", "2025-06-15") == some("Adolescente")
+  # 25.18
+  test "25.18 es ":
+    check newSayableAge(ES).formatStage("2007-06-15", "2025-06-15") == some("Adulto")
+  # 25.19
+  test "25.19 es Null handling":
+    check newSayableAge(ES).formatAge("", "2025-06-15") == none(string)
+  # 25.20
+  test "25.20 es Null handling":
+    check newSayableAge(ES).formatStage("", "2025-06-15") == none(string)
+
+# ================================================================
+# Section 29: Locale-specific edge cases — plural rules
+# ================================================================
+suite "Section 29: Locale-specific edge cases — plural rules":
+  # 29.2
+  test "29.2 he 1 day — one form":
+    check newSayableAge(HE).formatAge("2025-06-14", "2025-06-15") == some("\xD7\x99\xD7\x95\xD7\x9D")
+  # 29.3
+  test "29.3 he 3 days — other form":
+    check newSayableAge(HE).formatAge("2025-06-12", "2025-06-15") == some("3 \xD7\x99\xD7\x9E\xD7\x99\xD7\x9D")
+  # 29.5
+  test "29.5 he 3 weeks — other form":
+    check newSayableAge(HE).formatAge("2025-05-25", "2025-06-15") == some("3 \xD7\xA9\xD7\x91\xD7\x95\xD7\xA2\xD7\x95\xD7\xAA")
+  # 29.6
+  test "29.6 he 6 months — other":
+    check newSayableAge(HE).formatAge("2025-01-15", "2025-07-15") == some("6 \xD7\x97\xD7\x95\xD7\x93\xD7\xA9\xD7\x99\xD7\x9D")
+  # 29.7
+  test "29.7 he 3 months — other":
+    check newSayableAge(HE).formatAge("2025-03-15", "2025-06-15") == some("3 \xD7\x97\xD7\x95\xD7\x93\xD7\xA9\xD7\x99\xD7\x9D")
+  # 29.8
+  test "29.8 he 2y dual + 1m one":
+    check newSayableAge(HE).formatAge("2023-06-15", "2025-07-15") == some("\xD7\xA9\xD7\xA0\xD7\xAA\xD7\x99\xD7\x99\xD7\x9D, \xD7\x97\xD7\x95\xD7\x93\xD7\xA9")
+  # 29.9
+  test "29.9 he 3½ years — half marker":
+    check newSayableAge(HE).formatAge("2022-06-15", "2025-12-15") == some("3 \xD7\xA9\xD7\xA0\xD7\x99\xD7\x9D \xD7\x95\xD7\x97\xD7\xA6\xD7\x99")
+  # 29.10
+  test "29.10 he 7+ years — other":
+    check newSayableAge(HE).formatAge("2018-06-15", "2025-06-15") == some("7 \xD7\xA9\xD7\xA0\xD7\x99\xD7\x9D")
+  # 29.11
+  test "29.11 he masculine newborn":
+    check newSayableAge(HE).formatStage("2025-06-15", "2025-06-15", "m") == some("\xD7\xA8\xD7\xA7 \xD7\xA0\xD7\x95\xD7\x9C\xD7\x93")
+  # 29.12
+  test "29.12 he feminine newborn":
+    check newSayableAge(HE).formatStage("2025-06-15", "2025-06-15", "f") == some("\xD7\xA8\xD7\xA7 \xD7\xA0\xD7\x95\xD7\x9C\xD7\x93\xD7\x94")
+  # 29.13
+  test "29.13 he masculine adult":
+    check newSayableAge(HE).formatStage("2007-06-15", "2025-06-15", "m") == some("\xD7\x9E\xD7\x91\xD7\x95\xD7\x92\xD7\xA8")
+  # 29.14
+  test "29.14 he feminine adult":
+    check newSayableAge(HE).formatStage("2007-06-15", "2025-06-15", "f") == some("\xD7\x9E\xD7\x91\xD7\x95\xD7\x92\xD7\xA8\xD7\xAA")
+  # 29.16
+  test "29.16 mk 1 day — one":
+    check newSayableAge(MK).formatAge("2025-06-14", "2025-06-15") == some("1 \xD0\xB4\xD0\xB5\xD0\xBD")
+  # 29.17
+  test "29.17 mk 3 days — other":
+    check newSayableAge(MK).formatAge("2025-06-12", "2025-06-15") == some("3 \xD0\xB4\xD0\xB5\xD0\xBD\xD0\xB0")
+  # 29.18
+  test "29.18 mk 6 months — other":
+    check newSayableAge(MK).formatAge("2025-01-15", "2025-07-15") == some("6 \xD0\xBC\xD0\xB5\xD1\x81\xD0\xB5\xD1\x86\xD0\xB8")
+  # 29.19
+  test "29.19 mk 2y1m — one for month":
+    check newSayableAge(MK).formatAge("2023-06-15", "2025-07-15") == some("2 \xD0\xB3\xD0\xBE\xD0\xB4\xD0\xB8\xD0\xBD\xD0\xB8, 1 \xD0\xBC\xD0\xB5\xD1\x81\xD0\xB5\xD1\x86")
+  # 29.20
+  test "29.20 mk 3½ years — half marker":
+    check newSayableAge(MK).formatAge("2022-06-15", "2025-12-15") == some("3 \xD0\xB3\xD0\xBE\xD0\xB4\xD0\xB8\xD0\xBD\xD0\xB8 \xD0\xB8 \xD0\xBF\xD0\xBE\xD0\xBB")
+  # 29.21
+  test "29.21 mk 7+ years — other":
+    check newSayableAge(MK).formatAge("2018-06-15", "2025-06-15") == some("7 \xD0\xB3\xD0\xBE\xD0\xB4\xD0\xB8\xD0\xBD\xD0\xB8")
+  # 29.24
+  test "29.24 sw 3 days — other (same word)":
+    check newSayableAge(SW).formatAge("2025-06-12", "2025-06-15") == some("siku 3")
+  # 29.25
+  test "29.25 sw 6 months — other (noun class)":
+    check newSayableAge(SW).formatAge("2025-01-15", "2025-07-15") == some("miezi 6")
+  # 29.26
+  test "29.26 sw 2y other + 1m one":
+    check newSayableAge(SW).formatAge("2023-06-15", "2025-07-15") == some("miaka 2, mwezi 1")
+  # 29.27
+  test "29.27 sw 3½ years — half marker":
+    check newSayableAge(SW).formatAge("2022-06-15", "2025-12-15") == some("miaka 3 na nusu")
+  # 29.29
+  test "29.29 id 1 day":
+    check newSayableAge(ID).formatAge("2025-06-14", "2025-06-15") == some("1 hari")
+  # 29.30
+  test "29.30 id 3 days (same unit)":
+    check newSayableAge(ID).formatAge("2025-06-12", "2025-06-15") == some("3 hari")
+  # 29.31
+  test "29.31 id 6 months":
+    check newSayableAge(ID).formatAge("2025-01-15", "2025-07-15") == some("6 bulan")
+  # 29.32
+  test "29.32 id 3½ years — half marker":
+    check newSayableAge(ID).formatAge("2022-06-15", "2025-12-15") == some("3 setengah tahun")
+  # 29.33
+  test "29.33 id 7+ years":
+    check newSayableAge(ID).formatAge("2018-06-15", "2025-06-15") == some("7 tahun")
+  # 29.35
+  test "29.35 am 1 day — one form":
+    check newSayableAge(AM).formatAge("2025-06-14", "2025-06-15") == some("1 \xE1\x89\x80\xE1\x8A\x95")
+  # 29.36
+  test "29.36 am 3 days — other form":
+    check newSayableAge(AM).formatAge("2025-06-12", "2025-06-15") == some("3 \xE1\x89\x80\xE1\x8A\x93\xE1\x89\xB5")
+  # 29.37
+  test "29.37 am 1w1d with Ethiopic delimiter":
+    check newSayableAge(AM).formatAge("2025-06-07", "2025-06-15") == some("1 \xE1\x88\xB3\xE1\x88\x9D\xE1\x8A\x95\xE1\x89\xB5\xE1\x8D\xA3 1 \xE1\x89\x80\xE1\x8A\x95")
+  # 29.38
+  test "29.38 am 6 months — other form":
+    check newSayableAge(AM).formatAge("2025-01-15", "2025-07-15") == some("6 \xE1\x8B\x88\xE1\x88\xAB\xE1\x89\xB5")
+  # 29.39
+  test "29.39 am 3½ years — half marker":
+    check newSayableAge(AM).formatAge("2022-06-15", "2025-12-15") == some("3 \xE1\x8B\x93\xE1\x88\x98\xE1\x89\xB3\xE1\x89\xB5 \xE1\x89\xB0\xE1\x8A\xA9\xE1\x88\x8D")
+
+# ================================================================
 # Locale lookup
 # ================================================================
 suite "Locale lookup":
@@ -856,7 +1062,7 @@ suite "Section 32: Half years take their plural form from whole years":
 
   # 32.3
   test "32.3 Tachelhit 6 is 'few'":
-    check newSayableAge(getLocale("shi").get).formatAge("2005-06-08", "2012-06-07") == some("6 iseggasen d uzgen")
+    check newSayableAge(getLocale("shi").get).formatAge("2005-06-08", "2012-06-07") == some("6 \xE2\xB5\x89\xE2\xB5\x99\xE2\xB4\xB3\xE2\xB4\xB3\xE2\xB5\xAF\xE2\xB4\xB0\xE2\xB5\x99\xE2\xB5\x8F \xE2\xB4\xB7 \xE2\xB5\x93\xE2\xB5\xA3\xE2\xB4\xB3\xE2\xB5\x8F")
 
 
 # ================================================================

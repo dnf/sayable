@@ -21,17 +21,17 @@ const SduDurationLocale sdu_locale_shi = {
     "shi",
     plural_shi,
     {
-        { NULL, { NULL, "{n} tasint", NULL, "{n} tasinin", NULL, "{n} tasinin" } },
-        { NULL, { NULL, "{n} tusdiqt", NULL, "{n} tusdiqin", NULL, "{n} tusdiqin" } },
-        { NULL, { NULL, "{n} tasragt", NULL, "{n} tisragin", NULL, "{n} tisragin" } },
-        { NULL, { NULL, "{n} ass", NULL, "{n} ussan", NULL, "{n} ass" } },
-        { NULL, { NULL, "{n} imalass", NULL, "{n} imalassn", NULL, "{n} imalass" } },
-        { NULL, { NULL, "{n} ayyur", NULL, "{n} ayyurn", NULL, "{n} ayyur" } },
-        { NULL, { NULL, "{n} aseggas", NULL, "{n} iseggasen", NULL, "{n} aseggas" } }
+        { NULL, { NULL, "{n} ⵜⴰⵙⵉⵏⵜ", NULL, "{n} ⵜⵉⵙⵉⵏⵉⵏ", NULL, "{n} ⵜⵉⵙⵉⵏⵉⵏ" } },
+        { NULL, { NULL, "{n} ⵜⵓⵙⴷⵉⵇⵜ", NULL, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", NULL, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" } },
+        { NULL, { NULL, "{n} ⵜⴰⵙⵔⴰⴳⵜ", NULL, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", NULL, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" } },
+        { NULL, { NULL, "{n} ⴰⵙⵙ", NULL, "{n} ⵓⵙⵙⴰⵏ", NULL, "{n} ⴰⵙⵙ" } },
+        { NULL, { NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } },
+        { NULL, { NULL, "{n} ⴰⵢⵢⵓⵔ", NULL, "{n} ⴰⵢⵢⵓⵔⵏ", NULL, "{n} ⴰⵢⵢⵓⵔ" } },
+        { NULL, { NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ", NULL, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } }
     },
-    "{0} d uzgen", ", ",
-    "ɣilad",
-    "ɣ {0} zzrin", "ɣ {0}",
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "ɣ {0} zzrin", true, "ɣ {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "ɣ {0} zzrin", true, "ɣ {0}" }
+    "{0} ⴷ ⵓⵣⴳⵏ", ", ",
+    "ⵖⵉⵍⴰⴷ",
+    "ⵖ {0} ⵣⵣⵔⵉⵏ", "ⵖ {0}",
+    true, { true, { NULL, { NULL, "{n} ⵜⴰⵙⵉⵏⵜ", NULL, "{n} ⵜⵉⵙⵉⵏⵉⵏ", NULL, "{n} ⵜⵉⵙⵉⵏⵉⵏ" } }, true, { NULL, { NULL, "{n} ⵜⵓⵙⴷⵉⵇⵜ", NULL, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", NULL, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" } }, true, { NULL, { NULL, "{n} ⵜⴰⵙⵔⴰⴳⵜ", NULL, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ", NULL, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" } }, true, { NULL, { NULL, "{n} ⴰⵙⵙ", NULL, "{n} ⵓⵙⵙⴰⵏ", NULL, "{n} ⴰⵙⵙ" } }, true, { NULL, { NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ", NULL, "{n} ⵉⵎⴰⵍⴰⵙⵙ" } }, true, { NULL, { NULL, "{n} ⴰⵢⵢⵓⵔ", NULL, "{n} ⴰⵢⵢⵓⵔⵏ", NULL, "{n} ⴰⵢⵢⵓⵔ" } }, true, { NULL, { NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ", NULL, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ", NULL, "{n} ⴰⵙⴳⴳⵯⴰⵙ" } }, false, NULL, false, NULL, true, "ⵖ {0} ⵣⵣⵔⵉⵏ", true, "ⵖ {0}" },
+    true, { true, { "{n} ⵜⵙⵏ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⵜⵙⴷ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⵜⵙⵔ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⴰⵙⵙ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⵉⵎⵍ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⴰⵢⵔ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ⴰⵙⴳ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "ⵖ {0} ⵣⵣⵔⵉⵏ", true, "ⵖ {0}" }
 };

@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ak"
    :clock (make-clock-config
-    :hours (list "dumien" "baako" "mmienu" "mmiensa" "anan" "anum" "nsia" "nson" "nwɔtwe" "nkron" "edu" "dubaako")
-    :midnight "anadwo"
-    :noon "awia"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :hours (list "dumienu" "baako" "mmienu" "mmiensa" "anan" "anum" "nsia" "nson" "nwɔtwe" "nkron" "edu" "dubaako")
+    :midnight "ɔdasuom"
+    :noon "owigyinae"
+    :patterns (list (cons 0 "nnɔn {h}") (cons 5 "nnɔn {h} ne sima anum") (cons 10 "nnɔn {h} ne sima edu") (cons 15 "nnɔn {h} ne sima dunum") (cons 20 "nnɔn {h} ne sima aduonu") (cons 25 "nnɔn {h} ne sima aduonu num") (cons 30 "nnɔn {h} ne fa") (cons 35 "aka sima aduonu num na abɔ nnɔn {next_h}") (cons 40 "aka sima aduonu na abɔ nnɔn {next_h}") (cons 45 "aka sima dunum na abɔ nnɔn {next_h}") (cons 50 "aka sima edu na abɔ nnɔn {next_h}") (cons 55 "aka sima anum na abɔ nnɔn {next_h}")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

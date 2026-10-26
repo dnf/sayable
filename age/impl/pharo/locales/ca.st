@@ -23,7 +23,7 @@ ca
 		'month'. (Dictionary newFromPairs: { #one. '{n} mes'. #other. '{n} mesos' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} any'. #other. '{n} anys' }).
 	}).
-	locale half: '{n} i mig'.
+	locale half: '{0} i mig'.
 	locale delimiter: ', '.
 	locale justBorn: 'Nounat'.
 	locale stages: (Dictionary newFromPairs: {

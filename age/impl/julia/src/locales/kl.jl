@@ -13,12 +13,12 @@
 
 const KL = AgeLocale(
     code = "kl",
-    plural = _ -> "other",
+    plural = n -> n == 1 ? "one" : "other",
     units = Dict(
-        "day" => "ullut {n}",
-        "week" => "sapaatit {n}",
-        "month" => "qaammatit {n}",
-        "year" => "ukiut {n}",
+        "day" => Dict("one" => "ulloq {n}", "other" => "ullut {n}"),
+        "week" => Dict("one" => "sapaatip akunnera {n}", "other" => "sapaatip akunneri {n}"),
+        "month" => Dict("one" => "qaammat {n}", "other" => "qaammatit {n}"),
+        "year" => Dict("one" => "ukioq {n}", "other" => "ukiut {n}"),
     ),
     half = "{0} affaa",
     delimiter = ", ",
@@ -34,7 +34,7 @@ const KL = AgeLocale(
     short_override = CompactnessOverride(
         units = Dict(
             "day" => "ull. {n}",
-            "week" => "sap. {n}",
+            "week" => "sap. ak. {n}",
             "month" => "qaam. {n}",
             "year" => "uk. {n}",
         ),
@@ -46,6 +46,7 @@ const KL = AgeLocale(
             "month" => "{n}m",
             "year" => "{n}y",
         ),
+        half = "{n}½",
         delimiter = "",
     ),
 )

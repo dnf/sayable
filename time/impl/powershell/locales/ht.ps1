@@ -10,17 +10,17 @@
 # Source: locales/ht.json
 
 function locale_ht {
-    $hours = @('douz', 'en', 'de', 'twa', 'kat', 'senk', 'sis', 'sèt', 'uit', 'nèf', 'dis', 'onz')
-    $midnight = 'minui'
+    $hours = @('douzè', 'inè', 'dezè', 'twazè', 'katrè', 'senkè', 'sizè', 'setè', 'uitè', 'nevè', 'dizè', 'onzè')
+    $midnight = 'minwi'
     $noon = 'midi'
     $patterns = @{}
-    $patterns[0] = '{h} è'
-    $patterns[5] = '{h} è senk'
-    $patterns[10] = '{h} è dis'
-    $patterns[15] = '{h} è ka'
-    $patterns[20] = '{h} è ven'
-    $patterns[25] = '{h} è vennsenk'
-    $patterns[30] = '{h} è demi'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} senk'
+    $patterns[10] = '{h} dis'
+    $patterns[15] = '{h} e ka'
+    $patterns[20] = '{h} ven'
+    $patterns[25] = '{h} vennsenk'
+    $patterns[30] = '{h} edmi'
     $patterns[35] = '{next_h} mwen vennsenk'
     $patterns[40] = '{next_h} mwen ven'
     $patterns[45] = '{next_h} mwen ka'

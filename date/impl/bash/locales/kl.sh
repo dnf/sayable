@@ -14,7 +14,7 @@ _sayabledate_locale_kl() {
     _weekdays=('sapaat' 'ataasinngorneq' 'marlunngorneq' 'pingasunngorneq' 'sisamanngorneq' 'tallimanngorneq' 'arfininngorneq')
     _day_format='{n}.'
     _date_pattern='{month} {day}'
-    _date_pattern_with_year='{day} {month} {year}'
+    _date_pattern_with_year='{month} {day} {year}'
     _today='ullumi'
     _tomorrow='aqagu'
     _yesterday='ippassaq'
@@ -27,7 +27,7 @@ _sayabledate_locale_kl() {
     _short_weekdays=('sap' 'ata' 'mar' 'pin' 'sis' 'tal' 'arf')
     _short_day_format='{n}.'
     _short_date_pattern='{month} {day}'
-    _short_date_pattern_with_year='{day} {month} {year}'
+    _short_date_pattern_with_year='{month} {day} {year}'
     _compact_date_pattern='{m}-{d}'
     _compact_date_pattern_with_year='{year}-{m}-{d}'
 }

@@ -55,13 +55,34 @@ pub fn locale() -> DurationLocale {
         ago: "ɣ {0} zzrin".to_string(),
         in_future: "ɣ {0}".to_string(),
         short: Some(CompactnessOverride {
-            second: Some(UnitForms::simple("{n}s")),
-            minute: Some(UnitForms::simple("{n}m")),
-            hour: Some(UnitForms::simple("{n}h")),
-            day: Some(UnitForms::simple("{n}d")),
-            week: Some(UnitForms::simple("{n}w")),
-            month: Some(UnitForms::simple("{n}mo")),
-            year: Some(UnitForms::simple("{n}y")),
+            second: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} tasint"),
+                (PluralCategory::Other, "{n} tisinin"),
+            ])),
+            minute: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} tusdiqt"),
+                (PluralCategory::Other, "{n} tusdiqin"),
+            ])),
+            hour: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} tasragt"),
+                (PluralCategory::Other, "{n} tisragin"),
+            ])),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ass"),
+                (PluralCategory::Other, "{n} ussan"),
+            ])),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} imalass"),
+                (PluralCategory::Other, "{n} imalassn"),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ayyur"),
+                (PluralCategory::Other, "{n} ayyurn"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} aseggas"),
+                (PluralCategory::Other, "{n} iseggasen"),
+            ])),
             half: None,
             delimiter: None,
             ago: Some("ɣ {0} zzrin".to_string()),

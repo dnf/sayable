@@ -15,7 +15,7 @@
   {:code "mr"
    :plural (fn [n] (if (== n 1) :one :other))
    :second {:type :simple :form "{n} सेकंद"}
-   :minute {:type :simple :form "{n} मिनिट"}
+   :minute {:type :pluralized :forms {:one "{n} मिनिट" :other "{n} मिनिटे"}}
    :hour {:type :simple :form "{n} तास"}
    :day {:type :pluralized :forms {:one "{n} दिवस" :other "{n} दिवस"}}
    :week {:type :pluralized :forms {:one "{n} आठवडा" :other "{n} आठवडे"}}

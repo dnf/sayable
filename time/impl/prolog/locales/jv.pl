@@ -13,20 +13,20 @@
 
 st_hours('jv', ['rolas', 'siji', 'loro', 'telu', 'papat', 'lima', 'enem', 'pitu', 'wolu', 'sanga', 'sepuluh', 'sewelas']).
 st_midnight('jv', 'tengah wengi').
-st_noon('jv', 'awan').
+st_noon('jv', 'tengah awan').
 
-st_pattern('jv', 0, '{h}:00').
-st_pattern('jv', 5, '{h}:05').
-st_pattern('jv', 10, '{h}:10').
-st_pattern('jv', 15, '{h}:15').
-st_pattern('jv', 20, '{h}:20').
-st_pattern('jv', 25, '{h}:25').
-st_pattern('jv', 30, '{h}:30').
-st_pattern('jv', 35, '{h}:35').
-st_pattern('jv', 40, '{h}:40').
-st_pattern('jv', 45, '{h}:45').
-st_pattern('jv', 50, '{h}:50').
-st_pattern('jv', 55, '{h}:55').
+st_pattern('jv', 0, 'jam {h}').
+st_pattern('jv', 5, 'jam {h} luwih limang menit').
+st_pattern('jv', 10, 'jam {h} luwih sepuluh menit').
+st_pattern('jv', 15, 'jam {h} luwih seprapat').
+st_pattern('jv', 20, 'jam {h} luwih rong puluh menit').
+st_pattern('jv', 25, 'jam {h} luwih selawé menit').
+st_pattern('jv', 30, 'jam setengah {next_h}').
+st_pattern('jv', 35, 'jam {next_h} kurang selawé menit').
+st_pattern('jv', 40, 'jam {next_h} kurang rong puluh menit').
+st_pattern('jv', 45, 'jam {next_h} kurang seprapat').
+st_pattern('jv', 50, 'jam {next_h} kurang sepuluh menit').
+st_pattern('jv', 55, 'jam {next_h} kurang limang menit').
 
 short_st_use24h('jv', true).
 short_st_format('jv', '{h}:{mm}').

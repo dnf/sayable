@@ -42,9 +42,9 @@ pub fn locale() -> AgeLocale {
         },
         half: "{0} e gjysmë".to_string(),
         delimiter: ", ".to_string(),
-        just_born: "Sapolindur".to_string(),
+        just_born: "I sapolindur".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Sapolindur".to_string(), f: "Sapolindure".to_string() },
+            newborn: StageLabel::Gendered { m: "I sapolindur".to_string(), f: "E sapolindur".to_string() },
             infant: StageLabel::Neutral("Foshnjë".to_string()),
             toddler: StageLabel::Gendered { m: "Fëmijë i vogël".to_string(), f: "Fëmijë e vogël".to_string() },
             child: StageLabel::Neutral("Fëmijë".to_string()),

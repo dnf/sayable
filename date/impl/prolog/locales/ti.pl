@@ -23,7 +23,7 @@ sd_tomorrow('ti', 'ጽባሕ').
 sd_yesterday('ti', 'ትማሊ').
 sd_day_after_tomorrow('ti', 'ድሕሪ ጽባሕ').
 sd_day_before_yesterday('ti', 'ቅድሚ ትማሊ').
-sd_this_weekday('ti', 'እዛ {weekday}').
+sd_this_weekday('ti', 'እዚ {weekday}').
 sd_next_weekday('ti', 'ዝመጽእ {weekday}').
 sd_last_weekday('ti', 'ዝሓለፈ {weekday}').
 

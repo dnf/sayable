@@ -17,10 +17,10 @@
   (make-time-locale
    :code "kpe"
    :clock (make-clock-config
-    :hours (list "puu lɔŋ" "tɔŋ" "feere" "sawa" "naŋ" "lɔɔlu" "mɛi da tɔŋ" "mɛi da feere" "mɛi da sawa" "mɛi da naŋ" "puu" "puu da tɔŋ")
+    :hours (list "puu da feere" "tɔŋ" "feere" "sawa" "naŋ" "lɔɔlu" "mɛi da tɔŋ" "mɛi da feere" "mɛi da sawa" "mɛi da naŋ" "puu" "puu da tɔŋ")
     :midnight "kpindi kɔlɛ"
     :noon "tili-ma"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "awa {h}") (cons 5 "awa {h} da miniti lɔɔlu") (cons 10 "awa {h} da miniti puu") (cons 15 "awa {h} da miniti puu da lɔɔlu") (cons 20 "awa {h} da miniti puu feere") (cons 25 "awa {h} da miniti puu feere da lɔɔlu") (cons 30 "awa {h} da miniti puu sawa") (cons 35 "awa {h} da miniti puu sawa da lɔɔlu") (cons 40 "awa {h} da miniti puu naŋ") (cons 45 "awa {h} da miniti puu naŋ da lɔɔlu") (cons 50 "awa {h} da miniti puu lɔɔlu") (cons 55 "awa {h} da miniti puu lɔɔlu da lɔɔlu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

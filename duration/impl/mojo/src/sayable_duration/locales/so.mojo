@@ -27,13 +27,13 @@ fn build_so() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = plural_unit(one="ilbiriqsi {n}", other="ilbiriqsiyaal {n}")
-    var minute = plural_unit(one="daqiiqad {n}", other="daqiiqadood {n}")
-    var hour = plural_unit(one="saacad {n}", other="saacadood {n}")
-    var day = plural_unit(one="maalin {n}", other="maalmood {n}")
-    var week = plural_unit(one="toddobaad {n}", other="toddobaadyo {n}")
-    var month = plural_unit(one="bil {n}", other="bilood {n}")
-    var year = plural_unit(one="sano {n}", other="sanooyin {n}")
+    var second = simple_unit("{n} ilbiriqsi")
+    var minute = plural_unit(one="{n} daqiiqad", other="{n} daqiiqo")
+    var hour = plural_unit(one="{n} saacad", other="{n} saacadood")
+    var day = plural_unit(one="{n} maalin", other="{n} maalmood")
+    var week = simple_unit("{n} toddobaad")
+    var month = plural_unit(one="{n} bil", other="{n} bilood")
+    var year = simple_unit("{n} sano")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("ilb {n}")

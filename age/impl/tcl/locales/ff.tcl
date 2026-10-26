@@ -30,12 +30,12 @@ proc locale_ff {} {
         infant {Ɓinngel} \
         toddler {Cukalel} \
         child {Suka} \
-        teenager {Suka debbo} \
+        teenager [dict create m {Suka gorko} f {Suka debbo}] \
         adult {Mawɗo} \
     ]
     set short [dict create \
         units [dict create \
-            day "ñalɗe {n}" \
+            day [dict create one "ñalawma {n}" other "ñalɗe {n}"] \
             week [dict create one "yontere {n}" other "yontereeji {n}"] \
             month [dict create one "lewru {n}" other "lebbi {n}"] \
             year [dict create one "hitaande {n}" other "duuɓi {n}"] \
@@ -43,7 +43,7 @@ proc locale_ff {} {
     ]
     set compact [dict create \
         units [dict create \
-            day "ñalɗe {n}" \
+            day [dict create one "ñalawma {n}" other "ñalɗe {n}"] \
             week [dict create one "yont {n}" other "yontji {n}"] \
             month [dict create one "lew {n}" other "leb {n}"] \
             year [dict create one "hit {n}" other "duuɓi {n}"] \

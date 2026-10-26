@@ -17,7 +17,7 @@ const StTimeLocale st_locale_qu = {
         { "chunka iskayniyuq", "huk", "iskay", "kimsa", "tawa", "pichqa", "suqta", "qanchis", "pusaq", "isqun", "chunka", "chunka hukniyuq" },
         "chawpi tuta",
         "chawpi p'unchaw",
-        { "{h}", "{h} pichqa", "{h} chunka", "{h} chunka pichqayuq", "{h} iskay chunka", "{h} iskay chunka pichqayuq", "{h} kimsa chunka", "{next_h} mana iskay chunka pichqayuq", "{next_h} mana iskay chunka", "{next_h} mana chunka pichqayuq", "{next_h} mana chunka", "{next_h} mana pichqa" }
+        { "{h} ura", "{h} ura pichqa", "{h} ura chunka", "{h} ura chunka pichqayuq", "{h} ura iskay chunka", "{h} ura iskay chunka pichqayuq", "{h} ura kimsa chunka", "{h} ura kimsa chunka pichqayuq", "{h} ura tawa chunka", "{h} ura tawa chunka pichqayuq", "{h} ura pichqa chunka", "{h} ura pichqa chunka pichqayuq" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -38,4 +38,5 @@ compact_sa_unit('hmn', day, _, '{n}d').
 compact_sa_unit('hmn', week, _, '{n}w').
 compact_sa_unit('hmn', month, _, '{n}m').
 compact_sa_unit('hmn', year, _, '{n}y').
+compact_sa_half('hmn', '{n}½').
 compact_sa_delimiter('hmn', '').

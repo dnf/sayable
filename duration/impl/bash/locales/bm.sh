@@ -25,7 +25,7 @@ _sayableduration_locale_bm() {
     _delimiter=', '
     _just_now='sisan'
     _ago='{0} bɔlen'
-    _in_future='ka {0}'
+    _in_future='{0} kɔnɔ'
     _short_unit_second='sek. {n}'
     _short_unit_minute='min. {n}'
     _short_unit_hour='lɛr. {n}'
@@ -34,7 +34,7 @@ _sayableduration_locale_bm() {
     _short_unit_month='kalo {n}'
     _short_unit_year='san {n}'
     _short_ago='{0} bɔlen'
-    _short_in_future='ka {0}'
+    _short_in_future='{0} kɔnɔ'
     _compact_unit_second='sek {n}'
     _compact_unit_minute='min {n}'
     _compact_unit_hour='lɛr {n}'
@@ -45,6 +45,6 @@ _sayableduration_locale_bm() {
     _compact_half='{n}½'
     _compact_delimiter=''
     _compact_ago='{0} bɔlen'
-    _compact_in_future='ka {0}'
+    _compact_in_future='{0} kɔnɔ'
     _plural_func=_sayableduration_plural_bm
 }

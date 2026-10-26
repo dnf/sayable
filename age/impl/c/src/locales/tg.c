@@ -25,7 +25,7 @@ const SaLocale sa_locale_tg = {
         { "{n} моҳ", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} сол", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0} ним", ", ", "Навзод",
+    "{0}у ним", ", ", "Навзод",
     {
         { "Навзод", "" },
         { "Тифл", "" },

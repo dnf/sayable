@@ -21,10 +21,10 @@
   (time-locale
    "ha"
    (clock-config
-    (list "sha biyu" "ɗaya" "biyu" "uku" "huɗu" "biyar" "shida" "bakwai" "takwas" "tara" "goma" "goma sha ɗaya")
+    (list "sha biyu" "ɗaya" "biyu" "uku" "huɗu" "biyar" "shida" "bakwai" "takwas" "tara" "goma" "sha ɗaya")
     "tsakar dare"
     "tsakar rana"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (hash 0 "ƙarfe {h}" 5 "ƙarfe {h} da minti biyar" 10 "ƙarfe {h} da minti goma" 15 "ƙarfe {h} da kwata" 20 "ƙarfe {h} da minti ashirin" 25 "ƙarfe {h} da minti ashirin da biyar" 30 "ƙarfe {h} da rabi" 35 "ƙarfe {next_h} saura minti ashirin da biyar" 40 "ƙarfe {next_h} saura minti ashirin" 45 "ƙarfe {next_h} saura kwata" 50 "ƙarfe {next_h} saura minti goma" 55 "ƙarfe {next_h} saura minti biyar"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

@@ -28,8 +28,8 @@
    :day-after-tomorrow "пасфардо"
    :day-before-yesterday "парирӯз"
    :this-weekday "ин {weekday}"
-   :next-weekday "{weekday}-и оянда"
-   :last-weekday "{weekday}-и гузашта"
+   :next-weekday "{weekday}и оянда"
+   :last-weekday "{weekday}и гузашта"
    :short-months (list "Янв" "Фев" "Мар" "Апр" "Май" "Июн" "Июл" "Авг" "Сен" "Окт" "Ноя" "Дек")
    :short-weekdays (list "Яш" "Дш" "Сш" "Чш" "Пш" "Ҷм" "Шб")
    :short-day-format "{n}"

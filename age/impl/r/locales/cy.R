@@ -22,10 +22,10 @@ locale_cy <- list(
   code = "cy",
   plural = plural,
   units = list(
-    day = list(zero = "{n} diwrnod", one = "{n} diwrnod", two = "{n} ddiwrnod", few = "{n} diwrnod", many = "{n} niwrnod", other = "{n} diwrnod"),
+    day = list(zero = "{n} diwrnod", one = "{n} diwrnod", two = "{n} ddiwrnod", few = "{n} diwrnod", many = "{n} diwrnod", other = "{n} diwrnod"),
     week = list(zero = "{n} wythnos", one = "{n} wythnos", two = "{n} wythnos", few = "{n} wythnos", many = "{n} wythnos", other = "{n} wythnos"),
     month = list(zero = "{n} mis", one = "{n} mis", two = "{n} fis", few = "{n} mis", many = "{n} mis", other = "{n} mis"),
-    year = list(zero = "{n} blwyddyn", one = "{n} blwyddyn", two = "{n} flynedd", few = "{n} blynedd", many = "{n} blynedd", other = "{n} blynedd")
+    year = list(zero = "{n} blwyddyn", one = "{n} flwyddyn", two = "{n} flynedd", few = "{n} blynedd", many = "{n} blynedd", other = "{n} blynedd")
   ),
   half = "{0} a hanner",
   delimiter = ", ",

@@ -20,7 +20,7 @@
     :hours (list "двенадцать" "час" "два" "три" "четыре" "пять" "шесть" "семь" "восемь" "девять" "десять" "одиннадцать")
     :midnight "полночь"
     :noon "полдень"
-    :patterns (list (cons 0 "{h} часа") (cons 5 "пять po {h}") (cons 10 "десять po {h}") (cons 15 "пятнадцать po {h}") (cons 20 "двадцать po {h}") (cons 25 "двадцать пять po {h}") (cons 30 "тридцать po {h}") (cons 35 "двадцать пять do {next_h}") (cons 40 "двадцать do {next_h}") (cons 45 "пятнадцать do {next_h}") (cons 50 "десять do {next_h}") (cons 55 "пять do {next_h}")))
+    :patterns (list (cons 0 "ровно {h}") (cons 5 "{h} ноль пять") (cons 10 "{h} десять") (cons 15 "{h} пятнадцать") (cons 20 "{h} двадцать") (cons 25 "{h} двадцать пять") (cons 30 "{h} тридцать") (cons 35 "без двадцати пяти {next_h}") (cons 40 "без двадцати {next_h}") (cons 45 "без четверти {next_h}") (cons 50 "без десяти {next_h}") (cons 55 "без пяти {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

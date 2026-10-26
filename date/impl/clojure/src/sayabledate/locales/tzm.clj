@@ -13,20 +13,20 @@
 
 (def locale
   {:code "tzm"
-   :months ["ⵉⵏⵏⴰⵢⵔ" "ⴱⵕⴰⵢⵕ" "ⵎⴰⵕⵚ" "ⵉⴱⵔⵉⵔ" "ⵎⴰⵢⵢⵓ" "ⵢⵓⵏⵢⵓ" "ⵢⵓⵍⵢⵓⵣ" "ⵖⵓⵛⵜ" "ⵛⵓⵜⴰⵏⴱⵉⵔ" "ⴽⵜⵓⴱⵔ" "ⵏⵓⵡⴰⵏⴱⵉⵔ" "ⴷⵓⵊⴰⵏⴱⵉⵔ"]
-   :weekdays ["ⴰⵙⴰⵎⴰⵙ" "ⴰⵢⵏⴰⵙ" "ⴰⵙⵉⵏⴰⵙ" "ⴰⴽⵕⴰⵙ" "ⴰⴽⵡⴰⵙ" "ⴰⵙⵉⵎⵡⴰⵙ" "ⴰⵙⵉⴹⵢⴰⵙ"]
+   :months ["Yennayer" "Yebrayer" "Mars" "Ibrir" "Mayyu" "Yunyu" "Yulyuz" "Ɣuct" "Cutanbir" "Kṭuber" "Nwanbir" "Dujanbir"]
+   :weekdays ["Asamas" "Aynas" "Asinas" "Akras" "Akwas" "Asimwas" "Asiḍyas"]
    :day-format "{n}"
    :day-format-exceptions {}
    :date-pattern "{day} {month}"
    :date-pattern-with-year "{day} {month} {year}"
-   :today "ⴰⵙⵙⴰ"
-   :tomorrow "ⴰⵙⴽⴽⴰ"
-   :yesterday "ⵉⴹⵍⵍⵉ"
+   :today "Assa"
+   :tomorrow "Asekka"
+   :yesterday "Assenaṭ"
    :day-after-tomorrow nil
    :day-before-yesterday nil
-   :this-weekday "{weekday} ⴰⴷ"
-   :next-weekday "{weekday} ⴷ ⵉⴷⴷⴰⵏ"
-   :last-weekday "{weekday} ⵉⵣⵔⵉⵏ"
+   :this-weekday "{weekday} ad"
+   :next-weekday "{weekday} d iddan"
+   :last-weekday "{weekday} izrin"
    :months-in-date nil
-   :short {:months ["ⵉⵏⵏ" "ⴱⵕⴰ" "ⵎⴰⵕ" "ⵉⴱⵔ" "ⵎⴰⵢ" "ⵢⵓⵏ" "ⵢⵓⵍ" "ⵖⵓⵛ" "ⵛⵓⵜ" "ⴽⵜⵓ" "ⵏⵓⵡ" "ⴷⵓⵊ"] :months-in-date nil :weekdays ["ⴰⵙⴰ" "ⴰⵢⵏ" "ⴰⵙⵉ" "ⴰⴽⵕ" "ⴰⴽⵡ" "ⴰⵙⵉⵎ" "ⴰⵙⵉⴹ"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["Yen" "Yeb" "Mar" "Ibr" "May" "Yun" "Yul" "Ɣuc" "Cut" "Kṭu" "Nwa" "Duj"] :months-in-date nil :weekdays ["Asa" "Ayn" "Asn" "Akr" "Akw" "Asm" "Asḍ"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

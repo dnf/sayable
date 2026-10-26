@@ -26,7 +26,7 @@
                (cons :year "{n} taun"))
    :half "{0} setengah"
    :delimiter ", "
-   :just-now "saiki"
+   :just-now "lagi waé"
    :ago "{0} kepungkur"
    :in-future "ing {0}"
    :short-units (list (cons :second "{n} dtk")

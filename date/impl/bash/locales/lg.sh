@@ -19,7 +19,7 @@ _sayabledate_locale_lg() {
     _tomorrow='enkya'
     _yesterday='jjo'
     _day_after_tomorrow='enkya ogwa'
-    _day_before_yesterday='jjo edda'
+    _day_before_yesterday='jjuuzi'
     _this_weekday='{weekday} eno'
     _next_weekday='{weekday} eddirira'
     _last_weekday='{weekday} eggudde'

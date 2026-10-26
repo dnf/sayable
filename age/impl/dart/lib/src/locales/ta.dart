@@ -22,7 +22,7 @@ final ta = AgeLocale(
   week: pluralUnit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வாரங்கள்'}),
   month: pluralUnit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாதங்கள்'}),
   year: pluralUnit({PluralCategory.one: '{n} வயது', PluralCategory.other: '{n} வயது'}),
-  half: '{0}ரை',
+  half: '{n}½',
   delimiter: ', ',
   justBorn: 'பிறந்த குழந்தை',
   newborn: stageNeutral('பிறந்த குழந்தை'),

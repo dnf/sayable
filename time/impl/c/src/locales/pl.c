@@ -17,7 +17,7 @@ const StTimeLocale st_locale_pl = {
         { "dwunasta", "pierwsza", "druga", "trzecia", "czwarta", "piąta", "szósta", "siódma", "ósma", "dziewiąta", "dziesiąta", "jedenasta" },
         "północ",
         "południe",
-        { "{h}", "pięć po {h}", "dziesięć po {h}", "piętnaście po {h}", "dwadzieścia po {h}", "dwadzieścia pięć po {h}", "trzydzieści po {h}", "dwadzieścia pięć do {next_h}", "dwadzieścia do {next_h}", "piętnaście do {next_h}", "dziesięć do {next_h}", "pięć do {next_h}" }
+        { "{h}", "{h} pięć", "{h} dziesięć", "{h} piętnaście", "{h} dwadzieścia", "{h} dwadzieścia pięć", "{h} trzydzieści", "za dwadzieścia pięć {next_h}", "za dwadzieścia {next_h}", "za kwadrans {next_h}", "za dziesięć {next_h}", "za pięć {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

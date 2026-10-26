@@ -27,10 +27,10 @@ class LOLocale {
   static tomorrow { "ມື້ອື່ນ" }
   static yesterday { "ມື້ວານ" }
   static dayAfterTomorrow { "ມື້ຮື" }
-  static dayBeforeYesterday { "ມື້ກ່ອນ" }
+  static dayBeforeYesterday { "ມື້ຊືນ" }
   static thisWeekday { "{weekday}ນີ້" }
   static nextWeekday { "{weekday}ໜ້າ" }
-  static lastWeekday { "{weekday}ແລ້ວ" }
+  static lastWeekday { "{weekday}ທີ່ແລ້ວ" }
   static monthsInDate { null }
   static short {
     return {

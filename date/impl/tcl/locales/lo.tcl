@@ -21,10 +21,10 @@ proc locale_date_lo {} {
     set tomorrow {ມື້ອື່ນ}
     set yesterday {ມື້ວານ}
     set day_after_tomorrow {ມື້ຮື}
-    set day_before_yesterday {ມື້ກ່ອນ}
+    set day_before_yesterday {ມື້ຊືນ}
     set this_weekday "{weekday}ນີ້"
     set next_weekday "{weekday}ໜ້າ"
-    set last_weekday "{weekday}ແລ້ວ"
+    set last_weekday "{weekday}ທີ່ແລ້ວ"
     set months_in_date ""
     set short [dict create \
         months [list {ມ.ກ.} {ກ.ພ.} {ມ.ນ.} {ມ.ສ.} {ພ.ພ.} {ມ.ຖ.} {ກ.ລ.} {ສ.ຫ.} {ກ.ຍ.} {ຕ.ລ.} {ພ.ຈ.} {ທ.ວ.}] \

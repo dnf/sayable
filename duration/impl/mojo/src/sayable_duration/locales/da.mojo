@@ -90,7 +90,7 @@ fn build_da() -> DurationLocale:
         half="{n}½",
         delimiter=", ",
         just_now="lige nu",
-        ago="{0} siden",
+        ago="for {0} siden",
         in_future="om {0}",
         short_override=short_ovr,
         has_short=True,

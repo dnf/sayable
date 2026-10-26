@@ -15,10 +15,10 @@
   {:code "lt"
    :months ["sausis" "vasaris" "kovas" "balandis" "gegužė" "birželis" "liepa" "rugpjūtis" "rugsėjis" "spalis" "lapkritis" "gruodis"]
    :weekdays ["sekmadienis" "pirmadienis" "antradienis" "trečiadienis" "ketvirtadienis" "penktadienis" "šeštadienis"]
-   :day-format "{n}."
+   :day-format "{n} d."
    :day-format-exceptions {}
-   :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern "{month} {day}"
+   :date-pattern-with-year "{year} m. {month} {day}"
    :today "šiandien"
    :tomorrow "rytoj"
    :yesterday "vakar"
@@ -28,5 +28,5 @@
    :next-weekday "kitą {weekday}"
    :last-weekday "praėjusį {weekday}"
    :months-in-date ["sausio" "vasario" "kovo" "balandžio" "gegužės" "birželio" "liepos" "rugpjūčio" "rugsėjo" "spalio" "lapkričio" "gruodžio"]
-   :short {:months ["saus" "vas" "kov" "bal" "geg" "birž" "liep" "rugp" "rugs" "spal" "lapkr" "gruod"] :months-in-date nil :weekdays ["sk" "pr" "an" "tr" "kt" "pn" "št"] :day-format "{n}." :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["saus" "vas" "kov" "bal" "geg" "birž" "liep" "rugp" "rugs" "spal" "lapkr" "gruod"] :months-in-date nil :weekdays ["sk" "pr" "an" "tr" "kt" "pn" "št"] :day-format "{n} d." :day-format-exceptions nil :date-pattern "{month} {day}" :date-pattern-with-year "{year} m. {month} {day}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{m}-{d}" :date-pattern-with-year "{yy}-{m}-{d}" :today nil :tomorrow nil :yesterday nil}})

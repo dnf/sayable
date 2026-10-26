@@ -30,7 +30,7 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} vika" "other" "{n} vikur"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} mánuður" "other" "{n} mánuðir"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} ár" "other" "{n} ár")))
-   "{0} og hálft"
+   "{n} og hálft"
    ", "
    "Nýfætt"
    (hash "newborn" (stage-label "Nýfæðingur" #f #f)

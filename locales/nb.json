@@ -152,7 +152,7 @@
     "half": "{n}½",
     "delimiter": ", ",
     "justNow": "akkurat nå",
-    "ago": "{0} siden",
+    "ago": "for {0} siden",
     "inFuture": "om {0}",
     "short": {
       "units": {
@@ -164,7 +164,7 @@
         "month": "{n} md.",
         "year": "{n} år"
       },
-      "ago": "{0} siden",
+      "ago": "for {0} siden",
       "inFuture": "om {0}",
       "clock": {
         "use24h": true,
@@ -182,7 +182,7 @@
         "year": "{n}å"
       },
       "delimiter": "",
-      "ago": "{0} siden",
+      "ago": "for {0} siden",
       "inFuture": "om {0}",
       "clock": {
         "use24h": true,
@@ -194,7 +194,7 @@
     "clock": {
       "hours": [
         "tolv",
-        "en",
+        "ett",
         "to",
         "tre",
         "fire",

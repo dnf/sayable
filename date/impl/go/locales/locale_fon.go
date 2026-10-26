@@ -17,7 +17,7 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 var FON = sdate.DateLocale{
 	Code: "fon",
 	Months:   [12]string{"Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"},
-	Weekdays: [7]string{"Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"},
+	Weekdays: [7]string{"Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe"},
 	DayFormat: "{n}",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",
@@ -33,7 +33,7 @@ var FON = sdate.DateLocale{
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
 		Months:   &[12]string{"Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"},
-		Weekdays: &[7]string{"Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"},
+		Weekdays: &[7]string{"Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib"},
 		DayFormat:            strPtr("{n}"),
 		DatePattern:          strPtr("{day} {month}"),
 		DatePatternWithYear:  strPtr("{day} {month} {year}"),

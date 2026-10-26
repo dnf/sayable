@@ -27,7 +27,7 @@ function locale_st {
     $stages = @{
         newborn = 'Lesea le sa tswa hlaha'
         infant = 'Lesea'
-        toddler = 'Ngwanana'
+        toddler = 'Ngwana e monyane'
         child = 'Ngwana'
         teenager = 'Mosha'
         adult = 'Motho e moholo'

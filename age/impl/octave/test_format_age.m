@@ -369,9 +369,18 @@ check('14.5 Jan31 to Jul31', format_age('2025-01-31', '2025-07-31'), '6 months')
 % ================================================================
 printf('Section 15: Default asOf\n');
 
-% 15.1, 15.2
-check('15.1 explicit as_of proxy', format_age('2020-01-01', '2025-06-15'), '5 years');
-check('15.2 explicit as_of proxy', format_age('2025-06-10', '2025-06-15'), '5 days');
+% There is no way to inject "today", so these dates are derived from the real
+% current date (local time, like the library) to keep the canonical outputs.
+v = clock();
+today_iso = sprintf('%04d-%02d-%02d', v(1), v(2), v(3));
+five_years_ago = sprintf('%04d-%02d-%02d', v(1) - 5, v(2), min(v(3), 28));
+forty_five_years_ago = sprintf('%04d-%02d-%02d', v(1) - 45, v(2), min(v(3), 28));
+five_days_ago = datestr(datenum(v(1), v(2), v(3)) - 5, 'yyyy-mm-dd');
+
+% 15.1
+check('15.1 default as_of 5 years', format_age(five_years_ago), '5 years');
+% 15.2
+check('15.2 default as_of 5 days', format_age(five_days_ago), '5 days');
 
 % ================================================================
 % 16. formatStage null/edge cases
@@ -512,10 +521,13 @@ check('22.3 45 years', format_stage('1980-01-01', '2025-06-15'), 'Adult');
 % ================================================================
 printf('Section 23: formatStage — default asOf\n');
 
-% 23.1, 23.2, 23.3
-check('23.1 newborn', format_stage('2025-06-15', '2025-06-15'), 'Newborn');
-check('23.2 child', format_stage('2020-01-01', '2025-06-15'), 'Child');
-check('23.3 adult', format_stage('1980-01-01', '2025-06-15'), 'Adult');
+% Dates derived from the real current date, see section 15.
+% 23.1
+check('23.1 newborn', format_stage(today_iso), 'Newborn');
+% 23.2
+check('23.2 child', format_stage(five_years_ago), 'Child');
+% 23.3
+check('23.3 adult', format_stage(forty_five_years_ago), 'Adult');
 
 % ================================================================
 % 24. SayableAge class — English locale delegation
@@ -579,7 +591,7 @@ check('25.8 singular month', sa_es.format_age('2023-06-15', '2025-07-15'), '2 a�
 check('25.9 years months', sa_es.format_age('2023-06-15', '2025-12-15'), '2 años, 6 meses');
 
 % 25.10
-check('25.10 half marker', sa_es.format_age('2022-06-15', '2025-12-15'), '3 y medio años');
+check('25.10 half marker', sa_es.format_age('2022-06-15', '2025-12-15'), '3 años y medio');
 
 % 25.11
 check('25.11 integer years', sa_es.format_age('2022-06-15', '2025-06-15'), '3 años');
@@ -674,13 +686,13 @@ he = locale_he();
 sa_he = sayable_age_new(he);
 
 check('29.1 he just born', sa_he.format_age('2025-06-15', '2025-06-15'), 'רק נולד');
-check('29.2 he one day', sa_he.format_age('2025-06-14', '2025-06-15'), 'יום 1');
+check('29.2 he one day', sa_he.format_age('2025-06-14', '2025-06-15'), 'יום');
 check('29.3 he three days', sa_he.format_age('2025-06-12', '2025-06-15'), '3 ימים');
 check('29.4 he two weeks dual', sa_he.format_age('2025-06-01', '2025-06-15'), 'שבועיים');
 check('29.5 he three weeks', sa_he.format_age('2025-05-25', '2025-06-15'), '3 שבועות');
 check('29.6 he six months', sa_he.format_age('2025-01-15', '2025-07-15'), '6 חודשים');
 check('29.7 he three months', sa_he.format_age('2025-03-15', '2025-06-15'), '3 חודשים');
-check('29.8 he 2y 1m', sa_he.format_age('2023-06-15', '2025-07-15'), 'שנתיים, חודש 1');
+check('29.8 he 2y 1m', sa_he.format_age('2023-06-15', '2025-07-15'), 'שנתיים, חודש');
 check('29.9 he half years', sa_he.format_age('2022-06-15', '2025-12-15'), '3 שנים וחצי');
 check('29.10 he seven years', sa_he.format_age('2018-06-15', '2025-06-15'), '7 שנים');
 check('29.11 he stage m newborn', sa_he.format_stage('2025-06-15', '2025-06-15', 'm'), 'רק נולד');
@@ -719,7 +731,7 @@ check('29.28 id just born', sa_id.format_age('2025-06-15', '2025-06-15'), 'Baru 
 check('29.29 id one day', sa_id.format_age('2025-06-14', '2025-06-15'), '1 hari');
 check('29.30 id three days', sa_id.format_age('2025-06-12', '2025-06-15'), '3 hari');
 check('29.31 id six months', sa_id.format_age('2025-01-15', '2025-07-15'), '6 bulan');
-check('29.32 id half years', sa_id.format_age('2022-06-15', '2025-12-15'), '3 tahun setengah');
+check('29.32 id half years', sa_id.format_age('2022-06-15', '2025-12-15'), '3 setengah tahun');
 check('29.33 id seven years', sa_id.format_age('2018-06-15', '2025-06-15'), '7 tahun');
 
 % 29.34-29.39 — Amharic
@@ -812,7 +824,7 @@ check('32.1 pl 3 is few', format_age('2021-06-15', '2025-01-15', locale_pl()), '
 check('32.2 pl short 5 is many', format_age('2020-06-15', '2025-12-15', locale_pl(), 'short'), '5 i pół lat');
 
 % 32.3
-check('32.3 shi 6 is few', format_age('2005-06-08', '2012-06-07', locale_shi()), '6 iseggasen d uzgen');
+check('32.3 shi 6 is few', format_age('2005-06-08', '2012-06-07', locale_shi()), '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ');
 
 % ================================================================
 % 33. Input validation

@@ -21,7 +21,7 @@
           :year "{n} taun"}
    :half "{0} satengah"
    :delimiter ", "
-   :just-now "ayeuna"
+   :just-now "nembé"
    :ago "{0} kapengker"
    :in-future "dina {0}"
    :short {:units {:second "{n} dtk" :minute "{n} mnt" :hour "{n} jam" :day "{n} dinten" :week "{n} minggu" :month "{n} sasih" :year "{n} taun"} :ago "{0} kapengker" :in-future "dina {0}"}

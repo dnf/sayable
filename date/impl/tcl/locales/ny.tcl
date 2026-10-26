@@ -22,9 +22,9 @@ proc locale_date_ny {} {
     set yesterday {dzulo}
     set day_after_tomorrow {mkucha}
     set day_before_yesterday {dzana}
-    set this_weekday "{weekday} ino"
-    set next_weekday "{weekday} yotsatira"
-    set last_weekday "{weekday} yatha"
+    set this_weekday "{weekday} lino"
+    set next_weekday "{weekday} lotsatira"
+    set last_weekday "{weekday} latha"
     set months_in_date ""
     set short [dict create \
         months [list {Jan} {Feb} {Mat} {Epu} {Mey} {Jun} {Jul} {Oga} {Sep} {Okt} {Nov} {Dis}] \

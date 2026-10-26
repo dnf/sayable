@@ -15,18 +15,18 @@ st_hours('te', ['పన్నెండు', 'ఒకటి', 'రెండు', '
 st_midnight('te', 'అర్ధరాత్రి').
 st_noon('te', 'మధ్యాహ్నం').
 
-st_pattern('te', 0, '{h}:00').
-st_pattern('te', 5, '{h}:05').
-st_pattern('te', 10, '{h}:10').
-st_pattern('te', 15, '{h}:15').
-st_pattern('te', 20, '{h}:20').
-st_pattern('te', 25, '{h}:25').
-st_pattern('te', 30, '{h}:30').
-st_pattern('te', 35, '{h}:35').
-st_pattern('te', 40, '{h}:40').
-st_pattern('te', 45, '{h}:45').
-st_pattern('te', 50, '{h}:50').
-st_pattern('te', 55, '{h}:55').
+st_pattern('te', 0, '{h} అయింది').
+st_pattern('te', 5, '{h} దాటి ఐదు నిమిషాలు').
+st_pattern('te', 10, '{h} దాటి పది నిమిషాలు').
+st_pattern('te', 15, '{h}ంపావు').
+st_pattern('te', 20, '{h} దాటి ఇరవై నిమిషాలు').
+st_pattern('te', 25, '{h} దాటి ఇరవై ఐదు నిమిషాలు').
+st_pattern('te', 30, '{h}న్నర').
+st_pattern('te', 35, '{h} దాటి ముప్పై ఐదు నిమిషాలు').
+st_pattern('te', 40, '{next_h} కావడానికి ఇరవై నిమిషాలు').
+st_pattern('te', 45, 'పావు తక్కువ {next_h}').
+st_pattern('te', 50, '{next_h} కావడానికి పది నిమిషాలు').
+st_pattern('te', 55, '{next_h} కావడానికి ఐదు నిమిషాలు').
 
 short_st_use24h('te', false).
 short_st_format('te', '{h}:{mm} {ampm}').

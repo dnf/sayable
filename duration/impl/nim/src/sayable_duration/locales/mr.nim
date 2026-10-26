@@ -18,7 +18,7 @@ let MR* = DurationLocale(
   plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
     "second": simpleUnit("{n} सेकंद"),
-    "minute": simpleUnit("{n} मिनिट"),
+    "minute": pluralUnit(@[(pcOne, "{n} मिनिट"), (pcOther, "{n} मिनिटे")]),
     "hour": simpleUnit("{n} तास"),
     "day": pluralUnit(@[(pcOne, "{n} दिवस"), (pcOther, "{n} दिवस")]),
     "week": pluralUnit(@[(pcOne, "{n} आठवडा"), (pcOther, "{n} आठवडे")]),

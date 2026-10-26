@@ -11,7 +11,7 @@
 
 function loc = locale_yue()
   loc.code = 'yue';
-  loc.months = {'一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'};
+  loc.months = {'1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'};
   loc.weekdays = {'星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'};
   loc.day_format = '{n}日';
   loc.day_format_exceptions = struct();
@@ -26,7 +26,7 @@ function loc = locale_yue()
   loc.next_weekday = '下個{weekday}';
   loc.last_weekday = '上個{weekday}';
   loc.months_in_date = {};
-  loc.short.months = {'一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'};
+  loc.short.months = {'1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'};
   loc.short.weekdays = {'日', '一', '二', '三', '四', '五', '六'};
   loc.short.day_format = '{n}日';
   loc.short.date_pattern = '{month}{day}';

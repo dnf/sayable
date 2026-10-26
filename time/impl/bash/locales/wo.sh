@@ -10,21 +10,21 @@
 # Source: locales/wo.json
 
 _sayabletime_locale_wo() {
-    _clock_hours=('fukki ñaar' 'benn' 'ñaar' 'ñett' 'ñeent' 'juróom' 'juróom-benn' 'juróom-ñaar' 'juróom-ñett' 'juróom-ñeent' 'fukk' 'fukki benn')
-    _clock_midnight='bu guddi'
-    _clock_noon='ci àttaya'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_hours=('fukk ak ñaari waxtu' 'benn waxtu' 'ñaari waxtu' 'ñetti waxtu' 'ñeenti waxtu' 'juróomi waxtu' 'juróom-benni waxtu' 'juróom-ñaari waxtu' 'juróom-ñetti waxtu' 'juróom-ñeenti waxtu' 'fukki waxtu' 'fukk ak benn waxtu')
+    _clock_midnight='digg-guddi'
+    _clock_noon='digg-bëccëg'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} ak juróomi simili'
+    _clock_pattern_10='{h} ak fukki simili'
+    _clock_pattern_15='{h} ak fukk ak juróomi simili'
+    _clock_pattern_20='{h} ak ñaar-fukki simili'
+    _clock_pattern_25='{h} ak ñaar-fukk ak juróomi simili'
+    _clock_pattern_30='{h} ak genn-wàll'
+    _clock_pattern_35='{next_h} des na ñaar-fukk ak juróomi simili'
+    _clock_pattern_40='{next_h} des na ñaar-fukki simili'
+    _clock_pattern_45='{next_h} des na fukk ak juróomi simili'
+    _clock_pattern_50='{next_h} des na fukki simili'
+    _clock_pattern_55='{next_h} des na juróomi simili'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

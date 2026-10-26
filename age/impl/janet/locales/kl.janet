@@ -11,11 +11,11 @@
 
 (def locale
   {:code "kl"
-   :plural (fn [_n] :other)
-   :units {:day "ullut {n}"
-          :week "sapaatit {n}"
-          :month "qaammatit {n}"
-          :year "ukiut {n}"}
+   :plural (fn [n] (if (= n 1) :one :other))
+   :units {:day {:one "ulloq {n}" :other "ullut {n}"}
+          :week {:one "sapaatip akunnera {n}" :other "sapaatip akunneri {n}"}
+          :month {:one "qaammat {n}" :other "qaammatit {n}"}
+          :year {:one "ukioq {n}" :other "ukiut {n}"}}
    :half "{0} affaa"
    :delimiter ", "
    :just-born "Inuuneq nutaaq"
@@ -26,6 +26,6 @@
             :teenager "Inuusuttuaq"
             :adult "Inuk"
 }
-   :short {:units {:day "ull. {n}" :week "sap. {n}" :month "qaam. {n}" :year "uk. {n}"}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :short {:units {:day "ull. {n}" :week "sap. ak. {n}" :month "qaam. {n}" :year "uk. {n}"}}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

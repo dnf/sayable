@@ -6,36 +6,44 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [lo.json](../../locales/lo.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): {h}ໂມງ + minutes with ນາທີ; {h}ໂມງເຄິ່ງ for half. Compromise: Lao normally adds a day-period word (ບ່າຍສອງໂມງ = 2 pm) and 1–5 am often use ຕີ; the schema has no day periods, so '1:00' renders as 'ໜຶ່ງໂມງ', which is understandable but less idiomatic.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal       | Short     | Compact |
-| ----------------- | ------------ | --------- | ------- |
-| Born today        | ເກີດໃໝ່      | ເກີດໃໝ່   | ເກີດໃໝ່ |
-| 1 day             | 1 ມື້        | 1 ມ.      | 1d      |
-| 3 days            | 3 ມື້        | 3 ມ.      | 3d      |
-| 6 days            | 6 ມື້        | 6 ມ.      | 6d      |
-| 1 week            | 1 ອາທິດ      | 1 ອທ.     | 1w      |
-| 1 week, 1 day     | 1 ອາທິດ1 ມື້ | 1 ອທ.1 ມ. | 1w1d    |
-| 2 weeks           | 2 ອາທິດ      | 2 ອທ.     | 2w      |
-| 2 weeks, 3 days   | 2 ອາທິດ3 ມື້ | 2 ອທ.3 ມ. | 2w3d    |
-| 3 months          | 3 ເດືອນ      | 3 ດ.      | 3m      |
-| 6 months          | 6 ເດືອນ      | 6 ດ.      | 6m      |
-| 11 months         | 11 ເດືອນ     | 11 ດ.     | 11m     |
-| 12 months         | 12 ເດືອນ     | 12 ດ.     | 12m     |
-| 23 months         | 23 ເດືອນ     | 23 ດ.     | 23m     |
-| 2 years           | 2 ປີ         | 2 ປ.      | 2y      |
-| 2 years, 1 month  | 2 ປີ1 ເດືອນ  | 2 ປ.1 ດ.  | 2y1m    |
-| 2 years, 6 months | 2 ປີ6 ເດືອນ  | 2 ປ.6 ດ.  | 2y6m    |
-| 3 years           | 3 ປີ         | 3 ປ.      | 3y      |
-| 3½ years          | 3 ປີເຄິ່ງ    | 3 ປ.ເຄິ່ງ | 3yເຄິ່ງ |
-| 5 years           | 5 ປີ         | 5 ປ.      | 5y      |
-| 5½ years          | 5 ປີເຄິ່ງ    | 5 ປ.ເຄິ່ງ | 5yເຄິ່ງ |
-| 7 years           | 7 ປີ         | 7 ປ.      | 7y      |
-| 10 years          | 10 ປີ        | 10 ປ.     | 10y     |
-| 18 years          | 18 ປີ        | 18 ປ.     | 18y     |
-| 45 years          | 45 ປີ        | 45 ປ.     | 45y     |
+| Age               | Normal        | Short      | Compact |
+| ----------------- | ------------- | ---------- | ------- |
+| Born today        | ເກີດໃໝ່       | ເກີດໃໝ່    | ເກີດໃໝ່ |
+| 1 day             | 1 ມື້         | 1 ມ.       | 1d      |
+| 3 days            | 3 ມື້         | 3 ມ.       | 3d      |
+| 6 days            | 6 ມື້         | 6 ມ.       | 6d      |
+| 1 week            | 1 ອາທິດ       | 1 ອທ.      | 1w      |
+| 1 week, 1 day     | 1 ອາທິດ 1 ມື້ | 1 ອທ. 1 ມ. | 1w 1d   |
+| 2 weeks           | 2 ອາທິດ       | 2 ອທ.      | 2w      |
+| 2 weeks, 3 days   | 2 ອາທິດ 3 ມື້ | 2 ອທ. 3 ມ. | 2w 3d   |
+| 3 months          | 3 ເດືອນ       | 3 ດ.       | 3m      |
+| 6 months          | 6 ເດືອນ       | 6 ດ.       | 6m      |
+| 11 months         | 11 ເດືອນ      | 11 ດ.      | 11m     |
+| 12 months         | 12 ເດືອນ      | 12 ດ.      | 12m     |
+| 23 months         | 23 ເດືອນ      | 23 ດ.      | 23m     |
+| 2 years           | 2 ປີ          | 2 ປ.       | 2y      |
+| 2 years, 1 month  | 2 ປີ 1 ເດືອນ  | 2 ປ. 1 ດ.  | 2y 1m   |
+| 2 years, 6 months | 2 ປີ 6 ເດືອນ  | 2 ປ. 6 ດ.  | 2y 6m   |
+| 3 years           | 3 ປີ          | 3 ປ.       | 3y      |
+| 3½ years          | 3 ປີເຄິ່ງ     | 3 ປ.ເຄິ່ງ  | 3½y     |
+| 5 years           | 5 ປີ          | 5 ປ.       | 5y      |
+| 5½ years          | 5 ປີເຄິ່ງ     | 5 ປ.ເຄິ່ງ  | 5½y     |
+| 7 years           | 7 ປີ          | 7 ປ.       | 7y      |
+| 10 years          | 10 ປີ         | 10 ປ.      | 10y     |
+| 18 years          | 18 ປີ         | 18 ປ.      | 18y     |
+| 45 years          | 45 ປີ         | 45 ປ.      | 45y     |
 
 ### Stages
 
@@ -65,69 +73,69 @@ Plural rule: `other_only` (categories: other)
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal         | Compact |
-| -------------------- | -------------- | ------- |
-| Today                | ມື້ນີ້         | ມື້ນີ້  |
-| Tomorrow             | ມື້ອື່ນ        | ມື້ອື່ນ |
-| Yesterday            | ມື້ວານ         | ມື້ວານ  |
-| Day after tomorrow   | ມື້ຮື          | 17/3    |
-| Day before yesterday | ມື້ກ່ອນ        | 13/3    |
-| This Thursday (+5)   | ວັນພະຫັດນີ້    | 20/3    |
-| Last Monday (-4)     | ວັນອັງຄານແລ້ວ  | 11/3    |
-| Next Wednesday (+12) | ວັນພະຫັດໜ້າ    | 27/3    |
-| Same month (+20)     | 4 ເມສາ         | 4/4     |
-| Different year       | 10 ມັງກອນ 2026 | 10/1/26 |
+| Offset               | Normal           | Compact |
+| -------------------- | ---------------- | ------- |
+| Today                | ມື້ນີ້           | ມື້ນີ້  |
+| Tomorrow             | ມື້ອື່ນ          | ມື້ອື່ນ |
+| Yesterday            | ມື້ວານ           | ມື້ວານ  |
+| Day after tomorrow   | ມື້ຮື            | 17/3    |
+| Day before yesterday | ມື້ຊືນ           | 13/3    |
+| This Thursday (+5)   | ວັນພະຫັດນີ້      | 20/3    |
+| Last Tuesday (-4)    | ວັນອັງຄານທີ່ແລ້ວ | 11/3    |
+| Next Thursday (+12)  | ວັນພະຫັດໜ້າ      | 27/3    |
+| Same year (+20)      | 4 ເມສາ           | 4/4     |
+| Different year       | 10 ມັງກອນ 2026   | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal          | Short       | Compact |
-| --------------------- | --------------- | ----------- | ------- |
-| 0 seconds             | ຫາກໍ            | ຫາກໍ        | ຫາກໍ    |
-| 1 second              | 1 ວິນາທີ        | 1 ວິ.       | 1s      |
-| 30 seconds            | 30 ວິນາທີ       | 30 ວິ.      | 30s     |
-| 1 minute              | 1 ນາທີ          | 1 ນທ.       | 1m      |
-| 2 minutes, 15 seconds | 2 ນາທີ15 ວິນາທີ | 2 ນທ.15 ວິ. | 2m15s   |
-| 5 minutes             | 5 ນາທີ          | 5 ນທ.       | 5m      |
-| 45 minutes            | 45 ນາທີ         | 45 ນທ.      | 45m     |
-| 1 hour                | 1 ຊົ່ວໂມງ       | 1 ຊມ.       | 1h      |
-| 1½ hours              | 1 ຊົ່ວໂມງເຄິ່ງ  | 1 ຊມ.ເຄິ່ງ  | 1½h     |
-| 3 hours               | 3 ຊົ່ວໂມງ       | 3 ຊມ.       | 3h      |
-| 6 hours               | 6 ຊົ່ວໂມງ       | 6 ຊມ.       | 6h      |
-| 1 day                 | 1 ມື້           | 1 ມ.        | 1d      |
-| 1½ days               | 1 ມື້ເຄິ່ງ      | 1 ມ.ເຄິ່ງ   | 1½d     |
-| 3 days                | 3 ມື້           | 3 ມ.        | 3d      |
-| 1 week                | 1 ອາທິດ         | 1 ອທ.       | 1w      |
-| 2 weeks, 3 days       | 2 ອາທິດ3 ມື້    | 2 ອທ.3 ມ.   | 2w3d    |
-| 1 month               | 1 ເດືອນ         | 1 ດ.        | 1m      |
-| 6 months              | 6 ເດືອນ         | 6 ດ.        | 6m      |
-| 1 year                | 1 ປີ            | 1 ປ.        | 1y      |
-| 2 years, 3 months     | 2 ປີ3 ເດືອນ     | 2 ປ.3 ດ.    | 2y3m    |
+| Duration              | Normal           | Short        | Compact |
+| --------------------- | ---------------- | ------------ | ------- |
+| 0 seconds             | ຫາກໍ             | ຫາກໍ         | ຫາກໍ    |
+| 1 second              | 1 ວິນາທີ         | 1 ວິ.        | 1s      |
+| 30 seconds            | 30 ວິນາທີ        | 30 ວິ.       | 30s     |
+| 1 minute              | 1 ນາທີ           | 1 ນທ.        | 1m      |
+| 2 minutes, 15 seconds | 2 ນາທີ 15 ວິນາທີ | 2 ນທ. 15 ວິ. | 2m15s   |
+| 5 minutes             | 5 ນາທີ           | 5 ນທ.        | 5m      |
+| 45 minutes            | 45 ນາທີ          | 45 ນທ.       | 45m     |
+| 1 hour                | 1 ຊົ່ວໂມງ        | 1 ຊມ.        | 1h      |
+| 1½ hours              | 1 ຊົ່ວໂມງເຄິ່ງ   | 1 ຊມ.ເຄິ່ງ   | 1½h     |
+| 3 hours               | 3 ຊົ່ວໂມງ        | 3 ຊມ.        | 3h      |
+| 6 hours               | 6 ຊົ່ວໂມງ        | 6 ຊມ.        | 6h      |
+| 1 day                 | 1 ມື້            | 1 ມ.         | 1d      |
+| 1½ days               | 1 ມື້ເຄິ່ງ       | 1 ມ.ເຄິ່ງ    | 1½d     |
+| 3 days                | 3 ມື້            | 3 ມ.         | 3d      |
+| 1 week                | 1 ອາທິດ          | 1 ອທ.        | 1w      |
+| 2 weeks, 3 days       | 2 ອາທິດ 3 ມື້    | 2 ອທ. 3 ມ.   | 2w3d    |
+| 1 month               | 1 ເດືອນ          | 1 ດ.         | 1mo     |
+| 6 months              | 6 ເດືອນ          | 6 ດ.         | 6mo     |
+| 1 year                | 1 ປີ             | 1 ປ.         | 1y      |
+| 2 years, 3 months     | 2 ປີ 3 ເດືອນ     | 2 ປ. 3 ດ.    | 2y3mo   |
 
 ### Relative time
 
-| Offset        | Normal         | Compact |
-| ------------- | -------------- | ------- |
-| 5 minutes ago | 5 ນາທີ ກ່ອນ    | 5m ກ່ອນ |
-| 2 hours ago   | 2 ຊົ່ວໂມງ ກ່ອນ | 2h ກ່ອນ |
-| in 30 minutes | ໃນ 30 ນາທີ     | ໃນ 30m  |
-| in 3 hours    | ໃນ 3 ຊົ່ວໂມງ   | ໃນ 3h   |
+| Offset        | Normal          | Compact   |
+| ------------- | --------------- | --------- |
+| 5 minutes ago | 5 ນາທີ ກ່ອນ     | 5m ກ່ອນ   |
+| 2 hours ago   | 2 ຊົ່ວໂມງ ກ່ອນ  | 2h ກ່ອນ   |
+| in 30 minutes | ໃນອີກ 30 ນາທີ   | ໃນອີກ 30m |
+| in 3 hours    | ໃນອີກ 3 ຊົ່ວໂມງ | ໃນອີກ 3h  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal     | Short | Compact |
-| --------------- | ---------- | ----- | ------- |
-| Midnight        | ທ່ຽງຄືນ    | 0:00  | 0:00    |
-| 1:00 AM         | ໜຶ່ງ:00    | 1:00  | 1:00    |
-| 5 past 9        | ເກົ້າ:05   | 9:05  | 9:05    |
-| Quarter past 10 | ສິບ:15     | 10:15 | 10:15   |
-| Half past 11    | ສິບເອັດ:30 | 11:30 | 11:30   |
-| Noon            | ທ່ຽງ       | 12:00 | 12:00   |
-| Quarter to 3    | ສອງ:45     | 14:45 | 14:45   |
-| 5 to 6          | ຫ້າ:55     | 17:55 | 17:55   |
-| 8 o'clock PM    | ແປດ:00     | 20:00 | 20:00   |
-| 10:30 PM        | ສິບ:30     | 22:30 | 22:30   |
-| 11:58 PM        | ທ່ຽງຄືນ    | 23:58 | 23:58   |
+| Time            | Normal               | Short | Compact |
+| --------------- | -------------------- | ----- | ------- |
+| Midnight        | ທ່ຽງຄືນ              | 0:00  | 0:00    |
+| 1:00 AM         | ໜຶ່ງໂມງ              | 1:00  | 1:00    |
+| 5 past 9        | ເກົ້າໂມງ ຫ້ານາທີ     | 9:05  | 9:05    |
+| Quarter past 10 | ສິບໂມງ ສິບຫ້ານາທີ    | 10:15 | 10:15   |
+| Half past 11    | ສິບເອັດໂມງເຄິ່ງ      | 11:30 | 11:30   |
+| Noon            | ທ່ຽງ                 | 12:00 | 12:00   |
+| Quarter to 3    | ສອງໂມງ ສີ່ສິບຫ້ານາທີ | 14:45 | 14:45   |
+| 5 to 6          | ຫ້າໂມງ ຫ້າສິບຫ້ານາທີ | 17:55 | 17:55   |
+| 8 o'clock PM    | ແປດໂມງ               | 20:00 | 20:00   |
+| 10:30 PM        | ສິບໂມງເຄິ່ງ          | 22:30 | 22:30   |
+| 11:58 PM        | ທ່ຽງຄືນ              | 23:58 | 23:58   |

@@ -1096,7 +1096,7 @@ fn test_25_9() {
 fn test_25_10() {
 	sa := new_sayable_age(&locale_es, .normal)
 	result := sa.format_age('2022-06-15', '2025-12-15') or { panic('expected result for 25.10') }
-	assert result == '3 y medio años'
+	assert result == '3 años y medio'
 }
 
 // 25.11
@@ -1311,7 +1311,7 @@ fn test_29_1() {
 fn test_29_2() {
 	sa := new_sayable_age(&locale_he, .normal)
 	result := sa.format_age('2025-06-14', '2025-06-15') or { panic('expected result for 29.2') }
-	assert result == 'יום 1'
+	assert result == 'יום'
 }
 
 // 29.3
@@ -1353,7 +1353,7 @@ fn test_29_7() {
 fn test_29_8() {
 	sa := new_sayable_age(&locale_he, .normal)
 	result := sa.format_age('2023-06-15', '2025-07-15') or { panic('expected result for 29.8') }
-	assert result == 'שנתיים, חודש 1'
+	assert result == 'שנתיים, חודש'
 }
 
 // 29.9
@@ -1521,7 +1521,7 @@ fn test_29_31() {
 fn test_29_32() {
 	sa := new_sayable_age(&locale_id, .normal)
 	result := sa.format_age('2022-06-15', '2025-12-15') or { panic('expected result for 29.32') }
-	assert result == '3 tahun setengah'
+	assert result == '3 setengah tahun'
 }
 
 // 29.33

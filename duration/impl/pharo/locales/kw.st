@@ -35,10 +35,10 @@ kw
 		'second'. (Dictionary newFromPairs: { #zero. '{n} sekond'. #one. '{n} sekond'. #two. '{n} sekond'. #few. '{n} sekond'. #many. '{n} sekond'. #other. '{n} sekondow' }).
 		'minute'. (Dictionary newFromPairs: { #zero. '{n} mynysen'. #one. '{n} mynysen'. #two. '{n} vynysen'. #few. '{n} mynysen'. #many. '{n} mynysen'. #other. '{n} mynysen' }).
 		'hour'. (Dictionary newFromPairs: { #zero. '{n} our'. #one. '{n} our'. #two. '{n} our'. #few. '{n} our'. #many. '{n} our'. #other. '{n} our' }).
-		'day'. (Dictionary newFromPairs: { #zero. '{n} dydh'. #one. 'dydh'. #two. '{n} dhydh'. #few. '{n} dydh'. #many. '{n} dydh'. #other. '{n} dydh' }).
-		'week'. (Dictionary newFromPairs: { #zero. '{n} seythun'. #one. 'seythun'. #two. '{n} seythun'. #few. '{n} seythun'. #many. '{n} seythun'. #other. '{n} seythun' }).
-		'month'. (Dictionary newFromPairs: { #zero. '{n} mis'. #one. 'mis'. #two. '{n} vis'. #few. '{n} mis'. #many. '{n} mis'. #other. '{n} mis' }).
-		'year'. (Dictionary newFromPairs: { #zero. '{n} blydhen'. #one. 'blydhen'. #two. '{n} vlydhen'. #few. '{n} blydhen'. #many. '{n} blydhen'. #other. '{n} blydhen' }).
+		'day'. (Dictionary newFromPairs: { #zero. '{n} dydh'. #one. '{n} dydh'. #two. '{n} dhydh'. #few. '{n} dydh'. #many. '{n} dydh'. #other. '{n} dydh' }).
+		'week'. (Dictionary newFromPairs: { #zero. '{n} seythun'. #one. '{n} seythun'. #two. '{n} seythun'. #few. '{n} seythun'. #many. '{n} seythun'. #other. '{n} seythun' }).
+		'month'. (Dictionary newFromPairs: { #zero. '{n} mis'. #one. '{n} mis'. #two. '{n} vis'. #few. '{n} mis'. #many. '{n} mis'. #other. '{n} mis' }).
+		'year'. (Dictionary newFromPairs: { #zero. '{n} blydhen'. #one. '{n} blydhen'. #two. '{n} vlydhen'. #few. '{n} blydhen'. #many. '{n} blydhen'. #other. '{n} blydhen' }).
 	}).
 	locale half: '{0} hag hanter'.
 	locale delimiter: ', '.

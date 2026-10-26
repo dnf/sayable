@@ -24,7 +24,7 @@ final ko = DurationLocale(
     'day': simpleUnit('{n}일'),
     'week': simpleUnit('{n}주'),
     'month': simpleUnit('{n}개월'),
-    'year': simpleUnit('{n}살'),
+    'year': simpleUnit('{n}년'),
   },
   half: '{0} 반',
   delimiter: ' ',

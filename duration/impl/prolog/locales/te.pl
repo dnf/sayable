@@ -14,9 +14,12 @@
 sd_plural('te', 1, one) :- !.
 sd_plural('te', _, other).
 
-sd_unit('te', second, _, '{n} సెకను').
-sd_unit('te', minute, _, '{n} నిమిషం').
-sd_unit('te', hour, _, '{n} గంట').
+sd_unit('te', second, one, '{n} సెకను').
+sd_unit('te', second, other, '{n} సెకన్లు').
+sd_unit('te', minute, one, '{n} నిమిషం').
+sd_unit('te', minute, other, '{n} నిమిషాలు').
+sd_unit('te', hour, one, '{n} గంట').
+sd_unit('te', hour, other, '{n} గంటలు').
 sd_unit('te', day, one, '{n} రోజు').
 sd_unit('te', day, other, '{n} రోజులు').
 sd_unit('te', week, one, '{n} వారం').
@@ -26,7 +29,7 @@ sd_unit('te', month, other, '{n} నెలలు').
 sd_unit('te', year, one, '{n} సంవత్సరం').
 sd_unit('te', year, other, '{n} సంవత్సరాలు').
 
-sd_half('te', '{0}న్నర').
+sd_half('te', '{n}½').
 sd_delimiter('te', ', ').
 sd_just_now('te', 'ఇప్పుడే').
 sd_ago('te', '{0} క్రితం').

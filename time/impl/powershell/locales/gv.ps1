@@ -10,22 +10,22 @@
 # Source: locales/gv.json
 
 function locale_gv {
-    $hours = @('12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11')
+    $hours = @('daa-yeig', 'nane', 'jees', 'tree', 'kiare', 'queig', 'shey', 'shiaght', 'hoght', 'nuy', 'jeih', 'nane-jeig')
     $midnight = 'mean oie'
     $noon = 'munlaa'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h} er y chlag'
+    $patterns[5] = 'queig minnidyn lurg {h}'
+    $patterns[10] = 'jeih minnidyn lurg {h}'
+    $patterns[15] = 'kerroo lurg {h}'
+    $patterns[20] = 'feed minnid lurg {h}'
+    $patterns[25] = 'queig minnidyn as feed lurg {h}'
+    $patterns[30] = 'lieh-oor lurg {h}'
+    $patterns[35] = 'queig minnidyn as feed gys {next_h}'
+    $patterns[40] = 'feed minnid gys {next_h}'
+    $patterns[45] = 'kerroo gys {next_h}'
+    $patterns[50] = 'jeih minnidyn gys {next_h}'
+    $patterns[55] = 'queig minnidyn gys {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

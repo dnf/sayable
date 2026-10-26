@@ -48,7 +48,10 @@ pub fn locale() -> DurationLocale {
             second: Some(UnitForms::simple("sɛkɛnd {n}")),
             minute: Some(UnitForms::simple("sema {n}")),
             hour: Some(UnitForms::simple("dɔnhwere {n}")),
-            day: Some(UnitForms::simple("nna {n}")),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "da {n}"),
+                (PluralCategory::Other, "nna {n}"),
+            ])),
             week: Some(UnitForms::plural(&[
                 (PluralCategory::One, "dapɛn {n}"),
                 (PluralCategory::Other, "nnapɛn {n}"),
@@ -70,7 +73,10 @@ pub fn locale() -> DurationLocale {
             second: Some(UnitForms::simple("sɛk {n}")),
             minute: Some(UnitForms::simple("sem {n}")),
             hour: Some(UnitForms::simple("dɔn {n}")),
-            day: Some(UnitForms::simple("nna {n}")),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "da {n}"),
+                (PluralCategory::Other, "nna {n}"),
+            ])),
             week: Some(UnitForms::plural(&[
                 (PluralCategory::One, "dapɛn {n}"),
                 (PluralCategory::Other, "nnapɛn {n}"),

@@ -49,6 +49,7 @@ locale_kek <- list(
       month = "{n}mo",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} qakab'",
     in_future = "chi {0}"

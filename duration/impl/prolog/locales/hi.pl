@@ -17,7 +17,8 @@ sd_plural('hi', _, other).
 
 sd_unit('hi', second, _, '{n} सेकंड').
 sd_unit('hi', minute, _, '{n} मिनट').
-sd_unit('hi', hour, _, '{n} घंटा').
+sd_unit('hi', hour, one, '{n} घंटा').
+sd_unit('hi', hour, other, '{n} घंटे').
 sd_unit('hi', day, one, '{n} दिन').
 sd_unit('hi', day, other, '{n} दिन').
 sd_unit('hi', week, one, '{n} सप्ताह').

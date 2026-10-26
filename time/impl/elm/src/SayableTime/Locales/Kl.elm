@@ -22,7 +22,7 @@ locale =
     { code = "kl"
     , clock =
         { hours =
-            [ "akunneq marluk"
+            [ "aqqaneq-marluk"
             , "ataaseq"
             , "marluk"
             , "pingasut"
@@ -33,24 +33,24 @@ locale =
             , "arfineq-pingasut"
             , "qulingiluat"
             , "qulit"
-            , "akunneq ataaseq"
+            , "aqqaneq-ataaseq"
             ]
         , midnight = "unnuap qeqqa"
         , noon = "ulloqeqqap qeqqa"
         , patterns =
             Dict.fromList
-                [ ( 0, "{h}:00" )
-                , ( 5, "{h}:05" )
-                , ( 10, "{h}:10" )
-                , ( 15, "{h}:15" )
-                , ( 20, "{h}:20" )
-                , ( 25, "{h}:25" )
-                , ( 30, "{h}:30" )
-                , ( 35, "{h}:35" )
-                , ( 40, "{h}:40" )
-                , ( 45, "{h}:45" )
-                , ( 50, "{h}:50" )
-                , ( 55, "{h}:55" )
+                [ ( 0, "nalunaaqutaq {h}" )
+                , ( 5, "{h} qaangiullugu minutsit tallimat" )
+                , ( 10, "{h} qaangiullugu minutsit qulit" )
+                , ( 15, "{h} qaangiullugu minutsit aqqaneq-tallimat" )
+                , ( 20, "{h} qaangiullugu minutsit marlunnik qulillit" )
+                , ( 25, "{h} qaangiullugu minutsit marlunnik qulillit tallimallu" )
+                , ( 30, "{h} affarlu" )
+                , ( 35, "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu" )
+                , ( 40, "{next_h} sioqqullugu minutsit marlunnik qulillit" )
+                , ( 45, "{next_h} sioqqullugu minutsit aqqaneq-tallimat" )
+                , ( 50, "{next_h} sioqqullugu minutsit qulit" )
+                , ( 55, "{next_h} sioqqullugu minutsit tallimat" )
                 ]
         }
     , short =

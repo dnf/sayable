@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [mnk.json](../../locales/mnk.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Gambian Mandinka 'talaŋ {h}' (talaŋ = o'clock/bell), additive 'aniŋ miniti N' and 'aniŋ talantee' (and a half) at 30; Mandinka numerals luulu 5, taŋ 10, muwaŋ 20, taŋ saba 30, taŋ naani 40, taŋ luulu 50. No subtractive form used. Normalised hours[0]/[11] to 'taŋ niŋ fula' / 'taŋ niŋ kiliŋ' (file had mixed 'tan ning'/'taŋ ning'). Orthography in this file mixes Gambian (ŋ) and ɔ-based spellings; I followed what was there.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | siniŋ kɔma      | 17/3    |
 | Day before yesterday | kuŋ kɔma        | 13/3    |
 | This Thursday (+5)   | Alamisa niŋ     | 20/3    |
-| Last Monday (-4)     | Talata taata    | 11/3    |
-| Next Wednesday (+12) | Alamisa nataa   | 27/3    |
-| Same month (+20)     | 4 Afiril        | 4/4     |
+| Last Tuesday (-4)    | Talata taata    | 11/3    |
+| Next Thursday (+12)  | Alamisa nataa   | 27/3    |
+| Same year (+20)      | 4 Afiril        | 4/4     |
 | Different year       | 10 Samwiye 2026 | 10/1/26 |
 
 ## Duration
@@ -111,23 +119,23 @@ Relative to Saturday, March 15, 2025.
 | ------------- | ------------------ | ----------- |
 | 5 minutes ago | miniti 5 taata     | min 5 taata |
 | 2 hours ago   | tili-waati 2 taata | waa 2 taata |
-| in 30 minutes | ka miniti 30       | ka min 30   |
-| in 3 hours    | ka tili-waati 3    | ka waa 3    |
+| in 30 minutes | miniti 30 kɔnɔ     | min 30 kɔnɔ |
+| in 3 hours    | tili-waati 3 kɔnɔ  | waa 3 kɔnɔ  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal            | Short    | Compact |
-| --------------- | ----------------- | -------- | ------- |
-| Midnight        | sutu-tili-laŋ     | 12:00 AM | 12:00a  |
-| 1:00 AM         | kiliŋ:00          | 1:00 AM  | 1:00a   |
-| 5 past 9        | kɔnɔntɔ:05        | 9:05 AM  | 9:05a   |
-| Quarter past 10 | taŋ:15            | 10:15 AM | 10:15a  |
-| Half past 11    | taŋ ning kiliŋ:30 | 11:30 AM | 11:30a  |
-| Noon            | tili-konto        | 12:00 PM | 12:00p  |
-| Quarter to 3    | fula:45           | 2:45 PM  | 2:45p   |
-| 5 to 6          | luulu:55          | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | sey:00            | 8:00 PM  | 8:00p   |
-| 10:30 PM        | taŋ:30            | 10:30 PM | 10:30p  |
-| 11:58 PM        | sutu-tili-laŋ     | 11:58 PM | 11:58p  |
+| Time            | Normal                                      | Short    | Compact |
+| --------------- | ------------------------------------------- | -------- | ------- |
+| Midnight        | sutu-tili-laŋ                               | 12:00 AM | 12:00a  |
+| 1:00 AM         | talaŋ kiliŋ                                 | 1:00 AM  | 1:00a   |
+| 5 past 9        | talaŋ kɔnɔntɔ aniŋ miniti luulu             | 9:05 AM  | 9:05a   |
+| Quarter past 10 | talaŋ taŋ aniŋ miniti taŋ niŋ luulu         | 10:15 AM | 10:15a  |
+| Half past 11    | talaŋ taŋ niŋ kiliŋ aniŋ talantee           | 11:30 AM | 11:30a  |
+| Noon            | tili-konto                                  | 12:00 PM | 12:00p  |
+| Quarter to 3    | talaŋ fula aniŋ miniti taŋ naani niŋ luulu  | 2:45 PM  | 2:45p   |
+| 5 to 6          | talaŋ luulu aniŋ miniti taŋ luulu niŋ luulu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | talaŋ sey                                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | talaŋ taŋ aniŋ talantee                     | 10:30 PM | 10:30p  |
+| 11:58 PM        | sutu-tili-laŋ                               | 11:58 PM | 11:58p  |

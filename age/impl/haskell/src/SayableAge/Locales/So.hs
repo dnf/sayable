@@ -18,21 +18,15 @@ locale = Locale
     { localeCode = "so"
     , localePlural = \n -> if n == 1 then One else Other
     , localeDay = Pluralized
-      [ (One, "maalin {n}")
-      , (Other, "maalmood {n}")
+      [ (One, "{n} maalin")
+      , (Other, "{n} maalmood")
       ]
-    , localeWeek = Pluralized
-      [ (One, "toddobaad {n}")
-      , (Other, "toddobaadyo {n}")
-      ]
+    , localeWeek = Simple "{n} toddobaad"
     , localeMonth = Pluralized
-      [ (One, "bil {n}")
-      , (Other, "bilood {n}")
+      [ (One, "{n} bil")
+      , (Other, "{n} bilood")
       ]
-    , localeYear = Pluralized
-      [ (One, "sano {n}")
-      , (Other, "sanooyin {n}")
-      ]
+    , localeYear = Simple "{n} sano"
     , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustBorn = "Dhashay cusub"

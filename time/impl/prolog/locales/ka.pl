@@ -15,18 +15,18 @@ st_hours('ka', ['თორმეტი', 'ერთი', 'ორი', 'სამ
 st_midnight('ka', 'შუაღამე').
 st_noon('ka', 'შუადღე').
 
-st_pattern('ka', 0, '{h} o\'clock').
-st_pattern('ka', 5, 'ხუთი past {h}').
-st_pattern('ka', 10, 'ათი past {h}').
-st_pattern('ka', 15, 'თხუთმეტი past {h}').
-st_pattern('ka', 20, 'ოცი past {h}').
-st_pattern('ka', 25, 'ოცდახუთი past {h}').
-st_pattern('ka', 30, 'ოცდაათი past {h}').
-st_pattern('ka', 35, 'ოცდახუთი to {next_h}').
-st_pattern('ka', 40, 'ოცი to {next_h}').
-st_pattern('ka', 45, 'თხუთმეტი to {next_h}').
-st_pattern('ka', 50, 'ათი to {next_h}').
-st_pattern('ka', 55, 'ხუთი to {next_h}').
+st_pattern('ka', 0, '{h} საათი').
+st_pattern('ka', 5, '{h} საათი და ხუთი წუთი').
+st_pattern('ka', 10, '{h} საათი და ათი წუთი').
+st_pattern('ka', 15, '{h} საათი და თხუთმეტი წუთი').
+st_pattern('ka', 20, '{h} საათი და ოცი წუთი').
+st_pattern('ka', 25, '{h} საათი და ოცდახუთი წუთი').
+st_pattern('ka', 30, '{h} საათი და ოცდაათი წუთი').
+st_pattern('ka', 35, '{h} საათი და ოცდათხუთმეტი წუთი').
+st_pattern('ka', 40, '{h} საათი და ორმოცი წუთი').
+st_pattern('ka', 45, '{h} საათი და ორმოცდახუთი წუთი').
+st_pattern('ka', 50, '{h} საათი და ორმოცდაათი წუთი').
+st_pattern('ka', 55, '{h} საათი და ორმოცდათხუთმეტი წუთი').
 
 short_st_use24h('ka', true).
 short_st_format('ka', '{h}:{mm}').

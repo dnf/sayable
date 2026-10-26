@@ -18,30 +18,30 @@ ee
 	locale code: 'ee'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. 'sekend {n}'. #other. 'sekendwo {n}' }).
-		'minute'. (Dictionary newFromPairs: { #one. 'aɖabaƒoƒo {n}'. #other. 'aɖabaƒoƒowo {n}' }).
-		'hour'. (Dictionary newFromPairs: { #one. 'gaƒoƒo {n}'. #other. 'gaƒoƒowo {n}' }).
-		'day'. (Dictionary newFromPairs: { #one. 'ŋkeke {n}'. #other. 'ŋkekewo {n}' }).
-		'week'. (Dictionary newFromPairs: { #one. 'kɔsiɖa {n}'. #other. 'kɔsiɖawo {n}' }).
-		'month'. (Dictionary newFromPairs: { #one. 'ɣleti {n}'. #other. 'ɣletiwo {n}' }).
-		'year'. (Dictionary newFromPairs: { #one. 'ƒe {n}'. #other. 'ƒewo {n}' }).
+		'second'. 'sekend {n}'.
+		'minute'. 'aɖabaƒoƒo {n}'.
+		'hour'. 'gaƒoƒo {n}'.
+		'day'. 'ŋkeke {n}'.
+		'week'. 'kɔsiɖa {n}'.
+		'month'. 'ɣleti {n}'.
+		'year'. 'ƒe {n}'.
 	}).
 	locale half: '{0} kple afã'.
 	locale delimiter: ', '.
 	locale justNow: 'fifia'.
-	locale ago: 'ɖe {0} me'.
+	locale ago: '{0} si va yi'.
 	locale inFuture: 'le {0} me'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. 'sek. {n}'.
 			'minute'. 'aɖaba. {n}'.
 			'hour'. 'gaƒ. {n}'.
-			'day'. 'ŋkekewo {n}'.
-			'week'. (Dictionary newFromPairs: { #one. 'kɔsiɖa {n}'. #other. 'kɔsiɖawo {n}' }).
-			'month'. (Dictionary newFromPairs: { #one. 'ɣleti {n}'. #other. 'ɣletiwo {n}' }).
-			'year'. (Dictionary newFromPairs: { #one. 'ƒe {n}'. #other. 'ƒewo {n}' }).
+			'day'. 'ŋkeke {n}'.
+			'week'. 'kɔsiɖa {n}'.
+			'month'. 'ɣleti {n}'.
+			'year'. 'ƒe {n}'.
 		}).
-		#ago. 'ɖe {0} me'.
+		#ago. '{0} si va yi'.
 		#inFuture. 'le {0} me'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
@@ -56,7 +56,7 @@ ee
 		}).
 		#half. '{n}½'.
 		#delimiter. ''.
-		#ago. 'ɖe {0} me'.
+		#ago. '{0} si va yi'.
 		#inFuture. 'le {0} me'.
 	}).
 	^ locale

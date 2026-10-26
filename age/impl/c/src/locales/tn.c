@@ -31,7 +31,7 @@ const SaLocale sa_locale_tn = {
         { "Lesea", "" },
         { "Ngwana yo monnye", "" },
         { "Ngwana", "" },
-        { "Lekgarebe", "" },
+        { "Mosha", "" },
         { "Motho yo mogolo", "" }
     },
     true, { true, { NULL, { NULL, "letsatsi {n}", NULL, NULL, NULL, "malatsi {n}" } }, true, { NULL, { NULL, "beke {n}", NULL, NULL, NULL, "dibeke {n}" } }, true, { NULL, { NULL, "kgw. {n}", NULL, NULL, NULL, "dikgw. {n}" } }, true, { NULL, { NULL, "ngw. {n}", NULL, NULL, NULL, "dingw. {n}" } }, false, NULL, false, NULL, false, NULL },

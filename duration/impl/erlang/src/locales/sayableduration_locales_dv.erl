@@ -24,7 +24,7 @@ locale() ->
         week = {simple, "{n} ހަފްތާ"},
         month = {simple, "{n} މަސް"},
         year = {simple, "{n} އަހަރު"},
-        half = "{0} ބައި",
+        half = "{n}½",
         delimiter = "، ",
         just_now = "މިހާރު",
         ago = "މީގެ {0} ކުރިން",

@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.PluralUnit([#(types.One, "{n} setmana"), #(types.Other, "{n} setmanes")]),
     month: types.PluralUnit([#(types.One, "{n} mes"), #(types.Other, "{n} mesos")]),
     year: types.PluralUnit([#(types.One, "{n} any"), #(types.Other, "{n} anys")]),
-    half: "{n} i mig",
+    half: "{0} i mig",
     delimiter: ", ",
     just_born: "Nounat",
     newborn: types.GenderedStage("Nounat", "Nounada"),

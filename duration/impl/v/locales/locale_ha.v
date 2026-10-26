@@ -22,13 +22,13 @@ fn plural_ha(n int) PluralCategory {
 pub const locale_ha = DurationLocale{
 	code: 'ha'
 	plural: plural_ha
-	second: plural_unit({PluralCategory.one: '{n} daƙiƙa', PluralCategory.other: '{n} daƙiƙoƙi'})
-	minute: plural_unit({PluralCategory.one: '{n} minti', PluralCategory.other: '{n} mintoci'})
-	hour: plural_unit({PluralCategory.one: '{n} awa', PluralCategory.other: '{n} awanni'})
-	day: plural_unit({PluralCategory.one: '{n} kwana', PluralCategory.other: '{n} kwanaki'})
-	week: plural_unit({PluralCategory.one: '{n} mako', PluralCategory.other: '{n} makonni'})
-	month: plural_unit({PluralCategory.one: '{n} wata', PluralCategory.other: '{n} watanni'})
-	year: plural_unit({PluralCategory.one: '{n} shekara', PluralCategory.other: '{n} shekaru'})
+	second: plural_unit({PluralCategory.one: 'daƙiƙa {n}', PluralCategory.other: 'daƙiƙoƙi {n}'})
+	minute: plural_unit({PluralCategory.one: 'minti {n}', PluralCategory.other: 'mintoci {n}'})
+	hour: plural_unit({PluralCategory.one: 'awa {n}', PluralCategory.other: 'awanni {n}'})
+	day: plural_unit({PluralCategory.one: 'kwana {n}', PluralCategory.other: 'kwanaki {n}'})
+	week: plural_unit({PluralCategory.one: 'mako {n}', PluralCategory.other: 'makonni {n}'})
+	month: plural_unit({PluralCategory.one: 'wata {n}', PluralCategory.other: 'watanni {n}'})
+	year: plural_unit({PluralCategory.one: 'shekara {n}', PluralCategory.other: 'shekaru {n}'})
 	half: '{n}½'
 	delimiter: ', '
 	just_now: 'yanzu'
@@ -36,19 +36,19 @@ pub const locale_ha = DurationLocale{
 	in_future: 'cikin {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('{n} daƙ.')
+		second: simple_unit('daƙ. {n}')
 		has_second: true
-		minute: simple_unit('{n} mnt.')
+		minute: simple_unit('mnt. {n}')
 		has_minute: true
-		hour: simple_unit('{n} awa')
+		hour: simple_unit('awa {n}')
 		has_hour: true
-		day: simple_unit('{n} kw.')
+		day: simple_unit('kw. {n}')
 		has_day: true
-		week: simple_unit('{n} mk.')
+		week: simple_unit('mk. {n}')
 		has_week: true
-		month: simple_unit('{n} wt.')
+		month: simple_unit('wt. {n}')
 		has_month: true
-		year: simple_unit('{n} shk.')
+		year: simple_unit('shk. {n}')
 		has_year: true
 		ago: '{0} da suka wuce'
 		has_ago: true

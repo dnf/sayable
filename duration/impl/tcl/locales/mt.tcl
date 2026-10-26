@@ -22,8 +22,8 @@ proc locale_duration_mt {} {
     set code {mt}
     set units [dict create \
         second [dict create one "{n} sekonda" two "{n} sekondi" few "{n} sekondi" many "{n}-il sekonda" other "{n} sekonda"] \
-        minute [dict create one "{n} minuta" two "{n} minuti" few "{n} minuti" many "{n}-il minuta" other "{n} minuta"] \
-        hour [dict create one "{n} siegħa" two "{n} sigħat" few "{n} sigħat" many "{n}-il siegħa" other "{n} siegħa"] \
+        minute [dict create one "{n} minuta" two {minutejn} few "{n} minuti" many "{n}-il minuta" other "{n} minuta"] \
+        hour [dict create one "{n} siegħa" two {sagħtejn} few "{n} sigħat" many "{n}-il siegħa" other "{n} siegħa"] \
         day [dict create one {ġurnata} two {jumejn} few "{n} ijiem" many "{n}-il jum" other "{n} jum"] \
         week [dict create one {ġimgħa} two {ġimgħatejn} few "{n} ġimgħat" many "{n}-il ġimgħa" other "{n} ġimgħa"] \
         month [dict create one {xahar} two {xahrejn} few "{n} xhur" many "{n}-il xahar" other "{n} xahar"] \

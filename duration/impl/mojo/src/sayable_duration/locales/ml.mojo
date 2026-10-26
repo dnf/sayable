@@ -23,7 +23,7 @@ from ..locale import (
 fn build_ml() -> DurationLocale:
     """Build the Malayalam locale."""
     fn plural(n: Int) -> String:
-        if n == 0 or n == 1:
+        if n == 1:
             return "one"
         return "other"
 
@@ -89,7 +89,7 @@ fn build_ml() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} ര",
+        half="{n}½",
         delimiter=", ",
         just_now="ഇപ്പോൾ",
         ago="{0} മുമ്പ്",

@@ -15,8 +15,8 @@
    :weekdays @["diumenge" "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte"]
    :day-format "{n}"
    :day-format-exceptions {}
-   :date-pattern "{day} de {month}"
-   :date-pattern-with-year "{day} de {month} de {year}"
+   :date-pattern "{day} {month}"
+   :date-pattern-with-year "{day} {month} de {year}"
    :today "avui"
    :tomorrow "demà"
    :yesterday "ahir"
@@ -25,6 +25,7 @@
    :this-weekday "aquest {weekday}"
    :next-weekday "{weekday} que ve"
    :last-weekday "{weekday} passat"
-   :short {:months @["gen" "feb" "març" "abr" "maig" "juny" "jul" "ag" "set" "oct" "nov" "des"] :weekdays @["dg" "dl" "dt" "dc" "dj" "dv" "ds"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
+   :months-in-date @["de gener" "de febrer" "de març" "d'abril" "de maig" "de juny" "de juliol" "d'agost" "de setembre" "d'octubre" "de novembre" "de desembre"]
+   :short {:months @["gen" "feb" "març" "abr" "maig" "juny" "jul" "ag" "set" "oct" "nov" "des"] :weekdays @["dg" "dl" "dt" "dc" "dj" "dv" "ds"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} de {year}"}
    :compact {:date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}"}
 })

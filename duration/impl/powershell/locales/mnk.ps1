@@ -27,7 +27,7 @@ function locale_mnk {
     $delimiter = ', '
     $justNow = 'sisan'
     $ago = '{0} taata'
-    $inFuture = 'ka {0}'
+    $inFuture = '{0} kɔnɔ'
     $short = @{
         units = @{
             second = 'sɛk. {n}'
@@ -39,7 +39,7 @@ function locale_mnk {
             year = 'sanj. {n}'
         }
         ago = '{0} taata'
-        inFuture = 'ka {0}'
+        inFuture = '{0} kɔnɔ'
     }
     $compact = @{
         units = @{
@@ -54,7 +54,7 @@ function locale_mnk {
         half = '{n}½'
         delimiter = ''
         ago = '{0} taata'
-        inFuture = 'ka {0}'
+        inFuture = '{0} kɔnɔ'
     }
     return @{
         code = 'mnk'

@@ -40,10 +40,10 @@ fn build_cy() -> DurationLocale:
     var second = plural_unit(zero="{n} eiliad", one="{n} eiliad", two="{n} eiliad", few="{n} eiliad", many="{n} eiliad", other="{n} eiliad")
     var minute = plural_unit(zero="{n} munud", one="{n} munud", two="{n} funud", few="{n} munud", many="{n} munud", other="{n} munud")
     var hour = plural_unit(zero="{n} awr", one="{n} awr", two="{n} awr", few="{n} awr", many="{n} awr", other="{n} awr")
-    var day = plural_unit(zero="{n} diwrnod", one="{n} diwrnod", two="{n} ddiwrnod", few="{n} diwrnod", many="{n} niwrnod", other="{n} diwrnod")
+    var day = plural_unit(zero="{n} diwrnod", one="{n} diwrnod", two="{n} ddiwrnod", few="{n} diwrnod", many="{n} diwrnod", other="{n} diwrnod")
     var week = plural_unit(zero="{n} wythnos", one="{n} wythnos", two="{n} wythnos", few="{n} wythnos", many="{n} wythnos", other="{n} wythnos")
     var month = plural_unit(zero="{n} mis", one="{n} mis", two="{n} fis", few="{n} mis", many="{n} mis", other="{n} mis")
-    var year = plural_unit(zero="{n} blwyddyn", one="{n} blwyddyn", two="{n} flynedd", few="{n} blynedd", many="{n} blynedd", other="{n} blynedd")
+    var year = plural_unit(zero="{n} blwyddyn", one="{n} flwyddyn", two="{n} flynedd", few="{n} blynedd", many="{n} blynedd", other="{n} blynedd")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} eil")

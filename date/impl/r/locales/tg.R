@@ -23,8 +23,8 @@ locale_tg <- list(
   day_after_tomorrow = "пасфардо",
   day_before_yesterday = "парирӯз",
   this_weekday = "ин {weekday}",
-  next_weekday = "{weekday}-и оянда",
-  last_weekday = "{weekday}-и гузашта",
+  next_weekday = "{weekday}и оянда",
+  last_weekday = "{weekday}и гузашта",
   short = list(
     months = c("Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"),
     weekdays = c("Яш", "Дш", "Сш", "Чш", "Пш", "Ҷм", "Шб"),

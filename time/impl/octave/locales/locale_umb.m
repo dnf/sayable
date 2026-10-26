@@ -11,10 +11,10 @@
 
 function loc = locale_umb()
   loc.code = 'umb';
-  loc.clock.hours = {'olohola likumi na yivali', 'yimosi', 'yivali', 'yitathu', 'yinyali', 'yitanu', 'yitathu-va-yivali', 'yisemba', 'yinyali-va-yivali', 'yitanu-va-yivali', 'likumi', 'likumi na yimosi'};
+  loc.clock.hours = {'ekwi la vali', 'mosi', 'vali', 'tatu', 'kwãla', 'tãlo', 'epandu', 'epanduvali', 'ecelãla', 'ecea', 'ekwi', 'ekwi la mosi'};
   loc.clock.midnight = 'ocitapi';
   loc.clock.noon = 'ocivali';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'ohola {h}', "p5", 'ohola {h} la tãlo', "p10", 'ohola {h} la ekwi', "p15", 'ohola {h} la ekwi la tãlo', "p20", 'ohola {h} la akũi avali', "p25", 'ohola {h} la akũi avali la tãlo', "p30", 'ohola {h} la oñali', "p35", 'ohola {h} la akũi atatu la tãlo', "p40", 'ohola {h} la akũi akwãla', "p45", 'ohola {h} la akũi akwãla la tãlo', "p50", 'ohola {h} la akũi atãlo', "p55", 'ohola {h} la akũi atãlo la tãlo');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

@@ -20,8 +20,8 @@ const SduDurationLocale sdu_locale_nso = {
     "nso",
     plural_nso,
     {
-        { NULL, { NULL, "motsotswana {n}", NULL, NULL, NULL, "dimetsotswana {n}" } },
-        { NULL, { NULL, "metsotso {n}", NULL, NULL, NULL, "dimetsotso {n}" } },
+        { NULL, { NULL, "motsotswana {n}", NULL, NULL, NULL, "metsotswana {n}" } },
+        { NULL, { NULL, "motsotso {n}", NULL, NULL, NULL, "metsotso {n}" } },
         { NULL, { NULL, "iri {n}", NULL, NULL, NULL, "diiri {n}" } },
         { NULL, { NULL, "letšatši {n}", NULL, NULL, NULL, "matšatši {n}" } },
         { NULL, { NULL, "beke {n}", NULL, NULL, NULL, "dibeke {n}" } },
@@ -31,6 +31,6 @@ const SduDurationLocale sdu_locale_nso = {
     "{0} le seripagare", ", ",
     "bjale",
     "{0} ye e fetilego", "ka {0}",
-    true, { true, { NULL, { NULL, "mots. {n}", NULL, NULL, NULL, "dimets. {n}" } }, true, { NULL, { NULL, "mets. {n}", NULL, NULL, NULL, "dimets. {n}" } }, true, { NULL, { NULL, "iri {n}", NULL, NULL, NULL, "diiri {n}" } }, true, { NULL, { NULL, "letšatši {n}", NULL, NULL, NULL, "matšatši {n}" } }, true, { NULL, { NULL, "beke {n}", NULL, NULL, NULL, "dibeke {n}" } }, true, { NULL, { NULL, "kgw. {n}", NULL, NULL, NULL, "dikgw. {n}" } }, true, { NULL, { NULL, "ngw. {n}", NULL, NULL, NULL, "mengw. {n}" } }, false, NULL, false, NULL, true, "{0} ye e fetilego", true, "ka {0}" },
+    true, { true, { NULL, { NULL, "motsotsw. {n}", NULL, NULL, NULL, "metsotsw. {n}" } }, true, { NULL, { NULL, "mots. {n}", NULL, NULL, NULL, "mets. {n}" } }, true, { NULL, { NULL, "iri {n}", NULL, NULL, NULL, "diiri {n}" } }, true, { NULL, { NULL, "letšatši {n}", NULL, NULL, NULL, "matšatši {n}" } }, true, { NULL, { NULL, "beke {n}", NULL, NULL, NULL, "dibeke {n}" } }, true, { NULL, { NULL, "kgw. {n}", NULL, NULL, NULL, "dikgw. {n}" } }, true, { NULL, { NULL, "ngw. {n}", NULL, NULL, NULL, "mengw. {n}" } }, false, NULL, false, NULL, true, "{0} ye e fetilego", true, "ka {0}" },
     true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} fetilego", true, "ka {0}" }
 };

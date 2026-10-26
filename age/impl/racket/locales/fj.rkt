@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} na macawa")
          "month" (hash "type" "simple" "form" "{n} na vula")
          "year" (hash "type" "simple" "form" "{n} na yabaki"))
-   "{n} kei na levu ni wasei"
+   "{0} kei na veimama"
    ", "
    "Gone vou"
    (hash "newborn" (stage-label "Gone vou" #f #f)
@@ -35,5 +35,5 @@
          "teenager" (stage-label "Cauravou" #f #f)
          "adult" (stage-label "Tamata qase" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} siga") (hash "type" "simple" "form" "{n} mac.") (hash "type" "simple" "form" "{n} vula") (hash "type" "simple" "form" "{n} yab.") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

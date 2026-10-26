@@ -12,7 +12,7 @@ Plural rule: `one_other` (categories: one, other)
 
 | Age               | Normal          | Short           | Compact      |
 | ----------------- | --------------- | --------------- | ------------ |
-| Born today        | Sapolindur      | Sapolindur      | Sapolindur   |
+| Born today        | I sapolindur    | I sapolindur    | I sapolindur |
 | 1 day             | 1 ditë          | 1 ditë          | 1 ditë       |
 | 3 days            | 3 ditë          | 3 ditë          | 3 ditë       |
 | 6 days            | 6 ditë          | 6 ditë          | 6 ditë       |
@@ -41,7 +41,7 @@ Plural rule: `one_other` (categories: one, other)
 
 | Stage    | Label                           |
 | -------- | ------------------------------- |
-| Newborn  | Sapolindur / Sapolindure        |
+| Newborn  | I sapolindur / E sapolindur     |
 | Infant   | Foshnjë                         |
 | Toddler  | Fëmijë i vogël / Fëmijë e vogël |
 | Child    | Fëmijë                          |
@@ -65,18 +65,18 @@ Plural rule: `one_other` (categories: one, other)
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal           | Compact |
-| -------------------- | ---------------- | ------- |
-| Today                | sot              | sot     |
-| Tomorrow             | nesër            | nesër   |
-| Yesterday            | dje              | dje     |
-| Day after tomorrow   | pasnesër         | 17/3    |
-| Day before yesterday | pardje           | 13/3    |
-| This Thursday (+5)   | këtë e enjte     | 20/3    |
-| Last Monday (-4)     | e martë e kaluar | 11/3    |
-| Next Wednesday (+12) | e enjte tjetër   | 27/3    |
-| Same month (+20)     | 4 prill          | 4/4     |
-| Different year       | 10 janar 2026    | 10/1/26 |
+| Offset               | Normal               | Compact |
+| -------------------- | -------------------- | ------- |
+| Today                | sot                  | sot     |
+| Tomorrow             | nesër                | nesër   |
+| Yesterday            | dje                  | dje     |
+| Day after tomorrow   | pasnesër             | 17/3    |
+| Day before yesterday | pardje               | 13/3    |
+| This Thursday (+5)   | të enjten            | 20/3    |
+| Last Tuesday (-4)    | të martën e kaluar   | 11/3    |
+| Next Thursday (+12)  | të enjten e ardhshme | 27/3    |
+| Same year (+20)      | 4 prill              | 4/4     |
+| Different year       | 10 janar 2026        | 10/1/26 |
 
 ## Duration
 
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                   | Short | Compact |
-| --------------- | ------------------------ | ----- | ------- |
-| Midnight        | mesnata                  | 0:00  | 0:00    |
-| 1:00 AM         | një o'clock              | 1:00  | 1:00    |
-| 5 past 9        | pesë past nëntë          | 9:05  | 9:05    |
-| Quarter past 10 | një çerek past dhjetë    | 10:15 | 10:15   |
-| Half past 11    | gjysma past njëmbëdhjetë | 11:30 | 11:30   |
-| Noon            | mesdita                  | 12:00 | 12:00   |
-| Quarter to 3    | një çerek to tre         | 14:45 | 14:45   |
-| 5 to 6          | pesë to gjashtë          | 17:55 | 17:55   |
-| 8 o'clock PM    | tetë o'clock             | 20:00 | 20:00   |
-| 10:30 PM        | gjysma past dhjetë       | 22:30 | 22:30   |
-| 11:58 PM        | mesnata                  | 23:58 | 23:58   |
+| Time            | Normal                | Short | Compact |
+| --------------- | --------------------- | ----- | ------- |
+| Midnight        | mesnata               | 0:00  | 0:00    |
+| 1:00 AM         | ora një               | 1:00  | 1:00    |
+| 5 past 9        | nëntë e pesë          | 9:05  | 9:05    |
+| Quarter past 10 | dhjetë e një çerek    | 10:15 | 10:15   |
+| Half past 11    | njëmbëdhjetë e gjysmë | 11:30 | 11:30   |
+| Noon            | mesdita               | 12:00 | 12:00   |
+| Quarter to 3    | tre pa një çerek      | 14:45 | 14:45   |
+| 5 to 6          | gjashtë pa pesë       | 17:55 | 17:55   |
+| 8 o'clock PM    | ora tetë              | 20:00 | 20:00   |
+| 10:30 PM        | dhjetë e gjysmë       | 22:30 | 22:30   |
+| 11:58 PM        | mesnata               | 23:58 | 23:58   |

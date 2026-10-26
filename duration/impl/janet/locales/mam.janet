@@ -16,7 +16,7 @@
           :minute "{n} minuto"
           :hour "{n} hora"
           :day "{n} q'ij"
-          :week "{n} xjaw"
+          :week "{n} seman"
           :month "{n} xjaw"
           :year "{n} ab'q'ii"}
    :half "{0} nik'"
@@ -24,6 +24,6 @@
    :just-now "iky'x"
    :ago "{0} chi'j"
    :in-future "tu'n {0}"
-   :short {:units {:second "{n} seg." :minute "{n} min." :hour "{n} hora" :day "{n} q'ij" :week "{n} xjaw" :month "{n} xjaw" :year "{n} ab'."} :ago "{0} chi'j" :in-future "tu'n {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :delimiter "" :ago "{0} chi'j" :in-future "tu'n {0}"}
+   :short {:units {:second "{n} seg." :minute "{n} min." :hour "{n} hora" :day "{n} q'ij" :week "{n} seman" :month "{n} xjaw" :year "{n} ab'."} :ago "{0} chi'j" :in-future "tu'n {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} chi'j" :in-future "tu'n {0}"}
 })

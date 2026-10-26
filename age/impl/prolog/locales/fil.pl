@@ -27,7 +27,7 @@ sa_stage('fil', infant, _, 'Sanggol').
 sa_stage('fil', toddler, _, 'Batang paslit').
 sa_stage('fil', child, _, 'Bata').
 sa_stage('fil', teenager, _, 'Tinedyer').
-sa_stage('fil', adult, _, 'Matanda').
+sa_stage('fil', adult, _, 'Adulto').
 
 short_sa_unit('fil', day, _, '{n} araw').
 short_sa_unit('fil', week, one, '{n} linggo').

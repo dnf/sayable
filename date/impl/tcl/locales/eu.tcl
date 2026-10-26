@@ -13,10 +13,10 @@ proc locale_date_eu {} {
     set code {eu}
     set months [list {urtarril} {otsail} {martxo} {apiril} {maiatz} {ekain} {uztail} {abuztu} {irail} {urri} {azaro} {abendu}]
     set weekdays [list {igandea} {astelehena} {asteartea} {asteazkena} {osteguna} {ostirala} {larunbata}]
-    set day_format "{n}"
-    set day_format_exceptions [dict create]
-    set date_pattern "{month}ren {day}"
-    set date_pattern_with_year "{year}ko {month}ren {day}"
+    set day_format "{n}a"
+    set day_format_exceptions [dict create {11} "{n}" {31} "{n}"]
+    set date_pattern "{month} {day}"
+    set date_pattern_with_year "{year}ko {month} {day}"
     set today {gaur}
     set tomorrow {bihar}
     set yesterday {atzo}
@@ -25,7 +25,7 @@ proc locale_date_eu {} {
     set this_weekday "{weekday} hau"
     set next_weekday "hurrengo {weekday}"
     set last_weekday "aurreko {weekday}"
-    set months_in_date ""
+    set months_in_date [list {urtarrilaren} {otsailaren} {martxoaren} {apirilaren} {maiatzaren} {ekainaren} {uztailaren} {abuztuaren} {irailaren} {urriaren} {azaroaren} {abenduaren}]
     set short [dict create \
         months [list {urt} {ots} {mar} {api} {mai} {eka} {uzt} {abu} {ira} {urr} {aza} {abe}] \
         weekdays [list {ig} {al} {ar} {az} {og} {or} {lr}] \

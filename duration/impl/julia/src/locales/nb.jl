@@ -26,7 +26,7 @@ const NB = DurationLocale(
     half = "{n}½",
     delimiter = ", ",
     just_now = "akkurat nå",
-    ago = "{0} siden",
+    ago = "for {0} siden",
     in_future = "om {0}",
     short_override = DurationCompactnessOverride(
         units = Dict(
@@ -38,7 +38,7 @@ const NB = DurationLocale(
             "month" => "{n} md.",
             "year" => "{n} år",
         ),
-        ago = "{0} siden",
+        ago = "for {0} siden",
         in_future = "om {0}",
     ),
     compact_override = DurationCompactnessOverride(
@@ -52,7 +52,7 @@ const NB = DurationLocale(
             "year" => "{n}å",
         ),
         delimiter = "",
-        ago = "{0} siden",
+        ago = "for {0} siden",
         in_future = "om {0}",
     ),
 )

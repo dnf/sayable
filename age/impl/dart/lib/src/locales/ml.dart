@@ -15,14 +15,14 @@ import '../types.dart';
 final ml = AgeLocale(
   code: 'ml',
   plural: (int n) {
-    if (n == 0 || n == 1) return PluralCategory.one;
+    if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
   day: pluralUnit({PluralCategory.one: '{n} ദിവസം', PluralCategory.other: '{n} ദിവസങ്ങൾ'}),
   week: pluralUnit({PluralCategory.one: '{n} ആഴ്ച', PluralCategory.other: '{n} ആഴ്ചകൾ'}),
   month: pluralUnit({PluralCategory.one: '{n} മാസം', PluralCategory.other: '{n} മാസങ്ങൾ'}),
   year: pluralUnit({PluralCategory.one: '{n} വയസ്സ്', PluralCategory.other: '{n} വയസ്സ്'}),
-  half: '{0} ര',
+  half: '{n}½',
   delimiter: ', ',
   justBorn: 'നവജാതശിശു',
   newborn: stageNeutral('നവജാതശിശു'),

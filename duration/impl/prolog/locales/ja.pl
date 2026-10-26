@@ -19,7 +19,7 @@ sd_unit('ja', hour, _, '{n}時間').
 sd_unit('ja', day, _, '{n}日').
 sd_unit('ja', week, _, '{n}週').
 sd_unit('ja', month, _, '{n}ヶ月').
-sd_unit('ja', year, _, '{n}歳').
+sd_unit('ja', year, _, '{n}年').
 
 sd_half('ja', '{0}半').
 sd_delimiter('ja', '').
@@ -44,6 +44,7 @@ compact_sd_unit('ja', day, _, '{n}d').
 compact_sd_unit('ja', week, _, '{n}w').
 compact_sd_unit('ja', month, _, '{n}m').
 compact_sd_unit('ja', year, _, '{n}y').
+compact_sd_half('ja', '{n}½').
 compact_sd_delimiter('ja', '').
 compact_sd_ago('ja', '{0}前').
 compact_sd_in_future('ja', '{0}後').

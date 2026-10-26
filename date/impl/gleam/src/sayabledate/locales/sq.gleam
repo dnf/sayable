@@ -15,7 +15,7 @@ pub fn locale() -> types.DateLocale {
   types.DateLocale(
     code: "sq",
     months: ["janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"],
-    weekdays: ["e diel", "e hënë", "e martë", "e mërkurë", "e enjte", "e premte", "e shtunë"],
+    weekdays: ["të dielën", "të hënën", "të martën", "të mërkurën", "të enjten", "të premten", "të shtunën"],
     day_format: "{n}",
     day_format_exceptions: [],
     date_pattern: "{day} {month}",
@@ -25,8 +25,8 @@ pub fn locale() -> types.DateLocale {
     yesterday: "dje",
     day_after_tomorrow: Ok("pasnesër"),
     day_before_yesterday: Ok("pardje"),
-    this_weekday: Ok("këtë {weekday}"),
-    next_weekday: Ok("{weekday} tjetër"),
+    this_weekday: Ok("{weekday}"),
+    next_weekday: Ok("{weekday} e ardhshme"),
     last_weekday: Ok("{weekday} e kaluar"),
     months_in_date: Error(Nil),
     short: Ok(types.CompactnessOverride(

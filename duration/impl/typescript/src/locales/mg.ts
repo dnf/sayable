@@ -26,7 +26,7 @@ export const mg: DurationLocale = {
   half: '{0} sy sasany',
   delimiter: ', ',
   justNow: 'vao haingana',
-  ago: '{0} lasa',
+  ago: '{0} lasa izay',
   inFuture: 'ao anatin\'ny {0}',
   short: {
     units: {
@@ -38,7 +38,7 @@ export const mg: DurationLocale = {
       month:  '{n} vol',
       year:   '{n} tna',
     },
-    ago: '{0} lasa',
+    ago: '{0} lasa izay',
     inFuture: 'ao anatin\'ny {0}',
   },
   compact: {

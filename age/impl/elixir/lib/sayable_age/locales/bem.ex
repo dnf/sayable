@@ -31,7 +31,7 @@ defmodule SayableAge.Locales.BEM do
         toddler: "Umwana",
         child: "Umwana",
         teenager: "Umunyamata",
-        adult: "Umulumendo"
+        adult: "Umukalamba"
       },
       short: %{
         units: %{

@@ -16,7 +16,7 @@
           :week "{n} ހަފްތާ"
           :month "{n} މަސް"
           :year "{n} އަހަރު"}
-   :half "{0} ބައި"
+   :half "{n}½"
    :delimiter "، "
    :just-born "އަލަށް އުފަންވި"
    :stages {:newborn "އަލަށް އުފަންވި"

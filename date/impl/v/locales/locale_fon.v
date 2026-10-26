@@ -15,7 +15,7 @@ module locales
 pub const locale_fon = DateLocale{
 	code: 'fon'
 	months: ['Alɔfí', 'Alɔnyɔ', 'Ataɖaxɔ', 'Tlɛsún', 'Axɔsún', 'Ayɛsún', 'Nùxwásún', 'Ayidosún', 'Kɛnísún', 'Kanyásún', 'Abɔxwísún', 'Adɔxwísún']!
-	weekdays: ['Sidégbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Abámɛ́ta']!
+	weekdays: ['Aklunɔzángbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Sibigbe']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
@@ -36,7 +36,7 @@ pub const locale_fon = DateLocale{
 	short_override: DateCompactnessOverride{
 		months: ['Alɔ', 'Any', 'Ata', 'Tlɛ', 'Axɔ', 'Ayɛ', 'Nùx', 'Ayi', 'Kɛn', 'Kan', 'Abɔ', 'Adɔ']!
 		has_months: true
-		weekdays: ['Sid', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Abá']!
+		weekdays: ['Akl', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Sib']!
 		has_weekdays: true
 		day_format: '{n}'
 		has_day_format: true

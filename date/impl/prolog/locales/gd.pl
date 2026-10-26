@@ -13,7 +13,7 @@
 
 sd_months('gd', ['Am Faoilleach', 'An Gearran', 'Am Màrt', 'An Giblean', 'An Cèitean', 'An t-Ògmhios', 'An t-Iuchar', 'An Lùnastal', 'An t-Sultain', 'An Dàmhair', 'An t-Samhain', 'An Dùbhlachd']).
 sd_weekdays('gd', ['DiDòmhnaich', 'DiLuain', 'DiMàirt', 'DiCiadain', 'DiarDaoin', 'DihAoine', 'DiSathairne']).
-sd_day_format('gd', '{n}').
+sd_day_format('gd', '{n}mh').
 
 sd_date_pattern('gd', '{day} {month}').
 sd_date_pattern_with_year('gd', '{day} {month} {year}').
@@ -26,6 +26,7 @@ sd_day_before_yesterday('gd', 'a-bhòin-dè').
 sd_this_weekday('gd', '{weekday} seo').
 sd_next_weekday('gd', '{weekday} sa tighinn').
 sd_last_weekday('gd', '{weekday} seo chaidh').
+sd_months_in_date('gd', ['dhen Fhaoilleach', 'dhen Ghearran', 'dhen Mhàrt', 'dhen Ghiblean', 'dhen Chèitean', 'dhen Ògmhios', 'dhen Iuchar', 'dhen Lùnastal', 'dhen t-Sultain', 'dhen Dàmhair', 'dhen t-Samhain', 'dhen Dùbhlachd']).
 
 short_sd_months('gd', ['Faoi', 'Gearr', 'Màrt', 'Gibl', 'Cèit', 'Ògmh', 'Iuch', 'Lùna', 'Sult', 'Dàmh', 'Samh', 'Dùbh']).
 short_sd_weekdays('gd', ['DiD', 'DiL', 'DiM', 'DiC', 'Dia', 'Dih', 'DiS']).

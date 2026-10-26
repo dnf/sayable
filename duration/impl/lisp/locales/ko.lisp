@@ -23,7 +23,7 @@
                (cons :day "{n}일")
                (cons :week "{n}주")
                (cons :month "{n}개월")
-               (cons :year "{n}살"))
+               (cons :year "{n}년"))
    :half "{0} 반"
    :delimiter " "
    :just-now "방금"

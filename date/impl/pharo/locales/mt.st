@@ -17,7 +17,7 @@ mt
 	locale := SayableDateLocale new.
 	locale code: 'mt'.
 	locale months: (OrderedCollection withAll: { 'Jannar'. 'Frar'. 'Marzu'. 'April'. 'Mejju'. 'Ġunju'. 'Lulju'. 'Awwissu'. 'Settembru'. 'Ottubru'. 'Novembru'. 'Diċembru' }).
-	locale weekdays: (OrderedCollection withAll: { 'Il-Ħadd'. 'It-Tnejn'. 'It-Tlieta'. 'L-Erbgħa'. 'Il-Ħamis'. 'Il-Ġimgħa'. 'Is-Sibt' }).
+	locale weekdays: (OrderedCollection withAll: { 'il-Ħadd'. 'it-Tnejn'. 'it-Tlieta'. 'l-Erbgħa'. 'il-Ħamis'. 'il-Ġimgħa'. 'is-Sibt' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.

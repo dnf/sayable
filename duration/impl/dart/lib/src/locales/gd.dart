@@ -23,7 +23,7 @@ final gd = DurationLocale(
   units: {
     'second': pluralUnit({PluralCategory.one: '{n} diog', PluralCategory.two: '{n} dhiog', PluralCategory.few: '{n} diogan', PluralCategory.other: '{n} diog'}),
     'minute': pluralUnit({PluralCategory.one: '{n} mhionaid', PluralCategory.two: '{n} mhionaid', PluralCategory.few: '{n} mionaidean', PluralCategory.other: '{n} mionaid'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} uair', PluralCategory.two: '{n} uair', PluralCategory.few: '{n} uairean', PluralCategory.other: '{n} uair'}),
+    'hour': pluralUnit({PluralCategory.one: '{n} uair a thìde', PluralCategory.two: '{n} uair a thìde', PluralCategory.few: '{n} uairean a thìde', PluralCategory.other: '{n} uair a thìde'}),
     'day': pluralUnit({PluralCategory.one: '{n} latha', PluralCategory.two: '{n} latha', PluralCategory.few: '{n} làithean', PluralCategory.other: '{n} latha'}),
     'week': pluralUnit({PluralCategory.one: '{n} sheachdain', PluralCategory.two: '{n} sheachdain', PluralCategory.few: '{n} seachdainean', PluralCategory.other: '{n} seachdain'}),
     'month': pluralUnit({PluralCategory.one: '{n} mhìos', PluralCategory.two: '{n} mhìos', PluralCategory.few: '{n} mìosan', PluralCategory.other: '{n} mìos'}),

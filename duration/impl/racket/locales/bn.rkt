@@ -23,7 +23,7 @@
    (lambda (n) (if (or (= n 0) (= n 1)) "one" "other"))
    (hash "second" (hash "type" "simple" "form" "{n} সেকেন্ড")
          "minute" (hash "type" "simple" "form" "{n} মিনিট")
-         "hour" (hash "type" "simple" "form" "{n} ঘন্টা")
+         "hour" (hash "type" "simple" "form" "{n} ঘণ্টা")
          "day" (hash "type" "pluralized" "forms" (hash "one" "{n} দিন" "other" "{n} দিন"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} সপ্তাহ" "other" "{n} সপ্তাহ"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} মাস" "other" "{n} মাস"))

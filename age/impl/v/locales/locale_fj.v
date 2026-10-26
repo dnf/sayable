@@ -23,7 +23,7 @@ pub const locale_fj = AgeLocale{
 	week: simple_unit('{n} na macawa')
 	month: simple_unit('{n} na vula')
 	year: simple_unit('{n} na yabaki')
-	half: '{n} kei na levu ni wasei'
+	half: '{0} kei na veimama'
 	delimiter: ', '
 	just_born: 'Gone vou'
 	newborn: stage_neutral('Gone vou')
@@ -53,6 +53,8 @@ pub const locale_fj = AgeLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 	}

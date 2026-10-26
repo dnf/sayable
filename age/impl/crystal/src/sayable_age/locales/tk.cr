@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new("{n} aý"),
         "year" => UnitForms.new("{n} ýaş"),
       },
-      half: "{0}½",
+      half: "{n} ýarym",
       delimiter: ", ",
       just_born: "Täze doglan",
       stages: {
@@ -28,7 +28,7 @@ module SayableAge
         "toddler" => StageLabel.new("Kiçijik"),
         "child" => StageLabel.new("Çaga"),
         "teenager" => StageLabel.new("Ýetginjek"),
-        "adult" => StageLabel.new("Ulular"),
+        "adult" => StageLabel.new("Uly adam"),
       },
       short: CompactnessOverride.new(
         units: {

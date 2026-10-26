@@ -15,14 +15,14 @@ import ../locale
 
 let ML* = AgeLocale(
   code: "ml",
-  plural: proc(n: int): PluralCategory = (if n in {0, 1}: pcOne else: pcOther),
+  plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
     "day": pluralUnit(@[(pcOne, "{n} ദിവസം"), (pcOther, "{n} ദിവസങ്ങൾ")]),
     "week": pluralUnit(@[(pcOne, "{n} ആഴ്ച"), (pcOther, "{n} ആഴ്ചകൾ")]),
     "month": pluralUnit(@[(pcOne, "{n} മാസം"), (pcOther, "{n} മാസങ്ങൾ")]),
     "year": pluralUnit(@[(pcOne, "{n} വയസ്സ്"), (pcOther, "{n} വയസ്സ്")]),
   }.toOrderedTable,
-  half: "{0} ര",
+  half: "{n}½",
   delimiter: ", ",
   justBorn: "നവജാതശിശു",
   stages: {

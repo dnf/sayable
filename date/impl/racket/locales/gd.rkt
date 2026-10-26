@@ -22,7 +22,7 @@
    "gd"
    (list "Am Faoilleach" "An Gearran" "Am Màrt" "An Giblean" "An Cèitean" "An t-Ògmhios" "An t-Iuchar" "An Lùnastal" "An t-Sultain" "An Dàmhair" "An t-Samhain" "An Dùbhlachd")
    (list "DiDòmhnaich" "DiLuain" "DiMàirt" "DiCiadain" "DiarDaoin" "DihAoine" "DiSathairne")
-   "{n}"
+   "{n}mh"
    (hash)
    "{day} {month}"
    "{day} {month} {year}"
@@ -34,7 +34,7 @@
    "{weekday} seo"
    "{weekday} sa tighinn"
    "{weekday} seo chaidh"
-   #f
+   (list "dhen Fhaoilleach" "dhen Ghearran" "dhen Mhàrt" "dhen Ghiblean" "dhen Chèitean" "dhen Ògmhios" "dhen Iuchar" "dhen Lùnastal" "dhen t-Sultain" "dhen Dàmhair" "dhen t-Samhain" "dhen Dùbhlachd")
    (date-compactness-override (list "Faoi" "Gearr" "Màrt" "Gibl" "Cèit" "Ògmh" "Iuch" "Lùna" "Sult" "Dàmh" "Samh" "Dùbh") #f (list "DiD" "DiL" "DiM" "DiC" "Dia" "Dih" "DiS") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

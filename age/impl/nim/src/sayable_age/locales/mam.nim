@@ -18,7 +18,7 @@ let MAM* = AgeLocale(
   plural: proc(n: int): PluralCategory = pcOther,
   units: {
     "day": simpleUnit("{n} q'ij"),
-    "week": simpleUnit("{n} xjaw"),
+    "week": simpleUnit("{n} seman"),
     "month": simpleUnit("{n} xjaw"),
     "year": simpleUnit("{n} ab'q'ii"),
   }.toOrderedTable,
@@ -36,7 +36,7 @@ let MAM* = AgeLocale(
   short: some(CompactnessOverride(
     units: some({
       "day": simpleUnit("{n} q'ij"),
-      "week": simpleUnit("{n} xjaw"),
+      "week": simpleUnit("{n} seman"),
       "month": simpleUnit("{n} xjaw"),
       "year": simpleUnit("{n} ab'."),
     }.toOrderedTable),
@@ -51,7 +51,7 @@ let MAM* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     justBorn: none(string),
   )),

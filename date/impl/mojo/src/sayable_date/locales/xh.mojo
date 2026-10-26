@@ -50,7 +50,7 @@ fn build_xh() -> DateLocale:
     var tomorrow = "ngomso"
     var yesterday = "izolo"
     var day_after_tomorrow = "ngomhlomunye"
-    var day_before_yesterday = "kutshanje"
+    var day_before_yesterday = "izolo elinye"
     var this_weekday = "le {weekday}"
     var next_weekday = "{weekday} ezayo"
     var last_weekday = "{weekday} edlulileyo"

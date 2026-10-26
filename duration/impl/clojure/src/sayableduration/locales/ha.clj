@@ -14,17 +14,17 @@
 (def locale
   {:code "ha"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :pluralized :forms {:one "{n} daƙiƙa" :other "{n} daƙiƙoƙi"}}
-   :minute {:type :pluralized :forms {:one "{n} minti" :other "{n} mintoci"}}
-   :hour {:type :pluralized :forms {:one "{n} awa" :other "{n} awanni"}}
-   :day {:type :pluralized :forms {:one "{n} kwana" :other "{n} kwanaki"}}
-   :week {:type :pluralized :forms {:one "{n} mako" :other "{n} makonni"}}
-   :month {:type :pluralized :forms {:one "{n} wata" :other "{n} watanni"}}
-   :year {:type :pluralized :forms {:one "{n} shekara" :other "{n} shekaru"}}
+   :second {:type :pluralized :forms {:one "daƙiƙa {n}" :other "daƙiƙoƙi {n}"}}
+   :minute {:type :pluralized :forms {:one "minti {n}" :other "mintoci {n}"}}
+   :hour {:type :pluralized :forms {:one "awa {n}" :other "awanni {n}"}}
+   :day {:type :pluralized :forms {:one "kwana {n}" :other "kwanaki {n}"}}
+   :week {:type :pluralized :forms {:one "mako {n}" :other "makonni {n}"}}
+   :month {:type :pluralized :forms {:one "wata {n}" :other "watanni {n}"}}
+   :year {:type :pluralized :forms {:one "shekara {n}" :other "shekaru {n}"}}
    :half "{n}½"
    :delimiter ", "
    :just-now "yanzu"
    :ago "{0} da suka wuce"
    :in-future "cikin {0}"
-   :short {:second {:type :simple :form "{n} daƙ."} :minute {:type :simple :form "{n} mnt."} :hour {:type :simple :form "{n} awa"} :day {:type :simple :form "{n} kw."} :week {:type :simple :form "{n} mk."} :month {:type :simple :form "{n} wt."} :year {:type :simple :form "{n} shk."} :half nil :delimiter nil :ago "{0} da suka wuce" :in-future "cikin {0}"}
+   :short {:second {:type :simple :form "daƙ. {n}"} :minute {:type :simple :form "mnt. {n}"} :hour {:type :simple :form "awa {n}"} :day {:type :simple :form "kw. {n}"} :week {:type :simple :form "mk. {n}"} :month {:type :simple :form "wt. {n}"} :year {:type :simple :form "shk. {n}"} :half nil :delimiter nil :ago "{0} da suka wuce" :in-future "cikin {0}"}
    :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}min"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} da suka wuce" :in-future "cikin {0}"}})

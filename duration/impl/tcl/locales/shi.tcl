@@ -18,46 +18,46 @@ proc plural_shi {n} {
 proc locale_duration_shi {} {
     set code {shi}
     set units [dict create \
-        second [dict create one "{n} tasint" few "{n} tasinin" other "{n} tasinin"] \
-        minute [dict create one "{n} tusdiqt" few "{n} tusdiqin" other "{n} tusdiqin"] \
-        hour [dict create one "{n} tasragt" few "{n} tisragin" other "{n} tisragin"] \
-        day [dict create one "{n} ass" few "{n} ussan" other "{n} ass"] \
-        week [dict create one "{n} imalass" few "{n} imalassn" other "{n} imalass"] \
-        month [dict create one "{n} ayyur" few "{n} ayyurn" other "{n} ayyur"] \
-        year [dict create one "{n} aseggas" few "{n} iseggasen" other "{n} aseggas"] \
+        second [dict create one "{n} ⵜⴰⵙⵉⵏⵜ" few "{n} ⵜⵉⵙⵉⵏⵉⵏ" other "{n} ⵜⵉⵙⵉⵏⵉⵏ"] \
+        minute [dict create one "{n} ⵜⵓⵙⴷⵉⵇⵜ" few "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" other "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"] \
+        hour [dict create one "{n} ⵜⴰⵙⵔⴰⴳⵜ" few "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" other "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"] \
+        day [dict create one "{n} ⴰⵙⵙ" few "{n} ⵓⵙⵙⴰⵏ" other "{n} ⴰⵙⵙ"] \
+        week [dict create one "{n} ⵉⵎⴰⵍⴰⵙⵙ" few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" other "{n} ⵉⵎⴰⵍⴰⵙⵙ"] \
+        month [dict create one "{n} ⴰⵢⵢⵓⵔ" few "{n} ⴰⵢⵢⵓⵔⵏ" other "{n} ⴰⵢⵢⵓⵔ"] \
+        year [dict create one "{n} ⴰⵙⴳⴳⵯⴰⵙ" few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" other "{n} ⴰⵙⴳⴳⵯⴰⵙ"] \
     ]
-    set half "{0} d uzgen"
+    set half "{0} ⴷ ⵓⵣⴳⵏ"
     set delimiter {, }
-    set just_now {ɣilad}
-    set ago "ɣ {0} zzrin"
-    set in_future "ɣ {0}"
+    set just_now {ⵖⵉⵍⴰⴷ}
+    set ago "ⵖ {0} ⵣⵣⵔⵉⵏ"
+    set in_future "ⵖ {0}"
     set short [dict create \
         units [dict create \
-            second "{n}s" \
-            minute "{n}m" \
-            hour "{n}h" \
-            day "{n}d" \
-            week "{n}w" \
-            month "{n}mo" \
-            year "{n}y" \
+            second [dict create one "{n} ⵜⴰⵙⵉⵏⵜ" few "{n} ⵜⵉⵙⵉⵏⵉⵏ" other "{n} ⵜⵉⵙⵉⵏⵉⵏ"] \
+            minute [dict create one "{n} ⵜⵓⵙⴷⵉⵇⵜ" few "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" other "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"] \
+            hour [dict create one "{n} ⵜⴰⵙⵔⴰⴳⵜ" few "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" other "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ"] \
+            day [dict create one "{n} ⴰⵙⵙ" few "{n} ⵓⵙⵙⴰⵏ" other "{n} ⴰⵙⵙ"] \
+            week [dict create one "{n} ⵉⵎⴰⵍⴰⵙⵙ" few "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" other "{n} ⵉⵎⴰⵍⴰⵙⵙ"] \
+            month [dict create one "{n} ⴰⵢⵢⵓⵔ" few "{n} ⴰⵢⵢⵓⵔⵏ" other "{n} ⴰⵢⵢⵓⵔ"] \
+            year [dict create one "{n} ⴰⵙⴳⴳⵯⴰⵙ" few "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" other "{n} ⴰⵙⴳⴳⵯⴰⵙ"] \
         ] \
-        ago "ɣ {0} zzrin" \
-        in_future "ɣ {0}" \
+        ago "ⵖ {0} ⵣⵣⵔⵉⵏ" \
+        in_future "ⵖ {0}" \
     ]
     set compact [dict create \
         units [dict create \
-            second "{n}s" \
-            minute "{n}m" \
-            hour "{n}h" \
-            day "{n}d" \
-            week "{n}w" \
-            month "{n}mo" \
-            year "{n}y" \
+            second "{n} ⵜⵙⵏ" \
+            minute "{n} ⵜⵙⴷ" \
+            hour "{n} ⵜⵙⵔ" \
+            day "{n} ⴰⵙⵙ" \
+            week "{n} ⵉⵎⵍ" \
+            month "{n} ⴰⵢⵔ" \
+            year "{n} ⴰⵙⴳ" \
         ] \
         half "{n}½" \
         delimiter {} \
-        ago "ɣ {0} zzrin" \
-        in_future "ɣ {0}" \
+        ago "ⵖ {0} ⵣⵣⵔⵉⵏ" \
+        in_future "ⵖ {0}" \
     ]
     return [dict create \
         code $code \

@@ -49,8 +49,8 @@ locale = DateLocale
     , localeDayAfterTomorrow = Just "пасфардо"
     , localeDayBeforeYesterday = Just "парирӯз"
     , localeThisWeekday = Just "ин {weekday}"
-    , localeNextWeekday = Just "{weekday}-и оянда"
-    , localeLastWeekday = Just "{weekday}-и гузашта"
+    , localeNextWeekday = Just "{weekday}и оянда"
+    , localeLastWeekday = Just "{weekday}и гузашта"
     , localeMonthsInDate = Nothing
     , localeShort = Just $
         CompactnessOverride

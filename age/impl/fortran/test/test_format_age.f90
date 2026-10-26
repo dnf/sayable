@@ -22,6 +22,7 @@ program test_format_age
   call test_integer_tier()
   call test_cross_year_feb()
   call test_born_on_31st()
+  call test_default_as_of_age()
   call test_stage_null_edge_cases()
   call test_stage_newborn()
   call test_stage_infant()
@@ -31,6 +32,7 @@ program test_format_age
   call test_stage_adult()
   call test_stage_gender_spanish()
   call test_stage_gender_neutral()
+  call test_default_as_of_stage()
   call test_sayableage_english()
   call test_sayableage_spanish()
   call test_compact_short()
@@ -644,6 +646,86 @@ contains
     call assert_eq('stage 45 years', res, 'Adult') ! 22.3
   end subroutine test_stage_adult
 
+  ! The default-asOf tests (15.x, 23.x) derive dateOfBirth from the real current local
+  ! date and pass an empty asOf.
+  function iso_date(year, month, day) result(s)
+    integer, intent(in) :: year, month, day
+    character(len=10) :: s
+    write(s, '(I4.4,A,I2.2,A,I2.2)') year, '-', month, '-', day
+  end function iso_date
+
+  function today_iso() result(s)
+    character(len=10) :: s
+    integer :: v(8)
+    call date_and_time(values=v)
+    s = iso_date(v(1), v(2), v(3))
+  end function today_iso
+
+  ! Same calendar day n years before today; Feb 29 clamps to Feb 28.
+  function years_ago_iso(n) result(s)
+    integer, intent(in) :: n
+    character(len=10) :: s
+    integer :: v(8), day
+    call date_and_time(values=v)
+    day = v(3)
+    if (v(2) == 2 .and. v(3) == 29) day = 28
+    s = iso_date(v(1) - n, v(2), day)
+  end function years_ago_iso
+
+  ! Calendar date n days before today, through the proleptic Gregorian day number.
+  function days_ago_iso(n) result(s)
+    integer, intent(in) :: n
+    character(len=10) :: s
+    integer :: v(8), a, b, c, d, e, m, y, jdn
+    call date_and_time(values=v)
+    a = (14 - v(2)) / 12
+    y = v(1) + 4800 - a
+    m = v(2) + 12 * a - 3
+    jdn = v(3) + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045 - n
+    a = jdn + 32044
+    b = (4 * a + 3) / 146097
+    c = a - 146097 * b / 4
+    d = (4 * c + 3) / 1461
+    e = c - 1461 * d / 4
+    m = (5 * e + 2) / 153
+    s = iso_date(100 * b + d - 4800 + m / 10, m + 3 - 12 * (m / 10), e - (153 * m + 2) / 5 + 1)
+  end function days_ago_iso
+
+  ! ================================================================
+  ! formatAge -- default asOf (derived from the current date)
+  ! ================================================================
+  subroutine test_default_as_of_age()
+    type(pt_locale), pointer :: en
+    character(len=PT_MAX_STR_LEN) :: res
+
+    en => pt_get_locale('en')
+
+    res = pt_format_age(en, PT_NORMAL, years_ago_iso(5), '')
+    call assert_eq('default asOf 5 years ago', res, '5 years') ! 15.1
+
+    res = pt_format_age(en, PT_NORMAL, days_ago_iso(5), '')
+    call assert_eq('default asOf 5 days ago', res, '5 days') ! 15.2
+  end subroutine test_default_as_of_age
+
+  ! ================================================================
+  ! formatStage -- default asOf (derived from the current date)
+  ! ================================================================
+  subroutine test_default_as_of_stage()
+    type(pt_locale), pointer :: en
+    character(len=PT_MAX_STR_LEN) :: res
+
+    en => pt_get_locale('en')
+
+    res = pt_format_stage(en, today_iso(), '')
+    call assert_eq('default asOf born today', res, 'Newborn') ! 23.1
+
+    res = pt_format_stage(en, years_ago_iso(5), '')
+    call assert_eq('default asOf 5 years ago', res, 'Child') ! 23.2
+
+    res = pt_format_stage(en, years_ago_iso(45), '')
+    call assert_eq('default asOf 45 years ago', res, 'Adult') ! 23.3
+  end subroutine test_default_as_of_stage
+
   ! ================================================================
   ! formatStage -- gender support (Spanish)
   ! ================================================================
@@ -794,7 +876,7 @@ contains
     call assert_eq('ES years+months', res, '2 a' // char(195) // char(177) // 'os, 6 meses') ! 25.9
 
     res = pt_format_age(es, PT_NORMAL, '2022-06-15', '2025-12-15')
-    call assert_eq('ES half marker', res, '3 y medio a' // char(195) // char(177) // 'os') ! 25.10
+    call assert_eq('ES half marker', res, '3 a' // char(195) // char(177) // 'os y medio') ! 25.10
 
     res = pt_format_age(es, PT_NORMAL, '2022-06-15', '2025-06-15')
     call assert_eq('ES integer years', res, '3 a' // char(195) // char(177) // 'os') ! 25.11
@@ -893,15 +975,15 @@ contains
 
     ! 29.1 justBorn
     res = pt_format_age(he, PT_NORMAL, '2025-06-15', '2025-06-15')
-    call assert_contains('he justBorn', res, char(215))
+    call assert_eq('he justBorn', res, 'רק נולד') ! 29.1
 
     ! 29.2 1 day one
     res = pt_format_age(he, PT_NORMAL, '2025-06-14', '2025-06-15')
-    call assert_contains('he 1 day one', res, '1')
+    call assert_eq('he 1 day one', res, char(215)//char(153)//char(215)//char(149)//char(215)//char(157))
 
     ! 29.3 3 days other
     res = pt_format_age(he, PT_NORMAL, '2025-06-12', '2025-06-15')
-    call assert_contains('he 3 days other', res, '3')
+    call assert_eq('he 3 days other', res, '3 ימים') ! 29.3
 
     ! 29.4 2 weeks dual
     res = pt_format_age(he, PT_NORMAL, '2025-06-01', '2025-06-15')
@@ -913,23 +995,26 @@ contains
 
     ! 29.6 6 months
     res = pt_format_age(he, PT_NORMAL, '2025-01-15', '2025-07-15')
-    call assert_contains('he 6 months', res, '6')
+    call assert_eq('he 6 months', res, '6 חודשים') ! 29.6
 
     ! 29.7 3 months
     res = pt_format_age(he, PT_NORMAL, '2025-03-15', '2025-06-15')
-    call assert_contains('he 3 months', res, '3')
+    call assert_eq('he 3 months', res, '3 חודשים') ! 29.7
 
     ! 29.8 2y dual + 1m one
     res = pt_format_age(he, PT_NORMAL, '2023-06-15', '2025-07-15')
-    call assert_true('he 2y1m not empty', len_trim(res) > 0)
+    call assert_eq('he 2y1m dual + one', res, &
+        char(215)//char(169)//char(215)//char(160)//char(215)//char(170)// &
+        char(215)//char(153)//char(215)//char(153)//char(215)//char(157) // ', ' // &
+        char(215)//char(151)//char(215)//char(149)//char(215)//char(147)//char(215)//char(169))
 
     ! 29.9 3.5 years half
     res = pt_format_age(he, PT_NORMAL, '2022-06-15', '2025-12-15')
-    call assert_contains('he 3.5y half', res, '3')
+    call assert_eq('he 3.5y half', res, '3 שנים וחצי') ! 29.9
 
     ! 29.10 7+ years
     res = pt_format_age(he, PT_NORMAL, '2018-06-15', '2025-06-15')
-    call assert_contains('he 7y other', res, '7')
+    call assert_eq('he 7y other', res, '7 שנים') ! 29.10
 
     ! 29.11 stage m newborn
     res = pt_format_stage(he, '2025-06-15', '2025-06-15', 'm')
@@ -963,27 +1048,27 @@ contains
 
     ! 29.16 1 day one
     res = pt_format_age(mk, PT_NORMAL, '2025-06-14', '2025-06-15')
-    call assert_contains('mk 1 day one', res, '1')
+    call assert_eq('mk 1 day one', res, '1 ден') ! 29.16
 
     ! 29.17 3 days other
     res = pt_format_age(mk, PT_NORMAL, '2025-06-12', '2025-06-15')
-    call assert_contains('mk 3 days other', res, '3')
+    call assert_eq('mk 3 days other', res, '3 дена') ! 29.17
 
     ! 29.18 6 months other
     res = pt_format_age(mk, PT_NORMAL, '2025-01-15', '2025-07-15')
-    call assert_contains('mk 6 months', res, '6')
+    call assert_eq('mk 6 months', res, '6 месеци') ! 29.18
 
     ! 29.19 2y1m
     res = pt_format_age(mk, PT_NORMAL, '2023-06-15', '2025-07-15')
-    call assert_contains('mk 2y1m', res, '2')
+    call assert_eq('mk 2y1m', res, '2 години, 1 месец') ! 29.19
 
     ! 29.20 3.5y half
     res = pt_format_age(mk, PT_NORMAL, '2022-06-15', '2025-12-15')
-    call assert_contains('mk 3.5y half', res, '3')
+    call assert_eq('mk 3.5y half', res, '3 години и пол') ! 29.20
 
     ! 29.21 7+ years
     res = pt_format_age(mk, PT_NORMAL, '2018-06-15', '2025-06-15')
-    call assert_contains('mk 7y', res, '7')
+    call assert_eq('mk 7y', res, '7 години') ! 29.21
   end subroutine test_locale_macedonian
 
   ! ================================================================
@@ -1047,7 +1132,7 @@ contains
 
     ! 29.32 3.5y half
     res = pt_format_age(id_locale, PT_NORMAL, '2022-06-15', '2025-12-15')
-    call assert_eq('id 3.5y half', res, '3 tahun setengah')
+    call assert_eq('id 3.5y half', res, '3 setengah tahun')
 
     ! 29.33 7y
     res = pt_format_age(id_locale, PT_NORMAL, '2018-06-15', '2025-06-15')
@@ -1069,23 +1154,23 @@ contains
 
     ! 29.35 1 day
     res = pt_format_age(am, PT_NORMAL, '2025-06-14', '2025-06-15')
-    call assert_contains('am 1 day', res, '1')
+    call assert_eq('am 1 day', res, '1 ቀን') ! 29.35
 
     ! 29.36 3 days
     res = pt_format_age(am, PT_NORMAL, '2025-06-12', '2025-06-15')
-    call assert_contains('am 3 days', res, '3')
+    call assert_eq('am 3 days', res, '3 ቀናት') ! 29.36
 
     ! 29.37 1w1d ethiopic delimiter
     res = pt_format_age(am, PT_NORMAL, '2025-06-07', '2025-06-15')
-    call assert_contains('am 1w1d', res, '1')
+    call assert_eq('am 1w1d', res, '1 ሳምንት፣ 1 ቀን') ! 29.37
 
     ! 29.38 6 months
     res = pt_format_age(am, PT_NORMAL, '2025-01-15', '2025-07-15')
-    call assert_contains('am 6 months', res, '6')
+    call assert_eq('am 6 months', res, '6 ወራት') ! 29.38
 
     ! 29.39 3.5y half
     res = pt_format_age(am, PT_NORMAL, '2022-06-15', '2025-12-15')
-    call assert_contains('am 3.5y half', res, '3')
+    call assert_eq('am 3.5y half', res, '3 ዓመታት ተኩል') ! 29.39
   end subroutine test_locale_amharic
 
   ! ================================================================
@@ -1173,7 +1258,14 @@ contains
     loc => pt_get_locale('shi')
     res = pt_format_age(loc, PT_NORMAL, '2005-06-08', '2012-06-07')
     call assert_eq('32.3 formatAge shi normal', res, &
-      '6 iseggasen d uzgen')
+      '6 ' // char(226) // char(181) // char(137) // char(226) // char(181) // &
+        char(153) // char(226) // char(180) // char(179) // char(226) // &
+        char(180) // char(179) // char(226) // char(181) // char(175) // &
+        char(226) // char(180) // char(176) // char(226) // char(181) // &
+        char(153) // char(226) // char(181) // char(143) // ' ' // char(226) // &
+        char(180) // char(183) // ' ' // char(226) // char(181) // char(147) // &
+        char(226) // char(181) // char(163) // char(226) // char(180) // &
+        char(179) // char(226) // char(181) // char(143))
 
   end subroutine test_section_32
 

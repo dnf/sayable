@@ -1,5 +1,4 @@
 /// Types for the sayable-age locale system.
-
 pub type PluralCategory {
   Zero
   One

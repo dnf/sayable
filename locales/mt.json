@@ -91,13 +91,13 @@
       "Diċembru"
     ],
     "weekdays": [
-      "Il-Ħadd",
-      "It-Tnejn",
-      "It-Tlieta",
-      "L-Erbgħa",
-      "Il-Ħamis",
-      "Il-Ġimgħa",
-      "Is-Sibt"
+      "il-Ħadd",
+      "it-Tnejn",
+      "it-Tlieta",
+      "l-Erbgħa",
+      "il-Ħamis",
+      "il-Ġimgħa",
+      "is-Sibt"
     ],
     "dayFormat": "{n}",
     "datePattern": "{day} {month}",
@@ -154,14 +154,14 @@
       },
       "minute": {
         "one": "{n} minuta",
-        "two": "{n} minuti",
+        "two": "minutejn",
         "few": "{n} minuti",
         "many": "{n}-il minuta",
         "other": "{n} minuta"
       },
       "hour": {
         "one": "{n} siegħa",
-        "two": "{n} sigħat",
+        "two": "sagħtejn",
         "few": "{n} sigħat",
         "many": "{n}-il siegħa",
         "other": "{n} siegħa"
@@ -248,34 +248,34 @@
   "time": {
     "clock": {
       "hours": [
-        "tnax",
-        "waħda",
-        "tnejn",
-        "tlieta",
-        "erbgħa",
-        "ħamsa",
-        "sitta",
-        "sebgħa",
-        "tmienja",
-        "disgħa",
-        "għaxra",
-        "ħdax"
+        "it-tnax",
+        "is-siegħa",
+        "is-sagħtejn",
+        "it-tlieta",
+        "l-erbgħa",
+        "il-ħamsa",
+        "is-sitta",
+        "is-sebgħa",
+        "it-tmienja",
+        "id-disgħa",
+        "l-għaxra",
+        "il-ħdax"
       ],
-      "midnight": "nofsinhar",
+      "midnight": "nofsillejl",
       "noon": "nofsinhar",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "{h} u ħamsa",
+        "10": "{h} u għaxra",
+        "15": "{h} u kwart",
+        "20": "{h} u għoxrin",
+        "25": "{h} u ħamsa u għoxrin",
+        "30": "{h} u nofs",
+        "35": "{next_h} neqsin ħamsa u għoxrin",
+        "40": "{next_h} neqsin għoxrin",
+        "45": "{next_h} neqsin kwart",
+        "50": "{next_h} neqsin għaxra",
+        "55": "{next_h} neqsin ħamsa"
       }
     },
     "short": {
@@ -290,5 +290,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Hours with article and dual: 'is-siegħa' (1), 'is-sagħtejn' (2), 'it-tlieta' ... 'il-ħdax', 'it-tnax'; '{h} u ħamsa/għaxra/kwart/għoxrin/ħamsa u għoxrin/nofs'; count-down with 'neqsin' ('it-tlieta neqsin kwart'). Doubt: 'neqsin' (plural participle, what I believe is the idiomatic time-telling form) vs singular 'nieqes'; both are heard. 12:xx uses 'it-tnax' rather than nofsinhar/nofsillejl (schema)."
+    }
+  ]
 }

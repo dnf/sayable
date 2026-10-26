@@ -12,7 +12,7 @@
 function loc = locale_ro()
   loc.code = 'ro';
   loc.months = {'ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'};
-  loc.weekdays = {'duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbătă'};
+  loc.weekdays = {'duminica', 'lunea', 'marțea', 'miercurea', 'joia', 'vinerea', 'sâmbăta'};
   loc.day_format = '{n}';
   loc.day_format_exceptions = struct();
   loc.date_pattern = '{day} {month}';
@@ -22,7 +22,7 @@ function loc = locale_ro()
   loc.yesterday = 'ieri';
   loc.day_after_tomorrow = 'poimâine';
   loc.day_before_yesterday = 'alaltăieri';
-  loc.this_weekday = 'această {weekday}';
+  loc.this_weekday = '{weekday} aceasta';
   loc.next_weekday = '{weekday} viitoare';
   loc.last_weekday = '{weekday} trecută';
   loc.months_in_date = {'ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'};

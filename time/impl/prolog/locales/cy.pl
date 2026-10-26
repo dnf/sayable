@@ -15,18 +15,18 @@ st_hours('cy', ['deuddeg', 'un', 'dau', 'tri', 'pedwar', 'pump', 'chwech', 'sait
 st_midnight('cy', 'hanner nos').
 st_noon('cy', 'hanner dydd').
 
-st_pattern('cy', 0, '{h}:00').
-st_pattern('cy', 5, '{h}:05').
-st_pattern('cy', 10, '{h}:10').
-st_pattern('cy', 15, '{h}:15').
-st_pattern('cy', 20, '{h}:20').
-st_pattern('cy', 25, '{h}:25').
-st_pattern('cy', 30, '{h}:30').
-st_pattern('cy', 35, '{h}:35').
-st_pattern('cy', 40, '{h}:40').
-st_pattern('cy', 45, '{h}:45').
-st_pattern('cy', 50, '{h}:50').
-st_pattern('cy', 55, '{h}:55').
+st_pattern('cy', 0, '{h} o\'r gloch').
+st_pattern('cy', 5, 'pum munud wedi {h}').
+st_pattern('cy', 10, 'deg munud wedi {h}').
+st_pattern('cy', 15, 'chwarter wedi {h}').
+st_pattern('cy', 20, 'ugain munud wedi {h}').
+st_pattern('cy', 25, 'pum munud ar hugain wedi {h}').
+st_pattern('cy', 30, 'hanner awr wedi {h}').
+st_pattern('cy', 35, 'pum munud ar hugain i {next_h}').
+st_pattern('cy', 40, 'ugain munud i {next_h}').
+st_pattern('cy', 45, 'chwarter i {next_h}').
+st_pattern('cy', 50, 'deg munud i {next_h}').
+st_pattern('cy', 55, 'pum munud i {next_h}').
 
 short_st_use24h('cy', true).
 short_st_format('cy', '{h}:{mm}').

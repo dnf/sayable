@@ -820,7 +820,7 @@ describe("i18n — Spanish locale", function()
 
     -- 25.10
     it("half marker", function()
-        assert.are.equal("3 y medio años", pt.format_age("2022-06-15", "2025-12-15"))
+        assert.are.equal("3 años y medio", pt.format_age("2022-06-15", "2025-12-15"))
     end)
 
     -- 25.11
@@ -967,7 +967,7 @@ describe("Locale — Hebrew", function()
 
     -- 29.2
     it("one day", function()
-        assert.are.equal("יום 1", pt.format_age("2025-06-14", "2025-06-15"))
+        assert.are.equal("יום", pt.format_age("2025-06-14", "2025-06-15"))
     end)
 
     -- 29.3
@@ -997,7 +997,7 @@ describe("Locale — Hebrew", function()
 
     -- 29.8
     it("two years dual one month", function()
-        assert.are.equal("שנתיים, חודש 1", pt.format_age("2023-06-15", "2025-07-15"))
+        assert.are.equal("שנתיים, חודש", pt.format_age("2023-06-15", "2025-07-15"))
     end)
 
     -- 29.9
@@ -1135,7 +1135,7 @@ describe("Locale — Indonesian", function()
 
     -- 29.32
     it("half years", function()
-        assert.are.equal("3 tahun setengah", pt.format_age("2022-06-15", "2025-12-15"))
+        assert.are.equal("3 setengah tahun", pt.format_age("2022-06-15", "2025-12-15"))
     end)
 
     -- 29.33
@@ -1250,7 +1250,7 @@ describe("Sections 31-33: weeks+days across month ends, half-year plurals, input
 
     -- 32.3
     it("Tachelhit 6 is 'few'", function()
-        assert.are.equal("6 iseggasen d uzgen", sayableage.new(sayableage.get_locale("shi")).format_age("2005-06-08", "2012-06-07"))
+        assert.are.equal("6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ", sayableage.new(sayableage.get_locale("shi")).format_age("2005-06-08", "2012-06-07"))
     end)
 
     -- 33.1

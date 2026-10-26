@@ -24,8 +24,8 @@ sd_yesterday('tg', 'дирӯз').
 sd_day_after_tomorrow('tg', 'пасфардо').
 sd_day_before_yesterday('tg', 'парирӯз').
 sd_this_weekday('tg', 'ин {weekday}').
-sd_next_weekday('tg', '{weekday}-и оянда').
-sd_last_weekday('tg', '{weekday}-и гузашта').
+sd_next_weekday('tg', '{weekday}и оянда').
+sd_last_weekday('tg', '{weekday}и гузашта').
 
 short_sd_months('tg', ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']).
 short_sd_weekdays('tg', ['Яш', 'Дш', 'Сш', 'Чш', 'Пш', 'Ҷм', 'Шб']).

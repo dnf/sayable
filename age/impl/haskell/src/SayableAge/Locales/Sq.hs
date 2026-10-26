@@ -35,9 +35,9 @@ locale = Locale
       ]
     , localeHalf = "{0} e gjysmë"
     , localeDelimiter = ", "
-    , localeJustBorn = "Sapolindur"
+    , localeJustBorn = "I sapolindur"
     , localeStages = Stages
-        { stageNewborn = Gendered "Sapolindur" "Sapolindure"
+        { stageNewborn = Gendered "I sapolindur" "E sapolindur"
         , stageInfant = Neutral "Foshnjë"
         , stageToddler = Gendered "Fëmijë i vogël" "Fëmijë e vogël"
         , stageChild = Neutral "Fëmijë"

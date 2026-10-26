@@ -18,7 +18,7 @@ _sayableage_locale_pis() {
     _unit_week='{n} wik'
     _unit_month='{n} manis'
     _unit_year='{n} yia'
-    _half='{n} en haf'
+    _half='{0} en haf'
     _delimiter=', '
     _just_born='Niufala bebi'
     _stage_newborn='Niufala bebi'
@@ -35,6 +35,7 @@ _sayableage_locale_pis() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_pis
 }

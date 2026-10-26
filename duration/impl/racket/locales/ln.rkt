@@ -21,9 +21,9 @@
   (duration-locale
    "ln"
    (lambda (n) (if (or (= n 0) (= n 1)) "one" "other"))
-   (hash "second" (hash "type" "simple" "form" "{n} segɔnde")
-         "minute" (hash "type" "simple" "form" "{n} moniti")
-         "hour" (hash "type" "simple" "form" "{n} ngonga")
+   (hash "second" (hash "type" "simple" "form" "segɔnde {n}")
+         "minute" (hash "type" "simple" "form" "miniti {n}")
+         "hour" (hash "type" "simple" "form" "ngonga {n}")
          "day" (hash "type" "pluralized" "forms" (hash "one" "mokolo {n}" "other" "mikolo {n}"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "poso {n}" "other" "baposo {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "sanza {n}" "other" "basanza {n}"))

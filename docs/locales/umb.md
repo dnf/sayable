@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [umb.json](../../locales/umb.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Replaced the non-standard hour numerals (yinyali, yitathu-va-yivali, …) with the standard Umbundu series mosi, vali, tatu, kwãla, tãlo, epandu, epanduvali, ecelãla, ecea, ekwi, ekwi la mosi, ekwi la vali (confident in the series). Patterns are additive 'ohola {h} la <minutes>' using 'la' (and) as in 'ekwi la mosi', tens 'akũi avali/atatu/akwãla/atãlo', half '{h} la oñali' (reusing the locale's half word). Doubts: whether hours take a concord/ordinal ('ohola yavali'); whether 'la' vs 'na' is right here; 'oñali' as half is inherited unverified.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ocisungu va pili  | 17/3     |
 | Day before yesterday | ondjo va pili     | 13/3     |
 | This Thursday (+5)   | Cinyali yo        | 20/3     |
-| Last Monday (-4)     | Civali ya pita    | 11/3     |
-| Next Wednesday (+12) | Cinyali ya kuvela | 27/3     |
-| Same month (+20)     | 4 Abili           | 4/4      |
+| Last Tuesday (-4)    | Civali ya pita    | 11/3     |
+| Next Thursday (+12)  | Cinyali ya kuvela | 27/3     |
+| Same year (+20)      | 4 Abili           | 4/4      |
 | Different year       | 10 Janelu 2026    | 10/1/26  |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal               | Short    | Compact |
-| --------------- | -------------------- | -------- | ------- |
-| Midnight        | ocitapi              | 12:00 AM | 12:00a  |
-| 1:00 AM         | yimosi:00            | 1:00 AM  | 1:00a   |
-| 5 past 9        | yitanu-va-yivali:05  | 9:05 AM  | 9:05a   |
-| Quarter past 10 | likumi:15            | 10:15 AM | 10:15a  |
-| Half past 11    | likumi na yimosi:30  | 11:30 AM | 11:30a  |
-| Noon            | ocivali              | 12:00 PM | 12:00p  |
-| Quarter to 3    | yivali:45            | 2:45 PM  | 2:45p   |
-| 5 to 6          | yitanu:55            | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | yinyali-va-yivali:00 | 8:00 PM  | 8:00p   |
-| 10:30 PM        | likumi:30            | 10:30 PM | 10:30p  |
-| 11:58 PM        | ocitapi              | 11:58 PM | 11:58p  |
+| Time            | Normal                            | Short    | Compact |
+| --------------- | --------------------------------- | -------- | ------- |
+| Midnight        | ocitapi                           | 12:00 AM | 12:00a  |
+| 1:00 AM         | ohola mosi                        | 1:00 AM  | 1:00a   |
+| 5 past 9        | ohola ecea la tãlo                | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ohola ekwi la ekwi la tãlo        | 10:15 AM | 10:15a  |
+| Half past 11    | ohola ekwi la mosi la oñali       | 11:30 AM | 11:30a  |
+| Noon            | ocivali                           | 12:00 PM | 12:00p  |
+| Quarter to 3    | ohola vali la akũi akwãla la tãlo | 2:45 PM  | 2:45p   |
+| 5 to 6          | ohola tãlo la akũi atãlo la tãlo  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ohola ecelãla                     | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ohola ekwi la oñali               | 10:30 PM | 10:30p  |
+| 11:58 PM        | ocitapi                           | 11:58 PM | 11:58p  |

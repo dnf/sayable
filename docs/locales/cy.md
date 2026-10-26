@@ -6,6 +6,14 @@
 
 Plural rule: `cy` (categories: zero, one, two, few, many, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [cy.json](../../locales/cy.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Welsh wedi/i system: '{h} o'r gloch', 'pum munud wedi {h}', 'chwarter wedi', 'hanner awr wedi', 'chwarter i {next_h}' etc. COMPROMISE: 'i' should soft-mutate the next hour (i ddau, i dri, i bedwar, i bump, i ddeg, i ddeuddeg); the schema has one hours list so the :35-:55 buckets print the unmutated hour for 6 of 12 hours. Pattern shape is ready for a mutated next-hour list if the schema gains one.
+
 ## Age
 
 ### Age formatting
@@ -15,7 +23,7 @@ Plural rule: `cy` (categories: zero, one, two, few, many, other)
 | Born today        | Newydd-anedig        | Newydd-anedig   | Newydd-anedig |
 | 1 day             | 1 diwrnod            | 1 diwrnod       | 1d            |
 | 3 days            | 3 diwrnod            | 3 diwrnod       | 3d            |
-| 6 days            | 6 niwrnod            | 6 diwrnod       | 6d            |
+| 6 days            | 6 diwrnod            | 6 diwrnod       | 6d            |
 | 1 week            | 1 wythnos            | 1 ws            | 1w            |
 | 1 week, 1 day     | 1 wythnos, 1 diwrnod | 1 ws, 1 diwrnod | 1w1d          |
 | 2 weeks           | 2 wythnos            | 2 ws            | 2 ws          |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | drennydd             | 17/3    |
 | Day before yesterday | echdoe               | 13/3    |
 | This Thursday (+5)   | y Dydd Iau hwn       | 20/3    |
-| Last Monday (-4)     | Dydd Mawrth diwethaf | 11/3    |
-| Next Wednesday (+12) | Dydd Iau nesaf       | 27/3    |
-| Same month (+20)     | 4 Ebrill             | 4/4     |
+| Last Tuesday (-4)    | Dydd Mawrth diwethaf | 11/3    |
+| Next Thursday (+12)  | Dydd Iau nesaf       | 27/3    |
+| Same year (+20)      | 4 Ebrill             | 4/4     |
 | Different year       | 10 Ionawr 2026       | 10/1/26 |
 
 ## Duration
@@ -102,7 +110,7 @@ Relative to Saturday, March 15, 2025.
 | 2 weeks, 3 days       | 2 wythnos, 3 diwrnod | 2 ws, 3 diwrnod    | 2 ws3d     |
 | 1 month               | 1 mis                | 1 mis              | 1m         |
 | 6 months              | 6 mis                | 6 mis              | 6m         |
-| 1 year                | 1 blwyddyn           | 1 bl               | 1bl        |
+| 1 year                | 1 flwyddyn           | 1 bl               | 1bl        |
 | 2 years, 3 months     | 2 flynedd, 3 mis     | 2 bl, 3 mis        | 2bl3m      |
 
 ### Relative time
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal        | Short | Compact |
-| --------------- | ------------- | ----- | ------- |
-| Midnight        | hanner nos    | 0:00  | 0:00    |
-| 1:00 AM         | un:00         | 1:00  | 1:00    |
-| 5 past 9        | naw:05        | 9:05  | 9:05    |
-| Quarter past 10 | deg:15        | 10:15 | 10:15   |
-| Half past 11    | un ar ddeg:30 | 11:30 | 11:30   |
-| Noon            | hanner dydd   | 12:00 | 12:00   |
-| Quarter to 3    | dau:45        | 14:45 | 14:45   |
-| 5 to 6          | pump:55       | 17:55 | 17:55   |
-| 8 o'clock PM    | wyth:00       | 20:00 | 20:00   |
-| 10:30 PM        | deg:30        | 22:30 | 22:30   |
-| 11:58 PM        | hanner nos    | 23:58 | 23:58   |
+| Time            | Normal                     | Short | Compact |
+| --------------- | -------------------------- | ----- | ------- |
+| Midnight        | hanner nos                 | 0:00  | 0:00    |
+| 1:00 AM         | un o'r gloch               | 1:00  | 1:00    |
+| 5 past 9        | pum munud wedi naw         | 9:05  | 9:05    |
+| Quarter past 10 | chwarter wedi deg          | 10:15 | 10:15   |
+| Half past 11    | hanner awr wedi un ar ddeg | 11:30 | 11:30   |
+| Noon            | hanner dydd                | 12:00 | 12:00   |
+| Quarter to 3    | chwarter i tri             | 14:45 | 14:45   |
+| 5 to 6          | pum munud i chwech         | 17:55 | 17:55   |
+| 8 o'clock PM    | wyth o'r gloch             | 20:00 | 20:00   |
+| 10:30 PM        | hanner awr wedi deg        | 22:30 | 22:30   |
+| 11:58 PM        | hanner nos                 | 23:58 | 23:58   |

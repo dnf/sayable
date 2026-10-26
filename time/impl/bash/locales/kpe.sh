@@ -10,21 +10,21 @@
 # Source: locales/kpe.json
 
 _sayabletime_locale_kpe() {
-    _clock_hours=('puu lɔŋ' 'tɔŋ' 'feere' 'sawa' 'naŋ' 'lɔɔlu' 'mɛi da tɔŋ' 'mɛi da feere' 'mɛi da sawa' 'mɛi da naŋ' 'puu' 'puu da tɔŋ')
+    _clock_hours=('puu da feere' 'tɔŋ' 'feere' 'sawa' 'naŋ' 'lɔɔlu' 'mɛi da tɔŋ' 'mɛi da feere' 'mɛi da sawa' 'mɛi da naŋ' 'puu' 'puu da tɔŋ')
     _clock_midnight='kpindi kɔlɛ'
     _clock_noon='tili-ma'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='awa {h}'
+    _clock_pattern_5='awa {h} da miniti lɔɔlu'
+    _clock_pattern_10='awa {h} da miniti puu'
+    _clock_pattern_15='awa {h} da miniti puu da lɔɔlu'
+    _clock_pattern_20='awa {h} da miniti puu feere'
+    _clock_pattern_25='awa {h} da miniti puu feere da lɔɔlu'
+    _clock_pattern_30='awa {h} da miniti puu sawa'
+    _clock_pattern_35='awa {h} da miniti puu sawa da lɔɔlu'
+    _clock_pattern_40='awa {h} da miniti puu naŋ'
+    _clock_pattern_45='awa {h} da miniti puu naŋ da lɔɔlu'
+    _clock_pattern_50='awa {h} da miniti puu lɔɔlu'
+    _clock_pattern_55='awa {h} da miniti puu lɔɔlu da lɔɔlu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

@@ -71,7 +71,7 @@ fn build_tg() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} ним",
+        half="{0}у ним",
         delimiter=", ",
         just_born="Навзод",
         newborn=newborn,

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [az.json](../../locales/az.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Listed only under schemaLimits, but the data had English "o'clock" and ungrammatical nominative-hour phrases ("beş keçir iki"), so the within-schema part of the audit's fix was applied: "0": "saat {h}" (idiomatic), and :05-:55 as the spoken digital reading in words ("iki on beş", "iki sıfır beş", "iki qırx beş"), which is grammatical for every hour. Idiomatic forms need case lists (acc "ikini beş dəqiqə keçir", gen "üçün yarısı" = 2:30, dat "üçə on beş dəqiqə qalır") — schema follow-up. Revert the patterns if touching schemaLimits-only locales is unwanted.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | birisi gün            | 17/3    |
 | Day before yesterday | srağagün              | 13/3    |
 | This Thursday (+5)   | bu cümə axşamı        | 20/3    |
-| Last Monday (-4)     | keçən çərşənbə axşamı | 11/3    |
-| Next Wednesday (+12) | gələn cümə axşamı     | 27/3    |
-| Same month (+20)     | 4 aprel               | 4/4     |
+| Last Tuesday (-4)    | keçən çərşənbə axşamı | 11/3    |
+| Next Thursday (+12)  | gələn cümə axşamı     | 27/3    |
+| Same year (+20)      | 4 aprel               | 4/4     |
 | Different year       | 10 yanvar 2026        | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal            | Short | Compact |
-| --------------- | ----------------- | ----- | ------- |
-| Midnight        | gecə yarısı       | 0:00  | 0:00    |
-| 1:00 AM         | bir o'clock       | 1:00  | 1:00    |
-| 5 past 9        | beş keçir doqquz  | 9:05  | 9:05    |
-| Quarter past 10 | on beş keçir on   | 10:15 | 10:15   |
-| Half past 11    | otuz keçir on bir | 11:30 | 11:30   |
-| Noon            | günorta           | 12:00 | 12:00   |
-| Quarter to 3    | on beş qalmış üç  | 14:45 | 14:45   |
-| 5 to 6          | beş qalmış altı   | 17:55 | 17:55   |
-| 8 o'clock PM    | səkkiz o'clock    | 20:00 | 20:00   |
-| 10:30 PM        | otuz keçir on     | 22:30 | 22:30   |
-| 11:58 PM        | gecə yarısı       | 23:58 | 23:58   |
+| Time            | Normal           | Short | Compact |
+| --------------- | ---------------- | ----- | ------- |
+| Midnight        | gecə yarısı      | 0:00  | 0:00    |
+| 1:00 AM         | saat bir         | 1:00  | 1:00    |
+| 5 past 9        | doqquz sıfır beş | 9:05  | 9:05    |
+| Quarter past 10 | on on beş        | 10:15 | 10:15   |
+| Half past 11    | on bir otuz      | 11:30 | 11:30   |
+| Noon            | günorta          | 12:00 | 12:00   |
+| Quarter to 3    | iki qırx beş     | 14:45 | 14:45   |
+| 5 to 6          | beş əlli beş     | 17:55 | 17:55   |
+| 8 o'clock PM    | saat səkkiz      | 20:00 | 20:00   |
+| 10:30 PM        | on otuz          | 22:30 | 22:30   |
+| 11:58 PM        | gecə yarısı      | 23:58 | 23:58   |

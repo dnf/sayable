@@ -27,7 +27,7 @@ locale_bem <- list(
     toddler = "Umwana",
     child = "Umwana",
     teenager = "Umunyamata",
-    adult = "Umulumendo"
+    adult = "Umukalamba"
   ),
   short = list(
     units = list(

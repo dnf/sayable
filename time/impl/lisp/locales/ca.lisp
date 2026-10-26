@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ca"
    :clock (make-clock-config
-    :hours (list "dotze" "una" "dues" "tres" "quatre" "cinc" "sis" "set" "vuit" "nou" "deu" "onze")
+    :hours (list "les dotze" "la una" "les dues" "les tres" "les quatre" "les cinc" "les sis" "les set" "les vuit" "les nou" "les deu" "les onze")
     :midnight "mitjanit"
     :noon "migdia"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "cinc past {h}") (cons 10 "deu past {h}") (cons 15 "un quart past {h}") (cons 20 "vint past {h}") (cons 25 "vint-i-cinc past {h}") (cons 30 "mitja past {h}") (cons 35 "vint-i-cinc to {next_h}") (cons 40 "vint to {next_h}") (cons 45 "un quart to {next_h}") (cons 50 "deu to {next_h}") (cons 55 "cinc to {next_h}")))
+    :patterns (list (cons 0 "{h} en punt") (cons 5 "{h} i cinc") (cons 10 "{h} i deu") (cons 15 "{h} i quart") (cons 20 "{h} i vint") (cons 25 "{h} i vint-i-cinc") (cons 30 "{h} i mitja") (cons 35 "{next_h} menys vint-i-cinc") (cons 40 "{next_h} menys vint") (cons 45 "{next_h} menys quart") (cons 50 "{next_h} menys deu") (cons 55 "{next_h} menys cinc")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

@@ -29,7 +29,7 @@ const SaLocale sa_locale_gl = {
     {
         { "Recén nacido", "Recén nacida" },
         { "Bebé", "" },
-        { "Neno", "" },
+        { "Neno pequeno", "Nena pequena" },
         { "Neno", "Nena" },
         { "Adolescente", "" },
         { "Adulto", "Adulta" }

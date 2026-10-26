@@ -11,10 +11,10 @@
 
 function loc = locale_ki()
   loc.code = 'ki';
-  loc.clock.hours = {'ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano', 'ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe'};
+  loc.clock.hours = {'ithathatũ', 'mũgwanja', 'inyanya', 'kenda', 'ikũmi', 'ikũmi na ĩmwe', 'ikũmi na igĩrĩ', 'ĩmwe', 'igĩrĩ', 'ithatũ', 'inya', 'ithano'};
   loc.clock.midnight = 'ũtukũ gatagatĩ';
   loc.clock.noon = 'mũthenya gatagatĩ';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'thaa {h}', "p5", 'thaa {h} na ndagĩka ithano', "p10", 'thaa {h} na ndagĩka ikũmi', "p15", 'thaa {h} na ndagĩka ikũmi na ithano', "p20", 'thaa {h} na ndagĩka mĩrongo ĩĩrĩ', "p25", 'thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano', "p30", 'thaa {h} na nuthu', "p35", 'thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano', "p40", 'thaa {h} na ndagĩka mĩrongo ĩna', "p45", 'thaa {h} na ndagĩka mĩrongo ĩna na ithano', "p50", 'thaa {h} na ndagĩka mĩrongo ĩtano', "p55", 'thaa {h} na ndagĩka mĩrongo ĩtano na ithano');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {'Kiroko', 'Hwaĩ-inĩ'};

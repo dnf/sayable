@@ -26,11 +26,11 @@ pub const locale_ny = DateLocale{
 	has_day_after_tomorrow: true
 	day_before_yesterday: 'dzana'
 	has_day_before_yesterday: true
-	this_weekday: '{weekday} ino'
+	this_weekday: '{weekday} lino'
 	has_this_weekday: true
-	next_weekday: '{weekday} yotsatira'
+	next_weekday: '{weekday} lotsatira'
 	has_next_weekday: true
-	last_weekday: '{weekday} yatha'
+	last_weekday: '{weekday} latha'
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{

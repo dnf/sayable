@@ -23,9 +23,9 @@ var SW = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.SimpleUnit("{n} sekunde"),
-		Minute: sd.SimpleUnit("{n} dakika"),
-		Hour:   sd.SimpleUnit("{n} saa"),
+		Second: sd.SimpleUnit("sekunde {n}"),
+		Minute: sd.SimpleUnit("dakika {n}"),
+		Hour:   sd.SimpleUnit("saa {n}"),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "siku {n}", sd.Other: "siku {n}"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "wiki {n}", sd.Other: "wiki {n}"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mwezi {n}", sd.Other: "miezi {n}"}),

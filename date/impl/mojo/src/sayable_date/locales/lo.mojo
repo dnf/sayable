@@ -50,10 +50,10 @@ fn build_lo() -> DateLocale:
     var tomorrow = "ມື້ອື່ນ"
     var yesterday = "ມື້ວານ"
     var day_after_tomorrow = "ມື້ຮື"
-    var day_before_yesterday = "ມື້ກ່ອນ"
+    var day_before_yesterday = "ມື້ຊືນ"
     var this_weekday = "{weekday}ນີ້"
     var next_weekday = "{weekday}ໜ້າ"
-    var last_weekday = "{weekday}ແລ້ວ"
+    var last_weekday = "{weekday}ທີ່ແລ້ວ"
     var has_months_in_date = False
 
     var short_ovr = build_compactness_override()

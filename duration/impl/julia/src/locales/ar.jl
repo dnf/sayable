@@ -23,9 +23,9 @@ const AR = DurationLocale(
         return "other"
     end,
     units = Dict(
-        "second" => Dict("zero" => "{n} ثانية", "one" => "ثانية واحدة", "two" => "ثانيتان", "few" => "{n} ثوانٍ", "many" => "{n} ثانية", "other" => "{n} ثانية"),
-        "minute" => Dict("zero" => "{n} دقيقة", "one" => "دقيقة واحدة", "two" => "دقيقتان", "few" => "{n} دقائق", "many" => "{n} دقيقة", "other" => "{n} دقيقة"),
-        "hour" => Dict("zero" => "{n} ساعة", "one" => "ساعة واحدة", "two" => "ساعتان", "few" => "{n} ساعات", "many" => "{n} ساعة", "other" => "{n} ساعة"),
+        "second" => Dict("zero" => "{n} ثانية", "one" => "ثانية", "two" => "ثانيتان", "few" => "{n} ثوانٍ", "many" => "{n} ثانية", "other" => "{n} ثانية"),
+        "minute" => Dict("zero" => "{n} دقيقة", "one" => "دقيقة", "two" => "دقيقتان", "few" => "{n} دقائق", "many" => "{n} دقيقة", "other" => "{n} دقيقة"),
+        "hour" => Dict("zero" => "{n} ساعة", "one" => "ساعة", "two" => "ساعتان", "few" => "{n} ساعات", "many" => "{n} ساعة", "other" => "{n} ساعة"),
         "day" => Dict("zero" => "{n} يوم", "one" => "يوم", "two" => "يومان", "few" => "{n} أيام", "many" => "{n} يومًا", "other" => "{n} يوم"),
         "week" => Dict("zero" => "{n} أسبوع", "one" => "أسبوع", "two" => "أسبوعان", "few" => "{n} أسابيع", "many" => "{n} أسبوعًا", "other" => "{n} أسبوع"),
         "month" => Dict("zero" => "{n} شهر", "one" => "شهر", "two" => "شهران", "few" => "{n} أشهر", "many" => "{n} شهرًا", "other" => "{n} شهر"),
@@ -56,7 +56,7 @@ const AR = DurationLocale(
             "hour" => "{n} س",
             "day" => "{n} ي",
             "week" => "{n} أ",
-            "month" => Dict("zero" => "{n} شهر", "one" => "شهر", "two" => "شهران", "few" => "{n} أشهر", "many" => "{n} شهرًا", "other" => "{n} شهر"),
+            "month" => "{n} شهر",
             "year" => "{n} سنة",
         ),
         half = "{n}½",

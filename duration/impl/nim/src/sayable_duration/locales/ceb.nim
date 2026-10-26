@@ -25,7 +25,7 @@ let CEB* = DurationLocale(
     "month": simpleUnit("{n} ka bulan"),
     "year": simpleUnit("{n} ka tuig"),
   }.toOrderedTable,
-  half: "{n}½",
+  half: "{0} ug tunga",
   delimiter: ", ",
   justNow: "karon lang",
   ago: "{0} ang milabay",

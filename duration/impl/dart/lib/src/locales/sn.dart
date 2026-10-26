@@ -19,9 +19,9 @@ final sn = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': simpleUnit('{n} sekondi'),
-    'minute': simpleUnit('{n} miniti'),
-    'hour': simpleUnit('{n} awa'),
+    'second': pluralUnit({PluralCategory.one: 'sekondi {n}', PluralCategory.other: 'masekondi {n}'}),
+    'minute': pluralUnit({PluralCategory.one: 'miniti {n}', PluralCategory.other: 'maminitsi {n}'}),
+    'hour': pluralUnit({PluralCategory.one: 'awa {n}', PluralCategory.other: 'maawa {n}'}),
     'day': pluralUnit({PluralCategory.one: 'zuva {n}', PluralCategory.other: 'mazuva {n}'}),
     'week': pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavhiki {n}'}),
     'month': pluralUnit({PluralCategory.one: 'mwedzi {n}', PluralCategory.other: 'mwedzi {n}'}),

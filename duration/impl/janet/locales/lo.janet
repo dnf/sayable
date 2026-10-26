@@ -20,10 +20,10 @@
           :month "{n} ເດືອນ"
           :year "{n} ປີ"}
    :half "{0}ເຄິ່ງ"
-   :delimiter ""
+   :delimiter " "
    :just-now "ຫາກໍ"
    :ago "{0} ກ່ອນ"
-   :in-future "ໃນ {0}"
-   :short {:units {:second "{n} ວິ." :minute "{n} ນທ." :hour "{n} ຊມ." :day "{n} ມ." :week "{n} ອທ." :month "{n} ດ." :year "{n} ປ."} :ago "{0} ກ່ອນ" :in-future "ໃນ {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ກ່ອນ" :in-future "ໃນ {0}"}
+   :in-future "ໃນອີກ {0}"
+   :short {:units {:second "{n} ວິ." :minute "{n} ນທ." :hour "{n} ຊມ." :day "{n} ມ." :week "{n} ອທ." :month "{n} ດ." :year "{n} ປ."} :ago "{0} ກ່ອນ" :in-future "ໃນອີກ {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ກ່ອນ" :in-future "ໃນອີກ {0}"}
 })

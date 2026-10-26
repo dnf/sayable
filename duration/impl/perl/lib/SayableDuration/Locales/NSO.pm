@@ -18,8 +18,8 @@ sub locale {{
   code => 'nso',
   plural => sub { my ($n) = @_; $n == 1 ? 'one' : 'other' },
   units => {
-    second => { one => 'motsotswana {n}', other => 'dimetsotswana {n}' },
-    minute => { one => 'metsotso {n}', other => 'dimetsotso {n}' },
+    second => { one => 'motsotswana {n}', other => 'metsotswana {n}' },
+    minute => { one => 'motsotso {n}', other => 'metsotso {n}' },
     hour => { one => 'iri {n}', other => 'diiri {n}' },
     day => { one => 'letšatši {n}', other => 'matšatši {n}' },
     week => { one => 'beke {n}', other => 'dibeke {n}' },
@@ -33,8 +33,8 @@ sub locale {{
   in_future => 'ka {0}',
   short => {
     units => {
-      second => { one => 'mots. {n}', other => 'dimets. {n}' },
-      minute => { one => 'mets. {n}', other => 'dimets. {n}' },
+      second => { one => 'motsotsw. {n}', other => 'metsotsw. {n}' },
+      minute => { one => 'mots. {n}', other => 'mets. {n}' },
       hour => { one => 'iri {n}', other => 'diiri {n}' },
       day => { one => 'letšatši {n}', other => 'matšatši {n}' },
       week => { one => 'beke {n}', other => 'dibeke {n}' },

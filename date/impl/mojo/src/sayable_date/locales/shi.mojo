@@ -40,7 +40,7 @@ fn build_shi() -> DateLocale:
     var weekday2 = "ⴰⵙⵉⵏⴰⵙ"
     var weekday3 = "ⴰⴽⵕⴰⵙ"
     var weekday4 = "ⴰⴽⵡⴰⵙ"
-    var weekday5 = "ⴰⵙⵉⵎⵡⴰⵙ"
+    var weekday5 = "ⵙⵉⵎⵡⴰⵙ"
     var weekday6 = "ⴰⵙⵉⴹⵢⴰⵙ"
     var day_format = "{n}"
     var num_exceptions = 0

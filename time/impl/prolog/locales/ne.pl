@@ -15,18 +15,18 @@ st_hours('ne', ['बाह्र', 'एक', 'दुई', 'तीन', 'चा�
 st_midnight('ne', 'मध्यरात').
 st_noon('ne', 'मध्यान्ह').
 
-st_pattern('ne', 0, '{h}:00').
-st_pattern('ne', 5, '{h}:05').
-st_pattern('ne', 10, '{h}:10').
-st_pattern('ne', 15, '{h}:15').
-st_pattern('ne', 20, '{h}:20').
-st_pattern('ne', 25, '{h}:25').
-st_pattern('ne', 30, '{h}:30').
-st_pattern('ne', 35, '{h}:35').
-st_pattern('ne', 40, '{h}:40').
-st_pattern('ne', 45, '{h}:45').
-st_pattern('ne', 50, '{h}:50').
-st_pattern('ne', 55, '{h}:55').
+st_pattern('ne', 0, '{h} बजे').
+st_pattern('ne', 5, '{h} बजेर पाँच मिनेट').
+st_pattern('ne', 10, '{h} बजेर दश मिनेट').
+st_pattern('ne', 15, 'सवा {h} बजे').
+st_pattern('ne', 20, '{h} बजेर बीस मिनेट').
+st_pattern('ne', 25, '{h} बजेर पच्चीस मिनेट').
+st_pattern('ne', 30, '{h} बजेर तीस मिनेट').
+st_pattern('ne', 35, '{next_h} बज्न पच्चीस मिनेट बाँकी').
+st_pattern('ne', 40, '{next_h} बज्न बीस मिनेट बाँकी').
+st_pattern('ne', 45, 'पौने {next_h} बजे').
+st_pattern('ne', 50, '{next_h} बज्न दश मिनेट बाँकी').
+st_pattern('ne', 55, '{next_h} बज्न पाँच मिनेट बाँकी').
 
 short_st_use24h('ne', false).
 short_st_format('ne', '{h}:{mm} {ampm}').

@@ -10,22 +10,22 @@
 # Source: locales/rw.json
 
 function locale_rw {
-    $hours = @('cumi n''ebyiri', 'rimwe', 'ebyiri', 'eshatu', 'enye', 'eshanu', 'esheshatu', 'indwi', 'umunani', 'icyenda', 'icumi', 'cumi n''imwe')
-    $midnight = 'igicuku'
-    $noon = 'saa sita'
+    $hours = @('sita', 'saba', 'munani', 'cyenda', 'kumi', 'kumi n''imwe', 'kumi n''ebyiri', 'moya', 'mbiri', 'tatu', 'ine', 'tanu')
+    $midnight = 'saa sita z''ijoro'
+    $noon = 'saa sita z''amanywa'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'saa {h}'
+    $patterns[5] = 'saa {h} n''iminota itanu'
+    $patterns[10] = 'saa {h} n''iminota icumi'
+    $patterns[15] = 'saa {h} n''iminota cumi n''itanu'
+    $patterns[20] = 'saa {h} n''iminota makumyabiri'
+    $patterns[25] = 'saa {h} n''iminota makumyabiri n''itanu'
+    $patterns[30] = 'saa {h} n''igice'
+    $patterns[35] = 'saa {h} n''iminota mirongo itatu n''itanu'
+    $patterns[40] = 'saa {h} n''iminota mirongo ine'
+    $patterns[45] = 'saa {h} n''iminota mirongo ine n''itanu'
+    $patterns[50] = 'saa {h} n''iminota mirongo itanu'
+    $patterns[55] = 'saa {h} n''iminota mirongo itanu n''itanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

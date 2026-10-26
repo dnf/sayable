@@ -12,20 +12,20 @@
 (def locale
   {:code "wo"
    :plural (fn [_n] :other)
-   :units {:day "bés {n}"
-          :week "ayubés {n}"
-          :month "weer {n}"
-          :year "at {n}"}
+   :units {:day "{n} fan"
+          :week "{n} ayubés"
+          :month "{n} weer"
+          :year "{n} at"}
    :half "{0} ak genn-wàll"
    :delimiter ", "
    :just-born "Dees ko sax juddu"
    :stages {:newborn "Dees ko sax juddu"
-            :infant "Njàmbaar bu ndaw"
+            :infant "Liir"
             :toddler "Xale bu ndaw"
             :child "Xale"
             :teenager "Ndaw-ndaw"
             :adult "Mag"
 }
-   :short {:units {:day "bés {n}" :week "ayub. {n}" :month "weer {n}" :year "at {n}"}}
-   :compact {:units {:day "bés {n}" :week "ayub {n}" :month "weer {n}" :year "at {n}"} :half "{n}½" :delimiter ""}
+   :short {:units {:day "{n} fan" :week "{n} ayub." :month "{n} weer" :year "{n} at"}}
+   :compact {:units {:day "{n} fan" :week "{n} ayub" :month "{n} weer" :year "{n} at"} :half "{n}½" :delimiter ""}
 })

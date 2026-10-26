@@ -23,7 +23,7 @@ sd_unit('su', year, _, '{n} taun').
 
 sd_half('su', '{0} satengah').
 sd_delimiter('su', ', ').
-sd_just_now('su', 'ayeuna').
+sd_just_now('su', 'nembé').
 sd_ago('su', '{0} kapengker').
 sd_in_future('su', 'dina {0}').
 

@@ -19,7 +19,7 @@ let CS* = TimeLocale(
     hours: @["dvanáct", "jedna", "dvě", "tři", "čtyři", "pět", "šest", "sedm", "osm", "devět", "deset", "jedenáct"],
     midnight: "půlnoc",
     noon: "poledne",
-    patterns: @[(0, "{h} hodin"), (5, "pět po {h}"), (10, "deset po {h}"), (15, "čtvrt po {h}"), (20, "dvacet po {h}"), (25, "dvacet pět po {h}"), (30, "půl po {h}"), (35, "dvacet pět do {next_h}"), (40, "dvacet do {next_h}"), (45, "čtvrt do {next_h}"), (50, "deset do {next_h}"), (55, "pět do {next_h}")].toOrderedTable,
+    patterns: @[(0, "{h}"), (5, "{h} nula pět"), (10, "{h} deset"), (15, "{h} patnáct"), (20, "{h} dvacet"), (25, "{h} dvacet pět"), (30, "{h} třicet"), (35, "za dvacet pět minut {next_h}"), (40, "za dvacet minut {next_h}"), (45, "za patnáct minut {next_h}"), (50, "za deset minut {next_h}"), (55, "za pět minut {next_h}")].toOrderedTable,
   ),
   short: some(CompactnessOverride(
     clock: some(ShortClockConfig(

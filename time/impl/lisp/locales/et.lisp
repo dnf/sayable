@@ -20,7 +20,7 @@
     :hours (list "kaksteist" "üks" "kaks" "kolm" "neli" "viis" "kuus" "seitse" "kaheksa" "üheksa" "kümme" "üksteist")
     :midnight "kesköö"
     :noon "keskpäev"
-    :patterns (list (cons 0 "{h}") (cons 5 "viis efter {h}") (cons 10 "kümme efter {h}") (cons 15 "veerand efter {h}") (cons 20 "kakskümmend efter {h}") (cons 25 "kakskümmend viis efter {h}") (cons 30 "pool efter {h}") (cons 35 "kakskümmend viis enne {next_h}") (cons 40 "kakskümmend enne {next_h}") (cons 45 "veerand enne {next_h}") (cons 50 "kümme enne {next_h}") (cons 55 "viis enne {next_h}")))
+    :patterns (list (cons 0 "kell {h}") (cons 5 "viis minutit {h} läbi") (cons 10 "kümme minutit {h} läbi") (cons 15 "veerand {next_h}") (cons 20 "kakskümmend minutit {h} läbi") (cons 25 "kakskümmend viis minutit {h} läbi") (cons 30 "pool {next_h}") (cons 35 "kolmkümmend viis minutit {h} läbi") (cons 40 "kahekümne minuti pärast {next_h}") (cons 45 "kolmveerand {next_h}") (cons 50 "kümne minuti pärast {next_h}") (cons 55 "viie minuti pärast {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

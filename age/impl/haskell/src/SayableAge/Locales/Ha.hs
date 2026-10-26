@@ -18,20 +18,20 @@ locale = Locale
     { localeCode = "ha"
     , localePlural = \n -> if n == 1 then One else Other
     , localeDay = Pluralized
-      [ (One, "{n} kwana")
-      , (Other, "{n} kwanaki")
+      [ (One, "kwana {n}")
+      , (Other, "kwanaki {n}")
       ]
     , localeWeek = Pluralized
-      [ (One, "{n} mako")
-      , (Other, "{n} makonni")
+      [ (One, "mako {n}")
+      , (Other, "makonni {n}")
       ]
     , localeMonth = Pluralized
-      [ (One, "{n} wata")
-      , (Other, "{n} watanni")
+      [ (One, "wata {n}")
+      , (Other, "watanni {n}")
       ]
     , localeYear = Pluralized
-      [ (One, "{n} shekara")
-      , (Other, "{n} shekaru")
+      [ (One, "shekara {n}")
+      , (Other, "shekaru {n}")
       ]
     , localeHalf = "{n}½"
     , localeDelimiter = ", "
@@ -39,17 +39,17 @@ locale = Locale
     , localeStages = Stages
         { stageNewborn = Neutral "Jariri"
         , stageInfant = Neutral "Jariri"
-        , stageToddler = Neutral "Ƙaramin yaro"
-        , stageChild = Neutral "Yaro"
-        , stageTeenager = Neutral "Saurayi"
+        , stageToddler = Gendered "Ƙaramin yaro" "Ƙaramar yarinya"
+        , stageChild = Gendered "Yaro" "Yarinya"
+        , stageTeenager = Gendered "Saurayi" "Budurwa"
         , stageAdult = Neutral "Babba"
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "{n} kw.")
-            , ovrWeek = Just (Simple "{n} mk.")
-            , ovrMonth = Just (Simple "{n} wt.")
-            , ovrYear = Just (Simple "{n} shk.")
+            { ovrDay = Just (Simple "kw. {n}")
+            , ovrWeek = Just (Simple "mk. {n}")
+            , ovrMonth = Just (Simple "wt. {n}")
+            , ovrYear = Just (Simple "shk. {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var ZU = st.TimeLocale{
 	Code: "zu",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"ishumi nambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isishiyagalombili", "isishiyagalolunye", "ishumi", "ishumi nanye"},
+		Hours:    [12]string{"leshumi nambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesishiyagalombili", "lesishiyagalolunye", "leshumi", "leshumi nanye"},
 		Midnight: "phakathi kwamabili",
 		Noon:     "emini",
-		Patterns: map[int]string{0: "{h} o'clock", 5: "emva kwemizuzu emihlanu ngo-{h}", 10: "emva kwemizuzu eyishumi ngo-{h}", 15: "ikota edlule ngo-{h}", 20: "emva kwemizuzu engamashumi amabili ngo-{h}", 25: "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}", 30: "uhhafu edlule ngo-{h}", 35: "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}", 40: "imizuzu engamashumi amabili ngaphambi kuka-{next_h}", 45: "ikota ngaphambi kuka-{next_h}", 50: "imizuzu eyishumi ngaphambi kuka-{next_h}", 55: "imizuzu emihlanu ngaphambi kuka-{next_h}"},
+		Patterns: map[int]string{0: "ihora {h}", 5: "imizuzu emihlanu emva kwehora {h}", 10: "imizuzu eyishumi emva kwehora {h}", 15: "ikota emva kwehora {h}", 20: "imizuzu engamashumi amabili emva kwehora {h}", 25: "imizuzu engamashumi amabili nanhlanu emva kwehora {h}", 30: "uhhafu emva kwehora {h}", 35: "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}", 40: "imizuzu engamashumi amabili ngaphambi kwehora {next_h}", 45: "ikota ngaphambi kwehora {next_h}", 50: "imizuzu eyishumi ngaphambi kwehora {next_h}", 55: "imizuzu emihlanu ngaphambi kwehora {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

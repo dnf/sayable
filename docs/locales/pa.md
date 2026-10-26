@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [pa.json](../../locales/pa.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): 'ਤਿੰਨ ਵਜੇ', 'ਤਿੰਨ ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ', 'ਸਵਾ ਤਿੰਨ ਵਜੇ', 'ਪੌਣੇ ਚਾਰ ਵਜੇ', 'ਚਾਰ ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ'. Same :30 compromise: 'ਤਿੰਨ ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ' instead of 'ਸਾਢੇ ਤਿੰਨ' because 1:30/2:30 must be 'ਡੇਢ' / 'ਢਾਈ'.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ਪਰਸੋਂ         | 17/3    |
 | Day before yesterday | ਪਰਸੋਂ         | 13/3    |
 | This Thursday (+5)   | ਇਸ ਵੀਰਵਾਰ     | 20/3    |
-| Last Monday (-4)     | ਪਿਛਲੇ ਮੰਗਲਵਾਰ | 11/3    |
-| Next Wednesday (+12) | ਅਗਲੇ ਵੀਰਵਾਰ   | 27/3    |
-| Same month (+20)     | 4 ਅਪ੍ਰੈਲ      | 4/4     |
+| Last Tuesday (-4)    | ਪਿਛਲੇ ਮੰਗਲਵਾਰ | 11/3    |
+| Next Thursday (+12)  | ਅਗਲੇ ਵੀਰਵਾਰ   | 27/3    |
+| Same year (+20)      | 4 ਅਪ੍ਰੈਲ      | 4/4     |
 | Different year       | 10 ਜਨਵਰੀ 2026 | 10/1/26 |
 
 ## Duration
@@ -92,9 +100,9 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 ਮਿੰਟ           | 5 ਮਿੰਟ           | 5 ਮਿੰਟ         |
 | 45 minutes            | 45 ਮਿੰਟ          | 45 ਮਿੰਟ          | 45 ਮਿੰਟ        |
 | 1 hour                | 1 ਘੰਟਾ           | 1 ਘੰਟਾ           | 1 ਘੰਟਾ         |
-| 1½ hours              | ਸਾਢੇ 1 ਘੰਟਾ      | ਸਾਢੇ 1 ਘੰਟੇ      | 1½ ਘੰਟੇ        |
-| 3 hours               | 3 ਘੰਟਾ           | 3 ਘੰਟੇ           | 3 ਘੰਟੇ         |
-| 6 hours               | 6 ਘੰਟਾ           | 6 ਘੰਟੇ           | 6 ਘੰਟੇ         |
+| 1½ hours              | ਸਾਢੇ 1 ਘੰਟੇ      | ਸਾਢੇ 1 ਘੰਟੇ      | 1½ ਘੰਟੇ        |
+| 3 hours               | 3 ਘੰਟੇ           | 3 ਘੰਟੇ           | 3 ਘੰਟੇ         |
+| 6 hours               | 6 ਘੰਟੇ           | 6 ਘੰਟੇ           | 6 ਘੰਟੇ         |
 | 1 day                 | 1 ਦਿਨ            | 1 ਦਿਨ            | 1 ਦਿਨ          |
 | 1½ days               | ਸਾਢੇ 1 ਦਿਨ       | ਸਾਢੇ 1 ਦਿਨ       | 1½ ਦਿਨ         |
 | 3 days                | 3 ਦਿਨ            | 3 ਦਿਨ            | 3 ਦਿਨ          |
@@ -110,24 +118,24 @@ Relative to Saturday, March 15, 2025.
 | Offset        | Normal        | Compact       |
 | ------------- | ------------- | ------------- |
 | 5 minutes ago | 5 ਮਿੰਟ ਪਹਿਲਾਂ | 5 ਮਿੰਟ ਪਹਿਲਾਂ |
-| 2 hours ago   | 2 ਘੰਟਾ ਪਹਿਲਾਂ | 2 ਘੰਟੇ ਪਹਿਲਾਂ |
+| 2 hours ago   | 2 ਘੰਟੇ ਪਹਿਲਾਂ | 2 ਘੰਟੇ ਪਹਿਲਾਂ |
 | in 30 minutes | 30 ਮਿੰਟ ਵਿੱਚ  | 30 ਮਿੰਟ ਵਿੱਚ  |
-| in 3 hours    | 3 ਘੰਟਾ ਵਿੱਚ   | 3 ਘੰਟੇ ਵਿੱਚ   |
+| in 3 hours    | 3 ਘੰਟੇ ਵਿੱਚ   | 3 ਘੰਟੇ ਵਿੱਚ   |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal    | Short    | Compact |
-| --------------- | --------- | -------- | ------- |
-| Midnight        | ਅੱਧੀ ਰਾਤ  | 12:00 AM | 12:00a  |
-| 1:00 AM         | ਇੱਕ:00    | 1:00 AM  | 1:00a   |
-| 5 past 9        | ਨੌਂ:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ਦਸ:15     | 10:15 AM | 10:15a  |
-| Half past 11    | ਗਿਆਰਾਂ:30 | 11:30 AM | 11:30a  |
-| Noon            | ਦੁਪਹਿਰ    | 12:00 PM | 12:00p  |
-| Quarter to 3    | ਦੋ:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | ਪੰਜ:55    | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | ਅੱਠ:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ਦਸ:30     | 10:30 PM | 10:30p  |
-| 11:58 PM        | ਅੱਧੀ ਰਾਤ  | 11:58 PM | 11:58p  |
+| Time            | Normal                 | Short    | Compact |
+| --------------- | ---------------------- | -------- | ------- |
+| Midnight        | ਅੱਧੀ ਰਾਤ               | 12:00 AM | 12:00a  |
+| 1:00 AM         | ਇੱਕ ਵਜੇ                | 1:00 AM  | 1:00a   |
+| 5 past 9        | ਨੌਂ ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ    | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ਸਵਾ ਦਸ ਵਜੇ             | 10:15 AM | 10:15a  |
+| Half past 11    | ਗਿਆਰਾਂ ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ | 11:30 AM | 11:30a  |
+| Noon            | ਦੁਪਹਿਰ                 | 12:00 PM | 12:00p  |
+| Quarter to 3    | ਪੌਣੇ ਤਿੰਨ ਵਜੇ          | 2:45 PM  | 2:45p   |
+| 5 to 6          | ਛੇ ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ਅੱਠ ਵਜੇ                | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ਦਸ ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ     | 10:30 PM | 10:30p  |
+| 11:58 PM        | ਅੱਧੀ ਰਾਤ               | 11:58 PM | 11:58p  |

@@ -33,8 +33,8 @@ pub const locale_mt = DurationLocale{
 	code: 'mt'
 	plural: plural_mt
 	second: plural_unit({PluralCategory.one: '{n} sekonda', PluralCategory.two: '{n} sekondi', PluralCategory.few: '{n} sekondi', PluralCategory.many: '{n}-il sekonda', PluralCategory.other: '{n} sekonda'})
-	minute: plural_unit({PluralCategory.one: '{n} minuta', PluralCategory.two: '{n} minuti', PluralCategory.few: '{n} minuti', PluralCategory.many: '{n}-il minuta', PluralCategory.other: '{n} minuta'})
-	hour: plural_unit({PluralCategory.one: '{n} siegħa', PluralCategory.two: '{n} sigħat', PluralCategory.few: '{n} sigħat', PluralCategory.many: '{n}-il siegħa', PluralCategory.other: '{n} siegħa'})
+	minute: plural_unit({PluralCategory.one: '{n} minuta', PluralCategory.two: 'minutejn', PluralCategory.few: '{n} minuti', PluralCategory.many: '{n}-il minuta', PluralCategory.other: '{n} minuta'})
+	hour: plural_unit({PluralCategory.one: '{n} siegħa', PluralCategory.two: 'sagħtejn', PluralCategory.few: '{n} sigħat', PluralCategory.many: '{n}-il siegħa', PluralCategory.other: '{n} siegħa'})
 	day: plural_unit({PluralCategory.one: 'ġurnata', PluralCategory.two: 'jumejn', PluralCategory.few: '{n} ijiem', PluralCategory.many: '{n}-il jum', PluralCategory.other: '{n} jum'})
 	week: plural_unit({PluralCategory.one: 'ġimgħa', PluralCategory.two: 'ġimgħatejn', PluralCategory.few: '{n} ġimgħat', PluralCategory.many: '{n}-il ġimgħa', PluralCategory.other: '{n} ġimgħa'})
 	month: plural_unit({PluralCategory.one: 'xahar', PluralCategory.two: 'xahrejn', PluralCategory.few: '{n} xhur', PluralCategory.many: '{n}-il xahar', PluralCategory.other: '{n} xahar'})

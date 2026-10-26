@@ -16,7 +16,7 @@ const MAM = AgeLocale(
     plural = _ -> "other",
     units = Dict(
         "day" => "{n} q'ij",
-        "week" => "{n} xjaw",
+        "week" => "{n} seman",
         "month" => "{n} xjaw",
         "year" => "{n} ab'q'ii",
     ),
@@ -34,7 +34,7 @@ const MAM = AgeLocale(
     short_override = CompactnessOverride(
         units = Dict(
             "day" => "{n} q'ij",
-            "week" => "{n} xjaw",
+            "week" => "{n} seman",
             "month" => "{n} xjaw",
             "year" => "{n} ab'.",
         ),
@@ -46,6 +46,7 @@ const MAM = AgeLocale(
             "month" => "{n}m",
             "year" => "{n}y",
         ),
+        half = "{n}½",
         delimiter = "",
     ),
 )

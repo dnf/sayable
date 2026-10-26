@@ -21,12 +21,12 @@ mi
 		'second'. '{n} hēkona'.
 		'minute'. '{n} meneti'.
 		'hour'. '{n} hāora'.
-		'day'. 'rā {n}'.
-		'week'. 'wiki {n}'.
-		'month'. 'marama {n}'.
-		'year'. 'tau {n}'.
+		'day'. '{n} rā'.
+		'week'. '{n} wiki'.
+		'month'. '{n} marama'.
+		'year'. '{n} tau'.
 	}).
-	locale half: '{0}½'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'ināianei'.
 	locale ago: '{0} i mua'.
@@ -36,10 +36,10 @@ mi
 			'second'. '{n} hēk'.
 			'minute'. '{n} men'.
 			'hour'. '{n} hāo'.
-			'day'. 'rā {n}'.
-			'week'. 'w {n}'.
-			'month'. 'm {n}'.
-			'year'. 't {n}'.
+			'day'. '{n} rā'.
+			'week'. '{n} w'.
+			'month'. '{n} m'.
+			'year'. '{n} t'.
 		}).
 		#ago. '{0} i mua'.
 		#inFuture. 'ā te {0}'.

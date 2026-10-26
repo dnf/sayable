@@ -121,7 +121,7 @@
     "delimiter": ", ",
     "justNow": "sisan",
     "ago": "{0} taata",
-    "inFuture": "ka {0}",
+    "inFuture": "{0} kɔnɔ",
     "short": {
       "units": {
         "second": "sɛk. {n}",
@@ -133,7 +133,7 @@
         "year": "sanj. {n}"
       },
       "ago": "{0} taata",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -156,7 +156,7 @@
       "delimiter": "",
       "half": "{n}½",
       "ago": "{0} taata",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -170,7 +170,7 @@
   "time": {
     "clock": {
       "hours": [
-        "tan ning fula",
+        "taŋ niŋ fula",
         "kiliŋ",
         "fula",
         "saba",
@@ -181,23 +181,23 @@
         "sey",
         "kɔnɔntɔ",
         "taŋ",
-        "taŋ ning kiliŋ"
+        "taŋ niŋ kiliŋ"
       ],
       "midnight": "sutu-tili-laŋ",
       "noon": "tili-konto",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "talaŋ {h}",
+        "5": "talaŋ {h} aniŋ miniti luulu",
+        "10": "talaŋ {h} aniŋ miniti taŋ",
+        "15": "talaŋ {h} aniŋ miniti taŋ niŋ luulu",
+        "20": "talaŋ {h} aniŋ miniti muwaŋ",
+        "25": "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu",
+        "30": "talaŋ {h} aniŋ talantee",
+        "35": "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu",
+        "40": "talaŋ {h} aniŋ miniti taŋ naani",
+        "45": "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu",
+        "50": "talaŋ {h} aniŋ miniti taŋ luulu",
+        "55": "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Gambian Mandinka 'talaŋ {h}' (talaŋ = o'clock/bell), additive 'aniŋ miniti N' and 'aniŋ talantee' (and a half) at 30; Mandinka numerals luulu 5, taŋ 10, muwaŋ 20, taŋ saba 30, taŋ naani 40, taŋ luulu 50. No subtractive form used. Normalised hours[0]/[11] to 'taŋ niŋ fula' / 'taŋ niŋ kiliŋ' (file had mixed 'tan ning'/'taŋ ning'). Orthography in this file mixes Gambian (ŋ) and ɔ-based spellings; I followed what was there."
+    }
+  ]
 }

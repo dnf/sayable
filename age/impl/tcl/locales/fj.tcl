@@ -21,7 +21,7 @@ proc locale_fj {} {
         month "{n} na vula" \
         year "{n} na yabaki" \
     ]
-    set half "{n} kei na levu ni wasei"
+    set half "{0} kei na veimama"
     set delimiter {, }
     set just_born {Gone vou}
     set stages [dict create \
@@ -47,6 +47,7 @@ proc locale_fj {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

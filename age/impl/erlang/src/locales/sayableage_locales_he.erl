@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "he",
         plural = fun(1) -> one; (2) -> two; (_) -> other end,
-        day = {pluralized, [{one, "יום {n}"}, {two, "יומיים"}, {other, "{n} ימים"}]},
-        week = {pluralized, [{one, "שבוע {n}"}, {two, "שבועיים"}, {other, "{n} שבועות"}]},
-        month = {pluralized, [{one, "חודש {n}"}, {two, "חודשיים"}, {other, "{n} חודשים"}]},
+        day = {pluralized, [{one, "יום"}, {two, "יומיים"}, {other, "{n} ימים"}]},
+        week = {pluralized, [{one, "שבוע"}, {two, "שבועיים"}, {other, "{n} שבועות"}]},
+        month = {pluralized, [{one, "חודש"}, {two, "חודשיים"}, {other, "{n} חודשים"}]},
         year = {pluralized, [{one, "שנה"}, {two, "שנתיים"}, {other, "{n} שנים"}]},
         half = "{0} וחצי",
         delimiter = ", ",
         just_born = "רק נולד",
-        stages = #stages{newborn = {gendered, "רק נולד", "רק נולדה"}, infant = {neutral, "תינוק"}, toddler = {neutral, "פעוט"}, child = {gendered, "ילד", "ילדה"}, teenager = {gendered, "נער", "נערה"}, adult = {gendered, "מבוגר", "מבוגרת"}},
+        stages = #stages{newborn = {gendered, "רק נולד", "רק נולדה"}, infant = {gendered, "תינוק", "תינוקת"}, toddler = {gendered, "פעוט", "פעוטה"}, child = {gendered, "ילד", "ילדה"}, teenager = {gendered, "נער", "נערה"}, adult = {gendered, "מבוגר", "מבוגרת"}},
         short = {just, #compactness_override{day = {just, {pluralized, [{one, "{n} יום"}, {two, "יומיים"}, {other, "{n} ימ׳"}]}}, week = {just, {pluralized, [{one, "{n} שבוע"}, {two, "שבועיים"}, {other, "{n} שבועות"}]}}, month = {just, {simple, "{n} ח׳"}}, year = {just, {pluralized, [{one, "{n} שנה"}, {two, "{n} שנים"}, {other, "{n} שנים"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n} י׳"}}, week = {just, {simple, "{n} ש′"}}, month = {just, {simple, "{n} ח׳"}}, year = {just, {simple, "{n} ש′"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

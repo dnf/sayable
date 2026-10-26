@@ -23,27 +23,27 @@ fn expectNull(actual: ?[]const u8) !void {
 // ================================================================
 
 // 1.1
-test "null input" {
+test "1.1 input null" {
     var buf: [256]u8 = undefined;
-    try expectNull(fmt(&buf, ""));
+    try expectNull(fmtWith(&buf, &st.locales.en, .normal, ""));
 }
 
 // 1.2
-test "invalid input" {
+test "1.2 input ''" {
     var buf: [256]u8 = undefined;
-    try expectNull(fmt(&buf, "invalid"));
+    try expectNull(fmtWith(&buf, &st.locales.en, .normal, ""));
 }
 
 // 1.3
-test "invalid hour" {
+test "1.3 input 'invalid'" {
     var buf: [256]u8 = undefined;
-    try expectNull(fmt(&buf, "25:00"));
+    try expectNull(fmtWith(&buf, &st.locales.en, .normal, "invalid"));
 }
 
 // 1.4
-test "invalid minute" {
+test "1.4 input '25:00'" {
     var buf: [256]u8 = undefined;
-    try expectNull(fmt(&buf, "10:60"));
+    try expectNull(fmtWith(&buf, &st.locales.en, .normal, "25:00"));
 }
 
 // ================================================================
@@ -51,63 +51,69 @@ test "invalid minute" {
 // ================================================================
 
 // 2.1
-test "midnight" {
+test "2.1 input '00:00'" {
     var buf: [256]u8 = undefined;
-    try expectStr("midnight", fmt(&buf, "00:00"));
+    try expectStr("midnight", fmtWith(&buf, &st.locales.en, .normal, "00:00"));
 }
 
 // 2.2
-test "noon" {
+test "2.2 input '12:00'" {
     var buf: [256]u8 = undefined;
-    try expectStr("noon", fmt(&buf, "12:00"));
+    try expectStr("noon", fmtWith(&buf, &st.locales.en, .normal, "12:00"));
 }
 
 // 2.3
-test "o'clock" {
+test "2.3 input '15:00'" {
     var buf: [256]u8 = undefined;
-    try expectStr("three o'clock", fmt(&buf, "15:00"));
+    try expectStr("three o'clock", fmtWith(&buf, &st.locales.en, .normal, "15:00"));
 }
 
 // 2.4
-test "quarter past" {
+test "2.4 input '14:15'" {
     var buf: [256]u8 = undefined;
-    try expectStr("a quarter past two", fmt(&buf, "14:15"));
+    try expectStr("a quarter past two", fmtWith(&buf, &st.locales.en, .normal, "14:15"));
 }
 
 // 2.5
-test "half past" {
+test "2.5 input '09:30'" {
     var buf: [256]u8 = undefined;
-    try expectStr("half past seven", fmt(&buf, "07:30"));
+    try expectStr("half past nine", fmtWith(&buf, &st.locales.en, .normal, "09:30"));
 }
 
 // 2.6
-test "quarter to" {
+test "2.6 input '10:45'" {
     var buf: [256]u8 = undefined;
-    try expectStr("a quarter to eleven", fmt(&buf, "10:45"));
+    try expectStr("a quarter to eleven", fmtWith(&buf, &st.locales.en, .normal, "10:45"));
 }
 
 // 2.7
-test "five past" {
+test "2.7 input '08:05'" {
     var buf: [256]u8 = undefined;
-    try expectStr("five past nine", fmt(&buf, "09:05"));
+    try expectStr("five past eight", fmtWith(&buf, &st.locales.en, .normal, "08:05"));
 }
 
 // 2.8
-test "ten to" {
+test "2.8 input '16:55'" {
     var buf: [256]u8 = undefined;
-    try expectStr("ten to six", fmt(&buf, "05:50"));
+    try expectStr("five to five", fmtWith(&buf, &st.locales.en, .normal, "16:55"));
 }
 
 // 2.9
-test "rounds to twenty" {
+test "2.9 input '23:58'" {
     var buf: [256]u8 = undefined;
-    try expectStr("twenty past seven", fmt(&buf, "07:22"));
+    try expectStr("midnight", fmtWith(&buf, &st.locales.en, .normal, "23:58"));
 }
 
 // 2.10
-test "ISO datetime input" {
+test "2.10 input '07:22'" {
     var buf: [256]u8 = undefined;
-    try expectStr("a quarter past two", fmt(&buf, "2025-01-15T14:15:00"));
+    try expectStr("twenty past seven", fmtWith(&buf, &st.locales.en, .normal, "07:22"));
+}
+
+// 2.11
+test "2.11 input '2025-01-15T14:15:00'" {
+    var buf: [256]u8 = undefined;
+    try expectStr("a quarter past two", fmtWith(&buf, &st.locales.en, .normal, "2025-01-15T14:15:00"));
 }
 
 // ================================================================
@@ -115,21 +121,27 @@ test "ISO datetime input" {
 // ================================================================
 
 // 3.1
-test "short 2:15 PM" {
+test "3.1 input '14:15'" {
     var buf: [256]u8 = undefined;
     try expectStr("2:15 PM", fmtWith(&buf, &st.locales.en, .short_mode, "14:15"));
 }
 
 // 3.2
-test "short 12:00 AM" {
+test "3.2 input '09:30'" {
+    var buf: [256]u8 = undefined;
+    try expectStr("9:30 AM", fmtWith(&buf, &st.locales.en, .short_mode, "09:30"));
+}
+
+// 3.3
+test "3.3 input '00:00'" {
     var buf: [256]u8 = undefined;
     try expectStr("12:00 AM", fmtWith(&buf, &st.locales.en, .short_mode, "00:00"));
 }
 
-// 3.3
-test "short 9:05 AM" {
+// 3.4
+test "3.4 input '12:00'" {
     var buf: [256]u8 = undefined;
-    try expectStr("9:05 AM", fmtWith(&buf, &st.locales.en, .short_mode, "09:05"));
+    try expectStr("12:00 PM", fmtWith(&buf, &st.locales.en, .short_mode, "12:00"));
 }
 
 // ================================================================
@@ -137,15 +149,15 @@ test "short 9:05 AM" {
 // ================================================================
 
 // 4.1
-test "compact 2:15p" {
+test "4.1 input '14:15'" {
     var buf: [256]u8 = undefined;
     try expectStr("2:15p", fmtWith(&buf, &st.locales.en, .compact, "14:15"));
 }
 
 // 4.2
-test "compact 12:00a" {
+test "4.2 input '09:30'" {
     var buf: [256]u8 = undefined;
-    try expectStr("12:00a", fmtWith(&buf, &st.locales.en, .compact, "00:00"));
+    try expectStr("9:30a", fmtWith(&buf, &st.locales.en, .compact, "09:30"));
 }
 
 // ================================================================
@@ -153,15 +165,9 @@ test "compact 12:00a" {
 // ================================================================
 
 // 5.1
-test "German quarter past" {
+test "5.1 input '15:30'" {
     var buf: [256]u8 = undefined;
-    try expectStr("Viertel nach drei", fmtWith(&buf, &st.locales.de, .normal, "15:15"));
-}
-
-// 5.2
-test "German half past" {
-    var buf: [256]u8 = undefined;
-    try expectStr("halb acht", fmtWith(&buf, &st.locales.de, .normal, "07:30"));
+    try expectStr("halb vier", fmtWith(&buf, &st.locales.de, .normal, "15:30"));
 }
 
 // ================================================================

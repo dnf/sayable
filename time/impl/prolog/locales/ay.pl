@@ -11,22 +11,22 @@
 
 % Aymara locale.
 
-st_hours('ay', ['tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llantunka', 'tunka', 'tunka mayani']).
+st_hours('ay', ['tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llätunka', 'tunka', 'tunka mayani']).
 st_midnight('ay', 'aruma chika').
 st_noon('ay', 'chika uru').
 
-st_pattern('ay', 0, '{h}:00').
-st_pattern('ay', 5, '{h}:05').
-st_pattern('ay', 10, '{h}:10').
-st_pattern('ay', 15, '{h}:15').
-st_pattern('ay', 20, '{h}:20').
-st_pattern('ay', 25, '{h}:25').
-st_pattern('ay', 30, '{h}:30').
-st_pattern('ay', 35, '{h}:35').
-st_pattern('ay', 40, '{h}:40').
-st_pattern('ay', 45, '{h}:45').
-st_pattern('ay', 50, '{h}:50').
-st_pattern('ay', 55, '{h}:55').
+st_pattern('ay', 0, '{h} ura').
+st_pattern('ay', 5, '{h} ura phisqa minutuni').
+st_pattern('ay', 10, '{h} ura tunka minutuni').
+st_pattern('ay', 15, '{h} ura tunka phisqani minutuni').
+st_pattern('ay', 20, '{h} ura pä tunka minutuni').
+st_pattern('ay', 25, '{h} ura pä tunka phisqani minutuni').
+st_pattern('ay', 30, '{h} ura chikani').
+st_pattern('ay', 35, '{h} ura kimsa tunka phisqani minutuni').
+st_pattern('ay', 40, '{h} ura pusi tunka minutuni').
+st_pattern('ay', 45, '{h} ura pusi tunka phisqani minutuni').
+st_pattern('ay', 50, '{h} ura phisqa tunka minutuni').
+st_pattern('ay', 55, '{h} ura phisqa tunka phisqani minutuni').
 
 short_st_use24h('ay', false).
 short_st_format('ay', '{h}:{mm} {ampm}').

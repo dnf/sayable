@@ -20,7 +20,7 @@ module SayableAge
         "year" => UnitForms.new("{n} ປີ"),
       },
       half: "{0}ເຄິ່ງ",
-      delimiter: "",
+      delimiter: " ",
       just_born: "ເກີດໃໝ່",
       stages: {
         "newborn" => StageLabel.new("ເດັກເກີດໃໝ່"),
@@ -45,6 +45,7 @@ module SayableAge
           "month" => UnitForms.new("{n}m"),
           "year" => UnitForms.new("{n}y"),
         },
+        half: "{n}½",
       ),
     )
   end

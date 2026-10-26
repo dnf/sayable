@@ -44,6 +44,7 @@ compact_sd_unit('tet', day, _, '{n}d').
 compact_sd_unit('tet', week, _, '{n}w').
 compact_sd_unit('tet', month, _, '{n}mo').
 compact_sd_unit('tet', year, _, '{n}y').
+compact_sd_half('tet', '{n}½').
 compact_sd_delimiter('tet', '').
 compact_sd_ago('tet', '{0} liu ba').
 compact_sd_in_future('tet', 'iha {0}').

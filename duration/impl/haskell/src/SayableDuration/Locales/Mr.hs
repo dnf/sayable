@@ -19,7 +19,10 @@ locale = DurationLocale
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
         { unitSecond = Simple "{n} सेकंद"
-        , unitMinute = Simple "{n} मिनिट"
+        , unitMinute = Pluralized
+          [ (One, "{n} मिनिट")
+          , (Other, "{n} मिनिटे")
+          ]
         , unitHour = Simple "{n} तास"
         , unitDay = Pluralized
           [ (One, "{n} दिवस")

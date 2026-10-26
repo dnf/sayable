@@ -23,7 +23,7 @@ final tpi = DateLocale(
   tomorrow: 'tumora',
   yesterday: 'asde',
   dayAfterTomorrow: 'haptumora',
-  dayBeforeYesterday: 'asde bipo',
+  dayBeforeYesterday: 'hapasde',
   thisWeekday: 'dispela {weekday}',
   nextWeekday: '{weekday} bihain',
   lastWeekday: '{weekday} bipo',

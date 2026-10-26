@@ -21,7 +21,7 @@
   (time-locale
    "nb"
    (clock-config
-    (list "tolv" "en" "to" "tre" "fire" "fem" "seks" "sju" "åtte" "ni" "ti" "elleve")
+    (list "tolv" "ett" "to" "tre" "fire" "fem" "seks" "sju" "åtte" "ni" "ti" "elleve")
     "midnatt"
     "middag"
     (hash 0 "klokka {h}" 5 "fem over {h}" 10 "ti over {h}" 15 "kvart over {h}" 20 "tjue over {h}" 25 "fem på halv {next_h}" 30 "halv {next_h}" 35 "fem over halv {next_h}" 40 "tjue på {next_h}" 45 "kvart på {next_h}" 50 "ti på {next_h}" 55 "fem på {next_h}"))

@@ -21,17 +21,17 @@ locale =
     { code = "he"
     , plural = \n -> if n == 1 then One else if n == 2 then Two else Other
     , day = Pluralized
-      [ ( One, "יום {n}" )
+      [ ( One, "יום" )
       , ( Two, "יומיים" )
       , ( Other, "{n} ימים" )
       ]
     , week = Pluralized
-      [ ( One, "שבוע {n}" )
+      [ ( One, "שבוע" )
       , ( Two, "שבועיים" )
       , ( Other, "{n} שבועות" )
       ]
     , month = Pluralized
-      [ ( One, "חודש {n}" )
+      [ ( One, "חודש" )
       , ( Two, "חודשיים" )
       , ( Other, "{n} חודשים" )
       ]
@@ -45,8 +45,8 @@ locale =
     , justBorn = "רק נולד"
     , stages =
         { newborn = Gendered "רק נולד" "רק נולדה"
-        , infant = Neutral "תינוק"
-        , toddler = Neutral "פעוט"
+        , infant = Gendered "תינוק" "תינוקת"
+        , toddler = Gendered "פעוט" "פעוטה"
         , child = Gendered "ילד" "ילדה"
         , teenager = Gendered "נער" "נערה"
         , adult = Gendered "מבוגר" "מבוגרת"

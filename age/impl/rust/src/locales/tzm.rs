@@ -42,17 +42,29 @@ pub fn locale() -> AgeLocale {
         just_born: "Iɣ d illul".to_string(),
         stages: Stages {
             newborn: StageLabel::Neutral("Iɣ d illul".to_string()),
-            infant: StageLabel::Neutral("Agellid".to_string()),
+            infant: StageLabel::Neutral("Llufan".to_string()),
             toddler: StageLabel::Gendered { m: "Aḥenjir".to_string(), f: "Taḥenjirt".to_string() },
-            child: StageLabel::Gendered { m: "Afrux".to_string(), f: "Tafruxṭ".to_string() },
+            child: StageLabel::Gendered { m: "Afrux".to_string(), f: "Tafruxt".to_string() },
             teenager: StageLabel::Gendered { m: "Aɛrim".to_string(), f: "Taɛrimt".to_string() },
             adult: StageLabel::Gendered { m: "Argaz".to_string(), f: "Tamṭṭuṭ".to_string() },
         },
         short: Some(CompactnessOverride {
-            day: Some(UnitForms::simple("{n} d")),
-            week: Some(UnitForms::simple("{n} wk")),
-            month: Some(UnitForms::simple("{n} mo")),
-            year: Some(UnitForms::simple("{n} yr")),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ass"),
+                (PluralCategory::Other, "{n} ussan"),
+            ])),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} imalass"),
+                (PluralCategory::Other, "{n} imalassn"),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ayyur"),
+                (PluralCategory::Other, "{n} ayyurn"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} aseggas"),
+                (PluralCategory::Other, "{n} iseggasen"),
+            ])),
             half: None,
             delimiter: None,
             just_born: None,

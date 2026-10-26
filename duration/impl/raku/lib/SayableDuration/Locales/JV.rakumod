@@ -27,7 +27,7 @@ our sub locale() {
         },
         half => '{0} setengah',
         delimiter => ', ',
-        just-now => 'saiki',
+        just-now => 'lagi waé',
         ago => '{0} kepungkur',
         in-future => 'ing {0}',
         short => {

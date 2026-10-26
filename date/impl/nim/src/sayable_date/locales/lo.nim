@@ -25,10 +25,10 @@ let LO* = DateLocale(
   tomorrow: "ມື້ອື່ນ",
   yesterday: "ມື້ວານ",
   dayAfterTomorrow: some("ມື້ຮື"),
-  dayBeforeYesterday: some("ມື້ກ່ອນ"),
+  dayBeforeYesterday: some("ມື້ຊືນ"),
   thisWeekday: some("{weekday}ນີ້"),
   nextWeekday: some("{weekday}ໜ້າ"),
-  lastWeekday: some("{weekday}ແລ້ວ"),
+  lastWeekday: some("{weekday}ທີ່ແລ້ວ"),
   monthsInDate: none(seq[string]),
   short: some(CompactnessOverride(
     months: some(@["ມ.ກ.", "ກ.ພ.", "ມ.ນ.", "ມ.ສ.", "ພ.ພ.", "ມ.ຖ.", "ກ.ລ.", "ສ.ຫ.", "ກ.ຍ.", "ຕ.ລ.", "ພ.ຈ.", "ທ.ວ."]),

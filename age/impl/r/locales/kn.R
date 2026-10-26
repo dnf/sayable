@@ -18,7 +18,7 @@ locale_kn <- list(
     month = list(one = "{n} ತಿಂಗಳು", other = "{n} ತಿಂಗಳುಗಳು"),
     year = list(one = "{n} ವರ್ಷ", other = "{n} ವರ್ಷಗಳು")
   ),
-  half = "{0}ವರೆ",
+  half = "{n}½",
   delimiter = ", ",
   just_born = "ನವಜಾತ ಶಿಶು",
   stages = list(

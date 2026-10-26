@@ -27,7 +27,7 @@ pub fn locale() -> DateLocale {
         tomorrow: "paqarin".to_string(),
         yesterday: "qayna".to_string(),
         day_after_tomorrow: Some("minchha".to_string()),
-        day_before_yesterday: Some("qayna p'unchaw".to_string()),
+        day_before_yesterday: Some("qayninpa".to_string()),
         this_weekday: Some("kay {weekday}".to_string()),
         next_weekday: Some("hamuq {weekday}".to_string()),
         last_weekday: Some("qayna {weekday}".to_string()),

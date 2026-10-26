@@ -17,8 +17,8 @@ use crate::types::{CompactnessOverride, DateLocale};
 pub fn locale() -> DateLocale {
     DateLocale {
         code: "tk".to_string(),
-        months: ["Ýanwar".to_string(), "Fewral".to_string(), "Mart".to_string(), "Aprel".to_string(), "Maý".to_string(), "Iýun".to_string(), "Iýul".to_string(), "Awgust".to_string(), "Sentýabr".to_string(), "Oktýabr".to_string(), "Noýabr".to_string(), "Dekabr".to_string()],
-        weekdays: ["Ýekşenbe".to_string(), "Duşenbe".to_string(), "Sişenbe".to_string(), "Çarşenbe".to_string(), "Penşenbe".to_string(), "Anna".to_string(), "Şenbe".to_string()],
+        months: ["ýanwar".to_string(), "fewral".to_string(), "mart".to_string(), "aprel".to_string(), "maý".to_string(), "iýun".to_string(), "iýul".to_string(), "awgust".to_string(), "sentýabr".to_string(), "oktýabr".to_string(), "noýabr".to_string(), "dekabr".to_string()],
+        weekdays: ["ýekşenbe".to_string(), "duşenbe".to_string(), "sişenbe".to_string(), "çarşenbe".to_string(), "penşenbe".to_string(), "anna".to_string(), "şenbe".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),
@@ -33,9 +33,9 @@ pub fn locale() -> DateLocale {
         last_weekday: Some("geçen {weekday}".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {
-            months: Some(["Ýan".to_string(), "Few".to_string(), "Mar".to_string(), "Apr".to_string(), "Maý".to_string(), "Iýn".to_string(), "Iýl".to_string(), "Awg".to_string(), "Sen".to_string(), "Okt".to_string(), "Noý".to_string(), "Dek".to_string()]),
+            months: Some(["ýan".to_string(), "few".to_string(), "mar".to_string(), "apr".to_string(), "maý".to_string(), "iýn".to_string(), "iýl".to_string(), "awg".to_string(), "sen".to_string(), "okt".to_string(), "noý".to_string(), "dek".to_string()]),
             months_in_date: None,
-            weekdays: Some(["Ýek".to_string(), "Duş".to_string(), "Siş".to_string(), "Çar".to_string(), "Pen".to_string(), "Ann".to_string(), "Şen".to_string()]),
+            weekdays: Some(["ýek".to_string(), "duş".to_string(), "siş".to_string(), "çar".to_string(), "pen".to_string(), "ann".to_string(), "şen".to_string()]),
             day_format: Some("{n}".to_string()),
             day_format_exceptions: None,
             date_pattern: Some("{day} {month}".to_string()),

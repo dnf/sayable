@@ -20,7 +20,7 @@ export const kri: AgeLocale = {
     month: '{n} mont',
     year:  '{n} ia',
   },
-  half: '{n} na af',
+  half: '{0} ɛn af',
   delimiter: ', ',
   justBorn: 'Nyubon bebi',
   stages: {
@@ -46,6 +46,7 @@ export const kri: AgeLocale = {
       month: '{n}m',
       year:  '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
   },
 };

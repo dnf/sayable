@@ -1,6 +1,7 @@
 (ns sayableage.core-test
   (:require [clojure.test :refer [deftest is testing]]
             [sayableage.core :as pt]
+            [sayableage.internal :as internal]
             [sayableage.locales.en :as en]
             [sayableage.locales.es :as es]
             [sayableage.locales.he :as he]
@@ -224,7 +225,18 @@
   (testing "14.5 Jan 31 -> Jul 31"
     (is (= "6 months" (age "2025-01-31" "2025-07-31")))))
 
-;; 15. Default asOf — skipped (test only pure variants)
+;; 15. Default asOf (today pinned to 2025-06-15 by redefining internal/today)
+(defn- with-fixed-today [f]
+  (with-redefs [internal/today (constantly [2025 6 15])]
+    (f)))
+
+(deftest default-as-of
+  (testing "15.1 default asOf, 5 years"
+    (with-fixed-today
+      #(is (= "5 years" (pt/format-age en/locale :normal "2020-01-01" nil)))))
+  (testing "15.2 default asOf, 5 days"
+    (with-fixed-today
+      #(is (= "5 days" (pt/format-age en/locale :normal "2025-06-10" nil))))))
 
 ;; 16. formatStage - null / edge cases
 (deftest stage-null-edge
@@ -311,7 +323,17 @@
   (testing "22.3 45 years"
     (is (= "Adult" (stage "1980-01-01" "2025-06-15")))))
 
-;; 23. formatStage — default asOf — skipped (test only pure variants)
+;; 23. formatStage — default asOf (today pinned as in section 15)
+(deftest stage-default-as-of
+  (testing "23.1 default asOf, born today"
+    (with-fixed-today
+      #(is (= "Newborn" (pt/format-stage en/locale "2025-06-15" nil nil)))))
+  (testing "23.2 default asOf, child"
+    (with-fixed-today
+      #(is (= "Child" (pt/format-stage en/locale "2020-01-01" nil nil)))))
+  (testing "23.3 default asOf, adult"
+    (with-fixed-today
+      #(is (= "Adult" (pt/format-stage en/locale "1980-01-01" nil nil))))))
 
 ;; 24. Class delegation — English locale
 (deftest class-delegation
@@ -367,7 +389,7 @@
   (testing "25.9 2 years, 6 months"
     (is (= "2 años, 6 meses" (age-locale es/locale "2023-06-15" "2025-12-15"))))
   (testing "25.10 3.5 years"
-    (is (= "3 y medio años" (age-locale es/locale "2022-06-15" "2025-12-15"))))
+    (is (= "3 años y medio" (age-locale es/locale "2022-06-15" "2025-12-15"))))
   (testing "25.11 3 years"
     (is (= "3 años" (age-locale es/locale "2022-06-15" "2025-06-15"))))
   (testing "25.12 7 years"
@@ -436,7 +458,7 @@
   (testing "29.1 Newborn"
     (is (= "רק נולד" (age-locale he/locale "2025-06-15" "2025-06-15"))))
   (testing "29.2 1 day"
-    (is (= "יום 1" (age-locale he/locale "2025-06-14" "2025-06-15"))))
+    (is (= "יום" (age-locale he/locale "2025-06-14" "2025-06-15"))))
   (testing "29.3 3 days"
     (is (= "3 ימים" (age-locale he/locale "2025-06-12" "2025-06-15"))))
   (testing "29.4 2 weeks"
@@ -448,7 +470,7 @@
   (testing "29.7 3 months"
     (is (= "3 חודשים" (age-locale he/locale "2025-03-15" "2025-06-15"))))
   (testing "29.8 2 years, 1 month"
-    (is (= "שנתיים, חודש 1" (age-locale he/locale "2023-06-15" "2025-07-15"))))
+    (is (= "שנתיים, חודש" (age-locale he/locale "2023-06-15" "2025-07-15"))))
   (testing "29.9 3.5 years"
     (is (= "3 שנים וחצי" (age-locale he/locale "2022-06-15" "2025-12-15"))))
   (testing "29.10 7 years"
@@ -505,7 +527,7 @@
   (testing "29.31 6 months"
     (is (= "6 bulan" (age-locale id/locale "2025-01-15" "2025-07-15"))))
   (testing "29.32 3.5 years"
-    (is (= "3 tahun setengah" (age-locale id/locale "2022-06-15" "2025-12-15"))))
+    (is (= "3 setengah tahun" (age-locale id/locale "2022-06-15" "2025-12-15"))))
   (testing "29.33 7 years"
     (is (= "7 tahun" (age-locale id/locale "2018-06-15" "2025-06-15")))))
 
@@ -555,7 +577,7 @@
   (testing "32.2 polish 5 is many"
     (is (= "5 i p\u00F3\u0142 lat" (pt/format-age-pure (pt/get-locale "pl") :short "2020-06-15" "2025-12-15"))))
   (testing "32.3 tachelhit 6 is few"
-    (is (= "6 iseggasen d uzgen" (pt/format-age-pure (pt/get-locale "shi") :normal "2005-06-08" "2012-06-07")))))
+    (is (= "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ" (pt/format-age-pure (pt/get-locale "shi") :normal "2005-06-08" "2012-06-07")))))
 
 ;; 33. Input validation
 (deftest input-validation

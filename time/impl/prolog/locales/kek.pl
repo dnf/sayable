@@ -11,22 +11,22 @@
 
 % Q'eqchi' locale.
 
-st_hours('kek', ['kab\'laju', 'jun', 'kab\'', 'oxib\'', 'kab\'ib\'', 'o\'ib\'', 'waqib\'', 'uqub\'', 'wajxaqib\'', 'b\'elejeb\'', 'lajeb\'', 'junlaju']).
+st_hours('kek', ['kab\'laju', 'jun', 'kiib\'', 'oxib\'', 'kaahib\'', 'oob\'', 'waqib\'', 'wuqub\'', 'waqxaqib\'', 'b\'eleeb\'', 'lajeeb\'', 'junlaju']).
 st_midnight('kek', 'chaq\' xkab\'').
 st_noon('kek', 'chaq\' chaab\'il').
 
-st_pattern('kek', 0, '{h}:00').
-st_pattern('kek', 5, '{h}:05').
-st_pattern('kek', 10, '{h}:10').
-st_pattern('kek', 15, '{h}:15').
-st_pattern('kek', 20, '{h}:20').
-st_pattern('kek', 25, '{h}:25').
-st_pattern('kek', 30, '{h}:30').
-st_pattern('kek', 35, '{h}:35').
-st_pattern('kek', 40, '{h}:40').
-st_pattern('kek', 45, '{h}:45').
-st_pattern('kek', 50, '{h}:50').
-st_pattern('kek', 55, '{h}:55').
+st_pattern('kek', 0, '{h} hoonal').
+st_pattern('kek', 5, '{h} hoonal rik\'in oob\' minuut').
+st_pattern('kek', 10, '{h} hoonal rik\'in lajeeb\' minuut').
+st_pattern('kek', 15, '{h} hoonal rik\'in o\'laju minuut').
+st_pattern('kek', 20, '{h} hoonal rik\'in junmay minuut').
+st_pattern('kek', 25, '{h} hoonal rik\'in oob\' xkak\'aal minuut').
+st_pattern('kek', 30, '{h} hoonal rik\'in yijach').
+st_pattern('kek', 35, '{h} hoonal rik\'in o\'laju xkak\'aal minuut').
+st_pattern('kek', 40, '{h} hoonal rik\'in kaak\'aal minuut').
+st_pattern('kek', 45, '{h} hoonal rik\'in oob\' roxk\'aal minuut').
+st_pattern('kek', 50, '{h} hoonal rik\'in lajeeb\' roxk\'aal minuut').
+st_pattern('kek', 55, '{h} hoonal rik\'in o\'laju roxk\'aal minuut').
 
 short_st_use24h('kek', false).
 short_st_format('kek', '{h}:{mm} {ampm}').

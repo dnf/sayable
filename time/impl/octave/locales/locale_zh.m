@@ -11,10 +11,10 @@
 
 function loc = locale_zh()
   loc.code = 'zh';
-  loc.clock.hours = {'十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'};
+  loc.clock.hours = {'十二', '一', '两', '三', '四', '五', '六', '七', '八', '九', '十', '十一'};
   loc.clock.midnight = '午夜';
   loc.clock.noon = '正午';
-  loc.clock.patterns = struct("p0", '{h}点整', "p5", '{h}点五分', "p10", '{h}点十分', "p15", '{h}点十五分', "p20", '{h}点二十分', "p25", '{h}点二十五分', "p30", '{h}点半', "p35", '{h}点三十五分', "p40", '{h}点四十分', "p45", '{h}点四十五分', "p50", '{h}点五十分', "p55", '{h}点五十五分');
+  loc.clock.patterns = struct("p0", '{h}点整', "p5", '{h}点零五分', "p10", '{h}点十分', "p15", '{h}点十五分', "p20", '{h}点二十分', "p25", '{h}点二十五分', "p30", '{h}点半', "p35", '{h}点三十五分', "p40", '{h}点四十分', "p45", '{h}点四十五分', "p50", '{h}点五十分', "p55", '{h}点五十五分');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

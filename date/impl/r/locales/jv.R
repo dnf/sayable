@@ -21,7 +21,7 @@ locale_jv <- list(
   tomorrow = "sesuk",
   yesterday = "wingi",
   day_after_tomorrow = "embèn",
-  day_before_yesterday = "dhèk wingi",
+  day_before_yesterday = "wingenané",
   this_weekday = "{weekday} iki",
   next_weekday = "{weekday} ngarep",
   last_weekday = "{weekday} wingi",

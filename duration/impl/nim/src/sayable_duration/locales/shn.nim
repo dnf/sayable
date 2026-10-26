@@ -55,7 +55,7 @@ let SHN* = DurationLocale(
       "month": simpleUnit("{n}mo"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0} ပူၼ်ႉမႃး"),
     inFuture: some("ထႅင်ႈ {0}"),

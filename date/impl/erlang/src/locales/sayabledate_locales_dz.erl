@@ -27,7 +27,7 @@ locale() ->
         yesterday = "ཁ་ཙ",
         day_after_tomorrow = {just, "གནངས་ཚེ"},
         day_before_yesterday = {just, "ཁ་ཉིམ"},
-        this_weekday = {just, "འདི་ {weekday}"},
+        this_weekday = {just, "{weekday} འདི"},
         next_weekday = {just, "{weekday} ཤུལ་མ"},
         last_weekday = {just, "{weekday} ཧེ་མ"},
         months_in_date = nothing,

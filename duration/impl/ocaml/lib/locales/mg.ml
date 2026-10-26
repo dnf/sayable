@@ -24,7 +24,7 @@ let locale : duration_locale =
   ; half = "{0} sy sasany"
   ; delimiter = ", "
   ; just_now = "vao haingana"
-  ; ago = "{0} lasa"
+  ; ago = "{0} lasa izay"
   ; in_future = "ao anatin'ny {0}"
   ; short = Some
       { ovr_second = Some (Simple "{n} seg")
@@ -36,7 +36,7 @@ let locale : duration_locale =
       ; ovr_year = Some (Simple "{n} tna")
       ; ovr_half = None
       ; ovr_delimiter = None
-      ; ovr_ago = Some "{0} lasa"
+      ; ovr_ago = Some "{0} lasa izay"
       ; ovr_in_future = Some "ao anatin'ny {0}"
       }
   ; compact = Some

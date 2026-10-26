@@ -23,7 +23,7 @@ function locale_ha {
     $dayBeforeYesterday = 'shekaranjiya'
     $thisWeekday = 'wannan {weekday}'
     $nextWeekday = '{weekday} mai zuwa'
-    $lastWeekday = '{weekday} da ya wuce'
+    $lastWeekday = '{weekday} da ta wuce'
     $monthsInDate = $null
     $short = @{
         months = @('Jan', 'Fab', 'Mar', 'Afr', 'May', 'Yun', 'Yul', 'Agu', 'Sat', 'Okt', 'Nuw', 'Dis')

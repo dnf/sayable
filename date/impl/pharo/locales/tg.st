@@ -28,8 +28,8 @@ tg
 	locale dayAfterTomorrow: 'пасфардо'.
 	locale dayBeforeYesterday: 'парирӯз'.
 	locale thisWeekday: 'ин {weekday}'.
-	locale nextWeekday: '{weekday}-и оянда'.
-	locale lastWeekday: '{weekday}-и гузашта'.
+	locale nextWeekday: '{weekday}и оянда'.
+	locale lastWeekday: '{weekday}и гузашта'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'Янв'. 'Фев'. 'Мар'. 'Апр'. 'Май'. 'Июн'. 'Июл'. 'Авг'. 'Сен'. 'Окт'. 'Ноя'. 'Дек' }).

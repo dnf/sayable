@@ -16,17 +16,17 @@ st_midnight('pl', 'północ').
 st_noon('pl', 'południe').
 
 st_pattern('pl', 0, '{h}').
-st_pattern('pl', 5, 'pięć po {h}').
-st_pattern('pl', 10, 'dziesięć po {h}').
-st_pattern('pl', 15, 'piętnaście po {h}').
-st_pattern('pl', 20, 'dwadzieścia po {h}').
-st_pattern('pl', 25, 'dwadzieścia pięć po {h}').
-st_pattern('pl', 30, 'trzydzieści po {h}').
-st_pattern('pl', 35, 'dwadzieścia pięć do {next_h}').
-st_pattern('pl', 40, 'dwadzieścia do {next_h}').
-st_pattern('pl', 45, 'piętnaście do {next_h}').
-st_pattern('pl', 50, 'dziesięć do {next_h}').
-st_pattern('pl', 55, 'pięć do {next_h}').
+st_pattern('pl', 5, '{h} pięć').
+st_pattern('pl', 10, '{h} dziesięć').
+st_pattern('pl', 15, '{h} piętnaście').
+st_pattern('pl', 20, '{h} dwadzieścia').
+st_pattern('pl', 25, '{h} dwadzieścia pięć').
+st_pattern('pl', 30, '{h} trzydzieści').
+st_pattern('pl', 35, 'za dwadzieścia pięć {next_h}').
+st_pattern('pl', 40, 'za dwadzieścia {next_h}').
+st_pattern('pl', 45, 'za kwadrans {next_h}').
+st_pattern('pl', 50, 'za dziesięć {next_h}').
+st_pattern('pl', 55, 'za pięć {next_h}').
 
 short_st_use24h('pl', true).
 short_st_format('pl', '{h}:{mm}').

@@ -23,7 +23,7 @@ ceb
 		'month'. '{n} ka bulan'.
 		'year'. '{n} ka tuig'.
 	}).
-	locale half: '{n}½'.
+	locale half: '{0} ug tunga'.
 	locale delimiter: ', '.
 	locale justBorn: 'Bag-ong natawo'.
 	locale stages: (Dictionary newFromPairs: {

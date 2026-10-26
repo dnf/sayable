@@ -12,7 +12,7 @@
 proc locale_date_shi {} {
     set code {shi}
     set months [list {ⵉⵏⵏⴰⵢⵔ} {ⴱⵕⴰⵢⵕ} {ⵎⴰⵕⵚ} {ⵉⴱⵔⵉⵔ} {ⵎⴰⵢⵢⵓ} {ⵢⵓⵏⵢⵓ} {ⵢⵓⵍⵢⵓⵣ} {ⵖⵓⵛⵜ} {ⵛⵓⵜⴰⵏⴱⵉⵔ} {ⴽⵜⵓⴱⵔ} {ⵏⵓⵡⴰⵏⴱⵉⵔ} {ⴷⵓⵊⴰⵏⴱⵉⵔ}]
-    set weekdays [list {ⴰⵙⴰⵎⴰⵙ} {ⴰⵢⵏⴰⵙ} {ⴰⵙⵉⵏⴰⵙ} {ⴰⴽⵕⴰⵙ} {ⴰⴽⵡⴰⵙ} {ⴰⵙⵉⵎⵡⴰⵙ} {ⴰⵙⵉⴹⵢⴰⵙ}]
+    set weekdays [list {ⴰⵙⴰⵎⴰⵙ} {ⴰⵢⵏⴰⵙ} {ⴰⵙⵉⵏⴰⵙ} {ⴰⴽⵕⴰⵙ} {ⴰⴽⵡⴰⵙ} {ⵙⵉⵎⵡⴰⵙ} {ⴰⵙⵉⴹⵢⴰⵙ}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"

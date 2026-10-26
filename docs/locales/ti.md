@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ti.json](../../locales/ti.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Kept the Western 12-hour count: Tigrinya is split between Ethiopia (Ethiopian time) and Eritrea (Western clock in everyday/official use); one locale cannot serve both and rotating hours would be wrong for every Eritrean speaker and for digital-clock readers. Phrases use the -ን…-ን coordination ('ሰለስተን ፈረቓን' half past three, 'ሰለስተን ርብዒን' quarter past), ':00' = '{h} ሰዓት', and 'ጎደል' (less) for :40-:55 with {next_h} ('ርብዒ ጎደል ኣርባዕተ'). :35 kept additive ('…ን ሰላሳን ሓሙሽተን'). Doubts: ርብዒ+ን spelled ርብዒን (vs ርብዕን); 'ጎደል' vs the Amharic-influenced 'ጉዳይ'.
+
 ## Age
 
 ### Age formatting
@@ -72,10 +80,10 @@ Relative to Saturday, March 15, 2025.
 | Yesterday            | ትማሊ        | ትማሊ     |
 | Day after tomorrow   | ድሕሪ ጽባሕ    | 17/3    |
 | Day before yesterday | ቅድሚ ትማሊ    | 13/3    |
-| This Thursday (+5)   | እዛ ሓሙስ     | 20/3    |
-| Last Monday (-4)     | ዝሓለፈ ሠሉስ   | 11/3    |
-| Next Wednesday (+12) | ዝመጽእ ሓሙስ   | 27/3    |
-| Same month (+20)     | 4 ሚያዝያ     | 4/4     |
+| This Thursday (+5)   | እዚ ሓሙስ     | 20/3    |
+| Last Tuesday (-4)    | ዝሓለፈ ሠሉስ   | 11/3    |
+| Next Thursday (+12)  | ዝመጽእ ሓሙስ   | 27/3    |
+| Same year (+20)      | 4 ሚያዝያ     | 4/4     |
 | Different year       | 10 ጥሪ 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short | Compact |
-| --------------- | ---------- | ----- | ------- |
-| Midnight        | ፍርቂ ለይቲ    | 0:00  | 0:00    |
-| 1:00 AM         | ሓደ:00      | 1:00  | 1:00    |
-| 5 past 9        | ትሽዓተ:05    | 9:05  | 9:05    |
-| Quarter past 10 | ዓሰርተ:15    | 10:15 | 10:15   |
-| Half past 11    | ዓሰርተ ሓደ:30 | 11:30 | 11:30   |
-| Noon            | ቀትሪ        | 12:00 | 12:00   |
-| Quarter to 3    | ክልተ:45     | 14:45 | 14:45   |
-| 5 to 6          | ሓሙሽተ:55    | 17:55 | 17:55   |
-| 8 o'clock PM    | ሸሞንተ:00    | 20:00 | 20:00   |
-| 10:30 PM        | ዓሰርተ:30    | 22:30 | 22:30   |
-| 11:58 PM        | ፍርቂ ለይቲ    | 23:58 | 23:58   |
+| Time            | Normal        | Short | Compact |
+| --------------- | ------------- | ----- | ------- |
+| Midnight        | ፍርቂ ለይቲ       | 0:00  | 0:00    |
+| 1:00 AM         | ሓደ ሰዓት        | 1:00  | 1:00    |
+| 5 past 9        | ትሽዓተን ሓሙሽተን   | 9:05  | 9:05    |
+| Quarter past 10 | ዓሰርተን ርብዒን    | 10:15 | 10:15   |
+| Half past 11    | ዓሰርተ ሓደን ፈረቓን | 11:30 | 11:30   |
+| Noon            | ቀትሪ           | 12:00 | 12:00   |
+| Quarter to 3    | ርብዒ ጎደል ሰለስተ  | 14:45 | 14:45   |
+| 5 to 6          | ሓሙሽተ ጎደል ሽድሽተ | 17:55 | 17:55   |
+| 8 o'clock PM    | ሸሞንተ ሰዓት      | 20:00 | 20:00   |
+| 10:30 PM        | ዓሰርተን ፈረቓን    | 22:30 | 22:30   |
+| 11:58 PM        | ፍርቂ ለይቲ       | 23:58 | 23:58   |

@@ -32,7 +32,7 @@ sd_unit('nb', year, other, '{n} år').
 sd_half('nb', '{n}½').
 sd_delimiter('nb', ', ').
 sd_just_now('nb', 'akkurat nå').
-sd_ago('nb', '{0} siden').
+sd_ago('nb', 'for {0} siden').
 sd_in_future('nb', 'om {0}').
 
 short_sd_unit('nb', second, _, '{n} sek').
@@ -42,7 +42,7 @@ short_sd_unit('nb', day, _, '{n} d').
 short_sd_unit('nb', week, _, '{n} u').
 short_sd_unit('nb', month, _, '{n} md.').
 short_sd_unit('nb', year, _, '{n} år').
-short_sd_ago('nb', '{0} siden').
+short_sd_ago('nb', 'for {0} siden').
 short_sd_in_future('nb', 'om {0}').
 
 compact_sd_unit('nb', second, _, '{n}s').
@@ -53,5 +53,5 @@ compact_sd_unit('nb', week, _, '{n}u').
 compact_sd_unit('nb', month, _, '{n} m').
 compact_sd_unit('nb', year, _, '{n}å').
 compact_sd_delimiter('nb', '').
-compact_sd_ago('nb', '{0} siden').
+compact_sd_ago('nb', 'for {0} siden').
 compact_sd_in_future('nb', 'om {0}').

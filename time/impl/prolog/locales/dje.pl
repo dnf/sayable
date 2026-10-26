@@ -11,22 +11,22 @@
 
 % Zarma locale.
 
-st_hours('dje', ['way cindi', 'afoo', 'ihinka', 'ihinza', 'itaaci', 'igu', 'iddu', 'iyye', 'isahkay', 'iyegga', 'iwoy', 'iwoy cindi']).
+st_hours('dje', ['iway cindi hinka', 'fo', 'hinka', 'hinza', 'taaci', 'gu', 'iddu', 'iyye', 'ahakku', 'yagga', 'iway', 'iway cindi fo']).
 st_midnight('dje', 'cin beri').
 st_noon('dje', 'zaari gaaham').
 
-st_pattern('dje', 0, '{h}:00').
-st_pattern('dje', 5, '{h}:05').
-st_pattern('dje', 10, '{h}:10').
-st_pattern('dje', 15, '{h}:15').
-st_pattern('dje', 20, '{h}:20').
-st_pattern('dje', 25, '{h}:25').
-st_pattern('dje', 30, '{h}:30').
-st_pattern('dje', 35, '{h}:35').
-st_pattern('dje', 40, '{h}:40').
-st_pattern('dje', 45, '{h}:45').
-st_pattern('dje', 50, '{h}:50').
-st_pattern('dje', 55, '{h}:55').
+st_pattern('dje', 0, 'guuru {h}').
+st_pattern('dje', 5, 'guuru {h} nda miniti gu').
+st_pattern('dje', 10, 'guuru {h} nda miniti iway').
+st_pattern('dje', 15, 'guuru {h} nda miniti iway cindi gu').
+st_pattern('dje', 20, 'guuru {h} nda miniti waranka').
+st_pattern('dje', 25, 'guuru {h} nda miniti waranka cindi gu').
+st_pattern('dje', 30, 'guuru {h} nda jare').
+st_pattern('dje', 35, 'guuru {h} nda miniti waranza cindi gu').
+st_pattern('dje', 40, 'guuru {h} nda miniti waytaaci').
+st_pattern('dje', 45, 'guuru {h} nda miniti waytaaci cindi gu').
+st_pattern('dje', 50, 'guuru {h} nda miniti waygu').
+st_pattern('dje', 55, 'guuru {h} nda miniti waygu cindi gu').
 
 short_st_use24h('dje', false).
 short_st_format('dje', '{h}:{mm} {ampm}').
